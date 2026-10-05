@@ -1,0 +1,1181 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CKD CPG 2565</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: clinic-sheet — sticky section rail on wide screens, calculator as the opening act, reference below */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --sunk:#E8ECEA; --line:#D3DAD7;
+  --fg:#18211F; --muted:#56635F;
+  --accent:#0E6B66; --accent-soft:#D7ECEA; --accent-fg:#FFFFFF;
+  --kid:#8E2F3E; --kid-soft:#F4E2E5;
+  --r0:#3E8E55; --r1:#D4AE2E; --r2:#DB7A31; --r3:#BE3A35;
+  --r0s:#DDF0E2; --r1s:#F8EFCB; --r2s:#F9E2D0; --r3s:#F6D9D7;
+  --font-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18211F; --sunk:#202B28; --line:#2F3D39;
+  --fg:#E5ECE9; --muted:#9AA9A4;
+  --accent:#4FC0B6; --accent-soft:#16332F; --accent-fg:#06201D;
+  --kid:#E58A98; --kid-soft:#3A1F25;
+  --r0:#5DB874; --r1:#E2C44F; --r2:#EE9550; --r3:#EA6A62;
+  --r0s:#1B3323; --r1s:#352F14; --r2s:#3A2616; --r3s:#3E1C1A;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18211F; --sunk:#202B28; --line:#2F3D39;
+  --fg:#E5ECE9; --muted:#9AA9A4;
+  --accent:#4FC0B6; --accent-soft:#16332F; --accent-fg:#06201D;
+  --kid:#E58A98; --kid-soft:#3A1F25;
+  --r0:#5DB874; --r1:#E2C44F; --r2:#EE9550; --r3:#EA6A62;
+  --r0s:#1B3323; --r1s:#352F14; --r2s:#3A2616; --r3s:#3E1C1A;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15.5px;line-height:1.7;padding-inline:16px;padding-block:0 48px}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.3;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+
+/* rail */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:36px}
+.rail .brand{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--kid);letter-spacing:.02em;margin-bottom:14px}
+.rail nav{display:flex;flex-direction:column;gap:2px}
+.rail nav a{text-decoration:none;color:var(--muted);font-size:14px;padding:6px 10px;border-radius:6px;border-left:2px solid transparent}
+.rail nav a:hover{color:var(--fg);background:var(--sunk)}
+.rail nav a.on{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft)}
+@media (max-width:900px){
+  .rail{top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+  .rail .brand{display:none}
+  .rail nav{flex-direction:row;overflow-x:auto;gap:6px;scrollbar-width:none}
+  .rail nav a{white-space:nowrap;border-left:0;border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:13px}
+  .rail nav a.on{border-color:var(--accent)}
+}
+
+main{min-width:0;padding-top:36px;display:flex;flex-direction:column;gap:56px}
+section{scroll-margin-top:70px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{color:var(--muted);max-width:68ch}
+h2{font-size:clamp(22px,3vw,28px)}
+h3{font-size:18px}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:10px}
+.hero h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.01em}
+.hero h1 span{color:var(--kid)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:13px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:99px;background:var(--sunk);color:var(--muted);font-size:12.5px;line-height:1.8;white-space:nowrap}
+
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.calc{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.calc{grid-template-columns:minmax(0,1fr)}}
+.form{display:flex;flex-direction:column;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label,.flabel{font-size:13px;color:var(--muted);font-weight:500}
+.field input,.field select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);font-family:var(--font-mono);font-size:15px}
+.field input:focus,.field select:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.unit{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.seg{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.seg button{flex:1;border:0;background:var(--bg);padding:7px 6px;cursor:pointer;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);font-weight:600}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.ck{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:14px;cursor:pointer;background:var(--bg)}
+.checks .ck input{accent-color:var(--accent);margin:0;width:auto;padding:0;border:0;box-shadow:none;flex:none}
+.ck:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+details.more{border-top:1px dashed var(--line);padding-top:10px}
+details.more summary{cursor:pointer;font-size:13.5px;color:var(--accent);font-weight:500}
+details.more .form{margin-top:12px}
+.hint{font-size:12.5px;color:var(--muted)}
+
+/* results */
+.result{display:flex;flex-direction:column;gap:16px;min-width:0}
+.headline{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+.stagebadge{width:118px;aspect-ratio:1;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--rs,var(--sunk));border:2px solid var(--rc,var(--line))}
+.stagebadge b{font-family:var(--font-display);font-size:32px;line-height:1;color:var(--fg)}
+.stagebadge small{font-size:12px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.3}
+.nums{display:flex;flex-wrap:wrap;gap:8px 22px}
+.num{display:flex;flex-direction:column}
+.num .v{font-family:var(--font-mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.num .k{font-size:12px;color:var(--muted)}
+.risk{font-weight:600}
+.warnline{font-size:13.5px;color:var(--muted)}
+
+/* heatmap */
+.heat-wrap{overflow-x:auto}
+table.heat{border-collapse:separate;border-spacing:3px;font-size:13px;min-width:420px;width:100%}
+table.heat th{font-weight:500;color:var(--muted);font-size:12px;text-align:left;padding:4px 6px}
+table.heat th.top{text-align:center}
+table.heat td{text-align:center;border-radius:6px;padding:7px 4px;font-family:var(--font-mono);font-size:12px;cursor:pointer;border:2px solid transparent;color:var(--fg)}
+table.heat td.l0{background:var(--r0s)} table.heat td.l1{background:var(--r1s)}
+table.heat td.l2{background:var(--r2s)} table.heat td.l3{background:var(--r3s)}
+table.heat td.here{border-color:var(--fg);font-weight:600}
+table.heat td .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.l0 .dot{background:var(--r0)} .l1 .dot{background:var(--r1)} .l2 .dot{background:var(--r2)} .l3 .dot{background:var(--r3)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card h4{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+.card h4 .tag{font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--muted);margin-left:auto}
+.card ul{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:3px}
+.card.flag{border-color:var(--kid);background:var(--kid-soft)}
+.card.flag h4{color:var(--kid)}
+.status{display:inline-block;width:9px;height:9px;border-radius:50%;flex:none}
+.s-go{background:var(--r0)} .s-warn{background:var(--r2)} .s-stop{background:var(--r3)} .s-info{background:var(--accent)}
+
+/* grade badges */
+.g{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:0 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;line-height:1.7;vertical-align:1px}
+.g.g1{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.g.g2{border-color:var(--line);color:var(--fg)}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.tool{display:flex;flex-direction:column;gap:14px}
+.tool h3{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.tool h3 small{font-family:var(--font-mono);font-size:12px;color:var(--muted);font-weight:400}
+.out{border-radius:8px;padding:12px 14px;background:var(--sunk);font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.out.go{background:var(--r0s)} .out.warn{background:var(--r1s)} .out.mid{background:var(--r2s)} .out.stop{background:var(--r3s)}
+.out b.big{font-family:var(--font-display);font-size:19px}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* recs */
+.recbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.recbar input[type=search]{flex:1 1 240px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.chapters{display:flex;flex-direction:column;gap:8px}
+details.ch{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+details.ch summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:10px;align-items:center}
+details.ch summary::-webkit-details-marker{display:none}
+details.ch summary .n{font-family:var(--font-mono);font-size:13px;color:var(--kid);font-weight:500}
+details.ch summary .t{font-weight:600;font-size:15.5px}
+details.ch summary .c{font-size:12px;color:var(--muted);font-family:var(--font-mono)}
+details.ch[open] summary{border-bottom:1px solid var(--line)}
+.recs{list-style:none;margin:0;padding:8px 16px 14px;display:flex;flex-direction:column}
+.recs li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.recs li:last-child{border-bottom:0}
+.recs .id{font-family:var(--font-mono);font-size:12px;color:var(--muted);padding-top:2px}
+.recs .note{grid-column:2;font-size:13.5px;color:var(--muted);background:var(--sunk);padding:8px 10px;border-radius:6px}
+mark{background:var(--r1s);color:inherit;border-radius:2px}
+.empty{color:var(--muted);font-size:14px;padding:8px 0}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.tbl table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+.tbl th,.tbl td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:12.5px;color:var(--muted);font-weight:500;background:var(--sunk)}
+.tbl td.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.grp td{background:var(--sunk);font-weight:600;font-size:13px}
+.tbl tr:last-child td{border-bottom:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:5px 14px;cursor:pointer;font-size:14px}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.callout{border-left:3px solid var(--kid);background:var(--surface);padding:12px 16px;border-radius:0 8px 8px 0;font-size:14.5px;display:flex;flex-direction:column;gap:6px}
+.callout h4{font-size:14.5px;color:var(--kid)}
+.callout ul{margin:0;padding-left:18px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.kd-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
+.kd-key{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;font-size:14.5px}
+.kd-key>b{font-family:var(--font-mono);color:var(--kid);font-size:14px;padding-top:1px}
+.kd-head,.kd-row{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) minmax(0,1fr);gap:16px}
+.kd-head{font-size:12px;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;padding:0 16px}
+.kd-list{display:flex;flex-direction:column;gap:8px}
+.kd-row{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;font-size:14.5px}
+.kd-row .topic{display:flex;flex-direction:column;gap:6px;font-weight:600}
+.kd-row .col{min-width:0}
+.kd-row .col .lbl{display:none;font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kd-row .so{grid-column:2/4;font-size:13.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.kd-row .so b{color:var(--fg)}
+.pill{display:inline-block;width:max-content;font-size:11.5px;font-weight:500;padding:0 8px;border-radius:99px;line-height:1.8}
+.pill.new{background:var(--accent-soft);color:var(--accent)}
+.pill.diff{background:var(--r2s);color:var(--fg)}
+.pill.same{background:var(--r0s);color:var(--fg)}
+@media (max-width:760px){
+  .kd-head{display:none}
+  .kd-row{grid-template-columns:minmax(0,1fr);gap:10px}
+  .kd-row .col .lbl{display:block}
+  .kd-row .so{grid-column:1}
+}
+.kfre{display:flex;flex-wrap:wrap;gap:8px 22px;border-top:1px dashed var(--line);padding-top:10px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:75ch}
+@media (prefers-reduced-motion:no-preference){.card,.out{transition:background .2s}}
+</style>
+
+<div class="wrap">
+  <aside class="rail">
+    <div class="brand">CKD · CPG 2565</div>
+    <nav id="toc">
+      <a href="#calc">ประเมินผู้ป่วย</a>
+      <a href="#tools">เครื่องมือ</a>
+      <a href="#recs">ข้อแนะนำ 17 หมวด</a>
+      <a href="#kdigo">เทียบ KDIGO 2024</a>
+      <a href="#drugs">ตารางยา</a>
+      <a href="#diet">โภชนาการ</a>
+      <a href="#pearls">จุดที่ควรจำ</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">สมาคมโรคไตแห่งประเทศไทย · ฉบับปรับปรุงเพิ่มเติม (มี.ค. 2566)</div>
+      <h1>ข้อแนะนำเวชปฏิบัติ<span>โรคไตเรื้อรัง</span>ก่อนการบำบัดทดแทนไต พ.ศ. 2565</h1>
+      <p class="lead">สรุปสำหรับอายุรแพทย์ทั่วไป กรอกค่าแล็บของผู้ป่วยแล้วจะได้ระยะโรค ความถี่การติดตาม เกณฑ์ส่งต่อ และสิ่งที่ต้องทำตามระยะ อ้างอิงเลขข้อและน้ำหนักคำแนะนำตามต้นฉบับ</p>
+      <div class="meta">
+        <span class="chip"><span class="g g1">1</span> ควรทำอย่างยิ่ง (Recommend)</span>
+        <span class="chip"><span class="g g2">2</span> แนะนำ (Suggest)</span>
+        <span class="chip"><span class="g">NG</span> Not graded / practice point</span>
+        <span class="chip">หลักฐาน A สูงมาก → D ต่ำมาก</span>
+      </div>
+    </header>
+
+    <!-- ===== CALCULATOR ===== -->
+    <section id="calc">
+      <div>
+        <div class="eyebrow">ประเมินผู้ป่วย</div>
+        <h2>ระยะโรคและแผนการดูแลรายบุคคล</h2>
+      </div>
+      <div class="calc">
+        <div class="panel form" id="pform">
+          <div class="field">
+            <span class="flabel">เพศ</span>
+            <div class="seg" id="sex" role="group" aria-label="เพศ">
+              <button type="button" data-v="M" aria-pressed="true">ชาย</button>
+              <button type="button" data-v="F" aria-pressed="false">หญิง</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="age">อายุ <span class="unit">ปี</span></label><input id="age" type="number" inputmode="decimal" value="62" min="18" max="110"></div>
+            <div class="field"><label for="scr">Creatinine <span class="unit">mg/dL</span></label><input id="scr" type="number" inputmode="decimal" step="0.01" value="1.65"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="acr">UACR <span class="unit">mg/g</span></label><input id="acr" type="number" inputmode="decimal" value="420"></div>
+            <div class="field"><label for="dec">eGFR ลดลง <span class="unit">mL/min/ปี</span></label><input id="dec" type="number" inputmode="decimal" step="0.1" placeholder="ถ้าทราบ"></div>
+          </div>
+          <div class="field">
+            <span class="flabel">โรคร่วม</span>
+            <div class="checks">
+              <label class="ck"><input type="checkbox" id="dm" checked> เบาหวานชนิดที่ 2</label>
+              <label class="ck"><input type="checkbox" id="htn" checked> ความดันสูง</label>
+              <label class="ck"><input type="checkbox" id="ascvd"> CAD / ischemic stroke</label>
+              <label class="ck"><input type="checkbox" id="hf"> HFrEF</label>
+            </div>
+          </div>
+          <details class="more">
+            <summary>แล็บเพิ่มเติม (ไม่บังคับ)</summary>
+            <div class="form">
+              <div class="row">
+                <div class="field"><label for="cys">Cystatin C <span class="unit">mg/L</span></label><input id="cys" type="number" inputmode="decimal" step="0.01"></div>
+                <div class="field"><label for="k">K⁺ <span class="unit">mmol/L</span></label><input id="k" type="number" inputmode="decimal" step="0.1"></div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="hco3">HCO₃⁻ <span class="unit">mmol/L</span></label><input id="hco3" type="number" inputmode="decimal"></div>
+                <div class="field"><label for="hb">Hb <span class="unit">g/dL</span></label><input id="hb" type="number" inputmode="decimal" step="0.1"></div>
+              </div>
+              <p class="hint">Cystatin C แนะนำเมื่อ eGFR(Cr) 45–59 และไม่มีหลักฐาน kidney damage อื่น (ข้อ 2.1.1.4)</p>
+            </div>
+          </details>
+          <p class="hint">ตัวอย่างเริ่มต้น: ชาย 62 ปี DM+HTN — เปลี่ยนเป็นค่าผู้ป่วยจริงได้ทันที การวินิจฉัย CKD ต้องผิดปกติต่อเนื่อง &gt; 3 เดือน</p>
+        </div>
+
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+      <div class="plan" id="plan"></div>
+    </section>
+
+    <!-- ===== TOOLS ===== -->
+    <section id="tools">
+      <div>
+        <div class="eyebrow">เครื่องมือ</div>
+        <h2>ตัดสินใจเรื่องยาที่ข้างเตียง</h2>
+      </div>
+      <div class="tools">
+        <!-- RAS -->
+        <div class="panel tool">
+          <h3>หลังเริ่ม/เพิ่ม ACEi หรือ ARB <small>ข้อ 5.12–5.15 · ตาราง 5.3</small></h3>
+          <div class="row">
+            <div class="field"><label for="r_cr0">Cr ก่อนเริ่มยา</label><input id="r_cr0" type="number" step="0.01" inputmode="decimal" value="1.40"></div>
+            <div class="field"><label for="r_cr1">Cr ที่ 2–4 สัปดาห์</label><input id="r_cr1" type="number" step="0.01" inputmode="decimal" value="1.72"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="r_k">K⁺ <span class="unit">mmol/L</span></label><input id="r_k" type="number" step="0.1" inputmode="decimal" value="5.1"></div>
+            <div class="field"><label for="r_sbp">SBP <span class="unit">mmHg</span></label><input id="r_sbp" type="number" inputmode="decimal" value="128"></div>
+          </div>
+          <div class="field"><label for="r_egfr">eGFR ปัจจุบัน</label><input id="r_egfr" type="number" inputmode="decimal" value="42"></div>
+          <div class="out" id="r_out"></div>
+        </div>
+
+        <!-- Finerenone -->
+        <div class="panel tool">
+          <h3>Finerenone (ns-MRA) <small>ข้อ 7.1.3 · ตาราง 7.1</small></h3>
+          <p class="hint">ข้อบ่งชี้: T2DM, eGFR ≥ 25, K⁺ ≤ 4.8 และ ACR ยัง ≥ 30 mg/g แม้ได้ RASi ขนาดสูงสุดที่ทนได้ <span class="g g2">2A</span></p>
+          <div class="row">
+            <div class="field"><label for="f_k">K⁺ <span class="unit">mmol/L</span></label><input id="f_k" type="number" step="0.1" inputmode="decimal" value="4.6"></div>
+            <div class="field"><label for="f_egfr">eGFR</label><input id="f_egfr" type="number" inputmode="decimal" value="48"></div>
+          </div>
+          <div class="field">
+            <span class="flabel">สถานะ</span>
+            <div class="seg" id="f_state" role="group" aria-label="สถานะยา">
+              <button type="button" data-v="new" aria-pressed="true">ยังไม่เริ่ม</button>
+              <button type="button" data-v="on" aria-pressed="false">กำลังใช้ยา</button>
+            </div>
+          </div>
+          <div class="out" id="f_out"></div>
+        </div>
+
+        <!-- Nutrition -->
+        <div class="panel tool" id="diet">
+          <h3>พลังงานและโปรตีนต่อวัน <small>ข้อ 10.2–10.3</small></h3>
+          <div class="row">
+            <div class="field"><label for="n_ht">ส่วนสูง <span class="unit">cm</span></label><input id="n_ht" type="number" inputmode="decimal" value="165"></div>
+            <div class="field"><label for="n_sex">เพศ</label><select id="n_sex"><option value="M">ชาย</option><option value="F">หญิง</option></select></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="n_stage">ระยะ CKD</label>
+              <select id="n_stage"><option value="12">G1–G2</option><option value="3" selected>G3a–G5 (ยังไม่ล้างไต)</option><option value="acute">เจ็บป่วยเฉียบพลัน / PEW</option></select></div>
+            <div class="field"><label for="n_dm">เบาหวาน</label><select id="n_dm"><option value="0">ไม่เป็น</option><option value="1">เป็น</option></select></div>
+          </div>
+          <div class="out" id="n_out"></div>
+        </div>
+
+        <!-- nPNA -->
+        <div class="panel tool">
+          <h3>ประเมินโปรตีนที่กินจริง (nPNA) <small>ข้อ 10.3.5</small></h3>
+          <div class="row">
+            <div class="field"><label for="p_uun">Urine urea nitrogen <span class="unit">mg/dL</span></label><input id="p_uun" type="number" inputmode="decimal" value="457.1"></div>
+            <div class="field"><label for="p_vol">ปัสสาวะ 24 ชม. <span class="unit">mL</span></label><input id="p_vol" type="number" inputmode="decimal" value="2430"></div>
+          </div>
+          <div class="field"><label for="p_wt">น้ำหนัก <span class="unit">kg</span></label><input id="p_wt" type="number" inputmode="decimal" value="60"></div>
+          <div class="out" id="p_out"></div>
+          <p class="hint">ค่าเริ่มต้นคือตัวอย่างในต้นฉบับ (ชาย 60 กก.) ให้ผล 1.35 g/kg/วัน · ประเมินทุก 3–6 เดือน</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RECOMMENDATIONS ===== -->
+    <section id="recs">
+      <div>
+        <div class="eyebrow">ข้อแนะนำเวชปฏิบัติ</div>
+        <h2>17 หมวด ค้นหาได้</h2>
+      </div>
+      <div class="recbar">
+        <input type="search" id="q" placeholder="ค้นหา เช่น SGLT2i, statin, ferritin, วัคซีน, 130/80" aria-label="ค้นหาข้อแนะนำ">
+        <div class="tabs" id="gfilter" role="tablist" aria-label="กรองตามน้ำหนักคำแนะนำ">
+          <button role="tab" data-g="all" aria-selected="true">ทั้งหมด</button>
+          <button role="tab" data-g="1" aria-selected="false">เฉพาะระดับ 1</button>
+        </div>
+        <button class="tabs-btn" id="toggleAll" type="button" style="border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:14px">เปิดทั้งหมด</button>
+      </div>
+      <div class="chapters" id="chapters"></div>
+    </section>
+
+    <!-- ===== KDIGO 2024 ===== -->
+    <section id="kdigo">
+      <div>
+        <div class="eyebrow">เทียบกับ KDIGO 2024 CKD Guideline (Kidney Int, เม.ย. 2567)</div>
+        <h2>อะไรเปลี่ยนไปหลัง CPG ไทย 2565</h2>
+        <p class="lead" style="margin-top:6px">CPG ไทยยังเป็นแนวทางหลักในบริบทประเทศไทย ส่วน KDIGO 2024 เป็นฉบับแทน KDIGO 2012 ที่ออกหลังจากนั้น ใช้ตารางนี้ดูว่าข้อไหนตรงกัน ข้อไหนต่าง และข้อไหนเป็นเรื่องใหม่</p>
+      </div>
+      <div class="kd-top">
+        <div class="kd-key"><b>1</b><span><strong>KFRE</strong> ใช้ประเมินความเสี่ยงไตวายใน G3–G5 <span class="g g1">1A</span> และกำหนดเวลาส่งต่อและเตรียม KRT ด้วยค่าความเสี่ยง แทนการดูแค่ค่า eGFR</span></div>
+        <div class="kd-key"><b>2</b><span><strong>SGLT2i ขยายถึงผู้ไม่เป็นเบาหวาน</strong> เมื่อ eGFR ≥ 20 และ ACR ≥ 200 mg/g หรือมี HF <span class="g g1">1A</span></span></div>
+        <div class="kd-key"><b>3</b><span><strong>โปรตีน 0.8 g/kg/วัน</strong> ใน G3–G5 <span class="g g2">2C</span> สูงกว่าเป้า 0.6 ของไทย</span></div>
+        <div class="kd-key"><b>4</b><span><strong>Acidosis</strong> รักษาเพื่อไม่ให้ HCO₃⁻ ต่ำกว่า 18 ขณะที่ไทยเริ่มให้ยาเมื่อ &lt; 22 <span class="g g1">1A</span></span></div>
+        <div class="kd-key"><b>5</b><span><strong>ACEi/ARB ให้ต่อ</strong> แม้ eGFR &lt; 30 · AF เลือก <strong>DOAC ก่อน warfarin</strong> ใน G1–G4</span></div>
+      </div>
+      <div class="recbar">
+        <div class="tabs" id="kfilter" role="tablist" aria-label="กรองการเปรียบเทียบ">
+          <button role="tab" data-k="all" aria-selected="true">ทั้งหมด</button>
+          <button role="tab" data-k="new" aria-selected="false">ใหม่ใน KDIGO</button>
+          <button role="tab" data-k="diff" aria-selected="false">ต่างกัน</button>
+          <button role="tab" data-k="same" aria-selected="false">สอดคล้องกัน</button>
+        </div>
+      </div>
+      <div class="kd-head" aria-hidden="true"><span>หัวข้อ</span><span>CPG ไทย 2565</span><span>KDIGO 2024</span></div>
+      <div class="kd-list" id="kdlist"></div>
+      <p class="hint">เกรดของ KDIGO ใช้ระบบเดียวกัน (1 = recommend, 2 = suggest; A–D) · PP = practice point · หัวข้อโลหิตจางและ CKD-MBD ใน KDIGO 2024 ไม่ได้ปรับใหม่ ให้อ้างอิง KDIGO Anemia 2012 และ CKD-MBD 2017</p>
+    </section>
+
+    <!-- ===== DRUG TABLES ===== -->
+    <section id="drugs">
+      <div>
+        <div class="eyebrow">ตารางยา</div>
+        <h2>ขนาดยาที่ใช้บ่อยใน CKD</h2>
+      </div>
+      <div class="tabs" id="dtabs" role="tablist">
+        <button role="tab" data-t="ras" aria-selected="true">ACEi / ARB</button>
+        <button role="tab" data-t="statin" aria-selected="false">Statin / ezetimibe</button>
+        <button role="tab" data-t="nonstatin" aria-selected="false">ยาลดไขมันอื่น</button>
+        <button role="tab" data-t="met" aria-selected="false">Metformin · SGLT2i</button>
+        <button role="tab" data-t="hbv" aria-selected="false">วัคซีน HBV</button>
+      </div>
+      <div id="dpanel"></div>
+    </section>
+
+    <!-- ===== DIET TABLES ===== -->
+    <section>
+      <div>
+        <div class="eyebrow">โภชนาการ</div>
+        <h2>โซเดียมและโพแทสเซียมในอาหารไทย</h2>
+      </div>
+      <div class="two">
+        <div class="tbl"><table style="min-width:0">
+          <thead><tr><th>เครื่องปรุง 1 ช้อนชา</th><th>โซเดียม (mg)</th></tr></thead>
+          <tbody>
+            <tr><td>เกลือ</td><td class="n">2,000</td></tr>
+            <tr><td>ผงปรุงรส</td><td class="n">950</td></tr>
+            <tr><td>ผงชูรส</td><td class="n">600</td></tr>
+            <tr><td>น้ำปลา / ซีอิ๊ว</td><td class="n">400</td></tr>
+            <tr><td>กะปิ</td><td class="n">240</td></tr>
+            <tr><td>น้ำจิ้มไก่ / ซอสพริก</td><td class="n">75</td></tr>
+            <tr><td colspan="2" class="hint">เป้าหมาย Na &lt; 2,000 mg/วัน (เกลือ ≈ 1 ช้อนชา) · ตาราง 10.1</td></tr>
+          </tbody></table></div>
+        <div class="tbl"><table style="min-width:0">
+          <thead><tr><th></th><th>K ต่ำ–ปานกลาง (100–200 mg/100 g)</th><th>K สูง (250–350 mg/100 g)</th></tr></thead>
+          <tbody>
+            <tr><td><b>ผัก</b></td><td>แตงกวา แตงร้าน ฟักเขียว บวบ มะระ มะเขือยาว มะละกอดิบ ถั่วแขก หอมใหญ่ กะหล่ำปลี ผักกาดขาว ผักกาดหอม พริกหวาน</td><td>เห็ด บรอคโคลี ดอกกะหล่ำ แครอท ผักโขม ผักบุ้ง คะน้า กวางตุ้ง ใบแค ข้าวโพด มันเทศ มันฝรั่ง ฟักทอง อโวคาโด สะเดา หัวปลี น้ำผัก</td></tr>
+            <tr><td><b>ผลไม้</b></td><td>สับปะรด แตงโม ส้มโอ ส้มเขียวหวาน ชมพู่ พุทรา มังคุด ลองกอง องุ่นเขียว เงาะ แอปเปิ้ล</td><td>กล้วย ฝรั่ง ขนุน ทุเรียน น้อยหน่า ลำไย ลูกเกด มะม่วง มะเฟือง มะขามหวาน แคนตาลูป น้ำส้มคั้น น้ำมะพร้าว</td></tr>
+          </tbody></table></div>
+      </div>
+    </section>
+
+    <!-- ===== PEARLS ===== -->
+    <section id="pearls">
+      <div>
+        <div class="eyebrow">จุดที่ควรจำ</div>
+        <h2>ประเด็นที่มักพลาดในเวชปฏิบัติ</h2>
+      </div>
+      <div class="two">
+        <div class="callout">
+          <h4>ต่างจาก KDIGO</h4>
+          <ul>
+            <li>เป้า BP ไทย <b>&lt; 130/80</b> (SBP ไม่ต่ำกว่า 120, DBP 70–79) ขณะที่ KDIGO 2021 ใช้ SBP &lt; 120 ด้วย standardized unattended BP ซึ่งทำยากในเวชปฏิบัติ</li>
+            <li>ผู้สูงอายุ &gt; 65 ปี ปรับเป้าเป็น SBP &lt; 140 ได้ตามความเหมาะสม</li>
+            <li>สมการ eGFR ในฉบับนี้คือ CKD-EPI 2009 แบบไม่ใช้ race หรือ Thai eGFR</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4>ACEi/ARB: อย่าหยุดยาเร็วเกินไป</h4>
+          <ul>
+            <li>Cr ขึ้น ≤ 30% ใน 4 สัปดาห์ ให้ยาต่อได้</li>
+            <li>K⁺ ≤ 5.5 ให้หาสาเหตุอื่นและแก้ไข โดยไม่ต้องลดยา</li>
+            <li>ใช้ <b>ขนาดสูงสุดที่ทนได้</b> ห้ามใช้ ACEi + ARB หรือร่วมกับ DRI</li>
+            <li>ห้ามใช้ในหญิงตั้งครรภ์ ให้คุมกำเนิด</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4>SGLT2i</h4>
+          <ul>
+            <li>DM + CKD: เริ่มเมื่อ eGFR ≥ 20 <span class="g g1">1A</span> ให้ต่อแม้ eGFR &lt; 20 จนเริ่มล้างไต</li>
+            <li>eGFR ลดช่วงแรกกลับคืนได้ ไม่ใช่เหตุให้หยุดยา</li>
+            <li>Sick day: หยุดยาชั่วคราว · ก่อนผ่าตัดหยุดอย่างน้อย 2 วัน ทำหัตถการได้ถ้า ketone &lt; 1.0</li>
+            <li>พิจารณาลด thiazide/loop ก่อนเริ่มในผู้ที่เสี่ยง hypovolemia</li>
+            <li>CKD ที่ไม่เป็นเบาหวาน: CPG อ้างถึงเอกสาร “คำแนะนำการใช้ยา SGLT2i ในผู้ป่วย CKD” แยกต่างหาก (ไม่รวมในไฟล์นี้)</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4>ยาและสารที่ต้องระวัง</h4>
+          <ul>
+            <li>เลี่ยง NSAIDs รวม COX-2 inhibitor ระวัง aminoglycoside และสมุนไพร</li>
+            <li>สารทึบรังสี: low/iso-osmolar non-ionic + IV fluid <span class="g g1">1A</span> ตรวจ eGFR ซ้ำที่ 48–96 ชม.</li>
+            <li>Gadolinium: เลี่ยงใน G5; G4–5 ใช้ชนิด macrocyclic</li>
+            <li>ห้าม oral phosphate bowel prep เมื่อ eGFR &lt; 60 <span class="g g1">1A</span></li>
+            <li>Aspirin ไม่ใช้ primary prevention <span class="g g2">2A</span> · ใช้ secondary prevention <span class="g g1">1A</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      ที่มา: สมาคมโรคไตแห่งประเทศไทย. ข้อแนะนำเวชปฏิบัติการดูแลผู้ป่วยโรคไตเรื้อรังก่อนการบำบัดทดแทนไต พ.ศ. 2565 (ฉบับปรับปรุงเพิ่มเติม). ISBN 978-616-8032-17-6.
+      หน้านี้เป็นบทสรุปเพื่อการเรียนรู้ ข้อแนะนำไม่ใช่ข้อบังคับ ให้ใช้วิจารณญาณร่วมกับบริบทผู้ป่วย และตรวจสอบขนาดยากับเอกสารกำกับยาก่อนสั่งใช้
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const num=id=>{const v=parseFloat($(id).value);return isFinite(v)?v:null};
+const fmt=(v,d=0)=>v==null?'—':v.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d});
+const G=g=>{if(!g)return'';const s=String(g);const cls=s[0]==='1'?'g1':s[0]==='2'?'g2':'';return ` <span class="g ${cls}">${s}</span>`};
+
+/* ---------- segmented buttons ---------- */
+function seg(id,cb){const el=$(id);el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));cb&&cb()});}
+const segVal=id=>$(id).querySelector('[aria-pressed="true"]').dataset.v;
+
+/* ---------- eGFR ---------- */
+function ckdepi(scr,age,sex){
+  if(sex==='F'){return 144*Math.pow(scr/0.7,scr<=0.7?-0.329:-1.209)*Math.pow(0.993,age)}
+  return 141*Math.pow(scr/0.9,scr<=0.9?-0.411:-1.209)*Math.pow(0.993,age);
+}
+function thai(scr,age,sex){return 375.5*Math.pow(scr,-0.848)*Math.pow(age,-0.364)*(sex==='F'?0.712:1)}
+function crcys(scr,cys,age,sex){
+  const b=Math.pow(cys/0.8,cys<=0.8?-0.375:-0.711);
+  if(sex==='F')return 130*Math.pow(scr/0.7,scr<=0.7?-0.248:-0.601)*b*Math.pow(0.995,age);
+  return 135*Math.pow(scr/0.9,scr<=0.9?-0.207:-0.601)*b*Math.pow(0.995,age);
+}
+const GS=['G1','G2','G3a','G3b','G4','G5'];
+const gIdx=e=>e>=90?0:e>=60?1:e>=45?2:e>=30?3:e>=15?4:5;
+const aIdx=a=>a<30?0:a<=300?1:2;
+const RISK=[[0,1,2],[0,1,2],[1,2,3],[2,3,3],[3,3,3],[3,3,3]];
+const RISKNAME=['ความเสี่ยงต่ำ','ความเสี่ยงปานกลาง','ความเสี่ยงสูง','ความเสี่ยงสูงมาก'];
+const RV=['--r0','--r1','--r2','--r3'], RS=['--r0s','--r1s','--r2s','--r3s'];
+const GR=['≥ 90','60–89','45–59','30–44','15–29','< 15'];
+const AR=['< 30','30–300','> 300'];
+
+let pinned=null; // heatmap cell override [g,a]
+
+/* KFRE 4-variable (Tangri, JAMA 2016) — non-North American calibration */
+function kfre(age,male,egfr,acr){
+  const s=-0.2201*(age/10-7.036)+0.2467*((male?1:0)-0.5642)-0.5567*(egfr/5-7.222)+0.4510*(Math.log(acr)-5.137);
+  const e=Math.exp(s);
+  return {y2:1-Math.pow(0.9832,e), y5:1-Math.pow(0.9365,e)};
+}
+function kfreHtml(age,sex,egfr,acr){
+  if(age==null||acr==null||acr<=0)return '';
+  if(egfr>=60)return '<p class="warnline">KFRE (KDIGO 2024) ใช้ใน G3–G5 เท่านั้น</p>';
+  const r=kfre(age,sex==='M',egfr,acr), p=v=>(v*100<1?'< 1':fmt(v*100,1))+'%';
+  const act=[];
+  if(r.y5>=0.03) act.push('5 ปี ≥ 3%: เข้าเกณฑ์ส่งอายุรแพทย์โรคไต (เกณฑ์ 3–5%)');
+  if(r.y2>0.10) act.push('2 ปี > 10%: เข้าดูแลแบบทีมสหสาขา');
+  if(r.y2>0.40) act.push('2 ปี > 40%: เริ่มให้ความรู้และเตรียม KRT');
+  return `<div class="kfre"><div class="num"><span class="v">${p(r.y2)}</span><span class="k">KFRE 2 ปี</span></div><div class="num"><span class="v">${p(r.y5)}</span><span class="k">KFRE 5 ปี</span></div><p class="warnline" style="flex:1 1 220px">${act.length?act.join('<br>'):'ความเสี่ยงไตวายต่ำกว่าเกณฑ์ส่งต่อของ KDIGO 2024'} <span class="hint">· KDIGO 2024, non-North American calibration</span></p></div>`;
+}
+
+function followUp(g,acr){
+  const a=acr;
+  if(g<=1) return a>300?'ทุก 6 เดือน (ACR > 300)':'อย่างน้อยทุก 12 เดือน';
+  if(g===2) return a>300?'ทุก 4 เดือน (ACR > 300)':(a!=null&&a<30?'ทุก 12 เดือน ถ้า eGFR คงที่และไม่มี proteinuria':'อย่างน้อยทุก 6 เดือน');
+  if(g===3) return a>30?'ทุก 4 เดือน (ACR > 30)':'อย่างน้อยทุก 6 เดือน';
+  if(g===4) return a>300?'ทุก 3 เดือน (ACR > 300)':'อย่างน้อยทุก 4 เดือน';
+  return 'ทุก 1–3 เดือนตามอาการ';
+}
+
+function render(){
+  const sex=segVal('#sex'), age=num('#age'), scr=num('#scr'), acrIn=num('#acr'), dec=num('#dec');
+  const cys=num('#cys'), K=num('#k'), hco3=num('#hco3'), hb=num('#hb');
+  const dm=$('#dm').checked, htn=$('#htn').checked, ascvd=$('#ascvd').checked, hf=$('#hf').checked;
+  const res=$('#result'), plan=$('#plan');
+  if(!age||!scr||age<18){res.innerHTML='<div class="panel"><p class="warnline">กรอกอายุ (≥ 18 ปี) และ creatinine เพื่อคำนวณ</p></div>';plan.innerHTML='';return}
+  const e1=ckdepi(scr,age,sex), e2=thai(scr,age,sex), e3=cys?crcys(scr,cys,age,sex):null;
+  const egfr=e3??e1;
+  let g=gIdx(egfr), a=acrIn==null?null:aIdx(acrIn);
+  let gUse=g,aUse=a??0;
+  if(pinned){gUse=pinned[0];aUse=pinned[1]}
+  const lvl=RISK[gUse][aUse];
+  const notCKD=(egfr>=60&&(a==null||a===0));
+
+  // heatmap
+  let hm='<div class="heat-wrap"><table class="heat"><thead><tr><th></th>'+AR.map((r,i)=>`<th class="top">A${i+1}<br>${r}</th>`).join('')+'</tr></thead><tbody>';
+  for(let i=0;i<6;i++){hm+=`<tr><th>${GS[i]} <span class="mono" style="font-size:11px">${GR[i]}</span></th>`;
+    for(let j=0;j<3;j++){const l=RISK[i][j];const here=(i===gUse&&j===aUse);hm+=`<td class="l${l}${here?' here':''}" data-g="${i}" data-a="${j}" title="${GS[i]}A${j+1} · ${RISKNAME[l]}"><span class="dot"></span>${GS[i]}A${j+1}</td>`}
+    hm+='</tr>'}
+  hm+='</tbody></table></div>';
+
+  res.innerHTML=`
+   <div class="panel headline">
+     <div class="stagebadge" style="--rc:var(${RV[lvl]});--rs:var(${RS[lvl]})"><b>${GS[gUse]}${'A'+(aUse+1)}</b><small>${RISKNAME[lvl]}</small></div>
+     <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+       <div class="nums">
+         <div class="num"><span class="v">${fmt(e1)}</span><span class="k">CKD-EPI (Cr)</span></div>
+         <div class="num"><span class="v">${fmt(e2)}</span><span class="k">Thai eGFR</span></div>
+         ${e3?`<div class="num"><span class="v">${fmt(e3)}</span><span class="k">CKD-EPI Cr–Cys</span></div>`:''}
+         <div class="num"><span class="v">${acrIn==null?'—':fmt(acrIn)}</span><span class="k">UACR mg/g</span></div>
+       </div>
+       ${pinned?`<p class="warnline">กำลังดูช่อง ${GS[gUse]}A${aUse+1} ที่เลือกจากตาราง · <a href="#" id="unpin">กลับไปใช้ค่าผู้ป่วย</a></p>`:''}
+       ${notCKD&&!pinned?'<p class="warnline">eGFR ≥ 60 และ ACR &lt; 30: ไม่เข้าเกณฑ์ CKD จากสองค่านี้ ยกเว้นมี kidney damage อื่น เช่น hematuria, ภาพรังสีผิดปกติ, ประวัติปลูกถ่ายไต</p>':''}
+       <p class="warnline">ติดตาม eGFR + albuminuria: <b style="color:var(--fg)">${followUp(gUse,pinned?[10,100,400][aUse]:acrIn)}</b> <span class="g">NG</span></p>
+       ${kfreHtml(pinned?null:age,sex,egfr,acrIn)}
+     </div>
+   </div>
+   <div class="panel">${hm}<p class="hint" style="margin-top:8px">แตะช่องในตารางเพื่อดูแผนการดูแลของระยะนั้น</p></div>`;
+  const up=$('#unpin');if(up)up.addEventListener('click',ev=>{ev.preventDefault();pinned=null;render()});
+  res.querySelectorAll('td[data-g]').forEach(td=>td.addEventListener('click',()=>{pinned=[+td.dataset.g,+td.dataset.a];render()}));
+
+  // ---- plan cards ----
+  const ev=pinned?[95,70,52,37,22,10][gUse]:egfr;
+  const acr=pinned?[10,100,400][aUse]:acrIn;
+  const gg=pinned?gUse:g;
+  const cards=[];
+
+  // Referral
+  const ref=[];
+  if(ev<30) ref.push('eGFR < 30 → ส่งอายุรแพทย์โรคไต'+G('1B'));
+  if(dec!=null&&dec>5&&!pinned) ref.push(`eGFR ลดลง ${fmt(dec,1)} mL/min/ปี (> 5) → ส่งอายุรแพทย์โรคไต`);
+  if(acr!=null&&acr>=300) ref.push('ACR ≥ 300 mg/g หลังคุม BP ถึงเป้าแล้ว → ส่งอายุรแพทย์โรคไต');
+  if(K!=null&&K>5.5&&!pinned) ref.push('K⁺ สูงเรื้อรัง → ส่งอายุรแพทย์โรคไต');
+  if(ev>=30&&ev<60&&!(dec>5)) ref.push('eGFR 30–59 ที่ลดลง ≤ 5/ปี → ดูแลโดยอายุรแพทย์ได้');
+  cards.push({t:'การส่งต่อ',tag:'ข้อ 4',flag:ref.some(x=>x.includes('โรคไต')),items:ref.concat(['ส่งโรคไตเพิ่ม: stage เปลี่ยนแย่ลงหรือ eGFR ลด > 25% จากเดิม, HT ไม่คุมแม้ยา ≥ 4 ชนิด, RBC cast หรือ RBC > 20/HPF ไม่ทราบสาเหตุ, นิ่วซ้ำ, โรคไตกรรมพันธุ์, renal artery stenosis, AKI ไม่ดีขึ้น'])});
+
+  // BP & RAS
+  const bp=['เป้า BP < 130/80 (G1–G4)'+G('1B'),'SBP ไม่ต่ำกว่า 120 · DBP 70–79 · อายุ > 65 ปีอาจใช้ SBP < 140','Na < 2 g/วัน · ออกกำลังกายปานกลาง ≥ 150 นาที/สัปดาห์'+G('2C')];
+  let ras;
+  if(acr==null) ras='ใส่ค่า ACR เพื่อดูข้อบ่งชี้ ACEi/ARB';
+  else if(dm&&acr>=30) ras='DM + ACR ≥ 30 → ACEi หรือ ARB'+G(acr>300?'1A':'1B')+' ปรับจนถึงขนาดสูงสุดที่ทนได้';
+  else if(!dm&&acr>300) ras='ไม่เป็น DM + ACR > 300 → ACEi หรือ ARB'+G('1B');
+  else if(!dm&&acr>=30) ras='ไม่เป็น DM + ACR 30–300 → แนะนำ ACEi หรือ ARB'+G('2C');
+  else if(htn) ras='ACR < 30 + HT → อาจพิจารณา ACEi/ARB'+G('NG');
+  else ras='DM ไม่มี HT และ ACR < 30 → ไม่แนะนำ ACEi/ARB'+G('2A');
+  bp.push(ras);
+  bp.push('ส่วนใหญ่ต้องใช้ยา ≥ 2 ชนิด: เพิ่ม long-acting DHP-CCB หรือ diuretic');
+  cards.push({t:'ความดันและ RAS blockade',tag:'ข้อ 5–6',items:bp});
+
+  // Diabetes
+  if(dm){
+    const d=[];
+    d.push('HbA1c เป้า 6.5% ถึง < 8% ตามรายบุคคล'+G('1C')+' ตรวจปีละ 2 ครั้ง (4 ครั้งถ้ายังไม่ถึงเป้า)');
+    if(ev>=60) d.push('Metformin: ขนาดปกติ ตรวจ eGFR ปีละครั้ง');
+    else if(ev>=45) d.push('Metformin: ขนาดเดิม ติดตาม eGFR ทุก 3–6 เดือน ลดขนาดถ้าเสี่ยง hypoperfusion/hypoxemia');
+    else if(ev>=30) d.push('Metformin: ลดเหลือครึ่งหนึ่ง (เริ่มใหม่ให้เริ่มครึ่งขนาด)');
+    else d.push('Metformin: <b>ไม่เริ่ม / หยุดยา</b> (eGFR < 30)');
+    if(ev>=20) d.push('SGLT2i: เริ่มได้ (eGFR ≥ 20)'+G('1A')+' ให้ต่อจนเริ่มล้างไต');
+    else d.push('SGLT2i: ไม่เริ่มใหม่ (eGFR < 20) ถ้าใช้อยู่แล้วให้ต่อได้');
+    d.push(ev>=30?'ยังไม่ถึงเป้า → GLP-1 RA ออกฤทธิ์ยาว'+G('1B')+' ไม่ใช้ร่วม DPP-4i':'ยังไม่ถึงเป้า → GLP-1 RA ออกฤทธิ์ยาว'+G('1B')+' (ข้อ 6.8 ระบุผลต่อไตเมื่อ eGFR ≥ 30)');
+    if(acr!=null&&acr>=30&&ev>=25) d.push('ACR ยัง ≥ 30 แม้ RASi เต็มขนาด → พิจารณา finerenone ถ้า K⁺ ≤ 4.8'+G('2A'));
+    d.push('Vitamin B12 ถ้าใช้ metformin > 4 ปี');
+    cards.push({t:'เบาหวาน',tag:'ข้อ 7',items:d});
+  }
+
+  // Lipid
+  const lp=[];
+  if(age>=50&&ev<60) lp.push('อายุ ≥ 50 + eGFR < 60 → statin หรือ statin/ezetimibe'+G('2B'));
+  else if(age>=50) lp.push('อายุ ≥ 50 + eGFR ≥ 60 → statin'+G('2B'));
+  else if(dm||ascvd) lp.push('อายุ 18–49 มี '+(dm?'DM':'CAD/ischemic stroke')+' → statin'+G('2B'));
+  else lp.push('อายุ 18–49 ไม่มี DM/CAD/stroke → statin เมื่อ 10-yr CHD risk > 10%');
+  const dose=gg<=1?'Atorva 40–80 · Rosuva 20 · Simva/Eze 40/10':gg===2?'Atorva 40–80 · Rosuva 20 · Simva/Eze 40/10':'Atorva 20–40 · Rosuva 10 · Simva/Eze 20/10 · Pitava 2';
+  lp.push('ขนาดตามระยะ: '+dose);
+  lp.push('LDL < 100 mg/dL (primary prevention)'+G('2C')+' · TG < 150 พิจารณา');
+  lp.push('ตรวจ lipid ซ้ำทุก 3–12 เดือนหลังเริ่มยา · TG > 1,000 หรือ LDL > 190 ส่งผู้เชี่ยวชาญ');
+  cards.push({t:'ไขมันในเลือด',tag:'ข้อ 8',items:lp});
+
+  // CKD-MBD
+  if(gg>=3){
+    const m=[];
+    if(gg===3) m.push('Ca, PO₄ ทุก 6–12 เดือน · iPTH ทุก 12 เดือนถ้า PTH ตั้งต้น > 65 หรือ eGFR ลดลง');
+    if(gg===4) m.push('Ca, PO₄ ทุก 3–6 เดือน · iPTH ทุก 6–12 เดือน');
+    if(gg===5) m.push('Ca, PO₄ ทุก 1–3 เดือน · iPTH ทุก 3–6 เดือน');
+    m.push('PO₄ > 4.5 (G3a–4) / > 5.5 (G5) → จำกัดฟอสเฟต 800–1,000 mg/วัน เลี่ยง inorganic phosphate'+G('2B'));
+    m.push('ยังสูงค้าง → phosphate binder'+G('1C')+' เลี่ยง Ca-based ถ้า Ca > 10 หรือมี vascular calcification');
+    m.push('25(OH)D < 20 ให้ natural vitamin D จน > 30 · PTH สูงต่อเนื่องใน G4–5 → calcitriol/analog'+G('2B'));
+    m.push('ประเมินกระดูกหักด้วย FRAX (เลือก Thailand)');
+    cards.push({t:'Ca · PO₄ · PTH (CKD-MBD)',tag:'ข้อ 11',items:m});
+  }
+
+  // Anemia
+  const an=[];
+  const hbLow=sex==='F'?12:13;
+  if(hb!=null&&!pinned){
+    if(hb<hbLow) an.push(`Hb ${fmt(hb,1)} < ${hbLow} = โลหิตจาง → หาสาเหตุ, ตรวจ ferritin/TSAT`+G('2C'));
+    else an.push(`Hb ${fmt(hb,1)} ไม่ซีด`);
+    if(hb<10) an.push('Hb < 10 และคาดว่าได้ประโยชน์ → เริ่ม ESA'+G('2B')+' หลังแก้ภาวะขาดเหล็ก');
+  }
+  an.push(gg>=4?'ยังไม่ซีด: ตรวจ Hb อย่างน้อยทุก 6 เดือน':gg>=2?'ยังไม่ซีด: ตรวจ Hb อย่างน้อยปีละครั้ง':'ตรวจ Hb เมื่อมีข้อบ่งชี้');
+  an.push('TSAT ≤ 30% และ/หรือ ferritin ≤ 500 → เหล็กกิน 1–3 เดือน ไม่ตอบสนองให้ IV'+G('1A'));
+  an.push('ESA เป้า Hb 10–12 ไม่เกิน 13'+G('1B')+' ระวังใน stroke และมะเร็ง');
+  cards.push({t:'โลหิตจาง',tag:'ข้อ 12',items:an});
+
+  // Acidosis / K
+  if(gg>=2){
+    const ac=[];
+    if(hco3!=null&&!pinned) ac.push(hco3<22?`HCO₃⁻ ${fmt(hco3)} < 22 → ให้ NaHCO₃`+G('1A'):`HCO₃⁻ ${fmt(hco3)} ยังไม่ต้องให้ยา`);
+    else ac.push('HCO₃⁻ < 22 → NaHCO₃ เพื่อชะลอไตเสื่อม'+G('1A'));
+    ac.push('เป้า HCO₃⁻ 24–26'+G('2B'));
+    ac.push('กินผักผลไม้ได้ถ้า K⁺ ปกติ เพื่อลด NEAP'+G('2A'));
+    if(K!=null&&!pinned) ac.push(K>5.5?`K⁺ ${fmt(K,1)}: หาสาเหตุ (เกลือโพแทสเซียม, ผลไม้, NSAIDs) ให้ diuretic/K binder ลด RASi เมื่อแก้ไม่ได้`:K>5?`K⁺ ${fmt(K,1)}: ยังให้ RASi ต่อได้ แก้สาเหตุร่วม`:`K⁺ ${fmt(K,1)} ปกติ`);
+    cards.push({t:'กรด-ด่าง และโพแทสเซียม',tag:'ข้อ 13',items:ac});
+  }
+
+  // Nutrition
+  const nu=['พลังงาน 25–35 kcal/kg/วัน (ใช้ IBW ถ้า BMI ผิดปกติ)'+G('1B')];
+  if(gg>=2) nu.push(dm?'DM + G3a–5: โปรตีน 0.6–0.8 g/kg/วัน'+G('2D'):'ไม่เป็น DM + G3a–5: โปรตีน 0.6 g/kg/วัน'+G('1A')+' หรือ < 0.4 + keto analog');
+  else nu.push('ไม่ควรเกิน 1.3 g/kg/วัน ในผู้ที่เสี่ยงดำเนินโรค'+G('1B'));
+  nu.push('ชั่งน้ำหนัก วัด BP ดูบวมทุกครั้ง · albumin ทุก 3–6 เดือน · คัดกรอง PEW ทุก 6 เดือน');
+  nu.push('BMI เป้า 18.5–22.9'+G('2B')+' · งดบุหรี่'+G('1A'));
+  cards.push({t:'โภชนาการและวิถีชีวิต',tag:'ข้อ 6, 9, 10',items:nu});
+
+  // CV
+  const cv=['ถือว่า CKD เป็นกลุ่ม very high CV risk'+G('1A'),'คัดกรอง CVD และ PAD ตั้งแต่วินิจฉัย'+G('1A'),'Aspirin เฉพาะ secondary prevention'+G('1A')];
+  if(ev<60) cv.push('แปลผล troponin และ BNP/NT-proBNP ด้วยความระมัดระวังเมื่อ eGFR < 60');
+  if(hf) cv.push('HFrEF: ACEi/ARB + β-blocker + SGLT2i'+(ev>=30?' + MRA (ตรวจ K⁺)':'')+' · ARNI ถ้ายังมีอาการ');
+  cv.push(ev>=15?'AF + CHA₂DS₂-VASc ≥ 2 → warfarin หรือ DOAC (dabigatran เมื่อ CrCl ≥ 30)'+G('1A'):'AF + CHA₂DS₂-VASc ≥ 2 → warfarin เป็นรายบุคคล'+G('2C'));
+  cards.push({t:'หัวใจและหลอดเลือด',tag:'ข้อ 16',items:cv});
+
+  // Vaccines
+  const vac=[];
+  vac.push(gg<=1?'HBV: ขนาดปกติ 3 เข็ม (0,1,6)':gg<=4?'HBV: ขนาดปกติ 4 เข็ม (0,1,2,6)':'HBV: 2 เท่า 4 เข็ม (0,1,2,6) แบ่งฉีด deltoid 2 ข้าง');
+  vac.push('ตรวจ anti-HBs 1–2 เดือนหลังเข็มสุดท้าย < 10 → ซ้ำขนาด 2 เท่า 4 เข็ม'+G('2B'));
+  vac.push('Influenza ทุกปี'+G('2B')+' · COVID-19'+G('2B'));
+  if(ev<30||age>65||dm) vac.push('Pneumococcal: มีข้อบ่งชี้ ('+[ev<30?'eGFR < 30':null,age>65?'อายุ > 65':null,dm?'DM':null].filter(Boolean).join(', ')+')'+G('2B'));
+  cards.push({t:'วัคซีน',tag:'ข้อ 15',items:vac});
+
+  // RRT prep
+  if(gg>=4){
+    const rr=['ให้ความรู้ทางเลือก HD / PD / ปลูกถ่ายไต / ประคับประคอง พร้อมสิทธิประโยชน์'+G('1B'),'บันทึกการวางแผนในเวชระเบียนอย่างน้อยปีละครั้ง'+G('1B'),'เลือก HD → เตรียม AVF/AVG ให้พร้อมก่อนเริ่ม'+G('1B'),'เลือก PD → ใส่สายอย่างน้อย 2 สัปดาห์ก่อนเริ่ม'];
+    if(ev<20) rr.push('eGFR < 20 → ประเมิน pre-emptive living donor KT ทุกราย · ทำเมื่อ eGFR < 10 หรือมี uremia');
+    cards.push({t:'เตรียมบำบัดทดแทนไต',tag:'ข้อ 17',flag:true,items:rr});
+  }
+
+  // Avoid
+  const av=['เลี่ยง NSAIDs/COX-2, ระวัง aminoglycoside และสมุนไพร','Contrast: low/iso-osmolar + IV fluid, ตรวจ eGFR 48–96 ชม.'+G('1A')];
+  if(ev<60) av.push('ห้าม oral phosphate bowel prep'+G('1A'));
+  if(ev<30) av.push('Gadolinium: เลือก macrocyclic'+(ev<15?' · เลี่ยงถ้ามีวิธีอื่น':''));
+  av.push('ACEi/ARB/MRA: ตรวจ Cr, K⁺ ใน 2–4 สัปดาห์หลังเริ่มหรือเพิ่มขนาด');
+  cards.push({t:'ยาและการตรวจที่ต้องระวัง',tag:'ข้อ 3.2, 14',items:av});
+
+  plan.innerHTML=cards.map(c=>`<div class="card${c.flag?' flag':''}"><h4>${c.t}<span class="tag">${c.tag}</span></h4><ul>${c.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+}
+
+seg('#sex',render);
+['#age','#scr','#acr','#dec','#cys','#k','#hco3','#hb'].forEach(id=>$(id).addEventListener('input',()=>{pinned=null;render()}));
+['#dm','#htn','#ascvd','#hf'].forEach(id=>$(id).addEventListener('change',render));
+render();
+
+/* ---------- RAS tool ---------- */
+function ras(){
+  const c0=num('#r_cr0'),c1=num('#r_cr1'),k=num('#r_k'),sbp=num('#r_sbp'),eg=num('#r_egfr');
+  const o=$('#r_out');
+  if(!c0||!c1){o.className='out';o.innerHTML='กรอก creatinine ก่อนและหลังเริ่มยา';return}
+  const pct=(c1-c0)/c0*100;
+  let cls,head,body;
+  if(pct<=30){cls='go';head='ให้ยาต่อในขนาดเดิม';body='Cr เพิ่มไม่เกิน 30% ภายใน 4 สัปดาห์ เป็นผลทาง hemodynamic ที่คาดได้ (ข้อ 5.13)'}
+  else if(pct<50){cls='mid';head='ลดขนาดยาลงครึ่งหนึ่ง';body='Cr เพิ่ม 30–50% · หาสาเหตุ: volume depletion, HF, bilateral RAS, NSAIDs/สมุนไพร'}
+  else {cls='stop';head='หยุด ACEi / ARB';body='Cr เพิ่มเกิน 50% · หาสาเหตุที่ทำให้ไตเสื่อมก่อนพิจารณาเริ่มใหม่'}
+  let kline='';
+  if(k!=null){
+    if(k>5.5) kline='K⁺ > 5.5: ลดอาหาร K สูง เลิก NSAIDs ให้ kaliuretic diuretic หรือ K binder · ลด/หยุดยาเมื่อแก้ไม่ได้';
+    else if(k>5.0) kline='K⁺ 5.1–5.5: ไม่ต้องลดยา หาสาเหตุอื่นร่วมและแก้ไข (ข้อ 5.14)';
+    else kline='K⁺ ไม่เกิน 5.0';
+  }
+  // monitoring interval table 5.3
+  const lv=[];
+  if(sbp!=null) lv.push(sbp>=120?0:sbp>=110?1:2);
+  if(eg!=null) lv.push(eg>60?0:eg>=30?1:2);
+  lv.push(pct<15?0:pct<=30?1:2);
+  if(k!=null) lv.push(k<=4.5?0:k<=5.0?1:2);
+  const w=Math.max(...lv);
+  const iv=[['4–12 สัปดาห์','6–12 เดือน'],['2–4 สัปดาห์','3–6 เดือน'],['< 2 สัปดาห์','1–3 เดือน']][w];
+  o.className='out '+cls;
+  o.innerHTML=`<span class="mono">Creatinine ${pct>=0?'+':''}${fmt(pct,0)}%</span><b class="big">${head}</b><span>${body}</span>${kline?`<span>${kline}</span>`:''}<span style="border-top:1px solid var(--line);padding-top:6px;margin-top:4px">นัดติดตาม (ตาราง 5.3): หลังปรับยา <b>${iv[0]}</b> · เมื่อถึงเป้าและขนาดคงที่ <b>${iv[1]}</b></span>`;
+}
+['#r_cr0','#r_cr1','#r_k','#r_sbp','#r_egfr'].forEach(id=>$(id).addEventListener('input',ras));ras();
+
+/* ---------- Finerenone ---------- */
+function fin(){
+  const k=num('#f_k'),eg=num('#f_egfr'),st=segVal('#f_state'),o=$('#f_out');
+  if(k==null||eg==null){o.className='out';o.innerHTML='กรอก K⁺ และ eGFR';return}
+  let cls,h,b=[];
+  if(st==='new'){
+    if(eg<25){cls='stop';h='ไม่เริ่มยา';b.push('eGFR < 25 อยู่นอกเกณฑ์การศึกษา')}
+    else if(k<=4.8){cls='go';h=eg>=60?'เริ่ม 20 มก./วัน':'เริ่ม 10 มก./วัน';b.push('ตรวจ K⁺ ที่ 1 เดือน แล้วทุก 4 เดือน')}
+    else {cls='stop';h='ยังไม่เริ่มยา';b.push('K⁺ > 4.8 · แก้ไขก่อนแล้วประเมินใหม่')}
+  } else {
+    if(k<=4.8){cls='go';h='ให้ต่อ · เพิ่มเป็น 20 มก./วัน ถ้ากำลังใช้ 10 มก.';b.push('ตรวจ K⁺ ทุก 4 เดือน')}
+    else if(k<=5.5){cls='warn';h='ให้ต่อในขนาด 10–20 มก./วัน';b.push('ตรวจ K⁺ ทุก 4 เดือน')}
+    else {cls='stop';h='หยุด finerenone';b.push('ลดอาหาร K สูง ปรับยาที่ทำให้ K สูง ตรวจ K⁺ ซ้ำ','กลับมาเริ่ม 10 มก./วัน เมื่อ K⁺ ≤ 5.0')}
+  }
+  o.className='out '+cls;o.innerHTML=`<b class="big">${h}</b>${b.map(x=>`<span>${x}</span>`).join('')}`;
+}
+seg('#f_state',fin);['#f_k','#f_egfr'].forEach(id=>$(id).addEventListener('input',fin));fin();
+
+/* ---------- Nutrition ---------- */
+function nut(){
+  const ht=num('#n_ht'),sx=$('#n_sex').value,stg=$('#n_stage').value,dm=$('#n_dm').value==='1',o=$('#n_out');
+  if(!ht){o.innerHTML='กรอกส่วนสูง';return}
+  const ibw=ht-(sx==='M'?100:105);
+  let p,pnote;
+  if(stg==='acute'){p=[1.0,2.5];pnote='เจ็บป่วยเฉียบพลัน/PEW: 1.0–2.5 g/kg (1C) ติดตามการทำงานของไต'}
+  else if(stg==='3'){p=dm?[0.6,0.8]:[0.6,0.6];pnote=dm?'DM + G3a–5: 0.6–0.8 g/kg ภายใต้การติดตามใกล้ชิด (2D)':'G3a–5 ไม่เป็น DM: 0.6 g/kg (1A) หรือ < 0.4 g/kg + keto/amino acid analog'}
+  else {p=[0,1.3];pnote='G1–2 ที่เสี่ยงดำเนินโรค: ไม่เกิน 1.3 g/kg (1B)'}
+  const pr=p[0]===0?`≤ ${fmt(ibw*p[1])}`:(p[0]===p[1]?fmt(ibw*p[0]):`${fmt(ibw*p[0])}–${fmt(ibw*p[1])}`);
+  o.className='out';
+  o.innerHTML=`<span>น้ำหนักอุดมคติ (IBW) <b class="mono">${fmt(ibw)} kg</b></span>
+  <span>พลังงาน <b class="mono">${fmt(ibw*25)}–${fmt(ibw*35)} kcal/วัน</b> <span class="hint">(25–35 kcal/kg)</span></span>
+  <span>โปรตีน <b class="mono big">${pr} g/วัน</b></span><span class="hint">${pnote}</span>
+  <span class="hint">โซเดียม &lt; 2,000 mg/วัน (1B) · ไม่เสริมวิตามินเป็นประจำ ให้เฉพาะเมื่อขาด</span>`;
+}
+['#n_ht','#n_sex','#n_stage','#n_dm'].forEach(id=>$(id).addEventListener('input',nut));nut();
+
+/* ---------- nPNA ---------- */
+function npna(){
+  const u=num('#p_uun'),v=num('#p_vol'),w=num('#p_wt'),o=$('#p_out');
+  if(!u||!v||!w){o.innerHTML='กรอกค่าให้ครบ';return}
+  const uun=u*v/100000, nun=0.031*w, una=uun+nun, pna=una*6.25, n=pna/w;
+  o.className='out';
+  o.innerHTML=`<span class="mono">UUN ${fmt(uun,2)} + NUN ${fmt(nun,2)} = UNA ${fmt(una,2)} gN/วัน</span><span class="mono">PNA = UNA × 6.25 = ${fmt(pna,1)} g/วัน</span><span>nPNA <b class="mono big">${fmt(n,2)} g/kg/วัน</b></span>`;
+}
+['#p_uun','#p_vol','#p_wt'].forEach(id=>$(id).addEventListener('input',npna));npna();
+
+/* ---------- Recommendations data ---------- */
+const CH=[
+ {n:1,t:'กลุ่มเสี่ยงที่ควรคัดกรอง CKD',r:[
+  ['1.1–1.2','เบาหวาน, ความดันโลหิตสูง','1A'],
+  ['1.3–1.4','โรคแพ้ภูมิตนเองที่อาจทำให้ไตผิดปกติ, นิ่วในไต/ทางเดินปัสสาวะ','2B'],
+  ['1.5–1.14','อายุ > 60 ปี, CVD, มวลเนื้อไตลดลง/ไตข้างเดียว, ญาติสายตรงเป็น ADPKD หรือพบถุงน้ำ > 3 ตำแหน่ง, ประวัติ AKI, ใช้ NSAIDs/nephrotoxin ประจำ, UTI ส่วนบนซ้ำ, gout/uric สูง, ประวัติ CKD ในครอบครัว, ใช้สมุนไพรต่อเนื่อง','2C'],
+  ['1.15','การติดเชื้อในระบบต่างๆ ที่อาจก่อโรคไต','NG']]},
+ {n:2,t:'การคัดกรองโรคไตเรื้อรัง',r:[
+  ['2.1','eGFR อย่างน้อยปีละครั้งด้วย SCr + สมการ CKD-EPI · Cr วัดด้วย enzymatic method รายงานทศนิยม 2 ตำแหน่ง ระบุสูตร · ใช้ Thai eGFR ได้','1B'],
+  ['2.1.1.4','eGFR(Cr) 45–59 ไม่มี kidney damage อื่น → ตรวจ cystatin C (CKD-EPI Cr–Cys 2012) · มีปัจจัยรบกวน Cr → 24-h CrCl','2C'],
+  ['2.2.1','Dipstick protein ≥ 1+ โดยไม่มีสาเหตุผลบวกลวง = ผิดปกติ','2C'],
+  ['2.2.2','DM/HT ที่ dipstick ลบ → ตรวจ spot morning UACR (30–300 = moderately increased) หรือ microalbumin strip (cut-off 20 mg/L) บวก 2 ใน 3 ครั้งใน 3 เดือน','2B'],
+  ['2.3','Dipstick blood บวก → microscopy · RBC > 5/HPF (ปั่น) โดยไม่มีสาเหตุผลบวกลวง = ผิดปกติ','2D'],
+  ['2.4','ผิดปกติ → ตรวจซ้ำใน 3 เดือน ยืนยัน = CKD · ไม่ยืนยัน = คัดกรองใหม่ปีถัดไป','2D'],
+  ['2.5','KUB / U/S KUB ตามข้อบ่งชี้รายบุคคล','NG']],
+  note:'นิยาม CKD: ความผิดปกติโครงสร้างหรือหน้าที่ > 3 เดือน คือ albuminuria (ACR ≥ 30), urine sediment ผิดปกติ, electrolyte ผิดปกติจาก tubule, ภาพรังสีหรือพยาธิสภาพผิดปกติ, ประวัติปลูกถ่ายไต หรือ eGFR < 60'},
+ {n:3,t:'การติดตามการทำงานของไต',r:[
+  ['3.1.1','G1–2: ทุก 12 เดือน · ทุก 6 เดือนถ้า ACR > 300 หรือ UPCR > 500','NG'],
+  ['3.1.2','G3a: ทุก 6 เดือน · ทุก 4 เดือนถ้า ACR > 300 · ทุก 12 เดือนถ้าคงที่และไม่มี proteinuria','NG'],
+  ['3.1.3','G3b: ทุก 6 เดือน · ทุก 4 เดือนถ้า ACR > 30 หรือ UPCR > 150','NG'],
+  ['3.1.4–3.1.5','G4: ทุก 4 เดือน (ทุก 3 เดือนถ้า ACR > 300) · G5: ทุก 1–3 เดือน','NG'],
+  ['3.2','G3a–5: ตรวจ Cr และ K⁺ ใน 2–4 สัปดาห์หลังเริ่ม/เพิ่ม ACEi, ARB, MRA · ตรวจถี่ขึ้นเมื่อมี HF, ได้ NSAIDs/diuretic หรือเจ็บป่วยเฉียบพลัน','NG']]},
+ {n:4,t:'การส่งปรึกษาหรือส่งต่อ',r:[
+  ['4.1','ส่งอายุรแพทย์: eGFR 30–59 ที่ลดลงไม่เกิน 5/ปี โดยเฉพาะเมื่อมีข้อบ่งชี้ร่วม','1B'],
+  ['4.2','ส่งอายุรแพทย์โรคไต: stage แย่ลงหรือ eGFR ลด > 25% จากเดิม, eGFR ลด > 5/ปี, หรือ eGFR < 30','1B'],
+  ['4.3','ข้อบ่งชี้ร่วม: AKI ไม่ดีขึ้น, ACR ≥ 300 / UPCR ≥ 500 หลังคุม BP ได้, HT ไม่คุมด้วยยา ≥ 4 ชนิด, RBC cast หรือ RBC > 20/HPF ไม่ทราบสาเหตุ, K⁺ สูงเรื้อรัง, นิ่วซ้ำหรือมีการอุดกั้น, CKD กรรมพันธุ์, renal artery stenosis','1B']]},
+ {n:5,t:'การควบคุมความดันโลหิต',r:[
+  ['5.1–5.2','วัด office BP ด้วยวิธีมาตรฐาน (1B) · ใช้ HBPM/ABPM ร่วม (2B)','1B'],
+  ['5.3','Na < 2,000 mg/วัน (NaCl < 5 g) · ออกกำลังกายปานกลาง ≥ 150 นาที/สัปดาห์','2C'],
+  ['5.5','เป้า BP < 130/80 mmHg ใน G1–G4 ที่ยังไม่บำบัดทดแทนไต','1B'],
+  ['5.6','DM + HT + ACR > 30 → ACEi หรือ ARB','1B'],
+  ['5.7','ไม่เป็น DM + HT + ACR > 300 → ACEi หรือ ARB','1B'],
+  ['5.8','ไม่เป็น DM + HT + ACR 30–300 → ACEi หรือ ARB','2C'],
+  ['5.9','HT + ACR < 30 → อาจพิจารณา ACEi/ARB','NG'],
+  ['5.10','ห้ามใช้ ACEi + ARB หรือร่วมกับ DRI','1B'],
+  ['5.11–5.12','ใช้ขนาดสูงสุดที่ทนได้ · ตรวจ BP, Cr, K⁺ 2–4 สัปดาห์หลังเริ่ม/ปรับยา','NG'],
+  ['5.13','Cr เพิ่ม ≤ 30% ใน 4 สัปดาห์ ให้ยาต่อ (30–50% ลดครึ่ง, > 50% หยุดและหาสาเหตุ)','NG'],
+  ['5.14','K⁺ ≤ 5.5 จาก ACEi/ARB → หาสาเหตุอื่นและแก้ไข ไม่ต้องลดยา','NG'],
+  ['5.15','ลด/หยุด เมื่อ symptomatic hypotension, K⁺ สูงที่แก้ไม่ได้ หรือเพื่อลด uremia เมื่อ eGFR < 15','NG'],
+  ['5.16','ส่วนใหญ่ต้องใช้ยา ≥ 2 ชนิด (เพิ่ม long-acting DHP-CCB / diuretic)','NG']],
+  note:'เกณฑ์วินิจฉัย HT: office ≥ 140/90 · HBPM ≥ 135/85 · ABPM กลางวัน 135/85, กลางคืน 120/70, 24 ชม. 130/80 · ไม่ควรลด SBP ต่ำกว่า 120, DBP ที่เหมาะสม 70–79'},
+ {n:6,t:'การลดโปรตีนในปัสสาวะ',r:[
+  ['6.1','ลดโปรตีนในปัสสาวะให้ต่ำที่สุดเท่าที่ทำได้โดยไม่เกิดผลข้างเคียง','2B'],
+  ['6.2','DM + ACR 30–300 → ACEi หรือ ARB','2A'],
+  ['6.3','ACR > 300 (ทั้ง DM และไม่ DM) → ACEi หรือ ARB','1A'],
+  ['6.4','ปรับขนาดจนถึงเป้าโปรตีน หรือขนาดสูงสุด','2A'],
+  ['6.5','DM ไม่มี HT และ albuminuria < 30 → ไม่แนะนำ ACEi/ARB','2A'],
+  ['6.6','DM + eGFR ≥ 20 → SGLT2i เพื่อลดโปรตีนและชะลอไตเสื่อม · ใช้ต่อได้เมื่อ < 20 หยุดเมื่อเข้าสู่ RRT','2A'],
+  ['6.7','CKD ไม่เป็น DM → ใช้ SGLT2i ตามคำแนะนำการใช้ SGLT2i ใน CKD (เอกสารเพิ่มเติมแยก)','NG'],
+  ['6.8','DM + eGFR ≥ 30 + เสี่ยง CV/metabolic ที่คุมน้ำตาลไม่ได้ด้วย metformin/SGLT2i → GLP-1 RA','2A'],
+  ['6.9','BMI 18.5–22.9 kg/m²','2B'],
+  ['6.10','Na < 2 g/วัน','1A'],
+  ['6.11','โปรตีน ≤ 0.6 g/kg IBW/วัน (ไม่ DM, G3a ขึ้นไป) · 0.6–0.8 (DM)','1A'],
+  ['6.12','Glomerular disease → ตามแนวทาง GN พ.ศ. 2561','1A']]},
+ {n:7,t:'เบาหวานที่มี CKD',r:[
+  ['7.1.1','ดูแลแบบครอบคลุม: lifestyle + metformin/SGLT2i + RASi (มี albuminuria และ HT) + statin · เพิ่ม GLP-1 RA / ns-MRA ตามความเสี่ยงที่เหลือ','NG'],
+  ['7.1.2.1','DM + HT + albuminuria → ACEi/ARB ขนาดสูงสุดที่ทนได้ · ให้คุมกำเนิดในหญิง · แก้ K⁺ สูงก่อนลดยา','1B'],
+  ['7.1.3.1','T2DM, eGFR ≥ 25, K⁺ ≤ 4.8, ACR ≥ 30 แม้ได้ RASi เต็มขนาด → ns-MRA (finerenone)','2A'],
+  ['7.1.3.5','Steroidal MRA ใช้สำหรับ HF, hyperaldosteronism, refractory HT ระวัง K⁺ สูง','NG'],
+  ['7.1.4.1','งดบุหรี่และผลิตภัณฑ์ยาสูบ ลดควันบุหรี่มือสอง','1D'],
+  ['7.2.1.1','ติดตามด้วย HbA1c ปีละ 2 ครั้ง (4 ครั้งถ้าไม่ถึงเป้า) · ความแม่นยำลดลงใน G4–G5 ใช้ GMI จาก CGM ได้','1C'],
+  ['7.2.2.1','เป้า HbA1c 6.5% ถึง < 8% ตามรายบุคคล (G1, ไม่มีโรคร่วม, อายุคาดหมายยาว → เป้าต่ำ)','1C'],
+  ['7.3.2.1','ออกกำลังกายปานกลางสะสม ≥ 150 นาที/สัปดาห์ เลี่ยง sedentary · ลดน้ำหนักเมื่ออ้วนและ eGFR ≥ 30','1D'],
+  ['7.4.1.1','Metformin เมื่อ eGFR ≥ 30 · ลดครึ่งเมื่อ 30–44 · หยุดเมื่อ < 30 · เฝ้าระวัง B12 เมื่อใช้ > 4 ปี','1B'],
+  ['7.4.2.1','SGLT2i เมื่อ eGFR ≥ 20 · หยุดชั่วคราวช่วงเสี่ยง ketosis · eGFR dip ไม่ใช่เหตุหยุดยา · ยังไม่ใช้ในผู้ปลูกถ่ายไต','1A'],
+  ['7.4.3.1','ไม่ถึงเป้าแม้ metformin + SGLT2i หรือใช้ไม่ได้ → GLP-1 RA ออกฤทธิ์ยาว เริ่มขนาดต่ำ ไม่ใช้ร่วม DPP-4i ลด SU/insulin เพื่อเลี่ยง hypoglycemia','1B'],
+  ['7.5.1.1','โปรแกรม self-management education','1C'],
+  ['7.5.2.1','ดูแลแบบทีมสหสาขา','2B']]},
+ {n:8,t:'การควบคุมไขมันในเลือด',r:[
+  ['8.0','CKD G3a ขึ้นไปเป็นกลุ่มเสี่ยงสูง · G4–5 และผู้บำบัดทดแทนไตเสี่ยงสูงมากต่อ ASCVD','2B'],
+  ['8.1.1','CKD รายใหม่ตรวจ lipid profile เพื่อหา secondary cause · TG > 1,000 หรือ LDL > 190 ส่งผู้เชี่ยวชาญ','2B'],
+  ['8.1.3','LDL < 100 mg/dL (primary prevention) · TG < 150 อาจพิจารณา','2C'],
+  ['8.1.4','ตรวจติดตามทุก 3–12 เดือนหลังเริ่มรักษา · LDL ไม่ถึงเป้าให้ตรวจการกินยาก่อนเปลี่ยนยา','2C'],
+  ['8.2.1.1','อายุ ≥ 50 + eGFR < 60 (ไม่ได้ RRT) → statin หรือ statin/ezetimibe','2B'],
+  ['8.2.1.2','อายุ ≥ 50 + eGFR ≥ 60 → statin','2B'],
+  ['8.2.1.3','อายุ 18–49 → statin เมื่อมี CAD, DM, ischemic stroke หรือ 10-yr risk > 10%','2B'],
+  ['8.2.1.4','ผู้ปลูกถ่ายไต → statin','2B'],
+  ['8.4','Hypertriglyceridemia: lifestyle ก่อน (2B) · eGFR < 60 เริ่มยาเมื่อ TG ≥ 1,000 (2C)','2B']]},
+ {n:9,t:'การงดสูบบุหรี่',r:[
+  ['9.1–9.3','ผู้ที่ยังสูบเข้าสู่ ESKD เร็วกว่า ไตเสื่อมเร็วและ albuminuria มากกว่า และผู้ป่วยเบาหวานที่สูบมีอัตราเสียชีวิตสูงกว่า','1A'],
+  ['9.4','ผู้ที่สูบมีฟอสฟอรัสและ FGF-23 สูงกว่า','1B'],
+  ['9.5','เพิ่มความเสี่ยงโรคหัวใจและหลอดเลือด','1A']]},
+ {n:10,t:'โภชนบำบัด',r:[
+  ['10.1','ชั่งน้ำหนัก BP บวม ทุกครั้ง (1C) · BMI ทุก 3–6 เดือน (1C) · คัดกรอง PEW ทุก 6 เดือน (1C) · albumin ทุก 3–6 เดือน (2C) · NAF หรือ 7-point SGA','1C'],
+  ['10.2','พลังงาน 25–35 kcal/kg/วัน ใช้ IBW (ชาย = สูง − 100, หญิง = สูง − 105) ถ้า BMI ผิดปกติ','1B'],
+  ['10.3.1','G3a–5 ไม่ DM: โปรตีน 0.6 g/kg/วัน หรือ < 0.4 + keto/amino acid analogs','1A'],
+  ['10.3.2','G3a–5 ที่เป็น DM: โปรตีน 0.6–0.8 g/kg/วัน','2D'],
+  ['10.3.3','G1–5 เสี่ยงดำเนินโรค: ไม่เกิน 1.3 g/kg/วัน','1B'],
+  ['10.3.4','เจ็บป่วยเฉียบพลัน/hypercatabolic/PEW: 1.0–2.5 g/kg/วัน','1C'],
+  ['10.3.5','ประเมินโปรตีนที่กินทุก 3–6 เดือนด้วย nPNA หรือบันทึกอาหาร','2C'],
+  ['10.4.1','Na < 2,000 mg/วัน โดยเฉพาะผู้มี HT proteinuria หรือบวม','1B'],
+  ['10.5.1','รักษา K⁺ ให้ปกติ · K สูงให้หาสาเหตุ (ACEi, K-sparing diuretic) และกินอาหาร K ต่ำ','1B'],
+  ['10.6–10.7','ไม่เสริมวิตามินหรือแร่ธาตุเป็นประจำ ให้เฉพาะเมื่อขาดหรือเสี่ยงขาด','NG']]},
+ {n:11,t:'Ca · PO₄ · PTH · กระดูก (CKD-MBD)',r:[
+  ['11.1.1.1','เริ่มตรวจ Ca, PO₄, PTH, ALP ตั้งแต่ G3b','2C'],
+  ['11.1.1.2','G3a–3b: Ca/PO₄ ทุก 6–12 เดือน (iPTH ทุก 12 เดือนถ้า > 65) · G4: 3–6 เดือน, iPTH 6–12 · G5: 1–3 เดือน, iPTH 3–6','2C'],
+  ['11.1.2','ดูแนวโน้มของ Ca, PO₄, PTH, ALP ร่วมกันก่อนเปลี่ยนการรักษา','2C'],
+  ['11.2.1–11.2.3','G3b–5: ประเมินกระดูกหักด้วยประวัติ + FRAX · PTH/BAP · BMD (DXA) ถ้าผลเปลี่ยนการรักษา','2B'],
+  ['11.2.4','Bone biopsy เมื่อ bone turnover markers ไม่ชัด, ปวดกระดูก/กระดูกหักไม่ทราบสาเหตุ, สงสัย aluminum toxicity','2C'],
+  ['11.3.1','ลดฟอสเฟตให้ปกติ เลี่ยง hypercalcemia','2C'],
+  ['11.3.2–11.3.3','G3a–5 เลี่ยง inorganic phosphorus · PO₄ > 4.5 (G3a–4) / > 5.5 (G5) → ฟอสเฟต 800–1,000 mg/วัน','2B'],
+  ['11.3.4','ฟอสฟอรัสสูงค้าง → phosphate binder','1C'],
+  ['11.3.5–11.3.7','Ca > 10 → เลี่ยงยาที่มี Ca · จำกัด Ca-based binder เมื่อมี vascular calcification · เลี่ยง aluminum ระยะยาว','2B'],
+  ['11.4.1','iPTH > 65 ค้างหรือสูงขึ้น → หาสาเหตุ: phosphate load, PO₄ สูง, Ca ต่ำ, ขาด vitamin D · PTH ไม่ควรเกิน 300','2C'],
+  ['11.4.2','G4–5 PTH สูงต่อเนื่อง ไม่มี PO₄ สูง และ 25(OH)D > 30 → calcitriol หรือ analog','2B'],
+  ['11.4.3','Ca สูง → เลี่ยง calcitriol/analog','2C'],
+  ['11.5','G1–3 ที่ไม่มี MBD: วินิจฉัย/รักษากระดูกพรุนแบบคนทั่วไป (1A–1C) · G3a–5 ที่มี MBD: แก้ความผิดปกติก่อน พิจารณา biopsy ก่อนใช้ anti-resorptive · Ca 800–1,200 mg/วัน','1A']],
+  note:'25(OH)D < 20 ng/mL ให้ natural vitamin D จนได้ > 30 แล้วติดตาม PTH ก่อนพิจารณา calcitriol/alfacalcidol'},
+ {n:12,t:'ภาวะโลหิตจาง',r:[
+  ['12.1','โลหิตจาง: Hb < 13 (ชาย), < 12 (หญิง)','NG'],
+  ['12.2','ซีดต่อเนื่อง มีอาการ หรือก่อนให้ ESA → หาสาเหตุ','2C'],
+  ['12.3','ยังไม่ซีด: G3 ตรวจ Hb ปีละครั้ง, G4–5 ทุก 6 เดือน · ซีดแต่ยังไม่ได้ ESA: ทุก 3 เดือน','2C'],
+  ['12.4.1','ตรวจ ferritin, iron, TIBC, TSAT เมื่อซีด/สงสัยขาดเหล็ก ก่อนให้ ESA และทุก 3–6 เดือนระหว่างให้ ESA','2C'],
+  ['12.4.2–12.4.3','TSAT ≤ 30% และ/หรือ ferritin ≤ 500 → เหล็กกิน 1–3 เดือน ไม่ตอบสนองให้ IV ก่อนเริ่มหรือปรับ ESA','1A'],
+  ['12.5.1','ระวัง ESA ใน stroke (1A) และมะเร็งที่ได้เคมีบำบัดหรือคุมไม่ได้ (1B)','1A'],
+  ['12.5.2','เริ่ม ESA ใน G3–5 เมื่อ Hb < 10','2B'],
+  ['12.5.3','เป้า Hb 10–12 ไม่เกิน 13','1B'],
+  ['12.5.4','Hb เกินเป้า → ลดขนาด ESA มากกว่าหยุด','2C'],
+  ['12.6','ไม่ใช้ androgen, vitamin C/D/E, folic acid, L-carnitine, pentoxifylline เสริม ESA','2C']]},
+ {n:13,t:'ภาวะเลือดเป็นกรด',r:[
+  ['13.1','G3–5 กินผักผลไม้ได้ถ้าเกลือแร่ปกติ เพื่อลด NEAP','2A'],
+  ['13.2','G3–5 HCO₃⁻ < 22 → sodium bicarbonate เพื่อชะลอไตเสื่อม','1A'],
+  ['13.3','เป้า HCO₃⁻ 24–26 mmol/L','2B']],
+  note:'NEAP (mEq/วัน) = −10.2 + 54.5 × [protein (g/วัน) ÷ potassium (mEq/วัน)]'},
+ {n:14,t:'รังสีวิทยาและยาที่มีผลต่อไต',r:[
+  ['14.1','ชั่งประโยชน์กับความเสี่ยงไตจากสารทึบรังสีทุกครั้ง','NG'],
+  ['14.2','เลี่ยง NSAIDs รวม COX-2 inhibitor · ระวัง aminoglycoside และสมุนไพร','NG'],
+  ['14.3','ถ้าเลี่ยง contrast ไม่ได้: low/iso-osmolar non-ionic + IV fluid (1A) · ตรวจ eGFR 48–96 ชม. (2C)','1A'],
+  ['14.4','G5: เลี่ยง gadolinium ถ้ามีวิธีอื่น ใช้ไม่เกินขนาดฉลาก เว้นระยะการให้ซ้ำ','1B'],
+  ['14.5','G4–5 ที่จำเป็นต้องใช้ gadolinium → macrocyclic chelate','2B'],
+  ['14.6','ไม่ใช้ oral phosphate bowel prep เมื่อ eGFR < 60 หรือเสี่ยง phosphate nephropathy','1A']]},
+ {n:15,t:'วัคซีน',r:[
+  ['15.1','คัดกรอง HBV · G1–2 ขนาดปกติ 3 เข็ม (0,1,6) · G3–4 ขนาดปกติ 4 เข็ม (0,1,2,6) · G5 ขนาด 2 เท่า 4 เข็ม · ตรวจ anti-HBs 1–2 เดือนหลังเข็มสุดท้าย < 10 ให้ซ้ำ 2 เท่า 4 เข็ม','2B'],
+  ['15.2','Influenza ทุกปี','2B'],
+  ['15.3','Pneumococcal: eGFR < 30, อายุ > 65, DM, nephrotic syndrome, ได้ยากดภูมิ','2B'],
+  ['15.4','COVID-19','2B'],
+  ['15.5','วัคซีนอื่นตามคำแนะนำบุคคลทั่วไป','NG']]},
+ {n:16,t:'ลดความเสี่ยงโรคหัวใจและหลอดเลือด',r:[
+  ['16.1–16.3','ถือว่า CKD เสี่ยงสูงมาก · คัดกรอง CVD ตั้งแต่วินิจฉัย และตามข้อบ่งชี้เหมือนคนทั่วไป','1A'],
+  ['16.5–16.6','eGFR < 60: แปลผล BNP/NT-proBNP และ troponin ด้วยความระมัดระวัง','1B'],
+  ['16.7.1','Aspirin ไม่ใช้ primary prevention','2A'],
+  ['16.7.2','Aspirin สำหรับ secondary prevention','1A'],
+  ['16.8.2–16.8.3','HFrEF < 40%: ACEi (หรือ losartan/candesartan/valsartan) · β-blocker: bisoprolol, carvedilol, metoprolol','1A'],
+  ['16.8.4','HFrEF หรือ HFpEF → SGLT2i (secondary prevention)','2B'],
+  ['16.8.6–16.8.7','DM → SGLT2i ป้องกัน HF ทั้ง primary/secondary (1A) · มีข้อห้าม → GLP-1 RA (1B)','1A'],
+  ['16.8.8','eGFR ≥ 30 + LVEF ≤ 35% ยังมีอาการ → spironolactone/eplerenone ตรวจ K⁺ สม่ำเสมอ','1A'],
+  ['16.8.9–16.8.10','ยังมีอาการ: เปลี่ยนเป็น ARNI (2B) · eGFR ≥ 30 พิจารณา ICD (2B)','2B'],
+  ['16.9.1','AF + eGFR ≥ 15 + CHA₂DS₂-VASc ≥ 2 → warfarin หรือ DOAC (dabigatran เมื่อ CrCl ≥ 30)','1A'],
+  ['16.9.2','AF + eGFR < 15 → warfarin เป็นรายบุคคล','2C'],
+  ['16.10.4','eGFR 30–59 + CAD/PAD → aspirin + low-dose rivaroxaban (secondary prevention)','2B'],
+  ['16.11','คัดกรอง PAD ทุกราย (1A) · ตรวจเท้าใน DM · cilostazol secondary prevention (2C) · ไม่แนะนำ clopidogrel (NG)','1A'],
+  ['16.13','งดบุหรี่ ออกกำลังกาย คุมน้ำหนัก ลดโซเดียม','1B']]},
+ {n:17,t:'การเตรียมบำบัดทดแทนไต',r:[
+  ['17.1','เริ่มเตรียมเมื่อเข้าสู่ G4 (eGFR < 30)','1B'],
+  ['17.2','ให้ข้อมูล HD, PD, pre-emptive KT, ปลูกถ่ายไต และ conservative care รวมค่าใช้จ่ายและสิทธิประโยชน์','1B'],
+  ['17.3','G4 ที่ไตเสื่อมต่อเนื่อง: บันทึกแผนและการตัดสินใจในเวชระเบียนอย่างน้อยปีละครั้ง','1B'],
+  ['17.4–17.5','เลือก HD → เตรียม AVF/AVG ให้พร้อมก่อนเริ่ม ให้ความรู้การบริหารเส้น','1B'],
+  ['17.6','เลือก PD → ใส่สายอย่างน้อย 2 สัปดาห์ก่อนเริ่ม','NG'],
+  ['17.7','G4 ที่ eGFR < 20 และ G5 ที่ยังไม่ล้างไต → ประเมิน pre-emptive living donor KT ทุกราย','NG'],
+  ['17.8','ทำ pre-emptive LDKT เมื่อ eGFR < 10 (ผู้ใหญ่) หรือเร็วกว่าถ้ามี uremia','1D']]}
+];
+
+const chEl=$('#chapters');
+let gf='all';
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function renderRecs(){
+  const q=$('#q').value.trim();
+  const re=q?new RegExp(esc(q),'gi'):null;
+  const hl=s=>re?s.replace(re,m=>`<mark>${m}</mark>`):s;
+  let html='',shown=0;
+  CH.forEach(c=>{
+    let rs=c.r.filter(r=>gf==='all'||r[2][0]==='1');
+    const titleHit=re&&re.test(c.t); if(re)re.lastIndex=0;
+    if(re&&!titleHit){rs=rs.filter(r=>{const h=re.test(r[0]+' '+r[1]);re.lastIndex=0;return h})}
+    const noteHit=c.note&&re&&re.test(c.note); if(re)re.lastIndex=0;
+    if(!rs.length&&!noteHit)return;
+    shown++;
+    html+=`<details class="ch" ${q?'open':''} data-n="${c.n}"><summary><span class="n">${String(c.n).padStart(2,'0')}</span><span class="t">${hl(c.t)}</span><span class="c">${rs.length} ข้อ</span></summary><ul class="recs">${rs.map(r=>`<li><span class="id">${r[0]}</span><span>${hl(r[1])}${G(r[2])}</span></li>`).join('')}${c.note&&(gf==='all')?`<li><span></span><span class="note">${hl(c.note)}</span></li>`:''}</ul></details>`;
+  });
+  chEl.innerHTML=html||'<p class="empty">ไม่พบข้อแนะนำที่ตรงกับคำค้น ลองคำอื่น เช่น “eGFR” หรือ “HbA1c”</p>';
+}
+$('#q').addEventListener('input',renderRecs);
+$('#gfilter').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;gf=b.dataset.g;$('#gfilter').querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b));renderRecs()});
+$('#toggleAll').addEventListener('click',()=>{const ds=chEl.querySelectorAll('details');const open=[...ds].some(d=>!d.open);ds.forEach(d=>d.open=open);$('#toggleAll').textContent=open?'ปิดทั้งหมด':'เปิดทั้งหมด'});
+renderRecs();
+
+/* ---------- Drug tables ---------- */
+const DT={
+ ras:`<div class="tbl"><table><thead><tr><th>ยา</th><th>ขนาดเริ่มต้น</th><th>สูงสุด/วัน</th><th>ปรับใน CKD</th></tr></thead><tbody>
+ <tr class="grp"><td colspan="4">ACE inhibitors</td></tr>
+ <tr><td>Enalapril *</td><td class="n">5 mg OD</td><td class="n">40 mg (÷1–2)</td><td>CrCl &lt; 30: เริ่ม 2.5 mg</td></tr>
+ <tr><td>Captopril</td><td class="n">6.25–25 mg tid</td><td class="n">150 mg tid</td><td>CrCl 10–50: 75% · &lt; 10: 50%</td></tr>
+ <tr><td>Lisinopril</td><td class="n">10 mg OD</td><td class="n">40 mg</td><td>CrCl 10–30: เริ่มลด 50% · &lt; 10: เริ่ม 2.5 mg</td></tr>
+ <tr><td>Ramipril</td><td class="n">2.5 mg OD</td><td class="n">20 mg</td><td>CrCl &lt; 40: เริ่ม 1.25 mg</td></tr>
+ <tr><td>Perindopril</td><td class="n">4 mg OD</td><td class="n">8 mg</td><td>ไม่ควรใช้เมื่อ CrCl &lt; 30</td></tr>
+ <tr><td>Benazepril</td><td class="n">10 mg OD</td><td class="n">80 mg</td><td>CrCl &lt; 30: 5 mg/วัน</td></tr>
+ <tr><td>Fosinopril</td><td class="n">10 mg OD</td><td class="n">80 mg</td><td>ไม่ต้องปรับ</td></tr>
+ <tr><td>Quinapril</td><td class="n">10–20 mg OD</td><td class="n">80 mg</td><td>CrCl 30–60: เริ่ม 5 · 10–29: เริ่ม 2.5</td></tr>
+ <tr><td>Trandolapril</td><td class="n">1 mg OD</td><td class="n">4 mg</td><td>CrCl &lt; 30: เริ่ม 0.5 mg</td></tr>
+ <tr class="grp"><td colspan="4">ARBs</td></tr>
+ <tr><td>Losartan *</td><td class="n">25–50 mg OD</td><td class="n">100 mg</td><td>ไม่ต้องปรับ</td></tr>
+ <tr><td>Irbesartan</td><td class="n">150 mg OD</td><td class="n">150–300 mg</td><td>ไม่ต้องปรับ</td></tr>
+ <tr><td>Telmisartan</td><td class="n">40 mg OD</td><td class="n">80 mg</td><td>ไม่ต้องปรับ</td></tr>
+ <tr><td>Valsartan</td><td class="n">80 mg OD</td><td class="n">320 mg</td><td>CrCl &lt; 30: ไม่มีข้อมูล ใช้ด้วยความระวัง</td></tr>
+ <tr><td>Candesartan</td><td class="n">16 mg OD</td><td class="n">32 mg</td><td>CrCl &lt; 30: AUC เพิ่ม 2 เท่า</td></tr>
+ <tr><td>Olmesartan</td><td class="n">20 mg OD</td><td class="n">40 mg</td><td>CrCl &lt; 20: AUC เพิ่ม 3 เท่า</td></tr>
+ <tr><td>Azilsartan</td><td class="n">20–80 mg OD</td><td class="n">80 mg</td><td>ไม่ต้องปรับ</td></tr>
+ <tr><td>Fimasartan</td><td class="n">60 mg OD</td><td class="n">120 mg</td><td>CrCl &lt; 30: เริ่ม 30 mg</td></tr>
+ </tbody></table></div><p class="hint">* ยาในบัญชียาหลักแห่งชาติ · CrCl ตาม Cockcroft-Gault · ตาราง 5.2</p>`,
+ statin:`<div class="tbl"><table><thead><tr><th>ยา (mg/วัน)</th><th>G1–2</th><th>G3a</th><th>G3b–5</th></tr></thead><tbody>
+ <tr><td>Atorvastatin</td><td class="n">40–80</td><td class="n">40–80</td><td class="n">20–40</td></tr>
+ <tr><td>Rosuvastatin</td><td class="n">20</td><td class="n">20</td><td class="n">10</td></tr>
+ <tr><td>Simvastatin</td><td class="n">40</td><td class="n">40</td><td class="n">20–40</td></tr>
+ <tr><td>Simvastatin/Ezetimibe</td><td class="n">40/10</td><td class="n">40/10</td><td class="n">20/10</td></tr>
+ <tr><td>Pitavastatin</td><td class="n">4</td><td class="n">4</td><td class="n">2</td></tr>
+ <tr><td>Pravastatin</td><td class="n">40</td><td class="n">40</td><td class="n">20</td></tr>
+ <tr><td>Fluvastatin</td><td class="n">80</td><td class="n">80</td><td>ไม่มีข้อมูล</td></tr>
+ </tbody></table></div><p class="hint">ตาราง 8.2 · เลือกตามยาที่มีในสถานพยาบาล</p>`,
+ nonstatin:`<div class="tbl"><table><thead><tr><th>ยา (mg/วัน)</th><th>G1–2</th><th>G3a</th><th>G3b–5</th></tr></thead><tbody>
+ <tr><td>Ezetimibe</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr>
+ <tr><td>Fenofibrate</td><td class="n">150</td><td class="n">150</td><td>ไม่ควรใช้</td></tr>
+ <tr><td>Fenofibrate (micronized)</td><td class="n">100</td><td class="n">100</td><td>ไม่ควรใช้</td></tr>
+ <tr><td>Fenofibrate (micronized, micro-coated)</td><td class="n">80</td><td class="n">80</td><td>ไม่ควรใช้</td></tr>
+ <tr><td>Fenofibrate (nano)</td><td class="n">72.5</td><td class="n">72.5</td><td>ไม่ควรใช้</td></tr>
+ <tr><td>Gemfibrozil</td><td class="n">1,200</td><td class="n">1,200</td><td class="n">600</td></tr>
+ <tr><td>Cholestyramine (g)</td><td class="n">16</td><td class="n">16</td><td class="n">16</td></tr>
+ <tr><td>Niacin</td><td class="n">2,000</td><td class="n">2,000</td><td class="n">1,000</td></tr>
+ <tr><td>Omega-3 (EPA/DHA)</td><td class="n">4,000</td><td class="n">4,000</td><td class="n">4,000</td></tr>
+ </tbody></table></div><p class="hint">ตาราง 8.3</p>`,
+ met:`<div class="tbl"><table><thead><tr><th>eGFR</th><th>Metformin</th><th>SGLT2i</th><th>ติดตาม</th></tr></thead><tbody>
+ <tr><td class="n">≥ 60</td><td>ขนาดปกติ · IR เริ่ม 500 หรือ 850 mg OD เพิ่มทุก 7 วัน · XR เริ่ม 500 mg</td><td>เริ่มได้</td><td>eGFR ปีละครั้ง</td></tr>
+ <tr><td class="n">45–59</td><td>ขนาดเดิม ลดถ้าเสี่ยง hypoperfusion/hypoxemia</td><td>เริ่มได้</td><td>eGFR ทุก 3–6 เดือน</td></tr>
+ <tr><td class="n">30–44</td><td>ลดครึ่ง · เริ่มใหม่ครึ่งขนาด สูงสุดครึ่งหนึ่ง</td><td>เริ่มได้</td><td>eGFR ทุก 3–6 เดือน</td></tr>
+ <tr><td class="n">20–29</td><td>หยุด / ไม่เริ่ม</td><td>เริ่มได้</td><td></td></tr>
+ <tr><td class="n">&lt; 20</td><td>หยุด</td><td>ไม่เริ่มใหม่ ใช้ต่อได้</td><td></td></tr>
+ <tr><td>ล้างไต</td><td>หยุด</td><td>หยุด</td><td></td></tr>
+ </tbody></table></div><p class="hint">รูป 7.5, 7.7 · B12 ปีละครั้งเมื่อใช้ metformin &gt; 4 ปี หรือเสี่ยงขาด</p>`,
+ hbv:`<div class="tbl"><table><thead><tr><th>ระยะ</th><th>ขนาด</th><th>เข็ม</th><th>ตาราง (เดือน)</th></tr></thead><tbody>
+ <tr><td>G1–2</td><td>ปกติ</td><td class="n">3</td><td class="n">0, 1, 6</td></tr>
+ <tr><td>G3–4</td><td>ปกติ</td><td class="n">4</td><td class="n">0, 1, 2, 6</td></tr>
+ <tr><td>G5</td><td>2 เท่า (แบ่งฉีด deltoid 2 ข้าง)</td><td class="n">4</td><td class="n">0, 1, 2, 6</td></tr>
+ <tr><td>Non-responder</td><td>2 เท่า</td><td class="n">4</td><td class="n">0, 1, 2, 6</td></tr>
+ </tbody></table></div><p class="hint">ตรวจ anti-HBs 1–2 เดือนหลังเข็มสุดท้าย · &lt; 10 IU/L = ไม่มีภูมิ · ข้อ 15.1 (2B)</p>`
+};
+function dtab(t){$('#dpanel').innerHTML=DT[t];$('#dtabs').querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t))}
+$('#dtabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)dtab(b.dataset.t)});
+dtab('ras');
+
+/* ---------- KDIGO 2024 comparison ---------- */
+const KD=[
+ ['diff','สมการ eGFR และ cystatin C',
+  'CKD-EPI 2009 (ไม่ใช้ race) หรือ Thai eGFR · ตรวจ cystatin C เมื่อ eGFR(Cr) 45–59 และไม่มี kidney damage อื่น'+G('2C'),
+  'ใช้สมการที่ validate แล้วและ<b>ไม่ใช้ race</b>'+G('1D')+' · ถ้ามี cystatin C ให้ใช้ <b>eGFRcr-cys</b> โดยเฉพาะเมื่อ eGFRcr ไม่แม่น (กล้ามเนื้อมาก/น้อย, cirrhosis, HF, มะเร็ง, ยาที่รบกวน Cr)'+G('1B'),
+  'ใช้ CKD-EPI ตามเดิมได้ ส่ง cystatin C ในผู้ป่วยกล้ามเนื้อน้อย ผู้สูงอายุเปราะบาง หรือก่อนตัดสินใจเรื่องยาที่ต้องปรับตาม eGFR'],
+ ['diff','การตรวจ albuminuria',
+  'คัดกรองด้วย dipstick ก่อน · DM/HT ที่ dipstick ลบ → UACR หรือ microalbumin strip',
+  '<b>UACR เป็นการตรวจหลัก</b> · reagent strip ที่อ่าน ACR แบบอัตโนมัติใช้ได้ · ACR ≥ 30 จากปัสสาวะสุ่มให้ยืนยันด้วยปัสสาวะเช้าแรก'+G('PP'),
+  'ส่ง UACR ได้เลยในกลุ่มเสี่ยง ไม่ต้องรอผล dipstick'],
+ ['new','การแปลผล eGFR ที่เปลี่ยนแปลง',
+  'ส่งโรคไตเมื่อ eGFR ลด > 25% จากเดิม หรือ > 5/ปี · หลังเริ่ม ACEi/ARB ให้ยาต่อถ้า Cr ขึ้น ≤ 30%',
+  'eGFR เปลี่ยน <b>> 20%</b> ในการตรวจครั้งถัดไปถือว่าเกินความแปรปรวนปกติ ต้องประเมิน · หลังเริ่มยาที่มีผล hemodynamic (RASi, SGLT2i, MRA) ประเมินเมื่อลด <b>> 30%</b>'+G('PP'),
+  'เกณฑ์ 30% สอดคล้องกับ CPG ไทย และขยายไปถึง SGLT2i และ MRA'],
+ ['new','ประเมินความเสี่ยงไตวาย (KFRE)',
+  'ไม่มี · ใช้ตาราง GFR × albuminuria (heatmap) อย่างเดียว',
+  'ใช้สมการทำนายความเสี่ยงที่ validate แล้ว เช่น <b>KFRE</b> ใน G3–G5'+G('1A')+' · 5 ปี <b>3–5%</b> → ส่งโรคไต · 2 ปี <b>> 10%</b> → ทีมสหสาขา · 2 ปี <b>> 40%</b> → ให้ความรู้และเตรียม KRT',
+  'มี KFRE ในส่วนประเมินผู้ป่วยด้านบนแล้ว ใช้ร่วมกับเกณฑ์ส่งต่อของไทย'],
+ ['diff','เวลาเริ่มเตรียมบำบัดทดแทนไต',
+  'เริ่มเมื่อเข้าสู่ G4 (eGFR < 30)'+G('1B')+' · ประเมิน pre-emptive LDKT เมื่อ eGFR < 20',
+  'กำหนดด้วย<b>ความเสี่ยง</b> (KFRE 2 ปี > 40%) มากกว่าค่า eGFR',
+  'G4 ที่ไตเสื่อมช้าและ KFRE ต่ำอาจไม่ต้องเร่งทำ AVF ส่วน G3b ที่ KFRE สูงควรเริ่มคุยเร็วขึ้น'],
+ ['diff','เป้าหมายความดันโลหิต',
+  '<b>< 130/80</b>'+G('1B')+' · SBP ไม่ต่ำกว่า 120 · อายุ > 65 อาจใช้ < 140',
+  '<b>SBP < 120</b> เมื่อทนได้ วัดด้วย standardized office BP'+G('2B')+' (คงเดิมจาก KDIGO BP 2021)',
+  'ประเด็นหลักคือวิธีวัด ถ้าวัด office BP แบบทั่วไป เป้า < 130/80 ของไทยใช้ได้จริงกว่า'],
+ ['same','ข้อบ่งชี้ ACEi/ARB',
+  'DM + ACR > 30'+G('1B')+' · ไม่ DM + ACR > 300'+G('1B')+' · ไม่ DM + ACR 30–300'+G('2C')+' · ห้าม dual RAS'+G('1B'),
+  'เหมือนกันทุกข้อ ทั้งเกรดและเกณฑ์ ACR',
+  ''],
+ ['new','ACEi/ARB เมื่อ eGFR < 30',
+  'ลดหรือหยุดได้เพื่อลดอาการ uremia เมื่อ eGFR < 15'+G('NG'),
+  '<b>ให้ต่อแม้ eGFR < 30</b>'+G('PP')+' (อิง STOP-ACEi) · หยุดเฉพาะเมื่อ symptomatic hypotension, K⁺ สูงที่คุมไม่ได้ หรือเพื่อลด uremia',
+  'ไม่ควรหยุด RASi เพียงเพราะเข้าสู่ G4'],
+ ['new','SGLT2i',
+  'DM + eGFR ≥ 20'+G('1A')+' · CKD ไม่เป็น DM อ้างเอกสารแยกต่างหาก',
+  'T2D + eGFR ≥ 20'+G('1A')+' · <b>CKD ทุกสาเหตุ</b> eGFR ≥ 20 + <b>ACR ≥ 200 mg/g</b> หรือมี <b>HF</b>'+G('1A')+' · eGFR 20–45 + ACR < 200'+G('2B')+' · ใช้ต่อจนเริ่ม KRT',
+  'เป็นการเปลี่ยนแปลงที่กระทบเวชปฏิบัติมากที่สุด: CKD ที่ไม่เป็นเบาหวานแต่มี albuminuria ควรได้ SGLT2i'],
+ ['same','Finerenone (ns-MRA)',
+  'T2D, eGFR ≥ 25, K⁺ ≤ 4.8, ACR ≥ 30 แม้ RASi เต็มขนาด'+G('2A'),
+  'T2D, eGFR > 25, K⁺ ปกติ, ACR > 30 แม้ RASi เต็มขนาด'+G('2A'),
+  ''],
+ ['same','GLP-1 RA และ metformin',
+  'GLP-1 RA ออกฤทธิ์ยาวเมื่อไม่ถึงเป้าแม้ metformin + SGLT2i'+G('1B')+' · metformin ลดครึ่งเมื่อ eGFR 30–44 หยุดเมื่อ < 30',
+  'เหมือนกัน (อ้าง KDIGO Diabetes in CKD 2022)',
+  'หลักฐานหลัง KDIGO 2024: การศึกษา FLOW (2567) พบ semaglutide ลด kidney outcomes ใน T2D + CKD'],
+ ['diff','โปรตีนในอาหาร',
+  'ไม่เป็น DM G3a–5: <b>0.6 g/kg/วัน</b>'+G('1A')+' หรือ < 0.4 + keto analog · DM: 0.6–0.8'+G('2D'),
+  '<b>0.8 g/kg/วัน</b> ใน G3–G5'+G('2C')+' · very low-protein 0.3–0.4 + EAA/keto analog เฉพาะผู้ที่เหมาะสมภายใต้การดูแลใกล้ชิด'+G('PP')+' · ไม่เกิน 1.3 ในผู้เสี่ยง',
+  'KDIGO เน้นป้องกัน PEW ในผู้สูงอายุ เป้า 0.6 ของไทยต้องมีนักกำหนดอาหารติดตาม'],
+ ['same','โซเดียมและการออกกำลังกาย',
+  'Na < 2 g/วัน · ออกกำลังกายปานกลาง ≥ 150 นาที/สัปดาห์',
+  'Na < 2 g/วัน'+G('2C')+' · ≥ 150 นาที/สัปดาห์'+G('1D'),
+  ''],
+ ['diff','โพแทสเซียมในอาหาร',
+  'K⁺ สูง → แนะนำอาหาร K ต่ำ (ตารางผักผลไม้) และกินผักผลไม้ได้ถ้า K⁺ ปกติ'+G('2A'),
+  'ปรับรายบุคคล · จำกัด <b>K ที่ดูดซึมได้ดี</b> เช่น อาหารแปรรูป เกลือทดแทน มากกว่าการจำกัดผักผลไม้ทั้งหมด'+G('PP'),
+  'สอดคล้องกันในหลักการ KDIGO ระวังการงดผักผลไม้ที่เกินจำเป็น'],
+ ['diff','Metabolic acidosis',
+  'HCO₃⁻ <b>< 22</b> → NaHCO₃'+G('1A')+' · เป้า 24–26'+G('2B'),
+  'พิจารณายาเพื่อไม่ให้ HCO₃⁻ <b>< 18</b>'+G('PP')+' · ไม่ให้เกินค่าปกติ ระวัง sodium load',
+  'เกณฑ์ต่างกันมาก ใช้ < 22 ตาม CPG ไทยได้ แต่ระวังบวมและความดันขึ้นจากโซเดียม'],
+ ['new','กรดยูริก',
+  'ไม่มีข้อแนะนำการรักษา (gout เป็นเพียงปัจจัยเสี่ยงที่ต้องคัดกรอง)',
+  'รักษา symptomatic hyperuricemia/gout'+G('1C')+' · <b>ไม่ให้ยาลดยูริก</b>ใน asymptomatic hyperuricemia เพื่อชะลอไต'+G('2D'),
+  'ไม่ต้องให้ allopurinol แก่ผู้ที่ยูริกสูงแต่ไม่มีอาการ'],
+ ['same','Statin',
+  'อายุ ≥ 50 + eGFR < 60 → statin ± ezetimibe · ≥ 50 + eGFR ≥ 60 · 18–49 ที่มี CAD/DM/stroke/risk > 10%'+G('2B'),
+  'ข้อบ่งชี้เดียวกัน เกรดสูงกว่า: ≥ 50 + eGFR < 60'+G('1A')+' · ≥ 50 + eGFR ≥ 60'+G('1B')+' · 18–49'+G('2A'),
+  ''],
+ ['same','Aspirin',
+  'ไม่ใช้ primary prevention'+G('2A')+' · ใช้ secondary prevention'+G('1A'),
+  'ใช้ low-dose aspirin สำหรับ secondary prevention'+G('1C'),
+  ''],
+ ['diff','Atrial fibrillation',
+  'eGFR ≥ 15 + CHA₂DS₂-VASc ≥ 2 → <b>warfarin หรือ DOAC</b>'+G('1A'),
+  'G1–G4 เลือก <b>DOAC มากกว่า VKA</b>'+G('1C')+' · ปรับขนาดตามการทำงานของไต',
+  'ถ้าเข้าถึงได้ให้เลือก DOAC ก่อน'],
+ ['diff','สารทึบรังสี',
+  'หลีกเลี่ยง ถ้าต้องใช้ให้ low/iso-osmolar + IV fluid'+G('1A')+' · ตรวจ eGFR 48–96 ชม. · gadolinium ใช้ macrocyclic ใน G4–5',
+  'ไม่ควรงดการตรวจที่มีข้อบ่งชี้เพราะกลัว contrast · ใน G3a–G5 ทำตาม consensus ของสมาคมรังสีวิทยา'+G('PP')+' · eGFR < 30 ใช้ <b>gadolinium กลุ่ม II</b> (ACR group II)',
+  'ปัจจุบันเชื่อว่าความเสี่ยงของ IV contrast ต่ำกว่าที่เคยคิด จึงไม่ควรเลี่ยงการตรวจที่จำเป็น'],
+ ['same','โลหิตจางและ CKD-MBD',
+  'มีบทเฉพาะ (ข้อ 11–12)',
+  'ไม่ได้ปรับในฉบับ 2024 · อ้าง KDIGO Anemia 2012 และ CKD-MBD 2017',
+  'ใช้ตาม CPG ไทยได้ตามเดิม']
+];
+const PL={new:'ใหม่ใน KDIGO',diff:'ต่างกัน',same:'สอดคล้อง'};
+let kf='all';
+function renderKD(){
+  $('#kdlist').innerHTML=KD.filter(r=>kf==='all'||r[0]===kf).map(r=>`<div class="kd-row"><div class="topic"><span>${r[1]}</span><span class="pill ${r[0]}">${PL[r[0]]}</span></div><div class="col"><span class="lbl">CPG ไทย 2565</span>${r[2]}</div><div class="col"><span class="lbl">KDIGO 2024</span>${r[3]}</div>${r[4]?`<div class="so"><b>ในเวชปฏิบัติ:</b> ${r[4]}</div>`:''}</div>`).join('');
+}
+$('#kfilter').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;kf=b.dataset.k;$('#kfilter').querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b));renderKD()});
+renderKD();
+
+/* ---------- TOC highlight ---------- */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function spy(){let cur=secs[0],best=-Infinity;for(const s of secs){const t=s.getBoundingClientRect().top;if(t<120&&t>best){best=t;cur=s}}links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur.id))}
+addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

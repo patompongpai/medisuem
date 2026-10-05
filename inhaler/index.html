@@ -1,0 +1,1243 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>คู่มือยาพ่น Asthma–COPD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F6F5; --surface:#FFFFFF; --sunk:#E9EFED; --ink:#15211F; --muted:#586a68; --line:#D3DDDB;
+  --accent:#0B6B74; --accent-soft:#DDEEEC;
+  --saba:#2A60C2; --sama:#5B7C1C; --laba:#0B8170; --lama:#7350B3; --ics:#B2621C; --combo:#AE3B61;
+  --ok:#2C7A4C; --warn:#A8531B; --bad:#B3261E;
+  --display:"Anuphan","IBM Plex Sans Thai","Leelawadee UI","Noto Sans Thai",system-ui,sans-serif;
+  --body:"IBM Plex Sans Thai","Leelawadee UI","Noto Sans Thai",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1615; --surface:#15201E; --sunk:#1B2927; --ink:#E3EBE9; --muted:#9AADAA; --line:#2A3B39;
+    --accent:#5BC2C8; --accent-soft:#163A3C;
+    --saba:#82A9F2; --sama:#A9C96A; --laba:#52C8B3; --lama:#B59DEA; --ics:#E9A461; --combo:#EE8BAB;
+    --ok:#6FCB94; --warn:#EDA46B; --bad:#F08A80;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1615; --surface:#15201E; --sunk:#1B2927; --ink:#E3EBE9; --muted:#9AADAA; --line:#2A3B39;
+  --accent:#5BC2C8; --accent-soft:#163A3C;
+  --saba:#82A9F2; --sama:#A9C96A; --laba:#52C8B3; --lama:#B59DEA; --ics:#E9A461; --combo:#EE8BAB;
+  --ok:#6FCB94; --warn:#EDA46B; --bad:#F08A80;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.7;padding-inline:16px;padding-block:0 64px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.3;text-wrap:balance;margin:0}
+h2{font-size:1.75rem;font-weight:700}
+h3{font-size:1.25rem;font-weight:600}
+h4{font-size:1.02rem;font-weight:600}
+p{margin:0}
+.mono,code{font-family:var(--mono);font-size:.88em}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+.toc{min-width:0}
+@media (min-width:1080px){.wrap{grid-template-columns:220px minmax(0,1fr)}}
+
+/* header */
+.masthead{max-width:1180px;margin:0 auto;padding-block:36px 24px;display:grid;gap:14px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.masthead h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;letter-spacing:-.01em}
+.masthead h1 span{color:var(--accent)}
+.lede{max-width:66ch;color:var(--muted);font-size:1.02rem}
+.refs{display:flex;flex-wrap:wrap;gap:8px}
+.refs span{font-size:.8rem;border:1px solid var(--line);background:var(--surface);padding:2px 10px;border-radius:999px;color:var(--muted)}
+
+/* toc */
+.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:8px;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+.toc a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink);font-size:.86rem;padding:4px 10px;border-radius:6px}
+.toc a:hover{background:var(--accent-soft)}
+@media (min-width:1080px){
+  .toc{top:calc(env(safe-area-inset-top,0px) + 16px);align-self:start;border:0;margin:0;padding:0;background:transparent}
+  .toc ol{flex-direction:column;overflow:visible;gap:2px;border-left:2px solid var(--line)}
+  .toc a{white-space:normal;border-radius:0 6px 6px 0;padding:5px 12px}
+  html{scroll-padding-top:16px}
+}
+.toc .sub a{padding-left:24px;color:var(--muted);font-size:.82rem}
+@media (max-width:1079px){.toc .sub{display:none}}
+
+main{min-width:0;display:grid;gap:56px}
+section{display:grid;gap:20px;min-width:0}
+.sec-head{display:grid;gap:6px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.sec-head .eyebrow{color:var(--accent)}
+.prose{max-width:70ch;display:grid;gap:10px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+
+/* class chips */
+.cls{--c:var(--accent);display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.02em;color:var(--c);background:color-mix(in srgb,var(--c) 13%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 35%,transparent);padding:1px 8px;border-radius:5px;white-space:nowrap}
+.c-saba{--c:var(--saba)} .c-sama{--c:var(--sama)} .c-laba{--c:var(--laba)} .c-lama{--c:var(--lama)} .c-ics{--c:var(--ics)} .c-combo{--c:var(--combo)}
+.avail{font-size:.72rem;padding:0 7px;border-radius:999px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+.avail.th{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
+.avail.some{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+.avail.intl{color:var(--muted)}
+
+/* cards & grids */
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid3{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:10px;align-content:start}
+.panel ul,.prose ul,.panel ol{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.9rem}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.note{border-left:3px solid var(--warn);background:color-mix(in srgb,var(--warn) 8%,var(--surface));padding:10px 14px;border-radius:0 8px 8px 0;font-size:.92rem}
+.note.info{border-color:var(--accent);background:var(--accent-soft)}
+.note.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,var(--surface))}
+.note strong{font-weight:600}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:720px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+thead th{background:var(--sunk);font-weight:600;font-size:.8rem;color:var(--muted);letter-spacing:.02em;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+td.num,.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.84rem}
+td .gen{font-weight:600}
+td .tn{font-weight:600;color:var(--ink)}
+.pic{font-size:.78rem;white-space:nowrap}
+.grouprow td{background:color-mix(in srgb,var(--accent) 6%,var(--surface));font-weight:600;font-size:.82rem;color:var(--muted)}
+
+/* drug-class blocks */
+.dclass{display:grid;gap:14px;padding-top:6px}
+.dclass-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.facts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.fact{border-top:2px solid var(--c,var(--line));padding-top:8px;font-size:.9rem}
+.fact b{display:block;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:2px}
+
+/* figures */
+figure{margin:0;display:grid;gap:8px}
+figcaption{font-size:.84rem;color:var(--muted);max-width:75ch}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;overflow-x:auto}
+.fig svg{display:block;max-width:100%;height:auto;margin:0 auto}
+svg text{font-family:var(--body);fill:currentColor}
+.s-ink{stroke:currentColor;fill:none}
+.f-surface{fill:var(--surface)} .f-sunk{fill:var(--sunk)}
+
+/* devices */
+.devices{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.device{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start}
+.device svg{width:100%;max-width:190px;height:auto;justify-self:center;color:var(--ink)}
+.device h4{display:grid;gap:0}
+.device h4 .small{font-family:var(--body);font-weight:400}
+.meter{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:.84rem;align-items:center}
+.bar{display:flex;gap:3px}
+.bar i{width:18px;height:8px;border-radius:2px;background:var(--line)}
+.bar i.on{background:var(--accent)}
+.bar.warm i.on{background:var(--warn)}
+
+/* details / steps */
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+details+details{margin-top:-6px}
+summary{cursor:pointer;padding:12px 16px;font-family:var(--display);font-weight:600;display:flex;justify-content:space-between;gap:12px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--muted)}
+details[open] summary::after{content:"−"}
+details .inner{padding:0 16px 16px;display:grid;gap:12px}
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:6px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:8px;font-size:.93rem}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-size:.78rem;color:var(--accent);border:1px solid var(--accent);border-radius:50%;width:22px;height:22px;display:grid;place-items:center;margin-top:3px}
+
+/* stepper (GINA) */
+.stepper{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));align-items:end}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;font-size:.87rem;align-content:start}
+.step .lvl{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.step.t1{border-top:3px solid var(--accent)}
+.step.t2{border-top:3px solid var(--muted)}
+.flow{display:grid;gap:10px}
+.flow .node{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.flow .arrow{justify-self:center;color:var(--muted);font-family:var(--mono);font-size:.8rem}
+footer{max-width:1180px;margin:48px auto 0;border-top:1px solid var(--line);padding-top:20px;font-size:.85rem;color:var(--muted);display:grid;gap:10px}
+footer ol{padding-left:1.2em;margin:0;display:grid;gap:4px}
+.topline{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.theme-switch{display:inline-flex;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:2px;gap:2px}
+.theme-switch button{font:inherit;font-size:.82rem;color:var(--muted);background:transparent;border:0;border-radius:6px;padding:4px 12px;cursor:pointer}
+.theme-switch button:hover{color:var(--ink)}
+.theme-switch button[aria-pressed="true"]{background:var(--accent);color:var(--surface);font-weight:600}
+</style>
+
+<header class="masthead">
+  <div class="topline">
+    <div class="eyebrow">สรุปสำหรับแพทย์อายุรกรรม · ผู้ใหญ่และวัยรุ่น ≥12 ปี</div>
+    <div class="theme-switch" role="group" aria-label="เลือกธีม">
+      <button type="button" id="theme-auto" data-set="auto">อัตโนมัติ</button>
+      <button type="button" id="theme-light" data-set="light">สว่าง</button>
+      <button type="button" id="theme-dark" data-set="dark">มืด</button>
+    </div>
+  </div>
+  <h1>ยาพ่นใน <span>Asthma</span> และ <span>COPD</span></h1>
+  <p class="lede">กลไกการออกฤทธิ์ รายชื่อยาในไทยแยกตามกลุ่ม อุปกรณ์และข้อจำกัดเรื่องแรงสูด วิธีพ่น การเก็บรักษา และการเลือกยาตามโรคตาม GINA 2026, GOLD 2026 และแนวทางของไทย</p>
+  <div class="refs"><span>GINA 2026</span><span>GOLD 2026</span><span>แนวทางโรคหืดไทย 2568 (TAC)</span><span>แนวทาง COPD ไทย 2565</span><span>บัญชียาหลักแห่งชาติ</span></div>
+  <p class="small muted">ป้ายสถานะในไทย: <span class="avail th">พบบ่อยใน รพ.ไทย</span> <span class="avail some">บาง รพ. / ตรวจสอบ</span> <span class="avail intl">ต่างประเทศเป็นหลัก</span> — สถานะอาจเปลี่ยน ให้ตรวจกับบัญชียาของโรงพยาบาลเสมอ · ลิงก์ “รูปจริง” เปิดการค้นหารูปผลิตภัณฑ์</p>
+</header>
+
+<div class="wrap">
+<nav class="toc" aria-label="สารบัญ">
+  <ol>
+    <li><a href="#moa">1 · กลไกการออกฤทธิ์</a></li>
+    <li><a href="#classes">2 · ยาแยกตามกลุ่ม</a></li>
+    <li class="sub"><a href="#saba">SABA</a></li>
+    <li class="sub"><a href="#sama">SAMA / SABA+SAMA</a></li>
+    <li class="sub"><a href="#laba">LABA</a></li>
+    <li class="sub"><a href="#lama">LAMA</a></li>
+    <li class="sub"><a href="#ics">ICS</a></li>
+    <li class="sub"><a href="#icslaba">ICS/LABA</a></li>
+    <li class="sub"><a href="#lamalaba">LAMA/LABA</a></li>
+    <li class="sub"><a href="#triple">Triple</a></li>
+    <li class="sub"><a href="#neb">Nebulizer</a></li>
+    <li><a href="#devices">3 · อุปกรณ์และแรงสูด</a></li>
+    <li><a href="#technique">4 · วิธีพ่นทีละขั้น</a></li>
+    <li><a href="#care">5 · เก็บรักษาและหลังพ่น</a></li>
+    <li><a href="#asthma">6 · Asthma ตาม GINA</a></li>
+    <li><a href="#copd">7 · COPD ตาม GOLD</a></li>
+    <li><a href="#acute">8 · Acute exacerbation</a></li>
+    <li><a href="#special">9 · กลุ่มพิเศษ</a></li>
+    <li><a href="#beyond">10 · Biologics และยาอื่น</a></li>
+    <li><a href="#sources">แหล่งอ้างอิง</a></li>
+  </ol>
+</nav>
+
+<main>
+<section id="moa">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 1</div><h2>กลไกการออกฤทธิ์</h2></div>
+  <div class="prose">
+    <p>ยาพ่นหลักในโรคทางเดินหายใจอุดกั้นมี 3 กลไก: <b>กระตุ้น β2-receptor</b> (SABA, LABA) และ <b>ยับยั้ง muscarinic receptor</b> (SAMA, LAMA) ซึ่งทั้งสองกลุ่มขยายหลอดลมโดยตรง กับ <b>corticosteroid</b> (ICS) ที่ลดการอักเสบของหลอดลม ไม่ได้ขยายหลอดลมทันที แต่ลด airway hyperresponsiveness และลด exacerbation ในระยะยาว</p>
+  </div>
+
+  <figure>
+    <div class="fig">
+    <svg viewBox="0 0 760 350" role="img" aria-label="แผนภาพ: β2-agonist เพิ่ม cAMP ทำให้กล้ามเนื้อหลอดลมคลายตัว, acetylcholine ผ่าน M3 เพิ่ม Ca2+ ทำให้หดตัวซึ่ง LAMA/SAMA บล็อกได้, ICS จับ GR เข้านิวเคลียสลดยีนอักเสบและเพิ่มยีน β2-receptor">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+      </defs>
+      <!-- Panel A -->
+      <text x="20" y="20" font-size="13" font-weight="600">A · เซลล์กล้ามเนื้อเรียบหลอดลม</text>
+      <rect x="20" y="70" width="440" height="265" rx="18" class="f-sunk" stroke="currentColor" stroke-opacity=".35"/>
+      <text x="130" y="44" font-size="12" text-anchor="middle" style="fill:var(--saba)" font-weight="600">β2-agonist (SABA/LABA)</text>
+      <line x1="130" y1="50" x2="130" y2="60" stroke="currentColor" marker-end="url(#ah)"/>
+      <text x="350" y="44" font-size="12" text-anchor="middle" font-weight="600">ACh จาก vagus</text>
+      <line x1="350" y1="50" x2="350" y2="60" stroke="currentColor" marker-end="url(#ah)"/>
+      <line x1="334" y1="55" x2="366" y2="55" stroke-width="4" style="stroke:var(--bad)"/>
+      <text x="374" y="60" font-size="11.5" style="fill:var(--bad)" font-weight="600">LAMA/SAMA บล็อก</text>
+      <rect x="105" y="60" width="50" height="22" rx="4" class="f-surface" stroke="currentColor"/>
+      <text x="130" y="76" font-size="11.5" text-anchor="middle">β2AR</text>
+      <rect x="325" y="60" width="50" height="22" rx="4" class="f-surface" stroke="currentColor"/>
+      <text x="350" y="76" font-size="11.5" text-anchor="middle">M3</text>
+
+      <rect x="55" y="110" width="150" height="30" rx="6" class="f-surface" stroke="currentColor" stroke-opacity=".5"/>
+      <text x="130" y="130" font-size="12" text-anchor="middle">Gs → adenylyl cyclase</text>
+      <rect x="55" y="160" width="150" height="30" rx="6" class="f-surface" stroke="currentColor" stroke-opacity=".5"/>
+      <text x="130" y="180" font-size="12" text-anchor="middle">cAMP ↑ → PKA</text>
+      <rect x="55" y="245" width="150" height="34" rx="6" style="fill:color-mix(in srgb,var(--ok) 16%,var(--surface));stroke:var(--ok)"/>
+      <text x="130" y="267" font-size="12.5" text-anchor="middle" font-weight="600" style="fill:var(--ok)">กล้ามเนื้อคลายตัว</text>
+      <line x1="130" y1="82" x2="130" y2="108" stroke="currentColor" marker-end="url(#ah)"/>
+      <line x1="130" y1="140" x2="130" y2="158" stroke="currentColor" marker-end="url(#ah)"/>
+      <line x1="130" y1="190" x2="130" y2="243" stroke="currentColor" marker-end="url(#ah)"/>
+
+      <rect x="275" y="110" width="150" height="30" rx="6" class="f-surface" stroke="currentColor" stroke-opacity=".5"/>
+      <text x="350" y="130" font-size="12" text-anchor="middle">Gq → PLC → IP3</text>
+      <rect x="275" y="160" width="150" height="30" rx="6" class="f-surface" stroke="currentColor" stroke-opacity=".5"/>
+      <text x="350" y="180" font-size="12" text-anchor="middle">Ca²⁺ ในเซลล์ ↑</text>
+      <rect x="275" y="245" width="150" height="34" rx="6" style="fill:color-mix(in srgb,var(--bad) 14%,var(--surface));stroke:var(--bad)"/>
+      <text x="350" y="267" font-size="12.5" text-anchor="middle" font-weight="600" style="fill:var(--bad)">กล้ามเนื้อหดตัว</text>
+      <line x1="350" y1="82" x2="350" y2="108" stroke="currentColor" marker-end="url(#ah)"/>
+      <line x1="350" y1="140" x2="350" y2="158" stroke="currentColor" marker-end="url(#ah)"/>
+      <line x1="350" y1="190" x2="350" y2="243" stroke="currentColor" marker-end="url(#ah)"/>
+
+      <line x1="207" y1="175" x2="268" y2="175" stroke="currentColor" stroke-dasharray="4 3"/>
+      <line x1="270" y1="167" x2="270" y2="183" stroke="currentColor" stroke-width="2"/>
+      <text x="240" y="212" font-size="11" text-anchor="middle" class="muted">ลด Ca²⁺,</text>
+      <text x="240" y="226" font-size="11" text-anchor="middle">ยับยั้ง MLCK</text>
+      <text x="240" y="315" font-size="12.5" text-anchor="middle" font-weight="600" style="fill:var(--accent)">ผลสุทธิของยาขยายหลอดลม: หลอดลมกว้างขึ้น</text>
+
+      <!-- Panel B -->
+      <text x="490" y="20" font-size="13" font-weight="600">B · เซลล์อักเสบ / เยื่อบุหลอดลม</text>
+      <rect x="490" y="70" width="250" height="265" rx="18" class="f-sunk" stroke="currentColor" stroke-opacity=".35"/>
+      <text x="615" y="44" font-size="12" text-anchor="middle" font-weight="600" style="fill:var(--ics)">ICS (ละลายในไขมัน)</text>
+      <line x1="615" y1="50" x2="615" y2="96" stroke="currentColor" stroke-dasharray="3 3" marker-end="url(#ah)"/>
+      <rect x="560" y="98" width="110" height="30" rx="6" class="f-surface" style="stroke:var(--ics)"/>
+      <text x="615" y="118" font-size="12" text-anchor="middle">ICS + GR</text>
+      <line x1="615" y1="128" x2="615" y2="160" stroke="currentColor" marker-end="url(#ah)"/>
+      <text x="625" y="149" font-size="10.5">เข้านิวเคลียส</text>
+      <ellipse cx="615" cy="240" rx="116" ry="76" class="f-surface" stroke="currentColor" stroke-opacity=".6"/>
+      <text x="615" y="203" font-size="11.5" text-anchor="middle" font-weight="600" style="fill:var(--bad)">⊣ NF-κB, AP-1 (ผ่าน HDAC2)</text>
+      <text x="615" y="222" font-size="11" text-anchor="middle">↓ IL-4, IL-5, IL-13, chemokine</text>
+      <line x1="540" y1="235" x2="690" y2="235" stroke="currentColor" stroke-opacity=".25"/>
+      <text x="615" y="256" font-size="11.5" text-anchor="middle" font-weight="600" style="fill:var(--ok)">↑ ยีน β2-receptor</text>
+      <text x="615" y="275" font-size="11" text-anchor="middle">↑ โปรตีนต้านอักเสบ</text>
+    </svg>
+    </div>
+    <figcaption>ภาพ A: β2-agonist และ antimuscarinic ขยายหลอดลมผ่านสองทางที่ต่างกัน จึงเสริมฤทธิ์กันเมื่อใช้ร่วม (LAMA/LABA) · ภาพ B: ICS ปิดยีนอักเสบและเพิ่มจำนวน β2-receptor ส่วน LABA ช่วยให้ GR เข้านิวเคลียสได้ดีขึ้น — เป็นเหตุผลของ ICS/LABA</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3><span class="cls c-saba">β2-agonist</span></h3>
+      <ul>
+        <li>จับ β2-receptor (Gs) → ↑cAMP → PKA → ลด Ca²⁺ ในเซลล์, ยับยั้ง MLCK, เปิด K⁺ channel → กล้ามเนื้อเรียบคลายตัว เป็น <b>functional antagonist</b> คือคลายได้ไม่ว่าอะไรกระตุ้นให้หด</li>
+        <li>ผลเสริม: ลดการหลั่ง mediator จาก mast cell, เพิ่ม mucociliary clearance</li>
+        <li><b>Formoterol</b> ออกฤทธิ์เร็ว (1–3 นาที) และนาน 12 ชม. จึงใช้เป็น reliever ได้ (MART/AIR) · <b>Salmeterol</b> ออกฤทธิ์ช้า (10–20 นาที) เป็น partial agonist ห้ามใช้เป็น reliever</li>
+        <li>ผลข้างเคียง: มือสั่น ใจสั่น tachycardia, hypokalemia, QTc ยาว, lactic acidosis เมื่อใช้ SABA ขนาดสูง</li>
+        <li class="note bad" style="list-style:none;margin-left:-1.2em"><strong>Asthma: ห้ามใช้ LABA เดี่ยวโดยไม่มี ICS</strong> เพิ่มความเสี่ยงเสียชีวิตจากหืด</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="cls c-lama">Antimuscarinic</span></h3>
+      <ul>
+        <li>บล็อก acetylcholine ที่ <b>M3</b> บนกล้ามเนื้อเรียบ (Gq → IP3 → Ca²⁺) และต่อมใต้เยื่อบุ → หลอดลมคลายและเสมหะลดลง</li>
+        <li>M1 อยู่ที่ปมประสาท (ส่งเสริมการส่งสัญญาณ) ส่วน M2 เป็น autoreceptor ที่ยับยั้งการหลั่ง ACh · ipratropium ไม่เลือกชนิด จึงบล็อก M2 ด้วย ขณะที่ <b>tiotropium</b> หลุดจาก M3/M1 ช้ามากแต่หลุดจาก M2 เร็ว (kinetic selectivity) จึงออกฤทธิ์ได้ 24 ชม.</li>
+        <li>ใน COPD vagal tone เป็นส่วนสำคัญของการตีบที่ย้อนกลับได้ LAMA จึงเป็นยาหลัก</li>
+        <li>ผลข้างเคียง: ปากแห้ง รสขม/โลหะ (ipratropium), ปัสสาวะคั่ง (BPH), ท้องผูก, <b>angle-closure glaucoma</b> หากละอองยาจากหน้ากาก nebulizer เข้าตา</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="cls c-ics">ICS</span></h3>
+      <ul>
+        <li>ผ่านเยื่อหุ้มเซลล์ จับ glucocorticoid receptor (GR) ในไซโทพลาซึม แล้วเข้านิวเคลียส</li>
+        <li><b>Transrepression</b>: ดึง HDAC2 มาปิดยีนที่ถูกกระตุ้นโดย NF-κB/AP-1 → ลด cytokine (IL-4, IL-5, IL-13), chemokine, adhesion molecule → eosinophil, mast cell, Th2 cell ลดลง</li>
+        <li><b>Transactivation</b>: เพิ่มยีน β2-receptor, MKP-1, IκBα และโปรตีนต้านอักเสบ</li>
+        <li><b>Asthma</b> (T2/eosinophilic) ตอบสนองดี · <b>COPD</b> อักเสบแบบ neutrophil และ oxidative stress ลด HDAC2 ทำให้ดื้อ steroid · จำนวน eosinophil ในเลือดใช้ทำนายการตอบสนองต่อ ICS</li>
+        <li>ผลข้างเคียงเฉพาะที่: oral candidiasis, เสียงแหบ (dysphonia) · ทั้งร่างกาย (ขนาดสูง): adrenal suppression, กระดูกพรุน, ต้อกระจก, ช้ำง่าย · ใน COPD: <b>pneumonia</b> และ mycobacterial infection เพิ่มขึ้น</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>ทำไมต้องรวมยาในหลอดเดียว</h3>
+      <ul>
+        <li><b>ICS + LABA</b>: ICS เพิ่มจำนวนและลด downregulation ของ β2-receptor ส่วน LABA ช่วย GR เข้านิวเคลียส และ ICS ช่วยป้องกันอันตรายจาก LABA เดี่ยวใน asthma</li>
+        <li><b>LAMA + LABA</b>: ขยายหลอดลมผ่านสองทาง (cAMP และ Ca²⁺) ได้ FEV1 มากกว่ายาเดี่ยว และ vagal ACh release ลดลงเมื่อมี β2 stimulation</li>
+        <li><b>SABA + SAMA</b> (เช่น Berodual): ออกฤทธิ์เร็วจาก SABA และนานขึ้นจาก SAMA ใช้ใน acute exacerbation</li>
+        <li><b>Triple</b>: ใช้หลอดเดียววันละ 1–2 ครั้ง เพิ่ม adherence และลดความสับสนเรื่องอุปกรณ์</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>ระยะเวลาเริ่มออกฤทธิ์และระยะเวลาออกฤทธิ์</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>ยา</th><th>กลุ่ม</th><th>เริ่มออกฤทธิ์</th><th>ออกฤทธิ์สูงสุด</th><th>ระยะเวลา</th><th>ความถี่</th></tr></thead>
+    <tbody>
+      <tr><td class="gen">Salbutamol</td><td><span class="cls c-saba">SABA</span></td><td class="num">~5 นาที</td><td class="num">30–60 นาที</td><td class="num">4–6 ชม.</td><td>prn</td></tr>
+      <tr><td class="gen">Terbutaline</td><td><span class="cls c-saba">SABA</span></td><td class="num">~5 นาที</td><td class="num">30–60 นาที</td><td class="num">4–6 ชม.</td><td>prn</td></tr>
+      <tr><td class="gen">Fenoterol</td><td><span class="cls c-saba">SABA</span></td><td class="num">~5 นาที</td><td class="num">30–60 นาที</td><td class="num">4–6 ชม.</td><td>ใน Berodual</td></tr>
+      <tr><td class="gen">Ipratropium</td><td><span class="cls c-sama">SAMA</span></td><td class="num">~15 นาที</td><td class="num">1–2 ชม.</td><td class="num">6–8 ชม.</td><td>วันละ 3–4 ครั้ง</td></tr>
+      <tr><td class="gen">Formoterol</td><td><span class="cls c-laba">LABA</span></td><td class="num">1–3 นาที</td><td class="num">~2 ชม.</td><td class="num">12 ชม.</td><td>BID (ใช้ prn ได้ในรูป ICS-formoterol)</td></tr>
+      <tr><td class="gen">Salmeterol</td><td><span class="cls c-laba">LABA</span></td><td class="num">10–20 นาที</td><td class="num">2–4 ชม.</td><td class="num">12 ชม.</td><td>BID</td></tr>
+      <tr><td class="gen">Indacaterol / Vilanterol / Olodaterol</td><td><span class="cls c-laba">LABA</span></td><td class="num">5 นาที</td><td class="num">1–2 ชม.</td><td class="num">24 ชม.</td><td>OD</td></tr>
+      <tr><td class="gen">Tiotropium / Umeclidinium / Glycopyrronium</td><td><span class="cls c-lama">LAMA</span></td><td class="num">5–30 นาที</td><td class="num">1–3 ชม.</td><td class="num">24 ชม.</td><td>OD</td></tr>
+      <tr><td class="gen">ICS ทุกชนิด</td><td><span class="cls c-ics">ICS</span></td><td>อาการดีขึ้นใน 1–2 สัปดาห์</td><td>ผลเต็มที่ 3–4 เดือน</td><td>—</td><td>OD–BID ตามยา</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section id="classes">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 2</div><h2>ยาแยกตามกลุ่ม: ชื่อสามัญ ชื่อการค้า และขนาดยา</h2></div>
+  <p class="prose muted small">ขนาดยาเป็นขนาดผู้ใหญ่ตามเอกสารกำกับยาทั่วไป ความแรงแสดงเป็น mcg ต่อครั้งพ่น/สูด (metered dose) เว้นแต่ระบุว่า delivered · ข้อบ่งใช้ตามโรคอยู่ในส่วนที่ 6–8</p>
+
+  <!-- SABA -->
+  <div class="dclass" id="saba">
+    <div class="dclass-h"><span class="cls c-saba">SABA</span><h3>Short-acting β2-agonist</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Salbutamol</span><br><span class="num">100 mcg/puff</span></td><td><span class="tn">Ventolin Evohaler</span> <span class="avail th">ไทย</span><br><span class="small muted">และยาสามัญหลายบริษัท</span></td><td>pMDI</td><td>1–2 puffs prn ทุก 4–6 ชม. · acute ดูส่วนที่ 8</td><td><a class="pic" data-q="Ventolin Evohaler 100 mcg">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Salbutamol</span><br><span class="num">2.5 mg/2.5 mL</span></td><td><span class="tn">Ventolin Nebules</span> <span class="avail th">ไทย</span></td><td>Nebulizer</td><td>2.5–5 mg ต่อครั้ง</td><td><a class="pic" data-q="Ventolin Nebules 2.5 mg">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Terbutaline</span><br><span class="num">5 mg/2 mL</span></td><td><span class="tn">Bricanyl Respules</span> <span class="avail some">บาง รพ.</span></td><td>Nebulizer</td><td>5–10 mg ต่อครั้ง วันละไม่เกิน 4 ครั้ง</td><td><a class="pic" data-q="Bricanyl Respules 5 mg/2 ml">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Terbutaline</span><br><span class="num">500 mcg/dose</span></td><td><span class="tn">Bricanyl Turbuhaler</span> <span class="avail intl">ต่างประเทศ</span></td><td>DPI reservoir</td><td>1 inhalation prn</td><td><a class="pic" data-q="Bricanyl Turbuhaler">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--saba)"><b>ใช้เมื่อ</b>Reliever ใน asthma (GINA Track 2) และ COPD, acute exacerbation ทั้งสองโรค</div>
+      <div class="fact" style="--c:var(--saba)"><b>ข้อควรจำ</b>Asthma: <b>ไม่ใช้ SABA เดี่ยวโดยไม่มี ICS</b> · ใช้ SABA ≥3 หลอด/ปี สัมพันธ์กับ exacerbation และ ≥12 หลอด/ปี สัมพันธ์กับการเสียชีวิต</div>
+      <div class="fact" style="--c:var(--saba)"><b>ระวัง</b>Tachyarrhythmia, hypokalemia (ร่วมกับ diuretic/steroid), hyperglycemia, lactic acidosis เมื่อพ่นถี่ขนาดสูง</div>
+    </div>
+  </div>
+
+  <!-- SAMA + SABA/SAMA -->
+  <div class="dclass" id="sama">
+    <div class="dclass-h"><span class="cls c-sama">SAMA</span><span class="cls c-combo">SABA + SAMA</span><h3>Short-acting muscarinic antagonist และยาผสม</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="5">SAMA เดี่ยว</td></tr>
+        <tr><td><span class="gen">Ipratropium bromide</span><br><span class="num">250 mcg/2 mL, 500 mcg/2 mL</span></td><td><span class="tn">Atrovent UDV</span> และยาสามัญ <span class="avail th">ไทย</span></td><td>Nebulizer</td><td>500 mcg วันละ 3–4 ครั้ง · acute asthma ดูส่วนที่ 8</td><td><a class="pic" data-q="Atrovent UDV ipratropium nebulizer">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Ipratropium bromide</span><br><span class="num">20 mcg/puff</span></td><td><span class="tn">Atrovent pMDI</span> <span class="avail intl">ต่างประเทศ</span></td><td>pMDI</td><td>2 puffs วันละ 4 ครั้ง</td><td><a class="pic" data-q="Atrovent inhaler 20 mcg">รูปจริง ↗</a></td></tr>
+        <tr class="grouprow"><td colspan="5">SABA + SAMA ในหลอดเดียว</td></tr>
+        <tr><td><span class="gen">Fenoterol 50 mcg + Ipratropium 20 mcg</span><br><span class="num">ต่อ puff</span></td><td><span class="tn">Berodual</span> (MDI) <span class="avail th">ไทย</span></td><td>pMDI</td><td>1–2 puffs prn · ไม่เกิน 8 puffs/วัน</td><td><a class="pic" data-q="Berodual inhaler fenoterol ipratropium">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fenoterol 500 mcg + Ipratropium 250 mcg</span><br><span class="num">ต่อ 1 mL (≈20 หยด)</span></td><td><span class="tn">Berodual Solution</span> <span class="avail th">ไทย</span></td><td>Nebulizer</td><td>acute: 1–2.5 mL (20–50 หยด) เจือจางด้วย NSS ให้ได้ 3–4 mL · รุนแรงมากได้ถึง 4 mL ภายใต้การดูแล</td><td><a class="pic" data-q="Berodual solution nebulizer">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Salbutamol 2.5 mg + Ipratropium 0.5 mg</span><br><span class="num">ต่อ 2.5 mL</span></td><td><span class="tn">Combivent UDV</span> <span class="avail th">ไทย</span></td><td>Nebulizer</td><td>1 vial วันละ 3–4 ครั้ง</td><td><a class="pic" data-q="Combivent UDV unit dose vial">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--sama)"><b>ใช้เมื่อ</b>Acute exacerbation ที่รุนแรงของ asthma (เพิ่มกับ SABA ใน ER), AECOPD · COPD ที่ใช้เป็นยาบรรเทาอาการ</div>
+      <div class="fact" style="--c:var(--sama)"><b>ข้อควรจำ</b>Asthma: ipratropium ช่วยเฉพาะช่วงแรกใน ER ไม่มีประโยชน์เพิ่มเมื่อ admit แล้ว · ไม่ใช้ SAMA ร่วมกับ LAMA ประจำ</div>
+      <div class="fact" style="--c:var(--sama)"><b>ระวัง</b>Glaucoma มุมปิด (ใช้ mouthpiece แทนหน้ากาก), BPH/ปัสสาวะคั่ง</div>
+    </div>
+  </div>
+
+  <!-- LABA -->
+  <div class="dclass" id="laba">
+    <div class="dclass-h"><span class="cls c-laba">LABA</span><h3>Long-acting β2-agonist</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Indacaterol</span><br><span class="num">150, 300 mcg/cap</span></td><td><span class="tn">Onbrez Breezhaler</span> <span class="avail some">บาง รพ.</span></td><td>DPI capsule</td><td>1 cap OD · <b>COPD เท่านั้น</b></td><td><a class="pic" data-q="Onbrez Breezhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Formoterol</span><br><span class="num">4.5, 9 mcg</span></td><td><span class="tn">Oxis Turbuhaler</span> <span class="avail intl">ต่างประเทศ</span></td><td>DPI reservoir</td><td>4.5–9 mcg BID</td><td><a class="pic" data-q="Oxis Turbuhaler formoterol">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Salmeterol</span><br><span class="num">25 mcg/puff, 50 mcg/dose</span></td><td><span class="tn">Serevent Evohaler / Accuhaler</span> <span class="avail intl">ต่างประเทศ</span></td><td>pMDI / DPI blister</td><td>50 mcg BID</td><td><a class="pic" data-q="Serevent Accuhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Olodaterol</span><br><span class="num">2.5 mcg/puff</span></td><td><span class="tn">Striverdi Respimat</span> <span class="avail intl">ต่างประเทศ</span></td><td>SMI</td><td>2 puffs OD · COPD</td><td><a class="pic" data-q="Striverdi Respimat">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--laba)"><b>ใช้เมื่อ</b>COPD group A (ยาเดี่ยว) หรือเมื่อทนยา LAMA ไม่ได้ · ในไทย LABA ส่วนใหญ่อยู่ในรูปยาผสม</div>
+      <div class="fact" style="--c:var(--bad)"><b>ห้าม</b>ใช้ LABA เดี่ยวใน asthma หรือ asthma–COPD overlap ต้องมี ICS ในหลอดเดียวกันเสมอ</div>
+      <div class="fact" style="--c:var(--laba)"><b>ระวัง</b>โรคหัวใจที่มี arrhythmia, QTc ยาว, hypokalemia · ไอหลังสูด (indacaterol) พบบ่อยแต่ไม่อันตราย</div>
+    </div>
+  </div>
+
+  <!-- LAMA -->
+  <div class="dclass" id="lama">
+    <div class="dclass-h"><span class="cls c-lama">LAMA</span><h3>Long-acting muscarinic antagonist</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Tiotropium</span><br><span class="num">18 mcg/cap</span></td><td><span class="tn">Spiriva HandiHaler</span> <span class="avail th">ไทย</span></td><td>DPI capsule (ความต้านทานสูง)</td><td>1 cap OD สูด 2 ครั้งจากแคปซูลเดียว · COPD</td><td><a class="pic" data-q="Spiriva HandiHaler 18 mcg">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Tiotropium</span><br><span class="num">2.5 mcg/puff</span></td><td><span class="tn">Spiriva Respimat</span> <span class="avail th">ไทย</span></td><td>SMI</td><td>2 puffs OD (5 mcg) · COPD และ asthma add-on step 4–5</td><td><a class="pic" data-q="Spiriva Respimat">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Glycopyrronium</span><br><span class="num">50 mcg/cap</span></td><td><span class="tn">Seebri Breezhaler</span> <span class="avail some">บาง รพ.</span></td><td>DPI capsule</td><td>1 cap OD · COPD</td><td><a class="pic" data-q="Seebri Breezhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Umeclidinium</span><br><span class="num">62.5 mcg</span></td><td><span class="tn">Incruse Ellipta</span> <span class="avail some">บาง รพ.</span></td><td>DPI strip (Ellipta)</td><td>1 inhalation OD · COPD</td><td><a class="pic" data-q="Incruse Ellipta">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Aclidinium</span><br><span class="num">322 mcg</span></td><td><span class="tn">Eklira Genuair</span> <span class="avail intl">ต่างประเทศ</span></td><td>DPI multi-dose</td><td>1 inhalation BID</td><td><a class="pic" data-q="Eklira Genuair">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--lama)"><b>ใช้เมื่อ</b>COPD: ลด exacerbation ได้ดีกว่า LABA เดี่ยว · Asthma: tiotropium Respimat เป็น add-on step 5 (GINA) บน ICS-LABA</div>
+      <div class="fact" style="--c:var(--lama)"><b>ข้อควรจำ</b>บัญชียาหลักแห่งชาติ: tiotropium DPI 18 mcg อยู่ในบัญชี ค (ฉบับ 2563) — ตรวจสอบฉบับ 2567 และเงื่อนไขของ รพ.</div>
+      <div class="fact" style="--c:var(--lama)"><b>ระวัง</b>Narrow-angle glaucoma, BPH/bladder outflow obstruction, CrCl ต่ำ (glycopyrronium/tiotropium ขับทางไต ติดตามใกล้ชิด)</div>
+    </div>
+  </div>
+
+  <!-- ICS -->
+  <div class="dclass" id="ics">
+    <div class="dclass-h"><span class="cls c-ics">ICS</span><h3>Inhaled corticosteroid เดี่ยว</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Budesonide</span><br><span class="num">100, 200 mcg/dose</span></td><td><span class="tn">Pulmicort Turbuhaler</span> <span class="avail th">ไทย</span></td><td>DPI reservoir</td><td>200–400 mcg BID (ขนาดตาม step)</td><td><a class="pic" data-q="Pulmicort Turbuhaler 200">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Budesonide</span><br><span class="num">200 mcg/puff</span></td><td>ยาสามัญ budesonide pMDI <span class="avail th">ไทย</span></td><td>pMDI (ควรใช้ spacer)</td><td>200–400 mcg BID</td><td><a class="pic" data-q="budesonide inhaler 200 mcg MDI">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Budesonide</span><br><span class="num">0.5 mg/2 mL, 1 mg/2 mL</span></td><td><span class="tn">Pulmicort Respules</span> <span class="avail th">ไทย</span></td><td>Nebulizer</td><td>1–2 mg BID</td><td><a class="pic" data-q="Pulmicort Respules">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fluticasone propionate</span><br><span class="num">50, 125, 250 mcg/puff</span></td><td><span class="tn">Flixotide Evohaler</span> <span class="avail th">ไทย</span></td><td>pMDI</td><td>100–500 mcg BID</td><td><a class="pic" data-q="Flixotide Evohaler 125">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fluticasone propionate</span><br><span class="num">0.5 mg/2 mL, 2 mg/2 mL</span></td><td><span class="tn">Flixotide Nebules</span> <span class="avail some">บาง รพ.</span></td><td>Nebulizer</td><td>0.5–2 mg BID</td><td><a class="pic" data-q="Flixotide Nebules">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Ciclesonide</span><br><span class="num">80, 160 mcg/puff</span></td><td><span class="tn">Alvesco</span> <span class="avail some">บาง รพ.</span></td><td>pMDI (solution, extrafine)</td><td>80–320 mcg OD · prodrug กระตุ้นในปอด เชื้อราในปากน้อย</td><td><a class="pic" data-q="Alvesco ciclesonide inhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Beclometasone dipropionate</span><br><span class="num">50–250 mcg/puff</span></td><td>Qvar, Clenil <span class="avail intl">ต่างประเทศ</span></td><td>pMDI</td><td>ตาม dose table (ส่วนที่ 6)</td><td><a class="pic" data-q="Qvar beclometasone inhaler">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--ics)"><b>ใช้เมื่อ</b>Asthma: controller หลักทุก step · COPD: <b>ไม่ใช้ ICS เดี่ยว</b> ใช้ร่วมกับ LABA/LAMA เฉพาะผู้ที่มีข้อบ่งชี้ (ส่วนที่ 7)</div>
+      <div class="fact" style="--c:var(--ics)"><b>ลดผลข้างเคียง</b>ใช้ spacer กับ pMDI, บ้วนปาก–กลั้วคอหลังพ่นทุกครั้ง, ใช้ขนาดต่ำสุดที่คุมโรคได้</div>
+      <div class="fact" style="--c:var(--ics)"><b>ระวัง</b>Pneumonia ใน COPD (โดยเฉพาะ eos &lt;100, อายุมาก, BMI ต่ำ, โรคปอดรุนแรง), วัณโรค/NTM, กระดูกพรุน, ต้อกระจก, DM คุมยาก</div>
+    </div>
+  </div>
+
+  <!-- ICS/LABA -->
+  <div class="dclass" id="icslaba">
+    <div class="dclass-h"><span class="cls c-ics">ICS</span><span class="cls c-laba">LABA</span><h3>ICS/LABA ในหลอดเดียว</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>ใช้เป็น reliever ได้?</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Budesonide/Formoterol</span><br><span class="num">80/4.5, 160/4.5, 320/9</span><br><span class="small muted">(delivered; = 100/6, 200/6, 400/12 metered)</span></td><td><span class="tn">Symbicort Turbuhaler</span> <span class="avail th">ไทย</span><br><span class="small muted">บัญชี ค (DPI)</span></td><td>DPI reservoir</td><td>Maintenance 1–2 inh BID · COPD: 160/4.5 2 inh BID หรือ 320/9 1 inh BID</td><td><b style="color:var(--ok)">ได้</b> เฉพาะ 160/4.5 (MART/AIR) · 320/9 ห้ามใช้ MART</td><td><a class="pic" data-q="Symbicort Turbuhaler 160/4.5">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Beclometasone/Formoterol</span> (extrafine)<br><span class="num">100/6 mcg/puff</span></td><td><span class="tn">Foster</span> pMDI / NEXThaler <span class="avail some">บาง รพ.</span></td><td>pMDI solution / DPI</td><td>1–2 puffs BID · COPD 2 puffs BID</td><td><b style="color:var(--ok)">ได้</b> (100/6 MART, สูงสุด 8 inh/วัน)</td><td><a class="pic" data-q="Foster 100/6 inhaler beclometasone formoterol">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fluticasone propionate/Salmeterol</span><br><span class="num">50/25, 125/25, 250/25 ต่อ puff</span></td><td><span class="tn">Seretide Evohaler</span> <span class="avail th">ไทย</span></td><td>pMDI</td><td>2 puffs BID</td><td><b style="color:var(--bad)">ไม่ได้</b></td><td><a class="pic" data-q="Seretide Evohaler 25/125">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fluticasone propionate/Salmeterol</span><br><span class="num">100/50, 250/50, 500/50</span></td><td><span class="tn">Seretide Accuhaler</span> <span class="avail th">ไทย</span><br><span class="small muted">บัญชี ค (DPI, MDI)</span></td><td>DPI blister disc</td><td>1 inh BID · COPD 500/50 BID</td><td><b style="color:var(--bad)">ไม่ได้</b></td><td><a class="pic" data-q="Seretide Accuhaler 50/250">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Fluticasone furoate/Vilanterol</span><br><span class="num">100/25, 200/25</span></td><td><span class="tn">Relvar Ellipta</span> <span class="avail some">บาง รพ.</span></td><td>DPI strip (Ellipta)</td><td>1 inh OD · COPD ใช้ 100/25 เท่านั้น</td><td><b style="color:var(--bad)">ไม่ได้</b></td><td><a class="pic" data-q="Relvar Ellipta 100/25">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Mometasone/Indacaterol</span><br><span class="num">80, 160, 320 / 150</span></td><td><span class="tn">Atectura Breezhaler</span> <span class="avail intl">ต่างประเทศ</span></td><td>DPI capsule</td><td>1 cap OD · asthma</td><td><b style="color:var(--bad)">ไม่ได้</b></td><td><a class="pic" data-q="Atectura Breezhaler">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--combo)"><b>ใช้เมื่อ</b>Asthma step 2–5 (Track 1 = ICS-formoterol MART/AIR, Track 2 = ICS-LABA + reliever แยก) · COPD: ไม่แนะนำ ICS/LABA ถ้าจะให้ ICS ให้ใช้ triple แทน</div>
+      <div class="fact" style="--c:var(--combo)"><b>ICS-SABA</b> (<span class="tn">Airsupra</span> budesonide/albuterol 80/90 mcg, <span class="avail intl">ต่างประเทศ</span>): 2 puffs prn ไม่เกิน 12 puffs/วัน · GINA 2026 ใช้เป็น anti-inflammatory reliever ได้ทุก step ใน Track 2</div>
+      <div class="fact" style="--c:var(--combo)"><b>ระวัง</b>Seretide/Relvar มี LABA ที่ไม่เหมาะเป็นยาบรรเทาอาการ ผู้ป่วยต้องมี SABA แยก และห้ามพ่นเพิ่มเมื่อหอบ</div>
+    </div>
+  </div>
+
+  <!-- LAMA/LABA -->
+  <div class="dclass" id="lamalaba">
+    <div class="dclass-h"><span class="cls c-lama">LAMA</span><span class="cls c-laba">LABA</span><h3>LAMA/LABA ในหลอดเดียว (COPD)</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Tiotropium/Olodaterol</span><br><span class="num">2.5/2.5 mcg/puff</span></td><td><span class="tn">Spiolto Respimat</span> <span class="avail th">ไทย</span></td><td>SMI</td><td>2 puffs OD</td><td><a class="pic" data-q="Spiolto Respimat">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Indacaterol/Glycopyrronium</span><br><span class="num">110/50 mcg/cap</span></td><td><span class="tn">Ultibro Breezhaler</span> <span class="avail th">ไทย</span></td><td>DPI capsule</td><td>1 cap OD</td><td><a class="pic" data-q="Ultibro Breezhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Umeclidinium/Vilanterol</span><br><span class="num">62.5/25 mcg</span></td><td><span class="tn">Anoro Ellipta</span> <span class="avail th">ไทย</span></td><td>DPI strip (Ellipta)</td><td>1 inh OD</td><td><a class="pic" data-q="Anoro Ellipta">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Glycopyrronium/Formoterol</span><br><span class="num">7.2/5 mcg/puff</span></td><td><span class="tn">Bevespi Aerosphere</span> <span class="avail intl">ต่างประเทศ</span></td><td>pMDI</td><td>2 puffs BID</td><td><a class="pic" data-q="Bevespi Aerosphere">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--lama)"><b>ใช้เมื่อ</b>COPD group B และ E เป็นยาเริ่มต้น (GOLD 2026) · dyspnea ไม่ดีขึ้นด้วยยาเดี่ยว</div>
+      <div class="fact" style="--c:var(--bad)"><b>ห้าม</b>ใช้ใน asthma หรือ asthma–COPD overlap โดยไม่มี ICS</div>
+    </div>
+  </div>
+
+  <!-- Triple -->
+  <div class="dclass" id="triple">
+    <div class="dclass-h"><span class="cls c-ics">ICS</span><span class="cls c-lama">LAMA</span><span class="cls c-laba">LABA</span><h3>Triple therapy ในหลอดเดียว (SITT)</h3></div>
+    <div class="tbl"><table>
+      <thead><tr><th>ชื่อสามัญ · ความแรง</th><th>ชื่อการค้า</th><th>อุปกรณ์</th><th>ขนาดยาผู้ใหญ่</th><th>ข้อบ่งใช้</th><th>รูป</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gen">Fluticasone furoate/Umeclidinium/Vilanterol</span><br><span class="num">100/62.5/25</span></td><td><span class="tn">Trelegy Ellipta</span> <span class="avail th">ไทย</span></td><td>DPI strip (Ellipta)</td><td>1 inh OD</td><td>COPD, asthma (ตามทะเบียน)</td><td><a class="pic" data-q="Trelegy Ellipta">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Budesonide/Glycopyrronium/Formoterol</span><br><span class="num">160/7.2/5 mcg/puff</span></td><td><span class="tn">Breztri Aerosphere</span> (Trixeo) <span class="avail some">บาง รพ.</span></td><td>pMDI</td><td>2 puffs BID</td><td>COPD</td><td><a class="pic" data-q="Breztri Aerosphere">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Beclometasone/Formoterol/Glycopyrronium</span><br><span class="num">100/6/10 (87/5/9 delivered)</span></td><td><span class="tn">Trimbow</span> <span class="avail intl">ต่างประเทศ</span></td><td>pMDI / NEXThaler</td><td>2 puffs BID</td><td>COPD, asthma</td><td><a class="pic" data-q="Trimbow inhaler">รูปจริง ↗</a></td></tr>
+        <tr><td><span class="gen">Mometasone/Indacaterol/Glycopyrronium</span><br><span class="num">136/114/46 (delivered)</span></td><td><span class="tn">Enerzair Breezhaler</span> <span class="avail intl">ต่างประเทศ</span></td><td>DPI capsule</td><td>1 cap OD</td><td>Asthma</td><td><a class="pic" data-q="Enerzair Breezhaler">รูปจริง ↗</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="facts">
+      <div class="fact" style="--c:var(--combo)"><b>COPD</b>Exacerbation ต่อเนื่องบน LAMA/LABA และ eos ≥100 หรือเริ่มเลยใน group E ที่ eos ≥300 · IMPACT/ETHOS แสดงว่าลด exacerbation และลด all-cause mortality</div>
+      <div class="fact" style="--c:var(--combo)"><b>Asthma</b>Step 5 (GINA) หรือ step 4 (TAC) ที่ยังคุมไม่ได้บน medium–high ICS-LABA · ลด severe exacerbation ได้น้อยกว่า biologic</div>
+    </div>
+  </div>
+
+  <!-- Nebulizer -->
+  <div class="dclass" id="neb">
+    <div class="dclass-h"><h3>ยาพ่นแบบ Nebulizer: ใช้อย่างไรในทางปฏิบัติ</h3></div>
+    <div class="grid2">
+      <div class="panel">
+        <h4>ยาที่ใช้บ่อยใน รพ.ไทย</h4>
+        <div class="tbl" style="border:0"><table style="min-width:0">
+          <thead><tr><th>ยา</th><th>ขนาดผู้ใหญ่ต่อครั้ง</th></tr></thead>
+          <tbody>
+            <tr><td>Salbutamol (Ventolin Nebules)</td><td class="num">2.5–5 mg</td></tr>
+            <tr><td>Terbutaline (Bricanyl Respules)</td><td class="num">5–10 mg</td></tr>
+            <tr><td>Ipratropium (Atrovent UDV)</td><td class="num">500 mcg</td></tr>
+            <tr><td>Berodual Solution</td><td class="num">1–2.5 mL + NSS รวม 3–4 mL</td></tr>
+            <tr><td>Combivent UDV</td><td class="num">1 vial (2.5 mL)</td></tr>
+            <tr><td>Budesonide (Pulmicort Respules)</td><td class="num">0.5–2 mg</td></tr>
+            <tr><td>Fluticasone (Flixotide Nebules)</td><td class="num">0.5–2 mg</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small muted">Ensifentrine (Ohtuvayre, PDE3/4 inhibitor) 3 mg neb BID สำหรับ COPD มีในต่างประเทศ ยังไม่พบในไทย</p>
+      </div>
+      <div class="panel">
+        <h4>หลักการใช้</h4>
+        <ul>
+          <li>ปริมาตรในกระเปาะ 3–4 mL · jet nebulizer ใช้ก๊าซ 6–8 L/min พ่นจนหมด ~10 นาที</li>
+          <li><b>COPD ที่มี CO₂ คั่ง</b>: ใช้อากาศ (air) ขับ nebulizer และให้ O₂ ทาง nasal cannula แยก เพื่อไม่ให้ O₂ สูงเกิน (เป้า SpO₂ 88–92%)</li>
+          <li>ใช้ <b>mouthpiece</b> แทนหน้ากากเมื่อพ่นยา anticholinergic หรือ steroid (ลดยาเข้าตาและผิวหน้า) หากใช้หน้ากาก steroid ให้ล้างหน้าหลังพ่น</li>
+          <li>pMDI + spacer ให้ผลเทียบเท่า nebulizer ใน acute asthma และ AECOPD ส่วนใหญ่ ใช้ nebulizer เมื่อผู้ป่วยหอบมากจนสูดตามขั้นตอนไม่ได้</li>
+          <li>ผสม salbutamol + ipratropium + budesonide ในกระเปาะเดียวได้ในทางปฏิบัติ แต่ควรตรวจ compatibility ของยาอื่นก่อน</li>
+          <li>ระวังการแพร่เชื้อทางละออง (เช่น COVID-19, วัณโรค) ใช้ห้องแยกหรือเลือก pMDI + spacer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="devices">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 3</div><h2>อุปกรณ์พ่นยาและข้อจำกัดเรื่องแรงสูด</h2></div>
+  <div class="prose">
+    <p>ยาตัวเดียวกันให้ผลต่างกันมากตามอุปกรณ์ หลักคิดคือ <b>pMDI และ SMI ต้องหายใจเข้าช้าและลึก</b> (ยาถูกพ่นออกมาเอง แรงสูดเร็วทำให้ยาไปติดคอ) ส่วน <b>DPI ต้องหายใจเข้าเร็วและแรง</b> เพราะพลังงานจากลมหายใจเป็นตัวแตกผงยาให้เป็นอนุภาคเล็ก</p>
+  </div>
+
+  <div class="devices">
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด pMDI: หลอดโลหะเสียบในตัวเครื่องรูปตัว L">
+        <rect x="88" y="6" width="34" height="46" rx="5" style="fill:var(--saba)" stroke="currentColor"/>
+        <rect x="82" y="34" width="46" height="70" rx="9" class="f-sunk" stroke="currentColor"/>
+        <rect x="40" y="82" width="62" height="30" rx="7" class="f-sunk" stroke="currentColor"/>
+        <rect x="40" y="86" width="8" height="22" rx="2" class="f-surface" stroke="currentColor"/>
+        <g stroke="currentColor" stroke-opacity=".5" stroke-dasharray="2 4"><line x1="34" y1="92" x2="10" y2="84"/><line x1="34" y1="97" x2="8" y2="97"/><line x1="34" y1="102" x2="10" y2="110"/></g>
+        <text x="150" y="31" font-size="13">กด</text><line x1="146" y1="26" x2="126" y2="26" stroke="currentColor" marker-end="url(#ah)"/>
+      </svg>
+      <h4>pMDI <span class="small muted">Evohaler, Berodual, Foster</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i></i><i></i><i></i></span><span>แรงสูด</span><span class="small">ช้า–ลึก 3–5 วินาที</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+      <p class="small">ข้อดี: เล็ก ใช้ได้แม้แรงสูดน้อย ใช้กับ spacer ได้ · ข้อจำกัด: ต้องกดพร้อมหายใจเข้า, ต้องเขย่า (suspension), ผู้ป่วยมักสูดเร็วเกิน, carbon footprint สูง</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด pMDI ต่อกับ spacer กระบอก">
+        <rect x="18" y="58" width="28" height="24" rx="5" class="f-sunk" stroke="currentColor"/>
+        <rect x="42" y="44" width="118" height="52" rx="26" class="f-surface" stroke="currentColor"/>
+        <g stroke="currentColor" stroke-opacity=".35" stroke-dasharray="2 5"><line x1="150" y1="60" x2="60" y2="62"/><line x1="150" y1="70" x2="56" y2="70"/><line x1="150" y1="80" x2="60" y2="78"/></g>
+        <rect x="156" y="36" width="26" height="54" rx="6" class="f-sunk" stroke="currentColor"/>
+        <rect x="160" y="12" width="18" height="30" rx="4" style="fill:var(--ics)" stroke="currentColor"/>
+        <text x="100" y="120" font-size="13" text-anchor="middle">spacer</text>
+      </svg>
+      <h4>pMDI + Spacer <span class="small muted">VHC</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i></i><i></i><i></i></span><span>แรงสูด</span><span class="small">ช้า หรือ tidal 4–6 ครั้ง</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i></i><i></i><i></i></span></div>
+      <p class="small">เหมาะ: ผู้สูงอายุ, แรงสูดน้อย, ประสานไม่ได้, acute exacerbation, ICS ขนาดสูง (ลดยาติดคอ) · ข้อจำกัด: ใหญ่ พกยาก, ไฟฟ้าสถิตในกระบอกพลาสติก</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด soft mist inhaler: ตัวเครื่องทรงกระบอก ฐานใสหมุนได้ มีปุ่มกดด้านข้าง">
+        <rect x="80" y="10" width="40" height="26" rx="10" class="f-sunk" stroke="currentColor"/>
+        <rect x="80" y="30" width="40" height="58" rx="8" class="f-sunk" stroke="currentColor"/>
+        <rect x="120" y="50" width="8" height="16" rx="3" style="fill:var(--lama)" stroke="currentColor"/>
+        <rect x="80" y="86" width="40" height="36" rx="8" class="f-surface" stroke="currentColor" stroke-dasharray="3 2"/>
+        <rect x="90" y="92" width="20" height="26" rx="4" style="fill:var(--lama);fill-opacity:.35" stroke="currentColor" stroke-opacity=".6"/>
+        <path d="M66 110 a34 20 0 0 0 68 0" class="s-ink" stroke-opacity=".6" marker-end="url(#ah)"/>
+        <text x="150" y="60" font-size="13">กด</text>
+        <text x="8" y="100" font-size="13">หมุนฐาน</text>
+      </svg>
+      <h4>Soft mist inhaler <span class="small muted">Respimat</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i></i><i></i><i></i></span><span>แรงสูด</span><span class="small">ช้า–ลึก ไม่ต้องแรง</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+      <p class="small">ละอองพ่นช้า (~1.5 วินาที) ประสานง่ายกว่า pMDI และไม่ต้องใช้แรงสูด เหมาะกับ COPD รุนแรงหรือผู้สูงอายุ · ข้อจำกัด: ต้องหมุนฐาน (ข้อมืออักเสบ/มือไม่มีแรงลำบาก), ประกอบหลอดครั้งแรกยุ่งยาก</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด DPI แบบ reservoir: ทรงกระบอกตั้ง ปากสูดด้านบน ฐานหมุนด้านล่าง">
+        <path d="M90 8 h20 l6 22 h-32 z" class="f-sunk" stroke="currentColor"/>
+        <rect x="80" y="28" width="40" height="72" rx="5" class="f-surface" stroke="currentColor"/>
+        <rect x="104" y="60" width="10" height="16" rx="2" class="f-sunk" stroke="currentColor"/>
+        <rect x="72" y="96" width="56" height="28" rx="5" style="fill:var(--ics)" stroke="currentColor"/>
+        <g stroke="currentColor" stroke-opacity=".6"><line x1="82" y1="100" x2="82" y2="120"/><line x1="92" y1="100" x2="92" y2="120"/><line x1="102" y1="100" x2="102" y2="120"/><line x1="112" y1="100" x2="112" y2="120"/><line x1="120" y1="100" x2="120" y2="120"/></g>
+        <path d="M140 118 q14 -8 0 -18" class="s-ink" marker-end="url(#ah)"/><path d="M60 100 q-14 8 0 18" class="s-ink" marker-end="url(#ah)"/>
+        <text x="150" y="96" font-size="13">หมุน</text>
+      </svg>
+      <h4>DPI · multi-dose reservoir <span class="small muted">Turbuhaler</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span>แรงสูด</span><span class="small">เร็ว–แรง ≥30, ดี ≥60 L/min</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i></i><i></i><i></i></span></div>
+      <p class="small">ไม่มีรส ไม่มีเสียง ผู้ป่วยไม่แน่ใจว่าได้ยา (เสียงเขย่าคือสารดูดความชื้น ไม่ใช่ยา) · ต้องตั้งตรงขณะหมุนบรรจุยา · ไวต่อความชื้น · Symbicort, Pulmicort</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด DPI แบบจานกลมมีคันโยก">
+        <circle cx="100" cy="68" r="54" class="f-sunk" stroke="currentColor"/>
+        <circle cx="100" cy="68" r="38" style="fill:var(--combo);fill-opacity:.8" stroke="currentColor"/>
+        <rect x="88" y="10" width="24" height="12" rx="3" class="f-surface" stroke="currentColor"/>
+        <rect x="94" y="30" width="12" height="30" rx="3" class="f-surface" stroke="currentColor"/>
+        <path d="M64 100 a44 44 0 0 1 -8 -20" class="s-ink" stroke-width="5" stroke-linecap="round"/>
+        <rect x="126" y="86" width="16" height="10" rx="2" class="f-surface" stroke="currentColor"/>
+        <text x="150" y="30" font-size="13">ปากสูด</text>
+        <text x="146" y="118" font-size="13">ตัวนับ</text>
+        <text x="4" y="124" font-size="13">คันโยก</text>
+      </svg>
+      <h4>DPI · blister disc <span class="small muted">Accuhaler / Diskus</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i class="on"></i><i></i><i></i></span><span>แรงสูด</span><span class="small">เร็ว–ลึก ≥30 L/min</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i></i><i></i><i></i></span></div>
+      <p class="small">แต่ละโดสอยู่ในแผงฟอยล์ ป้องกันความชื้นได้ดี มีตัวนับโดส รสหวานของ lactose ช่วยยืนยันว่าได้ยา · ต้องถือแนวนอนหลังดันคันโยก · Seretide Accuhaler</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด DPI ทรงรีมีฝาเลื่อน เปิดฝาแล้วโดสพร้อมสูด">
+        <rect x="52" y="24" width="96" height="100" rx="30" class="f-sunk" stroke="currentColor"/>
+        <rect x="84" y="10" width="32" height="20" rx="6" class="f-surface" stroke="currentColor"/>
+        <path d="M52 96 a30 30 0 0 0 30 28 h36 a30 30 0 0 0 30 -28 z" style="fill:var(--laba)" stroke="currentColor"/>
+        <rect x="90" y="48" width="20" height="12" rx="2" class="f-surface" stroke="currentColor"/>
+        <line x1="166" y1="60" x2="166" y2="104" stroke="currentColor" marker-end="url(#ah)"/>
+        <text x="150" y="50" font-size="13">เลื่อน</text>
+      </svg>
+      <h4>DPI · strip ฝาเลื่อน <span class="small muted">Ellipta</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i class="on"></i><i class="on"></i><i></i><i></i></span><span>แรงสูด</span><span class="small">ยาว–แรง–ลึก ≥30 L/min</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i></i><i></i><i></i></span></div>
+      <p class="small">ขั้นตอนน้อยที่สุด: เปิด–สูด–ปิด วันละครั้ง · <b>เปิดฝาแล้วปิดโดยไม่สูด = เสียโดสนั้น</b> · ห้ามปิดรูระบายอากาศด้วยนิ้ว · Relvar, Anoro, Trelegy, Incruse</p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด DPI แบบแคปซูล: ฐานมีช่องใส่แคปซูล ปากสูดเปิดเป็นบานพับ และแคปซูลข้างๆ">
+        <rect x="46" y="70" width="84" height="54" rx="10" class="f-sunk" stroke="currentColor"/>
+        <ellipse cx="88" cy="74" rx="16" ry="6" class="f-surface" stroke="currentColor"/>
+        <path d="M58 70 l-20 -40 h36 l14 40" class="f-surface" stroke="currentColor"/>
+        <rect x="126" y="92" width="10" height="16" rx="3" class="f-surface" stroke="currentColor"/>
+        <g transform="translate(152 40) rotate(20)"><rect x="0" y="0" width="16" height="40" rx="8" class="f-surface" stroke="currentColor"/><path d="M0 20 v-12 a8 8 0 0 1 16 0 v12 z" style="fill:var(--lama)"/></g>
+        <text x="138" y="124" font-size="13">ปุ่มเจาะ</text>
+        <text x="146" y="30" font-size="13">แคปซูล</text>
+      </svg>
+      <h4>DPI · single-dose capsule <span class="small muted">Breezhaler, HandiHaler</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="small">Breezhaler ต่ำ · HandiHaler สูง</span><span>แรงสูด</span><span class="small">เร็ว–แรง จนได้ยินแคปซูลหมุน</span><span>ประสานมือ</span><span class="bar warm"><i class="on"></i><i></i><i></i><i></i></span></div>
+      <p class="small">มี feedback ชัด (เสียงแคปซูลสั่น, ดูแคปซูลว่างได้) · ข้อจำกัด: ต้องหยิบแคปซูลเล็ก เจาะ ใส่ — ยากในผู้สูงอายุ ตามัว มือสั่น ข้ออักเสบ · HandiHaler ต้องสูด 2 ครั้งต่อแคปซูล · <b>ห้ามกลืนแคปซูล</b></p>
+    </article>
+
+    <article class="device">
+      <svg viewBox="0 0 200 130" role="img" aria-label="ภาพวาด jet nebulizer: กระเปาะยาต่อกับท่อ T และสายก๊าซ">
+        <rect x="30" y="40" width="130" height="18" rx="8" class="f-sunk" stroke="currentColor"/>
+        <rect x="14" y="42" width="22" height="14" rx="4" class="f-surface" stroke="currentColor"/>
+        <path d="M78 58 h34 l-6 44 a10 10 0 0 1 -22 0 z" class="f-surface" stroke="currentColor"/>
+        <path d="M86 88 h20 l-2 14 a8 8 0 0 1 -16 0 z" style="fill:var(--saba);fill-opacity:.45"/>
+        <path d="M95 112 v4 q0 12 40 10 h50" class="s-ink" stroke-width="2"/>
+        <g stroke="currentColor" stroke-opacity=".45" stroke-dasharray="2 4"><line x1="95" y1="70" x2="95" y2="46"/><line x1="86" y1="72" x2="80" y2="48"/><line x1="104" y1="72" x2="110" y2="48"/></g>
+        <text x="160" y="118" font-size="13">O₂/air</text>
+      </svg>
+      <h4>Nebulizer <span class="small muted">jet / mesh</span></h4>
+      <div class="meter"><span>ความต้านทาน</span><span class="bar"><i></i><i></i><i></i><i></i></span><span>แรงสูด</span><span class="small">หายใจปกติ (tidal)</span><span>ประสานมือ</span><span class="bar warm"><i></i><i></i><i></i><i></i></span></div>
+      <p class="small">ใช้ได้ทุกคนแม้หอบมาก สับสน หรือใส่ท่อช่วยหายใจ · ข้อจำกัด: ใช้เวลานาน ต้องมีเครื่อง/ไฟฟ้า ทำความสะอาดทุกครั้ง ยาเข้าปอดไม่แน่นอน แพร่ละอองเชื้อ</p>
+    </article>
+  </div>
+  <p class="small muted">ภาพเป็นภาพวาดประกอบตามประเภทอุปกรณ์ ไม่ใช่รูปผลิตภัณฑ์จริง · แถบ “ประสานมือ” สีส้มยิ่งยาว ยิ่งต้องประสานการกดกับการหายใจมาก</p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>แรงสูด (Peak inspiratory flow, PIF)</h3>
+      <p class="small">DPI แต่ละแบบมีความต้านทานต่างกัน สิ่งที่ผงยาต้องการคือ “แรงดูด” (inspiratory effort) ที่มากพอ อุปกรณ์ความต้านทานสูงจึงวัด flow ได้ต่ำกว่าแม้ออกแรงเท่ากัน วัดได้ด้วย In-Check DIAL ตั้งค่าความต้านทานตรงกับอุปกรณ์</p>
+      <div class="tbl" style="border:0"><table style="min-width:0">
+        <thead><tr><th>PIF ที่วัดผ่านความต้านทานของอุปกรณ์</th><th>ความหมาย</th></tr></thead>
+        <tbody>
+          <tr><td class="num">≥ 60 L/min</td><td>ใช้ DPI ได้ทุกชนิด</td></tr>
+          <tr><td class="num">30–60 L/min</td><td>ใช้ DPI ได้แต่อาจได้ยาไม่เต็มที่ ฝึกสูดแรงขึ้น ติดตามผล</td></tr>
+          <tr><td class="num">&lt; 30 L/min</td><td><b>หลีกเลี่ยง DPI</b> → pMDI + spacer, SMI หรือ nebulizer</td></tr>
+          <tr><td class="num">pMDI / SMI</td><td>ต้องการ flow ช้า ~30 L/min และไม่เกิน 60 L/min</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small"><b>กลุ่มเสี่ยงแรงสูดต่ำ:</b> ผู้สูงอายุ ผู้หญิงตัวเล็ก COPD รุนแรง (FEV1 &lt;50%) มี hyperinflation ช่วง exacerbation หรือหลังออกจาก รพ. กล้ามเนื้ออ่อนแรง และ cognitive impairment</p>
+    </div>
+    <div class="panel">
+      <h3>เลือกอุปกรณ์ตามผู้ป่วย</h3>
+      <p class="small">เริ่มจากสองคำถาม: หายใจเข้าเร็วแรงได้ไหม และประสานการกดกับหายใจเข้าช้าๆ ได้ไหม</p>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.84rem">
+        <thead><tr><th></th><th>ประสานได้</th><th>ประสานไม่ได้</th></tr></thead>
+        <tbody>
+          <tr><th style="background:var(--sunk);font-size:.8rem">แรงสูดดี<br>(≥30–60)</th><td>เลือกได้ทุกชนิด ตามความชอบ ราคา และยาที่มี</td><td>DPI หรือ pMDI + spacer</td></tr>
+          <tr><th style="background:var(--sunk);font-size:.8rem">แรงสูดน้อย<br>(&lt;30)</th><td>pMDI (± spacer) หรือ SMI</td><td>pMDI + spacer แบบ tidal breathing หรือ nebulizer</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="small">
+        <li><b>มือ/ข้อ</b>: ข้ออักเสบ มือไม่มีแรง → หลีกเลี่ยงแคปซูลและการหมุนฐาน SMI; Ellipta ง่ายที่สุด</li>
+        <li><b>ความจำ/สายตา</b>: ลดจำนวนขั้นตอน ใช้ยาวันละครั้ง ให้ญาติช่วย</li>
+        <li><b>ใช้อุปกรณ์ชนิดเดียวกันทุกหลอด</b> ถ้าเป็นไปได้ เช่น controller และ reliever เป็น pMDI ทั้งคู่ หรือใช้ MART หลอดเดียว</li>
+        <li>อย่าเปลี่ยนอุปกรณ์โดยไม่สอนใหม่และให้ผู้ป่วยสาธิตกลับ (teach-back)</li>
+        <li>สิทธิการรักษา/บัญชียา ราคา และ carbon footprint (DPI/SMI ต่ำกว่า pMDI) ประกอบการเลือก</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="technique">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 4</div><h2>วิธีพ่นยาทีละขั้นตอน</h2></div>
+  <p class="prose small muted">ผู้ป่วยมากกว่าครึ่งพ่นยาผิดอย่างน้อยหนึ่งขั้น ให้ผู้ป่วยสาธิตทุกครั้งที่มาตรวจ โดยเฉพาะเมื่อโรคคุมไม่ได้ ก่อนเพิ่มยา · ขั้นตอนด้านล่างเป็นหลักทั่วไป ให้ยึดเอกสารกำกับของแต่ละผลิตภัณฑ์</p>
+
+  <details open>
+    <summary>pMDI (ไม่มี spacer)</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>เปิดฝา ตรวจปากหลอดว่าไม่มีสิ่งแปลกปลอม ดูตัวนับโดส</li>
+        <li><b>เขย่าแรงๆ 4–5 ครั้งทันทีก่อนพ่นทุกครั้ง</b> (ยาแบบ suspension · GINA 2026 เน้นว่าทิ้งไว้แม้ 30 วินาทีหลังเขย่าก็ทำให้ขนาดยาคลาดเคลื่อน) · หลอดใหม่หรือไม่ได้ใช้นาน ให้พ่นทิ้งตามเอกสารกำกับ</li>
+        <li>ถือหลอดตั้งตรง ก้นหลอดอยู่ด้านบน</li>
+        <li>หายใจออกให้สุด โดยหันหน้าออกจากหลอด</li>
+        <li>อมปากหลอดให้สนิท ศีรษะเงยเล็กน้อย</li>
+        <li><b>เริ่มหายใจเข้าช้าๆ แล้วกดหลอด 1 ครั้งพร้อมกัน</b> สูดต่อช้าและลึกจนสุด (3–5 วินาที)</li>
+        <li>กลั้นหายใจ 5–10 วินาที หรือนานที่สุดเท่าที่สบาย แล้วค่อยๆ หายใจออก</li>
+        <li>ถ้าต้องพ่นซ้ำ รอ ~30–60 วินาที เขย่าใหม่แล้วทำซ้ำ</li>
+        <li>ปิดฝา · ถ้ามี ICS บ้วนปากกลั้วคอ</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> ไม่เขย่า, กดก่อนหรือหลังหายใจเข้า, สูดเร็วแรงเหมือน DPI, กดหลายครั้งในการหายใจครั้งเดียว, ละอองพ่นออกทางมุมปาก/จมูก</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>pMDI + spacer / valved holding chamber</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>ประกอบ spacer ตรวจว่าไม่มีรอยแตก เปิดฝาหลอดยาและเขย่า</li>
+        <li>เสียบหลอดยาที่ท้าย spacer ให้แน่น</li>
+        <li>หายใจออก แล้วอมปาก spacer ให้สนิท (หรือครอบหน้ากากให้แนบ)</li>
+        <li>กดหลอด <b>1 ครั้ง</b> เข้าไปใน spacer</li>
+        <li><b>วิธีสูดครั้งเดียว:</b> สูดช้าๆ ลึกๆ แล้วกลั้น 5–10 วินาที · <b>วิธี tidal:</b> หายใจเข้าออกปกติ 4–6 ครั้งโดยไม่ถอดปาก (เหมาะกับผู้สูงอายุหรือตอนหอบ)</li>
+        <li>ถ้าต้องพ่นเพิ่ม ถอดหลอดยา เขย่าใหม่ แล้วทำซ้ำทีละ 1 puff</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> กดหลาย puff เข้า spacer พร้อมกัน, รอนานก่อนสูด (ยาเกาะผนัง), spacer ใหม่ที่มีไฟฟ้าสถิตแล้วไม่ได้ล้างก่อนใช้</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>DPI · Turbuhaler (Symbicort, Pulmicort)</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>หมุนเปิดฝาครอบออก</li>
+        <li><b>ถือหลอดตั้งตรง</b> ฐานสีอยู่ด้านล่าง</li>
+        <li>หมุนฐานไปทางหนึ่งจนสุด แล้วหมุนกลับจนได้ยินเสียง “คลิก” = บรรจุยา 1 โดส (ห้ามเขย่าหรือเป่า)</li>
+        <li>หายใจออกให้สุด <b>ห่างจากปากหลอด</b></li>
+        <li>อมปากหลอดให้สนิท <b>สูดเข้าเร็ว แรง และลึก</b> อย่ากัดหรือบังช่องลม</li>
+        <li>เอาหลอดออก กลั้นหายใจ 5–10 วินาที</li>
+        <li>ถ้าต้องสูดโดสที่สอง ทำซ้ำตั้งแต่ขั้นที่ 2 · ปิดฝา · บ้วนปาก</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> หมุนขณะถือนอน/คว่ำ, หายใจออกเข้าหลอด (ความชื้นทำให้ผงยาจับตัว), สูดเบา, คิดว่าเสียงเขย่าคือยา · ขีดแดงที่ช่องตัวนับ = เหลือ ~20 โดส, เลข 0 = หมด</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>DPI · Accuhaler / Diskus (Seretide Accuhaler)</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>ถือตัวเครื่องด้วยมือหนึ่ง ใช้นิ้วโป้งอีกมือดันที่จับเปิดออกจนสุด</li>
+        <li>ถือแนวนอน ปากสูดหันเข้าหาตัว <b>ดันคันโยกจนสุดจนได้ยินคลิก</b> = เจาะแผงยา 1 โดส</li>
+        <li>หายใจออกให้สุดโดยหันออกจากเครื่อง</li>
+        <li>อมปากสูด <b>สูดเข้าเร็ว สม่ำเสมอ และลึก</b></li>
+        <li>กลั้นหายใจ 5–10 วินาที แล้วหายใจออกช้าๆ</li>
+        <li>ดึงที่จับปิดกลับจนได้ยินคลิก (คันโยกคืนตำแหน่งเอง) · บ้วนปาก</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> ดันคันโยกเล่นหลายครั้ง (เสียยา), เอียงเครื่องหลังเจาะแล้วผงหก, หายใจออกเข้าเครื่อง · เลขตัวนับเป็นสีแดงเมื่อเหลือ 5 โดส</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>DPI · Ellipta (Relvar, Anoro, Trelegy, Incruse)</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li><b>เลื่อนฝาลงจนสุดจนได้ยินคลิก</b> = บรรจุยาแล้ว ตัวนับลดลง 1 (ไม่ต้องเขย่า)</li>
+        <li>ถือเครื่องห่างปาก หายใจออกให้สุด</li>
+        <li>อมปากสูดให้สนิท <b>ห้ามนิ้วปิดช่องระบายอากาศ</b></li>
+        <li>สูดเข้า <b>ยาว สม่ำเสมอ และลึก</b> 1 ครั้ง</li>
+        <li>เอาเครื่องออก กลั้นหายใจ 3–4 วินาทีหรือนานเท่าที่ทำได้</li>
+        <li>เลื่อนฝาปิดขึ้นจนสุด · บ้วนปากถ้ามี ICS</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> เปิดฝาแล้วปิดโดยไม่สูด = โดสนั้นหายไป (ไม่ต้องเปิดซ้ำเพื่อ “ให้แน่ใจ”), สูดครั้งที่สอง, ใช้เกิน 1 ครั้ง/วัน</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>DPI · Breezhaler / HandiHaler (แคปซูล)</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>ดึงฝาครอบออก เปิดปากสูด (Breezhaler: เอียงปากสูดเปิด · HandiHaler: เปิดฝาและปากสูดขึ้น)</li>
+        <li>แกะแคปซูลออกจากแผง <b>ทันทีก่อนใช้</b> ด้วยมือแห้ง ใส่ในช่องแคปซูล</li>
+        <li>ปิดปากสูดจนคลิก ถือตั้งตรง <b>กดปุ่มเจาะ 1 ครั้งแล้วปล่อย</b> (Breezhaler กดปุ่มสองข้างพร้อมกัน)</li>
+        <li>หายใจออกให้สุดโดยห่างจากปากสูด</li>
+        <li>อมปากสูด ศีรษะตั้งตรง <b>สูดเร็ว แรง และลึก</b> จนได้ยินเสียงแคปซูลสั่นหมุน</li>
+        <li>กลั้นหายใจ 5–10 วินาที</li>
+        <li><b>HandiHaler: สูดครั้งที่สองจากแคปซูลเดิม</b> · Breezhaler: เปิดดูแคปซูล ถ้ายังมีผงเหลือให้สูดซ้ำ</li>
+        <li>เปิด ทิ้งแคปซูลเปล่า ปิดเครื่อง</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> กลืนแคปซูล, แกะแคปซูลเตรียมไว้ล่วงหน้า (ชื้น), กดเจาะหลายครั้ง (แคปซูลแตกเป็นชิ้น), สูดเบาจนแคปซูลไม่หมุน, ใช้เครื่องเก่ากับแคปซูลกล่องใหม่</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Soft mist inhaler · Respimat (Spiriva, Spiolto)</summary>
+    <div class="inner">
+      <p class="small"><b>ครั้งแรก:</b> กดปุ่มปลดล็อกแล้วดึงฐานใสออก ใส่หลอดยาดันจนเข้าที่ ใส่ฐานคืน · <b>Prime:</b> ถือตั้งตรงฝาปิด หมุนฐานตามลูกศรจนคลิก เปิดฝา หันลงพื้นแล้วกดปุ่ม ทำซ้ำจนเห็นละออง แล้วทำเพิ่มอีก 3 ครั้ง · ไม่ได้ใช้ &gt;7 วัน พ่นทิ้ง 1 ครั้ง · &gt;21 วัน prime ใหม่ทั้งหมด</p>
+      <p class="small"><b>ใช้ทุกวัน — จำว่า T-O-P: Turn, Open, Press</b></p>
+      <ol class="steps">
+        <li><b>Turn:</b> ฝาปิด ถือตั้งตรง หมุนฐานใสครึ่งรอบตามลูกศรจนคลิก</li>
+        <li><b>Open:</b> เปิดฝาจนสุด</li>
+        <li>หายใจออกช้าๆ ให้สุด แล้วอมปากสูดให้สนิท ไม่ปิดช่องระบายอากาศ</li>
+        <li><b>Press:</b> เริ่มสูดเข้า<b>ช้าและลึก</b> พร้อมกดปุ่มปล่อยยา สูดต่อช้าๆ จนสุด</li>
+        <li>กลั้นหายใจ 10 วินาทีหรือนานเท่าที่ทำได้</li>
+        <li>ทำซ้ำอีก 1 puff (ขนาดปกติ 2 puffs ต่อครั้ง) แล้วปิดฝา</li>
+      </ol>
+      <p class="note small"><strong>ผิดบ่อย:</strong> สูดเร็วแรงเหมือน DPI, ลืมหมุนก่อนกด, หมุนขณะเปิดฝา, พ่นแค่ 1 puff</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Nebulizer</summary>
+    <div class="inner">
+      <ol class="steps">
+        <li>ล้างมือ ใส่ยาและ NSS ในกระเปาะรวม 3–4 mL ปิดฝาให้แน่น</li>
+        <li>ต่อสายกับเครื่องหรือ flowmeter 6–8 L/min (COPD ที่ CO₂ คั่ง ใช้ air)</li>
+        <li>นั่งตัวตรง ถือกระเปาะตั้งตรง อม mouthpiece หรือครอบหน้ากากให้แนบ</li>
+        <li>หายใจทางปากช้าๆ ตามปกติ สลับหายใจลึกเป็นระยะ</li>
+        <li>พ่นจนละอองหยุด (เคาะข้างกระเปาะเมื่อเริ่มพ่นไม่ออก) ประมาณ 10–15 นาที</li>
+        <li>ถ้าเป็น steroid บ้วนปากและล้างหน้า · ถอดล้างกระเปาะ</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<section id="care">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 5</div><h2>การเก็บรักษา การทำความสะอาด และข้อปฏิบัติหลังพ่นยา</h2></div>
+
+  <div class="grid3">
+    <div class="panel">
+      <h3>หลังพ่นยาทุกครั้ง</h3>
+      <ul>
+        <li><b>ยาที่มี ICS:</b> บ้วนปากด้วยน้ำ กลั้วคอ แล้วบ้วนทิ้ง ห้ามกลืน (หรือพ่นก่อนแปรงฟัน) ลด oral candidiasis และเสียงแหบ</li>
+        <li>พ่นผ่านหน้ากาก: ล้างหน้าบริเวณที่สัมผัสยา</li>
+        <li>ปิดฝาหลอดทันที ดูตัวนับโดส</li>
+        <li>ถ้ามีทั้ง reliever และ controller แยกกัน ใช้ reliever ก่อนได้เมื่อมีอาการ ไม่มีหลักฐานชัดว่าต้องเรียงลำดับเสมอ</li>
+        <li>จดจำนวนครั้งที่ใช้ยาบรรเทาอาการ: ใช้ถี่ขึ้นคือสัญญาณโรคคุมไม่ได้</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>การเก็บรักษาทั่วไป</h3>
+      <ul>
+        <li>อุณหภูมิห้อง ไม่เกิน 30°C หลีกเลี่ยงแดดและรถที่จอดกลางแดด</li>
+        <li><b>pMDI:</b> ห้ามเจาะ ห้ามเผา แม้หลอดหมด · หลอดเย็นจัดพ่นยาได้น้อยลง ให้อุ่นในมือก่อน</li>
+        <li><b>DPI:</b> เก็บให้แห้ง ห้ามไว้ในห้องน้ำ ห้ามหายใจออกเข้าเครื่อง</li>
+        <li><b>แคปซูล:</b> เก็บในแผงจนถึงเวลาใช้</li>
+        <li>บางผลิตภัณฑ์มีอายุหลังเปิด: <b>Ellipta ทิ้งหลังเปิดถาด 6 สัปดาห์</b> · <b>Respimat ทิ้ง 3 เดือนหลังใส่หลอดยา</b> · ดูเอกสารกำกับของยาอื่นๆ</li>
+        <li>เปลี่ยนหลอดเมื่อตัวนับเป็น 0 แม้ยังพ่นมีละออง (เหลือแต่ propellant)</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>สัญญาณเตือนผู้ป่วย</h3>
+      <ul>
+        <li>ใช้ยาบรรเทาอาการบ่อยขึ้น ตื่นกลางคืนเพราะหอบ</li>
+        <li>MART/AIR: ต้องใช้ ICS-formoterol เกินจำนวนที่แพทย์กำหนดใน 24 ชม. → พบแพทย์ (GINA 2026 เพิ่มคำแนะนำนี้แทนการบอกเพียงขนาดสูงสุด)</li>
+        <li>เสียงแหบ ฝ้าขาวในปาก → ทบทวนการบ้วนปาก ใช้ spacer</li>
+        <li>ปวดตา ตามัว หลังพ่น anticholinergic → ประเมิน glaucoma</li>
+        <li>ปัสสาวะไม่ออก (LAMA ในชายสูงอายุ)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>การทำความสะอาดแยกตามอุปกรณ์</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>อุปกรณ์</th><th>วิธีทำความสะอาด</th><th>ความถี่</th><th>ห้าม</th></tr></thead>
+    <tbody>
+      <tr><td class="gen">pMDI</td><td>เช็ดปากหลอดด้วยผ้า/ทิชชูแห้ง · บางผลิตภัณฑ์ (เช่น salbutamol บางยี่ห้อ) ให้ถอดหลอดโลหะแล้วล้างตัวพลาสติกด้วยน้ำอุ่น ผึ่งให้แห้งสนิทข้ามคืน — ทำตามเอกสารกำกับ</td><td>สัปดาห์ละครั้ง</td><td>แช่น้ำทั้งหลอดโลหะ, ใส่หลอดคืนขณะตัวเครื่องยังเปียก</td></tr>
+      <tr><td class="gen">Spacer / VHC</td><td>ถอดชิ้นส่วน ล้างน้ำอุ่นผสมน้ำยาล้างจานเล็กน้อย <b>ไม่ต้องล้างน้ำเปล่าออก</b> ผึ่งลมให้แห้ง (สารลดแรงตึงผิวลดไฟฟ้าสถิต) · ล้างก่อนใช้ครั้งแรกด้วย</td><td>ทุก 1 เดือน (หรือตามผู้ผลิต) · เปลี่ยนทุก 6–12 เดือน หรือเมื่อแตก</td><td>เช็ดถูด้านในด้วยผ้า (เพิ่มไฟฟ้าสถิต)</td></tr>
+      <tr><td class="gen">Turbuhaler</td><td>เช็ดด้านนอกปากสูดด้วยผ้าแห้ง</td><td>สัปดาห์ละครั้ง</td><td>ล้างน้ำ, ถอดปากสูด</td></tr>
+      <tr><td class="gen">Accuhaler / Ellipta</td><td>เช็ดปากสูดด้วยผ้า/ทิชชูแห้ง</td><td>สัปดาห์ละครั้ง หรือเมื่อเปื้อน</td><td>ล้างน้ำ</td></tr>
+      <tr><td class="gen">Breezhaler</td><td>เช็ดปากสูดและช่องแคปซูลด้วยผ้าแห้งไม่มีขุย หรือแปรงนุ่ม · ใช้เครื่องใหม่ที่มากับยากล่องใหม่</td><td>สัปดาห์ละครั้ง</td><td>ล้างน้ำ</td></tr>
+      <tr><td class="gen">HandiHaler</td><td>เปิดปากสูด ล้างด้วยน้ำอุ่น เคาะน้ำออก ผึ่งให้แห้งสนิท 24 ชม. เปิดฝาทิ้งไว้</td><td>เดือนละครั้ง</td><td>ใช้ขณะยังชื้น</td></tr>
+      <tr><td class="gen">Respimat</td><td>เช็ดปากสูดและส่วนโลหะด้านในด้วยผ้าหรือทิชชูชุบน้ำหมาดๆ</td><td>อย่างน้อยสัปดาห์ละครั้ง</td><td>แช่น้ำ, ถอดหลอดยาออกหลังประกอบแล้ว</td></tr>
+      <tr><td class="gen">Nebulizer</td><td>หลังใช้: ล้างกระเปาะและ mouthpiece ด้วยน้ำสะอาด สะบัดแล้วผึ่งแห้ง · ทุกวัน: ล้างน้ำอุ่นผสมน้ำยาล้างจาน · ฆ่าเชื้อตามผู้ผลิต · สายยางห้ามล้าง เปลี่ยนเมื่อมีน้ำค้าง</td><td>ทุกครั้ง + ทุกวัน</td><td>ใช้กระเปาะร่วมกันระหว่างผู้ป่วย</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section id="asthma">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 6</div><h2>Asthma: เลือกยาตาม GINA 2026 และแนวทางไทย 2568</h2></div>
+
+  <div class="grid3">
+    <div class="note bad"><strong>ไม่ใช้ SABA เดี่ยว</strong><br>ผู้ใหญ่และวัยรุ่นทุกรายควรได้ยาที่มี ICS ตั้งแต่ขั้นแรก ทั้งเป็นยาประจำหรือในยาบรรเทาอาการ (ICS-formoterol / ICS-SABA)</div>
+    <div class="note bad"><strong>ไม่ใช้ LABA หรือ LAMA โดยไม่มี ICS</strong><br>รวมถึงผู้ป่วย COPD ที่มีลักษณะ asthma ร่วม</div>
+    <div class="note info"><strong>ก่อนเพิ่มยา</strong><br>ตรวจการวินิจฉัย (spirometry), เทคนิคการพ่น, adherence, สิ่งกระตุ้น และโรคร่วม (rhinitis, GERD, OSA, อ้วน, บุหรี่)</div>
+  </div>
+
+  <h3>ขั้นการรักษา ผู้ใหญ่และวัยรุ่น ≥12 ปี</h3>
+  <p class="small muted">Track 1 (preferred): ใช้ ICS-formoterol เป็นยาบรรเทาอาการ ลด severe exacerbation ได้มากกว่าการใช้ SABA · Track 2 (alternative): ใช้เมื่อ Track 1 ไม่เหมาะหรือไม่มียา แต่ผู้ป่วยมี adherence ดีต่อยาประจำ</p>
+  <div class="stepper" aria-label="Track 1">
+    <div class="step t1" style="grid-column:span 1"><span class="lvl">TRACK 1 · STEP 1–2</span><b>As-needed low-dose ICS-formoterol</b><span class="small">AIR-only · ไม่มียาประจำ</span></div>
+    <div class="step t1"><span class="lvl">TRACK 1 · STEP 3</span><b>Low-dose MART</b><span class="small">ICS-formoterol ประจำ + ใช้หลอดเดิมเมื่อมีอาการ</span></div>
+    <div class="step t1"><span class="lvl">TRACK 1 · STEP 4</span><b>Medium-dose MART</b><span class="small">ICS-formoterol ประจำขนาดกลาง + prn</span></div>
+    <div class="step t1"><span class="lvl">TRACK 1 · STEP 5</span><b>Add-on LAMA</b><span class="small">ส่งประเมิน phenotype ± biologic · พิจารณา high-dose ICS-formoterol</span></div>
+  </div>
+  <div class="stepper" aria-label="Track 2">
+    <div class="step t2"><span class="lvl">TRACK 2 · STEP 1</span><b>ICS ทุกครั้งที่ใช้ SABA</b><span class="small">หรือ ICS-SABA prn (เพิ่มใน GINA 2026)</span></div>
+    <div class="step t2"><span class="lvl">TRACK 2 · STEP 2</span><b>Low-dose ICS ประจำ</b></div>
+    <div class="step t2"><span class="lvl">TRACK 2 · STEP 3</span><b>Low-dose ICS-LABA ประจำ</b></div>
+    <div class="step t2"><span class="lvl">TRACK 2 · STEP 4</span><b>Medium/high-dose ICS-LABA</b></div>
+    <div class="step t2"><span class="lvl">TRACK 2 · STEP 5</span><b>Add-on LAMA</b><span class="small">ส่งประเมิน phenotype ± biologic · high-dose ICS-LABA</span></div>
+  </div>
+  <p class="small">Reliever ใน Track 2: <b>ICS-SABA prn</b> หรือ <b>SABA prn</b> · Controller ทางเลือกอื่น: LTRA (ระวังผลต่ออารมณ์/พฤติกรรม), HDM SLIT ในผู้แพ้ไรฝุ่น, azithromycin และ low-dose OCS เป็นทางเลือกท้ายสุดใน step 5</p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>จะเริ่มที่ขั้นไหน</h3>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th>อาการตอนแรกรับ</th><th>Track 1</th><th>Track 2</th></tr></thead>
+        <tbody>
+          <tr><td>อาการน้อยกว่า 3–5 วัน/สัปดาห์, lung function ปกติหรือลดเล็กน้อย</td><td>Step 1–2 AIR-only</td><td>Step 1–2</td></tr>
+          <tr><td>อาการเกือบทุกวัน หรือตื่นกลางคืน ≥1 ครั้ง/สัปดาห์</td><td>Step 3 low-dose MART</td><td>Step 3</td></tr>
+          <tr><td>อาการทุกวัน ตื่นกลางคืน ≥1 ครั้ง/สัปดาห์ และ lung function ต่ำ</td><td>Step 4 medium-dose MART</td><td>Step 4</td></tr>
+          <tr><td>คุมไม่ได้รุนแรง หรือมาด้วย exacerbation</td><td>OCS ระยะสั้น + medium-dose MART</td><td>OCS + medium/high ICS-LABA</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="panel">
+      <h3>ขนาดยา MART และ AIR-only</h3>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th>Regimen</th><th>Budesonide-formoterol 160/4.5 (200/6)</th><th>BDP-formoterol 100/6</th></tr></thead>
+        <tbody>
+          <tr><td>AIR-only (Step 1–2)</td><td>1 inh prn · สูดซ้ำได้หลังไม่กี่นาทีถ้ายังมีอาการ</td><td>1 inh prn</td></tr>
+          <tr><td>MART Step 3</td><td>1 inh BID (หรือ 2 inh OD) + 1 inh prn</td><td>1 inh BID + 1 inh prn</td></tr>
+          <tr><td>MART Step 4</td><td>2 inh BID + 1 inh prn</td><td>2 inh BID + 1 inh prn</td></tr>
+          <tr><td>รวมสูงสุดต่อวัน (ทั่วไป)</td><td class="num">12 inhalations</td><td class="num">8 inhalations</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">ห้ามใช้ Symbicort 320/9, Seretide หรือ Relvar แบบ MART · ผู้ป่วยต้องมีหลอดเดียวสำหรับทั้งยาประจำและยาบรรเทา ไม่ต้องมี SABA แยก · Symbicort DPI อยู่ในบัญชี ค ของบัญชียาหลักแห่งชาติ</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>ขนาด ICS ต่อวัน (ผู้ใหญ่และวัยรุ่น)</h3>
+      <p class="small muted">ค่า metered dose (mcg/วัน) ตาม GINA Box 4-2 — ขนาดเดียวกันไม่ได้แปลว่าเท่ากันทางคลินิก</p>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th>ICS</th><th>Low</th><th>Medium</th><th>High</th></tr></thead>
+        <tbody>
+          <tr><td>BDP (pMDI, standard particle)</td><td class="num">200–500</td><td class="num">&gt;500–1000</td><td class="num">&gt;1000</td></tr>
+          <tr><td>BDP (extrafine, เช่น Foster)</td><td class="num">100–200</td><td class="num">&gt;200–400</td><td class="num">&gt;400</td></tr>
+          <tr><td>Budesonide (DPI หรือ pMDI)</td><td class="num">200–400</td><td class="num">&gt;400–800</td><td class="num">&gt;800</td></tr>
+          <tr><td>Ciclesonide (pMDI)</td><td class="num">80–160</td><td class="num">&gt;160–320</td><td class="num">&gt;320</td></tr>
+          <tr><td>Fluticasone furoate (DPI)</td><td class="num">100</td><td class="num">—</td><td class="num">200</td></tr>
+          <tr><td>Fluticasone propionate (DPI/pMDI)</td><td class="num">100–250</td><td class="num">&gt;250–500</td><td class="num">&gt;500</td></tr>
+          <tr><td>Mometasone furoate (DPI)</td><td class="num" colspan="3">ขึ้นกับอุปกรณ์ ดูเอกสารกำกับ</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">ตัวอย่าง: Seretide Evohaler 125/25 2 puffs BID = FP 500 mcg/วัน (medium) · Relvar 100/25 = low · Relvar 200/25 = high</p>
+    </div>
+    <div class="panel">
+      <h3>ประเมินการควบคุมและปรับยา</h3>
+      <p class="small"><b>GINA symptom control</b> ใน 4 สัปดาห์ที่ผ่านมา: (1) อาการกลางวัน &gt;2 ครั้ง/สัปดาห์ (2) ตื่นกลางคืนเพราะหืด (3) ต้องใช้ SABA บรรเทาอาการ &gt;2 ครั้ง/สัปดาห์ (4) จำกัดกิจกรรมเพราะหืด</p>
+      <div class="kv"><dt>ไม่มีข้อใดเลย</dt><dd><b style="color:var(--ok)">Well controlled</b></dd><dt>1–2 ข้อ</dt><dd><b style="color:var(--warn)">Partly controlled</b></dd><dt>3–4 ข้อ</dt><dd><b style="color:var(--bad)">Uncontrolled</b></dd></div>
+      <ul class="small">
+        <li><b>Step up:</b> ประเมินซ้ำ 2–3 เดือน · เพิ่มชั่วคราว 1–2 สัปดาห์ช่วงติดเชื้อไวรัสหรือสัมผัสสิ่งกระตุ้น (MART ทำได้เองโดยใช้ prn)</li>
+        <li><b>Step down:</b> เมื่อคุมได้ดีต่อเนื่อง ~3 เดือนและ lung function คงที่ ลด ICS ครั้งละ 25–50% ในช่วงที่ไม่มีการเดินทาง ติดเชื้อ หรือตั้งครรภ์</li>
+        <li><b>ห้ามหยุด ICS ทั้งหมด</b> ในผู้ใหญ่</li>
+        <li>ปัจจัยเสี่ยง exacerbation: ใช้ SABA มาก, ICS ไม่พอ/ไม่สม่ำเสมอ, FEV1 &lt;60%, eosinophil/FeNO สูง, เคย exacerbation หรือใส่ท่อ, สูบบุหรี่, อ้วน</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>เทียบกับแนวทางการวินิจฉัยและรักษาโรคหืดในประเทศไทยสำหรับผู้ใหญ่ 2568 (TAC)</h3>
+    <div class="tbl" style="border:0"><table style="min-width:640px;font-size:.86rem">
+      <thead><tr><th>ขั้น (TAC)</th><th>Controller</th><th>Reliever</th></tr></thead>
+      <tbody>
+        <tr><td>Step 1</td><td>Low-dose ICS ประจำ</td><td>SABA prn หรือ low-dose ICS/RABA (ICS-formoterol) prn</td></tr>
+        <tr><td>Step 2</td><td>Low-dose ICS/LABA หรือ medium-dose ICS</td><td>ICS/RABA prn (แนะนำแทน SABA)</td></tr>
+        <tr><td>Step 3</td><td>Medium-dose ICS/LABA</td><td>ICS/RABA prn</td></tr>
+        <tr><td>Step 4</td><td>Medium–high-dose ICS/LABA + ยาอื่น: SR theophylline, LTRA, LAMA หรือ biologics</td><td>ICS/RABA prn · ปรึกษาผู้เชี่ยวชาญ</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">ประเด็นต่างจาก GINA: แนวทางไทยจัดเป็น 4 ขั้น ยังให้ SR theophylline เป็นทางเลือกใน step 4 (สอดคล้องกับบริบทการเข้าถึงยาในไทย) และเน้นรักษาโรคร่วมโดยเฉพาะ allergic rhinitis ซึ่งพบร่วมสูงในผู้ป่วยไทย · biologics ที่มีในไทยตามแนวทาง: omalizumab, mepolizumab, benralizumab, dupilumab, tezepelumab</p>
+    <p class="small muted">สรุปจากเอกสาร TAC 2568 — ก่อนใช้อ้างอิงทางคลินิกควรตรวจตารางต้นฉบับอีกครั้ง</p>
+  </div>
+</section>
+
+<section id="copd">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 7</div><h2>COPD: เลือกยาตาม GOLD 2026</h2></div>
+  <div class="prose small">
+    <p>วินิจฉัยเมื่อ post-bronchodilator FEV1/FVC &lt;0.70 ร่วมกับอาการหรือปัจจัยเสี่ยง · ยาพ่นแบบ long-acting เป็นหลัก ยาพ่นดีกว่ายากิน · ผู้ป่วยทุกรายควรมี short-acting bronchodilator ไว้ใช้บรรเทาอาการ</p>
+  </div>
+
+  <div class="note info small"><strong>เปลี่ยนใน GOLD 2026:</strong> exacerbation ระดับ moderate แม้ <b>เพียง 1 ครั้ง</b> ก่อนเริ่มยา เพิ่มความเสี่ยงครั้งต่อไป จึงใช้จัดเป็น group E และใช้พิจารณาเพิ่มยาได้ · แยก initial กับ follow-up treatment ชัดขึ้น · เพิ่ม mepolizumab เป็น biologic ตัวที่สอง · เพิ่มแนวคิด “disease activity” เป้าหมายคือไม่มี exacerbation</div>
+
+  <h3>Initial treatment (ผู้ป่วยยังไม่เคยได้ยา)</h3>
+  <div class="grid3">
+    <div class="panel" style="border-top:3px solid var(--laba)">
+      <span class="eyebrow">Group A</span>
+      <p class="small muted">ไม่มี exacerbation · mMRC 0–1 และ CAT &lt;10</p>
+      <p><b>Bronchodilator 1 ชนิด</b></p>
+      <p class="small">แนะนำ long-acting (LAMA หรือ LABA) ยกเว้นเหนื่อยนานๆ ครั้ง ใช้ short-acting ได้ · เช่น Spiriva Respimat/HandiHaler</p>
+    </div>
+    <div class="panel" style="border-top:3px solid var(--lama)">
+      <span class="eyebrow">Group B</span>
+      <p class="small muted">ไม่มี exacerbation · mMRC ≥2 หรือ CAT ≥10</p>
+      <p><b>LAMA + LABA</b> (หลอดเดียว)</p>
+      <p class="small">เช่น Spiolto Respimat, Ultibro Breezhaler, Anoro Ellipta · ประเมินโรคร่วมที่ทำให้เหนื่อย (หัวใจ ซีด อ้วน deconditioning)</p>
+    </div>
+    <div class="panel" style="border-top:3px solid var(--combo)">
+      <span class="eyebrow">Group E</span>
+      <p class="small muted">Exacerbation moderate/severe ≥1 ครั้งในปีที่ผ่านมา</p>
+      <p><b>LAMA + LABA</b></p>
+      <p class="small">พิจารณา <b>LAMA + LABA + ICS</b> ถ้า blood eos <b>≥300</b> cells/µL · เช่น Trelegy Ellipta, Breztri · ไม่แนะนำ ICS/LABA ใน COPD</p>
+    </div>
+  </div>
+
+  <h3>Follow-up treatment</h3>
+  <p class="small muted">ถ้าตอบสนองดีให้ยาเดิมต่อ ถ้าไม่ดี ตรวจเทคนิคการพ่น แรงสูด adherence และโรคร่วมก่อน แล้วเลือกเส้นทางตามปัญหาเด่น (ถ้ามีทั้งสองปัญหา ใช้เส้นทาง exacerbation)</p>
+  <div class="grid2">
+    <div class="panel">
+      <h4>ปัญหาหลัก: Dyspnea</h4>
+      <div class="flow">
+        <div class="node">LABA หรือ LAMA</div>
+        <div class="arrow">↓ ยังเหนื่อย</div>
+        <div class="node">LABA + LAMA</div>
+        <div class="arrow">↓ ยังเหนื่อย</div>
+        <div class="node">เปลี่ยนอุปกรณ์หรือตัวยา · หาสาเหตุอื่น · pulmonary rehabilitation · พิจารณา <b>ensifentrine</b> (nebulized PDE3/4 inhibitor, ต่างประเทศ)</div>
+      </div>
+      <p class="small muted">ถ้าใช้ LABA+ICS อยู่แล้วยังเหนื่อย: เปลี่ยนเป็น LABA+LAMA+ICS ถ้ามีข้อบ่งชี้ ICS หรือ LABA+LAMA ถ้าไม่มี</p>
+    </div>
+    <div class="panel">
+      <h4>ปัญหาหลัก: Exacerbation</h4>
+      <div class="flow">
+        <div class="node">LABA หรือ LAMA</div>
+        <div class="arrow">↓ eos &lt;300 → LABA+LAMA · eos ≥300 → LABA+LAMA+ICS</div>
+        <div class="node">LABA + LAMA</div>
+        <div class="arrow">↓ eos ≥100 → เพิ่ม ICS · eos &lt;100 → roflumilast หรือ azithromycin</div>
+        <div class="node">LABA + LAMA + ICS</div>
+        <div class="arrow">↓ ยังมี exacerbation</div>
+        <div class="node"><b>eos ≥300:</b> dupilumab (มี chronic bronchitis) หรือ mepolizumab · <b>roflumilast</b>: FEV1 &lt;50% + chronic bronchitis · <b>azithromycin</b>: โดยเฉพาะผู้ที่เลิกบุหรี่แล้ว</div>
+      </div>
+      <p class="small muted">ถ้าเกิด pneumonia หรือไม่มีข้อบ่งชี้ ICS ตั้งแต่แรก พิจารณาลด/หยุด ICS — ผู้ที่ eos ≥300 เสี่ยง exacerbation เมื่อหยุด</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>เมื่อไหร่ควรให้ ICS ใน COPD</h3>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th style="color:var(--ok)">สนับสนุนมาก</th><th style="color:var(--warn)">พิจารณา</th><th style="color:var(--bad)">ไม่ควรให้</th></tr></thead>
+        <tbody><tr>
+          <td>เคย admit ด้วย AECOPD<br><br>Exacerbation moderate ≥2 ครั้ง/ปี แม้ได้ long-acting bronchodilator<br><br>eos ≥300<br><br>มีประวัติ/เป็น asthma ร่วม</td>
+          <td>Exacerbation moderate 1 ครั้ง/ปี แม้ได้ long-acting bronchodilator<br><br>eos 100–&lt;300</td>
+          <td>Pneumonia ซ้ำ<br><br>eos &lt;100<br><br>เคยติดเชื้อ mycobacteria</td>
+        </tr></tbody>
+      </table></div>
+    </div>
+    <div class="panel">
+      <h3>บริบทไทย</h3>
+      <ul class="small">
+        <li>แนวทาง COPD ของไทยฉบับ 2565 จัดทำตามกรอบ GOLD ช่วงเวลานั้น หลักการใช้ยาสอดคล้องกัน ใช้ GOLD 2026 ร่วมกับการเข้าถึงยาของ รพ.</li>
+        <li>บัญชียาหลักแห่งชาติ (ฉบับ 2563): tiotropium DPI 18 mcg บัญชี ค, ipratropium/fenoterol บัญชี ก, budesonide/formoterol และ fluticasone/salmeterol บัญชี ค — ตรวจสอบฉบับ 2567 และเงื่อนไขการเบิก</li>
+        <li>ถ้าเข้าถึง LAMA/LABA ไม่ได้ ใช้ LAMA เดี่ยว (tiotropium) และสอนเทคนิคให้ถูก ดีกว่าการใช้ ICS/LABA ในผู้ที่ไม่มีข้อบ่งชี้ ICS</li>
+        <li>ทุกรายควรได้: เลิกบุหรี่ วัคซีน (ไข้หวัดใหญ่, pneumococcus, COVID-19, RSV ในผู้ที่มีข้อบ่งชี้), pulmonary rehabilitation, ประเมินการพ่นยาทุกครั้ง</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="acute">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 8</div><h2>Acute exacerbation: ใช้ยาพ่นใน ER และหอผู้ป่วย</h2></div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Asthma exacerbation (ผู้ใหญ่)</h3>
+      <div class="kv small">
+        <dt>Mild–moderate</dt><dd>พูดเป็นวลี นั่งได้ ไม่กระสับกระส่าย HR 100–120, SpO₂ 90–95%, PEF &gt;50%</dd>
+        <dt>Severe</dt><dd>พูดเป็นคำ นั่งโน้มตัว กระสับกระส่าย RR &gt;30, ใช้กล้ามเนื้อช่วยหายใจ, HR &gt;120, SpO₂ &lt;90%, PEF ≤50%</dd>
+        <dt style="color:var(--bad)">Life-threatening</dt><dd>ซึม สับสน silent chest → ติดต่อ ICU เตรียมใส่ท่อ</dd>
+      </div>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th>ยา/การรักษา</th><th>ขนาดและข้อบ่งชี้</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cls c-saba">SABA</span></td><td>Salbutamol pMDI + spacer 4–10 puffs หรือ neb 2.5–5 mg ทุก 20 นาทีในชั่วโมงแรก แล้วประเมินซ้ำ · GINA 2026 เน้นใช้ขนาดเท่าที่จำเป็น เพราะ SABA เกินขนาดทำให้ lactic acidosis และหายใจเร็วชดเชยจนดูเหมือนหอบมากขึ้น</td></tr>
+          <tr><td><span class="cls c-combo">ICS-formoterol</span></td><td>ทางเลือกแทน SABA ใน exacerbation ระดับ mild (เพิ่มใน GINA 2026)</td></tr>
+          <tr><td><span class="cls c-sama">Ipratropium</span></td><td>เพิ่มใน severe หรือไม่ตอบสนองต่อ SABA: 500 mcg neb ทุก 20 นาที × 3 ครั้ง (หรือใช้ Berodual solution / Combivent UDV) · ไม่ต้องให้ต่อหลัง admit</td></tr>
+          <tr><td>O₂</td><td>ให้เมื่อ SpO₂ &lt;92% · เป้าไม่เกิน 95% (GINA 2026) · แนวทางไทยใช้เป้า 93–95%</td></tr>
+          <tr><td>Systemic steroid</td><td>Prednisolone 40–50 mg/วัน 5–7 วัน ไม่ต้อง taper ภายใน 1 ชม.แรก · กินไม่ได้หรือรุนแรง: IV dexamethasone หรือ hydrocortisone (แนวทางไทยใช้ IV dexamethasone ใน severe)</td></tr>
+          <tr><td>MgSO₄</td><td>2 g IV ใน 20 นาที เมื่อ severe และไม่ตอบสนองต่อการรักษาเริ่มต้น</td></tr>
+          <tr><td style="color:var(--bad)">ไม่แนะนำ</td><td>Aminophylline/theophylline IV, antibiotic โดยไม่มีหลักฐานติดเชื้อ, ยานอนหลับ/sedative</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small"><b>ก่อนกลับบ้าน:</b> เริ่มหรือเพิ่มยาที่มี ICS (ห้ามกลับด้วย SABA อย่างเดียว) · ให้ prednisolone ครบ course · ตรวจเทคนิคพ่น · written action plan · นัดติดตามภายใน 2–7 วัน</p>
+    </div>
+
+    <div class="panel">
+      <h3>AECOPD</h3>
+      <div class="kv small">
+        <dt>Mild</dt><dd>รักษาด้วย short-acting bronchodilator อย่างเดียว</dd>
+        <dt>Moderate</dt><dd>ต้องใช้ OCS และ/หรือ antibiotic</dd>
+        <dt>Severe</dt><dd>ต้องมา ER หรือ admit · GOLD 2026 ปรับบทนี้ใหม่ ประเมินความรุนแรงด้วย dyspnea, RR, HR, SpO₂, CRP และ ABG (Rome proposal)</dd>
+      </div>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.85rem">
+        <thead><tr><th>ยา/การรักษา</th><th>ขนาดและข้อบ่งชี้</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cls c-saba">SABA</span> ± <span class="cls c-sama">SAMA</span></td><td>Salbutamol 2.5–5 mg neb หรือ 4–8 puffs ผ่าน spacer ทุก 1–4 ชม. ± ipratropium 500 mcg neb ทุก 6–8 ชม. (Berodual/Combivent) · pMDI + spacer ได้ผลเท่า nebulizer</td></tr>
+          <tr><td>Nebulizer ในผู้ที่ CO₂ คั่ง</td><td>ใช้ <b>air</b> ขับ และให้ O₂ ทาง nasal cannula</td></tr>
+          <tr><td>O₂</td><td>เป้า SpO₂ <b>88–92%</b> · ตรวจ ABG</td></tr>
+          <tr><td>Systemic steroid</td><td>Prednisolone 40 mg/วัน <b>ไม่เกิน 5 วัน</b> · eos ต่ำอาจได้ประโยชน์น้อย</td></tr>
+          <tr><td>Antibiotic</td><td>5 วัน เมื่อเสมหะเป็นหนองเพิ่มขึ้นร่วมกับเหนื่อยหรือเสมหะมากขึ้น หรือต้องใช้เครื่องช่วยหายใจ · เลือกตามเชื้อดื้อยาในพื้นที่และความเสี่ยง Pseudomonas</td></tr>
+          <tr><td>NIV</td><td>Respiratory acidosis (pH ≤7.35, PaCO₂ ≥45 mmHg) หรือเหนื่อยรุนแรง</td></tr>
+          <tr><td style="color:var(--bad)">ไม่แนะนำ</td><td>Methylxanthine · ไม่ให้ SAMA ประจำซ้ำซ้อนกับ LAMA</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small"><b>ก่อนกลับบ้าน:</b> เริ่ม long-acting bronchodilator (± ICS ตามข้อบ่งชี้) โดยเร็ว · <b>ตรวจแรงสูดอีกครั้ง</b> ช่วงหลัง exacerbation PIF มักต่ำ อาจไม่เหมาะกับ DPI · ส่ง pulmonary rehabilitation ภายใน 4 สัปดาห์ · นัดติดตาม 1–4 สัปดาห์</p>
+    </div>
+  </div>
+</section>
+
+<section id="special">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 9</div><h2>กลุ่มพิเศษ</h2></div>
+  <div class="grid3">
+    <div class="panel">
+      <h3>หญิงตั้งครรภ์</h3>
+      <ul class="small">
+        <li><b>ให้ยาที่มี ICS ต่อ</b> หืดที่คุมไม่ได้อันตรายต่อทารกมากกว่ายา การหยุด ICS เพิ่ม exacerbation</li>
+        <li>Budesonide มีข้อมูลความปลอดภัยมากที่สุด แต่ไม่ควรเปลี่ยนยาที่คุมได้ดีอยู่แล้วเพียงเพราะตั้งครรภ์</li>
+        <li>SABA, formoterol, salmeterol และ ICS-formoterol ใช้ต่อได้ · ข้อมูล LAMA และ biologics ยังจำกัด</li>
+        <li>Exacerbation ให้รักษาเต็มที่รวมถึง OCS หลีกเลี่ยงภาวะพร่องออกซิเจน</li>
+        <li>ไม่ลดยาระหว่างตั้งครรภ์ ติดตามทุก 4–6 สัปดาห์ · ช่วงคลอดใช้ยาตามปกติ และเลือก regional anesthesia มากกว่า general เมื่อทำได้</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>ผู้สูงอายุ</h3>
+      <ul class="small">
+        <li>แรงสูดต่ำ ความจำ สายตา มือสั่น/ข้ออักเสบ → เลือก pMDI + spacer, SMI หรือ Ellipta; หลีกเลี่ยงแคปซูล</li>
+        <li>ลดจำนวนหลอดและชนิดอุปกรณ์ ใช้ยาวันละครั้ง ให้ผู้ดูแลเรียนวิธีพ่นด้วย</li>
+        <li>Anticholinergic: ปัสสาวะคั่ง, glaucoma, ท้องผูก · β-agonist: arrhythmia, hypokalemia</li>
+        <li>ICS: pneumonia, กระดูกพรุน, ต้อกระจก, ผิวบางช้ำง่าย — ใช้ขนาดต่ำสุดที่ได้ผล</li>
+        <li>หืดในผู้สูงอายุมักถูกวินิจฉัยเป็น COPD หรือหัวใจล้มเหลว ควรทำ spirometry</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Asthma + COPD (overlap)</h3>
+      <ul class="small">
+        <li>ไม่ใช่โรคใหม่ แต่เป็นผู้ป่วยที่มีลักษณะของทั้งสองโรค</li>
+        <li><b>ถ้ามีลักษณะหืด ต้องได้ ICS เสมอ</b> (low–medium dose) แล้วเพิ่ม LABA และ/หรือ LAMA ตามอาการ</li>
+        <li>ห้ามให้ LABA หรือ LAMA/LABA โดยไม่มี ICS</li>
+        <li>รักษาปัจจัยอื่นตาม COPD: เลิกบุหรี่ วัคซีน pulmonary rehabilitation</li>
+        <li>ส่งปรึกษาผู้เชี่ยวชาญเมื่อไม่แน่ใจการวินิจฉัยหรือคุมไม่ได้</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="sec-head"><div class="eyebrow">ส่วนที่ 10</div><h2>Biologics และยาอื่นนอกจากยาพ่น (สรุปสั้น)</h2></div>
+  <p class="prose small muted">ใช้เมื่อยาพ่นเต็มขั้นแล้วยังคุมไม่ได้ หลังแก้เทคนิคการพ่น adherence และโรคร่วม · Severe asthma = คุมไม่ได้แม้ใช้ high-dose ICS-LABA อย่างถูกต้อง หรือต้องใช้ขนาดนั้นเพื่อคุมโรค</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Severe asthma</h3>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.84rem">
+        <thead><tr><th>ยา</th><th>เป้าหมาย</th><th>เหมาะกับ</th></tr></thead>
+        <tbody>
+          <tr><td class="gen">Omalizumab</td><td>Anti-IgE</td><td>Allergic asthma มี sensitization ขนาดยาตาม IgE และน้ำหนัก (มี biosimilar ใน GINA 2026)</td></tr>
+          <tr><td class="gen">Mepolizumab</td><td>Anti-IL-5</td><td>Eosinophilic, eos ≥150–300</td></tr>
+          <tr><td class="gen">Benralizumab</td><td>Anti-IL-5Rα</td><td>Eosinophilic, eos ≥300</td></tr>
+          <tr><td class="gen">Dupilumab</td><td>Anti-IL-4Rα</td><td>Type 2: eos ≥150 หรือ FeNO ≥25, OCS-dependent, nasal polyp/atopic dermatitis · ระวัง eos &gt;1500</td></tr>
+          <tr><td class="gen">Tezepelumab</td><td>Anti-TSLP</td><td>ได้ทั้ง T2-high และ T2-low</td></tr>
+          <tr><td class="gen">Depemokimab</td><td>Anti-IL-5 ออกฤทธิ์นาน (ฉีดทุก 6 เดือน)</td><td>Eosinophilic · เพิ่มใน GINA 2026 <span class="avail intl">ต่างประเทศ</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="small"><b>ยาอื่น:</b> LTRA (montelukast 10 mg) · SR theophylline (TAC step 4, ระวังระดับยา) · azithromycin 500 mg 3 วัน/สัปดาห์ (ผู้ใหญ่ ตรวจ ECG และ NTM ก่อน) · maintenance OCS เป็นทางสุดท้าย</p>
+    </div>
+    <div class="panel">
+      <h3>COPD</h3>
+      <div class="tbl" style="border:0"><table style="min-width:0;font-size:.84rem">
+        <thead><tr><th>ยา</th><th>ข้อบ่งชี้หลัก</th><th>ข้อควรระวัง</th></tr></thead>
+        <tbody>
+          <tr><td class="gen">Roflumilast</td><td>PDE4 inhibitor · FEV1 &lt;50%, chronic bronchitis, exacerbation ต่อเนื่อง · 500 mcg OD (เริ่ม 250 mcg 4 สัปดาห์)</td><td>ท้องเสีย น้ำหนักลด นอนไม่หลับ ซึมเศร้า</td></tr>
+          <tr><td class="gen">Azithromycin</td><td>ลด exacerbation โดยเฉพาะผู้ที่เลิกบุหรี่แล้ว · 250 mg OD หรือ 500 mg 3 ครั้ง/สัปดาห์</td><td>QTc ยาว, การได้ยิน, เชื้อดื้อยา, NTM</td></tr>
+          <tr><td class="gen">Dupilumab</td><td>บน triple therapy · eos ≥300 + chronic bronchitis</td><td>Conjunctivitis, eosinophilia</td></tr>
+          <tr><td class="gen">Mepolizumab</td><td>บน triple therapy · eos ≥300 (มีหรือไม่มี chronic bronchitis) · เพิ่มใน GOLD 2026</td><td>ฉีดห่างกว่า dupilumab</td></tr>
+          <tr><td class="gen">Ensifentrine</td><td>PDE3/4 inhibitor แบบพ่น nebulizer · dyspnea ไม่ดีขึ้นบน LAMA/LABA</td><td><span class="avail intl">ต่างประเทศ</span></td></tr>
+          <tr><td class="gen">Mucolytic</td><td>N-acetylcysteine, carbocysteine ขนาดสูง ลด exacerbation ในบางกลุ่ม</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Theophylline ไม่ใช่ยาเลือกแรก (ผลน้อย ปฏิกิริยาระหว่างยามาก) · benralizumab ไม่ลด exacerbation ใน COPD</p>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+<footer id="sources">
+  <h3>แหล่งอ้างอิงและสื่อเพิ่มเติม</h3>
+  <ol>
+    <li><a href="https://ginasthma.org/2026-gina-strategy-report/" target="_blank" rel="noopener">GINA 2026 Strategy Report</a> · <a href="https://www.guidelinecentral.com/insights/may-2026-gina-asthma-guideline-spotlight/" target="_blank" rel="noopener">Guideline Central: GINA 2026 key highlights</a></li>
+    <li><a href="https://goldcopd.org/2026-gold-report-and-pocket-guide/" target="_blank" rel="noopener">GOLD 2026 Report และ Pocket Guide</a> · <a href="https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf" target="_blank" rel="noopener">GOLD 2026 Key Changes</a></li>
+    <li><a href="https://www.tac.or.th/wp-content/uploads/2025/03/TAC-Guideline-2025.pdf" target="_blank" rel="noopener">แนวทางการวินิจฉัยและรักษาโรคหืดในประเทศไทย สำหรับผู้ใหญ่ 2568 (สมาคมสภาองค์กรโรคหืดแห่งประเทศไทย)</a></li>
+    <li><a href="https://cimjournal.com/pr-society/copd/" target="_blank" rel="noopener">แนวทางการวินิจฉัยและรักษาโรคปอดอุดกั้นเรื้อรัง พ.ศ. 2565 (สมาคมอุรเวชช์แห่งประเทศไทย)</a> · <a href="https://www.tst.or.th/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%A7%E0%B8%8A%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4-%E0%B9%84%E0%B8%97%E0%B8%A2/" target="_blank" rel="noopener">รวมแนวทางเวชปฏิบัติ สมาคมอุรเวชช์ฯ</a></li>
+    <li><a href="https://cdn.who.int/media/docs/default-source/essential-medicines/national-essential-medicines-lists-(neml)/searo_neml/thailand-2021.pdf" target="_blank" rel="noopener">บัญชียาหลักแห่งชาติ พ.ศ. 2563</a> · <a href="https://ndi.fda.moph.go.th/drug_national" target="_blank" rel="noopener">บัญชียาหลักแห่งชาติฉบับปัจจุบัน (NDI, อย.)</a></li>
+    <li><a href="https://pharmacy.mahidol.ac.th/dic/knowledge_full.php?id=8" target="_blank" rel="noopener">ลักษณะเฉพาะตัวของผลิตภัณฑ์ยาสูดพ่นกับข้อควรระวัง (ศูนย์ข้อมูลยา คณะเภสัชศาสตร์ ม.มหิดล)</a></li>
+    <li>รูปผลิตภัณฑ์จริงและวิดีโอสอนพ่นยา: <a href="https://www.nationalasthma.org.au/living-with-asthma/resources/health-professionals/charts/asthma-copd-medications-chart" target="_blank" rel="noopener">National Asthma Council Australia — Asthma &amp; COPD Medications Chart</a> · <a href="https://www.ace-hta.gov.sg/healthcare-professionals/ace-cues/inhaler-technique-videos/" target="_blank" rel="noopener">ACE Singapore — Inhaler technique videos</a></li>
+  </ol>
+  <p>จัดทำเพื่อการทบทวนความรู้ ณ กันยายน 2569 ขนาดยาและสถานะยาในไทยควรตรวจสอบกับเอกสารกำกับยา แนวทางฉบับเต็ม และบัญชียาของโรงพยาบาลก่อนใช้กับผู้ป่วย</p>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, KEY='medisuem-theme';
+  var hostTheme=root.getAttribute('data-theme');
+  var btns=document.querySelectorAll('.theme-switch button');
+  function apply(mode){
+    if(mode==='light'||mode==='dark'){root.setAttribute('data-theme',mode);}
+    else if(hostTheme){root.setAttribute('data-theme',hostTheme);}
+    else{root.removeAttribute('data-theme');}
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.set===mode));});
+  }
+  var saved='auto';
+  try{saved=localStorage.getItem(KEY)||'auto';}catch(e){}
+  apply(saved);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    apply(b.dataset.set);
+    try{localStorage.setItem(KEY,b.dataset.set);}catch(e){}
+  });});
+})();
+document.querySelectorAll('a.pic').forEach(function(a){
+  a.href='https://www.google.com/search?tbm=isch&q='+encodeURIComponent(a.dataset.q);
+  a.target='_blank'; a.rel='noopener';
+  a.setAttribute('aria-label','ค้นหารูปจริงของ '+a.dataset.q);
+});
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

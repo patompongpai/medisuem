@@ -1,0 +1,206 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Medisüem (เมดดิซึม) คลังบทเรียนสรุปแนวทางเวชปฏิบัติอายุรศาสตร์ของไทย พร้อมแฟลชการ์ด แบบทดสอบ และเครื่องมือข้างเตียง"><style>body{margin:0}[hidden]{display:none!important}</style></head><body>
+<title>Medisüem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a ward-style index — one column of guideline "charts" grouped by organ system, each row a lesson with its CPG year and contents */
+:root{
+  --bg:#F1F3F7; --surface:#FFFFFF; --ink:#16213A; --muted:#5A6680; --line:#D8DEE8;
+  --accent:#2C55B8; --accent-soft:#E3EAF9;
+  --sys-cardio:#B3423A; --sys-cardio-soft:#F7E4E1;
+  --sys-id:#1E7A5F; --sys-id-soft:#DDF0E8;
+  --sys-pulm:#2F6FA8; --sys-pulm-soft:#DEEBF7;
+  --sys-renal:#8A4FA0; --sys-renal-soft:#F0E4F4;
+  --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
+  --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1420; --surface:#161E2D; --ink:#E6EBF5; --muted:#97A3BB; --line:#283349;
+  --accent:#8FB0FF; --accent-soft:#1F2B47;
+  --sys-cardio:#F29A90; --sys-cardio-soft:#3A1E1C;
+  --sys-id:#6FD3AF; --sys-id-soft:#15342A;
+  --sys-pulm:#86BEF0; --sys-pulm-soft:#172C42;
+  --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1420; --surface:#161E2D; --ink:#E6EBF5; --muted:#97A3BB; --line:#283349;
+  --accent:#8FB0FF; --accent-soft:#1F2B47;
+  --sys-cardio:#F29A90; --sys-cardio-soft:#3A1E1C;
+  --sys-id:#6FD3AF; --sys-id-soft:#15342A;
+  --sys-pulm:#86BEF0; --sys-pulm-soft:#172C42;
+  --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:40px 72px}
+h1,h2,h3{margin:0;text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+header.top{display:grid;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--f-display);font-size:clamp(32px,6vw,48px);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.theme-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.sub-h{margin:-6px 0 0;font-family:var(--f-display);font-size:clamp(18px,3vw,22px);font-weight:700;color:var(--muted)}
+.lead{color:var(--muted);max-width:62ch;margin:0}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.search{flex:1 1 260px;min-width:0;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0 12px}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;padding:10px 0;outline:none}
+.search svg{flex:none;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.group{margin-top:36px;display:grid;gap:12px}
+.group-h{display:flex;align-items:baseline;gap:10px}
+.group-h h2{font-size:15px;font-weight:700;letter-spacing:.02em}
+.group-h .count{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.group-h .rule{flex:1;height:1px;background:var(--line)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;align-self:center}
+
+.lesson{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+.lesson:hover{border-color:var(--sys);transform:translateY(-1px)}
+.year{display:grid;justify-items:center;gap:2px;padding:8px 4px;border-radius:10px;background:var(--sys-soft);color:var(--sys)}
+.year b{font-family:var(--f-mono);font-size:18px;font-weight:500;line-height:1}
+.year span{font-size:10.5px;letter-spacing:.06em}
+.body{min-width:0;display:grid;gap:4px}
+.body h3{font-size:18px;font-weight:700;line-height:1.35}
+.body p{margin:0;color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tag{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.tag.prog{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:600}
+.go{color:var(--muted);font-size:20px}
+.lesson:hover .go{color:var(--sys)}
+.empty{margin-top:36px;color:var(--muted)}
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+@media (max-width:560px){
+  .wrap{padding-inline:16px;padding-block:28px 56px}
+  .lesson{grid-template-columns:58px 1fr;gap:14px;padding:14px}
+  .go{display:none}
+  .year b{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.lesson{transition:none}.lesson:hover{transform:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="toprow"><div class="eyebrow">คลังบทเรียนอายุรศาสตร์ · Internal Medicine</div><button type="button" class="theme-btn" id="mdsTheme" aria-label="เปลี่ยนธีม"></button></div>
+    <h1>Medisüem</h1>
+    <p class="sub-h">เมดดิซึม</p>
+    <p class="lead">บทเรียนสรุปแนวทางเวชปฏิบัติอายุรศาสตร์ของไทย แต่ละบทมีสรุปสาระสำคัญ แฟลชการ์ด แบบทดสอบ หรือเครื่องมือใช้ข้างเตียง กดเข้าไปเรียนได้เลย และกดปุ่ม "หน้ารวม" มุมขวาล่างเพื่อกลับมาที่นี่</p>
+    <div class="tools">
+      <label class="search" for="q">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="ค้นหา เช่น sepsis, ยาพ่น, LDL" autocomplete="off">
+      </label>
+      <div class="chips" role="group" aria-label="กรองตามระบบ" id="chips"></div>
+    </div>
+  </header>
+
+  <main id="list"></main>
+  <p class="empty" id="empty" hidden>ไม่พบบทเรียนที่ตรงกับคำค้น</p>
+
+  <footer>บทเรียนทั้งหมดจัดทำเพื่อทบทวนความรู้ส่วนตัว ไม่ทดแทนวิจารณญาณทางคลินิกหรือฉบับเต็มของแนวทางเวชปฏิบัติ</footer>
+</div>
+
+<script>
+const SYSTEMS = {
+  cardio:{name:"หัวใจ หลอดเลือด และเมตาบอลิก", c:"--sys-cardio"},
+  renal:{name:"ไตและเกลือแร่", c:"--sys-renal"},
+  id:{name:"โรคติดเชื้อและภาวะวิกฤต", c:"--sys-id"},
+  pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"}
+};
+const LESSONS = [
+  {href:"htn/index.html", sys:"cardio", y:"2567", t:"ความดันโลหิตสูง 2567",
+   d:"แนวทางรักษาโรคความดันโลหิตสูงฉบับ 2567 สรุปสิ่งที่เปลี่ยน การจัดกลุ่มระดับความดันใหม่ พร้อมแฟลชการ์ดและแบบทดสอบ",
+   tags:["สรุป","แฟลชการ์ด","แบบทดสอบ"], k:"hypertension htn ความดัน bp"},
+  {href:"htn-emergency/index.html", sys:"cardio", y:"2025", t:"Hypertensive Emergency 2025",
+   d:"แยก hypertensive emergency กับความดันสูงที่ไม่มีอวัยวะเสียหาย เป้าหมายการลดความดัน และการเลือกยาทางหลอดเลือดดำ",
+   tags:["สรุป","ยา IV"], k:"urgency crisis emergency ความดันสูงมาก nicardipine labetalol"},
+  {href:"lipid/index.html", sys:"cardio", y:"2567", t:"ไขมันผิดปกติ CPG 2567",
+   d:"แนวทางการบำบัดภาวะไขมันผิดปกติในเลือด สรุปทุกหัวข้อสำหรับวอร์ดและ OPD พร้อมห้องฝึกสี่แบบ",
+   tags:["สรุป","ห้องฝึก"], k:"lipid dyslipidemia ldl statin ไขมัน cholesterol"},
+  {href:"dm/index.html", sys:"cardio", y:"2566", t:"เบาหวาน DM CPG 2566",
+   d:"แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 ครบ 18 บท ตั้งแต่การวินิจฉัยถึงภาวะแทรกซ้อน มีแฟลชการ์ดและแบบทดสอบท้ายบท",
+   tags:["18 บท","แฟลชการ์ด","แบบทดสอบ"], k:"diabetes dm เบาหวาน a1c insulin dka hhs gdm",
+   prog:{key:"dm2566_progress_v1", total:18}},
+  {href:"ckd/index.html", sys:"renal", y:"2565", t:"โรคไตเรื้อรัง CKD CPG 2565",
+   d:"ข้อแนะนำเวชปฏิบัติ CKD ก่อนบำบัดทดแทนไตของสมาคมโรคไตฯ ใส่ค่าแล็บแล้วได้ระยะโรค KFRE แผนดูแลรายบุคคล พร้อมตารางยาและเทียบ KDIGO 2024",
+   tags:["เครื่องคำนวณ","17 หมวด","เทียบ KDIGO 2024"], k:"ckd kidney ไต egfr uacr kfre sglt2i finerenone kdigo ไตเรื้อรัง"},
+  {href:"sepsis/index.html", sys:"id", y:"2569", t:"Sepsis & Septic Shock 2569",
+   d:"CPG Sepsis ของไทย ฉบับ 2569 ทั้ง 9 บทและนิยาม ตั้งแต่ initial resuscitation จนถึงเครือข่ายและ rapid response",
+   tags:["10 บท","แฟลชการ์ด","แบบทดสอบ"], k:"sepsis septic shock icu ติดเชื้อ norepinephrine lactate",
+   prog:{key:"sepsis2569_progress_v1", total:10}},
+  {href:"dhf/index.html", sys:"id", y:"2566", t:"DHF Ward 2566",
+   d:"ดูแลผู้ป่วยไข้เลือดออกบนวอร์ด การให้สารน้ำในระยะวิกฤต อ้างอิง CPG ผู้ใหญ่ 2566 และเด็ก 2567 พร้อมเอกสารฉบับเต็ม",
+   tags:["เครื่องมือวอร์ด","สารน้ำ","PDF"], k:"dengue dhf ไข้เลือดออก fluid hct"},
+  {href:"inhaler/index.html", sys:"pulm", y:"Rx", yl:"ยาพ่น", t:"คู่มือยาพ่น Asthma–COPD",
+   d:"เลือกอุปกรณ์ยาพ่นให้เหมาะกับผู้ป่วย หลักการ inspiratory flow และวิธีใช้แต่ละอุปกรณ์",
+   tags:["อุปกรณ์","เทคนิคการพ่น"], k:"inhaler asthma copd mdi dpi ยาพ่น หอบหืด"}
+];
+
+function readProg(p){
+  try{
+    const o = JSON.parse(localStorage.getItem(p.key)||"{}")||{};
+    return Object.values(o).filter(v=>v && v.quizDone).length;
+  }catch(e){ return 0; }
+}
+
+let filter = "all";
+const chipsEl = document.getElementById("chips");
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
+  const b = document.createElement("button");
+  b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
+  b.setAttribute("aria-pressed", k===filter);
+  b.onclick=()=>{ filter=k; chipsEl.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.k===k)); render(); };
+  chipsEl.appendChild(b);
+});
+
+function esc(s){ return s.replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function render(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  let shown = 0;
+  Object.entries(SYSTEMS).forEach(([sk, sys])=>{
+    if(filter!=="all" && filter!==sk) return;
+    const items = LESSONS.filter(l=>l.sys===sk && (!q || (l.t+" "+l.d+" "+l.k+" "+l.tags.join(" ")).toLowerCase().includes(q)));
+    if(!items.length) return;
+    shown += items.length;
+    const g = document.createElement("section");
+    g.className = "group";
+    g.style.setProperty("--sys", `var(${sys.c})`);
+    g.style.setProperty("--sys-soft", `var(${sys.c}-soft)`);
+    g.innerHTML = `<div class="group-h"><span class="dot" style="background:var(--sys)"></span><h2>${sys.name}</h2><span class="count">${items.length}</span><span class="rule"></span></div>`;
+    items.forEach(l=>{
+      const a = document.createElement("a");
+      a.className = "lesson"; a.href = l.href;
+      let tags = l.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+      if(l.prog){
+        const n = readProg(l.prog);
+        if(n>0) tags += `<span class="tag prog">ทำแบบทดสอบแล้ว ${n}/${l.prog.total} บท</span>`;
+      }
+      const isYear = /^\d{4}$/.test(l.y);
+      const yl = l.yl || (isYear ? (+l.y>2400 ? "พ.ศ." : "ค.ศ.") : "");
+      a.innerHTML = `<div class="year"><span>${yl}</span><b>${isYear?l.y:"Rx"}</b></div>
+        <div class="body"><h3>${esc(l.t)}</h3><p>${esc(l.d)}</p><div class="tags">${tags}</div></div>
+        <span class="go" aria-hidden="true">&#8594;</span>`;
+      g.appendChild(a);
+    });
+    list.appendChild(g);
+  });
+  document.getElementById("empty").hidden = shown>0;
+}
+document.getElementById("q").addEventListener("input", render);
+render();
+</script>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+
+</body></html>

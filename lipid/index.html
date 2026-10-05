@@ -1,0 +1,1196 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>ไขมันผิดปกติ CPG 2567</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@600;700&display=swap">
+
+<style>
+:root{
+  --ground:#E9EDEC;
+  --surface:#FFFFFF;
+  --surface2:#F3F7F6;
+  --ink:#0F1A18;
+  --muted:#576764;
+  --line:#D3DDDA;
+  --line-soft:#E3EAE8;
+  --accent:#0B6E63;
+  --accent-deep:#06463F;
+  --accent-soft:#DBEAE6;
+  --good:#2E7A44;
+  --good-soft:#DDEDE1;
+  --warn:#A05213;
+  --warn-soft:#F3E5D6;
+  --bad:#A32C2B;
+  --bad-soft:#F4DEDD;
+  --shadow:0 1px 2px rgba(15,26,24,.05), 0 8px 24px -16px rgba(15,26,24,.35);
+  --display:"Noto Serif Thai", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans Thai", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1312;
+    --surface:#131E1C;
+    --surface2:#182422;
+    --ink:#E3EAE8;
+    --muted:#8FA29E;
+    --line:#26332F;
+    --line-soft:#1E2B29;
+    --accent:#4FBFAE;
+    --accent-deep:#8AD8CB;
+    --accent-soft:#12332F;
+    --good:#6BBE83;
+    --good-soft:#14301F;
+    --warn:#D9973F;
+    --warn-soft:#33260F;
+    --bad:#E0817B;
+    --bad-soft:#331A19;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1312;
+  --surface:#131E1C;
+  --surface2:#182422;
+  --ink:#E3EAE8;
+  --muted:#8FA29E;
+  --line:#26332F;
+  --line-soft:#1E2B29;
+  --accent:#4FBFAE;
+  --accent-deep:#8AD8CB;
+  --accent-soft:#12332F;
+  --good:#6BBE83;
+  --good-soft:#14301F;
+  --warn:#D9973F;
+  --warn-soft:#33260F;
+  --bad:#E0817B;
+  --bad-soft:#331A19;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--display); font-weight:700; text-wrap:balance; margin:0; line-height:1.3}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important; transition:none!important}}
+
+/* ---------- shell ---------- */
+.masthead{
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:40;
+}
+.masthead-in{
+  max-width:1180px; margin:0 auto; padding:14px 22px;
+  display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+}
+.brand{display:flex; flex-direction:column; gap:1px; margin-right:auto}
+.brand b{font-family:var(--display); font-size:17px; font-weight:700; letter-spacing:.01em}
+.brand span{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.meter{display:flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11.5px; color:var(--muted)}
+.meter-track{width:110px; height:5px; border-radius:3px; background:var(--line); overflow:hidden}
+.meter-fill{height:100%; width:0%; background:var(--accent); transition:width .35s ease}
+
+.layout{max-width:1180px; margin:0 auto; padding:0 22px 90px; display:grid; grid-template-columns:216px minmax(0,1fr); gap:44px}
+@media(max-width:900px){.layout{grid-template-columns:1fr; gap:0; padding:0 16px 70px}}
+
+.rail{position:sticky; top:78px; align-self:start; padding:30px 0; max-height:calc(100vh - 96px); overflow-y:auto}
+.rail-group{font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:20px 0 7px; padding-left:11px}
+.rail-group:first-child{margin-top:0}
+.rail a{
+  display:flex; gap:9px; align-items:baseline;
+  padding:5px 11px; border-left:2px solid transparent;
+  color:var(--muted); text-decoration:none; font-size:14px; line-height:1.45;
+}
+.rail a:hover{color:var(--ink)}
+.rail a.on{color:var(--accent); border-left-color:var(--accent); font-weight:600}
+.rail a i{font-family:var(--mono); font-style:normal; font-size:10.5px; opacity:.65; min-width:14px}
+@media(max-width:900px){
+  .rail{position:sticky; top:65px; z-index:30; padding:10px 0; max-height:none; overflow-x:auto; overflow-y:hidden;
+        background:var(--ground); border-bottom:1px solid var(--line); white-space:nowrap; margin:0 -16px; padding-inline:16px}
+  .rail-inner{display:flex; gap:6px}
+  .rail-group{display:none}
+  .rail a{border:1px solid var(--line); border-radius:100px; padding:4px 12px; font-size:13px; background:var(--surface)}
+  .rail a.on{border-color:var(--accent); background:var(--accent-soft)}
+  .rail a i{display:none}
+}
+
+main{padding:38px 0 0; min-width:0}
+
+/* ---------- hero ---------- */
+.hero{border-bottom:1px solid var(--line); padding-bottom:30px; margin-bottom:8px}
+.hero h1{font-size:clamp(28px,4.2vw,40px); letter-spacing:-.01em; max-width:19ch}
+.hero .sub{margin-top:12px; color:var(--muted); font-size:16.5px; max-width:60ch}
+.hero .org{font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin-bottom:14px}
+.howto{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0; margin-top:26px; border-top:1px solid var(--line-soft)}
+.howto div{padding:14px 18px 14px 0; border-right:1px solid var(--line-soft)}
+.howto div:last-child{border-right:none}
+.howto b{display:block; font-family:var(--body); font-size:14px; font-weight:600; margin-bottom:2px}
+.howto span{font-size:13.5px; color:var(--muted); line-height:1.5}
+@media(max-width:640px){.howto div{border-right:none; border-bottom:1px solid var(--line-soft); padding-right:0}}
+
+/* ---------- sections ---------- */
+section{padding:44px 0; border-bottom:1px solid var(--line-soft); scroll-margin-top:150px}
+section:last-of-type{border-bottom:none}
+.sec-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:6px}
+.sec-head h2{font-size:24px}
+.pageref{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--muted); border:1px solid var(--line); border-radius:100px; padding:2px 9px; white-space:nowrap}
+.lede{color:var(--muted); font-size:15.5px; margin-bottom:22px; max-width:66ch}
+
+h3.sub{font-size:17px; margin:26px 0 10px; letter-spacing:.005em}
+h3.sub:first-of-type{margin-top:18px}
+
+ul.rec{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px}
+ul.rec>li{position:relative; padding-left:32px; font-size:15.5px; line-height:1.7}
+ul.rec>li::before{content:attr(data-n); position:absolute; left:0; top:0; width:22px; text-align:right;
+  font-family:var(--mono); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; line-height:2.1}
+ul.plain{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:9px; font-size:15.5px; line-height:1.7}
+ul.plain li::marker{color:var(--accent)}
+
+/* grade badge */
+.g{display:inline-block; font-family:var(--mono); font-size:10.5px; font-weight:500; line-height:1.6;
+   letter-spacing:.04em; padding:0 8px; border-radius:100px; white-space:nowrap; margin-left:4px}
+.g-2{background:var(--accent); color:var(--surface)}
+.g-1{background:var(--accent-soft); color:var(--accent-deep); border:1px solid var(--accent)}
+.g-0{background:var(--surface2); color:var(--muted); border:1px solid var(--line)}
+.g-n1{background:var(--warn-soft); color:var(--warn); border:1px solid var(--warn)}
+.g-n2{background:var(--bad); color:var(--surface)}
+
+/* target chip */
+.t{display:inline-block; font-family:var(--mono); font-weight:600; white-space:nowrap; line-height:1.65;
+   font-variant-numeric:tabular-nums; background:var(--accent-soft); color:var(--accent-deep);
+   padding:0 7px; border-radius:5px; font-size:14px}
+.t small{font-size:10px; font-weight:400; opacity:.8}
+
+/* formula block */
+.formula{margin-top:9px; overflow-x:auto; background:var(--accent-soft); border-radius:7px; padding:9px 13px}
+.formula code{font-family:var(--mono); font-weight:600; font-size:14.5px; color:var(--accent-deep);
+   white-space:nowrap; font-variant-numeric:tabular-nums}
+
+/* key box */
+.key{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+     border-radius:0 var(--r) var(--r) 0; padding:16px 18px; margin-top:24px}
+.key .kh{font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px}
+.key ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:6px; font-size:15px}
+
+/* tables */
+.tw{overflow-x:auto; margin-top:16px; border:1px solid var(--line); border-radius:var(--r); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:480px}
+th,td{padding:9px 13px; text-align:left; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{background:var(--surface2); font-weight:600; font-size:12.5px; letter-spacing:.02em; color:var(--muted); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+td.drug{font-family:var(--mono); font-size:13.5px}
+
+/* ---------- widgets ---------- */
+.tool{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden; margin-top:18px}
+.tool-bar{display:flex; align-items:center; gap:12px; padding:12px 18px; border-bottom:1px solid var(--line-soft); background:var(--surface2); flex-wrap:wrap}
+.tool-bar b{font-size:14px; font-weight:600; font-family:var(--body)}
+.tool-bar .spacer{margin-left:auto}
+.tool-body{padding:20px}
+
+.btn{background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:5px 14px;
+     font-size:13.5px; cursor:pointer; transition:border-color .15s, background .15s}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn-solid{background:var(--accent); border-color:var(--accent); color:#fff}
+.btn-solid:hover{background:var(--accent-deep); border-color:var(--accent-deep); color:#fff}
+
+/* path finder */
+.q-step{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+.q-text{font-family:var(--display); font-size:19px; font-weight:700; margin-bottom:16px}
+.opts{display:flex; flex-direction:column; gap:8px}
+.opt{text-align:left; width:100%; background:var(--surface2); border:1px solid var(--line); border-radius:8px;
+     padding:11px 15px; font-size:15px; cursor:pointer; line-height:1.5; transition:.15s}
+.opt:hover{border-color:var(--accent); background:var(--accent-soft)}
+.trail{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px}
+.crumb{font-size:12px; background:var(--surface2); border:1px solid var(--line); border-radius:100px; padding:2px 10px; color:var(--muted)}
+.result{border:1px solid var(--accent); border-radius:8px; overflow:hidden}
+.result-top{background:var(--accent); color:#fff; padding:14px 18px}
+.result-top .rl{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.85}
+.result-top .rt{font-family:var(--display); font-size:20px; font-weight:700; margin-top:2px}
+.result-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.result-grid div{padding:14px 18px; border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft)}
+.result-grid div:last-child{border-right:none}
+.result-grid dt{font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.result-grid dd{margin:0; font-size:15px; font-weight:500}
+.result-steps{padding:14px 18px}
+.result-steps ol{margin:0; padding-left:19px; display:flex; flex-direction:column; gap:6px; font-size:14.5px}
+
+/* flashcards */
+.fc{border:1px solid var(--line); border-radius:10px; background:var(--surface2); padding:26px 22px; min-height:172px;
+    display:flex; flex-direction:column; justify-content:center; gap:12px; cursor:pointer; text-align:center}
+.fc .tag{font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
+.fc .front{font-family:var(--display); font-size:19px; font-weight:700; line-height:1.4}
+.fc .back{font-size:15.5px; line-height:1.6; border-top:1px dashed var(--line); padding-top:12px}
+.fc .hint{font-family:var(--mono); font-size:11px; color:var(--muted)}
+.fc-nav{display:flex; align-items:center; gap:10px; margin-top:14px; flex-wrap:wrap}
+.fc-count{font-family:var(--mono); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums}
+
+/* sorter */
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; min-height:36px}
+.chip{font-family:var(--mono); font-size:13.5px; background:var(--surface2); border:1px solid var(--line);
+      border-radius:7px; padding:6px 12px}
+.chip.active{border-color:var(--accent); background:var(--accent-soft); color:var(--accent-deep); font-weight:500}
+.buckets{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+@media(max-width:640px){.buckets{grid-template-columns:1fr}}
+.bucket{border:1px dashed var(--line); border-radius:8px; padding:11px; text-align:center; cursor:pointer; background:var(--surface2); transition:.15s}
+.bucket:hover{border-color:var(--accent); border-style:solid}
+.bucket b{display:block; font-family:var(--body); font-size:14px; font-weight:600}
+.bucket span{font-family:var(--mono); font-size:11px; color:var(--muted)}
+.feedback{margin-top:14px; font-size:14.5px; padding:11px 14px; border-radius:8px; line-height:1.55}
+.fb-ok{background:var(--good-soft); border:1px solid var(--good); color:var(--good)}
+.fb-no{background:var(--bad-soft); border:1px solid var(--bad); color:var(--bad)}
+.scoreline{font-family:var(--mono); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums}
+
+/* quiz */
+.quiz-q{font-family:var(--display); font-size:18px; font-weight:700; line-height:1.45; margin-bottom:4px}
+.quiz-ctx{font-size:14.5px; color:var(--muted); margin-bottom:14px}
+.choice{display:block; width:100%; text-align:left; background:var(--surface2); border:1px solid var(--line);
+        border-radius:8px; padding:10px 14px; font-size:15px; cursor:pointer; margin-bottom:8px; line-height:1.5; transition:.15s}
+.choice:hover:not(:disabled){border-color:var(--accent)}
+.choice:disabled{cursor:default}
+.choice.right{border-color:var(--good); background:var(--good-soft); color:var(--good); font-weight:500}
+.choice.wrong{border-color:var(--bad); background:var(--bad-soft); color:var(--bad)}
+.explain{margin-top:12px; padding:13px 15px; background:var(--surface2); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; font-size:14.5px; line-height:1.6}
+.explain b{color:var(--accent-deep)}
+.final{text-align:center; padding:24px 10px}
+.final .score{font-family:var(--mono); font-size:42px; font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums}
+.final p{color:var(--muted); margin:8px 0 18px; font-size:15px}
+
+footer{max-width:1180px; margin:0 auto; padding:26px 22px 40px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); line-height:1.7}
+.hidden{display:none!important}
+
+@media(max-width:640px){
+  main{padding-top:26px}
+  section{padding:34px 0; scroll-margin-top:120px}
+  .sec-head h2{font-size:21px}
+  .hero .sub{font-size:15.5px}
+  ul.rec>li{padding-left:26px; font-size:15px}
+  ul.rec>li::before{width:17px}
+  ul.plain{padding-left:18px; font-size:15px}
+  h3.sub{font-size:16px}
+  .tool-body{padding:16px}
+  .q-text{font-size:17px}
+  .result-grid div{border-right:none}
+}
+</style>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <div class="brand">
+      <b>ไขมันผิดปกติในเลือด · CPG 2567</b>
+      <span>RCPT Dyslipidemia Guideline</span>
+    </div>
+    <div class="meter" title="สัดส่วนหัวข้อที่เลื่อนอ่านแล้ว">
+      <span>อ่านแล้ว</span>
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+      <span id="meterNum">0%</span>
+    </div>
+    <button class="btn" id="themeBtn" aria-label="สลับธีมสว่าง/มืด">ธีม</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="rail" aria-label="สารบัญ">
+    <div class="rail-inner">
+      <div class="rail-group">พื้นฐาน</div>
+      <a href="#s1"><i>01</i>คำจำกัดความ</a>
+      <a href="#s2"><i>02</i>การคัดกรอง</a>
+      <a href="#s3"><i>03</i>ประเมินความเสี่ยง</a>
+      <a href="#s4"><i>04</i>หลักการบำบัด</a>
+      <a href="#s5"><i>05</i>ปรับพฤติกรรม</a>
+      <div class="rail-group">ปฐมภูมิ</div>
+      <a href="#s6"><i>06</i>ไม่มี DM/CKD</a>
+      <a href="#s7"><i>07</i>เบาหวาน</a>
+      <a href="#s8"><i>08</i>โรคไตเรื้อรัง</a>
+      <div class="rail-group">ทุติยภูมิ</div>
+      <a href="#s9"><i>09</i>หลอดเลือดหัวใจ</a>
+      <a href="#s10"><i>10</i>หลอดเลือดสมอง</a>
+      <div class="rail-group">ยาและติดตาม</div>
+      <a href="#s11"><i>11</i>ยาที่ไม่ใช่ statin</a>
+      <a href="#s12"><i>12</i>ตารางยา</a>
+      <a href="#s13"><i>13</i>ติดตามการรักษา</a>
+      <div class="rail-group">ห้องฝึก</div>
+      <a href="#p1"><i>▸</i>หาเป้าหมาย LDL-C</a>
+      <a href="#p2"><i>▸</i>จัดกลุ่ม statin</a>
+      <a href="#p3"><i>▸</i>บัตรคำ 32 ใบ</a>
+      <a href="#p4"><i>▸</i>แบบทดสอบ</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="org">ราชวิทยาลัยอายุรแพทย์แห่งประเทศไทย · พ.ศ. 2567</div>
+      <h1>แนวทางการบำบัดภาวะไขมันผิดปกติในเลือด</h1>
+      <p class="sub">สรุปทุกหัวข้อสำหรับใช้งานจริงบนวอร์ดและ OPD พร้อมห้องฝึกสี่แบบเพื่อให้ตัวเลขเป้าหมาย ขนาดยา และน้ำหนักคำแนะนำติดหัวถาวร</p>
+      <div class="howto">
+        <div><b>อ่านสรุป</b><span>หัวข้อ 01–13 เรียงตามลำดับการดูแลผู้ป่วย ทุกคำแนะนำติดป้ายน้ำหนัก/class/evidence ตามต้นฉบับ</span></div>
+        <div><b>เดินแผนภูมิ</b><span>เครื่องมือหาเป้าหมาย LDL-C ให้เลือกโจทย์ผู้ป่วยทีละขั้นจนได้เป้าและลำดับยา</span></div>
+        <div><b>ฝึกจนจำ</b><span>บัตรคำ 32 ใบ เกมจัดกลุ่ม statin และแบบทดสอบ 24 ข้อพร้อมคำอธิบาย</span></div>
+      </div>
+    </div>
+
+    <!-- 01 -->
+    <section id="s1">
+      <div class="sec-head"><h2>คำจำกัดความที่ต้องแม่น</h2><span class="pageref">หน้า 10</span></div>
+      <p class="lede">คำสี่คำนี้เป็นตัวกำหนดว่าผู้ป่วยเข้าเส้นทางป้องกันปฐมภูมิหรือทุติยภูมิ ซึ่งเปลี่ยนเป้าหมาย LDL-C ทั้งหมด</p>
+
+      <div class="tw"><table>
+        <thead><tr><th>คำ</th><th>ความหมายตามแนวทาง</th></tr></thead>
+        <tbody>
+          <tr><td><b>Clinical ASCVD</b></td><td>กำลังมีหรือเคยมี ACS, MI, stable CAD, stable/unstable angina, coronary หรือ arterial revascularization, ischemic stroke, TIA, PAD, atherosclerotic aortic disease</td></tr>
+          <tr><td><b>Subclinical ASCVD</b></td><td>ยังไม่มีอาการ แต่ตรวจพบหลักฐาน atherosclerosis เช่น plaque ที่หลอดเลือดหัวใจ/คอ/เอออร์ตา หรือ coronary calcium score สูง</td></tr>
+          <tr><td><b>ป้องกันปฐมภูมิ</b></td><td>รักษาผู้ที่ไขมันผิดปกติ โดยยังไม่มี Clinical ASCVD</td></tr>
+          <tr><td><b>ป้องกันทุติยภูมิ</b></td><td>รักษาผู้ที่มี Clinical ASCVD แล้ว เพื่อป้องกัน recurrent events</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="key">
+        <div class="kh">จำให้ได้</div>
+        <ul>
+          <li>Subclinical ASCVD <b>ไม่ใช่</b> Clinical ASCVD — ยังอยู่ในเส้นทางป้องกันปฐมภูมิ แต่ถูกยกระดับเป็น “risk enhancer”</li>
+          <li>TIA และ PAD นับเป็น Clinical ASCVD เต็มตัว → เข้าเป้าหมายทุติยภูมิทันที</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section id="s2">
+      <div class="sec-head"><h2>การคัดกรองภาวะไขมันผิดปกติ</h2><span class="pageref">หน้า 16, 29</span></div>
+      <p class="lede">ใครควรตรวจ ตรวจอะไร ต้องอดอาหารหรือไม่ และเมื่อไรที่คำนวณ LDL-C ไม่ได้</p>
+
+      <h3 class="sub">ตรวจระดับไขมันในกลุ่มใด</h3>
+      <ul class="rec">
+        <li data-n="1">ผู้ที่อายุตั้งแต่ <b>35 ปี</b> ขึ้นไป</li>
+        <li data-n="2">ผู้ที่มี Clinical ASCVD หรือ Subclinical ASCVD</li>
+        <li data-n="3">ผู้ที่มีความเสี่ยงต่อโรคหัวใจและหลอดเลือด เช่น เบาหวาน โรคไตเรื้อรัง</li>
+        <li data-n="4">ผู้ที่สงสัยไขมันผิดปกติจากพันธุกรรม — xanthoma ที่หนังตา ข้อศอก หัวเข่า ฝ่ามือ เอ็นร้อยหวายหนากว่าปกติ หรือ <b>arcus cornea ในผู้อายุน้อยกว่า 45 ปี</b></li>
+      </ul>
+
+      <h3 class="sub">ตรวจอะไร และคำนวณอย่างไร</h3>
+      <ul class="rec">
+        <li data-n="1">ครั้งแรกตรวจ <b>TC, TG, HDL-C</b> แล้วคำนวณ LDL-C ด้วย Friedewald formula (มก./ดล.)<div class="formula"><code>LDL-C = TC − HDL-C − (TG ÷ 5)</code></div></li>
+        <li data-n="2">ใช้ <b>direct LDL-C</b> เมื่อ TG ≥ 400 มก./ดล. หรือค่า LDL-C ที่คำนวณได้ &lt; 50 มก./ดล.</li>
+        <li data-n="3">ใช้ <b>LDL-C เป็นค่าหลัก</b> ทั้งในการประเมินความเสี่ยงและเป็นเป้าหมายการบำบัด</li>
+        <li data-n="4">คำนวณ <b>non-HDL-C = TC − HDL-C</b> ในผู้ที่ TG สูง เบาหวาน หรืออ้วน</li>
+      </ul>
+
+      <h3 class="sub">อดอาหารหรือไม่</h3>
+      <div class="tw"><table>
+        <thead><tr><th>ไม่ต้องอดอาหาร</th><th>ต้องอด 10–12 ชม. (ดื่มน้ำเปล่าได้ ≤ 50 มล.)</th></tr></thead>
+        <tbody><tr>
+          <td>• ประเมินความเสี่ยง CVD เบื้องต้น<br>• ติดตามผลการรักษา<br>• ตรวจ non-HDL-C</td>
+          <td>• ก่อนเริ่มยาในการป้องกันปฐมภูมิ<br>• สงสัยไขมันสูงจากพันธุกรรม หรือมี FHx premature CVD<br>• เมื่อ TG ขณะไม่อดอาหาร &gt; 400 มก./ดล.</td>
+        </tr></tbody>
+      </table></div>
+
+      <div class="key">
+        <div class="kh">กับดักที่ออกสอบบ่อย</div>
+        <ul>
+          <li>เกณฑ์ TG สำหรับ “เปลี่ยนไปใช้ direct LDL-C” คือ <b>≥ 400</b> ไม่ใช่ 500 — ส่วน 500 คือเกณฑ์เริ่ม fibrate เพื่อกันตับอ่อนอักเสบ</li>
+          <li>คำนวณได้ LDL-C &lt; 50 ก็ต้องยืนยันด้วย direct LDL-C เช่นกัน</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="s3">
+      <div class="sec-head"><h2>ประเมินความเสี่ยง 10 ปี</h2><span class="pageref">หน้า 17</span></div>
+      <p class="lede">แนวทางไทยไม่ใช้ Pooled cohort equation หรือ SCORE แต่ใช้คะแนนที่สร้างจากประชากรไทย</p>
+
+      <ul class="rec">
+        <li data-n="1">ใช้ <b>Thai CV Risk Score</b> ในผู้ที่อายุ <b>35–70 ปี</b> ที่ยังไม่มีโรคหัวใจและหลอดเลือด</li>
+        <li data-n="2">พัฒนาจาก <b>EGAT heart study</b> (พนักงานการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย) — มีทั้งแบบใช้ผลเลือดและแบบไม่ใช้ผลเลือด กรณีไม่มีผลเลือดใช้ <b>ส่วนสูงและเส้นรอบเอว</b> แทนได้</li>
+        <li data-n="3">ตัดที่ <b>ร้อยละ 10</b> — น้อยกว่า 10% คือเสี่ยงต่ำ ตั้งแต่ 10% ขึ้นไปคือเสี่ยงปานกลางถึงสูง</li>
+        <li data-n="4">อาจใช้แบบประเมินอื่นได้ หากมีข้อมูลสนับสนุนความแม่นยำในประชากรไทย</li>
+      </ul>
+
+      <div class="key">
+        <div class="kh">จำให้ได้</div>
+        <ul><li>ช่วงอายุ <b>35–70</b> และเส้นแบ่ง <b>10%</b> คือสองตัวเลขที่ต้องจำ เพราะเป็นประตูเข้าสู่การเริ่ม statin ในผู้ที่ LDL-C &lt; 190 และไม่มี DM/CKD</li></ul>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="s4">
+      <div class="sec-head"><h2>หลักการบำบัด 11 ข้อ</h2><span class="pageref">หน้า 18–19</span></div>
+      <p class="lede">โครงร่างความคิดตั้งแต่พบผู้ป่วยจนถึงการหยุดยา</p>
+
+      <ul class="rec">
+        <li data-n="1">ตรวจเลือดพื้นฐานก่อนเริ่มบำบัด เพื่อดูว่าเป็นไขมันผิดปกติชนิดใด</li>
+        <li data-n="2">มองหา <b>genetic dyslipidemia</b> — FHx โรคหัวใจและหลอดเลือดก่อนวัยอันควร (<b>ชาย &lt; 55 ปี, หญิง &lt; 60 ปี</b>) หรือตรวจพบ xanthoma</li>
+        <li data-n="3">มองหา <b>secondary causes</b> เช่น nephrotic syndrome, hypothyroidism, Cushing syndrome ซึ่งแก้ที่ต้นเหตุแล้วไขมันกลับปกติได้</li>
+        <li data-n="4">ประเมินว่ามี ASCVD หรือไม่ — บางครั้งต้องอาศัยการตรวจเพิ่ม เช่น silent MI, AAA ในคนอ้วน</li>
+        <li data-n="5">ผู้ที่ยังไม่มี ASCVD และอายุ ≥ 35 ปี ให้ประเมินความเสี่ยง 10 ปีด้วย Thai CV Risk Score</li>
+        <li data-n="6">ให้คำแนะนำปรับพฤติกรรมทุกรายเสมอ — อาหาร ออกกำลังกาย เลิกบุหรี่</li>
+        <li data-n="7">กำหนดเป้าหมาย LDL-C รายบุคคลตามระดับความเสี่ยง</li>
+        <li data-n="8">เริ่มจากยาใน <b>บัญชียาหลักแห่งชาติ</b> ลำดับต้นก่อน และเลือกชื่อสามัญก่อน</li>
+        <li data-n="9">การใช้ยานอกบัญชีต้องศึกษาข้อบ่งชี้ ประโยชน์ ผลข้างเคียงเพิ่มเติม</li>
+        <li data-n="10">ติดตามผล อาการไม่พึงประสงค์ และการเกิดโรคหัวใจและหลอดเลือด</li>
+        <li data-n="11">พิจารณาลดขนาด/หยุดยาเมื่อ (ก) เกิด myopathy หรือ rhabdomyolysis (ข) มีอันตรกิริยาที่เลี่ยงไม่ได้ (ค) การทำงานของตับหรือไตแย่ลง (ง) <b>ผู้ป่วยระยะสุดท้าย</b> ที่ประโยชน์จากยาน้อยกว่าผลเสีย</li>
+      </ul>
+    </section>
+
+    <!-- 05 -->
+    <section id="s5">
+      <div class="sec-head"><h2>ปรับพฤติกรรม (TLC)</h2><span class="pageref">หน้า 20–21</span></div>
+      <p class="lede">ใช้ในทุกระยะของการรักษา ไม่ว่าจะใช้เดี่ยวหรือร่วมกับยา — และตัวเลขทุกตัวในหัวข้อนี้ออกสอบได้</p>
+
+      <h3 class="sub">อาหารโดยทั่วไป</h3>
+      <ul class="plain">
+        <li>ผัก ผลไม้ ธัญพืชไม่ขัดสี โปรตีนจากปลา/สัตว์ทะเล/สัตว์ปีก ผลิตภัณฑ์นมไขมันต่ำ ลดเนื้อแดง เนื้อแปรรูป ขนมหวาน เครื่องดื่มเติมน้ำตาล — คือแบบแผน <b>DASH</b> และ <b>Mediterranean diet</b> <span class="g g-2">++ · I · A</span></li>
+        <li>ผู้ที่น้ำหนักเกินหรืออ้วน ให้จำกัดพลังงาน (caloric restriction) เพื่อลดน้ำหนัก <span class="g g-2">++ · I · A</span></li>
+      </ul>
+
+      <h3 class="sub">อาหารเพื่อลด LDL-C</h3>
+      <ul class="plain">
+        <li>ลดไขมันอิ่มตัว (ไขมันสัตว์ น้ำมันหมู น้ำมันปาล์ม น้ำมันมะพร้าว เนย) ให้ <b>ไม่เกินร้อยละ 7</b> ของพลังงานต่อวัน <span class="g g-2">++ · I · A</span></li>
+        <li>เปลี่ยนไปใช้ไขมันไม่อิ่มตัวเชิงเดี่ยว/เชิงซ้อน เช่น น้ำมันมะกอก น้ำมันรำข้าว น้ำมันถั่วเหลือง <span class="g g-2">++ · I · A</span></li>
+        <li>งด <b>trans-fatty acid</b> — มาการีน เนยขาว เบเกอรี (ปัจจุบันไทยห้ามนำเข้าและจำหน่ายแล้ว) <span class="g g-2">++ · I · A</span></li>
+        <li>เพิ่มกากใยอาหาร <span class="g g-2">++ · I · A</span></li>
+        <li>อาหารเสริม <b>plant stanol 2 กรัม/วัน</b> <span class="g g-1">+ · IIa · A</span></li>
+      </ul>
+
+      <h3 class="sub">อาหารเพื่อลด TG</h3>
+      <ul class="plain">
+        <li>เลิกเครื่องดื่มแอลกอฮอล์ <span class="g g-2">++ · I · A</span></li>
+        <li>ลดอาหารกลุ่มคาร์โบไฮเดรต <span class="g g-2">++ · I · A</span></li>
+        <li>น้ำตาล <b>ไม่เกินร้อยละ 10</b> ของพลังงานต่อวัน <span class="g g-1">+ · IIa · B</span></li>
+        <li>Familial chylomicronemia syndrome — ไขมัน <b>&lt; 10–15 กรัม/วัน</b> ร่วมกับ <b>MCT oil 30 กรัม/วัน</b> <span class="g g-1">+ · IIa · C</span></li>
+      </ul>
+
+      <h3 class="sub">ออกกำลังกายและบุหรี่</h3>
+      <ul class="plain">
+        <li>แอโรบิกระดับหนักปานกลาง (เดินเร็ว วิ่งเหยาะ ว่ายน้ำ ปั่นจักรยาน) <b>150–300 นาที/สัปดาห์</b> ลด LDL-C, TG และเพิ่ม HDL-C <span class="g g-2">++ · IIa · A</span></li>
+        <li>เลิกบุหรี่หรือส่งต่อคลินิกเลิกบุหรี่ — ปัจจัยเสี่ยงที่ป้องกันได้สำคัญที่สุด และช่วยเพิ่ม HDL-C <span class="g g-2">++ · I · B</span></li>
+      </ul>
+
+      <div class="key">
+        <div class="kh">ชุดตัวเลขที่ต้องท่อง</div>
+        <ul><li><b>7</b> % ไขมันอิ่มตัว · <b>10</b> % น้ำตาล · <b>2</b> ก. plant stanol · <b>150–300</b> นาที/สัปดาห์ · FCS: ไขมัน <b>10–15</b> ก./วัน + MCT <b>30</b> ก./วัน</li></ul>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section id="s6">
+      <div class="sec-head"><h2>ปฐมภูมิ: ไม่มีเบาหวานและโรคไตเรื้อรัง</h2><span class="pageref">หน้า 22–23 · แผนภูมิ 1</span></div>
+      <p class="lede">ห้าสถานการณ์ที่ครอบคลุมผู้ป่วย OPD ส่วนใหญ่ ให้จับคู่ “ใคร → เป้า → ลดกี่ % → เริ่มยาอะไร”</p>
+
+      <div class="tw"><table>
+        <thead><tr><th>ผู้ป่วย</th><th class="num">เป้า LDL-C</th><th class="num">ลดจากค่าเริ่มต้น</th><th>ยาเริ่มต้นและการปรับ</th><th>น้ำหนัก</th></tr></thead>
+        <tbody>
+          <tr><td>อายุ ≥ 21 ปี และ LDL-C ≥ 190</td><td class="num">&lt; 100</td><td class="num">≥ 50%</td><td>Moderate intensity statin → ถ้าไม่ถึงเป้าใน 4–12 สัปดาห์ เปลี่ยนเป็น high intensity</td><td><span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td><b>Familial hypercholesterolemia</b></td><td class="num">&lt; 70</td><td class="num">≥ 50%</td><td>High intensity statin ตั้งแต่ต้น → 4–12 สัปดาห์ไม่ถึงเป้า เพิ่ม ezetimibe → ยังไม่ถึง ส่งต่อพิจารณา PCSK9 inhibitor</td><td><span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td>อายุ ≥ 35 ปี, LDL-C &lt; 190, Thai CV Risk ≥ 10%</td><td class="num">&lt; 100</td><td class="num">≥ 30%</td><td>Low–moderate intensity statin ปรับขึ้นจนถึงขนาดสูงสุดที่รับได้</td><td><span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td>อายุ ≥ 35 ปี, LDL-C &lt; 190, risk &lt; 10% แต่มีปัจจัยเสริม*</td><td class="num">&lt; 100</td><td class="num">≥ 30%</td><td>อาจให้ low–moderate intensity statin</td><td><span class="g g-0">+/− · IIb · B</span></td></tr>
+          <tr><td>อายุ ≥ 35 ปี, LDL-C &lt; 190, risk &lt; 10%, ไม่มีปัจจัยเสริม</td><td class="num">—</td><td class="num">—</td><td>ปรับพฤติกรรมอย่างต่อเนื่อง ยังไม่ต้องใช้ยา</td><td><span class="g g-2">++ · I · A</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="lede" style="margin-top:12px; font-size:14px">* ปัจจัยเสริม: subclinical atherosclerosis, coronary calcium score &gt; 100 Agatston units, ankle-brachial index &lt; 0.9, FHx โรคหลอดเลือดหัวใจก่อนวัยอันควร, โรคอักเสบเรื้อรัง (psoriasis, rheumatoid arthritis, HIV infection)</p>
+
+      <div class="key">
+        <div class="kh">จำให้ได้</div>
+        <ul>
+          <li><b>FH เป็นข้อยกเว้นเดียว</b>ของการป้องกันปฐมภูมิที่เป้าลงถึง &lt; 70 และเริ่ม high intensity ทันทีโดยไม่ต้องรอ TLC 3–6 เดือน</li>
+          <li>LDL-C ≥ 190 → ลด <b>≥ 50%</b> · เข้าทางความเสี่ยง → ลด <b>≥ 30%</b> — จำคู่นี้ไว้แล้วจะไม่สับสน</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="s7">
+      <div class="sec-head"><h2>ปฐมภูมิ: ผู้ป่วยเบาหวาน</h2><span class="pageref">หน้า 23–24 · แผนภูมิ 2</span></div>
+      <p class="lede">แบ่งด้วยสองแกน — อายุ 40 ปี และจำนวนปัจจัยเสี่ยง</p>
+
+      <div class="key" style="margin-top:0; margin-bottom:20px">
+        <div class="kh">ปัจจัยเสี่ยงที่ใช้นับ (7 ข้อ)</div>
+        <ul><li>เป็นเบาหวานนานเกิน 10 ปี · อ้วนหรือน้ำหนักเกิน · สูบบุหรี่ · ความดันโลหิตสูง · FHx โรคหลอดเลือดหัวใจก่อนวัยอันควร · โรคไตเรื้อรัง · albuminuria</li></ul>
+      </div>
+
+      <div class="tw"><table>
+        <thead><tr><th>กลุ่ม</th><th class="num">เป้า LDL-C</th><th class="num">ลดจากค่าเริ่มต้น</th><th>แนวทาง</th><th>น้ำหนัก</th></tr></thead>
+        <tbody>
+          <tr><td>DM อายุ ≥ 40 ปี, ปัจจัยเสี่ยง 0–1</td><td class="num">&lt; 100</td><td class="num">≥ 30%</td><td>เริ่ม statin ร่วม TLC; ถ้า LDL-C ≥ 190 ให้เพิ่มขนาดจนลด <b>≥ 50%</b>; เพิ่มขนาดไม่ได้ → เติม ezetimibe <span class="g g-1">+ · I · A</span></td><td><span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td>DM อายุ ≥ 40 ปี, ปัจจัยเสี่ยง ≥ 2</td><td class="num">&lt; 70</td><td class="num">≥ 50%</td><td>statin; เพิ่มขนาดไม่ได้ → ezetimibe <span class="g g-1">+ · I · A</span>; ยังไม่ถึงเป้า → ส่งต่อพิจารณา PCSK9 inhibitor <span class="g g-1">+ · I · A</span></td><td><span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td>DM อายุ &lt; 40 ปี, ปัจจัยเสี่ยง 0–1</td><td class="num">&lt; 100</td><td class="num">—</td><td>เน้น TLC 3–6 เดือนก่อน; ถ้า LDL-C ยัง ≥ 100 <b>อาจ</b>ให้ statin</td><td><span class="g g-0">+/− · IIb · C</span></td></tr>
+          <tr><td>DM อายุ &lt; 40 ปี, ปัจจัยเสี่ยง ≥ 2</td><td class="num">&lt; 100</td><td class="num">—</td><td>TLC 3–6 เดือน; ถ้า LDL-C ยัง ≥ 100 <b>ให้</b> statin</td><td><span class="g g-1">+ · IIa · C</span></td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 class="sub">TG สูงในผู้ป่วยเบาหวาน</h3>
+      <ul class="plain">
+        <li><b>ไม่แนะนำ</b>ใช้ fibrate หรือ niacin ร่วมกับ statin ในผู้ป่วยเบาหวานที่ TG สูง เพราะไม่ลดความเสี่ยงเพิ่มเมื่อเทียบกับ statin เดี่ยว <span class="g g-n1">− · III · A</span></li>
+        <li>DM อายุ ≥ 40 ปี ที่มีปัจจัยเสี่ยง ≥ 1 ข้อ คุม LDL-C ได้ตามเป้าแล้ว แต่ TG ยังสูง → ให้ <b>pure EPA</b> <span class="g g-1">+ · IIa · B</span></li>
+      </ul>
+    </section>
+
+    <!-- 08 -->
+    <section id="s8">
+      <div class="sec-head"><h2>ปฐมภูมิ: โรคไตเรื้อรัง</h2><span class="pageref">หน้า 24 · แผนภูมิ 3</span></div>
+      <p class="lede">หลักคิดคือ “ยิ่งไตแย่ ยิ่งไม่เร่งขนาดยา” และมีจุดตัดสำคัญที่การเริ่มยาในผู้ที่ฟอกไตอยู่แล้ว</p>
+
+      <ul class="rec">
+        <li data-n="1">อายุ ≥ 50 ปี, eGFR &lt; 60 (CKD stage 3a–5) <b>ยังไม่ได้บำบัดทดแทนไต</b> และ LDL-C ≥ 100 → เป้า <span class="t">&lt; 100</span> หรือลด ≥ 30% <span class="g g-2">++ · I · A</span> โดยใช้ <b>low–moderate intensity statin หรือ statin/ezetimibe</b> <span class="g g-2">++ · I · A</span></li>
+        <li data-n="2">CKD stage 1–2 (eGFR ≥ 60) ที่มี albuminuria ≥ 30 มก./วัน หรือ ACR ≥ 30 มก./ก. เมื่อมีปัจจัยเสี่ยงอื่น → รักษาเหมือนประชากรทั่วไป <span class="g g-1">+ · I · A</span></li>
+        <li data-n="3">ผู้ป่วย<b>ปลูกถ่ายไต</b> → ให้ statin ขนาดเหมาะสม โดยไม่คำนึงถึงระดับ LDL-C เป้าหมาย <span class="g g-1">+ · IIa · B</span></li>
+        <li data-n="4">ระวังการใช้ <b>high intensity statin</b> เมื่อไตเสื่อมถึง stage 3b–5 ทั้งการเลือกชนิดและขนาด <span class="g g-2">++ · I · A</span></li>
+        <li data-n="5"><b>ESRD ที่ฟอกเลือด/ล้างไตทางช่องท้องและไม่เคยได้ยาลดไขมันมาก่อน → ไม่แนะนำให้เริ่ม</b> statin หรือ statin/ezetimibe <span class="g g-n1">− · III · B</span> แต่ถ้ามีข้อบ่งชี้ป้องกันทุติยภูมิ ให้ทำตามแนวทางทุติยภูมิ <span class="g g-1">+ · I · A</span></li>
+        <li data-n="6">ผู้ที่ได้ statin อยู่เดิมแล้วโรคดำเนินจนต้องบำบัดทดแทนไต → <b>ใช้ต่อ</b> แต่ปรับขนาดให้เหมาะสม <span class="g g-1">+ · IIa · C</span></li>
+      </ul>
+
+      <div class="tw"><table>
+        <thead><tr><th>CKD stage</th><th class="num">eGFR (มล./นาที/1.73 ตร.ม.)</th><th>คำนิยาม</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="num">&gt; 90</td><td>ปกติหรือสูง</td></tr>
+          <tr><td>2</td><td class="num">60–89</td><td>ลดเล็กน้อย</td></tr>
+          <tr><td>3a</td><td class="num">45–59</td><td>ลดเล็กน้อยถึงปานกลาง</td></tr>
+          <tr><td>3b</td><td class="num">30–44</td><td>ลดปานกลางถึงมาก</td></tr>
+          <tr><td>4</td><td class="num">15–29</td><td>ลดลงมาก</td></tr>
+          <tr><td>5</td><td class="num">&lt; 15</td><td>ไตวายระยะสุดท้าย</td></tr>
+        </tbody>
+      </table></div>
+      <p class="lede" style="margin-top:12px; font-size:14px">Albuminuria: A1 ACR &lt; 30 · A2 ACR 30–300 · A3 ACR &gt; 300 มก./ก. (A3 รวม nephrotic syndrome ที่ ACR &gt; 2,200 มก./ก.)</p>
+    </section>
+
+    <!-- 09 -->
+    <section id="s9">
+      <div class="sec-head"><h2>ทุติยภูมิ: โรคหลอดเลือดหัวใจ</h2><span class="pageref">หน้า 25 · แผนภูมิ 4</span></div>
+      <p class="lede">ตัวเลขที่ต้องจำแม่นที่สุดในเล่ม — ACS 55, CCS 70 และทั้งคู่ลด ≥ 50%</p>
+
+      <div class="tw"><table>
+        <thead><tr><th></th><th>Acute coronary syndrome</th><th>Chronic coronary syndrome</th></tr></thead>
+        <tbody>
+          <tr><td><b>เป้า LDL-C</b></td><td><span class="t">&lt; 55 <small>มก./ดล.</small></span> และลด ≥ 50%</td><td><span class="t">&lt; 70 <small>มก./ดล.</small></span> และลด ≥ 50% (พิจารณา &lt; 55 หากทำได้ <span class="g g-1">+ · I · A</span>)</td></tr>
+          <tr><td><b>ยาเริ่มต้น</b></td><td>High intensity statin ขนาดสูง <b>เร็วที่สุดเท่าที่จะทำได้</b> หากไม่มีข้อห้าม <span class="g g-2">++ · I · A</span></td><td>Statin ปรับขนาดสูงสุดที่รับได้เพื่อให้ถึงเป้า <span class="g g-2">++ · I · A</span></td></tr>
+          <tr><td><b>ทนยาไม่ได้ / อายุ &gt; 75 ปี</b></td><td>ใช้ moderate intensity statin <span class="g g-2">++ · I · A</span></td><td>—</td></tr>
+          <tr><td><b>ประเมินซ้ำ</b></td><td>ภายใน <b>4–6 สัปดาห์</b></td><td>ภายใน <b>4–12 สัปดาห์</b></td></tr>
+          <tr><td><b>ขั้นถัดไป</b></td><td>เพิ่ม ezetimibe <span class="g g-1">+ · I · B</span> → ยังไม่ถึงเป้า ส่งต่อพิจารณา PCSK9 inhibitor <span class="g g-1">+ · I · A</span></td><td>เพิ่ม ezetimibe <span class="g g-1">+ · I · B</span> → พิจารณา PCSK9 inhibitor <span class="g g-1">+ · I · A</span></td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="key">
+        <div class="kh">จำให้ได้</div>
+        <ul><li>ระยะเวลาประเมินซ้ำต่างกัน: <b>ACS 4–6 สัปดาห์</b> (เร่งกว่า) และ <b>CCS 4–12 สัปดาห์</b></li></ul>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <div class="sec-head"><h2>ทุติยภูมิ: โรคหลอดเลือดสมอง</h2><span class="pageref">หน้า 25 · แผนภูมิ 5</span></div>
+      <p class="lede">เป้าหมายขึ้นกับว่าตรวจพบ atherosclerosis ของหลอดเลือดสมองหรือหลอดเลือดคอหรือไม่</p>
+
+      <ul class="rec">
+        <li data-n="1">Ischemic stroke/TIA <b>ที่ไม่ได้เกิดจากลิ่มเลือดจากหัวใจ</b> และ LDL-C ≥ 100 → high intensity statin เป้า <span class="t">&lt; 100</span> <span class="g g-2">++ · I · B</span> — ถ้า LDL-C &lt; 100 อยู่แล้ว ให้ moderate-to-high intensity statin โดยไม่กำหนดเป้า <span class="g g-1">+ · IIa · C</span></li>
+        <li data-n="2">ตรวจพบ <b>ตีบ &gt; ร้อยละ 50</b> ของ intracranial artery หรือ carotid artery → high intensity statin ร่วมกับ ezetimibe ตามความเหมาะสม เป้า <span class="t">&lt; 70</span> <span class="g g-2">++ · I · B</span> — ถ้าเป็น very high risk* และ LDL-C ยัง ≥ 70 หลังได้ statin สูงสุด + ezetimibe → ส่งต่อพิจารณา PCSK9 inhibitor <span class="g g-1">+ · IIa · B</span></li>
+        <li data-n="3"><b>Cardioembolic stroke</b> — ข้อมูลยังไม่ชัดเจน อาจให้ statin เมื่อมีปัจจัยเสี่ยงอื่นร่วมด้วย <span class="g g-0">+/− · IIb · C</span></li>
+        <li data-n="4"><b>Hemorrhagic stroke</b> — ไม่แนะนำให้ statin เพื่อป้องกันเลือดออกในสมองซ้ำ ในกรณีที่ไม่มีข้อบ่งชี้อื่น <span class="g g-n1">− · III · C</span></li>
+      </ul>
+
+      <div class="key">
+        <div class="kh">* Very high risk คืออะไร</div>
+        <ul>
+          <li>Stroke + <b>major ASCVD</b> อีกอย่าง: ACS ภายใน 12 เดือน, ประวัติ MI, symptomatic PAD (claudication + ABI &lt; 0.85 หรือเคย revascularization/amputation)</li>
+          <li>หรือ stroke + <b>high-risk conditions หลายข้อ</b>: อายุ ≥ 65 ปี, heterozygous FH, เคย CABG/PCI นอกเหนือ major ASCVD, เบาหวาน, ความดันโลหิตสูง, CKD (eGFR 15–59), สูบบุหรี่ปัจจุบัน</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <div class="sec-head"><h2>ยาลดไขมันกลุ่มที่ไม่ใช่ statin</h2><span class="pageref">หน้า 26–27</span></div>
+      <p class="lede">หลักใหญ่ข้อเดียว — statin เป็นยาตัวแรกเสมอ ยากลุ่มอื่นเป็นตัวเสริมเมื่อ statin ขนาดสูงสุดที่ทนได้แล้วยังไม่ถึงเป้า</p>
+
+      <h3 class="sub">Fibrate</h3>
+      <ul class="plain">
+        <li>เริ่มร่วมกับ TLC เมื่อ <b>TG &gt; 500 มก./ดล.</b> เพื่อป้องกันตับอ่อนอักเสบ <span class="g g-2">++ · I · A</span></li>
+        <li>Fibrate + statin ไม่ลด ASCVD เพิ่มเมื่อเทียบกับ statin เดี่ยว แต่ <b>fenofibrate ในผู้ป่วยเบาหวานช่วยชะลอ diabetic retinopathy</b> และลดการรักษาด้วยเลเซอร์ <span class="g g-1">+ · IIa · B</span></li>
+        <li><b>ไม่แนะนำ gemfibrozil ร่วมกับ statin</b> <span class="g g-n1">− · III · B</span></li>
+        <li>ต้องคำนึงถึง eGFR เสมอเมื่อสั่ง fibrate</li>
+      </ul>
+
+      <h3 class="sub">Ezetimibe</h3>
+      <ul class="plain">
+        <li><b>ไม่แนะนำใช้ขนาดเดียวเพื่อลด LDL-C</b> ต้องใช้ร่วมกับ statin เสมอ ยกเว้นเกิดผลไม่พึงประสงค์จาก statin <span class="g g-n1">− · III · C</span></li>
+        <li>ใช้ร่วมกับ statin เมื่อได้ statin ขนาดสูงสุดที่ทนได้นานอย่างน้อย <b>2–3 เดือน</b> แล้ว LDL-C ยังไม่ถึงเป้า ทั้งในการป้องกันปฐมภูมิและทุติยภูมิของผู้เสี่ยงสูง <span class="g g-1">+ · I · A</span></li>
+        <li>ใช้ร่วมกับ statin ในผู้ที่มีข้อจำกัดในการให้ statin ขนาดสูง เช่น CKD stage 4–5 ที่ไม่ได้บำบัดทดแทนไต <span class="g g-1">+ · I · A</span></li>
+        <li>ไม่แนะนำเปลี่ยนจาก statin ไปใช้ ezetimibe เดี่ยว เพียงเพราะ AST/ALT สูงขึ้นแต่<b>ไม่เกิน 3 เท่า</b>และยังหาสาเหตุอื่นไม่ได้ <span class="g g-n1">− · III · C</span></li>
+      </ul>
+
+      <h3 class="sub">PCSK9 inhibitor (mAb และ siRNA)</h3>
+      <ul class="plain">
+        <li>ร่วมกับ statin + ezetimibe ในผู้ป่วย ASCVD ที่ LDL-C <b>≥ 70 มก./ดล.</b> <span class="g g-1">+ · I · A</span></li>
+        <li>ร่วมกับ ezetimibe ในผู้ที่มีผลไม่พึงประสงค์จาก statin <span class="g g-1">+ · I · A</span></li>
+        <li>ร่วมกับ statin + ezetimibe ใน <b>FH ที่ LDL-C ≥ 100 มก./ดล.</b> <span class="g g-1">+ · IIa · A</span></li>
+        <li>ร่วมกับ statin + ezetimibe ในผู้ป่วยเบาหวานเสี่ยงสูงที่ยังเกินเป้า <span class="g g-1">+ · I · A</span></li>
+        <li>PCSK9 mAb มีข้อมูลลดโรคหัวใจและหลอดเลือดแล้ว ส่วน <b>siRNA (inclisiran) ยังรอข้อมูลเพิ่มเติม</b></li>
+      </ul>
+
+      <h3 class="sub">Bempedoic acid · Cholestyramine · น้ำมันปลา</h3>
+      <ul class="plain">
+        <li><b>Bempedoic acid</b> ร่วมกับ ezetimibe ในผู้ที่มีผลไม่พึงประสงค์จาก statin และ ezetimibe เดี่ยวยังไม่ถึงเป้า <span class="g g-0">+ · IIb · B</span></li>
+        <li><b>Cholestyramine</b> ร่วมกับ statin + ezetimibe เมื่อใช้ PCSK9 inhibitor ไม่ได้ <span class="g g-0">+ · IIb · C</span> — ต้องรับประทานห่างจากยาอื่น <b>อย่างน้อย 4 ชม.</b> หรือรับยาอื่น <b>1 ชม.ก่อน</b> <span class="g g-2">++ · I · C</span> และ<b>ห้ามใช้อย่างยิ่งเมื่อ TG &gt; 500</b> <span class="g g-n2">−− · III · C</span></li>
+        <li><b>Omega-3 (EPA/DHA หรือ pure EPA) &gt; 2 กรัม/วัน</b> เพื่อลด TG เมื่อ TG &gt; 500 ในผู้ที่ให้ fibrate ไม่ได้ หรือให้ร่วมกับ fibrate <span class="g g-1">+ · IIa · A</span></li>
+        <li><b>Pure EPA 4 กรัม/วัน</b> ในผู้เสี่ยงสูงที่ TG ยังสูง <b>150–499 มก./ดล.</b> หลังได้ statin แล้ว เพื่อลดอัตราการเกิด ASCVD <span class="g g-1">+ · IIa · B</span></li>
+      </ul>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+      <div class="sec-head"><h2>ตารางยา: ความแรงและขนาดสูงสุดตามระยะไต</h2><span class="pageref">ภาคผนวก 1–2 · หน้า 30–35</span></div>
+
+      <h3 class="sub">การแบ่งความแรงของ statin ตามการลด LDL-C</h3>
+      <div class="tw"><table>
+        <thead><tr><th>High intensity<br><span style="font-weight:400">ลด &gt; ร้อยละ 50</span></th><th>Moderate intensity<br><span style="font-weight:400">ลดประมาณร้อยละ 30–50</span></th><th>Low intensity<br><span style="font-weight:400">ลด &lt; ร้อยละ 30</span></th></tr></thead>
+        <tbody><tr>
+          <td class="drug">Atorvastatin 40–80 มก.<br>Rosuvastatin 20 มก.</td>
+          <td class="drug">Atorvastatin 10–20 มก.<br>Fluvastatin 80 มก.<br>Pitavastatin 1–4 มก.<br>Pravastatin 40 มก.<br>Rosuvastatin 5–10 มก.<br>Simvastatin 20–40 มก.</td>
+          <td class="drug">Fluvastatin 20–40 มก.<br>Pravastatin 10–20 มก.<br>Simvastatin 10 มก.</td>
+        </tr></tbody>
+      </table></div>
+
+      <div class="key">
+        <div class="kh">ข้อควรระวังของ statin ที่ถามบ่อย</div>
+        <ul>
+          <li><b>ห้ามใช้ simvastatin 80 มก./วัน</b></li>
+          <li>ห้าม simvastatin ร่วมกับ conazole antifungal, erythromycin, clarithromycin, HIV protease inhibitor, gemfibrozil, cyclosporine, danazol</li>
+          <li>Simvastatin <b>≤ 10 มก.</b> เมื่อใช้ร่วม verapamil หรือ diltiazem · <b>≤ 20 มก.</b> เมื่อใช้ร่วม amiodarone, amlodipine, ranolazine</li>
+          <li>ระวัง high intensity statin ใน: อายุ &gt; 75 ปี, ผู้เสี่ยงต่ออันตรกิริยา, ประวัติเลือดออกในสมอง (ที่ไม่ใช่จากอุบัติเหตุ), CKD stage 3b–5</li>
+        </ul>
+      </div>
+
+      <h3 class="sub">ประสิทธิภาพของยาแต่ละกลุ่ม</h3>
+      <div class="tw"><table>
+        <thead><tr><th>ยา</th><th>ขนาด</th><th>ผลต่อไขมัน</th><th>ข้อควรระวัง</th></tr></thead>
+        <tbody>
+          <tr><td>Statin</td><td class="drug">วันละ 1 ครั้ง<br>(simvastatin หลังอาหารเย็น)</td><td>ลด LDL-C 21–55%<br>เพิ่ม HDL-C 2–10%<br>ลด TG 6–30%</td><td>อาการทางกล้ามเนื้อ ตับอักเสบ เพิ่มความเสี่ยงเบาหวาน; ระวัง CYP450 interaction</td></tr>
+          <tr><td>Ezetimibe</td><td class="drug">10 มก./วัน</td><td>ลด LDL-C 10–18%<br>ลด ApoB 11–16%<br>ร่วม statin ลดเพิ่มอีก ~25%</td><td>อาการทางกล้ามเนื้อ</td></tr>
+          <tr><td>Cholestyramine</td><td class="drug">8–16 ก./วัน</td><td>ลด LDL-C 15–25%</td><td>ไม่ใช้ใน mixed hyperlipidemia (เพิ่ม TG); รบกวนการดูดซึมวิตามินและยาอื่น</td></tr>
+          <tr><td>PCSK9 mAb</td><td class="drug">Alirocumab 75/150 มก. q2wk หรือ 300 มก. q4wk<br>Evolocumab 140 มก. q2wk หรือ 420 มก. q4wk</td><td>ลด LDL-C เฉลี่ย 50–60%</td><td>ปฏิกิริยาตำแหน่งฉีด คออักเสบ ไข้หวัด; ขนส่งในกระเป๋าเก็บความเย็น</td></tr>
+          <tr><td>siRNA PCSK9</td><td class="drug">Inclisiran 248 มก. วันที่ 0, 3 เดือน แล้วทุก 6 เดือน</td><td>ลด LDL-C เฉลี่ย 40–60%</td><td>ปฏิกิริยาตำแหน่งฉีด ปวดศีรษะ ไอ</td></tr>
+          <tr><td>Bempedoic acid</td><td class="drug">180 มก./วัน</td><td>ลด LDL-C 23% เดี่ยว · 36% ร่วม ezetimibe · 12.6–16.5% ร่วม statin</td><td>เก๊าต์ อาการไข้หวัด เส้นเอ็นฉีก ต่อมลูกหมากโต</td></tr>
+          <tr><td>Fibrate</td><td class="drug">Fenofibrate 100–300 มก./วัน<br>Gemfibrozil 600–1,200 มก./วัน<br>Pemafibrate 0.2–0.4 มก./วัน</td><td>ลด TG 20–35%<br>เพิ่ม HDL-C 6–18%</td><td>Gemfibrozil ห้ามร่วม statin; fenofibrate รับพร้อมอาหารเพิ่มการดูดซึม; ระวังใน CKD</td></tr>
+          <tr><td>Omega-3</td><td class="drug">EPA/DHA 2–4 ก./วัน<br>Pure EPA 2–4 ก./วัน</td><td>ลด TG 20–50%</td><td>เลือดออกง่าย</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 class="sub">ขนาดสูงสุดตามระยะโรคไตเรื้อรัง (มก./วัน)</h3>
+      <div class="tw"><table>
+        <thead><tr><th>ยา</th><th class="num">Stage 1–2<br>GFR ≥ 60</th><th class="num">Stage 3a<br>GFR 45–59</th><th class="num">Stage 3b–5<br>GFR &lt; 45</th><th class="num">ปลูกถ่ายไต</th></tr></thead>
+        <tbody>
+          <tr><td class="drug">Atorvastatin</td><td class="num">40–80</td><td class="num">40–80</td><td class="num">20–40</td><td class="num">20</td></tr>
+          <tr><td class="drug">Rosuvastatin</td><td class="num">40</td><td class="num">20</td><td class="num">10</td><td class="num">5</td></tr>
+          <tr><td class="drug">Simvastatin</td><td class="num">40</td><td class="num">40</td><td class="num">20–40</td><td class="num">20</td></tr>
+          <tr><td class="drug">Simvastatin/Ezetimibe</td><td class="num">40/10</td><td class="num">40/10</td><td class="num">20/10</td><td class="num">20/10</td></tr>
+          <tr><td class="drug">Pravastatin</td><td class="num">40</td><td class="num">40</td><td class="num">20</td><td class="num">20</td></tr>
+          <tr><td class="drug">Pitavastatin</td><td class="num">4</td><td class="num">4</td><td class="num">2</td><td class="num">ไม่มีข้อมูล</td></tr>
+          <tr><td class="drug">Fluvastatin</td><td class="num">80</td><td class="num">80</td><td class="num">ไม่มีข้อมูล</td><td class="num">80</td></tr>
+          <tr><td class="drug">Ezetimibe</td><td class="num">10</td><td class="num">10</td><td class="num">10</td><td class="num">10</td></tr>
+          <tr><td class="drug">Fenofibrate</td><td class="num">300</td><td class="num">100</td><td class="num">ไม่ควรใช้</td><td class="num">ไม่ควรใช้</td></tr>
+          <tr><td class="drug">Gemfibrozil</td><td class="num">1,200</td><td class="num">1,200</td><td class="num">600</td><td class="num">600</td></tr>
+          <tr><td class="drug">Cholestyramine (ก./วัน)</td><td class="num">16</td><td class="num">16</td><td class="num">16</td><td class="num">16</td></tr>
+          <tr><td class="drug">Omega-3 / Pure EPA</td><td class="num">4,000</td><td class="num">4,000</td><td class="num">4,000</td><td class="num">4,000</td></tr>
+          <tr><td class="drug">Alirocumab</td><td class="num">75–150</td><td class="num">75–150</td><td class="num">75–150</td><td class="num">75–150</td></tr>
+          <tr><td class="drug">Evolocumab</td><td class="num">140–420</td><td class="num">140–420</td><td class="num">140–420</td><td class="num">140–420</td></tr>
+          <tr><td class="drug">Inclisiran</td><td class="num">284</td><td class="num">284</td><td class="num">284</td><td class="num">284</td></tr>
+        </tbody>
+      </table></div>
+      <div class="key">
+        <div class="kh">รูปแบบที่ช่วยจำ</div>
+        <ul>
+          <li><b>Rosuvastatin ลดครึ่งทุกขั้น</b> 40 → 20 → 10 → 5 คือแถวที่จำง่ายที่สุดและถามบ่อยที่สุด</li>
+          <li><b>Fenofibrate ห้ามใช้เมื่อ GFR &lt; 45</b> ส่วน ezetimibe, omega-3 และกลุ่ม PCSK9 ไม่ต้องปรับขนาดเลย</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section id="s13">
+      <div class="sec-head"><h2>ประเมินก่อนให้ยาและติดตามหลังบำบัด</h2><span class="pageref">หน้า 28</span></div>
+
+      <ul class="rec">
+        <li data-n="1">ตรวจ <b>fasting lipid panel อย่างน้อย 1 ครั้ง</b> ก่อนเริ่มยา และตรวจซ้ำที่ <b>4–12 สัปดาห์</b> หลังเริ่มยา เพื่อประเมินประสิทธิภาพและ adherence จากนั้นติดตามเป็นครั้งคราว เช่น <b>ทุก 3–12 เดือน</b></li>
+        <li data-n="2">ตรวจ <b>AST/ALT ก่อนเริ่ม statin</b> เพื่อสืบค้นภาวะตับอักเสบรุนแรงซึ่งเป็นข้อห้าม</li>
+        <li data-n="3">ติดตามเอนไซม์ตับที่ 4–12 สัปดาห์ เฉพาะผู้มีข้อบ่งชี้ (เสี่ยงตับอักเสบ หรือค่าผิดปกติก่อนเริ่มยา) หรือเมื่อปรับขนาด/เปลี่ยนชนิดยา หลังจากนั้น<b>ไม่จำเป็นต้องตรวจซ้ำบ่อย</b></li>
+        <li data-n="4">LDL-C ไม่ลดตามเป้า → ตรวจสอบ <b>การรับประทานยาสม่ำเสมอและการปรับพฤติกรรมก่อน</b> ที่จะเปลี่ยนการรักษา</li>
+        <li data-n="5">ไม่ได้ตรวจก่อนเริ่มยา แล้วพบ AST/ALT <b>&gt; 3 เท่าของค่าสูงสุดปกติ</b> → อาจหยุด statin ชั่วคราวเพื่อหาสาเหตุ</li>
+        <li data-n="6">ปวดกล้ามเนื้อ ปวดเมื่อย ตะคริวบ่อย → ตรวจ CK แต่ระลึกว่าอาการและ CK ที่ผิดปกติอาจไม่ได้เกิดจาก statin; อาจหยุดชั่วคราว สังเกตอาการและตรวจเลือดซ้ำใน <b>2–4 สัปดาห์</b> แล้วลองกลับไปใช้ชนิดเดิม ขนาดเดิมหรือลดลง หากอาการกลับมาแสดงว่าน่าเกิดจาก statin</li>
+        <li data-n="7">ปวดกล้ามเนื้อ + กล้ามเนื้ออ่อนแรง + <b>CK &gt; 10 เท่า</b> ของค่าสูงสุดปกติ → เข้าข่าย <b>rhabdomyolysis หยุด statin ทันที</b></li>
+        <li data-n="8"><b>statin เป็นยาตัวแรกเสมอ</b> เมื่อให้ขนาดสูงสุดที่ผู้ป่วยทนได้แล้วยังเกินเป้า จึงเพิ่มยา non-statin แล้วติดตามผลและผลข้างเคียงของยาแต่ละตัว</li>
+      </ul>
+    </section>
+
+    <!-- PRACTICE 1: path finder -->
+    <section id="p1">
+      <div class="sec-head"><h2>ห้องฝึก · หาเป้าหมาย LDL-C</h2><span class="pageref">แผนภูมิ 1–5</span></div>
+      <p class="lede">เลือกโจทย์ผู้ป่วยทีละขั้นเหมือนเดินแผนภูมิในเล่ม จนได้เป้าหมาย ยาเริ่มต้น และลำดับการเพิ่มยา</p>
+      <div class="tool">
+        <div class="tool-bar"><b>เดินแผนภูมิ</b><span class="spacer"></span><button class="btn" id="pfReset">เริ่มใหม่</button></div>
+        <div class="tool-body">
+          <div class="trail" id="pfTrail"></div>
+          <div id="pfQuestion"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE 2: statin sorter -->
+    <section id="p2">
+      <div class="sec-head"><h2>ห้องฝึก · จัดกลุ่มความแรงของ statin</h2><span class="pageref">ตารางที่ 1.1</span></div>
+      <p class="lede">ชื่อยาและขนาดจะปรากฏทีละตัว เลือกว่าอยู่กลุ่มความแรงใด — ทั้ง 15 รายการมาจากตารางในภาคผนวก 1</p>
+      <div class="tool">
+        <div class="tool-bar"><b>เกมจัดกลุ่ม</b><span class="scoreline" id="stScore"></span><span class="spacer"></span><button class="btn" id="stReset">สุ่มใหม่</button></div>
+        <div class="tool-body">
+          <div class="chips"><span class="chip active" id="stChip"></span></div>
+          <div class="buckets">
+            <button class="bucket" data-b="high"><b>High intensity</b><span>ลด &gt; 50%</span></button>
+            <button class="bucket" data-b="mod"><b>Moderate intensity</b><span>ลด 30–50%</span></button>
+            <button class="bucket" data-b="low"><b>Low intensity</b><span>ลด &lt; 30%</span></button>
+          </div>
+          <div id="stFb"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE 3: flashcards -->
+    <section id="p3">
+      <div class="sec-head"><h2>ห้องฝึก · บัตรคำ 32 ใบ</h2><span class="pageref">ทั้งเล่ม</span></div>
+      <p class="lede">คลิกที่บัตรเพื่อพลิกดูคำตอบ แล้วกด “จำได้” หรือ “ทวนอีก” — บัตรที่ยังไม่แม่นจะวนกลับมาให้ซ้ำ</p>
+      <div class="tool">
+        <div class="tool-bar"><b>บัตรคำ</b><span class="fc-count" id="fcCount"></span><span class="spacer"></span><button class="btn" id="fcShuffle">สลับสำรับ</button></div>
+        <div class="tool-body">
+          <div class="fc" id="fcCard" tabindex="0" role="button" aria-label="พลิกบัตรคำ"></div>
+          <div class="fc-nav">
+            <button class="btn btn-solid" id="fcKnow">จำได้</button>
+            <button class="btn" id="fcAgain">ทวนอีก</button>
+            <span class="scoreline" id="fcStat"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE 4: quiz -->
+    <section id="p4">
+      <div class="sec-head"><h2>ห้องฝึก · แบบทดสอบ 24 ข้อ</h2><span class="pageref">ทั้งเล่ม</span></div>
+      <p class="lede">โจทย์แบบผู้ป่วยจริง เลือกคำตอบแล้วดูคำอธิบายพร้อมอ้างอิงหัวข้อทันที</p>
+      <div class="tool">
+        <div class="tool-bar"><b>แบบทดสอบ</b><span class="scoreline" id="qzMeta"></span><span class="spacer"></span><button class="btn" id="qzReset">เริ่มใหม่</button></div>
+        <div class="tool-body" id="qzBody"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  สรุปและเรียบเรียงจาก <b>แนวทางเวชปฏิบัติการบำบัดภาวะไขมันผิดปกติในเลือดเพื่อป้องกันโรคหัวใจและหลอดเลือด พ.ศ. 2567</b> ราชวิทยาลัยอายุรแพทย์แห่งประเทศไทย (พิมพ์ครั้งที่ 2 มิถุนายน 2567, ISBN 978-616-94233-3-1)<br>
+  ป้ายกำกับอ่านว่า <span class="g g-2">น้ำหนักคำแนะนำ · class · คุณภาพหลักฐาน</span> — ++ แนะนำอย่างยิ่ง, + แนะนำ, +/− อาจแนะนำ, − ไม่แนะนำ, −− ไม่แนะนำอย่างยิ่ง<br>
+  ใช้ประกอบการเรียนรู้เท่านั้น การตัดสินใจรักษาต้องอาศัยดุลยพินิจของแพทย์ผู้ดูแลและบริบทของผู้ป่วยแต่ละราย
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s){ return document.querySelector(s); };
+var store = {
+  get: function(k,d){ try{ var v=localStorage.getItem('cpg2567_'+k); return v===null?d:JSON.parse(v);}catch(e){return d;} },
+  set: function(k,v){ try{ localStorage.setItem('cpg2567_'+k, JSON.stringify(v)); }catch(e){} }
+};
+
+/* ---------- theme ---------- */
+var themeBtn = $('#themeBtn');
+var saved = store.get('theme', null);
+if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+themeBtn.addEventListener('click', function(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  var isDark = cur ? cur==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  store.set('theme', next);
+});
+
+/* ---------- nav + progress ---------- */
+var links = Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+var secs = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+var seen = {};
+function onScroll(){
+  var y = window.scrollY + 190, active = 0;
+  for(var i=0;i<secs.length;i++){
+    if(secs[i] && secs[i].offsetTop <= y){ active = i; }
+    if(secs[i] && window.scrollY + window.innerHeight > secs[i].offsetTop + 120){ seen[i]=1; }
+  }
+  links.forEach(function(a,i){ a.classList.toggle('on', i===active); });
+  var pct = Math.round(Object.keys(seen).length / links.length * 100);
+  $('#meterFill').style.width = pct+'%';
+  $('#meterNum').textContent = pct+'%';
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+window.addEventListener('resize', onScroll);
+
+/* =========================================================
+   1. PATH FINDER
+   ========================================================= */
+var TREE = {
+  start:{ q:'ผู้ป่วยมี Clinical ASCVD แล้วหรือยัง?', o:[
+    ['มีแล้ว — ACS, MI, CAD, stroke/TIA, PAD, atherosclerotic aortic disease','ascvd'],
+    ['ยังไม่มี — เป็นการป้องกันปฐมภูมิ','prim']
+  ]},
+  ascvd:{ q:'อยู่ในกลุ่มโรคใด?', o:[
+    ['Acute coronary syndrome (ACS)','r_acs'],
+    ['Chronic coronary syndrome (CCS)','r_ccs'],
+    ['Ischemic stroke / TIA ที่ไม่ได้เกิดจากลิ่มเลือดจากหัวใจ','stroke'],
+    ['Cardioembolic stroke','r_cardio'],
+    ['Hemorrhagic stroke','r_ich']
+  ]},
+  stroke:{ q:'ผลตรวจหลอดเลือดและระดับ LDL-C เป็นอย่างไร?', o:[
+    ['LDL-C ≥ 100 และไม่พบ atherosclerosis ของ intracranial/carotid artery','r_stk1'],
+    ['พบตีบ > ร้อยละ 50 ของ intracranial หรือ carotid artery','r_stk2'],
+    ['LDL-C < 100 มก./ดล.','r_stk3']
+  ]},
+  prim:{ q:'ผู้ป่วยมีโรคร่วมข้อใด?', o:[
+    ['โรคไตเรื้อรัง','ckd'],
+    ['เบาหวาน','dm'],
+    ['ไม่มีทั้งเบาหวานและโรคไตเรื้อรัง','gen']
+  ]},
+  gen:{ q:'ระดับ LDL-C และลักษณะทางพันธุกรรม?', o:[
+    ['วินิจฉัย/สงสัย Familial hypercholesterolemia','r_fh'],
+    ['LDL-C ≥ 190 มก./ดล. (อายุ ≥ 21 ปี)','r_190'],
+    ['LDL-C < 190 มก./ดล. และอายุ ≥ 35 ปี','gr']
+  ]},
+  gr:{ q:'Thai CV Risk Score ในอีก 10 ปี เท่าไร?', o:[
+    ['ตั้งแต่ร้อยละ 10 ขึ้นไป','r_r10'],
+    ['น้อยกว่าร้อยละ 10 แต่มี subclinical atherosclerosis / CAC > 100 / ABI < 0.9 / FHx premature CAD / โรคอักเสบเรื้อรัง','r_renh'],
+    ['น้อยกว่าร้อยละ 10 และไม่มีปัจจัยเสริม','r_rlow']
+  ]},
+  dm:{ q:'อายุและจำนวนปัจจัยเสี่ยง (DM > 10 ปี, อ้วน, สูบบุหรี่, HT, FHx premature CVD, CKD, albuminuria)?', o:[
+    ['อายุ ≥ 40 ปี · ปัจจัยเสี่ยง 0–1 ข้อ','r_dm1'],
+    ['อายุ ≥ 40 ปี · ปัจจัยเสี่ยง ≥ 2 ข้อ','r_dm2'],
+    ['อายุ < 40 ปี · ปัจจัยเสี่ยง 0–1 ข้อ','r_dm3'],
+    ['อายุ < 40 ปี · ปัจจัยเสี่ยง ≥ 2 ข้อ','r_dm4']
+  ]},
+  ckd:{ q:'ระยะโรคไตและการบำบัดทดแทนไต?', o:[
+    ['eGFR < 60 (stage 3a–5) ยังไม่ได้บำบัดทดแทนไต · อายุ ≥ 50 ปี · LDL-C ≥ 100','r_ckd1'],
+    ['Stage 1–2 (eGFR ≥ 60) ที่มี albuminuria ≥ 30 มก./วัน','r_ckd2'],
+    ['กำลังฟอกเลือด/ล้างไตทางช่องท้อง และไม่เคยได้ยาลดไขมันมาก่อน','r_ckd3'],
+    ['ผู้ป่วยปลูกถ่ายไต','r_ckd4']
+  ]}
+};
+var RES = {
+  r_acs:{t:'ACS · ป้องกันทุติยภูมิ',target:'< 55 มก./ดล.',pct:'ลด ≥ 50%',drug:'High intensity statin ขนาดสูง เร็วที่สุด',g:'++ · I · A',
+    steps:['ให้ high intensity statin ขนาดสูงทันทีที่ไม่มีข้อห้าม','ทนไม่ได้ หรืออายุ > 75 ปี → moderate intensity statin','ประเมินซ้ำใน 4–6 สัปดาห์ ไม่ถึงเป้า → เพิ่ม ezetimibe (+, I, B)','ยังไม่ถึงเป้า → ส่งต่อพิจารณา PCSK9 inhibitor (+, I, A)']},
+  r_ccs:{t:'CCS · ป้องกันทุติยภูมิ',target:'< 70 มก./ดล.',pct:'ลด ≥ 50%',drug:'Statin ปรับขนาดสูงสุดที่รับได้',g:'++ · I · A',
+    steps:['พิจารณาเป้า < 55 มก./ดล. หากทำได้ (+, I, A)','ประเมินซ้ำใน 4–12 สัปดาห์ ไม่ถึงเป้า → เพิ่ม ezetimibe (+, I, B)','ยังไม่ถึงเป้า → พิจารณา PCSK9 inhibitor (+, I, A)']},
+  r_stk1:{t:'Ischemic stroke/TIA · LDL-C ≥ 100 ไม่พบ atherosclerosis',target:'< 100 มก./ดล.',pct:'—',drug:'High intensity statin',g:'++ · I · B',
+    steps:['เริ่ม high intensity statin','ติดตามระดับไขมันตามแนวทางทั่วไป']},
+  r_stk2:{t:'Ischemic stroke/TIA · ตีบ > 50% ของ intracranial/carotid',target:'< 70 มก./ดล.',pct:'—',drug:'High intensity statin ร่วม ezetimibe ตามความเหมาะสม',g:'++ · I · B',
+    steps:['High intensity statin ± ezetimibe','Very high risk และ LDL-C ยัง ≥ 70 หลังใช้ statin สูงสุด + ezetimibe → ส่งต่อพิจารณา PCSK9 inhibitor (+, IIa, B)']},
+  r_stk3:{t:'Ischemic stroke/TIA · LDL-C < 100 อยู่แล้ว',target:'ไม่กำหนดเป้าหมาย',pct:'—',drug:'Moderate to high intensity statin',g:'+ · IIa · C',steps:['ให้ statin ต่อเนื่องโดยไม่กำหนดเป้า LDL-C']},
+  r_cardio:{t:'Cardioembolic stroke',target:'ไม่มีข้อมูลชัดเจน',pct:'—',drug:'อาจให้ statin เมื่อมีปัจจัยเสี่ยงอื่นร่วม',g:'+/− · IIb · C',steps:['ข้อมูลเปรียบเทียบยังไม่ชัดเจน','พิจารณาให้ statin เมื่อมีปัจจัยเสี่ยงอื่นร่วมด้วย']},
+  r_ich:{t:'Hemorrhagic stroke',target:'ไม่แนะนำให้ statin',pct:'—',drug:'ไม่ให้ statin เพื่อป้องกันเลือดออกในสมองซ้ำ',g:'− · III · C',steps:['ไม่แนะนำในกรณีที่ไม่มีข้อบ่งชี้อื่น','หากมีข้อบ่งชี้ ASCVD อื่น ให้พิจารณาตามข้อบ่งชี้นั้น']},
+  r_fh:{t:'Familial hypercholesterolemia',target:'< 70 มก./ดล.',pct:'ลด ≥ 50%',drug:'High intensity statin ตั้งแต่ต้น',g:'++ · I · A',
+    steps:['ไม่ต้องรอ TLC 3–6 เดือน เริ่ม high intensity statin ได้เลย','ไม่ถึงเป้าใน 4–12 สัปดาห์ → เพิ่ม ezetimibe (+, I, A)','ยังไม่ถึงเป้า → ส่งต่อพิจารณา PCSK9 inhibitor (+, IIa, A)']},
+  r_190:{t:'อายุ ≥ 21 ปี · LDL-C ≥ 190',target:'< 100 มก./ดล.',pct:'ลด ≥ 50%',drug:'Moderate intensity statin',g:'++ · I · A',
+    steps:['เริ่ม moderate intensity statin','ไม่ถึงเป้าใน 4–12 สัปดาห์ → เปลี่ยนเป็น high intensity statin']},
+  r_r10:{t:'อายุ ≥ 35 ปี · Thai CV Risk ≥ 10%',target:'< 100 มก./ดล.',pct:'ลด ≥ 30%',drug:'Low to moderate intensity statin',g:'++ · I · A',
+    steps:['เริ่ม low–moderate intensity statin','ปรับขึ้นจนถึงขนาดสูงสุดที่รับได้เพื่อให้ถึงเป้า']},
+  r_renh:{t:'Risk < 10% แต่มีปัจจัยเสริม',target:'< 100 มก./ดล.',pct:'ลด ≥ 30%',drug:'อาจให้ low to moderate intensity statin',g:'+/− · IIb · B',
+    steps:['ปัจจัยเสริม: subclinical atherosclerosis, CAC > 100, ABI < 0.9, FHx premature CAD, โรคอักเสบเรื้อรัง','ปรับขนาดสูงสุดที่รับได้เพื่อให้ถึงเป้า']},
+  r_rlow:{t:'Risk < 10% และไม่มีปัจจัยเสริม',target:'ยังไม่ต้องใช้ยา',pct:'—',drug:'ปรับพฤติกรรมอย่างต่อเนื่อง',g:'++ · I · A',
+    steps:['เน้น TLC: DASH/Mediterranean, ไขมันอิ่มตัว < 7% ของพลังงาน','ออกกำลังกาย 150–300 นาที/สัปดาห์ และเลิกบุหรี่']},
+  r_dm1:{t:'DM อายุ ≥ 40 ปี · ปัจจัยเสี่ยง 0–1',target:'< 100 มก./ดล.',pct:'ลด ≥ 30%',drug:'Statin ร่วมกับ TLC',g:'++ · I · A',
+    steps:['ถ้า LDL-C ≥ 190 ให้เพิ่มขนาดจนลดได้ ≥ 50%','เพิ่มขนาด statin ไม่ได้ → เพิ่ม ezetimibe (+, I, A)']},
+  r_dm2:{t:'DM อายุ ≥ 40 ปี · ปัจจัยเสี่ยง ≥ 2',target:'< 70 มก./ดล.',pct:'ลด ≥ 50%',drug:'Statin ร่วมกับ TLC',g:'++ · I · A',
+    steps:['เพิ่มขนาด statin ไม่ได้ → เพิ่ม ezetimibe (+, I, A)','ยังไม่ถึงเป้า → ส่งต่อพิจารณา PCSK9 inhibitor (+, I, A)','คุม LDL-C ได้แล้วแต่ TG ยังสูง → พิจารณา pure EPA (+, IIa, B)']},
+  r_dm3:{t:'DM อายุ < 40 ปี · ปัจจัยเสี่ยง 0–1',target:'< 100 มก./ดล.',pct:'—',drug:'TLC 3–6 เดือนก่อน แล้วจึงอาจให้ statin',g:'+/− · IIb · C',
+    steps:['เน้นปรับพฤติกรรม 3–6 เดือน','หลัง TLC แล้ว LDL-C ยัง ≥ 100 → อาจให้ statin เป้า < 100']},
+  r_dm4:{t:'DM อายุ < 40 ปี · ปัจจัยเสี่ยง ≥ 2',target:'< 100 มก./ดล.',pct:'—',drug:'TLC 3–6 เดือน แล้วให้ statin',g:'+ · IIa · C',
+    steps:['ให้คำแนะนำปรับพฤติกรรม 3–6 เดือน','หลัง TLC แล้ว LDL-C ยัง ≥ 100 → ให้ statin เป้า < 100']},
+  r_ckd1:{t:'CKD stage 3a–5 ยังไม่บำบัดทดแทนไต · อายุ ≥ 50 ปี',target:'< 100 มก./ดล.',pct:'หรือลด ≥ 30%',drug:'Low to moderate intensity statin หรือ statin/ezetimibe',g:'++ · I · A',
+    steps:['ระวัง high intensity statin เมื่อถึง stage 3b–5 (++, I, A)','ดูขนาดสูงสุดตามระยะไตในตารางที่ 2.3 เช่น rosuvastatin 40 → 20 → 10 → 5']},
+  r_ckd2:{t:'CKD stage 1–2 ที่มี albuminuria',target:'ตามแนวทางประชากรทั่วไป',pct:'—',drug:'รักษาเช่นเดียวกับประชากรทั่วไป',g:'+ · I · A',
+    steps:['ประเมินความเสี่ยงและตั้งเป้าหมายเหมือนผู้ที่ไม่มี CKD']},
+  r_ckd3:{t:'ESRD ที่ฟอกเลือด/ล้างไต และไม่เคยได้ยามาก่อน',target:'ไม่แนะนำให้เริ่มยา',pct:'—',drug:'ไม่เริ่ม statin หรือ statin/ezetimibe',g:'− · III · B',
+    steps:['ถ้ามีข้อบ่งชี้ป้องกันทุติยภูมิ → ทำตามแนวทางทุติยภูมิ (+, I, A)','ผู้ที่ได้ statin อยู่เดิมแล้วเข้าสู่ RRT → ใช้ต่อ ปรับขนาด (+, IIa, C)']},
+  r_ckd4:{t:'ผู้ป่วยปลูกถ่ายไต',target:'ไม่คำนึงถึงเป้าหมาย LDL-C',pct:'—',drug:'Statin ขนาดที่เหมาะสม',g:'+ · IIa · B',
+    steps:['ขนาดสูงสุดในผู้ปลูกถ่ายไต: atorvastatin 20, rosuvastatin 5, simvastatin 20, pravastatin 20 มก./วัน']}
+};
+var pfPath = [];
+function gradeClass(g){
+  if(g.indexOf('++')===0) return 'g-2';
+  if(g.indexOf('+/−')===0) return 'g-0';
+  if(g.indexOf('−−')===0) return 'g-n2';
+  if(g.indexOf('−')===0) return 'g-n1';
+  return 'g-1';
+}
+function renderPF(nodeKey){
+  var trail = $('#pfTrail');
+  trail.innerHTML = pfPath.map(function(t){ return '<span class="crumb">'+t+'</span>'; }).join('');
+  var box = $('#pfQuestion');
+  if(RES[nodeKey]){
+    var r = RES[nodeKey];
+    box.innerHTML =
+      '<div class="result">'+
+        '<div class="result-top"><div class="rl">ผลลัพธ์</div><div class="rt">'+r.t+'</div></div>'+
+        '<dl class="result-grid">'+
+          '<div><dt>เป้าหมาย LDL-C</dt><dd>'+r.target+'</dd></div>'+
+          '<div><dt>ลดจากค่าเริ่มต้น</dt><dd>'+r.pct+'</dd></div>'+
+          '<div><dt>ยาเริ่มต้น</dt><dd>'+r.drug+'</dd></div>'+
+          '<div><dt>น้ำหนักคำแนะนำ</dt><dd><span class="g '+gradeClass(r.g)+'" style="margin-left:0">'+r.g+'</span></dd></div>'+
+        '</dl>'+
+        '<div class="result-steps"><ol>'+r.steps.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ol></div>'+
+      '</div>';
+    return;
+  }
+  var n = TREE[nodeKey];
+  box.innerHTML = '<div class="q-step">ขั้นที่ '+(pfPath.length+1)+'</div><div class="q-text">'+n.q+'</div><div class="opts">'+
+    n.o.map(function(o,i){ return '<button class="opt" data-go="'+o[1]+'" data-lab="'+i+'">'+o[0]+'</button>'; }).join('')+'</div>';
+  Array.prototype.forEach.call(box.querySelectorAll('.opt'), function(b){
+    b.addEventListener('click', function(){
+      var idx = parseInt(b.getAttribute('data-lab'),10);
+      var lab = n.o[idx][0];
+      pfPath.push(lab.length>44 ? lab.slice(0,42)+'…' : lab);
+      renderPF(b.getAttribute('data-go'));
+    });
+  });
+}
+$('#pfReset').addEventListener('click', function(){ pfPath=[]; renderPF('start'); });
+renderPF('start');
+
+/* =========================================================
+   2. STATIN SORTER
+   ========================================================= */
+var STATINS = [
+  ['Atorvastatin 40 มก.','high'],['Atorvastatin 80 มก.','high'],['Rosuvastatin 20 มก.','high'],
+  ['Atorvastatin 10 มก.','mod'],['Atorvastatin 20 มก.','mod'],['Fluvastatin 80 มก.','mod'],
+  ['Pitavastatin 1–4 มก.','mod'],['Pravastatin 40 มก.','mod'],['Rosuvastatin 5 มก.','mod'],
+  ['Rosuvastatin 10 มก.','mod'],['Simvastatin 20 มก.','mod'],['Simvastatin 40 มก.','mod'],
+  ['Fluvastatin 20–40 มก.','low'],['Pravastatin 10–20 มก.','low'],['Simvastatin 10 มก.','low']
+];
+var BNAME = {high:'High intensity (ลด > 50%)', mod:'Moderate intensity (ลด 30–50%)', low:'Low intensity (ลด < 30%)'};
+var stDeck=[], stIdx=0, stRight=0, stDone=0;
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function stStart(){ stDeck=shuffle(STATINS); stIdx=0; stRight=0; stDone=0; $('#stFb').innerHTML=''; stRender(); }
+function stRender(){
+  if(stIdx>=stDeck.length){
+    $('#stChip').textContent='ครบทั้ง 15 รายการแล้ว';
+    $('#stScore').textContent='คะแนน '+stRight+'/'+stDone;
+    return;
+  }
+  $('#stChip').textContent = stDeck[stIdx][0];
+  $('#stScore').textContent = 'ข้อ '+(stIdx+1)+'/'+stDeck.length+' · ถูก '+stRight;
+}
+Array.prototype.forEach.call(document.querySelectorAll('.bucket'), function(b){
+  b.addEventListener('click', function(){
+    if(stIdx>=stDeck.length) return;
+    var item = stDeck[stIdx], pick = b.getAttribute('data-b'), ok = pick===item[1];
+    stDone++; if(ok) stRight++;
+    $('#stFb').innerHTML = '<div class="feedback '+(ok?'fb-ok':'fb-no')+'">'+
+      (ok?'ถูกต้อง — ':'ยังไม่ใช่ — ')+'<b>'+item[0]+'</b> อยู่ในกลุ่ม '+BNAME[item[1]]+'</div>';
+    stIdx++; stRender();
+  });
+});
+$('#stReset').addEventListener('click', stStart);
+stStart();
+
+/* =========================================================
+   3. FLASHCARDS
+   ========================================================= */
+var CARDS = [
+  ['คัดกรอง','อายุเท่าไรจึงเริ่มตรวจระดับไขมันในเลือด','ตั้งแต่ 35 ปีขึ้นไป (หรือเมื่อมี ASCVD, เบาหวาน, CKD, หรือสงสัยไขมันสูงจากพันธุกรรม)'],
+  ['คัดกรอง','สูตร Friedewald','LDL-C = TC − HDL-C − (TG ÷ 5) หน่วย มก./ดล.'],
+  ['คัดกรอง','เมื่อใดต้องใช้ direct LDL-C','เมื่อ TG ≥ 400 มก./ดล. หรือค่า LDL-C ที่คำนวณได้ < 50 มก./ดล.'],
+  ['คัดกรอง','non-HDL-C คำนวณอย่างไร และควรใช้ในใคร','TC − HDL-C; ใช้ในผู้ที่ TG สูง เบาหวาน หรืออ้วน'],
+  ['ความเสี่ยง','Thai CV Risk Score ใช้ในช่วงอายุใด และตัดที่เท่าไร','อายุ 35–70 ปีที่ยังไม่มีโรคหัวใจและหลอดเลือด; < 10% เสี่ยงต่ำ, ≥ 10% ปานกลางถึงสูง'],
+  ['ความเสี่ยง','ประวัติครอบครัวแบบใดเรียกว่าก่อนวัยอันควร','ชายเกิดโรคก่อนอายุ 55 ปี, หญิงก่อนอายุ 60 ปี'],
+  ['TLC','ไขมันอิ่มตัวควรไม่เกินร้อยละเท่าไรของพลังงานต่อวัน','ไม่เกินร้อยละ 7'],
+  ['TLC','น้ำตาลควรไม่เกินร้อยละเท่าไรของพลังงานต่อวัน','ไม่เกินร้อยละ 10 (+, IIa, B)'],
+  ['TLC','ขนาด plant stanol ที่แนะนำ','2 กรัม/วัน (+, IIa, A)'],
+  ['TLC','ปริมาณการออกกำลังกายแบบแอโรบิกที่แนะนำ','ระดับหนักปานกลาง 150–300 นาที/สัปดาห์ (++, IIa, A)'],
+  ['TLC','Familial chylomicronemia syndrome ให้อาหารอย่างไร','ไขมัน < 10–15 กรัม/วัน ร่วมกับ MCT oil 30 กรัม/วัน (+, IIa, C)'],
+  ['ปฐมภูมิ','LDL-C ≥ 190 ในผู้อายุ ≥ 21 ปี เป้าและการลดเท่าไร','เป้า < 100 มก./ดล. และลดจากค่าเริ่มต้น ≥ 50% เริ่มด้วย moderate intensity statin'],
+  ['ปฐมภูมิ','เป้า LDL-C ของผู้ป่วย FH','< 70 มก./ดล. และลด ≥ 50% เริ่ม high intensity statin ทันที'],
+  ['ปฐมภูมิ','Thai CV Risk ≥ 10% เป้าและการลดเท่าไร','เป้า < 100 มก./ดล. และลด ≥ 30% เริ่ม low–moderate intensity statin'],
+  ['ปฐมภูมิ','ปัจจัยเสริมที่ทำให้พิจารณาให้ยาแม้ risk < 10%','Subclinical atherosclerosis, CAC > 100 Agatston, ABI < 0.9, FHx premature CAD, โรคอักเสบเรื้อรัง (psoriasis, RA, HIV)'],
+  ['เบาหวาน','DM อายุ ≥ 40 ปี ปัจจัยเสี่ยง 0–1 เป้าเท่าไร','< 100 มก./ดล. และลด ≥ 30% (ถ้า LDL-C ≥ 190 ให้ลด ≥ 50%)'],
+  ['เบาหวาน','DM อายุ ≥ 40 ปี ปัจจัยเสี่ยง ≥ 2 เป้าเท่าไร','< 70 มก./ดล. และลด ≥ 50%'],
+  ['เบาหวาน','ปัจจัยเสี่ยง 7 ข้อในผู้ป่วยเบาหวาน','เป็น DM > 10 ปี, อ้วน/น้ำหนักเกิน, สูบบุหรี่, ความดันโลหิตสูง, FHx premature CVD, CKD, albuminuria'],
+  ['เบาหวาน','แนวทางเรื่อง fibrate/niacin ร่วม statin ใน DM ที่ TG สูง','ไม่แนะนำ (−, III, A) เพราะไม่ลดความเสี่ยงเพิ่มเมื่อเทียบกับ statin เดี่ยว'],
+  ['ไต','CKD stage 3a–5 ไม่ได้ RRT อายุ ≥ 50 ปี LDL-C ≥ 100 ทำอย่างไร','เป้า < 100 หรือลด ≥ 30% ใช้ low–moderate intensity statin หรือ statin/ezetimibe (++, I, A)'],
+  ['ไต','ผู้ป่วย ESRD ที่ฟอกไตอยู่และไม่เคยได้ยาลดไขมัน','ไม่แนะนำให้เริ่ม statin หรือ statin/ezetimibe (−, III, B) ยกเว้นมีข้อบ่งชี้ป้องกันทุติยภูมิ'],
+  ['ไต','ขนาดสูงสุดของ rosuvastatin ตามระยะไต','Stage 1–2: 40 · 3a: 20 · 3b–5: 10 · ปลูกถ่ายไต: 5 มก./วัน'],
+  ['ไต','Fenofibrate ใช้ได้ถึง GFR เท่าไร','GFR 45–59 ใช้ได้ 100 มก./วัน; GFR < 45 และผู้ปลูกถ่ายไตไม่ควรใช้'],
+  ['ทุติยภูมิ','เป้า LDL-C ใน ACS','< 55 มก./ดล. และลด ≥ 50% ให้ high intensity statin ขนาดสูงเร็วที่สุด (++, I, A)'],
+  ['ทุติยภูมิ','เป้า LDL-C ใน CCS','< 70 มก./ดล. และลด ≥ 50% พิจารณา < 55 หากทำได้'],
+  ['ทุติยภูมิ','ระยะเวลาประเมินซ้ำใน ACS เทียบกับ CCS','ACS 4–6 สัปดาห์ · CCS 4–12 สัปดาห์'],
+  ['ทุติยภูมิ','Ischemic stroke ที่พบ carotid/intracranial stenosis > 50% เป้าเท่าไร','< 70 มก./ดล. ให้ high intensity statin ± ezetimibe (++, I, B)'],
+  ['ทุติยภูมิ','Hemorrhagic stroke ให้ statin หรือไม่','ไม่แนะนำเพื่อป้องกันเลือดออกในสมองซ้ำ เมื่อไม่มีข้อบ่งชี้อื่น (−, III, C)'],
+  ['ยา','ระดับ TG เท่าไรจึงเริ่ม fibrate','TG > 500 มก./ดล. เพื่อป้องกันตับอ่อนอักเสบ (++, I, A)'],
+  ['ยา','ขนาด pure EPA เพื่อลด ASCVD ในผู้ที่ TG 150–499','4 กรัม/วัน หลังได้ statin แล้ว (+, IIa, B)'],
+  ['ยา','ข้อห้ามสำคัญของ simvastatin','ห้ามใช้ 80 มก./วัน · ≤ 10 มก. เมื่อร่วม verapamil/diltiazem · ≤ 20 มก. เมื่อร่วม amiodarone/amlodipine/ranolazine · ห้ามร่วม gemfibrozil'],
+  ['ติดตาม','เกณฑ์วินิจฉัย rhabdomyolysis จาก statin','ปวดกล้ามเนื้อร่วมกล้ามเนื้ออ่อนแรง และ CK > 10 เท่าของค่าสูงสุดปกติ → หยุด statin ทันที']
+];
+var fcDeck=[], fcPos=0, fcFlip=false, fcKnown=0;
+function fcStart(){ fcDeck=shuffle(CARDS); fcPos=0; fcKnown=0; fcFlip=false; fcRender(); }
+function fcRender(){
+  var el=$('#fcCard');
+  if(fcPos>=fcDeck.length){
+    el.innerHTML='<div class="tag">จบสำรับ</div><div class="front">ทวนครบทุกใบแล้ว</div><div class="hint">จำได้ '+fcKnown+' ใบจาก '+CARDS.length+' ใบ — กด “สลับสำรับ” เพื่อเริ่มรอบใหม่</div>';
+    $('#fcCount').textContent=''; $('#fcStat').textContent='';
+    return;
+  }
+  var c=fcDeck[fcPos];
+  el.innerHTML='<div class="tag">'+c[0]+'</div><div class="front">'+c[1]+'</div>'+
+    (fcFlip ? '<div class="back">'+c[2]+'</div>' : '<div class="hint">คลิกเพื่อดูคำตอบ</div>');
+  $('#fcCount').textContent='ใบที่ '+(fcPos+1)+' / '+fcDeck.length;
+  $('#fcStat').textContent='จำได้แล้ว '+fcKnown+' ใบ';
+}
+$('#fcCard').addEventListener('click', function(){ if(fcPos<fcDeck.length){ fcFlip=!fcFlip; fcRender(); } });
+$('#fcCard').addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); if(fcPos<fcDeck.length){ fcFlip=!fcFlip; fcRender(); } } });
+$('#fcKnow').addEventListener('click', function(){ if(fcPos<fcDeck.length){ fcKnown++; fcPos++; fcFlip=false; fcRender(); } });
+$('#fcAgain').addEventListener('click', function(){
+  if(fcPos<fcDeck.length){ fcDeck.push(fcDeck[fcPos]); fcPos++; fcFlip=false; fcRender(); }
+});
+$('#fcShuffle').addEventListener('click', fcStart);
+fcStart();
+
+/* =========================================================
+   4. QUIZ
+   ========================================================= */
+var QUIZ = [
+  {q:'ชายไทยอายุ 58 ปี มา follow-up หลัง NSTEMI เมื่อ 2 เดือนก่อน LDL-C ล่าสุด 88 มก./ดล. จาก atorvastatin 40 มก. เป้าหมาย LDL-C ของผู้ป่วยรายนี้คือเท่าใด',
+   c:['< 55 มก./ดล. และลดจากค่าเริ่มต้น ≥ 50%','< 70 มก./ดล. และลด ≥ 50%','< 100 มก./ดล. และลด ≥ 30%','< 100 มก./ดล. โดยไม่กำหนดการลด'],a:0,
+   e:'ACS ตั้งเป้า <b>&lt; 55 มก./ดล. ร่วมกับลด ≥ 50%</b> จากค่าเริ่มต้น เมื่อไม่ถึงเป้าใน 4–6 สัปดาห์ ให้เพิ่ม ezetimibe (แผนภูมิ 4)'},
+  {q:'ผู้ป่วย chronic coronary syndrome ได้ rosuvastatin 20 มก. มา 6 สัปดาห์ LDL-C 82 มก./ดล. ขั้นตอนถัดไปที่เหมาะสมที่สุด',
+   c:['เพิ่ม fenofibrate','เพิ่ม ezetimibe','เปลี่ยนเป็น ezetimibe เดี่ยว','ส่งต่อให้ PCSK9 inhibitor ทันที'],a:1,
+   e:'CCS เป้า &lt; 70 มก./ดล. เมื่อไม่ถึงเป้าภายใน 4–12 สัปดาห์ ให้<b>เพิ่ม ezetimibe</b> (+, I, B) ก่อน แล้วจึงพิจารณา PCSK9 inhibitor'},
+  {q:'หญิงอายุ 45 ปี ไม่มีโรคประจำตัว LDL-C 205 มก./ดล. ตรวจร่างกายพบ tendon xanthoma และบิดาเสียชีวิตจาก MI อายุ 48 ปี เป้าหมายและยาเริ่มต้น',
+   c:['เป้า < 100, moderate intensity statin','เป้า < 70, high intensity statin','เป้า < 100, ปรับพฤติกรรม 3–6 เดือนก่อน','เป้า < 55, high intensity statin + ezetimibe ตั้งแต่ต้น'],a:1,
+   e:'ลักษณะเข้าได้กับ <b>familial hypercholesterolemia</b> — เป้า &lt; 70 มก./ดล. และลด ≥ 50% เริ่ม high intensity statin ได้ทันทีโดยไม่ต้องรอ TLC 3–6 เดือน'},
+  {q:'ผู้ป่วยเบาหวานอายุ 55 ปี เป็นมา 12 ปี ความดันโลหิตสูง สูบบุหรี่ ยังไม่เคยมี ASCVD เป้าหมาย LDL-C',
+   c:['< 55 มก./ดล.','< 70 มก./ดล. และลด ≥ 50%','< 100 มก./ดล. และลด ≥ 30%','< 100 มก./ดล. โดยไม่ต้องลดตามสัดส่วน'],a:1,
+   e:'DM อายุ ≥ 40 ปี ที่มีปัจจัยเสี่ยง ≥ 2 ข้อ (ที่นี่มี 3 ข้อ: DM > 10 ปี, HT, สูบบุหรี่) → เป้า <b>&lt; 70 มก./ดล. และลด ≥ 50%</b>'},
+  {q:'ผู้ป่วยเบาหวานอายุ 34 ปี อ้วนและสูบบุหรี่ หลังปรับพฤติกรรม 4 เดือน LDL-C 118 มก./ดล. ควรทำอย่างไร',
+   c:['ปรับพฤติกรรมต่ออีก 6 เดือน','ให้ statin เป้า < 100 มก./ดล.','ให้ statin เป้า < 70 มก./ดล.','ให้ ezetimibe เดี่ยว'],a:1,
+   e:'DM อายุ &lt; 40 ปี ที่มีปัจจัยเสี่ยง ≥ 2 ข้อ เมื่อ TLC 3–6 เดือนแล้ว LDL-C ยัง ≥ 100 → <b>ให้ statin เป้า &lt; 100</b> (+, IIa, C)'},
+  {q:'ผู้ป่วยเบาหวานที่คุม LDL-C ได้ตามเป้าแล้ว แต่ TG ยัง 320 มก./ดล. ข้อใดถูกต้อง',
+   c:['เพิ่ม fenofibrate ร่วม statin เพื่อลด ASCVD','เพิ่ม niacin ร่วม statin','พิจารณา pure EPA','เปลี่ยนเป็น gemfibrozil เดี่ยว'],a:2,
+   e:'ไม่แนะนำ fibrate หรือ niacin ร่วม statin เพื่อลด ASCVD ในผู้ป่วยเบาหวาน (−, III, A) แต่ <b>pure EPA</b> ในผู้ที่เสี่ยงสูงและ TG ยังสูงหลังได้ statin เป็นทางเลือกที่แนะนำ (+, IIa, B)'},
+  {q:'ชายอายุ 62 ปี CKD stage 4 (eGFR 22) ยังไม่ได้ฟอกไต LDL-C 128 มก./ดล. ยาที่เหมาะสม',
+   c:['High intensity statin เพื่อให้ลด ≥ 50%','Low to moderate intensity statin หรือ statin/ezetimibe เป้า < 100','ไม่ให้ยาลดไขมัน','Fenofibrate 300 มก./วัน'],a:1,
+   e:'CKD stage 3a–5 ที่ยังไม่ได้บำบัดทดแทนไต อายุ ≥ 50 ปี และ LDL-C ≥ 100 → <b>low–moderate intensity statin หรือ statin/ezetimibe</b> เป้า &lt; 100 หรือลด ≥ 30% (++, I, A) และควรระวัง high intensity statin ใน stage 3b–5'},
+  {q:'ผู้ป่วย ESRD ฟอกเลือดมา 2 ปี ไม่เคยได้ยาลดไขมัน ไม่มี ASCVD LDL-C 140 มก./ดล. ควรทำอย่างไร',
+   c:['เริ่ม atorvastatin 40 มก.','เริ่ม statin/ezetimibe','ไม่แนะนำให้เริ่มยาลดไขมัน','เริ่ม PCSK9 inhibitor'],a:2,
+   e:'ผู้ป่วย ESRD ที่ได้รับการบำบัดทดแทนไตและ<b>ไม่เคยได้ยาลดไขมันมาก่อน ไม่แนะนำให้เริ่ม</b> statin หรือ statin/ezetimibe (−, III, B) — ต่างจากผู้ที่ได้ยาอยู่เดิมแล้วซึ่งให้ใช้ต่อ'},
+  {q:'ขนาดสูงสุดของ rosuvastatin ที่แนะนำในผู้ป่วย CKD stage 3b',
+   c:['5 มก./วัน','10 มก./วัน','20 มก./วัน','40 มก./วัน'],a:1,
+   e:'ตารางที่ 2.3: rosuvastatin สูงสุด <b>stage 1–2 = 40 · 3a = 20 · 3b–5 = 10 · ปลูกถ่ายไต = 5</b> มก./วัน'},
+  {q:'ข้อใดจัดเป็น high intensity statin',
+   c:['Simvastatin 40 มก.','Rosuvastatin 10 มก.','Atorvastatin 40 มก.','Pravastatin 40 มก.'],a:2,
+   e:'High intensity มีเพียงสองรายการ: <b>atorvastatin 40–80 มก.</b> และ <b>rosuvastatin 20 มก.</b> ที่เหลือในตัวเลือกเป็น moderate intensity'},
+  {q:'ผู้ป่วยได้ simvastatin อยู่ และแพทย์จะเริ่ม verapamil ขนาดสูงสุดของ simvastatin ที่ยอมรับได้',
+   c:['10 มก./วัน','20 มก./วัน','40 มก./วัน','80 มก./วัน'],a:0,
+   e:'ไม่ควรใช้ simvastatin <b>เกิน 10 มก./วัน</b> เมื่อใช้ร่วมกับ verapamil หรือ diltiazem (เทียบกับ ≤ 20 มก. เมื่อใช้ร่วม amiodarone, amlodipine, ranolazine)'},
+  {q:'ผู้ป่วยหญิงอายุ 40 ปี TG 780 มก./ดล. LDL-C 96 มก./ดล. ไม่มี ASCVD ยาที่ควรเริ่มก่อน',
+   c:['High intensity statin','Fibrate','Ezetimibe','Cholestyramine'],a:1,
+   e:'TG &gt; 500 มก./ดล. ให้เริ่ม <b>fibrate</b> ร่วมกับการปรับพฤติกรรม เพื่อป้องกันตับอ่อนอักเสบเฉียบพลัน (++, I, A) — และห้ามใช้ cholestyramine เมื่อ TG &gt; 500 (−−, III, C)'},
+  {q:'ข้อใดกล่าวถูกต้องเกี่ยวกับ ezetimibe',
+   c:['ใช้เดี่ยวเป็นยาตัวแรกได้ในทุกกรณี','ควรใช้ร่วมกับ statin เสมอ ยกเว้นผู้ที่เกิดผลไม่พึงประสงค์จาก statin','ควรเปลี่ยนจาก statin เป็น ezetimibe เดี่ยวเมื่อ ALT สูงขึ้น 2 เท่า','ลด LDL-C ได้ประมาณร้อยละ 40 เมื่อใช้เดี่ยว'],a:1,
+   e:'ไม่แนะนำใช้ ezetimibe ขนาดเดียวเพื่อลด LDL-C (−, III, C) ต้อง<b>ใช้ร่วมกับ statin เสมอ</b> ยกเว้นเกิดผลไม่พึงประสงค์จาก statin; ใช้เดี่ยวลด LDL-C เพียงร้อยละ 10–18'},
+  {q:'ผู้ป่วย ASCVD ที่ได้ statin ขนาดสูงสุดร่วม ezetimibe แล้ว LDL-C ยัง 84 มก./ดล. ข้อใดเหมาะสม',
+   c:['เพิ่ม cholestyramine เป็นลำดับแรก','พิจารณา PCSK9 inhibitor','เพิ่ม fenofibrate','ยอมรับค่าปัจจุบัน'],a:1,
+   e:'ผู้ป่วย ASCVD ที่ LDL-C <b>≥ 70 มก./ดล.</b> หลังได้ statin + ezetimibe → แนะนำให้พิจารณา PCSK9 inhibitor (+, I, A); cholestyramine เป็นทางเลือกเมื่อใช้ PCSK9 inhibitor ไม่ได้ (+, IIb, C)'},
+  {q:'ผู้ป่วย ischemic stroke non-cardioembolic ตรวจ carotid duplex พบ stenosis ร้อยละ 65 เป้าหมาย LDL-C',
+   c:['< 55 มก./ดล.','< 70 มก./ดล.','< 100 มก./ดล.','ไม่กำหนดเป้าหมาย'],a:1,
+   e:'พบ atherosclerosis ของ intracranial หรือ carotid artery ตีบมากกว่าร้อยละ 50 → high intensity statin ร่วม ezetimibe ตามความเหมาะสม เป้า <b>&lt; 70 มก./ดล.</b> (++, I, B)'},
+  {q:'ผู้ป่วยเลือดออกในสมองจากความดันโลหิตสูง ไม่มีข้อบ่งชี้อื่น ควรให้ statin เพื่อป้องกันการเกิดซ้ำหรือไม่',
+   c:['ควรให้ high intensity statin','ควรให้ moderate intensity statin','ไม่แนะนำให้ statin','ให้เฉพาะเมื่อ LDL-C > 100'],a:2,
+   e:'<b>ไม่แนะนำ</b>ให้ statin เพื่อป้องกันการเกิดเลือดออกในสมองซ้ำ เมื่อไม่มีข้อบ่งชี้อื่น (−, III, C)'},
+  {q:'ผู้ป่วยได้ atorvastatin 40 มก. มา 8 สัปดาห์ มาด้วยปวดกล้ามเนื้อ อ่อนแรง CK 12 เท่าของค่าสูงสุดปกติ ควรทำอย่างไร',
+   c:['ลดขนาดยาลงครึ่งหนึ่งและติดตาม','หยุด statin ทันที','เปลี่ยนเป็น rosuvastatin ขนาดเท่าเดิม','ตรวจ CK ซ้ำใน 3 เดือน'],a:1,
+   e:'ปวดกล้ามเนื้อร่วมกล้ามเนื้ออ่อนแรงและ CK &gt; 10 เท่า เข้าข่าย <b>rhabdomyolysis ต้องหยุด statin ทันที</b> แล้วซักประวัติยาที่ใช้ร่วม'},
+  {q:'ควรตรวจ lipid profile ซ้ำเมื่อใดหลังเริ่มยาลดไขมัน',
+   c:['1–2 สัปดาห์','4–12 สัปดาห์','3 เดือน','6 เดือน'],a:1,
+   e:'ตรวจซ้ำที่ <b>4–12 สัปดาห์</b> หลังเริ่มยา เพื่อประเมินประสิทธิภาพและ adherence จากนั้นติดตามทุก 3–12 เดือน'},
+  {q:'ผู้ป่วยไม่ได้ตรวจเอนไซม์ตับก่อนเริ่ม statin ต่อมาพบ ALT สูงกว่าค่าปกติ 3.5 เท่า ควรทำอย่างไร',
+   c:['ให้ยาต่อและตรวจซ้ำ 6 เดือน','อาจหยุด statin ชั่วคราวเพื่อหาสาเหตุ','เปลี่ยนเป็น ezetimibe เดี่ยวถาวร','ลดขนาด statin ลงครึ่งหนึ่งโดยไม่ต้องหาสาเหตุ'],a:1,
+   e:'พบ AST/ALT <b>&gt; 3 เท่า</b>ของค่าสูงสุดปกติในผู้ที่ไม่ได้ตรวจก่อนเริ่มยา อาจแนะนำให้<b>หยุด statin ชั่วคราวเพื่อหาสาเหตุ</b>; ส่วนการเปลี่ยนไป ezetimibe เดี่ยวเมื่อ ALT สูงไม่เกิน 3 เท่านั้นไม่แนะนำ (−, III, C)'},
+  {q:'ชายอายุ 38 ปี LDL-C 152 มก./ดล. ไม่มีโรคประจำตัว Thai CV Risk Score 4% ตรวจไม่พบ subclinical atherosclerosis ควรทำอย่างไร',
+   c:['เริ่ม low intensity statin','เริ่ม moderate intensity statin','ปรับพฤติกรรมอย่างต่อเนื่องโดยยังไม่ใช้ยา','ให้ ezetimibe'],a:2,
+   e:'อายุ ≥ 35 ปี LDL-C &lt; 190 risk &lt; 10% และไม่มีหลักฐาน subclinical atherosclerosis → แนะนำอย่างยิ่งให้<b>ปรับพฤติกรรมอย่างต่อเนื่อง</b> (++, I, A)'},
+  {q:'ข้อใดคือเกณฑ์ที่ทำให้ต้องใช้ direct LDL-C แทนการคำนวณ',
+   c:['TG ≥ 200 มก./ดล.','TG ≥ 400 มก./ดล.','TC ≥ 300 มก./ดล.','HDL-C < 40 มก./ดล.'],a:1,
+   e:'ใช้ direct LDL-C เมื่อ <b>TG ≥ 400 มก./ดล.</b> หรือค่า LDL-C ที่คำนวณได้ &lt; 50 มก./ดล.'},
+  {q:'ผู้ป่วยได้ cholestyramine ร่วมกับยาอื่น ควรแนะนำการรับประทานอย่างไร',
+   c:['รับพร้อมกันได้','รับ cholestyramine ห่างจากยาอื่นอย่างน้อย 4 ชม. หรือรับยาอื่นก่อน 1 ชม.','รับ cholestyramine ก่อนยาอื่น 15 นาที','รับ cholestyramine พร้อมอาหารเย็นเท่านั้น'],a:1,
+   e:'Cholestyramine รบกวนการดูดซึมยาอื่นรวมทั้ง statin จึงควรรับประทาน<b>ห่างจากยาอื่นอย่างน้อย 4 ชั่วโมง หรือรับยาอื่นอย่างน้อย 1 ชั่วโมงก่อน</b> (++, I, C)'},
+  {q:'ประวัติครอบครัวแบบใดถือว่าเป็นโรคหัวใจและหลอดเลือดก่อนวัยอันควร',
+   c:['ชายก่อน 45 ปี หญิงก่อน 50 ปี','ชายก่อน 55 ปี หญิงก่อน 60 ปี','ชายก่อน 60 ปี หญิงก่อน 65 ปี','ทั้งสองเพศก่อน 50 ปี'],a:1,
+   e:'แนวทางกำหนดว่าก่อนวัยอันควรคือ <b>เพศชายอายุ &lt; 55 ปี และเพศหญิงอายุ &lt; 60 ปี</b>'},
+  {q:'ผู้ป่วยที่แพ้ statin ไม่สามารถใช้ได้เลย และใช้ ezetimibe เดี่ยวแล้ว LDL-C ยังเกินเป้า ทางเลือกใดที่แนวทางระบุไว้',
+   c:['เพิ่ม bempedoic acid ร่วมกับ ezetimibe','เพิ่ม gemfibrozil','เพิ่ม niacin','ให้ omega-3 4 กรัม/วัน'],a:0,
+   e:'แนวทางแนะนำให้ใช้ <b>bempedoic acid ร่วมกับ ezetimibe</b> ในผู้ที่มีผลไม่พึงประสงค์จาก statin และ ezetimibe เดี่ยวยังไม่ถึงเป้า (+, IIb, B); อีกทางคือ PCSK9 inhibitor ร่วม ezetimibe (+, I, A)'}
+];
+var qzOrder=[], qzPos=0, qzScore=0, qzAnswered=false;
+function qzStart(){ qzOrder=shuffle(QUIZ); qzPos=0; qzScore=0; qzRender(); }
+function qzRender(){
+  var b=$('#qzBody');
+  if(qzPos>=qzOrder.length){
+    var pct=Math.round(qzScore/qzOrder.length*100);
+    var msg = pct>=90 ? 'แม่นมาก พร้อมใช้งานจริง' : pct>=70 ? 'ดีแล้ว ทวนข้อที่พลาดอีกรอบ' : 'ลองกลับไปอ่านหัวข้อที่เกี่ยวข้องแล้วทำใหม่';
+    b.innerHTML='<div class="final"><div class="score">'+qzScore+'/'+qzOrder.length+'</div><p>'+msg+'</p><button class="btn btn-solid" id="qzAgain">ทำอีกครั้ง</button></div>';
+    $('#qzMeta').textContent='คะแนน '+pct+'%';
+    $('#qzAgain').addEventListener('click', qzStart);
+    return;
+  }
+  var it=qzOrder[qzPos]; qzAnswered=false;
+  $('#qzMeta').textContent='ข้อ '+(qzPos+1)+'/'+qzOrder.length+' · ถูก '+qzScore;
+  b.innerHTML='<div class="quiz-q">'+it.q+'</div><div id="qzChoices"></div><div id="qzEx"></div>';
+  var cc=$('#qzChoices');
+  it.c.forEach(function(txt,i){
+    var btn=document.createElement('button');
+    btn.className='choice'; btn.textContent=txt;
+    btn.addEventListener('click', function(){
+      if(qzAnswered) return;
+      qzAnswered=true;
+      var all=cc.querySelectorAll('.choice');
+      Array.prototype.forEach.call(all,function(x,j){
+        x.disabled=true;
+        if(j===it.a) x.classList.add('right');
+        else if(j===i) x.classList.add('wrong');
+      });
+      if(i===it.a) qzScore++;
+      $('#qzEx').innerHTML='<div class="explain">'+(i===it.a?'<b>ถูกต้อง</b> — ':'<b>เฉลย</b> — ')+it.e+'</div>'+
+        '<div style="margin-top:14px"><button class="btn btn-solid" id="qzNext">'+(qzPos===qzOrder.length-1?'ดูคะแนนรวม':'ข้อถัดไป')+'</button></div>';
+      $('#qzNext').addEventListener('click', function(){ qzPos++; qzRender(); });
+      $('#qzMeta').textContent='ข้อ '+(qzPos+1)+'/'+qzOrder.length+' · ถูก '+qzScore;
+    });
+    cc.appendChild(btn);
+  });
+}
+$('#qzReset').addEventListener('click', qzStart);
+qzStart();
+
+onScroll();
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

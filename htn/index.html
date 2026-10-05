@@ -1,0 +1,1318 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>ความดันโลหิตสูง 2567</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+:root{
+  --paper:#eef1f4;
+  --surface:#ffffff;
+  --surface-2:#f6f8fa;
+  --ink:#161b22;
+  --ink-2:#4a5563;
+  --ink-3:#77828f;
+  --line:#d7dee5;
+  --line-strong:#b9c4ce;
+  --accent:#a4183a;
+  --accent-soft:#f7e4e8;
+  --navy:#1d3b5c;
+  --navy-soft:#e5ecf3;
+  --lv1:#1f7a4d;
+  --lv2a:#b8860b;
+  --lv2b:#c96a1e;
+  --lv3:#b02a2a;
+  --lv1-bg:#e3f2ea;
+  --lv2a-bg:#faf0d6;
+  --lv2b-bg:#fbe8d8;
+  --lv3-bg:#f8e0df;
+  --ok:#1f7a4d;
+  --bad:#b02a2a;
+  --shadow:0 1px 2px rgba(22,27,34,.06),0 8px 24px -12px rgba(22,27,34,.18);
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1319;
+    --surface:#161c24;
+    --surface-2:#1c242e;
+    --ink:#e6ebf0;
+    --ink-2:#a9b4c0;
+    --ink-3:#78848f;
+    --line:#2a343f;
+    --line-strong:#3a4652;
+    --accent:#e8657f;
+    --accent-soft:#31171f;
+    --navy:#8fb4dc;
+    --navy-soft:#18242f;
+    --lv1:#5cc48d;
+    --lv2a:#e0b950;
+    --lv2b:#eb9558;
+    --lv3:#ec7a72;
+    --lv1-bg:#14291f;
+    --lv2a-bg:#2b2415;
+    --lv2b-bg:#2c1f16;
+    --lv3-bg:#2b1817;
+    --ok:#5cc48d;
+    --bad:#ec7a72;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1319;
+  --surface:#161c24;
+  --surface-2:#1c242e;
+  --ink:#e6ebf0;
+  --ink-2:#a9b4c0;
+  --ink-3:#78848f;
+  --line:#2a343f;
+  --line-strong:#3a4652;
+  --accent:#e8657f;
+  --accent-soft:#31171f;
+  --navy:#8fb4dc;
+  --navy-soft:#18242f;
+  --lv1:#5cc48d;
+  --lv2a:#e0b950;
+  --lv2b:#eb9558;
+  --lv3:#ec7a72;
+  --lv1-bg:#14291f;
+  --lv2a-bg:#2b2415;
+  --lv2b-bg:#2c1f16;
+  --lv3-bg:#2b1817;
+  --ok:#5cc48d;
+  --bad:#ec7a72;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  font-size:15.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+
+/* ---------- masthead ---------- */
+.mast{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;
+  padding-bottom:18px;border-bottom:2px solid var(--ink);
+}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px;
+}
+h1{
+  font-family:"Bai Jamjuree","IBM Plex Sans Thai",sans-serif;
+  font-weight:700;font-size:clamp(26px,4.4vw,40px);line-height:1.18;
+  margin:0;letter-spacing:-.01em;text-wrap:balance;
+}
+.mast p{margin:8px 0 0;color:var(--ink-2);font-size:14px;max-width:62ch}
+.gauge{display:flex;align-items:center;gap:12px}
+.gauge svg{display:block}
+.gauge .g-num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:20px;font-variant-numeric:tabular-nums}
+.gauge .g-lab{font-size:11.5px;color:var(--ink-3);line-height:1.3}
+
+/* ---------- nav ---------- */
+nav.modes{
+  display:flex;flex-wrap:wrap;gap:2px;margin:20px 0 26px;
+  border-bottom:1px solid var(--line);
+}
+nav.modes button{
+  appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  font:inherit;font-weight:600;font-size:14.5px;color:var(--ink-3);
+  padding:9px 14px;cursor:pointer;margin-bottom:-1px;
+  display:flex;align-items:center;gap:7px;transition:color .15s,border-color .15s;
+}
+nav.modes button .n{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);
+  border:1px solid var(--line-strong);border-radius:3px;padding:0 4px;
+}
+nav.modes button:hover{color:var(--ink)}
+nav.modes button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+nav.modes button[aria-selected="true"] .n{border-color:var(--accent);color:var(--accent)}
+nav.modes button:focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:4px}
+
+/* ---------- generic ---------- */
+h2{
+  font-family:"Bai Jamjuree","IBM Plex Sans Thai",sans-serif;
+  font-size:21px;font-weight:600;margin:0 0 4px;letter-spacing:-.005em;text-wrap:balance;
+}
+h3{font-family:"Bai Jamjuree",sans-serif;font-size:16px;font-weight:600;margin:0 0 10px}
+.sub{color:var(--ink-2);font-size:14px;margin:0 0 20px;max-width:70ch}
+.panel{display:none}
+.panel.on{display:block;animation:fade .22s ease-out}
+@keyframes fade{from{opacity:.35}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none}}
+
+.grid{display:grid;gap:16px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;
+}
+.card.flat{box-shadow:none}
+.card h3{margin-top:0}
+
+/* ---------- level chips ---------- */
+.lv{
+  font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;
+  padding:1px 7px;border-radius:3px;white-space:nowrap;display:inline-block;
+  border:1px solid transparent;
+}
+.lv.I{color:var(--lv1);background:var(--lv1-bg);border-color:var(--lv1)}
+.lv.IIa{color:var(--lv2a);background:var(--lv2a-bg);border-color:var(--lv2a)}
+.lv.IIb{color:var(--lv2b);background:var(--lv2b-bg);border-color:var(--lv2b)}
+.lv.III{color:var(--lv3);background:var(--lv3-bg);border-color:var(--lv3)}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{
+  background:var(--surface-2);font-family:"Bai Jamjuree",sans-serif;font-weight:600;
+  font-size:12px;letter-spacing:.03em;color:var(--ink-2);text-transform:uppercase;
+  position:sticky;top:0;
+}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+tr.section td{background:var(--navy-soft);font-weight:600;font-family:"Bai Jamjuree",sans-serif;font-size:13px}
+.hi{color:var(--accent);font-weight:600}
+
+/* ---------- overview stat strip ---------- */
+.strip{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:22px}
+@media(min-width:700px){.strip{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);padding:14px 16px}
+.stat .k{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
+.stat .v{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:23px;letter-spacing:-.02em;margin-top:2px;font-variant-numeric:tabular-nums}
+.stat .d{font-size:12.5px;color:var(--ink-2);margin-top:1px}
+.stat.mark .v{color:var(--accent)}
+
+/* ---------- key messages ---------- */
+ol.keys{list-style:none;counter-reset:k;padding:0;margin:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+ol.keys li{counter-increment:k;background:var(--surface);padding:12px 16px 12px 52px;position:relative;font-size:14.5px}
+ol.keys li::before{
+  content:counter(k,decimal-leading-zero);position:absolute;left:16px;top:12px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--accent);
+}
+
+/* ---------- flashcards ---------- */
+.fc-stage{perspective:1400px;margin-bottom:16px}
+.fc{
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  min-height:220px;padding:26px;display:flex;flex-direction:column;justify-content:center;
+  box-shadow:var(--shadow);cursor:pointer;position:relative;
+}
+.fc:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.fc .tag{
+  position:absolute;top:14px;left:22px;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+}
+.fc .q{font-family:"Bai Jamjuree",sans-serif;font-size:clamp(18px,2.6vw,23px);font-weight:600;line-height:1.4;text-wrap:balance;margin-top:8px}
+.fc .a{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line-strong);font-size:15.5px;color:var(--ink)}
+.fc .a strong{color:var(--accent)}
+.fc .hint{position:absolute;bottom:12px;right:20px;font-size:11.5px;color:var(--ink-3)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button.btn{
+  appearance:none;font:inherit;font-weight:600;font-size:14px;cursor:pointer;
+  border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);
+  padding:8px 16px;border-radius:7px;transition:background .14s,border-color .14s;
+}
+button.btn:hover{background:var(--surface-2)}
+button.btn:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+button.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] button.btn.primary,
+:root:not([data-theme="light"]) button.btn.primary{color:#1a1014}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) button.btn.primary{color:#fff}}
+button.btn.primary:hover{filter:brightness(1.08)}
+button.btn.ok{border-color:var(--ok);color:var(--ok)}
+button.btn.bad{border-color:var(--bad);color:var(--bad)}
+button.btn.ghost{border-color:transparent;color:var(--ink-3)}
+.meter{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin:14px 0 6px}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
+.metaline{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
+
+/* ---------- quiz ---------- */
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.qtext{font-family:"Bai Jamjuree",sans-serif;font-size:18px;font-weight:600;line-height:1.45;margin:6px 0 16px;text-wrap:balance}
+.opts{display:grid;gap:8px}
+.opt{
+  display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;
+  padding:11px 14px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;
+  transition:border-color .14s,background .14s;
+}
+.opt:hover:not(:disabled){border-color:var(--navy);background:var(--surface-2)}
+.opt:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.opt .ltr{
+  font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;color:var(--ink-3);
+  border:1px solid var(--line-strong);border-radius:4px;min-width:22px;height:22px;
+  display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px;
+}
+.opt.right{border-color:var(--ok);background:var(--lv1-bg)}
+.opt.right .ltr{border-color:var(--ok);color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--lv3-bg)}
+.opt.wrong .ltr{border-color:var(--bad);color:var(--bad)}
+.opt:disabled{cursor:default;opacity:.92}
+.expl{margin-top:16px;padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:0 8px 8px 0;font-size:14.5px}
+.expl .h{font-family:"Bai Jamjuree",sans-serif;font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+
+/* ---------- case ---------- */
+.vig{background:var(--navy-soft);border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;font-size:15px;margin-bottom:18px}
+.vig .who{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:6px}
+.vitals{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.vital{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--surface);border:1px solid var(--line-strong);border-radius:5px;padding:2px 9px;font-variant-numeric:tabular-nums}
+
+/* ---------- lookup ---------- */
+.search{
+  width:100%;font:inherit;font-size:16px;padding:12px 16px;border-radius:9px;
+  border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);
+}
+.search:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 18px}
+.chip{
+  font:inherit;font-size:12.5px;font-weight:500;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line-strong);color:var(--ink-2);
+  padding:4px 11px;border-radius:99px;
+}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#1a1014}
+.chip:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.empty{color:var(--ink-3);font-size:14px;padding:24px;text-align:center}
+
+/* ---------- flow ---------- */
+.flow{display:grid;gap:10px}
+.fnode{
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;
+  padding:12px 16px;font-size:14.5px;
+}
+.fnode.head{background:var(--navy);color:#fff;border-color:var(--navy);font-family:"Bai Jamjuree",sans-serif;font-weight:600}
+:root[data-theme="dark"] .fnode.head{color:#0e1319}
+.fnode.end{border-color:var(--accent);background:var(--accent-soft)}
+.fnode .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px}
+.farrow{text-align:center;color:var(--line-strong);font-size:16px;line-height:1}
+.fbranch{display:grid;gap:10px}
+@media(min-width:720px){.fbranch{grid-template-columns:1fr 1fr}}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.stepn{
+  font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--accent);color:#fff;flex:none;
+}
+:root[data-theme="dark"] .stepn{color:#1a1014}
+.step + .step{margin-top:14px}
+.step ul{margin:6px 0 0;padding-left:18px}
+.step li{margin:3px 0;font-size:14px}
+
+footer.f{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div>
+    <div class="eyebrow">Thai Hypertension Society · 2024</div>
+    <h1>ความดันโลหิตสูง<br>ในเวชปฏิบัติทั่วไป พ.ศ. 2567</h1>
+    <p>บทเรียนเชิงโต้ตอบสำหรับจดจำแนวทางเวชปฏิบัติ — ตัวเลขเกณฑ์ เป้าหมาย การเลือกยา และข้อห้าม พร้อมแบบฝึกจากเคสจริง</p>
+  </div>
+  <div class="gauge">
+    <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="24" fill="none" stroke="var(--line)" stroke-width="6"></circle>
+      <circle id="ring" cx="29" cy="29" r="24" fill="none" stroke="var(--accent)" stroke-width="6"
+              stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="150.8"
+              transform="rotate(-90 29 29)"></circle>
+    </svg>
+    <div>
+      <div class="g-num" id="gnum">0<span style="font-size:13px;color:var(--ink-3)">/48</span></div>
+      <div class="g-lab">การ์ดที่จำได้<br>(บันทึกในเครื่องนี้)</div>
+    </div>
+  </div>
+</header>
+
+<nav class="modes" role="tablist" aria-label="โหมดการเรียน">
+  <button role="tab" aria-selected="true" data-p="overview"><span class="n">01</span>ภาพรวม</button>
+  <button role="tab" aria-selected="false" data-p="flash"><span class="n">02</span>Flashcard</button>
+  <button role="tab" aria-selected="false" data-p="quiz"><span class="n">03</span>Quiz</button>
+  <button role="tab" aria-selected="false" data-p="case"><span class="n">04</span>เคสผู้ป่วย</button>
+  <button role="tab" aria-selected="false" data-p="flow"><span class="n">05</span>Flowchart</button>
+  <button role="tab" aria-selected="false" data-p="ref"><span class="n">06</span>ค้นหาเร็ว</button>
+</nav>
+
+<!-- ============ 01 OVERVIEW ============ -->
+<section class="panel on" id="p-overview">
+  <h2>ตัวเลขที่ต้องจำก่อนขึ้น OPD</h2>
+  <p class="sub">สิ่งที่เปลี่ยนมากที่สุดในฉบับ 2567 คือการตั้งชื่อช่วง 130–139/80–89 ใหม่ และการเร่งให้วินิจฉัยเร็วขึ้น</p>
+
+  <div class="strip">
+    <div class="stat mark"><div class="k">BP at risk</div><div class="v">130–139/80–89</div><div class="d">เดิมเรียก high-normal</div></div>
+    <div class="stat"><div class="k">Office → HT</div><div class="v">≥140/90</div><div class="d">จากการตรวจ &gt;1 ครั้ง</div></div>
+    <div class="stat"><div class="k">HBPM → HT</div><div class="v">≥135/85</div><div class="d">ค่านอก รพ. เป็นตัวตัดสิน</div></div>
+    <div class="stat"><div class="k">ความชุกในไทย</div><div class="v">25.4%</div><div class="d">สำรวจครั้งที่ 6 พ.ศ. 2563</div></div>
+  </div>
+
+  <div class="grid g2" style="margin-bottom:22px">
+    <div class="card">
+      <h3>เกณฑ์วินิจฉัยตามวิธีวัด</h3>
+      <div class="tw" style="border:0">
+        <table style="min-width:0">
+          <thead><tr><th>วิธีวัด</th><th class="num">SBP</th><th class="num">DBP</th></tr></thead>
+          <tbody>
+            <tr><td>Office</td><td class="num hi">≥140</td><td class="num hi">≥90</td></tr>
+            <tr><td>HBPM</td><td class="num">≥135</td><td class="num">≥85</td></tr>
+            <tr><td>ABPM กลางวัน</td><td class="num">≥135</td><td class="num">≥85</td></tr>
+            <tr><td>ABPM 24 ชม.</td><td class="num">≥130</td><td class="num">≥80</td></tr>
+            <tr><td>ABPM กลางคืน</td><td class="num">≥120</td><td class="num">≥70</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-2);margin:12px 0 0">
+        ไล่ลงทีละ 5/5 จาก office → นอก รพ. กลางวัน → 24 ชม. → กลางคืน
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>การจำแนกความรุนแรง (office, อายุ ≥18 ปี)</h3>
+      <div class="tw" style="border:0">
+        <table style="min-width:0">
+          <thead><tr><th>ระดับ</th><th class="num">SBP</th><th></th><th class="num">DBP</th></tr></thead>
+          <tbody>
+            <tr><td>Optimal</td><td class="num">&lt;120</td><td>และ</td><td class="num">&lt;80</td></tr>
+            <tr><td>Normal</td><td class="num">120–129</td><td>และ/หรือ</td><td class="num">&lt;80</td></tr>
+            <tr><td class="hi">BP at risk</td><td class="num hi">130–139</td><td>และ/หรือ</td><td class="num hi">80–89</td></tr>
+            <tr><td>ระดับ 1</td><td class="num">140–159</td><td>และ/หรือ</td><td class="num">90–99</td></tr>
+            <tr><td>ระดับ 2</td><td class="num">160–179</td><td>และ/หรือ</td><td class="num">100–109</td></tr>
+            <tr><td>ระดับ 3</td><td class="num">≥180</td><td>และ/หรือ</td><td class="num">≥110</td></tr>
+            <tr><td>ISH</td><td class="num">≥140</td><td>และ</td><td class="num">&lt;90</td></tr>
+            <tr><td>IDH</td><td class="num">&lt;140</td><td>และ</td><td class="num">≥90</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:10px">สรุปใจความหลัก 10 ข้อ</h3>
+  <ol class="keys">
+    <li>ระดับความดันโลหิต <strong>130–139/80–89 มม.ปรอท คือความดันโลหิตระดับเสี่ยง</strong></li>
+    <li>ต้อง<strong>วัดความดันโลหิตให้ได้ตามมาตรฐาน</strong></li>
+    <li>ควรตรวจวัดความดันโลหิต<strong>นอกสถานพยาบาล</strong>หากอยู่ในวิสัยที่ทำได้</li>
+    <li>เมื่อได้ค่าจากการวัดตามมาตรฐานแล้ว <strong>ควรวินิจฉัยทันที</strong></li>
+    <li>พิจารณาให้ยาเมื่อ <strong>BP ≥140/90</strong> หรือ <strong>≥130/80 ในผู้ที่เสี่ยงสูงต่อ CVD</strong></li>
+    <li>ยาลดความดันโลหิต<strong>ทุกกลุ่ม รวมถึง beta-blocker ใช้ได้ในทุกขั้นตอน</strong>ของการรักษา</li>
+    <li>ลด <strong>SBP ให้ได้ตามเป้าหมาย แม้ DBP จะปกติ</strong></li>
+    <li><strong>ARNI</strong> นำมาใช้ร่วมรักษา <strong>resistant hypertension</strong> ได้</li>
+    <li><strong>ไม่ใช้ SGLT2i หรือ GLP1RA</strong> เพื่อการรักษาความดันโลหิตสูง</li>
+    <li><strong>Renal denervation</strong> เป็นทางเลือกหนึ่งในการรักษา <strong>refractory hypertension</strong></li>
+  </ol>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card">
+      <h3>เป้าหมาย BP ที่สถานพยาบาล</h3>
+      <table style="min-width:0">
+        <tbody>
+          <tr><td>อายุ 18–64 ปี</td><td class="num">&lt;130/80</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>อายุ 65–79 ปี</td><td class="num">&lt;140/90 → &lt;130/80</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>อายุ ≥80 ปี</td><td class="num">SBP 140–150, DBP &lt;80</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>CKD + albuminuria</td><td class="num">120–130/70–79</td><td><span class="lv IIa">IIa</span></td></tr>
+          <tr><td>เบาหวาน</td><td class="num">&lt;130/80</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>HFrEF / HFpEF</td><td class="num">SBP &lt;130</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>PAD</td><td class="num">SBP 120–129</td><td><span class="lv I">I</span></td></tr>
+          <tr><td class="hi">ไม่ควรต่ำกว่า</td><td class="num hi">120/70</td><td><span class="lv III">III</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>เป้าหมาย BP ที่บ้าน (HBPM)</h3>
+      <table style="min-width:0">
+        <tbody>
+          <tr><td>ทั่วไป</td><td class="num">&lt;130/80</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>DM / CVD / เสี่ยงสูง / 18–65 ปี</td><td class="num">&lt;125/75</td><td><span class="lv IIa">IIa</span></td></tr>
+          <tr><td>65–79 ปี หรือเคย stroke</td><td class="num">&lt;135/85</td><td><span class="lv I">I</span></td></tr>
+          <tr><td>≥80 ปี</td><td class="num">&lt;140/80</td><td><span class="lv IIb">IIb</span></td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin:18px 0 8px">ระดับคำแนะนำ</h3>
+      <div class="row" style="gap:10px">
+        <span><span class="lv I">I</span> ควรปฏิบัติ</span>
+        <span><span class="lv IIa">IIa</span> น่าปฏิบัติ</span>
+        <span><span class="lv IIb">IIb</span> อาจปฏิบัติ</span>
+        <span><span class="lv III">III</span> ไม่ควร/ห้าม</span>
+      </div>
+      <p style="font-size:13px;color:var(--ink-2);margin:10px 0 0">คำกริยาในตารางบอกระดับได้ทันที: ควร / น่าจะ / อาจ / ไม่ควร</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 FLASHCARD ============ -->
+<section class="panel" id="p-flash">
+  <h2>Flashcard แบบทบทวนซ้ำ</h2>
+  <p class="sub">กดที่การ์ดเพื่อพลิกดูคำตอบ แล้วบอกว่าจำได้หรือไม่ — การ์ดที่ตอบว่ายังไม่แม่นจะวนกลับมาถามซ้ำก่อน ความคืบหน้าถูกเก็บไว้ในเบราว์เซอร์เครื่องนี้</p>
+  <div class="row" style="margin-bottom:14px" id="fc-decks"></div>
+  <div class="fc-stage">
+    <div class="fc" id="fc" tabindex="0" role="button" aria-live="polite">
+      <span class="tag" id="fc-tag">—</span>
+      <div class="q" id="fc-q">กำลังโหลด…</div>
+      <div class="a" id="fc-a" hidden></div>
+      <span class="hint" id="fc-hint">คลิกหรือกด Space เพื่อพลิก</span>
+    </div>
+  </div>
+  <div class="row" id="fc-controls" hidden>
+    <button class="btn bad" data-grade="0">ยังไม่แม่น — ถามซ้ำ</button>
+    <button class="btn ok" data-grade="1">จำได้แล้ว</button>
+    <button class="btn ghost" id="fc-reset">เริ่มสำรับใหม่</button>
+  </div>
+  <div class="meter"><i id="fc-meter" style="width:0%"></i></div>
+  <div class="metaline"><span id="fc-count">0 / 0</span><span id="fc-left">เหลือทบทวน 0</span></div>
+</section>
+
+<!-- ============ 03 QUIZ ============ -->
+<section class="panel" id="p-quiz">
+  <h2>Quiz พร้อมเฉลยอธิบาย</h2>
+  <p class="sub">คำถามอิงคำแนะนำจริงในแนวทาง ทุกข้อมีเฉลยพร้อมเหตุผลและระดับคำแนะนำกำกับ</p>
+  <div class="qcard">
+    <div class="metaline" style="margin-bottom:2px"><span id="q-pos">ข้อ 1</span><span id="q-score">ถูก 0 ข้อ</span></div>
+    <div class="qtext" id="q-text">กำลังโหลด…</div>
+    <div class="opts" id="q-opts"></div>
+    <div id="q-expl"></div>
+    <div class="row" style="margin-top:18px">
+      <button class="btn primary" id="q-next" hidden>ข้อถัดไป →</button>
+      <button class="btn ghost" id="q-restart">เริ่มชุดใหม่</button>
+    </div>
+  </div>
+  <div class="meter"><i id="q-meter" style="width:0%"></i></div>
+</section>
+
+<!-- ============ 04 CASE ============ -->
+<section class="panel" id="p-case">
+  <h2>เคสผู้ป่วย OPD</h2>
+  <p class="sub">แต่ละเคสให้ตัดสินใจทีละขั้น เหมือนที่เจอจริงในห้องตรวจ — เลือกคำตอบแล้วดูว่าแนวทางว่าอย่างไร</p>
+  <div class="row" style="margin-bottom:16px" id="c-list"></div>
+  <div class="vig" id="c-vig"></div>
+  <div class="qcard" id="c-step"></div>
+  <div class="row" style="margin-top:16px">
+    <button class="btn primary" id="c-next" hidden>ขั้นถัดไป →</button>
+  </div>
+</section>
+
+<!-- ============ 05 FLOW ============ -->
+<section class="panel" id="p-flow">
+  <h2>แผนภูมิการตัดสินใจ</h2>
+  <p class="sub">สามเส้นทางที่ใช้บ่อยที่สุด: วินิจฉัย · ขั้นบันไดการให้ยา · resistant hypertension</p>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>1 · แนวทางการวินิจฉัยโรคความดันโลหิตสูง</h3>
+    <div class="flow">
+      <div class="fnode head"><span class="lab" style="color:rgba(255,255,255,.7)">โอกาสของการวินิจฉัย</span>ตรวจพบ BP ≥140/90 — ไม่ว่าจะตรวจโดยไม่ตั้งใจ ตรวจตอนมา รพ. ตรวจประจำปี หรือตรวจที่บ้าน</div>
+      <div class="farrow">▼</div>
+      <div class="fnode" style="border-style:dashed">ถ้า BP ≥180/110 → <strong>ประเมินก่อนว่าเป็น hypertensive emergency หรือไม่</strong></div>
+      <div class="farrow">▼</div>
+      <div class="fbranch">
+        <div class="fnode"><span class="lab">ทางซ้าย</span>Office BP <strong>130–139/80–89</strong></div>
+        <div class="fnode"><span class="lab">ทางขวา</span>Office BP <strong>≥140/90</strong></div>
+      </div>
+      <div class="farrow">▼</div>
+      <div class="fbranch">
+        <div class="fnode end"><strong>Masked HT</strong> — HBPM/ABPM สูงผิดปกติ<br><span style="font-size:13px;color:var(--ink-2)">หรือ HBPM/ABPM ปกติ แต่มี HMOD / CVD / เบาหวาน / เสี่ยงสูง → วินิจฉัยเป็น HT ได้</span></div>
+        <div class="fnode end"><strong>White-coat HT</strong> — HBPM/ABPM มีค่าปกติ<br><span style="font-size:13px;color:var(--ink-2)">ถ้า HBPM/ABPM สูงผิดปกติ หรือตรวจนอก รพ. ไม่ได้แต่วัดใน รพ. ตามมาตรฐานได้ ≥140/90 → วินิจฉัยเป็น HT</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>2 · ขั้นบันไดการให้ยาลดความดันโลหิต</h3>
+    <div class="step"><div class="stepn">1</div><div>
+      <strong>เริ่มด้วยยา 2 ชนิด</strong> ในผู้ป่วยส่วนใหญ่ <span class="lv I">I</span> <span class="lv" style="border-color:var(--line-strong);color:var(--ink-3)">A</span>
+      <ul><li><strong>RAS blocker + CCB</strong> หรือ <strong>RAS blocker + thiazide / thiazide-like</strong></li>
+      <li>เริ่มยาเดี่ยวเฉพาะ: ผู้สูงอายุมาก · ร่างกายทรุดโทรม · BP 140–149/90–95 ที่เสี่ยง CVD ต่ำ · BP at risk ที่เสี่ยง CVD สูง</li></ul>
+    </div></div>
+    <div class="step"><div class="stepn">2</div><div>
+      <strong>เพิ่มเป็น 3 ชนิด</strong> เมื่อ 2 ชนิดในขนาดสูงสุด/ที่ทนได้แล้วยังไม่ถึงเป้า <span class="lv I">I</span>
+      <ul><li>มักเป็น <strong>RAS blocker + CCB + thiazide/thiazide-like</strong> และหนึ่งในสามควรเป็น thiazide-like ถ้าเป็นไปได้</li>
+      <li>ควรใช้ <strong>ยารวมเม็ด</strong> ในทุกขั้นตอน <span class="lv I">I</span></li></ul>
+    </div></div>
+    <div class="step"><div class="stepn">3</div><div>
+      <strong>ยา 3 ชนิด (หนึ่งในนั้นเป็น diuretic) แล้วยังคุมไม่ได้ → รักษาแบบ resistant hypertension</strong> <span class="lv I">I</span>
+    </div></div>
+    <div class="step"><div class="stepn">✕</div><div>
+      <strong>ข้อห้ามที่พลาดบ่อย</strong>
+      <ul><li>ไม่ใช้ <strong>RAS blockers 2 ชนิดร่วมกัน</strong> (ACEI + ARB) <span class="lv III">III</span></li>
+      <li>ไม่ใช้ <strong>SGLT2i / GLP1-RAs เพื่อลด BP อย่างเดียว</strong> <span class="lv III">III</span></li></ul>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <h3>3 · ขั้นตอนการรักษา Resistant hypertension</h3>
+    <div class="step"><div class="stepn">1</div><div><strong>ปรับพฤติกรรม</strong> — จำกัดเกลือโซเดียม · ควบคุมน้ำหนัก · ออกกำลังกาย · นอนหลับเพียงพอ</div></div>
+    <div class="step"><div class="stepn">2</div><div><strong>ยากลุ่มหลัก</strong>
+      <ul><li>ใช้ให้ครบ 3 กลุ่มหลัก ในขนาดเต็มที่หรือเท่าที่รับได้</li>
+      <li>เปลี่ยน thiazide → <strong>chlorthalidone หรือ indapamide</strong>; เปลี่ยนเป็น <strong>loop diuretic ถ้า eGFR &lt;30–45</strong></li>
+      <li>เพิ่ม <strong>spironolactone / eplerenone ถ้า eGFR ≥30</strong></li>
+      <li>เพิ่ม <strong>chlorthalidone ถ้า eGFR 15–30</strong> และยังไม่ได้ใช้</li></ul></div></div>
+    <div class="step"><div class="stepn">3</div><div><strong>ยากลุ่มเพิ่มเติม</strong>
+      <ul><li>ใช้ <strong>ARNI แทน ACEI/ARB</strong> ที่ใช้อยู่</li>
+      <li>เพิ่ม <strong>beta-blocker ถ้าชีพจร ≥70</strong> หรือ alpha-blocker หรือ centrally acting agent</li>
+      <li>เพิ่ม <strong>direct vasodilator</strong> (hydralazine, minoxidil)</li></ul></div></div>
+    <div class="step"><div class="stepn">4</div><div><strong>Renal denervation</strong> ถ้า <strong>eGFR ≥30</strong> ใน refractory HT หรือ resistant HT ที่มี ASCVD อยู่แล้ว หรือมี progressive HMOD</div></div>
+  </div>
+</section>
+
+<!-- ============ 06 REFERENCE ============ -->
+<section class="panel" id="p-ref">
+  <h2>ค้นหาเร็ว</h2>
+  <p class="sub">พิมพ์ชื่อโรค ชื่อยา หรือตัวเลข เช่น “เบาหวาน” “ARNI” “130/80” “stroke” “ตั้งครรภ์”</p>
+  <input class="search" id="rq" type="search" placeholder="ค้นหาคำแนะนำ…" aria-label="ค้นหาคำแนะนำ">
+  <div class="chips" id="rchips"></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="min-width:120px">หัวข้อ</th><th>คำแนะนำ</th><th style="width:64px">ระดับ</th><th style="width:52px">หลักฐาน</th></tr></thead>
+      <tbody id="rbody"></tbody>
+    </table>
+  </div>
+  <div class="empty" id="rempty" hidden>ไม่พบคำแนะนำที่ตรงกับคำค้น</div>
+</section>
+
+<footer class="f">
+  <span>เรียบเรียงจาก: แนวทางการรักษาโรคความดันโลหิตสูงในเวชปฏิบัติทั่วไป พ.ศ. 2567 · สมาคมความดันโลหิตสูงแห่งประเทศไทย</span>
+  <span>ใช้เพื่อการศึกษาเท่านั้น</span>
+</footer>
+
+</div>
+
+<script>
+/* ============ ข้อมูล: Flashcard ============ */
+const FLASH = [
+ ["นิยาม","ระดับ BP 130–139/80–89 มม.ปรอท เรียกว่าอะไรในฉบับ 2567?","<strong>BP at risk (ความดันโลหิตระดับเสี่ยง)</strong> — เปลี่ยนจากเดิมที่เรียก high-normal เพื่อสร้างความตระหนัก (I, A)"],
+ ["นิยาม","วินิจฉัยความดันโลหิตสูงจาก office BP ที่เท่าไร","SBP <strong>≥140</strong> และ/หรือ DBP <strong>≥90</strong> มม.ปรอท จากการวัดที่สถานพยาบาล <strong>มากกว่า 1 ครั้ง</strong>"],
+ ["นิยาม","เกณฑ์วินิจฉัยจาก HBPM","<strong>≥135/85</strong> มม.ปรอท"],
+ ["นิยาม","เกณฑ์วินิจฉัยจาก ABPM ค่าเฉลี่ย 24 ชั่วโมง / กลางวัน / กลางคืน","24 ชม. <strong>≥130/80</strong> · กลางวัน <strong>≥135/85</strong> · กลางคืน <strong>≥120/70</strong>"],
+ ["นิยาม","White-coat hypertension คืออะไร","office BP อยู่ในเกณฑ์ HT (≥140 และ/หรือ ≥90) แต่ <strong>ค่าจากการวัดนอกสถานพยาบาลปกติ</strong>"],
+ ["นิยาม","Masked hypertension คืออะไร","office BP <strong>ปกติ</strong> แต่ <strong>ค่าจากการวัดนอกสถานพยาบาลสูง</strong>"],
+ ["นิยาม","ISH และ IDH ต่างกันอย่างไร","<strong>ISH</strong> = SBP ≥140 <em>และ</em> DBP &lt;90 · <strong>IDH</strong> = SBP &lt;140 <em>และ</em> DBP ≥90"],
+ ["การวัด","นั่งพักกี่นาทีก่อนวัด และงดชา/กาแฟ/บุหรี่กี่นาที","นั่งพัก <strong>5 นาที</strong> · งดชา กาแฟ และบุหรี่ <strong>30 นาที</strong>"],
+ ["การวัด","วัดครั้งแรก ถ้า BP สองแขนต่างกันเท่าไรจึงควรตรวจหาโรคหลอดเลือดแดงเพิ่ม","ต่างกัน <strong>15–20 มม.ปรอท</strong> · ถ้าต่างกัน &gt;10 มม.ปรอท ให้ตรวจซ้ำยืนยัน แล้วใช้ค่าจาก<strong>แขนข้างที่สูงกว่า</strong> (I, A)"],
+ ["การวัด","เครื่องวัดความดันแบบ cuffless ใช้วินิจฉัยได้หรือไม่","<strong>ไม่แนะนำ (III, C)</strong> เพราะยังไม่มีมาตรฐานแน่ชัด"],
+ ["การวัด","ผู้ป่วยหัวใจเต้นผิดจังหวะควรวัด BP อย่างไร","วัดด้วยวิธี <strong>auscultatory</strong> และวัด<strong>หลายครั้งหาค่าเฉลี่ย</strong> เพราะมี variability สูง (IIa, C)"],
+ ["การวัด","HBPM เพื่อวินิจฉัยโรค ควรวัดกี่วัน","<strong>7 วันติดต่อกัน</strong> · ถ้าต้องการวินิจฉัยเร่งด่วน อย่างน้อย <strong>3 วัน</strong>"],
+ ["การวัด","HBPM เพื่อติดตามหลังเริ่ม/ปรับยา ทำอย่างไร","วัด <strong>7 วันติดต่อกัน โดยเริ่มหลังปรับยา 2 สัปดาห์</strong> และวัดอีกรอบ <strong>3 วันติดต่อกัน ในสัปดาห์ก่อนวันนัด</strong>"],
+ ["การวัด","Normal dipping จาก ABPM คือเท่าไร","BP กลางคืนลดลง <strong>&gt;10% แต่ไม่เกิน 20%</strong> — ไม่เพิ่มความเสี่ยง CV"],
+ ["การวัด","Reduced dipping และ Rising หมายถึงอะไร และเสี่ยงไหม","Reduced dipping = ลดลงเพียง <strong>1–10%</strong> · Rising = <strong>กลางคืนสูงกว่ากลางวัน</strong> — ทั้งคู่<strong>เพิ่มความเสี่ยง</strong>"],
+ ["วินิจฉัย","ถ้าค่านอก รพ. ไม่ตรงกับใน รพ. ควรยึดค่าใด","<strong>ยึดค่าจากการวัดนอกสถานพยาบาล</strong> เพราะพยากรณ์โรคแม่นยำกว่า (I, A)"],
+ ["วินิจฉัย","BP 130–139/80–89 ใน รพ. + มี HMOD/CVD/DM/เสี่ยง CV สูง แต่ค่านอก รพ. ปกติ","<strong>วินิจฉัยว่ามีภาวะความดันโลหิตสูง</strong> ได้เลย (I, A)"],
+ ["วินิจฉัย","พบ BP ระดับ 3 (&gt;180/110) ระหว่างนอน รพ. ทำอย่างไร","<strong>วินิจฉัยว่าเป็นความดันโลหิตสูงได้เลย</strong> (I, A) — แต่ถ้าสูงไม่มาก ให้นัดติดตามหลังจำหน่ายก่อน"],
+ ["ประเมิน","การตรวจหัวใจที่ควรทำในผู้ป่วย HT ทุกราย","<strong>EKG 12 leads</strong> (I, B) · ส่ง echocardiography เมื่อ EKG ผิดปกติหรือสงสัยโรคหัวใจ (I, B)"],
+ ["ประเมิน","การตรวจไตพื้นฐานในผู้ป่วย HT","<strong>serum creatinine + eGFR</strong> (I, B) และ <strong>albumin ในปัสสาวะ</strong> (I, B) · ผู้ป่วยเบาหวานตรวจ <strong>urine microalbumin</strong> (I, A)"],
+ ["ประเมิน","ควรตรวจ retina เมื่อไร","เมื่อ BP สูงมาก (<strong>ระดับ 3</strong>) หรือเป็น<strong>เบาหวาน</strong> (I, C)"],
+ ["พฤติกรรม","เป้าหมาย BMI และปริมาณโซเดียมต่อวัน","BMI <strong>18.5–22.9 กก./ตร.ม.</strong> · โซเดียม <strong>ไม่เกิน 2 กรัม/วัน</strong> (เข้มงวด <strong>1.5 กรัม/วัน</strong>)"],
+ ["พฤติกรรม","คำแนะนำการออกกำลังกาย","แอโรบิก <strong>อย่างน้อยสัปดาห์ละ 5 วัน รวม ~150 นาที/สัปดาห์</strong> และ <strong>ไม่งดติดต่อกันเกิน 2 วัน</strong>"],
+ ["พฤติกรรม","ปริมาณแอลกอฮอล์สูงสุดที่ยอมรับได้","<strong>หญิง ≤1, ชาย ≤2 standard drink/วัน</strong> · ผู้ที่ไม่เคยดื่ม ไม่แนะนำให้เริ่มดื่ม"],
+ ["การให้ยา","เริ่มยาลดความดันโลหิตเมื่อไร","<strong>≥140/90</strong> ทั่วไป (I, C) · <strong>≥130/80</strong> ในผู้ที่มี CVD, เบาหวาน หรือความเสี่ยง CVD 10 ปี ≥10% จาก Thai CV risk score (I, A สำหรับ SBP)"],
+ ["การให้ยา","ยา 5 กลุ่มหลัก","<strong>ACEIs · ARBs · beta-blockers · CCBs · diuretics (thiazides / thiazide-like)</strong> (I, A)"],
+ ["การให้ยา","คู่ยาที่แนะนำให้เริ่มต้นในผู้ป่วยส่วนใหญ่","<strong>RAS blocker + CCB</strong> หรือ <strong>RAS blocker + thiazide/thiazide-like diuretic</strong> — ผู้ป่วยส่วนใหญ่ควรเริ่มด้วยยา 2 ชนิด (I, A)"],
+ ["การให้ยา","ใครที่ควรเริ่มด้วยยาเพียงชนิดเดียว","ผู้สูงอายุมาก · ร่างกายอ่อนเพลียทรุดโทรม · BP ก่อนรักษา 140–149/90–95 และเสี่ยง CVD ต่ำ · BP at risk แต่เสี่ยง CVD สูง (I, C)"],
+ ["การให้ยา","สูตรยา 3 ชนิดที่แนะนำ","<strong>RAS blocker + CCB + thiazide/thiazide-like</strong> และหนึ่งในสามควรเป็น <strong>thiazide-like</strong> ถ้าเป็นไปได้ (I, A)"],
+ ["การให้ยา","เวลาที่แนะนำให้รับประทานยาลดความดันโลหิต","ให้ผู้ป่วย<strong>เลือกได้</strong>ระหว่างเช้าหรือก่อนนอน (I, C) แต่โดยทั่วไป <strong>ตอนเช้าดีกว่า</strong> เพราะรับประทานต่อเนื่องได้มากกว่า (I, C)"],
+ ["เป้าหมาย","เป้าหมาย office BP ในผู้ป่วยอายุ 18–64 ปี","<strong>&lt;130/80</strong> มม.ปรอท (I, A)"],
+ ["เป้าหมาย","เป้าหมาย office BP ในผู้ป่วยอายุ 65–79 ปี","<strong>&lt;140/90 ก่อนในเบื้องต้น</strong> (I, A) แล้วลดต่อจน <strong>&lt;130/80</strong> ถ้าทนได้ดี (I, B)"],
+ ["เป้าหมาย","เป้าหมาย office BP ในผู้ป่วยอายุ ≥80 ปี","<strong>SBP 140–150 และ DBP &lt;80</strong> (I, A) · อาจลด SBP ถึง 130–139 ถ้าทนได้ดี (IIb, B)"],
+ ["เป้าหมาย","ค่าที่ “ไม่ควร” ตั้งเป็นเป้าหมาย","<strong>ไม่ควรตั้งเป้าให้ SBP &lt;120 และ DBP &lt;70</strong> (III, C)"],
+ ["เป้าหมาย","เป้าหมาย home BP ในผู้ป่วยเบาหวาน/CVD/เสี่ยงสูง/อายุ 18–65 ปี","<strong>&lt;125/75</strong> มม.ปรอท (IIa, B) — ขณะที่ทั่วไปคือ &lt;130/80 (I, B)"],
+ ["โรคร่วม","เกณฑ์วินิจฉัย HT ในผู้ป่วยเบาหวาน","office BP เฉลี่ย <strong>≥130/80</strong> จากการมาตรวจ &gt;1 ครั้ง (I, A) · ถ้า <strong>≥180/110 วินิจฉัยได้ทันที</strong> (I, B)"],
+ ["โรคร่วม","ผู้ป่วยเบาหวาน + HT เริ่มยาเมื่อไร","office BP <strong>≥140/90</strong> หรือ <strong>≥130/80 หลังปรับพฤติกรรมอย่างน้อย 3 เดือน</strong> (I, A) · เริ่ม 2 ชนิดเมื่อ ≥150/90"],
+ ["โรคร่วม","เบาหวาน + albuminuria (UACR ≥30) เลือกยาใด","<strong>ACEIs หรือ ARBs</strong> (I, A) · <strong>ห้ามใช้ ACEIs ร่วมกับ ARBs</strong> (III, A)"],
+ ["โรคร่วม","CKD: เป้าหมายและยาชนิดแรก","น่าจะตั้งเป้า <strong>120–130/70–79</strong> โดยเฉพาะผู้มี albuminuria (IIa, A) · <strong>UACR ≥30 → ACEIs/ARBs</strong> (I, A) · UACR &lt;30 ใช้กลุ่มหลักใดก็ได้ (I, B)"],
+ ["โรคร่วม","ผู้ที่ได้รับการเปลี่ยนไต เลือกยาชนิดแรกอะไร","<strong>ACEIs หรือ ARBs หรือ DHP-CCBs</strong> (I, A) · อาจลด office BP &lt;130/80 (IIb, B)"],
+ ["โรคร่วม","HFrEF: ยาหลัก 4 กลุ่ม และยาที่ห้ามใช้","<strong>ACEIs/ARBs/ARNI + beta-blocker + MRA + SGLT2i</strong> (I, A) · ถ้ายังไม่ถึงเป้าให้เพิ่ม DHP-CCB (I, B) · <strong>ห้าม non-DHP-CCBs</strong> (III, C)"],
+ ["โรคร่วม","CAD ระยะสงบ: เริ่มยาที่ BP เท่าไร และเป้า HR","เริ่มยาเมื่อ BP <strong>130–139 และ/หรือ 85–89</strong> (I, A) · คุม HR <strong>60–80 ครั้ง/นาที</strong> ด้วย beta-blocker หรือ non-DHP CCB (I, B)"],
+ ["โรคร่วม","OSA: เลือกยาลดความดันกลุ่มใดก่อน","<strong>MRA, ACEIs หรือ ARBs ก่อนกลุ่มอื่น</strong> (I, A) · น่าจะตรวจหา PA (IIa, B) · พิจารณา CPAP เสริม (IIa, B)"],
+ ["โรคร่วม","AF: เป้า heart rate และคู่ยาที่ห้ามใช้ร่วมกัน","คุม HR <strong>&lt;110 ครั้ง/นาที</strong> ทั่วไป และ <strong>&lt;80</strong> ถ้ามีอาการ (I, B) · <strong>ห้ามใช้ beta-blockers ร่วมกับ non-DHP CCBs</strong> (III, C)"],
+ ["โรคร่วม","PAD: เป้าหมาย SBP","<strong>SBP 120–129</strong> มม.ปรอท (I, B) · เลือกยากลุ่มหลักได้ทุกกลุ่ม · เน้นหยุดบุหรี่ (I, C)"],
+ ["โรคร่วม","ผู้ป่วยมะเร็ง: BP เท่าไรที่ไม่ควรเริ่มยาเคมีบำบัด","<strong>≥180/110 มม.ปรอท ไม่ควรเริ่มยารักษามะเร็ง</strong> (III, C)"],
+ ["Stroke","Acute ischemic stroke: ต้องลด BP ก่อนให้ thrombolysis ที่เท่าไร","ลด BP ที่ <strong>&gt;185/110</strong> ลงมาโดยเร็วก่อนให้ IV thrombolysis (I, B) และคุม <strong>&lt;180/105 ใน 24 ชม.แรกหลัง reperfusion</strong> (I, C)"],
+ ["Stroke","ยาที่ห้ามใช้ใน acute ischemic stroke","<strong>nifedipine ชนิดออกฤทธิ์สั้น</strong> (III, C)"],
+ ["Stroke","ischemic stroke ที่ให้ thrombolysis/thrombectomy ไม่ได้ คุม BP อย่างไร","ลด BP ถ้า <strong>&gt;220/120</strong> และคุม <strong>SBP &lt;220, DBP &lt;120</strong> (IIa, C)"],
+ ["Stroke","การป้องกัน stroke ซ้ำ ตั้งเป้า BP เท่าไร","ischemic stroke: อาจให้ยาเมื่อ &gt;140/90 ตั้งเป้า <strong>120–130/70–80</strong> (IIb, B) · เคย sICH: น่าจะลดถึง <strong>130/80</strong> (IIa, B)"],
+ ["ตั้งครรภ์","เกณฑ์ BP ของ preeclampsia","<strong>≥140/90 จาก 2 รอบ ห่างกัน ≥4 ชั่วโมง</strong> ในครรภ์ &gt;20 สัปดาห์ที่ไม่เคยมี HT · หรือ <strong>≥160/110 จาก 2 รอบห่างกันเป็นนาที</strong> โดยไม่คำนึงถึงอายุครรภ์ (I, A)"],
+ ["ตั้งครรภ์","เกณฑ์ proteinuria ของ preeclampsia","urine protein 24 ชม. <strong>≥300 มก.</strong> · <strong>protein/creatinine ratio ≥0.3</strong> · หรือ dipstick <strong>≥2+</strong> (I, A)"],
+ ["ตั้งครรภ์","ยาลด BP เร่งด่วน 3 ตัวในสตรีตั้งครรภ์","<strong>Hydralazine</strong> IV/IM bolus 5 มก. · <strong>Nifedipine</strong> รับประทาน 10–20 มก. (ไม่เกิน 180 มก./วัน) · <strong>Labetalol</strong> IV bolus 10–20 มก. (ทั้งหมด I, B)"],
+ ["ตั้งครรภ์","ปัจจัยเสี่ยงสูง 1 ข้อที่ควรให้ low-dose aspirin","ประวัติ preeclampsia · multifetal gestation · HT เดิม · เบาหวานชนิด 1 หรือ 2 · โรคไต · โรค autoimmune (I, A)"],
+ ["ผ่าตัด","ควรคุม SBP ต่ำกว่าเท่าไรก่อนผ่าตัด non-cardiac ที่ไม่ฉุกเฉิน","<strong>SBP &lt;160</strong> มม.ปรอท (I, B) · <strong>ไม่ควรเลื่อนผ่าตัดใน HT grade 1–2</strong> (III, C) · แต่ ≥180/110 น่าจะชะลอไว้ก่อน (IIa, B)"],
+ ["ผ่าตัด","ยาชนิดใดที่ห้ามหยุดทันทีก่อนผ่าตัด","<strong>beta-blockers</strong> — เพราะอาจเกิดหัวใจเต้นเร็วและ BP สูงขึ้นหลังหยุดยา (III, C) · ส่วน RAS blockers อาจหยุดชั่วคราวได้ (IIb, B)"],
+ ["ผู้สูงอายุ","อายุ ≥80 ปี เริ่มยาที่ SBP เท่าไร","<strong>SBP ≥160</strong> (I, A) · อาจเริ่มที่ 140–159 ได้ในบางกรณี (IIb, C) · ต้องประเมิน frailty ก่อนเริ่มและซ้ำปีละครั้ง (I, C)"],
+ ["ผู้สูงอายุ","ISH ในผู้สูงอายุ เลือกยากลุ่มใดเป็นทางเลือกแรก","<strong>CCBs และ thiazide/thiazide-like diuretics</strong> (I, A) · ผู้ที่สุขภาพดีควรเริ่มด้วยยา 2 ชนิดตั้งแต่แรก (I, C)"],
+ ["ทุติยภูมิ","สงสัย PPGL ต้องให้ยากลุ่มใดก่อน","<strong>alpha-adrenergic receptor blockers ก่อน beta-blockers เสมอ</strong> (I, A) — ป้องกัน unopposed alpha stimulation"],
+ ["ทุติยภูมิ","ใครควรคัดกรอง primary aldosteronism","HT ที่เริ่มเป็น<strong>ก่อนอายุ 40 ปี</strong> (I, B) · มี <strong>adrenal incidentaloma / hypokalemia / resistant HT</strong> (I, A) · น่าจะคัดกรองใน <strong>OSA หรือ AF ที่ไม่มีสาเหตุ</strong> (IIa, B)"],
+ ["ทุติยภูมิ","การรักษา unilateral vs bilateral PA","unilateral PA → <strong>unilateral adrenalectomy</strong> (I, A) · bilateral PA หรือผ่าตัดไม่ได้ → <strong>spironolactone</strong> (I, B)"],
+ ["Resistant","นิยาม resistant vs refractory hypertension","<strong>Resistant</strong> = BP ≥140/90 ทั้งที่ใช้ยา <strong>3 ชนิด (รวม diuretic) หรือ 4 ชนิด</strong> · <strong>Refractory</strong> = BP ≥140/90 ทั้งที่ใช้ยา <strong>≥5 ชนิด</strong>"],
+ ["Resistant","4 ขั้นตอนแยก pseudo-resistant hypertension","1) วัด BP ตามมาตรฐาน 2) ตรวจสอบว่ารับประทานยาถูกต้องครบถ้วน 3) ตรวจสอบยา/สารที่เพิ่ม BP 4) ตรวจ <strong>ABPM หรือ HBPM</strong>"],
+ ["Resistant","ปรับ diuretic อย่างไรใน resistant HT","เปลี่ยน thiazide เป็น <strong>chlorthalidone/indapamide</strong> · <strong>eGFR &lt;30–45 → loop diuretic</strong> · <strong>eGFR ≥30 → เพิ่ม spironolactone/eplerenone</strong> · <strong>eGFR 15–30 → เพิ่ม chlorthalidone</strong>"],
+ ["Resistant","โซเดียมต่อวันในผู้ป่วย resistant hypertension","<strong>≤2 กรัม/วัน (เกลือโซเดียมคลอไรด์ ≤5 กรัม/วัน)</strong> ร่วมกับอาหาร DASH (I, A)"],
+ ["Crisis","Acute aortic disease: เป้าหมาย BP และ HR","<strong>SBP &lt;120 และชีพจร &lt;60 ครั้ง/นาที</strong> เร็วที่สุดที่ทำได้ · ยา: esmolol, labetalol, nicardipine, nitroglycerine"],
+ ["Crisis","Malignant hypertension และ hypertensive encephalopathy ลด BP เท่าไร","ลด <strong>MAP ลงร้อยละ 20–25</strong> · malignant HT ใช้เวลา <strong>2–3 ชั่วโมง</strong> · ยา: nicardipine, labetalol"],
+ ["Crisis","ACS: เป้าหมาย SBP และค่าที่ไม่ควรลดต่ำกว่า","<strong>SBP &lt;140</strong> เร็วที่สุดที่ทำได้ (nitroglycerine, labetalol) · <strong>ไม่ควรลด SBP &lt;110 หรือ DBP &lt;60</strong>"],
+ ["Crisis","Pre-critical symptomatic hypertension (PSH) ลด BP เร็วแค่ไหน","<strong>ค่อย ๆ ลดใน 24–48 ชั่วโมง</strong> ไม่รีบลดเป็นปกติโดยเร็ว (I, B) · นัดกลับใน <strong>2–4 สัปดาห์</strong> (I, C)"],
+ ["Device","Renal denervation: ข้อบ่งชี้ระดับ I","<strong>refractory hypertension</strong> ที่ได้ยาลดความดันในขนาดสูงสุดที่ทนได้ (I, C) · resistant HT + ASCVD/progressive HMOD (IIa, B) · resistant HT ทั่วไป (IIb, A)"],
+ ["ลดความเสี่ยง","ใครควรได้ statin","ผู้ป่วยที่มี<strong>ปัจจัยเสี่ยง ≥3 ข้อ</strong> (I, A) · น่าจะพิจารณาถ้า <strong>Thai CV risk score ≥10%</strong> (IIa, C) · ประเมินความเสี่ยงด้วย Thai CV risk score ทุกราย (I, C)"],
+ ["ลดความเสี่ยง","Aspirin สำหรับ primary prevention ในผู้ป่วย HT","<strong>ไม่ควรใช้โดยไม่จำเป็น (III, A)</strong>"]
+];
+
+/* ============ ข้อมูล: Quiz ============ */
+const QUIZ = [
+ {q:"ชายไทยอายุ 52 ปี ตรวจสุขภาพประจำปีได้ BP 134/86 มม.ปรอท วัดตามมาตรฐาน ไม่มีโรคประจำตัว ตามแนวทาง 2567 ค่านี้จัดเป็นอะไร",
+  o:["Normal","BP at risk","ความดันโลหิตสูงระดับ 1","High-normal"],a:1,
+  e:"ฉบับ 2567 <strong>เปลี่ยนชื่อช่วง 130–139/80–89 จาก high-normal เป็น “BP at risk” (ความดันโลหิตระดับเสี่ยง)</strong> เพื่อสร้างความตระหนักถึงความเสี่ยงที่เพิ่มขึ้นและหาทางลดความเสี่ยงลงมา <span class='lv I'>I</span> A"},
+ {q:"ผู้ป่วยรายเดิม วัด HBPM 7 วันได้ค่าเฉลี่ย 138/88 มม.ปรอท ค่านี้แปลผลว่าอย่างไร",
+  o:["ปกติ เพราะยังไม่ถึง 140/90","เข้าเกณฑ์ความดันโลหิตสูง เพราะ HBPM ใช้เกณฑ์ ≥135/85","ต้องทำ ABPM ก่อนจึงจะแปลผลได้","เป็น white-coat hypertension"],a:1,
+  e:"เกณฑ์วินิจฉัยจาก <strong>HBPM คือ ≥135/85</strong> มม.ปรอท ไม่ใช่ 140/90 — ค่านอกสถานพยาบาลมีเกณฑ์ต่ำกว่า office BP เสมอ (office 140/90 → HBPM/ABPM กลางวัน 135/85 → ABPM 24 ชม. 130/80 → กลางคืน 120/70)"},
+ {q:"หญิงอายุ 60 ปี office BP 148/92 แต่ HBPM เฉลี่ย 126/78 ไม่มี HMOD ไม่มีโรคร่วม ควรวินิจฉัยว่าอะไร",
+  o:["Sustained hypertension","Masked hypertension","White-coat hypertension","ความดันโลหิตปกติ"],a:2,
+  e:"office BP เข้าเกณฑ์ HT แต่<strong>ค่านอกสถานพยาบาลปกติ = white-coat hypertension</strong> · หากค่านอก รพ. ไม่สอดคล้องกับใน รพ. <strong>ให้ยึดค่าจากการวัดนอกสถานพยาบาลเป็นหลัก</strong> เพราะพยากรณ์โรคแม่นยำกว่า <span class='lv I'>I</span> A"},
+ {q:"ผู้ป่วย white-coat hypertension รายนี้ ควรทำอะไรต่อ",
+  o:["ให้ยาลดความดันโลหิตทันทีทุกราย","ประเมิน CV risk factors และตรวจหา HMOD แนะนำปรับพฤติกรรม และติดตามเป็นระยะ","บอกว่าไม่เป็นโรค ไม่ต้องนัดติดตาม","ทำ renal denervation"],a:1,
+  e:"ผู้ป่วย white-coat HT ควร<strong>ประเมิน CV risk factors และตรวจหา HMOD</strong> <span class='lv I'>I</span> B, <strong>แนะนำปรับรูปแบบการดำเนินชีวิต</strong> และ<strong>ติดตามเป็นระยะเพื่อคัดกรอง HMOD ที่เกิดใหม่และวินิจฉัย sustained HT ได้ทันเวลา</strong> · การให้ยาพิจารณาเฉพาะรายที่มี HMOD และ/หรือความเสี่ยง CVD สูง <span class='lv IIa'>IIa</span> C"},
+ {q:"ชายอายุ 45 ปี office BP เฉลี่ย 134/84 มม.ปรอท ควรทำอะไรต่อเพื่อคัดกรอง masked hypertension",
+  o:["ไม่ต้องทำอะไร เพราะยังไม่ถึง 140/90","ตรวจ ABPM และ/หรือ HBPM","เริ่มยา 2 ชนิดทันที","ส่ง echocardiography ทุกราย"],a:1,
+  e:"ผู้ที่ office BP อยู่ในเกณฑ์ <strong>BP at risk ควรได้รับการตรวจ ABPM และ/หรือ HBPM เพื่อคัดกรอง masked hypertension</strong> <span class='lv I'>I</span> B"},
+ {q:"ผู้ป่วยอายุ 58 ปี เป็นเบาหวานชนิดที่ 2 office BP เฉลี่ย 136/84 จากการมาตรวจ 2 ครั้ง ควรวินิจฉัยว่าอย่างไร",
+  o:["ปกติ เพราะยังไม่ถึง 140/90","BP at risk เท่านั้น ยังไม่เป็นโรค","เป็นโรคความดันโลหิตสูง","ต้องรอ ABPM ก่อน"],a:2,
+  e:"<strong>ในผู้ป่วยเบาหวาน เกณฑ์วินิจฉัยคือ office BP เฉลี่ย ≥130/80 จากการมาตรวจ &gt;1 ครั้ง</strong> <span class='lv I'>I</span> A — ต่างจากประชากรทั่วไปที่ใช้ 140/90"},
+ {q:"ผู้ป่วยเบาหวานรายเดิม BP 136/84 หลังปรับพฤติกรรมมาแล้ว 3 เดือนยังไม่ลด ควรทำอย่างไร",
+  o:["รอต่ออีก 6 เดือน","เริ่มยาลดความดันโลหิต","เริ่มยาเมื่อ BP ถึง 140/90 เท่านั้น","ให้ SGLT2i เพื่อลดความดันโลหิต"],a:1,
+  e:"ควรให้ยาลดความดันโลหิตเมื่อ office BP <strong>≥140/90</strong> หรือ <strong>≥130/80 และได้พยายามปรับพฤติกรรมมาแล้วอย่างน้อย 3 เดือน</strong> <span class='lv I'>I</span> A · ส่วน SGLT2i/GLP1-RAs <strong>ไม่ควรใช้เพื่อวัตถุประสงค์ลดความดันโลหิตแต่เพียงอย่างเดียว</strong> <span class='lv III'>III</span> C"},
+ {q:"ผู้ป่วยเบาหวาน + ความดันโลหิตสูง มี UACR 120 มก./กรัม creatinine ควรเลือกยาชนิดแรกใด",
+  o:["Amlodipine","Hydrochlorothiazide","ACEIs หรือ ARBs","ACEIs ร่วมกับ ARBs เพื่อลด proteinuria ให้มากที่สุด"],a:2,
+  e:"เมื่อมี <strong>albuminuria (UACR ≥30 มก./กรัม creatinine) ควรเลือก ACEIs หรือ ARBs</strong> <span class='lv I'>I</span> A · และ<strong>ห้ามใช้ ACEIs ร่วมกับ ARBs</strong> <span class='lv III'>III</span> A เพราะเพิ่มผลข้างเคียง โดยเฉพาะ AKI และ hyperkalemia"},
+ {q:"ผู้ป่วยอายุ 55 ปี ไม่มีโรคร่วม office BP 158/96 ตามแนวทาง 2567 ควรเริ่มการรักษาด้วยยาอย่างไร",
+  o:["ยาชนิดเดียวขนาดต่ำ แล้วค่อยเพิ่ม","ยา 2 ชนิด โดยใช้ RAS blocker ร่วมกับ CCB หรือ thiazide/thiazide-like","ยา 3 ชนิดตั้งแต่แรก","ปรับพฤติกรรมอย่างเดียว 6 เดือน"],a:1,
+  e:"<strong>ผู้ป่วยส่วนใหญ่ควรเริ่มด้วยยา 2 ชนิด</strong> โดยใช้ยากลุ่มยับยั้ง RAS ร่วมกับ CCBs หรือ thiazide/thiazide-like diuretic <span class='lv I'>I</span> A · และควรใช้<strong>ยารวมเม็ด</strong>ในทุกขั้นตอนของการรักษา <span class='lv I'>I</span> A"},
+ {q:"ข้อใดคือกลุ่มที่ “ควรเริ่มด้วยยาเพียงชนิดเดียว”",
+  o:["ผู้ป่วยอายุ 45 ปี BP 170/100","ผู้ป่วยเบาหวาน BP 152/94","ผู้ป่วยสูงอายุมาก ร่างกายทรุดโทรม หรือ BP 140–149/90–95 ที่เสี่ยง CVD ต่ำ","ผู้ป่วย CKD ที่มี albuminuria"],a:2,
+  e:"ควรเริ่มด้วยยาชนิดเดียวใน: <strong>ผู้ป่วยสูงอายุมาก · ร่างกายอ่อนเพลียทรุดโทรม · BP ก่อนรักษา 140–149/90–95 ที่มีความเสี่ยง CVD ต่ำ · ผู้ที่มี BP at risk แต่เสี่ยง CVD สูง</strong> <span class='lv I'>I</span> C"},
+ {q:"ผู้ป่วยได้ยา 3 ชนิดในขนาดสูงสุดที่ทนได้ (ARB + amlodipine + HCTZ) BP ยังคง 152/94 ขั้นตอนถัดไปคือ",
+  o:["เพิ่ม ARB อีกตัวหนึ่ง","ให้การรักษาแบบ resistant hypertension","หยุด diuretic เพราะไม่ได้ผล","ส่งทำ renal denervation ทันที"],a:1,
+  e:"เมื่อคุมไม่ได้จากยา <strong>3 ชนิดในขนาดสูงสุด/ที่ทนได้ และหนึ่งในนั้นคือ diuretic → ควรให้การรักษาแบบ resistant hypertension</strong> <span class='lv I'>I</span> A · ห้ามเพิ่ม RAS blocker ตัวที่สอง <span class='lv III'>III</span> A"},
+ {q:"ก่อนสรุปว่าผู้ป่วยเป็น resistant hypertension ต้องแยกภาวะ pseudo-resistant ด้วยขั้นตอนใด",
+  o:["ตรวจ CT adrenal ทุกราย","วัด BP ตามมาตรฐาน ตรวจสอบการรับประทานยา ตรวจยา/สารที่เพิ่ม BP และตรวจ ABPM/HBPM","วัด BP ซ้ำในวันเดียวกัน 5 ครั้ง","ส่งตรวจ polysomnography ทุกราย"],a:1,
+  e:"แยก pseudo-resistant ด้วย 4 ขั้นตอน: <strong>1) วัด BP ให้ดีตามมาตรฐาน 2) ตรวจสอบว่าผู้ป่วยรับประทานยาถูกต้องครบถ้วน 3) ตรวจสอบยา/สารที่อาจเพิ่ม BP 4) ตรวจ ABPM หรือ HBPM</strong> · แล้วจึงตรวจหา secondary hypertension"},
+ {q:"ผู้ป่วย resistant hypertension มี eGFR 40 มล./นาที/1.73 ม.² กำลังใช้ HCTZ อยู่ ควรปรับ diuretic อย่างไร",
+  o:["คงเดิม เพราะ eGFR ยังไม่ต่ำมาก","เปลี่ยนเป็น chlorthalidone หรือ indapamide และพิจารณาเพิ่ม spironolactone","หยุด diuretic ทั้งหมด","เปลี่ยนเป็น mannitol"],a:1,
+  e:"ในขั้นตอนที่ 2 ของ resistant HT ให้<strong>เปลี่ยน thiazide เป็น long-acting thiazide-like diuretic (chlorthalidone หรือ indapamide)</strong> หรือเปลี่ยนเป็น loop diuretic ถ้า <strong>eGFR &lt;30–45</strong> · และ<strong>เพิ่ม spironolactone หรือ eplerenone ได้เมื่อ eGFR ≥30</strong>"},
+ {q:"ผู้ป่วย HFrEF (LVEF 30%) + ความดันโลหิตสูง ข้อใดไม่ควรใช้",
+  o:["ARNI","Beta-blocker","MRA","Verapamil หรือ diltiazem"],a:3,
+  e:"<strong>ไม่ควรใช้ non-DHP-CCBs (verapamil, diltiazem) ในผู้ป่วย HFrEF</strong> <span class='lv III'>III</span> C · ยาหลักคือ ACEIs/ARBs/ARNI + beta-blocker + MRA + SGLT2i และถ้ายังไม่ถึงเป้าให้เพิ่ม DHP-CCBs <span class='lv I'>I</span> B"},
+ {q:"เป้าหมายความดันโลหิตในผู้ป่วยความดันโลหิตสูงที่มี HFrEF คือ",
+  o:["SBP <120","SBP <130","SBP <140","SBP <150"],a:1,
+  e:"ควรคุม <strong>SBP &lt;130</strong> มม.ปรอท ทั้งใน HFrEF และ HFpEF <span class='lv I'>I</span> C · ส่วนผู้ที่มีความเสี่ยงต่อหัวใจล้มเหลวให้คุม &lt;130/80 <span class='lv I'>I</span> A"},
+ {q:"ผู้ป่วยอายุ 84 ปี แข็งแรงพอสมควร office SBP 152 มม.ปรอท ตามแนวทางควรทำอย่างไร",
+  o:["เริ่มยาทันที เพราะ ≥140","ยังไม่ถึงเกณฑ์เริ่มยาโดยทั่วไป (SBP ≥160) แต่อาจเริ่มได้ในบางกรณี","ตั้งเป้า SBP <120","ไม่ต้องรักษาเลยเพราะอายุมาก"],a:1,
+  e:"ผู้มีอายุ <strong>≥80 ปี ควรเริ่มยาเมื่อ office SBP ≥160</strong> <span class='lv I'>I</span> A · <strong>อาจเริ่มยาในผู้ที่ SBP 140–159 ได้ในบางกรณี</strong> <span class='lv IIb'>IIb</span> C · เป้าหมายคือ SBP 140–150 และ DBP &lt;80 และต้องประเมิน frailty ก่อนเริ่มการรักษา"},
+ {q:"ผู้สูงอายุ 82 ปี ได้ยา 2 ชนิด SBP ลงมาเหลือ 114 มม.ปรอท และมี orthostatic hypotension ควรทำอย่างไร",
+  o:["คงยาเดิมเพราะ BP ต่ำดีต่อหัวใจ","น่าจะลดหรือหยุดยาลดความดันโลหิต","เพิ่มยาอีกชนิดเพื่อคุมให้ดีขึ้น","ตั้งเป้า SBP <110"],a:1,
+  e:"<strong>น่าจะลดหรือหยุดยาลดความดันโลหิตในผู้สูงอายุตอนปลายที่มี SBP &lt;120 หรือมี orthostatic hypotension รุนแรง หรือ frailty ระดับรุนแรง</strong> <span class='lv IIa'>IIa</span> C · และ<strong>ไม่ควรตั้งเป้า SBP &lt;120 หรือ DBP &lt;70</strong> <span class='lv III'>III</span> C"},
+ {q:"ผู้สูงอายุ 70 ปี มี isolated systolic hypertension ควรเลือกยากลุ่มใดเป็นทางเลือกแรก",
+  o:["Beta-blockers","ACEIs เท่านั้น","CCBs และ thiazide/thiazide-like diuretics","Alpha-blockers"],a:2,
+  e:"ควรเลือก <strong>CCBs และ thiazide/thiazide-like diuretics เป็นยาทางเลือกแรกใน ISH ของผู้สูงอายุ</strong> <span class='lv I'>I</span> A แต่อาจใช้ยากลุ่มหลักอื่นตามข้อบ่งชี้และนำมาร่วมรักษาได้ · ผู้ป่วย ISH สูงอายุที่สุขภาพดีควรเริ่มด้วยยา 2 ชนิดตั้งแต่แรก <span class='lv I'>I</span> C"},
+ {q:"ผู้ป่วย acute ischemic stroke BP 196/116 มม.ปรอท กำลังจะได้รับ IV thrombolysis ควรทำอย่างไร",
+  o:["ให้ thrombolysis ได้เลยโดยไม่ต้องลด BP","ลด BP ลงมาโดยเร็วก่อนให้ยา และคุม <180/105 ใน 24 ชั่วโมงแรกหลัง reperfusion","ให้ nifedipine ชนิดออกฤทธิ์สั้นอมใต้ลิ้น","ลด MAP ลงร้อยละ 50 ทันที"],a:1,
+  e:"<strong>ควรลด BP ในผู้ที่ &gt;185/110 ลงมาโดยเร็วก่อนให้ IV thrombolysis</strong> <span class='lv I'>I</span> B และ<strong>คุม BP &lt;180/105 ภายใน 24 ชั่วโมงแรกหลัง reperfusion</strong> <span class='lv I'>I</span> C · <strong>ไม่ควรใช้ nifedipine ชนิดออกฤทธิ์สั้น</strong> <span class='lv III'>III</span> C"},
+ {q:"ผู้ป่วย acute ischemic stroke ที่ให้ thrombolysis และทำ thrombectomy ไม่ได้ BP 214/118 ควรทำอย่างไร",
+  o:["ลด BP ทันทีให้ต่ำกว่า 140/90","ยังไม่จำเป็นต้องลด BP — เกณฑ์คือเมื่อ >220/120","ให้ยาลด BP ทางหลอดเลือดดำทุกราย","ให้ labetalol จนกว่า MAP จะลดลงครึ่งหนึ่ง"],a:1,
+  e:"ในกรณีที่ให้ thrombolysis หรือทำ mechanical thrombectomy ไม่ได้ <strong>น่าจะลด BP เมื่อสูงเกิน 220/120 มม.ปรอท และคุมให้ SBP &lt;220 และ DBP &lt;120</strong> <span class='lv IIa'>IIa</span> C"},
+ {q:"ผู้ป่วยความดันโลหิตสูงที่มี OSA ควรเลือกยากลุ่มใดก่อนกลุ่มอื่น",
+  o:["Beta-blockers","MRA, ACEIs หรือ ARBs","Alpha-blockers","Direct vasodilators"],a:1,
+  e:"ควรเลือกใช้ <strong>MRA, ACEIs หรือ ARBs ก่อนยากลุ่มอื่นในผู้ป่วยความดันโลหิตสูงที่มีภาวะ OSA</strong> <span class='lv I'>I</span> A · และน่าจะตรวจหา primary aldosteronism ในผู้ป่วยกลุ่มนี้ <span class='lv IIa'>IIa</span> B"},
+ {q:"ผู้ป่วยความดันโลหิตสูง + AF กำลังได้ยา warfarin ข้อใดถูกต้อง",
+  o:["ควรใช้ beta-blocker ร่วมกับ verapamil เพื่อคุม rate ให้ดีที่สุด","ควรคุม HR <110 ครั้ง/นาที ใน AF ทั่วไป และ <80 ครั้ง/นาที ใน AF ที่มีอาการ","เป้าหมาย BP ต้องต่ำกว่าผู้ป่วยความดันโลหิตสูงทั่วไป","non-DHP CCBs เป็นยาทางเลือกแรกในการคุม rate"],a:1,
+  e:"ควรใช้ <strong>beta-blockers คุม HR &lt;110 ครั้ง/นาทีใน AF ทั่วไป และ &lt;80 ครั้ง/นาทีใน AF ที่มีอาการ</strong> <span class='lv I'>I</span> B · <strong>ไม่ควรใช้ beta-blockers ร่วมกับ non-DHP CCBs</strong> <span class='lv III'>III</span> C และ<strong>ไม่ควรใช้ non-DHP CCBs โดยไม่จำเป็น</strong>เพราะมีปฏิกิริยากับยาต้านการแข็งตัวของเลือดชนิดรับประทานและเพิ่มความเสี่ยงเลือดออก <span class='lv III'>III</span> B · เป้าหมาย BP เท่ากับผู้ป่วยทั่วไป"},
+ {q:"สตรีตั้งครรภ์ 28 สัปดาห์ ไม่เคยมีความดันโลหิตสูงมาก่อน BP 146/94 จากการวัด 2 รอบห่างกัน 5 ชั่วโมง urine protein/creatinine 0.42 วินิจฉัยว่าอย่างไร",
+  o:["Chronic hypertension","Gestational hypertension เท่านั้น","Preeclampsia","ยังวินิจฉัยไม่ได้ ต้องเก็บปัสสาวะ 24 ชั่วโมงก่อน"],a:2,
+  e:"เข้าเกณฑ์ทั้ง 2 ส่วน: <strong>BP ≥140/90 จากการวัด 2 รอบห่างกันอย่างน้อย 4 ชั่วโมง ในครรภ์ &gt;20 สัปดาห์ที่ไม่เคยมี HT</strong> <span class='lv I'>I</span> A + <strong>protein/creatinine ratio ≥0.3</strong> <span class='lv I'>I</span> A → วินิจฉัย preeclampsia ได้ ไม่ต้องรอปัสสาวะ 24 ชั่วโมง"},
+ {q:"ยาลดความดันโลหิตเร่งด่วนในสตรีตั้งครรภ์ ข้อใด “ไม่ใช่” ยาที่แนวทางระบุไว้",
+  o:["Hydralazine ฉีดเข้าหลอดเลือดดำ","Nifedipine ชนิดรับประทาน","Labetalol ฉีดเข้าหลอดเลือดดำ","Enalapril ฉีดเข้าหลอดเลือดดำ"],a:3,
+  e:"แนวทางระบุ 3 ตัว (ทั้งหมด <span class='lv I'>I</span> B): <strong>Hydralazine</strong> IV/IM bolus 5 มก. · <strong>Nifedipine</strong> รับประทาน 10–20 มก. (ไม่เกิน 180 มก./วัน) · <strong>Labetalol</strong> IV bolus 10–20 มก. · ยากลุ่ม ACEIs/ARBs ห้ามใช้ในการตั้งครรภ์"},
+ {q:"สตรีตั้งครรภ์อายุ 37 ปี ครรภ์แรก BMI 32 กก./ม.² ควรได้ low-dose aspirin หรือไม่",
+  o:["ไม่ควร เพราะยังไม่มีปัจจัยเสี่ยงสูง","ควร เพราะมีปัจจัยเสี่ยงปานกลาง ≥2 ข้อ (ไม่เคยมีบุตร + อ้วน + อายุ ≥35 ปี)","ควรให้เฉพาะเมื่อ BP เริ่มสูง","ห้ามให้ในไตรมาสแรก"],a:1,
+  e:"<strong>ควรให้ low-dose aspirin เมื่อมีปัจจัยกลุ่มนี้ ≥2 ข้อ</strong> <span class='lv I'>I</span> A: ไม่เคยมีบุตร · BMI &gt;30 · ประวัติ preeclampsia ในญาติสายตรง · ลักษณะเสี่ยงทาง socio-demographic · <strong>อายุ ≥35 ปี</strong> · ประวัติ low birth weight/โรคแทรกซ้อนในครรภ์ก่อน/เว้นช่วง ≥10 ปี — รายนี้มีถึง 3 ข้อ"},
+ {q:"ผู้ป่วยความดันโลหิตสูงกำลังจะผ่าตัด elective cholecystectomy วันนี้ BP 168/96 ควรทำอย่างไร",
+  o:["เลื่อนการผ่าตัดออกไปทุกราย","ไม่ควรเลื่อนผ่าตัดใน HT grade 1–2 แต่ควรคุม SBP <160 ก่อนด้วยวิธีมาตรฐาน","หยุดยาลดความดันทั้งหมดก่อนผ่าตัด","ให้ nifedipine อมใต้ลิ้นก่อนเข้าห้องผ่าตัด"],a:1,
+  e:"<strong>ไม่ควรเลื่อนการผ่าตัดในผู้ป่วย HT grade 1 หรือ grade 2</strong> <span class='lv III'>III</span> C แต่การผ่าตัดที่ไม่ฉุกเฉิน<strong>ควรคุม SBP &lt;160 เสียก่อน</strong> <span class='lv I'>I</span> B · ถ้า SBP ≥180 และ/หรือ DBP ≥110 น่าจะชะลอการผ่าตัดไว้ก่อน <span class='lv IIa'>IIa</span> B"},
+ {q:"ยาชนิดใดที่ “ไม่ควรหยุดโดยทันที” ก่อนผ่าตัด",
+  o:["RAS blockers","Beta-blockers","Thiazide diuretics","Amlodipine"],a:1,
+  e:"<strong>ไม่ควรหยุด beta-blockers ที่ผู้ป่วยได้รับอยู่แล้วโดยทันที</strong> เพราะอาจทำให้หัวใจเต้นเร็วและ BP สูงขึ้นหลังหยุดยา <span class='lv III'>III</span> C · ส่วน <strong>RAS blockers อาจพิจารณาหยุดชั่วคราว</strong>ได้ในผู้ที่กังวลว่าจะเกิดความดันโลหิตต่ำระหว่างผ่าตัด <span class='lv IIb'>IIb</span> B"},
+ {q:"ผู้ป่วยสงสัย pheochromocytoma มี BP 190/110 และใจสั่น ควรเริ่มยาใดก่อน",
+  o:["Propranolol","Metoprolol","Alpha-adrenergic receptor blocker","Verapamil"],a:2,
+  e:"<strong>ควรเลือกใช้ alpha-adrenergic receptor blockers เพื่อคุมความดันโลหิตในผู้ป่วยที่สงสัย PPGL ก่อนเริ่มใช้ beta-blockers</strong> <span class='lv I'>I</span> A — ถ้าให้ beta-blocker ก่อนจะเกิด unopposed alpha stimulation ทำให้ BP พุ่งสูงขึ้น"},
+ {q:"ผู้ป่วยรายใดที่ “ควร” คัดกรอง primary aldosteronism (ระดับ I)",
+  o:["ผู้ป่วยความดันโลหิตสูงทุกราย","ผู้ป่วยที่เริ่มเป็น HT ก่อนอายุ 40 ปี หรือมี adrenal incidentaloma, hypokalemia, resistant hypertension","ผู้ป่วยที่มี BMI สูงเท่านั้น","ผู้ป่วยที่มี AF ทุกราย"],a:1,
+  e:"ควรคัดกรอง PA ใน: <strong>HT ที่เริ่มเป็นก่อนอายุ 40 ปี</strong> <span class='lv I'>I</span> B · <strong>adrenal incidentaloma / hypokalemia / resistant hypertension</strong> <span class='lv I'>I</span> A · ส่วน <strong>OSA หรือ AF ชนิดไม่มีสาเหตุ</strong> เป็นระดับ <span class='lv IIa'>IIa</span> B"},
+ {q:"ผู้ป่วยมาห้องฉุกเฉินด้วย acute aortic dissection BP 178/104 ชีพจร 92 เป้าหมายการรักษาเฉียบพลันคือ",
+  o:["ลด MAP ลงร้อยละ 20–25 ใน 2–3 ชั่วโมง","SBP <140 เท่านั้น","SBP <120 และชีพจร <60 ครั้ง/นาที เร็วที่สุดที่ทำได้","SBP <100 และชีพจร <50 ครั้ง/นาที"],a:2,
+  e:"Acute aortic diseases: เป้าหมายคือ <strong>SBP &lt;120 มม.ปรอท และชีพจร &lt;60 ครั้ง/นาที เร็วที่สุดที่ทำได้</strong> · ยาที่แนะนำ: esmolol, labetalol, nicardipine, nitroglycerine — <strong>อาจต้องใช้ยา 2 กลุ่มร่วมกันเพื่อคุมทั้ง SBP และอัตราชีพจร</strong>"},
+ {q:"ผู้ป่วย hypertensive encephalopathy ควรลดความดันโลหิตอย่างไร",
+  o:["ลด MAP ลงร้อยละ 20–25","ลด SBP ให้ <120 ทันที","ลด BP ให้เป็นปกติภายใน 1 ชั่วโมง","ค่อย ๆ ลดใน 24–48 ชั่วโมง"],a:0,
+  e:"ทั้ง <strong>malignant hypertension และ hypertensive encephalopathy ให้ลด MAP ลงร้อยละ 20–25</strong> (malignant HT ใช้เวลา 2–3 ชั่วโมง; encephalopathy เร็วที่สุดที่ทำได้) ด้วย <strong>nicardipine หรือ labetalol</strong> · อาจใช้ nitroprusside ถ้าขั้นแรกไม่ได้ผลดี"},
+ {q:"ผู้ป่วย ACS ที่มี BP สูง เป้าหมายคือ SBP <140 แต่ข้อควรระวังคือ",
+  o:["ไม่ควรลด SBP ต่ำกว่า 110 หรือ DBP ต่ำกว่า 60","ไม่ควรใช้ nitroglycerine","ต้องใช้ nitroprusside เป็นตัวแรกเสมอ","ห้ามให้ยาทางหลอดเลือดดำ"],a:0,
+  e:"Acute coronary syndromes: เป้า <strong>SBP &lt;140</strong> เร็วที่สุดที่ทำได้ ด้วย nitroglycerine หรือ labetalol · แต่ <strong>ไม่ควรลด SBP ต่ำกว่า 110 มม.ปรอท หรือ DBP ต่ำกว่า 60 มม.ปรอท</strong>"},
+ {q:"ผู้ป่วยมา ER ด้วย BP 198/112 ปวดศีรษะจากความเครียด ตรวจแล้วไม่พบ acute organ damage ควรทำอย่างไร",
+  o:["ให้ยาฉีดลด BP ให้เป็นปกติภายใน 1 ชั่วโมง","ค้นหาปัจจัยกระตุ้น และค่อย ๆ ลด BP ลงใน 24–48 ชั่วโมง นัดกลับใน 2–4 สัปดาห์","ให้กลับบ้านโดยไม่ต้องให้ยา","admit ICU ทุกราย"],a:1,
+  e:"นี่คือ <strong>pre-critical symptomatic hypertension (PSH)</strong> — ควร<strong>ค้นหาปัจจัยกระตุ้น</strong> (ความเครียด วิตกกังวล ยา/สารที่เพิ่ม BP ความเจ็บปวด การขาดยา white-coat รุนแรง) <span class='lv I'>I</span> B · <strong>ค่อย ๆ ลด BP ใน 24–48 ชั่วโมง</strong> <span class='lv I'>I</span> B · ยืนยันว่าได้ยากลับบ้านเหมาะสม และ<strong>นัดกลับใน 2–4 สัปดาห์</strong> <span class='lv I'>I</span> C"},
+ {q:"ข้อใดคือข้อบ่งชี้ระดับ I (ควรทำ) ของ renal denervation therapy",
+  o:["ผู้ป่วย resistant hypertension ทุกราย","ผู้ป่วย refractory hypertension ที่ได้ยาลดความดันในขนาดสูงสุดที่ทนได้","ผู้ป่วยความดันโลหิตสูงระดับ 2 ที่ยังไม่เคยได้ยา","ผู้ป่วย eGFR <15"],a:1,
+  e:"<strong>ควรทำ renal denervation ในผู้ป่วย refractory hypertension ที่ได้รับยาลดความดันโลหิตอยู่แล้วในขนาดสูงสุดที่ทนต่อยาได้</strong> <span class='lv I'>I</span> C · ส่วน resistant HT ทั่วไปเป็น <span class='lv IIb'>IIb</span> A และ resistant HT ที่มี ASCVD/progressive HMOD เป็น <span class='lv IIa'>IIa</span> B · ในขั้นตอนการรักษาระบุ eGFR ≥30"},
+ {q:"ผู้ป่วยความดันโลหิตสูงมีปัจจัยเสี่ยง 4 ข้อ ควรทำอย่างไรเพื่อลดความเสี่ยง",
+  o:["ให้ aspirin เพื่อ primary prevention","ให้ statin","ให้ทั้ง aspirin และ statin ทุกราย","ไม่ต้องให้ยาเพิ่มถ้าคุม BP ได้"],a:1,
+  e:"ผู้ป่วยที่มี<strong>ปัจจัยเสี่ยง ≥3 ข้อ ควรจะได้รับ statin</strong> <span class='lv I'>I</span> A · แต่ <strong>ไม่ควรใช้ aspirin เพื่อ primary prevention โดยไม่จำเป็น</strong> <span class='lv III'>III</span> A · ผู้ป่วยทุกรายควรได้รับการประเมินด้วย <strong>Thai CV risk score</strong> <span class='lv I'>I</span> C"},
+ {q:"ข้อใดคือคำแนะนำเรื่องช่วงเวลารับประทานยาลดความดันโลหิตในแนวทาง 2567",
+  o:["ต้องรับประทานก่อนนอนทุกราย เพราะได้ผลดีกว่า","ต้องรับประทานตอนเช้าเท่านั้น","ให้ผู้ป่วยเลือกได้ แต่โดยทั่วไปตอนเช้าดีกว่าเพราะรับประทานต่อเนื่องได้มากกว่า","ให้แบ่งครึ่งเช้า-เย็นทุกราย"],a:2,
+  e:"<strong>ควรให้ผู้ป่วยเลือกได้ว่าจะรับประทานตอนเช้าหรือก่อนนอน</strong> <span class='lv I'>I</span> C · <strong>โดยทั่วไปแนะนำตอนเช้าจะดีกว่า เพราะทำให้ผู้ป่วยรับประทานยาอย่างต่อเนื่องได้มากกว่า</strong> <span class='lv I'>I</span> C · เฉพาะผู้ที่พิสูจน์แล้วว่ามี nocturnal hypertension จึงอาจแนะนำก่อนนอน <span class='lv IIb'>IIb</span> C"},
+ {q:"ยา/สารใดต่อไปนี้ที่แนวทางระบุว่าอาจเพิ่มความดันโลหิต และควรซักประวัติในผู้ป่วย resistant hypertension",
+  o:["NSAIDs และ COX-2 inhibitors","ยาคุมกำเนิด","Cyclosporine, tacrolimus และ VEGF inhibitors","ถูกทุกข้อ"],a:3,
+  e:"แนวทางระบุครบ: <strong>NSAIDs/COX-2 inhibitors · ยาคุมกำเนิด · glucocorticoids และ mineralocorticoids · sympathomimetic amines (amphetamine, ephedrine, pseudoephedrine, phenylpropanolamine) · antidepressants · erythropoietin-stimulating agents · alcohol · cocaine · cyclosporine, tacrolimus · VEGF inhibitors · สมุนไพรบางชนิด</strong>"},
+ {q:"ผู้ป่วย CKD stage 3 มี albuminuria และความเสี่ยง CVD สูง เป้าหมาย office BP ที่แนวทางแนะนำคือ",
+  o:["<140/90","120–130 / 70–79","<120/70","<150/90"],a:1,
+  e:"<strong>น่าจะตั้งเป้าลดความดันโลหิตที่วัดในสถานพยาบาลลงมาอยู่ระหว่าง 120–130/70–79 มม.ปรอท</strong> โดยเฉพาะผู้ป่วยที่มี albuminuria และมีความเสี่ยงสูงต่อโรคหัวใจและหลอดเลือด <span class='lv IIa'>IIa</span> A"},
+ {q:"ผู้ป่วยความดันโลหิตสูงที่ได้รับการเปลี่ยนไต ควรเลือกยาชนิดแรกใด",
+  o:["Thiazide diuretic","Beta-blocker","ACEIs หรือ ARBs หรือ DHP-CCBs","Spironolactone"],a:2,
+  e:"<strong>ควรเลือกใช้ ACEIs หรือ ARBs หรือ DHP-CCBs เป็นยาลดความดันโลหิตชนิดแรกในผู้ป่วยที่ได้รับการเปลี่ยนไต</strong> <span class='lv I'>I</span> A · และ<strong>อาจพิจารณาลด office BP ลงมาให้ต่ำกว่า 130/80</strong> <span class='lv IIb'>IIb</span> B"},
+ {q:"ผู้ป่วยความดันโลหิตสูงที่มี aortic regurgitation เรื้อรังชนิดรุนแรง ควรเลือกยาใด และตั้งเป้าหมายอย่างไร",
+  o:["Beta-blocker และตั้งเป้าต่ำกว่าผู้ป่วยทั่วไป","ACEIs หรือ ARBs และตั้งเป้าระดับเดียวกับผู้ป่วยความดันโลหิตสูงทั่วไป","Non-DHP CCBs และตั้งเป้า SBP <120","ไม่ต้องให้ยาเพราะ wide pulse pressure เป็นเรื่องปกติของ AR"],a:1,
+  e:"AR เรื้อรังชนิดรุนแรงมี <strong>wide pulse pressure</strong> ทำให้ SBP สูงกว่าผู้ที่ไม่เป็น AR แม้ SVR ปกติ · <strong>การเลือกยาน่าจะใช้ ACEIs หรือ ARBs</strong> <span class='lv IIa'>IIa</span> C · <strong>ระดับที่เริ่มยาและเป้าหมายใช้ระดับเดียวกับผู้ป่วยความดันโลหิตสูงทั่วไป</strong> <span class='lv I'>I</span> C"}
+];
+
+/* ============ ข้อมูล: เคสผู้ป่วย ============ */
+const CASES = [
+{t:"ชายวัยกลางคน ตรวจสุขภาพ",
+ who:"ชายไทย อายุ 47 ปี · ตรวจสุขภาพประจำปี",
+ v:["BP 142/88","BMI 27.4","สูบบุหรี่ 10 มวน/วัน","ไม่มีโรคประจำตัว","FBS 96","LDL 158"],
+ body:"มาตรวจสุขภาพประจำปี ไม่มีอาการ วัด BP ที่คลินิกได้ 142/88 มม.ปรอท (วัดตามมาตรฐาน 2 รอบ)",
+ steps:[
+  {q:"ขั้นแรกควรทำอะไร",o:["วินิจฉัยเป็นความดันโลหิตสูงและเริ่มยาทันที","นัดมาวัดซ้ำอีกครั้ง และแนะนำให้วัด BP ที่บ้าน 7 วัน","ส่ง ABPM ทุกราย","บอกว่าปกติ นัดปีหน้า"],a:1,
+   e:"ต้องวินิจฉัยจาก office BP เข้าเกณฑ์ <strong>จากการมาตรวจ &gt;1 ครั้งขึ้นไป</strong> <span class='lv I'>I</span> A และ<strong>แนะนำใช้ HBPM ควบคู่กันหากเป็นไปได้</strong> เพราะไทยมีความชุกของ white-coat และ masked HT สูง <span class='lv I'>I</span> A — HBPM เพื่อวินิจฉัยควรวัด 7 วันติดต่อกัน"},
+  {q:"HBPM 7 วันได้เฉลี่ย 139/87 มม.ปรอท ครั้งที่ 2 ที่คลินิกได้ 146/90 แปลผลอย่างไร",o:["White-coat hypertension","เป็นโรคความดันโลหิตสูง (office ≥140/90 ซ้ำ และ HBPM ≥135/85)","ปกติ","Masked hypertension"],a:1,
+   e:"office BP ≥140/90 จากการตรวจ 2 ครั้ง <strong>และ</strong> HBPM 139/87 ก็เกินเกณฑ์ <strong>≥135/85</strong> แล้ว → เป็น sustained hypertension · เมื่อได้ค่าตามมาตรฐานแล้ว <strong>ควรวินิจฉัยทันที</strong> (สรุปใจความหลักข้อ 4)"},
+  {q:"ควรส่งตรวจอะไรบ้างในการประเมินเบื้องต้น",o:["EKG 12 leads, serum creatinine + eGFR, albumin ในปัสสาวะ","Echocardiography ทุกราย","CT adrenal และ plasma aldosterone","Polysomnography"],a:0,
+   e:"ผู้ป่วยความดันโลหิตสูงทุกรายควรตรวจ <strong>EKG 12 leads</strong> <span class='lv I'>I</span> B · <strong>serum creatinine และประเมิน eGFR</strong> <span class='lv I'>I</span> B · <strong>albumin ในปัสสาวะ</strong> <span class='lv I'>I</span> B · ส่ง echo เมื่อ EKG ผิดปกติหรือสงสัยโรคหัวใจ"},
+  {q:"เริ่มการรักษาอย่างไร",o:["ปรับพฤติกรรมอย่างเดียว 6 เดือน","ปรับพฤติกรรม + เริ่มยา 2 ชนิด (RAS blocker + CCB หรือ + thiazide/thiazide-like) แบบยารวมเม็ด","เริ่ม beta-blocker เดี่ยว","เริ่ม SGLT2i เพื่อลดความดันโลหิต"],a:1,
+   e:"BP ≥140/90 → เริ่มยา <span class='lv I'>I</span> C · <strong>ผู้ป่วยส่วนใหญ่ควรเริ่มด้วยยา 2 ชนิด</strong> โดยใช้ RAS blocker ร่วมกับ CCB หรือ thiazide/thiazide-like <span class='lv I'>I</span> A · ควรใช้<strong>ยารวมเม็ด</strong>ในทุกขั้นตอน <span class='lv I'>I</span> A · ควบคู่กับปรับพฤติกรรมทุกราย <span class='lv I'>I</span> A · เขา LDL 158 + สูบบุหรี่ + BMI สูง → ประเมิน Thai CV risk score และพิจารณา statin"},
+  {q:"เป้าหมายความดันโลหิตของผู้ป่วยรายนี้",o:["<140/90","<130/80","<125/75","SBP 140–150"],a:1,
+   e:"อายุ 47 ปี (18–64 ปี) → เป้าหมาย office BP <strong>&lt;130/80</strong> มม.ปรอท <span class='lv I'>I</span> A · เป้า home BP &lt;130/80 <span class='lv I'>I</span> B (และน่าจะ &lt;125/75 ถ้าจัดว่าเสี่ยงสูง <span class='lv IIa'>IIa</span> B)"}
+ ]},
+{t:"หญิงสูงอายุ ISH",
+ who:"หญิงไทย อายุ 81 ปี · มาตามนัด",
+ v:["BP 168/72","ชีพจร 76","เดินเองได้ ช่วยเหลือตัวเองดี","ไม่มี dementia","eGFR 62"],
+ body:"มาตามนัด ไม่มีอาการ วัด BP หลายครั้งได้เฉลี่ย 168/72 มม.ปรอท ยังไม่เคยได้ยาลดความดันโลหิต",
+ steps:[
+  {q:"ค่านี้จัดเป็นอะไร",o:["ความดันโลหิตสูงระดับ 2","Isolated systolic hypertension","Isolated diastolic hypertension","BP at risk"],a:1,
+   e:"<strong>ISH = SBP ≥140 และ DBP &lt;90</strong> — รายนี้ 168/72 เข้าเกณฑ์ ISH · (แม้ SBP จะอยู่ในช่วงระดับ 2 แต่การมี DBP &lt;90 ทำให้เรียกว่า ISH ซึ่งพบบ่อยในผู้สูงอายุ)"},
+  {q:"ก่อนเริ่มการรักษาควรประเมินอะไรเป็นพิเศษ",o:["Echocardiography","frailty / functionality","CT brain","24-hour urine metanephrine"],a:1,
+   e:"ผู้ที่อายุ <strong>≥80 ปี ควรประเมิน frailty/functionality ก่อนเริ่มการรักษาและติดตามประเมินซ้ำปีละครั้ง</strong> <span class='lv I'>I</span> C · และควร<strong>ตรวจหา orthostatic hypotension อย่างสม่ำเสมอ</strong> <span class='lv I'>I</span> C"},
+  {q:"เริ่มยาหรือไม่ และเป้าหมายเท่าไร",o:["ไม่เริ่ม เพราะ DBP ปกติ","เริ่มยา (SBP ≥160) เป้าหมาย SBP 140–150 และ DBP <80","เริ่มยา เป้าหมาย SBP <120","เริ่มยา เป้าหมาย <130/80 ทันที"],a:1,
+   e:"อายุ ≥80 ปี: <strong>ควรเริ่มยาเมื่อ office SBP ≥160</strong> <span class='lv I'>I</span> A · เป้าหมาย <strong>SBP 140–150 และ DBP &lt;80</strong> <span class='lv I'>I</span> A · <strong>ลด SBP ให้ได้ตามเป้าหมายแม้ DBP จะปกติ</strong> (สรุปใจความหลักข้อ 7) · อาจลดถึง 130–139 ถ้าทนได้ดี <span class='lv IIb'>IIb</span> B แต่<strong>ไม่ควรตั้งเป้า SBP &lt;120 หรือ DBP &lt;70</strong> <span class='lv III'>III</span> C"},
+  {q:"เลือกยาอย่างไร",o:["CCBs หรือ thiazide/thiazide-like เป็นทางเลือกแรก เริ่มขนาดต่ำ ปรับขึ้นช้า ๆ","Beta-blocker เดี่ยว","ยา 3 ชนิดตั้งแต่แรก","Alpha-blocker"],a:0,
+   e:"ISH ในผู้สูงอายุ: <strong>ควรเลือก CCBs และ thiazide/thiazide-like diuretics เป็นยาทางเลือกแรก</strong> <span class='lv I'>I</span> A · ผู้สูงอายุควร<strong>เริ่มยาขนาดต่ำและปรับขนาดขึ้นช้า ๆ</strong> <span class='lv I'>I</span> C · (ผู้ป่วย ISH สูงอายุที่สุขภาพดีควรเริ่มด้วยยา 2 ชนิดตั้งแต่แรก <span class='lv I'>I</span> C)"}
+ ]},
+{t:"เบาหวาน + CKD",
+ who:"ชายไทย อายุ 61 ปี · DM type 2 มา 12 ปี",
+ v:["BP 146/88","HbA1c 7.4%","eGFR 48","UACR 340 มก./ก.","ยาเดิม: metformin"],
+ body:"ผู้ป่วยเบาหวานชนิดที่ 2 มา 12 ปี ตรวจพบ eGFR 48 มล./นาที/1.73 ม.² และ UACR 340 มก./กรัม creatinine · office BP เฉลี่ย 146/88 มม.ปรอท จากการมาตรวจ 2 ครั้ง",
+ steps:[
+  {q:"เกณฑ์วินิจฉัย HT ในผู้ป่วยรายนี้คือเท่าไร",o:["≥140/90 เหมือนคนทั่วไป","≥130/80","≥135/85","≥150/90"],a:1,
+   e:"ในผู้ป่วยเบาหวาน <strong>นิยามความดันโลหิตสูงคือ SBP ≥130 และ/หรือ DBP ≥80</strong> โดยต้องมาตรวจอย่างน้อย 2 ครั้ง และแต่ละครั้งวัดตามมาตรฐานอย่างน้อย 2 รอบแล้วนำมาเฉลี่ย <span class='lv I'>I</span> A"},
+  {q:"ควรเลือกยาลดความดันโลหิตชนิดแรกอะไร",o:["Amlodipine","ACEIs หรือ ARBs","HCTZ","ACEIs ร่วมกับ ARBs"],a:1,
+   e:"มี <strong>albuminuria (UACR ≥30 มก./กรัม creatinine) → ควรเลือก ACEIs หรือ ARBs</strong> ทั้งจากคำแนะนำเรื่องเบาหวาน <span class='lv I'>I</span> A และเรื่อง CKD <span class='lv I'>I</span> A · <strong>ห้ามใช้ ACEIs ร่วมกับ ARBs</strong> <span class='lv III'>III</span> A/B เพราะเสี่ยง AKI และ hyperkalemia"},
+  {q:"ควรเพิ่มยาอื่นเพื่อประโยชน์ต่อไตและหัวใจหรือไม่",o:["ควรใช้ SGLT2i เพราะมี CKD (eGFR <60 และมี albuminuria)","ไม่ควร เพราะ SGLT2i ห้ามใช้ในผู้ป่วยความดันโลหิตสูง","ใช้ GLP1-RAs เพื่อลดความดันโลหิตโดยเฉพาะ","ใช้ SGLT2i แทนยาลดความดันโลหิต"],a:0,
+   e:"<strong>ควรใช้ SGLT2i ในผู้ป่วยเบาหวานที่มีความดันโลหิตสูง และมีหัวใจล้มเหลวหรือ CKD (eGFR &lt;60 หรือมี albuminuria)</strong> <span class='lv I'>I</span> A · <strong>น่าจะเลือกใช้ GLP1-RAs</strong> ในกลุ่มเดียวกัน <span class='lv IIa'>IIa</span> A · แต่<strong>ไม่ควรใช้เพื่อวัตถุประสงค์ลดความดันโลหิตแต่เพียงอย่างเดียว</strong> <span class='lv III'>III</span> C"},
+  {q:"เป้าหมายความดันโลหิตของผู้ป่วยรายนี้",o:["<140/90","<130/80 และน่าจะ 120–130/70–79 เพราะมี albuminuria และเสี่ยง CVD สูง","<120/70","SBP 140–150"],a:1,
+   e:"เบาหวาน: เป้าหมาย office BP <strong>&lt;130/80</strong> <span class='lv I'>I</span> B · CKD ที่มี albuminuria และเสี่ยง CVD สูง: <strong>น่าจะตั้งเป้า 120–130/70–79</strong> <span class='lv IIa'>IIa</span> A · แต่<strong>ไม่ควรตั้งเป้าต่ำกว่า 120/70</strong> <span class='lv III'>III</span> C"}
+ ]},
+{t:"Resistant hypertension",
+ who:"หญิงไทย อายุ 56 ปี · ติดตามที่คลินิกความดัน",
+ v:["BP 158/96","BMI 33","eGFR 55","K+ 3.2","นอนกรน ง่วงกลางวัน"],
+ body:"ได้ยา 3 ชนิดในขนาดสูงสุดที่ทนได้: losartan 100 มก./วัน + amlodipine 10 มก./วัน + HCTZ 25 มก./วัน แต่ BP ที่คลินิกยังคง 158/96 มม.ปรอท",
+ steps:[
+  {q:"ก่อนสรุปว่าเป็น resistant hypertension ต้องทำอะไรก่อน",o:["ส่ง CT adrenal ทันที","แยกภาวะ pseudo-resistant hypertension","เพิ่ม losartan เป็น 200 มก.","ส่งทำ renal denervation"],a:1,
+   e:"ต้อง<strong>แยก pseudo-resistant hypertension ออกไปก่อน</strong> <span class='lv I'>I</span> A ด้วย 4 ขั้นตอน: <strong>1) วัด BP ให้ดีตามมาตรฐาน 2) ตรวจสอบว่ารับประทานยาถูกต้องครบถ้วน 3) ตรวจสอบว่าไม่ได้รับยา/สารที่เพิ่มความดันโลหิต 4) ตรวจ ABPM หรือ HBPM</strong>"},
+  {q:"ยืนยันแล้วว่าเป็น resistant hypertension จริง ควรตรวจหาอะไรต่อ",o:["ไม่ต้องตรวจเพิ่ม ปรับยาไปเรื่อย ๆ","ประเมินหาความดันโลหิตสูงชนิดทุติยภูมิ และเริ่ม/ปรับยาได้ทันทีระหว่างรอผล","หยุดยาทั้งหมดเพื่อทำ washout","ส่งผ่าตัด bariatric surgery"],a:1,
+   e:"<strong>ควรประเมินหาภาวะความดันโลหิตสูงชนิดทุติยภูมิในผู้ป่วยที่ยืนยันแล้วว่าเป็น resistant hypertension</strong> <span class='lv I'>I</span> A · และ<strong>ควรเริ่มให้ยาลดความดันโลหิตได้ทันทีระหว่างการประเมิน โดยไม่ต้องรอผลสรุป</strong> <span class='lv I'>I</span> A · รายนี้มี hypokalemia + resistant HT + OSA → เข้าข้อบ่งชี้คัดกรอง <strong>primary aldosteronism</strong> <span class='lv I'>I</span> A"},
+  {q:"ควรปรับ diuretic อย่างไร (eGFR 55)",o:["คงเดิม HCTZ 25 มก.","เปลี่ยนเป็น chlorthalidone หรือ indapamide และเพิ่ม spironolactone (eGFR ≥30)","เปลี่ยนเป็น furosemide","หยุด diuretic"],a:1,
+   e:"ขั้นตอนที่ 2 ของ resistant HT: <strong>เปลี่ยน thiazide เป็น long-acting thiazide-like diuretic เช่น chlorthalidone หรือ indapamide</strong> (เปลี่ยนเป็น loop diuretic ถ้า eGFR &lt;30–45) · <strong>เพิ่ม spironolactone หรือ eplerenone เมื่อ eGFR ≥30</strong> — ซึ่งเหมาะกับผู้ป่วยรายนี้ที่มี hypokalemia และสงสัย PA"},
+  {q:"เธอมีอาการนอนกรนและง่วงกลางวัน ควรทำอะไร",o:["ไม่เกี่ยวข้อง","น่าจะตรวจคัดกรอง OSA และถ้าพบอาจพิจารณาให้ใช้ CPAP","ให้ยานอนหลับ","ผ่าตัด bariatric surgery เพื่อลด BP"],a:1,
+   e:"<strong>น่าจะตรวจคัดกรองผู้ป่วย resistant hypertension เพื่อค้นหาภาวะ OSA และเมื่อพบอาจพิจารณาให้ใช้เครื่อง CPAP</strong> <span class='lv IIa'>IIa</span> B · ในผู้ป่วย HT ที่มี OSA ควรเลือก <strong>MRA, ACEIs หรือ ARBs ก่อนยากลุ่มอื่น</strong> <span class='lv I'>I</span> A · ส่วน <strong>bariatric surgery อย่างเดียวเพื่อลด BP ไม่แนะนำ</strong> <span class='lv III'>III</span> C"},
+  {q:"ถ้าปรับยาครบทุกขั้นตอนแล้วยังต้องใช้ยา 5 ชนิดและ BP ยังคง ≥140/90 จัดเป็นอะไร และมีทางเลือกใด",o:["Uncontrolled hypertension — เพิ่มยาไปเรื่อย ๆ","Refractory hypertension — ควรพิจารณา renal denervation (eGFR ≥30)","Controlled resistant hypertension","White-coat effect"],a:1,
+   e:"BP ≥140/90 ทั้งที่ใช้ยา <strong>≥5 ชนิด = refractory hypertension</strong> · <strong>ควรทำ renal denervation therapy ในผู้ป่วย refractory hypertension ที่ได้รับยาในขนาดสูงสุดที่ทนต่อยาได้</strong> <span class='lv I'>I</span> C (ขั้นตอนการรักษาระบุ eGFR ≥30)"}
+ ]},
+{t:"หญิงตั้งครรภ์ BP สูง",
+ who:"หญิงไทย อายุ 36 ปี · G1P0 GA 30 สัปดาห์",
+ v:["BP 164/108","ปวดศีรษะ","urine dipstick 3+","Plt 132,000","Cr 0.9"],
+ body:"ครรภ์แรก อายุครรภ์ 30 สัปดาห์ ไม่เคยมีความดันโลหิตสูงมาก่อน มาด้วยปวดศีรษะ วัด BP 2 รอบห่างกันไม่กี่นาที ได้ 164/108 และ 162/106 มม.ปรอท",
+ steps:[
+  {q:"BP ระดับนี้เข้าเกณฑ์ความดันโลหิตสูงในการตั้งครรภ์หรือไม่",o:["ยังไม่เข้า ต้องวัดห่างกัน 4 ชั่วโมง","เข้าเกณฑ์แล้ว เพราะ ≥160/110 จากการวัด 2 รอบห่างกันเป็นนาที","ต้องรอผล protein/creatinine ก่อน","ต้องวัดที่บ้าน 7 วันก่อน"],a:1,
+   e:"มี 2 เกณฑ์: <strong>≥140/90 จาก 2 รอบห่างกันอย่างน้อย 4 ชั่วโมง</strong> ในครรภ์ &gt;20 สัปดาห์ที่ไม่เคยมี HT <span class='lv I'>I</span> A · <strong>หรือ ≥160/110 จาก 2 รอบห่างกันเป็นนาที โดยไม่คำนึงถึงอายุครรภ์</strong> <span class='lv I'>I</span> A — รายนี้เข้าเกณฑ์ที่สอง"},
+  {q:"urine dipstick 3+ แปลผลอย่างไร",o:["ยังไม่สรุปได้ ต้องเก็บปัสสาวะ 24 ชั่วโมงเสมอ","วินิจฉัย proteinuria ได้ เพราะ dipstick ≥2+","ต้องมี ≥4+ จึงจะนับ","ไม่มีความหมายในการตั้งครรภ์"],a:1,
+   e:"เกณฑ์ proteinuria: urine protein 24 ชม. <strong>≥300 มก.</strong> หรือ <strong>protein/creatinine ratio ≥0.3</strong> · <strong>ถ้าตรวจด้วยวิธีข้างต้นไม่ได้ ให้ใช้ dipstick และวินิจฉัย proteinuria เมื่อผลเป็นบวกตั้งแต่ 2+ ขึ้นไป</strong> <span class='lv I'>I</span> A"},
+  {q:"ควรให้ยาลดความดันโลหิตเร่งด่วนตัวใด",o:["Enalapril IV","Hydralazine IV bolus 5 มก. หรือ Labetalol IV bolus 10–20 มก. หรือ Nifedipine รับประทาน 10–20 มก.","Nitroprusside","Losartan รับประทาน"],a:1,
+   e:"ยาลดความดันโลหิตเร่งด่วนในสตรีตั้งครรภ์มี 3 ตัว (ทั้งหมด <span class='lv I'>I</span> B): <strong>Hydralazine</strong> IV/IM bolus 5 มก. ตามด้วย bolus 5–10 มก. ทุก 20–40 นาที (รวมไม่เกิน 20 มก.) หรือหยด 0.5–10 มก./ชม. · <strong>Nifedipine</strong> รับประทาน 10–20 มก. ซ้ำได้ใน 20 นาที ไม่เกิน 180 มก./วัน · <strong>Labetalol</strong> IV bolus 10–20 มก. ตามด้วย 20–80 มก. ทุก 10–30 นาที (รวมไม่เกิน 300 มก.) หรือหยด 1–2 มก./นาที"},
+  {q:"ถ้าย้อนกลับไปตอนฝากครรภ์ครั้งแรก เธอควรได้ low-dose aspirin หรือไม่",o:["ไม่ควร เพราะไม่มีปัจจัยเสี่ยงสูง","ควร เพราะมีปัจจัยเสี่ยงปานกลาง ≥2 ข้อ (ครรภ์แรก + อายุ ≥35 ปี)","ควรให้เฉพาะเมื่อมีประวัติ preeclampsia","ห้ามให้ aspirin ในการตั้งครรภ์"],a:1,
+   e:"<strong>ควรให้ low-dose aspirin เมื่อมีปัจจัยกลุ่มนี้ ≥2 ข้อ</strong> <span class='lv I'>I</span> A: <strong>ไม่เคยมีบุตร</strong> · BMI &gt;30 · ประวัติ preeclampsia ในญาติสายตรง · ลักษณะเสี่ยงทาง socio-demographic · <strong>อายุ ≥35 ปี</strong> · ประวัติ low birth weight / โรคแทรกซ้อนในครรภ์ก่อน / เว้นช่วง ≥10 ปี — รายนี้มี 2 ข้อ"}
+ ]},
+{t:"ER: BP สูงมากแต่ไม่มี organ damage",
+ who:"ชายไทย อายุ 49 ปี · ห้องฉุกเฉิน",
+ v:["BP 206/118","ปวดศีรษะตื้อ ๆ","ไม่มี focal deficit","EKG ปกติ","Cr ปกติ · ไม่มี papilledema"],
+ body:"มาห้องฉุกเฉินด้วยปวดศีรษะหลังทะเลาะกับเพื่อนร่วมงาน ขาดยา amlodipine มา 2 สัปดาห์ ตรวจร่างกายและ lab ไม่พบ acute organ damage",
+ steps:[
+  {q:"ขั้นแรกต้องแยกอะไรก่อน",o:["ต้องแยกว่าเป็น hypertensive emergency หรือไม่ โดยตรวจร่างกายละเอียดและส่งตรวจพิเศษที่จำเป็น","ให้ยาฉีดลด BP ทันทีทุกราย","ให้กลับบ้านทันที","วัด BP ซ้ำอีก 3 วัน"],a:0,
+   e:"<strong>ควรตรวจร่างกายผู้ป่วยอย่างละเอียดและส่งตรวจพิเศษทางห้องปฏิบัติการที่จำเป็น เพื่อค้นหา ischemic/hemorrhagic stroke, acute heart failure, ACS, acute aortic syndromes, acute renal failure และให้แน่ใจว่าไม่มี acute organ damage</strong> <span class='lv I'>I</span> B"},
+  {q:"เมื่อยืนยันว่าไม่มี organ damage ควรลด BP เร็วแค่ไหน",o:["ให้เป็นปกติภายใน 1 ชั่วโมง","ค่อย ๆ ลดลงมาในเวลา 24–48 ชั่วโมง","ลด MAP ลง 40% ทันที","ไม่ต้องลดเลย"],a:1,
+   e:"นี่คือ <strong>pre-critical symptomatic hypertension (PSH)</strong> — <strong>ควรตั้งเป้าหมายในการรักษาโดยค่อย ๆ ลดความดันโลหิตลงมาในเวลา 24 ถึง 48 ชั่วโมง แทนที่จะรีบลดความดันโลหิตลงมาเป็นปกติโดยเร็ว</strong> <span class='lv I'>I</span> B"},
+  {q:"ควรจัดการปัจจัยกระตุ้นอย่างไร",o:["ไม่ต้องสนใจปัจจัยกระตุ้น","ค้นหาปัจจัยกระตุ้น และอาจใช้วิธีผ่อนคลาย ฝึกการหายใจ หรือยาลดความวิตกกังวล","ให้ยานอนหลับทุกราย","ส่ง CT brain ทุกราย"],a:1,
+   e:"<strong>ควรค้นหาปัจจัยกระตุ้นให้ความดันโลหิตเพิ่มสูงขึ้นอย่างกระทันหัน</strong> เช่น ความเครียด ความวิตกกังวล ยา/สารที่เพิ่ม BP ความเจ็บปวดรุนแรง <strong>การขาดยาลดความดันโลหิต</strong> การไม่เคยได้รับยา หรือ white-coat HT อย่างรุนแรง <span class='lv I'>I</span> B · <strong>อาจใช้วิธีผ่อนคลาย ฝึกการหายใจ และยาลดความวิตกกังวล</strong> <span class='lv IIb'>IIb</span> B"},
+  {q:"ก่อนจำหน่ายต้องทำอะไร",o:["ยืนยันว่าได้ยาลดความดันโลหิตกลับบ้านอย่างเหมาะสม และนัดกลับใน 2–4 สัปดาห์","นัดกลับใน 6 เดือน","ไม่ต้องนัด","ให้ยาฉีดกลับบ้าน"],a:0,
+   e:"<strong>ควรยืนยันให้แน่ใจว่าผู้ป่วยทุกรายได้รับยาลดความดันโลหิตกลับบ้านอย่างเหมาะสม</strong> <span class='lv I'>I</span> B · <strong>ควรนัดผู้ป่วยกลับมาภายในเวลา 2 ถึง 4 สัปดาห์ เพื่อประเมินอาการทางคลินิกและปรับยาให้เข้าสู่เป้าหมาย</strong> <span class='lv I'>I</span> C · หลังจำหน่ายน่าจะแนะนำให้เฝ้าระวังระดับ BP อย่างสม่ำเสมอ <span class='lv IIa'>IIa</span> C"}
+ ]}
+];
+
+/* ============ ข้อมูล: ตารางค้นหาเร็ว ============ */
+const REF = [
+["การวัด","ใช้ได้ทั้ง office BP, HBPM และ ABPM ในการวินิจฉัยและติดตามการรักษา","I","A"],
+["การวัด","ใช้เครื่องที่ผ่านการตรวจสอบมาตรฐาน และ cuff ต้นแขนขนาดได้มาตรฐาน","I","A"],
+["การวัด","ครั้งแรกวัดแขนสองข้างพร้อมกัน; ต่างกัน >10 ตรวจซ้ำและใช้แขนข้างที่สูงกว่า; ต่างกัน 15–20 ตรวจหาโรคหลอดเลือดแดง","I","A"],
+["การวัด","ประเมิน orthostatic hypotension ในผู้ป่วยเบาหวาน ผู้สูงอายุ หรือผู้มีอาการ orthostatic","IIa","C"],
+["การวัด","ผู้ป่วยหัวใจเต้นผิดจังหวะ ใช้วิธี auscultatory และวัดหลายครั้งหาค่าเฉลี่ย","IIa","C"],
+["การวัด","ผู้ได้รับยาลดความดันโลหิตทุกรายควรวัด BP ที่บ้าน (วัดที่ต้นแขน; ข้อมือเฉพาะเมื่อจำเป็น เช่น อ้วนมาก)","I","A"],
+["การวัด","ไม่แนะนำเครื่องวัดแบบ cuffless / ไร้ปลอกแขน ในการวินิจฉัยหรือประเมินการรักษา","III","C"],
+["การวัด","ใช้ ABPM เพื่อดู diurnal BP pattern, morning BP surge และ BP variability","I","A"],
+["การวัด","HBPM: ใช้เครื่อง oscillometric ที่ต้นแขนที่ได้มาตรฐาน หลีกเลี่ยงเครื่องวัดข้อมือ/นิ้วมือ","I","A"],
+["วินิจฉัย","วินิจฉัยเมื่อ office BP เข้าเกณฑ์จากการมาตรวจมากกว่า 1 ครั้งขึ้นไป","I","A"],
+["วินิจฉัย","ให้ความสำคัญกับการวัด BP ในสถานพยาบาลตามมาตรฐาน เพราะข้อผิดพลาดนำไปสู่การรักษาที่ไม่จำเป็น","I","A"],
+["วินิจฉัย","แนะนำใช้ HBPM ควบคู่กัน เพราะไทยมีความชุกของ white-coat และ masked hypertension","I","A"],
+["วินิจฉัย","หากค่านอกสถานพยาบาลไม่สอดคล้องกับใน รพ. ให้ยึดค่านอกสถานพยาบาลเป็นหลัก","I","A"],
+["วินิจฉัย","วัดนอก รพ. ไม่ได้ แต่มีประวัติ BP สูงผิดปกติ: ตรวจซ้ำตามมาตรฐานหรือใช้ AOBP ถ้าสูงวินิจฉัยได้เลย","I","A"],
+["วินิจฉัย","BP 130–139/80–89 + HMOD/CVD/เบาหวาน/เสี่ยง CV สูง → วินิจฉัยเป็น HT แม้ค่านอก รพ. ปกติ","I","A"],
+["วินิจฉัย","พบ BP ระดับ 3 (>180/110) ระหว่างนอนโรงพยาบาล วินิจฉัยได้เลย","I","A"],
+["วินิจฉัย","ระดับ 130–139/80–89 มม.ปรอท = BP at risk (เดิม high-normal)","I","A"],
+["ประเมิน","ตรวจ EKG 12 leads ในผู้ป่วยความดันโลหิตสูงทุกราย","I","B"],
+["ประเมิน","ตรวจ transthoracic echocardiography เมื่อ EKG ผิดปกติหรือสงสัยโรคหัวใจ","I","B"],
+["ประเมิน","อาจตรวจ echocardiography ในผู้ที่สงสัยมีหัวใจห้องล่างซ้ายโต (LVH)","IIb","B"],
+["ประเมิน","อาจตรวจ carotid artery ultrasound ในผู้มี carotid bruit / CVD / โรคหลอดเลือดแดงบริเวณอื่น","IIb","B"],
+["ประเมิน","อาจตรวจ coronary calcium scan ในผู้มีความเสี่ยง CV ระดับปานกลาง","IIb","C"],
+["ประเมิน","ตรวจ ultrasound abdominal aorta ในผู้ที่สงสัย aortic aneurysm","I","C"],
+["ประเมิน","อาจตรวจ PWV และ ABI","IIb","B"],
+["ประเมิน","ตรวจ serum creatinine และประเมิน eGFR / ตรวจหา albumin ในปัสสาวะ","I","B"],
+["ประเมิน","ตรวจหา urine microalbumin ในผู้ป่วยเบาหวาน","I","A"],
+["ประเมิน","น่าจะตรวจ kidney ultrasound และ Doppler ใน CKD, albuminuria หรือสงสัย renal artery stenosis","IIa","C"],
+["ประเมิน","ตรวจ retina ในผู้ที่ BP สูงมาก (ระดับ 3) หรือเป็นเบาหวาน","I","C"],
+["ประเมิน","น่าจะส่งตรวจสมองด้วย CT scan หรือ MRI ในผู้มีอาการทางระบบประสาทหรือมี cognitive disorders","IIa","B"],
+["พฤติกรรม","ให้คำแนะนำการปรับพฤติกรรมชีวิตแก่ผู้เสี่ยงหรือเป็นโรคแล้วทุกราย","I","A"],
+["พฤติกรรม","ลดน้ำหนักในผู้ที่น้ำหนักเกินหรือเป็นโรคอ้วน — เป้าหมาย BMI 18.5–22.9 กก./ตร.ม.","I","A"],
+["พฤติกรรม","รับประทานรูปแบบอาหารเพื่อสุขภาพเป็นประจำ (DASH)","I","A"],
+["พฤติกรรม","จำกัดเกลือและโซเดียม — ไม่เกิน 2 กรัม/วัน หรือเข้มงวดที่ 1.5 กรัม/วัน","I","A"],
+["พฤติกรรม","ออกกำลังกายแอโรบิกอย่างน้อยสัปดาห์ละ 5 วัน รวม 150 นาที/สัปดาห์ ไม่งดติดต่อกันเกิน 2 วัน","I","A"],
+["พฤติกรรม","เลิกบุหรี่และหลีกเลี่ยงควันบุหรี่","I","A"],
+["พฤติกรรม","จำกัดแอลกอฮอล์ — หญิงไม่เกิน 1, ชายไม่เกิน 2 standard drink ต่อวัน","I","A"],
+["พฤติกรรม","น่าจะพยายามหลีกเลี่ยงมลพิษทางเสียงและทางอากาศ / จัดการความเครียด","IIa","C"],
+["การให้ยา","เริ่มยาเมื่อ SBP ≥130 และ/หรือ DBP ≥80 ในผู้ที่มี CVD, เบาหวาน หรือความเสี่ยง CVD 10 ปี ≥10% (Thai CV risk score)","I","A"],
+["การให้ยา","เริ่มยาเมื่อ SBP ≥140 และ/หรือ DBP ≥90 (ผู้ป่วยทั่วไป)","I","C"],
+["การให้ยา","เลือกยาเริ่มต้นจาก 5 กลุ่มหลัก: ACEIs, ARBs, beta-blockers, CCBs, diuretics (thiazides/thiazide-like)","I","A"],
+["การให้ยา","ผู้ป่วยส่วนใหญ่เริ่มด้วยยา 2 ชนิด: RAS blocker + CCB หรือ RAS blocker + thiazide/thiazide-like","I","A"],
+["การให้ยา","เริ่มยาชนิดเดียวใน: ผู้สูงอายุมาก · ร่างกายทรุดโทรม · BP 140–149/90–95 เสี่ยง CVD ต่ำ · BP at risk ที่เสี่ยง CVD สูง","I","C"],
+["การให้ยา","ยา 2 ชนิดขนาดสูงสุดยังไม่ถึงเป้า → เพิ่มเป็น 3 ชนิด (RAS blocker + CCB + thiazide/thiazide-like)","I","A"],
+["การให้ยา","ใช้ยารวมเม็ด (single-pill combination) 2–3 ชนิด ในทุกขั้นตอนของการรักษา","I","A"],
+["การให้ยา","ยา 3 ชนิด (หนึ่งในนั้นเป็น diuretic) ยังคุมไม่ได้ → รักษาแบบ resistant hypertension","I","A"],
+["การให้ยา","ไม่ควรใช้ RAS blockers 2 ชนิดร่วมกัน (ACEI + ARB) — เสี่ยงไตวายเฉียบพลันและโพแทสเซียมสูง","III","A"],
+["การให้ยา","อาจเลือกใช้ ARNI แทน RAS blocker ในผู้ป่วย resistant hypertension","IIb","B"],
+["การให้ยา","น่าจะนำ SGLT2i หรือ GLP1-RAs ใช้เป็นยาเสริมในผู้ป่วยที่มีโรคร่วมและจำเป็นต้องใช้","IIa","A"],
+["การให้ยา","ไม่ควรใช้ SGLT2i และ/หรือ GLP1-RAs เพื่อวัตถุประสงค์ลดความดันโลหิตแต่เพียงอย่างเดียว","III","C"],
+["การให้ยา","ให้ผู้ป่วยเลือกได้ว่าจะรับประทานยาตอนเช้าหรือก่อนนอน; โดยทั่วไปตอนเช้าดีกว่า","I","C"],
+["การให้ยา","ผู้ที่พิสูจน์แล้วว่ามี nocturnal hypertension อาจรับประทานยาก่อนนอน","IIb","C"],
+["เป้าหมาย","อายุ 18–64 ปี: ลด office BP ต่ำกว่า 130/80 มม.ปรอท","I","A"],
+["เป้าหมาย","อายุ 65–79 ปี: ลด office BP ต่ำกว่า 140/90 ในเบื้องต้น","I","A"],
+["เป้าหมาย","อายุ 65–79 ปี: ลดต่อจนต่ำกว่า 130/80 ถ้าผู้ป่วยทนต่อการรักษาได้ดี","I","B"],
+["เป้าหมาย","อายุ 65–79 ปี ที่มี ISH: ลด SBP มาอยู่ระหว่าง 140–150 ก่อนในเบื้องต้น","I","A"],
+["เป้าหมาย","อายุ ≥80 ปี: ลด SBP มาอยู่ 140–150 และ DBP ต่ำกว่า 80 มม.ปรอท","I","A"],
+["เป้าหมาย","ไม่ควรตั้งเป้าหมายให้ SBP ต่ำกว่า 120 และ DBP ต่ำกว่า 70 มม.ปรอท","III","C"],
+["เป้าหมาย","home BP เฉลี่ยต่ำกว่า 130/80 มม.ปรอท","I","B"],
+["เป้าหมาย","home BP ต่ำกว่า 125/75 ในผู้ป่วยเบาหวาน CVD ความเสี่ยงสูง หรืออายุ 18–65 ปี","IIa","B"],
+["เป้าหมาย","home BP ต่ำกว่า 135/85 ในผู้อายุ 65–79 ปี หรือผู้เคยมีประวัติ stroke","I","C"],
+["เป้าหมาย","home BP ต่ำกว่า 140/80 ในผู้อายุตั้งแต่ 80 ปีขึ้นไป","IIb","C"],
+["White-coat","ตรวจหา white-coat HT โดยวัด BP นอก รพ. ในผู้ที่ office BP อยู่ในระดับ 1","I","B"],
+["White-coat","ประเมิน CV risk factors และตรวจหา HMOD; แนะนำปรับพฤติกรรม; ติดตามเป็นระยะ","I","B"],
+["White-coat","น่าจะพิจารณาให้ยาแก่ผู้ที่มี HMOD และ/หรือความเสี่ยง CVD ระดับสูง","IIa","C"],
+["Masked","ผู้ที่ office BP อยู่ในเกณฑ์ BP at risk ควรตรวจ ABPM และ/หรือ HBPM เพื่อคัดกรอง masked hypertension","I","B"],
+["Masked","ผู้ยืนยันว่าเป็น masked HT ควรปรับพฤติกรรมอย่างจริงจังและติดตามใกล้ชิด","I","C"],
+["Masked","น่าจะให้ยาแก่ผู้ที่มีความเสี่ยงสูงต่อ CVD และ/หรือมี HMOD เกิดขึ้นแล้ว","IIa","C"],
+["โรคหัวใจ","CAD ระยะสงบ: เริ่มยาเมื่อ BP 130–139 และ/หรือ 85–89 มม.ปรอท","I","A"],
+["โรคหัวใจ","CAD ระยะสงบ: ใช้ ACEIs และ/หรือ beta-blocker (ทน ACEIs ไม่ได้ใช้ ARBs แทน)","I","A"],
+["โรคหัวใจ","CAD + ปวดเค้นอก: ใช้ beta-blocker และ/หรือ CCBs ทั้ง DHP และ non-DHP","I","A"],
+["โรคหัวใจ","CAD ระยะสงบ: ลดอัตราเต้นหัวใจให้อยู่ 60–80 ครั้งต่อนาที ด้วย beta-blocker หรือ non-DHP CCBs","I","B"],
+["หัวใจล้มเหลว","รักษาความดันโลหิตสูงให้ดีเพื่อป้องกันการเกิดหัวใจล้มเหลว; ยาทุกกลุ่มหลักใช้ได้","I","A"],
+["หัวใจล้มเหลว","HFrEF: ใช้ ACEIs/ARBs/ARNI + beta-blocker + MRA + SGLT2i ร่วมกัน","I","A"],
+["หัวใจล้มเหลว","HFrEF: ยังไม่ถึงเป้าแม้ครบ 4 กลุ่มและให้ diuretic แล้ว → เพิ่ม DHP-CCBs","I","B"],
+["หัวใจล้มเหลว","ไม่ควรใช้ non-DHP-CCBs ในผู้ป่วย HFrEF","III","C"],
+["หัวใจล้มเหลว","HFpEF: ควบคุมความดันโลหิตให้ดี; อาจใช้ ARNI แทน RAS blocker เมื่อสงสัย resistant HT","IIb","B"],
+["หัวใจล้มเหลว","HFpEF: อาจใช้ spironolactone โดยเฉพาะผู้ที่ LVEF ค่อนข้างต่ำ","IIb","B"],
+["หัวใจล้มเหลว","คุม BP <130/80 ในผู้เสี่ยงต่อหัวใจล้มเหลว; คุม SBP <130 ใน HFrEF และ HFpEF","I","A/C"],
+["โรคไต","CKD: ติดตามเฝ้าระวัง BP อยู่เสมอไม่ว่าอยู่ระยะใด","I","A"],
+["โรคไต","CKD: ปรับพฤติกรรม + ให้ยาโดยทันทีหากพบ BP ≥140/90 มม.ปรอท","I","A"],
+["โรคไต","CKD + albuminuria + เสี่ยง CVD สูง: น่าจะตั้งเป้า office BP 120–130/70–79 มม.ปรอท","IIa","A"],
+["โรคไต","CKD ที่ UACR ≥30 มก./กรัม creatinine: เลือก ACEIs หรือ ARBs เป็นยาชนิดแรก","I","A"],
+["โรคไต","CKD ที่ albuminuria <30 มก./กรัม: ใช้ยากลุ่มหลักชนิดใดก็ได้","I","B"],
+["โรคไต","ไม่ควรใช้ ACEIs ร่วมกับ ARBs ในผู้ป่วยโรคไตเรื้อรัง","III","B"],
+["โรคไต","โรคหลอดเลือดไต: น่าจะกำหนดเป้าหมายเดียวกับ CKD ชนิดอื่น; อาจใช้ ACEIs/ARBs ถ้าทนได้และติดตามใกล้ชิด","IIa/IIb","B"],
+["โรคไต","ผู้ได้รับการเปลี่ยนไต: อาจลด office BP ต่ำกว่า 130/80; ยาชนิดแรกคือ ACEIs หรือ ARBs หรือ DHP-CCBs","I","A"],
+["Stroke","Acute ischemic stroke: ลด BP ที่ >185/110 ลงมาโดยเร็วก่อนให้ IV thrombolysis","I","B"],
+["Stroke","น่าจะลด BP ที่ >185/110 ลงมาโดยเร็วก่อนทำ mechanical thrombectomy","IIa","B"],
+["Stroke","คุม BP ต่ำกว่า 180/105 ภายใน 24 ชั่วโมงแรกหลังทำ reperfusion","I","C"],
+["Stroke","ไม่ควรใช้ nifedipine ชนิดออกฤทธิ์สั้นในผู้ป่วย acute ischemic stroke","III","C"],
+["Stroke","ให้ thrombolysis/thrombectomy ไม่ได้: น่าจะลด BP ถ้า >220/120 และคุม SBP <220, DBP <120","IIa","C"],
+["Stroke","sICH เฉียบพลัน: น่าจะให้ยาลด BP ทางหลอดเลือดดำเมื่อ SBP > 180 มม.ปรอท","IIa","B"],
+["Stroke","sICH เฉียบพลันความรุนแรงต่ำถึงปานกลาง: อาจลด SBP ลงถึง 140 มม.ปรอท","IIb","B"],
+["Stroke","ป้องกัน stroke ซ้ำ (ischemic): อาจให้ยาเมื่อ BP >140/90 ตั้งเป้า 120–130/70–80","IIb","B"],
+["Stroke","ป้องกันซ้ำในผู้เคยเป็น sICH: น่าจะลด BP ระยะยาวถึง 130/80 มม.ปรอท","IIa","B"],
+["PAD","คุม BP ให้อยู่ระดับปกติ (SBP 120–129) เพื่อลดความเสี่ยง CVD และโรคแทรกซ้อนจาก PAD","I","B"],
+["PAD","เลือกยาลดความดันโลหิตจากกลุ่มหลักได้ทุกกลุ่ม: Diuretics, CCBs, RAS blockers, beta-blockers","I","B"],
+["PAD","ปรับพฤติกรรมชีวิต โดยเฉพาะหยุดสูบบุหรี่ และควบคุมปัจจัยเสี่ยง atherosclerosis","I","C"],
+["เบาหวาน","วินิจฉัย HT ในผู้ป่วยเบาหวานเมื่อ office BP เฉลี่ย ≥130/80 จากการมาตรวจมากกว่า 1 ครั้ง","I","A"],
+["เบาหวาน","ผู้ป่วยเบาหวานที่ SBP ≥180 และ/หรือ DBP ≥110 วินิจฉัยว่าเป็นความดันโลหิตสูงได้ทันที","I","B"],
+["เบาหวาน","ผู้ป่วยเบาหวานที่มีความดันโลหิตสูงควรมีการตรวจ HBPM","I","A"],
+["เบาหวาน","เป้าหมาย: ลด office BP ต่ำกว่า 130/80 มม.ปรอท","I","B"],
+["เบาหวาน","BP 130–139/80–89: ให้คำแนะนำปรับพฤติกรรม (ลดน้ำหนัก ลดโซเดียม ลด/เลิกแอลกอฮอล์ เพิ่มออกกำลังกาย)","I","A"],
+["เบาหวาน","ให้ยาเมื่อ office BP ≥140/90 หรือ ≥130/80 และปรับพฤติกรรมมาแล้วอย่างน้อย 3 เดือน","I","A"],
+["เบาหวาน","ให้ยาเริ่มต้น 2 ชนิดเมื่อ office BP ≥150/90 มม.ปรอท — ยารวมเม็ดยิ่งส่งผลดี","I","A"],
+["เบาหวาน","ยาชนิดแรกใช้กลุ่มหลักชนิดใดก็ได้; มี albuminuria (UACR ≥30) เลือก ACEIs หรือ ARBs","I","A"],
+["เบาหวาน","ไม่ควรใช้ ACEIs ร่วมกับ ARBs","III","A"],
+["เบาหวาน","เลือกใช้ SGLT2i หรือ GLP1-RAs ในผู้ป่วยเบาหวาน + HT ที่มี ASCVD","I","A"],
+["เบาหวาน","ใช้ SGLT2i ในผู้ป่วยเบาหวาน + HT ที่มีหัวใจล้มเหลวหรือ CKD (eGFR <60 หรือมี albuminuria)","I","A"],
+["เบาหวาน","น่าจะเลือกใช้ GLP1-RAs ในผู้ป่วยเบาหวาน + HT ที่มีหัวใจล้มเหลวหรือ CKD","IIa","A"],
+["ลิ้นหัวใจ","Aortic stenosis: สนับสนุนให้ใช้ RAS blockers (อาจลด myocardial fibrosis); beta-blockers เมื่อจำเป็นเพื่อคุม HR","IIa","C"],
+["ลิ้นหัวใจ","Aortic regurgitation: น่าจะใช้ ACEIs หรือ ARBs; เป้าหมายเดียวกับผู้ป่วย HT ทั่วไป","IIa/I","C"],
+["ลิ้นหัวใจ","Mitral regurgitation: กำหนดเป้าหมายระดับเดียวกับผู้ป่วยความดันโลหิตสูงทั่วไป","—","—"],
+["โรคอ้วน","การลดน้ำหนักเป็นพื้นฐานสำคัญในการลด BP และลดความเสี่ยง CVD","I","A"],
+["โรคอ้วน","ตระหนักถึงโรคร่วมอื่น เช่น OSA และรักษาอย่างเหมาะสมหากตรวจพบ","I","A"],
+["โรคอ้วน","เลือกยาที่ไม่ทำให้น้ำหนักเพิ่มขึ้นและไม่ทำให้ metabolic profile รุนแรงขึ้น","I","A"],
+["OSA","สงสัย OSA ในผู้ที่ง่วงนอนกลางวัน นอนกรนเสียงดัง ร่วมกับสำลัก/หยุดหายใจเป็นช่วง ๆ ขณะหลับ","I","A"],
+["OSA","ส่งตรวจ polysomnography ในผู้ป่วยความดันโลหิตสูงที่สงสัยว่ามีภาวะ OSA","I","A"],
+["OSA","น่าจะตรวจหา primary aldosteronism ในผู้ป่วยความดันโลหิตสูงที่มีภาวะ OSA","IIa","B"],
+["OSA","เลือกใช้ MRA, ACEIs หรือ ARBs ก่อนยากลุ่มอื่นในผู้ป่วยความดันโลหิตสูงที่มี OSA","I","A"],
+["OSA","น่าจะพิจารณาใช้เครื่อง CPAP เสริมเพื่อลดความดันโลหิต","IIa","B"],
+["มะเร็ง","วัดประเมินความดันโลหิตอย่างแม่นยำก่อนเริ่มให้ยารักษาโรคมะเร็ง","I","A"],
+["มะเร็ง","ใช้ ABPM หรือ HBPM ระหว่างการให้ยารักษามะเร็งและระหว่างติดตามผล","I","C"],
+["มะเร็ง","ไม่ควรเริ่มให้ยารักษามะเร็งแก่ผู้ป่วยที่มีความดันโลหิตตั้งแต่ 180/110 มม.ปรอทขึ้นไป","III","C"],
+["AF","วินิจฉัยและรักษาความดันโลหิตสูงในผู้มีความเสี่ยงต่อ AF ตั้งแต่ระยะแรกของโรค","I","C"],
+["AF","ลด BP เพื่อลดความเสี่ยง incident AF และ recurrent AF โดยใช้เป้าหมายเดียวกับ HT ทั่วไป","I","A"],
+["AF","น่าจะใช้ ACEIs หรือ ARBs และ beta-blockers ในการป้องกัน recurrent AF","IIa","B"],
+["AF","น่าจะวัด BP ที่สถานพยาบาลด้วยวิธี auscultation อย่างน้อย 3 ครั้ง เพื่อลดความแปรปรวน","IIa","B"],
+["AF","ใช้ beta-blockers คุม HR <110 ครั้ง/นาที ใน AF ทั่วไป และ <80 ครั้ง/นาที ใน AF ที่มีอาการ","I","B"],
+["AF","ไม่ควรใช้ beta-blockers ร่วมกับ non-DHP CCBs","III","C"],
+["AF","น่าจะพิจารณาให้ยาต้านการแข็งตัวของเลือดเพื่อป้องกัน stroke ในผู้ป่วย HT >140/90","IIa","B"],
+["AF","ไม่ควรใช้ non-DHP CCBs คุม HR หากไม่จำเป็น (ปฏิกิริยากับยาต้านการแข็งตัวของเลือดชนิดรับประทาน)","III","B"],
+["ตั้งครรภ์","Preeclampsia: BP ≥140/90 จาก 2 รอบห่างกัน ≥4 ชั่วโมง ในครรภ์ >20 สัปดาห์ที่ไม่เคยมี HT","I","A"],
+["ตั้งครรภ์","Preeclampsia: BP ≥160/110 จาก 2 รอบห่างกันเป็นนาที โดยไม่คำนึงถึงอายุครรภ์","I","A"],
+["ตั้งครรภ์","Proteinuria: urine protein 24 ชม. ≥300 มก. หรือ protein/creatinine ≥0.3 หรือ dipstick ≥2+","I","A"],
+["ตั้งครรภ์","ความผิดปกติระบบอื่น: เกล็ดเลือด <100,000 · Cr >1.1 หรือสูงขึ้น ≥2 เท่า · transaminases >2 เท่า · ปอดบวมน้ำ · ปวดศีรษะไม่ตอบสนองยา · ตามัว · ชัก tonic-clonic","I","A"],
+["ตั้งครรภ์","Hydralazine IV/IM bolus 5 มก. ตามด้วย bolus 5–10 มก. ทุก 20–40 นาที (รวมไม่เกิน 20 มก.) หรือหยด 0.5–10 มก./ชม.","I","B"],
+["ตั้งครรภ์","Nifedipine รับประทาน 10–20 มก. ซ้ำได้ใน 20 นาที; ถ้าจำเป็นให้ 10–20 มก. ทุก 2–6 ชม. ไม่เกิน 180 มก./วัน","I","B"],
+["ตั้งครรภ์","Labetalol IV bolus 10–20 มก. ตามด้วย bolus 20–80 มก. ทุก 10–30 นาที (รวมไม่เกิน 300 มก.) หรือหยด 1–2 มก./นาที","I","B"],
+["ตั้งครรภ์","ให้ low-dose aspirin เมื่อมีปัจจัยเสี่ยงสูง ≥1 ข้อ: ประวัติ preeclampsia · multifetal gestation · HT เดิม · DM ชนิด 1 หรือ 2 · โรคไต · โรค autoimmune","I","A"],
+["ตั้งครรภ์","ให้ low-dose aspirin เมื่อมีปัจจัยปานกลาง ≥2 ข้อ: ไม่เคยมีบุตร · BMI >30 · ประวัติในญาติสายตรง · socio-demographic · อายุ ≥35 ปี · ประวัติ low birth weight/โรคแทรกซ้อนครรภ์ก่อน/เว้นช่วง ≥10 ปี","I","A"],
+["ตั้งครรภ์","ไม่ควรให้ low-dose aspirin ในสตรีที่เคยตั้งครรภ์ครบกำหนดมาก่อนโดยไม่มีโรคแทรกซ้อนใด ๆ","III","A"],
+["ผ่าตัด","ประเมินอย่างละเอียดเพื่อดูความเสี่ยง CVD และประเมินหา HMOD ก่อนผ่าตัด non-cardiac","I","C"],
+["ผ่าตัด","ผ่าตัดไม่ฉุกเฉิน: คุม SBP ต่ำกว่า 160 มม.ปรอท เสียก่อนด้วยวิธีการรักษามาตรฐาน","I","B"],
+["ผ่าตัด","ไม่ควรเลื่อนการผ่าตัดในผู้ป่วยที่มีความดันโลหิตสูง grade 1 หรือ grade 2","III","C"],
+["ผ่าตัด","SBP ≥180 และ/หรือ DBP ≥110: น่าจะชะลอการผ่าตัดจนกว่าจะคุม BP ได้ ยกเว้นกรณีฉุกเฉิน","IIa","B"],
+["ผ่าตัด","คุม BP ระหว่างผ่าตัดให้มีความแปรปรวนน้อยที่สุด; ผู้ที่เคยได้ยาลด BP ควรให้ยาต่อไป","I","B"],
+["ผ่าตัด","อาจพิจารณาหยุด RAS blockers ชั่วคราวในผู้ที่กังวลว่าจะเกิดความดันโลหิตต่ำระหว่างผ่าตัด","IIb","B"],
+["ผ่าตัด","ไม่ควรหยุด beta-blockers ที่ผู้ป่วยได้รับอยู่แล้วโดยทันที","III","C"],
+["ผู้ใหญ่ตอนต้น","วินิจฉัยและรักษาตามคำแนะนำเช่นเดียวกับผู้ป่วยความดันโลหิตสูงทั่วไป","I","B"],
+["ผู้ใหญ่ตอนต้น","น่าจะหาสาเหตุ secondary HT ในรายใหม่อายุ <40 ปี ที่มี HT ระดับ 2 ขึ้นไป และ/หรือมี HMOD","IIa","C"],
+["ผู้ใหญ่ตอนต้น","อาจตรวจหาสาเหตุ secondary HT ในผู้ป่วยรายใหม่อายุน้อยกว่า 40 ปี ทุกราย","IIb","C"],
+["IDH","แนะนำให้ผู้ป่วย IDH ทุกรายปรับเปลี่ยนวิธีการดำเนินชีวิตให้เหมาะสม","I","C"],
+["IDH","ใช้ยาลดความดันโลหิตให้แก่ผู้ที่มี IDH เช่นเดียวกับผู้ป่วยความดันโลหิตสูงทั่วไป","I","C"],
+["ผู้สูงอายุ","อายุ 60–79 ปี: เริ่มยาเมื่อ office BP ≥140/90 มม.ปรอท","I","A"],
+["ผู้สูงอายุ","อายุ 60–79 ปี: เป้าหมายเบื้องต้น 130–140/70–79 แล้วถัดมา 120–129/70–79 ถ้าทนได้ดี","I","A/B"],
+["ผู้สูงอายุ","อายุ ≥80 ปี: ประเมิน frailty/functionality ก่อนเริ่มการรักษาและประเมินซ้ำปีละครั้ง","I","C"],
+["ผู้สูงอายุ","อายุ ≥80 ปี: เริ่มยาเมื่อ office SBP ≥160 มม.ปรอท (อาจเริ่มที่ 140–159 ได้ในบางกรณี IIb,C)","I","A"],
+["ผู้สูงอายุ","เริ่มยาในขนาดต่ำและปรับขนาดยาขึ้นช้า ๆ; ตรวจหา orthostatic hypertension อย่างสม่ำเสมอ","I","C"],
+["ผู้สูงอายุ","น่าจะลดหรือหยุดยาในผู้สูงอายุตอนปลายที่ SBP <120 หรือมี orthostatic hypotension รุนแรง หรือ frailty รุนแรง","IIa","C"],
+["ผู้สูงอายุ","ผู้ที่มี frailty/functionality และ/หรือ dementia ระดับปานกลางขึ้นไป: กำหนดแผนการรักษาเป็นรายบุคคล","I","C"],
+["ISH","วัด office BP หลายครั้งเพื่อเฉลี่ย และใช้ HBPM ช่วยวินิจฉัย ISH เพื่อแก้ปัญหา variability ของ SBP","I","C"],
+["ISH","เป้าหมายเบื้องต้น: ลด SBP ที่ตรวจในสถานพยาบาลลงมาอยู่ระหว่าง 140–150 มม.ปรอท","I","A"],
+["ISH","อาจลด SBP ลงมาอยู่ 130–139 ถ้าผู้ป่วยทนต่อการรักษาได้ดีและ DBP ไม่ต่ำเกินไป","IIb","B"],
+["ISH","เลือก CCBs และ thiazide/thiazide-like diuretics เป็นยาทางเลือกแรก","I","A"],
+["ISH","เริ่มรักษาผู้ป่วย ISH สูงอายุที่มีสุขภาพดี ด้วยยาลดความดันโลหิต 2 ชนิดตั้งแต่แรก","I","C"],
+["ทุติยภูมิ","สาเหตุ endocrine: PA · PPGL · Cushing · ไทรอยด์เป็นพิษและขาดไทรอยด์ · hypercalcemia/hyperparathyroidism · CAH · acromegaly","—","—"],
+["ทุติยภูมิ","สาเหตุอื่น: OSA (metabolic) · renal parenchymal disease และ renal artery stenosis (renal) · coarctation of aorta (cardiovascular)","—","—"],
+["ทุติยภูมิ","PPGL: เลือกใช้ alpha-adrenergic receptor blockers ก่อนเริ่มใช้ beta-blockers","I","A"],
+["ทุติยภูมิ","PPGL: น่าจะพิจารณาตรวจทางพันธุกรรมให้แก่ผู้ป่วยหากสามารถทำได้","IIa","B"],
+["ทุติยภูมิ","PA: คัดกรองในผู้ป่วยความดันโลหิตสูงที่เริ่มเป็นตั้งแต่อายุยังไม่ถึง 40 ปี","I","B"],
+["ทุติยภูมิ","PA: คัดกรองในผู้ที่มี adrenal incidentaloma หรือโพแทสเซียมในเลือดต่ำ หรือ resistant hypertension","I","A"],
+["ทุติยภูมิ","PA: น่าจะคัดกรองในผู้ป่วยความดันโลหิตสูงที่เป็น OSA หรือมี AF ชนิดที่ไม่มีสาเหตุ","IIa","B"],
+["ทุติยภูมิ","PA: ตรวจ CT scan โดยใช้ adrenal protocol ในผู้ป่วย PA ทุกราย","I","A"],
+["ทุติยภูมิ","PA: รักษา unilateral PA ด้วยการผ่าตัด unilateral adrenalectomy","I","A"],
+["ทุติยภูมิ","PA: ให้ spironolactone รักษา bilateral PA หรือ unilateral PA ที่ไม่สามารถผ่าตัดได้","I","B"],
+["ทุติยภูมิ","PA: ให้ spironolactone ระยะยาว อาจกำหนด plasma renin activity เป้าหมาย >1 ng/ml/min","IIb","B"],
+["Resistant","แยกภาวะ pseudo-resistant hypertension ออกไปในการประเมินผู้ป่วยที่สงสัย resistant hypertension","I","A"],
+["Resistant","ประเมินหาภาวะความดันโลหิตสูงชนิดทุติยภูมิในผู้ป่วยที่ยืนยันแล้วว่าเป็น resistant hypertension","I","A"],
+["Resistant","เริ่มให้ยาลดความดันโลหิตได้ทันทีระหว่างการประเมินหาสาเหตุทุติยภูมิ โดยไม่ต้องรอผลสรุป","I","A"],
+["Resistant","ให้รับประทานโซเดียมวันละไม่เกิน 2 กรัม (เกลือโซเดียมคลอไรด์ไม่เกิน 5 กรัม) ร่วมกับอาหารแบบ DASH","I","A"],
+["Resistant","ควบคุมน้ำหนักในผู้ที่น้ำหนักเกินหรือเป็นโรคอ้วน ด้วยการควบคุมอาหารและออกกำลังกายสม่ำเสมอ","I","B"],
+["Resistant","ไม่แนะนำการรักษาด้วย bariatric surgery แต่เพียงอย่างเดียวเพื่อวัตถุประสงค์ลดความดันโลหิต","III","C"],
+["Resistant","น่าจะตรวจคัดกรองหาภาวะ OSA และเมื่อพบอาจพิจารณาให้ใช้เครื่อง CPAP","IIa","B"],
+["Resistant","นิยาม: BP ≥140/90 ทั้งที่ใช้ยา 3 ชนิด (รวม diuretic) หรือ 4 ชนิด = resistant; ≥5 ชนิด = refractory","—","—"],
+["Crisis","ตรวจร่างกายละเอียดและส่งตรวจพิเศษเพื่อค้นหา stroke, acute heart failure, ACS, acute aortic syndromes, acute renal failure","I","B"],
+["Crisis","Hypertensive emergencies: ลดความดันโลหิตลงมาโดยทันทีเพื่อป้องกันไม่ให้เกิด organ damage เพิ่มขึ้น","I","A"],
+["Crisis","ใช้ยาลดความดันโลหิตแบบฉีดเข้าหลอดเลือดดำ เลือกชนิดตาม organ damage ที่ปรากฏ","I","A"],
+["Crisis","ACS: เป้า SBP <140 เร็วที่สุด (nitroglycerine, labetalol); ไม่ควรลด SBP <110 หรือ DBP <60","—","—"],
+["Crisis","Acute decompensated HF: เป้า SBP <140 เร็วที่สุด (nitroglycerine, nitroprusside) + loop diuretics ตามจำเป็น","—","—"],
+["Crisis","Malignant hypertension: ลด MAP ลงร้อยละ 20–25 ใน 2–3 ชั่วโมง (nicardipine, labetalol)","—","—"],
+["Crisis","Hypertensive encephalopathy: ลด MAP ลงร้อยละ 20–25 เร็วที่สุดที่ทำได้ (nicardipine, labetalol)","—","—"],
+["Crisis","Acute aortic diseases: SBP <120 และชีพจร <60 ครั้ง/นาที (esmolol, labetalol, nicardipine, nitroglycerine)","—","—"],
+["PSH","ค้นหาปัจจัยกระตุ้น เช่น ความเครียด วิตกกังวล ยา/สารที่เพิ่ม BP ความเจ็บปวดรุนแรง การขาดยา หรือ white-coat รุนแรง","I","B"],
+["PSH","อาจใช้วิธีผ่อนคลาย ฝึกการหายใจ และยาลดความวิตกกังวล เพื่อบรรเทาอาการและช่วยลด BP","IIb","B"],
+["PSH","น่าจะให้ยาบรรเทาอาการเจ็บปวดในผู้ป่วยที่มีความเจ็บปวดระดับปานกลางถึงรุนแรง","IIa","B"],
+["PSH","ค่อย ๆ ลดความดันโลหิตลงมาในเวลา 24 ถึง 48 ชั่วโมง แทนที่จะรีบลดลงมาเป็นปกติโดยเร็ว","I","B"],
+["PSH","ยืนยันว่าผู้ป่วยทุกรายได้รับยาลดความดันโลหิตกลับบ้านอย่างเหมาะสม","I","B"],
+["PSH","นัดผู้ป่วยกลับมาภายในเวลา 2 ถึง 4 สัปดาห์ เพื่อประเมินอาการและปรับยาเข้าสู่เป้าหมาย","I","C"],
+["Device","ควรทำ renal denervation ในผู้ป่วย refractory hypertension ที่ได้ยาลด BP ในขนาดสูงสุดที่ทนต่อยาได้","I","C"],
+["Device","น่าจะพิจารณาทำในผู้ป่วยที่เป็น ASCVD อยู่แล้ว และ/หรือมี progressive HMOD และมี resistant hypertension","IIa","B"],
+["Device","อาจพิจารณาทำในผู้ป่วย resistant hypertension ที่ได้ยาลด BP ในขนาดสูงสุดที่ทนต่อยาได้","IIb","A"],
+["Device","อาจพิจารณาทำในผู้ที่ทนต่อยาลด BP ไม่ได้ไม่ว่าชนิดใด และ/หรือไม่สามารถรับประทานยาต่อเนื่องได้","IIb","C"],
+["ลดความเสี่ยง","ผู้ป่วยทุกรายควรได้รับการประเมินความเสี่ยงโดยใช้ Thai CV risk score","I","C"],
+["ลดความเสี่ยง","ผู้ป่วยที่มีปัจจัยเสี่ยงตั้งแต่ 3 ข้อขึ้นไป ควรจะได้รับ statin","I","A"],
+["ลดความเสี่ยง","ผู้ป่วยที่สูบบุหรี่ควรได้รับคำแนะนำให้หยุดบุหรี่ หรือได้รับยาที่ช่วยให้เลิกบุหรี่ได้","I","A"],
+["ลดความเสี่ยง","Thai CV risk score (ชนิดใช้ผลตรวจเลือด) ≥ร้อยละ 10 น่าจะได้รับการพิจารณาให้ใช้ statin","IIa","C"],
+["ลดความเสี่ยง","ผู้ป่วยความดันโลหิตสูงควรหลีกเลี่ยงการสัมผัสมลภาวะทางอากาศ เช่น PM2.5","IIa","C"],
+["ลดความเสี่ยง","ไม่ควรใช้ aspirin เพื่อป้องกันโรคหัวใจและหลอดเลือดแบบ primary prevention โดยไม่จำเป็น","III","A"],
+["ยาที่เพิ่ม BP","NSAIDs และ COX-2 inhibitors · ยาคุมกำเนิด · glucocorticoids/mineralocorticoids · sympathomimetic amines · antidepressants · erythropoietin-stimulating agents · alcohol · cocaine · cyclosporine, tacrolimus · VEGF inhibitors · สมุนไพรบางชนิด","—","—"],
+["ยุทธศาสตร์","วัดความดันโลหิตให้ได้ตามมาตรฐานที่ถูกต้อง ทั้งการวินิจฉัยครั้งแรกและระหว่างการติดตามรักษา","I","A"],
+["ยุทธศาสตร์","ให้เวลาอธิบายรายละเอียดแผนการรักษาและตอบข้อซักถามให้เพียงพอ โดยเฉพาะการวินิจฉัยครั้งแรก","I","C"],
+["ยุทธศาสตร์","ใช้ HBPM ในการวินิจฉัยและติดตามการรักษา","I","B"],
+["ยุทธศาสตร์","ใช้ HBPM เพื่อลดความล่าช้าของการเริ่มให้ยา และลดความล่าช้าในการปรับขนาดยา","I","B"],
+["Telemedicine","Home BP telemonitoring: ส่งผลตรวจจาก digital HBPM เข้าศูนย์การแพทย์ ทำให้สั่งการรักษารายบุคคลได้ทันท่วงที","—","—"]
+];
+
+/* ============ กลไก ============ */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const KEY = "ht2567.v1";
+let store = {known:{}};
+try{ const raw = localStorage.getItem(KEY); if(raw) store = JSON.parse(raw); }catch(e){}
+if(!store.known) store.known = {};
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} };
+
+/* --- tabs --- */
+$$('nav.modes button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    $$('nav.modes button').forEach(x=>x.setAttribute('aria-selected', x===b));
+    $$('.panel').forEach(p=>p.classList.toggle('on', p.id==='p-'+b.dataset.p));
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+/* --- gauge --- */
+const RING_LEN = 2*Math.PI*24;
+function paintGauge(){
+  const total = FLASH.length;
+  const n = Object.values(store.known).filter(Boolean).length;
+  $('#ring').setAttribute('stroke-dashoffset', RING_LEN*(1 - n/total));
+  $('#ring').style.opacity = n ? 1 : 0;
+  $('#gnum').innerHTML = n + '<span style="font-size:13px;color:var(--ink-3)">/'+total+'</span>';
+}
+
+/* ============ Flashcards ============ */
+const DECKS = ['ทั้งหมด', ...Array.from(new Set(FLASH.map(f=>f[0])))];
+let deck = 'ทั้งหมด', queue = [], cur = null, flipped = false, seen = 0;
+
+function buildDeckChips(){
+  $('#fc-decks').innerHTML = DECKS.map(d=>
+    `<button class="chip" data-d="${d}" aria-pressed="${d===deck}">${d}</button>`).join('');
+  $$('#fc-decks .chip').forEach(c=>c.addEventListener('click',()=>{ deck=c.dataset.d; buildDeckChips(); newQueue(); }));
+}
+function pool(){
+  return FLASH.map((f,i)=>({i,c:f})).filter(o=>deck==='ทั้งหมด'||o.c[0]===deck);
+}
+function newQueue(){
+  const p = pool();
+  const todo = p.filter(o=>!store.known[o.i]);
+  queue = (todo.length ? todo : p).slice();
+  for(let i=queue.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[queue[i],queue[j]]=[queue[j],queue[i]];}
+  seen = 0; nextCard();
+}
+function nextCard(){
+  if(!queue.length){
+    cur=null;
+    $('#fc-tag').textContent='เสร็จแล้ว';
+    $('#fc-q').textContent='ทบทวนครบทุกใบในสำรับนี้แล้ว';
+    $('#fc-a').hidden=true; $('#fc-controls').hidden=true;
+    $('#fc-hint').textContent='กด “เริ่มสำรับใหม่” เพื่อวนอีกรอบ';
+    paintFcMeter(); return;
+  }
+  cur = queue[0]; flipped=false;
+  $('#fc-tag').textContent = cur.c[0];
+  $('#fc-q').textContent = cur.c[1];
+  $('#fc-a').innerHTML = cur.c[2];
+  $('#fc-a').hidden = true;
+  $('#fc-controls').hidden = true;
+  $('#fc-hint').textContent = 'คลิกหรือกด Space เพื่อพลิก';
+  paintFcMeter();
+}
+function flip(){
+  if(!cur) return;
+  flipped = !flipped;
+  $('#fc-a').hidden = !flipped;
+  $('#fc-controls').hidden = !flipped;
+  $('#fc-hint').textContent = flipped ? 'บอกว่าจำได้หรือยัง' : 'คลิกหรือกด Space เพื่อพลิก';
+}
+function paintFcMeter(){
+  const p = pool(), total = p.length;
+  const known = p.filter(o=>store.known[o.i]).length;
+  $('#fc-meter').style.width = total? (known/total*100)+'%' : '0%';
+  $('#fc-count').textContent = known + ' / ' + total + ' ใบที่จำได้';
+  $('#fc-left').textContent = 'เหลือในรอบนี้ ' + queue.length;
+  paintGauge();
+}
+$('#fc').addEventListener('click', flip);
+$('#fc').addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){e.preventDefault();flip();} });
+$$('#fc-controls [data-grade]').forEach(b=>b.addEventListener('click', e=>{
+  e.stopPropagation();
+  if(!cur) return;
+  const good = b.dataset.grade === '1';
+  store.known[cur.i] = good; save();
+  const card = queue.shift();
+  if(!good) queue.splice(Math.min(4, queue.length), 0, card);
+  nextCard();
+}));
+$('#fc-reset').addEventListener('click', e=>{ e.stopPropagation(); newQueue(); });
+
+/* ============ Quiz ============ */
+let qOrder = [], qi = 0, qScore = 0, qLocked = false;
+function startQuiz(){
+  qOrder = QUIZ.map((_,i)=>i);
+  for(let i=qOrder.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[qOrder[i],qOrder[j]]=[qOrder[j],qOrder[i]];}
+  qi=0; qScore=0; renderQ();
+}
+function renderQ(){
+  qLocked=false;
+  const q = QUIZ[qOrder[qi]];
+  $('#q-pos').textContent = 'ข้อ ' + (qi+1) + ' / ' + qOrder.length;
+  $('#q-score').textContent = 'ถูก ' + qScore + ' ข้อ';
+  $('#q-text').textContent = q.q;
+  $('#q-expl').innerHTML = '';
+  $('#q-next').hidden = true;
+  $('#q-meter').style.width = (qi/qOrder.length*100)+'%';
+  $('#q-opts').innerHTML = q.o.map((o,i)=>
+    `<button class="opt" data-i="${i}"><span class="ltr">${'กขคง'[i]}</span><span>${o}</span></button>`).join('');
+  $$('#q-opts .opt').forEach(b=>b.addEventListener('click',()=>answerQ(+b.dataset.i)));
+}
+function answerQ(pick){
+  if(qLocked) return; qLocked = true;
+  const q = QUIZ[qOrder[qi]];
+  if(pick === q.a) qScore++;
+  $$('#q-opts .opt').forEach(b=>{
+    const i = +b.dataset.i; b.disabled = true;
+    if(i === q.a) b.classList.add('right');
+    else if(i === pick) b.classList.add('wrong');
+  });
+  $('#q-score').textContent = 'ถูก ' + qScore + ' ข้อ';
+  $('#q-expl').innerHTML =
+    `<div class="expl"><div class="h">${pick===q.a?'ถูกต้อง':'เฉลย'}</div>${q.e}</div>`;
+  $('#q-meter').style.width = ((qi+1)/qOrder.length*100)+'%';
+  if(qi < qOrder.length-1){ $('#q-next').hidden = false; }
+  else {
+    $('#q-expl').innerHTML +=
+      `<div class="expl" style="border-left-color:var(--navy)"><div class="h" style="color:var(--navy)">จบชุด</div>
+       ได้ <strong>${qScore} / ${qOrder.length}</strong> ข้อ — กด “เริ่มชุดใหม่” เพื่อสลับลำดับและทำอีกครั้ง</div>`;
+  }
+}
+$('#q-next').addEventListener('click',()=>{ qi++; renderQ(); window.scrollTo({top:0,behavior:'smooth'}); });
+$('#q-restart').addEventListener('click', startQuiz);
+
+/* ============ Cases ============ */
+let ci = 0, si = 0, cLocked = false;
+function buildCaseList(){
+  $('#c-list').innerHTML = CASES.map((c,i)=>
+    `<button class="chip" data-c="${i}" aria-pressed="${i===ci}">${c.t}</button>`).join('');
+  $$('#c-list .chip').forEach(b=>b.addEventListener('click',()=>{ ci=+b.dataset.c; si=0; buildCaseList(); renderCase(); }));
+}
+function renderCase(){
+  const c = CASES[ci];
+  $('#c-vig').innerHTML =
+    `<div class="who">${c.who}</div>${c.body}
+     <div class="vitals">${c.v.map(v=>`<span class="vital">${v}</span>`).join('')}</div>`;
+  renderStep();
+}
+function renderStep(){
+  cLocked = false;
+  const c = CASES[ci], s = c.steps[si];
+  $('#c-next').hidden = true;
+  $('#c-step').innerHTML =
+    `<div class="metaline" style="margin-bottom:2px"><span>ขั้นที่ ${si+1} / ${c.steps.length}</span><span>${c.t}</span></div>
+     <div class="qtext">${s.q}</div>
+     <div class="opts">${s.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="ltr">${'กขคง'[i]}</span><span>${o}</span></button>`).join('')}</div>
+     <div id="c-expl"></div>`;
+  $$('#c-step .opt').forEach(b=>b.addEventListener('click',()=>answerStep(+b.dataset.i)));
+}
+function answerStep(pick){
+  if(cLocked) return; cLocked = true;
+  const s = CASES[ci].steps[si];
+  $$('#c-step .opt').forEach(b=>{
+    const i = +b.dataset.i; b.disabled = true;
+    if(i === s.a) b.classList.add('right'); else if(i === pick) b.classList.add('wrong');
+  });
+  $('#c-expl').innerHTML = `<div class="expl"><div class="h">${pick===s.a?'ถูกต้อง':'เฉลย'}</div>${s.e}</div>`;
+  if(si < CASES[ci].steps.length-1){
+    $('#c-next').hidden = false;
+  } else {
+    $('#c-expl').innerHTML += `<div class="expl" style="border-left-color:var(--navy)"><div class="h" style="color:var(--navy)">จบเคส</div>เลือกเคสถัดไปจากปุ่มด้านบนได้เลย</div>`;
+  }
+}
+$('#c-next').addEventListener('click',()=>{ si++; renderStep(); });
+
+/* ============ Reference lookup ============ */
+const CATS = ['ทั้งหมด', ...Array.from(new Set(REF.map(r=>r[0])))];
+let cat = 'ทั้งหมด';
+function buildChips(){
+  $('#rchips').innerHTML = CATS.map(c=>
+    `<button class="chip" data-c="${c}" aria-pressed="${c===cat}">${c}</button>`).join('');
+  $$('#rchips .chip').forEach(b=>b.addEventListener('click',()=>{ cat=b.dataset.c; buildChips(); renderRef(); }));
+}
+function renderRef(){
+  const q = $('#rq').value.trim().toLowerCase();
+  const rows = REF.filter(r=>{
+    if(cat!=='ทั้งหมด' && r[0]!==cat) return false;
+    if(!q) return true;
+    return (r[0]+' '+r[1]+' '+r[2]+' '+r[3]).toLowerCase().includes(q);
+  });
+  $('#rempty').hidden = rows.length > 0;
+  $('#rbody').innerHTML = rows.map(r=>{
+    const lvCls = ['I','IIa','IIb','III'].includes(r[2]) ? r[2] : '';
+    const lv = lvCls ? `<span class="lv ${lvCls}">${r[2]}</span>` : `<span style="color:var(--ink-3)">${r[2]}</span>`;
+    return `<tr><td style="color:var(--ink-2);font-size:13px">${r[0]}</td><td>${r[1]}</td><td>${lv}</td><td class="num" style="color:var(--ink-2)">${r[3]}</td></tr>`;
+  }).join('');
+}
+$('#rq').addEventListener('input', renderRef);
+
+/* ============ init ============ */
+buildDeckChips(); newQueue();
+startQuiz();
+buildCaseList(); renderCase();
+buildChips(); renderRef();
+paintGauge();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

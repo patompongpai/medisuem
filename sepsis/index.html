@@ -1,0 +1,1015 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>SEPSIS 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#F6F4EC;
+    --surface:#FFFFFF;
+    --surface-2:#EEEADC;
+    --ink:#182420;
+    --muted:#5B6B64;
+    --line:#DED6C1;
+    --accent:#0F6E64;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCEFEA;
+    --danger:#A93A2E;
+    --danger-soft:#F5E0DA;
+    --warn:#93692A;
+    --warn-soft:#F1E5CC;
+    --shadow: 0 1px 2px rgba(22,33,31,.07), 0 10px 28px rgba(22,33,31,.08);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B1613;
+      --surface:#11211C;
+      --surface-2:#16261F;
+      --ink:#E7F1EC;
+      --muted:#93A8A1;
+      --line:#25382F;
+      --accent:#3FCDBF;
+      --accent-ink:#052421;
+      --accent-soft:#123A34;
+      --danger:#FF9080;
+      --danger-soft:#3A1B16;
+      --warn:#F0BE63;
+      --warn-soft:#3A2C12;
+      --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1613;
+    --surface:#11211C;
+    --surface-2:#16261F;
+    --ink:#E7F1EC;
+    --muted:#93A8A1;
+    --line:#25382F;
+    --accent:#3FCDBF;
+    --accent-ink:#052421;
+    --accent-soft:#123A34;
+    --danger:#FF9080;
+    --danger-soft:#3A1B16;
+    --warn:#F0BE63;
+    --warn-soft:#3A2C12;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sarabun',"Noto Sans Thai","IBM Plex Sans Thai",sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{text-wrap:balance; font-family:'Sarabun',sans-serif; margin:0; font-weight:800;}
+  .num{font-family:'Fraunces',serif; font-variant-numeric:tabular-nums;}
+  .mono{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  ::selection{background:var(--accent-soft);}
+  :focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:30;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 22px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:18px;
+    flex:none;
+  }
+  .topbar .brand{display:flex; flex-direction:column; line-height:1.2;}
+  .topbar .brand b{font-size:16.5px; letter-spacing:.02em;}
+  .topbar .brand span{font-size:12px; color:var(--muted);}
+  .topbar .progress-pill{
+    margin-left:auto; display:flex; align-items:center; gap:9px;
+    padding:7px 14px; border-radius:999px; background:var(--surface-2);
+    border:1px solid var(--line); font-size:12.5px; color:var(--muted);
+    white-space:nowrap;
+  }
+  .progress-pill b{color:var(--ink); font-family:'IBM Plex Mono',monospace;}
+  .progress-pill .bar{width:64px; height:6px; border-radius:99px; background:var(--line); overflow:hidden;}
+  .progress-pill .bar i{display:block; height:100%; background:var(--accent); width:0%; transition:width .4s ease;}
+
+  /* ---------- shell ---------- */
+  .shell{display:grid; grid-template-columns:250px 1fr; max-width:1180px; margin:0 auto; align-items:start;}
+  .sidenav{
+    position:sticky; top:65px;
+    height:calc(100vh - 65px); overflow-y:auto;
+    padding:18px 10px 40px;
+    border-right:1px solid var(--line);
+  }
+  .sidenav .grp-label{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); padding:14px 12px 6px;}
+  .navitem{
+    display:flex; align-items:center; gap:10px;
+    width:100%; text-align:left; padding:9px 12px; border-radius:10px;
+    background:transparent; border:none; color:var(--ink); font-size:14.5px;
+    margin-bottom:2px;
+  }
+  .navitem:hover{background:var(--surface-2);}
+  .navitem.active{background:var(--accent-soft); color:var(--accent); font-weight:700;}
+  .navitem .n{font-family:'IBM Plex Mono',monospace; font-size:11.5px; width:20px; flex:none; color:var(--muted);}
+  .navitem.active .n{color:var(--accent);}
+  .navitem .check{margin-left:auto; width:16px; height:16px; border-radius:50%; border:1.5px solid var(--line); flex:none;}
+  .navitem .check.done{background:var(--accent); border-color:var(--accent); position:relative;}
+  .navitem .check.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg);}
+
+  .main{padding:28px 30px 90px; min-width:0;}
+  .panel{max-width:760px;}
+
+  /* ---------- home ---------- */
+  .hero-tag{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:999px; font-weight:700; letter-spacing:.03em;}
+  .hero h1{font-size:34px; margin-top:16px; line-height:1.25;}
+  .hero p.lead{color:var(--muted); font-size:16.5px; max-width:620px; margin-top:12px;}
+  .cta-row{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
+  .btn{
+    padding:12px 20px; border-radius:11px; border:1px solid var(--line);
+    background:var(--surface); color:var(--ink); font-size:14.5px; font-weight:700;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
+  .btn:hover{filter:brightness(0.97);}
+
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; margin-top:14px;}
+  .stat-tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 15px; box-shadow:var(--shadow);
+  }
+  .stat-tile .v{font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--accent); line-height:1.1;}
+  .stat-tile .l{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.4;}
+
+  .section-h{display:flex; align-items:baseline; gap:10px; margin:38px 0 14px;}
+  .section-h h2{font-size:19px;}
+  .section-h .line{flex:1; height:1px; background:var(--line);}
+
+  .ch-progress-list{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .ch-progress-row{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:10px 14px;}
+  .ch-progress-row .t{flex:1; font-size:14px; font-weight:600;}
+  .ch-progress-row .bar{width:110px; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden;}
+  .ch-progress-row .bar i{display:block; height:100%; background:var(--accent);}
+  .ch-progress-row .score{font-size:12px; color:var(--muted); font-family:'IBM Plex Mono',monospace; width:54px; text-align:right;}
+
+  /* ---------- chapter header ---------- */
+  .ch-head{display:flex; gap:16px; align-items:flex-start;}
+  .ch-head .bignum{font-family:'Fraunces',serif; font-size:44px; font-weight:600; color:var(--accent); line-height:1;}
+  .ch-head h1{font-size:25px; margin-top:2px;}
+  .ch-head .sub{font-size:13.5px; color:var(--muted); margin-top:4px;}
+
+  .chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+  .chip{background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:12.5px;}
+  .chip b{display:block; font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--accent);}
+
+  .bullets{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .bullets li{display:flex; gap:10px; font-size:15px;}
+  .bullets li::before{content:"•"; color:var(--accent); font-weight:800; flex:none;}
+
+  .rec-row{
+    display:flex; gap:12px; align-items:flex-start; padding:13px 14px; border:1px solid var(--line);
+    border-radius:12px; background:var(--surface); margin-bottom:9px;
+  }
+  .rec-row .badges{display:flex; flex-direction:column; gap:6px; flex:none; width:100px;}
+  .badge{font-size:10.5px; font-weight:700; letter-spacing:.03em; padding:4px 8px; border-radius:7px; text-align:center; white-space:nowrap;}
+  .badge.strong{background:var(--danger-soft); color:var(--danger);}
+  .badge.conditional{background:var(--warn-soft); color:var(--warn);}
+  .evid{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); text-align:center;}
+  .rec-row .txt{font-size:14.5px;}
+  .rec-row .txt code{background:var(--surface-2); padding:1px 5px; border-radius:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px;}
+
+  .legend{display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin:10px 0 16px;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:10px;height:10px;border-radius:3px; display:inline-block;}
+  .legend i.strong{background:var(--danger);}
+  .legend i.conditional{background:var(--warn);}
+
+  /* ---------- flashcards ---------- */
+  .fc-wrap{margin-top:10px;}
+  .fc-counter{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:8px;}
+  .flashcard{
+    perspective:1400px; height:200px; margin-bottom:14px;
+  }
+  .flashcard .inner{
+    position:relative; width:100%; height:100%; transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d; cursor:pointer;
+  }
+  .flashcard.flip .inner{transform:rotateY(180deg);}
+  .flashcard .face{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:16px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:26px; box-shadow:var(--shadow); border:1px solid var(--line);
+  }
+  .flashcard .front{background:var(--surface); font-size:17px; font-weight:700;}
+  .flashcard .back{background:var(--accent-soft); color:var(--ink); transform:rotateY(180deg); font-size:15px;}
+  .flashcard .hint{position:absolute; bottom:10px; left:0; right:0; text-align:center; font-size:11px; color:var(--muted); font-weight:400;}
+  .fc-controls{display:flex; gap:8px;}
+  .icon-btn{
+    padding:9px 15px; border-radius:9px; border:1px solid var(--line); background:var(--surface);
+    font-size:13.5px; font-weight:600; color:var(--ink);
+  }
+  .icon-btn:hover{background:var(--surface-2);}
+
+  /* ---------- quiz ---------- */
+  .quiz-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);}
+  .quiz-progress{display:flex; gap:5px; margin-bottom:16px;}
+  .quiz-progress i{flex:1; height:5px; border-radius:99px; background:var(--surface-2);}
+  .quiz-progress i.done{background:var(--accent);}
+  .quiz-q{font-size:16px; font-weight:700; margin-bottom:14px;}
+  .choice{
+    display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+    padding:12px 14px; border-radius:11px; border:1.5px solid var(--line); background:var(--surface);
+    margin-bottom:9px; font-size:14.5px; color:var(--ink);
+  }
+  .choice:hover{border-color:var(--accent);}
+  .choice .k{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); flex:none; margin-top:1px;}
+  .choice.correct{background:var(--accent-soft); border-color:var(--accent);}
+  .choice.wrong{background:var(--danger-soft); border-color:var(--danger);}
+  .choice[disabled]{cursor:default;}
+  .explain{margin-top:12px; padding:12px 14px; border-radius:11px; background:var(--surface-2); font-size:13.5px; color:var(--muted); display:none;}
+  .explain.show{display:block;}
+  .quiz-foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px;}
+  .quiz-score{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted);}
+  .quiz-done{text-align:center; padding:30px 10px;}
+  .quiz-done .v{font-family:'Fraunces',serif; font-size:48px; color:var(--accent); font-weight:600;}
+
+  .footnote{margin-top:60px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
+
+  @media (max-width:820px){
+    .shell{display:block;}
+    .sidenav{
+      position:sticky; top:65px; height:auto; width:100%;
+      display:flex; overflow-x:auto; gap:4px; padding:10px 12px; border-right:none; border-bottom:1px solid var(--line);
+      background:var(--surface);
+    }
+    .sidenav .grp-label{display:none;}
+    .navitem{flex:none; white-space:nowrap;}
+    .navitem .check{display:none;}
+    .main{padding:22px 16px 70px;}
+    .topbar .brand span{display:none;}
+  }
+</style>
+
+<div class="topbar">
+  <div class="mark">S</div>
+  <div class="brand"><b>SEPSIS 2569</b><span>CPG Sepsis &amp; Septic Shock — สมาคมเวชบำบัดวิกฤตแห่งประเทศไทย</span></div>
+  <div class="progress-pill">ความคืบหน้า <div class="bar"><i id="topProgressBar"></i></div> <b id="topProgressText">0%</b></div>
+</div>
+
+<div class="shell">
+  <nav class="sidenav" id="sidenav"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+/* ============================= DATA ============================= */
+const SECTIONS = [
+{
+  id:"home", nav:"หน้าแรก", isHome:true
+},
+{
+  id:"def", n:"0", title:"นิยาม Sepsis และ Septic Shock", sub:"Definitions (อ้างอิงตาม Sepsis-3)", nav:"นิยาม",
+  chips:[
+    {v:"≥65", l:"MAP เป้าหมาย (มม.ปรอท) ใน septic shock"},
+    {v:">2", l:"Lactate (มิลลิโมล/ลิตร) ที่บ่งชี้ persistent hypoperfusion"},
+    {v:"≥4", l:"SOS score ที่ใช้คัดกรองในบริบทไทย"}
+  ],
+  bullets:[
+    "Sepsis คือภาวะอวัยวะทำงานล้มเหลว (organ dysfunction) ที่เป็นอันตรายถึงชีวิต เกิดจากการตอบสนองของร่างกายต่อการติดเชื้อที่ผิดปกติ (dysregulated host response)",
+    "Septic shock คือ sepsis ที่มีความผิดปกติของระบบไหลเวียนโลหิต เซลล์ หรือเมตาบอลิซึมรุนแรง จนเพิ่มอัตราตายอย่างมีนัยสำคัญ",
+    "วินิจฉัย septic shock เมื่อมี sepsis ร่วมกับ persistent hypotension ที่ต้องให้ vasopressor เพื่อคง MAP ≥ 65 มม.ปรอท และมี lactate > 2 มิลลิโมล/ลิตร แม้ได้รับสารน้ำทดแทนอย่างเพียงพอแล้ว",
+    "Surgical sepsis คือ sepsis ที่เกี่ยวข้องกับศัลยกรรม เช่น secondary peritonitis, necrotizing fasciitis หรือการติดเชื้อของแผลผ่าตัด",
+    "เครื่องมือคัดกรองที่แนะนำ: SIRS ≥2, MEWS ≥4, NEWS2 ≥5 หรือ SOS ≥4 ร่วมกับอาการชี้แหล่งติดเชื้อ — ปัจจุบัน ไม่แนะนำใช้ qSOFA เพียงอย่างเดียว เพราะความไวต่ำกว่าเครื่องมืออื่น"
+  ],
+  recs:[],
+  cards:[
+    {f:"เกณฑ์วินิจฉัย septic shock ตาม Sepsis-3 มีอะไรบ้าง?", b:"(1) มีภาวะ sepsis + (2) ต้องให้ vasopressor เพื่อคง MAP ≥ 65 มม.ปรอท + (3) lactate > 2 มิลลิโมล/ลิตร ทั้งที่ได้สารน้ำทดแทนเพียงพอแล้ว"},
+    {f:"เครื่องมือคัดกรอง sepsis ที่ CPG ไทยเพิ่มเข้ามานอกจาก SIRS/MEWS/NEWS2 คืออะไร และเกณฑ์เท่าไร?", b:"Search Out Severity (SOS) score ≥ 4 (จากการศึกษาในประชากรไทย มีประสิทธิภาพใกล้เคียง MEWS)"},
+    {f:"เพราะเหตุใดจึงไม่แนะนำใช้ qSOFA เพียงตัวเดียวในการวินิจฉัย sepsis?", b:"เพราะมีความไว (sensitivity) ต่ำกว่าเครื่องมือคัดกรองอื่น ทำให้อาจวินิจฉัยพลาดในผู้ป่วยที่ยังไม่แสดงอาการชัดเจน"},
+    {f:"Surgical sepsis หมายถึงอะไร?", b:"Sepsis ที่เกี่ยวข้องกับศัลยกรรม ต้องใช้กระบวนการทางศัลยกรรมร่วมรักษา เช่น secondary peritonitis, necrotizing fasciitis หรือการติดเชื้อของแผลผ่าตัด"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยติดเชื้อได้รับสารน้ำอย่างเพียงพอแล้ว แต่ยังต้องให้ norepinephrine เพื่อคง MAP ≥65 มม.ปรอท และมี lactate 3.2 มิลลิโมล/ลิตร ควรวินิจฉัยว่าเป็นภาวะใด?",
+     c:["Sepsis ธรรมดา","Septic shock","SIRS","Severe sepsis"], a:1,
+     e:"เข้าเกณฑ์ septic shock ครบทั้ง 3 ข้อ: มี sepsis, ต้องใช้ vasopressor คง MAP≥65 และ lactate>2 แม้ resuscitate ด้วยสารน้ำแล้ว (คำนิยามอ้างอิง Sepsis-3)"},
+    {q:"SOS score ที่บ่งชี้ว่าผู้ป่วยมีความเสี่ยงต่อ sepsis ตาม CPG ไทยคือค่าใด?",
+     c:["≥2","≥3","≥4","≥5"], a:2,
+     e:"SOS ≥4 ให้ผลใกล้เคียง MEWS ในการคัดกรอง sepsis จากการศึกษาประชากรไทย"},
+    {q:"ข้อใดคือเหตุผลที่ CPG ไม่แนะนำให้ใช้ qSOFA เพียงอย่างเดียวในการวินิจฉัย sepsis?",
+     c:["คำนวณยาก ต้องใช้คอมพิวเตอร์","มีความไว (sensitivity) ต่ำกว่าเครื่องมืออื่น","ใช้ได้เฉพาะใน ICU เท่านั้น","ไม่มีหลักฐานงานวิจัยรองรับเลย"], a:1,
+     e:"Meta-analysis พบว่า SIRS วินิจฉัยได้แม่นยำกว่า qSOFA นอกหอผู้ป่วยวิกฤต"}
+  ]
+},
+{
+  id:"c1", n:"1", title:"Initial Resuscitation", sub:"การช่วยชีวิตเบื้องต้น", nav:"1. Resuscitation",
+  chips:[
+    {v:"30", l:"มล./กก. (IBW) crystalloid ภายใน 3 ชม.แรก"},
+    {v:"≥65", l:"MAP เป้าหมาย มม.ปรอท (macrocirculation)"},
+    {v:"<2", l:"Lactate เป้าหมาย มิลลิโมล/ลิตร (microcirculation)"}
+  ],
+  bullets:[
+    "Time zero คือเวลาที่คัดกรองพบภาวะ sepsis (ที่จุดคัดกรอง/ห้องฉุกเฉิน) ไม่ใช่เวลาที่วินิจฉัยเสร็จสมบูรณ์ — ต้องเริ่มการรักษาตามแนวทางทันทีนับจากจุดนี้",
+    "ให้ crystalloid ทางหลอดเลือดดำ 30 มล./กก. (ideal body weight) ภายใน 3 ชั่วโมงแรก โดยประเมินและปรับตามการตอบสนองรายบุคคล (personalized medicine) ไม่ใช่สูตรตายตัว",
+    "ผู้ป่วยอ้วน/อ้วนมาก ให้ใช้ adjusted body weight ในการคำนวณสารน้ำ เพื่อลดความเสี่ยง fluid overload",
+    "ประเมินการตอบสนองสารน้ำด้วย dynamic parameters เช่น fluid challenge test หรือ passive leg raising ดีกว่าใช้ static parameters เพียงค่าเดียว",
+    "Macrocirculation: เริ่ม norepinephrine เร็ว (early vasopressor) หากช็อกรุนแรง diastolic BP < 45 มม.ปรอท หรือ diastolic shock index > 3 หรือมีความเสี่ยงภาวะน้ำเกิน โดยให้พร้อมกับสารน้ำได้เลย ไม่ต้องรอ",
+    "Microcirculation: ติดตาม lactate เป็นระยะในผู้ป่วยที่ lactate เริ่มต้นสูง ≥2 มิลลิโมล/ลิตร เพื่อดูแนวโน้มการตอบสนอง — หากตรวจ lactate ไม่ได้ใช้ CRT, skin temperature, mottling และ signs of shock อื่นแทน"
+  ],
+  recs:[
+    {t:"เลือกใช้ early warning score (SIRS≥2, MEWS≥4, NEWS2≥5) ร่วมกับอาการชี้แหล่งติดเชื้อในการคัดกรอง", s:"strong", e:"moderate"},
+    {t:"เมื่อคัดกรองเข้าเกณฑ์ เริ่มการรักษาตาม Protocol โดยเร็วที่สุด นับจาก Time Zero", s:"conditional", e:"verylow"},
+    {t:"ให้สารน้ำ crystalloid 30 มล./กก. (IBW) ภายใน 3 ชั่วโมงแรก", s:"conditional", e:"moderate"},
+    {t:"ประเมินการให้สารน้ำด้วย dynamic parameters มากกว่า static parameters เพียงค่าเดียว", s:"conditional", e:"moderate"},
+    {t:"เริ่ม early vasopressor (norepinephrine) เมื่อช็อกรุนแรงหรือเสี่ยงน้ำเกิน โดยให้พร้อมกับสารน้ำได้", s:"strong", e:"moderate"},
+    {t:"ติดตาม lactate เป็นระยะในผู้ป่วยที่ lactate เริ่มต้นสูง ≥2 มิลลิโมล/ลิตร", s:"strong", e:"low"}
+  ],
+  cards:[
+    {f:"Time zero ของ sepsis protocol คือเวลาใด?", b:"เวลาที่คัดกรองพบภาวะ sepsis ที่จุดคัดกรอง/ห้องฉุกเฉิน (ไม่ใช่เวลาที่แพทย์วินิจฉัยยืนยันเสร็จสมบูรณ์)"},
+    {f:"ปริมาณและกรอบเวลาการให้สารน้ำเริ่มต้นในผู้ป่วย sepsis ที่มี hypoperfusion?", b:"Crystalloid 30 มล./กก. (IBW) ภายใน 3 ชั่วโมงแรก ปรับตามการตอบสนองรายบุคคล"},
+    {f:"เมื่อไรควรเริ่ม early norepinephrine ก่อน/พร้อมสารน้ำ?", b:"เมื่อช็อกรุนแรง (diastolic BP <45 มม.ปรอท หรือ diastolic shock index >3) หรือเสี่ยงอันตรายจากภาวะน้ำเกิน"},
+    {f:"วิธีประเมิน fluid responsiveness ที่แนะนำมีอะไรบ้าง?", b:"Passive leg raising test และ fluid challenge test (dynamic parameters) ดีกว่าการดู static parameters เดี่ยวๆ"},
+    {f:"หากตรวจ lactate ซ้ำไม่ได้ ควรติดตาม microcirculation ด้วยอะไร?", b:"Capillary refill time (CRT), skin temperature, mottling และอาการแสดงของ shock อื่นๆ ร่วมกับการลดลงของ anion gap"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยสงสัย sepsis มาถึงห้องฉุกเฉิน 08:00 น. แพทย์วินิจฉัยยืนยันเสร็จ 08:40 น. Time zero ของผู้ป่วยรายนี้คือเวลาใด?",
+     c:["08:00 น. (เวลาคัดกรอง)","08:40 น. (เวลาวินิจฉัยเสร็จ)","09:00 น. (เริ่มยาปฏิชีวนะ)","ไม่มี time zero ต้องรอ ICU"], a:0,
+     e:"Time zero เริ่มนับที่จุดคัดกรองพบภาวะ sepsis ไม่ใช่รอวินิจฉัยยืนยันเสร็จ (คำแนะนำข้อ 1.2)"},
+    {q:"ปริมาณสารน้ำ crystalloid เริ่มต้นที่แนะนำในผู้ป่วย sepsis ที่มี tissue hypoperfusion คือเท่าใด?",
+     c:["10 มล./กก. ภายใน 1 ชม.","20 มล./กก. ภายใน 2 ชม.","30 มล./กก. (IBW) ภายใน 3 ชม.แรก","50 มล./กก. ภายใน 6 ชม."], a:2,
+     e:"คำแนะนำข้อ 1.3: crystalloid 30 มล./กก. (ideal body weight) ภายใน 3 ชั่วโมงแรกของการรักษา"},
+    {q:"ข้อใดเป็นข้อบ่งชี้ให้เริ่ม early norepinephrine ควบคู่ไปกับการให้สารน้ำ?",
+     c:["Heart rate > 100 ครั้ง/นาที","Diastolic BP < 45 มม.ปรอท หรือ diastolic shock index > 3","Systolic BP < 140 มม.ปรอท","Temperature > 38.5°C"], a:1,
+     e:"คำแนะนำข้อ 1.5: เมื่อช็อกรุนแรง (diastolic BP<45 หรือ DSI>3) หรือเสี่ยงอันตรายจากน้ำเกิน ควรเริ่ม NE เร็ว"},
+    {q:"วิธีประเมินการตอบสนองต่อสารน้ำ (fluid responsiveness) ที่ CPG แนะนำคือข้อใด?",
+     c:["วัด CVP ค่าเดียว","Passive leg raising test หรือ fluid challenge test","ดูเฉพาะ urine output","วัด body weight ก่อน-หลังให้สารน้ำ"], a:1,
+     e:"คำแนะนำข้อ 1.4 แนะนำ dynamic parameters เช่น fluid challenge test หรือ passive leg raising มากกว่า static parameters เดี่ยวๆ"}
+  ]
+},
+{
+  id:"c2", n:"2", title:"Hemodynamic Management", sub:"การดูแลระบบไหลเวียนโลหิต", nav:"2. Hemodynamic",
+  chips:[
+    {v:"NE", l:"Vasopressor ตัวแรกที่แนะนำ (first-line)"},
+    {v:"≥65", l:"MAP เป้าหมาย มม.ปรอท"},
+    {v:">0.25", l:"ไมโครกรัม/กก./นาที ของ NE ที่ต้องพิจารณายาเสริม"}
+  ],
+  bullets:[
+    "สารน้ำชนิดแรกคือ balanced crystalloid (ดีกว่า 0.9% NaCl) ยกเว้นมี hyperkalemia หรือไตบกพร่องระดับ 4-5 ให้ใช้ 0.9% NaCl แทน",
+    "ไม่แนะนำ Hydroxyethyl starch (HES), gelatin หรือ dextran ในการ resuscitate เนื่องจากเสี่ยงไตวาย",
+    "หากให้ crystalloid ไปมาก (>50 มล./กก.) พิจารณาเสริม natural colloid เช่น albumin หรือพลาสมา",
+    "Norepinephrine (NE) คือ vasopressor ตัวแรกที่แนะนำเสมอ — ไม่แนะนำ dopamine เป็นตัวแรก (เสี่ยง arrhythmia) ยกเว้นหัวใจเต้นช้า/functioน ห้องหัวใจลดลง",
+    "Vasopressin/terlipressin/methylene blue ใช้เป็นยาเสริม (ไม่ใช่ตัวแรก) เมื่อ refractory shock; adrenaline พิจารณาเป็นตัวที่สามหากยังไม่ตอบสนอง",
+    "หาก NE ต้องใช้ขนาดสูง > 0.25 มคก./กก./นาที แล้วความดันยังต่ำ ให้ตรวจหา hypovolemia, metabolic acidosis, hypocalcemia และพิจารณา hydrocortisone",
+    "Dobutamine พิจารณาเมื่อมี cardiac dysfunction ที่ยังมี hypoperfusion แม้ได้สารน้ำและ MAP เพียงพอแล้ว",
+    "MAP เป้าหมาย ≥65 มม.ปรอท (หรือสูงกว่าในผู้ป่วยความดันโลหิตสูงเดิม)"
+  ],
+  recs:[
+    {t:"ใช้ balanced crystalloid เป็นสารน้ำแรกในการ resuscitate มากกว่า 0.9% NaCl", s:"strong", e:"high"},
+    {t:"ไม่แนะนำใช้ Hydroxyethyl starch ในการ resuscitate septic shock", s:"strong", e:"high"},
+    {t:"ไม่แนะนำใช้ gelatin และ dextran ในการ resuscitate", s:"strong", e:"low"},
+    {t:"ใช้ norepinephrine เป็น vasopressor ชนิดแรก โดยเริ่มให้แต่เนิ่นๆ", s:"strong", e:"high"},
+    {t:"ไม่แนะนำ dopamine เป็นยาตัวแรก ยกเว้นหัวใจเต้นช้า/EF ลดลง", s:"strong", e:"high"},
+    {t:"ในผู้ป่วยความดันโลหิตสูงเดิม ดูแลให้ได้ MAP ≥65 มม.ปรอท หรือสูงกว่า", s:"strong", e:"high"},
+    {t:"ประเมิน macrocirculation ด้วย dynamic parameters (PPV, passive leg raising, VExUS)", s:"strong", e:"high/moderate"}
+  ],
+  cards:[
+    {f:"สารน้ำชนิดใดเป็นตัวแรกที่แนะนำในการ resuscitate septic shock?", b:"Balanced crystalloid — ดีกว่า 0.9% NaCl ยกเว้นมี hyperkalemia หรือไตวายรุนแรง"},
+    {f:"Vasopressor ชนิดใดเป็น first-line ในผู้ป่วย septic shock และเพราะเหตุใด?", b:"Norepinephrine — ออกฤทธิ์ทั้ง α1 (หลอดเลือดหด) และ β1 (พยุงหัวใจ) เข้ากับพยาธิสรีรวิทยาของ septic shock ได้ดี และมีอัตรารอดชีวิตดีกว่า dopamine"},
+    {f:"เมื่อใดจึงพิจารณาเสริม hydrocortisone ในผู้ป่วย septic shock?", b:"เมื่อใช้ norepinephrine ขนาดสูง >0.25 มคก./กก./นาที แล้วความดันยังต่ำ หลังแก้ไข hypovolemia/metabolic acidosis/hypocalcemia แล้ว"},
+    {f:"สารน้ำชนิดใดที่ไม่แนะนำให้ใช้ในการ resuscitate เพราะเสี่ยงไตวาย?", b:"Hydroxyethyl starch (HES), gelatin และ dextran"},
+    {f:"เมื่อใดควรพิจารณาให้ dobutamine?", b:"เมื่อมี cardiac dysfunction ร่วมกับ hypoperfusion ต่อเนื่อง แม้ได้สารน้ำเพียงพอและ MAP ได้เป้าหมายแล้ว"}
+  ],
+  quiz:[
+    {q:"ข้อใดคือสารน้ำที่แนะนำเป็นตัวแรกในการ resuscitate ผู้ป่วย septic shock?",
+     c:["0.9% NaCl","Balanced crystalloid","Hydroxyethyl starch","Dextran"], a:1,
+     e:"คำแนะนำข้อ 2.1: balanced crystalloid ดีกว่า 0.9%NaCl ยกเว้นมี hyperkalemia/ไตวายรุนแรง"},
+    {q:"Vasopressor ตัวแรกที่แนะนำสำหรับ septic shock คือชนิดใด?",
+     c:["Dopamine","Vasopressin","Norepinephrine","Adrenaline"], a:2,
+     e:"คำแนะนำข้อ 2.10.1: norepinephrine เป็น vasopressor ชนิดแรกเสมอ เริ่มให้แต่เนิ่นๆ"},
+    {q:"เมื่อใช้ norepinephrine ในขนาดสูงกว่า 0.25 ไมโครกรัม/กก./นาที แล้วความดันยังต่ำ ควรพิจารณาสิ่งใดก่อน?",
+     c:["เปลี่ยนเป็น dopamine ทันที","ตรวจหา hypovolemia, metabolic acidosis, hypocalcemia และพิจารณา hydrocortisone","หยุดสารน้ำทั้งหมด","เพิ่ม NE เป็น 2 เท่าโดยไม่ตรวจอะไรเพิ่ม"], a:1,
+     e:"คำแนะนำข้อ 2.12: ตรวจแก้ไขสาเหตุที่แก้ไขได้ก่อน แล้วจึงพิจารณา hydrocortisone/inotrope"},
+    {q:"สารน้ำ 3 ชนิดที่ CPG ไม่แนะนำให้ใช้ในการ resuscitate septic shock เพราะเพิ่มความเสี่ยงไตวายคือชุดใด?",
+     c:["Ringer's lactate, Acetate ringer, NSS","Hydroxyethyl starch, Gelatin, Dextran","Albumin, พลาสมา, whole blood","Mannitol, Dextrose, Hartmann's"], a:1,
+     e:"คำแนะนำข้อ 2.3: HES (หลักฐานดี) และ gelatin/dextran (หลักฐานต่ำ) ล้วนเพิ่มความเสี่ยงไตวายในผู้ป่วย septic shock"}
+  ]
+},
+{
+  id:"c3", n:"3", title:"Infection and Source Control", sub:"การวินิจฉัยการติดเชื้อและควบคุมแหล่งติดเชื้อ", nav:"3. Infection",
+  chips:[
+    {v:"≥2", l:"Hemoculture specimens ก่อนเริ่มยาต้านจุลชีพ"},
+    {v:"1 ชม.", l:"เริ่มยาต้านจุลชีพใน septic shock"},
+    {v:"5-8 วัน", l:"ระยะเวลาให้ยาโดยทั่วไป"}
+  ],
+  bullets:[
+    "เพาะเชื้อจากเลือดและตำแหน่งที่สงสัยอย่างน้อย 2 specimens ก่อนเริ่มยาต้านจุลชีพ โดยกระบวนการเก็บต้องไม่ทำให้การเริ่มยาช้าเกิน 1 ชั่วโมง",
+    "ไม่ควรเพาะเชื้อจากทุกระบบอวัยวะ (pan-culture) โดยไม่มีข้อบ่งชี้ทางคลินิก เพราะเพิ่มโอกาสพบเชื้อปนเปื้อนและสับสนการแปลผล",
+    "หากมี septic shock ให้ยาต้านจุลชีพภายใน 1 ชั่วโมง (strong); หากเพียงสงสัย sepsis (ยังไม่ช็อก) อาจขยายเวลาสืบค้นได้ถึง 3 ชั่วโมง",
+    "ไม่แนะนำใช้ procalcitonin เพียงค่าเดียวในการตัดสินใจเริ่มยาต้านจุลชีพ เพราะความไว/ความจำเพาะไม่เพียงพอ",
+    "เลือกยาต้านจุลชีพกว้างขวาง (broad-spectrum) ครอบคลุมตาม risk MRSA/MDR gram-negative และ antibiogram ของโรงพยาบาลนั้นๆ",
+    "ประเมินและ de-escalate ยาต้านจุลชีพเมื่อทราบผลเพาะเชื้อ หรือหยุดยาทันทีหากพบว่าไม่มีการติดเชื้อจริง",
+    "ระยะเวลาให้ยาโดยทั่วไป 5-8 วัน (ปอดอักเสบ 5-8 วัน, ช่องท้อง 5-8 วัน, ทางเดินปัสสาวะ 5 วัน, กระแสเลือด 5 วัน) หากควบคุมแหล่งติดเชื้อได้ดีและตอบสนองต่อการรักษา",
+    "อาจใช้ procalcitonin ช่วยตัดสินใจ หยุด ยา (PCT <0.5 นาโนกรัม/มล. หรือลดลง ≥80% จากค่าตั้งต้น)"
+  ],
+  recs:[
+    {t:"เก็บเลือดและสิ่งส่งตรวจเพาะเชื้อ ≥2 specimens ก่อนเริ่มยาต้านจุลชีพ โดยไม่ทำให้ล่าช้าเกิน 1 ชั่วโมง", s:"strong", e:"moderate"},
+    {t:"ไม่ควรเพาะเชื้อจากทุกระบบอวัยวะ (pancuture) โดยไม่มีข้อบ่งชี้ทางคลินิก", s:"strong", e:"moderate"},
+    {t:"ในผู้ป่วย septic shock ให้ยาต้านจุลชีพภายใน 1 ชั่วโมง", s:"strong", e:"low"},
+    {t:"ในผู้ป่วยที่อาจเป็น sepsis (ยังไม่ช็อก) ให้ยาภายใน 3 ชั่วโมง หลังสืบค้นโรคอย่างรวดเร็ว", s:"conditional", e:"low"},
+    {t:"ไม่แนะนำใช้ procalcitonin เดี่ยวตัดสินใจเริ่มยาต้านจุลชีพ", s:"strong", e:"high"},
+    {t:"ประเมิน de-escalation ของยาต้านจุลชีพเป็นระยะ และหยุดยาทันทีหากไม่มีการติดเชื้อ", s:"conditional", e:"moderate"}
+  ],
+  cards:[
+    {f:"ควรเก็บ hemoculture กี่ specimens ก่อนเริ่มยาต้านจุลชีพ และมีข้อจำกัดเรื่องเวลาอย่างไร?", b:"อย่างน้อย 2 specimens โดยกระบวนการเก็บต้องไม่ทำให้การเริ่มยาต้านจุลชีพล่าช้าเกิน 1 ชั่วโมง"},
+    {f:"กรอบเวลาการให้ยาต้านจุลชีพในผู้ป่วย septic shock เทียบกับ probable sepsis ต่างกันอย่างไร?", b:"Septic shock: ภายใน 1 ชั่วโมง (strong); probable sepsis (ยังไม่ช็อก): อาจขยายได้ถึง 3 ชั่วโมงหากมีการสืบค้นสาเหตุอย่างรวดเร็ว"},
+    {f:"เพราะเหตุใดจึงไม่แนะนำใช้ procalcitonin เพียงค่าเดียวในการเริ่มยาต้านจุลชีพ?", b:"เพราะมี sensitivity 77% และ specificity 79% เท่านั้น และ RCT พบว่าไม่ลดอัตราตายหรือระยะเวลานอนโรงพยาบาลเมื่อใช้เป็นเกณฑ์เดียว"},
+    {f:"ระยะเวลาการให้ยาต้านจุลชีพโดยทั่วไปเมื่อควบคุมแหล่งติดเชื้อได้ดีคือกี่วัน?", b:"5-8 วัน (ปอดอักเสบ/ช่องท้อง 5-8 วัน, ทางเดินปัสสาวะ/กระแสเลือด 5 วัน) — ยานานไม่ได้ช่วยเพิ่มประสิทธิภาพ"},
+    {f:"เกณฑ์ procalcitonin ที่อาจใช้ช่วยตัดสินใจหยุดยาต้านจุลชีพคืออะไร?", b:"PCT < 0.5 นาโนกรัม/มล. หรือ ลดลง ≥80% จากค่าตั้งต้น ร่วมกับควบคุมแหล่งติดเชื้อได้ดีแล้ว"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย septic shock ควรได้รับยาต้านจุลชีพภายในกี่ชั่วโมงนับจากสงสัยภาวะนี้?",
+     c:["30 นาที","1 ชั่วโมง","3 ชั่วโมง","6 ชั่วโมง"], a:1,
+     e:"คำแนะนำข้อ 3.3: septic shock ต้องได้ยาภายใน 1 ชั่วโมง (strong recommendation)"},
+    {q:"ข้อใดถูกต้องเกี่ยวกับการใช้ procalcitonin ในการเริ่มยาต้านจุลชีพ?",
+     c:["ใช้เป็นเกณฑ์เดียวได้เลยหากค่าสูง","ไม่แนะนำใช้เพียงค่าเดียวตัดสินใจเริ่มยา","ต้องรอผล PCT ก่อนเริ่มยาเสมอ","PCT แม่นยำ 100% ในการวินิจฉัย sepsis"], a:1,
+     e:"คำแนะนำข้อ 3 (Biomarkers to start antibiotics): ไม่แนะนำใช้ PCT เดี่ยวตัดสินใจเริ่มยา (strong, หลักฐานดี)"},
+    {q:"ระยะเวลาการให้ยาต้านจุลชีพที่เหมาะสมสำหรับการติดเชื้อในกระแสเลือดที่ควบคุมแหล่งติดเชื้อได้ดีคือกี่วัน?",
+     c:["14 วัน","10 วัน","5 วัน","21 วัน"], a:2,
+     e:"CPG อ้างอิงหลักฐานว่ายาสั้น (5 วันสำหรับ bacteremia) มีประสิทธิภาพไม่ต่างจากยานาน หากควบคุมแหล่งติดเชื้อได้"}
+  ]
+},
+{
+  id:"c4", n:"4", title:"Respiratory Support", sub:"การพยุงระบบหายใจ", nav:"4. Respiratory",
+  chips:[
+    {v:"94-98%", l:"SpO₂ เป้าหมาย (ไม่มี ARDS)"},
+    {v:"88-94%", l:"SpO₂ เป้าหมาย (sepsis-induced ARDS)"},
+    {v:"4-8", l:"มล./กก. Low tidal volume strategy"}
+  ],
+  bullets:[
+    "ผู้ป่วยหอบเหนื่อยแต่ยังไม่มีข้อบ่งชี้ใส่ท่อช่วยหายใจ แนะนำให้ high-flow nasal cannula (HFNC)",
+    "Sepsis-induced hypoxemic respiratory failure: แนะนำ HFNC มากกว่า non-invasive ventilation (NIV) เพราะสบายกว่าและลดความเสี่ยง patient self-inflicted lung injury",
+    "เป้าหมาย SpO₂ 94-98% หากยังไม่เข้าเกณฑ์ ARDS; หากเป็น sepsis-induced ARDS เป้าหมาย SpO₂ 88-94% (liberal oxygen เพิ่ม oxidative stress และ lung injury)",
+    "Sepsis-induced ARDS ที่ใส่เครื่องช่วยหายใจ: ใช้ low tidal volume 4-8 มล./กก. (ideal body weight) มากกว่า >10 มล./กก. คุมระดับ plateau pressure ≤30 ซม.น้ำ และ driving pressure ≤15 ซม.น้ำ",
+    "Sepsis-induced moderate-severe ARDS: แนะนำ high PEEP (ในผู้ป่วยที่ไม่ได้ทำ recruitment maneuver) และทำ prone position อย่างน้อย 12 ชั่วโมง/วัน",
+    "ไม่แนะนำปรับ PEEP แบบ incremental titration ในผู้ป่วยที่ได้ทำ recruitment maneuvers",
+    "พิจารณาให้ neuromuscular blocking agents ใน sepsis-induced severe ARDS ระยะแรก (ภายใน 48 ชั่วโมงแรก)"
+  ],
+  recs:[
+    {t:"ผู้ป่วยหอบเหนื่อยที่ยังไม่มีข้อบ่งชี้ใส่ท่อช่วยหายใจ ให้ high-flow nasal cannula", s:"conditional", e:"verylow"},
+    {t:"Sepsis-induced hypoxemic respiratory failure ให้ HFNC มากกว่า NIV", s:"conditional", e:"high"},
+    {t:"เป้าหมาย SpO₂ ของ sepsis-induced ARDS คือ 88-94%", s:"strong", e:"high"},
+    {t:"ใช้ low tidal volume strategy (4-8 มล./กก.) มากกว่า high tidal volume (>10 มล./กก.)", s:"strong", e:"high"},
+    {t:"คุม plateau pressure ≤30 ซม.น้ำ และ driving pressure ≤15 ซม.น้ำ ใน severe ARDS", s:"strong", e:"moderate"},
+    {t:"ทำ prone position อย่างน้อย 12 ชั่วโมง/วัน ใน sepsis-induced moderate-severe ARDS", s:"strong", e:"moderate"},
+    {t:"ไม่ปรับ PEEP แบบ incremental titration หากทำ recruitment maneuvers แล้ว", s:"strong", e:"verylow"}
+  ],
+  cards:[
+    {f:"ผู้ป่วย sepsis-induced hypoxemic respiratory failure ควรได้รับการช่วยหายใจแบบใดเป็นอันดับแรก?", b:"High-flow nasal cannula (HFNC) — แนะนำมากกว่า non-invasive ventilation เพราะสบายกว่าและลดความเสี่ยง lung injury จากแรงดันบวก"},
+    {f:"เป้าหมาย SpO₂ ในผู้ป่วย sepsis-induced ARDS ต่างจากผู้ป่วยที่ไม่มี ARDS อย่างไร?", b:"ARDS: 88-94% (ไม่ liberal) ส่วนไม่มี ARDS: 94-98% — ระดับออกซิเจนสูงเกินเพิ่ม oxidative stress และ lung injury"},
+    {f:"ค่า tidal volume, plateau pressure และ driving pressure เป้าหมายใน sepsis-induced severe ARDS?", b:"Tidal volume 4-8 มล./กก., plateau pressure ≤30 ซม.น้ำ, driving pressure ≤15 ซม.น้ำ"},
+    {f:"ควรทำ prone position นานเท่าไรต่อวันในผู้ป่วย moderate-severe ARDS?", b:"อย่างน้อย 12 ชั่วโมงต่อวัน"},
+    {f:"ควรพิจารณาให้ neuromuscular blocking agents เมื่อใด?", b:"ใน sepsis-induced severe ARDS ระยะแรก ภายใน 48 ชั่วโมงแรกของการเกิดโรค"}
+  ],
+  quiz:[
+    {q:"เป้าหมาย SpO₂ สำหรับผู้ป่วย sepsis-induced ARDS คือช่วงใด?",
+     c:["94-98%","88-94%","98-100%","80-88%"], a:1,
+     e:"คำแนะนำข้อ 4.4: SpO₂ 88-94% (strong, หลักฐานดี) เพื่อลด oxidative stress จาก hyperoxia"},
+    {q:"กลยุทธ์ tidal volume ที่แนะนำในผู้ป่วย sepsis-induced ARDS ที่ใส่เครื่องช่วยหายใจคือเท่าใด?",
+     c:[">10 มล./กก.","4-8 มล./กก.","15 มล./กก.","ไม่จำกัด ปรับตาม comfort ผู้ป่วย"], a:1,
+     e:"คำแนะนำข้อ 4.5.1: low tidal volume 4-8 มล./กก. ลด ventilator-induced lung injury เทียบกับ high tidal volume"},
+    {q:"ผู้ป่วย sepsis-induced moderate-severe ARDS ควรทำ prone position นานเท่าใดต่อวัน?",
+     c:["2 ชั่วโมง","6 ชั่วโมง","อย่างน้อย 12 ชั่วโมง","24 ชั่วโมงต่อเนื่อง"], a:2,
+     e:"คำแนะนำข้อ 4.5.3: prone position อย่างน้อย 12 ชั่วโมง/วัน (strong, หลักฐานดี)"}
+  ]
+},
+{
+  id:"c5", n:"5", title:"Renal Support", sub:"การพยุงการทำงานของไต", nav:"5. Renal",
+  chips:[
+    {v:"48 ชม.", l:"กรอบเวลาวินิจฉัย SA-AKI จาก Cr เพิ่มขึ้น ≥0.3 มก./ดล."},
+    {v:"25-30", l:"มล./กก./ชม. อัตรา CRRT effluent"},
+    {v:"K>6.5", l:"เกณฑ์ RRT ฉุกเฉิน (refractory hyperkalemia)"}
+  ],
+  bullets:[
+    "วินิจฉัย Sepsis-associated AKI (SA-AKI) ตามเกณฑ์ KDIGO 2012 เมื่อมี sepsis ร่วมกับ AKI ภายใน 48 ชั่วโมง หรือภายใน 7 วันของการวินิจฉัย sepsis",
+    "การรักษา SA-AKI มุ่งควบคุมการติดเชื้อ และดูแล intravascular volume ให้เพียงพอ (ไม่ใช่การให้สารน้ำมากเกิน) หลีกเลี่ยงสารที่มีผลต่อไต (nephrotoxic agents)",
+    "ข้อบ่งชี้เด็ดขาดของการบำบัดทดแทนไต (absolute indication for RRT): refractory acidosis, refractory hyperkalemia (K>6 มิลลิอิควิวาเลนต์/ลิตร), refractory volume overload, BUN>100 มก./ดล. หรือมีสารพิษที่ dialyzable",
+    "เลือกวิธีบำบัดทดแทนไต (IHD, SLED, CRRT, peritoneal dialysis) ตามความรุนแรงของผู้ป่วยและความพร้อมของสถานพยาบาล",
+    "พิจารณา CRRT มากกว่า intermittent hemodialysis เมื่อมี hemodynamic instability, สมองบวม หรือต้องใช้ vasopressor ขนาดสูง",
+    "Dose การบำบัดทดแทนไต: intermittent ควรได้ Kt/V >1.3 ต่อครั้ง หรือ urea reduction ratio >70%; continuous ควรได้ effluent flow rate อย่างน้อย 20-25 มล./กก./ชม. (สั่ง 25-30 มล./กก./ชม. เพื่อชดเชยการหยุดชะงัก)"
+  ],
+  recs:[
+    {t:"วินิจฉัย SA-AKI ตามเกณฑ์ KDIGO 2012 ภายใน 48 ชม. หรือ 7 วันหลังวินิจฉัย sepsis", s:"strong", e:"good"},
+    {t:"รักษา SA-AKI โดยควบคุมการติดเชื้อและประคับประคองการทำงานของไต ไม่รีบบำบัดทดแทนไตหากไม่มีข้อบ่งชี้ชัดเจน", s:"strong", e:"good"},
+    {t:"หลีกเลี่ยงสารเคมี/ยาที่มีผลต่อการทำงานของไต (nephrotoxic agents)", s:"strong", e:"good"},
+    {t:"เลือกวิธีบำบัดทดแทนไต (IHD/SLED/CRRT/PD) ตามความรุนแรงและความพร้อมของสถานพยาบาล", s:"strong", e:"moderate"},
+    {t:"Continuous RRT ควรได้ effluent flow rate อย่างน้อย 20-25 มล./กก./ชม.", s:"strong", e:"good"}
+  ],
+  cards:[
+    {f:"เกณฑ์วินิจฉัย SA-AKI ตาม KDIGO 2012 มีอะไรบ้าง?", b:"Serum creatinine เพิ่มขึ้น ≥0.3 มก./ดล. ภายใน 48 ชม. หรือ ≥1.5 เท่าของ baseline ภายใน 7 วัน หรือปัสสาวะออก <0.5 มล./กก./ชม. นาน >6 ชม."},
+    {f:"ข้อบ่งชี้เด็ดขาด (absolute indication) ของการบำบัดทดแทนไตมีอะไรบ้าง?", b:"Refractory acidosis, refractory hyperkalemia (K>6 mEq/L), refractory volume overload, BUN>100 มก./ดล. หรือ severe uremia, สารพิษที่ dialyzable"},
+    {f:"เมื่อใดควรเลือก CRRT มากกว่า intermittent hemodialysis?", b:"เมื่อมี hemodynamic instability, สมองบวม/เสี่ยงสมองบวม หรือต้องใช้ vasopressor ขนาดสูง (dopamine>15 หรือ NE/adrenaline>0.1 มคก./กก./นาที)"},
+    {f:"อัตรา effluent flow rate ที่แนะนำสำหรับ continuous RRT คือเท่าใด?", b:"อย่างน้อย 20-25 มล./กก./ชม. โดยทั่วไปสั่ง 25-30 มล./กก./ชม. เพื่อชดเชยการหยุดชะงักของเครื่อง"}
+  ],
+  quiz:[
+    {q:"ข้อใดเข้าเกณฑ์วินิจฉัย SA-AKI ตาม KDIGO 2012?",
+     c:["Serum creatinine เพิ่มขึ้น ≥0.3 มก./ดล. ภายใน 48 ชม.","Serum creatinine เพิ่มขึ้นเท่าใดก็ได้ภายใน 1 เดือน","ปัสสาวะออก <2 มล./กก./ชม. นาน 2 ชม.","BUN สูงกว่า 20 มก./ดล."], a:0,
+     e:"เกณฑ์ KDIGO 2012 ข้อหนึ่งคือ Cr เพิ่มขึ้น ≥0.3 มก./ดล.ภายใน 48 ชม. (หรือ ≥1.5 เท่าใน 7 วัน หรือ UO<0.5 มล./กก./ชม. นาน >6ชม.)"},
+    {q:"ข้อใด ไม่ใช่ absolute indication ของการบำบัดทดแทนไต?",
+     c:["Refractory hyperkalemia","Refractory metabolic acidosis","Serum creatinine สูงกว่า baseline เล็กน้อยโดยไม่มีอาการ","BUN > 100 มก./ดล."], a:2,
+     e:"Cr สูงขึ้นเล็กน้อยโดยไม่มีอาการยังไม่ใช่ absolute indication ต้องพิจารณาภาพรวมทางคลินิก"},
+    {q:"อัตรา effluent flow rate ขั้นต่ำที่แนะนำสำหรับ continuous RRT (CRRT) คือเท่าใด?",
+     c:["10-15 มล./กก./ชม.","20-25 มล./กก./ชม.","40-50 มล./กก./ชม.","60 มล./กก./ชม."], a:1,
+     e:"คำแนะนำ: continuous ควรได้ effluent flow rate อย่างน้อย 20-25 มล./กก./ชม. (strong, หลักฐานดี)"}
+  ]
+},
+{
+  id:"c6", n:"6", title:"Hematologic &amp; Hemostatic Management", sub:"เกล็ดเลือด การแข็งตัวของเลือด และการให้เลือด", nav:"6. Hematologic",
+  chips:[
+    {v:"LMWH", l:"ยาป้องกันลิ่มเลือดอุดตันตัวแรกที่แนะนำ"},
+    {v:"7-8", l:"ก./ดล. Hb threshold restrictive transfusion"},
+    {v:"≥5", l:"ISTH DIC score ที่เข้าเกณฑ์ overt DIC"}
+  ],
+  bullets:[
+    "ประเมินความเสี่ยง VTE และเลือดออกด้วย risk assessment model เช่น IMPROVE score ก่อนตัดสินใจให้ thromboprophylaxis",
+    "Pharmacological thromboprophylaxis (LMWH เป็นทางเลือกแรก) ดีกว่า mechanical thromboprophylaxis ในผู้ป่วยวิกฤตที่มีความเสี่ยงเลือดออกต่ำ",
+    "ประเมิน consumptive coagulopathy เบื้องต้นด้วย platelet count, PT, aPTT — หากสงสัย DIC ให้ตรวจ fibrinogen และ D-dimer เพิ่มเพื่อคำนวณ ISTH DIC score (คะแนน ≥5 = overt DIC)",
+    "การให้เลือดแดง: ใช้แนวทาง restrictive RBC transfusion (Hb threshold 7.0-8.0 ก./ดล.) มากกว่า permissive (9.0-10.0 ก./ดล.) ยกเว้นมี acute coronary syndrome",
+    "การให้เกล็ดเลือด/พลาสมา พิจารณาตามบริบท: prophylaxis ทั่วไปเมื่อเกล็ดเลือด <10-20×10⁹/ลิตร, ก่อนหัตถการรุกล้ำต้องดูเกณฑ์เฉพาะหัตถการ (เช่น lumbar puncture <40-50×10⁹/ลิตร, central line <20-50×10⁹/ลิตร)"
+  ],
+  recs:[
+    {t:"ประเมินความเสี่ยง VTE และเลือดออกด้วย risk assessment model (เช่น IMPROVE score) ก่อนให้ thromboprophylaxis", s:"conditional", e:"verylow"},
+    {t:"ใช้ pharmacological thromboprophylaxis (LMWH เป็นทางเลือกแรก) มากกว่า mechanical", s:"conditional", e:"low/moderate"},
+    {t:"ประเมิน consumptive coagulopathy ด้วย platelet, PT, aPTT ในผู้ป่วยที่มีเลือดออกผิดปกติ", s:"conditional", e:"verylow"},
+    {t:"ใช้ restrictive RBC transfusion (Hb threshold 7.0-8.0 ก./ดล.) มากกว่า permissive", s:"strong", e:"moderate"},
+    {t:"ไม่แนะนำ restrictive threshold ในผู้ป่วยที่มี acute coronary syndrome", s:"conditional", e:"low"}
+  ],
+  cards:[
+    {f:"ยาป้องกันลิ่มเลือดอุดตัน (pharmacological thromboprophylaxis) ตัวแรกที่แนะนำคืออะไร?", b:"Low molecular weight heparin (LMWH) เป็นทางเลือกแรก รองลงมาคือ unfractionated heparin (UFH)"},
+    {f:"เกณฑ์ ISTH DIC score เท่าใดที่เข้าได้กับ overt DIC?", b:"คะแนนรวม ≥5 (ประเมินจาก platelet count, D-dimer, PT ที่ยืดออก และ fibrinogen)"},
+    {f:"Hb threshold ของ restrictive RBC transfusion ในผู้ป่วยวิกฤตทั่วไปคือเท่าใด?", b:"7.0-8.0 กรัม/เดซิลิตร — ยกเว้นมี acute coronary syndrome ให้ใช้เกณฑ์เดิม/permissive มากกว่า"},
+    {f:"เหตุใดจึงต้องระวังเป็นพิเศษในผู้ป่วย acute coronary syndrome เรื่องการให้เลือด?", b:"เพราะการศึกษาพบว่า restrictive transfusion ในกลุ่มนี้สัมพันธ์กับอัตราตายจากโรคหัวใจขาดเลือดที่สูงกว่า permissive transfusion"}
+  ],
+  quiz:[
+    {q:"ยา thromboprophylaxis ชนิดใดเป็นทางเลือกแรกในผู้ป่วยวิกฤตที่มีความเสี่ยง VTE สูงและความเสี่ยงเลือดออกต่ำ?",
+     c:["Aspirin","Low molecular weight heparin (LMWH)","Warfarin","Pneumatic compression device เท่านั้น"], a:1,
+     e:"CPG แนะนำ pharmacological thromboprophylaxis โดยมี LMWH เป็นทางเลือกแรก (conditional, หลักฐานปานกลาง)"},
+    {q:"Hb threshold สำหรับ restrictive RBC transfusion ในผู้ป่วยวิกฤตทั่วไป (ไม่มี ACS) คือเท่าใด?",
+     c:["6.0-7.0 ก./ดล.","7.0-8.0 ก./ดล.","9.0-10.0 ก./ดล.","10.0-11.0 ก./ดล."], a:1,
+     e:"คำแนะนำข้อ 6.5: restrictive RBC transfusion (Hb 7.0-8.0 ก./ดล.) ดีกว่า permissive (9.0-10.0 ก./ดล.)"},
+    {q:"ISTH DIC score รวมกี่คะแนนขึ้นไปจึงเข้าเกณฑ์ overt DIC?",
+     c:["≥3","≥5","≥8","≥10"], a:1,
+     e:"คะแนนตั้งแต่ 5 ขึ้นไปเข้าได้กับภาวะ overt DIC หากน้อยกว่า 5 ให้ตรวจซ้ำใน 1-2 วัน"}
+  ]
+},
+{
+  id:"c7", n:"7", title:"Medical Nutrition Therapy", sub:"โภชนบำบัด", nav:"7. Nutrition",
+  chips:[
+    {v:"48-72 ชม.", l:"เริ่ม enteral tube feeding หากกินเองไม่ได้"},
+    {v:"20-25", l:"กิโลแคลอรี/กก./วัน สัปดาห์แรก"},
+    {v:"140-180", l:"มก./ดล. เป้าหมายน้ำตาลในเลือด"}
+  ],
+  bullets:[
+    "หลังผู้ป่วยมีสัญญาณชีพคงที่และไม่มีข้อห้าม เริ่มรับประทานอาหาร/ONS ได้ตามปกติ หากกินเองไม่ได้ให้เริ่ม enteral tube feeding (ETF) ภายใน 48-72 ชั่วโมง",
+    "หากรับ enteral nutrition (EN) ได้ ไม่แนะนำให้ parenteral nutrition (PN) เสริมในช่วง 3 วันแรกของ sepsis เพราะเสี่ยง overfeeding",
+    "กำหนดเป้าหมายพลังงานด้วยวิธีคำนวณอย่างง่ายจากน้ำหนักตัว 20-25 กิโลแคลอรี/กก./วัน ในสัปดาห์แรก โดยไม่ควรเกินร้อยละ 70 ของเป้าหมาย แล้วค่อยปรับเพิ่มเป็น 25-35 กิโลแคลอรี/กก./วัน ในระยะพักฟื้น",
+    "เป้าหมายโปรตีนเบื้องต้น 1.2-1.5 กรัม/กก./วัน (สามารถปรับเพิ่มได้เร็วกว่าพลังงาน) — SA-AKI ที่ทำ intermittent HD: 1.2-1.5 ก./กก./วัน, CRRT: 1.5-2 (อาจถึง 2.5) ก./กก./วัน",
+    "เลือกสายให้อาหารเข้ากระเพาะอาหารเป็นทางเลือกแรก (NG/OG tube) หากมีความเสี่ยงสำลักสูงให้ post-pyloric feeding แทน และให้แบบ continuous ดีกว่า intermittent/bolus",
+    "เฝ้าระวังภาวะ refeeding โดยติดตามฟอสเฟต แมกนีเซียม โพแทสเซียมก่อนและระหว่างให้โภชนบำบัด และให้วิตามินบี1 ก่อนเริ่มในผู้ป่วยเสี่ยง refeeding",
+    "ควบคุมระดับน้ำตาลในเลือดเป้าหมาย 140-180 มก./ดล."
+  ],
+  recs:[
+    {t:"เริ่ม enteral tube feeding ภายใน 48-72 ชั่วโมง หากรับประทานอาหารเองไม่ได้", s:"strong", e:"low"},
+    {t:"ไม่แนะนำเสริม parenteral nutrition ในช่วง 3 วันแรกของ sepsis หากรับ EN ได้", s:"conditional", e:"low"},
+    {t:"กำหนดพลังงานเป้าหมาย 20-25 กิโลแคลอรี/กก./วัน ในสัปดาห์แรก (ไม่เกิน 70% ของเป้าหมาย)", s:"conditional", e:"verylow"},
+    {t:"ให้ EN แบบ continuous มากกว่า intermittent และ bolus", s:"strong", e:"low"},
+    {t:"เฝ้าระวัง refeeding syndrome ด้วยการติดตามฟอสเฟต แมกนีเซียม โพแทสเซียม", s:"strong", e:"good"},
+    {t:"รักษาระดับน้ำตาลในเลือดเป้าหมาย 140-180 มก./ดล.", s:"strong", e:"moderate"}
+  ],
+  cards:[
+    {f:"หากผู้ป่วยรับประทานอาหารเองไม่ได้ ควรเริ่ม enteral tube feeding ภายในกี่ชั่วโมง?", b:"ภายใน 48-72 ชั่วโมง โดยเริ่มขนาดต่ำแล้วปรับเพิ่มค่อยเป็นค่อยไป"},
+    {f:"เพราะเหตุใดจึงไม่แนะนำเสริม parenteral nutrition ในช่วง 3 วันแรกของ sepsis หากรับ EN ได้?", b:"เพราะร่างกายมีภาวะแคแทบอลิกสูงในช่วงต้น การให้พลังงานเต็มเป้าหมายเร็วเกินไปเสี่ยง overfeeding ภาวะน้ำตาลในเลือดสูง และการติดเชื้อในกระแสเลือด"},
+    {f:"เป้าหมายพลังงานในสัปดาห์แรกของ sepsis คือเท่าใด และไม่ควรเกินกี่เปอร์เซ็นต์ของเป้าหมาย?", b:"20-25 กิโลแคลอรี/กก./วัน โดยไม่ควรเกินร้อยละ 70 ของเป้าหมายในสัปดาห์แรก"},
+    {f:"เป้าหมายระดับน้ำตาลในเลือดของผู้ป่วยที่ได้รับโภชนบำบัดคือช่วงใด?", b:"140-180 มก./ดล."},
+    {f:"สารใดที่ควรให้ก่อนเริ่มโภชนบำบัดในผู้ป่วยที่มีความเสี่ยง refeeding syndrome?", b:"วิตามินบี 1 (thiamine) ก่อนเริ่มให้สารน้ำ/กลูโคสหรือโภชนบำบัด"}
+  ],
+  quiz:[
+    {q:"หากผู้ป่วย sepsis ไม่สามารถกลืนอาหารได้อย่างปลอดภัย ควรเริ่ม enteral tube feeding ภายในกี่ชั่วโมง?",
+     c:["ภายใน 6 ชั่วโมง","ภายใน 24 ชั่วโมง","ภายใน 48-72 ชั่วโมง","หลัง 7 วัน"], a:2,
+     e:"คำแนะนำข้อ 7.1: เริ่ม ETF ภายใน 72 ชั่วโมง (strong, ปานกลาง) โดยเริ่มขนาดต่ำและปรับเพิ่มค่อยเป็นค่อยไป"},
+    {q:"เป้าหมายพลังงานในสัปดาห์แรกของภาวะ sepsis ตามวิธีคำนวณจากน้ำหนักตัวคือเท่าใด?",
+     c:["10-15 กิโลแคลอรี/กก./วัน","20-25 กิโลแคลอรี/กก./วัน","30-35 กิโลแคลอรี/กก./วัน","40-45 กิโลแคลอรี/กก./วัน"], a:1,
+     e:"คำแนะนำข้อ 7.3: พลังงานเป้าหมาย 20-25 กิโลแคลอรี/กก./วัน ในสัปดาห์แรก ไม่เกินร้อยละ 70 ของเป้าหมาย"},
+    {q:"เป้าหมายระดับน้ำตาลในเลือดที่แนะนำระหว่างให้โภชนบำบัดคือช่วงใด?",
+     c:["70-110 มก./ดล.","110-140 มก./ดล.","140-180 มก./ดล.","180-220 มก./ดล."], a:2,
+     e:"CPG แนะนำควบคุมน้ำตาลในเลือด 140-180 มก./ดล. (strong, หลักฐานปานกลาง)"}
+  ]
+},
+{
+  id:"c8", n:"8", title:"Surgical Sepsis and Perioperative Care", sub:"การผ่าตัดและดูแลรอบผ่าตัด", nav:"8. Surgical",
+  chips:[
+    {v:"6-12 ชม.", l:"กรอบเวลาควบคุมแหล่งติดเชื้อหลัง resuscitation"},
+    {v:"0-2 ชม.", l:"ผ่าตัดใน necrotizing fasciitis ที่รอดชีวิตสูงสุด (98%)"},
+    {v:"10", l:"ข้อ Thailand's SSI Prevention Bundle"}
+  ],
+  bullets:[
+    "ประเมินความเสี่ยงด้วย SIRS/MEWS/NEWS ร่วมกับอาการทางคลินิก การตรวจทางห้องปฏิบัติการ และ imaging (CT/US/MRI) เพื่อวินิจฉัยและวางแผน source control",
+    "Time-sensitive intervention: ควบคุมแหล่งติดเชื้ออย่างเหมาะสมตั้งแต่เนิ่นๆ โดยเริ่มต้นเร็วที่สุดหลัง initial resuscitation และภายใน 6-12 ชั่วโมงแรกหลังวินิจฉัย (laparotomy/laparoscopy, ระบายหนอง, debridement)",
+    "ในรายที่มีความเสี่ยงสูง เช่น ischemic bowel, ruptured bowel และ necrotizing fasciitis ควรผ่าตัดควบคุมแหล่งติดเชื้อโดยเร็วที่สุด — necrotizing fasciitis ที่ผ่าตัดภายใน 0-2 ชม. มีอัตรารอดชีวิตสูงถึง 98% เทียบกับลดลงเหลือ 55% หากล่าช้าถึง 4-6 ชม.",
+    "เลือกหัตถการชนิด least invasive ที่มีประสิทธิภาพเพียงพอ (เช่น percutaneous drainage) ในผู้ป่วยที่การผ่าตัดใหญ่มีความเสี่ยงสูง แต่หากอาการทางคลินิกแย่ลงต้องเตรียมผ่าตัดโดยเร็วที่สุด",
+    "ระหว่างผ่าตัด: ให้สารน้ำในปริมาณที่เพียงพอ (ไม่มากเกินความจำเป็น) โดยเฉพาะกลุ่ม intraabdominal sepsis เพื่อลดความเสี่ยง abdominal compartment syndrome, พิจารณาปิดช่องท้องชั่วคราวหากมีความเสี่ยง intraabdominal hypertension สูง",
+    "ปฏิบัติตาม Thailand's Surgical Site Infection (SSI) Prevention Bundle ซึ่งมี 10 ข้อ ครอบคลุมช่วงก่อน-ระหว่าง-หลังผ่าตัด",
+    "หลังผ่าตัด เฝ้าระวังภาวะแทรกซ้อน (acute lung injury, AKI, fluid overload, abdominal compartment syndrome) และไม่จำเป็นต้องทำ routine re-laparotomy หากควบคุมแหล่งติดเชื้อได้ดีในครั้งแรก"
+  ],
+  recs:[
+    {t:"ควบคุมแหล่งติดเชื้อ (source control) โดยเริ่มเร็วที่สุดภายใน 6-12 ชั่วโมงหลัง initial resuscitation", s:"strong", e:"moderate"},
+    {t:"ในรายที่สงสัย ischemic bowel, ruptured bowel หรือ necrotizing fasciitis ควรผ่าตัดควบคุมแหล่งติดเชื้อโดยเร็วที่สุด", s:"strong", e:"moderate"},
+    {t:"เลือกหัตถการชนิด least invasive ที่มีประสิทธิภาพเพียงพอในผู้ป่วยที่มีความเสี่ยงสูงต่อการผ่าตัดใหญ่", s:"strong", e:"moderate"},
+    {t:"ไม่จำเป็นต้องทำ routine re-laparotomy ใน severe peritonitis หากควบคุมแหล่งติดเชื้อได้ดีในครั้งแรก", s:"strong", e:"moderate"},
+    {t:"ปฏิบัติตาม Thailand's SSI Prevention Bundle เพื่อป้องกันการติดเชื้อบริเวณแผลผ่าตัด", s:"", e:""}
+  ],
+  cards:[
+    {f:"กรอบเวลาการควบคุมแหล่งติดเชื้อ (source control) ที่แนะนำหลัง initial resuscitation คือเท่าใด?", b:"เริ่มเร็วที่สุด และภายใน 6-12 ชั่วโมงแรกหลังวินิจฉัย"},
+    {f:"อัตรารอดชีวิตของ necrotizing fasciitis ต่างกันอย่างไรระหว่างผ่าตัดภายใน 0-2 ชม. กับล่าช้า 4-6 ชม.?", b:"ผ่าตัดภายใน 0-2 ชม. รอดชีวิตสูงถึง 98% แต่หากล่าช้าถึง 4-6 ชม. อัตรารอดชีวิตลดลงเหลือ 55%"},
+    {f:"หลักการเลือกหัตถการควบคุมแหล่งติดเชื้อในผู้ป่วยที่ผ่าตัดใหญ่เสี่ยงสูงคืออะไร?", b:"เลือกหัตถการชนิด least invasive ที่มีประสิทธิภาพเพียงพอ เช่น percutaneous drainage แต่ต้องเตรียมผ่าตัดทันทีหากอาการแย่ลง"},
+    {f:"Thailand's SSI Prevention Bundle มีกี่ข้อ และครอบคลุมช่วงใดบ้าง?", b:"10 ข้อ ครอบคลุมช่วงก่อนผ่าตัด (3 ข้อ), ระหว่างผ่าตัด (4 ข้อ) และระหว่าง-หลังผ่าตัด (3 ข้อ)"}
+  ],
+  quiz:[
+    {q:"ควรควบคุมแหล่งติดเชื้อ (source control) ในผู้ป่วย surgical sepsis ภายในกี่ชั่วโมงหลัง initial resuscitation?",
+     c:["1-2 ชั่วโมง","6-12 ชั่วโมง","24-48 ชั่วโมง","72 ชั่วโมง"], a:1,
+     e:"คำแนะนำข้อ 8.2: เริ่มควบคุมแหล่งติดเชื้อเร็วที่สุด และภายใน 6-12 ชั่วโมงแรก (strong, ปานกลาง)"},
+    {q:"ผู้ป่วย necrotizing fasciitis ที่ได้รับการผ่าตัดล่าช้าถึง 4-6 ชั่วโมง มีอัตรารอดชีวิตประมาณเท่าใด (เทียบกับผ่าตัดใน 0-2 ชม. ที่ 98%)?",
+     c:["90%","78%","55%","20%"], a:2,
+     e:"การศึกษาที่ CPG อ้างอิงพบว่าอัตรารอดชีวิตลดลงเหลือประมาณ 55% เมื่อผ่าตัดล่าช้าถึง 4-6 ชั่วโมง"},
+    {q:"ในผู้ป่วย severe peritonitis ที่ควบคุมแหล่งติดเชื้อได้ดีในการผ่าตัดครั้งแรก ควรทำอย่างไรต่อ?",
+     c:["ทำ routine re-laparotomy ทุกราย","ไม่จำเป็นต้องทำ routine re-laparotomy ผ่าตัดซ้ำเฉพาะเมื่อมีข้อบ่งชี้","ผ่าตัดซ้ำภายใน 24 ชม. เสมอ","ปิดแผลแบบ delayed เสมอ"], a:1,
+     e:"คำแนะนำ: ไม่จำเป็นต้องทำ routine re-laparotomy หากควบคุมต้นเหตุได้ดีแล้ว (strong, ปานกลาง)"}
+  ]
+},
+{
+  id:"c9", n:"9", title:"Continuing Care: Networking &amp; Rapid Response", sub:"เครือข่ายดูแลผู้ป่วยและระบบเฝ้าระวังก่อนวิกฤต", nav:"9. Continuing Care",
+  chips:[
+    {v:"5", l:"STEPS ของ STOP SEPSIS bundle"},
+    {v:"4", l:"องค์ประกอบของ Rapid Response System"},
+    {v:"3", l:"ขั้นตอนดูแลผู้ป่วยในเครือข่าย"}
+  ],
+  bullets:[
+    "แนวทางเครือข่ายดูแลผู้ป่วย sepsis แบ่งเป็น 3 ขั้นตอน: (1) Early diagnosis/risk classification (2) Initial resuscitation (3) Organ support/monitoring — ปรับใช้ได้ทั้งโรงพยาบาลศูนย์ โรงพยาบาลจังหวัด และโรงพยาบาลชุมชน",
+    "STOP SEPSIS 5 STEPS สำหรับโรงพยาบาลเครือข่าย: (1) Hemoculture x2 และ serum lactate ภายใน 1 ชม.แรก (2) Load IV Ringer's lactate (3) ให้ยาต้านจุลชีพภายใน 1 ชั่วโมง (4) เริ่ม early norepinephrine (5) Early refer/consult พร้อมใส่สายสวนปัสสาวะ",
+    "แนวปฏิบัติ Septic Shock Fast Track: วินิจฉัยจาก SIRS ≥2 ข้อ ร่วมกับ hypotension หรือ organ failure/hypoperfusion แล้วเริ่ม initial resuscitation (hemoculture, load RLS, antibiotics, early NE) ก่อนปรึกษา/ส่งต่อ ICU",
+    "Rapid Response System (RRS) มี 4 องค์ประกอบ: Efferent limb (ทีม RRT ที่ดูแล airway/ACLS), Afferent limb (aggregated early warning score เช่น NEWS เพื่อ trigger ทีม), Administrative limb (ผู้บริหารสนับสนุนทรัพยากร) และ Quality improvement limb (ตั้งเป้าหมายวัดผล เช่น ลด unplanned CPR ลง 20% ใน 6 เดือน)",
+    "เหตุผลของ RRS: ผู้ป่วยหัวใจหยุดเต้นในโรงพยาบาลมักมีสัญญาณเตือนล่วงหน้าเฉลี่ย 4-6 ชั่วโมงก่อนเกิดเหตุ และมากกว่าครึ่งสามารถป้องกันได้ (reversible cause) หากตรวจพบและตอบสนองทันเวลา"
+  ],
+  recs:[
+    {t:"พัฒนาเครือข่ายดูแลผู้ป่วย sepsis ให้เชื่อมโยงกันทุกระดับโรงพยาบาลตามขั้นตอน 3 ขั้น", s:"conditional", e:"low"},
+    {t:"จัดตั้งระบบ Rapid Response System (RRS) เพื่อตรวจจับสัญญาณวิกฤตของผู้ป่วยก่อนเกิดเหตุ", s:"conditional", e:"verylow"}
+  ],
+  cards:[
+    {f:"STOP SEPSIS 5 STEPS ประกอบด้วยอะไรบ้าง?", b:"1) Hemoculture x2 + serum lactate ใน 1 ชม.แรก 2) Load IV Ringer's lactate 3) ให้ยาต้านจุลชีพภายใน 1 ชม. 4) Early norepinephrine 5) Early refer/consult (พร้อมใส่สายสวนปัสสาวะ)"},
+    {f:"Rapid Response System มีองค์ประกอบหลักกี่ส่วน อะไรบ้าง?", b:"4 ส่วน: Efferent limb (ทีม RRT), Afferent limb (ระบบ trigger/early warning score), Administrative limb (ผู้บริหาร) และ Quality improvement limb"},
+    {f:"เหตุใดการเฝ้าระวังสัญญาณเตือนล่วงหน้า (early warning signs) จึงสำคัญต่อการลดภาวะวิกฤต?", b:"เพราะผู้ป่วยส่วนใหญ่มีความไม่คงที่ทางสรีรวิทยาล่วงหน้าเฉลี่ย 4-6 ชั่วโมงก่อนเกิดเหตุการณ์วิกฤต และกว่าครึ่งสามารถป้องกันได้หากตอบสนองทัน"},
+    {f:"3 ขั้นตอนของการดูแลผู้ป่วยในเครือข่าย sepsis คืออะไร?", b:"1) Early diagnosis/risk classification 2) Initial resuscitation 3) Organ support/monitoring"}
+  ],
+  quiz:[
+    {q:"ข้อใด ไม่ใช่ ส่วนหนึ่งของ STOP SEPSIS 5 STEPS?",
+     c:["Hemoculture x2 และ serum lactate ภายใน 1 ชม.","Load IV Ringer's lactate","ทำ CT scan ช่องท้องทุกราย","Early refer/consult พร้อมใส่สายสวนปัสสาวะ"], a:2,
+     e:"5 STEPS คือ hemoculture+lactate, load RLS, ATB ภายใน 1 ชม., early NE, early refer/consult — ไม่ได้ระบุ CT scan เป็นข้อบังคับทุกราย"},
+    {q:"Rapid Response System ประกอบด้วยกี่องค์ประกอบหลัก?",
+     c:["2","3","4","5"], a:2,
+     e:"4 องค์ประกอบ: Efferent limb, Afferent limb, Administrative limb, Quality improvement limb"},
+    {q:"จากข้อมูลที่ CPG อ้างอิง ผู้ป่วยที่เกิดภาวะวิกฤตในโรงพยาบาลมักมีสัญญาณความไม่คงที่ทางสรีรวิทยาล่วงหน้าโดยเฉลี่ยกี่ชั่วโมง?",
+     c:["30 นาที - 1 ชั่วโมง","4-6 ชั่วโมง","24 ชั่วโมง","72 ชั่วโมง"], a:1,
+     e:"งานวิจัยที่อ้างอิงพบว่าผู้ป่วยมักมีสัญญาณเตือนล่วงหน้าเฉลี่ย 4-6 ชั่วโมงก่อนเกิดเหตุ ซึ่ง RRS ถูกออกแบบมาเพื่อจับสัญญาณเหล่านี้"}
+  ]
+},
+{ id:"final", nav:"แบบทดสอบรวม", isFinal:true }
+];
+
+const EVID_LABEL = {high:"หลักฐานดี", moderate:"หลักฐานปานกลาง", low:"หลักฐานต่ำ", verylow:"หลักฐานต่ำมาก", good:"หลักฐานดี", "high/moderate":"ดี–ปานกลาง"};
+
+const MUST_KNOW = [
+  {v:"30", l:"มล./กก. crystalloid ภายใน 3 ชม.แรก"},
+  {v:"≥65", l:"มม.ปรอท MAP เป้าหมาย"},
+  {v:"<2", l:"มิลลิโมล/ลิตร lactate เป้าหมาย"},
+  {v:"≥2", l:"specimens hemoculture ก่อน ATB"},
+  {v:"1 ชม.", l:"ให้ ATB ใน septic shock"},
+  {v:"6-12 ชม.", l:"ควบคุมแหล่งติดเชื้อหลัง resuscitation"},
+  {v:"88-94%", l:"SpO₂ เป้าหมายใน sepsis-induced ARDS"},
+  {v:"4-8", l:"มล./กก. low tidal volume"},
+  {v:"≤30 / ≤15", l:"ซม.น้ำ plateau / driving pressure"},
+  {v:"≥12 ชม.", l:"prone position ต่อวัน"},
+  {v:"7-8", l:"ก./ดล. Hb restrictive transfusion"},
+  {v:"140-180", l:"มก./ดล. เป้าหมายน้ำตาลในเลือด"},
+  {v:"48-72 ชม.", l:"เริ่ม enteral tube feeding"},
+  {v:"NE", l:"vasopressor ตัวแรกเสมอ"},
+  {v:"≥5", l:"ISTH DIC score = overt DIC"},
+  {v:"25-30", l:"มล./กก./ชม. CRRT effluent rate"}
+];
+
+/* ============================= STATE ============================= */
+const PROGRESS_KEY = "sepsis2569_progress_v1";
+function loadProgress(){
+  try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }catch(e){ return {}; }
+}
+function saveProgress(p){
+  try{ localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }catch(e){}
+}
+let PROGRESS = loadProgress();
+const chapterList = SECTIONS.filter(s=>!s.isHome && !s.isFinal);
+
+function chapterDone(id){
+  const p = PROGRESS[id];
+  return !!(p && p.quizDone);
+}
+function overallPercent(){
+  const total = chapterList.length;
+  const done = chapterList.filter(s=>chapterDone(s.id)).length;
+  return Math.round(done/total*100);
+}
+function updateTopProgress(){
+  const pct = overallPercent();
+  document.getElementById("topProgressBar").style.width = pct+"%";
+  document.getElementById("topProgressText").textContent = pct+"%";
+}
+
+/* ============================= NAV ============================= */
+let currentId = "home";
+
+function renderNav(){
+  const nav = document.getElementById("sidenav");
+  nav.innerHTML = "";
+  const label = document.createElement("div");
+  label.className = "grp-label"; label.textContent = "SEPSIS 2569";
+  nav.appendChild(label);
+  SECTIONS.forEach(s=>{
+    const btn = document.createElement("button");
+    btn.className = "navitem" + (s.id===currentId ? " active":"");
+    const n = document.createElement("span"); n.className="n"; n.textContent = s.isHome ? "•" : (s.isFinal ? "★" : s.n);
+    btn.appendChild(n);
+    const t = document.createElement("span"); t.textContent = s.nav; btn.appendChild(t);
+    if(!s.isHome && !s.isFinal){
+      const chk = document.createElement("span");
+      chk.className = "check" + (chapterDone(s.id) ? " done":"");
+      btn.appendChild(chk);
+    }
+    btn.onclick = ()=>{ currentId = s.id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    nav.appendChild(btn);
+  });
+}
+
+/* ============================= RENDER: HOME ============================= */
+function renderHome(){
+  const main = document.getElementById("main");
+  const pct = overallPercent();
+  let statTiles = MUST_KNOW.map(m=>`<div class="stat-tile"><div class="v">${m.v}</div><div class="l">${m.l}</div></div>`).join("");
+  let progRows = chapterList.map(s=>{
+    const p = PROGRESS[s.id];
+    const score = p && p.quizBest ? p.quizBest.correct+"/"+p.quizBest.total : "—";
+    const barPct = p && p.quizBest ? Math.round(p.quizBest.correct/p.quizBest.total*100) : 0;
+    return `<div class="ch-progress-row">
+      <div class="t">${s.n}. ${s.title}</div>
+      <div class="bar"><i style="width:${barPct}%"></i></div>
+      <div class="score">${score}</div>
+    </div>`;
+  }).join("");
+  main.innerHTML = `
+    <div class="panel hero">
+      <span class="hero-tag">แนวทางเวชปฏิบัติ ฉบับ พ.ศ. 2569 · สมาคมเวชบำบัดวิกฤตแห่งประเทศไทย</span>
+      <h1>ห้องเรียน Sepsis &amp; Septic Shock</h1>
+      <p class="lead">สรุปสาระสำคัญและแบบฝึกจดจำแนวทางเวชปฏิบัติ CPG Sepsis 2026 ทั้ง 9 บท พร้อมแฟลชการ์ดและแบบทดสอบท้ายบท ออกแบบมาให้คุณหมอทบทวนได้รวดเร็วก่อนขึ้นเวรหรือก่อนสอบ</p>
+      <div class="cta-row">
+        <button class="btn primary" onclick="goTo('def')">เริ่มเรียนจากบทนิยาม →</button>
+        <button class="btn" onclick="goTo('final')">ทำแบบทดสอบรวมทุกบท</button>
+      </div>
+    </div>
+
+    <div class="section-h"><h2>ตัวเลขที่ต้องจำขึ้นใจ</h2><div class="line"></div></div>
+    <div class="stat-grid">${statTiles}</div>
+
+    <div class="section-h"><h2>ความคืบหน้ารายบท</h2><div class="line"></div></div>
+    <div class="ch-progress-list">${progRows}</div>
+
+    <div class="footnote">อ้างอิง: แนวทางเวชปฏิบัติสำหรับการวินิจฉัยและการดูแลรักษาผู้ป่วยภาวะพิษเหตุติดเชื้อ (Sepsis) และภาวะช็อกเหตุพิษติดเชื้อ (Septic Shock) ในประเทศไทย พ.ศ. 2569, สมาคมเวชบำบัดวิกฤตแห่งประเทศไทย, ราชวิทยาลัยอายุรแพทย์แห่งประเทศไทย · เอกสารนี้จัดทำเพื่อการทบทวนความรู้ส่วนบุคคลเท่านั้น ไม่ทดแทนวิจารณญาณทางคลินิกหรือฉบับเต็มของแนวทางเวชปฏิบัติ</div>
+  `;
+}
+window.goTo = (id)=>{ currentId = id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+
+/* ============================= RENDER: CHAPTER ============================= */
+function renderChapter(sec){
+  const main = document.getElementById("main");
+  let chips = sec.chips.map(c=>`<div class="chip"><b>${c.v}</b>${c.l}</div>`).join("");
+  let bullets = sec.bullets.map(b=>`<li>${b}</li>`).join("");
+  let recs = sec.recs.map(r=>{
+    if(!r.s) return `<div class="rec-row"><div class="badges"></div><div class="txt">${r.t}</div></div>`;
+    const cls = r.s==="strong" ? "strong" : "conditional";
+    const label = r.s==="strong" ? "แนะนำอย่างยิ่ง" : "แนะนำแบบมีเงื่อนไข";
+    return `<div class="rec-row">
+      <div class="badges"><span class="badge ${cls}">${label}</span><span class="evid">${EVID_LABEL[r.e]||r.e}</span></div>
+      <div class="txt">${r.t}</div>
+    </div>`;
+  }).join("");
+
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">${sec.n}</div>
+        <div>
+          <h1>${sec.title}</h1>
+          <div class="sub">${sec.sub}</div>
+        </div>
+      </div>
+      <div class="chip-row">${chips}</div>
+
+      <div class="section-h"><h2>สรุปสาระสำคัญ</h2><div class="line"></div></div>
+      <ul class="bullets">${bullets}</ul>
+
+      ${sec.recs.length ? `
+      <div class="section-h"><h2>คำแนะนำหลัก</h2><div class="line"></div></div>
+      <div class="legend">
+        <span><i class="strong"></i> Strong recommendation — ควรทำ/ไม่ควรทำ</span>
+        <span><i class="conditional"></i> Conditional recommendation — น่าทำ/อาจทำ</span>
+      </div>
+      ${recs}` : ""}
+
+      <div class="section-h"><h2>แฟลชการ์ดจำขึ้นใจ</h2><div class="line"></div></div>
+      <div id="fcArea"></div>
+
+      <div class="section-h"><h2>แบบทดสอบท้ายบท</h2><div class="line"></div></div>
+      <div id="quizArea"></div>
+
+    </div>
+  `;
+  mountFlashcards(sec);
+  mountQuiz(sec.id, sec.quiz);
+}
+
+/* ============================= FLASHCARDS ============================= */
+function mountFlashcards(sec){
+  const area = document.getElementById("fcArea");
+  let idx = 0;
+  const cards = sec.cards;
+  function draw(){
+    area.innerHTML = `
+      <div class="fc-counter">การ์ด ${idx+1} / ${cards.length} — คลิกที่การ์ดเพื่อดูคำตอบ</div>
+      <div class="flashcard" id="fcCard">
+        <div class="inner">
+          <div class="face front">${cards[idx].f}<span class="hint">คลิกเพื่อดูคำตอบ</span></div>
+          <div class="face back">${cards[idx].b}<span class="hint">คลิกเพื่อกลับ</span></div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="icon-btn" id="fcPrev">← ก่อนหน้า</button>
+        <button class="icon-btn" id="fcShuf">สุ่มการ์ด</button>
+        <button class="icon-btn" id="fcNext">ถัดไป →</button>
+      </div>
+    `;
+    const card = document.getElementById("fcCard");
+    card.onclick = ()=> card.classList.toggle("flip");
+    document.getElementById("fcPrev").onclick = ()=>{ idx = (idx-1+cards.length)%cards.length; draw(); };
+    document.getElementById("fcNext").onclick = ()=>{ idx = (idx+1)%cards.length; draw(); markCardsSeen(sec.id); };
+    document.getElementById("fcShuf").onclick = ()=>{ idx = Math.floor(Math.random()*cards.length); draw(); };
+  }
+  draw();
+}
+function markCardsSeen(id){
+  PROGRESS[id] = PROGRESS[id] || {};
+  PROGRESS[id].cardsSeen = true;
+  saveProgress(PROGRESS);
+}
+
+/* ============================= QUIZ ============================= */
+function mountQuiz(id, questions, isFinal){
+  const area = document.getElementById("quizArea");
+  let qi = 0, correct = 0, answered = false;
+  const order = questions.map((_,i)=>i);
+
+  function progressDots(){
+    return `<div class="quiz-progress">${order.map((_,i)=>`<i class="${i<qi?'done':''}"></i>`).join("")}</div>`;
+  }
+
+  function drawQuestion(){
+    answered = false;
+    const q = questions[order[qi]];
+    area.innerHTML = `
+      <div class="quiz-box">
+        ${progressDots()}
+        <div class="quiz-q">${qi+1}. ${q.q}</div>
+        <div id="choices">${q.c.map((c,i)=>`<button class="choice" data-i="${i}"><span class="k">${String.fromCharCode(65+i)}</span><span>${c}</span></button>`).join("")}</div>
+        <div class="explain" id="explainBox">${q.e}</div>
+        <div class="quiz-foot">
+          <span class="quiz-score">คะแนน: ${correct}/${qi}</span>
+          <button class="btn primary" id="nextBtn" style="display:none;">${qi===order.length-1 ? "ดูผลลัพธ์" : "ข้อถัดไป →"}</button>
+        </div>
+      </div>
+    `;
+    document.querySelectorAll("#choices .choice").forEach(btn=>{
+      btn.onclick = ()=>{
+        if(answered) return;
+        answered = true;
+        const i = parseInt(btn.dataset.i);
+        document.querySelectorAll("#choices .choice").forEach(b=>b.setAttribute("disabled","true"));
+        if(i===q.a){ btn.classList.add("correct"); correct++; }
+        else{
+          btn.classList.add("wrong");
+          document.querySelectorAll("#choices .choice")[q.a].classList.add("correct");
+        }
+        document.getElementById("explainBox").classList.add("show");
+        document.querySelector(".quiz-score").textContent = "คะแนน: "+correct+"/"+(qi+1);
+        document.getElementById("nextBtn").style.display = "inline-flex";
+      };
+    });
+    document.getElementById("nextBtn").onclick = ()=>{
+      qi++;
+      if(qi>=order.length){ finish(); } else { drawQuestion(); }
+    };
+  }
+
+  function finish(){
+    const pct = Math.round(correct/order.length*100);
+    area.innerHTML = `
+      <div class="quiz-box quiz-done">
+        <div style="font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">ผลการทดสอบ</div>
+        <div class="v">${correct}/${order.length}</div>
+        <p style="color:var(--muted);margin-top:6px;">คิดเป็น ${pct}% — ${pct>=80?"ยอดเยี่ยม จำแม่นมาก!":pct>=50?"ดี ลองทบทวนข้อที่พลาดอีกครั้ง":"ควรทบทวนสรุปสาระสำคัญและคำแนะนำหลักอีกรอบ"}</p>
+        <div class="cta-row" style="justify-content:center;">
+          <button class="btn" id="retryBtn">ทำแบบทดสอบอีกครั้ง</button>
+          ${!isFinal ? `<button class="btn primary" id="nextChBtn">ไปบทถัดไป →</button>` : ""}
+        </div>
+      </div>
+    `;
+    if(!isFinal){
+      PROGRESS[id] = PROGRESS[id] || {};
+      PROGRESS[id].quizDone = true;
+      const prevBest = PROGRESS[id].quizBest;
+      if(!prevBest || correct > prevBest.correct){ PROGRESS[id].quizBest = {correct, total: order.length}; }
+      saveProgress(PROGRESS);
+      renderNav();
+      updateTopProgress();
+    }
+    document.getElementById("retryBtn").onclick = ()=>{ qi=0; correct=0; drawQuestion(); };
+    const nb = document.getElementById("nextChBtn");
+    if(nb){
+      nb.onclick = ()=>{
+        const idx = chapterList.findIndex(s=>s.id===id);
+        const next = chapterList[idx+1];
+        currentId = next ? next.id : "final";
+        render();
+        window.scrollTo({top:0,behavior:"smooth"});
+      };
+    }
+  }
+
+  drawQuestion();
+}
+
+/* ============================= RENDER: FINAL QUIZ ============================= */
+function renderFinal(){
+  const main = document.getElementById("main");
+  const pool = [];
+  chapterList.forEach(s=> s.quiz.forEach(q=> pool.push(q)) );
+  // shuffle
+  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  const picked = pool.slice(0, 15);
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">★</div>
+        <div><h1>แบบทดสอบรวมทุกบท</h1><div class="sub">สุ่ม 15 ข้อจากทั้ง 9 บท เพื่อทบทวนก่อนขึ้นเวร/ก่อนสอบ</div></div>
+      </div>
+      <div id="quizArea" style="margin-top:20px;"></div>
+    </div>
+  `;
+  mountQuiz("final", picked, true);
+}
+
+/* ============================= MAIN RENDER ============================= */
+function render(){
+  renderNav();
+  updateTopProgress();
+  const sec = SECTIONS.find(s=>s.id===currentId);
+  if(sec.isHome) renderHome();
+  else if(sec.isFinal) renderFinal();
+  else renderChapter(sec);
+}
+render();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

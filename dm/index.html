@@ -1,0 +1,1208 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>DM 2566</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#F2F4F6;
+    --surface:#FFFFFF;
+    --surface-2:#E7ECF0;
+    --ink:#16222C;
+    --muted:#5C6B76;
+    --line:#D7E0E6;
+    --accent:#1857A4;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCE9F7;
+    --good:#2E7D4F;
+    --good-soft:#DDEEE2;
+    --warn:#B6791A;
+    --warn-soft:#F3E6CE;
+    --danger:#B23A34;
+    --danger-soft:#F5DEDA;
+    --shadow: 0 1px 2px rgba(16,28,38,.07), 0 10px 28px rgba(16,28,38,.08);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B141F;
+      --surface:#101B27;
+      --surface-2:#15222F;
+      --ink:#E7EEF3;
+      --muted:#8FA3B0;
+      --line:#213240;
+      --accent:#69B0EE;
+      --accent-ink:#04203A;
+      --accent-soft:#12314F;
+      --good:#5FCB8D;
+      --good-soft:#123321;
+      --warn:#F0BE63;
+      --warn-soft:#3A2C12;
+      --danger:#FF9088;
+      --danger-soft:#3A1B16;
+      --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B141F;
+    --surface:#101B27;
+    --surface-2:#15222F;
+    --ink:#E7EEF3;
+    --muted:#8FA3B0;
+    --line:#213240;
+    --accent:#69B0EE;
+    --accent-ink:#04203A;
+    --accent-soft:#12314F;
+    --good:#5FCB8D;
+    --good-soft:#123321;
+    --warn:#F0BE63;
+    --warn-soft:#3A2C12;
+    --danger:#FF9088;
+    --danger-soft:#3A1B16;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sarabun',"Noto Sans Thai","IBM Plex Sans Thai",sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{text-wrap:balance; font-family:'Sarabun',sans-serif; margin:0; font-weight:800;}
+  .num{font-family:'Fraunces',serif; font-variant-numeric:tabular-nums;}
+  .mono{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  ::selection{background:var(--accent-soft);}
+  :focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+  .topbar{
+    position:sticky; top:0; z-index:30;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 22px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+    flex:none;
+  }
+  .topbar .brand{display:flex; flex-direction:column; line-height:1.2;}
+  .topbar .brand b{font-size:16.5px; letter-spacing:.02em;}
+  .topbar .brand span{font-size:12px; color:var(--muted);}
+  .topbar .progress-pill{
+    margin-left:auto; display:flex; align-items:center; gap:9px;
+    padding:7px 14px; border-radius:999px; background:var(--surface-2);
+    border:1px solid var(--line); font-size:12.5px; color:var(--muted);
+    white-space:nowrap;
+  }
+  .progress-pill b{color:var(--ink); font-family:'IBM Plex Mono',monospace;}
+  .progress-pill .bar{width:64px; height:6px; border-radius:99px; background:var(--line); overflow:hidden;}
+  .progress-pill .bar i{display:block; height:100%; background:var(--accent); width:0%; transition:width .4s ease;}
+
+  .shell{display:grid; grid-template-columns:258px 1fr; max-width:1180px; margin:0 auto; align-items:start;}
+  .sidenav{
+    position:sticky; top:65px;
+    height:calc(100vh - 65px); overflow-y:auto;
+    padding:18px 10px 40px;
+    border-right:1px solid var(--line);
+  }
+  .sidenav .grp-label{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); padding:14px 12px 6px;}
+  .navitem{
+    display:flex; align-items:center; gap:10px;
+    width:100%; text-align:left; padding:8px 12px; border-radius:10px;
+    background:transparent; border:none; color:var(--ink); font-size:13.8px;
+    margin-bottom:2px;
+  }
+  .navitem:hover{background:var(--surface-2);}
+  .navitem.active{background:var(--accent-soft); color:var(--accent); font-weight:700;}
+  .navitem .n{font-family:'IBM Plex Mono',monospace; font-size:11px; width:24px; flex:none; color:var(--muted);}
+  .navitem.active .n{color:var(--accent);}
+  .navitem .check{margin-left:auto; width:16px; height:16px; border-radius:50%; border:1.5px solid var(--line); flex:none;}
+  .navitem .check.done{background:var(--accent); border-color:var(--accent); position:relative;}
+  .navitem .check.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg);}
+
+  .main{padding:28px 30px 90px; min-width:0;}
+  .panel{max-width:760px;}
+
+  .hero-tag{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:999px; font-weight:700; letter-spacing:.03em;}
+  .hero h1{font-size:33px; margin-top:16px; line-height:1.25;}
+  .hero p.lead{color:var(--muted); font-size:16.5px; max-width:620px; margin-top:12px;}
+  .cta-row{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
+  .btn{
+    padding:12px 20px; border-radius:11px; border:1px solid var(--line);
+    background:var(--surface); color:var(--ink); font-size:14.5px; font-weight:700;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
+  .btn:hover{filter:brightness(0.97);}
+
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; margin-top:14px;}
+  .stat-tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 15px; box-shadow:var(--shadow);
+  }
+  .stat-tile .v{font-family:'Fraunces',serif; font-size:24px; font-weight:600; color:var(--accent); line-height:1.15;}
+  .stat-tile .l{font-size:12.3px; color:var(--muted); margin-top:6px; line-height:1.4;}
+
+  .section-h{display:flex; align-items:baseline; gap:10px; margin:38px 0 14px;}
+  .section-h h2{font-size:19px;}
+  .section-h .line{flex:1; height:1px; background:var(--line);}
+
+  .ch-progress-list{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .ch-progress-row{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:10px 14px;}
+  .ch-progress-row .t{flex:1; font-size:13.5px; font-weight:600;}
+  .ch-progress-row .bar{width:100px; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden; flex:none;}
+  .ch-progress-row .bar i{display:block; height:100%; background:var(--accent);}
+  .ch-progress-row .score{font-size:12px; color:var(--muted); font-family:'IBM Plex Mono',monospace; width:54px; text-align:right; flex:none;}
+
+  .ch-head{display:flex; gap:16px; align-items:flex-start;}
+  .ch-head .bignum{font-family:'Fraunces',serif; font-size:38px; font-weight:600; color:var(--accent); line-height:1;}
+  .ch-head h1{font-size:24px; margin-top:2px;}
+  .ch-head .sub{font-size:13.5px; color:var(--muted); margin-top:4px;}
+
+  .chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+  .chip{background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:12.5px;}
+  .chip b{display:block; font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--accent);}
+
+  .bullets{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .bullets li{display:flex; gap:10px; font-size:15px;}
+  .bullets li::before{content:"•"; color:var(--accent); font-weight:800; flex:none;}
+
+  .rec-row{
+    display:flex; gap:12px; align-items:flex-start; padding:13px 14px; border:1px solid var(--line);
+    border-radius:12px; background:var(--surface); margin-bottom:9px;
+  }
+  .rec-row .badges{display:flex; flex-direction:column; gap:6px; flex:none; width:112px;}
+  .badge{font-size:11px; font-weight:700; letter-spacing:.02em; padding:4px 8px; border-radius:7px; text-align:center; white-space:nowrap;}
+  .badge.pp{background:var(--good); color:#fff;}
+  .badge.p{background:var(--good-soft); color:var(--good);}
+  .badge.pm{background:var(--warn-soft); color:var(--warn);}
+  .badge.m{background:var(--danger-soft); color:var(--danger);}
+  .badge.mm{background:var(--danger); color:#fff;}
+  .evid{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); text-align:center;}
+  .rec-row .txt{font-size:14.5px;}
+  .rec-row .txt code{background:var(--surface-2); padding:1px 5px; border-radius:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px;}
+
+  .legend{display:flex; gap:12px; flex-wrap:wrap; font-size:11.5px; color:var(--muted); margin:10px 0 16px;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:22px;height:12px;border-radius:4px; display:inline-block;}
+  .legend i.pp{background:var(--good);}
+  .legend i.p{background:var(--good-soft); border:1px solid var(--good);}
+  .legend i.pm{background:var(--warn-soft); border:1px solid var(--warn);}
+  .legend i.m{background:var(--danger-soft); border:1px solid var(--danger);}
+  .legend i.mm{background:var(--danger);}
+
+  .fc-wrap{margin-top:10px;}
+  .fc-counter{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:8px;}
+  .flashcard{ perspective:1400px; height:200px; margin-bottom:14px; }
+  .flashcard .inner{
+    position:relative; width:100%; height:100%; transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d; cursor:pointer;
+  }
+  .flashcard.flip .inner{transform:rotateY(180deg);}
+  .flashcard .face{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:16px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:26px; box-shadow:var(--shadow); border:1px solid var(--line);
+  }
+  .flashcard .front{background:var(--surface); font-size:17px; font-weight:700;}
+  .flashcard .back{background:var(--accent-soft); color:var(--ink); transform:rotateY(180deg); font-size:15px;}
+  .flashcard .hint{position:absolute; bottom:10px; left:0; right:0; text-align:center; font-size:11px; color:var(--muted); font-weight:400;}
+  .fc-controls{display:flex; gap:8px;}
+  .icon-btn{
+    padding:9px 15px; border-radius:9px; border:1px solid var(--line); background:var(--surface);
+    font-size:13.5px; font-weight:600; color:var(--ink);
+  }
+  .icon-btn:hover{background:var(--surface-2);}
+
+  .quiz-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);}
+  .quiz-progress{display:flex; gap:5px; margin-bottom:16px;}
+  .quiz-progress i{flex:1; height:5px; border-radius:99px; background:var(--surface-2);}
+  .quiz-progress i.done{background:var(--accent);}
+  .quiz-q{font-size:16px; font-weight:700; margin-bottom:14px;}
+  .choice{
+    display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+    padding:12px 14px; border-radius:11px; border:1.5px solid var(--line); background:var(--surface);
+    margin-bottom:9px; font-size:14.5px; color:var(--ink);
+  }
+  .choice:hover{border-color:var(--accent);}
+  .choice .k{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); flex:none; margin-top:1px;}
+  .choice.correct{background:var(--good-soft); border-color:var(--good);}
+  .choice.wrong{background:var(--danger-soft); border-color:var(--danger);}
+  .choice[disabled]{cursor:default;}
+  .explain{margin-top:12px; padding:12px 14px; border-radius:11px; background:var(--surface-2); font-size:13.5px; color:var(--muted); display:none;}
+  .explain.show{display:block;}
+  .quiz-foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px;}
+  .quiz-score{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted);}
+  .quiz-done{text-align:center; padding:30px 10px;}
+  .quiz-done .v{font-family:'Fraunces',serif; font-size:48px; color:var(--accent); font-weight:600;}
+
+  .footnote{margin-top:60px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
+
+  @media (max-width:820px){
+    .shell{display:block;}
+    .sidenav{
+      position:sticky; top:65px; height:auto; width:100%;
+      display:flex; overflow-x:auto; gap:4px; padding:10px 12px; border-right:none; border-bottom:1px solid var(--line);
+      background:var(--surface);
+    }
+    .sidenav .grp-label{display:none;}
+    .navitem{flex:none; white-space:nowrap;}
+    .navitem .check{display:none;}
+    .main{padding:22px 16px 70px;}
+    .topbar .brand span{display:none;}
+  }
+</style>
+
+<div class="topbar">
+  <div class="mark">D</div>
+  <div class="brand"><b>DM 2566</b><span>CPG โรคเบาหวาน 2566 — สมาคมโรคเบาหวานแห่งประเทศไทย</span></div>
+  <div class="progress-pill">ความคืบหน้า <div class="bar"><i id="topProgressBar"></i></div> <b id="topProgressText">0%</b></div>
+</div>
+
+<div class="shell">
+  <nav class="sidenav" id="sidenav"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+/* ============================= DATA ============================= */
+const SECTIONS = [
+{ id:"home", nav:"หน้าแรก", isHome:true },
+{
+  id:"def", n:"1-2", title:"ชนิดของเบาหวาน การคัดกรอง และการวินิจฉัย", sub:"Classification, Screening & Diagnosis", nav:"1-2. ชนิด/วินิจฉัย",
+  chips:[
+    {v:"≥126", l:"FPG (มก./ดล.) ที่วินิจฉัยเบาหวาน"},
+    {v:"≥200", l:"2-h OGTT (มก./ดล.) ที่วินิจฉัยเบาหวาน"},
+    {v:"≥6.5%", l:"A1C ที่วินิจฉัยเบาหวาน"}
+  ],
+  bullets:[
+    "เบาหวานแบ่งเป็น 4 กลุ่มหลัก: ชนิดที่ 1 (T1DM, ทำลาย β-cell), ชนิดที่ 2 (T2DM, ดื้ออินซูลิน+หลั่งบกพร่อง), เบาหวานที่พบครั้งแรกขณะตั้งครรภ์ และชนิดอื่นที่มีสาเหตุจำเพาะ (monogenic เช่น MODY, drug-induced, endocrinopathy)",
+    "T2DM มีรูปแบบ hybrid ที่พบบ่อยขึ้น ได้แก่ LADA (latent autoimmune diabetes in adults) และ ketosis-prone T2DM ซึ่งมีลักษณะซ้อนเหลื่อมกับ T1DM",
+    "การวินิจฉัยเบาหวานใช้เกณฑ์ใดเกณฑ์หนึ่งใน 4 อย่าง: FPG ≥126 มก./ดล., 2-h plasma glucose หลัง 75 กรัม OGTT ≥200 มก./ดล., A1C ≥6.5% หรือ random plasma glucose ≥200 มก./ดล. ร่วมกับอาการคลาสสิก — หากไม่มีอาการชัดเจนต้องตรวจซ้ำยืนยันอีกครั้ง",
+    "ภาวะก่อนเบาหวาน (prediabetes) วินิจฉัยจาก IFG (FPG 100-125), IGT (2-h OGTT 140-199) หรือ A1C 5.7-6.4%",
+    "การคัดกรองในผู้ใหญ่ใช้ Thai Diabetes Risk Score (DRS) ร่วมกับปัจจัยเสี่ยง (อายุ ≥35 ปี, BMI สูง, ความดันโลหิตสูง, ประวัติครอบครัว, ประวัติ GDM) — ผู้มีความเสี่ยงสูงหรือ DRS สูงควรตรวจ FPG หรือ A1C",
+    "ผลตรวจผิดปกติควรได้รับการยืนยันซ้ำด้วยวิธีเดิมในอีกวันหนึ่ง ยกเว้นมีอาการคลาสสิกร่วมกับน้ำตาลสูงชัดเจนแล้ว"
+  ],
+  recs:[],
+  cards:[
+    {f:"เกณฑ์การวินิจฉัยเบาหวานมีกี่วิธี อะไรบ้าง?", b:"4 วิธี: (1) FPG ≥126 มก./ดล. (2) 2-h OGTT ≥200 มก./ดล. (3) A1C ≥6.5% (4) Random plasma glucose ≥200 มก./ดล. ร่วมกับอาการคลาสสิก (polyuria, polydipsia, น้ำหนักลด)"},
+    {f:"ภาวะก่อนเบาหวาน (prediabetes) วินิจฉัยจากเกณฑ์ใด?", b:"IFG: FPG 100-125 มก./ดล. หรือ IGT: 2-h OGTT 140-199 มก./ดล. หรือ A1C 5.7-6.4%"},
+    {f:"LADA คืออะไร?", b:"Latent Autoimmune Diabetes in Adults — เบาหวานที่มีภูมิต้านทานทำลาย β-cell คล้าย T1DM แต่ดำเนินโรคช้า มักวินิจฉัยผิดเป็น T2DM ในผู้ใหญ่"},
+    {f:"เครื่องมือคัดกรองเบาหวานในประชากรไทยที่ CPG แนะนำคืออะไร?", b:"Thai Diabetes Risk Score (DRS) ร่วมกับปัจจัยเสี่ยง เช่น อายุ, BMI, ความดันโลหิตสูง, ประวัติครอบครัว"},
+    {f:"เมื่อพบผลตรวจ FPG ผิดปกติเพียงครั้งเดียวและไม่มีอาการ ควรทำอย่างไร?", b:"ตรวจยืนยันซ้ำด้วยวิธีเดิมในอีกวันหนึ่งก่อนวินิจฉัยเป็นเบาหวาน"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยตรวจ FPG ได้ 130 มก./ดล. โดยไม่มีอาการคลาสสิกของเบาหวาน ควรทำอย่างไรต่อ?",
+     c:["วินิจฉัยเบาหวานได้ทันที","ตรวจ FPG ซ้ำยืนยันในอีกวันหนึ่ง","รอตรวจอีก 1 ปี","ให้ยา metformin ทันทีโดยไม่ต้องตรวจซ้ำ"], a:1,
+     e:"หากไม่มีอาการคลาสสิกชัดเจน ต้องตรวจยืนยันซ้ำด้วยวิธีเดิมก่อนวินิจฉัยเบาหวาน"},
+    {q:"ค่า A1C ที่เข้าเกณฑ์วินิจฉัยภาวะก่อนเบาหวาน (prediabetes) คือช่วงใด?",
+     c:["5.0-5.6%","5.7-6.4%","6.5-7.0%","ต่ำกว่า 5.0%"], a:1,
+     e:"A1C 5.7-6.4% เข้าเกณฑ์ prediabetes ตามคำแนะนำของไทย ส่วน ≥6.5% วินิจฉัยเบาหวาน"},
+    {q:"LADA มีลักษณะใกล้เคียงกับเบาหวานชนิดใดมากที่สุดในแง่พยาธิสภาพ?",
+     c:["เบาหวานชนิดที่ 1 (autoimmune β-cell destruction)","เบาหวานขณะตั้งครรภ์","Monogenic diabetes","Drug-induced diabetes"], a:0,
+     e:"LADA คือ autoimmune diabetes ที่ดำเนินโรคช้าในผู้ใหญ่ พยาธิสภาพเหมือน T1DM"},
+    {q:"เครื่องมือคัดกรองความเสี่ยงเบาหวานที่พัฒนาสำหรับประชากรไทยโดยเฉพาะคือข้อใด?",
+     c:["FINDRISC","Thai Diabetes Risk Score (DRS)","ADA Risk Test","QDiabetes"], a:1,
+     e:"Thai DRS พัฒนาและ validate ในประชากรไทย ใช้ร่วมกับปัจจัยเสี่ยงในการคัดกรอง"}
+  ]
+},
+{
+  id:"c3", n:"3", title:"เป้าหมายการรักษา", sub:"Glycemic, BP & Lipid Targets", nav:"3. เป้าหมายการรักษา",
+  chips:[
+    {v:"<7%", l:"A1C เป้าหมายทั่วไปในผู้ใหญ่"},
+    {v:"<130/80", l:"เป้าหมายความดันโลหิต (มม.ปรอท)"},
+    {v:"<100", l:"LDL เป้าหมาย (มก./ดล.) ทั่วไป"}
+  ],
+  bullets:[
+    "เป้าหมาย A1C ทั่วไป <7% แต่ปรับตามบริบทผู้ป่วยรายบุคคล (individualized) — ผู้สูงอายุที่แข็งแรงดีอาจตั้งเป้า <7-7.5% ส่วนผู้สูงอายุเปราะบางหรือคาดหมายชีวิตสั้นอาจผ่อนเป็น <8%",
+    "ปัจจัยที่ทำให้ตั้งเป้า A1C เข้มงวดมากขึ้น (เช่น <6.5%): เพิ่งวินิจฉัย อายุน้อย ไม่มีโรคหลอดเลือดหัวใจ ไม่มีภาวะน้ำตาลต่ำบ่อย",
+    "ปัจจัยที่ควรผ่อนเป้าหมาย: มีประวัติน้ำตาลต่ำรุนแรง คาดหมายชีวิตสั้น มีภาวะแทรกซ้อนหลอดเลือดขนาดใหญ่/เล็กระยะลุกลาม โรคร่วมรุนแรง",
+    "เป้าหมายความดันโลหิตทั่วไป <130/80 มม.ปรอท ในผู้ที่มีความเสี่ยงโรคหัวใจและหลอดเลือดสูง",
+    "เป้าหมายไขมัน: LDL <100 มก./ดล. ทั่วไป, <70 มก./ดล. ในผู้มีโรคหลอดเลือดหัวใจแล้วหรือความเสี่ยงสูงมาก",
+    "ปัจจัยที่ทำให้ค่า A1C คลาดเคลื่อนจากความเป็นจริง: โรคเลือด (hemoglobinopathy, ภาวะเม็ดเลือดแดงอายุสั้น), การเสียเลือด, การได้ erythropoietin, ไตวายเรื้อรัง — กรณีเหล่านี้ควรใช้ระดับน้ำตาลปลายนิ้วหรือ CGM ประกอบการประเมิน"
+  ],
+  recs:[],
+  cards:[
+    {f:"เป้าหมาย A1C ทั่วไปในผู้ใหญ่ที่เป็นเบาหวานคือเท่าใด?", b:"น้อยกว่า 7% โดยปรับตามบริบทผู้ป่วยแต่ละราย (individualized target)"},
+    {f:"ผู้ป่วยกลุ่มใดควรผ่อนเป้าหมาย A1C ให้สูงขึ้น (เช่น <8%)?", b:"ผู้สูงอายุเปราะบาง คาดหมายชีวิตสั้น มีประวัติน้ำตาลต่ำรุนแรง หรือมีภาวะแทรกซ้อนหลอดเลือดระยะลุกลาม"},
+    {f:"เป้าหมาย LDL ในผู้ป่วยเบาหวานที่มีโรคหลอดเลือดหัวใจแล้วคือเท่าใด?", b:"น้อยกว่า 70 มก./ดล. (เข้มงวดกว่าเป้าหมายทั่วไปที่ <100 มก./ดล.)"},
+    {f:"ภาวะใดที่ทำให้ค่า A1C ประเมินระดับน้ำตาลได้ไม่แม่นยำ?", b:"Hemoglobinopathy, ภาวะเม็ดเลือดแดงอายุสั้น, การเสียเลือด, การได้รับ erythropoietin และไตวายเรื้อรัง"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยสูงอายุ 82 ปี มีโรคร่วมหลายโรคและคาดหมายชีวิตสั้น ควรตั้งเป้า A1C ประมาณเท่าใด?",
+     c:["<6.5%","<7%","<8% (ผ่อนเกณฑ์)","<9%"], a:2,
+     e:"ผู้สูงอายุเปราะบาง คาดหมายชีวิตสั้น ควรผ่อนเป้าหมาย A1C เป็น <8% เพื่อลดความเสี่ยงน้ำตาลต่ำ"},
+    {q:"เป้าหมายความดันโลหิตทั่วไปในผู้ป่วยเบาหวานที่มีความเสี่ยงโรคหัวใจและหลอดเลือดสูงคือเท่าใด?",
+     c:["<140/90 มม.ปรอท","<130/80 มม.ปรอท","<120/70 มม.ปรอท","<150/90 มม.ปรอท"], a:1,
+     e:"เป้าหมายความดันโลหิตทั่วไป <130/80 มม.ปรอท ในผู้ที่มีความเสี่ยงโรคหัวใจและหลอดเลือดสูง"},
+    {q:"ผู้ป่วยไตวายเรื้อรังระยะ 5 ที่ทำ hemodialysis มีค่า A1C ที่อาจคลาดเคลื่อนจากสาเหตุใด?",
+     c:["การรับประทานอาหารมากเกินไป","ภาวะเม็ดเลือดแดงอายุสั้นและการได้รับ erythropoietin","การออกกำลังกายมากเกินไป","การดื่มน้ำมากเกินไป"], a:1,
+     e:"ในผู้ป่วยไตวายที่ทำ dialysis เม็ดเลือดแดงอายุสั้นลงและได้ erythropoietin ทำให้ A1C ต่ำกว่าความเป็นจริง"}
+  ]
+},
+{
+  id:"c4", n:"4", title:"การให้ความรู้และสร้างทักษะการดูแลตนเอง", sub:"Diabetes Self-Management Education & Support (DSMES)", nav:"4. DSMES",
+  chips:[
+    {v:"5", l:"ขั้นตอนหลักของกระบวนการ DSMES"},
+    {v:"11", l:"หัวข้อความรู้หลักที่ต้องครอบคลุม"},
+    {v:"1", l:"ครั้ง/ปี อย่างน้อยที่ควรทบทวนความรู้ต่อเนื่อง"}
+  ],
+  bullets:[
+    "DSMES เป็นกระบวนการต่อเนื่องที่ช่วยให้ผู้ป่วยมีความรู้ ทักษะ และความมั่นใจในการดูแลตนเอง โดยมีทีมสหสาขาวิชาชีพร่วมดูแล (แพทย์ พยาบาล นักกำหนดอาหาร เภสัชกร)",
+    "หัวข้อความรู้หลัก 11 เรื่อง ครอบคลุม: พยาธิสภาพของโรค, โภชนบำบัด, การออกกำลังกาย, การใช้ยา, การตรวจน้ำตาลด้วยตนเอง, การป้องกัน/แก้ไขภาวะน้ำตาลสูง-ต่ำ, การดูแลเมื่อเจ็บป่วย, การป้องกันภาวะแทรกซ้อน, การปรับตัวด้านจิตสังคม, เป้าหมายส่วนบุคคล และการแก้ปัญหา",
+    "ใช้แนวทาง learner-centered โดยมีผู้ป่วยเป็นศูนย์กลาง ปรับเนื้อหาให้เหมาะกับความต้องการเฉพาะราย ทำซ้ำเป็นระยะเพื่อให้เกิดประสิทธิภาพยั่งยืน",
+    "ควรให้ความรู้ตั้งแต่แรกวินิจฉัย และทบทวนเมื่อมีการเปลี่ยนแผนการรักษา เมื่อมีภาวะแทรกซ้อนใหม่ หรืออย่างน้อยปีละครั้ง",
+    "การตรวจน้ำตาลด้วยตนเอง (SMBG) และการบันทึกอาหาร/กิจกรรมคู่กับผลน้ำตาล ช่วยให้ผู้ป่วยและทีมปรับแผนการรักษาได้แม่นยำขึ้น"
+  ],
+  recs:[],
+  cards:[
+    {f:"DSMES ย่อมาจากอะไร และมีเป้าหมายอะไร?", b:"Diabetes Self-Management Education and Support — ให้ความรู้และทักษะเพื่อให้ผู้ป่วยดูแลตนเองได้อย่างมั่นใจและต่อเนื่อง"},
+    {f:"ควรให้ความรู้ DSMES แก่ผู้ป่วยเมื่อใดบ้าง?", b:"ตั้งแต่แรกวินิจฉัย เมื่อเปลี่ยนแผนการรักษา เมื่อมีภาวะแทรกซ้อนใหม่ และทบทวนอย่างน้อยปีละครั้ง"},
+    {f:"แนวทาง learner-centered ในการให้ความรู้หมายถึงอะไร?", b:"การปรับเนื้อหาและวิธีสอนให้เหมาะกับความต้องการและบริบทเฉพาะของผู้ป่วยแต่ละราย แทนที่จะสอนแบบเดียวกันทุกคน"}
+  ],
+  quiz:[
+    {q:"ควรให้ความรู้ DSMES แก่ผู้ป่วยเบาหวานครั้งแรกเมื่อใด?",
+     c:["เฉพาะเมื่อมีภาวะแทรกซ้อนแล้วเท่านั้น","ตั้งแต่แรกวินิจฉัยโรค","หลังจากรักษามาแล้ว 5 ปี","เฉพาะเมื่อผู้ป่วยร้องขอ"], a:1,
+     e:"DSMES ควรเริ่มตั้งแต่แรกวินิจฉัยเพื่อสร้างพื้นฐานการดูแลตนเองที่ถูกต้องแต่เนิ่นๆ"},
+    {q:"แนวทาง DSMES ควรทบทวนความรู้ผู้ป่วยอย่างน้อยความถี่เท่าใด หากไม่มีเหตุการณ์พิเศษ?",
+     c:["ทุกเดือน","อย่างน้อยปีละ 1 ครั้ง","ทุก 5 ปี","ไม่ต้องทบทวนซ้ำ"], a:1,
+     e:"ควรทบทวนความรู้อย่างน้อยปีละครั้ง หรือเร็วกว่านั้นเมื่อเปลี่ยนแผนการรักษา/มีภาวะแทรกซ้อนใหม่"}
+  ]
+},
+{
+  id:"c5", n:"5", title:"การปรับพฤติกรรมการดำเนินชีวิต", sub:"Medical Nutrition Therapy, Exercise & Lifestyle", nav:"5. ปรับพฤติกรรม",
+  chips:[
+    {v:"150", l:"นาที/สัปดาห์ กิจกรรมแอโรบิกความหนักปานกลาง"},
+    {v:"2-3", l:"มื้อ/วัน จำกัดปริมาณคาร์โบไฮเดรต"},
+    {v:"3", l:"วัน/สัปดาห์ อย่างน้อย ฝึกความแข็งแรงกล้ามเนื้อ"}
+  ],
+  bullets:[
+    "โภชนบำบัด (Medical Nutrition Therapy) เน้นควบคุมปริมาณคาร์โบไฮเดรตต่อมื้อ จำกัดน้ำตาล/เครื่องดื่มที่มีน้ำตาล และเลือกไขมันไม่อิ่มตัวแทนไขมันอิ่มตัว โดยไม่มีสูตรอาหารตายตัวเพียงแบบเดียว ต้องปรับตามความชอบและวัฒนธรรมการกินของผู้ป่วย",
+    "Intermittent fasting ได้ผลดีในบางราย ส่วน ketogenic diet (คาร์โบไฮเดรตต่ำมาก) ไม่แนะนำทั่วไป ต้องอยู่ในความดูแลใกล้ชิดของแพทย์หากจะใช้",
+    "แนะนำออกกำลังกายแบบแอโรบิกความหนักปานกลางอย่างน้อย 150 นาที/สัปดาห์ ร่วมกับฝึกความแข็งแรงกล้ามเนื้ออย่างน้อย 2-3 วัน/สัปดาห์ ไม่ควรหยุดออกกำลังกายติดต่อกันเกิน 2 วัน",
+    "ลดพฤติกรรมเนือยนิ่ง (sedentary) โดยลุกขยับทุก 30 นาทีหากต้องนั่งนาน",
+    "งดสูบบุหรี่และยาสูบทุกชนิด เนื่องจากเพิ่มความเสี่ยงภาวะดื้ออินซูลินและโรคหลอดเลือด",
+    "จำกัดแอลกอฮอล์ ระวังภาวะน้ำตาลต่ำในผู้ที่ใช้อินซูลินหรือยากลุ่มกระตุ้นการหลั่งอินซูลินร่วมกับดื่มแอลกอฮอล์",
+    "ประเมินและรักษาภาวะหยุดหายใจขณะหลับ (OSA) ซึ่งสัมพันธ์กับการควบคุมน้ำตาลที่แย่ลง"
+  ],
+  recs:[],
+  cards:[
+    {f:"ปริมาณการออกกำลังกายแอโรบิกที่แนะนำต่อสัปดาห์ในผู้ป่วยเบาหวานคือเท่าใด?", b:"อย่างน้อย 150 นาที/สัปดาห์ ความหนักปานกลาง ร่วมกับฝึกความแข็งแรงกล้ามเนื้ออย่างน้อย 2-3 วัน/สัปดาห์"},
+    {f:"Ketogenic diet ในผู้ป่วยเบาหวานควรใช้อย่างไร?", b:"ไม่แนะนำทั่วไป หากจะใช้ต้องอยู่ในความดูแลใกล้ชิดของแพทย์เนื่องจากมีความเสี่ยงต่อภาวะแทรกซ้อน"},
+    {f:"เพราะเหตุใดจึงควรประเมินภาวะหยุดหายใจขณะหลับ (OSA) ในผู้ป่วยเบาหวาน?", b:"OSA สัมพันธ์กับภาวะดื้ออินซูลินและการควบคุมน้ำตาลที่แย่ลง การรักษา OSA ช่วยควบคุมน้ำตาลได้ดีขึ้น"},
+    {f:"ไม่ควรหยุดออกกำลังกายติดต่อกันเกินกี่วัน?", b:"ไม่เกิน 2 วันติดต่อกัน เพื่อคงประสิทธิภาพการควบคุมน้ำตาล"}
+  ],
+  quiz:[
+    {q:"คำแนะนำการออกกำลังกายแอโรบิกในผู้ป่วยเบาหวานคือข้อใด?",
+     c:["อย่างน้อย 50 นาที/สัปดาห์","อย่างน้อย 150 นาที/สัปดาห์ ความหนักปานกลาง","ต้องออกกำลังกายหนักทุกวันไม่มีวันหยุด","ไม่จำเป็นต้องออกกำลังกายหากคุมอาหารได้ดี"], a:1,
+     e:"แนะนำอย่างน้อย 150 นาที/สัปดาห์ ความหนักปานกลาง ร่วมกับฝึกความแข็งแรงกล้ามเนื้อ"},
+    {q:"ข้อใดเกี่ยวกับ ketogenic diet ในผู้ป่วยเบาหวานถูกต้อง?",
+     c:["แนะนำให้ใช้เป็นอาหารหลักในผู้ป่วยทุกราย","ไม่แนะนำทั่วไป หากใช้ต้องอยู่ในความดูแลใกล้ชิดของแพทย์","ปลอดภัยและใช้ได้โดยไม่ต้องติดตาม","ใช้ได้เฉพาะในเด็กเท่านั้น"], a:1,
+     e:"Ketogenic diet ไม่แนะนำทั่วไปในเบาหวาน เนื่องจากมีความเสี่ยงและควรอยู่ในการดูแลของแพทย์"},
+    {q:"ภาวะใดที่ควรได้รับการประเมินร่วมด้วยเนื่องจากสัมพันธ์กับการควบคุมน้ำตาลที่แย่ลง?",
+     c:["ภาวะหยุดหายใจขณะหลับ (OSA)","การแพ้อาหารทะเล","ภูมิแพ้อากาศ","ไมเกรน"], a:0,
+     e:"OSA สัมพันธ์กับภาวะดื้ออินซูลินและควรได้รับการประเมิน/รักษาเพื่อช่วยควบคุมน้ำตาล"}
+  ]
+},
+{
+  id:"c6", n:"6", title:"โรคเบาหวานระยะสงบ", sub:"Diabetes Remission (T2DM)", nav:"6. ระยะสงบ",
+  chips:[
+    {v:"<6.5%", l:"A1C ที่ใช้เป็นเกณฑ์หลักของ remission"},
+    {v:"≥3", l:"เดือน หลังหยุดยาลดน้ำตาลจึงตรวจยืนยัน"},
+    {v:"5-10%", l:"ลดน้ำหนักตัว (%) เป้าหมายเพื่อเข้าสู่ระยะสงบ"}
+  ],
+  bullets:[
+    "โรคเบาหวานระยะสงบ (diabetes remission) หมายถึง T2DM ในผู้ใหญ่ที่ควบคุม A1C ได้ต่ำกว่าเกณฑ์วินิจฉัยเบาหวาน (A1C <6.5%) อย่างต่อเนื่อง โดยไม่ต้องใช้ยาลดน้ำตาลอย่างน้อย 3 เดือน",
+    "หากตรวจ A1C ไม่ได้ ให้ใช้เกณฑ์ทางเลือก: CGM-based estimated A1C (eA1C/GMI) <6.5% หรือ FPG <126 มก./ดล. (ตรวจซ้ำยืนยัน 2 ครั้ง)",
+    "แนวทางหลักในการนำผู้ป่วยเข้าสู่ระยะสงบคือการปรับพฤติกรรมดำเนินชีวิตอย่างเข้มงวด (intensive lifestyle modification) เน้นลดน้ำหนัก 10-15% ด้วยการควบคุมอาหารและออกกำลังกาย — บางรายอาจใช้ร่วมกับการผ่าตัดลดน้ำหนัก (metabolic surgery)",
+    "ใช้หลัก SMART goal (Specific, Measurable, Achievable, Realistic, Time-bound) ในการตั้งเป้าหมายร่วมกับผู้ป่วย",
+    "ผู้ที่เหมาะสมที่สุดคือผู้ที่เพิ่งวินิจฉัยเบาหวานไม่นาน (duration สั้น) ยังมีการทำงานของ β-cell หลงเหลืออยู่มาก",
+    "หลังเข้าสู่ระยะสงบยังต้องติดตาม A1C อย่างน้อยปีละ 1 ครั้ง และคัดกรองภาวะแทรกซ้อนต่อเนื่องเช่นเดียวกับผู้ป่วยเบาหวานทั่วไป เนื่องจากยังมีความเสี่ยงกลับเป็นซ้ำ"
+  ],
+  recs:[],
+  cards:[
+    {f:"นิยามของ diabetes remission ตาม CPG ไทยคืออะไร?", b:"T2DM ที่ควบคุม A1C <6.5% ได้ต่อเนื่องโดยไม่ต้องใช้ยาลดน้ำตาลอย่างน้อย 3 เดือน"},
+    {f:"หากตรวจ A1C ไม่ได้ ใช้เกณฑ์ใดแทนในการประเมิน remission?", b:"CGM-based estimated A1C (GMI) <6.5% หรือ FPG <126 มก./ดล. ตรวจยืนยัน 2 ครั้ง"},
+    {f:"วิธีหลักที่แนะนำเพื่อนำผู้ป่วยเข้าสู่ระยะสงบคืออะไร?", b:"การปรับพฤติกรรมดำเนินชีวิตอย่างเข้มงวด ลดน้ำหนัก 10-15% — บางรายอาจร่วมกับ metabolic surgery"},
+    {f:"หลังเข้าสู่ระยะสงบแล้ว ยังต้องติดตามอะไรบ้าง?", b:"ตรวจ A1C อย่างน้อยปีละครั้งและคัดกรองภาวะแทรกซ้อนต่อเนื่อง เพราะยังมีความเสี่ยงกลับเป็นเบาหวานซ้ำ"}
+  ],
+  quiz:[
+    {q:"เกณฑ์หลักในการวินิจฉัย diabetes remission คือข้อใด?",
+     c:["A1C <6.5% ต่อเนื่อง โดยไม่ใช้ยาลดน้ำตาลอย่างน้อย 3 เดือน","A1C <7% ขณะยังใช้ยาอยู่","FPG <100 มก./ดล. เพียงครั้งเดียว","น้ำหนักลดลง 5% เท่านั้น"], a:0,
+     e:"Remission หมายถึง A1C <6.5% ต่อเนื่องโดยไม่ต้องใช้ยาลดน้ำตาลอย่างน้อย 3 เดือน"},
+    {q:"วิธีการหลักที่ใช้นำผู้ป่วยเข้าสู่ระยะสงบของเบาหวานคือข้อใด?",
+     c:["ให้อินซูลินขนาดสูงต่อเนื่อง","ปรับพฤติกรรมดำเนินชีวิตอย่างเข้มงวดเพื่อลดน้ำหนัก 10-15%","หยุดยาทุกชนิดทันทีโดยไม่ปรับพฤติกรรม","เพิ่มคาร์โบไฮเดรตในอาหาร"], a:1,
+     e:"การลดน้ำหนักอย่างเข้มงวดผ่านการปรับพฤติกรรมเป็นแนวทางหลัก บางรายอาจร่วมกับการผ่าตัด"},
+    {q:"ผู้ป่วยที่เข้าสู่ระยะสงบของเบาหวานแล้ว ยังจำเป็นต้องทำสิ่งใด?",
+     c:["หยุดพบแพทย์ได้เลยเพราะหายขาดแล้ว","ติดตาม A1C อย่างน้อยปีละครั้งและคัดกรองภาวะแทรกซ้อนต่อเนื่อง","ไม่ต้องคุมอาหารอีกต่อไป","กลับไปกินคาร์โบไฮเดรตได้ไม่จำกัด"], a:1,
+     e:"แม้เข้าสู่ระยะสงบยังมีความเสี่ยงกลับเป็นซ้ำ จึงต้องติดตาม A1C และคัดกรองภาวะแทรกซ้อนต่อเนื่อง"}
+  ]
+},
+{
+  id:"c7", n:"7", title:"การให้ยาเพื่อควบคุมระดับน้ำตาลในผู้ใหญ่", sub:"Pharmacologic Therapy in Adults", nav:"7. ยาลดน้ำตาล ★",
+  chips:[
+    {v:"5", l:"กลุ่มยาเม็ดหลักตามกลไกการออกฤทธิ์"},
+    {v:"4", l:"ชนิดอินซูลินอะนาล็อกตามระยะเวลาออกฤทธิ์"},
+    {v:"30-45%", l:"สัดส่วน basal insulin ใน basal-bolus regimen"}
+  ],
+  bullets:[
+    "ยาเม็ดลดน้ำตาลแบ่งเป็น 5 กลุ่มตามกลไก: (1) กระตุ้นหลั่งอินซูลิน — sulfonylureas/glinides (2) ลดภาวะดื้ออินซูลิน — biguanides (metformin)/thiazolidinediones (3) ยับยั้ง alpha-glucosidase (4) ยับยั้ง SGLT-2 (5) กลุ่ม incretin — DPP-4 inhibitors และ GLP-1 analog",
+    "Metformin เป็นยาตัวแรกเสมอหากไม่มีข้อห้าม (คุณภาพหลักฐานระดับ 2, น้ำหนักคำแนะนำ ++) เริ่มขนาดต่ำแล้วค่อยๆ ปรับเพิ่มเพื่อลดผลข้างเคียงทางเดินอาหาร ห้ามใช้เมื่อ eGFR <30",
+    "อินซูลินแบ่งเป็น 4 ชนิดตามระยะเวลาออกฤทธิ์: rapid-acting analog (lispro, aspart, glulisine), long-acting analog (glargine U100, detemir), ultra-long-acting (degludec, glargine U300) และ human insulin ดั้งเดิม (RI, NPH)",
+    "แผนภูมิที่ 1 (ผู้ใหญ่ทั่วไป): เริ่ม metformin → หากคุมไม่ได้ตามเป้า เพิ่มยาชนิดที่ 2 (sulfonylurea/glitazone/DPP-4/SGLT-2/GLP-1/alpha-glucosidase/repaglinide) → หากยังไม่ได้เป้าเพิ่มยาชนิดที่ 3 หรือเริ่มอินซูลิน",
+    "แผนภูมิที่ 2: ผู้ป่วยที่มีโรคหัวใจและหลอดเลือด (ASCVD), หัวใจล้มเหลว หรือไตเรื้อรัง ควรได้ SGLT2 inhibitor หรือ GLP-1 analog ที่มีหลักฐานลดความเสี่ยงหัวใจ/ไต โดยไม่ต้องรอคุมน้ำตาลไม่ได้ก่อน (คุณภาพหลักฐานระดับ 1, น้ำหนักคำแนะนำ ++)",
+    "การเริ่ม basal insulin ในผู้ป่วย T2DM ให้ฉีดเวลา 21.00-23.00 น. ปรับขนาดตามระดับน้ำตาลก่อนอาหารเช้า ระวังภาวะน้ำตาลต่ำโดยเฉพาะเมื่อใช้ NPH",
+    "GLP-1 analogs (liraglutide, dulaglutide, semaglutide) และ SGLT2 inhibitors ช่วยลดน้ำหนักและมีผลปกป้องหัวใจ-ไต แต่ราคาสูง; SGLT2 inhibitors เพิ่มความเสี่ยง genitourinary infection และ DKA แบบน้ำตาลไม่สูงมาก (euglycemic DKA)"
+  ],
+  recs:[
+    {t:"เริ่มการรักษาด้วย metformin เป็นยาตัวแรกเสมอหากไม่มีข้อห้าม (เช่น eGFR <30)", lvl:"2", w:"++"},
+    {t:"ผู้ป่วยที่มีโรคหัวใจและหลอดเลือด (ASCVD) หัวใจล้มเหลว หรือไตเรื้อรังที่ไม่มีปัญหาค่าใช้จ่าย ให้พิจารณา SGLT2 inhibitor หรือ GLP-1 analog ตั้งแต่ต้น", lvl:"1", w:"++"},
+    {t:"หากระดับน้ำตาลเริ่มต้นสูงมาก (FPG ≥250 มก./ดล. หรือ A1C ≥8.5% พร้อมมีอาการ) ให้เริ่มอินซูลินทันทีร่วมกับ metformin", lvl:"2", w:"++"},
+    {t:"ผู้ป่วยที่มีภาวะอ้วนรุนแรง (BMI ≥30) พิจารณาเลือก GLP-1 analog เป็นยาชนิดที่ 2 หรือ 3", lvl:"2", w:"+"},
+    {t:"หากมีข้อจำกัดค่าใช้จ่าย ให้เลือก sulfonylurea หรือ thiazolidinedione เป็นยาชนิดที่ 2 ร่วมกับ metformin", lvl:"2", w:"+"},
+    {t:"ห้ามใช้ยากลุ่ม DPP-4 inhibitor ร่วมกับ GLP-1 analog เนื่องจากกลไกซ้ำซ้อนกัน", lvl:"4", w:"--"}
+  ],
+  cards:[
+    {f:"ยาเม็ดลดน้ำตาลแบ่งได้กี่กลุ่มตามกลไก และมีอะไรบ้าง?", b:"5 กลุ่ม: กระตุ้นหลั่งอินซูลิน (SU/glinide), ลดดื้ออินซูลิน (biguanide/TZD), ยับยั้ง alpha-glucosidase, ยับยั้ง SGLT-2, กลุ่ม incretin (DPP-4/GLP-1)"},
+    {f:"ยาชนิดใดเป็นยาตัวแรกในการรักษา T2DM เสมอหากไม่มีข้อห้าม?", b:"Metformin — ห้ามใช้เมื่อ eGFR <30 มล./นาที/1.73 ตร.ม."},
+    {f:"ผู้ป่วยที่มี ASCVD หรือไตเรื้อรังควรได้ยากลุ่มใดโดยไม่ต้องรอคุมน้ำตาลไม่ได้ก่อน?", b:"SGLT2 inhibitor หรือ GLP-1 analog ที่มีหลักฐานปกป้องหัวใจ/ไต"},
+    {f:"อินซูลินอะนาล็อกออกฤทธิ์เร็ว (rapid-acting) มีตัวใดบ้าง?", b:"Insulin lispro, insulin aspart, insulin glulisine — ใช้ฉีดก่อนอาหารเพื่อคุมน้ำตาลหลังอาหาร"},
+    {f:"ผลข้างเคียงสำคัญของ SGLT2 inhibitors ที่ต้องระวังคืออะไร?", b:"Genitourinary tract infection และ euglycemic DKA (ภาวะเลือดเป็นกรดจากคีโตนโดยน้ำตาลไม่สูงมาก)"},
+    {f:"ข้อห้ามสำคัญของยากลุ่ม GLP-1 analog คืออะไร?", b:"ห้ามใช้ในผู้ป่วยที่มีประวัติ pancreatitis หรือ medullary thyroid carcinoma/MEN2"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย T2DM รายใหม่ ไม่มีโรคร่วม eGFR ปกติ ควรเริ่มการรักษาด้วยยาชนิดใดเป็นอันดับแรก?",
+     c:["Insulin","Metformin","SGLT2 inhibitor","Sulfonylurea"], a:1,
+     e:"Metformin เป็นยาตัวแรกเสมอหากไม่มีข้อห้าม (คุณภาพหลักฐานระดับ 2, น้ำหนักคำแนะนำ ++)"},
+    {q:"ผู้ป่วย T2DM ที่มีภาวะหัวใจล้มเหลวร่วมด้วย ควรพิจารณาเพิ่มยากลุ่มใดโดยไม่ต้องรอคุมน้ำตาลไม่ได้ก่อน?",
+     c:["Sulfonylurea","Thiazolidinedione","SGLT2 inhibitor","Alpha-glucosidase inhibitor"], a:2,
+     e:"SGLT2 inhibitor มีหลักฐานลดการนอนโรงพยาบาลจากหัวใจล้มเหลว แนะนำให้ตั้งแต่ต้นในกลุ่มนี้ (คุณภาพหลักฐานระดับ 1, ++)"},
+    {q:"ข้อใดเป็นข้อห้ามของ metformin?",
+     c:["eGFR น้อยกว่า 30 มล./นาที/1.73 ตร.ม.","อายุมากกว่า 60 ปี","น้ำหนักตัวเกิน","ความดันโลหิตสูง"], a:0,
+     e:"Metformin ห้ามใช้เมื่อ eGFR <30 เนื่องจากเสี่ยง lactic acidosis"},
+    {q:"ผลข้างเคียงที่ต้องระวังเป็นพิเศษเมื่อใช้ SGLT2 inhibitor คือข้อใด?",
+     c:["น้ำหนักเพิ่มขึ้นมาก","ภาวะน้ำตาลต่ำรุนแรง","Genitourinary infection และ euglycemic DKA","หัวใจเต้นเร็วผิดจังหวะ"], a:2,
+     e:"SGLT2 inhibitors เพิ่มความเสี่ยงติดเชื้อทางเดินปัสสาวะ/อวัยวะเพศ และ euglycemic DKA"},
+    {q:"ข้อใดไม่ควรใช้ยาร่วมกันเนื่องจากกลไกการออกฤทธิ์ซ้ำซ้อนกัน?",
+     c:["Metformin ร่วมกับ SGLT2 inhibitor","DPP-4 inhibitor ร่วมกับ GLP-1 analog","Metformin ร่วมกับ insulin","SGLT2 inhibitor ร่วมกับ GLP-1 analog"], a:1,
+     e:"DPP-4 inhibitor และ GLP-1 analog ออกฤทธิ์ผ่านกลไก incretin ซ้ำซ้อนกัน จึงไม่ควรใช้ร่วมกัน"}
+  ]
+},
+{
+  id:"c8", n:"8", title:"การดูแลตนเองในเดือนรอมฎอน (ถือศีลอด)", sub:"Diabetes Care During Ramadan Fasting", nav:"8. รอมฎอน",
+  chips:[
+    {v:"<70", l:"มก./ดล. เกณฑ์ให้หยุดถือศีลอดทันที"},
+    {v:">300", l:"มก./ดล. เกณฑ์น้ำตาลสูงที่ต้องหยุดถือศีลอด"},
+    {v:"2", l:"เดือน ควรวางแผนการรักษาก่อนถือศีลอด"}
+  ],
+  bullets:[
+    "ผู้ป่วยเบาหวานมีสิทธิ์ตัดสินใจถือศีลอดได้ บุคลากรสาธารณสุขมีหน้าที่ให้ข้อมูลความเสี่ยงและวางแผนร่วมกัน ไม่ใช่ห้ามหรือบังคับ",
+    "ประเมินความเสี่ยงก่อนถือศีลอดโดยแบ่งเป็น 3 กลุ่ม: สูงมาก (ไม่ควรถือศีลอด เช่น มีประวัติน้ำตาลต่ำรุนแรง/DKA ใน 3 เดือนที่ผ่านมา, ตั้งครรภ์ที่ใช้อินซูลิน), สูง (ต้องระมัดระวังมาก) และปานกลาง/ต่ำ",
+    "ต้องปรับยาก่อนถือศีลอดอย่างน้อย 2 เดือน — ยาที่เสี่ยงน้ำตาลต่ำ (sulfonylurea, อินซูลิน) ควรปรับขนาดหรือเวลาให้ยาใหม่ ส่วนยาที่ไม่ทำให้น้ำตาลต่ำ (metformin, DPP-4, SGLT2, alpha-glucosidase) มักไม่ต้องปรับมาก",
+    "ควรหยุดถือศีลอดทันทีเมื่อ: น้ำตาลในเลือด <70 มก./ดล., น้ำตาล >300 มก./ดล., หรือมีอาการเจ็บป่วยที่กระทบต่อระดับน้ำตาล/ภาวะขาดน้ำ",
+    "ให้กินอาหาร 2 มื้อหลัก คือมื้อ Suhoor (ก่อนรุ่งอรุณ) และมื้อ Iftar (หลังพระอาทิตย์ตก) โดยเน้นอาหารดัชนีน้ำตาลต่ำ ดื่มน้ำให้เพียงพอในช่วงเวลาที่รับประทานได้"
+  ],
+  recs:[],
+  cards:[
+    {f:"ระดับน้ำตาลใดที่ต้องแนะนำให้ผู้ป่วยหยุดถือศีลอดทันที?", b:"น้ำตาลในเลือด <70 มก./ดล. (เสี่ยงน้ำตาลต่ำ) หรือ >300 มก./ดล. (เสี่ยงน้ำตาลสูง/DKA)"},
+    {f:"ควรเริ่มวางแผนปรับยาก่อนถือศีลอดล่วงหน้านานเท่าใด?", b:"อย่างน้อย 2 เดือนก่อนเข้าเดือนรอมฎอน เพื่อประเมินความเสี่ยงและปรับยาให้เหมาะสม"},
+    {f:"ผู้ป่วยกลุ่มใดที่ไม่ควรถือศีลอด (ความเสี่ยงสูงมาก)?", b:"ผู้มีประวัติน้ำตาลต่ำรุนแรงหรือ DKA ใน 3 เดือนที่ผ่านมา และหญิงตั้งครรภ์ที่ใช้อินซูลิน"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานที่ถือศีลอด ตรวจน้ำตาลปลายนิ้วได้ 65 มก./ดล. ควรทำอย่างไร?",
+     c:["ถือศีลอดต่อไปเพราะยังไม่ต่ำมาก","หยุดถือศีลอดทันทีและรับประทานอาหาร/เครื่องดื่มแก้ไขภาวะน้ำตาลต่ำ","รอตรวจซ้ำอีก 2 ชั่วโมง","เพิ่มขนาดอินซูลินทันที"], a:1,
+     e:"น้ำตาล <70 มก./ดล. เป็นเกณฑ์ที่ต้องหยุดถือศีลอดทันทีเพื่อป้องกันภาวะน้ำตาลต่ำรุนแรง"},
+    {q:"ควรเริ่มวางแผนและปรับยาก่อนเข้าเดือนถือศีลอดล่วงหน้าอย่างน้อยเท่าใด?",
+     c:["1 สัปดาห์","2 สัปดาห์","2 เดือน","6 เดือน"], a:2,
+     e:"ควรวางแผนล่วงหน้าอย่างน้อย 2 เดือนเพื่อประเมินความเสี่ยงและปรับแผนการรักษา"}
+  ]
+},
+{
+  id:"c9", n:"9", title:"การรักษาเบาหวานในผู้ป่วยโรคไตเรื้อรัง", sub:"Diabetes Care in Chronic Kidney Disease", nav:"9. เบาหวาน+ไต",
+  chips:[
+    {v:"<30", l:"eGFR ที่ห้ามใช้ metformin"},
+    {v:"~7%", l:"เป้าหมาย A1C ทั่วไปใน CKD ระยะต้น"},
+    {v:"<7.5%", l:"เป้าหมาย A1C ในผู้ทำ hemodialysis"}
+  ],
+  bullets:[
+    "โรคไตเรื้อรัง (CKD) แบ่งเป็น 5 ระยะตาม eGFR: ระยะ 1 (>90), 2 (60-89), 3A (45-59), 3B (30-44), 4 (15-29), 5 (<15 หรือทำ dialysis)",
+    "เมื่อไตเสื่อมลง ความต้องการอินซูลินอาจลดลงเนื่องจากการขจัดอินซูลินทางไตลดลง เพิ่มความเสี่ยงน้ำตาลต่ำ — ต้องปรับลดขนาดยาและติดตามใกล้ชิด",
+    "Metformin ห้ามใช้เมื่อ eGFR <30 และควรลดขนาดเหลือไม่เกิน 1,000 มก./วัน เมื่อ eGFR 30-45",
+    "SGLT2 inhibitors มีข้อจำกัดการเริ่มใช้ตาม eGFR ขึ้นกับชนิดยา (เช่น dapagliflozin ห้ามใช้เมื่อ eGFR <25, empagliflozin <20) แต่มีประโยชน์ชะลอการเสื่อมของไตหากเริ่มใช้ก่อนไตเสื่อมมาก",
+    "Sulfonylurea ที่ควรหลีกเลี่ยงใน CKD คือ glibenclamide (เสี่ยงน้ำตาลต่ำรุนแรง) ควรเลือก gliclazide หรือ glipizide แทนในขนาดที่ปรับลด",
+    "เป้าหมาย A1C ทั่วไปในผู้ป่วย CKD ที่ยังไม่ทำ dialysis ประมาณ 7% ส่วนผู้ที่ทำ hemodialysis อาจพิจารณาเป้าหมายที่ผ่อนคลายขึ้นเป็น A1C <7.5% เนื่องจากมีความเสี่ยงน้ำตาลต่ำสูงและค่า A1C อาจคลาดเคลื่อน",
+    "ในผู้ป่วยที่ทำ hemodialysis ควรลดขนาดอินซูลินในวันที่ทำ dialysis เนื่องจากกลูโคสถูกดึงออกจากเลือดระหว่างการฟอกไต เสี่ยงน้ำตาลต่ำช่วงและหลังทำ dialysis"
+  ],
+  recs:[],
+  cards:[
+    {f:"CKD ระยะใดที่ห้ามใช้ metformin?", b:"ระยะที่มี eGFR <30 มล./นาที/1.73 ตร.ม. — และควรลดขนาดเหลือไม่เกิน 1,000 มก./วัน เมื่อ eGFR 30-45"},
+    {f:"เหตุใดความต้องการอินซูลินจึงลดลงเมื่อไตเสื่อมมากขึ้น?", b:"เพราะการขจัดอินซูลินทางไตลดลง อินซูลินอยู่ในร่างกายนานขึ้น เพิ่มความเสี่ยงน้ำตาลต่ำ"},
+    {f:"Sulfonylurea ชนิดใดควรหลีกเลี่ยงในผู้ป่วย CKD?", b:"Glibenclamide เนื่องจากเสี่ยงภาวะน้ำตาลต่ำในเลือดรุนแรง ควรเลือก gliclazide หรือ glipizide แทน"},
+    {f:"เป้าหมาย A1C ในผู้ป่วยที่ทำ hemodialysis เป็นอย่างไรเมื่อเทียบกับผู้ป่วยทั่วไป?", b:"อาจผ่อนคลายขึ้นเป็น <7.5% เนื่องจากเสี่ยงน้ำตาลต่ำสูงและค่า A1C อาจคลาดเคลื่อนจากภาวะโลหิตจาง"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานมี eGFR 25 มล./นาที/1.73 ตร.ม. ควรจัดการยา metformin อย่างไร?",
+     c:["ใช้ในขนาดปกติได้ต่อไป","ลดขนาดเหลือไม่เกิน 1,000 มก./วัน","ห้ามใช้ (eGFR<30)","เพิ่มขนาดเพื่อชดเชยการขับยาที่ช้าลง"], a:2,
+     e:"Metformin ห้ามใช้เมื่อ eGFR <30 มล./นาที/1.73 ตร.ม. เนื่องจากเสี่ยง lactic acidosis"},
+    {q:"Sulfonylurea ชนิดใดที่ควรหลีกเลี่ยงในผู้ป่วยโรคไตเรื้อรังเนื่องจากเสี่ยงน้ำตาลต่ำรุนแรง?",
+     c:["Gliclazide","Glipizide","Glibenclamide","Repaglinide"], a:2,
+     e:"Glibenclamide ไม่ควรใช้ในโรคไตเรื้อรังตั้งแต่ระยะ 3 เนื่องจากเสี่ยงน้ำตาลต่ำในเลือดรุนแรง"},
+    {q:"เหตุใดผู้ป่วยเบาหวานที่ไตเสื่อมมากขึ้นจึงมีความเสี่ยงน้ำตาลต่ำเพิ่มขึ้น แม้ไม่ได้ปรับขนาดยา?",
+     c:["ไตสร้างกลูโคสเพิ่มขึ้น","การขจัดอินซูลินทางไตลดลง ทำให้อินซูลินออกฤทธิ์นานขึ้น","ตับสร้างกลูโคสน้อยลงจากพิษยูรีเมีย","ผู้ป่วยกินอาหารมากขึ้น"], a:1,
+     e:"เมื่อไตเสื่อมมากขึ้น การขจัดอินซูลินทางไตลดลง อินซูลินสะสมและออกฤทธิ์นานขึ้น เสี่ยงน้ำตาลต่ำ"}
+  ]
+},
+{
+  id:"c10", n:"10", title:"การตรวจติดตามระดับน้ำตาลในเลือด", sub:"Blood Glucose Monitoring: SMBG & CGM", nav:"10. ติดตามน้ำตาล",
+  chips:[
+    {v:"<6.5%", l:"eA1C/GMI เป้าหมายจาก CGM"},
+    {v:"70%", l:"Time in range (70-180 มก./ดล.) เป้าหมายขั้นต่ำ"},
+    {v:"<4%", l:"เวลาที่น้ำตาล <70 มก./ดล. ไม่ควรเกิน"}
+  ],
+  bullets:[
+    "การตรวจน้ำตาลปลายนิ้วด้วยตนเอง (SMBG) ช่วยให้ผู้ป่วยและทีมรักษาปรับแผนการรักษาได้ทันท่วงที โดยเฉพาะผู้ที่ใช้อินซูลิน ควรตรวจก่อนอาหารและก่อนนอนเป็นหลัก",
+    "Continuous Glucose Monitoring (CGM) ให้ค่าประมาณ A1C ที่เรียกว่า Glucose Management Indicator (GMI) หรือ estimated A1C (eA1C) โดยใช้ค่าเฉลี่ยน้ำตาลจากเซนเซอร์ เป้าหมาย GMI <6.5% เทียบเท่า A1C",
+    "Time in Range (TIR) คือสัดส่วนเวลาที่น้ำตาลอยู่ในช่วง 70-180 มก./ดล. เป้าหมายทั่วไปคือ ≥70% ของเวลาทั้งวัน",
+    "Time below Range (TBR) ควรน้อยกว่า 4% ของเวลาทั้งวันสำหรับน้ำตาล <70 มก./ดล. และน้อยกว่า 1% สำหรับ <54 มก./ดล.",
+    "การใช้ CGM มีประโยชน์มากในผู้ป่วยที่มีภาวะน้ำตาลต่ำบ่อยหรือไม่รู้ตัว (hypoglycemia unawareness), หญิงตั้งครรภ์ที่เป็นเบาหวาน และผู้ป่วย T1DM ที่ควบคุมยาก",
+    "ปัจจัยที่ทำให้ผลตรวจ A1C คลาดเคลื่อนได้ (carbamylated hemoglobin, ภาวะโลหิตจาง, erythropoietin) ควรใช้ glycated albumin (GA) หรือ BGM/CGM ประกอบการประเมินแทน โดยเฉพาะในผู้ป่วย CKD/dialysis"
+  ],
+  recs:[],
+  cards:[
+    {f:"GMI (Glucose Management Indicator) คืออะไร?", b:"ค่าประมาณ A1C ที่คำนวณจากค่าเฉลี่ยน้ำตาลของ CGM ใช้เมื่อไม่สามารถตรวจ A1C ได้โดยตรงหรือค่า A1C ไม่น่าเชื่อถือ"},
+    {f:"Time in Range (TIR) เป้าหมายทั่วไปคือเท่าใด?", b:"น้ำตาลอยู่ในช่วง 70-180 มก./ดล. อย่างน้อย 70% ของเวลาทั้งวัน"},
+    {f:"ผู้ป่วยกลุ่มใดได้ประโยชน์มากเป็นพิเศษจากการใช้ CGM?", b:"ผู้ที่มีภาวะน้ำตาลต่ำบ่อยหรือไม่รู้ตัว (hypoglycemia unawareness), หญิงตั้งครรภ์ที่เป็นเบาหวาน และ T1DM ที่ควบคุมยาก"},
+    {f:"เหตุใดในผู้ป่วยที่ทำ hemodialysis ควรใช้ glycated albumin (GA) แทน A1C บางครั้ง?", b:"เพราะ A1C อาจคลาดเคลื่อนจากภาวะโลหิตจางและอายุเม็ดเลือดแดงสั้นลง ทำให้ประเมินระดับน้ำตาลผิดพลาด"}
+  ],
+  quiz:[
+    {q:"เป้าหมาย Time in Range (70-180 มก./ดล.) ทั่วไปสำหรับผู้ป่วยเบาหวานคือเท่าใด?",
+     c:["≥50% ของเวลาทั้งวัน","≥70% ของเวลาทั้งวัน","≥90% ของเวลาทั้งวัน","ไม่มีเป้าหมายที่แน่นอน"], a:1,
+     e:"เป้าหมาย TIR ทั่วไปคือน้ำตาลอยู่ในช่วง 70-180 มก./ดล. อย่างน้อย 70% ของเวลาทั้งวัน"},
+    {q:"ในผู้ป่วยไตวายเรื้อรังที่ทำ hemodialysis ค่า A1C อาจต่ำกว่าความเป็นจริงเนื่องจากสาเหตุใด?",
+     c:["กินอาหารน้อยลง","ภาวะโลหิตจางและเม็ดเลือดแดงอายุสั้นจากการให้ erythropoietin","ตรวจเลือดผิดวิธี","น้ำตาลในเลือดสูงขึ้นจริง"], a:1,
+     e:"เม็ดเลือดแดงอายุสั้นและ erythropoietin ทำให้ A1C ต่ำกว่าความเป็นจริง ควรใช้ GA หรือ BGM/CGM ประกอบ"}
+  ]
+},
+{
+  id:"c11", n:"11", title:"ภาวะน้ำตาลต่ำในเลือด", sub:"Hypoglycemia: Diagnosis, Treatment & Prevention", nav:"11. น้ำตาลต่ำ",
+  chips:[
+    {v:"≤70", l:"มก./ดล. เกณฑ์ mild hypoglycemia"},
+    {v:"≤54", l:"มก./ดล. เกณฑ์ moderate hypoglycemia (ต้องแก้ไขเร่งด่วน)"},
+    {v:"15/15", l:"กฎ: คาร์โบไฮเดรต 15 กรัม แล้วตรวจซ้ำใน 15 นาที"}
+  ],
+  bullets:[
+    "แบ่งความรุนแรงเป็น 3 ระดับ: ไม่รุนแรง (≤70 มก./ดล. รู้สึกตัวช่วยเหลือตนเองได้), รุนแรงปานกลาง (≤54 มก./ดล. ต้องแก้ไขเร่งด่วน) และรุนแรงมาก (ชัก/หมดสติ ต้องมีผู้อื่นช่วยเหลือ)",
+    "อาการแบ่งเป็น 2 กลุ่ม: autonomic (ใจสั่น เหงื่อออก หิว มือสั่น) และ neuroglycopenic (มึนงง พูดไม่ชัด สับสน ชัก หมดสติ) — เด็กเล็กอาจแสดงออกเป็นงอแง ซนผิดปกติ",
+    "การแก้ไขภาวะน้ำตาลต่ำไม่รุนแรง/ปานกลางที่ยังรู้สึกตัว: ใช้กฎ 15/15 คือให้คาร์โบไฮเดรตดูดซึมเร็ว 15 กรัม (น้ำหวาน น้ำผลไม้ ลูกอม) แล้วตรวจน้ำตาลซ้ำใน 15 นาที ทำซ้ำจนกว่าน้ำตาล ≥70 มก./ดล.",
+    "ภาวะน้ำตาลต่ำรุนแรงที่ไม่รู้สึกตัว/ชักหมดสติ ที่บ้านให้ฉีด glucagon เข้ากล้าม/ใต้ผิวหนัง ห้ามป้อนอาหารทางปากเพราะเสี่ยงสำลัก ต้องรีบนำส่งโรงพยาบาล",
+    "ที่โรงพยาบาลให้ 50% dextrose ทางหลอดเลือดดำในผู้ใหญ่ หรือกลูคากอนหากไม่มีทางหลอดเลือด",
+    "ภาวะน้ำตาลต่ำไม่รู้ตัว (hypoglycemia unawareness) เป็นความเสี่ยงสำคัญที่ต้องแจ้งทีมแพทย์เพื่อปรับเป้าหมายการรักษาให้ผ่อนคลายขึ้นชั่วคราว และพิจารณาใช้ CGM ช่วยเตือน"
+  ],
+  recs:[],
+  cards:[
+    {f:"กฎ 15/15 ในการแก้ไขภาวะน้ำตาลต่ำคืออะไร?", b:"ให้คาร์โบไฮเดรตดูดซึมเร็ว 15 กรัม แล้วตรวจน้ำตาลซ้ำใน 15 นาที ทำซ้ำจนกว่าน้ำตาลจะกลับมา ≥70 มก./ดล."},
+    {f:"เกณฑ์ระดับน้ำตาลของภาวะน้ำตาลต่ำรุนแรงปานกลางที่ต้องแก้ไขเร่งด่วนคือเท่าใด?", b:"≤54 มก./ดล. (clinically significant/serious hypoglycemia)"},
+    {f:"ผู้ป่วยหมดสติจากภาวะน้ำตาลต่ำที่บ้าน ควรทำอย่างไร ห้ามทำอะไร?", b:"ฉีด glucagon เข้ากล้าม/ใต้ผิวหนังและรีบนำส่งโรงพยาบาล ห้ามป้อนอาหารหรือน้ำหวานทางปากเพราะเสี่ยงสำลัก"},
+    {f:"Hypoglycemia unawareness คืออะไร และสำคัญอย่างไร?", b:"ภาวะที่ผู้ป่วยไม่รู้สึกตัวเมื่อน้ำตาลต่ำ เสี่ยงต่อการเกิดน้ำตาลต่ำรุนแรงโดยไม่ทันตั้งตัว ต้องแจ้งแพทย์เพื่อผ่อนเป้าหมายการรักษาและพิจารณาใช้ CGM"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานรู้สึกตัวดี ตรวจน้ำตาลปลายนิ้วได้ 62 มก./ดล. ควรจัดการอย่างไรตามกฎ 15/15?",
+     c:["ให้คาร์โบไฮเดรตดูดซึมเร็ว 15 กรัม แล้วตรวจซ้ำใน 15 นาที","ฉีด glucagon ทันที","ไม่ต้องทำอะไรเพราะยังรู้สึกตัวดี","นำส่งโรงพยาบาลทันทีโดยไม่แก้ไขเบื้องต้น"], a:0,
+     e:"ผู้ป่วยที่ยังรู้สึกตัวและช่วยเหลือตนเองได้ ให้ใช้กฎ 15/15: คาร์โบไฮเดรต 15 กรัม แล้วตรวจซ้ำใน 15 นาที"},
+    {q:"ผู้ป่วยเบาหวานชักและหมดสติจากน้ำตาลต่ำที่บ้าน ข้อใดถูกต้องที่สุด?",
+     c:["ป้อนน้ำหวานทางปากทันที","ฉีด glucagon เข้ากล้าม/ใต้ผิวหนัง และรีบนำส่งโรงพยาบาล ห้ามป้อนทางปาก","รอสังเกตอาการอีก 30 นาทีก่อนตัดสินใจ","ให้ยาเม็ดลดน้ำตาลลดขนาดลงเอง"], a:1,
+     e:"ผู้ป่วยหมดสติห้ามป้อนอาหาร/น้ำทางปากเพราะเสี่ยงสำลัก ต้องฉีด glucagon และนำส่งโรงพยาบาลทันที"},
+    {q:"ระดับน้ำตาลใดที่จัดเป็น clinically significant hypoglycemia ที่ต้องรีบแก้ไข?",
+     c:["≤100 มก./ดล.","≤80 มก./ดล.","≤70 มก./ดล.","≤54 มก./ดล."], a:3,
+     e:"≤54 มก./ดล. จัดเป็นภาวะน้ำตาลต่ำรุนแรงปานกลางที่ clinically significant ต้องแก้ไขเร่งด่วน"}
+  ]
+},
+{
+  id:"c12", n:"12", title:"ภาวะน้ำตาลสูงในเลือด และ DKA/HHS", sub:"Hyperglycemia, Diabetic Ketoacidosis & Hyperosmolar State", nav:"12. DKA/HHS",
+  chips:[
+    {v:">250", l:"มก./ดล. + คีโตน = สงสัย DKA"},
+    {v:">600", l:"มก./ดล. ให้ประเมินภาวะ HHS"},
+    {v:"0.6", l:"มิลลิโมล/ลิตร คีโตนในเลือดที่ถือว่าสูงผิดปกติ"}
+  ],
+  bullets:[
+    "เป้าหมายน้ำตาลทั่วไปอยู่ระหว่าง 70-180 มก./ดล. หากพบน้ำตาลสูงกว่า 250 มก./ดล. ควรตรวจหาสารคีโตนในเลือดหรือปัสสาวะทันที เนื่องจากเสี่ยงภาวะ DKA",
+    "กรณีไม่เจ็บป่วย ไม่พบคีโตน: ให้ดื่มน้ำเพียงพอ ฉีดอินซูลินออกฤทธิ์สั้น/เร็วตามสัดส่วนที่แพทย์สั่ง ตรวจน้ำตาลซ้ำใน 2-3 ชั่วโมง",
+    "กรณีตรวจพบคีโตน: ดื่มน้ำเปล่า 120-240 มล. ทุก 30 นาที ฉีดอินซูลินออกฤทธิ์สั้น/เร็วเพิ่มขึ้นตามสัดส่วนที่แพทย์สั่ง (ประมาณร้อยละ 10-20 ของ total daily dose) ตรวจน้ำตาลและคีโตนซ้ำทุก 2-4 ชั่วโมง",
+    "ควรรีบไปโรงพยาบาลทันทีหาก: ระดับน้ำตาลยังคงสูงหรือสูงขึ้นเรื่อยๆ แม้ฉีดอินซูลินเพิ่มแล้ว มีอาการปวดท้อง คลื่นไส้ อาเจียน หายใจหอบลึก อ่อนเพลียมาก หรือระดับความรู้สึกตัวลดลง",
+    "ผู้ป่วยเบาหวานชนิดที่ 1 มีความเสี่ยงเกิด DKA ง่ายกว่า T2DM มาก โดยเฉพาะเมื่อเจ็บป่วยหรือหยุดฉีดอินซูลิน — ห้ามหยุดฉีดอินซูลินเองแม้กินอาหารไม่ได้ ควรปรึกษาแพทย์เพื่อปรับขนาดแทน",
+    "HHS (hyperosmolar hyperglycemic state) พบมากในผู้สูงอายุ T2DM ที่มีภาวะขาดน้ำรุนแรงร่วมกับน้ำตาลสูงมาก (>600 มก./ดล.) โดยมักไม่มีหรือมีคีโตนเพียงเล็กน้อย ต่างจาก DKA ที่เน้นภาวะเลือดเป็นกรดจากคีโตน",
+    "ผู้ป่วยที่ใช้ SGLT2 inhibitor มีความเสี่ยง euglycemic DKA ได้แม้น้ำตาลไม่สูงมาก โดยเฉพาะเมื่ออดอาหาร เจ็บป่วยรุนแรง หรือก่อน-หลังผ่าตัด ควรหยุดยากลุ่มนี้ชั่วคราวในสถานการณ์เสี่ยง"
+  ],
+  recs:[],
+  cards:[
+    {f:"เมื่อพบน้ำตาลในเลือดสูงกว่าเท่าใด ควรตรวจหาสารคีโตนทันที?", b:">250 มก./ดล. เนื่องจากเสี่ยงภาวะ diabetic ketoacidosis (DKA)"},
+    {f:"ข้อแตกต่างหลักระหว่าง DKA และ HHS คืออะไร?", b:"DKA มีภาวะเลือดเป็นกรดจากคีโตนชัดเจน มักพบใน T1DM ส่วน HHS มีน้ำตาลสูงมาก (>600) ร่วมกับขาดน้ำรุนแรง มักไม่มี/มีคีโตนเล็กน้อย พบมากใน T2DM สูงอายุ"},
+    {f:"เหตุใดผู้ใช้ SGLT2 inhibitor จึงเสี่ยง euglycemic DKA?", b:"ยากลุ่มนี้ทำให้ร่างกายหันไปใช้ไขมันสร้างพลังงานมากขึ้น เกิดคีโตนได้แม้น้ำตาลในเลือดไม่สูงมาก โดยเฉพาะเมื่ออดอาหารหรือเจ็บป่วยรุนแรง"},
+    {f:"ผู้ป่วย T1DM กินอาหารไม่ได้จากอาการป่วย ควรทำอย่างไรกับอินซูลิน?", b:"ห้ามหยุดฉีดอินซูลินเองเด็ดขาด ควรปรึกษาแพทย์เพื่อปรับขนาดแทน เนื่องจากเสี่ยง DKA สูงหากหยุดยา"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานตรวจน้ำตาลปลายนิ้วได้ 280 มก./ดล. ควรดำเนินการขั้นแรกคือข้อใด?",
+     c:["ตรวจหาสารคีโตนในเลือดหรือปัสสาวะทันที","รอตรวจซ้ำพรุ่งนี้","หยุดกินอาหารทั้งหมด","เพิ่มการออกกำลังกายทันที"], a:0,
+     e:"น้ำตาล >250 มก./ดล. ควรตรวจหาคีโตนทันทีเพื่อคัดกรองภาวะ DKA"},
+    {q:"ข้อใดอธิบายลักษณะเฉพาะของภาวะ HHS ได้ถูกต้อง?",
+     c:["น้ำตาลสูงมาก (>600) ร่วมกับขาดน้ำรุนแรง มักไม่มี/มีคีโตนเล็กน้อย","เกิดเฉพาะในเด็กเท่านั้น","มีคีโตนในเลือดสูงมากเสมอ","ไม่เกี่ยวข้องกับระดับน้ำตาลในเลือด"], a:0,
+     e:"HHS มีลักษณะน้ำตาลสูงมากร่วมกับขาดน้ำรุนแรง ต่างจาก DKA ที่เน้นเลือดเป็นกรดจากคีโตน"},
+    {q:"ผู้ป่วยที่ใช้ SGLT2 inhibitor มีความเสี่ยงพิเศษต่อภาวะใดแม้น้ำตาลในเลือดไม่สูงมาก?",
+     c:["Hypoglycemia รุนแรง","Euglycemic DKA","HHS","Lactic acidosis เสมอ"], a:1,
+     e:"SGLT2 inhibitor เพิ่มความเสี่ยง euglycemic DKA โดยเฉพาะเมื่ออดอาหารหรือเจ็บป่วยรุนแรง"},
+    {q:"ผู้ป่วย T1DM ที่มีอาการเจ็บป่วยและกินอาหารไม่ค่อยได้ ควรปฏิบัติต่ออินซูลินอย่างไร?",
+     c:["หยุดฉีดอินซูลินทันทีเพราะกินไม่ได้","ฉีดต่อและปรึกษาแพทย์เพื่อปรับขนาดตามความเหมาะสม","เพิ่มขนาดเป็น 2 เท่าโดยไม่ปรึกษาใคร","เปลี่ยนไปกินยาเม็ดแทน"], a:1,
+     e:"ห้ามหยุดฉีดอินซูลินเองแม้กินอาหารไม่ได้ เพราะเสี่ยง DKA สูง ควรปรึกษาแพทย์เพื่อปรับขนาด"}
+  ]
+},
+{
+  id:"c13", n:"13", title:"ภาวะแทรกซ้อนทางตาและไตจากเบาหวาน", sub:"Diabetic Retinopathy & Nephropathy Screening", nav:"13. ตา/ไต",
+  chips:[
+    {v:"1", l:"ครั้ง/ปี ตรวจจอประสาทตาอย่างน้อย"},
+    {v:"<30", l:"มก./กรัม creatinine เป้าหมาย UACR"},
+    {v:"ACEI/ARB", l:"ยาแนะนำเมื่อพบ albuminuria"}
+  ],
+  bullets:[
+    "ควรตรวจคัดกรอง diabetic retinopathy ด้วยการถ่ายภาพจอประสาทตา (fundus photography) หรือให้จักษุแพทย์ตรวจ อย่างน้อยปีละครั้งตั้งแต่วินิจฉัยเบาหวาน (T2DM) หรือหลังวินิจฉัย T1DM ไป 5 ปี",
+    "คัดกรอง diabetic nephropathy ด้วยการตรวจ urinary albumin-to-creatinine ratio (UACR) และ eGFR อย่างน้อยปีละครั้ง เป้าหมาย UACR <30 มก./กรัม creatinine",
+    "หากพบ albuminuria (UACR ≥30) ควรเริ่มยากลุ่ม ACE inhibitor หรือ ARB เพื่อชะลอการเสื่อมของไต แม้ความดันโลหิตปกติ",
+    "การควบคุมน้ำตาลและความดันโลหิตอย่างเข้มงวดช่วยลดความเสี่ยงและชะลอการดำเนินโรคของทั้ง retinopathy และ nephropathy อย่างมีนัยสำคัญ (อ้างอิงจาก DCCT, UKPDS)",
+    "Proliferative diabetic retinopathy ที่ตรวจพบควรส่งต่อจักษุแพทย์เพื่อพิจารณา laser photocoagulation หรือ anti-VEGF โดยเร็ว เพื่อป้องกันการสูญเสียการมองเห็น",
+    "หญิงตั้งครรภ์ที่เป็นเบาหวานควรตรวจจอประสาทตาก่อนตั้งครรภ์และทุกไตรมาส เนื่องจาก retinopathy อาจลุกลามเร็วขึ้นในช่วงตั้งครรภ์"
+  ],
+  recs:[],
+  cards:[
+    {f:"ควรตรวจคัดกรอง diabetic retinopathy บ่อยเพียงใด?", b:"อย่างน้อยปีละครั้ง ตั้งแต่วินิจฉัย T2DM หรือหลังวินิจฉัย T1DM ไปแล้ว 5 ปี"},
+    {f:"ค่า UACR เท่าใดที่บ่งชี้ albuminuria และควรเริ่มยาอะไร?", b:"UACR ≥30 มก./กรัม creatinine — ควรเริ่ม ACE inhibitor หรือ ARB แม้ความดันโลหิตปกติ"},
+    {f:"เพราะเหตุใดหญิงตั้งครรภ์ที่เป็นเบาหวานจึงต้องตรวจตาถี่ขึ้น?", b:"เพราะ diabetic retinopathy อาจลุกลามเร็วขึ้นในช่วงตั้งครรภ์ ควรตรวจก่อนตั้งครรภ์และทุกไตรมาส"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานควรได้รับการตรวจคัดกรองจอประสาทตาบ่อยเพียงใดเมื่อไม่มีภาวะผิดปกติ?",
+     c:["ทุก 5 ปี","ปีละครั้ง","ทุก 3 เดือน","ไม่จำเป็นต้องตรวจถ้าไม่มีอาการ"], a:1,
+     e:"แนะนำตรวจคัดกรองจอประสาทตาอย่างน้อยปีละครั้ง"},
+    {q:"เมื่อพบ UACR ≥30 มก./กรัม creatinine ควรเริ่มยากลุ่มใด แม้ความดันโลหิตปกติ?",
+     c:["Calcium channel blocker","ACE inhibitor หรือ ARB","Beta-blocker","Thiazide diuretic"], a:1,
+     e:"พบ albuminuria ควรเริ่ม ACEI/ARB เพื่อชะลอการเสื่อมของไต แม้ความดันโลหิตปกติ"}
+  ]
+},
+{
+  id:"c14", n:"14", title:"โรคหัวใจและหลอดเลือดสมองในผู้ป่วยเบาหวาน", sub:"Cardiovascular & Cerebrovascular Disease", nav:"14. หัวใจ/สมอง",
+  chips:[
+    {v:"<70", l:"LDL เป้าหมาย (มก./ดล.) หากมี ASCVD แล้ว"},
+    {v:"Statin", l:"ยาแนะนำเมื่อมีความเสี่ยงหลอดเลือดสูง"},
+    {v:"Aspirin", l:"antiplatelet แนะนำเมื่อมี CVD แล้ว"}
+  ],
+  bullets:[
+    "ผู้ป่วยเบาหวานมีความเสี่ยงโรคหลอดเลือดหัวใจและสมองสูงกว่าคนทั่วไป 2-4 เท่า ควรประเมินความเสี่ยง ASCVD อย่างสม่ำเสมอ",
+    "ผู้ป่วยที่มี ischemic stroke หรือ myocardial infarction แล้วควรได้รับ antiplatelet (เช่น aspirin) และ statin หากไม่มีข้อห้าม",
+    "ควรควบคุมปัจจัยเสี่ยงร่วม ได้แก่ ความดันโลหิตสูง ไขมันในเลือดสูง และแนะนำเลิกบุหรี่อย่างจริงจัง",
+    "ยากลุ่ม SGLT2 inhibitors และ GLP-1 receptor agonists บางชนิดมีหลักฐานลดอัตราการเกิด major adverse cardiovascular events (MACE) จึงควรพิจารณาเป็นยาลดน้ำตาลลำดับต้นในผู้ป่วยกลุ่มนี้",
+    "ในผู้ป่วยที่มีภาวะอ้วนร่วมกับ CVD ควรแนะนำการลดน้ำหนักควบคู่กับการควบคุมปัจจัยเสี่ยงอื่น"
+  ],
+  recs:[],
+  cards:[
+    {f:"ผู้ป่วยเบาหวานที่มี ischemic stroke หรือ MI แล้วควรได้รับยากลุ่มใด?", b:"Antiplatelet (เช่น aspirin) และ statin หากไม่มีข้อห้าม"},
+    {f:"ยาลดน้ำตาลกลุ่มใดมีหลักฐานลด MACE และควรพิจารณาก่อนในผู้มีความเสี่ยงหัวใจสูง?", b:"SGLT2 inhibitors และ GLP-1 receptor agonists บางชนิด"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วยเบาหวานที่มีประวัติ myocardial infarction ควรได้รับยากลุ่มใดเพื่อป้องกันซ้ำ หากไม่มีข้อห้าม?",
+     c:["Antiplatelet และ statin","Vitamin รวม","ยาปฏิชีวนะป้องกัน","ยาลดกรดในกระเพาะ"], a:0,
+     e:"ผู้มี ASCVD แล้วควรได้ antiplatelet และ statin เพื่อลดความเสี่ยงเกิดซ้ำ"},
+    {q:"ยาลดน้ำตาลกลุ่มใดที่มีหลักฐานช่วยลดเหตุการณ์หัวใจและหลอดเลือดที่รุนแรง (MACE)?",
+     c:["Sulfonylurea","Alpha-glucosidase inhibitor","SGLT2 inhibitor และ GLP-1 receptor agonist","Thiazolidinedione ทุกชนิด"], a:2,
+     e:"SGLT2 inhibitors และ GLP-1 RA บางชนิดมีหลักฐานลด MACE ชัดเจนจากการศึกษาขนาดใหญ่"}
+  ]
+},
+{
+  id:"c15", n:"15", title:"การดูแลเท้าในผู้ป่วยเบาหวาน", sub:"Diabetic Foot Care & Ulcer Prevention", nav:"15. เท้า",
+  chips:[
+    {v:"1", l:"ครั้ง/ปี ตรวจเท้าอย่างละเอียดอย่างน้อย"},
+    {v:"10g", l:"Monofilament test คัดกรอง sensation"},
+    {v:"ทุกครั้ง", l:"ที่มาตรวจ ควรถอดรองเท้าตรวจเท้า"}
+  ],
+  bullets:[
+    "ควรตรวจเท้าผู้ป่วยเบาหวานอย่างละเอียดอย่างน้อยปีละครั้ง ครอบคลุมการตรวจ sensation ด้วย 10-g monofilament, vibration sense, และ ankle reflexes เพื่อคัดกรอง peripheral neuropathy",
+    "ตรวจชีพจรหลอดเลือดส่วนปลาย (dorsalis pedis, posterior tibial) เพื่อประเมิน peripheral arterial disease ร่วมด้วย",
+    "ผู้ป่วยที่มีความเสี่ยงสูง (มี neuropathy, PAD, แผลเก่า, หรือตัดขา/เท้าเดิม) ควรตรวจเท้าทุกครั้งที่มาพบแพทย์และให้ความรู้การดูแลเท้าด้วยตนเองอย่างเข้มงวด",
+    "สอนผู้ป่วยตรวจเท้าด้วยตนเองทุกวัน สังเกตแผล รอยแดง บวม หรือการเปลี่ยนสี รวมถึงเลือกรองเท้าที่เหมาะสมไม่คับแน่นเกินไป และหลีกเลี่ยงเดินเท้าเปล่า",
+    "แผลที่เท้าในผู้ป่วยเบาหวานต้องได้รับการดูแลเร่งด่วน เนื่องจากเสี่ยงติดเชื้อลุกลามและอาจนำไปสู่การตัดขา/เท้า ควรส่งต่อทีมสหสาขาวิชาชีพหากแผลไม่ดีขึ้นใน 2 สัปดาห์"
+  ],
+  recs:[],
+  cards:[
+    {f:"เครื่องมือคัดกรอง peripheral neuropathy ที่เท้าที่ใช้บ่อยที่สุดคืออะไร?", b:"10-gram monofilament test ร่วมกับ vibration sense และ ankle reflexes"},
+    {f:"ควรตรวจเท้าผู้ป่วยเบาหวานอย่างละเอียดบ่อยเพียงใด?", b:"อย่างน้อยปีละครั้ง — ผู้ที่มีความเสี่ยงสูง (neuropathy/PAD/แผลเก่า) ควรตรวจทุกครั้งที่มาพบแพทย์"},
+    {f:"แผลที่เท้าในผู้ป่วยเบาหวานที่ไม่ดีขึ้นใน 2 สัปดาห์ควรทำอย่างไร?", b:"ส่งต่อทีมสหสาขาวิชาชีพเพื่อประเมินและรักษาเร่งด่วน เนื่องจากเสี่ยงติดเชื้อลุกลามและตัดขา/เท้า"}
+  ],
+  quiz:[
+    {q:"เครื่องมือมาตรฐานในการคัดกรอง peripheral neuropathy ที่เท้าในผู้ป่วยเบาหวานคือข้อใด?",
+     c:["10-gram monofilament test","การวัดความดันโลหิต","การตรวจ A1C","การตรวจปัสสาวะ"], a:0,
+     e:"10-g monofilament test เป็นเครื่องมือมาตรฐานในการคัดกรอง sensation ที่เท้า"},
+    {q:"ผู้ป่วยเบาหวานที่มีความเสี่ยงสูงต่อแผลที่เท้า (มี neuropathy หรือ PAD) ควรได้รับการตรวจเท้าบ่อยเพียงใด?",
+     c:["ปีละครั้งเท่านั้น","ทุกครั้งที่มาพบแพทย์","ทุก 5 ปี","ไม่จำเป็นต้องตรวจถ้าไม่มีอาการปวด"], a:1,
+     e:"ผู้มีความเสี่ยงสูงควรตรวจเท้าทุกครั้งที่มาพบแพทย์ เพื่อพบความผิดปกติได้เร็ว"}
+  ]
+},
+{
+  id:"c16", n:"16-17", title:"เบาหวานในเด็กและวัยรุ่น", sub:"Screening, Diagnosis, Treatment & Emergency Care in Children", nav:"16-17. เด็ก/วัยรุ่น",
+  chips:[
+    {v:"0.4-0.6", l:"ยูนิต/กก./วัน ขนาดเริ่มต้นอินซูลินใน T1DM เด็กเล็ก"},
+    {v:"<7%", l:"เป้าหมาย A1C ใน T1DM เด็กและวัยรุ่น"},
+    {v:"≥10", l:"BMI percentile ≥85 + อายุ ≥10 ปี → คัดกรอง T2DM"}
+  ],
+  bullets:[
+    "เด็กและวัยรุ่นเบาหวานอายุน้อยกว่า 15 ปีในไทย ส่วนใหญ่ (ร้อยละ 74) เป็น T1DM, T2DM พบร้อยละ 19 และชนิดอื่นๆ เช่น monogenic/neonatal diabetes ร้อยละ 7",
+    "คัดกรอง T2DM ในเด็กเมื่อเริ่มเข้าสู่วัยหนุ่มสาว (puberty) หรืออายุ ≥10 ปี ที่มี BMI/น้ำหนักเกิน (percentile ≥85) ร่วมกับปัจจัยเสี่ยงอย่างน้อย 1 ข้อ เช่น ประวัติครอบครัวเป็น T2DM, acanthosis nigricans, มารดามีประวัติ GDM",
+    "หากสงสัย T1DM ในเด็กที่มีอาการ (ปัสสาวะมาก ดื่มน้ำมาก น้ำหนักลด) ต้องตรวจ random glucose ทันทีและประเมินภาวะ DKA เนื่องจากเด็กเสี่ยง DKA ตั้งแต่แรกวินิจฉัยสูงถึงร้อยละ 67.8 ในข้อมูลไทย",
+    "ขนาดอินซูลินเริ่มต้นใน T1DM: เด็กเล็ก (toddler) 0.4-0.6 ยูนิต/กก./วัน, เด็กก่อนวัยรุ่น 0.7-1.0 ยูนิต/กก./วัน, วัยรุ่น 1-2 ยูนิต/กก./วัน — แนะนำใช้ basal-bolus regimen ≥4 ครั้ง/วัน หรือ insulin pump",
+    "T2DM ในเด็กที่มีภาวะน้ำหนักเกิน/อ้วน: หากไม่มี ketosis/acidosis และ A1C <8.5% เริ่มด้วย metformin ร่วมกับปรับพฤติกรรม; หากมี ketosis/acidosis หรือ A1C ≥8.5% ต้องเริ่มอินซูลินก่อน — ยาที่ใช้ได้ในเด็กมีเพียง metformin, อินซูลิน และ GLP-1 receptor agonist เท่านั้น",
+    "การส่งต่อจากคลินิกวัยรุ่นสู่คลินิกผู้ใหญ่ (transition of care) ควรเริ่มเตรียมตัวล่วงหน้าอย่างน้อย 1 ปีก่อนส่งต่อ ช่วงอายุที่เหมาะสมคือ 16-19 ปี และไม่ช้าเกินอายุ 21 ปี"
+  ],
+  recs:[],
+  cards:[
+    {f:"ขนาดอินซูลินเริ่มต้นในเด็กก่อนวัยรุ่นที่เพิ่งวินิจฉัย T1DM คือเท่าใด?", b:"0.7-1.0 ยูนิต/กก./วัน (เด็กเล็ก 0.4-0.6, วัยรุ่น 1-2 ยูนิต/กก./วัน)"},
+    {f:"ยาลดน้ำตาลชนิดใดบ้างที่ใช้ได้ในเด็กที่เป็น T2DM?", b:"Metformin, อินซูลิน และ GLP-1 receptor agonist เท่านั้น — ยาชนิดอื่นยังไม่มีข้อมูลความปลอดภัยเพียงพอในเด็ก"},
+    {f:"เด็ก T2DM ที่มี A1C ≥8.5% พร้อม ketosis ควรเริ่มการรักษาด้วยอะไร?", b:"ต้องเริ่มอินซูลินก่อน (ไม่ใช่ metformin เพียงอย่างเดียว) เนื่องจากมีภาวะขาดอินซูลินรุนแรง"},
+    {f:"ควรเริ่มเตรียมส่งต่อผู้ป่วยเบาหวานวัยรุ่นสู่คลินิกผู้ใหญ่เมื่อใด?", b:"เตรียมตัวล่วงหน้าอย่างน้อย 1 ปีก่อนส่งต่อ ช่วงอายุที่เหมาะสมคือ 16-19 ปี ไม่ช้าเกินอายุ 21 ปี"}
+  ],
+  quiz:[
+    {q:"เด็กอายุ 12 ปี BMI percentile 90 มีพ่อเป็น T2DM ควรได้รับการคัดกรองเบาหวานชนิดใด?",
+     c:["ไม่ต้องคัดกรองจนกว่าจะมีอาการ","คัดกรอง T2DM เนื่องจากเข้าเกณฑ์น้ำหนักเกินร่วมปัจจัยเสี่ยง","คัดกรองเฉพาะ T1DM เท่านั้น","รอจนอายุ 18 ปีจึงคัดกรอง"], a:1,
+     e:"เด็กอายุ ≥10 ปี ที่มี BMI percentile ≥85 ร่วมปัจจัยเสี่ยง (ประวัติครอบครัว) ควรคัดกรอง T2DM"},
+    {q:"เด็กที่เพิ่งวินิจฉัย T2DM มี A1C 9% และตรวจพบ ketosis ควรเริ่มการรักษาด้วยยาใด?",
+     c:["Metformin เพียงอย่างเดียว","อินซูลิน ก่อนเป็นอันดับแรก","SGLT2 inhibitor","Sulfonylurea"], a:1,
+     e:"เมื่อมี ketosis/acidosis หรือ A1C ≥8.5% ต้องเริ่มอินซูลินก่อนเสมอในเด็ก T2DM"},
+    {q:"ยาลดน้ำตาลชนิดใดที่ยังไม่แนะนำให้ใช้ในเด็กเนื่องจากข้อมูลความปลอดภัยไม่เพียงพอ?",
+     c:["Metformin","อินซูลิน","SGLT2 inhibitor","GLP-1 receptor agonist"], a:2,
+     e:"ในเด็ก ยาที่ใช้ได้มีเพียง metformin, อินซูลิน และ GLP-1 RA เท่านั้น ยาอื่นยังไม่มีข้อมูลเพียงพอ"}
+  ]
+},
+{
+  id:"c18", n:"18", title:"เบาหวานในหญิงตั้งครรภ์", sub:"Pregestational & Gestational Diabetes Mellitus", nav:"18. หญิงตั้งครรภ์",
+  chips:[
+    {v:"60-95", l:"มก./ดล. เป้าหมายน้ำตาลก่อนอาหารขณะตั้งครรภ์"},
+    {v:"≤120", l:"มก./ดล. เป้าหมายน้ำตาลหลังอาหาร 2 ชม."},
+    {v:"92/180/153", l:"เกณฑ์ IADPSG วินิจฉัย GDM (มก./ดล.)"}
+  ],
+  bullets:[
+    "เบาหวานในหญิงตั้งครรภ์แบ่งเป็น 2 กลุ่ม: pregestational diabetes (เป็นเบาหวานอยู่ก่อนตั้งครรภ์) และ gestational diabetes mellitus, GDM (พบครั้งแรกขณะตั้งครรภ์)",
+    "เป้าหมายน้ำตาลขณะตั้งครรภ์เข้มงวดกว่าปกติมาก: ก่อนอาหาร 60-95 มก./ดล., หลังอาหาร 1 ชม. ≤140 มก./ดล., หลังอาหาร 2 ชม. ≤120 มก./ดล.",
+    "การคัดกรอง GDM มี 2 วิธีหลัก: วิธี Carpenter & Coustan (50 กรัม screening ตามด้วย 100 กรัม OGTT หากผิดปกติ) และวิธี IADPSG/WHO (75 กรัม OGTT ค่าเดียวผิดปกติก็วินิจฉัยได้ ที่ 92/180/153 มก./ดล. ก่อนดื่ม/1ชม./2ชม.)",
+    "ยาหลักที่ใช้คุมน้ำตาลในหญิงตั้งครรภ์คืออินซูลิน เนื่องจากไม่ผ่านรก — metformin อาจพิจารณาร่วมได้ในบางกรณีแต่ข้อมูลระยะยาวในทารกยังจำกัด ห้ามใช้ยาเม็ดกลุ่มอื่นและ statin",
+    "หญิงตั้งครรภ์ที่มี proliferative diabetic retinopathy ควรได้รับการรักษาก่อนตั้งครรภ์ เนื่องจากอาจลุกลามรุนแรงขึ้นระหว่างตั้งครรภ์",
+    "หลังคลอด หญิงที่เป็น GDM ทุกรายควรได้รับการตรวจคัดกรองเบาหวานซ้ำด้วย 75 กรัม OGTT ที่ 6 สัปดาห์หลังคลอด เนื่องจากมีความเสี่ยงเป็น T2DM ในอนาคตสูงกว่าคนทั่วไปถึง 7.4 เท่า"
+  ],
+  recs:[],
+  cards:[
+    {f:"เป้าหมายน้ำตาลหลังอาหาร 2 ชั่วโมงในหญิงตั้งครรภ์ที่เป็นเบาหวานคือเท่าใด?", b:"≤120 มก./ดล. (เข้มงวดกว่าเป้าหมายทั่วไปมาก)"},
+    {f:"ยาหลักที่ใช้ควบคุมน้ำตาลในหญิงตั้งครรภ์คืออะไร และเพราะเหตุใด?", b:"อินซูลิน เพราะไม่ผ่านรก จึงปลอดภัยต่อทารกในครรภ์มากที่สุด"},
+    {f:"เกณฑ์ IADPSG ในการวินิจฉัย GDM ด้วย 75 กรัม OGTT คือค่าใด?", b:"92 มก./ดล. (ก่อนดื่ม), 180 มก./ดล. (1 ชม.), 153 มก./ดล. (2 ชม.) — ผิดปกติเพียงค่าเดียวก็วินิจฉัยได้"},
+    {f:"หญิงที่เป็น GDM ควรได้รับการตรวจอะไรหลังคลอด และเมื่อใด?", b:"75 กรัม OGTT ที่ 6 สัปดาห์หลังคลอด เนื่องจากเสี่ยงเป็น T2DM ในอนาคตสูงกว่าคนทั่วไปถึง 7.4 เท่า"}
+  ],
+  quiz:[
+    {q:"เป้าหมายน้ำตาลก่อนอาหารในหญิงตั้งครรภ์ที่เป็นเบาหวานคือช่วงใด?",
+     c:["60-95 มก./ดล.","100-125 มก./ดล.","126-140 มก./ดล.","ไม่ต่างจากคนทั่วไป"], a:0,
+     e:"เป้าหมายก่อนอาหารในหญิงตั้งครรภ์คือ 60-95 มก./ดล. เข้มงวดกว่าคนทั่วไปมาก"},
+    {q:"เพราะเหตุใดอินซูลินจึงเป็นยาหลักในการควบคุมน้ำตาลขณะตั้งครรภ์?",
+     c:["ราคาถูกที่สุด","ไม่ผ่านรก จึงปลอดภัยต่อทารก","ออกฤทธิ์นานที่สุด","ไม่ต้องฉีดบ่อย"], a:1,
+     e:"อินซูลินเป็นโมเลกุลใหญ่ไม่ผ่านรก จึงเป็นยาหลักที่ปลอดภัยที่สุดสำหรับควบคุมน้ำตาลขณะตั้งครรภ์"},
+    {q:"หญิงที่เป็น GDM ควรได้รับการตรวจคัดกรองเบาหวานซ้ำเมื่อใดหลังคลอด?",
+     c:["ไม่ต้องตรวจซ้ำอีก","6 สัปดาห์หลังคลอด ด้วย 75 กรัม OGTT","1 วันหลังคลอด","5 ปีหลังคลอด"], a:1,
+     e:"ควรตรวจ 75 กรัม OGTT ที่ 6 สัปดาห์หลังคลอด เนื่องจากเสี่ยงเป็น T2DM สูงกว่าคนทั่วไปมาก"}
+  ]
+},
+{
+  id:"c19", n:"19-21", title:"บทบาทสถานบริการและการบริหารจัดการ", sub:"Service-Level Roles, Health Centers & Pharmacy Care", nav:"19-21. ระบบบริการ",
+  chips:[
+    {v:"6", l:"หลักการของ Chronic Care Model (CCM)"},
+    {v:"1", l:"ครั้ง/ปี คัดกรองภาวะแทรกซ้อนใน รพ.สต."},
+    {v:"3", l:"บทบาทหลักของเภสัชกรร้านยาคุณภาพ"}
+  ],
+  bullets:[
+    "ระบบดูแลเบาหวานใช้แนวคิด Chronic Care Model (CCM) ของ Wagner เน้นทีมสหสาขาวิชาชีพ ระบบข้อมูลเชิงประจักษ์ และการให้ผู้ป่วยดูแลตนเองได้ (self-management support)",
+    "หน่วยบริการแบ่งระดับตามศักยภาพ: หน่วยปฐมภูมิ/รพ.สต. (คัดกรอง ดูแลเบื้องต้น), หน่วยบริการทุติยภูมิ (วินิจฉัย รักษา ส่งต่อ), หน่วยบริการตติยภูมิ/ตติยภูมิระดับสูง (ดูแลภาวะแทรกซ้อนซับซ้อน)",
+    "รพ.สต. มีบทบาทสำคัญในการคัดกรองกลุ่มเสี่ยงในชุมชน ค้นหาผู้ป่วยรายใหม่ ดูแลผู้ป่วยที่ควบคุมได้ดีและไม่มีภาวะแทรกซ้อน และส่งต่อผู้ที่มีภาวะแทรกซ้อนหรือควบคุมไม่ได้ไปยังโรงพยาบาล",
+    "เภสัชกรในร้านยาคุณภาพมีบทบาท 3 ด้าน: (1) คัดกรองผู้ป่วยใหม่และป้องกัน/เฝ้าระวังโรค (2) ส่งเสริมการรักษาร่วมกับทีมและแก้ปัญหาจากการใช้ยา (3) ส่งกลับหรือส่งต่อผู้ป่วยไปพบแพทย์เมื่อพบสัญญาณอันตราย เช่น CBG ≤70 หรือ ≥300 มก./ดล. ซ้ำๆ",
+    "ตัวชี้วัดคุณภาพการดูแลแบ่งเป็นตัวชี้วัดกระบวนการ (เช่น อัตราการคัดกรอง อัตราตรวจ A1C/lipid/ตา/ไต/เท้าประจำปี) และตัวชี้วัดผลลัพธ์ (เช่น อัตราผู้ป่วยที่ควบคุม A1C/ความดัน/LDL ได้ตามเป้าหมาย อัตราภาวะแทรกซ้อน)"
+  ],
+  recs:[],
+  cards:[
+    {f:"แนวคิดหลักที่ใช้ในการออกแบบระบบดูแลผู้ป่วยเบาหวานเรื้อรังคืออะไร?", b:"Chronic Care Model (CCM) ของ Wagner เน้นทีมสหสาขาวิชาชีพและการสนับสนุนให้ผู้ป่วยดูแลตนเองได้"},
+    {f:"เภสัชกรร้านยาคุณภาพมีบทบาทหลักกี่ด้าน อะไรบ้าง?", b:"3 ด้าน: คัดกรอง/ป้องกัน, ส่งเสริมการรักษา/แก้ปัญหาการใช้ยา, และส่งกลับ/ส่งต่อผู้ป่วยเมื่อพบสัญญาณอันตราย"},
+    {f:"เกณฑ์ใดที่เภสัชกรร้านยาควรส่งผู้ป่วยกลับไปพบแพทย์ทันที?", b:"CBG ≤70 มก./ดล. หรือ ≥300 มก./ดล. ซ้ำๆ, มีอาการเจ็บแน่นหน้าอก, ชีพจรเต้นเร็วผิดปกติ หรือความดันโลหิตสูงมาก"}
+  ],
+  quiz:[
+    {q:"แนวคิดหลักที่ใช้ออกแบบระบบดูแลเบาหวานเป็นโรคเรื้อรังในเครือข่ายบริการคือข้อใด?",
+     c:["Fee-for-service model","Chronic Care Model (CCM)","Emergency response model","Insurance-based model"], a:1,
+     e:"CCM ของ Wagner เป็นกรอบแนวคิดหลักที่ CPG นำมาใช้ออกแบบระบบดูแลเบาหวานต่อเนื่อง"},
+    {q:"ผู้ป่วยเบาหวานที่ซื้อยาที่ร้านยาคุณภาพ ตรวจ CBG ได้ 310 มก./ดล. ซ้ำหลายครั้ง เภสัชกรควรทำอย่างไร?",
+     c:["จ่ายยาเพิ่มขนาดเองโดยไม่ปรึกษาแพทย์","ส่งกลับ/ส่งต่อผู้ป่วยไปพบแพทย์","ไม่ต้องทำอะไรเพราะไม่ใช่หน้าที่เภสัชกร","แนะนำให้หยุดยาทั้งหมด"], a:1,
+     e:"CBG ≥300 มก./ดล. ซ้ำๆ เป็นเกณฑ์ที่เภสัชกรร้านยาต้องส่งผู้ป่วยกลับไปพบแพทย์ทันที"}
+  ]
+},
+{
+  id:"app", n:"ผนวก", title:"ภาคผนวก: OGTT, การปรับพฤติกรรม และภาวะก่อนเบาหวาน", sub:"Appendices: OGTT Method, Behavior Change Counseling & Prediabetes", nav:"ภาคผนวก",
+  chips:[
+    {v:"75g", l:"กลูโคสที่ใช้ใน standard OGTT ผู้ใหญ่"},
+    {v:"3-Self", l:"หลักการปรับพฤติกรรม: Efficacy/Regulation/Care"},
+    {v:"10.7%", l:"ความชุกภาวะก่อนเบาหวานในคนไทย"}
+  ],
+  bullets:[
+    "วิธีทดสอบความทนต่อกลูโคส (OGTT): งดอาหาร 8-16 ชั่วโมง เจาะเลือดวัด FPG ก่อน ดื่มสารละลายกลูโคส 75 กรัมในน้ำ 250-300 มล. ภายใน 5 นาที แล้วเจาะเลือดซ้ำที่ 2 ชั่วโมง — ในเด็กใช้ 1.75 กรัม/กก. สูงสุดไม่เกิน 75 กรัม",
+    "การปรับเปลี่ยนพฤติกรรมสุขภาพใช้ทฤษฎี Stages of Change (Prochaska & DiClemente) 6 ขั้น: Pre-contemplation, Contemplation, Preparation, Action, Maintenance, Relapse — แต่ละขั้นต้องใช้เทคนิคกระตุ้นต่างกัน",
+    "แนวคิด 3-Self เพื่อป้องกันเบาหวานประกอบด้วย Self-efficacy (ความเชื่อมั่นในความสามารถตนเอง), Self-regulation (การกำกับตนเอง) และ Self-care (การดูแลสุขภาพตนเอง) ภายใต้กรอบ PROMISE Model",
+    "ภาวะก่อนเบาหวาน (prediabetes) พบความชุกในคนไทยร้อยละ 10.7 วินิจฉัยจาก IFG, IGT หรือ A1C 5.7-6.4% — การรักษาหลักคือปรับพฤติกรรมดำเนินชีวิต ลดน้ำหนัก 5-7% และออกกำลังกายอย่างน้อย 150 นาที/สัปดาห์",
+    "หากปรับพฤติกรรมแล้วยังคุมน้ำตาลไม่ได้ตามเป้าในภาวะก่อนเบาหวาน อาจพิจารณาให้ metformin เป็นยาป้องกันรอง โดยเฉพาะในผู้ที่มีปัจจัยเสี่ยงสูง เช่น BMI ≥27, ประวัติ GDM หรืออายุน้อยกว่า 60 ปี"
+  ],
+  recs:[],
+  cards:[
+    {f:"วิธีทำ standard 75-gram OGTT ในผู้ใหญ่มีขั้นตอนอย่างไร?", b:"งดอาหาร 8-16 ชม. เจาะ FPG ก่อน ดื่มกลูโคส 75 กรัมในน้ำ 250-300 มล. ภายใน 5 นาที เจาะเลือดซ้ำที่ 2 ชั่วโมง"},
+    {f:"แนวคิด 3-Self ในการปรับพฤติกรรมป้องกันเบาหวานประกอบด้วยอะไรบ้าง?", b:"Self-efficacy (ความเชื่อมั่นในตนเอง), Self-regulation (การกำกับตนเอง), Self-care (การดูแลสุขภาพตนเอง)"},
+    {f:"ภาวะก่อนเบาหวานที่ปรับพฤติกรรมไม่ได้ผล อาจพิจารณาให้ยาใดเป็นการป้องกันรอง?", b:"Metformin โดยเฉพาะในผู้ที่มี BMI ≥27, ประวัติ GDM หรืออายุน้อยกว่า 60 ปี"}
+  ],
+  quiz:[
+    {q:"ในการทำ standard OGTT ผู้ใหญ่ ควรงดอาหารก่อนตรวจนานเท่าใด?",
+     c:["2-4 ชั่วโมง","8-16 ชั่วโมง","24-48 ชั่วโมง","ไม่ต้องงดอาหาร"], a:1,
+     e:"ควรงดอาหาร 8-16 ชั่วโมงก่อนตรวจ OGTT เพื่อความแม่นยำของผล FPG เริ่มต้น"},
+    {q:"ผู้ป่วยอยู่ในขั้น Pre-contemplation ของ Stages of Change หมายความว่าอย่างไร?",
+     c:["พร้อมเปลี่ยนพฤติกรรมทันที","ยังไม่คิดจะเปลี่ยนพฤติกรรมในอนาคตอันใกล้","กำลังลงมือปฏิบัติอยู่","เปลี่ยนพฤติกรรมสำเร็จแล้วอย่างต่อเนื่อง"], a:1,
+     e:"Pre-contemplation คือขั้นที่บุคคลยังไม่ตระหนักหรือยังไม่คิดจะเปลี่ยนพฤติกรรมในอนาคตอันใกล้ (ภายใน 6 เดือน)"}
+  ]
+},
+{ id:"final", nav:"แบบทดสอบรวม", isFinal:true }
+];
+
+const WEIGHT_LABEL = {
+  "++":"ควรทำอย่างยิ่ง", "+":"น่าทำ", "+/-":"อาจทำหรือไม่ทำ", "-":"ไม่น่าทำ", "--":"ไม่ควรทำอย่างยิ่ง"
+};
+const WEIGHT_CLASS = { "++":"pp", "+":"p", "+/-":"pm", "-":"m", "--":"mm" };
+
+const MUST_KNOW = [
+  {v:"≥126", l:"FPG (มก./ดล.) วินิจฉัยเบาหวาน"},
+  {v:"≥6.5%", l:"A1C วินิจฉัยเบาหวาน"},
+  {v:"92/180/153", l:"เกณฑ์ IADPSG วินิจฉัย GDM (มก./ดล.)"},
+  {v:"<7%", l:"เป้าหมาย A1C ทั่วไปในผู้ใหญ่"},
+  {v:"<130/80", l:"เป้าหมายความดันโลหิต (มม.ปรอท)"},
+  {v:"<100/<70", l:"LDL เป้าหมาย (มก./ดล.) ทั่วไป/มี ASCVD"},
+  {v:"<30", l:"eGFR ที่ห้ามใช้ metformin"},
+  {v:"≤70/≤54", l:"มก./ดล. เกณฑ์น้ำตาลต่ำไม่รุนแรง/รุนแรงปานกลาง"},
+  {v:"15/15", l:"กฎแก้ไขน้ำตาลต่ำ: คาร์บ 15 ก. แล้วตรวจซ้ำ 15 นาที"},
+  {v:">250", l:"มก./ดล. + คีโตน = สงสัย DKA"},
+  {v:">600", l:"มก./ดล. ให้คิดถึงภาวะ HHS"},
+  {v:"<6.5%", l:"GMI/eA1C เป้าหมายจาก CGM"},
+  {v:"≥70%", l:"Time in Range (70-180) เป้าหมายขั้นต่ำ"},
+  {v:"0.4-0.6", l:"ยูนิต/กก./วัน อินซูลินเริ่มต้นเด็กเล็ก T1DM"},
+  {v:"10g", l:"Monofilament คัดกรอง sensation ที่เท้า"},
+  {v:"6 สัปดาห์", l:"หลังคลอด ตรวจ OGTT ซ้ำในหญิงที่เป็น GDM"}
+];
+
+/* ============================= STATE ============================= */
+const PROGRESS_KEY = "dm2566_progress_v1";
+function loadProgress(){
+  try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }catch(e){ return {}; }
+}
+function saveProgress(p){
+  try{ localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }catch(e){}
+}
+let PROGRESS = loadProgress();
+const chapterList = SECTIONS.filter(s=>!s.isHome && !s.isFinal);
+
+function chapterDone(id){
+  const p = PROGRESS[id];
+  return !!(p && p.quizDone);
+}
+function overallPercent(){
+  const total = chapterList.length;
+  const done = chapterList.filter(s=>chapterDone(s.id)).length;
+  return Math.round(done/total*100);
+}
+function updateTopProgress(){
+  const pct = overallPercent();
+  document.getElementById("topProgressBar").style.width = pct+"%";
+  document.getElementById("topProgressText").textContent = pct+"%";
+}
+
+/* ============================= NAV ============================= */
+let currentId = "home";
+
+function renderNav(){
+  const nav = document.getElementById("sidenav");
+  nav.innerHTML = "";
+  const label = document.createElement("div");
+  label.className = "grp-label"; label.textContent = "DM 2566";
+  nav.appendChild(label);
+  SECTIONS.forEach(s=>{
+    const btn = document.createElement("button");
+    btn.className = "navitem" + (s.id===currentId ? " active":"");
+    const n = document.createElement("span"); n.className="n"; n.textContent = s.isHome ? "•" : (s.isFinal ? "★" : s.n);
+    btn.appendChild(n);
+    const t = document.createElement("span"); t.textContent = s.nav; btn.appendChild(t);
+    if(!s.isHome && !s.isFinal){
+      const chk = document.createElement("span");
+      chk.className = "check" + (chapterDone(s.id) ? " done":"");
+      btn.appendChild(chk);
+    }
+    btn.onclick = ()=>{ currentId = s.id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    nav.appendChild(btn);
+  });
+}
+
+/* ============================= RENDER: HOME ============================= */
+function renderHome(){
+  const main = document.getElementById("main");
+  const pct = overallPercent();
+  let statTiles = MUST_KNOW.map(m=>`<div class="stat-tile"><div class="v">${m.v}</div><div class="l">${m.l}</div></div>`).join("");
+  let progRows = chapterList.map(s=>{
+    const p = PROGRESS[s.id];
+    const score = p && p.quizBest ? p.quizBest.correct+"/"+p.quizBest.total : "—";
+    const barPct = p && p.quizBest ? Math.round(p.quizBest.correct/p.quizBest.total*100) : 0;
+    return `<div class="ch-progress-row">
+      <div class="t">${s.n}. ${s.title}</div>
+      <div class="bar"><i style="width:${barPct}%"></i></div>
+      <div class="score">${score}</div>
+    </div>`;
+  }).join("");
+  main.innerHTML = `
+    <div class="panel hero">
+      <span class="hero-tag">แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน พ.ศ. 2566 · สมาคมโรคเบาหวานแห่งประเทศไทย</span>
+      <h1>ห้องเรียนเบาหวาน DM CPG 2566</h1>
+      <p class="lead">สรุปสาระสำคัญและแบบฝึกจดจำแนวทางเวชปฏิบัติโรคเบาหวาน 2566 ครบทุกบท ตั้งแต่การวินิจฉัยไปจนถึงภาวะแทรกซ้อนเฉพาะทาง พร้อมแฟลชการ์ดและแบบทดสอบท้ายบท ออกแบบมาให้คุณหมอทบทวนได้รวดเร็วก่อนขึ้นเวรหรือก่อนสอบ</p>
+      <div class="cta-row">
+        <button class="btn primary" onclick="goTo('def')">เริ่มเรียนจากการวินิจฉัย →</button>
+        <button class="btn" onclick="goTo('final')">ทำแบบทดสอบรวมทุกบท</button>
+      </div>
+    </div>
+
+    <div class="section-h"><h2>ตัวเลขที่ต้องจำขึ้นใจ</h2><div class="line"></div></div>
+    <div class="stat-grid">${statTiles}</div>
+
+    <div class="section-h"><h2>ความคืบหน้ารายบท</h2><div class="line"></div></div>
+    <div class="ch-progress-list">${progRows}</div>
+
+    <div class="footnote">อ้างอิง: แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 (Clinical Practice Guideline for Diabetes Mellitus 2023), ราชวิทยาลัยอายุรแพทย์แห่งประเทศไทย, สมาคมโรคเบาหวานแห่งประเทศไทย, สมาคมต่อมไร้ท่อแห่งประเทศไทย, กรมการแพทย์ กระทรวงสาธารณสุข และสำนักงานหลักประกันสุขภาพแห่งชาติ · เอกสารนี้จัดทำเพื่อการทบทวนความรู้ส่วนบุคคลเท่านั้น ไม่ทดแทนวิจารณญาณทางคลินิกหรือฉบับเต็มของแนวทางเวชปฏิบัติ</div>
+  `;
+}
+window.goTo = (id)=>{ currentId = id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+
+/* ============================= RENDER: CHAPTER ============================= */
+function renderChapter(sec){
+  const main = document.getElementById("main");
+  let chips = sec.chips.map(c=>`<div class="chip"><b>${c.v}</b>${c.l}</div>`).join("");
+  let bullets = sec.bullets.map(b=>`<li>${b}</li>`).join("");
+  let recs = sec.recs.map(r=>{
+    const cls = WEIGHT_CLASS[r.w] || "pm";
+    const label = WEIGHT_LABEL[r.w] || r.w;
+    return `<div class="rec-row">
+      <div class="badges"><span class="badge ${cls}">${r.w} ${label}</span><span class="evid">คุณภาพหลักฐานระดับ ${r.lvl}</span></div>
+      <div class="txt">${r.t}</div>
+    </div>`;
+  }).join("");
+
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">${sec.n}</div>
+        <div>
+          <h1>${sec.title}</h1>
+          <div class="sub">${sec.sub}</div>
+        </div>
+      </div>
+      <div class="chip-row">${chips}</div>
+
+      <div class="section-h"><h2>สรุปสาระสำคัญ</h2><div class="line"></div></div>
+      <ul class="bullets">${bullets}</ul>
+
+      ${sec.recs.length ? `
+      <div class="section-h"><h2>คำแนะนำหลัก (น้ำหนักคำแนะนำ + คุณภาพหลักฐาน)</h2><div class="line"></div></div>
+      <div class="legend">
+        <span><i class="pp"></i> ++ ควรทำอย่างยิ่ง</span>
+        <span><i class="p"></i> + น่าทำ</span>
+        <span><i class="pm"></i> +/- อาจทำหรือไม่ทำ</span>
+        <span><i class="m"></i> - ไม่น่าทำ</span>
+        <span><i class="mm"></i> -- ไม่ควรทำอย่างยิ่ง</span>
+      </div>
+      ${recs}` : ""}
+
+      <div class="section-h"><h2>แฟลชการ์ดจำขึ้นใจ</h2><div class="line"></div></div>
+      <div id="fcArea"></div>
+
+      <div class="section-h"><h2>แบบทดสอบท้ายบท</h2><div class="line"></div></div>
+      <div id="quizArea"></div>
+
+    </div>
+  `;
+  mountFlashcards(sec);
+  mountQuiz(sec.id, sec.quiz);
+}
+
+/* ============================= FLASHCARDS ============================= */
+function mountFlashcards(sec){
+  const area = document.getElementById("fcArea");
+  let idx = 0;
+  const cards = sec.cards;
+  function draw(){
+    area.innerHTML = `
+      <div class="fc-counter">การ์ด ${idx+1} / ${cards.length} — คลิกที่การ์ดเพื่อดูคำตอบ</div>
+      <div class="flashcard" id="fcCard">
+        <div class="inner">
+          <div class="face front">${cards[idx].f}<span class="hint">คลิกเพื่อดูคำตอบ</span></div>
+          <div class="face back">${cards[idx].b}<span class="hint">คลิกเพื่อกลับ</span></div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="icon-btn" id="fcPrev">← ก่อนหน้า</button>
+        <button class="icon-btn" id="fcShuf">สุ่มการ์ด</button>
+        <button class="icon-btn" id="fcNext">ถัดไป →</button>
+      </div>
+    `;
+    const card = document.getElementById("fcCard");
+    card.onclick = ()=> card.classList.toggle("flip");
+    document.getElementById("fcPrev").onclick = ()=>{ idx = (idx-1+cards.length)%cards.length; draw(); };
+    document.getElementById("fcNext").onclick = ()=>{ idx = (idx+1)%cards.length; draw(); markCardsSeen(sec.id); };
+    document.getElementById("fcShuf").onclick = ()=>{ idx = Math.floor(Math.random()*cards.length); draw(); };
+  }
+  draw();
+}
+function markCardsSeen(id){
+  PROGRESS[id] = PROGRESS[id] || {};
+  PROGRESS[id].cardsSeen = true;
+  saveProgress(PROGRESS);
+}
+
+/* ============================= QUIZ ============================= */
+function mountQuiz(id, questions, isFinal){
+  const area = document.getElementById("quizArea");
+  let qi = 0, correct = 0, answered = false;
+  const order = questions.map((_,i)=>i);
+
+  function progressDots(){
+    return `<div class="quiz-progress">${order.map((_,i)=>`<i class="${i<qi?'done':''}"></i>`).join("")}</div>`;
+  }
+
+  function drawQuestion(){
+    answered = false;
+    const q = questions[order[qi]];
+    area.innerHTML = `
+      <div class="quiz-box">
+        ${progressDots()}
+        <div class="quiz-q">${qi+1}. ${q.q}</div>
+        <div id="choices">${q.c.map((c,i)=>`<button class="choice" data-i="${i}"><span class="k">${String.fromCharCode(65+i)}</span><span>${c}</span></button>`).join("")}</div>
+        <div class="explain" id="explainBox">${q.e}</div>
+        <div class="quiz-foot">
+          <span class="quiz-score">คะแนน: ${correct}/${qi}</span>
+          <button class="btn primary" id="nextBtn" style="display:none;">${qi===order.length-1 ? "ดูผลลัพธ์" : "ข้อถัดไป →"}</button>
+        </div>
+      </div>
+    `;
+    document.querySelectorAll("#choices .choice").forEach(btn=>{
+      btn.onclick = ()=>{
+        if(answered) return;
+        answered = true;
+        const i = parseInt(btn.dataset.i);
+        document.querySelectorAll("#choices .choice").forEach(b=>b.setAttribute("disabled","true"));
+        if(i===q.a){ btn.classList.add("correct"); correct++; }
+        else{
+          btn.classList.add("wrong");
+          document.querySelectorAll("#choices .choice")[q.a].classList.add("correct");
+        }
+        document.getElementById("explainBox").classList.add("show");
+        document.querySelector(".quiz-score").textContent = "คะแนน: "+correct+"/"+(qi+1);
+        document.getElementById("nextBtn").style.display = "inline-flex";
+      };
+    });
+    document.getElementById("nextBtn").onclick = ()=>{
+      qi++;
+      if(qi>=order.length){ finish(); } else { drawQuestion(); }
+    };
+  }
+
+  function finish(){
+    const pct = Math.round(correct/order.length*100);
+    area.innerHTML = `
+      <div class="quiz-box quiz-done">
+        <div style="font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">ผลการทดสอบ</div>
+        <div class="v">${correct}/${order.length}</div>
+        <p style="color:var(--muted);margin-top:6px;">คิดเป็น ${pct}% — ${pct>=80?"ยอดเยี่ยม จำแม่นมาก!":pct>=50?"ดี ลองทบทวนข้อที่พลาดอีกครั้ง":"ควรทบทวนสรุปสาระสำคัญและคำแนะนำหลักอีกรอบ"}</p>
+        <div class="cta-row" style="justify-content:center;">
+          <button class="btn" id="retryBtn">ทำแบบทดสอบอีกครั้ง</button>
+          ${!isFinal ? `<button class="btn primary" id="nextChBtn">ไปบทถัดไป →</button>` : ""}
+        </div>
+      </div>
+    `;
+    if(!isFinal){
+      PROGRESS[id] = PROGRESS[id] || {};
+      PROGRESS[id].quizDone = true;
+      const prevBest = PROGRESS[id].quizBest;
+      if(!prevBest || correct > prevBest.correct){ PROGRESS[id].quizBest = {correct, total: order.length}; }
+      saveProgress(PROGRESS);
+      renderNav();
+      updateTopProgress();
+    }
+    document.getElementById("retryBtn").onclick = ()=>{ qi=0; correct=0; drawQuestion(); };
+    const nb = document.getElementById("nextChBtn");
+    if(nb){
+      nb.onclick = ()=>{
+        const idx = chapterList.findIndex(s=>s.id===id);
+        const next = chapterList[idx+1];
+        currentId = next ? next.id : "final";
+        render();
+        window.scrollTo({top:0,behavior:"smooth"});
+      };
+    }
+  }
+
+  drawQuestion();
+}
+
+/* ============================= RENDER: FINAL QUIZ ============================= */
+function renderFinal(){
+  const main = document.getElementById("main");
+  const pool = [];
+  chapterList.forEach(s=> s.quiz.forEach(q=> pool.push(q)) );
+  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  const picked = pool.slice(0, 20);
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">★</div>
+        <div><h1>แบบทดสอบรวมทุกบท</h1><div class="sub">สุ่ม 20 ข้อจากทุกบทของ DM CPG 2566 เพื่อทบทวนก่อนขึ้นเวร/ก่อนสอบ</div></div>
+      </div>
+      <div id="quizArea" style="margin-top:20px;"></div>
+    </div>
+  `;
+  mountQuiz("final", picked, true);
+}
+
+/* ============================= MAIN RENDER ============================= */
+function render(){
+  renderNav();
+  updateTopProgress();
+  const sec = SECTIONS.find(s=>s.id===currentId);
+  if(sec.isHome) renderHome();
+  else if(sec.isFinal) renderFinal();
+  else renderChapter(sec);
+}
+render();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
