@@ -1,0 +1,886 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hyponatremia Practical Approach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">สรุปบทความ · Indian J Endocrinol Metab 2014</div>
+  <h1>Hyponatremia:<br>A practical approach</h1>
+  <p class="sub">สรุปภาษาไทยครบทุกหัวข้อ ตั้งแต่ pathophysiology การแยกชนิด การส่งตรวจทีละขั้น ไปจนถึงการรักษาและการใช้ vaptans พร้อมแผนผังที่คลิกเดินตามได้ และเครื่องคำนวณข้างเตียง</p>
+  <p class="cite">ต้นฉบับ: <i>Hyponatremia: A practical approach</i>. Indian J Endocrinol Metab. 2014 · ค้นผ่าน PubMed (PMID 25364669) · <a href="https://doi.org/10.4103/2230-8210.141320" target="_blank" rel="noopener">DOI 10.4103/2230-8210.141320</a></p>
+  <div class="scale" aria-label="ระดับ serum sodium ที่ใช้ตัดสินใจ">
+    <div class="scale-bar"></div>
+    <div class="scale-ticks">
+      <div class="tick l" style="left:0"><b>110</b>&nbsp;</div>
+      <div class="tick" style="left:20%"><b>≤120</b>ODS เสี่ยงสูง</div>
+      <div class="tick" style="left:50%"><b>125</b>รุนแรง</div>
+      <div class="tick" style="left:83%"><b>135</b>นิยาม</div>
+      <div class="tick r" style="left:100%"><b>145</b>mmol/L</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#overview">ภาพรวม</a><a href="#symptoms">อาการ</a><a href="#classify">ชนิด</a><a href="#causes">สาเหตุ</a><a href="#siadh">SIADH</a><a href="#workup">ส่งตรวจ 9 ขั้น</a><a href="#approach">แผนผัง Approach</a><a href="#manage">แผนผัง Management</a><a href="#specific">รักษาตามสาเหตุ</a><a href="#vaptans">Vaptans</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 overview -->
+<section id="overview" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยาม ระบาดวิทยา และกลไก</h2>
+  <div class="box key"><b>นิยาม</b>Serum Na <span class="mono">&lt;135 mEq/L</span> · พบ 15–30% ของผู้ป่วยในโรงพยาบาล โดยเฉพาะใน ICU</div>
+  <p>Hyponatremia เกิดจาก <b>ไตขับน้ำออกไม่ได้</b> หรือ <b>ได้รับน้ำมากเกิน</b> ในภาวะปกติ osmolality ที่สูงขึ้นจะกระตุ้น osmoreceptor ใน hypothalamus ให้กระหายน้ำและหลั่ง ADH (vasopressin) จาก posterior pituitary ADH จับ <b>V2 receptor</b> ที่ basolateral ของ collecting duct ทำให้มี aquaporin-2 ที่ luminal side มากขึ้น ดูดน้ำกลับมากขึ้น</p>
+  <p>Hyponatremia จึงเกิดเมื่อ <b>ADH ถูกกระตุ้นต่อเนื่อง</b> แม้ plasma จะ hypotonic แล้ว ซึ่งมี 2 แบบ</p>
+  <div class="grid2">
+    <div class="card"><h4>ADH หลั่ง "เหมาะสม" แต่ต่อเนื่อง</h4>Effective arterial blood volume ลดลง สิ่งกระตุ้นจาก volume ชนะสัญญาณ hypo-osmolality
+      <ul><li>True volume depletion</li><li>Edematous states: heart failure (CO ต่ำ), cirrhosis (arterial vasodilation)</li></ul>
+      <span class="muted" style="font-size:.88rem">Baroreceptor 3 จุด: carotid sinus/aortic arch (sympathetic + ADH), afferent arteriole (RAS), atria/ventricles (natriuretic peptide)</span></div>
+    <div class="card"><h4>ADH หลั่ง "ผิดปกติ"</h4>Syndrome of inappropriate ADH (SIADH) ADH หลั่งโดยไม่ขึ้นกับ osmolality หรือ volume</div>
+  </div>
+</section>
+
+<!-- 2 symptoms -->
+<section id="symptoms" class="col">
+  <div class="sec-num">02</div>
+  <h2>อาการ: acute กับ chronic</h2>
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid var(--danger)"><h4>Acute (&lt;48 ชม.)</h4>สมองยังปรับตัวไม่ทัน น้ำเข้าเซลล์สมองเกิด <b>cerebral edema</b> อาการทางระบบประสาท: ชัก ซึมสับสน coma จนถึงเสียชีวิต (brain herniation)<br><span class="muted" style="font-size:.88rem">พบบ่อย: นักวิ่งมาราธอน, primary polydipsia, ผู้ใช้ ecstasy</span></div>
+    <div class="card" style="border-top:4px solid var(--accent)"><h4>Chronic (&gt;48 ชม.)</h4>พบบ่อยที่สุด มัก Na &gt;120 สมองสร้าง/ขับ <b>idiogenic osmoles</b> (เริ่มวันแรก สมบูรณ์ในไม่กี่วัน) จึงอาจไม่มีอาการ
+      <ul><li>Mild: คลื่นไส้ อาเจียน เบื่ออาหาร</li><li>Na 120–130: neurologic ผิดปกติเล็กน้อย</li><li>ผู้สูงอายุ: <b>หกล้มบ่อย เดินเซ</b></li></ul></div>
+  </div>
+  <div class="box warn"><b>หัวใจสำคัญ</b>Acute เสี่ยง herniation จึงต้องแก้เร็ว · Chronic สมองปรับตัวแล้ว เสี่ยง herniation ต่ำ แต่ถ้าแก้เร็วเกินจะเกิด <b>osmotic demyelination syndrome (ODS)</b></div>
+</section>
+
+<!-- 3 classify -->
+<section id="classify" class="col">
+  <div class="sec-num">03</div>
+  <h2>การแบ่งชนิดตาม serum osmolality</h2>
+  <p>Serum osmolality ปกติ <span class="mono">280–295 mOsm/kg</span></p>
+  <div class="formula">Sosm = 2×Na + Glucose/18 + BUN/2.8</div>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th class="mono">Sosm</th><th>กลไก / สาเหตุ</th></tr>
+    <tr><td><b>Pseudo</b> (isotonic)</td><td class="mono">280–295</td><td>Plasma water ปกติ 93% ถ้า TG <span class="mono">&gt;1500 mg/dL</span> หรือ protein <span class="mono">&gt;10 g/dL</span> (multiple myeloma) plasma water ลด &lt;80% ทำให้วัด Na ใน plasma ทั้งหมดได้ต่ำ แต่ Na ใน plasma water ปกติ</td></tr>
+    <tr><td><b>Translocational</b> (hypertonic)</td><td class="mono">&gt;295</td><td>Osmole ที่ active ดึงน้ำออกจากเซลล์: glucose, mannitol, contrast · ถ้ามี unmeasured solute ต้อง <b>วัด</b> Sosm ด้วย osmometer เท่านั้น</td></tr>
+    <tr><td><b>True</b> (hypotonic)</td><td class="mono">&lt;280</td><td>แบ่งต่อตาม volume: hypovolemic, euvolemic, hypervolemic</td></tr>
+  </table></div>
+  <div class="box note"><b>ไตวาย</b>BUN สูงทำให้ Sosm ที่วัดได้ไม่ต่ำ แต่ urea เป็น ineffective osmole ดังนั้น <b>effective osmolality</b> ยังต่ำจริง</div>
+</section>
+
+<!-- 4 causes -->
+<section id="causes">
+  <div class="col">
+    <div class="sec-num">04</div>
+    <h2>สาเหตุของ true hyponatremia</h2>
+  </div>
+  <div class="grid3">
+    <div class="card hypo"><h4>Hypovolemic</h4>
+      <b style="font-size:.85rem">Renal loss (UNa &gt;20)</b>
+      <ul><li>Diuretics (thiazide ≫ loop)</li><li>Mineralocorticoid deficiency (มัก hyperK)</li><li>Cerebral salt wasting</li><li>Salt-losing nephropathy, osmotic diuresis <span class="tag add">เสริม</span></li></ul>
+      <b style="font-size:.85rem">Extrarenal (UNa &lt;20)</b>
+      <ul><li>อาเจียน ท้องเสีย</li><li>Third spacing, เหงื่อ <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card eu"><h4>Euvolemic · 60% ของทั้งหมด</h4>
+      <ul><li><b>SIADH</b> (บ่อยที่สุด)</li><li>Hypothyroidism (ต้องรุนแรง)</li><li>Glucocorticoid deficiency</li><li>Exercise-associated</li><li>Low solute intake (beer potomania)</li><li>Primary polydipsia</li><li>Thiazide <span class="muted">(อาจดู euvolemic)</span></li></ul></div>
+    <div class="card hyper"><h4>Hypervolemic</h4>
+      <ul><li>Congestive heart failure</li><li>Cirrhosis</li><li>Nephrotic syndrome (เมื่อ GFR ลดมาก หรือ albumin &lt;2 g/dL)</li><li>AKI / CKD</li></ul>
+      <span class="muted" style="font-size:.88rem">Hyponatremia ใน HF/cirrhosis เป็น <b>poor prognostic sign</b> · Fluid restriction เป็น cornerstone</span></div>
+  </div>
+  <div class="col">
+    <h3>รายละเอียดที่ควรรู้</h3>
+    <details class="step" open><summary><span class="n">Dx</span><span class="t">Thiazide vs loop diuretic</span></summary><div class="body">
+      <p><b>Thiazide</b> พบบ่อย เกิดเร็วหลังเริ่มยา อาจรุนแรง พบมากใน <b>หญิงสูงอายุ</b> กลไก: ดื่มน้ำมากขึ้น ลดความสามารถ dilute ที่ distal tubule และ UNa+UK สูงกว่า plasma Na ทำให้ Na ลดลงโดยตรง</p>
+      <p><b>Loop</b> ยับยั้ง NaCl transport ใน loop of Henle ทำให้ไม่เกิด countercurrent gradient ADH จึงดูดน้ำกลับได้จำกัด hyponatremia จึงไม่บ่อย (furosemide มักเกิดหลังใช้หลายเดือน ร่วมกับมี intercurrent illness)</p></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Low dietary solute intake (beer potomania, tea &amp; toast)</span></summary><div class="body">
+      <p>ปกติอาหารให้ solute ~<span class="mono">900 mOsm/วัน</span> ถ้า urine osm ต่ำสุด <span class="mono">60 mOsm/kg</span> ขับน้ำได้สูงสุด 900÷60 = <span class="mono">15 L/วัน</span></p>
+      <p>คนดื่มเบียร์/ขาดสารอาหาร ได้ Na, K, protein น้อย และ carbohydrate ในเบียร์กด protein breakdown ทำให้ solute &lt;<span class="mono">250 mOsm/วัน</span> → ขับน้ำได้ราว 4 L เท่านั้น หากดื่มน้ำ <span class="mono">&gt;4 L/วัน</span> จะเกิด hyponatremia แม้ ADH ถูกกด</p></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Primary polydipsia</span></summary><div class="body">
+      <p>มักพบในผู้ป่วยจิตเวช Thirst threshold ต่ำกว่า ADH threshold จึงดื่มต่อทั้งที่ ADH ถูกกดแล้ว ADH regulation ยังปกติ ขับปัสสาวะเจือจาง (Uosm ต่ำสุด ~<span class="mono">40</span>) ได้ <span class="mono">400–600 mL/ชม.</span> ปกติ Na จึงปกติหรือลดเล็กน้อย</p>
+      <p>แต่ถ้าดื่มเกินกว่านั้น หรือดื่มรวดเดียว 3–4 L อาจเกิด hyponatremia ถึงชีวิตได้ แม้ปัสสาวะเจือจางสูงสุด</p>
+      <p>สาเหตุอื่น: hypothalamic lesion, sarcoidosis → ควรทำ <b>CT/MRI brain</b> ก่อนสรุปว่าเป็นจากจิตเวช</p></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Exercise-associated hyponatremia</span></summary><div class="body"><p>นักวิ่งมาราธอนดื่มน้ำมากเกิน ร่วมกับมี ADH หลั่งต่อเนื่องในบางราย มักเป็น acute และมีอาการ</p></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Hypervolemic: nephrotic syndrome</span></summary><div class="body"><p>ไม่บ่อย ยกเว้น GFR ลดมาก แต่ถ้า albumin &lt;<span class="mono">2 g/dL</span> อาจเกิด intravascular hypovolemia และกระตุ้น ADH แบบ non-osmotic ได้</p></div></details>
+  </div>
+</section>
+
+<!-- 5 SIADH -->
+<section id="siadh" class="col">
+  <div class="sec-num">05</div>
+  <h2>SIADH</h2>
+  <p>เกณฑ์ของ Bartter &amp; Schwartz (1967) โดย SIADH เป็น <b>diagnosis of exclusion</b> เสมอ</p>
+  <div class="grid2">
+    <div class="card"><h4>Essential criteria</h4><ul>
+      <li>Effective Sosm <span class="mono">&lt;275</span></li><li>Uosm <span class="mono">&gt;100</span> ขณะ hypotonic</li><li>Clinical euvolemia</li><li>UNa <span class="mono">&gt;30–40</span> ขณะกินเกลือและน้ำปกติ</li><li>ไม่มี hypothyroidism, adrenal insufficiency, ไม่ได้ใช้ diuretic เร็ว ๆ นี้</li></ul></div>
+    <div class="card"><h4>Supplementary</h4><ul>
+      <li>Uric acid <span class="mono">&lt;4 mg/dL</span>, BUN <span class="mono">&lt;10</span></li><li>FENa <span class="mono">&gt;1%</span>, FEurea <span class="mono">&gt;55%</span></li><li>ไม่ดีขึ้นด้วย 0.9% NaCl</li><li>ดีขึ้นด้วย fluid restriction</li><li>AVP สูงผิดปกติเมื่อเทียบกับ Posm</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.85rem"><span class="tag add">เสริม</span> ตาราง 1–4 ในต้นฉบับเป็นภาพ เนื้อหาในตารางส่วนนี้สรุปจากเกณฑ์มาตรฐานที่บทความอ้างถึง</p>
+
+  <h3>รูปแบบการหลั่ง ADH ใน SIADH</h3>
+  <p>ปกติ ADH ถูกกดเมื่อ Posm &lt;<span class="mono">280</span> และเพิ่มขึ้นเมื่อ Posm &gt;280</p>
+  <div class="tbl"><table>
+    <tr><th>Type</th><th>ลักษณะ</th></tr>
+    <tr><td><b>A</b></td><td>หลั่ง ADH ไม่สัมพันธ์กับ Posm เลย ระดับสูงกว่าจุด maximal antidiuresis Uosm สูงมาก</td></tr>
+    <tr><td><b>B</b></td><td>ADH "รั่ว" ในระดับคงที่ปานกลาง</td></tr>
+    <tr><td><b>C</b></td><td><b>Reset osmostat</b> คุม Na ได้ปกติ แต่ที่ระดับต่ำลง (<span class="mono">125–135</span>) และคงที่</td></tr>
+    <tr><td><b>D</b></td><td>พบน้อยสุด ADH ปกติแต่ปัสสาวะยังเข้มข้น: V2 receptor activating mutation (nephrogenic SIAD), สาร antidiuretic อื่น, post-receptor defect ของ AQP2</td></tr>
+  </table></div>
+
+  <h3>สาเหตุของ SIADH</h3>
+  <div class="grid2">
+    <div class="card"><h4>โรค</h4><ul>
+      <li><b>CNS:</b> stroke, bleed, trauma, infection (meningitis), tumor</li>
+      <li><b>ปอด:</b> pneumonia, TB, asthma, positive-pressure ventilation</li>
+      <li><b>มะเร็ง:</b> small cell lung cancer, head &amp; neck, GI, GU</li>
+      <li><b>อื่น ๆ:</b> ปวด คลื่นไส้ หลังผ่าตัด HIV exercise</li></ul></div>
+    <div class="card"><h4>ยา</h4><ul>
+      <li>SSRIs, TCAs, antipsychotics</li><li>Carbamazepine, oxcarbazepine</li><li>Chlorpropamide</li><li>Cyclophosphamide, vincristine, cisplatin</li><li>Opioids, NSAIDs, MDMA (ecstasy)</li><li>Desmopressin, oxytocin</li></ul></div>
+  </div>
+
+  <h3>SIADH กับ cerebral salt wasting (CSW)</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>SIADH</th><th>CSW</th></tr>
+    <tr><td>ความผิดปกติหลัก</td><td>AVP สูงเป็นปฐมเหตุ</td><td>ไตเสียเกลือ ADH สูงตามมา</td></tr>
+    <tr><td>Volume</td><td>Euvolemic</td><td>Hypovolemic</td></tr>
+    <tr><td>UNa</td><td>สูง</td><td>สูง (มักสูงมาก)</td></tr>
+    <tr><td>Uric acid</td><td>ต่ำ กลับปกติเมื่อแก้ Na</td><td>ต่ำ ยังต่ำแม้แก้ Na <span class="tag add">เสริม</span></td></tr>
+    <tr><td>การรักษา</td><td>Fluid restriction</td><td>ให้เกลือและน้ำ (0.9% NaCl บางราย 3%)</td></tr>
+  </table></div>
+</section>
+
+<!-- 6 workup -->
+<section id="workup" class="col">
+  <div class="sec-num">06</div>
+  <h2>การวินิจฉัย: ประวัติ ตรวจร่างกาย และ 9 ขั้นของการส่งตรวจ</h2>
+  <div class="box"><b>ประวัติและตรวจร่างกาย</b>ประวัติยาและอาหาร การเสียน้ำ (ท้องเสีย อาเจียน) · ประเมิน volume: orthostatic BP/HR, mucosa แห้ง, skin turgor ลด = hypovolemic; edema/ascites = hypervolemic · หาอาการของ hypothyroidism, adrenal insufficiency และรอยโรคใน CNS หรือปอด</div>
+  <p class="muted" style="font-size:.9rem">คลิกแต่ละขั้นเพื่อดูรายละเอียด</p>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">วัด serum Na ให้ถูกวิธี</span></summary><div class="body">
+      <p>ใช้ <b>ion-selective electrode แบบ direct potentiometry</b> (เช่น blood gas analyzer) จะไม่เกิด pseudohyponatremia</p>
+      <p>เครื่องที่ใช้ <b>indirect potentiometry</b> (เจือจางตัวอย่างก่อนวัด) และ <b>flame photometry</b> (วัดเฉพาะ aqueous phase) จะรายงาน Na ต่ำลงเมื่อ lipid หรือ protein สูง</p></div></details>
+    <details class="step"><summary><span class="n">2</span><span class="t">Serum osmolality</span></summary><div class="body">
+      <p>แยก true, pseudo, translocational ควร <b>วัดด้วย osmometer</b> ถ้าไม่มี ให้ดู glucose, TG, protein</p>
+      <div class="tbl"><table>
+        <tr><th>สาร</th><th>เกณฑ์</th><th>ผลต่อ Na</th></tr>
+        <tr><td>Glucose</td><td>&gt;100 mg/dL</td><td>Na ลด ~<span class="mono">1.6</span> ต่อ glucose ที่เพิ่ม <span class="mono">100 mg/dL</span> <span class="tag fix">แก้หน่วย</span> · ถ้า glucose &lt;200–300 ผลน้อยมาก</td></tr>
+        <tr><td>Triglyceride</td><td>&gt;100 mg/dL</td><td>Na ลด ~<span class="mono">1.0</span> ต่อ TG ที่เพิ่มทุก <span class="mono">500 mg/dL</span></td></tr>
+        <tr><td>Protein</td><td>&gt;8 g/dL</td><td>Na ลด ~<span class="mono">4.0</span> ต่อ protein ที่เพิ่มทุก <span class="mono">1 g/dL</span></td></tr>
+      </table></div>
+      <p class="muted" style="font-size:.85rem"><span class="tag fix">แก้หน่วย</span> ต้นฉบับเขียน "each mg" ซึ่งคลาดเคลื่อน ค่าที่ใช้ทั่วไปคือ 1.6 mEq/L ต่อ 100 mg/dL (บางแหล่งใช้ 2.4 เมื่อ glucose &gt;400)</p></div></details>
+    <details class="step"><summary><span class="n">3</span><span class="t">Urine osmolality</span></summary><div class="body">
+      <p>บอกว่าไตขับน้ำได้ปกติหรือไม่ การตอบสนองปกติต่อ hyponatremia คือกด ADH จนได้ปัสสาวะเจือจางสูงสุด <b>Uosm &lt;100</b> (SG ≤1.003)</p>
+      <ul><li><b>Uosm &lt;100</b>: ขับน้ำได้ปกติ → primary polydipsia, low solute intake</li><li><b>Uosm &gt;100</b> (บทความใช้ &gt;150 เป็น "impaired"): มี ADH อยู่ → SIADH, hypovolemia, edematous state, adrenal insufficiency, hypothyroid, diuretic</li></ul></div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">Urine sodium (และ urine chloride)</span></summary><div class="body">
+      <p>ใช้แยก hypovolemic กับ euvolemic เมื่อ Uosm สูง <b>แม่นกว่าการประเมิน volume ทางคลินิก</b></p>
+      <ul><li>UNa <span class="mono">&lt;20</span>: hypovolemic (extrarenal) หรือ hypervolemic (HF, cirrhosis)</li><li>UNa <span class="mono">&gt;20–40</span>: SIADH, renal salt loss, diuretic</li><li>อาเจียน + metabolic alkalosis: UNa อาจ &gt;20 จาก bicarbonaturia แต่ <b>UCl &lt;20</b></li></ul>
+      <div class="box key"><b>ถ้า UNa กำกวม: saline challenge</b>ให้ 0.9% NaCl 1 L แล้วติดตาม Uosm และ UNa · Hypovolemic: ADH ถูกกด Uosm ลด &lt;100 Na ดีขึ้นเร็ว · SIADH: Uosm ยังสูง Na ไม่ดีขึ้นหรือแย่ลง · UNa เพิ่มได้ทั้งคู่ (hypovolemic จะเพิ่มเมื่อแก้ volume ได้แล้ว)</div></div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">Urine-to-serum electrolyte ratio</span></summary><div class="body">
+      <div class="formula">(UNa + UK) ÷ SNa</div>
+      <ul><li><b>&lt;0.5</b>: มี electrolyte-free water ในปัสสาวะมาก → fluid restriction พอ</li><li><b>&gt;1</b>: ปัสสาวะ hypertonic กว่า serum → fluid restriction ไม่พอ ต้องใช้วิธีอื่นร่วม</li></ul></div></details>
+    <details class="step"><summary><span class="n">6</span><span class="t">FENa</span></summary><div class="body">
+      <p>แก้ผลของปริมาณปัสสาวะต่อ UNa จึงประเมิน volume ได้ดีกว่า UNa อย่างเดียว ในผู้ที่ไตปกติ บทความใช้จุดตัด <span class="mono">0.1%</span></p>
+      <ul><li>&lt;0.1%: hypovolemic</li><li>&gt;0.1%: hypervolemic หรือ normovolemic</li></ul>
+      <p class="muted" style="font-size:.85rem"><span class="tag add">หมายเหตุ</span> ตำราส่วนใหญ่ใช้ FENa &lt;0.5% สำหรับ hypovolemia และ FEurea &lt;35% ในผู้ได้ diuretic</p></div></details>
+    <details class="step"><summary><span class="n">7</span><span class="t">Serum uric acid และ BUN</span></summary><div class="body">
+      <ul><li><b>ต่ำ</b> (UA <span class="mono">&lt;4</span>, BUN <span class="mono">&lt;5</span>): SIADH (ลด proximal reabsorption + V1a stimulation), hypopituitarism, thiazide</li><li><b>ปกติหรือสูง</b>: hypovolemia</li></ul>
+      <p class="muted" style="font-size:.9rem">ผู้สูงอายุขับ urea ลดลง BUN ไม่ต่ำ จึงตัด SIADH ไม่ได้</p></div></details>
+    <details class="step"><summary><span class="n">8</span><span class="t">Acid-base และ potassium</span></summary><div class="body"><div class="tbl"><table>
+      <tr><th>รูปแบบ</th><th>นึกถึง</th></tr>
+      <tr><td>Metabolic alkalosis + hypoK</td><td>Diuretic, อาเจียน</td></tr>
+      <tr><td>Metabolic acidosis + hypoK</td><td>ท้องเสีย, laxative abuse</td></tr>
+      <tr><td>Metabolic acidosis + hyperK</td><td>Primary adrenal insufficiency (ไตปกติ)</td></tr>
+      <tr><td>ปกติทั้งคู่</td><td>SIADH</td></tr>
+      <tr><td>Mild alkalosis + K ปกติ</td><td>Hypopituitarism (aldosterone ยังมี)</td></tr></table></div></div></details>
+    <details class="step"><summary><span class="n">9</span><span class="t">Saline infusion test</span></summary><div class="body"><p>ถ้ายังสงสัย ให้ 0.9% NaCl แล้วตรวจ Na ซ้ำที่ <span class="mono">6–8 ชม.</span> · Hypovolemic ดีขึ้น · SIADH ไม่ดีขึ้นหรือ <b>แย่ลง</b></p></div></details>
+  </div>
+  <div class="box note"><b>ตรวจเพิ่มตามข้อบ่งชี้</b>Thyroid function, cortisol / ACTH stimulation test, CT/MRI brain, chest imaging</div>
+</section>
+
+<!-- 7 approach diagram -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">07</div>
+    <h2>แผนผังการ approach hyponatremia</h2>
+    <p>เลือกดูแบบแผนผังทั้งหมด หรือแบบตอบคำถามทีละขั้นกับผู้ป่วยจริง</p>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Serum Na &lt;135 mmol/L</b>ยืนยันด้วย direct ISE</div>
+      <div class="vline"></div>
+      <div class="node red"><b>มีอาการรุนแรง? (ชัก ซึม coma)</b>รักษาด้วย 3% NaCl ก่อน แล้วค่อยหาสาเหตุ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Serum osmolality</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">280–295</span><div class="node dx grey"><b>Pseudohyponatremia</b>TG &gt;1500, protein &gt;10 g/dL</div></div>
+        <div class="arm"><span class="lab">&gt;295</span><div class="node dx grey"><b>Translocational</b>Glucose, mannitol, contrast</div></div>
+        <div class="arm"><span class="lab">&lt;280</span><div class="node q"><b>True hypotonic</b>→ Urine osmolality</div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">&lt;100</span><div class="node dx green"><b>ADH ถูกกด</b>Primary polydipsia, low solute intake</div></div>
+            <div class="arm"><span class="lab">&gt;100</span><div class="node q"><b>มี ADH</b>→ volume + UNa</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>ประเมิน volume status + Urine Na</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Hypovolemic</span>
+          <div class="node dx hypo"><b>UNa &lt;20 · Extrarenal</b>อาเจียน* ท้องเสีย third space</div>
+          <div class="vline"></div>
+          <div class="node dx hypo"><b>UNa &gt;20 · Renal</b>Diuretic, mineralocorticoid def., CSW, salt-losing nephropathy</div></div>
+        <div class="arm"><span class="lab">Euvolemic</span>
+          <div class="node dx eu"><b>UNa &gt;20–40</b>SIADH, hypothyroid, glucocorticoid def., thiazide, reset osmostat</div>
+          <div class="vline"></div>
+          <div class="node dx grey"><b>แยกยาก?</b>UA &lt;4, BUN &lt;5 → SIADH · Saline challenge 1 L</div></div>
+        <div class="arm"><span class="lab">Hypervolemic</span>
+          <div class="node dx hyper"><b>UNa &lt;20</b>CHF, cirrhosis, nephrotic</div>
+          <div class="vline"></div>
+          <div class="node dx hyper"><b>UNa &gt;20</b>AKI / CKD (หรือได้ diuretic)</div></div>
+      </div>
+      <p class="muted" style="font-size:.82rem;margin-top:12px;align-self:flex-start">* อาเจียนกับ metabolic alkalosis: UNa อาจ &gt;20 แต่ UCl &lt;20 ใช้ UCl แทน</p>
+    </div>
+    <div class="legend"><span style="--c:var(--warn)">Hypovolemic</span><span style="--c:var(--accent)">Euvolemic</span><span style="--c:var(--violet)">Hypervolemic</span><span style="--c:var(--ok)">ADH ถูกกด</span><span style="--c:var(--danger)">ต้องรักษาเร่งด่วน</span></div>
+  </div>
+
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 8 management -->
+<section id="manage">
+  <div class="col">
+    <div class="sec-num">08</div>
+    <h2>แผนผังการรักษา (management)</h2>
+    <p>การรักษาขึ้นกับ 4 อย่าง: <b>volume status</b>, <b>ระยะเวลา</b> (acute &lt;48 ชม. / chronic &gt;48 ชม.), <b>อาการ</b> และ <b>สาเหตุ</b></p>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>True hypotonic hyponatremia</b></div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>อาการ / ระยะเวลา</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">อาการรุนแรง / acute</span>
+          <div class="node red"><b>3% NaCl 100 mL IV ใน 10 นาที</b>ซ้ำได้ถึง 3 ครั้งจนอาการดีขึ้น<br>เป้าหมาย: Na ↑ <span class="mono">4–6</span> mmol/L เร็ว ๆ</div>
+          <div class="vline"></div>
+          <div class="node dx grey">Chronic ที่มีอาการ (ชัก สับสน) หรือ Na &lt;125: บทความให้แบบเดียวกัน เพื่อเพิ่ม 4–6 จาก baseline</div></div>
+        <div class="arm"><span class="lab">อาการน้อย–ปานกลาง</span>
+          <div class="node dx" style="border-color:var(--warn);background:var(--warn-soft)"><b>3% NaCl 0.5–2 mL/kg/ชม.</b>เมื่อเสี่ยง herniation ต่ำ<br>เฝ้าระวัง Na ใกล้ชิด</div></div>
+        <div class="arm"><span class="lab">ไม่มีอาการ / chronic</span>
+          <div class="node green"><b>แก้ช้า ตามสาเหตุและ volume</b>ห้ามเกิน limit ด้านล่าง</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>รักษาตาม volume status</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Hypovolemic</span><div class="node dx hypo"><b>0.9% NaCl</b> (+K ถ้าต่ำ)<br>• หยุด thiazide ห้ามให้ซ้ำ<br>• GI loss: แก้ K, HCO₃<br>• Mineralocorticoid def.: fludrocortisone<br>• CSW: 0.9% (บางราย 3%)<br>• ✗ 3% ไม่จำเป็น ✗ vaptans</div></div>
+        <div class="arm"><span class="lab">Euvolemic</span><div class="node dx eu"><b>แก้สาเหตุ</b> (ยา ปวด คลื่นไส้ TSH cortisol)<br>• U/S ratio &lt;0.5 → fluid restriction<br>• Ratio &gt;1 → salt tab + loop diuretic หรือ vaptan<br>• Urea, demeclocycline<br>• Adrenal: glucocorticoid · Thyroid: T4</div></div>
+        <div class="arm"><span class="lab">Hypervolemic</span><div class="node dx hyper"><b>Water restriction</b> (cirrhosis &lt;750 mL/วัน)<br>• <b>Loop diuretic</b> = cornerstone<br>• HF: ACEi, β-blocker<br>• Vaptan หลัง restriction + diuretic ไม่ได้ผล<br>• ✗ เกลือ/3% ยกเว้นมีอาการรุนแรง</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node red" style="max-width:640px"><b>Limit การแก้ Na ใน 24 ชม. (ป้องกัน ODS)</b>
+        เสี่ยงต่ำ: เป้า <span class="mono">4–8</span>, สูงสุด <span class="mono">10–12</span> mmol/L/วัน<br>
+        เสี่ยงสูง (Na ≤120, alcoholism, liver disease, malnutrition, hypoK รุนแรง): เป้า <span class="mono">4–6</span>, สูงสุด <span class="mono">8</span> mmol/L/วัน<br>
+        ถ้าเกิน: relower ด้วยน้ำ (D5W) + desmopressin</div>
+    </div>
+  </div>
+
+  <div class="col">
+    <h3>Osmotic demyelination syndrome (ODS)</h3>
+    <p>พบน้อยแต่รุนแรง อาจไม่กลับคืน อาการ: quadriparesis, dysarthria, dysphagia จนถึง <b>locked-in syndrome</b> (ขยับได้แค่ตาแนวดิ่ง) เดิมเรียก central pontine myelinolysis แต่ demyelination กระจายกว้างกว่า pons</p>
+    <div class="box warn"><b>ระวัง "autocorrection"</b>Na อาจขึ้นเร็วเองเมื่อกำจัดสิ่งกระตุ้น ADH ได้ เช่น ให้ cortisol ใน adrenal insufficiency, หยุด desmopressin, แก้ hypovolemia ด้วย 0.9% NaCl (ปัสสาวะออกมากทันที)</div>
+    <h3>สูตรคำนวณ</h3>
+    <div class="formula">ΔNa ต่อ 1 L = (Infusate [Na+K] − SNa) ÷ (TBW + 1)</div>
+    <p style="font-size:.92rem">Adrogué–Madias · TBW = น้ำหนัก × 0.6 (ชาย) หรือ 0.5 (หญิง) · ถ้าใส่ K ในสารละลายต้องรวมด้วย</p>
+    <div class="formula">Na deficit = TBW × (Na เป้าหมาย − Na ปัจจุบัน)</div>
+    <div class="box key"><b>Rule of thumb ตามแนวทางใหม่</b>3% NaCl <span class="mono">1 mL/kg</span> เพิ่ม Na ได้ประมาณ <span class="mono">1 mEq/L</span> · สูตรทั้งหมดไม่ได้คิดน้ำและ Na ที่ออกทางปัสสาวะ จึง <b>ต้องตรวจ Na ซ้ำบ่อย</b> แทนการเชื่อสูตร</div>
+    <div class="tbl"><table><tr><th>สารละลาย</th><th class="mono">Na (mEq/L)</th></tr>
+      <tr><td>3% NaCl</td><td class="mono">513</td></tr><tr><td>0.9% NaCl</td><td class="mono">154</td></tr><tr><td>Lactated Ringer <span class="tag add">เสริม</span></td><td class="mono">130</td></tr><tr><td>0.45% NaCl <span class="tag add">เสริม</span></td><td class="mono">77</td></tr></table></div>
+  </div>
+</section>
+
+<!-- 9 specific -->
+<section id="specific" class="col">
+  <div class="sec-num">09</div>
+  <h2>การรักษาตามสาเหตุ</h2>
+  <h3>Euvolemic: SIADH</h3>
+  <p>ตัด hypothyroidism และ glucocorticoid deficiency ก่อนเสมอ SIADH ส่วนใหญ่เป็น chronic จึงแก้ช้า</p>
+  <div class="grid2">
+    <div class="card"><h4>Fluid restriction (หลัก)</h4><ul>
+      <li>ทำนายผลด้วย U/S electrolyte ratio</li><li>จำกัด <b>ของเหลวทุกชนิด</b> ไม่ใช่แค่น้ำเปล่า</li><li>ใช้เวลาหลายวันกว่า Posm จะขึ้น</li><li>จำกัดน้ำ <b>ไม่จำกัดเกลือ</b></li><li>แก้กระหายด้วยลูกอมแข็งหรือน้ำแข็งก้อน</li></ul></div>
+    <div class="card"><h4>3% NaCl</h4><ul>
+      <li>เมื่อมีอาการ ต้องเพิ่ม Na เร็ว</li><li>ความเข้มข้น cation ของสารน้ำต้อง <b>สูงกว่าปัสสาวะ</b></li><li>0.9% NaCl มีบทบาทน้อย อาจทำให้แย่ลง</li><li>1 mL/kg → Na ↑ ~1</li></ul></div>
+    <div class="card"><h4>Loop diuretic</h4>ใช้เมื่อ U/S ratio <b>&gt;1</b> furosemide ทำให้ได้ปัสสาวะคล้าย ½ NSS เสียน้ำมากกว่า Na · <b>ห้ามใช้ thiazide</b></div>
+    <div class="card"><h4>Demeclocycline</h4>ทำให้เกิด nephrogenic DI ขนาด <span class="mono">600–1,200 mg/วัน</span> แบ่งให้ รอ 3–4 วันก่อนปรับขนาด อาจเกิด azotemia/nephrotoxicity โดยเฉพาะใน cirrhosis</div>
+  </div>
+  <p>ยาอื่นสำหรับ chronic SIADH: <b>urea</b> และ <b>vaptans</b> · แก้สาเหตุที่แก้ได้: หยุดยา รักษาปวด คลื่นไส้ หลังผ่าตัด TB meningitis</p>
+
+  <h3>Euvolemic อื่น ๆ</h3>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>การรักษา</th></tr>
+    <tr><td>Primary polydipsia</td><td>Fluid restriction (Na ขึ้นเร็วเพราะขับน้ำได้ดี) · ระยะยาว: ลดยาที่ทำให้ปากแห้ง ชั่งน้ำหนักบ่อย · Clozapine ช่วยในผู้ป่วย psychosis บางราย</td></tr>
+    <tr><td>Adrenal insufficiency</td><td>ตัดด้วย cortisol (random/เช้า) <span class="mono">&gt;18 µg/dL</span> <span class="tag fix">แก้หน่วย</span> ถ้าไม่ถึงทำ cosyntropin test · ให้ glucocorticoid (กด ADH) · เสี่ยง ODS สูง ทำตามหลัก chronic</td></tr>
+    <tr><td>Hypothyroidism</td><td>โทษ hypothyroid ได้เมื่อรุนแรงเท่านั้น (myxedema หรือ TSH <span class="mono">&gt;50</span>) · ให้ thyroid hormone ตามน้ำหนัก Na อาจใช้หลายวันจึงปกติ</td></tr>
+    <tr><td>Low solute intake</td><td>เพิ่ม solute (protein, เกลือ) ในอาหาร</td></tr>
+    <tr><td>Exercise-associated</td><td>Acute มีอาการ ให้ 3% NaCl bolus 100 mL · ความเสี่ยง ODS ต่ำ</td></tr>
+  </table></div>
+
+  <h3>Hypovolemic</h3>
+  <p>มักเป็น chronic ให้ <b>0.9% NaCl</b> (Na 154 mEq/L) แก้ได้ 2 กลไก: Na สูงกว่า plasma (ขึ้นราว 1 mEq/L ต่อ 1 L) และแก้ volume ทำให้ตัดสิ่งกระตุ้น ADH · ไม่จำเป็นต้องใช้ 3%</p>
+  <ul>
+    <li><b>GI loss</b>: ใช้ UCl ประเมิน volume ในผู้อาเจียน แก้ K และ HCO₃ ไปพร้อมกัน</li>
+    <li><b>CSW</b>: อาจ acute ส่วนใหญ่ 0.9% พอ บางรายต้อง 3%</li>
+    <li><b>Thiazide</b>: chronic แก้ช้า (ODS สูง) เสริม K <b>ห้ามให้ thiazide ซ้ำ</b> เพราะกลับเป็นซ้ำสูง</li>
+    <li><b>Mineralocorticoid deficiency</b>: ตอบสนองต่อ 0.9% ระยะยาวอาจต้อง fludrocortisone</li>
+    <li>Chronic: เพิ่มเกลือในอาหาร · <b>vaptans ห้ามใช้</b></li>
+  </ul>
+
+  <h3>Hypervolemic</h3>
+  <ul>
+    <li>ไม่ให้เกลือหรือ 3% เป็นการรักษาระยะยาว ยกเว้น acute symptomatic</li>
+    <li><b>Water restriction</b> เป็นหลัก cirrhosis อาจต้อง &lt;750 mL/วัน ซึ่งทำได้ยาก</li>
+    <li><b>Loop diuretic</b> เป็น cornerstone</li>
+    <li>HF: neurohormonal blockade (ACEi, β-blocker) · Hepatorenal syndrome: terlipressin (V1a agonist)</li>
+  </ul>
+</section>
+
+<!-- 10 vaptans -->
+<section id="vaptans" class="col">
+  <div class="sec-num">10</div>
+  <h2>Vasopressin receptor antagonists (vaptans)</h2>
+  <p>V2 = antidiuresis · V1a = vasoconstriction · V1b = หลั่ง ACTH · Vaptans ทำให้เกิด <b>aquaresis</b> (ขับน้ำโดยไม่เสีย Na, K) ไม่ต้องจำกัดน้ำ ไม่กระตุ้น neurohormone</p>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ยา</th></tr>
+    <tr><td>Non-selective V1a/V2</td><td><b>Conivaptan</b> (IV)</td></tr>
+    <tr><td>V1a selective</td><td>Relcovaptan</td></tr>
+    <tr><td>V1b selective</td><td>Nelivaptan</td></tr>
+    <tr><td>V2 selective</td><td><b>Tolvaptan</b> (oral), lixivaptan, mozavaptan, satavaptan</td></tr>
+  </table></div>
+
+  <h3>ใน euvolemic hyponatremia</h3>
+  <ul><li>ตัดสาเหตุที่รักษาได้ก่อน (thyroid, glucocorticoid)</li><li><b>ไม่ใช้เดี่ยว ๆ ใน emergency</b> แต่ใช้ร่วมกับ 3% เพื่อลดขนาดได้</li><li>เหมาะกับ chronic</li></ul>
+  <div class="grid2">
+    <div class="card"><h4>Tolvaptan</h4><ul>
+      <li>เริ่ม <b>ในโรงพยาบาล</b> เท่านั้น</li>
+      <li>ข้อบ่งชี้: Na <span class="mono">&lt;125</span> เป็น primary therapy · Na <span class="mono">&gt;125</span> เฉพาะเมื่อมีอาการและ fluid restriction ไม่ได้ผล</li>
+      <li>เริ่ม <span class="mono">15 mg</span> วันแรก ปรับเป็น <span class="mono">30 → 60 mg</span> ทุก 24 ชม. ถ้า Na ยัง &lt;135 หรือขึ้น &lt;5 ใน 24 ชม.</li>
+      <li>ตรวจ Na อย่างน้อยทุก <span class="mono">6–8 ชม.</span> ช่วงแก้</li>
+      <li><b>ห้ามจำกัดน้ำ</b> ช่วงเริ่มยา ให้กระหายชดเชย</li>
+      <li>Hepatotoxic (TEMPO 3:4): ตรวจ LFT ก่อน, ที่ 3–4 เดือน แล้วทุก 6 เดือน · FDA แนะนำไม่เกิน 4 สัปดาห์ · หยุดถ้า ALT &gt;2× ULN</li></ul></div>
+    <div class="card"><h4>Conivaptan (IV)</h4><ul>
+      <li>FDA approved สำหรับ euvolemic ในผู้ป่วยใน</li>
+      <li>Loading <span class="mono">20 mg</span> IV ใน 30 นาที แล้ว infusion <span class="mono">20 mg/วัน</span></li>
+      <li>ถ้า Na ขึ้น &lt;5 ปรับเป็น <span class="mono">40 mg/วัน</span></li>
+      <li>ใช้ได้นานสุด <b>4 วัน</b> (CYP3A4 interaction)</li>
+      <li>ห้ามใช้ร่วมกับ ketoconazole, itraconazole, clarithromycin, ritonavir, indinavir</li></ul></div>
+  </div>
+  <div class="box note"><b>หลักฐาน</b>SALT-1, SALT-2 (n=448): Na เพิ่มขึ้น mental score ดีขึ้นเล็กน้อย ติดตามแค่ 30 วัน หยุดยาแล้วกลับเป็นซ้ำ · SALTWATER: Na เฉลี่ย 131 → 135 ที่ 50 สัปดาห์ ราว 60% Na ปกติ · Vaptans ใช้ได้แม้ไตเสื่อม แต่มักไม่ได้ผลเมื่อ Cr <span class="mono">&gt;2.5 mg/dL</span></div>
+
+  <h3>ใน hypervolemic hyponatremia</h3>
+  <ul>
+    <li><b>CHF</b>: ใช้หลังจำกัดน้ำและ diuretic แล้ว · EVEREST, ACTIV in CHF: Na ขึ้นเร็ว hemodynamics ดีขึ้น แต่ <b>ไม่ลด morbidity/mortality ระยะยาว</b></li>
+    <li><b>Cirrhosis</b>: FDA จำกัด tolvaptan เฉพาะ end-stage liver disease ที่รอ transplant เร็ว ๆ นี้ (ลด ODS หลังผ่าตัด) · ไม่ต่างจาก control ด้าน mortality, variceal bleed, HE, SBP, HRS · <b>Conivaptan ห้ามใช้</b> (ลด BP เพิ่ม variceal bleeding)</li>
+  </ul>
+  <div class="box danger"><b>ข้อห้าม / ไม่ได้ผล</b>Hypovolemic hyponatremia · euvolemic จาก emetic stimuli หรือ secondary adrenal insufficiency · nephrogenic SIAD (V2 activating mutation) · ภาวะที่ AVP เหมาะสมแล้ว เช่น CSW, psychogenic polydipsia</div>
+  <p><b>ผลข้างเคียง</b>: กระหายน้ำ ปากแห้ง orthostatic hypotension, encephalopathy (จากแก้เร็ว), AKI, hyperkalemia · <b>ติดตาม</b>: น้ำหนัก Na BP LFT ทุก 15 วันนาน 2–3 เดือน แล้วทุกเดือน; K และไตสม่ำเสมอ</p>
+</section>
+
+<!-- 11 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องคำนวณและวางแผนข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตัวเลขจากสูตรไม่คิดการสูญเสียทางปัสสาวะ ต้องตรวจ Na ซ้ำเสมอ ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+
+  <div class="tool plan" style="margin-top:12px">
+    <h3>วางแผนการรักษาเบื้องต้น</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">อาการ</div>
+        <div class="radios" id="pSym">
+          <label><input type="radio" name="sym" value="severe" id="sym1">รุนแรง (ชัก ซึม coma)</label>
+          <label><input type="radio" name="sym" value="mod" id="sym2" checked>น้อย–ปานกลาง</label>
+          <label><input type="radio" name="sym" value="none" id="sym3">ไม่มีอาการ</label>
+        </div>
+        <div class="muted" style="font-size:.82rem">ระยะเวลา</div>
+        <div class="radios">
+          <label><input type="radio" name="dur" value="acute" id="dur1">Acute &lt;48 ชม.</label>
+          <label><input type="radio" name="dur" value="chronic" id="dur2" checked>Chronic / ไม่ทราบ</label>
+        </div>
+        <div class="muted" style="font-size:.82rem">Volume status</div>
+        <div class="radios">
+          <label><input type="radio" name="vol" value="hypo" id="vol1">Hypovolemic</label>
+          <label><input type="radio" name="vol" value="eu" id="vol2" checked>Euvolemic</label>
+          <label><input type="radio" name="vol" value="hyper" id="vol3">Hypervolemic</label>
+        </div>
+      </div>
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">Serum Na (mmol/L)<input type="number" id="pNa" value="118" step="1"></label>
+          <label class="f">น้ำหนัก (kg)<input type="number" id="pWt" value="55" step="1"></label>
+        </div>
+        <div class="muted" style="font-size:.82rem">ปัจจัยเสี่ยง ODS</div>
+        <div class="checks">
+          <label><input type="checkbox" id="r1">Alcoholism</label>
+          <label><input type="checkbox" id="r2">Liver disease</label>
+          <label><input type="checkbox" id="r3" checked>Malnutrition</label>
+          <label><input type="checkbox" id="r4">Hypokalemia รุนแรง</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool">
+      <h3>Adrogué–Madias</h3>
+      <div class="fields">
+        <label class="f">เพศ/อายุ<select id="amSex"><option value="0.6">ชาย</option><option value="0.5" selected>หญิง</option><option value="0.5">ชายสูงอายุ</option><option value="0.45">หญิงสูงอายุ</option></select></label>
+        <label class="f">น้ำหนัก (kg)<input type="number" id="amWt" value="55"></label>
+        <label class="f">Serum Na<input type="number" id="amNa" value="118"></label>
+        <label class="f">สารละลาย<select id="amFl"><option value="513" selected>3% NaCl (513)</option><option value="154">0.9% NaCl (154)</option><option value="130">LR (130)</option><option value="77">0.45% NaCl (77)</option><option value="0">D5W (0)</option></select></label>
+        <label class="f">K ที่เติม (mEq/L)<input type="number" id="amK" value="0"></label>
+        <label class="f">เป้า Na ↑ (mmol/L)<input type="number" id="amGoal" value="6"></label>
+      </div>
+      <div class="out" id="amOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Serum osmolality และ glucose-corrected Na</h3>
+      <div class="fields">
+        <label class="f">Na<input type="number" id="soNa" value="128"></label>
+        <label class="f">Glucose (mg/dL)<input type="number" id="soGlu" value="450"></label>
+        <label class="f">BUN (mg/dL)<input type="number" id="soBun" value="20"></label>
+      </div>
+      <div class="out" id="soOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Urine-to-serum electrolyte ratio</h3>
+      <div class="fields">
+        <label class="f">Urine Na<input type="number" id="usUNa" value="80"></label>
+        <label class="f">Urine K<input type="number" id="usUK" value="40"></label>
+        <label class="f">Serum Na<input type="number" id="usSNa" value="120"></label>
+      </div>
+      <div class="out" id="usOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Lipid / protein effect</h3>
+      <div class="fields">
+        <label class="f">TG (mg/dL)<input type="number" id="lpTG" value="2100"></label>
+        <label class="f">Protein (g/dL)<input type="number" id="lpPr" value="7"></label>
+      </div>
+      <div class="out" id="lpOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 pearls -->
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>เจอ Na ต่ำ ถามก่อนว่า "มีอาการรุนแรงไหม"</b> ถ้าชัก ซึม coma ให้ 3% NaCl 100 mL ใน 10 นาที (ซ้ำได้ 3 ครั้ง) โดยไม่ต้องรอผลตรวจหาสาเหตุ เป้าคือ +4–6 mmol/L ก็พอหยุด herniation</div></div>
+    <div class="pearl"><div><b>ไม่ทราบระยะเวลา ให้คิดว่าเป็น chronic</b> ผู้ป่วยส่วนใหญ่เป็น chronic และเสี่ยง ODS หากแก้เร็ว</div></div>
+    <div class="pearl"><div><b>ยืนยันว่าเป็น hypotonic ก่อนเสมอ</b> ดู glucose, TG, protein และวัด Sosm จริง ถ้าสงสัย pseudohyponatremia ส่ง Na ด้วยเครื่อง blood gas (direct ISE)</div></div>
+    <div class="pearl"><div><b>Uosm &lt;100 = ADH ถูกกดแล้ว</b> คิดถึง primary polydipsia หรือ low solute intake ซึ่งรักษาด้วยการจำกัดน้ำ/เพิ่ม solute และ Na จะขึ้นเร็วมาก</div></div>
+    <div class="pearl"><div><b>UNa เชื่อได้มากกว่าการตรวจร่างกายเรื่อง volume</b> แต่ต้องแปลผลระวังเมื่อได้ diuretic และใช้ UCl แทนในผู้อาเจียน</div></div>
+    <div class="pearl"><div><b>SIADH เป็น diagnosis of exclusion</b> ต้องตัด hypothyroidism (รุนแรง) และ adrenal insufficiency ก่อน ดู UA &lt;4 และ BUN &lt;5 ช่วยสนับสนุน (ยกเว้นผู้สูงอายุ)</div></div>
+    <div class="pearl"><div><b>0.9% NaCl อาจทำให้ SIADH แย่ลง</b> ถ้า Uosm สูงกว่า osmolality ของสารน้ำ Na จะถูกขับออกแต่น้ำค้างไว้ ใช้ saline test 6–8 ชม. แยก hypovolemic กับ SIADH ได้</div></div>
+    <div class="pearl"><div><b>ใช้ U/S electrolyte ratio เลือกวิธีรักษา SIADH</b> &lt;0.5 จำกัดน้ำพอ · &gt;1 จำกัดน้ำไม่พอ ต้องเพิ่ม salt tablet + loop diuretic หรือ vaptan</div></div>
+    <div class="pearl"><div><b>ตั้งเพดานการแก้</b> เสี่ยงต่ำไม่เกิน 10–12 mmol/L/24 ชม. เสี่ยงสูง (Na ≤120, alcohol, liver disease, malnutrition, hypoK) ไม่เกิน 8 ถ้าเกินให้ relower ด้วย D5W + desmopressin</div></div>
+    <div class="pearl"><div><b>ระวัง autocorrection</b> หลังให้ 0.9% ใน hypovolemia, ให้ steroid ใน adrenal insufficiency หรือหยุด desmopressin ปัสสาวะจะออกมากและ Na ขึ้นเร็ว ติดตาม urine output และ Na บ่อย</div></div>
+    <div class="pearl"><div><b>3% NaCl 1 mL/kg ≈ Na +1</b> ง่ายกว่าและใช้แทนสูตรได้ในทางปฏิบัติ แต่ต้องตรวจ Na ซ้ำทุก 2–4 ชม. ระหว่างให้</div></div>
+    <div class="pearl"><div><b>Thiazide-induced: ห้ามให้ซ้ำ</b> มักเป็นหญิงสูงอายุ เกิดเร็วหลังเริ่มยา และกลับเป็นซ้ำได้สูง</div></div>
+    <div class="pearl"><div><b>Vaptans ไม่ใช่ยา emergency และห้ามใช้ใน hypovolemia</b> เริ่ม tolvaptan ในโรงพยาบาล ไม่จำกัดน้ำช่วงเริ่ม ตรวจ Na ทุก 6–8 ชม. และติดตาม LFT</div></div>
+    <div class="pearl"><div><b>ผู้สูงอายุที่หกล้มหรือเดินเซ</b> ให้นึกถึง chronic "asymptomatic" hyponatremia เสมอ</div></div>
+  </div>
+  <div class="box note"><b>ข้อสังเกต</b>บทความตีพิมพ์ปี 2014 แนวทางยุโรป 2014 ใช้ 3% NaCl 150 mL ใน 20 นาทีสำหรับอาการรุนแรง และไม่แนะนำ 3% ใน chronic ที่ไม่มีอาการเพียงเพราะ Na &lt;125 ให้ใช้ร่วมกับแนวทางปัจจุบันของสถาบัน</div>
+</section>
+
+<!-- 13 quiz -->
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<footer class="col">
+  สรุปจากบทความ <i>Hyponatremia: A practical approach</i> · Indian J Endocrinol Metab 2014 · ค้นผ่าน PubMed (PMID 25364669) · <a href="https://doi.org/10.4103/2230-8210.141320" target="_blank" rel="noopener">doi.org/10.4103/2230-8210.141320</a><br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน · <span class="tag fix">แก้หน่วย</span> = แก้ข้อความที่คลาดเคลื่อนในต้นฉบับ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา
+</footer>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+
+/* ---------- nav highlight ---------- */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+  links.forEach((a,i)=>a.classList.toggle('on',i===cur));}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* ---------- approach toggle ---------- */
+function setView(w){$('apFull').hidden=w;$('apWalk').hidden=!w;$('apFullBtn').setAttribute('aria-pressed',!w);$('apWalkBtn').setAttribute('aria-pressed',w);
+  try{localStorage.setItem('hypoNaView',w?'walk':'full')}catch(e){}}
+$('apFullBtn').onclick=()=>setView(false);$('apWalkBtn').onclick=()=>setView(true);
+try{if(localStorage.getItem('hypoNaView')==='walk')setView(true)}catch(e){}
+
+/* ---------- walker ---------- */
+const T={
+ start:{q:'ผู้ป่วยมีอาการรุนแรงหรือไม่?',h:'ชัก ซึมลง สับสนมาก coma อาเจียนรุนแรง',o:[
+   ['มีอาการรุนแรง','severe'],['ไม่มี / อาการน้อย','osm']]},
+ severe:{leaf:true,cls:'danger',t:'รักษาก่อน หาสาเหตุทีหลัง',b:'ให้ <b>3% NaCl 100 mL IV ใน 10 นาที</b> ซ้ำได้ถึง 3 ครั้ง เป้าหมาย Na ↑ 4–6 mmol/L แล้วเก็บ serum osm, urine osm, UNa (ก่อนให้ถ้าทำได้) และดำเนินการ approach ต่อ',next:['ไปขั้นถัดไป: serum osmolality','osm']},
+ osm:{q:'Serum osmolality เท่าไร?',h:'วัดด้วย osmometer ถ้าไม่มีให้คำนวณร่วมกับดู glucose, TG, protein',o:[
+   ['< 280 mOsm/kg','uosm','True hypotonic'],['280–295','pseudo','Isotonic'],['> 295','trans','Hypertonic']]},
+ pseudo:{leaf:true,t:'Pseudohyponatremia',b:'TG >1500 mg/dL หรือ protein >10 g/dL (multiple myeloma) · ตรวจ Na ซ้ำด้วย direct ISE (blood gas) · ไม่ต้องแก้ Na ให้รักษาโรคต้นเหตุ'},
+ trans:{leaf:true,t:'Translocational hyponatremia',b:'Hyperglycemia, mannitol, radiocontrast · คำนวณ corrected Na (+1.6 ต่อ glucose ที่เกิน 100 ทุก 100 mg/dL) · รักษาสาเหตุ'},
+ uosm:{q:'Urine osmolality เท่าไร?',h:'ปกติร่างกายควรกด ADH จนได้ Uosm <100',o:[
+   ['< 100 mOsm/kg','dilute','ADH ถูกกด'],['> 100 mOsm/kg','vol','มี ADH ทำงาน']]},
+ dilute:{leaf:true,cls:'ok',t:'ขับน้ำได้ปกติ แต่น้ำเข้ามากเกิน',b:'<b>Primary polydipsia</b> (ทำ CT/MRI ก่อนสรุปว่าเป็นจิตเวช) · <b>Low solute intake</b> (beer potomania, tea &amp; toast; solute <250 mOsm/วัน + น้ำ >4 L) · Reset osmostat หลังดื่มน้ำ · รักษา: จำกัดน้ำ/เพิ่ม solute ระวัง Na ขึ้นเร็ว'},
+ vol:{q:'Volume status ทางคลินิก?',h:'Orthostatic, mucosa, skin turgor, JVP, edema, ascites',o:[
+   ['Hypovolemic','hypoU'],['Euvolemic','eu'],['Hypervolemic','hyperU'],['บอกไม่ได้ชัด','unsure']]},
+ hypoU:{q:'Urine Na เท่าไร?',o:[['< 20 mEq/L','hypoExt'],['> 20 mEq/L','hypoRen']]},
+ hypoExt:{leaf:true,cls:'warn',t:'Hypovolemic · extrarenal loss',b:'ท้องเสีย อาเจียน third spacing เหงื่อ · รักษา 0.9% NaCl (+K) · ระวัง autocorrection เมื่อ volume กลับมา'},
+ hypoRen:{leaf:true,cls:'warn',t:'Hypovolemic · renal loss',b:'<b>Diuretics</b> (thiazide), <b>mineralocorticoid deficiency</b> (hyperK + acidosis), <b>cerebral salt wasting</b>, salt-losing nephropathy · ถ้าอาเจียน: UNa อาจ >20 แต่ <b>UCl <20</b> = extrarenal · รักษา 0.9% NaCl ±fludrocortisone, หยุด thiazide'},
+ eu:{leaf:true,t:'Euvolemic (UNa มัก >20–40)',b:'<b>SIADH</b> (diagnosis of exclusion) · <b>hypothyroidism</b> รุนแรง · <b>glucocorticoid deficiency</b> · thiazide · reset osmostat<br>ส่ง TSH, cortisol; UA <4 + BUN <5 สนับสนุน SIADH · หาสาเหตุ: CNS, ปอด, มะเร็ง, ยา<br>รักษา: fluid restriction ตาม U/S ratio, salt + loop, vaptan'},
+ hyperU:{q:'Urine Na เท่าไร?',o:[['< 20 mEq/L','hyperLow'],['> 20 mEq/L','hyperHigh']]},
+ hyperLow:{leaf:true,cls:'violet',t:'Hypervolemic · effective volume ลด',b:'<b>CHF, cirrhosis, nephrotic syndrome</b> · รักษา: water restriction, loop diuretic, รักษาโรคหลัก · vaptan เมื่อไม่ได้ผล (ระวังใน liver disease)'},
+ hyperHigh:{leaf:true,cls:'violet',t:'Hypervolemic · ไตขับน้ำไม่ได้',b:'<b>AKI / CKD</b> หรือกำลังได้ diuretic · รักษา: จำกัดน้ำ, diuretic, พิจารณา dialysis ตามข้อบ่งชี้'},
+ unsure:{leaf:true,t:'แยก hypovolemic กับ SIADH ไม่ได้',b:'1) ดู UNa / FENa / UA / BUN / acid-base / K<br>2) <b>Saline challenge</b>: 0.9% NaCl 1 L แล้วตรวจ Na, Uosm ที่ 6–8 ชม. → Uosm ลด <100 และ Na ดีขึ้น = hypovolemic · Uosm ยังสูง Na ไม่ขึ้นหรือลด = SIADH'}
+};
+let path=['start'];
+const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+function render(){
+  const id=path[path.length-1],n=T[id];
+  $('apTrail').innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+  let h='';
+  if(n.leaf){
+    h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+    if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+  }else{
+    h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+      n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+  }
+  h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" id="wBack">← ย้อนกลับ</button>':''}${path.length>1?'<button class="btn" id="wReset">เริ่มใหม่</button>':''}</div>`;
+  $('apStage').innerHTML=h;
+  $('apStage').querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+  if($('wBack'))$('wBack').onclick=()=>{path.pop();render()};
+  if($('wReset'))$('wReset').onclick=()=>{path=['start'];render()};
+}
+render();
+
+/* ---------- planner ---------- */
+function val(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function plan(){
+  const sym=val('sym'),dur=val('dur'),vol=val('vol'),na=num('pNa'),wt=num('pWt');
+  const risk=['r1','r2','r3','r4'].some(i=>$(i).checked)||(na!==null&&na<=120);
+  const steps=[];
+  if(sym==='severe'||(dur==='acute'&&sym!=='none')){
+    steps.push(`<b>ฉุกเฉิน:</b> 3% NaCl 100 mL IV ใน 10 นาที ซ้ำได้ถึง 3 ครั้งจนอาการดีขึ้น (รวมไม่เกิน 300 mL) · เป้า Na ↑ 4–6 mmol/L แล้ว<b>หยุด 3%</b> · ตรวจ Na ทุก 2 ชม.`);
+  }else if(sym==='mod'){
+    const lo=wt?Math.round(0.5*wt):null,hi=wt?Math.round(2*wt):null;
+    steps.push(`<b>อาการน้อย–ปานกลาง:</b> 3% NaCl 0.5–2 mL/kg/ชม.${wt?` (≈ <span class="mono">${lo}–${hi} mL/ชม.</span>)`:''} · ตรวจ Na ทุก 2–4 ชม. หยุดเมื่ออาการดีขึ้นหรือถึงเป้า`);
+  }else{
+    if(na!==null&&na<125&&dur==='chronic')steps.push(`<b>Na &lt;125 ไม่มีอาการ:</b> บทความแนะนำ 3% เพื่อเพิ่ม 4–6 จาก baseline แต่แนวทางปัจจุบันส่วนใหญ่ไม่ให้ 3% ในรายไม่มีอาการ ใช้ดุลพินิจ`);
+    steps.push(`<b>ไม่มีอาการ:</b> ไม่ต้องให้ 3% แก้อย่างช้าตามสาเหตุ`);
+  }
+  const V={hypo:'<b>Hypovolemic:</b> 0.9% NaCl (+K ถ้าต่ำ) · หยุด thiazide/diuretic · หาและแก้สาเหตุ (GI loss, mineralocorticoid def. → fludrocortisone) · <b>ห้ามใช้ vaptan</b> · ระวัง autocorrection เมื่อ volume กลับ',
+    eu:'<b>Euvolemic:</b> หยุดยาที่เป็นสาเหตุ ตรวจ TSH, cortisol · คำนวณ U/S electrolyte ratio: &lt;0.5 จำกัดน้ำ · &gt;1 เพิ่ม salt tab + loop diuretic หรือ tolvaptan · ห้ามให้ 0.9% NaCl ใน SIADH',
+    hyper:'<b>Hypervolemic:</b> จำกัดน้ำ (cirrhosis &lt;750 mL/วัน) + loop diuretic · รักษาโรคหลัก (HF: ACEi, β-blocker) · vaptan เมื่อวิธีอื่นไม่ได้ผล (tolvaptan เลี่ยงใน liver disease) · ไม่ให้เกลือ/3% เว้นแต่มีอาการรุนแรง'};
+  steps.push(V[vol]);
+  const lim=risk?{g:'4–6',m:8}:{g:'4–8',m:'10–12'};
+  steps.push(`<b>เพดาน 24 ชม.:</b> ODS ${risk?'<b style="color:var(--danger)">เสี่ยงสูง</b>':'เสี่ยงต่ำ'} → เป้า <span class="mono">${lim.g}</span>, สูงสุด <span class="mono">${lim.m}</span> mmol/L${na!==null?` (ไม่ควรเกิน <span class="mono">${na+(risk?8:12)}</span> ภายใน 24 ชม.)`:''}`);
+  steps.push(`<b>ถ้าแก้เกิน:</b> relower ด้วย D5W + desmopressin · เฝ้าระวัง urine output มากผิดปกติ (สัญญาณ autocorrection)`);
+  $('pOut').innerHTML='<ol>'+steps.map(s=>`<li>${s}</li>`).join('')+'</ol>';
+}
+document.querySelectorAll('.plan input').forEach(e=>e.addEventListener('input',plan));plan();
+
+/* ---------- Adrogué–Madias ---------- */
+function am(){
+  const fac=parseFloat($('amSex').value),wt=num('amWt'),na=num('amNa'),fl=parseFloat($('amFl').value),k=num('amK')||0,goal=num('amGoal');
+  if(wt===null||na===null){$('amOut').textContent='ใส่น้ำหนักและ Na';return}
+  const tbw=wt*fac,d=(fl+k-na)/(tbw+1);
+  let s=`TBW = <span class="mono">${f1(tbw)} L</span><br>Na เปลี่ยน <span class="big">${d>0?'+':''}${f1(d)}</span> mmol/L ต่อ 1 L`;
+  if(goal&&d>0){const ml=goal/d*1000;s+=`<br>เพื่อเพิ่ม ${goal} mmol/L ต้องใช้ ≈ <b class="mono">${Math.round(ml)} mL</b>`;
+    if(fl===513)s+=`<br><span class="muted">Rule of thumb 1 mL/kg ≈ +1 → ${Math.round(goal*wt)} mL</span>`;}
+  if(d<=0)s+='<br><span class="muted">สารละลายนี้ไม่เพิ่ม Na (จะลด Na)</span>';
+  $('amOut').innerHTML=s;
+}
+['amSex','amWt','amNa','amFl','amK','amGoal'].forEach(i=>$(i).addEventListener('input',am));am();
+
+/* ---------- osm ---------- */
+function so(){
+  const na=num('soNa'),g=num('soGlu'),b=num('soBun');
+  if(na===null||g===null||b===null){$('soOut').textContent='ใส่ค่าให้ครบ';return}
+  const o=2*na+g/18+b/2.8,eff=2*na+g/18,cna=na+(g>100?1.6*(g-100)/100:0);
+  const cls=o<280?'Hypotonic':o<=295?'Isotonic':'Hypertonic';
+  $('soOut').innerHTML=`Calculated Sosm <span class="big">${Math.round(o)}</span> mOsm/kg · <b>${cls}</b><br>Effective osm (ไม่รวม urea) <span class="mono">${Math.round(eff)}</span><br>Glucose-corrected Na <span class="mono">${f1(cna)}</span> mmol/L`;
+}
+['soNa','soGlu','soBun'].forEach(i=>$(i).addEventListener('input',so));so();
+
+/* ---------- U/S ratio ---------- */
+function us(){
+  const u=num('usUNa'),k=num('usUK'),s=num('usSNa');
+  if(u===null||k===null||!s){$('usOut').textContent='ใส่ค่าให้ครบ';return}
+  const r=(u+k)/s;let t;
+  if(r<0.5)t='มี free water ในปัสสาวะมาก → <b>fluid restriction น่าจะพอ</b>';
+  else if(r<=1)t='ก้ำกึ่ง → จำกัดน้ำเข้มงวดขึ้น <span class="tag add">เสริม</span> (≈500–700 mL/วัน ตาม Furst) และติดตาม';
+  else t='ปัสสาวะ hypertonic กว่า serum → <b>จำกัดน้ำอย่างเดียวไม่พอ</b> เพิ่ม salt tab + loop diuretic หรือ vaptan';
+  $('usOut').innerHTML=`Ratio <span class="big">${(Math.round(r*100)/100).toFixed(2)}</span><br>${t}`;
+}
+['usUNa','usUK','usSNa'].forEach(i=>$(i).addEventListener('input',us));us();
+
+/* ---------- lipid/protein ---------- */
+function lp(){
+  const tg=num('lpTG'),pr=num('lpPr');
+  const dT=tg&&tg>100?(tg-100)/500*1:0,dP=pr&&pr>8?(pr-8)*4:0;
+  $('lpOut').innerHTML=`Na ถูกวัดต่ำลงประมาณ <span class="big">${f1(dT+dP)}</span> mmol/L<br><span class="muted">TG ${f1(dT)} · Protein ${f1(dP)}</span>${tg>1500||pr>10?'<br><b>เข้าเกณฑ์ pseudohyponatremia</b> ส่ง direct ISE':''}`;
+}
+['lpTG','lpPr'].forEach(i=>$(i).addEventListener('input',lp));lp();
+
+/* ---------- quiz ---------- */
+const Q=[
+ ['หญิง 72 ปี เริ่ม hydrochlorothiazide 2 สัปดาห์ Na 116 ซึมสับสน ข้อใดถูกที่สุด',
+  ['ให้ 0.9% NaCl อย่างเดียว','ให้ 3% NaCl 100 mL ใน 10 นาที แล้วจำกัดการแก้ไม่เกิน 8 mmol/L/24 ชม.','ให้ tolvaptan 15 mg','จำกัดน้ำ 1 L/วัน'],1,
+  'มีอาการทางสมอง ต้องให้ 3% bolus เพื่อเพิ่ม 4–6 ก่อน แต่ Na ≤120 เป็นกลุ่มเสี่ยง ODS สูง ไม่ควรเกิน 8 ใน 24 ชม. และไม่ให้ thiazide ซ้ำ'],
+ ['Na 125, Uosm 60 mOsm/kg ในชายดื่มเบียร์วันละมาก ๆ กินอาหารน้อย นึกถึงอะไร',
+  ['SIADH','Beer potomania (low solute intake)','Cerebral salt wasting','Adrenal insufficiency'],1,
+  'Uosm <100 แปลว่า ADH ถูกกด ผู้ป่วยได้ solute <250 mOsm/วัน ขับน้ำได้ราว 4 L/วัน ดื่มเกินจึงเกิด hyponatremia'],
+ ['ผู้ป่วยอาเจียน มี metabolic alkalosis UNa 35 UCl 8 แปลผลอย่างไร',
+  ['SIADH','Renal salt wasting','Hypovolemic จาก extrarenal loss','Hypervolemic'],2,
+  'Bicarbonaturia ทำให้ Na ถูกขับมากับ HCO₃ UNa จึงสูงหลอก UCl <20 บอก hypovolemia ที่แท้จริง'],
+ ['SIADH มี UNa 90, UK 50, SNa 122 ควรทำอะไร',
+  ['จำกัดน้ำอย่างเดียว','ให้ 0.9% NaCl','เพิ่ม salt tablet + loop diuretic หรือ vaptan','ให้ thiazide'],2,
+  'U/S ratio = (90+50)/122 ≈ 1.15 (>1) จำกัดน้ำอย่างเดียวไม่พอ'],
+ ['ข้อใดเป็นข้อห้ามของ vaptans',
+  ['SIADH จากมะเร็งปอด','Hypovolemic hyponatremia','Heart failure ที่จำกัดน้ำไม่ได้ผล','ใช้ร่วมกับ 3% NaCl'],1,
+  'Vaptans ห้ามใน hypovolemia และไม่ได้ผลเมื่อ AVP เหมาะสมแล้ว เช่น CSW หรือ psychogenic polydipsia'],
+ ['ผู้ป่วยน้ำหนัก 60 kg ต้องการเพิ่ม Na 5 mmol/L ด้วย 3% NaCl ตาม rule of thumb ประมาณเท่าใด',
+  ['60 mL','150 mL','300 mL','600 mL'],2,
+  '1 mL/kg เพิ่ม ~1 mmol/L → 60 × 5 = 300 mL ต้องตรวจ Na ซ้ำเสมอ']
+];
+$('qz').innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+$('qz').querySelectorAll('.qcard').forEach(card=>{
+  const q=Q[+card.dataset.i];
+  card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+    card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+    const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+    card.querySelectorAll('button.c')[q[2]].classList.add('right');
+    const ex=card.querySelector('.ex');ex.hidden=false;
+    ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+  });
+});
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
