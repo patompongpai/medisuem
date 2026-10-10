@@ -1,0 +1,1352 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anemia CPG 2562</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lesson sheet — sticky chapter rail on wide screens; each chapter = summary, tables, decision trees. Palette from a Wright-stained smear: azure (nuclei) for structure, eosin (red cells) for emphasis. */
+:root{
+  --bg:#F6F3F5; --surface:#FFFFFF; --sunk:#EDE7EB; --line:#DACFD6;
+  --fg:#1E1820; --muted:#665A69;
+  --azure:#3A3F94; --azure-soft:#E1E2F4; --azure-fg:#FFFFFF;
+  --eosin:#B3305B; --eosin-soft:#F7DEE6;
+  --ok:#3E8E55; --oks:#DDF0E2; --warn:#B9801A; --warns:#F8EDCF; --bad:#BE3A35; --bads:#F6D9D7;
+  --font-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15.5px;line-height:1.7;padding-inline:16px;padding-block:0 56px}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.3;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--azure)}
+ul,ol{margin:0;padding-left:20px}
+li+li{margin-top:3px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--azure);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+
+.rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:36px;max-height:100vh;overflow:auto}
+.rail .brand{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--eosin);margin-bottom:14px}
+.rail nav{display:flex;flex-direction:column;gap:2px}
+.rail nav a{text-decoration:none;color:var(--muted);font-size:14px;padding:5px 10px;border-radius:6px;border-left:2px solid transparent;display:grid;grid-template-columns:22px 1fr;gap:4px}
+.rail nav a b{font-family:var(--font-mono);font-weight:500;font-size:12px;color:var(--eosin);padding-top:2px}
+.rail nav a:hover{color:var(--fg);background:var(--sunk)}
+.rail nav a.on{color:var(--azure);border-left-color:var(--azure);background:var(--azure-soft)}
+@media (max-width:900px){
+  .rail{z-index:5;background:var(--bg);padding:10px 0;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line);max-height:none}
+  .rail .brand{display:none}
+  .rail nav{flex-direction:row;overflow-x:auto;gap:6px;scrollbar-width:none}
+  .rail nav a{white-space:nowrap;border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:13px;display:inline-flex;gap:6px}
+  .rail nav a.on{border-color:var(--azure)}
+}
+
+main{min-width:0;padding-top:36px;display:flex;flex-direction:column;gap:64px}
+section{scroll-margin-top:72px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{color:var(--muted);max-width:70ch}
+h2{font-size:clamp(22px,3vw,29px)}
+h3{font-size:18px;margin-top:4px}
+h4{font-size:15px}
+.chap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:14px}
+.chap-num{font-family:var(--font-display);font-weight:700;font-size:52px;line-height:.9;color:var(--eosin)}
+.prose{max-width:72ch;display:flex;flex-direction:column;gap:10px}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:12px}
+.hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.01em}
+.hero h1 span{color:var(--eosin)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:99px;background:var(--sunk);color:var(--muted);font-size:12.5px;line-height:1.8}
+.cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--azure);color:var(--azure-fg);text-decoration:none;font-weight:600;padding:10px 18px;border-radius:8px;font-family:var(--font-display)}
+.cta:hover{filter:brightness(1.08)}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.map a{display:grid;grid-template-columns:30px 1fr;gap:6px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.45}
+.map a b{font-family:var(--font-mono);color:var(--eosin);font-weight:500}
+.map a small{display:block;color:var(--muted);font-size:12.5px}
+.map a:hover{border-color:var(--azure)}
+
+/* grades */
+.r{display:inline-flex;gap:4px;align-items:center;font-family:var(--font-mono);font-size:11px;padding:0 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;line-height:1.75;vertical-align:1px}
+.r.s2{border-color:var(--azure);color:var(--azure);background:var(--azure-soft)}
+.r.s1{border-color:var(--line);color:var(--fg)}
+.r.s0{border-style:dashed}
+
+/* blocks */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.key div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.key div b.n{font-family:var(--font-mono);font-size:22px;font-weight:500;color:var(--eosin);line-height:1.2;font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--eosin);background:var(--surface);padding:12px 16px;border-radius:0 8px 8px 0;font-size:14.5px;display:flex;flex-direction:column;gap:6px}
+.callout h4{color:var(--eosin)}
+.callout.az{border-left-color:var(--azure)} .callout.az h4{color:var(--azure)}
+.callout.warn{border-left-color:var(--warn);background:var(--warns)} .callout.warn h4{color:var(--fg)}
+.formula{font-family:var(--font-mono);font-size:14px;background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;white-space:nowrap}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:13.5px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.tbl table{border-collapse:collapse;width:100%;font-size:14px;min-width:540px}
+.tbl.narrow table{min-width:0}
+.tbl caption{caption-side:top;text-align:left;font-size:13px;color:var(--muted);padding:10px 12px 0;font-weight:500}
+.tbl th,.tbl td{padding:7px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{font-size:12.5px;color:var(--muted);font-weight:500;background:var(--sunk)}
+.tbl td.n,.tbl th.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.grp td{background:var(--sunk);font-weight:600;font-size:13px}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl td ul{padding-left:16px}
+
+/* decision tree */
+.tree-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.tree-wrap h4{margin-bottom:8px}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{margin-left:14px;padding-left:16px;border-left:1.5px solid var(--line)}
+.tree li{position:relative;padding:4px 0;margin:0}
+.tree ul>li::before{content:"";position:absolute;left:-16px;top:19px;width:13px;border-top:1.5px solid var(--line)}
+.nd{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:14px;line-height:1.5;max-width:60ch}
+.nd.q{background:var(--azure-soft);border-color:var(--azure);font-weight:600}
+.nd.dx{background:var(--eosin-soft);border-color:transparent}
+.nd.ax{background:var(--oks);border-color:transparent}
+.nd small{color:var(--muted);font-size:12.5px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* smear grid */
+.smear{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.smear div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px}
+.smear b{display:block;font-family:var(--font-display);font-size:14.5px;color:var(--eosin);margin-bottom:2px}
+
+/* mini tools */
+.tool{background:var(--surface);border:1px solid var(--azure);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.tool h4{color:var(--azure);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.tool h4 small{font-family:var(--font-mono);font-weight:400;color:var(--muted);font-size:12px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.field{display:flex;flex-direction:column;gap:3px;min-width:0}
+.field label{font-size:12.5px;color:var(--muted);font-weight:500}
+.field input,.field select{width:100%;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);font-family:var(--font-mono);font-size:15px}
+.field input:focus,.field select:focus{border-color:var(--azure);outline:none;box-shadow:0 0 0 3px var(--azure-soft)}
+.out{border-radius:8px;padding:10px 14px;background:var(--sunk);font-size:14.5px;display:flex;flex-direction:column;gap:3px}
+.out.ok{background:var(--oks)} .out.warn{background:var(--warns)} .out.bad{background:var(--bads)}
+.out b.big{font-family:var(--font-display);font-size:19px}
+
+details.more{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+details.more>summary{cursor:pointer;padding:10px 16px;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";font-family:var(--font-mono);color:var(--azure)}
+details.more[open]>summary::after{content:"−"}
+details.more>div{padding:0 16px 14px;display:flex;flex-direction:column;gap:10px}
+details.more[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+
+.tag-out{display:inline-block;font-size:11.5px;font-weight:600;padding:0 8px;border-radius:99px;background:var(--warns);color:var(--fg);line-height:1.8}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:80ch}
+@media (prefers-reduced-motion:no-preference){.rail nav a{transition:background .15s,color .15s}}
+</style>
+
+<div class="wrap">
+<aside class="rail">
+  <div class="brand">Anemia · CPG 2562</div>
+  <nav id="toc">
+    <a href="#top"><b>·</b>ภาพรวม</a>
+    <a href="#ch1"><b>1</b>Approach to anemia</a>
+    <a href="#ch2"><b>2</b>Anemia in newborn</a>
+    <a href="#ch3"><b>3</b>Anemia in the elderly</a>
+    <a href="#ch4"><b>4</b>Iron deficiency</a>
+    <a href="#ch5"><b>5</b>Megaloblastic</a>
+    <a href="#ch6"><b>6</b>G6PD · PK</a>
+    <a href="#ch7"><b>7</b>Membrane disorders</a>
+    <a href="#ch8"><b>8</b>AIHA</a>
+    <a href="#ch9"><b>9</b>PNH</a>
+    <a href="#update"><b>+</b>อัปเดตหลัง CPG</a>
+    <a href="#pearls"><b>★</b>จุดที่ควรจำ</a>
+  </nav>
+</aside>
+
+<main>
+<!-- ================= HERO ================= -->
+<header class="hero" id="top" style="scroll-margin-top:72px">
+  <div class="eyebrow">สมาคมโลหิตวิทยาแห่งประเทศไทย · พ.ศ. 2562 · ส่วนที่ 1 ภาวะโลหิตจาง</div>
+  <h1>แนวทางเวชปฏิบัติการรักษา<span>ภาวะโลหิตจาง</span></h1>
+  <p class="lead">สรุปครบทั้ง 9 บทของส่วนภาวะโลหิตจาง ตั้งแต่การแบ่งชนิดด้วย MCV และ RPI ไปจนถึงการรักษา IDA, megaloblastic anemia, G6PD, PK, membrane disorders, AIHA และ PNH ตัวเลข ขนาดยา และน้ำหนักคำแนะนำอ้างอิงตามต้นฉบับ</p>
+  <a class="cta" id="flowLink" href="../anemia-flow/index.html">เปิดหน้า Anemia Flow สำหรับผู้ป่วยรายบุคคล →</a>
+  <a class="cta" href="../thalassemia/index.html" style="background:transparent;color:var(--azure);border:1px solid var(--azure)">บทเรียน Thalassemia ส่วนที่ 2 →</a>
+  <div class="meta">
+    <span class="chip"><span class="r s2">++</span> ควรทำ</span>
+    <span class="chip"><span class="r s1">+</span> น่าทำ</span>
+    <span class="chip"><span class="r s0">+/-</span> ทำหรือไม่ทำก็ได้</span>
+    <span class="chip"><span class="r">−</span> ไม่น่าทำ · <span class="r">− −</span> ไม่ควรทำ</span>
+  </div>
+  <details class="more">
+    <summary>คุณภาพหลักฐาน ก–ง หมายถึงอะไร</summary>
+    <div>
+      <div class="tbl narrow"><table>
+        <tbody>
+          <tr><td class="n">ก1 · ก2</td><td>Systematic review / meta-analysis ของ RCT · RCT คุณภาพดีอย่างน้อย 1 ฉบับ</td></tr>
+          <tr><td class="n">ข1–ข4</td><td>SR ของ non-randomized trial · non-randomized trial ที่ดี · cohort/case-control ที่ดี · multiple time series</td></tr>
+          <tr><td class="n">ค1 · ค2</td><td>การศึกษาพรรณนา · controlled trial คุณภาพพอใช้</td></tr>
+          <tr><td class="n">ง1 · ง2</td><td>ฉันทามติคณะผู้เชี่ยวชาญ · รายงานผู้ป่วย/ความเห็นเฉพาะราย</td></tr>
+        </tbody></table></div>
+      <p class="small muted">อ้างอิงระบบของ สุรจิต สุนทรธรรม และสมเกียรติ โพธิสัตย์ (2558) ข้อแนะนำส่วนใหญ่ในเล่มนี้เป็นระดับ ง1 คือฉันทามติผู้เชี่ยวชาญ</p>
+    </div>
+  </details>
+  <div class="map">
+    <a href="#ch1"><b>1</b><span>Approach to anemia<small>นิยาม · MCV · RPI · smear</small></span></a>
+    <a href="#ch2"><b>2</b><span>Anemia in newborn<small>HDFN · เกณฑ์ให้เลือดทารก</small></span></a>
+    <a href="#ch3"><b>3</b><span>Anemia in the elderly<small>ferritin &lt; 45 · unexplained anemia</small></span></a>
+    <a href="#ch4"><b>4</b><span>Iron deficiency anemia<small>ขนาดเหล็ก · การป้องกันในเด็ก</small></span></a>
+    <a href="#ch5"><b>5</b><span>Megaloblastic anemia<small>B12 ฉีด · folic 5 mg</small></span></a>
+    <a href="#ch6"><b>6</b><span>RBC enzyme deficiencies<small>G6PD · PK</small></span></a>
+    <a href="#ch7"><b>7</b><span>RBC membrane disorders<small>HS · HE/HPP · SAO</small></span></a>
+    <a href="#ch8"><b>8</b><span>Autoimmune hemolytic anemia<small>warm · cold · PCH · drug</small></span></a>
+    <a href="#ch9"><b>9</b><span>Paroxysmal nocturnal hemoglobinuria<small>CATCH · FLAER</small></span></a>
+  </div>
+</header>
+
+<!-- ================= CH 1 ================= -->
+<section id="ch1">
+  <div class="chap-head"><div class="chap-num">1</div><div><div class="eyebrow">บทที่ 1</div><h2>Approach to anemia</h2></div></div>
+  <div class="prose">
+    <p>โลหิตจาง คือ red cell mass หรือ Hb ลดลง โดยใช้ cut-off ต่ำกว่า <b>mean − 2 SD</b> ของช่วงอายุนั้น (ตารางที่ 1) ผู้ใหญ่ทั่วไปใช้เกณฑ์ WHO คือชาย Hb &lt; 13 และหญิง &lt; 12 g/dL</p>
+  </div>
+
+  <h3>แบ่งตามสาเหตุ 3 กลุ่ม</h3>
+  <div class="grid3">
+    <div class="panel"><h4>1. สร้างน้อย</h4><ul class="small">
+      <li>ขาดสารอาหาร: เหล็ก, B12, folate</li>
+      <li>ไขกระดูกฝ่อ/มีเซลล์มะเร็งแทรก: PRCA, aplastic anemia, MDS, acute leukemia, neuroblastoma, myeloma</li>
+      <li>Systemic disease: EPO ต่ำใน CKD, anemia of chronic disease</li></ul></div>
+    <div class="panel"><h4>2. เสียเลือด</h4><ul class="small">
+      <li>เฉียบพลัน: ภาวะทางศัลยกรรม เช่น splenic rupture</li>
+      <li>เรื้อรัง: พยาธิปากขอ, แผลกระเพาะ/ลำไส้เล็กส่วนต้น</li></ul></div>
+    <div class="panel"><h4>3. เม็ดเลือดแดงแตก</h4><ul class="small">
+      <li>Corpuscular: G6PD, thalassemia, HS, PNH</li>
+      <li>Extracorpuscular: isoimmune (minor blood group), AIHA, SLE</li></ul></div>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 1 · ค่าเฉลี่ย (−2 SD) ตามอายุและเพศ</caption>
+      <thead><tr><th>อายุ</th><th class="n">Hb g/dL</th><th class="n">Hct %</th><th class="n">MCV fL</th><th class="n">MCH pg</th><th class="n">MCHC g/dL</th></tr></thead>
+      <tbody>
+        <tr><td>แรกเกิด (cord)</td><td class="n">16.5 (13.5)</td><td class="n">51 (42)</td><td class="n">108 (98)</td><td class="n">34 (31)</td><td class="n">33 (30)</td></tr>
+        <tr><td>1–3 วัน</td><td class="n">18.5 (14.5)</td><td class="n">56 (45)</td><td class="n">108 (95)</td><td class="n">34 (31)</td><td class="n">33 (29)</td></tr>
+        <tr><td>1 สัปดาห์</td><td class="n">17.5 (13.5)</td><td class="n">54 (42)</td><td class="n">107 (88)</td><td class="n">34 (28)</td><td class="n">33 (28)</td></tr>
+        <tr><td>2 สัปดาห์</td><td class="n">16.5 (12.5)</td><td class="n">51 (39)</td><td class="n">105 (86)</td><td class="n">34 (28)</td><td class="n">33 (28)</td></tr>
+        <tr><td>1 เดือน</td><td class="n">14 (10)</td><td class="n">43 (31)</td><td class="n">104 (85)</td><td class="n">34 (28)</td><td class="n">33 (29)</td></tr>
+        <tr><td>2 เดือน</td><td class="n">11.5 (9)</td><td class="n">35 (28)</td><td class="n">96 (77)</td><td class="n">30 (26)</td><td class="n">33 (29)</td></tr>
+        <tr><td>3–6 เดือน</td><td class="n">11.5 (9.5)</td><td class="n">35 (29)</td><td class="n">91 (74)</td><td class="n">30 (25)</td><td class="n">33 (30)</td></tr>
+        <tr><td>0.5–2 ปี</td><td class="n">12.0 (10.5)</td><td class="n">36 (33)</td><td class="n">78 (70)</td><td class="n">27 (23)</td><td class="n">33 (30)</td></tr>
+        <tr><td>2–6 ปี</td><td class="n">12.5 (11.5)</td><td class="n">37 (34)</td><td class="n">81 (75)</td><td class="n">27 (24)</td><td class="n">34 (31)</td></tr>
+        <tr><td>12–18 ปี หญิง</td><td class="n">14.0 (12.0)</td><td class="n">41 (36)</td><td class="n">90 (78)</td><td class="n">30 (25)</td><td class="n">34 (31)</td></tr>
+        <tr><td>12–18 ปี ชาย</td><td class="n">14.5 (13.0)</td><td class="n">43 (37)</td><td class="n">88 (77)</td><td class="n">30 (25)</td><td class="n">34 (31)</td></tr>
+        <tr><td>18–49 ปี หญิง</td><td class="n">14.0 (12.0)</td><td class="n">41 (36)</td><td class="n">90 (80)</td><td class="n">30 (26)</td><td class="n">34 (31)</td></tr>
+        <tr><td>18–49 ปี ชาย</td><td class="n">15.5 (13.5)</td><td class="n">47 (41)</td><td class="n">90 (80)</td><td class="n">30 (26)</td><td class="n">34 (31)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">ที่มา: Nathan and Oski's Hematology of Infancy and Childhood, 7th ed. ต้นฉบับไม่มีแถว 6–12 ปี</p>
+
+  <h3>ซักประวัติและตรวจร่างกาย</h3>
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 2 · ประวัติที่ชี้สาเหตุ</caption>
+      <thead><tr><th>ประวัติ</th><th>นึกถึง</th></tr></thead>
+      <tbody>
+        <tr><td>ตัวเหลืองแรกเกิด, คลอดก่อนกำหนด</td><td>G6PD, HS, IDA</td></tr>
+        <tr><td>ซีดช่วงอายุ 3–6 เดือน</td><td>Homozygous β-thal</td></tr>
+        <tr><td>ชาย + ญาติฝ่ายแม่ซีด (X-linked)</td><td>G6PD</td></tr>
+        <tr><td>อาหาร: เหล็ก, B12, folate, ชนิดนม</td><td>IDA, megaloblastic</td></tr>
+        <tr><td>Pica</td><td>IDA</td></tr>
+        <tr><td>Antimalarial · phenytoin · chloramphenicol</td><td>G6PD · megaloblastic · aplastic</td></tr>
+        <tr><td>Hepatitis · parvovirus · mycoplasma</td><td>Aplastic · red cell aplasia · cold AIHA</td></tr>
+        <tr><td>ครอบครัวซีด เหลือง ม้ามโต นิ่วถุงน้ำดี</td><td>Thalassemia, HS</td></tr>
+        <tr><td>ท้องเสียเรื้อรัง/ดูดซึมไม่ดี</td><td>Megaloblastic</td></tr>
+        <tr><td>ปัสสาวะสีโค้ก</td><td>Intravascular hemolysis, G6PD</td></tr>
+        <tr><td>วัณโรค โรคไต โรคตับ</td><td>Anemia of chronic disease</td></tr>
+        <tr><td>อุจจาระดำ เลือดกำเดา ประจำเดือนมาก</td><td>IDA</td></tr>
+        <tr><td>อาเจียน ชัก · ไข้เป็นๆ หายๆ · ปวดกระดูก</td><td>Lead · JIA, HIV · leukemia, bone metastasis</td></tr>
+      </tbody></table></div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 3 · ตรวจร่างกาย</caption>
+      <thead><tr><th>ตรวจพบ</th><th>นึกถึง</th></tr></thead>
+      <tbody>
+        <tr><td>Hyperpigmentation · petechiae/purpura</td><td>Fanconi, acute leukemia, aplastic, HUS</td></tr>
+        <tr><td>แผลเรื้อรังที่ขา</td><td>Thalassemia intermedia (β-thal/Hb E)</td></tr>
+        <tr><td>Frontal bossing, malar/maxilla เด่น</td><td>Homozygous β-thal</td></tr>
+        <tr><td>Microcornea · eyelid edema</td><td>Fanconi · IM, renal failure</td></tr>
+        <tr><td>Glossitis · angular stomatitis</td><td>B12, iron deficiency</td></tr>
+        <tr><td>Shield chest</td><td>Diamond-Blackfan</td></tr>
+        <tr><td>Triphalangeal thumb, thenar hypoplasia</td><td>PRCA, Fanconi</td></tr>
+        <tr><td>Spoon nails</td><td>Iron deficiency</td></tr>
+        <tr><td>ม้ามโต</td><td>Congenital hemolytic anemia, leukemia, lymphoma</td></tr>
+      </tbody></table></div>
+  </div>
+
+  <h3>การตรวจทางห้องปฏิบัติการ</h3>
+  <div class="key">
+    <div><span class="muted small">MCV ปกติ</span><b class="n">80–100 fL</b><span class="small">ต่ำ = microcytic → IDA, thalassemia</span></div>
+    <div><span class="muted small">MCH · MCHC</span><b class="n">27–34 · 31–35</b><span class="small">MCHC &gt; 35 g/dL นึกถึง HS</span></div>
+    <div><span class="muted small">RDW ปกติ</span><b class="n">11.5–14.5%</b><span class="small">β-thal trait ≈ 16.3% · IDA ≈ 20.6% (สูงกว่า)</span></div>
+    <div><span class="muted small">Reticulocyte ปกติ</span><b class="n">1–2%</b><span class="small">&gt; 2% ใน hemolysis และเสียเลือดเฉียบพลัน</span></div>
+  </div>
+  <div class="grid2">
+    <div class="panel">
+      <h4>Corrected retic และ RPI</h4>
+      <div class="formula">Corrected retic = Retic% × (Hct ผู้ป่วย / 45)</div>
+      <div class="formula">RPI = Corrected retic ÷ maturation time (วัน)</div>
+      <div class="tbl narrow"><table><thead><tr><th>Hct %</th><th class="n">Maturation (วัน)</th></tr></thead><tbody>
+        <tr><td>≥ 40</td><td class="n">1.0</td></tr><tr><td>30–40</td><td class="n">1.5</td></tr><tr><td>20–30</td><td class="n">2.0</td></tr><tr><td>&lt; 20</td><td class="n">2.5</td></tr></tbody></table></div>
+      <p class="small muted">RPI ปกติ 0.5–1.5 · ตัวอย่างต้นฉบับ: retic 6%, Hct 15% → corrected 2%</p>
+    </div>
+    <div class="tool" id="rpiTool">
+      <h4>คำนวณ RPI <small>ตารางที่ 4</small></h4>
+      <div class="row">
+        <div class="field"><label for="t_ret">Reticulocyte %</label><input id="t_ret" type="number" inputmode="decimal" step="0.1" value="6"></div>
+        <div class="field"><label for="t_hct">Hct %</label><input id="t_hct" type="number" inputmode="decimal" step="0.1" value="15"></div>
+      </div>
+      <div class="out" id="t_out"></div>
+      <p class="small muted">ใช้ Hct ปกติ 45% ตามต้นฉบับ (เด็กเล็กใช้ค่าปกติตามอายุ)</p>
+    </div>
+  </div>
+  <div class="panel small">
+    <ul>
+      <li><b>Smear</b> เป็น crucial diagnostic aid: hypochromia เมื่อ central pallor &gt; 1/3 ของเซลล์ (IDA, thalassemia) · inclusion bodies พบใน Hb H disease</li>
+      <li><b>Coombs' test</b> ส่งเมื่อสงสัย hemolysis (ซีด เหลือง ม้ามโต) หรือ RPI &gt; 2% · DAT บวกใน autoantibody (AIHA) · IAT บวกเมื่อมี alloimmunization จากการรับเลือด</li>
+      <li><b>ตรวจไขกระดูก</b> เมื่อ pancytopenia หรือ refractory anemia (aplastic, acute leukemia, lymphoma/neuroblastoma infiltration)</li>
+      <li><b>หาสาเหตุร่วม</b> เช่น BUN/Cr ในไตวาย, thyroid function ในสงสัย hypothyroidism</li>
+    </ul>
+  </div>
+
+  <div class="legend"><span><i style="background:var(--azure-soft);border:1px solid var(--azure)"></i>จุดตัดสินใจ</span><span><i style="background:var(--eosin-soft)"></i>การวินิจฉัย</span></div>
+  <div class="grid2">
+    <div class="tree-wrap">
+      <h4>แผนภูมิที่ 1 · จากประวัติและตรวจร่างกาย</h4>
+      <ul class="tree"><li><span class="nd q">Anemia</span>
+        <ul>
+          <li><span class="nd q">Acute</span>
+            <ul><li><span class="nd dx">Acute bleeding</span></li><li><span class="nd dx">Acute hemolysis <small>· ปัสสาวะสีน้ำตาล/เข้ม</small></span></li></ul></li>
+          <li><span class="nd q">Chronic</span>
+            <ul>
+              <li><span class="nd">เหลืองเล็กน้อย ± ม้ามโต</span><ul><li><span class="nd dx">Chronic hemolysis</span></li></ul></li>
+              <li><span class="nd">ไม่เหลือง ปัสสาวะปกติ → under-production</span>
+                <ul>
+                  <li><span class="nd">ไข้ + petechiae, ไม่มี organomegaly</span><ul><li><span class="nd dx">Aplastic anemia</span></li></ul></li>
+                  <li><span class="nd">ไข้ + petechiae + organomegaly</span><ul><li><span class="nd dx">Malignancy, disseminated infection, marrow infiltration, MDS</span></li></ul></li>
+                  <li><span class="nd">โภชนาการไม่ดี / chronic blood loss / integument change</span><ul><li><span class="nd dx">IDA</span></li></ul></li>
+                  <li><span class="nd">ยา, malabsorption, integument change</span><ul><li><span class="nd dx">Megaloblastic anemia</span></li></ul></li>
+                  <li><span class="nd">Autoimmune, chronic infection, ยา</span><ul><li><span class="nd dx">PRCA, anemia of chronic disorder</span></li></ul></li>
+                  <li><span class="nd">โรคเมตาบอลิก: ไตวาย, endocrine</span><ul><li><span class="nd dx">EPO production ลดลง</span></li></ul></li>
+                </ul></li>
+            </ul></li>
+        </ul></li></ul>
+    </div>
+    <div class="tree-wrap">
+      <h4>แผนภูมิที่ 2 · MCV → RPI → Coombs</h4>
+      <ul class="tree"><li><span class="nd q">MCV</span>
+        <ul>
+          <li><span class="nd q">&lt; 80 fL</span><ul><li><span class="nd dx">IDA · thalassemia · lead poisoning · chronic anemia</span></li></ul></li>
+          <li><span class="nd q">&gt; 100 fL</span><ul><li><span class="nd dx">Folate · B12 deficiency · liver disease</span></li></ul></li>
+          <li><span class="nd q">80–100 fL → RPI</span>
+            <ul>
+              <li><span class="nd q">RPI &gt; 2% → Coombs</span>
+                <ul>
+                  <li><span class="nd">Negative</span><ul><li><span class="nd dx">Thalassemia · G6PD · HS · HE · cardiac prosthesis · DIC · HUS</span></li></ul></li>
+                  <li><span class="nd">Positive</span><ul><li><span class="nd dx">AIHA · ABO/Rh incompatibility (newborn)</span></li></ul></li>
+                </ul></li>
+              <li><span class="nd q">RPI &lt; 2% → WBC และ platelet</span>
+                <ul>
+                  <li><span class="nd">สูง</span><ul><li><span class="nd dx">Infection</span></li></ul></li>
+                  <li><span class="nd">ปกติ</span><ul><li><span class="nd dx">PRCA · TEC of childhood · multiple myeloma (ผู้ใหญ่)</span></li></ul></li>
+                  <li><span class="nd">ต่ำ → bone marrow aspiration</span><ul><li><span class="nd dx">Leukemia · lymphoma · neuroblastoma · aplastic · MDS · myelophthisis</span></li></ul></li>
+                </ul></li>
+            </ul></li>
+        </ul></li></ul>
+    </div>
+  </div>
+
+  <h3>ตารางที่ 4 · รูปร่างเม็ดเลือดแดงจำเพาะ</h3>
+  <div class="smear">
+    <div><b>Spherocytes</b>HS · ABO incompatibility · AIHA · PK deficiency</div>
+    <div><b>Elliptocytes</b>HE · IDA · thalassemia major</div>
+    <div><b>Target cells</b>Thalassemia · Hb E · liver disease · abetalipoproteinemia</div>
+    <div><b>Blister/bite cells</b>G6PD deficiency (ช่วง hemolysis)</div>
+    <div><b>Schistocytes</b>DIC · HUS · prosthetic valve · CTD (SLE) · Kasabach-Merritt · purpura fulminans · burns · malignant HT · cirrhosis</div>
+    <div><b>Acanthocytes</b>Liver disease · DIC · vitamin E deficiency · abetalipoproteinemia</div>
+    <div><b>Echinocytes (burr)</b>Artifact · renal failure · dehydration · liver disease · PK deficiency</div>
+    <div><b>Basophilic stippling</b>Lead · hemolytic anemia · P5'N deficiency · Hb Constant Spring</div>
+    <div><b>Howell-Jolly bodies</b>Post-splenectomy · asplenia</div>
+    <div><b>Nucleated RBC</b>Post-splenectomy · severe hemolysis · leukoerythroblastic reaction</div>
+    <div><b>Teardrop cells</b>Thalassemia · myeloproliferative · leukoerythroblastic</div>
+    <div><b>Theta cells</b>Southeast Asian ovalocytosis</div>
+  </div>
+</section>
+
+<!-- ================= CH 2 ================= -->
+<section id="ch2">
+  <div class="chap-head"><div class="chap-num">2</div><div><div class="eyebrow">บทที่ 2</div><h2>Anemia in newborn</h2></div></div>
+  <div class="prose">
+    <p>วินิจฉัยเมื่อ Hb &lt; mean − 2 SD ของอายุครรภ์ หรือในทารกครบกำหนด <b>Hb จากหลอดเลือดดำ &lt; 13 g/dL</b> สาเหตุแบ่ง 3 กลุ่มเหมือนผู้ใหญ่ แต่มีสาเหตุเฉพาะช่วงนี้ เช่น feto-maternal hemorrhage และ blood group incompatibility ส่วน IDA พบน้อยกว่าเด็กโต</p>
+  </div>
+  <div class="key">
+    <div><span class="muted small">Hb F เมื่อแรกเกิด</span><b class="n">60–80%</b><span class="small">Hb A 20–40% · Hb A₂ เริ่มสร้าง GA 34–35 wk</span></div>
+    <div><span class="muted small">อายุเม็ดเลือดแดง</span><b class="n">60–70 วัน</b><span class="small">ทารกก่อนกำหนด 35–50 วัน (ผู้ใหญ่ 120)</span></div>
+    <div><span class="muted small">ปริมาตรเลือด</span><b class="n">80–90 mL/kg</b><span class="small">เสียเฉียบพลัน &gt; 20% → BP ต่ำ ชีพจรเร็ว</span></div>
+    <div><span class="muted small">Physiologic nadir</span><b class="n">8–12 สัปดาห์</b><span class="small">Hb 9.5–11 g/dL (ครบกำหนด)</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 3 · ค่าปกติตามอายุครรภ์</caption>
+      <thead><tr><th>GA (wk)</th><th class="n">Hb g/dL</th><th class="n">Hct %</th><th class="n">MCV fL</th><th class="n">Retic %</th></tr></thead>
+      <tbody>
+        <tr><td>18–21</td><td class="n">11.69±1.27</td><td class="n">37.3±4.32</td><td class="n">131.1±11.0</td><td class="n">–</td></tr>
+        <tr><td>22–25</td><td class="n">12.2±1.6</td><td class="n">38.59±3.94</td><td class="n">125.1±7.8</td><td class="n">–</td></tr>
+        <tr><td>26–29</td><td class="n">12.91±1.38</td><td class="n">40.88±4.4</td><td class="n">118.5±8.0</td><td class="n">–</td></tr>
+        <tr><td>&gt; 30</td><td class="n">13.64±2.21</td><td class="n">43.55±7.2</td><td class="n">114.4±9.3</td><td class="n">–</td></tr>
+        <tr><td>Term cord</td><td class="n">15.3±1.3</td><td class="n">49±5</td><td class="n">112±6</td><td class="n">3.63±1.11</td></tr>
+      </tbody></table></div>
+    <div class="panel small">
+      <h4>Reticulocyte ในทารก</h4>
+      <p>ปกติ 3–7% ตอนแรกเกิด ลดเหลือ 0–1% เมื่ออายุ 2 สัปดาห์</p>
+      <ul>
+        <li><b>ต่ำ</b> → สร้างน้อย: parvovirus B19, ไขกระดูกฝ่อ, marrow infiltration</li>
+        <li><b>สูง</b> → เสียเลือด หรือ hemolysis ที่ไขกระดูกยังทำงานปกติ</li>
+        <li>MCV ต่ำ → α-thalassemia หรือ IDA จาก chronic intrauterine blood loss</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 1 · สาเหตุโลหิตจางในทารกแรกเกิด</caption>
+      <thead><tr><th style="width:160px">กลุ่ม</th><th>สาเหตุ</th></tr></thead>
+      <tbody>
+        <tr><td><b>เสียเลือด</b></td><td>ในครรภ์/ขณะคลอด: feto-maternal, feto-placental, twin-twin transfusion, ความผิดปกติของสายสะดือ/รก · หลังคลอด: cephalhematoma, subgaleal, ICH, อวัยวะภายในแตก, pulmonary hemorrhage, เจาะเลือดบ่อย</td></tr>
+        <tr><td><b>สร้างน้อย</b></td><td>ติดเชื้อ (parvovirus B19, HIV, syphilis, rubella, sepsis) · โรคไขกระดูก (Diamond-Blackfan, CDA, congenital leukemia) · ขาดสารอาหาร (เหล็ก, folate, B12, โปรตีน)</td></tr>
+        <tr><td><b>ทำลายมากขึ้น</b></td><td>Immune: Rh(D), ABO, minor group, maternal autoimmune, ยา (penicillin, valproic acid, cephalothin) · Hb H disease · G6PD, PK · HS, HE, HPP · sepsis, TORCH, vitamin E deficiency</td></tr>
+      </tbody></table></div>
+
+  <h3>ประเด็นรายโรค</h3>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>เสียเลือด</h4>
+      <ul>
+        <li><b>Feto-maternal hemorrhage</b> พบ 50–75% ของการตั้งครรภ์ แต่มักน้อย ส่วนใหญ่ไตรมาส 3 · เรื้อรัง → hypochromic microcytic · วินิจฉัยด้วย <b>Kleihauer-Betke (acid elution)</b> จากเลือดแม่โดยเร็วหลังคลอด ผลบวกลวงถ้าแม่มี Hb F สูง (thalassemia, HPFH)</li>
+        <li><b>Twin-twin transfusion</b> 10–15% ของ monochorionic twin · donor เล็กกว่า &gt; 20%, ซีด, oligohydramnios · นึกถึงเมื่อ Hb แฝดต่างกัน &gt; 5 g/dL</li>
+        <li>Cord compression (tight nuchal cord), cord rupture/vasa previa, placenta previa, abruptio</li>
+        <li>บันทึกปริมาณเลือดที่เจาะทุกครั้งและเจาะเท่าที่จำเป็น</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>สร้างน้อย</h4>
+      <ul>
+        <li><b>Diamond-Blackfan</b>: ribosome defect, AD/sporadic · 25% ซีดตั้งแต่เกิด · macrocytosis, retic ต่ำมาก · 30% มีความผิดปกติร่างกาย (microcephaly, cleft palate, web neck, thumb)</li>
+        <li><b>Parvovirus B19</b>: แม่ติดเชื้อปฐมภูมิ ถ่ายทอด ~1/3 → hydrops fetalis หรือซีดมากแรกเกิด</li>
+        <li>ขาดสารอาหารพบน้อย ยกเว้นเสียเลือดเรื้อรังในครรภ์</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 2 · HDFN จาก Rh และ ABO incompatibility</caption>
+      <thead><tr><th></th><th>Rh</th><th>ABO</th></tr></thead>
+      <tbody>
+        <tr><td>อุบัติการณ์</td><td>ไม่บ่อย (Rh-neg ในจีน/ญี่ปุ่น &lt; 1%)</td><td>บ่อย · เกิดได้ตั้งแต่ครรภ์แรก</td></tr>
+        <tr><td>ซีด · เหลือง</td><td>มาก · มาก</td><td>น้อย · น้อยถึงปานกลาง</td></tr>
+        <tr><td>Hydrops · ตับม้ามโต</td><td>พบบ่อย · มาก</td><td>ไม่บ่อย · เล็กน้อย</td></tr>
+        <tr><td>หมู่เลือดแม่ / ลูก</td><td>Rh(−) / Rh(+)</td><td>O / A หรือ B</td></tr>
+        <tr><td>DAT · IAT</td><td>Positive · Positive</td><td>มักลบหรือบวกอ่อน · มักบวก</td></tr>
+        <tr><td>Smear</td><td>Nucleated RBC (erythroblastosis fetalis)</td><td>Spherocytes, polychromasia</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>กลไกที่ต้องเข้าใจ</h4>
+      <ul>
+        <li>Rh: ครรภ์แรกสร้าง IgM (ไม่ผ่านรก) → ครรภ์ต่อมา IgG ปริมาณมาก (anamnestic)</li>
+        <li>ABO: anti-A/B เป็น naturally occurring ส่วนใหญ่ IgM · antigen A/B มีที่เซลล์อื่นด้วยและมีน้อยบน RBC ทารก จึงรุนแรงน้อย</li>
+        <li>Minor antibody (anti-c, E, K, Jkᵃ) มักพบในแม่ที่รับเลือดบ่อย เช่นแม่เป็นธาลัสซีเมีย</li>
+        <li>ABO HDFN ที่เป็น hydrops ให้มองหาสาเหตุร่วม เช่น G6PD หรือ HS</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>Hemoglobin · enzyme · membrane</h4>
+      <ul>
+        <li>Hb Bart's (--/--) → hydrops · <b>Hb H</b>: Hb 11–14, MCV 75–85, Hb analysis เป็น FA Bart's (Bart's 20–40%) · inclusion test ไม่ชัดในทารก ตรวจซ้ำเมื่อ &gt; 6–12 เดือน</li>
+        <li>Homozygous Hb CS อาจ hydrops (basophilic stippling) · β-thal/HbE disease ไม่ซีดแรกเกิด เริ่มซีด 6–12 เดือน</li>
+        <li>G6PD ชายไทย 10–16% (Viangchan, Mahidol) เสี่ยงตัวเหลือง · PK: AR, echinocyte</li>
+        <li>HS ~ครึ่งหนึ่งซีด/เหลืองแรกเกิด: smear ทารก+พ่อแม่, OF test, EMA · HE ช่วงทารกอาจเป็น infantile poikilocytosis ตรวจ smear ซ้ำ 4–6 เดือน · HPP (AR) รุนแรง ในไทยสัมพันธ์ SPTB Providence, Chiang Mai, Buffalo</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel small">
+    <h4>Anemia of prematurity</h4>
+    <p>EPO ต่ำ (ตับเป็นแหล่งสร้าง EPO ก่อน 40 สัปดาห์และไวต่อ hypoxia น้อยกว่าไต) ร่วมกับปริมาตรเลือดน้อย เจาะเลือดบ่อย RBC อายุสั้น และวิตามิน E ต่ำ · ป้องกัน: ลดการเจาะเลือด, <b>delayed cord clamping</b> (เพิ่มปริมาตรเลือด 10–15%), พิจารณาให้วิตามิน E · รักษา: ให้ PRC หรือ EPO ร่วมกับธาตุเหล็ก</p>
+  </div>
+
+  <div class="tree-wrap">
+    <h4>แผนภูมิที่ 1 · แยกสาเหตุในทารก <span class="r s2">++ · ง1</span></h4>
+    <p class="small muted" style="margin-bottom:8px">ตรวจเบื้องต้น: CBC, smear, indices, reticulocyte, total และ indirect bilirubin (เลือกทำเป็นขั้นเพื่อจำกัดปริมาณเลือด)</p>
+    <ul class="tree"><li><span class="nd q">Neonatal anemia → reticulocyte</span>
+      <ul>
+        <li><span class="nd q">ต่ำ</span><ul><li><span class="nd dx">Congenital aplastic/hypoplastic · acquired aplastic · bone marrow replacement</span></li></ul></li>
+        <li><span class="nd q">ปกติหรือสูง → bilirubin</span>
+          <ul>
+            <li><span class="nd q">ไม่มี hyperbilirubinemia → blood loss → acid elution test</span>
+              <ul><li><span class="nd">บวก</span><ul><li><span class="nd dx">Feto-maternal blood loss</span></li></ul></li>
+                  <li><span class="nd">ลบ</span><ul><li><span class="nd dx">External หรือ internal blood loss</span></li></ul></li></ul></li>
+            <li><span class="nd q">Hyperbilirubinemia → hemolytic → DAT และ IAT</span>
+              <ul>
+                <li><span class="nd">บวก</span><ul><li><span class="nd dx">Immune hemolytic anemia</span></li></ul></li>
+                <li><span class="nd">ลบ → smear</span>
+                  <ul>
+                    <li><span class="nd">Spherocytes/elliptocytes · EMA</span><ul><li><span class="nd dx">Membrane disorders (HS, HE, HPP)</span></li></ul></li>
+                    <li><span class="nd">ปกติ, bite/blister (G6PD), echinocyte (PK)</span><ul><li><span class="nd dx">Enzyme deficiencies</span></li></ul></li>
+                    <li><span class="nd">MCV ต่ำ, hypochromia, aniso-poikilocytosis</span><ul><li><span class="nd dx">α-thalassemia · chronic intrauterine blood loss</span></li></ul></li>
+                    <li><span class="nd">Schistocytes</span><ul><li><span class="nd dx">Microangiopathic hemolytic anemia</span></li></ul></li>
+                  </ul></li>
+              </ul></li>
+          </ul></li>
+      </ul></li></ul>
+  </div>
+
+  <h3>การให้เลือดในทารก <span class="r s2">++ · ง1</span></h3>
+  <p class="small muted" style="max-width:72ch">ข้อบ่งชี้ขึ้นกับเสียเลือดเฉียบพลันหรือเรื้อรัง และอาการขาดออกซิเจน: ชีพจรเร็ว metabolic acidosis น้ำหนักขึ้นช้า apnea ความต้องการออกซิเจน/เครื่องช่วยหายใจ</p>
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 4 · BCSH 2004 (แรกเกิด–4 เดือน) และ American Red Cross 2007</caption>
+      <thead><tr><th>สถานการณ์</th><th>BCSH 2004</th><th>ARC 2007</th></tr></thead>
+      <tbody>
+        <tr><td>ซีดใน 24 ชม.แรก</td><td class="n">Hb &lt; 12 / Hct &lt; 36</td><td>–</td></tr>
+        <tr><td>Intensive care, FiO₂ &gt; 0.35</td><td class="n">Hb &lt; 12 / Hct &lt; 36</td><td class="n">Hct 40–45</td></tr>
+        <tr><td>ใช้ O₂/CPAP ระยะยาว</td><td class="n">Hb &lt; 11</td><td class="n">Hct 30–35</td></tr>
+        <tr><td>เข้ารับผ่าตัดใหญ่</td><td>–</td><td class="n">Hct 30–35</td></tr>
+        <tr><td>ซีดช่วงหลัง อาการคงที่</td><td class="n">Hb &lt; 7</td><td class="n">Hct 20–25 <span class="muted">(มีอาการ)</span></td></tr>
+      </tbody></table></div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 5 · BCSH 2016 ทารก GA &lt; 32 สัปดาห์ (restrictive)</caption>
+      <thead><tr><th>อายุหลังเกิด</th><th class="n">Ventilator</th><th class="n">O₂ / NIPPV</th><th class="n">ไม่ใช้ O₂</th></tr></thead>
+      <tbody>
+        <tr><td>24 ชม.แรก</td><td class="n">&lt; 12</td><td class="n">&lt; 12</td><td class="n">&lt; 10</td></tr>
+        <tr><td>1–7 วัน</td><td class="n">&lt; 12</td><td class="n">&lt; 10</td><td class="n">&lt; 10</td></tr>
+        <tr><td>8–14 วัน</td><td class="n">&lt; 10</td><td class="n">&lt; 9.5</td><td class="n">&lt; 7.5*</td></tr>
+        <tr><td>≥ 15 วัน</td><td class="n">&lt; 10</td><td class="n">&lt; 8.5</td><td class="n">&lt; 7.5*</td></tr>
+      </tbody></table></div>
+  </div>
+  <p class="small muted">*พิจารณาใช้ 8.5 g/dL ตามอาการ · ผลต่อ NEC ยังต้องการข้อมูลเพิ่ม</p>
+  <div class="callout az small">
+    <h4>ชนิดผลิตภัณฑ์เลือด</h4>
+    <p><b>Leukocyte-depleted RBC</b> ลด FNHTR, HLA alloimmunization และการติดเชื้อ CMV · <b>Irradiated</b> ป้องกัน TA-GVHD เมื่อ: intrauterine transfusion, exchange transfusion หรือ top-up ในทารกที่เคยรับเลือดในครรภ์, ผู้บริจาคเป็นญาติสายตรงหรือ HLA-matched, สงสัยภูมิคุ้มกันบกพร่อง</p>
+  </div>
+</section>
+
+<!-- ================= CH 3 ================= -->
+<section id="ch3">
+  <div class="chap-head"><div class="chap-num">3</div><div><div class="eyebrow">บทที่ 3</div><h2>Anemia in the elderly</h2></div></div>
+  <div class="prose">
+    <p>ความชุก 10–40% สูงกว่าในสถานพยาบาล สัมพันธ์กับอัตราตายที่สูงขึ้นใน ACS และหัวใจล้มเหลว คุณภาพชีวิตแย่ลง และเสี่ยง stroke · ยังใช้เกณฑ์ WHO (ชาย &lt; 13, หญิง &lt; 12) แม้มีข้อเสนอใหม่ เช่น Beutler: ชายผิวขาว &lt; 13.2, หญิงผิวขาว &lt; 12.2, ชายผิวดำ &lt; 12.7, หญิงผิวดำ &lt; 11.5</p>
+  </div>
+  <div class="key">
+    <div><span class="muted small">ขาดสารอาหาร/เสียเลือด</span><b class="n">34%</b><span class="small">เหล็ก ± folate/B12 20% · folate/B12 14%</span></div>
+    <div><span class="muted small">โรคเรื้อรัง</span><b class="n">32%</b><span class="small">CKD 8% · ACD 20% · ทั้งสอง 4%</span></div>
+    <div><span class="muted small">ไม่ทราบสาเหตุ</span><b class="n">34%</b><span class="small">NHANES III · ในบทอื่นระบุ 30–40%</span></div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>IDA ในผู้สูงอายุ: ใช้ ferritin &lt; 45 ng/mL</h4>
+      <p>Ferritin สูงขึ้นตามอายุ จึงใช้เกณฑ์สูงกว่าผู้ใหญ่ทั่วไป</p>
+      <div class="tbl narrow"><table><thead><tr><th>Ferritin (ng/mL)</th><th class="n">LR ของ IDA</th></tr></thead><tbody>
+        <tr><td>18–45</td><td class="n">3.12</td></tr><tr><td>45–100</td><td class="n">0.46</td></tr><tr><td>&gt; 100</td><td class="n">0.13</td></tr></tbody></table></div>
+      <ul>
+        <li>สาเหตุ: เลือดออกทางเดินอาหาร (แผล, มะเร็งลำไส้ใหญ่, esophagitis, เนื้องอก) และดูดซึมลด (autoimmune gastritis, H. pylori, ยาลดกรด)</li>
+        <li>เหล็กประมาณ <b>200 mg/วัน</b> → Hb ขึ้นใน 4–6 สัปดาห์ ให้จน Hb ปกติแล้วต่ออีก <b>~6 เดือน</b> · IV iron ถ้าดูดซึมไม่ได้ · หาและรักษาสาเหตุไปพร้อมกัน</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>B12 และ folate</h4>
+      <ul>
+        <li>B12 ต่ำพบได้ 10–15% โดยไม่ซีด → วินิจฉัย B12 deficiency anemia ต้องมี <b>ซีด + B12 ต่ำ</b></li>
+        <li>สาเหตุส่วนใหญ่เป็นการดูดซึม (anti-IF/parietal cell) · ร่างกายสะสม ~2,500 mcg จึงใช้หลายปี</li>
+        <li>MCV อาจไม่สูงถ้ามี IDA/thalassemia ร่วม</li>
+        <li>รักษา: B12 ฉีด <b>1,000 mcg สัปดาห์ละครั้ง 2–3 เดือน</b> แล้วเดือนละครั้ง · ซีดหายใน ~8 สัปดาห์</li>
+        <li>Folate deficiency เดี่ยวพบน้อย มักสัมพันธ์กับสุราเรื้อรัง</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>โรคเรื้อรังและกลไกของ unexplained anemia</h4>
+      <ul>
+        <li>CKD: atherosclerosis ของหลอดเลือดไต → EPO ลด · CrCl ≤ 60 เสี่ยงซีดมากกว่า &gt; 90</li>
+        <li>ACD: CRP, IL-6, TNF-α กดไขกระดูกและลดการตอบสนองต่อ EPO</li>
+        <li>Aging hematopoiesis: mutant clones → ineffective erythropoiesis · <b>17% อาจเป็น occult MDS</b></li>
+        <li>EPO homeostasis เปลี่ยน ("inflammaging") · testosterone ต่ำในชายเพิ่มความเสี่ยง และการให้ทดแทนช่วยได้</li>
+        <li><b>ยังไม่แนะนำ ESA</b> ใน unexplained anemia ของผู้สูงอายุ</li>
+      </ul>
+    </div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 3 · ลักษณะ unexplained anemia</caption>
+      <tbody>
+        <tr><td>Hb</td><td class="n">10.5–12 g/dL</td></tr>
+        <tr><td>Reticulocyte index</td><td>ต่ำ</td></tr>
+        <tr><td>MCV</td><td class="n">80–95 fL</td></tr>
+        <tr><td>WBC, platelet</td><td>ปกติ</td></tr>
+        <tr><td>Smear</td><td>ไม่มี dysplastic features</td></tr>
+        <tr><td>SI · TIBC · TSAT</td><td>ต่ำเล็กน้อยหรือปกติ · ปกติ · ต่ำเล็กน้อยหรือปกติ</td></tr>
+        <tr><td>B12, folate, TSH, ESR/CRP</td><td>ปกติ</td></tr>
+        <tr><td>Serum EPO</td><td>ไม่สูงขึ้น</td></tr>
+        <tr><td>CrCl</td><td class="n">60–90 mL/min</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="tree-wrap">
+    <h4>แผนภูมิที่ 1 · หาสาเหตุโลหิตจางในผู้สูงอายุ</h4>
+    <ul class="tree"><li><span class="nd q">ดู smear และ MCV · smear ผิดปกติ (dysplasia)?</span>
+      <ul>
+        <li><span class="nd">ใช่</span><ul><li><span class="nd ax">เจาะไขกระดูก + cytogenetics → รักษาตามข้อบ่งชี้</span></li></ul></li>
+        <li><span class="nd q">ไม่ · MCV ต่ำ</span>
+          <ul><li><span class="nd">ขาดเหล็ก/เสียเลือด · ธาลัสซีเมีย · ACD (ต่ำเล็กน้อย) → ทบทวน CBC เก่า, iron studies</span>
+            <ul><li><span class="nd">เหล็กไม่ปกติ</span><ul><li><span class="nd ax">ให้เหล็ก + หาสาเหตุ</span></li></ul></li>
+                <li><span class="nd">เหล็กปกติ</span><ul><li><span class="nd ax">Hb electrophoresis · creatinine/serum EPO</span></li></ul></li></ul></li></ul></li>
+        <li><span class="nd q">ไม่ · MCV ปกติ</span>
+          <ul><li><span class="nd">ACD · CKD · ขาดเหล็กระยะแรก → creatinine, serum EPO</span>
+            <ul><li><span class="nd ax">Cr สูงหรือ EPO ต่ำกว่าคาด → พิจารณา EPO</span></li>
+                <li><span class="nd ax">EPO สูง → รักษาประคับประคอง</span></li></ul></li></ul></li>
+        <li><span class="nd q">ไม่ · MCV สูง</span>
+          <ul><li><span class="nd">B12/folate · ยา/สุรา · โรคตับ/ไทรอยด์ · MDS → ถ้าไม่มีประวัติชัด ตรวจ B12, folate, homocysteine</span>
+            <ul><li><span class="nd">ผิดปกติ</span><ul><li><span class="nd ax">ให้วิตามินทดแทน</span></li></ul></li>
+                <li><span class="nd">ปกติ</span><ul><li><span class="nd ax">เจาะไขกระดูก + cytogenetics</span></li></ul></li></ul></li></ul></li>
+      </ul></li></ul>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 4 · การตรวจในผู้สูงอายุที่ซีด (ง1)</caption>
+      <thead><tr><th>ทำทุกราย <span class="r s2">++</span></th><th>เลือกทำบางราย <span class="r s0">+/-</span></th></tr></thead>
+      <tbody><tr>
+        <td>ประวัติ · ตรวจร่างกาย · CBC · reticulocyte · smear · iron studies · renal function · liver function</td>
+        <td>Bone marrow · cytogenetics · B12 · RBC/serum folate · serum EPO · TFT · testosterone (ชาย) · inflammation markers</td>
+      </tr></tbody></table></div>
+</section>
+
+<!-- ================= CH 4 ================= -->
+<section id="ch4">
+  <div class="chap-head"><div class="chap-num">4</div><div><div class="eyebrow">บทที่ 4</div><h2>Iron deficiency anemia</h2></div></div>
+  <div class="prose">
+    <p>พบ 40–60% ในเด็ก 6 เดือน–2 ปีในประเทศกำลังพัฒนา ขาดเหล็กยังทำให้ภูมิคุ้มกันผิดปกติ การเจริญเติบโตผิดปกติ และ neurocognitive บกพร่องที่บางส่วนไม่กลับคืน · ดูดซึมที่ลำไส้เล็กส่วนต้นราว 10% ของเหล็กในอาหาร จึงต้องได้ 8–10 mg/วัน · เหล็กในนมแม่ดูดซึมดีกว่านมวัว 2–3 เท่า · Hepcidin ลดเมื่อ hypoxia, erythropoiesis เพิ่ม และขาดเหล็ก แต่เพิ่มเมื่อมีการอักเสบ</p>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>สาเหตุ 7 กลุ่ม</h4>
+      <ol>
+        <li>ความต้องการเพิ่ม: ทารก วัยรุ่น เริ่มมีประจำเดือน ตั้งครรภ์</li>
+        <li>สิ่งแวดล้อม/พฤติกรรม: ทุพโภชนาการ อาหารไม่เหมาะวัย มังสวิรัติ</li>
+        <li>ดูดซึมลด: gastrectomy, duodenal bypass, bariatric, H. pylori, celiac, atrophic gastritis, IBD</li>
+        <li>เสียเลือดเรื้อรัง: esophagitis, erosive gastritis, PU, diverticulitis, IBD, angiodysplasia, ริดสีดวง, พยาธิปากขอ, เนื้องอก/มะเร็งลำไส้ · ประจำเดือนมาก · intravascular hemolysis (PNH, ลิ้นหัวใจ, MAHA) · HHT, schistosomiasis</li>
+        <li>ยา: steroid, aspirin, NSAIDs, PPI</li>
+        <li>พันธุกรรม: IRIDA</li>
+        <li>Iron-restricted erythropoiesis: ESA, ACD, CKD</li>
+      </ol>
+    </div>
+    <div class="panel small">
+      <h4>อาการ</h4>
+      <p>ซีด อ่อนเพลีย ปวดศีรษะ tinnitus ใจสั่น DOE dysphagia · เรื้อรัง: koilonychia, cheilosis, angular stomatitis, glossitis, รับรสผิด, esophageal/pharyngeal web, <b>pica</b> (ดิน ดินสอพอง) · รุนแรง: CHF, tachycardia, หัวใจโต, hemic murmur, wide pulse pressure</p>
+      <h4 style="margin-top:6px">เกณฑ์ซีด (CDC/WHO)</h4>
+      <div class="tbl narrow"><table><tbody>
+        <tr><td>6 เดือน – &lt; 5 ปี</td><td class="n">Hb &lt; 11</td></tr>
+        <tr><td>5 – &lt; 12 ปี</td><td class="n">Hb &lt; 11.5</td></tr>
+        <tr><td>หญิงวัยมีประจำเดือน</td><td class="n">Hb &lt; 12</td></tr>
+        <tr><td>ชาย</td><td class="n">Hb &lt; 13</td></tr></tbody></table></div>
+    </div>
+  </div>
+  <h3>การวินิจฉัยขาดเหล็ก</h3>
+  <div class="key">
+    <div><span class="muted small">Indices</span><b class="n">MCV &lt; 80</b><span class="small">MCH &lt; 27 pg · MCHC &lt; 32 · อาจเกล็ดเลือดสูง · pencil cells</span></div>
+    <div><span class="muted small">Reticulocyte</span><b class="n">&lt; 1%</b><span class="small">สร้างไม่ได้เพราะขาดวัตถุดิบ</span></div>
+    <div><span class="muted small">Ferritin (ทุกวัยตาม CPG)</span><b class="n">&lt; 10 ng/mL</b><span class="small">ไวที่สุด แต่เป็น acute phase reactant → ตรวจ CRP คู่ ใช้ได้เมื่อ CRP ไม่สูง</span></div>
+    <div><span class="muted small">Transferrin saturation</span><b class="n">&lt; 16%</b><span class="small">TS = SI ÷ TIBC × 100</span></div>
+  </div>
+  <div class="callout az small">
+    <h4>Therapeutic trial ใช้ได้จริงในที่ที่ตรวจเหล็กไม่ได้</h4>
+    <p>ให้เหล็ก 4–6 mg/kg/วัน (เด็ก) แบ่ง 1–3 เวลา ประเมินใน 1 เดือน · <b>Hb เพิ่ม &gt; 1–2 g/dL</b> ช่วยยืนยัน IDA โดยไม่ต้องส่งต่อ ยกเว้นไม่ตอบสนอง ใช้ร่วมกับ smear ที่ microcytic hypochromic</p>
+  </div>
+  <h3>การรักษา</h3>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>1. เหล็กชนิดกิน</h4>
+      <ul>
+        <li>FeSO₄, ferrous gluconate หรือ iron polymaltose complex</li>
+        <li><b>เด็ก 4–6 mg/kg/วัน</b> · <b>ผู้ใหญ่ elemental iron 100–200 mg/วัน</b> แบ่ง 1–3 ครั้ง</li>
+        <li>ให้จน Hb ปกติแล้ว<b>ต่ออีก 8 สัปดาห์</b> เพื่อเติมคลัง · ตรวจ Hb เมื่อครบและอีก 6 เดือน พร้อมรักษาสาเหตุและโภชนาการ</li>
+        <li>ท้องผูก → ดื่มน้ำ เพิ่มใยอาหาร · แน่นท้อง → กินพร้อมอาหาร (ดูดซึมลดเล็กน้อย) · เด็กฟันดำ → หยอดด้านหลังช่องปากหรือเช็ดฟัน</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>2. ให้เลือดเฉพาะซีดรุนแรงมาก</h4>
+      <ul>
+        <li>เช่น Hb &lt; 3–4 g/dL · ผู้ป่วยปรับตัวกับซีดเรื้อรังได้ดี แม้เริ่มมีหัวใจวาย การพักร่วมกับยาขับปัสสาวะมักดีขึ้นทันที</li>
+        <li>ถ้าจำเป็น <b>PRC 2–3 mL/kg ช้าๆ</b> + ยาขับปัสสาวะ + เหล็ก ระวัง pulmonary edema</li>
+      </ul>
+      <h4>3. เหล็กชนิดฉีด</h4>
+      <ul>
+        <li>กินไม่ได้ · ดูดซึมไม่ได้ (gastrectomy, duodenal bypass, H. pylori, celiac, atrophic gastritis, IBD, IRIDA)</li>
+        <li>โรคที่เหล็กกินล้มเหลว: anemia of CKD, มะเร็งที่ได้เคมีบำบัด/ESA, CKD ที่ได้ ESA</li>
+        <li>ในไทย: iron dextran, iron sucrose · ระวัง anaphylaxis</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>การตอบสนอง</h4>
+      <p>Reticulocyte เพิ่มใน <b>72–96 ชั่วโมง</b> (มากตามความรุนแรงของซีด) แล้ว Hb เพิ่มตามมา · ไม่ตอบสนอง → ตรวจว่าได้ขนาดถูกต้องจริงไหม แล้วหาสาเหตุอื่นร่วม</p>
+      <p class="callout" style="margin-top:6px"><b>คำแนะนำของสมาคมฯ</b> เมื่อให้เหล็กครบอย่างน้อย 1 เดือนแล้ว ตรวจ CBC และ smear ซ้ำเพื่อประเมินผล และแยกโรคอื่นโดยเฉพาะธาลัสซีเมีย</p>
+    </div>
+    <div class="tool" id="ironTool">
+      <h4>ขนาดธาตุเหล็ก <small>บทที่ 4</small></h4>
+      <div class="row">
+        <div class="field"><label for="i_wt">น้ำหนัก (kg)</label><input id="i_wt" type="number" inputmode="decimal" value="12"></div>
+        <div class="field"><label for="i_grp">กลุ่ม</label><select id="i_grp">
+          <option value="tx">เด็ก รักษา IDA</option>
+          <option value="pre">ทารกก่อนกำหนด กินนมแม่ (ป้องกัน)</option>
+          <option value="term">ทารกครบกำหนด นมแม่ ≥ ครึ่ง (ป้องกัน)</option>
+          <option value="ad">ผู้ใหญ่ รักษา IDA</option></select></div>
+      </div>
+      <div class="out" id="i_out"></div>
+    </div>
+  </div>
+  <h3>การป้องกัน <span class="r s2">++ · ง1</span></h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>กลุ่ม</th><th>คำแนะนำ</th></tr></thead>
+      <tbody>
+        <tr><td>ทารกครบกำหนด</td><td>เหล็กสะสมพอถึง 4–6 เดือน · นมแม่อย่างเดียวถึง 6 เดือน (เกิน 6 เดือนโดยไม่เสริมอาหาร เสี่ยงขาดเหล็กที่ 9–12 เดือน)</td></tr>
+        <tr><td>ก่อนกำหนด (&lt; 37 wk) กินนมแม่</td><td class="mono">elemental iron 2 mg/kg/วัน อายุ 1–12 เดือน</td></tr>
+        <tr><td>ครบกำหนด นมแม่อย่างเดียว หรือนมแม่ &gt; ครึ่ง</td><td class="mono">1 mg/kg/วัน เริ่ม 4 เดือน จนได้อาหารเสริมที่มีเหล็กพอ</td></tr>
+        <tr><td>ก่อนกำหนด/น้ำหนักน้อย/เศรษฐานะไม่ดี (ไทย)</td><td>เริ่มอาหารเสริมที่มีเหล็กตั้งแต่ 4 เดือน และตรวจเลือดที่ 9–12 เดือน</td></tr>
+        <tr class="grp"><td colspan="2">นโยบายกรมอนามัย 2559 (ผู้ที่เป็นพาหะธาลัสซีเมียกินได้)</td></tr>
+        <tr><td>6 เดือน – 2 ปี</td><td class="mono">ยาน้ำเหล็ก 12.5 mg สัปดาห์ละครั้ง</td></tr>
+        <tr><td>2 – 5 ปี</td><td class="mono">ยาน้ำเหล็ก 25 mg สัปดาห์ละครั้ง</td></tr>
+        <tr><td>นักเรียน 6 – 12 ปี</td><td class="mono">ยาเม็ดเหล็ก 60 mg สัปดาห์ละครั้ง</td></tr>
+        <tr><td>ราชวิทยาลัยกุมารแพทย์ฯ</td><td>ตรวจ Hct อย่างน้อย 1 ครั้งที่อายุ 6–12 เดือน ถ้าซีดให้เหล็ก</td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ================= CH 5 ================= -->
+<section id="ch5">
+  <div class="chap-head"><div class="chap-num">5</div><div><div class="eyebrow">บทที่ 5</div><h2>Megaloblastic anemia</h2></div></div>
+  <div class="prose">
+    <p>เซลล์ไขกระดูกสร้าง DNA ไม่ได้ → ซีดก่อน แล้วเม็ดเลือดขาวและเกล็ดเลือดต่ำตาม ร่วมกับความผิดปกติทางระบบประสาท สาเหตุหลักคือขาด B12 และ folate · ineffective erythropoiesis ทำให้ <b>LDH และ indirect bilirubin สูง haptoglobin ต่ำ แต่ reticulocyte ต่ำ</b> ต่างจาก hemolysis อื่น</p>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th></th><th>Vitamin B12 (cobalamin)</th><th>Folate</th></tr></thead>
+      <tbody>
+        <tr><td>แหล่ง</td><td>ผลิตภัณฑ์จากสัตว์ หอย ตับ (พืชไม่มี ยกเว้นสาหร่ายบางชนิด)</td><td>ผักใบเขียว ตับ</td></tr>
+        <tr><td>ความต้องการ</td><td class="mono">0.4 mcg (ทารก) → 2.4 mcg/วัน (ผู้ใหญ่)</td><td class="mono">65 mcg → 400 mcg/วัน · ตั้งครรภ์ 600 · ให้นม 500</td></tr>
+        <tr><td>ดูดซึม</td><td>Haptocorrin → ตัดด้วย pancreatic protease → จับ IF → ileum</td><td>Polyglutamate → monoglutamate ที่ jejunum</td></tr>
+        <tr><td>คลังสะสม</td><td class="mono">2–5 mg · ขาดแล้วใช้ ≥ 1–2 ปี (ถึง 5–10 ปี) กว่าจะมีอาการ</td><td class="mono">0.5–20 mg · สัปดาห์ถึงเดือน (เร็วขึ้นใน chronic hemolysis)</td></tr>
+        <tr><td>ชีวเคมี</td><td>Cofactor: homocysteine → methionine และ MMA-CoA → succinyl-CoA</td><td>One-carbon donor สำหรับ purine/pyrimidine</td></tr>
+        <tr><td>MMA · homocysteine</td><td>สูง · สูง</td><td>ปกติ · สูง</td></tr>
+        <tr><td>อาการทางระบบประสาท</td><td>บ่อย และเกิดได้แม้ไม่ซีดหรือไม่มี macrocytosis</td><td>น้อยมาก</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>สาเหตุขาด B12</h4>
+      <ul>
+        <li><b>Pernicious anemia</b> (พบบ่อย, หญิง 2–3 เท่า) · antibody ตรวจยาก → <b>ส่องกล้อง</b> ดู atrophic gastritis · เสี่ยงมะเร็งกระเพาะ เฝ้าระวัง autoimmune อื่น (PAS-2)</li>
+        <li>มังสวิรัติเคร่งครัด รวมหญิงตั้งครรภ์/ให้นมที่กินผลิตภัณฑ์สัตว์น้อย</li>
+        <li>Food-cobalamin malabsorption: ผ่าตัดกระเพาะ/gastritis, H. pylori, PPI/H2RA/antacid, <b>metformin</b> (แก้ได้ด้วยแคลเซียมเสริม), nitrous oxide</li>
+        <li>Pancreatic insufficiency, IBD, radiation enteritis, celiac, fish tapeworm</li>
+        <li>พันธุกรรม: juvenile cobalamin deficiency, Imerslund-Gräsbeck</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>สาเหตุขาด folate</h4>
+      <ul>
+        <li>กินไม่พอ (พบน้อยมาก): ทุพโภชนาการรุนแรง สุราเรื้อรัง anorexia</li>
+        <li>ต้องการเพิ่ม: ตั้งครรภ์ ให้นม chronic hemolysis exfoliative skin disease</li>
+        <li>ดูดซึมไม่ได้: inflammatory disorders, celiac, tropical sprue</li>
+        <li>ยา: methotrexate, trimethoprim, pyrimethamine (ยับยั้ง DHFR) · phenytoin, valproate, carbamazepine</li>
+        <li>พันธุกรรม: hereditary folate malabsorption</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel small">
+    <h4>อาการ</h4>
+    <ul>
+      <li>ซีด + เหลืองเล็กน้อย "peculiar lemon-yellow" · B12: glossitis papillae หาย · folate: oral ulcer</li>
+      <li><b>ระบบประสาท (B12)</b>: ชาปลายแบบสมมาตร (ขา &gt; แขน), เดินผิดปกติ · จำเพาะคือ <b>subacute combined degeneration</b> ของ dorsal + lateral columns (proprioception, vibration) · cognitive impairment, dementia, optic atrophy, paraplegia, incontinence, ซึมเศร้า, extrapyramidal signs, restless legs</li>
+      <li>อื่นๆ: hyperpigmentation ที่ข้อนิ้ว, vitiligo, ผมหงอกก่อนวัย, กระดูกพรุน · ทารก/เด็ก: โตช้า hypotonia ชัก · แม่ขาด folate → NTD</li>
+    </ul>
+  </div>
+  <h3>การตรวจและน้ำหนักคำแนะนำ</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>การตรวจ</th><th>ประเด็น</th><th>ระดับ</th></tr></thead>
+      <tbody>
+        <tr><td>CBC + smear</td><td>MCV &gt; 100, WBC/plt ต่ำเล็กน้อย, retic ต่ำ · macro-ovalocytes · <b>hypersegmented neutrophils</b>: ≥ 5 lobes &gt; 5% หรือ ≥ 6 lobes &gt; 1% (อาจพบก่อนซีด) · MCV &gt; 115 ชี้ไปทาง megaloblastic</td><td><span class="r s2">++ · ง1</span></td></tr>
+        <tr><td>Serum B12</td><td>สูงเทียมได้ในมะเร็ง MPN alcoholic liver disease</td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>Serum folate</td><td>ตรวจเมื่อมีเหตุขาด · เจาะก่อนอาหารและก่อนให้เลือด</td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>Bone marrow</td><td>Hypercellular, erythroid hyperplasia, N:C asynchrony, giant metamyelocytes · ระวังสับสนกับ MDS · แยก B12/folate ไม่ได้</td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>MMA, homocysteine</td><td>เมื่อระดับวิตามิน borderline หรือไม่เข้ากับคลินิก</td><td><span class="r s0">+/-</span></td></tr>
+        <tr><td>RBC folate</td><td>ไม่ถูกรบกวนจากอาหาร แต่ทำยาก ไม่ช่วยเพิ่มถ้า serum folate ต่ำชัดแล้ว</td><td><span class="r s0">+/- · ง1</span></td></tr>
+        <tr><td>Anti-IF / parietal cell</td><td>ไม่แพร่หลาย ความไวไม่สูง · Schilling test เลิกใช้แล้ว</td><td><span class="r s0">+/- · ง1</span></td></tr>
+        <tr><td>Gastroscopy</td><td>หา atrophic gastritis ใน pernicious anemia (บริบทไทย)</td><td><span class="r s2">++ · ง1</span></td></tr>
+        <tr><td>Therapeutic trial</td><td>Borderline, ไม่เข้ากับคลินิก, ได้เลือด/รักษามาบางส่วน → ให้วิตามินแล้วดูการตอบสนอง (ห้ามให้ folate เดี่ยวก่อนแยก B12)</td><td><span class="r s1">+ · ค1</span></td></tr>
+      </tbody></table></div>
+  <div class="panel small">
+    <h4>Macrocytosis ที่ไม่ใช่ megaloblastic</h4>
+    <p>Reticulocytosis (hemolysis, blood loss) · ยา (antiretroviral, เคมีบำบัด, allopurinol, azathioprine) · สุรา/โรคตับ · hypothyroidism · hereditary stomatocytosis · MDS, aplastic anemia, acute leukemia · แต่ทุก macrocytic anemia ควรนึกถึง megaloblastic ก่อน เพราะรักษาได้และอาการทางประสาทอาจไม่กลับคืนถ้าช้า</p>
+  </div>
+  <h3>การรักษา</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>สถานการณ์</th><th>ขนาดและวิธีให้</th><th>ระดับ</th></tr></thead>
+      <tbody>
+        <tr><td>B12 deficiency ส่วนใหญ่ (pernicious, ผ่าตัดกระเพาะ, malabsorption)</td><td class="mono">1,000 mcg/วัน IM/SC/IV × 7–14 วัน → สัปดาห์ละครั้ง × 4 → ทุก 1–3 เดือนจนแก้สาเหตุได้ (ไม่ได้ = ตลอดชีวิต) · เด็ก 50–100 mcg/วัน</td><td><span class="r s2">++ · ค1</span></td></tr>
+        <tr><td>มังสวิรัติเคร่งครัด</td><td>B12 ชนิดกินทดแทน</td><td><span class="r s1">+ · ค1</span></td></tr>
+        <tr><td>ดูดซึมไม่ได้/ขาด IF ที่เลือกกิน</td><td class="mono">1,000–2,000 mcg/วัน (passive diffusion) ต้องติดตามระดับ · วิตามินบีรวมทั่วไปมี B12 เพียง 6 mcg</td><td><span class="r s0">+/- · ค1</span></td></tr>
+        <tr><td>Folate deficiency</td><td class="mono">Folic acid 5 mg วันละ 1 เม็ด × 1–3 เดือน หรือจนเลือดดีขึ้น · สาเหตุแก้ไม่ได้ให้ตลอด</td><td><span class="r s2">++ · ค1</span></td></tr>
+        <tr><td>ได้ methotrexate</td><td>Folinic acid (leucovorin)</td><td><span class="r s2">++ · ค1</span></td></tr>
+      </tbody></table></div>
+  <div class="callout warn small">
+    <h4>อย่าให้ folic acid เดี่ยวใน B12 deficiency</h4>
+    <p>เลือดดีขึ้นได้ทำให้วินิจฉัยพลาด แต่อาการทางประสาทไม่ถูกแก้และอาจแย่ลง · ระวังการฉีด IM ในผู้ที่เกล็ดเลือดต่ำ</p>
+  </div>
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ลำดับการตอบสนอง <span class="r s1">+ · ง1</span></caption>
+      <tbody>
+        <tr><td class="n">1–2 วัน</td><td>LDH, indirect bilirubin ดีขึ้น (อ่อนเพลียดีขึ้นก่อน)</td></tr>
+        <tr><td class="n">3–4 วัน</td><td>Reticulocyte เพิ่ม</td></tr>
+        <tr><td class="n">2 สัปดาห์</td><td>Hypersegmented neutrophils หาย</td></tr>
+        <tr><td class="n">2–4 สัปดาห์</td><td>WBC, platelet ดีขึ้น</td></tr>
+        <tr><td class="n">1–2 สัปดาห์</td><td>Hb/Hct เริ่มเพิ่ม ปกติใน 1–2 เดือน</td></tr>
+        <tr><td class="n">≥ 3 เดือน</td><td>ระบบประสาทดีขึ้นต่อเนื่องถึง 1 ปี บางรายไม่กลับคืน</td></tr>
+      </tbody></table></div>
+    <div class="panel small">
+      <h4>ติดตามและไม่ตอบสนอง</h4>
+      <ul>
+        <li>วินิจฉัยแน่นอนแล้ว: CBC + ระดับวิตามินซ้ำที่ <b>2–4 สัปดาห์</b> (ขาดรุนแรงอาจดูระดับวิตามินที่ 1–2 วัน)</li>
+        <li>ไม่ตอบสนอง: ยืนยันขนาดและวิธีให้ → ปัญหาดูดซึมเปลี่ยนเป็นฉีด → ทบทวนวินิจฉัย หา IDA ร่วม หรือที่แท้เป็น MDS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CH 6 ================= -->
+<section id="ch6">
+  <div class="chap-head"><div class="chap-num">6</div><div><div class="eyebrow">บทที่ 6</div><h2>Red blood cell enzyme deficiencies</h2></div></div>
+  <div class="prose">
+    <p>RBC ไม่มีนิวเคลียสและ ER ใช้กลูโคสเป็นหลัก ปกติผ่าน <b>Embden-Meyerhof</b> (ได้ ATP) มากกว่า <b>HMP shunt</b> (ได้ NADPH → glutathione ต้าน oxidant) ราว 10 เท่า · PK เป็น rate-limiting ของ EM ที่บกพร่องบ่อยสุด → chronic hemolysis · G6PD เป็น rate-limiting ของ HMP → hemolysis เมื่อเจอ oxidant</p>
+  </div>
+  <h3>G6PD deficiency</h3>
+  <div class="key">
+    <div><span class="muted small">ทั่วโลก</span><b class="n">&gt; 400 ล้าน</b><span class="small">X-linked recessive · &gt; 140 mutations</span></div>
+    <div><span class="muted small">ความชุกในไทย</span><b class="n">ชาย 8–32%</b><span class="small">หญิง 1.8–19% · ทารกหญิงภาคเหนือ intermediate 13%</span></div>
+    <div><span class="muted small">Mutation พบบ่อย</span><b class="n">Viangchan</b><span class="small">871G&gt;A · Canton 1376G&gt;T · Mahidol 487G&gt;A (class II–III)</span></div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>อาการ 5 กลุ่ม</caption>
+      <tbody>
+        <tr><td><b>1. ไม่มีอาการ</b></td><td>ส่วนใหญ่ตลอดชีวิต</td></tr>
+        <tr><td><b>2. Oxidative hemolysis</b></td><td>ยา: อาการใน <b>24–72 ชม.</b> ปัสสาวะสีโค้ก ซีดแย่ลง 7–8 วันแรก หยุดเองและดีขึ้นหลัง 8–10 วัน · ติดเชื้อ: hepatitis A/B, CMV, <b>dengue</b>, pneumonia, typhoid</td></tr>
+        <tr><td><b>3. Favism</b></td><td>ไม่ทุกรายและไม่ทุกครั้ง · ถั่วปากอ้าสดเสี่ยงสุด (แห้ง/แช่แข็งก็เกิดได้) · ทารกกินนมแม่ที่กินถั่วปากอ้าก็เกิดได้ · ~24 ชม.หลังกิน รุนแรงกว่า drug-induced อาจ AKI</td></tr>
+        <tr><td><b>4. Neonatal jaundice</b></td><td>ในไทย 22% ของทารกชายและ 10% ของทารกหญิงที่ตัวเหลืองมี G6PD deficiency · เกิดวันที่ 1–4</td></tr>
+        <tr><td><b>5. CNSHA</b></td><td>ม้ามโต นิ่ว hemolysis ซ้ำ retic สูงค้าง · ในไทย G6PD Bangkok (825G&gt;C), Bangkok Noi (1502T&gt;G) แบบ compensated · ร่วมกับ thalassemia/HS/CDA จะรุนแรงขึ้น</td></tr>
+      </tbody></table></div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 1 · ยาและสารที่สัมพันธ์กับ acute hemolysis</caption>
+      <thead><tr><th>กลุ่ม</th><th>Definite</th><th>Possible</th><th>Doubtful</th></tr></thead>
+      <tbody>
+        <tr><td>Antimalarials</td><td>Primaquine, pamaquine</td><td>Chloroquine</td><td>Mepacrine, quinine</td></tr>
+        <tr><td>Sulfonamides</td><td>Sulfanilamide, sulfacetamide, sulfapyridine, sulfamethoxazole</td><td>Sulfadimidine, sulfasalazine, glibenclamide</td><td>Aldesulfone, sulfadiazine, sulfafurazole</td></tr>
+        <tr><td>Sulfones · nitrofurans</td><td>Dapsone · nitrofurantoin</td><td>–</td><td>–</td></tr>
+        <tr><td>Antipyretic/analgesic</td><td>Acetanilide</td><td>Aspirin</td><td>Paracetamol, phenacetin</td></tr>
+        <tr><td>Other drugs</td><td>Nalidixic acid, niridazole, methylthioninium (methylene blue), phenazopyridine, co-trimoxazole</td><td>Ciprofloxacin, chloramphenicol, vitamin K analogues, ascorbic acid, mesalazine</td><td>Aminosalicylic acid, doxorubicin, probenecid, dimercaprol</td></tr>
+        <tr><td>Other chemicals</td><td>Naphthalene (ลูกเหม็น), 2,4,6-trinitrotoluene</td><td><i>Acalypha indica</i> extract</td><td>–</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ใครควรตรวจ</h4>
+      <ol>
+        <li>Acute hemolysis หลังยาในตาราง, ติดเชื้อ หรือกินถั่วปากอ้า</li>
+        <li>ครอบครัวมีตัวเหลืองแรกเกิด ม้ามโต นิ่วถุงน้ำดี</li>
+        <li>ทารกตัวเหลืองที่ต้องรักษาหรือเหลืองนาน ทุกราย</li>
+        <li>อยู่พื้นที่มาลาเรียและต้องได้ primaquine</li>
+      </ol>
+      <h4 style="margin-top:6px">ตรวจคัดกรอง</h4>
+      <ul>
+        <li>Smear ขณะ hemolysis: bite, basket, blister cells, eccentrocytes · Heinz bodies (supravital, ขึ้นกับผู้ตรวจ)</li>
+        <li><b>Fluorescent spot test</b>: sens/spec &gt; 95% ในชาย hemizygote, หญิง homozygote และ heterozygote ที่ activity &lt; 30% · ทารกให้ลบลวงได้ ตรวจซ้ำหลัง 1 เดือน · ผล intermediate ให้ยืนยัน</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>ตรวจยืนยัน</h4>
+      <ul>
+        <li>G6PD activity (spectrophotometry, NADPH) ปกติ ~7–10 IU/g Hb ที่ 30 °C · แต่ละแล็บควรมีค่ามาตรฐานเอง</li>
+        <li>Molecular: Sanger, PCR-RFLP, multiplex ARMS-PCR</li>
+      </ul>
+      <div class="tbl narrow"><table><caption>WHO classification (ตามต้นฉบับ)</caption><tbody>
+        <tr><td class="n">I</td><td>Severely deficient + CNSHA</td></tr>
+        <tr><td class="n">II</td><td>Severely deficient (1–10%) + acute hemolysis</td></tr>
+        <tr><td class="n">III</td><td>Moderately deficient (10–60%)</td></tr>
+        <tr><td class="n">IV</td><td>Normal (60–150%)</td></tr>
+        <tr><td class="n">V</td><td>Increased (&gt; 150%)</td></tr></tbody></table></div>
+    </div>
+  </div>
+  <div class="callout warn small">
+    <h4>กับดักการแปลผล</h4>
+    <ul>
+      <li>ตรวจขณะ retic สูง (ช่วง acute hemolysis) ได้ลบลวง เพราะ retic มี activity สูงกว่า ~5 เท่า → ตรวจซ้ำ <b>10–15 วัน</b> · หลังรับเลือดเว้น <b>2–3 เดือน</b></li>
+      <li>ใช้ EDTA tube เก็บ 4 °C ได้ ~72 ชม. · hemolysate ต้องไม่มีเม็ดเลือดขาวปน</li>
+      <li>หญิง heterozygote (X-inactivation) ไม่มีการตรวจใดเชื่อถือได้ → สงสัยแล้ว<b>หยุดยา/สาร oxidant ทันที</b></li>
+    </ul>
+  </div>
+  <div class="panel small">
+    <h4>การดูแลรักษา</h4>
+    <ol>
+      <li><b>ป้องกันดีที่สุด</b>: บัตรประจำตัว หลีกเลี่ยงถั่วปากอ้า ยาและสารในตาราง สอนอาการ (ซีด เพลีย เหลือง ปัสสาวะสีโค้ก) ให้รีบมา รพ.</li>
+      <li>Acute intravascular hemolysis: ให้เลือดเมื่อมี symptomatic anemia (เพลีย เวียนศีรษะ ชีพจรเร็ว murmur) · <b>ให้สารน้ำพอ + ยาขับปัสสาวะ</b> ป้องกัน AKI จาก hemoglobinuria</li>
+      <li>ทารกตัวเหลือง: เกณฑ์เดียวกับสาเหตุอื่นเพื่อป้องกัน kernicterus</li>
+      <li>CNSHA: หาความผิดปกติร่วม (thalassemia, membrane) · มักไม่ต้องรับเลือดประจำ · vitamin E อาจช่วย (ยังไม่มีหลักฐานเป็นระบบ) · ไม่มีข้อมูลว่าตัดม้ามช่วย</li>
+    </ol>
+  </div>
+
+  <h3>Pyruvate kinase deficiency</h3>
+  <div class="prose small"><p>ยีน <i>PKLR</i> (1q21) AR, &gt; 300 mutations · คนผิวขาว ~1:20,000 · ไทยยังไม่ทราบความชุก (R41Q minor allele ~5%) · ATP ต่ำ → RBC และ retic อายุสั้น ถูกม้ามจับกิน · 2,3-DPG สูง → ทนซีดได้ดี</p></div>
+  <div class="key">
+    <div><span class="muted small">ซีด</span><b class="n">90–95%</b><span class="small">ตั้งแต่น้อยถึง transfusion-dependent</span></div>
+    <div><span class="muted small">Perinatal complication</span><b class="n">28%</b><span class="small">47% ได้เลือดในครรภ์ · 16% hydrops · ทารก 90% ต้องส่องไฟ ครึ่งหนึ่ง exchange</span></div>
+    <div><span class="muted small">ม้ามโต · เหลือง · นิ่ว</span><b class="n">80–85 · 40–70 · 30–45%</b><span class="small">นิ่ว 62% เกิดก่อนอายุ 18 ปี</span></div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>การวินิจฉัย</h4>
+      <ul>
+        <li>ตรวจในทุกอายุที่มี chronic hemolysis ที่แยก thalassemia และ membrane disorder แล้ว · <b>LDH มักไม่สูง</b></li>
+        <li>Smear: aniso/poikilocytosis เล็กน้อย, <b>echinocytes 5–20%</b> (มากขึ้นหลังตัดม้าม)</li>
+        <li>PK activity (ศิริราช ภาควิชากุมารฯ, 2–3 ชม.) ลบลวงได้ถ้ามีเกล็ดเลือด/เม็ดเลือดขาวปน · activity ไม่สัมพันธ์กับความรุนแรง</li>
+        <li>แนะนำตรวจทั้ง activity และ <b>PKLR genotype</b> คู่กัน · NM/NM รุนแรงสุด &gt; MM/NM &gt; MM/MM · activity ต่ำแต่ไม่พบ mutation → นึกถึง KLF1</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>ภาวะแทรกซ้อน</h4>
+      <ul>
+        <li>นิ่วถุงน้ำดี (บ่อยสุด) สัมพันธ์กับ bilirubin</li>
+        <li><b>Iron overload แม้ไม่เคยรับเลือด</b>: 38% ferritin &gt; 1,000 · MRI LIC &gt; 3 mg/g ถึง 82% · cardiac T2* ผิดปกติ 7%</li>
+        <li>Aplastic crisis (parvovirus B19) ดีขึ้นใน ~10 วัน อาจนาน 1 เดือน · hemolytic crisis จากติดเชื้อ/stress/ตั้งครรภ์</li>
+        <li>Hypersplenism/splenic injury · osteopenia</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>การรักษา PK deficiency <span class="r s2">++ · ง1</span></caption>
+      <tbody>
+        <tr><td><b>Folic acid</b></td><td>Moderate hemolysis และ/หรือ retic &gt; 15% หรือซีดน้อยแต่โภชนาการไม่ดี</td></tr>
+        <tr><td><b>ให้เลือด</b></td><td>ไม่มีเกณฑ์ Hb ชัด ให้เมื่อซีดกระทบชีวิตประจำวัน ใบหน้าเปลี่ยน หรือเด็กโตช้า</td></tr>
+        <tr><td><b>ตัดม้าม</b></td><td>รับเลือดบ่อยหรือ massive splenomegaly (ตามแนวทางธาลัสซีเมีย) · 78% หยุดรับเลือดได้ Hb เพิ่มเฉลี่ย 1.6 g/dL · Pre-splenectomy Hb &lt; 7: 56% ไม่ตอบสนอง · thrombosis 11% → ปรึกษาความเสี่ยง และให้ low-dose aspirin เมื่อเกล็ดเลือดสูง</td></tr>
+        <tr><td><b>HSCT</b></td><td>ยังไม่แนะนำ (investigational) · อัตราตาย 31% ส่วนใหญ่จาก chronic GvHD · อายุ ≥ 10 ปีเสี่ยงสุด</td></tr>
+        <tr><td><b>AG-348 · gene therapy</b></td><td>Oral PK activator อยู่ใน phase II–III ขณะทำ CPG · gene therapy ยัง pre-clinical</td></tr>
+      </tbody></table></div>
+  <div class="panel small">
+    <h4>ติดตามระยะยาว</h4>
+    <ul>
+      <li>US หานิ่ว<b>ปีละครั้ง</b>และก่อนตัดม้าม · มีนิ่ว → ตัดถุงน้ำดีพร้อมกัน · ไม่มีนิ่วให้คุยเรื่อง prophylactic cholecystectomy (ครึ่งหนึ่งที่ตัดม้ามอย่างเดียวเกิดนิ่วภายหลัง)</li>
+      <li>Ferritin: ปีละครั้ง (ไม่รับเลือด) · ≥ 2 ครั้ง/ปี (รับเลือด) · ทุก 3 เดือน (ได้ยาขับเหล็ก) · MRI T2* ตามแนวทางธาลัสซีเมีย</li>
+      <li>25-OH vitamin D เป็นระยะ · thyroid, sex hormone, เบาหวาน ปีละครั้งเมื่อ iron overload</li>
+      <li>Chronic hemolysis ที่ไม่ใช่ PK: ตรวจ HK, PFK, GPI และ membrane · NGS panel ครอบคลุมหลายโรคแต่ยังแพง</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CH 7 ================= -->
+<section id="ch7">
+  <div class="chap-head"><div class="chap-num">7</div><div><div class="eyebrow">บทที่ 7</div><h2>Red blood cell membrane disorders</h2></div></div>
+  <div class="prose">
+    <p>RBC ต้องผ่าน splenic sinusoids &gt; 1,000 ครั้งตลอดอายุ 120 วัน จึงต้อง deformable · แบ่งเป็น <b>structural defects</b> (HS, HE, HPP, SAO) ซึ่งพบบ่อยในไทย และ permeability defects (stomatocytosis, familial pseudohyperkalemia, cryohydrocytosis)</p>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>Vertical interaction → HS</h4>
+      <p>เชื่อม cytoskeleton กับ lipid bilayer ผ่าน <b>ankyrin–band 3–protein 4.2</b> และ 4.1R complex · เสีย → lipid หลุดเป็น vesicle → พื้นที่ผิวลด → spherocyte</p>
+    </div>
+    <div class="panel small">
+      <h4>Horizontal interaction → HE, HPP</h4>
+      <p>Spectrin α/β dimer–dimer (tetramer) และ spectrin–actin–4.1R junctional complex · เสีย → เซลล์คืนรูปไม่ได้ → elliptocyte, poikilocyte</p>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>การตรวจทางห้องปฏิบัติการ</caption>
+      <thead><tr><th>การตรวจ</th><th>หลักการและข้อจำกัด</th></tr></thead>
+      <tbody>
+        <tr><td>Osmotic fragility (OF)</td><td>Hypotonic saline 14 หลอด · บวกได้ใน AIHA, G6PD, PK, Hb ผิดปกติ → แปลผลร่วมประวัติครอบครัวและ smear</td></tr>
+        <tr><td>EMA binding (flow)</td><td>จับ band 3 · sens/spec ~97% สำหรับ HS, HPP, SAO (ติดสีลดลง) · HE (spectrin/4.1) ตรวจได้ไม่ดี</td></tr>
+        <tr><td>Cryohemolysis (CHT)</td><td>ปกติ 3–15% · <b>&gt; 20% สนับสนุน HS</b> (sens 49%, spec 77%) · บวกใน SAO ได้ → ส่งคู่ EMA</td></tr>
+        <tr><td>SDS-PAGE</td><td>มาตรฐานวัดปริมาณโปรตีน membrane · เห็น spectrin variants ใน HE/HPP</td></tr>
+        <tr><td>Direct sequencing / NGS</td><td>เมื่อผลข้างต้นไม่ชัด โดยเฉพาะ AR, de novo, compound heterozygote · ~15 ยีน</td></tr>
+      </tbody></table></div>
+  <details class="more">
+    <summary>ตารางที่ 1 · ยีนและโปรตีน (15 โรค)</summary>
+    <div><div class="tbl"><table>
+      <thead><tr><th>โรค</th><th>ยีน</th><th>โปรตีน</th><th>ถ่ายทอด</th></tr></thead>
+      <tbody>
+        <tr><td>HS1</td><td class="n"><i>ANK1</i> 8p11.21</td><td>Ankyrin-1</td><td>AD</td></tr>
+        <tr><td>HS2</td><td class="n"><i>SPTB</i> 14q23.3</td><td>β-spectrin</td><td>AD</td></tr>
+        <tr><td>HS3</td><td class="n"><i>SPTA1</i> 1q23.1</td><td>α-spectrin</td><td>AR</td></tr>
+        <tr><td>HS4</td><td class="n"><i>SLC4A1</i> 17q21.31</td><td>Band 3</td><td>AD</td></tr>
+        <tr><td>HS5</td><td class="n"><i>EPB42</i> 15q15.2</td><td>Protein 4.2</td><td>AR</td></tr>
+        <tr><td>HE1</td><td class="n"><i>EPB41</i> 1p35.3</td><td>Protein 4.1</td><td>AD</td></tr>
+        <tr><td>HE2</td><td class="n"><i>SPTA1</i></td><td>α-spectrin</td><td>AD</td></tr>
+        <tr><td>HE3</td><td class="n"><i>SPTB</i></td><td>β-spectrin</td><td>AD</td></tr>
+        <tr><td>HPP</td><td class="n"><i>SPTA1</i></td><td>α-spectrin</td><td>AR</td></tr>
+        <tr><td>SAO</td><td class="n"><i>SLC4A1</i></td><td>Band 3</td><td>AD</td></tr>
+        <tr><td>Overhydrated stomatocytosis</td><td class="n"><i>RHAG</i> 6p12.3</td><td>Rh-associated ammonium transporter</td><td>AD</td></tr>
+        <tr><td>Dehydrated stomatocytosis 1</td><td class="n"><i>PIEZO1</i> 16q24.3</td><td>Piezo1 channel</td><td>AD</td></tr>
+        <tr><td>Dehydrated stomatocytosis 2</td><td class="n"><i>KCNN4</i> 19q13.31</td><td>Gardos K⁺ channel</td><td>AD</td></tr>
+        <tr><td>Familial pseudohyperkalemia</td><td class="n"><i>ABCB6</i> 2q35-q36</td><td>ABCB6</td><td>AD</td></tr>
+        <tr><td>Cryohydrocytosis</td><td class="n"><i>SLC4A1</i></td><td>Band 3</td><td>AD</td></tr>
+      </tbody></table></div></div>
+  </details>
+  <div class="tbl">
+    <table>
+      <caption>แผนภูมิที่ 1 · แยกโรคเมื่อ smear สงสัย membrane disorder (หลังแยก AIHA, enzyme, hemoglobinopathy)</caption>
+      <thead><tr><th></th><th>HS</th><th>HPP</th><th>HE</th><th>SAO</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="5">1st line · indices, smear, ประวัติครอบครัว</td></tr>
+        <tr><td>Indices</td><td>MCV, MCH ปกติ · <b>MCHC &gt; 35</b></td><td><b>MCV ต่ำมาก 50–60</b></td><td>MCV ปกติ, MCH สูงในรายรุนแรง</td><td>MCV ปกติ, MCHC สูง</td></tr>
+        <tr><td>Smear</td><td>Spherocytes, polychromasia</td><td>Fragmented RBC, poikilocytosis ± elliptocytes</td><td>Elliptocytes ± spherocytes, stomatocytes</td><td><b>Ovalocytes &gt; 25%</b>, theta cells ± stomatocytes</td></tr>
+        <tr><td>ถ่ายทอด</td><td>75% AD · 25% AR/de novo</td><td>AR</td><td>AD</td><td>AD</td></tr>
+        <tr class="grp"><td colspan="5">2nd line · OF, EMA, CHT</td></tr>
+        <tr><td>ผล</td><td>OF ลด (เปราะ), EMA ลด, CHT &gt; 20%</td><td>EMA ลด</td><td>OF ปกติหรือสูง</td><td>EMA ลด</td></tr>
+        <tr class="grp"><td colspan="5">3rd line · SDS-PAGE, sequencing, NGS</td></tr>
+        <tr><td>ยีน</td><td class="mono">ANK1, SPTB, SPTA1, SLC4A1, EPB42</td><td class="mono">SPTA1, αLELY variant</td><td class="mono">EPB41, SPTB, SPTA1</td><td class="mono">SLC4A1</td></tr>
+      </tbody></table></div>
+
+  <h3>Hereditary spherocytosis</h3>
+  <div class="prose small"><p>~1:2,000 ในอเมริกาเหนือ · <i>ANK1</i> ~50%, <i>SPTB</i> 20%, <i>SLC4A1</i> 15–20% · ตั้งแต่ไม่มีอาการไปจนถึง hydrops</p></div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 2 · ความรุนแรงของ HS</caption>
+      <thead><tr><th></th><th>Mild</th><th>Moderate</th><th>Mod-severe</th><th>Severe</th></tr></thead>
+      <tbody>
+        <tr><td>Hb g/dL</td><td>ปกติ</td><td class="n">&gt; 8</td><td class="n">6–8</td><td class="n">&lt; 6</td></tr>
+        <tr><td>Retic %</td><td class="n">&lt; 6</td><td class="n">6–10</td><td class="n">&gt; 10</td><td class="n">&gt; 10</td></tr>
+        <tr><td>Bilirubin (ตามต้นฉบับ)</td><td class="n">1.7–3.4</td><td class="n">&gt; 3.4</td><td class="n">3.4–5.1</td><td class="n">&gt; 5.1</td></tr>
+        <tr><td>Smear</td><td>Spherocytes น้อย</td><td>มาก</td><td>มาก</td><td>Microspherocytes + poikilocytosis</td></tr>
+        <tr><td>ตัดม้าม</td><td>ไม่จำเป็น</td><td>ไม่จำเป็น</td><td>จำเป็น ก่อนวัยรุ่น</td><td>จำเป็น รออายุ &gt; 5 ปี</td></tr>
+        <tr><td>ครั้งที่ได้เลือด</td><td class="n">0–1</td><td class="n">0–2</td><td class="n">&gt; 2</td><td>Regularly</td></tr>
+        <tr><td>SDS-PAGE</td><td>ปกติ</td><td>Spectrin, ankyrin+spectrin, band 3, 4.2</td><td>Spectrin, ankyrin+spectrin, band 3</td><td>Spectrin, ankyrin+spectrin, band 3</td></tr>
+        <tr><td>ถ่ายทอด</td><td>AD</td><td>AD, de novo</td><td>AD, de novo</td><td>AR</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>วินิจฉัย (BSH)</h4>
+      <ul>
+        <li>ประวัติครอบครัว + hemolysis ชัด + ม้ามโต + spherocytes/hyperdense cells + MCHC &gt; 35 + retic สูง → <b>วินิจฉัยได้เลย ไม่ต้องตรวจเพิ่ม</b> <span class="r s2">++ · ง1</span></li>
+        <li>ไม่ชัด → <b>EMA</b> (ถ้าไม่มี ใช้ OFT หรือ CHT) และคัดกรองครอบครัว <span class="r s2">++ · ง1</span></li>
+        <li>ยังไม่ชัด โดยเฉพาะคลินิกรุนแรงกว่า smear → SDS-PAGE</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>รักษา</h4>
+      <ul>
+        <li>Folic acid ใน moderate–severe (mild ไม่จำเป็น) · เฝ้าระวังนิ่ว hemolytic/aplastic crisis hypersplenism</li>
+        <li><b>ตัดม้าม</b> เมื่อรุนแรง รับเลือดประจำ โตผิดปกติ หรือ hypersplenism <span class="r s2">++ · ข2</span> รอ<b>อายุ &gt; 5 ปี</b> <span class="r s2">++ · ง2</span></li>
+        <li>วัคซีน pneumococcus และ Hib ก่อนผ่าตัด + ยาปฏิชีวนะป้องกันหลังตัดม้าม</li>
+        <li>Laparoscopic ถ้าทำได้ <span class="r s2">++ · ข2</span> · นิ่วมีอาการ → ตัดถุงน้ำดีพร้อมกัน ไม่มีอาการพิจารณารายๆ <span class="r s2">++ · ง2</span></li>
+        <li>ผ่าตัดถุงน้ำดีเพราะนิ่ว <b>ไม่ควรตัดม้ามพ่วง</b>ถ้าไม่จำเป็น <span class="r s2">++ · ง1</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>HE และ HPP</h4>
+      <ul>
+        <li>3–5 ต่อ 10,000 · AD (HPP เป็น AR) · <i>SPTA1, SPTB, EPB41</i></li>
+        <li>HE ส่วนใหญ่ไม่มีอาการ · วินิจฉัยเมื่อ <b>elliptocytes &gt; 30%</b> (จำนวนไม่สัมพันธ์กับความรุนแรง)</li>
+        <li>ทารก: transient neonatal poikilocytosis Hb ลดถึง 6–10 ดีขึ้นที่ 4 เดือน–1 ปี (Hb F สูง → 2,3-DPG สูง → junctional complex ไม่เสถียร)</li>
+        <li>HPP: ซีดรุนแรง รับเลือดประจำ poikilocytes + microspherocytes MCV 50–60</li>
+        <li>รักษา: ไม่มีอาการไม่ต้องรักษา · รุนแรง/HPP ให้เลือด ตัดม้ามแบบ HS</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>Southeast Asian ovalocytosis</h4>
+      <ul>
+        <li>Melanesia, มาเลเซีย, ฟิลิปปินส์, อินโดนีเซีย และ<b>ภาคใต้ของไทย</b> 5–25% · <i>SLC4A1</i> ขาด 27 เบส (band 3 ขาด 9 amino acids) → rigid ต้านมาลาเรีย</li>
+        <li>Heterozygote (AD) ก็เป็นโรค · smear ovalocytes &gt; 50%, stomatocytes, <b>theta cells</b></li>
+        <li>ทารก: ซีด เหลือง severe hyperbilirubinemia ~7% ดีขึ้นเอง ส่วนใหญ่ไม่ซีดหลังอายุ 3 ปี · ผู้ใหญ่ไม่ต้องรักษา</li>
+        <li>SAO + β-thal trait → hemolysis และนิ่วได้ เฝ้าระวัง</li>
+        <li>Homozygote ส่วนใหญ่ตายในครรภ์ · รอดด้วย IUT → severe dyserythropoietic anemia + <b>dRTA</b> · compound heterozygote กับ SLC4A1 ตัวอื่นอาจมี dRTA และโตช้า</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CH 8 ================= -->
+<section id="ch8">
+  <div class="chap-head"><div class="chap-num">8</div><div><div class="eyebrow">บทที่ 8</div><h2>Autoimmune hemolytic anemia</h2></div></div>
+  <div class="prose">
+    <p>Antibody ต่อ antigen บน RBC ตนเอง → <b>DAT บวก</b> (IgG, IgM และ/หรือ C3b/C3d) และไม่มีสาเหตุอื่นของ hemolysis · 1–3 ต่อแสนต่อปี เพิ่มตามอายุ · เด็กมักตามหลังติดเชื้อ 2–3 สัปดาห์ · ผู้ใหญ่สัมพันธ์ติดเชื้อ มะเร็งเม็ดเลือด autoimmune และยา · primary ~50% · secondary: autoimmune ~20%, lymphoproliferative ~20%</p>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>ชนิด</th><th>Antibody</th><th>กลไกและลักษณะ</th><th>สาเหตุ secondary</th></tr></thead>
+      <tbody>
+        <tr><td><b>Warm</b></td><td>IgG (IgG1 &gt; IgG3) ที่ 37 °C ต่อ Rh, band 3, glycophorin A</td><td>Fc receptor บน macrophage ม้าม → extravascular · <b>spherocytes</b> · เด็ก ~90%, ผู้ใหญ่ 70–80%</td><td>CLL, lymphoma, solid tumor · HIV, HCV, CMV, VZV, pneumococcus, TB · SLE, Sjögren, scleroderma, UC, sarcoidosis, post-transplant, CVID</td></tr>
+        <tr><td><b>Cold agglutinin disease</b></td><td>IgM anti-I/i ดีสุดที่ 4 °C</td><td>Complement (C3b/C3d) → ตับจับกิน บางราย intravascular · autoagglutination · มักไม่ซีดจนต้องให้เลือด</td><td>CLL, NHL · <b>mycoplasma</b>, EBV, CMV (เด็ก) · autoimmune · post-allo HSCT</td></tr>
+        <tr><td><b>PCH</b></td><td>Donath-Landsteiner IgG anti-P (biphasic)</td><td>จับที่อุณหภูมิต่ำ ส่วนปลาย → กระตุ้น complement เมื่ออุ่น → intravascular · พบน้อยมาก เด็ก</td><td>Adenovirus, influenza A, syphilis, CMV, EBV, VZV, measles, mumps, mycoplasma</td></tr>
+        <tr><td><b>Drug-induced</b></td><td>&gt; 150 ยา</td><td>Drug-induced antibody → DAT IgG หรือ C3d · NIPA (โปรตีนเกาะผิว RBC) → DAT ทั้ง IgG และ C3d</td><td>ผู้ใหญ่ &gt; เด็ก · อาจรุนแรงถึงชีวิต</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>อาการและผลตรวจ</h4>
+      <ul>
+        <li>ซีดเร็วใน 1–2 สัปดาห์ เหลือง ม้ามโตเล็กน้อย · intravascular → ปัสสาวะสีโค้ก · ซีดมากอาจหัวใจวาย</li>
+        <li>WBC/plt มักปกติ · retic สูง · smear spherocytes (warm) หรือ agglutination (cold/warm ที่มี IgM)</li>
+        <li>DAT แยก IgG / IgM / C3d ช่วยบอกชนิดและการรักษา · IAT บวก = autoantibody เหลือในซีรั่มมาก</li>
+        <li>Hemolysis: indirect bilirubin, LDH, urine urobilinogen สูง ± hemoglobinuria, haptoglobin ต่ำ</li>
+      </ul>
+    </div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 2 · การตรวจเพิ่ม <span class="r s2">++ · ง1</span></caption>
+      <thead><tr><th>ทุกราย</th><th>บางราย</th></tr></thead>
+      <tbody><tr>
+        <td><b>Hemolysis</b>: CBC, retic, smear, bilirubin, LDH, haptoglobin, DAT, UA<br><b>หาสาเหตุ</b>: anti-HIV, HBsAg, anti-HBs, anti-HCV, anti-dsDNA, ANA, immunoglobulin + electrophoresis, CT chest/abdomen/pelvis</td>
+        <td>BM: CAD, อายุ &gt; 60, สงสัย infiltration, reticulocytopenia ค้าง · infection screen ตามอาการ · cold antibody titer เมื่อ DAT C3 · red cell eluate (DAT-negative AIHA) · Donath-Landsteiner (สงสัย PCH)</td>
+      </tr></tbody></table></div>
+  </div>
+  <h3>การรักษา <span class="r s2">++ · ง1</span></h3>
+  <p class="small muted" style="max-width:72ch">ติดตามด้วย Hb และ reticulocyte ไม่ใช้ DAT (บวกได้นาน) · เด็กและ severe hemolysis retic อาจไม่สัมพันธ์กับความรุนแรง</p>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ประคับประคอง</h4>
+      <ul>
+        <li>Folic acid <b>5–10 mg/วัน</b></li>
+        <li>ซีดจน cardiovascular/neurologic compromise → ให้เลือดที่ <b>least incompatible</b> ช้าๆ ครั้งละ ~<b>5 mL/kg</b> อัตรา<b> ≤ 2 mL/kg/h</b> เฝ้าระวัง hemolytic reaction</li>
+        <li>Refractory + retic ต่ำ → ESA ขนาดสูงได้</li>
+        <li>นอนพัก ให้ O₂ ประเมินสัญญาณชีพและหัวใจ · รักษาโรคต้นเหตุ</li>
+        <li><b>CAD</b>: อุ่นเลือดด้วย blood warmer หลีกเลี่ยงความเย็น · intravascular hemolysis → ให้สารน้ำป้องกันไตวาย</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>Warm AIHA: corticosteroid เป็นมาตรฐานแรก</h4>
+      <ul>
+        <li><b>Prednisolone 1–2 mg/kg/วัน</b> (ผู้ใหญ่) · 2–4 mg/kg/วัน (เด็ก) · ซีดรุนแรง: pulse methylprednisolone 3 วัน แล้วต่อ prednisolone</li>
+        <li>~50% ตอบสนองใน 4–7 วัน · ~80% ใน 2–3 สัปดาห์</li>
+        <li>เริ่มลดเมื่อ <b>Hb &gt; 10 หรือเพิ่ม &gt; 2 g/dL และไม่มี reticulocytosis</b> ลดช้าๆ 3–6 เดือน</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>Refractory / relapse / steroid-dependent</caption>
+      <thead><tr><th>การรักษา</th><th>ขนาด</th><th>ใช้เมื่อ</th></tr></thead>
+      <tbody>
+        <tr><td>IVIG</td><td class="mono">400–500 mg/kg/วัน × 5 วัน หรือ 1 g/kg × 2 วัน (รวม ≤ 2 g/kg)</td><td>ซีดรุนแรง</td></tr>
+        <tr><td>Rituximab</td><td class="mono">375 mg/m² สัปดาห์ละครั้ง × 4 หรือ 100 mg/m² × 2–4</td><td>ไม่ตอบสนอง/steroid-dependent · ใช้ใน CAD ได้</td></tr>
+        <tr><td>Danazol</td><td class="mono">200 mg วันละ 3–4 ครั้ง</td><td>ลด steroid ไม่ได้</td></tr>
+        <tr><td>Splenectomy</td><td>ตอบสนอง 60–70%</td><td>Warm ที่ไม่ตอบสนอง steroid · เด็กหลังอายุ 5–7 ปี · วัคซีน encapsulated bacteria ≥ 2 สัปดาห์ก่อน</td></tr>
+        <tr><td>Cyclosporin · MMF</td><td class="mono">2.5 mg/kg bid · 500–1,000 mg bid</td><td>ไม่ตอบสนองการตัดม้ามหรือตัดไม่ได้</td></tr>
+        <tr><td>Azathioprine · cyclophosphamide</td><td class="mono">2–4 mg/kg/วัน · 1–2 mg/kg/วัน PO หรือ 50 mg/kg IV × 1–4 วัน</td><td>เช่นเดียวกัน</td></tr>
+        <tr><td>Plasmapheresis</td><td>กำจัด IgM</td><td>CAD รุนแรง หรือมี acrocyanosis/Raynaud</td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ================= CH 9 ================= -->
+<section id="ch9">
+  <div class="chap-head"><div class="chap-num">9</div><div><div class="eyebrow">บทที่ 9</div><h2>Paroxysmal nocturnal hemoglobinuria</h2></div></div>
+  <div class="prose">
+    <p>อยู่ในกลุ่ม bone marrow failure · somatic mutation ของ <i>PIG-A</i> (X) → ขาด GPI-anchored proteins: <b>CD55 (DAF)</b> คุม C3/C5 convertase และ <b>CD59 (MIRL)</b> ยับยั้ง MAC → complement-mediated intravascular hemolysis · ในไทย 65% อายุ &lt; 30 ปี ชาย &gt; หญิง และพบ thrombosis น้อย</p>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>อาการ 4 แบบ</h4>
+      <ol>
+        <li><b>Intravascular hemolysis</b>: กระตุ้นด้วยติดเชื้อ การให้เหล็ก ความเครียด กลางคืน</li>
+        <li><b>Bone marrow failure</b>: ติดเชื้อง่าย เลือดออกง่าย</li>
+        <li><b>Thrombosis</b> (สาเหตุตายสำคัญ): venous &gt; arterial · hepatic, mesenteric, portal, splenic vein · cerebral sagittal, cavernous sinus · clone &gt; 50% เสี่ยงสูง</li>
+        <li><b>ขาด NO</b> จาก free Hb: ปวดท้อง esophageal spasm erectile dysfunction</li>
+      </ol>
+    </div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 1 · CATCH criteria ส่งตรวจ PNH (ง1)</caption>
+      <tbody>
+        <tr><td><b>C</b>ytopenias</td><td>Cytopenia ที่ไขกระดูกอธิบายไม่ได้</td></tr>
+        <tr><td><b>A</b>plastic anemia/MDS</td><td>ทุกรายที่สงสัย AA หรือ low-risk MDS</td></tr>
+        <tr><td><b>T</b>hrombosis</td><td>ไม่มีปัจจัยกระตุ้น หรือตำแหน่งไม่ปกติ</td></tr>
+        <tr><td><b>C</b>oombs-negative hemolysis</td><td>LDH/indirect bili สูง haptoglobin ต่ำ Coombs ลบ ไม่พบสาเหตุอื่น</td></tr>
+        <tr><td><b>H</b>emoglobinuria</td><td>ไม่พบสาเหตุอื่น</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>การตรวจ</h4>
+      <ul>
+        <li><b>Flow cytometry</b> CD55, CD59 + <b>FLAER</b> (บนเม็ดเลือดขาว) เป็นมาตรฐาน <span class="r s2">++ · ง1</span> ใช้แบ่งชนิดและติดตาม · ตรวจ<b>ก่อนรับเลือด หรือหลังรับเลือด ≥ 1 เดือน</b></li>
+        <li>BM + cytogenetics หา AA/MDS และแบ่งชนิด <span class="r s1">+ · ง1</span></li>
+        <li>ทุกราย <span class="r s2">++</span>: CBC/film, retic, flow, BM, cytogenetics, DAT, renal, liver, LDH</li>
+        <li>บางราย <span class="r s0">+/-</span>: ferritin/TSAT, PT/PTT, D-dimer, fibrinogen, viral serology, EPO, US abdomen</li>
+      </ul>
+    </div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 2 · ชนิดของ PNH <span class="r s1">+ · ง1</span></caption>
+      <thead><tr><th>ชนิด</th><th>Hemolysis</th><th>ไขกระดูก</th><th>GPI-deficient PMN</th></tr></thead>
+      <tbody>
+        <tr><td>Classic</td><td>ชัด LDH สูง hemoglobinuria</td><td>Erythroid hyperplasia</td><td class="n">&gt; 50%</td></tr>
+        <tr><td>PNH + BMF</td><td>น้อย</td><td>AA/MDS</td><td class="n">&lt; 50%</td></tr>
+        <tr><td>Subclinical</td><td>ไม่มี</td><td>AA/MDS</td><td class="n">&lt; 10%</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>การรักษาตาม CPG</caption>
+      <thead><tr><th>การรักษา</th><th>รายละเอียด</th><th>ระดับ</th></tr></thead>
+      <tbody>
+        <tr><td>Corticosteroid</td><td class="mono">Prednisolone 0.25–1 mg/kg/วัน · พิจารณาวันเว้นวันลดผลข้างเคียง</td><td><span class="r s0">+/- · ง1</span></td></tr>
+        <tr><td>Androgen</td><td>Oxymetholone เริ่ม 100–200 mg/วัน · ติดตาม LFT (ตับอักเสบ ต่อมลูกหมากโต virilization) · <span class="tag-out">ต้นฉบับระบุ 400 mg วันละสองเวลา ตรวจสอบก่อนสั่ง</span></td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>เหล็กทดแทน</td><td>ขาดเหล็กจากเสียทางปัสสาวะได้ แต่เหล็กกระตุ้น hemolysis · ชนิดกินกระตุ้นน้อยกว่าฉีด · คุมด้วย steroid/androgen หรือให้เลือดกดการสร้าง</td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>ให้เลือด</td><td>Leukocyte-poor RBC · ช่วยกดการสร้าง PNH clone</td><td>–</td></tr>
+        <tr><td>Folic acid</td><td class="mono">5 mg/วัน</td><td><span class="r s1">+ · ง1</span></td></tr>
+        <tr><td>Eculizumab</td><td>Anti-C5 ลด hemolysis, thrombosis, การรับเลือด · ไม่มีผลต่อ stem cell ราคาแพง ต้องให้ตลอด · ยังไม่มีในไทยขณะทำ CPG</td><td><span class="r s1">+ · ค2</span></td></tr>
+        <tr><td>Anticoagulant ป้องกัน</td><td>Clone &gt; 50% และไม่มีข้อห้าม</td><td><span class="r s0">+/- · ง1</span></td></tr>
+        <tr><td>เกิด thrombosis แล้ว</td><td><b>Anticoagulant ตลอดชีวิต</b> ถ้าไม่มีข้อห้าม · เกล็ดเลือดต่ำอาจให้เกล็ดเลือดร่วม</td><td><span class="r s1">+ · ง1</span></td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ================= UPDATE ================= -->
+<section id="update">
+  <div>
+    <div class="eyebrow">ข้อมูลนอก CPG 2562</div>
+    <h2>อัปเดตที่เกิดขึ้นหลังจากออก CPG</h2>
+    <p class="lead" style="margin-top:6px">CPG ฉบับนี้ทำเมื่อปี 2562 สิ่งต่อไปนี้มาจากหลักฐานและการอนุมัติยาหลังจากนั้น (ความรู้ถึงกลางปี 2569) ใช้เพื่อรู้ทิศทาง ตรวจสอบสถานะยาในไทยและแนวทางฉบับปัจจุบันก่อนนำไปใช้</p>
+  </div>
+  <div class="grid2">
+    <div class="callout az small"><h4>IDA</h4><ul>
+      <li>Ferritin cut-off ในผู้ใหญ่: AGA 2020 ใช้ <b>&lt; 45 ng/mL</b> (CPG ไทยบทที่ 4 ใช้ &lt; 10 ทุกวัย แต่บทที่ 3 ใช้ &lt; 45 ในผู้สูงอายุ)</li>
+      <li>Oral iron วันละครั้งหรือ<b>วันเว้นวัน</b> ดูดซึมดีกว่าแบ่งหลายมื้อ (hepcidin) และผลข้างเคียงน้อยกว่า</li>
+      <li>IV iron รุ่นใหม่ (ferric carboxymaltose, ferric derisomaltose) ให้ขนาดสูงครั้งเดียว · FCM สัมพันธ์กับ hypophosphatemia</li></ul></div>
+    <div class="callout az small"><h4>PNH</h4><ul>
+      <li>Ravulizumab: anti-C5 ออกฤทธิ์ยาว ให้ทุก 8 สัปดาห์</li>
+      <li>Proximal complement inhibitors แก้ extravascular hemolysis ที่เหลือจาก anti-C5: pegcetacoplan (C3), iptacopan (factor B, ชนิดกิน), danicopan (factor D, add-on)</li></ul></div>
+    <div class="callout az small"><h4>PK deficiency</h4><ul>
+      <li><b>Mitapivat</b> (AG-348 ใน CPG) ได้รับอนุมัติจาก US FDA ปี 2565 สำหรับผู้ใหญ่ที่เป็น PK deficiency</li></ul></div>
+    <div class="callout az small"><h4>AIHA · G6PD</h4><ul>
+      <li>Consensus warm AIHA ปี 2020 ยกให้ rituximab เป็น second-line หลัก และพิจารณาร่วม steroid ตั้งแต่แรกในรายรุนแรง</li>
+      <li>CAD: sutimlimab (anti-C1s) ได้รับอนุมัติในสหรัฐฯ ปี 2565</li>
+      <li>WHO ปรับ G6PD classification ปี 2565 เป็น class A, B, C, U ตาม median activity และอาการ แทน class I–V</li></ul></div>
+  </div>
+</section>
+
+<!-- ================= PEARLS ================= -->
+<section id="pearls">
+  <div><div class="eyebrow">จุดที่ควรจำ</div><h2>ประเด็นที่มักพลาด</h2></div>
+  <div class="grid2">
+    <div class="callout"><h4>ตัวเลขที่ต่างกันในเล่มเดียว</h4><ul class="small">
+      <li>Ferritin IDA: &lt; 10 (บทที่ 4, ทุกวัย) · &lt; 45 (บทที่ 3, ผู้สูงอายุ)</li>
+      <li>ให้เหล็กต่อหลัง Hb ปกติ: 8 สัปดาห์ (บทที่ 4) · ~6 เดือน (บทที่ 3)</li>
+      <li>B12: 1,000 mcg/วัน 7–14 วัน → สัปดาห์ละครั้ง × 4 (บทที่ 5) · สัปดาห์ละครั้ง 2–3 เดือน (บทที่ 3)</li></ul></div>
+    <div class="callout"><h4>ผลตรวจที่หลอกได้</h4><ul class="small">
+      <li>G6PD ปกติขณะ hemolysis หรือหลังรับเลือด → ตรวจซ้ำ 10–15 วัน / 2–3 เดือน</li>
+      <li>PNH flow หลังรับเลือด → รอ ≥ 1 เดือน</li>
+      <li>Folate ตรวจก่อนอาหารและก่อนให้เลือด · B12 สูงเทียมในมะเร็ง MPN โรคตับ</li>
+      <li>ABO HDFN: DAT มักลบ แต่ IAT บวก</li></ul></div>
+    <div class="callout"><h4>Hemolysis ที่ retic ต่ำ</h4><ul class="small">
+      <li>Megaloblastic anemia: LDH สูง haptoglobin ต่ำ แต่ retic ต่ำ (ineffective erythropoiesis)</li>
+      <li>Aplastic crisis จาก parvovirus B19 ใน chronic hemolysis</li>
+      <li>PK deficiency: LDH มักไม่สูง</li></ul></div>
+    <div class="callout"><h4>สิ่งที่ห้ามทำ</h4><ul class="small">
+      <li>ให้ folic acid เดี่ยวก่อนแยก B12 deficiency</li>
+      <li>ใช้ DAT ติดตามการตอบสนองของ AIHA</li>
+      <li>ใช้ ESA ใน unexplained anemia ผู้สูงอายุ · HSCT ใน PK deficiency</li>
+      <li>ตัดม้ามพ่วงตอนตัดถุงน้ำดีใน HS ถ้าไม่จำเป็น · ตัดม้ามเด็ก HS ก่อนอายุ 5 ปี</li></ul></div>
+  </div>
+</section>
+
+<footer>
+  ที่มา: คณะอนุกรรมการจัดทำแนวทางการรักษาโรค Red Cell Disorders, สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาภาวะโลหิตจางและธาลัสซีเมีย (Guidelines for the Management of Anemia and Thalassemia) พ.ศ. 2562 ส่วนที่ 1 บทที่ 1–9. ส่วนที่ 2 ธาลัสซีเมียอยู่ในบทเรียน Thalassemia CPG 2562.
+  หน้านี้เป็นบทสรุปเพื่อการเรียนรู้ คำแนะนำไม่ใช่ข้อบังคับ ใช้วิจารณญาณร่วมกับบริบทผู้ป่วย และตรวจขนาดยากับเอกสารกำกับยาก่อนสั่งใช้
+</footer>
+</main>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const num=id=>{const v=parseFloat($(id).value);return isFinite(v)?v:null};
+const f=(v,d=1)=>v.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d});
+
+function rpi(){
+  const r=num('#t_ret'),h=num('#t_hct'),o=$('#t_out');
+  if(r==null||h==null||h<=0){o.className='out';o.innerHTML='กรอก reticulocyte และ Hct';return}
+  const c=r*h/45, mt=h>=40?1:h>=30?1.5:h>=20?2:2.5, x=c/mt;
+  let cls,txt;
+  if(x>2){cls='warn';txt='ไขกระดูกตอบสนอง → hemolysis หรือเสียเลือดเฉียบพลัน · ส่ง Coombs'}
+  else if(x>=0.5){cls='';txt='RPI ไม่เกิน 2 ในคนซีด = ตอบสนองไม่พอ (hypoproliferative) → ดู WBC/platelet'}
+  else {cls='bad';txt='ต่ำมาก → สร้างน้อย: marrow failure, PRCA, ขาดสารอาหาร'}
+  o.className='out '+cls;
+  o.innerHTML=`<span>Corrected retic <b class="mono">${f(c)}%</b> · maturation ${f(mt)} วัน</span><b class="big">RPI ${f(x,2)}</b><span class="small">${txt}</span>`;
+}
+['#t_ret','#t_hct'].forEach(id=>$(id).addEventListener('input',rpi));rpi();
+
+function iron(){
+  const w=num('#i_wt'),g=$('#i_grp').value,o=$('#i_out');
+  if(g==='ad'){o.className='out';o.innerHTML='<b class="big">Elemental iron 100–200 mg/วัน</b><span class="small">แบ่ง 1–3 ครั้ง · ต่อหลัง Hb ปกติอีก 8 สัปดาห์ (ผู้สูงอายุ ~200 mg/วัน ต่อ ~6 เดือน)</span>';return}
+  if(w==null||w<=0){o.className='out';o.innerHTML='กรอกน้ำหนัก';return}
+  if(g==='tx'){o.className='out';o.innerHTML=`<b class="big mono">${f(w*4,0)}–${f(w*6,0)} mg/วัน</b><span class="small">4–6 mg/kg/วัน elemental iron แบ่ง 1–3 ครั้ง · ประเมิน Hb ที่ 1 เดือน (เพิ่ม &gt; 1–2 g/dL) · ต่ออีก 8 สัปดาห์หลัง Hb ปกติ</span>`}
+  else if(g==='pre'){o.className='out';o.innerHTML=`<b class="big mono">${f(w*2)} mg/วัน</b><span class="small">2 mg/kg/วัน ตั้งแต่อายุ 1 เดือนถึง 12 เดือน</span>`}
+  else {o.className='out';o.innerHTML=`<b class="big mono">${f(w)} mg/วัน</b><span class="small">1 mg/kg/วัน เริ่ม 4 เดือน จนได้อาหารเสริมที่มีเหล็กพอ</span>`}
+}
+['#i_wt','#i_grp'].forEach(id=>$(id).addEventListener('input',iron));iron();
+
+/* active rail link */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function onScroll(){
+  let cur=secs[0];
+  for(const s of secs){if(s.getBoundingClientRect().top<120)cur=s}
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur.id));
+}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

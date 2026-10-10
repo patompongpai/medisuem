@@ -1,0 +1,1177 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anemia Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: bedside work sheet — form steps unfold on the left as the system asks for more data; the reasoning path, diagnoses and management sit in a sticky column on the right. Same stain palette as the Anemia CPG lesson. */
+:root{
+  --bg:#F6F3F5; --surface:#FFFFFF; --sunk:#EDE7EB; --line:#DACFD6;
+  --fg:#1E1820; --muted:#665A69;
+  --azure:#3A3F94; --azure-soft:#E1E2F4; --azure-fg:#FFFFFF;
+  --eosin:#B3305B; --eosin-soft:#F7DEE6;
+  --ok:#3E8E55; --oks:#DDF0E2; --warn:#B9801A; --warns:#F8EDCF; --bad:#BE3A35; --bads:#F6D9D7;
+  --font-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15px;line-height:1.65;padding-inline:16px;padding-block:0 56px}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.3;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--azure)}
+ul{margin:0;padding-left:18px}
+li+li{margin-top:3px}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--azure);outline-offset:2px}
+.page{max-width:1240px;margin:0 auto;padding-top:28px;display:flex;flex-direction:column;gap:20px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header h1{font-size:clamp(26px,4vw,38px);font-weight:700}
+header h1 span{color:var(--eosin)}
+.lead{color:var(--muted);max-width:76ch}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar .lbl{font-size:13px;color:var(--muted);margin-right:2px}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:4px 12px;font-size:13.5px;cursor:pointer}
+.pill:hover{border-color:var(--azure)}
+.pill.on{background:var(--azure);color:var(--azure-fg);border-color:var(--azure)}
+.pill.ghost{background:transparent}
+.demo{font-size:12.5px;color:var(--fg);background:var(--warns);border-radius:6px;padding:4px 10px;align-self:flex-start}
+
+.app{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:920px){.app{grid-template-columns:minmax(0,1fr)}}
+.form{display:flex;flex-direction:column;gap:14px;min-width:0}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.step.fresh{border-color:var(--azure);box-shadow:0 0 0 3px var(--azure-soft)}
+.step-h{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.step-h h3{font-size:16px}
+.step-h small{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 12px}
+.f{display:flex;flex-direction:column;gap:4px;min-width:0}
+.f.wide{grid-column:1/-1}
+.f>.l{font-size:13px;color:var(--muted);font-weight:500;display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.f>.l .u{font-family:var(--font-mono);font-size:11.5px}
+.f>.why{font-size:12px;color:var(--azure);line-height:1.45}
+.f.need>.l::after{content:"ต้องการ";font-size:10.5px;font-weight:600;color:var(--eosin);background:var(--eosin-soft);border-radius:99px;padding:0 7px;line-height:1.7}
+.f input[type=number]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);font-family:var(--font-mono);font-size:15px}
+.f input[type=number]:focus{border-color:var(--azure);outline:none;box-shadow:0 0 0 3px var(--azure-soft)}
+.f.need input[type=number]{border-color:var(--eosin)}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.seg button{flex:1 1 auto;border:0;border-right:1px solid var(--line);background:transparent;padding:7px 8px;cursor:pointer;font-size:13.5px;line-height:1.35}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--azure);color:var(--azure-fg);font-weight:600}
+.f.need .seg{border-color:var(--eosin)}
+.checks{display:flex;flex-wrap:wrap;gap:6px}
+.ck{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:13.5px;cursor:pointer;background:var(--bg);line-height:1.4}
+.ck input{accent-color:var(--azure);margin:0}
+.ck:has(input:checked){border-color:var(--azure);background:var(--azure-soft)}
+.hint{font-size:12px;color:var(--muted);line-height:1.45}
+
+.res{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:16px;min-width:0}
+@media (max-width:920px){.res{position:static}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.box h2{font-size:15px;font-family:var(--font-mono);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.path .st{border-radius:7px;padding:3px 10px;font-size:13.5px;background:var(--sunk);line-height:1.5}
+.path .st.q{background:var(--azure-soft);color:var(--fg)}
+.path .st.dx{background:var(--eosin-soft);font-weight:600}
+.path .st.ok{background:var(--oks)}
+.path .st.warn{background:var(--warns)}
+.path .ar{color:var(--muted);font-family:var(--font-mono);font-size:12px}
+.needs{display:flex;flex-direction:column;gap:6px}
+.needs button{text-align:left;border:1px dashed var(--eosin);background:var(--eosin-soft);border-radius:8px;padding:7px 12px;cursor:pointer;font-size:13.5px;display:flex;flex-direction:column;gap:1px}
+.needs button b{font-weight:600}
+.needs button span{font-size:12.5px;color:var(--muted)}
+.done{font-size:13.5px;color:var(--ok);font-weight:600}
+.dx{display:flex;flex-direction:column;gap:8px}
+.dxi{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;border-radius:8px;padding:9px 12px;background:var(--sunk)}
+.dxi .lv{font-family:var(--font-mono);font-size:11px;padding:1px 8px;border-radius:99px;white-space:nowrap;margin-top:2px}
+.dxi.main{background:var(--eosin-soft)} .dxi.main .lv{background:var(--eosin);color:var(--surface)}
+.dxi.alt .lv{border:1px solid var(--line);color:var(--muted)}
+.dxi.pend .lv{border:1px dashed var(--muted);color:var(--muted)}
+.dxi b{font-family:var(--font-display);font-size:15px}
+.dxi p{font-size:13px;color:var(--muted);margin-top:1px}
+.alert{border-radius:8px;padding:10px 14px;background:var(--bads);font-size:14px;display:flex;flex-direction:column;gap:3px}
+.alert b{font-family:var(--font-display)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 15px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card h4{font-size:14.5px;display:flex;gap:8px;align-items:baseline}
+.card h4 .tag{font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--muted);margin-left:auto;white-space:nowrap}
+.card ul{font-size:13.5px;padding-left:17px}
+.card.flag{border-color:var(--eosin)} .card.flag h4{color:var(--eosin)}
+.card.urgent{border-color:var(--bad);background:var(--bads)}
+.card.ext h4::after{content:"นอก CPG";font-family:var(--font-mono);font-size:10.5px;font-weight:400;background:var(--warns);color:var(--fg);border-radius:99px;padding:0 7px;margin-left:6px}
+.r{display:inline-flex;font-family:var(--font-mono);font-size:10.5px;padding:0 5px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;line-height:1.7;vertical-align:1px}
+.r.s2{border-color:var(--azure);color:var(--azure);background:var(--azure-soft)}
+.r.s1{color:var(--fg)}
+.r.s0{border-style:dashed}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--azure);background:var(--azure);color:var(--azure-fg);border-radius:8px;padding:7px 14px;cursor:pointer;font-weight:600;font-size:14px}
+.btn.sec{background:transparent;color:var(--azure)}
+.copied{font-size:13px;color:var(--ok)}
+textarea.fallback{width:100%;min-height:140px;font-family:var(--font-mono);font-size:12.5px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:8px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;max-width:90ch}
+@media (prefers-reduced-motion:no-preference){.step{transition:border-color .3s,box-shadow .3s}}
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow">CPG ภาวะโลหิตจางและธาลัสซีเมีย สมาคมโลหิตวิทยาฯ 2562 · ส่วนที่ 1–2</div>
+  <h1>Anemia <span>Flow</span></h1>
+  <p class="lead">กรอกข้อมูลพื้นฐาน ระบบจะบอกว่าต้องการผลตรวจอะไรเพิ่มทีละขั้น พร้อมเส้นทางการวินิจฉัยและแนวทางการรักษาตาม CPG ช่องที่มีป้าย "ต้องการ" คือข้อมูลที่ระบบใช้ตัดสินขั้นต่อไป</p>
+  <div class="bar" id="presets">
+    <span class="lbl">ตัวอย่างผู้ป่วย:</span>
+    <button class="pill" data-p="ida">หญิง 34 ปี ประจำเดือนมาก</button>
+    <button class="pill" data-p="b12">ผู้สูงอายุ ชาเท้า MCV 118</button>
+    <button class="pill" data-p="g6pd">ชาย ปัสสาวะสีโค้กหลังยา</button>
+    <button class="pill" data-p="aiha">Warm AIHA</button>
+    <button class="pill" data-p="pnh">Coombs-negative + thrombosis</button>
+    <button class="pill" data-p="nb">ทารก 3 วัน ตัวเหลือง</button>
+    <button class="pill" data-p="thal">β-thal/Hb E รับเลือดประจำ ferritin สูง</button>
+    <button class="pill ghost" id="reset">ล้างทั้งหมด</button>
+  </div>
+  <div class="demo" id="demoNote">กำลังแสดงข้อมูลตัวอย่าง ไม่ใช่ผู้ป่วยจริง แก้ค่าได้ทันที</div>
+</header>
+
+<div class="app">
+  <div class="form" id="form"></div>
+  <div class="res" id="res" aria-live="polite">
+    <div class="box"><h2>เส้นทางการวินิจฉัย</h2><div class="path" id="path"></div><div id="alerts" style="display:flex;flex-direction:column;gap:8px"></div></div>
+    <div class="box"><h2>ระบบต้องการข้อมูลเพิ่ม</h2><div class="needs" id="needs"></div></div>
+    <div class="box"><h2>การวินิจฉัยที่เข้าได้</h2><div class="dx" id="dx"></div></div>
+    <div class="box" style="background:transparent;border:0;padding:0"><h2>การจัดการตาม CPG</h2><div class="cards" id="cards"></div></div>
+    <div class="tools"><button class="btn" id="copy">คัดลอกสรุปลงบันทึก</button><a class="btn sec" id="lessonLink" href="../anemia/index.html" style="text-decoration:none">อ่านบทเรียน Anemia CPG 2562</a><a class="btn sec" href="../thalassemia/index.html" style="text-decoration:none">บทเรียน Thalassemia CPG 2562</a><span class="copied" id="copied" hidden>คัดลอกแล้ว</span></div>
+    <textarea class="fallback" id="fallback" hidden readonly aria-label="สรุปสำหรับคัดลอก"></textarea>
+  </div>
+</div>
+
+<footer>
+  อ้างอิง: สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาภาวะโลหิตจางและธาลัสซีเมีย พ.ศ. 2562 ส่วนที่ 1. การ์ดที่มีป้าย "นอก CPG" เป็นแนวปฏิบัติทั่วไปหรือข้อมูลหลัง CPG ไม่ได้มาจากต้นฉบับ ·
+  เครื่องมือนี้ช่วยจัดลำดับความคิดตามแนวทาง ไม่ใช่การวินิจฉัยแทนแพทย์ ข้อมูลที่กรอกไม่ถูกบันทึกหรือส่งออกจากเครื่อง ตรวจขนาดยากับเอกสารกำกับยาก่อนสั่งใช้
+</footer>
+</div>
+
+<script id="engine">
+/* ================= FIELD CONFIG ================= */
+const GROUPS=[
+  {id:'basic',t:'ข้อมูลพื้นฐาน',c:'บทที่ 1'},
+  {id:'nb',t:'ทารกแรกเกิด',c:'บทที่ 2'},
+  {id:'iron',t:'สถานะธาตุเหล็ก',c:'บทที่ 3–4'},
+  {id:'mhx',t:'หาสาเหตุขาดเหล็กและติดตาม',c:'บทที่ 4'},
+  {id:'ret',t:'Reticulocyte และ RPI',c:'บทที่ 1'},
+  {id:'hypo',t:'สร้างเม็ดเลือดน้อย (RPI ≤ 2)',c:'บทที่ 1, 3'},
+  {id:'hem',t:'ภาวะเม็ดเลือดแดงแตก',c:'บทที่ 1, 8'},
+  {id:'hemdx',t:'ตรวจหาสาเหตุ Coombs-negative',c:'บทที่ 6, 7, 9'},
+  {id:'mac',t:'Macrocytic: B12 และ folate',c:'บทที่ 5'},
+  {id:'thal',t:'ธาลัสซีเมีย: ดูแลต่อเนื่อง',c:'CPG ส่วนที่ 2'}
+];
+const FIELDS=[
+  ['grp','basic','seg','กลุ่มผู้ป่วย','',{o:[['nb','ทารก ≤ 1 เดือน'],['ch','เด็ก'],['ad','ผู้ใหญ่ 18–64'],['el','ผู้สูงอายุ ≥ 65']],wide:1}],
+  ['sex','basic','seg','เพศ','',{o:[['M','ชาย'],['F','หญิง']]}],
+  ['age','basic','num','อายุ','ปี',{step:0.1,hint:'ทศนิยมได้ เช่น 0.5 = 6 เดือน'}],
+  ['hb','basic','num','Hb','g/dL',{step:0.1}],
+  ['mcv','basic','num','MCV','fL',{step:1}],
+  ['wbc','basic','num','WBC','×10³/µL',{step:0.1}],
+  ['plt','basic','num','Platelet','×10³/µL',{step:1}],
+  ['onset','basic','seg','การเกิดซีด','',{o:[['acute','เฉียบพลัน'],['chronic','เรื้อรัง/ไม่ทราบ']]}],
+  ['flags','basic','chk','อาการและสิ่งตรวจพบ','',{wide:1,o:[['unstable','สัญญาณชีพไม่คงที่'],['cardio','เจ็บอก/หัวใจวาย/สับสนจากซีด'],['bleed','เสียเลือดชัดเจน'],['jaundice','ตัวเหลืองตาเหลือง'],['darkurine','ปัสสาวะสีโค้ก'],['spleno','ม้ามโต'],['dysp','Smear มี blast/dysplasia'],['transf','ได้รับเลือดใน 3 เดือน'],['thal','ผู้ป่วยธาลัสซีเมียที่วินิจฉัยแล้ว']]}],
+
+  ['ga','nb','num','อายุครรภ์','สัปดาห์',{step:1}],
+  ['pnd','nb','num','อายุหลังเกิด','วัน',{step:1,hint:'0 = 24 ชั่วโมงแรก'}],
+  ['nb_ret','nb','seg','Reticulocyte','',{o:[['low','ต่ำ'],['nl','ปกติหรือสูง']],hint:'ปกติ 3–7% แรกเกิด ลดเหลือ 0–1% ที่ 2 สัปดาห์'}],
+  ['nb_bili','nb','seg','Indirect hyperbilirubinemia','',{o:[['no','ไม่มี'],['yes','มี']]}],
+  ['nb_kb','nb','seg','Acid elution (Kleihauer-Betke) เลือดแม่','',{o:[['pos','บวก'],['neg','ลบ']],wide:1}],
+  ['nb_dat','nb','seg','DAT และ IAT ทารก','',{o:[['pos','บวก'],['neg','ลบทั้งคู่']]}],
+  ['nb_abo','nb','seg','หมู่เลือดแม่–ลูก','',{o:[['abo','แม่ O ลูก A/B'],['rh','แม่ Rh− ลูก Rh+'],['minor','อื่น/minor']],wide:1}],
+  ['nb_smear','nb','seg','Smear ทารก','',{o:[['sph','Spherocyte/elliptocyte'],['enz','ปกติ/bite/blister/echinocyte'],['micro','Hypochromic microcytic'],['schist','Schistocyte']],wide:1}],
+  ['nb_resp','nb','seg','การช่วยหายใจ (GA < 32 wk)','',{o:[['vent','Ventilator'],['o2','O₂/NIPPV'],['none','ไม่ใช้ O₂']],wide:1}],
+  ['nb_sc','nb','seg','สถานการณ์ (BCSH 2004)','',{o:[['d1','ซีดใน 24 ชม.แรก'],['icu','ICU / FiO₂ > 0.35'],['lt','O₂/CPAP ระยะยาว'],['st','ซีดภายหลัง อาการคงที่']],wide:1}],
+
+  ['ferritin','iron','num','Ferritin','ng/mL',{step:1}],
+  ['crp','iron','seg','CRP / การอักเสบ','',{o:[['nl','ไม่สูง'],['hi','สูง']]}],
+  ['tsat','iron','num','Transferrin saturation','%',{step:1,hint:'SI ÷ TIBC × 100'}],
+  ['rdw','iron','num','RDW','%',{step:0.1}],
+  ['hbtyp','iron','seg','Hb typing / คัดกรองธาลัสซีเมีย','',{o:[['nl','ปกติ'],['thal','พาหะ/โรค/Hb E']],wide:1}],
+
+  ['mhx','mhx','chk','ประวัติที่เกี่ยวข้อง','',{wide:1,o:[['gi','เลือดออกทางเดินอาหาร/อุจจาระดำ'],['mens','ประจำเดือนมาก'],['diet','อาหารไม่พอ/มังสวิรัติ'],['malab','ผ่าตัดกระเพาะ/H. pylori/celiac/IBD'],['drug','NSAID/aspirin/steroid/PPI'],['pica','Pica'],['lead','สัมผัสตะกั่ว/basophilic stippling'],['intol','กินเหล็กไม่ได้'],['inflam','โรคเรื้อรัง/อักเสบ/มะเร็ง']]}],
+  ['feresp','mhx','seg','ผลหลังให้เหล็กกิน ≥ 1 เดือน','',{o:[['good','Hb ↑ > 1–2 g/dL'],['poor','Hb ↑ < 1 g/dL']],wide:1}],
+
+  ['ret','ret','num','Reticulocyte','%',{step:0.1}],
+  ['hct','ret','num','Hct','%',{step:0.1,hint:'ไม่กรอก = ประมาณ Hb × 3'}],
+
+  ['hp','hypo','chk','โรคร่วม','',{wide:1,o:[['ckd','CKD/Cr สูง'],['inflam','ติดเชื้อเรื้อรัง/อักเสบ/มะเร็ง'],['endo','Hypothyroid/ต่อมไร้ท่อ'],['liver','โรคตับ']]}],
+  ['epo','hypo','seg','Serum EPO','',{o:[['low','ต่ำ/ไม่สูงตามซีด'],['hi','สูง']]}],
+  ['testo','hypo','seg','Testosterone (ชาย)','',{o:[['low','ต่ำ'],['nl','ปกติ']]}],
+
+  ['hm','hem','chk','ผล hemolysis','',{wide:1,o:[['ldh','LDH สูง'],['ibili','Indirect bilirubin สูง'],['hapto','Haptoglobin ต่ำ'],['hbu','Hemoglobinuria']]}],
+  ['dat','hem','seg','Direct Coombs (DAT)','',{o:[['neg','ลบ'],['igg','บวก IgG ± C3'],['c3','บวก C3 อย่างเดียว']],wide:1}],
+  ['smear','hem','chk','Smear','',{wide:1,o:[['sph','Spherocytes'],['bite','Bite/blister cells'],['schist','Schistocytes'],['ellip','Elliptocytes'],['oval','Ovalocytes/theta cells'],['poik','Poikilocytes มาก/microspherocytes'],['echino','Echinocytes'],['agglut','Autoagglutination'],['target','Target cells']]}],
+  ['mchc','hem','num','MCHC','g/dL',{step:0.1}],
+  ['trig','hem','chk','ประวัติ','',{wide:1,o:[['oxdrug','ได้ยา oxidant (primaquine, dapsone, sulfa ฯลฯ)'],['fava','กินถั่วปากอ้า'],['infect','ติดเชื้อนำมาก่อน'],['cold','อาการเมื่อเย็น/acrocyanosis'],['fam','ครอบครัวซีด/เหลือง/ตัดม้าม'],['gall','นิ่วถุงน้ำดีอายุน้อย'],['thromb','ลิ่มเลือดตำแหน่งผิดปกติ']]}],
+  ['sec','hem','chk','หาสาเหตุ secondary AIHA','',{wide:1,o:[['ai','SLE/autoimmune'],['lpd','CLL/lymphoma'],['myco','Mycoplasma/EBV/ไวรัส'],['ndrug','ยาใหม่ก่อนซีด']]}],
+
+  ['g6pd','hemdx','seg','G6PD (FST/activity)','',{o:[['def','พร่อง'],['inter','Intermediate'],['nl','ปกติ']],wide:1}],
+  ['memb','hemdx','seg','EMA / OF / cryohemolysis','',{o:[['pos','เข้าได้ HS'],['neg','ปกติ']],wide:1}],
+  ['pnh','hemdx','seg','Flow CD55/CD59 + FLAER','',{o:[['pos','พบ PNH clone'],['neg','ไม่พบ']]}],
+  ['clone','hemdx','num','ขนาด clone (PMN)','%',{step:1}],
+  ['pk','hemdx','seg','PK activity / PKLR','',{o:[['low','ต่ำ/พบ mutation'],['nl','ปกติ']]}],
+
+  ['b12','mac','seg','Vitamin B12','',{o:[['low','ต่ำ'],['bord','Borderline'],['nl','ปกติ']]}],
+  ['fol','mac','seg','Folate','',{o:[['low','ต่ำ'],['bord','Borderline'],['nl','ปกติ']]}],
+  ['msm','mac','chk','Smear','',{wide:1,o:[['ovalo','Macro-ovalocytes'],['hyper','Hypersegmented neutrophils']]}],
+  ['neuro','mac','chk','ระบบประสาท','',{wide:1,o:[['pares','ชาปลาย/เดินเซ/vibration เสีย'],['cog','สับสน/สมองเสื่อม']]}],
+  ['mc','mac','chk','ปัจจัยเสี่ยง','',{wide:1,o:[['vegan','มังสวิรัติเคร่งครัด'],['gastric','ผ่าตัดกระเพาะ/atrophic gastritis'],['acid','PPI/H2RA/metformin ระยะยาว'],['n2o','Nitrous oxide'],['malab','IBD/celiac/ตับอ่อน/พยาธิตัวตืดปลา'],['alcohol','ดื่มสุราเรื้อรัง'],['liver','โรคตับ'],['hypoth','Hypothyroidism'],['mdrug','MTX/TMP/ยากันชัก/ARV/เคมีบำบัด/AZA'],['preg','ตั้งครรภ์/ให้นม'],['partial','ได้วิตามินหรือเลือดก่อนตรวจ']]}],
+  ['mmahcy','mac','seg','MMA / homocysteine','',{o:[['both','สูงทั้งคู่'],['hcy','Hcy สูงอย่างเดียว'],['nl','ปกติ']],wide:1}],
+
+  ['th_type','thal','seg','ชนิดโรค','',{o:[['homoB','β-thal major'],['bE','β-thal/Hb E'],['hbh','Hb H'],['hbhcs','Hb H/CS'],['bart','Surviving Hb Bart\'s']],wide:1}],
+  ['th_tx','thal','seg','รูปแบบการรับเลือด','',{o:[['reg','สม่ำเสมอ (TDT)'],['occ','นานๆ ครั้ง/ไม่รับ (NTDT)']],wide:1}],
+  ['th_wt','thal','num','น้ำหนัก','kg',{step:0.5}],
+  ['th_hb2','thal','seg','Hb ต่ำกว่าเกณฑ์ 2 ครั้ง ห่าง ≥ 2 สัปดาห์ โดยไม่มีติดเชื้อ','',{o:[['y','ใช่'],['n','ไม่ใช่/ครั้งเดียว']],wide:1}],
+  ['th_iss','thal','chk','ภาวะที่พบ','',{wide:1,o:[['face','หน้าเปลี่ยน'],['growth','โตช้า'],['fx','กระดูกหัก'],['emh','EMH/ตับม้ามโตมาก'],['pah','PAH'],['ulcer','แผลเรื้อรังที่ขา'],['cord','ปวดหลัง/ขาอ่อนแรง'],['heart','หัวใจล้มเหลว/arrhythmia'],['fever','ไข้/ติดเชื้อตอนนี้'],['splen','ตัดม้ามแล้ว'],['hyper','Hypersplenism/เลือด > 225–250 mL/kg/ปี'],['ab','มี alloantibody/หาเลือดยาก'],['ntx','รับเลือด > 10 ครั้ง หรือสม่ำเสมอ > 1 ปี'],['preg','ตั้งครรภ์/วางแผนตั้งครรภ์']]}],
+  ['th_sf','thal','num','Serum ferritin','ng/mL',{step:1,hint:'ใช้ค่า ≥ 2 ครั้ง ห่าง 1–3 เดือน เมื่อไม่มีไข้/อักเสบ'}],
+  ['th_lic','thal','num','LIC (MRI)','mg Fe/g dw',{step:0.1}],
+  ['th_t2','thal','num','Cardiac T2*','ms',{step:0.1}],
+  ['th_chel','thal','seg','ยาขับเหล็กปัจจุบัน','',{o:[['none','ยังไม่ได้'],['dfo','DFO'],['dfp','DFP'],['dfx','DFX'],['combo','DFP + DFO']],wide:1}],
+  ['th_cresp','thal','seg','ผลของยาขับเหล็ก','',{o:[['ok','ตอบสนอง'],['fail','ไม่ตอบสนอง*'],['ae','ผลข้างเคียง/ทนไม่ได้']],wide:1,hint:'*ขนาดสูงสุดที่ทนได้ และ ferritin > 2,500 ไม่ลดใน 1 ปี หรือลด < 15% ใน 2 ปี (ประเมิน adherence แล้ว)'}],
+  ['th_anc','thal','num','ANC','/mm³',{step:1}]
+];
+const FMAP={};FIELDS.forEach(f=>FMAP[f[0]]={id:f[0],g:f[1],t:f[2],l:f[3],u:f[4],x:f[5]||{}});
+
+/* ================= HELPERS ================= */
+function G(s,e){const c=s==='++'?'s2':s==='+'?'s1':s==='+/-'?'s0':'';return ` <span class="r ${c}">${s}${e?' · '+e:''}</span>`}
+const fx=(v,d=1)=>{if(v==null)return'—';const r=Math.round(v*Math.pow(10,d))/Math.pow(10,d);return String(r)};
+function hbCut(S){
+  if(S.grp==='ad'||S.grp==='el')return S.sex==='F'?{v:12,s:'WHO หญิง'}:{v:13,s:'WHO ชาย'};
+  const a=S.age;
+  if(a==null)return null;
+  if(a<0.125)return{v:10,s:'ตาราง 1 อายุ 1 เดือน'};
+  if(a<0.25)return{v:9,s:'ตาราง 1 อายุ 2 เดือน'};
+  if(a<0.5)return{v:9.5,s:'ตาราง 1 อายุ 3–6 เดือน'};
+  if(a<5)return{v:11,s:'CDC/WHO 6 เดือน–5 ปี'};
+  if(a<12)return{v:11.5,s:'CDC/WHO 5–12 ปี'};
+  return S.sex==='F'?{v:12,s:'ตาราง 1 หญิง 12–18 ปี'}:{v:13,s:'ตาราง 1 ชาย 12–18 ปี'};
+}
+function mcvLim(S){
+  if(S.grp==='ad'||S.grp==='el')return{lo:80,hi:100,s:'80–100 fL'};
+  const a=S.age;
+  if(a<0.125)return{lo:85,hi:null,s:'−2SD อายุ 1 เดือน (85)'};
+  if(a<0.25)return{lo:77,hi:null,s:'−2SD อายุ 2 เดือน (77)'};
+  if(a<0.5)return{lo:74,hi:null,s:'−2SD อายุ 3–6 เดือน (74)'};
+  if(a<2)return{lo:70,hi:100,s:'−2SD 0.5–2 ปี (70)'};
+  if(a<6)return{lo:75,hi:100,s:'−2SD 2–6 ปี (75)'};
+  return{lo:S.sex==='F'?78:77,hi:100,s:'−2SD 12–18 ปี (ใช้แทนช่วง 6–12 ปีที่ไม่มีในตาราง)'};
+}
+function rpiCalc(ret,hct,hb){
+  const h=hct!=null?hct:(hb!=null?hb*3:null);
+  if(ret==null||h==null)return null;
+  const corr=ret*h/45, mt=h>=40?1:h>=30?1.5:h>=20?2:2.5;
+  return{corr,mt,rpi:corr/mt,h,est:hct==null};
+}
+const GRP={nb:'ทารกแรกเกิด',ch:'เด็ก',ad:'ผู้ใหญ่',el:'ผู้สูงอายุ'};
+
+/* ================= ENGINE ================= */
+function evaluate(S){
+  const o={path:[],dx:[],cards:[],alerts:[],show:{},why:{},need:[]};
+  const has=(id,v)=>Array.isArray(S[id])&&S[id].includes(v);
+  const empty=id=>S[id]==null||S[id]===''||(Array.isArray(S[id])&&S[id].length===0);
+  const ask=(id,why,need)=>{o.show[id]=true;if(why)o.why[id]=why;if(need&&empty(id)&&!o.need.includes(id))o.need.push(id)};
+  const P=(t,k)=>o.path.push({t,k:k||''});
+  const D=(n,lv,why)=>{if(!o.dx.some(d=>d.n===n))o.dx.push({n,lv,why:why||''})};
+  const C=(t,tag,items,tone)=>o.cards.push({t,tag,items:items.filter(Boolean),tone:tone||''});
+  const A=(t,b)=>o.alerts.push({t,b});
+
+  ask('grp','',true);
+  if(!S.grp){P('เลือกกลุ่มผู้ป่วยเพื่อเริ่ม','q');return o}
+  const nb=S.grp==='nb';
+  if(!nb)ask('sex','',true);
+  if(S.grp==='ch')ask('age','กำหนดเกณฑ์ Hb และ MCV ตามอายุ (ตาราง 1)',true);
+  ask('hb','',true);
+  ask('mcv',nb?'ทารกปกติ MCV สูง (term ~112) · MCV ต่ำนึกถึง α-thal หรือเสียเลือดเรื้อรังในครรภ์':'',!nb&&!(Array.isArray(S.flags)&&S.flags.includes('thal')));
+  ask('wbc','ใช้ดู pancytopenia และข้อบ่งชี้เจาะไขกระดูก',false);
+  ask('plt','',false);
+  if(!nb)ask('onset','',false);
+  ask('flags','',false);
+
+  if(nb)return newborn(S,o,{ask,P,D,C,A,has,empty});
+  if(has('flags','thal')){
+    if(S.hb==null||!S.sex||(S.grp==='ch'&&S.age==null)){P('กรอก Hb (ก่อนให้เลือด/ภาวะปกติ) เพศ และอายุ','q');return o}
+    P(`${GRP[S.grp]}${S.grp==='ch'?' '+fx(S.age)+' ปี':''} · ธาลัสซีเมียที่วินิจฉัยแล้ว`);
+    thal(S,o,{ask,P,D,C,A,has,empty});
+    if(!o.dx.length)D('รอข้อมูลเพิ่ม','pend','');
+    return o;
+  }
+
+  const hb=S.hb,mcv=S.mcv;
+  if(hb==null||mcv==null||!S.sex||(S.grp==='ch'&&S.age==null)){P('กรอกข้อมูลพื้นฐานที่มีป้าย "ต้องการ"','q');return o}
+  if(S.grp==='ch'&&S.age>=18){P('อายุ ≥ 18 ปี ให้เลือกกลุ่มผู้ใหญ่','warn');return o}
+  if(S.grp==='ch'&&S.age<1/12){P('อายุ < 1 เดือน ให้เลือกกลุ่มทารกแรกเกิด','warn');return o}
+
+  const cut=hbCut(S), lim=mcvLim(S);
+  P(`${GRP[S.grp]}${S.grp==='ch'?' '+fx(S.age)+' ปี':''} ${S.sex==='F'?'หญิง':'ชาย'}`);
+  const anemic=hb<cut.v;
+  P(anemic?`Hb ${fx(hb)} < ${cut.v} → โลหิตจาง`:`Hb ${fx(hb)} ≥ ${cut.v} → ยังไม่เข้าเกณฑ์`,anemic?'q':'ok');
+
+  const wbcLo=S.wbc!=null&&S.wbc<4, pltLo=S.plt!=null&&S.plt<150, wbcHi=S.wbc!=null&&S.wbc>11;
+  const cyto=wbcLo||pltLo, pancy=anemic&&wbcLo&&pltLo;
+  let cls=mcv<lim.lo?'micro':(lim.hi!=null&&mcv>lim.hi)?'macro':'normo';
+  const clsName={micro:'microcytic',normo:'normocytic',macro:'macrocytic'}[cls];
+  P(`MCV ${fx(mcv,0)} → ${clsName}`,'q');
+  if(lim.hi==null&&mcv>100)A('MCV สูงเป็นปกติในทารกอายุน้อย','ช่วงอายุนี้ไม่ใช้ MCV สูงตัดสิน macrocytic ('+lim.s+')');
+
+  if(!anemic&&cls==='normo'){
+    C('ยังไม่เข้าเกณฑ์โลหิตจาง','บทที่ 1',[`เกณฑ์ที่ใช้: Hb < ${cut.v} g/dL (${cut.s})`,'ถ้าอาการชวนสงสัย ติดตาม CBC ซ้ำ หรือประเมินตามอาการนำ']);
+    return o;
+  }
+  if(!anemic)A('ยังไม่ซีด แต่ MCV ผิดปกติ','Microcytosis ไม่ซีด: นึกถึงพาหะธาลัสซีเมีย/ขาดเหล็กระยะแรก · Macrocytosis ไม่ซีด: B12 deficiency แสดงอาการทางประสาทได้แม้ไม่ซีด');
+
+  /* red flags */
+  if(has('flags','unstable')||has('flags','cardio')){
+    A('มีอาการจากซีดหรือสัญญาณชีพไม่คงที่','ประเมินการให้เลือดทันที และส่งตรวจที่จำเป็น (โดยเฉพาะ DAT, G6PD, B12/folate, flow) ก่อนให้เลือดถ้าทำได้');
+    C('การให้เลือดในภาวะเร่งด่วน','บทที่ 4, 8, 9',[
+      'CPG ไม่กำหนดเกณฑ์ Hb สำหรับผู้ใหญ่ทั่วไป ตัดสินจากอาการ cardiovascular/neurologic compromise',
+      'ซีดเรื้อรังจาก IDA ที่มีหัวใจวาย: PRC <b>2–3 mL/kg ช้าๆ</b> + ยาขับปัสสาวะ + เหล็ก',
+      'AIHA: เลือด <b>least incompatible</b> ~5 mL/kg อัตรา ≤ 2 mL/kg/h · CAD ใช้ blood warmer',
+      'PNH: leukocyte-poor RBC · G6PD intravascular hemolysis: ให้สารน้ำ + ยาขับปัสสาวะป้องกัน AKI',
+      'เก็บเลือดส่ง G6PD และ flow PNH ก่อนให้เลือด (หลังรับเลือดต้องรอ 2–3 เดือน / ≥ 1 เดือน)'
+    ],'urgent');
+  }
+  if(has('flags','bleed')){
+    D('เสียเลือด (acute/overt blood loss)','main','มีเลือดออกชัดเจน');
+    C('เสียเลือด','บทที่ 1',['ประเมินและหยุดแหล่งเลือดออก แก้ไข hemodynamic','หลังเสียเลือดเฉียบพลัน retic จะสูงขึ้นในวันต่อมา (RPI > 2) อย่าสับสนกับ hemolysis','เสียเลือดเรื้อรัง → ขาดเหล็ก ให้เหล็กและหาแหล่งเลือดออก'],'ext');
+  }
+  if(has('flags','dysp')){
+    D('MDS / leukemia / marrow infiltration','main','Smear มี blast หรือ dysplasia');
+    C('เจาะไขกระดูก','บทที่ 1, 3',['Bone marrow aspiration/biopsy + cytogenetics','ผู้สูงอายุที่ smear ผิดปกติให้เจาะไขกระดูกเป็นขั้นแรก (แผนภูมิผู้สูงอายุ)'],'flag');
+  }
+  if(pancy||(cyto&&anemic)){
+    P(pancy?'Pancytopenia':'Anemia + '+(wbcLo?'leukopenia':'thrombocytopenia'),'warn');
+    D(pancy?'Bone marrow failure / infiltration':'Bicytopenia ที่ต้องหาสาเหตุ','alt','Aplastic anemia, leukemia, MDS, lymphoma infiltration, megaloblastic, PNH');
+    C('Cytopenia มากกว่า 1 สาย','บทที่ 1, 5, 9',[
+      'ข้อบ่งชี้ตรวจไขกระดูก: pancytopenia หรือ refractory anemia',
+      cls==='macro'?'MCV สูง: ตรวจ B12/folate ก่อน megaloblastic ทำให้ WBC/plt ต่ำได้':'',
+      '<b>CATCH</b>: cytopenia ที่ไขกระดูกอธิบายไม่ได้ หรือสงสัย AA/low-risk MDS → ส่ง flow PNH (FLAER)'
+    ],'flag');
+  }
+  if(S.grp==='el'){
+    C('ตรวจพื้นฐานในผู้สูงอายุ','บทที่ 3 ตาราง 4',[
+      'ทำทุกราย'+G('++','ง1')+': ประวัติ ตรวจร่างกาย CBC retic smear iron studies renal และ liver function',
+      'เลือกทำ'+G('+/-','')+': BM, cytogenetics, B12, folate, EPO, TFT, testosterone (ชาย), inflammation markers',
+      'Ferritin ในผู้สูงอายุใช้ <b>&lt; 45 ng/mL</b> วินิจฉัยขาดเหล็ก'
+    ]);
+  }
+
+  if(cls==='micro')micro(S,o,{ask,P,D,C,A,has,empty},anemic);
+  else if(cls==='normo')normo(S,o,{ask,P,D,C,A,has,empty},{wbcLo,pltLo,wbcHi,cyto});
+  else macro(S,o,{ask,P,D,C,A,has,empty},{cyto,pancy});
+
+  if(!o.dx.length)D('รอข้อมูลเพิ่ม','pend','กรอกช่องที่มีป้าย "ต้องการ" เพื่อให้ระบบสรุป');
+  return o;
+}
+
+/* ---------- MICROCYTIC ---------- */
+function micro(S,o,h,anemic){
+  const {ask,P,D,C,A,has}=h;
+  const el=S.grp==='el', ch=S.grp==='ch';
+  const fcut=el?45:10;
+  ask('ferritin',el?'ผู้สูงอายุใช้ ferritin < 45 ng/mL':'CPG ใช้ ferritin < 10 ng/mL · ต้องแปลผลคู่กับ CRP',true);
+  ask('crp','Ferritin เป็น acute phase reactant ใช้ได้เมื่อ CRP ไม่สูง',true);
+  ask('tsat','TSAT < 16% สนับสนุนขาดเหล็ก ช่วยเมื่อ ferritin กำกวม',false);
+  ask('rdw','IDA มัก RDW สูงกว่า (~20.6%) β-thal trait (~16.3%)',false);
+  ask('hbtyp','ไทยมีธาลัสซีเมียสูง ควรแยกเสมอเมื่อ microcytic',false);
+  ask('mhx','',false);
+
+  const F=S.ferritin, T=S.tsat, inflam=S.crp==='hi'||has('mhx','inflam');
+  let iron=null; // 'def','prob','mixed','acd','replete'
+  if(F!=null){
+    if(F<fcut)iron='def';
+    else if(S.grp==='ad'&&F<45&&!inflam)iron='prob';
+    else if(inflam&&F<=100&&T!=null&&T<16)iron='mixed';
+    else if(inflam&&T!=null&&T<16)iron='acd';
+    else if(T!=null&&T<16&&F<=100)iron='prob';
+    else iron='replete';
+  }else if(T!=null){iron=T<16?'prob':'replete'}
+
+  if(F!=null)P(`Ferritin ${fx(F,0)}${S.crp==='hi'?' (CRP สูง)':''}`,'q');
+  if(iron==='def'){P('ขาดธาตุเหล็ก','dx');D('Iron deficiency anemia','main',`Ferritin ${fx(F,0)} < ${fcut} ng/mL`+(S.crp==='hi'?' แม้ CRP สูง':''))}
+  else if(iron==='prob'){P('น่าจะขาดเหล็ก','dx');D('Iron deficiency anemia (น่าจะเป็น)','main',F!=null&&F<45?`Ferritin ${fx(F,0)} อยู่ระหว่าง ${fcut}–45 · AGA 2020 ใช้ < 45 ในผู้ใหญ่ · ยืนยันด้วย therapeutic trial`:'TSAT < 16% · ยืนยันด้วย ferritin หรือ therapeutic trial')}
+  else if(iron==='mixed'){P('IDA ร่วม ACD เป็นไปได้','dx');D('IDA ร่วมกับ anemia of chronic disease','main','อักเสบทำให้ ferritin สูงเกินจริง · ferritin ≤ 100 + TSAT < 16% ยังขาดเหล็กได้ (ผู้สูงอายุ 45–100 LR 0.46)')}
+  else if(iron==='acd'){D('Anemia of chronic disease (iron-restricted)','main','Ferritin สูงจากการอักเสบ TSAT ต่ำ');D('IDA ซ่อนอยู่','alt','Ferritin > 100 ทำให้โอกาส IDA ต่ำ (LR 0.13 ในผู้สูงอายุ)')}
+  else if(iron==='replete'){P('เหล็กปกติ','ok');D('Thalassemia / hemoglobinopathy','main','Microcytosis ที่เหล็กปกติในบริบทไทย');D('Anemia of chronic disease','alt','');D('Lead poisoning','alt','มองหา basophilic stippling ประวัติสัมผัสตะกั่ว')}
+  else{
+    D('IDA หรือ thalassemia','pend','ยังไม่มีผล ferritin/CRP');
+    C('ยังไม่มีผลเหล็ก','บทที่ 4',[
+      'ส่ง ferritin + CRP (± SI/TIBC)',
+      'สถานพยาบาลที่ตรวจไม่ได้: <b>therapeutic trial</b> '+(ch?'เหล็ก 4–6 mg/kg/วัน':'เหล็กกิน')+' แล้วดู Hb ใน 1 เดือน · เพิ่ม > 1–2 g/dL = IDA'
+    ]);
+  }
+  if(S.rdw!=null&&iron!=='def'){A('RDW '+fx(S.rdw)+'%',S.rdw>=20?'ค่อนไปทาง IDA (median 20.6%)':S.rdw<=17?'ค่อนไปทาง β-thal trait (median 16.3%) แต่ซ้อนกันได้ ต้องยืนยันด้วย Hb typing':'แยกไม่ได้ชัด')}
+  if(S.hbtyp==='thal'){
+    P('ธาลัสซีเมีย/Hb E','dx');
+    D('Thalassemia / Hb E','main','ผล Hb typing ผิดปกติ');
+    C('ธาลัสซีเมีย','CPG ส่วนที่ 2',[
+      'ดูแลตาม CPG ธาลัสซีเมีย (ส่วนที่ 2) เช่น ชนิดโรค การให้เลือด ภาวะเหล็กเกิน',
+      iron==='def'||iron==='prob'?'ขาดเหล็กร่วมได้ ให้เหล็กเฉพาะเมื่อพิสูจน์ว่าขาด':'<b>ไม่ให้เหล็ก</b>ถ้าเหล็กไม่ขาด',
+      ch?'เด็กที่เป็นพาหะกินเหล็กเสริมตามนโยบายกรมอนามัยได้':''
+    ]);
+    A('ต่อด้วยโมดูลธาลัสซีเมีย','ถ้าเป็นโรค (ไม่ใช่พาหะ) เลือกชนิดโรคในส่วน "ธาลัสซีเมีย: ดูแลต่อเนื่อง" เพื่อดูเกณฑ์ให้เลือดและขับเหล็ก');
+    thal(S,o,h,true);
+  }else if(iron==='replete'){
+    if(S.hbtyp==='nl'){D('Thalassemia trait ที่ Hb typing ปกติ (เช่น α-thal 2)','alt','ส่ง DNA analysis ถ้าจำเป็น')}
+    else{
+      ask('hbtyp','เหล็กปกติแต่ MCV ต่ำ → ส่ง Hb typing/คัดกรองธาลัสซีเมีย',true);
+      C('Microcytic ที่เหล็กไม่ขาด','บทที่ 1 · CPG ส่วนที่ 2',['ส่ง Hb typing (Hb analysis) และคัดกรองธาลัสซีเมีย','ดู smear: target cells (thal, Hb E), basophilic stippling (ตะกั่ว, Hb CS)','<b>ไม่ให้เหล็ก</b>ถ้าเหล็กไม่ขาด','ไม่พบ hemoglobinopathy → ACD (ประเมินโรคเรื้อรัง), ตะกั่ว']);
+    }
+  }
+  if(has('mhx','lead'))D('Lead poisoning','alt','ประวัติสัมผัสหรือ basophilic stippling');
+
+  if(iron==='def'||iron==='prob'||iron==='mixed'){
+    idaCards(S,o,h);
+  }
+  if(iron==='acd'||iron==='mixed'){
+    C('Anemia of chronic disease','บทที่ 3',['รักษาโรคต้นเหตุ (ติดเชื้อเรื้อรัง โรคอักเสบ มะเร็ง CKD)','CKD: ประเมินตาม CPG โรคไต (เหล็ก ± ESA)','Hepcidin สูงจากการอักเสบ → เหล็กกินดูดซึมไม่ดี พิจารณาเหล็กฉีดถ้าขาดจริง']);
+  }
+}
+function idaCards(S,o,h){
+  const {ask,C,D,A,has}=h;
+  const el=S.grp==='el', ch=S.grp==='ch';
+  const dose=ch?'<b>4–6 mg/kg/วัน</b> elemental iron แบ่ง 1–3 ครั้ง':el?'ประมาณ <b>200 mg/วัน</b> elemental iron':'<b>100–200 mg/วัน</b> elemental iron แบ่ง 1–3 ครั้ง';
+  const dur=el?'ให้จน Hb ปกติแล้วต่ออีก <b>~6 เดือน</b> (บทที่ 3) · Hb ขึ้นใน 4–6 สัปดาห์':'ให้จน Hb ปกติแล้วต่ออีก <b>8 สัปดาห์</b> · ตรวจ Hb เมื่อครบและอีก 6 เดือน';
+  const ivReason=has('mhx','malab')||has('mhx','intol');
+  C('รักษาภาวะขาดเหล็ก','บทที่ 4',[
+    'เหล็กกิน (FeSO₄, gluconate, polymaltose): '+dose,
+    dur,
+    'Retic เพิ่มใน 72–96 ชม. · ประเมิน Hb ที่ 1 เดือน',
+    ivReason?'<b>พิจารณาเหล็กฉีด</b> (iron sucrose / iron dextran) เพราะ'+(has('mhx','malab')?'ดูดซึมไม่ได้':'กินไม่ได้')+' · ระวัง anaphylaxis':'เหล็กฉีดเมื่อกินไม่ได้ ดูดซึมไม่ได้ หรือ CKD/มะเร็งที่ได้ ESA',
+    (S.hb!=null&&S.hb<4)||has('flags','cardio')?'<b>ให้เลือดเฉพาะซีดรุนแรงมาก</b>: PRC 2–3 mL/kg ช้าๆ + ยาขับปัสสาวะ ระวัง pulmonary edema':'ไม่ต้องให้เลือดถ้าไม่มีอาการรุนแรง ผู้ป่วยปรับตัวกับซีดเรื้อรังได้ดี',
+    'ท้องผูก → ดื่มน้ำ ใยอาหาร · แน่นท้อง → กินพร้อมอาหาร'
+  ],'flag');
+  const src=[];
+  if(has('mhx','gi'))src.push('เลือดออกทางเดินอาหาร: หาแหล่ง (แผล, angiodysplasia, ริดสีดวง, เนื้องอก/มะเร็งลำไส้)');
+  if(has('mhx','mens'))src.push('ประจำเดือนมาก: ประเมินทางนรีเวช');
+  if(has('mhx','diet'))src.push('อาหาร/มังสวิรัติ: แนะนำโภชนาการตามวัย');
+  if(has('mhx','malab'))src.push('ดูดซึมไม่ได้: H. pylori, celiac, atrophic gastritis, IBD, หลังผ่าตัดกระเพาะ');
+  if(has('mhx','drug'))src.push('ยา steroid, aspirin, NSAIDs, PPI');
+  if((S.grp==='ad'&&S.sex==='M')||el)src.push('<b>ชายผู้ใหญ่/ผู้สูงอายุ</b>: แหล่งเสียเลือดทางเดินอาหารต้องคิดก่อน รวมมะเร็งลำไส้ใหญ่และการติดเชื้อ H. pylori');
+  if(ch)src.push('เด็ก: ประวัติอาหาร ชนิดนม อาหารเสริม พยาธิปากขอ');
+  src.push('สาเหตุอื่น: intravascular hemolysis (PNH, ลิ้นหัวใจ), IRIDA, ESA/CKD');
+  C('หาสาเหตุขาดเหล็ก','บทที่ 3–4',src);
+  ask('feresp','ใช้ประเมินการตอบสนองต่อเหล็ก',false);
+  if(S.feresp==='good'){
+    o.path.push({t:'ตอบสนองต่อเหล็ก','k':'ok'});
+    C('ตอบสนองต่อการรักษา','บทที่ 4',['ยืนยัน IDA · ให้ต่อจนครบระยะเติมคลัง','<b>สมาคมฯ แนะนำ</b> หลังให้เหล็ก ≥ 1 เดือน ตรวจ CBC + smear ซ้ำ เพื่อแยกธาลัสซีเมียร่วม']);
+  }else if(S.feresp==='poor'){
+    o.path.push({t:'ไม่ตอบสนองต่อเหล็ก','k':'warn'});
+    D('ไม่ตอบสนองต่อเหล็กกิน','alt','ต้องทบทวนการวินิจฉัย');
+    C('ไม่ตอบสนองต่อเหล็ก','บทที่ 4',['ตรวจว่าได้ขนาดถูกต้องและกินจริง','ยังเสียเลือดอยู่หรือไม่','ดูดซึมไม่ได้ → เหล็กฉีด','แยกธาลัสซีเมีย (Hb typing), ACD, CKD, IRIDA','ตรวจ CBC + smear ซ้ำ'],'flag');
+    ask('hbtyp','ไม่ตอบสนองต่อเหล็ก → แยกธาลัสซีเมีย',true);
+  }
+  if(S.grp==='ch'&&S.age!=null&&S.age<1){
+    C('ป้องกันขาดเหล็กในทารก','บทที่ 4',['ก่อนกำหนดกินนมแม่: 2 mg/kg/วัน อายุ 1–12 เดือน'+G('++','ง1'),'ครบกำหนด นมแม่อย่างเดียว/เกินครึ่ง: 1 mg/kg/วัน เริ่ม 4 เดือน'+G('++','ง1'),'ตรวจ Hct อย่างน้อย 1 ครั้งที่ 6–12 เดือน']);
+  }
+}
+
+/* ---------- NORMOCYTIC ---------- */
+function normo(S,o,h,c){
+  const {ask,P,D,C,A,has}=h;
+  const hemFlag=has('flags','jaundice')||has('flags','darkurine');
+  ask('ret','แยก hemolysis/เสียเลือด (RPI > 2) จากสร้างน้อย (RPI ≤ 2)',true);
+  ask('hct','ใช้คำนวณ corrected retic',false);
+  const r=rpiCalc(S.ret,S.hct,S.hb);
+  if(!r){
+    if(hemFlag){P('รอ reticulocyte · มีอาการชวน hemolysis','warn');hemolysis(S,o,h,c)}
+    else D('Normocytic anemia','pend','ต้องการ reticulocyte เพื่อคำนวณ RPI');
+    return;
+  }
+  P(`RPI ${fx(r.rpi,2)}${r.est?' (Hct ประมาณ)':''}`,'q');
+  if(r.rpi>2||hemFlag||(Array.isArray(S.hm)&&S.hm.length>=2)){
+    P(r.rpi>2?'RPI > 2 → hemolysis หรือเสียเลือด':'อาการชวน hemolysis','q');
+    hemolysis(S,o,h,c);
+  }else{
+    P('RPI ≤ 2 → สร้างน้อย','q');
+    hypo(S,o,h,c);
+  }
+}
+function hypo(S,o,h,c){
+  const {ask,P,D,C,A,has}=h;
+  const el=S.grp==='el', ch=S.grp==='ch';
+  if(c.wbcHi){D('Infection / leukemia','main','WBC สูง (แผนภูมิที่ 2)');C('WBC สูง','บทที่ 1',['หาการติดเชื้อ','ดู smear หา blast ถ้าสงสัย → ไขกระดูก'])}
+  if(c.wbcLo||c.pltLo){
+    D('Marrow failure / infiltration','main','WBC หรือ platelet ต่ำ → bone marrow aspiration');
+    C('ตรวจไขกระดูก','บทที่ 1',[ch?'เด็ก: leukemia, lymphoma, neuroblastoma, aplastic anemia':'ผู้ใหญ่: leukemia, lymphoma, aplastic anemia, MDS, myelophthisis','ส่ง flow PNH ตาม CATCH (AA/MDS, cytopenia)'],'flag');
+  }
+  ask('hp','',false);
+  ask('ferritin','ขาดเหล็กระยะแรกเป็น normocytic ได้',false);
+  ask('crp','',false);
+  ask('tsat','',false);
+  if(el){ask('epo','แยก EPO ต่ำ (CKD) กับ unexplained anemia',false);if(S.sex==='M')ask('testo','Testosterone ต่ำเพิ่มความเสี่ยงซีดในชายสูงอายุ',false)}
+  const fcut=el?45:10;
+  if(S.ferritin!=null&&(S.ferritin<fcut||(S.grp==='ad'&&S.ferritin<45&&S.crp!=='hi'))){D('ขาดเหล็กระยะแรก','main','Ferritin '+fx(S.ferritin,0));idaCards(S,o,h)}
+  if(has('hp','ckd')||S.epo==='low'){
+    D('Anemia of CKD (EPO ลดลง)','main',has('hp','ckd')?'มี CKD':'EPO ไม่สูงตามซีด');
+    C('Anemia of CKD','บทที่ 3',['Creatinine สูงหรือ EPO ต่ำกว่าคาด → พิจารณา EPO'+(el?' (แผนภูมิผู้สูงอายุ)':''),'ประเมินเหล็กก่อนเริ่ม ESA · เหล็กฉีดเมื่อเหล็กกินล้มเหลว','ดูรายละเอียดตาม CPG โรคไตเรื้อรัง']);
+  }
+  if(has('hp','inflam'))D('Anemia of chronic disease','main','โรคอักเสบ/ติดเชื้อเรื้อรัง/มะเร็ง');
+  if(has('hp','endo'))D('Endocrine (hypothyroidism)','alt','ตรวจ TFT');
+  if(has('hp','liver'))D('Liver disease','alt','');
+  if(S.epo==='hi'&&el){D('Anemia ที่ EPO สูง','alt','รักษาแบบประคับประคอง (แผนภูมิผู้สูงอายุ)')}
+  if(S.testo==='low'){D('Testosterone ต่ำ','alt','การให้ testosterone ทดแทนในชายสูงอายุช่วยให้ซีดดีขึ้นได้')}
+  if(!o.dx.length||o.dx.every(d=>d.lv!=='main')){
+    if(el){
+      D('Unexplained anemia of the elderly','alt','พบ 30–40% · Hb 10.5–12, MCV 80–95, retic ต่ำ, WBC/plt ปกติ, ไม่มี dysplasia, B12/folate/TSH/CRP ปกติ, EPO ไม่สูง, CrCl 60–90');
+      D('Occult MDS','alt','~17% ของ unexplained anemia');
+      C('Unexplained anemia ในผู้สูงอายุ','บทที่ 3',['ตรวจให้ครบ: B12, folate, TSH, CRP, Cr, EPO','<b>ไม่แนะนำ ESA</b> ใน unexplained anemia','Smear ผิดปกติหรือ cytopenia → ไขกระดูก + cytogenetics','ชาย testosterone ต่ำ → พิจารณาทดแทน']);
+    }else if(ch){
+      D('Pure red cell aplasia / TEC of childhood','alt','RPI ต่ำ WBC และ platelet ปกติ (แผนภูมิที่ 2)');
+      D('Anemia of chronic disease','alt','');
+      C('Hypoproliferative ในเด็ก','บทที่ 1',['ซักประวัติติดเชื้อ (parvovirus B19), ยา','ตรวจ BUN/Cr, TFT ตามสงสัย','Refractory → ไขกระดูก']);
+    }else{
+      D('Anemia of chronic disease / CKD / endocrine','alt','RPI ต่ำ WBC และ platelet ปกติ');
+      D('PRCA · multiple myeloma','alt','แผนภูมิที่ 2 กลุ่ม WBC/plt ปกติในผู้ใหญ่');
+      C('Hypoproliferative ในผู้ใหญ่','บทที่ 1',['ตรวจ BUN/Cr, TFT, LFT, ferritin/CRP','สงสัย myeloma: globulin สูง, ไตเสื่อม, ปวดกระดูก','Refractory → ไขกระดูก']);
+    }
+  }
+}
+
+/* ---------- HEMOLYSIS ---------- */
+function hemolysis(S,o,h,c){
+  const {ask,P,D,C,A,has}=h;
+  const sm=v=>has('smear',v), tg=v=>has('trig',v);
+  const intra=has('flags','darkurine')||has('hm','hbu');
+  ask('hm','ยืนยัน hemolysis: LDH, indirect bilirubin, haptoglobin',false);
+  ask('dat','CPG: ส่ง Coombs เมื่อสงสัย hemolysis หรือ RPI > 2',true);
+  ask('smear','รูปร่างเม็ดเลือดแดงชี้โรคเฉพาะ (ตาราง 4)',false);
+  ask('trig','',false);
+  ask('mchc','MCHC > 35 g/dL นึกถึง HS',false);
+  const chronicHem=has('flags','spleno')||tg('fam')||tg('gall')||S.onset==='chronic';
+  if(has('flags','transf'))A('เพิ่งได้รับเลือด','DAT บวกอาจเป็น alloantibody (IAT บวก) · G6PD และ flow PNH เชื่อถือไม่ได้ชั่วคราว');
+
+  if(S.dat==='igg'||S.dat==='c3'){
+    P('DAT บวก','q');
+    ask('sec','หาสาเหตุ secondary AIHA (ตาราง 2)',false);
+    const child=S.grp==='ch';
+    if(S.dat==='igg'){
+      const drug=has('sec','ndrug');
+      P('Warm AIHA','dx');
+      D(drug?'Drug-induced immune hemolytic anemia':'Warm AIHA','main','DAT IgG'+(sm('sph')?' + spherocytes':''));
+      if(drug)D('Warm AIHA','alt','หยุดยาที่สงสัยแล้วดูการตอบสนอง');
+      if(has('sec','lpd'))D('Secondary AIHA จาก CLL/lymphoma','main','');
+      if(has('sec','ai'))D('Secondary AIHA จาก SLE/autoimmune','main','');
+      aihaWork(S,o,h);
+      C('Warm AIHA: การรักษา','บทที่ 8',[
+        (child?'<b>Prednisolone 2–4 mg/kg/วัน</b>':'<b>Prednisolone 1–2 mg/kg/วัน</b>')+(S.hb!=null&&S.hb<6?' · ซีดรุนแรง: pulse methylprednisolone 3 วันก่อน':'')+G('++','ง1'),
+        '~50% ตอบสนองใน 4–7 วัน · ~80% ใน 2–3 สัปดาห์',
+        'ลดยาเมื่อ <b>Hb > 10 หรือเพิ่ม > 2 g/dL และไม่มี reticulocytosis</b> ลดช้าๆ 3–6 เดือน',
+        'Folic acid 5–10 mg/วัน · ติดตามด้วย Hb + retic ไม่ใช้ DAT',
+        drug?'หยุดยาที่สงสัยทันที':''
+      ],'flag');
+      C('Refractory / relapse / steroid-dependent','บทที่ 8',[
+        'Rituximab 375 mg/m² สัปดาห์ละครั้ง × 4 (หรือ 100 mg/m² × 2–4)',
+        'IVIG 0.4–0.5 g/kg/วัน × 5 หรือ 1 g/kg × 2 (ซีดรุนแรง)',
+        'Danazol 200 mg วันละ 3–4 ครั้ง (ลด steroid ไม่ได้)',
+        'Splenectomy ตอบสนอง 60–70%'+(child?' · เด็กหลังอายุ 5–7 ปี':'')+' · วัคซีนก่อน ≥ 2 สัปดาห์',
+        'Cyclosporin 2.5 mg/kg bid · MMF 500–1,000 mg bid · AZA 2–4 mg/kg/วัน · cyclophosphamide'
+      ]);
+    }else{
+      const pch=child&&(tg('infect')||has('sec','myco'))&&intra;
+      if(pch){P('สงสัย PCH','dx');D('Paroxysmal cold hemoglobinuria','main','เด็ก + หลังติดเชื้อ + intravascular hemolysis · ตรวจ Donath-Landsteiner');D('Cold agglutinin disease','alt','')}
+      else{P('Cold agglutinin disease','dx');D('Cold agglutinin disease','main','DAT C3 อย่างเดียว'+(sm('agglut')?' + autoagglutination':'')+(tg('cold')?' + อาการเมื่อเย็น':''))}
+      if(has('sec','myco'))D('CAD จาก mycoplasma/EBV','alt','');
+      if(has('sec','lpd'))D('CAD จาก lymphoproliferative disorder','main','');
+      aihaWork(S,o,h,true);
+      C(pch?'PCH / cold AIHA: การรักษา':'Cold agglutinin disease: การรักษา','บทที่ 8',[
+        'ให้ร่างกายอบอุ่น หลีกเลี่ยงความเย็น · <b>อุ่นเลือดด้วย blood warmer</b>',
+        'ส่วนใหญ่ดีขึ้นด้วยการประคับประคองและรักษาสาเหตุ (mycoplasma, EBV, LPD)',
+        'ซีดรุนแรง/acrocyanosis/Raynaud → rituximab หรือ plasmapheresis (กำจัด IgM)',
+        intra?'Intravascular hemolysis → ให้สารน้ำป้องกันไตวาย':'',
+        'ตรวจ cold antibody titer · ผู้ใหญ่ CAD/อายุ > 60 พิจารณาไขกระดูก'
+      ],'flag');
+    }
+    C('ประคับประคองใน AIHA','บทที่ 8',['ให้เลือดเมื่อ cardiovascular/neurologic compromise: <b>least incompatible</b> ~5 mL/kg อัตรา ≤ 2 mL/kg/h','Refractory + retic ต่ำ → ESA ขนาดสูงได้','พัก ให้ O₂ ติดตามสัญญาณชีพ']);
+    return;
+  }
+
+  if(S.dat==null){D('Hemolysis — รอผล DAT','pend','ผล DAT แยก immune จาก non-immune')}
+  else P('DAT ลบ → Coombs-negative hemolysis','q');
+
+  let found=false;
+  /* G6PD */
+  const g6Like=sm('bite')||tg('oxdrug')||tg('fava')||(intra&&S.onset==='acute')||(tg('infect')&&S.onset==='acute');
+  if(g6Like||S.dat==='neg')ask('g6pd',g6Like?'Bite/blister cells หรือ hemolysis หลังยา/ถั่วปากอ้า/ติดเชื้อ':'แยก G6PD deficiency',g6Like);
+  if(S.g6pd==='def'||S.g6pd==='inter'||(g6Like&&S.g6pd==null)){
+    if(S.g6pd==='def'||S.g6pd==='inter'){found=true;P('G6PD deficiency','dx');D('G6PD deficiency — acute hemolysis','main','G6PD '+(S.g6pd==='def'?'พร่อง':'intermediate')+(tg('oxdrug')?' + ยา oxidant':'')+(tg('fava')?' + ถั่วปากอ้า':'')+(tg('infect')?' + ติดเชื้อ':''))}
+    else D('G6PD deficiency','alt','อาการเข้าได้ รอผล G6PD');
+    C('G6PD: acute hemolysis','บทที่ 6',[
+      '<b>หยุดยา/สาร oxidant</b> ที่สงสัยทันที (ตารางยา บทที่ 6)',
+      'ให้เลือดเมื่อมี symptomatic anemia (เพลีย เวียนศีรษะ ชีพจรเร็ว)',
+      intra?'<b>สารน้ำเพียงพอ + ยาขับปัสสาวะ</b> ป้องกัน AKI จาก hemoglobinuria':'ติดตามสีปัสสาวะและการทำงานของไต',
+      'Hemolysis มักแย่ลง 7–8 วันแรก แล้วหยุดเองหลัง 8–10 วัน',
+      'ให้บัตรประจำตัว หลีกเลี่ยงถั่วปากอ้าและยาในตาราง สอนอาการให้รีบมา รพ.'
+    ],'flag');
+  }
+  if(S.g6pd==='nl'&&g6Like){
+    A('G6PD ปกติขณะ acute hemolysis','อาจลบลวงเพราะ reticulocyte มี activity สูง → ตรวจซ้ำ 10–15 วัน (หลังรับเลือดรอ 2–3 เดือน) · หญิง heterozygote ตรวจไม่ได้แม่นยำ ให้หยุดยาที่สงสัยไว้ก่อน');
+  }
+  /* Membrane */
+  const hsLike=sm('sph')||(S.mchc!=null&&S.mchc>35)||((tg('fam')||tg('gall'))&&has('flags','spleno'));
+  const heLike=sm('ellip'), saoLike=sm('oval'), hppLike=sm('poik')&&S.mcv!=null&&S.mcv<=65;
+  if(S.dat==='neg'&&(hsLike||heLike||saoLike||hppLike))ask('memb','สงสัย membrane disorder → EMA (ถ้าไม่มีใช้ OF/cryohemolysis)',hsLike&&!(tg('fam')&&has('flags','spleno')&&sm('sph')));
+  if(S.dat==='neg'&&hsLike){
+    const classic=sm('sph')&&tg('fam')&&has('flags','spleno')&&S.mchc!=null&&S.mchc>35;
+    if(S.memb==='pos'||classic){found=true;P('Hereditary spherocytosis','dx');D('Hereditary spherocytosis','main',classic?'ครบเกณฑ์คลาสสิก: ครอบครัว + ม้ามโต + spherocytes + MCHC > 35 → วินิจฉัยได้โดยไม่ต้องตรวจเพิ่ม':'EMA/OF/cryohemolysis เข้าได้')}
+    else if(S.memb==='neg')D('HS ไม่ชัด','alt','ผลคัดกรองปกติแต่ยังสงสัย → SDS-PAGE');
+    else D('Hereditary spherocytosis','alt','Spherocytes/MCHC สูง/ประวัติครอบครัว · ต้องแยก AIHA ด้วย DAT ก่อน');
+    if(S.memb==='pos'||classic)hsCards(S,o,h);
+  }
+  if(S.dat==='neg'&&heLike){found=true;D('Hereditary elliptocytosis','main','Elliptocytes > 30% วินิจฉัยได้ · ส่วนใหญ่ไม่ต้องรักษา');C('HE / HPP','บทที่ 7',['HE ไม่มีอาการไม่ต้องรักษา','รุนแรงหรือ HPP: ให้เลือด ตัดม้าม ดูแลแบบ HS','ทารก: transient poikilocytosis ดีขึ้นที่ 4 เดือน–1 ปี ตรวจ smear ซ้ำ 4–6 เดือน'])}
+  if(S.dat==='neg'&&hppLike){found=true;D('Hereditary pyropoikilocytosis','main','Poikilocytes/microspherocytes มาก MCV 50–60 · AR ซีดรุนแรง รับเลือดประจำ')}
+  if(S.dat==='neg'&&saoLike){found=true;D('Southeast Asian ovalocytosis','main','Ovalocytes > 25–50% + theta cells · พบในภาคใต้ 5–25%');C('SAO','บทที่ 7',['ผู้ใหญ่ heterozygote มักไม่ซีด ไม่ต้องรักษา','ทารกอาจเหลืองรุนแรง (~7%) ดีขึ้นหลัง 3 ปี','ร่วมกับ β-thal trait อาจ hemolysis และนิ่ว ให้เฝ้าระวัง','Compound heterozygote: ระวัง dRTA และการเจริญเติบโต'])}
+  /* MAHA */
+  if(sm('schist')){found=true;P('Schistocytes','warn');D('Microangiopathic hemolytic anemia','main','DIC, HUS, TTP, ลิ้นหัวใจเทียม, malignant HT, CTD');C('Schistocytes: ภาวะเร่งด่วน','ตาราง 4 · บทที่ 1',['ตรวจ platelet, PT/PTT, fibrinogen, D-dimer, creatinine','แยก TTP/HUS/DIC และปรึกษาโลหิตแพทย์ด่วน','ประเมินลิ้นหัวใจเทียมและความดันโลหิต'],'urgent ext')}
+  /* Thal */
+  if(sm('target')){D('Thalassemia / Hb E','alt','Target cells → Hb typing (CPG ส่วนที่ 2)')}
+  /* PNH */
+  const catchNeed=c.cyto||tg('thromb')||(intra&&!found);
+  if(S.dat==='neg'&&(catchNeed||!found))ask('pnh','CATCH: Coombs-negative hemolysis'+(c.cyto?' + cytopenia':'')+(tg('thromb')?' + thrombosis':'')+(intra?' + hemoglobinuria':''),catchNeed);
+  if(S.pnh==='pos'){
+    ask('clone','แบ่งชนิดและพิจารณา anticoagulant ป้องกัน',true);
+    found=true;
+    const cl=S.clone;
+    const type=cl==null?'':cl>50?'Classic PNH':cl>=10?'PNH ร่วม bone marrow failure':'Subclinical PNH';
+    P('PNH','dx');D('Paroxysmal nocturnal hemoglobinuria'+(type?' — '+type:''),'main','Flow CD55/CD59/FLAER พบ GPI-deficient clone'+(cl!=null?' '+fx(cl,0)+'%':''));
+    C('PNH: การรักษาตาม CPG','บทที่ 9',[
+      'ไขกระดูก + cytogenetics หา AA/MDS'+G('+','ง1'),
+      'Prednisolone 0.25–1 mg/kg/วัน (วันเว้นวันได้)'+G('+/-','ง1'),
+      'Androgen: oxymetholone เริ่ม 100–200 mg/วัน ติดตาม LFT'+G('+','ง1'),
+      'Folic acid 5 mg/วัน'+G('+','ง1')+' · ให้เลือดแบบ leukocyte-poor',
+      'เหล็ก: กระตุ้น hemolysis ได้ ชนิดกินดีกว่าฉีด คุมด้วย steroid/androgen'+G('+','ง1'),
+      'Eculizumab ลด hemolysis/thrombosis'+G('+','ค2')+' (ยังไม่มีในไทยขณะทำ CPG)'
+    ],'flag');
+    C('PNH: ลิ่มเลือด','บทที่ 9',[
+      tg('thromb')?'<b>เกิด thrombosis แล้ว → anticoagulant ตลอดชีวิต</b> ถ้าไม่มีข้อห้าม'+G('+','ง1'):'',
+      cl!=null&&cl>50&&!tg('thromb')?'Clone > 50% → พิจารณา anticoagulant ป้องกันถ้าไม่มีข้อห้าม'+G('+/-','ง1'):'',
+      'เกล็ดเลือดต่ำอาจให้เกล็ดเลือดร่วมกับยาต้านการแข็งตัว',
+      'ตำแหน่งบ่อย: hepatic/portal/mesenteric/splenic vein, cerebral sinus'
+    ],tg('thromb')?'urgent':'');
+  }
+  /* PK */
+  const pkLike=sm('echino')||(S.dat==='neg'&&chronicHem&&S.g6pd==='nl'&&S.memb==='neg');
+  if(S.dat==='neg'&&pkLike)ask('pk','Chronic hemolysis ที่แยก G6PD/membrane/thal แล้ว (LDH มักไม่สูง)',true);
+  if(S.pk==='low'){found=true;P('PK deficiency','dx');D('Pyruvate kinase deficiency','main','PK activity ต่ำ/PKLR mutation');pkCards(S,o,h)}
+  else if(pkLike&&S.pk==null)D('Pyruvate kinase deficiency','alt','Echinocytes / chronic hemolysis ไม่ทราบสาเหตุ');
+
+  if(S.dat==='neg'&&!found){
+    D('Coombs-negative hemolysis ยังไม่ทราบสาเหตุ','pend','');
+    C('ไล่หาสาเหตุ Coombs-negative','บทที่ 1, 6, 7, 9',['Smear: spherocyte, bite cell, schistocyte, elliptocyte, ovalocyte, echinocyte, target','G6PD · Hb typing · EMA/OF · flow PNH (FLAER)','ไม่พบ → PK activity + PKLR และ enzyme อื่น (HK, PFK, GPI) · NGS panel']);
+  }
+  if(chronicHem&&found&&!o.cards.some(x=>x.t.startsWith('PK'))){
+    C('ดูแล chronic hemolysis','บทที่ 6–7',['Folic acid ใน hemolysis ปานกลาง–รุนแรง','เฝ้าระวังนิ่วถุงน้ำดี (US) และ aplastic crisis จาก parvovirus B19']);
+  }
+}
+function aihaWork(S,o,h,cold){
+  h.C('ตรวจหาสาเหตุ AIHA','บทที่ 8 ตาราง 2',[
+    'ทุกราย'+G('++','ง1')+': CBC, retic, smear, bilirubin, LDH, haptoglobin, DAT, UA',
+    'Anti-HIV, HBsAg, anti-HBs, anti-HCV, anti-dsDNA, ANA, immunoglobulin + electrophoresis, CT chest/abdomen/pelvis',
+    cold?'Cold antibody titer · Donath-Landsteiner ถ้าสงสัย PCH':'Red cell eluate ถ้าสงสัย DAT-negative AIHA',
+    (S.grp==='el'||(S.age!=null&&S.age>60)||cold)?'ไขกระดูก: CAD, อายุ > 60, สงสัย infiltration, reticulocytopenia ค้าง':''
+  ]);
+}
+function hsCards(S,o,h){
+  const ch=S.grp==='ch';
+  const sev=S.hb==null?'':S.hb<6?'Severe':S.hb<=8?'Moderately severe':S.hb<(S.sex==='F'?12:13)?'Moderate':'Mild';
+  h.C('Hereditary spherocytosis: การรักษา','บทที่ 7',[
+    sev?'ความรุนแรงจาก Hb: <b>'+sev+'</b> (ตาราง 2 ใช้ร่วม retic และ bilirubin)':'',
+    'Folic acid ใน moderate–severe (mild ไม่จำเป็น)',
+    '<b>ตัดม้าม</b>: รุนแรง รับเลือดประจำ โตผิดปกติ หรือ hypersplenism'+G('++','ข2'),
+    ch?'รอ<b>อายุ > 5 ปี</b>'+G('++','ง2'):'',
+    'วัคซีน pneumococcus และ Hib ก่อนผ่าตัด + ยาปฏิชีวนะป้องกันหลังตัดม้าม · laparoscopic'+G('++','ข2'),
+    'นิ่วมีอาการ → ตัดถุงน้ำดีพร้อมกัน · ตัดถุงน้ำดีอย่างเดียวไม่ควรตัดม้ามพ่วงถ้าไม่จำเป็น'+G('++','ง1')
+  ],'flag');
+}
+function pkCards(S,o,h){
+  h.C('PK deficiency: การรักษา','บทที่ 6',[
+    'Folic acid เมื่อ hemolysis ปานกลาง/retic > 15%/โภชนาการไม่ดี'+G('++','ง1'),
+    'ให้เลือดตามผลต่อชีวิตประจำวัน การเติบโต ใบหน้า (2,3-DPG สูงทำให้ทนซีด)',
+    'ตัดม้าม: รับเลือดบ่อย/massive splenomegaly · Hb ก่อนตัด < 7 ตอบสนองไม่ดี · thrombosis 11% → low-dose aspirin เมื่อ plt สูง',
+    'HSCT ยังไม่แนะนำ',
+    'Ferritin ปีละครั้งแม้ไม่รับเลือด (iron overload บ่อย) · US นิ่วปีละครั้ง · vitamin D'
+  ],'flag');
+  h.C('PK deficiency: ข้อมูลหลัง CPG','',[ 'Mitapivat (AG-348) ได้รับอนุมัติ US FDA ปี 2565 สำหรับผู้ใหญ่ ตรวจสอบความพร้อมในไทย'],'ext');
+}
+
+/* ---------- MACROCYTIC ---------- */
+function macro(S,o,h,c){
+  const {ask,P,D,C,A,has}=h;
+  const mc=v=>has('mc',v), el=S.grp==='el', ch=S.grp==='ch';
+  ask('ret','แยก macrocytosis จาก reticulocytosis (hemolysis/เสียเลือด)',false);
+  ask('hct','',false);
+  const r=rpiCalc(S.ret,S.hct,S.hb);
+  const retHi=!!(r&&r.rpi>2);
+  if(r){P(`RPI ${fx(r.rpi,2)}`,'q');if(retHi){P('Reticulocytosis ทำให้ MCV สูงได้','warn');hemolysis(S,o,h,c)}}
+  ask('b12',retHi?'Retic สูงอธิบาย MCV ได้ · ตรวจเมื่อยังสงสัยหรือ hemolysis เรื้อรัง (ใช้ folate มาก)':'',!retHi);ask('fol','ตรวจก่อนอาหารและก่อนให้เลือด',!retHi);
+  ask('msm','',false);ask('neuro','',false);ask('mc','',false);
+  if(S.mcv>115)P('MCV > 115 ชี้ไปทาง megaloblastic','q');
+  const neuro=has('neuro','pares')||has('neuro','cog');
+  const megaHint=has('msm','hyper')||has('msm','ovalo')||S.mcv>115;
+  const unreliable=mc('partial')||has('flags','transf')||S.b12==='bord'||S.fol==='bord';
+  if(unreliable)ask('mmahcy','ระดับวิตามินแปลผลไม่ได้/borderline → MMA และ homocysteine',false);
+
+  let b12=S.b12==='low'||S.mmahcy==='both';
+  let fol=(S.fol==='low'&&S.b12!=='low')||S.mmahcy==='hcy';
+  if(S.fol==='low'&&S.b12==='low'){b12=true;fol=true}
+  const normal=(S.b12==='nl'&&S.fol==='nl')||S.mmahcy==='nl';
+
+  if(neuro)A('อาการทางระบบประสาท','B12 deficiency ทำให้ subacute combined degeneration ได้แม้ไม่ซีด · รักษาช้าอาจไม่กลับคืน → ส่งระดับวิตามินแล้วเริ่ม B12 ฉีดได้เลย');
+
+  if(b12){
+    P('B12 deficiency','dx');
+    D('Vitamin B12 deficiency (megaloblastic)','main',(S.mmahcy==='both'?'MMA และ homocysteine สูง':'B12 ต่ำ')+(el?' · ผู้สูงอายุต้องมีซีดร่วมด้วย (B12 ต่ำโดยไม่ซีดพบ 10–15%)':''));
+    let cause=[];
+    if(mc('vegan'))cause.push('มังสวิรัติเคร่งครัด');
+    if(mc('gastric'))cause.push('ผ่าตัดกระเพาะ/atrophic gastritis');
+    if(mc('acid'))cause.push('PPI/H2RA/metformin');
+    if(mc('n2o'))cause.push('nitrous oxide');
+    if(mc('malab'))cause.push('malabsorption');
+    if(!cause.length)D('Pernicious anemia','alt','สาเหตุบ่อยที่สุด หญิง 2–3 เท่า');
+    const oral=mc('vegan')&&!mc('gastric')&&!mc('malab');
+    C('รักษา B12 deficiency','บทที่ 5',[
+      oral?'มังสวิรัติเคร่งครัด: <b>B12 ชนิดกิน</b>ทดแทน'+G('+','ค1'):'',
+      !oral?(ch?'<b>B12 50–100 mcg/วัน</b> ฉีด (เด็ก)':'<b>B12 1,000 mcg IM/SC</b> วันละครั้ง × 7–14 วัน → สัปดาห์ละครั้ง × 4 → ทุก 1–3 เดือนจนแก้สาเหตุได้ (ไม่ได้ = ตลอดชีวิต)')+G('++','ค1'):'',
+      el&&!oral?'บทผู้สูงอายุ: 1,000 mcg ฉีดสัปดาห์ละครั้ง 2–3 เดือน แล้วเดือนละครั้ง':'',
+      'ทางเลือก: กิน 1,000–2,000 mcg/วัน (passive diffusion) ต้องติดตามระดับ'+G('+/-','ค1'),
+      fol?'ขาด folate ร่วม: ให้ folic acid 5 mg/วัน <b>หลังหรือพร้อม B12</b>':'',
+      'ระวังฉีด IM เมื่อเกล็ดเลือดต่ำ'
+    ],'flag');
+    C('หาสาเหตุขาด B12','บทที่ 5',[
+      cause.length?'ปัจจัยที่พบ: '+cause.join(', '):'',
+      '<b>Gastroscopy</b> หา atrophic gastritis เมื่อสงสัย pernicious anemia'+G('++','ง1')+' · เฝ้าระวังมะเร็งกระเพาะและ autoimmune อื่น',
+      mc('acid')?'Metformin ลดการดูดซึม แก้ได้ด้วยแคลเซียมเสริม':'',
+      'Anti-IF/parietal cell antibody'+G('+/-','ง1')+' ไม่แพร่หลาย ความไวไม่สูง'
+    ]);
+  }else if(fol){
+    P('Folate deficiency','dx');
+    D('Folate deficiency (megaloblastic)','main',S.mmahcy==='hcy'?'Homocysteine สูง MMA ปกติ':'Folate ต่ำ B12 ปกติ');
+    const cs=[];if(mc('alcohol'))cs.push('สุรา');if(mc('preg'))cs.push('ตั้งครรภ์/ให้นม');if(mc('mdrug'))cs.push('ยา (MTX/TMP/ยากันชัก)');if(mc('malab'))cs.push('malabsorption');if(has('flags','jaundice')||has('flags','spleno'))cs.push('chronic hemolysis');
+    C('รักษา folate deficiency','บทที่ 5',[
+      S.b12!=='nl'&&S.mmahcy!=='hcy'?'<b>ยืนยันว่าไม่ขาด B12 ก่อน</b> folate เดี่ยวทำให้อาการทางประสาทแย่ลง':'',
+      '<b>Folic acid 5 mg วันละ 1 เม็ด</b> × 1–3 เดือน หรือจนเลือดดีขึ้น'+G('++','ค1'),
+      'สาเหตุแก้ไม่ได้ (เช่น chronic hemolysis) ให้ตลอด',
+      mc('mdrug')?'ได้ methotrexate: ใช้ folinic acid (leucovorin)'+G('++','ค1'):'',
+      cs.length?'สาเหตุที่พบ: '+cs.join(', '):'หาสาเหตุ: สุรา ตั้งครรภ์ hemolysis ยา malabsorption'
+    ],'flag');
+  }else if(normal){
+    P('B12 และ folate ปกติ','ok');
+    D('Macrocytosis ที่ไม่ใช่ megaloblastic','main','');
+    const dd=[];
+    if(mc('alcohol')||mc('liver'))dd.push('สุรา/โรคตับ');
+    if(mc('hypoth'))dd.push('Hypothyroidism');
+    if(mc('mdrug'))dd.push('ยา (ARV, เคมีบำบัด, AZA, allopurinol)');
+    dd.forEach(x=>D(x,'alt',''));
+    D('MDS / aplastic anemia / leukemia','alt',c.cyto||el?'มี cytopenia หรือผู้สูงอายุ → ไขกระดูก + cytogenetics':'');
+    C('Macrocytosis อื่น','บทที่ 5',['ทบทวนยา สุรา TFT LFT','Retic สูง → hemolysis/เสียเลือด','ไม่พบสาเหตุ หรือมี cytopenia → <b>ไขกระดูก + cytogenetics</b>'+(el?' (แผนภูมิผู้สูงอายุ)':''),'Hereditary stomatocytosis (พบน้อย)']);
+  }else if(!retHi){
+    D(megaHint?'Megaloblastic anemia (น่าจะเป็น)':'Macrocytic anemia','pend',megaHint?(S.mcv>115?'MCV > 115':'')+(has('msm','hyper')?' hypersegmented neutrophils':'')+' · รอผล B12/folate':'รอผล B12 และ folate');
+    C('ส่งตรวจ macrocytic anemia','บทที่ 5',[
+      'CBC + smear'+G('++','ง1')+': macro-ovalocytes, hypersegmented neutrophils (≥ 5 lobes > 5% หรือ ≥ 6 lobes > 1%)',
+      'Serum B12'+G('+','ง1')+' และ folate'+G('+','ง1')+' (เจาะก่อนอาหาร ก่อนให้เลือด)',
+      'LDH/indirect bilirubin สูง + retic ต่ำ = ineffective erythropoiesis',
+      unreliable?'ผลไม่น่าเชื่อถือ → <b>therapeutic trial</b>'+G('+','ค1')+' โดยไม่ให้ folate เดี่ยว':''
+    ]);
+  }
+  if(b12||fol){
+    C('ติดตามการตอบสนอง','บทที่ 5',[
+      'LDH/bilirubin ดีขึ้นใน 1–2 วัน · retic เพิ่ม 3–4 วัน',
+      'Hypersegmented neutrophils หาย 2 สัปดาห์ · WBC/plt ดีขึ้น 2–4 สัปดาห์',
+      'Hb เพิ่มใน 1–2 สัปดาห์ ปกติใน 1–2 เดือน · ระบบประสาท ≥ 3 เดือนถึง 1 ปี',
+      'ตรวจ CBC + ระดับวิตามินซ้ำ 2–4 สัปดาห์'+G('+','ง1'),
+      'ไม่ตอบสนอง: ตรวจขนาด/วิธีให้ → เปลี่ยนเป็นฉีด → หา IDA ร่วม หรือ MDS'
+    ]);
+  }
+}
+
+/* ---------- THALASSEMIA (CPG part 2) ---------- */
+function thal(S,o,h,fromScreen){
+  const {ask,P,D,C,A,has}=h;
+  const it=v=>has('th_iss',v);
+  ask('th_type',fromScreen?'เป็นโรค (ไม่ใช่พาหะ): เลือกชนิดตามผล Hb typing':'',!fromScreen);
+  if(fromScreen&&!S.th_type)return;
+  ask('th_tx','แยก TDT / NTDT (ตารางที่ 4)',true);
+  ask('th_wt','คำนวณปริมาณเลือดและขนาดยา',false);
+  ask('th_iss','',false);
+  const T={homoB:'β-thalassemia major',bE:'β-thalassemia/Hb E',hbh:'Hb H disease',hbhcs:'Hb H/CS disease',bart:'Surviving Hb Bart\'s hydrops'}[S.th_type];
+  if(!T||!S.th_tx)return;
+  const tdt=S.th_tx==='reg', hb=S.hb, wt=S.th_wt;
+  const age=S.grp==='ch'?S.age:(S.grp==='el'?65:30), child=age<18;
+  const sev=hb<7?'severe':hb<=9?'moderate':'mild';
+  const sevT={severe:'Severe (Hb < 7)',moderate:'Moderate (Hb 7–9)',mild:'Mild (Hb > 9)'}[sev];
+  P(T+' · '+(tdt?'TDT':'NTDT'),'dx');
+  D(`${T} — ${tdt?'TDT':'NTDT'}`,'main',(tdt?'Pre-transfusion Hb ':'Steady-state Hb ')+fx(hb)+' · '+sevT+' (ตารางที่ 3)');
+  const vol=(a,b)=>wt?` ≈ <b class="mono">${Math.round(wt*a)}–${Math.round(wt*b)} mL</b>`:'';
+  const mgk=(a,b)=>wt?` (<b class="mono">${a===b?Math.round(wt*a):Math.round(wt*a)+'–'+Math.round(wt*b)} mg/วัน</b>)`:'';
+
+  /* urgent first */
+  if(it('fever')){
+    ask('th_chel','',false);
+    if(it('splen')){A('ตัดม้ามแล้ว + ไข้ = เร่งด่วน','เสี่ยง OPSI (S. pneumoniae, H. influenzae, N. meningitidis) โคม่าได้ใน 24–48 ชม.')}
+    if(S.th_chel==='dfp'||S.th_chel==='combo')ask('th_anc','DFP ทำให้ agranulocytosis',true);
+    const agran=S.th_anc!=null&&S.th_anc<500, neut=S.th_anc!=null&&S.th_anc<1500;
+    C('ไข้ในผู้ป่วยธาลัสซีเมีย','บทที่ 7.1',[
+      it('splen')?'<b>รับไว้ใน รพ.</b> 3rd-gen cephalosporin ± gentamicin ทันที':'หาแหล่งติดเชื้อ ให้ยาครอบคลุมแกรมบวกและลบทันที'+G('++','ข4'),
+      '<b>หยุดยาขับเหล็กทุกชนิด</b>ระหว่างรักษาการติดเชื้อ',
+      'ท้องเสีย: เพาะเชื้ออุจจาระ ครอบคลุม Salmonella · พื้นที่ melioidosis: hemoculture + ceftazidime',
+      S.th_chel==='dfo'?'ได้ DFO: นึกถึง Yersinia (เพาะเชื้อ 22 °C) → TMP/SMX + gentamicin':'',
+      agran?'<b>ANC < 500: agranulocytosis จาก DFP</b> หยุด DFP เปลี่ยนเป็น DFX เมื่อพ้นภาวะ':neut?'ANC < 1,500: neutropenia จาก DFP หยุดยา (เกิดซ้ำหลัง rechallenge → เปลี่ยน DFX)':'',
+      'ไข้สูง BP ต่ำระหว่างให้เลือด → หยุดเลือด เพาะเชื้อถุงเลือด/ผู้ป่วย 3rd-gen cephalosporin',
+      'Hb H/β ไม่รุนแรงซีดลงเร็วเมื่อไข้ → occasional transfusion ถ้า Hb < 7 หรือสัญญาณชีพเปลี่ยน'
+    ],'urgent');
+  }
+  if(it('cord')){
+    A('สงสัย EMH กดไขสันหลัง','ภาวะเร่งด่วน: MRI/CT ทันที');
+    D('Extramedullary hematopoiesis กดไขสันหลัง','main','ปวดหลัง ชา อ่อนแรง (lower thoracic บ่อย)');
+    C('EMH cord compression','บทที่ 7.5',['MRI หรือ CT'+G('++','ง1'),'<b>ให้เลือดจน Hb > 10</b> ตลอดช่วงมีอาการ'+G('++','ค1'),'<b>รังสีรักษา</b> 900–3,500 cGy + dexamethasone 10 mg IV q6h'+G('++','ค1')+' (ตั้งครรภ์ใช้เลือดแทน)','Hydroxyurea 9 → 12–15 mg/kg/วัน'+G('++','ค1'),'ผ่าตัดเมื่อไม่ตอบสนอง (เลือดออกมาก)'],'urgent');
+  }
+
+  /* transfusion */
+  if(tdt){
+    const low=hb<9;
+    C('การให้เลือด (TDT)','บทที่ 3',[
+      `เป้า <b>pre-transfusion Hb 9.0–10.5</b> ไม่เกิน 14 · RBC <b>10–15 mL/kg</b>${vol(10,15)} ทุก 2–6 สัปดาห์ · ไม่เกิน 2 ยูนิตต่อครั้ง`+G('++','ค1'),
+      low?`Pre-Hb ${fx(hb)} ต่ำกว่าเป้า → เพิ่มปริมาณหรือถี่ขึ้น (ผู้ใหญ่ที่ทำ high transfusion ไม่ได้ อย่างน้อย > 7)`:'',
+      it('heart')?'<b>หัวใจ</b>: ≤ 5 mL/kg ทุก 24–48 ชม. อัตรา < 2 mL/kg/h + ยาขับปัสสาวะก่อน · HF ใช้ pre-Hb 10–11':'',
+      'LPRC/LDPRC (prestorage) ไม่ใช้ bedside filter · RBC ≤ 14 วัน · antibody screen ทุกครั้ง · antigen-negative C, c, D, E, e, Miᵃ',
+      it('ab')?'มี alloantibody: ให้เลือดที่ไม่มี antigen นั้นเสมอ · พิจารณา SDR · NTDT β พิจารณา hydroxyurea':'',
+      'เคยมี FNHTR: paracetamol + chlorpheniramine ก่อนให้'
+    ],'flag');
+  }else{
+    let ind=false, why='';
+    const sevType=['homoB','bE','hbhcs','bart'].includes(S.th_type);
+    if(child){
+      if(sevType&&hb<8){ask('th_hb2','เกณฑ์เด็ก: Hb < 8 สองครั้ง ห่าง ≥ 2 สัปดาห์ ไม่มีติดเชื้อ',true);if(S.th_hb2==='y'){ind=true;why='ชนิดรุนแรง + Hb < 8 สองครั้ง'}}
+      const cx=['face','growth','fx','emh'].filter(it);
+      if(cx.length){ind=true;why=why||'Hb ≥ 8 แต่มี '+cx.map(x=>({face:'หน้าเปลี่ยน',growth:'โตช้า',fx:'กระดูกหัก',emh:'EMH'}[x])).join(', ')}
+    }else{
+      if(hb<7){ask('th_hb2','เกณฑ์ผู้ใหญ่: Hb < 7 สองครั้ง ห่าง ≥ 2 สัปดาห์ ไม่มีติดเชื้อ',true);if(S.th_hb2==='y'){ind=true;why='Hb < 7 สองครั้ง'}}
+      const cx=['fx','pah','ulcer'].filter(it);
+      if(cx.length){ind=true;why=why||'มี '+cx.map(x=>({fx:'กระดูกหัก',pah:'PAH',ulcer:'แผลที่ขา'}[x])).join(', ')}
+    }
+    if(ind){
+      P('เข้าเกณฑ์ให้เลือดสม่ำเสมอ','warn');
+      D('เข้าเกณฑ์ให้เลือดสม่ำเสมอ','main',why);
+      C('เริ่มให้เลือดสม่ำเสมอ','บทที่ 3',[
+        (child?'อายุ < 18 ปี':'อายุ ≥ 18 ปี')+': '+why+G('++','ข3'),
+        'ก่อนเริ่ม: RBC antigen typing (C, c, E, e, Miᵃ) · HAV, HBV, HCV, HIV · ฉีด HBV vaccine ถ้ายังไม่มีภูมิ',
+        `High transfusion: pre-Hb 9.0–10.5 · 10–15 mL/kg${vol(10,15)} ทุก 2–6 สัปดาห์`,
+        'เมื่อรับเลือดสม่ำเสมอ > 1 ปี หรือ > 10 ครั้ง ให้เริ่มยาขับเหล็กตามแนวทาง TDT'
+      ],'flag');
+    }else{
+      C('การให้เลือด (NTDT)','บทที่ 3',[
+        'ยังไม่เข้าเกณฑ์ให้เลือดสม่ำเสมอ ('+(child?'เด็ก: Hb < 8 สองครั้ง หรือหน้าเปลี่ยน โตช้า กระดูกหัก EMH':'ผู้ใหญ่: Hb < 7 สองครั้ง หรือกระดูกหัก PAH แผลที่ขา')+')',
+        '<b>Occasional transfusion</b> เมื่อซีดลง (มักจากติดเชื้อ) Hb < 7 หรือสัญญาณชีพเปลี่ยน'+G('++','ง1'),
+        'Folic acid 1 mg/วัน · งดยาเสริมเหล็กและอาหารเหล็กสูง'
+      ]);
+    }
+  }
+
+  /* chelation */
+  const ntdtStart=S.th_type==='hbh'?15:10;
+  ask('th_sf','',tdt||age>=ntdtStart);ask('th_lic','',false);
+  if(tdt||age>=10)ask('th_t2',tdt?'MRI หัวใจ ปีละครั้งตั้งแต่ 10 ปี':'',false);
+  ask('th_chel','',tdt);
+  const sf=S.th_sf, lic=S.th_lic, t2=S.th_t2, ch=S.th_chel;
+  if(ch&&ch!=='none')ask('th_cresp','',false);
+  if(tdt){
+    const ind=(sf!=null&&sf>1000)||(lic!=null&&lic>7)||it('ntx');
+    if(sf!=null)P(`Ferritin ${fx(sf,0)}`,sf>1000?'warn':'ok');
+    const items=[];
+    if(!ch||ch==='none'){
+      if(ind||sf!=null){
+        if(!ind)items.push('ยังไม่เข้าเกณฑ์ (ferritin > 1,000 ×2, LIC > 7, รับเลือดสม่ำเสมอ > 1 ปี หรือ > 10 ครั้ง)');
+        else if(age<2)items.push('อายุ < 2 ปี: DFO ใช้ได้เมื่อ > 2 ปี, DFX ≥ 2 ปี → ปรึกษาโลหิตแพทย์');
+        else if(age<6)items.push('<b>อายุ 2–6 ปี: DFX ลำดับแรก</b> เริ่ม 20 mg/kg/วัน'+mgk(20,20)+' (ปรับ 5–10 ทุก 3–6 เดือน สูงสุด 40) หรือ DFO 20–40 SC 8–12 ชม. 5–7 วัน/สัปดาห์');
+        else items.push('<b>อายุ ≥ 6 ปี: DFP ลำดับแรก</b> 50–100 mg/kg/วัน แบ่ง 3–4 ครั้ง เริ่ม 50–75'+mgk(50,75)+' · CBC ทุก 1–2 สัปดาห์ใน 2–3 เดือนแรก แล้วรายเดือน · หรือ DFO 20–40 (ผู้ใหญ่ถึง 60)');
+      }
+    }else{
+      const r=S.th_cresp;
+      if(ch==='dfp'&&r==='ae')items.push('<b>DFP ทนไม่ได้/ผลข้างเคียง → เปลี่ยนเป็น DFX</b> เริ่ม 20 mg/kg/วัน'+mgk(20,20)+' เพิ่ม 5–10 ทุก 3–6 เดือน สูงสุด 40');
+      else if(ch==='dfp'&&r==='fail')items.push('<b>DFP ล้มเหลว → เปลี่ยนเป็น DFX</b> เริ่ม 20 mg/kg/วัน'+mgk(20,20));
+      else if(ch==='dfx'&&r==='fail')items.push('<b>DFX ล้มเหลวที่ 40 mg/kg → combination DFP 75–100 + DFO 20–40 SC 2–6 วัน/สัปดาห์</b>'+G('++','ข1'));
+      else if(ch==='dfx'&&r==='ae')items.push('DFX ผลข้างเคียง: ตรวจ Cr, proteinuria, ALT · พิจารณา DFO หรือ DFP ตามอายุ');
+      else if(ch==='dfo'&&r!=='ok')items.push('DFO ไม่ได้ผล/ทนไม่ได้: พิจารณายากินตามอายุ (≥ 6 ปี DFP, 2–6 ปี DFX) หรือ combination');
+      else if(ch==='combo'&&r==='fail')items.push('Combination ยังไม่ได้ผล: ตรวจ adherence, MRI T2*/LIC, ส่งโลหิตแพทย์');
+      else items.push('ให้ยาเดิมต่อ ติดตาม ferritin ทุก 3 เดือน');
+      if(ch==='dfx'&&sf!=null)items.push(sf<300?'<b>Ferritin < 300 → หยุด DFX</b>':sf<500?'Ferritin < 500 → ลดขนาด DFX':'เป้า ferritin < 500');
+      if(ch==='dfo'&&sf!=null&&sf<1000)items.push('Ferritin < 1,000 → ลดขนาด DFO (mean daily dose/ferritin ≤ 0.025) ป้องกันพิษตา/หู');
+    }
+    if(t2!=null){
+      if(t2<10)items.push('<b>T2* '+fx(t2)+' ms (< 10): เหล็กในหัวใจรุนแรง → continuous IV/SC DFO</b> ± combination · ปรึกษาแพทย์โรคหัวใจ');
+      else if(t2<=20)items.push('T2* '+fx(t2)+' ms (10–20): เพิ่มขนาดยาขับเหล็ก');
+      else items.push('T2* '+fx(t2)+' ms: อยู่ในเป้า (> 20)');
+    }
+    if(lic!=null)items.push('LIC '+fx(lic)+': '+(lic<1.8?'ปกติ':lic<=7?'อยู่ในเป้า (1.8–7)':lic<=15?'ปานกลาง–มาก เพิ่มขนาดยา':'รุนแรง เพิ่มขนาดยา'));
+    if(it('heart'))items.push('<b>หัวใจแทรกซ้อนจากเหล็ก (LVEF < 56%, arrhythmia) → continuous IV/SC DFO</b> จน T2* ปกติ');
+    if(it('preg'))items.push('วางแผนตั้งครรภ์: ขับเหล็กเต็มที่ (continuous DFO ได้) · <b>หยุด DFP/DFX ≥ 3 เดือนก่อนตั้งครรภ์</b>');
+    if(items.length)C('ยาขับเหล็ก (TDT)','บทที่ 4 แผนภูมิที่ 1',items,ind&&(!ch||ch==='none')?'flag':'');
+    C('ติดตามยาขับเหล็ก','บทที่ 4 ตาราง 3',['Ferritin ทุก 3 เดือน · ตา/การได้ยินก่อนเริ่มและทุกปี','DFP: CBC ทุก 1–2 สัปดาห์ 3 เดือนแรก แล้วรายเดือนและเมื่อไข้ · ALT รายเดือนช่วงแรก','DFX: Cr และ proteinuria ทุก 1–3 เดือน · ALT (หยุดถ้า > 5 เท่า)','DFO: Cr, ALT ทุก 3 เดือน']);
+  }else{
+    const startAge=S.th_type==='hbh'?15:10;
+    if(age<startAge){C('เหล็กเกินใน NTDT','บทที่ 5',[`เริ่มประเมินเหล็กเมื่ออายุ ≥ ${startAge} ปี`+G('++','ง1'),'ระหว่างนี้เลี่ยงอาหารเหล็กสูง ไม่ให้ยาเสริมเหล็ก'])}
+    else{
+      const ind=age>10&&((lic!=null&&lic>=5)||(sf!=null&&sf>=800));
+      if(sf!=null)P(`Ferritin ${fx(sf,0)}`,sf>=800?'warn':'ok');
+      C('เหล็กเกินใน NTDT','บทที่ 5',[
+        'Ferritin ทุก 3–6 เดือน · MRI LIC ทุก 1–2 ปี (ferritin ใน NTDT ต่ำกว่าปริมาณเหล็กจริง)'+G('++','ง1'),
+        ind?`<b>เข้าเกณฑ์ขับเหล็ก</b> (อายุ > 10 และ ${lic!=null&&lic>=5?'LIC ≥ 5':'ferritin ≥ 800'})`+G('++','ข3'):'ยังไม่เข้าเกณฑ์ (อายุ > 10 และ LIC ≥ 5 หรือ ferritin ≥ 800)',
+        ind?'DFX เริ่ม 10–20 mg/kg/วัน'+mgk(10,20)+' สูงสุด 30 · หรือ DFP เริ่ม 50 สูงสุด 100 · ใช้ไม่ได้ → DFO'+G('++','ก2'):'',
+        'ลดยาเมื่อ ferritin < 500 · <b>หยุดเมื่อ ferritin < 300 หรือ LIC < 3</b>',
+        'ดื่มชาหรือน้ำเต้าหู้ก่อนอาหาร · เลี่ยงอาหารเหล็กสูง'
+      ],ind?'flag':'');
+    }
+  }
+
+  /* hydroxyurea, splenectomy, HSCT */
+  if(!tdt&&(S.th_type==='homoB'||S.th_type==='bE')&&(it('emh')||it('ab'))){
+    C('Hydroxyurea (β-thal NTDT)','บทที่ 9',['ข้อบ่งชี้: '+(it('emh')?'EMH':'หาเลือดยากจาก antibody')+G('++','ง1'),'เริ่ม 10 mg/kg/วัน'+mgk(10,10)+' เพิ่ม 5 ทุก 12 สัปดาห์ สูงสุด 20 mg/kg หรือ 1 g/วัน','CBC retic renal/liver ทุก 2 สัปดาห์ 3 เดือนแรก แล้วทุก 4 สัปดาห์ · ตรวจตั้งครรภ์ก่อนเริ่ม','หยุดถ้า 6 เดือน Hb เพิ่ม < 1 g/dL · ตอบสนองดีถ้ามี α-thal ร่วมหรือ XmnI']);
+  }
+  if(it('hyper')||(!tdt&&it('growth'))){
+    C('พิจารณาตัดม้าม','บทที่ 8',[tdt?'TDT: ต้องการเลือด > 225–250 mL/kg/ปี หรือ hypersplenism'+G('++','ค1'):'NTDT: hypersplenism, massive splenomegaly + ปวด LUQ, หรือโตช้าเมื่อเลือดไม่พอ/ขับเหล็กไม่ได้'+G('++','ค1'),'เลี่ยงก่อนอายุ 5 ปี · PPV23 + Hib ≥ 2 สัปดาห์ก่อน','หลังตัด: penicillin prophylaxis · วัคซีนซ้ำ 3–5 ปี · ไข้ต้องรีบมา','เสี่ยง VTE, PAH, แผลที่ขา, silent infarct หลังตัด']);
+  }
+  if(it('splen')&&!it('fever'))C('หลังตัดม้าม','บทที่ 7.1, 8',['Penicillin V 125 mg bid (< 5 ปี จนถึง 5 ปี) / 250 mg bid ≥ 2 ปีหลังตัด หรือมียาสำรองกินทันทีที่ไข้','Pneumococcal ซ้ำ 3–5 ปี · Hib · meningococcus เป็นทางเลือก','ทำฟัน: amoxicillin 50 mg/kg (≤ 2 g) 1 ชม.ก่อน','Echo คัดกรอง PAH ทุกปี · plt สูงระหว่างตั้งครรภ์ให้ aspirin']);
+  if(child&&tdt&&['homoB','bE','bart','hbhcs'].includes(S.th_type))C('ปลูกถ่ายเซลล์ต้นกำเนิด','บทที่ 6',['ข้อบ่งชี้: อาการก่อน 2 ปี หรือรับเลือดครั้งแรกก่อน 4 ปี'+G('++','ข4'),'ตรวจ HLA พี่น้อง (โอกาสตรง 25%) · unrelated ผ่านสภากาชาดไทย · haplo เมื่อไม่มี','สปสช. ครอบคลุมอายุ < 10 ปี ที่ HLA ตรง · ระหว่างรอ: LDPRC pre-Hb 9–10.5 ขับเหล็กเต็มที่ ไม่ใช้เลือดญาติ']);
+
+  /* complications */
+  if(it('heart'))C('หัวใจ','บทที่ 7.4',['ECG, echo, CMR T2* · ปรึกษาแพทย์โรคหัวใจ','<b>Intensive chelation</b> (continuous DFO) จน T2* ปกติ · เหล็กออกจากหัวใจ 1.1–5%/เดือน','ให้เลือดช้า ≤ 5 mL/kg < 2 mL/kg/h + diuretic · pre-Hb 10–11'],'flag');
+  if(it('pah'))C('Pulmonary hypertension','บทที่ 7.7',['Echo TRV > 3.2 → RHC ยืนยัน'+G('++','ข1'),'ให้เลือดเพียงพอสม่ำเสมอ'+G('++','ค1'),'Sildenafil'+G('++','ค1')+' · bosentan'+G('+','ค1'),'ปรึกษาแพทย์โรคหัวใจ']);
+  if(it('ulcer'))C('แผลเรื้อรังที่ขา','บทที่ 7.6',['ล้าง NSS วันละครั้ง ผ้าก๊อซพาราฟิน ไม่ให้โดนน้ำ'+G('++','ค1'),'Dicloxacillin หรือ erythromycin · zinc paste หลังคุมติดเชื้อ','หายยาก → ให้เลือดสม่ำเสมอ · hydroxyurea · skin graft']);
+  if(it('preg'))C('การตั้งครรภ์','บทที่ 13',['Pre-Hb ≥ 10 (TDT) / ≥ 8 (NTDT) · T2* > 20, LIC ≤ 7 ก่อนตั้งครรภ์'+G('++','ข3'),'หยุด DFP/DFX ≥ 3 เดือนก่อน (ทั้งสองฝ่าย) · ระหว่างตั้งครรภ์ DFO 20 mg/kg SC 4–5 วัน/สัปดาห์หลัง 20 สัปดาห์ถ้าจำเป็น','Fructosamine ≤ 300 · ไทรอยด์ · BMD · folic 5 mg/วัน · ตรวจคู่สมรส','รอคลอด (TDT) DFO IV 24 ชม. · ตัดม้าม + plt > 600k → aspirin 75 mg · ให้นมใช้ DFO ได้'],'flag');
+
+  const mon=[];
+  if(tdt&&age>=10){mon.push('ECG, echo, CMR ปีละครั้ง');mon.push('น้ำหนัก/ส่วนสูงทุก 4–6 เดือน · puberty · TSH/FT4, FPG/OGTT, Ca/P/PTH ทุกปี · 25-OHD ทุก 6 เดือน · 8 AM cortisol (< 14.5 → ACTH test) · BMD'+G('++','ข3'))}
+  else if(!tdt){mon.push('น้ำหนัก/ส่วนสูง · puberty · 25-OHD ทุก 6 เดือน · 8 AM cortisol · BMD (NTDT ไม่มีเหล็กเกินก็เสี่ยง)');if(S.th_type==='bE'||S.th_type==='homoB'||it('splen')||age>=20)mon.push('Echo คัดกรอง PAH ทุกปี (β intermedia/β-E, ตัดม้าม, อายุ > 20, plt ≥ 500k, เคย thrombosis)'+G('++','ง1'))}
+  mon.push('เบาหวาน: ใช้ <b>fructosamine</b> ไม่ใช้ HbA1c');
+  if(tdt)mon.push('HBsAg, anti-HCV, anti-HIV ปีละครั้ง · anti-HBs ปีละครั้ง (< 10 กระตุ้น)');
+  mon.push('US ถุงน้ำดี (นิ่ว 60–70%) · ฟันทุก 6–12 เดือน · วัคซีน influenza ทุกปี, pneumococcus, HAV');
+  C('ติดตามระยะยาว','บทที่ 7, 12, 15',mon);
+  C('โภชนาการ','บทที่ 10',['<b>ไม่ให้ยาเสริมเหล็ก</b> งดเครื่องใน ตับ เลือด อาหารเสริมเหล็ก','Folic acid 1 mg/วัน ถ้าไม่ได้ hypertransfusion','Vit C ร่วม DFO ≤ 2–3 mg/kg (50 mg < 10 ปี, 100 mg ≥ 10 ปี) · ตรวจ zinc ปีละครั้งเมื่อได้ยาขับเหล็ก','Ca + vit D ในผู้เสี่ยงกระดูกบาง']);
+}
+
+/* ---------- NEWBORN ---------- */
+function newborn(S,o,h){
+  const {ask,P,D,C,A}=h;
+  ask('ga','',true);ask('pnd','',true);
+  if(S.hb==null||S.ga==null||S.pnd==null){P('กรอก Hb อายุครรภ์ และอายุหลังเกิด','q');return o}
+  const term=S.ga>=37;
+  const cut=term?{v:13,s:'ทารกครบกำหนด Hb หลอดเลือดดำ < 13'}:S.ga<22?{v:9.2,s:'GA 18–21 mean − 2SD'}:S.ga<26?{v:9.0,s:'GA 22–25 mean − 2SD'}:S.ga<30?{v:10.2,s:'GA 26–29 mean − 2SD'}:{v:9.2,s:'GA > 30 mean − 2SD (ตาราง 3)'};
+  P(`ทารก GA ${fx(S.ga,0)} wk อายุ ${fx(S.pnd,0)} วัน`);
+  const anemic=S.hb<cut.v;
+  P(anemic?`Hb ${fx(S.hb)} < ${cut.v} → โลหิตจาง`:`Hb ${fx(S.hb)} ≥ ${cut.v}`,anemic?'q':'ok');
+  if(!anemic&&term)A('ยังไม่ถึงเกณฑ์','เกณฑ์ '+cut.s+' · ค่า Hb ทารกขึ้นกับวัน (ตาราง 1: 1 สัปดาห์ −2SD 13.5, 2 สัปดาห์ 12.5)');
+  if(S.mcv!=null&&S.mcv<95)A('MCV ต่ำสำหรับทารก','นึกถึง α-thalassemia (Hb H: MCV 75–85, Hb Bart\'s 20–40%) หรือขาดเหล็กจากเสียเลือดเรื้อรังในครรภ์');
+
+  ask('nb_ret','ขั้นแรกของแผนภูมิ: แยกสร้างน้อยจากเสียเลือด/แตก',true);
+  if(S.nb_ret==='low'){
+    P('Retic ต่ำ','q');P('สร้างน้อย','dx');
+    D('Congenital/acquired aplastic หรือ hypoplastic anemia','main','Diamond-Blackfan (macrocytosis, 30% มีความผิดปกติร่างกาย), parvovirus B19, marrow replacement');
+    C('Retic ต่ำในทารก','บทที่ 2',['Parvovirus B19 (แม่ติดเชื้อปฐมภูมิ, hydrops)','Diamond-Blackfan: macrocytosis, microcephaly, cleft palate, thumb anomaly','Congenital leukemia, CDA','ติดเชื้อ: HIV, syphilis, rubella, sepsis']);
+  }else if(S.nb_ret==='nl'){
+    ask('nb_bili','แยกเสียเลือด (ไม่เหลือง) จาก hemolysis (เหลือง)',true);
+    if(S.nb_bili==='no'){
+      P('ไม่มี hyperbilirubinemia → เสียเลือด','q');
+      ask('nb_kb','เจาะเลือดแม่โดยเร็วหลังคลอด · บวกลวงถ้าแม่มี Hb F สูง (thal, HPFH)',true);
+      if(S.nb_kb==='pos'){P('Feto-maternal hemorrhage','dx');D('Feto-maternal hemorrhage','main','Acid elution บวก');C('Feto-maternal hemorrhage','บทที่ 2',['เฉียบพลัน: ดูสัญญาณชีพ ทารกมักซีดโดยไม่เหลือง','เรื้อรัง: hypochromic microcytic → ตรวจเหล็กทารก (ferritin หรือ SI/TIBC)'])}
+      else if(S.nb_kb==='neg'){P('External/internal blood loss','dx');D('เสียเลือดภายนอก/ภายใน','main','Cephalhematoma, subgaleal, ICH, ตับ ม้าม ต่อมหมวกไต, cord/placenta, twin-twin, เจาะเลือดบ่อย');C('หาแหล่งเลือดออก','บทที่ 2',['ตรวจศีรษะ (subgaleal, cephalhematoma) ช่องท้อง','ทบทวนสายสะดือ/รก (vasa previa, abruptio, previa)','แฝด: Hb ต่างกัน > 5 g/dL → twin-twin transfusion','บันทึกปริมาณเลือดที่เจาะทุกครั้ง'])}
+      else D('เสียเลือด','pend','รอ acid elution test');
+    }else if(S.nb_bili==='yes'){
+      P('Hyperbilirubinemia → hemolytic','q');
+      ask('nb_dat','',true);
+      if(S.nb_dat==='pos'){
+        P('Immune hemolytic anemia','dx');
+        ask('nb_abo','',false);
+        const t=S.nb_abo;
+        D(t==='abo'?'ABO HDFN':t==='rh'?'Rh HDFN':t==='minor'?'HDFN จาก minor antibody':'Immune hemolysis (HDFN)','main',t==='abo'?'แม่ O ลูก A/B · มักไม่รุนแรง (DAT มักลบ/อ่อน IAT บวก)':t==='rh'?'รุนแรง อาจ hydrops':t==='minor'?'anti-c, E, K, Jkᵃ มักในแม่ที่รับเลือดบ่อย':'');
+        C('HDFN','บทที่ 2',['ติดตามบิลิรูบินใกล้ชิด · phototherapy หรือ exchange transfusion ตามข้อบ่งชี้ ป้องกัน bilirubin encephalopathy',t==='abo'?'ABO ที่เป็น hydrops ให้หาสาเหตุร่วม เช่น G6PD หรือ HS':'','ใช้ irradiated blood สำหรับ exchange หรือ top-up หลัง intrauterine transfusion'],'flag');
+      }else if(S.nb_dat==='neg'){
+        ask('nb_smear','DAT/IAT ลบ → smear แยก membrane / enzyme / α-thal / MAHA',true);
+        const sm=S.nb_smear;
+        if(sm==='sph'){P('Membrane disorder','dx');D('HS / HE / HPP','main','Smear ทารก + พ่อแม่, OF test, EMA flow');C('Membrane disorder ในทารก','บทที่ 2, 7',['ดู smear พ่อแม่ (AD)','EMA flow / OF test','HE: infantile poikilocytosis ตรวจซ้ำ 4–6 เดือน · HPP รุนแรงรับเลือดต่อเนื่อง'])}
+        else if(sm==='enz'){P('Enzyme deficiency','dx');D('G6PD deficiency','main','ชายไทย 10–16% · Viangchan, Mahidol');D('PK deficiency','alt','Echinocytes · 90% ต้องส่องไฟ');C('Enzyme ในทารก','บทที่ 6',['ทารกเหลืองที่ต้องรักษาทุกรายควรตรวจ G6PD','FST ในทารกลบลวงได้จาก retic สูง → <b>ตรวจซ้ำหลังอายุ 1 เดือน</b>','รักษาตัวเหลืองตามเกณฑ์ปกติ ป้องกัน kernicterus','แม่ให้นมงดถั่วปากอ้า'])}
+        else if(sm==='micro'){P('α-thal / chronic loss','dx');D('Hb H disease (α-thalassemia)','main','Hb 11–14, MCV 75–85 · Hb analysis FA Bart\'s (Bart\'s 20–40%) + DNA');D('Chronic intrauterine blood loss','alt','');C('α-thalassemia ในทารก','บทที่ 2',['Hb analysis + DNA','Inclusion bodies ไม่ชัดในทารก ตรวจซ้ำหลัง 6–12 เดือน','Homozygous Hb CS อาจซีดรุนแรงในครรภ์ basophilic stippling'])}
+        else if(sm==='schist'){P('MAHA','dx');D('Microangiopathic hemolytic anemia','main','DIC, sepsis');C('Schistocytes ในทารก','บทที่ 2',['ตรวจ coagulation (DIC) หาการติดเชื้อ'],'urgent')}
+        else D('Non-immune hemolysis','pend','รอ smear');
+      }else D('Hemolysis','pend','รอ DAT/IAT');
+    }
+  }
+  /* transfusion threshold */
+  if(S.ga<32){
+    ask('nb_resp','เกณฑ์ให้เลือด BCSH 2016 ขึ้นกับการช่วยหายใจและอายุหลังเกิด',true);
+    if(S.nb_resp){
+      const d=S.pnd, row=d<1?0:d<=7?1:d<=14?2:3;
+      const T={vent:[12,12,10,10],o2:[12,10,9.5,8.5],none:[10,10,7.5,7.5]}[S.nb_resp][row];
+      const yes=S.hb<T;
+      C('เกณฑ์ให้เลือด (GA < 32 wk)','บทที่ 2 ตาราง 5',[`BCSH 2016: ให้เลือดเมื่อ Hb < <b>${T}</b> g/dL`+(S.nb_resp==='none'&&row>=2?' (พิจารณา 8.5 ตามอาการ)':''),yes?`<b>Hb ${fx(S.hb)} ถึงเกณฑ์ให้เลือด</b>`:`Hb ${fx(S.hb)} ยังไม่ถึงเกณฑ์`,'Restrictive transfusion ลดการใช้เลือดโดยไม่เพิ่มอัตราตาย'+G('++','ง1')],yes?'flag':'');
+    }
+  }else{
+    ask('nb_sc','เกณฑ์ BCSH 2004 ขึ้นกับสถานการณ์',false);
+    if(S.nb_sc){
+      const T={d1:12,icu:12,lt:11,st:7}[S.nb_sc];
+      const yes=S.hb<T;
+      C('เกณฑ์ให้เลือด (BCSH 2004)','บทที่ 2 ตาราง 4',[`ให้เลือดเมื่อ Hb < <b>${T}</b> g/dL`,yes?`<b>Hb ${fx(S.hb)} ถึงเกณฑ์</b>`:`Hb ${fx(S.hb)} ยังไม่ถึงเกณฑ์`,'พิจารณาร่วมอาการ: ชีพจรเร็ว metabolic acidosis น้ำหนักขึ้นช้า apnea ต้องการ O₂'],yes?'flag':'');
+    }
+  }
+  C('ผลิตภัณฑ์เลือดสำหรับทารก','บทที่ 2',['<b>Leukocyte-depleted RBC</b>: ลด FNHTR, HLA alloimmunization, CMV','<b>Irradiated</b>: intrauterine/exchange transfusion, top-up หลัง IUT, ผู้บริจาคเป็นญาติหรือ HLA-matched, ภูมิคุ้มกันบกพร่อง']);
+  if(S.ga<37)C('Anemia of prematurity','บทที่ 2, 4',['ลดการเจาะเลือด บันทึกปริมาณทุกครั้ง','พิจารณาวิตามิน E','รักษา: PRC หรือ EPO ร่วมกับเหล็ก','กินนมแม่: เหล็ก 2 mg/kg/วัน อายุ 1–12 เดือน'+G('++','ง1')]);
+  if(!o.dx.length)D('รอข้อมูลเพิ่ม','pend','');
+  return o;
+}
+</script>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const S={};
+const form=$('#form');
+const nodes={};
+
+/* build form */
+GROUPS.forEach(g=>{
+  const sec=document.createElement('section');sec.className='step';sec.id='g_'+g.id;sec.hidden=g.id!=='basic';
+  sec.innerHTML=`<div class="step-h"><h3>${g.t}</h3><small>${g.c}</small></div><div class="fields"></div>`;
+  form.appendChild(sec);
+  nodes['g_'+g.id]=sec;
+});
+FIELDS.forEach(([id,g,t,l,u,x])=>{
+  x=x||{};
+  const w=document.createElement('div');w.className='f'+(x.wide||t==='chk'?' wide':'');w.id='f_'+id;w.hidden=true;
+  let inner='';
+  if(t==='num'){inner=`<label class="l" for="in_${id}">${l}${u?` <span class="u">${u}</span>`:''}</label><input id="in_${id}" type="number" inputmode="decimal" step="${x.step||'any'}">`}
+  else if(t==='seg'){inner=`<span class="l">${l}</span><div class="seg" role="group" aria-label="${l}">${x.o.map(([v,tx])=>`<button type="button" data-v="${v}" aria-pressed="false">${tx}</button>`).join('')}</div>`}
+  else{inner=`<span class="l">${l}</span><div class="checks">${x.o.map(([v,tx])=>`<label class="ck"><input type="checkbox" id="in_${id}_${v}" data-v="${v}"> ${tx}</label>`).join('')}</div>`}
+  w.innerHTML=inner+`<span class="why"></span>`+(x.hint?`<span class="hint">${x.hint}</span>`:'');
+  nodes['g_'+g].querySelector('.fields').appendChild(w);
+  nodes[id]=w;
+  if(t==='num'){
+    w.querySelector('input').addEventListener('input',e=>{const v=parseFloat(e.target.value);S[id]=isFinite(v)?v:null;demoOff();run()});
+  }else if(t==='seg'){
+    w.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[id]=S[id]===b.dataset.v?null:b.dataset.v;sync(id);demoOff();run()});
+  }else{
+    w.addEventListener('change',()=>{S[id]=[...w.querySelectorAll('input:checked')].map(i=>i.dataset.v);demoOff();run()});
+  }
+});
+function sync(id){
+  const f=FMAP[id],w=nodes[id];
+  if(f.t==='num'){w.querySelector('input').value=S[id]==null?'':S[id]}
+  else if(f.t==='seg'){w.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[id]===b.dataset.v)))}
+  else{w.querySelectorAll('input').forEach(i=>i.checked=Array.isArray(S[id])&&S[id].includes(i.dataset.v))}
+}
+let prevGroups=new Set(['basic']);
+let firstRun=true;
+function run(){
+  const o=evaluate(S);
+  const vis=new Set();
+  FIELDS.forEach(([id,g])=>{
+    const on=!!o.show[id];
+    nodes[id].hidden=!on;
+    nodes[id].classList.toggle('need',o.need.includes(id));
+    nodes[id].querySelector('.why').textContent=o.why[id]||'';
+    if(on)vis.add(g);
+  });
+  GROUPS.forEach(g=>{
+    const sec=nodes['g_'+g.id];sec.hidden=!vis.has(g.id);
+    const fresh=!firstRun&&vis.has(g.id)&&!prevGroups.has(g.id);
+    if(fresh){sec.classList.add('fresh');setTimeout(()=>sec.classList.remove('fresh'),1800)}
+  });
+  prevGroups=vis;firstRun=false;
+  /* path */
+  $('#path').innerHTML=o.path.map((p,i)=>(i?'<span class="ar">→</span>':'')+`<span class="st ${p.k}">${p.t}</span>`).join('');
+  $('#alerts').innerHTML=o.alerts.map(a=>`<div class="alert"><b>${a.t}</b><span>${a.b}</span></div>`).join('');
+  /* needs */
+  $('#needs').innerHTML=o.need.length?o.need.map(id=>`<button type="button" data-go="${id}"><b>${FMAP[id].l}${FMAP[id].u?' ('+FMAP[id].u+')':''}</b>${o.why[id]?`<span>${o.why[id]}</span>`:''}</button>`).join(''):'<span class="done">ข้อมูลที่จำเป็นครบแล้ว ช่องอื่นที่เปิดอยู่ช่วยให้ผลละเอียดขึ้น</span>';
+  /* dx */
+  const LV={main:'เข้าได้มากสุด',alt:'พิจารณา',pend:'รอข้อมูล'};
+  $('#dx').innerHTML=o.dx.map(d=>`<div class="dxi ${d.lv}"><span class="lv">${LV[d.lv]}</span><div><b>${d.n}</b>${d.why?`<p>${d.why}</p>`:''}</div></div>`).join('');
+  /* cards */
+  $('#cards').innerHTML=o.cards.map(c=>`<div class="card ${c.tone}"><h4>${c.t}${c.tag?`<span class="tag">${c.tag}</span>`:''}</h4><ul>${c.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('')||'<p class="hint">การจัดการจะแสดงเมื่อมีข้อมูลพอ</p>';
+  lastOut=o;
+}
+let lastOut=null;
+$('#needs').addEventListener('click',e=>{
+  const b=e.target.closest('[data-go]');if(!b)return;
+  const w=nodes[b.dataset.go];w.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+  const foc=w.querySelector('input,button');if(foc)setTimeout(()=>foc.focus({preventScroll:true}),350);
+});
+
+/* presets */
+const PRE={
+  ida:{grp:'ad',sex:'F',hb:8.6,mcv:68,wbc:6.8,plt:452,onset:'chronic',flags:[],ferritin:6,crp:'nl',tsat:7,rdw:21.4,mhx:['mens']},
+  b12:{grp:'el',sex:'F',hb:8.9,mcv:118,wbc:3.6,plt:132,onset:'chronic',flags:['jaundice'],ret:0.8,b12:'low',fol:'nl',msm:['ovalo','hyper'],neuro:['pares'],mc:['acid']},
+  g6pd:{grp:'ad',sex:'M',hb:7.4,mcv:92,wbc:9.1,plt:240,onset:'acute',flags:['jaundice','darkurine'],ret:6.5,hct:22,hm:['ldh','ibili','hapto','hbu'],dat:'neg',smear:['bite'],trig:['oxdrug'],g6pd:'def'},
+  aiha:{grp:'ad',sex:'F',hb:6.2,mcv:104,wbc:7.2,plt:260,onset:'acute',flags:['jaundice','spleno'],ret:14,hct:18,hm:['ldh','ibili','hapto'],dat:'igg',smear:['sph'],sec:['ai']},
+  pnh:{grp:'ad',sex:'M',hb:7.8,mcv:96,wbc:3.2,plt:88,onset:'chronic',flags:['darkurine'],ret:5,hct:24,hm:['ldh','hapto','hbu'],dat:'neg',trig:['thromb'],pnh:'pos',clone:72},
+  nb:{grp:'nb',hb:12.1,mcv:108,ga:38,pnd:3,nb_ret:'nl',nb_bili:'yes',nb_dat:'pos',nb_abo:'abo',nb_sc:'st'},
+  thal:{grp:'ch',sex:'M',age:12,hb:8.4,flags:['thal'],th_type:'bE',th_tx:'reg',th_wt:35,th_iss:['ntx'],th_sf:3400,th_t2:14,th_chel:'dfp',th_cresp:'fail'}
+};
+let demo=true;
+function demoOff(){if(demo){demo=false;$('#demoNote').hidden=true;document.querySelectorAll('#presets .pill').forEach(p=>p.classList.remove('on'))}}
+function load(k){
+  Object.keys(S).forEach(id=>delete S[id]);
+  Object.assign(S,JSON.parse(JSON.stringify(PRE[k]||{})));
+  FIELDS.forEach(([id])=>sync(id));
+  document.querySelectorAll('#presets .pill').forEach(p=>p.classList.toggle('on',p.dataset.p===k));
+  demo=!!PRE[k];$('#demoNote').hidden=!demo;
+  firstRun=true;run();
+}
+$('#presets').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b)load(b.dataset.p)});
+$('#reset').addEventListener('click',()=>{load('__none');window.scrollTo({top:0})});
+
+/* copy summary */
+const strip=s=>s.replace(/<[^>]+>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+function summary(){
+  const o=lastOut;if(!o)return'';
+  const L=[];
+  L.push('Anemia Flow (CPG สมาคมโลหิตวิทยาฯ 2562)');
+  L.push('เส้นทาง: '+o.path.map(p=>strip(p.t)).join(' → '));
+  if(o.dx.length)L.push('การวินิจฉัย: '+o.dx.map(d=>({main:'[หลัก] ',alt:'[พิจารณา] ',pend:'[รอ] '}[d.lv])+strip(d.n)).join('; '));
+  if(o.need.length)L.push('ข้อมูลที่ยังต้องการ: '+o.need.map(id=>FMAP[id].l).join(', '));
+  o.cards.forEach(c=>{L.push('');L.push('■ '+strip(c.t)+(c.tag?' ('+c.tag+')':''));c.items.forEach(i=>L.push('- '+strip(i)))});
+  return L.join('\n');
+}
+$('#copy').addEventListener('click',()=>{
+  const t=summary();
+  const ok=()=>{$('#copied').hidden=false;setTimeout(()=>$('#copied').hidden=true,1800)};
+  const fb=()=>{const ta=$('#fallback');ta.hidden=false;ta.value=t;ta.focus();ta.select()};
+  try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+});
+load('ida');
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

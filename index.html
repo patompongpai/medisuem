@@ -11,6 +11,7 @@
   --sys-id:#1E7A5F; --sys-id-soft:#DDF0E8;
   --sys-pulm:#2F6FA8; --sys-pulm-soft:#DEEBF7;
   --sys-renal:#8A4FA0; --sys-renal-soft:#F0E4F4;
+  --sys-heme:#A8324F; --sys-heme-soft:#F7E0E6;
   --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
   --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -22,6 +23,7 @@
   --sys-id:#6FD3AF; --sys-id-soft:#15342A;
   --sys-pulm:#86BEF0; --sys-pulm-soft:#172C42;
   --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
+  --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -31,6 +33,7 @@
   --sys-id:#6FD3AF; --sys-id-soft:#15342A;
   --sys-pulm:#86BEF0; --sys-pulm-soft:#172C42;
   --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
+  --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -113,6 +116,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
 const SYSTEMS = {
   cardio:{name:"หัวใจ หลอดเลือด และเมตาบอลิก", c:"--sys-cardio"},
   renal:{name:"ไตและเกลือแร่", c:"--sys-renal"},
+  heme:{name:"โลหิตวิทยา", c:"--sys-heme"},
   id:{name:"โรคติดเชื้อและภาวะวิกฤต", c:"--sys-id"},
   pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"}
 };
@@ -136,6 +140,15 @@ const LESSONS = [
   {href:"hyponatremia/index.html", sys:"renal", y:"2014", t:"Hyponatremia: A practical approach",
    d:"สรุปบทความ Indian J Endocrinol Metab 2014 การแยกชนิด ส่งตรวจ 9 ขั้น แผนผัง approach และ management แบบคลิกเดินตาม พร้อมเครื่องคำนวณข้างเตียง",
    tags:["แผนผัง","เครื่องคำนวณ","แบบทดสอบ"], k:"hyponatremia sodium na ต่ำ โซเดียม siadh 3% nacl ods tolvaptan vaptan osmolality"},
+  {href:"anemia/index.html", sys:"heme", y:"2562", t:"ภาวะโลหิตจาง Anemia CPG 2562",
+   d:"แนวทางเวชปฏิบัติของสมาคมโลหิตวิทยาฯ ส่วนที่ 1 ครบ 9 บท ตั้งแต่ MCV และ RPI ถึง IDA, megaloblastic, G6PD, membrane disorders, AIHA และ PNH",
+   tags:["9 บท","แผนภูมิ","คำนวณ RPI"], k:"anemia ซีด โลหิตจาง ida iron ferritin b12 folate g6pd aiha pnh hs spherocytosis rpi"},
+  {href:"anemia-flow/index.html", sys:"heme", y:"2562", t:"Anemia Flow",
+   d:"กรอกข้อมูลผู้ป่วยแล้วระบบบอกผลตรวจที่ต้องส่งเพิ่มทีละขั้น พร้อมเส้นทางวินิจฉัยและการรักษาตาม CPG ภาวะโลหิตจางและธาลัสซีเมีย",
+   tags:["เครื่องมือข้างเตียง","ผู้ป่วยตัวอย่าง"], k:"anemia flow ซีด workup เครื่องมือ ida thalassemia ธาลัสซีเมีย chelation"},
+  {href:"thalassemia/index.html", sys:"heme", y:"2562", t:"ธาลัสซีเมีย Thalassemia CPG 2562",
+   d:"ส่วนที่ 2 ครบ 15 บท ชนิดโรค การแปลผล Hb typing เกณฑ์ให้เลือด ยาขับเหล็ก TDT และ NTDT ภาวะแทรกซ้อน การตั้งครรภ์ และคัดกรองคู่เสี่ยง",
+   tags:["15 บท","คำนวณยาขับเหล็ก"], k:"thalassemia ธาลัสซีเมีย hb e hb h tdt ntdt ferritin deferiprone deferasirox desferrioxamine hsct"},
   {href:"sepsis/index.html", sys:"id", y:"2569", t:"Sepsis & Septic Shock 2569",
    d:"CPG Sepsis ของไทย ฉบับ 2569 ทั้ง 9 บทและนิยาม ตั้งแต่ initial resuscitation จนถึงเครือข่ายและ rapid response",
    tags:["10 บท","แฟลชการ์ด","แบบทดสอบ"], k:"sepsis septic shock icu ติดเชื้อ norepinephrine lactate",
@@ -157,7 +170,7 @@ function readProg(p){
 
 let filter = "all";
 const chipsEl = document.getElementById("chips");
-[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",heme:"เลือด",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
   const b = document.createElement("button");
   b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
   b.setAttribute("aria-pressed", k===filter);

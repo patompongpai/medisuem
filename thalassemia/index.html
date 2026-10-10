@@ -1,0 +1,1039 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Thalassemia CPG 2562</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lesson sheet (thalassemia volume) — sticky chapter rail on wide screens; each chapter = summary, tables, decision trees. Palette from a Wright-stained smear: azure (nuclei) for structure, eosin (red cells) for emphasis. */
+:root{
+  --bg:#F6F3F5; --surface:#FFFFFF; --sunk:#EDE7EB; --line:#DACFD6;
+  --fg:#1E1820; --muted:#665A69;
+  --azure:#3A3F94; --azure-soft:#E1E2F4; --azure-fg:#FFFFFF;
+  --eosin:#B3305B; --eosin-soft:#F7DEE6;
+  --ok:#3E8E55; --oks:#DDF0E2; --warn:#B9801A; --warns:#F8EDCF; --bad:#BE3A35; --bads:#F6D9D7;
+  --font-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141016; --surface:#1D1720; --sunk:#271F2B; --line:#3B303F;
+  --fg:#EDE6EE; --muted:#A99BAB;
+  --azure:#A3A8F2; --azure-soft:#24264C; --azure-fg:#12132B;
+  --eosin:#EC7FA1; --eosin-soft:#3B1D28;
+  --ok:#5DB874; --oks:#1B3323; --warn:#E2B654; --warns:#352C14; --bad:#EA6A62; --bads:#3E1C1A;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15.5px;line-height:1.7;padding-inline:16px;padding-block:0 56px}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.3;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--azure)}
+ul,ol{margin:0;padding-left:20px}
+li+li{margin-top:3px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--azure);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+
+.rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:36px;max-height:100vh;overflow:auto}
+.rail .brand{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--eosin);margin-bottom:14px}
+.rail nav{display:flex;flex-direction:column;gap:2px}
+.rail nav a{text-decoration:none;color:var(--muted);font-size:14px;padding:5px 10px;border-radius:6px;border-left:2px solid transparent;display:grid;grid-template-columns:22px 1fr;gap:4px}
+.rail nav a b{font-family:var(--font-mono);font-weight:500;font-size:12px;color:var(--eosin);padding-top:2px}
+.rail nav a:hover{color:var(--fg);background:var(--sunk)}
+.rail nav a.on{color:var(--azure);border-left-color:var(--azure);background:var(--azure-soft)}
+@media (max-width:900px){
+  .rail{z-index:5;background:var(--bg);padding:10px 0;margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line);max-height:none}
+  .rail .brand{display:none}
+  .rail nav{flex-direction:row;overflow-x:auto;gap:6px;scrollbar-width:none}
+  .rail nav a{white-space:nowrap;border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:13px;display:inline-flex;gap:6px}
+  .rail nav a.on{border-color:var(--azure)}
+}
+
+main{min-width:0;padding-top:36px;display:flex;flex-direction:column;gap:64px}
+section{scroll-margin-top:72px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{color:var(--muted);max-width:70ch}
+h2{font-size:clamp(22px,3vw,29px)}
+h3{font-size:18px;margin-top:4px}
+h4{font-size:15px}
+.chap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:14px}
+.chap-num{font-family:var(--font-display);font-weight:700;font-size:52px;line-height:.9;color:var(--eosin)}
+.prose{max-width:72ch;display:flex;flex-direction:column;gap:10px}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:12px}
+.hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.01em}
+.hero h1 span{color:var(--eosin)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:99px;background:var(--sunk);color:var(--muted);font-size:12.5px;line-height:1.8}
+.cta{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--azure);color:var(--azure-fg);text-decoration:none;font-weight:600;padding:10px 18px;border-radius:8px;font-family:var(--font-display)}
+.cta:hover{filter:brightness(1.08)}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.map a{display:grid;grid-template-columns:30px 1fr;gap:6px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.45}
+.map a b{font-family:var(--font-mono);color:var(--eosin);font-weight:500}
+.map a small{display:block;color:var(--muted);font-size:12.5px}
+.map a:hover{border-color:var(--azure)}
+
+/* grades */
+.r{display:inline-flex;gap:4px;align-items:center;font-family:var(--font-mono);font-size:11px;padding:0 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;line-height:1.75;vertical-align:1px}
+.r.s2{border-color:var(--azure);color:var(--azure);background:var(--azure-soft)}
+.r.s1{border-color:var(--line);color:var(--fg)}
+.r.s0{border-style:dashed}
+
+/* blocks */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.key div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.key div b.n{font-family:var(--font-mono);font-size:22px;font-weight:500;color:var(--eosin);line-height:1.2;font-variant-numeric:tabular-nums}
+.callout{border-left:3px solid var(--eosin);background:var(--surface);padding:12px 16px;border-radius:0 8px 8px 0;font-size:14.5px;display:flex;flex-direction:column;gap:6px}
+.callout h4{color:var(--eosin)}
+.callout.az{border-left-color:var(--azure)} .callout.az h4{color:var(--azure)}
+.callout.warn{border-left-color:var(--warn);background:var(--warns)} .callout.warn h4{color:var(--fg)}
+.formula{font-family:var(--font-mono);font-size:14px;background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;white-space:nowrap}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:13.5px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.tbl table{border-collapse:collapse;width:100%;font-size:14px;min-width:540px}
+.tbl.narrow table{min-width:0}
+.tbl caption{caption-side:top;text-align:left;font-size:13px;color:var(--muted);padding:10px 12px 0;font-weight:500}
+.tbl th,.tbl td{padding:7px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{font-size:12.5px;color:var(--muted);font-weight:500;background:var(--sunk)}
+.tbl td.n,.tbl th.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.grp td{background:var(--sunk);font-weight:600;font-size:13px}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl td ul{padding-left:16px}
+
+/* decision tree */
+.tree-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.tree-wrap h4{margin-bottom:8px}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{margin-left:14px;padding-left:16px;border-left:1.5px solid var(--line)}
+.tree li{position:relative;padding:4px 0;margin:0}
+.tree ul>li::before{content:"";position:absolute;left:-16px;top:19px;width:13px;border-top:1.5px solid var(--line)}
+.nd{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-size:14px;line-height:1.5;max-width:60ch}
+.nd.q{background:var(--azure-soft);border-color:var(--azure);font-weight:600}
+.nd.dx{background:var(--eosin-soft);border-color:transparent}
+.nd.ax{background:var(--oks);border-color:transparent}
+.nd small{color:var(--muted);font-size:12.5px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* smear grid */
+.smear{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.smear div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px}
+.smear b{display:block;font-family:var(--font-display);font-size:14.5px;color:var(--eosin);margin-bottom:2px}
+
+/* mini tools */
+.tool{background:var(--surface);border:1px solid var(--azure);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.tool h4{color:var(--azure);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.tool h4 small{font-family:var(--font-mono);font-weight:400;color:var(--muted);font-size:12px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.field{display:flex;flex-direction:column;gap:3px;min-width:0}
+.field label{font-size:12.5px;color:var(--muted);font-weight:500}
+.field input,.field select{width:100%;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);font-family:var(--font-mono);font-size:15px}
+.field input:focus,.field select:focus{border-color:var(--azure);outline:none;box-shadow:0 0 0 3px var(--azure-soft)}
+.out{border-radius:8px;padding:10px 14px;background:var(--sunk);font-size:14.5px;display:flex;flex-direction:column;gap:3px}
+.out.ok{background:var(--oks)} .out.warn{background:var(--warns)} .out.bad{background:var(--bads)}
+.out b.big{font-family:var(--font-display);font-size:19px}
+
+details.more{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+details.more>summary{cursor:pointer;padding:10px 16px;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";font-family:var(--font-mono);color:var(--azure)}
+details.more[open]>summary::after{content:"−"}
+details.more>div{padding:0 16px 14px;display:flex;flex-direction:column;gap:10px}
+details.more[open]>summary{border-bottom:1px solid var(--line);margin-bottom:12px}
+
+.tag-out{display:inline-block;font-size:11.5px;font-weight:600;padding:0 8px;border-radius:99px;background:var(--warns);color:var(--fg);line-height:1.8}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:80ch}
+@media (prefers-reduced-motion:no-preference){.rail nav a{transition:background .15s,color .15s}}
+</style>
+<div class="wrap">
+<aside class="rail">
+  <div class="brand">Thalassemia · CPG 2562</div>
+  <nav id="toc">
+    <a href="#top"><b>·</b>ภาพรวม</a>
+    <a href="#t1"><b>1</b>ชนิดและความรุนแรง</a>
+    <a href="#t2"><b>2</b>การตรวจวินิจฉัย</a>
+    <a href="#t3"><b>3</b>การให้เลือด</a>
+    <a href="#t4"><b>4</b>ขับเหล็ก TDT</a>
+    <a href="#t5"><b>5</b>ขับเหล็ก NTDT</a>
+    <a href="#t6"><b>6</b>ปลูกถ่ายเซลล์ต้นกำเนิด</a>
+    <a href="#t7"><b>7</b>ภาวะแทรกซ้อน</a>
+    <a href="#t8"><b>8</b>การตัดม้าม</a>
+    <a href="#t9"><b>9</b>Hydroxyurea</a>
+    <a href="#t10"><b>10</b>ดูแลทั่วไป โภชนาการ</a>
+    <a href="#t11"><b>11</b>ผู้ป่วยและครอบครัว</a>
+    <a href="#t12"><b>12</b>สุขภาพฟัน</a>
+    <a href="#t13"><b>13</b>การตั้งครรภ์</a>
+    <a href="#t14"><b>14</b>คัดกรองคู่เสี่ยง</a>
+    <a href="#t15"><b>15</b>ระบบบริการ</a>
+    <a href="#update"><b>+</b>อัปเดตหลัง CPG</a>
+    <a href="#pearls"><b>★</b>จุดที่ควรจำ</a>
+  </nav>
+</aside>
+
+<main>
+<header class="hero" id="top" style="scroll-margin-top:72px">
+  <div class="eyebrow">สมาคมโลหิตวิทยาแห่งประเทศไทย · พ.ศ. 2562 · ส่วนที่ 2 โรคธาลัสซีเมีย</div>
+  <h1>แนวทางเวชปฏิบัติการรักษา<span>โรคโลหิตจางธาลัสซีเมีย</span></h1>
+  <p class="lead">สรุปครบ 15 บท ตั้งแต่ชนิดโรค การแปลผล Hb typing เกณฑ์ให้เลือด ยาขับเหล็กทั้ง TDT และ NTDT ภาวะแทรกซ้อน 7 ระบบ ไปจนถึงการตั้งครรภ์และการคัดกรองคู่เสี่ยง ตัวเลขและน้ำหนักคำแนะนำอ้างอิงตามต้นฉบับ</p>
+  <div class="bar" style="display:flex;flex-wrap:wrap;gap:8px">
+    <a class="cta" id="flowLink" href="../anemia-flow/index.html">เปิดหน้า Anemia Flow (มีโมดูลธาลัสซีเมีย) →</a>
+    <a class="cta" id="anemiaLink" href="../anemia/index.html" style="background:transparent;color:var(--azure);border:1px solid var(--azure)">บทเรียน Anemia ส่วนที่ 1</a>
+  </div>
+  <div class="meta">
+    <span class="chip"><span class="r s2">++</span> ควรทำ</span>
+    <span class="chip"><span class="r s1">+</span> น่าทำ</span>
+    <span class="chip"><span class="r s0">+/-</span> ทำหรือไม่ทำก็ได้</span>
+    <span class="chip">หลักฐาน ก (RCT) → ง (ฉันทามติ)</span>
+  </div>
+  <div class="key">
+    <div><span class="muted small">พาหะ α-thal · β-thal</span><b class="n">20–30 · 3–9%</b><span class="small">Hb E 10–53% (อีสาน 30–50%) · Hb CS 1–8%</span></div>
+    <div><span class="muted small">ผู้ป่วยทั้งประเทศ (ประมาณ)</span><b class="n">~434,000</b><span class="small">เกิดใหม่ ~9,850 ราย/ปี จากเด็กเกิด 800,000</span></div>
+    <div><span class="muted small">สาเหตุตายอันดับ 1 ในไทย</span><b class="n">การติดเชื้อ</b><span class="small">ต่างประเทศอันดับ 1 คือหัวใจล้มเหลว (~70% ในชนิดรุนแรง)</span></div>
+  </div>
+</header>
+
+<!-- ===== T1 ===== -->
+<section id="t1">
+  <div class="chap-head"><div class="chap-num">1</div><div><div class="eyebrow">บทที่ 1</div><h2>ระบาดวิทยาและชนิดของโรค</h2></div></div>
+  <div class="prose"><p>ถ่ายทอดแบบ autosomal recessive · พาหะมียีนผิดปกติ 1 ยีน ไม่ซีด · ผู้ป่วยมียีนในกลุ่มเดียวกัน 2 ยีน สร้าง α- หรือ β-globin น้อยหรือไม่ได้ → ซีด เหลือง ตับม้ามโต โตไม่สมอายุ</p></div>
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 2 · ประมาณการผู้ป่วยในไทย</caption>
+      <thead><tr><th>โรค</th><th class="n">เกิดใหม่/ปี</th><th class="n">ทั้งหมด</th></tr></thead>
+      <tbody>
+        <tr><td>Homozygous β-thal</td><td class="n">207</td><td class="n">2,070</td></tr>
+        <tr><td>β-thal/Hb E</td><td class="n">3,213</td><td class="n">96,390</td></tr>
+        <tr><td>Hb Bart's hydrops</td><td class="n">833</td><td class="n">0</td></tr>
+        <tr><td>Hb H disease</td><td class="n">5,600</td><td class="n">336,000</td></tr>
+      </tbody></table></div>
+    <div class="panel small">
+      <h4>ชนิดที่พบบ่อย</h4>
+      <ul>
+        <li><b>Hb Bart's hydrops</b> (--/--) รุนแรงที่สุด ตายในครรภ์/หลังคลอด แม่เสี่ยง preeclampsia · ปัจจุบันรักษาในครรภ์จนรอดได้ (surviving Hb Bart's) แล้วให้เลือด + ขับเหล็ก</li>
+        <li><b>Hb H</b>: deletional (--/-α) และ non-deletional Hb H/CS (--/α<sup>CS</sup>α) · ส่วนใหญ่ซีดน้อย–ปานกลาง แต่<b>ซีดลงเร็วเมื่อไข้สูง</b></li>
+        <li><b>β-thal major</b> (β⁰/β⁰, β⁺/β⁰; β⁺/β⁺ ไม่รุนแรง) ซีดภายในอายุ 2 ปี · ส่วนใหญ่ TDT</li>
+        <li><b>β-thal/Hb E</b> (β⁰/βᴱ, β⁺/βᴱ) รุนแรงได้ 3 ระดับ ตามอายุที่วินิจฉัยและรับเลือดครั้งแรก ขนาดม้าม การเติบโต ปริมาณเลือดต่อปี และ Hb</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 3 · ระดับความรุนแรง</caption>
+      <thead><tr><th>Severity</th><th>คลินิก</th><th class="n">Baseline Hb</th><th>Genotype</th></tr></thead>
+      <tbody>
+        <tr><td><b>Severe</b></td><td>ซีดก่อน 2 ปี · รับเลือดครั้งแรกก่อน 4 ปี · น้ำหนัก/ส่วนสูงต่ำกว่าเกณฑ์ · หน้าเปลี่ยน · ม้ามโตมาก</td><td class="n">&lt; 7</td><td>Homo β-thal (β⁰/β⁰, β⁰/β⁺ บางราย), β-thal/Hb E (β⁰/βᴱ บางราย), non-deletional Hb H บางราย</td></tr>
+        <tr><td><b>Moderate</b></td><td>ซีด เหลือง ตับม้ามโต</td><td class="n">7–9</td><td>Homo β-thal (β⁰/β⁺ บางราย), β-thal/Hb E (β⁰/βᴱ บางราย)</td></tr>
+        <tr><td><b>Mild</b></td><td>ซีด ม้ามโตเล็กน้อย</td><td class="n">&gt; 9</td><td>β⁺/β⁺, β⁺/βᴱ, Hb H (--/-α หรือ --/α<sup>CS</sup>α)</td></tr>
+        <tr><td><b>Asymptomatic</b></td><td>ไม่มีอาการ ไม่ถือว่าเป็นโรค</td><td class="n">ปกติถึง &gt; 10</td><td>Thalassemia trait, Hb E trait, homozygous Hb E</td></tr>
+      </tbody></table></div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 4 · TDT และ NTDT</caption>
+      <thead><tr><th>Transfusion-dependent (TDT)</th><th>Non-transfusion-dependent (NTDT)</th></tr></thead>
+      <tbody>
+        <tr><td>ซีดรุนแรงมาก ต้องรับเลือดสม่ำเสมอเพื่อดำรงชีวิต</td><td>ซีดน้อย–ปานกลาง รับเลือดเมื่อซีดลงหลังติดเชื้อ/ตั้งครรภ์</td></tr>
+        <tr><td>Hb ปกติคงไว้ &gt; 7 ไม่ได้</td><td>Hb ปกติ 7–10 g/dL ขึ้นไป</td></tr>
+        <tr><td>Severe homozygous β (β⁰/β⁰, β⁰/β⁺ บางราย) · β-thal/Hb E (β⁰/βᴱ บางราย) · surviving Hb Bart's · non-deletional Hb H บางราย</td><td>Mild–moderate homozygous β · β-thal/Hb E (β⁰/βᴱ บางราย, β⁺/βᴱ) · Hb H และ Hb H/CS บางราย</td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ===== T2 ===== -->
+<section id="t2">
+  <div class="chap-head"><div class="chap-num">2</div><div><div class="eyebrow">บทที่ 2</div><h2>การตรวจวินิจฉัยทางห้องปฏิบัติการ</h2></div></div>
+  <div class="grid3">
+    <div class="panel small"><h4>CBC</h4><p>Hb, MCV, MCH ต่ำ · RDW สูง · microcytic hypochromic, aniso-poikilocytosis, polychromasia, NRBC</p></div>
+    <div class="panel small"><h4>Hb H inclusion bodies</h4><p>Brilliant cresyl blue/methylene blue 37 °C 60 นาที → จุดตะกอนคล้ายลูกกอล์ฟ 30–80% ของ RBC · non-deletional พบมากกว่า deletional</p></div>
+    <div class="panel small"><h4>Hb analysis (HPLC / CE)</h4><p>HPLC: Hb E กับ A₂ ออกตำแหน่งเดียวกัน · CE แยกได้ · ต้องรู้อายุ ประวัติรับเลือด ผล CBC และผลพ่อแม่ (เด็ก)</p></div>
+  </div>
+  <div class="grid2">
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 1 · α-thalassemia (HPLC)</caption>
+      <thead><tr><th>ชนิด</th><th>Genotype</th><th class="n">MCV/MCH</th><th>Hb analysis</th></tr></thead>
+      <tbody>
+        <tr><td>ปกติ</td><td class="n">αα/αα</td><td class="n">80–100 / 27–34</td><td>A₂A, A₂ 2.5–3.5%</td></tr>
+        <tr><td>α-thal 2 carrier</td><td class="n">-α/αα</td><td class="n">&gt; 80 / &gt; 27</td><td>A₂A, A₂ &lt; 3.5%</td></tr>
+        <tr><td>α-thal 1 carrier</td><td class="n">--/αα</td><td class="n">&lt; 80 / &lt; 27</td><td>A₂A, A₂ &lt; 3.5%</td></tr>
+        <tr><td>Hb H</td><td class="n">--/-α</td><td class="n">&lt; 80 / &lt; 27</td><td>A₂AH หรือ A₂A Bart's H</td></tr>
+        <tr><td>Hb H/CS</td><td class="n">--/α<sup>CS</sup>α</td><td class="n">&lt; 80 / &lt; 27</td><td>CSA₂AH หรือ CSA₂A Bart's H</td></tr>
+        <tr><td>Homozygous Hb CS</td><td class="n">α<sup>CS</sup>α/α<sup>CS</sup>α</td><td class="n">&lt; 80 / &lt; 27</td><td>CSA₂A Bart's</td></tr>
+        <tr><td>Hb Bart's hydrops (ทารก)</td><td class="n">--/--</td><td class="n">96±8 / 26±2</td><td>Bart's &gt; 80%</td></tr>
+      </tbody></table></div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 2–3 · β-thalassemia และ α+β ร่วมกัน</caption>
+      <thead><tr><th>ชนิด</th><th>Genotype</th><th>Hb analysis</th></tr></thead>
+      <tbody>
+        <tr><td>β-thal carrier</td><td class="n">β/β⁰, β/β⁺</td><td>A₂A, <b>A₂ &gt; 3.5%</b></td></tr>
+        <tr><td>Homozygous β-thal</td><td class="n">β⁰/β⁰, β⁰/β⁺, β⁺/β⁺</td><td>A₂F หรือ A₂FA</td></tr>
+        <tr><td>Hb E carrier</td><td class="n">β/βᴱ</td><td>EA (E 25–35%) · MCV ต่ำหรือปกติ</td></tr>
+        <tr><td>β-thal/Hb E</td><td class="n">β⁰/βᴱ, β⁺/βᴱ</td><td>EF หรือ EFA</td></tr>
+        <tr><td>Homozygous Hb E</td><td class="n">βᴱ/βᴱ</td><td>EE (E ≥ 80%, F ≤ 5%)</td></tr>
+        <tr class="grp"><td colspan="3">α และ β ร่วมกัน</td></tr>
+        <tr><td>AE Bart's</td><td class="n">--/-α, β/βᴱ</td><td>AE Bart's</td></tr>
+        <tr><td>AE Bart's/CS</td><td class="n">--/α<sup>CS</sup>α, β/βᴱ</td><td>CS AE Bart's</td></tr>
+        <tr><td>EF Bart's</td><td class="n">--/-α + β⁰/βᴱ หรือ βᴱ/βᴱ</td><td>EF Bart's</td></tr>
+        <tr><td>EF Bart's/CS</td><td class="n">--/α<sup>CS</sup>α + β⁰/βᴱ หรือ βᴱ/βᴱ</td><td>CS EF Bart's</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="panel small">
+    <h4>ตรวจระดับยีน (PCR) เมื่อไร</h4>
+    <ul>
+      <li>ใช้หลักในการวินิจฉัยทารกในครรภ์</li>
+      <li>ดูแลผู้ป่วย: เมื่อ Hb analysis แปลผลไม่ได้ (เคยรับเลือด ทารกที่ Hb H/inclusion ไม่ชัด) คลินิกไม่เข้ากับผล หรือต้องการทราบชนิด Hb variant</li>
+      <li>α ในไทย: SEA, Thai deletion, -3.7 kb, -4.2 kb, Hb CS, Hb Paksé, Hb Q-Thailand · β ในไทย: codon 41/42 (−TTCT) พบบ่อยสุด, codon 17 (A&gt;T), IVS1-1, IVS1-5, codon 71/72 (+A), −28 (A&gt;G), IVS2-654</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== T3 ===== -->
+<section id="t3">
+  <div class="chap-head"><div class="chap-num">3</div><div><div class="eyebrow">บทที่ 3</div><h2>แนวทางการให้เลือด</h2></div></div>
+  <div class="prose"><p>เป้าหมาย: รักษาซีดให้คุณภาพชีวิตดี และ<b>กดการสร้างเม็ดเลือดที่ผิดปกติ</b> (ม้ามไม่โต หน้าไม่เปลี่ยน โตปกติ ป้องกัน PAH) แลกกับเหล็กเกิน · ยืนยันชนิดโรคโดยผู้เชี่ยวชาญก่อนเริ่มให้เลือดประจำ</p></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ข้อบ่งชี้ให้เลือดประจำ · อายุ &lt; 18 ปี <span class="r s2">++ · ข3</span></h4>
+      <ol>
+        <li>ชนิดรุนแรง (β-thal major, β⁰/Hb E, non-deletional Hb H) และ <b>Hb &lt; 8 g/dL 2 ครั้ง ห่าง ≥ 2 สัปดาห์</b> โดยไม่มีการติดเชื้อ</li>
+        <li>Hb &gt; 8 แต่มี: กระดูกใบหน้าเปลี่ยน, โตช้า, กระดูกหัก, EMH หรือตับม้ามโตมาก</li>
+      </ol>
+      <p class="muted">เริ่มเร็วร่วมกับขับเหล็ก ทำให้ final adult height ใกล้ปกติ · ให้เลือดในเด็ก &gt; 12 ปีที่โตช้าช่วยได้</p>
+    </div>
+    <div class="panel small">
+      <h4>ข้อบ่งชี้ให้เลือดประจำ · อายุ ≥ 18 ปี <span class="r s2">++ · ข3</span></h4>
+      <ol>
+        <li><b>Hb &lt; 7 g/dL 2 ครั้ง ห่าง ≥ 2 สัปดาห์</b> โดยไม่มีการติดเชื้อ</li>
+        <li>Hb &gt; 7 แต่มีภาวะแทรกซ้อนจากซีดเรื้อรัง: กระดูกหัก, PAH, แผลเรื้อรังที่ขา</li>
+      </ol>
+      <h4 style="margin-top:6px">ก่อนให้เลือดครั้งแรก</h4>
+      <ul>
+        <li>RBC antigen typing: C, c, E, e, Mia (± Kidd, Duffy, MNS, Lewis, P) <span class="r s2">++ · ง1</span></li>
+        <li>Hepatitis A, B, C, HIV · ฉีด HBV vaccine ก่อนถ้ายังไม่มีภูมิ <span class="r s2">++ · ค1</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>รูปแบบการให้เลือด</caption>
+      <thead><tr><th>แบบ</th><th>เป้าหมายและขนาด</th><th>ระดับ</th></tr></thead>
+      <tbody>
+        <tr><td><b>High transfusion</b> (TDT วินิจฉัยใหม่ที่เข้าเกณฑ์)</td><td>Pre-transfusion Hb <b>&gt; 9.0–10.5</b> ตลอด และไม่เกิน 14 · RBC <b>10–15 mL/kg</b> (ผู้ใหญ่ 1–2 ยูนิต) ทุก <b>2–6 สัปดาห์</b> · ใช้ในผู้ใหญ่ที่มี EMH กดไขสันหลัง หรือแผลที่ขาด้วย</td><td><span class="r s2">++ · ค1</span></td></tr>
+        <tr><td>รักษา pre-Hb &gt; 7 (ผู้ใหญ่)</td><td>รายที่ไม่สามารถให้ high transfusion · 1–2 ยูนิต</td><td><span class="r s2">++ · ง1</span></td></tr>
+        <tr><td><b>Occasional</b></td><td>Hb H, β ไม่รุนแรง ที่ซีดลงจาก acute hemolysis (มักติดเชื้อ) · ให้เมื่อ <b>Hb &lt; 7</b> หรือสัญญาณชีพเปลี่ยน · มี PAH ให้พิจารณารายๆ</td><td><span class="r s2">++ · ง1</span></td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ผลิตภัณฑ์เลือด <span class="r s2">++ · ง1</span></h4>
+      <ul>
+        <li>ผู้บริจาคสมัครใจ · คัดกรอง syphilis, HIV, HBV, HCV รวม NAT · RBC เก็บ 1–6 °C ขนส่ง 1–10 °C</li>
+        <li><b>ลดเม็ดเลือดขาวทุกครั้ง</b> ป้องกัน FNHTR: LPRC (ปั่น, WBC &lt; 1.2×10⁹/ยูนิต รพ.จังหวัดเตรียมได้) · LDPRC (กรอง, &lt; 1×10⁶) ลด anti-HLA/HPA → ใช้ในรายที่จะ HSCT</li>
+        <li>Prestorage filter ดีที่สุด · <b>ไม่แนะนำ bedside filter</b> (hypotension จาก bradykinin โดยเฉพาะผู้ได้ ACEi)</li>
+        <li>SDR (apheresis) สำหรับผู้มี antibody หลายชนิด</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>Compatibility และการให้ <span class="r s2">++</span></h4>
+      <ul>
+        <li>Antibody screening ทุกครั้งที่ crossmatch · เคยพบ antibody ให้เลือดที่ไม่มี antigen นั้นเสมอ (ป้องกัน DHTR)</li>
+        <li>จัดเลือด antigen-negative สำหรับ C, c, D, E, e, Mia ที่ผู้ป่วยเป็นลบ</li>
+        <li>เด็กที่จะ HSCT ไม่รับเลือดญาติ · RBC อายุ ≤ 14 วัน · เจาะตรวจถึงให้เลือด ≤ 72 ชม.</li>
+        <li>ครั้งละ <b>10–15 mL/kg ไม่เกิน 2 ยูนิต</b> (กัน hypertension–convulsion–cerebral hemorrhage) <span class="r s2">++ · ค1</span></li>
+        <li>เคยมี FNHTR: paracetamol + chlorpheniramine ก่อนให้ <span class="r s2">++ · ค1</span></li>
+        <li>หัวใจผิดปกติ: ≤ 5 mL/kg ทุก 24–48 ชม. อัตรา &lt; 2 mL/kg/h + ยาขับปัสสาวะก่อน</li>
+        <li>เริ่มภายใน 30 นาทีหลังออกจากตู้เย็น ให้เสร็จภายใน 4 ชม.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>ปฏิกิริยาจากการรับเลือด <span class="r s2">++ · ง1</span> (ตรวจถุงเลือดที่ข้างเตียงทันที)</caption>
+      <thead><tr><th>ระดับ</th><th>อาการ</th><th>การจัดการ</th></tr></thead>
+      <tbody>
+        <tr><td>Mild (allergic)</td><td>ลมพิษ ผื่นคัน</td><td>วัดสัญญาณชีพ ให้ช้าลง chlorpheniramine 0.1 mg/kg IM/IV · ไม่ดีขึ้นหยุดเลือด ให้ steroid IV</td></tr>
+        <tr><td>Moderately severe (FNHTR, hypersensitivity)</td><td>ไข้ หนาวสั่น flushing ลมพิษ เหนื่อย ใจสั่น ปวดศีรษะ</td><td>หยุดเลือด สัญญาณชีพ NSS · paracetamol, antihistamine, steroid ตามอาการ</td></tr>
+        <tr><td>Life-threatening: AHTR (ABO)</td><td>ไข้ ปวดหลัง ร้อนแขนที่ให้ hemoglobinuria oliguria hypotension DIC (แม้ได้ &lt; 10 mL)</td><td>หยุดเลือด แจ้งธนาคารเลือด NSS ขับปัสสาวะ แก้ DIC</td></tr>
+        <tr><td>Life-threatening: bacterial contamination</td><td>ไข้สูง หนาวสั่น BP ต่ำ</td><td>สัญญาณชีพ ยาปฏิชีวนะ IV ประคับประคอง</td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ===== T4 ===== -->
+<section id="t4">
+  <div class="chap-head"><div class="chap-num">4</div><div><div class="eyebrow">บทที่ 4</div><h2>ภาวะเหล็กเกินและยาขับเหล็กใน TDT</h2></div></div>
+  <div class="prose"><p>RBC 1 mL มีเหล็ก <b>1.16 mg</b> และร่างกายไม่มีกลไกขับเหล็กออก</p></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>การประเมิน</h4>
+      <ul>
+        <li><b>Serum ferritin &gt; 1,000</b> = เหล็กเกิน ต้องรักษา · สูงเทียมเมื่อไข้/อักเสบ/ตับอักเสบ → ใช้ค่า ≥ 2 ครั้ง ห่าง 1–3 เดือน</li>
+        <li><b>MRI</b> (T2* หัวใจ, LIC) มาตรฐาน · พิจารณาเมื่ออายุ &gt; 10 ปี ที่ ferritin สูงมากหลายปี หรือ ferritin ไม่สอดคล้องคลินิก · &lt; 10 ปีเมื่อเตรียม HSCT หรือ ferritin &gt; 2,500 และเพิ่มขึ้น <span class="r s0">+/- · ง1</span></li>
+      </ul>
+      <h4 style="margin-top:6px">ข้อบ่งชี้เริ่มยา (ข้อใดข้อหนึ่ง)</h4>
+      <ol><li>Ferritin &gt; 1,000 ng/mL 2 ครั้ง ห่าง 1–3 เดือน</li><li>LIC &gt; 7 mg/g dry weight</li><li>รับเลือดสม่ำเสมอ &gt; 1 ปี</li><li>รับเลือด &gt; 10 ครั้ง</li></ol>
+    </div>
+    <div class="grid2" style="grid-template-columns:minmax(0,1fr)">
+      <div class="tbl narrow"><table><caption>ตารางที่ 1 · Cardiac T2*</caption><thead><tr><th class="n">T2* (ms)</th><th>แปลผล</th><th>การรักษา</th></tr></thead><tbody>
+        <tr><td class="n">&gt; 20</td><td>ปกติ</td><td>เป้าหมาย</td></tr>
+        <tr><td class="n">10–20</td><td>ปานกลาง–มาก</td><td>เพิ่มขนาดยา</td></tr>
+        <tr><td class="n">&lt; 10</td><td>รุนแรง</td><td>Continuous chelation</td></tr></tbody></table></div>
+      <div class="tbl narrow"><table><caption>ตารางที่ 2 · Liver iron concentration</caption><thead><tr><th class="n">LIC (mg/g dw)</th><th>แปลผล</th><th>การรักษา</th></tr></thead><tbody>
+        <tr><td class="n">&lt; 1.8</td><td>ปกติ</td><td>ไม่ต้องใช้ยา</td></tr>
+        <tr><td class="n">1.8–7</td><td>น้อย–ปานกลาง</td><td>เป้าหมาย</td></tr>
+        <tr><td class="n">7–15</td><td>ปานกลาง–มาก</td><td>เพิ่มขนาดยา</td></tr>
+        <tr><td class="n">&gt; 15</td><td>รุนแรง</td><td>เพิ่มขนาดยา</td></tr></tbody></table></div>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>ยาขับเหล็ก 3 ชนิดในไทย</caption>
+      <thead><tr><th></th><th>Desferrioxamine (DFO)</th><th>Deferiprone (DFP)</th><th>Deferasirox (DFX)</th></tr></thead>
+      <tbody>
+        <tr><td>รูปแบบ · อายุ</td><td>ฉีด SC · &gt; 2 ปี</td><td>เม็ดกิน · &gt; 6 ปี</td><td>เม็ดละลายน้ำ (DT) · ≥ 2 ปี</td></tr>
+        <tr><td>ขนาด</td><td class="mono">20–60 mg/kg/วัน (เด็กเล็ก ≤ 40) SC pump 8–12 ชม. 5–7 วัน/สัปดาห์</td><td class="mono">50–100 mg/kg/วัน แบ่ง 3–4 เวลา หลัง/พร้อมอาหาร · เริ่ม 50–75</td><td class="mono">20–40 mg/kg/วัน วันละครั้ง ก่อนอาหาร 30 นาที ละลายน้ำ/น้ำส้ม/น้ำแอปเปิล</td></tr>
+        <tr><td>ลำดับแรก</td><td>2–6 ปี (ทางเลือก)</td><td><b>อายุ ≥ 6 ปี</b></td><td><b>อายุ 2–6 ปี</b> · หรือเมื่อใช้ DFP ไม่ได้</td></tr>
+        <tr><td>ข้อควรระวัง</td><td>Mean daily dose/ferritin ≤ 0.025 · ferritin &lt; 1,000 ลดขนาด (พิษต่อตา หู) · เสี่ยง Yersinia, mucormycosis</td><td><b>Agranulocytosis</b> (ANC &lt; 500), neutropenia (&lt; 1,500), arthropathy, ALT สูง</td><td>ไต (Cr, proteinuria), ตับ, ทางเดินอาหาร · FCT ลด GI ผลข้างเคียง</td></tr>
+      </tbody></table></div>
+  <div class="tree-wrap">
+    <h4>แผนภูมิที่ 1 · การใช้ยาขับเหล็กใน TDT</h4>
+    <ul class="tree"><li><span class="nd q">TDT ที่ได้ hypertransfusion &gt; 1 ปี หรือรับเลือด &gt; 10 ครั้ง</span>
+      <ul>
+        <li><span class="nd q">อายุ 2–6 ปี</span><ul><li><span class="nd ax">DFO 20–40 SC 8–12 ชม. × 5–7 วัน หรือ <b>DFX ลำดับแรก</b> เมื่อ ferritin &gt; 1,000 × 2 ครั้ง หรือ LIC &gt; 7</span></li></ul></li>
+        <li><span class="nd q">อายุ &gt; 6 ปีและผู้ใหญ่</span>
+          <ul><li><span class="nd ax">DFO 20–40 (ผู้ใหญ่ถึง 60) หรือ <b>DFP ลำดับแรก</b> 50–100 แบ่ง 3–4 ครั้ง</span>
+            <ul>
+              <li><span class="nd">ผลข้างเคียง DFP (ข้อใดข้อหนึ่ง): แพ้ทั้งตัว · ALT/AST &gt; 2.5 ULN · neutropenia ซ้ำหลัง rechallenge · ANC &lt; 500 · arthropathy รุนแรงซ้ำ · intolerance CTCAE grade 2 ซ้ำ/grade 3</span></li>
+              <li><span class="nd">DFP ล้มเหลว (ทุกข้อ): ขนาดสูงสุดที่ทนได้หรือ 100 · ferritin &gt; 2,500 ไม่ลด/เพิ่มหลัง 1 ปี หรือลด &lt; 15% ใน 2 ปี · ประเมิน adherence แล้ว</span></li>
+              <li><span class="nd ax">→ เปลี่ยนเป็น <b>DFX</b> เริ่ม 20 mg/kg/วัน เพิ่ม 5–10 ทุก 3–6 เดือน (สูงสุด 40)</span>
+                <ul>
+                  <li><span class="nd">ตอบสนอง</span><ul><li><span class="nd ax">ให้ต่อ เป้า ferritin &lt; 500 → ลดขนาด · &lt; 300 → หยุด</span></li></ul></li>
+                  <li><span class="nd">ไม่ตอบสนอง (เกณฑ์เดียวกันที่ 40 mg/kg)</span><ul><li><span class="nd dx">Combination DFP + DFO</span></li></ul></li>
+                </ul></li>
+            </ul></li></ul></li>
+      </ul></li></ul>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>Combination therapy <span class="r s2">++ · ข1</span></h4>
+      <p>DFO 20–40 mg/kg/วัน SC 8–12 ชม. 2–6 วัน/สัปดาห์ + DFP 75–100 mg/kg/วัน ทุกวัน · ดีกว่ายาเดี่ยว โดยเฉพาะเหล็กเกินที่หัวใจ · DFX ร่วมยาอื่นยังไม่แนะนำ</p>
+      <h4 style="margin-top:6px">ภาวะวิกฤติ: continuous IV/SC DFO</h4>
+      <ul><li>หัวใจแทรกซ้อนจากเหล็ก (arrhythmia, LVEF &lt; 56%)</li><li>วางแผนตั้งครรภ์</li><li>ต้องลดเหล็กเร็วก่อน HSCT</li></ul>
+    </div>
+    <div class="tbl narrow"><table>
+      <caption>ตารางที่ 3 · ติดตามความปลอดภัย</caption>
+      <thead><tr><th>ตรวจ</th><th>DFO</th><th>DFP</th><th>DFX</th></tr></thead>
+      <tbody>
+        <tr><td>CBC</td><td>–</td><td>ทุก 1–2 สัปดาห์ 3 เดือนแรก แล้วรายเดือน และเมื่อไข้</td><td>–</td></tr>
+        <tr><td>Ferritin</td><td colspan="3">ทุก 3 เดือน</td></tr>
+        <tr><td>BUN/Cr</td><td>3 เดือน</td><td>3 เดือน</td><td>1–3 เดือน</td></tr>
+        <tr><td>Proteinuria</td><td>–</td><td>–</td><td>1–3 เดือน</td></tr>
+        <tr><td>AST/ALT</td><td>3 เดือน</td><td colspan="2">เดือนแรกหลังเริ่ม แล้วทุก 3 เดือน · พิจารณาหยุดเมื่อ ALT &gt; 5 เท่า</td></tr>
+        <tr><td>ตา · การได้ยิน</td><td colspan="3">ก่อนเริ่มยาและทุกปี</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="tool" id="chelTool">
+    <h4>คำนวณขนาดยาขับเหล็ก <small>บทที่ 4–5</small></h4>
+    <div class="row">
+      <div class="field"><label for="c_wt">น้ำหนัก (kg)</label><input id="c_wt" type="number" inputmode="decimal" value="30"></div>
+      <div class="field"><label for="c_drug">ยา</label><select id="c_drug"><option value="dfp">Deferiprone (TDT)</option><option value="dfx">Deferasirox DT (TDT)</option><option value="dfo">Desferrioxamine</option><option value="ndfx">Deferasirox (NTDT)</option><option value="ndfp">Deferiprone (NTDT)</option></select></div>
+    </div>
+    <div class="out" id="c_out"></div>
+  </div>
+</section>
+
+<!-- ===== T5 ===== -->
+<section id="t5">
+  <div class="chap-head"><div class="chap-num">5</div><div><div class="eyebrow">บทที่ 5</div><h2>ภาวะเหล็กเกินและยาขับเหล็กใน NTDT</h2></div></div>
+  <div class="prose"><p>Ineffective erythropoiesis → hepcidin ต่ำ → ดูดซึมเหล็กเพิ่ม <b>3–4 mg/วัน (ถึง 1,000 mg/ปี)</b> สะสมที่ตับมากกว่า macrophage จึง<b>ferritin ต่ำกว่าปริมาณเหล็กจริง</b> (LIC เท่ากัน ferritin ใน NTDT ต่ำกว่า TDT) · LIC เพิ่มเฉลี่ย 0.38 mg/g/ปี · แทรกซ้อนเริ่มอายุ ~10 ปี (deletional Hb H ~15 ปี) · หัวใจไม่ค่อยสะสมเหล็ก · LIC &gt; 5 สัมพันธ์กับ thrombosis, PAH, endocrinopathy, กระดูกบาง</p></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>การประเมิน <span class="r s2">++ · ง1</span></h4>
+      <ol>
+        <li>เริ่มประเมินอายุ <b>≥ 10 ปี</b> (deletional Hb H ≥ 15 ปี)</li>
+        <li>Ferritin ทุก 3–6 เดือน</li>
+        <li>MRI LIC ทุก 1–2 ปี ถ้าทำได้</li>
+        <li>MRI หัวใจเฉพาะผู้สูงอายุที่มีข้อบ่งชี้</li>
+      </ol>
+    </div>
+    <div class="panel small">
+      <h4>การรักษา <span class="r s2">++ · ข3</span></h4>
+      <ol>
+        <li>เริ่มยาเมื่ออายุ &gt; 10 ปี และ <b>LIC ≥ 5 mg/g dw หรือ ferritin ≥ 800 ng/mL</b></li>
+        <li>ถ้าช่วงหนึ่งต้องรับเลือดสม่ำเสมอ (เช่นช่วงวัยรุ่น) ใช้แนวทาง TDT</li>
+        <li>เลี่ยงอาหารเหล็กสูง · ดื่มชาหรือน้ำเต้าหู้ก่อนมื้ออาหาร</li>
+      </ol>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>เลือกยาขับเหล็กใน NTDT <span class="r s2">++ · ก2</span></caption>
+      <tbody>
+        <tr><td><b>DFX</b></td><td class="mono">เริ่ม 10–20 mg/kg/วัน ปรับตาม ferritin/LIC สูงสุด 30</td></tr>
+        <tr><td><b>DFP</b></td><td class="mono">เริ่ม 50 mg/kg/วัน ปรับได้ถึง 100</td></tr>
+        <tr><td><b>DFO</b></td><td>เมื่อใช้ 2 ตัวแรกไม่ได้ ขนาดเดียวกับ TDT</td></tr>
+        <tr><td><b>ลด/หยุด</b></td><td>ลดเมื่อ ferritin &lt; 500 · หยุดเมื่อ ferritin &lt; 300 หรือ LIC &lt; 3</td></tr>
+      </tbody></table></div>
+</section>
+
+<!-- ===== T6 ===== -->
+<section id="t6">
+  <div class="chap-head"><div class="chap-num">6</div><div><div class="eyebrow">บทที่ 6</div><h2>การปลูกถ่ายเซลล์ต้นกำเนิดเม็ดโลหิต</h2></div></div>
+  <div class="prose"><p>วิธีมาตรฐานเดียวที่รักษาให้หายขาด แต่เสี่ยงแทรกซ้อนและเสียชีวิต · ทำเฉพาะรายรุนแรงที่ได้เลือดและขับเหล็กดีมาก่อน</p></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ข้อบ่งชี้ <span class="r s2">++ · ข4</span></h4>
+      <ul>
+        <li>อาการ (ซีด ตับม้ามโต โตช้า หน้าเปลี่ยน) ก่อนอายุ <b>2 ปี</b> หรือรับเลือดครั้งแรกก่อน <b>4 ปี</b></li>
+        <li>β: homozygous (β⁰/β⁰, β⁰/β⁺), severe β-thal/Hb E · α: surviving Hb Bart's, severe non-deletional Hb H</li>
+      </ul>
+      <h4 style="margin-top:6px">ผู้บริจาค</h4>
+      <ol>
+        <li>พี่น้องพ่อแม่เดียวกัน HLA ตรง (โอกาส 25%) · เป็นพาหะได้ · ผลดีที่สุด</li>
+        <li>Unrelated HLA-matched อายุ 18–50 (~1 ใน 50,000) ผ่านสภากาชาดไทย</li>
+        <li>พ่อ/แม่ (haploidentical) เมื่อไม่มี 1–2 · ข้อมูลระยะยาวจำกัด</li>
+      </ol>
+      <p class="muted">HLA class I (A, B, C) และ II (DR, DQ) · ABO ต่างกันได้ · ต้องการ CD34+ ≥ 2×10⁶/kg</p>
+    </div>
+    <div class="panel small">
+      <h4>แหล่งเซลล์</h4>
+      <ul>
+        <li>Cord blood: cGVHD ต่ำ แต่เซลล์น้อย graft failure และติดเชื้อไวรัสมากขึ้น · ใช้น้อยลง</li>
+        <li>Bone marrow: สำเร็จสูง cGVHD ต่ำกว่า PBSC · ผู้บริจาคต้องดมยา</li>
+        <li>PBSC: เก็บง่าย (G-CSF 5 วัน) cGVHD มากกว่า · ใช้ใน haplo</li>
+      </ul>
+      <h4 style="margin-top:6px">เตรียมผู้ป่วย</h4>
+      <ul>
+        <li>ปัจจัยเสี่ยง: ตับ &gt; 2 ซม. ขับเหล็กไม่สม่ำเสมอ portal fibrosis · อายุ ≥ 7 ปี ตับ ≥ 5 ซม.</li>
+        <li>ให้เลือด LDPRC ทุก 3–4 สัปดาห์ pre-Hb 9.0–10.5 · ไม่ใช้เลือดญาติ</li>
+        <li>ขับเหล็กเต็มที่ (รับเลือด &gt; 10–15 ครั้งหรือ ferritin &gt; 1,000) · MRI T2* ถ้าอายุ &gt; 10 ปี · รักษาฟันผุ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>ตารางที่ 1 · ผลการปลูกถ่ายในไทย พ.ศ. 2530–2561</caption>
+      <thead><tr><th>ผู้บริจาค</th><th class="n">ราย</th><th class="n">หายขาด</th><th class="n">กลับเป็นซ้ำ</th><th class="n">เสียชีวิต</th></tr></thead>
+      <tbody>
+        <tr><td>พี่น้อง</td><td class="n">213</td><td class="n">83.6%</td><td class="n">7.5%</td><td class="n">8.9%</td></tr>
+        <tr><td>ผู้บริจาคที่ไม่ใช่ญาติ</td><td class="n">77</td><td class="n">80.5%</td><td class="n">9.0%</td><td class="n">10.0%</td></tr>
+        <tr><td>พ่อหรือแม่</td><td class="n">35</td><td class="n">85.7%</td><td class="n">5.7%</td><td class="n">8.6%</td></tr>
+        <tr><td><b>รวม</b></td><td class="n">325</td><td class="n">83.1%</td><td class="n">7.7%</td><td class="n">9.2%</td></tr>
+      </tbody></table></div>
+  <div class="panel small">
+    <ul>
+      <li>7 รพ.รัฐที่ทำได้: ศิริราช รามาธิบดี จุฬาฯ พระมงกุฎเกล้า สงขลานครินทร์ ศรีนครินทร์ สรรพสิทธิประสงค์</li>
+      <li>นอน รพ.ในห้องปลอดเชื้อ 4–6 สัปดาห์ · engraftment 10–21 วัน · หยุดยากดภูมิ 6–12 เดือน (haplo 1–2 ปี) · ฉีดวัคซีนใหม่ทั้งหมด</li>
+      <li>หมู่เลือดเปลี่ยนเป็นของผู้บริจาคภายใน ~6 เดือน · ปลูกถ่ายซ้ำได้หลังฟื้นตัว ~1 ปี</li>
+      <li><b>ยังถ่ายทอดยีนให้ลูกเหมือนเดิม</b> ต้องให้คำปรึกษาเสมือนยังเป็นโรค</li>
+      <li>สปสช. 2563 ครอบคลุมรายรุนแรงอายุ &lt; 10 ปี ที่ HLA ตรงกับพี่น้องหรือผู้บริจาคในทะเบียน (ผู้ป่วยจ่ายค่า HLA typing เอง ~20,000 บาท/คน)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== T7 ===== -->
+<section id="t7">
+  <div class="chap-head"><div class="chap-num">7</div><div><div class="eyebrow">บทที่ 7</div><h2>ภาวะแทรกซ้อนในผู้ป่วยธาลัสซีเมีย</h2></div></div>
+
+  <h3>7.1 การติดเชื้อ · สาเหตุตายอันดับหนึ่งในไทย</h3>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ปัจจัยเสี่ยง</h4>
+      <ul>
+        <li>ภูมิคุ้มกันเปลี่ยน (T, B, NK, complement) · alloantigenic stimulation จากเลือด</li>
+        <li><b>เหล็กเกิน</b> เพิ่ม virulence ของ Klebsiella, E. coli, Pseudomonas, <i>B. pseudomallei</i>, Salmonella, Yersinia ฯลฯ</li>
+        <li>DFO → Yersinia, mucormycosis · DFP → agranulocytosis</li>
+        <li>เชื้อจากเลือด · <b>ตัดม้าม</b> (OPSI สูงกว่าคนทั่วไป 50 เท่า) · ขาดสังกะสี</li>
+      </ul>
+      <h4 style="margin-top:6px">เชื้อที่พบบ่อย</h4>
+      <ul>
+        <li>แบคทีเรียแกรมลบ: Klebsiella, E. coli, Pseudomonas, <i>Vibrio vulnificus</i>, Aeromonas, Salmonella · melioidosis (อีสาน)</li>
+        <li>Yersinia (ตะวันตกบ่อย) เพาะเชื้อ 22 °C 48 ชม. รักษา TMP/SMX + gentamicin หยุด DFO</li>
+        <li>Parvovirus B19 → aplastic crisis · dengue: ซีด ตับอักเสบ ไตวาย ต้องรับเลือดมากขึ้น</li>
+        <li><b>Pythiosis</b> (<i>Pythium insidiosum</i>): ผิวหนัง ตา <b>หลอดเลือดแดง</b> (femoral → gangrene, aorta, ตายบ่อย) แพร่กระจาย · สัมผัสดิน/น้ำ เกษตรกร</li>
+        <li>β-thal major/intermedia ไม่ป้องกันมาลาเรียรุนแรง</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>มีไข้หรือสงสัยติดเชื้อ <span class="r s2">++ · ข4</span></h4>
+      <ol>
+        <li>ไม่ได้ตัดม้าม: หาแหล่งติดเชื้อ ให้ยาครอบคลุมแกรมบวกและลบทันที</li>
+        <li>ท้องเสีย: เพาะเชื้ออุจจาระ ครอบคลุม Salmonella (TMP/SMX, 3rd-gen cephalosporin)</li>
+        <li>พื้นที่ melioidosis: hemoculture + <b>ceftazidime</b></li>
+        <li><b>ตัดม้ามแล้ว + ไข้ = เร่งด่วน</b> (OPSI โคม่าได้ใน 24–48 ชม.) รับไว้ รพ. 3rd-gen cephalosporin ± gentamicin</li>
+        <li><b>หยุดยาขับเหล็กทุกชนิด</b>ระหว่างรักษาการติดเชื้อ</li>
+        <li>ไข้สูง BP ต่ำระหว่าง/หลังให้เลือด → หยุดเลือด เพาะเชื้อจากถุงและผู้ป่วย 3rd-gen cephalosporin (ดื้อยา → carbapenem)</li>
+        <li>ประคับประคอง ให้เลือดถ้าซีด เฝ้าระวัง hemolytic crisis</li>
+      </ol>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>การป้องกันการติดเชื้อ <span class="r s2">++ · ข4</span></caption>
+      <tbody>
+        <tr><td><b>HBV</b></td><td>3 เข็ม (0, 1, 6) ตรวจ anti-HBs 1–2 เดือนหลังครบ · &lt; 10 mIU/mL ฉีดซ้ำ 1 เข็มแล้วตรวจ · ยัง &lt; 10 ฉีดเพิ่ม 2 เข็ม (รวม 6) · ยังไม่ตอบสนอง = non-responder ปรึกษา ID</td></tr>
+        <tr><td><b>Pneumococcus</b></td><td>PCV ตามอายุ · อายุ &gt; 2 ปีให้ PPSV23 ห่าง PCV เข็มสุดท้าย ≥ 2 เดือน และกระตุ้นอีกครั้งที่ 5 ปี</td></tr>
+        <tr><td><b>Influenza</b></td><td>ทุกปีตั้งแต่ 6 เดือน (ครั้งแรกอายุ &lt; 9 ปี ฉีด 2 เข็มห่าง 1 เดือน)</td></tr>
+        <tr><td><b>Hepatitis A</b></td><td>แนะนำเพิ่ม</td></tr>
+        <tr><td><b>ก่อนตัดม้าม</b></td><td>Pneumococcus + Hib ≥ 2 สัปดาห์ก่อน (ไม่ทันให้ 2 สัปดาห์หลัง) · meningococcus เป็นทางเลือก (MCV4 ≥ 2 ปี 2 เข็ม; MenB ≥ 10 ปี)</td></tr>
+        <tr><td><b>หลังตัดม้าม</b></td><td>Penicillin V 125 mg bid (&lt; 3 ปี) / 250 mg bid (&gt; 3 ปี) หรือ amoxicillin 20 mg/kg/วัน (≤ 1 g) หรือ erythromycin 250 mg bid · อย่างน้อย 1–2 ปีหลังผ่าตัด และถึงอายุ 5 ปี <span class="r s2">++ · ง1</span></td></tr>
+        <tr><td><b>ติดตาม</b></td><td>HBsAg, anti-HCV, anti-HIV ปีละครั้ง · anti-HBs ปีละครั้งในผู้รับเลือดประจำ (&lt; 10 กระตุ้น) · NTDT ไม่ต้องกระตุ้น (anamnestic) · คุมเหล็กให้ดี</td></tr>
+      </tbody></table></div>
+
+  <h3>7.2 ตับอักเสบและนิ่วในถุงน้ำดี</h3>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>Hepatitis B <span class="r s2">++ · ง1</span></h4>
+      <ul>
+        <li>ตรวจ HBsAg ก่อนให้เลือดและทุกปีในผู้รับเลือดประจำ · บวก → anti-HBc, HBeAg, anti-HBe, HBV DNA · ALT ทุก 3–6 เดือน · US หรือ transient elastography ทุก 6–12 เดือน</li>
+        <li>ส่ง GI/hepatology: HBsAg &gt; 6 เดือน · HBV DNA &gt; 2,000 IU/mL · ALT &gt; 2 เท่า ≥ 2 ครั้งนาน &gt; 3 เดือน · fibrosis &gt; F2 หรือ TE &gt; 7.0 kPa · decompensation</li>
+      </ul>
+      <h4 style="margin-top:6px">Hepatitis C <span class="r s2">++ · ง1</span></h4>
+      <ul>
+        <li>Anti-HCV ก่อนให้เลือดและทุกปี · บวก → HCV RNA (ไม่พบ ตรวจซ้ำ 6 เดือน) · พบ → ประเมินตับ ส่งรักษาทุกราย + genotype</li>
+        <li>เด็กหายเองได้ 6–12% (โดยเฉพาะ &lt; 3 ปี) → รักษาเมื่ออายุ &gt; 3 ปี</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>นิ่วในถุงน้ำดี</h4>
+      <ul>
+        <li>Pigment stone · พบถึง <b>60–70%</b> ส่วนใหญ่ไม่มีอาการ</li>
+        <li>ตัดถุงน้ำดีเมื่อมีแทรกซ้อน: cholecystitis, cholangitis, gallstone pancreatitis <span class="r s2">++ · ง1</span></li>
+        <li>CBD stone → ERCP</li>
+        <li>ปัจจัย: อายุมาก ตัดม้าม Gilbert syndrome</li>
+      </ul>
+      <h4 style="margin-top:6px">ดูแลตนเองเมื่อเป็นตับอักเสบ</h4>
+      <p>งดสุรา ไม่กินสุกๆ ดิบๆ เลี่ยง aflatoxin ยาสมุนไพรที่ไม่จำเป็น ฉีดวัคซีน HAV/HBV ตรวจคู่ครอง คุมกำเนิดระหว่างรักษาและ 6 เดือนหลัง ไม่บริจาคเลือด</p>
+    </div>
+  </div>
+
+  <h3>7.3 ต่อมไร้ท่อ</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>ภาวะ</th><th>ความชุกและกลไก</th><th>ประเด็นสำคัญ</th></tr></thead>
+      <tbody>
+        <tr><td>ตัวเตี้ย</td><td class="mono">20–40%</td><td>ซีด, hyperinsulinism, เหล็กที่ hypothalamus/pituitary, GH resistance (IGF-1 ต่ำ), DFO → platyspondylosis (ลำตัวสั้น)</td></tr>
+        <tr><td>Delayed puberty</td><td class="mono">40–50%</td><td>หญิงไม่มีเต้านมที่ 13 ปี · ชาย testis &lt; 4 mL ที่ 14 ปี · ส่วนใหญ่ central (LH/FSH ต่ำ) · ให้ฮอร์โมนเพศทดแทน</td></tr>
+        <tr><td>กระดูกบาง</td><td>NTDT β/E ไม่มีเหล็กเกิน ~20%</td><td>DXA Z-score ≤ −2 (เทียบเด็กไทย) · ป้องกัน: Hb 9–11, Ca, vit D, ฮอร์โมนเพศ, ขับเหล็ก · bisphosphonate ข้อมูลระยะสั้น</td></tr>
+        <tr><td>ขาดวิตามินดี</td><td>NTDT 33% vs TDT 12%</td><td>ตรวจทุกราย รักษาให้ 25-OHD <b>≥ 30 ng/mL</b></td></tr>
+        <tr><td>IGT / เบาหวาน</td><td class="mono">4–20%</td><td>ดื้ออินซูลินก่อน แล้ว β-cell ล้ม · DKA น้อย · <b>ใช้ fructosamine ไม่ใช้ HbA1c</b> (ต่ำเทียม) · น้ำตาล &gt; 200 ให้อินซูลิน</td></tr>
+        <tr><td>Hypothyroidism</td><td class="mono">0–18%</td><td>มักอายุ &gt; 10 ปี ส่วนใหญ่ primary · L-thyroxine</td></tr>
+        <tr><td>Adrenal insufficiency</td><td class="mono">0–46%</td><td>NTDT ที่ไม่มีเหล็กเกินพบได้ถึง 53.5% · ให้ glucocorticoid เมื่อ stress (ไข้ ≥ 38.5 °C, ผ่าตัด)</td></tr>
+        <tr><td>Hypoparathyroidism</td><td class="mono">0–13.5%</td><td>Ca ต่ำ P สูง PTH ปกติ/ต่ำ · Ca + active vitamin D</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ติดตามต่อมไร้ท่อ · TDT อายุ ≥ 10 ปี <span class="r s2">++ · ข3</span></h4>
+      <ol>
+        <li>น้ำหนัก ส่วนสูงทุก 4–6 เดือน · โตช้าส่ง endocrine (GH test)</li>
+        <li>ประเมิน puberty · ล่าช้าส่ง endocrine</li>
+        <li>TSH, (Free) T4 ทุกปี</li>
+        <li>FPG หรือ OGTT ทุกปี</li>
+        <li>Ca, P, PTH ทุกปี</li>
+        <li>25-OHD ทุก 6 เดือน</li>
+        <li>8 AM cortisol: <b>&lt; 14.5 mcg/dL</b> → 1 µg ACTH stimulation</li>
+        <li>BMD เมื่อ delayed puberty ปวดกระดูก/หลัง กระดูกหัก · fracture + low bone mass → bisphosphonate</li>
+      </ol>
+      <p class="muted">NTDT แม้ไม่มีเหล็กเกิน: ทำข้อ 1–2 และ 6–8</p>
+    </div>
+    <div class="panel small">
+      <h4>7.4 หัวใจ · สาเหตุตาย ~70% ในชนิดรุนแรง</h4>
+      <ul>
+        <li>TDT ที่ได้เลือดไม่พอ: high-output HF อายุ 1–2 ปี · ขับเหล็กไม่ดี: เหล็กในหัวใจที่ 7–10 ปี</li>
+        <li>HF (cardiomyopathy) · arrhythmia (AF บ่อยสุด, VT เมื่อ LVEF &lt; 35%) · pericarditis (ผู้ตัดม้าม)</li>
+        <li>Ferritin &gt; 2,500 เสี่ยง แต่ ferritin ต่ำก็เป็น HF ได้ · <b>T2* &lt; 10 เสี่ยงสูง</b> · 10–20 ปานกลาง · &gt; 20 ต่ำ</li>
+        <li>ECG, echo, CMR <b>ปีละครั้งตั้งแต่ 10 ปี</b> และเมื่อมีอาการ <span class="r s1">+ · ง1</span></li>
+      </ul>
+      <h4 style="margin-top:6px">รักษา</h4>
+      <ul>
+        <li>ให้เลือดสม่ำเสมอในรายรุนแรง <span class="r s2">++ · ก1</span></li>
+        <li>Hb &lt; 5 หรือมีโรคหัวใจ: ≤ 5 mL/kg/วัน (ผู้ใหญ่ 1 ยูนิต/วัน) &lt; 2 mL/kg/h + ยาขับปัสสาวะ <span class="r s2">++ · ข2</span></li>
+        <li>HF: pre-Hb 10–11 · ดีขึ้นแล้ว 9.5–10.5 <span class="r s2">++ · ข2</span></li>
+        <li><b>Intensive chelation</b> จน T2* ปกติ (หัวใจขับเหล็กได้เพียง 1.1–5%/เดือน) · ปรึกษาแพทย์โรคหัวใจ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>7.5 Extramedullary hematopoiesis</h4>
+      <p>10–30% บ่อยใน NTDT · ตำแหน่งสำคัญ paraspinal (lower thoracic) → ปวดหลัง ชา อ่อนแรง กลั้นปัสสาวะไม่ได้ · ชักถ้าในสมอง · ปัจจัย: อายุ 30–40 ปี ซีดเรื้อรัง ได้เลือดไม่สม่ำเสมอ เหล็กเกิน · CT/MRI <span class="r s2">++ · ง1</span></p>
+      <ol>
+        <li><b>ให้เลือดจน Hb &gt; 10</b> เป็นอันดับแรก ติดตามระบบประสาท <span class="r s2">++ · ค1</span></li>
+        <li><b>รังสีรักษา</b> 900–3,500 cGy + dexamethasone 10 mg IV q6h · 50% ดีขึ้นใน 3–7 วัน <span class="r s2">++ · ค1</span> (ตั้งครรภ์ใช้เลือดแทน)</li>
+        <li>Hydroxyurea เริ่ม 9 mg/kg/วัน เพิ่มทุก 3 เดือนถึง 12–15 <span class="r s2">++ · ค1</span></li>
+        <li>ผ่าตัดเมื่อไม่ตอบสนอง (เลือดออกมาก) <span class="r s2">++ · ค1</span></li>
+      </ol>
+    </div>
+    <div class="panel small">
+      <h4>7.6 แผลเรื้อรังที่ขา <span class="r s2">++ · ค1</span></h4>
+      <p>บ่อยใน NTDT ที่ข้อเท้า · ปัจจัย: อายุ ตัดม้าม เหล็กเกิน right HF</p>
+      <ol>
+        <li>ล้างด้วยน้ำเกลือ ≥ วันละครั้ง</li>
+        <li>ผ้าก๊อซเคลือบพาราฟิน</li>
+        <li>ยาปฏิชีวนะ: dicloxacillin หรือ erythromycin</li>
+        <li>Zinc paste/solcoseryl gel หลังคุมติดเชื้อ</li>
+        <li>ให้เลือดสม่ำเสมอถ้าหายยาก</li>
+        <li>Skin graft เมื่อแผลใหญ่ไม่ติดเชื้อ · อย่าให้โดนน้ำ เลี่ยงการตัดคว้าน</li>
+        <li>Hydroxyurea, PRP gel, G-CSF/GM-CSF, hyperbaric O₂</li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel small">
+    <h4>7.7 Pulmonary hypertension · พบ 10–60% บ่อยใน NTDT</h4>
+    <div class="grid2">
+      <div>
+        <p>กลไก: phosphatidylserine ด้านนอก RBC, ตัดม้าม (plt สูง), NO scavenging + arginase, hypercoagulability (protein C/S ลด)</p>
+        <p style="margin-top:6px"><b>วินิจฉัย</b> <span class="r s2">++ · ข1</span>: echo TRV &gt; 2.5–2.8 m/s (PASP &gt; 30–35) · <b>TRV &gt; 3.2</b> PPV 93.3% → ยืนยันด้วย RHC · TRV &gt; 2.5 ติดตามใกล้ชิด</p>
+      </div>
+      <div>
+        <p><b>รักษา</b>: ให้เลือดเพียงพอ <span class="r s2">++ · ค1</span> · sildenafil <span class="r s2">++ · ค1</span> · bosentan <span class="r s1">+ · ค1</span> · ปรึกษาแพทย์โรคหัวใจ</p>
+        <p style="margin-top:6px"><b>Echo ทุกปีในกลุ่มเสี่ยง</b> <span class="r s2">++ · ง1</span>: β-thal intermedia, β/E · อายุ 20–30 ปีขึ้นไป · ตัดม้าม · ไม่ได้/ได้เลือดน้อย · plt ≥ 500×10⁹/L · NRBC ≥ 300×10⁶/L · เคยมี thrombosis</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== T8 ===== -->
+<section id="t8">
+  <div class="chap-head"><div class="chap-num">8</div><div><div class="eyebrow">บทที่ 8</div><h2>การตัดม้าม</h2></div></div>
+  <div class="prose"><p>แนวโน้มลดลงมาก · NTDT เพิ่ม Hb 1–2 g/dL แต่เพิ่ม VTE, PAH, แผลที่ขา, silent cerebral infarction → <b>ไม่แนะนำ ยกเว้นข้อบ่งชี้จำเป็น</b></p></div>
+  <div class="grid2">
+    <div class="panel small"><h4>ข้อบ่งชี้ใน NTDT <span class="r s2">++ · ค1</span></h4><ol>
+      <li>ซีดจนโตช้า/พัฒนาการช้า เมื่อเลือดไม่พอหรือขับเหล็กไม่ได้</li>
+      <li>Hypersplenism (anemia, leukopenia, thrombocytopenia) จนติดเชื้อหรือเลือดออก</li>
+      <li>Massive splenomegaly + ปวด LUQ เสี่ยงม้ามแตก</li></ol>
+      <h4 style="margin-top:6px">ข้อบ่งชี้ใน TDT <span class="r s2">++ · ค1</span></h4><ol>
+      <li>ต้องการเลือด <b>&gt; 225–250 mL/kg/ปี</b></li>
+      <li>Hypersplenism</li></ol></div>
+    <div class="panel small"><h4>เตรียมและดูแลหลังตัด <span class="r s2">++ · ง1</span></h4><ul>
+      <li>ให้ความรู้เรื่องติดเชื้อ ไข้ต้องรีบมา</li>
+      <li>เลี่ยงตัดก่อนอายุ <b>5 ปี</b></li>
+      <li>PPV23 + Hib ≥ 2 สัปดาห์ก่อน · meningococcus เป็นทางเลือก</li>
+      <li>Penicillin 125 mg bid (&lt; 5 ปี ถึงอายุ 5 ปี) · 250 mg bid (&gt; 5 ปี) ตลอดไปหรือ ≥ 2 ปี · แพ้ใช้ TMP-SMX/erythromycin · หรือมียาสำรองกินทันทีที่ไข้</li>
+      <li>Pneumococcal vaccine ซ้ำ 3–5 ปีหลังตัด</li>
+      <li>Antibiotic prophylaxis ก่อนทำฟัน/ผ่าตัด</li></ul></div>
+  </div>
+</section>
+
+<!-- ===== T9 ===== -->
+<section id="t9">
+  <div class="chap-head"><div class="chap-num">9</div><div><div class="eyebrow">บทที่ 9</div><h2>ยากระตุ้นการสร้าง Hb F (hydroxyurea)</h2></div></div>
+  <div class="prose"><p>Hb F จับ α-globin ที่เกิน ลด globin imbalance · β/E TDT 110 ราย ขนาด 10 mg/kg/วัน: 78 รายตอบสนอง ลดเลือดเฉลี่ย 74% · ตอบสนองดีเมื่อมี <b>homozygous XmnI Gγ</b> หรือ α-thal ร่วม · meta-analysis NTDT: 42% หยุดเลือดได้ 79% ลดเลือด &gt; 50% · TDT: 25% และ 60% · ผลข้างเคียง neutropenia, ตับ, คลื่นไส้ (กลับคืนได้)</p></div>
+  <div class="panel small">
+    <h4>คำแนะนำใน β-thal NTDT <span class="r s2">++ · ง1</span></h4>
+    <ol>
+      <li>ข้อบ่งชี้: <b>EMH</b> หรือ <b>หาเลือดยากจาก antibody</b></li>
+      <li>ตรวจ α-thal ร่วม/XmnI ก่อนถ้าทำได้ · ดูแลโดยโลหิตแพทย์</li>
+      <li>ก่อนเริ่ม: การเติบโต ตับม้าม EMH · CBC retic renal/liver · ตรวจตั้งครรภ์</li>
+      <li class="mono">เริ่ม 10 mg/kg/วัน เพิ่ม 5 mg/kg ทุก 12 สัปดาห์ สูงสุด 20 mg/kg/วัน หรือ 1 g/วัน</li>
+      <li>CBC retic renal/liver ทุก 2 สัปดาห์ 3 เดือนแรก แล้วทุก 4 สัปดาห์ · ประเมินผลทุก 3–6 เดือน</li>
+      <li><b>หยุดถ้าที่ 6 เดือน Hb เพิ่ม &lt; 1 g/dL</b> หรือคลินิกไม่ดีขึ้น · ตอบสนองโดยทั่วไปรักษา 6–12 เดือน</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== T10–12 ===== -->
+<section id="t10">
+  <div class="chap-head"><div class="chap-num">10</div><div><div class="eyebrow">บทที่ 10</div><h2>การดูแลทั่วไปและโภชนาการ</h2></div></div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>สารอาหาร</th><th>คำแนะนำ</th></tr></thead>
+      <tbody>
+        <tr><td><b>ธาตุเหล็ก</b></td><td><b>ไม่ให้ยาเสริมเหล็ก</b> · งด ตับ เลือด เครื่องใน หอยนางรม อาหาร/เครื่องดื่มเสริมเหล็ก · ดื่มชาพร้อมมื้อลดการดูดซึม (ดูดซึมมากขึ้นหลังตัดม้าม)</td></tr>
+        <tr><td><b>กรดโฟลิก</b></td><td>ผู้ที่ไม่ได้เลือดหรือได้ไม่เต็มที่ <b>1 mg/วัน</b> พอ · อาหารโฟเลตสูง: ดอกกุยช่าย มะละกอ สับปะรด ผักกาดหอม</td></tr>
+        <tr><td><b>แคลเซียม · วิตามินดี</b></td><td>นม เต้าหู้ ปลากรอบ · เสริม Ca + vit D ในผู้เสี่ยง (ไม่ซื้อเอง ระวังพิษ vit D)</td></tr>
+        <tr><td><b>วิตามินซี</b></td><td>จากผลไม้ ไม่เสริมเป็นประจำ · ร่วมกับ DFO ≤ 2–3 mg/kg/วัน (50 mg &lt; 10 ปี, 100 mg ≥ 10 ปี) เริ่มหลังใช้ DFO หลายสัปดาห์</td></tr>
+        <tr><td><b>วิตามินอี · antioxidant</b></td><td>ปลา น้ำมันปลา ผลไม้ · ยังไม่แนะนำเสริมทุกราย · curcumin ลด oxidation แต่ไม่เพิ่ม Hb</td></tr>
+        <tr><td><b>สังกะสี</b></td><td>ผู้ได้ยาขับเหล็กอาจขาด ตรวจปีละครั้ง เสริมเมื่อพร่อง</td></tr>
+        <tr><td><b>ทั่วไป</b></td><td>ครบ 5 หมู่ · วัยรุ่น/ผู้ใหญ่ลดน้ำตาลเชิงเดี่ยว · ออกกำลังกายไม่ปะทะ (ว่ายน้ำ แบดมินตัน เทนนิส) เลี่ยงฟุตบอล รักบี้</td></tr>
+      </tbody></table></div>
+  <div class="panel small">
+    <p>เคารพความลับผู้ป่วย · ช่วยประสานโรงเรียนเรื่องหยุดเรียน เลื่อนนัดช่วงสอบ · ทำงานได้เต็มศักยภาพ ไม่ทะนุถนอมจนเป็น "เด็กป่วย" · ฟันสบผิดปกติจากกระดูกใบหน้าขยาย ปรึกษาทันตกรรมจัดฟัน</p>
+  </div>
+</section>
+
+<section id="t11">
+  <div class="chap-head"><div class="chap-num">11</div><div><div class="eyebrow">บทที่ 11</div><h2>คำแนะนำสำหรับผู้ป่วยและครอบครัว</h2></div></div>
+  <div class="grid2">
+    <div class="panel small">
+      <ul>
+        <li>สุขบัญญัติ 10 ประการ · อาหารครบ 5 หมู่ ปรุงสุก ลดอาหารแปรรูป นมรสจืด · งดบุหรี่ สุรา สารเสพติด</li>
+        <li>สุขอนามัย แปรงฟัน พบทันตแพทย์ ≥ ปีละ 2 ครั้ง · ยาต้านเกล็ดเลือดหยุด ≥ 7 วันก่อนหัตถการ</li>
+        <li>ไม่ใช้ของใช้ส่วนตัวร่วมกัน · ออกกำลังกายไม่ปะทะ</li>
+        <li>ธาลัสซีเมียไม่เป็นข้อจำกัดในการเรียนหรือรับราชการ</li>
+        <li><b>เกณฑ์ทหาร</b>: ใบรับรองจากแพทย์ผู้รักษา → ใบรับรองแพทย์ทหารจาก รพ.ทหาร → ตรวจเลือก จัดเป็น<b>จำพวกที่ 4</b> (กฎกระทรวงฉบับที่ 74 พ.ศ. 2540) ไม่ต้องจับใบดำใบแดง</li>
+        <li>ตรวจชนิดธาลัสซีเมียของตนเองและคู่ก่อนมีบุตร</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>สื่อสารและจิตใจ</h4>
+      <ul>
+        <li>ฟังอย่างตั้งใจ ยอมรับผู้ป่วย ไม่ชี้แนะถ้าไม่ร้องขอ ใส่ใจอารมณ์ ตอบเท่าที่ถาม · วัยรุ่นให้คุยโดยไม่มีพ่อแม่</li>
+        <li>แจ้งข่าว: นัดพ่อแม่พร้อมกัน ที่สงบ ให้เวลาไม่จำกัด ข้อมูลตรงไปตรงมา พร้อมรับอารมณ์ อธิบายซ้ำได้</li>
+        <li>ยาขับเหล็กฉีดต้องใช้พลังใจมาก ผลเสียไม่ปรากฏเป็นสิบปี → อาศัยความไว้วางใจ · ไม่ขู่ ไม่ตำหนิ หาทางเลือกที่ทำได้จริง</li>
+        <li>มอบความรับผิดชอบให้เด็กเร็วที่สุด</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="t12">
+  <div class="chap-head"><div class="chap-num">12</div><div><div class="eyebrow">บทที่ 12</div><h2>การดูแลสุขภาพฟัน</h2></div></div>
+  <div class="grid2">
+    <div class="panel small">
+      <p>สบฟันผิดปกติ ฟันผุ เหงือกอักเสบมากกว่าคนทั่วไป · พบทันตแพทย์ทุก <b>6–12 เดือน</b> ประเมินการจัดฟัน</p>
+      <p style="margin-top:6px"><b>ข้อมูลที่นำไปหาทันตแพทย์</b>: ชนิดโรค TDT/NTDT ม้าม/ประวัติตัดม้าม · เหล็กเกินและยาขับเหล็ก · โรคร่วม · pre-Hb เฉลี่ย ANC เกล็ดเลือด · LFT/coagulation ถ้ามีโรคตับ</p>
+    </div>
+    <div class="panel small">
+      <h4>ตัดม้ามแล้วหรือม้ามโต: prophylaxis 1 ชม.ก่อนทำฟัน</h4>
+      <ul>
+        <li>Amoxicillin <b>50 mg/kg</b> (สูงสุด 2 g)</li>
+        <li>แพ้ penicillin: clindamycin <b>20 mg/kg</b> (สูงสุด 600 mg)</li>
+        <li>ติดเชื้อในช่องปาก: ยาปฏิชีวนะทันทีและส่งทันตแพทย์</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== T13 ===== -->
+<section id="t13">
+  <div class="chap-head"><div class="chap-num">13</div><div><div class="eyebrow">บทที่ 13</div><h2>การดูแลการตั้งครรภ์ในผู้ป่วยธาลัสซีเมีย</h2></div></div>
+  <div class="prose"><p>เสี่ยงซีดมากขึ้น hypercoagulability GDM ติดเชื้อ แท้ง คลอดก่อนกำหนด ความดันสูง หัตถการช่วยคลอด ตกเลือด · ทารกโตช้า น้ำหนักน้อย · ดูแลโดยทีมสหสาขา · บางรายต้องใช้ฮอร์โมนช่วยการเจริญพันธุ์ (hypogonadotropic hypogonadism)</p></div>
+  <div class="tbl">
+    <table>
+      <caption>วางแผนก่อนตั้งครรภ์ <span class="r s2">++ · ข3</span></caption>
+      <tbody>
+        <tr><td><b>คู่สมรส</b></td><td>ตรวจ Hb typing และชนิดการกลายพันธุ์</td></tr>
+        <tr><td><b>เลือด</b></td><td>Pre-Hb <b>≥ 10</b> (TDT) · <b>≥ 8</b> (NTDT) · มี IUGR ให้แบบ TDT · ตรวจ RBC antibody (HDFN)</td></tr>
+        <tr><td><b>หัวใจ · ตับ</b></td><td>Echo, EKG, MRI: หัวใจปกติ และ <b>T2* &gt; 20 ms</b> · <b>LIC ≤ 7</b> mg/g · US ตับและถุงน้ำดี</td></tr>
+        <tr><td><b>ยาขับเหล็ก</b></td><td>ขับเหล็กให้พอก่อนตั้งครรภ์ · <b>หยุด DFP และ DFX ≥ 3 เดือนก่อนตั้งครรภ์</b> (ฝ่ายชายที่จะมีบุตรด้วย) ใช้ DFO แทนแล้วหยุด · เหล็กเกินที่หัวใจระหว่างตั้งครรภ์: DFO 20 mg/kg/วัน SC 4–5 วัน/สัปดาห์ <b>หลัง 20 สัปดาห์</b></td></tr>
+        <tr><td><b>ต่อมไร้ท่อ</b></td><td>เบาหวาน: <b>fructosamine ≤ 300 µmol/L</b> ≥ 3 เดือน (≈ HbA1c &lt; 6%) · ยากิน → อินซูลิน · ไทรอยด์ปกติ · BMD, vit D</td></tr>
+        <tr><td><b>ติดเชื้อ</b></td><td>HBV, HCV · วัคซีน pneumococcus/Hib ครบ · รักษาฟันผุ UTI</td></tr>
+        <tr><td><b>อื่นๆ</b></td><td><b>Folic acid 5 mg/วัน</b> ก่อนและระหว่างตั้งครรภ์ · งดเสริมเหล็ก บุหรี่ · ART → PGD/PGS</td></tr>
+      </tbody></table></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ระหว่างตั้งครรภ์และคลอด</h4>
+      <ul>
+        <li>OGTT · ติดตามหัวใจใกล้ชิด · เฝ้าระวังคลอดก่อนกำหนด PIH</li>
+        <li>คลอดทางช่องคลอดเป็นหลัก</li>
+        <li>TDT รอคลอด: <b>DFO IV ต่อเนื่อง 24 ชม.</b> ลด NTBI</li>
+        <li>ตัดม้ามแล้ว plt &gt; 600,000: <b>aspirin 75 mg/วัน</b> · เสี่ยงสูงปรึกษาโลหิตแพทย์เรื่อง LMWH</li>
+        <li>ให้นมได้ (ไม่มีติดเชื้อ) · ช่วงให้นมใช้ DFO ได้ ไม่ใช้ DFP/DFX</li>
+      </ul>
+    </div>
+    <div class="panel small">
+      <h4>ด้านทารก</h4>
+      <ul>
+        <li>คู่เสี่ยง → ตรวจวินิจฉัยก่อนคลอด</li>
+        <li>US กำหนดอายุครรภ์ โครงสร้าง การเติบโต</li>
+        <li>ติดตามสุขภาพทารก EFM</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== T14 ===== -->
+<section id="t14">
+  <div class="chap-head"><div class="chap-num">14</div><div><div class="eyebrow">บทที่ 14</div><h2>การตรวจคัดกรองคู่เสี่ยงและวินิจฉัยก่อนคลอด</h2></div></div>
+  <div class="prose"><p>คัดกรองโรครุนแรง 3 ชนิด: <b>Hb Bart's hydrops, β-thal major, β-thal/Hb E</b> · ขั้นตอน: ให้ความรู้ → กำหนดคู่เสี่ยง → วินิจฉัยก่อนคลอด → แจ้งผล · ให้ความรู้ทุกคู่ตั้งแต่ฝากครรภ์ครั้งแรก <b>เจาะเลือดสามีพร้อมกัน</b> <span class="r s2">++ · ง1</span></p></div>
+  <div class="grid2">
+    <div class="panel small">
+      <h4>ตรวจคัดกรองพาหะ <span class="r s2">++ · ง1</span></h4>
+      <ul>
+        <li><b>MCV &lt; 80 fL</b> (เลือดใหม่ภายในวัน) หรือ <b>MCH &lt; 27 pg</b> → คัด α-thal 1 และ β-thal trait</li>
+        <li>ไม่มีเครื่อง CBC: <b>OFT</b> 0.36% NaCl (บวกเมื่อแตก &lt; 60%) sens 95% spec 86% · บวกลวงใน IDA</li>
+        <li>Hb E trait บวก OFT เพียง ~70% → ทำ <b>DCIP</b> หรือ Hb E screen คู่กันเสมอ</li>
+        <li>OFT + DCIP: sens 100%, spec 79.7–87.1%</li>
+      </ul>
+      <h4 style="margin-top:6px">ยืนยัน</h4>
+      <ul>
+        <li>Hb analysis (HPLC/CE): β-trait A₂A, <b>A₂ &gt; 3.5%</b> · Hb E trait EA (E 25–35%, ต่ำกว่า 25% ถ้ามี α-thal/ขาดเหล็กร่วม)</li>
+        <li>α-thal 1: <b>gap-PCR SEA และ Thai deletion</b></li>
+        <li>MCV ต่ำหรือ OFT บวก ต้องหาทั้ง β และ α ควบคู่เสมอ (อยู่คนละโครโมโซม)</li>
+      </ul>
+    </div>
+    <div class="tree-wrap">
+      <h4>แผนภูมิที่ 1 · คัดกรองและยืนยัน</h4>
+      <ul class="tree"><li><span class="nd q">OFT + DCIP หรือ MCV/MCH + DCIP/Hb E screen</span>
+        <ul>
+          <li><span class="nd">neg/neg</span><ul><li><span class="nd ax">ไม่เป็นพาหะชนิดที่มีนัยสำคัญ</span></li></ul></li>
+          <li><span class="nd q">neg/pos, pos/neg, pos/pos → Hb typing</span>
+            <ul>
+              <li><span class="nd">A₂A, A₂ &lt; 3.5%</span><ul><li><span class="nd dx">สงสัย α-thal trait → PCR α-thal 1</span></li></ul></li>
+              <li><span class="nd">A₂A, A₂ &gt; 3.5%</span><ul><li><span class="nd dx">β-thal trait ± α-thal → PCR α-thal 1</span></li></ul></li>
+              <li><span class="nd">EA (E 25–35%)</span><ul><li><span class="nd dx">Hb E trait</span></li></ul></li>
+              <li><span class="nd">EA (E ≤ 25%)</span><ul><li><span class="nd dx">สงสัย Hb E trait ± α-thal → PCR α-thal 1</span></li></ul></li>
+              <li><span class="nd">EE (E ≥ 80%)</span><ul><li><span class="nd dx">Homozygous Hb E ± α-thal → PCR α-thal 1</span></li></ul></li>
+              <li><span class="nd">A₂A Bart's H, CSA₂A Bart's H, A₂F, EF, EFA, AE Bart's …</span><ul><li><span class="nd dx">Thalassemia disease</span></li></ul></li>
+            </ul></li>
+        </ul></li></ul>
+      <p class="small muted" style="margin-top:8px">ใช้ CE ให้รวม Hb A₂ กับ Hb E ก่อนแปลผลตามแผนภูมิ</p>
+    </div>
+  </div>
+  <div class="tool" id="coupleTool">
+    <h4>ประเมินคู่เสี่ยง <small>บทที่ 14</small></h4>
+    <div class="row">
+      <div class="field"><label for="p_a">ภรรยา</label><select id="p_a"><option value="none">ไม่เป็นพาหะที่มีนัยสำคัญ</option><option value="a1">α-thal 1 trait</option><option value="b" selected>β-thal trait</option><option value="e">Hb E trait</option><option value="ee">Homozygous Hb E</option><option value="b_a1">β-thal trait + α-thal 1</option><option value="e_a1">Hb E trait + α-thal 1</option></select></div>
+      <div class="field"><label for="p_b">สามี</label><select id="p_b"><option value="none">ไม่เป็นพาหะที่มีนัยสำคัญ</option><option value="a1">α-thal 1 trait</option><option value="b">β-thal trait</option><option value="e" selected>Hb E trait</option><option value="ee">Homozygous Hb E</option><option value="b_a1">β-thal trait + α-thal 1</option><option value="e_a1">Hb E trait + α-thal 1</option></select></div>
+    </div>
+    <div class="out" id="p_out"></div>
+    <p class="small muted">คำนวณตามการถ่ายทอดแบบ autosomal recessive เฉพาะ 3 โรครุนแรงที่ต้องคัดกรอง ไม่รวม Hb H (α-thal 1 × α-thal 2) ซึ่งไม่ใช่เป้าหมายการวินิจฉัยก่อนคลอด</p>
+  </div>
+  <div class="tbl">
+    <table>
+      <caption>หัตถการวินิจฉัยก่อนคลอด</caption>
+      <thead><tr><th>วิธี</th><th class="n">อายุครรภ์</th><th>ข้อดี</th><th>ข้อด้อย</th></tr></thead>
+      <tbody>
+        <tr><td>CVS</td><td class="n">10–12 wk (≥ 10)</td><td>ไตรมาสแรก ลดความกังวล ยุติง่าย</td><td>แท้ง ~0.5% · limb reduction ถ้า &lt; 8 wk · ต้องรู้ mutation พ่อแม่</td></tr>
+        <tr><td>Amniocentesis</td><td class="n">15–19 wk</td><td>มาช้าเกิน CVS</td><td>Maternal cell contamination · DNA น้อย อาจต้องเพาะเลี้ยง 2–3 สัปดาห์</td></tr>
+        <tr><td>Cordocentesis</td><td class="n">18–22 wk</td><td>Fetal Hb analysis ได้เร็ว ตรวจปนเปื้อนแม่ด้วย acid elution</td><td>ต้องชำนาญ · แท้ง ~1% · หัวใจทารกช้าชั่วคราว</td></tr>
+      </tbody></table></div>
+  <p class="small muted">Lab: α (SEA, Thai) → gap-PCR · β (point mutation) → ASO, reverse dot-blot, ARMS, HRM หรือ sequencing</p>
+</section>
+
+<!-- ===== T15 ===== -->
+<section id="t15">
+  <div class="chap-head"><div class="chap-num">15</div><div><div class="eyebrow">บทที่ 15</div><h2>การจัดระบบการให้บริการ</h2></div></div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>ระดับ</th><th>วินิจฉัย</th><th>รักษา</th><th>ควบคุมป้องกัน</th></tr></thead>
+      <tbody>
+        <tr><td><b>ปฐมภูมิ</b> (ศสม., รพ.สต.)</td><td>CBC เจาะเลือดส่งวินิจฉัย</td><td>ยาโฟลิก · ให้คำปรึกษา · ดูแล Hb H, Hb H/CS, β/E ที่ไม่พึ่งเลือด</td><td>ค้นหา ส่งตัว ติดตาม เยี่ยมบ้าน</td></tr>
+        <tr><td><b>ทุติยภูมิ</b> (รพช.–รพท.)</td><td>CBC (morphology, inclusion body) · Hb typing · US abdomen</td><td>ให้เลือด TDT ที่ไม่มีแทรกซ้อน · โฟลิก · คำปรึกษา · นิ่ว → ส่งต่อ</td><td>ค้นหา ส่งตัว ติดตาม</td></tr>
+        <tr><td><b>ตติยภูมิ</b> (รพศ., โรงเรียนแพทย์)</td><td>+ PND, อณูพันธุศาสตร์</td><td>เหล็กเกิน ภาวะแทรกซ้อน · ฝึกอบรม วิจัย</td><td>+ พัฒนาระบบบริการ</td></tr>
+      </tbody></table></div>
+  <div class="panel small">
+    <h4>เวชระเบียนและติดตาม</h4>
+    <ul>
+      <li>ข้อมูลผู้ป่วย: การวินิจฉัย วันเกิด เลขบัตร 13 หลัก น้ำหนัก ส่วนสูง pedigree</li>
+      <li>แรกวินิจฉัย: serial CBC (baseline Hb) · Hb typing ± DNA ของผู้ป่วยและครอบครัว · ABO, Rh(D) และ minor groups (C, c, E, e, Leᵃ, Leᵇ, Miᵃ)</li>
+      <li>ทุกครั้ง: น้ำหนัก Hb/Hct ปริมาณและชนิดเลือดที่ได้ · ทุก 3–6 เดือน: ส่วนสูง AST/ALT ferritin · ทุก 6–12 เดือน: anti-HIV, HBsAg, anti-HBs, anti-HBc, anti-HCV</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== UPDATE ===== -->
+<section id="update">
+  <div>
+    <div class="eyebrow">ข้อมูลนอก CPG 2562</div>
+    <h2>อัปเดตที่เกิดขึ้นหลังจากออก CPG</h2>
+    <p class="lead" style="margin-top:6px">จากหลักฐานและการอนุมัติยาหลังปี 2562 (ความรู้ถึงกลางปี 2569) ตรวจสอบสถานะในไทยและแนวทางฉบับปัจจุบันก่อนใช้</p>
+  </div>
+  <div class="grid2">
+    <div class="callout az small"><h4>ยาใหม่</h4><ul>
+      <li><b>Luspatercept</b> (erythroid maturation agent) ลดปริมาณเลือดใน β-thal TDT และเพิ่ม Hb ใน NTDT (BELIEVE, BEYOND)</li>
+      <li><b>Mitapivat</b> (PK activator) ได้ผลบวกในการศึกษา ENERGIZE (NTDT) และ ENERGIZE-T (TDT) ทั้ง α และ β · ตรวจสอบสถานะการอนุมัติ</li></ul></div>
+    <div class="callout az small"><h4>Gene therapy</h4><ul>
+      <li><b>Betibeglogene autotemcel</b> (lentiviral) และ <b>exagamglogene autotemcel</b> (CRISPR, BCL11A) ได้รับอนุมัติสำหรับ TDT ในสหรัฐฯ/ยุโรป · CPG ระบุว่ายังมีข้อจำกัด</li></ul></div>
+    <div class="callout az small"><h4>แนวทางสากล</h4><ul>
+      <li>Thalassaemia International Federation (TIF) guideline ฉบับปรับปรุงล่าสุดสำหรับ TDT และ NTDT ใช้ประกอบได้</li>
+      <li>ยังยึด pre-transfusion Hb 9.5–10.5 และ MRI T2*/LIC เป็นมาตรฐานติดตามเหล็ก</li></ul></div>
+    <div class="callout az small"><h4>Deferasirox FCT</h4><ul>
+      <li>ขนาด FCT ต่ำกว่า DT ประมาณ 30% (เช่น DT 20 ≈ FCT 14 mg/kg/วัน) ระวังเมื่อสลับรูปแบบ (CPG ไม่ให้รายละเอียด)</li></ul></div>
+  </div>
+</section>
+
+<!-- ===== PEARLS ===== -->
+<section id="pearls">
+  <div><div class="eyebrow">จุดที่ควรจำ</div><h2>ตัวเลขที่ใช้บ่อย</h2></div>
+  <div class="grid2">
+    <div class="callout"><h4>ให้เลือด</h4><ul class="small">
+      <li>เด็ก Hb &lt; 8 ×2 · ผู้ใหญ่ Hb &lt; 7 ×2 (ห่าง ≥ 2 สัปดาห์ ไม่มีติดเชื้อ)</li>
+      <li>Pre-Hb 9–10.5 ไม่เกิน 14 · 10–15 mL/kg ทุก 2–6 สัปดาห์ · ≤ 2 ยูนิต/ครั้ง</li>
+      <li>หัวใจ: ≤ 5 mL/kg &lt; 2 mL/kg/h + diuretic</li></ul></div>
+    <div class="callout"><h4>ขับเหล็ก</h4><ul class="small">
+      <li>TDT: ferritin &gt; 1,000 ×2 / LIC &gt; 7 / &gt; 1 ปี / &gt; 10 ครั้ง</li>
+      <li>NTDT: อายุ &gt; 10 + LIC ≥ 5 หรือ ferritin ≥ 800 · หยุด &lt; 300 หรือ LIC &lt; 3</li>
+      <li>DFP ลำดับแรก ≥ 6 ปี · DFX ลำดับแรก 2–6 ปี · DFP: CBC ทุก 1–2 สัปดาห์</li>
+      <li>T2* &lt; 10 = continuous DFO · ติดเชื้อ = หยุดยาขับเหล็ก</li></ul></div>
+    <div class="callout"><h4>กับดัก</h4><ul class="small">
+      <li>HbA1c ต่ำเทียม → ใช้ fructosamine</li>
+      <li>Ferritin ใน NTDT ต่ำกว่าเหล็กจริง</li>
+      <li>HPLC: Hb E กับ A₂ ออกตำแหน่งเดียวกัน · CE ต้องรวมกัน</li>
+      <li>HSCT แล้วยังถ่ายทอดยีน</li></ul></div>
+    <div class="callout"><h4>ฉุกเฉิน</h4><ul class="small">
+      <li>ตัดม้ามแล้วไข้ → admit + 3rd-gen cephalosporin</li>
+      <li>ปวดหลังขาอ่อนแรง → EMH cord compression: เลือด Hb &gt; 10 + RT + dexamethasone</li>
+      <li>DFP + ไข้ → ตรวจ ANC (agranulocytosis)</li>
+      <li>ไข้ BP ต่ำระหว่างให้เลือด → bacterial contamination</li></ul></div>
+  </div>
+</section>
+
+<footer>
+  ที่มา: สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาภาวะโลหิตจางและธาลัสซีเมีย พ.ศ. 2562 ส่วนที่ 2 โรคโลหิตจางธาลัสซีเมีย บทที่ 1–15.
+  หน้านี้เป็นบทสรุปเพื่อการเรียนรู้ ใช้วิจารณญาณร่วมกับบริบทผู้ป่วย และตรวจขนาดยากับเอกสารกำกับยาก่อนสั่งใช้
+</footer>
+</main>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const f=(v,d=0)=>v.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d});
+function chel(){
+  const w=parseFloat($('#c_wt').value),d=$('#c_drug').value,o=$('#c_out');
+  if(!(w>0)){o.innerHTML='กรอกน้ำหนัก';return}
+  const R={
+    dfp:[50,100,'Deferiprone 50–100 mg/kg/วัน แบ่ง 3–4 ครั้ง · เริ่ม 50–75 · CBC ทุก 1–2 สัปดาห์ใน 2–3 เดือนแรก',75],
+    dfx:[20,40,'Deferasirox DT เริ่ม 20 mg/kg/วัน ปรับ 5–10 ทุก 3–6 เดือน สูงสุด 40 · วันละครั้งท้องว่าง',20],
+    dfo:[20,60,'DFO 20–40 (ผู้ใหญ่ถึง 60) mg/kg/วัน SC 8–12 ชม. 5–7 วัน/สัปดาห์ · เด็กเล็ก ≤ 40',40],
+    ndfx:[10,30,'NTDT: deferasirox เริ่ม 10–20 สูงสุด 30 mg/kg/วัน',10],
+    ndfp:[50,100,'NTDT: deferiprone เริ่ม 50 ปรับถึง 100 mg/kg/วัน',50]
+  }[d];
+  o.innerHTML=`<b class="big mono">${f(w*R[0])}–${f(w*R[1])} mg/วัน</b><span class="small">ขนาดเริ่ม ≈ <b class="mono">${f(w*R[3])}</b> mg/วัน · ${R[2]}</span>`;
+}
+['#c_wt','#c_drug'].forEach(id=>$(id).addEventListener('input',chel));chel();
+
+function couple(){
+  const A=$('#p_a').value,B=$('#p_b').value,o=$('#p_out');
+  const has=(x,k)=>x.split('_').includes(k);
+  const a1=v=>has(v,'a1'), bt=v=>has(v,'b'), et=v=>has(v,'e'), ee=v=>v==='ee';
+  const r=[];
+  if(a1(A)&&a1(B))r.push(['Hb Bart\'s hydrops fetalis','25%','รุนแรง ทารกเสียชีวิต แม่เสี่ยง preeclampsia']);
+  const pb=v=>bt(v)?0.5:0, pe=v=>ee(v)?1:et(v)?0.5:0;
+  const bb=pb(A)*pb(B), be=pb(A)*pe(B)+pe(A)*pb(B);
+  if(bb>0)r.push(['Homozygous β-thalassemia',f(bb*100)+'%','ส่วนใหญ่ TDT']);
+  if(be>0)r.push(['β-thalassemia/Hb E',f(be*100)+'%','รุนแรงได้หลากหลาย']);
+  if(!r.length){o.className='out ok';o.innerHTML='<b class="big">ไม่ใช่คู่เสี่ยงต่อโรครุนแรง 3 ชนิด</b><span class="small">ไม่จำเป็นต้องวินิจฉัยก่อนคลอดเพื่อโรคเหล่านี้</span>';return}
+  o.className='out bad';
+  o.innerHTML='<b class="big">คู่เสี่ยง → เสนอวินิจฉัยก่อนคลอด</b>'+r.map(x=>`<span><b>${x[0]}</b> <span class="mono">${x[1]}</span> ต่อการตั้งครรภ์ · ${x[2]}</span>`).join('')+'<span class="small">CVS 10–12 สัปดาห์ · amniocentesis 15–19 · cordocentesis 18–22 · ต้องทราบ mutation ของพ่อแม่</span>';
+}
+['#p_a','#p_b'].forEach(id=>$(id).addEventListener('input',couple));couple();
+
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function onScroll(){let cur=secs[0];for(const s of secs){if(s.getBoundingClientRect().top<120)cur=s}links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur.id))}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
