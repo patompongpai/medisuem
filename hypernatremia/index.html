@@ -1,0 +1,771 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hypernatremia in Adults</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: companion to the Hyponatremia page — same single reading column with sticky chip nav; accent shifts from saline teal to a dry, hypertonic rust */
+:root{
+  --bg:#F6F4F2; --surface:#FFFFFF; --sunk:#EEE9E5; --ink:#221A15; --muted:#66594F; --line:#DDD3CB;
+  --accent:#A3511A; --accent-soft:#F6E6DA; --accent-ink:#7A3A10;
+  --warn:#8A6A08; --warn-soft:#F7EFD3;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --teal:#0B7480; --teal-soft:#DDF0F2;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#161210; --surface:#201A17; --sunk:#2A231F; --ink:#EEE6E0; --muted:#AA9C92; --line:#3B312B;
+  --accent:#F0A56A; --accent-soft:#3A2414; --accent-ink:#F8CBA4;
+  --warn:#E2C25C; --warn-soft:#322A12; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140;
+  --teal:#4DC2CC; --teal-soft:#12333A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161210; --surface:#201A17; --sunk:#2A231F; --ink:#EEE6E0; --muted:#AA9C92; --line:#3B312B;
+  --accent:#F0A56A; --accent-soft:#3A2414; --accent-ink:#F8CBA4;
+  --warn:#E2C25C; --warn-soft:#322A12; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140;
+  --teal:#4DC2CC; --teal-soft:#12333A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--ok) 0%,var(--ok) 25%,var(--warn) 25%,var(--warn) 62.5%,var(--danger) 62.5%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul,ol{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+.stat{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent);line-height:1.2;display:block}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap;margin:8px 0}
+
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.dx.teal{border-color:var(--teal);background:var(--teal-soft)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer;position:relative}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">สรุปบทความ · Korean J Intern Med 2023</div>
+  <h1>Hypernatremia ในผู้ใหญ่:<br>การประเมินและการรักษา</h1>
+  <p class="sub">สรุปภาษาไทยจากบทความ <i>Evaluation and management of hypernatremia in adults: clinical perspectives</i> ครบ 8 ขั้นของการวินิจฉัยและ 6 ขั้นของการรักษา พร้อมแผนผังที่คลิกเดินตามได้ และเครื่องคำนวณ water deficit, EFWC และอัตราการให้น้ำ</p>
+  <p class="cite">ค้นผ่าน PubMed (PMID 36578134) · <a href="https://doi.org/10.3904/kjim.2022.346" target="_blank" rel="noopener">DOI 10.3904/kjim.2022.346</a></p>
+  <div class="scale" aria-label="ระดับ serum sodium ที่ใช้ตัดสินใจ">
+    <div class="scale-bar"></div>
+    <div class="scale-ticks">
+      <div class="tick l" style="left:0"><b>135</b>&nbsp;</div>
+      <div class="tick" style="left:25%"><b>145</b>นิยาม</div>
+      <div class="tick" style="left:62.5%"><b>160</b>รุนแรง · ตาย ~75%</div>
+      <div class="tick r" style="left:100%"><b>175</b>mmol/L</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#overview">ภาพรวม</a><a href="#patho">กลไก</a><a href="#symptoms">อาการ</a><a href="#causes">สาเหตุ</a><a href="#workup">วินิจฉัย 8 ขั้น</a><a href="#approach">แผนผัง Approach</a><a href="#manage">แผนผัง Management</a><a href="#treat">รักษา 6 ขั้น</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 01 -->
+<section id="overview" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและระบาดวิทยา</h2>
+  <div class="box key"><b>นิยาม</b>Serum Na <span class="mono">&gt;145 mmol/L</span> สะท้อนภาวะ serum hyperosmolality เสมอ (ต่างจาก hyponatremia ที่ osmolality อาจปกติหรือสูงได้)</div>
+  <div class="grid3">
+    <div class="card"><span class="stat">0.5–5%</span>ผู้ป่วยในโรงพยาบาล</div>
+    <div class="card"><span class="stat">0.2–1%</span>ห้องฉุกเฉิน · พบน้อย</div>
+    <div class="card"><span class="stat">~10%</span>ICU · ผู้ป่วยวิกฤตทั่วไป 2–6%</div>
+  </div>
+  <p>อัตราตายรายงานไว้ 10–75% ในผู้ใหญ่ Na <span class="mono">&gt;160</span> (severe) สัมพันธ์กับอัตราตายราว 75% ส่วนเด็กที่เป็น acute hypernatremia ตาย 10–70% และในทารกแรกเกิดอาจถึงชีวิต จึงต้องวินิจฉัยและรักษาทันที</p>
+</section>
+
+<!-- 02 -->
+<section id="patho" class="col">
+  <div class="sec-num">02</div>
+  <h2>พยาธิสรีรวิทยา</h2>
+  <p>ร่างกายรักษา osmolality ไว้ที่ <span class="mono">280–295 mOsm/kg</span> ด้วยกลไก 3 อย่าง: การหลั่ง <b>AVP</b>, <b>การกระหายน้ำ</b>แล้วดื่ม และ<b>การดูดน้ำกลับที่ไต</b>ตาม AVP</p>
+  <div class="grid2">
+    <div class="card"><h4>Hyponatremia</h4>ไตทำให้ปัสสาวะเจือจางไม่ได้ หรือดื่มน้ำมากเกิน</div>
+    <div class="card"><h4>Hypernatremia</h4>ไต<b>ทำให้ปัสสาวะเข้มข้นไม่ได้</b> หรือ<b>ได้น้ำไม่พอ</b> เกิดเป็นการขาดน้ำเทียบกับ Na ในร่างกาย จาก net water loss หรือได้ Na hypertonic เพิ่ม</div>
+  </div>
+  <p>Na ผ่านเยื่อหุ้มเซลล์ไม่ได้ จึงเป็นตัวกำหนด tonicity Hypernatremia ทำให้เกิด hypertonicity และ<b>เซลล์หดตัว (cellular dehydration) อย่างน้อยชั่วคราวเสมอ</b></p>
+  <div class="box warn"><b>การปรับตัวของสมองใน chronic hypernatremia</b>เซลล์สะสม organic osmolytes (glutamate, taurine, myo-inositol) ดึงน้ำกลับเข้าเซลล์ ปริมาตรเซลล์จึงกลับมาใกล้ปกติ อาการทางระบบประสาทจึงน้อยลง แต่การขับ osmolytes ออกช้ากว่าการเสีย Na และ K ขณะสมองบวม ถ้าให้น้ำเร็วเกินในรายเรื้อรังจะเกิด <b>cerebral edema ชัก และโคม่า</b></div>
+</section>
+
+<!-- 03 -->
+<section id="symptoms" class="col">
+  <div class="sec-num">03</div>
+  <h2>อาการทางคลินิก</h2>
+  <p>อาการส่วนใหญ่มาจากระบบประสาทเพราะเซลล์สมองหดตัว ชัดเมื่อ Na สูงมากหรือขึ้นเร็ว ระดับความรู้สึกตัวที่ลดลงสัมพันธ์กับความรุนแรงของ Na</p>
+  <div class="formula" style="white-space:normal">กระหายน้ำ → อ่อนแรง → neuromuscular excitability, hyperreflexia → ซึม → สับสน → ชัก → โคม่า</div>
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid var(--danger)"><h4>Acute (≤48 ชม.)</h4>เซลล์สมองหดตัวทันที อาจดึงหลอดเลือดจนฉีกขาด เกิด <b>เลือดออกในสมอง, SAH</b> หรือเสียชีวิต พบมากในเด็กและทารก</div>
+    <div class="card" style="border-top:4px solid var(--accent)"><h4>Chronic (&gt;48 ชม. หรือไม่ทราบ)</h4>มีการสร้าง osmolytes อาการรุนแรงน้อยกว่า แต่เสี่ยง cerebral edema และชักเมื่อแก้เร็วเกิน (ลด Na ≥12 mmol/L หรือ ≥0.5 mmol/L/ชม.) โดยเฉพาะในทารก</div>
+  </div>
+  <div class="box key"><b>ข้อมูลในผู้ใหญ่วิกฤตต่างจากเด็ก</b>หลักฐานใหม่ไม่พบว่าการแก้เร็วเพิ่ม mortality, ชัก หรือ cerebral edema ถ้าแก้เกินไป <b>ไม่ต้องทำให้ Na กลับขึ้นใหม่</b> ในทางกลับกัน หลายการศึกษาพบว่า<b>แก้ช้าเกินไปมีอัตราตายสูงขึ้น</b></div>
+</section>
+
+<!-- 04 -->
+<section id="causes">
+  <div class="col">
+    <div class="sec-num">04</div>
+    <h2>การแบ่งชนิดและสาเหตุ</h2>
+    <p>Hypernatremia ไม่ใช่โรค แต่เป็นกระบวนการที่บอกว่าสมดุลน้ำผิดปกติ แบ่งตามเวลาเป็น acute (≤48 ชม.) และ chronic (&gt;48 ชม. หรือไม่ทราบ)</p>
+    <div class="box note"><b>ใครเสี่ยง</b>Hypernatremia ที่คงอยู่เกิดได้เฉพาะเมื่อ<b>กระหายน้ำบกพร่องหรือเข้าถึงน้ำไม่ได้</b>: ผู้ที่ความรู้สึกตัวผิดปกติ ใส่ท่อช่วยหายใจ ทารก และผู้สูงอายุ · ในผู้สูงอายุและ ICU สัมพันธ์กับ (1) ดูแลสมดุลน้ำเองไม่ได้ (2) ต้องได้อาหารทางหลอดเลือดหรือสายยาง (3) osmoreceptor เสื่อมตามอายุจนกระหายน้ำลดลง</div>
+    <h3>กลไกหลัก 2 อย่าง</h3>
+    <div class="grid2">
+      <div class="card"><h4>1 · Net water loss (พบบ่อยสุด)</h4>
+        <ul><li><b>เสียน้ำบริสุทธิ์</b> (ไม่ขาด Na): insensible loss, DI</li><li><b>เสียสารน้ำ hypotonic</b> (ขาด Na ร่วม): ท้องเสีย osmotic diuresis</li></ul>
+        <b style="font-size:.88rem">ทางไต</b>
+        <ul><li>Osmotic diuresis: hyperglycemia, urea สูง, postobstructive diuresis, mannitol (ทุกอย่างมี solute ในปัสสาวะสูง Uosm สูง)</li><li>Water diuresis: central DI, nephrogenic DI</li></ul>
+        <b style="font-size:.88rem">นอกไต</b>
+        <ul><li>Insensible (ไข้ เหงื่อ หายใจเร็ว แผลไหม้)</li><li>ทางเดินอาหาร (ท้องเสีย อาเจียน lactulose)</li></ul></div>
+      <div class="card"><h4>2 · Hypertonic sodium gain (พบน้อย)</h4>มักเกิดจากการรักษาหรือได้ Na โดยไม่ตั้งใจ
+        <ul><li>3% NaCl, NaHCO₃ <span class="tag add">เสริม</span></li><li>อาหารทางสายยาง hypertonic</li><li>กินเกลือหรือน้ำทะเล <span class="tag add">เสริม</span></li></ul></div>
+    </div>
+  </div>
+  <h3 class="col">แบ่งตาม volume status</h3>
+  <div class="grid3">
+    <div class="card hypo"><h4>Hypovolemic</h4><b>ขาดทั้งน้ำและ Na</b> แต่ขาดน้ำมากกว่า<br><span class="muted" style="font-size:.88rem">BP ต่ำ ชีพจรเร็ว เยื่อบุแห้ง skin turgor ลด orthostatic hypotension น้ำหนักลด prerenal AKI metabolic alkalosis Hct/โปรตีนสูง JVP &lt;5 cmH₂O</span></div>
+    <div class="card eu"><h4>Euvolemic</h4><b>ขาดน้ำอย่างเดียว</b> เสียน้ำทางไตหรือนอกไตโดยไม่เสีย Na<br><span class="muted" style="font-size:.88rem">ตรวจไม่พบทั้ง hypo- และ hypervolemia · DI, insensible loss</span></div>
+    <div class="card hyper"><h4>Hypervolemic</h4><b>ได้ Na hypertonic เพิ่ม</b><br><span class="muted" style="font-size:.88rem">บวมรอบนอกหรือ pulmonary edema · มักมีโรคตับ ไต หรือ albumin ต่ำร่วม ทำให้คั่งเกลือ</span></div>
+  </div>
+  <div class="col">
+    <h3>สาเหตุของ diabetes insipidus <span class="tag add">เสริม</span></h3>
+    <div class="grid2">
+      <div class="card"><h4>Central DI</h4><ul><li>Idiopathic, autoimmune</li><li>ผ่าตัดหรือบาดเจ็บบริเวณ pituitary</li><li>เนื้องอก (craniopharyngioma, metastasis)</li><li>Infiltrative: histiocytosis, sarcoidosis</li><li>Hypoxic encephalopathy, brain death</li></ul></div>
+      <div class="card"><h4>Nephrogenic DI</h4><ul><li>Lithium (บ่อยที่สุด), demeclocycline, amphotericin B</li><li><b>Hypokalemia</b> (&lt;3.0) และ <b>hypercalcemia</b> (&gt;11 mg/dL) · บทความเน้นข้อนี้</li><li>ระยะฟื้นของ ATN, postobstructive</li><li>กรรมพันธุ์ (V2 receptor, AQP2)</li></ul></div>
+    </div>
+    <p class="muted" style="font-size:.85rem">ตารางสาเหตุในต้นฉบับเป็นภาพ รายการที่ติดป้าย "เสริม" สรุปจากตำรามาตรฐาน</p>
+  </div>
+</section>
+
+<!-- 05 -->
+<section id="workup" class="col">
+  <div class="sec-num">05</div>
+  <h2>การวินิจฉัย 8 ขั้น</h2>
+  <div class="box"><b>ประวัติและตรวจร่างกาย</b>ปัจจัยเสี่ยง (ความรู้สึกตัวผิดปกติ ช่วยเหลือตัวเองไม่ได้ หลังผ่าตัด) · กระหายน้ำหรือไม่ · ปัสสาวะมากหรือน้อย · การเสียน้ำนอกไต (ท้องเสีย ไข้ ติดเชื้อ) · ตรวจระบบประสาทละเอียด · ประเมิน ECF volume · <b>บันทึก intake/output ทุกวันอย่างแม่นยำ</b></div>
+  <p class="muted" style="font-size:.9rem">คลิกแต่ละขั้นเพื่อดูรายละเอียด</p>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">ตัด pseudohypernatremia</span></summary><div class="body">
+      <p>Na สูงเทียม (&gt;145) เมื่อ <b>โปรตีนหรือไขมันในเลือดต่ำ</b> พบใน <b>indirect ISE</b> ซึ่งเจือจางตัวอย่างก่อนวัด</p>
+      <p>ในผู้ป่วยวิกฤตหรือโปรตีน/ไขมันผิดปกติ ให้ใช้ <b>direct ISE</b> (เช่น blood gas analyzer) หรือวัด serum osmolality ด้วย osmometer</p></div></details>
+    <details class="step"><summary><span class="n">2</span><span class="t">แก้ค่า Na ตาม glucose</span></summary><div class="body">
+      <div class="formula">Hillier: Na + 0.024 × (glucose − 100)</div>
+      <div class="formula">Katz: Na + 0.016 × (glucose − 100)</div>
+      <p>หมายถึงทุก glucose ที่เกิน 100 mg/dL อีก 100 ให้บวก Na 2.4 (Hillier) หรือ 1.6 (Katz) Hyperglycemia ทำให้ Na ที่วัดได้ต่ำกว่าจริง จึงอาจซ่อน hypernatremia ไว้</p></div></details>
+    <details class="step"><summary><span class="n">3</span><span class="t">ประเมิน extracellular volume</span></summary><div class="body"><p>Hypovolemic, euvolemic หรือ hypervolemic จากประวัติและการตรวจร่างกาย (ดูหัวข้อ 04)</p></div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">Urine sodium</span></summary><div class="body">
+      <ul><li><b>UNa &lt;20</b>: volume depletion ไตเก็บ Na ไว้ → เสียน้ำนอกไต</li><li><b>UNa &gt;20</b> แม้ hypovolemic: osmotic diuresis, diuretic, postobstructive nephropathy, ระยะฟื้นของ ATN</li></ul></div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">ปริมาณปัสสาวะ (UV) และ urine osmolality</span></summary><div class="body">
+      <div class="tbl"><table>
+        <tr><th>Uosm</th><th>แปลผล</th></tr>
+        <tr><td class="mono">&lt;300 + polyuria</td><td><b>Diabetes insipidus</b> · polyuria = &gt;3 L/วัน หรือ &gt;40 mL/kg/วัน</td></tr>
+        <tr><td class="mono">300–800</td><td>Partial DI (central หรือ nephrogenic), central DI ร่วมกับ volume depletion หรือ <b>osmotic diuresis</b> → คำนวณ total solute excretion</td></tr>
+        <tr><td class="mono">&gt;800</td><td>ไตตอบสนองปกติ → <b>primary hypodipsia, เสียน้ำนอกไต</b> หรือ <b>saline overload</b></td></tr>
+      </table></div>
+      <div class="formula">Total solute excretion = Uosm × UV(24 ชม.)</div>
+      <p><span class="mono">&gt;750–1,000 mOsm/วัน</span> (หรือ &gt;15 mOsm/kg body water/วัน) บ่งชี้ osmotic diuresis จาก NaCl, mannitol, glucose หรือ urea</p>
+      <div class="box key"><b>การตอบสนองที่ "ถูกต้อง" ต่อ hypernatremia</b>AVP สูงขึ้น ปัสสาวะน้อย (<span class="mono">&lt;500 mL/วัน</span>) และเข้มข้นสูงสุด (Uosm <span class="mono">&gt;800</span>)</div>
+      <p><b>DDAVP test:</b> Uosm เพิ่ม ≥50% ร่วมกับปัสสาวะลดชัด = <b>central DI</b> · ไม่เปลี่ยน = <b>nephrogenic DI</b></p></div></details>
+    <details class="step"><summary><span class="n">6</span><span class="t">Urine electrolyte-free water clearance (EFWC)</span></summary><div class="body">
+      <div class="formula">EFWC = UV × [1 − (UNa + UK) / SNa]</div>
+      <ul><li><b>บวกมาก</b>: เสียน้ำทางไต → osmotic diuresis, furosemide, ไตวาย, DI</li><li><b>ใกล้ศูนย์หรือติดลบ</b> (พบน้อย): เสียน้ำทางเดินอาหารหรือ insensible</li></ul>
+      <p class="muted" style="font-size:.9rem">ใช้ทั้งแยกสาเหตุ และคำนวณ ongoing renal water loss ในการรักษา</p></div></details>
+    <details class="step"><summary><span class="n">7</span><span class="t">AVP หรือ copeptin ในผู้ที่มี hypotonic polyuria</span></summary><div class="body">
+      <p>ใช้ร่วมกับ water deprivation test แยก primary polydipsia, central DI และ nephrogenic DI</p>
+      <ul><li>ผู้ที่ Na สูงอยู่แล้วมีสิ่งกระตุ้น AVP เพียงพอ</li><li><b>Nephrogenic DI</b>: AVP/copeptin พื้นฐาน<b>สูง</b> และ Uosm ตอบสนองต่อ DDAVP &lt;50% หรือ &lt;150 mOsm/kg</li><li><b>Central DI</b>: ตอบสนองต่อ DDAVP</li><li><b>Partial</b>: Uosm ขึ้น &gt;50% แต่ไม่ถึง 800</li></ul>
+      <p><b>Copeptin</b> หลั่งพร้อม AVP แต่เสถียรกว่า วัดด้วยชุดตรวจเชิงพาณิชย์ได้ จึงใช้แทน AVP ซึ่งไม่ตรวจในเวชปฏิบัติทั่วไปเพราะไม่เสถียรก่อนวิเคราะห์</p></div></details>
+    <details class="step"><summary><span class="n">8</span><span class="t">ตรวจ K และ Ca ร่วม</span></summary><div class="body">
+      <p><b>Hypokalemia</b> (K <span class="mono">&lt;3.0</span>) และ <b>hypercalcemia</b> (Ca <span class="mono">&gt;11 mg/dL</span> หรือ 2.75 mmol/L) ทำให้ collecting tubule ตอบสนองต่อ vasopressin ลดลง เกิด polyuria, nephrogenic DI และ hypernatremia</p></div></details>
+  </div>
+</section>
+
+<!-- 06 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">06</div>
+    <h2>แผนผังการ approach hypernatremia</h2>
+    <p>เลือกดูแบบแผนผังทั้งหมด หรือแบบตอบคำถามทีละขั้นกับผู้ป่วยจริง</p>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Serum Na &gt;145 mmol/L</b></div>
+      <div class="vline"></div>
+      <div class="node red"><b>ช็อก / BP ต่ำ?</b>ให้ 0.9% NaCl หรือ balanced crystalloid ก่อน ไม่ว่า Na เท่าไร</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>① ตัด pseudohypernatremia</b>direct ISE หรือ osmometer เมื่อโปรตีน/ไขมันต่ำ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>② แก้ค่าตาม glucose</b>+2.4 (Hillier) หรือ +1.6 (Katz) ต่อ glucose 100 ที่เกิน 100</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>③ Volume status + ④ Urine Na</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Hypovolemic</span>
+          <div class="node dx hypo"><b>ขาดน้ำ + Na</b></div>
+          <div class="vline"></div>
+          <div class="node dx hypo"><b>UNa &lt;20 · นอกไต</b>ท้องเสีย อาเจียน เหงื่อ แผลไหม้</div>
+          <div class="vline"></div>
+          <div class="node dx hypo"><b>UNa &gt;20 · ทางไต</b>Osmotic diuresis, diuretic, postobstructive, ATN ระยะฟื้น</div></div>
+        <div class="arm"><span class="lab">Euvolemic</span>
+          <div class="node dx eu"><b>ขาดน้ำอย่างเดียว</b>Insensible loss, DI, hypodipsia</div>
+          <div class="vline"></div>
+          <div class="node dx grey"><b>→ ⑤ UV + Uosm</b>ดูแผงด้านล่าง</div></div>
+        <div class="arm"><span class="lab">Hypervolemic</span>
+          <div class="node dx hyper"><b>ได้ Na hypertonic</b>3% NaCl, NaHCO₃, อาหารสายยาง hypertonic, เกลือ</div>
+          <div class="vline"></div>
+          <div class="node dx hyper">มักมีโรคตับ ไต หรือ albumin ต่ำร่วม</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>⑤ Urine volume และ urine osmolality</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Uosm &lt;300 + polyuria</span>
+          <div class="node dx teal"><b>Diabetes insipidus</b>→ DDAVP</div>
+          <div class="vline"></div>
+          <div class="node dx teal"><b>Uosm ↑ ≥50%, UV ลด</b>Central DI</div>
+          <div class="vline"></div>
+          <div class="node dx teal"><b>ไม่เปลี่ยน (&lt;50% หรือ &lt;150)</b>Nephrogenic DI · ⑧ ดู K, Ca, ยา</div></div>
+        <div class="arm"><span class="lab">Uosm 300–800</span>
+          <div class="node dx grey"><b>Total solute excretion</b>= Uosm × UV 24 ชม.</div>
+          <div class="vline"></div>
+          <div class="node dx grey"><b>&gt;750–1,000 mOsm/วัน</b>Osmotic diuresis</div>
+          <div class="vline"></div>
+          <div class="node dx grey"><b>ไม่สูง</b>Partial DI หรือ central DI + volume depletion</div></div>
+        <div class="arm"><span class="lab">Uosm &gt;800, UV &lt;500 mL/วัน</span>
+          <div class="node dx green"><b>ไตตอบสนองปกติ</b>เสียน้ำนอกไต (GI, หายใจ, ผิวหนัง), primary hypodipsia, saline overload</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx grey" style="max-width:640px"><b>⑥ EFWC</b> บวกมาก = เสียน้ำทางไต · ใกล้ 0 = GI/insensible · <b>⑦ Copeptin</b> แยก central กับ nephrogenic DI · <b>⑧ K &lt;3.0, Ca &gt;11</b> ทำให้เกิด NDI</div>
+    </div>
+    <div class="legend"><span style="--c:var(--warn)">Hypovolemic</span><span style="--c:var(--accent)">Euvolemic</span><span style="--c:var(--violet)">Hypervolemic</span><span style="--c:var(--teal)">Diabetes insipidus</span><span style="--c:var(--ok)">ไตเก็บน้ำได้ปกติ</span></div>
+  </div>
+
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 07 management -->
+<section id="manage">
+  <div class="col">
+    <div class="sec-num">07</div>
+    <h2>แผนผังการรักษา (management)</h2>
+    <p>หลัก 2 ข้อ: <b>แก้สาเหตุ</b> และ<b>แก้ hypertonicity</b> โดยดูความรุนแรงของอาการ ระยะเวลา และ volume status</p>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Hypernatremia (ตัด pseudo แล้ว)</b></div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>① แก้สาเหตุทันที</b>หยุด lactulose, diuretic, ยาที่ทำให้ NDI · หยุดอาหารสายยาง hypertonic · คุมไข้ น้ำตาล glycosuria · แก้การอุดตันทางเดินปัสสาวะ · แก้ hyperCa, hypoK · หยุดการเสียน้ำทาง GI</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>② อาการ + ระยะเวลา → อัตราการลด Na</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">Acute ≤48 ชม. มีอาการ (Na loading)</span>
+          <div class="node red"><b>ลดเร็ว 1–2 mmol/L/ชม.</b>ใน 6–8 ชม.แรก<br>ให้ถึง <span class="mono">145</span> ภายใน 24 ชม.<br><span style="font-size:.82rem">ไม่เพิ่มความเสี่ยงสมองบวม</span></div></div>
+        <div class="arm"><span class="lab">Chronic &gt;48 ชม. / ไม่ทราบ</span>
+          <div class="node dx" style="border-color:var(--warn);background:var(--warn-soft)"><b>&lt;0.5 mmol/L/ชม. (≤12/วัน)</b>อ้างอิงข้อมูลในเด็ก<br>ผู้ใหญ่: เร็วกว่านี้ไม่พบอันตราย แต่<b>ช้ากว่า 0.25/ชม. (6/วัน) ตายมากขึ้น</b><br>แก้เกินแล้วไม่ต้องให้ Na กลับขึ้น</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q" style="max-width:640px"><b>③ คำนวณปริมาณและอัตราน้ำ</b>
+        Water deficit = TBW × (Na/140 − 1) ให้ใน 48–72 ชม.<br>หรือ fixed regimen: D5W <span class="mono">1.35 mL/kg/ชม.</span> หรือ <span class="mono">3 mL/kg/ชม.</span><br>
+        <b>รวม/วัน = deficit + insensible + ongoing loss (ไต/นอกไต)</b></div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>④ เลือกชนิดสารน้ำตาม volume status</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ช็อก / BP ต่ำ</span><div class="node red"><b>0.9% NaCl หรือ balanced crystalloid</b>จนแก้ volume ได้ แล้วจึงให้ free water</div></div>
+        <div class="arm"><span class="lab">Hypo / Euvolemic</span><div class="node dx eu"><b>Hypotonic</b>D5W, 0.2% หรือ 0.45% NaCl (คิดเฉพาะส่วน free water) · กินน้ำเปล่าได้ถ้าดื่มได้ · เติม K ถ้าต่ำ</div></div>
+        <div class="arm"><span class="lab">Hypervolemic</span><div class="node dx hyper"><b>D5W + diuretic</b>ขับ Na คง negative fluid balance</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>⑤ ตรวจ Na ซ้ำ ปรับอัตรา</b>Na ลดช้ากว่าเป้า → เพิ่มอัตรา</div>
+      <div class="vline arrow"></div>
+      <div class="node dx teal" style="max-width:640px"><b>⑥ ถ้าเป็น DI</b>Central: desmopressin พ่นจมูก 10–20 µg ทุก 12–24 ชม. หรือกิน 0.1–0.8 mg ทุก 12 ชม. · Nephrogenic: หยุดยาที่เป็นเหตุ ± thiazide, amiloride 2.5–10 mg/วัน, NSAID</div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 treat details -->
+<section id="treat" class="col">
+  <div class="sec-num">08</div>
+  <h2>รายละเอียดการรักษา 6 ขั้น</h2>
+  <h3>ขั้น 3 · คำนวณ water deficit</h3>
+  <div class="formula">Water deficit (L) = TBW × (sNa / 140 − 1)</div>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th class="mono">TBW (× น้ำหนัก)</th></tr>
+    <tr><td>ชาย</td><td class="mono">0.6</td></tr>
+    <tr><td>หญิง</td><td class="mono">0.5</td></tr>
+    <tr><td>ผู้สูงอายุ</td><td>ลดลงอีก 5% (ชาย 0.55, หญิง 0.45)</td></tr>
+    <tr><td>ผู้ป่วยขาดน้ำ (water-depleted)</td><td>ชาย <span class="mono">0.5</span>, หญิง <span class="mono">0.4</span> ของ lean body weight</td></tr>
+  </table></div>
+  <div class="box key"><b>ตัวอย่างจากบทความ</b>หญิง 60 kg Na 166 → 0.5 × 60 × (166/140 − 1) = <b class="mono">5.6 L</b> ให้ใน 48–72 ชม.</div>
+  <div class="formula">ΔNa ต่อสารน้ำ 1 L = (Infusate [Na+K] − sNa) ÷ (TBW + 1)</div>
+  <p style="font-size:.92rem">สูตร Adrogué–Madias ใช้ประมาณผลของสารน้ำ 1 L <b>แต่ทำนายไม่แม่น</b>ในผู้ที่ volume ลดมากและไตทำงานลดลง</p>
+  <h3>Fixed-dose regimen เริ่มต้น</h3>
+  <div class="grid2">
+    <div class="card"><h4>Regimen I</h4>D5W IV <span class="mono">1.35 mL/kg/ชม.</span></div>
+    <div class="card"><h4>Regimen II</h4>D5W IV <span class="mono">3 mL/kg/ชม.</span> · หลักคิด: ลด Na 1 mmol/L ต้องใช้ electrolyte-free water <span class="mono">3 mL/kg</span></div>
+  </div>
+  <div class="formula">น้ำทั้งหมด/วัน = water deficit (หรือ fixed regimen) + insensible loss + ongoing loss (ไต/นอกไต)</div>
+  <ul>
+    <li><b>Ongoing renal loss</b> คำนวณด้วย EFWC แต่ต้องใช้ปัสสาวะ 24 ชม. จึงไม่สะดวกในการตัดสินใจล่วงหน้า</li>
+    <li><b>ท้องเสีย</b>: วัดน้ำที่เสียทางอุจจาระได้ยาก ให้เริ่มรักษาไปก่อน ตรวจ Na ซ้ำ แล้วเพิ่มอัตราถ้า Na ลดช้ากว่าเป้า</li>
+    <li><b>Volume depletion และ hypoK</b> พบร่วมบ่อยและทำให้ Na แย่ลง ให้เติม Na/K ใน maintenance fluid หรือให้ทางปาก แต่ Na/K ที่เติมจะ<b>ลดปริมาณ free water</b></li>
+    <li>ทางเลือก: ให้ <b>2 สาย</b> สายหนึ่งเป็น free water อีกสายเป็น iso-osmotic Na ± K แทนการผสมรวม</li>
+  </ul>
+  <h3>ขั้น 4 · Free water ในสารน้ำแต่ละชนิด <span class="tag add">เสริม</span></h3>
+  <div class="tbl"><table>
+    <tr><th>สารน้ำ</th><th class="mono">Na (mEq/L)</th><th class="mono">Free water ต่อ 1 L</th></tr>
+    <tr><td>D5W / น้ำเปล่าทางปาก</td><td class="mono">0</td><td class="mono">1,000 mL</td></tr>
+    <tr><td>0.2% NaCl (¼ NSS)</td><td class="mono">34</td><td class="mono">~780 mL</td></tr>
+    <tr><td>0.45% NaCl (½ NSS)</td><td class="mono">77</td><td class="mono">500 mL</td></tr>
+    <tr><td>Lactated Ringer</td><td class="mono">130</td><td class="mono">~150 mL</td></tr>
+    <tr><td>0.9% NaCl</td><td class="mono">154</td><td class="mono">0</td></tr>
+  </table></div>
+  <h3>ขั้น 6 · Diabetes insipidus</h3>
+  <div class="grid2">
+    <div class="card"><h4>Central DI</h4>Desmopressin พ่นจมูก <span class="mono">10–20 µg</span> ทุก 12–24 ชม. หรือเม็ด <span class="mono">0.1–0.8 mg</span> ทุก 12 ชม.</div>
+    <div class="card"><h4>Nephrogenic DI</h4>หยุดยาที่เป็นเหตุ บางรายให้ thiazide, amiloride <span class="mono">2.5–10 mg/วัน</span>, NSAID หรือร่วมกัน</div>
+  </div>
+  <div class="box note"><b>งานวิจัยที่กำลังดำเนินการ</b>มี RCT เริ่มกรกฎาคม 2021 เทียบการให้ electrolyte-free water แบบ <b>rapid intermittent bolus</b> กับ <b>slow continuous infusion</b> และอีกการศึกษาที่ใช้เป้าการลด Na <span class="mono">6–11 mmol/L</span> ใน 24 ชม.แรก รวมถึงใช้ urine/plasma electrolyte ratio นำการรักษา ผลคาดว่าจะออกภายในราว 3 ปีนับจากบทความ</div>
+</section>
+
+<!-- 09 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>เครื่องคำนวณและวางแผนข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น สูตรไม่รวมการเสียน้ำที่ยังดำเนินอยู่ทั้งหมด ต้องตรวจ Na ซ้ำเสมอ ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+
+  <div class="tool plan" style="margin-top:12px">
+    <h3>วางแผนการรักษาเบื้องต้น</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">ระยะเวลาและอาการ</div>
+        <div class="radios">
+          <label><input type="radio" name="dur" value="acute" id="dur1">Acute ≤48 ชม. มีอาการ</label>
+          <label><input type="radio" name="dur" value="chronic" id="dur2" checked>Chronic / ไม่ทราบ</label>
+        </div>
+        <div class="muted" style="font-size:.82rem">Hemodynamics</div>
+        <div class="radios">
+          <label><input type="radio" name="hd" value="shock" id="hd1">ช็อก / BP ต่ำ</label>
+          <label><input type="radio" name="hd" value="stable" id="hd2" checked>คงที่</label>
+        </div>
+        <div class="muted" style="font-size:.82rem">Volume status</div>
+        <div class="radios">
+          <label><input type="radio" name="vol" value="hypo" id="vol1" checked>Hypovolemic</label>
+          <label><input type="radio" name="vol" value="eu" id="vol2">Euvolemic</label>
+          <label><input type="radio" name="vol" value="hyper" id="vol3">Hypervolemic</label>
+        </div>
+      </div>
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">Serum Na<input type="number" id="pNa" value="162"></label>
+          <label class="f">น้ำหนัก (kg)<input type="number" id="pWt" value="55"></label>
+          <label class="f" style="grid-column:1/-1">TBW<select id="pTbw"><option value="0.6">ชาย 0.6</option><option value="0.5">หญิง 0.5</option><option value="0.55">ชายสูงอายุ 0.55</option><option value="0.45">หญิงสูงอายุ 0.45</option><option value="0.5d">ชายขาดน้ำ 0.5</option><option value="0.4" selected>หญิงขาดน้ำ 0.4</option></select></label>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" id="pDI">สงสัย DI (Uosm &lt;300 + polyuria)</label>
+          <label><input type="checkbox" id="pGI" checked>เสียน้ำทาง GI ต่อเนื่อง</label>
+          <label><input type="checkbox" id="pK">K ต่ำร่วม</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool">
+      <h3>Water deficit</h3>
+      <div class="fields">
+        <label class="f">TBW<select id="wdSex"><option value="0.6">ชาย 0.6</option><option value="0.5" selected>หญิง 0.5</option><option value="0.55">ชายสูงอายุ 0.55</option><option value="0.45">หญิงสูงอายุ 0.45</option><option value="0.5">ชายขาดน้ำ 0.5</option><option value="0.4">หญิงขาดน้ำ 0.4</option></select></label>
+        <label class="f">น้ำหนัก (kg)<input type="number" id="wdWt" value="60"></label>
+        <label class="f">Serum Na<input type="number" id="wdNa" value="166"></label>
+        <label class="f">ให้ภายใน (ชม.)<select id="wdHr"><option value="48" selected>48</option><option value="72">72</option></select></label>
+      </div>
+      <div class="out" id="wdOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Adrogué–Madias</h3>
+      <div class="fields">
+        <label class="f">TBW<select id="amSex"><option value="0.6">ชาย 0.6</option><option value="0.5" selected>หญิง 0.5</option><option value="0.55">ชายสูงอายุ 0.55</option><option value="0.45">หญิงสูงอายุ 0.45</option></select></label>
+        <label class="f">น้ำหนัก (kg)<input type="number" id="amWt" value="60"></label>
+        <label class="f">Serum Na<input type="number" id="amNa" value="166"></label>
+        <label class="f">สารน้ำ<select id="amFl"><option value="0" selected>D5W (0)</option><option value="34">0.2% NaCl (34)</option><option value="77">0.45% NaCl (77)</option><option value="130">LR (130)</option><option value="154">0.9% NaCl (154)</option></select></label>
+        <label class="f">K ที่เติม (mEq/L)<input type="number" id="amK" value="0"></label>
+        <label class="f">เป้าลด Na (mmol/L)<input type="number" id="amGoal" value="10"></label>
+      </div>
+      <div class="out" id="amOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Urine EFWC และ solute excretion</h3>
+      <div class="fields">
+        <label class="f">UV (L/24 ชม.)<input type="number" id="efUV" value="4.5" step="0.1"></label>
+        <label class="f">Uosm<input type="number" id="efUosm" value="320"></label>
+        <label class="f">Urine Na<input type="number" id="efUNa" value="40"></label>
+        <label class="f">Urine K<input type="number" id="efUK" value="20"></label>
+        <label class="f">Serum Na<input type="number" id="efSNa" value="155"></label>
+      </div>
+      <div class="out" id="efOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Glucose-corrected Na</h3>
+      <div class="fields">
+        <label class="f">Measured Na<input type="number" id="gcNa" value="142"></label>
+        <label class="f">Glucose (mg/dL)<input type="number" id="gcGlu" value="700"></label>
+      </div>
+      <div class="out" id="gcOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 pearls -->
+<section id="pearls" class="col">
+  <div class="sec-num">10</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Hypernatremia บอกว่า "ผู้ป่วยไม่ได้น้ำ"</b> คนที่กระหายน้ำได้และเข้าถึงน้ำได้แทบไม่เกิด Na สูงค้าง มองหาผู้ป่วยซึม ใส่ท่อ ติดเตียง ผู้สูงอายุ และทารก</div></div>
+    <div class="pearl"><div><b>ตัด pseudohypernatremia ในผู้ป่วยวิกฤตที่ albumin ต่ำ</b> ส่ง Na ด้วย blood gas analyzer (direct ISE)</div></div>
+    <div class="pearl"><div><b>Hyperglycemia ซ่อน Na สูงไว้</b> HHS ที่ Na ปกติอาจขาดน้ำมาก แก้ค่าด้วย +1.6 ถึง +2.4 ต่อ glucose ที่เกิน 100 ทุก 100</div></div>
+    <div class="pearl"><div><b>ช็อกต้องให้ volume ก่อน</b> 0.9% NaCl หรือ balanced crystalloid จนความดันกลับ แม้ Na จะสูง แล้วค่อยเปลี่ยนเป็น free water</div></div>
+    <div class="pearl"><div><b>ไตที่ปกติควรให้ปัสสาวะน้อยและเข้มข้น</b> (&lt;500 mL/วัน, Uosm &gt;800) ถ้าปัสสาวะมากหรือเจือจางในขณะ Na สูง แปลว่าไตกำลังเสียน้ำ ให้คิดถึง DI หรือ osmotic diuresis</div></div>
+    <div class="pearl"><div><b>Uosm 300–800 ให้คำนวณ total solute excretion</b> &gt;750–1,000 mOsm/วัน = osmotic diuresis เช่น glucose, urea จากอาหารโปรตีนสูง, mannitol, postobstructive</div></div>
+    <div class="pearl"><div><b>อย่าลืม K และ Ca</b> hypoK &lt;3.0 และ hyperCa &gt;11 mg/dL ทำให้เกิด nephrogenic DI ได้ แก้แล้วการเสียน้ำจะลดลง</div></div>
+    <div class="pearl"><div><b>Water deficit คือขั้นต่ำ</b> ต้องบวก insensible loss และ ongoing loss ทางไตหรือ GI เสมอ ไม่อย่างนั้น Na จะลดช้ากว่าที่คำนวณ</div></div>
+    <div class="pearl"><div><b>ผู้ใหญ่: แก้ช้าอันตรายกว่าแก้เร็ว</b> ลด Na ช้ากว่า 6 mmol/L/วัน สัมพันธ์กับการตายมากขึ้น ใน chronic ตั้งเป้าราว 10–12 mmol/L/วัน และถ้าเผลอแก้เกิน ไม่ต้องให้ Na กลับขึ้น</div></div>
+    <div class="pearl"><div><b>Acute จาก Na loading ลดเร็วได้</b> 1–2 mmol/L/ชม. ใน 6–8 ชม.แรก ให้ถึง 145 ใน 24 ชม.</div></div>
+    <div class="pearl"><div><b>Rule of thumb</b> free water 3 mL/kg ลด Na ได้ราว 1 mmol/L · D5W 1.35 mL/kg/ชม. เป็นอัตราเริ่มต้นที่ใช้ง่าย</div></div>
+    <div class="pearl"><div><b>Na/K ในสารน้ำลด free water</b> 0.45% NaCl ให้ free water แค่ครึ่งเดียว ถ้าต้องเติม K หรือ Na ให้แยกสาย หรือคิดเฉพาะส่วน free water</div></div>
+    <div class="pearl"><div><b>Hypervolemic: D5W + loop diuretic</b> ให้ free water พร้อมขับ Na ส่วนเกิน</div></div>
+    <div class="pearl"><div><b>DI ใน ICU</b> หลังผ่าตัด/บาดเจ็บศีรษะ ให้ desmopressin ใน central DI · NDI จาก lithium ให้หยุดยา ± thiazide/amiloride</div></div>
+  </div>
+</section>
+
+<!-- 11 quiz -->
+<section id="quiz" class="col">
+  <div class="sec-num">11</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hyponatremia/index.html">อ่านต่อ: Hyponatremia: A practical approach →</a></p>
+<footer class="col">
+  สรุปจากบทความ <i>Evaluation and management of hypernatremia in adults: clinical perspectives</i> · Korean J Intern Med 2023 · ค้นผ่าน PubMed (PMID 36578134) · <a href="https://doi.org/10.3904/kjim.2022.346" target="_blank" rel="noopener">doi.org/10.3904/kjim.2022.346</a><br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา
+</footer>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+
+/* nav */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* approach toggle */
+function setView(w){$('apFull').hidden=w;$('apWalk').hidden=!w;$('apFullBtn').setAttribute('aria-pressed',!w);$('apWalkBtn').setAttribute('aria-pressed',w);
+  try{localStorage.setItem('hyperNaView',w?'walk':'full')}catch(e){}}
+$('apFullBtn').onclick=()=>setView(false);$('apWalkBtn').onclick=()=>setView(true);
+try{if(localStorage.getItem('hyperNaView')==='walk')setView(true)}catch(e){}
+
+/* walker */
+const T={
+ start:{q:'ผู้ป่วยช็อกหรือความดันต่ำหรือไม่?',o:[['ใช่','shock'],['ไม่','pseudo']]},
+ shock:{leaf:true,cls:'danger',t:'Resuscitate ก่อน',b:'ให้ <b>0.9% NaCl หรือ balanced crystalloid</b> จนแก้ volume ได้ ไม่ว่า Na เท่าไร แล้วจึงเริ่มให้ free water และหาสาเหตุต่อ',next:['ไปขั้นถัดไป','pseudo']},
+ pseudo:{q:'โปรตีนหรือไขมันในเลือดต่ำมาก และวัด Na ด้วย indirect ISE หรือไม่?',h:'เช่นผู้ป่วยวิกฤต albumin ต่ำ',o:[['ใช่ / ไม่แน่ใจ','pseudoLeaf'],['ไม่ใช่','glu']]},
+ pseudoLeaf:{leaf:true,t:'ตัด pseudohypernatremia',b:'ส่ง Na ซ้ำด้วย <b>direct ISE</b> (blood gas) หรือวัด serum osmolality ด้วย osmometer ถ้ายังสูงจริงจึงเดินต่อ',next:['Na สูงจริง → ไปต่อ','glu']},
+ glu:{q:'Glucose สูงหรือไม่?',o:[['สูง','gluLeaf'],['ปกติ','vol']]},
+ gluLeaf:{leaf:true,t:'แก้ค่า Na ตาม glucose',b:'Na + 0.016 (Katz) ถึง 0.024 (Hillier) × (glucose − 100) · Na ที่แก้แล้วสูงกว่าที่วัดได้ ขาดน้ำมากกว่าที่เห็น',next:['ไปต่อ: volume status','vol']},
+ vol:{q:'Volume status ทางคลินิก?',h:'BP, ชีพจร, orthostatic, JVP, เยื่อบุ, บวม',o:[['Hypovolemic','hypoU','ขาดน้ำ + Na'],['Euvolemic','uosm','ขาดน้ำอย่างเดียว'],['Hypervolemic','hyperL','ได้ Na hypertonic']]},
+ hypoU:{q:'Urine Na เท่าไร?',o:[['< 20 mmol/L','hypoExt'],['> 20 mmol/L','hypoRen']]},
+ hypoExt:{leaf:true,cls:'warn',t:'Hypovolemic · เสียน้ำนอกไต',b:'ท้องเสีย อาเจียน เหงื่อ แผลไหม้ lactulose · รักษา: ถ้าช็อกให้ isotonic ก่อน แล้วให้ hypotonic (D5W, 0.45%) ตาม water deficit + ongoing GI loss · ปรับอัตราตาม Na ที่ตรวจซ้ำ'},
+ hypoRen:{q:'Uosm และปริมาณปัสสาวะ?',h:'UNa > 20 ทั้งที่ volume ลด = เสียทางไต',o:[['Uosm 300–800 ปัสสาวะมาก','osmo'],['Uosm < 300 polyuria','di']]},
+ osmo:{leaf:true,cls:'warn',t:'Osmotic diuresis / ยาขับปัสสาวะ',b:'คำนวณ total solute excretion = Uosm × UV 24 ชม. · <b>&gt;750–1,000 mOsm/วัน</b> = osmotic diuresis (glucose, urea, mannitol, postobstructive, ATN ระยะฟื้น) · หยุดสาเหตุ คุมน้ำตาล · ชดเชยด้วย EFWC'},
+ uosm:{q:'Urine osmolality และปริมาณปัสสาวะ?',o:[['Uosm < 300 + polyuria (>3 L/วัน)','di','สงสัย DI'],['Uosm 300–800','mid'],['Uosm > 800, ปัสสาวะ < 500 mL/วัน','conc','ไตเก็บน้ำได้']]},
+ di:{q:'ให้ DDAVP แล้ว Uosm เป็นอย่างไร?',h:'วัดก่อนและหลังให้ desmopressin',o:[['เพิ่ม ≥ 50% และปัสสาวะลด','cdi'],['เพิ่ม < 50% หรือ < 150 mOsm/kg','ndi'],['เพิ่ม > 50% แต่ไม่ถึง 800','partial']]},
+ cdi:{leaf:true,cls:'teal',t:'Central diabetes insipidus',b:'หาสาเหตุ: ผ่าตัด/บาดเจ็บ pituitary, เนื้องอก, infiltrative · รักษา: desmopressin พ่นจมูก 10–20 µg ทุก 12–24 ชม. หรือกิน 0.1–0.8 mg ทุก 12 ชม. ร่วมกับให้ free water'},
+ ndi:{leaf:true,cls:'teal',t:'Nephrogenic diabetes insipidus',b:'Copeptin พื้นฐานสูง · ตรวจ <b>K &lt;3.0, Ca &gt;11</b>, lithium · หยุดยาที่เป็นเหตุ แก้ K/Ca · พิจารณา thiazide, amiloride 2.5–10 mg/วัน หรือ NSAID'},
+ partial:{leaf:true,cls:'teal',t:'Partial DI',b:'อาจเป็น central หรือ nephrogenic แบบไม่สมบูรณ์ · ใช้ copeptin และ water deprivation test ช่วยแยก'},
+ mid:{leaf:true,t:'Uosm 300–800',b:'Partial DI, central DI ร่วมกับ volume depletion หรือ osmotic diuresis → คำนวณ <b>total solute excretion</b> (&gt;750–1,000 = osmotic diuresis) และ EFWC'},
+ conc:{leaf:true,cls:'ok',t:'ไตตอบสนองปกติ',b:'เสียน้ำ<b>นอกไต</b> (ผิวหนัง ทางเดินหายใจ GI) หรือ <b>primary hypodipsia</b> · EFWC ใกล้ 0 · รักษา: ให้ free water ตาม deficit + insensible loss'},
+ hyperL:{leaf:true,cls:'violet',t:'Hypervolemic · hypertonic Na gain',b:'3% NaCl, NaHCO₃, อาหารทางสาย hypertonic, เกลือ · Uosm มัก &gt;800 (saline overload) · รักษา: หยุดแหล่ง Na ให้ <b>D5W + diuretic</b> · ถ้า acute มีอาการ ลด 1–2 mmol/L/ชม.'}
+};
+let path=['start'];
+const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)',teal:'var(--teal)'};
+function render(){
+  const n=T[path[path.length-1]];
+  $('apTrail').innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+  let h;
+  if(n.leaf){h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+    if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;}
+  else h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+  if(path.length>1)h+='<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn" id="wBack">← ย้อนกลับ</button><button class="btn" id="wReset">เริ่มใหม่</button></div>';
+  $('apStage').innerHTML=h;
+  $('apStage').querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+  if($('wBack')){$('wBack').onclick=()=>{path.pop();render()};$('wReset').onclick=()=>{path=['start'];render()}}
+}
+render();
+
+/* planner */
+const val=n=>{const e=document.querySelector(`input[name=${n}]:checked`);return e?e.value:null};
+function plan(){
+  const dur=val('dur'),hd=val('hd'),vol=val('vol'),na=num('pNa'),wt=num('pWt'),fac=parseFloat($('pTbw').value);
+  const s=[];
+  if(na!==null&&na<=145){$('pOut').innerHTML='Na ≤145 ไม่เข้าเกณฑ์ hypernatremia';return}
+  s.push('<b>แก้สาเหตุ:</b> หยุด lactulose/diuretic/ยาที่ทำให้ NDI/อาหารสายยาง hypertonic · คุมไข้และน้ำตาล · แก้ hypoK, hyperCa · แก้การอุดตันทางเดินปัสสาวะ');
+  if(hd==='shock')s.push('<b>ช็อก:</b> 0.9% NaCl หรือ balanced crystalloid ก่อน จนความดันกลับ ไม่ว่า Na เท่าไร');
+  let tbw=null,def=null;
+  if(wt&&na){tbw=wt*fac;def=tbw*(na/140-1)}
+  if(dur==='acute'){
+    s.push(`<b>Acute มีอาการ:</b> ลด Na <span class="mono">1–2 mmol/L/ชม.</span> ใน 6–8 ชม.แรก ให้ถึง 145 ภายใน 24 ชม.${na?` (ลดทั้งหมด ~${Math.round(na-145)} mmol/L)`:''}`);
+  }else{
+    const lo=na?Math.max(na-12,140):null,hi=na?na-6:null;
+    s.push(`<b>Chronic:</b> เป้า &lt;0.5 mmol/L/ชม. (≤12/วัน) และ<b>ไม่ช้ากว่า 6/วัน</b>${na?` → Na ที่ 24 ชม. ควรอยู่ราว <span class="mono">${Math.round(lo)}–${Math.round(hi)}</span>`:''} · ถ้าเผลอเกินไม่ต้องให้ Na กลับขึ้น`);
+  }
+  if(def!==null){
+    const r48=def*1000/48;
+    s.push(`<b>Water deficit:</b> ${f1(tbw)} × (${na}/140 − 1) = <span class="mono">${f1(def)} L</span> → ให้ใน 48–72 ชม. ≈ <span class="mono">${Math.round(def*1000/72)}–${Math.round(r48)} mL/ชม.</span> <i>บวก</i> insensible และ ongoing loss`);
+    s.push(`<b>หรือ fixed regimen:</b> D5W <span class="mono">${Math.round(1.35*wt)} mL/ชม.</span> (1.35 mL/kg/ชม.)${dur==='acute'?` · ลดเร็ว: <span class="mono">${Math.round(3*wt)} mL/ชม.</span> (3 mL/kg/ชม. ≈ Na ลด 1 mmol/L/ชม.)`:''}`);
+  }
+  const V={hypo:'<b>Hypovolemic:</b> หลังแก้ volume ให้ hypotonic (D5W, 0.45% หรือ 0.2% NaCl) · ถ้าใช้ 0.45% คิด free water แค่ครึ่ง',
+    eu:'<b>Euvolemic:</b> ให้ free water (D5W หรือน้ำเปล่าทางปาก/สายยาง) ตาม deficit + insensible',
+    hyper:'<b>Hypervolemic:</b> หยุดแหล่ง Na ให้ <b>D5W + diuretic</b> คง negative fluid balance'};
+  s.push(V[vol]);
+  if($('pGI').checked)s.push('<b>เสียน้ำทาง GI ต่อเนื่อง:</b> วัดยาก เริ่มตามแผน ตรวจ Na ซ้ำ ถ้าลดช้ากว่าเป้าให้เพิ่มอัตรา');
+  if($('pK').checked)s.push('<b>K ต่ำ:</b> เติม K แต่ K ลด free water ของสารน้ำ หรือแยกสาย iso-osmotic Na/K ต่างหาก');
+  if($('pDI').checked)s.push('<b>สงสัย DI:</b> ทำ DDAVP test · central: desmopressin 10–20 µg พ่นจมูก หรือ 0.1–0.8 mg กิน ทุก 12 ชม. · nephrogenic: หยุดยา ± thiazide/amiloride · คำนวณ EFWC เพื่อชดเชยปัสสาวะ');
+  s.push(`<b>ติดตาม:</b> ตรวจ Na ซ้ำ${dur==='acute'?' ทุก 2 ชม.':' ทุก 4–6 ชม.'} <span class="tag add">เสริม</span> บันทึก intake/output และปรับอัตรา`);
+  $('pOut').innerHTML='<ol>'+s.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+document.querySelectorAll('.plan input,.plan select').forEach(e=>e.addEventListener('input',plan));plan();
+
+/* water deficit */
+function wd(){
+  const fac=parseFloat($('wdSex').value),wt=num('wdWt'),na=num('wdNa'),hr=parseFloat($('wdHr').value);
+  if(!wt||!na){$('wdOut').textContent='ใส่น้ำหนักและ Na';return}
+  if(na<=140){$('wdOut').textContent='Na ≤140 ไม่มี water deficit';return}
+  const tbw=wt*fac,d=tbw*(na/140-1);
+  $('wdOut').innerHTML=`TBW <span class="mono">${f1(tbw)} L</span><br>Water deficit <span class="big">${f1(d)} L</span><br>ให้ใน ${hr} ชม. ≈ <b class="mono">${Math.round(d*1000/hr)} mL/ชม.</b> + insensible + ongoing loss<br><span class="muted">Fixed regimen D5W 1.35 mL/kg/ชม. = ${Math.round(1.35*wt)} mL/ชม.</span>`;
+}
+['wdSex','wdWt','wdNa','wdHr'].forEach(i=>$(i).addEventListener('input',wd));wd();
+
+/* AM */
+function am(){
+  const fac=parseFloat($('amSex').value),wt=num('amWt'),na=num('amNa'),fl=parseFloat($('amFl').value),k=num('amK')||0,goal=num('amGoal');
+  if(!wt||!na){$('amOut').textContent='ใส่น้ำหนักและ Na';return}
+  const tbw=wt*fac,d=(fl+k-na)/(tbw+1);
+  let s=`Na เปลี่ยน <span class="big">${d>0?'+':''}${f1(d)}</span> mmol/L ต่อ 1 L`;
+  if(d<0&&goal)s+=`<br>เพื่อลด ${goal} mmol/L ใช้ ≈ <b class="mono">${f1(goal/-d)} L</b> (ยังไม่รวม ongoing loss)`;
+  if(d>=0)s+='<br><span class="muted">สารน้ำนี้ไม่ลด Na</span>';
+  s+='<br><span class="muted">ทำนายไม่แม่นเมื่อ volume ลดมากหรือไตเสื่อม</span>';
+  $('amOut').innerHTML=s;
+}
+['amSex','amWt','amNa','amFl','amK','amGoal'].forEach(i=>$(i).addEventListener('input',am));am();
+
+/* EFWC */
+function ef(){
+  const uv=num('efUV'),uo=num('efUosm'),una=num('efUNa'),uk=num('efUK'),sna=num('efSNa');
+  if(uv===null||una===null||uk===null||!sna){$('efOut').textContent='ใส่ค่าให้ครบ';return}
+  const e=uv*(1-(una+uk)/sna);
+  let t=e>0.5?'บวก → <b>เสียน้ำทางไต</b> (osmotic diuresis, diuretic, ไตวาย, DI) ต้องชดเชยเพิ่มเท่านี้ต่อวัน':e>=-0.1?'ใกล้ 0 → นึกถึงเสียน้ำ<b>นอกไต</b> (GI/insensible)':'ติดลบ → ไตเก็บน้ำ (พบน้อย)';
+  let s=`EFWC <span class="big">${f2(e)}</span> L/วัน<br>${t}`;
+  if(uo!==null){const sol=uo*uv;s+=`<br>Total solute excretion <b class="mono">${Math.round(sol)}</b> mOsm/วัน ${sol>750?'→ <b>osmotic diuresis</b> (>750–1,000)':'(ไม่เข้าเกณฑ์ osmotic diuresis)'}`;
+    s+=`<br>${uo<300&&uv>3?'Uosm <300 + polyuria → <b>สงสัย DI</b> ทำ DDAVP test':uo>800?'Uosm >800 → ไตเก็บน้ำได้ปกติ':''}`;}
+  $('efOut').innerHTML=s;
+}
+['efUV','efUosm','efUNa','efUK','efSNa'].forEach(i=>$(i).addEventListener('input',ef));ef();
+
+/* glucose */
+function gc(){
+  const na=num('gcNa'),g=num('gcGlu');
+  if(na===null||g===null){$('gcOut').textContent='ใส่ค่าให้ครบ';return}
+  const x=Math.max(g-100,0),k=na+0.016*x,h=na+0.024*x;
+  $('gcOut').innerHTML=`Katz (1.6) <span class="big">${f1(k)}</span><br>Hillier (2.4) <b class="mono">${f1(h)}</b> mmol/L${h>145&&na<=145?'<br><b>Na ที่แก้แล้วเข้าเกณฑ์ hypernatremia</b> แม้ค่าที่วัดได้ปกติ':''}`;
+}
+['gcNa','gcGlu'].forEach(i=>$(i).addEventListener('input',gc));gc();
+
+/* quiz */
+const Q=[
+ ['ชายสูงอายุติดเตียง Na 165 ปัสสาวะ 400 mL/วัน Uosm 900 นึกถึงอะไร',['Central DI','Nephrogenic DI','เสียน้ำนอกไต/ดื่มน้ำไม่ได้','Osmotic diuresis'],2,'ปัสสาวะน้อยและเข้มข้น (<500 mL/วัน, Uosm >800) คือไตตอบสนองปกติ ปัญหาอยู่ที่ได้น้ำไม่พอหรือเสียน้ำนอกไต'],
+ ['หลังผ่าตัด pituitary ปัสสาวะ 6 L/วัน Uosm 120 ให้ DDAVP แล้ว Uosm เป็น 350 และปัสสาวะลด แปลผลอย่างไร',['Nephrogenic DI','Central DI','Primary polydipsia','Osmotic diuresis'],1,'Uosm เพิ่มเกิน 50% ร่วมกับปัสสาวะลดหลัง DDAVP = central DI'],
+ ['ผู้ป่วย HHS: UV 5 L/วัน Uosm 450 ข้อใดสนับสนุน osmotic diuresis มากที่สุด',['EFWC ใกล้ 0','Total solute excretion 2,250 mOsm/วัน','UNa < 20','Copeptin ต่ำ'],1,'450 × 5 = 2,250 mOsm/วัน เกินเกณฑ์ 750–1,000 จึงเป็น osmotic diuresis'],
+ ['หญิง 60 kg Na 166 water deficit ตามบทความเป็นเท่าไร (TBW 0.5)',['2.8 L','4.2 L','5.6 L','7.0 L'],2,'0.5 × 60 × (166/140 − 1) ≈ 5.6 L ให้ใน 48–72 ชม. บวก ongoing loss'],
+ ['ผู้ป่วย hypernatremia ความดัน 75/40 ควรให้สารน้ำใดก่อน',['D5W','0.45% NaCl','0.9% NaCl หรือ balanced crystalloid','3% NaCl'],2,'ช็อกต้องแก้ volume ด้วย isotonic ก่อนไม่ว่า Na เท่าไร แล้วค่อยให้ free water'],
+ ['ในผู้ใหญ่ chronic hypernatremia ข้อใดถูกต้องตามบทความ',['ลด Na ให้ช้าที่สุดดีที่สุด','ถ้าเผลอแก้เกินต้องให้ 3% NaCl ทันที','แก้ช้ากว่า 6 mmol/L/วัน สัมพันธ์กับการตายมากขึ้น','ห้ามลดเกิน 4 mmol/L/วัน'],2,'การศึกษาในผู้ใหญ่พบว่าแก้ช้า (<0.25 mmol/L/ชม.) มีอัตราตายสูงกว่า และการแก้เร็วไม่สัมพันธ์กับอันตราย ถ้าแก้เกินไม่ต้องให้ Na กลับขึ้น']
+];
+$('qz').innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+$('qz').querySelectorAll('.qcard').forEach(card=>{
+  const q=Q[+card.dataset.i],bs=card.querySelectorAll('button.c');
+  bs.forEach(b=>b.onclick=()=>{bs.forEach(x=>x.classList.remove('right','wrong'));const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');bs[q[2]].classList.add('right');
+    const ex=card.querySelector('.ex');ex.hidden=false;ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3]});
+});
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
