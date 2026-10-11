@@ -1,0 +1,800 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hypokalemia Clinical Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: third page of the electrolyte set — same reading column and sticky chip nav; accent is an ECG-paper indigo, the U wave is the page's motif */
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --sunk:#E8EAF2; --ink:#161A2B; --muted:#555B72; --line:#D3D7E4;
+  --accent:#3B4AA6; --accent-soft:#E2E5F6; --accent-ink:#29347A;
+  --warn:#8A6A08; --warn-soft:#F7EFD3;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --plum:#8A3D7A; --plum-soft:#F4E3EF;
+  --teal:#0B7480; --teal-soft:#DDF0F2;
+  --grid:#E9B8B8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10121C; --surface:#181B28; --sunk:#212536; --ink:#E5E8F3; --muted:#9CA2BA; --line:#2E3348;
+  --accent:#97A4F2; --accent-soft:#232A52; --accent-ink:#C3CBFA;
+  --warn:#E2C25C; --warn-soft:#322A12; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --plum:#E19BD2; --plum-soft:#3A1D34;
+  --teal:#4DC2CC; --teal-soft:#12333A; --grid:#4A2A2E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10121C; --surface:#181B28; --sunk:#212536; --ink:#E5E8F3; --muted:#9CA2BA; --line:#2E3348;
+  --accent:#97A4F2; --accent-soft:#232A52; --accent-ink:#C3CBFA;
+  --warn:#E2C25C; --warn-soft:#322A12; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --plum:#E19BD2; --plum-soft:#3A1D34;
+  --teal:#4DC2CC; --teal-soft:#12333A; --grid:#4A2A2E; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.ecg{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 12px 8px;overflow-x:auto}
+.ecg svg{display:block;width:100%;min-width:520px;height:auto}
+.ecg .cap{display:flex;justify-content:space-between;gap:8px;font-size:.78rem;color:var(--muted);min-width:520px}
+.scale{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 33.3%,var(--warn) 33.3%,var(--warn) 66.6%,var(--ok) 66.6%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul,ol{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--plum-soft);color:var(--plum)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.c-int{border-top:4px solid var(--muted)}
+.card.c-shift{border-top:4px solid var(--teal)}
+.card.c-gi{border-top:4px solid var(--warn)}
+.card.c-ren{border-top:4px solid var(--accent)}
+.stat{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent);line-height:1.2;display:block}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap;margin:8px 0}
+
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.gi{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.ren{border-color:var(--accent)}
+.node.dx.plum{border-color:var(--plum);background:var(--plum-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.dx.teal{border-color:var(--teal);background:var(--teal-soft)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer;position:relative}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">สรุปบทความ · Endocrine Connections 2018</div>
+  <h1>Hypokalemia:<br>A clinical update</h1>
+  <p class="sub">สรุปภาษาไทยครบทุกหัวข้อ ตั้งแต่สรีรวิทยาของโพแทสเซียม สาเหตุ อาการ การแยก renal กับ non-renal loss ด้วย urine K และ acid–base โรคทางต่อมไร้ท่อ ไปจนถึงการรักษา พร้อมแผนผังที่คลิกเดินตามได้และเครื่องคำนวณข้างเตียง</p>
+  <p class="cite">ค้นผ่าน PubMed (PMID 29540487) · <a href="https://doi.org/10.1530/EC-18-0109" target="_blank" rel="noopener">DOI 10.1530/EC-18-0109</a></p>
+  <div class="ecg" aria-label="ภาพ ECG เปรียบเทียบคลื่นปกติกับ hypokalemia">
+    <svg viewBox="0 0 520 110" role="img" aria-label="ECG ปกติเทียบกับ hypokalemia ที่มี ST กด T แบน และ U wave เด่น">
+      <defs><pattern id="g" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="var(--grid)" stroke-width=".6"/></pattern></defs>
+      <rect x="0" y="0" width="520" height="110" fill="url(#g)"/>
+      <path d="M0 70 H20 q6 -8 12 0 H44 l4 6 l6 -54 l6 62 l4 -14 H84 q14 -22 28 0 H140 q6 -8 12 0 H164 l4 6 l6 -54 l6 62 l4 -14 H204 q14 -22 28 0 H250" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M270 70 H290 q6 -8 12 0 H314 l4 6 l6 -54 l6 62 l4 -10 H350 q10 -6 22 0 q8 -14 18 0 H410 q6 -8 12 0 H434 l4 6 l6 -54 l6 62 l4 -10 H470 q10 -6 22 0 q8 -14 18 0 H520" fill="none" stroke="var(--danger)" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="376" y="48" font-size="10" fill="var(--danger)" font-family="IBM Plex Mono, monospace">T แบน</text>
+      <text x="392" y="98" font-size="10" fill="var(--danger)" font-family="IBM Plex Mono, monospace">U wave</text>
+      <path d="M396 88 L384 62" stroke="var(--danger)" stroke-width=".8"/>
+    </svg>
+    <div class="cap"><span>ปกติ</span><span>Hypokalemia: ST กด · T แบน · U wave เด่น (V4–V6)</span></div>
+  </div>
+  <div class="scale" aria-label="ระดับ serum potassium">
+    <div class="scale-bar"></div>
+    <div class="scale-ticks">
+      <div class="tick l" style="left:0"><b>1.5</b>&nbsp;</div>
+      <div class="tick" style="left:33.3%"><b>2.5</b>รุนแรง · ให้ IV</div>
+      <div class="tick" style="left:50%"><b>3.0</b>เริ่มมีอาการ</div>
+      <div class="tick" style="left:66.6%"><b>3.5</b>นิยาม</div>
+      <div class="tick r" style="left:100%"><b>4.5</b>mEq/L</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#overview">ภาพรวม</a><a href="#physio">สรีรวิทยา</a><a href="#causes">สาเหตุ</a><a href="#symptoms">อาการ</a><a href="#workup">ส่งตรวจ</a><a href="#tubulo">Bartter · Gitelman · Liddle</a><a href="#endo">ต่อมไร้ท่อ</a><a href="#approach">แผนผัง Approach</a><a href="#manage">แผนผัง Management</a><a href="#treat">การให้ K</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 01 -->
+<section id="overview" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและความชุก</h2>
+  <div class="box key"><b>นิยาม</b>Serum K <span class="mono">&lt;3.5 mEq/L</span> (ปกติ 3.5–5.0) · <b>รุนแรงและอาจถึงชีวิต</b> เมื่อ K <span class="mono">&lt;2.5</span></div>
+  <div class="grid4">
+    <div class="card"><span class="stat">~14%</span>ผู้ป่วยนอกที่ส่งตรวจเลือด (mild)</div>
+    <div class="card"><span class="stat">~20%</span>ผู้ป่วยใน · มีนัยสำคัญทางคลินิกเพียง 4–5%</div>
+    <div class="card"><span class="stat">~80%</span>ของผู้ได้ยาขับปัสสาวะ</div>
+    <div class="card"><span class="stat">&gt;50%</span>ของรายที่มีนัยสำคัญ มี Mg ต่ำร่วม</div>
+  </div>
+  <p>ชายและหญิงพบพอ ๆ กัน ส่วนใหญ่เกิดจาก<b>เสีย K ทางไตหรือทางเดินอาหาร</b>หรือ <b>K เคลื่อนเข้าเซลล์</b> ที่เกิดจากกินน้อยพบน้อยกว่า</p>
+</section>
+
+<!-- 02 -->
+<section id="physio" class="col">
+  <div class="sec-num">02</div>
+  <h2>สรีรวิทยาของโพแทสเซียม</h2>
+  <div class="grid2">
+    <div class="card"><h4>บทบาทในเซลล์</h4>K เป็น cation หลักในเซลล์ Na-K-ATPase สูบ Na ออก K เข้า ทำให้เกิด gradient และศักย์ไฟฟ้าข้ามเยื่อหุ้มเซลล์ อยู่นอกเซลล์เพียง <b>2%</b> (ราว 4 mEq/L)
+      <ul><li>Hyperkalemia ลด membrane potential</li><li><b>Hypokalemia ทำให้ hyperpolarization</b> เยื่อหุ้มเซลล์ไม่ตอบสนอง</li><li>K แลกกับ H⁺ และกำหนดการสร้าง ammonium ที่ไต จึงเกี่ยวกับ acid–base</li></ul></div>
+    <div class="card"><h4>สมดุลภายนอก (ต่อวัน)</h4>
+      <div class="tbl" style="margin:6px 0"><table style="min-width:0">
+        <tr><td>กินเข้า</td><td class="mono">~100 mEq</td></tr>
+        <tr><td>ขับทางปัสสาวะ</td><td class="mono">~90 mEq</td></tr>
+        <tr><td>ขับทางอุจจาระ</td><td class="mono">~10 mEq</td></tr></table></div>
+      <b>สมดุลภายใน</b> (กระจายเข้า–ออกเซลล์) ควบคุมโดย <b>insulin และ catecholamine</b> เป็นหลัก กล้ามเนื้อลายเป็นตัวกันชนระยะสั้น เพราะไตปรับการขับต้องใช้เวลาหลายชั่วโมง</div>
+  </div>
+  <h3>การขับ K ที่ไต</h3>
+  <ul>
+    <li>K กรองผ่าน glomerulus ได้อิสระ ดูดกลับเกือบหมดที่ proximal tubule (ตาม Na และน้ำ) และ thick ascending limb (ผ่าน <b>NKCC2</b>)</li>
+    <li>การขับ K ที่ปรับตามความต้องการเกิดที่ <b>principal cell</b> ของ connecting segment และ collecting duct ผ่านช่อง <b>ROMK</b> (ช่องหลัก) และ <b>maxi-K (BK)</b> ที่เปิดเมื่อ flow สูง</li>
+    <li>Intercalated cell ดูด K กลับผ่าน <b>H-K-ATPase</b></li>
+    <li>ตัวกำหนดหลัก 2 อย่าง: <b>mineralocorticoid activity</b> และ <b>distal delivery ของ Na และน้ำ</b></li>
+  </ul>
+  <div class="box key"><b>Aldosterone paradox</b>เมื่อ volume ลด aldosterone (ผ่าน angiotensin II) ทำให้เก็บ Na โดยไม่ขับ K เพิ่ม แต่เมื่อ K สูง aldosterone (กระตุ้นโดยตรงที่ zona glomerulosa) ทำให้ขับ K โดยไม่เก็บ Na เพิ่ม</div>
+  <div class="box warn"><b>ไตเพิ่มการขับ K ได้ดีกว่าลด</b>การกินน้อยจึงทำให้ขาด K ได้ ส่วน hyperkalemia มักเกิดเมื่อ GFR <span class="mono">&lt;20 mL/min</span></div>
+</section>
+
+<!-- 03 -->
+<section id="causes">
+  <div class="col">
+    <div class="sec-num">03</div>
+    <h2>สาเหตุ</h2>
+    <p>แบ่งได้ 4 กลุ่ม การเสีย K ทางปัสสาวะหรือทางเดินอาหารพบบ่อยกว่ากินน้อย</p>
+  </div>
+  <div class="grid4">
+    <div class="card c-int"><h4>กินน้อย</h4><ul><li>อดอาหาร anorexia</li><li>Alcoholism, malnutrition</li><li>มักเป็นปัจจัยร่วมมากกว่าสาเหตุเดี่ยว</li></ul></div>
+    <div class="card c-shift"><h4>เคลื่อนเข้าเซลล์</h4><ul><li><b>Insulin</b> (DKA ที่เริ่มรักษา)</li><li>กระตุ้น sympathetic, β₂-agonist</li><li><b>Thyrotoxicosis</b></li><li><b>Familial periodic paralysis</b></li><li>Alkalosis, refeeding <span class="tag add">เสริม</span></li></ul><span class="muted" style="font-size:.85rem">K ทั้งร่างกายไม่ได้ลด</span></div>
+    <div class="card c-gi"><h4>เสียทางเดินอาหาร</h4><ul><li>ท้องเสียนาน อาเจียน</li><li><b>Laxative abuse</b></li><li>ลำไส้อุดตัน ติดเชื้อ</li><li>Villous adenoma, VIPoma</li><li>NG suction</li></ul></div>
+    <div class="card c-ren"><h4>เสียทางไต (kaliuresis)</h4><ul><li><b>Diuretics</b> (loop, thiazide)</li><li>Primary hyperaldosteronism</li><li>RTA type 1, 2 · DKA</li><li>Bartter, Gitelman, Liddle</li><li>CAH, Cushing, AME, ชะเอม</li><li>Penicillin ขนาดสูง</li><li><b>Hypomagnesemia</b></li></ul></div>
+  </div>
+  <div class="box danger col"><b>Hypomagnesemia</b>พบร่วมใน <b>&gt;50%</b> ของ hypokalemia ที่มีนัยสำคัญ โดยเฉพาะผู้ได้ loop หรือ thiazide · Mg ต่ำทำให้ K ต่ำมากขึ้นและ<b>ดื้อต่อการให้ K</b> ถ้ายังไม่แก้ Mg</div>
+  <p class="muted col" style="font-size:.85rem">ตารางสาเหตุในต้นฉบับเป็นภาพ รายการในการ์ดสรุปจากเนื้อความของบทความ ส่วนที่ติดป้าย "เสริม" มาจากตำรามาตรฐาน</p>
+</section>
+
+<!-- 04 -->
+<section id="symptoms" class="col">
+  <div class="sec-num">04</div>
+  <h2>อาการและอาการแสดง</h2>
+  <p>ความรุนแรงแปรตามระดับและระยะเวลาที่ K ต่ำ มักไม่มีอาการจนกว่า K <span class="mono">&lt;3.0</span> ยกเว้น K ลดเร็ว หรือมีปัจจัยเสริม เช่น <b>ได้ digitalis</b> ซึ่งเสี่ยง arrhythmia อาการมักหายเมื่อแก้ K</p>
+  <div class="tbl"><table>
+    <tr><th>ระบบ</th><th>อาการ</th></tr>
+    <tr><td><b>หัวใจ</b></td><td>ECG เปลี่ยน, arrhythmia (อาจถึงชีวิต), heart failure</td></tr>
+    <tr><td><b>ประสาทและกล้ามเนื้อ</b></td><td>ตะคริวที่ขา อ่อนแรง paresis หรือ <b>ascending paralysis</b> · K ต่ำมาก: <b>หายใจล้มเหลว</b></td></tr>
+    <tr><td><b>ทางเดินอาหาร</b></td><td>ท้องผูก ลำไส้หยุดทำงาน (ileus)</td></tr>
+    <tr><td><b>ไต</b></td><td>Rhabdomyolysis (K ต่ำมาก) · บางรายท่อไตทำงานผิดปกติ, chronic tubulointerstitial disease, ถุงน้ำในไต · ต้นฉบับระบุ metabolic acidosis <span class="tag fix">แก้ข้อความ</span></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.85rem"><span class="tag fix">แก้ข้อความ</span> โดยกลไก hypokalemia เพิ่มการสร้าง ammonia และการดูด HCO₃ กลับที่ไต จึงทำให้เกิดหรือคง <b>metabolic alkalosis</b> และอาจกระตุ้น hepatic encephalopathy ในผู้ป่วยโรคตับ ไม่ใช่ acidosis</p>
+  <h3>ECG (แนะนำทำทุกราย)</h3>
+  <div class="grid2">
+    <div class="card"><h4>รูปคลื่น</h4><ul><li>ST segment กด</li><li>T wave เตี้ยลง</li><li><b>U wave สูงขึ้น</b> (มักเห็นที่ V4–V6)</li></ul></div>
+    <div class="card"><h4>Arrhythmia</h4><ul><li>Sinus bradycardia</li><li>PAC, PVC</li><li>Paroxysmal atrial หรือ junctional tachycardia</li><li>AV block</li><li><b>VT หรือ VF</b></li></ul></div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section id="workup" class="col">
+  <div class="sec-num">05</div>
+  <h2>การส่งตรวจ</h2>
+  <p>ส่วนใหญ่สาเหตุชัดจากประวัติและตรวจร่างกาย (อาเจียน ท้องเสีย ยาขับปัสสาวะ) การตรวจภาพต่อมไร้ท่อไม่ควรเป็นขั้นแรก ยกเว้นสงสัยมาก</p>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">A</span><span class="t">ตรวจพื้นฐาน</span></summary><div class="body">
+      <ul>
+        <li><b>Na, K, glucose, Cl, HCO₃, BUN, Cr</b> เป็นแกนหลัก</li>
+        <li><b>Spot urine K และ Cl</b> แยก renal จาก non-renal</li>
+        <li><b>ABG</b> เมื่อประวัติไม่ชัด เพื่อดู acidosis หรือ alkalosis (K จากเลือดดำใช้ได้ ต่างจากเลือดแดงไม่มาก)</li>
+        <li>Urinalysis และ <b>urine pH</b> หา RTA</li>
+        <li><b>Mg, Ca, PO₄</b> โดยเฉพาะสงสัยสุรา</li>
+        <li><b>Urine Ca</b> แยก Bartter</li>
+        <li>ระดับ digoxin ถ้าได้ยา</li>
+        <li>Drug screen ในปัสสาวะ/เลือด (diuretic, amphetamine, sympathomimetic) เมื่อสงสัย</li>
+        <li><b>TSH</b> เมื่อหัวใจเต้นเร็วหรือสงสัย hypokalemic periodic paralysis</li>
+      </ul></div></details>
+    <details class="step" open><summary><span class="n">B</span><span class="t">หัวใจของการวินิจฉัย ① urine K excretion</span></summary><div class="body">
+      <div class="tbl"><table>
+        <tr><th>วิธี</th><th>เกณฑ์เสีย K ทางไตไม่เหมาะสม</th></tr>
+        <tr><td>Urine 24 ชม. (ดีที่สุด)</td><td class="mono">&gt;15 mEq/วัน</td></tr>
+        <tr><td>Spot urine K/Cr</td><td class="mono">&gt;13 mEq/g Cr (1.5 mEq/mmol)</td></tr>
+      </table></div>
+      <p class="muted" style="font-size:.9rem"><span class="tag add">เสริม</span> TTKG เคยใช้กันมาก แต่ผู้เสนอสูตรเองแนะนำให้เลิกใช้แล้ว เพราะสมมติฐานเรื่องการดูดกลับ urea ใน medulla ไม่ถูกต้อง</p></div></details>
+    <details class="step" open><summary><span class="n">C</span><span class="t">หัวใจของการวินิจฉัย ② acid–base</span></summary><div class="body">
+      <div class="tbl"><table>
+        <tr><th></th><th>Urine K ต่ำ (non-renal)</th><th>Urine K สูง (renal)</th></tr>
+        <tr><td><b>Metabolic acidosis</b></td><td>เสียทางลำไส้ส่วนล่าง: <b>laxative abuse</b>, villous adenoma, ท้องเสีย</td><td><b>DKA</b>, RTA type 1 (distal) และ type 2 (proximal)</td></tr>
+        <tr><td><b>Metabolic alkalosis</b></td><td>อาเจียนแอบทำ (bulimia), เคยได้ diuretic, laxative บางราย</td><td>BP ปกติ: diuretic, อาเจียน, Gitelman, Bartter → ดู <b>urine Cl</b><br>BP สูง: diuretic แอบใช้, renovascular, mineralocorticoid excess</td></tr>
+      </table></div>
+      <div class="box key"><b>Urine Cl ในกลุ่ม alkalosis + BP ปกติ</b>อาเจียน: UCl <b>ต่ำ</b> (UNa และ UK อาจสูงเพราะขับ HCO₃) · Diuretic: สูงหรือต่ำแล้วแต่ช่วงเวลาที่ยาออกฤทธิ์ · Bartter/Gitelman: <b>ปกติ</b> (เท่ากับที่กิน) ตลอด</div></div></details>
+    <details class="step"><summary><span class="n">D</span><span class="t">ตรวจเพิ่ม: ภาพถ่ายและ ECG</span></summary><div class="body">
+      <ul>
+        <li><b>CT/MRI adrenal</b> เมื่อสงสัย mineralocorticoid, glucocorticoid หรือ catecholamine excess · <b>MRI pituitary</b> เพื่อหา Cushing's disease</li>
+        <li><b>CT ช่องท้อง</b> เมื่อสงสัย <b>VIPoma</b>: ท้องเสียเป็นน้ำแม้อดอาหาร สีน้ำชา ไม่มีกลิ่น &gt;700 mL/วัน ปวดท้องน้อย หน้าแดงเป็นพัก ๆ · CT ไม่ชัดทำ pentetreotide scintigraphy หรือ EUS</li>
+        <li><b>ECG ทุกราย</b></li>
+      </ul></div></details>
+  </div>
+</section>
+
+<!-- 06 -->
+<section id="tubulo" class="col">
+  <div class="sec-num">06</div>
+  <h2>Bartter, Gitelman และ Liddle</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Bartter</th><th>Gitelman</th><th>Liddle</th></tr>
+    <tr><td>ตำแหน่งโรค</td><td>Thick ascending limb (TAL)</td><td>Distal convoluted tubule (DCT)</td><td>ENaC ทำงานตลอดเวลา</td></tr>
+    <tr><td>การถ่ายทอด</td><td>AR</td><td>AR</td><td>AD</td></tr>
+    <tr><td>เริ่มอาการ</td><td>วัยเด็กเล็ก โตช้ามาก</td><td>มักพบโดยบังเอิญ โตช้าน้อยกว่า</td><td>อายุน้อย ความดันสูงมาก</td></tr>
+    <tr><td>ความดัน</td><td>ปกติ</td><td>ปกติหรือต่ำเป็นครั้งคราว</td><td><b>สูง</b></td></tr>
+    <tr><td>Acid–base</td><td colspan="2">Hypokalemic hypochloremic metabolic alkalosis</td><td>Metabolic alkalosis</td></tr>
+    <tr><td>Renin / Aldo</td><td colspan="2">สูง / สูง</td><td><b>ต่ำ / ต่ำ</b> (pseudoaldosteronism)</td></tr>
+    <tr><td><b>Urine Ca</b></td><td><b>Hypercalciuria</b></td><td><b>Hypocalciuria</b></td><td>–</td></tr>
+    <tr><td>อื่น ๆ</td><td>FSGS ได้</td><td>คล้ายผู้ใช้ thiazide · Mg ต่ำ <span class="tag add">เสริม</span></td><td>ตายจากภาวะแทรกซ้อนของความดัน</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card"><h4>Gitelman เมื่อถามละเอียด</h4><ul><li>80% เวียนศีรษะ อ่อนเพลีย</li><li>70% กล้ามเนื้ออ่อนแรง ตะคริว</li><li>50% ปัสสาวะกลางคืน ปัสสาวะมาก (90% ของกลุ่มนี้เป็น salt waster)</li></ul></div>
+    <div class="card"><h4>ข้อควรระวังระยะยาว</h4><ul><li>ปัญหาหลักคือไม่กิน KCl ตามสั่ง</li><li>ท้องเสียหรืออาเจียนซ้ำเติมจน <b>QT ยาว</b>, rhabdomyolysis, arrhythmia, หมดสติ, ตายเฉียบพลัน</li><li>สุรา โคเคน หรือสารเสพติดอื่นกระตุ้น arrhythmia ได้</li><li>ภาวะฉุกเฉิน: แก้น้ำและเกลือแร่ KCl กิน K-sparing diuretic, COX inhibitor, RAS blocker</li></ul></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section id="endo" class="col">
+  <div class="sec-num">07</div>
+  <h2>สาเหตุทางต่อมไร้ท่อ</h2>
+  <h3>Primary aldosteronism (PA)</h3>
+  <ul>
+    <li><b>คัดกรองทุกราย</b>ที่มี hypokalemia (เกิดเองหรือจาก diuretic) ร่วมกับความดันสูง ด้วย <b>aldosterone/renin ratio (ARR)</b></li>
+    <li>กลุ่มเสี่ยงที่ควรตรวจ ARR: ความดัน stage 1 (160–179/100–109) หรือ stage 2 (≥180/110), resistant hypertension, ความดันสูงร่วมกับ adrenal incidentaloma, ครอบครัวมีความดันสูงหรือ stroke ก่อนอายุ 40 ปี</li>
+    <li>ต้นฉบับระบุว่า ARR &gt;20 ไม่ต้องทำ confirmatory test <span class="tag fix">แก้ข้อความ</span></li>
+    <li><b>CT adrenal ทุกราย</b>ที่เป็น PA (ตัด adrenocortical carcinoma ด้วย)</li>
+    <li><b>Adrenal venous sampling</b> แยกข้างเดียวกับสองข้าง เมื่อพร้อมผ่าตัด</li>
+    <li>ตรวจยีน <b>GRA</b> (familial hyperaldosteronism type 1) เมื่อ PA เริ่มก่อน 20 ปี หรือครอบครัวมี PA/stroke ก่อน 40 ปี · อายุน้อยมาก ตรวจ <b>KCNJ5</b> (FH type 3)</li>
+  </ul>
+  <p class="muted" style="font-size:.85rem"><span class="tag fix">แก้ข้อความ</span> ARR เป็นการ<b>คัดกรอง</b> ตามแนวทาง Endocrine Society จะงด confirmatory test (saline infusion, oral salt loading, fludrocortisone suppression, captopril challenge) ได้เฉพาะเมื่อมี hypokalemia ที่เกิดเอง renin ต่ำจนวัดไม่ได้ และ aldosterone &gt;20 ng/dL พร้อมกัน</p>
+  <h3>สาเหตุที่พบน้อย (ความดันสูง + K ต่ำ)</h3>
+  <div class="tbl"><table>
+    <tr><th>โรค</th><th>กลไก</th><th>ลักษณะสำคัญ</th></tr>
+    <tr><td><b>CAH: 11β-hydroxylase deficiency</b></td><td>ACTH กระตุ้นต่อเนื่อง สารตั้งต้นที่มีฤทธิ์ mineralocorticoid (DOC) สูง</td><td>11-deoxycortisol สูง (classic) · DOC, 17-OHP, androgen, testosterone สูง · non-classic ต้องทำ ACTH stimulation</td></tr>
+    <tr><td><b>CAH: 17α-hydroxylase deficiency</b></td><td>เช่นเดียวกัน</td><td>17-OHP, cortisol, androgen, testosterone ต่ำหรือไม่มี · <b>DOC และ corticosterone สูงมาก</b></td></tr>
+    <tr><td><b>Cushing's syndrome</b></td><td>Cortisol เกินจนกระตุ้น MR</td><td>ตัด exogenous steroid แล้วตรวจอย่างน้อย 2 อย่าง: 24-h UFC, late-night salivary cortisol, 1 mg overnight หรือ 2 mg 48-h DST</td></tr>
+    <tr><td><b>AME</b> (11β-HSD2 deficiency)</td><td>Cortisol ไม่ถูกเปลี่ยนเป็น cortisone จึงกระตุ้น MR</td><td>AR · ความดันสูง renin ต่ำ · cortisol metabolite สูง cortisone metabolite ต่ำในปัสสาวะ · ยืนยันด้วยยีน HSD11B2 · รักษา K-sparing ± furosemide · <b>งดชะเอม</b> (glycyrrhetinic acid ยับยั้งเอนไซม์นี้)</td></tr>
+    <tr><td><b>Glucocorticoid resistance</b></td><td>GR (NR3C1) ผิดปกติ ACTH สูงชดเชย</td><td>Cortisol, mineralocorticoid, androgen สูง · ความดันสูง hypokalemic alkalosis อ่อนเพลีย · หญิงมี hyperandrogenism</td></tr>
+    <tr><td><b>Geller syndrome</b></td><td>MR gain-of-function (S810L) AD</td><td>ความดันสูงก่อน 20 ปี แย่ลงขณะตั้งครรภ์ (progesterone กระตุ้น MR) · renin และ aldosterone ต่ำ · <b>ห้ามใช้ spironolactone</b> (กลายเป็น agonist)</td></tr>
+  </table></div>
+</section>
+
+<!-- 08 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">08</div>
+    <h2>แผนผังการ approach hypokalemia</h2>
+    <p>เลือกดูแบบแผนผังทั้งหมด หรือแบบตอบคำถามทีละขั้นกับผู้ป่วยจริง</p>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Serum K &lt;3.5 mEq/L</b></div>
+      <div class="vline"></div>
+      <div class="node red"><b>K &lt;2.5, ECG เปลี่ยน, arrhythmia, อัมพาต?</b>ให้ K ทาง IV + ECG monitor ก่อน แล้วค่อยหาสาเหตุ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Pseudohypokalemia? <span class="tag add">เสริม</span></b>WBC สูงมาก ตั้งเลือดไว้นานที่อุณหภูมิห้อง</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>K เคลื่อนเข้าเซลล์?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node dx teal"><b>Transcellular shift</b>Insulin, β₂-agonist, catecholamine, thyrotoxicosis, periodic paralysis</div></div>
+        <div class="arm"><span class="lab">ไม่ใช่</span><div class="node q"><b>Urine K excretion</b>24 ชม. หรือ spot K/Cr</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">&lt;15 mEq/วัน · K/Cr &lt;13 mEq/g</span>
+          <div class="node dx gi"><b>Non-renal loss / กินน้อย</b></div>
+          <div class="vline"></div>
+          <div class="node q"><b>Acid–base</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">Acidosis</span><div class="node dx gi">Lower GI: ท้องเสีย, laxative, villous adenoma</div></div>
+            <div class="arm"><span class="lab">Alkalosis / ปกติ</span><div class="node dx gi">อาเจียนแอบทำ, เคยได้ diuretic, laxative บางราย, กินน้อย</div></div>
+          </div></div>
+        <div class="arm"><span class="lab">&gt;15 mEq/วัน · K/Cr &gt;13 mEq/g</span>
+          <div class="node dx ren"><b>Renal K wasting</b></div>
+          <div class="vline"></div>
+          <div class="node q"><b>Acid–base</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">Acidosis</span><div class="node dx ren">DKA, RTA type 1 และ 2</div></div>
+            <div class="arm"><span class="lab">Alkalosis</span><div class="node q"><b>ความดันโลหิต</b></div></div>
+          </div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">BP ปกติ → urine Cl</span>
+          <div class="node dx gi"><b>UCl ต่ำ</b>อาเจียน, NG suction</div>
+          <div class="vline"></div>
+          <div class="node dx ren"><b>UCl สูง/แกว่ง</b>Diuretic (ส่ง drug screen)</div>
+          <div class="vline"></div>
+          <div class="node dx ren"><b>UCl ปกติคงที่ → urine Ca</b>สูง = Bartter · ต่ำ = Gitelman</div></div>
+        <div class="arm"><span class="lab">BP สูง → renin / aldosterone</span>
+          <div class="node dx plum"><b>Renin สูง · Aldo สูง</b>Renovascular, diuretic ในผู้มีความดันสูง, renin-secreting tumor <span class="tag add">เสริม</span></div>
+          <div class="vline"></div>
+          <div class="node dx plum"><b>Renin ต่ำ · Aldo สูง</b>Primary aldosteronism, GRA</div>
+          <div class="vline"></div>
+          <div class="node dx plum"><b>Renin ต่ำ · Aldo ต่ำ</b>Liddle, AME/ชะเอม, CAH (11β, 17α), Cushing, GC resistance, Geller</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx grey" style="max-width:640px"><b>ทุกเส้นทาง:</b> ตรวจ Mg, ECG · สงสัยเฉพาะโรค: TSH, digoxin level, drug screen, imaging adrenal/pituitary, CT ช่องท้อง (VIPoma)</div>
+    </div>
+    <div class="legend"><span style="--c:var(--teal)">เคลื่อนเข้าเซลล์</span><span style="--c:var(--warn)">Non-renal</span><span style="--c:var(--accent)">Renal</span><span style="--c:var(--plum)">ความดันสูง</span><span style="--c:var(--danger)">ต้องรักษาเร่งด่วน</span></div>
+  </div>
+
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 09 manage -->
+<section id="manage">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผังการรักษา (management)</h2>
+    <p>เป้าหมาย 4 ข้อ: <b>ลดการเสีย K</b>, <b>เติม K สะสม</b>, <b>ประเมินพิษต่อหัวใจและกล้ามเนื้อ</b>, และ<b>หาสาเหตุเพื่อป้องกันซ้ำ</b></p>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Hypokalemia</b></div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ECG ทุกราย + ประเมินความรุนแรง</b>K, อาการ, digoxin, โรคหัวใจ, ไตวาย</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">K 2.5–3.5 · ไม่มีอาการรุนแรง</span>
+          <div class="node green"><b>KCl ทางปาก</b>ดื่มน้ำ 100–250 mL ร่วม · กินพร้อมหรือหลังอาหาร<br>40–100 mEq/วัน แบ่งให้ <span class="tag add">เสริม</span></div></div>
+        <div class="arm"><span class="lab">K &lt;2.5 · มีอาการ/ECG/arrhythmia · กินไม่ได้</span>
+          <div class="node red"><b>K ทาง IV + ECG monitor ต่อเนื่อง</b>ผสมใน <b>0.9% NaCl</b> (ไม่ใช้ D5W) · ใช้ถุงผสมสำเร็จ<br>Peripheral ≤10 mEq/ชม. · central ≤20 mEq/ชม. <span class="tag add">เสริม</span><br>ตรวจ K ซ้ำเป็นระยะ</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>แก้ Mg พร้อมกัน</b>ถ้า Mg ต่ำ K จะไม่ขึ้น</div>
+      <div class="vline arrow"></div>
+      <div class="node q" style="max-width:640px"><b>ลดการเสีย K / แก้สาเหตุ</b>หยุด laxative · เปลี่ยนเป็น K-neutral หรือ K-sparing diuretic ถ้ายังต้องใช้ · รักษาท้องเสีย อาเจียน · H₂ blocker ในผู้ใส่ NG suction · คุมน้ำตาลถ้ามี glycosuria</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Shift</span><div class="node dx teal">ให้ K ขนาดน้อย ระวัง <b>rebound hyperkalemia</b> · thyrotoxic PP: propranolol <span class="tag add">เสริม</span></div></div>
+        <div class="arm"><span class="lab">Metabolic acidosis</span><div class="node dx ren">RTA/ท้องเสีย: K citrate หรือ bicarbonate <span class="tag add">เสริม</span> · DKA: K &lt;3.3 ให้ K ก่อน insulin</div></div>
+        <div class="arm"><span class="lab">Endocrine</span><div class="node dx plum">PA: ผ่าตัดข้างเดียว หรือ MR antagonist · Liddle: amiloride · AME: K-sparing ± furosemide · ทีมสหสาขา</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx grey" style="max-width:640px"><b>ไตเสื่อม/ล้างไต:</b> ให้ K อย่างระมัดระวังมาก ปรึกษาทีมไต · ทุก 1 mEq/L ที่ลด ≈ ขาด K 200–400 mEq (ประมาณได้ทั้งสูงและต่ำเกินจริง)</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 treat -->
+<section id="treat" class="col">
+  <div class="sec-num">10</div>
+  <h2>รายละเอียดการให้โพแทสเซียม</h2>
+  <div class="formula">K deficit ≈ 200–400 mEq ต่อ K ที่ลดลงทุก 1 mEq/L</div>
+  <p style="font-size:.92rem">ใช้ได้เมื่อ K ทั้งร่างกายลดจริง ไม่ใช้กับภาวะ shift · ค่าประมาณนี้อาจสูงหรือต่ำกว่าจริง</p>
+  <div class="tbl"><table>
+    <tr><th></th><th>ทางปาก</th><th>ทางหลอดเลือดดำ</th></tr>
+    <tr><td>เมื่อไร</td><td>K 2.5–3.5 ไม่มีอาการรุนแรง</td><td>K &lt;2.5, มีอาการ/ECG/arrhythmia, คลื่นไส้อาเจียนมาก หรือปวดท้อง</td></tr>
+    <tr><td>วิธี</td><td>ดื่มน้ำตาม 100–250 mL · พร้อมหรือหลังอาหาร</td><td>ผสมใน <b>0.9% NaCl</b> · ใช้ถุงผสมสำเร็จ · ECG monitor ต่อเนื่อง · ตรวจ K ซ้ำเป็นระยะ</td></tr>
+    <tr><td>ขนาด <span class="tag add">เสริม</span></td><td>40–100 mEq/วัน แบ่ง 2–4 ครั้ง (ครั้งละไม่เกิน 20–40 mEq)</td><td>Peripheral ≤10 mEq/ชม. ความเข้มข้น ≤40 mEq/L · central line ≤20 mEq/ชม. (ฉุกเฉินมากอาจถึง 40 พร้อม monitor)</td></tr>
+    <tr><td>ผลที่คาด <span class="tag add">เสริม</span></td><td colspan="2">KCl 10 mEq เพิ่ม K ราว 0.1 mEq/L (เมื่อไม่มี shift)</td></tr>
+  </table></div>
+  <div class="box warn"><b>ทำไมไม่ผสมใน D5W</b>Glucose กระตุ้น insulin ดึง K เข้าเซลล์ ทำให้ K ในเลือดลดลงอีก</div>
+  <h3>เลือกชนิดเกลือโพแทสเซียม <span class="tag add">เสริม</span></h3>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>ใช้เมื่อ</th></tr>
+    <tr><td><b>KCl</b></td><td>ส่วนใหญ่ โดยเฉพาะ metabolic alkalosis (อาเจียน diuretic) เพราะแก้ Cl ด้วย</td></tr>
+    <tr><td>K citrate / K bicarbonate</td><td>Metabolic acidosis: RTA, ท้องเสียเรื้อรัง</td></tr>
+    <tr><td>K phosphate</td><td>PO₄ ต่ำร่วม เช่น DKA, refeeding</td></tr>
+  </table></div>
+  <h3>สิ่งที่ต้องทำร่วม</h3>
+  <ul>
+    <li><b>แก้ Mg</b> (เช่น MgSO₄ IV <span class="tag add">เสริม</span>) ก่อนหรือพร้อม K</li>
+    <li><b>ไตวายหรือล้างไต</b>: ให้ช้าและระมัดระวังมาก ปรึกษาทีมไต</li>
+    <li><b>Bartter/Gitelman</b>: KCl ระยะยาว ± K-sparing diuretic, COX inhibitor, RAS blocker · ย้ำเรื่องกินยาสม่ำเสมอ</li>
+    <li><b>ได้ digoxin</b>: แก้ให้ K ปกติเร็ว เพราะ hypokalemia เพิ่มพิษ digoxin</li>
+  </ul>
+</section>
+
+<!-- 11 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องคำนวณและวางแผนข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับแนวทางของโรงพยาบาล และตรวจ K ซ้ำเสมอ ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+  <div class="tool plan" style="margin-top:12px">
+    <h3>วางแผนการให้ K เบื้องต้น</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">Serum K (mEq/L)<input type="number" id="pK" value="2.3" step="0.1"></label>
+          <label class="f">eGFR (mL/min)<input type="number" id="pGfr" value="70"></label>
+        </div>
+        <div class="muted" style="font-size:.82rem">Acid–base</div>
+        <div class="radios">
+          <label><input type="radio" name="ab" value="alk" id="ab1" checked>Alkalosis</label>
+          <label><input type="radio" name="ab" value="acid" id="ab2">Acidosis</label>
+          <label><input type="radio" name="ab" value="nl" id="ab3">ปกติ/ไม่ทราบ</label>
+        </div>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="cEcg" checked>ECG เปลี่ยน / arrhythmia / อ่อนแรงมาก</label>
+        <label><input type="checkbox" id="cPo">กินไม่ได้ / อาเจียนมาก</label>
+        <label><input type="checkbox" id="cDig">ได้ digoxin</label>
+        <label><input type="checkbox" id="cMg" checked>Mg ต่ำ หรือได้ loop/thiazide</label>
+        <label><input type="checkbox" id="cShift">สงสัย shift (insulin, β₂, thyrotoxic/periodic paralysis)</label>
+        <label><input type="checkbox" id="cDka">DKA กำลังจะเริ่ม insulin</label>
+        <label><input type="checkbox" id="cCentral">มี central line</label>
+      </div>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool">
+      <h3>ประมาณ K deficit</h3>
+      <div class="fields">
+        <label class="f">K ปัจจุบัน<input type="number" id="dK" value="2.8" step="0.1"></label>
+        <label class="f">K เป้าหมาย<input type="number" id="dT" value="4.0" step="0.1"></label>
+      </div>
+      <div class="out" id="dOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Urine K excretion</h3>
+      <div class="fields">
+        <label class="f">Spot urine K (mEq/L)<input type="number" id="uK" value="35"></label>
+        <label class="f">Urine Cr<input type="number" id="uCr" value="90"></label>
+        <label class="f">หน่วย Cr<select id="uU"><option value="mgdl" selected>mg/dL</option><option value="mmol">mmol/L</option></select></label>
+        <label class="f">หรือ 24-h urine K (mEq)<input type="number" id="u24" placeholder="ไม่บังคับ"></label>
+      </div>
+      <div class="out" id="uOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Aldosterone/renin ratio</h3>
+      <div class="fields">
+        <label class="f">Aldosterone (ng/dL)<input type="number" id="aA" value="28" step="0.1"></label>
+        <label class="f">PRA (ng/mL/ชม.)<input type="number" id="aR" value="0.3" step="0.1"></label>
+      </div>
+      <div class="out" id="aOut"></div>
+    </div>
+    <div class="tool">
+      <h3>แยก alkalosis + BP ปกติ</h3>
+      <div class="fields">
+        <label class="f">Urine Cl (mEq/L)<input type="number" id="bCl" value="85"></label>
+        <label class="f">Urine Ca/Cr (mg/mg)<input type="number" id="bCa" value="0.03" step="0.01"></label>
+      </div>
+      <div class="out" id="bOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 pearls -->
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ทำ ECG ทุกราย</b> โดยเฉพาะ K &lt;3.0, มีโรคหัวใจ หรือได้ digoxin มองหา U wave, T แบน, ST กด และ arrhythmia</div></div>
+    <div class="pearl"><div><b>K &lt;2.5 หรือมีอาการ ให้ IV พร้อม monitor</b> รักษาก่อน หาสาเหตุทีหลัง</div></div>
+    <div class="pearl"><div><b>ผสม KCl ใน 0.9% NaCl ไม่ใช่ D5W</b> glucose ดึง K เข้าเซลล์ ทำให้ K ลดลงอีก</div></div>
+    <div class="pearl"><div><b>K ไม่ขึ้นให้นึกถึง Mg</b> Mg ต่ำพบร่วมเกินครึ่ง และทำให้ดื้อต่อการให้ K ตรวจและแก้ Mg ทุกครั้ง</div></div>
+    <div class="pearl"><div><b>สองคำถามหลักของการวินิจฉัย</b> ① ไตเสีย K หรือไม่ (24-h &gt;15 mEq หรือ K/Cr &gt;13 mEq/g) ② acid–base เป็นอย่างไร</div></div>
+    <div class="pearl"><div><b>Acidosis + urine K ต่ำ = ลำไส้ส่วนล่าง</b> นึกถึง laxative แอบใช้ และ villous adenoma</div></div>
+    <div class="pearl"><div><b>Alkalosis + BP ปกติ ให้ดู urine Cl</b> ต่ำ = อาเจียน · แกว่ง = diuretic · ปกติตลอด = Bartter หรือ Gitelman แล้วแยกด้วย urine Ca</div></div>
+    <div class="pearl"><div><b>Gitelman เหมือนกิน thiazide</b> hypocalciuria และมักพบโดยบังเอิญในผู้ใหญ่ · Bartter เหมือนกิน furosemide hypercalciuria และเริ่มในเด็กเล็ก</div></div>
+    <div class="pearl"><div><b>K ต่ำ + ความดันสูง ให้ส่ง aldosterone/renin</b> แล้วแบ่งตาม renin–aldo: สูง–สูง, ต่ำ–สูง (PA), ต่ำ–ต่ำ (Liddle, AME, ชะเอม, CAH, Cushing)</div></div>
+    <div class="pearl"><div><b>ถามเรื่องชะเอม</b> (ยาสมุนไพร ลูกอม ยาอมแก้ไอ) ทำให้เกิดภาพเหมือน AME</div></div>
+    <div class="pearl"><div><b>Shift ไม่ใช่การขาด K</b> periodic paralysis หรือ thyrotoxicosis ให้ K น้อยและระวัง rebound hyperkalemia</div></div>
+    <div class="pearl"><div><b>DKA: K &lt;3.3 ให้ K ก่อน insulin</b> insulin จะดึง K เข้าเซลล์จนอาจเกิด arrhythmia</div></div>
+    <div class="pearl"><div><b>ไตเสื่อมให้ K อย่างระมัดระวัง</b> ไตขับ K ส่วนเกินได้น้อย ปรึกษาทีมไตในผู้ล้างไตหรือไตเสื่อมรุนแรง</div></div>
+    <div class="pearl"><div><b>ถ้ายังต้องใช้ diuretic</b> เช่นใน heart failure ให้เปลี่ยนหรือเพิ่ม K-sparing diuretic แทนการให้ KCl อย่างเดียว</div></div>
+  </div>
+</section>
+
+<!-- 13 quiz -->
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px">อ่านต่อ: <a href="../hyponatremia/index.html">Hyponatremia</a> · <a href="../hypernatremia/index.html">Hypernatremia</a></p>
+<footer class="col">
+  สรุปจากบทความ <i>Hypokalemia: a clinical update</i> · Endocrine Connections 2018 · ค้นผ่าน PubMed (PMID 29540487) · <a href="https://doi.org/10.1530/EC-18-0109" target="_blank" rel="noopener">doi.org/10.1530/EC-18-0109</a><br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน · <span class="tag fix">แก้ข้อความ</span> = แก้หรืออธิบายข้อความที่คลาดเคลื่อนในต้นฉบับ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา
+</footer>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+
+/* nav */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* toggle */
+function setView(w){$('apFull').hidden=w;$('apWalk').hidden=!w;$('apFullBtn').setAttribute('aria-pressed',!w);$('apWalkBtn').setAttribute('aria-pressed',w);
+  try{localStorage.setItem('hypoKView',w?'walk':'full')}catch(e){}}
+$('apFullBtn').onclick=()=>setView(false);$('apWalkBtn').onclick=()=>setView(true);
+try{if(localStorage.getItem('hypoKView')==='walk')setView(true)}catch(e){}
+
+/* walker */
+const T={
+ start:{q:'มีภาวะเร่งด่วนหรือไม่?',h:'K < 2.5, ECG เปลี่ยน, arrhythmia, อ่อนแรงมาก/อัมพาต, หายใจลำบาก',o:[['มี','urgent'],['ไม่มี','pseudo']]},
+ urgent:{leaf:true,cls:'danger',t:'รักษาก่อน',b:'ให้ <b>KCl ทาง IV ใน 0.9% NaCl</b> พร้อม ECG monitor ต่อเนื่อง ตรวจ K ซ้ำ แก้ Mg ไปพร้อมกัน แล้วจึงหาสาเหตุ',next:['ไปหาสาเหตุ','pseudo']},
+ pseudo:{q:'มีโอกาสเป็น pseudohypokalemia หรือไม่?',h:'WBC สูงมาก (เช่น leukemia) หรือตั้งเลือดไว้นานก่อนปั่น · เสริม',o:[['ใช่/ไม่แน่ใจ','pseudoLeaf'],['ไม่ใช่','shift']]},
+ pseudoLeaf:{leaf:true,t:'ตรวจ K ซ้ำ',b:'ปั่นแยก plasma ทันที หรือวัดด้วย blood gas analyzer · ถ้ายังต่ำจริงจึงเดินต่อ',next:['K ต่ำจริง → ไปต่อ','shift']},
+ shift:{q:'มีเหตุให้ K เคลื่อนเข้าเซลล์หรือไม่?',h:'Insulin, β₂-agonist, catecholamine/stress, thyrotoxicosis, periodic paralysis',o:[['มี','shiftLeaf'],['ไม่มี','uk']]},
+ shiftLeaf:{leaf:true,cls:'teal',t:'Transcellular shift',b:'K ทั้งร่างกายไม่ได้ลด · แก้สาเหตุ ให้ K ขนาดน้อย ระวัง <b>rebound hyperkalemia</b> · ตรวจ TSH เมื่อหัวใจเต้นเร็วหรือสงสัย periodic paralysis'},
+ uk:{q:'Urine K excretion เป็นอย่างไร?',h:'24 ชม. หรือ spot K/Cr',o:[['ต่ำ: < 15 mEq/วัน หรือ K/Cr < 13 mEq/g','nrAB','Non-renal / กินน้อย'],['สูง: > 15 mEq/วัน หรือ K/Cr > 13 mEq/g','rAB','Renal K wasting']]},
+ nrAB:{q:'Acid–base?',o:[['Metabolic acidosis','nrAcid'],['Metabolic alkalosis / ปกติ','nrAlk']]},
+ nrAcid:{leaf:true,cls:'warn',t:'เสียทางลำไส้ส่วนล่าง',b:'ท้องเสีย, <b>laxative abuse</b>, villous adenoma · ท้องเสียเป็นน้ำแม้อดอาหาร &gt;700 mL/วัน → สงสัย VIPoma ทำ CT ช่องท้อง · ให้ K citrate/bicarbonate ได้'},
+ nrAlk:{leaf:true,cls:'warn',t:'อาเจียน / เคยได้ diuretic / กินน้อย',b:'อาเจียนแอบทำ (bulimia), ยาขับปัสสาวะที่หยุดไปแล้ว, laxative บางราย, กินน้อย · ให้ KCl'},
+ rAB:{q:'Acid–base?',o:[['Metabolic acidosis','rAcid'],['Metabolic alkalosis','bp']]},
+ rAcid:{leaf:true,cls:'acc',t:'Renal loss + acidosis',b:'<b>DKA</b> (ระวังก่อนเริ่ม insulin) · <b>RTA type 1 (distal)</b> หรือ <b>type 2 (proximal)</b> → ตรวจ urine pH, urinalysis · ให้ K citrate/bicarbonate'},
+ bp:{q:'ความดันโลหิต?',o:[['ปกติหรือต่ำ','ucl'],['สูง','renin']]},
+ ucl:{q:'Urine Cl?',o:[['ต่ำ (< 20)','vomit'],['สูง/แกว่งตามเวลา','diur'],['ปกติคงที่','uca']]},
+ vomit:{leaf:true,cls:'warn',t:'อาเจียน / NG suction',b:'UNa และ UK อาจสูงจากการขับ HCO₃ แต่ <b>UCl ต่ำ</b> · ให้ NaCl + KCl · H₂ blocker ในผู้ใส่ NG suction'},
+ diur:{leaf:true,cls:'acc',t:'Diuretic',b:'UCl สูงขณะยาออกฤทธิ์ ต่ำเมื่อยาหมด · ส่ง <b>drug screen</b> ถ้าสงสัยแอบใช้ · เปลี่ยนเป็น K-sparing ถ้ายังต้องใช้'},
+ uca:{q:'Urine Ca?',o:[['สูง (hypercalciuria)','bartter'],['ต่ำ (hypocalciuria)','gitelman']]},
+ bartter:{leaf:true,cls:'acc',t:'Bartter syndrome',b:'โรคที่ TAL · เริ่มในเด็กเล็ก โตช้า · BP ปกติ · renin/aldo สูง · รักษา KCl, K-sparing, COX inhibitor, RAS blocker'},
+ gitelman:{leaf:true,cls:'acc',t:'Gitelman syndrome',b:'โรคที่ DCT · มักพบบังเอิญ เวียนศีรษะ เพลีย ตะคริว ปัสสาวะกลางคืน · Mg ต่ำ (เสริม) · รักษา KCl ± Mg, K-sparing · ย้ำการกินยาสม่ำเสมอ'},
+ renin:{q:'Renin และ aldosterone?',o:[['Renin สูง · Aldo สูง','hh'],['Renin ต่ำ · Aldo สูง','pa'],['Renin ต่ำ · Aldo ต่ำ','ll']]},
+ hh:{leaf:true,cls:'plum',t:'Secondary hyperaldosteronism',b:'Renovascular disease, diuretic ในผู้ป่วยความดันสูง, renin-secreting tumor (เสริม)'},
+ pa:{leaf:true,cls:'plum',t:'Primary aldosteronism',b:'ARR สูง → confirmatory test ตามข้อบ่งชี้ → <b>CT adrenal</b> → AVS ถ้าจะผ่าตัด · เริ่มก่อน 20 ปี/ครอบครัว stroke ก่อน 40 → ตรวจ GRA · อายุน้อยมาก → KCNJ5'},
+ ll:{leaf:true,cls:'plum',t:'Pseudo-mineralocorticoid excess',b:'<b>Liddle</b> (AD, ENaC, ตอบสนองต่อ amiloride) · <b>AME</b> หรือ<b>ชะเอม</b> · <b>CAH</b> 11β/17α (DOC สูง) · <b>Cushing</b> · GC resistance · <b>Geller</b> (ห้าม spironolactone)'}
+};
+let path=['start'];
+const colors={danger:'var(--danger)',warn:'var(--warn)',teal:'var(--teal)',plum:'var(--plum)',acc:'var(--accent)'};
+function render(){
+  const n=T[path[path.length-1]];
+  $('apTrail').innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+  let h;
+  if(n.leaf){h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+    if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;}
+  else h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+  if(path.length>1)h+='<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn" id="wBack">← ย้อนกลับ</button><button class="btn" id="wReset">เริ่มใหม่</button></div>';
+  $('apStage').innerHTML=h;
+  $('apStage').querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+  if($('wBack')){$('wBack').onclick=()=>{path.pop();render()};$('wReset').onclick=()=>{path=['start'];render()}}
+}
+render();
+
+/* planner */
+const val=n=>{const e=document.querySelector(`input[name=${n}]:checked`);return e?e.value:null};
+function plan(){
+  const k=num('pK'),gfr=num('pGfr'),ab=val('ab');
+  const ecg=$('cEcg').checked,po=$('cPo').checked,dig=$('cDig').checked,mg=$('cMg').checked,shift=$('cShift').checked,dka=$('cDka').checked,cen=$('cCentral').checked;
+  if(k===null){$('pOut').textContent='ใส่ค่า K';return}
+  if(k>=3.5){$('pOut').innerHTML='K ≥3.5 ไม่เข้าเกณฑ์ hypokalemia';return}
+  const s=[];const iv=k<2.5||ecg||po;const renal=gfr!==null&&gfr<30;
+  s.push('<b>ECG</b> ทุกราย'+(iv?' และ <b>monitor ต่อเนื่อง</b>':''));
+  if(dka&&k<3.3)s.push('<b>DKA: K &lt;3.3 ให้ K ก่อนเริ่ม insulin</b> (เสริม)');
+  if(shift)s.push('<b>สงสัย shift:</b> แก้สาเหตุ ให้ K ขนาดน้อย ตรวจ K ถี่ ระวัง rebound hyperkalemia · thyrotoxic PP พิจารณา propranolol (เสริม)');
+  const salt=ab==='acid'?'K citrate หรือ K bicarbonate (acidosis)':'KCl';
+  if(iv){
+    const rate=cen?'≤20 mEq/ชม. ทาง central line':'≤10 mEq/ชม. ทาง peripheral (≤40 mEq/L)';
+    s.push(`<b>KCl ทาง IV</b> ผสมใน <b>0.9% NaCl</b> (ไม่ใช้ D5W) อัตรา ${rate} <span class="tag add">เสริม</span>${renal?' · <b>ไตเสื่อม: ลดขนาดและอัตรา ปรึกษาทีมไต</b>':''}`);
+    s.push('ตรวจ K ซ้ำทุก 2–4 ชม. ระหว่างให้ IV <span class="tag add">เสริม</span> เปลี่ยนเป็นทางปากเมื่อ K ≥2.5 อาการดีขึ้นและกินได้');
+  }else{
+    s.push(`<b>${salt} ทางปาก</b> 40–100 mEq/วัน แบ่ง 2–4 ครั้ง <span class="tag add">เสริม</span> ดื่มน้ำตาม 100–250 mL พร้อมหรือหลังอาหาร${renal?' · <b>ไตเสื่อม: เริ่มขนาดต่ำ ตรวจ K ถี่</b>':''}`);
+  }
+  if(!shift){const lo=Math.max(0,(3.5-k))*200,hi=Math.max(0,(4.0-k))*400;s.push(`<b>K deficit โดยประมาณ</b> ~${Math.round(lo)}–${Math.round(hi)} mEq (200–400 mEq ต่อ 1 mEq/L) ไม่ต้องเติมให้หมดในวันเดียว`)}
+  if(mg)s.push('<b>ตรวจและแก้ Mg</b> ก่อนหรือพร้อม K ไม่อย่างนั้น K จะไม่ขึ้น');
+  if(dig)s.push('<b>ได้ digoxin:</b> ตรวจระดับยา แก้ K ให้ปกติเร็ว hypokalemia เพิ่มพิษ digoxin');
+  s.push('<b>แก้สาเหตุ:</b> หยุด laxative · K-sparing แทนถ้ายังต้องใช้ diuretic · รักษาท้องเสีย/อาเจียน · H₂ blocker ถ้า NG suction · คุมน้ำตาล');
+  s.push(ab==='alk'?'Alkalosis: ส่ง urine K/Cr, urine Cl และวัดความดัน เพื่อแยกอาเจียน diuretic Bartter/Gitelman หรือ mineralocorticoid excess':ab==='acid'?'Acidosis: ส่ง urine K/Cr และ urine pH แยก GI loss กับ RTA/DKA':'ส่ง ABG และ urine K/Cr เพื่อหาสาเหตุ');
+  $('pOut').innerHTML='<ol>'+s.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+document.querySelectorAll('.plan input').forEach(e=>e.addEventListener('input',plan));plan();
+
+/* deficit */
+function def(){
+  const k=num('dK'),t=num('dT');
+  if(k===null||t===null){$('dOut').textContent='ใส่ค่าให้ครบ';return}
+  const d=t-k;if(d<=0){$('dOut').textContent='K ไม่ต่ำกว่าเป้าหมาย';return}
+  $('dOut').innerHTML=`K ต่ำกว่าเป้า ${f1(d)} mEq/L<br>Deficit ≈ <span class="big">${Math.round(d*200)}–${Math.round(d*400)}</span> mEq<br><span class="muted">ใช้ไม่ได้กับภาวะ shift · KCl 10 mEq ≈ เพิ่ม K 0.1 mEq/L (เสริม)</span>`;
+}
+['dK','dT'].forEach(i=>$(i).addEventListener('input',def));def();
+
+/* urine K */
+function uk(){
+  const k=num('uK'),cr=num('uCr'),u=$('uU').value,d24=num('u24');
+  let s='';
+  if(k!==null&&cr){
+    const crg=u==='mgdl'?cr/100:cr*0.0113; // g/L
+    const r=k/crg, rmmol=u==='mmol'?k/cr:k/(cr*0.0884);
+    s+=`Spot K/Cr <span class="big">${f1(r)}</span> mEq/g (${(Math.round(rmmol*100)/100).toFixed(2)} mEq/mmol)<br>${r>13?'<b>&gt;13 → เสีย K ทางไตไม่เหมาะสม</b>':'≤13 → ไตเก็บ K ได้ (non-renal loss, shift หรือกินน้อย)'}`;
+  }
+  if(d24!==null)s+=`${s?'<br>':''}24-h urine K <b class="mono">${d24}</b> mEq ${d24>15?'→ <b>renal K wasting</b>':'→ ไตเก็บ K ได้'}`;
+  $('uOut').innerHTML=s||'ใส่ค่า';
+}
+['uK','uCr','uU','u24'].forEach(i=>$(i).addEventListener('input',uk));uk();
+
+/* ARR */
+function arr(){
+  const a=num('aA'),r=num('aR');
+  if(a===null||!r){$('aOut').textContent='ใส่ค่าให้ครบ';return}
+  const x=a/r;
+  $('aOut').innerHTML=`ARR <span class="big">${f1(x)}</span> (ng/dL ÷ ng/mL/ชม.)<br>${x>20?'<b>&gt;20 → เข้าได้กับ primary aldosteronism</b> ตรวจยืนยันตามข้อบ่งชี้ แล้ว CT adrenal':'≤20 → ไม่สนับสนุน PA'}${x>20&&a>20&&r<=0.5?'<br><span class="muted">Aldo &gt;20 + renin ต่ำมาก + K ต่ำเอง: Endocrine Society อนุญาตให้ข้าม confirmatory test ได้</span>':''}<br><span class="muted">หยุด MR antagonist ก่อนตรวจ แก้ K ให้ปกติก่อน (เสริม)</span>`;
+}
+['aA','aR'].forEach(i=>$(i).addEventListener('input',arr));arr();
+
+/* Bartter/Gitelman */
+function bg(){
+  const cl=num('bCl'),ca=num('bCa');
+  if(cl===null){$('bOut').textContent='ใส่ urine Cl';return}
+  let s;
+  if(cl<20)s='UCl ต่ำ → <b>อาเจียน / NG suction</b>';
+  else{
+    s='UCl สูง → diuretic (ถ้าแกว่งตามเวลา ส่ง drug screen) หรือ Bartter/Gitelman (ถ้าคงที่)';
+    if(ca!==null)s+=`<br>Urine Ca/Cr ${ca} → ${ca<0.07?'<b>hypocalciuria → Gitelman</b> (หรือ thiazide)':ca>0.2?'<b>hypercalciuria → Bartter</b> (หรือ loop diuretic)':'ก้ำกึ่ง แปลผลร่วมกับคลินิก'} <span class="tag add">เสริม: เกณฑ์ Ca/Cr</span>`;
+  }
+  $('bOut').innerHTML=s;
+}
+['bCl','bCa'].forEach(i=>$(i).addEventListener('input',bg));bg();
+
+/* quiz */
+const Q=[
+ ['หญิง 25 ปี K 2.6 HCO₃ 32 BP ปกติ urine Cl 8 mEq/L นึกถึงอะไร',['Gitelman','อาเจียนแอบทำ','Primary aldosteronism','Laxative abuse'],1,'Alkalosis + BP ปกติ + urine Cl ต่ำ = อาเจียน (UNa/UK อาจสูงจากการขับ HCO₃)'],
+ ['ผู้ป่วย K 2.9 HCO₃ 16 spot urine K/Cr 6 mEq/g ปฏิเสธท้องเสีย นึกถึงอะไรก่อน',['RTA type 1','DKA','Laxative abuse','Bartter'],2,'Acidosis + urine K ต่ำ = เสียทางลำไส้ส่วนล่าง ในผู้ปฏิเสธท้องเสียต้องคิดถึง laxative แอบใช้'],
+ ['ชาย 30 ปี K 2.8 alkalosis BP ปกติ urine Cl สูงคงที่ urine Ca ต่ำ Mg ต่ำ',['Bartter','Gitelman','Liddle','Diuretic loop'],1,'Hypocalciuria + Mg ต่ำ เข้าได้กับ Gitelman (โรคที่ DCT คล้ายกิน thiazide)'],
+ ['ความดันสูงอายุน้อย K ต่ำ renin ต่ำ aldosterone ต่ำ ตอบสนองต่อ amiloride',['Primary aldosteronism','Liddle syndrome','Renovascular','Bartter'],1,'Pseudoaldosteronism จาก ENaC ทำงานตลอด (AD) aldosterone ถูกกด รักษาด้วย amiloride'],
+ ['K 2.2 มี U wave และ PVC บ่อย ควรผสม KCl ในสารน้ำใด',['D5W','D5/0.45% NaCl','0.9% NaCl','D10W'],2,'Glucose กระตุ้น insulin ดึง K เข้าเซลล์ จึงใช้ 0.9% NaCl เป็นตัวทำละลาย'],
+ ['ให้ KCl ไปแล้ว K ยังไม่ขึ้น ผู้ป่วยได้ furosemide ขาดตรวจอะไร',['Ca','PO₄','Mg','TSH'],2,'Mg ต่ำพบร่วมเกินครึ่งและทำให้ดื้อต่อการให้ K โดยเฉพาะผู้ได้ loop/thiazide']
+];
+$('qz').innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+$('qz').querySelectorAll('.qcard').forEach(card=>{
+  const q=Q[+card.dataset.i],bs=card.querySelectorAll('button.c');
+  bs.forEach(b=>b.onclick=()=>{bs.forEach(x=>x.classList.remove('right','wrong'));const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');bs[q[2]].classList.add('right');
+    const ex=card.querySelector('.ex');ex.hidden=false;ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3]});
+});
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
