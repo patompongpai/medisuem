@@ -1,0 +1,440 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>IDAT 2026 MDR-GNB</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky organism rail across the top, one working panel below — site chips filter the regimen list */
+:root{
+  --bg:#f5f6fa;--surface:#fff;--sunk:#eef0f6;--ink:#191c2c;--muted:#5a6078;--line:#dde0ea;
+  --accent:#a8205c;--accent-soft:#f7e2eb;--accent-ink:#7d1442;
+  --ok:#1d7448;--ok-soft:#e1f2e8;--alt:#8c5b00;--alt-soft:#fbefd6;--no:#b02a1e;--no-soft:#fbe4e1;--cond:#2c5aa8;--cond-soft:#e3ebf8;
+  --f-disp:"Anuphan","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11131b;--surface:#191c28;--sunk:#141620;--ink:#e7e9f2;--muted:#9a9fb6;--line:#2b2f41;
+  --accent:#ef6ba1;--accent-soft:#3a1c2a;--accent-ink:#f7a3c5;
+  --ok:#62d29c;--ok-soft:#163326;--alt:#e9b65c;--alt-soft:#352812;--no:#ff8173;--no-soft:#3a1a17;--cond:#8db4ff;--cond-soft:#1a2640;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11131b;--surface:#191c28;--sunk:#141620;--ink:#e7e9f2;--muted:#9a9fb6;--line:#2b2f41;
+  --accent:#ef6ba1;--accent-soft:#3a1c2a;--accent-ink:#f7a3c5;
+  --ok:#62d29c;--ok-soft:#163326;--alt:#e9b65c;--alt-soft:#352812;--no:#ff8173;--no-soft:#3a1a17;--cond:#8db4ff;--cond-soft:#1a2640;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:28px 18px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-disp);font-weight:700;font-size:clamp(26px,4.4vw,38px);line-height:1.2;margin:.25em 0 .2em;text-wrap:balance}
+h2{font-family:var(--f-disp);font-weight:600;font-size:22px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--f-disp);font-weight:600;font-size:17px;margin:0 0 8px}
+.lede{color:var(--muted);max-width:68ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:13px;color:var(--muted)}
+nav.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-block:1px solid var(--line)}
+.rail .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.rail .wrap::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1px solid transparent;background:none;color:var(--muted);font:500 14px var(--f-body);padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--sunk)}
+.tab[aria-selected="true"]{color:var(--accent-ink);background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.tab:focus-visible,.chip:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{padding-block:22px 48px}
+.panel{display:grid;gap:22px}
+.orghead{display:grid;gap:10px}
+.sci{font-style:italic}
+.pathogens{font-size:13px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 13.5px var(--f-body);padding:6px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:820px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.recs{list-style:none;margin:0;padding:0;display:grid}
+.rec{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:10px;align-items:start;padding:11px 0;border-top:1px solid var(--line)}
+.rec:first-child{border-top:0;padding-top:2px}
+@media (max-width:520px){.rec{grid-template-columns:minmax(0,1fr) auto}.rec .role{grid-column:1/-1;justify-self:start}}
+.role{font:600 12px var(--f-body);padding:2px 8px;border-radius:6px;text-align:center;white-space:nowrap}
+.r-p{background:var(--ok-soft);color:var(--ok)}
+.r-a{background:var(--alt-soft);color:var(--alt)}
+.r-c{background:var(--cond-soft);color:var(--cond)}
+.r-x{background:var(--no-soft);color:var(--no)}
+.rec .txt{min-width:0}
+.rec .txt b{font-weight:600}
+.grade{font:500 12px var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.nums{display:grid;gap:12px}
+.num{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:baseline}
+.num .v{font:600 20px var(--f-mono);color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.num .l{font-size:13.5px;color:var(--ink)}
+.num .s{grid-column:2;font-size:12px;color:var(--muted)}
+.ev{margin:0;padding-left:1.1em;display:grid;gap:8px;font-size:14px}
+.ev li::marker{color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:12.5px;color:var(--muted);align-items:center}
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12.5px var(--f-body);color:var(--muted);background:var(--sunk);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+td.m{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.drug{font-weight:600;white-space:nowrap}
+td.note{color:var(--muted);font-size:12.5px;min-width:180px}
+.tnote{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+.search{display:flex;gap:8px;align-items:center}
+.search input{flex:1;min-width:0;font:15px var(--f-body);padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.defn dt{font:600 14px var(--f-mono);color:var(--accent-ink)}
+.defn dd{margin:0 0 10px;font-size:14px}
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px}
+.foot{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-block:18px 8px}
+.kbd{font-family:var(--f-mono);font-size:12px}
+@media (prefers-reduced-motion:no-preference){.panel{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}}
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow">สมาคมโรคติดเชื้อแห่งประเทศไทย · 16 ต.ค. 2569</div>
+  <h1>IDAT 2026 แนวทางรักษาการติดเชื้อแบคทีเรียแกรมลบดื้อยาหลายขนาน</h1>
+  <p class="lede">สรุปสำหรับใช้ข้างเตียง เลือกเชื้อด้านล่าง แล้วเลือกตำแหน่งการติดเชื้อเพื่อดูยาหลัก ยาทางเลือก และยาที่ไม่แนะนำ พร้อมระดับคำแนะนำ ครอบคลุมเฉพาะ definitive therapy หลังทราบเชื้อและผลความไวแล้ว</p>
+  <div class="meta"><span>ผู้ใหญ่ · ไตปกติ</span><span>Breakpoint ตาม CLSI M100 ed.36 (2026)</span><span>ระดับคำแนะนำ A–C / หลักฐาน I–III</span></div>
+</header>
+
+<nav class="rail" aria-label="หัวข้อ"><div class="wrap" role="tablist" id="tabs"></div></nav>
+
+<main class="wrap" id="main"></main>
+
+<footer class="wrap foot">
+  สรุปจาก “แนวทางการรักษาการติดเชื้อแบคทีเรียแกรมลบดื้อยาต้านจุลชีพหลายขนาน IDAT 2026” เพื่อการทบทวนความรู้ ไม่ใช่สิ่งทดแทนต้นฉบับ ควรตรวจขนาดยาและข้อบ่งใช้กับเอกสารฉบับเต็ม บัญชียาของโรงพยาบาล และปรับตามการทำงานของไตทุกครั้ง
+</footer>
+
+<script>
+const G={A:"แนะนำอย่างยิ่ง",B:"แนะนำปานกลาง",C:"แนะนำอ่อน",I:"RCT หลายฉบับ / SR-MA ของ RCT",IIa:"RCT ที่ไม่เข้าเกณฑ์ระดับ I",IIb:"Observational ที่ดี / MA ของ observational",III:"ความเห็นผู้เชี่ยวชาญ / case series"};
+const ROLE={p:["ยาหลัก","r-p"],a:["ทางเลือก","r-a"],c:["มีเงื่อนไข","r-c"],x:["ไม่แนะนำ","r-x"]};
+
+const ORG=[
+{id:"esbl",tab:"ESBL-E",name:"ESBL-producing Enterobacterales",pathogens:"สงสัยเมื่อดื้อ 3rd-gen cephalosporin, cefepime, aztreonam แต่ยังไว/I ต่อ amoxicillin-clavulanate, piperacillin-tazobactam, cefoxitin · ไม่ต้องทดสอบ ESBL ยืนยันเพื่อการรักษา",
+ sites:[
+ {id:"uuti",label:"Cystitis (uUTI)",recs:[
+  ["p","<b>Nitrofurantoin</b>","A-IIa"],
+  ["a","Ciprofloxacin, levofloxacin, <b>fosfomycin กิน</b>, piperacillin-tazobactam หรือ TMP-SMX หากไวต่อยา","B-IIb"],
+  ["a","Amoxicillin-clavulanate เมื่อใช้ยาอื่นไม่ได้ (ด้อยกว่า และ recurrence สูง)","B-IIb"],
+  ["x","Cefepime แม้รายงานว่าไว","A-IIb"],
+  ["x","Aztreonam-avibactam, ceftazidime-avibactam, ceftolozane-tazobactam เมื่อมีทางเลือกอื่น","A-III"]]},
+ {id:"cuti",label:"cUTI / pyelonephritis",recs:[
+  ["p","<b>Carbapenem กลุ่ม 2</b> (biapenem, doripenem, imipenem-cilastatin, meropenem)","A-IIa"],
+  ["c","<b>Ertapenem</b> เมื่อพ้น sepsis/septic shock และไม่มี hypoalbuminemia","B-IIa"],
+  ["a","Aminoglycosides หากไวต่อยา (ระดับยาในปัสสาวะและเนื้อไตสูง ให้วันละครั้ง)","B-IIb"],
+  ["c","Piperacillin-tazobactam เมื่ออาการไม่รุนแรงและไม่มี bacteremia","B-IIb"],
+  ["a","Ciprofloxacin, levofloxacin หรือ TMP-SMX หากไวต่อยา","B-IIb"],
+  ["c","เปลี่ยนเป็น FQ หรือ TMP-SMX ชนิดกินเมื่ออาการดีขึ้น หากไวต่อยา","A-IIb"],
+  ["x","Cefepime แม้รายงานว่าไว","A-IIb"],
+  ["x","ยา β-lactam/BLI ใหม่ เมื่อมีทางเลือกอื่น","A-III"]]},
+ {id:"inv",label:"Invasive / bacteremia",note:"Invasive = bacteremia หรือการติดเชื้อนอกทางเดินปัสสาวะ เช่น ช่องท้อง ปอด ผิวหนังและเนื้อเยื่ออ่อน",recs:[
+  ["p","<b>Carbapenem กลุ่ม 2</b> สำหรับ bacteremia ที่มี sepsis/septic shock","A-IIa"],
+  ["c","<b>Ertapenem</b> สำหรับ bacteremia ที่พ้น sepsis/shock และไม่มี hypoalbuminemia","B-IIa"],
+  ["c","เริ่ม pip-tazo ไปก่อน พบ bacteremia ภายหลัง แต่ตอบสนองดีและ MIC ≤8/4 → อาจให้ต่อได้","B-IIa"],
+  ["c","เริ่มยาอื่นที่ไม่ใช่ carbapenem กลุ่ม 2 แล้วเชื้อไม่ไว แม้อาการดีขึ้น → เปลี่ยนเป็น carbapenem กลุ่ม 2","A-III"],
+  ["a","Ciprofloxacin, levofloxacin หรือ TMP-SMX เมื่อไม่มี bacteremia และไวต่อยา","B-IIb"],
+  ["c","Oral step-down เป็น FQ หรือ TMP-SMX เมื่ออาการดีขึ้น","A-IIb"],
+  ["x","Cefepime แม้รายงานว่าไว","A-IIb"],
+  ["x","ยา β-lactam/BLI ใหม่ เมื่อมีทางเลือกอื่น","A-III"]]}
+ ],
+ nums:[["12.3% vs 3.7%","MERINO: mortality 30 วัน pip-tazo vs meropenem","ESBL-E bacteremia, ไม่ผ่าน non-inferiority"],["9% vs 4%","MERINO post hoc เฉพาะเชื้อไวต่อ pip-tazo","ต่างกัน 5% (95% CI −1 ถึง 10)"],["67%","ความล้มเหลวของ cefepime","แม้ MIC 1–2 µg/mL"]],
+ ev:["Nitrofurantoin ให้ผลดีกว่า fosfomycin กิน; ในไทย FQ และ TMP-SMX ดื้อค่อนข้างสูง","Ertapenem ได้ผลไม่ต่างจาก carbapenem กลุ่ม 2 ในผู้ป่วยที่อาการคงที่แล้ว ช่วยลดการใช้ยาที่กว้างเกินจำเป็น","Pip-tazo พอใช้ได้ใน low-inoculum (เช่น UTI) หรือ Pitt bacteremia score <4 และสัมพันธ์กับการเกิด carbapenem-resistant organism ใน 30 วันน้อยกว่า","Aminoglycosides ใน bacteremia จากทางเดินปัสสาวะไม่ด้อยกว่ายาอื่นด้าน mortality 30 วัน โดยเฉพาะ E. coli","สงวนยา BL/BLI ใหม่ไว้สำหรับเชื้อดื้อ carbapenem"]},
+
+{id:"ampc",tab:"AmpC-E",name:"AmpC β-lactamase-producing Enterobacterales",pathogens:"Inducible AmpC พบบ่อยใน Enterobacter cloacae complex, Klebsiella aerogenes, Citrobacter freundii, Hafnia alvei · Phenotype: ดื้อ amox-clav, pip-tazo, aztreonam, cefoxitin แต่ยังไวต่อ cefepime",
+ sites:[
+ {id:"all",label:"หลักทั่วไป",recs:[
+  ["x","หลีกเลี่ยง penicillins และ cephalosporins <b>ยกเว้น cefepime</b>","A-IIb"],
+  ["c","เริ่ม ceftriaxone/cefotaxime/ceftazidime ไปก่อน แต่ติดเชื้อไม่รุนแรง ตอบสนองดี และควบคุมแหล่งติดเชื้อได้ → อาจให้ต่อจนครบ","B-IIb"],
+  ["x","Ceftolozane-tazobactam (ประสิทธิภาพไม่แน่นอน)","—"],
+  ["c","Ceftazidime-avibactam, aztreonam-avibactam ยับยั้ง AmpC ได้ดี แต่ควรสงวนไว้สำหรับเชื้อดื้อ carbapenem","—"]]},
+ {id:"uuti",label:"Cystitis (uUTI)",recs:[
+  ["p","<b>Nitrofurantoin</b> หรือ <b>TMP-SMX</b> หากไวต่อยา","A-III"],
+  ["a","Aminoglycoside ครั้งเดียว, ceftriaxone ครั้งเดียว, ciprofloxacin หรือ levofloxacin","A-III"]]},
+ {id:"cuti",label:"cUTI",recs:[
+  ["p","<b>Ciprofloxacin, levofloxacin</b> หรือ <b>TMP-SMX</b> หากไวต่อยา","A-III"],
+  ["a","Aminoglycosides เมื่อเชื้อดื้อหรือใช้ยาหลักไม่ได้","A-III"]]},
+ {id:"inv",label:"นอกทางเดินปัสสาวะ",recs:[
+  ["p","<b>Cefepime</b>","A-IIb"],
+  ["c","<b>Carbapenem</b> ถ้ามี ESBL ร่วม หรือ MIC ของ cefepime >2 µg/mL","A-IIb"],
+  ["c","Oral step-down เป็น FQ หรือ TMP-SMX เมื่ออาการดีขึ้น","A-III"]]}
+ ],
+ nums:[["3","กลไกการสร้าง AmpC","inducible chromosomal · stable de-repression · constitutive (plasmid)"],["Cefepime","weak inducer + ทนการย่อยสลาย","จึงเป็นยาหลักนอกทางเดินปัสสาวะ"]],
+ ev:["Strong inducer: aminopenicillins, 1st-gen cephalosporins, cephamycins, carbapenems (แต่ carbapenem ทนการย่อยได้ดี)","Weak inducer แต่ถูกย่อยง่าย: ceftriaxone, ceftazidime, piperacillin-tazobactam → อาจดื้อระหว่างรักษาแม้ผลตั้งต้นรายงานว่าไว","ยาที่ไม่ใช่ β-lactam (TMP-SMX, nitrofurantoin, FQ, aminoglycosides) ไม่เหนี่ยวนำและไม่ถูก AmpC ย่อย","AmpC แบบ constitutive (เช่นใน E. coli บางสายพันธุ์) มักรายงานดื้อตั้งแต่แรก"]},
+
+{id:"cre",tab:"CRE",name:"Carbapenem-resistant Enterobacterales",pathogens:"ดื้อ carbapenem อย่างน้อย 1 ชนิด หรือตรวจพบยีน carbapenemase · ในไทยยีนหลักคือ NDM (MBL) และ OXA-48-like · ถ้าตรวจยีนได้ใช้เลือกยาได้โดยตรง",
+ sites:[
+ {id:"uuti",label:"Cystitis (uUTI)",recs:[
+  ["p","<b>Nitrofurantoin</b> หากไวต่อยา","A-IIa"],
+  ["a","Fosfomycin กิน หากไวต่อยา","B-IIb"],
+  ["a","Meropenem high-dose extended-infusion ถ้า MIC meropenem ≤1 µg/mL","B-IIb"],
+  ["a","Aminoglycoside (เช่น amikacin) หรือ colistin <b>ครั้งเดียว</b>","B-IIb"]]},
+ {id:"cuti",label:"cUTI & นอกทางเดินปัสสาวะ",recs:[
+  ["p","<b>Ceftazidime-avibactam</b> หากไวต่อยา","A-IIb"],
+  ["p","ถ้าดื้อ CAZ-AVI → <b>aztreonam-avibactam</b> หรือ <b>CAZ-AVI + aztreonam</b>","A-IIb"],
+  ["c","ตรวจพบ OXA-48-like หรือ KPC และไม่พบ MBL → ceftazidime-avibactam","A-IIb"],
+  ["c","ตรวจพบ MBL (NDM, IMP, VIM) → aztreonam-avibactam หรือ CAZ-AVI + aztreonam","A-IIb"]]},
+ {id:"cuti2",label:"cUTI ใช้ยาหลักไม่ได้",recs:[
+  ["a","Meropenem high-dose extended-infusion ถ้า MIC ≤1 µg/mL (เช่น 2 g หยด 3 ชม. q8h)","B-IIb"],
+  ["a","Amikacin หรือ colistin ยาเดี่ยว หากไวต่อยา","B-IIb"],
+  ["a","Fosfomycin IV ยาเดี่ยว หากไวต่อยา","B-III"]]},
+ {id:"inv2",label:"นอก UT ใช้ยาหลักไม่ได้",recs:[
+  ["a","<b>Colistin</b> หรือ <b>polymyxin B</b>","B-IIb"],
+  ["c","ติดเชื้อรุนแรง → ให้ยาร่วมอีกชนิด เช่น fosfomycin IV, sitafloxacin, tigecycline ตามเชื้อ ความไว และตำแหน่ง","B-III"],
+  ["c","Intra-abdominal infection → tigecycline ขนาดสูงเป็นยาเดี่ยวได้ หากไวต่อยา","B-III"],
+  ["x","Tigecycline ยาเดี่ยวใน UTI และ bacteremia","A-III"]]}
+ ],
+ nums:[["~50% / 20%","OXA-48-like หรือ KPC ใน CR-K. pneumoniae / CR-E. coli","ข้อมูลไทย · มักไวต่อ CAZ-AVI"],["~50% / 75%","MBL ใน CR-K. pneumoniae / CR-E. coli","CAZ-AVI ไม่ครอบคลุม MBL"],["9% vs 32%","CRACKLE: mortality 28 วัน CAZ-AVI vs colistin","p = 0.001"],["22% vs 47%","CAVICOR: CAZ-AVI vs best available therapy","p = 0.004"],["8% vs 33%","ASSEMBLE (MBL, n=15): ATM-AVI vs BAT","mortality 28 วัน"]],
+ ev:["REVISIT (RCT, CRE ~24%): clinical response ของ aztreonam-avibactam ไม่ต่างจาก meropenem","INCREMENT: bacteremia จาก CPE ที่เสี่ยงสูง combination therapy ลด mortality (aHR 0.56, 95% CI 0.34–0.91)","Colistin ยาเดี่ยวใน CRE รอดชีวิตราว 43%","CRE ไวต่อ aminoglycosides รองจาก colistin; ระดับยาที่ไตสูงจึงใช้เดี่ยวใน UTI ได้","Tigecycline ขนาดสูง 200 mg แล้ว 100 mg q12h ใช้เดี่ยวได้ใน intra-abdominal/biliary แต่ไม่ใช่ bacteremia หรือ pneumonia","Fosfomycin IV กระจายดีในปอด กระดูก ลิ้นหัวใจ CSF แต่ยังขาดข้อมูลประสิทธิภาพเมื่อใช้เดี่ยว"]},
+
+{id:"pa",tab:"P. aeruginosa",name:"MDR / XDR / PDR Pseudomonas aeruginosa",sci:true,pathogens:"DTR P. aeruginosa = ไม่ไวต่อ aztreonam, cefepime, ceftazidime, ciprofloxacin, imipenem, levofloxacin, meropenem และ pip-tazo ทั้งหมด · Carbapenem-R ที่ยังไวยาอื่นมักเกิดจากการสูญเสีย OprD",
+ sites:[
+ {id:"mdr",label:"MDR",recs:[
+  ["p","ไวต่อ carbapenem → เลือก <b>β-lactam อื่นก่อน</b> (cefepime, cefoperazone-sulbactam, ceftazidime, pip-tazo) หรือ FQ (cipro, levo)","A-IIb"],
+  ["p","ดื้อ carbapenem แต่ไวยาอื่นที่ไม่ใช่ BL/BLI ใหม่ → ใช้ยาที่ไวนั้น","A-IIb"],
+  ["a","Ceftazidime-avibactam, ceftolozane-tazobactam หรือ aztreonam เมื่อใช้ยาอื่นไม่ได้","A-III"],
+  ["c","ปอดอักเสบ → เลือก ceftolozane-tazobactam ก่อน CAZ-AVI","B-IIb"]]},
+ {id:"xdr",label:"XDR",recs:[
+  ["p","<b>Ceftazidime-avibactam</b> หรือ <b>ceftolozane-tazobactam</b> หากไวต่อยา","A-IIa"],
+  ["c","ปอดอักเสบ → ceftolozane-tazobactam ก่อน CAZ-AVI","B-IIb"],
+  ["a","ยาเดี่ยว (UTI): colistin หรือ amikacin","B-IIb"],
+  ["a","ยาเดี่ยว (นอก UT): colistin, polymyxin B หรือ amikacin · เลือก polymyxin B ก่อน colistin","B-IIb"],
+  ["a","สูตรผสม 2 ใน 3: colistin/polymyxin B · fosfomycin · carbapenem กลุ่ม 2 (เมื่อ MIC 4–8, ขนาดสูง หยดนาน) — ปอดอักเสบ A-IIb, ระบบอื่นรวม UTI B-III","A-IIb"],
+  ["x","Fosfomycin IV ยาเดี่ยว (ดื้อระหว่างรักษา)","A-III"],
+  ["x","ยาพ่นละอองฝอย (nebulized) ในปอดอักเสบ","A-I"]]},
+ {id:"pdr",label:"PDR",recs:[["p","ปรึกษาผู้เชี่ยวชาญโรคติดเชื้อ","A-III"]]}
+ ],
+ nums:[["63% vs 51%","CACTUS: clinical success C/T vs CAZ-AVI","aOR 2.07 (1.16–3.70)"],["8% vs 18%","reinfection C/T vs CAZ-AVI ในปอดอักเสบ","p = 0.03 · mortality ไม่ต่าง"],["81% vs 61%","clinical cure C/T vs colistin/AG-based","AKI 6% vs 34%"],["90% vs 51%","XDR-PA pneumonia: survival 2 ยา vs ยาเดี่ยว","p < 0.001"]],
+ ev:["ไม่ควรเพิ่ม polymyxin หรือ aminoglycoside เข้ากับ β-lactam ที่ไวอยู่แล้ว ไม่เพิ่มประสิทธิผลแต่เพิ่มพิษ","ปอดอักเสบ HAP: CAZ-AVI cure 69% vs meropenem 73% (REPROVE); C/T mortality 24% vs 26% (ASPECT-NP)","Polymyxin B อาจมีพิษต่อไตน้อยกว่า colistin แต่ MA 20 การศึกษาไม่พบความต่างชัดเจน","Nebulized colistin/amikacin/fosfomycin: 3 RCT ไม่ดีกว่าน้ำเกลือ; MA ใน VAP ช่วย eradication แต่ไม่ลด mortality และเสี่ยงหลอดลมหดเกร็ง"]},
+
+{id:"steno",tab:"S. maltophilia",name:"Stenotrophomonas maltophilia",sci:true,pathogens:"ดื้อ β-lactam รวม carbapenem โดยธรรมชาติ (L1 MBL, L2 serine) · แยก colonization ก่อนรักษาเสมอ · ในไทยรายงานผลได้เพียง levofloxacin, minocycline, TMP-SMX",
+ sites:[
+ {id:"sev",label:"รุนแรง",recs:[
+  ["p","<b>TMP-SMX</b> + ยาที่ไวอีก 1 ชนิด: levofloxacin, minocycline หรือ tigecycline ให้ 2 ยาจนอาการดีขึ้น","A-III"],
+  ["a","ดื้อยา หรือแพ้ยาหลัก → <b>aztreonam-avibactam</b> หรือ <b>CAZ-AVI + aztreonam</b> + อีก 1 ชนิด (levo, mino, tige หรือ TMP-SMX)","B-III"],
+  ["x","Minocycline และ tigecycline ใน UTI และ bacteremia","A-III"]]},
+ {id:"mild",label:"ไม่รุนแรง / step-down",recs:[
+  ["p","<b>Levofloxacin</b>, <b>minocycline</b> หรือ <b>TMP-SMX</b> ยาเดี่ยว หากไวต่อยา และใช้เป็นยากินต่อหลังอาการดีขึ้นจากสูตร 2 ยา","A-IIb"],
+  ["c","ถ้าใช้ minocycline หรือ tigecycline ให้ <b>ขนาดสูง</b>","A-III"]]},
+ {id:"avoid",label:"ไม่แนะนำ",recs:[
+  ["x","Ciprofloxacin","A-IIb"],["x","Moxifloxacin (ไม่มีข้อมูลทางคลินิก)","A-IIb"],["x","Doxycycline","A-III"],
+  ["x","Ceftazidime แม้รายงานว่าไว (CLSI ยกเลิก breakpoint แล้ว)","A-IIb"]]}
+ ],
+ nums:[["~90%","ไวต่อ TMP-SMX in vitro","แต่เป็น bacteriostatic"],["70–90%","ไวต่อ minocycline","200 mg q12h: stasis >90%, kill ~50%"],["30–80%","ไวต่อ levofloxacin","ดื้อระหว่างรักษาได้ (Smqnr, efflux)"],["aOR 0.73","mortality levo vs TMP-SMX ใน LRTI","LOS 7 vs 9 วัน"]],
+ ev:["Levofloxacin เป็น FQ ตัวเดียวที่มี breakpoint จาก CLSI","เลือก minocycline ก่อน tigecycline; tigecycline ไม่มีเกณฑ์แปลผล ให้ 200 mg แล้ว 100 mg q12h","ข้อมูลยาเดี่ยวแต่ละชนิดยังจำกัด จึงให้ 2 ยาในรายรุนแรง"]},
+
+{id:"crab",tab:"CRAB",name:"Carbapenem-resistant Acinetobacter baumannii",sci:true,pathogens:"กลไกหลัก OXA-23-like · CRAB ไทยมัก MIC sulbactam >16 µg/mL — ไม่ต้องตรวจ MIC sulbactam เพื่อปรับยา · ยังไม่มี sulbactam-durlobactam ในไทย",
+ sites:[
+ {id:"core",label:"สูตรหลัก",recs:[
+  ["p","ใช้ <b>≥2 ยาร่วมกัน</b> โดยเฉพาะรายรุนแรง ให้ต่อจนครบการรักษา","A-IIb"],
+  ["p","<b>Sulbactam 9–12 g/วัน</b> เป็นแกนหลัก (เดี่ยว หรือในรูป ampicillin-/cefoperazone-sulbactam)","A-IIa"],
+  ["p","ร่วมกับ <b>polymyxin</b> หรือ <b>tetracycline</b> อีก 1 ชนิด","A-IIb"],
+  ["p","Bacteremia และติดเชื้อรุนแรง → sulbactam + polymyxin","A-IIb"]]},
+ {id:"pick",label:"เลือกยาคู่",recs:[
+  ["c","Polymyxin: เลือก <b>polymyxin B</b> ก่อน colistin ยกเว้น UTI ให้ <b>colistin</b>","B-IIb"],
+  ["c","Tetracycline: เลือก <b>minocycline</b> ก่อน tigecycline และให้ขนาดสูง","B-IIb"],
+  ["c","MIC minocycline 2–4 µg/mL → ใช้อย่างระมัดระวัง (PK/PD ไม่ถึงเป้าเมื่อ MIC >1)","B-IIb"],
+  ["x","Minocycline หรือ tigecycline ยาเดี่ยวใน UTI และ bacteremia","A-III"],
+  ["x","Polymyxin ยาเดี่ยว (therapeutic window แคบ, ระดับในปอดต่ำ)","—"]]},
+ {id:"salv",label:"ทางเลือกจำกัด",recs:[
+  ["a","Colistin + fosfomycin IV","B-IIb"],
+  ["a","Sitafloxacin เป็นหนึ่งในสูตรยาผสม (ดูดซึมแปรปรวนใน sepsis)","B-IIb"]]}
+ ],
+ nums:[["OR 0.27","Network MA: สูตรที่มี sulbactam เป็นหลัก vs สูตรอื่น","all-cause mortality"],["HR 0.27","ไทย: sulbactam 12 vs 9 g/วัน เมื่อ MIC ≥128","การศึกษา secondary analysis ของ RCT"],["49%","ความสอดคล้อง E-test กับ broth microdilution","E-test ให้ MIC สูงลวง"],["91% vs 58%","colistin + fosfomycin vs colistin: eradication 72 ชม.","clinical response 63% vs 56% (NS)"]],
+ ev:["Sulbactam ขนาดสูงทำให้ PBP อิ่มตัวแม้ MIC 16–32 µg/mL","มีเพียง 1 ใน 7 การศึกษาที่ combination ดีกว่า monotherapy แต่ CRAB มี inoculum สูง การให้ 2 ยาเพิ่มโอกาสได้ยาที่ไวอย่างน้อย 1 ชนิด","RCT อินเดีย VAP: colistin + amp-sulbactam cure 70% vs colistin 16%","Colistin ยาเดี่ยวในการศึกษาใหญ่ mortality สูงถึง 46%","Colistin + sitafloxacin vs colistin: mortality 32% เท่ากัน; 3 ยา (colistin+mero+sita) cure 88% vs 62% แต่ mortality ไม่ต่าง","Minocycline ในไทยมีแต่ชนิดกิน 200 mg q12h"]}
+];
+
+/* Breakpoints: [drug, S, I/SDD, R, note]  MIC µg/mL */
+const BP={
+ "Enterobacterales":[
+  ["Amoxicillin-clavulanate","≤8/4","16/8","≥32/16",""],["Piperacillin-tazobactam","≤8/4","—","≥32/4",""],
+  ["Ceftriaxone","≤1","2","≥4",""],["Ceftazidime","≤4","8","≥16",""],["Cefepime","≤2","SDD 4–8","≥16",""],
+  ["Ertapenem","≤0.5","1","≥2",""],["Imipenem","≤1","2","≥4",""],["Meropenem","≤1","2","≥4",""],
+  ["Ceftazidime-avibactam","≤8/4","—","≥16/4","Zone 20–22 mm ต้องทำ MIC ยืนยัน"],["Ceftolozane-tazobactam","≤2/4","4/4","≥8/4",""],
+  ["Aztreonam","≤4","8","≥16",""],["Aztreonam-avibactam","≤4/4","8/4","≥16/4","Zone 22–24 mm ต้องทำ MIC ยืนยัน"],
+  ["Gentamicin","≤2","4","≥8",""],["Amikacin","≤4","8","≥16",""],
+  ["Colistin / polymyxin B","—","≤2","≥4","ใช้ broth disk elution หรือ colistin agar test แทนได้"],
+  ["Tetracycline","≤4","8","≥16","ไว tetracycline = ไว doxy/mino; ถ้าไม่ไวให้ทดสอบ doxy/mino"],["Minocycline","≤4","8","≥16",""],
+  ["Ciprofloxacin","≤0.25","0.5","≥1",""],["Levofloxacin","≤0.5","1","≥2","ขนาด 750 mg q24h"],["TMP-SMX","≤2/38","—","≥4/76",""],
+  ["Fosfomycin (กิน)","≤64","128","≥256","เฉพาะ E. coli จากปัสสาวะ · agar dilution + G6P"],["Nitrofurantoin","≤32","64","≥128","เฉพาะปัสสาวะ"]],
+ "P. aeruginosa":[
+  ["Piperacillin-tazobactam","≤16/4","32/4","≥64/4",""],["Ceftazidime","≤8","16","≥32",""],["Cefepime","≤8","16","≥32",""],
+  ["Ceftazidime-avibactam","≤8/4","—","≥16/4",""],["Ceftolozane-tazobactam","≤4/4","8/4","≥16/4",""],["Aztreonam","≤8","16","≥32",""],
+  ["Imipenem","≤2","4","≥8",""],["Meropenem","≤2","4","≥8",""],["Amikacin","≤16","32","≥64","เฉพาะปัสสาวะ"],
+  ["Colistin / polymyxin B","—","≤2","≥4","ใช้ broth disk elution หรือ colistin agar แทนได้"],["Ciprofloxacin","≤0.5","1","≥2",""],["Levofloxacin","≤1","2","≥4",""]],
+ "Acinetobacter spp.":[
+  ["Ampicillin-sulbactam","≤8/4","16/8","≥32/16",""],["Piperacillin-tazobactam","≤16/4","32/4–64/4","≥128/4",""],["Ceftriaxone","≤8","16–32","≥64",""],
+  ["Ceftazidime","≤8","16","≥32",""],["Cefepime","≤8","16","≥32",""],["Imipenem","≤2","4","≥8",""],["Meropenem","≤2","4","≥8",""],
+  ["Gentamicin","≤2","4","≥8",""],["Amikacin","≤8","16","≥32","ขนาด 20 mg/kg q24h"],
+  ["Colistin / polymyxin B","—","≤2","≥4","ใช้ broth disk elution / agar test แทน <b>ไม่ได้</b>"],
+  ["Minocycline","≤1","2","≥4","Zone 18–21 mm ต้องทำ MIC ยืนยัน"],["Ciprofloxacin","≤1","2","≥4",""],["Levofloxacin","≤2","4","≥8",""],["TMP-SMX","≤2/38","—","≥4/76",""]],
+ "S. maltophilia":[
+  ["Minocycline","≤1","2","≥4",""],["Levofloxacin","≤2","4","≥8",""],["TMP-SMX","≤2/38","—","≥4/76",""],["Aztreonam-avibactam","—","—","—","ใช้ broth disk elution"]],
+ "Fosfomycin IV · Tigecycline":[
+  ["Fosfomycin IV — E. coli (FDA)","≤8","16","≥32","6 g IV q8h, CrCl 50"],["Fosfomycin IV — K. pneumoniae (FDA)","≤32","64","≥128","6 g IV q8h, CrCl 50"],
+  ["Fosfomycin IV — E. coli (EUCAST)","≤8","—",">8","เฉพาะปัสสาวะ; ไม่มีเกณฑ์สำหรับ Enterobacterales อื่น, PA, Acinetobacter"],
+  ["Tigecycline — Enterobacterales (FDA)","≤2","4","≥8","ความไวลดลงใน Proteus, Providencia, Morganella"],
+  ["Tigecycline — E. coli, C. koseri (EUCAST)","≤0.5","—",">0.5","ไม่มีเกณฑ์สำหรับ S. maltophilia และ Acinetobacter"]]
+};
+
+/* Dosing Table 11: [drug, uUTI, cUTI/other, flag] */
+const DOSE=[
+ ["Amikacin","15 mg/kg IV ครั้งเดียว","15 mg/kg IV q24h","#"],
+ ["Aztreonam-avibactam","เหมือนตำแหน่งอื่น","2.67 g IV loading แล้ว 2 g q6h","*"],
+ ["CAZ-AVI + aztreonam","เหมือนตำแหน่งอื่น","CAZ-AVI 2.5 g q8h + aztreonam 2 g q8h ให้พร้อมกันทาง Y-site","*"],
+ ["Biapenem","เหมือนตำแหน่งอื่น","600 mg IV q12h",""],
+ ["Cefepime","1 g IV q8h","2 g IV q8h","*"],
+ ["Ceftazidime","เหมือนตำแหน่งอื่น","2 g IV q8h",""],
+ ["Ceftazidime-avibactam","เหมือนตำแหน่งอื่น","2.5 g IV q8h","*"],
+ ["Ceftolozane-tazobactam","1.5 g IV q8h","3 g IV q8h","*"],
+ ["Ciprofloxacin","500 mg PO q12h","400 mg IV q8h หรือ 750 mg PO q12h",""],
+ ["Colistin","เหมือนตำแหน่งอื่น","300 mg IV loading แล้ว 150 mg IV q8–12h",""],
+ ["Doripenem","เหมือนตำแหน่งอื่น","500 mg IV q8h",""],
+ ["Ertapenem","เหมือนตำแหน่งอื่น","1 g IV q24h",""],
+ ["Fosfomycin trometamol","3 g PO ครั้งเดียว","ไม่แนะนำ",""],
+ ["Fosfomycin disodium (IV)","ไม่แนะนำ","16–24 g/วัน แบ่ง 4–6 g IV q6–8h ตามความไว",""],
+ ["Gentamicin","5 mg/kg IV ครั้งเดียว","7 mg/kg IV q24h","#"],
+ ["Imipenem-cilastatin","500 mg IV q6h","500 mg IV q6h","*"],
+ ["Levofloxacin","750 mg PO q24h","750 mg IV/PO q24h",""],
+ ["Meropenem","1 g IV q8h","1–2 g IV q8h · 2 g q8h สำหรับ CRE และ CNS infection","*"],
+ ["Minocycline","เหมือนตำแหน่งอื่น","200 mg PO วันละ 2 ครั้ง · ไม่ใช้ใน UTI/bacteremia",""],
+ ["Nitrofurantoin microcrystal","100 mg PO วันละ 4 ครั้ง","ไม่แนะนำ",""],
+ ["Piperacillin-tazobactam","เหมือนตำแหน่งอื่น","4.5 g IV q6h","*"],
+ ["Polymyxin B","ไม่แนะนำ","2.5 mg/kg IV loading (≤200 mg) แล้ว 1.5 mg/kg q12h · ไม่ใช้ใน UTI",""],
+ ["Sitafloxacin","เหมือนตำแหน่งอื่น","100 mg PO วันละ 2 ครั้ง",""],
+ ["Sulbactam-containing","เหมือนตำแหน่งอื่น","Sulbactam 9–12 g/วัน · sulbactam เดี่ยว 3 g IV q6–8h · amp-sulbactam / cefoperazone-sulbactam คำนวณให้ได้ sulbactam 9–12 g/วัน","*"],
+ ["Tigecycline","ไม่แนะนำ","200 mg IV loading แล้ว 100 mg IV q12h · ไม่ใช้ใน UTI/bacteremia",""],
+ ["TMP-SMX","TMP 160 mg PO q12h","TMP 10–15 mg/kg/วัน IV/PO แบ่ง q8–12h",""]
+];
+
+const TABS=[{id:"overview",tab:"ภาพรวม"},...ORG.map(o=>({id:o.id,tab:o.tab})),{id:"bp",tab:"Breakpoints"},{id:"dose",tab:"ขนาดยา"}];
+const $=s=>document.querySelector(s);
+const gradeTip=g=>{if(!g||g==="—")return"ไม่ได้ระบุระดับ";const[a,b]=g.split("-");return`${a}: ${G[a]||""} · ${b}: ${G[b]||""}`};
+let state={tab:"overview",site:{}};
+try{const s=JSON.parse(localStorage.getItem("idat26")||"null");if(s)state=Object.assign(state,s)}catch(e){}
+const h=location.hash.slice(1);if(TABS.some(t=>t.id===h))state.tab=h;
+const save=()=>{try{localStorage.setItem("idat26",JSON.stringify(state))}catch(e){}};
+
+function renderTabs(){
+ $("#tabs").innerHTML=TABS.map(t=>`<button class="tab" role="tab" id="t-${t.id}" aria-selected="${t.id===state.tab}" data-t="${t.id}">${t.id==="pa"||t.id==="steno"?`<i>${t.tab}</i>`:t.tab}</button>`).join("");
+}
+function recList(recs){
+ return `<ul class="recs">${recs.map(([r,t,g])=>`<li class="rec"><span class="role ${ROLE[r][1]}">${ROLE[r][0]}</span><div class="txt">${t}</div><span class="grade" title="${gradeTip(g)}">${g}</span></li>`).join("")}</ul>`;
+}
+function renderOrg(o){
+ const siteId=state.site[o.id]&&o.sites.some(s=>s.id===state.site[o.id])?state.site[o.id]:o.sites[0].id;
+ const site=o.sites.find(s=>s.id===siteId);
+ return `<section class="panel" aria-labelledby="t-${o.id}">
+  <div class="orghead">
+   <h2>${o.sci?o.name.replace(/(Pseudomonas aeruginosa|Stenotrophomonas maltophilia|Acinetobacter baumannii)/,'<i>$1</i>'):o.name}</h2>
+   <div class="pathogens">${o.pathogens}</div>
+   <div class="chips" role="group" aria-label="ตำแหน่ง/สถานการณ์">${o.sites.map(s=>`<button class="chip" id="c-${o.id}-${s.id}" aria-pressed="${s.id===siteId}" data-o="${o.id}" data-s="${s.id}">${s.label}</button>`).join("")}</div>
+  </div>
+  <div class="grid2">
+   <div class="block"><h3>${site.label}</h3>${site.note?`<p class="sub" style="margin:-4px 0 10px">${site.note}</p>`:""}${recList(site.recs)}</div>
+   <div class="block"><h3>ตัวเลขที่ควรจำ</h3><div class="nums">${o.nums.map(([v,l,s])=>`<div class="num"><span class="v">${v}</span><span class="l">${l}</span><span class="s">${s}</span></div>`).join("")}</div></div>
+  </div>
+  <div class="block"><h3>เหตุผลจากหลักฐาน</h3><ul class="ev">${o.ev.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+  <div class="legend"><span class="role r-p">ยาหลัก</span><span class="role r-a">ทางเลือก</span><span class="role r-c">มีเงื่อนไข</span><span class="role r-x">ไม่แนะนำ</span><span>· แตะรหัสระดับเพื่อดูความหมาย (เช่น <span class="kbd">A-IIb</span>)</span></div>
+ </section>`;
+}
+function renderOverview(){
+ return `<section class="panel">
+ <div class="callout">ตำแหน่งที่เปลี่ยนจากแนวทางสากล: ESBL-E ใช้ ertapenem ได้เมื่อพ้น shock และไม่มี hypoalbuminemia · CRE ในไทยเป็น MBL มาก ตรวจยีนช่วยเลือก CAZ-AVI หรือ ATM-AVI · CRAB ใช้ sulbactam ขนาดสูงเป็นแกน เพราะยังไม่มี sulbactam-durlobactam</div>
+ <div class="cards3">
+  <div class="block"><h3>ระดับการดื้อยา</h3><dl class="defn">
+   <dt>MDR</dt><dd>ดื้อ ≥1 ชนิดใน ≥3 กลุ่มยา</dd>
+   <dt>XDR</dt><dd>ดื้อเกือบทุกกลุ่ม เหลือใช้ได้ 1–2 กลุ่ม</dd>
+   <dt>PDR</dt><dd>ดื้อทุกกลุ่ม</dd>
+   <dt>DTR P. aeruginosa</dt><dd>ไม่ไวต่อ first-line ทั้ง 8 ตัว (aztreonam, cefepime, ceftazidime, cipro, imipenem, levo, meropenem, pip-tazo)</dd></dl></div>
+  <div class="block"><h3>ระดับคำแนะนำ</h3><dl class="defn">
+   <dt>A / B / C</dt><dd>แนะนำอย่างยิ่ง / ปานกลาง / อ่อน</dd>
+   <dt>I</dt><dd>RCT หลายฉบับไปทางเดียวกัน หรือ SR/MA ของ RCT</dd>
+   <dt>IIa · IIb</dt><dd>RCT ที่ไม่ถึงระดับ I · observational คุณภาพดี หรือ MA ของ observational</dd>
+   <dt>III</dt><dd>ความเห็นผู้เชี่ยวชาญ, case report/series</dd></dl></div>
+  <div class="block"><h3>หลักทั่วไป</h3><ul class="ev">
+   <li>แยก infection กับ colonization ก่อนเสมอ</li>
+   <li>แนวทางนี้สำหรับ definitive therapy; empirical therapy อยู่นอกขอบเขต</li>
+   <li>ระยะเวลาไม่ต้องนานกว่าเชื้อไวยา · ถ้ายาเริ่มต้นไม่มีฤทธิ์และอาการไม่ดีขึ้น นับวันจากวันที่ได้ยาที่ไว</li>
+   <li>uUTI ที่ดีขึ้นแม้ยาเริ่มต้นไม่ครอบคลุม ไม่ต้องเพาะเชื้อซ้ำหรือเปลี่ยนยา</li></ul></div>
+ </div>
+ <div class="grid2">
+  <div class="block"><h3>เกณฑ์เปลี่ยน IV เป็นยากิน</h3><ul class="ev">
+   <li>เชื้อไวต่อยากินที่เหมาะสม</li><li>Hemodynamically stable</li><li>ยากินมีระดับยาพอที่ตำแหน่งติดเชื้อ</li><li>ดูดซึมทางเดินอาหารได้ดี</li></ul>
+   <p class="sub" style="margin-top:10px">cUTI = UTI ที่ลุกลามเกินกระเพาะปัสสาวะ: pyelonephritis, มีไข้หรือ bacteremia, CAUTI, prostatitis</p></div>
+  <div class="block"><h3>อ่าน phenotype เร็ว</h3><ul class="ev">
+   <li><b>ESBL</b>: R ต่อ 3GC, cefepime, aztreonam · S/I ต่อ amox-clav, pip-tazo, cefoxitin</li>
+   <li><b>AmpC</b>: R ต่อ amox-clav, pip-tazo, aztreonam, cefoxitin · S ต่อ cefepime</li>
+   <li><b>MBL</b> (Class B): ย่อย carbapenem แต่ไม่ย่อย aztreonam · ยับยั้งด้วย EDTA</li></ul></div>
+ </div>
+ <div class="tablebox"><table><thead><tr><th>Ambler</th><th>Active site</th><th>ตัวอย่างเอนไซม์ที่ย่อย carbapenem</th><th>Cefoxitin</th><th>Cefepime</th><th>Aztreonam</th></tr></thead><tbody>
+  <tr><td class="drug">A</td><td>Serine</td><td>KPC, NMC/IMI, SME (Enterobacterales)</td><td class="m">S</td><td class="m">R</td><td class="m">R</td></tr>
+  <tr><td class="drug">B (MBL)</td><td>Zn²⁺</td><td>NDM (Enterobacterales) · IMP, VIM, GIM, SPM, SIM (PA, Acinetobacter)</td><td class="m">R</td><td class="m">R</td><td class="m">S</td></tr>
+  <tr><td class="drug">C (AmpC)</td><td>Serine</td><td>ไม่ย่อย carbapenem</td><td class="m">R</td><td class="m">S</td><td class="m">R</td></tr>
+  <tr><td class="drug">D (OXA)</td><td>Serine</td><td>OXA-23-like (Acinetobacter) · OXA-48-like (Enterobacterales)</td><td class="m">R</td><td class="m">R</td><td class="m">R</td></tr>
+ </tbody></table></div>
+ <div class="tablebox"><table><thead><tr><th>การทดสอบ carbapenemase</th><th>ใช้กับ</th><th>ข้อดี</th><th>ข้อจำกัด</th></tr></thead><tbody>
+  <tr><td class="drug">Carba NP</td><td>Enterobacterales, PA</td><td>เร็ว</td><td class="note">ไม่บอกชนิด · น้ำยาอายุสั้น · อาจ invalid · พลาด OXA-48-like</td></tr>
+  <tr><td class="drug">mCIM</td><td>Enterobacterales, PA</td><td>ใช้ของที่มีในแล็บ</td><td class="note">ไม่บอกชนิด · เพาะข้ามคืน · พลาด OXA-232</td></tr>
+  <tr><td class="drug">mCIM + eCIM</td><td>Enterobacterales ที่ mCIM บวก</td><td>แยก serine กับ MBL</td><td class="note">ลบลวงเมื่อมี serine carbapenemase (KPC, OXA-48, OXA-181) ร่วมกับ MBL</td></tr>
+  <tr><td class="drug">Molecular / lateral flow</td><td>GNB ทั่วไป</td><td>บอกชนิดได้ (KPC, IMP, VIM, NDM, OXA-48)</td><td class="note">ตรวจได้เฉพาะที่อยู่ในชุด · ผลลบไม่ตัดกลไกอื่น</td></tr>
+ </tbody></table></div>
+ </section>`;
+}
+function renderBP(){
+ const keys=Object.keys(BP);const cur=state.bpk&&BP[state.bpk]?state.bpk:keys[0];
+ return `<section class="panel"><div class="orghead"><h2>Breakpoints (MIC, µg/mL)</h2>
+ <div class="pathogens">CLSI M100 ed.36 ปี 2569 · ตารางละเอียดรวม zone diameter ดูต้นฉบับตารางที่ 3–6, 9–10 · Colistin/polymyxin ไม่มีหมวด S (มีแค่ I ≤2 / R ≥4) และทดสอบด้วย broth microdilution เท่านั้น ห้ามใช้ disk หรือ gradient diffusion · ไม่ทดสอบ sulbactam เดี่ยวเพื่อปรับยา</div>
+ <div class="search"><input id="bpq" type="search" placeholder="ค้นหายา เช่น meropenem" aria-label="ค้นหายา" value="${state.bpq||""}"></div>
+ <div class="chips">${keys.map(k=>`<button class="chip" id="bp-${keys.indexOf(k)}" aria-pressed="${k===cur}" data-bp="${k}">${k}</button>`).join("")}</div></div>
+ <div class="tablebox"><table><thead><tr><th>ยา</th><th>S</th><th>I / SDD</th><th>R</th><th>หมายเหตุ</th></tr></thead><tbody id="bpbody"></tbody></table></div>
+ <p class="tnote">ยาที่ระดับในปัสสาวะสูงจะแสดงผล I ได้ (“^” ในต้นฉบับ) · SDD = susceptible dose-dependent</p></section>`;
+}
+function fillBP(){
+ const keys=Object.keys(BP);const cur=state.bpk&&BP[state.bpk]?state.bpk:keys[0];const q=(state.bpq||"").toLowerCase().trim();
+ const rows=q?keys.flatMap(k=>BP[k].filter(r=>r[0].toLowerCase().includes(q)).map(r=>[k,...r])):BP[cur].map(r=>[null,...r]);
+ $("#bpbody").innerHTML=rows.length?rows.map(([k,d,s,i,r,n])=>`<tr><td class="drug">${d}${k?`<div class="sub">${k}</div>`:""}</td><td class="m">${s}</td><td class="m">${i}</td><td class="m">${r}</td><td class="note">${n}</td></tr>`).join(""):`<tr><td colspan="5" class="note">ไม่พบยาที่ตรงกับ “${q}”</td></tr>`;
+}
+function renderDose(){
+ return `<section class="panel"><div class="orghead"><h2>ขนาดยาแนะนำ ผู้ใหญ่ไตปกติ</h2>
+ <div class="pathogens"><span class="kbd">*</span> พิจารณา prolonged infusion · <span class="kbd">#</span> ตรวจระดับยาถ้าทำได้ · ปรับตาม CrCl ทุกครั้ง</div>
+ <div class="search"><input id="dq" type="search" placeholder="ค้นหายา" aria-label="ค้นหายา" value="${state.dq||""}"></div></div>
+ <div class="tablebox"><table><thead><tr><th>ยา</th><th>Cystitis (uUTI)</th><th>cUTI และตำแหน่งอื่น</th></tr></thead><tbody id="dbody"></tbody></table></div></section>`;
+}
+function fillDose(){
+ const q=(state.dq||"").toLowerCase().trim();
+ const rows=DOSE.filter(r=>r[0].toLowerCase().includes(q));
+ $("#dbody").innerHTML=rows.length?rows.map(([d,u,c,f])=>`<tr><td class="drug">${d}${f?` <span class="kbd" style="color:var(--accent)">${f}</span>`:""}</td><td>${u}</td><td>${c}</td></tr>`).join(""):`<tr><td colspan="3" class="note">ไม่พบยาที่ตรงกับ “${q}”</td></tr>`;
+}
+function render(){
+ renderTabs();
+ const o=ORG.find(x=>x.id===state.tab);
+ $("#main").innerHTML=o?renderOrg(o):state.tab==="bp"?renderBP():state.tab==="dose"?renderDose():renderOverview();
+ if(state.tab==="bp")fillBP();if(state.tab==="dose")fillDose();
+ save();
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-t]");if(t){state.tab=t.dataset.t;try{history.replaceState(null,"","#"+state.tab)}catch(_){}render();window.scrollTo({top:0});t.scrollIntoView({inline:"nearest",block:"nearest"});return}
+ const c=e.target.closest("[data-s]");if(c){state.site[c.dataset.o]=c.dataset.s;render();return}
+ const b=e.target.closest("[data-bp]");if(b){state.bpk=b.dataset.bp;state.bpq="";render();return}
+});
+document.addEventListener("input",e=>{
+ if(e.target.id==="bpq"){state.bpq=e.target.value;fillBP();save()}
+ if(e.target.id==="dq"){state.dq=e.target.value;fillDose();save()}
+});
+render();
+</script>
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
