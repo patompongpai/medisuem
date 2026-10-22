@@ -1,0 +1,744 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hep B · C CPG 2569</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky tab bar → one-column reading pages; tool = inputs left / live result right, stacks on phone */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --sunk:#E8ECEA; --line:#D3DAD7;
+  --ink:#16201E; --muted:#56635F;
+  --hbv:#8A2D2B; --hbv-soft:#F4E3E1;
+  --hcv:#36478A; --hcv-soft:#E3E7F5;
+  --ok:#2E7047; --ok-soft:#DFF0E5;
+  --warn:#9A5B0C; --warn-soft:#FBEBD2;
+  --crit:#A3231F; --crit-soft:#F8DEDC;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18211F; --sunk:#202B28; --line:#2F3C38;
+  --ink:#E7EDEA; --muted:#9AA9A4;
+  --hbv:#E58A82; --hbv-soft:#3A2220; --hcv:#9AABEE; --hcv-soft:#232A45;
+  --ok:#7CCB97; --ok-soft:#1C3326; --warn:#E9B062; --warn-soft:#3A2C16; --crit:#F08A84; --crit-soft:#3E1F1D;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18211F; --sunk:#202B28; --line:#2F3C38;
+  --ink:#E7EDEA; --muted:#9AA9A4;
+  --hbv:#E58A82; --hbv-soft:#3A2220; --hcv:#9AABEE; --hcv-soft:#232A45;
+  --ok:#7CCB97; --ok-soft:#1C3326; --warn:#E9B062; --warn-soft:#3A2C16; --crit:#F08A84; --crit-soft:#3E1F1D;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:28px 18px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4.4vw,40px);line-height:1.2;margin:6px 0 8px;text-wrap:balance}
+h1 .b{color:var(--hbv)} h1 .c{color:var(--hcv)}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+.byline{font-size:13px;color:var(--muted);margin-top:10px}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto}
+nav.tabs button{font:600 14px var(--f-body);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:12px 14px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+nav.tabs button.t-hbv[aria-selected="true"]{border-bottom-color:var(--hbv);color:var(--hbv)}
+nav.tabs button.t-hcv[aria-selected="true"]{border-bottom-color:var(--hcv);color:var(--hcv)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--hcv);outline-offset:2px}
+main{padding-block:24px 64px}
+section.page{display:flex;flex-direction:column;gap:28px}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;margin:0;text-wrap:balance}
+h3{font-family:var(--f-display);font-weight:600;font-size:18px;margin:0 0 8px}
+h4{font-size:15px;margin:0 0 6px}
+p{margin:0 0 8px} ul,ol{margin:0;padding-left:1.2em} li{margin:2px 0}
+.block{display:flex;flex-direction:column;gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.grid2>*,.grid3>*{min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--sunk);color:var(--muted)}
+.tag.b{background:var(--hbv-soft);color:var(--hbv)} .tag.c{background:var(--hcv-soft);color:var(--hcv)}
+.note{font-size:13px;color:var(--muted)}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
+.callout.crit{border-color:var(--crit);background:var(--crit-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.num{white-space:nowrap}
+.keypts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.kp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kp .big{font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1.25}
+.kp.b .big{color:var(--hbv)} .kp.c .big{color:var(--hcv)}
+.formula{font-family:var(--f-mono);font-size:13px;background:var(--sunk);padding:8px 10px;border-radius:6px;overflow-x:auto;white-space:nowrap}
+
+/* flowchart */
+.fc-scroll{overflow-x:auto;padding-bottom:4px}
+.fc{display:flex;flex-direction:column;align-items:center;gap:0;min-width:560px;padding:6px 0}
+.node{background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;text-align:center;font-size:13.5px;line-height:1.45;max-width:340px}
+.node b{display:block;font-size:14px}
+.node.start{border-color:var(--ink)}
+.node.act{background:var(--sunk)}
+.node.go{border-color:var(--ok);background:var(--ok-soft)}
+.node.stop{border-color:var(--line);border-style:dashed;color:var(--muted)}
+.node.ref{border-color:var(--crit);background:var(--crit-soft)}
+.hbvfc .node.start{border-color:var(--hbv)} .hcvfc .node.start{border-color:var(--hcv)}
+.arr{width:2px;height:20px;background:var(--line);position:relative;flex:none}
+.arr::after{content:"";position:absolute;bottom:-1px;left:-4px;border:5px solid transparent;border-top-color:var(--line);border-bottom:0}
+.split{display:grid;gap:10px;width:100%;border-top:2px solid var(--line);padding-top:0;margin-top:0}
+.split>.col{display:flex;flex-direction:column;align-items:center;min-width:0}
+.lbl{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--bg);padding:0 6px;margin-top:-1px}
+.lbl.yes{color:var(--ok)} .lbl.no{color:var(--muted)}
+.fc .row{display:flex;align-items:stretch;gap:12px;width:100%;justify-content:center}
+.side{font-size:12.5px;max-width:250px;text-align:left}
+
+/* 4R */
+.r4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.r4 .kp h4 span{font-family:var(--f-mono);color:var(--hcv);margin-right:6px}
+
+/* tool */
+.tool-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 14px var(--f-body);padding:8px 16px;border:0;background:none;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"].sb{background:var(--hbv);color:#fff}
+.seg button[aria-pressed="true"].sc{background:var(--hcv);color:#fff}
+.toolgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:18px;align-items:start}
+@media (max-width:820px){.toolgrid{grid-template-columns:1fr}}
+.form{display:flex;flex-direction:column;gap:14px}
+fieldset{border:1px solid var(--line);border-radius:10px;padding:12px 14px 14px;margin:0;background:var(--surface);display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 12px}
+legend{font:600 13px var(--f-body);padding:0 6px;color:var(--muted);letter-spacing:.03em}
+.f{display:flex;flex-direction:column;gap:3px;min-width:0}
+.f label{font-size:12.5px;color:var(--muted);font-weight:500}
+.f input,.f select{font:15px var(--f-body);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.f input[type=number]{font-family:var(--f-mono)}
+.chk{grid-column:1/-1;display:flex;flex-direction:column;gap:6px}
+.chk label{display:flex;gap:8px;align-items:flex-start;font-size:14px;cursor:pointer}
+.chk input{margin-top:5px;flex:none}
+.wide{grid-column:1/-1}
+.result{position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);display:flex;flex-direction:column;gap:14px}
+@media (max-width:820px){.result{position:static}}
+.stepper{display:flex;flex-direction:column;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.st{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;padding:5px 0;position:relative}
+.st .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;font:600 11px var(--f-mono);color:var(--muted);z-index:1}
+.st:not(:last-child)::before{content:"";position:absolute;left:10px;top:28px;bottom:-6px;width:2px;background:var(--line)}
+.st.done .dot{background:var(--ok);border-color:var(--ok);color:#fff}
+.st.cur .dot{background:var(--accent,var(--hbv));border-color:var(--accent,var(--hbv));color:#fff;box-shadow:0 0 0 4px var(--accent-soft,var(--hbv-soft))}
+.st.cur .t{font-weight:600}
+.st.skip .t{color:var(--muted);text-decoration:line-through}
+.st .t{font-size:14px} .st .d{font-size:12.5px;color:var(--muted)}
+.where{border-radius:10px;padding:14px 16px;background:var(--accent-soft,var(--hbv-soft));border:1px solid var(--accent,var(--hbv))}
+.where .k{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--hbv))}
+.where .h{font-family:var(--f-display);font-weight:700;font-size:20px;line-height:1.3;margin:2px 0 4px}
+.labs{display:flex;flex-wrap:wrap;gap:6px}
+.lab{font-size:13px;font-weight:600;padding:3px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--accent,var(--hbv));color:var(--ink)}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.sc{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.sc .v{font:600 20px var(--f-mono)} .sc .n{font-size:12px;color:var(--muted)} .sc .i{font-size:12px}
+.lv-ok{color:var(--ok)} .lv-warn{color:var(--warn)} .lv-crit{color:var(--crit)}
+.tl{display:flex;flex-direction:column;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tl .r{display:grid;grid-template-columns:118px 1fr;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line);font-size:14px}
+.tl .r:last-child{border-bottom:0}
+.tl .w{font:600 12.5px var(--f-mono);color:var(--accent,var(--hbv))}
+.alerts{display:flex;flex-direction:column;gap:8px}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 13px var(--f-body);padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.hide{display:none!important}
+.disclaimer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:no-preference){.st .dot,.where{transition:background .2s,border-color .2s}}
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow">CPG สรุป · Cancer Warriors โรคมะเร็งตับ · ฉบับปรับปรุงครั้งที่ 1</div>
+  <h1>แนวทางคัดกรองและรักษา<br>ไวรัสตับอักเสบ <span class="b">บี</span> และ <span class="c">ซี</span> พ.ศ. 2569</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไปถึงระดับโรงพยาบาลชุมชน สรุปเกณฑ์คัดกรอง เกณฑ์เริ่มยา สูตรยา และการติดตาม พร้อมเครื่องมือบอกว่าผู้ป่วยอยู่ขั้นไหนของ flow และต้องส่งแลปอะไรเมื่อไร</p>
+  <div class="byline">สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · อ้างอิงเอกสาร "แนวทางการตรวจคัดกรองและรักษาโรคไวรัสตับอักเสบ บี และ ซี สำหรับแพทย์เวชปฏิบัติทั่วไป พ.ศ. 2569"</div>
+</header>
+
+<nav class="tabs" aria-label="หมวด">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-tab="summary" aria-selected="true">ภาพรวม</button>
+    <button role="tab" data-tab="hbv" class="t-hbv" aria-selected="false">ไวรัสตับอักเสบ บี</button>
+    <button role="tab" data-tab="hcv" class="t-hcv" aria-selected="false">ไวรัสตับอักเสบ ซี</button>
+    <button role="tab" data-tab="tool" aria-selected="false">เครื่องมือ: ผู้ป่วยอยู่ขั้นไหน</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ SUMMARY ============ -->
+<section class="page" id="p-summary">
+  <div class="block">
+    <h2>สิ่งที่ต้องจำ</h2>
+    <div class="keypts">
+      <div class="kp"><div class="tag">ใครได้คัดกรอง</div><div class="big">คนไทยที่เกิดก่อน พ.ศ. 2535</div><p class="note">ทุกสิทธิ์ ตรวจฟรี 1 ครั้งตลอดชีวิต (เริ่ม 1 เม.ย. 2566) — ปีที่เริ่มให้วัคซีน HBV แก่เด็กแรกเกิดทุกคน</p></div>
+      <div class="kp b"><div class="tag b">HBV</div><div class="big">HBsAg + → ประเมินพังผืด</div><p class="note">มี significant fibrosis / ตับแข็ง / โรคร่วม → เริ่ม TAF ได้เลย ไม่ต้องรอ viral load</p></div>
+      <div class="kp b"><div class="tag b">HBV</div><div class="big">APRI &gt; 0.5 · FIB-4 &gt; 1.45 · LSM ≥ 7</div><p class="note">ข้อใดข้อหนึ่ง = significant fibrosis = ข้อบ่งชี้รักษา</p></div>
+      <div class="kp c"><div class="tag c">HCV</div><div class="big">Anti-HCV + → HCV RNA หรือ cAg</div><p class="note">ใช้ 4R model เก็บเลือดยืนยันโดยไม่ต้องเรียกผู้ป่วยกลับ</p></div>
+      <div class="kp c"><div class="tag c">HCV</div><div class="big">SOF/VEL 1 เม็ด × 12 สัปดาห์</div><p class="note">ทุก genotype · decompensated เพิ่ม Ribavirin · SVR ที่ 12 สัปดาห์หลังหยุดยา</p></div>
+      <div class="kp"><div class="tag">มะเร็งตับ</div><div class="big">U/S ± AFP ทุก 6–12 เดือน</div><p class="note">ในผู้ที่มีตับแข็ง หรือญาติสายตรงเป็นตับแข็ง/มะเร็งตับ</p></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>สิทธิ์การตรวจคัดกรอง</h3>
+      <div class="tbl"><table>
+        <tr><th>กลุ่ม</th><th>HBV (HBsAg)</th><th>HCV (Anti-HCV)</th></tr>
+        <tr><td>คนไทยเกิดก่อน 2535</td><td>1 ครั้งตลอดชีวิต</td><td>1 ครั้งตลอดชีวิต</td></tr>
+        <tr><td>PLHIV, PWID, MSM, บุคลากรการแพทย์</td><td>—</td><td>1 ครั้ง/ปี</td></tr>
+        <tr><td>ผู้ต้องขัง</td><td>—</td><td>ไม่เกิน 3 ครั้ง/ปี</td></tr>
+      </table></div>
+      <p class="note" style="margin-top:8px">HBsAg ด้วย RDT หรือ lab immunoassay เหมาจ่าย 50 บาท/ครั้ง/คน บันทึกผ่าน Krungthai Digital Health Platform</p>
+    </div>
+    <div class="panel">
+      <h3>เกณฑ์พังผืด: HBV กับ HCV ใช้ cut-off ต่างกัน</h3>
+      <div class="tbl"><table>
+        <tr><th>ดัชนี</th><th>HBV</th><th>HCV</th></tr>
+        <tr><td>APRI ตับแข็ง</td><td class="num">&gt; 1</td><td class="num">&gt; 1.5</td></tr>
+        <tr><td>APRI significant</td><td class="num">0.5–1</td><td class="num">0.5–1.5</td></tr>
+        <tr><td>FIB-4 advanced/cirrhosis</td><td class="num">&gt; 3.25</td><td class="num">&gt; 3.25</td></tr>
+        <tr><td>FIB-4 significant</td><td class="num">1.45–3.25</td><td class="num">1.45–3.25</td></tr>
+        <tr><td>LSM</td><td class="num" colspan="2">&lt;7 ปกติ · 7–9.5 F≥2 · 9.6–12.5 F3 · &gt;12.5 kPa ตับแข็ง</td></tr>
+      </table></div>
+      <div class="formula" style="margin-top:8px">APRI = [(AST / AST ULN) × 100] / Plt (10⁹/L)</div>
+      <div class="formula" style="margin-top:6px">FIB-4 = (Age × AST) / [Plt (10⁹/L) × √ALT]</div>
+      <p class="note" style="margin-top:6px">FIB-4 แม่นยำลดลงเมื่ออายุ &lt; 35 หรือ &gt; 65 ปี · การประเมินพังผืดไม่แม่นในอายุ &lt; 18 ปี</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HBV ============ -->
+<section class="page" id="p-hbv" hidden>
+  <div class="grid2">
+    <div class="block">
+      <h2>แผนภูมิ 1 · คัดกรอง HBV</h2>
+      <div class="fc-scroll"><div class="fc hbvfc" style="min-width:420px">
+        <div class="node start"><b>คนไทยที่เกิดก่อน พ.ศ. 2535</b></div><div class="arr"></div>
+        <div class="node act"><b>ตรวจ HBsAg</b>Rapid test หรือ lab immunoassay</div><div class="arr"></div>
+        <div class="split" style="grid-template-columns:1fr 1fr">
+          <div class="col"><span class="lbl">Negative</span><div class="arr"></div><div class="node act"><b>ตรวจ Anti-HBs</b></div><div class="arr"></div><div class="node">Anti-HBs negative → วัคซีน HBV ที่ 0, 1–2, 6 เดือน<br><span class="note">ไม่ต้องตรวจภูมิซ้ำ</span></div></div>
+          <div class="col"><span class="lbl">Positive</span><div class="arr"></div><div class="node go"><b>เข้าสู่การประเมินและรักษา</b></div></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="block">
+      <h2>ประเมินก่อนรักษา</h2>
+      <div class="panel">
+        <ol>
+          <li><b>ประวัติ/ตรวจร่างกาย</b> โรคประจำตัว ยา การตั้งครรภ์ ประวัติมะเร็งในครอบครัว signs of CLD (palmar erythema, spider nevi) และ decompensation: jaundice (TB &gt; 2 mg/dL), ascites, hepatic encephalopathy</li>
+          <li><b>ความรุนแรงของโรคตับ</b> AST, ALT, platelet → APRI / FIB-4 · LSM (FibroScan) ถ้ามี · U/S ตับ ในที่ทำได้ · HBV viral load</li>
+          <li><b>ติดเชื้อร่วม</b> Anti-HIV, Anti-HCV ในผู้มีความเสี่ยง (PWID, เพศสัมพันธ์เสี่ยง, MSM)</li>
+          <li><b>การทำงานของไต</b> Creatinine</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>แผนภูมิ 2 · ตัดสินใจเริ่มยา (อายุ ≥ 18 ปี)</h2>
+    <p class="note">ไล่จากบนลงล่าง ตอบ "ใช่" ข้อแรกที่พบ → เริ่ม TAF 25 mg วันละครั้ง</p>
+    <div class="fc-scroll"><div class="fc hbvfc" style="min-width:620px">
+      <div class="node start"><b>HBsAg positive</b></div><div class="arr"></div>
+      <div class="row"><div class="node act" style="max-width:420px"><b>① ตับแข็ง หรือ significant fibrosis?</b>Clinical/imaging ตับแข็ง · APRI &gt; 0.5 · FIB-4 &gt; 1.45 · LSM ≥ 7 kPa<br><span class="note">ตับแข็ง = APRI &gt; 1 หรือ LSM &gt; 12.5 หรือ METAVIR F4</span></div><div class="node go side"><span class="lbl yes">ใช่ →</span> เริ่มรักษา</div></div>
+      <div class="arr"></div><span class="lbl no">ไม่ใช่</span><div class="arr"></div>
+      <div class="row"><div class="node act" style="max-width:420px"><b>② มีภาวะใดภาวะหนึ่ง?</b>HCV หรือ HIV ร่วม · ญาติสายตรงเป็นตับแข็ง/มะเร็งตับ · ได้ยากดภูมิ · extrahepatic (GN, cryoglobulinemia, PAN)</div><div class="node go side"><span class="lbl yes">ใช่ →</span> เริ่มรักษา</div></div>
+      <div class="arr"></div><span class="lbl no">ไม่ใช่</span><div class="arr"></div>
+      <div class="row"><div class="node act" style="max-width:420px"><b>③ HBV DNA &gt; 2,000 IU/mL?</b>ร่วมกับ ALT ผิดปกติ (ชาย &gt; 30, หญิง &gt; 19) หลังแยกสาเหตุอื่น → เริ่มยา<br>ALT ปกติ → พิจารณาได้ถ้าผู้ป่วยเข้าใจและพร้อม</div><div class="node go side"><span class="lbl yes">ใช่ →</span> เริ่มรักษา</div></div>
+      <div class="arr"></div><span class="lbl no">ไม่ใช่</span><div class="arr"></div>
+      <div class="node stop"><b>ยังไม่มีข้อบ่งชี้</b>ติดตาม AST, ALT, Plt ทุก 6–12 เดือน หรือ LSM ทุก 12 เดือน · ประเมินซ้ำทุกปี</div>
+    </div></div>
+    <div class="callout"><b>ยากดภูมิ:</b> เคมีบำบัด · prednisolone 10–20 mg ติดต่อ &gt; 3 สัปดาห์ หรือ ≥ 20 mg ไม่จำกัดเวลา · immunosuppressive therapy · ICI, T-cell transfer, monoclonal antibody → เริ่มยาต้านไวรัส <b>≥ 1 สัปดาห์ก่อน</b> และให้ต่อ <b>6 เดือน–1 ปีหลังหยุด</b>ยากดภูมิ</div>
+  </div>
+
+  <div class="block">
+    <h2>ยาที่แนะนำ (บัญชี ง.)</h2>
+    <div class="grid3">
+      <div class="kp b"><div class="tag b">First line</div><h3 style="margin-top:6px">TAF 25 mg OD</h3><ul><li>ยาขนานแรกของ CHB</li><li>เปลี่ยนยาถ้า eGFR ≤ 15 และยังไม่ได้ RRT</li><li>HD: ให้หลังฟอกไต</li><li>ใช้ได้ในผู้ที่เคยได้ LAM / ETV / TDF</li></ul></div>
+      <div class="kp b"><div class="tag b">ตั้งครรภ์</div><h3 style="margin-top:6px">TDF 300 mg</h3><ul><li>ยาขนานแรกในหญิงตั้งครรภ์</li><li>หรือ eGFR ≤ 15 ไม่ได้ RRT และใช้ ETV ไม่ได้</li></ul>
+        <div class="tbl"><table><tr><th>CrCl</th><th>ขนาด</th></tr><tr><td class="num">30–49</td><td>q 48 ชม.</td></tr><tr><td class="num">10–29</td><td>q 72–96 ชม.</td></tr><tr><td>HD</td><td>q 7 วัน</td></tr></table></div></div>
+      <div class="kp b"><div class="tag b">เด็ก / ไต / กระดูก</div><h3 style="margin-top:6px">ETV 0.5 mg</h3><ul><li>ยาขนานแรกในเด็ก 2–18 ปี</li><li>ใช้ TAF/TDF ไม่ได้: eGFR ≤ 50, proximal tubular dysfunction, กระดูกบาง/พรุน</li></ul>
+        <div class="tbl"><table><tr><th>CrCl</th><th>ขนาด</th></tr><tr><td class="num">30–49</td><td>q 48 ชม.</td></tr><tr><td class="num">10–29</td><td>q 72 ชม.</td></tr><tr><td>&lt;10, HD, CAPD</td><td>q 7 วัน</td></tr></table></div></div>
+    </div>
+    <div class="grid2">
+      <div class="callout"><b>HIV ร่วม:</b> HAART ที่มี TAF หรือ TDF + FTC หรือ 3TC + ตัวที่ 3 เช่น dolutegravir</div>
+      <div class="callout"><b>HCV ร่วม:</b> รักษา HBV ก่อนเริ่มยา HCV เพราะเสี่ยง HBV flare</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>การติดตาม</h3>
+      <h4>ไม่มีข้อบ่งชี้รักษา</h4>
+      <ul><li>AST, ALT, Plt ทุก 6–12 เดือน หรือ LSM ทุก 12 เดือน</li><li>ถ้า APRI &gt; 0.5 / FIB-4 &gt; 1.45 / LSM ≥ 7 → เริ่มรักษา</li></ul>
+      <h4 style="margin-top:10px">ระหว่างรักษา</h4>
+      <ul><li>ประเมิน adherence เป็นระยะ (หยุดยาเอง → flare / ดื้อยา)</li><li>ALT, Creatinine ทุก 3–6 เดือน</li><li>ALT &gt; 1.5 × ULN → ประเมินการกินยา หาสาเหตุอื่น ส่ง HBV VL</li><li>ตับแข็ง → ส่งผู้เชี่ยวชาญคัดกรอง esophageal varices · decompensated → ส่งต่อ</li></ul>
+    </div>
+    <div class="panel">
+      <h3>HCC surveillance</h3>
+      <p>U/S ตับ ± AFP ทุก 6–12 เดือน เมื่อมีข้อใดข้อหนึ่ง</p>
+      <ul><li>มีตับแข็ง (clinical, APRI &gt; 1, FIB-4 &gt; 3.25 หรือภาพรังสี)</li><li>สมาชิกในครอบครัวเป็นตับแข็งหรือมะเร็งตับ</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HCV ============ -->
+<section class="page" id="p-hcv" hidden>
+  <div class="block">
+    <h2>แผนภูมิ 3 · คัดกรอง HCV</h2>
+    <p class="note">กลุ่มเป้าหมาย: เกิดก่อน 2535 (1 ครั้ง) · PLHIV, PWID, MSM, บุคลากรการแพทย์ (1 ครั้ง/ปี) · ผู้ต้องขัง (≤ 3 ครั้ง/ปี)</p>
+    <div class="grid2">
+      <div class="panel"><h3>3.1 Anti-HCV</h3>
+        <div class="fc-scroll"><div class="fc hcvfc" style="min-width:440px">
+          <div class="node act"><b>Anti-HCV</b>RDT หรือ lab immunoassay</div><div class="arr"></div>
+          <div class="split" style="grid-template-columns:1fr 2fr">
+            <div class="col"><span class="lbl">Negative</span><div class="arr"></div><div class="node stop">แนะนำการป้องกัน</div></div>
+            <div class="col"><span class="lbl">Positive</span><div class="arr"></div><div class="node act"><b>HCV RNA หรือ HCV cAg</b></div><div class="arr"></div>
+              <div class="split" style="grid-template-columns:1fr 1fr">
+                <div class="col"><span class="lbl">ไม่พบ</span><div class="arr"></div><div class="node stop">ไม่ต้องรักษา · ป้องกัน · ตรวจซ้ำถ้ายังเสี่ยง</div></div>
+                <div class="col"><span class="lbl yes">พบ</span><div class="arr"></div><div class="node go"><b>เข้าสู่การรักษา</b></div></div>
+              </div></div>
+          </div>
+        </div></div>
+        <p class="note" style="margin-top:8px">cAg negative แต่ค่าตับผิดปกติไม่ทราบสาเหตุ → ยืนยันด้วย HCV RNA</p>
+      </div>
+      <div class="panel"><h3>3.2 HCV DUO test (Anti-HCV + cAg)</h3>
+        <div class="tbl"><table>
+          <tr><th>Anti-HCV</th><th>cAg</th><th>แปลผล / ทำต่อ</th></tr>
+          <tr><td>−</td><td>−</td><td>แนะนำการป้องกัน</td></tr>
+          <tr><td>−</td><td>+</td><td>Acute infection → ตรวจซ้ำใน 3–6 เดือน</td></tr>
+          <tr><td>+</td><td>−</td><td>ส่ง HCV RNA → detected รักษา / not detected ไม่ต้องรักษา</td></tr>
+          <tr><td>+</td><td>+</td><td><b>เข้าสู่การรักษา</b></td></tr>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>แผนภูมิ 4 · ประเมินและรักษา Chronic HCV</h2>
+    <div class="fc-scroll"><div class="fc hcvfc" style="min-width:680px">
+      <div class="node start"><b>Chronic HCV infection</b></div><div class="arr"></div>
+      <div class="row">
+        <div class="node act" style="max-width:360px"><b>ตรวจประเมิน</b>AST, ALT, Platelet · Cr · HBsAg, Anti-HIV</div>
+        <div class="node ref side"><b>เกณฑ์ส่งต่อ</b>Decompensated (TB &gt; 2, ascites, HE) · เคยรักษา HCV มาก่อน · สงสัยมะเร็งตับ · GFR &lt; 30</div>
+      </div><div class="arr"></div>
+      <div class="node act"><b>ประเมินตับแข็ง</b>APRI &gt; 1.5 หรือ FIB-4 &gt; 3.25 หรือหลักฐานอื่น</div><div class="arr"></div>
+      <div class="split" style="grid-template-columns:1fr 1fr 1fr">
+        <div class="col"><span class="lbl">ไม่ตับแข็ง</span><div class="arr"></div><div class="node go"><b>SOF/VEL 12 สัปดาห์</b></div><div class="arr"></div><div class="node act">SVR ที่ 12–24 สัปดาห์หลังหยุดยา</div><div class="arr"></div><div class="node stop">หาย: ป้องกันในกลุ่มเสี่ยง ไม่ต้องติดตาม</div></div>
+        <div class="col"><span class="lbl">Compensated</span><div class="arr"></div><div class="node go"><b>SOF/VEL 12 สัปดาห์</b></div><div class="arr"></div><div class="node act">SVR ที่ 12–24 สัปดาห์</div><div class="arr"></div><div class="node">หาย: HCC surveillance · EV surveillance</div></div>
+        <div class="col"><span class="lbl">Decompensated</span><div class="arr"></div><div class="node ref"><b>ส่งต่อ หรือ SOF/VEL/RBV 12 สัปดาห์</b></div><div class="arr"></div><div class="node act">SVR ที่ 12–24 สัปดาห์</div><div class="arr"></div><div class="node">หาย: HCC + EV surveillance</div></div>
+      </div>
+      <div class="arr"></div>
+      <div class="node ref"><b>ไม่ SVR</b>ส่งต่อ/ปรึกษาผู้เชี่ยวชาญ → SOF/VEL/RBV 24 สัปดาห์</div>
+    </div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>สูตรยาและขนาด (มี/ไม่มี HIV ร่วม)</h3>
+      <div class="tbl"><table>
+        <tr><th>กลุ่ม</th><th>สูตร</th></tr>
+        <tr><td>ไม่มีตับแข็ง</td><td>SOF 400 + VEL 100 mg 1 เม็ด OD × 12 wk</td></tr>
+        <tr><td>Compensated</td><td>SOF/VEL 1 เม็ด OD × 12 wk</td></tr>
+        <tr><td>Decompensated</td><td>SOF/VEL + RBV แบ่ง BID × 12 wk</td></tr>
+        <tr><td>ไม่ตอบสนองครั้งแรก</td><td>SOF/VEL + RBV × 24 wk</td></tr>
+      </table></div>
+      <p style="margin-top:8px"><b>Ribavirin:</b> &lt; 75 kg = 1,000 mg/วัน · ≥ 75 kg = 1,200 mg/วัน (แบ่ง BID)</p>
+      <p class="note">เงื่อนไขบัญชี ง: น้ำหนัก ≥ 30 kg · คุมกำเนิดที่มีประสิทธิภาพระหว่างรักษาและ 6 เดือนหลังหยุดยา โดยเฉพาะผู้ได้ RBV</p>
+    </div>
+    <div class="panel">
+      <h3>Drug interaction กับ SOF/VEL</h3>
+      <div class="tbl"><table>
+        <tr><th>กลุ่ม</th><th>ห้ามใช้</th><th>ปรับ/เฝ้าระวัง</th></tr>
+        <tr><td>ARV</td><td>Efavirenz, Nevirapine, Lopinavir</td><td>Rilpivirine, Atazanavir, Ritonavir, Darunavir</td></tr>
+        <tr><td>ลดกรด</td><td>PPIs (ยกเว้น omeprazole 20)</td><td>Omeprazole 20*, H2RA**, Antacid***</td></tr>
+        <tr><td>กันชัก</td><td>Carbamazepine, Oxcarbazepine, Phenobarbital, Phenytoin</td><td>—</td></tr>
+        <tr><td>หัวใจ/ไขมัน</td><td>Amiodarone</td><td>Statins, Digoxin, Dabigatran, Ticagrelor, Carvedilol, Diltiazem</td></tr>
+      </table></div>
+      <p class="note" style="margin-top:6px">* SOF/VEL พร้อมอาหาร 4 ชม. ก่อน PPI · ** พร้อม H2RA หรือห่าง ≥ 12 ชม. ไม่เกิน famotidine 40 BID · *** ห่าง antacid ≥ 4 ชม. · ตรวจ DDI ที่ Liverpool HEP iChart และปรับยา ≥ 1 เดือนก่อนเริ่ม</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>ประเมินผลการรักษา</h3>
+      <ul>
+        <li>HCV RNA (quantitative) หรือ HCV Ag ที่ <b>12 สัปดาห์หลังหยุดยา</b></li>
+        <li>Undetected / negative = SVR = หาย</li>
+        <li>Detected / positive = ไม่ SVR → ส่งผู้เชี่ยวชาญ</li>
+      </ul>
+      <h4 style="margin-top:10px">หลังหายในผู้ที่มีตับแข็ง</h4>
+      <ul><li>U/S ± AFP ทุก 6–12 เดือน</li><li>ส่งคัดกรอง EV ถ้า Plt &lt; 150 × 10⁹/L หรือ TE &gt; 20 kPa</li></ul>
+      <p class="note" style="margin-top:6px">ยังมีพฤติกรรมเสี่ยง → แนะนำป้องกัน เพราะติดซ้ำได้</p>
+    </div>
+    <div class="panel">
+      <h3>ติดเชื้อร่วมและไต</h3>
+      <ul><li>HIV ร่วม → ตรวจหาโรคติดเชื้อฉวยโอกาส · ตรวจ DDI กับ ARV</li><li>HBV ร่วม → รักษา HBV ก่อนเริ่ม DAA</li><li>eGFR ≤ 30 → ส่งต่อแพทย์เฉพาะทาง หรือรักษาตามอาการและติดตามค่าตับ</li><li>U/S ตับในที่ทำได้ หรือส่งเมื่อสงสัยตับแข็ง/มะเร็งตับ</li></ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>บทที่ 5 · 4R Model เชื่อม Anti-HCV + เข้าสู่การรักษา</h2>
+    <div class="r4">
+      <div class="kp"><h4><span>R1</span>Rapid &amp; Draw</h4><p class="note">รพ.สต./คลินิก/PCU: RDT Anti-HCV รอ 5–30 นาที ถ้าบวก ให้คำปรึกษาและเจาะเลือดส่ง HCV RNA/cAg วันเดียวกัน</p></div>
+      <div class="kp"><h4><span>R2</span>Rapid Outreach</h4><p class="note">จุดคัดกรองพบบวก → รพ.แม่ข่ายออกมาเจาะเลือดที่หน่วยบริการ ผู้ป่วยไม่ต้องเดินทาง</p></div>
+      <div class="kp"><h4><span>R3</span>Reflex Testing</h4><p class="note">รพ.ที่ตรวจยืนยันได้เอง: Anti-HCV บวก → แล็บนำตัวอย่างเดิมไปตรวจ RNA/cAg อัตโนมัติ</p></div>
+      <div class="kp"><h4><span>R4</span>Retained Sample</h4><p class="note">รพ.ที่ตรวจยืนยันไม่ได้: เก็บตัวอย่างไว้ตั้งแต่แรก ถ้าบวกส่งต่อแล็บเครือข่าย</p></div>
+    </div>
+    <div class="panel">
+      <ol start="3">
+        <li>ไม่มีข้อบ่งชี้ส่งต่อ → รพช./รพท. เริ่ม SOF/VEL 12 สัปดาห์ โดยแพทย์ที่ผ่านการอบรม และเจาะประเมินไวรัสหลังจบยา 12–24 สัปดาห์</li>
+        <li>มีข้อบ่งชี้ส่งต่อ → ส่ง รพ.แม่ข่าย · decompensated อาจเริ่ม SOF/VEL/RBV 12 สัปดาห์ที่ รพช./รพท. ได้</li>
+        <li>ประเมินไวรัสด้วย HCV RNA VL / qualitative / cAg หลังจบยา ≥ 12 สัปดาห์</li>
+        <li>รพช./รพท. ดูแลภาวะแทรกซ้อนอื่น แล้วผู้ป่วยกลับสู่ชุมชน</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL ============ -->
+<section class="page" id="p-tool" hidden>
+  <div class="tool-head">
+    <div><h2>ผู้ป่วยอยู่ขั้นไหนของ flow</h2><p class="note" style="margin:2px 0 0">กรอกเท่าที่มี ช่องว่าง = ยังไม่ได้ตรวจ ผลจะบอกขั้นปัจจุบัน แลปที่ต้องส่งตอนนี้ และตารางนัดต่อไป</p></div>
+    <div class="seg" role="group" aria-label="โรค">
+      <button class="sb" id="mode-hbv" aria-pressed="true">HBV</button>
+      <button class="sc" id="mode-hcv" aria-pressed="false">HCV</button>
+    </div>
+  </div>
+  <div class="btnrow">
+    <button class="btn" id="ex1">ตัวอย่าง: HBV fibrosis</button>
+    <button class="btn" id="ex2">ตัวอย่าง: HCV ตับแข็ง</button>
+    <button class="btn" id="clr">ล้างข้อมูล</button>
+  </div>
+
+  <div class="toolgrid">
+    <!-- forms -->
+    <div>
+      <form class="form" id="f-hbv" autocomplete="off">
+        <fieldset><legend>ผลคัดกรอง</legend>
+          <div class="f"><label for="b-hbsag">HBsAg</label><select id="b-hbsag"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="f"><label for="b-antihbs">Anti-HBs</label><select id="b-antihbs"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="f"><label for="b-ontx">สถานะยา</label><select id="b-ontx"><option value="no">ยังไม่ได้ยา</option><option value="yes">กำลังกินยาอยู่</option></select></div>
+        </fieldset>
+        <fieldset><legend>ข้อมูลพื้นฐาน</legend>
+          <div class="f"><label for="b-sex">เพศ</label><select id="b-sex"><option value="M">ชาย</option><option value="F">หญิง</option></select></div>
+          <div class="f"><label for="b-age">อายุ (ปี)</label><input id="b-age" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="b-egfr">eGFR</label><input id="b-egfr" type="number" min="0" inputmode="decimal"></div>
+        </fieldset>
+        <fieldset><legend>แลป</legend>
+          <div class="f"><label for="b-ast">AST (U/L)</label><input id="b-ast" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="b-uln">AST ULN</label><input id="b-uln" type="number" min="1" value="40" inputmode="decimal"></div>
+          <div class="f"><label for="b-alt">ALT (U/L)</label><input id="b-alt" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="b-plt">Plt (×10⁹/L)</label><input id="b-plt" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="b-lsm">LSM (kPa)</label><input id="b-lsm" type="number" min="0" step="0.1" inputmode="decimal"></div>
+          <div class="f"><label for="b-vl">HBV DNA (IU/mL)</label><input id="b-vl" type="number" min="0" inputmode="decimal"></div>
+        </fieldset>
+        <fieldset><legend>ภาวะร่วม</legend>
+          <div class="chk">
+            <label><input type="checkbox" id="b-clin"> ตับแข็งจาก clinical + ภาพรังสี (U/S, CT, MRI) หรือ biopsy F4</label>
+            <label><input type="checkbox" id="b-decomp"> Decompensated: jaundice (TB &gt; 2), ascites หรือ HE</label>
+            <label><input type="checkbox" id="b-hcv"> HCV เรื้อรังร่วม</label>
+            <label><input type="checkbox" id="b-hiv"> HIV ร่วม</label>
+            <label><input type="checkbox" id="b-fam"> ญาติสายตรง (พ่อแม่ พี่น้อง ลูก) เป็นตับแข็ง/มะเร็งตับ</label>
+            <label><input type="checkbox" id="b-imm"> จะได้/กำลังได้ยากดภูมิ เคมีบำบัด หรือ steroid ขนาดสูง</label>
+            <label><input type="checkbox" id="b-extra"> Extrahepatic: GN, cryoglobulinemia, PAN</label>
+            <label><input type="checkbox" id="b-ready"> ผู้ป่วยเข้าใจและพร้อมกินยาระยะยาว</label>
+          </div>
+        </fieldset>
+        <fieldset><legend>ปัจจัยเลือกยา</legend>
+          <div class="chk">
+            <label><input type="checkbox" id="b-preg"> ตั้งครรภ์</label>
+            <label><input type="checkbox" id="b-ptd"> สงสัย proximal tubular dysfunction</label>
+            <label><input type="checkbox" id="b-osteo"> กระดูกบาง/กระดูกพรุน</label>
+            <label><input type="checkbox" id="b-hd"> ฟอกไต (HD/CAPD)</label>
+          </div>
+        </fieldset>
+      </form>
+
+      <form class="form hide" id="f-hcv" autocomplete="off">
+        <fieldset><legend>คัดกรองและยืนยัน</legend>
+          <div class="f"><label for="c-method">วิธีคัดกรอง</label><select id="c-method"><option value="ab">Anti-HCV</option><option value="duo">HCV DUO</option></select></div>
+          <div class="f"><label for="c-ab">Anti-HCV</label><select id="c-ab"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="f"><label for="c-cag">HCV cAg</label><select id="c-cag"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="f"><label for="c-rna">HCV RNA</label><select id="c-rna"><option value="">ยังไม่ตรวจ</option><option value="nd">Not detected</option><option value="det">Detected</option></select></div>
+          <div class="chk"><label><input type="checkbox" id="c-lft"> ค่าตับผิดปกติโดยไม่ทราบสาเหตุ</label></div>
+        </fieldset>
+        <fieldset><legend>ประเมินก่อนรักษา</legend>
+          <div class="f"><label for="c-age">อายุ (ปี)</label><input id="c-age" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-wt">น้ำหนัก (kg)</label><input id="c-wt" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-egfr">eGFR</label><input id="c-egfr" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-ast">AST (U/L)</label><input id="c-ast" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-uln">AST ULN</label><input id="c-uln" type="number" min="1" value="40" inputmode="decimal"></div>
+          <div class="f"><label for="c-alt">ALT (U/L)</label><input id="c-alt" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-plt">Plt (×10⁹/L)</label><input id="c-plt" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-te">TE (kPa)</label><input id="c-te" type="number" min="0" step="0.1" inputmode="decimal"></div>
+          <div class="f"><label for="c-hbsag">HBsAg</label><select id="c-hbsag"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="f"><label for="c-hiv">Anti-HIV</label><select id="c-hiv"><option value="">ยังไม่ตรวจ</option><option value="neg">Negative</option><option value="pos">Positive</option></select></div>
+          <div class="chk">
+            <label><input type="checkbox" id="c-cirr"> มีหลักฐานตับแข็งอื่น (clinical / ภาพรังสี)</label>
+            <label><input type="checkbox" id="c-decomp"> Decompensated: jaundice (TB &gt; 2), ascites หรือ HE</label>
+            <label><input type="checkbox" id="c-prior"> เคยรักษา HCV มาก่อน</label>
+            <label><input type="checkbox" id="c-hcc"> สงสัยมะเร็งตับ</label>
+            <label><input type="checkbox" id="c-wcba"> ชาย/หญิงวัยเจริญพันธุ์</label>
+          </div>
+        </fieldset>
+        <fieldset><legend>ยาที่ใช้อยู่ (ตรวจ DDI)</legend>
+          <div class="f wide"><label for="c-meds">เลือกได้หลายตัว (Ctrl/⌘ หรือแตะค้าง)</label>
+            <select id="c-meds" multiple size="6">
+              <option value="ci:Efavirenz">Efavirenz</option><option value="ci:Nevirapine">Nevirapine</option><option value="ci:Lopinavir">Lopinavir</option>
+              <option value="ia:Rilpivirine">Rilpivirine</option><option value="ia:Atazanavir">Atazanavir</option><option value="ia:Ritonavir">Ritonavir</option><option value="ia:Darunavir">Darunavir</option>
+              <option value="ci:PPI ที่ไม่ใช่ omeprazole 20 mg">PPI อื่น (pantoprazole, esomeprazole ฯลฯ)</option><option value="ia:Omeprazole 20 mg — ให้ SOF/VEL พร้อมอาหาร 4 ชม. ก่อน PPI">Omeprazole 20 mg</option>
+              <option value="ia:H2RA — ให้พร้อมกันหรือห่าง ≥ 12 ชม. ไม่เกิน famotidine 40 BID">H2RA</option><option value="ia:Antacid — ห่าง ≥ 4 ชม.">Antacid</option>
+              <option value="ci:Carbamazepine">Carbamazepine</option><option value="ci:Oxcarbazepine">Oxcarbazepine</option><option value="ci:Phenobarbital">Phenobarbital</option><option value="ci:Phenytoin">Phenytoin</option>
+              <option value="ci:Amiodarone">Amiodarone</option><option value="ia:Statin">Statin</option><option value="ia:Digoxin">Digoxin</option><option value="ia:Dabigatran">Dabigatran</option><option value="ia:Ticagrelor">Ticagrelor</option><option value="ia:Carvedilol">Carvedilol</option><option value="ia:Diltiazem">Diltiazem</option>
+            </select></div>
+        </fieldset>
+        <fieldset><legend>การรักษา</legend>
+          <div class="f"><label for="c-phase">สถานะ</label><select id="c-phase"><option value="pre">ยังไม่เริ่มยา</option><option value="on">กำลังรักษา</option><option value="post">ครบยาแล้ว</option></select></div>
+          <div class="f"><label for="c-wk">สัปดาห์ที่ (ระหว่าง/หลังยา)</label><input id="c-wk" type="number" min="0" inputmode="decimal"></div>
+          <div class="f"><label for="c-svr">ผล HCV RNA/Ag หลังจบยา ≥ 12 wk</label><select id="c-svr"><option value="">ยังไม่ตรวจ</option><option value="neg">Undetected / negative</option><option value="pos">Detected / positive</option></select></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- result -->
+    <div class="result" id="result" aria-live="polite"></div>
+  </div>
+  <p class="disclaimer">เครื่องมือนี้แปลงเกณฑ์จาก CPG เป็นขั้นตอนเพื่อช่วยจำ ไม่แทนการตัดสินใจทางคลินิก ตรวจสอบขนาดยาและข้อห้ามกับเอกสารต้นฉบับและเภสัชกรทุกครั้ง</p>
+</section>
+
+</main>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+// ---------- tabs ----------
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function show(name){
+  tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===name));
+  ['summary','hbv','hcv','tool'].forEach(n=>{$('p-'+n).hidden=n!==name});
+  try{history.replaceState(null,'','#'+name)}catch(e){}
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{show(t.dataset.tab);window.scrollTo({top:document.querySelector('nav.tabs').offsetTop})}));
+const h=(location.hash||'').slice(1); if(['summary','hbv','hcv','tool'].includes(h)) show(h);
+
+// ---------- helpers ----------
+const num=id=>{const v=$(id).value.trim();if(v==='')return null;const n=parseFloat(v);return isNaN(n)?null:n};
+const val=id=>$(id).value, chk=id=>$(id).checked;
+const f2=x=>x==null?'—':(Math.round(x*100)/100).toFixed(2);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function apri(ast,uln,plt){return(ast!=null&&uln&&plt)?(ast/uln*100)/plt:null}
+function fib4(age,ast,alt,plt){return(age!=null&&ast!=null&&alt&&plt)?(age*ast)/(plt*Math.sqrt(alt)):null}
+
+function stepper(steps,cur){
+  return '<div class="stepper">'+steps.map((s,i)=>{
+    const st=s.skip?'skip':(i<cur?'done':(i===cur?'cur':''));
+    return `<div class="st ${st}"><div class="dot">${i<cur&&!s.skip?'✓':i+1}</div><div><div class="t">${s.t}</div>${s.d?`<div class="d">${s.d}</div>`:''}</div></div>`}).join('')+'</div>';
+}
+function where(k,hd,body,labs){
+  return `<div class="where"><div class="k">${k}</div><div class="h">${hd}</div>${body?`<p style="margin:0 0 8px">${body}</p>`:''}${labs&&labs.length?`<div class="note" style="margin-bottom:4px;font-weight:600">ส่งตอนนี้</div><div class="labs">${labs.map(l=>`<span class="lab">${l}</span>`).join('')}</div>`:''}</div>`;
+}
+function timeline(rows){return rows.length?`<div><h3>ตารางนัดและแลป</h3><div class="tl">${rows.map(r=>`<div class="r"><div class="w">${r[0]}</div><div>${r[1]}</div></div>`).join('')}</div></div>`:''}
+function alerts(a){return a.length?`<div class="alerts">${a.map(x=>`<div class="callout ${x[0]}">${x[1]}</div>`).join('')}</div>`:''}
+function scoreBox(items){return items.length?`<div class="scores">${items.map(s=>`<div class="sc"><div class="n">${s.n}</div><div class="v ${s.c||''}">${s.v}</div><div class="i ${s.c||''}">${s.i||''}</div></div>`).join('')}</div>`:''}
+function box(title,html){return `<div class="panel"><h3>${title}</h3>${html}</div>`}
+
+// ---------- HBV ----------
+function hbv(){
+  const R=$('result'); R.style.setProperty('--accent','var(--hbv)');R.style.setProperty('--accent-soft','var(--hbv-soft)');
+  const steps=[{t:'คัดกรอง HBsAg',d:'คนไทยเกิดก่อน 2535 · 1 ครั้งตลอดชีวิต'},{t:'ประเมินก่อนรักษา',d:'AST ALT Plt Cr ± LSM, U/S, HBV DNA'},{t:'ตัดสินข้อบ่งชี้ (แผนภูมิ 2)',d:'fibrosis → โรคร่วม → HBV DNA'},{t:'เริ่มยา / ติดตามแบบไม่ให้ยา',d:''},{t:'ติดตามระยะยาว',d:'ALT Cr, HCC surveillance'}];
+  const s=val('b-hbsag'), ab=val('b-antihbs'), onTx=val('b-ontx')==='yes';
+  let out='';
+  if(!s){ out=stepper(steps,0)+where('ขั้นที่ 1 · คัดกรอง','ส่ง HBsAg','RDT หรือ lab immunoassay (เหมาจ่าย 50 บาท) ในคนไทยที่เกิดก่อน พ.ศ. 2535',['HBsAg']); R.innerHTML=out; return; }
+  if(s==='neg'){
+    steps[1].skip=steps[2].skip=steps[3].skip=steps[4].skip=true;
+    if(!ab) out=stepper(steps,0)+where('ขั้นที่ 1 · HBsAg negative','ส่ง Anti-HBs','ดูว่ามีภูมิหรือไม่ก่อนตัดสินใจฉีดวัคซีน',['Anti-HBs']);
+    else if(ab==='neg') out=stepper(steps,0)+where('จบ flow คัดกรอง','ฉีดวัคซีน HBV 3 เข็ม','ไม่มีภูมิ → วัคซีนที่ 0, 1–2, 6 เดือน ไม่ต้องตรวจภูมิซ้ำหลังฉีด',[])+timeline([['เดือน 0','วัคซีน HBV เข็ม 1'],['เดือน 1–2','วัคซีน HBV เข็ม 2'],['เดือน 6','วัคซีน HBV เข็ม 3']]);
+    else out=stepper(steps,0)+where('จบ flow','มีภูมิคุ้มกันแล้ว','HBsAg − / Anti-HBs + ไม่ต้องทำอะไรต่อ',[]);
+    R.innerHTML=out; return;
+  }
+  // positive
+  const sex=val('b-sex'), age=num('b-age'), egfr=num('b-egfr'), ast=num('b-ast'), uln=num('b-uln')||40, alt=num('b-alt'), plt=num('b-plt'), lsm=num('b-lsm'), vl=num('b-vl');
+  const A=apri(ast,uln,plt), F=fib4(age,ast,alt,plt);
+  const altHigh=alt!=null&&(sex==='M'?alt>30:alt>19);
+  const al=[]; const sc=[];
+  if(A!=null) sc.push({n:'APRI',v:f2(A),i:A>1?'ตับแข็ง':A>0.5?'Significant fibrosis':'Low likelihood',c:A>1?'lv-crit':A>0.5?'lv-warn':'lv-ok'});
+  if(F!=null) sc.push({n:'FIB-4',v:f2(F),i:F>3.25?'High risk advanced':F>1.45?'Significant fibrosis':'Low risk',c:F>3.25?'lv-crit':F>1.45?'lv-warn':'lv-ok'});
+  if(lsm!=null) sc.push({n:'LSM kPa',v:lsm.toFixed(1),i:lsm>12.5?'Cirrhosis':lsm>=9.6?'Advanced':lsm>=7?'Significant':'Normal',c:lsm>12.5?'lv-crit':lsm>=7?'lv-warn':'lv-ok'});
+  if(alt!=null) sc.push({n:'ALT',v:alt,i:altHigh?`สูง (เกณฑ์ ${sex==='M'?'ชาย >30':'หญิง >19'})`:'ปกติตามเกณฑ์',c:altHigh?'lv-warn':'lv-ok'});
+  if(F!=null&&age!=null&&(age<35||age>65)) al.push(['','FIB-4 แม่นยำลดลงในอายุ < 35 หรือ > 65 ปี ให้น้ำหนักกับ APRI / LSM มากกว่า']);
+  if(age!=null&&age<18) al.push(['','อายุ < 18 ปี: การประเมินพังผืดไม่แม่นยำ และ flow นี้ออกแบบสำหรับ ≥ 18 ปี — ปรึกษากุมารแพทย์']);
+
+  const cirr=chk('b-clin')||(A!=null&&A>1)||(lsm!=null&&lsm>12.5)||chk('b-decomp');
+  const cirrSusp=cirr||(F!=null&&F>3.25);
+  const sigF=(A!=null&&A>0.5)||(F!=null&&F>1.45)||(lsm!=null&&lsm>=7);
+  const reasons=[];
+  if(cirr) reasons.push('ตับแข็ง'); else if(sigF) reasons.push('Significant fibrosis');
+  if(chk('b-hcv')) reasons.push('HCV ร่วม'); if(chk('b-hiv')) reasons.push('HIV ร่วม');
+  if(chk('b-fam')) reasons.push('ญาติสายตรงเป็นตับแข็ง/มะเร็งตับ'); if(chk('b-imm')) reasons.push('ได้ยากดภูมิ'); if(chk('b-extra')) reasons.push('Extrahepatic manifestation');
+  let vlReason=null;
+  if(vl!=null&&vl>2000){ if(altHigh) vlReason='HBV DNA > 2,000 + ALT ผิดปกติ'; else if(alt!=null&&chk('b-ready')) vlReason='HBV DNA > 2,000 + ALT ปกติ ผู้ป่วยพร้อม'; }
+  if(vlReason) reasons.push(vlReason);
+  const hcc=cirrSusp||chk('b-fam');
+
+  if(chk('b-decomp')) al.push(['crit','Decompensated cirrhosis → พิจารณาส่งต่อแพทย์ผู้เชี่ยวชาญ']);
+  if(cirr) al.push(['','ตับแข็ง → ส่งผู้เชี่ยวชาญคัดกรอง esophageal varices']);
+  if(chk('b-hcv')) al.push(['','HCV ร่วม: เริ่มยา HBV ก่อนเริ่ม DAA ของ HCV (ป้องกัน HBV flare)']);
+  if(altHigh) al.push(['','ALT สูง: แยก fatty liver, drug-induced, autoimmune hepatitis ร่วมด้วย']);
+
+  // missing baseline
+  const miss=[]; if(ast==null)miss.push('AST'); if(alt==null)miss.push('ALT'); if(plt==null)miss.push('Platelet'); if(egfr==null)miss.push('Creatinine / eGFR');
+  const extra=['Anti-HIV, Anti-HCV (ถ้ามีความเสี่ยง)'];
+
+  // drug
+  function drug(){
+    if(chk('b-hiv')) return '<p><b>HAART</b> ที่มี TAF หรือ TDF + FTC หรือ 3TC + ตัวที่ 3 เช่น dolutegravir</p>';
+    if(age!=null&&age<18) return '<p><b>Entecavir</b> — ยาขนานแรกในเด็ก 2–18 ปี</p>';
+    if(chk('b-preg')) { let d='300 mg OD'; if(chk('b-hd'))d='300 mg ทุก 7 วัน'; else if(egfr!=null&&egfr<30)d='300 mg ทุก 72–96 ชม.'; else if(egfr!=null&&egfr<50)d='300 mg ทุก 48 ชม.'; return `<p><b>TDF ${d}</b> — ยาขนานแรกในหญิงตั้งครรภ์</p>`; }
+    const etvWhy=[]; if(egfr!=null&&egfr<=50)etvWhy.push('eGFR ≤ 50'); if(chk('b-ptd'))etvWhy.push('proximal tubular dysfunction'); if(chk('b-osteo'))etvWhy.push('กระดูกบาง/พรุน');
+    if(chk('b-hd')) return '<p><b>TAF 25 mg</b> ให้หลังฟอกไต หรือ <b>ETV 0.5 mg ทุก 7 วัน</b></p>';
+    if(etvWhy.length){ let d='0.5 mg OD'; if(egfr!=null&&egfr<10)d='0.5 mg ทุก 7 วัน'; else if(egfr!=null&&egfr<30)d='0.5 mg ทุก 72 ชม.'; else if(egfr!=null&&egfr<50)d='0.5 mg ทุก 48 ชม.'; return `<p><b>Entecavir ${d}</b> — ใช้แทน TAF/TDF เพราะ ${etvWhy.join(', ')}</p><p class="note">ขนาดปรับตาม CrCl ตามตารางใน CPG</p>`; }
+    return '<p><b>TAF 25 mg 1 เม็ด วันละครั้ง</b> — ยาขนานแรก (บัญชี ง.)</p>';
+  }
+  const immNote=chk('b-imm')?'<div class="callout" style="margin-top:8px">เริ่มยาต้านไวรัส ≥ 1 สัปดาห์ก่อนยากดภูมิ และให้ต่อ 6 เดือน–1 ปีหลังหยุดยากดภูมิ</div>':'';
+  const tlTx=[['ทุก 3–6 เดือน','ALT, Creatinine · ประเมินการกินยา'],['ถ้า ALT > 1.5×ULN','ทบทวน adherence หาสาเหตุอื่น ส่ง HBV DNA']];
+  if(hcc) tlTx.push(['ทุก 6–12 เดือน','U/S ตับ ± AFP (HCC surveillance)']);
+  const tlNo=[['ทุก 6–12 เดือน','AST, ALT, Platelet → คำนวณ APRI / FIB-4'],['ทุก 12 เดือน','LSM (ถ้า รพ. มี) · ประเมินข้อบ่งชี้ซ้ำทุกปี']];
+  if(hcc) tlNo.push(['ทุก 6–12 เดือน','U/S ตับ ± AFP (HCC surveillance)']);
+
+  if(onTx){
+    out=stepper(steps,4)+where('ขั้นที่ 5 · ระหว่างรักษา','ติดตามการรักษา HBV','ALT และ Creatinine ทุก 3–6 เดือน ประเมินการกินยาสม่ำเสมอทุกครั้ง',['ALT','Creatinine'].concat(hcc?['U/S ตับ ± AFP (ถ้าครบรอบ)']:[]))+scoreBox(sc)+alerts(al)+timeline(tlTx);
+    R.innerHTML=out; return;
+  }
+  if(miss.length){
+    out=stepper(steps,1)+where('ขั้นที่ 2 · ประเมินก่อนรักษา','ส่งแลปพื้นฐานให้ครบ','ใช้ AST, ALT, Plt คำนวณ APRI/FIB-4 เพื่อตัดสินว่ามี significant fibrosis หรือไม่',miss.concat(vl==null?['HBV DNA (viral load)']:[],extra,['U/S ตับ (ถ้าทำได้)','LSM (ถ้ามี)']))+scoreBox(sc)+alerts(al);
+    if(reasons.length) out+=box('มีข้อบ่งชี้แล้วจากข้อมูลที่มี',`<p>${reasons.join(' · ')}</p><p class="note">เริ่มยาได้ แต่ควรมี Cr ก่อนเลือกยา</p>`);
+    R.innerHTML=out; return;
+  }
+  if(reasons.length){
+    steps[3].t='เริ่มยาต้านไวรัส';
+    const labsNow=[]; if(vl==null)labsNow.push('HBV DNA (baseline — ไม่จำเป็นต่อการตัดสินใจ)'); if(hcc)labsNow.push('U/S ตับ ± AFP');
+    out=stepper(steps,3)+where('ขั้นที่ 4 · มีข้อบ่งชี้รักษา','เริ่มยาต้านไวรัส HBV',`เหตุผล: ${reasons.join(' · ')}`,labsNow)+scoreBox(sc)+alerts(al)+box('ยาที่แนะนำ',drug()+immNote)+timeline([['วันเริ่มยา','เริ่มยา · ให้ความรู้เรื่องกินยาต่อเนื่อง']].concat(tlTx));
+    R.innerHTML=out; return;
+  }
+  if(vl==null){
+    out=stepper(steps,2)+where('ขั้นที่ 3 · ตัดสินข้อบ่งชี้','ส่ง HBV DNA','ไม่มี fibrosis และไม่มีโรคร่วม จึงต้องใช้ viral load ตัดสิน (เกณฑ์ > 2,000 IU/mL)',['HBV DNA (viral load)'].concat(hcc?['U/S ตับ ± AFP']:[]))+scoreBox(sc)+alerts(al);
+    R.innerHTML=out; return;
+  }
+  steps[3].t='ยังไม่มีข้อบ่งชี้ → ติดตาม';
+  let why='ไม่มี significant fibrosis ไม่มีโรคร่วม';
+  if(vl>2000&&!altHigh) why+=' · HBV DNA > 2,000 แต่ ALT ปกติ (เริ่มยาได้ถ้าผู้ป่วยพร้อม — ติ๊ก "พร้อมกินยา")'; else why+=' · HBV DNA ≤ 2,000';
+  out=stepper(steps,3)+where('ขั้นที่ 4 · ยังไม่มีข้อบ่งชี้','ติดตามโดยยังไม่ให้ยา',why,[])+scoreBox(sc)+alerts(al)+timeline(tlNo.concat([['ถ้าพบ','APRI > 0.5 / FIB-4 > 1.45 / LSM ≥ 7 → เริ่มรักษา']]));
+  R.innerHTML=out;
+}
+
+// ---------- HCV ----------
+function hcv(){
+  const R=$('result'); R.style.setProperty('--accent','var(--hcv)');R.style.setProperty('--accent-soft','var(--hcv-soft)');
+  const steps=[{t:'คัดกรอง Anti-HCV / DUO',d:'เกิดก่อน 2535 หรือ 5 กลุ่มเสี่ยง'},{t:'ยืนยัน HCV RNA / cAg',d:'ใช้ 4R model'},{t:'ประเมินก่อนรักษา',d:'AST ALT Plt Cr HBsAg Anti-HIV · DDI'},{t:'รักษา 12 สัปดาห์',d:''},{t:'SVR12',d:'HCV RNA / Ag ที่ 12 wk หลังจบยา'},{t:'ติดตามหลังหาย',d:''}];
+  const m=val('c-method'), ab=val('c-ab'), cag=val('c-cag'), rna=val('c-rna');
+  const done=n=>{for(let i=n;i<steps.length;i++)steps[i].skip=true};
+  // screening
+  let chronic=false;
+  if(rna==='det'||(m==='ab'&&ab==='pos'&&cag==='pos')||(m==='duo'&&ab==='pos'&&cag==='pos')) chronic=true;
+  if(!chronic){
+    if(!ab){R.innerHTML=stepper(steps,0)+where('ขั้นที่ 1 · คัดกรอง',m==='duo'?'ส่ง HCV DUO test':'ส่ง Anti-HCV',m==='duo'?'ตรวจ Anti-HCV และ HCV cAg ในครั้งเดียว':'RDT หรือ lab immunoassay · ถ้าใช้ R3/R4 ให้เก็บตัวอย่างไว้ยืนยันเลย',[m==='duo'?'HCV DUO (Anti-HCV + cAg)':'Anti-HCV']);return}
+    if(m==='duo'){
+      if(!cag){R.innerHTML=stepper(steps,0)+where('ขั้นที่ 1 · DUO','กรอกผล cAg จาก DUO test','',[]);return}
+      if(ab==='neg'&&cag==='neg'){done(1);R.innerHTML=stepper(steps,0)+where('จบ flow','ไม่ติดเชื้อ','แนะนำการป้องกัน ตรวจซ้ำตามสิทธิ์ถ้ายังมีความเสี่ยง',[]);return}
+      if(ab==='neg'&&cag==='pos'){R.innerHTML=stepper(steps,1)+where('ขั้นที่ 2 · Acute infection','ตรวจซ้ำใน 3–6 เดือน','Anti-HCV − / cAg + บ่งชี้การติดเชื้อเฉียบพลัน',[])+timeline([['3–6 เดือน','ตรวจ HCV DUO / HCV RNA ซ้ำ']]);return}
+    }
+    if(ab==='neg'){done(1);R.innerHTML=stepper(steps,0)+where('จบ flow','Anti-HCV negative','แนะนำการป้องกัน ตรวจซ้ำตามสิทธิ์ถ้ายังมีความเสี่ยง (กลุ่มเสี่ยงตรวจได้ 1 ครั้ง/ปี)',[]);return}
+    // ab pos, need confirm
+    if(rna==='nd'||(m==='ab'&&cag==='neg'&&!chk('c-lft'))){done(2);R.innerHTML=stepper(steps,1)+where('จบ flow','ไม่ต้องรักษา','ติดเชื้อในอดีตและหายเอง แนะนำการป้องกัน ตรวจซ้ำถ้ายังมีความเสี่ยง',[]);return}
+    if(m==='ab'&&cag==='neg'&&chk('c-lft')){R.innerHTML=stepper(steps,1)+where('ขั้นที่ 2 · ยืนยัน','ส่ง HCV RNA','cAg negative แต่ค่าตับผิดปกติไม่ทราบสาเหตุ ต้องยืนยันด้วย HCV RNA',['HCV RNA']);return}
+    R.innerHTML=stepper(steps,1)+where('ขั้นที่ 2 · ยืนยันการติดเชื้อ',m==='duo'?'ส่ง HCV RNA':'ส่ง HCV RNA หรือ HCV cAg','เลือกรูปแบบตามศักยภาพ รพ.: R1 เจาะวันเดียวกัน · R2 แม่ข่ายออกเจาะ · R3 reflex ตัวอย่างเดิม · R4 ส่งตัวอย่างที่เก็บไว้',[m==='duo'?'HCV RNA':'HCV RNA หรือ HCV core Ag']);return;
+  }
+  // chronic
+  const age=num('c-age'), wt=num('c-wt'), egfr=num('c-egfr'), ast=num('c-ast'), uln=num('c-uln')||40, alt=num('c-alt'), plt=num('c-plt'), te=num('c-te');
+  const hb=val('c-hbsag'), hiv=val('c-hiv'), phase=val('c-phase'), wk=num('c-wk'), svr=val('c-svr');
+  const A=apri(ast,uln,plt), F=fib4(age,ast,alt,plt);
+  const sc=[], al=[];
+  if(A!=null) sc.push({n:'APRI',v:f2(A),i:A>1.5?'Cirrhosis':A>=0.5?'Significant fibrosis':'Rule out',c:A>1.5?'lv-crit':A>=0.5?'lv-warn':'lv-ok'});
+  if(F!=null) sc.push({n:'FIB-4',v:f2(F),i:F>3.25?'Cirrhosis':F>=1.45?'Significant fibrosis':'Rule out',c:F>3.25?'lv-crit':F>=1.45?'lv-warn':'lv-ok'});
+  if(F!=null&&age!=null&&(age<35||age>65)) al.push(['','ระวังการแปลผล FIB-4 ในอายุ < 35 หรือ > 65 ปี']);
+  const decomp=chk('c-decomp');
+  const cirr=decomp||chk('c-cirr')||(A!=null&&A>1.5)||(F!=null&&F>3.25);
+  const stage=decomp?'Decompensated cirrhosis':cirr?'Compensated cirrhosis':'ไม่มีตับแข็ง';
+  sc.push({n:'Stage',v:decomp?'Decomp':cirr?'Comp':'No cirr',i:stage,c:decomp?'lv-crit':cirr?'lv-warn':'lv-ok'});
+  const refer=[]; if(decomp)refer.push('decompensated cirrhosis'); if(chk('c-prior'))refer.push('เคยรักษา HCV มาก่อน'); if(chk('c-hcc'))refer.push('สงสัยมะเร็งตับ'); if(egfr!=null&&egfr<=30)refer.push('eGFR ≤ 30');
+  if(hb==='pos') al.push(['crit','HBsAg positive → รักษา HBV ก่อนเริ่ม SOF/VEL (เสี่ยง HBV flare) — ใช้ tab HBV ประเมินต่อ']);
+  if(hiv==='pos') al.push(['','HIV ร่วม → ตรวจหาโรคติดเชื้อฉวยโอกาส และตรวจ DDI กับยาต้านไวรัส']);
+  const meds=[...$('c-meds').selectedOptions].map(o=>o.value);
+  const ci=meds.filter(x=>x.startsWith('ci:')).map(x=>x.slice(3)), ia=meds.filter(x=>x.startsWith('ia:')).map(x=>x.slice(3));
+  if(ci.length) al.push(['crit','<b>ห้ามใช้ร่วม SOF/VEL:</b> '+ci.map(esc).join(', ')+' → เปลี่ยนยา ≥ 1 เดือนก่อนเริ่ม']);
+  if(ia.length) al.push(['','<b>ต้องปรับ/เฝ้าระวัง:</b> '+ia.map(esc).join(' · ')]);
+  if(wt!=null&&wt<30) al.push(['crit','น้ำหนัก < 30 kg ไม่เข้าเงื่อนไขบัญชี ง ของ SOF/VEL']);
+
+  const miss=[]; if(ast==null)miss.push('AST'); if(alt==null)miss.push('ALT'); if(plt==null)miss.push('Platelet'); if(egfr==null)miss.push('Creatinine'); if(!hb)miss.push('HBsAg'); if(!hiv)miss.push('Anti-HIV');
+  const rbv=wt==null?'1,000 mg/วัน (< 75 kg) หรือ 1,200 mg/วัน (≥ 75 kg)':(wt<75?'1,000 mg/วัน':'1,200 mg/วัน');
+  const regimen=decomp?`<p><b>SOF 400 / VEL 100 mg 1 เม็ด OD + Ribavirin ${rbv} แบ่ง BID × 12 สัปดาห์</b></p><p class="note">หรือส่งต่อผู้เชี่ยวชาญ · RBV 200 mg/เม็ด</p>`:`<p><b>SOF 400 / VEL 100 mg 1 เม็ด วันละครั้ง × 12 สัปดาห์</b></p>`;
+  const contra=(decomp||chk('c-wcba'))?'<p class="note">คุมกำเนิดที่มีประสิทธิภาพระหว่างรักษาและ 6 เดือนหลังหยุดยา'+(decomp?' (ได้ RBV)':'')+'</p>':'';
+  const postCirr=[['ทุก 6–12 เดือน','U/S ตับ ± AFP (HCC surveillance)']];
+  const evNeed=cirr&&((plt!=null&&plt<150)||(te!=null&&te>20));
+  if(evNeed) postCirr.push(['ส่งต่อ','คัดกรอง esophageal varices (Plt < 150 หรือ TE > 20 kPa)']);
+
+  if(phase==='pre'){
+    if(miss.length){R.innerHTML=stepper(steps,2)+where('ขั้นที่ 3 · ประเมินก่อนรักษา','ส่งแลปประเมินให้ครบ','ใช้ APRI/FIB-4 แบ่งกลุ่มตับแข็ง และตรวจโรคร่วมก่อนเลือกสูตร',miss.concat(['U/S ตับ (ถ้าทำได้)']))+scoreBox(sc)+alerts(al);return}
+    let head='เริ่ม SOF/VEL ได้ที่ รพช./รพท.', k='ขั้นที่ 4 · พร้อมรักษา', body=stage;
+    if(refer.length){ head=decomp?'ส่งต่อ หรือเริ่ม SOF/VEL/RBV โดยแพทย์ที่ผ่านอบรม':'ส่งต่อ/ปรึกษาผู้เชี่ยวชาญ'; body='เข้าเกณฑ์ส่งต่อ: '+refer.join(' · '); }
+    if(hb==='pos'){ head='รักษา HBV ก่อน แล้วจึงเริ่ม SOF/VEL'; }
+    R.innerHTML=stepper(steps,3)+where(k,head,body,[])+scoreBox(sc)+alerts(al)+box('สูตรยา',regimen+contra)+timeline([['สัปดาห์ 0','เริ่ม SOF/VEL'+(decomp?' + RBV':'')],['สัปดาห์ 12','จบยา'],['สัปดาห์ 24–36','HCV RNA (quantitative/qualitative) หรือ HCV cAg = SVR12 (12–24 wk หลังจบยา)']].concat(cirr?postCirr.map(r=>['หลังหาย · '+r[0],r[1]]):[['หลังหาย','ไม่ต้องติดตาม · แนะนำป้องกันถ้ายังเสี่ยง']]));
+    return;
+  }
+  if(phase==='on'){
+    const w=wk==null?'?':wk;
+    R.innerHTML=stepper(steps,3)+where('ขั้นที่ 4 · กำลังรักษา',`สัปดาห์ที่ ${w} จาก 12`,'ไม่มีแลปติดตามระหว่างรักษาที่ CPG กำหนด เน้นการกินยาสม่ำเสมอและ DDI',[])+scoreBox(sc)+alerts(al)+box('สูตรยา',regimen+contra)+timeline([['สัปดาห์ 12','จบยา'],[wk!=null?`อีก ${Math.max(0,24-wk)}–${Math.max(0,36-wk)} wk`:'12–24 wk หลังจบ','ส่ง HCV RNA หรือ HCV Ag ประเมิน SVR']]);
+    return;
+  }
+  // post
+  if(!svr){
+    const ready=wk==null||wk>=12;
+    R.innerHTML=stepper(steps,4)+where('ขั้นที่ 5 · ประเมิน SVR',ready?'ส่ง HCV RNA หรือ HCV Ag ตอนนี้':`รออีก ${12-wk} สัปดาห์`,'ตรวจที่ ≥ 12 สัปดาห์หลังหยุดยา (ช่วง 12–24 สัปดาห์)',ready?['HCV RNA (quantitative) หรือ HCV Ag']:[])+scoreBox(sc)+alerts(al);
+    return;
+  }
+  if(svr==='pos'){
+    R.innerHTML=stepper(steps,4)+where('ขั้นที่ 5 · ไม่ SVR','ส่งต่อ/ปรึกษาผู้เชี่ยวชาญ','รักษาซ้ำด้วย SOF/VEL + RBV × 24 สัปดาห์',[])+alerts(al);return;
+  }
+  R.innerHTML=stepper(steps,5)+where('ขั้นที่ 6 · SVR (หายแล้ว)',cirr?'ติดตามตับแข็งต่อ':'ไม่ต้องติดตามการรักษา',cirr?'ตับแข็งยังมีความเสี่ยงมะเร็งตับแม้ไวรัสหายแล้ว':'แนะนำการป้องกันถ้ายังมีพฤติกรรมเสี่ยง เพราะติดซ้ำได้',cirr?['U/S ตับ ± AFP'].concat(evNeed?['ส่งคัดกรอง EV']:[]):[])+scoreBox(sc)+alerts(al)+(cirr?timeline(postCirr):'');
+}
+
+// ---------- wiring ----------
+let mode='hbv';
+function render(){mode==='hbv'?hbv():hcv()}
+function setMode(m){mode=m;$('mode-hbv').setAttribute('aria-pressed',m==='hbv');$('mode-hcv').setAttribute('aria-pressed',m==='hcv');$('f-hbv').classList.toggle('hide',m!=='hbv');$('f-hcv').classList.toggle('hide',m!=='hcv');render()}
+$('mode-hbv').onclick=()=>setMode('hbv'); $('mode-hcv').onclick=()=>setMode('hcv');
+['f-hbv','f-hcv'].forEach(id=>{$(id).addEventListener('input',render);$(id).addEventListener('change',render);$(id).addEventListener('submit',e=>e.preventDefault())});
+function fill(map){for(const k in map){const el=$(k);if(!el)continue;if(el.type==='checkbox')el.checked=!!map[k];else if(el.multiple){[...el.options].forEach(o=>o.selected=map[k].includes(o.text))}else el.value=map[k]}}
+function clearAll(){document.querySelectorAll('#f-hbv input,#f-hbv select,#f-hcv input,#f-hcv select').forEach(el=>{if(el.type==='checkbox')el.checked=false;else if(el.multiple)[...el.options].forEach(o=>o.selected=false);else if(el.tagName==='SELECT')el.selectedIndex=0;else el.value=''});$('b-uln').value=40;$('c-uln').value=40}
+$('clr').onclick=()=>{clearAll();render()};
+const ex1={'b-hbsag':'pos','b-ontx':'no','b-sex':'M','b-age':52,'b-egfr':85,'b-ast':48,'b-uln':40,'b-alt':42,'b-plt':160,'b-vl':15000};
+const ex2={'c-method':'ab','c-ab':'pos','c-cag':'pos','c-age':58,'c-wt':68,'c-egfr':72,'c-ast':96,'c-uln':40,'c-alt':80,'c-plt':118,'c-hbsag':'neg','c-hiv':'neg','c-phase':'pre','c-meds':['Omeprazole 20 mg','Statin']};
+$('ex1').onclick=()=>{clearAll();fill(ex1);setMode('hbv')};
+$('ex2').onclick=()=>{clearAll();fill(ex2);setMode('hcv')};
+fill(ex1); fill(ex2); setMode('hbv');
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
