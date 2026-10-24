@@ -1,0 +1,541 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gout CPG 2569</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: polarized-light lab notebook — sticky tab rail, one column of recommendation cards, urate gauge as the signature instrument */
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --sunk:#ECEEF5; --line:#D9DCE8;
+  --fg:#1B1E2E; --muted:#5C6178;
+  --ink:#2E3A8C;          /* polarizer indigo — accent */
+  --ink-soft:#E3E6F7;
+  --crystal:#C99A06;      /* MSU crystal yellow */
+  --crystal-soft:#FBF1CF;
+  --ok:#1E7A55; --ok-soft:#DDF1E7;
+  --warn:#B4600D; --warn-soft:#FCE8D4;
+  --bad:#B3263A; --bad-soft:#F9DDE1;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12141D; --surface:#1A1D29; --sunk:#232736; --line:#323748;
+  --fg:#E7E9F2; --muted:#A0A5BC; --ink:#9EABFF; --ink-soft:#262C52;
+  --crystal:#F2C744; --crystal-soft:#3A3115; --ok:#5FD3A0; --ok-soft:#183528;
+  --warn:#F4A660; --warn-soft:#3B2716; --bad:#FF8696; --bad-soft:#3D1D24; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12141D; --surface:#1A1D29; --sunk:#232736; --line:#323748;
+  --fg:#E7E9F2; --muted:#A0A5BC; --ink:#9EABFF; --ink-soft:#262C52;
+  --crystal:#F2C744; --crystal-soft:#3A3115; --ok:#5FD3A0; --ok-soft:#183528;
+  --warn:#F4A660; --warn-soft:#3B2716; --bad:#FF8696; --bad-soft:#3D1D24; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.7;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.3;margin:0}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* header */
+header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .wrap{padding-block:28px 18px;display:grid;gap:6px}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header.top h1{font-size:clamp(1.6rem,4.2vw,2.3rem);font-weight:700}
+header.top h1 span{color:var(--ink)}
+.sub{color:var(--muted);font-size:.95rem}
+
+/* tabs */
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs button{flex:0 0 auto;border:0;background:none;color:var(--muted);font:600 .93rem var(--f-body);padding:12px 12px 10px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+nav.tabs button:hover{color:var(--fg)}
+
+main .wrap{padding-block:28px 56px}
+section.view{display:grid;gap:28px}
+.lead{font-size:1.02rem;max-width:68ch;color:var(--fg)}
+h2.sec{font-size:1.45rem;font-weight:700}
+h3.grp{font-size:1.08rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:10px;margin-top:6px}
+h3.grp::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* gauge */
+.gauge{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px 18px;display:grid;gap:14px}
+.gauge-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
+.gauge-head h2{font-size:1.15rem}
+.readout{font-family:var(--f-mono);font-size:2rem;font-weight:600;line-height:1}
+.readout small{font-size:.85rem;color:var(--muted);font-weight:500;margin-left:4px}
+.scale{position:relative;height:56px;margin-top:8px}
+.bar{position:absolute;left:0;right:0;top:18px;height:14px;border-radius:7px;overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.tick{position:absolute;top:0;height:46px;border-left:2px dashed var(--fg);opacity:.55}
+.tick b{position:absolute;top:-2px;left:4px;font:600 .72rem var(--f-mono);white-space:nowrap}
+.axis{position:absolute;top:38px;left:0;right:0;display:flex;justify-content:space-between;font:500 .72rem var(--f-mono);color:var(--muted)}
+.pin{position:absolute;top:12px;width:4px;height:26px;background:var(--fg);border-radius:2px;transform:translateX(-2px);transition:left .15s}
+input[type=range]{width:100%;accent-color:var(--ink)}
+.verdict{border-radius:var(--r);padding:12px 14px;font-size:.95rem}
+.v-ok{background:var(--ok-soft)} .v-mid{background:var(--crystal-soft)} .v-warn{background:var(--warn-soft)} .v-bad{background:var(--bad-soft)}
+
+/* key numbers */
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.key{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.key .num{font-size:1.5rem;font-weight:600;color:var(--ink)}
+.key span{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* flowchart */
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;overflow-x:auto}
+.fnode{border-radius:9px;padding:10px 14px;font-size:.93rem;line-height:1.55}
+.f-start{background:var(--fg);color:var(--bg);font-weight:600;text-align:center}
+.f-strong{background:var(--ink);color:var(--bg)}
+.f-cond{background:var(--ink-soft);color:var(--fg)}
+.f-life{background:var(--crystal-soft);color:var(--fg)}
+.f-arrow{text-align:center;color:var(--muted);font-size:.82rem;line-height:1.3}
+.f-arrow::before{content:"↓";display:block;font-size:1.1rem;color:var(--fg)}
+.f-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.fnode ul{margin:4px 0 0;padding-left:1.1em}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.85rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+
+/* rec cards */
+.recs{display:grid;gap:14px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+.rec .no{font:600 1.05rem var(--f-mono);color:var(--ink);background:var(--ink-soft);border-radius:8px;width:44px;height:44px;display:grid;place-items:center;grid-row:span 3}
+.rec.strong .no{background:var(--ink);color:var(--bg)}
+.rec .stmt{font-weight:600;font-size:1.02rem;line-height:1.6;min-width:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
+.chip{font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;line-height:1.6;white-space:nowrap}
+.c-strong{background:var(--ink);color:var(--bg)}
+.c-cond{border:1.5px solid var(--ink);color:var(--ink)}
+.c-loe{background:var(--sunk);color:var(--fg)}
+.agree{display:inline-flex;align-items:center;gap:6px;font:600 .78rem var(--f-mono);color:var(--muted)}
+.agree .track{width:56px;height:6px;border-radius:3px;background:var(--sunk);overflow:hidden}
+.agree .track i{display:block;height:100%;background:var(--crystal)}
+details{min-width:0}
+details summary{cursor:pointer;color:var(--ink);font-size:.88rem;font-weight:600;list-style:none;padding:4px 0}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"＋ ";}
+details[open] summary::before{content:"－ ";}
+details ul{margin:4px 0 2px;padding-left:1.15em;font-size:.93rem;color:var(--fg)}
+details li{margin:3px 0}
+.pearl{grid-column:2;font-size:.9rem;background:var(--crystal-soft);border-radius:8px;padding:8px 12px;margin-top:6px}
+
+/* tables */
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600;font-size:.83rem;color:var(--muted)}
+td.num,th.num{text-align:right}
+tr:last-child td{border-bottom:0}
+.foot{font-size:.82rem;color:var(--muted);margin-top:-14px}
+
+/* tools */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px}
+.tool h3{font-size:1.12rem}
+.checks{display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;line-height:1.5}
+.checks label:has(input:checked){border-color:var(--ink);background:var(--ink-soft)}
+.checks input{margin-top:4px;accent-color:var(--ink);width:17px;height:17px;flex:0 0 auto}
+.checks .tag{margin-left:auto;flex:0 0 auto}
+.field{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.field input[type=number]{font:600 1.1rem var(--f-mono);width:110px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.out{border-radius:var(--r);padding:14px 16px;background:var(--sunk);font-size:.95rem}
+.out strong{color:var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:6px;margin-top:10px}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 8px;text-align:center;font-size:.8rem;color:var(--muted)}
+.steps div b{display:block;font:600 .95rem var(--f-mono);color:var(--fg)}
+
+/* gaps */
+.gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gap{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.gap h4{margin:0;font-size:.98rem;font-family:var(--f-display);font-weight:600;line-height:1.45}
+.gap p{margin:0;font-size:.9rem;color:var(--muted)}
+.vote{font:600 .8rem var(--f-mono);color:var(--warn)}
+
+.callout{border-left:4px solid var(--crystal);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.95rem}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{padding-block:22px;display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:520px){.rec{grid-template-columns:1fr}.rec .no{grid-row:auto;width:40px;height:40px}.pearl{grid-column:1}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">สมาคมรูมาติสซั่มแห่งประเทศไทย · รับรองโดยราชวิทยาลัยอายุรแพทย์ฯ 29 เม.ย. 2569</div>
+  <h1>แนวทางรักษา<span>เกาต์</span>และกรดยูริกในเลือดสูง 2569</h1>
+  <div class="sub">2026 TRA Guideline for the Treatment of Gout and Hyperuricemia · 23 คำแนะนำ · GRADE</div>
+</div></header>
+
+<nav class="tabs" aria-label="หมวด"><div class="wrap" role="tablist">
+  <button role="tab" data-v="overview">ภาพรวม</button>
+  <button role="tab" data-v="flare">ระยะกำเริบ</button>
+  <button role="tab" data-v="ult">ระยะยาว</button>
+  <button role="tab" data-v="asym">ไม่มีอาการ</button>
+  <button role="tab" data-v="drugs">ขนาดยา</button>
+  <button role="tab" data-v="tools">เครื่องมือ</button>
+  <button role="tab" data-v="gaps">ไม่มีคำแนะนำ</button>
+</div></nav>
+
+<main><div class="wrap">
+
+<!-- OVERVIEW -->
+<section class="view" id="v-overview">
+  <div class="gauge">
+    <div class="gauge-head">
+      <h2>ระดับกรดยูริกในเลือดนี้หมายถึงอะไร</h2>
+      <div class="readout" id="suaOut">7.5<small>มก./ดล.</small></div>
+    </div>
+    <div class="scale" aria-hidden="true">
+      <div class="bar"><i style="width:50%;background:var(--ok)"></i><i style="width:6.67%;background:var(--crystal)"></i><i style="width:18.33%;background:var(--warn)"></i><i style="width:25%;background:var(--bad)"></i></div>
+      <div class="tick" style="left:50%"><b style="left:auto;right:4px">เป้า 6</b></div>
+      <div class="tick" style="left:56.67%"><b>6.8 อิ่มตัว</b></div>
+      <div class="tick" style="left:75%"><b>≥9</b></div>
+      <div class="pin" id="pin"></div>
+      <div class="axis"><span>0</span><span>3</span><span>6</span><span>9</span><span>12</span></div>
+    </div>
+    <label for="sua" class="sub">เลื่อนเพื่อดูความหมายของค่าต่าง ๆ ตามแนวทางฯ</label>
+    <input type="range" id="sua" min="2" max="12" step="0.1" value="7.5">
+    <div class="verdict" id="suaVerdict"></div>
+  </div>
+
+  <div class="keys">
+    <div class="key"><div class="num">&lt; 6</div><span>เป้าหมายกรดยูริก มก./ดล. (treat to target) แนะนำอย่างยิ่ง</span></div>
+    <div class="key"><div class="num">&gt; 6.8</div><span>จุดอิ่มตัวของยูเรต — นิยามกรดยูริกสูง</span></div>
+    <div class="key"><div class="num">≥ 6 ด.</div><span>ให้ยาป้องกันกำเริบจนถึงเป้า + ไม่กำเริบอย่างน้อย 6 เดือน</span></div>
+    <div class="key"><div class="num">3–6 ด.</div><span>ตรวจ Cr, AST, ALT (และ uric acid) ระหว่างใช้ยาลดกรดยูริก</span></div>
+  </div>
+
+  <div>
+    <h2 class="sec" style="margin-bottom:12px">แผนภูมิการรักษา</h2>
+    <div class="flow">
+      <div class="fnode f-start">เกาต์กำเริบ</div>
+      <div class="f-row">
+        <div class="fnode f-cond"><b>Colchicine, glucocorticoids, NSAIDs</b> หรือยาผสมที่มีกลไกต่างกัน</div>
+        <div class="fnode f-cond">+ ประคบเย็นบริเวณข้อที่อักเสบ</div>
+      </div>
+      <div class="f-arrow">ไม่ตอบสนอง / มีข้อห้าม / ผลข้างเคียง → <b>ACTH</b> &nbsp;·&nbsp; ตอบสนอง → ประเมินข้อบ่งชี้ ULT</div>
+      <div class="f-row">
+        <div class="fnode f-strong"><b>เริ่มยาลดกรดยูริก</b> เมื่อมีข้อใดข้อหนึ่ง
+          <ul><li>ข้ออักเสบกำเริบ ≥ 2 ครั้ง/ปี</li><li>ก้อนโทฟัสจากการตรวจร่างกาย</li><li>ข้อถูกทำลายจากภาพรังสี <small>(มีเงื่อนไข)</small></li></ul></div>
+        <div class="fnode f-cond"><b>กำเริบครั้งแรก ร่วมกับ</b>
+          <ul><li>นิ่วในไต</li><li>CKD ระยะ ≥ 3</li><li>กรดยูริก ≥ 9 มก./ดล.</li></ul></div>
+      </div>
+      <div class="f-arrow">มี</div>
+      <div class="fnode f-strong"><b>Xanthine oxidase inhibitor หรือ uricosuric agent</b> (เลือกตามความเหมาะสม) — ตรวจ HLA-B*58:01 ก่อน allopurinol · start low, go slow · treat to target · ยาป้องกันกำเริบ</div>
+      <div class="f-arrow">ติดตาม uric acid, Cr, AST, ALT ทุก 3–6 เดือน</div>
+      <div class="fnode f-start" style="background:var(--crystal);color:#1B1E2E">Uric acid &lt; 6 มก./ดล.?</div>
+      <div class="f-row">
+        <div class="fnode f-cond"><b>ใช่</b> → พิจารณาให้ยาลดกรดยูริกต่อเนื่อง</div>
+        <div class="fnode f-cond"><b>ไม่ใช่</b> → เพิ่มขนาดยา, เปลี่ยนกลุ่มยา หรือให้ยา 2 กลุ่มร่วมกัน</div>
+      </div>
+      <div class="fnode f-life"><b>ทุกระยะ:</b> งดแอลกอฮอล์ทุกชนิด · จำกัดเนื้อแดง อาหารทะเล เครื่องดื่มมีน้ำตาล น้ำผลไม้ · ลดน้ำหนัก · losartan ถ้ามีข้อบ่งชี้ · ใช้ยาขับปัสสาวะ/แอสไพรินได้ถ้ามีข้อบ่งชี้ แต่เลี่ยง thiazide</div>
+      <div class="legend"><span><i style="background:var(--ink)"></i>แนะนำอย่างยิ่ง</span><span><i style="background:var(--ink-soft);border:1px solid var(--line)"></i>แนะนำแบบมีเงื่อนไข</span><span><i style="background:var(--crystal-soft);border:1px solid var(--line)"></i>การปรับพฤติกรรมและยาร่วม (มีเงื่อนไข)</span></div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="sec" style="margin-bottom:12px">อ่านเกรดคำแนะนำ</h2>
+    <div class="keys">
+      <div class="key"><div><span class="chip c-strong">แนะนำอย่างยิ่ง</span></div><span>มั่นใจสูงว่ามีประโยชน์และคุ้มค่า (ควรทำ) หรือเกิดโทษ (ไม่ควรทำ)</span></div>
+      <div class="key"><div><span class="chip c-cond">แนะนำแบบมีเงื่อนไข</span></div><span>มั่นใจปานกลาง อาจทำหรือไม่ทำก็ได้ตามสถานการณ์ (น่าทำ / ไม่น่าทำ)</span></div>
+      <div class="key"><div><span class="chip c-loe">สูง → ต่ำมาก</span></div><span>คุณภาพหลักฐานตาม GRADE: RCT เริ่มที่สูง, observational เริ่มที่ต่ำ</span></div>
+      <div class="key"><div class="agree">ความเห็นพ้อง<span class="track"><i style="width:75%"></i></span>75%</div><span>ผ่านมติเมื่อเห็นด้วย ≥ 75% (70–74.99% ลงมติรอบสอง)</span></div>
+    </div>
+  </div>
+  <div class="callout">ยาลดกรดยูริกที่ครอบคลุมเฉพาะที่ขึ้นทะเบียนในไทยถึง ส.ค. 2568 — <b>XOI:</b> allopurinol, febuxostat · <b>Uricosuric:</b> benzbromarone, dotinurad, probenecid, sulfinpyrazone. ไม่ครอบคลุมกรดยูริกสูงเฉียบพลันจากมะเร็ง</div>
+</section>
+
+<section class="view" id="v-flare" hidden>
+  <p class="lead">คำแนะนำที่ 1–6 · ยาทั้งสามกลุ่มลดปวดและอักเสบได้ใกล้เคียงกัน เลือกตามโรคร่วมและความปลอดภัยของผู้ป่วยแต่ละราย</p>
+  <div class="recs" data-phase="flare"></div>
+</section>
+
+<section class="view" id="v-ult" hidden>
+  <p class="lead">คำแนะนำที่ 7–21 · เริ่มยาเมื่อมีข้อบ่งชี้ เริ่มขนาดต่ำ ปรับขึ้นจนถึงเป้า &lt; 6 มก./ดล. แล้วให้ต่อเนื่อง</p>
+  <div class="recs" data-phase="ult"></div>
+</section>
+
+<section class="view" id="v-asym" hidden>
+  <p class="lead">คำแนะนำที่ 22–23 · กรดยูริกสูงอย่างเดียวโดยไม่มีอาการ ไม่ต้องให้ยาลดกรดยูริก</p>
+  <div class="recs" data-phase="asym"></div>
+  <div class="tbl"><table>
+    <thead><tr><th>ระดับกรดยูริก (มก./ดล.)</th><th class="num">อุบัติการณ์เกาต์ต่อปี</th></tr></thead>
+    <tbody><tr><td>&lt; 7.0</td><td class="num mono">&lt; 0.1%</td></tr><tr><td>7.0–8.9</td><td class="num mono">0.5%</td></tr><tr><td>≥ 9.0</td><td class="num mono">4.9%</td></tr></tbody>
+  </table></div>
+  <p class="foot">Campion และคณะ (n = 2,046, ติดตาม 14.9 ปี) · กลุ่ม &gt; 9 มก./ดล. เป็นเกาต์สะสม 22% ใน 5 ปี — อีก 78% ยังไม่มีอาการ</p>
+</section>
+
+<section class="view" id="v-drugs" hidden>
+  <h2 class="sec">ตารางที่ 3 · ยารักษาเกาต์กำเริบเฉียบพลัน</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>ยา</th><th>ขนาดยา</th><th>รูปแบบ</th><th>ระยะเวลา</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3"><b>Colchicine</b></td><td>1.2 มก. ทันที → 0.6 มก. 1 ชม. ถัดไป <small>(AGREE)</small></td><td>รับประทาน</td><td>วันแรก</td></tr>
+      <tr><td>1.2 มก. ทันที → 0.6 มก. ที่ชม. 1 และ 12 <small>(Laosuksri, ไทย)</small></td><td>รับประทาน</td><td>วันแรก</td></tr>
+      <tr><td>0.5–0.6 มก. ทุก 8–12 ชม.</td><td>รับประทาน</td><td>จนกว่าจะหาย</td></tr>
+      <tr><td><b>NSAIDs</b></td><td>ตามขนาดแนะนำของยาแต่ละตัว</td><td>รับประทาน</td><td>จนกว่าจะหาย</td></tr>
+      <tr><td><b>Prednisolone</b></td><td>30–35 มก./วัน</td><td>รับประทาน</td><td>4–5 วัน (ไม่ต้อง taper)</td></tr>
+      <tr><td><b>ACTH</b></td><td>100 IU</td><td>IM</td><td>ครั้งเดียว</td></tr>
+      <tr><td><b>Betamethasone</b></td><td>7 มก.</td><td>IM</td><td>ครั้งเดียว</td></tr>
+      <tr><td rowspan="2"><b>Triamcinolone acetonide</b></td><td>40 มก.</td><td>IM</td><td>ครั้งเดียว</td></tr>
+      <tr><td>20–40 มก. (ตามขนาดข้อ)</td><td>ฉีดเข้าข้อ</td><td>ครั้งเดียว</td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">ยาฉีด IM / IA / ACTH ถ้าอาการไม่ดีขึ้นให้ซ้ำได้ภายใน 1–2 วัน · NSAIDs มักใช้ 5–7 วัน · colchicine ขนาดต่ำ 3–4 วัน</p>
+
+  <h2 class="sec">ตารางที่ 4 · ยาลดกรดยูริก</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>ยา</th><th class="num">เม็ดละ (มก.)</th><th>CrCl (มล./นาที)</th><th class="num">เริ่มต้น (มก./วัน)</th><th class="num">เพิ่มครั้งละ</th><th class="num">สูงสุด</th></tr></thead>
+    <tbody class="mono">
+      <tr><td rowspan="3" style="font-family:var(--f-body)"><b>Allopurinol</b></td><td class="num" rowspan="3">100, 300</td><td>&lt; 30</td><td class="num">1.5 × GFR</td><td class="num">50</td><td class="num" rowspan="3">800–900</td></tr>
+      <tr><td>&lt; 60</td><td class="num">50</td><td class="num">50</td></tr>
+      <tr><td>≥ 60</td><td class="num">100</td><td class="num">100</td></tr>
+      <tr><td style="font-family:var(--f-body)"><b>Febuxostat</b></td><td class="num">80</td><td></td><td class="num">40</td><td class="num">40</td><td class="num">80–120</td></tr>
+      <tr><td style="font-family:var(--f-body)"><b>Benzbromarone</b></td><td class="num">100</td><td></td><td class="num">50</td><td class="num">50</td><td class="num">200</td></tr>
+      <tr><td style="font-family:var(--f-body)"><b>Dotinurad</b></td><td class="num">1, 2</td><td></td><td class="num">0.5</td><td class="num">0.5</td><td class="num">4</td></tr>
+      <tr><td style="font-family:var(--f-body)"><b>Probenecid</b></td><td class="num">500</td><td></td><td class="num">500*</td><td class="num">500*</td><td class="num">2,000*</td></tr>
+      <tr><td style="font-family:var(--f-body)"><b>Sulfinpyrazone</b></td><td class="num">100</td><td></td><td class="num">100*</td><td class="num">100*</td><td class="num">800*</td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">* แบ่งให้วันละ 2 ครั้ง · allopurinol ขนาดเริ่มต้นตาม Stamp LK 2012 (CrCl &lt; 30) และ Stamp LK 2017 · ปรับขนาดทุกเดือนจนถึงเป้า</p>
+
+  <h2 class="sec">ข้อควรรู้รายยา</h2>
+  <div class="gaps">
+    <div class="gap"><h4>NSAIDs</h4><p>COX-2 selective ลดปวดเท่า non-selective แต่ผลต่อทางเดินอาหารน้อยกว่า เลี่ยงใน CKD รุนแรง โรคหัวใจและหลอดเลือด ประวัติเลือดออกทางเดินอาหาร</p></div>
+    <div class="gap"><h4>Colchicine</h4><p>ขนาดต่ำได้ผลเท่าขนาดสูง แต่ท้องเสียน้อยกว่าชัดเจน · CONTACT: 0.5 มก. ทุก 8 ชม. ≈ naproxen</p></div>
+    <div class="gap"><h4>Glucocorticoids</h4><p>ลดบวมดีกว่า NSAIDs ที่ 14 วัน ผลต่อทางเดินอาหารน้อยกว่า ผู้สูงอายุและ CKD ทนได้ดีกว่า · กำเริบข้อเดียวพิจารณาฉีดเข้าข้อ</p></div>
+    <div class="gap"><h4>ACTH</h4><p>ตอบสนอง 77.9–100% ภายใน 24 ชม. เป็นยากำพร้า ราคาสูง ไม่มีทุก รพ. — ใช้เมื่อยาลำดับแรกใช้ไม่ได้</p></div>
+    <div class="gap"><h4>Febuxostat</h4><p>80–120 มก./วัน ลดกรดยูริกได้มากกว่า allopurinol ≤ 300 มก./วัน (แต่การศึกษาไม่ได้ใช้ allopurinol ขนาดสูงสุด)</p></div>
+    <div class="gap"><h4>Dotinurad / Benzbromarone</h4><p>Dotinurad 2–4 มก. ≈ benzbromarone 50–200 มก. และดีกว่า probenecid 2 ก./วัน ในการถึงเป้า</p></div>
+  </div>
+</section>
+
+<section class="view" id="v-tools" hidden>
+  <div class="tool">
+    <h3>ผู้ป่วยรายนี้มีข้อบ่งชี้เริ่มยาลดกรดยูริกหรือไม่</h3>
+    <div class="checks" id="indic">
+      <label><input type="checkbox" id="i1" data-s="s"> ข้ออักเสบกำเริบ ≥ 2 ครั้งต่อปี <span class="chip c-strong tag">อย่างยิ่ง</span></label>
+      <label><input type="checkbox" id="i2" data-s="s"> มีก้อนโทฟัสจากการตรวจร่างกาย <span class="chip c-strong tag">อย่างยิ่ง</span></label>
+      <label><input type="checkbox" id="i3" data-s="c"> ข้อถูกทำลายจากภาพถ่ายรังสี <span class="chip c-cond tag">มีเงื่อนไข</span></label>
+      <label><input type="checkbox" id="i4" data-s="f"> กำเริบครั้งแรก + นิ่วในไต <span class="chip c-cond tag">มีเงื่อนไข</span></label>
+      <label><input type="checkbox" id="i5" data-s="f"> กำเริบครั้งแรก + CKD ระยะ ≥ 3 <span class="chip c-cond tag">มีเงื่อนไข</span></label>
+      <label><input type="checkbox" id="i6" data-s="f"> กำเริบครั้งแรก + กรดยูริก ≥ 9 มก./ดล. <span class="chip c-cond tag">มีเงื่อนไข</span></label>
+      <label><input type="checkbox" id="i7" data-s="x"> ไม่เคยมีข้ออักเสบและไม่มีโทฟัส (กรดยูริกสูงอย่างเดียว)</label>
+    </div>
+    <div class="out" id="indicOut"></div>
+  </div>
+
+  <div class="tool">
+    <h3>Allopurinol: ขนาดเริ่มต้นและแผนปรับยา</h3>
+    <div class="field">
+      <label for="crcl">CrCl / eGFR</label>
+      <input type="number" id="crcl" min="5" max="150" value="45" inputmode="decimal">
+      <span class="sub">มล./นาที</span>
+    </div>
+    <div class="out" id="alloOut"></div>
+  </div>
+</section>
+
+<section class="view" id="v-gaps" hidden>
+  <p class="lead">ประเด็นที่ทบทวนแล้วแต่ความเห็นพ้องไม่ถึงเกณฑ์ หรือหลักฐานไม่พอ จึงไม่ออกคำแนะนำ ตัวเลขคือสัดส่วนผู้เชี่ยวชาญที่เห็นด้วย</p>
+  <div class="gaps" id="gapList"></div>
+  <h2 class="sec">ตัวชี้วัดคุณภาพที่สมาคมฯ จะติดตาม</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>ระยะ</th><th>ร้อยละของผู้ป่วยที่…</th></tr></thead>
+    <tbody>
+      <tr><td>กำเริบ</td><td>ได้รับ colchicine, glucocorticoids หรือ NSAIDs</td></tr>
+      <tr><td rowspan="5">ระยะยาว</td><td>ได้ยาลดกรดยูริกตรงตามเกณฑ์</td></tr>
+      <tr><td>ได้ตรวจ HLA-B*58:01 ก่อนเริ่ม allopurinol</td></tr>
+      <tr><td>กรดยูริกลดถึงเป้าขณะได้ยา</td></tr>
+      <tr><td>ได้ยาป้องกันกำเริบอย่างน้อย 6 เดือนเมื่อเริ่ม ULT</td></tr>
+      <tr><td>ได้ตรวจ Cr, AST, ALT อย่างน้อยทุก 3–6 เดือน</td></tr>
+      <tr><td>ไม่มีอาการ</td><td>กรดยูริกสูงแบบไม่มีอาการและ<b>ไม่</b>ได้รับยาลดกรดยูริก</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div>สรุปจาก แนวทางเวชปฏิบัติสำหรับการรักษาเกาต์และกรดยูริกในเลือดสูง โดยสมาคมรูมาติสซั่มแห่งประเทศไทย พ.ศ. 2569 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</div>
+  <div>แนวทางเวชปฏิบัติไม่ใช่ข้อบังคับ ใช้ประกอบดุลยพินิจของแพทย์ ตรวจสอบกับฉบับเต็มก่อนใช้ทางคลินิก</div>
+</div></footer>
+
+<script>
+const S="s",C="c";
+const R=[
+ {n:1,p:"flare",g:"รักษาระยะกำเริบ",t:"แนะนำให้ใช้ colchicine, glucocorticoids (systemic หรือฉีดเข้าข้อ) หรือ NSAIDs เป็นลำดับแรก",l:"สูง–ต่ำมาก",s:C,a:98,
+  e:["ยาทั้งสามกลุ่มลดปวดและอักเสบใกล้เคียงกัน ต่างกันที่ความปลอดภัยและวิธีให้ยา → เลือกตามโรคร่วม","NSAIDs ≈ colchicine ≈ glucocorticoids ในช่วง 5–7 วันแรก; COX-2 selective ผลต่อ GI น้อยกว่า","AGREE: colchicine 1.2 มก. → 0.6 มก. ใน 1 ชม. ได้ผลเท่าขนาดสูง (0.6 มก. ทุกชม. ×6) แต่ผลข้างเคียงน้อยกว่า","การศึกษาไทย: 0.6 มก. วันละ 2 ครั้ง ≈ 1.2 มก. → 0.6 มก. ที่ชม. 1 และ 12","Prednisolone 30–35 มก./วัน 4–5 วัน หรือ IM triamcinolone 40 / betamethasone 7 มก. ≈ NSAIDs; ลดบวมดีกว่า, ผู้สูงอายุ/CKD ทนได้ดีกว่า","ฉีด triamcinolone เข้าข้อ: 55% หายใน 24 ชม. ที่เหลือหายใน 48 ชม."],
+  pearl:"เลี่ยง NSAIDs ใน CKD รุนแรง โรคหัวใจและหลอดเลือด หรือประวัติเลือดออกทางเดินอาหาร"},
+ {n:2,p:"flare",g:"รักษาระยะกำเริบ",t:"ถ้ามีข้อห้ามหรือใช้ยาลำดับแรกไม่ได้ อาจพิจารณา ACTH",l:"ต่ำ",s:C,a:98,
+  e:["RCT n = 39: ACTH 100 IU IM ≈ betamethasone 6 มก. IM ลดปวดที่ 24 และ 48 ชม.","Observational: ตอบสนอง 77.9–100% ภายใน 24 ชม.","มักใช้ในผู้ป่วยที่มีโรคหัวใจ ไตเสื่อม ความดันสูง — แต่เป็นยากำพร้า ราคาสูง"]},
+ {n:3,p:"flare",g:"รักษาระยะกำเริบ",t:"อาจพิจารณายาผสมที่มีกลไกการออกฤทธิ์ต่างกัน เพื่อเพิ่มประสิทธิภาพหรือลดผลข้างเคียง",l:"ต่ำมาก",s:C,a:87,
+  e:["RCT จีน n = 92: colchicine ขนาดต่ำ + dexamethasone 2.5 มก. IV ดีกว่า colchicine ขนาดสูงเดี่ยว","ผลข้างเคียง GI 76% ในกลุ่ม colchicine ขนาดสูง vs 0% ในกลุ่มยาผสม","คู่ยาอื่น (colchicine + NSAIDs, steroid + NSAIDs) เป็นการอนุมาน"]},
+ {n:4,p:"flare",g:"รักษาระยะกำเริบ",t:"อาจพิจารณาประคบเย็นบริเวณข้อที่อักเสบร่วมกับการใช้ยา",l:"ต่ำมาก",s:C,a:96,
+  e:["Schlesinger (n = 19): ประคบเย็น + colchicine + prednisolone ลดปวดมากกว่ายาอย่างเดียว","Mehra: ประคบเย็นลดปวดและบวม ส่วนประคบร้อนกลับปวดแย่ลง"]},
+ {n:5,p:"flare",g:"รักษาระยะกำเริบ",t:"แนะนำให้ยาในระยะกำเริบจนหายจากอาการ",l:"ต่ำมาก",s:C,a:94,
+  e:["NSAIDs ~5–7 วัน · colchicine ขนาดต่ำ ~3–4 วัน · prednisolone 4–5 วันโดยไม่ต้องลดขนาด","Steroid IM / ฉีดเข้าข้อ / ACTH มักให้ครั้งเดียว ถ้าไม่ดีขึ้นให้ซ้ำได้ใน 1–2 วัน","ปรับระยะเวลาตามความรุนแรง การตอบสนอง และผลข้างเคียง"]},
+ {n:6,p:"flare",g:"รักษาระยะกำเริบ",t:"เริ่มยาลดกรดยูริกระหว่างข้ออักเสบเฉียบพลันได้",l:"ต่ำ",s:C,a:91,
+  e:["Meta-analysis 6 RCT (n = 445): เริ่ม allopurinol/febuxostat/probenecid ระหว่างกำเริบ vs หลังหาย","ปวด ระยะเวลาข้ออักเสบ และการกำเริบซ้ำใน 28–30 วัน (RR 1.06) ไม่ต่างกัน ผลข้างเคียงไม่ต่างกัน"],
+  pearl:"ไม่ต้องรอให้ข้ออักเสบหายก่อนเริ่ม ULT — ลดการนัดซ้ำและการหลุดการรักษา"},
+
+ {n:7,p:"ult",g:"เมื่อไรควรเริ่มยา",t:"แนะนำให้เริ่มยาลดกรดยูริกเมื่อมีข้ออักเสบกำเริบ ≥ 2 ครั้งต่อปี, ก้อนโทฟัสจากการตรวจร่างกาย หรือข้อถูกทำลายจากภาพถ่ายรังสี",l:"ปานกลาง–ต่ำมาก",s:S,sl:"อย่างยิ่ง–มีเงื่อนไข",a:100,
+  e:["กำเริบ ≥ 2 ครั้ง/ปี: อนุมานจาก RCT lesinurad (n = 214) — หลักฐานปานกลาง, แนะนำอย่างยิ่ง","โทฟัส: RCT pegloticase — โทฟัสยุบ RR 4.1, ถึงเป้า RR 9.1, ปวดและคุณภาพชีวิตดีขึ้น — ปานกลาง, แนะนำอย่างยิ่ง","ข้อถูกทำลายจากภาพรังสี: ไม่มีการศึกษาตรง อนุมานจากโทฟัส — ต่ำมาก, มีเงื่อนไข"]},
+ {n:8,p:"ult",g:"เมื่อไรควรเริ่มยา",t:"อาจพิจารณาเริ่มยาลดกรดยูริกในเกาต์กำเริบครั้งแรกที่มีนิ่วในไต, CKD ระยะ ≥ 3 หรือกรดยูริก ≥ 9 มก./ดล.",l:"ต่ำมาก",s:C,a:100,
+  e:["นิ่ว: allopurinol 300 / febuxostat 80 ลดกรดยูริกในปัสสาวะ 24 ชม. 36.4% / 58.6%; allopurinol ยืดเวลาเกิดนิ่วซ้ำ","CKD: meta-analysis 17 RCT — ULT ทำให้ eGFR สูงกว่ายาหลอก 3.67 มล./นาที/1.73 ตร.ม.","กรดยูริก > 9: กำเริบใน 12 เดือนมากกว่า (OR 3.4) และกำเริบรุนแรงกว่า"]},
+ {n:9,p:"ult",g:"เลือกยา",t:"แนะนำยาลดกรดยูริกกลุ่ม xanthine oxidase inhibitors หรือ uricosuric agents เมื่อไม่มีข้อห้าม",l:"สูง–ต่ำมาก",s:S,a:100,
+  e:["เลือกตัวใดก็ได้: allopurinol, febuxostat, benzbromarone, probenecid, dotinurad, sulfinpyrazone","NMA: febuxostat 80–120 มก. ลดกรดยูริกได้มากกว่า allopurinol 100–300 มก. — แต่ allopurinol 200–300 มก. ลดการกำเริบได้มากที่สุด","Dotinurad 2–4 มก. ≈ benzbromarone 50–200 มก. > probenecid 2 ก./วัน","ผลข้างเคียงรุนแรง โรคหัวใจ โรคตับ ไม่ต่างกันระหว่างยา"],
+  pearl:"ข้อสังเกตผู้สรุป: แนวทางไทยวาง uricosuric เทียบเท่า XOI เป็นยาลำดับแรก ต่างจาก ACR/EULAR ที่ให้ XOI ก่อน"},
+ {n:10,p:"ult",g:"เลือกยา",t:"อาจพิจารณาให้ยาลดกรดยูริก 2 กลุ่มร่วมกัน",l:"ปานกลาง–ต่ำมาก",s:C,a:96,
+  e:["ใช้เมื่อยาเดี่ยวไม่ถึงเป้า หรือเกิดผลข้างเคียงเมื่อใช้ยาเดี่ยวขนาดสูง","Febuxostat 20 + benzbromarone 25 ถึงเป้า 75.5% vs febuxostat 40 เดี่ยว 47.7% (OR 3.37)","Allopurinol + probenecid 1 ก./วัน ถึงเป้า 86% ในผู้ที่ allopurinol เดี่ยวไม่ถึง","Allopurinol + benzbromarone โทฟัสยุบเร็วกว่ายาเดี่ยว","ผลข้างเคียงไม่ต่างจากยาเดี่ยว (ตับ, GI) — ติดตามตับและไต"]},
+ {n:11,p:"ult",g:"ก่อนเริ่มยา",t:"พิจารณาตรวจ HLA-B*58:01 ก่อนเริ่ม allopurinol",l:"ต่ำ",s:C,a:77,
+  e:["HLA-B*58:01 + allopurinol → SCAR (SJS/TEN) OR 117.6","ความชุกในเอเชียใต้/ตะวันออกเฉียงใต้ (รวมไทย) 12.9%; พบใน 93.4% ของผู้แพ้รุนแรงในภูมิภาคนี้","อยู่ในสิทธิประโยชน์ บัตรทอง (2564) แต่การศึกษาไทยปี 2568 พบว่ายังไม่คุ้มค่า (ค่าตรวจ 1,000 บาท) ยกเว้นใช้ probenecid แทนในผู้ที่มียีน","ความเห็นพ้องต่ำ (77%) เพราะการเข้าถึงการตรวจยังไม่ทั่วถึง"],
+  pearl:"ถ้าไม่ได้ตรวจยีนก่อนเริ่ม allopurinol ให้บันทึกเหตุผลและข้อจำกัดในเวชระเบียนให้ชัดเจน"},
+ {n:12,p:"ult",g:"ปรับยา",t:"แนะนำให้เริ่มยาลดกรดยูริกในขนาดต่ำและเพิ่มขนาดอย่างช้า ๆ จนถึงเป้า",l:"ปานกลาง–ต่ำมาก",s:C,a:100,
+  e:["Febuxostat เริ่ม 120/240 มก. กำเริบมากกว่าเริ่ม 40 มก. (RR 1.71/2.10) แม้ได้ยาป้องกัน","Allopurinol เริ่มเกินขนาดตามการทำงานของไต → AHS OR 16.7 → เริ่ม 1.5 มก. ต่อหน่วย eGFR","ปรับ allopurinol ทุกเดือน ครั้งละ 50 มก. (CrCl < 60) หรือ 100 มก. (≥ 60) → ถึงเป้าที่ 12 เดือนมากกว่า OR 8.0","Febuxostat ไต่ 10 → 40 มก. ใน 12 สัปดาห์ กำเริบ 20.8% vs เริ่ม 40 มก. ทันที 36%"]},
+ {n:13,p:"ult",g:"ปรับยา",t:"แนะนำให้ปรับยาลดกรดยูริกแบบมีเป้าหมาย (treat to target)",l:"สูง",s:S,a:100,
+  e:["ถึงเป้าที่ 2 ปี 69% vs ยาขนาดคงที่ 32%","ลดการกำเริบ จำนวนและขนาดโทฟัส คุณภาพชีวิตดีขึ้น","CT erosion score progression ใน 2 ปี 1.4% vs 7.5% เมื่อไม่กำหนดเป้า"]},
+ {n:14,p:"ult",g:"ปรับยา",t:"เป้าหมายกรดยูริกในเลือดที่แนะนำ คือ ต่ำกว่า 6 มก./ดล.",l:"สูง",s:S,a:98,
+  e:["เป้า < 6 สัมพันธ์กับการกำเริบลดลง โทฟัสเล็กลง คุณภาพชีวิตดีขึ้น (SF-36, Gout Impact Scale) และชะลอกระดูกกร่อน","เป้า < 5 ไม่ต่างจาก < 6 ใน 1 ปี; ในผู้มีโทฟัส < 5 ไม่ต่างจาก < 3.4"],
+  pearl:"ไม่มีมติแนะนำหรือคัดค้านเป้า < 5 มก./ดล. ในผู้ที่มีโทฟัส (เห็นด้วยเพียง 51%)"},
+ {n:15,p:"ult",g:"ติดตาม",t:"แนะนำให้ตรวจ creatinine, AST, ALT ทุก 3–6 เดือนระหว่างการรักษา",l:"ต่ำมาก",s:C,a:81,
+  e:["ไม่มีการศึกษาเรื่องความถี่โดยตรง — เป็นความเห็นผู้เชี่ยวชาญ","ไม่แนะนำตรวจ CBC (ยามีผลต่อระบบเลือดต่ำ; เห็นด้วย 50%)","ไม่แนะนำ UA เพื่อหานิ่ว (ความไวต่ำ; เห็นด้วย 68%)"]},
+ {n:16,p:"ult",g:"ติดตาม",t:"พิจารณาให้ยาลดกรดยูริกต่อเนื่อง",l:"ต่ำ",s:C,a:98,
+  e:["หยุดยาหลังคุมได้ 1–5 ปี → กำเริบซ้ำ 36.4–81% ภายใน 15.8–56 เดือน","เสี่ยงกำเริบหลังหยุดยามากใน: อายุน้อย, น้ำหนักเกิน, ต้องใช้ยาขับปัสสาวะ, กรดยูริก > 7 หลังหยุดยา","อาจค่อย ๆ ลดขนาดได้ถ้าถึงเป้าต่อเนื่อง ไม่กำเริบ และไม่มีโทฟัส — แล้วติดตามกรดยูริกเป็นระยะ"],
+  pearl:"ถ้ากลับมา > 6 มก./ดล., กำเริบซ้ำ หรือมีโทฟัสใหม่ → ปรับยาขึ้นจนถึงเป้าเช่นเดิม"},
+ {n:17,p:"ult",g:"ติดตาม",t:"พิจารณาให้ยาป้องกันเกาต์กำเริบเมื่อเริ่มยาลดกรดยูริก จนถึงเป้าและไม่มีกำเริบอย่างน้อย 6 เดือน",l:"สูง–ต่ำ",s:C,a:91,
+  e:["Colchicine 0.5–1.2 มก./วัน ลดการกำเริบ RR 0.50 (หลักฐานสูง)","Colchicine 0.5 มก./วัน 6 เดือน: กำเริบ 0.35 vs 0.61 ครั้ง/เดือน","Prednisolone ~7.5 มก./วัน ~6 เดือนก็ลดการกำเริบได้ (หลักฐานต่ำ)","ป้องกัน 6 เดือน กำเริบ 3–5% vs 8 สัปดาห์ 40%"]},
+ {n:18,p:"ult",g:"พฤติกรรมและยาร่วม",t:"หลีกเลี่ยงเครื่องดื่มแอลกอฮอล์ทุกชนิด จำกัดเนื้อแดง อาหารทะเล เครื่องดื่มที่มีน้ำตาล และน้ำผลไม้",l:"ปานกลาง–ต่ำมาก",s:C,a:98,
+  e:["แอลกอฮอล์: เกาต์ OR 1.81 (เบียร์ ไวน์ สุราเพิ่มเสี่ยงทั้งหมด ตามปริมาณ)","เครื่องดื่มมีน้ำตาล OR 2.08 · น้ำผลไม้ 1.77 · เนื้อแดง 1.32 · อาหารทะเล 1.29","อาจลดเสี่ยง: อาหารจากพืช 0.92, ถั่วเหลือง 0.86, วอลนัท/ถั่วเมล็ดสน 0.75, กาแฟ 0.56, นม (กรดยูริกสูง) 0.69","ไม่พบการศึกษาเรื่องเครื่องในสัตว์โดยตรง"]},
+ {n:19,p:"ult",g:"พฤติกรรมและยาร่วม",t:"แนะนำให้ลดน้ำหนักในผู้ที่มีน้ำหนักเกิน",l:"ปานกลาง–ต่ำมาก",s:C,a:98,
+  e:["ลดน้ำหนักช่วยให้ถึงเป้าและกำเริบน้อยลง — bariatric surgery, orlistat มีหลักฐาน","RCT 24 เดือน: low-fat จำกัดแคลอรี่ ↓1.9, เมดิเตอร์เรเนียน ↓2.0, low-carb ↓2.4 มก./ดล. ที่ 6 เดือน"]},
+ {n:20,p:"ult",g:"พฤติกรรมและยาร่วม",t:"แนะนำ losartan เมื่อมีโรคร่วมที่มีข้อบ่งชี้ เพราะลดกรดยูริกได้",l:"ปานกลาง–ต่ำ",s:C,a:98,
+  e:["Losartan 150 vs 50 มก. ในหัวใจล้มเหลว (n = 3,834): ↓ เพิ่ม 0.27 มก./ดล. แต่ไม่ลดอุบัติการณ์เกาต์","Losartan 50 มก. vs ยาหลอกในความดันสูง ↓ 0.23 มก./ดล."]},
+ {n:21,p:"ult",g:"พฤติกรรมและยาร่วม",t:"ใช้ยาขับปัสสาวะและแอสไพรินได้ถ้ามีข้อบ่งชี้ แต่หลีกเลี่ยง thiazide",l:"ปานกลาง–ต่ำ",s:C,a:98,
+  e:["แอสไพริน 50–100 มก./วัน ไม่เพิ่มกรดยูริก (กลุ่มกรดยูริกสูงกลับลดลง 7.21 → 6.59)","Indapamide เพิ่มกรดยูริก 1.1 มก./ดล.","เปลี่ยน thiazide เป็น amlodipine: กรดยูริก 6.1 → 5.0 มก./ดล. ใน 6 สัปดาห์"]},
+
+ {n:22,p:"asym",g:"นิยาม",t:"กรดยูริกในเลือดสูงแบบไม่มีอาการ คือ กรดยูริก > 6.8 มก./ดล. โดยไม่มีข้ออักเสบและตรวจร่างกายไม่พบก้อนโทฟัส",l:"ต่ำมาก",s:C,a:100,
+  e:["อิงฉันทามติ G-CAN: เกินจุดอิ่มตัว (> 6.8) ไม่มีอาการเกาต์ทั้งอดีตและปัจจุบัน","ไม่คำนึงถึงโรคร่วม (ไต หัวใจ ความดัน นิ่ว) หรือการพบผลึกยูเรตจากภาพรังสี"]},
+ {n:23,p:"asym",g:"การรักษา",t:"ไม่แนะนำให้ใช้ยาลดกรดยูริกในภาวะกรดยูริกในเลือดสูงแบบไม่มีอาการ",l:"ต่ำ–ต่ำมาก",s:C,a:100,
+  e:["ไม่มีหลักฐานชัดว่าการไม่รักษาส่งผลเสียระยะยาว","ข้อมูลใน DM และ CKD ว่าชะลอไตเสื่อมได้ แต่คุณภาพต่ำถึงต่ำมาก"]}
+];
+
+const GAPS=[
+ ["Paracetamol / tramadol ในระยะกำเริบ","ไม่พบการศึกษา 91% เห็นว่ายังไม่ควรออกคำแนะนำ",null],
+ ["รักษาระยะกำเริบในผู้มีโรคร่วม","ไม่มี RCT ในกลุ่มนี้ 62% ให้ดู eGFR ก่อนเลือกยา, 38% เลือกยาตามความเสี่ยงรายบุคคล","62 / 38%"],
+ ["ยกข้อที่อักเสบให้สูง","ไม่มีหลักฐาน มีงานวิจัยกำลังดำเนินการ",null],
+ ["ประคบร้อน","RCT พบปวดลดเล็กน้อย และ 35% แย่ลงหรือกำเริบใหม่ ความเห็นรอบแรก < 70%","< 70%"],
+ ["เริ่ม ULT ในอายุ < 40 ปีที่กำเริบครั้งแรก","81% ไม่เห็นด้วย จึงไม่แนะนำเริ่มยาด้วยข้อบ่งชี้นี้","ไม่เห็นด้วย 81%"],
+ ["เริ่ม ULT ในกำเริบครั้งแรกที่ใช้ยาขับปัสสาวะ","91% ไม่เห็นด้วย — ปรับ/เปลี่ยน/หยุดยาขับปัสสาวะก่อน","ไม่เห็นด้วย 91%"],
+ ["ULT ในผู้มีโรคหัวใจและหลอดเลือด","Febuxostat ไม่ด้อยกว่า allopurinol (open-label) — 62% ใช้ได้ทุกตัว, 38% ให้เฝ้าระวัง XOI","62 / 38%"],
+ ["ULT ใน CKD","XOI ลดกรดยูริกและเพิ่ม eGFR — 48% ใช้ XOI ได้, 52% ให้ XOI มากกว่า uricosuric","48 / 52%"],
+ ["ULT ในโรคตับ","ตับอักเสบจากยาไม่รุนแรงและใกล้เคียงกัน (febuxostat 2–8%, allopurinol 2–3%, benzbromarone 0.4%) 67% เห็นว่าไม่ต้องออกคำแนะนำ","67%"],
+ ["คัดกรองนิ่วก่อนให้ uricosuric","ไม่มีหลักฐาน US เป็นเครื่องมือคัดกรอง, NCCT เป็นมาตรฐาน; เลือดในปัสสาวะไวต่ำ","56%"],
+ ["ปัสสาวะ 24 ชม. ก่อนให้ uricosuric","ไม่มีหลักฐานว่าลดนิ่ว เก็บยาก (แนวทางจีนเลี่ยง uricosuric ถ้า > 800 มก./วัน)","49%"],
+ ["ปรับปัสสาวะให้เป็นด่าง","ไม่มีการศึกษาผลลัพธ์ทางคลินิกในเกาต์",null],
+ ["ใช้โทฟัสหายและไม่กำเริบเป็นเป้าหมาย","RCT คุณภาพสูง 2 เรื่องผลขัดกัน","61%"],
+ ["ออกกำลังกาย / ดื่มน้ำ","หลักฐานต่ำและขัดแย้งกัน","45% / 32%"],
+ ["Fenofibrate เมื่อมีโรคร่วม","ลดกรดยูริก ~1 มก./ดล. และเกาต์ครั้งแรก HR 0.54 แต่กังวลว่าจะใช้แทน statin","60%"],
+ ["SGLT2 inhibitor เมื่อมีโรคร่วม","ลดกรดยูริก 0.57 มก./ดล. ลดภาวะแทรกซ้อน HR 0.67 แต่ติดเรื่องราคาและการเข้าถึง","32%"]
+];
+
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function card(r){
+  const strong=r.s===S;
+  const sl=r.sl||(strong?"แนะนำอย่างยิ่ง":"แนะนำแบบมีเงื่อนไข");
+  return `<article class="rec${strong?" strong":""}">
+   <div class="no">${r.n}</div>
+   <div class="stmt">${esc(r.t)}</div>
+   <div class="meta"><span class="chip ${strong?"c-strong":"c-cond"}">${sl}</span><span class="chip c-loe">หลักฐาน ${r.l}</span>
+     <span class="agree" title="ความเห็นพ้อง">พ้อง<span class="track"><i style="width:${r.a}%"></i></span>${r.a}%</span></div>
+   <details><summary>หลักฐานสำคัญ</summary><ul>${r.e.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></details>
+   ${r.pearl?`<div class="pearl">${esc(r.pearl)}</div>`:""}
+  </article>`;
+}
+document.querySelectorAll(".recs").forEach(box=>{
+  let html="",last="";
+  R.filter(r=>r.p===box.dataset.phase).forEach(r=>{
+    if(r.g!==last){html+=`<h3 class="grp">${r.g}</h3>`;last=r.g}
+    html+=card(r);
+  });
+  box.innerHTML=html;
+});
+document.getElementById("gapList").innerHTML=GAPS.map(([h,p,v])=>`<div class="gap"><h4>${esc(h)}</h4><p>${esc(p)}</p>${v?`<div class="vote">${esc(v)}</div>`:""}</div>`).join("");
+
+/* tabs */
+const tabs=[...document.querySelectorAll("nav.tabs button")];
+function show(v,push){
+  if(!document.getElementById("v-"+v))v="overview";
+  tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v));
+  document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+v);
+  if(push){try{history.replaceState(null,"","#"+v)}catch(e){} window.scrollTo({top:0})}
+}
+tabs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.v,true)));
+show((location.hash||"").slice(1)||"overview",false);
+
+/* gauge */
+const sua=document.getElementById("sua"),pin=document.getElementById("pin");
+function gauge(){
+  const v=+sua.value;
+  document.getElementById("suaOut").innerHTML=v.toFixed(1)+"<small>มก./ดล.</small>";
+  pin.style.left=(v/12*100)+"%";
+  let cls,txt;
+  if(v<6){cls="v-ok";txt="<b>ถึงเป้าหมาย</b> สำหรับผู้ป่วยเกาต์ที่ได้ยาลดกรดยูริก (คำแนะนำที่ 14) — ให้ยาต่อเนื่อง; ถ้าคงที่ ไม่กำเริบ ไม่มีโทฟัส อาจค่อย ๆ ลดขนาดได้"}
+  else if(v<=6.8){cls="v-mid";txt="<b>เกินเป้าการรักษา</b> แต่ยังไม่ถึงจุดอิ่มตัว — ผู้ป่วยเกาต์ที่ได้ยาอยู่ให้ปรับยาขึ้นแบบ treat to target"}
+  else if(v<9){cls="v-warn";txt="<b>กรดยูริกสูง (> 6.8)</b> — ถ้าไม่มีอาการ: ไม่ให้ยา (คำแนะนำที่ 23) · อุบัติการณ์เกาต์ 7–8.9 มก./ดล. ≈ 0.5% ต่อปี · ผู้ป่วยเกาต์ที่ได้ยาอยู่ให้ปรับยาขึ้น"}
+  else{cls="v-bad";txt="<b>≥ 9 มก./ดล.</b> — ถ้าเกาต์กำเริบครั้งแรก อาจพิจารณาเริ่มยาลดกรดยูริก (คำแนะนำที่ 8) · ถ้าไม่มีอาการ ยังไม่ให้ยา แม้อุบัติการณ์เกาต์ ≈ 4.9% ต่อปี"}
+  const el=document.getElementById("suaVerdict");el.className="verdict "+cls;el.innerHTML=txt;
+}
+sua.addEventListener("input",gauge);gauge();
+
+/* indication checker */
+function indic(){
+  const on=[...document.querySelectorAll("#indic input:checked")].map(i=>i.dataset.s);
+  const o=document.getElementById("indicOut");
+  const gout=on.filter(x=>x!=="x");
+  if(on.includes("x")&&gout.length){o.innerHTML="ข้อมูลขัดกัน: ข้อสุดท้ายหมายถึงไม่เคยมีอาการเกาต์ — ยกเลิกข้อใดข้อหนึ่ง";return}
+  if(on.includes("x")){o.innerHTML="<strong>ไม่ให้ยาลดกรดยูริก</strong> — กรดยูริกสูงแบบไม่มีอาการ (คำแนะนำที่ 22–23) ไม่ว่าจะมีโรคร่วมหรือไม่ แนะนำปรับพฤติกรรมและทบทวนยาที่เพิ่มกรดยูริก";return}
+  if(on.includes("s")){o.innerHTML="<strong>แนะนำอย่างยิ่งให้เริ่มยาลดกรดยูริก</strong> (คำแนะนำที่ 7) — XOI หรือ uricosuric · ตรวจ HLA-B*58:01 ก่อน allopurinol · เริ่มขนาดต่ำ · ยาป้องกันกำเริบ · เป้า < 6 มก./ดล.";return}
+  if(on.includes("c")){o.innerHTML="<strong>แนะนำแบบมีเงื่อนไขให้เริ่มยาลดกรดยูริก</strong> (คำแนะนำที่ 7) — ข้อถูกทำลายจากภาพรังสีบ่งว่ามีการสะสมยูเรตมาก";return}
+  if(on.includes("f")){o.innerHTML="<strong>อาจพิจารณาเริ่มยาลดกรดยูริก</strong> ตั้งแต่กำเริบครั้งแรก (คำแนะนำที่ 8) — ตัดสินใจร่วมกับผู้ป่วย";return}
+  o.innerHTML="ยังไม่มีข้อบ่งชี้ — รักษาอาการกำเริบ ปรับพฤติกรรม และนัดติดตาม · ไม่มีคำแนะนำให้เริ่มยาเพียงเพราะอายุ < 40 ปี หรือกำเริบครั้งแรกขณะใช้ยาขับปัสสาวะ";
+}
+document.querySelectorAll("#indic input").forEach(i=>i.addEventListener("change",indic));indic();
+
+/* allopurinol */
+function allo(){
+  const c=parseFloat(document.getElementById("crcl").value);
+  const o=document.getElementById("alloOut");
+  if(!(c>0)){o.innerHTML="ใส่ค่า CrCl หรือ eGFR เป็นตัวเลข";return}
+  let start,step,note="";
+  if(c<30){start=Math.round(1.5*c*10)/10;step=50;
+    const wk=start*7;note=`<br>≈ ${Math.round(wk)} มก./สัปดาห์ → ในทางปฏิบัติเช่น allopurinol 100 มก. ประมาณ ${Math.max(1,Math.round(wk/100))} เม็ดต่อสัปดาห์ (หรือ 50 มก. วันเว้นวัน/ตามความเหมาะสม)`}
+  else if(c<60){start=50;step=50}else{start=100;step=100}
+  const seq=[];let d=start;
+  for(let m=0;m<12&&d<=900;m++){seq.push(Math.round(d*10)/10);d+=step;}
+  o.innerHTML=`ขนาดเริ่มต้น <strong>${start} มก./วัน</strong>${c<30?" (1.5 มก. × "+c+")":""} · เพิ่มครั้งละ <strong>${step} มก./วัน</strong> ทุกเดือน จนกรดยูริก &lt; 6 มก./ดล. · สูงสุด 800–900 มก./วัน${note}
+  <div class="steps">${seq.map((x,i)=>`<div>เดือน ${i}<b>${x}</b></div>`).join("")}</div>
+  <div class="sub" style="margin-top:8px">หยุดเพิ่มเมื่อถึงเป้า · ตรวจ HLA-B*58:01 ก่อนเริ่ม · ติดตาม Cr, AST, ALT ทุก 3–6 เดือน</div>`;
+}
+document.getElementById("crcl").addEventListener("input",allo);allo();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>

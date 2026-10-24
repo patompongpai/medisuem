@@ -13,6 +13,7 @@
   --sys-renal:#8A4FA0; --sys-renal-soft:#F0E4F4;
   --sys-heme:#A8324F; --sys-heme-soft:#F7E0E6;
   --sys-gi:#9A6512; --sys-gi-soft:#F8ECD6;
+  --sys-rheum:#3A4A9E; --sys-rheum-soft:#E3E6F5;
   --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
   --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -26,6 +27,7 @@
   --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
   --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
+  --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -37,6 +39,7 @@
   --sys-renal:#D3A3E6; --sys-renal-soft:#33203B;
   --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
+  --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -121,6 +124,7 @@ const SYSTEMS = {
   renal:{name:"ไตและเกลือแร่", c:"--sys-renal"},
   heme:{name:"โลหิตวิทยา", c:"--sys-heme"},
   gi:{name:"ทางเดินอาหารและตับ", c:"--sys-gi"},
+  rheum:{name:"โรคข้อและรูมาติสซั่ม", c:"--sys-rheum"},
   id:{name:"โรคติดเชื้อและภาวะวิกฤต", c:"--sys-id"},
   pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"}
 };
@@ -165,6 +169,9 @@ const LESSONS = [
   {href:"hepbc/index.html", sys:"gi", y:"2569", t:"ไวรัสตับอักเสบ บี และ ซี 2569",
    d:"แนวทางคัดกรองและรักษา HBV/HCV สำหรับแพทย์เวชปฏิบัติทั่วไป flowchart ตามแผนภูมิ 1–4 สูตรยา DDI และเครื่องมือบอกขั้นใน flow แลปที่ต้องส่ง และตารางนัด",
    tags:["แผนภูมิ","เครื่องมือข้างเตียง","APRI/FIB-4"], k:"hepatitis hbv hcv ไวรัสตับอักเสบ ตับ hbsag anti-hcv taf tdf entecavir sofosbuvir velpatasvir sof/vel ribavirin svr apri fib-4 fibroscan hcc cirrhosis ตับแข็ง"},
+  {href:"gout/index.html", sys:"rheum", y:"2569", t:"เกาต์และกรดยูริกในเลือดสูง 2569",
+   d:"แนวทางสมาคมรูมาติสซั่มฯ 2569 ครบ 23 คำแนะนำ ระยะกำเริบ ระยะยาว และกรดยูริกสูงแบบไม่มีอาการ แผนภูมิการรักษา ตารางยา เครื่องมือเช็กข้อบ่งชี้ ULT และคำนวณขนาด allopurinol",
+   tags:["23 คำแนะนำ","แผนภูมิ","เครื่องคำนวณ"], k:"gout เกาต์ hyperuricemia กรดยูริก uric acid ult allopurinol febuxostat benzbromarone dotinurad probenecid sulfinpyrazone colchicine nsaids prednisolone acth hla-b*58:01 hla-b5801 treat to target tophi โทฟัส prophylaxis losartan thiazide"},
   {href:"sepsis/index.html", sys:"id", y:"2569", t:"Sepsis & Septic Shock 2569",
    d:"CPG Sepsis ของไทย ฉบับ 2569 ทั้ง 9 บทและนิยาม ตั้งแต่ initial resuscitation จนถึงเครือข่ายและ rapid response",
    tags:["10 บท","แฟลชการ์ด","แบบทดสอบ"], k:"sepsis septic shock icu ติดเชื้อ norepinephrine lactate",
@@ -192,7 +199,7 @@ function readProg(p){
 
 let filter = "all";
 const chipsEl = document.getElementById("chips");
-[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
   const b = document.createElement("button");
   b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
   b.setAttribute("aria-pressed", k===filter);
