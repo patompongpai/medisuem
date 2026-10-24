@@ -14,6 +14,7 @@
   --sys-heme:#A8324F; --sys-heme-soft:#F7E0E6;
   --sys-gi:#9A6512; --sys-gi-soft:#F8ECD6;
   --sys-rheum:#3A4A9E; --sys-rheum-soft:#E3E6F5;
+  --sys-endo:#6A2E8F; --sys-endo-soft:#EEE4F5;
   --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
   --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -28,6 +29,7 @@
   --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
+  --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -40,6 +42,7 @@
   --sys-heme:#F08AA3; --sys-heme-soft:#3B1C25;
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
+  --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -121,6 +124,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-si
 <script>
 const SYSTEMS = {
   cardio:{name:"หัวใจ หลอดเลือด และเมตาบอลิก", c:"--sys-cardio"},
+  endo:{name:"ต่อมไร้ท่อ", c:"--sys-endo"},
   renal:{name:"ไตและเกลือแร่", c:"--sys-renal"},
   heme:{name:"โลหิตวิทยา", c:"--sys-heme"},
   gi:{name:"ทางเดินอาหารและตับ", c:"--sys-gi"},
@@ -142,6 +146,9 @@ const LESSONS = [
    d:"แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 ครบ 18 บท ตั้งแต่การวินิจฉัยถึงภาวะแทรกซ้อน มีแฟลชการ์ดและแบบทดสอบท้ายบท",
    tags:["18 บท","แฟลชการ์ด","แบบทดสอบ"], k:"diabetes dm เบาหวาน a1c insulin dka hhs gdm",
    prog:{key:"dm2566_progress_v1", total:18}},
+  {href:"thyroid/index.html", sys:"endo", y:"2568", t:"โรคต่อมไทรอยด์ 2568",
+   d:"คำแนะนำสมาคมต่อมไร้ท่อฯ 2568 ครบ 4 บท 3 ภาคผนวก ก้อนที่ต่อมไทรอยด์ ไทรอยด์เป็นพิษ พร่องฮอร์โมนไทรอยด์ subclinical มะเร็งไทรอยด์ การแปลผล TFT และไทรอยด์ในหญิงตั้งครรภ์ พร้อมเครื่องมือข้างเตียง 9 ชุด และแบบทดสอบ",
+   tags:["7 บท","เครื่องมือข้างเตียง","แบบทดสอบ"], k:"thyroid ไทรอยด์ ต่อมไทรอยด์ nodule ก้อน ti-rads tirads fna bethesda graves hyperthyroidism thyrotoxicosis ไทรอยด์เป็นพิษ mmi methimazole ptu rai ไอโอดีนรังสี trab ophthalmopathy cas tmng toxic adenoma thyroiditis amiodarone hypothyroidism พร่อง levothyroxine l-t4 subclinical tsh ft4 tft มะเร็งไทรอยด์ dtc mtc ata ตั้งครรภ์ pregnancy"},
   {href:"ckd/index.html", sys:"renal", y:"2565", t:"โรคไตเรื้อรัง CKD CPG 2565",
    d:"ข้อแนะนำเวชปฏิบัติ CKD ก่อนบำบัดทดแทนไตของสมาคมโรคไตฯ ใส่ค่าแล็บแล้วได้ระยะโรค KFRE แผนดูแลรายบุคคล พร้อมตารางยาและเทียบ KDIGO 2024",
    tags:["เครื่องคำนวณ","17 หมวด","เทียบ KDIGO 2024"], k:"ckd kidney ไต egfr uacr kfre sglt2i finerenone kdigo ไตเรื้อรัง"},
@@ -199,7 +206,7 @@ function readProg(p){
 
 let filter = "all";
 const chipsEl = document.getElementById("chips");
-[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",endo:"ต่อมไร้ท่อ",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
   const b = document.createElement("button");
   b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
   b.setAttribute("aria-pressed", k===filter);
