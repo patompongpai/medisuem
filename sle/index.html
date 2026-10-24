@@ -1,0 +1,876 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SLE Guideline 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: rheumatology clinic chart — sticky tab rail, one column of organ cards and branching flows; the 2019 points meter is the signature instrument */
+:root{
+  --bg:#F6F5F9; --surface:#FFFFFF; --sunk:#EEECF4; --line:#DCD8E6;
+  --fg:#1E1A2B; --muted:#5F5873;
+  --ink:#6A2E8C;          /* lupus plum — accent */
+  --ink-soft:#EFE5F6;
+  --malar:#B73A57;        /* malar rose — organ-threatening */
+  --malar-soft:#FBE3E9;
+  --ok:#1E7A55; --ok-soft:#DDF1E7;
+  --warn:#A65A0C; --warn-soft:#FCE8D4;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15121C; --surface:#1D1926; --sunk:#272233; --line:#372F46;
+  --fg:#ECE8F4; --muted:#A79FBA; --ink:#CBA6F2; --ink-soft:#30244A;
+  --malar:#FF8FA8; --malar-soft:#3E1D27; --ok:#5FD3A0; --ok-soft:#183528;
+  --warn:#F4A660; --warn-soft:#3B2716; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15121C; --surface:#1D1926; --sunk:#272233; --line:#372F46;
+  --fg:#ECE8F4; --muted:#A79FBA; --ink:#CBA6F2; --ink-soft:#30244A;
+  --malar:#FF8FA8; --malar-soft:#3E1D27; --ok:#5FD3A0; --ok-soft:#183528;
+  --warn:#F4A660; --warn-soft:#3B2716; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.7;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;line-height:1.3;margin:0}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+p{margin:0}
+
+header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .wrap{padding-block:28px 18px;display:grid;gap:6px}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header.top h1{font-size:clamp(1.6rem,4.2vw,2.3rem);font-weight:700}
+header.top h1 span{color:var(--ink)}
+.sub{color:var(--muted);font-size:.95rem}
+
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs button{flex:0 0 auto;border:0;background:none;color:var(--muted);font:600 .93rem var(--f-body);padding:12px 12px 10px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+nav.tabs button:hover{color:var(--fg)}
+
+main .wrap{padding-block:28px 72px}
+section.view{display:grid;gap:28px}
+section.view>*{min-width:0}
+.lead{font-size:1.02rem;max-width:68ch}
+h2.sec{font-size:1.45rem;font-weight:700}
+h3.grp{font-size:1.08rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:10px}
+h3.grp::after{content:"";flex:1;height:1px;background:var(--line)}
+.stack{display:grid;gap:12px}
+
+/* guideline map */
+.gmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gl{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.gl .role{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.gl h4{font-size:1.02rem;font-weight:600}
+.gl p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.gl .when{font:600 .8rem var(--f-mono);color:var(--ink)}
+
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.key{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.key .num{font-size:1.4rem;font-weight:600;color:var(--ink);line-height:1.3}
+.key span{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* flow */
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px}
+.fnode{border-radius:9px;padding:10px 14px;font-size:.93rem;line-height:1.6;min-width:0}
+.f-start{background:var(--fg);color:var(--bg);font-weight:600;text-align:center}
+.f-strong{background:var(--ink);color:var(--bg)}
+.f-cond{background:var(--ink-soft);color:var(--fg)}
+.f-red{background:var(--malar-soft);color:var(--fg);border-left:4px solid var(--malar)}
+.f-ok{background:var(--ok-soft);color:var(--fg)}
+.f-note{background:var(--sunk);color:var(--fg)}
+.f-arrow{text-align:center;color:var(--muted);font-size:.84rem;line-height:1.4}
+.f-arrow::before{content:"↓";display:block;font-size:1.1rem;color:var(--fg)}
+.f-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.fnode ul{margin:4px 0 0;padding-left:1.1em}
+.fnode li{margin:2px 0}
+.fnode .tag{display:inline-block;font:600 .72rem var(--f-mono);letter-spacing:.04em;opacity:.8;margin-bottom:2px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.85rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+
+/* rec cards */
+.recs{display:grid;gap:12px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
+.rec .when{font-size:.88rem;color:var(--muted);font-weight:600}
+.rec .stmt{font-size:.98rem;line-height:1.65}
+.rec .meta{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.76rem;font-weight:600;border-radius:999px;padding:1px 10px;line-height:1.7;white-space:nowrap}
+.c-strong{background:var(--ink);color:var(--bg)}
+.c-cond{border:1.5px solid var(--ink);color:var(--ink)}
+.c-gps{background:var(--sunk);color:var(--fg)}
+.c-src{background:var(--sunk);color:var(--muted);font-family:var(--f-mono);font-weight:500}
+.c-red{background:var(--malar);color:var(--bg)}
+.organ{display:grid;gap:10px}
+.organ>h3{font-size:1.1rem}
+
+/* tables */
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:.9rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+th{background:var(--sunk);font-weight:600;font-size:.82rem;color:var(--muted)}
+td b{font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--f-mono)}
+tr:last-child td{border-bottom:0}
+.foot{font-size:.82rem;color:var(--muted)}
+
+/* tools + checklists */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px}
+.tool>h3{font-size:1.12rem}
+.tool .hint{font-size:.88rem;color:var(--muted)}
+.checks{display:grid;gap:8px}
+.checks.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;line-height:1.5;font-size:.93rem;min-width:0}
+.checks label:has(input:checked){border-color:var(--ink);background:var(--ink-soft)}
+.checks input{margin-top:4px;accent-color:var(--ink);width:17px;height:17px;flex:0 0 auto}
+.checks .pt{margin-left:auto;flex:0 0 auto;font:600 .82rem var(--f-mono);color:var(--ink);padding-left:8px}
+.checks .txt{min-width:0}
+.checks .txt small{display:block;color:var(--muted);font-size:.8rem}
+.dom{display:grid;gap:6px}
+.dom h4{font-size:.86rem;font-weight:600;color:var(--muted);letter-spacing:.03em;display:flex;justify-content:space-between;gap:8px}
+.dom h4 b{font-family:var(--f-mono);color:var(--ink)}
+.domgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.field{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:end}
+.field label{display:grid;gap:4px;font-size:.85rem;color:var(--muted);font-weight:600}
+.field input[type=number],.field select{font:600 1.05rem var(--f-mono);width:130px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.field select{font-family:var(--f-body);font-size:.95rem;width:auto;min-width:150px}
+.out{border-radius:var(--r);padding:14px 16px;background:var(--sunk);font-size:.95rem;line-height:1.65}
+.out strong{color:var(--ink)}
+.v-ok{background:var(--ok-soft)} .v-mid{background:var(--ink-soft)} .v-warn{background:var(--warn-soft)} .v-bad{background:var(--malar-soft)}
+.btn{font:600 .88rem var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;padding:7px 14px;cursor:pointer;justify-self:start}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.prog{font:600 .82rem var(--f-mono);color:var(--muted)}
+
+/* points meter */
+.meter{display:grid;gap:8px}
+.meter-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.readout{font-family:var(--f-mono);font-size:2.2rem;font-weight:600;line-height:1}
+.readout small{font-size:.85rem;color:var(--muted);font-weight:500;margin-left:6px}
+.track{position:relative;height:16px;border-radius:8px;background:var(--sunk);overflow:hidden}
+.track i{position:absolute;inset:0 auto 0 0;background:var(--ink);border-radius:8px;transition:width .2s}
+.track.pass i{background:var(--malar)}
+.mark{position:relative;height:18px;font:500 .72rem var(--f-mono);color:var(--muted)}
+.mark span{position:absolute;transform:translateX(-50%)}
+.mark span.ten{color:var(--fg);font-weight:600}
+
+/* timeline */
+.tline{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.tstep{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.tstep b{font:600 1.05rem var(--f-mono);color:var(--ink)}
+.tstep span{font-size:.9rem;line-height:1.55}
+.tstep.end{border-top-color:var(--malar)}
+
+.callout{border-left:4px solid var(--ink);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.95rem}
+.callout.red{border-left-color:var(--malar)}
+.bul{margin:0;padding-left:1.15em;display:grid;gap:4px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0}
+.panel h4{font-size:1rem;font-weight:600}
+.panel .bul{font-size:.92rem}
+.small{font-size:.86rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{padding-block:22px 80px;display:grid;gap:6px}
+footer ol{margin:0;padding-left:1.2em;display:grid;gap:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">สรุปจากแนวทางสากล · ไม่มี CPG ไทยฉบับปัจจุบัน · ปรับปรุง ต.ค. 2569</div>
+  <h1>Systemic Lupus <span>Erythematosus</span></h1>
+  <div class="sub">2019 EULAR/ACR criteria · ACR 2025 · EULAR 2023 · ACR 2024 LN · EULAR 2025 LN · KDIGO 2024</div>
+</div></header>
+
+<nav class="tabs" aria-label="หมวด"><div class="wrap" role="tablist">
+  <button role="tab" data-v="overview">ภาพรวม</button>
+  <button role="tab" data-v="dx">วินิจฉัย</button>
+  <button role="tab" data-v="lab">แลป</button>
+  <button role="tab" data-v="rx">แผนการรักษา</button>
+  <button role="tab" data-v="ln">ไตอักเสบ (LN)</button>
+  <button role="tab" data-v="drugs">ขนาดยา</button>
+  <button role="tab" data-v="tools">เครื่องมือ</button>
+  <button role="tab" data-v="care">ติดตามและป้องกัน</button>
+  <button role="tab" data-v="compare">เทียบแนวทาง</button>
+</div></nav>
+
+<main><div class="wrap">
+
+<!-- ============ OVERVIEW ============ -->
+<section class="view" id="v-overview">
+  <p class="lead">ประเทศไทยยังไม่มีแนวทางเวชปฏิบัติ SLE ฉบับปัจจุบัน หน้านี้จึงสรุปจากแนวทางสากลชุดที่ใช้กันอยู่ แยกตามหน้าที่ของแต่ละฉบับ ข้อแนะนำส่วนใหญ่มีระดับหลักฐานต่ำถึงต่ำมาก จึงต้องใช้ร่วมกับการตัดสินใจร่วมกับผู้ป่วยและบริบทยาที่มีในโรงพยาบาล</p>
+
+  <div class="stack">
+    <h3 class="grp">ใช้ฉบับไหนทำอะไร</h3>
+    <div class="gmap">
+      <div class="gl"><div class="role">จำแนกโรค</div><h4>2019 EULAR/ACR Classification Criteria</h4><p>ANA ≥ 1:80 เป็นเกณฑ์เข้า แล้วนับคะแนนถ่วงน้ำหนัก ≥ 10 คะแนน ใช้เป็นเกณฑ์จำแนกโรค ไม่ใช่เกณฑ์วินิจฉัย</p><div class="when">Ann Rheum Dis / Arthritis Rheumatol 2019</div></div>
+      <div class="gl"><div class="role">SLE ทั่วไป · ใหม่สุด</div><h4>ACR 2025 Guideline for the Treatment of SLE</h4><p>non-renal SLE ทั้งเด็กและผู้ใหญ่ แยกตามอวัยวะ: ผิวหนัง ข้อ serositis เลือด NPSLE vasculitis หัวใจ-ปอด</p><div class="when">เผยแพร่ 3 พ.ย. 2025</div></div>
+      <div class="gl"><div class="role">SLE ทั่วไป</div><h4>EULAR 2023 Update</h4><p>5 หลักการ 13 ข้อแนะนำ กระชับ ใช้คู่กับ ACR ได้ดี มีทั้งยา target และ APS</p><div class="when">Ann Rheum Dis 2024;83:15–29</div></div>
+      <div class="gl"><div class="role">ไตอักเสบ</div><h4>ACR 2024 Lupus Nephritis Guideline</h4><p>28 ข้อแนะนำ + 13 GPS เน้น triple therapy ตั้งแต่แรก และรักษาต่อเนื่อง 3–5 ปี</p><div class="when">Arthritis Rheumatol 2025;77:1115–35</div></div>
+      <div class="gl"><div class="role">ไตอักเสบ</div><h4>EULAR 2025 · SLE with kidney involvement</h4><p>4 หลักการ 13 ข้อแนะนำ มี milestone 3/6/12 เดือน และคำนึงถึงค่าใช้จ่ายและยาที่หาได้ในแต่ละพื้นที่</p><div class="when">Ann Rheum Dis 2026;85:75–90</div></div>
+      <div class="gl"><div class="role">ไตอักเสบ · ฝั่งไต</div><h4>KDIGO 2024 Lupus Nephritis</h4><p>ละเอียดเรื่องสูตรสเตียรอยด์ นิยาม response การตั้งครรภ์ และ kidney failure</p><div class="when">Kidney Int 2024;105(1S)</div></div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">ตัวเลขที่ต้องจำ</h3>
+    <div class="keys">
+      <div class="key"><div class="num">≤ 5 มก./กก./วัน</div><span>HCQ ตามน้ำหนักจริง ให้ทุกคนที่ไม่มีข้อห้าม และให้ต่อเนื่องแม้โรคสงบ</span></div>
+      <div class="key"><div class="num">≤ 5 มก./วัน ใน 6 ด.</div><span>Prednisolone ในโรคที่คุมได้แล้ว ลดให้ถึงระดับนี้ (ดีที่สุดคือหยุด) — ACR แนะนำอย่างยิ่ง</span></div>
+      <div class="key"><div class="num">250–1000 มก. × 1–3 วัน</div><span>Pulse methylprednisolone สำหรับ flare ที่คุกคามอวัยวะหรือชีวิต</span></div>
+      <div class="key"><div class="num">UPCR &gt; 0.5 ก./ก.</div><span>ทำ kidney biopsy (หรือ eGFR ลดลงโดยหาสาเหตุอื่นไม่ได้)</span></div>
+      <div class="key"><div class="num">ทุก 6–12 ด.</div><span>คัดกรอง proteinuria ในผู้ป่วยที่ยังไม่มีโรคไต และทุกครั้งที่มี flare</span></div>
+      <div class="key"><div class="num">3–5 ปี</div><span>ระยะเวลารักษา LN หลังได้ complete renal response ก่อนพิจารณาลดยา</span></div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">เป้าหมายการรักษา (treat to target)</h3>
+    <div class="cols">
+      <div class="panel"><h4>Remission (DORIS 2021)</h4><ul class="bul"><li>clinical SLEDAI-2K = 0 (ไม่นับ serology)</li><li>Physician Global Assessment &lt; 0.5 (สเกล 0–3)</li><li>Prednisolone ≤ 5 มก./วัน</li><li>ใช้ HCQ, ยากดภูมิ, biologic ขนาดคงที่ได้</li></ul></div>
+      <div class="panel"><h4>Lupus Low Disease Activity State (LLDAS)</h4><ul class="bul"><li>SLEDAI-2K ≤ 4 ไม่มี activity ในอวัยวะหลัก (ไต CNS หัวใจ-ปอด vasculitis ไข้) ไม่มี hemolysis หรือ GI activity</li><li>ไม่มี activity ใหม่เมื่อเทียบครั้งก่อน</li><li>PGA ≤ 1 · Prednisolone ≤ 7.5 มก./วัน</li><li>ทนยากดภูมิขนาด maintenance ได้</li></ul></div>
+    </div>
+    <p class="small">ACR และ EULAR ตั้งเป้าเหมือนกันคือ remission หรือ low disease activity ประเมิน activity ทุกครั้งที่มาตรวจ และประเมิน damage อย่างน้อยปีละครั้ง ลองคำนวณได้ที่แท็บเครื่องมือ</p>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">แผนภาพรวมทั้งเส้นทาง</h3>
+    <div class="flow">
+      <div class="fnode f-start">สงสัย SLE: อาการหลายระบบ + ANA ≥ 1:80</div>
+      <div class="f-arrow">ตรวจ autoantibody, C3/C4, CBC, UA + UPCR, Cr · แยกโรคติดเชื้อและยา</div>
+      <div class="fnode f-cond"><b>ยืนยันการวินิจฉัย</b> (ใช้ 2019 criteria ช่วย) → ประเมินความรุนแรงรายอวัยวะ + คะแนน SLEDAI-2K · คัดกรองก่อนให้ยากดภูมิ (HBV, HCV, HIV, TB)</div>
+      <div class="f-arrow">ทุกราย</div>
+      <div class="fnode f-strong"><b>พื้นฐาน:</b> HCQ ≤ 5 มก./กก./วัน · ป้องกันแสงแดด · ดูแลโรคร่วม (CVD, กระดูก, ติดเชื้อ, วัคซีน, ตั้งครรภ์, aPL)</div>
+      <div class="f-row">
+        <div class="fnode f-ok"><span class="tag">MILD</span><br>ผิวหนัง ข้อ อาการทั่วไป → topical, NSAID หรือสเตียรอยด์ขนาดต่ำระยะสั้น</div>
+        <div class="fnode f-cond"><span class="tag">MODERATE</span><br>ข้ออักเสบดื้อ HCQ, serositis ซ้ำ, ผิวหนังรุนแรง → MTX / AZA / MMF ± belimumab หรือ anifrolumab</div>
+        <div class="fnode f-red"><span class="tag">ORGAN-THREATENING</span><br>LN III/IV, NPSLE, vasculitis, cytopenia รุนแรง, myocarditis → pulse MP + CYC / MPAA / anti-CD20 (± PLEX, IVIG)</div>
+      </div>
+      <div class="f-arrow">ลดสเตียรอยด์ ≤ 5 มก./วัน ภายใน 6 เดือน · ลดไม่ได้ → เริ่มหรือเพิ่มยากดภูมิ</div>
+      <div class="fnode f-note">ไม่ตอบสนอง → ตรวจ adherence และขนาดยาก่อน แล้ว <b>escalate</b> (ACR แนะนำอย่างยิ่ง) · สงบต่อเนื่อง 3–5 ปี → ค่อย ๆ ลดยากดภูมิ โดยยังให้ HCQ ต่อ</div>
+      <div class="legend"><span><i style="background:var(--ok-soft);border:1px solid var(--line)"></i>รุนแรงน้อย</span><span><i style="background:var(--ink-soft);border:1px solid var(--line)"></i>ปานกลาง</span><span><i style="background:var(--malar-soft);border:1px solid var(--malar)"></i>คุกคามอวัยวะหรือชีวิต</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIAGNOSIS ============ -->
+<section class="view" id="v-dx" hidden>
+  <div class="tool">
+    <h3>Checklist: เมื่อไรควรนึกถึง SLE</h3>
+    <p class="hint">ติ๊กสิ่งที่พบ ยิ่งพบหลายระบบพร้อมกันในหญิงวัยเจริญพันธุ์ยิ่งควรส่ง ANA</p>
+    <div class="checks two" id="suspect">
+      <label><input type="checkbox" id="s1"><span class="txt">ผื่นที่โหนกแก้มหรือผื่นแพ้แสง ไม่ข้ามร่องจมูก-แก้ม</span></label>
+      <label><input type="checkbox" id="s2"><span class="txt">แผลในปากไม่เจ็บ ผมร่วงแบบไม่มีแผลเป็น</span></label>
+      <label><input type="checkbox" id="s3"><span class="txt">ข้ออักเสบหลายข้อแบบ non-erosive</span></label>
+      <label><input type="checkbox" id="s4"><span class="txt">เยื่อหุ้มปอดหรือหัวใจอักเสบโดยไม่ทราบสาเหตุ</span></label>
+      <label><input type="checkbox" id="s5"><span class="txt">Cytopenia: WBC ต่ำ lymphocyte ต่ำ เกล็ดเลือดต่ำ หรือ hemolysis</span></label>
+      <label><input type="checkbox" id="s6"><span class="txt">โปรตีนหรือเม็ดเลือดแดงในปัสสาวะ ความดันสูงในคนอายุน้อย</span></label>
+      <label><input type="checkbox" id="s7"><span class="txt">ชัก psychosis หรืออาการทางประสาทที่หาสาเหตุไม่ได้</span></label>
+      <label><input type="checkbox" id="s8"><span class="txt">ไข้เรื้อรัง อ่อนเพลีย น้ำหนักลด ต่อมน้ำเหลืองโต</span></label>
+      <label><input type="checkbox" id="s9"><span class="txt">Raynaud, ตาแห้งปากแห้ง</span></label>
+      <label><input type="checkbox" id="s10"><span class="txt">แท้งซ้ำ ลิ่มเลือดอุดตันในคนอายุน้อย หรือ aPTT ยาว</span></label>
+    </div>
+    <div class="out" id="suspectOut"></div>
+  </div>
+
+  <div class="tool">
+    <h3>2019 EULAR/ACR Classification Criteria</h3>
+    <p class="hint">นับเฉพาะเกณฑ์ที่ไม่มีคำอธิบายอื่นที่น่าจะเป็นมากกว่า · เคยพบอย่างน้อย 1 ครั้งก็นับ ไม่ต้องเกิดพร้อมกัน · แต่ละ domain นับเฉพาะข้อที่คะแนนสูงสุด · ต้องมีเกณฑ์ทางคลินิกอย่างน้อย 1 ข้อ</p>
+    <div class="checks"><label><input type="checkbox" id="anaEntry"><span class="txt"><b>Entry criterion:</b> ANA ≥ 1:80 บน HEp-2 cells หรือผลบวกเทียบเท่า (เคยพบ)</span></label></div>
+    <div class="meter">
+      <div class="meter-head"><div class="readout" id="crOut">0<small>คะแนน</small></div><div class="prog" id="crSplit">clinical 0 · immunology 0</div></div>
+      <div class="track" id="crTrack"><i id="crBar" style="width:0%"></i></div>
+      <div class="mark" aria-hidden="true"><span style="left:0%">0</span><span class="ten" style="left:50%">10</span><span style="left:100%;transform:translateX(-100%)">20+</span></div>
+    </div>
+    <div class="domgrid" id="crit"></div>
+    <div class="out" id="crVerdict"></div>
+    <button type="button" class="btn" id="crReset">ล้างทั้งหมด</button>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">แยกโรคก่อนนับคะแนน</h3>
+    <div class="cols">
+      <div class="panel"><h4>ติดเชื้อ (พบบ่อยในไทย)</h4><ul class="bul"><li>ไข้เลือดออก: ไข้ เกล็ดเลือดต่ำ WBC ต่ำ ผื่น</li><li>Parvovirus B19, EBV, CMV, HIV: cytopenia + ANA บวกได้</li><li>วัณโรค, ไวรัสตับอักเสบ บี/ซี, sepsis</li></ul></div>
+      <div class="panel"><h4>Drug-induced lupus</h4><ul class="bul"><li>Hydralazine, procainamide, isoniazid, minocycline, anti-TNF</li><li>Anti-histone บวก · anti-dsDNA มักลบ (ยกเว้น anti-TNF)</li><li>ไต CNS เกี่ยวข้องน้อย · ดีขึ้นหลังหยุดยา</li></ul></div>
+      <div class="panel"><h4>โรคอื่นที่เลียนแบบ</h4><ul class="bul"><li>Lymphoma, มะเร็ง · Adult-onset Still</li><li>CTD อื่น: MCTD (anti-U1RNP), Sjögren, RA, DM, SSc</li><li>TTP/HUS, primary APS, ANCA vasculitis</li></ul></div>
+    </div>
+    <p class="callout">ANA บวกพบได้ในคนปกติราว 1 ใน 5 ที่ titre 1:40 และพบในโรคอื่นจำนวนมาก การส่ง ANA ในคนที่ไม่มีอาการชวนสงสัยมักได้ผลบวกปลอมมากกว่าประโยชน์</p>
+  </div>
+</section>
+
+<!-- ============ LAB ============ -->
+<section class="view" id="v-lab" hidden>
+  <div class="tool">
+    <h3>Checklist ส่งตรวจครั้งแรก</h3>
+    <p class="hint">ติ๊กเมื่อส่งแล้ว ใช้ไล่เช็กตอนรับผู้ป่วยใหม่ (ไม่ได้บันทึกข้อมูลผู้ป่วยไว้ที่ใด)</p>
+    <div class="domgrid" id="labChecks"></div>
+    <div class="prog" id="labProg"></div>
+    <button type="button" class="btn" id="labReset">ล้างรายการ</button>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">แปลผล autoantibody</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Test</th><th>บอกอะไร</th><th>ความไว / ความจำเพาะ</th><th>ใช้ทางคลินิก</th></tr></thead>
+      <tbody>
+        <tr><td><b>ANA</b> (IIF, HEp-2)</td><td>คัดกรอง · entry ของ 2019 criteria</td><td>ไวสูงมาก · จำเพาะต่ำ</td><td>ลบ (titre &lt; 1:80) ทำให้ SLE ไม่น่าเป็น · ไม่ต้องตรวจซ้ำเพื่อติดตาม</td></tr>
+        <tr><td><b>Anti-dsDNA</b></td><td>จำเพาะต่อ SLE · สัมพันธ์กับ LN</td><td>ไวปานกลาง · จำเพาะสูง</td><td>ระดับขึ้นร่วมกับ C3/C4 ลด → บอก activity · ตรวจซ้ำได้ (ไม่ถี่กว่าเดือนละครั้ง)</td></tr>
+        <tr><td><b>Anti-Sm</b></td><td>จำเพาะต่อ SLE มากที่สุด</td><td>ไวต่ำ · จำเพาะสูงมาก</td><td>ไม่ใช้ติดตาม activity · ในคนเอเชียพบบ่อยกว่าคนตะวันตก</td></tr>
+        <tr><td><b>Anti-Ro/SSA, anti-La/SSB</b></td><td>SCLE, Sjögren overlap, neonatal lupus</td><td>—</td><td>ตั้งครรภ์ → เสี่ยง congenital heart block ติดตามหัวใจทารก</td></tr>
+        <tr><td><b>Anti-U1RNP</b></td><td>MCTD, Raynaud, myositis overlap</td><td>—</td><td>ชวนนึกถึง overlap syndrome</td></tr>
+        <tr><td><b>Anti-histone</b></td><td>Drug-induced lupus</td><td>ไวสูงใน DIL</td><td>พบใน SLE ปกติได้ด้วย ต้องดูประวัติยา</td></tr>
+        <tr><td><b>Anti-ribosomal P</b></td><td>สัมพันธ์กับ NPSLE (psychosis) และ LN บางส่วน</td><td>จำเพาะสูง</td><td>ไม่อยู่ในเกณฑ์จำแนก</td></tr>
+        <tr><td><b>aPL</b>: LA, aCL, anti-β2GPI (IgG/IgM)</td><td>ความเสี่ยงลิ่มเลือดและภาวะแทรกซ้อนตั้งครรภ์</td><td>—</td><td>ตรวจทุกรายตอนวินิจฉัย · ผลบวกตรวจซ้ำห่าง ≥ 12 สัปดาห์ · triple positive = เสี่ยงสูง</td></tr>
+        <tr><td><b>C3, C4</b></td><td>Complement consumption (classical pathway)</td><td>—</td><td>ต่ำ → active disease โดยเฉพาะ LN · C4 ต่ำตลอดอาจเป็น C4 deficiency แต่กำเนิด</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">แลปทั่วไปที่ต้องแปลให้เป็น</h3>
+    <div class="cols">
+      <div class="panel"><h4>CBC และ hemolysis</h4><ul class="bul"><li>Leukopenia &lt; 4,000 และ lymphopenia พบบ่อย</li><li>Hemolysis: retic ↑, LDH ↑, haptoglobin ↓, indirect bilirubin ↑ + DAT บวก</li><li>DAT บวกโดยไม่มี hemolysis ไม่นับใน 2019 criteria</li><li>Neutropenia/lymphopenia &lt; 1,000 ที่ไม่มีอาการ ไม่ต้องเริ่มยากดภูมิ (ACR 2025)</li></ul></div>
+      <div class="panel"><h4>ESR กับ CRP</h4><ul class="bul"><li>ESR สูงตาม activity ได้</li><li>CRP มักปกติหรือขึ้นเล็กน้อยใน SLE flare</li><li>CRP สูงมาก → นึกถึง <b>ติดเชื้อ</b> ก่อน รองลงมาคือ serositis หรือข้ออักเสบ</li></ul></div>
+      <div class="panel"><h4>ปัสสาวะ</h4><ul class="bul"><li>Active sediment: RBC &gt; 5/HPF, WBC &gt; 5/HPF (ไม่มีติดเชื้อ), cellular casts</li><li>Dysmorphic RBC, RBC cast → glomerular</li><li>วัดโปรตีนด้วย spot UPCR ได้ · ยืนยันด้วย 24 ชม. เมื่อจำเป็น</li></ul></div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">ความถี่การติดตาม</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>สิ่งที่ติดตาม</th><th>ความถี่</th><th>แหล่ง</th></tr></thead>
+      <tbody>
+        <tr><td>Disease activity (SLEDAI-2K, PGA)</td><td>ทุกครั้งที่มาตรวจ และเมื่ออาการหรือยาเปลี่ยน</td><td>ACR 2025, EULAR 2023</td></tr>
+        <tr><td>Damage index (SLICC/ACR SDI)</td><td>อย่างน้อยปีละครั้ง</td><td>ACR 2025, EULAR 2023</td></tr>
+        <tr><td>UPCR ในผู้ป่วยที่ไม่มีโรคไต</td><td>ทุก 6–12 เดือน และทุกครั้งที่ flare นอกไต</td><td>ACR 2024 LN (แนะนำอย่างยิ่ง)</td></tr>
+        <tr><td>UPCR ใน LN ที่ยังไม่ถึง CRR</td><td>อย่างน้อยทุก 3 เดือน</td><td>ACR 2024 LN (แนะนำอย่างยิ่ง)</td></tr>
+        <tr><td>UPCR หลัง CRR ต่อเนื่อง</td><td>ทุก 3–6 เดือน</td><td>ACR 2024 LN (แนะนำอย่างยิ่ง)</td></tr>
+        <tr><td>C3, C4, anti-dsDNA</td><td>ทุกครั้งที่มาตรวจ แต่ไม่ถี่กว่าเดือนละครั้ง</td><td>ACR 2024 LN (GPS)</td></tr>
+        <tr><td>CBC, Cr, LFT ตามยาที่ใช้</td><td>ทุก 1–3 เดือนช่วงเริ่มยา แล้วห่างขึ้น</td><td>เวชปฏิบัติทั่วไป</td></tr>
+        <tr><td>ตรวจตาจาก HCQ</td><td>ก่อนเริ่มหรือภายในปีแรก แล้วปีละครั้งหลัง 5 ปี (เร็วกว่านั้นถ้ามีปัจจัยเสี่ยง)</td><td>AAO, ACR 2025</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============ TREATMENT (non-renal) ============ -->
+<section class="view" id="v-rx" hidden>
+  <div class="flow">
+    <div class="fnode f-start">SLE ที่ยืนยันแล้ว · ประเมินความรุนแรงรายอวัยวะ</div>
+    <div class="fnode f-strong"><b>ทุกราย:</b> HCQ (เว้นมีข้อห้าม) ให้ต่อไปเรื่อย ๆ แม้สงบ · ครีมกันแดดและเลี่ยงแสง · ดูแลโรคร่วมตั้งแต่วันแรก</div>
+    <div class="f-arrow">มี activity</div>
+    <div class="fnode f-cond"><b>สเตียรอยด์เป็น bridging therapy</b>: ให้เร็ว ขนาดต่ำสุด ระยะสั้นที่สุด และเริ่มยากดภูมิเร็วเพื่อลดสเตียรอยด์</div>
+    <div class="f-row">
+      <div class="fnode f-ok"><span class="tag">ไม่คุกคามอวัยวะ</span><br>ผิวหนัง ข้อ serositis เล็กน้อย<ul><li>Topical GC/CNI, NSAID, colchicine</li><li>Oral GC ระยะสั้น</li><li>ไม่ตอบสนองต่อ HCQ หรือลดสเตียรอยด์ไม่ได้ → MTX / AZA / MMF</li><li>ยังไม่พอ → เพิ่มหรือเปลี่ยนเป็น <b>belimumab</b> หรือ <b>anifrolumab</b></li></ul></div>
+      <div class="fnode f-red"><span class="tag">คุกคามอวัยวะหรือชีวิต</span><br>รักษาด่วนและแรง<ul><li>Pulse MP 250–1000 มก./วัน × 1–3 วัน แล้ว oral taper</li><li>+ IV CYC, MPAA หรือ anti-CD20 (พิจารณา combination)</li><li>ชีวิตเสี่ยง (DAH, mesenteric vasculitis) → + PLEX และ/หรือ IVIG</li></ul></div>
+    </div>
+    <div class="f-arrow">ทบทวนทุกครั้งที่มาตรวจ</div>
+    <div class="f-row">
+      <div class="fnode f-cond"><b>คุมได้แล้ว</b> แต่ยังใช้ pred &gt; 5 มก. → ลดเป็น ≤ 5 มก./วัน (ดีที่สุดคือหยุด) <b>ภายใน 6 เดือน</b> · ลดไม่ได้ → เริ่มหรือเพิ่มยากดภูมิ</div>
+      <div class="fnode f-cond"><b>ไม่ตอบสนอง</b> → ทบทวน adherence ขนาดยา และการวินิจฉัย แล้ว <b>escalate</b> ทันที ไม่รอนาน</div>
+    </div>
+    <div class="fnode f-note">Remission หรือ LLDAS ต่อเนื่อง <b>3–5 ปี</b> → ค่อย ๆ ลดยากดภูมิโดยตั้งเป้าหยุด · สเตียรอยด์ ≤ 5 มก. ที่สงบนาน → ค่อย ๆ ลดจนหยุด · HCQ ให้ต่อ</div>
+  </div>
+
+  <p class="small">ข้อแนะนำรายอวัยวะด้านล่างมาจาก ACR 2025 เกือบทั้งหมดเป็น <b>แนะนำแบบมีเงื่อนไข</b> หลักฐานต่ำมาก · GPS = good practice statement</p>
+  <div class="stack" id="organs"></div>
+</section>
+
+<!-- ============ LUPUS NEPHRITIS ============ -->
+<section class="view" id="v-ln" hidden>
+  <div class="flow">
+    <div class="fnode f-start">SLE ทุกราย: UPCR ทุก 6–12 เดือน และเมื่อ flare</div>
+    <div class="f-arrow">UPCR &gt; 0.5 ก./ก. · active sediment · eGFR ลดโดยหาสาเหตุอื่นไม่ได้</div>
+    <div class="fnode f-red"><b>Kidney biopsy โดยเร็ว</b> · เริ่มสเตียรอยด์ระหว่างรอผลได้ · ให้ HCQ · แยกสาเหตุอื่น (ความดัน เบาหวาน ยา TMA)</div>
+    <div class="f-arrow">ISN/RPS class</div>
+    <div class="f-row">
+      <div class="fnode f-ok"><span class="tag">CLASS I / II</span><br>ไม่ต้องกดภูมิเพื่อไต รักษาตามอาการนอกไต · nephrotic (lupus podocytopathy) → รักษาแบบ minimal change</div>
+      <div class="fnode f-red"><span class="tag">CLASS III / IV (± V)</span><br><b>Triple therapy</b> = GC + 2 ยา<ul><li>MPAA + belimumab</li><li>MPAA + CNI (voclosporin/tacrolimus)</li><li>Low-dose CYC (Euro-Lupus) + belimumab แล้วเปลี่ยนเป็น MPAA</li><li>EULAR 2025: MPAA + obinutuzumab เป็นอีกทาง</li></ul></div>
+      <div class="fnode f-cond"><span class="tag">PURE CLASS V</span><br>UPCR ≥ 1 ก./ก. → GC + MPAA + CNI (ACR) · &lt; 1 ก./ก. → GC และ/หรือ MPAA, AZA, CNI · RAASi ทุกราย</div>
+      <div class="fnode f-note"><span class="tag">CLASS VI</span><br>Sclerosis ≥ 90% ยากดภูมิไม่ช่วยไต · เตรียม RRT · รักษาอาการนอกไต</div>
+    </div>
+    <div class="f-arrow">เลือกสูตร triple ตามลักษณะผู้ป่วย (ACR)</div>
+    <div class="f-row">
+      <div class="fnode f-cond">Proteinuria ≥ 3 ก./ก. → <b>MPAA + CNI</b></div>
+      <div class="fnode f-cond">มี activity นอกไต, eGFR ต่ำ, chronicity สูง → <b>MPAA + belimumab</b></div>
+      <div class="fnode f-cond">ทน MPAA ไม่ได้, adherence ไม่ดี → <b>low-dose CYC + belimumab</b></div>
+    </div>
+    <div class="f-arrow">Pulse MP 250–1000 มก. × 1–3 วัน → pred ≤ 0.5 มก./กก. (สูงสุด 40) → ≤ 5 มก./วัน ภายใน 6 เดือน</div>
+    <div class="fnode f-strong">ประเมิน milestone ที่ 3, 6, 12 เดือน (ด้านล่าง) · รักษาต่อ ≥ 3–5 ปีหลัง CRR ด้วยสูตรเดิม</div>
+    <div class="f-row">
+      <div class="fnode f-cond"><b>ไม่ถึง PRR ใน 6–12 เดือน</b> → ตรวจ adherence/ขนาดยา · dual → triple · triple → เปลี่ยนสูตร หรือเพิ่ม anti-CD20 · พิจารณา repeat biopsy</div>
+      <div class="fnode f-red"><b>Refractory</b> (ล้มเหลว 2 สูตร) → anti-CD20, ยา non-GC 3 ตัว (MPAA + belimumab + CNI) หรือส่งต่อ/งานวิจัย</div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">Milestone ของการตอบสนอง</h3>
+    <div class="tline">
+      <div class="tstep"><b>3 เดือน</b><span>UPCR ลด ≥ 25% และ eGFR คงที่ (EULAR) · ถ้าไตแย่ลงหรือโปรตีนเพิ่ม พิจารณา escalate เร็ว (ACR)</span></div>
+      <div class="tstep"><b>6 เดือน</b><span>UPCR ลด ≥ 50% (partial response)</span></div>
+      <div class="tstep"><b>12 เดือน</b><span>UPCR &lt; 0.7 ก./ก. (EULAR) · CRR &lt; 0.5 ก./ก. ภายใน 6–12 เดือน (ACR, KDIGO) อาจช้ากว่านี้ได้</span></div>
+      <div class="tstep end"><b>≥ 3–5 ปี</b><span>รักษาต่อหลัง CRR · ลด GC จนหยุดหลัง CRR ≥ 1 ปี · ลดยากดภูมิหลัง CRR ต่อเนื่อง ≥ 3 ปี</span></div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>นิยาม</th><th>UPCR</th><th>eGFR</th><th>เวลา</th></tr></thead>
+      <tbody>
+        <tr><td><b>Complete renal response</b></td><td>&lt; 0.5 ก./ก.</td><td>คงที่หรือดีขึ้น (±10–15% KDIGO; ±20% ACR/EULAR)</td><td>6–12 เดือน (อาจ &gt; 12 เดือน)</td></tr>
+        <tr><td><b>Partial renal response</b></td><td>ลด ≥ 50% และ &lt; 3 ก./ก.</td><td>คงที่หรือดีขึ้น</td><td>6–12 เดือน</td></tr>
+        <tr><td><b>No response</b></td><td>ไม่ถึง PRR</td><td>—</td><td>ภายใน 6–12 เดือน</td></tr>
+        <tr><td>PERR (นิยามในงานวิจัย)</td><td>≤ 0.7 ก./ก.</td><td>ไม่ลด &gt; 20% หรือ ≥ 60</td><td>ไม่ใช้ rescue therapy</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">สเตียรอยด์ใน LN: สามแนวทางเทียบกัน</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>ACR 2024</th><th>EULAR 2025</th><th>KDIGO 2024</th></tr></thead>
+      <tbody>
+        <tr><td>Pulse MP</td><td>250–1000 มก./วัน × 1–3 วัน</td><td>IV pulse 1–3 วัน</td><td>0.25–0.5 ก./วัน สูงสุด 3 วัน</td></tr>
+        <tr><td>Oral เริ่มต้น</td><td>≤ 0.5 มก./กก./วัน (สูงสุด 40)</td><td>0.3–0.7 มก./กก./วัน</td><td>Reduced 0.5–0.6 มก./กก. (สูงสุด 40) · มีสูตร moderate/high</td></tr>
+        <tr><td>เป้าลด</td><td>≤ 5 มก./วัน ภายใน 6 เดือน</td><td>≤ 5 มก./วัน ภายใน 4–6 เดือน</td><td>≤ 5 มก./วัน ภายใน 4–6 เดือน</td></tr>
+        <tr><td>หยุด</td><td>ค่อย ๆ ลด</td><td>หลัง CRR ต่อเนื่อง ~1 ปี</td><td>หลัง CRR ≥ 12 เดือน</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">คำนวณตารางลดยารายสัปดาห์ตามน้ำหนักได้ในแท็บเครื่องมือ</p>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">ISN/RPS classification</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Class</th><th>ลักษณะ</th><th>การรักษาหลัก</th></tr></thead>
+      <tbody>
+        <tr><td><b>I</b></td><td>Minimal mesangial</td><td>ตาม extrarenal</td></tr>
+        <tr><td><b>II</b></td><td>Mesangial proliferative</td><td>ตาม extrarenal · podocytopathy → GC</td></tr>
+        <tr><td><b>III</b></td><td>Focal: &lt; 50% ของ glomeruli</td><td>Triple therapy</td></tr>
+        <tr><td><b>IV</b></td><td>Diffuse: ≥ 50% ของ glomeruli</td><td>Triple therapy</td></tr>
+        <tr><td><b>V</b></td><td>Membranous (ร่วมกับ III/IV ได้)</td><td>ตาม proteinuria / รักษาแบบ III-IV ถ้าผสม</td></tr>
+        <tr><td><b>VI</b></td><td>Advanced sclerosing ≥ 90%</td><td>เตรียม RRT</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">ดูแลไตควบคู่ (kidney protection)</h3>
+    <div class="cols">
+      <div class="panel"><h4>ความดันและโปรตีน</h4><ul class="bul"><li>BP เป้า &lt; 120–130/80 มม.ปรอท</li><li>RAASi เมื่อมีโปรตีนเพิ่มขึ้น แม้ &lt; 0.5 ก./ก. (ACR)</li><li>เกลือ &lt; 2 ก.โซเดียม/วัน (~5 ก.เกลือ)</li><li>SGLT2i ในบางราย: โปรตีนค้างหลังรักษา 6–12 เดือน, eGFR 20–60 (หลักฐานยังน้อย)</li></ul></div>
+      <div class="panel"><h4>ป้องกันภาวะแทรกซ้อน</h4><ul class="bul"><li>Statin ตามความเสี่ยง · เลี่ยง NSAIDs</li><li>Albumin ต่ำมาก + nephrotic → ปรึกษาเรื่อง anticoagulation (ACR GPS)</li><li>CYC สะสมตลอดชีวิต &lt; 36 ก. · ป้องกันภาวะมีบุตรยาก (GnRH agonist)</li><li>ปรับขนาดยาทุกตัวตาม GFR</li></ul></div>
+      <div class="panel"><h4>Kidney failure</h4><ul class="bul"><li>ESKD → ปลูกถ่ายไตดีกว่าฟอกเลือด (ACR แนะนำอย่างยิ่ง)</li><li>eGFR ใกล้ 15 → preemptive transplant</li><li>ปลูกถ่ายได้แม้ serology ยังไม่สงบ ถ้าอวัยวะอื่นไม่ active</li><li>ยังต้องตามกับรูมาโตฯ ระหว่างฟอกไต</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DRUGS ============ -->
+<section class="view" id="v-drugs" hidden>
+  <p class="lead">ขนาดยาที่ใช้บ่อย ปรับตาม eGFR และสภาพผู้ป่วยเสมอ ตรวจสอบกับเอกสารกำกับยาและรายการยาของโรงพยาบาลก่อนสั่ง</p>
+  <div class="tbl"><table>
+    <thead><tr><th>ยา</th><th>ขนาด</th><th>ข้อควรระวัง / ติดตาม</th><th>ตั้งครรภ์</th></tr></thead>
+    <tbody id="drugRows"></tbody>
+  </table></div>
+  <p class="foot">ตั้งครรภ์: ใช้ได้ = มีข้อมูลว่าใช้ได้ในการตั้งครรภ์ · หยุดก่อน = หยุดก่อนตั้งครรภ์ตามระยะที่ระบุ · ตามข้อมูล ACR 2020 Reproductive Health Guideline และ KDIGO 2024</p>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section class="view" id="v-tools" hidden>
+  <div class="tool" id="sledai">
+    <h3>SLEDAI-2K + Remission / LLDAS</h3>
+    <p class="hint">ติ๊กอาการที่มีใน 30 วันที่ผ่านมา · ตัวอย่างที่เปิดไว้คือผู้ป่วยข้ออักเสบ + ผื่น + complement ต่ำ</p>
+    <div class="meter">
+      <div class="meter-head"><div class="readout" id="sdOut">0<small>คะแนน</small></div><div class="prog" id="sdSplit"></div></div>
+      <div class="track"><i id="sdBar" style="width:0%"></i></div>
+    </div>
+    <div class="domgrid" id="sdItems"></div>
+    <div class="field">
+      <label for="pga">PGA (0–3)<input type="number" id="pga" min="0" max="3" step="0.1" value="1.2"></label>
+      <label for="pred">Prednisolone มก./วัน<input type="number" id="pred" min="0" step="0.5" value="10"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="hemGI"><span class="txt">มี hemolytic anemia หรือ GI activity (ไม่อยู่ใน SLEDAI)</span></label>
+      <label><input type="checkbox" id="newAct"><span class="txt">มี lupus activity ใหม่เมื่อเทียบครั้งก่อน</span></label>
+    </div>
+    <div class="out" id="sdVerdict"></div>
+    <button type="button" class="btn" id="sdReset">ล้างทั้งหมด</button>
+  </div>
+
+  <div class="tool">
+    <h3>ขนาด HCQ ตามน้ำหนัก (เม็ด 200 มก.)</h3>
+    <div class="field">
+      <label for="hcqW">น้ำหนักจริง (กก.)<input type="number" id="hcqW" min="20" max="200" step="0.5" value="52"></label>
+      <label for="hcqG">eGFR<input type="number" id="hcqG" min="0" max="150" value="90"></label>
+    </div>
+    <div class="out" id="hcqOut"></div>
+  </div>
+
+  <div class="tool">
+    <h3>ตารางลดสเตียรอยด์ใน LN (KDIGO 2024 Figure 7)</h3>
+    <div class="field">
+      <label for="gcW">น้ำหนัก (กก.)<input type="number" id="gcW" min="20" max="200" step="0.5" value="52"></label>
+      <label for="gcS">สูตร<select id="gcS"><option value="reduced">Reduced-dose</option><option value="moderate">Moderate-dose</option><option value="high">High-dose</option></select></label>
+    </div>
+    <div class="out" id="gcOut"></div>
+  </div>
+
+  <div class="tool">
+    <h3>ติดตาม renal response</h3>
+    <p class="hint">ใส่ค่าตั้งต้นก่อนรักษาและค่าล่าสุด ตัวอย่างที่ใส่ไว้คือ class IV ที่ 6 เดือน</p>
+    <div class="field">
+      <label for="u0">UPCR ตั้งต้น (ก./ก.)<input type="number" id="u0" min="0" step="0.1" value="3.6"></label>
+      <label for="u1">UPCR ล่าสุด<input type="number" id="u1" min="0" step="0.1" value="1.5"></label>
+      <label for="e0">eGFR ตั้งต้น<input type="number" id="e0" min="1" value="72"></label>
+      <label for="e1">eGFR ล่าสุด<input type="number" id="e1" min="1" value="76"></label>
+      <label for="mo">เดือนที่รักษา<select id="mo"><option value="3">3 เดือน</option><option value="6" selected>6 เดือน</option><option value="12">12 เดือน</option><option value="24">&gt; 12 เดือน</option></select></label>
+    </div>
+    <div class="out" id="lnOut"></div>
+  </div>
+</section>
+
+<!-- ============ CARE ============ -->
+<section class="view" id="v-care" hidden>
+  <p class="lead">ทั้ง ACR และ EULAR ถือว่าการดูแลโรคร่วมเป็นส่วนหนึ่งของการรักษา SLE: ติดเชื้อ หัวใจและหลอดเลือด กระดูก มะเร็ง การเจริญพันธุ์ และ aPL</p>
+  <div class="cols">
+    <div class="panel"><h4>ก่อนเริ่มยากดภูมิ</h4><ul class="bul"><li>HBsAg, anti-HBc, anti-HCV, anti-HIV</li><li>คัดกรองวัณโรคแฝง (CXR, IGRA/TST ตามบริบท)</li><li>TPMT/NUDT15 ก่อน AZA (NUDT15 variant พบบ่อยในคนเอเชีย)</li><li>G6PD ก่อน dapsone</li><li>ตรวจการตั้งครรภ์ และวางแผนคุมกำเนิด</li><li class="small">แนวปฏิบัติในประเทศเขตร้อน: พิจารณาตรวจหรือรักษาพยาธิ Strongyloides ก่อนสเตียรอยด์ขนาดสูง</li></ul></div>
+    <div class="panel"><h4>ติดเชื้อและวัคซีน</h4><ul class="bul"><li>วัคซีนเชื้อตาย: ไข้หวัดใหญ่ทุกปี, pneumococcal, COVID-19, HPV, recombinant zoster</li><li>เลี่ยงวัคซีนเชื้อเป็นขณะกดภูมิขนาดสูง</li><li>พิจารณาป้องกัน PJP เมื่อใช้สเตียรอยด์ขนาดสูงร่วมกับยากดภูมิ (ระวัง TMP-SMX แพ้ยาและทำให้ flare)</li><li>ไข้ใน SLE: แยกติดเชื้อก่อนเสมอ</li></ul></div>
+    <div class="panel"><h4>หัวใจและหลอดเลือด</h4><ul class="bul"><li>SLE เพิ่มความเสี่ยง ASCVD เกินกว่า risk score ทั่วไปประเมิน</li><li>คุมความดัน ไขมัน น้ำตาล งดบุหรี่</li><li>สเตียรอยด์สะสมเพิ่มความเสี่ยง</li><li>ตรวจ aPL ทุกราย</li></ul></div>
+    <div class="panel"><h4>กระดูก</h4><ul class="bul"><li>Calcium 1,000–1,200 มก./วัน + vitamin D</li><li>ประเมินความเสี่ยงกระดูกหักเมื่อใช้สเตียรอยด์ (ตาม ACR GIOP)</li><li>ระวัง avascular necrosis ในผู้ใช้สเตียรอยด์ขนาดสูง</li></ul></div>
+    <div class="panel"><h4>ตาจาก HCQ</h4><ul class="bul"><li>ตรวจตั้งต้นภายในปีแรก แล้วทุกปีหลังใช้ 5 ปี</li><li>ตรวจปีละครั้งเร็วขึ้นถ้า: ขนาด &gt; 5 มก./กก., eGFR &lt; 60, ใช้ tamoxifen, มีโรคจอประสาทตาเดิม</li><li>คนเอเชียมักเริ่มเสียนอก macula → visual field 24-2/30-2 + SD-OCT ที่กว้างกว่า macula</li></ul></div>
+    <div class="panel"><h4>มะเร็ง</h4><ul class="bul"><li>คัดกรองมะเร็งปากมดลูกสม่ำเสมอ (ความเสี่ยงสูงขึ้น โดยเฉพาะหลัง CYC)</li><li>คัดกรองตามอายุเหมือนประชากรทั่วไป</li><li>Lymphoma พบมากขึ้นใน SLE</li></ul></div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">การตั้งครรภ์และการคุมกำเนิด</h3>
+    <div class="cols">
+      <div class="panel"><h4>วางแผนตั้งครรภ์</h4><ul class="bul"><li>ตั้งครรภ์เมื่อโรคสงบ ≥ 6 เดือน (LN inactive ≥ 6 เดือน ตาม KDIGO)</li><li>ให้ HCQ ต่อ · เริ่ม low-dose aspirin ก่อน 16 สัปดาห์ (LN หรือ aPL)</li><li>Anti-Ro/La บวก → ติดตาม fetal heart rhythm</li><li>ทำงานร่วมกับสูติแพทย์ตั้งแต่ต้น</li></ul></div>
+      <div class="panel"><h4>ยาที่ต้องเปลี่ยน</h4><ul class="bul"><li>หยุด MMF/MPA ≥ 6 สัปดาห์ก่อนตั้งครรภ์ → เปลี่ยนเป็น AZA</li><li>หยุด MTX 1–3 เดือนก่อน</li><li>CYC ทำให้พิการแต่กำเนิด</li><li>ใช้ได้: HCQ, AZA, tacrolimus, cyclosporine, pred ขนาดต่ำ</li></ul></div>
+      <div class="panel"><h4>คุมกำเนิด</h4><ul class="bul"><li>aPL บวก → เลี่ยงยาที่มี estrogen</li><li>IUD (levonorgestrel หรือทองแดง) หรือ progestin-only เหมาะกับส่วนใหญ่</li><li>โรคสงบ aPL ลบ → ใช้ combined hormonal ได้</li></ul></div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3 class="grp">SLE ร่วมกับ antiphospholipid</h3>
+    <div class="recs">
+      <div class="rec"><div class="when">มี aPL profile เสี่ยงสูง (LA บวก, double/triple positive, titre สูงต่อเนื่อง) แต่ไม่เคยมีลิ่มเลือด</div><div class="stmt">Low-dose aspirin เพื่อป้องกันปฐมภูมิ</div><div class="meta"><span class="chip c-src">EULAR 2023</span></div></div>
+      <div class="rec"><div class="when">APS ที่มีลิ่มเลือดแล้ว</div><div class="stmt">รักษาแบบ primary APS: warfarin ระยะยาว · เลี่ยง DOAC ใน triple positive หรือ arterial thrombosis</div><div class="meta"><span class="chip c-src">EULAR 2023</span></div></div>
+      <div class="rec"><div class="when">Libman-Sacks endocarditis</div><div class="stmt">ยากดภูมิ และ/หรือ anticoagulation</div><div class="meta"><span class="chip c-cond">มีเงื่อนไข</span><span class="chip c-src">ACR 2025</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="view" id="v-compare" hidden>
+  <p class="lead">จุดที่สามแนวทางเห็นตรงกันคือ HCQ ทุกราย ใช้สเตียรอยด์ให้น้อยและสั้น เริ่มยากดภูมิเร็ว และ combination therapy ใน LN ส่วนที่ต่างคือรายละเอียดของแต่ละขั้น</p>
+  <div class="tbl"><table>
+    <thead><tr><th>หัวข้อ</th><th>ACR (2025 SLE / 2024 LN)</th><th>EULAR (2023 / 2025 LN)</th><th>KDIGO 2024</th></tr></thead>
+    <tbody>
+      <tr><td><b>ขอบเขต</b></td><td>Non-renal แยกตามอวัยวะ + LN แยกฉบับ · รวมเด็ก</td><td>SLE ทั่วไป + LN แยกฉบับ · คำนึงถึงยาที่หาได้</td><td>LN อย่างเดียว · รวมเด็ก ตั้งครรภ์ ไตวาย</td></tr>
+      <tr><td><b>HCQ</b></td><td>ทุกราย ให้ไปเรื่อย ๆ · เฉลี่ย ≤ 5 มก./กก./วัน · ช่วงแรกอาจ 5–6.5</td><td>5 มก./กก. น้ำหนักจริง/วัน</td><td>~5 มก./กก./วัน · eGFR &lt; 30 ลด ≥ 25%</td></tr>
+      <tr><td><b>Pulse MP</b></td><td>250–1000 มก. × 1–3 วัน</td><td>125–1000 มก. × 1–3 วัน (2023)</td><td>0.25–0.5 ก. × ≤ 3 วัน</td></tr>
+      <tr><td><b>Maintenance GC</b></td><td>≤ 5 มก. ภายใน 6 เดือน (แนะนำอย่างยิ่ง)</td><td>≤ 5 มก. และหยุดเมื่อทำได้</td><td>≤ 5 มก. ภายใน 4–6 เดือน (LN)</td></tr>
+      <tr><td><b>Biologic ใน non-renal</b></td><td>Belimumab/anifrolumab เมื่อยาดั้งเดิมไม่พอ (ข้อ ผิวหนัง) · anti-CD20 ในเลือด NPSLE vasculitis</td><td>Belimumab/anifrolumab เริ่มได้เร็ว · RTX ใน refractory</td><td>—</td></tr>
+      <tr><td><b>Biopsy</b></td><td>UPCR &gt; 0.5 ก./ก. และ/หรือ ไตเสื่อมโดยไม่มีสาเหตุ</td><td>ทุกรายที่มีหลักฐานไตเกี่ยวข้อง (UPCR ≥ 0.5, glomerular hematuria, eGFR ลด)</td><td>เมื่อสงสัย LN</td></tr>
+      <tr><td><b>Initial LN III/IV</b></td><td>Triple therapy เป็นหลัก · dual เมื่อ triple ทำไม่ได้</td><td>Single หรือ combination · เพิ่ม obinutuzumab · CNI เมื่อ eGFR &gt; 45</td><td>Dual (MPAA หรือ low-dose CYC) หรือ triple</td></tr>
+      <tr><td><b>Pure class V</b></td><td>≥ 1 ก./ก. → GC + MPAA + CNI</td><td>รักษาแบบ combination ตามความรุนแรง</td><td>Nephrotic → GC + ยาอีก 1 ตัว · ไม่ nephrotic ตามรายบุคคล</td></tr>
+      <tr><td><b>Milestone</b></td><td>PRR ภายใน 6–12 เดือน</td><td>3 ด. ↓ ≥ 25% · 6 ด. ↓ ≥ 50% · 12 ด. &lt; 0.7</td><td>CRR/PRR ภายใน 6–12 เดือน</td></tr>
+      <tr><td><b>ระยะเวลา</b></td><td>3–5 ปีหลัง CRR</td><td>≥ 3 ปี แล้วค่อยลด</td><td>≥ 36 เดือนรวม</td></tr>
+      <tr><td><b>Maintenance</b></td><td>สูตรเดิมต่อหลัง triple · MPAA ดีกว่า AZA</td><td>MPAA หรือ AZA</td><td>MPAA ก่อน · AZA ถ้าวางแผนตั้งครรภ์</td></tr>
+      <tr><td><b>Refractory</b></td><td>Anti-CD20, 3 non-GC agents, งานวิจัย</td><td>เปลี่ยนสูตร หรือ anti-CD20</td><td>Rituximab, biologic, IV CYC นานขึ้น</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div>อ้างอิง</div>
+  <ol>
+    <li>Aringer M, et al. 2019 EULAR/ACR classification criteria for SLE. Arthritis Rheumatol 2019;71:1400–12.</li>
+    <li>Sammaritano LR, et al. 2025 ACR Guideline for the Treatment of SLE. Arthritis Rheumatol / Arthritis Care Res 2025. <a href="https://rheumatology.org/lupus-guideline" target="_blank" rel="noopener">rheumatology.org/lupus-guideline</a></li>
+    <li>Fanouriakis A, et al. EULAR recommendations for the management of SLE: 2023 update. Ann Rheum Dis 2024;83:15–29. <a href="https://doi.org/10.1136/ard-2023-224762" target="_blank" rel="noopener">doi</a></li>
+    <li>Sammaritano LR, et al. 2024 ACR Guideline for the Screening, Treatment, and Management of Lupus Nephritis. Arthritis Rheumatol 2025;77:1115–35.</li>
+    <li>Fanouriakis A, et al. EULAR recommendations for SLE with kidney involvement: 2025 update. Ann Rheum Dis 2026;85:75–90. <a href="https://doi.org/10.1016/j.ard.2025.09.007" target="_blank" rel="noopener">doi</a></li>
+    <li>KDIGO 2024 Clinical Practice Guideline for the Management of Lupus Nephritis. Kidney Int 2024;105(1S):S1–S69.</li>
+    <li>Franklyn K, et al. LLDAS definition. Ann Rheum Dis 2016 · van Vollenhoven R, et al. DORIS remission. Lupus Sci Med 2021.</li>
+  </ol>
+  <div>สรุปเพื่อทบทวนความรู้ ไม่ทดแทนวิจารณญาณทางคลินิกหรือฉบับเต็มของแนวทางเวชปฏิบัติ</div>
+</div></footer>
+
+<script>
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- tabs ---------- */
+const tabs=[...document.querySelectorAll("nav.tabs button")];
+function show(v,push){
+  if(!document.getElementById("v-"+v))v="overview";
+  tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v));
+  document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+v);
+  if(push){try{history.replaceState(null,"","#"+v)}catch(e){} window.scrollTo({top:0})}
+}
+tabs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.v,true)));
+show((location.hash||"").slice(1)||"overview",false);
+
+/* ---------- suspicion checklist ---------- */
+function suspect(){
+  const n=document.querySelectorAll("#suspect input:checked").length;
+  const o=document.getElementById("suspectOut");
+  if(n===0){o.className="out";o.innerHTML="ยังไม่ได้เลือก";return}
+  if(n===1){o.className="out v-mid";o.innerHTML="<strong>พบ 1 ระบบ</strong> — ANA ช่วยได้น้อย พิจารณาสาเหตุอื่นก่อน ติดตามอาการ";return}
+  o.className="out v-warn";o.innerHTML=`<strong>พบ ${n} ข้อ</strong> — ส่ง ANA (HEp-2 IIF) ถ้า ≥ 1:80 ให้ส่ง anti-dsDNA, anti-Sm, C3/C4, CBC, UA + UPCR ต่อ และใช้ 2019 criteria ช่วยจำแนก`;
+}
+document.querySelectorAll("#suspect input").forEach(i=>i.addEventListener("change",suspect));suspect();
+
+/* ---------- 2019 criteria ---------- */
+const CRIT=[
+ {d:"Constitutional",c:1,it:[["ไข้ > 38.3 °C",2]]},
+ {d:"Hematologic",c:1,it:[["Leukopenia < 4,000/มม.³",3],["Thrombocytopenia < 100,000/มม.³",4],["Autoimmune hemolysis",4]]},
+ {d:"Neuropsychiatric",c:1,it:[["Delirium",2],["Psychosis",3],["Seizure",5]]},
+ {d:"Mucocutaneous",c:1,it:[["Non-scarring alopecia",2],["Oral ulcers",2],["Subacute cutaneous หรือ discoid lupus",4],["Acute cutaneous lupus",6]]},
+ {d:"Serosal",c:1,it:[["Pleural หรือ pericardial effusion",5],["Acute pericarditis",6]]},
+ {d:"Musculoskeletal",c:1,it:[["Joint involvement","synovitis ≥ 2 ข้อ หรือกดเจ็บ ≥ 2 ข้อ + ข้อฝืดเช้า ≥ 30 นาที",6]]},
+ {d:"Renal",c:1,it:[["Proteinuria > 0.5 ก./24 ชม.",4],["Biopsy: class II หรือ V",8],["Biopsy: class III หรือ IV",10]]},
+ {d:"Antiphospholipid antibodies",c:0,it:[["aCL หรือ anti-β2GPI หรือ lupus anticoagulant",2]]},
+ {d:"Complement",c:0,it:[["C3 หรือ C4 ต่ำ (อย่างใดอย่างหนึ่ง)",3],["C3 และ C4 ต่ำทั้งคู่",4]]},
+ {d:"SLE-specific antibodies",c:0,it:[["Anti-dsDNA หรือ anti-Smith",6]]}
+];
+document.getElementById("crit").innerHTML=CRIT.map((g,gi)=>`<div class="dom"><h4><span>${g.c?"":"Immunology · "}${esc(g.d)}</span><b id="cd${gi}">0</b></h4><div class="checks">${g.it.map((x,ii)=>{const pts=x[x.length-1],sub=x.length===3?`<small>${esc(x[1])}</small>`:"";return `<label><input type="checkbox" id="c${gi}_${ii}" data-g="${gi}" data-p="${pts}"><span class="txt">${esc(x[0])}${sub}</span><span class="pt">${pts}</span></label>`}).join("")}</div></div>`).join("");
+function crit(){
+  let cl=0,im=0;
+  CRIT.forEach((g,gi)=>{
+    let mx=0;document.querySelectorAll(`#crit input[data-g="${gi}"]:checked`).forEach(i=>mx=Math.max(mx,+i.dataset.p));
+    document.getElementById("cd"+gi).textContent=mx;
+    if(g.c)cl+=mx;else im+=mx;
+  });
+  const tot=cl+im,ana=document.getElementById("anaEntry").checked;
+  document.getElementById("crOut").innerHTML=tot+"<small>คะแนน</small>";
+  document.getElementById("crSplit").textContent=`clinical ${cl} · immunology ${im}`;
+  document.getElementById("crBar").style.width=Math.min(100,tot/20*100)+"%";
+  const pass=ana&&cl>0&&tot>=10;
+  document.getElementById("crTrack").classList.toggle("pass",pass);
+  const o=document.getElementById("crVerdict");
+  if(!ana){o.className="out";o.innerHTML="ยังไม่ผ่าน <b>entry criterion</b> — ถ้า ANA ไม่เคยถึง 1:80 จะจำแนกเป็น SLE ตามเกณฑ์นี้ไม่ได้ (ยังเป็น SLE ทางคลินิกได้ในบางราย)";return}
+  if(tot>=10&&cl===0){o.className="out v-warn";o.innerHTML="คะแนนถึง 10 แต่ <b>ไม่มีเกณฑ์ทางคลินิก</b> — ต้องมีอย่างน้อย 1 ข้อ ยังจำแนกเป็น SLE ไม่ได้";return}
+  if(pass){o.className="out v-bad";o.innerHTML=`<strong>เข้าเกณฑ์จำแนกเป็น SLE</strong> (${tot} ≥ 10 คะแนน) — ยืนยันว่าแต่ละข้อไม่มีคำอธิบายอื่นที่ดีกว่า แล้วประเมินความรุนแรงรายอวัยวะ`;return}
+  o.className="out v-mid";o.innerHTML=`ยังไม่ถึงเกณฑ์ (ขาดอีก ${10-tot} คะแนน) — เกณฑ์นี้ใช้จำแนกเพื่องานวิจัย ผู้ป่วยที่ไม่ถึงอาจเป็น SLE ระยะแรกได้ ติดตามอาการต่อ`;
+}
+document.querySelectorAll("#crit input,#anaEntry").forEach(i=>i.addEventListener("change",crit));
+document.getElementById("crReset").addEventListener("click",()=>{document.querySelectorAll("#crit input,#anaEntry").forEach(i=>i.checked=false);crit()});
+// example state
+["anaEntry","c3_3","c5_0","c8_0","c9_0"].forEach(id=>{const e=document.getElementById(id);if(e)e.checked=true});
+crit();
+
+/* ---------- lab checklist ---------- */
+const LABS=[
+ ["Autoantibody",["ANA (HEp-2 IIF) + titre/pattern","Anti-dsDNA","Anti-Sm","Anti-Ro/SSA, anti-La/SSB","Anti-U1RNP (ถ้าสงสัย overlap)","aPL: LA, aCL, anti-β2GPI"]],
+ ["Activity",["C3, C4","CBC + differential","ESR, CRP","Reticulocyte, LDH, haptoglobin, DAT (ถ้าซีด)"]],
+ ["ไต",["UA + microscopy (dysmorphic RBC, casts)","Spot UPCR","Creatinine/eGFR, electrolytes","Albumin"]],
+ ["อวัยวะอื่น / ก่อนให้ยา",["LFT, CK","Lipid, glucose/HbA1c","HBsAg, anti-HBc, anti-HCV, anti-HIV","CXR ± IGRA (วัณโรค)","G6PD (ถ้าจะใช้ dapsone)","TPMT/NUDT15 (ถ้าจะใช้ AZA)","Pregnancy test","ตรวจตาตั้งต้น (HCQ)"]]
+];
+document.getElementById("labChecks").innerHTML=LABS.map((g,gi)=>`<div class="dom"><h4><span>${esc(g[0])}</span></h4><div class="checks">${g[1].map((t,i)=>`<label><input type="checkbox" id="l${gi}_${i}"><span class="txt">${esc(t)}</span></label>`).join("")}</div></div>`).join("");
+function labs(){const all=document.querySelectorAll("#labChecks input"),n=[...all].filter(i=>i.checked).length;document.getElementById("labProg").textContent=`ส่งแล้ว ${n}/${all.length} รายการ`}
+document.querySelectorAll("#labChecks input").forEach(i=>i.addEventListener("change",labs));
+document.getElementById("labReset").addEventListener("click",()=>{document.querySelectorAll("#labChecks input").forEach(i=>i.checked=false);labs()});labs();
+
+/* ---------- organ recommendations (ACR 2025) ---------- */
+const ORG=[
+ ["ผิวหนัง",[
+  ["gps","ทุกราย","ป้องกันแสงแดดและครีมกันแดด"],
+  ["gps","Cutaneous lupus ระยะแรก","HCQ + topical GC และ/หรือ topical CNI · intralesional GC หรือ oral GC สั้น ๆ ได้"],
+  ["cond","อาการน้อยแต่ยังเป็นอยู่แม้ใช้ HCQ/topical","ปรับยาต้านมาลาเรีย (เพิ่ม quinacrine หรือเปลี่ยนเป็น chloroquine) ก่อนเพิ่มยากดภูมิ"],
+  ["cond","ปานกลาง-รุนแรง ดื้อ topical + antimalarial หรือต้องเพิ่ม oral GC","เพิ่ม MTX, MPAA, anifrolumab และ/หรือ belimumab"],
+  ["cond","ดื้อยาทั้งหมดข้างต้น","เพิ่มหรือเปลี่ยนเป็น lenalidomide"],
+  ["cond","Bullous lupus อาการน้อย","Dapsone ก่อนสเตียรอยด์ · รุนแรง → MPAA/MTX/AZA และ/หรือ anti-CD20"],
+  ["cond","Chilblain lupus","Pentoxifylline, PDE5 inhibitor หรือ nifedipine แทนยากดภูมิ"],
+  ["cond","Cutaneous (leukocytoclastic) vasculitis เล็กน้อย","Dapsone หรือ colchicine แทนยากดภูมิรวมถึง oral GC"]]],
+ ["ข้อและกล้ามเนื้อ",[
+  ["gps","ข้ออักเสบเฉียบพลันหรือเป็นซ้ำ","NSAID หรือ oral GC ระยะสั้นเป็น bridge"],
+  ["cond","ข้ออักเสบต่อเนื่องแม้ใช้ HCQ","เริ่ม MTX, MPAA หรือ AZA ก่อน · ตอบสนองไม่พอ → เพิ่มหรือเปลี่ยนเป็น belimumab หรือ anifrolumab"]]],
+ ["Serositis",[
+  ["cond","Pleuropericarditis ครั้งแรก","NSAID และ/หรือ colchicine โดยพร้อมเพิ่ม GC เร็ว"],
+  ["cond","เป็นต่อเนื่องหรือซ้ำ","MPAA, AZA หรือ biologic"]]],
+ ["โลหิตวิทยา",[
+  ["cond","Neutropenia/lymphopenia < 1,000 ไม่มีอาการ ไม่มี activity อื่น","ไม่เริ่มยากดภูมิ (รวมสเตียรอยด์)"],
+  ["cond","เกล็ดเลือดต่ำ < 30,000 เรื้อรังไม่มีอาการ","GC + ยาตัวที่สอง (MPAA, AZA, CNI, anti-CD20, belimumab และ/หรือ IVIG) แทนการเฝ้าดูหรือ GC อย่างเดียว"],
+  ["cond","เกล็ดเลือดต่ำ + เลือดออกรุนแรง","GC + IVIG และ/หรือ anti-CD20"],
+  ["cond","AIHA มีอาการ (ischemia หรือ hemodynamic ไม่คงที่)","GC + IVIG และ/หรือ anti-CD20"]]],
+ ["ระบบประสาท (NPSLE)",[
+  ["gps","มีลักษณะ overlap เช่น AQP4-IgG + myelitis/optic neuritis","รักษาตามกระบวนการเด่น ร่วมกับแพทย์เฉพาะทาง"],
+  ["cond","Optic neuritis, acute confusional state, mononeuritis multiplex","Pulse/high-dose GC + IV CYC, MPAA หรือ anti-CD20"],
+  ["cond","Myelitis","Pulse/high-dose GC + IV CYC"],
+  ["cond","Psychosis","Antipsychotic + GC, IV CYC, MPAA หรือ anti-CD20"],
+  ["cond","ชักจาก active SLE","ยากันชัก + GC, CYC, MPAA, AZA และ/หรือ anti-CD20"],
+  ["cond","Cognitive dysfunction (ยืนยันด้วย neuropsych test)","Cognitive therapy อย่างเดียว ไม่เพิ่มยากดภูมิ"]]],
+ ["Systemic vasculitis",[
+  ["cond","Vasculitis จาก active SLE","Pulse/high-dose GC + ยากดภูมิ โดยเริ่มด้วย IV CYC หรือ anti-CD20"],
+  ["cond","คุกคามชีวิต: DAH, mesenteric vasculitis","เพิ่ม PLEX และ/หรือ IVIG"]]],
+ ["หัวใจและปอด",[
+  ["cond","Lupus myocarditis","GC + IV CYC, MPAA, anti-CD20 และ/หรือ IVIG"],
+  ["cond","Libman-Sacks endocarditis","ยากดภูมิ และ/หรือ anticoagulation"]]]
+];
+const CHIP={gps:'<span class="chip c-gps">GPS</span>',cond:'<span class="chip c-cond">มีเงื่อนไข</span>',strong:'<span class="chip c-strong">แนะนำอย่างยิ่ง</span>'};
+document.getElementById("organs").innerHTML=ORG.map(([t,rs])=>`<div class="organ"><h3 class="grp">${esc(t)}</h3><div class="recs">${rs.map(r=>`<div class="rec"><div class="when">${esc(r[1])}</div><div class="stmt">${esc(r[2])}</div><div class="meta">${CHIP[r[0]]}<span class="chip c-src">ACR 2025</span></div></div>`).join("")}</div></div>`).join("");
+
+/* ---------- drugs ---------- */
+const DRUGS=[
+ ["Hydroxychloroquine","≤ 5 มก./กก. น้ำหนักจริง/วัน (สูงสุด 400) · eGFR < 30 ลด ≥ 25%","ตรวจตา · G6PD ไม่จำเป็นในส่วนใหญ่ · QT","ใช้ได้ ให้ต่อ"],
+ ["Prednisolone","Bridge ขนาดตามความรุนแรง · maintenance ≤ 5 มก./วัน","น้ำตาล ความดัน กระดูก ติดเชื้อ AVN","ใช้ได้ขนาดต่ำ"],
+ ["Methylprednisolone IV","250–1000 มก./วัน × 1–3 วัน","น้ำตาล ความดัน ติดเชื้อ","ใช้ได้เมื่อจำเป็น"],
+ ["Methotrexate","7.5–25 มก./สัปดาห์ + folic acid","เลี่ยงเมื่อ eGFR < 30 · LFT, CBC · งดแอลกอฮอล์","หยุด 1–3 เดือนก่อน"],
+ ["Azathioprine","1–2 มก./กก./วัน","ตรวจ TPMT/NUDT15 · CBC · ห้ามใช้ร่วม allopurinol/febuxostat ขนาดปกติ","ใช้ได้"],
+ ["Mycophenolate mofetil","Induction 1–1.5 ก. × 2/วัน · maintenance 750–1000 มก. × 2/วัน","CBC, GI side effect","หยุด ≥ 6 สัปดาห์ก่อน"],
+ ["Mycophenolic acid (MPA)","Induction 720–1080 มก. × 2/วัน · maintenance 540–720 มก. × 2/วัน","เช่นเดียวกับ MMF","หยุด ≥ 6 สัปดาห์ก่อน"],
+ ["Cyclophosphamide IV (Euro-Lupus)","500 มก. ทุก 2 สัปดาห์ × 6 ครั้ง (รวม 3 ก.) แล้วต่อด้วย MPAA/AZA","Mesna/น้ำ · CBC · สะสมตลอดชีวิต < 36 ก. · GnRH agonist","ห้าม"],
+ ["Cyclophosphamide IV (NIH)","0.5–1 ก./ม.² ทุกเดือน × 6 ครั้ง","รุนแรงหรือ RPGN · พิษมากกว่า low-dose","ห้าม"],
+ ["Tacrolimus","LN: trough ~5.5 นก./มล. ร่วมกับ MPAA ขนาดลดลง (SCr < 3 มก./ดล.)","ระดับยา Cr K Mg น้ำตาล BP · drug interaction","ใช้ได้"],
+ ["Voclosporin","23.7 มก. × 2/วัน ร่วมกับ MMF","eGFR > 45 · Cr, BP","ข้อมูลจำกัด"],
+ ["Belimumab","IV 10 มก./กก. สัปดาห์ 0, 2, 4 แล้วทุก 4 สัปดาห์ · SC 200 มก./สัปดาห์ (LN: 400 มก./สัปดาห์ × 4 แล้ว 200)","ติดเชื้อ · ซึมเศร้า","ข้อมูลจำกัด"],
+ ["Anifrolumab","300 มก. IV ทุก 4 สัปดาห์","Non-renal ปานกลาง-รุนแรง · herpes zoster · ไม่ใช้ใน LN/NPSLE รุนแรง","ข้อมูลจำกัด"],
+ ["Rituximab","1 ก. × 2 ครั้ง ห่าง 2 สัปดาห์","HBV reactivation · IgG ต่ำ · infusion reaction","หลีกเลี่ยง"],
+ ["Obinutuzumab","1,000 มก. IV วันที่ 1, สัปดาห์ 2, 24, 26 (REGENCY ให้ต่อสัปดาห์ 50, 52)","LN ร่วมกับ MMF (EULAR 2025) · HBV · infusion reaction","หลีกเลี่ยง"],
+ ["IVIG","รวม 2 ก./กก. แบ่งให้ 2–5 วัน","ITP/AIHA รุนแรง myocarditis · ระวังไต ลิ่มเลือด","ใช้ได้"],
+ ["Quinacrine","100 มก./วัน เสริม HCQ","ผิวเหลือง · หาได้ยาก","ข้อมูลจำกัด"],
+ ["Dapsone","50–100 มก./วัน","ตรวจ G6PD · methemoglobinemia · hemolysis","ใช้ระวัง"]
+];
+document.getElementById("drugRows").innerHTML=DRUGS.map(d=>`<tr><td><b>${esc(d[0])}</b></td><td>${esc(d[1])}</td><td>${esc(d[2])}</td><td>${esc(d[3])}</td></tr>`).join("");
+
+/* ---------- SLEDAI-2K ---------- */
+const SD=[
+ ["8 คะแนน",[["Seizure","ไม่ใช่จากเมตาบอลิก ติดเชื้อ ยา",8,"cns"],["Psychosis","รบกวนการทำหน้าที่ ไม่ใช่จาก uremia/ยา",8,"cns"],["Organic brain syndrome","สติ สมาธิ การรับรู้แปรปรวนเฉียบพลัน",8,"cns"],["Visual disturbance","cytoid bodies, retinal hemorrhage, optic neuritis",8,"cns"],["Cranial nerve disorder","neuropathy ใหม่",8,"cns"],["Lupus headache","รุนแรง ต่อเนื่อง ไม่ตอบสนอง narcotic",8,"cns"],["CVA","ใหม่ ไม่ใช่จาก atherosclerosis",8,"cns"],["Vasculitis","แผล gangrene nodule นิ้ว infarct หรือยืนยันด้วย biopsy/angiogram",8,"vasc"]]],
+ ["4 คะแนน",[["Arthritis","≥ 2 ข้อ มีปวดและอักเสบ",4,""],["Myositis","ปวด/อ่อนแรงต้นแขนขา + CK หรือ EMG/biopsy",4,""],["Urinary casts","heme-granular หรือ RBC casts",4,"renal"],["Hematuria","> 5 RBC/HPF ไม่มีนิ่ว ติดเชื้อ",4,"renal"],["Proteinuria","> 0.5 ก./24 ชม.",4,"renal"],["Pyuria","> 5 WBC/HPF ไม่มีติดเชื้อ",4,"renal"]]],
+ ["2 คะแนน",[["Rash","ผื่นอักเสบ",2,""],["Alopecia","ผมร่วงผิดปกติเป็นหย่อมหรือทั่วไป",2,""],["Mucosal ulcers","แผลในปากหรือจมูก",2,""],["Pleurisy","เจ็บอกจาก pleura + rub/effusion/หนา",2,"cp"],["Pericarditis","เจ็บ + rub/effusion/EKG/echo",2,"cp"],["Low complement","C3, C4 หรือ CH50 ต่ำ",2,"sero"],["Increased DNA binding","anti-dsDNA สูงกว่าค่าปกติ",2,"sero"]]],
+ ["1 คะแนน",[["Fever","> 38 °C ไม่มีติดเชื้อ",1,"fever"],["Thrombocytopenia","< 100,000/มม.³ ไม่ใช่จากยา",1,""],["Leukopenia","< 3,000/มม.³ ไม่ใช่จากยา",1,""]]]
+];
+document.getElementById("sdItems").innerHTML=SD.map((g,gi)=>`<div class="dom"><h4><span>${esc(g[0])}</span></h4><div class="checks">${g[1].map((x,i)=>`<label><input type="checkbox" id="sd${gi}_${i}" data-p="${x[2]}" data-k="${x[3]}"><span class="txt">${esc(x[0])}<small>${esc(x[1])}</small></span><span class="pt">${x[2]}</span></label>`).join("")}</div></div>`).join("");
+function sledai(){
+  const on=[...document.querySelectorAll("#sdItems input:checked")];
+  const tot=on.reduce((a,i)=>a+ +i.dataset.p,0);
+  const clin=on.filter(i=>i.dataset.k!=="sero").reduce((a,i)=>a+ +i.dataset.p,0);
+  const major=on.some(i=>["cns","vasc","renal","cp","fever"].includes(i.dataset.k));
+  const pga=parseFloat(document.getElementById("pga").value),pred=parseFloat(document.getElementById("pred").value);
+  const hemGI=document.getElementById("hemGI").checked,newAct=document.getElementById("newAct").checked;
+  document.getElementById("sdOut").innerHTML=tot+"<small>คะแนน</small>";
+  document.getElementById("sdSplit").textContent=`clinical SLEDAI ${clin}`;
+  document.getElementById("sdBar").style.width=Math.min(100,tot/30*100)+"%";
+  const lvl=tot===0?"ไม่มี activity":tot<=5?"activity น้อย (1–5)":tot<=10?"activity ปานกลาง (6–10)":tot<=19?"activity สูง (11–19)":"activity สูงมาก (≥ 20)";
+  const okIn=Number.isFinite(pga)&&Number.isFinite(pred);
+  let state,cls;
+  if(!okIn){state="ใส่ PGA และขนาด prednisolone เพื่อประเมิน remission/LLDAS";cls="out"}
+  else if(clin===0&&pga<0.5&&pred<=5){state="<strong>DORIS remission</strong> — คงยาเดิม พิจารณาลดสเตียรอยด์ต่อจนหยุด";cls="out v-ok"}
+  else if(tot<=4&&!major&&!hemGI&&!newAct&&pga<=1&&pred<=7.5){state="<strong>LLDAS</strong> — ถึงเป้า low disease activity · ตั้งเป้าลด pred ≤ 5 มก.";cls="out v-ok"}
+  else{
+    const why=[];
+    if(tot>4)why.push("SLEDAI > 4");if(major)why.push("มี activity ในอวัยวะหลัก");if(hemGI)why.push("hemolysis/GI");if(newAct)why.push("activity ใหม่");if(pga>1)why.push("PGA > 1");if(pred>7.5)why.push("pred > 7.5 มก.");
+    state=`<strong>ยังไม่ถึง LLDAS</strong> (${why.join(" · ")}) — ทบทวน adherence แล้วพิจารณาปรับหรือเพิ่มยาตามอวัยวะที่ active`;cls=major?"out v-bad":"out v-warn";
+  }
+  const o=document.getElementById("sdVerdict");o.className=cls;
+  o.innerHTML=`SLEDAI-2K <b>${tot}</b> = ${lvl}<br>${state}<div class="small" style="margin-top:6px">Flare มักนิยามเมื่อคะแนนเพิ่ม &gt; 3 จากครั้งก่อน · ตัดสินการรักษาจากอวัยวะที่เกี่ยวข้อง ไม่ใช่ตัวเลขอย่างเดียว</div>`;
+}
+document.querySelectorAll("#sdItems input,#hemGI,#newAct").forEach(i=>i.addEventListener("change",sledai));
+["pga","pred"].forEach(id=>document.getElementById(id).addEventListener("input",sledai));
+document.getElementById("sdReset").addEventListener("click",()=>{document.querySelectorAll("#sdItems input,#hemGI,#newAct").forEach(i=>i.checked=false);document.getElementById("pga").value=0;document.getElementById("pred").value=0;sledai()});
+["sd1_0","sd2_0","sd2_5"].forEach(id=>{const e=document.getElementById(id);if(e)e.checked=true});
+sledai();
+
+/* ---------- HCQ ---------- */
+function hcq(){
+  const w=parseFloat(document.getElementById("hcqW").value),g=parseFloat(document.getElementById("hcqG").value);
+  const o=document.getElementById("hcqOut");
+  if(!(w>0)){o.innerHTML="ใส่น้ำหนักเป็นตัวเลข";return}
+  let daily=Math.min(5*w,400),note="";
+  const ckd=g>=0&&g<30;
+  if(ckd){daily=daily*0.75;note=" (ลด 25% เพราะ eGFR &lt; 30)"}
+  const week=daily*7;
+  let tabs=Math.floor(week/200+1e-9);tabs=Math.max(1,Math.min(14,tabs));
+  const mgkg=(tabs*200/7/w);
+  let sched;
+  if(tabs>=14)sched="200 มก. วันละ 2 ครั้งทุกวัน (400 มก./วัน)";
+  else if(tabs>=7)sched=tabs===7?"200 มก. วันละครั้งทุกวัน":`200 มก. ทุกวัน + เพิ่มอีก 200 มก. (รวม 400) ใน ${tabs-7} วัน/สัปดาห์`;
+  else sched=`200 มก. วันละครั้ง ${tabs} วัน/สัปดาห์`;
+  const hiTabs=Math.min(14,Math.floor(Math.min(6.5*w,400)*7/200+1e-9));
+  o.innerHTML=`เป้า ≤ <strong>${Math.round(daily)} มก./วัน</strong>${note} = ${Math.round(week)} มก./สัปดาห์<br>ใช้เม็ด 200 มก. <strong>${tabs} เม็ด/สัปดาห์</strong> → ${sched}<br>ได้จริงเฉลี่ย <b class="num">${mgkg.toFixed(2)}</b> มก./กก./วัน
+  <div class="small" style="margin-top:8px">ACR 2025: ช่วงเริ่มหรือคุมโรคไม่อยู่ ให้สูงขึ้นชั่วคราวได้ถึง 6.5 มก./กก./วัน (≈ ${hiTabs} เม็ด/สัปดาห์) แล้วลดลงให้เฉลี่ยระยะยาว ≤ 5 · ถ้าขนาดเกิน 5 มก./กก. หรือ eGFR &lt; 60 ควรตรวจตาทุกปีตั้งแต่ช่วงแรก ไม่ต้องรอครบ 5 ปี</div>`;
+}
+["hcqW","hcqG"].forEach(id=>document.getElementById(id).addEventListener("input",hcq));hcq();
+
+/* ---------- GC taper (KDIGO 2024 Fig 7) ---------- */
+const GC={
+ high:{p:"Pulse MP 0.25–0.5 ก./วัน ≤ 3 วัน (หรือไม่ให้)",r:[["0–2",[0.8,1.0],80],["3–4",[0.6,0.7],null],["5–6",30],["7–8",25],["9–10",20],["11–12",15],["13–14",12.5],["15–16",10],["17–18",7.5],["19–20",7.5],["21–24",5],["≥ 25","< 5"]]},
+ moderate:{p:"Pulse MP 0.25–0.5 ก./วัน ≤ 3 วัน (มักให้)",r:[["0–2",[0.6,0.7],50],["3–4",[0.5,0.6],null],["5–6",20],["7–8",15],["9–10",12.5],["11–12",10],["13–14",7.5],["15–16",7.5],["17–18",5],["19–20",5],["21–24","< 5"],["≥ 25","< 5"]]},
+ reduced:{p:"Pulse MP 0.25–0.5 ก./วัน ≤ 3 วัน (มักให้)",r:[["0–2",[0.5,0.6],40],["3–4",[0.3,0.4],null],["5–6",15],["7–8",10],["9–10",7.5],["11–12",5],["13–14",2.5],["15–16",2.5],["17–18",2.5],["19–20",2.5],["21–24",2.5],["≥ 25","< 2.5"]]}
+};
+const r25=x=>Math.round(x/2.5)*2.5;
+function gc(){
+  const w=parseFloat(document.getElementById("gcW").value),s=GC[document.getElementById("gcS").value];
+  const o=document.getElementById("gcOut");
+  if(!(w>0)){o.innerHTML="ใส่น้ำหนักเป็นตัวเลข";return}
+  let reach=null;let cap0=null;
+  const rows=s.r.map(([wk,d,cap],i)=>{
+    let txt,val;
+    if(Array.isArray(d)){
+      if(cap)cap0=cap;
+      const c=cap||cap0;
+      let lo=r25(d[0]*w),hi=r25(d[1]*w);
+      if(c){lo=Math.min(lo,c);hi=Math.min(hi,c)}
+      txt=lo===hi?`${lo}`:`${lo}–${hi}`;val=hi;
+      txt+=` <span class="small">(${d[0]}–${d[1]} มก./กก.${cap?`, สูงสุด ${cap}`:""})</span>`;
+    }else if(typeof d==="number"){txt=`${d}`;val=d}else{txt=d;val=0}
+    if(reach===null&&val<=5)reach=wk;
+    return `<tr><td class="num">${wk}</td><td>${txt}</td></tr>`;
+  }).join("");
+  o.innerHTML=`${esc(s.p)} แล้ว prednisolone ต่อวัน:
+  <div class="tbl" style="margin-top:10px"><table style="min-width:0"><thead><tr><th class="num">สัปดาห์</th><th>Prednisolone (มก./วัน)</th></tr></thead><tbody>${rows}</tbody></table></div>
+  <div style="margin-top:10px">ถึง ≤ 5 มก./วัน ที่สัปดาห์ <strong>${reach}</strong> · เป้า ACR ≤ 5 มก. ภายใน 6 เดือน (~26 สัปดาห์) · EULAR/KDIGO ภายใน 4–6 เดือน</div>
+  <div class="small" style="margin-top:6px">ปัดเศษเป็นทีละ 2.5 มก. · ตัวอย่างสูตรจาก KDIGO ปรับตามการตอบสนองและผลข้างเคียงของแต่ละราย</div>`;
+}
+["gcW","gcS"].forEach(id=>document.getElementById(id).addEventListener("input",gc));
+document.getElementById("gcS").addEventListener("change",gc);gc();
+
+/* ---------- LN response ---------- */
+function ln(){
+  const u0=parseFloat(document.getElementById("u0").value),u1=parseFloat(document.getElementById("u1").value);
+  const e0=parseFloat(document.getElementById("e0").value),e1=parseFloat(document.getElementById("e1").value);
+  const mo=+document.getElementById("mo").value;
+  const o=document.getElementById("lnOut");
+  if(!(u0>0)||!(u1>=0)||!(e0>0)||!(e1>0)){o.className="out";o.innerHTML="ใส่ค่าให้ครบเป็นตัวเลข";return}
+  const red=(u0-u1)/u0*100,de=(e1-e0)/e0*100,stable=de>=-20;
+  let cat;
+  if(u1<0.5&&stable)cat="CRR";else if(red>=50&&u1<3&&stable)cat="PRR";else cat="NR";
+  const catTxt={CRR:"Complete renal response",PRR:"Partial renal response",NR:"ยังไม่ถึง partial response"}[cat];
+  let ms,msOk;
+  if(mo===3){msOk=red>=25&&stable;ms="EULAR 3 เดือน: UPCR ลด ≥ 25% และ eGFR คงที่"}
+  else if(mo===6){msOk=red>=50&&stable;ms="EULAR 6 เดือน: UPCR ลด ≥ 50%"}
+  else{msOk=u1<0.7&&stable;ms="EULAR 12 เดือน: UPCR < 0.7 ก./ก."}
+  let adv,cls;
+  if(!stable){adv="<b>eGFR ลด &gt; 20%</b> — แยกสาเหตุอื่น (ยา CNI, ขาดน้ำ, TMA, ติดเชื้อ) แล้วพิจารณา escalate เร็วหรือ repeat biopsy ไม่ต้องรอครบ 6 เดือน (ACR)";cls="v-bad"}
+  else if(cat==="CRR"){adv="รักษาด้วยสูตรเดิมต่อ ≥ 3–5 ปี · ลด GC จนหยุดหลัง CRR ≥ 1 ปี · UPCR ทุก 3–6 เดือน";cls="v-ok"}
+  else if(msOk){adv="ตามเป้าในช่วงเวลานี้ — ให้สูตรเดิมต่อ ตรวจ UPCR อย่างน้อยทุก 3 เดือน";cls="v-mid"}
+  else if(mo<6){adv="ยังไม่ถึง milestone แรก — ตรวจ adherence และขนาดยา (เช่น ระดับ MPA, น้ำหนัก) ถ้าโปรตีนเพิ่มขึ้นหรือไตแย่ลงให้พิจารณา escalate เร็ว";cls="v-warn"}
+  else{adv="ไม่ตอบสนองตามเป้า — ตรวจ adherence/ขนาดยาก่อน แล้ว <b>escalate</b>: dual → triple · triple → เปลี่ยนสูตรหรือเพิ่ม anti-CD20 · พิจารณา repeat biopsy (ACR: ≥ 6 เดือนแล้วยังมีโปรตีน)";cls="v-bad"}
+  o.className="out "+cls;
+  o.innerHTML=`UPCR ลดลง <b class="num">${red.toFixed(0)}%</b> (${u0} → ${u1}) · eGFR เปลี่ยน <b class="num">${de>0?"+":""}${de.toFixed(0)}%</b><br>
+  สถานะ: <strong>${catTxt}</strong> · ${ms} → <strong>${msOk?"ผ่าน":"ไม่ผ่าน"}</strong><br>${adv}
+  <div class="small" style="margin-top:6px">ใช้เกณฑ์ eGFR คงที่ = ลดไม่เกิน 20% (ACR/EULAR) · KDIGO ใช้ ±10–15%</div>`;
+}
+["u0","u1","e0","e1"].forEach(id=>document.getElementById(id).addEventListener("input",ln));
+document.getElementById("mo").addEventListener("change",ln);ln();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body></html>
