@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICU Drugs for GP — สรุปยาในภาวะวิกฤต</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1b2333; --muted:#5d6779; --line:#e2e6ec;
+  --navy:#16324f; --accent:#0f7c86; --accent-soft:#e3f3f4;
+  --warn:#b4540a; --warn-soft:#fff4e5; --red:#b42318; --red-soft:#fdecea;
+  --upd:#6b4fbb; --upd-soft:#f1edfb; --ok:#1d7a45; --ok-soft:#e7f5ec;
+  --c1:#c2410c; --c2:#7c3aed; --c3:#be123c; --c4:#0369a1; --c5:#047857; --c6:#4d5d75;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:'IBM Plex Sans Thai',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.65}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+header.top .brand{font-weight:700;font-size:16px;line-height:1.2;white-space:nowrap}
+header.top .brand small{display:block;font-weight:400;font-size:12px;opacity:.75}
+.search{flex:1;max-width:460px;margin-left:auto;position:relative}
+.search input{width:100%;padding:8px 12px 8px 34px;border-radius:8px;border:0;font:inherit;font-size:14px;background:rgba(255,255,255,.14);color:#fff;outline:none}
+.search input::placeholder{color:rgba(255,255,255,.7)}
+.search input:focus{background:#fff;color:var(--ink)}
+.search svg{position:absolute;left:10px;top:9px;opacity:.8}
+.menu-btn{display:none;background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:8px;padding:7px 10px;font:inherit;cursor:pointer}
+.layout{display:grid;grid-template-columns:250px 1fr;max-width:1240px;margin:0 auto;gap:24px;padding:20px 16px 80px}
+nav.side{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 92px);overflow:auto;padding-right:4px}
+nav.side a{display:flex;gap:8px;align-items:baseline;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
+nav.side a .n{font-family:var(--mono);font-size:12px;color:var(--muted);min-width:20px}
+nav.side a:hover{background:#e9edf2}
+nav.side a.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+nav.side a.sub{padding-left:38px;font-size:13px;color:var(--muted)}
+nav.side .grp{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 10px 4px}
+main{min-width:0}
+.hero{background:linear-gradient(135deg,#16324f,#0f5f6b);color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:22px}
+.hero h1{margin:0 0 4px;font-size:24px;line-height:1.3}
+.hero p{margin:4px 0;opacity:.9}
+.hero .meta{font-size:13px;opacity:.75;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips a{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;padding:5px 12px;border-radius:999px;font-size:13px}
+.chips a:hover{background:rgba(255,255,255,.25)}
+section.chap{margin-bottom:34px}
+.chap-h{display:flex;align-items:center;gap:12px;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.chap-h .num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:700;font-family:var(--mono);flex:none}
+.chap-h h2{margin:0;font-size:21px;line-height:1.3}
+.chap-h h2 small{display:block;font-size:13px;font-weight:400;color:var(--muted)}
+h3.sub{font-size:17px;margin:22px 0 10px;color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.card.wide{grid-column:1/-1}
+.card h4{margin:0 0 6px;font-size:16.5px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.card h4 .tag{font-size:11.5px;font-weight:500;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.card p{margin:6px 0}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:4px 10px;margin:8px 0 0;font-size:14.5px}
+.kv dt{color:var(--muted);font-size:13px;padding-top:1px}
+.kv dd{margin:0}
+.card ul,.card ol{margin:4px 0;padding-left:20px}
+.card li{margin:2px 0}
+.dose{font-family:var(--mono);font-size:13.5px;background:#f0f3f7;padding:1px 6px;border-radius:5px;white-space:nowrap}
+.order{margin-top:10px;background:#0f1d2e;color:#d6f1f4;border-radius:10px;padding:10px 12px;font-family:var(--mono);font-size:12.8px;line-height:1.55;white-space:pre-wrap;position:relative}
+.order::before{content:"คำสั่งตัวอย่าง";display:block;font-family:'IBM Plex Sans Thai';font-size:11px;color:#86a7b8;margin-bottom:2px}
+.callout{border-radius:10px;padding:10px 14px;margin:10px 0;font-size:14.5px}
+.callout.warn{background:var(--warn-soft);border-left:4px solid var(--warn)}
+.callout.red{background:var(--red-soft);border-left:4px solid var(--red)}
+.callout.tip{background:var(--accent-soft);border-left:4px solid var(--accent)}
+.callout.ok{background:var(--ok-soft);border-left:4px solid var(--ok)}
+.callout b.h{display:block;margin-bottom:2px}
+details.upd{background:var(--upd-soft);border:1px solid #ddd3f5;border-radius:12px;padding:10px 14px;margin:14px 0}
+details.upd summary{cursor:pointer;font-weight:600;color:var(--upd);font-size:14.5px}
+details.upd ul{margin:8px 0 2px;padding-left:20px;font-size:14.5px}
+details.upd .fine{font-size:12.5px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;font-size:13.8px;background:#fff}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eef2f6;font-weight:600}
+.tbl{overflow-x:auto;border-radius:10px;border:1px solid var(--line);margin:8px 0}
+.tbl table{border:0}
+.tbl th:first-child,.tbl td:first-child{border-left:0}
+.tbl th:last-child,.tbl td:last-child{border-right:0}
+.formula{font-family:var(--mono);background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:14.5px;text-align:center}
+.formula b{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer;margin-top:10px}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.btn.sm{padding:3px 9px;font-size:12.5px;margin:0}
+.hidden{display:none!important}
+.noresult{padding:20px;text-align:center;color:var(--muted)}
+mark{background:#ffe58a;padding:0 1px;border-radius:2px}
+/* calculators */
+.calc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.calc h4{margin:0 0 10px;font-size:16.5px}
+.frm{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.frm label{display:flex;flex-direction:column;font-size:12.5px;color:var(--muted);gap:3px}
+.frm input,.frm select{font:inherit;font-size:14.5px;padding:7px 9px;border:1px solid #cdd4dd;border-radius:8px;background:#fff;color:var(--ink);min-width:0}
+.frm input:focus,.frm select:focus{outline:2px solid var(--accent);border-color:transparent}
+.frm .span2{grid-column:span 2}
+.out{margin-top:12px;background:var(--accent-soft);border-radius:10px;padding:10px 14px;font-size:14.5px}
+.out .big{font-size:22px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.out .row{display:flex;flex-wrap:wrap;gap:6px 22px}
+.out .warnline{color:var(--red);font-weight:600}
+.mini{font-size:12.5px;color:var(--muted)}
+.dtab td,.dtab th{text-align:center;font-family:var(--mono);font-size:13px}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:#eef2f6;color:var(--muted);margin-left:4px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr;padding:14px 12px 80px}
+  nav.side{position:fixed;inset:56px 0 0 0;max-height:none;background:#fff;z-index:25;padding:12px;transform:translateX(-100%);transition:.2s;box-shadow:4px 0 20px rgba(0,0,0,.1);width:min(320px,86vw)}
+  nav.side.open{transform:none}
+  .menu-btn{display:block}
+  header.top .brand small{display:none}
+  .grid,.calc-grid{grid-template-columns:1fr}
+  .kv{grid-template-columns:84px 1fr}
+  .hero{padding:18px}
+  .hero h1{font-size:20px}
+}
+@media (max-width:520px){ header.top .brand{font-size:14px} .frm{grid-template-columns:1fr 1fr} }
+
+/* dark theme (Medisüem toggle) */
+:root[data-theme="dark"]{--bg:#0f1520;--panel:#171f2d;--ink:#e4eaf5;--muted:#9aa7bc;--line:#2a3548;--accent:#3fb8c2;--accent-soft:#16323a;--warn-soft:#3a2a14;--red-soft:#3d1d1d;--upd-soft:#251f3a;--ok-soft:#173226;--navy:#0b2238}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1520;--panel:#171f2d;--ink:#e4eaf5;--muted:#9aa7bc;--line:#2a3548;--accent:#3fb8c2;--accent-soft:#16323a;--warn-soft:#3a2a14;--red-soft:#3d1d1d;--upd-soft:#251f3a;--ok-soft:#173226;--navy:#0b2238}}
+table,.formula,.btn.ghost,.frm input,.frm select{background:var(--panel);color:var(--ink)}
+th{background:color-mix(in srgb,var(--panel) 80%,var(--muted) 20%)}
+.dose{background:color-mix(in srgb,var(--panel) 85%,var(--muted) 15%)}
+nav.side a:hover{background:color-mix(in srgb,var(--bg) 85%,var(--muted) 15%)}
+.frm input,.frm select{border-color:var(--line)}
+details.upd{border-color:color-mix(in srgb,var(--upd) 30%,transparent)}
+:root[data-theme="dark"] details.upd summary{color:#b9a6f0}
+@media (max-width:900px){nav.side{background:var(--panel)}}
+.toast{bottom:70px}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" id="menuBtn" aria-label="เมนูบท">☰ บท</button>
+  <div class="brand">ICU Drugs for GP<small>สรุปชีท · ยาที่ใช้บ่อยในภาวะวิกฤต</small></div>
+  <div class="search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="ค้นหายา / ภาวะ เช่น norepinephrine, hyperkalemia" autocomplete="off">
+  </div>
+</header>
+
+<div class="layout">
+<nav class="side" id="side">
+  <div class="grp">เนื้อหา</div>
+  <a href="#basics"><span class="n">0</span>หลักการคำนวณ drip</a>
+  <a href="#vaso"><span class="n">1</span>Vasopressor & inotrope</a>
+  <a href="#dilator"><span class="n">2</span>Vasodilator</a>
+  <a href="#cpr"><span class="n">3</span>CPR · Antiarrhythmic · ACS</a>
+  <a href="#fluid"><span class="n">4</span>Fluid therapy</a>
+  <a class="sub" href="#sodium">Na · polyuria · oliguria</a>
+  <a class="sub" href="#acidbase">Acid–base · NaHCO₃</a>
+  <a class="sub" href="#potassium">K⁺</a>
+  <a class="sub" href="#ca-po4-mg">Ca²⁺ · PO₄ · Mg²⁺</a>
+  <a href="#sedation"><span class="n">5</span>Sedation · Analgesia · NMB</a>
+  <a href="#misc"><span class="n">6</span>Miscellaneous drugs</a>
+  <a class="sub" href="#misc-neuro">Neuro</a>
+  <a class="sub" href="#misc-endo">Endocrine</a>
+  <a class="sub" href="#misc-heme">Heme · GI · Resp</a>
+  <a class="sub" href="#misc-abx">Antimicrobial</a>
+  <a class="sub" href="#misc-tox">Toxicology</a>
+  <div class="grp">เครื่องมือ</div>
+  <a href="#pearls"><span class="n">★</span>จุดพลาดบ่อย / ห้ามผสม</a>
+  <a href="#calc"><span class="n">⌘</span>เครื่องคิดเลข</a>
+</nav>
+
+<main id="main">
+<div class="hero">
+  <h1>ยาที่ใช้บ่อยสำหรับผู้ป่วยภาวะวิกฤต<br><span style="font-weight:400;font-size:.8em">ICU Drugs for General Practitioner (Edition 2)</span></h1>
+  <p>สรุปเฉพาะ <b>ยาทางหลอดเลือดดำ</b> เน้น practical point — การผสมยา ขนาดยา การคำนวณ drip และการเขียนคำสั่งการรักษา</p>
+  <div class="meta">ต้นฉบับ: นพ.เอกรินทร์ ภูมิพิเชฐ (2558, 70 หน้า) · อ้างอิงยุคนั้น ACC/AHA CPR 2010, Surviving Sepsis 2012 — ดูกล่อง <span style="color:#d9cdfb">“อัปเดต”</span> สีม่วงท้ายแต่ละบท</div>
+  <div class="chips">
+    <a href="#calc">⌘ คำนวณ drip ทันที</a><a href="#pearls">★ จุดพลาดบ่อย</a><a href="#potassium">K⁺</a><a href="#sodium">Na⁺</a><a href="#sedation">Sedation</a>
+  </div>
+</div>
+
+<!-- ================= 0 BASICS ================= -->
+<section class="chap" id="basics">
+  <div class="chap-h"><div class="num" style="background:var(--navy)">0</div><h2>หลักการคำนวณ drip<small>ใช้ได้กับยา continuous infusion ทุกตัว</small></h2></div>
+  <div class="grid">
+    <div class="card">
+      <h4>อุปกรณ์ & หน่วย</h4>
+      <ul>
+        <li>ปริมาตร ≤ 50 mL → <b>syringe pump</b> · &gt; 50 mL → <b>infusion pump</b></li>
+        <li>Microdrop: 1 mL = 60 µd และ 1 hr = 60 min ⇒ <b>1 mL/hr = 1 µd/min</b></li>
+        <li>Macrodrop (ไม่ผ่าน pump): 1 mL = 15 drop</li>
+        <li>Vasoactive drug t½ ≈ 1–2 นาที → steady state ที่ 3–5 t½ ⇒ <b>ปรับยาทุก 5–10 นาที</b></li>
+        <li>Pump ไม่มีทศนิยม → <b>ปัดขึ้น</b></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>สูตรหลัก (ความเข้มข้น conc = mg/mL)</h4>
+      <div class="formula">µd/min = <b>6 × BW(kg) × dose(µg/kg/min)</b> ÷ (100 × conc)</div>
+      <div class="formula">dose(µg/kg/min) = µd/min × 100 × conc ÷ (6 × BW)</div>
+      <div class="formula">µd/min = 6 × dose(<b>µg/min</b>) ÷ (100 × conc)</div>
+      <p class="mini">ที่มา: 60/1000 = 6/100 เป็นค่าคงที่ · สำหรับหน่วย mg/hr หรือ unit/hr ใช้บัญญัติไตรยางศ์ตรงๆ: mL/hr = dose/hr ÷ conc</p>
+    </div>
+    <div class="card">
+      <h4>ทางลัดที่ควรจำ</h4>
+      <ul>
+        <li>Dopamine <b>1:1</b>, BW 50 kg → 1 µg/kg/min = <b>3 µd/min</b> (2:1 → 1.5 µd/min)</li>
+        <li>Epinephrine 1:10 → <b>µd/min = 10 × mg/hr</b></li>
+        <li>Lidocaine 400 mg/100 mL → 15 mL/hr = 1 mg/min (30=2, 45=3, 60=4)</li>
+        <li>Heparin 100:1 → mL/hr × 100 = unit/hr</li>
+        <li>RI 100 U/100 mL (1:1) → mL/hr = unit/hr</li>
+      </ul>
+      <button class="btn" data-preset="dopa2">⌘ ลองคำนวณ</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1 VASOPRESSOR ================= -->
+<section class="chap" id="vaso">
+  <div class="chap-h"><div class="num" style="background:var(--c1)">1</div><h2>Vasopressor & inotrope<small>เพิ่ม SVR (และ PVR) · ที่ใช้บ่อย 4 ตัว: dopamine, dobutamine, norepinephrine, epinephrine</small></h2></div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Dopaminergic</th><th>β1 inotropic</th><th>β1 chronotropic</th><th>β2</th><th>α1</th></tr>
+    <tr><td>Dopamine 1–5 µg/kg/min</td><td>+++</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+    <tr><td>Dopamine 5–10</td><td>–</td><td>++</td><td>++</td><td>–</td><td>–</td></tr>
+    <tr><td>Dopamine &gt;10</td><td>–</td><td>++</td><td>++</td><td>–</td><td>+++</td></tr>
+    <tr><td>Dobutamine</td><td>–</td><td>+++</td><td>+</td><td>++</td><td>–</td></tr>
+    <tr><td>Norepinephrine</td><td>–</td><td>+</td><td>+</td><td>–</td><td>+++</td></tr>
+    <tr><td>Epinephrine</td><td>–</td><td>+++</td><td>+++</td><td>++</td><td>+++</td></tr>
+    <tr><td>Phenylephrine</td><td>–</td><td>–</td><td>–</td><td>–</td><td>+++</td></tr>
+  </table></div>
+
+  <div class="grid">
+    <article class="card">
+      <h4>Dopamine <span class="tag">vasopressor/inotrope</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>250 mg/10 mL</dd>
+        <dt>ผสม</dt><dd>1:1 = 100 mg in NSS/5%DW 100 mL · <b>2:1</b> (จำกัดน้ำ) = 200 mg/100 mL หรือ 250 mg/125 mL</dd>
+        <dt>Dose</dt><dd><span class="dose">1–20 µg/kg/min</span> · ปรับครั้งละ 3–5 µg/kg/min<br>1–5 dopaminergic (ปัสสาวะออกมากขึ้นแต่ <b>ไม่ลด AKI</b>) · 5–10 β1 · 10–20 α1</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Septic shock ที่ HR ปกติ/ช้า ไม่เสี่ยง tachyarrhythmia · Cardiogenic shock SBP &gt; 70 · Bradycardia ไม่ตอบสนอง atropine (เทียบเท่า TCP) · Neurogenic shock HR ช้า</dd>
+      </dl>
+      <div class="order">Dopamine 200 mg in NSS 100 mL
+Sig. IV drip 10.5 µd/min (= 5 µg/kg/min, BW 70)</div>
+      <button class="btn" data-preset="dopa2">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Dobutamine <span class="tag">inotrope</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>250 mg/20 mL</dd>
+        <dt>ผสม</dt><dd>1:1 = 100 mg/100 mL · 2:1 = 200 mg/100 mL หรือ 250 mg/125 mL</dd>
+        <dt>Dose</dt><dd><span class="dose">1–20 µg/kg/min</span> · ปรับครั้งละ 3–5</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Septic shock ที่ <b>MAP ≥ 65</b> + volume พอแล้ว แต่ ScvO₂ &lt; 70% หรือ lactate ยังสูง · Cardiogenic shock MAP ≥ 65 ต้องการเพิ่ม systolic function</dd>
+      </dl>
+      <div class="callout warn">β2 → ขยาย muscular artery → SVR ↓ → <b>BP ตกช่วงแรก</b> ⇒ ทำ BP ให้ดีขึ้นก่อนแล้วค่อยเริ่ม (ยกเว้น systolic function แย่มาก)</div>
+      <div class="order">Dobutamine 250 mg in NSS 125 mL
+Sig. IV drip 9 µd/min (= 5 µg/kg/min, BW 60)</div>
+      <button class="btn" data-preset="dobu">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Norepinephrine (Levophed) <span class="tag">vasopressor ใช้มากที่สุด</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>4 mg/4 mL</dd>
+        <dt>ผสม</dt><dd><b>ต้องผสมใน dextrose เท่านั้น</b> (saline ตกตะกอน)<br>4:500 ทาง peripheral ได้ · 4:250 อนุโลม peripheral · 8:250 → central</dd>
+        <dt>Dose</dt><dd><span class="dose">1–50 µg/min</span> หรือ <span class="dose">0.02–2 µg/kg/min</span> · ปรับครั้งละ 5 µg/min หรือ 0.03–0.05 µg/kg/min</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Distributive shock ทุกชนิด <b>ยกเว้น anaphylaxis</b> (ใช้ epi) · Cardiogenic/obstructive shock ที่ SBP &lt; 70</dd>
+      </dl>
+      <div class="callout warn">ระวัง limb ischemia ใน PAD/เบาหวาน/สูบบุหรี่ · ยารั่วนอกเส้น → ischemia/gangrene</div>
+      <div class="order">Norepinephrine 4 mg in 5% DW 250 mL
+Sig. IV drip 5.25 µd/min (= 0.02 µg/kg/min, BW 70)
+→ pump ไม่มีทศนิยม ปัดเป็น 6 µd/min</div>
+      <button class="btn" data-preset="ne250">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Epinephrine (adrenaline) <span class="tag">vasopressor/inotrope</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>1 mg/1 mL</dd>
+        <dt>ผสม</dt><dd>1:10 → 10 mg in NSS 100 mL (บางที่ 11 mg/110 mL เผื่อ dead space สาย 10 mL)</dd>
+        <dt>Dose</dt><dd><span class="dose">0.05–1.0 µg/kg/min</span> · ในทางปฏิบัติเริ่ม <span class="dose">0.5 mg/hr</span> ปรับทีละ 0.5 mg/hr (µd/min = 10 × mg/hr)<br>Bradycardia: 2 µg/min</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Anaphylactic shock · Refractory shock · Pulseless arrest (push 1 mg + NSS 20 mL + ยกแขน)</dd>
+      </dl>
+      <div class="order">Epinephrine 10 mg in NSS 100 mL
+Sig. IV drip 5 µd/min (= 0.5 mg/hr)</div>
+      <button class="btn" data-preset="epi">⌘ คำนวณ</button>
+    </article>
+  </div>
+  <details class="upd"><summary>📌 อัปเดตจากแนวทางปัจจุบัน (ไม่อยู่ในต้นฉบับ)</summary>
+    <ul>
+      <li>Surviving Sepsis 2021: <b>norepinephrine เป็น first-line</b>; ไม่แนะนำ dopamine เป็นตัวแรก และไม่ใช้ low-dose “renal dose” dopamine</li>
+      <li>เริ่ม NE ทาง peripheral ได้ช่วงสั้นๆ ระหว่างรอ central line · เพิ่ม vasopressin เมื่อ NE ~0.25–0.5 µg/kg/min</li>
+      <li>Cardiac dysfunction + hypoperfusion แม้ MAP ได้แล้ว → เพิ่ม dobutamine หรือเปลี่ยนเป็น epinephrine</li>
+    </ul>
+    <div class="fine">ตรวจสอบกับฉบับล่าสุดก่อนใช้จริง</div>
+  </details>
+</section>
+
+<!-- ================= 2 VASODILATOR ================= -->
+<section class="chap" id="dilator">
+  <div class="chap-h"><div class="num" style="background:var(--c2)">2</div><h2>Vasodilator<small>ลด SVR, PVR → TPR ลดลง</small></h2></div>
+  <div class="grid">
+    <article class="card">
+      <h4>Nitroglycerine <span class="tag">venodilator</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>50 mg/10 mL</dd>
+        <dt>ผสม</dt><dd>ใน 5% DW 250 mL (1:5 = 50 mg/250) · เข้มข้นขึ้น 1:2.5, 1:2 ถ้าจำกัดน้ำ · <b>ขวดแก้ว</b> (ดูดซึมเข้า PVC; ขวดพลาสติกอนุโลม)</dd>
+        <dt>Dose</dt><dd><span class="dose">5–100 µg/min</span> (ถึง 200) · เพิ่มทีละ 5–10 µg/min ทุก 5–10 นาที</dd>
+        <dt>ข้อบ่งชี้</dt><dd>ACS ที่ยังเจ็บหน้าอก · Heart failure (ลด preload) · Hypertensive emergency ร่วม ACS</dd>
+      </dl>
+      <div class="callout warn">Hypotension ถ้า volume ไม่พอ, reflex tachycardia, ปวดศีรษะ (cerebral venodilation ↑ICP) · <b>ระวัง inferior wall MI</b> (RV infarct, posterior MI, brady)</div>
+      <div class="order">Nitroglycerine 50 mg in 5% DW 250 mL
+Sig. IV drip 1.5 µd/min (5 µg/min)
+ปรับขึ้นทีละ 1.5 µd/min until chest pain relief
+If SBP &lt; 90, HR &gt; 120, headache → notify</div>
+      <button class="btn" data-preset="ntg">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Sodium nitroprusside <span class="tag">arterial &gt; venous</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>50 mg/vial</dd>
+        <dt>ผสม</dt><dd>1:5 (50 mg in 5% DW 250 mL) หรือ 1:10 · <b>กันแสง</b> พันเทปสาย/คลุมขวด</dd>
+        <dt>Dose</dt><dd><span class="dose">0.5–10 µg/kg/min</span> titrate ครั้งละ 0.5 ทุก 5–10 นาที</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Hypertensive emergency (ออกฤทธิ์เป็นนาที) — ควรมี <b>arterial line</b>, แพทย์ปรับยาเอง</dd>
+      </dl>
+      <div class="callout red">Coronary steal → ไม่เหมาะใน CAD · ใช้นาน → <b>cyanide toxicity</b>: wide AG metabolic acidosis ที่อธิบายไม่ได้ → หยุดยา</div>
+      <div class="order">Sodium nitroprusside 50 mg in 5% DW 250 mL
+Sig. IV drip 10.5 µd/min (0.5 µg/kg/min, BW 70)</div>
+      <button class="btn" data-preset="snp">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Nicardipine <span class="tag">DHP CCB</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>10 mg/10 mL</dd>
+        <dt>ผสม</dt><dd>1:5 → 10 mg in NSS 50 mL หรือ 20 mg in NSS 100 mL</dd>
+        <dt>Dose</dt><dd><span class="dose">5–15 mg/hr</span> (ขนาดต่ำกว่านี้ก็ลด BP ได้)</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Hypertensive emergency (ขยายแดง &gt; ดำ) · ใช้คุม BP ก่อน rt-PA</dd>
+      </dl>
+      <div class="order">Nicardipine 20 mg in NSS 100 mL
+Sig. IV drip 10 µd/min (2 mg/hr)</div>
+      <button class="btn" data-preset="nicar">⌘ คำนวณ</button>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 3 CPR ================= -->
+<section class="chap" id="cpr">
+  <div class="chap-h"><div class="num" style="background:var(--c3)">3</div><h2>CPR · Antiarrhythmic · ACS</h2></div>
+  <div class="callout tip"><b class="h">Unstable signs (1 ใน 5)</b>shock · chest pain · syncope · alteration of consciousness · heart failure</div>
+  <div class="grid">
+    <article class="card">
+      <h4>Epinephrine (CPR)</h4>
+      <p>Pulseless arrest <b>ทุก rhythm</b>: <span class="dose">1 mg IV</span> ตามด้วย NSS 20 mL ทุกครั้ง + ยกแขน (ถ้าไม่มีข้อห้าม)</p>
+    </article>
+    <article class="card">
+      <h4>Atropine <span class="tag">antimuscarinic</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>0.6 mg/1 mL</dd>
+        <dt>Dose</dt><dd>Symptomatic bradycardia: <span class="dose">0.6 mg</span> ซ้ำได้ ถึง 5 ครั้ง (max 3 mg)<br>OP/carbamate: 0.6 mg ซ้ำจน atropinization</dd>
+      </dl>
+      <div class="callout red">อย่าสับสน <b>atropine 0.6 mg</b> ↔ <b>adenosine 6 mg</b></div>
+    </article>
+    <article class="card">
+      <h4>Adenosine <span class="tag">AV nodal block</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>3 mg/mL</dd>
+        <dt>Dose</dt><dd><span class="dose">6 mg</span> → <span class="dose">12 mg</span> · rapid push, <b>double-syringe</b> + 3-way, ตาม NSS 10 mL</dd>
+        <dt>ข้อบ่งชี้</dt><dd>SVT (AVNRT) ทั้ง unstable (ทางเลือกนอกจาก synchronized cardioversion) และ stable</dd>
+        <dt>ห้าม</dt><dd>สงสัย WPW · asthma/COPD (bronchospasm)</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h4>Amiodarone <span class="tag">multichannel + α/β block</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>150 mg/3 mL</dd>
+        <dt>ข้อบ่งชี้</dt><dd>VF/pVT (ไม่ใช่ TdP) · stable AF, SVT/flutter · คุม rate ใน pre-excitation · stable wide-complex (VT) — <b>ห้ามใน QT ยาว/TdP</b></dd>
+        <dt>Arrest</dt><dd><span class="dose">300 mg</span> + NSS 20 mL → ครั้งถัดไป <span class="dose">150 mg</span></dd>
+        <dt>Stable</dt><dd>① 150 mg/10 min (ซ้ำได้) → 1 mg/min × 6 hr → 0.5 mg/min (รวม ≤ 2.2 g/24 hr)<br>② 150–300 mg/30 min → 600–900 mg/24 hr</dd>
+        <dt>AE</dt><dd>Brady, hypotension, phlebitis · thyroid (hyper/hypo) → ส่ง TFT ก่อนให้ถ้าทำได้ · <b>หลีกเลี่ยง O₂ สูง</b> ขณะ drip (pulmonary fibrosis)</dd>
+      </dl>
+      <div class="order">Amiodarone 150 mg in 5% DW 100 mL  IV drip in 10 min then
+Amiodarone 360 mg in 5% DW 500 mL  IV drip in 6 hr (83 mL/hr) then
+Amiodarone 540 mg in 5% DW 500 mL  IV drip in 18 hr (28 mL/hr)
+If SBP &lt; 90, HR &lt; 100 → notify</div>
+    </article>
+    <article class="card">
+      <h4>Magnesium sulfate <span class="tag">TdP</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd><b>50% MgSO₄</b>: 1 mL = 0.5 g, vial 2 mL = 1 g (อายุรกรรม/ICU)<br>20% MgSO₄: 1 mL = 0.2 g (สูติกรรม)</dd>
+        <dt>TdP arrest</dt><dd><span class="dose">1–2 g</span> = 50% 2–4 mL IV + NSS 20 mL</dd>
+        <dt>Stable TdP</dt><dd>1–2 g IV ใน 15 นาที → <span class="dose">1–2 g/hr × 24 hr</span></dd>
+        <dt>Monitor</dt><dd>BP, UO ≥ 0.5 mL/kg/hr, RR, DTR (hyporeflexia) · ไตเสื่อม → ตรวจระดับ Mg</dd>
+      </dl>
+      <div class="callout red">หน่วยเป็น <b>กรัม (g)</b> ไม่ใช่ mg</div>
+      <div class="order">50% MgSO4 4 mL in 5% DW 100 mL  IV drip in 15 min then
+50% MgSO4 8 mL in 5% DW 100 mL  IV drip in 4 hr (1 g/hr)
+หรือ 50% MgSO4 48 mL + 5%DW 452 mL drip 24 hr (20 mL/hr = 1 g/hr)</div>
+      <button class="btn" data-preset="mg">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Lidocaine (2% Xylocaine, without adrenaline)</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>2% = 2 g/100 mL = 20 mg/mL · vial 20 mL = 400 mg</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Stable monomorphic VT โดยเฉพาะกลุ่ม QT ยาวที่ให้ amiodarone/MgSO₄ ไม่ได้</dd>
+        <dt>Dose</dt><dd>Load <span class="dose">1–1.5 mg/kg</span> → ซ้ำ 0.5–0.75 mg/kg ทุก 5–10 นาที (สะสม ≤ 3 mg/kg) · Maint <span class="dose">1–4 mg/min</span></dd>
+        <dt>ผสม</dt><dd>2% 20 mL + NSS 80 mL (= 4 mg/mL) → 15 mL/hr = 1 mg/min</dd>
+        <dt>AE</dt><dd>พูดช้า ซึม ชัก หัวใจเต้นช้า</dd>
+      </dl>
+      <div class="order">2% xylocaine (w/o adrenaline) 50 mg IV stat then
+2% xylocaine 20 mL in NSS 80 mL  IV drip 15 mL/hr (1 mg/min)</div>
+      <button class="btn" data-preset="lido">⌘ คำนวณ</button>
+    </article>
+    <article class="card wide">
+      <h4>Streptokinase <span class="tag">fibrinolytic</span></h4>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
+        <dl class="kv" style="margin:0">
+          <dt>Prep</dt><dd>1.5 MU/vial</dd>
+          <dt>Dose</dt><dd>STEMI: <span class="dose">1.5 MU IV in 60 min</span><br>Massive PE: 250,000 U → 100,000 U/hr × 24 hr</dd>
+          <dt>ผสม</dt><dd>SWI 5 mL ฉีดข้างขวด <b>หมุน ห้ามเขย่า</b> → NSS/5%DW 100 mL</dd>
+          <dt>ติดตาม</dt><dd>Bleeding/ICH · ST ลด ≥ 50% = reperfusion; ไม่ถึง → PCI · Reperfusion arrhythmia (PVC, AIVR) <b>ไม่ต้องหยุดยา</b></dd>
+          <dt>หลังให้</dt><dd>UFH 12 IU/kg/hr × 24–48 hr (aPTT ratio 2–2.5) หรือ enoxaparin 1 mg/kg SC q12h (≥75 ปี 0.75 mg/kg; GFR &lt; 30 วันละครั้ง)</dd>
+        </dl>
+        <div>
+          <div class="tbl"><table>
+            <tr><th>Absolute CI</th><th>Relative CI</th></tr>
+            <tr><td>Prior ICH<br>Structural cerebral vascular lesion<br>Malignant intracranial neoplasm<br>Ischemic stroke &lt; 3 เดือน<br>Suspected aortic dissection<br>Bleeding diathesis (ยกเว้น menses)<br>Closed head/facial trauma &lt; 3 เดือน</td>
+            <td>SBP &gt; 180 / DBP &gt; 110<br>Traumatic/prolonged CPR, surgery &lt; 3 wk<br>Internal bleeding 2–4 wk<br>Non-compressible puncture<br>SK: เคยได้ (&gt; 5 วัน) / เคยแพ้<br>Pregnancy · Active PU · INR &gt; 7</td></tr>
+          </table></div>
+          <div class="order">Streptokinase 1,500,000 U in NSS 100 mL
+Sig. IV drip in 1 hr (100 mL/hr)
+Record neuro sign q 1 hr
+If GCS drop &gt; 2, pupil unequal, seizure, headache → notify</div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <details class="upd"><summary>📌 อัปเดตจากแนวทางปัจจุบัน (ไม่อยู่ในต้นฉบับ)</summary>
+    <ul>
+      <li>AHA 2020: bradycardia → <b>atropine 1 mg</b> ทุก 3–5 นาที (max 3 mg); ถ้าไม่ตอบสนอง dopamine 5–20 µg/kg/min หรือ epinephrine 2–10 µg/min หรือ TCP</li>
+      <li>Shock-refractory VF/pVT: amiodarone 300 → 150 mg <b>หรือ</b> lidocaine 1–1.5 mg/kg → 0.5–0.75 mg/kg</li>
+      <li>Adenosine vial ทั่วไป 6 mg/2 mL</li>
+    </ul>
+    <div class="fine">AHA ออก guideline ใหม่ปี 2025 — ควรตรวจรายละเอียดกับฉบับล่าสุด</div>
+  </details>
+</section>
+
+<!-- ================= 4 FLUID ================= -->
+<section class="chap" id="fluid">
+  <div class="chap-h"><div class="num" style="background:var(--c4)">4</div><h2>Fluid therapy & electrolyte correction</h2></div>
+  <h3 class="sub">Crystalloids</h3>
+  <div class="tbl"><table>
+    <tr><th>Solution</th><th>Na⁺</th><th>K⁺</th><th>Cl⁻</th><th>Ca²⁺</th><th>Buffer</th><th>Dextrose g/dL</th><th>mOsm/L</th></tr>
+    <tr><td>0.9% NaCl</td><td>154</td><td>–</td><td>154</td><td>–</td><td>–</td><td>–</td><td>308</td></tr>
+    <tr><td>0.45% NaCl</td><td>77</td><td>–</td><td>77</td><td>–</td><td>–</td><td>–</td><td>154</td></tr>
+    <tr><td>Ringer's lactate / acetate</td><td>130</td><td>4</td><td>109</td><td>3</td><td>28</td><td>–</td><td>273</td></tr>
+    <tr><td>D5W</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>5</td><td>252</td></tr>
+    <tr><td>D5/0.45% NaCl</td><td>77</td><td>–</td><td>77</td><td>–</td><td>–</td><td>5</td><td>406</td></tr>
+    <tr><td>3% NaCl</td><td>513</td><td>–</td><td>513</td><td>–</td><td>–</td><td>–</td><td>1026</td></tr>
+  </table></div>
+  <div class="grid">
+    <div class="card">
+      <h4>Colloids — ประเด็นสำคัญ</h4>
+      <ul>
+        <li>Dextran-40, gelatin (Gelofusine, Haemaccel — <b>มี Ca 6.25 และ K 5.1</b>), 6/10% HES, albumin 5% (iso) / 20% (hyperoncotic ~1,500 mOsm)</li>
+        <li><b>ไม่ให้ HES ใน sepsis</b> (เสี่ยง AKI) · semisynthetic อื่นยังไม่มีข้อแนะนำชัด</li>
+        <li>Colloid ใช้ปริมาณ ~ครึ่งหนึ่งของ crystalloid: challenge crystalloid 200 mL/10 min ↔ colloid 100 mL/10 min (หรือ 200 mL/20 min)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>หลักเลือกสารน้ำ</h4>
+      <ul>
+        <li>สารน้ำ = ยา: คิดถึงชนิด ข้อบ่งชี้ ข้อห้าม ผลข้างเคียง ราคา</li>
+        <li>ให้ตามพยาธิสรีรวิทยา: เสียอะไร ทดแทนเท่าที่เสีย; ดู Na, osmolality, acid–base, cumulative balance, น้ำหนัก</li>
+        <li>บางรายต้องเริ่ม vasopressor ตั้งแต่ต้น</li>
+        <li><b>Balanced salt solution</b> เป็นตัวแรกๆ · <b>Saline</b> ใน hypovolemia + metabolic alkalosis (saline → NAGMA)</li>
+        <li>Hemorrhagic shock → PRC · TBI → saline/balanced, <b>ไม่ใช้ albumin</b></li>
+        <li>Oliguria ไม่ใช่ endpoint ของ resuscitation · หยุด/ชะลอเมื่อคุม interstitial edema ไม่ได้ (ปอด, abdominal compartment)</li>
+      </ul>
+    </div>
+    <article class="card">
+      <h4>Albumin</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>5%: 12.5 g/250 mL (max 5–10 mL/min) · 20%: 10 g/50 mL (max 2–3 mL/min)</dd>
+        <dt>ฤทธิ์</dt><dd>ดึงน้ำเข้าหลอดเลือด ~15–18 mL/g</dd>
+        <dt>ข้อบ่งชี้</dt><dd>หลัง large-volume paracentesis <span class="dose">6–8 g ต่อ ascites 1 L</span> · SBP · hepatorenal syndrome · (septic shock — มีข้อโต้แย้ง)</dd>
+      </dl>
+      <div class="order">เจาะ ascites 5 L → albumin 30–40 g = 20% albumin 150–200 mL
+20% human albumin 50 mL IV drip in ½ hr q 8 hr
+หรือ 100 mL IV drip in 1 hr q 12 hr</div>
+    </article>
+  </div>
+
+  <h3 class="sub" id="sodium">Sodium · Water · Urine output</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Hyponatremia (Na &lt; 135)</h4>
+      <ol>
+        <li>ตัด pseudohyponatremia: hyperglycemia, hyperlipidemia, hyperproteinemia</li>
+        <li>แยกตาม volume status
+          <ul>
+            <li><b>Hypo</b>volemic: GI/renal loss, cerebral salt wasting, thiazide → isotonic</li>
+            <li><b>Eu</b>volemic: SIADH, hypothyroid, adrenal insuff., polydipsia → จำกัด free water (± furosemide)</li>
+            <li><b>Hyper</b>volemic: HF, renal failure, cirrhosis → จำกัดน้ำ+เกลือ + furosemide</li>
+          </ul></li>
+        <li>มี hypotension/poor perfusion → resuscitate ก่อน แล้วค่อยคำนวณ</li>
+      </ol>
+      <div class="formula">Na deficit = TBW × (desired Na − current Na)</div>
+      <p class="mini">TBW = 0.6×BW (ชาย/เด็ก) · 0.5×BW (หญิง) · 0.45×BW (หญิงสูงอายุ) · NSS มี Na 154, 3% NaCl 513–514 mEq/L</p>
+      <button class="btn" data-goto="c-na">⌘ คำนวณ Na deficit</button>
+    </article>
+    <article class="card">
+      <h4>3% NaCl — ใช้ด้วยความระวัง</h4>
+      <ul>
+        <li>ข้อบ่งชี้: <b>symptomatic hyponatremia</b> ส่วนใหญ่ euvolemic (SIADH)</li>
+        <li>Acute symptomatic: 1 mEq/L/hr × 4 hr แรก → ≤ 0.5 mEq/L/hr</li>
+        <li>Chronic / ไม่ทราบ baseline: ≤ 0.5 mEq/L/hr</li>
+        <li>ทั้งหมด <b>ไม่เกิน 10 mEq/L/day</b> · หยุด 3% เมื่อ Na ถึง 120</li>
+      </ul>
+      <div class="callout red">แก้เร็วเกิน → <b>osmotic demyelination</b> (central pontine myelinolysis): ซึม, ophthalmoplegia, spastic paralysis</div>
+      <div class="order">ตย. SIADH (SCLC) หญิง 50 kg Na 105, ไม่ทราบ baseline
+deficit = 0.5×50×10 = 250 mEq → 3% NaCl 486 mL/24 hr
+3% NaCl 1,000 mL  Sig. IV drip 20 mL/hr</div>
+    </article>
+    <article class="card">
+      <h4>Hypernatremia (Na &gt; 145)</h4>
+      <ul>
+        <li>Loss of hypotonic fluid (furosemide, glycosuria, mannitol, vomiting, sweating + thirst บกพร่อง) → free water / 0.45% NaCl</li>
+        <li>Net free water loss: <b>DI</b> (central ตอบสนอง DDAVP / nephrogenic ไม่ตอบสนอง)</li>
+        <li>ได้ hypertonic fluid (3% NaCl, 7.5% NaHCO₃) → หยุด</li>
+        <li>Hypotension → isotonic ก่อน · แก้ ≤ 0.5 mEq/L/hr, ≤ 10/day</li>
+      </ul>
+      <div class="formula">Na₁ × TBW₁ = Na₂ × TBW₂ ; water deficit = TBW₂ − TBW₁</div>
+      <div class="order">ชาย 50 kg Na 165 → เป้า 155 ใน 24 hr
+TBW₂ = 165×30/155 = 31.94 L → deficit 1.94 L
+NSS/2 1,000 mL × II  Sig. IV drip 80 mL/hr</div>
+      <button class="btn" data-goto="c-water">⌘ คำนวณ water deficit</button>
+    </article>
+    <article class="card">
+      <h4>Polyuria (&gt; 3 L/day; ใน ICU สงสัยเมื่อ &gt; 2.5 mL/kg/hr)</h4>
+      <ul>
+        <li><b>Water diuresis</b> (urine sp.gr &lt; 1.010 + hyperNa) = DI — central: pituitary lesion, TBI, post-op brain · nephrogenic: TIN, lithium, hyperCa, hypoK</li>
+        <li><b>Solute diuresis</b> (sp.gr &gt; 1.010): osmotic (DM glucose &gt; 180, mannitol, glycerol) · electrolyte (ATN diuretic phase, TIN, ยา) มักร่วม hypoNa</li>
+      </ul>
+      <p>Hemodynamic ดี → ให้สารน้ำ <b>60–80% ของ UO ชม.ที่ผ่านมา</b> · hyperNa → NSS/2 (ไม่ใช้ 5%DW, ห้าม sterile water IV) · hypoNa → NSS</p>
+      <dl class="kv"><dt>DDAVP</dt><dd>4 µg/mL · <span class="dose">1–4 µg SC</span> (12–24 hr) หรือ 5–40 µg IV/intranasal · ระวัง severe hypoNa, water intoxication</dd></dl>
+      <div class="order">Central DI หลัง TBI
+NSS/2 1,000 mL  IV drip 80% UO ชม.ที่ผ่านมา
+DDAVP 4 µg SC · Record UO, if &lt; 30 mL/hr → notify</div>
+    </article>
+    <article class="card">
+      <h4>Oliguria (&lt; 0.5 mL/kg/hr) & Furosemide</h4>
+      <ul>
+        <li>คิด AKI ก่อนเสมอ · <b>ตัด postrenal ก่อน</b> (Foley อุดตัน!)</li>
+        <li>Prerenal: dehydration (GI, renal, burn, hyperpyrexia), hypotension · Renal: ACEI, NSAIDs, rhabdo, TLS, hemoglobinuria, abdominal compartment · Postrenal: stone, ureteric injury, clot/tumor</li>
+        <li>ระวัง volume overload, hyperK, met. acidosis, hypoCa → dialysis ตามข้อบ่งชี้</li>
+      </ul>
+      <dl class="kv">
+        <dt>Prep</dt><dd>20 mg/2 mL · 250 mg/25 mL</dd>
+        <dt>Dose</dt><dd>ไตดี 20–40 mg (hydrate ดีมาก 5–10 mg) · ไตไม่ดี 80 mg · ≥ 120–125 mg drip ใน 15 นาที, 250 mg ใน 30 นาที (กัน ototoxicity, <b>กันแสง</b>)<br>ไม่ออก & dialysis ไม่ได้ → <span class="dose">40 mg/hr</span></dd>
+        <dt>ห้าม</dt><dd>Hypotension / poor perfusion</dd>
+      </dl>
+      <div class="order">Furosemide (500 mg/50 mL syringe)
+Sig. IV drip 40 mg/hr (= 4 mL/hr)</div>
+      <button class="btn" data-preset="furo">⌘ คำนวณ</button>
+    </article>
+  </div>
+
+  <h3 class="sub" id="acidbase">Acid–base</h3>
+  <div class="grid">
+    <div class="card wide">
+      <h4>Metabolic acidosis — สาเหตุใน ICU</h4>
+      <div class="tbl"><table>
+        <tr><th>Normal AG (&lt; 14)</th><th>Wide AG + normal osm gap (&lt; 10)</th><th>Wide AG + high osm gap (&gt; 10)</th></tr>
+        <tr><td>GI loss: diarrhea, small bowel/biliary fistula<br>Hyperalimentation<br>Aggressive NSS resuscitation<br>RTA · Ureteroenterostomy · Acetazolamide</td>
+        <td>Lactic type A: shock, sepsis, hypoxia, anemia, mesenteric ischemia, hypo/hyperthermia<br>Lactic type B: metformin, liver failure, heme malignancy<br>Rhabdomyolysis · AKI/CKD<br>Ketoacidosis: DKA, starvation<br>Salicylate, toluene, TCA</td>
+        <td>Ethanol, methanol, ethylene glycol</td></tr>
+      </table></div>
+    </div>
+    <article class="card">
+      <h4>ขั้นตอนวิเคราะห์ (4 ขั้น)</h4>
+      <ol>
+        <li>Winter's: <span class="dose">PaCO₂ = 1.5×HCO₃ + 8 ± 2</span> — สูงกว่า = ร่วม resp. acidosis, ต่ำกว่า = ร่วม resp. alkalosis</li>
+        <li><span class="dose">AG = Na − (Cl + HCO₃)</span> ปกติ 12 ± 2 · <b>albumin ลด 1 g/dL → AG แคบลง 2.5</b> (ฐาน 4 g/dL)</li>
+        <li>ΔAG/ΔHCO₃ = (AG−12)/(24−HCO₃): 0.8–1.2 pure · &lt; 0.8 ร่วม NAGMA · &gt; 1.2 ร่วม met. alkalosis<br>หรือ delta-delta = (AG−12)−(24−HCO₃): −5 ถึง 5 pure</li>
+        <li>Osmolal gap = measured − (2Na + BUN/2.8 + Glu/18)</li>
+      </ol>
+      <button class="btn" data-goto="c-ab">⌘ เครื่องคิด acid–base</button>
+    </article>
+    <article class="card">
+      <h4>การดูแล & ventilator</h4>
+      <ul>
+        <li>Acidosis → contractility ↓, SVR ↓, central venous pooling (CVP ↑), ตอบสนอง vasopressor ↓</li>
+        <li>ใช้ accessory muscle → intubate · VT 10–12 mL/kg (ตาม PIP ที่ยอมรับได้) · RR ≤ 30 · เป้า <b>pH &gt; 7.20</b></li>
+        <li>NaHCO₃ เมื่อ <b>pH &lt; 7.10</b> + hemodynamic instability (DKA: pH &lt; 7.00) — แค่ “ซื้อเวลา”</li>
+        <li>ระวัง volume overload, hyperNa, overshoot alkalosis, hypercapnia, O₂–Hb curve shift ซ้าย</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h4>7.5% NaHCO₃</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>50 mL = Na/HCO₃ 44.6 mEq (~0.9 mEq/mL)</dd>
+        <dt>ข้อบ่งชี้</dt><dd><b>Arrest</b>: hyperK (ไม่มี overload), severe met. acidosis เดิม, TCA overdose<br><b>Non-arrest</b>: pH &lt; 7.10, severe hyperK ไม่มี overload, TCA, alkalinize urine (TLS, rhabdo, hemoglobinuria ที่ยังมีปัสสาวะ), ทดแทน HCO₃ loss (NAGMA)</dd>
+        <dt>Dose</dt><dd>Arrest: 50 mL ใน 5 นาที · non-arrest: 50 mL ใน 30–120 นาที (syringe pump ไม่ต้อง dilute)</dd>
+        <dt>Deficit</dt><dd><span class="dose">0.6×BW×(15−HCO₃)</span> หรือ <span class="dose">0.5×BW×(8−HCO₃)</span> · ABG ซ้ำ 30 นาที เป้า pH &gt; 7.20</dd>
+      </dl>
+      <div class="callout red"><b>ห้ามผสม/ให้สายเดียวกับ calcium</b> → CaCO₃ ตกตะกอน</div>
+    </article>
+    <article class="card">
+      <h4>ผสม NaHCO₃ ให้ 24 hr (Na ไม่เกิน NSS 154)</h4>
+      <div class="tbl"><table>
+        <tr><th>7.5% NaHCO₃</th><th>ผสมกับ</th><th>Na รวม (mEq/L)</th></tr>
+        <tr><td>50 mL</td><td>NSS/2 950 mL</td><td>117.8</td></tr>
+        <tr><td>75 mL</td><td>NSS/2 925 mL</td><td>138.1</td></tr>
+        <tr><td>100 mL</td><td>5% DW 900 mL</td><td>89.2 (NSS/2 จะได้ 158.5 ✗)</td></tr>
+        <tr><td>150 mL</td><td>5% DW 850 mL</td><td>133.8</td></tr>
+      </table></div>
+      <p class="mini">เช่น IV drip 40 mL/hr · ต้องการ HCO₃ มากขึ้น → <b>เพิ่ม rate</b> ไม่เพิ่มความเข้มข้น · alkalinize urine จน urine pH &gt; 7</p>
+      <button class="btn" data-goto="c-hco3">⌘ คำนวณ HCO₃ deficit</button>
+    </article>
+    <article class="card">
+      <h4>Metabolic alkalosis</h4>
+      <ul>
+        <li><b>Cl-responsive</b> (urine Cl &lt; 10): volume depletion, vomiting, NG suction, diuretic ล่าสุด, laxative, posthypercapnic</li>
+        <li><b>Cl-resistant</b> (urine Cl &gt; 20): severe hypoK, hypoMg, hyperaldosteronism, accelerated HT, renin tumor</li>
+        <li>ผล: กดการหายใจ, O₂–Hb curve ซ้าย</li>
+        <li>Expected PaCO₂ = <span class="dose">0.7×HCO₃ + 20 ± 2</span> (หรือ 0.9×HCO₃ + 9)</li>
+        <li>รักษา: Cl-containing fluid, แก้ K/Mg</li>
+      </ul>
+      <div class="formula">Cl deficit = 0.2 × BW × (100 − Cl) ; NSS (L) = deficit/154</div>
+      <p class="mini">ให้มากกว่า fluid loss/hr ราว 100 mL/hr</p>
+    </article>
+  </div>
+
+  <h3 class="sub" id="potassium">Potassium</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Hypokalemia (K &lt; 3.5)</h4>
+      <p><b>สาเหตุ</b>: shift (insulin, β2, refeeding, HPP — หา thyrotoxicosis, hypothermia, alkalosis) · loss: GI, renal (ATN diuretic phase, RTA I/II, hypoMg, diuretics, aminoglycoside, alcoholism) · poor intake</p>
+      <p><b>อาการ</b>: proximal weakness, resp. muscle weakness (type II RF, wean ยาก), ventricular arrhythmia, ileus, polyuria · EKG: flat T, U wave, QT ยาว (ST ไม่ยาว)</p>
+      <p>VT จาก hypoK ระวัง amiodarone (QT ยาว) · TdP → MgSO₄ · on vent: VT 10–12 mL/kg, sensitivity ไวขึ้น</p>
+      <p><b>Oral</b>: Elixir KCl 15 mL = 20 mEq · มี acidosis → M. Pot. Cit. 15 mL = 10 mEq · <b>DKA</b>: แม้ K ปกติก็ต้องเติม KCl 40 mmol/L</p>
+    </article>
+    <article class="card">
+      <h4>KCl IV</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>20 mEq/10 mL (2 mEq/mL)</dd>
+        <dt>Peripheral</dt><dd>KCl 40 mEq in <b>NSS</b> 1,000 mL · ≤ <b>10 mEq/hr</b> (= 250 mL/hr) · conc ≤ 40 mEq/L (อนุโลม 60 → 167 mL/hr) · <b>ไม่ผสม 5%DW</b> (insulin ↑)</dd>
+        <dt>Central</dt><dd>Serious VA / resp. failure: KCl 10–20 mEq in NSS 100 mL ใน 1 hr · EKG monitor · ≤ 0.3 mEq/kg/hr (บางท่านแนะนำ femoral)</dd>
+      </dl>
+      <div class="callout warn">ระวังใน AKI/CKD · มี acidosis ร่วม → แก้ K ก่อน/พร้อม HCO₃ · K ไม่ขึ้น → หา hypoMg · โรคหัวใจ keep K 3.5–4.5 · alcoholism ขึ้นถึง ~2.5 ให้ลด rate · กลุ่ม shift ระวัง overshoot hyperK</div>
+      <button class="btn" data-goto="c-k">⌘ คำนวณ rate KCl</button>
+    </article>
+    <article class="card">
+      <h4>Hyperkalemia (&gt; 5.5)</h4>
+      <p><b>สาเหตุ</b>: AKI/CKD (ขาด HD), cell breakdown (rhabdo, TLS, hemolysis, crush, burn, MH), acidosis, massive transfusion, reperfusion, ยา (ACEI, NSAIDs, digitalis, β-blocker, K-sparing, co-trimoxazole, succinylcholine), aldosterone deficiency, K เกิน, hyperleukocytosis/thrombocytosis</p>
+      <p><b>EKG</b>: tall peaked T (ฐานแคบกว่าความสูง) → PR ยาว, P หาย, high-grade AVB, wide QRS → sine wave · มัก <b>bradycardia</b> · ความรุนแรงขึ้นกับ<b>อัตราการเพิ่ม</b>มากกว่าระดับ · hypoCa ร่วมทำให้แย่ลง</p>
+      <p class="mini">ผลสูงเท็จ: hemolysis (รัด tourniquet แน่น), เจาะแขนข้างที่ให้ K · EKG เปลี่ยน → รักษาเลยไม่ต้องรอผล</p>
+    </article>
+    <article class="card">
+      <h4>รักษา hyperK — 3 ขั้น</h4>
+      <ol>
+        <li><b>Stabilize</b>: 10% Ca gluconate <span class="dose">10 mL slow IV 2–5 min</span> (arrest 15–30 mL 5–10 min) ซ้ำได้ทุก 5 นาที · Ca chloride แรงกว่า 3 เท่า → ใช้ 1/3 ปริมาตร · digitalis toxicity: ข้อห้าม/ให้ช้า 10 mL in NSS 100 mL ใน 30 นาที</li>
+        <li><b>Shift</b>: <span class="dose">50% glucose 50 mL + RI 10 U</span> (IV push/drip ≤ 30 min) · BS สูง → RI อย่างเดียว 10 U → 0.5 U/hr · 7.5% NaHCO₃ 50 mL (arrest 5 min; ไม่ arrest 1–2 hr) — <b>ห้ามถ้า volume overload</b>, ให้ Ca ก่อนในกลุ่ม hypoCa (CKD, rhabdo, TLS)</li>
+        <li><b>Remove</b>: Kalimate (Ca resin) 30 g + water 50 mL · Kayexalate (Na resin) 30 g + sorbitol 50 mL — HF/AKI/CKD เลือก <b>Kalimate</b> · ต้องถ่าย · ระวัง concretion/obstruction · <b>Hemodialysis</b> มีประสิทธิภาพสุด (anuric/oliguric, overload) · SLEDD 8–12 hr, CRRT · ไม่มี HD → acute PD</li>
+      </ol>
+    </article>
+  </div>
+
+  <h3 class="sub" id="ca-po4-mg">Calcium · Phosphate · Magnesium</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Hypocalcemia</h4>
+      <p>ปกติ total Ca 9–10 mg/dL (2.25–2.5 mmol/L) · ionized 4.6–5.0 mg/dL (1.15–1.25)</p>
+      <div class="formula">Corrected Ca = Ca + 0.8 × (4 − albumin)</div>
+      <p class="mini">Albumin ใน ICU ลดเร็ว (96 hr แรก) → ส่งพร้อม albumin ทุกครั้ง หรือดู ionized Ca</p>
+      <p><b>สาเหตุ</b>: AKI/CKD, rhabdo, TLS, sepsis, pancreatitis, massive transfusion/plasmapheresis (citrate), hypoMg, alkalosis/hyperventilation, aminoglycoside, heparin, fat embolism</p>
+      <p><b>อาการ</b>: tetany, seizure, hyperreflexia (Chvostek จำกัดใน intubated, Trousseau ไวไม่พอ) · hypotension · EKG <b>QT ยาวจาก ST ยาว</b></p>
+    </article>
+    <article class="card">
+      <h4>Calcium IV</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>10% Ca gluconate 10 mL: elemental 9 mg/mL (0.45 mEq/mL), 680 mOsm<br>10% CaCl₂ 10 mL: 27 mg/mL (1.36 mEq/mL), 2,000 mOsm</dd>
+        <dt>Tetany/ seizure/ ↓BP</dt><dd>Ca gluconate 20 mL in 5%DW 100 mL ใน 2 hr (ด่วน: 10–20 mL in 100 mL ใน 10 min + EKG monitor) → ต่อด้วย infusion</dd>
+        <dt>Maint</dt><dd>Ca gluconate 100 mL in 5%DW 900 mL drip 50 mL/hr (หรือ 50 mL in 450 mL)</dd>
+      </dl>
+      <div class="callout warn">ห้าม push เร็ว · รั่วนอกเส้น → vasoconstriction รุนแรง · ห้ามสายเดียวกับ NaHCO₃ · NSS ทำ calciuresis จึงนิยม 5%DW</div>
+    </article>
+    <article class="card">
+      <h4>Hypercalcemia</h4>
+      <p><b>สาเหตุ</b>: malignancy (SCC PTHrP, bone mets, myeloma, lymphoma), TB, 1°/3° hyperPTH, thiazide, lithium, theophylline, hyperthyroid, adrenal insuff., pheo (MEN II)</p>
+      <p><b>อาการ</b>: polyuria (nephrogenic DI), dehydration, confusion, constipation, abdominal pain · EKG short QT</p>
+      <ol>
+        <li><b>NSS</b> 3–4 L (200–500 mL/hr) — <b>ไม่ใช้ RL/acetate</b> (มี Ca) · UO ≥ 2–3 mL/kg/hr</li>
+        <li>Furosemide หลัง volume พอ (<b>ห้าม thiazide</b>)</li>
+        <li>Dexamethasone 5 mg IV q 6 hr — heme malignancy, granulomatous</li>
+        <li>Pamidronate 30–90 mg in NSS 1 L ใน 4 hr หรือ zoledronate 4–8 mg ใน 15 min*</li>
+        <li>Calcitonin 4 U/kg SC/IM q 12 hr* (เร็ว 2 hr, tachyphylaxis)</li>
+        <li>รุนแรง → HD low-Ca dialysate</li>
+      </ol>
+      <p class="mini">* ปรึกษาผู้เชี่ยวชาญ</p>
+    </article>
+    <article class="card">
+      <h4>Hypophosphatemia</h4>
+      <p>ปกติ 2.5–5.0 mg/dL (0.8–1.6 mmol/L) · สาเหตุ: refeeding (alcohol, malnutrition), sepsis, hyperPTH, resp. alkalosis, dialysis, high-dose insulin</p>
+      <p>อาการ: resp. muscle weakness (wean ไม่ได้), systolic HF, VA, proximal weakness, <b>rhabdomyolysis</b>, encephalopathy, ileus, hemolysis, 2,3-DPG ↓</p>
+      <dl class="kv">
+        <dt>K₂HPO₄</dt><dd>vial 20 mL = K 20 mEq + HPO₄ 20 mEq (10 mmol, P 310 mg) · ใช้เมื่อ PO₄ &lt; 1 + hypoK<br>ไม่รุนแรง <span class="dose">10 mg/kg/day</span> · รุนแรง <span class="dose">20 mg/kg/day</span><br>Peripheral: 40 mEq in NSS 1 L ≤ 250 mL/hr · Central: 40 mL in NSS 100 mL ใน 4–6 hr</dd>
+        <dt>Esafosfina</dt><dd>5 g/100 mL IV drip 1 hr (รุนแรงซ้ำได้ 2–3 ครั้ง/วัน)</dd>
+        <dt>Oral</dt><dd>Acidic phosphate 15–30 mL tid (ไม่แนะนำใน critically ill)</dd>
+      </dl>
+      <div class="order">60 kg, PO₄ 0.8 + HF/VT → 1,200 mg/day = 77.4 mEq/day = 3.2 mEq/hr
+K2HPO4 40 mEq in NSS 1,000 mL × II  IV drip 80 mL/hr</div>
+    </article>
+    <article class="card">
+      <h4>Hyperphosphatemia</h4>
+      <p>Rhabdo, TLS, hemolysis, trauma, burn, acidosis, hypothermia, hypoPTH, thyrotoxicosis, bisphosphonate</p>
+      <ul><li>Ca × PO₄ &lt; 55 → CaCO₃ 1 g tid with meal · &gt; 55 → Al(OH)₃ 15 mL tid with meal</li><li>รุนแรง → HD</li></ul>
+    </article>
+    <article class="card">
+      <h4>Hypomagnesemia</h4>
+      <p class="mini">mEq/L = mg/dL × 10 × 2 / 24 · 1 g Mg = 4 mmol · 50% MgSO₄ 2 mL = 1 g = Mg 8.1 mEq</p>
+      <p><b>สาเหตุ</b>: furosemide, aminoglycoside, ampho B, digitalis, cisplatin, cyclosporin, diarrhea/NG/fistula, alcoholism, refeeding, malnutrition, DKA+insulin, pancreatitis, massive transfusion</p>
+      <p><b>อาการ</b>: seizure, hyperreflexia, Chvostek/Trousseau, arrhythmia (VT/VF/TdP/AF), coronary spasm, ↑digitalis toxicity, stridor · EKG คล้าย hypoK</p>
+      <ul>
+        <li>Day 1: 50% MgSO₄ 8 mL (4 g) in NSS/5%DW 100 mL ใน 4 hr · Day 2–3: 4 mL (2 g) ใน 4 hr</li>
+        <li>Severe (&lt; 1 mg/dL): 4–8 g ใน 3–6 hr (≤ 12 g ใน 12 hr วันแรก) → 4–8 g/day × 5 วัน</li>
+        <li>Mild–mod: 2–4 g/day × 3–5 วัน</li>
+        <li>เจาะระดับซ้ำ ~3 วันหลังแก้ (เจาะเร็วได้ค่าสูงเท็จ) · แก้ K, Ca ไปพร้อมกัน · เฝ้า UO, RR, DTR</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h4>Hypermagnesemia</h4>
+      <p>จากการให้ Mg (hypoMg, eclampsia, arrhythmia, asthma, antacid), AKI/CKD, TLS, rhabdo, adrenal insuff., hypothyroid, hypoPTH</p>
+      <p>DTR ↓, weakness (ยืดฤทธิ์ muscle relaxant), hypotension, bradycardia, AVB/asystole, resp. depression</p>
+      <ol>
+        <li>10% Ca gluconate 10 mL ใน 2–5 (–10) นาที</li>
+        <li>50% glucose 50 mL + RI 10 U ใน 1 hr</li>
+        <li>NSS 1 L/hr → furosemide 20–40 mg</li>
+        <li>HD (Mg-free dialysate)</li>
+      </ol>
+    </article>
+  </div>
+  <details class="upd"><summary>📌 อัปเดตจากแนวทางปัจจุบัน (ไม่อยู่ในต้นฉบับ)</summary>
+    <ul>
+      <li>SSC 2021: ใช้ <b>balanced crystalloid</b> มากกว่า saline; พิจารณา albumin เมื่อให้ crystalloid ปริมาณมาก; ไม่ใช้ starch และไม่แนะนำ gelatin (ต้นฉบับอ้าง “ALBINOS” — ที่ถูกคือ ALBIOS trial)</li>
+      <li>Hyponatremia: เพดานแก้ที่ใช้ทั่วไป 8–10 mEq/L/24 hr (กลุ่มเสี่ยง ODS — alcohol, malnutrition, hypoK, ตับ — ใช้ ≤ 8); severe symptomatic นิยม <b>3% NaCl 100–150 mL bolus</b> ใน 10–20 นาที ซ้ำได้ แทนการคำนวณ drip</li>
+      <li>HyperK: มี binder ใหม่ (sodium zirconium cyclosilicate, patiromer); NaHCO₃ ได้ผลน้อยถ้าไม่มี acidosis</li>
+      <li>SSC 2021: NaHCO₃ พิจารณาเมื่อ pH ≤ 7.2 ร่วม AKI stage 2–3</li>
+    </ul>
+  </details>
+</section>
+
+<!-- ================= 5 SEDATION ================= -->
+<section class="chap" id="sedation">
+  <div class="chap-h"><div class="num" style="background:var(--c5)">5</div><h2>Analgesics · Sedatives · Muscle relaxant<small>เกือบทุกตัวลด BP (ยกเว้น ketamine)</small></h2></div>
+  <div class="grid">
+    <div class="card">
+      <h4>Richmond Agitation-Sedation Scale (RASS) <span class="tag">เป้า 0 ถึง −2</span></h4>
+      <div class="tbl"><table>
+        <tr><th>+4</th><td>Combative — อันตรายต่อทีม</td></tr>
+        <tr><th>+3</th><td>Very agitated — ดึงท่อ/สาย ก้าวร้าว</td></tr>
+        <tr><th>+2</th><td>Agitated — ขยับไร้จุดหมาย, fight vent</td></tr>
+        <tr><th>+1</th><td>Restless — กังวล แต่ไม่ก้าวร้าว</td></tr>
+        <tr><th>0</th><td>Alert and calm</td></tr>
+        <tr><th>−1</th><td>Drowsy — ตื่นต่อเสียง &gt; 10 วินาที สบตา</td></tr>
+        <tr><th>−2</th><td>Light sedation — ตื่นต่อเสียง &lt; 10 วินาที</td></tr>
+        <tr><th>−3</th><td>Moderate — ขยับต่อเสียง ไม่สบตา</td></tr>
+        <tr><th>−4</th><td>Deep — ไม่ตอบเสียง ขยับต่อสัมผัส</td></tr>
+        <tr><th>−5</th><td>Unarousable</td></tr>
+      </table></div>
+      <p class="mini">Ramsay 1–6 (เป้า 3–4) ปัจจุบันนิยม RASS มากกว่า</p>
+    </div>
+    <article class="card">
+      <h4>Midazolam <span class="tag">sedative ใช้มากสุด</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>15 mg/3 mL</dd>
+        <dt>Dose</dt><dd>Bolus <span class="dose">0.02–0.08 mg/kg</span> q 0.5–2 hr (1–5 mg) · Infusion <span class="dose">0.04–0.2 mg/kg/hr</span> (2–10 mg/hr)</dd>
+        <dt>ผสม</dt><dd>1:2 (30 mg in NSS up to 60 mL / 50 mg in 100 mL) · จำกัดน้ำ 1:1</dd>
+        <dt>ระวัง</dt><dd>Active metabolite สะสมในไตวาย, ตับ · hypotension · ส่งเสริม hepatic encephalopathy, delirium (แต่รักษา DT)</dd>
+      </dl>
+      <div class="order">Midazolam 2 mg IV stat then
+Midazolam 30 mg up to NSS 60 mL  IV drip 4.8 mL/hr (2.4 mg/hr, BW 60)</div>
+      <button class="btn" data-preset="mida">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Diazepam · Flumazenil</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>10 mg/2 mL</dd>
+        <dt>Dose</dt><dd>Bolus 0.03–0.1 mg/kg q 0.5–6 hr (2–10 mg) · ระงับชัก, sedation ระยะยาว</dd>
+        <dt>ห้าม</dt><dd><b>Continuous drip ทาง peripheral</b> (thrombophlebitis รุนแรง)</dd>
+        <dt>Flumazenil</dt><dd>0.2–1 mg IV titrate · ไม่ใช้ใน long-term BZD (withdrawal/ชัก), เสี่ยงชัก, ICP สูง</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h4>Propofol</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>10 mg/mL (vial 20 mL) · drip ผ่าน syringe pump <b>ไม่ต้องผสม</b></dd>
+        <dt>Dose</dt><dd>Bolus 1–2 mg/kg · Infusion <span class="dose">5–80 µg/kg/min</span> (≤ 4–5 mg/kg/hr) · ไม่ควรเกิน 48 hr<br>Refractory SE: bolus → 4–10 mg/kg/hr × 24 hr จน burst suppression</dd>
+        <dt>Calorie</dt><dd><b>1.1 kcal/mL</b> → หักออกจาก nutrition</dd>
+        <dt>ระวัง</dt><dd>Hypotension · <b>PRIS</b>: lactic acidosis, rhabdo, hyperK, hyperlipidemia, brady, HF, asystole</dd>
+      </dl>
+      <div class="order">Propofol 120 mg IV stat then
+Propofol IV drip 24 mL/hr (240 mg/hr) → 576 mL/day ≈ 634 kcal</div>
+      <button class="btn" data-preset="propofol">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Ketamine · Thiopental · Haloperidol</h4>
+      <dl class="kv">
+        <dt>Ketamine</dt><dd>50 mg/10 mL · bolus 25–50 mg, infusion 10–30 mg/hr · sedation+analgesia, ↑HR/BP, ↑ICP, bronchodilator · nightmare/hallucination → ให้ร่วม BZD</dd>
+        <dt>Thiopental</dt><dd>1 g powder · bolus 25–100 mg, infusion 2–5 mg/kg/hr (1 g in NSS 100 mL) · induction, refractory SE · hypotension, สะสมในโรคตับ</dd>
+        <dt>Haloperidol</dt><dd>5 mg/mL · delirium · 0.03–0.15 mg/kg (2.5–5 mg) q 0.5–6 hr · EPS, <b>QT ยาว/TdP</b>, NMS</dd>
+      </dl>
+      <button class="btn" data-preset="thio">⌘ คำนวณ thiopental</button>
+    </article>
+    <article class="card">
+      <h4>Morphine</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>10 mg/mL</dd>
+        <dt>Dose</dt><dd>Bolus 0.01–0.15 mg/kg (1–5 mg) ช้าๆ 3–5 นาที · Infusion 0.07–0.5 mg/kg/hr (1–10 mg/hr) · HF/angina 3–5 mg</dd>
+        <dt>ผสม</dt><dd>10 mg in NSS 50 mL (1:5) หรือ 10 mL (1:1)</dd>
+        <dt>ระวัง</dt><dd>Histamine → hypotension; ไม่ใช้ใน bronchospasm, inferior MI · metabolite สะสมในไตวาย · overdose: BP↓ RR↓ pinpoint pupil</dd>
+      </dl>
+      <button class="btn" data-preset="morphine">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Fentanyl</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>100 µg/2 mL · <b>หน่วย µg เสมอ</b></dd>
+        <dt>Dose</dt><dd>Bolus 0.35–1.5 µg/kg (25–100 µg) · Infusion <span class="dose">0.5–3 µg/kg/hr</span> (10–200 µg/hr)</dd>
+        <dt>ผสม</dt><dd>500 µg in NSS 100 mL (5:1) · จำกัดน้ำ 1,000 µg/100 mL</dd>
+        <dt>เด่น</dt><dd>แรงกว่า morphine 75–200 เท่า, onset เร็ว สั้น, <b>ไม่หลั่ง histamine</b> → เลือกใน hemodynamic ไม่คงที่/ไตบกพร่อง</dd>
+      </dl>
+      <div class="order">Fentanyl 25 µg IV stat then
+Fentanyl 500 µg in NSS 100 mL  IV drip 7 µd/min (35 µg/hr)</div>
+      <button class="btn" data-preset="fent">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Neuromuscular blockers — หลักการ</h4>
+      <div class="callout red"><b>ต้องให้ sedation/analgesia จนไม่รู้สึกตัวก่อนเสมอ</b> — ห้ามให้ NMB เดี่ยว</div>
+      <p>ข้อบ่งชี้: vent setting พิเศษ (PEEP สูง, inverse I:E), ICP สูง, refractory spasm (tetanus, SE)</p>
+      <dl class="kv">
+        <dt>Succinyl- choline</dt><dd>500 mg/10 mL · 75–100 mg IV (RSI, ~3 นาที) · fasciculation ↑ICP, K ↑ 0.5–1 (บางกลุ่มรุนแรง → ใช้ rocuronium แทน)</dd>
+        <dt>Pancuronium</dt><dd>4 mg/2 mL · 0.1 mg/kg (~1 hr), infusion 4–10 mg/hr · vagolytic → tachycardia, สะสมในตับ/ไต</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h4>Atracurium · Cisatracurium</h4>
+      <dl class="kv">
+        <dt>Atracurium</dt><dd>50 mg/5 mL · Hofmann degradation (ไม่ผ่านตับ/ไต) · 0.5 mg/kg intubation, infusion <span class="dose">5–12 µg/kg/min</span> · histamine → hypotension, bronchospasm (<b>ห้าม asthma/COPD</b>), tachyphylaxis</dd>
+        <dt>Cisatracurium (Nimbex)</dt><dd>2 mg/mL (vial 10 mg/5 mL) ไม่ต้องผสม · ใช้มากสุด, <b>ไม่มี histamine release</b> · bolus 0.1–0.2 mg/kg ใน 2 นาที, infusion <span class="dose">1–2 µg/kg/min</span></dd>
+      </dl>
+      <div class="order">ARDS 50 kg: Cisatracurium 5 mg IV in 2 min then
+Cisatracurium 3 mg/hr (= 1.5 mL/hr) [1 µg/kg/min]</div>
+      <button class="btn" data-preset="cisa">⌘ คำนวณ</button>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 6 MISC ================= -->
+<section class="chap" id="misc">
+  <div class="chap-h"><div class="num" style="background:var(--c6)">6</div><h2>Miscellaneous drugs</h2></div>
+
+  <h3 class="sub" id="misc-neuro">6.1 Neurologic</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Phenytoin (Dilantin) <span class="tag">Na channel</span></h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>250 mg/5 mL</dd>
+        <dt>ผสม</dt><dd><b>NSS เท่านั้น</b> (dextrose ตกตะกอน)</dd>
+        <dt>Load</dt><dd><span class="dose">15–20 mg/kg</span> rate ≤ <b>50 mg/min</b> (โรคตับ/หัวใจ ≤ 25 mg/min) · dose 2 = 10 mg/kg</dd>
+        <dt>Maint</dt><dd>100 mg in NSS 100 mL ใน ½–1 hr q 8 hr</dd>
+        <dt>Monitor</dt><dd>BP, EKG (arrhythmia) · nystagmus → แยกชัก vs overdose (ระดับยา)</dd>
+      </dl>
+      <div class="order">Phenytoin 750 mg in NSS 100 mL
+Sig. IV drip in 15 min (50 mg/min = 400 mL/hr) · Monitor EKG
+If SBP &lt; 90 → notify</div>
+      <button class="btn" data-goto="c-wt">⌘ คำนวณตามน้ำหนัก</button>
+    </article>
+    <article class="card">
+      <h4>Valproate · Phenobarbital</h4>
+      <dl class="kv">
+        <dt>Valproate</dt><dd>400 mg/4 mL · <span class="dose">15–20 mg/kg</span> rate 1–3 mg/kg/min (บางท่าน 3–6) · เช่น 800 mg in NSS 100 mL ใน 15 นาที</dd>
+        <dt>Pheno- barbital</dt><dd>200 mg/vial · <span class="dose">20 mg/kg</span> ใน 15–20 นาที ไม่ตอบสนอง +10 mg/kg · <b>กดการหายใจ</b> (If RR &lt; 10 notify)</dd>
+      </dl>
+      <p class="mini">ทั้งคู่เป็นตัวที่ 2 หลัง phenytoin ไม่ได้ผลใน status epilepticus · refractory → midazolam / propofol / thiopental infusion</p>
+    </article>
+    <article class="card">
+      <h4>Mannitol</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>20% = 20 g/100 mL</dd>
+        <dt>Dose</dt><dd><span class="dose">0.5–1 g/kg</span> drip &gt; 15 นาที ซ้ำได้ q 4–6 hr</dd>
+        <dt>ข้อบ่งชี้</dt><dd>ICP สูง (vasogenic/cytotoxic edema), herniation</dd>
+        <dt>หยุดเมื่อ</dt><dd>Serum osm &gt; 320 หรือ Na &gt; 155 · ระวัง rebound ICP · UO ≥ 2 mL/kg/hr</dd>
+      </dl>
+      <div class="order">20% mannitol 100 mL  IV drip in 30 min
+Blood for serum osm, electrolyte
+If UO &lt; 80 mL/hr → notify</div>
+    </article>
+    <article class="card">
+      <h4>rt-PA (alteplase) — acute ischemic stroke</h4>
+      <dl class="kv">
+        <dt>เงื่อนไข</dt><dd>Onset ≤ 3 hr (บางการศึกษา 4.5 hr) · ไม่มี CI · <b>CT non-contrast</b> ตัด ICH · BP &lt; 185/110 ก่อนให้ (มักใช้ nicardipine)</dd>
+        <dt>Dose</dt><dd><span class="dose">0.9 mg/kg (max 90 mg)</span> · 10% IV 1–2 นาที → 90% ใน 60 นาที</dd>
+        <dt>Prep</dt><dd>50 mg/vial + SWI · drip ใน <b>NSS เท่านั้น</b> · ผสมแล้วเก็บได้ 24 hr</dd>
+        <dt>หลังให้ 24 hr</dt><dd>งด heparin, warfarin, antiplatelet · ไม่ใส่ NG, central line · เลี่ยง ABG</dd>
+      </dl>
+      <div class="order">60 kg: rt-PA 5.4 mg IV in 1 min then
+rt-PA 48.6 mg + NSS → 100 mL  IV drip in 1 hr
+Record neuro sign q 30 min · GCS drop &gt; 2, headache, seizure, pupil → notify</div>
+      <p class="mini">ต้นฉบับเขียน 49.6 mg — คำนวณจริง 54 − 5.4 = 48.6 mg</p>
+    </article>
+  </div>
+
+  <h3 class="sub" id="misc-endo">6.2 Endocrine</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Hydrocortisone</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>100 mg/vial</dd>
+        <dt>Dose</dt><dd><span class="dose">200–300 mg/day</span> bolus หรือ continuous (in NSS/5%DW 100–200 mL × 24 hr)</dd>
+        <dt>ตัวทำละลาย</dt><dd>BS ต่ำ → 5%DW · BS สูง → NSS</dd>
+        <dt>ข้อบ่งชี้</dt><dd>Adrenal insufficiency/crisis · septic shock ที่ volume พอ + vasopressor ขนาดปานกลางแล้ว BP ยังต่ำ</dd>
+      </dl>
+      <div class="order">Hydrocortisone 100 mg IV stat then
+Hydrocortisone 200 mg in NSS 100 mL  IV drip in 24 hr (4.2 mL/hr)</div>
+    </article>
+    <article class="card">
+      <h4>Regular insulin</h4>
+      <dl class="kv">
+        <dt>ผสม</dt><dd>RI 100 U in <b>NSS</b> 100 mL (1:1) — ห้ามผสม 5%DW · flush สายก่อน 10–20 mL ให้ยาเคลือบ set</dd>
+        <dt>DKA/HHS</dt><dd>0.1 U/kg IV → <span class="dose">0.1 U/kg/hr</span> · เป้า BS ลด 50–70 mg/dL/hr (ไม่ถึง → ×2 + หาสาเหตุ: hypovolemia, sepsis, ACS) · BS q 1 hr จนถึง 250</dd>
+        <dt>ICU ทั่วไป</dt><dd>BS &gt; 180 สองครั้ง → เริ่ม <span class="dose">0.5 U/hr</span> ปรับทีละ 0.5 · เป้า <b>140–180</b> · POCT q 4 hr</dd>
+        <dt>ระวัง</dt><dd>Hypoglycemia, hypoK · เก็บตู้เย็น แยกจาก heparin</dd>
+      </dl>
+      <p class="mini">Tissue perfusion ไม่ดี (เช่น lactate สูง) → ให้ทาง IV infusion ไม่ใช่ SC</p>
+      <button class="btn" data-preset="ri">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Glucose · Thiamine</h4>
+      <ul>
+        <li>Hypoglycemia: ส่ง venous BS แล้วรักษาเลย → <span class="dose">50% glucose 50 mL</span> (25 g) IV 3–5 นาที → ต่อด้วย glucose ≥ <b>2 mg/kg/min</b></li>
+        <li>Alcohol/malnutrition: <b>thiamine 100 mg IV ก่อน glucose</b> (กัน Wernicke)</li>
+        <li>1 g dextrose = <b>3.4 kcal</b></li>
+        <li>สารละลาย &gt; 900–1,200 mOsm → central line (ใช้ osmolality ตัดสิน ไม่ใช่ %)</li>
+      </ul>
+      <div class="order">65 kg, BS 35, ดื่มสุรา
+Blood for BS → Thiamine 100 mg IV stat
+50% glucose 50 mL IV in 3 min
+10% D/NSS/2 1,000 mL × II  IV drip 80 mL/hr (2 mg/kg/min ≈ 7.8 g/hr)
+POCT glucose 10 min หลังให้</div>
+      <button class="btn" data-goto="c-wt">⌘ คำนวณ glucose rate</button>
+    </article>
+  </div>
+
+  <h3 class="sub" id="misc-heme">6.3–6.5 Hematologic · GI · Respiratory</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>Unfractionated heparin</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>25,000 U/5 mL · ผสม 10,000 U in NSS 100 mL (100:1)</dd>
+        <dt>Dose</dt><dd><span class="dose">80 U/kg</span> bolus → <span class="dose">18 U/kg/hr</span> · aPTT ratio เป้า 1.5–2.5 · aPTT ซ้ำ 6 hr</dd>
+        <dt>ข้อบ่งชี้</dt><dd>DVT, PE ที่ hemodynamic stable, acute arterial occlusion, หล่อสาย line</dd>
+        <dt>AE</dt><dd>HIT, bleeding (หยุด, FFP, protamine) · หยุดก่อนผ่าตัด 6 hr</dd>
+      </dl>
+      <div class="tbl"><table>
+        <tr><th>aPTT</th><th>ปรับ</th></tr>
+        <tr><td>&lt; 35 s (&lt; 1.2×)</td><td>80 U/kg bolus, +4 U/kg/hr</td></tr>
+        <tr><td>35–45 s (1.2–1.5×)</td><td>40 U/kg bolus, +2 U/kg/hr</td></tr>
+        <tr><td>46–70 s (1.5–2.5×)</td><td>ไม่เปลี่ยน</td></tr>
+        <tr><td>71–90 s (2.5–3×)</td><td>−2 U/kg/hr</td></tr>
+        <tr><td>&gt; 90 s</td><td>หยุด 1 hr, −3 U/kg/hr</td></tr>
+      </table></div>
+      <p class="mini">ทางเลือกที่ปลอดภัยกว่า: ปรับทีละ 200–300 U/hr แล้วติดตาม aPTT</p>
+      <button class="btn" data-preset="heparin">⌘ คำนวณ</button>
+    </article>
+    <article class="card">
+      <h4>Pantoprazole · Octreotide</h4>
+      <dl class="kv">
+        <dt>Panto- prazole</dt><dd>40 mg/vial · <b>Non-variceal UGIB</b>: <span class="dose">80 mg IV → 8 mg/hr × 72 hr</span> (80 mg in NSS 100 mL = 10 mL/hr) · omeprazole 40 mg IV q 12 hr ก็ได้</dd>
+        <dt>Sandostatin</dt><dd>100 µg/mL · <b>Variceal bleeding</b>: <span class="dose">25–50 µg IV → 25–50 µg/hr</span> · 500 µg in NSS 500 mL (1 µg/mL) · splanchnic vasoconstriction, ระวัง mesenteric ischemia · ทางเลือก SB tube</dd>
+      </dl>
+      <button class="btn" data-preset="panto">⌘ Pantoprazole</button> <button class="btn ghost" data-preset="octreo">⌘ Octreotide</button>
+    </article>
+    <article class="card">
+      <h4>Aminophylline</h4>
+      <dl class="kv">
+        <dt>Prep</dt><dd>250 mg/10 mL · conc &lt; 40 mg/mL (เช่น 250 mg in NSS 100 mL)</dd>
+        <dt>Dose</dt><dd><span class="dose">5–6 mg/kg</span> IV 5–10 นาที → <span class="dose">0.45–0.9 mg/kg/hr</span></dd>
+        <dt>ข้อบ่งชี้</dt><dd>Refractory bronchospasm เมื่อไม่มีทางเลือกอื่น</dd>
+        <dt>ระวัง</dt><dd>SVT, คลื่นไส้อาเจียน · Monitor EKG, HR &gt; 140 notify</dd>
+      </dl>
+      <button class="btn" data-preset="amino">⌘ คำนวณ</button>
+    </article>
+  </div>
+  <details class="upd"><summary>📌 อัปเดตจากแนวทางปัจจุบัน (ไม่อยู่ในต้นฉบับ)</summary>
+    <ul>
+      <li>Stroke: alteplase ใช้ได้ถึง 4.5 hr ในผู้ป่วยที่เหมาะสม; <b>tenecteplase 0.25 mg/kg (max 25 mg) single bolus</b> เป็นทางเลือก</li>
+      <li>SSC 2021: hydrocortisone 200 mg/day (เช่น 50 mg q 6 hr) เมื่อ NE/epi ≥ 0.25 µg/kg/min นาน ≥ 4 hr · เริ่ม insulin เมื่อ BS ≥ 180, เป้า 144–180</li>
+      <li>Non-variceal UGIB: high-dose PPI แบบ intermittent ให้ผลเทียบเท่า continuous infusion</li>
+    </ul>
+  </details>
+
+  <h3 class="sub" id="misc-abx">6.6 Antimicrobial (ไตปกติ)</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>ยาเฉพาะที่ต้องรู้วิธีให้</h4>
+      <dl class="kv">
+        <dt>Cloxacillin</dt><dd>MSSA · 1–2 g q 4–6 hr (IE: 2 g q 4 hr) in NSS 100 mL ½ hr · bolus → phlebitis</dd>
+        <dt>Gentamicin</dt><dd>240 mg OD in NSS 100 mL ½ hr (5–7 mg/kg) · เฝ้าไต</dd>
+        <dt>Amikacin</dt><dd>750 mg OD (15–20 mg/kg) · Pseudomonas combination</dd>
+        <dt>Vancomycin</dt><dd>MRSA · 1 g q 12 hr drip 1 hr (load 30 → 15 mg/kg q 12) · <b>ห้าม bolus</b> (red man)</dd>
+        <dt>Acyclovir</dt><dd>250 mg/vial · 500 mg q 8 hr · hydrate ดี (crystal nephropathy), encephalopathy ขนาดสูง · ≤ 500 mg ผสม 100 mL, &gt; 500 mg ผสม 200 mL</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h4>Amphotericin B · Co-trimoxazole · Artesunate</h4>
+      <dl class="kv">
+        <dt>Ampho B</dt><dd><span class="dose">0.5–0.7 mg/kg/day</span> (บางเชื้อ 1–1.5) · <b>ผสม dextrose เท่านั้น</b> (NSS ตกตะกอน) 5%DW 500–1,000 mL ใน 6 hr (~1:10, สีเหลืองอมเขียว) · premed CPM 10 mg IV · AE: BM suppression, nephrotoxic, hypoK, hypoMg, dRTA I, fever/chill</dd>
+        <dt>Co-trimox</dt><dd>amp 5 mL = TMP 80 + SMX 400 · PCP TMP 5 mg/kg/day (ตารางในเล่มเขียน 5 mg/kg q 8 hr), nocardia 10–20 · <b>สารน้ำเยอะ</b>: 1 amp/125 mL, 2/250 mL (ตัวอย่างในเล่มใช้ 2 amp/500 mL), 3/750 mL · กินได้ให้เปลี่ยนเป็น oral · AE: rash→SJS/TEN, BM, hyperK, RTA IV</dd>
+        <dt>Artesunate</dt><dd>60 mg/vial + NaHCO₃ 1 mL → + NSS/5%DW 5 mL = 10 mg/mL · <span class="dose">2.4 mg/kg</span> ที่ 0, 12, 24 hr · IV bolus</dd>
+      </dl>
+      <button class="btn" data-goto="c-wt">⌘ คำนวณตามน้ำหนัก</button>
+    </article>
+    <div class="card wide">
+      <h4>Empirical antibiotics (ตามต้นฉบับ)</h4>
+      <div class="tbl"><table>
+        <tr><th colspan="2">Community-acquired</th><th colspan="2">Nosocomial</th></tr>
+        <tr><td>CAP</td><td>Ceftriaxone + levofloxacin (azithromycin)</td><td>HAP/VAP</td><td>Carbapenem</td></tr>
+        <tr><td>CAP สงสัย melioidosis</td><td>Ceftazidime หรือ imipenem</td><td>MRSA</td><td>Vancomycin</td></tr>
+        <tr><td>CAP + influenza</td><td>+ oseltamivir</td><td>UTI</td><td>Carbapenem ± aminoglycoside</td></tr>
+        <tr><td>CAP สงสัย PCP</td><td>Co-trimoxazole (± ceftriaxone, levofloxacin)</td><td>Intra-abd, SSTI, catheter</td><td>Carbapenem + vancomycin</td></tr>
+        <tr><td>Aspiration</td><td>Ceftriaxone + clindamycin (หรือ amox/clav)</td><td>Febrile neutropenia</td><td>Carbapenem + vancomycin (± ampho B)</td></tr>
+        <tr><td>UTI</td><td>Ceftriaxone (± aminoglycoside)</td><td></td><td></td></tr>
+        <tr><td>Soft tissue</td><td>Ceftriaxone (หรือ cloxacillin) + clindamycin</td><td></td><td></td></tr>
+        <tr><td>Bacterial meningitis</td><td>Ceftriaxone (± vancomycin)</td><td></td><td></td></tr>
+        <tr><td>Intra-abdominal</td><td>Ceftriaxone + metronidazole (± AG)</td><td></td><td></td></tr>
+        <tr><td>Febrile neutropenia</td><td>Ceftazidime (cefepime, pip/tazo) + amikacin</td><td></td><td></td></tr>
+        <tr><td>Acute febrile illness (ไม่สงสัย DHF/malaria)</td><td>Ceftriaxone + azithromycin</td><td></td><td></td></tr>
+      </table></div>
+    </div>
+    <div class="card wide">
+      <h4>ขนาดยา IV (ตับ/ไตปกติ)</h4>
+      <div class="tbl"><table>
+        <tr><th>ยา</th><th>วันแรก</th><th>ต่อเนื่อง</th><th>ยา</th><th>วันแรก</th><th>ต่อเนื่อง</th></tr>
+        <tr><td>Cefazolin</td><td>2 g → 1–2 g q 8 hr</td><td>1–2 g q 8 hr</td><td>Pip/tazo</td><td>4.5 g q 6 hr</td><td>4.5 g q 8 hr</td></tr>
+        <tr><td>Ceftriaxone</td><td>2 g OD (CNS 2 g q 12 hr)</td><td>2 g OD</td><td>Cefoperazone/sulbactam</td><td>2 g q 8 hr</td><td>2 g q 8 hr</td></tr>
+        <tr><td>Cefotaxime</td><td>1 g q 6 hr / 2 g q 8 hr</td><td>เท่าเดิม</td><td>Ampicillin/sulbactam</td><td>3 g q 6 hr</td><td>3 g q 6 hr</td></tr>
+        <tr><td>Ceftazidime</td><td>2 g → 2 g q 8 hr</td><td>2 g q 8 hr</td><td>Amox/clav</td><td>2.4 g → 1.2 g q 6 hr</td><td>1.2 g q 6 hr</td></tr>
+        <tr><td>Cefepime</td><td>2 g → 1 g q 8 / 2 g q 12</td><td>เท่าเดิม</td><td>Ciprofloxacin</td><td>400 mg q 8 hr</td><td>400 mg q 8 hr</td></tr>
+        <tr><td>Ertapenem</td><td>1 g q 12 hr</td><td>1 g OD</td><td>Levofloxacin</td><td>750 mg OD</td><td>750 mg OD</td></tr>
+        <tr><td>Imipenem</td><td>1 g → 500 mg q 6 hr (melioid 1 g q 8)</td><td>500 mg q 6 hr</td><td>Moxifloxacin</td><td>400 mg OD</td><td>400 mg OD</td></tr>
+        <tr><td>Meropenem</td><td>2 g → 1 g q 8 hr (CNS 2 g q 8)</td><td>1 g q 8 hr (drip 3 hr)</td><td>Penicillin G</td><td>2–4 MU q 4 hr</td><td>เท่าเดิม</td></tr>
+        <tr><td>Doripenem</td><td>1 g → 500 mg q 8 hr</td><td>500 mg q 8 hr</td><td>Clindamycin</td><td>600 q 6 / 900 q 8 hr</td><td>เท่าเดิม</td></tr>
+        <tr><td>Linezolid</td><td>600 mg q 12 hr</td><td>เท่าเดิม</td><td>Metronidazole</td><td>500 mg q 8 hr</td><td>500 mg q 8 hr</td></tr>
+        <tr><td>Azithromycin</td><td>500 mg OD</td><td>500 mg OD</td><td>Vancomycin</td><td>30 mg/kg → 15 mg/kg q 12</td><td>15 mg/kg q 12 hr</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <h3 class="sub" id="misc-tox">6.7 Toxicology</h3>
+  <div class="grid">
+    <article class="card">
+      <h4>N-acetylcysteine (IV, 3 ขวด)</h4>
+      <p>Paracetamol overdose (ใช้ Rumack-Matthew nomogram) · hepatitis จากเห็ดพิษ, chlorinated hydrocarbon</p>
+      <div class="tbl"><table>
+        <tr><th>ขวด</th><th>Dose</th><th>ใน 5% DW</th><th>เวลา</th></tr>
+        <tr><td>1</td><td>150 mg/kg</td><td>200 mL</td><td>1 hr</td></tr>
+        <tr><td>2</td><td>50 mg/kg</td><td>500 mL</td><td>4 hr</td></tr>
+        <tr><td>3</td><td>100 mg/kg</td><td>1,000 mL</td><td>16 hr</td></tr>
+      </table></div>
+      <p class="mini">Prep 300 mg/3 mL · ระวัง anaphylactoid (angioedema, bronchospasm, hypotension)</p>
+      <button class="btn" data-goto="c-wt">⌘ คำนวณ NAC</button>
+    </article>
+    <article class="card">
+      <h4>Atropine · Pralidoxime (OP poisoning)</h4>
+      <dl class="kv">
+        <dt>Atropine</dt><dd>0.6 mg/mL · load <span class="dose">1.8 mg IV</span> แล้ว<b>เพิ่มเท่าตัว</b>จน atropinization (ม่านตาขยาย, HR ปกติ, secretion ↓, bowel sound หาย) · maint <b>10–20% ของ loading/hr</b> IV drip</dd>
+        <dt>2-PAM</dt><dd>1 g/vial · OP เท่านั้น (carbamate = relative CI) · load 1–2 g IV ใน 30–60 นาที → 500–1,000 mg/hr (10–20 mg/kg/hr) · AE เวียนศีรษะ ตาพร่า BP สูง</dd>
+      </dl>
+    </article>
+    <article class="card">
+      <h4>Snake antivenom (IV ใน 30 นาที)</h4>
+      <div class="tbl"><table>
+        <tr><th>ระบบ</th><th>เซรุ่ม</th><th>ขนาด</th></tr>
+        <tr><td rowspan="3">Neurotoxic — ให้เมื่อ weakness/หนังตาตก</td><td>งูเห่า, จงอาง, รวมระบบประสาท</td><td>10 vials</td></tr>
+        <tr><td>งูสามเหลี่ยม (ให้ทันทีที่วินิจฉัย)</td><td>10 vials</td></tr>
+        <tr><td>ทับสมิงคลา (ให้ทันทีที่วินิจฉัย)</td><td>5 vials</td></tr>
+        <tr><td rowspan="3">Hematotoxic — bleeding (ยกเว้น micro hematuria), VCT 20 นาทีไม่แข็ง, INR &gt; 1.2, plt &lt; 50k, บวมรุนแรง</td><td>แมวเซา, กะปะ</td><td>3–5 vials</td></tr>
+        <tr><td>เขียวหางไหม้</td><td>3 vials</td></tr>
+        <tr><td>รวมระบบโลหิต</td><td>5 vials</td></tr>
+      </table></div>
+      <p class="mini">Vial + SWI 10 mL · Early reaction: ลมพิษ หน้าบวม bronchospasm hypotension · Late (1–2 wk): ไข้ ปวดข้อ ผื่น</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= PEARLS ================= -->
+<section class="chap" id="pearls">
+  <div class="chap-h"><div class="num" style="background:#d97706">★</div><h2>จุดพลาดบ่อย · ตัวทำละลาย · ห้ามผสม</h2></div>
+  <div class="grid">
+    <div class="card">
+      <h4>ตัวทำละลายที่ “ต้อง” ใช้</h4>
+      <div class="tbl"><table>
+        <tr><th>Dextrose เท่านั้น</th><td>Norepinephrine, Amphotericin B</td></tr>
+        <tr><th>NSS เท่านั้น</th><td>Phenytoin, rt-PA, Regular insulin (ห้าม 5%DW)</td></tr>
+        <tr><th>ไม่ผสม 5%DW</th><td>KCl (insulin ↑ → แก้ K ได้น้อย)</td></tr>
+        <tr><th>นิยม 5%DW</th><td>Ca gluconate (NSS → calciuresis), NTG, SNP, amiodarone</td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <h4>หน่วยที่สับสนง่าย</h4>
+      <ul>
+        <li><b>Atropine 0.6 mg</b> vs <b>adenosine 6 mg</b></li>
+        <li>MgSO₄ เป็น <b>กรัม</b> · 50% (1 mL = 0.5 g) vs 20% (1 mL = 0.2 g)</li>
+        <li>Fentanyl เป็น <b>µg</b> เสมอ</li>
+        <li>CaCl₂ แรงกว่า Ca gluconate 3 เท่า</li>
+        <li>RI เก็บแยกจาก heparin</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>การให้ยาพิเศษ</h4>
+      <ul>
+        <li><b>กันแสง</b>: SNP, furosemide drip</li>
+        <li><b>ขวดแก้ว</b>: NTG</li>
+        <li><b>ห้ามเขย่า</b>: streptokinase (หมุน)</li>
+        <li><b>ห้าม bolus</b>: vancomycin (red man), cloxacillin (phlebitis)</li>
+        <li><b>ห้าม drip peripheral</b>: diazepam</li>
+        <li><b>Double syringe rapid push</b>: adenosine</li>
+        <li>Propofol ไม่ต้องผสม, นับ 1.1 kcal/mL</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>ห้ามผสม/ระวังร่วมกัน</h4>
+      <ul>
+        <li><b>NaHCO₃ + Ca</b> → CaCO₃ ตกตะกอน (ห้ามสายเดียวกัน)</li>
+        <li>Hyperkalemia + hypoCa → ให้ Ca ก่อน NaHCO₃</li>
+        <li>Hypoglycemia ใน alcoholic → thiamine ก่อน glucose</li>
+        <li>NMB ต้องตามหลัง sedation</li>
+        <li>Amiodarone/haloperidol ใน QT ยาว → TdP</li>
+        <li>Hypercalcemia: ไม่ใช้ RL, ไม่ใช้ thiazide</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALC ================= -->
+<section class="chap" id="calc">
+  <div class="chap-h"><div class="num" style="background:var(--accent)">⌘</div><h2>เครื่องคิดเลข<small>สูตรตามต้นฉบับ · ตรวจทานก่อนสั่งจริงเสมอ</small></h2></div>
+  <div class="calc-grid">
+    <div class="calc" id="c-inf" style="grid-column:1/-1">
+      <h4>Continuous infusion — dose ⇄ rate (mL/hr = µd/min)</h4>
+      <div class="frm">
+        <label class="span2">ยา / สูตรผสม<select id="preset"></select></label>
+        <label>น้ำหนัก (kg)<input id="bw" type="number" step="any" value="60" inputmode="decimal"></label>
+        <label>ปริมาณยา<input id="amt" type="number" step="any" inputmode="decimal"></label>
+        <label>หน่วยยา<select id="amtU"><option>mg</option><option>µg</option><option>g</option><option>unit</option></select></label>
+        <label>ปริมาตรรวม (mL)<input id="vol" type="number" step="any" inputmode="decimal"></label>
+        <label>หน่วย dose<select id="doseU"></select></label>
+        <label>Dose<input id="dose" type="number" step="any" inputmode="decimal"></label>
+        <label>Rate (mL/hr)<input id="rate" type="number" step="any" inputmode="decimal"></label>
+      </div>
+      <div class="out" id="infOut"></div>
+    </div>
+
+    <div class="calc" id="c-na">
+      <h4>Hyponatremia — Na deficit</h4>
+      <div class="frm">
+        <label>น้ำหนัก (kg)<input id="na_bw" type="number" value="50"></label>
+        <label>TBW factor<select id="na_f"><option value="0.6">0.6 ชาย/เด็ก</option><option value="0.5" selected>0.5 หญิง</option><option value="0.45">0.45 หญิงสูงอายุ</option></select></label>
+        <label>Na ตอนนี้<input id="na_now" type="number" value="105"></label>
+        <label>Na เป้าหมาย<input id="na_tg" type="number" value="115"></label>
+        <label>ภายใน (hr)<input id="na_hr" type="number" value="24"></label>
+        <label>สารน้ำ<select id="na_fl"><option value="514">3% NaCl (514)</option><option value="154">NSS (154)</option><option value="130">RL (130)</option></select></label>
+      </div>
+      <div class="out" id="naOut"></div>
+    </div>
+
+    <div class="calc" id="c-water">
+      <h4>Hypernatremia — water deficit</h4>
+      <div class="frm">
+        <label>น้ำหนัก (kg)<input id="w_bw" type="number" value="50"></label>
+        <label>TBW factor<select id="w_f"><option value="0.6" selected>0.6 ชาย/เด็ก</option><option value="0.5">0.5 หญิง</option><option value="0.45">0.45 หญิงสูงอายุ</option></select></label>
+        <label>Na ตอนนี้<input id="w_now" type="number" value="165"></label>
+        <label>Na เป้าหมาย<input id="w_tg" type="number" value="155"></label>
+        <label>ภายใน (hr)<input id="w_hr" type="number" value="24"></label>
+      </div>
+      <div class="out" id="wOut"></div>
+    </div>
+
+    <div class="calc" id="c-ab">
+      <h4>Acid–base: AG · Δ/Δ · Winter's · Osm gap</h4>
+      <div class="frm">
+        <label>Na<input id="ab_na" type="number" value="140"></label>
+        <label>Cl<input id="ab_cl" type="number" value="100"></label>
+        <label>HCO₃<input id="ab_hco3" type="number" value="12"></label>
+        <label>Albumin (g/dL)<input id="ab_alb" type="number" step="0.1" value="4"></label>
+        <label>PaCO₂<input id="ab_pco2" type="number" value="26"></label>
+        <label>Measured osm<input id="ab_osm" type="number" placeholder="ไม่ระบุก็ได้"></label>
+        <label>BUN<input id="ab_bun" type="number" placeholder="mg/dL"></label>
+        <label>Glucose<input id="ab_glu" type="number" placeholder="mg/dL"></label>
+      </div>
+      <div class="out" id="abOut"></div>
+    </div>
+
+    <div class="calc" id="c-hco3">
+      <h4>HCO₃ deficit & Cl deficit</h4>
+      <div class="frm">
+        <label>น้ำหนัก (kg)<input id="h_bw" type="number" value="60"></label>
+        <label>HCO₃<input id="h_hco3" type="number" value="6"></label>
+        <label>Plasma Cl<input id="h_cl" type="number" value="85"></label>
+      </div>
+      <div class="out" id="hOut"></div>
+    </div>
+
+    <div class="calc" id="c-k">
+      <h4>KCl IV & electrolyte อื่นๆ</h4>
+      <div class="frm">
+        <label>KCl ใน NSS 1 L (mEq)<select id="k_c"><option value="40">40 mEq/L</option><option value="60">60 mEq/L</option></select></label>
+        <label>ต้องการ (mEq/hr)<input id="k_r" type="number" value="10"></label>
+        <label>Total Ca (mg/dL)<input id="ca_t" type="number" step="0.1" value="7.2"></label>
+        <label>Albumin (g/dL)<input id="ca_a" type="number" step="0.1" value="2.5"></label>
+        <label>Mg (mg/dL)<input id="mg_v" type="number" step="0.1" value="1.7"></label>
+      </div>
+      <div class="out" id="kOut"></div>
+    </div>
+
+    <div class="calc" id="c-wt" style="grid-column:1/-1">
+      <h4>ยาตามน้ำหนัก (bolus / loading) <span class="pill">ใส่น้ำหนักครั้งเดียว</span></h4>
+      <div class="frm" style="max-width:520px">
+        <label>น้ำหนัก (kg)<input id="wt_bw" type="number" value="60"></label>
+        <label>Phenytoin max rate<select id="wt_ph"><option value="50">50 mg/min (ปกติ)</option><option value="25">25 mg/min (โรคหัวใจ/ตับ)</option></select></label>
+      </div>
+      <div class="tbl" id="wtOut"></div>
+    </div>
+  </div>
+</section>
+
+<footer>Medisüem · 
+  สรุปจาก “ยาที่ใช้บ่อยสำหรับการรักษาผู้ป่วยภาวะวิกฤตสำหรับแพทย์เวชปฏิบัติทั่วไป (ICU drug for general practitioner) Edition 2” โดย เอกรินทร์ ภูมิพิเชฐ · อ้างอิงในเล่ม: เวชบำบัดวิกฤตพื้นฐาน (2556), Marino's The ICU Book 4th ed., Emergencies in Critical Care 2nd ed., แนวทาง severe sepsis ศิริราช, คู่มือยาต้านพิษ 2556<br>
+  วิธีให้ยาในเอกสารเป็นเพียงรูปแบบหนึ่ง — ปรับตามบริบทสถานพยาบาล, formulary และแนวทางฉบับล่าสุด · กล่อง “อัปเดต” เป็นบันทึกเพิ่มเติม ไม่ใช่เนื้อหาต้นฉบับ
+</footer>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=(x,d=2)=>{ if(!isFinite(x)) return '—'; const r=Math.round(x*Math.pow(10,d))/Math.pow(10,d); return r.toLocaleString('en-US',{maximumFractionDigits:d}); };
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600);}
+
+/* ---------- nav / mobile menu ---------- */
+const side=$('#side');
+$('#menuBtn').addEventListener('click',()=>side.classList.toggle('open'));
+side.addEventListener('click',e=>{ if(e.target.closest('a')) side.classList.remove('open'); });
+const navLinks=$$('nav.side a');
+const secs=navLinks.map(a=>document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+const io=new IntersectionObserver(ents=>{
+  ents.forEach(en=>{ if(en.isIntersecting){ navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id)); } });
+},{rootMargin:'-80px 0px -70% 0px'});
+secs.forEach(s=>io.observe(s));
+
+/* ---------- search ---------- */
+const q=$('#q');
+const items=$$('.card, .calc, details.upd, .tbl:not(.card .tbl):not(.calc .tbl)');
+const orig=new Map();
+function clearMarks(){ orig.forEach((h,el)=>{el.innerHTML=h;}); orig.clear(); }
+function markIn(el,term){
+  const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null);
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  const re=new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+  nodes.forEach(n=>{ if(n.parentNode.closest('select,option,script,style')) return; if(!re.test(n.nodeValue)) return; re.lastIndex=0;
+    const span=document.createElement('span'); span.innerHTML=n.nodeValue.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(re,m=>'<mark>'+m+'</mark>'); n.parentNode.replaceChild(span,n); });
+}
+let tmr;
+q.addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(runSearch,150);});
+function runSearch(){
+  clearMarks();
+  const term=q.value.trim().toLowerCase();
+  $$('.noresult').forEach(n=>n.remove());
+  if(!term){ items.forEach(i=>i.classList.remove('hidden')); $$('section.chap, h3.sub').forEach(s=>s.classList.remove('hidden')); $('.hero').classList.remove('hidden'); return; }
+  $('.hero').classList.add('hidden');
+  let n=0;
+  items.forEach(i=>{ const hit=i.textContent.toLowerCase().includes(term); i.classList.toggle('hidden',!hit); if(hit){ n++; if(!i.classList.contains('calc')){ orig.set(i,i.innerHTML); markIn(i,term);} if(i.tagName==='DETAILS') i.open=true; } });
+  $$('section.chap').forEach(s=>{ const vis=[...s.querySelectorAll('.card,.calc,details.upd,.tbl')].some(x=>!x.classList.contains('hidden')&&!x.closest('.hidden')); s.classList.toggle('hidden',!vis); });
+  $$('h3.sub').forEach(h=>{ let el=h.nextElementSibling, vis=false; while(el&&!el.matches('h3.sub')){ if([...el.querySelectorAll('.card,.calc')].some(x=>!x.classList.contains('hidden'))) vis=true; if(el.matches('.tbl,details')&&!el.classList.contains('hidden')) vis=true; el=el.nextElementSibling;} h.classList.toggle('hidden',!vis); });
+  if(!n){ const d=document.createElement('div'); d.className='noresult'; d.textContent='ไม่พบ “'+q.value+'” — ลองคำอื่น เช่น ชื่อยาภาษาอังกฤษ'; $('#main').prepend(d); }
+  else window.scrollTo({top:0});
+}
+document.addEventListener('keydown',e=>{ if(e.key==='/'&&document.activeElement!==q&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();q.focus();} if(e.key==='Escape'&&document.activeElement===q){q.value='';runSearch();q.blur();} });
+
+/* ---------- infusion calculator ---------- */
+const DOSE_UNITS={ // to amount-per-hour in base (mg or unit); base:'mg'|'unit'
+ 'µg/kg/min':{f:(d,bw)=>d*bw*60/1000,b:'mg'}, 'µg/min':{f:d=>d*60/1000,b:'mg'}, 'µg/kg/hr':{f:(d,bw)=>d*bw/1000,b:'mg'}, 'µg/hr':{f:d=>d/1000,b:'mg'},
+ 'mg/kg/min':{f:(d,bw)=>d*bw*60,b:'mg'}, 'mg/min':{f:d=>d*60,b:'mg'}, 'mg/kg/hr':{f:(d,bw)=>d*bw,b:'mg'}, 'mg/hr':{f:d=>d,b:'mg'}, 'g/hr':{f:d=>d*1000,b:'mg'},
+ 'unit/kg/hr':{f:(d,bw)=>d*bw,b:'unit'}, 'unit/hr':{f:d=>d,b:'unit'}
+};
+const P=[
+ {id:'dopa1',n:'Dopamine 1:1 (100 mg/100 mL)',drug:'Dopamine',a:100,u:'mg',v:100,dil:'NSS',du:'µg/kg/min',d:5,steps:[2,5,10,15,20],rng:'1–20 µg/kg/min'},
+ {id:'dopa2',n:'Dopamine 2:1 (200 mg/100 mL)',drug:'Dopamine',a:200,u:'mg',v:100,dil:'NSS',du:'µg/kg/min',d:5,steps:[2,5,10,15,20],rng:'1–20 µg/kg/min'},
+ {id:'dobu',n:'Dobutamine 2:1 (250 mg/125 mL)',drug:'Dobutamine',a:250,u:'mg',v:125,dil:'NSS',du:'µg/kg/min',d:5,steps:[2.5,5,10,15,20],rng:'1–20 µg/kg/min'},
+ {id:'ne250',n:'Norepinephrine 4 mg/250 mL (peripheral)',drug:'Norepinephrine',a:4,u:'mg',v:250,dil:'5% DW',du:'µg/kg/min',d:0.05,steps:[0.02,0.05,0.1,0.2,0.5,1],rng:'0.02–2 µg/kg/min หรือ 1–50 µg/min'},
+ {id:'ne500',n:'Norepinephrine 4 mg/500 mL',drug:'Norepinephrine',a:4,u:'mg',v:500,dil:'5% DW',du:'µg/kg/min',d:0.05,steps:[0.02,0.05,0.1,0.2,0.5],rng:'0.02–2 µg/kg/min'},
+ {id:'ne8',n:'Norepinephrine 8 mg/250 mL (central)',drug:'Norepinephrine',a:8,u:'mg',v:250,dil:'5% DW',du:'µg/kg/min',d:0.1,steps:[0.05,0.1,0.2,0.5,1,2],rng:'0.02–2 µg/kg/min'},
+ {id:'epi',n:'Epinephrine 1:10 (10 mg/100 mL)',drug:'Epinephrine',a:10,u:'mg',v:100,dil:'NSS',du:'µg/kg/min',d:0.05,steps:[0.05,0.1,0.2,0.5,1],rng:'0.05–1 µg/kg/min · หรือ 0.5 mg/hr ขึ้นทีละ 0.5'},
+ {id:'ntg',n:'Nitroglycerine 50 mg/250 mL (1:5)',drug:'Nitroglycerine',a:50,u:'mg',v:250,dil:'5% DW (ขวดแก้ว)',du:'µg/min',d:5,steps:[5,10,20,50,100,200],rng:'5–100 (200) µg/min'},
+ {id:'ntg2',n:'Nitroglycerine 50 mg/100 mL (1:2)',drug:'Nitroglycerine',a:50,u:'mg',v:100,dil:'5% DW (ขวดแก้ว)',du:'µg/min',d:5,steps:[5,10,20,50,100,200],rng:'5–100 (200) µg/min'},
+ {id:'snp',n:'Nitroprusside 50 mg/250 mL (1:5)',drug:'Sodium nitroprusside',a:50,u:'mg',v:250,dil:'5% DW (กันแสง)',du:'µg/kg/min',d:0.5,steps:[0.5,1,2,3,5,10],rng:'0.5–10 µg/kg/min'},
+ {id:'nicar',n:'Nicardipine 20 mg/100 mL (1:5)',drug:'Nicardipine',a:20,u:'mg',v:100,dil:'NSS',du:'mg/hr',d:2,steps:[1,2,5,10,15],rng:'5–15 mg/hr'},
+ {id:'lido',n:'Lidocaine 400 mg/100 mL',drug:'2% Xylocaine (w/o adrenaline) 20 mL',a:400,u:'mg',v:100,dil:'NSS 80 mL',du:'mg/min',d:1,steps:[1,2,3,4],rng:'1–4 mg/min'},
+ {id:'mg',n:'MgSO₄ 40 g/1000 mL (50% 80 mL)',drug:'50% MgSO4 80 mL',a:40,u:'g',v:1000,dil:'5% DW 920 mL',du:'g/hr',d:1,steps:[0.5,1,2],rng:'TdP 1–2 g/hr'},
+ {id:'furo',n:'Furosemide 500 mg/50 mL (ไม่ผสม)',drug:'Furosemide',a:500,u:'mg',v:50,dil:'(undiluted, syringe pump, กันแสง)',du:'mg/hr',d:40,steps:[10,20,40],rng:'40 mg/hr'},
+ {id:'mida',n:'Midazolam 30 mg/60 mL (1:2)',drug:'Midazolam',a:30,u:'mg',v:60,dil:'NSS up to',du:'mg/hr',d:2,steps:[1,2,3,5,10],rng:'0.04–0.2 mg/kg/hr (2–10 mg/hr)'},
+ {id:'propofol',n:'Propofol 1% (10 mg/mL, ไม่ผสม)',drug:'Propofol 1%',a:200,u:'mg',v:20,dil:'(undiluted)',du:'µg/kg/min',d:20,steps:[5,10,20,40,80],rng:'5–80 µg/kg/min (≤ 4–5 mg/kg/hr)'},
+ {id:'thio',n:'Thiopental 1 g/100 mL',drug:'Thiopental',a:1000,u:'mg',v:100,dil:'NSS',du:'mg/kg/hr',d:2,steps:[2,3,4,5],rng:'2–5 mg/kg/hr'},
+ {id:'morphine',n:'Morphine 10 mg/50 mL (1:5)',drug:'Morphine',a:10,u:'mg',v:50,dil:'NSS',du:'mg/hr',d:1,steps:[1,2,3,5,10],rng:'1–10 mg/hr'},
+ {id:'fent',n:'Fentanyl 500 µg/100 mL (5:1)',drug:'Fentanyl',a:500,u:'µg',v:100,dil:'NSS',du:'µg/hr',d:50,steps:[25,50,100,150,200],rng:'0.5–3 µg/kg/hr (10–200 µg/hr)'},
+ {id:'atra',n:'Atracurium 200 mg/20 mL (ไม่ผสม)',drug:'Atracurium',a:200,u:'mg',v:20,dil:'(undiluted)',du:'µg/kg/min',d:5,steps:[5,8,10,12],rng:'5–12 µg/kg/min'},
+ {id:'cisa',n:'Cisatracurium 2 mg/mL (ไม่ผสม)',drug:'Cisatracurium',a:10,u:'mg',v:5,dil:'(undiluted)',du:'µg/kg/min',d:1,steps:[1,1.5,2],rng:'1–2 µg/kg/min'},
+ {id:'heparin',n:'Heparin 10,000 U/100 mL (100:1)',drug:'Heparin',a:10000,u:'unit',v:100,dil:'NSS',du:'unit/kg/hr',d:18,steps:[12,14,16,18,20,22],rng:'80 U/kg bolus → 18 U/kg/hr'},
+ {id:'ri',n:'Regular insulin 100 U/100 mL (1:1)',drug:'Regular insulin',a:100,u:'unit',v:100,dil:'NSS',du:'unit/hr',d:0.5,steps:[0.5,1,2,3,4,6],rng:'ICU 0.5 U/hr ↑0.5 · DKA 0.1 U/kg/hr'},
+ {id:'panto',n:'Pantoprazole 80 mg/100 mL',drug:'Pantoprazole',a:80,u:'mg',v:100,dil:'NSS',du:'mg/hr',d:8,steps:[8],rng:'8 mg/hr × 72 hr'},
+ {id:'octreo',n:'Octreotide 500 µg/500 mL',drug:'Sandostatin',a:500,u:'µg',v:500,dil:'NSS',du:'µg/hr',d:25,steps:[25,50],rng:'25–50 µg/hr'},
+ {id:'amino',n:'Aminophylline 250 mg/100 mL',drug:'Aminophylline',a:250,u:'mg',v:100,dil:'NSS',du:'mg/kg/hr',d:0.5,steps:[0.45,0.5,0.7,0.9],rng:'0.45–0.9 mg/kg/hr'},
+ {id:'hc',n:'Hydrocortisone 200 mg/100 mL',drug:'Hydrocortisone',a:200,u:'mg',v:100,dil:'NSS',du:'mg/hr',d:8.333,steps:[8.333,12.5],rng:'200–300 mg/day'},
+ {id:'custom',n:'— กำหนดเอง —',drug:'Drug',a:100,u:'mg',v:100,dil:'NSS',du:'µg/kg/min',d:1,steps:[],rng:''}
+];
+const sel=$('#preset'), doseU=$('#doseU');
+sel.innerHTML=P.map(p=>`<option value="${p.id}">${p.n}</option>`).join('');
+Object.keys(DOSE_UNITS).forEach(k=>doseU.insertAdjacentHTML('beforeend',`<option>${k}</option>`));
+let cur=P[1], last='dose';
+function amtBase(){ const a=+$('#amt').value, u=$('#amtU').value; if(u==='unit') return {v:a,b:'unit'}; return {v:u==='µg'?a/1000:u==='g'?a*1000:a,b:'mg'}; }
+function conc(){ const ab=amtBase(); return {c:ab.v/(+$('#vol').value),b:ab.b}; }
+function rateFor(d){ const U=DOSE_UNITS[doseU.value], bw=+$('#bw').value, C=conc(); if(U.b!==C.b) return NaN; return U.f(d,bw)/C.c; }
+function doseFor(r){ const U=DOSE_UNITS[doseU.value], bw=+$('#bw').value, C=conc(); if(U.b!==C.b) return NaN; const one=U.f(1,bw); return r*C.c/one; }
+function loadPreset(id){ cur=P.find(p=>p.id===id)||P[0]; sel.value=cur.id; $('#amt').value=cur.a; $('#amtU').value=cur.u; $('#vol').value=cur.v; doseU.value=cur.du; $('#dose').value=cur.d; last='dose'; calcInf(); }
+function concText(){ const a=+$('#amt').value,u=$('#amtU').value,v=+$('#vol').value; return `${fmt(a/v,3)} ${u}/mL`; }
+function calcInf(){
+  const out=$('#infOut'); const U=DOSE_UNITS[doseU.value], C=conc();
+  if(U.b!==C.b){ out.innerHTML='<span class="warnline">หน่วย dose ไม่เข้ากับหน่วยยา (unit vs mass)</span>'; return; }
+  if(last==='dose'){ $('#rate').value=fmt(rateFor(+$('#dose').value),2).replace(/,/g,''); } else { $('#dose').value=fmt(doseFor(+$('#rate').value),3).replace(/,/g,''); }
+  const r=+$('#rate').value, d=+$('#dose').value, bw=+$('#bw').value;
+  const perHr=U.f(d,bw); const unitLbl=C.b==='unit'?'unit':'mg';
+  const alt=[]; if(C.b==='mg'){ alt.push(`${fmt(perHr*1000/60,2)} µg/min`, `${fmt(perHr*1000/60/bw,3)} µg/kg/min`, `${fmt(perHr,2)} mg/hr`); } else { alt.push(`${fmt(perHr,2)} unit/hr`, `${fmt(perHr/bw,2)} unit/kg/hr`); }
+  const steps=(cur.id==='custom'||sel.value!==cur.id)?[]:cur.steps;
+  const tbl=steps.length?`<div class="tbl" style="margin-top:10px"><table class="dtab"><tr><th>${doseU.value}</th>${steps.map(s=>`<td>${fmt(s,3)}</td>`).join('')}</tr><tr><th>mL/hr</th>${steps.map(s=>`<td><b>${fmt(rateFor(s),1)}</b></td>`).join('')}</tr></table></div>`:'';
+  const order=`${cur.id==='custom'?'Drug':cur.drug} ${$('#amt').value} ${$('#amtU').value}${/undiluted/.test(cur.dil)?'':' in '+cur.dil+' '+$('#vol').value+' mL'}\nSig. IV drip ${fmt(r,1)} µd/min (= ${fmt(d,3)} ${doseU.value})`;
+  out.innerHTML=`<div class="row"><div>Rate<br><span class="big">${fmt(r,2)}</span> mL/hr <span class="mini">(= µd/min · ปัดขึ้น ${Math.ceil(r-1e-9)})</span></div><div>Dose<br><span class="big">${fmt(d,3)}</span> ${doseU.value}</div><div>ความเข้มข้น<br><b>${concText()}</b></div></div>
+  <div class="mini" style="margin-top:6px">เทียบเท่า: ${alt.join(' · ')} ${cur.rng?'· ช่วงปกติ: '+cur.rng:''}</div>${tbl}
+  <div class="order" id="ordTxt">${order.replace(/</g,'&lt;')}</div><button class="btn sm ghost" id="cpy" style="margin-top:6px">คัดลอกคำสั่ง</button>`;
+  $('#cpy').onclick=()=>{ navigator.clipboard&&navigator.clipboard.writeText(order).then(()=>toast('คัดลอกแล้ว'),()=>toast('คัดลอกไม่ได้ในหน้านี้')); };
+}
+sel.addEventListener('change',()=>loadPreset(sel.value));
+['amt','amtU','vol','bw'].forEach(id=>$('#'+id).addEventListener('input',calcInf));
+doseU.addEventListener('change',()=>{ last='rate'; calcInf(); });
+$('#dose').addEventListener('input',()=>{last='dose';calcInf();});
+$('#rate').addEventListener('input',()=>{last='rate';calcInf();});
+loadPreset('dopa2');
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-preset],[data-goto]'); if(!b) return;
+  if(b.dataset.preset){ loadPreset(b.dataset.preset); document.getElementById('c-inf').scrollIntoView({behavior:'smooth'}); }
+  else document.getElementById(b.dataset.goto).scrollIntoView({behavior:'smooth'});
+  if(q.value){ q.value=''; runSearch(); setTimeout(()=>document.getElementById(b.dataset.goto||'c-inf').scrollIntoView(),50); }
+});
+
+/* ---------- Na deficit ---------- */
+function v(id){return +document.getElementById(id).value;}
+function calcNa(){
+  const tbw=v('na_bw')*v('na_f'), dNa=v('na_tg')-v('na_now'), def=tbw*dNa, conc=v('na_fl'), vol=def/conc*1000, hr=v('na_hr'), rate=vol/hr;
+  const per=dNa/hr, perDay=dNa*24/hr;
+  let w=''; if(per>0.5) w+=`<div class="warnline">⚠ ${fmt(per,2)} mEq/L/hr — เกิน 0.5 (ยกเว้น acute symptomatic 1 mEq/L/hr ช่วง 4 hr แรก)</div>`;
+  if(perDay>10) w+=`<div class="warnline">⚠ เทียบเป็น ${fmt(perDay,1)} mEq/L/day — เกิน 10 mEq/L/day</div>`;
+  $('#naOut').innerHTML=`TBW = ${fmt(tbw,1)} L · Na deficit = <b>${fmt(def,0)} mEq</b><br>ปริมาตร = ${fmt(vol,0)} mL → <span class="big">${fmt(rate,1)}</span> mL/hr × ${hr} hr<div class="mini">อัตราแก้ ${fmt(per,2)} mEq/L/hr · สูตรอย่างง่ายไม่คิด ongoing loss/urine — เจาะ Na ซ้ำบ่อย</div>${w}`;
+}
+['na_bw','na_f','na_now','na_tg','na_hr','na_fl'].forEach(i=>$('#'+i).addEventListener('input',calcNa)); calcNa();
+
+/* ---------- water deficit ---------- */
+function calcW(){
+  const t1=v('w_bw')*v('w_f'), t2=v('w_now')*t1/v('w_tg'), def=(t2-t1)*1000, hr=v('w_hr'), per=(v('w_now')-v('w_tg'))/hr;
+  $('#wOut').innerHTML=`TBW₁ = ${fmt(t1,2)} L → TBW₂ = ${fmt(t2,2)} L<br>Water deficit = <b>${fmt(def,0)} mL</b> → <span class="big">${fmt(def/hr,1)}</span> mL/hr (NSS/2 หรือ 5%DW)<div class="mini">อัตราลด ${fmt(per,2)} mEq/L/hr ${per>0.5?'<span class="warnline">⚠ เกิน 0.5</span>':''} · ตัวอย่างในเล่มคิด deficit แล้วให้ด้วย NSS/2 ตรงๆ</div>`;
+}
+['w_bw','w_f','w_now','w_tg','w_hr'].forEach(i=>$('#'+i).addEventListener('input',calcW)); calcW();
+
+/* ---------- acid base ---------- */
+function calcAB(){
+  const na=v('ab_na'),cl=v('ab_cl'),h=v('ab_hco3'),alb=v('ab_alb'),p=v('ab_pco2');
+  const ag=na-cl-h, cag=ag+2.5*(4-alb), ex=1.5*h+8;
+  let resp=''; if($('#ab_pco2').value!==''){ resp = p>ex+2?'PaCO₂ สูงกว่าคาด → ร่วม <b>respiratory acidosis</b>':p<ex-2?'PaCO₂ ต่ำกว่าคาด → ร่วม <b>respiratory alkalosis</b>':'PaCO₂ อยู่ในช่วง → compensated (pure metabolic)'; }
+  let dd=''; if(cag>14 && h<24){ const r=(cag-12)/(24-h), d2=(cag-12)-(24-h);
+    const it=r<0.8?'ร่วม <b>normal AG</b> metabolic acidosis':r>1.2?'ร่วม <b>metabolic alkalosis</b>':'pure wide AG';
+    dd=`ΔAG/ΔHCO₃ = <b>${fmt(r,2)}</b> → ${it} · delta-delta = ${fmt(d2,1)}`; } else dd = cag<=14?'AG ปกติ → คิดถึง NAGMA (GI loss, RTA, NSS, acetazolamide)':'';
+  let og=''; if($('#ab_osm').value&&$('#ab_bun').value&&$('#ab_glu').value){ const calc=2*na+v('ab_bun')/2.8+v('ab_glu')/18, gap=v('ab_osm')-calc; og=`Calc osm = ${fmt(calc,1)} · Osmolal gap = <b>${fmt(gap,1)}</b> ${gap>10?'<span class="warnline">&gt; 10 → toxic alcohol?</span>':''}`; }
+  $('#abOut').innerHTML=`AG = <b>${fmt(ag,1)}</b> · corrected AG (alb ${alb}) = <span class="big">${fmt(cag,1)}</span><br>Winter's expected PaCO₂ = ${fmt(ex-2,1)}–${fmt(ex+2,1)} · ${resp}<br>${dd}${og?'<br>'+og:''}<div class="mini">ถ้าเป็น metabolic alkalosis: expected PaCO₂ = 0.7×HCO₃ + 20 ± 2 = ${fmt(0.7*h+18,1)}–${fmt(0.7*h+22,1)}</div>`;
+}
+['ab_na','ab_cl','ab_hco3','ab_alb','ab_pco2','ab_osm','ab_bun','ab_glu'].forEach(i=>$('#'+i).addEventListener('input',calcAB)); calcAB();
+
+/* ---------- HCO3 / Cl ---------- */
+function calcH(){
+  const bw=v('h_bw'),h=v('h_hco3'),cl=v('h_cl'); const d1=Math.max(0,0.6*bw*(15-h)), d2=Math.max(0,0.5*bw*(8-h)); const cld=Math.max(0,0.2*bw*(100-cl));
+  $('#hOut').innerHTML=`HCO₃ deficit (เป้า 15) = <b>${fmt(d1,0)} mEq</b> ≈ 7.5% NaHCO₃ ${fmt(d1/44.6*50,0)} mL<br>HCO₃ deficit (เป้า 8) = <b>${fmt(d2,0)} mEq</b> ≈ ${fmt(d2/44.6*50,0)} mL<div class="mini">7.5% NaHCO₃ 50 mL = 44.6 mEq · ให้ทีละส่วน ABG ซ้ำ 30 นาที เป้า pH &gt; 7.20</div><hr style="border:0;border-top:1px solid #cde">Cl deficit = <b>${fmt(cld,0)} mEq</b> → NSS <span class="big">${fmt(cld/154,2)}</span> L`;
+}
+['h_bw','h_hco3','h_cl'].forEach(i=>$('#'+i).addEventListener('input',calcH)); calcH();
+
+/* ---------- K / Ca / Mg ---------- */
+function calcK(){
+  const c=v('k_c'), r=v('k_r'), rate=1000/c*r; const cc=v('ca_t')+0.8*(4-v('ca_a')); const mg=v('mg_v')*10*2/24;
+  $('#kOut').innerHTML=`KCl ${c} mEq in NSS 1 L, ${r} mEq/hr → <span class="big">${fmt(rate,1)}</span> mL/hr ${r>10?'<span class="warnline">⚠ peripheral ≤ 10 mEq/hr</span>':''}<div class="mini">KCl ${c} mEq = ${c/2} mL (2 mEq/mL) · central: 10–20 mEq in NSS 100 mL/1 hr, ≤ 0.3 mEq/kg/hr + EKG</div><hr style="border:0;border-top:1px solid #cde">Corrected Ca = <b>${fmt(cc,2)}</b> mg/dL · Mg ${v('mg_v')} mg/dL = <b>${fmt(mg,2)}</b> mEq/L`;
+}
+['k_c','k_r','ca_t','ca_a','mg_v'].forEach(i=>$('#'+i).addEventListener('input',calcK)); calcK();
+
+/* ---------- weight based ---------- */
+function calcWt(){
+  const bw=v('wt_bw'), phr=v('wt_ph'); if(!bw){ $('#wtOut').innerHTML=''; return; }
+  const ph=Math.min(20*bw,15*bw), phLo=15*bw, phHi=20*bw;
+  const tpa=Math.min(0.9*bw,90);
+  const rows=[
+   ['Phenytoin load','15–20 mg/kg',`${fmt(phLo,0)}–${fmt(phHi,0)} mg`,`in NSS 100 mL · ≤ ${phr} mg/min → ${fmt(phLo/phr,0)}–${fmt(phHi/phr,0)} min · dose 2 = ${fmt(10*bw,0)} mg`],
+   ['Valproate','15–20 mg/kg',`${fmt(15*bw,0)}–${fmt(20*bw,0)} mg`,'1–3 mg/kg/min · vial 400 mg'],
+   ['Phenobarbital','20 mg/kg (+10)',`${fmt(20*bw,0)} mg`,`in NSS 100 mL ใน 15–20 min · +${fmt(10*bw,0)} mg ถ้าไม่ตอบสนอง`],
+   ['Mannitol 20%','0.5–1 g/kg',`${fmt(0.5*bw,0)}–${fmt(bw,0)} g`,`= ${fmt(2.5*bw,0)}–${fmt(5*bw,0)} mL · drip &gt; 15 min`],
+   ['rt-PA (stroke)','0.9 mg/kg (max 90)',`${fmt(tpa,1)} mg`,`bolus ${fmt(tpa*0.1,1)} mg ใน 1 min → ${fmt(tpa*0.9,1)} mg ใน 60 min`],
+   ['Heparin','80 U/kg → 18 U/kg/hr',`${fmt(80*bw,0)} U`,`= ${fmt(80*bw/5000,2)} mL (25,000 U/5 mL) → ${fmt(18*bw,0)} U/hr = ${fmt(18*bw/100,1)} mL/hr (100:1)`],
+   ['RI (DKA)','0.1 U/kg → 0.1 U/kg/hr',`${fmt(0.1*bw,1)} U`,`→ ${fmt(0.1*bw,1)} U/hr = ${fmt(0.1*bw,1)} mL/hr (1:1)`],
+   ['Glucose maint.','2 mg/kg/min',`${fmt(2*bw*60/1000,2)} g/hr`,`5% D ${fmt(2*bw*60/1000*20,0)} mL/hr · 10% D ${fmt(2*bw*60/1000*10,0)} mL/hr`],
+   ['Midazolam','0.02 mg/kg → 0.04 mg/kg/hr',`${fmt(0.02*bw,1)} mg`,`→ ${fmt(0.04*bw,1)} mg/hr`],
+   ['Fentanyl','0.35–1.5 µg/kg → 0.5–3 µg/kg/hr',`${fmt(0.35*bw,0)}–${fmt(1.5*bw,0)} µg`,`→ ${fmt(0.5*bw,0)}–${fmt(3*bw,0)} µg/hr`],
+   ['Propofol','1–2 mg/kg',`${fmt(bw,0)}–${fmt(2*bw,0)} mg`,`= ${fmt(bw/10,1)}–${fmt(bw/5,1)} mL`],
+   ['Cisatracurium','0.1–0.2 mg/kg → 1–2 µg/kg/min',`${fmt(0.1*bw,1)}–${fmt(0.2*bw,1)} mg`,`→ ${fmt(bw*60/1000,2)}–${fmt(2*bw*60/1000,2)} mg/hr`],
+   ['Atracurium','0.5 mg/kg → 5–12 µg/kg/min',`${fmt(0.5*bw,0)} mg`,`→ ${fmt(5*bw*60/1000,1)}–${fmt(12*bw*60/1000,1)} mg/hr`],
+   ['Lidocaine load','1–1.5 mg/kg (สะสม ≤ 3)',`${fmt(bw,0)}–${fmt(1.5*bw,0)} mg`,`= 2% ${fmt(bw/20,1)}–${fmt(1.5*bw/20,1)} mL · max ${fmt(3*bw,0)} mg`],
+   ['Aminophylline','5–6 mg/kg → 0.45–0.9 mg/kg/hr',`${fmt(5*bw,0)}–${fmt(6*bw,0)} mg`,`→ ${fmt(0.45*bw,1)}–${fmt(0.9*bw,1)} mg/hr`],
+   ['NAC ขวด 1','150 mg/kg',`${fmt(150*bw,0)} mg`,`${fmt(150*bw/300,1)} vial in 5%DW 200 mL ใน 1 hr`],
+   ['NAC ขวด 2','50 mg/kg',`${fmt(50*bw,0)} mg`,`${fmt(50*bw/300,1)} vial in 5%DW 500 mL ใน 4 hr`],
+   ['NAC ขวด 3','100 mg/kg',`${fmt(100*bw,0)} mg`,`${fmt(100*bw/300,1)} vial in 5%DW 1,000 mL ใน 16 hr`],
+   ['Amphotericin B','0.5–0.7 mg/kg/day',`${fmt(0.5*bw,0)}–${fmt(0.7*bw,0)} mg`,'in 5%DW 500 mL ใน 6 hr + CPM 10 mg'],
+   ['Co-trimoxazole (PCP)','TMP 5 mg/kg/day',`${fmt(5*bw,0)} mg TMP`,`≈ ${fmt(5*bw/80,2)} amp/day (TMP 80 mg/amp)`],
+   ['Artesunate','2.4 mg/kg ที่ 0, 12, 24 hr',`${fmt(2.4*bw,0)} mg`,`= ${fmt(2.4*bw/10,1)} mL (10 mg/mL) · ${fmt(2.4*bw/60,1)} vial`],
+   ['K₂HPO₄','10 / 20 mg/kg/day',`${fmt(10*bw,0)} / ${fmt(20*bw,0)} mg P`,`= ${fmt(10*bw/310*20/24,2)} / ${fmt(20*bw/310*20/24,2)} mEq/hr → ${fmt(10*bw/310*20/24*25,0)} / ${fmt(20*bw/310*20/24*25,0)} mL/hr (40 mEq/L)`],
+   ['Vancomycin','30 mg/kg load → 15 mg/kg q 12 hr',`${fmt(30*bw,0)} mg`,`→ ${fmt(15*bw,0)} mg q 12 hr`],
+   ['Gentamicin / Amikacin','5–7 / 15–20 mg/kg OD',`${fmt(5*bw,0)}–${fmt(7*bw,0)} / ${fmt(15*bw,0)}–${fmt(20*bw,0)} mg`,'in NSS 100 mL ใน ½ hr'],
+  ];
+  $('#wtOut').innerHTML=`<table><tr><th>ยา</th><th>ขนาด</th><th>BW ${bw} kg</th><th>วิธีให้</th></tr>${rows.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td style="font-family:var(--mono);color:var(--accent);font-weight:600">${r[2]}</td><td>${r[3]}</td></tr>`).join('')}</table>`;
+}
+['wt_bw','wt_ph'].forEach(i=>$('#'+i).addEventListener('input',calcWt)); calcWt();
+})();
+</script>
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+</body>
+</html>
