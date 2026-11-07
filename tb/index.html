@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>วัณโรค NTP 2564 — สรุป CPG + เครื่องมือ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: header → sticky chapter tabs → one-column reading pages; tools = inputs left / live result right, stacks on phone */
+:root{
+  --bg:#F3F4F2; --surface:#FFFFFF; --sunk:#E9EBE7; --line:#D3D7D0;
+  --ink:#181C17; --muted:#5A6157;
+  --tb:#8A4B12; --tb-soft:#F7E8D8;
+  --rx:#1F5E66; --rx-soft:#DDEDEF;
+  --ok:#2E7047; --ok-soft:#DFF0E5;
+  --warn:#93600B; --warn-soft:#FBEDD3;
+  --crit:#A3231F; --crit-soft:#F8DEDC;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121411; --surface:#1A1D19; --sunk:#232721; --line:#343A31;
+  --ink:#E6E9E3; --muted:#9BA396;
+  --tb:#E9A86A; --tb-soft:#3A2817; --rx:#7FC2CB; --rx-soft:#18312F;
+  --ok:#7CCB97; --ok-soft:#1C3326; --warn:#E9B762; --warn-soft:#3A2D15; --crit:#F08A84; --crit-soft:#3E1F1D;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121411; --surface:#1A1D19; --sunk:#232721; --line:#343A31;
+  --ink:#E6E9E3; --muted:#9BA396;
+  --tb:#E9A86A; --tb-soft:#3A2817; --rx:#7FC2CB; --rx-soft:#18312F;
+  --ok:#7CCB97; --ok-soft:#1C3326; --warn:#E9B762; --warn-soft:#3A2D15; --crit:#F08A84; --crit-soft:#3E1F1D;
+  color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65;padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-top:calc(env(safe-area-inset-top,0px) + 26px);padding-bottom:18px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4.4vw,40px);line-height:1.2;margin:6px 0 8px;text-wrap:balance}
+h1 .r{color:var(--tb)}
+.sub{color:var(--muted);max-width:72ch;margin:0}
+.byline{font-size:13px;color:var(--muted);margin-top:10px}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin}
+nav.tabs button{font:600 14px var(--f-body);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:12px 11px;cursor:pointer;white-space:nowrap}
+nav.tabs button .n{font-family:var(--f-mono);font-size:12px;margin-right:4px;opacity:.8}
+nav.tabs button[aria-selected="true"]{color:var(--tb);border-bottom-color:var(--tb)}
+nav.tabs button.t-tool{color:var(--rx)}
+nav.tabs button.t-tool[aria-selected="true"]{border-bottom-color:var(--rx)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--rx);outline-offset:2px}
+main{padding-block:24px 96px}
+section.page{display:flex;flex-direction:column;gap:28px}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;line-height:1.3;margin:0;text-wrap:balance}
+h3{font-family:var(--f-display);font-weight:600;font-size:18px;line-height:1.35;margin:0 0 8px;text-wrap:balance}
+h4{font-size:15px;margin:0 0 6px}
+p{margin:0 0 8px} ul,ol{margin:0 0 6px;padding-left:1.25em} li{margin:2px 0}
+a{color:var(--rx)}
+.block{display:flex;flex-direction:column;gap:12px;scroll-margin-top:64px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.grid2>*,.grid3>*,.block>*{min-width:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--sunk);color:var(--muted)}
+.tag.r{background:var(--tb-soft);color:var(--tb)} .tag.a{background:var(--rx-soft);color:var(--rx)}
+.tag.ok{background:var(--ok-soft);color:var(--ok)} .tag.c{background:var(--crit-soft);color:var(--crit)}
+.note{font-size:13px;color:var(--muted)}
+.pg{font:500 11.5px var(--f-mono);color:var(--muted);background:var(--sunk);padding:0 6px;border-radius:4px;white-space:nowrap;vertical-align:2px;margin-left:6px}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
+.callout.crit{border-color:var(--crit);background:var(--crit-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout.info{border-color:var(--rx);background:var(--rx-soft)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.tbl .cap{font-size:13px;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--sunk)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.03em;color:var(--muted);font-weight:600;background:var(--surface)}
+td.num,th.num{white-space:nowrap;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+td.c,th.c{text-align:center}
+.yes{color:var(--ok);font-weight:700}
+.keypts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.kp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+.kp .big{font-family:var(--f-display);font-weight:700;font-size:20px;line-height:1.3;color:var(--tb);margin:4px 0}
+.chap-head{display:flex;flex-direction:column;gap:4px;padding-bottom:6px;border-bottom:2px solid var(--tb)}
+.chap-head .eyebrow{color:var(--tb)}
+h3.sec{display:flex;gap:10px;align-items:baseline;font-size:20px;padding-top:4px}
+h3.sec .sn{font-family:var(--f-mono);font-size:15px;color:var(--tb);flex:none}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px}
+nav.toc button{font:500 13px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:3px 11px;cursor:pointer}
+nav.toc button:hover{border-color:var(--tb);color:var(--tb)}
+details.more{border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+details.more>summary{cursor:pointer;padding:9px 14px;font-weight:600;font-size:14px;color:var(--muted)}
+details.more[open]>summary{border-bottom:1px solid var(--line)}
+details.more>.in{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+dl.kv{display:grid;grid-template-columns:minmax(90px,max-content) minmax(0,1fr);gap:4px 14px;margin:0}
+dl.kv dt{font-weight:600;font-size:13.5px} dl.kv dd{margin:0;font-size:14px;min-width:0}
+.rx{font-family:var(--f-mono);font-size:13px;background:var(--rx-soft);color:var(--rx);padding:0 6px;border-radius:4px;overflow-wrap:anywhere;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (max-width:560px){dl.kv{grid-template-columns:minmax(0,1fr)} dl.kv dd{margin-bottom:6px}}
+.panel,.kp,.callout,dd,td,li,p{overflow-wrap:break-word}
+
+/* flowchart */
+.fc-scroll{overflow-x:auto;padding-bottom:4px}
+.fc{display:flex;flex-direction:column;align-items:center;min-width:620px;padding:6px 0}
+.node{background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;text-align:center;font-size:13.5px;line-height:1.45;max-width:340px}
+.node b{display:block;font-size:14px}
+.node.start{border-color:var(--tb)}
+.node.act{background:var(--sunk)}
+.node.go{border-color:var(--ok);background:var(--ok-soft)}
+.node.stop{border-style:dashed;color:var(--muted)}
+.node.ref{border-color:var(--crit);background:var(--crit-soft)}
+.node.warn{border-color:var(--warn);background:var(--warn-soft)}
+.arr{width:2px;height:20px;background:var(--line);position:relative;flex:none}
+.arr::after{content:"";position:absolute;bottom:-1px;left:-4px;border:5px solid transparent;border-top-color:var(--line);border-bottom:0}
+.split{display:grid;gap:10px;width:100%;border-top:2px solid var(--line)}
+.split>.col{display:flex;flex-direction:column;align-items:center;min-width:0}
+.split>.col>.node{max-width:100%}
+.node{overflow-wrap:anywhere}
+.lbl{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--bg);padding:0 6px;margin-top:-1px}
+.lbl.y{color:var(--ok)} .lbl.n{color:var(--crit)}
+
+/* workflow timeline */
+.wf{display:grid;gap:0;counter-reset:wf}
+.wf .step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;position:relative;padding-bottom:18px}
+.wf .step::before{counter-increment:wf;content:counter(wf);width:34px;height:34px;border-radius:50%;background:var(--tb);color:#fff;font:700 15px var(--f-mono);display:flex;align-items:center;justify-content:center;grid-row:1/3;z-index:1}
+.wf .step::after{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--line)}
+.wf .step:last-child::after{display:none}
+.wf .step .body{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.wf .step .body h4{font-family:var(--f-display);font-size:16.5px;margin-bottom:4px}
+.go-tool{font:600 13px var(--f-body);background:var(--rx-soft);color:var(--rx);border:0;border-radius:99px;padding:3px 11px;cursor:pointer;margin:4px 6px 0 0}
+.go-tool:hover{filter:brightness(.95)}
+
+/* tools */
+.toolnav{display:flex;flex-wrap:wrap;gap:6px}
+.toolnav button{font:600 13.5px var(--f-body);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.toolnav button[aria-pressed="true"]{background:var(--rx);color:#fff;border-color:var(--rx)}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px;align-items:start}
+@media (max-width:820px){.tool{grid-template-columns:minmax(0,1fr)}}
+.form{display:flex;flex-direction:column;gap:12px}
+.fld{display:flex;flex-direction:column;gap:4px}
+.fld>label,.fld>.lab{font-size:13.5px;font-weight:600}
+.fld .hint{font-size:12.5px;color:var(--muted)}
+input[type=number],input[type=date],select{font:500 15px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:7px 10px;width:100%;max-width:100%}
+input[type=number]{font-family:var(--f-mono)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:7px;padding:5px 10px;font-size:14px;cursor:pointer;background:var(--surface)}
+.seg label:has(input:checked){border-color:var(--rx);background:var(--rx-soft);color:var(--rx);font-weight:600}
+.seg input{accent-color:var(--rx);margin:0}
+.chk{display:flex;flex-direction:column;gap:6px}
+.chk label{display:flex;gap:8px;align-items:flex-start;font-size:14px;cursor:pointer}
+.chk input{accent-color:var(--rx);margin-top:5px;flex:none}
+.out{position:sticky;top:64px;display:flex;flex-direction:column;gap:12px}
+@media (max-width:820px){.out{position:static}}
+.res{background:var(--surface);border:1.5px solid var(--rx);border-radius:10px;padding:14px 16px}
+.res h4{font-family:var(--f-display);font-size:17px;color:var(--rx);margin-bottom:6px}
+.res .verdict{font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.35;margin:2px 0 8px}
+.res.ok{border-color:var(--ok)} .res.ok h4{color:var(--ok)}
+.res.crit{border-color:var(--crit)} .res.crit h4{color:var(--crit)}
+.res.warn{border-color:var(--warn)} .res.warn h4{color:var(--warn)}
+.dose{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.dose .d{background:var(--sunk);border-radius:8px;padding:8px 10px}
+.dose .d .k{font-size:12px;color:var(--muted);font-weight:600}
+.dose .d .v{font:600 20px var(--f-mono);line-height:1.2}
+.dose .d .s{font-size:12px;color:var(--muted)}
+.sched td.dt{font-family:var(--f-mono);white-space:nowrap}
+.empty{color:var(--muted);font-size:14px}
+.searchbar{display:flex;gap:8px;align-items:center}
+.searchbar input{font:500 14px var(--f-body);padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);width:min(360px,100%)}
+mark{background:var(--warn-soft);color:inherit;padding:0 1px;border-radius:2px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+@media print{nav.tabs,.toolnav,.searchbar{display:none} section.page[hidden]{display:flex!important} .out{position:static}}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="eyebrow">Medisüem · โรคติดเชื้อ · NTP 2021</div>
+  <h1>แนวทางการควบคุม<span class="r">วัณโรค</span>ประเทศไทย พ.ศ. 2564</h1>
+  <p class="sub">สรุปสำหรับเวชปฏิบัติวัณโรคปอดในผู้ใหญ่ — คัดกรอง วินิจฉัย รักษา DS-TB / DR-TB, TB/HIV, การติดเชื้อระยะแฝง (TPT) และการป้องกันการแพร่เชื้อ พร้อม flow การทำงานและเครื่องมือช่วยตัดสินใจ ตัวเลข <span class="pg">น.xx</span> คือเลขหน้าในฉบับพิมพ์ครั้งที่ 2 (ก.พ. 2565)</p>
+  <div class="byline">สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · แหล่งข้อมูล: กองวัณโรค กรมควบคุมโรค, National Tuberculosis Control Programme Guideline, Thailand 2021</div>
+</header>
+<nav class="tabs" aria-label="หมวด"><div class="wrap" role="tablist">
+  <button role="tab" data-tab="flow" aria-selected="true"><span class="n">00</span>Flow การทำงาน</button>
+  <button role="tab" data-tab="dx"><span class="n">03–04</span>คัดกรอง & วินิจฉัย</button>
+  <button role="tab" data-tab="ds"><span class="n">05</span>DS-TB ผู้ใหญ่</button>
+  <button role="tab" data-tab="dr"><span class="n">06</span>วัณโรคดื้อยา</button>
+  <button role="tab" data-tab="hiv"><span class="n">08</span>TB/HIV</button>
+  <button role="tab" data-tab="ltbi"><span class="n">09</span>LTBI / TPT</button>
+  <button role="tab" data-tab="ic"><span class="n">11</span>ป้องกันการแพร่เชื้อ</button>
+  <button role="tab" data-tab="tools" class="t-tool">🧰 เครื่องมือ</button>
+</div></nav>
+<main class="wrap">
+
+<!-- ============ FLOW ============ -->
+<section class="page" id="flow" role="tabpanel">
+  <div class="chap-head"><div class="eyebrow">ภาพรวม</div><h2>Flow การทำงานกับผู้ป่วยวัณโรคปอด 1 ราย</h2></div>
+  <div class="keypts">
+    <div class="kp"><div class="eyebrow">สูตรมาตรฐาน DS-TB</div><div class="big">2HRZE / 4HR</div><div class="note">ผู้ป่วยใหม่ (ไม่เคยรักษาหรือ &lt;1 เดือน) <span class="pg">น.59</span></div></div>
+    <div class="kp"><div class="eyebrow">ตรวจวินิจฉัยหลัก</div><div class="big">CXR → Smear → Xpert</div><div class="note">ทุกรายที่วินิจฉัย TB ต้องรู้ RIF status</div></div>
+    <div class="kp"><div class="eyebrow">MDR/RR-TB (FQ ไว)</div><div class="big">Shorter all-oral Bdq 9–11 ด.</div><div class="note">4–6 Bdq-Lfx-Pto-Cfz-Z-E-H<sup>hd</sup> / 5 Lfx-Cfz-Z-E</div></div>
+    <div class="kp"><div class="eyebrow">TB/HIV</div><div class="big">ART ภายใน 2 สัปดาห์</div><div class="note">TB meningitis: หลัง 4 สัปดาห์ (≤8 สัปดาห์)</div></div>
+  </div>
+
+  <div class="wf" id="workflow">
+    <div class="step"><div class="body"><h4>คัดกรอง — ใครต้องถ่าย CXR</h4>
+      <ul><li><b>ประชากรทั่วไป</b> ที่มีอาการสงสัย (ไอ ≥2 สัปดาห์ ไอเป็นเลือด น้ำหนักลด ไข้ เหงื่อออกกลางคืน) → CXR</li>
+      <li><b>Key populations</b> (HIV, DM คุมไม่ได้, กดภูมิ, COPD/สูบบุหรี่, silicosis, CKD, ผู้สัมผัส, ผู้สูงอายุมีโรคร่วม, ผู้ต้องขัง, บุคลากร ฯลฯ): <u>รายใหม่ CXR ทุกราย</u>; รายเก่าคัดกรองอาการทุก visit → มีอาการจึง CXR; ปกติ CXR ปีละครั้ง</li></ul>
+      <button class="go-tool" data-go="t-dx">→ เครื่องมือ: ทางเดินการวินิจฉัย</button></div></div>
+    <div class="step"><div class="body"><h4>เก็บเสมหะ & ส่งตรวจ</h4>
+      <p>เสมหะอย่างน้อย 2 ครั้ง (spot + เช้าตื่นนอนก่อนแปรงฟัน) ปริมาตร 3–5 mL ห้ามเก็บในห้องน้ำ CXR เข้าได้กับ TB → <b>AFB smear</b> → ลบ: Xpert MTB/RIF (หรือ TB-LAMP) · บวก: FL molecular (LPA / RT-PCR / Xpert Ultra) เพื่อดู RIF/INH</p>
+      <p class="note">สถานการณ์ที่เข้าถึง CXR ยาก: คัดกรองอาการแล้วส่ง molecular ได้เลย <span class="pg">น.53</span> · ผู้ติดเชื้อ HIV ส่ง Xpert ได้เลย + smear/culture (แยก NTM)</p></div></div>
+    <div class="step"><div class="body"><h4>แปลผล จำแนกและขึ้นทะเบียน NTIP</h4>
+      <p>จำแนก B+ / B−, P / EP, HIV status และประเภทขึ้นทะเบียน (N, R, TAF, TALF, TI, O) — <b>ทุกรายที่วินิจฉัย TB ต้องขึ้นทะเบียน</b> รวมถึงผู้ที่เสียชีวิตก่อนหรือไม่ได้เริ่มยา</p>
+      <button class="go-tool" data-go="t-reg">→ จำแนกประเภทขึ้นทะเบียน</button><button class="go-tool" data-go="t-drclass">→ แปลผลดื้อยา</button></div></div>
+    <div class="step"><div class="body"><h4>Baseline ก่อนเริ่มยา</h4>
+      <ul><li>ชั่งน้ำหนัก (คำนวณยาจากน้ำหนักก่อนเริ่มรักษา), อาการทางคลินิก, CXR, AFB smear, molecular/DST</li>
+      <li><b>HIV test ทุกราย</b> (ภายใน 1–2 สัปดาห์แรก, PITC)</li>
+      <li>LFT ในกลุ่มเสี่ยงตับอักเสบ: อายุ &gt;60, ดื่มสุรา, โรคตับ/HBV/HCV, HIV, ทุพโภชนาการ, ตั้งครรภ์</li>
+      <li>BUN/Cr ในกลุ่มเสี่ยงไต · ตรวจการมองเห็นในผู้สูงอายุหรือมีโรคตาเดิม</li></ul></div></div>
+    <div class="step"><div class="body"><h4>เริ่มยา 2HRZE/4HR ตามน้ำหนัก</h4>
+      <p>35–49 กก.: H300 R450 Z1000 E800 · 50–69 กก.: H300 R600 Z1500 E1000 · ≥70 กก.: H300 R600 Z2000 E1200 · ปรับในโรคไต (CrCl&lt;30 / HD), โรคตับ, ตั้งครรภ์ · TB/HIV เริ่ม ART ตาม timing</p>
+      <button class="go-tool" data-go="t-dose">→ คำนวณขนาดยา</button><button class="go-tool" data-go="t-art">→ ART timing & interaction</button></div></div>
+    <div class="step"><div class="body"><h4>ติดตามระหว่างรักษา</h4>
+      <p>นัดทุกเดือน: อาการ + น้ำหนัก · smear สิ้นเดือน 2, (3 ถ้าเดือน 2 บวก), 5, 6 · CXR เดือน 2 และ 6 · ถามการมองเห็นทุกครั้ง · LFT ทุก 1–2 สัปดาห์ในเดือนแรกถ้ามีความเสี่ยง</p>
+      <button class="go-tool" data-go="t-sched">→ สร้างตารางนัด</button><button class="go-tool" data-go="t-dili">→ จัดการตับอักเสบ</button><button class="go-tool" data-go="t-rash">→ ผื่นแพ้ยา</button></div></div>
+    <div class="step"><div class="body"><h4>ปัญหาระหว่างรักษา</h4>
+      <ul><li>ขาดยา/หยุดยา → ประเมินตามแผนภูมิ 5.1 (ขาดยา ≥2 เดือนติดต่อกัน = lost to follow-up → ขึ้นทะเบียนใหม่ TALF)</li>
+      <li>เสมหะยังบวกสิ้นเดือน 2 → ส่ง molecular + culture/DST; บวกเดือน 5 = <b>failure</b></li>
+      <li>พบ RR/MDR → ส่ง SL-LPA/RT-PCR ด่วน → shorter vs individualized longer regimen</li></ul>
+      <button class="go-tool" data-go="t-int">→ ขาดยา: ให้ต่อหรือเริ่มใหม่</button><button class="go-tool" data-go="t-short">→ เกณฑ์สูตรระยะสั้น</button><button class="go-tool" data-go="t-long">→ จัดสูตรระยะยาว</button></div></div>
+    <div class="step"><div class="body"><h4>สรุปผลการรักษา</h4>
+      <p>Interim (สิ้นระยะเข้มข้น) และ final outcome: cured, completed, failed, died, LTFU, transferred out, not evaluated</p>
+      <button class="go-tool" data-go="t-out">→ ประเมินผลการรักษา</button></div></div>
+    <div class="step"><div class="body"><h4>ผู้สัมผัส & ป้องกันการแพร่เชื้อ</h4>
+      <p>ติดตามผู้สัมผัสร่วมบ้าน/ใกล้ชิด (8 ชม./วัน หรือ 120 ชม./เดือน ช่วง 3 เดือนก่อนมีอาการ ถึง 2 สัปดาห์หลังได้ยาที่มีประสิทธิภาพ) → CXR → ไม่ป่วย: ประเมิน LTBI/TPT · ผู้ป่วยแยกตัวอย่างน้อย 2 สัปดาห์หรือจนเสมหะลบ (MDR: จนเสมหะลบ)</p>
+      <button class="go-tool" data-go="t-ltbi">→ ตัดสินใจ TPT</button><button class="go-tool" data-go="t-tpt">→ ขนาดยา TPT</button></div></div>
+  </div>
+</section>
+
+<!-- ============ DX ============ -->
+<section class="page" id="dx" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 3–4</div><h2>การตรวจทางห้องปฏิบัติการ การคัดกรอง และการวินิจฉัย</h2></div>
+  <nav class="toc"><button data-jump="dx-kp">กลุ่มเสี่ยง</button><button data-jump="dx-tool">เครื่องมือคัดกรอง</button><button data-jump="dx-sp">การเก็บเสมหะ</button><button data-jump="dx-fc">แผนภูมิ 4.1</button><button data-jump="dx-lab">การตรวจแลป</button><button data-jump="dx-def">นิยาม</button></nav>
+
+  <div class="block" id="dx-kp"><h3 class="sec"><span class="sn">4.1</span>กลุ่มประชากรหลักที่เสี่ยงต่อวัณโรค (key populations)<span class="pg">น.48</span></h3>
+    <div class="callout info">ร้อยละ 66 ของผู้ป่วย bacteriologically positive ในการสำรวจความชุก พ.ศ. 2556 ไม่มีอาการหรือมีอาการน้อย → การคัดกรองด้วยอาการอย่างเดียวไม่พอ ต้องคัดกรองเชิงรุกด้วย CXR <span class="pg">น.47</span></div>
+    <div class="tbl"><div class="cap">ตาราง 4.1</div><table>
+      <tr><th>ผู้ที่มีโรคหรือภาวะเสี่ยง (clinical risk groups)</th><th>ประชากรเสี่ยง (risk populations)</th></tr>
+      <tr><td><ul><li>ผู้ติดเชื้อ HIV</li><li>เบาหวาน โดยเฉพาะคุมน้ำตาลไม่ได้</li><li>ได้ยากดภูมิ (malignancy, organ transplant, SLE)</li><li>COPD หรือสูบบุหรี่</li><li>Silicosis</li><li>โรคไตเรื้อรัง</li><li>ผ่าตัดกระเพาะ/ตัดต่อลำไส้</li><li>ทุพโภชนาการ</li><li>ติดยาเสพติด / alcohol-use disorder</li><li>เคยเป็นวัณโรค</li></ul></td>
+      <td><ul><li>ผู้สัมผัสวัณโรค โดยเฉพาะเด็ก &lt;5 ปี หรือสัมผัส DR-TB</li><li>ผู้สูงอายุที่มีโรคร่วม ติดบ้าน ติดเตียง</li><li>ผู้ต้องขังและบุคลากรเรือนจำ/สถานพินิจ</li><li>บุคลากรสาธารณสุข โดยเฉพาะที่ดูแลผู้ป่วย TB</li><li>แรงงานข้ามชาติจากประเทศความชุกสูงและผู้ติดตาม</li><li>ผู้อาศัยในที่แออัด (สถานสงเคราะห์ ค่ายทหาร ค่ายอพยพ)</li><li>คนเร่ร่อนไร้ที่อยู่</li></ul></td></tr></table></div>
+  </div>
+
+  <div class="block" id="dx-tool"><h3 class="sec"><span class="sn">4.2</span>เครื่องมือคัดกรอง<span class="pg">น.48–49</span></h3>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">ตาราง 4.2 ความไว/ความจำเพาะเทียบ culture</div><table>
+        <tr><th>Screening tool</th><th class="num">Sens</th><th class="num">Spec</th></tr>
+        <tr><td>CXR: any abnormality (active/inactive)</td><td class="num">98</td><td class="num">75</td></tr>
+        <tr><td>CXR: abnormality suggestive of active TB</td><td class="num">87</td><td class="num">89</td></tr>
+        <tr><td>CXR หลัง symptom screen บวก</td><td class="num">90</td><td class="num">56</td></tr>
+        <tr><td>ไอนาน &gt;2–3 สัปดาห์</td><td class="num">35</td><td class="num">95</td></tr>
+        <tr><td>ไอใดๆ</td><td class="num">57</td><td class="num">80</td></tr>
+        <tr><td>อาการใดๆ ของ TB</td><td class="num">77</td><td class="num">68</td></tr></table></div>
+      <div class="tbl"><div class="cap">ตาราง 4.3 คัดกรองอาการในผู้ติดเชื้อ HIV (≥1 ข้อ → ตรวจหา TB ปอดและนอกปอด)</div><table>
+        <tr><th>ผู้ใหญ่</th><th>เด็ก</th></tr>
+        <tr><td>1) ไอผิดปกติที่อธิบายสาเหตุไม่ได้<br>2) ไข้ภายใน 1 เดือน<br>3) น้ำหนักลด ≥5% ใน 1 เดือน<br>4) เหงื่อออกกลางคืนต่อเนื่อง 3 สัปดาห์ใน 1 เดือน</td>
+        <td>1) ไอผิดปกติ (โดยเฉพาะ &gt;2 สัปดาห์)<br>2) ไข้ &gt;1 สัปดาห์ไม่มีสาเหตุอื่น<br>3) น้ำหนักลด/ไม่ขึ้นตามเกณฑ์<br>4) สัมผัส TB ปอด</td></tr></table></div>
+    </div>
+    <p class="note">ใน HIV อาการไอไม่จำเป็นต้องนานถึง 2 สัปดาห์ · อาการเด็ก: ไข้เรื้อรัง &gt;7 วัน เบื่ออาหาร ไม่เล่น น้ำหนักลด ซีด ไอเรื้อรัง</p>
+  </div>
+
+  <div class="block" id="dx-sp"><h3 class="sec"><span class="sn">4.3</span>การเก็บเสมหะ<span class="pg">น.50</span></h3>
+    <div class="grid3">
+      <div class="panel"><h4>ภาชนะ & คุณภาพ</h4><p>ขวดพลาสติกเหนียว ฝาเกลียว ปากกว้าง ~50 mL ติดชื่อก่อนให้ผู้ป่วย · เสมหะดี: เหนียว เป็นยวง ขุ่นข้น สีเหลืองคล้ายหนอง จากการไอลึก <b>3–5 mL</b></p></div>
+      <div class="panel"><h4>อย่างน้อย 2 ครั้ง</h4><p>ครั้งที่ 1: <b>spot</b> ทันทีที่มาตรวจ<br>ครั้งที่ 2: <b>เช้าตื่นนอน</b> ก่อนแปรงฟัน (collected/morning sputum)</p></div>
+      <div class="panel"><h4>การส่ง</h4><p>ส่งทันที ถ้าไม่ได้: เก็บที่เย็น (ไม่แช่แข็ง) ไม่เกิน 1 สัปดาห์ และส่งถึงแลปภายใน 3 วัน · smear ต้องมีระบบ EQA</p></div>
+    </div>
+  </div>
+
+  <div class="block" id="dx-fc"><h3 class="sec"><span class="sn">4.4</span>แผนภูมิ 4.1 การคัดกรองและวินิจฉัยวัณโรค/วัณโรคดื้อยา<span class="pg">น.52</span></h3>
+    <div class="panel fc-scroll"><div class="fc">
+      <div class="split" style="grid-template-columns:1fr 1fr 1fr;border-top:0">
+        <div class="col"><div class="node start"><b>Key pop. รายใหม่</b>เข้ารับบริการครั้งแรก</div></div>
+        <div class="col"><div class="node start"><b>Key pop. รายเก่า</b>ติดตามครั้งถัดไป</div><div class="arr"></div><div class="node act">คัดกรองอาการ</div><div class="note">ไม่มีอาการ → นัด F/U (CXR ปีละครั้ง)</div></div>
+        <div class="col"><div class="node start"><b>ประชากรทั่วไป</b>มีอาการสงสัย</div></div>
+      </div>
+      <div class="arr"></div>
+      <div class="node act"><b>Chest X-ray</b></div>
+      <div class="arr"></div>
+      <div class="split" style="grid-template-columns:1.6fr 1fr"><div class="col"><span class="lbl y">ผิดปกติเข้าได้กับ TB</span><div class="node act">AFB smear</div></div><div class="col"><span class="lbl">ปกติ/อื่นๆ</span><div class="node stop">ถ้ามีอาการ ให้เก็บเสมหะส่งตรวจด้วย</div></div></div>
+      <div class="arr"></div>
+      <div class="split" style="grid-template-columns:1fr 1fr"><div class="col"><span class="lbl">AFB −</span><div class="node">FL molecular<br>(Xpert MTB/RIF หรือ TB-LAMP)</div></div><div class="col"><span class="lbl">AFB +</span><div class="node">FL molecular<br>(LPA, RT-PCR, Xpert Ultra)</div></div></div>
+      <div class="arr"></div>
+      <div class="split" style="grid-template-columns:repeat(4,1fr)">
+        <div class="col"><span class="lbl">MTB not detected</span><div class="node stop">แพทย์พิจารณาตัดสินใจ</div></div>
+        <div class="col"><span class="lbl y">MTB detected, RIF ไม่ดื้อ</span><div class="node go"><b>DS-TB</b>2HRZE/4HR</div></div>
+        <div class="col"><span class="lbl n">RR / MDR</span><div class="node ref">SL molecular + culture<br>→ FQ-R: phenotypic DST Bdq, Lzd</div></div>
+        <div class="col"><span class="lbl n">H resistant (Hr)</span><div class="node warn">SL molecular + culture<br>(phenotypic Lfx)</div></div>
+      </div>
+      <div class="arr"></div>
+      <div class="split" style="grid-template-columns:repeat(4,1fr)">
+        <div class="col"><div class="node go">MDR/RR + FQ ไว<br><b>RR, MDR-TB</b></div></div>
+        <div class="col"><div class="node ref">FQ-R, Bdq/Lzd ไว<br><b>Pre-XDR</b></div></div>
+        <div class="col"><div class="node ref">FQ-R + Bdq หรือ Lzd ดื้อ<br><b>XDR (WHO 2021)</b></div></div>
+        <div class="col"><div class="node warn">Hr + FQ ไว/ดื้อ<br><b>Hr-TB</b></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="block" id="dx-lab"><h3 class="sec"><span class="sn">3</span>การตรวจทางห้องปฏิบัติการ — จุดที่ต้องรู้<span class="pg">น.31–42</span></h3>
+    <div class="tbl"><table>
+      <tr><th>วิธี</th><th>เวลา/เกณฑ์</th><th>ข้อสังเกตเชิงปฏิบัติ</th></tr>
+      <tr><td><b>AFB smear</b> (ZN / LED fluorescence)</td><td>2–24 ชม.; ต้องมีเชื้อ ≥5,000–10,000/mL</td><td>แยก MTB/NTM ไม่ได้ ไม่บอกดื้อยา ไม่บอกเป็น/ตาย · LED ไวกว่า ~10% ถ้า ≤1+ ควรย้อม ZN ทับ</td></tr>
+      <tr><td><b>Culture</b></td><td>แข็ง 2–8 สัปดาห์ · เหลว (MGIT) 1–6 สัปดาห์</td><td>Gold standard ตรวจได้แม้ 1–10 เซลล์ ใช้ต่อทำ DST และ typing</td></tr>
+      <tr><td><b>Phenotypic DST</b></td><td>LJ 4–6 สัปดาห์ · MGIT 1–2 สัปดาห์</td><td>MGIT ทดสอบ SLD รวม Cfz, Lzd, Bdq ได้</td></tr>
+      <tr><td><b>Xpert MTB/RIF</b></td><td>~2 ชม.; ≥131 CFU/mL</td><td>Sens 92%, Spec 99% (vs smear 61%, clinical 24%) · rpoB 81 bp</td></tr>
+      <tr><td><b>Xpert Ultra</b></td><td>~85 นาที; ≥16 CFU/mL</td><td>ไวกว่าเดิมโดยเฉพาะ smear-negative (78.9 vs 66.1%); RIF spec ต่ำกว่าเล็กน้อย</td></tr>
+      <tr><td><b>Xpert MTB/XDR</b></td><td>ต้องเครื่อง 10 สี</td><td>INH, FQs, Am, Km, Cm, Eto</td></tr>
+      <tr><td><b>LPA</b> (FL / SL)</td><td>≥160 เซลล์/mL</td><td>FL ใช้ได้ดีเมื่อ smear+ หรือ isolate · SL (FQ, SLID) ใช้ได้ทั้ง smear − / + · ใช้แทน phenotypic ของ Cs, Lzd, Bdq ไม่ได้</td></tr>
+      <tr><td><b>TB-LAMP</b></td><td>~1 ชม.</td><td>วินิจฉัยได้ แต่ <u>ไม่บอกดื้อยา</u> → ไม่ควรใช้ในพื้นที่ MDR สูงหรือที่มี Xpert</td></tr>
+      <tr><td><b>Urine LF-LAM</b></td><td>อ่านใน 20 นาที</td><td>เฉพาะ HIV ที่ CD4 ≤100, ป่วยรุนแรง มีอาการเข้าได้กับ TB · แยก MTB/NTM ไม่ได้ ต้องยืนยันเสมอ</td></tr>
+      <tr><td><b>TST / IGRA</b></td><td>TST อ่าน 48–72 ชม.</td><td>บอกการติดเชื้อ แยก LTBI vs active ไม่ได้ · ไม่แนะนำใช้ช่วยวินิจฉัย EPTB</td></tr>
+    </table></div>
+  </div>
+
+  <div class="block" id="dx-def"><h3 class="sec"><span class="sn">5.1</span>นิยามและการจำแนกผู้ป่วย<span class="pg">น.57–59</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>นิยาม</h4><dl class="kv">
+        <dt>Presumptive TB</dt><dd>มีอาการ/อาการแสดงเข้าได้กับ TB (เดิม TB suspect)</dd>
+        <dt>B+</dt><dd>bacteriologically confirmed: smear, culture, Xpert, LPA, LAMP บวก</dd>
+        <dt>B−</dt><dd>clinically diagnosed: ผลลบ/ไม่มีผล แต่ภาพรังสีหรือพยาธิเข้าได้ และแพทย์ตัดสินใจรักษา (ถ้าต่อมา culture ขึ้น MTBC → เปลี่ยนเป็น B+)</dd>
+        <dt>Extensive TB</dt><dd>แผลโพรงในปอดสองข้าง หรือทำลายเนื้อปอดมาก</dd>
+        <dt>Severe EPTB</dt><dd>Disseminated TB หรือ TB meningitis</dd></dl></div>
+      <div class="panel"><h4>ประเภทขึ้นทะเบียน DS-TB</h4><dl class="kv">
+        <dt>New (N)</dt><dd>ไม่เคยรักษา หรือรักษา &lt;1 เดือน และไม่เคยขึ้นทะเบียน NTIP</dd>
+        <dt>Relapse (R)</dt><dd>เคยรักษาหาย/ครบ แล้วกลับเป็นซ้ำ</dd>
+        <dt>TAF</dt><dd>ผลครั้งล่าสุดคือล้มเหลว</dd>
+        <dt>TALF</dt><dd>เคยขาดยา ≥2 เดือนติดต่อกัน แล้วกลับมารักษา</dd>
+        <dt>Transfer in</dt><dd>ขึ้นทะเบียนที่อื่นแล้วโอนมา</dd>
+        <dt>Others (O)</dt><dd>ได้ยาจากเอกชน ≥1 เดือนโดยไม่เคยขึ้นทะเบียน, ไม่ทราบประวัติ, ไม่ทราบผลครั้งล่าสุด</dd></dl>
+        <p class="note">Previously treated = R, TAF, TALF, O · Incident TB = N + R</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DS-TB ============ -->
+<section class="page" id="ds" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 5</div><h2>วัณโรคในผู้ใหญ่ (เชื้อไวต่อยา)</h2></div>
+  <nav class="toc"><button data-jump="ds-rx">สูตรยา & ขนาด</button><button data-jump="ds-adr">ADR</button><button data-jump="ds-liver">ตับอักเสบ</button><button data-jump="ds-mon">การติดตาม</button><button data-jump="ds-int">ขาดยา</button><button data-jump="ds-ep">นอกปอด</button><button data-jump="ds-sp">กรณีพิเศษ</button><button data-jump="ds-out">ผลการรักษา</button></nav>
+
+  <div class="block" id="ds-rx"><h3 class="sec"><span class="sn">5.2.2</span>สูตรยาและขนาดยา<span class="pg">น.59–60</span></h3>
+    <div class="callout ok"><b>2HRZE / 4HR</b> สำหรับผู้ป่วยใหม่ที่เชื้อไวต่อยา (ไม่เคยรักษาหรือรักษา ≤1 เดือน) · ตอบสนองช้า (แผลโพรงขนาดใหญ่ หรือ smear/culture บวกเดือน 2–3) และ DST ไม่ดื้อ → ขยาย continuation phase จาก 4 เป็น 7 เดือน (ปรึกษาผู้เชี่ยวชาญ)</div>
+    <div class="tbl"><div class="cap">ตาราง 5.1 ขนาดยาผู้ใหญ่ (อายุ &gt;15 ปี) ตามน้ำหนักก่อนเริ่มรักษา</div><table>
+      <tr><th>น้ำหนัก (กก.)</th><th class="num">H (4–6 มก./กก.)</th><th class="num">R (8–12)</th><th class="num">Z (20–30)</th><th class="num">E (15–20)</th></tr>
+      <tr><td class="num">35*–49</td><td class="num">300</td><td class="num">450</td><td class="num">1,000</td><td class="num">800</td></tr>
+      <tr><td class="num">50–69</td><td class="num">300</td><td class="num">600</td><td class="num">1,500</td><td class="num">1,000</td></tr>
+      <tr><td class="num">≥70*</td><td class="num">300</td><td class="num">600</td><td class="num">2,000</td><td class="num">1,200</td></tr></table></div>
+    <p class="note">* น้ำหนัก &lt;35 หรือ &gt;70 กก. ให้คำนวณตามน้ำหนักตัว · H ปรับตามน้ำหนักและ NAT2 genotype ได้ · ใช้ FDC (HR, HRZE) ช่วยเรื่อง adherence แต่ต้องให้ขนาดถูกต้องตามน้ำหนัก · E: เลือก 15 มก./กก./วัน ไม่เกิน 20</p>
+  </div>
+
+  <div class="block" id="ds-adr"><h3 class="sec"><span class="sn">5.2.2</span>อาการไม่พึงประสงค์ของยาแนวที่ 1<span class="pg">น.60–62</span></h3>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">รุนแรง → หยุดยาที่เป็นสาเหตุ ส่งปรึกษา</div><table>
+        <tr><th>อาการ</th><th>ยา</th><th>การจัดการ</th></tr>
+        <tr><td>ผื่น (คัน/ไม่คัน)</td><td>H, R, Z</td><td>หยุดยา TB</td></tr>
+        <tr><td>ดีซ่าน/ตับอักเสบ (ไม่มีสาเหตุอื่น)</td><td>H, Z, R</td><td>หยุดยา TB</td></tr>
+        <tr><td>สับสน (ถ้าร่วมกับตับอักเสบ สงสัยยา)</td><td>เกือบทุกตัว</td><td>หยุดยา TB</td></tr>
+        <tr><td>การมองเห็นบกพร่อง</td><td>E</td><td>หยุด E</td></tr>
+        <tr><td>ช็อก, purpura, AKI</td><td>R</td><td>หยุด R</td></tr></table></div>
+      <div class="tbl"><div class="cap">ไม่รุนแรง → ให้ยาต่อ ตรวจสอบขนาดยา</div><table>
+        <tr><th>อาการ</th><th>ยา</th><th>การจัดการ</th></tr>
+        <tr><td>เบื่ออาหาร คลื่นไส้ ปวดท้อง</td><td>Z, R, H</td><td>กินกับอาหารปริมาณน้อย/ก่อนนอน · <b>เจาะ LFT ทุกราย</b>ที่คลื่นไส้อาเจียน</td></tr>
+        <tr><td>ปวดข้อ</td><td>Z</td><td>NSAID / paracetamol</td></tr>
+        <tr><td>ชาปลายมือปลายเท้า</td><td>H</td><td>pyridoxine 50–75 มก./วัน</td></tr>
+        <tr><td>ง่วงนอน</td><td>H</td><td>ให้ก่อนนอน</td></tr>
+        <tr><td>ปัสสาวะสีส้มแดง</td><td>R</td><td>อธิบาย</td></tr>
+        <tr><td>อาการคล้ายไข้หวัดใหญ่</td><td>R</td><td>หยุดถ้ารุนแรง</td></tr></table></div>
+    </div>
+    <details class="more"><summary>ผื่นผิวหนัง: แนวทางและการ re-introduce ยา</summary><div class="in">
+      <ul><li>คันไม่มีผื่น → antihistamine ให้ยาต่อ</li><li>ผื่นคล้ายสิว ไม่มีอาการระบบ → ให้ยาต่อ</li><li>Maculopapular rash หลายตำแหน่ง → <b>หยุดยาทุกชนิด</b> + antihistamine ± prednisolone 20–40 มก./วัน</li><li>ผื่นรุนแรงมีรอยโรคที่เยื่อบุ → หยุดทุกชนิด admit + prednisolone 40–60 มก./วัน ค่อยลด ปรึกษาผู้เชี่ยวชาญ</li></ul>
+      <p><b>Re-introduce (ผื่นไม่รุนแรงที่หายแล้ว):</b> เริ่ม H หรือ R → E → Z ตัวสุดท้าย · แต่ละตัวเริ่ม 1/3–1/2 ของขนาดเต็ม เพิ่มจนเต็มใน 2–3 วัน แล้วเริ่มตัวถัดไป · ผื่นขึ้นตอนให้ตัวใด หยุดตัวนั้น รอยุบหมด แล้วไปตัวถัดไปและปรับสูตร</p>
+      <button class="go-tool" data-go="t-rash" style="font:600 13px var(--f-body);background:var(--rx-soft);color:var(--rx);border:0;border-radius:99px;padding:3px 11px;cursor:pointer;align-self:flex-start">→ เครื่องมือผื่นแพ้ยา</button></div></details>
+    <details class="more"><summary>Ethambutol & การมองเห็น</summary><div class="in"><ul><li>เฝ้าระวังเป็นพิเศษในผู้สูงอายุ โรคไต หรือได้ E &gt;2 เดือน</li><li>ถามการมองเห็นทุกครั้งที่มาติดตาม; ผิดปกติ → หยุดยาทันที ตรวจ visual acuity + ตาบอดสี ปรึกษาจักษุแพทย์</li><li>ไม่ดีขึ้น อาจเกิดจาก H → พิจารณาหยุด H ด้วย</li></ul></div></details>
+  </div>
+
+  <div class="block" id="ds-liver"><h3 class="sec"><span class="sn">5.2.2</span>ตับอักเสบจากยา (DILI)<span class="pg">น.61–62</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>ก่อน/ระหว่างรักษา</h4><ul><li>Baseline LFT ในกลุ่มเสี่ยง: อายุ &gt;60, ดื่มสุราประจำ, โรคตับ/ไวรัสตับอักเสบ, HIV, ทุพโภชนาการ, ตั้งครรภ์</li><li>ไม่มีความเสี่ยง: ตรวจ AST/ALT/TB เฉพาะเมื่อมีอาการ (คลื่นไส้อาเจียน กินไม่ได้ ตาเหลือง ท้องอืด)</li><li>มีความเสี่ยง: ตรวจทุก 1–2 สัปดาห์ในเดือนแรก</li></ul></div>
+      <div class="tbl"><div class="cap">เกณฑ์หยุดยา</div><table>
+        <tr><th>สถานการณ์</th><th>การจัดการ</th></tr>
+        <tr><td>มีอาการ + AST/ALT &gt;3×ULN</td><td><b>หยุด H, R, Z</b> · อาจให้ E + Lfx + Am ระหว่างรอ</td></tr>
+        <tr><td>มีอาการ + AST/ALT ≤3×ULN</td><td>ให้ยาต่อ หาสาเหตุอื่น LFT ซ้ำภายใน 3 วัน</td></tr>
+        <tr><td>ไม่มีอาการ + AST/ALT &gt;5×ULN</td><td><b>หยุด H, R, Z</b> · อาจให้ E + Lfx + Am</td></tr>
+        <tr><td>ไม่มีอาการ + AST/ALT &lt;5×ULN</td><td>ให้ยาต่อ LFT ทุก 1 สัปดาห์</td></tr>
+        <tr><td>TB &gt;3 มก./ดล. แต่ AST/ALT ≤3×ULN</td><td><b>หยุดเฉพาะ R</b></td></tr></table></div>
+    </div>
+    <div class="callout"><b>Re-challenge:</b> เมื่อ AST/ALT &lt;2×ULN และ TB &lt;1.5 มก./ดล. · ลำดับ <b>H → R → Z</b> เริ่มขนาดปกติได้เลย ห่างกันตัวละ 1 สัปดาห์ เจาะ LFT ภายใน 1 สัปดาห์หลังแต่ละตัว · ถ้าสูงขึ้นตามเกณฑ์ หยุดตัวนั้นถาวร · <b>Fulminant hepatitis ห้ามใช้ยากลุ่มนี้อีก</b> · พิจารณา NAT2 genotype ในรายที่เกิดตับอักเสบ</div>
+  </div>
+
+  <div class="block" id="ds-mon"><h3 class="sec"><span class="sn">5.2.3</span>การตรวจเมื่อเริ่มและระหว่างรักษา<span class="pg">น.63–64</span></h3>
+    <div class="tbl"><div class="cap">ตาราง 5.3 (สิ้นสุดการรักษาเดือนที่)</div><table>
+      <tr><th>การตรวจ</th><th class="c">ก่อนเริ่ม</th><th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">5</th><th class="c">6</th></tr>
+      <tr><td>อาการ, น้ำหนัก</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+      <tr><td>AFB smear</td><td class="c yes">✓</td><td></td><td class="c yes">✓</td><td class="c">ถ้า ด.2 บวก</td><td></td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+      <tr><td>Molecular + DST</td><td class="c">✓ (วินิจฉัย)</td><td></td><td class="c">ถ้า AFB+ (และไม่มี DST เดิม)</td><td></td><td></td><td class="c">ถ้า AFB+</td><td></td></tr>
+      <tr><td>Culture + phenotypic DST</td><td class="c">ตามความเหมาะสม</td><td></td><td class="c">ถ้า AFB+</td><td></td><td></td><td class="c">ถ้า AFB+</td><td></td></tr>
+      <tr><td>CXR</td><td class="c yes">✓</td><td></td><td class="c yes">✓</td><td></td><td></td><td></td><td class="c yes">✓</td></tr>
+      <tr><td>HIV test, LFT*, BUN/Cr**, ตรวจตา***</td><td class="c yes">✓</td><td colspan="6" class="note">ซ้ำตามข้อบ่งชี้</td></tr></table></div>
+    <p class="note">* กลุ่มเสี่ยงตับอักเสบ ** โรคไต/เสี่ยง AKI (nephrotic, CKD, DN, ผู้สูงอายุ, ได้ aminoglycoside) *** ผู้สูงอายุหรือโรคตาเดิม · ผู้ดื่มสุราทุกรายต้องแนะนำให้หยุด</p>
+  </div>
+
+  <div class="block" id="ds-int"><h3 class="sec"><span class="sn">5.2.4</span>แผนภูมิ 5.1 การรักษาหลังขาดยา/หยุดยา<span class="pg">น.65</span></h3>
+    <p>ใช้เมื่อ (1) อาการไม่แย่ลง (2) CXR ไม่แย่ลง และ (3) เสมหะไม่พบเชื้อหรือปริมาณเชื้อไม่มากขึ้น · ส่ง molecular + culture/DST ก่อนพิจารณา · ขาดยาโดยไม่มีเหตุอันควร: แก้ปัญหาที่ทำให้ขาดยาและรักษาภายใต้ DOT ทุกราย</p>
+    <p class="note">ต้นฉบับข้อ (2) พิมพ์ว่า "ผลภาพถ่ายรังสีทรวงอกแย่ลง" แต่แผนภูมิระบุว่า "ไม่มีการเปลี่ยนแปลง" — สรุปนี้ยึดตามแผนภูมิ</p>
+    <div class="panel fc-scroll"><div class="fc" style="min-width:860px">
+      <div class="node start">ขาดยาใน<b>ระยะเข้มข้น</b>หรือไม่?</div><div class="arr"></div>
+      <div class="split" style="grid-template-columns:1fr 1.4fr">
+        <div class="col"><span class="lbl y">ใช่</span><div class="node act">ระยะเวลาที่ขาดยา</div><div class="arr"></div>
+          <div class="split" style="grid-template-columns:1fr 1fr"><div class="col"><span class="lbl">&lt;14 วัน</span><div class="node go">ให้ยาต่อนับจนครบ — แต่ถ้าระยะเข้มข้นรวมเกิน 3 เดือนนับจากเริ่มครั้งแรก ให้เริ่มนับใหม่</div></div><div class="col"><span class="lbl n">≥14 วัน</span><div class="node ref">เริ่มการรักษาใหม่</div></div></div></div>
+        <div class="col"><span class="lbl n">ไม่ใช่ (ระยะต่อเนื่อง)</span><div class="node act">ได้ยาในระยะต่อเนื่องไปแล้ว</div><div class="arr"></div>
+          <div class="split" style="grid-template-columns:1.4fr 1fr"><div class="col"><span class="lbl">&lt;80%</span><div class="node act">ระยะเวลาที่ขาดยา</div><div class="arr"></div>
+            <div class="split" style="grid-template-columns:1fr 1fr"><div class="col"><span class="lbl">&lt;3 เดือน</span><div class="node warn">ให้ยาต่อจนครบ — ถ้าระยะรักษารวม &gt;9 เดือนนับจากเริ่มครั้งแรก ให้เริ่มใหม่ตั้งแต่ระยะเข้มข้น + ส่ง smear, culture, molecular</div></div><div class="col"><span class="lbl n">≥3 เดือน</span><div class="node ref">เริ่มใหม่ + ส่ง smear, culture, molecular ยืนยันไม่ดื้อยา</div></div></div></div>
+          <div class="col"><span class="lbl y">≥80%</span><div class="node go">ให้ยาต่อจนครบตามความเหมาะสม</div></div></div></div>
+      </div>
+    </div></div>
+    <p class="note">* ถ้าสงสัยดื้อยา ส่ง smear, culture, molecular ตามความเหมาะสม</p>
+  </div>
+
+  <div class="block" id="ds-ep"><h3 class="sec"><span class="sn">5.3</span>วัณโรคนอกปอด<span class="pg">น.66–67</span></h3>
+    <p>เกณฑ์: (1) คลินิก + แลปเข้าได้ (เช่น pleural fluid exudate lymphocyte เด่น + ADA สูง, หรือ AFB บวก) หรือ (2) พยาธิวิทยาเข้าได้ หรือ (3) culture บวก · ADA ตัวอย่าง cut-off: pleura/pericardium 40–45 U/L, CSF &gt;20 U/L</p>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">ตาราง 5.5–5.6 ระยะเวลาและ steroid</div><table>
+        <tr><th>ตำแหน่ง</th><th class="num">อย่างน้อย (ด.)</th><th>Steroid</th></tr>
+        <tr><td>ต่อมน้ำเหลือง</td><td class="num">6</td><td>ไม่แนะนำ</td></tr>
+        <tr><td>เยื่อหุ้มปอด</td><td class="num">6</td><td>ไม่แนะนำ</td></tr>
+        <tr><td>เยื่อหุ้มหัวใจ</td><td class="num">6</td><td>บางราย</td></tr>
+        <tr><td>เยื่อหุ้มสมอง/tuberculoma</td><td class="num">&gt;12</td><td><b>ทุกราย</b></td></tr>
+        <tr><td>กระดูกและข้อ</td><td class="num">9–12</td><td>ไม่แนะนำ</td></tr>
+        <tr><td>ทางเดินปัสสาวะ</td><td class="num">6</td><td>ไม่แนะนำ</td></tr>
+        <tr><td>แพร่กระจาย</td><td>ตามอวัยวะเด่น</td><td></td></tr></table></div>
+      <div class="panel"><h4>Prednisolone regimen</h4><p class="rx">40–60 มก./วัน 2–4 สัปดาห์ → 30 มก. 2 สัปดาห์ → 15 มก. 2 สัปดาห์ → 5 มก. 1–2 สัปดาห์</p><p class="note">เริ่มตั้งแต่สัปดาห์แรกของการรักษา</p>
+        <ul><li>TBM + obstructive hydrocephalus → ปรึกษาประสาทศัลยแพทย์</li><li>TB spine: ผ่าตัดเมื่อไม่ตอบสนอง, cord compression ที่ deficit คงอยู่/กลับเป็นซ้ำ, spinal instability</li><li>TB ไต: nephrectomy เมื่อไตไม่ทำงาน โดยเฉพาะมี HT หรือปวดเอวเรื้อรัง</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="ds-sp"><h3 class="sec"><span class="sn">5.4</span>กรณีพิเศษ<span class="pg">น.68–69</span></h3>
+    <div class="grid3">
+      <div class="panel"><h4>โรคไต (CrCl &lt;30 หรือ HD)</h4><table><tr><th>ยา</th><th>ปรับ</th></tr><tr><td>H, R</td><td>ไม่ปรับ</td></tr><tr><td>E</td><td>15–20 มก./กก. 3 วัน/สัปดาห์</td></tr><tr><td>Z</td><td>20–30 มก./กก. 3 วัน/สัปดาห์</td></tr></table><p class="note">ตาราง 5.9 ต้นฉบับเขียนหน่วย "มก.ต่อวัน" — ตีความเป็น มก./กก. ตามขนาดมาตรฐาน</p></div>
+      <div class="panel"><h4>โรคตับ (CLD + ALT &gt;3×ULN)</h4><p>เลือกสูตรที่มียาพิษต่อตับน้อยลงตามความรุนแรง</p><p><b>Hepatotoxic 2 ตัว:</b> <span class="rx">2HRE/7HR</span> · <span class="rx">6–9 RZE</span></p><p><b>Hepatotoxic 1 ตัว:</b> <span class="rx">2 AmHE/16 HE</span> · <span class="rx">12–18 HE + Lfx</span></p><p class="note">นัดทุก 1 สัปดาห์ใน 2–3 สัปดาห์แรก และทุก 2 สัปดาห์ใน 2 เดือนแรก</p></div>
+      <div class="panel"><h4>ตั้งครรภ์ / ให้นม</h4><ul><li>สูตรมาตรฐานได้ คำนวณจากน้ำหนัก<b>ก่อนตั้งครรภ์</b></li><li>Pyridoxine 50–100 มก./วัน</li><li>ให้นมได้ (ถ้ายังไอมาก/เสมหะบวก บีบนมใส่ขวด)</li><li>เลี่ยง aminoglycoside และ FQ (จำเป็น → ปรึกษาผู้เชี่ยวชาญ)</li></ul></div>
+    </div>
+    <p class="note">TB/HIV (ART timing, R–ARV interaction, CPT) ดูแท็บ TB/HIV</p>
+  </div>
+
+  <div class="block" id="ds-out"><h3 class="sec"><span class="sn">5.5</span>การประเมินผลการรักษา DS-TB<span class="pg">น.70</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>สิ้นสุดระยะเข้มข้น (B+ ก่อนรักษา, สิ้นเดือน 2)</h4><ul><li>Sputum convert / not convert / not examined</li><li>Died · Lost to follow-up (ไม่เริ่มยา หรือขาดยา &gt;2 เดือนติดต่อกัน) · Transferred out</li></ul></div>
+      <div class="panel"><h4>Final outcome</h4><dl class="kv">
+        <dt>Cured</dt><dd>B+ ก่อนรักษา รักษาครบ smear (หรือ culture) ลบในเดือนสุดท้าย และก่อนนั้นอีก ≥1 ครั้ง</dd>
+        <dt>Completed</dt><dd>ครบกำหนด ไม่มีหลักฐานล้มเหลว แต่ไม่มีผลเสมหะเดือนสุดท้าย</dd>
+        <dt>Failed</dt><dd>smear หรือ culture บวก <b>สิ้นเดือน 5 หรือหลังจากนั้น</b></dd>
+        <dt>Died</dt><dd>ตายด้วยสาเหตุใดก่อน/ระหว่างรักษา</dd>
+        <dt>LTFU</dt><dd>ไม่เริ่มรักษา หรือขาดยา ≥2 เดือนติดต่อกัน</dd>
+        <dt>Transfer out</dt><dd>โอนออกและไม่ทราบผล</dd>
+        <dt>Not evaluated</dt><dd>สรุปไม่ได้ในรอบประเมิน</dd></dl><p class="note">Treatment success = cured + completed</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DR-TB ============ -->
+<section class="page" id="dr" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 6</div><h2>วัณโรคดื้อยา</h2></div>
+  <nav class="toc"><button data-jump="dr-def">ประเภท</button><button data-jump="dr-grp">กลุ่มยา A/B/C</button><button data-jump="dr-mono">Mono/Poly</button><button data-jump="dr-fc">แผนภูมิ 6.1</button><button data-jump="dr-short">สูตรระยะสั้น</button><button data-jump="dr-long">สูตรระยะยาว</button><button data-jump="dr-ddi">Drug interaction</button><button data-jump="dr-mon">ติดตาม & aDSM</button><button data-jump="dr-out">ผลการรักษา</button></nav>
+
+  <div class="block" id="dr-def"><h3 class="sec"><span class="sn">6.1</span>ประเภทวัณโรคดื้อยา<span class="pg">น.75</span></h3>
+    <div class="tbl"><table>
+      <tr><th>ประเภท</th><th>นิยาม</th></tr>
+      <tr><td>Mono-resistant</td><td>ดื้อยาแนวที่ 1 ขนานเดียว</td></tr>
+      <tr><td>Polydrug-resistant</td><td>ดื้อ FLD &gt;1 ขนาน ที่ไม่ใช่ H + R พร้อมกัน</td></tr>
+      <tr><td>Hr-TB</td><td>ดื้อ H แต่ไว R</td></tr>
+      <tr><td>RR-TB</td><td>ดื้อ R จาก genotypic โดยยังไม่ทราบผลยาอื่น</td></tr>
+      <tr><td>MDR-TB</td><td>ดื้อ H และ R ± FLD อื่น</td></tr>
+      <tr><td>Pre-XDR (WHO 2021)</td><td>MDR/RR + ดื้อ FQ (Lfx, Mfx)</td></tr>
+      <tr><td>XDR (WHO 2021)</td><td>MDR/RR + ดื้อ FQ + ดื้อกลุ่ม A (Bdq หรือ Lzd) ≥1 ขนาน</td></tr></table></div>
+    <p class="note">สำหรับ พ.ร.บ.โรคติดต่อ 2558 ยังใช้นิยาม XDR เดิม: MDR + FQ + second-line injectable (Km, Am, Cm) · ทุกราย MDR/RR/(pre)XDR ต้องขึ้นทะเบียน (New, Relapse, After LTFU, After failure, Transfer in, Others)</p>
+  </div>
+
+  <div class="block" id="dr-grp"><h3 class="sec"><span class="sn">6.2.2</span>กลุ่มยา (WHO 2020)<span class="pg">น.77, 82–83</span></h3>
+    <div class="grid3">
+      <div class="panel"><h4><span class="tag c">กลุ่ม A</span> ใช้ทั้ง 3</h4><p>Levofloxacin <i>หรือ</i> Moxifloxacin · Bedaquiline · Linezolid</p></div>
+      <div class="panel"><h4><span class="tag r">กลุ่ม B</span> เพิ่ม 1–2</h4><p>Clofazimine · Cycloserine <i>หรือ</i> Terizidone</p></div>
+      <div class="panel"><h4><span class="tag">กลุ่ม C</span> เติมจนครบ</h4><p>E · Delamanid · Z · Imipenem-cilastatin <i>หรือ</i> Meropenem (+clavulanate) · Amikacin (หรือ S) · Eto/Pto · PAS</p></div>
+    </div>
+    <div class="tbl"><div class="cap">ตาราง 6.5 การรวมยา (intensive ≥4 ขนาน, continuation ≥3 ขนาน)</div><table>
+      <tr><td>A/B รวม 4 ตัว</td><td>ไม่ต้องใช้ C</td><td class="rx">4(A/B)</td></tr>
+      <tr><td>A/B รวม 3 ตัว</td><td>+ C 1–2 ตัว</td><td class="rx">3(A/B) + 1–2C</td></tr>
+      <tr><td>A/B รวม 2 ตัว</td><td>+ C อย่างน้อย 3 ตัว</td><td class="rx">2(A/B) + ≥3C</td></tr></table></div>
+    <div class="callout crit">ห้ามใช้ kanamycin และ capreomycin · Bdq อายุ ≥6 ปี · Dlm อายุ ≥3 ปี · Amikacin อายุ ≥18 ปี เมื่อยังไวและมีระบบติดตามผลข้างเคียงพอ (ไม่มี Am ใช้ S ได้ถ้าไม่ดื้อ S) · carbapenem ต้องให้ร่วม clavulanic acid</div>
+  </div>
+
+  <div class="block" id="dr-mono"><h3 class="sec"><span class="sn">6.2.3</span>Mono / Polydrug-resistant (ไม่ใช่ MDR/RR)<span class="pg">น.78</span></h3>
+    <div class="tbl"><div class="cap">ตาราง 6.2</div><table>
+      <tr><th>ดื้อ</th><th>สูตร</th><th>ระยะเวลา</th><th>หมายเหตุ</th></tr>
+      <tr><td>H</td><td class="rx">6RZE-FQ</td><td>6 ด.</td><td>ถ้าไม่ดื้อ FQ</td></tr>
+      <tr><td>H</td><td class="rx">6RZE</td><td>6 ด.</td><td>ถ้าดื้อหรือไม่แน่ใจ FQ</td></tr>
+      <tr><td>Z</td><td class="rx">2HRE/7HR</td><td>9 ด.</td><td></td></tr>
+      <tr><td>E</td><td class="rx">2HRZ/4HR</td><td>6 ด.</td><td></td></tr>
+      <tr><td>H + Z</td><td class="rx">9–12 RE-FQ</td><td>9–12 ด.</td><td></td></tr>
+      <tr><td>H + E</td><td class="rx">6–9 RZ-FQ</td><td>6–9 ด.</td><td></td></tr>
+      <tr><td>H + E + Z</td><td class="rx">2–3 AG-R-FQ-Eto / 10 R-FQ-Eto</td><td>12 ด.</td><td>AG = S, Am, Km</td></tr>
+      <tr><td>R (mono)</td><td>สูตร MDR</td><td>9–11 / ≥18 ด.</td><td>shorter ก่อนถ้าไม่มีข้อห้าม</td></tr></table></div>
+  </div>
+
+  <div class="block" id="dr-fc"><h3 class="sec"><span class="sn">6.2.4</span>แผนภูมิ 6.1 การเลือกสูตร MDR/RR-TB<span class="pg">น.79</span></h3>
+    <div class="panel fc-scroll"><div class="fc">
+      <div class="node start"><b>MDR/RR-TB</b>ส่ง SL-DST ด้วย LPA หรือ RT-PCR (ขอผลด่วน) + culture + phenotypic SL-DST<br><span class="note">ระหว่างรอผล ให้สูตรเดิมไปก่อน</span></div><div class="arr"></div>
+      <div class="split" style="grid-template-columns:1fr 1.6fr">
+        <div class="col"><span class="lbl n">ดื้อ FQ</span><div class="node ref"><b>Pre-XDR / XDR</b>Individualized longer regimen</div></div>
+        <div class="col"><span class="lbl y">ไม่ดื้อ FQ</span><div class="node warn" style="text-align:left;max-width:380px">เข้าเกณฑ์ทุกข้อ?<br>• ไม่เคยได้ยาแนวที่ 2 ในสูตรนี้ &gt;1 เดือน<br>• ไม่ดื้อยาในสูตร (ยกเว้น H)<br>• ไม่ใช่ severe EPTB / extensive TB<br>• ไม่ตั้งครรภ์ · อายุ ≥6 ปี<br>• QTcF ไม่เกิน 450 (ชาย) / 470 (หญิง) ms<br>• AST/ALT ไม่เกิน 5×ULN</div><div class="arr"></div>
+          <div class="split" style="grid-template-columns:1fr 1fr"><div class="col"><span class="lbl y">ใช่</span><div class="node go"><b>Shorter all-oral Bdq</b>9–11 เดือน</div></div><div class="col"><span class="lbl n">ไม่ใช่</span><div class="node ref">Individualized longer regimen</div></div></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="block" id="dr-short"><h3 class="sec"><span class="sn">6.2.4(2)</span>Shorter all-oral bedaquiline-containing regimen<span class="pg">น.80–82</span></h3>
+    <p class="rx" style="font-size:15px;padding:6px 10px">4–6 Bdq(6 ด.)-Lfx(Mfx)-Pto(Eto)-Cfz-Z-E-H<sup>high-dose</sup> / 5 Lfx(Mfx)-Cfz-Z-E</p>
+    <ul><li><b>Intensive</b> 7 ขนาน 4 เดือน (Bdq ให้ครบ 6 เดือนเสมอ) · ประเมิน smear conversion สิ้นเดือน 4 ถ้ายังไม่ convert ขยายได้ไม่เกิน 6 เดือน</li><li><b>Continuation</b> Lfx(Mfx), Cfz, E, Z นาน 5 เดือน</li><li>ไม่เข้าเกณฑ์ ทนยาไม่ได้ แพ้ยารุนแรง หรือล้มเหลว → ปรึกษาคณะผู้เชี่ยวชาญ DR-TB ระดับเขต (ผ่านความเห็นชอบระดับประเทศ) เพื่อใช้ longer regimen</li><li>พบดื้อยาในสูตรระหว่างรักษา → แพทย์พิจารณาเปลี่ยนเป็นสูตรระยะยาว</li></ul>
+    <div class="tbl"><div class="cap">ตาราง 6.3 ขนาดยาต่อวัน (มก.)</div><table>
+      <tr><th>ยา</th><th class="num">30–35</th><th class="num">36–45</th><th class="num">46–55</th><th class="num">56–70</th><th class="num">&gt;70 กก.</th></tr>
+      <tr><td>Bedaquiline</td><td colspan="5">400 มก./วัน 2 สัปดาห์ → 200 มก. 3 ครั้ง/สัปดาห์ 22 สัปดาห์ (รวม 24 สัปดาห์) ทุกช่วงน้ำหนัก</td></tr>
+      <tr><td>Levofloxacin</td><td class="num">750</td><td class="num">750</td><td class="num">750</td><td class="num">750</td><td class="num">750</td></tr>
+      <tr><td>Moxifloxacin</td><td class="num">400</td><td class="num">400</td><td class="num">400</td><td class="num">400</td><td class="num">400</td></tr>
+      <tr><td>Pto / Eto</td><td class="num">500</td><td class="num">500</td><td class="num">750</td><td class="num">750</td><td class="num">1,000</td></tr>
+      <tr><td>Clofazimine</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td><td class="num">100</td></tr>
+      <tr><td>Pyrazinamide</td><td class="num">1,000</td><td class="num">1,000</td><td class="num">1,500</td><td class="num">1,500</td><td class="num">2,000</td></tr>
+      <tr><td>Isoniazid (high-dose)</td><td class="num">400</td><td class="num">400</td><td class="num">600</td><td class="num">600</td><td class="num">600</td></tr>
+      <tr><td>Ethambutol</td><td class="num">800</td><td class="num">800</td><td class="num">1,200</td><td class="num">1,200</td><td class="num">1,200</td></tr></table></div>
+  </div>
+
+  <div class="block" id="dr-long"><h3 class="sec"><span class="sn">6.2.4(3)</span>Individualized longer regimen<span class="pg">น.82–85</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>หลักการ</h4><ul><li>Intensive ≥4 ขนาน, continuation ≥3 ขนาน เลือกจาก A → B → C บนลงล่าง ตามผล DST</li><li>ระยะเวลา <b>≥18 เดือน</b> และ 15–17 เดือนหลัง culture conversion (culture ลบ 2 ครั้งห่าง ≥7 วัน)</li><li>ดื้อยาอื่นร่วม อาจ &gt;20 เดือน</li><li>มี Am หรือ S → intensive 6–7 เดือน</li><li>Bdq, Dlm ใช้ 6 เดือน (Bdq เกินได้ภายใต้การติดตามใกล้ชิด)</li><li>BPaL อยู่ระหว่างนำเข้าเพื่อ operational research</li></ul></div>
+      <div class="tbl"><div class="cap">ตาราง 6.6 ขนาดยาสูตรระยะยาว อายุ ≥15 ปี (หลัก)</div><table>
+        <tr><th>ยา</th><th>ขนาด</th></tr>
+        <tr><td>Lfx</td><td>750–1,000 มก. (≥46 กก. 1,000 มก.; สูงสุด 1.5 ก.)</td></tr>
+        <tr><td>Mfx</td><td>400 มก. (high-dose ได้ถึง 800 มก.)</td></tr>
+        <tr><td>Bdq</td><td>400 มก. OD 2 สัปดาห์ → 200 มก. M/W/F 22 สัปดาห์</td></tr>
+        <tr><td>Lzd</td><td>600 มก./วัน (สูงสุด 1.2 ก.)</td></tr>
+        <tr><td>Cfz</td><td>100 มก./วัน</td></tr>
+        <tr><td>Cs/Trd</td><td>10–15 มก./กก. (500–750 มก.; สูงสุด 1 ก.)</td></tr>
+        <tr><td>Dlm</td><td>100 มก. bid</td></tr>
+        <tr><td>Am</td><td>15–20 มก./กก. (สูงสุด 1 ก.)</td></tr>
+        <tr><td>Imipenem / Meropenem</td><td>Ipm 1 ก. bid · Mpm 1 ก. tid หรือ 2 ก. bid + amox/clav 125 มก. clavulanate bid</td></tr>
+        <tr><td>Eto/Pto</td><td>15–20 มก./กก. (สูงสุด 1 ก.)</td></tr>
+        <tr><td>PAS</td><td>8–12 ก./วัน แบ่ง 2–3 ครั้ง</td></tr></table></div>
+    </div>
+  </div>
+
+  <div class="block" id="dr-ddi"><h3 class="sec"><span class="sn">6.3</span>อันตรกิริยาระหว่างยาที่สำคัญ<span class="pg">น.86–88</span></h3>
+    <div class="tbl"><table>
+      <tr><th>ยา</th><th>คู่ยา / ผล</th><th>คำแนะนำ</th></tr>
+      <tr><td>FQ (Lfx, Mfx)</td><td>Al/Mg, นม, ยาลดกรด, Fe, Ca, Zn ลดการดูดซึม · เพิ่มฤทธิ์ warfarin · เพิ่มระดับ theophylline</td><td>กินห่าง ≥2 ชม. · ติดตาม INR, ระดับ theophylline</td></tr>
+      <tr><td>Bedaquiline</td><td>CYP3A4 inhibitor (azole, macrolide, PI) ↑ระดับ · Rifampicin ลดระดับครึ่งหนึ่ง · QT drugs (Cfz, FQ, Dlm, azole)</td><td>หลีกเลี่ยง · ติดตาม ECG สม่ำเสมอ</td></tr>
+      <tr><td>Linezolid</td><td>Serotonergic (SSRI เช่น fluoxetine, buspirone, meperidine) → serotonin syndrome (weak MAOI)</td><td>หลีกเลี่ยงการให้ร่วม</td></tr>
+      <tr><td>Clofazimine</td><td>Weak CYP3A4 inhibitor; ชะลอการดูดซึม R; DDI กับ dapsone, estrogen, vit A</td><td>กินกับอาหารไขมันสูง</td></tr>
+      <tr><td>Cycloserine</td><td>Eto, H ↑ CNS ADR · แอลกอฮอล์เพิ่มชัก</td><td>ให้ B6, งดสุรา</td></tr>
+      <tr><td>Delamanid</td><td>QT prolongation, CYP3A4</td><td>ECG สม่ำเสมอ</td></tr>
+      <tr><td>Amikacin</td><td>Ampho B, cephalosporin, cyclosporin, cisplatin, furosemide, vancomycin → oto/nephrotoxic</td><td>ไม่แนะนำให้ร่วม</td></tr>
+      <tr><td>Eto/Pto</td><td>+Cs → neurotoxic/ชัก · +PAS → hepatotoxic, hypothyroid · สุรา</td><td>B6 สูงสุด 200 มก./วัน, LFT, TFT</td></tr>
+      <tr><td>PAS</td><td>ลดระดับ digoxin · +Eto hypothyroid/ตับ · ลดการขจัด H</td><td>ระดับ digoxin, LFT, TSH (อาจให้ levothyroxine)</td></tr></table></div>
+  </div>
+
+  <div class="block" id="dr-mon"><h3 class="sec"><span class="sn">6.4–6.5</span>การติดตาม DR-TB และ aDSM<span class="pg">น.89–92</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>สูตรระยะสั้น (ตาราง 6.8)</h4><ul><li>Informed consent ก่อนเริ่ม</li><li>น้ำหนัก, อาการ, smear + culture: baseline และทุกเดือน และหลังจบ 6/12/18/24 เดือน</li><li>CXR: baseline และเป็นระยะ</li><li>CBC, Cr/eGFR: baseline + ระหว่างรักษา · LFT เป็นระยะ</li><li><b>QTcF:</b> baseline และซ้ำหลายครั้งตลอดระยะเข้มข้น (ยา QT ร่วม: Bdq, Cfz, FQ)</li><li>Baseline: K/Mg/Ca, FBS, TSH, pregnancy test, HIV (+CD4), ตรวจตา</li><li>ขยาย intensive → ตรวจแบบเดือน 4 ซ้ำทุกเดือนที่เพิ่ม</li></ul></div>
+      <div class="panel"><h4>สูตรระยะยาว (ตาราง 6.9)</h4><ul><li>แพทย์ประเมิน + พี่เลี้ยงประเมินการกินยา ทุกครั้ง</li><li>Smear/culture ทุกเดือน, DST ซ้ำถ้า culture ยังบวก/กลับบวกหลังเดือน 4</li><li><b>CBC ทุกเดือนถ้าได้ Lzd</b></li><li>BUN/Cr ทุกเดือนถ้าได้ AG, Z, E · uric acid ถ้าได้ Z</li><li>ตรวจตา (Lzd, E) และ audiometry (ยาฉีด) เมื่อมีอาการ</li><li>ติดตามหลังจบ 6/12/18/24 เดือน</li></ul></div>
+    </div>
+    <div class="callout info"><b>aDSM</b> (active drug-safety monitoring) ต้องทำเมื่อใช้ยาใหม่ (Bdq, Dlm), ยา repurposed (Cfz, Lzd) หรือสูตรใหม่ (shorter regimen) · รายงานผ่านโปรแกรม aDSM ทุกครั้งที่ผู้ป่วยมาพบแพทย์</div>
+  </div>
+
+  <div class="block" id="dr-out"><h3 class="sec"><span class="sn">6.6</span>ผลการรักษา DR-TB<span class="pg">น.92–93</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>Interim (สิ้นระยะเข้มข้น)</h4><p>Longer: สิ้นเดือน 6 · Shorter: สิ้นเดือน 4</p><ul><li><b>Culture conversion</b>: culture ลบ 2 ครั้งติดกัน ห่าง ≥7 วัน ในระยะเข้มข้น</li><li>Not converted / not examined / died / LTFU (&gt;2 เดือน) / transferred out</li></ul></div>
+      <div class="panel"><h4>Final</h4><dl class="kv"><dt>Cured</dt><dd>ครบ ไม่ล้มเหลว + culture ลบ ≥2 ครั้ง (ห่าง ≥7 วัน) ติดกันในระยะต่อเนื่อง</dd><dt>Completed</dt><dd>ครบ ไม่ล้มเหลว แต่ไม่มีผล culture พอ</dd><dt>Failed</dt><dd>ยุติ/ต้องเปลี่ยนยา ≥2 ขนาน เพราะ: culture ยังบวกสิ้นระยะเข้มข้น, culture reversion ในระยะต่อเนื่อง, ดื้อยาเพิ่ม, ADR ทนไม่ได้</dd><dt>LTFU</dt><dd>ไม่เริ่มยา หรือขาดยา ≥2 เดือนติดต่อกัน</dd></dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TB/HIV ============ -->
+<section class="page" id="hiv" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 5.4.1 & 8</div><h2>การผสมผสานงานวัณโรคและเอชไอวี</h2></div>
+  <div class="keypts">
+    <div class="kp"><div class="eyebrow">ความชุก HIV ในผู้ป่วย TB</div><div class="big">~10%</div><div class="note">Success rate TB/HIV 75% vs ทั้งหมด 85% (ปี 2562)</div></div>
+    <div class="kp"><div class="eyebrow">ART timing (ไม่ขึ้นกับ CD4)</div><div class="big">≤2 สัปดาห์ (ช้าสุด 4)</div><div class="note">TBM: ≥4 สัปดาห์ ช้าสุด 8 สัปดาห์</div></div>
+    <div class="kp"><div class="eyebrow">CPT</div><div class="big">Co-trimoxazole</div><div class="note">โดยเฉพาะ CD4 &lt;200, ไม่ทราบ CD4 หรือยังไม่ได้ ART</div></div>
+  </div>
+
+  <div class="block"><h3 class="sec"><span class="sn">8.2</span>คัดกรองและวินิจฉัย TB ในผู้ติดเชื้อ HIV<span class="pg">น.117–119</span></h3>
+    <div class="grid2">
+      <div class="panel"><ul><li><b>รายใหม่:</b> CXR ทุกราย → ผิดปกติหรือมีอาการ เก็บเสมหะ</li><li><b>รายเก่า:</b> ทุก visit (1–3 เดือน) ถาม 4 อาการ (ไอ ไข้ น้ำหนักลด เหงื่อกลางคืน) → ข้อใดข้อหนึ่ง: CXR + เสมหะ; ปกติ CXR ปีละครั้ง</li><li>ส่ง <b>Xpert ได้เลย</b> + smear + culture (NTM ~10%)</li><li>วินิจฉัย TB ทุกราย ส่ง genotypic DST ก่อน แล้ว phenotypic DST</li></ul></div>
+      <div class="panel"><h4>ข้อสังเกต</h4><ul><li>AFB+ แยก MTB/NTM ไม่ได้ → culture หรือ molecular</li><li>CXR ไม่จำเพาะ แผลโพรงน้อยกว่า</li><li>Urine LF-LAM = add-on ช่วยตัดสินใจ ต้องส่งวิธีอื่นร่วมเสมอ · LAM ลบ → พิจารณา rapid/same-day ART ระหว่างรอผล; LAM บวก → รักษา TB ก่อนแล้ว ART ตาม timing</li><li><b>ผู้ป่วย TB ทุกราย</b> ปรึกษาตรวจ HIV ภายใน 1–2 สัปดาห์แรก (PITC); เคยผลลบ &gt;1 เดือนและมีพฤติกรรมเสี่ยง ตรวจซ้ำ</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block"><h3 class="sec"><span class="sn">8.3</span>การรักษา TB ในผู้ใหญ่ติดเชื้อ HIV<span class="pg">น.120</span></h3>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">ตาราง 8.1 ระยะเวลา</div><table>
+        <tr><td>TB ทั่วไป</td><td class="rx">2HRZE/4HR</td><td>6 ด.</td></tr>
+        <tr><td>ตอบสนองช้า: cavity + smear บวกเมื่อครบ 2 เดือน และ DST ไม่ใช่ RR/MDR</td><td class="rx">2HRZE/7HR</td><td>9 ด.</td></tr>
+        <tr><td>EPTB รุนแรง: กระดูกและข้อ, ระบบประสาท</td><td class="rx">2HRZE/10HR</td><td>12 ด.</td></tr></table></div>
+      <div class="tbl"><div class="cap">ตาราง 5.8 Rifampicin กับยาต้านเอชไอวี</div><table>
+        <tr><th>ไม่แนะนำร่วมกับ R</th><td>TAF · NVP, ETR, RPV · <b>PI ทุกตัว</b> · EVG</td></tr>
+        <tr><th>ต้องปรับขนาด</th><td>RAL, <b>DTG</b>, MVC</td></tr></table>
+        <p class="note" style="padding:6px 10px">ถ้าได้ ARV ที่เปลี่ยนไม่ได้ พิจารณาสูตรไม่มี R เช่น <span class="rx">2HRZEQ/10–16HEQ</span> (ต้นฉบับพิมพ์เช่นนี้) ระวังดื้อ FQ</p></div>
+    </div>
+    <div class="callout"><b>ART timing</b> (ตาราง 5.7): TB ทุกชนิดยกเว้น TBM → เริ่ม ART ภายใน 2 สัปดาห์ อย่างช้าไม่เกิน 4 สัปดาห์ · TBM → หลังรักษา TB อย่างน้อย 4 สัปดาห์ อย่างช้าไม่เกิน 8 สัปดาห์ · หญิงตั้งครรภ์ เริ่มเร็วที่สุด</div>
+  </div>
+
+  <div class="block"><h3 class="sec"><span class="sn">8.3</span>TB paradoxical IRIS<span class="pg">น.120–121</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>ลักษณะ</h4><ul><li>พบบ่อยเมื่อเริ่ม ART เร็ว, EPTB, CD4 ต่ำก่อน ART</li><li>ไข้ + รอยโรคเดิมแย่ลง (แผลปอดมากขึ้น ต่อมน้ำเหลืองโตเจ็บ)</li><li>ส่วนใหญ่ใน 3 เดือนแรกหลัง ART หายเองใน 2–4 สัปดาห์</li><li>แยกจาก: DR-TB, การติดเชื้อใหม่, ADR, ART failure, ไม่กินยา TB</li></ul></div>
+      <div class="panel"><h4>การรักษา</h4><ul><li>ให้ยา TB และ ART ต่อ ไม่ต้องปรับ</li><li>NSAID หรือ steroid ตามความรุนแรง</li><li class="rx">Prednisolone 1 มก./กก./วัน ลดทุก 2 สัปดาห์ หยุดได้ใน 4–8 สัปดาห์</li></ul></div>
+    </div>
+  </div>
+
+  <div class="block"><h3 class="sec"><span class="sn">8.4</span>TPT ในผู้ติดเชื้อ HIV<span class="pg">น.121–122, 132–133</span></h3>
+    <div class="tbl"><table>
+      <tr><th>กลุ่ม</th><th>แนวทาง</th></tr>
+      <tr><td>สัมผัส TB ปอด/กล่องเสียงระยะแพร่เชื้อ (ภายใน 3 เดือน)</td><td><b>ให้ TPT ได้เลย</b> ไม่ต้องทดสอบ</td></tr>
+      <tr><td>รายใหม่ ART ≤6 เดือน</td><td>CD4 &lt;200 → TPT ได้เลย · CD4 ≥200 → IGRA/TST: บวก (TST ≥5 มม.) → TPT; ไม่ทราบผล → ดุลพินิจแพทย์; ลบ → เฝ้าระวังทุก 6 เดือน 2 ปี</td></tr>
+      <tr><td>รายเก่า ART &gt;6 เดือน (ไม่เคยได้ TPT)</td><td>IGRA/TST: บวก → TPT; ลบ → เฝ้าระวัง; ไม่ทราบผล → ดู CD4 (&lt;200 → TPT, ≥200 → เฝ้าระวัง)</td></tr></table></div>
+  </div>
+</section>
+
+<!-- ============ LTBI ============ -->
+<section class="page" id="ltbi" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 9</div><h2>การรักษาการติดเชื้อวัณโรคระยะแฝง (TPT)</h2></div>
+  <div class="block"><h3 class="sec"><span class="sn">9.1</span>นิยามผู้สัมผัส<span class="pg">น.127</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>Household contact</h4><p>อาศัยร่วมบ้าน (นอนห้องเดียวกัน = household intimate เสี่ยงสูงกว่า household regular) นับช่วง 3 เดือนก่อนผู้ป่วยมีอาการ/วินิจฉัย จนถึงหลังได้ยาที่มีประสิทธิภาพ ≥2 สัปดาห์</p></div>
+      <div class="panel"><h4>Close contact</h4><p>ไม่ใช่ร่วมบ้าน แต่อยู่ในพื้นที่เดียวกันเฉลี่ย <b>8 ชม./วัน หรือ 120 ชม./เดือน</b> ในช่วงเวลาเดียวกัน · เด็ก &lt;5 ปี นับเป็น close contact ได้แม้ไม่ถึงเกณฑ์</p></div>
+    </div>
+  </div>
+  <div class="block"><h3 class="sec"><span class="sn">9.2</span>TST vs IGRA<span class="pg">น.128</span></h3>
+    <div class="tbl"><table><tr><th>TST</th><th>IGRA (QFT-Plus, T-SPOT)</th></tr>
+      <tr><td>PPD 0.1 mL intradermal อ่าน 48–72 ชม.</td><td>เจาะเลือดครั้งเดียว</td></tr>
+      <tr><td>บวกลวงจาก BCG และ NTM ส่วนใหญ่</td><td>ไม่บวกลวงจาก BCG / NTM ส่วนใหญ่</td></tr>
+      <tr><td>มี booster effect</td><td>ไม่มี</td></tr>
+      <tr><td>ใช้ในเด็ก &lt;2 ปีได้ · ราคาถูก</td><td>ไม่แนะนำในเด็ก &lt;2 ปี · ราคาสูง</td></tr></table></div>
+    <p class="note">ทั้งสองวิธีแยก LTBI กับ active TB ไม่ได้ — ต้องคัดกรองด้วยอาการ + CXR ก่อนเสมอ</p>
+  </div>
+  <div class="block"><h3 class="sec"><span class="sn">9.3</span>แผนภูมิ 9.1–9.4 ใครควรได้ TPT<span class="pg">น.129–134</span></h3>
+    <div class="tbl"><table>
+      <tr><th>กลุ่ม</th><th>หลังคัดกรอง (อาการ + CXR) ไม่ป่วย</th><th>เกณฑ์ให้ TPT</th></tr>
+      <tr><td>เด็กสัมผัส &lt;5 ปี / เด็ก HIV ทุกอายุ</td><td>ไม่ต้องทดสอบ</td><td><b>ให้ TPT</b></td></tr>
+      <tr><td>เด็กสัมผัส 5–18 ปี</td><td>IGRA (หรือ TST)</td><td>IGRA+ หรือ TST ≥15 มม. · TST 10–14 รายๆ ไป</td></tr>
+      <tr><td>ผู้ใหญ่สัมผัส ติดเชื้อ HIV</td><td>ไม่ต้องทดสอบ</td><td><b>ให้ TPT</b></td></tr>
+      <tr><td>ผู้ใหญ่สัมผัส ไม่ติด HIV ไม่เคยป่วย TB</td><td>IGRA (หรือ TST)</td><td>IGRA+ หรือ TST ≥15 มม. (ภูมิปกติ) / ≥10 มม. (ภูมิต่ำ)</td></tr>
+      <tr><td>ผู้ใหญ่สัมผัส เคยป่วย TB</td><td>—</td><td>เฝ้าระวังการป่วย</td></tr>
+      <tr><td>กลุ่มเสี่ยงอื่น: silicosis, anti-TNF, dialysis, เตรียม transplant</td><td>IGRA (หรือ TST)</td><td>IGRA+ หรือ TST ≥10 มม.</td></tr>
+      <tr><td>ผู้สัมผัส DR-TB (Hr, RR, MDR)</td><td colspan="2"><b>ยังไม่แนะนำ TPT</b> — ปรึกษาผู้เชี่ยวชาญ เฝ้าระวังอย่างน้อย 2 ปี</td></tr></table></div>
+    <p class="note">ไม่ติดเชื้อและไม่ป่วย → CXR ทุก 6 เดือน 2 ปี แล้วปีละครั้ง · HIV ดูแท็บ TB/HIV</p>
+  </div>
+  <div class="block"><h3 class="sec"><span class="sn">9.4</span>สูตรยา TPT และการประเมินผล<span class="pg">น.135–138</span></h3>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">ตาราง 9.2 (ผู้ใหญ่ / อายุ ≥10–14 ปีขึ้นไป)</div><table>
+        <tr><th>สูตร</th><th>ขนาด</th><th class="num">Doses</th><th class="num">≥ (80%)</th></tr>
+        <tr><td><b>3HP</b> สัปดาห์ละครั้ง</td><td>&gt;14 ปี ≥30 กก.: H 900 + RPT 900 มก.</td><td class="num">12</td><td class="num">11*</td></tr>
+        <tr><td><b>1HP</b> ทุกวัน</td><td>≥13 ปี: H 300 + RPT 600 มก.</td><td class="num">28</td><td class="num">23</td></tr>
+        <tr><td><b>4R</b> ทุกวัน</td><td>≥10 ปี: R 10 มก./กก.</td><td class="num">120</td><td class="num">96</td></tr>
+        <tr><td><b>3HR</b> ทุกวัน</td><td>≥10 ปี: H 5 + R 10 มก./กก.</td><td class="num">84</td><td class="num">68</td></tr>
+        <tr><td><b>6–9H</b> ทุกวัน</td><td>≥10 ปี: H 5 มก./กก.</td><td class="num">182</td><td class="num">146</td></tr></table>
+        <p class="note" style="padding:6px 10px">* 3HP ใช้ 90% · เด็ก 2–14 ปีดูเครื่องมือขนาดยา TPT</p></div>
+      <div class="panel"><h4>ก่อนเริ่ม</h4><ul><li>ประวัติแพ้ยา (H, R, rifabutin, RPT), ยาที่ใช้ (ARV, opioid, antimalarial มี DDI)</li><li>HIV/ARV, ตั้งครรภ์/คุมกำเนิด, โรคประจำตัว, สัมผัส DR-TB</li><li>ข้อห้าม: ไวรัสตับอักเสบเฉียบพลัน/เรื้อรัง, AST/ALT &gt;3×ULN, ดื่มสุราประจำและมี neuropathy</li><li>LFT ในกลุ่มเสี่ยง: โรคตับ, ดื่มสุรา, HIV, ตั้งครรภ์/หลังคลอด 3 เดือน, อายุ &gt;35</li></ul>
+        <h4>Lost to follow-up</h4><p>6H ขาด ≥8 สัปดาห์ · 3HP/3HR/4R ขาด ≥4 สัปดาห์ · 1HP ขาด ≥10 วัน</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IC ============ -->
+<section class="page" id="ic" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 11</div><h2>การป้องกันการแพร่กระจายเชื้อวัณโรค</h2></div>
+  <div class="grid3">
+    <div class="panel"><h4>1. บริหารจัดการ (สำคัญที่สุด)</h4><ul><li>จุดคัดกรองตั้งแต่ทางเข้า ให้ผู้ป่วยใส่หน้ากากอนามัย แยกที่รอโล่ง</li><li>Fast track: ส่ง CXR + เสมหะได้เลยก่อนพบแพทย์</li><li>คลินิก TB แบบ one-stop แยกจากคลินิก HIV/DM/เด็ก/ผู้สูงอายุ</li><li>ห้ามเก็บเสมหะในห้องน้ำ</li></ul></div>
+    <div class="panel"><h4>2. สิ่งแวดล้อม</h4><ul><li>ระบายอากาศธรรมชาติ/เครื่องกล ลมจากบุคลากร → ผู้ป่วย → ภายนอก</li><li>ห้องแยก AIIR; ไม่มี: ห้องเดี่ยว + พัดลมดูดอากาศ ≥12 ACH</li><li>MDR-TB แยกจาก DS-TB</li><li>HEPA filter, UVGI (upper-room, UV fan)</li></ul></div>
+    <div class="panel"><h4>3. ป้องกันส่วนบุคคล</h4><ul><li>ผู้ป่วย: surgical mask</li><li>บุคลากร: <b>N95</b> + fit check ทุกครั้ง <b>ห้ามสวม N95 ทับ surgical mask</b></li><li>ใส่ N95 เมื่อ: ตรวจผู้สงสัย TB, ห้องแยก, aerosol-generating (intubation, sputum induction, suction, nebulizer), แลป, bronchoscopy, ผ่าตัด, ชันสูตรศพ</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="panel"><h4>เฝ้าระวังบุคลากร<span class="pg">น.160–161</span></h4><ul><li>เริ่มงาน: CXR ทุกราย → ไม่ป่วย ตรวจ LTBI (TST ≥10 มม. หรือ IGRA)</li><li>TST &lt;10 มม. → two-step 1–3 สัปดาห์ (≥10 และเพิ่ม ≥6 มม. = boosted)</li><li>ลบ → ทดสอบซ้ำใน 1–2 ปี (เปลี่ยนเป็นบวก = ติดเชื้อใหม่ → พิจารณา TPT)</li><li>CXR ปีละครั้ง (ทั่วไป) / ทุก 6 เดือน (สัมผัสผู้ป่วยโดยตรง)</li><li>บุคลากรป่วย: หยุดงาน ≥2 สัปดาห์ หรือจนเสมหะลบ</li></ul></div>
+    <div class="panel"><h4>ครอบครัวและชุมชน<span class="pg">น.161–162</span></h4><ul><li>ระยะแพร่เชื้อ: DS-TB ส่วนใหญ่ 2 สัปดาห์–2 เดือนหลังเริ่มยา; MDR 2–4 เดือน</li><li>หลีกเลี่ยงใกล้ชิดผู้อื่น ≥2 สัปดาห์หรือจนเสมหะลบ (MDR: จนเสมหะลบ) · หยุดงาน/เรียนเช่นเดียวกัน</li><li>แยกห้องนอนจากเด็ก ผู้สูงอายุ ผู้มีภาวะเสี่ยง · เลี่ยงที่ปิดแออัดและรถโดยสารปรับอากาศ</li><li>ผู้สัมผัสคัดกรองทุก 6 เดือน 2 ปี แล้วทุกปี</li><li>นายจ้างไม่ควรเลิกจ้างเพราะป่วย TB</li></ul></div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section class="page" id="tools" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">เครื่องมือ</div><h2>ชุดเครื่องมือช่วยทำงาน</h2><p class="note">ผลลัพธ์อิงตาม NTP 2564 เท่านั้น ใช้ประกอบดุลพินิจแพทย์ — กรณีซับซ้อน (DR-TB, ตับวาย, เด็กเล็ก) ปรึกษาผู้เชี่ยวชาญ</p></div>
+  <div class="toolnav" role="group" aria-label="เลือกเครื่องมือ">
+    <button data-tool="t-dx">ทางเดินการวินิจฉัย</button>
+    <button data-tool="t-reg">ประเภทขึ้นทะเบียน</button>
+    <button data-tool="t-drclass">แปลผลดื้อยา</button>
+    <button data-tool="t-dose">ขนาดยา 2HRZE/4HR</button>
+    <button data-tool="t-sched">ตารางนัดติดตาม</button>
+    <button data-tool="t-dili">ตับอักเสบ & re-challenge</button>
+    <button data-tool="t-rash">ผื่นแพ้ยา</button>
+    <button data-tool="t-int">ขาดยา</button>
+    <button data-tool="t-short">MDR สูตรระยะสั้น</button>
+    <button data-tool="t-long">จัดสูตรระยะยาว</button>
+    <button data-tool="t-art">ART timing</button>
+    <button data-tool="t-ltbi">ตัดสินใจ TPT</button>
+    <button data-tool="t-tpt">ขนาดยา TPT</button>
+    <button data-tool="t-out">ผลการรักษา</button>
+  </div>
+
+  <!-- DX -->
+  <div class="tool" id="t-dx" hidden>
+    <div class="panel form">
+      <h3>ทางเดินการวินิจฉัย (แผนภูมิ 4.1)</h3>
+      <div class="fld"><span class="lab">กลุ่มประชากร</span><div class="seg">
+        <label><input type="radio" name="dx_pop" value="gen" checked>ประชากรทั่วไป</label>
+        <label><input type="radio" name="dx_pop" value="kn">Key pop. รายใหม่</label>
+        <label><input type="radio" name="dx_pop" value="ko">Key pop. รายเก่า</label></div></div>
+      <div class="fld"><span class="lab">มีอาการสงสัย TB</span><div class="seg">
+        <label><input type="radio" name="dx_sym" value="y" checked>มี</label><label><input type="radio" name="dx_sym" value="n">ไม่มี</label></div></div>
+      <div class="fld"><span class="lab">CXR</span><div class="seg">
+        <label><input type="radio" name="dx_cxr" value="na" checked>ยังไม่ทำ</label><label><input type="radio" name="dx_cxr" value="ab">ผิดปกติเข้าได้กับ TB</label><label><input type="radio" name="dx_cxr" value="nl">ปกติ/อื่นๆ</label></div></div>
+      <div class="fld"><span class="lab">AFB smear</span><div class="seg">
+        <label><input type="radio" name="dx_sm" value="na" checked>ยังไม่มีผล</label><label><input type="radio" name="dx_sm" value="neg">ลบ</label><label><input type="radio" name="dx_sm" value="pos">บวก</label></div></div>
+      <div class="fld"><span class="lab">FL molecular</span><select id="dx_mol">
+        <option value="na">ยังไม่มีผล</option><option value="nd">MTB not detected</option><option value="ds">MTB detected, RIF/INH ไม่ดื้อ</option><option value="hr">MTB detected, ดื้อ H (ไว R)</option><option value="rr">MTB detected, RR / MDR</option></select></div>
+      <div class="fld"><span class="lab">SL molecular: FQ</span><div class="seg">
+        <label><input type="radio" name="dx_fq" value="na" checked>ไม่ทราบ</label><label><input type="radio" name="dx_fq" value="s">ไว</label><label><input type="radio" name="dx_fq" value="r">ดื้อ</label></div></div>
+      <div class="fld"><span class="lab">Phenotypic Bdq / Lzd</span><div class="seg">
+        <label><input type="radio" name="dx_bl" value="na" checked>ไม่ทราบ</label><label><input type="radio" name="dx_bl" value="s">ไวทั้งคู่</label><label><input type="radio" name="dx_bl" value="r">ดื้อตัวใดตัวหนึ่ง</label></div></div>
+    </div>
+    <div class="out" id="o-dx"></div>
+  </div>
+
+  <!-- REG -->
+  <div class="tool" id="t-reg" hidden>
+    <div class="panel form">
+      <h3>จำแนกประเภทผู้ป่วย & ขึ้นทะเบียน</h3>
+      <div class="fld"><span class="lab">ประวัติการรักษา</span><select id="rg_hx">
+        <option value="new">ไม่เคยรักษา หรือรักษา &lt;1 เดือน</option>
+        <option value="cured">เคยรักษา — ผลล่าสุด รักษาหาย/ครบ</option>
+        <option value="failed">เคยรักษา — ผลล่าสุด ล้มเหลว</option>
+        <option value="ltfu">เคยรักษา — ขาดยา ≥2 เดือนติดต่อกัน</option>
+        <option value="unk">เคยรักษา — ไม่ทราบผลครั้งล่าสุด / ไม่ทราบประวัติ</option>
+        <option value="priv">ได้ยาจากคลินิก/เอกชน ≥1 เดือน ไม่เคยขึ้นทะเบียน NTIP</option>
+        <option value="ti">ขึ้นทะเบียนที่อื่นแล้ว โอนมารักษาต่อ</option></select></div>
+      <div class="fld"><span class="lab">ผลตรวจทางแบคทีเรีย</span><div class="seg"><label><input type="radio" name="rg_b" value="B+" checked>B+ (smear/culture/molecular บวก)</label><label><input type="radio" name="rg_b" value="B−">B− (clinically diagnosed)</label></div></div>
+      <div class="fld"><span class="lab">อวัยวะ</span><div class="seg"><label><input type="radio" name="rg_s" value="P" checked>ปอด (P)</label><label><input type="radio" name="rg_s" value="EP">นอกปอด (EP)</label></div></div>
+      <div class="fld"><span class="lab">HIV</span><div class="seg"><label><input type="radio" name="rg_h" value="HIV+">บวก</label><label><input type="radio" name="rg_h" value="HIV−">ลบ</label><label><input type="radio" name="rg_h" value="HIV unknown" checked>ไม่ทราบ</label></div></div>
+      <div class="fld"><span class="lab">ผล DST</span><div class="seg"><label><input type="radio" name="rg_d" value="ds" checked>ไว / ไม่ใช่ MDR-RR</label><label><input type="radio" name="rg_d" value="dr">MDR / RR / (pre)XDR</label></div></div>
+    </div>
+    <div class="out" id="o-reg"></div>
+  </div>
+
+  <!-- DR CLASS -->
+  <div class="tool" id="t-drclass" hidden>
+    <div class="panel form">
+      <h3>แปลผลดื้อยาและสูตรที่แนะนำ</h3>
+      <p class="note">เลือกผล DST (genotypic/phenotypic) ของแต่ละยา</p>
+      <div id="drc_rows"></div>
+    </div>
+    <div class="out" id="o-drclass"></div>
+  </div>
+
+  <!-- DOSE -->
+  <div class="tool" id="t-dose" hidden>
+    <div class="panel form">
+      <h3>ขนาดยา DS-TB ผู้ใหญ่ (ตาราง 5.1, 5.9)</h3>
+      <div class="fld"><label for="ds_wt">น้ำหนักก่อนเริ่มรักษา (กก.)</label><input type="number" id="ds_wt" min="20" max="200" step="0.5" value="55"><span class="hint">หญิงตั้งครรภ์: ใช้น้ำหนักก่อนตั้งครรภ์</span></div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="ds_age">อายุ (ปี)</label><input type="number" id="ds_age" min="15" max="110" value="50"></div>
+        <div class="fld"><label for="ds_cr">Serum Cr (มก./ดล.)</label><input type="number" id="ds_cr" min="0.2" max="20" step="0.1" placeholder="ไม่บังคับ"></div>
+      </div>
+      <div class="fld"><span class="lab">เพศ</span><div class="seg"><label><input type="radio" name="ds_sex" value="m" checked>ชาย</label><label><input type="radio" name="ds_sex" value="f">หญิง</label></div></div>
+      <div class="chk">
+        <label><input type="checkbox" id="ds_hd">ฟอกเลือด (HD) หรือ CrCl &lt;30 mL/min</label>
+        <label><input type="checkbox" id="ds_preg">ตั้งครรภ์</label>
+        <label><input type="checkbox" id="ds_liver">โรคตับเรื้อรัง + ALT &gt;3×ULN</label>
+        <label><input type="checkbox" id="ds_slow">ตอบสนองช้า (cavity ใหญ่ หรือ smear/culture บวกเดือน 2–3, DST ไว)</label>
+      </div>
+    </div>
+    <div class="out" id="o-dose"></div>
+  </div>
+
+  <!-- SCHED -->
+  <div class="tool" id="t-sched" hidden>
+    <div class="panel form">
+      <h3>ตารางนัดและการตรวจติดตาม (ตาราง 5.3)</h3>
+      <div class="fld"><label for="sc_start">วันเริ่มยา</label><input type="date" id="sc_start"></div>
+      <div class="fld"><span class="lab">สูตร</span><div class="seg"><label><input type="radio" name="sc_len" value="6" checked>2HRZE/4HR (6 ด.)</label><label><input type="radio" name="sc_len" value="9">2HRZE/7HR (9 ด.)</label><label><input type="radio" name="sc_len" value="12">2HRZE/10HR (12 ด.)</label></div></div>
+      <div class="chk">
+        <label><input type="checkbox" id="sc_risk">มีความเสี่ยงตับอักเสบ (LFT ทุก 1–2 สัปดาห์ในเดือนแรก)</label>
+        <label><input type="checkbox" id="sc_m2pos">Smear สิ้นเดือน 2 ยังบวก</label>
+        <label><input type="checkbox" id="sc_hiv">ติดเชื้อ HIV (แสดงช่วงเริ่ม ART)</label>
+        <label><input type="checkbox" id="sc_tbm">TB meningitis</label>
+      </div>
+    </div>
+    <div class="out" id="o-sched"></div>
+  </div>
+
+  <!-- DILI -->
+  <div class="tool" id="t-dili" hidden>
+    <div class="panel form">
+      <h3>ตับอักเสบระหว่างรักษา</h3>
+      <div class="fld"><span class="lab">อาการ (คลื่นไส้ อาเจียน กินไม่ได้ ตาเหลือง แน่นท้อง)</span><div class="seg"><label><input type="radio" name="dl_sym" value="y">มี</label><label><input type="radio" name="dl_sym" value="n" checked>ไม่มี</label></div></div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="dl_alt">AST/ALT สูงสุด (U/L)</label><input type="number" id="dl_alt" min="0" value="150"></div>
+        <div class="fld"><label for="dl_uln">ULN ของแลป (U/L)</label><input type="number" id="dl_uln" min="1" value="40"></div>
+      </div>
+      <div class="fld"><label for="dl_tb">Total bilirubin (มก./ดล.)</label><input type="number" id="dl_tb" min="0" step="0.1" value="1.0"></div>
+      <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="dl_ful">Fulminant hepatitis</span></label>
+      <hr style="border:0;border-top:1px solid var(--line);width:100%">
+      <h4>Re-challenge</h4>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="dl_alt2">AST/ALT ล่าสุด (U/L)</label><input type="number" id="dl_alt2" min="0" value="60"></div>
+        <div class="fld"><label for="dl_tb2">TB ล่าสุด (มก./ดล.)</label><input type="number" id="dl_tb2" min="0" step="0.1" value="1.0"></div>
+      </div>
+      <div class="fld"><label for="dl_d">วันเริ่ม re-challenge</label><input type="date" id="dl_d"></div>
+    </div>
+    <div class="out" id="o-dili"></div>
+  </div>
+
+  <!-- RASH -->
+  <div class="tool" id="t-rash" hidden>
+    <div class="panel form">
+      <h3>ปฏิกิริยาทางผิวหนัง</h3>
+      <div class="fld"><span class="lab">ลักษณะ</span><select id="rs_t">
+        <option value="itch">คันแต่ไม่มีผื่น</option>
+        <option value="acne">ผื่นคล้ายสิว ไม่มีอาการระบบ</option>
+        <option value="mp" selected>Maculopapular rash หลายตำแหน่ง</option>
+        <option value="sev">ผื่นรุนแรง + รอยโรคเยื่อบุ (SJS/TEN-like)</option></select></div>
+      <div class="fld"><label for="rs_wt">น้ำหนัก (กก.) สำหรับคำนวณขนาดเต็ม</label><input type="number" id="rs_wt" value="55" min="20" max="200"></div>
+      <div class="fld"><label for="rs_d">วันเริ่ม re-introduce (หลังผื่นหาย)</label><input type="date" id="rs_d"></div>
+      <div class="fld"><span class="lab">ตัวแรก</span><div class="seg"><label><input type="radio" name="rs_first" value="H" checked>H</label><label><input type="radio" name="rs_first" value="R">R</label></div></div>
+    </div>
+    <div class="out" id="o-rash"></div>
+  </div>
+
+  <!-- INTERRUPTION -->
+  <div class="tool" id="t-int" hidden>
+    <div class="panel form">
+      <h3>ขาดยา/หยุดยา: ให้ต่อหรือเริ่มใหม่ (แผนภูมิ 5.1)</h3>
+      <div class="chk"><span class="lab" style="font-weight:600;font-size:13.5px">เงื่อนไขเบื้องต้น (ต้องครบ)</span>
+        <label><input type="checkbox" id="in_c1" checked>อาการทางคลินิกไม่แย่ลง</label>
+        <label><input type="checkbox" id="in_c2" checked>CXR ไม่แย่ลง</label>
+        <label><input type="checkbox" id="in_c3" checked>เสมหะไม่พบเชื้อ หรือปริมาณไม่มากขึ้น</label></div>
+      <div class="fld"><span class="lab">ขาดยาในระยะ</span><div class="seg"><label><input type="radio" name="in_ph" value="i" checked>เข้มข้น (HRZE)</label><label><input type="radio" name="in_ph" value="c">ต่อเนื่อง (HR)</label></div></div>
+      <div class="fld"><label for="in_miss">ขาดยาติดต่อกัน (วัน)</label><input type="number" id="in_miss" min="0" value="10"></div>
+      <div id="in_i">
+        <div class="grid2" style="gap:10px">
+          <div class="fld"><label for="in_idose">ได้ยาระยะเข้มข้นแล้ว (วัน)</label><input type="number" id="in_idose" min="0" max="90" value="30"></div>
+          <div class="fld"><label for="in_el">นับจากเริ่มรักษาครั้งแรกถึงวันนี้ (วัน)</label><input type="number" id="in_el" min="0" value="45"></div>
+        </div>
+      </div>
+      <div id="in_c" hidden>
+        <div class="fld"><span class="lab">ความยาวระยะต่อเนื่องตามแผน</span><div class="seg"><label><input type="radio" name="in_cl" value="4" checked>4 เดือน</label><label><input type="radio" name="in_cl" value="7">7 เดือน</label></div></div>
+        <div class="grid2" style="gap:10px">
+          <div class="fld"><label for="in_cdose">ได้ยาระยะต่อเนื่องแล้ว (วัน)</label><input type="number" id="in_cdose" min="0" value="60"></div>
+          <div class="fld"><label for="in_elm">นับจากเริ่มรักษาครั้งแรก (เดือน)</label><input type="number" id="in_elm" min="0" step="0.5" value="5"></div>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="o-int"></div>
+  </div>
+
+  <!-- SHORT -->
+  <div class="tool" id="t-short" hidden>
+    <div class="panel form">
+      <h3>MDR/RR-TB: เกณฑ์ shorter all-oral Bdq regimen</h3>
+      <div class="chk" id="sh_list">
+        <label><input type="checkbox" data-k="conf" checked>MDR/RR-TB ยืนยันทางแลป</label>
+        <label><input type="checkbox" data-k="fq" checked>SL-LPA/RT-PCR: <b>ไม่ดื้อ FQ</b></label>
+        <label><input type="checkbox" data-k="res" checked>ไม่ดื้อ/ไม่สงสัยประสิทธิภาพยาในสูตร (ยกเว้น H)</label>
+        <label><input type="checkbox" data-k="prev" checked>ไม่เคยได้ยาแนวที่ 2 ในสูตรนี้ &gt;1 เดือน (หรือยังไวอยู่)</label>
+        <label><input type="checkbox" data-k="sev" checked>ไม่ใช่ severe EPTB / extensive TB (cavity สองข้าง)</label>
+        <label><input type="checkbox" data-k="preg" checked>ไม่ตั้งครรภ์</label>
+        <label><input type="checkbox" data-k="age" checked>อายุ ≥6 ปี</label>
+        <label><input type="checkbox" data-k="qt" checked>QTcF ≤450 ms (ชาย) / ≤470 ms (หญิง)</label>
+        <label><input type="checkbox" data-k="lft" checked>AST/ALT ≤5×ULN</label>
+      </div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="sh_wt">น้ำหนัก (กก.)</label><input type="number" id="sh_wt" value="50" min="20" max="200"></div>
+        <div class="fld"><label for="sh_d">วันเริ่มยา</label><input type="date" id="sh_d"></div>
+      </div>
+      <div class="fld"><span class="lab">FQ ที่ใช้</span><div class="seg"><label><input type="radio" name="sh_fq" value="Lfx" checked>Levofloxacin</label><label><input type="radio" name="sh_fq" value="Mfx">Moxifloxacin</label></div></div>
+    </div>
+    <div class="out" id="o-short"></div>
+  </div>
+
+  <!-- LONG -->
+  <div class="tool" id="t-long" hidden>
+    <div class="panel form">
+      <h3>จัดสูตร individualized longer regimen (ตาราง 6.4–6.5)</h3>
+      <p class="note">ติ๊กยาที่ <b>ใช้ได้</b> (มีในโรงพยาบาล ไม่ดื้อ ไม่แพ้/ไม่มีข้อห้าม)</p>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="lg_age">อายุ (ปี)</label><input type="number" id="lg_age" value="40" min="1" max="110"></div>
+        <div class="fld"><label for="lg_wt">น้ำหนัก (กก.)</label><input type="number" id="lg_wt" value="50" min="20" max="200"></div>
+      </div>
+      <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lg_preg">ตั้งครรภ์ / ให้นม</span></label>
+      <div class="chk" id="lg_drugs"></div>
+    </div>
+    <div class="out" id="o-long"></div>
+  </div>
+
+  <!-- ART -->
+  <div class="tool" id="t-art" hidden>
+    <div class="panel form">
+      <h3>TB/HIV: เวลาเริ่ม ART และยาต้านไวรัสกับ rifampicin</h3>
+      <div class="fld"><label for="ar_d">วันเริ่มยาวัณโรค</label><input type="date" id="ar_d"></div>
+      <div class="chk">
+        <label><input type="checkbox" id="ar_tbm">TB meningitis</label>
+        <label><input type="checkbox" id="ar_preg">ตั้งครรภ์</label>
+        <label><input type="checkbox" id="ar_cd4">CD4 &lt;200 / ไม่ทราบ / ยังไม่ได้ ART</label>
+      </div>
+      <div class="fld"><span class="lab">ARV ที่ได้อยู่ / วางแผน</span><div class="chk" id="ar_arv"></div></div>
+    </div>
+    <div class="out" id="o-art"></div>
+  </div>
+
+  <!-- LTBI -->
+  <div class="tool" id="t-ltbi" hidden>
+    <div class="panel form">
+      <h3>ใครควรได้ TPT (แผนภูมิ 9.1–9.4)</h3>
+      <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lt_clear" checked>คัดกรองแล้ว: ไม่มีอาการ + CXR ไม่เข้ากับ active TB</span></label>
+      <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lt_dr">ผู้ป่วยต้นเหตุเป็นวัณโรคดื้อยา (Hr/RR/MDR)</span></label>
+      <div class="fld"><span class="lab">กลุ่ม</span><select id="lt_g">
+        <option value="c5">เด็กสัมผัส อายุ &lt;5 ปี</option>
+        <option value="c18">เด็กสัมผัส อายุ 5–18 ปี</option>
+        <option value="ad" selected>ผู้ใหญ่สัมผัส (ไม่ติดเชื้อ HIV)</option>
+        <option value="hiv">ผู้ติดเชื้อ HIV (เด็ก/ผู้ใหญ่)</option>
+        <option value="oth">กลุ่มเสี่ยงอื่น: silicosis, anti-TNF, dialysis, เตรียม transplant</option></select></div>
+      <div id="lt_adopts">
+        <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lt_prev">เคยป่วยเป็นวัณโรคในอดีต</span></label>
+        <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lt_imm">ภูมิคุ้มกันต่ำ</span></label>
+      </div>
+      <div id="lt_hivopts" hidden>
+        <label class="chk"><span style="display:flex;gap:8px"><input type="checkbox" id="lt_contact">สัมผัส TB ระยะแพร่เชื้อ (ภายใน 3 เดือน)</span></label>
+        <div class="fld"><span class="lab">ระยะเวลา ART</span><div class="seg"><label><input type="radio" name="lt_art" value="new" checked>≤6 เดือน (รายใหม่)</label><label><input type="radio" name="lt_art" value="old">&gt;6 เดือน (รายเก่า, ไม่เคยได้ TPT)</label></div></div>
+        <div class="fld"><span class="lab">CD4</span><div class="seg"><label><input type="radio" name="lt_cd4" value="lo">&lt;200</label><label><input type="radio" name="lt_cd4" value="hi" checked>≥200</label></div></div>
+      </div>
+      <div class="fld"><span class="lab">ผลทดสอบ</span><select id="lt_test">
+        <option value="none">ยังไม่ได้ทดสอบ / ไม่ทราบผล</option>
+        <option value="ipos">IGRA บวก</option><option value="ineg">IGRA ลบ</option><option value="tst">TST (กรอกขนาด)</option></select></div>
+      <div class="fld" id="lt_tstf" hidden><label for="lt_mm">TST induration (มม.)</label><input type="number" id="lt_mm" min="0" max="40" value="12"></div>
+    </div>
+    <div class="out" id="o-ltbi"></div>
+  </div>
+
+  <!-- TPT DOSE -->
+  <div class="tool" id="t-tpt" hidden>
+    <div class="panel form">
+      <h3>ขนาดยา TPT (ตาราง 9.2)</h3>
+      <div class="fld"><span class="lab">สูตร</span><div class="seg">
+        <label><input type="radio" name="tp_r" value="3HP" checked>3HP</label><label><input type="radio" name="tp_r" value="1HP">1HP</label><label><input type="radio" name="tp_r" value="4R">4R</label><label><input type="radio" name="tp_r" value="3HR">3HR</label><label><input type="radio" name="tp_r" value="6H">6H</label><label><input type="radio" name="tp_r" value="9H">9H</label></div></div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="tp_age">อายุ (ปี)</label><input type="number" id="tp_age" value="35" min="0" max="110" step="0.5"></div>
+        <div class="fld"><label for="tp_wt">น้ำหนัก (กก.)</label><input type="number" id="tp_wt" value="55" min="3" max="200"></div>
+      </div>
+      <div class="fld"><label for="tp_d">วันเริ่มยา</label><input type="date" id="tp_d"></div>
+    </div>
+    <div class="out" id="o-tpt"></div>
+  </div>
+
+  <!-- OUTCOME -->
+  <div class="tool" id="t-out" hidden>
+    <div class="panel form">
+      <h3>ประเมินผลการรักษา DS-TB (5.5.2)</h3>
+      <div class="fld"><span class="lab">ก่อนเริ่มรักษา</span><div class="seg"><label><input type="radio" name="oc_b" value="pos" checked>B+</label><label><input type="radio" name="oc_b" value="neg">B− / EP ไม่มีผลเชื้อ</label></div></div>
+      <div class="chk">
+        <label><input type="checkbox" id="oc_died">เสียชีวิต (ก่อนหรือระหว่างรักษา)</label>
+        <label><input type="checkbox" id="oc_ltfu">ไม่ได้เริ่มรักษา หรือขาดยา ≥2 เดือนติดต่อกัน</label>
+        <label><input type="checkbox" id="oc_to">โอนออก ไม่ทราบผล</label>
+        <label><input type="checkbox" id="oc_fail">Smear/culture บวก สิ้นเดือน 5 หรือหลังจากนั้น</label>
+        <label><input type="checkbox" id="oc_ongo">ยังรักษาอยู่ / ไม่มีข้อมูลสรุป</label>
+        <label><input type="checkbox" id="oc_done" checked>รักษาครบกำหนด</label>
+        <label><input type="checkbox" id="oc_last" checked>Smear (หรือ culture) ลบในเดือนสุดท้าย</label>
+        <label><input type="checkbox" id="oc_prior" checked>ลบอีกอย่างน้อย 1 ครั้งก่อนหน้า</label>
+      </div>
+    </div>
+    <div class="out" id="o-out"></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>ที่มา:</b> กองวัณโรค กรมควบคุมโรค. แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564 (National Tuberculosis Control Programme Guideline, Thailand 2021). พิมพ์ครั้งที่ 2 กุมภาพันธ์ 2565. ISBN 978-616-11-4749-5 · สรุปนี้ครอบคลุมบทที่ 3–6, 8, 9, 11 สำหรับผู้ใหญ่ (วัณโรคในเด็ก บทที่ 7 และการสอบสวนโรค/กฎหมาย บทที่ 12–14 ไม่ได้สรุป) · เนื้อหาบางส่วน เช่น BPaL และนิยาม XDR อาจมีการปรับในแนวทางฉบับใหม่กว่า</p>
+  <p>Medisüem · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · ใช้ประกอบดุลพินิจทางคลินิก ไม่ใช่สิ่งทดแทนแนวทางฉบับเต็ม</p>
+</footer>
+</main>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const rv=n=>{const e=document.querySelector(`input[name="${n}"]:checked`);return e?e.value:null};
+const num=id=>{const v=parseFloat($('#'+id).value);return isNaN(v)?null:v};
+const ck=id=>$('#'+id).checked;
+const iso=d=>{const z=new Date(d);z.setMinutes(z.getMinutes()-z.getTimezoneOffset());return z.toISOString().slice(0,10)};
+const today=iso(new Date());
+const pd=s=>{if(!s)return null;const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const addM=(d,n)=>{const x=new Date(d);const day=x.getDate();x.setMonth(x.getMonth()+n);if(x.getDate()<day)x.setDate(0);return x};
+const fd=d=>d.toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'2-digit'});
+const fdw=d=>d.toLocaleDateString('th-TH',{weekday:'short',day:'numeric',month:'short',year:'2-digit'});
+const card=(cls,title,verdict,body)=>`<div class="res ${cls||''}"><h4>${title}</h4>${verdict?`<div class="verdict">${verdict}</div>`:''}${body||''}</div>`;
+const rnd=(x,step)=>Math.round(x/step)*step;
+$$('input[type=date]').forEach(i=>{if(!i.value)i.value=today});
+
+/* ---------- tabs ---------- */
+function showTab(t,push){
+  $$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  $$('section.page').forEach(s=>s.hidden=s.id!==t);
+  if(push!==false){try{history.replaceState(null,'','#'+t)}catch(e){}}
+}
+$$('nav.tabs button').forEach(b=>b.addEventListener('click',()=>{showTab(b.dataset.tab);window.scrollTo({top:$('nav.tabs').offsetTop-0,behavior:'smooth'})}));
+$$('nav.toc button').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById(b.dataset.jump);if(el)el.scrollIntoView({behavior:'smooth'})}));
+function showTool(id,push){
+  $$('.toolnav button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tool===id));
+  $$('.tool').forEach(t=>t.hidden=t.id!==id);
+  if(push!==false){try{history.replaceState(null,'','#'+id)}catch(e){}}
+}
+$$('.toolnav button').forEach(b=>b.addEventListener('click',()=>showTool(b.dataset.tool)));
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(!g)return;showTab('tools',false);showTool(g.dataset.go);$('#tools').scrollIntoView({behavior:'smooth'})});
+
+/* ---------- DX pathway ---------- */
+function dx(){
+  const pop=rv('dx_pop'),sym=rv('dx_sym')==='y',cxr=rv('dx_cxr'),sm=rv('dx_sm'),mol=$('#dx_mol').value,fq=rv('dx_fq'),bl=rv('dx_bl');
+  let h='';
+  if(pop==='ko'&&!sym&&cxr==='na') return $('#o-dx').innerHTML=card('ok','Key pop. รายเก่า ไม่มีอาการ','นัดติดตาม','<p>คัดกรองอาการทุกครั้งที่มาติดตาม · ถ้าผลตรวจเดิมปกติ แนะนำ CXR ปีละครั้ง</p>');
+  if(pop==='gen'&&!sym&&cxr==='na') return $('#o-dx').innerHTML=card('','ประชากรทั่วไป ไม่มีอาการ','ไม่เข้าเกณฑ์คัดกรอง','<p>แนวทางให้ CXR ในประชากรทั่วไปเมื่อมีอาการสงสัย TB · ถ้าเป็นกลุ่มเสี่ยง (ตาราง 4.1) ให้เลือก key population</p>');
+  if(cxr==='na') return $('#o-dx').innerHTML=card('','ขั้นถัดไป','ถ่ายภาพรังสีทรวงอก (CXR)',`<p>${pop==='kn'?'Key pop. รายใหม่: CXR ทุกรายไม่ว่ามีอาการหรือไม่':'มีอาการสงสัย → CXR'}</p><p class="note">ถ้าเข้าถึง CXR ไม่ได้ (เช่นช่วงระบาด) คัดกรองอาการแล้วส่งเสมหะ molecular ได้เลย</p>`);
+  if(cxr==='nl'&&mol==='na'){
+    return $('#o-dx').innerHTML=card(sym?'warn':'ok','CXR ปกติ/อื่นๆ',sym?'มีอาการ → เก็บเสมหะส่งตรวจด้วย':'ไม่พบหลักฐาน TB',sym?'<p>ส่ง AFB smear + molecular (Xpert) ตามอาการ</p>':`<p>${pop!=='gen'?'Key population: CXR ปีละครั้ง และคัดกรองอาการทุก visit':'ไม่ต้องตรวจเพิ่มสำหรับ TB'}</p>`);
+  }
+  if(cxr==='ab'&&sm==='na'&&mol==='na') return $('#o-dx').innerHTML=card('','CXR เข้าได้กับ TB','เก็บเสมหะตรวจ AFB smear','<p>อย่างน้อย 2 ครั้ง: spot + เช้าตื่นนอน 3–5 mL · ผู้ติดเชื้อ HIV ส่ง Xpert ได้เลยพร้อม smear/culture</p>');
+  if(mol==='na'){
+    const t=sm==='pos'?'FL molecular: LPA, RT-PCR หรือ Xpert MTB/RIF Ultra':'Xpert MTB/RIF (หรือ TB-LAMP ถ้าทำได้)';
+    return $('#o-dx').innerHTML=card('','AFB smear '+(sm==='pos'?'บวก':'ลบ'),'ส่ง '+t,sm==='pos'?'<p>เพื่อยืนยัน MTB และหาการดื้อ R/H</p>':'<p>เพื่อวินิจฉัย TB และ RIF resistance</p><p class="note">TB-LAMP บอกดื้อยาไม่ได้</p>');
+  }
+  if(mol==='nd') return $('#o-dx').innerHTML=card('warn','MTB not detected','แพทย์พิจารณาตัดสินใจ','<ul><li>พิจารณา culture, ตรวจซ้ำ, หาสาเหตุอื่น</li><li>ถ้าคลินิก/CXR เข้าได้มาก และตัดสินใจรักษา → clinically diagnosed (B−)</li><li>ผลภายหลัง culture ขึ้น MTBC → เปลี่ยนเป็น B+</li></ul>');
+  if(mol==='ds') return $('#o-dx').innerHTML=card('ok','วินิจฉัย','DS-TB → 2HRZE/4HR','<ul><li>ขึ้นทะเบียน NTIP, HIV test, baseline ตามความเสี่ยง</li><li>ติดตามผู้สัมผัส</li></ul><button class="go-tool wfbtn" data-go="t-dose">→ คำนวณขนาดยา</button>');
+  if(mol==='hr'){
+    if(fq==='na') return $('#o-dx').innerHTML=card('warn','Hr-TB (ไว R)','ส่ง SL molecular + culture (phenotypic Lfx)','<p>ระหว่างรอ: ปรึกษาผู้เชี่ยวชาญ</p>');
+    return $('#o-dx').innerHTML=card('warn','Hr-TB',fq==='s'?'6RZE-Lfx (6 เดือน)':'6RZE (6 เดือน)',`<p>${fq==='s'?'ไม่ดื้อ FQ':'ดื้อ FQ'} · ตาราง 6.2</p>`);
+  }
+  // RR/MDR
+  if(fq==='na') return $('#o-dx').innerHTML=card('crit','RR / MDR-TB','ส่ง SL-LPA หรือ RT-PCR (ขอผลด่วน) + culture + phenotypic SL-DST','<p>ระหว่างรอผล ให้สูตรเดิมไปก่อน · แจ้ง/ขึ้นทะเบียน DR-TB · ติดตามผู้สัมผัส</p>');
+  if(fq==='s') return $('#o-dx').innerHTML=card('crit','MDR/RR-TB ไว FQ','พิจารณา shorter all-oral Bdq regimen','<p>ตรวจเกณฑ์ (QTcF, LFT, ตั้งครรภ์, EPTB รุนแรง, ประวัติยา)</p><button class="go-tool wfbtn" data-go="t-short">→ เช็กเกณฑ์สูตรระยะสั้น</button>');
+  if(bl==='na') return $('#o-dx').innerHTML=card('crit','MDR/RR + ดื้อ FQ','ส่ง phenotypic DST ต่อ Bdq และ Lzd','<p>เป็นอย่างน้อย Pre-XDR → individualized longer regimen ผ่านคณะผู้เชี่ยวชาญ</p>');
+  $('#o-dx').innerHTML=card('crit','วินิจฉัย',bl==='s'?'Pre-XDR-TB':'XDR-TB (WHO 2021)','<p>Individualized longer regimen — ปรึกษาคณะผู้เชี่ยวชาญ DR-TB ระดับเขต/ประเทศ</p><button class="go-tool wfbtn" data-go="t-long">→ จัดสูตรระยะยาว</button>');
+}
+
+/* ---------- registration ---------- */
+function reg(){
+  const hx=$('#rg_hx').value,b=rv('rg_b'),s=rv('rg_s'),h=rv('rg_h'),dr=rv('rg_d')==='dr';
+  const map={new:['New (N)','ไม่เคยรักษาหรือ <1 เดือน'],cured:['Relapse (R)','เคยรักษาหาย/ครบ แล้วป่วยซ้ำ'],failed:['Treatment after failure (TAF)','ผลครั้งล่าสุดล้มเหลว'],ltfu:['Treatment after LTFU (TALF)','ขาดยา ≥2 เดือนติดต่อกันแล้วกลับมา'],unk:['Others (O)','ไม่ทราบประวัติ/ผลครั้งล่าสุด'],priv:['Others (O)','ได้ยาเอกชน ≥1 เดือนไม่เคยขึ้นทะเบียน'],ti:['Transfer in (TI)','จบแล้วแจ้งผลให้สถานพยาบาลต้นทาง']};
+  const drmap={new:'New',cured:'Relapse',failed:'Treatment after failure',ltfu:'After loss to follow-up',unk:'Others',priv:'Others',ti:'Transfer in'};
+  const [cat,why]=map[hx];
+  const label=dr?`MDR/RR/(pre)XDR-TB ${drmap[hx]}`:cat;
+  const prev=['cured','failed','ltfu','unk','priv'].includes(hx);
+  let body=`<p class="mono" style="font-size:14px">${label} · ${s} · ${b} · ${h}</p><p>${why}</p><ul>`;
+  if(!dr) body+= prev?'<li>Previously treated (retreatment) → ต้องมี molecular/DST ก่อนเริ่มยา</li>':'<li>นับเป็น incident case</li>';
+  if(hx==='cured'&&!dr) body+='<li>Relapse นับเป็น incident case (N + R)</li>';
+  if(h==='HIV unknown') body+='<li>ส่งปรึกษาตรวจ HIV (PITC) ภายใน 1–2 สัปดาห์</li>';
+  if(dr) body+='<li>ขึ้นทะเบียนผู้ป่วยวัณโรคดื้อยาทุกราย รวมผู้ที่เสียชีวิตก่อน/ไม่ได้เริ่มยา</li>';
+  body+='<li>ขึ้นทะเบียนในโปรแกรม NTIP ทุกราย</li></ul>';
+  $('#o-reg').innerHTML=card(dr?'crit':'ok','ประเภทขึ้นทะเบียน',dr?label:cat,body);
+}
+
+/* ---------- DR classification ---------- */
+const DRC=[['H','Isoniazid'],['R','Rifampicin'],['Z','Pyrazinamide'],['E','Ethambutol'],['FQ','Fluoroquinolone (Lfx/Mfx)'],['BL','Bdq หรือ Lzd']];
+$('#drc_rows').innerHTML=DRC.map(([k,n])=>`<div class="fld"><span class="lab">${n}</span><div class="seg"><label><input type="radio" name="drc_${k}" value="u" ${['Z','E','FQ','BL'].includes(k)?'checked':''}>ไม่ทราบ</label><label><input type="radio" name="drc_${k}" value="s" ${['H','R'].includes(k)?'checked':''}>ไว</label><label><input type="radio" name="drc_${k}" value="r">ดื้อ</label></div></div>`).join('');
+function drc(){
+  const g=k=>rv('drc_'+k);const H=g('H'),R=g('R'),Z=g('Z'),E=g('E'),FQ=g('FQ'),BL=g('BL');
+  let t,v,b='',cls='crit';
+  if(R==='r'){
+    t=H==='r'?'MDR-TB':'RR-TB'+(H==='u'?' (ยังไม่ทราบผล H)':' (ไว H)');
+    if(FQ==='u'){v=t+' → ส่ง SL-LPA/RT-PCR ด่วน';b='<p>ระหว่างรอ ใช้สูตรเดิม · ส่ง culture + phenotypic SL-DST</p>'}
+    else if(FQ==='s'){v=t+' (FQ ไว)';b='<p>พิจารณา <b>shorter all-oral Bdq regimen</b> ถ้าเข้าเกณฑ์ มิฉะนั้น longer regimen</p><button class="go-tool wfbtn" data-go="t-short">→ เกณฑ์สูตรระยะสั้น</button>'}
+    else{ if(BL==='u'){v='อย่างน้อย Pre-XDR-TB';b='<p>ส่ง phenotypic DST ต่อ Bdq, Lzd</p>'} else {v=BL==='r'?'XDR-TB (WHO 2021)':'Pre-XDR-TB';b='<p>Individualized longer regimen ผ่านคณะผู้เชี่ยวชาญ</p><button class="go-tool wfbtn" data-go="t-long">→ จัดสูตรระยะยาว</button>'}}
+  } else if(R==='u'){cls='warn';t='ไม่ทราบผล R';v='ต้องทราบ RIF status';b='<p>ส่ง Xpert MTB/RIF หรือ FL-LPA</p>'}
+  else{
+    const res=['H','Z','E'].filter(k=>g(k)==='r');const key=res.join('+');
+    const tbl={'H':[FQ==='s'?'6RZE-FQ':'6RZE','6 เดือน',FQ==='s'?'ไม่ดื้อ FQ':'ดื้อ/ไม่แน่ใจ FQ → ไม่ใส่ FQ'],'Z':['2HRE/7HR','9 เดือน',''],'E':['2HRZ/4HR','6 เดือน',''],'H+Z':['9–12 RE-FQ','9–12 เดือน',''],'H+E':['6–9 RZ-FQ','6–9 เดือน',''],'H+Z+E':['2–3 AG-R-FQ-Eto / 10 R-FQ-Eto','12 เดือน','AG = S, Am (ห้าม Km)']};
+    if(!res.length){cls='ok';t='DS-TB';v='2HRZE/4HR';b='<p>ไม่พบการดื้อยาแนวที่ 1 ที่ทดสอบ</p>'}
+    else if(tbl[key]){cls='warn';t=res.length===1?(key==='H'?'Hr-TB (mono-resistant H)':'Mono-resistant '+key):'Polydrug-resistant ('+key+')';v=tbl[key][0];b=`<p>ระยะเวลา ${tbl[key][1]}${tbl[key][2]?' · '+tbl[key][2]:''}</p>`;
+      if(key.includes('H')&&FQ==='u'&&key!=='H')b+='<p class="note">ต้องทราบผล FQ ก่อนใช้สูตรที่มี FQ</p>';
+      if(key==='H'&&FQ==='u')b+='<p class="note">ส่ง SL molecular/phenotypic Lfx เพื่อเลือกระหว่าง 6RZE-Lfx กับ 6RZE</p>';}
+    else{cls='warn';t='Polydrug-resistant ('+key+')';v='ไม่มีในตาราง 6.2';b='<p>ปรึกษาผู้เชี่ยวชาญเพื่อจัดสูตร</p>'}
+  }
+  $('#o-drclass').innerHTML=card(cls,t,v,b+'<p class="note">ตาราง 6.2 เป็นแนวทางของสูตร สามารถใช้ยาในกลุ่มเดียวกันที่เชื้อไวได้</p>');
+}
+
+/* ---------- dose ---------- */
+function crcl(age,wt,cr,f){return ((140-age)*wt)/(72*cr)*(f?0.85:1)}
+function dose(){
+  const w=num('ds_wt'),age=num('ds_age')||50,cr=num('ds_cr'),f=rv('ds_sex')==='f';
+  if(!w||w<20){$('#o-dose').innerHTML=card('','','กรอกน้ำหนัก','');return}
+  let c=null; if(cr) c=crcl(age,w,cr,f);
+  const renal=ck('ds_hd')||(c!==null&&c<30);
+  let H,R,Z,E,band,note='';
+  if(w>=35&&w<50){band='35–49 กก.';[H,R,Z,E]=[300,450,1000,800]}
+  else if(w>=50&&w<70){band='50–69 กก.';[H,R,Z,E]=[300,600,1500,1000]}
+  else if(w>=70){band='≥70 กก.';[H,R,Z,E]=[300,600,2000,1200];note=`<p class="note">ต้นฉบับระบุว่าน้ำหนัก &gt;70 กก. ให้คำนวณตามน้ำหนักได้: H ${Math.round(w*4)}–${Math.round(w*6)}, R ${Math.round(w*8)}–${Math.round(w*12)}, Z ${Math.round(w*20)}–${Math.round(w*30)}, E ${Math.round(w*15)}–${Math.round(w*20)} มก.</p>`}
+  else{band='<35 กก. (คำนวณตามน้ำหนัก)';H=Math.min(300,rnd(w*5,50));R=Math.min(600,rnd(w*10,150));if(R<w*8)R+=150;Z=rnd(w*25,250);E=rnd(w*15,100);if(E>w*20)E-=100}
+  const d=(k,v,mgkg,s)=>`<div class="d"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${(v/w).toFixed(1)} มก./กก.${s?' · '+s:''}</div></div>`;
+  let Zs='',Es='';
+  if(renal){Z=rnd(w*25,250);E=rnd(w*15,100);Zs='3 ครั้ง/สัปดาห์';Es='3 ครั้ง/สัปดาห์'}
+  const len=ck('ds_slow')?'2HRZE/7HR (ขยายระยะต่อเนื่องเป็น 7 เดือน — ปรึกษาผู้เชี่ยวชาญ)':'2HRZE/4HR';
+  let html=`<div class="res"><h4>ขนาดยาต่อวัน · ${band}</h4><div class="verdict">${len}</div><div class="dose">${d('Isoniazid (H)',H)}${d('Rifampicin (R)',R)}${d('Pyrazinamide (Z)',Z,0,Zs)}${d('Ethambutol (E)',E,0,Es)}</div>${note}</div>`;
+  let extra='';
+  if(c!==null) extra+=`<p>CrCl (Cockcroft-Gault) ≈ <b class="mono">${c.toFixed(0)}</b> mL/min</p>`;
+  if(renal) extra+='<p><b>CrCl &lt;30 / HD:</b> H, R ไม่ปรับ · E 15–20 และ Z 20–30 มก./กก. สัปดาห์ละ 3 ครั้ง (ตาราง 5.9) · E: ติดตามการมองเห็นใกล้ชิด</p>';
+  if(ck('ds_preg')) extra+='<p><b>ตั้งครรภ์:</b> สูตรมาตรฐาน ใช้น้ำหนักก่อนตั้งครรภ์ · pyridoxine 50–100 มก./วัน · เลี่ยง AG และ FQ</p>';
+  if(ck('ds_liver')) extra+='<p><b>โรคตับ (ALT &gt;3×ULN):</b> เลือกตามความรุนแรง — hepatotoxic 2 ตัว: <span class="rx">2HRE/7HR</span> หรือ <span class="rx">6–9 RZE</span> · 1 ตัว: <span class="rx">2 AmHE/16 HE</span> หรือ <span class="rx">12–18 HE + Lfx</span> · นัดทุกสัปดาห์ 2–3 สัปดาห์แรก แล้วทุก 2 สัปดาห์ใน 2 เดือนแรก</p>';
+  if(age>60) extra+='<p>อายุ &gt;60: เจาะ LFT baseline และทุก 1–2 สัปดาห์ในเดือนแรก · ตรวจการมองเห็นก่อนเริ่ม E</p>';
+  extra+='<p class="note">ชาปลายมือปลายเท้าจาก H → pyridoxine 50–75 มก./วัน · E ไม่เกิน 20 มก./กก./วัน · FDC ใช้ได้ถ้าให้ขนาดถูกต้อง</p>';
+  $('#o-dose').innerHTML=html+card('','ข้อควรปรับ','',extra);
+}
+
+/* ---------- schedule ---------- */
+function sched(){
+  const s=pd($('#sc_start').value);if(!s)return;const L=+rv('sc_len');
+  const rows=[];
+  rows.push([s,'ก่อนเริ่ม',['อาการ, น้ำหนัก','AFB smear + molecular/DST','CXR','HIV test',ck('sc_risk')?'LFT':'LFT (ถ้ามีความเสี่ยง)','BUN/Cr (ถ้าเสี่ยงไต)','ตรวจการมองเห็น (ผู้สูงอายุ/โรคตาเดิม)']]);
+  if(ck('sc_risk')){rows.push([addD(s,7),'สัปดาห์ 1',['LFT (AST/ALT, TB)']]);rows.push([addD(s,14),'สัปดาห์ 2',['LFT']]);rows.push([addD(s,21),'สัปดาห์ 3',['LFT (ถ้าทุก 1 สัปดาห์)']])}
+  if(ck('sc_hiv')){const tbm=ck('sc_tbm');rows.push([addD(s,tbm?28:0),tbm?'ART window':'ART window',[tbm?`เริ่ม ART ${fd(addD(s,28))} – ${fd(addD(s,56))} (TBM: ≥4, ≤8 สัปดาห์)`:`เริ่ม ART ภายใน ${fd(addD(s,14))} (ช้าสุด ${fd(addD(s,28))})`,'CPT ถ้า CD4 <200/ไม่ทราบ']])}
+  for(let m=1;m<=L;m++){
+    const it=['อาการ, น้ำหนัก','ถามการมองเห็น (ขณะได้ E)'];
+    if(m===2){it.push('<b>AFB smear</b> (สิ้นระยะเข้มข้น)','CXR','ถ้า AFB+: molecular/DST (ถ้าไม่มีผลเดิม) + culture/DST','เปลี่ยนเป็น HR')}
+    if(m===3&&ck('sc_m2pos'))it.push('<b>AFB smear</b> (เพราะเดือน 2 บวก)');
+    if(m===5)it.push('<b>AFB smear</b> — บวก = <b>failure</b> → molecular + culture/DST');
+    if(m===L)it.push('<b>AFB smear</b> (เดือนสุดท้าย → cured)','CXR','สรุปผลการรักษา');
+    rows.push([addM(s,m),'สิ้นเดือน '+m,it]);
+  }
+  rows.sort((a,b)=>a[0]-b[0]);
+  $('#o-sched').innerHTML=`<div class="res"><h4>ตารางนัด ${L===6?'2HRZE/4HR':L===9?'2HRZE/7HR':'2HRZE/10HR'}</h4><div class="tbl sched"><table><tr><th>วันที่</th><th>จุด</th><th>ทำอะไร</th></tr>${rows.map(r=>`<tr><td class="dt">${fd(r[0])}</td><td style="white-space:nowrap">${r[1]}</td><td>${r[2].join(' · ')}</td></tr>`).join('')}</table></div><p class="note">วันที่คำนวณแบบปฏิทิน (สิ้นเดือนที่ n = วันเริ่ม + n เดือน) ปรับตามวันทำการ/วันหยุดจริง</p></div>`;
+}
+
+/* ---------- DILI ---------- */
+function dili(){
+  const sym=rv('dl_sym')==='y',alt=num('dl_alt'),uln=num('dl_uln')||40,tb=num('dl_tb')||0,ful=ck('dl_ful');
+  const x=alt!=null?alt/uln:0;let cls,v,b;
+  if(ful){cls='crit';v='หยุดยาทั้งหมด · ห้ามใช้ H, R, Z อีก';b='<p>Fulminant hepatitis — ปรึกษาผู้เชี่ยวชาญ ใช้สูตรที่ไม่มียาพิษต่อตับ</p>'}
+  else if(sym){ if(x>3){cls='crit';v='หยุด H, R, Z';b='<p>อาจให้ <b>E + Lfx + Am</b> ไปก่อน · เมื่ออาการดีขึ้นและเอนไซม์กลับปกติ re-challenge อย่างน้อย H, R</p>'} else {cls='warn';v='ให้ยาต่อ';b='<p>หาสาเหตุอื่นร่วม · ติดตาม LFT ภายใน 3 วัน</p>'} }
+  else{ if(x>5){cls='crit';v='หยุด H, R, Z';b='<p>อาจให้ <b>E + Lfx + Am</b> ไปก่อน</p>'}
+    else if(tb>3&&x<=3){cls='warn';v='หยุดเฉพาะ Rifampicin';b='<p>TB &gt;3 มก./ดล. แต่ AST/ALT ≤3×ULN</p>'}
+    else {cls='ok';v='ให้ยาต่อ';b='<p>AST/ALT &lt;5×ULN ไม่มีอาการ → LFT ทุก 1 สัปดาห์</p>'}
+    if(tb>3&&x>5)b+='<p>TB &gt;3 ร่วมด้วย</p>';}
+  b=`<p class="mono">AST/ALT = ${x.toFixed(1)}×ULN · TB ${tb} มก./ดล. · ${sym?'มีอาการ':'ไม่มีอาการ'}</p>`+b;
+  let out=card(cls,'การจัดการ',v,b);
+  const a2=num('dl_alt2'),t2=num('dl_tb2');const x2=a2!=null?a2/uln:99;
+  if(!ful){
+    const ok=x2<2&&t2!=null&&t2<1.5;
+    let rb=`<p class="mono">ล่าสุด ${x2.toFixed(1)}×ULN · TB ${t2}</p>`;
+    if(ok){const s=pd($('#dl_d').value)||new Date();const st=[['เริ่ม H ขนาดปกติ',0],['LFT · ถ้าปกติเริ่ม R',7],['LFT · ถ้าปกติเริ่ม Z',14],['LFT ติดตาม',21]];
+      rb+=`<div class="tbl sched"><table>${st.map(([t,dd])=>`<tr><td class="dt">${fdw(addD(s,dd))}</td><td>${t}</td></tr>`).join('')}</table></div><p class="note">ถ้า AST/ALT หรือ TB สูงขึ้นตามเกณฑ์ระหว่าง re-challenge → หยุดตัวนั้นและห้ามใช้อีก · พิจารณา NAT2 genotype</p>`}
+    else rb+='<p>รอจน AST/ALT &lt;2×ULN และ TB &lt;1.5 มก./ดล.</p>';
+    out+=card(ok?'ok':'warn','Re-challenge',ok?'พร้อม re-challenge: H → R → Z ห่างกัน 1 สัปดาห์':'ยังไม่ถึงเกณฑ์',rb);
+  }
+  $('#o-dili').innerHTML=out;
+}
+
+/* ---------- rash ---------- */
+function rash(){
+  const t=$('#rs_t').value,w=num('rs_wt')||55;
+  const A={itch:['ok','ให้ยาต่อ','<p>ให้ antihistamine อาการค่อยๆ ดีขึ้น อาจใช้เวลาหลายสัปดาห์</p>'],acne:['ok','ให้ยาต่อ','<p>ไม่อันตราย มีผลด้านความสวยงามเท่านั้น</p>'],mp:['crit','หยุดยาทุกชนิด','<p>Antihistamine ± prednisolone 20–40 มก./วัน · ผื่นหายแล้ว re-introduce ทีละตัว</p>'],sev:['crit','หยุดยาทุกชนิด · admit','<p>Systemic steroid ขนาดสูง เช่น prednisolone 40–60 มก./วัน ค่อยๆ ลด · ปรึกษาผู้เชี่ยวชาญวางแผนการรักษา (ไม่ re-introduce เองตามแผนนี้)</p>']};
+  const [c,v,b]=A[t];let out=card(c,'การจัดการ',v,b);
+  if(t==='mp'){
+    const full={H:300,R:w<50?450:600,E:w<50?800:w<70?1000:1200,Z:w<50?1000:w<70?1500:2000};
+    const order=rv('rs_first')==='H'?['H','R','E','Z']:['R','H','E','Z'];
+    const s=pd($('#rs_d').value)||new Date();let rows='',day=0;
+    order.forEach(k=>{const f=full[k];rows+=`<tr><td class="dt">${fd(addD(s,day))}</td><td><b>${k}</b> เริ่ม ~1/3–1/2 (${Math.round(f/3)}–${Math.round(f/2)} มก.)</td></tr><tr><td class="dt">${fd(addD(s,day+2))}</td><td>${k} ขนาดเต็ม ${f} มก. (ภายใน 2–3 วัน)</td></tr>`;day+=3});
+    out+=card('','ตาราง re-introduce (ไม่มีผื่น จึงไปตัวถัดไป)',order.join(' → '),`<div class="tbl sched"><table>${rows}</table></div><p class="note">ผื่นขึ้นตอนให้ตัวใด → หยุดตัวนั้น รอผื่นยุบหมด แล้วเริ่มตัวถัดไปและปรับสูตร · ขนาดเต็มอิงตาราง 5.1</p>`);
+  }
+  $('#o-rash').innerHTML=out;
+}
+
+/* ---------- interruption ---------- */
+function intr(){
+  const ph=rv('in_ph');$('#in_i').hidden=ph!=='i';$('#in_c').hidden=ph!=='c';
+  const pre=ck('in_c1')&&ck('in_c2')&&ck('in_c3');const miss=num('in_miss')||0;
+  let flag=miss>=60?'<div class="callout crit">ขาดยา ≥2 เดือนติดต่อกัน = <b>lost to follow-up</b> → ปิดผลการรักษาเดิม และขึ้นทะเบียนใหม่เป็น TALF</div>':'';
+  if(!pre){$('#o-int').innerHTML=card('crit','ไม่เข้าเงื่อนไขแผนภูมิ 5.1','ประเมินใหม่ทั้งหมด','<p>อาการ/CXR แย่ลงหรือเชื้อมากขึ้น → ส่ง smear, culture, molecular/DST หาภาวะดื้อยาหรือล้มเหลว และปรึกษาผู้เชี่ยวชาญ</p>')+flag;return}
+  let c,v,b;
+  if(ph==='i'){
+    const got=num('in_idose')||0,el=num('in_el')||0;
+    if(miss<14){const proj=el+Math.max(0,60-got);
+      if(proj>90){c='warn';v='เริ่มนับการรักษาใหม่';b=`<p>ขาด &lt;14 วัน แต่ระยะเข้มข้นจะเสร็จที่ ~${proj} วันนับจากเริ่มครั้งแรก (&gt;3 เดือน)</p>`}
+      else{c='ok';v='ให้ยาต่อ นับต่อจนครบ';b=`<p>ขาด ${miss} วัน (&lt;14) · เหลือระยะเข้มข้น ~${Math.max(0,60-got)} วัน เสร็จที่ ~${proj} วันนับจากเริ่มครั้งแรก (≤3 เดือน)</p>`}}
+    else{c='crit';v='เริ่มการรักษาใหม่';b=`<p>ขาดในระยะเข้มข้น ${miss} วัน (≥14) · ถ้าสงสัยดื้อยา ส่ง smear, culture, molecular</p>`}
+  } else {
+    const L=+rv('in_cl')*30,got=num('in_cdose')||0,elm=num('in_elm')||0,pct=Math.min(100,got/L*100);
+    if(pct>=80){c='ok';v='ให้ยาต่อจนครบตามความเหมาะสม';b=`<p>ได้ระยะต่อเนื่องแล้ว ${pct.toFixed(0)}% (≥80%)</p>`}
+    else if(miss<90){const projM=elm+(L-got)/30;
+      if(projM>9){c='crit';v='เริ่มใหม่ตั้งแต่ระยะเข้มข้น';b=`<p>ได้ ${pct.toFixed(0)}% · ขาด &lt;3 เดือน แต่จะครบที่ ~${projM.toFixed(1)} เดือนนับจากเริ่มครั้งแรก (&gt;9 เดือน)</p><p>ส่ง AFB smear, culture, molecular ยืนยันไม่ดื้อยา</p>`}
+      else{c='warn';v='ให้ยาต่อจนครบ';b=`<p>ได้ ${pct.toFixed(0)}% (&lt;80%) · ขาด ${miss} วัน (&lt;3 เดือน) · คาดครบที่ ~${projM.toFixed(1)} เดือน (≤9)</p>`}}
+    else{c='crit';v='เริ่มการรักษาใหม่';b=`<p>ได้ ${pct.toFixed(0)}% (&lt;80%) และขาด ≥3 เดือน · ส่ง AFB smear, culture, molecular ยืนยันไม่ดื้อยา</p>`}
+  }
+  b+='<p class="note">แนะนำส่ง molecular + culture/DST ก่อนรักษาใหม่ · ขาดยาโดยไม่มีเหตุอันควร: แก้ปัญหาและรักษาภายใต้ DOT · ไม่แน่ใจ ปรึกษาผู้เชี่ยวชาญ</p>';
+  $('#o-int').innerHTML=card(c,'ผล (แผนภูมิ 5.1)',v,b)+flag;
+}
+
+/* ---------- shorter ---------- */
+function short(){
+  const lab={conf:'ยืนยัน MDR/RR ทางแลป',fq:'ไม่ดื้อ FQ',res:'ไม่ดื้อยาในสูตร',prev:'ไม่เคยได้ SLD ในสูตร >1 เดือน',sev:'ไม่ใช่ severe EPTB/extensive',preg:'ไม่ตั้งครรภ์',age:'อายุ ≥6 ปี',qt:'QTcF ไม่เกินเกณฑ์',lft:'AST/ALT ≤5×ULN'};
+  const fail=$$('#sh_list input').filter(i=>!i.checked).map(i=>lab[i.dataset.k]);
+  const w=num('sh_wt')||50,fq=rv('sh_fq');
+  let out;
+  if(fail.length){out=card('crit','ไม่เข้าเกณฑ์','Individualized longer regimen',`<p>ไม่ผ่าน: ${fail.join(', ')}</p><p>ปรึกษาคณะผู้เชี่ยวชาญ DR-TB ระดับเขต (ผ่านความเห็นชอบระดับประเทศ)</p>${fail.includes('ไม่ดื้อ FQ')?'<p>ดื้อ FQ = Pre-XDR อย่างน้อย</p>':''}<button class="go-tool wfbtn" data-go="t-long">→ จัดสูตรระยะยาว</button>`)}
+  else{
+    const i=w<36?0:w<46?1:w<56?2:w<=70?3:4;
+    const T={Pto:[500,500,750,750,1000],Z:[1000,1000,1500,1500,2000],H:[400,400,600,600,600],E:[800,800,1200,1200,1200]};
+    const bands=['30–35','36–45','46–55','56–70','>70'];
+    const s=pd($('#sh_d').value)||new Date();
+    const d=(k,v,u)=>`<div class="d"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${u||'มก./วัน'}</div></div>`;
+    out=card('ok','เข้าเกณฑ์','Shorter all-oral Bdq regimen 9–11 เดือน',`<p class="rx">4–6 Bdq(6)-${fq}-Pto(Eto)-Cfz-Z-E-H<sup>hd</sup> / 5 ${fq}-Cfz-Z-E</p><p class="note">ช่วงน้ำหนัก ${bands[i]} กก.${w<30?' · น้ำหนัก <30 กก. ใช้ตารางเด็ก':''}</p>
+    <div class="dose">${d('Bedaquiline','400→200','400 OD ×2 สัปดาห์ แล้ว 200 สัปดาห์ละ 3 ครั้ง ×22 สัปดาห์')}${d(fq,fq==='Lfx'?750:400)}${d('Pto / Eto',T.Pto[i])}${d('Clofazimine',100)}${d('Pyrazinamide',T.Z[i])}${d('Isoniazid (hd)',T.H[i])}${d('Ethambutol',T.E[i])}</div>`)+
+    card('','วันสำคัญ','',`<div class="tbl sched"><table>
+      <tr><td class="dt">${fd(s)}</td><td>เริ่มยา · informed consent · baseline ECG/QTcF, LFT, CBC, Cr, K/Mg/Ca, FBS, TSH, HIV, pregnancy test, ตรวจตา</td></tr>
+      <tr><td class="dt">${fd(addD(s,14))}</td><td>Bdq ลดเป็น 200 มก. จันทร์/พุธ/ศุกร์</td></tr>
+      <tr><td class="dt">${fd(addM(s,4))}</td><td>ประเมิน smear conversion สิ้นเดือน 4 (interim outcome) → convert: เข้าระยะต่อเนื่อง · ไม่ convert: ขยายระยะเข้มข้นได้ถึง 6 เดือน</td></tr>
+      <tr><td class="dt">${fd(addD(s,168))}</td><td>Bdq ครบ 24 สัปดาห์ (6 เดือน)</td></tr>
+      <tr><td class="dt">${fd(addM(s,9))}</td><td>ครบ 9 เดือน (ถ้าระยะเข้มข้น 4 เดือน) · ขยายสุด ~11 เดือน: ${fd(addM(s,11))}</td></tr>
+      <tr><td class="dt">หลังจบ</td><td>ติดตาม 6, 12, 18, 24 เดือน</td></tr></table></div><p class="note">aDSM ทุกครั้งที่มาพบแพทย์ · smear + culture ทุกเดือน · QTcF ซ้ำตลอดระยะเข้มข้น</p>`);
+  }
+  $('#o-short').innerHTML=out;
+}
+
+/* ---------- longer builder ---------- */
+const LD=[['Lfx','Levofloxacin','A','fq'],['Mfx','Moxifloxacin','A','fq'],['Bdq','Bedaquiline','A'],['Lzd','Linezolid','A'],['Cfz','Clofazimine','B'],['Cs','Cycloserine / Terizidone','B'],['E','Ethambutol','C'],['Dlm','Delamanid','C'],['Z','Pyrazinamide','C'],['Cbp','Imipenem-cilastatin / Meropenem (+clavulanate)','C'],['Am','Amikacin (หรือ S)','C'],['Eto','Ethionamide / Prothionamide','C'],['PAS','p-aminosalicylic acid','C']];
+$('#lg_drugs').innerHTML=['A','B','C'].map(g=>`<div class="lab" style="font-weight:600;font-size:13px;margin-top:4px">กลุ่ม ${g}</div>`+LD.filter(d=>d[2]===g).map(d=>`<label><input type="checkbox" data-d="${d[0]}" ${['Cbp','Am','PAS'].includes(d[0])?'':'checked'}>${d[1]}</label>`).join('')).join('');
+function longr(){
+  const age=num('lg_age')||40,w=num('lg_wt')||50,preg=ck('lg_preg');
+  const ok=new Set($$('#lg_drugs input').filter(i=>i.checked).map(i=>i.dataset.d));
+  const warn=[];
+  if(age<6&&ok.has('Bdq')){ok.delete('Bdq');warn.push('Bdq ใช้อายุ ≥6 ปี — ตัดออก')}
+  if(age<3&&ok.has('Dlm')){ok.delete('Dlm');warn.push('Dlm ใช้อายุ ≥3 ปี — ตัดออก')}
+  if(age<18&&ok.has('Am')){ok.delete('Am');warn.push('Amikacin ใช้อายุ ≥18 ปี — ตัดออก')}
+  if(preg&&ok.has('Am')){ok.delete('Am');warn.push('หลีกเลี่ยง aminoglycoside ในหญิงตั้งครรภ์/ให้นม')}
+  if(preg&&(ok.has('Lfx')||ok.has('Mfx')))warn.push('FQ ในหญิงตั้งครรภ์: ปรึกษาผู้เชี่ยวชาญเป็นรายๆ');
+  const A=[];if(ok.has('Lfx'))A.push('Lfx');else if(ok.has('Mfx'))A.push('Mfx');['Bdq','Lzd'].forEach(k=>ok.has(k)&&A.push(k));
+  const Bav=['Cfz','Cs'].filter(k=>ok.has(k));
+  const AB=[...A];for(const k of Bav){if(AB.length<5||AB.length-A.length<1)AB.push(k)}
+  const nAB=AB.length;const Cav=['E','Dlm','Z','Cbp','Am','Eto','PAS'].filter(k=>ok.has(k));
+  let needC=nAB>=4?0:nAB===3?1:nAB===2?3:99;
+  let C=Cav.slice(0,needC===99?Cav.length:needC);
+  let cls='ok',rule=nAB>=4?'4(A/B) — ไม่ต้องใช้กลุ่ม C':nAB===3?'3(A/B) + 1–2C':nAB===2?'2(A/B) + ≥3C':'A/B <2 ตัว — ปรึกษาผู้เชี่ยวชาญ';
+  if(nAB<2){cls='crit'}
+  if(C.length<needC&&needC!==99){cls='crit';warn.push(`กลุ่ม C ที่ใช้ได้ไม่พอ (ต้องการ ${needC})`)}
+  const reg=[...AB,...C];
+  const contDrugs=reg.filter(k=>!['Bdq','Dlm','Am'].includes(k));
+  if(contDrugs.length<3){cls=cls==='crit'?'crit':'warn';warn.push(`ระยะต่อเนื่องเหลือยา ${contDrugs.length} ขนาน (Bdq/Dlm 6 เดือน, Am เฉพาะ intensive) — ควร ≥3`)}
+  const nm=k=>k==='Cbp'?'Ipm-Cln/Mpm+Clv':k==='Eto'?'Eto/Pto':k;
+  const doses={Lfx:w<46?'750':'1,000',Mfx:'400',Bdq:'400 OD ×2 สัปดาห์ → 200 M/W/F ×22 สัปดาห์',Lzd:'600',Cfz:'100',Cs:w<46?'500':'750',E:w<46?'800':'1,200',Dlm:'100 bid',Z:'',Cbp:'Ipm 1 ก. bid / Mpm 1 ก. tid หรือ 2 ก. bid + amox-clav 1 tab bid',Am:`${Math.round(w*15)}–${Math.min(1000,Math.round(w*20))} (15–20 มก./กก.)`,Eto:w<46?'500':w<=70?'750':'1,000',PAS:'8–12 ก./วัน แบ่ง 2–3 ครั้ง'};
+  if(doses.Z){doses.Z=`${Math.round(w*20/100)*100}–${Math.round(w*30/100)*100} (20–30 มก./กก.)`}
+  const body=`<p class="rx" style="font-size:15px">${reg.map(nm).join('-')||'—'}</p><p>รูปแบบ: <b>${rule}</b> · intensive ${reg.length} ขนาน · continuation ~${contDrugs.length} ขนาน (${contDrugs.map(nm).join(', ')})</p>
+  <div class="tbl"><table><tr><th>ยา</th><th>ขนาด (≥15 ปี, ${w} กก.)</th></tr>${reg.map(k=>`<tr><td>${nm(k)}</td><td>${doses[k]}${/^[\d,]+$/.test(doses[k])?' มก./วัน':''}</td></tr>`).join('')}</table></div>
+  ${warn.length?`<div class="callout crit"><ul>${warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}
+  <ul><li>ระยะเวลา ≥18 เดือน และ 15–17 เดือนหลัง culture conversion</li>${reg.includes('Am')?'<li>มี Am → intensive 6–7 เดือน · audiometry, Cr</li>':''}${reg.includes('Lzd')?'<li>Lzd → CBC ทุกเดือน, ตรวจตา/neuropathy, ระวัง serotonergic drugs</li>':''}${reg.some(k=>['Bdq','Dlm','Cfz','Lfx','Mfx'].includes(k))?'<li>ยา QT หลายตัว → ECG/QTcF เป็นระยะ</li>':''}<li>ต้องผ่านคณะผู้เชี่ยวชาญ DR-TB · aDSM</li></ul><p class="note">ขนาดยาอิงตาราง 6.6 (ช่วงน้ำหนัก) ปรับตาม ADR · ห้ามใช้ Km/Cm</p>`;
+  $('#o-long').innerHTML=card(cls,'สูตรที่เสนอ',reg.length?reg.length+' ขนาน':'จัดสูตรไม่ได้',body);
+}
+
+/* ---------- ART ---------- */
+const ARV=[['TDF','TDF / XTC (NRTI)','ok'],['TAF','TAF','no'],['EFV','Efavirenz','ok'],['NVP','Nevirapine','no'],['RPV','Rilpivirine / Etravirine','no'],['DTG','Dolutegravir','adj'],['RAL','Raltegravir','adj'],['EVG','Elvitegravir','no'],['PI','PI ใดๆ (LPV/r, ATV/r, DRV/r)','no'],['MVC','Maraviroc','adj']];
+$('#ar_arv').innerHTML=ARV.map(a=>`<label><input type="checkbox" data-a="${a[0]}" ${a[0]==='TDF'||a[0]==='DTG'?'checked':''}>${a[1]}</label>`).join('');
+function art(){
+  const s=pd($('#ar_d').value)||new Date(),tbm=ck('ar_tbm');
+  let v,b;
+  if(tbm){v=`${fd(addD(s,28))} – ${fd(addD(s,56))}`;b='<p>TB meningitis: เริ่ม ART หลังรักษา TB อย่างน้อย 4 สัปดาห์ อย่างช้าไม่เกิน 8 สัปดาห์</p>'}
+  else{v=`ภายใน ${fd(addD(s,14))} (ช้าสุด ${fd(addD(s,28))})`;b='<p>TB ทุกชนิดยกเว้น TBM: ภายใน 2 สัปดาห์ ช้าสุด 4 สัปดาห์ ไม่ขึ้นกับ CD4 · เริ่มเมื่อผู้ป่วยพร้อมและทนยา TB ได้</p>'}
+  if(ck('ar_preg'))b+='<p><b>ตั้งครรภ์:</b> เริ่มเร็วที่สุดเท่าที่ทำได้</p>';
+  if(ck('ar_cd4'))b+='<p><b>CPT (co-trimoxazole)</b> แนะนำ · CD4 ต่ำ + เริ่ม ART เร็ว เสี่ยง paradoxical IRIS (มักใน 3 เดือนแรก) → ให้ยาต่อ + NSAID/prednisolone 1 มก./กก./วัน ลดทุก 2 สัปดาห์ หยุดใน 4–8 สัปดาห์</p>';
+  let out=card('ok','ช่วงเริ่ม ART',v,b);
+  const sel=$$('#ar_arv input').filter(i=>i.checked).map(i=>ARV.find(a=>a[0]===i.dataset.a));
+  if(sel.length){
+    const row=a=>`<tr><td>${a[1]}</td><td>${a[2]==='ok'?'<span class="tag ok">ใช้ร่วม R ได้</span>':a[2]==='adj'?'<span class="tag r">ต้องปรับขนาด</span>':'<span class="tag c">ไม่แนะนำร่วม R</span>'}</td></tr>`;
+    const bad=sel.some(a=>a[2]==='no');
+    let note=sel.find(a=>a[0]==='DTG')?'<p class="note">DTG/RAL ร่วม R: ต้องปรับขนาดตามแนวทาง HIV (ไม่ได้ระบุขนาดใน NTP)</p>':'';
+    if(bad)note+='<p>ถ้าเปลี่ยน ARV ไม่ได้ พิจารณาสูตร TB ที่ไม่มี R (นานขึ้น เช่น 2HRZEQ/10–16HEQ ตามต้นฉบับ) ระวังดื้อ FQ</p>';
+    out+=card(bad?'crit':'','Rifampicin × ARV (ตาราง 5.8)','',`<div class="tbl"><table>${sel.map(row).join('')}</table></div>${note}<p class="note">EFV และ TDF/XTC ไม่ได้อยู่ในรายการต้องห้ามของตาราง 5.8</p>`);
+  }
+  $('#o-art').innerHTML=out;
+}
+
+/* ---------- LTBI ---------- */
+function ltbi(){
+  const g=$('#lt_g').value;$('#lt_hivopts').hidden=g!=='hiv';$('#lt_adopts').hidden=g!=='ad';
+  const tst=$('#lt_test').value;$('#lt_tstf').hidden=tst!=='tst';const mm=num('lt_mm');
+  if(!ck('lt_clear')){$('#o-ltbi').innerHTML=card('crit','ยังไม่ได้แยก active TB','คัดกรองอาการ + CXR ก่อน','<p>IGRA/TST แยก LTBI กับ active TB ไม่ได้ · ถ้าป่วย → รักษาวัณโรค</p>');return}
+  if(ck('lt_dr')){$('#o-ltbi').innerHTML=card('warn','สัมผัสวัณโรคดื้อยา','ยังไม่แนะนำ TPT','<p>ปรึกษาผู้เชี่ยวชาญ · เฝ้าระวังอาการอย่างน้อย 2 ปี · มีอาการ → รักษาด้วยสูตรที่เหมาะสม</p>');return}
+  const pos=th=>tst==='ipos'||(tst==='tst'&&mm!=null&&mm>=th);
+  const neg=th=>tst==='ineg'||(tst==='tst'&&mm!=null&&mm<th);
+  const give=(why)=>card('ok','ผล','ให้ TPT',`<p>${why}</p><button class="go-tool wfbtn" data-go="t-tpt">→ เลือกสูตร/ขนาดยา TPT</button>`);
+  const watch=(why)=>card('','ผล','เฝ้าระวังการป่วยเป็นวัณโรค',`<p>${why}</p><p class="note">CXR ทุก 6 เดือน 2 ปี แล้วปีละครั้ง</p>`);
+  const test=(why)=>card('warn','ขั้นถัดไป','ทดสอบ IGRA (หรือ TST)',`<p>${why}</p>`);
+  let o;
+  if(g==='c5')o=give('เด็กสัมผัสอายุ <5 ปี ให้ TPT ได้เลยโดยไม่ต้องทดสอบ');
+  else if(g==='c18'){ if(tst==='none')o=test('เด็ก 5–18 ปี: IGRA+ หรือ TST ≥15 มม. → TPT; TST 10–14 → พิจารณารายๆ'); else if(pos(15))o=give('IGRA บวก หรือ TST ≥15 มม.'); else if(tst==='tst'&&mm>=10)o=card('warn','ผล','TST 10–14 มม. → พิจารณารักษาเป็นรายๆ',''); else o=watch('IGRA ลบ หรือ TST <10 มม.')}
+  else if(g==='ad'){ if(ck('lt_prev'))o=watch('เคยป่วยเป็นวัณโรคในอดีต (แผนภูมิ 9.2)'); else {const th=ck('lt_imm')?10:15; if(tst==='none')o=test(`ผู้ใหญ่สัมผัส: IGRA+ หรือ TST ≥${th} มม. (${th===10?'ภูมิต่ำ':'ภูมิปกติ'}) → TPT`); else if(pos(th))o=give(`IGRA บวก หรือ TST ≥${th} มม.`); else o=watch(`IGRA ลบ หรือ TST <${th} มม.`)}}
+  else if(g==='oth'){ if(tst==='none')o=test('กลุ่มเสี่ยงอื่น: IGRA+ หรือ TST ≥10 มม. → พิจารณา TPT'); else if(pos(10))o=give('IGRA บวก หรือ TST ≥10 มม.'); else o=watch('IGRA ลบ หรือ TST <10 มม.')}
+  else { // HIV
+    const art=rv('lt_art'),lo=rv('lt_cd4')==='lo';
+    if(ck('lt_contact'))o=give('ผู้ติดเชื้อ HIV ที่สัมผัส TB ระยะแพร่เชื้อ — ให้ได้เลยไม่ต้องทดสอบ');
+    else if(art==='new'){ if(lo)o=give('ART ≤6 เดือน + CD4 <200 — ไม่ต้องทดสอบ'); else if(tst==='none')o=test('ART ≤6 เดือน + CD4 ≥200: IGRA+ หรือ TST ≥5 มม. → TPT · ทดสอบไม่ได้/ไม่ทราบผล → ดุลพินิจแพทย์'); else if(pos(5))o=give('IGRA บวก หรือ TST ≥5 มม.'); else o=card('','ผล','เฝ้าระวังและติดตามทุก 6 เดือน 2 ปี','<p>IGRA ลบ หรือ TST <5 มม.</p>')}
+    else { if(tst==='none')o=lo?give('ART >6 เดือน ไม่ทราบผลทดสอบ + CD4 <200'):card('','ผล','เฝ้าระวังและติดตามทุก 6 เดือน 2 ปี','<p>ไม่ทราบผลทดสอบ + CD4 ≥200 (แนะนำทดสอบ IGRA/TST ถ้าทำได้)</p>'); else if(pos(5))o=give('IGRA บวก หรือ TST ≥5 มม.'); else o=card('','ผล','เฝ้าระวังและติดตามทุก 6 เดือน 2 ปี','<p>IGRA ลบ หรือ TST <5 มม.</p>')}
+  }
+  $('#o-ltbi').innerHTML=o;
+}
+
+/* ---------- TPT dose ---------- */
+function tpt(){
+  const r=rv('tp_r'),a=num('tp_age')??35,w=num('tp_wt')||55;const s=pd($('#tp_d').value)||new Date();
+  let html='',warn='',n,min,end,ltfu;
+  const d=(k,v,u)=>`<div class="d"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${u}</div></div>`;
+  if(r==='3HP'){n=12;min=11;end=addD(s,77);ltfu='ขาด ≥4 สัปดาห์';
+    if(a<2)warn='3HP ในตารางเริ่มที่อายุ 2 ปี';
+    if(a>14){ if(w<30)warn='ตาราง >14 ปี ระบุเฉพาะ ≥30 กก.'; html=d('Isoniazid',900,'มก. สัปดาห์ละครั้ง')+d('Rifapentine',900,'มก. สัปดาห์ละครั้ง')}
+    else{const H=w<10?null:w<=15?300:w<=23?500:w<=30?600:700,P=w<10?null:w<=15?300:w<=23?450:w<=30?600:750; if(!H)warn='น้ำหนัก <10 กก. ไม่มีในตาราง'; html=d('Isoniazid',H??'—','มก. สัปดาห์ละครั้ง')+d('Rifapentine',P??'—','มก. สัปดาห์ละครั้ง')}}
+  else if(r==='1HP'){n=28;min=23;end=addD(s,27);ltfu='ขาด ≥10 วัน';if(a<13)warn='1HP สำหรับอายุ ≥13 ปี';html=d('Isoniazid',300,'มก./วัน')+d('Rifapentine',600,'มก./วัน')}
+  else if(r==='4R'){n=120;min=96;end=addD(s,119);ltfu='ขาด ≥4 สัปดาห์';const R=a<10?w*15:w*10;html=d('Rifampicin',Math.round(R),a<10?'15 (10–20) มก./กก./วัน':'10 มก./กก./วัน')}
+  else if(r==='3HR'){n=84;min=68;end=addD(s,83);ltfu='ขาด ≥4 สัปดาห์';html=d('Isoniazid',Math.round(a<10?w*10:w*5),a<10?'10 (7–15) มก./กก./วัน':'5 มก./กก./วัน')+d('Rifampicin',Math.round(a<10?w*15:w*10),a<10?'15 (10–20) มก./กก./วัน':'10 มก./กก./วัน')}
+  else {const m=r==='6H'?6:9;n=m===6?182:273;min=m===6?146:Math.round(273*.8);end=addM(s,m);ltfu='ขาด ≥8 สัปดาห์ (6H)';html=d('Isoniazid',Math.round(a<10?w*10:w*5),a<10?'10 (7–15) มก./กก./วัน':'5 มก./กก./วัน')}
+  const adult=a>=10&&r!=='3HP'&&r!=='1HP'&&(r==='4R'||r==='3HR'||r.endsWith('H'))?`<p class="note">ผู้ใหญ่: H 5 มก./กก. มักไม่เกิน 300 มก./วัน, R 10 มก./กก. มักไม่เกิน 600 มก./วัน (ค่าเพดานไม่ได้ระบุในตาราง 9.2)</p>`:'';
+  $('#o-tpt').innerHTML=card(warn?'warn':'ok',r,`${n} doses · ต้องได้ ≥${min}${r==='3HP'?' (90%)':' (80%)'}`,`<div class="dose">${html}</div>${warn?`<p class="callout">${warn}</p>`:''}${adult}<p>เริ่ม <b>${fd(s)}</b> → ครบ <b>${fd(end)}</b> · Lost to follow-up: ${ltfu}</p><p class="note">ADR: H — ตับอักเสบ, neuropathy, ผื่น · R/RPT — GI, ตับ, ผื่น, flu-like, เกล็ดเลือดต่ำ, สารคัดหลั่งเปลี่ยนสี · DDI กับ ARV, opioid, antimalarial</p>`);
+}
+
+/* ---------- outcome ---------- */
+function outc(){
+  const bp=rv('oc_b')==='pos';let v,c,b;
+  if(ck('oc_died')){v='Died';c='crit';b='ตายด้วยสาเหตุใดก่อน/ระหว่างรักษา'}
+  else if(ck('oc_fail')){v='Treatment failed';c='crit';b='Smear/culture บวกสิ้นเดือน 5 หรือหลังจากนั้น → ส่ง molecular + culture/DST หา DR-TB, ขึ้นทะเบียนใหม่ TAF'}
+  else if(ck('oc_ltfu')){v='Lost to follow-up';c='crit';b='ไม่เริ่มรักษา หรือขาดยา ≥2 เดือนติดต่อกัน'}
+  else if(ck('oc_to')){v='Transferred out';c='warn';b='เปลี่ยนเมื่อทราบผลสุดท้าย'}
+  else if(ck('oc_ongo')||!ck('oc_done')){v='Not evaluated';c='';b='สรุปผลไม่ได้ในรอบประเมิน'}
+  else if(bp&&ck('oc_last')&&ck('oc_prior')){v='Cured';c='ok';b='B+ ก่อนรักษา ครบกำหนด smear/culture ลบเดือนสุดท้าย + อีก ≥1 ครั้งก่อนหน้า'}
+  else {v='Treatment completed';c='ok';b=bp?'ครบกำหนดแต่ไม่มีผลเสมหะครบตามเกณฑ์ cured':'ครบกำหนด ไม่มีหลักฐานล้มเหลว'}
+  $('#o-out').innerHTML=card(c,'Final outcome',v,`<p>${b}</p>${['Cured','Treatment completed'].includes(v)?'<p class="tag ok">นับเป็น treatment success</p>':''}`);
+}
+
+/* ---------- wire ---------- */
+const T={'t-dx':dx,'t-reg':reg,'t-drclass':drc,'t-dose':dose,'t-sched':sched,'t-dili':dili,'t-rash':rash,'t-int':intr,'t-short':short,'t-long':longr,'t-art':art,'t-ltbi':ltbi,'t-tpt':tpt,'t-out':outc};
+Object.entries(T).forEach(([id,fn])=>{const el=document.getElementById(id);el.addEventListener('input',fn);el.addEventListener('change',fn);try{fn()}catch(e){console.error(id,e)}});
+
+const h=(location.hash||'').slice(1);
+if(T[h]){showTab('tools',false);showTool(h)} else if(document.getElementById(h)&&$('#'+h).classList.contains('page')) showTab(h,false); 
+if(!T[h]) showTool('t-dose',false);
+})();
+</script>
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>
