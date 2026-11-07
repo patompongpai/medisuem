@@ -123,6 +123,13 @@ footer a{color:var(--pri)}
 .imhub-back:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
 @media print{.imhub-bar{display:none}}
 footer{padding-bottom:80px}
+.fl-sub td{background:#f7fafb;border-bottom:2px solid var(--line);padding:6px 8px 9px}
+.fl-sub .fll{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:3px 0}
+.fl-sub select,.fl-sub input{padding:4px 6px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:.85rem;background:#fff}
+.fl-sub .flno{font-weight:700;color:var(--pri);min-width:42px;font-size:.82rem}
+.fl-sub .fltot{font-size:.8rem;color:var(--mute);margin-top:4px}
+.fl-sub .fltot b{color:var(--ink)}
+.btn.xs{padding:3px 9px;font-size:.8rem}
 @media (max-width:600px){ body{font-size:15px} header h1{font-size:1.08rem} }
 </style>
 </head>
@@ -479,6 +486,7 @@ footer{padding-bottom:80px}
       <button class="btn sec sm" data-ex="dka">โหลดตัวอย่าง DKA</button>
       <button class="btn sec sm" data-ex="hhs">โหลดตัวอย่าง HHS</button>
     </div>
+    <div class="note" style="margin-top:6px">ใต้แต่ละเวลามีแถว 💧 สารน้ำ — กด “+ เพิ่มสารน้ำ” เปิดได้หลายเส้น เลือกชนิด, KCl ที่ผสม และ rate แล้วแอปรวม K / dextrose / Na ต่อชั่วโมงให้ (แถวใหม่จะคัดลอกสารน้ำจากแถวก่อน)</div>
     <div class="note" style="margin-top:6px">ข้อมูลเก็บในเบราว์เซอร์เครื่องนี้เท่านั้น (อาจหายได้) — ไม่ส่งออกนอกเครื่อง ไม่ควรใส่ชื่อผู้ป่วย · ใช้น้ำหนักจากช่องด้านบน</div>
   </div>
   <div class="card" id="flCase" style="display:none"></div>
@@ -771,8 +779,19 @@ let FL={mode:'dka',bed:'',rows:[]};
 try{const s=store.get('hc_flow'); if(s) FL=Object.assign(FL,JSON.parse(s));}catch(e){}
 const saveFL=()=>store.set('hc_flow',JSON.stringify(FL));
 const cols=['bg','bhb','ph','hco3','na','k','ins','uo'];
+/* fluid catalog: na mEq/L, k mEq/L (built-in), dex % */
+const FLUIDS=[
+ ['nss','0.9% NaCl (NSS)',154,0,0],['nss2','0.45% NaCl (NSS/2)',77,0,0],['rl',"Ringer's lactate",130,4,0],['acetar','Acetar',131,4,0],['plasma','Plasma-Lyte A',140,5,0],
+ ['dnss','5%D/NSS',154,0,5],['dnss2','5%D/NSS/2 (5%D/N/2)',77,0,5],['dn3','5%D/N/3',51,0,5],['dn5','5%D/N/5',34,0,5],['d5w','5%D/W',0,0,5],['d10w','10%D/W',0,0,10],['dn2_10','10%D/N/2',77,0,10],
+ ['other','อื่นๆ (ระบุ)',NaN,0,0]];
+const FLM=Object.fromEntries(FLUIDS.map(f=>[f[0],f]));
+const KOPT=['0','10','20','30','40'];
+function flCalc(list){ let rate=0,kh=0,dex=0,nah=0,naU=false,maxK=0,hypo=false;
+  (list||[]).forEach(l=>{ const f=FLM[l.t]||FLM.other, r=pf(l.r); if(!has(r)||r<=0) return; const kc=(pf(l.k)||0)+f[3]; rate+=r; kh+=r*kc/1000; dex+=r*f[4]/100; if(has(f[2])) nah+=r*f[2]/1000; else naU=true; if(kc>maxK) maxK=kc; if(has(f[2])&&f[2]<154&&f[4]===0&&f[2]>0) hypo=true; });
+  return {rate,kh,dex,nah,naU,maxK,hypo,n:(list||[]).filter(l=>has(pf(l.r))&&pf(l.r)>0).length}; }
+const flName=l=>{const f=FLM[l.t]||FLM.other; return (l.t==='other'&&l.x?l.x:f[1])+(pf(l.k)>0?` + KCl ${l.k} mEq/L`:'')+(has(pf(l.r))?` @ ${l.r} mL/h`:'');};
 function nowLocal(){const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,16);}
-function addRow(){ const last=FL.rows[FL.rows.length-1]; let t=nowLocal(); if(last&&last.t){const d=new Date(last.t); d.setHours(d.getHours()+1); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); t=d.toISOString().slice(0,16);} FL.rows.push({t,ins:last?last.ins:''}); saveFL(); renderFL();}
+function addRow(){ const last=FL.rows[FL.rows.length-1]; let t=nowLocal(); if(last&&last.t){const d=new Date(last.t); d.setHours(d.getHours()+1); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); t=d.toISOString().slice(0,16);} FL.rows.push({t,ins:last?last.ins:'',fl:last&&last.fl?JSON.parse(JSON.stringify(last.fl)):[]}); saveFL(); renderFL();}
 function pf(v){const x=parseFloat(v); return isNaN(x)?NaN:x;}
 function analyze(){
   const w=W(); const rows=FL.rows.map(r=>Object.assign({},r)); const mode=FL.mode;
@@ -789,7 +808,7 @@ function analyze(){
     // alerts
     if(has(bg)&&bg<70) a.push(['bad','Hypoglycemia: หยุด/ลด insulin ชั่วคราว ให้ dextrose ตาม protocol']);
     if(has(k)&&k<3.5) a.push(['bad','K <3.5: หยุด insulin ชั่วคราว ให้ KCl 10–20 mEq/h']);
-    else if(has(k)&&k<=5) a.push(['ok','K 3.5–5: KCl 10–20 mEq/L ในสารน้ำ'+(has(uo)&&has(w)&&uo/w<0.5?' (ยืนยันไตทำงาน/UO ก่อน)':'')]);
+    else if(has(k)&&k<=5&&!flCalc(r.fl).n) a.push(['ok','K 3.5–5: KCl 10–20 mEq/L ในสารน้ำ'+(has(uo)&&has(w)&&uo/w<0.5?' (ยืนยันไตทำงาน/UO ก่อน)':'')]);
     else if(has(k)&&k>5) a.push(['warn','K >5: ยังไม่ให้ K, ตรวจ K q2h']);
     if(mode==='dka'){
       if(has(bg)&&bg<250&&bg>=70){
@@ -810,18 +829,44 @@ function analyze(){
     if(has(na)&&firstNa&&firstNa!==rows[i]&&has(t)){ const t0=new Date(firstNa.t).getTime(), na0=pf(firstNa.na); if(has(t0)&&(t-t0)<=24*3.6e6&&na0-na>10) a.push(['bad',`Na ลด ${f0(na0-na)} mEq/L ใน 24 ชม. (>10)`]); }
     if(has(uo)&&has(w)&&uo/w<0.5) a.push(['warn',`UO ${f1(uo/w)} mL/kg/h (<0.5)`]);
     if(insStarted!==null&&has(t)&&i>0&&(t-insStarted)>=1.5*3.6e6&&(t-insStarted)<=2.5*3.6e6&&!has(k)) a.push(['info','ครบ ~2 ชม.หลังเริ่ม insulin: ตรวจ K']);
+    r.fc=flCalc(r.fl);
+    if(r.fc.n){ const fc=r.fc;
+      if(fc.kh>20) a.push(['bad',`ได้ K ${f1(fc.kh)} mEq/h (>20) — ต้องใช้ central line + cardiac monitor`]);
+      if(fc.maxK>40) a.push(['warn',`สารน้ำมี K ${f0(fc.maxK)} mEq/L (>40) — ระวังทาง peripheral (แนวปฏิบัติทั่วไป)`]);
+      if(has(k)&&k>5&&fc.kh>0) a.push(['bad',`K ${k} (>5) แต่ยังได้ K ${f1(fc.kh)} mEq/h — หยุด KCl`]);
+      if(has(k)&&k<3.5&&fc.kh<10) a.push(['bad',`K <3.5 แต่ได้ K เพียง ${f1(fc.kh)} mEq/h (ควร 10–20)`]);
+      if(has(k)&&k>=3.5&&k<=5&&fc.kh===0) a.push(['warn','K 3.5–5 แต่ยังไม่มี KCl ในสารน้ำ']);
+      const glow = mode==='dka' ? (has(bg)&&bg<250) : (has(bg)&&bg<250);
+      if(glow&&fc.dex===0) a.push(['warn','Glu <250 แต่ยังไม่มี dextrose ในสารน้ำ']);
+      if(mode==='dka'&&i===0&&has(bg)&&bg<200&&fc.dex===0) a.push(['warn','Euglycemic DKA: ควรเริ่ม dextrose พร้อม insulin']);
+      if(fc.dex>0&&has(bg)&&bg>=300) a.push(['info',`Glu ≥300 แต่ได้ dextrose ${f1(fc.dex)} g/h — ทบทวนความจำเป็น`]);
+      if(mode==='hhs'&&fc.hypo&&!(has(r.dosm)&&r.dosm>-1)) a.push(['info','HHS: ใช้ hypotonic (0.45%) เมื่อ osm ไม่ลดทั้งที่ fluid balance บวกและ insulin เหมาะสม']);
+    }
     r.alerts=a;
     if(has(bg)&&has(t)){prevBG=bg;prevT=t;}
     if(has(r.osm)&&has(t)){lastOsm=r.osm;lastOsmT=t;}
   });
   return rows;
 }
+function flRow(r,i){
+  const list=r.fl||[];
+  const lines=list.map((l,j)=>`<div class="fll"><span class="flno">เส้น ${j+1}</span>
+    <select data-fl="${j}" data-f="t">${FLUIDS.map(f=>`<option value="${f[0]}"${f[0]===l.t?' selected':''}>${f[1]}</option>`).join('')}</select>
+    ${l.t==='other'?`<input data-fl="${j}" data-f="x" placeholder="ชื่อสารน้ำ" value="${esc2(l.x)}" style="width:130px">`:''}
+    <label class="note">KCl</label><select data-fl="${j}" data-f="k">${KOPT.map(o=>`<option value="${o}"${String(l.k||'0')===o?' selected':''}>${o==='0'?'ไม่ผสม':o+' mEq/L'}</option>`).join('')}</select>
+    <label class="note">rate</label><input type="number" step="any" inputmode="decimal" data-fl="${j}" data-f="r" value="${esc2(l.r)}" style="width:70px"><span class="note">mL/h</span>
+    <button class="btn dng xs" data-flrm="${j}">✕</button></div>`).join('');
+  const fc=r.fc||flCalc(list);
+  const tot=fc.n?`<div class="fltot">รวม <b>${f0(fc.rate)} mL/h</b> · K <b>${f1(fc.kh)} mEq/h</b> · Dextrose <b>${f1(fc.dex)} g/h</b> · Na <b>${f0(fc.nah)}${fc.naU?'+':''} mEq/h</b></div>`:'';
+  return `<tr class="fl-sub" data-i="${i}"><td colspan="14"><div class="row" style="gap:6px"><b style="font-size:.85rem">💧 สารน้ำ</b>${list.length?'':'<span class="note">ยังไม่ระบุ</span>'}<button class="btn sec xs" data-fladd="${i}">+ เพิ่มสารน้ำ</button></div>${lines}${tot}</td></tr>`;
+}
+const esc2=x=>String(x??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function renderFL(){
   document.querySelectorAll('#flMode button').forEach(b=>b.classList.toggle('on',b.dataset.m===FL.mode));
   $('flBed').value=FL.bed||'';
   const rows=analyze(); const tb=document.querySelector('#flTbl tbody');
   if(!rows.length){tb.innerHTML='<tr><td colspan="14" class="note" style="padding:14px">ยังไม่มีข้อมูล — กด “+ เพิ่มแถว” (เวลาเพิ่มทีละ 1 ชม. อัตโนมัติ แก้ได้) หรือกด “โหลดตัวอย่าง DKA / HHS” เพื่อดูการใช้งาน</td></tr>';}
-  else tb.innerHTML=rows.map((r,i)=>`<tr data-i="${i}"><td><input type="datetime-local" data-c="t" value="${r.t||''}"></td>${cols.map(c=>`<td><input type="number" step="any" inputmode="decimal" data-c="${c}" value="${r[c]??''}"></td>`).join('')}<td class="mono">${has(r.dbg)?(r.dbg>0?'+':'')+f0(r.dbg):'–'}</td><td class="mono">${f1(r.osm)}</td><td class="mono">${has(r.dosm)?(r.dosm>0?'+':'')+f1(r.dosm):'–'}</td><td class="alert-l">${r.alerts.map(a=>`<div class="pill p-${a[0]}" style="display:block;margin:2px 0;white-space:normal;font-weight:500">${a[1]}</div>`).join('')}</td><td><button class="btn dng sm" data-del="${i}">ลบ</button></td></tr>`).join('');
+  else tb.innerHTML=rows.map((r,i)=>`<tr data-i="${i}"><td><input type="datetime-local" data-c="t" value="${r.t||''}"></td>${cols.map(c=>`<td><input type="number" step="any" inputmode="decimal" data-c="${c}" value="${r[c]??''}"></td>`).join('')}<td class="mono">${has(r.dbg)?(r.dbg>0?'+':'')+f0(r.dbg):'–'}</td><td class="mono">${f1(r.osm)}</td><td class="mono">${has(r.dosm)?(r.dosm>0?'+':'')+f1(r.dosm):'–'}</td><td class="alert-l">${r.alerts.map(a=>`<div class="pill p-${a[0]}" style="display:block;margin:2px 0;white-space:normal;font-weight:500">${a[1]}</div>`).join('')}</td><td><button class="btn dng sm" data-del="${i}">ลบ</button></td></tr>${flRow(r,i)}`).join('');
   summ(rows);
   const cs=$('flCase'); if(FL.ex&&EX[FL.ex]){cs.style.display='';cs.innerHTML=EX[FL.ex].html;} else cs.style.display='none';
 }
@@ -833,8 +878,14 @@ function summ(rows){
   s+='</ul>';
   $('flSummary').innerHTML=s;
 }
-document.querySelector('#flTbl tbody').addEventListener('change',e=>{const inp=e.target; const tr=inp.closest('tr'); if(!tr||!inp.dataset.c) return; FL.rows[+tr.dataset.i][inp.dataset.c]=inp.value; FL.ex=null; saveFL(); renderFL();});
-document.querySelector('#flTbl tbody').addEventListener('click',e=>{const d=e.target.dataset.del; if(d!==undefined){FL.rows.splice(+d,1); saveFL(); renderFL();}});
+document.querySelector('#flTbl tbody').addEventListener('change',e=>{const inp=e.target; const tr=inp.closest('tr'); if(!tr) return;
+  if(inp.dataset.fl!==undefined){ const row=FL.rows[+tr.dataset.i]; row.fl=row.fl||[]; const l=row.fl[+inp.dataset.fl]; if(l){ l[inp.dataset.f]=inp.value; if(inp.dataset.f==='t'&&inp.value!=='other') delete l.x; } FL.ex=null; saveFL(); renderFL(); return; }
+  if(!inp.dataset.c) return; FL.rows[+tr.dataset.i][inp.dataset.c]=inp.value; FL.ex=null; saveFL(); renderFL();});
+document.querySelector('#flTbl tbody').addEventListener('click',e=>{
+  const ds=e.target.dataset, tr=e.target.closest('tr');
+  if(ds.fladd!==undefined){ const row=FL.rows[+ds.fladd]; row.fl=row.fl||[]; const prev=row.fl[row.fl.length-1]; row.fl.push({t:prev?prev.t:'nss',k:'0',r:''}); FL.ex=null; saveFL(); renderFL(); return; }
+  if(ds.flrm!==undefined&&tr){ FL.rows[+tr.dataset.i].fl.splice(+ds.flrm,1); FL.ex=null; saveFL(); renderFL(); return; }
+  const d=ds.del; if(d!==undefined){FL.rows.splice(+d,1); saveFL(); renderFL();}});
 $('flAdd').addEventListener('click',addRow);
 document.querySelectorAll('#flMode button').forEach(b=>b.addEventListener('click',()=>{FL.mode=b.dataset.m; saveFL(); renderFL();}));
 $('flBed').addEventListener('input',()=>{FL.bed=$('flBed').value; saveFL();});
@@ -845,7 +896,7 @@ $('flExport').addEventListener('click',()=>{
   const rows=analyze(); const w=W();
   let t=`Hyperglycemic crisis flowsheet — ${FL.mode.toUpperCase()}${FL.bed?' | '+FL.bed:''}${has(w)?' | BW '+w+' kg':''}\n`;
   t+='Time | Glu | BHB | pH | HCO3 | Na | K | Ins U/h | UO | dGlu/h | EffOsm | dOsm/h\n';
-  rows.forEach(r=>{ t+=[(r.t||'').replace('T',' '),r.bg,r.bhb,r.ph,r.hco3,r.na,r.k,r.ins,r.uo,has(r.dbg)?f0(r.dbg):'',has(r.osm)?f1(r.osm):'',has(r.dosm)?f1(r.dosm):''].map(x=>x??'').join(' | ')+'\n'; if(r.alerts.length) t+='   ↳ '+r.alerts.map(a=>a[1]).join('; ')+'\n';});
+  rows.forEach(r=>{ t+=[(r.t||'').replace('T',' '),r.bg,r.bhb,r.ph,r.hco3,r.na,r.k,r.ins,r.uo,has(r.dbg)?f0(r.dbg):'',has(r.osm)?f1(r.osm):'',has(r.dosm)?f1(r.dosm):''].map(x=>x??'').join(' | ')+'\n'; if(r.fl&&r.fl.length){ t+='   💧 '+r.fl.map(flName).join(' | ')+(r.fc.n?` → รวม ${f0(r.fc.rate)} mL/h, K ${f1(r.fc.kh)} mEq/h, Dex ${f1(r.fc.dex)} g/h`:'')+'\n'; } if(r.alerts.length) t+='   ↳ '+r.alerts.map(a=>a[1]).join('; ')+'\n';});
   $('mdlTxt').value=t; $('mdlMsg').textContent=''; $('mdl').classList.add('on');
 });
 $('mdlClose').addEventListener('click',()=>$('mdl').classList.remove('on'));
@@ -855,23 +906,23 @@ $('mdlCopy').addEventListener('click',()=>{ const t=$('mdlTxt').value; (navigato
 /* ---------- examples ---------- */
 const EX={
  dka:{wt:60,bed:'ตัวอย่าง DKA',mode:'dka',
-  rows:[['08:00',520,5.8,7.12,9,132,5.6,6,40],['09:00',470,'','','','','',6,80],['10:00',410,'','','','',4.6,6,120],['11:00',360,'','','','','',6,110],
-   ['12:00',300,3.9,7.20,12,136,4.1,6,100],['13:00',240,'','','','','',3,90],['14:00',215,'','','','',3.8,3,90],['15:00',205,'','','','','',3,80],
-   ['16:00',198,1.6,7.27,15,138,3.9,3,80],['18:00',190,'','','','',4.0,3,70],['20:00',185,0.4,7.34,19,139,4.2,3,70]],
+  rows:[['08:00',520,5.8,7.12,9,132,5.6,6,40,[['nss',0,1000]]],['09:00',470,'','','','','',6,80,[['nss',0,1000]]],['10:00',410,'','','','',4.6,6,120,[['nss',20,500]]],['11:00',360,'','','','','',6,110,[['nss',20,500]]],
+   ['12:00',300,3.9,7.20,12,136,4.1,6,100,[['nss',20,250]]],['13:00',240,'','','','','',3,90,[['dnss2',20,150],['nss',20,100]]],['14:00',215,'','','','',3.8,3,90,[['dnss2',20,150],['nss',20,100]]],['15:00',205,'','','','','',3,80,[['dnss2',20,150],['nss',20,80]]],
+   ['16:00',198,1.6,7.27,15,138,3.9,3,80,[['dnss2',20,150],['nss',20,80]]],['18:00',190,'','','','',4.0,3,70,[['dnss2',20,120],['nss',20,60]]],['20:00',185,0.4,7.34,19,139,4.2,3,70,[['dnss2',20,120],['nss',20,60]]]],
   html:`<b>📋 ผู้ป่วยตัวอย่าง: DKA</b> <span class="pill p-info">ข้อมูลสมมติเพื่อการสอน</span>
   <p style="margin:6px 0">หญิง 24 ปี T1DM น้ำหนัก 60 kg ขาด insulin 2 วัน อาเจียน หายใจหอบลึก · แรกรับ glucose 520, BHB 5.8, pH 7.12, HCO₃⁻ 9, K 5.6 → <b>DKA moderate</b> (pH 7.00–7.24, HCO₃⁻ &lt;10 ก้ำกึ่ง severe) รักษาด้วย IV insulin</p>
   <div class="tbl-wrap"><table><tr><th>เวลา</th><th>สิ่งที่เกิดขึ้น / สิ่งที่ควรทำ</th></tr>
   <tr><td>08:00</td><td>K 5.6 (&gt;5.0) → เริ่ม insulin <b>0.1 U/kg/h = 6 U/h</b> ได้ทันที ยังไม่เติม K · NSS/RL 1000 mL/h</td></tr>
   <tr><td>10:00</td><td>ครบ 2 ชม.หลังเริ่ม insulin ต้องตรวจ K → 4.6 (ลดลงจาก insulin) → <b>เติม KCl 10–20 mEq/L</b> ในสารน้ำ</td></tr>
   <tr><td>08–12</td><td>Glucose ลดราว 50–60 mg/dL/h จากสารน้ำ + insulin · lab รอบ 4 ชม. (12:00): BHB 3.9 ยังไม่หาย</td></tr>
-  <tr><td>13:00</td><td>Glucose 240 (&lt;250) → <b>เพิ่ม D5–D10</b> และลด insulin เป็น <b>0.05 U/kg/h = 3 U/h</b> — <u>ห้ามหยุด insulin</u> เพราะ ketosis ยังอยู่</td></tr>
+  <tr><td>13:00</td><td>Glucose 240 (&lt;250) → <b>เพิ่ม D5–D10</b> (ตัวอย่างเปิด 2 เส้น: 5%D/NSS/2 + KCl 20 @150 และ NSS + KCl 20 @100) และลด insulin เป็น <b>0.05 U/kg/h = 3 U/h</b> — <u>ห้ามหยุด insulin</u> เพราะ ketosis ยังอยู่</td></tr>
   <tr><td>16:00</td><td>BHB 1.6, pH 7.27 — ดีขึ้นแต่ยังไม่เข้าเกณฑ์ · คุม glucose 150–200 · K 3.9 ยังต้องเติม K ต่อ</td></tr>
   <tr><td>20:00</td><td>BHB 0.4 (&lt;0.6) + pH 7.34 → <b>DKA resolved</b> → ให้ basal SC (TDD ประมาณ 30–36 U, basal ~15–18 U) แล้วหยุด IV insulin หลังให้ basal 1–2 ชม.</td></tr>
   </table></div>`},
  hhs:{wt:70,bed:'ตัวอย่าง HHS',mode:'hhs',
-  rows:[['08:00',980,0.8,7.36,22,138,4.4,0,20],['09:00',880,'','','','','',0,30],['10:00',790,'','','',142,4.2,3.5,40],['11:00',700,'','','','','',3.5,50],
-   ['12:00',560,'','','',145,3.9,3.5,50],['13:00',480,'','','','','',2,55],['14:00',400,'','','',146,4.0,2,60],['16:00',320,'','','','','',2,65],
-   ['18:00',260,'','','',145,4.1,2,70],['20:00',230,0.3,7.38,24,143,4.0,2,70]],
+  rows:[['08:00',980,0.8,7.36,22,138,4.4,0,20,[['nss',0,500]]],['09:00',880,'','','','','',0,30,[['nss',0,500]]],['10:00',790,'','','',142,4.2,3.5,40,[['nss',20,300]]],['11:00',700,'','','','','',3.5,50,[['nss',20,300]]],
+   ['12:00',560,'','','',145,3.9,3.5,50,[['nss',20,250]]],['13:00',480,'','','','','',2,55,[['nss',20,250]]],['14:00',400,'','','',146,4.0,2,60,[['nss',20,200]]],['16:00',320,'','','','','',2,65,[['nss',20,200]]],
+   ['18:00',260,'','','',145,4.1,2,70,[['nss',20,150]]],['20:00',230,0.3,7.38,24,143,4.0,2,70,[['nss',20,100],['dnss',0,100]]]],
   html:`<b>📋 ผู้ป่วยตัวอย่าง: HHS</b> <span class="pill p-info">ข้อมูลสมมติเพื่อการสอน</span>
   <p style="margin:6px 0">ชาย 78 ปี T2DM น้ำหนัก 70 kg ซึม 3 วัน มี UTI · glucose 980, Na 138, effective osm ~330, BHB 0.8, pH 7.36 → <b>HHS</b> (ไม่มี ketosis/acidosis มาก) ดูแลใน HDU · ผู้สูงอายุ → ให้สารน้ำทีละ 250 mL แล้วประเมินซ้ำ</p>
   <div class="tbl-wrap"><table><tr><th>เวลา</th><th>สิ่งที่เกิดขึ้น / สิ่งที่ควรทำ</th></tr>
@@ -880,11 +931,11 @@ const EX={
   <tr><td>12:00</td><td>⚠️ Glucose ลด <b>140 mg/dL/h</b> (เกิน 90–120) → <b>ลด insulin เป็น 2 U/h</b>; osm ลด ~3.4/h ยังอยู่ในเป้า</td></tr>
   <tr><td>13–18</td><td>Glucose ลด 40–80 mg/dL/h, osm ลดช้า ๆ ตามเป้า · UO ดีขึ้นตามลำดับ · ให้ VTE prophylaxis</td></tr>
   <tr><td>18:00</td><td>Glucose 260 ใกล้ 250 → เตรียมเติม D5 ในสารน้ำ คง glucose 200–250</td></tr>
-  <tr><td>20:00</td><td>Osm ~299 (&lt;300) + glucose 230 (&lt;250, อยู่ในเป้า 200–250) + UO 1.0 mL/kg/h → ถ้าความรู้สึกตัวดีขึ้น = <b>HHS resolved</b> · TDD ช่วงเปลี่ยนเป็น SC ~0.3 U/kg/วัน (≈21 U) เพราะสูงอายุ</td></tr>
+  <tr><td>20:00</td><td>เปิดเส้นที่ 2 เป็น 5%D/NSS คง glucose 200–250 · Osm ~299 (&lt;300) + glucose 230 (&lt;250, อยู่ในเป้า 200–250) + UO 1.0 mL/kg/h → ถ้าความรู้สึกตัวดีขึ้น = <b>HHS resolved</b> · TDD ช่วงเปลี่ยนเป็น SC ~0.3 U/kg/วัน (≈21 U) เพราะสูงอายุ</td></tr>
   </table></div>`}
 };
 function loadEx(k){ const e=EX[k]; const d=new Date(); const pad=x=>String(x).padStart(2,'0'); const day=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
-  FL={mode:e.mode,bed:e.bed,ex:k,rows:e.rows.map(r=>({t:day+'T'+r[0],bg:String(r[1]),bhb:String(r[2]),ph:String(r[3]),hco3:String(r[4]),na:String(r[5]),k:String(r[6]),ins:String(r[7]),uo:String(r[8])}))};
+  FL={mode:e.mode,bed:e.bed,ex:k,rows:e.rows.map(r=>({t:day+'T'+r[0],bg:String(r[1]),bhb:String(r[2]),ph:String(r[3]),hco3:String(r[4]),na:String(r[5]),k:String(r[6]),ins:String(r[7]),uo:String(r[8]),fl:(r[9]||[]).map(f=>({t:f[0],k:String(f[1]),r:String(f[2])}))}))};
   $('gWt').value=e.wt; store.set('hc_wt',String(e.wt)); saveFL(); recalcAll(); }
 let pendingEx=null;
 document.querySelectorAll('[data-ex]').forEach(b=>b.addEventListener('click',()=>{ pendingEx=b.dataset.ex; if(FL.rows.length&&!FL.ex){$('cfmEx').classList.add('on');} else loadEx(pendingEx); }));
@@ -925,8 +976,8 @@ $('pdfFlow').addEventListener('click',()=>{
   const rows=analyze(), w=W(), st=stamp(), m=FL.mode;
   if(!rows.length){ toast('ยังไม่มีข้อมูลใน flowsheet',2500); return; }
   let h=`<h1>Hyperglycemic Crisis Flowsheet — ${m.toUpperCase()}</h1><div class="sub">เตียง/รหัส: <b>${esc(FL.bed)||'–'}</b> · น้ำหนัก: <b>${has(w)?w+' kg':'–'}</b> · พิมพ์เมื่อ ${st.txt}${FL.ex?' · <b>ข้อมูลตัวอย่างเพื่อการสอน</b>':''}</div>`;
-  h+=`<table><thead><tr><th>วันเวลา</th><th>Glu</th><th>BHB</th><th>pH</th><th>HCO₃</th><th>Na</th><th>K</th><th>Insulin U/h</th><th>UO mL/h</th><th>ΔGlu/h</th><th>Eff osm</th><th>ΔOsm/h</th><th style="width:32%">คำเตือน/คำแนะนำ</th></tr></thead><tbody>`;
-  rows.forEach(r=>{ h+=`<tr><td>${esc((r.t||'').replace('T',' '))}</td>${cols.map(c=>`<td>${esc(r[c])}</td>`).join('')}<td>${has(r.dbg)?(r.dbg>0?'+':'')+f0(r.dbg):''}</td><td>${has(r.osm)?f1(r.osm):''}</td><td>${has(r.dosm)?(r.dosm>0?'+':'')+f1(r.dosm):''}</td><td class="al">${r.alerts.map(a=>`<span class="${a[0]}">• ${esc(a[1])}</span>`).join('')}</td></tr>`;});
+  h+=`<table><thead><tr><th>วันเวลา</th><th>Glu</th><th>BHB</th><th>pH</th><th>HCO₃</th><th>Na</th><th>K</th><th>Insulin U/h</th><th>UO mL/h</th><th style="width:20%">สารน้ำ</th><th>ΔGlu/h</th><th>Eff osm</th><th>ΔOsm/h</th><th style="width:26%">คำเตือน/คำแนะนำ</th></tr></thead><tbody>`;
+  rows.forEach(r=>{ h+=`<tr><td>${esc((r.t||'').replace('T',' '))}</td>${cols.map(c=>`<td>${esc(r[c])}</td>`).join('')}<td class="al">${(r.fl||[]).map(l=>`<span>• ${esc(flName(l))}</span>`).join('')}${r.fc&&r.fc.n?`<span><b>รวม ${f0(r.fc.rate)} mL/h · K ${f1(r.fc.kh)} mEq/h · Dex ${f1(r.fc.dex)} g/h</b></span>`:''}</td><td>${has(r.dbg)?(r.dbg>0?'+':'')+f0(r.dbg):''}</td><td>${has(r.osm)?f1(r.osm):''}</td><td>${has(r.dosm)?(r.dosm>0?'+':'')+f1(r.dosm):''}</td><td class="al">${r.alerts.map(a=>`<span class="${a[0]}">• ${esc(a[1])}</span>`).join('')}</td></tr>`;});
   h+='</tbody></table>';
   h+=`<div class="card" style="margin-top:10px">${$('flSummary').innerHTML}</div>`;
   if(FL.ex&&EX[FL.ex]) h+=`<div class="card">${EX[FL.ex].html.replace(/<span class="pill[^>]*>[^<]*<\/span>/g,'')}</div>`;
