@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acute Ischemic Stroke 2026 · Medisüem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout: single scrolling column, sticky section chips, tool cards for time-window, dose and EVT checks */
+  --bg:#f4f6f7;
+  --surface:#ffffff;
+  --ink:#16222a;
+  --muted:#5a6b75;
+  --line:#d9e1e5;
+  --accent:#0d5c75;
+  --accent-soft:#e2eff3;
+  --c1:#1f7a46; --c1-bg:#e3f3e9;
+  --c2a:#8a6400; --c2a-bg:#fbf1d6;
+  --c2b:#a64b10; --c2b-bg:#fbe7d9;
+  --c3:#b02a2a; --c3-bg:#f8e1e1;
+  --font-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+html.dark{
+  --bg:#0f171b; --surface:#16222a; --ink:#e6edf0; --muted:#9aabb4; --line:#2a3a43;
+  --accent:#5fb7d3; --accent-soft:#183540;
+  --c1:#6fd39a; --c1-bg:#173527; --c2a:#e8c15a; --c2a-bg:#352c12;
+  --c2b:#f0a06a; --c2b-bg:#3a2516; --c3:#f08a8a; --c3-bg:#3d1c1c;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:1.75rem}
+h2{font-size:1.3rem}
+h3{font-size:1.05rem}
+p{margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{padding:28px 0 18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
+.byline{color:var(--muted);font-size:.9rem;margin-top:6px}
+.note{margin-top:12px;font-size:.85rem;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;font-size:.85rem;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent)}
+main{display:flex;flex-direction:column;gap:28px;padding:24px 0 60px}
+section{display:flex;flex-direction:column;gap:12px;scroll-margin-top:64px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.tool{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-family:var(--font-display);font-size:1.5rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.85rem;color:var(--muted)}
+ul.recs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.recs li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+ul.recs li:first-child{border-top:none;padding-top:0}
+.cor{font-family:var(--font-mono);font-size:.72rem;font-weight:500;border-radius:6px;padding:2px 7px;white-space:nowrap;margin-top:3px}
+.cor.c1{color:var(--c1);background:var(--c1-bg)}
+.cor.c2a{color:var(--c2a);background:var(--c2a-bg)}
+.cor.c2b{color:var(--c2b);background:var(--c2b-bg)}
+.cor.c3{color:var(--c3);background:var(--c3-bg)}
+.cor.na{color:var(--muted);background:var(--bg);border:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;color:var(--muted)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.small{font-size:.85rem;color:var(--muted)}
+label{font-size:.85rem;font-weight:500}
+.field{display:flex;flex-direction:column;gap:4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+input[type=number],select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+input[type=range]{width:100%;accent-color:var(--accent)}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.lkw{font-family:var(--font-display);font-size:2rem;font-variant-numeric:tabular-nums;color:var(--accent)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{border-left:4px solid var(--line);padding:6px 0 6px 12px}
+.opt.c1{border-color:var(--c1)} .opt.c2a{border-color:var(--c2a)} .opt.c2b{border-color:var(--c2b)} .opt.c3{border-color:var(--c3)}
+.opt strong{display:block}
+.dose{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.dosebox{background:var(--bg);border-radius:10px;padding:12px}
+.dosebox .big{font-family:var(--font-display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.dosebox .row{display:flex;justify-content:space-between;gap:8px;font-size:.88rem;font-variant-numeric:tabular-nums}
+.result{border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.result.c1{background:var(--c1-bg);color:var(--c1)}
+.result.c2a{background:var(--c2a-bg);color:var(--c2a)}
+.result.c2b{background:var(--c2b-bg);color:var(--c2b)}
+.result.c3{background:var(--c3-bg);color:var(--c3)}
+.result.na{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.result b{font-family:var(--font-display);font-size:1.1rem}
+.result p{color:var(--ink);font-size:.9rem}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:480px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.8rem}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.why{font-size:.85rem;background:var(--accent-soft);border-radius:8px;padding:8px 10px}
+.why b{color:var(--accent)}
+.cascade{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;counter-reset:st}
+.cascade li{counter-increment:st;display:grid;grid-template-columns:28px 1fr;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}
+.cascade li:first-child{border-top:none}
+.cascade li::before{content:counter(st);font-family:var(--font-mono);font-size:.75rem;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--surface);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.svgwrap{overflow-x:auto}
+.svgwrap svg{display:block;width:100%;min-width:320px;height:auto}
+.svgwrap text{font-family:var(--font-body);fill:var(--ink);font-size:12px}
+.svgwrap .mut{fill:var(--muted);font-size:11px}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.fstage{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.fstage:first-child{margin-top:0}
+.node{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:9px 12px;font-size:.88rem;line-height:1.45}
+a.node:hover,a.node:focus-visible{border-color:var(--accent)}
+.node b{display:block;font-family:var(--font-display);font-size:.95rem}
+.node.q{border-left-color:var(--c2a);background:var(--c2a-bg)}
+.node.go{border-left-color:var(--c1)}
+.node.go2{border-left-color:var(--c2a)}
+.node.go3{border-left-color:var(--c2b)}
+.node.stop{border-left-color:var(--c3)}
+.node.muted{border-left-color:var(--line);color:var(--muted)}
+.arr{align-self:center;width:2px;height:16px;background:var(--line);position:relative;margin:2px 0 6px}
+.arr::after{content:"";position:absolute;left:-4px;bottom:-5px;border:5px solid transparent;border-top-color:var(--line)}
+.branch{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.branch > div{display:flex;flex-direction:column}
+.lab{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:4px}
+.par{border:1px dashed var(--accent);border-radius:10px;padding:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.par > div{display:flex;flex-direction:column}
+.par-title{font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:6px}
+.navbar{display:flex;align-items:center;gap:8px;max-width:860px;margin:0 auto;padding:8px 16px}
+.navbar .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.iconbtn{flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:.85rem;font-weight:500;color:var(--surface);background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:5px 12px;cursor:pointer}
+.iconbtn.ghost{color:var(--ink);background:var(--surface);border-color:var(--line);padding:5px 9px}
+.iconbtn svg{width:16px;height:16px}
+.searchpanel{max-width:860px;margin:0 auto;padding:0 16px 10px;display:flex;flex-direction:column;gap:8px}
+.searchpanel[hidden]{display:none}
+.searchpanel input{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:10px 12px;width:100%}
+.sresults{max-height:55vh;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.sres{display:block;text-align:left;width:100%;font:inherit;font-size:.86rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer;line-height:1.45}
+.sres:hover,.sres:focus-visible{border-color:var(--accent)}
+.sres small{display:block;font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin-bottom:2px}
+.sres mark,.hit mark{background:var(--c2a-bg);color:var(--ink);border-radius:3px;padding:0 1px}
+.scount{font-size:.8rem;color:var(--muted)}
+.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%,40%{box-shadow:0 0 0 3px var(--c2a);background:var(--c2a-bg)}100%{box-shadow:none}}
+@media (prefers-reduced-motion: reduce){.flash{animation:none;outline:3px solid var(--c2a)}}
+.changed{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 5px;margin-left:6px;vertical-align:2px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:.8rem;color:var(--muted)}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+html.dark .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+footer{padding-bottom:80px}
+@media print{.imhub-bar{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">JAMA Review · 12 Nov 2026 · อิง AHA/ASA 2026</div>
+    <h1>Treatment of Acute Ischemic Stroke</h1>
+    <p class="byline">Albers GW, Heit JJ (Stanford) · doi:10.1001/jama.2026.19482 · สรุปโดยอิง 2026 AHA/ASA Guideline for the Early Management of Patients With AIS (Prabhakaran et al., Stroke 2026)</p>
+    <p class="note">ตัวเลข COR ในหน้านี้มาจาก guideline AHA/ASA 2026 ส่วนที่เขียนว่า "คงจากเดิม" คือค่าปฏิบัติมาตรฐานที่ไม่ได้เปลี่ยนจากฉบับ 2018/2019 ใช้เพื่อทบทวนความรู้ ไม่ได้แทน protocol ของโรงพยาบาล</p>
+  </div>
+</header>
+
+<nav aria-label="หัวข้อ">
+  <div class="navbar">
+    <button type="button" class="iconbtn" id="searchBtn" aria-expanded="false" aria-controls="searchPanel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>ค้นหา</button>
+    <div class="chips">
+      <a href="#overview">ภาพรวม</a>
+      <a href="#flow">Flow</a>
+      <a href="#patho">Pathophysiology</a>
+      <a href="#window">เลือกตามเวลา</a>
+      <a href="#ivt">IVT + คำนวณขนาดยา</a>
+      <a href="#evt">EVT checker</a>
+      <a href="#bp">ความดัน</a>
+      <a href="#dapt">DAPT</a>
+      <a href="#other">อื่นๆ</a>
+      <a href="#sources">อ้างอิง</a>
+    </div>
+    <button type="button" class="iconbtn ghost" id="themeBtn" aria-label="สลับธีมมืด"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+  <div class="searchpanel" id="searchPanel" hidden>
+    <label for="q" class="small">ค้นหาคำในหน้านี้ เช่น ASPECTS, tenecteplase, ความดัน, basilar</label>
+    <input type="search" id="q" placeholder="พิมพ์อย่างน้อย 2 ตัวอักษร" autocomplete="off">
+    <div class="scount" id="scount" aria-live="polite"></div>
+    <div class="sresults" id="sresults"></div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="overview">
+  <h2>ภาพรวมจาก abstract</h2>
+  <div class="stats">
+    <div class="stat"><b>~85%</b><span>ของ stroke ในสหรัฐฯ เป็น ischemic</span></div>
+    <div class="stat"><b>~10%</b><span>absolute ↑ โอกาส functional outcome ดีขึ้นจาก IVT</span></div>
+    <div class="stat"><b>~20%</b><span>absolute ↑ functional independence จาก EVT เทียบ medical Rx</span></div>
+    <div class="stat"><b>24 ชม.</b><span>หน้าต่างสูงสุดของ EVT และ IVT (ในผู้ป่วยคัดเลือก)</span></div>
+  </div>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor na">Dx</span><p>อาการขึ้นกับตำแหน่งสมอง: แขนขาอ่อนแรงเฉียบพลัน, aphasia/พูดไม่ชัด, เสียการทรงตัว, ตามัว, หน้าเบี้ยว ให้ส่ง ED ใกล้สุดเพื่อทำ <b>non-contrast CT</b> ด่วน</p></li>
+      <li><span class="cor c1">COR 1</span><p><b>IVT first-line</b>: tenecteplase หรือ alteplase ภายใน <b>4.5 ชม.</b> ถ้าอาการ <b>disabling</b> ไม่มี ICH และไม่มีข้อห้าม</p></li>
+      <li><span class="cor c2a">2a / 2b</span><p>ขยายถึง <b>9 ชม.</b> และถึง <b>24 ชม.</b> สำหรับ LVO (ICA/M1) ที่ทำ EVT ไม่ได้ ถ้า CTP/MRI พบ salvageable tissue</p></li>
+      <li><span class="cor c1">COR 1</span><p><b>EVT</b> สำหรับ LVO ภายใน 6 ชม. และในผู้ป่วยคัดเลือกถึง 24 ชม. หลัง LKW</p></li>
+      <li><span class="cor c1">ลำดับ</span><p>ให้ IVT ก่อนแล้วตามด้วย EVT (bridging) เว้นแต่มีข้อห้าม IVT อย่ารอดูผล IVT ก่อนตัดสินใจ EVT</p></li>
+    </ul>
+  </div>
+  <div class="legend">
+    <span><span class="cor c1">COR 1</span>แนะนำ (strong)</span>
+    <span><span class="cor c2a">COR 2a</span>สมเหตุสมผล</span>
+    <span><span class="cor c2b">COR 2b</span>อาจพิจารณา</span>
+    <span><span class="cor c3">COR 3</span>ไม่มีประโยชน์ / อันตราย</span>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>Flow: จากสงสัย stroke ถึงการรักษา</h2>
+  <p class="small">แตะกล่องที่มีเส้นขอบเพื่อไปยังรายละเอียด · <span class="cor c1">เขียว</span> COR 1 · <span class="cor c2a">เหลือง</span> 2a · <span class="cor c2b">ส้ม</span> 2b · <span class="cor c3">แดง</span> หยุด/ไม่ให้</p>
+  <div class="card">
+  <div class="flow">
+
+    <div class="fstage">1 · Prehospital</div>
+    <div class="node"><b>สงสัย stroke (BE-FAST)</b>เวลา LKW, เจาะ glucose, stroke scale คัดกรอง LVO, แจ้งโรงพยาบาลล่วงหน้า</div>
+    <div class="arr"></div>
+    <div class="node muted">MSU ถ้ามี (COR 1) · สงสัย LVO และระบบส่งต่อไม่เร็ว ให้ไปรพ.ที่ทำ EVT ได้ใกล้สุด</div>
+    <div class="arr"></div>
+
+    <div class="fstage">2 · ED: Code stroke</div>
+    <div class="node"><b>ประเมินเร็ว</b>ABC, POC glucose (แยก hypoglycemia), NIHSS, น้ำหนัก, BP, ประวัติยา anticoagulant · ECG/troponin ทำได้แต่ห้าม delay</div>
+    <div class="arr"></div>
+    <a class="node" href="#other"><b>NCCT ± CTA head-neck ในรอบเดียว</b>ไม่ต้องรอ creatinine (COR 1) · CTP/MRI เฉพาะรายที่ต้องคัดในหน้าต่างขยาย</a>
+    <div class="arr"></div>
+    <div class="node q"><b>มีเลือดออกในสมองไหม</b></div>
+    <div class="arr"></div>
+    <div class="branch">
+      <div><div class="lab">มี</div><div class="node stop"><b>ICH pathway</b>ไม่ให้ IVT</div></div>
+      <div><div class="lab">ไม่มี</div><div class="node">Ischemic stroke เข้าสู่ 2 track คู่ขนาน</div></div>
+    </div>
+    <div class="arr"></div>
+
+    <div class="fstage">3 · Reperfusion (ทำคู่ขนาน ไม่รอกัน)</div>
+    <div class="par">
+      <div>
+        <div class="par-title">Track A: IV thrombolysis</div>
+        <div class="node q"><b>LKW ≤4.5 ชม.?</b></div>
+        <div class="arr"></div>
+        <div class="branch">
+          <div><div class="lab">≤4.5 ชม.</div>
+            <div class="node q"><b>Disabling deficit?</b>ดูที่ความพิการ ไม่ใช่ NIHSS</div>
+            <div class="arr"></div>
+            <div class="branch">
+              <div><div class="lab">ใช่</div><a class="node go" href="#ivt"><b>IVT</b>BP &lt;185/110 · TNK 0.25 mg/kg หรือ alteplase 0.9 mg/kg</a></div>
+              <div><div class="lab">ไม่</div><a class="node stop" href="#dapt"><b>ไม่ให้ IVT</b>ให้ DAPT แทน</a></div>
+            </div>
+          </div>
+          <div><div class="lab">4.5–24 ชม. / wake-up</div>
+            <div class="node q"><b>Perfusion หรือ DWI-FLAIR mismatch?</b></div>
+            <div class="arr"></div>
+            <a class="node go2" href="#ivt"><b>IVT 4.5–9 ชม.</b>มี salvageable tissue (2a)</a>
+            <div class="arr"></div>
+            <a class="node go3" href="#ivt"><b>IVT 4.5–24 ชม.</b>LVO ที่ทำ EVT ไม่ได้ (2b)</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="par-title">Track B: Endovascular thrombectomy</div>
+        <div class="node q"><b>CTA: มี LVO หรือไม่</b></div>
+        <div class="arr"></div>
+        <div class="branch">
+          <div><div class="lab">ICA / M1</div>
+            <a class="node go" href="#evt"><b>≤6 ชม.</b>NIHSS ≥6, mRS 0–1, ASPECTS 3–10 (1) · ASPECTS 0–2 (2a)</a>
+            <div class="arr"></div>
+            <a class="node go" href="#evt"><b>6–24 ชม.</b>ASPECTS 3–5, อายุ &lt;80 (1) · ASPECTS ≥6 + imaging selection (1)</a>
+          </div>
+          <div><div class="lab">Basilar</div>
+            <a class="node go" href="#evt"><b>≤24 ชม.</b>NIHSS ≥10, PC-ASPECTS ≥6, mRS 0–1 (1)</a>
+          </div>
+          <div><div class="lab">M2 / distal</div>
+            <a class="node go2" href="#evt"><b>M2 dominant ≤6 ชม.</b>(2a) · MeVO ไม่แนะนำ routine</a>
+          </div>
+        </div>
+        <div class="arr"></div>
+        <div class="node muted">ให้ IVT ก่อนแล้วไป angio ทันที ไม่รอดูผล IVT · รพ.ที่ทำ EVT ไม่ได้: ให้ TNK แล้ว drip-and-ship</div>
+      </div>
+    </div>
+    <div class="arr"></div>
+
+    <div class="fstage">4 · หลัง reperfusion (24–72 ชม.)</div>
+    <div class="branch">
+      <a class="node" href="#bp"><b>BP</b>&lt;180/105 ถึง 24 ชม. หลัง IVT · หลัง EVT สำเร็จห้ามกด SBP &lt;140</a>
+      <div class="node"><b>Neuro monitoring</b>NIHSS ถี่ · อาการแย่ลงให้ CT ด่วน (สงสัย sICH)</div>
+      <a class="node" href="#other"><b>Glucose และ dysphagia</b>คุม 140–180 ไม่คุมเข้ม 80–130 · screen กลืนก่อนให้กินทางปาก</a>
+      <div class="node"><b>Imaging ซ้ำ ~24 ชม.</b>ก่อนเริ่ม antithrombotic ในรายที่ได้ IVT</div>
+    </div>
+    <div class="arr"></div>
+
+    <div class="fstage">5 · Stroke unit + secondary prevention</div>
+    <a class="node" href="#patho"><b>หาสาเหตุตาม TOAST</b>Vascular imaging, echo, cardiac monitoring หา AF, lipid, HbA1c</a>
+    <div class="arr"></div>
+    <div class="branch">
+      <a class="node go2" href="#dapt"><b>Minor / atherosclerotic</b>NIHSS ≤5 ภายใน 72 ชม.: DAPT 21 วัน แล้ว SAPT</a>
+      <a class="node go2" href="#other"><b>AF / cardioembolic</b>เริ่ม DOAC เร็วในรายคัดเลือก</a>
+      <div class="node"><b>ทุกราย</b>Statin, คุม BP/DM, carotid revascularization ตามข้อบ่งชี้, rehab</div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section id="patho">
+  <h2>Pathophysiology ที่อธิบายการรักษา</h2>
+  <p class="small">แต่ละหัวข้อมีกล่อง "เชื่อมกับการรักษา" บอกว่ากลไกนั้นอธิบายคำแนะนำข้อไหนใน guideline</p>
+
+  <div class="card">
+    <h3>1. Core กับ penumbra: ระดับ cerebral blood flow</h3>
+    <p>เมื่อหลอดเลือดอุดตัน สมองไม่ได้ตายพร้อมกันทั้งหมด เนื้อสมองแบ่งตามระดับ CBF ที่เหลือ (mL/100 g/min) ตรงกลางคือ <b>ischemic core</b> ที่ตายแล้ว ล้อมด้วย <b>penumbra</b> ที่หยุดทำงานด้านไฟฟ้าแต่ยังมีชีวิต penumbra นี้คือเป้าหมายของ reperfusion</p>
+    <div class="svgwrap">
+      <svg viewBox="0 0 620 120" role="img" aria-label="ระดับ cerebral blood flow: ต่ำกว่า 10 เป็น core, 10 ถึง 20 เป็น penumbra, 20 ถึง 50 เป็น oligemia, 50 ขึ้นไปปกติ">
+        <rect x="10" y="20" width="100" height="40" fill="var(--c3)" rx="4"/>
+        <rect x="110" y="20" width="100" height="40" fill="var(--c2b)"/>
+        <rect x="210" y="20" width="300" height="40" fill="var(--c2a)" opacity=".75"/>
+        <rect x="510" y="20" width="100" height="40" fill="var(--c1)" rx="4"/>
+        <text x="60" y="45" text-anchor="middle" style="fill:#fff;font-weight:600">Core</text>
+        <text x="160" y="45" text-anchor="middle" style="fill:#fff;font-weight:600">Penumbra</text>
+        <text x="360" y="45" text-anchor="middle" style="fill:#fff;font-weight:600">Benign oligemia</text>
+        <text x="560" y="45" text-anchor="middle" style="fill:#fff;font-weight:600">ปกติ</text>
+        <text x="10" y="80" class="mut">0</text>
+        <text x="110" y="80" class="mut" text-anchor="middle">10</text>
+        <text x="210" y="80" class="mut" text-anchor="middle">20</text>
+        <text x="510" y="80" class="mut" text-anchor="middle">50</text>
+        <text x="610" y="80" class="mut" text-anchor="end">60</text>
+        <text x="60" y="104" class="mut" text-anchor="middle">ตายถาวร</text>
+        <text x="160" y="104" class="mut" text-anchor="middle">ฟื้นได้ถ้าเปิดทัน</text>
+        <text x="360" y="104" class="mut" text-anchor="middle">มักไม่ตาย</text>
+        <text x="560" y="104" class="mut" text-anchor="middle">~50–55</text>
+      </svg>
+    </div>
+    <p class="small">ค่าตัดโดยประมาณ ความทนต่อ CBF ต่ำขึ้นกับทั้งระดับและระยะเวลา ยิ่งนานยิ่งตายที่ CBF สูงขึ้น ในการอุดตัน LVO ทั่วไปสูญเสียเซลล์ประสาทราว 1.9 ล้านเซลล์ต่อนาที (Saver, Stroke 2006)</p>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> ประโยชน์ของ IVT/EVT มาจากการช่วย penumbra ไม่ใช่ core จึงต้องรีบ (door-to-needle, ไม่ให้ imaging ทำให้ช้า) และ CTP ใช้แยก core ออกจาก penumbra เพื่อคัดผู้ป่วยในช่วงหน้าต่างขยาย</p>
+  </div>
+
+  <div class="card">
+    <h3>2. Ischemic cascade</h3>
+    <ol class="cascade">
+      <li><p><b>Energy failure:</b> ขาด O<sub>2</sub> และ glucose ทำให้ ATP หมดภายในไม่กี่นาที</p></li>
+      <li><p><b>Na<sup>+</sup>/K<sup>+</sup>-ATPase ล้มเหลว:</b> เกิด anoxic depolarization Na<sup>+</sup> และน้ำเข้าเซลล์ เป็น <b>cytotoxic edema</b></p></li>
+      <li><p><b>Excitotoxicity:</b> หลั่ง glutamate กระตุ้น NMDA/AMPA receptor Ca<sup>2+</sup> ไหลเข้าเซลล์จำนวนมาก</p></li>
+      <li><p><b>Ca<sup>2+</sup> overload:</b> กระตุ้น protease, phospholipase, nNOS เกิด free radicals และ mitochondrial injury</p></li>
+      <li><p><b>Peri-infarct depolarization:</b> คลื่น depolarization ซ้ำๆ ในขอบ penumbra เพิ่มความต้องการพลังงาน ทำให้ core ขยายออก</p></li>
+      <li><p><b>Inflammation และ BBB breakdown:</b> microglia, neutrophil, MMP-9 ทำลาย basal lamina นำไปสู่ vasogenic edema และ hemorrhagic transformation</p></li>
+      <li><p><b>Cell death:</b> necrosis ใน core และ apoptosis ใน penumbra ซึ่งเกิดช้ากว่า</p></li>
+    </ol>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> neuroprotectant ที่ยับยั้งขั้นต่างๆ ล้มเหลวใน trial มนุษย์เกือบทั้งหมด การรักษาที่พิสูจน์แล้วจึงมีแค่ reperfusion</p>
+  </div>
+
+  <div class="card tool">
+    <h3>3. Collaterals: fast กับ slow progressor</h3>
+    <p>อัตราที่ penumbra กลายเป็น core ขึ้นกับ <b>leptomeningeal collaterals</b> collateral ดีทำให้ core โตช้า (slow progressor) จึงยังมี tissue ให้ช่วยได้แม้ผ่านไปหลายชั่วโมง นี่คือแนวคิด <b>tissue clock</b> แทน time clock</p>
+    <div class="field">
+      <span id="progLabel" style="font-size:.85rem;font-weight:500">Collateral status</span>
+      <div class="seg" role="group" aria-labelledby="progLabel">
+        <button type="button" id="progFast" aria-pressed="false">Poor collaterals (fast)</button>
+        <button type="button" id="progSlow" aria-pressed="true">Good collaterals (slow)</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="progT">เวลาหลังอุดตัน: <span id="progTOut">6 ชม.</span></label>
+      <input type="range" id="progT" min="0" max="24" step="1" value="6">
+    </div>
+    <div class="svgwrap">
+      <svg viewBox="0 0 620 70" role="img" aria-label="สัดส่วน core และ penumbra ในเขตเลี้ยงของ MCA" id="progSvg">
+        <rect x="10" y="10" width="600" height="34" rx="6" fill="var(--bg)" stroke="var(--line)"/>
+        <rect id="progCore" x="10" y="10" width="60" height="34" rx="6" fill="var(--c3)"/>
+        <text x="10" y="62" class="mut">0 mL</text>
+        <text x="610" y="62" class="mut" text-anchor="end">เขต MCA ~150 mL</text>
+      </svg>
+    </div>
+    <p id="progText" class="small" aria-live="polite"></p>
+    <p class="small">แผนภาพจำลองเพื่อแสดงแนวคิด ไม่ใช่ข้อมูลจาก trial</p>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> DAWN/DEFUSE-3 พบว่า slow progressor ได้ประโยชน์จาก EVT ถึง 24 ชม. · EXTEND/TRACE-III ใช้ perfusion mismatch ขยาย IVT ถึง 9–24 ชม. · ส่วน large core trials (ASPECTS 3–5) แสดงว่าแม้ core ใหญ่แล้ว การช่วย penumbra ที่เหลือก็ยังลดความพิการได้</p>
+  </div>
+
+  <div class="card">
+    <h3>4. ภาพทางรังสีสะท้อนพยาธิสภาพอย่างไร</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Imaging</th><th>สะท้อนอะไร</th><th>ใช้ทำอะไร</th></tr></thead>
+      <tbody>
+        <tr><td>NCCT early hypodensity</td><td>Net water uptake จาก edema (ยิ่งมืดยิ่ง irreversible)</td><td>ASPECTS ประเมินขนาด core</td></tr>
+        <tr><td>Hyperdense MCA sign</td><td>Thrombus ใน M1</td><td>บอกใบ้ LVO</td></tr>
+        <tr><td>DWI สว่าง</td><td>Cytotoxic edema เห็นได้ในไม่กี่นาที</td><td>ขอบเขต core โดยประมาณ</td></tr>
+        <tr><td>FLAIR สว่าง</td><td>Vasogenic edema มักเห็นหลังราว 3–4.5 ชม.</td><td>DWI+/FLAIR− บ่งว่า onset น่าจะ &lt;4.5 ชม. (WAKE-UP)</td></tr>
+        <tr><td>CTP rCBF &lt;30%</td><td>Core</td><td>ประมาณ core volume</td></tr>
+        <tr><td>CTP Tmax &gt;6 วินาที</td><td>Hypoperfused tissue (core + penumbra)</td><td>Mismatch = Tmax − core</td></tr>
+        <tr><td>CTA multiphase</td><td>Collateral filling</td><td>คาดการณ์ fast/slow progressor</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>5. Cerebral autoregulation และความดัน</h3>
+    <p>สมองปกติคุม CBF ให้คงที่ในช่วง MAP กว้างๆ แต่ในเนื้อสมองขาดเลือด autoregulation เสียไป เลือดที่ไปเลี้ยง penumbra ผ่าน collateral จึงไหลตามความดันโดยตรง (<b>pressure-passive</b>) ความดันสูงขึ้นตอน stroke จึงมักเป็นกลไกชดเชย</p>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> ไม่ลดความดันเร็วในรายที่ไม่ได้ reperfusion (permissive ถึง 220/120) · หลัง EVT การกด SBP &lt;140 ลด perfusion ของ microvasculature ที่ยังเปิดไม่สมบูรณ์และ collateral จึงเป็นอันตราย (COR 3 Harm) · แต่ก่อนและหลัง IVT ต้อง &lt;185/110 และ &lt;180/105 เพราะความดันสูงเพิ่มเลือดออกผ่าน BBB ที่เสียหาย</p>
+  </div>
+
+  <div class="card">
+    <h3>6. Reperfusion injury, hemorrhagic transformation, futile recanalization</h3>
+    <ul class="recs">
+      <li><span class="cor na">HT</span><p>BBB ที่ถูก MMP-9 และ free radical ทำลาย เมื่อเลือดกลับมาไหล อาจเกิด hemorrhagic transformation ความเสี่ยงเพิ่มตาม core ใหญ่, เวลานาน, hyperglycemia, ความดันสูง และยาละลายลิ่มเลือด (tPA เองก็เพิ่ม MMP-9)</p></li>
+      <li><span class="cor na">No-reflow</span><p>เปิดหลอดเลือดใหญ่ได้ (mTICI 2b–3) แต่ microvasculature ยังอุดจาก microthrombi, pericyte หดตัว และเซลล์บวมกด capillary ผลลัพธ์จึงไม่ดีแม้ angiogram สวย</p></li>
+    </ul>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> large core trials มี sICH มากกว่าแต่ประโยชน์สุทธิยังดีกว่า จึงยังแนะนำ EVT · ต้องทำ imaging ซ้ำหลัง IVT (~24 ชม.) ก่อนเริ่ม antithrombotic</p>
+  </div>
+
+  <div class="card">
+    <h3>7. เภสัชวิทยาของ thrombolytics และลักษณะ thrombus</h3>
+    <p>Alteplase และ tenecteplase เป็น tissue plasminogen activator เปลี่ยน plasminogen ที่จับกับ fibrin ให้เป็น <b>plasmin</b> ซึ่งย่อย fibrin ในลิ่มเลือด</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th></th><th>Alteplase</th><th>Tenecteplase</th></tr></thead>
+      <tbody>
+        <tr><td>โครงสร้าง</td><td>Recombinant tPA</td><td>tPA กลายพันธุ์ 3 ตำแหน่ง (T103N, N117Q, KHRR→AAAA)</td></tr>
+        <tr><td>Half-life</td><td class="num">~4–5 นาที</td><td class="num">~20–24 นาที</td></tr>
+        <tr><td>Fibrin specificity</td><td>สูง</td><td>สูงกว่า</td></tr>
+        <tr><td>ทน PAI-1</td><td>น้อย</td><td>มากกว่า (~80 เท่า)</td></tr>
+        <tr><td>การให้</td><td>Bolus + infusion 60 นาที</td><td>Bolus ครั้งเดียว</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><b>Thrombus:</b> ลิ่มที่มี fibrin มากละลายง่ายกว่า ลิ่มที่มี platelet หรือ RBC แน่นและลิ่มยาว (&gt;8 mm) ละลายยาก IVT จึงเปิด ICA/M1 ได้น้อย</p>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> half-life ยาวทำให้ TNK ให้ bolus เดียวได้ เหมาะกับ drip-and-ship และ bridging · LVO ต้องการ EVT เพราะ IVT อย่างเดียวเปิดหลอดเลือดใหญ่ได้ต่ำ · TNK 0.4 mg/kg เพิ่มเลือดออกโดยไม่เพิ่มประโยชน์</p>
+  </div>
+
+  <div class="card">
+    <h3>8. กลไกตาม TOAST กำหนด secondary prevention</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>กลไก</th><th>พยาธิสภาพ</th><th>แนวทาง</th></tr></thead>
+      <tbody>
+        <tr><td>Large artery atherosclerosis</td><td>Plaque rupture → platelet-rich "white" thrombus, artery-to-artery embolism หรือ hypoperfusion</td><td>Antiplatelet, DAPT ระยะสั้น, high-intensity statin, revascularize carotid</td></tr>
+        <tr><td>Cardioembolism</td><td>Stasis (AF, LV thrombus) → fibrin/RBC-rich "red" thrombus มักอุดหลอดใหญ่ อาการเต็มที่ทันที</td><td>Anticoagulation (DOAC เริ่มเร็วได้ในรายคัดเลือก)</td></tr>
+        <tr><td>Small vessel (lacunar)</td><td>Lipohyalinosis / microatheroma ของ penetrating artery จาก HT, DM</td><td>Antiplatelet, คุมความดัน</td></tr>
+        <tr><td>Other determined</td><td>Dissection, vasculitis, hypercoagulable state</td><td>รักษาตามสาเหตุ</td></tr>
+        <tr><td>Undetermined / ESUS</td><td>หาสาเหตุไม่พบหรือพบหลายสาเหตุ</td><td>Antiplatelet, ตรวจหา AF ต่อ</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> ความเสี่ยง recurrent stroke สูงสุดในไม่กี่วันแรกหลัง minor stroke/TIA จาก unstable plaque ส่วนความเสี่ยงเลือดออกจาก DAPT สะสมตามเวลา จึงใช้ DAPT แค่ 21 วัน และจำกัดเฉพาะกลุ่มที่น่าจะเป็น atherosclerotic</p>
+  </div>
+
+  <div class="card">
+    <h3>9. Glucose</h3>
+    <p>Hyperglycemia ในเนื้อสมองขาดเลือดเร่ง anaerobic glycolysis เกิด lactic acidosis ทำให้ penumbra ตายเร็วขึ้น และเพิ่ม BBB damage กับ hemorrhagic transformation ส่วน hypoglycemia เองทำให้เกิด focal deficit เลียนแบบ stroke ได้</p>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> เจาะ glucose ก่อน IVT ทุกราย · แม้ hyperglycemia เป็นอันตราย แต่การคุมเข้ม 80–130 mg/dL ด้วย IV insulin ไม่ช่วยและเพิ่ม hypoglycemia (SHINE) จึงเป็น COR 3</p>
+  </div>
+
+  <div class="card">
+    <h3>10. Vascular syndromes ช่วยระบุตำแหน่ง</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>หลอดเลือด</th><th>อาการเด่น</th></tr></thead>
+      <tbody>
+        <tr><td>MCA (M1)</td><td>Contralateral hemiparesis หน้า/แขน &gt; ขา, hemisensory loss, gaze deviation ไปข้างรอยโรค, homonymous hemianopia · dominant: aphasia · non-dominant: neglect</td></tr>
+        <tr><td>ACA</td><td>ขาอ่อนแรง &gt; แขน, abulia, urinary incontinence</td></tr>
+        <tr><td>PCA</td><td>Contralateral homonymous hemianopia, alexia without agraphia (dominant), thalamic sensory loss</td></tr>
+        <tr><td>Basilar</td><td>ซึม/โคม่า, quadriparesis, ophthalmoplegia, dysarthria, locked-in · อาจขึ้นลงก่อนอุดเต็ม</td></tr>
+        <tr><td>Lacunar</td><td>Pure motor, pure sensory, ataxic hemiparesis, dysarthria-clumsy hand · ไม่มี cortical sign</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="why"><b>เชื่อมกับการรักษา:</b> NIHSS ให้น้ำหนักกับ anterior circulation มากกว่า posterior จึงประเมิน disability ต่ำไปได้ guideline 2026 จึงให้ตัดสิน IVT จาก disabling deficit ไม่ใช่ตัวเลข NIHSS</p>
+  </div>
+</section>
+
+<section id="window">
+  <h2>ทำอะไรได้บ้าง ณ เวลานี้</h2>
+  <div class="card tool">
+    <div class="field">
+      <label for="lkw">เวลาตั้งแต่ last known well (LKW)</label>
+      <div class="lkw" id="lkwOut">3.0 ชม.</div>
+      <input type="range" id="lkw" min="0" max="24" step="0.5" value="3">
+    </div>
+    <div class="field">
+      <span id="lvoLabel" style="font-size:.85rem;font-weight:500">CTA พบ LVO (ICA/M1) หรือไม่</span>
+      <div class="seg" role="group" aria-labelledby="lvoLabel">
+        <button type="button" id="lvoYes" aria-pressed="true">มี LVO</button>
+        <button type="button" id="lvoNo" aria-pressed="false">ไม่มี / ยังไม่ทราบ</button>
+      </div>
+    </div>
+    <div class="opts" id="windowOpts"></div>
+  </div>
+</section>
+
+<section id="ivt">
+  <h2>IV thrombolysis <span class="changed">ใหม่ 2026</span></h2>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor c1">COR 1</span><p><b>Tenecteplase 0.25 mg/kg (max 25 mg)</b> หรือ <b>alteplase 0.9 mg/kg (max 90 mg)</b> ภายใน 4.5 ชม. ทั้งสองตัวแนะนำเท่ากัน TNK ให้ bolus ครั้งเดียว สะดวกกว่าสำหรับ drip-and-ship และ bridging</p></li>
+      <li><span class="cor c3">COR 3</span><p>TNK <b>0.4 mg/kg</b> ไม่แนะนำ ไม่ได้ดีกว่าและอาจเกิดอันตราย</p></li>
+      <li><span class="cor c1">COR 1</span><p>อาการ <b>disabling</b> ให้ IVT เร็วที่สุด <b>ไม่ว่า NIHSS เท่าไร</b> และไม่ต้องรอ advanced imaging ในช่วง 4.5 ชม. (เช่น isolated aphasia, hemianopia, เสียมือข้างถนัด)</p></li>
+      <li><span class="cor c3">COR 3</span><p>อาการ <b>non-disabling</b> (เช่น isolated sensory) ใน 4.5 ชม.: IVT ไม่มีประโยชน์ ให้ <b>DAPT</b> แทน</p></li>
+      <li><span class="cor c2a">COR 2a</span><p><b>4.5–9 ชม.</b> หรือ wake-up stroke ภายใน 9 ชม. จาก midpoint of sleep ถ้า automated perfusion พบ salvageable penumbra (EXTEND, TRACE-III) หรือ DWI-FLAIR mismatch ใน unknown onset</p></li>
+      <li><span class="cor c2b">COR 2b</span><p><b>4.5–24 ชม.</b> ใน LVO ที่ทำ EVT ไม่ได้ และมี salvageable tissue (TRACE-III; TIMELESS เป็นกลาง)</p></li>
+      <li><span class="cor na">ข้อห้าม</span><p>ปรับแนวทางข้อห้ามใหม่: ประวัติ ICH เก่า, ได้ DOAC, stroke ภายใน 3 เดือน เปลี่ยนเป็น <b>relative</b> ให้ชั่งประโยชน์/ความเสี่ยงรายบุคคล (ตามบทสรุปรองของ guideline)</p></li>
+    </ul>
+  </div>
+
+  <div class="card tool">
+    <h3>คำนวณขนาดยา</h3>
+    <div class="field" style="max-width:220px">
+      <label for="wt">น้ำหนักผู้ป่วย (kg)</label>
+      <input type="number" id="wt" min="20" max="200" step="1" value="60" inputmode="decimal">
+    </div>
+    <div class="dose">
+      <div class="dosebox">
+        <div class="small">Tenecteplase 0.25 mg/kg</div>
+        <div class="big" id="tnkDose">15.0 mg</div>
+        <div class="row"><span>ปริมาตร (5 mg/mL)</span><span id="tnkVol">3.0 mL</span></div>
+        <div class="row"><span>วิธีให้</span><span>IV bolus 5–10 วินาที</span></div>
+      </div>
+      <div class="dosebox">
+        <div class="small">Alteplase 0.9 mg/kg</div>
+        <div class="big" id="rtpaDose">54.0 mg</div>
+        <div class="row"><span>Bolus 10% ใน 1 นาที</span><span id="rtpaBolus">5.4 mg</span></div>
+        <div class="row"><span>Infuse 90% ใน 60 นาที</span><span id="rtpaInf">48.6 mg</span></div>
+      </div>
+    </div>
+    <p class="small" id="capNote">ความเข้มข้น alteplase หลังผสม 1 mg/mL, TNK 5 mg/mL ตรวจสอบกับฉลากยาของโรงพยาบาลทุกครั้ง</p>
+  </div>
+</section>
+
+<section id="evt">
+  <h2>Endovascular thrombectomy <span class="changed">ขยายใหม่</span></h2>
+  <div class="card tool">
+    <h3>EVT eligibility checker</h3>
+    <div class="grid2">
+      <div class="field"><label for="vessel">ตำแหน่ง occlusion</label>
+        <select id="vessel">
+          <option value="ant">ICA / M1 (anterior LVO)</option>
+          <option value="m2">M2 dominant proximal</option>
+          <option value="mevo">Medium/distal vessel (non-dominant M2, M3, ACA, PCA)</option>
+          <option value="ba">Basilar artery</option>
+        </select></div>
+      <div class="field"><label for="hrs">เวลาจาก LKW (ชม.)</label><input type="number" id="hrs" min="0" max="48" step="0.5" value="8"></div>
+      <div class="field"><label for="nihss">NIHSS</label><input type="number" id="nihss" min="0" max="42" step="1" value="16"></div>
+      <div class="field"><label for="mrs">Prestroke mRS</label>
+        <select id="mrs"><option value="0">0–1</option><option value="2">2</option><option value="3">≥3</option></select></div>
+      <div class="field" id="aspWrap"><label for="asp">ASPECTS (CT)</label><input type="number" id="asp" min="0" max="10" step="1" value="4"></div>
+      <div class="field" id="pcaWrap" hidden><label for="pcasp">PC-ASPECTS</label><input type="number" id="pcasp" min="0" max="10" step="1" value="8"></div>
+      <div class="field"><label for="age">อายุ (ปี)</label><input type="number" id="age" min="18" max="110" step="1" value="68"></div>
+      <div class="field"><label for="mass">Significant mass effect</label>
+        <select id="mass"><option value="no">ไม่มี</option><option value="yes">มี</option></select></div>
+    </div>
+    <div class="result" id="evtResult" aria-live="polite"></div>
+  </div>
+
+  <div class="card">
+    <h3>เกณฑ์หลัก (adult)</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>กลุ่ม</th><th>เกณฑ์</th><th>COR</th></tr></thead>
+      <tbody>
+        <tr><td>ICA/M1 ≤6 ชม.</td><td>NIHSS ≥6, mRS 0–1, ASPECTS 3–10</td><td><span class="cor c1">1</span></td></tr>
+        <tr><td>ICA/M1 ≤6 ชม. large core</td><td>ASPECTS 0–2, อายุ &lt;80, NIHSS ≥6, mRS 0–1, ไม่มี mass effect</td><td><span class="cor c2a">2a</span></td></tr>
+        <tr><td>ICA/M1 6–24 ชม. large core</td><td>ASPECTS 3–5, อายุ &lt;80, NIHSS ≥6, mRS 0–1, ไม่มี mass effect</td><td><span class="cor c1">1</span></td></tr>
+        <tr><td>ICA/M1 6–24 ชม. core เล็ก</td><td>ASPECTS ≥6 + imaging selection (แนว DAWN/DEFUSE-3)</td><td><span class="cor c1">1</span></td></tr>
+        <tr><td>Prestroke mRS 2</td><td>ICA/M1 ≤6 ชม., NIHSS ≥6, ASPECTS ≥6</td><td><span class="cor c2a">2a</span></td></tr>
+        <tr><td>M2 dominant proximal</td><td>≤6 ชม., NIHSS ≥6, ASPECTS ≥6, mRS 0–1 (ประโยชน์ยังไม่แน่นอน)</td><td><span class="cor c2a">2a</span></td></tr>
+        <tr><td>Basilar</td><td>≤24 ชม., mRS 0–1, NIHSS ≥10, PC-ASPECTS ≥6 (ATTENTION, BAOCHE)</td><td><span class="cor c1">1</span></td></tr>
+        <tr><td>Basilar NIHSS 6–9</td><td>ประโยชน์ยังไม่ชัด แม้ PC-ASPECTS ดี</td><td><span class="cor c2b">2b</span></td></tr>
+        <tr><td>Tirofiban ก่อน EVT</td><td>ไม่ช่วย 90-day outcome</td><td><span class="cor c3">3</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">Large core trials: RESCUE-Japan LIMIT, SELECT2, ANGEL-ASPECT, TENSION, LASTE · Medium/distal vessel: ESCAPE-MeVO และ DISTAL ไม่พบประโยชน์ของ EVT</p>
+  </div>
+</section>
+
+<section id="bp">
+  <h2>ความดันโลหิต</h2>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor na">คงจากเดิม</span><p>ก่อนให้ IVT/EVT: <b>&lt;185/110</b> mmHg · ระหว่างและ 24 ชม. หลัง IVT: <b>&lt;180/105</b></p></li>
+      <li><span class="cor c3">COR 3</span><p>หลัง IVT การลด SBP แบบ intensive <b>&lt;140</b> (เทียบ &lt;180) <b>ไม่ช่วย</b> functional outcome</p></li>
+      <li><span class="cor c3">COR 3 Harm</span><p>หลัง EVT สำเร็จ (mTICI 2b–3) ใน anterior LVO: เป้า SBP <b>&lt;140 ใน 72 ชม.แรก เป็นอันตราย</b> (ENCHANTED2/MT, OPTIMAL-BP, BP-TARGET)</p></li>
+      <li><span class="cor na">คงจากเดิม</span><p>ไม่ได้ reperfusion: permissive hypertension ถึง 220/120 ได้ ถ้าไม่มีข้อบ่งชี้อื่นให้ลด</p></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>ยาลดความดันที่ใช้บ่อย</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>ยา</th><th>ขนาด</th></tr></thead>
+      <tbody>
+        <tr><td>Labetalol</td><td>10–20 mg IV ใน 1–2 นาที ซ้ำได้ 1 ครั้ง หรือต่อ infusion 2–8 mg/min</td></tr>
+        <tr><td>Nicardipine</td><td>5 mg/h IV, titrate ทีละ 2.5 mg/h ทุก 5–15 นาที (max 15 mg/h)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section id="dapt">
+  <h2>Antiplatelet / DAPT <span class="changed">ขยายเกณฑ์</span></h2>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor c2a">COR 2a</span><p><b>Minor noncardioembolic AIS (NIHSS ≤5)</b> หรือ <b>high-risk TIA (ABCD2 ≥4)</b> ที่มาภายใน <b>24–72 ชม.</b> หรือ NIHSS 4–5 ภายใน 24 ชม. ที่ไม่ได้ IVT และน่าจะเป็น atherosclerotic: <b>clopidogrel + aspirin 21 วัน</b> แล้วต่อ SAPT (INSPIRES)</p></li>
+      <li><span class="cor c1">คงจากเดิม</span><p>NIHSS ≤3 หรือ high-risk TIA ภายใน 24 ชม.: DAPT 21 วัน (CHANCE, POINT)</p></li>
+      <li><span class="cor c1">COR 1</span><p>Non-disabling deficit ในช่วง 4.5 ชม.: เลือก DAPT แทน IVT</p></li>
+    </ul>
+    <p class="small">ขนาดยาตาม trial: clopidogrel loading 300 mg แล้ว 75 mg/วัน + aspirin loading 75–300 mg แล้ว 75–100 mg/วัน หลังให้ IVT ให้ทำ imaging ซ้ำก่อนเริ่ม antithrombotic (ปกติราว 24 ชม.)</p>
+  </div>
+</section>
+
+<section id="other">
+  <h2>ประเด็นอื่นที่ควรรู้</h2>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor c1">COR 1</span><p>CTA/CTP <b>ไม่ต้องรอ creatinine</b> ใน suspected LVO และทำ brain + vascular imaging ให้เร็วที่สุดถ้า LKW ≤24 ชม.</p></li>
+      <li><span class="cor c1">COR 1</span><p>ECG และ troponin baseline แนะนำ แต่ห้ามทำให้ IVT/EVT ช้า</p></li>
+      <li><span class="cor c3">COR 3</span><p>IV insulin เป้า glucose <b>80–130 mg/dL</b> ไม่ช่วย outcome และเพิ่ม severe hypoglycemia (SHINE) · ทั่วไปคุม 140–180 (คงจากเดิม)</p></li>
+      <li><span class="cor c2a">COR 2a</span><p>AF: เริ่ม <b>DOAC เร็ว</b> ในผู้ป่วยคัดเลือก (เช่น stroke ไม่รุนแรง) สมเหตุสมผลและความเสี่ยงต่ำ (ELAN, OPTIMAS)</p></li>
+      <li><span class="cor c1">COR 1</span><p><b>Mobile stroke unit</b> ช่วยให้ได้ IVT เร็วขึ้น · ถ้าระบบส่งต่อไม่เร็ว ให้ส่งตรงไปรพ.ที่ทำ EVT ได้ที่ใกล้ที่สุด</p></li>
+      <li><span class="cor na">ใหม่</span><p>มีคำแนะนำ <b>pediatric stroke</b> ครั้งแรก: EVT ในเด็ก ≥6 ปี (2a), &lt;6 ปีในรายคัดเลือก (2b); alteplase ในเด็กปลอดภัยแต่ efficacy ยังไม่ชัด</p></li>
+      <li><span class="cor na">ใหม่</span><p>เพิ่มแนวทาง dysphagia screening และการจัดการ hyperglycemia</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>แหล่งอ้างอิง</h2>
+  <div class="card">
+    <ul class="recs">
+      <li><span class="cor na">JAMA</span><p><a href="https://jamanetwork.com/journals/jama/article-abstract/2856706">Albers GW, Heit JJ. Treatment of Acute Ischemic Stroke: A Review. JAMA 2026</a> (อ่านได้เฉพาะ abstract)</p></li>
+      <li><span class="cor na">AHA</span><p><a href="https://pubmed.ncbi.nlm.nih.gov/41582814/">Prabhakaran S, et al. 2026 AHA/ASA Guideline for the Early Management of AIS. Stroke 2026</a></p></li>
+      <li><span class="cor na">AHA</span><p><a href="https://professional.heart.org/en/science-news/2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke/top-things-to-know">Top Things to Know (AHA)</a></p></li>
+      <li><span class="cor na">สรุป</span><p><a href="https://www.emdocs.net/2026-guideline-update-early-management-of-acute-ischemic-stroke">emDocs: 2026 Guideline Update</a> · <a href="https://evtoday.com/articles/2026-june/new-ahaasa-stroke-guideline-and-the-practical-impact-for-neurointerventionalists">Endovascular Today</a> · <a href="https://dig.pharmacy.uic.edu/faqs/2026-2/april-2026-faqs/update-what-are-major-pharmacotherapy-updates-from-the-2026-aha-asa-stroke-guidelines/">UIC Drug Info: pharmacotherapy updates</a></p></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">สรุปเพื่อการเรียนอายุรศาสตร์ · ตรวจสอบกับ guideline ฉบับเต็มและ protocol ของโรงพยาบาลก่อนใช้จริง</div></footer>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const fmt = n => (Math.round(n*10)/10).toFixed(1);
+
+  // ---- Theme (light by default)
+  const root = document.documentElement;
+  try { if (localStorage.getItem('medisuem-theme') === 'dark') root.classList.add('dark'); } catch(e){}
+  $('themeBtn').addEventListener('click', () => {
+    root.classList.toggle('dark');
+    const d = root.classList.contains('dark');
+    $('themeBtn').setAttribute('aria-label', d ? 'สลับธีมสว่าง' : 'สลับธีมมืด');
+    try { localStorage.setItem('medisuem-theme', d ? 'dark' : 'light'); } catch(e){}
+  });
+
+  // ---- Search
+  const esc = t => t.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const targets = Array.from(document.querySelectorAll('main ul.recs li, main tbody tr, main .node, main .cascade li, main .card > p, main .card > h3, main .stat, main section > h2'))
+    .map(el => ({el, text: el.textContent.replace(/\s+/g,' ').trim(), sec: (el.closest('section') && el.closest('section').querySelector('h2')) ? el.closest('section').querySelector('h2').childNodes[0].textContent.trim() : ''}))
+    .filter(t => t.text.length > 1);
+  function snippet(text, q){
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    const s0 = Math.max(0, i - 40), e0 = Math.min(text.length, i + q.length + 70);
+    const pre = (s0 > 0 ? '…' : '') + esc(text.slice(s0, i));
+    return pre + '<mark>' + esc(text.slice(i, i + q.length)) + '</mark>' + esc(text.slice(i + q.length, e0)) + (e0 < text.length ? '…' : '');
+  }
+  function runSearch(){
+    const q = $('q').value.trim();
+    const box = $('sresults');
+    if (q.length < 2){ box.innerHTML = ''; $('scount').textContent = ''; return; }
+    const hits = targets.filter(t => t.text.toLowerCase().includes(q.toLowerCase()));
+    $('scount').textContent = hits.length ? `พบ ${hits.length} รายการ` : 'ไม่พบคำนี้ ลองคำภาษาอังกฤษหรือคำย่อ เช่น EVT, IVT, BP';
+    box.innerHTML = '';
+    hits.slice(0, 40).forEach(h => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'sres';
+      b.innerHTML = `<small>${esc(h.sec)}</small>${snippet(h.text, q)}`;
+      b.addEventListener('click', () => {
+        closeSearch();
+        h.el.scrollIntoView({block:'center'});
+        h.el.classList.remove('flash'); void h.el.offsetWidth; h.el.classList.add('flash');
+      });
+      box.appendChild(b);
+    });
+  }
+  function openSearch(){ $('searchPanel').hidden = false; $('searchBtn').setAttribute('aria-expanded','true'); $('q').focus(); }
+  function closeSearch(){ $('searchPanel').hidden = true; $('searchBtn').setAttribute('aria-expanded','false'); }
+  $('searchBtn').addEventListener('click', () => $('searchPanel').hidden ? openSearch() : closeSearch());
+  $('q').addEventListener('input', runSearch);
+  $('q').addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeSearch();
+    if (e.key === 'Enter'){ const f = $('sresults').querySelector('.sres'); if (f) f.click(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'SELECT'){ e.preventDefault(); openSearch(); }
+  });
+
+  // ---- Time-window tool
+  let lvo = true;
+  function windowOptions(h, hasLvo){
+    const o = [];
+    if (h <= 4.5) o.push(['c1','IVT (TNK หรือ alteplase)','ถ้าอาการ disabling ไม่ต้องรอ CTP · non-disabling ให้ DAPT แทน']);
+    else if (h <= 9) o.push(['c2a','IVT ช่วงขยาย 4.5–9 ชม.','ต้องมี salvageable penumbra บน automated perfusion หรือ DWI-FLAIR mismatch']);
+    if (hasLvo && h > 4.5 && h <= 24) o.push(['c2b','IVT 4.5–24 ชม. (เฉพาะเมื่อทำ EVT ไม่ได้)','LVO ICA/M1 + salvageable tissue บน CTP/MRI']);
+    if (hasLvo && h <= 6) o.push(['c1','EVT (bridging หลัง IVT)','ICA/M1, NIHSS ≥6, mRS 0–1, ASPECTS 3–10 · ASPECTS 0–2 เป็น 2a']);
+    else if (hasLvo && h <= 24) o.push(['c1','EVT ในผู้ป่วยคัดเลือก','ASPECTS 3–5 (อายุ <80, ไม่มี mass effect) หรือ ASPECTS ≥6 + imaging selection · basilar ≤24 ชม. NIHSS ≥10']);
+    if (!hasLvo && h > 9) o.push(['na','ไม่มี reperfusion therapy ตามเวลา','ให้ antiplatelet (DAPT ถ้าเข้าเกณฑ์ minor stroke ≤72 ชม.), stroke unit care, secondary prevention']);
+    if (h > 24) o.length = 0, o.push(['na','เกิน 24 ชม.','ไม่มีข้อบ่งชี้ IVT/EVT ตาม guideline · medical management']);
+    if (!hasLvo && h <= 9) o.push(['na','ทำ CTA ทุกรายที่สงสัย LVO','ไม่ต้องรอ creatinine (COR 1)']);
+    return o;
+  }
+  function renderWindow(){
+    const h = parseFloat($('lkw').value);
+    $('lkwOut').textContent = fmt(h) + ' ชม.';
+    $('windowOpts').innerHTML = windowOptions(h, lvo).map(([c,t,d]) =>
+      `<div class="opt ${c}"><strong>${t}</strong><span class="small">${d}</span></div>`).join('');
+  }
+  $('lkw').addEventListener('input', renderWindow);
+  $('lvoYes').addEventListener('click', () => { lvo = true; $('lvoYes').setAttribute('aria-pressed','true'); $('lvoNo').setAttribute('aria-pressed','false'); renderWindow(); });
+  $('lvoNo').addEventListener('click', () => { lvo = false; $('lvoNo').setAttribute('aria-pressed','true'); $('lvoYes').setAttribute('aria-pressed','false'); renderWindow(); });
+  renderWindow();
+
+  // ---- Collateral / progressor illustration
+  let fast = false;
+  function coreVol(t, isFast){
+    const territory = 150;
+    if (isFast) return Math.min(territory, 10 + 140 * (t / 6));
+    return Math.min(territory, 10 + 45 * (1 - Math.exp(-t / 10)));
+  }
+  function renderProg(){
+    const t = parseInt($('progT').value, 10);
+    $('progTOut').textContent = t + ' ชม.';
+    const c = coreVol(t, fast), pen = 150 - c;
+    $('progCore').setAttribute('width', Math.max(4, c / 150 * 600));
+    $('progText').textContent = `Core ≈ ${Math.round(c)} mL · penumbra ที่ยังช่วยได้ ≈ ${Math.round(pen)} mL · ` +
+      (pen > 40 ? 'ยังมี tissue คุ้มค่าที่จะ reperfuse' : 'penumbra เหลือน้อย ประโยชน์จาก reperfusion ลดลง');
+  }
+  $('progT').addEventListener('input', renderProg);
+  $('progFast').addEventListener('click', () => { fast = true; $('progFast').setAttribute('aria-pressed','true'); $('progSlow').setAttribute('aria-pressed','false'); renderProg(); });
+  $('progSlow').addEventListener('click', () => { fast = false; $('progSlow').setAttribute('aria-pressed','true'); $('progFast').setAttribute('aria-pressed','false'); renderProg(); });
+  renderProg();
+
+  // ---- Dose calculator
+  function renderDose(){
+    const w = parseFloat($('wt').value);
+    if (!(w > 0)) { ['tnkDose','tnkVol','rtpaDose','rtpaBolus','rtpaInf'].forEach(i => $(i).textContent = '–'); return; }
+    const tnk = Math.min(0.25*w, 25), rtpa = Math.min(0.9*w, 90);
+    $('tnkDose').textContent = fmt(tnk) + ' mg';
+    $('tnkVol').textContent = fmt(tnk/5) + ' mL';
+    $('rtpaDose').textContent = fmt(rtpa) + ' mg';
+    $('rtpaBolus').textContent = fmt(rtpa*0.1) + ' mg';
+    $('rtpaInf').textContent = fmt(rtpa*0.9) + ' mg';
+    const capped = (0.25*w > 25) || (0.9*w > 90);
+    $('capNote').textContent = (capped ? 'น้ำหนัก ≥100 kg ใช้ขนาดสูงสุด (TNK 25 mg, alteplase 90 mg) · ' : '') +
+      'ความเข้มข้น alteplase หลังผสม 1 mg/mL, TNK 5 mg/mL ตรวจสอบกับฉลากยาของโรงพยาบาลทุกครั้ง';
+  }
+  $('wt').addEventListener('input', renderDose);
+  renderDose();
+
+  // ---- EVT checker (pure function)
+  function evtCheck(p){
+    const {vessel,h,nihss,mrs,asp,pcasp,age,mass} = p;
+    if (vessel === 'mevo') return ['c3','ไม่แนะนำ EVT แบบ routine','Medium/distal vessel occlusion: ESCAPE-MeVO และ DISTAL ไม่พบประโยชน์ ให้ medical therapy ± IVT'];
+    if (h > 24) return ['na','เกิน 24 ชม.','อยู่นอกหน้าต่างที่มีหลักฐาน'];
+    if (vessel === 'ba'){
+      if (mrs !== 0) return ['na','ไม่เข้าเกณฑ์ชัดเจน','Basilar criteria ใช้ prestroke mRS 0–1 · พิจารณารายบุคคล'];
+      if (pcasp < 6) return ['na','ไม่เข้าเกณฑ์ชัดเจน','PC-ASPECTS <6 ไม่อยู่ในเกณฑ์ guideline'];
+      if (nihss >= 10) return ['c1','EVT แนะนำ (COR 1)','Basilar ≤24 ชม., mRS 0–1, NIHSS ≥10, PC-ASPECTS ≥6'];
+      if (nihss >= 6) return ['c2b','ประโยชน์ยังไม่ชัด (COR 2b)','Basilar NIHSS 6–9 ยังไม่มีหลักฐานพอ แม้ PC-ASPECTS ดี'];
+      return ['na','ไม่เข้าเกณฑ์','NIHSS <6 ใน basilar occlusion · พิจารณารายบุคคล'];
+    }
+    if (nihss < 6) return ['na','ไม่เข้าเกณฑ์มาตรฐาน','NIHSS <6: ประโยชน์ของ EVT ยังเป็น knowledge gap · ปรึกษา neurointervention'];
+    if (vessel === 'm2'){
+      if (h <= 6 && asp >= 6 && mrs === 0) return ['c2a','EVT สมเหตุสมผล (COR 2a)','M2 dominant proximal ≤6 ชม., NIHSS ≥6, ASPECTS ≥6, mRS 0–1 · ประโยชน์ยังไม่แน่นอน'];
+      return ['na','ไม่เข้าเกณฑ์','M2 มีหลักฐานเฉพาะ ≤6 ชม., ASPECTS ≥6, mRS 0–1'];
+    }
+    // ICA / M1
+    if (mrs === 3) return ['na','ไม่เข้าเกณฑ์','Prestroke mRS ≥3 ไม่อยู่ในเกณฑ์ guideline'];
+    if (mrs === 2){
+      if (h <= 6 && asp >= 6) return ['c2a','EVT สมเหตุสมผล (COR 2a)','Prestroke mRS 2, ≤6 ชม., NIHSS ≥6, ASPECTS ≥6'];
+      return ['na','ไม่เข้าเกณฑ์','Prestroke mRS 2 มีหลักฐานเฉพาะ ≤6 ชม. และ ASPECTS ≥6'];
+    }
+    if (h <= 6){
+      if (asp >= 3) return ['c1','EVT แนะนำ (COR 1)','ICA/M1 ≤6 ชม., NIHSS ≥6, mRS 0–1, ASPECTS 3–10 · ให้ IVT ก่อนถ้าไม่มีข้อห้าม'];
+      if (age < 80 && mass === 'no') return ['c2a','EVT สมเหตุสมผล (COR 2a)','Large core ASPECTS 0–2, ≤6 ชม., อายุ <80, ไม่มี mass effect'];
+      return ['na','ไม่เข้าเกณฑ์','ASPECTS 0–2 ต้องอายุ <80 และไม่มี significant mass effect'];
+    }
+    if (asp >= 6) return ['c1','EVT แนะนำในผู้ป่วยคัดเลือก (COR 1)','6–24 ชม., ASPECTS ≥6: ใช้ imaging selection (clinical-core / perfusion mismatch แนว DAWN/DEFUSE-3)'];
+    if (asp >= 3){
+      if (age < 80 && mass === 'no') return ['c1','EVT แนะนำ (COR 1)','Large core ASPECTS 3–5, 6–24 ชม., อายุ <80, NIHSS ≥6, mRS 0–1, ไม่มี mass effect'];
+      return ['na','ไม่เข้าเกณฑ์','ASPECTS 3–5 ช่วง 6–24 ชม. ต้องอายุ <80 และไม่มี significant mass effect'];
+    }
+    return ['na','ไม่เข้าเกณฑ์','ASPECTS 0–2 ช่วง 6–24 ชม. ยังไม่มีหลักฐานพอ'];
+  }
+  const ids = ['vessel','hrs','nihss','mrs','asp','pcasp','age','mass'];
+  function renderEvt(){
+    const v = $('vessel').value;
+    $('aspWrap').hidden = (v === 'ba');
+    $('pcaWrap').hidden = (v !== 'ba');
+    const num = id => { const x = parseFloat($(id).value); return isNaN(x) ? 0 : x; };
+    const [c,t,d] = evtCheck({vessel:v,h:num('hrs'),nihss:num('nihss'),mrs:parseInt($('mrs').value,10),asp:num('asp'),pcasp:num('pcasp'),age:num('age'),mass:$('mass').value});
+    const r = $('evtResult');
+    r.className = 'result ' + c;
+    r.innerHTML = `<b>${t}</b><p>${d}</p>`;
+  }
+  ids.forEach(i => { $(i).addEventListener('input', renderEvt); $(i).addEventListener('change', renderEvt); });
+  renderEvt();
+})();
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>

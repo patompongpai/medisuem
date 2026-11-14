@@ -15,6 +15,7 @@
   --sys-gi:#9A6512; --sys-gi-soft:#F8ECD6;
   --sys-rheum:#3A4A9E; --sys-rheum-soft:#E3E6F5;
   --sys-endo:#6A2E8F; --sys-endo-soft:#EEE4F5;
+  --sys-neuro:#0F6E84; --sys-neuro-soft:#DCEFF3;
   --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
   --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -30,6 +31,7 @@
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
+  --sys-neuro:#6CC6DC; --sys-neuro-soft:#14323A;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -43,6 +45,7 @@
   --sys-gi:#E8B266; --sys-gi-soft:#38290F;
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
+  --sys-neuro:#6CC6DC; --sys-neuro-soft:#14323A;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -130,7 +133,8 @@ const SYSTEMS = {
   gi:{name:"ทางเดินอาหารและตับ", c:"--sys-gi"},
   rheum:{name:"โรคข้อและรูมาติสซั่ม", c:"--sys-rheum"},
   id:{name:"โรคติดเชื้อและภาวะวิกฤต", c:"--sys-id"},
-  pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"}
+  pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"},
+  neuro:{name:"ระบบประสาท", c:"--sys-neuro"}
 };
 const LESSONS = [
   {href:"htn/index.html", sys:"cardio", y:"2567", t:"ความดันโลหิตสูง 2567",
@@ -204,6 +208,9 @@ const LESSONS = [
   {href:"dhf/index.html", sys:"id", y:"2566", t:"DHF Ward 2566",
    d:"ดูแลผู้ป่วยไข้เลือดออกบนวอร์ด การให้สารน้ำในระยะวิกฤต อ้างอิง CPG ผู้ใหญ่ 2566 และเด็ก 2567 พร้อมเอกสารฉบับเต็ม",
    tags:["เครื่องมือวอร์ด","สารน้ำ","PDF"], k:"dengue dhf ไข้เลือดออก fluid hct"},
+  {href:"stroke/index.html", sys:"neuro", y:"2026", t:"Acute Ischemic Stroke · AHA/ASA 2026",
+   d:"สรุป JAMA Review 2026 (Albers & Heit) ตาม AHA/ASA 2026 flow จากวินิจฉัยถึงการรักษา pathophysiology ที่เชื่อมกับคำแนะนำ คำนวณขนาด TNK/alteplase ตัวช่วยเลือกตามเวลา LKW และ EVT checker",
+   tags:["Flow","EVT checker","คำนวณยา"], k:"stroke ischemic ais หลอดเลือดสมอง อัมพาต ivt tnk tenecteplase alteplase rtpa evt thrombectomy lvo aspects nihss basilar penumbra dapt"},
   {href:"inhaler/index.html", sys:"pulm", y:"Rx", yl:"ยาพ่น", t:"คู่มือยาพ่น Asthma–COPD",
    d:"เลือกอุปกรณ์ยาพ่นให้เหมาะกับผู้ป่วย หลักการ inspiratory flow และวิธีใช้แต่ละอุปกรณ์",
    tags:["อุปกรณ์","เทคนิคการพ่น"], k:"inhaler asthma copd mdi dpi ยาพ่น หอบหืด"}
@@ -218,7 +225,7 @@ function readProg(p){
 
 let filter = "all";
 const chipsEl = document.getElementById("chips");
-[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",endo:"ต่อมไร้ท่อ",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ"})[k]])].forEach(([k,label])=>{
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",endo:"ต่อมไร้ท่อ",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ",neuro:"ประสาท"})[k]])].forEach(([k,label])=>{
   const b = document.createElement("button");
   b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
   b.setAttribute("aria-pressed", k===filter);
