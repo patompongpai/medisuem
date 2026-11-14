@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Status Epilepticus — AES 2016 + ESETT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa;--card:#fff;--ink:#1d2433;--mute:#5b6577;--line:#e2e6ee;
+  --pri:#c0392b;--pri-soft:#fdeceb;--thai:#0f7a5c;--thai-soft:#e6f5ef;--aes:#1f5fbf;--aes-soft:#e8f0fc;
+  --warn:#b4540a;--warn-soft:#fdf1e6;--bad:#b42335;--bad-soft:#fdecee;--ok:#1a7f43;--ok-soft:#e7f6ed;
+  --p0:#5b6577;--p1:#1a7f43;--p2:#b4540a;--p3:#b42335;--p4:#6b2a8f;
+  --r:14px;
+}
+[data-theme="dark"]{
+  --bg:#12151c;--card:#1b2029;--ink:#e6e9ef;--mute:#9aa3b5;--line:#2c3340;
+  --pri:#ff7b6b;--pri-soft:#3a1f1d;--thai:#4fd1a5;--thai-soft:#16342b;--aes:#7fb0ff;--aes-soft:#182a45;
+  --warn:#f0a35e;--warn-soft:#3a2a1a;--bad:#ff7d8c;--bad-soft:#3d1c22;--ok:#5fd38d;--ok-soft:#173826;
+  --p0:#9aa3b5;--p1:#5fd38d;--p2:#f0a35e;--p3:#ff7d8c;--p4:#c99bff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15.5px}
+header.top{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 16px}
+header.top .brand{font-weight:700;font-size:15px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top .brand small{color:var(--mute);font-weight:500}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 11px;font:inherit;font-size:14px;cursor:pointer}
+.btn:hover{border-color:var(--pri);color:var(--pri)}
+.btn.pri{background:var(--pri);color:#fff;border-color:var(--pri)}
+.btn.pri:hover{color:#fff;filter:brightness(1.08)}
+.layout{display:grid;grid-template-columns:240px 1fr;gap:24px;max-width:1220px;margin:0 auto;padding:20px 16px 80px}
+nav.toc{position:sticky;top:70px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:14px}
+nav.toc a{display:block;padding:6px 10px;border-radius:8px;color:var(--mute);text-decoration:none}
+nav.toc a:hover,nav.toc a.on{background:var(--pri-soft);color:var(--pri)}
+nav.toc .grp{font-size:12px;font-weight:700;color:var(--mute);margin:14px 10px 4px}
+main{min-width:0}
+.hero{background:linear-gradient(135deg,var(--pri-soft),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:26px;line-height:1.3}
+.hero p{margin:4px 0;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12.5px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card)}
+.chip.aes{background:var(--aes-soft);color:var(--aes);border-color:transparent}
+.chip.thai{background:var(--thai-soft);color:var(--thai);border-color:transparent}
+section.ch{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:20px}
+section.ch>h2{margin:0 0 12px;font-size:21px;display:flex;gap:10px;align-items:baseline}
+section.ch>h2 .n{color:var(--pri);font-size:15px;font-weight:700;min-width:28px}
+h3{font-size:17px;margin:18px 0 8px}
+h4{font-size:15.5px;margin:14px 0 6px}
+p{margin:6px 0} ul,ol{margin:6px 0;padding-left:22px} li{margin:3px 0}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:6px;vertical-align:1px;margin-right:4px}
+.tag.aes{background:var(--aes-soft);color:var(--aes)} .tag.thai{background:var(--thai-soft);color:var(--thai)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)} .tag.bad{background:var(--bad-soft);color:var(--bad)} .tag.lv{background:var(--bg);border:1px solid var(--line);color:var(--mute)}
+.box{border-radius:12px;padding:12px 14px;margin:10px 0;border:1px solid var(--line)}
+.box.aes{background:var(--aes-soft);border-color:transparent} .box.thai{background:var(--thai-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent} .box.bad{background:var(--bad-soft);border-color:transparent} .box.ok{background:var(--ok-soft);border-color:transparent}
+.box b.t{display:block;margin-bottom:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tbl{width:100%;overflow-x:auto;margin:8px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600}
+.small{font-size:13px;color:var(--mute)}
+.mono{font-family:"IBM Plex Mono",monospace}
+/* algorithm */
+.algo{position:relative;padding-left:22px;margin:8px 0}
+.algo::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:var(--line);border-radius:2px}
+.step{position:relative;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.step::before{content:"";position:absolute;left:-20px;top:16px;width:13px;height:13px;border-radius:50%;background:var(--c);border:3px solid var(--card);box-shadow:0 0 0 1px var(--c)}
+.step .hd{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin-bottom:6px}
+.step .tm{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--c);font-size:14px}
+.step .nm{font-weight:700;font-size:16px}
+/* tool */
+.tool{border:2px solid var(--pri);border-radius:var(--r);padding:18px;background:var(--card)}
+.timer{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.clock{font-family:"IBM Plex Mono",monospace;font-size:44px;font-weight:600;letter-spacing:1px;min-width:170px}
+.phase{flex:1;min-width:230px;border-radius:12px;padding:10px 14px;background:var(--bg);border-left:6px solid var(--c,var(--p0))}
+.phase .pn{font-weight:700;font-size:17px;color:var(--c,var(--p0))}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin:12px 0 4px;display:flex}
+.bar div{height:100%}
+.ticks{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mute);font-family:"IBM Plex Mono",monospace}
+.log{font-size:13.5px;max-height:160px;overflow:auto;margin-top:10px;border-top:1px dashed var(--line);padding-top:6px}
+.log div{padding:2px 0}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+input[type=number]{font:inherit;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:110px}
+label.opt{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer;font-size:14px}
+label.opt:has(input:checked){border-color:var(--pri);background:var(--pri-soft);color:var(--pri)}
+input{accent-color:var(--pri)}
+.dose td:nth-child(3){font-family:"IBM Plex Mono",monospace;font-weight:600;white-space:nowrap}
+.dose tr.grp td{background:var(--bg);font-weight:700;color:var(--c)}
+.capped{color:var(--warn);font-size:12px;font-family:inherit;font-weight:500}
+/* ESETT bars */
+.eb{display:grid;grid-template-columns:130px 1fr 48px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.eb .tr{height:18px;background:var(--line);border-radius:6px;overflow:hidden}
+.eb .tr div{height:100%;background:var(--aes)}
+/* search */
+#sbar{display:none;position:sticky;top:57px;z-index:49;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px}
+#sbar.show{display:block}
+#sbar input{width:100%;max-width:640px;font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+#sres{max-width:640px;max-height:50vh;overflow:auto;margin-top:6px}
+#sres a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
+#sres a:hover{background:var(--pri-soft)} #sres a small{color:var(--mute);display:block}
+mark{background:#ffe58a;color:#1d2433;border-radius:3px;padding:0 2px}
+.menu-btn{display:none}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{display:none;position:fixed;top:57px;left:0;right:0;bottom:0;max-height:none;background:var(--card);z-index:60;padding:12px 16px}
+  nav.toc.open{display:block} .menu-btn{display:inline-block}
+  .grid2,.grid3{grid-template-columns:1fr} section.ch{padding:16px}
+  .clock{font-size:36px}
+}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+.layout{padding-bottom:110px}
+@media print{.imhub-bar{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="btn menu-btn" id="menuBtn" aria-label="เมนู">☰</button>
+  <div class="brand">Status Epilepticus <small>· AES 2016 + ESETT</small></div>
+  <button class="btn" id="searchBtn">🔍 ค้นหา</button>
+  <button class="btn" id="themeBtn" aria-label="สลับธีม">◐</button>
+</header>
+<div id="sbar"><input id="sinput" placeholder="ค้นหา เช่น levetiracetam, propofol, NCSE, ESETT ..." autocomplete="off"><div id="sres"></div></div>
+
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="grp">เครื่องมือ</div>
+  <a href="#timer">⏱ SE timer</a>
+  <a href="#calc">💉 คำนวณขนาดยา</a>
+  <div class="grp">เนื้อหา</div>
+  <a href="#def">1. นิยาม t1 / t2</a>
+  <a href="#algo">2. Algorithm AES 2016</a>
+  <a href="#esett">3. ESETT และ trial ที่เกี่ยวข้อง</a>
+  <a href="#second">4. เลือกยา second-line</a>
+  <a href="#rse">5. Refractory / super-refractory</a>
+  <a href="#ix">6. Workup และ NCSE</a>
+  <a href="#thai">7. ปรับใช้ในบริบทไทย</a>
+  <a href="#pit">8. Pitfalls</a>
+  <a href="#ref">แหล่งอ้างอิง</a>
+</nav>
+
+<main>
+<div class="hero">
+  <h1>Status Epilepticus (ผู้ใหญ่)</h1>
+  <p>ใช้ algorithm ของ <b>American Epilepsy Society 2016</b> (Glauser et al., Epilepsy Curr 2016) คู่กับผลของ <b>ESETT</b> (Kapur et al., NEJM 2019) ในการเลือกยา second-line และใส่หมายเหตุจาก <b>CPG สถาบันประสาทวิทยา 2564</b> สำหรับยาและขนาดยาที่ใช้ในไทย</p>
+  <div class="chips"><span class="chip aes">AES 2016</span><span class="chip aes">ESETT 2019</span><span class="chip thai">🇹🇭 CPG 2564</span><span class="chip">Refractory: NCS 2012</span><a class="chip" href="../epilepsy/index.html" style="text-decoration:none;color:inherit">โรคลมชักระยะยาว → ไปหน้า Epilepsy</a></div>
+</div>
+
+<!-- TIMER -->
+<section class="ch" id="timer"><h2><span class="n">⏱</span>SE timer</h2>
+<div class="tool">
+<div class="timer">
+  <div class="clock" id="clock">00:00</div>
+  <div class="phase" id="phase"><div class="pn">พร้อมเริ่ม</div><div id="pact" class="small">กด "เริ่มจับเวลา" เมื่อเริ่มชัก หรือตั้งเวลาย้อนหลังได้</div></div>
+</div>
+<div class="bar" id="bar"></div>
+<div class="ticks"><span>0</span><span>5</span><span>20</span><span>40</span><span>60 นาที</span></div>
+<div class="row" style="margin-top:12px">
+  <button class="btn pri" id="tStart">▶ เริ่มจับเวลา</button>
+  <button class="btn" id="tPause">⏸ หยุดชั่วคราว</button>
+  <button class="btn" id="tReset">↺ เริ่มใหม่</button>
+  <span class="small">ชักมาแล้ว</span><input type="number" id="tOffset" min="0" max="180" value="0" style="width:80px"><span class="small">นาที</span><button class="btn" id="tSet">ตั้งเวลา</button>
+</div>
+<div class="row">
+  <span class="small">บันทึกเหตุการณ์:</span>
+  <button class="btn" data-ev="ให้ BZD dose 1">BZD #1</button>
+  <button class="btn" data-ev="ให้ BZD dose 2">BZD #2</button>
+  <button class="btn" data-ev="เริ่ม second-line">2nd-line</button>
+  <button class="btn" data-ev="ใส่ท่อช่วยหายใจ">Intubate</button>
+  <button class="btn" data-ev="เริ่ม anesthetic infusion">Infusion</button>
+  <button class="btn" data-ev="หยุดชัก">หยุดชัก</button>
+</div>
+<div class="log" id="log"><div class="small">ยังไม่มีบันทึก</div></div>
+</div>
+</section>
+
+<!-- CALC -->
+<section class="ch" id="calc"><h2><span class="n">💉</span>คำนวณขนาดยาตามน้ำหนัก</h2>
+<div class="tool">
+<div class="row"><b>น้ำหนัก</b><input type="number" id="wt" value="60" min="3" max="250" step="0.5"><span>kg</span>
+<label class="opt"><input type="checkbox" id="elder">ผู้สูงอายุ / โรคหัวใจ</label></div>
+<div class="tbl"><table class="dose" id="doseTbl"></table></div>
+<p class="small">ขนาดยาและขนาดสูงสุดตาม AES 2016 และ ESETT · ยาที่มีป้าย 🇹🇭 มาจาก CPG 2564 · Refractory ตาม NCS 2012 · ก่อนให้ยาจริงตรวจสอบความเข้มข้นของยาที่มีใน รพ. และ drug compatibility ทุกครั้ง</p>
+</div>
+</section>
+
+<!-- 1 -->
+<section class="ch" id="def"><h2><span class="n">1</span>นิยาม: t1 และ t2 (ILAE 2015)</h2>
+<p><b>t1</b> = เวลาที่ถือว่าชักนานผิดปกติและ<b>ต้องเริ่มรักษา</b> · <b>t2</b> = เวลาที่เริ่มเกิด<b>ผลเสียระยะยาว</b> (neuronal injury)</p>
+<div class="tbl"><table>
+<tr><th>ชนิด</th><th>t1: เริ่มรักษา</th><th>t2: เสี่ยง neuronal damage</th></tr>
+<tr><td><b>Convulsive (tonic-clonic) SE</b></td><td><b>5 นาที</b></td><td><b>30 นาที</b></td></tr>
+<tr><td>Focal SE with impaired awareness</td><td>10 นาที</td><td>&gt;60 นาที</td></tr>
+<tr><td>Absence SE</td><td>10–15 นาที</td><td>ยังไม่ทราบ</td></tr>
+</table></div>
+<div class="box warn"><b class="t">ในทางปฏิบัติ</b>ชักต่อเนื่อง <b>≥5 นาที</b> หรือ<b>ชักซ้ำ ≥2 ครั้งโดยไม่ฟื้นระหว่างครั้ง</b> → ถือเป็น SE และเริ่ม algorithm ทันที โดยไม่ต้องรอ 30 นาทีตามนิยามเดิม</div>
+<div class="grid3">
+<div class="box"><b class="t">Established SE</b>ชักต่อหลังได้ benzodiazepine ขนาดเพียงพอแล้ว</div>
+<div class="box"><b class="t">Refractory SE (RSE)</b>ชักต่อหลังได้ BZD และ ASM second-line แล้ว</div>
+<div class="box"><b class="t">Super-refractory SE</b>ชักต่อหรือกลับมาชักหลังได้ anesthetic ≥24 ชม. (รวมช่วงลดยา)</div>
+</div>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="algo"><h2><span class="n">2</span>Algorithm AES 2016 <span class="tag aes">AES</span></h2>
+<div class="algo">
+<div class="step" style="--c:var(--p0)">
+  <div class="hd"><span class="tm">0–5 นาที</span><span class="nm">Stabilization phase</span></div>
+  <ul>
+  <li>ABC, O<sub>2</sub> (nasal cannula/mask), พิจารณาใส่ท่อถ้าจำเป็น · จับเวลาตั้งแต่เริ่มชัก · วัด vital signs</li>
+  <li>Neurologic exam · ติด ECG monitor · เปิด IV</li>
+  <li><b>Fingerstick glucose:</b> ถ้า &lt;60 mg/dL ให้ <b>thiamine 100 mg IV ก่อน</b> แล้วตามด้วย <b>50% glucose (D50W) 50 mL IV</b></li>
+  <li>ส่ง electrolytes, CBC, toxicology screen และ<b>ระดับยากันชัก</b> (ถ้ากินยาอยู่)</li>
+  </ul>
+</div>
+<div class="step" style="--c:var(--p1)">
+  <div class="hd"><span class="tm">5–20 นาที</span><span class="nm">Initial therapy: Benzodiazepine</span><span class="tag lv">Level A</span></div>
+  <p>เลือก <b>1 ตัว</b> และให้ขนาดเต็ม</p>
+  <ul>
+  <li><b>IM midazolam</b> 10 mg (น้ำหนัก &gt;40 kg) หรือ 5 mg (13–40 kg) ครั้งเดียว</li>
+  <li><b>IV lorazepam</b> 0.1 mg/kg (สูงสุด 4 mg) ให้ซ้ำได้ 1 ครั้ง</li>
+  <li><b>IV diazepam</b> 0.15–0.2 mg/kg (สูงสุด 10 mg) ให้ซ้ำได้ 1 ครั้ง</li>
+  </ul>
+  <p class="small">ถ้าไม่มี 3 ตัวข้างต้น: IV phenobarbital 15 mg/kg (Level A) · rectal diazepam 0.2–0.5 mg/kg สูงสุด 20 mg · intranasal หรือ buccal midazolam (Level B)</p>
+</div>
+<div class="step" style="--c:var(--p2)">
+  <div class="hd"><span class="tm">20–40 นาที</span><span class="nm">Second therapy</span></div>
+  <p>เลือก <b>1 ตัว</b> ให้ครั้งเดียว (ESETT พบว่าทั้งสามตัวได้ผลเท่ากัน ดูข้อ 3)</p>
+  <ul>
+  <li><b>Fosphenytoin</b> 20 mg PE/kg IV สูงสุด 1500 mg PE <span class="tag lv">Level U</span></li>
+  <li><b>Valproic acid</b> 40 mg/kg IV สูงสุด 3000 mg <span class="tag lv">Level B</span></li>
+  <li><b>Levetiracetam</b> 60 mg/kg IV สูงสุด 4500 mg <span class="tag lv">Level U</span></li>
+  </ul>
+  <p class="small">ถ้าไม่มีตัวข้างต้น: IV phenobarbital 15 mg/kg (Level B) · ถ้าไม่มี fosphenytoin ใช้ <b>phenytoin 20 mg/kg IV</b> แทนได้ (สูงสุด 1500 mg, Level B)</p>
+</div>
+<div class="step" style="--c:var(--p3)">
+  <div class="hd"><span class="tm">40–60 นาที</span><span class="nm">Third therapy (refractory)</span><span class="tag lv">ไม่มี evidence ชัดเจน</span></div>
+  <ul>
+  <li>เลือกให้ยา second-line อีกตัว <b>หรือ</b> ให้ anesthetic: thiopental, midazolam, pentobarbital หรือ propofol</li>
+  <li><b>ทุกตัวต้องทำ continuous EEG</b> · ย้าย ICU และใส่ท่อช่วยหายใจ</li>
+  </ul>
+</div>
+</div>
+<p class="small">AES เน้นให้ทุกระยะเกิดเร็วที่สุด และให้ BZD ขนาดเต็มตั้งแต่แรก การให้ BZD ซ้ำหลายครั้งในขนาดต่ำทำให้ไปถึง second-line ช้า</p>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="esett"><h2><span class="n">3</span>ESETT และ trial ที่เกี่ยวข้อง <span class="tag aes">ESETT</span></h2>
+<div class="box aes"><b class="t">ESETT: Established Status Epilepticus Treatment Trial (Kapur et al., NEJM 2019;381:2103–13)</b>
+• RCT แบบ blinded, adaptive ที่ ED ในสหรัฐฯ ผู้ป่วยอายุ ≥2 ปีที่ยังชักหลังได้ BZD ขนาดเพียงพอ (<b>384 ราย</b> ในการวิเคราะห์หลัก)<br>
+• สุ่มรับ <b>levetiracetam 60 mg/kg (≤4500 mg)</b>, <b>fosphenytoin 20 mg PE/kg (≤1500 mg PE)</b> หรือ <b>valproate 40 mg/kg (≤3000 mg)</b> ให้ทาง IV ใน 10 นาที<br>
+• Primary outcome: หยุดชักและรู้ตัวดีขึ้นที่ 60 นาที โดยไม่ต้องให้ยาเพิ่ม</div>
+<div style="max-width:520px;margin:10px 0">
+<div class="eb"><span>Levetiracetam</span><div class="tr"><div style="width:47%"></div></div><b>47%</b></div>
+<div class="eb"><span>Fosphenytoin</span><div class="tr"><div style="width:45%"></div></div><b>45%</b></div>
+<div class="eb"><span>Valproate</span><div class="tr"><div style="width:46%"></div></div><b>46%</b></div>
+</div>
+<ul>
+<li>ทั้งสามตัว<b>ได้ผลไม่ต่างกัน</b> และ trial ถูกหยุดก่อนกำหนดเพราะ futility</li>
+<li>Safety ไม่ต่างกันอย่างมีนัยสำคัญ: hypotension และการใส่ท่อพบมากกว่าเล็กน้อยในกลุ่ม fosphenytoin ส่วนการเสียชีวิตพบมากกว่าเล็กน้อยในกลุ่ม levetiracetam แต่ไม่มีนัยสำคัญ</li>
+<li>การวิเคราะห์แยกกลุ่มอายุ (เด็ก ผู้ใหญ่ ผู้สูงอายุ; Chamberlain et al., Lancet 2020) ให้ผลไปทางเดียวกัน</li>
+<li><b>ข้อสังเกต:</b> ประมาณ 1 ใน 2 ยังไม่ตอบสนองต่อยาตัวแรกใน second-line ต้องเตรียมขั้นต่อไปไว้</li>
+</ul>
+<div class="box"><b class="t">Trial ในเด็ก (ปี 2019 Lancet)</b><b>ConSEPT</b> (ออสเตรเลีย/นิวซีแลนด์) และ <b>EcLiPSE</b> (สหราชอาณาจักร): levetiracetam 40 mg/kg ไม่ได้ดีกว่า phenytoin 20 mg/kg ในเด็กที่ชักต่อหลังได้ BZD</div>
+<div class="box ok"><b class="t">สรุปเชิงปฏิบัติ</b>ไม่มียา second-line ที่ดีที่สุด ให้<b>เลือกตามโรคร่วมของผู้ป่วย ยาที่มีใน รพ. และความเร็วในการให้ยา</b> แล้วให้ในขนาดตาม ESETT ซึ่งสูงกว่าที่หลายที่ใช้กันจริง</div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="second"><h2><span class="n">4</span>เลือกยา second-line ตามผู้ป่วย</h2>
+<div class="tbl"><table>
+<tr><th>ยา</th><th>เหมาะเมื่อ</th><th>หลีกเลี่ยง / ระวัง</th><th>อัตราให้ยา</th></tr>
+<tr><td><b>Levetiracetam</b></td><td>โรคตับ, ใช้ยาหลายตัว (ปฏิกิริยาน้อย), ตั้งครรภ์, hemodynamic ไม่เสถียร</td><td>ปรับ maintenance ตามไต · อาจทำให้กระสับกระส่ายหรืออารมณ์เปลี่ยน</td><td>ใน 5–15 นาที (ESETT ให้ใน 10 นาที)</td></tr>
+<tr><td><b>Valproate</b></td><td>Generalized epilepsy, absence หรือ myoclonic SE, ผู้ป่วยที่ใช้ VPA อยู่เดิม</td><td><b>โรคตับ, mitochondrial disease (POLG), ตั้งครรภ์</b>, เกล็ดเลือดต่ำ, pancreatitis, hyperammonemia, ได้ carbapenem</td><td>~10 นาที (ไม่เกิน 6–10 mg/kg/min)</td></tr>
+<tr><td><b>Phenytoin / Fosphenytoin</b></td><td>Focal SE, ใช้ PHT อยู่เดิม, ยาที่หาได้ทุก รพ. ในไทย (phenytoin)</td><td><b>Hypotension, bradyarrhythmia, AV block</b> · purple glove · <b>ไม่ได้ผลใน toxin-induced SE และไม่ใช้ใน absence/myoclonic SE</b> · ให้ผ่าน NSS เท่านั้น (ตกตะกอนใน dextrose)</td><td><b>PHT ≤50 mg/min</b> (ผู้สูงอายุหรือโรคหัวใจ ≤25 mg/min) · fosPHT ≤150 mg PE/min · <b>ติด ECG + BP</b></td></tr>
+<tr><td>Phenobarbital</td><td>เมื่อไม่มียาอื่น · ถอนสุราหรือ BZD ที่ดื้อ</td><td>กดการหายใจและ hypotension มาก โดยเฉพาะหลังได้ BZD</td><td>50–75 mg/min 🇹🇭</td></tr>
+<tr><td>Lacosamide 🇹🇭</td><td>ทางเลือกตาม CPG ไทย (Level IB) · ปฏิกิริยาน้อย</td><td>PR prolongation, AV block · ไม่อยู่ใน AES 2016</td><td>200–400 mg IV ใน 15–30 นาที</td></tr>
+</table></div>
+<div class="box warn"><b class="t">หลังหยุดชัก: เริ่ม maintenance (ตัวอย่างในผู้ใหญ่ ไตปกติ)</b>LEV 1000–1500 mg IV/PO ทุก 12 ชม. · PHT 100 mg IV/PO ทุก 8 ชม. (~5 mg/kg/d) แล้วตรวจระดับยา · VPA 1000–3000 mg/d แบ่งให้ · ตามหาและรักษาสาเหตุไปพร้อมกัน</div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="rse"><h2><span class="n">5</span>Refractory และ super-refractory SE</h2>
+<ul>
+<li>ใส่ท่อช่วยหายใจ ย้าย ICU ใส่ central line และ arterial line · <b>เริ่ม cEEG ภายใน 1 ชั่วโมงหลังวินิจฉัย RSE</b> <span class="tag thai">🇹🇭 IIC</span></li>
+<li>ปรับ anesthetic ให้ได้ <b>EEG seizure suppression หรือ burst suppression</b> (interburst ประมาณ 5–15 วินาที) <b>นาน 24–48 ชม.</b> แล้วค่อยลดยาช้าๆ <span class="tag thai">🇹🇭</span></li>
+<li>ก่อนลด anesthetic ต้องมี ASM maintenance ระดับเพียงพอ (ตรวจระดับยา)</li>
+<li>หาสาเหตุอย่างจริงจัง: autoimmune encephalitis (ส่ง serum + CSF antibody), infection, toxin, metabolic · ถ้าสงสัย autoimmune ให้พิจารณา immunotherapy เร็ว <span class="tag thai">🇹🇭 IC</span></li>
+</ul>
+<h3>Anesthetic infusion (ผู้ใหญ่, NCS 2012)</h3>
+<div class="tbl"><table>
+<tr><th>ยา</th><th>Loading</th><th>Infusion</th><th>ข้อควรระวัง</th></tr>
+<tr><td><b>Midazolam</b> <span class="tag thai">🇹🇭 IB</span></td><td>0.2 mg/kg IV (ให้ 2 mg/min)</td><td>0.05–2 mg/kg/h · breakthrough ให้ bolus 0.1–0.2 mg/kg แล้วเพิ่ม 0.05–0.1 mg/kg/h</td><td>Tachyphylaxis, สะสมยาในไตวาย, hypotension</td></tr>
+<tr><td><b>Propofol</b> <span class="tag thai">🇹🇭 IB</span></td><td>1–2 mg/kg IV</td><td>20–200 mcg/kg/min</td><td><b>PRIS</b> (ระวังเมื่อ &gt;80 mcg/kg/min นาน &gt;48 ชม.), hypotension · ติดตาม CK, TG, lactate</td></tr>
+<tr><td><b>Thiopental</b> <span class="tag thai">🇹🇭 IB</span></td><td>2–7 mg/kg IV (≤50 mg/min)</td><td>0.5–5 mg/kg/h</td><td>Hypotension ต้องใช้ vasopressor, ileus, ภูมิคุ้มกันลด, สะสมยานาน</td></tr>
+<tr><td>Ketamine <span class="tag thai">🇹🇭 IIIB</span></td><td>1.5 mg/kg IV ทุก 3–5 นาที จนหยุดชัก (สูงสุด 4.5 mg/kg)</td><td>สูงสุด 5 mg/kg/h</td><td>Hypertension, arrhythmia · ใช้ใน super-refractory (NMDA antagonist)</td></tr>
+</table></div>
+<p class="small">Super-refractory: พิจารณา ketamine, high-dose topiramate (IIIB), immunotherapy, ketogenic diet และปรึกษา neurologist หรือ neurointensivist</p>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="ix"><h2><span class="n">6</span>Workup และ NCSE</h2>
+<div class="grid2">
+<div><h4>ส่งตรวจทุกราย</h4>
+<ul><li>Glucose (POCT ทันที), electrolytes, Ca, Mg, PO<sub>4</sub>, BUN/Cr, LFT</li><li>CBC, ABG, lactate, CK</li><li><b>ระดับยากันชัก</b> (ถ้ากินยาอยู่) · toxicology</li><li>ECG · β-hCG ในผู้หญิงวัยเจริญพันธุ์</li></ul></div>
+<div><h4>ตามข้อบ่งชี้</h4>
+<ul><li><b>CT brain</b> เมื่อ stabilize แล้ว (โดยเฉพาะชักครั้งแรกหรือมี focal sign)</li><li>MRI brain</li><li><b>LP</b> เมื่อมีไข้หรือสงสัย CNS infection (ให้ empirical antimicrobial ก่อน ถ้ายังทำ LP ไม่ได้)</li><li>Autoimmune encephalitis panel</li></ul></div>
+</div>
+<div class="box bad"><b class="t">อย่าพลาด NCSE (nonconvulsive SE)</b>ถ้าหยุดเกร็งกระตุกแล้วแต่<b>ไม่ฟื้นภายใน ~10 นาที</b> หรือ<b>ไม่กลับสู่ baseline ภายใน 60 นาที</b> ต้องส่ง EEG (cEEG ถ้าได้) ทันที · ผู้ป่วยที่อาจได้แค่ subtle sign เช่น กระตุกเบาๆ ตากระตุก หรือ mental status ผันผวน · ข้อมูลที่ NCS 2012 อ้าง (DeLorenzo 1998) พบว่าหลัง convulsive SE หยุด ยังมี electrographic seizure ต่อได้ประมาณ 48% และเป็น NCSE ประมาณ 14%</div>
+<h4>หาสาเหตุที่พบบ่อย</h4>
+<p>ยากันชักระดับต่ำหรือขาดยา (พบบ่อยที่สุดในผู้ป่วย epilepsy เดิม) · stroke · ถอนสุราหรือยา · hypoglycemia, hyponatremia, hypocalcemia · CNS infection · TBI · tumor · ยาที่กระตุ้นชัก (tramadol, carbapenem, cefepime, isoniazid, theophylline) · autoimmune encephalitis · eclampsia</p>
+<div class="box warn"><b class="t">ยาเฉพาะสาเหตุ</b>• <b>Isoniazid overdose → pyridoxine</b> (ขนาดเท่ากับ INH ที่กิน หรือ 5 g IV ถ้าไม่ทราบ)<br>• <b>Eclampsia → MgSO<sub>4</sub></b> (4–6 g IV load แล้ว 1–2 g/h)<br>• Hypoglycemia → thiamine + glucose · Hyponatremia รุนแรงที่มีชัก → 3% NaCl bolus</div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="thai"><h2><span class="n">7</span>ปรับใช้ในบริบทไทย <span class="tag thai">🇹🇭 CPG 2564</span></h2>
+<p>CPG สถาบันประสาทวิทยา 2564 ใช้ระยะเวลาสั้นกว่า AES และระบุยาที่มีในไทย</p>
+<div class="tbl"><table>
+<tr><th>ระยะ (CPG ไทย)</th><th>การรักษา</th><th>Grade</th></tr>
+<tr><td><b>0–5 นาที</b></td><td>ABC · BZD 1 ตัว: <b>diazepam 0.15 mg/kg IV (สูงสุด ~10 mg)</b> หรือ <b>midazolam 0.2 mg/kg IM (สูงสุด 10 mg)</b> · DTX, electrolytes, Mg, Ca · thiamine 100 mg IV ถ้าสงสัยสุราหรือขาดอาหาร · 50% glucose 50 mL ถ้า hypoglycemia</td><td>BZD IA</td></tr>
+<tr><td><b>5–10 นาที</b></td><td>คุม MAP &gt;70 mmHg · ASM 1 ตัว: <b>phenytoin 20 mg/kg (≤50 mg/min)</b>, phenobarbital 20–30 mg/kg (50–75 mg/min), valproate, <b>levetiracetam 30–40 mg/kg</b>, lacosamide 200–400 mg · ส่ง CT/MRI และ CSF เมื่อหยุดชัก</td><td>PHT, LCM IB · LEV IIB</td></tr>
+<tr><td><b>10–30 นาที</b></td><td>ใส่ท่อ ย้าย ICU ใส่ central/arterial line · พิจารณา cEEG · ให้ยา second-line อีกตัวหรือ anesthetic (midazolam IB; propofol, thiopental IIB; ketamine IIIB) · พิจารณา immunotherapy ถ้าสงสัย autoimmune</td><td>cEEG IIC</td></tr>
+<tr><td><b>30–60 นาที</b> และ super-refractory</td><td>ปรับ anesthetic ให้ได้ burst suppression (interburst 5–15 วินาที) นาน 24 ชม. · ลดยาเมื่อไม่ชัก 24–48 ชม.</td><td></td></tr>
+</table></div>
+<div class="box thai"><b class="t">เมื่อนำ AES + ESETT มาใช้ใน รพ. ไทย</b>
+• <b>Lorazepam IV</b> มักไม่มีในไทย ให้ใช้ <b>diazepam IV 0.15–0.2 mg/kg (สูงสุด 10 mg) ซ้ำได้ 1 ครั้ง</b> หรือ <b>midazolam IM 10 mg</b> เมื่อยังไม่มีเส้น IV<br>
+• <b>Fosphenytoin</b> ส่วนใหญ่ไม่มี ให้ใช้ <b>phenytoin 20 mg/kg</b> แทน (AES ยอมรับ, Level B)<br>
+• <b>ขนาด levetiracetam:</b> CPG ไทย 30–40 mg/kg ส่วน AES และ ESETT ใช้ <b>60 mg/kg (สูงสุด 4500 mg)</b> ซึ่งเป็นขนาดที่มีหลักฐานจาก RCT<br>
+• <b>Phenobarbital:</b> CPG ไทย 20–30 mg/kg ส่วน AES 15 mg/kg<br>
+• ตรวจสอบบัญชียาของ รพ. ว่ามี levetiracetam IV และ valproate IV หรือไม่ ก่อนวางแผน algorithm ประจำหอผู้ป่วย</div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="pit"><h2><span class="n">8</span>Pitfalls ที่พบบ่อย</h2>
+<ol>
+<li><b>BZD ขนาดต่ำเกินไป</b> เช่น diazepam ครั้งละ 2–5 mg ซ้ำหลายครั้ง ทำให้ชักนานขึ้นและไปถึง second-line ช้า ควรให้ขนาดเต็มตาม mg/kg ไม่เกิน 2 ครั้ง</li>
+<li><b>รอ IV access นาน</b> ให้ midazolam IM 10 mg ได้ทันที (RAMPART trial: IM midazolam ไม่ด้อยกว่า IV lorazepam ก่อนถึง รพ.)</li>
+<li><b>ให้ phenytoin เร็วเกินไป</b> ทำให้ hypotension หรือ arrhythmia ต้องติด monitor ทุกครั้ง และห้ามผสมใน dextrose</li>
+<li><b>ลืม glucose และ thiamine</b></li>
+<li><b>คิดว่าหยุดชักแล้วเมื่อหยุดเกร็ง</b> ผู้ป่วยที่ไม่ฟื้นอาจเป็น NCSE ต้องตรวจ EEG</li>
+<li><b>ใช้ VPA ในผู้ป่วยโรคตับ ผู้หญิงตั้งครรภ์ หรือผู้ที่ได้ carbapenem</b> (carbapenem ลดระดับ VPA อย่างมาก)</li>
+<li><b>ไม่สั่ง maintenance</b> หลัง loading หรือไม่หาสาเหตุที่ทำให้ชัก</li>
+<li><b>ให้ phenytoin ใน toxin-induced SE</b> (เช่น theophylline, tricyclic) ซึ่งไม่ได้ผลและอาจเป็นอันตราย ให้ใช้ BZD และ phenobarbital แทน</li>
+</ol>
+</section>
+
+<section class="ch" id="ref"><h2><span class="n">📚</span>แหล่งอ้างอิง</h2>
+<ul>
+<li>Glauser T, Shinnar S, Gloss D, et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. <i>Epilepsy Curr.</i> 2016;16(1):48–61.</li>
+<li>Kapur J, Elm J, Chamberlain JM, et al. Randomized Trial of Three Anticonvulsant Medications for Status Epilepticus (ESETT). <i>N Engl J Med.</i> 2019;381:2103–13.</li>
+<li>Chamberlain JM, Kapur J, Shinnar S, et al. Efficacy of levetiracetam, fosphenytoin, and valproate for established status epilepticus by age group (ESETT). <i>Lancet.</i> 2020;395:1217–24.</li>
+<li>Lyttle MD, et al. (EcLiPSE) และ Dalziel SR, et al. (ConSEPT). <i>Lancet.</i> 2019.</li>
+<li>Trinka E, et al. A definition and classification of status epilepticus — ILAE Task Force. <i>Epilepsia.</i> 2015;56:1515–23.</li>
+<li>Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. <i>Neurocrit Care.</i> 2012;17:3–23.</li>
+<li>Silbergleit R, et al. Intramuscular versus intravenous therapy for prehospital status epilepticus (RAMPART). <i>N Engl J Med.</i> 2012;366:591–600.</li>
+<li>สถาบันประสาทวิทยา. แนวทางเวชปฏิบัติในการรักษาโรคลมชักสำหรับแพทย์ ฉบับสมบูรณ์ 2564 (บท Status epilepticus). <a href="https://fakthahospital.moph.go.th/images/PDF/PCT/CPG-lm%20chak-64.pdf">PDF</a></li>
+</ul>
+<p class="small">หน้านี้สรุปเพื่อการเรียนรู้และใช้ประกอบการตัดสินใจ ไม่ใช่คำสั่งการรักษา · จัดทำโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+</section>
+</main>
+</div>
+
+<script>
+(function(){const r=document.documentElement;try{const t=localStorage.getItem('mds-theme');if(t)r.dataset.theme=t;}catch(e){}
+document.getElementById('themeBtn').onclick=()=>{const n=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('mds-theme',n);}catch(e){}};})();
+const toc=document.getElementById('toc');
+document.getElementById('menuBtn').onclick=()=>toc.classList.toggle('open');
+toc.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toc.classList.remove('open')));
+const links=[...toc.querySelectorAll('a')];
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));})},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section.ch').forEach(s=>io.observe(s));
+// search
+const sbar=document.getElementById('sbar'),sin=document.getElementById('sinput'),sres=document.getElementById('sres');
+document.getElementById('searchBtn').onclick=()=>{sbar.classList.toggle('show');if(sbar.classList.contains('show'))sin.focus();};
+sin.addEventListener('input',()=>{const q=sin.value.trim().toLowerCase();sres.innerHTML='';if(q.length<2)return;
+ const bl=document.querySelectorAll('main section.ch p, main section.ch li, main section.ch td, main section.ch .box, main section.ch h3, main section.ch h4');let n=0;const seen=[];
+ bl.forEach(b=>{if(n>=40)return;const t=b.textContent;const i=t.toLowerCase().indexOf(q);if(i<0)return;if(seen.some(s=>s.contains(b)))return;seen.push(b);
+  const h=b.closest('section.ch').querySelector('h2').textContent.trim();if(!b.id)b.id='s'+Math.random().toString(36).slice(2,8);
+  const a=document.createElement('a');a.href='#'+b.id;const sn=t.slice(Math.max(0,i-40),i+80).replace(/\s+/g,' ');
+  a.innerHTML='<small>'+h+'</small>…'+sn.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),m=>'<mark>'+m+'</mark>')+'…';
+  a.onclick=()=>setTimeout(()=>{b.style.outline='2px solid var(--pri)';setTimeout(()=>b.style.outline='',1800)},300);sres.appendChild(a);n++;});
+ if(!n)sres.innerHTML='<div class="small" style="padding:6px 10px">ไม่พบ</div>';});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')sbar.classList.remove('show');});
+
+// ===== TIMER =====
+const P=[
+ {s:0,e:5,c:'--p0',n:'Stabilization (0–5 นาที)',a:'ABC, O₂, monitor, IV, DTX (<60 → thiamine 100 mg + D50W 50 mL), ส่ง lab และระดับยา'},
+ {s:5,e:20,c:'--p1',n:'Initial: Benzodiazepine (5–20 นาที)',a:'Midazolam IM 10 mg หรือ diazepam IV 0.15–0.2 mg/kg (≤10 mg) หรือ lorazepam IV 0.1 mg/kg (≤4 mg) · ซ้ำได้ 1 ครั้ง (IV)'},
+ {s:20,e:40,c:'--p2',n:'Second therapy (20–40 นาที)',a:'LEV 60 mg/kg (≤4500) หรือ VPA 40 mg/kg (≤3000) หรือ fosPHT 20 PE/kg / PHT 20 mg/kg (≤1500) · ครั้งเดียว'},
+ {s:40,e:60,c:'--p3',n:'Third therapy / Refractory (40–60 นาที)',a:'ยา second-line อีกตัว หรือ anesthetic (midazolam, propofol, thiopental) + intubate + ICU + cEEG'},
+ {s:60,e:1e9,c:'--p4',n:'Refractory SE (>60 นาที)',a:'Anesthetic infusion ตาม EEG, ICU, หาสาเหตุ (autoimmune, infection, toxin) · ปรึกษา neurologist'}
+];
+const bar=document.getElementById('bar');
+[[5,'--p0'],[15,'--p1'],[20,'--p2'],[20,'--p3']].forEach(([w,c])=>{const d=document.createElement('div');d.style.width=(w/60*100)+'%';d.style.background='var('+c+')';d.style.opacity='.35';bar.appendChild(d);});
+let t0=null,acc=0,tick=null;const logEl=document.getElementById('log');let logs=[];
+function el(){return acc+(t0?(Date.now()-t0)/1000:0);}
+function fmt(s){s=Math.max(0,Math.floor(s));const m=Math.floor(s/60),x=s%60;return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');}
+let lastPhase=-1;
+function upd(){const s=el(),m=s/60;document.getElementById('clock').textContent=fmt(s);
+ const i=P.findIndex(p=>m>=p.s&&m<p.e);const p=P[i];const ph=document.getElementById('phase');
+ if(t0||acc>0){ph.style.setProperty('--c','var('+p.c+')');ph.querySelector('.pn').textContent=p.n;document.getElementById('pact').textContent=p.a;
+  bar.querySelectorAll('div').forEach((d,k)=>d.style.opacity=k===i?'1':(k<i?'.6':'.25'));
+  if(i!==lastPhase&&lastPhase!==-1&&t0){addLog('→ เข้าสู่ '+p.n);}lastPhase=i;}
+}
+function addLog(t){logs.push('['+fmt(el())+'] '+t);logEl.innerHTML=logs.map(l=>'<div>'+l+'</div>').reverse().join('');}
+document.getElementById('tStart').onclick=()=>{if(!t0){t0=Date.now();if(!tick)tick=setInterval(upd,500);if(lastPhase===-1){lastPhase=-2;}addLog('เริ่มจับเวลา');upd();}};
+document.getElementById('tPause').onclick=()=>{if(t0){acc=el();t0=null;addLog('หยุดชั่วคราว');upd();}};
+document.getElementById('tReset').onclick=()=>{t0=null;acc=0;logs=[];lastPhase=-1;logEl.innerHTML='<div class="small">ยังไม่มีบันทึก</div>';
+ const ph=document.getElementById('phase');ph.style.removeProperty('--c');ph.querySelector('.pn').textContent='พร้อมเริ่ม';document.getElementById('pact').textContent='กด "เริ่มจับเวลา" เมื่อเริ่มชัก หรือตั้งเวลาย้อนหลังได้';
+ document.getElementById('clock').textContent='00:00';bar.querySelectorAll('div').forEach(d=>d.style.opacity='.35');};
+document.getElementById('tSet').onclick=()=>{const v=parseFloat(document.getElementById('tOffset').value)||0;acc=v*60;if(t0)t0=Date.now();else{t0=Date.now();if(!tick)tick=setInterval(upd,500);}lastPhase=-2;addLog('ตั้งเวลาเริ่มชัก '+v+' นาทีที่แล้ว');upd();};
+document.querySelectorAll('[data-ev]').forEach(b=>b.onclick=()=>{if(!t0&&acc===0){addLog('(ยังไม่เริ่มจับเวลา) '+b.dataset.ev);return;}addLog(b.dataset.ev);});
+
+// ===== DOSE CALC =====
+function r(x,d=1){return Math.round(x*Math.pow(10,d))/Math.pow(10,d);}
+function cap(v,mx){return v>mx?[mx,true]:[v,false];}
+function calc(){
+ const w=parseFloat(document.getElementById('wt').value)||0;const old=document.getElementById('elder').checked;
+ const rows=[];const G=(t,c)=>rows.push(`<tr class="grp" style="--c:var(${c})"><td colspan="4">${t}</td></tr>`);
+ const R=(drug,rule,val,note)=>rows.push(`<tr><td><b>${drug}</b></td><td class="small">${rule}</td><td>${val}</td><td class="small">${note}</td></tr>`);
+ const C=(v,mx,u)=>{const [x,c]=cap(v,mx);return r(x)+' '+u+(c?' <span class="capped">(ถึงขนาดสูงสุด)</span>':'');};
+ rows.push('<tr><th>ยา</th><th>สูตร</th><th>ขนาดสำหรับผู้ป่วย</th><th>วิธีให้ / หมายเหตุ</th></tr>');
+ G('Initial therapy (5–20 นาที)','--p1');
+ R('Midazolam IM','10 mg ถ้า >40 kg; 5 mg ถ้า 13–40 kg',w>40?'10 mg':(w>=13?'5 mg':'—'),'ครั้งเดียว · ใช้เมื่อยังไม่มี IV');
+ R('Diazepam IV','0.15–0.2 mg/kg (≤10 mg)',C(0.15*w,10,'')+'–'+C(0.2*w,10,'mg'),'ให้ช้าๆ ~5 mg/min · ซ้ำได้ 1 ครั้งหลัง 5 นาที');
+ R('Lorazepam IV','0.1 mg/kg (≤4 mg)',C(0.1*w,4,'mg'),'ซ้ำได้ 1 ครั้ง · มักไม่มีในไทย');
+ R('Midazolam IM 🇹🇭','0.2 mg/kg (≤10 mg)',C(0.2*w,10,'mg'),'ตาม CPG ไทย');
+ G('Second therapy (20–40 นาที): ESETT doses','--p2');
+ const lev=cap(60*w,4500)[0];
+ R('Levetiracetam IV','60 mg/kg (≤4500 mg)',C(60*w,4500,'mg'),'ผสม NSS 100 mL ให้ใน 10–15 นาที · LEV 🇹🇭 CPG: 30–40 mg/kg = '+r(30*w,0)+'–'+r(40*w,0)+' mg');
+ R('Valproate IV','40 mg/kg (≤3000 mg)',C(40*w,3000,'mg'),'ให้ใน ~10 นาที · ห้ามใช้ในโรคตับ ตั้งครรภ์ หรือ POLG');
+ const ph=cap(20*w,1500)[0];const rate=old?25:50;
+ R('Phenytoin IV','20 mg/kg (≤1500 mg ตาม AES)',C(20*w,1500,'mg'),`ผสม NSS เท่านั้น · ≤${rate} mg/min → อย่างน้อย <b>${Math.ceil(ph/rate)} นาที</b> · ติด ECG + BP`);
+ R('Fosphenytoin IV','20 mg PE/kg (≤1500 mg PE)',C(20*w,1500,'mg PE'),'≤150 mg PE/min'+(old?' (ผู้สูงอายุให้ช้าลง)':''));
+ R('Phenobarbital IV','15 mg/kg (AES) · 20–30 mg/kg 🇹🇭',r(15*w,0)+' mg (AES) · '+r(20*w,0)+'–'+r(30*w,0)+' mg (🇹🇭)','50–75 mg/min · ระวังกดการหายใจ');
+ R('Lacosamide IV 🇹🇭','200–400 mg','200–400 mg','ให้ใน 15–30 นาที · ระวัง PR prolongation');
+ G('Refractory: anesthetic (NCS 2012)','--p3');
+ R('Midazolam','Load 0.2 mg/kg → 0.05–2 mg/kg/h',r(0.2*w)+' mg → '+r(0.05*w)+'–'+r(2*w)+' mg/h','Load ให้ 2 mg/min');
+ R('Propofol','Load 1–2 mg/kg → 20–200 mcg/kg/min',r(1*w,0)+'–'+r(2*w,0)+' mg → '+r(20*w*60/1000)+'–'+r(200*w*60/1000)+' mg/h','PRIS ถ้า >80 mcg/kg/min (= '+r(80*w*60/1000)+' mg/h) นาน >48 ชม.');
+ R('Thiopental','Load 2–7 mg/kg → 0.5–5 mg/kg/h',r(2*w,0)+'–'+r(7*w,0)+' mg → '+r(0.5*w)+'–'+r(5*w)+' mg/h','Load ≤50 mg/min · เตรียม vasopressor');
+ R('Ketamine','1.5 mg/kg ทุก 3–5 นาที (≤4.5 mg/kg) → ≤5 mg/kg/h',r(1.5*w)+' mg/ครั้ง (รวม ≤'+r(4.5*w,0)+') → ≤'+r(5*w,0)+' mg/h','Super-refractory');
+ G('ยาเฉพาะสาเหตุ','--p0');
+ R('Thiamine','100 mg IV','100 mg','ก่อน glucose');
+ R('50% glucose','50 mL IV','50 mL (25 g)','ถ้า DTX <60 mg/dL');
+ document.getElementById('doseTbl').innerHTML=rows.join('');
+}
+document.getElementById('wt').addEventListener('input',calc);document.getElementById('elder').addEventListener('change',calc);calc();
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epilepsy — CPG สถาบันประสาทวิทยา 2564 + NICE NG217</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa;--card:#fff;--ink:#1d2433;--mute:#5b6577;--line:#e2e6ee;
+  --pri:#4b3fb5;--pri-soft:#eeecfb;--thai:#0f7a5c;--thai-soft:#e6f5ef;--nice:#1f5fbf;--nice-soft:#e8f0fc;
+  --warn:#b4540a;--warn-soft:#fdf1e6;--bad:#b42335;--bad-soft:#fdecee;--ok:#1a7f43;
+  --r:14px;
+}
+[data-theme="dark"]{
+  --bg:#12151c;--card:#1b2029;--ink:#e6e9ef;--mute:#9aa3b5;--line:#2c3340;
+  --pri:#9d93ff;--pri-soft:#262247;--thai:#4fd1a5;--thai-soft:#16342b;--nice:#7fb0ff;--nice-soft:#182a45;
+  --warn:#f0a35e;--warn-soft:#3a2a1a;--bad:#ff7d8c;--bad-soft:#3d1c22;--ok:#5fd38d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15.5px}
+header.top{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 16px}
+header.top .brand{font-weight:700;font-size:15px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top .brand small{color:var(--mute);font-weight:500}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 11px;font:inherit;font-size:14px;cursor:pointer}
+.btn:hover{border-color:var(--pri);color:var(--pri)}
+.btn.pri{background:var(--pri);color:#fff;border-color:var(--pri)}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:24px;max-width:1220px;margin:0 auto;padding:20px 16px 80px}
+nav.toc{position:sticky;top:70px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;font-size:14px}
+nav.toc a{display:block;padding:6px 10px;border-radius:8px;color:var(--mute);text-decoration:none}
+nav.toc a:hover,nav.toc a.on{background:var(--pri-soft);color:var(--pri)}
+nav.toc .grp{font-size:12px;font-weight:700;color:var(--mute);margin:14px 10px 4px;letter-spacing:.03em}
+main{min-width:0}
+.hero{background:linear-gradient(135deg,var(--pri-soft),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 18px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:26px;line-height:1.3}
+.hero p{margin:4px 0;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12.5px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card)}
+.chip.thai{background:var(--thai-soft);color:var(--thai);border-color:transparent}
+.chip.nice{background:var(--nice-soft);color:var(--nice);border-color:transparent}
+section.ch{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:20px}
+section.ch>h2{margin:0 0 12px;font-size:21px;display:flex;gap:10px;align-items:baseline}
+section.ch>h2 .n{color:var(--pri);font-size:15px;font-weight:700;min-width:28px}
+h3{font-size:17px;margin:18px 0 8px}
+h4{font-size:15.5px;margin:14px 0 6px}
+p{margin:6px 0}
+ul,ol{margin:6px 0;padding-left:22px}
+li{margin:3px 0}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:6px;vertical-align:1px;margin-right:4px}
+.tag.thai{background:var(--thai-soft);color:var(--thai)}
+.tag.nice{background:var(--nice-soft);color:var(--nice)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.box{border-radius:12px;padding:12px 14px;margin:10px 0;border:1px solid var(--line)}
+.box.thai{background:var(--thai-soft);border-color:transparent}
+.box.nice{background:var(--nice-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.bad{background:var(--bad-soft);border-color:transparent}
+.box b.t{display:block;margin-bottom:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tbl{width:100%;overflow-x:auto;margin:8px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600;position:sticky;top:0}
+td.c{text-align:center}
+.small{font-size:13px;color:var(--mute)}
+/* tool */
+.tool{border:2px solid var(--pri);border-radius:var(--r);padding:18px;background:var(--card)}
+.tool label.opt{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:6px 10px;margin:3px 4px 3px 0;cursor:pointer;font-size:14px}
+.tool label.opt:has(input:checked){border-color:var(--pri);background:var(--pri-soft);color:var(--pri)}
+.tool input{accent-color:var(--pri)}
+.out{margin-top:14px}
+.out .col{border-radius:12px;padding:12px 14px;margin:8px 0}
+.drug{display:inline-block;padding:2px 9px;border-radius:8px;margin:2px 3px 2px 0;font-size:13.5px;font-weight:500;background:var(--card);border:1px solid var(--line)}
+.drug.x{text-decoration:line-through;color:var(--bad);border-color:var(--bad)}
+/* search */
+#sbar{display:none;position:sticky;top:57px;z-index:49;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px}
+#sbar.show{display:block}
+#sbar input{width:100%;max-width:640px;font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+#sres{max-width:640px;max-height:50vh;overflow:auto;margin-top:6px}
+#sres a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
+#sres a:hover{background:var(--pri-soft)}
+#sres a small{color:var(--mute);display:block}
+mark{background:#ffe58a;color:#1d2433;border-radius:3px;padding:0 2px}
+.menu-btn{display:none}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{display:none;position:fixed;top:57px;left:0;right:0;bottom:0;max-height:none;background:var(--card);z-index:60;padding:12px 16px}
+  nav.toc.open{display:block}
+  .menu-btn{display:inline-block}
+  .grid2{grid-template-columns:1fr}
+  section.ch{padding:16px}
+}
+footer{max-width:1220px;margin:0 auto;padding:0 16px 40px;color:var(--mute);font-size:13px}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+.layout{padding-bottom:110px}
+@media print{.imhub-bar{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="btn menu-btn" id="menuBtn" aria-label="เมนู">☰</button>
+  <div class="brand">Epilepsy <small>· CPG สถาบันประสาทวิทยา 2564 + NICE NG217</small></div>
+  <button class="btn" id="searchBtn">🔍 ค้นหา</button>
+  <button class="btn" id="themeBtn" aria-label="สลับธีม">◐</button>
+</header>
+<div id="sbar"><input id="sinput" placeholder="ค้นหา เช่น valproate, HLA, ขับรถ, CrCl ..." autocomplete="off"><div id="sres"></div></div>
+
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="grp">พื้นฐาน</div>
+  <a href="#def">1. นิยามและการจำแนก</a>
+  <a href="#hx">2. ซักประวัติ ตรวจร่างกาย</a>
+  <a href="#ix">3. การส่งตรวจ</a>
+  <div class="grp">การรักษา</div>
+  <a href="#first">4. ชักครั้งแรก เริ่มยาเมื่อไร</a>
+  <a href="#choose">5. เลือกยาตามชนิดชัก</a>
+  <a href="#tool">🧭 เครื่องมือเลือกยา</a>
+  <a href="#dose">6. ขนาดยาและการปรับยา</a>
+  <a href="#ae">7. ผลข้างเคียง SCAR HLA-B*1502</a>
+  <a href="#ddi">8. ปฏิกิริยาระหว่างยา TDM</a>
+  <div class="grp">กลุ่มพิเศษ</div>
+  <a href="#women">9. ผู้หญิง ตั้งครรภ์ คุมกำเนิด</a>
+  <a href="#organ">10. ไต ตับ โรคร่วมทางจิตเวช</a>
+  <div class="grp">ติดตามระยะยาว</div>
+  <a href="#dre">11. Drug-resistant epilepsy</a>
+  <a href="#stop">12. การหยุดยา</a>
+  <a href="#life">13. ขับรถ กีฬา งาน</a>
+  <a href="#nlem">14. บัญชียาหลักฯ</a>
+  <a href="#ref">แหล่งอ้างอิง</a>
+</nav>
+
+<main>
+<div class="hero">
+  <h1>โรคลมชัก (Epilepsy)</h1>
+  <p>ใช้ <b>CPG โรคลมชัก สถาบันประสาทวิทยา ฉบับสมบูรณ์ 2564</b> เป็นแกน (บริบทไทย ยาในบัญชียาหลัก และระบบส่งต่อ) และใช้ <b>NICE NG217</b> (ปรับปรุงด้านความปลอดภัยของยา ม.ค. 2025) อ้างอิงเรื่องการเลือกยากันชักตาม evidence ล่าสุด</p>
+  <div class="chips"><span class="chip thai">🇹🇭 = CPG ไทย 2564</span><span class="chip nice">NICE = NG217</span><a class="chip" href="../status-epilepticus/index.html" style="text-decoration:none;color:inherit">Status epilepticus → ไปหน้า SE ⚡</a></div>
+</div>
+
+<!-- 1 -->
+<section class="ch" id="def"><h2><span class="n">1</span>นิยามและการจำแนก</h2>
+<h3>นิยามโรคลมชัก (ILAE practical definition)</h3>
+<p>วินิจฉัยโรคลมชักเมื่อเข้าข้อใดข้อหนึ่ง</p>
+<ol>
+<li>ชักชนิด unprovoked (หรือ reflex) อย่างน้อย <b>2 ครั้ง ห่างกันเกิน 24 ชั่วโมง</b></li>
+<li>ชัก unprovoked <b>1 ครั้ง</b> และมีโอกาสชักซ้ำสูง (<b>&gt;60% ใน 10 ปี</b>) เช่น มีรอยโรคในสมองจาก stroke หรือ CNS infection เดิม หรือ EEG มี epileptiform discharge</li>
+<li>วินิจฉัยได้ว่าเป็น <b>epilepsy syndrome</b></li>
+</ol>
+<div class="box warn"><b class="t">Provoked (acute symptomatic) seizure ไม่ใช่โรคลมชัก</b>เช่น ไข้ในเด็ก, metabolic derangement, ถอนสุราหรือ benzodiazepine, head trauma ระยะเฉียบพลัน, meningitis, eclampsia, ยา → รักษาที่สาเหตุ โดยทั่วไปไม่เริ่มยากันชักระยะยาว</div>
+<h3>การจำแนกชนิดชัก (ILAE 2017) <span class="tag thai">🇹🇭</span></h3>
+<div class="grid2">
+<div class="box"><b class="t">Focal onset</b>ดู awareness ก่อน (aware / impaired awareness) แล้วแยก motor / non-motor onset<br>• <b>Focal to bilateral tonic-clonic</b> แยกเป็นอีกกลุ่ม</div>
+<div class="box"><b class="t">Generalized onset</b>• Motor: tonic-clonic, tonic, clonic, myoclonic, atonic, epileptic spasms<br>• Non-motor: absence (typical/atypical ฯลฯ)</div>
+</div>
+<p><b>Unknown onset / unclassified</b> ใช้เมื่อข้อมูลไม่พอ</p>
+<p>ลำดับการวินิจฉัย: <b>seizure type → epilepsy type → syndrome</b> (ใช้อายุเริ่มเป็น, EEG, imaging, การดำเนินโรค)</p>
+<p><b>Etiology 6 กลุ่ม:</b> structural, genetic, infectious, metabolic, immune, unknown</p>
+<p class="small">CPG ระบุว่าใช้คำ Genetic Generalized Epilepsies (GGEs) แทน Idiopathic Generalized Epilepsies (IGEs) ได้เมื่อคิดว่าน่าจะมีสาเหตุทางพันธุกรรม หากไม่แน่ใจยังใช้ IGE ได้ · ILAE ปรับปรุง seizure classification ในปี 2025 ส่วน CPG 2564 ยังใช้ฉบับ 2017</p>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="hx"><h2><span class="n">2</span>ซักประวัติและตรวจร่างกาย</h2>
+<div class="grid2">
+<div>
+<h4>ประวัติที่ต้องได้</h4>
+<ul>
+<li>Aura, prodrome, ลักษณะขณะชัก (sensory, motor, autonomic, awareness, ภาษา) และ<b>ระยะเวลา</b> (นับเฉพาะช่วง ictal)</li>
+<li>Postictal: สับสน, Todd's paralysis, aphasia</li>
+<li>สิ่งกระตุ้น: ไข้, อดนอน, ถอนสุรา, เครียด, สัมพันธ์กับประจำเดือน</li>
+<li>Head trauma, ผ่าตัดสมอง, stroke, CNS infection, โรคไตหรือโรคตับ</li>
+<li><b>ยาที่กระตุ้นชัก:</b> tramadol, penicillin, cephalosporin, imipenem, antidepressant บางตัว, การหยุด benzodiazepine หรือ barbiturate ทันที</li>
+<li>ประวัติครอบครัว, สุรา, สารเสพติด, อาชีพ, การขับรถ</li>
+<li>ผู้หญิง: การคุมกำเนิดและแผนการตั้งครรภ์</li>
+<li><b>ขอให้ญาติถ่ายวิดีโอขณะชัก</b></li>
+</ul>
+</div>
+<div>
+<h4>ตรวจร่างกาย</h4>
+<ul>
+<li>Vital signs (ไข้, bradycardia, hypertension, รูปแบบการหายใจ)</li>
+<li>Mental status และ neuro exam: focal deficit, signs of ↑ICP</li>
+<li>ผิวหนังหา neurocutaneous syndrome: ash-leaf spot, facial angiofibroma, port-wine stain, café-au-lait</li>
+<li>Cardiac: arrhythmia (DDx syncope)</li>
+<li>รอยฉีดยาเสพติด, stigmata of liver disease</li>
+<li>Gingival hypertrophy (บ่งว่าใช้ phenytoin)</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="ix"><h2><span class="n">3</span>การส่งตรวจ <span class="tag thai">🇹🇭</span></h2>
+<h3>Laboratory</h3>
+<div class="tbl"><table>
+<tr><th>ระดับ</th><th>รายการ</th></tr>
+<tr><td>P (ปฐมภูมิ)</td><td>CBC, blood glucose, electrolytes, BUN, creatinine</td></tr>
+<tr><td>S/T (ทุติยภูมิ/ตติยภูมิ) ตรวจเพิ่ม</td><td>LFT, Ca, PO<sub>4</sub>, Mg, TFT, anti-HIV; toxicology ตามข้อบ่งชี้</td></tr>
+</table></div>
+<h3>EEG</h3>
+<ul>
+<li>Routine EEG (~20–30 นาที) ครั้งเดียวมี <b>sensitivity 25–56%, specificity 78–98%</b> ทำซ้ำ 3–4 ครั้งช่วยเพิ่ม yield</li>
+<li>ใช้ยืนยันการวินิจฉัย, ประเมิน recurrence risk หลังชักครั้งแรก, แยก focal กับ generalized, ช่วยวินิจฉัย syndrome, หา ictal activity ในผู้ป่วยเสี่ยงสูง (post-cardiac arrest, ไม่ฟื้นหลัง SE) และ presurgical evaluation</li>
+<li>Long-term video-EEG ใช้เวลา 5–7 วัน ถ้าไม่มีอาจบันทึก 3–8 ชั่วโมงติดกันหลายวัน</li>
+<li><b>EEG ปกติไม่ได้ตัดโรค และ EEG ผิดปกติอย่างเดียวไม่ใช่การวินิจฉัย</b> ต้องมีอาการทางคลินิกที่เข้ากัน</li>
+</ul>
+<h3>Neuroimaging</h3>
+<div class="grid2">
+<div class="box"><b class="t">MRI (ไวกว่า CT สำหรับ MTS, FCD, tumor)</b>• Focal seizure ทุกอายุ<br>• ชักร่วมกับ focal deficit<br>• Drug-resistant หรือรูปแบบชักเปลี่ยน<br>• เด็กอายุน้อยกว่า 2 ปีที่มีพัฒนาการถดถอย<br>• Presurgical evaluation</div>
+<div class="box"><b class="t">CT (เมื่อไม่มี MRI หรือเป็นภาวะเร่งด่วน)</b>• ชักครั้งแรกร่วมกับ focal deficit หรือซึม<br>• ชักเฉียบพลันหลัง head injury<br>• มีโรคสมองเดิม, มะเร็ง, shunt, ได้ anticoagulant<br>• ผู้สูงอายุ<br>• Focal epilepsy (ยกเว้น BECTS), drug-resistant</div>
+</div>
+<h3>Lumbar puncture และ autoimmune antibody</h3>
+<ul>
+<li>ทำ LP เมื่อสงสัย infection, inflammation, SAH, carcinomatous meningitis</li>
+<li>สงสัย autoimmune encephalitis: ส่ง <b>serum และ CSF พร้อมกัน</b> · ผลลบไม่ตัด seronegative AE · titer ต่ำอาจเป็น false positive</li>
+</ul>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="first"><h2><span class="n">4</span>ชักครั้งแรก: เริ่มยาเมื่อไร <span class="tag thai">🇹🇭</span></h2>
+<div class="grid2">
+<div class="box"><b class="t">โอกาสชักซ้ำ</b>• หลังชัก unprovoked ครั้งแรก: <b>25–50%</b><br>• หลังชักครั้งที่ 2: <b>~80%</b><br>→ แพทย์ส่วนใหญ่เริ่มยาหลังชักครั้งที่ 2</div>
+<div class="box thai"><b class="t">พิจารณาเริ่มยาตั้งแต่ชักครั้งแรก ถ้ามี</b>• รอยโรคในสมองเดิมหรือ focal neurological deficit<br>• ชักแบบ focal<br>• Imaging หรือ EEG ผิดปกติ (รวม epileptiform discharge)<br>• อาชีพเสี่ยงสูง หรือผลของการชักซ้ำรุนแรง</div>
+</div>
+<ul>
+<li>ตัดสินใจร่วมกับผู้ป่วยและญาติ อธิบายประโยชน์ ผลข้างเคียง และความจำเป็นต้องกินยาระยะยาว</li>
+<li>สอนการปฐมพยาบาลและการหลีกเลี่ยงสิ่งกระตุ้น</li>
+<li><b>ชักนานเกิน 5 นาที หรือชักซ้ำโดยไม่ฟื้น → นำส่ง รพ. ทันที</b></li>
+</ul>
+<p class="small">NICE NG217 สอดคล้องกัน: โดยทั่วไปเริ่มยาหลังชักครั้งที่ 2 และพิจารณาหลังครั้งแรกเมื่อมี neurological deficit, EEG มี unequivocal epileptiform activity, imaging มี structural abnormality หรือผู้ป่วยรับความเสี่ยงชักซ้ำไม่ได้</p>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="choose"><h2><span class="n">5</span>เลือกยาตามชนิดชัก</h2>
+<p><b>หลักการ 🇹🇭:</b> เลือกตาม seizure type และ syndrome ร่วมกับอายุ เพศ โรคร่วม และยาที่ใช้อยู่ · <b>เริ่ม monotherapy ขนาดต่ำ แล้วค่อยๆ ปรับขึ้น</b></p>
+<div class="box nice"><b class="t">NICE NG217 (safety update ม.ค. 2025) เปลี่ยนจุดสำคัญ</b>Valproate ไม่ใช่ first-line เดี่ยวสำหรับ GTCS อีกแล้ว ปัจจุบันให้เลือก <b>lamotrigine, levetiracetam หรือ valproate</b> และ valproate ต้องทำตามมาตรการ MHRA (Box 2) ส่วน topiramate ห้ามใช้ในผู้หญิงที่ตั้งครรภ์ได้ ยกเว้นเข้า Pregnancy Prevention Programme (PPP)</div>
+<div class="tbl"><table>
+<tr><th style="width:15%">ชนิดชัก</th><th style="width:28%"><span class="tag thai">🇹🇭 CPG 2564</span></th><th style="width:37%"><span class="tag nice">NICE NG217</span></th><th style="width:20%"><span class="tag bad">หลีกเลี่ยง / อาจทำให้แย่ลง</span></th></tr>
+<tr><td><b>Focal</b> ± bilateral TC</td><td>CBZ, PHT, VPA, PB (ยาในบัญชียาหลัก)<br><span class="small">LTG และ LEV ใช้เมื่อยาอื่นไม่ได้ผล (เงื่อนไขบัญชียา)</span></td><td><b>1st mono:</b> LTG หรือ LEV<br><b>2nd mono:</b> CBZ, OXC, ZNS<br><b>3rd mono:</b> LCM<br><b>1st add-on:</b> CBZ, LCM, LTG, LEV, OXC, TPM*, ZNS</td><td class="small">ไม่มีรายการห้ามเฉพาะ (ระวัง VPA และ TPM ในผู้หญิง)</td></tr>
+<tr><td><b>GTCS</b></td><td>VPA (เลี่ยงในผู้หญิงวัยเจริญพันธุ์)</td><td><b>1st mono:</b> LTG, LEV หรือ VPA<sup>†</sup><br><b>1st add-on:</b> clobazam, LTG, LEV, perampanel<br><b>2nd add-on:</b> brivaracetam, LCM, PB, primidone, ZNS</td><td>CBZ, GBP, OXC, PHT, PGB, tiagabine, VGB <span class="small">(ถ้ามี absence/myoclonic หรือ JME ร่วม)</span>; LTG ถ้ามี myoclonic</td></tr>
+<tr><td><b>Absence</b></td><td>หลีกเลี่ยง CBZ, PHT</td><td><b>1st:</b> ethosuximide<br><b>2nd mono/add-on:</b> LTG, LEV, VPA<sup>†</sup><br><b>Absence ร่วมกับชักชนิดอื่น:</b> LTG/LEV/VPA ก่อน แล้วค่อยเสริม ethosuximide</td><td>CBZ, GBP, OXC, PB, PHT, PGB, tiagabine, VGB</td></tr>
+<tr><td><b>Myoclonic</b> (รวม JME)</td><td>หลีกเลี่ยง CBZ, PHT, LTG</td><td><b>1st:</b> LEV หรือ VPA<sup>†</sup><br><b>ต่อไป:</b> brivaracetam, clobazam, clonazepam, LTG (ระวัง), PB, piracetam, TPM*, ZNS<br><span class="small">อายุน้อยกว่า 4 ปี → ส่ง pediatric neurologist</span></td><td>CBZ, GBP, OXC, PHT, PGB, tiagabine, VGB; LTG อาจทำให้แย่ลง</td></tr>
+<tr><td><b>Tonic / atonic</b></td><td>—</td><td>ให้ neurologist ประเมิน syndrome<br><b>1st:</b> LTG หรือ VPA<sup>†</sup><br><b>2nd:</b> clobazam, rufinamide, TPM*<br>เด็ก: ketogenic diet</td><td>CBZ, GBP, OXC, PGB, tiagabine, VGB</td></tr>
+<tr><td><b>IGE / GGE</b></td><td>VPA</td><td><b>1st:</b> LTG, LEV หรือ VPA<sup>†</sup><br><b>2nd add-on:</b> perampanel หรือ TPM*</td><td>เหมือน GTCS</td></tr>
+<tr><td><b>Unknown / unclassified</b></td><td>VPA</td><td class="small">(NICE ไม่มีหัวข้อเฉพาะ) ใช้ยา broad-spectrum ได้ คือ LEV หรือ LTG และเลี่ยง VPA ในผู้หญิง</td><td>เลี่ยง narrow-spectrum (CBZ, PHT, OXC) จนกว่าจะแยกได้ว่าไม่ใช่ generalized</td></tr>
+</table></div>
+<p class="small">* TPM = ต้องเข้า PPP ในผู้หญิงที่ตั้งครรภ์ได้ · † VPA = ทำตาม MHRA Box 2 · ตัวย่อ: CBZ carbamazepine, PHT phenytoin, VPA valproate, PB phenobarbital, LTG lamotrigine, LEV levetiracetam, OXC oxcarbazepine, ZNS zonisamide, LCM lacosamide, TPM topiramate, GBP gabapentin, PGB pregabalin, VGB vigabatrin</p>
+<div class="box bad"><b class="t">MHRA Box 2: Valproate (อ้างใน NICE)</b>• <b>อายุน้อยกว่า 55 ปี (ทั้งชายและหญิง):</b> ห้ามเริ่ม valproate ใหม่ ยกเว้นผู้เชี่ยวชาญ 2 คนเห็นพ้องและบันทึกว่าไม่มีทางเลือกอื่นที่ได้ผลและทนได้ หรือความเสี่ยงด้านการเจริญพันธุ์ไม่เกี่ยวข้อง<br>• <b>ผู้หญิงที่ตั้งครรภ์ได้:</b> ใช้เฉพาะเมื่อทางเลือกอื่นล้มเหลว อธิบายความเสี่ยงต่อทารกครบ และเข้า Pregnancy Prevention Programme<br>• <b>ผู้ชาย:</b> คุมกำเนิดอย่างได้ผลระหว่างใช้ยาและ 3 เดือนหลังหยุด และให้คำปรึกษาถ้าวางแผนมีบุตรภายใน 1 ปี</div>
+<div class="box thai"><b class="t">ประยุกต์ใช้ในบริบทไทย</b>ยาในบัญชียาหลัก (CBZ, PHT, VPA, PB) ยังเป็นตัวเลือกแรกที่เข้าถึงได้ใน รพ.ชุมชนและ รพ.ทั่วไป · เมื่อผู้ป่วยเป็นผู้หญิงวัยเจริญพันธุ์ ใช้ยาหลายตัวร่วม (anticoagulant, ARV, ยากดภูมิ) หรือ HLA-B*1502 บวก ให้เปลี่ยนไปใช้ทางเลือกแบบ NICE (LEV, LTG) และส่งต่อหรือปรึกษาผู้เชี่ยวชาญตามเงื่อนไขบัญชียา</div>
+</section>
+
+<!-- TOOL -->
+<section class="ch" id="tool"><h2><span class="n">🧭</span>เครื่องมือช่วยเลือกยากันชัก</h2>
+<div class="tool">
+<p><b>1) ชนิดชัก</b></p>
+<div id="stype">
+<label class="opt"><input type="radio" name="st" value="focal" checked>Focal ± bilateral TC</label>
+<label class="opt"><input type="radio" name="st" value="gtcs">Generalized TC</label>
+<label class="opt"><input type="radio" name="st" value="absence">Absence</label>
+<label class="opt"><input type="radio" name="st" value="myo">Myoclonic / JME</label>
+<label class="opt"><input type="radio" name="st" value="tonic">Tonic / atonic</label>
+<label class="opt"><input type="radio" name="st" value="unk">Unknown onset</label>
+</div>
+<p style="margin-top:12px"><b>2) ปัจจัยของผู้ป่วย</b> (เลือกได้หลายข้อ)</p>
+<div id="flags">
+<label class="opt"><input type="checkbox" value="wocbp">ผู้หญิงที่ตั้งครรภ์ได้ / ตั้งครรภ์</label>
+<label class="opt"><input type="checkbox" value="male55">ชายอายุน้อยกว่า 55 ปี</label>
+<label class="opt"><input type="checkbox" value="hlapos">HLA-B*1502 บวก</label>
+<label class="opt"><input type="checkbox" value="hlaunk">ยังไม่ได้ตรวจ HLA-B*1502</label>
+<label class="opt"><input type="checkbox" value="noac">ได้ NOAC / warfarin</label>
+<label class="opt"><input type="checkbox" value="arv">ได้ ARV / ยากดภูมิ / เคมีบำบัด</label>
+<label class="opt"><input type="checkbox" value="renal">CrCl &lt; 50</label>
+<label class="opt"><input type="checkbox" value="liver">โรคตับ</label>
+<label class="opt"><input type="checkbox" value="psych">ซึมเศร้า / โรคจิตเวช</label>
+<label class="opt"><input type="checkbox" value="elderly">ผู้สูงอายุ</label>
+</div>
+<div class="out" id="out"></div>
+<p class="small">เครื่องมือนี้สรุปจาก CPG 2564 และ NICE NG217 เพื่อช่วยคิด ไม่ใช่คำสั่งการรักษา ต้องพิจารณาผู้ป่วยแต่ละรายและตรวจสอบเอกสารต้นฉบับ</p>
+</div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="dose"><h2><span class="n">6</span>ขนาดยาในผู้ใหญ่ <span class="tag thai">🇹🇭</span></h2>
+<div class="tbl"><table>
+<tr><th>ยา</th><th>เริ่มต้น</th><th>ปรับขึ้น</th><th>Maintenance</th><th>ถึง steady state</th></tr>
+<tr><td>Carbamazepine</td><td>200 mg/d</td><td>+200 mg ทุก 2 สัปดาห์</td><td>600–1200 mg/d</td><td>3–4 วัน*</td></tr>
+<tr><td>Phenytoin</td><td>200–300 mg/d</td><td>+50–100 mg/สัปดาห์</td><td>300–500 mg/d</td><td>15–20 วัน</td></tr>
+<tr><td>Phenobarbital</td><td>30–60 mg/d</td><td>ปรับช้าๆ</td><td>90–120 mg/d</td><td>15–20 วัน</td></tr>
+<tr><td>Valproate</td><td>500–1000 mg/d</td><td>+200–250 mg/สัปดาห์</td><td>1000–3000 mg/d</td><td>~2 วัน</td></tr>
+<tr><td>Levetiracetam</td><td>500 mg/d</td><td>+500 mg/สัปดาห์</td><td>1000–3000 mg/d</td><td>~2 วัน</td></tr>
+<tr><td>Lamotrigine</td><td colspan="3">ต้องปรับช้าตามตารางด้านล่าง (ลดความเสี่ยงผื่นและ SJS)</td><td>—</td></tr>
+<tr><td>Oxcarbazepine</td><td>150–300 mg/d</td><td>+300 mg/สัปดาห์</td><td>600–2400 mg/d</td><td>~2 วัน</td></tr>
+<tr><td>Topiramate</td><td>25 mg/d</td><td>+25 mg/สัปดาห์</td><td>200–400 mg/d</td><td>3–5 วัน</td></tr>
+<tr><td>Zonisamide</td><td>50 mg/d</td><td>+50 mg/สัปดาห์</td><td>100–600 mg/d</td><td>~14 วัน</td></tr>
+<tr><td>Lacosamide</td><td>100 mg/d</td><td>+100 mg/สัปดาห์</td><td>300–400 mg/d</td><td>~3 วัน</td></tr>
+<tr><td>Gabapentin</td><td>300 mg/d</td><td>ปรับขึ้น</td><td>900–3600 mg/d</td><td>1–2 วัน</td></tr>
+<tr><td>Pregabalin</td><td>75 mg/d</td><td>+75 mg/สัปดาห์</td><td>150–600 mg/d</td><td>&lt;2 วัน</td></tr>
+<tr><td>Perampanel</td><td>2 mg/d</td><td>+2 mg/สัปดาห์</td><td>4–8 mg/d (สูงสุด 12)</td><td>15–20 วัน</td></tr>
+<tr><td>Clobazam</td><td>5 mg BID</td><td>+5–10 mg/สัปดาห์</td><td>20–40 mg/d</td><td>7–8 วัน</td></tr>
+</table></div>
+<p class="small">* Carbamazepine มี autoinduction ระดับยาจะลดลงในช่วง 2–4 สัปดาห์แรก · ตัวเลขในตารางถอดจาก CPG ซึ่งบางช่องต้นฉบับอ่านยาก ควรตรวจกับตาราง 16 ในเล่มก่อนสั่งยา</p>
+<h3>Lamotrigine titration (ตามเอกสารกำกับยา)</h3>
+<div class="tbl"><table>
+<tr><th>สถานการณ์</th><th>สัปดาห์ 1–2</th><th>สัปดาห์ 3–4</th><th>จากนั้น</th><th>Maintenance</th></tr>
+<tr><td>Monotherapy / ไม่มี VPA หรือ inducer</td><td>25 mg/d</td><td>50 mg/d</td><td>+50 mg ทุก 1–2 สัปดาห์</td><td>100–200 mg/d</td></tr>
+<tr><td><b>ร่วมกับ valproate</b></td><td>25 mg วันเว้นวัน</td><td>25 mg/d</td><td>+25–50 mg ทุก 1–2 สัปดาห์</td><td>100–200 mg/d</td></tr>
+<tr><td>ร่วมกับ enzyme inducer (CBZ, PHT, PB)</td><td>50 mg/d</td><td>100 mg/d แบ่งให้</td><td>+100 mg ทุก 1–2 สัปดาห์</td><td>200–400 mg/d</td></tr>
+</table></div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="ae"><h2><span class="n">7</span>ผลข้างเคียง, SCAR, HLA-B*1502 <span class="tag thai">🇹🇭</span></h2>
+<h3>ผลข้างเคียงสำคัญ</h3>
+<ul>
+<li><b>พบบ่อย (dose-related):</b> มึนงง ง่วง ataxia diplopia คลื่นไส้ น้ำหนักเปลี่ยน → มักดีขึ้นเมื่อลดขนาดยา</li>
+<li><b>Idiosyncratic:</b> มักต้องหยุดยา</li>
+</ul>
+<div class="tbl"><table>
+<tr><th>ผลข้างเคียงรุนแรง</th><th>ยา</th></tr>
+<tr><td>Hyponatremia</td><td>CBZ, OXC</td></tr>
+<tr><td>Aplastic anemia / agranulocytosis</td><td>CBZ, ZNS</td></tr>
+<tr><td>Hepatotoxicity, pancreatitis</td><td>VPA</td></tr>
+<tr><td>Hyperammonemia</td><td>VPA, TPM</td></tr>
+<tr><td>นิ่วในไต, angle-closure glaucoma</td><td>TPM, ZNS</td></tr>
+<tr><td>Visual field defect</td><td>VGB</td></tr>
+<tr><td>อารมณ์เปลี่ยน / suicidal ideation</td><td>Perampanel, LEV (โดยเฉพาะผู้ที่มีอาการทางจิตเวชเดิม)</td></tr>
+</table></div>
+<h3>Severe cutaneous adverse reactions</h3>
+<div class="grid2">
+<div class="box bad"><b class="t">SJS / TEN</b>SJS &lt;10% BSA · overlap 10–30% · TEN &gt;30%<br>อัตราตาย SJS 1–5%, TEN 25–30% · ใช้ SCORTEN ประเมินความรุนแรง<br><b>หยุดยาทันที + supportive care · ไม่แนะนำ systemic steroid</b></div>
+<div class="box warn"><b class="t">DRESS</b>เกิด 2–8 สัปดาห์หลังเริ่มยา: ไข้ ผื่น ต่อมน้ำเหลืองโต eosinophilia และมีอวัยวะภายในผิดปกติ (ตับ ไต ปอด หัวใจ) · ใช้ Bocquet criteria<br><b>หยุดยา + prednisolone 1–2 mg/kg/d แล้ว taper 2–4 สัปดาห์</b></div>
+</div>
+<h3>HLA-B*1502</h3>
+<ul>
+<li><b>ตรวจก่อนเริ่ม carbamazepine ในคนเชื้อสายเอเชีย</b> รวมคนไทย (พบ carrier 8–14%)</li>
+<li><b>ผลบวก:</b> ห้ามใช้ CBZ และระวัง cross-reactivity กับ PHT, PB, OXC, LTG</li>
+<li><b>ผลลบ:</b> ใช้ CBZ ได้ แต่ยังมีรายงาน SJS/TEN ในคนไทยที่ HLA ลบ จึงต้องเฝ้าระวังผื่นต่อไป</li>
+<li>ผู้ที่กิน CBZ มานานกว่า 3 เดือนแล้ว ไม่ต้องตรวจ</li>
+<li>ผลตรวจใช้เวลา 1–2 สัปดาห์ ถ้าจำเป็นต้องเริ่มยาเร็ว ให้เลือกยาที่ไม่ใช่ aromatic เช่น LEV หรือ VPA ไปก่อน</li>
+</ul>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="ddi"><h2><span class="n">8</span>ปฏิกิริยาระหว่างยาและ TDM <span class="tag thai">🇹🇭</span></h2>
+<div class="grid2">
+<div class="box"><b class="t">Enzyme inducer</b>PHT, CBZ, PB → ลดระดับยาอื่น (OCP, warfarin, NOAC, ARV, ยากดภูมิ, steroid)</div>
+<div class="box"><b class="t">Enzyme inhibitor</b>VPA → เพิ่มระดับยาอื่น (โดยเฉพาะ LTG, PB)</div>
+</div>
+<p><b>ยากันชักที่ปฏิกิริยา CYP น้อย:</b> LEV, GBP, PGB, LCM, ZNS</p>
+<ul>
+<li><b>ยาที่ลดระดับยากันชัก:</b> สุรา, nicotine, OCP (โดยเฉพาะต่อ LTG), steroid, rifampicin, <b>carbapenem (ลดระดับ VPA อย่างมาก)</b></li>
+<li><b>ยาที่เพิ่มระดับยากันชัก:</b> allopurinol, cimetidine, omeprazole, metronidazole, fluconazole, erythromycin, isoniazid, sulfonamide, SSRI และ antipsychotic บางตัว</li>
+</ul>
+<div class="tbl"><table>
+<tr><th>ยาร่วม</th><th><span class="tag bad">หลีกเลี่ยง</span></th><th><span class="tag warn">ระวัง</span></th><th><span class="tag thai">ใช้ได้</span></th></tr>
+<tr><td>NOAC</td><td>PHT, PB, CBZ, VPA</td><td>OXC, TPM (กับ apixaban, rivaroxaban)</td><td>LTG, LCM, GBP, PGB, ZNS, brivaracetam</td></tr>
+<tr><td>ARV / ยากดภูมิ</td><td>Enzyme inducer</td><td>—</td><td>LEV, LCM, PGB, GBP</td></tr>
+</table></div>
+<h3>Therapeutic drug monitoring</h3>
+<p>ส่งระดับยาเมื่อ: สงสัย toxicity หรือคุมชักไม่ได้, ตั้งครรภ์, โรคตับหรือโรคไต, ใช้ยาหลายตัว, สงสัย non-adherence, และ <b>phenytoin (nonlinear kinetics)</b> · เจาะ <b>trough ที่ steady state</b> · ถ้า albumin ต่ำหรือ protein binding เปลี่ยน ให้ใช้ระดับ free drug</p>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="women"><h2><span class="n">9</span>ผู้หญิง การตั้งครรภ์ การคุมกำเนิด <span class="tag thai">🇹🇭</span><span class="tag nice">NICE</span></h2>
+<div class="box thai"><b class="t">Folic acid</b>ผู้หญิงวัยเจริญพันธุ์ที่เป็นโรคลมชักทุกคน ให้ <b>0.4–4 mg/d</b> เพื่อลด neural tube defect</div>
+<h3>ความเสี่ยงความพิการแต่กำเนิดตามยา (โดยประมาณ)</h3>
+<div class="tbl"><table>
+<tr><th>ยา</th><th>Malformation rate</th></tr>
+<tr><td><b>Valproate</b></td><td><b>6–16%</b> · ขึ้นกับขนาด: &lt;650 mg/d 6.3%, 650–1450 mg/d 11.3%, &gt;1450 mg/d 25.2%</td></tr>
+<tr><td>Phenytoin</td><td>2.6–7.4%</td></tr>
+<tr><td>Phenobarbital</td><td>2.9–6.5%</td></tr>
+<tr><td>Carbamazepine</td><td>2.1–6.3%</td></tr>
+<tr><td>Topiramate</td><td>2–4.8%</td></tr>
+<tr><td>Lamotrigine</td><td>1.4–5.2%</td></tr>
+<tr><td>Levetiracetam</td><td>~2%</td></tr>
+</table></div>
+<p>ถ้าจำเป็นต้องใช้ valproate จริง ให้ใช้ขนาด <b>น้อยกว่า 650 mg/d</b> และเลี่ยง polytherapy · NICE/MHRA: ผู้หญิงที่ตั้งครรภ์ได้ใช้ VPA เมื่อยาอื่นล้มเหลวและอยู่ใน PPP เท่านั้น ส่วน TPM ก็ต้องเข้า PPP เช่นกัน</p>
+<h3>ระหว่างตั้งครรภ์และหลังคลอด</h3>
+<ul>
+<li><b>อย่าเปลี่ยนสูตรยาที่คุมชักได้ดีระหว่างตั้งครรภ์</b></li>
+<li>ฝากครรภ์เร็วที่สุด ตรวจคัดกรอง anomaly ที่อายุครรภ์ 16–20 สัปดาห์</li>
+<li>ติดตามระดับยา ระดับ LTG และ LEV ลดลงชัดเจนระหว่างตั้งครรภ์ และระดับยาอาจขึ้นหลังคลอด</li>
+<li>คลอดทางช่องคลอดได้ ยกเว้นมีข้อบ่งชี้ทางสูติกรรม · <b>ให้นมบุตรได้</b> แต่เฝ้าดูทารกซึมถ้าแม่ได้ PB ขนาดสูง</li>
+<li>วางแผนลดหรือหยุดยาได้เมื่อไม่ชัก ~2 ปี · พิจารณาตั้งครรภ์เมื่อไม่ชัก 9–12 เดือน</li>
+</ul>
+<h3>การคุมกำเนิด</h3>
+<ul>
+<li><b>IUD เป็นวิธีที่แนะนำ</b></li>
+<li>DMPA ฉีดทุก 12 สัปดาห์ได้แม้ใช้ enzyme inducer</li>
+<li>Implant ต้องใช้ถุงยางร่วมถ้าใช้ enzyme inducer</li>
+<li>COC: ethinyl estradiol อย่างน้อย 50 µg และประมาณ 100 µg ถ้าใช้ enzyme inducer · ระวังเมื่อใช้ TPM มากกว่า 200 mg/d · <b>COC ลดระดับ LTG</b> จึงต้องติดตามระดับยา</li>
+</ul>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="organ"><h2><span class="n">10</span>โรคไต โรคตับ โรคร่วมทางจิตเวช <span class="tag thai">🇹🇭</span></h2>
+<h3>ปรับยาตาม CrCl</h3>
+<div class="tbl"><table>
+<tr><th>ยา</th><th>CrCl ปกติ</th><th>ลดลงปานกลาง</th><th>ลดลงมาก</th><th>HD</th></tr>
+<tr><td>Levetiracetam</td><td>&gt;80: 500–1500 mg BID</td><td>50–80: 500–1000 BID<br>30–50: 250–750 BID</td><td>&lt;30: 250–500 BID</td><td>500–1000 mg OD + เสริม 250–500 หลัง HD</td></tr>
+<tr><td>Gabapentin</td><td>&gt;60: 400 mg TID</td><td>30–60: 300 mg BID</td><td>15–30: 300 mg OD<br>&lt;15: 300 mg วันเว้นวัน</td><td>เสริม 200–300 mg หลัง HD</td></tr>
+<tr><td>Topiramate</td><td>&gt;70: ขนาดปกติ</td><td colspan="2">10–70: ลด 50% · &lt;10: ลด 75%</td><td>—</td></tr>
+</table></div>
+<h3>โรคตับ</h3>
+<p>ระวัง CBZ, PHT, PB, VPA และ benzodiazepine (ผ่านตับ) · ควรเลี่ยง VPA ในโรคตับ · ยาที่ขับทางไตเป็นหลัก เช่น LEV, GBP, PGB ใช้ง่ายกว่า (CPG ไม่ได้ให้ขนาดยาปรับตามโรคตับ)</p>
+<h3>โรคร่วมทางจิตเวช</h3>
+<p>ความชุกในผู้ป่วยโรคลมชัก: anxiety 30–35%, depression 13–37%, psychosis ~5%, suicidality ~12% · คัดกรองซึมเศร้าด้วย NDDI-E</p>
+<ul>
+<li><b>Depression:</b> ใช้ SSRI เป็นหลัก · TCA ไม่ใช่ first-line · <b>เลี่ยง bupropion, maprotiline, clomipramine, amoxapine</b> · enzyme inducer ลดระดับ antidepressant · ระวัง LEV และ perampanel ทำให้อารมณ์แย่ลง</li>
+<li><b>Anxiety:</b> PGB สำหรับ GAD · SSRI หรือ SNRI สำหรับ panic และ social anxiety · ใช้ CBT ร่วมได้</li>
+<li><b>Psychosis:</b> atypical antipsychotic (risperidone, olanzapine, quetiapine) · <b>เลี่ยง clozapine, chlorpromazine, loxapine</b> · ระวัง aripiprazole · ถ้าสงสัย forced normalization ให้ลดยากันชักแล้วส่งจิตแพทย์</li>
+<li>ส่งต่อจิตแพทย์เมื่อเสี่ยงฆ่าตัวตาย มี psychosis เป็น bipolar หรือตอบสนองต่อการรักษาน้อยกว่า 50% ที่ 4–6 สัปดาห์</li>
+</ul>
+</section>
+
+<!-- 11 -->
+<section class="ch" id="dre"><h2><span class="n">11</span>Drug-resistant epilepsy <span class="tag thai">🇹🇭</span></h2>
+<div class="box warn"><b class="t">นิยาม (ILAE)</b>ใช้ยากันชัก <b>2 ตัว</b> ที่เลือกเหมาะสมและผู้ป่วยทนได้ ในขนาดเพียงพอ (เดี่ยวหรือร่วมกัน) แล้วยังไม่หายชัก</div>
+<h4>ก่อนวินิจฉัย DRE ให้ทบทวน</h4>
+<ul>
+<li><b>การวินิจฉัย:</b> อาจเป็น mimic เช่น syncope, sleep disorder, PNES, migraine</li>
+<li>สาเหตุที่ยังไม่ได้รักษา เช่น DM, SLE, tumor, AVM</li>
+<li>สิ่งกระตุ้น: อดนอน เครียด สุรา ไข้</li>
+<li>เลือกยาหรือให้ขนาดยาไม่เหมาะสม และปัญหา <b>adherence</b> หรือการเก็บรักษายา</li>
+</ul>
+<h4>การส่งต่อเพื่อผ่าตัด</h4>
+<p>ส่ง presurgical evaluation ที่ศูนย์ที่มีทีมสหสาขา (neurology, neurosurgery, neuroradiology, neuropsychology) พร้อม MRI, video-EEG และ neuropsychological test โดยเฉพาะเมื่อมีรอยโรคที่ผ่าตัดได้ เช่น MTS, FCD, tuberous sclerosis, hypothalamic hamartoma</p>
+<p>ทางเลือก: resection หรือ disconnection (มุ่งหายขาด) · palliative: corpus callosotomy, VNS, DBS, RNS · ketogenic diet และ cannabidiol (ใช้ใน Dravet และ LGS ภายใต้ผู้เชี่ยวชาญ)</p>
+</section>
+
+<!-- 12 -->
+<section class="ch" id="stop"><h2><span class="n">12</span>การหยุดยากันชัก <span class="tag thai">🇹🇭</span></h2>
+<ul>
+<li>พิจารณาเมื่อ<b>ไม่ชักประมาณ 2 ปี</b> และคุยเรื่องโอกาสชักซ้ำ (สูงถึง 50% ในบางการศึกษา ส่วนใหญ่เกิดใน 6 เดือนแรกของการลดยา)</li>
+<li>ลดยาช้าๆ <b>อย่างน้อย 2–3 เดือน</b> · benzodiazepine และ PB อาจต้อง 6 เดือนขึ้นไป</li>
+<li>ถ้าใช้หลายตัว ให้ลดตัวที่มีผลข้างเคียงมากที่สุดก่อน และลดทีละตัว</li>
+</ul>
+<div class="box bad"><b class="t">ปัจจัยเสี่ยงชักซ้ำหลังหยุดยา</b>Neuro exam หรือ imaging ผิดปกติ, IQ &lt;70, ชักหลายชนิด, เคยชักบ่อย, EEG ผิดปกติ (โดยเฉพาะ focal), syndrome บางชนิด (JME, LGS), remote symptomatic epilepsy</div>
+</section>
+
+<!-- 13 -->
+<section class="ch" id="life"><h2><span class="n">13</span>การขับรถ กีฬา และการทำงาน <span class="tag thai">🇹🇭</span></h2>
+<div class="grid2">
+<div class="box warn"><b class="t">🚗 รถส่วนบุคคล</b>ถ้าชักแบบหมดสติหรือคุมการเคลื่อนไหวไม่ได้ ให้หยุดขับทันที · <b>กลับมาขับได้เมื่อคุมชักได้อย่างน้อย 1 ปี</b> และแพทย์อนุญาต</div>
+<div class="box bad"><b class="t">🚌 รถสาธารณะ</b>หยุดขับทันที · กลับมาขับได้เมื่อคุมชักได้อย่างน้อย <b>10 ปี</b></div>
+</div>
+<p><b>กีฬา:</b> เล่นได้เมื่อคุมชักได้อย่างน้อย 1 ปี · เสี่ยงต่ำ เช่น โบว์ลิ่ง กอล์ฟ ปิงปอง โยคะ เวท · เสี่ยงปานกลาง เช่น บาสเกตบอล วิ่ง ว่ายน้ำระยะสั้น · <b>เสี่ยงสูง</b> เช่น ชกมวย ดำน้ำ ปีนเขา ว่ายน้ำระยะไกล</p>
+<p><b>การทำงาน:</b> ทำงานได้ตามปกติเมื่อคุมชักได้ แต่ควรเลี่ยงงานที่สูง เครื่องจักรหนัก และงานขับรถ</p>
+<p class="small">ภาคผนวกของ CPG มีตัวอย่างใบรับรองแพทย์สำหรับการขอใบขับขี่</p>
+</section>
+
+<!-- 14 -->
+<section class="ch" id="nlem"><h2><span class="n">14</span>เงื่อนไขบัญชียาหลักแห่งชาติ (2563) <span class="tag thai">🇹🇭</span></h2>
+<ul>
+<li><b>Lamotrigine</b> (25, 50, 100 mg) และ <b>levetiracetam</b> (250, 500 mg): ใช้โดยผู้เชี่ยวชาญเมื่อยาอื่นไม่ได้ผล</li>
+<li><b>Topiramate, vigabatrin:</b> จำกัดให้ประสาทแพทย์หรือกุมารแพทย์ผู้เชี่ยวชาญ</li>
+<li><b>Midazolam:</b> สำหรับ refractory status epilepticus</li>
+</ul>
+<p class="small">เงื่อนไขอาจเปลี่ยนตามบัญชียาฉบับปรับปรุงและบัญชียาของแต่ละ รพ. ควรตรวจสอบก่อนสั่งยา</p>
+</section>
+
+<section class="ch" id="ref"><h2><span class="n">📚</span>แหล่งอ้างอิง</h2>
+<ul>
+<li>สถาบันประสาทวิทยา กรมการแพทย์. <i>แนวทางเวชปฏิบัติในการรักษาโรคลมชักสำหรับแพทย์ (Clinical Practice Guidelines for Epilepsy)</i> ฉบับสมบูรณ์ 2564. พิมพ์ครั้งที่ 1, 2565. <a href="https://fakthahospital.moph.go.th/images/PDF/PCT/CPG-lm%20chak-64.pdf">PDF</a></li>
+<li>NICE. <i>Epilepsies in children, young people and adults</i> (NG217). 2022, safety update January 2025 — <a href="https://www.nice.org.uk/guidance/NG217/chapter/5-Treating-epileptic-seizures-in-children">Chapter 5: Treating epileptic seizures</a></li>
+<li>Lamotrigine titration อ้างจากเอกสารกำกับยา</li>
+</ul>
+<p class="small">หน้านี้สรุปเพื่อการเรียนรู้ ก่อนใช้กับผู้ป่วยจริงควรตรวจสอบกับเอกสารต้นฉบับและบัญชียาของโรงพยาบาล · จัดทำโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+</section>
+</main>
+</div>
+
+<script>
+// theme
+(function(){
+  const root=document.documentElement;
+  try{const t=localStorage.getItem('mds-theme');if(t)root.dataset.theme=t;}catch(e){}
+  document.getElementById('themeBtn').onclick=()=>{
+    const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;
+    try{localStorage.setItem('mds-theme',n);}catch(e){}
+  };
+})();
+// mobile menu
+const toc=document.getElementById('toc');
+document.getElementById('menuBtn').onclick=()=>toc.classList.toggle('open');
+toc.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toc.classList.remove('open')));
+// scrollspy
+const links=[...toc.querySelectorAll('a')];
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section.ch').forEach(s=>io.observe(s));
+// search
+const sbar=document.getElementById('sbar'),sin=document.getElementById('sinput'),sres=document.getElementById('sres');
+document.getElementById('searchBtn').onclick=()=>{sbar.classList.toggle('show');if(sbar.classList.contains('show'))sin.focus();};
+function clearMarks(){document.querySelectorAll('mark.hl').forEach(m=>{const t=document.createTextNode(m.textContent);m.replaceWith(t);t.parentNode.normalize();});}
+sin.addEventListener('input',()=>{
+  const q=sin.value.trim().toLowerCase();sres.innerHTML='';clearMarks();
+  if(q.length<2)return;
+  const blocks=document.querySelectorAll('main section.ch p, main section.ch li, main section.ch td, main section.ch .box, main section.ch h3, main section.ch h4');
+  let n=0;const seen=new Set();
+  blocks.forEach(b=>{
+    if(n>=40)return;
+    const txt=b.textContent;const i=txt.toLowerCase().indexOf(q);if(i<0)return;
+    if([...seen].some(s=>s.contains(b)))return;seen.add(b);
+    const sec=b.closest('section.ch');const h=sec.querySelector('h2').textContent.trim();
+    if(!b.id)b.id='s'+Math.random().toString(36).slice(2,8);
+    const a=document.createElement('a');a.href='#'+b.id;
+    const snip=txt.slice(Math.max(0,i-40),i+80).replace(/\s+/g,' ');
+    a.innerHTML='<small>'+h+'</small>…'+snip.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),m=>'<mark>'+m+'</mark>')+'…';
+    a.onclick=()=>{setTimeout(()=>{b.style.outline='2px solid var(--pri)';setTimeout(()=>b.style.outline='',1800)},300)};
+    sres.appendChild(a);n++;
+  });
+  if(!n)sres.innerHTML='<div class="small" style="padding:6px 10px">ไม่พบ</div>';
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')sbar.classList.remove('show');});
+
+// ====== ASM chooser ======
+const D={
+ focal:{nice1:['Lamotrigine','Levetiracetam'],nice2:['Carbamazepine','Oxcarbazepine','Zonisamide'],nice3:['Lacosamide'],addon:['Carbamazepine','Lacosamide','Lamotrigine','Levetiracetam','Oxcarbazepine','Topiramate','Zonisamide'],thai:['Carbamazepine','Phenytoin','Valproate','Phenobarbital'],avoid:[],note:'NICE: ถ้าตัวแรกไม่ได้ผล ให้ลองอีกตัวใน first-line ก่อน'},
+ gtcs:{nice1:['Lamotrigine','Levetiracetam','Valproate'],nice2:[],nice3:[],addon:['Clobazam','Lamotrigine','Levetiracetam','Perampanel'],addon2:['Brivaracetam','Lacosamide','Phenobarbital','Primidone','Zonisamide'],thai:['Valproate'],avoid:['Carbamazepine','Gabapentin','Oxcarbazepine','Phenytoin','Pregabalin','Tiagabine','Vigabatrin'],avoidNote:'หลีกเลี่ยงถ้ามี absence หรือ myoclonic ร่วม หรือสงสัย JME'},
+ absence:{nice1:['Ethosuximide'],nice2:['Lamotrigine','Levetiracetam','Valproate'],nice3:[],addon:[],thai:['(ไม่ระบุยาเฉพาะ) เลี่ยง CBZ, PHT'],avoid:['Carbamazepine','Gabapentin','Oxcarbazepine','Phenobarbital','Phenytoin','Pregabalin','Tiagabine','Vigabatrin'],note:'ถ้ามีชักชนิดอื่นร่วม: เริ่ม LTG, LEV หรือ VPA ก่อน แล้วเสริม ethosuximide'},
+ myo:{nice1:['Levetiracetam','Valproate'],nice2:['Brivaracetam','Clobazam','Clonazepam','Lamotrigine (ระวัง)','Phenobarbital','Piracetam','Topiramate','Zonisamide'],nice3:[],addon:[],thai:['(ไม่ระบุยาเฉพาะ) เลี่ยง CBZ, PHT, LTG'],avoid:['Carbamazepine','Gabapentin','Oxcarbazepine','Phenytoin','Pregabalin','Tiagabine','Vigabatrin'],note:'Lamotrigine อาจทำให้ myoclonic แย่ลง · อายุน้อยกว่า 4 ปีให้ส่ง pediatric neurologist'},
+ tonic:{nice1:['Lamotrigine','Valproate'],nice2:['Clobazam','Rufinamide','Topiramate'],nice3:[],addon:[],thai:['—'],avoid:['Carbamazepine','Gabapentin','Oxcarbazepine','Pregabalin','Tiagabine','Vigabatrin'],note:'ให้ neurologist ที่เชี่ยวชาญโรคลมชักประเมิน syndrome (เช่น LGS) · เด็กพิจารณา ketogenic diet'},
+ unk:{nice1:['Levetiracetam','Lamotrigine'],nice2:['Valproate'],nice3:[],addon:[],thai:['Valproate'],avoid:['Carbamazepine','Phenytoin','Oxcarbazepine'],avoidNote:'เลี่ยง narrow-spectrum จนกว่าจะแยกได้ว่าไม่ใช่ generalized',note:'NICE ไม่มีหัวข้อเฉพาะ ใช้หลักเลือกยา broad-spectrum'}
+};
+const RULES={
+ wocbp:{x:['Valproate','Topiramate'],msg:'<b>ผู้หญิงที่ตั้งครรภ์ได้:</b> เลี่ยง VPA (ใช้เฉพาะเมื่อยาอื่นล้มเหลวและอยู่ใน PPP ถ้าจำเป็นให้ใช้น้อยกว่า 650 mg/d) · TPM ต้องเข้า PPP · ให้ folic acid 0.4–4 mg/d · enzyme inducer ลดประสิทธิภาพ OCP · ระดับ LTG ลดลงเมื่อใช้ OCP และระหว่างตั้งครรภ์ · ยาที่เหมาะ: LEV, LTG'},
+ male55:{x:['Valproate'],msg:'<b>ชายอายุน้อยกว่า 55 ปี:</b> ตาม MHRA ห้ามเริ่ม VPA ใหม่ ยกเว้นผู้เชี่ยวชาญ 2 คนเห็นพ้อง ถ้าใช้ต้องคุมกำเนิดระหว่างใช้ยาและ 3 เดือนหลังหยุด (หมายเหตุ: CPG ไทยยังใช้ VPA ในผู้ชายได้ตามปกติ)'},
+ hlapos:{x:['Carbamazepine'],c:['Phenytoin','Phenobarbital','Oxcarbazepine','Lamotrigine'],msg:'<b>HLA-B*1502 บวก:</b> ห้าม CBZ · ระวัง cross-reactivity กับ PHT, PB, OXC, LTG → เลือก LEV, VPA, LCM'},
+ hlaunk:{c:['Carbamazepine'],msg:'<b>ยังไม่ได้ตรวจ HLA-B*1502:</b> ตรวจก่อนเริ่ม CBZ (รอผล 1–2 สัปดาห์) ถ้าต้องเริ่มยาเร็ว ให้ใช้ยาที่ไม่ใช่ aromatic ไปก่อน'},
+ noac:{x:['Phenytoin','Phenobarbital','Carbamazepine','Valproate'],c:['Oxcarbazepine','Topiramate'],msg:'<b>NOAC:</b> เลี่ยง PHT, PB, CBZ, VPA · ระวัง OXC และ TPM กับ apixaban หรือ rivaroxaban · ใช้ได้: LTG, LCM, GBP, PGB, ZNS, brivaracetam (LEV ปฏิกิริยาน้อย) · warfarin + enzyme inducer ทำให้ INR ผันผวน'},
+ arv:{x:['Phenytoin','Phenobarbital','Carbamazepine'],msg:'<b>ARV / ยากดภูมิ:</b> enzyme inducer ลดระดับยาเหล่านี้ → เลือก LEV, LCM, PGB, GBP'},
+ renal:{c:['Levetiracetam','Gabapentin','Pregabalin','Topiramate','Lacosamide'],msg:'<b>CrCl &lt; 50:</b> ปรับขนาด LEV, GBP, TPM (ดูตารางในข้อ 10) และ PGB, LCM ตามเอกสารกำกับยา · PHT: albumin ต่ำและ uremia ทำให้ free fraction สูง ให้ดูระดับ free phenytoin'},
+ liver:{x:['Valproate'],c:['Carbamazepine','Phenytoin','Phenobarbital','Clobazam','Clonazepam'],msg:'<b>โรคตับ:</b> เลี่ยง VPA · ระวังยาที่ผ่านตับและ benzodiazepine · ยาที่ใช้ง่ายกว่า: LEV, GBP, PGB'},
+ psych:{c:['Levetiracetam','Perampanel','Topiramate'],msg:'<b>ซึมเศร้า / จิตเวช:</b> LEV และ perampanel อาจทำให้อารมณ์แย่ลงหรือเกิด suicidal ideation · ยาที่ช่วยปรับอารมณ์ เช่น LTG, VPA อาจได้ประโยชน์ · ใช้ SSRI ได้ · เลี่ยง bupropion และ TCA เป็น first-line'},
+ elderly:{c:['Phenytoin','Phenobarbital','Carbamazepine'],msg:'<b>ผู้สูงอายุ (หลักทั่วไป):</b> เริ่มขนาดต่ำและปรับช้า · เลี่ยง enzyme inducer และยาที่ทำให้ง่วงหรือเสียการทรงตัว · CBZ/OXC เสี่ยง hyponatremia · LTG และ LEV มักทนได้ดี (CPG ส่วนผู้สูงอายุในต้นฉบับอ่านไม่ชัด)'}
+};
+function chip(d,xs,cs){const k=d.replace(/ \(.*\)/,'');if(xs.has(k))return '<span class="drug x" title="ไม่เหมาะกับผู้ป่วยรายนี้">'+d+'</span>';if(cs.has(k))return '<span class="drug" style="border-color:var(--warn);color:var(--warn)" title="ระวัง">⚠ '+d+'</span>';return '<span class="drug">'+d+'</span>';}
+function render(){
+  const st=document.querySelector('input[name=st]:checked').value;const d=D[st];
+  const fl=[...document.querySelectorAll('#flags input:checked')].map(i=>i.value);
+  const xs=new Set(),cs=new Set();fl.forEach(f=>{(RULES[f].x||[]).forEach(v=>xs.add(v));(RULES[f].c||[]).forEach(v=>cs.add(v));});
+  const row=(arr)=>arr.map(v=>chip(v,xs,cs)).join('');
+  let h='';
+  // suggested best
+  const pool=[...d.nice1,...d.nice2,...(d.nice3||[])].map(v=>v.replace(/ \(.*\)/,'')).filter(v=>!xs.has(v));
+  const best=pool.filter(v=>!cs.has(v)).slice(0,3);
+  h+='<div class="col" style="background:var(--pri-soft)"><b>ตัวเลือกที่เหมาะกับผู้ป่วยรายนี้ (เรียงตามลำดับของ NICE):</b><br>'+(best.length?best.map(v=>'<span class="drug" style="border-color:var(--pri);color:var(--pri)">✓ '+v+'</span>').join(''):'<span class="small">ไม่มีตัวที่ปลอดข้อควรระวัง ควรปรึกษาผู้เชี่ยวชาญ</span>')+'</div>';
+  h+='<div class="col" style="background:var(--nice-soft)"><b>NICE NG217</b><br>First-line: '+row(d.nice1)+(d.nice2.length?'<br>Second-line: '+row(d.nice2):'')+((d.nice3||[]).length?'<br>Third-line mono: '+row(d.nice3):'')+(d.addon.length?'<br>First-line add-on: '+row(d.addon):'')+(d.addon2?'<br>Second-line add-on: '+row(d.addon2):'')+(d.note?'<div class="small" style="margin-top:4px">'+d.note+'</div>':'')+'</div>';
+  h+='<div class="col" style="background:var(--thai-soft)"><b>🇹🇭 CPG 2564</b><br>'+row(d.thai)+'</div>';
+  if(d.avoid.length)h+='<div class="col" style="background:var(--bad-soft)"><b>หลีกเลี่ยง / อาจทำให้ชักแย่ลง</b><br>'+d.avoid.map(v=>'<span class="drug x">'+v+'</span>').join('')+(d.avoidNote?'<div class="small">'+d.avoidNote+'</div>':'')+'</div>';
+  if(fl.length)h+='<div class="col" style="background:var(--warn-soft)"><b>ข้อควรระวังตามปัจจัยผู้ป่วย</b><ul>'+fl.map(f=>'<li>'+RULES[f].msg+'</li>').join('')+'</ul></div>';
+  document.getElementById('out').innerHTML=h;
+}
+document.querySelectorAll('#stype input,#flags input').forEach(i=>i.addEventListener('change',render));
+render();
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>
