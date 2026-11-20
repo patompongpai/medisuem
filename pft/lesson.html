@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>การแปลผล PFT — จากศูนย์ถึงระดับอายุรแพทย์ | Medisüem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2333;--ink2:#465065;--mute:#7b8496;--line:#e2e6ee;--bg:#fbfaf7;--card:#fff;
+  --L0:#0ea5e9;--L0s:#e0f4fd;--L1:#8b5cf6;--L1s:#efe9fe;--L2:#f97316;--L2s:#fff0e3;--L3:#16a34a;--L3s:#e3f6e9;
+  --L4:#e11d48;--L4s:#fde6ec;--L5:#0d9488;--L5s:#dcf5f2;--L6:#ca8a04;--L6s:#fdf5d8;
+  --low:#dc2626;--high:#2563eb;--ok:#15803d;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 'IBM Plex Sans Thai',system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.page{max-width:900px;margin:0 auto;padding:0 18px 80px}
+a{color:#2563eb}
+/* hero */
+.hero{background:linear-gradient(135deg,#0ea5e9 0%,#8b5cf6 45%,#f97316 100%);color:#fff;padding:46px 22px 40px;border-radius:0 0 28px 28px;margin:0 -18px 26px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.12)}
+.hero .kick{font-size:14px;letter-spacing:.08em;opacity:.9;text-transform:uppercase}
+.hero h1{font-size:34px;line-height:1.25;margin:8px 0 10px;max-width:720px}
+.hero p{margin:0;max-width:680px;opacity:.95;font-size:17px}
+.hero .by{margin-top:16px;font-size:14px;opacity:.9}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 18px}
+.tbtn{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--ink)}
+.tbtn:hover{border-color:#8b5cf6}
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0 6px}
+.road a{display:block;text-decoration:none;color:var(--ink);border-radius:14px;padding:12px 14px;border:2px solid transparent}
+.road a b{display:block;font-size:13px;letter-spacing:.05em}
+.road a span{font-size:15px;font-weight:600;line-height:1.35;display:block;margin-top:2px}
+/* level header */
+.lv{margin:56px 0 10px;border-radius:20px;padding:22px 22px 18px;color:#fff;position:relative;break-before:page}
+.lv .tag{display:inline-block;background:rgba(255,255,255,.22);border-radius:999px;padding:2px 12px;font-size:13px;font-weight:600;letter-spacing:.05em}
+.lv h2{font-size:27px;margin:8px 0 4px;line-height:1.3}
+.lv p{margin:0;opacity:.95}
+.lv0{background:linear-gradient(120deg,#0284c7,#38bdf8)}.lv1{background:linear-gradient(120deg,#6d28d9,#a78bfa)}
+.lv2{background:linear-gradient(120deg,#ea580c,#fb923c)}.lv3{background:linear-gradient(120deg,#15803d,#4ade80)}
+.lv4{background:linear-gradient(120deg,#be123c,#fb7185)}.lv5{background:linear-gradient(120deg,#0f766e,#2dd4bf)}
+.lv6{background:linear-gradient(120deg,#a16207,#facc15)}.lv7{background:linear-gradient(120deg,#334155,#64748b)}
+h3{font-size:21px;margin:34px 0 8px;line-height:1.35;padding-left:12px;border-left:6px solid var(--c,#8b5cf6)}
+h4{font-size:17px;margin:20px 0 6px;color:var(--ink2)}
+.s0{--c:var(--L0)}.s1{--c:var(--L1)}.s2{--c:var(--L2)}.s3{--c:var(--L3)}.s4{--c:var(--L4)}.s5{--c:var(--L5)}.s6{--c:var(--L6)}
+p{margin:9px 0}
+ul,ol{padding-left:24px;margin:8px 0}
+li{margin:3px 0}
+/* boxes */
+.box{border-radius:14px;padding:12px 16px 12px 52px;margin:16px 0;position:relative;break-inside:avoid}
+.box:before{position:absolute;left:14px;top:11px;font-size:22px;line-height:1}
+.key{background:#ecfdf5;border:1.5px solid #34d399}.key:before{content:"💡"}
+.pit{background:#fff7ed;border:1.5px solid #fb923c}.pit:before{content:"⚠️"}
+.pearl{background:#eff6ff;border:1.5px solid #60a5fa}.pearl:before{content:"🩺"}
+.memo{background:#fdf4ff;border:1.5px solid #e879f9}.memo:before{content:"🧠"}
+.calcx{background:#fefce8;border:1.5px solid #facc15}.calcx:before{content:"🧮"}
+.box b.t{display:block;margin-bottom:2px}
+/* tables */
+.tw{overflow-x:auto;margin:12px 0;break-inside:avoid}
+table{border-collapse:collapse;width:100%;font-size:14.8px;background:#fff;border-radius:12px;overflow:hidden}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f1f3f8;color:var(--ink2);font-weight:600}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+.lo{color:var(--low);font-weight:700}.hi{color:var(--high);font-weight:700}
+.ttl{font-size:13.5px;color:var(--mute);margin-top:-4px}
+/* figure */
+figure{margin:16px 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;break-inside:avoid}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--ink2);margin-top:8px}
+/* exercises */
+.ex{background:#fff;border:2px dashed var(--c,#8b5cf6);border-radius:18px;padding:6px 18px 14px;margin:26px 0;break-inside:auto}
+.ex>h4{color:var(--c);font-size:19px;margin-top:12px}
+.q{margin:14px 0 6px;padding-bottom:10px;border-bottom:1px dotted var(--line)}
+.q .qn{display:inline-block;min-width:28px;height:28px;border-radius:50%;background:var(--c,#8b5cf6);color:#fff;text-align:center;font-weight:700;font-size:14px;line-height:28px;margin-right:6px}
+details{margin:6px 0;border-radius:10px;background:#f6f7fb;border:1px solid var(--line)}
+details>summary{cursor:pointer;padding:7px 12px;font-weight:600;color:var(--c,#6d28d9);list-style:none}
+details>summary:before{content:"▶ ";font-size:11px}
+details[open]>summary:before{content:"▼ "}
+details>div{padding:2px 14px 10px}
+/* cases */
+.case{background:#fff;border-radius:18px;border:1px solid var(--line);box-shadow:0 2px 10px rgba(30,40,60,.06);padding:4px 18px 16px;margin:22px 0;break-inside:auto;border-top:8px solid var(--cc,#ca8a04)}
+.case h4{font-size:19px;color:var(--ink);margin-top:14px}
+.case .vg{background:#fafaf6;border-radius:10px;padding:8px 12px;font-size:15.5px}
+.rep caption{caption-side:top;text-align:left;font-size:13px;color:var(--mute);padding:0 0 4px}
+.pill{display:inline-block;border-radius:999px;padding:0 9px;font-size:13px;font-weight:600}
+.p-red{background:#fee2e2;color:#b91c1c}.p-blue{background:#dbeafe;color:#1d4ed8}.p-green{background:#dcfce7;color:#15803d}.p-amb{background:#fef3c7;color:#a16207}
+.chk{list-style:none;padding-left:0}.chk li{padding-left:30px;position:relative}.chk li:before{content:"☐";position:absolute;left:4px;color:var(--c)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.mini b{color:var(--c)}
+.toc{columns:2;column-gap:28px;font-size:15px}
+.toc a{text-decoration:none;color:var(--ink)}
+.toc li{break-inside:avoid}
+.foot{margin-top:50px;color:var(--mute);font-size:13.5px;border-top:1px solid var(--line);padding-top:14px}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--c);border-radius:6px;padding:0 7px;margin-right:4px;vertical-align:2px}
+
+/* --- interactive tools (merged from calculator app) --- */
+.lnav{position:sticky;top:0;z-index:40;background:rgba(251,250,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -18px 10px;padding:8px 18px;display:flex;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.lnav::-webkit-scrollbar{display:none}
+.lnav a{text-decoration:none;font-size:13.5px;font-weight:600;border-radius:999px;padding:4px 12px;color:#fff;flex:none}
+.tool{background:#fff;border:2px solid var(--c,#8b5cf6);border-radius:16px;padding:12px 16px;margin:18px 0}
+.tool>.th{font-weight:700;color:var(--c,#8b5cf6);margin-bottom:6px}
+.tool>.th:before{content:"🧪 "}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px 12px}
+label.f{display:block;font-size:13.5px;color:var(--ink2);margin-bottom:3px}
+.tool input[type=number],.tool select,#s-calc input[type=number],#s-calc select{font:inherit;font-size:15px;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.tool input[type=number],#s-calc input[type=number]{font-family:var(--mono)}
+.btn{font:inherit;font-size:15px;border:0;border-radius:9px;padding:8px 16px;background:#0d9488;color:#fff;cursor:pointer;font-weight:600}
+.btn.sec{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0}
+.warnbox{background:#fff7ed;border:1.5px solid #fb923c;border-radius:12px;padding:10px 14px;margin:12px 0}
+.src{font-size:13px;color:var(--mute)}
+.pill.ok{background:#dcfce7;color:#15803d}.pill.warn{background:#fef3c7;color:#a16207}.pill.bad{background:#fee2e2;color:#b91c1c}.pill.info{background:#dbeafe;color:#1d4ed8}
+td.num,th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+td.eqsep,th.eqsep{border-left:2px solid var(--line)}
+.eqhead{display:block;font-size:12px;color:var(--mute);font-weight:400}
+.calc-in{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px 12px}
+.calc-in h4{grid-column:1/-1;margin:10px 0 0;font-size:14px;color:#0d9488;border-bottom:1px solid var(--line);padding-bottom:3px}
+#calcOut .sum{white-space:pre-wrap;font-size:15px;background:#f6f7fb;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.fillbtn{margin:4px 0 8px}
+#gradeTbl input[type=number]{width:90px}
+@media print{.lnav,.tool,#s-calc,.fillbtn{display:none!important}}
+@media (max-width:640px){.hero h1{font-size:26px}.grid2{grid-template-columns:1fr}.toc{columns:1}.lv h2{font-size:22px}body{font-size:16px}}
+@media print{
+  body{background:#fff;font-size:12pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .toolbar,.noprint{display:none!important}
+  .hero{border-radius:0;margin:0 0 16px}
+  .page{max-width:none;padding:0}
+  details{border:0;background:none}details>summary{display:none}
+  body:not(.print-ans) details.ans{display:none}
+  body.print-ans details.ans>div{display:block;border-left:3px solid var(--c,#8b5cf6);background:#fafafa}
+  .lv{margin-top:0}
+  a{color:inherit;text-decoration:none}
+  .tw{overflow:visible}
+  table.rep{font-size:8.6pt}table.rep th,table.rep td{padding:3px 4px}
+  table{font-size:10pt}
+  @page{size:A4;margin:14mm 12mm}
+}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+@media print{.imhub-bar,.mds-sbtn{display:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <div class="kick">บทเรียนอายุรศาสตร์ · Pulmonary Function Test</div>
+  <h1>แปลผล PFT จากศูนย์ ถึงระดับอายุรแพทย์</h1>
+  <p>เริ่มจากกราฟ lung volume ไล่ไปถึง spirometry, lung volumes, DLCO และการแปลผลจริงทั้งรายงาน พร้อมแบบฝึกหัดท้ายบท และคลังเคสมีเฉลยทีละขั้น — ยึดตาม ERS/ATS 2022</p>
+  <div class="by">สำหรับนักศึกษาแพทย์และแพทย์เวชปฏิบัติทั่วไป · นพ.ปฐมพงษ์ คูเจริญไพศาล · Medisüem · พ.ย. 2569</div>
+</header>
+
+<nav class="lnav noprint" aria-label="ไปยังระดับ">
+<a href="#L0" style="background:var(--L0)">L0 พื้นฐาน</a><a href="#L1" style="background:var(--L1)">L1 อ่าน report</a><a href="#L2" style="background:var(--L2)">L2 Spirometry</a><a href="#L3" style="background:var(--L3)">L3 Lung volumes</a><a href="#L4" style="background:var(--L4)">L4 DLCO</a><a href="#L5" style="background:var(--L5)">L5 รวมร่าง</a><a href="#L6" style="background:var(--L6)">L6 เคส</a><a href="#s-calc" style="background:#0f766e">🧮 เครื่องคำนวณ</a><a href="#L7" style="background:#475569">Cheat sheet</a>
+</nav>
+<div class="toolbar noprint">
+  <button class="tbtn" id="openAll">เปิดเฉลยทั้งหมด</button>
+  <button class="tbtn" id="closeAll">ปิดเฉลยทั้งหมด</button>
+  <label class="tbtn"><input type="checkbox" id="printAns"> พิมพ์พร้อมเฉลย</label>
+  <button class="tbtn" id="printBtn">🖨️ พิมพ์ / บันทึกเป็น PDF</button>
+</div>
+
+<h3 class="s1">เรียนอย่างไรให้ได้ผล</h3>
+<p>บทเรียนแบ่งเป็น 7 ระดับ แต่ละระดับต่อยอดจากระดับก่อน — <b>อย่าข้าม Level 0</b> แม้จะคุ้นเคยแล้ว เพราะเกือบทุก pattern ที่ต้องแปลในภายหลังอธิบายได้ด้วยกราฟ lung volume ง่าย ๆ อันเดียว ท้ายแต่ละระดับมีแบบฝึกหัดพร้อมเฉลย (กด ▶ เพื่อเปิด) ลองตอบเองก่อนเปิดเสมอ</p>
+<div class="road">
+  <a href="#L0" style="background:var(--L0s);border-color:var(--L0)"><b style="color:var(--L0)">LEVEL 0</b><span>กราฟ lung volume และสรีรวิทยาพื้นฐาน</span></a>
+  <a href="#L1" style="background:var(--L1s);border-color:var(--L1)"><b style="color:var(--L1)">LEVEL 1</b><span>อ่าน report: ค่าปกติ LLN z-score และคุณภาพการตรวจ</span></a>
+  <a href="#L2" style="background:var(--L2s);border-color:var(--L2)"><b style="color:var(--L2)">LEVEL 2</b><span>Spirometry: pattern, BDR, flow–volume loop</span></a>
+  <a href="#L3" style="background:var(--L3s);border-color:var(--L3)"><b style="color:var(--L3)">LEVEL 3</b><span>Lung volumes: restriction, hyperinflation</span></a>
+  <a href="#L4" style="background:var(--L4s);border-color:var(--L4)"><b style="color:var(--L4)">LEVEL 4</b><span>DLCO: การแลกเปลี่ยนก๊าซ</span></a>
+  <a href="#L5" style="background:var(--L5s);border-color:var(--L5)"><b style="color:var(--L5)">LEVEL 5</b><span>รวมร่าง: แปลผลทั้งรายงานแบบอายุรแพทย์</span></a>
+  <a href="#L6" style="background:var(--L6s);border-color:var(--L6)"><b style="color:var(--L6)">LEVEL 6</b><span>คลังเคส 13 ราย พร้อมเฉลยทีละขั้น</span></a>
+  <a href="#s-calc" style="background:#dcf5f2;border-color:#0f766e"><b style="color:#0f766e">เครื่องมือ</b><span>เครื่องคำนวณ 3 สมการ + แปลผลอัตโนมัติ</span></a>
+</div>
+<p class="ttl">ตัวเลข predicted / LLN / z-score ทุกเคสคำนวณจริงด้วยสมการ GLI Global 2022 (spirometry), GLI 2021 (lung volumes) และ GLI 2017 (DLCO) — ผู้ป่วยทุกรายเป็นข้อมูลสมมุติเพื่อการสอน</p>
+
+<!-- ===================== LEVEL 0 ===================== -->
+<section id="L0">
+<div class="lv lv0"><span class="tag">LEVEL 0 · พื้นฐาน</span><h2>กราฟ lung volume: แผนที่ของทุกอย่าง</h2><p>ถ้าวาดกราฟนี้ได้เองจากความจำ คุณจะเข้าใจทุก pattern ที่ตามมา</p></div>
+
+<h3 class="s0">0.1 ปอดมีปริมาตรกี่ "ชั้น"</h3>
+<p>ลองนึกภาพผู้ป่วยต่อกับ spirometer แล้ว <b>หายใจปกติ</b> สักพัก จากนั้น <b>หายใจเข้าให้ลึกที่สุด</b> แล้ว <b>เป่าออกให้หมดที่สุด</b> กราฟที่ได้ (ปริมาตรเทียบเวลา) คือ <b>spirogram</b> ด้านล่าง</p>
+<figure><svg id="figSpirogram" viewBox="0 0 860 430"></svg>
+<figcaption><b>รูป 0.1 Spirogram และ lung volumes / capacities</b> — ค่าประมาณในผู้ใหญ่ชายตัวกลาง ๆ · พื้นที่ลายเทาคือ RV ที่ spirometer มองไม่เห็น เพราะไม่มีอากาศส่วนนี้ผ่านปากออกมา</figcaption></figure>
+
+<p>ปริมาตรพื้นฐาน (<b>volume</b>) มี 4 ชั้น ไม่ทับกัน ซ้อนจากล่างขึ้นบน:</p>
+<div class="tw"><table>
+<tr><th>Volume</th><th>ความหมาย</th><th class="n">ค่าประมาณ (L)</th></tr>
+<tr><td><b style="color:#0ea5e9">TV</b> tidal volume</td><td>หายใจเข้า–ออกปกติแต่ละครั้ง</td><td class="n">0.5</td></tr>
+<tr><td><b style="color:#16a34a">IRV</b> inspiratory reserve volume</td><td>หายใจเข้าเพิ่มได้อีกจากปลายหายใจเข้าปกติ</td><td class="n">3.1</td></tr>
+<tr><td><b style="color:#f97316">ERV</b> expiratory reserve volume</td><td>เป่าออกเพิ่มได้อีกจากปลายหายใจออกปกติ</td><td class="n">1.2</td></tr>
+<tr><td><b style="color:#64748b">RV</b> residual volume</td><td>อากาศที่ค้างในปอดหลังเป่าออกจนสุด — เป่าออกไม่ได้</td><td class="n">1.2</td></tr>
+</table></div>
+<p><b>Capacity</b> คือผลรวมของ volume ตั้งแต่ 2 ชั้นขึ้นไป:</p>
+<div class="tw"><table>
+<tr><th>Capacity</th><th>สูตร</th><th>ความหมายทางคลินิก</th><th class="n">ค่าประมาณ (L)</th></tr>
+<tr><td><b style="color:#8b5cf6">TLC</b> total lung capacity</td><td>IRV + TV + ERV + RV</td><td>อากาศทั้งหมดเมื่อหายใจเข้าสุด — <b>ตัวนิยาม restriction</b></td><td class="n">6.0</td></tr>
+<tr><td><b style="color:#e11d48">VC</b> vital capacity</td><td>IRV + TV + ERV = TLC − RV</td><td>ปริมาตรที่เป่าออกได้ทั้งหมด (ถ้าเป่าแรง = FVC)</td><td class="n">4.8</td></tr>
+<tr><td><b style="color:#0d9488">IC</b> inspiratory capacity</td><td>IRV + TV</td><td>หายใจเข้าได้สูงสุดจากระดับพัก — ลดลงเมื่อมี hyperinflation</td><td class="n">3.6</td></tr>
+<tr><td><b style="color:#ca8a04">FRC</b> functional residual capacity</td><td>ERV + RV</td><td>ปริมาตรในปอดตอน "พัก" ปลายหายใจออกปกติ</td><td class="n">2.4</td></tr>
+</table></div>
+<div class="box memo"><b class="t">จำง่าย ๆ</b>Capacity ทุกตัวที่มี <b>RV</b> อยู่ข้างใน (TLC, FRC) และตัว RV เอง <b>วัดด้วย spirometry ไม่ได้</b> ต้องใช้ body plethysmography, nitrogen washout หรือ helium dilution — นี่คือเหตุผลที่ spirometry "บอกได้แค่สงสัย" restriction</div>
+
+<h3 class="s0">0.2 อะไรกำหนดขอบบนและขอบล่างของกราฟ</h3>
+<p>ปอดเหมือนลูกโป่งที่อยากหดตัว (elastic recoil ของปอด) อยู่ในกรงอกที่อยากกางออก (chest wall recoil) จุดที่สองแรงนี้หักล้างกันพอดีคือ <b>FRC</b> — ไม่ต้องใช้กล้ามเนื้อเลย</p>
+<div class="grid2">
+<div class="mini s0"><b>TLC (ขอบบน)</b><br>กำลังกล้ามเนื้อหายใจเข้า ปะทะกับแรงหดของปอดและผนังอก<br>↓ เมื่อ: ปอดแข็ง (fibrosis), กล้ามเนื้ออ่อนแรง, ผนังอกผิดรูป, ปอดถูกตัดออก<br>↑ เมื่อ: ปอดเสีย elastic recoil (emphysema)</div>
+<div class="mini s0"><b>RV (ขอบล่าง)</b><br>คนหนุ่มสาว: ผนังอกกดลงได้แค่นั้น · ผู้สูงอายุและโรคหลอดลม: <b>ทางเดินหายใจเล็กปิดก่อน</b> (airway closure) อากาศจึงติดค้าง<br>↑ เมื่อ: air trapping (COPD, asthma), กล้ามเนื้อหายใจออกอ่อนแรง</div>
+<div class="mini s0"><b>FRC (จุดพัก)</b><br>สมดุลแรงหดปอดกับแรงกางของผนังอก<br>↑ เมื่อ: hyperinflation (ปอดหดตัวน้อยลง หรือหายใจออกไม่ทัน)<br>↓ เมื่อ: ปอดแข็ง, อ้วน (ท้องดันกระบังลม — ERV ต่ำเด่น)</div>
+<div class="mini s0"><b>อายุมากขึ้น</b><br>Elastic recoil ลด → RV และ FRC ค่อย ๆ เพิ่ม, TLC เกือบคงที่, VC จึงลดลง และ FEV1/FVC ลดลงตามวัยโดยธรรมชาติ</div>
+</div>
+
+<h3 class="s0">0.3 เป่าแรง: จาก spirogram สู่ FEV1 และ FVC</h3>
+<p>ในการตรวจ spirometry จริง ผู้ป่วยหายใจเข้าจนสุด (ถึง TLC) แล้ว <b>เป่าออกให้แรงที่สุด เร็วที่สุด และนานที่สุด</b> จนถึง RV (forced expiratory maneuver) จากการเป่าครั้งเดียวนี้ได้กราฟสองแบบ:</p>
+<figure><svg id="figVT" viewBox="0 0 860 330"></svg>
+<figcaption><b>รูป 0.2 Volume–time curve</b> — FEV1 = ปริมาตรที่เป่าได้ในวินาทีแรก, FVC = ปริมาตรทั้งหมดที่เป่าได้ · คนปกติเป่าออกได้ราว 75–85% ของ FVC ภายในวินาทีแรก</figcaption></figure>
+<div class="tw"><table>
+<tr><th>ค่า</th><th>นิยาม</th><th>สะท้อนอะไร</th></tr>
+<tr><td><b>FVC</b></td><td>ปริมาตรทั้งหมดที่เป่าออกแรงได้ จาก TLC ถึง RV</td><td>ขนาดของปริมาตรที่ "ใช้ได้" — ลดได้ทั้งจาก TLC ต่ำ (restriction) หรือ RV สูง (air trapping)</td></tr>
+<tr><td><b>FEV1</b></td><td>ปริมาตรในวินาทีแรกของการเป่า</td><td>ความเร็วในการระบาย + ขนาดปอด</td></tr>
+<tr><td><b>FEV1/FVC</b></td><td>สัดส่วน (เศษส่วน เช่น 0.78)</td><td><b>ตัวชี้วัด airflow obstruction</b> — ไม่ขึ้นกับขนาดปอดมากนัก</td></tr>
+<tr><td><b>PEF</b></td><td>อัตราการไหลสูงสุด (L/s หรือ L/min)</td><td>ขึ้นกับแรงเป่าช่วงต้นและทางเดินหายใจใหญ่ — ไวต่อ upper airway obstruction</td></tr>
+<tr><td><b>FEF25–75%</b></td><td>อัตราไหลเฉลี่ยช่วง 25–75% ของ FVC</td><td>เคยใช้บอก small airway แต่แปรปรวนมาก ERS/ATS 2022 <b>ไม่แนะนำให้ใช้ตัดสิน</b></td></tr>
+<tr><td><b>FET</b></td><td>เวลาที่เป่า</td><td>ใช้ดูคุณภาพ — ผู้ป่วยอุดกั้นต้องเป่านาน</td></tr>
+</table></div>
+<figure><svg id="figFV" viewBox="0 0 860 380"></svg>
+<figcaption><b>รูป 0.3 Flow–volume loop</b> — การเป่าครั้งเดียวกัน แต่พล็อต "อัตราไหล" กับ "ปริมาตร" · ส่วนบน = เป่าออก (expiration), ส่วนล่าง = หายใจเข้าแรงกลับ (inspiration) · แกน x เริ่มที่ TLC ทางซ้ายแล้วไปทาง RV ทางขวา</figcaption></figure>
+<div class="box key"><b class="t">ทำไมช่วงท้ายของการเป่าไม่ขึ้นกับแรง (effort-independent)</b>เมื่อเป่าแรง ความดันในทรวงอกบีบหลอดลมให้แคบลงด้วย (dynamic compression) ยิ่งออกแรงมาก หลอดลมยิ่งถูกบีบ อัตราไหลช่วงกลาง–ท้ายจึงถูกจำกัดด้วย <b>แรงหดตัวของปอด (elastic recoil)</b> และ <b>ความต้านทานของหลอดลมเล็ก</b> ไม่ใช่แรงเป่า — นี่คือเหตุที่ส่วนท้ายของ loop บอกพยาธิสภาพของปอดได้ดี ส่วนช่วงต้น (PEF) ขึ้นกับความพยายามมาก</div>
+
+<h3 class="s0">0.4 สามภาพที่ต้องจำให้ขึ้นใจ</h3>
+<figure><svg id="figThree" viewBox="0 0 860 330"></svg>
+<figcaption><b>รูป 0.4 ปกติ vs obstruction vs restriction</b> — ซ้าย: volume–time · ขวา: flow–volume (ขาออก)</figcaption></figure>
+<div class="grid2">
+<div class="mini s0"><b>Obstruction</b> (เช่น COPD, asthma)<br>หลอดลมตีบ/ยุบง่าย → เป่าออกช้า FEV1 ลดมากกว่า FVC → <b>FEV1/FVC ต่ำ</b> · loop ช่วงท้าย <b>เว้า (scooped)</b> · เป่านาน · RV สูง (air trapping)</div>
+<div class="mini s0"><b>Restriction</b> (เช่น ILD, NMD, ผนังอกผิดรูป)<br>ปอดเล็ก → FVC และ FEV1 ลดพอ ๆ กัน → <b>FEV1/FVC ปกติหรือสูง</b> · loop <b>แคบแต่สูงชัน</b> (ใน ILD แรงหดปอดสูง หลอดลมถูกดึงให้เปิด) · TLC ต่ำ</div>
+</div>
+
+<div class="ex s0"><h4>✏️ แบบฝึกหัด Level 0</h4>
+<div class="q"><span class="qn">1</span>ชายคนหนึ่งมี TLC 6.2 L, RV 1.5 L, FRC 2.8 L, TV 0.5 L จงหา VC, ERV, IC และ IRV
+<details class="ans"><summary>เฉลย</summary><div>VC = TLC − RV = 6.2 − 1.5 = <b>4.7 L</b> · ERV = FRC − RV = 2.8 − 1.5 = <b>1.3 L</b> · IC = TLC − FRC = 6.2 − 2.8 = <b>3.4 L</b> · IRV = IC − TV = 3.4 − 0.5 = <b>2.9 L</b></div></details></div>
+<div class="q"><span class="qn">2</span>ค่าใดต่อไปนี้วัดได้ด้วย spirometry อย่างเดียว: TLC, VC, FRC, IC, RV, ERV
+<details class="ans"><summary>เฉลย</summary><div>วัดได้: <b>VC, IC, ERV</b> (และ TV, IRV) · วัดไม่ได้: <b>TLC, FRC, RV</b> เพราะมี RV เป็นส่วนประกอบ ต้องใช้ body box หรือ gas dilution</div></details></div>
+<div class="q"><span class="qn">3</span>FEV1 2.0 L, FVC 4.0 L — ส่วน FEV1 3.0 L, FVC 3.6 L ค่าไหนน่าจะเป็น obstruction
+<details class="ans"><summary>เฉลย</summary><div>ชุดแรก FEV1/FVC = <b>0.50</b> → ระบายออกช้ามาก เข้าได้กับ obstruction · ชุดที่สอง = 0.83 ไม่มี obstruction (แต่ต้องเทียบ LLN ของคนนั้นเสมอ — Level 1)</div></details></div>
+<div class="q"><span class="qn">4</span>ทำไมผู้ป่วย COPD ที่มี air trapping อาจมี FVC ต่ำ ทั้งที่ TLC ไม่ได้ต่ำ
+<details class="ans"><summary>เฉลย</summary><div>FVC = TLC − RV ถ้า RV สูงขึ้นมาก (อากาศค้างเพราะหลอดลมเล็กปิดเร็ว) FVC จะลดลงแม้ TLC ปกติหรือสูง — <b>FVC ต่ำจึงไม่เท่ากับ restriction</b></div></details></div>
+<div class="q"><span class="qn">5</span>ส่วนไหนของ flow–volume loop ขึ้นกับแรงเป่ามากที่สุด และส่วนไหนสะท้อนหลอดลมเล็ก
+<details class="ans"><summary>เฉลย</summary><div>ช่วงต้นจนถึง <b>PEF</b> ขึ้นกับแรงเป่า · ช่วง <b>กลาง–ท้าย</b> ของขาออกถูกจำกัดด้วย elastic recoil และหลอดลมเล็ก (effort-independent) — ความเว้าตรงนี้คือสัญญาณ obstruction</div></details></div>
+<div class="q"><span class="qn">6</span>คนอ้วนมาก (BMI 45) ปริมาตรใดลดลงเด่นที่สุด
+<details class="ans"><summary>เฉลย</summary><div><b>ERV</b> (จึงทำให้ FRC ต่ำ) เพราะไขมันในช่องท้องดันกระบังลมขึ้น ปลายหายใจออกปกติจึงอยู่ใกล้ RV · TLC มักปกติ ยกเว้นอ้วนมาก (BMI &gt; 40) อาจต่ำได้</div></details></div>
+</div>
+</section>
+
+<!-- ===================== LEVEL 1 ===================== -->
+<section id="L1">
+<div class="lv lv1"><span class="tag">LEVEL 1 · อ่าน report</span><h2>ตัวเลขนี้ "ผิดปกติ" จริงไหม</h2><p>Predicted, LLN, z-score, สมการอ้างอิง และคุณภาพการตรวจ — ก่อนจะไปจัด pattern ต้องผ่านด่านนี้</p></div>
+
+<h3 class="s1">1.1 ส่วนประกอบของ report</h3>
+<p>ตัวอย่าง report spirometry ก่อนและหลังพ่นยาขยายหลอดลม ของชาย 58 ปี สูง 168 cm (สมการ GLI Global 2022):</p>
+<div class="tw"><table class="rep"><caption>ชาย 58 ปี · สูง 168 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th><th class="n">Post</th><th class="n">z post</th><th class="n">%Pred post</th><th class="n">Δ mL</th><th class="n">Δ % base</th><th class="n">Δ % pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">1.85</td><td class="n">3.00</td><td class="n">2.24</td><td class="n">–</td><td class="n lo">-2.43</td><td class="n">62</td><td class="n lo">2.05</td><td class="n lo">-2.03</td><td class="n">68</td><td class="n">+200</td><td class="n">10.8</td><td class="n">6.7</td></tr><tr><td>FVC (L)</td><td class="n ">3.05</td><td class="n">3.78</td><td class="n">2.85</td><td class="n">–</td><td class="n ">-1.29</td><td class="n">81</td><td class="n ">3.20</td><td class="n ">-1.03</td><td class="n">85</td><td class="n">+150</td><td class="n">4.9</td><td class="n">4.0</td></tr><tr><td>FEV1/FVC</td><td class="n lo">0.61</td><td class="n">0.79</td><td class="n">0.67</td><td class="n">–</td><td class="n lo">-2.38</td><td class="n">77</td><td class="n lo">0.64</td><td class="n lo">-2.01</td><td class="n">81</td><td></td><td></td><td></td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="report">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="grid2">
+<div class="mini s1"><b>Pred</b> — ค่ากลาง (median) ของคนปกติเพศ อายุ ส่วนสูงเดียวกัน</div>
+<div class="mini s1"><b>LLN</b> — lower limit of normal = 5th percentile ของคนปกติ ต่ำกว่านี้ = ผิดปกติ</div>
+<div class="mini s1"><b>z</b> — ห่างจากค่ากลางกี่ SD (ปรับตามความแปรปรวนของแต่ละช่วงวัยแล้ว)</div>
+<div class="mini s1"><b>%Pred</b> — วัดได้ ÷ ค่ากลาง × 100 ใช้สื่อสารง่าย แต่ไม่ใช่ตัวตัดสินว่าปกติไหม</div>
+<div class="mini s1"><b>Post / Δ</b> — ค่าหลังพ่น salbutamol และการเปลี่ยนแปลง (mL, % จาก baseline, % ของ predicted)</div>
+<div class="mini s1"><b>อย่าลืมดู</b> — ชื่อสมการอ้างอิง, quality grade, กราฟ volume–time และ flow–volume loop</div>
+</div>
+
+<h3 class="s1">1.2 LLN และ z-score — ภาษาใหม่ของ PFT</h3>
+<p>ค่าการทำงานของปอดในคนปกติกระจายเป็นระฆังคว่ำ เราจึงถามว่า "ค่านี้อยู่ตรงไหนของระฆัง" แทนที่จะถามว่า "ได้กี่เปอร์เซ็นต์ของค่ากลาง"</p>
+<figure><svg id="figBell" viewBox="0 0 860 300"></svg>
+<figcaption><b>รูป 1.1 การกระจายของคนปกติ</b> — LLN อยู่ที่ z = −1.645 (5th percentile) · ULN ที่ +1.645 ใช้กับค่าที่สูงผิดปกติได้ เช่น TLC, RV, DLCO</figcaption></figure>
+<div class="box calcx"><b class="t">z-score คำนวณอย่างไร</b>สมการยุคใหม่ (GLI) ใช้วิธี LMS: z = [(วัดได้ ÷ M)<sup>L</sup> − 1] ÷ (L × S) โดย M = predicted, S = ความแปรปรวน, L = ความเบ้ — ไม่ต้องจำสูตร เครื่องคำนวณให้ แต่ต้องเข้าใจว่า <b>z บอกตำแหน่งบนระฆังโดยปรับตามอายุแล้ว</b> ส่วน %pred ไม่ได้ปรับ</div>
+<h4>ทำไมเลิกใช้ 80% predicted และ FEV1/FVC 0.70</h4>
+<p>ความแปรปรวนของค่าปกติ <b>กว้างขึ้นในผู้สูงอายุ</b> ค่า LLN ที่คิดเป็น % predicted จึงไม่คงที่ เช่น LLN ของ FEV1 อยู่ราว 81% ตอนอายุ 10–25 ปี แต่เหลือราว 68–70% ตอนอายุ 80–85 ปี ใช้ 80% ตายตัวจึงเรียกผู้สูงอายุปกติว่าผิดปกติ ส่วน FEV1/FVC ปกติลดลงตามวัย:</p>
+<figure><svg id="figRatio" viewBox="0 0 860 330"></svg>
+<figcaption><b>รูป 1.2 LLN ของ FEV1/FVC ตามอายุ</b> (ชาย สูง 165 cm) — คนอายุน้อยที่ ratio 0.72 อาจ "ผิดปกติ" แล้วแต่ fixed ratio บอกปกติ (underdiagnosis) · ผู้สูงอายุ ratio 0.68 อาจปกติตาม GLI แต่ fixed ratio บอกผิดปกติ (overdiagnosis)</figcaption></figure>
+<div class="box pit"><b class="t">LLN ไม่ใช่เส้นแบ่ง "ป่วย / ไม่ป่วย"</b>คนปกติ 5% จะต่ำกว่า LLN โดยธรรมชาติ ค่าที่อยู่ใกล้ LLN (ประมาณ z −1.3 ถึง −2.0) คือ <b>zone of uncertainty</b> ต้องอาศัย pre-test probability ช่วย: ผู้สูบบุหรี่มีอาการ ค่า z −1.7 น่าจะผิดปกติจริง แต่คนไม่มีอาการตรวจก่อนสมัครงาน ค่า z −1.7 น่าจะเป็นปกติ</div>
+
+<h4>ระดับความรุนแรงด้วย z-score (ERS/ATS 2022)</h4>
+<div class="tw"><table>
+<tr><th>z-score</th><th>ระดับ</th><th>ที่มา</th></tr>
+<tr><td class="n">≥ −1.645</td><td><span class="pill p-green">ปกติ</span></td><td rowspan="4">แบ่งตามความเสี่ยงตาย — ช่วง −1.65 ถึง −2.5 ความเสี่ยงใกล้กันจึงรวมเป็น mild · ความรุนแรงของ "การทำงานของปอด" ≠ ความรุนแรงของ "โรค"</td></tr>
+<tr><td class="n">−1.65 ถึง −2.5</td><td><span class="pill p-amb">Mild</span></td></tr>
+<tr><td class="n">−2.51 ถึง −4.0</td><td><span class="pill p-red">Moderate</span></td></tr>
+<tr><td class="n">&lt; −4.0</td><td><span class="pill p-red">Severe</span></td></tr>
+</table></div>
+
+<h4>สมการอ้างอิงที่ใช้ในประเทศไทย</h4>
+<div class="tw"><table>
+<tr><th></th><th>GLI Global 2022</th><th>GLI-2012 South East Asian</th><th>Siriraj 2000</th></tr>
+<tr><td>ประชากร</td><td>~74,000 คน หลายเชื้อชาติ วิเคราะห์แบบ race-neutral</td><td>กลุ่ม SE Asian ของ GLI (ไทย ไต้หวัน จีน)</td><td>คนไทยไม่สูบบุหรี่ ~4,000 คน</td></tr>
+<tr><td>ใครแนะนำ</td><td>ATS 2023 (ERS รับรอง)</td><td>ERS/ATS 2022 (ตามเชื้อสาย)</td><td>ใช้แพร่หลายในไทยมานาน</td></tr>
+<tr><td>สถิติ</td><td>LMS — LLN ปรับตามวัย</td><td>LMS</td><td>Linear regression — SEE คงที่ทุกวัย ทำให้ LLN ของ FEV1/FVC ในผู้สูงอายุสูงเกินจริง</td></tr>
+</table></div>
+<div class="box key"><b class="t">หลักปฏิบัติ</b>อ่านชื่อสมการบน report ทุกครั้ง · ใช้สมการเดียวกันเมื่อเทียบผลตามเวลา · ค่าที่อยู่ใกล้ LLN อาจเปลี่ยนการแปลผลได้เมื่อเปลี่ยนสมการ (ดูเคส 10) · lung volumes และ DLCO ยังไม่มีสมการไทย จึงมักใช้ GLI ที่สร้างจากคนเชื้อสายยุโรป</div>
+
+<h3 class="s1">1.3 ผลนี้เชื่อได้ไหม — คุณภาพการตรวจ</h3>
+<p>ATS/ERS 2019 กำหนดให้ประเมินทีละ maneuver (acceptability) แล้วดูความสม่ำเสมอระหว่าง maneuver (repeatability) สรุปเป็น grade แยกของ FEV1 และ FVC</p>
+<div class="tw"><table>
+<tr><th>เกณฑ์ acceptability</th><th>ต้องได้</th></tr>
+<tr><td>เริ่มเป่าทันทีและแรง (back-extrapolated volume)</td><td>BEV &lt; 5% ของ FVC หรือ 0.100 L (ค่าที่มากกว่า), hesitation ≤ 2 s</td></tr>
+<tr><td>ไม่ไอในวินาทีแรก</td><td>ไอ → FEV1 ใช้ไม่ได้</td></tr>
+<tr><td>ไม่ปิดกล่องเสียง/ไม่หยุดก่อน</td><td>หยุดก่อน → FVC ใช้ไม่ได้ (FEV1 ยังใช้ได้ถ้าหยุดหลัง 1 s)</td></tr>
+<tr><td>เป่าจนสุด (end of forced expiration)</td><td>plateau (&lt; 0.025 L ใน 1 s สุดท้าย) หรือเป่าครบ 15 s หรือ FVC ซ้ำได้ใกล้ค่าสูงสุด</td></tr>
+<tr><td>หายใจเข้าเต็มก่อนเป่า</td><td>FIVC − FVC &lt; 0.100 L หรือ 5% FVC</td></tr>
+</table></div>
+<figure><svg id="figBad" viewBox="0 0 860 400"></svg>
+<figcaption><b>รูป 1.3 maneuver ที่ใช้ไม่ได้</b> (เส้นเทา = maneuver ที่ดี) — A เริ่มช้า/ลังเล (BEV สูง, PEF ไม่แหลม) · B ไอในวินาทีแรก · C หยุดเป่าก่อน (ไม่มี plateau) · D ออกแรงไม่สม่ำเสมอ</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Grade</th><th>Acceptable</th><th>2 ค่าสูงสุดต่างกัน (อายุ &gt; 6 ปี)</th><th>ความหมาย</th></tr>
+<tr><td><b>A</b></td><td>≥ 3</td><td>≤ 150 mL</td><td rowspan="3">เชื่อถือได้</td></tr>
+<tr><td><b>B</b></td><td>2</td><td>≤ 150 mL</td></tr>
+<tr><td><b>C</b></td><td>≥ 2</td><td>≤ 200 mL</td></tr>
+<tr><td><b>D</b></td><td>≥ 2</td><td>≤ 250 mL</td><td rowspan="2">ใช้อย่างระวัง</td></tr>
+<tr><td><b>E</b></td><td>≥ 2 หรือ 1</td><td>&gt; 250 mL หรือมีครั้งเดียว</td></tr>
+<tr><td><b>U</b></td><td>0 (มี usable)</td><td>—</td><td rowspan="2">ไม่ควรใช้ตัดสินใจสำคัญ</td></tr>
+<tr><td><b>F</b></td><td>0</td><td>—</td></tr>
+</table></div>
+<div class="box pearl"><b class="t">ในทางปฏิบัติ</b>ค่าที่รายงานคือ FVC สูงสุดและ FEV1 สูงสุด (อาจคนละครั้งกัน) · ผล grade ต่ำบางครั้งยังตอบคำถามได้ เช่น "ค่ายังสูงพอจะผ่าตัดได้" แต่ถ้าจะวินิจฉัยโรคใหม่ควรตรวจซ้ำ · หยุดยาขยายหลอดลมก่อนตรวจวินิจฉัย: SABA 4–6 ชม., SAMA 12 ชม., LABA 24 ชม., LAMA และ ultra-LABA 36–48 ชม. (ICS ไม่ต้องหยุด)</div>
+
+<div class="tool s1 noprint"><div class="th">ลองคิด grade เอง</div>
+<p class="src" style="margin-top:0">กรอกค่าแต่ละครั้งและติ๊กว่า acceptable ไหม (FEV1 และ FVC แยกกัน)</p>
+<div class="tw"><table id="gradeTbl"><tr><th>ครั้งที่</th><th>FEV1 (L)</th><th>acceptable</th><th>FVC (L)</th><th>acceptable</th></tr></table></div>
+<div class="row"><button class="btn sec" id="gradeAdd">+ เพิ่มครั้ง</button><button class="btn sec" id="gradeEx">ใส่ตัวอย่าง</button></div>
+<div id="gradeOut" style="margin-top:10px"></div></div>
+<div class="ex s1"><h4>✏️ แบบฝึกหัด Level 1</h4>
+<div class="q"><span class="qn">1</span>ชาย 80 ปี FEV1 = 72% predicted, z = −1.2 ปกติหรือไม่
+<details class="ans"><summary>เฉลย</summary><div><b>ปกติ</b> (z &gt; −1.645) — ในผู้สูงอายุ LLN ของ FEV1 อยู่ราว 69–70% predicted การใช้ 80% จะเรียกผิดว่าผิดปกติ</div></details></div>
+<div class="q"><span class="qn">2</span>หญิง 25 ปี FEV1/FVC = 0.74, LLN = 0.77 ใช้ fixed ratio จะได้อะไร และที่ถูกคืออะไร
+<details class="ans"><summary>เฉลย</summary><div>Fixed ratio: 0.74 ≥ 0.70 → "ปกติ" · ตาม LLN: 0.74 &lt; 0.77 → <b>obstruction</b> — fixed ratio ทำให้พลาดในคนอายุน้อย (เช่น asthma)</div></details></div>
+<div class="q"><span class="qn">3</span>FEV1 z = −3.2 จัดความรุนแรงเป็นอะไร
+<details class="ans"><summary>เฉลย</summary><div><b>Moderate</b> (−2.51 ถึง −4.0)</div></details></div>
+<div class="q"><span class="qn">4</span>FEV1 ที่ acceptable 3 ครั้ง: 2.41, 2.62, 2.48 L ได้ grade อะไรสำหรับ FEV1
+<details class="ans"><summary>เฉลย</summary><div>สองค่าสูงสุด 2.62 กับ 2.48 ต่างกัน 140 mL ≤ 150 mL และมี 3 ครั้ง → <b>grade A</b> · รายงาน FEV1 = 2.62 L</div></details></div>
+<div class="q"><span class="qn">5</span>ผู้ป่วยไอตลอดในวินาทีแรกทุกครั้ง แต่เป่าต่อจนมี plateau สวยงาม ค่าไหนใช้ได้
+<details class="ans"><summary>เฉลย</summary><div><b>FVC ใช้ได้</b> แต่ FEV1 ไม่ acceptable (ไอในวินาทีแรก) — FEV1/FVC จึงเชื่อไม่ได้เช่นกัน</div></details></div>
+<div class="q"><span class="qn">6</span>ทำไม report ต้องระบุชื่อสมการอ้างอิง
+<details class="ans"><summary>เฉลย</summary><div>เพราะ predicted และ LLN ต่างกันตามสมการ ค่าที่อยู่ใกล้ LLN อาจปกติในสมการหนึ่งแต่ผิดปกติในอีกสมการ และการเทียบผลตามเวลาต้องใช้สมการเดิม</div></details></div>
+</div>
+</section>
+
+<!-- ===================== LEVEL 2 ===================== -->
+<section id="L2">
+<div class="lv lv2"><span class="tag">LEVEL 2 · Spirometry</span><h2>จัด pattern จาก spirometry</h2><p>Obstruction, restriction?, non-specific, PRISm, mixed — แล้วต่อด้วย BDR และรูปทรง loop</p></div>
+
+<h3 class="s2">2.1 Algorithm 3 คำถาม</h3>
+<p>ERS/ATS 2022 เริ่มจาก FEV1/FVC เสมอ แล้วจึงดู FVC:</p>
+<figure><svg id="figAlgSp" viewBox="0 0 860 300"></svg>
+<figcaption><b>รูป 2.1 Algorithm แปลผล spirometry</b> (ดัดแปลงจาก ERS/ATS 2022 Figure 8)</figcaption></figure>
+<div class="box key"><b class="t">ประโยคทองสองประโยค</b>(1) <b>FEV1/FVC ต่ำ = obstruction</b> — spirometry ยืนยันได้เลย (2) <b>FVC ต่ำ + ratio ปกติ = "อาจ" restriction</b> — ต้องวัด TLC ยืนยัน เพราะ FVC ต่ำพบ TLC ต่ำจริงไม่ถึงครึ่ง ในทางกลับกัน FVC และ ratio ปกติ ตัด restriction ได้ค่อนข้างแน่นในผู้ใหญ่</div>
+
+<h3 class="s2">2.2 Obstruction</h3>
+<p>นิยาม: <b>FEV1/FVC &lt; LLN</b> สาเหตุ: หลอดลมตีบ (asthma, bronchitis), หลอดลมยุบง่ายเพราะเสีย elastic recoil (emphysema), เสมหะ (bronchiectasis), bronchiolitis</p>
+<ul>
+<li><b>ความรุนแรง</b>: ใช้ z ของ FEV1 (mild / moderate / severe)</li>
+<li><b>FVC ปกติ</b> → obstruction ล้วน ตัด restriction ร่วมได้</li>
+<li><b>FVC ต่ำด้วย</b> → อาจเป็นแค่ air trapping (RV สูง) หรือมี restriction ร่วม (mixed) → ต้องวัด TLC</li>
+<li><b>Dysanapsis</b>: ratio ต่ำแต่ FEV1 ปกติ และ FVC สูง พบในคนตัวสูง ผู้ชาย อายุน้อย — ทางเดินหายใจเล็กเมื่อเทียบกับปอด อาจเป็น normal variant แต่บางการศึกษาสัมพันธ์กับโรคอุดกั้นภายหลัง</li>
+</ul>
+<div class="box pearl"><b class="t">COPD: GOLD ยังใช้ 0.70</b>GOLD วินิจฉัย COPD เมื่อมีอาการ + ปัจจัยเสี่ยง + <b>post-BD FEV1/FVC &lt; 0.70</b> และแบ่ง GOLD 1–4 ด้วย post-BD FEV1 %pred (≥80, 50–79, 30–49, &lt;30) · แถลงการณ์ร่วม GOLD–GLI ปี 2026 สรุปว่า LLN ใช้หา obstruction ได้ทั่วไป แต่ในบริบทที่สงสัย COPD ให้ใช้ fixed ratio ยืนยัน · pre-BD ปกติ ตัด COPD ได้ ไม่ต้องทำ post</div>
+
+<h3 class="s2">2.3 FVC ต่ำ ratio ปกติ: restrictive pattern / non-specific / PRISm</h3>
+<div class="tw"><table>
+<tr><th>ชื่อ</th><th>เกณฑ์</th><th>ความหมาย</th></tr>
+<tr><td><b>Possible restriction</b></td><td>FVC &lt; LLN, ratio ปกติ/สูง, loop แคบสูง</td><td>ต้องวัด TLC — ถ้า TLC &lt; LLN = restriction</td></tr>
+<tr><td><b>Non-specific pattern (NSP)</b></td><td>FEV1 และ FVC ต่ำ, ratio ปกติ, <b>TLC ปกติ</b></td><td>เป่าไม่สุด, กล้ามเนื้ออ่อนแรง, หลอดลมเล็กยุบตัวจน RV สูง, restriction ระยะแรก · ติดตาม 3 ปี 1/3 กลายเป็น obstruction หรือ restriction ชัด</td></tr>
+<tr><td><b>PRISm</b></td><td>FEV1 (± FVC) ต่ำ, ratio ปกติ, ไม่มี TLC — ชื่อที่ใช้ในการศึกษาผู้สูบบุหรี่</td><td>เสี่ยงต่อ COPD และการตายสูงขึ้น ควรติดตาม</td></tr>
+</table></div>
+<div class="box pit"><b class="t">ก่อนเรียก NSP ให้ถามว่า "เป่าสุดหรือเปล่า"</b>ดู FET, plateau, PEF แหลมไหม · ลองทำ BDR · เทียบ slow VC กับ FVC — SVC มากกว่า FVC &gt; 100 mL แปลว่าหลอดลมยุบตัวขณะเป่าแรง (air trapping ที่ซ่อนอยู่)</div>
+
+<h3 class="s2">2.4 Bronchodilator responsiveness (BDR)</h3>
+<p>ให้ salbutamol 400 µg (MDI + spacer) แล้วตรวจซ้ำหลัง 10–15 นาที</p>
+<div class="grid2">
+<div class="mini s2"><b>ERS/ATS 2022</b><br>(post − pre) ÷ <b>predicted</b> × 100<br><b>&gt; 10%</b> ใน FEV1 หรือ FVC = positive<br><span class="ttl">ลด bias: คนตัวเล็ก/ผู้หญิง/ปอดแย่ baseline ต่ำ ทำให้ % จาก baseline ดูสูงเกิน</span></div>
+<div class="mini s2"><b>ATS/ERS 2005 · GINA 2026</b><br>(post − pre) ÷ <b>baseline</b> × 100<br><b>≥ 12% และ ≥ 200 mL</b> = positive<br><span class="ttl">GINA ยังไม่รับเกณฑ์ใหม่ · เพิ่ม &gt; 400 mL สนับสนุน asthma มาก</span></div>
+</div>
+<div class="box calcx"><b class="t">ลองคิด</b>FEV1 pre 1.27 L, post 1.56 L, predicted 1.78 L · 2005: (1.56 − 1.27) ÷ 1.27 = <b>22.8%</b> และ 290 mL → positive · 2022: 0.29 ÷ 1.78 = <b>16.3%</b> → positive · ทั้งสองเกณฑ์อาจให้ผลต่างกันได้เมื่อ baseline ต่ำมาก (ดูเคส 2)</div>
+<div class="tool s2 noprint"><div class="th">เครื่องคิด BDR</div>
+<div class="fg"><div><label class="f">Pre FEV1 (L)</label><input type="number" id="bPre" value="1.27" step="0.01"></div><div><label class="f">Post FEV1 (L)</label><input type="number" id="bPost" value="1.56" step="0.01"></div><div><label class="f">Predicted FEV1 (L)</label><input type="number" id="bPred" value="1.78" step="0.01"></div></div>
+<div id="bOut" style="margin-top:10px"></div></div>
+
+<div class="box key"><b class="t">BDR ไม่ใช่ตัวแยก asthma กับ COPD</b>COPD ก็มี BDR ได้ (ราว 1/4–1/3) และ asthma ที่คุมดีอาจไม่มี · สิ่งที่สนับสนุน asthma: อายุน้อย, atopy, อาการแปรปรวน, FEV1 เพิ่มมาก (&gt;400 mL), post-BD ratio กลับเป็นปกติ, FeNO สูง, eosinophil สูง · สิ่งที่สนับสนุน COPD: สูบบุหรี่ ≥ 10 pack-year, post-BD ratio ยังต่ำ, DLCO ต่ำ, hyperinflation</div>
+<p><b>Volume responder vs flow responder</b>: ผู้ป่วย air trapping มาก FVC ต่ำทำให้ pre-BD ratio ปกติ หลังพ่นยา FVC เพิ่มมาก ratio ลดลงต่ำกว่าเกณฑ์ (volume responder) · ในทางกลับกัน FEV1 เพิ่มมาก ratio pre ต่ำแต่ post กลับปกติ (flow responder) — กลุ่มหลังต้องติดตามเพราะเสี่ยงเกิด obstruction ถาวร</p>
+<p><b>Spirometry ปกติแต่ยังสงสัย asthma</b>: ตรวจ bronchial provocation (methacholine) — PC20 &gt; 16 mg/mL ปกติ, 4–16 borderline, &lt; 4 สนับสนุน AHR · หรือ PEF variability &gt; 10% ใน 2 สัปดาห์ · หรือดูการตอบสนองต่อ ICS 4–12 สัปดาห์</p>
+
+<h3 class="s2">2.5 อ่านรูปทรง flow–volume loop</h3>
+<p>ตัวเลขบอก "เท่าไร" แต่ loop บอก "ที่ไหน" — โดยเฉพาะทางเดินหายใจใหญ่ (central / upper airway) ซึ่งระยะแรก FEV1 และ FVC อาจปกติ</p>
+<figure><svg id="figLoops" viewBox="0 0 860 560"></svg>
+<figcaption><b>รูป 2.2 รูปทรง loop ที่ต้องรู้จัก</b> (วาดจำลอง) — ขาออกสีเขียวอยู่บน ขาเข้าสีน้ำเงินอยู่ล่าง</figcaption></figure>
+<div class="tw"><table>
+<tr><th></th><th>Variable extrathoracic</th><th>Variable intrathoracic</th><th>Fixed</th></tr>
+<tr><td>ส่วนที่แบน</td><td>ขาเข้า (หายใจเข้า แรงดันลบดูดให้ตีบ)</td><td>ขาออก (เป่าออก ความดันในอกบีบ)</td><td>ทั้งสองขา (รูปกล่อง)</td></tr>
+<tr><td>FEF50/FIF50</td><td>&gt; 1</td><td>&lt; 1</td><td>≈ 1</td></tr>
+<tr><td>ตัวอย่าง</td><td>vocal cord paralysis, vocal cord dysfunction, เนื้องอกกล่องเสียง, OSA</td><td>tracheomalacia, เนื้องอกใน trachea ส่วนล่าง</td><td>tracheal stenosis หลังใส่ท่อ/เจาะคอ, goiter รัด, endobronchial TB</td></tr>
+</table></div>
+<div class="box calcx"><b class="t">ตัวช่วยสะดุดตา: FEV1/PEF</b>FEV1 (mL) ÷ PEF (L/min) <b>&gt; 8</b> (ERS/ATS 2022; บางตำราใช้ &gt; 10) ชวนสงสัย central/upper airway obstruction เพราะ PEF ลดลงมากเกินกว่าที่ FEV1 อธิบายได้ · เป่าช่วงแรกไม่แรงก็ทำให้ค่าสูงได้ · loop ปกติ <b>ไม่ได้ตัด</b> โรคทางเดินหายใจใหญ่ ถ้าสงสัยให้ส่องกล้องหรือ CT airway</div>
+<div class="tool s2 noprint"><div class="th">เครื่องคิด FEV1/PEF</div>
+<div class="fg"><div><label class="f">FEV1 (mL)</label><input type="number" id="upFev1" value="2300"></div><div><label class="f">PEF (L/min)</label><input type="number" id="upPef" value="140" step="0.1"></div><div><label class="f">หรือ PEF (L/s)</label><input type="number" id="upPefS" step="0.01"></div></div>
+<div id="upOut" style="margin-top:8px"></div></div>
+
+
+<div class="ex s2"><h4>✏️ แบบฝึกหัด Level 2</h4>
+<div class="q"><span class="qn">1</span>FEV1/FVC 0.62 (LLN 0.70), FVC z −0.4, FEV1 z −2.1 แปลผลอย่างไร
+<details class="ans"><summary>เฉลย</summary><div><b>Mild airflow obstruction</b> (FEV1 z −2.1) · FVC ปกติ ตัด restriction ร่วม</div></details></div>
+<div class="q"><span class="qn">2</span>FEV1/FVC 0.85 (LLN 0.72), FVC z −2.4, FEV1 z −2.2 แปลผลอย่างไร ต้องตรวจอะไรต่อ
+<details class="ans"><summary>เฉลย</summary><div><b>Possible restriction หรือ non-specific pattern</b> → ส่งวัด lung volumes (TLC) ก่อนสรุป และดูคุณภาพการเป่า</div></details></div>
+<div class="q"><span class="qn">3</span>FEV1/FVC 0.55 (LLN 0.68), FVC z −2.9 แปลผลอย่างไร
+<details class="ans"><summary>เฉลย</summary><div><b>Obstruction ร่วมกับ FVC ต่ำ</b> → อาจเป็น air trapping อย่างเดียว หรือ mixed disorder ต้องวัด TLC</div></details></div>
+<div class="q"><span class="qn">4</span>FEV1 pre 1.20 L, post 1.42 L, predicted 2.90 L เป็น BDR positive ตามเกณฑ์ใด
+<details class="ans"><summary>เฉลย</summary><div>เพิ่ม 220 mL = 18.3% ของ baseline → <b>positive ตาม 2005/GINA</b> · คิดเป็น 7.6% ของ predicted → <b>negative ตาม ERS/ATS 2022</b> · ตัวอย่างคลาสสิกที่ baseline ต่ำทำให้ % จาก baseline ดูสูง</div></details></div>
+<div class="q"><span class="qn">5</span>FEV1 2,100 mL, PEF 180 L/min ควรคิดถึงอะไร
+<details class="ans"><summary>เฉลย</summary><div>FEV1/PEF = 11.7 (&gt; 8) → สงสัย <b>central/upper airway obstruction</b> ดู inspiratory–expiratory loop และส่องกล้อง</div></details></div>
+<div class="q"><span class="qn">6</span>Loop ขาเข้าแบน ขาออกปกติ ในหญิงอายุ 28 ปีที่ "หอบเหนื่อยเสียงดังในคอ" รักษา asthma ไม่ดีขึ้น
+<details class="ans"><summary>เฉลย</summary><div><b>Variable extrathoracic obstruction</b> — นึกถึง vocal cord dysfunction (inducible laryngeal obstruction) ยืนยันด้วย laryngoscopy ขณะมีอาการ</div></details></div>
+<div class="q"><span class="qn">7</span>ชายสูบบุหรี่ 30 pack-year FEV1/FVC pre 0.74, post 0.72 (ทั้งคู่ ≥ 0.70) ต้องทำอะไรต่อ
+<details class="ans"><summary>เฉลย</summary><div>ไม่เข้าเกณฑ์ COPD ตาม GOLD ตอนนี้ · ดู FEV1 ถ้าต่ำ = <b>PRISm</b> · ถ้ามีอาการและ FEV1 ปกติ = "pre-COPD" · แนะนำเลิกบุหรี่และติดตาม spirometry</div></details></div>
+</div>
+</section>
+
+<!-- ===================== LEVEL 3 ===================== -->
+<section id="L3">
+<div class="lv lv3"><span class="tag">LEVEL 3 · Lung volumes</span><h2>TLC, RV, FRC: ยืนยัน restriction และดู hyperinflation</h2><p>กลับไปที่กราฟใน Level 0 — คราวนี้วัดส่วนที่ spirometry มองไม่เห็น</p></div>
+
+<h3 class="s3">3.1 วัดอย่างไร และข้อควรระวัง</h3>
+<div class="tw"><table>
+<tr><th>วิธี</th><th>หลักการ</th><th>จุดอ่อน</th></tr>
+<tr><td><b>Body plethysmography</b> (body box)</td><td>กฎของบอยล์ — วัดก๊าซทั้งหมดในทรวงอก รวมส่วนที่ติดค้าง</td><td>อาจ overestimate ใน obstruction รุนแรง · ต้องนั่งในตู้ปิด</td></tr>
+<tr><td><b>Nitrogen washout / helium dilution</b></td><td>วัดเฉพาะส่วนที่ก๊าซเข้าถึง</td><td><b>underestimate</b> ใน obstruction (bullae, air trapping) อาจต่างจาก body box ได้ถึง 3 L</td></tr>
+<tr><td><b>VA จาก DLCO</b> (single breath)</td><td>dilution ของ tracer gas ในลมหายใจเดียว</td><td>ต่ำกว่า TLC จริงเสมอใน obstruction — <b>ห้ามใช้ VA ต่ำบอก restriction</b></td></tr>
+</table></div>
+
+<h3 class="s3">3.2 ภาพ "แท่งปริมาตร" ของแต่ละ pattern</h3>
+<figure><svg id="figBars" viewBox="0 0 860 400"></svg>
+<figcaption><b>รูป 3.1 Lung volume ในภาวะต่าง ๆ</b> (ความสูงแท่ง = TLC, ส่วนเทา = RV, เส้นประ = FRC) — ภาพประกอบเชิงแนวคิด ค่าเป็นตัวเลขประมาณ</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Pattern</th><th>TLC</th><th>RV</th><th>RV/TLC</th><th>FRC</th><th>ตัวอย่าง</th></tr>
+<tr><td><b>Simple restriction</b></td><td class="lo">↓</td><td>↓</td><td>ปกติ</td><td>↓</td><td>ILD, pneumonectomy</td></tr>
+<tr><td><b>Complex restriction</b></td><td class="lo">↓</td><td>ปกติ/↑</td><td class="hi">↑</td><td>ปกติ</td><td>neuromuscular, ผนังอกผิดรูป, อ้วน, gas trapping ซ่อนอยู่</td></tr>
+<tr><td><b>Mixed</b></td><td class="lo">↓</td><td>ปกติ/↑</td><td>↑</td><td>—</td><td>FEV1/FVC ต่ำด้วย เช่น ILD + COPD, TB destroyed lung + COPD</td></tr>
+<tr><td><b>Hyperinflation</b></td><td>ปกติ/<span class="hi">↑</span></td><td class="hi">↑</td><td class="hi">↑</td><td class="hi">↑</td><td>COPD (TLC ↑ = emphysema), asthma</td></tr>
+<tr><td><b>Gas trapping</b></td><td>ปกติ</td><td class="hi">↑</td><td class="hi">↑</td><td>ปกติ</td><td>small airway disease ระยะแรก, asthma</td></tr>
+<tr><td><b>Muscle weakness</b></td><td>↓</td><td>↑</td><td>↑</td><td>ปกติ/↓</td><td>ALS, myasthenia, diaphragm paralysis</td></tr>
+<tr><td><b>Obesity</b></td><td>ปกติ (↓ ถ้า BMI &gt; 40)</td><td>ปกติ</td><td>ปกติ/↑</td><td class="lo">↓ (ERV ↓↓)</td><td>BMI สูง</td></tr>
+<tr><td><b>Large lungs</b></td><td class="hi">↑</td><td>ปกติ</td><td>ปกติ</td><td>ปกติ</td><td>normal variant (นักกีฬา, คนตัวสูง)</td></tr>
+</table></div>
+
+<h3 class="s3">3.3 Algorithm lung volumes</h3>
+<figure><svg id="figAlgVol" viewBox="0 0 860 330"></svg>
+<figcaption><b>รูป 3.2 Algorithm lung volumes</b> (ดัดแปลงจาก ERS/ATS 2022 Figure 10)</figcaption></figure>
+<div class="box pearl"><b class="t">TLC สูงหรือไม่ บอกกลไกได้</b>Hyperinflation ที่ TLC สูงด้วย → ปอดเสีย elastic recoil น่าจะเป็น <b>emphysema</b> · FRC/RV สูงแต่ TLC ปกติ → พบใน chronic bronchitis หรือ asthma · IC/TLC ต่ำใน COPD สัมพันธ์กับอาการเหนื่อยและการตาย</div>
+<div class="box key"><b class="t">Neuromuscular disease — ตรวจเพิ่ม 2 อย่าง</b>(1) <b>VC ท่านอนเทียบท่านั่ง</b>: ปกติลด 5–10% ถ้าลด ≥ 20% บ่งชี้กระบังลมอ่อนแรง (2) <b>MIP / MEP</b> (PImax/PEmax): MIP ติดลบเกิน −80 cmH<sub>2</sub>O หรือ MEP เกิน +80 cmH<sub>2</sub>O ตัดกล้ามเนื้ออ่อนแรงที่สำคัญได้ · ความผิดปกติแรกของ NMD คือ MIP/MEP ลดลง ก่อน VC จะลด</div>
+
+<div class="ex s3"><h4>✏️ แบบฝึกหัด Level 3</h4>
+<div class="q"><span class="qn">1</span>TLC z −2.8, RV/TLC ปกติ, FEV1/FVC ปกติ
+<details class="ans"><summary>เฉลย</summary><div><b>Simple restriction, moderate</b> — นึกถึง ILD ดู DLCO ต่อ</div></details></div>
+<div class="q"><span class="qn">2</span>TLC z −2.2, RV/TLC สูงกว่า ULN, FEV1/FVC ปกติ ผู้ป่วยหญิง 45 ปี กลืนลำบาก หนังตาตก
+<details class="ans"><summary>เฉลย</summary><div><b>Complex restriction</b> จากกล้ามเนื้ออ่อนแรง (เข้าได้กับ myasthenia gravis) · ตรวจ MIP/MEP และ VC ท่านอน</div></details></div>
+<div class="q"><span class="qn">3</span>FEV1/FVC ต่ำ, TLC z +2.0, RV/TLC สูงกว่า ULN
+<details class="ans"><summary>เฉลย</summary><div><b>Obstruction ร่วมกับ hyperinflation</b> และ TLC สูง → เสีย elastic recoil น่าจะเป็น emphysema · DLCO มักต่ำ</div></details></div>
+<div class="q"><span class="qn">4</span>ผู้ป่วย COPD รุนแรง วัดด้วย helium dilution ได้ TLC ต่ำกว่า LLN จะสรุปว่ามี mixed disorder ได้ไหม
+<details class="ans"><summary>เฉลย</summary><div><b>ไม่ได้</b> — gas dilution underestimate TLC ในผู้ป่วยอุดกั้นมาก ควรวัดด้วย body box ก่อนสรุป</div></details></div>
+<div class="q"><span class="qn">5</span>FRC ต่ำ ERV ต่ำมาก TLC และ RV ปกติ
+<details class="ans"><summary>เฉลย</summary><div>Pattern ของ <b>obesity</b></div></details></div>
+</div>
+</section>
+
+<!-- ===================== LEVEL 4 ===================== -->
+<section id="L4">
+<div class="lv lv4"><span class="tag">LEVEL 4 · DLCO</span><h2>ก๊าซข้ามจากถุงลมสู่เลือดได้ดีแค่ไหน</h2><p>ตัวเดียวที่บอกเรื่องหลอดเลือดปอดและเนื้อเยื่อแลกเปลี่ยนก๊าซ</p></div>
+
+<h3 class="s4">4.1 DLCO วัดอะไร</h3>
+<p>ผู้ป่วยหายใจเข้าก๊าซที่มี CO ความเข้มข้นต่ำ + tracer gas (เช่น methane หรือ helium) กลั้นหายใจ 10 วินาที แล้วเป่าออก เครื่องวัดว่า CO หายไปเร็วเท่าไร (เข้าเลือดไป) และ tracer gas เจือจางเท่าไร (บอกปริมาตรที่ก๊าซกระจายถึง)</p>
+<figure><svg id="figDl" viewBox="0 0 860 300"></svg>
+<figcaption><b>รูป 4.1 DLCO = KCO × VA</b> — CO ต้องผ่านเยื่อถุงลม–หลอดเลือดฝอย (membrane, D<sub>M</sub>) แล้วจับกับ Hb ในเลือดฝอย (θ·V<sub>c</sub>)</figcaption></figure>
+<div class="grid2">
+<div class="mini s4"><b>VA</b> (alveolar volume)<br>ปริมาตรที่ก๊าซเข้าถึง ≈ "ปอดใหญ่แค่ไหน" (ปกติ VA/TLC ≈ 0.85–0.90)</div>
+<div class="mini s4"><b>KCO</b> (= DLCO/VA)<br>ประสิทธิภาพการรับ CO ต่อหน่วยปริมาตร ≈ "คุณภาพของปอดที่เหลือ"</div>
+</div>
+<div class="box pit"><b class="t">กับดัก KCO</b>เมื่อปอดขยายไม่เต็ม (VA ต่ำ) เลือดฝอยถูกเบียดเข้าหากัน KCO จะ <b>สูงขึ้นเองแบบไม่เป็นเส้นตรง</b> ดังนั้นถ้า VA ต่ำ "KCO ปกติ" ไม่ได้แปลว่าเนื้อปอดปกติ — ควรจะสูงด้วยซ้ำ · DLCO/VA <b>ไม่ได้ "แก้"</b> ผลของปริมาตรปอดที่ต่ำ</div>
+
+<h3 class="s4">4.2 ต้องปรับ Hb ก่อนเสมอ</h3>
+<p>Hb เป็นตัวจับ CO ปลายทาง ซีดทำให้ DLCO ต่ำโดยปอดปกติ (ATS/ERS 2017):</p>
+<div class="box calcx"><b class="t">สูตรปรับค่า predicted</b>ชาย (อายุ ≥ 15 ปี): DLCO pred ที่ปรับแล้ว = DLCO pred × <b>1.7 Hb ÷ (10.22 + Hb)</b><br>หญิงและเด็ก &lt; 15 ปี: × <b>1.7 Hb ÷ (9.38 + Hb)</b> (Hb เป็น g/dL)<br>ตัวอย่าง ชาย Hb 9 g/dL: factor = 15.3 ÷ 19.22 = 0.80 → predicted ลดลง 20% · นอกจากนี้ COHb สูงจากการสูบบุหรี่ก่อนตรวจทำให้ DLCO ต่ำลง ควรงดบุหรี่วันตรวจ</div>
+<div class="tool s4 noprint"><div class="th">เครื่องคิดปรับ DLCO ตาม Hb</div>
+<div class="fg"><div><label class="f">กลุ่ม</label><select id="hbSex"><option value="M">ชาย อายุ ≥ 15 ปี</option><option value="F">หญิง หรือเด็ก &lt; 15 ปี</option></select></div><div><label class="f">Hb (g/dL)</label><input type="number" id="hbV" value="9" step="0.1"></div><div><label class="f">DLCO predicted</label><input type="number" id="hbPred" value="22" step="0.1"></div></div>
+<div id="hbOut" style="margin-top:8px"></div></div>
+
+
+<h3 class="s4">4.3 Algorithm DLCO</h3>
+<figure><svg id="figAlgDl" viewBox="0 0 860 330"></svg>
+<figcaption><b>รูป 4.2 Algorithm DLCO</b> (ดัดแปลงจาก ERS/ATS 2022 Figure 11)</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Pattern</th><th>นึกถึง</th></tr>
+<tr><td><b>DLCO ต่ำ, VA ปกติ</b> (KCO ต่ำ)</td><td>Pulmonary vascular disease (PAH, CTEPH, vasculitis), emphysema ที่ปริมาตรปอดยังปกติ, early ILD, <b>CPFE</b>, anemia (ถ้ายังไม่ปรับ Hb)</td></tr>
+<tr><td><b>DLCO ต่ำ, VA ต่ำ, KCO ต่ำ/ปกติ</b></td><td>สูญเสีย alveolar–capillary unit ร่วมกับปริมาตรลด: ILD, emphysema รุนแรง</td></tr>
+<tr><td><b>DLCO ต่ำ, VA ต่ำ, KCO สูง</b></td><td>ปอดขยายไม่เต็มแต่เนื้อปอดดี: neuromuscular, ผนังอก, หายใจเข้าไม่สุด, pleural disease, pneumonectomy</td></tr>
+<tr><td><b>DLCO สูง</b></td><td>เลือดในปอดมาก (L→R shunt, asthma, obesity, ท่านอน, ออกกำลังกาย), polycythemia, <b>alveolar hemorrhage</b></td></tr>
+</table></div>
+<div class="box key"><b class="t">DLCO ช่วยแยก asthma กับ COPD</b>Asthma: DLCO ปกติหรือสูง · COPD ชนิด emphysema: DLCO ต่ำ — ผู้ป่วยอุดกั้นที่ DLCO ต่ำ ให้คิดถึง emphysema ก่อน</div>
+
+<div class="ex s4"><h4>✏️ แบบฝึกหัด Level 4</h4>
+<div class="q"><span class="qn">1</span>DLCO 55% pred, VA 95%, KCO 58% spirometry และ TLC ปกติ หญิงอายุ 40 เหนื่อยเวลาออกแรง
+<details class="ans"><summary>เฉลย</summary><div><b>Isolated reduced DLCO</b> (VA ปกติ) → pulmonary vascular disease ก่อน: echocardiography, V/Q scan (CTEPH) · ตรวจ Hb ด้วย</div></details></div>
+<div class="q"><span class="qn">2</span>DLCO 60%, VA 62%, KCO 125% ในผู้ป่วย kyphoscoliosis
+<details class="ans"><summary>เฉลย</summary><div>VA ต่ำ KCO สูง → <b>ปอดขยายไม่เต็มจากนอกปอด (extrapulmonary restriction)</b> เนื้อปอดเองปกติ</div></details></div>
+<div class="q"><span class="qn">3</span>หญิง Hb 7 g/dL DLCO วัดได้ 14, predicted 20 (ยังไม่ปรับ) ผิดปกติไหม
+<details class="ans"><summary>เฉลย</summary><div>Factor = 1.7×7 ÷ (9.38+7) = 11.9 ÷ 16.38 = 0.73 → predicted ที่ปรับ = 14.5 · วัดได้ 14 = 97% ของค่าที่ปรับ → <b>ปกติเมื่อคิดตาม Hb</b> DLCO ต่ำเพราะซีด</div></details></div>
+<div class="q"><span class="qn">4</span>ผู้ป่วย SLE ไอเป็นเลือด Hb ลดลง 2 g/dL ใน 1 วัน DLCO 145% pred
+<details class="ans"><summary>เฉลย</summary><div>DLCO สูงผิดปกติ (โดยเฉพาะเมื่อซีด) → <b>diffuse alveolar hemorrhage</b> — Hb ในถุงลมจับ CO ได้ (ดูเคส 12)</div></details></div>
+</div>
+</section>
+
+<!-- ===================== LEVEL 5 ===================== -->
+<section id="L5">
+<div class="lv lv5"><span class="tag">LEVEL 5 · รวมร่าง</span><h2>แปลผลทั้งรายงานแบบอายุรแพทย์</h2><p>ลำดับขั้นที่ใช้ได้ทุกครั้ง วิธีเขียนผล และ "ลายนิ้วมือ" ของโรคต่าง ๆ</p></div>
+
+<h3 class="s5">5.1 Checklist 8 ขั้น</h3>
+<ol class="chk s5">
+<li><b>ข้อมูลผู้ป่วย</b> — อายุ เพศ ส่วนสูง (ถูกต้องไหม ผู้ป่วยหลังค่อมให้วัด arm span) คำถามทางคลินิก ยาที่ใช้/หยุด</li>
+<li><b>สมการอ้างอิง</b> — ชื่ออะไร ตรงกับครั้งก่อนไหม</li>
+<li><b>คุณภาพ</b> — grade, curve, FET, plateau, PEF แหลม · ถ้าแย่ต้องเขียนกำกับ</li>
+<li><b>Spirometry</b> — FEV1/FVC → FVC → FEV1 (เทียบ LLN/z) → loop รูปทรง → FEV1/PEF</li>
+<li><b>BDR</b> — คำนวณทั้ง % predicted และ 12% + 200 mL</li>
+<li><b>Lung volumes</b> — TLC → RV/TLC → FRC</li>
+<li><b>DLCO</b> — ปรับ Hb → DLCO → VA → KCO → VA/TLC</li>
+<li><b>สรุปเชิงคลินิก</b> — pattern + ความรุนแรง + เปรียบเทียบผลเก่า + ตอบคำถามที่ส่งตรวจ</li>
+</ol>
+
+<h3 class="s5">5.2 เขียนผลแปลอย่างไร</h3>
+<p>ผลแปลที่ดีสั้น ชัด บอกสิ่งที่แพทย์ผู้ส่งต้องใช้ ตัวอย่างรูปประโยค (ภาษาอังกฤษตามที่ใช้ใน report):</p>
+<div class="tw"><table>
+<tr><th>สถานการณ์</th><th>ตัวอย่างประโยค</th></tr>
+<tr><td>Obstruction + BDR</td><td>"Moderate airflow obstruction (FEV1 z −3.1) with significant bronchodilator response (FEV1 +14% predicted). Post-BD FEV1/FVC normalised — consistent with asthma in the appropriate clinical context."</td></tr>
+<tr><td>Restrictive pattern ไม่มี TLC</td><td>"Reduced FVC with preserved FEV1/FVC. Restriction cannot be confirmed without lung volume measurement; suggest TLC and DLCO."</td></tr>
+<tr><td>Simple restriction + DLCO ต่ำ</td><td>"Moderate restriction (TLC z −3.0) with severely reduced gas transfer (DLCO z −4.3; low VA and KCO), consistent with interstitial lung disease."</td></tr>
+<tr><td>Isolated DLCO ต่ำ</td><td>"Normal spirometry and lung volumes. Moderately reduced DLCO with normal VA (Hb-corrected) — consider pulmonary vascular disease or early parenchymal disease."</td></tr>
+<tr><td>คุณภาพไม่ดี</td><td>"Grade E — results may underestimate true lung function. Low FVC should be interpreted with caution; repeat testing recommended."</td></tr>
+</table></div>
+
+<h3 class="s5">5.3 ลายนิ้วมือของโรค</h3>
+<div class="tw"><table>
+<tr><th>โรค</th><th>Spirometry</th><th>Lung volumes</th><th>DLCO</th><th>จุดสังเกต</th></tr>
+<tr><td><b>Asthma</b></td><td>ปกติหรือ obstruction, BDR มัก +</td><td>ปกติ / gas trapping</td><td>ปกติหรือ ↑</td><td>แปรปรวนตามเวลา, methacholine +</td></tr>
+<tr><td><b>COPD (emphysema)</b></td><td>Obstruction, post-BD ratio &lt; 0.70</td><td>Hyperinflation, TLC ↑</td><td>↓ (KCO ↓)</td><td>VA/TLC ต่ำ</td></tr>
+<tr><td><b>Chronic bronchitis</b></td><td>Obstruction</td><td>RV ↑, TLC ปกติ</td><td>ปกติ</td><td></td></tr>
+<tr><td><b>ILD / IPF</b></td><td>Restrictive pattern, ratio ↑</td><td>Simple restriction</td><td>↓ (มักลดก่อนและมากกว่า volume)</td><td>Loop แคบสูง</td></tr>
+<tr><td><b>CPFE</b></td><td>"เกือบปกติ"</td><td>เกือบปกติ</td><td><b>↓↓ มาก</b></td><td>emphysema บน + fibrosis ล่าง, เสี่ยง PH</td></tr>
+<tr><td><b>Pulmonary hypertension / CTEPH</b></td><td>ปกติ (อาจ mild)</td><td>ปกติ</td><td>↓ (VA ปกติ)</td><td>ส่ง echo, V/Q</td></tr>
+<tr><td><b>Neuromuscular</b></td><td>Restrictive, PEF ไม่แหลม</td><td>Complex restriction (RV/TLC ↑)</td><td>VA ↓, KCO ↑</td><td>VC นอนลด ≥ 20%, MIP/MEP ↓</td></tr>
+<tr><td><b>Kyphoscoliosis / ผนังอก</b></td><td>Restrictive</td><td>Restriction</td><td>VA ↓, KCO ↑</td><td>ใช้ arm span แทนส่วนสูง</td></tr>
+<tr><td><b>Obesity</b></td><td>ปกติหรือ FVC ลดเล็กน้อย</td><td>ERV ↓↓, FRC ↓</td><td>ปกติหรือ ↑</td><td>TLC ↓ เมื่อ BMI &gt; 40</td></tr>
+<tr><td><b>Heart failure</b></td><td>Restrictive หรือ obstruction เล็กน้อย</td><td>TLC ↓ เล็กน้อย</td><td>↓ (เรื้อรัง)</td><td>เปลี่ยนตามภาวะน้ำเกิน</td></tr>
+<tr><td><b>Post-TB destroyed lung</b></td><td>Obstruction ± FVC ↓</td><td>Mixed บ่อย</td><td>↓</td><td>พบบ่อยในไทย</td></tr>
+<tr><td><b>Upper airway obstruction</b></td><td>ตัวเลขอาจปกติ, PEF ↓</td><td>ปกติ</td><td>ปกติ</td><td>Loop แบน, FEV1/PEF &gt; 8</td></tr>
+<tr><td><b>Anemia</b></td><td>ปกติ</td><td>ปกติ</td><td>↓ (ก่อนปรับ Hb)</td><td>ปรับ Hb แล้วปกติ</td></tr>
+<tr><td><b>Alveolar hemorrhage</b></td><td>ปกติหรือ restrictive</td><td>—</td><td><b>↑</b></td><td>KCO สูงมาก</td></tr>
+</table></div>
+
+<h3 class="s5">5.4 การนำไปใช้ที่อายุรแพทย์ต้องรู้</h3>
+<h4>การเปลี่ยนแปลงตามเวลา</h4>
+<p>ผู้ใหญ่ไม่สูบบุหรี่ FEV1 ลดราว <b>30 mL/ปี</b> หลังอายุ 25 ปี · ในการตรวจติดตามรายปี การลดลง &gt; 15% เกินความแปรปรวนปกติ · ทางเลือก: <b>FEV1Q</b> = FEV1 (L) ÷ 0.5 (ชาย) หรือ 0.4 (หญิง) — ค่าใกล้ 1 ความเสี่ยงตายสูง ปกติลด 1 หน่วยทุก ~18 ปี และ ~10 ปีในผู้สูบบุหรี่/ผู้สูงอายุ · การเปลี่ยนระยะสั้นที่มีนัยของ FVC ใน ILD ที่นิยมใช้คือ ≥ 5–10% · ใช้สมการเดิมเสมอ</p>
+<h4>ประเมินก่อนผ่าตัดปอด (lung resection)</h4>
+<div class="box calcx"><b class="t">Predicted postoperative (ppo) FEV1 และ DLCO</b>ppo = ค่าก่อนผ่าตัด (%pred) × (1 − จำนวน segment ที่จะตัด ÷ 19)<br>(segment: RUL 3, RML 2, RLL 5, LUL 3, lingula 2, LLL 4 = 19)<br>• ppoFEV1 และ ppoDLCO <b>&gt; 60%</b> ทั้งคู่ → ความเสี่ยงต่ำ ผ่าตัดได้<br>• ตัวใดตัวหนึ่ง <b>30–60%</b> → ทดสอบออกกำลังกายอย่างง่าย (stair climb หรือ shuttle walk)<br>• ตัวใดตัวหนึ่ง <b>&lt; 30%</b> → ส่ง CPET (VO<sub>2</sub>max)<br><span class="ttl">ตามแนวทาง ACCP 2013 — ดูเคส 13</span></div>
+<h4>ภาวะอื่นที่ควรส่ง PFT</h4>
+<ul>
+<li>ติดตามยาที่เป็นพิษต่อปอด: amiodarone, bleomycin, methotrexate — DLCO ลดลง &gt; 15–20% จากเดิมเป็นสัญญาณเตือน</li>
+<li>Connective tissue disease (SSc, myositis) — คัดกรอง ILD และ PH ด้วย FVC + DLCO</li>
+<li>Neuromuscular (ALS, GBS, myasthenia) — FVC, VC ท่านอน, MIP/MEP ช่วยตัดสินใจเรื่อง NIV</li>
+</ul>
+</section>
+
+<!-- ===================== LEVEL 6 CASES ===================== -->
+<section id="L6">
+<div class="lv lv6"><span class="tag">LEVEL 6 · คลังเคส</span><h2>13 เคส แปลผลจริงทีละขั้น</h2><p>ลองแปลผลเองตาม checklist 8 ขั้นก่อน แล้วเปิดเฉลยทีละข้อ · ตัวเลขแดง = ต่ำกว่า LLN, น้ำเงิน = สูงกว่า ULN</p></div>
+
+<div class="case s6"><h4>เคส 1 · หญิงสาว หอบเป็นพัก ๆ</h4>
+<div class="vg">หญิง 32 ปี สูง 160 cm หอบเหนื่อยมีเสียงวี้ด เป็น ๆ หาย ๆ 2 ปี แย่ลงตอนกลางคืนและเมื่อเป็นหวัด มีจมูกอักเสบภูมิแพ้ ไม่สูบบุหรี่ · คุณภาพ grade A · หยุดยาพ่นตามกำหนด</div>
+<div class="tw"><table class="rep"><caption>หญิง 32 ปี · สูง 160 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th><th class="n">Post</th><th class="n">z post</th><th class="n">%Pred post</th><th class="n">Δ mL</th><th class="n">Δ % base</th><th class="n">Δ % pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">2.05</td><td class="n">2.89</td><td class="n">2.21</td><td class="n">–</td><td class="n lo">-2.03</td><td class="n">71</td><td class="n ">2.55</td><td class="n ">-0.83</td><td class="n">88</td><td class="n">+500</td><td class="n">24.4</td><td class="n">17.3</td></tr><tr><td>FVC (L)</td><td class="n ">3.10</td><td class="n">3.39</td><td class="n">2.61</td><td class="n">–</td><td class="n ">-0.61</td><td class="n">91</td><td class="n ">3.25</td><td class="n ">-0.29</td><td class="n">96</td><td class="n">+150</td><td class="n">4.8</td><td class="n">4.4</td></tr><tr><td>FEV1/FVC</td><td class="n lo">0.66</td><td class="n">0.85</td><td class="n">0.75</td><td class="n">–</td><td class="n lo">-2.60</td><td class="n">77</td><td class="n ">0.78</td><td class="n ">-1.11</td><td class="n">92</td><td></td><td></td><td></td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="asthma">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Pattern และความรุนแรงก่อนพ่นยา?<details class="ans"><summary>เฉลย</summary><div>FEV1/FVC 0.66 &lt; LLN 0.75 (z −2.60) → <b>airflow obstruction</b> · FVC ปกติ (ตัด restriction ร่วม) · ความรุนแรงจาก FEV1 z −2.03 = <b>mild</b> · สังเกตว่า fixed ratio (0.66 &lt; 0.70) ก็ให้ผลเดียวกันในรายนี้</div></details></div>
+<div class="q"><b>2)</b> BDR?<details class="ans"><summary>เฉลย</summary><div>FEV1 เพิ่ม <b>500 mL</b> = 24.4% ของ baseline และ 17.3% ของ predicted → <b>positive ทั้งสองเกณฑ์</b> · เพิ่ม &gt; 400 mL สนับสนุน asthma มาก · post-BD FEV1/FVC 0.78 กลับเข้าช่วงปกติ (z −1.11) = obstruction ที่ <b>กลับคืนได้เต็มที่</b></div></details></div>
+<div class="q"><b>3)</b> สรุป<details class="ans"><summary>เฉลย</summary><div>"Mild airflow obstruction with a significant bronchodilator response; post-bronchodilator spirometry within normal limits" → เข้าได้กับ <b>asthma</b> ร่วมกับประวัติ · ไม่ใช่ COPD เพราะ post-BD ratio ปกติ</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 2 · ชายสูบบุหรี่ เหนื่อยมากขึ้น</h4>
+<div class="vg">ชาย 66 ปี สูง 168 cm สูบบุหรี่ 45 pack-year เหนื่อยเวลาเดินเร็ว 3 ปี อกถัง เคาะโปร่ง · ทำครบ spirometry + body box + DLCO · Hb 14.5 g/dL</div>
+<div class="tw"><table class="rep"><caption>ชาย 66 ปี · สูง 168 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th><th class="n">Post</th><th class="n">z post</th><th class="n">%Pred post</th><th class="n">Δ mL</th><th class="n">Δ % base</th><th class="n">Δ % pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">1.02</td><td class="n">2.77</td><td class="n">2.04</td><td class="n">–</td><td class="n lo">-3.70</td><td class="n">37</td><td class="n lo">1.25</td><td class="n lo">-3.27</td><td class="n">45</td><td class="n">+230</td><td class="n">22.5</td><td class="n">8.3</td></tr><tr><td>FVC (L)</td><td class="n ">2.70</td><td class="n">3.57</td><td class="n">2.67</td><td class="n">–</td><td class="n ">-1.59</td><td class="n">76</td><td class="n ">3.05</td><td class="n ">-0.95</td><td class="n">85</td><td class="n">+350</td><td class="n">13.0</td><td class="n">9.8</td></tr><tr><td>FEV1/FVC</td><td class="n lo">0.38</td><td class="n">0.78</td><td class="n">0.65</td><td class="n">–</td><td class="n lo">-3.84</td><td class="n">48</td><td class="n lo">0.41</td><td class="n lo">-3.67</td><td class="n">52</td><td></td><td></td><td></td></tr><tr><td colspan="13" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n hi">8.00</td><td class="n">6.30</td><td class="n">5.02</td><td class="n">7.59</td><td class="n hi">2.16</td><td class="n">127</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>FRC (L)</td><td class="n hi">5.60</td><td class="n">3.22</td><td class="n">2.24</td><td class="n">4.46</td><td class="n hi">2.91</td><td class="n">174</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RV (L)</td><td class="n hi">4.30</td><td class="n">2.12</td><td class="n">1.29</td><td class="n">3.11</td><td class="n hi">3.36</td><td class="n">203</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RV/TLC (%)</td><td class="n hi">53.8</td><td class="n">33.1</td><td class="n">22.7</td><td class="n">43.9</td><td class="n hi">3.08</td><td class="n">162</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="13" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">10.50</td><td class="n">23.69</td><td class="n">17.56</td><td class="n">30.96</td><td class="n lo">-4.06</td><td class="n">44</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>VA (L)</td><td class="n ">5.30</td><td class="n">5.64</td><td class="n">4.55</td><td class="n">6.82</td><td class="n ">-0.51</td><td class="n">94</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n lo">1.98</td><td class="n">4.22</td><td class="n">3.16</td><td class="n">5.38</td><td class="n lo">-3.70</td><td class="n">47</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="emph">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Spirometry?<details class="ans"><summary>เฉลย</summary><div>FEV1/FVC 0.38 (z −3.84) → <b>obstruction</b> · FEV1 z −3.70 → <b>moderate</b> (ERS/ATS) · FVC อยู่เหนือ LLN เล็กน้อย</div></details></div>
+<div class="q"><b>2)</b> BDR — สองเกณฑ์ให้ผลเหมือนกันไหม?<details class="ans"><summary>เฉลย</summary><div>FEV1 +230 mL = <b>22.5%</b> ของ baseline → positive ตาม 2005/GINA แต่เป็นแค่ <b>8.3%</b> ของ predicted → negative ตาม ERS/ATS 2022 (FVC +350 mL = 13% baseline แต่ 9.8% predicted) · ผลขัดกันเพราะ baseline ต่ำมาก ทำให้ % จาก baseline ดูสูง · ไม่ว่าเกณฑ์ไหน <b>BDR ไม่ได้ทำให้เปลี่ยนการวินิจฉัย COPD</b> — post-BD ratio ยัง 0.41 &lt; 0.70</div></details></div>
+<div class="q"><b>3)</b> Lung volumes และ DLCO?<details class="ans"><summary>เฉลย</summary><div>TLC 8.0 L (z +2.16 &gt; ULN), RV/TLC 54% (&gt; ULN), FRC สูง → <b>hyperinflation ที่ TLC สูงด้วย</b> = เสีย elastic recoil · DLCO z −4.06 <b>severe</b> โดย VA ปกติ แต่ KCO ต่ำมาก → สูญเสีย alveolar–capillary bed · VA/TLC = 5.3/8.0 = 0.66 (ต่ำ) แปลว่าก๊าซกระจายไม่ทั่ว (maldistribution)</div></details></div>
+<div class="q"><b>4)</b> สรุปและ GOLD grade<details class="ans"><summary>เฉลย</summary><div><b>COPD ชนิด emphysema เด่น</b>: moderate obstruction ไม่กลับคืน, hyperinflation, DLCO ต่ำมาก · post-BD FEV1 45% pred → <b>GOLD 3</b> (สังเกตว่าระบบ z-score เรียก moderate แต่ GOLD เรียก severe — คนละระบบ)</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 3 · ไอแห้ง เหนื่อย ฟังได้ crackles</h4>
+<div class="vg">ชาย 70 ปี สูง 165 cm ไอแห้ง เหนื่อยมากขึ้น 1 ปี นิ้วปุ้ม ฟังปอดได้ velcro crackles ที่ฐานปอดสองข้าง SpO<sub>2</sub> ลดลงเมื่อเดิน · Hb ปกติ</div>
+<div class="tw"><table class="rep"><caption>ชาย 70 ปี · สูง 165 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">1.95</td><td class="n">2.55</td><td class="n">1.86</td><td class="n">–</td><td class="n ">-1.44</td><td class="n">76</td></tr><tr><td>FVC (L)</td><td class="n lo">2.25</td><td class="n">3.31</td><td class="n">2.46</td><td class="n">–</td><td class="n lo">-2.06</td><td class="n">68</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.87</td><td class="n">0.78</td><td class="n">0.65</td><td class="n">–</td><td class="n ">1.32</td><td class="n">111</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n lo">3.70</td><td class="n">6.01</td><td class="n">4.76</td><td class="n">7.28</td><td class="n lo">-3.06</td><td class="n">62</td></tr><tr><td>FRC (L)</td><td class="n lo">2.00</td><td class="n">3.13</td><td class="n">2.18</td><td class="n">4.33</td><td class="n lo">-2.00</td><td class="n">64</td></tr><tr><td>RV (L)</td><td class="n ">1.35</td><td class="n">2.14</td><td class="n">1.27</td><td class="n">3.17</td><td class="n ">-1.48</td><td class="n">63</td></tr><tr><td>RV/TLC (%)</td><td class="n ">36.5</td><td class="n">35.1</td><td class="n">24.0</td><td class="n">46.8</td><td class="n ">0.19</td><td class="n">104</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">9.00</td><td class="n">22.27</td><td class="n">16.39</td><td class="n">29.28</td><td class="n lo">-4.34</td><td class="n">40</td></tr><tr><td>VA (L)</td><td class="n lo">3.30</td><td class="n">5.36</td><td class="n">4.32</td><td class="n">6.49</td><td class="n lo">-3.40</td><td class="n">62</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n lo">2.73</td><td class="n">4.18</td><td class="n">3.10</td><td class="n">5.36</td><td class="n lo">-2.25</td><td class="n">65</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="ipf">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Spirometry บอกอะไร?<details class="ans"><summary>เฉลย</summary><div>FVC z −2.06 &lt; LLN, FEV1/FVC 0.87 (สูง) → <b>possible restriction</b> ต้องยืนยันด้วย TLC · FEV1 ยังอยู่ในช่วงปกติ (z −1.44)</div></details></div>
+<div class="q"><b>2)</b> Lung volumes?<details class="ans"><summary>เฉลย</summary><div>TLC 3.70 L (z −3.06) → <b>restriction ระดับ moderate</b> · RV/TLC ปกติ → <b>simple restriction</b></div></details></div>
+<div class="q"><b>3)</b> DLCO และสรุป<details class="ans"><summary>เฉลย</summary><div>DLCO z −4.34 <b>severe</b>, VA ต่ำ, KCO ต่ำ → สูญเสียเนื้อปอดที่แลกเปลี่ยนก๊าซ · DLCO ลดมากกว่า volume เป็นลักษณะของ <b>ILD</b> (ประวัติเข้าได้กับ IPF) · ส่ง HRCT · ใช้ FVC และ DLCO ติดตามโรค (FVC ลด ≥ 10% บ่งชี้โรคลุกลาม)</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 4 · หนังตาตก กลืนลำบาก นอนราบไม่ได้</h4>
+<div class="vg">หญิง 45 ปี สูง 158 cm หนังตาตกช่วงเย็น กลืนสำลัก เหนื่อยเมื่อนอนราบ 2 สัปดาห์ · FVC ท่านั่ง 1.75 L, ท่านอน 1.25 L · MIP −35 cmH<sub>2</sub>O, MEP +45 cmH<sub>2</sub>O · loop: PEF ไม่แหลม ปลายโค้งมน</div>
+<div class="tw"><table class="rep"><caption>หญิง 45 ปี · สูง 158 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">1.55</td><td class="n">2.57</td><td class="n">1.93</td><td class="n">–</td><td class="n lo">-2.55</td><td class="n">60</td></tr><tr><td>FVC (L)</td><td class="n lo">1.75</td><td class="n">3.10</td><td class="n">2.34</td><td class="n">–</td><td class="n lo">-2.96</td><td class="n">56</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.89</td><td class="n">0.82</td><td class="n">0.71</td><td class="n">–</td><td class="n ">1.10</td><td class="n">107</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n lo">3.30</td><td class="n">4.90</td><td class="n">4.02</td><td class="n">5.88</td><td class="n lo">-3.13</td><td class="n">67</td></tr><tr><td>RV (L)</td><td class="n ">1.55</td><td class="n">1.30</td><td class="n">0.75</td><td class="n">2.04</td><td class="n ">0.60</td><td class="n">119</td></tr><tr><td>RV/TLC (%)</td><td class="n hi">47.0</td><td class="n">26.4</td><td class="n">16.5</td><td class="n">37.1</td><td class="n hi">3.09</td><td class="n">178</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n ">17.50</td><td class="n">20.11</td><td class="n">15.82</td><td class="n">25.24</td><td class="n ">-0.96</td><td class="n">87</td></tr><tr><td>VA (L)</td><td class="n lo">2.90</td><td class="n">4.56</td><td class="n">3.75</td><td class="n">5.44</td><td class="n lo">-3.57</td><td class="n">64</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n hi">6.03</td><td class="n">4.46</td><td class="n">3.50</td><td class="n">5.53</td><td class="n hi">2.35</td><td class="n">135</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="nmd">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Spirometry?<details class="ans"><summary>เฉลย</summary><div>FVC z −2.96, FEV1 z −2.55, ratio 0.89 → <b>restrictive pattern</b> · PEF ไม่แหลม บ่งชี้แรงไม่พอ/กล้ามเนื้ออ่อนแรง</div></details></div>
+<div class="q"><b>2)</b> Lung volumes — simple หรือ complex?<details class="ans"><summary>เฉลย</summary><div>TLC z −3.13 (restriction) แต่ RV <b>ปกติถึงค่อนสูง</b> → RV/TLC 47% สูงกว่า ULN และ FEV1/FVC ปกติ → <b>complex restriction</b> (กล้ามเนื้อหายใจออกอ่อนแรง เป่าออกไม่สุด RV จึงค้าง)</div></details></div>
+<div class="q"><b>3)</b> DLCO ช่วยอย่างไร?<details class="ans"><summary>เฉลย</summary><div>DLCO ปกติ (z −0.96) ทั้งที่ VA ต่ำ เพราะ KCO <b>สูง</b> (z +2.35) → เนื้อปอดปกติ ปอดแค่ขยายไม่เต็ม = <b>extrapulmonary restriction</b></div></details></div>
+<div class="q"><b>4)</b> ข้อมูลเพิ่มเติมบอกอะไร ต้องทำอะไรต่อ?<details class="ans"><summary>เฉลย</summary><div>FVC ท่านอนลด (1.75 − 1.25)/1.75 = <b>29%</b> (≥ 20%) → กระบังลมอ่อนแรง · MIP/MEP ต่ำมาก · เข้าได้กับ <b>myasthenia gravis</b> ที่กำลังเข้าสู่ภาวะวิกฤต (myasthenic crisis) → admit ติดตาม FVC/MIP ทุก 4–6 ชม. เกณฑ์ที่นิยมใช้พิจารณาใส่ท่อ/NIV เช่น FVC &lt; 20 mL/kg, MIP ติดลบน้อยกว่า −30 cmH<sub>2</sub>O หรือ MEP &lt; 40 cmH<sub>2</sub>O (กฎ 20/30/40)</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 5 · อ้วน เหนื่อยง่าย</h4>
+<div class="vg">ชาย 40 ปี สูง 172 cm น้ำหนัก 124 kg (BMI 42) เหนื่อยเวลาออกแรง นอนกรน ไม่สูบบุหรี่ · ERV วัดได้ 0.45 L (ต่ำมาก)</div>
+<div class="tw"><table class="rep"><caption>ชาย 40 ปี · สูง 172 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">2.95</td><td class="n">3.68</td><td class="n">2.82</td><td class="n">–</td><td class="n ">-1.40</td><td class="n">80</td></tr><tr><td>FVC (L)</td><td class="n ">3.55</td><td class="n">4.48</td><td class="n">3.45</td><td class="n">–</td><td class="n ">-1.49</td><td class="n">79</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.83</td><td class="n">0.82</td><td class="n">0.71</td><td class="n">–</td><td class="n ">0.23</td><td class="n">102</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n ">5.70</td><td class="n">6.64</td><td class="n">5.37</td><td class="n">7.93</td><td class="n ">-1.21</td><td class="n">86</td></tr><tr><td>FRC (L)</td><td class="n lo">2.05</td><td class="n">3.03</td><td class="n">2.07</td><td class="n">4.26</td><td class="n lo">-1.68</td><td class="n">68</td></tr><tr><td>RV (L)</td><td class="n ">1.55</td><td class="n">1.49</td><td class="n">0.81</td><td class="n">2.34</td><td class="n ">0.12</td><td class="n">104</td></tr><tr><td>RV/TLC (%)</td><td class="n ">27.2</td><td class="n">22.3</td><td class="n">13.3</td><td class="n">31.8</td><td class="n ">0.85</td><td class="n">122</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n ">31.00</td><td class="n">29.15</td><td class="n">22.70</td><td class="n">36.60</td><td class="n ">0.43</td><td class="n">106</td></tr><tr><td>VA (L)</td><td class="n ">5.20</td><td class="n">6.15</td><td class="n">5.03</td><td class="n">7.36</td><td class="n ">-1.39</td><td class="n">85</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n hi">5.96</td><td class="n">4.77</td><td class="n">3.76</td><td class="n">5.86</td><td class="n hi">1.79</td><td class="n">125</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="obes">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> แปลผลทีละส่วน<details class="ans"><summary>เฉลย</summary><div>Spirometry: FVC (z −1.49) และ FEV1 อยู่ใกล้แต่ยังเหนือ LLN, ratio ปกติ → <b>ปกติ</b> (zone of uncertainty) · Lung volumes: TLC ปกติ, RV ปกติ แต่ <b>FRC ต่ำกว่า LLN</b> และ ERV ต่ำมาก · DLCO ปกติ โดย KCO ค่อนสูง</div></details></div>
+<div class="q"><b>2)</b> สรุป<details class="ans"><summary>เฉลย</summary><div>Pattern ของ <b>obesity</b>: ERV และ FRC ลดลงเด่น, TLC ยังปกติ, DLCO ปกติหรือสูง · ไม่ใช่โรคปอด · อาการเหนื่อยให้คิดถึง deconditioning, OSA/obesity hypoventilation, หัวใจ · ถ้าลดน้ำหนักได้ ค่าจะดีขึ้น</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 6 · Spirometry เกือบปกติ แต่เหนื่อยมาก</h4>
+<div class="vg">ชาย 68 ปี สูง 170 cm สูบบุหรี่ 50 pack-year เหนื่อยมาก 6 เดือน SpO<sub>2</sub> ขณะพัก 94% ลดเหลือ 85% เมื่อเดิน ฟังได้ fine crackles ที่ฐานปอด · Hb 15 g/dL</div>
+<div class="tw"><table class="rep"><caption>ชาย 68 ปี · สูง 170 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">2.55</td><td class="n">2.80</td><td class="n">2.05</td><td class="n">–</td><td class="n ">-0.56</td><td class="n">91</td></tr><tr><td>FVC (L)</td><td class="n ">3.40</td><td class="n">3.64</td><td class="n">2.71</td><td class="n">–</td><td class="n ">-0.42</td><td class="n">93</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.75</td><td class="n">0.78</td><td class="n">0.65</td><td class="n">–</td><td class="n ">-0.37</td><td class="n">97</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n ">6.00</td><td class="n">6.46</td><td class="n">5.13</td><td class="n">7.81</td><td class="n ">-0.56</td><td class="n">93</td></tr><tr><td>RV (L)</td><td class="n ">2.30</td><td class="n">2.23</td><td class="n">1.34</td><td class="n">3.29</td><td class="n ">0.12</td><td class="n">103</td></tr><tr><td>RV/TLC (%)</td><td class="n ">38.3</td><td class="n">34.1</td><td class="n">23.4</td><td class="n">45.3</td><td class="n ">0.63</td><td class="n">112</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">7.80</td><td class="n">23.96</td><td class="n">17.69</td><td class="n">31.40</td><td class="n lo">-5.22</td><td class="n">33</td></tr><tr><td>VA (L)</td><td class="n ">5.00</td><td class="n">5.79</td><td class="n">4.67</td><td class="n">7.00</td><td class="n ">-1.14</td><td class="n">86</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n lo">1.56</td><td class="n">4.16</td><td class="n">3.10</td><td class="n">5.32</td><td class="n lo">-4.43</td><td class="n">37</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="cpfe">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Spirometry และ lung volumes?<details class="ans"><summary>เฉลย</summary><div><b>ปกติทั้งคู่</b> — FEV1/FVC, FVC, TLC, RV/TLC อยู่ในช่วงปกติทั้งหมด</div></details></div>
+<div class="q"><b>2)</b> DLCO?<details class="ans"><summary>เฉลย</summary><div>DLCO z −5.22 = <b>severe</b> (33% pred), VA ปกติ, KCO ต่ำมาก → <b>isolated, severely reduced DLCO</b></div></details></div>
+<div class="q"><b>3)</b> นึกถึงอะไร?<details class="ans"><summary>เฉลย</summary><div><b>Combined pulmonary fibrosis and emphysema (CPFE)</b>: emphysema (ทำให้ปริมาตรเพิ่มและ ratio ลด) หักล้างกับ fibrosis (ทำให้ปริมาตรลดและ ratio เพิ่ม) จน spirometry และ volume "ดูปกติ" แต่สองโรครวมกันทำลาย alveolar–capillary bed อย่างหนัก · เสี่ยง pulmonary hypertension และมะเร็งปอดสูง → HRCT, echocardiography · <b>บทเรียน: spirometry ปกติไม่ได้แปลว่าปอดปกติ</b></div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 7 · เหนื่อยเวลาออกแรง เคยมี DVT</h4>
+<div class="vg">หญิง 50 ปี สูง 155 cm เหนื่อยเวลาขึ้นบันได 8 เดือน เคยเป็น DVT ขาซ้ายเมื่อ 1 ปีก่อน ไม่สูบบุหรี่ ฟังปอดปกติ เสียง P2 ดัง · Hb 13 g/dL</div>
+<div class="tw"><table class="rep"><caption>หญิง 50 ปี · สูง 155 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">2.35</td><td class="n">2.35</td><td class="n">1.74</td><td class="n">–</td><td class="n ">0.00</td><td class="n">100</td></tr><tr><td>FVC (L)</td><td class="n ">2.85</td><td class="n">2.85</td><td class="n">2.13</td><td class="n">–</td><td class="n ">0.00</td><td class="n">100</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.82</td><td class="n">0.82</td><td class="n">0.70</td><td class="n">–</td><td class="n ">0.09</td><td class="n">101</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n ">4.60</td><td class="n">4.68</td><td class="n">3.82</td><td class="n">5.62</td><td class="n ">-0.14</td><td class="n">98</td></tr><tr><td>RV (L)</td><td class="n ">1.55</td><td class="n">1.35</td><td class="n">0.80</td><td class="n">2.08</td><td class="n ">0.50</td><td class="n">115</td></tr><tr><td>RV/TLC (%)</td><td class="n ">33.7</td><td class="n">28.5</td><td class="n">18.3</td><td class="n">39.5</td><td class="n ">0.78</td><td class="n">118</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">11.00</td><td class="n">19.09</td><td class="n">14.90</td><td class="n">24.12</td><td class="n lo">-3.53</td><td class="n">58</td></tr><tr><td>VA (L)</td><td class="n ">4.10</td><td class="n">4.33</td><td class="n">3.55</td><td class="n">5.19</td><td class="n ">-0.47</td><td class="n">95</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n lo">2.68</td><td class="n">4.45</td><td class="n">3.48</td><td class="n">5.55</td><td class="n lo">-3.19</td><td class="n">60</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="ph">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> แปลผล<details class="ans"><summary>เฉลย</summary><div>Spirometry และ lung volumes <b>ปกติ</b> · DLCO z −3.53 (moderate) โดย <b>VA ปกติ</b> และ KCO ต่ำ → <b>isolated reduced DLCO</b></div></details></div>
+<div class="q"><b>2)</b> ขั้นต่อไป<details class="ans"><summary>เฉลย</summary><div>ไม่สูบบุหรี่ ไม่มี crackles ประวัติ DVT และ P2 ดัง → นึกถึง <b>pulmonary vascular disease</b> โดยเฉพาะ <b>CTEPH</b> · ส่ง echocardiography และ <b>V/Q scan</b> (คัดกรอง CTEPH ได้ไวกว่า CTPA) · Hb ปกติจึงตัด anemia ได้</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 8 · "หอบ" ที่พ่นยาไม่ดีขึ้น</h4>
+<div class="vg">หญิง 35 ปี สูง 158 cm เหนื่อยหายใจมีเสียงดังตลอดเวลา 3 เดือน ได้ยาพ่น asthma ไม่ดีขึ้น 6 เดือนก่อนนอน ICU ใส่ท่อช่วยหายใจ 2 สัปดาห์จากปอดอักเสบ · PEF 140 L/min · flow–volume loop: ขาออกและขาเข้า <b>แบนเป็นที่ราบทั้งคู่</b> FEF50/FIF50 ≈ 1.0</div>
+<div class="tw"><table class="rep"><caption>หญิง 35 ปี · สูง 158 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">2.30</td><td class="n">2.76</td><td class="n">2.11</td><td class="n">–</td><td class="n ">-1.17</td><td class="n">83</td></tr><tr><td>FVC (L)</td><td class="n ">3.05</td><td class="n">3.25</td><td class="n">2.50</td><td class="n">–</td><td class="n ">-0.44</td><td class="n">94</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.75</td><td class="n">0.85</td><td class="n">0.74</td><td class="n">–</td><td class="n ">-1.44</td><td class="n">89</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="sten">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> ตัวเลข spirometry ผิดปกติไหม?<details class="ans"><summary>เฉลย</summary><div>FEV1, FVC, FEV1/FVC <b>อยู่ในช่วงปกติทั้งหมด</b> ถ้าดูแค่ตัวเลขจะพลาด</div></details></div>
+<div class="q"><b>2)</b> สิ่งที่ผิดปกติคืออะไร?<details class="ans"><summary>เฉลย</summary><div>FEV1/PEF = 2,300 ÷ 140 = <b>16.4 mL/L/min</b> (&gt; 8) และ loop แบนทั้งสองขา FEF50/FIF50 ≈ 1 → <b>fixed central/upper airway obstruction</b></div></details></div>
+<div class="q"><b>3)</b> วินิจฉัยและจัดการ<details class="ans"><summary>เฉลย</summary><div><b>Post-intubation tracheal stenosis</b> · ส่ง CT airway และ bronchoscopy ส่งต่อ thoracic surgeon/interventional pulmonologist · <b>บทเรียน: ดูรูปทรง loop ทุกครั้ง โดยเฉพาะ "asthma ที่รักษาไม่ตอบสนอง"</b></div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 9 · เคยเป็นวัณโรค สูบบุหรี่ เหนื่อยมาก</h4>
+<div class="vg">ชาย 60 ปี สูง 162 cm เคยรักษาวัณโรคปอด 2 ครั้ง (15 และ 8 ปีก่อน) สูบบุหรี่ 30 pack-year · CXR: ปอดซ้ายบนหดตัว มี fibrosis และ bronchiectasis · Hb 13.5 g/dL</div>
+<div class="tw"><table class="rep"><caption>ชาย 60 ปี · สูง 162 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th><th class="n">Post</th><th class="n">z post</th><th class="n">%Pred post</th><th class="n">Δ mL</th><th class="n">Δ % base</th><th class="n">Δ % pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">0.95</td><td class="n">2.69</td><td class="n">2.00</td><td class="n">–</td><td class="n lo">-3.87</td><td class="n">35</td><td class="n lo">1.00</td><td class="n lo">-3.78</td><td class="n">37</td><td class="n">+50</td><td class="n">5.3</td><td class="n">1.9</td></tr><tr><td>FVC (L)</td><td class="n lo">1.62</td><td class="n">3.38</td><td class="n">2.54</td><td class="n">–</td><td class="n lo">-3.50</td><td class="n">48</td><td class="n lo">1.70</td><td class="n lo">-3.33</td><td class="n">50</td><td class="n">+80</td><td class="n">4.9</td><td class="n">2.4</td></tr><tr><td>FEV1/FVC</td><td class="n lo">0.59</td><td class="n">0.80</td><td class="n">0.67</td><td class="n">–</td><td class="n lo">-2.57</td><td class="n">74</td><td class="n lo">0.59</td><td class="n lo">-2.55</td><td class="n">74</td><td></td><td></td><td></td></tr><tr><td colspan="13" style="background:#f8fafc;font-weight:600;color:#475569">Lung volumes (body box)</td></tr><tr><td>TLC (L)</td><td class="n lo">3.60</td><td class="n">5.81</td><td class="n">4.67</td><td class="n">6.98</td><td class="n lo">-3.20</td><td class="n">62</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RV (L)</td><td class="n ">1.95</td><td class="n">1.80</td><td class="n">1.10</td><td class="n">2.62</td><td class="n ">0.32</td><td class="n">108</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RV/TLC (%)</td><td class="n hi">54.2</td><td class="n">30.1</td><td class="n">20.5</td><td class="n">40.2</td><td class="n hi">3.83</td><td class="n">180</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="13" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">12.00</td><td class="n">22.87</td><td class="n">17.15</td><td class="n">29.62</td><td class="n lo">-3.44</td><td class="n">52</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>VA (L)</td><td class="n lo">3.00</td><td class="n">5.22</td><td class="n">4.22</td><td class="n">6.29</td><td class="n lo">-3.88</td><td class="n">57</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n ">4.00</td><td class="n">4.41</td><td class="n">3.34</td><td class="n">5.58</td><td class="n ">-0.62</td><td class="n">91</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="tb">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> Spirometry?<details class="ans"><summary>เฉลย</summary><div>FEV1/FVC 0.59 (z −2.57) → obstruction · FEV1 z −3.87 → moderate · <b>FVC ต่ำด้วย</b> (z −3.50) → อาจเป็น air trapping หรือ mixed → ต้องดู TLC · BDR negative ทั้งสองเกณฑ์</div></details></div>
+<div class="q"><b>2)</b> Lung volumes?<details class="ans"><summary>เฉลย</summary><div>TLC z −3.20 (ต่ำ) และ FEV1/FVC ต่ำ → <b>mixed disorder</b> · RV/TLC สูงมาก (54%) มี air trapping ร่วม</div></details></div>
+<div class="q"><b>3)</b> DLCO และสรุป<details class="ans"><summary>เฉลย</summary><div>DLCO ต่ำ (z −3.44) จาก <b>VA ต่ำ</b> ขณะที่ KCO ปกติ → สูญเสียปริมาตรปอด (ปอดซ้ายบนถูกทำลาย) เนื้อปอดที่เหลือแลกเปลี่ยนก๊าซได้ค่อนข้างดี · สรุป <b>mixed obstructive–restrictive defect จาก post-TB destroyed lung ร่วมกับ COPD</b> — pattern ที่พบบ่อยในไทย</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 10 · ผู้สูงอายุ ตรวจก่อนผ่าตัดเข่า</h4>
+<div class="vg">หญิง 78 ปี สูง 150 cm ไม่เคยสูบบุหรี่ ไม่มีอาการทางหายใจ เดินได้ปกติ ส่งตรวจ spirometry ก่อนผ่าตัดเข่า · ค่า LLN ของ FEV1/FVC ตาม 3 สมการ: GLI Global 0.66, GLI-2012 SEA 0.67, <b>Siriraj 0.76</b></div>
+<div class="tw"><table class="rep"><caption>หญิง 78 ปี · สูง 150 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">1.30</td><td class="n">1.64</td><td class="n">1.12</td><td class="n">–</td><td class="n ">-1.08</td><td class="n">79</td></tr><tr><td>FVC (L)</td><td class="n ">1.92</td><td class="n">2.10</td><td class="n">1.46</td><td class="n">–</td><td class="n ">-0.45</td><td class="n">91</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.68</td><td class="n">0.79</td><td class="n">0.66</td><td class="n">–</td><td class="n ">-1.41</td><td class="n">86</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="old">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> ใช้ fixed ratio 0.70 แปลว่าอะไร?<details class="ans"><summary>เฉลย</summary><div>0.68 &lt; 0.70 → "obstruction"</div></details></div>
+<div class="q"><b>2)</b> ใช้ LLN แต่ละสมการ?<details class="ans"><summary>เฉลย</summary><div>GLI Global และ GLI-2012 SEA: 0.68 &gt; LLN → <b>ปกติ</b> · Siriraj: 0.68 &lt; 0.76 → obstruction (เพราะสมการแบบ linear ใช้ SEE คงที่ LLN ในผู้สูงอายุจึงสูง)</div></details></div>
+<div class="q"><b>3)</b> ควรสรุปอย่างไร?<details class="ans"><summary>เฉลย</summary><div>ไม่มีอาการ ไม่มีปัจจัยเสี่ยง pre-test probability ต่ำ ค่าอยู่ใน zone of uncertainty → <b>น่าจะเป็นการลดลงตามวัย ไม่ควรวินิจฉัย COPD</b> · ไม่ต้องให้ยาพ่น · ระบุชื่อสมการใน report เสมอ</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 11 · ผลเป็น restrictive pattern แต่...</h4>
+<div class="vg">ชาย 45 ปี สูง 170 cm ตรวจสุขภาพประจำปี ไม่มีอาการ · ช่างตรวจบันทึก: "ผู้ป่วยหยุดเป่าเร็ว FET 2.1 วินาที ไม่มี plateau, PEF ไม่แหลม, 3 ครั้ง FVC ต่างกัน 380 mL — grade E"</div>
+<div class="tw"><table class="rep"><caption>ชาย 45 ปี · สูง 170 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">2.60</td><td class="n">3.46</td><td class="n">2.63</td><td class="n">–</td><td class="n lo">-1.70</td><td class="n">75</td></tr><tr><td>FVC (L)</td><td class="n lo">2.95</td><td class="n">4.24</td><td class="n">3.24</td><td class="n">–</td><td class="n lo">-2.14</td><td class="n">70</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.88</td><td class="n">0.81</td><td class="n">0.70</td><td class="n">–</td><td class="n ">1.28</td><td class="n">109</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="effort">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> ถ้าดูแต่ตัวเลข จะแปลว่าอะไร?<details class="ans"><summary>เฉลย</summary><div>FVC z −2.14 ต่ำ ratio ปกติ (สูง) → possible restriction / non-specific pattern</div></details></div>
+<div class="q"><b>2)</b> ควรแปลผลอย่างไรจริง ๆ?<details class="ans"><summary>เฉลย</summary><div>คุณภาพ <b>grade E</b>: หยุดเป่าก่อน (ไม่ถึง RV) และไม่สม่ำเสมอ → FVC ต่ำเพราะ <b>เป่าไม่สุด</b> ทำให้ ratio สูงเกินจริง · เขียนผลว่า "suboptimal effort; low FVC likely underestimates true value" และ <b>ตรวจซ้ำ</b> ก่อนส่งวัด lung volumes · ไม่ควรเรียก restriction</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 12 · ผู้ป่วย SLE ไอเป็นเลือด</h4>
+<div class="vg">หญิง 28 ปี สูง 156 cm เป็น SLE ไอมีเลือดปน เหนื่อย 2 วัน Hb ลดจาก 11 เหลือ 8.5 g/dL CXR มี bilateral ground-glass opacity · ตรวจ DLCO ได้</div>
+<div class="tw"><table class="rep"><caption>หญิง 28 ปี · สูง 156 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n ">2.45</td><td class="n">2.77</td><td class="n">2.13</td><td class="n">–</td><td class="n ">-0.83</td><td class="n">89</td></tr><tr><td>FVC (L)</td><td class="n ">2.85</td><td class="n">3.18</td><td class="n">2.46</td><td class="n">–</td><td class="n ">-0.76</td><td class="n">90</td></tr><tr><td>FEV1/FVC</td><td class="n ">0.86</td><td class="n">0.87</td><td class="n">0.76</td><td class="n">–</td><td class="n ">-0.19</td><td class="n">99</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n hi">30.00</td><td class="n">20.70</td><td class="n">16.49</td><td class="n">25.69</td><td class="n hi">2.88</td><td class="n">145</td></tr><tr><td>VA (L)</td><td class="n lo">3.60</td><td class="n">4.39</td><td class="n">3.64</td><td class="n">5.21</td><td class="n lo">-1.74</td><td class="n">82</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n hi">8.33</td><td class="n">4.76</td><td class="n">3.76</td><td class="n">5.89</td><td class="n hi">4.73</td><td class="n">175</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="dah">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> DLCO ผิดปกติอย่างไร?<details class="ans"><summary>เฉลย</summary><div>DLCO <b>สูง</b> (z +2.88, 145% pred) และ KCO สูงมาก (z +4.73) ทั้งที่ <b>ซีด</b> (ถ้าปรับ Hb 8.5 จะยิ่งสูงขึ้นอีก: factor = 14.45/17.88 = 0.81)</div></details></div>
+<div class="q"><b>2)</b> วินิจฉัย<details class="ans"><summary>เฉลย</summary><div><b>Diffuse alveolar hemorrhage</b> — Hb ที่อยู่ในถุงลมจับ CO ได้ · DLCO สูงขึ้นใน 1–2 วันแรกและใช้ติดตามเลือดออกซ้ำได้ · ต่างจาก ground-glass จากปอดอักเสบหรือ ILD ที่ DLCO ต่ำ</div></details></div>
+</div>
+
+<div class="case s6"><h4>เคส 13 · ก่อนผ่าตัดมะเร็งปอด</h4>
+<div class="vg">ชาย 64 ปี สูง 166 cm มะเร็งปอดชนิด adenocarcinoma ที่ right lower lobe (RLL) ระยะผ่าตัดได้ วางแผนทำ <b>RLL lobectomy</b> (5 segments) · สูบบุหรี่ 40 pack-year · Hb 14 g/dL</div>
+<div class="tw"><table class="rep"><caption>ชาย 64 ปี · สูง 166 cm · สมการ: GLI Global 2022 (spirometry), GLI 2021 (volumes), GLI 2017 (DLCO)</caption><tr><th>ค่า</th><th class="n">วัดได้</th><th class="n">Pred</th><th class="n">LLN</th><th class="n">ULN</th><th class="n">z</th><th class="n">%Pred</th></tr><tr><td>FEV1 (L)</td><td class="n lo">1.80</td><td class="n">2.75</td><td class="n">2.03</td><td class="n">–</td><td class="n lo">-2.14</td><td class="n">66</td></tr><tr><td>FVC (L)</td><td class="n ">3.10</td><td class="n">3.51</td><td class="n">2.63</td><td class="n">–</td><td class="n ">-0.76</td><td class="n">88</td></tr><tr><td>FEV1/FVC</td><td class="n lo">0.58</td><td class="n">0.79</td><td class="n">0.66</td><td class="n">–</td><td class="n lo">-2.46</td><td class="n">74</td></tr><tr><td colspan="7" style="background:#f8fafc;font-weight:600;color:#475569">Diffusing capacity</td></tr><tr><td>DLCO (mL/min/mmHg)</td><td class="n lo">15.00</td><td class="n">23.42</td><td class="n">17.43</td><td class="n">30.51</td><td class="n lo">-2.41</td><td class="n">64</td></tr><tr><td>VA (L)</td><td class="n ">4.80</td><td class="n">5.50</td><td class="n">4.44</td><td class="n">6.64</td><td class="n ">-1.07</td><td class="n">87</td></tr><tr><td>KCO (mL/min/mmHg/L)</td><td class="n lo">3.10</td><td class="n">4.29</td><td class="n">3.22</td><td class="n">5.45</td><td class="n lo">-1.84</td><td class="n">72</td></tr></table></div><div class="fillbtn noprint"><button class="tbtn" data-fill="preop">🧮 เปิดในเครื่องคำนวณ ↓</button></div>
+<div class="q"><b>1)</b> แปลผล PFT<details class="ans"><summary>เฉลย</summary><div>FEV1/FVC 0.58 (z −2.46) → obstruction, FEV1 z −2.14 → <b>mild</b> (66% pred) · DLCO z −2.41 ลดลงเล็กน้อย (64% pred) VA ปกติ KCO ค่อนต่ำ → เข้าได้กับ COPD ที่มี emphysema</div></details></div>
+<div class="q"><b>2)</b> คำนวณ ppoFEV1 และ ppoDLCO<details class="ans"><summary>เฉลย</summary><div>เหลือ segment 19 − 5 = 14 → factor 14/19 = 0.737<br>ppoFEV1 = 66 × 0.737 = <b>48.6%</b> · ppoDLCO = 64 × 0.737 = <b>47.2%</b></div></details></div>
+<div class="q"><b>3)</b> ต้องทำอะไรต่อ?<details class="ans"><summary>เฉลย</summary><div>ทั้งคู่อยู่ช่วง <b>30–60%</b> → ทดสอบออกกำลังกายอย่างง่าย: <b>stair climb ≥ 22 m หรือ shuttle walk ≥ 400 m</b> = ความเสี่ยงต่ำ ผ่าตัดได้ · ถ้าไม่ผ่าน → ส่ง CPET (VO<sub>2</sub>max &lt; 10 mL/kg/min = ความเสี่ยงสูง) · ระหว่างรอ: เลิกบุหรี่, ปรับยา COPD, pulmonary rehabilitation</div></details></div>
+</div>
+</section>
+
+
+<!-- ===================== CALCULATOR ===================== -->
+<section id="s-calc">
+<div class="lv" style="background:linear-gradient(120deg,#0f766e,#14b8a6)"><span class="tag">เครื่องมือ</span><h2>เครื่องคำนวณ + แปลผลอัตโนมัติ</h2><p>กรอกค่าจาก report จริง หรือกดปุ่ม "เปิดในเครื่องคำนวณ" จากเคสด้านบน · spirometry คำนวณ 3 สมการพร้อมกัน, lung volumes และ DLCO ใช้ GLI</p></div>
+<div class="card">
+<div class="calc-in">
+  <h4>ผู้ป่วย</h4>
+  <div><label class="f">เพศ</label><select id="cSex"><option value="M">ชาย</option><option value="F">หญิง</option></select></div>
+  <div><label class="f">อายุ (ปี)</label><input type="number" id="cAge" step="0.1"></div>
+  <div><label class="f">ส่วนสูง (cm)</label><input type="number" id="cHt" step="0.1"></div>
+  <div><label class="f">สมการหลักที่ใช้แปลผล</label><select id="cEq"><option value="gliGlobal">GLI Global 2022</option><option value="gli2012SEA">GLI-2012 SEA</option><option value="siriraj">Siriraj 2000</option></select></div>
+  <h4>Spirometry (pre-BD)</h4>
+  <div><label class="f">FEV1 (L)</label><input type="number" id="cFev1" step="0.01"></div>
+  <div><label class="f">FVC (L)</label><input type="number" id="cFvc" step="0.01"></div>
+  <div><label class="f">PEF (L/min) — ถ้ามี</label><input type="number" id="cPef" step="1"></div>
+  <h4>Post-BD (ถ้ามี)</h4>
+  <div><label class="f">FEV1 post (L)</label><input type="number" id="cFev1p" step="0.01"></div>
+  <div><label class="f">FVC post (L)</label><input type="number" id="cFvcp" step="0.01"></div>
+  <h4>Lung volumes (ถ้ามี)</h4>
+  <div><label class="f">TLC (L)</label><input type="number" id="cTlc" step="0.01"></div>
+  <div><label class="f">RV (L)</label><input type="number" id="cRv" step="0.01"></div>
+  <div><label class="f">FRC (L)</label><input type="number" id="cFrc" step="0.01"></div>
+  <h4>DLCO (ถ้ามี) — mL/min/mmHg</h4>
+  <div><label class="f">DLCO</label><input type="number" id="cDl" step="0.01"></div>
+  <div><label class="f">VA (L)</label><input type="number" id="cVa" step="0.01"></div>
+  <div><label class="f">KCO (mL/min/mmHg/L)</label><input type="number" id="cKco" step="0.01"></div>
+  <div><label class="f">Hb (g/dL)</label><input type="number" id="cHb" step="0.1"></div>
+</div>
+<div class="row" style="margin-top:14px"><button class="btn" id="cRun">คำนวณ</button><button class="btn sec" id="cClear">ล้าง</button><button class="btn sec" id="cEx">ตัวอย่าง</button></div>
+<p class="src">ค่าสัมประสิทธิ์ GLI จากตาราง lookup ต้นฉบับ (ผ่าน R package rspiro) ตรวจเทียบกับ report จริงแล้ว · z ของ Siriraj = (obs − pred)/SEE (ประมาณ) · เครื่องมือเพื่อการเรียนรู้ ไม่ใช่ซอฟต์แวร์รายงานผลทางการแพทย์</p>
+</div>
+<div id="calcOut"></div>
+</section>
+
+<!-- ===================== CHEAT SHEET ===================== -->
+<section id="L7">
+<div class="lv lv7"><span class="tag">สรุป 1 หน้า</span><h2>Cheat sheet สำหรับพกติดตัว</h2><p>พิมพ์หน้านี้แปะไว้ที่ห้องตรวจ</p></div>
+<div class="grid2">
+<div class="mini s1"><b>ปกติหรือไม่</b><br>ใช้ LLN / z-score · z ≥ −1.645 ปกติ · mild −1.65 ถึง −2.5 · moderate −2.51 ถึง −4 · severe &lt; −4 · ค่าใกล้ LLN = ดูคลินิก · ระบุชื่อสมการ</div>
+<div class="mini s1"><b>เชื่อได้ไหม</b><br>Grade A–C ใช้ได้ · D–E ระวัง · U–F ทำซ้ำ · ดู plateau, PEF แหลม, ไม่ไอ, ไม่หยุดก่อน</div>
+<div class="mini s2"><b>Spirometry</b><br>FEV1/FVC &lt; LLN = obstruction (+FVC ต่ำ → วัด TLC) · ratio ปกติ + FVC ต่ำ = possible restriction/NSP → วัด TLC · ทั้งคู่ปกติ = ตัด restriction</div>
+<div class="mini s2"><b>BDR</b><br>ERS/ATS 2022: &gt; 10% ของ predicted · GINA/2005: ≥ 12% และ ≥ 200 mL · &gt; 400 mL สนับสนุน asthma · COPD (GOLD) = post-BD ratio &lt; 0.70</div>
+<div class="mini s2"><b>Loop</b><br>เว้า = obstruction · แคบสูง = restriction · ขาเข้าแบน = variable extrathoracic · ขาออกแบน = variable intrathoracic · กล่อง = fixed · FEV1/PEF &gt; 8 สงสัย UAO</div>
+<div class="mini s3"><b>Lung volumes</b><br>TLC &lt; LLN = restriction · RV/TLC ปกติ = simple · RV/TLC ↑ = complex (ratio ↓ → mixed) · TLC ปกติ + RV/TLC ↑ = air trapping/hyperinflation · ERV/FRC ↓ = อ้วน</div>
+<div class="mini s4"><b>DLCO</b><br>ปรับ Hb เสมอ · ↓ + VA ปกติ = หลอดเลือดปอด / emphysema / early ILD / CPFE · ↓ + VA ↓ + KCO ↓/ปกติ = ILD, emphysema · VA ↓ + KCO ↑ = ปอดขยายไม่เต็ม · ↑ = เลือดออกในถุงลม, polycythemia, shunt</div>
+<div class="mini s5"><b>อย่าลืม</b><br>Spirometry ปกติไม่ได้แปลว่าปอดปกติ (CPFE, PH, UAO) · FVC ต่ำไม่เท่ากับ restriction · VA ต่ำในผู้ป่วยอุดกั้นไม่ใช่ restriction · NMD → VC ท่านอน + MIP/MEP</div>
+</div>
+</section>
+
+<section id="refs">
+<h3 class="s7" style="--c:#64748b">เอกสารอ้างอิง</h3>
+<ol style="font-size:14.5px">
+<li>Stanojevic S, Kaminsky DA, Miller MR, et al. ERS/ATS technical standard on interpretive strategies for routine lung function tests. <i>Eur Respir J</i> 2022;60:2101499.</li>
+<li>Graham BL, Steenbruggen I, Miller MR, et al. Standardization of Spirometry 2019 Update. ATS/ERS Technical Statement. <i>Am J Respir Crit Care Med</i> 2019;200:e70–e88.</li>
+<li>Bhakta NR, McGowan A, Ramsey KA, et al. ERS/ATS technical statement: standardisation of the measurement of lung volumes, 2023 update. <i>Eur Respir J</i> 2023;62:2201519.</li>
+<li>Graham BL, Brusasco V, Burgos F, et al. 2017 ERS/ATS standards for single-breath carbon monoxide uptake in the lung. <i>Eur Respir J</i> 2017;49:1600016.</li>
+<li>Bowerman C, Bhakta NR, Brazzale D, et al. A Race-neutral Approach to the Interpretation of Lung Function Measurements. <i>Am J Respir Crit Care Med</i> 2023;207:768–774.</li>
+<li>Bhakta NR, Bime C, Kaminsky DA, et al. Race and Ethnicity in Pulmonary Function Test Interpretation: An Official ATS Statement. <i>Am J Respir Crit Care Med</i> 2023;207:978–995.</li>
+<li>Quanjer PH, Stanojevic S, Cole TJ, et al. Multi-ethnic reference values for spirometry for the 3–95-yr age range: the GLI-2012 equations. <i>Eur Respir J</i> 2012;40:1324–43.</li>
+<li>Hall GL, Filipow N, Ruppel G, et al. GLI reference values for static lung volumes in individuals of European ancestry. <i>Eur Respir J</i> 2021;57:2000289.</li>
+<li>Stanojevic S, Graham BL, Cooper BG, et al. GLI reference values for the carbon monoxide transfer factor for Caucasians. <i>Eur Respir J</i> 2017;50:1700010.</li>
+<li>Dejsomritrutai W, Nana A, Maranetra KN, et al. Reference spirometric values for healthy lifetime nonsmokers in Thailand. <i>J Med Assoc Thai</i> 2000;83:457–66.</li>
+<li>Singh D, Stockley R, Anzueto A, et al. GOLD Science Committee recommendations for the use of pre- and post-bronchodilator spirometry for the diagnosis of COPD. <i>Eur Respir J</i> 2025;65:2401603.</li>
+<li>Global Initiative for Chronic Obstructive Lung Disease (GOLD) 2026 Report; Global Initiative for Asthma (GINA) 2026.</li>
+<li>Brunelli A, Kim AW, Berger KI, Addrizzo-Harris DJ. Physiologic evaluation of the patient with lung cancer being considered for resectional surgery. ACCP Evidence-Based Clinical Practice Guidelines (3rd ed). <i>Chest</i> 2013;143(5 Suppl):e166S–e190S.</li>
+<li>เบญจมาศ ช่วยชู. Pulmonary function tests / COPD (เอกสารประกอบการบรรยาย). ภาควิชาอายุรศาสตร์ คณะแพทยศาสตร์ศิริราชพยาบาล.</li>
+</ol>
+</section>
+
+<div class="foot">จัดทำโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · Medisüem · เนื้อหาเพื่อการเรียนรู้ ผู้ป่วยทุกรายเป็นข้อมูลสมมุติ ตัวเลขอ้างอิงคำนวณจากสมการ GLI · ใช้ร่วมกับดุลยพินิจทางคลินิกเสมอ</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var RL={"gliGlobal":[0.7633,0.7623,0.759,0.7549,0.7504,0.746,0.7416,0.7373,0.733,0.7286,0.724,0.7194,0.7147,0.7099,0.705,0.7001,0.6951,0.6901,0.685,0.68,0.6749,0.6699,0.6649,0.6599,0.6549,0.65,0.6452,0.6404,0.6357,0.6311,0.6265,0.622,0.6177,0.6133,0.6091,0.6049,0.6008],"gli2012SEA":[0.7926,0.787,0.7812,0.776,0.7716,0.7678,0.7645,0.7615,0.7586,0.7553,0.7516,0.7476,0.7435,0.7393,0.735,0.7306,0.726,0.7211,0.7159,0.7106,0.7051,0.6995,0.6938,0.6882,0.6825,0.6768,0.6712,0.6657,0.6603,0.655,0.6499,0.6449,0.6399,0.6351,0.6304,0.6257,0.6212],"siriraj":[0.8135,0.8098,0.806,0.8023,0.7986,0.7948,0.7911,0.7874,0.7836,0.7799,0.7762,0.7725,0.7687,0.765,0.7613,0.7575,0.7538,0.7501,0.7463,0.7426,0.7389,0.7352,0.7314,0.7277,0.724,0.7202,0.7165,0.7128,0.709,0.7053,0.7016,0.6979,0.6941,0.6904,0.6867,0.6829,0.6792]};
+function $(i){return document.getElementById(i)}
+function svgSet(id,s){var e=$(id);if(e)e.innerHTML=s}
+function T(x,y,t,o){o=o||{};return '<text x="'+x+'" y="'+y+'" font-size="'+(o.s||13)+'" fill="'+(o.c||'#1c2333')+'" text-anchor="'+(o.a||'start')+'"'+(o.w?' font-weight="'+o.w+'"':'')+'>'+t+'</text>'}
+function L(x1,y1,x2,y2,c,w,d){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+(c||'#94a3b8')+'" stroke-width="'+(w||1)+'"'+(d?' stroke-dasharray="'+d+'"':'')+'/>'}
+function P(d,c,w,f){return '<path d="'+d+'" fill="'+(f||'none')+'" stroke="'+(c||'#000')+'" stroke-width="'+(w||2)+'" stroke-linejoin="round"/>'}
+function path(pts,X,Y){return pts.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)}).join('')}
+
+/* ---------- 0.1 Spirogram ---------- */
+(function(){var x0=60,x1=560,y0=390,yT=30,Vmax=6.5,Y=function(v){return y0-(v/Vmax)*(y0-yT)},X=function(t){return x0+t*(x1-x0)/20};
+ var pts=[],t,v;
+ for(t=0;t<=6;t+=0.05){v=2.4+0.25*(1-Math.cos(t/2*2*Math.PI))*1;pts.push([t,2.4+0.5*(0.5-0.5*Math.cos(t*Math.PI))])}
+ for(t=6;t<=8;t+=0.05){var u=(t-6)/2;pts.push([t,2.4+(6.0-2.4)*Math.sin(u*Math.PI/2)])}
+ for(t=8;t<=12;t+=0.05){var u2=(t-8)/4;pts.push([t,6.0-(6.0-1.2)*(1-Math.pow(1-u2,1.6))])}
+ for(t=12;t<=14;t+=0.05){var u3=(t-12)/2;pts.push([t,1.2+(2.4-1.2)*Math.sin(u3*Math.PI/2)])}
+ for(t=14;t<=20;t+=0.05){pts.push([t,2.4+0.5*(0.5-0.5*Math.cos((t-14)*Math.PI))])}
+ var g='<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#cbd5e1" stroke-width="3"/></pattern></defs>';
+ g+='<rect x="'+x0+'" y="'+Y(1.2)+'" width="'+(x1-x0)+'" height="'+(Y(0)-Y(1.2))+'" fill="url(#hatch)"/>';
+ [0,1,2,3,4,5,6].forEach(function(k){g+=L(x0,Y(k),x1,Y(k),'#eef1f6');g+=T(x0-8,Y(k)+4,k,{a:'end',s:12,c:'#7b8496'})});
+ g+=T(x0-30,yT-12,'ปริมาตร (L)',{s:12,c:'#7b8496'});g+=L(x0,yT,x0,y0,'#475569',1.5)+L(x0,y0,x1,y0,'#475569',1.5)+T((x0+x1)/2,y0+28,'เวลา',{a:'middle',s:12,c:'#7b8496'});
+ [[6.0,'TLC'],[2.4,'FRC'],[1.2,'RV']].forEach(function(r){g+=L(x0,Y(r[0]),x1,Y(r[0]),'#94a3b8',1,'5 4')});
+ g+=P(path(pts,X,Y),'#0f172a',2.6);
+ g+=T(X(3),Y(3.15),'หายใจปกติ',{a:'middle',s:12,c:'#0ea5e9'})+T(X(7.6),Y(6.25),'หายใจเข้าสุด',{a:'middle',s:12,c:'#16a34a'})+T(X(11.2),Y(0.95),'เป่าออกสุด',{a:'start',s:12,c:'#f97316'});
+ g+=T(X(10),Y(0.55),'RV — spirometer มองไม่เห็น',{a:'middle',s:12.5,c:'#475569',w:600});
+ function br(x,a,b,lab,col,val){var ya=Y(a),yb=Y(b);return '<path d="M'+x+','+ya+' h8 V'+yb+' h-8" fill="none" stroke="'+col+'" stroke-width="2.4"/>'+T(x+14,(ya+yb)/2-2,lab,{s:14,c:col,w:700})+T(x+14,(ya+yb)/2+14,val,{s:11.5,c:'#64748b'})}
+ g+=T(590,22,'Volumes',{s:12,c:'#7b8496',w:600})+T(700,22,'Capacities',{s:12,c:'#7b8496',w:600});
+ g+=br(585,6.0,2.9,'IRV','#16a34a','3.1 L')+br(585,2.9,2.4,'','#0ea5e9','')+T(599,Y(2.65)+4,'TV 0.5',{s:12,c:'#0ea5e9',w:700})+br(585,2.4,1.2,'ERV','#f97316','1.2 L')+br(585,1.2,0,'RV','#64748b','1.2 L');
+ g+=br(680,6.0,2.4,'IC','#0d9488','3.6 L')+br(680,2.4,0,'FRC','#ca8a04','2.4 L')+br(755,6.0,1.2,'VC','#e11d48','4.8 L')+br(810,6.0,0,'TLC','#8b5cf6','6.0 L');
+ svgSet('figSpirogram',g)})();
+
+/* ---------- forced curves ---------- */
+function vt(fvc,tau,t){return fvc*(1-Math.exp(-t/tau))}
+function tauFor(fvc,fev1){var lo=0.05,hi=10;for(var i=0;i<60;i++){var m=(lo+hi)/2;if(vt(fvc,m,1)>fev1)lo=m;else hi=m}return(lo+hi)/2}
+(function(){var x0=60,x1=820,y0=290,yT=25,X=function(t){return x0+t/7*(x1-x0)},Y=function(v){return y0-v/5.5*(y0-yT)};
+ var g='';for(var k=0;k<=5;k++){g+=L(x0,Y(k),x1,Y(k),'#eef1f6')+T(x0-8,Y(k)+4,k,{a:'end',s:12,c:'#7b8496'})}for(var s=0;s<=7;s++)g+=T(X(s),y0+18,s+' s',{a:'middle',s:12,c:'#7b8496'});
+ g+=L(x0,yT,x0,y0,'#475569',1.5)+L(x0,y0,x1,y0,'#475569',1.5);
+ var fvc=4.8,tau=tauFor(fvc,3.84),pts=[];for(var t=0;t<=7;t+=0.05)pts.push([t,vt(fvc,tau,t)]);
+ g+=P(path(pts,X,Y),'#8b5cf6',3);
+ g+=L(X(1),Y(0),X(1),Y(3.84),'#e11d48',1.5,'5 4')+L(x0,Y(3.84),X(1),Y(3.84),'#e11d48',1.5,'5 4')+'<circle cx="'+X(1)+'" cy="'+Y(3.84)+'" r="6" fill="#e11d48"/>'+T(X(1)+10,Y(3.84)+22,'FEV1 = 3.84 L (ที่ 1 วินาที)',{s:14,c:'#e11d48',w:700});
+ g+=L(x0,Y(4.8),x1,Y(4.8),'#0ea5e9',1.5,'5 4')+T(x1-4,Y(4.8)-8,'FVC = 4.80 L (plateau)',{a:'end',s:14,c:'#0ea5e9',w:700});
+ g+=T(X(3.3),Y(2.2),'FEV1/FVC = 3.84 / 4.80 = 0.80',{s:15,c:'#1c2333',w:700});
+ g+=T(24,Y(2.8),'L',{s:12,c:'#7b8496'});svgSet('figVT',g)})();
+function loopPts(fvc,pef,shape,fif){var ex=[],ins=[];fif=fif||pef*0.7;for(var i=0;i<=100;i++){var x=i/100,f;
+  if(x<0.08)f=pef*Math.sin(x/0.08*Math.PI/2);else{var u=(x-0.08)/0.92;
+   if(shape==='obs')f=pef*Math.pow(1-u,2);else if(shape==='res')f=pef*Math.pow(1-u,0.75);else if(shape==='sev')f=pef*(0.25*Math.pow(1-u,1.2)+0.75*Math.exp(-u*9)*(1-u));else f=pef*(1-u)}
+  ex.push([x*fvc,f]);ins.push([x*fvc,-fif*Math.sin(x*Math.PI)])}return{ex:ex,ins:ins}}
+(function(){var x0=70,x1=800,yM=200,X=function(v){return x0+v/5.2*(x1-x0)},Y=function(f){return yM-f*17};
+ var lp=loopPts(4.8,10,'n',6.5),g='';
+ g+='<rect x="'+X(0)+'" y="'+Y(10.5)+'" width="'+(X(0.75)-X(0))+'" height="'+(Y(0)-Y(10.5))+'" fill="#fef3c7"/>'+T(X(0.37),Y(10.8)-4,'ขึ้นกับแรงเป่า',{a:'middle',s:12,c:'#a16207',w:600});
+ g+='<rect x="'+X(1.2)+'" y="'+Y(10.5)+'" width="'+(X(4.8)-X(1.2))+'" height="'+(Y(0)-Y(10.5))+'" fill="#ecfdf5"/>'+T(X(3),Y(10.8)-4,'effort-independent: elastic recoil + หลอดลมเล็ก',{a:'middle',s:12,c:'#15803d',w:600});
+ g+=L(x0,Y(0),x1,Y(0),'#475569',1.5)+L(x0,Y(11),x0,Y(-7.5),'#475569',1.5);
+ for(var f=-6;f<=10;f+=2)g+=T(x0-8,Y(f)+4,f,{a:'end',s:11.5,c:'#7b8496'});
+ g+=T(x0-40,Y(5),'Flow',{s:12,c:'#7b8496'})+T(x0-40,Y(5)+14,'(L/s)',{s:11,c:'#7b8496'});
+ g+=T(X(0),Y(0)+18,'TLC',{a:'middle',s:12,c:'#8b5cf6',w:700})+T(X(4.8),Y(0)+18,'RV',{a:'middle',s:12,c:'#64748b',w:700})+T(X(2.4),Y(-7.5)+30,'ปริมาตร (L) →',{a:'middle',s:12,c:'#7b8496'});
+ g+=P(path(lp.ex,X,Y),'#16a34a',3)+P(path(lp.ins,X,Y),'#2563eb',3);
+ var pk=lp.ex[8];g+='<circle cx="'+X(pk[0])+'" cy="'+Y(pk[1])+'" r="6" fill="#e11d48"/>'+T(X(pk[0])+10,Y(pk[1])+4,'PEF',{s:14,c:'#e11d48',w:700});
+ [[25,'FEF25'],[50,'FEF50'],[75,'FEF75']].forEach(function(q){var p=lp.ex[q[0]];g+='<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="4.5" fill="#f97316"/>'+T(X(p[0])+8,Y(p[1])-8,q[1],{s:12,c:'#f97316',w:600})});
+ var fi=lp.ins[50];g+='<circle cx="'+X(fi[0])+'" cy="'+Y(fi[1])+'" r="4.5" fill="#2563eb"/>'+T(X(fi[0]),Y(fi[1])-10,'FIF50',{a:'middle',s:12,c:'#2563eb',w:600});
+ g+=T(X(4.0),Y(4),'Expiration',{s:13,c:'#16a34a',w:700})+T(X(4.0),Y(-3.5),'Inspiration',{s:13,c:'#2563eb',w:700});
+ svgSet('figFV',g)})();
+(function(){var g='',C={n:'#16a34a',o:'#f97316',r:'#8b5cf6'},D=[['n',4.8,3.84,'ปกติ',9.5],['o',4.0,1.8,'Obstruction',5.2],['r',2.6,2.3,'Restriction',8]];
+ var x0=50,x1=400,y0=290,yT=30,X=function(t){return x0+t/8*(x1-x0)},Y=function(v){return y0-v/5.2*(y0-yT)};
+ g+=L(x0,yT,x0,y0,'#475569',1.2)+L(x0,y0,x1,y0,'#475569',1.2)+T((x0+x1)/2,y0+20,'เวลา (s)',{a:'middle',s:12,c:'#7b8496'})+T(x0,yT-10,'Volume–time',{s:13,w:700});
+ g+=L(X(1),yT,X(1),y0,'#cbd5e1',1,'4 4')+T(X(1),y0+20,'1 s',{a:'middle',s:11,c:'#7b8496'});
+ D.forEach(function(d){var tau=tauFor(d[1],d[2]),pts=[];for(var t=0;t<=8;t+=0.05)pts.push([t,vt(d[1],tau,t)]);g+=P(path(pts,X,Y),C[d[0]],2.6)});
+ g+=T(X(7.9),Y(4.8)-6,'ปกติ',{a:'end',s:12,c:C.n,w:700})+T(X(7.9),Y(4.0)+16,'Obstruction (ช้า, เป่านาน)',{a:'end',s:12,c:C.o,w:700})+T(X(7.9),Y(2.6)+16,'Restriction (เล็ก แต่เร็ว)',{a:'end',s:12,c:C.r,w:700});
+ var a0=470,a1=830,b0=290,X2=function(v){return a0+v/5.2*(a1-a0)},Y2=function(f){return b0-f*24};
+ g+=L(a0,b0,a1,b0,'#475569',1.2)+L(a0,30,a0,b0,'#475569',1.2)+T(a0,20,'Flow–volume (ขาออก)',{s:13,w:700})+T((a0+a1)/2,b0+20,'ปริมาตร (L)',{a:'middle',s:12,c:'#7b8496'});
+ [['n',4.8,9.5,'n'],['o',4.0,5.2,'obs'],['r',2.6,8,'res']].forEach(function(d){var lp=loopPts(d[1],d[2],d[3]);g+=P(path(lp.ex,X2,Y2),C[d[0]],2.6)});
+ g+=T(X2(2.1),Y2(4.0),'scooped',{s:12,c:C.o,w:700})+T(X2(1.9),Y2(7.4),'แคบ สูงชัน',{s:12,c:C.r,w:700});
+ svgSet('figThree',g)})();
+
+/* ---------- 1.1 bell ---------- */
+(function(){var x0=40,x1=820,zmin=-5,zmax=3,X=function(z){return x0+(z-zmin)/(zmax-zmin)*(x1-x0)},Y=function(p){return 250-p*500};var g='';
+ var zones=[[-5,-4,'#fecaca','Severe'],[-4,-2.5,'#fed7aa','Moderate'],[-2.5,-1.645,'#fef08a','Mild'],[-1.645,1.645,'#dcfce7','ปกติ (90% ของคนปกติ)'],[1.645,3,'#dbeafe','> ULN']];
+ zones.forEach(function(z){var d='M'+X(z[0])+',250';for(var v=z[0];v<=z[1]+1e-9;v+=0.02)d+='L'+X(v).toFixed(1)+','+Y(Math.exp(-v*v/2)/Math.sqrt(2*Math.PI)).toFixed(1);d+='L'+X(z[1])+',250Z';g+='<path d="'+d+'" fill="'+z[2]+'"/>';g+='<rect x="'+X(z[0])+'" y="262" width="'+(X(z[1])-X(z[0]))+'" height="8" fill="'+z[2]+'"/>'});
+ var d2='';for(var v=zmin;v<=zmax;v+=0.02)d2+=(d2?'L':'M')+X(v).toFixed(1)+','+Y(Math.exp(-v*v/2)/Math.sqrt(2*Math.PI)).toFixed(1);g+=P(d2,'#334155',2.4);
+ g+=L(x0,250,x1,250,'#475569');for(var k=-5;k<=3;k++)g+=T(X(k),290,(k>0?'+':'')+k,{a:'middle',s:12,c:'#7b8496'});
+ g+=L(X(-1.645),40,X(-1.645),250,'#dc2626',2,'6 4')+T(X(-1.645),34,'LLN (z −1.645 = 5th percentile)',{a:'middle',s:13,c:'#dc2626',w:700});
+ g+=L(X(1.645),60,X(1.645),250,'#2563eb',2,'6 4')+T(X(1.645),54,'ULN (+1.645)',{a:'middle',s:13,c:'#2563eb',w:700});
+ g+=L(X(0),40,X(0),250,'#334155',1,'3 3')+T(X(0)+6,80,'Predicted (z 0)',{s:12,c:'#334155'});
+ g+=T(X(-4.5),240,'Severe',{a:'middle',s:12,c:'#b91c1c',w:700})+T(X(-3.25),240,'Moderate',{a:'middle',s:12,c:'#c2410c',w:700})+T(X(-2.07),226,'Mild',{a:'middle',s:12,c:'#a16207',w:700});
+ svgSet('figBell',g)})();
+/* ---------- ratio chart ---------- */
+(function(){var x0=60,x1=820,y0=280,yT=30,a0=18,a1=90,v0=0.58,v1=0.82,X=function(a){return x0+(a-a0)/(a1-a0)*(x1-x0)},Y=function(v){return y0-(v-v0)/(v1-v0)*(y0-yT)};var g='';
+ for(var v=0.6;v<=0.8001;v+=0.05){g+=L(x0,Y(v),x1,Y(v),'#eef1f6')+T(x0-8,Y(v)+4,v.toFixed(2),{a:'end',s:12,c:'#7b8496'})}
+ for(var a=20;a<=90;a+=10)g+=T(X(a),y0+18,a,{a:'middle',s:12,c:'#7b8496'});g+=T((x0+x1)/2,y0+38,'อายุ (ปี)',{a:'middle',s:12,c:'#7b8496'});
+ g+=L(x0,Y(0.7),x1,Y(0.7),'#0f172a',2,'8 5')+T(x1,Y(0.7)-8,'fixed ratio 0.70',{a:'end',s:13,c:'#0f172a',w:700});
+ var C={gliGlobal:['#0d9488','LLN GLI Global'],gli2012SEA:['#2563eb','LLN GLI-2012 SEA'],siriraj:['#dc2626','LLN Siriraj']},i=0;
+ for(var k in C){var pts=RL[k].map(function(v,j){return[18+2*j,v]});g+=P(path(pts,X,Y),C[k][0],3);g+='<rect x="'+(x0+10+i*190)+'" y="'+(yT-14)+'" width="18" height="5" fill="'+C[k][0]+'"/>'+T(x0+33+i*190,yT-8,C[k][1],{s:12.5,c:'#334155'});i++}
+ g+=T(X(20),Y(0.595),'ค่าที่อยู่ต่ำกว่าเส้นสี = ผิดปกติตามสมการนั้น',{s:12,c:'#0d9488'})+T(X(89),Y(0.79),'อายุมาก: 0.70 เรียกคนที่ GLI ว่าปกติว่าผิดปกติ',{a:'end',s:12,c:'#b91c1c'})+T(X(89),Y(0.79)+16,'อายุน้อย: ratio 0.72–0.75 อาจผิดปกติแล้ว แต่ 0.70 ว่าปกติ',{a:'end',s:12,c:'#b91c1c'});
+ svgSet('figRatio',g)})();
+/* ---------- bad maneuvers ---------- */
+(function(){var g='',W=410,H=180,pan=[[10,10,'A · เริ่มช้า/ลังเล'],[440,10,'B · ไอในวินาทีแรก'],[10,205,'C · หยุดเป่าก่อน (volume–time)'],[440,205,'D · ออกแรงไม่สม่ำเสมอ']];
+ pan.forEach(function(p,ix){var ox=p[0],oy=p[1];g+='<rect x="'+ox+'" y="'+oy+'" width="'+W+'" height="'+H+'" rx="12" fill="#fff" stroke="#e2e6ee"/>'+T(ox+12,oy+22,p[2],{s:13.5,w:700,c:'#c2410c'});
+  var bx=ox+30,by=oy+H-22,X=function(v){return bx+v/5*(W-60)},Y=function(f){return by-f*12};
+  if(ix===2){var Xt=function(t){return bx+t/7*(W-60)},Yv=function(v){return by-v*24};var good=[],bad=[],tau=tauFor(4.5,3.5);for(var t=0;t<=7;t+=0.05){good.push([t,vt(4.5,tau,t)]);if(t<=2.2)bad.push([t,vt(4.5,tau,t)])}
+   bad.push([2.25,vt(4.5,tau,2.2)]);for(var t2=2.25;t2<=4;t2+=0.05)bad.push([t2,vt(4.5,tau,2.2)]);
+   g+=L(bx,by,ox+W-20,by,'#94a3b8')+P(path(good,Xt,Yv),'#cbd5e1',2.5)+P(path(bad,Xt,Yv),'#dc2626',2.8)+T(ox+W-20,oy+H-40,'หยุดที่ 2.2 s ไม่มี plateau → FVC ต่ำเกินจริง',{a:'end',s:12,c:'#dc2626'});return}
+  var good=loopPts(4.5,9,'n').ex,bad=[];
+  good.forEach(function(q,i){var x=q[0],f=q[1];
+   if(ix===0){var xx=i/100;f=xx<0.25?9*0.62*Math.sin(xx/0.25*Math.PI/2):9*0.62*(1-(xx-0.25)/0.75)*1.0}
+   if(ix===1){var xx2=i/100;if(xx2>0.14&&xx2<0.24)f=f*(0.35+0.65*Math.abs(Math.cos((xx2-0.14)*40)))}
+   if(ix===3){f=f*(1+0.18*Math.sin(i/6))}
+   bad.push([x,f])});
+  g+=L(bx,by,ox+W-20,by,'#94a3b8')+P(path(good,X,Y),'#cbd5e1',2.5)+P(path(bad,X,Y),'#dc2626',2.8);
+  var notes=['PEF ต่ำ ไม่แหลม, BEV สูง','flow สะดุดช่วงต้น → FEV1 ใช้ไม่ได้','','curve ขยุกขยิกไม่เรียบ'];g+=T(ox+W-20,oy+44,notes[ix],{a:'end',s:12,c:'#dc2626'})});
+ svgSet('figBad',g)})();
+/* ---------- trees ---------- */
+function tree(nodes,edges,w,h){var g='';edges.forEach(function(e){var a=nodes[e[0]],b=nodes[e[1]];g+='<path d="M'+a.x+','+(a.y+20)+' C'+a.x+','+(a.y+46)+' '+b.x+','+(b.y-46)+' '+b.x+','+(b.y-20)+'" fill="none" stroke="#94a3b8" stroke-width="1.6"/>'+T((a.x+b.x)/2+(b.x<a.x?-10:10),(a.y+b.y)/2+4,e[2],{a:'middle',s:12.5,c:e[2]==='ใช่'?'#dc2626':'#15803d',w:700})});
+ for(var k in nodes){var n=nodes[k],ww=n.w||160,col=n.c||'#0f172a';g+='<rect x="'+(n.x-ww/2)+'" y="'+(n.y-20)+'" width="'+ww+'" height="40" rx="'+(n.leaf?20:8)+'" fill="'+(n.leaf?n.bg:'#fff')+'" stroke="'+(n.leaf?col:'#475569')+'" stroke-width="1.6"/>';
+  var ls=n.t.split('|');ls.forEach(function(s,i){g+=T(n.x,n.y+5+(i-(ls.length-1)/2)*14,s,{a:'middle',s:12.5,c:n.leaf?col:'#0f172a',w:n.leaf?700:500})})}
+ return g}
+svgSet('figAlgSp',tree({a:{x:430,y:34,t:'FEV1/FVC < LLN ?'},b:{x:215,y:130,t:'FVC < LLN ?'},c:{x:645,y:130,t:'FVC < LLN ?'},
+ m:{x:95,y:240,t:'Obstruction + FVC ต่ำ|possible mixed → วัด TLC',leaf:1,w:190,c:'#c2410c',bg:'#ffedd5'},o:{x:315,y:240,t:'Airflow obstruction',leaf:1,w:170,c:'#c2410c',bg:'#ffedd5'},
+ n:{x:540,y:240,t:'Possible restriction /|non-specific → วัด TLC',leaf:1,w:190,c:'#7c3aed',bg:'#ede9fe'},z:{x:760,y:240,t:'Spirometry ปกติ',leaf:1,w:150,c:'#15803d',bg:'#dcfce7'}},
+ [['a','b','ใช่'],['a','c','ไม่'],['b','m','ใช่'],['b','o','ไม่'],['c','n','ใช่'],['c','z','ไม่']]));
+svgSet('figAlgVol',tree({a:{x:430,y:30,t:'TLC < LLN ?'},b:{x:200,y:115,t:'RV/TLC > ULN ?'},c:{x:640,y:115,t:'RV/TLC > ULN ?'},b2:{x:110,y:200,t:'FEV1/FVC < LLN ?',w:150},
+ s:{x:290,y:200,t:'Simple restriction',leaf:1,w:150,c:'#15803d',bg:'#dcfce7'},mx:{x:50,y:290,t:'Mixed',leaf:1,w:90,c:'#be123c',bg:'#ffe4e6'},cx:{x:180,y:290,t:'Complex restriction',leaf:1,w:150,c:'#15803d',bg:'#dcfce7'},
+ c2:{x:540,y:200,t:'FEV1/FVC < LLN ?',w:150},c3:{x:765,y:200,t:'TLC > ULN ?',w:130},h:{x:440,y:290,t:'Hyperinflation',leaf:1,w:125,c:'#c2410c',bg:'#ffedd5'},ph:{x:585,y:290,t:'Possible|hyperinflation',leaf:1,w:140,c:'#c2410c',bg:'#ffedd5'},lg:{x:715,y:290,t:'Large lungs',leaf:1,w:95,c:'#2563eb',bg:'#dbeafe'},nm:{x:815,y:290,t:'ปกติ',leaf:1,w:75,c:'#15803d',bg:'#dcfce7'}},
+ [['a','b','ใช่'],['a','c','ไม่'],['b','b2','ใช่'],['b','s','ไม่'],['b2','mx','ใช่'],['b2','cx','ไม่'],['c','c2','ใช่'],['c','c3','ไม่'],['c2','h','ใช่'],['c2','ph','ไม่'],['c3','lg','ใช่'],['c3','nm','ไม่']]));
+svgSet('figAlgDl',tree({a:{x:430,y:30,t:'DLCO (ปรับ Hb) เทียบ LLN/ULN',w:250},hi:{x:120,y:115,t:'DLCO สูง (> ULN)|เลือดในปอด↑, polycythemia, DAH',leaf:1,w:230,c:'#2563eb',bg:'#dbeafe'},nl:{x:430,y:115,t:'ปกติ',leaf:1,w:100,c:'#15803d',bg:'#dcfce7'},lo:{x:690,y:115,t:'DLCO ต่ำ → VA ปกติไหม ?',w:210},
+ vn:{x:480,y:205,t:'VA ปกติ|หลอดเลือดปอด, emphysema, early ILD, ซีด',leaf:1,w:280,c:'#be123c',bg:'#ffe4e6'},k:{x:770,y:205,t:'VA ต่ำ → KCO ?',w:150},
+ kl:{x:580,y:295,t:'KCO ต่ำ/ปกติ|ILD, emphysema',leaf:1,w:220,c:'#be123c',bg:'#ffe4e6'},kh:{x:780,y:295,t:'KCO สูง|ปอดขยายไม่เต็ม',leaf:1,w:150,c:'#7c3aed',bg:'#ede9fe'}},
+ [['a','hi','สูง'],['a','nl','ปกติ'],['a','lo','ต่ำ'],['lo','vn','ใช่'],['lo','k','ไม่'],['k','kl','ต่ำ/ปกติ'],['k','kh','สูง']]));
+/* ---------- loops gallery ---------- */
+(function(){var defs=[['ปกติ','normal'],['Obstruction ปานกลาง','obs'],['Obstruction รุนแรง','sev'],['Restriction','res'],['Variable extrathoracic','vext'],['Variable intrathoracic','vint'],['Fixed (ตีบตายตัว)','fixed'],['Unilateral main bronchus','uni'],['Mixed','mix']];
+ var g='',W=275,H=175;defs.forEach(function(d,i){var ox=8+(i%3)*(W+12),oy=8+Math.floor(i/3)*(H+10),k=d[1];g+='<rect x="'+ox+'" y="'+oy+'" width="'+W+'" height="'+H+'" rx="12" fill="#fff" stroke="#e2e6ee"/>'+T(ox+10,oy+20,d[0],{s:13,w:700});
+  var fvc=4.6,pef=9,fif=6;if(k==='res'){fvc=2.5;pef=7.6;fif=4.6}if(k==='mix'){fvc=2.6;pef=4.2;fif=3.8}if(k==='sev'){fvc=3.5;pef=3.4;fif=4.4}if(k==='obs'){fvc=4.3;pef=6.6}
+  var ex=[],ins=[];for(var j=0;j<=100;j++){var x=j/100,f,u=(x-0.08)/0.92;
+   if(x<0.08)f=pef*Math.sin(x/0.08*Math.PI/2);else if(k==='obs'||k==='mix')f=pef*Math.pow(1-u,1.9);else if(k==='sev')f=pef*(0.25*Math.pow(1-u,1.2)+0.75*Math.exp(-u*9)*(1-u));else if(k==='res')f=pef*Math.pow(1-u,0.75);else if(k==='uni')f=Math.min(pef*(1-u),Math.max(3.2,pef*(1-u*3)));else f=pef*(1-u);
+   if(k==='vint'||k==='fixed')f=Math.min(f,2.6);
+   var fi=fif*Math.sin(x*Math.PI);if(k==='vext'||k==='fixed')fi=Math.min(fi,2.4);if(k==='uni')fi=fif*Math.pow(Math.sin(x*Math.PI),0.35)*(1-0.7*x);
+   ex.push([x*fvc,f]);ins.push([x*fvc,-fi])}
+  var X=function(v){return ox+22+v/5*(W-40)},Y=function(f){return oy+100-f*7.2};
+  g+=L(ox+18,Y(0),ox+W-12,Y(0),'#cbd5e1')+L(X(0),oy+28,X(0),oy+H-8,'#cbd5e1')+P(path(ex,X,Y),'#16a34a',2.6)+P(path(ins,X,Y),'#2563eb',2.6)});
+ svgSet('figLoops',g)})();
+/* ---------- volume bars ---------- */
+(function(){var B=[['ปกติ',6,1.2,2.4],['Hyperinflation|(COPD)',7.6,3.6,4.8],['Simple restriction|(ILD)',3.8,0.9,1.7],['Complex restriction|(NMD)',4.0,1.7,2.0],['Obesity',5.6,1.2,1.6],['Mixed|(TB + COPD)',3.9,2.0,2.6]];
+ var g='',y0=330,sc=36,bw=82;g+=L(40,y0,840,y0,'#475569',1.5);for(var v=0;v<=8;v+=2){g+=L(40,y0-v*sc,840,y0-v*sc,'#eef1f6')+T(34,y0-v*sc+4,v,{a:'end',s:12,c:'#7b8496'})}
+ g+=L(40,y0-6*sc,840,y0-6*sc,'#8b5cf6',1,'5 4')+T(838,y0-6*sc-6,'TLC ปกติ',{a:'end',s:11.5,c:'#8b5cf6'});
+ B.forEach(function(b,i){var x=70+i*128,tlc=b[1],rv=b[2],frc=b[3];
+  g+='<rect x="'+x+'" y="'+(y0-tlc*sc)+'" width="'+bw+'" height="'+((tlc-frc)*sc)+'" rx="6" fill="#86efac"/>';
+  g+='<rect x="'+x+'" y="'+(y0-frc*sc)+'" width="'+bw+'" height="'+((frc-rv)*sc)+'" fill="#fdba74"/>';
+  g+='<rect x="'+x+'" y="'+(y0-rv*sc)+'" width="'+bw+'" height="'+(rv*sc)+'" fill="#94a3b8"/>';
+  g+=L(x-6,y0-frc*sc,x+bw+6,y0-frc*sc,'#0f172a',2,'5 3');
+  g+=T(x+bw/2,y0-tlc*sc-8,'TLC '+tlc.toFixed(1),{a:'middle',s:12,w:700});g+=T(x+bw/2,y0-rv*sc/2+4,'RV '+rv.toFixed(1),{a:'middle',s:11.5,c:'#fff',w:700});
+  g+=T(x+bw/2,y0-rv*sc-((frc-rv)*sc)/2+4,'ERV',{a:'middle',s:11,c:'#7c2d12'});g+=T(x+bw/2,y0-frc*sc-((tlc-frc)*sc)/2+4,'IC',{a:'middle',s:11,c:'#14532d'});
+  b[0].split('|').forEach(function(s,j){g+=T(x+bw/2,y0+18+j*15,s,{a:'middle',s:12.5,w:j?400:700,c:j?'#64748b':'#0f172a'})})});
+ g+='<rect x="560" y="12" width="14" height="10" fill="#86efac"/>'+T(580,21,'IC',{s:12})+'<rect x="610" y="12" width="14" height="10" fill="#fdba74"/>'+T(630,21,'ERV',{s:12})+'<rect x="670" y="12" width="14" height="10" fill="#94a3b8"/>'+T(690,21,'RV',{s:12})+L(730,17,760,17,'#0f172a',2,'5 3')+T(766,21,'FRC',{s:12});
+ svgSet('figBars',g)})();
+/* ---------- DLCO diagram ---------- */
+(function(){var g='';
+ g+='<circle cx="170" cy="150" r="110" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="3"/>'+T(170,110,'ถุงลม',{a:'middle',s:15,w:700,c:'#0369a1'})+T(170,135,'CO + tracer gas',{a:'middle',s:13,c:'#0369a1'})+T(170,160,'VA = ปริมาตรที่',{a:'middle',s:12.5,c:'#0369a1'})+T(170,176,'ก๊าซกระจายถึง',{a:'middle',s:12.5,c:'#0369a1'});
+ g+='<rect x="282" y="45" width="26" height="210" fill="#fde68a" stroke="#ca8a04"/>'+T(295,30,'membrane (D<tspan font-size="10" baseline-shift="sub">M</tspan>)',{a:'middle',s:12.5,c:'#a16207',w:700});
+ g+='<rect x="310" y="70" width="190" height="160" rx="80" fill="#fee2e2" stroke="#e11d48" stroke-width="3"/>'+T(405,62,'หลอดเลือดฝอย',{a:'middle',s:13,c:'#be123c',w:700});
+ [[350,120],[400,165],[455,125],[370,195],[445,190]].forEach(function(c){g+='<ellipse cx="'+c[0]+'" cy="'+c[1]+'" rx="20" ry="12" fill="#ef4444"/>'});
+ g+=T(405,252,'Hb จับ CO (θ · Vc)',{a:'middle',s:12.5,c:'#be123c',w:700});
+ g+='<path d="M230,150 L330,150" stroke="#0f172a" stroke-width="3" marker-end="url(#ar)"/><defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#0f172a"/></marker></defs>';
+ g+='<rect x="540" y="50" width="300" height="200" rx="16" fill="#fff" stroke="#e11d48" stroke-width="2"/>'+T(690,90,'DLCO = KCO × VA',{a:'middle',s:22,w:700,c:'#be123c'});
+ g+=T(560,130,'↓ VA → ปอดเล็ก / ก๊าซไม่ทั่ว',{s:13.5})+T(560,158,'↓ KCO → เสีย membrane หรือ',{s:13.5})+T(578,176,'เลือดฝอย (หลอดเลือด, ซีด)',{s:13.5})+T(560,206,'↑ DLCO → เลือดในปอดมาก /',{s:13.5})+T(578,224,'Hb มาก / เลือดในถุงลม',{s:13.5});
+ svgSet('figDl',g)})();
+
+/* ---------- toolbar ---------- */
+function all(o){Array.prototype.forEach.call(document.querySelectorAll('details.ans'),function(d){d.open=o})}
+$('openAll').onclick=function(){all(true)};$('closeAll').onclick=function(){all(false)};
+$('printAns').onchange=function(){document.body.classList.toggle('print-ans',this.checked)};
+window.addEventListener('beforeprint',function(){if(document.body.classList.contains('print-ans'))all(true)});
+$('printBtn').onclick=function(){try{window.print()}catch(e){alert('กด Ctrl+P (หรือ ⌘+P) เพื่อพิมพ์')}};
+})();
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="index.html#more" aria-label="กลับหน้า PFT">&#8592; กลับหน้า PFT</a></div>
+<script src="calc.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var fx=function(v,d){return (v==null||isNaN(v))?'–':Number(v).toFixed(d==null?2:d)};
+var num=function(id){var e=document.getElementById(id);if(!e)return null;var v=parseFloat(e.value);return isNaN(v)?null:v};
+function sev(z){if(z==null)return null;if(z>=-1.645)return['ปกติ','ok'];if(z>=-2.5)return['Mild','warn'];if(z>=-4)return['Moderate','bad'];return['Severe','bad']}
+var READY=false;
+
+var EQS=[['gliGlobal','GLI Global'],['gli2012SEA','GLI-2012 SEA'],['siriraj','Siriraj']];
+function cls(r,two){if(!r||r.z==null)return'';if(r.linear){}var lowFlag=r.obs!=null?r.obs<r.lln:false;return ''}
+function cell(r,obs,lowOnly){if(!r)return'<td class="num eqsep">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td>';
+  var low=obs!=null&&obs<r.lln,high=obs!=null&&!lowOnly&&obs>r.uln;var c=low?'lo':high?'hi':'';
+  return '<td class="num eqsep">'+fx(r.pred)+'</td><td class="num">'+fx(r.lln)+'</td><td class="num '+c+'">'+(r.z==null?'–':fx(r.z))+'</td><td class="num '+c+'">'+(r.pp==null?'–':fx(r.pp,0))+'</td>'}
+function spiroPattern(o){ // o: {ratioLow, fvcLow, fev1Low, fev1z, ratioz}
+  if(o.ratioLow==null)return null;
+  if(o.ratioLow){if(o.fvcLow)return{p:'Obstruction + FVC ต่ำ → possible mixed (ต้องวัด TLC)',k:'mixq'};if(!o.fev1Low)return{p:'FEV1/FVC ต่ำแต่ FEV1 ปกติ → obstruction เล็กน้อยหรือ dysanapsis',k:'dys'};return{p:'Airflow obstruction',k:'obs'}}
+  if(o.fvcLow)return{p:'Possible restriction / non-specific pattern (ต้องวัด TLC)',k:'nsp'};
+  if(o.fev1Low)return{p:'FEV1 ต่ำแต่ FVC และ ratio ปกติ (แปลผลระวัง)',k:'fev1'};return{p:'Spirometry ปกติ',k:'nor'}}
+function calc(){var sex=$('#cSex').value,age=num('cAge'),ht=num('cHt'),eq=$('#cEq').value,out='',sum=[];
+  if(age==null||ht==null){$('#calcOut').innerHTML='<div class="warnbox">กรอกอายุและส่วนสูงก่อน</div>';return}
+  var f1=num('cFev1'),fv=num('cFvc'),pef=num('cPef'),f1p=num('cFev1p'),fvp=num('cFvcp'),tlc=num('cTlc'),rv=num('cRv'),frc=num('cFrc'),dl=num('cDl'),va=num('cVa'),kco=num('cKco'),hbv=num('cHb');
+  if(dl!=null&&va!=null&&kco==null)kco=dl/va;if(dl==null&&va!=null&&kco!=null)dl=kco*va;
+  var ratio=f1!=null&&fv!=null?f1/fv:null,eqName=EQS.filter(function(e){return e[0]===eq})[0][1],warn=[];
+  if(age<18)warn.push('แอปนี้ออกแบบสำหรับผู้ใหญ่ — เด็กใช้ได้แต่ตีความระวัง');
+  if(age<10)warn.push('Siriraj ใช้ได้เฉพาะอายุ ≥ 10 ปี');
+  out+='<div class="card"><h3 style="margin-top:0">Spirometry — เทียบ 3 สมการ</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th>';
+  EQS.forEach(function(e){out+='<th class="num eqsep" colspan="4">'+e[1]+(e[0]===eq?' ★':'')+'<span class="eqhead">pred · LLN · z · %pred</span></th>'});out+='</tr>';
+  var res={};EQS.forEach(function(e){res[e[0]]={}});
+  [['FEV1','FEV1 (L)',f1],['FVC','FVC (L)',fv],['FEV1FVC','FEV1/FVC',ratio]].forEach(function(p){out+='<tr><td>'+p[1]+'</td><td class="num"><b>'+fx(p[2])+'</b></td>';
+    EQS.forEach(function(e){var r=PFTCalc[e[0]](sex,age,ht,p[0],p[2]);res[e[0]][p[0]]=r;out+=cell(r,p[2],true)});out+='</tr>'});
+  out+='<tr><td>Pattern</td><td></td>';var pats={};
+  EQS.forEach(function(e){var R=res[e[0]],o={ratioLow:ratio!=null&&R.FEV1FVC?ratio<R.FEV1FVC.lln:null,fvcLow:fv!=null&&R.FVC?fv<R.FVC.lln:false,fev1Low:f1!=null&&R.FEV1?f1<R.FEV1.lln:false};var P=spiroPattern(o);pats[e[0]]=P;out+='<td colspan="4" class="eqsep" style="font-size:13.5px">'+(P?P.p:'–')+'</td>'});
+  out+='</tr></table></div>';
+  if(ratio!=null)out+='<p>FEV1/FVC = '+fx(ratio)+' → fixed ratio 0.70: '+(ratio<0.7?'<span class="pill bad">&lt; 0.70</span>':'<span class="pill ok">≥ 0.70</span>')+'</p>';
+  var keys=EQS.map(function(e){return pats[e[0]]?pats[e[0]].k:''});if(keys[0]&&(keys[0]!==keys[1]||keys[1]!==keys[2]))out+='<div class="warnbox"><b>สมการให้ pattern ไม่ตรงกัน</b> — ผลอยู่ใกล้ LLN (zone of uncertainty) ต้องใช้บริบททางคลินิกช่วยตัดสิน</div>';
+  out+='<p class="src">★ = สมการหลักที่ใช้แปลผลด้านล่าง · z ของ Siriraj = (obs − pred)/SEE (ประมาณ) · ตัวแดง = ต่ำกว่า LLN</p></div>';
+  var R=res[eq],P=pats[eq];
+  if(P){sum.push('Spirometry ('+eqName+'): '+P.p);
+    if(P.k==='obs'||P.k==='mixq'||P.k==='dys'){var s=sev(R.FEV1&&R.FEV1.z);if(s&&s[0]!=='ปกติ')sum.push('ความรุนแรง (z ของ FEV1 = '+fx(R.FEV1.z)+'): '+s[0]);else sum.push('FEV1 ยังอยู่ในช่วงปกติ (z = '+fx(R.FEV1&&R.FEV1.z)+')')}
+    if(P.k==='nsp'){var s2=sev(R.FVC&&R.FVC.z);if(s2)sum.push('FVC z = '+fx(R.FVC.z)+' ('+s2[0]+')')}}
+  // BDR
+  if(f1!=null&&(f1p!=null||fvp!=null)){out+='<div class="card"><h3 style="margin-top:0">Bronchodilator response</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">pre</th><th class="num">post</th><th class="num">Δ mL</th><th class="num">% baseline</th><th class="num">% predicted ('+eqName+')</th><th>2022 (&gt;10% pred)</th><th>2005/GINA (≥12% & ≥200 mL)</th></tr>';
+    var pos22=false,pos05=false;[['FEV1',f1,f1p],['FVC',fv,fvp]].forEach(function(p){if(p[1]==null||p[2]==null)return;var d=p[2]-p[1],pr=R[p[0]]?R[p[0]].pred:null,a=pr?100*d/pr:null,b=100*d/p[1],y22=a!=null&&a>10,y05=b>=12&&d>=0.2;pos22=pos22||y22;pos05=pos05||y05;
+      out+='<tr><td>'+p[0]+'</td><td class="num">'+fx(p[1])+'</td><td class="num">'+fx(p[2])+'</td><td class="num">'+Math.round(d*1000)+'</td><td class="num">'+fx(b,1)+'</td><td class="num">'+fx(a,1)+'</td><td>'+(y22?'<span class="pill ok">+</span>':'<span class="pill warn">−</span>')+'</td><td>'+(y05?'<span class="pill ok">+</span>':'<span class="pill warn">−</span>')+'</td></tr>'});
+    out+='</table></div>';
+    if(f1p!=null&&fvp!=null){var pr2=f1p/fvp,rr=PFTCalc[eq](sex,age,ht,'FEV1FVC',pr2);out+='<p>Post-BD FEV1/FVC = <b>'+fx(pr2)+'</b> ('+(pr2<0.7?'&lt; 0.70 → เข้าเกณฑ์ GOLD ถ้าคลินิกเข้าได้':'≥ 0.70')+(rr?'; LLN '+fx(rr.lln)+', z '+fx(rr.z):'')+')';
+      if(ratio!=null&&((ratio<0.7)!==(pr2<0.7)))out+=' <span class="pill info">'+(ratio>=0.7?'volume responder':'flow responder')+'</span>';
+      var pf=PFTCalc.gliGlobal(sex,age,ht,'FEV1',f1p);if(pr2<0.7&&pf){var gp=100*f1p/pf.pred;out+=' · post-BD FEV1 '+gp.toFixed(0)+'% pred (GLI Global) → GOLD '+(gp>=80?1:gp>=50?2:gp>=30?3:4)}out+='</p>'}
+    out+='</div>';sum.push('BDR: '+(pos22?'positive':'negative')+' ตามเกณฑ์ 2022; '+(pos05?'positive':'negative')+' ตามเกณฑ์ 2005/GINA'+(pos22!==pos05?' (สองเกณฑ์ไม่ตรงกัน)':''))}
+  // UAO
+  if(f1!=null&&pef!=null){var up=f1*1000/pef;sum.push('FEV1/PEF = '+up.toFixed(1)+' mL/L/min'+(up>8?' → สงสัย central/upper airway obstruction ดู flow–volume loop':''))}
+  // volumes
+  if(tlc!=null||rv!=null||frc!=null){if(age>80||age<5)warn.push('GLI lung volumes ใช้ได้อายุ 5–80 ปี');
+    var V={TLC:tlc,RV:rv,FRC:frc,RVTLC:(rv!=null&&tlc!=null)?100*rv/tlc:null},VR={};
+    out+='<div class="card"><h3 style="margin-top:0">Lung volumes (GLI 2021)</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th><th class="num">pred</th><th class="num">LLN</th><th class="num">ULN</th><th class="num">z</th><th class="num">%pred</th></tr>';
+    ['TLC','RV','FRC','RVTLC'].forEach(function(p){if(V[p]==null)return;var r=PFTCalc.gliVol(sex,age,ht,p,V[p]);VR[p]=r;if(!r)return;var c=V[p]<r.lln?'lo':V[p]>r.uln?'hi':'';
+      out+='<tr><td>'+(p==='RVTLC'?'RV/TLC (%)':p+' (L)')+'</td><td class="num"><b>'+fx(V[p],p==='RVTLC'?1:2)+'</b></td><td class="num">'+fx(r.pred,p==='RVTLC'?1:2)+'</td><td class="num">'+fx(r.lln,p==='RVTLC'?1:2)+'</td><td class="num">'+fx(r.uln,p==='RVTLC'?1:2)+'</td><td class="num '+c+'">'+fx(r.z)+'</td><td class="num">'+fx(r.pp,0)+'</td></tr>'});
+    out+='</table></div>';
+    if(tlc!=null&&VR.TLC){var tl=tlc<VR.TLC.lln,th=tlc>VR.TLC.uln,trap=(VR.RVTLC&&V.RVTLC>VR.RVTLC.uln),rl=P&&(P.k==='obs'||P.k==='mixq'||P.k==='dys'),vp;
+      if(tl){vp=trap?(rl?'Mixed disorder':'Complex restriction'):'Simple restriction';var s3=sev(VR.TLC.z);vp+=' (TLC z '+fx(VR.TLC.z)+', '+s3[0]+')'}
+      else if(trap)vp=rl?'Hyperinflation / air trapping':'Possible hyperinflation (gas trapping)';else if(th)vp='Large lungs';else vp='Lung volumes ปกติ — ตัด restriction'+(P&&P.k==='nsp'?' → spirometry เป็น non-specific pattern':'');
+      if(!VR.RVTLC&&!tl)vp+=' (ไม่มี RV จึงประเมิน air trapping ไม่ได้)';
+      out+='<p><b>'+vp+'</b></p>';sum.push('Lung volumes: '+vp)}
+    out+='<p class="src">สมการ GLI lung volumes สร้างจากคนเชื้อสายยุโรป · TLC จาก gas dilution underestimate ในผู้ป่วย obstruction</p></div>'}
+  // DLCO
+  if(dl!=null||va!=null||kco!=null){if(age>90||age<5)warn.push('GLI TLCO ใช้ได้อายุ 5–90 ปี');
+    var hf=1;if(hbv!=null){hf=1.7*hbv/(((sex==='M'&&age>=15)?10.22:9.38)+hbv)}
+    var D={TLCO:dl,VA:va,KCO:kco},DR={};out+='<div class="card"><h3 style="margin-top:0">DLCO (GLI 2017'+(hbv!=null?', ปรับ Hb factor '+hf.toFixed(3):'')+')</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th><th class="num">pred</th><th class="num">LLN</th><th class="num">ULN</th><th class="num">z</th><th class="num">%pred</th></tr>';
+    ['TLCO','VA','KCO'].forEach(function(p){if(D[p]==null)return;var adj=(p!=='VA'&&hf!==1)?hf:1;var r=PFTCalc.gliTLCO(sex,age,ht,p,D[p]/adj);if(!r)return;r={pred:r.pred*adj,lln:r.lln*adj,uln:r.uln*adj,z:r.z,pp:r.pp};DR[p]=r;var c=D[p]<r.lln?'lo':D[p]>r.uln?'hi':'';
+      out+='<tr><td>'+(p==='TLCO'?'DLCO':p)+'</td><td class="num"><b>'+fx(D[p])+'</b></td><td class="num">'+fx(r.pred)+'</td><td class="num">'+fx(r.lln)+'</td><td class="num">'+fx(r.uln)+'</td><td class="num '+c+'">'+fx(r.z)+'</td><td class="num">'+fx(r.pp,0)+'</td></tr>'});
+    out+='</table></div>';
+    if(DR.TLCO){var dp,dlow=dl<DR.TLCO.lln,dhi=dl>DR.TLCO.uln;
+      if(dhi)dp='DLCO สูง — เลือดในปอดมาก, polycythemia, alveolar hemorrhage';
+      else if(!dlow)dp='DLCO ปกติ';
+      else if(DR.VA&&va>=DR.VA.lln)dp='DLCO ต่ำ, VA ปกติ → pulmonary vascular disease, emphysema ที่ปริมาตรยังปกติ, early ILD'+(hbv==null?', หรือ anemia (ยังไม่ได้ปรับ Hb)':'');
+      else if(DR.VA&&DR.KCO&&kco>DR.KCO.uln)dp='DLCO ต่ำ, VA ต่ำ, KCO สูง → ปอดขยายไม่เต็ม (extrapulmonary) หรือสูญเสียปริมาตรเฉพาะที่';
+      else if(DR.VA)dp='DLCO ต่ำ, VA ต่ำ, KCO ต่ำ/ปกติ → สูญเสีย alveolar–capillary unit (ILD, emphysema)';
+      else dp='DLCO ต่ำ (ไม่มี VA ให้แยกต่อ)';
+      if(dlow){var s4=sev(DR.TLCO.z);dp+=' · ความรุนแรง '+s4[0]+' (z '+fx(DR.TLCO.z)+')'}
+      if(va!=null&&tlc!=null)dp+=' · VA/TLC = '+fx(va/tlc)+(va/tlc<0.85?' (ต่ำ → gas maldistribution)':'');
+      out+='<p><b>'+dp+'</b></p>';sum.push('DLCO: '+dp)}
+    out+='<p class="src">สมการ GLI TLCO สร้างจากคนเชื้อสายยุโรป · หน่วย mL/min/mmHg (ถ้าเครื่องรายงาน mmol/min/kPa ให้คูณ 2.986)</p></div>'}
+  var w=warn.length?'<div class="warnbox">'+warn.join('<br>')+'</div>':'';
+  var txt='สรุปแปลผล (อายุ '+age+' ปี, '+(sex==='M'?'ชาย':'หญิง')+', '+ht+' cm)\n• '+sum.join('\n• ');
+  $('#calcOut').innerHTML=w+'<div class="card"><h3 style="margin-top:0">สรุป</h3><div class="sum" id="sumTxt"></div><div class="row" style="margin-top:8px"><button class="btn sec" id="copySum">คัดลอกสรุป</button><span class="src" id="copyMsg"></span></div><p class="src">ผลแปลอัตโนมัติจาก algorithm — ต้องดูคุณภาพการตรวจ รูป loop และคลินิกประกอบเสมอ</p></div>'+out;
+  $('#sumTxt').textContent=txt;$('#copySum').onclick=function(){try{navigator.clipboard.writeText(txt).then(function(){$('#copyMsg').textContent='คัดลอกแล้ว'},function(){$('#copyMsg').textContent='คัดลอกไม่ได้ — เลือกข้อความเอง'})}catch(e){$('#copyMsg').textContent='คัดลอกไม่ได้ — เลือกข้อความเอง'}}}
+var CF=['cAge','cHt','cFev1','cFvc','cPef','cFev1p','cFvcp','cTlc','cRv','cFrc','cDl','cVa','cKco','cHb'];
+function fill(d){$('#cSex').value=d.sex||'M';CF.forEach(function(k){$('#'+k).value=d[k]!=null?d[k]:''});if(d.cEq)$('#cEq').value=d.cEq;calc()}
+$('#cRun').onclick=calc;$('#cEq').onchange=function(){if(num('cAge')!=null)calc()};
+
+
+$('#cClear').onclick=function(){CF.forEach(function(k){$('#'+k).value=''});$('#calcOut').innerHTML=''};
+$('#cEx').onclick=function(){fill(FILL.emph)};
+var _calc=calc;calc=function(){if(!READY){$('#calcOut').innerHTML='<div class="warnbox">กำลังโหลดข้อมูลสมการ GLI… ถ้าข้อความนี้ไม่หายไป แสดงว่าโหลดไม่ได้ (เปิดไฟล์นี้แบบออฟไลน์?) — เครื่องคำนวณต้องใช้ไฟล์ gli_data.json คู่กัน</div>';return}_calc()};
+$('#cRun').onclick=function(){calc()};
+
+var FILL={"report": {"sex": "M", "cAge": 58, "cHt": 168, "cFev1": 1.85, "cFvc": 3.05, "cFev1p": 2.05, "cFvcp": 3.2}, "asthma": {"sex": "F", "cAge": 32, "cHt": 160, "cFev1": 2.05, "cFvc": 3.1, "cFev1p": 2.55, "cFvcp": 3.25}, "emph": {"sex": "M", "cAge": 66, "cHt": 168, "cFev1": 1.02, "cFvc": 2.7, "cFev1p": 1.25, "cFvcp": 3.05, "cTlc": 8.0, "cRv": 4.3, "cFrc": 5.6, "cDl": 10.5, "cVa": 5.3, "cKco": 1.98, "cHb": 14.5}, "ipf": {"sex": "M", "cAge": 70, "cHt": 165, "cFev1": 1.95, "cFvc": 2.25, "cTlc": 3.7, "cRv": 1.35, "cFrc": 2.0, "cDl": 9.0, "cVa": 3.3, "cKco": 2.73}, "nmd": {"sex": "F", "cAge": 45, "cHt": 158, "cFev1": 1.55, "cFvc": 1.75, "cTlc": 3.3, "cRv": 1.55, "cDl": 17.5, "cVa": 2.9, "cKco": 6.03}, "obes": {"sex": "M", "cAge": 40, "cHt": 172, "cFev1": 2.95, "cFvc": 3.55, "cTlc": 5.7, "cRv": 1.55, "cFrc": 2.05, "cDl": 31, "cVa": 5.2, "cKco": 5.96}, "cpfe": {"sex": "M", "cAge": 68, "cHt": 170, "cFev1": 2.55, "cFvc": 3.4, "cTlc": 6.0, "cRv": 2.3, "cDl": 7.8, "cVa": 5.0, "cKco": 1.56, "cHb": 15}, "ph": {"sex": "F", "cAge": 50, "cHt": 155, "cFev1": 2.35, "cFvc": 2.85, "cTlc": 4.6, "cRv": 1.55, "cDl": 11.0, "cVa": 4.1, "cKco": 2.68, "cHb": 13}, "sten": {"sex": "F", "cAge": 35, "cHt": 158, "cFev1": 2.3, "cFvc": 3.05, "cPef": 140}, "tb": {"sex": "M", "cAge": 60, "cHt": 162, "cFev1": 0.95, "cFvc": 1.62, "cFev1p": 1.0, "cFvcp": 1.7, "cTlc": 3.6, "cRv": 1.95, "cDl": 12, "cVa": 3.0, "cKco": 4.0, "cHb": 13.5}, "old": {"sex": "F", "cAge": 78, "cHt": 150, "cFev1": 1.3, "cFvc": 1.92}, "effort": {"sex": "M", "cAge": 45, "cHt": 170, "cFev1": 2.6, "cFvc": 2.95}, "dah": {"sex": "F", "cAge": 28, "cHt": 156, "cFev1": 2.45, "cFvc": 2.85, "cDl": 30, "cVa": 3.6, "cKco": 8.33, "cHb": 8.5}, "preop": {"sex": "M", "cAge": 64, "cHt": 166, "cFev1": 1.8, "cFvc": 3.1, "cDl": 15, "cVa": 4.8, "cKco": 3.1, "cHb": 14}};
+$$('[data-fill]').forEach(function(b){b.onclick=function(){var d=FILL[b.getAttribute('data-fill')];if(!d)return;fill(d);var t=document.getElementById('s-calc');if(t)t.scrollIntoView({behavior:'smooth'})}});
+
+/* grade */
+var gRows=[{f1:null,fv:null,a1:true,a2:true},{f1:null,fv:null,a1:true,a2:true},{f1:null,fv:null,a1:true,a2:true}];
+function grade(vals){var a=vals.filter(function(v){return v!=null}).sort(function(x,y){return y-x}),n=a.length;if(!n)return{g:'U/F',t:'ไม่มี acceptable → U (ถ้ามี usable) หรือ F'};if(n===1)return{g:'E',t:'มี acceptable ครั้งเดียว'};
+  var d=a[0]-a[1],t='2 ค่าสูงสุดต่างกัน '+(d*1000).toFixed(0)+' mL, acceptable '+n+' ครั้ง';
+  if(d<=0.1505&&n>=3)return{g:'A',t:t};if(d<=0.1505&&n===2)return{g:'B',t:t};if(d<=0.2005)return{g:'C',t:t};if(d<=0.2505)return{g:'D',t:t};return{g:'E',t:t}}
+function gCalc(){var g1=grade(gRows.map(function(r){return r.a1?r.f1:null})),g2=grade(gRows.map(function(r){return r.a2?r.fv:null}));
+  var best=function(k,a){var v=gRows.filter(function(r){return r[a]&&r[k]!=null}).map(function(r){return r[k]});return v.length?Math.max.apply(null,v):null};
+  var bf1=best('f1','a1'),bfv=best('fv','a2');
+  $('#gradeOut').innerHTML='FEV1 grade <b class="pill info">'+g1.g+'</b> <span class="src">'+g1.t+'</span><br>FVC grade <b class="pill info">'+g2.g+'</b> <span class="src">'+g2.t+'</span><br>ค่าที่รายงาน: FEV1 <b>'+fx(bf1)+'</b> L, FVC <b>'+fx(bfv)+'</b> L'+(bf1&&bfv?', FEV1/FVC <b>'+fx(bf1/bfv)+'</b>':'')}
+function gRender(){var tb=$('#gradeTbl');if(!tb)return;$$('tr.gr',tb).forEach(function(r){r.remove()});
+  gRows.forEach(function(r,i){var tr=document.createElement('tr');tr.className='gr';tr.innerHTML='<td>'+(i+1)+'</td><td><input type="number" step="0.01" value="'+(r.f1==null?'':r.f1)+'" data-k="f1"></td><td><input type="checkbox" '+(r.a1?'checked':'')+' data-k="a1"></td><td><input type="number" step="0.01" value="'+(r.fv==null?'':r.fv)+'" data-k="fv"></td><td><input type="checkbox" '+(r.a2?'checked':'')+' data-k="a2"></td>';
+    $$('input',tr).forEach(function(inp){inp.oninput=inp.onchange=function(){var k=inp.getAttribute('data-k');r[k]=inp.type==='checkbox'?inp.checked:(inp.value===''?null:parseFloat(inp.value));gCalc()}});tb.appendChild(tr)});gCalc()}
+if($('#gradeAdd')){$('#gradeAdd').onclick=function(){if(gRows.length<8){gRows.push({f1:null,fv:null,a1:true,a2:true});gRender()}};
+$('#gradeEx').onclick=function(){gRows=[{f1:2.41,fv:3.30,a1:true,a2:true},{f1:2.62,fv:3.28,a1:true,a2:false},{f1:2.38,fv:3.45,a1:false,a2:true},{f1:2.48,fv:3.41,a1:true,a2:true}];gRender()};gRender()}
+
+/* BDR */
+function bdr(){var pre=num('bPre'),post=num('bPost'),pr=num('bPred');if(pre==null||post==null){$('#bOut').innerHTML='';return}
+  var d=post-pre,a=pr?100*d/pr:null,b=100*d/pre;
+  $('#bOut').innerHTML='<div>ERS/ATS 2022: '+(a==null?'ต้องมี predicted':'<b>'+a.toFixed(1)+'%</b> ของ predicted → '+(a>10?'<span class="pill ok">positive</span>':'<span class="pill warn">negative</span>'))+'</div><div>2005 / GINA: <b>'+b.toFixed(1)+'%</b> และ <b>'+Math.round(d*1000)+' mL</b> → '+(b>=12&&d>=0.2?'<span class="pill ok">positive</span>':'<span class="pill warn">negative</span>')+(d>0.4?' <span class="pill info">&gt; 400 mL สนับสนุน asthma</span>':'')+'</div>'}
+if($('#bPre')){['bPre','bPost','bPred'].forEach(function(i){$('#'+i).oninput=bdr});bdr()}
+/* UAO */
+function uao(){var f=num('upFev1'),p=num('upPef'),ps=num('upPefS');if(ps!=null)p=ps*60;if(f==null||!p){$('#upOut').innerHTML='';return}
+  var r=f/p;$('#upOut').innerHTML='FEV1/PEF = <b style="font-family:var(--mono)">'+r.toFixed(1)+'</b> mL/L/min (PEF '+p.toFixed(0)+' L/min) → '+(r>10?'<span class="pill bad">&gt; 10 สงสัย UAO มาก</span>':r>8?'<span class="pill warn">&gt; 8 สงสัย UAO</span>':'<span class="pill ok">ไม่ชวนสงสัย</span>')}
+if($('#upFev1')){['upFev1','upPef','upPefS'].forEach(function(i){$('#'+i).oninput=uao});uao()}
+/* Hb */
+function hb(){var h=num('hbV'),p=num('hbPred'),m=$('#hbSex').value==='M';if(h==null||p==null){$('#hbOut').innerHTML='';return}
+  var f=1.7*h/((m?10.22:9.38)+h);$('#hbOut').innerHTML='Factor = <b>'+f.toFixed(3)+'</b> → DLCO predicted ที่ปรับแล้ว = <b>'+(p*f).toFixed(1)+'</b> (เดิม '+p+')'}
+if($('#hbV')){['hbV','hbPred','hbSex'].forEach(function(i){$('#'+i).oninput=$('#'+i).onchange=hb});hb()}
+
+fetch('gli_data.json').then(function(r){return r.json()}).then(function(d){PFTCalc.init(d);READY=true}).catch(function(){});
+})();
+
+</script>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>
