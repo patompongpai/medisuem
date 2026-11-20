@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PFT Interpretation — การแปลผลสมรรถภาพปอด (ERS/ATS 2022)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#1d2433;--ink2:#4a5568;--mute:#7a8597;--line:#e3e7ee;
+  --acc:#0e7c6b;--acc-soft:#e3f3ef;--acc2:#2f5fb3;--acc2-soft:#e7eefb;
+  --bad:#c2410c;--bad-soft:#fdeee6;--warn:#a16207;--warn-soft:#fdf6e1;--ok:#15803d;--ok-soft:#e6f5ea;
+  --shadow:0 1px 2px rgba(20,30,50,.06),0 2px 8px rgba(20,30,50,.05);
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+[data-theme=dark]{
+  --bg:#12161d;--card:#1a2029;--ink:#e6eaf0;--ink2:#b5bfcc;--mute:#8592a3;--line:#2b3340;
+  --acc:#3cc4ac;--acc-soft:#173a35;--acc2:#7ea6f0;--acc2-soft:#1d2a42;
+  --bad:#fb8a5a;--bad-soft:#3b2219;--warn:#e5b54a;--warn-soft:#3a3018;--ok:#5ad08a;--ok-soft:#173523;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'IBM Plex Sans Thai',system-ui,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--acc2)}
+header.top{position:sticky;top:0;z-index:30;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 16px}
+header.top .brand{font-weight:700;font-size:17px;line-height:1.2}
+header.top .brand small{display:block;font-weight:400;color:var(--mute);font-size:12px}
+header.top .sp{flex:1}
+.iconbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:14px}
+.iconbtn:hover{border-color:var(--acc)}
+#menuBtn{display:none}
+.wrap{display:flex;max-width:1280px;margin:0 auto}
+nav.side{width:250px;flex:none;position:sticky;top:57px;height:calc(100vh - 57px);overflow:auto;padding:18px 10px 40px;border-right:1px solid var(--line)}
+nav.side a{display:block;text-decoration:none;color:var(--ink2);padding:7px 12px;border-radius:8px;font-size:15px;margin-bottom:2px}
+nav.side a .n{display:inline-block;width:22px;color:var(--mute);font-family:var(--mono);font-size:13px}
+nav.side a:hover{background:var(--acc-soft);color:var(--ink)}
+nav.side a.on{background:var(--acc);color:#fff}
+nav.side a.on .n{color:#d6f2ec}
+nav.side .grp{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em;margin:16px 12px 6px}
+main{flex:1;min-width:0;padding:22px 28px 80px}
+section.ch{display:none;max-width:920px}
+section.ch.on{display:block}
+h1{font-size:28px;line-height:1.3;margin:4px 0 6px}
+h2{font-size:21px;margin:30px 0 10px;padding-top:4px}
+h3{font-size:17px;margin:22px 0 8px}
+p{margin:8px 0}
+.lead{color:var(--ink2);font-size:17px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);margin:14px 0}
+.note{border-left:4px solid var(--acc2);background:var(--acc2-soft);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.warnbox{border-left:4px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.key{border-left:4px solid var(--acc);background:var(--acc-soft);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.src{font-size:13px;color:var(--mute)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600;color:var(--ink2)}
+.tw{overflow-x:auto;margin:10px 0}
+td.num,th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+.lo{color:var(--bad);font-weight:600}
+.hi{color:var(--acc2);font-weight:600}
+.okc{color:var(--ok)}
+.pill{display:inline-block;padding:1px 9px;border-radius:99px;font-size:13px;font-weight:600;white-space:nowrap}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.info{background:var(--acc2-soft);color:var(--acc2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0}
+.steps li{counter-increment:s;position:relative;padding:8px 0 8px 44px;border-bottom:1px dashed var(--line)}
+.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+label.f{display:block;font-size:13.5px;color:var(--ink2);margin-bottom:3px}
+input[type=number],input[type=text],select{font:inherit;font-size:15px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);width:100%}
+input[type=number]{font-family:var(--mono)}
+input:focus,select:focus{outline:2px solid var(--acc-soft);border-color:var(--acc)}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px 12px}
+.btn{font:inherit;font-size:15px;border:0;border-radius:9px;padding:8px 16px;background:var(--acc);color:#fff;cursor:pointer;font-weight:600}
+.btn.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn:hover{filter:brightness(1.07)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;border:0;background:var(--card);color:var(--ink2);padding:6px 12px;cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--acc);color:#fff}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+svg text{font-family:'IBM Plex Sans Thai',sans-serif}
+/* decision walker */
+.walker .q{font-weight:600;font-size:16px;margin:4px 0 10px}
+.walker .path{font-size:13.5px;color:var(--mute);margin-bottom:8px}
+.walker .path span{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin:0 4px 4px 0;display:inline-block}
+.walker .res{border-radius:10px;padding:12px 14px;background:var(--acc-soft);border:1px solid var(--acc)}
+.walker .res b{font-size:17px}
+/* tree diagram */
+.tree svg{width:100%;height:auto;max-width:760px;display:block;margin:auto}
+/* cases */
+.case h3{margin-top:0}
+.case .meta{color:var(--ink2);font-size:14.5px}
+.qblock{border-top:1px dashed var(--line);margin-top:12px;padding-top:10px}
+.qblock .opts{display:grid;gap:6px;margin:8px 0}
+.qblock .opts button{text-align:left;font:inherit;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qblock .opts button.right{border-color:var(--ok);background:var(--ok-soft)}
+.qblock .opts button.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.qblock .exp{display:none;font-size:15px;background:var(--bg);border-radius:8px;padding:9px 12px;margin-top:6px}
+.qblock.done .exp{display:block}
+/* calculator */
+.calc-in{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px 12px}
+.calc-in h4{grid-column:1/-1;margin:10px 0 0;font-size:14px;color:var(--acc);border-bottom:1px solid var(--line);padding-bottom:3px}
+#calcOut .sum{white-space:pre-wrap;font-size:15px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.eqhead{font-size:12.5px;color:var(--mute);font-weight:400;display:block}
+td.eqsep,th.eqsep{border-left:2px solid var(--line)}
+/* search */
+#searchPanel{position:fixed;inset:0;background:rgba(10,15,25,.45);z-index:50;display:none;align-items:flex-start;justify-content:center;padding-top:9vh}
+#searchPanel.on{display:flex}
+#searchPanel .box{background:var(--card);width:min(640px,92vw);border-radius:14px;padding:14px;box-shadow:0 10px 40px rgba(0,0,0,.25);max-height:75vh;display:flex;flex-direction:column}
+#searchRes{overflow:auto;margin-top:8px}
+#searchRes a{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
+#searchRes a:hover{background:var(--acc-soft)}
+#searchRes small{color:var(--mute);display:block}
+mark{background:#ffe58a;color:inherit;border-radius:3px}
+.foot{margin-top:40px;color:var(--mute);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+.loopgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.loopgrid .lp{border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--card);cursor:pointer}
+.loopgrid .lp.on{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc-soft)}
+.loopgrid .lp b{font-size:14px}
+@media (max-width:900px){
+  #menuBtn{display:inline-block}
+  nav.side{position:fixed;left:0;top:57px;z-index:40;background:var(--card);transform:translateX(-105%);transition:transform .2s;box-shadow:4px 0 20px rgba(0,0,0,.15)}
+  nav.side.open{transform:none}
+  main{padding:16px 14px 70px}
+  .grid2{grid-template-columns:1fr}
+  h1{font-size:23px}
+}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+@media print{.imhub-bar{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <button class="iconbtn" id="menuBtn" aria-label="เมนูบท">☰ บท</button>
+  <div class="brand">การแปลผล PFT<small>Spirometry · Lung volumes · DLCO — ERS/ATS 2022</small></div>
+  <div class="sp"></div>
+  <button class="iconbtn" id="searchBtn" aria-label="ค้นหา">🔍 ค้นหา</button>
+  <button class="iconbtn" id="themeBtn" aria-label="สลับธีม">◐</button>
+</header>
+<div class="wrap">
+<nav class="side" id="side">
+  <div class="grp">บทเรียน</div>
+  <a href="#overview" data-s="overview"><span class="n">1</span>หลักคิด: LLN & z-score</a>
+  <a href="#quality" data-s="quality"><span class="n">2</span>คุณภาพการตรวจ</a>
+  <a href="#spirometry" data-s="spirometry"><span class="n">3</span>Spirometry</a>
+  <a href="#bdr" data-s="bdr"><span class="n">4</span>Bronchodilator response</a>
+  <a href="#loops" data-s="loops"><span class="n">5</span>Flow–volume loop & UAO</a>
+  <a href="#volumes" data-s="volumes"><span class="n">6</span>Lung volumes</a>
+  <a href="#dlco" data-s="dlco"><span class="n">7</span>DLCO</a>
+  <a href="#equations" data-s="equations"><span class="n">8</span>สมการอ้างอิง (GLI vs Siriraj)</a>
+  <div class="grp">เครื่องมือ</div>
+  <a href="#calculator" data-s="calculator"><span class="n">⚙</span>เครื่องคำนวณ + แปลผล</a>
+  <a href="#cases" data-s="cases"><span class="n">✎</span>Case ฝึกแปลผล</a>
+  <a href="#refs" data-s="refs"><span class="n">§</span>เอกสารอ้างอิง</a>
+</nav>
+<main id="main">
+
+<!-- ============ 1 OVERVIEW ============ -->
+<section class="ch" id="s-overview">
+<h1>หลักคิดการแปลผล PFT ยุคใหม่</h1>
+<p class="lead">ERS/ATS 2022 เปลี่ยนคำถามจาก "ค่านี้ผิดปกติไหม" เป็น "ค่านี้ห่างจากคนปกติที่อายุ เพศ ส่วนสูงเดียวกันแค่ไหน" — ใช้ LLN (5th percentile) และ z-score แทน 80% predicted และ FEV1/FVC 0.70</p>
+
+<h2>แปลผล 5 ขั้น</h2>
+<ol class="steps">
+<li><b>ผลเชื่อได้ไหม</b> — ดู acceptability / repeatability / grade ก่อนเสมอ (บทที่ 2)</li>
+<li><b>เทียบกับคนปกติ</b> — แต่ละค่าอยู่ต่ำกว่า LLN หรือสูงกว่า ULN หรือไม่ (z &lt; −1.645 หรือ &gt; +1.645) ระบุว่าใช้สมการไหน</li>
+<li><b>จัด pattern</b> — obstruction / restriction / mixed / non-specific ตาม algorithm ของ spirometry → lung volumes → DLCO</li>
+<li><b>ความรุนแรง</b> — ใช้ z-score 3 ระดับ (mild / moderate / severe)</li>
+<li><b>รวมกับคลินิก</b> — pre-test probability, BDR, เทียบผลเก่า (การเปลี่ยนแปลงตามเวลา)</li>
+</ol>
+
+<h2>z-score คืออะไร — ลองเลื่อนดู</h2>
+<div class="card">
+  <div class="row"><label for="zSl" style="min-width:70px">z-score</label><input type="range" id="zSl" min="-6" max="3" step="0.05" value="-2" style="flex:1"><b id="zVal" style="font-family:var(--mono);min-width:56px;text-align:right">−2.00</b></div>
+  <svg id="bell" viewBox="0 0 640 190" style="width:100%;height:auto"></svg>
+  <div id="zTxt"></div>
+</div>
+<div class="tw"><table>
+<tr><th>z-score</th><th>Percentile</th><th>ความหมาย (ERS/ATS 2022)</th></tr>
+<tr><td class="num">&gt; −1.645</td><td class="num">&gt; 5th</td><td>อยู่ในช่วงปกติ</td></tr>
+<tr><td class="num">−1.65 ถึง −2.5</td><td class="num">5th – 0.6th</td><td><span class="pill warn">Mild</span></td></tr>
+<tr><td class="num">−2.51 ถึง −4</td><td class="num"></td><td><span class="pill bad">Moderate</span></td></tr>
+<tr><td class="num">&lt; −4.1</td><td class="num"></td><td><span class="pill bad">Severe</span></td></tr>
+</table></div>
+<p class="src">ระดับความรุนแรงนี้มาจากความเสี่ยงตาย — z ระหว่าง −1.65 ถึง −2.5 ความเสี่ยงต่างกันน้อยจึงรวมเป็น mild; ความรุนแรงของ "การทำงานของปอด" ไม่เท่ากับความรุนแรงของ "โรค"</p>
+
+<h2>ทำไมเลิกใช้ 80% predicted และ 0.70</h2>
+<p>ค่า LLN เมื่อคิดเป็น % predicted ไม่คงที่ แต่ลดลงตามอายุ เช่น LLN ของ FEV1 ≈ 81% predicted ตอนอายุ 10 ปี แต่ ≈ 68% ตอนอายุ 85 ปี ส่วน FEV1/FVC ปกติก็ลดลงตามอายุ — ใช้ 0.70 ตายตัวจึง <b>วินิจฉัยเกินในผู้สูงอายุ</b> และ <b>พลาดในคนอายุน้อย</b></p>
+<div class="card">
+  <div class="row" style="margin-bottom:6px">
+    <div class="seg" id="ratioSex"><button data-v="M" class="on">ชาย</button><button data-v="F">หญิง</button></div>
+    <label>ส่วนสูง <input type="number" id="ratioHt" value="165" style="width:80px;display:inline-block"> cm</label>
+  </div>
+  <svg id="ratioChart" viewBox="0 0 660 330" style="width:100%;height:auto"></svg>
+  <p class="src">เส้นทึบ = LLN ของ FEV1/FVC ตามสมการแต่ละชุด, เส้นประ = 0.70 · พื้นที่ระหว่างเส้นคือกลุ่มที่ผลแปลต่างกัน</p>
+</div>
+<div class="key"><b>จำ:</b> LLN ไม่ได้เป็นเส้นแบ่ง "ป่วย/ไม่ป่วย" — ใกล้ LLN คือ zone of uncertainty ต้องดู pre-test probability; ถ้าตรวจคัดกรองคนความเสี่ยงต่ำ อาจใช้ LLN ที่ต่ำกว่านี้ (2.5th หรือ 1st percentile) แต่ต้องระบุใน report</div>
+</section>
+
+<!-- ============ 2 QUALITY ============ -->
+<section class="ch" id="s-quality">
+<h1>คุณภาพการตรวจ spirometry</h1>
+<p class="lead">ตาม ATS/ERS Standardization of Spirometry 2019 — แปลผลก่อนดูคุณภาพ = แปลผลจากข้อมูลที่อาจผิด</p>
+
+<h2>Acceptability ของแต่ละ maneuver</h2>
+<div class="tw"><table>
+<tr><th>เกณฑ์</th><th>ค่า</th><th>มีผลต่อ</th></tr>
+<tr><td>Back-extrapolated volume (BEV)</td><td>&lt; 5% ของ FVC หรือ 0.100 L (ค่าที่มากกว่า)</td><td>FEV1, FVC</td></tr>
+<tr><td>Hesitation time</td><td>≤ 2 วินาที</td><td>FEV1, FVC</td></tr>
+<tr><td>ไอในวินาทีแรก</td><td>ห้าม</td><td>FEV1</td></tr>
+<tr><td>Glottic closure / หยุดก่อน</td><td>ห้าม (ถ้าเกิดหลัง 1 วินาที FEV1 ยังใช้ได้)</td><td>FVC</td></tr>
+<tr><td>End of forced expiration (ต้องมีอย่างน้อย 1)</td><td>Plateau (เปลี่ยน &lt; 0.025 L ใน 1 s สุดท้าย) <i>หรือ</i> FET ≥ 15 s <i>หรือ</i> FVC ซ้ำได้ใกล้เคียง/มากกว่าค่าสูงสุดก่อนหน้า</td><td>FVC</td></tr>
+<tr><td>Inspiratory check</td><td>FIVC − FVC &lt; 0.100 L หรือ 5% ของ FVC</td><td>FEV1, FVC</td></tr>
+<tr><td>Leak / ปิดปากไม่สนิท / zero-flow ผิด</td><td>ห้าม</td><td>ทั้งคู่</td></tr>
+</table></div>
+<p class="note">ไม่มีเกณฑ์ FET ขั้นต่ำ 6 วินาทีแล้ว (ยกเลิกจากฉบับ 2005) · ค่าที่ <b>usable</b> แต่ไม่ acceptable ยังอาจมีประโยชน์ทางคลินิก ต้องเก็บไว้</p>
+
+<h2>Repeatability & Grade — ลองคำนวณ</h2>
+<p>ต้องได้ ≥ 3 acceptable maneuvers และสองค่าที่มากที่สุดต่างกัน ≤ 0.150 L (อายุ &gt; 6 ปี) ทำได้ถึง 8 ครั้งในผู้ใหญ่ หยุดถ้า FEV1 ลดลงเหลือ &lt; 80% ของค่าเริ่มต้น · grade ให้แยก FEV1 กับ FVC และแยก pre/post</p>
+<div class="card">
+  <div class="tw"><table id="gradeTbl"><tr><th>ครั้งที่</th><th>FEV1 (L)</th><th>acceptable</th><th>FVC (L)</th><th>acceptable</th></tr></table></div>
+  <div class="row"><button class="btn sec" id="gradeAdd">+ เพิ่มครั้ง</button><button class="btn sec" id="gradeEx">ตัวอย่าง</button></div>
+  <div id="gradeOut" style="margin-top:10px"></div>
+</div>
+<div class="tw"><table>
+<tr><th>Grade</th><th>จำนวน acceptable</th><th>ความต่างของ 2 ค่าสูงสุด (อายุ &gt; 6 ปี)</th></tr>
+<tr><td><b>A</b></td><td>≥ 3</td><td>≤ 0.150 L</td></tr>
+<tr><td><b>B</b></td><td>2</td><td>≤ 0.150 L</td></tr>
+<tr><td><b>C</b></td><td>≥ 2</td><td>≤ 0.200 L</td></tr>
+<tr><td><b>D</b></td><td>≥ 2</td><td>≤ 0.250 L</td></tr>
+<tr><td><b>E</b></td><td>≥ 2 หรือ 1</td><td>&gt; 0.250 L (หรือมี acceptable ครั้งเดียว)</td></tr>
+<tr><td><b>U</b></td><td>0 แต่มี usable ≥ 1</td><td>—</td></tr>
+<tr><td><b>F</b></td><td>ไม่มีทั้ง acceptable และ usable</td><td>—</td></tr>
+</table></div>
+<p class="src">Grade บอก "ความสม่ำเสมอของการเป่า" ไม่ใช่ "สุขภาพปอด" · การเลือกค่า: FVC และ FEV1 ใช้ค่ามากที่สุด (อาจมาจากคนละครั้ง), FEF25–75 จาก maneuver ที่ FEV1+FVC สูงสุด</p>
+
+<h2>หยุดยาก่อนตรวจ bronchodilator response</h2>
+<div class="tw"><table>
+<tr><th>ยา</th><th>ตัวอย่าง</th><th>หยุดก่อนตรวจ</th></tr>
+<tr><td>SABA</td><td>salbutamol</td><td>4–6 ชม.</td></tr>
+<tr><td>SAMA</td><td>ipratropium</td><td>12 ชม.</td></tr>
+<tr><td>LABA</td><td>formoterol, salmeterol</td><td>24 ชม.</td></tr>
+<tr><td>Ultra-LABA</td><td>indacaterol, vilanterol, olodaterol</td><td>36 ชม.</td></tr>
+<tr><td>LAMA</td><td>tiotropium, umeclidinium, glycopyrronium</td><td>36–48 ชม.</td></tr>
+<tr><td>ICS, LTRA</td><td></td><td>ไม่ต้องหยุด</td></tr>
+</table></div>
+<p class="src">ยารวม 2 ตัวใช้เวลาของตัวที่นานกว่า · ถ้าต้องการดูผลของยาที่ใช้อยู่ ไม่ต้องหยุด · การตรวจเพื่อวินิจฉัยครั้งแรกควรทำทั้ง pre และ post แม้ pre ปกติ</p>
+
+<h2>Relative contraindications</h2>
+<div class="grid2">
+<div class="card"><b>หัวใจ/หลอดเลือด</b><br>MI &lt; 1 สัปดาห์, hypotension หรือ HT รุนแรง, arrhythmia สำคัญ, HF ไม่ compensate, PH ควบคุมไม่ได้, acute cor pulmonale, PE ไม่ stable, เคยเป็นลมจากการเป่า/ไอ</div>
+<div class="card"><b>ความดันในกะโหลก/ตา/ทรวงอก/ช่องท้อง</b><br>cerebral aneurysm, ผ่าตัดสมอง &lt; 4 สัปดาห์, concussion ที่ยังมีอาการ, ผ่าตัดตา &lt; 1 สัปดาห์, ผ่าตัด/ติดเชื้อไซนัส-หูชั้นกลาง &lt; 1 สัปดาห์, pneumothorax, ผ่าตัดทรวงอก/ช่องท้อง &lt; 4 สัปดาห์, ตั้งครรภ์ไตรมาสท้าย</div>
+<div class="card"><b>ควบคุมการติดเชื้อ</b><br>สงสัย/เป็น TB หรือโรคติดต่อทางหายใจ, hemoptysis, เสมหะมาก, แผล/เลือดออกในปาก</div>
+<div class="card"><b>หลักคิด</b><br>เป็น "relative" — แพทย์ผู้ส่งตรวจชั่งประโยชน์/ความเสี่ยง และระบุในใบส่งตรวจ หยุดทันทีถ้าผู้ป่วยเจ็บ</div>
+</div>
+</section>
+
+<!-- ============ 3 SPIROMETRY ============ -->
+<section class="ch" id="s-spirometry">
+<h1>Spirometry: จัด pattern</h1>
+<p class="lead">เริ่มจาก FEV1/FVC เสมอ แล้วดู FVC — spirometry "บอกได้" ว่ามี obstruction แต่ "บอกได้แค่สงสัย" restriction เพราะต้องยืนยันด้วย TLC</p>
+
+<h2>Algorithm (ERS/ATS 2022 Figure 8) — คลิกเดินทีละขั้น</h2>
+<div class="card walker" id="wSpiro"></div>
+<div class="card tree" id="treeSpiro"></div>
+
+<h2>Pattern จาก spirometry</h2>
+<div class="tw"><table>
+<tr><th>Pattern</th><th>FEV1</th><th>FVC</th><th>FEV1/FVC</th><th>หมายเหตุ</th></tr>
+<tr><td><b>Obstruction</b></td><td>ปกติ/↓</td><td>ปกติ</td><td class="lo">↓</td><td>ถ้า FVC ↓ ด้วย อาจเป็น air trapping หรือ mixed → ต้องวัด TLC</td></tr>
+<tr><td><b>Restriction</b></td><td>↓</td><td>↓</td><td>ปกติ/↑</td><td>ต้องมี TLC &lt; LLN จึงยืนยัน</td></tr>
+<tr><td><b>Non-specific pattern</b></td><td>↓</td><td>↓</td><td>ปกติ</td><td>TLC ปกติ — อาจเป็นความพยายามไม่พอ, restriction ระยะแรก หรือ small airway disease ที่มี air trapping</td></tr>
+<tr><td><b>PRISm</b></td><td>↓</td><td>↓/ปกติ</td><td>ปกติ</td><td>ชื่อที่ใช้ในการศึกษาประชากร (ผู้สูบบุหรี่) เมื่อไม่มี TLC — ติดตามแล้วบางส่วนเป็น obstruction/restriction</td></tr>
+<tr><td><b>Muscle weakness / effort ไม่พอ</b></td><td>↓</td><td>↓</td><td>ปกติ</td><td>PEF ไม่แหลม</td></tr>
+<tr><td><b>Mixed</b></td><td>↓</td><td>↓</td><td class="lo">↓</td><td>ต้องมี FEV1/FVC และ TLC &lt; LLN ทั้งคู่</td></tr>
+<tr><td><b>Dysanapsis</b></td><td>ปกติ</td><td>ปกติ/↑</td><td class="lo">↓</td><td>ทางเดินหายใจโตไม่สมดุลกับเนื้อปอด — อาจเป็น normal variant แต่บางการศึกษาสัมพันธ์กับโรคอุดกั้นในอนาคต</td></tr>
+</table></div>
+<div class="note"><b>Non-specific pattern เจอแล้วทำอะไร:</b> ถ้าเป่าเต็มที่จริง ลองทำ BDR; เทียบ FVC กับ slow VC — ถ้า SVC มากกว่า FVC &gt; 100 mL แปลว่ามี airway collapse ระหว่างเป่าแรง; วัด TLC เพื่อแยก restriction · ติดตาม 3 ปี ราว 2/3 ยังเป็น pattern เดิม อีก 1/3 กลายเป็น obstruction หรือ restriction ชัดเจน</div>
+
+<h2>ความรุนแรง</h2>
+<div class="tw"><table>
+<tr><th>ระดับ</th><th>ERS/ATS 2005 (FEV1 % pred)</th><th>ERS/ATS 2022 (z-score)</th><th>GOLD (post-BD FEV1 % pred, เฉพาะ COPD)</th></tr>
+<tr><td>Mild</td><td>&gt; 70</td><td>−1.65 ถึง −2.5</td><td>GOLD 1: ≥ 80</td></tr>
+<tr><td>Moderate</td><td>60–69</td><td rowspan="2">−2.51 ถึง −4</td><td>GOLD 2: 50–79</td></tr>
+<tr><td>Moderately severe</td><td>50–59</td><td>GOLD 3: 30–49</td></tr>
+<tr><td>Severe</td><td>35–49</td><td rowspan="2">&lt; −4.1</td><td rowspan="2">GOLD 4: &lt; 30</td></tr>
+<tr><td>Very severe</td><td>&lt; 35</td></tr>
+</table></div>
+<p class="src">ในทางปฏิบัติ ความรุนแรงของ obstruction มักรายงานด้วย z-score ของ FEV1 · GOLD ยังใช้ % predicted เพื่อ grade COPD ซึ่งเป็นคนละระบบ</p>
+
+<h2>COPD: fixed ratio vs LLN</h2>
+<div class="grid2">
+<div class="card"><b>GOLD</b><br>วินิจฉัย COPD ด้วย post-BD FEV1/FVC &lt; 0.70 ร่วมกับอาการและปัจจัยเสี่ยง · ใช้ pre-BD spirometry เพื่อ <i>rule out</i> ได้ (pre-BD ปกติ → ไม่ใช่ COPD) แต่ต้องใช้ post-BD เพื่อ <i>ยืนยัน</i></div>
+<div class="card"><b>ERS/ATS / GLI</b><br>ใช้ LLN เพื่อบอกว่ามี airflow obstruction ทั่วไป · แถลงการณ์ร่วม GOLD–GLI (2026): ยอมรับว่า LLN ใช้หา obstruction ได้ แต่ในผู้ป่วยที่อาการและประวัติเข้าได้กับ COPD ให้ใช้ fixed ratio ยืนยัน COPD</div>
+</div>
+<p class="note"><b>Volume responder:</b> ผู้ป่วย air trapping มาก FVC ต่ำทำให้ pre-BD ratio ≥ 0.70 ได้ หลังพ่นยา FVC เพิ่มมากกว่า FEV1 ratio จึงลดลง &lt; 0.70 · <b>Flow responder</b> กลับกัน (ratio pre &lt; 0.70 แต่ post ≥ 0.70) — กลุ่มนี้ต้องติดตาม</p>
+
+<h2>ติดตามการเปลี่ยนแปลงตามเวลา</h2>
+<p>ผู้ใหญ่อายุ &gt; 25 ปีที่ไม่สูบบุหรี่ FEV1 ลดลงราว 30 mL/ปี · งานอาชีวอนามัยใช้การลดลง &gt; 15% ต่อปีเป็นค่าที่เกินความแปรปรวน · ทางเลือกคือ <b>FEV1Q</b> = FEV1 (L) ÷ 0.5 (ชาย) หรือ 0.4 (หญิง) — ค่าใกล้ 1 = ความเสี่ยงตายสูง ปกติลด 1 หน่วยทุก ~18 ปี (~10 ปีในผู้สูบบุหรี่/ผู้สูงอายุ)</p>
+<div class="card row">
+  <div class="seg" id="fqSex"><button data-v="M" class="on">ชาย</button><button data-v="F">หญิง</button></div>
+  <label>FEV1 (L) <input type="number" id="fqV" value="0.9" step="0.01" style="width:90px;display:inline-block"></label>
+  <b id="fqOut" style="font-family:var(--mono)"></b>
+</div>
+</section>
+
+<!-- ============ 4 BDR ============ -->
+<section class="ch" id="s-bdr">
+<h1>Bronchodilator responsiveness (BDR)</h1>
+<p class="lead">เกณฑ์ใหม่ ERS/ATS 2022 คิดการเปลี่ยนแปลงเทียบกับค่า <b>predicted</b> ไม่ใช่ค่า baseline เพื่อลด bias จากเพศและส่วนสูง (คนตัวเล็ก/ผู้หญิง baseline ต่ำ ทำให้ % เปลี่ยนแปลงสูงเกินจริง)</p>
+<div class="grid2">
+<div class="card"><b>ERS/ATS 2022</b><br>(post − pre) ÷ predicted × 100<br><span class="pill info">&gt; 10% ของ predicted</span> ใน FEV1 หรือ FVC</div>
+<div class="card"><b>ATS/ERS 2005 · GINA 2026</b><br>(post − pre) ÷ pre × 100<br><span class="pill info">≥ 12% และ ≥ 200 mL</span> ใน FEV1 (หรือ FVC ตาม 2005)<br><span class="src">GINA ยังไม่รับเกณฑ์ใหม่ รอข้อมูลในประชากรอื่นเพิ่ม · FEV1 เพิ่ม &gt; 400 mL สนับสนุน asthma มาก</span></div>
+</div>
+<h2>ลองคำนวณ</h2>
+<div class="card">
+  <div class="fg">
+    <div><label class="f">Pre FEV1 (L)</label><input type="number" id="bPre" value="1.27" step="0.01"></div>
+    <div><label class="f">Post FEV1 (L)</label><input type="number" id="bPost" value="1.56" step="0.01"></div>
+    <div><label class="f">Predicted FEV1 (L)</label><input type="number" id="bPred" value="1.78" step="0.01"></div>
+  </div>
+  <div id="bOut" style="margin-top:10px"></div>
+  <p class="src">ค่าตั้งต้นดัดแปลงจากตัวอย่างใน lecture: เกณฑ์ 2005 ได้ 22.8% ส่วนเกณฑ์ 2022 ได้ 16.3% — ทั้งคู่บวก แต่ตัวเลขต่างกันมาก (ดู Case 1 ที่สองเกณฑ์ให้ผลขัดกัน)</p>
+</div>
+<div class="warnbox">BDR ไม่ได้แยก asthma กับ COPD ได้ดี — COPD ก็มี BDR ได้ และ asthma ที่ควบคุมดีอาจไม่มี · ผลลบไม่ตัด asthma: ดู PEF variability, FeNO, bronchial provocation หรือการตอบสนองต่อ ICS 4–12 สัปดาห์</div>
+<h2>Bronchial provocation (methacholine) — PC20</h2>
+<div class="tw"><table>
+<tr><th>PC20 (mg/mL)</th><th>แปลผล</th></tr>
+<tr><td class="num">&gt; 16</td><td>ปกติ</td></tr><tr><td class="num">4–16</td><td>Borderline AHR</td></tr>
+<tr><td class="num">1–4</td><td>Mild AHR</td></tr><tr><td class="num">0.25–1</td><td>Moderate AHR</td></tr><tr><td class="num">&lt; 0.25</td><td>Marked AHR</td></tr>
+</table></div>
+<p class="src">ใช้เมื่อ spirometry ปกติแต่ยังสงสัย asthma — ผลลบช่วยตัด asthma ได้ดีในผู้ที่ไม่ได้ใช้ ICS</p>
+</section>
+
+<!-- ============ 5 LOOPS ============ -->
+<section class="ch" id="s-loops">
+<h1>Flow–volume loop & upper airway obstruction</h1>
+<p class="lead">ดูรูปทรง loop ก่อนตัวเลขเสมอ — central/upper airway obstruction ระยะแรก FEV1 และ FVC อาจปกติ แต่ PEF ต่ำมาก</p>
+<p>คลิกเลือกรูปเพื่อดูคำอธิบาย (รูปวาดจำลองเพื่อการสอน — ด้านบน = expiration, ด้านล่าง = inspiration, แกน x = volume)</p>
+<div class="loopgrid" id="loopGrid"></div>
+<div class="card" id="loopDesc"></div>
+
+<h2>แยก extrathoracic vs intrathoracic</h2>
+<div class="tw"><table>
+<tr><th></th><th>Fixed (ทั้งใน/นอกทรวงอก)</th><th>Variable extrathoracic</th><th>Variable intrathoracic</th></tr>
+<tr><td>Loop</td><td>แบนทั้งขาออกและขาเข้า</td><td>ขาเข้าแบน</td><td>ขาออกแบน</td></tr>
+<tr><td>PEF</td><td>↓</td><td>ปกติ/↓</td><td>↓</td></tr>
+<tr><td>FIF50%</td><td>↓</td><td>↓</td><td>ปกติ/↓</td></tr>
+<tr><td>FEF50%/FIF50%</td><td>≈ 1</td><td>&gt; 1</td><td>&lt; 1</td></tr>
+<tr><td>ตัวอย่าง</td><td>tracheal stenosis หลังใส่ท่อ, goiter รัด, tumor</td><td>vocal cord paralysis, VCD, OSA/laryngeal lesion</td><td>tracheomalacia, tumor ใน trachea ส่วนล่าง</td></tr>
+</table></div>
+<p class="src">ใน ERS/ATS 2022 Table 6 ใช้ FIF50%/FEF50% (กลับด้าน) — ที่นี่ใช้ FEF50/FIF50 ตามที่นิยมสอนในไทย</p>
+
+<h2>FEV1/PEF — ตัวช่วยสะดุดตา</h2>
+<div class="card">
+  <div class="fg">
+    <div><label class="f">FEV1 (mL)</label><input type="number" id="upFev1" value="650"></div>
+    <div><label class="f">PEF (L/min)</label><input type="number" id="upPef" value="42.6" step="0.1"></div>
+    <div><label class="f">หรือ PEF (L/s)</label><input type="number" id="upPefS" value="" step="0.01"></div>
+  </div>
+  <div id="upOut" style="margin-top:8px"></div>
+  <p class="src">ERS/ATS 2022: &gt; 8 mL/L/min ในผู้ใหญ่ ชวนสงสัย central/upper airway obstruction (lecture ไทยบางแหล่งใช้ &gt; 10) · เป่าต้นแรงไม่พอก็ทำให้ค่าสูงได้ · ถ้าสงสัยต้องดู inspiratory loop และส่องกล้อง/ภาพถ่ายทางเดินหายใจ เพราะ loop ปกติไม่ได้ตัดโรค</p>
+</div>
+</section>
+
+<!-- ============ 6 VOLUMES ============ -->
+<section class="ch" id="s-volumes">
+<h1>Lung volumes</h1>
+<p class="lead">Restriction นิยามด้วย <b>TLC &lt; LLN</b> — FVC ต่ำอย่างเดียวพบ TLC ต่ำจริงไม่ถึงครึ่ง แต่ FVC และ FEV1/FVC ปกติตัด restriction ได้ค่อนข้างแน่นในผู้ใหญ่</p>
+
+<h2>Algorithm (ERS/ATS 2022 Figure 10) — คลิกเดินทีละขั้น</h2>
+<div class="card walker" id="wVol"></div>
+<div class="card tree" id="treeVol"></div>
+
+<h2>Pattern จาก lung volumes</h2>
+<div class="tw"><table>
+<tr><th>Pattern</th><th>TLC</th><th>FRC</th><th>RV</th><th>RV/TLC</th><th>หมายเหตุ</th></tr>
+<tr><td>Large lungs</td><td class="hi">↑</td><td>↑</td><td>↑</td><td>ปกติ</td><td>normal variant</td></tr>
+<tr><td>Obstruction</td><td>ปกติ/↑</td><td>ปกติ/↑</td><td>↑</td><td>↑</td><td>FRC/TLC และ RV/TLC ↑ = hyperinflation; RV/TLC ↑ อย่างเดียว = gas trapping</td></tr>
+<tr><td>Simple restriction</td><td class="lo">↓</td><td>↓</td><td>↓</td><td>ปกติ</td><td>เช่น ILD — FEV1, FVC, TLC ลดในสัดส่วนใกล้กัน</td></tr>
+<tr><td>Complex restriction</td><td class="lo">↓</td><td>ปกติ/↑</td><td>ปกติ/↑</td><td>↑</td><td>FVC ลดมากกว่า TLC — neuromuscular, chest wall, obesity, gas trapping ที่ซ่อนอยู่</td></tr>
+<tr><td>Mixed</td><td class="lo">↓</td><td></td><td></td><td>ปกติ/↑</td><td>FEV1/FVC ↓ ด้วย เช่น ILD + COPD</td></tr>
+<tr><td>Muscle weakness</td><td>↓</td><td>ปกติ/↓</td><td>↑</td><td>↑</td><td>RV ↑ เด่นใน expiratory muscle weakness</td></tr>
+<tr><td>Obesity</td><td>ปกติ/↓</td><td>↓</td><td>ปกติ/↓</td><td>ปกติ/↑</td><td>ERV ต่ำเด่น; TLC ต่ำเมื่อ BMI &gt; 40</td></tr>
+</table></div>
+<div class="warnbox"><b>วิธีวัดมีผล:</b> gas dilution / nitrogen washout / VA จาก DLCO วัดเฉพาะส่วนที่ก๊าซเข้าถึง → <b>underestimate TLC</b> ใน obstruction (อาจต่างได้ถึง 3 L) อย่าใช้ VA ต่ำบอกว่ามี restriction ในผู้ป่วย obstruction · body plethysmography อาจ overestimate ใน obstruction รุนแรง</div>
+<p class="src">TLC สูงร่วมกับ FRC/RV สูง = เสีย elastic recoil (น่าจะ emphysema) · FRC/RV สูงแต่ TLC ปกติ พบใน chronic bronchitis หรือ asthma · IC/TLC ต่ำใน COPD สัมพันธ์กับเหนื่อยและการตาย</p>
+</section>
+
+<!-- ============ 7 DLCO ============ -->
+<section class="ch" id="s-dlco">
+<h1>DLCO (TLCO)</h1>
+<p class="lead">DLCO = KCO × VA — แปลผล DLCO ก่อน แล้วแตกดูว่าต่ำเพราะ VA (ปริมาตรที่ก๊าซเข้าถึง) หรือ KCO (ประสิทธิภาพการแลกเปลี่ยนต่อหน่วยปริมาตร)</p>
+
+<h2>Algorithm (ERS/ATS 2022 Figure 11) — คลิกเดินทีละขั้น</h2>
+<div class="card walker" id="wDl"></div>
+
+<h2>ต้องปรับตาม Hb เสมอ</h2>
+<p>Hb มีผลต่อ DLCO มาก — ต้องปรับค่า predicted ตาม Hb ก่อนแปลผล (ATS/ERS 2017):</p>
+<div class="card">
+  <div class="fg">
+    <div><label class="f">กลุ่ม</label><select id="hbSex"><option value="M">ชาย อายุ ≥ 15 ปี</option><option value="F">หญิง หรือเด็ก &lt; 15 ปี</option></select></div>
+    <div><label class="f">Hb (g/dL)</label><input type="number" id="hbV" value="9" step="0.1"></div>
+    <div><label class="f">DLCO predicted</label><input type="number" id="hbPred" value="22" step="0.1"></div>
+  </div>
+  <div id="hbOut" style="margin-top:8px"></div>
+  <p class="src">ชาย: predicted × 1.7Hb ÷ (10.22 + Hb) · หญิง/เด็ก: predicted × 1.7Hb ÷ (9.38 + Hb) · COHb สูง (สูบบุหรี่ก่อนตรวจ) ทำให้ DLCO ต่ำลง ควรงดบุหรี่ในวันตรวจ</p>
+</div>
+
+<h2>สาเหตุ DLCO สูง/ต่ำ</h2>
+<div class="grid2">
+<div class="card"><b>DLCO สูง (&gt; ULN)</b><br>เลือดในปอดมากขึ้น: L→R shunt, asthma, obesity, ออกกำลังกาย/Müller · Hb สูง: polycythemia · เลือดในถุงลม: alveolar hemorrhage</div>
+<div class="card"><b>VA ปกติ แต่ DLCO ต่ำ</b><br>pulmonary vascular disease (PH, PE, vasculitis), emphysema ที่ปริมาตรปอดยังปกติ, early ILD, anemia</div>
+<div class="card"><b>VA ต่ำ + KCO ต่ำ/ปกติ</b><br>สูญเสียโครงสร้าง alveolar–capillary ร่วมกับปริมาตรลด: ILD, emphysema</div>
+<div class="card"><b>VA ต่ำ + KCO สูง</b><br>ปอดขยายไม่เต็ม (extrapulmonary): neuromuscular, chest wall, หายใจเข้าไม่สุด; หรือปริมาตรหายเฉพาะที่ เช่น pneumonectomy</div>
+</div>
+<div class="note"><b>กับดัก KCO:</b> เมื่อ VA ต่ำ KCO จะสูงขึ้นเองแบบไม่เป็นเส้นตรง จึง "KCO ปกติ" ไม่ได้แปลว่าปกติจริง เมื่อ VA ต่ำ — DLCO/VA ไม่ได้ "แก้" ผลของปริมาตรปอดที่ต่ำ · VA/TLC ปกติ ~0.85–0.90 ถ้าต่ำกว่ามาก แสดงว่าก๊าซกระจายไม่ทั่ว (maldistribution) ช่วยกด DLCO</div>
+<p class="key">ใช้ DLCO แยก <b>asthma กับ COPD</b>: DLCO ต่ำ → เอนไปทาง COPD (emphysema) · BDR ≥ 400 mL → เอนไปทาง asthma</p>
+</section>
+
+<!-- ============ 8 EQUATIONS ============ -->
+<section class="ch" id="s-equations">
+<h1>สมการอ้างอิง: GLI Global vs GLI-2012 SEA vs Siriraj</h1>
+<p class="lead">ผลแปลขึ้นกับสมการที่เลือก — report ต้องระบุชื่อสมการเสมอ</p>
+<div class="tw"><table>
+<tr><th></th><th>GLI Global 2022</th><th>GLI-2012 South East Asian</th><th>Siriraj 2000</th></tr>
+<tr><td>ที่มา</td><td>วิเคราะห์ข้อมูล GLI-2012 (~74,000 คน) ใหม่แบบ race-neutral</td><td>สมการกลุ่ม SE Asian ของ GLI-2012 (ข้อมูลจากไทย ไต้หวัน จีน)</td><td>คนไทยไม่สูบบุหรี่ 3,954 คน อายุ ≥ 10 ปี (ตรวจ 1996–97)</td></tr>
+<tr><td>ผู้แนะนำ</td><td>ATS 2023 (ERS endorse) แนะนำ race-neutral</td><td>ERS/ATS 2022 (ตามเชื้อสาย); lab ศิริราชใช้อยู่</td><td>ใช้กันแพร่หลายในไทยตั้งแต่ปี 2000</td></tr>
+<tr><td>วิธีสถิติ</td><td>LMS (GAMLSS) — z-score ถูกต้องทุกช่วงอายุ</td><td>LMS (GAMLSS)</td><td>Linear regression — LLN = pred − 1.645×SEE (SEE คงที่ทุกอายุ)</td></tr>
+<tr><td>Parameters</td><td>FEV1, FVC, FEV1/FVC</td><td>FEV1, FVC, FEV1/FVC, FEF25–75</td><td>FEV1, FVC, FEV1/FVC, FEF25–75, PEF</td></tr>
+<tr><td>Lung volumes/DLCO</td><td colspan="3">ไม่มีสมการไทย/race-neutral — แอปนี้ใช้ GLI static lung volumes 2021 และ GLI TLCO 2017 ซึ่งสร้างจากคนเชื้อสายยุโรป (ตีความใกล้ LLN อย่างระวัง)</td></tr>
+</table></div>
+<h2>ผลกระทบที่รู้แล้วในคนไทย</h2>
+<ul>
+<li>เปลี่ยนจาก Siriraj → GLI-2012 ทำให้พบ airway obstruction น้อยลงในผู้ใหญ่ไทยอายุ 40–80 ปี (ความสอดคล้องปานกลางถึงดีมาก, kappa 0.62–0.78)</li>
+<li>Siriraj ใช้ SEE คงที่ → LLN ของ FEV1/FVC ในผู้สูงอายุ "สูง" กว่า GLI มาก จึงเรียก obstruction ได้ง่ายกว่า (ดูกราฟในบทที่ 1)</li>
+<li>สมการไทยแบบ GAMLSS ใหม่ (2022) เหมาะกับคนอายุ 60–80 ปีมากกว่า GLI-2012</li>
+<li>GLI Global ให้ค่า predicted สูงกว่า SEA เล็กน้อย → คนไทยหลายคนจะได้ z ต่ำลงเล็กน้อยเมื่อเปลี่ยนมาใช้</li>
+</ul>
+<div class="warnbox">ไม่มีสมการใดเหมาะกับทุกคน — เลือกหนึ่งชุดให้ตรงกับ lab ที่ส่งตรวจและใช้ต่อเนื่องเมื่อเทียบผลตามเวลา · ค่า z ของ Siriraj ในแอปนี้คำนวณจาก (obs − pred)/SEE เพื่อให้เทียบได้ ไม่ใช่ค่าที่ผู้พัฒนาสมการเผยแพร่</div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section class="ch" id="s-calculator">
+<h1>เครื่องคำนวณ + แปลผลอัตโนมัติ</h1>
+<p class="lead">กรอกเท่าที่มี — เว้นช่องว่างได้ · spirometry คำนวณ 3 สมการพร้อมกัน, lung volumes/DLCO ใช้ GLI</p>
+<div class="card">
+<div class="calc-in" id="calcIn">
+  <h4>ผู้ป่วย</h4>
+  <div><label class="f">เพศ</label><select id="cSex"><option value="M">ชาย</option><option value="F">หญิง</option></select></div>
+  <div><label class="f">อายุ (ปี)</label><input type="number" id="cAge" step="0.1"></div>
+  <div><label class="f">ส่วนสูง (cm)</label><input type="number" id="cHt" step="0.1"></div>
+  <div><label class="f">สมการหลักที่ใช้แปลผล</label><select id="cEq"><option value="gliGlobal">GLI Global 2022</option><option value="gli2012SEA">GLI-2012 SEA</option><option value="siriraj">Siriraj 2000</option></select></div>
+  <h4>Spirometry (pre-BD)</h4>
+  <div><label class="f">FEV1 (L)</label><input type="number" id="cFev1" step="0.01"></div>
+  <div><label class="f">FVC (L)</label><input type="number" id="cFvc" step="0.01"></div>
+  <div><label class="f">PEF (L/min) — ถ้ามี</label><input type="number" id="cPef" step="1"></div>
+  <h4>Post-BD (ถ้ามี)</h4>
+  <div><label class="f">FEV1 post (L)</label><input type="number" id="cFev1p" step="0.01"></div>
+  <div><label class="f">FVC post (L)</label><input type="number" id="cFvcp" step="0.01"></div>
+  <h4>Lung volumes (ถ้ามี)</h4>
+  <div><label class="f">TLC (L)</label><input type="number" id="cTlc" step="0.01"></div>
+  <div><label class="f">RV (L)</label><input type="number" id="cRv" step="0.01"></div>
+  <div><label class="f">FRC (L)</label><input type="number" id="cFrc" step="0.01"></div>
+  <h4>DLCO (ถ้ามี) — mL/min/mmHg</h4>
+  <div><label class="f">DLCO</label><input type="number" id="cDl" step="0.01"></div>
+  <div><label class="f">VA (L)</label><input type="number" id="cVa" step="0.01"></div>
+  <div><label class="f">KCO (mL/min/mmHg/L)</label><input type="number" id="cKco" step="0.01"></div>
+  <div><label class="f">Hb (g/dL)</label><input type="number" id="cHb" step="0.1"></div>
+</div>
+<div class="row" style="margin-top:14px"><button class="btn" id="cRun">คำนวณ</button><button class="btn sec" id="cClear">ล้าง</button><button class="btn sec" id="cEx">ตัวอย่าง</button></div>
+</div>
+<div id="calcOut"></div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="ch" id="s-cases">
+<h1>Case ฝึกแปลผล</h1>
+<p class="lead">ตอบทีละขั้น แล้วกด "เปิดในเครื่องคำนวณ" เพื่อดูตัวเลขทั้ง 3 สมการ · ผู้ป่วยในทุก case เป็นข้อมูลสมมุติ ดัดแปลงตัวเลขจากตัวอย่างใน lecture</p>
+<div id="caseList"></div>
+</section>
+
+<!-- ============ REFS ============ -->
+<section class="ch" id="s-refs">
+<h1>เอกสารอ้างอิง</h1>
+<ol style="font-size:15px">
+<li>Stanojevic S, Kaminsky DA, Miller MR, et al. ERS/ATS technical standard on interpretive strategies for routine lung function tests. <i>Eur Respir J</i> 2022;60:2101499.</li>
+<li>Graham BL, Steenbruggen I, Miller MR, et al. Standardization of Spirometry 2019 Update. ATS/ERS Technical Statement. <i>Am J Respir Crit Care Med</i> 2019;200:e70–e88.</li>
+<li>Bhakta NR, McGowan A, Ramsey KA, et al. ERS/ATS technical statement: standardisation of the measurement of lung volumes, 2023 update. <i>Eur Respir J</i> 2023;62:2201519.</li>
+<li>Graham BL, Brusasco V, Burgos F, et al. 2017 ERS/ATS standards for single-breath carbon monoxide uptake in the lung. <i>Eur Respir J</i> 2017;49:1600016.</li>
+<li>Bowerman C, Bhakta NR, Brazzale D, et al. A Race-neutral Approach to the Interpretation of Lung Function Measurements. <i>Am J Respir Crit Care Med</i> 2023;207:768–774. (GLI Global 2022)</li>
+<li>Bhakta NR, Bime C, Kaminsky DA, et al. Race and Ethnicity in Pulmonary Function Test Interpretation: An Official ATS Statement. <i>Am J Respir Crit Care Med</i> 2023;207:978–995.</li>
+<li>Quanjer PH, Stanojevic S, Cole TJ, et al. Multi-ethnic reference values for spirometry for the 3–95-yr age range: the GLI-2012 equations. <i>Eur Respir J</i> 2012;40:1324–43.</li>
+<li>Stanojevic S, Graham BL, Cooper BG, et al. GLI reference values for the carbon monoxide transfer factor for Caucasians. <i>Eur Respir J</i> 2017;50:1700010 (corrected 2020).</li>
+<li>Hall GL, Filipow N, Ruppel G, et al. GLI reference values for static lung volumes in individuals of European ancestry. <i>Eur Respir J</i> 2021;57:2000289.</li>
+<li>Dejsomritrutai W, Nana A, Maranetra KN, et al. Reference spirometric values for healthy lifetime nonsmokers in Thailand. <i>J Med Assoc Thai</i> 2000;83:457–66.</li>
+<li>Dejsomritrutai W. A New Derivation of the Reference Equations of Spirometric Values in the Thai Population Using the GAMLSS Method. <i>J Med Assoc Thai</i> 2022;105:15–21.</li>
+<li>Singh D, Stockley R, Anzueto A, et al. GOLD Science Committee recommendations for the use of pre- and post-bronchodilator spirometry for the diagnosis of COPD. <i>Eur Respir J</i> 2025;65:2401603.</li>
+<li>Global Initiative for Chronic Obstructive Lung Disease (GOLD) Report 2026; Global Initiative for Asthma (GINA) 2026.</li>
+<li>เบญจมาศ ช่วยชู. Pulmonary function tests / COPD (lecture handout). ภาควิชาอายุรศาสตร์ คณะแพทยศาสตร์ศิริราชพยาบาล.</li>
+</ol>
+<p class="src">ค่าสัมประสิทธิ์ GLI นำจากตาราง lookup ต้นฉบับของ GLI (ผ่าน R package rspiro, GPL) และตรวจเทียบกับ report GLI-2012 (SEA) จริงแล้ว ค่า predicted ตรงกัน (ต่างไม่เกิน ±0.05 z) · เครื่องมือนี้ใช้เพื่อการเรียนรู้ ไม่ใช่ซอฟต์แวร์ทางการแพทย์สำหรับรายงานผลจริง</p>
+</section>
+
+<div class="foot">จัดทำโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · Medisüem · อ้างอิงหลัก ERS/ATS 2022 · ปรับปรุง พ.ย. 2569</div>
+</main>
+</div>
+
+<div id="searchPanel"><div class="box">
+  <input type="text" id="searchIn" placeholder="ค้นหา เช่น PRISm, KCO, Hb, GOLD, UAO ...">
+  <div id="searchRes"></div>
+</div></div>
+
+<script src="calc.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var fx=function(v,d){return (v==null||isNaN(v))?'–':Number(v).toFixed(d==null?2:d)};
+var num=function(id){var v=parseFloat($('#'+id).value);return isNaN(v)?null:v};
+var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ---------- theme ---------- */
+if(store.get('pft-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+$('#themeBtn').onclick=function(){var d=document.documentElement.getAttribute('data-theme')==='dark';document.documentElement.setAttribute('data-theme',d?'light':'dark');store.set('pft-theme',d?'light':'dark');redrawAll()};
+
+/* ---------- routing ---------- */
+var SECS=['overview','quality','spirometry','bdr','loops','volumes','dlco','equations','calculator','cases','refs'];
+function show(id){if(SECS.indexOf(id)<0)id='overview';
+  $$('section.ch').forEach(function(s){s.classList.toggle('on',s.id==='s-'+id)});
+  $$('nav.side a').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-s')===id)});
+  $('#side').classList.remove('open');window.scrollTo(0,0);redrawAll();}
+window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
+$('#menuBtn').onclick=function(){$('#side').classList.toggle('open')};
+function go(id){if(location.hash==='#'+id)show(id);else location.hash=id;}
+
+/* ---------- CSS var helper ---------- */
+function cv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+
+/* ---------- normal dist ---------- */
+function phi(x){var t=1/(1+0.2316419*Math.abs(x)),d=0.3989423*Math.exp(-x*x/2),p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return x>0?1-p:p}
+function sev(z){if(z==null)return null;if(z>=-1.645)return['ปกติ','ok'];if(z>=-2.5)return['Mild','warn'];if(z>=-4)return['Moderate','bad'];return['Severe','bad']}
+
+/* ---------- z demo ---------- */
+function drawBell(){var z=parseFloat($('#zSl').value);$('#zVal').textContent=(z<0?'−':'')+Math.abs(z).toFixed(2);
+  var W=640,H=190,x0=30,x1=610,zmin=-6,zmax=3,X=function(v){return x0+(v-zmin)/(zmax-zmin)*(x1-x0)},Y=function(v){return 160-v*330};
+  var p='',sh='M'+X(zmin)+',160';for(var v=zmin;v<=zmax+1e-9;v+=0.05){var y=Y(Math.exp(-v*v/2)/Math.sqrt(2*Math.PI));p+=(p?'L':'M')+X(v).toFixed(1)+','+y.toFixed(1);if(v<=z)sh+='L'+X(v).toFixed(1)+','+y.toFixed(1)}
+  sh+='L'+X(z)+',160Z';var s=sev(z),col=s[1]==='ok'?cv('--ok'):s[1]==='warn'?cv('--warn'):cv('--bad');
+  var g='<path d="'+sh+'" fill="'+col+'" opacity=".28"/><path d="'+p+'" fill="none" stroke="'+cv('--ink2')+'" stroke-width="2"/><line x1="'+x0+'" x2="'+x1+'" y1="160" y2="160" stroke="'+cv('--line')+'"/>';
+  [[-1.645,'LLN −1.645'],[-2.5,'−2.5'],[-4,'−4']].forEach(function(t){g+='<line x1="'+X(t[0])+'" x2="'+X(t[0])+'" y1="20" y2="160" stroke="'+cv('--mute')+'" stroke-dasharray="4 3"/><text x="'+X(t[0])+'" y="14" font-size="11" text-anchor="middle" fill="'+cv('--mute')+'">'+t[1]+'</text>'});
+  for(var k=-6;k<=3;k++)g+='<text x="'+X(k)+'" y="178" font-size="11" text-anchor="middle" fill="'+cv('--mute')+'">'+k+'</text>';
+  g+='<line x1="'+X(z)+'" x2="'+X(z)+'" y1="25" y2="160" stroke="'+col+'" stroke-width="2.5"/>';
+  $('#bell').innerHTML=g;var pc=phi(z)*100;
+  $('#zTxt').innerHTML='Percentile ≈ <b style="font-family:var(--mono)">'+(pc<0.1?pc.toExponential(1):pc.toFixed(pc<1?2:1))+'</b> → <span class="pill '+s[1]+'">'+s[0]+'</span> · คนปกติที่อายุ/เพศ/ส่วนสูงเดียวกันมีค่าต่ำกว่านี้ราว '+(pc<1?(1/(pc/100)).toFixed(0)+' คนจะเจอ 1 คน':pc.toFixed(1)+'%');}
+$('#zSl').oninput=drawBell;
+
+/* ---------- ratio chart ---------- */
+var ratioSex='M';
+segInit('#ratioSex',function(v){ratioSex=v;drawRatio()});$('#ratioHt').oninput=drawRatio;
+function segInit(sel,cb){$$(sel+' button').forEach(function(b){b.onclick=function(){$$(sel+' button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cb(b.getAttribute('data-v'))}})}
+function drawRatio(){if(!DATA)return;var h=parseFloat($('#ratioHt').value)||165,W=660,H=330,l=50,r=640,t=20,b=290,a0=18,a1=90,y0=0.55,y1=0.95;
+  var X=function(a){return l+(a-a0)/(a1-a0)*(r-l)},Y=function(v){return b-(v-y0)/(y1-y0)*(b-t)};
+  var cols={gliGlobal:cv('--acc'),gli2012SEA:cv('--acc2'),siriraj:cv('--bad')},names={gliGlobal:'GLI Global',gli2012SEA:'GLI-2012 SEA',siriraj:'Siriraj'};
+  var g='';for(var v=0.6;v<=0.951;v+=0.05)g+='<line x1="'+l+'" x2="'+r+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="'+cv('--line')+'"/><text x="'+(l-6)+'" y="'+(Y(v)+4)+'" font-size="11" text-anchor="end" fill="'+cv('--mute')+'">'+v.toFixed(2)+'</text>';
+  for(var a=20;a<=90;a+=10)g+='<text x="'+X(a)+'" y="'+(b+16)+'" font-size="11" text-anchor="middle" fill="'+cv('--mute')+'">'+a+'</text>';
+  g+='<text x="'+((l+r)/2)+'" y="'+(b+34)+'" font-size="12" text-anchor="middle" fill="'+cv('--ink2')+'">อายุ (ปี)</text>';
+  g+='<line x1="'+l+'" x2="'+r+'" y1="'+Y(0.7)+'" y2="'+Y(0.7)+'" stroke="'+cv('--ink')+'" stroke-dasharray="6 4" stroke-width="1.5"/><text x="'+(r-4)+'" y="'+(Y(0.7)-6)+'" font-size="12" text-anchor="end" fill="'+cv('--ink')+'">0.70</text>';
+  var li=0;['gliGlobal','gli2012SEA','siriraj'].forEach(function(k){var p='';for(var a=a0;a<=a1;a+=0.5){var rr=PFTCalc[k](ratioSex,a,h,'FEV1FVC');if(!rr)continue;p+=(p?'L':'M')+X(a).toFixed(1)+','+Y(rr.lln).toFixed(1)}
+    g+='<path d="'+p+'" fill="none" stroke="'+cols[k]+'" stroke-width="2.5"/>';g+='<rect x="'+(l+10+li*140)+'" y="'+(t+2)+'" width="14" height="4" fill="'+cols[k]+'"/><text x="'+(l+28+li*140)+'" y="'+(t+8)+'" font-size="12" fill="'+cv('--ink2')+'">LLN '+names[k]+'</text>';li++});
+  $('#ratioChart').innerHTML=g;}
+
+/* ---------- grade calc ---------- */
+var gRows=[];function gRender(){var tb=$('#gradeTbl');$$('tr.gr',tb).forEach(function(r){r.remove()});
+  gRows.forEach(function(r,i){var tr=document.createElement('tr');tr.className='gr';tr.innerHTML='<td>'+(i+1)+'</td><td><input type="number" step="0.01" value="'+(r.f1==null?'':r.f1)+'" data-k="f1"></td><td><input type="checkbox" '+(r.a1?'checked':'')+' data-k="a1"></td><td><input type="number" step="0.01" value="'+(r.fv==null?'':r.fv)+'" data-k="fv"></td><td><input type="checkbox" '+(r.a2?'checked':'')+' data-k="a2"></td>';
+    $$('input',tr).forEach(function(inp){inp.oninput=inp.onchange=function(){var k=inp.getAttribute('data-k');r[k]=inp.type==='checkbox'?inp.checked:(inp.value===''?null:parseFloat(inp.value));gCalc()}});tb.appendChild(tr)});gCalc()}
+function grade(vals){var a=vals.filter(function(v){return v!=null}).sort(function(x,y){return y-x}),n=a.length;if(!n)return{g:'U/F',t:'ไม่มี acceptable → U (ถ้ามี usable) หรือ F'};if(n===1)return{g:'E',t:'มี acceptable ครั้งเดียว'};
+  var d=a[0]-a[1],t='2 ค่าสูงสุดต่างกัน '+(d*1000).toFixed(0)+' mL, acceptable '+n+' ครั้ง';
+  if(d<=0.1505&&n>=3)return{g:'A',t:t};if(d<=0.1505&&n===2)return{g:'B',t:t};if(d<=0.2005)return{g:'C',t:t};if(d<=0.2505)return{g:'D',t:t};return{g:'E',t:t}}
+function gCalc(){var g1=grade(gRows.map(function(r){return r.a1?r.f1:null})),g2=grade(gRows.map(function(r){return r.a2?r.fv:null}));
+  var best=function(k,a){var v=gRows.filter(function(r){return r[a]&&r[k]!=null}).map(function(r){return r[k]});return v.length?Math.max.apply(null,v):null};
+  var bf1=best('f1','a1'),bfv=best('fv','a2'),stop='';var first=gRows.length&&gRows[0].f1;gRows.forEach(function(r,i){if(i&&first&&r.f1!=null&&r.f1<0.8*first)stop=' <span class="pill bad">FEV1 ครั้งที่ '+(i+1)+' ลดลง &lt; 80% ของครั้งแรก → หยุดตรวจ</span>'});
+  $('#gradeOut').innerHTML='FEV1 grade <b class="pill info">'+g1.g+'</b> <span class="src">'+g1.t+'</span><br>FVC grade <b class="pill info">'+g2.g+'</b> <span class="src">'+g2.t+'</span><br>ค่าที่รายงาน: FEV1 <b>'+fx(bf1)+'</b> L, FVC <b>'+fx(bfv)+'</b> L, FEV1/FVC <b>'+(bf1&&bfv?fx(bf1/bfv):'–')+'</b>'+stop}
+$('#gradeAdd').onclick=function(){if(gRows.length<8){gRows.push({f1:null,fv:null,a1:true,a2:true});gRender()}};
+$('#gradeEx').onclick=function(){gRows=[{f1:2.41,fv:3.30,a1:true,a2:true},{f1:2.55,fv:3.28,a1:true,a2:false},{f1:2.38,fv:3.45,a1:false,a2:true},{f1:2.49,fv:3.41,a1:true,a2:true}];gRender()};
+gRows=[{f1:null,fv:null,a1:true,a2:true},{f1:null,fv:null,a1:true,a2:true},{f1:null,fv:null,a1:true,a2:true}];gRender();
+
+/* ---------- decision walkers ---------- */
+function Walker(el,tree,start){var path=[],cur=start;function render(){var n=tree[cur],h='';
+  h+='<div class="path">'+(path.length?path.map(function(p){return '<span>'+p+'</span>'}).join('→'):'เริ่มต้น')+'</div>';
+  if(n.q){h+='<div class="q">'+n.q+'</div>'+(n.hint?'<p class="src">'+n.hint+'</p>':'')+'<div class="row"><button class="btn" data-a="yes">'+(n.yl||'ใช่')+'</button><button class="btn sec" data-a="no">'+(n.nl||'ไม่ใช่')+'</button></div>'}
+  else{h+='<div class="res"><b>'+n.r+'</b><p>'+(n.t||'')+'</p></div>'}
+  if(path.length)h+='<div class="row" style="margin-top:10px"><button class="btn sec" data-a="back">← ย้อน</button><button class="btn sec" data-a="reset">เริ่มใหม่</button></div>';
+  el.innerHTML=h;$$('button',el).forEach(function(b){b.onclick=function(){var a=b.getAttribute('data-a');
+    if(a==='back'){var p=path.pop();cur=p.__from||start;hist.pop();cur=hist.length?hist[hist.length-1]:start;render();return}
+    if(a==='reset'){path=[];hist=[];cur=start;render();return}
+    var nx=a==='yes'?n.y:n.n;path.push(n.s+' '+(a==='yes'?'✓':'✗'));hist.push(nx);cur=nx;render()}})}var hist=[];render()}
+var TSP={
+  a:{q:'FEV1/FVC ต่ำกว่า LLN (z < −1.645) หรือไม่?',s:'FEV1/FVC ต่ำ',y:'b',n:'c'},
+  b:{q:'FVC ต่ำกว่า LLN หรือไม่?',s:'FVC ต่ำ',y:'mix',n:'obs'},
+  c:{q:'FVC ต่ำกว่า LLN หรือไม่?',s:'FVC ต่ำ',y:'nsp',n:'nor'},
+  obs:{r:'Airflow obstruction',t:'FVC ปกติ → ตัด restriction ร่วมได้เกือบแน่นอน · ประเมินความรุนแรงด้วย z ของ FEV1 · ทำ BDR ถ้ายังไม่ได้ทำ · ถ้า FEV1 ปกติแต่ ratio ต่ำ นึกถึง dysanapsis'},
+  mix:{r:'Obstruction + FVC ต่ำ → อาจเป็น mixed disorder (ต้องวัด lung volumes)',t:'FVC ต่ำอาจเกิดจาก air trapping (RV สูง) เพียงอย่างเดียว ถ้า TLC ปกติ = obstruction อย่างเดียว; ถ้า TLC < LLN = mixed'},
+  nsp:{r:'Possible restriction หรือ non-specific pattern (ต้องวัด TLC)',t:'TLC < LLN → restriction · TLC ปกติ → non-specific pattern (effort ไม่พอ, small airway disease/air trapping, restriction ระยะแรก) · ถ้าไม่มี TLC ในผู้สูบบุหรี่เรียกว่า PRISm'},
+  nor:{r:'Spirometry ปกติ',t:'FVC และ FEV1/FVC ปกติ ตัด restriction ได้ค่อนข้างแน่นในผู้ใหญ่ · ถ้า FEV1 < LLN อย่างเดียว (ratio และ FVC ปกติ) รายงานว่า FEV1 ต่ำแยกต่างหาก · ยังสงสัย asthma → ตรวจ provocation/variability'}};
+var TVOL={
+  a:{q:'TLC ต่ำกว่า LLN หรือไม่?',s:'TLC ต่ำ',y:'b',n:'c'},
+  b:{q:'FRC/TLC หรือ RV/TLC สูงกว่า ULN หรือไม่?',s:'RV/TLC สูง',y:'b2',n:'simple'},
+  b2:{q:'FEV1/FVC ต่ำกว่า LLN หรือไม่?',s:'FEV1/FVC ต่ำ',y:'mixed',n:'complex'},
+  c:{q:'FRC/TLC หรือ RV/TLC สูงกว่า ULN หรือไม่?',s:'RV/TLC สูง',y:'c2',n:'c3'},
+  c2:{q:'FEV1/FVC ต่ำกว่า LLN หรือไม่?',s:'FEV1/FVC ต่ำ',y:'hyp',n:'phyp'},
+  c3:{q:'TLC สูงกว่า ULN หรือไม่?',s:'TLC สูง',y:'large',n:'normal'},
+  simple:{r:'Simple restriction',t:'FEV1, FVC, TLC ลดลงสัดส่วนใกล้กัน เช่น ILD · ดู DLCO ต่อ'},
+  complex:{r:'Complex restriction',t:'FVC ลดลงมากกว่า TLC เพราะ RV สูงร่วม — neuromuscular disease, chest wall, obesity, หรือ gas trapping ซ่อนอยู่'},
+  mixed:{r:'Mixed disorder',t:'มีทั้ง obstruction (FEV1/FVC ต่ำ) และ restriction (TLC ต่ำ) เช่น ILD + COPD, COPD + HF'},
+  hyp:{r:'Hyperinflation / air trapping',t:'ถ้า TLC สูงด้วย = เสีย elastic recoil (emphysema) · ถ้า FRC/RV สูงแต่ TLC ปกติ พบใน chronic bronchitis หรือ asthma'},
+  phyp:{r:'Possible hyperinflation (gas trapping)',t:'RV/TLC สูงทั้งที่ FEV1/FVC ปกติ — small airway disease ระยะแรก, แต่ต้องแยก effort ไม่พอหรือ muscle weakness'},
+  large:{r:'Large lungs',t:'TLC สูงโดยไม่มี air trapping — normal variant'},
+  normal:{r:'Lung volumes ปกติ',t:''}};
+var TDL={
+  a:{q:'DLCO (ปรับ Hb แล้ว) อยู่ที่ระดับไหน?',s:'DLCO',y:'low',n:'a2',yl:'ต่ำกว่า LLN',nl:'ไม่ต่ำ'},
+  a2:{q:'DLCO สูงกว่า ULN หรือไม่?',s:'DLCO สูง',y:'high',n:'nl'},
+  low:{q:'VA ปกติหรือไม่?',s:'VA ปกติ',y:'lowVAn',n:'k'},
+  k:{q:'KCO สูงกว่า ULN หรือไม่?',s:'KCO สูง',y:'lowVAkh',n:'lowVAkl'},
+  lowVAn:{r:'DLCO ต่ำ, VA ปกติ',t:'Pulmonary vascular abnormality (PH, PE, vasculitis), emphysema ที่ปริมาตรปอดยังปกติ, early ILD, anemia (ถ้ายังไม่ปรับ Hb)'},
+  lowVAkl:{r:'DLCO ต่ำ, VA ต่ำ, KCO ต่ำ/ปกติ',t:'สูญเสียโครงสร้าง alveolar–capillary ร่วมกับปริมาตรปอดลด: ILD, emphysema · KCO "ปกติ" เมื่อ VA ต่ำยังถือว่าผิดปกติ'},
+  lowVAkh:{r:'DLCO ต่ำ, VA ต่ำ, KCO สูง',t:'ปอดขยายไม่เต็ม (neuromuscular, chest wall, หายใจเข้าไม่สุด — KCO สูงมาก) หรือปริมาตรหายเฉพาะที่ เช่น pneumonectomy (KCO สูงเล็กน้อย)'},
+  high:{r:'DLCO สูง',t:'เลือดในปอดมาก (L→R shunt, asthma, obesity), polycythemia, alveolar hemorrhage'},
+  nl:{r:'DLCO ปกติ',t:'ดู VA/TLC ถ้ามี body box — ต่ำกว่า ~0.85 บ่งว่าก๊าซกระจายไม่ทั่ว'}};
+
+/* static trees (svg) */
+function treeSvg(nodes,edges,w,h){var g='';edges.forEach(function(e){var a=nodes[e[0]],b=nodes[e[1]];g+='<path d="M'+a.x+','+(a.y+18)+' C'+a.x+','+(a.y+40)+' '+b.x+','+(b.y-40)+' '+b.x+','+(b.y-18)+'" fill="none" stroke="'+cv('--mute')+'" stroke-width="1.3"/><text x="'+((a.x+b.x)/2+(b.x<a.x?-8:8))+'" y="'+((a.y+b.y)/2+4)+'" font-size="11.5" text-anchor="middle" fill="'+(e[2]==='ใช่'?cv('--bad'):cv('--ok'))+'" font-weight="600">'+e[2]+'</text>'});
+  for(var k in nodes){var n=nodes[k],ww=n.w||150,leaf=n.leaf;g+='<rect x="'+(n.x-ww/2)+'" y="'+(n.y-18)+'" width="'+ww+'" height="36" rx="'+(leaf?18:7)+'" fill="'+(leaf?cv('--acc-soft'):cv('--card'))+'" stroke="'+(leaf?cv('--acc'):cv('--ink2'))+'"/>';
+    var lines=n.t.split('|');lines.forEach(function(L,i){g+='<text x="'+n.x+'" y="'+(n.y+4+(i-(lines.length-1)/2)*13)+'" font-size="12" text-anchor="middle" fill="'+cv('--ink')+'">'+L+'</text>'})}
+  return '<svg viewBox="0 0 '+w+' '+h+'">'+g+'</svg>'}
+function drawTrees(){
+  $('#treeSpiro').innerHTML=treeSvg({a:{x:380,y:30,t:'FEV1/FVC < LLN ?'},b:{x:190,y:120,t:'FVC < LLN ?'},c:{x:570,y:120,t:'FVC < LLN ?'},
+    m:{x:90,y:215,t:'Possible mixed|→ วัด TLC',leaf:1,w:140},o:{x:280,y:215,t:'Obstruction',leaf:1,w:130},n:{x:480,y:215,t:'Possible restriction /|non-specific → วัด TLC',leaf:1,w:175},z:{x:670,y:215,t:'Normal',leaf:1,w:110}},
+    [['a','b','ใช่'],['a','c','ไม่'],['b','m','ใช่'],['b','o','ไม่'],['c','n','ใช่'],['c','z','ไม่']],760,245);
+  $('#treeVol').innerHTML=treeSvg({a:{x:380,y:28,t:'TLC < LLN ?'},b:{x:175,y:105,t:'RV/TLC > ULN ?'},c:{x:575,y:105,t:'RV/TLC > ULN ?'},b2:{x:110,y:185,t:'FEV1/FVC < LLN ?',w:140},
+    s:{x:265,y:185,t:'Simple restriction',leaf:1,w:140},mx:{x:50,y:265,t:'Mixed',leaf:1,w:90},cx:{x:170,y:265,t:'Complex restr.',leaf:1,w:120},
+    c2:{x:480,y:185,t:'FEV1/FVC < LLN ?',w:140},c3:{x:700,y:185,t:'TLC > ULN ?',w:120},h:{x:405,y:265,t:'Hyperinflation',leaf:1,w:115},ph:{x:540,y:265,t:'Possible hyperinfl.',leaf:1,w:130},lg:{x:655,y:265,t:'Large',leaf:1,w:70},nm:{x:745,y:265,t:'Normal',leaf:1,w:75}},
+    [['a','b','ใช่'],['a','c','ไม่'],['b','b2','ใช่'],['b','s','ไม่'],['b2','mx','ใช่'],['b2','cx','ไม่'],['c','c2','ใช่'],['c','c3','ไม่'],['c2','h','ใช่'],['c2','ph','ไม่'],['c3','lg','ใช่'],['c3','nm','ไม่']],795,295);}
+Walker($('#wSpiro'),TSP,'a');Walker($('#wVol'),TVOL,'a');Walker($('#wDl'),TDL,'a');
+
+/* ---------- FEV1Q ---------- */
+var fqSex='M';segInit('#fqSex',function(v){fqSex=v;fq()});$('#fqV').oninput=fq;
+function fq(){var v=parseFloat($('#fqV').value);if(isNaN(v)){$('#fqOut').textContent='';return}var q=v/(fqSex==='M'?0.5:0.4);$('#fqOut').innerHTML='FEV1Q = '+q.toFixed(2)+(q<2?' <span class="pill bad">ใกล้ขีดอยู่รอด</span>':'')}
+
+/* ---------- BDR ---------- */
+function bdr(){var pre=num('bPre'),post=num('bPost'),pr=num('bPred');if(pre==null||post==null){$('#bOut').innerHTML='';return}
+  var d=post-pre,h='';var a=pr?100*d/pr:null,b=100*d/pre;
+  h+='<div>ERS/ATS 2022: '+(a==null?'ต้องมี predicted':'<b>'+a.toFixed(1)+'%</b> ของ predicted → '+(a>10?'<span class="pill ok">positive</span>':'<span class="pill warn">negative</span>'))+'</div>';
+  h+='<div>2005 / GINA: <b>'+b.toFixed(1)+'%</b> และ <b>'+Math.round(d*1000)+' mL</b> → '+(b>=12&&d>=0.2?'<span class="pill ok">positive</span>':'<span class="pill warn">negative</span>')+(d>0.4?' <span class="pill info">&gt; 400 mL สนับสนุน asthma</span>':'')+'</div>';
+  $('#bOut').innerHTML=h}
+['bPre','bPost','bPred'].forEach(function(i){$('#'+i).oninput=bdr});bdr();
+
+/* ---------- UAO ---------- */
+function uao(){var f=num('upFev1'),p=num('upPef'),ps=num('upPefS');if(ps!=null){p=ps*60}if(f==null||!p){$('#upOut').innerHTML='';return}
+  var r=f/p;$('#upOut').innerHTML='FEV1/PEF = <b style="font-family:var(--mono)">'+r.toFixed(1)+'</b> mL/L/min (PEF '+p.toFixed(0)+' L/min) → '+(r>10?'<span class="pill bad">&gt; 10 สงสัย UAO มาก</span>':r>8?'<span class="pill warn">&gt; 8 สงสัย UAO</span>':'<span class="pill ok">ไม่ชวนสงสัย</span>')}
+['upFev1','upPef','upPefS'].forEach(function(i){$('#'+i).oninput=uao});uao();
+
+/* ---------- Hb ---------- */
+function hb(){var h=num('hbV'),p=num('hbPred'),m=$('#hbSex').value==='M';if(h==null||p==null){$('#hbOut').innerHTML='';return}
+  var f=1.7*h/((m?10.22:9.38)+h);$('#hbOut').innerHTML='Factor = <b>'+f.toFixed(3)+'</b> → DLCO predicted ที่ปรับแล้ว = <b>'+(p*f).toFixed(1)+'</b> (เดิม '+p+') · ถ้าวัดได้ '+(p*f).toFixed(1)+' ถือว่า 100% ของค่าที่ปรับแล้ว'}
+['hbV','hbPred','hbSex'].forEach(function(i){$('#'+i).oninput=$('#'+i).onchange=hb});hb();
+
+/* ---------- loops ---------- */
+var LOOPS=[
+ {k:'normal',n:'Normal',d:'ขาออกขึ้นเร็วถึง PEF แหลม แล้วลดลงเป็นเส้นตรง · ขาเข้าเป็นครึ่งวงกลม'},
+ {k:'obs',n:'Mild–moderate obstruction',d:'PEF ลดลงเล็กน้อย ช่วงท้ายของขาออก "เว้า" (scooped/concave) จาก small airway และ elastic recoil ลด'},
+ {k:'sev',n:'Severe obstruction',d:'PEF ต่ำ หลัง peak flow ตกฮวบ (dynamic airway collapse) แล้วลากยาวต่ำ ๆ — FVC อาจลดจาก air trapping'},
+ {k:'vext',n:'Variable extrathoracic UAO',d:'ขาเข้าแบน (plateau) แต่ขาออกปกติ — แรงดันลบขณะหายใจเข้าดูดทางเดินหายใจนอกทรวงอกให้แคบลง เช่น vocal cord paralysis, VCD'},
+ {k:'vint',n:'Variable intrathoracic UAO',d:'ขาออกแบน ขาเข้าค่อนข้างปกติ — แรงดันบวกในทรวงอกขณะเป่าออกกด trachea เช่น tracheomalacia, tumor ใน trachea'},
+ {k:'fixed',n:'Fixed central/upper airway obstruction',d:'แบนทั้งขาออกและขาเข้า (รูปกล่อง) FEF50/FIF50 ≈ 1 เช่น tracheal stenosis หลังใส่ท่อช่วยหายใจ, goiter รัด'},
+ {k:'uni',n:'Unilateral mainstem bronchus obstruction',d:'ขาเข้าสูงตอนต้นแล้วลดลง (ปอดอีกข้างเติมช้า) · ขาออกลดลงตอนต้นแล้วเป็น plateau ช่วงกลาง (biphasic) — พบน้อย'},
+ {k:'res',n:'Restriction',d:'Loop แคบ (FVC ต่ำ) แต่รูปทรงสูงชัน/นูน (convex) เพราะ elastic recoil สูง · FEV1/FVC ปกติหรือสูง'},
+ {k:'mix',n:'Mixed disorder',d:'Loop แคบ + ขาออกเว้า — ต้องยืนยันด้วย TLC ต่ำร่วมกับ FEV1/FVC ต่ำ'}];
+function loopPts(k){var fvc=5,pef=9,fif=6,ex=[],ins=[],i,x,f;
+  if(k==='res'){fvc=2.6;pef=8}else if(k==='mix'){fvc=2.7;pef=4.2}else if(k==='sev'){fvc=3.6;pef=3.4}else if(k==='obs'){fvc=4.6;pef=6.8}
+  for(i=0;i<=100;i++){x=i/100;var v=x*fvc;
+    if(x<0.08)f=pef*Math.sin(x/0.08*Math.PI/2);else{var u=(x-0.08)/0.92;
+      if(k==='normal'||k==='vext')f=pef*(1-u);
+      else if(k==='obs')f=pef*Math.pow(1-u,1.9);
+      else if(k==='sev')f=pef*(0.25*Math.pow(1-u,1.2)+0.75*Math.exp(-u*9)*(1-u));
+      else if(k==='res')f=pef*Math.pow(1-u,0.75);
+      else if(k==='mix')f=pef*Math.pow(1-u,1.8);
+      else if(k==='vint'||k==='fixed')f=Math.min(pef*(1-u),2.6);
+      else if(k==='uni')f=Math.min(pef*(1-u),Math.max(3.2,pef*(1-u*3)))}
+    if(k==='vint'||k==='fixed'){if(x<0.08)f=Math.min(f,2.6)}
+    ex.push([v,f]);
+    var fi=fif*Math.sin(x*Math.PI);if(k==='res')fi=4.8*Math.sin(x*Math.PI);if(k==='mix')fi=3.8*Math.sin(x*Math.PI);if(k==='sev')fi=4.6*Math.sin(x*Math.PI);
+    if(k==='vext'||k==='fixed')fi=Math.min(fi,2.4);if(k==='uni')fi=fif*Math.pow(Math.sin(x*Math.PI),0.35)*(1-0.7*x);
+    ins.push([v,-Math.max(0,fi)])}
+  return{ex:ex,ins:ins,fvc:fvc}}
+function loopSvg(k,big){var W=big?420:200,H=big?300:150,P=loopPts(k),xm=5.4,ym=10,yn=-7,pad=big?30:10;
+  var X=function(v){return pad+v/xm*(W-pad*2)},Y=function(v){return pad+(ym-v)/(ym-yn)*(H-pad*2)};
+  var d1='',d2='';P.ex.forEach(function(p,i){d1+=(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)});P.ins.forEach(function(p,i){d2+=(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)});
+  var g='<line x1="'+pad+'" x2="'+(W-pad)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="'+cv('--line')+'"/><line x1="'+X(0)+'" x2="'+X(0)+'" y1="'+pad+'" y2="'+(H-pad)+'" stroke="'+cv('--line')+'"/>';
+  g+='<path d="'+d1+'" fill="none" stroke="'+cv('--acc')+'" stroke-width="'+(big?2.5:2)+'"/><path d="'+d2+'" fill="none" stroke="'+cv('--acc2')+'" stroke-width="'+(big?2.5:2)+'"/>';
+  if(big)g+='<text x="'+(W-pad)+'" y="'+(Y(0)-6)+'" font-size="12" text-anchor="end" fill="'+cv('--mute')+'">Volume →</text><text x="'+(X(0)+6)+'" y="'+(pad+10)+'" font-size="12" fill="'+cv('--acc')+'">Expiration</text><text x="'+(X(0)+6)+'" y="'+(H-pad-4)+'" font-size="12" fill="'+cv('--acc2')+'">Inspiration</text>';
+  return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto">'+g+'</svg>'}
+var loopSel='normal';function drawLoops(){$('#loopGrid').innerHTML=LOOPS.map(function(L){return '<div class="lp'+(L.k===loopSel?' on':'')+'" data-k="'+L.k+'"><b>'+L.n+'</b>'+loopSvg(L.k)+'</div>'}).join('');
+  $$('#loopGrid .lp').forEach(function(e){e.onclick=function(){loopSel=e.getAttribute('data-k');drawLoops()}});
+  var L=LOOPS.filter(function(l){return l.k===loopSel})[0];$('#loopDesc').innerHTML='<div class="grid2"><div>'+loopSvg(L.k,true)+'</div><div><h3 style="margin-top:0">'+L.n+'</h3><p>'+L.d+'</p></div></div>'}
+
+/* ---------- calculator ---------- */
+var EQS=[['gliGlobal','GLI Global'],['gli2012SEA','GLI-2012 SEA'],['siriraj','Siriraj']];
+function cls(r,two){if(!r||r.z==null)return'';if(r.linear){}var lowFlag=r.obs!=null?r.obs<r.lln:false;return ''}
+function cell(r,obs,lowOnly){if(!r)return'<td class="num eqsep">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td>';
+  var low=obs!=null&&obs<r.lln,high=obs!=null&&!lowOnly&&obs>r.uln;var c=low?'lo':high?'hi':'';
+  return '<td class="num eqsep">'+fx(r.pred)+'</td><td class="num">'+fx(r.lln)+'</td><td class="num '+c+'">'+(r.z==null?'–':fx(r.z))+'</td><td class="num '+c+'">'+(r.pp==null?'–':fx(r.pp,0))+'</td>'}
+function spiroPattern(o){ // o: {ratioLow, fvcLow, fev1Low, fev1z, ratioz}
+  if(o.ratioLow==null)return null;
+  if(o.ratioLow){if(o.fvcLow)return{p:'Obstruction + FVC ต่ำ → possible mixed (ต้องวัด TLC)',k:'mixq'};if(!o.fev1Low)return{p:'FEV1/FVC ต่ำแต่ FEV1 ปกติ → obstruction เล็กน้อยหรือ dysanapsis',k:'dys'};return{p:'Airflow obstruction',k:'obs'}}
+  if(o.fvcLow)return{p:'Possible restriction / non-specific pattern (ต้องวัด TLC)',k:'nsp'};
+  if(o.fev1Low)return{p:'FEV1 ต่ำแต่ FVC และ ratio ปกติ (แปลผลระวัง)',k:'fev1'};return{p:'Spirometry ปกติ',k:'nor'}}
+function calc(){var sex=$('#cSex').value,age=num('cAge'),ht=num('cHt'),eq=$('#cEq').value,out='',sum=[];
+  if(age==null||ht==null){$('#calcOut').innerHTML='<div class="warnbox">กรอกอายุและส่วนสูงก่อน</div>';return}
+  var f1=num('cFev1'),fv=num('cFvc'),pef=num('cPef'),f1p=num('cFev1p'),fvp=num('cFvcp'),tlc=num('cTlc'),rv=num('cRv'),frc=num('cFrc'),dl=num('cDl'),va=num('cVa'),kco=num('cKco'),hbv=num('cHb');
+  if(dl!=null&&va!=null&&kco==null)kco=dl/va;if(dl==null&&va!=null&&kco!=null)dl=kco*va;
+  var ratio=f1!=null&&fv!=null?f1/fv:null,eqName=EQS.filter(function(e){return e[0]===eq})[0][1],warn=[];
+  if(age<18)warn.push('แอปนี้ออกแบบสำหรับผู้ใหญ่ — เด็กใช้ได้แต่ตีความระวัง');
+  if(age<10)warn.push('Siriraj ใช้ได้เฉพาะอายุ ≥ 10 ปี');
+  out+='<div class="card"><h3 style="margin-top:0">Spirometry — เทียบ 3 สมการ</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th>';
+  EQS.forEach(function(e){out+='<th class="num eqsep" colspan="4">'+e[1]+(e[0]===eq?' ★':'')+'<span class="eqhead">pred · LLN · z · %pred</span></th>'});out+='</tr>';
+  var res={};EQS.forEach(function(e){res[e[0]]={}});
+  [['FEV1','FEV1 (L)',f1],['FVC','FVC (L)',fv],['FEV1FVC','FEV1/FVC',ratio]].forEach(function(p){out+='<tr><td>'+p[1]+'</td><td class="num"><b>'+fx(p[2])+'</b></td>';
+    EQS.forEach(function(e){var r=PFTCalc[e[0]](sex,age,ht,p[0],p[2]);res[e[0]][p[0]]=r;out+=cell(r,p[2],true)});out+='</tr>'});
+  out+='<tr><td>Pattern</td><td></td>';var pats={};
+  EQS.forEach(function(e){var R=res[e[0]],o={ratioLow:ratio!=null&&R.FEV1FVC?ratio<R.FEV1FVC.lln:null,fvcLow:fv!=null&&R.FVC?fv<R.FVC.lln:false,fev1Low:f1!=null&&R.FEV1?f1<R.FEV1.lln:false};var P=spiroPattern(o);pats[e[0]]=P;out+='<td colspan="4" class="eqsep" style="font-size:13.5px">'+(P?P.p:'–')+'</td>'});
+  out+='</tr></table></div>';
+  if(ratio!=null)out+='<p>FEV1/FVC = '+fx(ratio)+' → fixed ratio 0.70: '+(ratio<0.7?'<span class="pill bad">&lt; 0.70</span>':'<span class="pill ok">≥ 0.70</span>')+'</p>';
+  var keys=EQS.map(function(e){return pats[e[0]]?pats[e[0]].k:''});if(keys[0]&&(keys[0]!==keys[1]||keys[1]!==keys[2]))out+='<div class="warnbox"><b>สมการให้ pattern ไม่ตรงกัน</b> — ผลอยู่ใกล้ LLN (zone of uncertainty) ต้องใช้บริบททางคลินิกช่วยตัดสิน</div>';
+  out+='<p class="src">★ = สมการหลักที่ใช้แปลผลด้านล่าง · z ของ Siriraj = (obs − pred)/SEE (ประมาณ) · ตัวแดง = ต่ำกว่า LLN</p></div>';
+  var R=res[eq],P=pats[eq];
+  if(P){sum.push('Spirometry ('+eqName+'): '+P.p);
+    if(P.k==='obs'||P.k==='mixq'||P.k==='dys'){var s=sev(R.FEV1&&R.FEV1.z);if(s&&s[0]!=='ปกติ')sum.push('ความรุนแรง (z ของ FEV1 = '+fx(R.FEV1.z)+'): '+s[0]);else sum.push('FEV1 ยังอยู่ในช่วงปกติ (z = '+fx(R.FEV1&&R.FEV1.z)+')')}
+    if(P.k==='nsp'){var s2=sev(R.FVC&&R.FVC.z);if(s2)sum.push('FVC z = '+fx(R.FVC.z)+' ('+s2[0]+')')}}
+  // BDR
+  if(f1!=null&&(f1p!=null||fvp!=null)){out+='<div class="card"><h3 style="margin-top:0">Bronchodilator response</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">pre</th><th class="num">post</th><th class="num">Δ mL</th><th class="num">% baseline</th><th class="num">% predicted ('+eqName+')</th><th>2022 (&gt;10% pred)</th><th>2005/GINA (≥12% & ≥200 mL)</th></tr>';
+    var pos22=false,pos05=false;[['FEV1',f1,f1p],['FVC',fv,fvp]].forEach(function(p){if(p[1]==null||p[2]==null)return;var d=p[2]-p[1],pr=R[p[0]]?R[p[0]].pred:null,a=pr?100*d/pr:null,b=100*d/p[1],y22=a!=null&&a>10,y05=b>=12&&d>=0.2;pos22=pos22||y22;pos05=pos05||y05;
+      out+='<tr><td>'+p[0]+'</td><td class="num">'+fx(p[1])+'</td><td class="num">'+fx(p[2])+'</td><td class="num">'+Math.round(d*1000)+'</td><td class="num">'+fx(b,1)+'</td><td class="num">'+fx(a,1)+'</td><td>'+(y22?'<span class="pill ok">+</span>':'<span class="pill warn">−</span>')+'</td><td>'+(y05?'<span class="pill ok">+</span>':'<span class="pill warn">−</span>')+'</td></tr>'});
+    out+='</table></div>';
+    if(f1p!=null&&fvp!=null){var pr2=f1p/fvp,rr=PFTCalc[eq](sex,age,ht,'FEV1FVC',pr2);out+='<p>Post-BD FEV1/FVC = <b>'+fx(pr2)+'</b> ('+(pr2<0.7?'&lt; 0.70 → เข้าเกณฑ์ GOLD ถ้าคลินิกเข้าได้':'≥ 0.70')+(rr?'; LLN '+fx(rr.lln)+', z '+fx(rr.z):'')+')';
+      if(ratio!=null&&((ratio<0.7)!==(pr2<0.7)))out+=' <span class="pill info">'+(ratio>=0.7?'volume responder':'flow responder')+'</span>';
+      var pf=PFTCalc.gliGlobal(sex,age,ht,'FEV1',f1p);if(pr2<0.7&&pf){var gp=100*f1p/pf.pred;out+=' · post-BD FEV1 '+gp.toFixed(0)+'% pred (GLI Global) → GOLD '+(gp>=80?1:gp>=50?2:gp>=30?3:4)}out+='</p>'}
+    out+='</div>';sum.push('BDR: '+(pos22?'positive':'negative')+' ตามเกณฑ์ 2022; '+(pos05?'positive':'negative')+' ตามเกณฑ์ 2005/GINA'+(pos22!==pos05?' (สองเกณฑ์ไม่ตรงกัน)':''))}
+  // UAO
+  if(f1!=null&&pef!=null){var up=f1*1000/pef;sum.push('FEV1/PEF = '+up.toFixed(1)+' mL/L/min'+(up>8?' → สงสัย central/upper airway obstruction ดู flow–volume loop':''))}
+  // volumes
+  if(tlc!=null||rv!=null||frc!=null){if(age>80||age<5)warn.push('GLI lung volumes ใช้ได้อายุ 5–80 ปี');
+    var V={TLC:tlc,RV:rv,FRC:frc,RVTLC:(rv!=null&&tlc!=null)?100*rv/tlc:null},VR={};
+    out+='<div class="card"><h3 style="margin-top:0">Lung volumes (GLI 2021)</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th><th class="num">pred</th><th class="num">LLN</th><th class="num">ULN</th><th class="num">z</th><th class="num">%pred</th></tr>';
+    ['TLC','RV','FRC','RVTLC'].forEach(function(p){if(V[p]==null)return;var r=PFTCalc.gliVol(sex,age,ht,p,V[p]);VR[p]=r;if(!r)return;var c=V[p]<r.lln?'lo':V[p]>r.uln?'hi':'';
+      out+='<tr><td>'+(p==='RVTLC'?'RV/TLC (%)':p+' (L)')+'</td><td class="num"><b>'+fx(V[p],p==='RVTLC'?1:2)+'</b></td><td class="num">'+fx(r.pred,p==='RVTLC'?1:2)+'</td><td class="num">'+fx(r.lln,p==='RVTLC'?1:2)+'</td><td class="num">'+fx(r.uln,p==='RVTLC'?1:2)+'</td><td class="num '+c+'">'+fx(r.z)+'</td><td class="num">'+fx(r.pp,0)+'</td></tr>'});
+    out+='</table></div>';
+    if(tlc!=null&&VR.TLC){var tl=tlc<VR.TLC.lln,th=tlc>VR.TLC.uln,trap=(VR.RVTLC&&V.RVTLC>VR.RVTLC.uln),rl=P&&(P.k==='obs'||P.k==='mixq'||P.k==='dys'),vp;
+      if(tl){vp=trap?(rl?'Mixed disorder':'Complex restriction'):'Simple restriction';var s3=sev(VR.TLC.z);vp+=' (TLC z '+fx(VR.TLC.z)+', '+s3[0]+')'}
+      else if(trap)vp=rl?'Hyperinflation / air trapping':'Possible hyperinflation (gas trapping)';else if(th)vp='Large lungs';else vp='Lung volumes ปกติ — ตัด restriction'+(P&&P.k==='nsp'?' → spirometry เป็น non-specific pattern':'');
+      if(!VR.RVTLC&&!tl)vp+=' (ไม่มี RV จึงประเมิน air trapping ไม่ได้)';
+      out+='<p><b>'+vp+'</b></p>';sum.push('Lung volumes: '+vp)}
+    out+='<p class="src">สมการ GLI lung volumes สร้างจากคนเชื้อสายยุโรป · TLC จาก gas dilution underestimate ในผู้ป่วย obstruction</p></div>'}
+  // DLCO
+  if(dl!=null||va!=null||kco!=null){if(age>90||age<5)warn.push('GLI TLCO ใช้ได้อายุ 5–90 ปี');
+    var hf=1;if(hbv!=null){hf=1.7*hbv/(((sex==='M'&&age>=15)?10.22:9.38)+hbv)}
+    var D={TLCO:dl,VA:va,KCO:kco},DR={};out+='<div class="card"><h3 style="margin-top:0">DLCO (GLI 2017'+(hbv!=null?', ปรับ Hb factor '+hf.toFixed(3):'')+')</h3><div class="tw"><table><tr><th>ค่า</th><th class="num">วัดได้</th><th class="num">pred</th><th class="num">LLN</th><th class="num">ULN</th><th class="num">z</th><th class="num">%pred</th></tr>';
+    ['TLCO','VA','KCO'].forEach(function(p){if(D[p]==null)return;var adj=(p!=='VA'&&hf!==1)?hf:1;var r=PFTCalc.gliTLCO(sex,age,ht,p,D[p]/adj);if(!r)return;r={pred:r.pred*adj,lln:r.lln*adj,uln:r.uln*adj,z:r.z,pp:r.pp};DR[p]=r;var c=D[p]<r.lln?'lo':D[p]>r.uln?'hi':'';
+      out+='<tr><td>'+(p==='TLCO'?'DLCO':p)+'</td><td class="num"><b>'+fx(D[p])+'</b></td><td class="num">'+fx(r.pred)+'</td><td class="num">'+fx(r.lln)+'</td><td class="num">'+fx(r.uln)+'</td><td class="num '+c+'">'+fx(r.z)+'</td><td class="num">'+fx(r.pp,0)+'</td></tr>'});
+    out+='</table></div>';
+    if(DR.TLCO){var dp,dlow=dl<DR.TLCO.lln,dhi=dl>DR.TLCO.uln;
+      if(dhi)dp='DLCO สูง — เลือดในปอดมาก, polycythemia, alveolar hemorrhage';
+      else if(!dlow)dp='DLCO ปกติ';
+      else if(DR.VA&&va>=DR.VA.lln)dp='DLCO ต่ำ, VA ปกติ → pulmonary vascular disease, emphysema ที่ปริมาตรยังปกติ, early ILD'+(hbv==null?', หรือ anemia (ยังไม่ได้ปรับ Hb)':'');
+      else if(DR.VA&&DR.KCO&&kco>DR.KCO.uln)dp='DLCO ต่ำ, VA ต่ำ, KCO สูง → ปอดขยายไม่เต็ม (extrapulmonary) หรือสูญเสียปริมาตรเฉพาะที่';
+      else if(DR.VA)dp='DLCO ต่ำ, VA ต่ำ, KCO ต่ำ/ปกติ → สูญเสีย alveolar–capillary unit (ILD, emphysema)';
+      else dp='DLCO ต่ำ (ไม่มี VA ให้แยกต่อ)';
+      if(dlow){var s4=sev(DR.TLCO.z);dp+=' · ความรุนแรง '+s4[0]+' (z '+fx(DR.TLCO.z)+')'}
+      if(va!=null&&tlc!=null)dp+=' · VA/TLC = '+fx(va/tlc)+(va/tlc<0.85?' (ต่ำ → gas maldistribution)':'');
+      out+='<p><b>'+dp+'</b></p>';sum.push('DLCO: '+dp)}
+    out+='<p class="src">สมการ GLI TLCO สร้างจากคนเชื้อสายยุโรป · หน่วย mL/min/mmHg (ถ้าเครื่องรายงาน mmol/min/kPa ให้คูณ 2.986)</p></div>'}
+  var w=warn.length?'<div class="warnbox">'+warn.join('<br>')+'</div>':'';
+  var txt='สรุปแปลผล (อายุ '+age+' ปี, '+(sex==='M'?'ชาย':'หญิง')+', '+ht+' cm)\n• '+sum.join('\n• ');
+  $('#calcOut').innerHTML=w+'<div class="card"><h3 style="margin-top:0">สรุป</h3><div class="sum" id="sumTxt"></div><div class="row" style="margin-top:8px"><button class="btn sec" id="copySum">คัดลอกสรุป</button><span class="src" id="copyMsg"></span></div><p class="src">ผลแปลอัตโนมัติจาก algorithm — ต้องดูคุณภาพการตรวจ รูป loop และคลินิกประกอบเสมอ</p></div>'+out;
+  $('#sumTxt').textContent=txt;$('#copySum').onclick=function(){try{navigator.clipboard.writeText(txt).then(function(){$('#copyMsg').textContent='คัดลอกแล้ว'},function(){$('#copyMsg').textContent='คัดลอกไม่ได้ — เลือกข้อความเอง'})}catch(e){$('#copyMsg').textContent='คัดลอกไม่ได้ — เลือกข้อความเอง'}}}
+var CF=['cAge','cHt','cFev1','cFvc','cPef','cFev1p','cFvcp','cTlc','cRv','cFrc','cDl','cVa','cKco','cHb'];
+function fill(d){$('#cSex').value=d.sex||'M';CF.forEach(function(k){$('#'+k).value=d[k]!=null?d[k]:''});if(d.cEq)$('#cEq').value=d.cEq;calc()}
+$('#cRun').onclick=calc;$('#cEq').onchange=function(){if(num('cAge')!=null)calc()};
+$('#cClear').onclick=function(){CF.forEach(function(k){$('#'+k).value=''});$('#calcOut').innerHTML=''};
+$('#cEx').onclick=function(){fill({sex:'M',cAge:68,cHt:165,cFev1:1.47,cFvc:2.97,cFev1p:1.68,cFvcp:3.15})};
+
+/* ---------- cases ---------- */
+var CASES=[
+ {t:'Case 1 — ชายสูบบุหรี่ เหนื่อยเรื้อรัง',v:'ชาย 68 ปี สูง 165 cm สูบบุหรี่ 40 pack-year เหนื่อยเวลาเดินขึ้นบันได 2 ปี',d:{sex:'M',cAge:68,cHt:165,cFev1:1.47,cFvc:2.97,cFev1p:1.68,cFvcp:3.15},
+  tbl:[['','Pre','Post'],['FEV1 (L)','1.47','1.68'],['FVC (L)','2.97','3.15'],['FEV1/FVC','0.49','0.53']],
+  qs:[{q:'Pattern จาก spirometry (GLI Global) คืออะไร?',o:['Obstruction','Possible restriction','Mixed','Normal'],a:0,e:'FEV1/FVC 0.49 ต่ำกว่า LLN (≈0.65, z ≈ −3.1) และ FVC ปกติ (z ≈ −0.7) → airflow obstruction ล้วน ไม่ต้องสงสัย restriction ร่วม'},
+   {q:'ความรุนแรงตาม ERS/ATS 2022?',o:['Mild','Moderate','Severe'],a:1,e:'z ของ FEV1 ≈ −2.6 (−2.51 ถึง −4) = moderate · ถ้าใช้ระบบ 2005 คือ FEV1 57% → moderately severe'},
+   {q:'BDR เป็นอย่างไร?',o:['Positive ทั้งสองเกณฑ์','Positive ตาม 2005/GINA แต่ negative ตาม ERS/ATS 2022','Negative ทั้งสองเกณฑ์'],a:1,e:'FEV1 เพิ่ม 210 mL = 14% ของ baseline (ผ่าน ≥12% & ≥200 mL) แต่คิดเป็นแค่ ~8% ของ predicted (ไม่ถึง 10%) — baseline ต่ำทำให้ % จาก baseline ดูสูง นี่คือเหตุผลที่ 2022 เปลี่ยนมาเทียบ predicted · post-BD ratio 0.53 < 0.70 → เข้าได้กับ COPD (GOLD 2)'}]},
+ {t:'Case 2 — หญิงสาว หอบตอนกลางคืน',v:'หญิง 24 ปี สูง 158 cm เหนื่อย หายใจมีเสียงวี้ดในคอ มักเป็นตอนกลางคืน ตรวจร่างกายปกติ',d:{sex:'F',cAge:24,cHt:158,cFev1:2.71,cFvc:3.26},
+  tbl:[['','Pre'],['FEV1 (L)','2.71'],['FVC (L)','3.26'],['FEV1/FVC','0.83']],
+  qs:[{q:'แปลผล spirometry อย่างไร?',o:['Obstruction','Normal spirometry','Non-specific pattern'],a:1,e:'ทุกค่าอยู่เหนือ LLN ทั้ง 3 สมการ'},
+   {q:'ยังสงสัย asthma ควรตรวจอะไรต่อ?',o:['CT chest','Bronchial provocation test (methacholine) หรือดู PEF variability','DLCO','ไม่ต้องตรวจเพิ่ม'],a:1,e:'Spirometry ปกติไม่ตัด asthma — ตรวจ airway hyperresponsiveness (PC20 < 4 mg/mL สนับสนุน, > 16 ปกติ) หรือ PEF variability > 10% ใน 2 สัปดาห์ หรือ FeNO · ถ้าเสียงวี้ดในคอเด่น นึกถึง vocal cord dysfunction และดู inspiratory loop'}]},
+ {t:'Case 3 — หอบเหมือน asthma แต่พ่นยาไม่ดีขึ้น',v:'หญิง 53 ปี สูง 155 cm wheeze 1 เดือน รักษาแบบ asthmatic attack ไม่ดีขึ้น เคยรักษา TB ปอดกลีบขวาบน ไม่สูบบุหรี่ · flow–volume loop แบนทั้งขาออกและขาเข้า',d:{sex:'F',cAge:53,cHt:155,cFev1:1.65,cFvc:2.40,cPef:150},
+  tbl:[['','Pre'],['FEV1 (L)','1.65'],['FVC (L)','2.40'],['FEV1/FVC','0.69'],['PEF (L/min)','150']],
+  qs:[{q:'FEV1/PEF เท่าไร และบอกอะไร?',o:['≈ 4 ไม่ชวนสงสัย','≈ 11 สงสัย central/upper airway obstruction','≈ 1 ปกติ'],a:1,e:'1650 mL ÷ 150 L/min = 11 mL/L/min (> 8) — PEF ลดลงมากกว่าที่ FEV1 อธิบายได้'},
+   {q:'Loop แบนทั้งขาออก/ขาเข้า บ่งถึง?',o:['Variable extrathoracic','Variable intrathoracic','Fixed central airway obstruction','Severe COPD'],a:2,e:'Fixed obstruction — นึกถึง tracheal/bronchial stenosis จาก TB (endobronchial TB) · ส่ง CT airway/bronchoscopy · ตัวเลขอาจเข้าเกณฑ์ obstruction (ratio ใกล้ LLN) แต่ไม่ใช่ asthma/COPD'}]},
+ {t:'Case 4 — ชายสูงอายุ สูบบุหรี่หนัก',v:'ชาย 75 ปี สูง 158 cm เหนื่อย 5 ปี สูบบุหรี่ 60 pack-year · post-BD spirometry',d:{sex:'M',cAge:75,cHt:158,cFev1:0.60,cFvc:2.44,cFev1p:0.66,cFvcp:2.77},
+  tbl:[['','Pre','Post'],['FEV1 (L)','0.60','0.66'],['FVC (L)','2.44','2.77'],['FEV1/FVC','0.25','0.24']],
+  qs:[{q:'วินิจฉัยและ GOLD grade?',o:['COPD GOLD 2','COPD GOLD 3','COPD GOLD 4','Asthma'],a:1,e:'อายุ ≥ 40, มีอาการ, สูบ ≥ 10 pack-year, post-BD FEV1/FVC < 0.70 → COPD · post-BD FEV1 ≈ 30% predicted (GLI Global) → GOLD 3 (30–49%) ใกล้ขอบ GOLD 4 — ขึ้นกับสมการที่ใช้'},
+   {q:'ถ้าใช้ z ของ post-BD FEV1 (≈ −3.9) ระบบ ERS/ATS 2022 จัดความรุนแรงเป็นอะไร?',o:['Mild','Moderate','Severe'],a:1,e:'z −3.9 อยู่ในช่วง −2.51 ถึง −4 = moderate (ส่วน pre-BD FEV1 z ≈ −4.0 อยู่ตรงขอบ severe) — ระบบ z-score กับ GOLD % predicted ให้ระดับต่างกันได้ เพราะผู้สูงอายุมีช่วงค่าปกติกว้างกว่า · FVC เพิ่ม 330 mL (≈ 12% ของ predicted) หลังพ่นยา = BDR บวกแบบ volume response จาก air trapping ไม่ได้แปลว่าเป็น asthma'}]},
+ {t:'Case 5 — ILD ที่ spirometry ปกติ',v:'ชาย 73 ปี สูง 168 cm ได้รับวินิจฉัย NSIP เหนื่อยเวลาออกแรง Hb ปกติ',d:{sex:'M',cAge:73,cHt:168,cFev1:2.81,cFvc:3.48,cTlc:5.42,cRv:1.71,cDl:15.86,cVa:4.73,cKco:3.35},
+  tbl:[['FEV1 / FVC','2.81 / 3.48 L'],['TLC / RV','5.42 / 1.71 L'],['DLCO','15.86 mL/min/mmHg'],['VA / KCO','4.73 L / 3.35']],
+  qs:[{q:'Spirometry และ lung volumes?',o:['Restriction','Normal ทั้งคู่','Obstruction'],a:1,e:'FEV1, FVC, ratio, TLC, RV/TLC อยู่ในช่วงปกติ (TLC z ≈ −1.0)'},
+   {q:'DLCO pattern?',o:['Isolated reduced DLCO (VA ปกติ)','DLCO ต่ำ + VA ต่ำ','DLCO ปกติ'],a:0,e:'DLCO z ≈ −1.9 (< LLN), VA ปกติ → pulmonary vascular disease (PH, PE, vasculitis), emphysema ที่ปริมาตรยังปกติ หรือ early ILD — ในผู้ป่วยรายนี้เข้าได้กับ early ILD แต่ควรคิดถึง PH ร่วม (echo) · ถ้าใช้ % predicted จะได้ 70% ซึ่งบางคนจะเรียกว่าปกติ'}]},
+ {t:'Case 6 — หญิงไอแห้ง เหนื่อยมากขึ้น',v:'หญิง 62 ปี สูง 152 cm ไอแห้ง เหนื่อย 1 ปี ฟังปอดได้ fine crackles ที่ฐานปอดทั้งสองข้าง',d:{sex:'F',cAge:62,cHt:152,cFev1:1.45,cFvc:1.70,cTlc:2.90,cRv:1.00,cDl:9.5,cVa:2.6,cKco:3.65},
+  tbl:[['FEV1 / FVC','1.45 / 1.70 L (0.85)'],['TLC / RV','2.90 / 1.00 L'],['DLCO','9.5 mL/min/mmHg'],['VA / KCO','2.6 L / 3.65']],
+  qs:[{q:'Spirometry อย่างเดียวบอกอะไร?',o:['Restriction ยืนยันแล้ว','Possible restriction / non-specific → ต้องวัด TLC','Obstruction'],a:1,e:'FVC ต่ำ (z ≈ −1.8) ratio ปกติ → แค่ "สงสัย" restriction'},
+   {q:'รวม lung volumes และ DLCO?',o:['Complex restriction','Simple restriction + DLCO ต่ำ (VA ต่ำ, KCO ปกติ)','Mixed disorder'],a:1,e:'TLC z ≈ −3.0 (moderate), RV/TLC ปกติ → simple restriction · DLCO ต่ำ z ≈ −3.6 กับ VA ต่ำและ KCO ปกติ → สูญเสีย alveolar–capillary unit เข้ากับ ILD (KCO ที่ "ปกติ" ขณะ VA ต่ำ ไม่ได้แปลว่าการแลกเปลี่ยนก๊าซปกติ)'}]},
+ {t:'Case 7 — FEV1 และ FVC ต่ำ ratio ปกติ',v:'ชาย 55 ปี สูง 170 cm อดีตผู้สูบบุหรี่ 30 pack-year เหนื่อยง่าย เป่าได้คุณภาพ grade A',d:{sex:'M',cAge:55,cHt:170,cFev1:2.30,cFvc:2.92,cTlc:5.70,cRv:2.30},
+  tbl:[['FEV1 / FVC','2.30 / 2.92 L (0.79)'],['TLC','5.70 L'],['RV','2.30 L']],
+  qs:[{q:'ถ้ามีแค่ spirometry จะเรียก pattern นี้ว่า?',o:['Obstruction','PRISm / non-specific pattern','Normal'],a:1,e:'FEV1 และ FVC ต่ำ (z ≈ −1.8) แต่ ratio ปกติ — ในผู้สูบบุหรี่เรียก PRISm (ความเสี่ยงจะกลายเป็น COPD และการตายสูงขึ้น)'},
+   {q:'เมื่อได้ lung volumes แล้ว?',o:['Simple restriction','TLC ปกติ + RV/TLC สูง → non-specific pattern ร่วมกับ gas trapping','Large lungs'],a:1,e:'TLC ปกติ ตัด restriction · RV/TLC ≈ 40% > ULN (≈ 37%) → possible hyperinflation/gas trapping แม้ ratio ปกติ — เข้าได้กับ small airway disease ระยะแรก · ทำ BDR, เทียบ SVC กับ FVC, ติดตาม spirometry'}]},
+ {t:'Case 8 — ผู้สูงอายุ ratio 0.68',v:'หญิง 78 ปี สูง 150 cm ไม่เคยสูบบุหรี่ ไม่มีอาการทางหายใจ ตรวจก่อนผ่าตัด',d:{sex:'F',cAge:78,cHt:150,cFev1:1.30,cFvc:1.92},
+  tbl:[['FEV1 / FVC','1.30 / 1.92 L'],['FEV1/FVC','0.68']],
+  qs:[{q:'ใช้ fixed ratio 0.70 จะแปลว่า?',o:['Obstruction','ปกติ'],a:0,e:'0.68 < 0.70 → obstruction'},
+   {q:'ใช้ LLN จะได้ผลอย่างไร?',o:['ทั้ง 3 สมการว่า obstruction','GLI ทั้ง 2 ชุดว่าปกติ แต่ Siriraj ว่า obstruction','ทั้ง 3 สมการว่าปกติ'],a:1,e:'LLN ของ GLI Global ≈ 0.66 และ SEA ≈ 0.67 → ปกติ แต่ Siriraj ใช้ SEE คงที่ทำให้ LLN ≈ 0.76 → obstruction · ผู้สูงอายุไม่มีอาการและไม่มีปัจจัยเสี่ยง (pre-test probability ต่ำ) → น่าจะเป็นการลดลงตามวัย ระวังวินิจฉัย COPD เกิน'}]}];
+function renderCases(){$('#caseList').innerHTML=CASES.map(function(c,i){
+  var tb='<div class="tw"><table>'+c.tbl.map(function(r,j){return '<tr>'+r.map(function(x){return j===0&&c.tbl[0].length>2?'<th>'+x+'</th>':'<td'+(/^[0-9.\s/()L]+$/.test(x)?' class="num"':'')+'>'+x+'</td>'}).join('')+'</tr>'}).join('')+'</table></div>';
+  return '<div class="card case" id="case'+i+'"><h3>'+c.t+'</h3><div class="meta">'+c.v+'</div>'+tb+c.qs.map(function(q,k){return '<div class="qblock" data-c="'+i+'" data-q="'+k+'"><b>'+(k+1)+'. '+q.q+'</b><div class="opts">'+q.o.map(function(o,m){return '<button data-m="'+m+'">'+o+'</button>'}).join('')+'</div><div class="exp">'+q.e+'</div></div>'}).join('')+
+  '<div class="row" style="margin-top:12px"><button class="btn sec" data-open="'+i+'">เปิดในเครื่องคำนวณ →</button></div></div>'}).join('');
+  $$('.qblock').forEach(function(b){var q=CASES[+b.getAttribute('data-c')].qs[+b.getAttribute('data-q')];$$('button',b).forEach(function(btn){btn.onclick=function(){var m=+btn.getAttribute('data-m');
+    if(m===q.a){btn.classList.add('right');b.classList.add('done')}else{btn.classList.add('wrong');b.classList.add('done');$$('button',b)[q.a].classList.add('right')}}})});
+  $$('[data-open]').forEach(function(b){b.onclick=function(){var d=CASES[+b.getAttribute('data-open')].d;go('calculator');setTimeout(function(){fill(d)},30)}})}
+renderCases();
+
+/* ---------- search ---------- */
+var IDX=[];function buildIdx(){IDX=[];$$('section.ch').forEach(function(s){var sid=s.id.slice(2),title=$('h1',s).textContent;
+  $$('h2,h3,p,li,td,.card,.note,.warnbox,.key',s).forEach(function(e){if(e.closest('#calcOut')||e.closest('.qblock .opts'))return;var t=e.textContent.replace(/\s+/g,' ').trim();if(t.length>3&&t.length<600)IDX.push({s:sid,title:title,t:t,el:e})})})}
+function doSearch(){var q=$('#searchIn').value.trim().toLowerCase();if(q.length<2){$('#searchRes').innerHTML='<p class="src" style="padding:8px">พิมพ์อย่างน้อย 2 ตัวอักษร</p>';return}
+  var seen={},hits=IDX.filter(function(x){if(x.t.toLowerCase().indexOf(q)<0||seen[x.t])return false;seen[x.t]=1;return true}).slice(0,30);
+  $('#searchRes').innerHTML=hits.length?hits.map(function(h,i){var p=h.t.toLowerCase().indexOf(q),a=Math.max(0,p-50),snip=(a?'…':'')+esc(h.t.slice(a,p))+'<mark>'+esc(h.t.slice(p,p+q.length))+'</mark>'+esc(h.t.slice(p+q.length,p+q.length+80))+'…';return '<a href="#'+h.s+'" data-i="'+i+'"><small>'+esc(h.title)+'</small>'+snip+'</a>'}).join(''):'<p class="src" style="padding:8px">ไม่พบ</p>';
+  $$('#searchRes a').forEach(function(a){a.onclick=function(ev){ev.preventDefault();var h=hits[+a.getAttribute('data-i')];closeSearch();go(h.s);setTimeout(function(){h.el.scrollIntoView({block:'center'});h.el.style.transition='background .3s';h.el.style.background=cv('--warn-soft');setTimeout(function(){h.el.style.background=''},1600)},60)}})}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function closeSearch(){$('#searchPanel').classList.remove('on')}
+$('#searchBtn').onclick=function(){if(!IDX.length)buildIdx();$('#searchPanel').classList.add('on');$('#searchIn').focus();doSearch()};
+$('#searchIn').oninput=doSearch;$('#searchPanel').onclick=function(e){if(e.target.id==='searchPanel')closeSearch()};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();$('#searchBtn').click()}});
+
+/* ---------- boot ---------- */
+var DATA=null;
+function redrawAll(){drawBell();drawRatio();drawTrees();drawLoops()}
+fetch('gli_data.json').then(function(r){return r.json()}).then(function(d){DATA=d;PFTCalc.init(d);redrawAll()}).catch(function(){$('#main').insertAdjacentHTML('afterbegin','<div class="warnbox">โหลดข้อมูลสมการ GLI ไม่ได้ — เครื่องคำนวณจะใช้งานไม่ได้</div>')});
+show(location.hash.slice(1)||'overview');fq();
+})();
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>
