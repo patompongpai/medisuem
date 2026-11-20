@@ -1,0 +1,686 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hyperkalemia · UKKA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">UK Kidney Association Clinical Practice Guideline · ปรับปรุง กรกฎาคม 2026</div>
+  <h1>Hyperkalemia:<br>รักษาให้ทัน ก่อนหัวใจหยุด</h1>
+  <p class="sub">สรุป hyperkalemia ในผู้ใหญ่ ตั้งแต่ยืนยันว่าเป็นจริง อ่าน ECG หาสาเหตุ ไปจนถึงการรักษาเฉียบพลันแบบ 5 ขั้น ยาที่ใช้ได้ใน รพ.ไทย สถานการณ์พิเศษ และการจัดการ K สูงเรื้อรังในผู้ที่ต้องใช้ ACEI/ARB/MRA พร้อมแผนผังที่คลิกเดินตามได้และเครื่องวางแผนการรักษา</p>
+  <p class="cite">อ้างอิงหลัก: UK Kidney Association. Clinical Practice Guideline — Treatment of Acute Hyperkalaemia in Adults (ปรับปรุง ก.ค. 2026) · เกรด 1 = แนะนำ, 2 = เสนอแนะ · A–D = คุณภาพหลักฐาน · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="scale" aria-label="ระดับ serum potassium">
+    <div class="scale-bar" style="background:linear-gradient(90deg,var(--ok) 0%,var(--ok) 25%,var(--warn) 25%,var(--warn) 50%,#C4571B 50%,#C4571B 75%,var(--danger) 75%)"></div>
+    <div class="scale-ticks">
+      <div class="tick l" style="left:0"><b>5.0</b>&nbsp;</div>
+      <div class="tick" style="left:25%"><b>5.5</b>Mild</div>
+      <div class="tick" style="left:50%"><b>6.0</b>Moderate</div>
+      <div class="tick" style="left:75%"><b>6.5</b>Severe</div>
+      <div class="tick r" style="left:100%"><b>7.0+</b>mmol/L</div>
+    </div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามและความรุนแรง</a><a href="#physio">สรีรวิทยา</a><a href="#causes">สาเหตุ</a><a href="#ecg">อาการและ ECG</a><a href="#approach">แผนผัง Approach</a><a href="#acute">รักษาเฉียบพลัน 5 ขั้น</a><a href="#drugs">ยาแต่ละตัว</a><a href="#special">สถานการณ์พิเศษ</a><a href="#chronic">K สูงเรื้อรัง + RAASi</a><a href="#tools">เครื่องวางแผน</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและความรุนแรง</h2>
+  <div class="box key"><b>นิยาม (UKKA / European Resuscitation Council)</b>Serum K <span class="mono">≥5.5 mmol/L</span> · Mild <span class="mono">5.5–5.9</span> · Moderate <span class="mono">6.0–6.4</span> · Severe <span class="mono">≥6.5</span></div>
+  <p>ระดับ K เป็นแค่ส่วนหนึ่ง สิ่งที่บอกความอันตรายได้มากกว่าคือ <b>ECG เปลี่ยนแปลง</b>, <b>ความเร็วที่ K ขึ้น</b> (AKI, rhabdomyolysis, TLS ขึ้นเร็วกว่า CKD) และ <b>โรคร่วม</b> เช่น hypocalcemia, acidosis, โรคหัวใจ</p>
+  <div class="grid3">
+    <div class="card c-ok"><h4>Mild 5.5–5.9</h4>ไม่ต้องให้ยาฉุกเฉิน · หาสาเหตุ ทบทวนยา ตรวจซ้ำ</div>
+    <div class="card c-warn"><h4>Moderate 6.0–6.4</h4>ECG 12 lead ด่วน <span class="rec s1">1B</span> · พิจารณา insulin-glucose <span class="rec">2C</span> · monitor ถ้าไม่สบายหรือคาดว่าจะขึ้นเร็ว</div>
+    <div class="card c-red"><h4>Severe ≥6.5</h4>Emergency · continuous cardiac monitor <span class="rec s1">1C</span> · calcium ถ้ามี ECG เปลี่ยน · insulin-glucose <span class="rec s1">1B</span> + salbutamol · กำจัด K · ปรึกษา KRT</div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="physio" class="col">
+  <div class="sec-num">02</div>
+  <h2>สรีรวิทยาย่อ: K อยู่ไหน ขับออกทางไหน</h2>
+  <p>K ในร่างกายราว <b>98% อยู่ในเซลล์</b> (ส่วนใหญ่ในกล้ามเนื้อ) มีเพียง ~2% ในเลือด การเปลี่ยนแปลงเล็กน้อยของการกระจายระหว่างในและนอกเซลล์จึงทำให้ระดับในเลือดเปลี่ยนมาก</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Internal balance (การกระจาย)</h4>ดัน K เข้าเซลล์ผ่าน Na⁺/K⁺-ATPase:
+      <ul><li><b>Insulin</b> → เหตุผลของ insulin-glucose</li><li><b>β2-agonist</b> → salbutamol</li><li>Alkalemia (ผลไม่แน่นอน โดยเฉพาะ respiratory)</li></ul>
+      ดัน K ออก: insulin ขาด, hyperosmolality, β-blocker, digoxin toxicity, เซลล์แตก</div>
+    <div class="card c-vio"><h4>External balance (การขับ)</h4>ไตขับ ~90% ที่ <b>principal cell ของ collecting duct</b> ต้องการ 3 อย่าง:
+      <ul><li><b>Aldosterone</b> เพียงพอและออกฤทธิ์ได้</li><li><b>Na และน้ำมาถึง distal</b> เพียงพอ</li><li>จำนวน nephron เพียงพอ (GFR)</li></ul>
+      ลำไส้ใหญ่ขับ ~10% (เพิ่มขึ้นใน CKD) → เป้าของ K binder</div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="causes">
+  <div class="col">
+    <div class="sec-num">03</div>
+    <h2>สาเหตุ</h2>
+  </div>
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid var(--muted)"><h4>1. Pseudohyperkalemia — ตัดก่อนเสมอ</h4>
+      <ul><li>Hemolysis ในหลอดเก็บเลือด (เจาะยาก, เข็มเล็ก, เขย่า)</li><li>รัดสายนานหรือให้กำมือแน่น</li><li>Thrombocytosis, leukocytosis มาก (CLL)</li><li>ปน EDTA (ลำดับหลอดผิด — มักมี Ca ต่ำมากร่วม)</li><li>ส่งตรวจช้า เก็บในที่เย็น</li></ul>
+      <span class="muted" style="font-size:.88rem">ตรวจซ้ำจากหลอดเลือดใหญ่ ดึงเบาๆ ส่งเร็ว หรือใช้ blood gas ระหว่างรอ <span class="rec s1">1A–1B</span></span></div>
+    <div class="card c-acc"><h4>2. K ออกจากเซลล์ (shift)</h4>
+      <ul><li>Insulin ขาด + hyperglycemia (DKA, HHS)</li><li>Metabolic acidosis (inorganic acid มากกว่า organic)</li><li>เซลล์แตก: <b>rhabdomyolysis, TLS</b>, hemolysis, เลือดออกในทางเดินอาหาร, ไฟไหม้</li><li>ยา: β-blocker, digoxin เกินขนาด, succinylcholine</li><li>Hyperkalemic periodic paralysis</li></ul></div>
+    <div class="card c-vio"><h4>3. ไตขับ K ลดลง (สาเหตุหลักของ K สูงที่ไม่หาย)</h4>
+      <ul><li><b>AKI, CKD</b> (โดยเฉพาะ GFR &lt;30)</li><li>Distal Na/น้ำน้อย: ขาดน้ำ, HF</li><li>Aldosterone ต่ำ/ออกฤทธิ์ไม่ได้: <b>ACEI/ARB/ARNI, MRA</b>, amiloride, <b>trimethoprim</b>, heparin, NSAIDs, calcineurin inhibitor, adrenal insufficiency, type 4 RTA (เบาหวาน)</li></ul></div>
+    <div class="card c-warn"><h4>4. K เข้ามาก (มักร่วมกับไตเสื่อม)</h4>
+      <ul><li>K supplement, KCl ใน IV fluid</li><li>เกลือทดแทน (low-sodium salt = KCl)</li><li>ผลไม้/น้ำผลไม้มากในผู้ป่วย CKD</li><li>เลือดที่เก็บนาน ให้ปริมาณมาก</li><li>ยาสมุนไพรบางชนิด</li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="ecg" class="col">
+  <div class="sec-num">04</div>
+  <h2>อาการและ ECG</h2>
+  <p>อาการมักไม่จำเพาะ: อ่อนแรง (เริ่มที่ขา ขึ้นไปลำตัว คล้าย paralysis), ชา, ใจสั่น, หัวใจเต้นช้า หรือหัวใจหยุดเต้นโดยไม่มีอาการเตือน</p>
+  <div class="ecg-strip">
+    <figure><svg viewBox="0 0 160 80"><path d="M0 50 H20 Q26 44 32 50 H44 L47 54 L52 18 L57 58 L60 50 H74 Q86 40 98 50 H160" fill="none" stroke="var(--ink)" stroke-width="2"/></svg><figcaption><b>ปกติ</b>อ้างอิง</figcaption></figure>
+    <figure><svg viewBox="0 0 160 80"><path d="M0 50 H20 Q26 44 32 50 H44 L47 54 L52 18 L57 58 L60 50 H72 L84 14 L96 50 H160" fill="none" stroke="var(--ink)" stroke-width="2"/></svg><figcaption><b>Peaked T</b>T สูง แคบ ฐานแคบ สมมาตร — มักเป็นสัญญาณแรก</figcaption></figure>
+    <figure><svg viewBox="0 0 160 80"><path d="M0 50 H22 Q28 48 34 50 H52 L55 54 L61 24 L67 60 L72 50 H82 L94 18 L106 50 H160" fill="none" stroke="var(--ink)" stroke-width="2"/></svg><figcaption><b>P แบน · PR ยาว</b>P wave เล็กลงจนหาย</figcaption></figure>
+    <figure><svg viewBox="0 0 160 80"><path d="M0 50 H40 L46 56 Q56 20 64 28 Q72 64 82 56 L88 50 Q100 22 112 50 H160" fill="none" stroke="var(--ink)" stroke-width="2"/></svg><figcaption><b>QRS กว้าง</b>Bradycardia, junctional/ventricular rhythm</figcaption></figure>
+    <figure><svg viewBox="0 0 160 80"><path d="M0 50 Q20 10 40 50 Q60 90 80 50 Q100 10 120 50 Q140 90 160 50" fill="none" stroke="var(--danger)" stroke-width="2.2"/></svg><figcaption><b>Sine wave</b>ก่อน VF/asystole — ให้ calcium ทันที</figcaption></figure>
+  </div>
+  <div class="box warn"><b>ECG ไม่ไวพอ</b>ผู้ป่วย K สูงมากอาจมี ECG ปกติ (โดยเฉพาะ CKD/dialysis ที่ K ขึ้นช้า) และ ECG อาจเปลี่ยนแบบข้ามขั้น ECG ปกติจึงไม่ได้แปลว่าปลอดภัย · ทำ ECG 12 lead ด่วนเมื่อ K ≥6.0 <span class="rec s1">1B</span> และ monitor ต่อเนื่องเมื่อ K ≥6.5, มี ECG เปลี่ยน หรือ K 6.0–6.4 ในผู้ป่วยไม่สบาย/คาดว่าจะขึ้นเร็ว <span class="rec s1">1C</span></div>
+</section>
+
+<!-- 5 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">05</div>
+    <h2>แผนผังการ approach หาสาเหตุ</h2>
+    <p>ทำคู่ขนานกับการรักษา — ถ้า K สูงมากหรือ ECG เปลี่ยน ให้รักษาก่อน แล้วค่อยหาสาเหตุ</p>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>K ≥5.5 mmol/L</b></div>
+      <div class="vline"></div>
+      <div class="node red"><b>K ≥6.5 หรือ ECG เปลี่ยน?</b>รักษาฉุกเฉินทันที (บท 06) แล้วหาสาเหตุคู่ขนาน</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เป็นจริงไหม?</b>Hemolysis, เกล็ดเลือด/WBC สูงมาก, ปน EDTA → ตรวจซ้ำ / blood gas</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ไม่จริง</span><div class="node dx grey"><b>Pseudohyperkalemia</b>ไม่ต้องรักษา แก้วิธีเก็บเลือด</div></div>
+        <div class="arm"><span class="lab">จริง</span><div class="node q"><b>มีสาเหตุ shift ไหม?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">มี</span><div class="node dx eu"><b>Shift</b>DKA/insulin ขาด, acidosis, rhabdo, TLS, hemolysis, β-blocker, digoxin</div></div>
+            <div class="arm"><span class="lab">ไม่มี/ไม่พอ</span><div class="node q"><b>GFR?</b></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">GFR ต่ำ (&lt;20–30) / AKI</span><div class="node dx hyper"><b>ไตขับไม่ได้</b>+ ทบทวนยา, อาหาร, K ใน IV fluid</div></div>
+        <div class="arm"><span class="lab">GFR พอใช้</span><div class="node dx hypo"><b>Aldosterone ต่ำ/ดื้อ หรือ distal flow ต่ำ</b>ACEI/ARB/MRA, trimethoprim, heparin, NSAIDs, CNI · type 4 RTA (DM) · adrenal insufficiency · ขาดน้ำ/HF</div></div>
+      </div>
+      <p class="muted" style="font-size:.82rem;margin-top:12px;align-self:flex-start">ส่วนใหญ่มีหลายสาเหตุร่วมกัน เช่น CKD + ACEI + MRA + ขาดน้ำ · TTKG ไม่แนะนำให้ใช้แล้ว <span class="tag add">เสริม</span></p>
+    </div>
+    <div class="legend"><span style="--c:var(--muted)">ผลหลอก</span><span style="--c:var(--accent)">Shift</span><span style="--c:var(--violet)">ไตขับไม่ได้</span><span style="--c:var(--warn)">Aldosterone/distal flow</span><span style="--c:var(--danger)">ฉุกเฉิน</span></div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="acute">
+  <div class="col">
+    <div class="sec-num">06</div>
+    <h2>รักษาเฉียบพลัน 5 ขั้น</h2>
+    <p>UKKA จัดการรักษาเป็น 5 ขั้น — ขั้น 1–2 แค่ซื้อเวลา <b>ไม่ได้ลด K ในร่างกาย</b> ต้องมีขั้น 3 ตามเสมอ</p>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Moderate–severe hyperkalemia</b>IV access · ECG · cardiac monitor · blood gas K · glucose</div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>① ปกป้องหัวใจ — ถ้า ECG เปลี่ยน</b>10% Ca gluconate <span class="mono">30 mL</span> IV ใน 10 นาที หรือ 10% CaCl₂ <span class="mono">10 mL</span> ใน 5 นาที · ECG ซ้ำ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>② ดัน K เข้าเซลล์</b>RI <span class="mono">10 U</span> + glucose <span class="mono">25 g</span> IV ใน 15 นาที (+ salbutamol neb 10–20 mg ใน severe)<br>Glucose ก่อนให้ &lt;126 mg/dL → 10% glucose <span class="mono">50 mL/h × 5 ชม.</span></div>
+      <div class="vline arrow"></div>
+      <div class="node green"><b>③ กำจัด K ออก</b>SZC / patiromer (ถ้ามี) · loop diuretic ถ้ายังมีปัสสาวะและไม่ขาดน้ำ · หยุดยา/K ที่ให้ · <b>KRT</b> ถ้าไม่ตอบสนอง หรือ AKI oliguric/ESKD</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>④ ติดตาม</b>K ที่ <span class="mono">1, 2, 4, 6, 24 ชม.</span> · glucose ที่ 0–360 นาที · ECG/monitor</div>
+      <div class="vline arrow"></div>
+      <div class="node dx grey"><b>⑤ ป้องกันการกลับเป็นซ้ำ</b>หาและแก้สาเหตุ · ทบทวนยาและอาหาร · แผน RAASi</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="box note"><b>ระยะเวลาออกฤทธิ์ (โดยประมาณ)</b> <span class="tag add">เสริม</span>
+      <div class="timeline">
+        <div><b>1–3 นาที</b> Calcium เริ่มออกฤทธิ์ อยู่ได้ 30–60 นาที</div>
+        <div><b>15–30 นาที</b> Insulin-glucose ลด K ~0.6–1.0 mmol/L อยู่ได้ 4–6 ชม. (K rebound หลังจากนั้น)</div>
+        <div><b>30 นาที</b> Salbutamol nebulized ลด K ~0.5–1.0 mmol/L</div>
+        <div><b>~1 ชม.</b> SZC เริ่มออกฤทธิ์ · patiromer และ resin ช้ากว่า (หลายชั่วโมง)</div>
+        <div><b>ทันที</b> Hemodialysis ลด K ได้มากที่สุด แต่ rebound หลังฟอก</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="drugs">
+  <div class="col">
+    <div class="sec-num">07</div>
+    <h2>ยาแต่ละตัว: ขนาด ข้อควรระวัง และของที่มีใน รพ.ไทย</h2>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (UKKA)</th><th>ใน รพ.ไทย</th><th>ข้อควรระวัง</th></tr>
+    <tr><td><b>Calcium gluconate 10%</b><br><span class="rec">2C</span></td><td class="mono">30 mL IV ใน 10 นาที (Ca 6.8 mmol)</td><td>= <b>3 ampule</b> (ampule ละ 10 mL) — ระวังให้แค่ 10 mL ตามความเคยชิน</td><td>ให้เมื่อ ECG เปลี่ยน · ซ้ำได้ถ้า ECG ยังไม่ดีขึ้น <span class="tag add">เสริม</span> · ห้ามผสมสายเดียวกับ bicarbonate (ตกตะกอน)</td></tr>
+    <tr><td><b>Calcium chloride 10%</b><br><span class="rec s1">1C</span> เลือกใน arrest</td><td class="mono">10 mL IV ใน 5 นาที</td><td>ใช้ใน cardiac arrest / peri-arrest</td><td>ระคายหลอดเลือดมาก ใช้หลอดเลือดใหญ่ / central line</td></tr>
+    <tr><td><b>Insulin-glucose</b><br><span class="rec s1">1B</span> severe · <span class="rec">2C</span> moderate</td><td class="mono">RI 10 U + glucose 25 g IV ใน 15 นาที</td><td>RI 10 U + <b>50% glucose 50 mL</b> (หรือ 10% glucose 250 mL)</td><td>Hypoglycemia พบบ่อย (มักเกิดชั่วโมงที่ 2–3) โดยเฉพาะไม่เป็นเบาหวาน น้ำหนักน้อย CKD · glucose ก่อนให้ &lt;7 mmol/L (126 mg/dL) → 10% glucose 50 mL/h 5 ชม. <span class="rec">2B</span> · ตรวจ glucose ที่ 0, 30, 60, 90, 120, 180, 240, 300, 360 นาที <span class="rec s1">1C</span></td></tr>
+    <tr><td><b>Salbutamol nebulized</b><br><span class="rec s1">1B</span> adjunct ใน severe</td><td class="mono">10–20 mg</td><td>Nebule 2.5 mg → <b>4–8 nebule</b></td><td><b>ห้ามใช้เดี่ยว</b>ใน severe <span class="rec s1">1A</span> · ~40% ตอบสนองน้อย <span class="tag add">เสริม</span> · ระวังใน IHD/tachyarrhythmia (ใช้ 10 mg)</td></tr>
+    <tr><td><b>Sodium bicarbonate</b></td><td>ไม่ให้ IV เป็น routine <span class="rec">2C</span></td><td>7.5% / 8.4% NaHCO₃</td><td>พิจารณาเมื่อมี metabolic acidosis ร่วม · cardiac arrest จาก K <span class="rec">2C</span> · ผู้ป่วย CKD HCO₃ &lt;22 ให้ชนิดกิน <span class="rec s1">1B</span></td></tr>
+    <tr><td><b>Sodium zirconium cyclosilicate (SZC)</b><br><span class="rec s1">1B</span></td><td class="mono">10 g วันละ 3 ครั้ง นานสุด 72 ชม.</td><td>ถ้ามีในบัญชี รพ.</td><td>ออกฤทธิ์เร็ว (~1 ชม.) · บวม (มี Na) · ใช้ระยะยาวได้</td></tr>
+    <tr><td><b>Patiromer</b><br><span class="rec s1">1C</span> เมื่อ K ≥6.0</td><td class="mono">8.4 g</td><td>มีจำกัด</td><td>ออกฤทธิ์ช้ากว่า · จับ Mg (Mg ต่ำ) · ห่างจากยาอื่น 3 ชม.</td></tr>
+    <tr><td><b>Calcium/sodium polystyrene sulfonate</b> (Kalimate, Kayexalate)</td><td>ไม่ใช้เป็น routine ในภาวะเฉียบพลัน <span class="rec">2B</span> · ไม่แนะนำระยะยาว <span class="rec">2C</span></td><td>มักเป็นตัวเดียวที่มีใน รพ.ชุมชน</td><td>ออกฤทธิ์ช้าและไม่แน่นอน ห้ามพึ่งตัวนี้ตัวเดียวใน severe · ท้องผูก, ลำไส้ขาดเลือด/ทะลุ (พบน้อย) · หลีกเลี่ยงหลังผ่าตัดลำไส้/ileus <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Loop diuretic</b> <span class="tag add">เสริม</span></td><td>Furosemide IV ตามการทำงานไต</td><td>มีทุก รพ.</td><td>ได้ผลเมื่อยังมีปัสสาวะและไม่ขาดน้ำ · ทดแทนสารน้ำถ้าปัสสาวะออกมาก</td></tr>
+  </table></div>
+  <div class="col">
+    <div class="box note"><b>ข้อมูลใหม่ในฉบับ ก.ค. 2026</b>หลักฐานของ IV calcium ถูกลดระดับหลังการทบทวน ILCOR 2025 จึงเป็น "เสนอแนะ" (2C) — แต่ยังเป็นการรักษาแรกเมื่อ ECG เปลี่ยน · calcium resonium ไม่แนะนำสำหรับ hyperkalemia เรื้อรังแล้ว · เกณฑ์เริ่ม SZC ลดลงเป็น K ≥5.5 ในผู้ป่วย CKD 3b–5 หรือ HF ที่ยังใช้ RAASi ได้ไม่เต็มที่</div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="special" class="col">
+  <div class="sec-num">08</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">!</span><span class="t">Cardiac arrest จาก hyperkalemia</span></summary><div class="body">ให้นึกถึง K สูงในทุก cardiac arrest (4H4T) <span class="rec s1">1A</span> · ทำ ALS ตามมาตรฐาน · ถ้าสงสัย K เป็นสาเหตุ: <b>CaCl₂ 10% 10 mL</b> <span class="rec">2C</span> · <b>RI 10 U + glucose 25 g</b> <span class="rec s1">1B</span> · 10% glucose ถ้า glucose &lt;126 mg/dL · <b>NaHCO₃</b> <span class="rec">2C</span> · พิจารณาฟอกเลือดระหว่าง CPR ถ้าไม่ตอบสนองต่อยาและทำได้ <span class="rec">2C</span> · ถอดสายเครื่องฟอกก่อน defibrillate</div></details>
+    <details class="step"><summary><span class="n">HD</span><span class="t">ผู้ป่วยฟอกเลือดประจำ</span></summary><div class="body">K ≥6.5 → <b>ฟอกเลือดด่วน</b> <span class="rec s1">1A</span> · ถ้ามี ECG เปลี่ยนให้ calcium ก่อนแม้จะฟอกได้ทันที <span class="rec s1">1C</span> · ถ้ายังฟอกไม่ได้ให้ยามาตรฐาน · ช่วงระหว่างรอบฟอกพิจารณา K binder · ผู้ป่วย anuric: diuretic ไม่ได้ผล และ bicarbonate ทำให้น้ำเกิน</div></details>
+    <details class="step"><summary><span class="n">DKA</span><span class="t">DKA / HHS</span></summary><div class="body">K แรกรับมักสูงแม้ K รวมในร่างกายขาด · <b>ไม่ใช้ regimen insulin-glucose</b> ให้รักษาตามโปรโตคอล DKA: insulin infusion + สารน้ำ จะดัน K เข้าเซลล์เอง · ถ้า K ≥6.5 หรือ ECG เปลี่ยน ให้ calcium ได้ · ติดตาม K ทุก 1–2 ชม. เพราะจะลดเร็ว · ดูหน้า <a href="../dka-hhs/index.html">DKA/HHS</a></div></details>
+    <details class="step"><summary><span class="n">Dig</span><span class="t">Digoxin toxicity</span></summary><div class="body">K สูงจาก Na⁺/K⁺-ATPase ถูกยับยั้ง (บอกความรุนแรงของพิษ) · รักษาหลักคือ <b>digoxin-specific Fab</b> · calcium ในอดีตถูกห้ามเพราะกลัว "stone heart" แต่ข้อมูลใหม่ไม่พบอันตรายชัด ถ้าจำเป็นให้ช้าๆ <span class="tag add">เสริม</span></div></details>
+    <details class="step"><summary><span class="n">Rx</span><span class="t">Rhabdomyolysis · TLS · ไฟไหม้ · crush</span></summary><div class="body">K ขึ้นเร็วและต่อเนื่อง · ตรวจ K ถี่ (ทุก 2–4 ชม.) · ให้สารน้ำตามสาเหตุ · ระวัง hypocalcemia ร่วม · มีแนวโน้มต้อง KRT เร็ว → ปรึกษาไตแต่เนิ่นๆ</div></details>
+    <details class="step"><summary><span class="n">Sux</span><span class="t">Succinylcholine</span></summary><div class="body">K ขึ้น ~0.5 mmol/L ปกติ แต่ขึ้นมากจนหัวใจหยุดได้ในผู้ป่วย burn, crush, denervation, immobilization นาน, myopathy — ใช้ rocuronium แทน</div></details>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="chronic" class="col">
+  <div class="sec-num">09</div>
+  <h2>K สูงเรื้อรัง กับ ACEI/ARB/MRA</h2>
+  <p>ผู้ป่วย CKD, เบาหวาน และ HF ได้ประโยชน์จาก RAAS inhibitor (RAASi) มาก การหยุดยาถาวรเพราะ K สูงเล็กน้อยทำให้เสียประโยชน์ระยะยาว แนวทางจึงพยายาม <b>คงยาไว้ให้ได้</b></p>
+  <div class="tbl"><table>
+    <tr><th class="mono">K (mmol/L)</th><th>สิ่งที่ทำ (UKKA)</th></tr>
+    <tr><td class="mono">≥5.5</td><td>เริ่มมาตรการลด K <span class="rec s1">1B</span>: ทบทวนยาอื่น (NSAIDs, trimethoprim, K supplement), อาหารและเกลือทดแทน, แก้ acidosis</td></tr>
+    <tr><td class="mono">5.5–5.9</td><td>ตรวจถี่ขึ้น และพิจารณาลดขนาด RAASi <span class="rec s1">1B</span> · MRA ใน HF: ลดครึ่งขนาด</td></tr>
+    <tr><td class="mono">≥5.5 + CKD 3b–5 หรือ HF ที่ RAASi ยังไม่ถึงเป้า</td><td>เริ่ม <b>SZC</b> เพื่อคง/เพิ่ม RAASi <span class="rec s1">1A</span> (เริ่มได้ทั้ง primary และ secondary care)</td></tr>
+    <tr><td class="mono">≥6.0</td><td>MRA ใน HF: เริ่ม binder และติดตาม · ถ้าไม่เข้าเกณฑ์ใช้ binder ให้ <b>หยุด RAASi</b> <span class="rec s1">1B</span></td></tr>
+    <tr><td>ป่วยเฉียบพลัน</td><td>พัก RAASi ทุกระดับ K <span class="rec s1">1D</span> · เมื่อหายและ K &lt;5.5 เริ่มกลับ <b>ทีละตัว</b> · ถ้าหยุด RAASi ให้หยุด binder ด้วย <span class="rec s1">1A</span></td></tr>
+  </table></div>
+  <ul>
+    <li>CKD ที่ serum HCO₃ &lt;22: ให้ <b>sodium bicarbonate ชนิดกิน</b> <span class="rec s1">1B</span></li>
+    <li>Diuretic (thiazide หรือ loop) ช่วยขับ K ในผู้ที่มีน้ำเกินหรือความดันสูง <span class="tag add">เสริม</span></li>
+    <li>อาหาร: เน้นลดอาหารแปรรูปที่เติม K และ <b>เกลือทดแทน (KCl)</b> ก่อนจำกัดผักผลไม้ทั้งหมด · ปรึกษานักโภชนาการ <span class="tag add">เสริม</span></li>
+    <li>SGLT2i ช่วยลดความเสี่ยง K สูงในผู้ป่วยที่ได้ RAASi <span class="tag add">เสริม</span></li>
+  </ul>
+  <p><a href="../ckd/index.html">ดูเพิ่ม: CKD CPG 2565 →</a></p>
+</section>
+
+<!-- 10 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องวางแผนการรักษาข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับฉลากและแนวทางของโรงพยาบาล ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+  <div class="tool plan" style="margin-top:12px">
+    <h3>วางแผนการรักษา hyperkalemia</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">Serum K (mmol/L)<input type="number" id="pK" value="6.8" step="0.1"></label>
+          <label class="f">Glucose ก่อนให้ (mg/dL)<input type="number" id="pGlu" value="110"></label>
+        </div>
+        <div class="muted" style="font-size:.82rem">ECG</div>
+        <div class="radios">
+          <label><input type="radio" name="ecg" value="none">ปกติ</label>
+          <label><input type="radio" name="ecg" value="t" checked>Peaked T อย่างเดียว</label>
+          <label><input type="radio" name="ecg" value="severe">P หาย / QRS กว้าง / bradycardia / sine</label>
+          <label><input type="radio" name="ecg" value="arrest">Cardiac arrest</label>
+        </div>
+      </div>
+      <div>
+        <div class="muted" style="font-size:.82rem">บริบท</div>
+        <div class="checks">
+          <label><input type="checkbox" id="cHD"> ผู้ป่วยฟอกเลือดประจำ / ESKD</label>
+          <label><input type="checkbox" id="cOlig"> AKI oliguric</label>
+          <label><input type="checkbox" id="cDKA"> DKA / HHS</label>
+          <label><input type="checkbox" id="cIHD"> โรคหัวใจขาดเลือด / tachyarrhythmia</label>
+          <label><input type="checkbox" id="cSZC"> รพ.มี SZC หรือ patiromer</label>
+          <label><input type="checkbox" id="cAcid"> Metabolic acidosis ร่วม</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>เจอ K สูง ทำ ECG ก่อนคิดต่อ</b> ECG บอกว่าต้องให้ calcium หรือไม่ ส่วนระดับ K บอกว่าต้องเร่งแค่ไหน</div></div>
+    <div class="pearl"><div><b>Calcium gluconate 10% คือ 30 mL ไม่ใช่ 10 mL</b> ใน รพ.ไทยคือ 3 ampule — การให้ ampule เดียวพบบ่อยและไม่พอ</div></div>
+    <div class="pearl"><div><b>Calcium ไม่ได้ลด K</b> แค่ทำให้ membrane คงที่ 30–60 นาที ต้องให้ยาดัน K เข้าเซลล์และกำจัด K ตามทันที</div></div>
+    <div class="pearl"><div><b>ตัด pseudohyperkalemia เมื่อไม่เข้ากับภาพ</b> K สูงในคนไตปกติ ไม่มียาเสี่ยง ECG ปกติ ให้เจาะซ้ำหรือตรวจด้วย blood gas</div></div>
+    <div class="pearl"><div><b>Insulin-glucose: กลัว hypoglycemia มากกว่า hyperglycemia</b> hypoglycemia มักเกิดชั่วโมงที่ 2–3 หลังให้ ตรวจ glucose เป็นระยะถึง 6 ชม. และให้ 10% glucose ต่อถ้า glucose เริ่มต้นต่ำกว่า 126 mg/dL</div></div>
+    <div class="pearl"><div><b>Salbutamol ห้ามใช้เดี่ยว</b> ผู้ป่วยหลายรายตอบสนองน้อย ใช้เป็นตัวเสริม insulin-glucose</div></div>
+    <div class="pearl"><div><b>Kalimate ไม่ใช่ยาฉุกเฉิน</b> ออกฤทธิ์ช้าหลายชั่วโมง ใน รพ.ที่มีแต่ resin ให้เน้นขั้น 1–2 และเตรียมส่งต่อฟอกเลือดถ้าไตไม่ขับ</div></div>
+    <div class="pearl"><div><b>K จะกลับขึ้นใน 4–6 ชม.</b> ตรวจ K ที่ 1, 2, 4, 6 และ 24 ชม. และให้ insulin-glucose ซ้ำถ้ายังสูง</div></div>
+    <div class="pearl"><div><b>หาสาเหตุให้เจอทุกครั้ง</b> ส่วนใหญ่มีหลายตัวรวมกัน: CKD + ACEI/ARB + MRA + NSAIDs/trimethoprim + ขาดน้ำ</div></div>
+    <div class="pearl"><div><b>อย่าหยุด RAASi ถาวรโดยไม่จำเป็น</b> K 5.5–5.9 ให้ลดขนาด/แก้ปัจจัยอื่นก่อน และเริ่มกลับเมื่อ K &lt;5.5 ทีละตัว</div></div>
+    <div class="pearl"><div><b>K สูงใน DKA ไม่ใช้สูตร insulin-glucose</b> insulin infusion ตามโปรโตคอลจะลด K เอง และ K จะต่ำลงเร็ว ต้องเตรียมเติม K</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hypokalemia/index.html">อ่านต่อ: Hypokalemia →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../ckd/index.html">CKD →</a></p>
+<footer class="col">
+  อ้างอิง: UK Kidney Association. Clinical Practice Guideline: Treatment of Acute Hyperkalaemia in Adults (ฉบับปรับปรุง กรกฎาคม 2026; ฉบับก่อนหน้า ตุลาคม 2023) · ERC/ILCOR resuscitation guidance เรื่อง hyperkalaemia · MHRA Drug Safety Update (June 2023): ความเสี่ยงให้ calcium gluconate ขนาดไม่พอใน severe hyperkalaemia<br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน ไม่ได้มาจาก UKKA โดยตรง · หน่วย glucose แปลงจาก 7 mmol/L ≈ 126 mg/dL · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','hkView');
+mountWalker({
+ start:{q:'K ≥6.5 หรือ ECG เปลี่ยนหรือไม่?',h:'Peaked T, P แบน/หาย, QRS กว้าง, bradycardia, sine wave',o:[['ใช่','emerg'],['ไม่ใช่','real']]},
+ emerg:{leaf:true,cls:'danger',t:'รักษาฉุกเฉินก่อน',b:'ECG เปลี่ยน → 10% Ca gluconate 30 mL IV ใน 10 นาที · RI 10 U + glucose 25 g · salbutamol neb 10–20 mg · cardiac monitor · ตรวจ K ซ้ำที่ 1 ชม. แล้วหาสาเหตุคู่ขนาน',next:['หาสาเหตุต่อ','real']},
+ real:{q:'ผลเชื่อถือได้หรือไม่?',h:'เจาะยาก/hemolysis, platelet >500k, WBC สูงมาก, Ca ต่ำมากผิดปกติ (ปน EDTA), ส่งช้า',o:[['มีเหตุให้สงสัยผลหลอก','pseudo'],['ผลน่าเชื่อถือ','shift']]},
+ pseudo:{leaf:true,t:'สงสัย pseudohyperkalemia',b:'เจาะซ้ำจากหลอดเลือดใหญ่ ดึงเบาๆ ไม่รัดนาน ส่งทันที หรือตรวจด้วย blood gas · thrombocytosis/leukocytosis: เทียบ K ใน plasma (lithium heparin) กับ serum · ถ้ายืนยันว่าหลอก ไม่ต้องรักษา'},
+ shift:{q:'มีสาเหตุที่ทำให้ K ออกจากเซลล์หรือไม่?',o:[['DKA/HHS หรือ insulin ขาด','dka'],['Rhabdomyolysis / TLS / hemolysis','lysis'],['Acidosis, β-blocker, digoxin','drugshift'],['ไม่มี / ไม่พออธิบาย','gfr']]},
+ dka:{leaf:true,cls:'warn',t:'DKA / HHS',b:'รักษาตามโปรโตคอล DKA: สารน้ำ + insulin infusion ไม่ใช้สูตร insulin-glucose · calcium ถ้า ECG เปลี่ยน · K จะลดเร็ว ตรวจทุก 1–2 ชม. และเริ่มเติม K ตามโปรโตคอล'},
+ lysis:{leaf:true,cls:'danger',t:'Cell lysis',b:'K ขึ้นเร็วและต่อเนื่อง · ตรวจ CK, uric acid, PO₄, Ca, LDH · สารน้ำตามสาเหตุ · TLS: rasburicase (ตรวจ G6PD) · ปรึกษาไตเร็วเพราะมักต้อง KRT'},
+ drugshift:{leaf:true,t:'Transcellular shift จากยา/acidosis',b:'แก้ acidosis (bicarbonate ถ้ามี metabolic acidosis) · หยุด non-selective β-blocker ถ้าเป็นไปได้ · digoxin toxicity: digoxin Fab · ยังต้องดู GFR และยาที่ลดการขับร่วมด้วย',next:['ดูการทำงานไตต่อ','gfr']},
+ gfr:{q:'การทำงานของไตเป็นอย่างไร?',o:[['AKI หรือ eGFR <20–30','lowgfr'],['eGFR พอใช้','aldo']]},
+ lowgfr:{leaf:true,cls:'violet',t:'ไตขับ K ไม่ได้',b:'AKI (ดูหน้า AKI) หรือ CKD ระยะท้าย · หยุด K ใน IV fluid/supplement · ทบทวน RAASi, MRA, NSAIDs, trimethoprim · loop diuretic ถ้ายังมีปัสสาวะ · binder · K ≥6.5 ไม่ตอบสนองหรือ oliguric → KRT'},
+ aldo:{q:'มียาที่ลดฤทธิ์ aldosterone หรือ distal Na ลดหรือไม่?',o:[['มียา (ACEI/ARB/MRA, trimethoprim, heparin, NSAIDs, CNI, amiloride)','drugs'],['ขาดน้ำ / HF','flow'],['ไม่มีทั้งสอง','hypoaldo']]},
+ drugs:{leaf:true,cls:'warn',t:'Drug-induced',b:'K 5.5–5.9: ลดขนาดยา แก้ปัจจัยอื่น · K ≥6.0: หยุดยาที่เป็นสาเหตุ หรือใช้ binder เพื่อคง RAASi ในผู้ที่ได้ประโยชน์ · trimethoprim ขนาดสูง (PJP) ทำ K สูงบ่อย'},
+ flow:{leaf:true,cls:'warn',t:'Distal Na และน้ำมาถึงน้อย',b:'ขาดน้ำ: ให้สารน้ำ (LR/NSS) · HF: ปรับ diuretic · มักเกิดร่วมกับ RAASi/MRA'},
+ hypoaldo:{leaf:true,t:'Hypoaldosteronism / aldosterone resistance',b:'<b>Type 4 RTA</b> (hyporeninemic hypoaldosteronism) ในเบาหวาน/CKD: K สูง + normal AG acidosis · <b>adrenal insufficiency</b>: Na ต่ำ, ความดันต่ำ → cortisol · obstructive uropathy, SLE nephritis · รักษา: loop/thiazide, bicarbonate, fludrocortisone เมื่อเหมาะสม'}
+},'apTrail','apStage');
+
+function plan(){
+  const k=num('pK'),g=num('pGlu'),ecg=radio('ecg');
+  const hd=$('cHD').checked,olig=$('cOlig').checked,dka=$('cDKA').checked,ihd=$('cIHD').checked,szc=$('cSZC').checked,acid=$('cAcid').checked;
+  const sev=k===null?'':k>=6.5?'severe':k>=6.0?'moderate':k>=5.5?'mild':'normal';
+  const steps=[];
+  const lab={severe:'<b style="color:var(--danger)">Severe</b>',moderate:'<b style="color:#C4571B">Moderate</b>',mild:'<b style="color:var(--warn)">Mild</b>',normal:'ไม่ถึงเกณฑ์ hyperkalemia'}[sev]||'';
+  if(ecg==='arrest'){
+    steps.push('<b>Cardiac arrest:</b> ALS ตามมาตรฐาน · <b>10% CaCl₂ 10 mL IV</b> · RI 10 U + glucose 25 g (50% glucose 50 mL)'+(g!==null&&g<126?' + 10% glucose 50 mL/h':'')+' · NaHCO₃ · พิจารณาฟอกเลือดระหว่าง CPR ถ้าทำได้');
+    $('pOut').innerHTML=`${lab} · ECG: cardiac arrest<ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol>`;return;
+  }
+  if(sev==='normal'){$('pOut').innerHTML='K <5.5 ไม่ต้องรักษาเฉียบพลัน · ถ้าผลไม่เข้ากับภาพให้ตรวจซ้ำ';return}
+  if(sev==='mild'&&ecg==='none'){
+    steps.push('ไม่ต้องให้ยาฉุกเฉิน · หาสาเหตุ ทบทวนยา (RAASi, MRA, NSAIDs, trimethoprim, K supplement) และอาหาร · ตรวจ K ซ้ำ');
+    if(hd)steps.push('ผู้ป่วยฟอกเลือด: ทบทวนอาหาร/ความเพียงพอของการฟอก พิจารณา binder ระหว่างรอบ');
+    $('pOut').innerHTML=`${lab}<ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol>`;return;
+  }
+  steps.push(`<b>เตรียม:</b> IV access · ECG 12 lead · ${sev==='severe'||ecg!=='none'?'cardiac monitor ต่อเนื่อง · ':''}ตรวจ K ด้วย blood gas ระหว่างรอผล`);
+  if(ecg==='t'||ecg==='severe'){
+    steps.push(`<b>① Calcium:</b> 10% Ca gluconate <span class="mono">30 mL</span> (3 ampule) IV ใน 10 นาที · ECG ซ้ำ${ecg==='severe'?' · ECG ยังผิดปกติ → ให้ซ้ำได้ <span class="tag add">เสริม</span>':''}`);
+  } else steps.push('<b>① Calcium:</b> ไม่จำเป็น (ECG ปกติ)');
+  if(dka){
+    steps.push('<b>② DKA/HHS:</b> ไม่ใช้สูตร insulin-glucose · ให้สารน้ำ + insulin infusion ตามโปรโตคอล DKA · ตรวจ K ทุก 1–2 ชม. เพราะจะลดเร็ว');
+  } else if(sev==='severe'||sev==='moderate'){
+    let s=`<b>② Insulin-glucose:</b> RI <span class="mono">10 U</span> + 50% glucose <span class="mono">50 mL</span> (25 g) IV ใน 15 นาที ${sev==='moderate'?'(moderate: เสนอแนะ 2C)':''}`;
+    if(g!==null&&g<126)s+=`<br>→ Glucose ก่อนให้ ${g} mg/dL (&lt;126) ให้ <b>10% glucose 50 mL/h × 5 ชม.</b>`;
+    s+='<br>→ ตรวจ glucose ที่ 0, 30, 60, 90, 120, 180, 240, 300, 360 นาที';
+    steps.push(s);
+    if(sev==='severe')steps.push(`<b>②b Salbutamol:</b> nebulized <span class="mono">${ihd?'10 mg (4 nebule)':'10–20 mg (4–8 nebule)'}</span> เป็นยาเสริม — ห้ามใช้เดี่ยว${ihd?' · มีโรคหัวใจ ใช้ขนาดต่ำและ monitor':''}`);
+  }
+  if(acid)steps.push('<b>Acidosis ร่วม:</b> พิจารณา NaHCO₃ (ระวัง volume/Na เกิน และห้ามผสมสายเดียวกับ calcium)');
+  let rm='<b>③ กำจัด K:</b> หยุด K ใน IV fluid/supplement และยาที่เพิ่ม K';
+  if(szc)rm+=' · <b>SZC 10 g วันละ 3 ครั้ง</b> (สูงสุด 72 ชม.) หรือ patiromer 8.4 g';
+  else rm+=' · มีแต่ resin (Kalimate): ใช้เสริมได้แต่ออกฤทธิ์ช้า อย่าพึ่งตัวเดียว';
+  if(!hd&&!olig)rm+=' · loop diuretic ถ้ามีปัสสาวะและไม่ขาดน้ำ';
+  steps.push(rm);
+  if(hd&&sev==='severe')steps.push('<b>ผู้ป่วยฟอกเลือด + K ≥6.5:</b> <b style="color:var(--danger)">ฟอกเลือดด่วน</b> (1A) — ให้ยาข้างต้นระหว่างรอ');
+  else if(olig&&(sev==='severe'||ecg!=='none'))steps.push('<b>AKI oliguric:</b> ยาแค่ซื้อเวลา → ปรึกษาอายุรแพทย์โรคไต/ส่งต่อเพื่อ KRT ทันที');
+  else if(sev==='severe')steps.push('<b>ไม่ตอบสนองหลังรอบแรก</b> หรือ K ขึ้นซ้ำเร็ว → ปรึกษาเรื่อง KRT');
+  steps.push('<b>④ ติดตาม:</b> K ที่ <span class="mono">1, 2, 4, 6, 24 ชม.</span> · K ยังสูงที่ 4–6 ชม. ให้ insulin-glucose ซ้ำได้');
+  steps.push('<b>⑤ ป้องกันซ้ำ:</b> หาสาเหตุ ทบทวนยาและอาหาร วางแผน RAASi ก่อนจำหน่าย');
+  $('pOut').innerHTML=`${lab} · K ${k} mmol/L<ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol>`;
+}
+bindAll('.plan input',plan);
+
+mountQuiz([
+ ['ผู้ป่วย K 7.1 ECG มี QRS กว้าง ขนาด calcium gluconate 10% ที่ถูกต้องคือ',
+  ['10 mL IV push','30 mL IV ใน 10 นาที','100 mL IV drip 1 ชม.','ไม่ต้องให้ เพราะ calcium ไม่ลด K'],1,'UKKA ใช้ Ca 6.8 mmol = 10% Ca gluconate 30 mL ใน 10 นาที (หรือ CaCl₂ 10 mL ใน 5 นาที) · ใน รพ.ไทยคือ 3 ampule'],
+ ['หญิง 70 ปี น้ำหนัก 45 kg ไม่เป็นเบาหวาน K 6.7 glucose ก่อนให้ 95 mg/dL ได้ RI 10 U + 50% glucose 50 mL ควรทำอะไรต่อ',
+  ['ไม่ต้องทำอะไรเพิ่ม','ให้ 10% glucose 50 mL/h × 5 ชม. และตรวจ glucose เป็นระยะถึง 6 ชม.','ให้ insulin ซ้ำทันที','งดอาหารและน้ำ'],1,'Glucose เริ่มต้น <7 mmol/L (126 mg/dL) เสี่ยง hypoglycemia สูง UKKA ให้ 10% glucose 50 mL/h 5 ชม. (2B) และตรวจ glucose 0–360 นาที (1C)'],
+ ['ข้อใดถูกเกี่ยวกับ salbutamol ใน hyperkalemia รุนแรง',
+  ['ใช้เดี่ยวได้ถ้าไม่มี IV','ใช้ขนาด 2.5 mg เท่ากับรักษาหอบ','เป็นยาเสริม insulin-glucose ขนาด 10–20 mg ห้ามใช้เดี่ยว','ห้ามใช้ทุกกรณี'],2,'Nebulized 10–20 mg เป็น adjunct (1B) และห้ามใช้เป็น monotherapy ใน severe (1A)'],
+ ['K 6.9 ในผู้ป่วยไตปกติ ไม่มียาเสี่ยง ECG ปกติ เกล็ดเลือด 950,000 นึกถึงอะไรก่อน',
+  ['Type 4 RTA','Pseudohyperkalemia','Adrenal insufficiency','Rhabdomyolysis'],1,'Thrombocytosis ทำให้ K ออกจากเกล็ดเลือดขณะเลือดแข็งตัว ตรวจ K ใน plasma (lithium heparin) หรือ blood gas เพื่อยืนยัน'],
+ ['ผู้ป่วยฟอกเลือดประจำ K 7.0 ECG มี peaked T และ P แบน หน่วยไตพร้อมฟอกใน 15 นาที ข้อใดถูก',
+  ['ไม่ต้องให้ยา รอฟอก','ให้ calcium ก่อน แล้วฟอกเลือดด่วน','ให้ Kalimate แล้วรอ 24 ชม.','ให้ furosemide 80 mg'],1,'K ≥6.5 ในผู้ป่วย HD → ฟอกเลือดด่วน (1A) แต่ถ้ามี ECG เปลี่ยนให้ calcium แม้จะฟอกได้ทันที (1C)'],
+ ['ผู้ป่วย DKA แรกรับ K 6.2 ECG peaked T เล็กน้อย การจัดการ K ที่เหมาะสม',
+  ['RI 10 U + 50% glucose 50 mL','สารน้ำ + insulin infusion ตามโปรโตคอล DKA และตรวจ K ถี่','ให้ Kalimate อย่างเดียว','ห้ามให้ insulin จน K <5'],1,'ใน DKA insulin infusion + สารน้ำจะดัน K เข้าเซลล์เอง K รวมในร่างกายขาด จะลดเร็ว ต้องติดตามและเติม K'],
+ ['ผู้ป่วย HFrEF ได้ spironolactone K 5.7 ไม่มีอาการ ECG ปกติ ตาม UKKA ควรทำอย่างไร',
+  ['หยุด spironolactone ถาวร','ลด MRA ครึ่งขนาด แก้ปัจจัยอื่น ตรวจ K ถี่ขึ้น','ให้ calcium gluconate','ให้ insulin-glucose'],1,'MRA ใน HF: K 5.5–5.9 ลดครึ่งขนาด · K >6.0 เริ่ม binder และติดตาม — พยายามคงยาที่มีประโยชน์'],
+ ['ข้อใดไม่ถูกต้อง',
+  ['Calcium ทำให้ membrane คงที่แต่ไม่ลด K','Insulin-glucose ลด K ได้ราว 4–6 ชม.','Calcium polystyrene sulfonate เป็นยาหลักในภาวะฉุกเฉินรุนแรง','ควรตรวจ K ที่ 1, 2, 4, 6, 24 ชม.'],2,'Resin ออกฤทธิ์ช้าและไม่แน่นอน UKKA ไม่ใช้เป็น routine ใน acute (2B)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

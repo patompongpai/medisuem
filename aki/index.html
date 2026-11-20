@@ -1,0 +1,779 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AKI · Acute Kidney Injury</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">KDIGO 2012 · KDIGO AKI/AKD 2026 (public review draft)</div>
+  <h1>Acute Kidney Injury:<br>จากเกณฑ์วินิจฉัยถึงการฟอกไต</h1>
+  <p class="sub">สรุป AKI สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัยและแบ่งระยะ การหาสาเหตุแบบ prerenal–intrinsic–postrenal การดูแลสารน้ำและยา ข้อบ่งชี้และจังหวะการทำ KRT ไปจนถึงการติดตามหลังจำหน่าย พร้อมแผนผังที่คลิกเดินตามได้และเครื่องคำนวณข้างเตียง</p>
+  <p class="cite">อ้างอิงหลัก: KDIGO Clinical Practice Guideline for Acute Kidney Injury (2012) · KDIGO Clinical Practice Guideline for AKI and AKD — Public Review Draft (มี.ค. 2026) <span class="tag draft">ร่าง</span> = คำแนะนำจากฉบับร่าง อาจเปลี่ยนในฉบับตีพิมพ์ · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row" aria-label="KDIGO staging">
+    <div class="stage" style="--c:var(--warn)"><b>Stage 1</b>SCr ↑ ≥0.3 mg/dL ใน 48 ชม. หรือ 1.5–1.9× baseline · UO &lt;0.5 mL/kg/h 6–12 ชม.</div>
+    <div class="stage" style="--c:#C4571B"><b>Stage 2</b>SCr 2.0–2.9× baseline · UO &lt;0.5 mL/kg/h ≥12 ชม.</div>
+    <div class="stage" style="--c:var(--danger)"><b>Stage 3</b>SCr ≥3× หรือ ≥4.0 mg/dL หรือเริ่ม KRT · UO &lt;0.3 mL/kg/h ≥24 ชม. หรือ anuria ≥12 ชม.</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามและระยะ</a><a href="#causes">สาเหตุ</a><a href="#workup">ส่งตรวจ</a><a href="#approach">แผนผัง Approach</a><a href="#prevent">ป้องกันและดูแลทั่วไป</a><a href="#complic">ภาวะแทรกซ้อน</a><a href="#krt">KRT</a><a href="#specific">สาเหตุเฉพาะ</a><a href="#followup">หลังจำหน่าย</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยาม การแบ่งระยะ และ AKD</h2>
+  <div class="box key"><b>นิยาม AKI (KDIGO)</b>มีข้อใดข้อหนึ่ง: SCr เพิ่ม <span class="mono">≥0.3 mg/dL</span> ภายใน 48 ชม. · SCr เพิ่มเป็น <span class="mono">≥1.5 เท่า</span> ของ baseline ที่รู้หรือสันนิษฐานว่าเกิดภายใน 7 วัน · urine output <span class="mono">&lt;0.5 mL/kg/h</span> นาน ≥6 ชม.</div>
+  <p>ฉบับร่าง KDIGO 2026 <span class="tag draft">ร่าง</span> คงเกณฑ์ SCr และ urine output เดิม แต่ขยายนิยามเป็น <b>ความผิดปกติของการทำงานหรือโครงสร้างของไต</b> ที่เกิดภายใน 7 วัน โดยเพิ่ม 2 เรื่อง</p>
+  <ul>
+    <li><b>Cystatin C</b> เพิ่ม ≥1.5 เท่าของ baseline ใช้วินิจฉัยได้ เหมาะเมื่อ SCr เชื่อถือได้น้อย เช่น กล้ามเนื้อน้อย ผู้ป่วยติดเตียง ตับแข็ง <span class="rec">2B</span></li>
+    <li><b>Structural biomarker</b> (เช่น TIMP-2×IGFBP7, NGAL) ที่ผลบวกตามข้อบ่งชี้ที่ validate แล้ว — แบ่งระยะแยกเป็น "B1"</li>
+  </ul>
+  <h3>Baseline creatinine</h3>
+  <p>ต้องหา baseline ทุกราย ร่าง KDIGO 2026 แนะนำให้ใช้ค่า SCr ผู้ป่วยนอกในช่วง <span class="mono">8–365 วัน</span> ก่อนนอนโรงพยาบาลเป็นอันดับแรก ถ้าไม่มีให้ไล่ลำดับลงไป (ค่าต่ำสุดระหว่างนอน รพ. หรือค่าแรกรับ) — อย่าคำนวณย้อนจาก eGFR 75 แบบอัตโนมัติถ้ามีค่าจริง</p>
+  <h3>ระยะเวลาและการฟื้นตัว</h3>
+  <div class="tbl"><table>
+    <tr><th>คำ</th><th>ความหมาย</th></tr>
+    <tr><td><b>Transient AKI</b></td><td>กลับมาภายใน ≤48 ชม.</td></tr>
+    <tr><td><b>Persistent AKI</b></td><td>นานกว่า 48 ชม. ถึง 7 วัน</td></tr>
+    <tr><td><b>AKD</b> (acute kidney disease)</td><td>ภาวะไตผิดปกติที่นาน <span class="mono">≤3 เดือน</span>: มี AKI, GFR &lt;60, GFR ลดลง ≥35%, SCr เพิ่ม &gt;50% หรือมี marker of damage (albuminuria, hematuria, pyuria) — ต่อจาก AKI หรือเกิดโดยไม่มี AKI ก็ได้</td></tr>
+    <tr><td><b>CKD</b></td><td>ผิดปกตินาน &gt;3 เดือน</td></tr>
+    <tr><td><b>Complete recovery</b></td><td>AKI: SCr &lt;1.2× baseline ภายใน 7 วัน · AKD: &lt;1.2× หรือ eGFR &gt;80% ของ baseline ที่ 3 เดือน</td></tr>
+  </table></div>
+  <div class="box note"><b>ทำไมสำคัญ</b>AKI ไม่ได้จบที่ SCr กลับมาปกติ ผู้ป่วยที่เป็น AKI มีความเสี่ยง CKD, AKI ซ้ำ, โรคหัวใจ และเสียชีวิตเพิ่มขึ้นในระยะยาว จึงต้องมีแผนติดตาม (บท 09)</div>
+</section>
+
+<!-- 2 -->
+<section id="causes">
+  <div class="col">
+    <div class="sec-num">02</div>
+    <h2>สาเหตุ: prerenal · intrinsic · postrenal</h2>
+    <p>ในทางปฏิบัติ ผู้ป่วยหนึ่งคนมักมีหลายกลไกพร้อมกัน เช่น sepsis + ยา + ความดันต่ำ การแบ่งสามกลุ่มช่วยให้ไม่ลืมถามและตรวจให้ครบ</p>
+  </div>
+  <div class="grid3">
+    <div class="card c-warn"><h4>Prerenal (hemodynamic)</h4>เลือดไปเลี้ยงไตลดลง เนื้อไตยังปกติ แก้สาเหตุแล้ว SCr ดีขึ้นใน 24–72 ชม.
+      <ul><li>Volume ลด: อาเจียน ท้องเสีย เลือดออก ไข้เลือดออกช่วงรั่ว</li><li>Effective volume ลด: HF (cardiorenal), cirrhosis (HRS), sepsis</li><li>ยาที่ลด glomerular pressure: <b>NSAIDs</b>, ACEI/ARB, diuretics, CNI</li><li>ความดันต่ำ / MAP ไม่พอสำหรับคนที่ความดันสูงเรื้อรัง</li></ul></div>
+    <div class="card c-red"><h4>Intrinsic (renal)</h4>
+      <ul><li><b>ATN/ATI</b> (พบบ่อยที่สุดใน รพ.): ischemic จาก shock/sepsis, nephrotoxic (aminoglycoside, colistin, vancomycin, amphotericin B, contrast), pigment (rhabdomyolysis, hemolysis)</li><li><b>AIN</b>: β-lactam, PPI, NSAIDs, rifampicin, สมุนไพร</li><li><b>Glomerular</b>: RPGN, lupus nephritis, post-infectious GN</li><li><b>Vascular</b>: TMA (TTP/HUS, malignant HT), atheroembolic, renal infarct</li></ul></div>
+    <div class="card c-vio"><h4>Postrenal (obstructive)</h4>ต้องอุดตันทั้งสองข้าง หรือข้างเดียวในคนที่มีไตทำงานข้างเดียว
+      <ul><li>BPH, มะเร็งต่อมลูกหมาก, neurogenic bladder, ยา anticholinergic</li><li>นิ่วทั้งสองข้าง, มะเร็งในอุ้งเชิงกราน (cervix), retroperitoneal fibrosis</li><li>สายสวนปัสสาวะอุดตัน</li></ul>
+      <span class="muted" style="font-size:.88rem">Bladder scan / ultrasound หาได้เร็ว และแก้ได้</span></div>
+  </div>
+  <div class="col">
+    <div class="box key"><b>บริบทไทย</b>นอกจาก sepsis และยา ให้นึกถึงโรคเขตร้อนที่ทำให้ AKI บ่อย: <b>leptospirosis</b> (มักมี hypokalemia + non-oliguric), <b>ไข้เลือดออก</b>, <b>malaria</b> (P. falciparum), <b>scrub typhus</b>, <b>งูแมวเซากัด</b> (Russell's viper), rhabdomyolysis จาก heat stroke หรือออกกำลังหนัก และยาสมุนไพร/NSAIDs ที่ซื้อเอง</div>
+    <h3>ยาที่ต้องทบทวนทุกครั้ง</h3>
+    <div class="tbl"><table>
+      <tr><th>กลุ่ม</th><th>ตัวอย่าง</th><th>กลไก</th></tr>
+      <tr><td>ลด glomerular perfusion</td><td>NSAIDs, ACEI/ARB, diuretics, SGLT2i (ช่วงขาดน้ำ), calcineurin inhibitor</td><td>Hemodynamic</td></tr>
+      <tr><td>Tubular toxicity</td><td>Aminoglycoside, vancomycin (โดยเฉพาะร่วมกับ piperacillin-tazobactam), colistin, amphotericin B, tenofovir (TDF), cisplatin, contrast</td><td>ATN</td></tr>
+      <tr><td>Interstitial nephritis</td><td>Penicillin/cephalosporin, PPI, NSAIDs, rifampicin, sulfonamide, allopurinol</td><td>AIN</td></tr>
+      <tr><td>Crystal</td><td>Acyclovir IV, methotrexate, sulfadiazine, indinavir</td><td>อุดตันใน tubule</td></tr>
+      <tr><td>สะสมเมื่อไตลด (ไม่ได้ทำลายไต)</td><td>Metformin, enoxaparin, gabapentin, colchicine, digoxin, sulfonylurea</td><td>ต้องปรับขนาด/หยุด</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="workup" class="col">
+  <div class="sec-num">03</div>
+  <h2>การส่งตรวจทีละขั้น</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">ยืนยัน AKI และหา baseline</span></summary><div class="body">ดูค่า SCr ย้อนหลัง (OPD 8–365 วัน) · ดู urine output ราย ชม. · แยก AKI จาก CKD: ประวัติ, ขนาดไตจาก ultrasound (ไตเล็ก + cortex บาง = เรื้อรัง), anemia, Ca/PO₄, PTH</div></details>
+    <details class="step"><summary><span class="n">2</span><span class="t">ประเมิน volume และ hemodynamics</span></summary><div class="body">BP (เทียบกับ BP ปกติของผู้ป่วย), MAP, orthostatic, JVP, น้ำหนักตัว, input–output, ปอด, edema, POCUS (IVC, B-lines, หัวใจ) — ภาพ volume ล้นกับขาดน้ำต้องการการรักษาตรงข้ามกัน</div></details>
+    <details class="step"><summary><span class="n">3</span><span class="t">หยุดหรือปรับยา</span></summary><div class="body">ไล่ใบสั่งยาทุกตัว: หยุด NSAIDs, nephrotoxin ที่ไม่จำเป็น · พักยา ACEI/ARB/diuretic/SGLT2i/metformin ชั่วคราวในช่วงไม่คงที่ · ปรับขนาดยาที่ขับทางไต (ไม่ใช้ eGFR สูตร steady state ช่วง SCr กำลังเปลี่ยน)</div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">ตัดสาเหตุอุดตัน</span></summary><div class="body">Bladder scan หรือใส่สายสวนถ้าปัสสาวะค้าง · Ultrasound ไตเมื่อสาเหตุไม่ชัดหรือสงสัย obstruction (hydronephrosis) — ทำเร็วเพราะแก้ได้</div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">Urinalysis และ urine microscopy</span></summary><div class="body">
+      ร่าง KDIGO 2026 แนะนำให้ทำ urine microscopy ในผู้ใหญ่ที่เป็น AKI <span class="rec">2D</span> <span class="tag draft">ร่าง</span>
+      <ul><li><b>Muddy brown granular cast, renal tubular epithelial cell</b> → ATN</li><li><b>RBC cast, dysmorphic RBC, proteinuria</b> → glomerulonephritis</li><li><b>WBC cast, pyuria ปราศจากเชื้อ</b> → AIN (หรือ pyelonephritis)</li><li><b>Dipstick blood บวก แต่ไม่เห็น RBC</b> → myoglobin/hemoglobin (rhabdomyolysis, hemolysis)</li><li><b>Bland</b> → prerenal หรือ postrenal</li></ul></div></details>
+    <details class="step"><summary><span class="n">6</span><span class="t">Urine indices</span></summary><div class="body">
+      <div class="tbl"><table>
+        <tr><th>ตัวชี้</th><th class="mono">Prerenal</th><th class="mono">ATN</th></tr>
+        <tr><td>FENa</td><td class="mono">&lt;1%</td><td class="mono">&gt;2%</td></tr>
+        <tr><td>FEUrea (เมื่อได้ diuretic)</td><td class="mono">&lt;35%</td><td class="mono">&gt;50%</td></tr>
+        <tr><td>Urine Na</td><td class="mono">&lt;20</td><td class="mono">&gt;40</td></tr>
+        <tr><td>Urine osmolality</td><td class="mono">&gt;500</td><td class="mono">&lt;350</td></tr>
+        <tr><td>BUN/Cr</td><td class="mono">&gt;20</td><td class="mono">10–15</td></tr>
+      </table></div>
+      <span class="muted" style="font-size:.88rem">ร่าง KDIGO 2026 ระบุว่า FENa และ FEUrea มีประโยชน์จำกัด <span class="tag draft">ร่าง</span> — FENa ต่ำได้ใน contrast, pigment, sepsis และ GN ระยะแรก ส่วน CKD และ diuretic ทำให้สูงหลอก ใช้ประกอบกับภาพรวม ไม่ใช้ตัดสินลำพัง</span></div></details>
+    <details class="step"><summary><span class="n">7</span><span class="t">Lab ตามสาเหตุที่สงสัย</span></summary><div class="body">Electrolyte, VBG/ABG, Ca/PO₄, uric acid · <b>CK</b> (rhabdomyolysis) · CBC + smear, LDH, haptoglobin (TMA/hemolysis) · Leptospira/dengue/malaria ตามบริบท · ANA, C3/C4, ANCA, anti-GBM เมื่อมี active sediment · UPCR · การตัดชิ้นเนื้อไตเมื่อสาเหตุไม่ชัดและผลจะเปลี่ยนการรักษา</div></details>
+    <details class="step"><summary><span class="n">8</span><span class="t">ประเมินความเสี่ยงว่าจะแย่ลง</span></summary><div class="body"><b>Furosemide stress test</b> ในผู้ป่วย AKI stage 1–2 ที่ไม่ขาดน้ำ <span class="rec">2C</span> <span class="tag draft">ร่าง</span>: furosemide IV 1 mg/kg (ไม่เคยได้ยา) หรือ 1.5 mg/kg (เคยได้) แล้วเก็บปัสสาวะ 2 ชม. ถ้า <span class="mono">&lt;200 mL</span> เสี่ยงเข้า stage 3/ต้อง KRT สูง → เตรียมส่งต่อ · ต้องทดแทนปริมาณปัสสาวะที่ออกด้วยสารน้ำเพื่อไม่ให้ขาดน้ำ</div></details>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">04</div>
+    <h2>แผนผังการ approach AKI</h2>
+    <p>เลือกดูแผนผังทั้งหมด หรือแบบตอบคำถามทีละขั้นกับผู้ป่วยจริง</p>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>SCr ↑ ≥0.3 ใน 48 ชม. / ≥1.5× ใน 7 วัน / UO &lt;0.5 mL/kg/h ≥6 ชม.</b>ยืนยัน AKI · แบ่ง stage · หา baseline</div>
+      <div class="vline"></div>
+      <div class="node red"><b>มีภาวะคุกคามชีวิต?</b>K สูงมาก / ECG เปลี่ยน · pH &lt;7.15–7.2 · pulmonary edema · uremic encephalopathy/pericarditis → แก้ทันที และติดต่อทีม KRT</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ประเมิน volume + hemodynamics · ทบทวนยา</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ขาดน้ำ / ความดันต่ำ</span><div class="node dx hypo"><b>Prerenal?</b>Balanced crystalloid bolus · MAP &gt;65 (vasopressor ถ้าไม่ตอบสนอง) · หยุด NSAIDs/diuretic/ACEI</div></div>
+        <div class="arm"><span class="lab">Euvolemic</span><div class="node dx eu"><b>หาสาเหตุใน parenchyma</b>UA + microscopy · CK · ยา</div></div>
+        <div class="arm"><span class="lab">Volume เกิน</span><div class="node dx hyper"><b>HF / cirrhosis / GN</b>Loop diuretic bolus · รักษาโรคหลัก</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>Bladder scan / Ultrasound: มี obstruction?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">มี</span><div class="node dx green"><b>Postrenal</b>Foley · ปรึกษา uro (nephrostomy/stent) · ระวัง post-obstructive diuresis</div></div>
+        <div class="arm"><span class="lab">ไม่มี</span><div class="node q"><b>Urine sediment</b></div>
+          <div class="branch b3">
+            <div class="arm"><span class="lab">Muddy brown</span><div class="node dx grey"><b>ATN</b>Ischemic / toxic / pigment</div></div>
+            <div class="arm"><span class="lab">RBC cast</span><div class="node dx red"><b>GN / RPGN</b>Serology · ปรึกษาไตด่วน</div></div>
+            <div class="arm"><span class="lab">WBC cast</span><div class="node dx grey"><b>AIN</b>หยุดยาที่สงสัย</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="font-size:.82rem;margin-top:12px;align-self:flex-start">Sediment bland + ดีขึ้นหลังแก้ hemodynamic ใน 24–72 ชม. = prerenal · ไม่ดีขึ้นแม้ hemodynamic ดี = คิดถึง ATN หรือสาเหตุอื่น</p>
+    </div>
+    <div class="legend"><span style="--c:var(--warn)">ขาดน้ำ</span><span style="--c:var(--accent)">Euvolemic</span><span style="--c:var(--violet)">Volume เกิน</span><span style="--c:var(--ok)">แก้ได้เร็ว</span><span style="--c:var(--danger)">ต้องรีบจัดการ</span></div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="prevent" class="col">
+  <div class="sec-num">05</div>
+  <h2>การป้องกันและดูแลทั่วไป</h2>
+  <p>ยังไม่มียาที่รักษา AKI โดยตรง หัวใจของการดูแลคือ <b>รักษาสาเหตุ ทำ hemodynamic ให้เหมาะ ไม่ทำร้ายไตเพิ่ม</b> และจัดการภาวะแทรกซ้อน (KDIGO "AKI bundle")</p>
+  <h3>สารน้ำและ hemodynamics</h3>
+  <ul>
+    <li>ใช้ <b>crystalloid มากกว่า colloid</b> (albumin, gelatin, starch) <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> · หลีกเลี่ยง hydroxyethyl starch</li>
+    <li>ใช้ <b>buffered/balanced crystalloid</b> (LR, acetated Ringer) มากกว่า 0.9% NaCl <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> — ยกเว้น traumatic brain injury</li>
+    <li>ให้สารน้ำเมื่อมีหลักฐานว่า <b>ขาดและตอบสนอง</b> แล้วหยุดเมื่อไม่ตอบสนอง — fluid overload ทำให้ไตแย่ลงและเพิ่มอัตราตาย</li>
+    <li>เป้า <b>MAP &gt;65 mmHg</b> ในผู้ป่วยวิกฤตที่เสี่ยง <span class="rec">2C</span> ปรับเป็นรายคน เช่น สูงขึ้นในคนความดันสูงเรื้อรัง · ใช้ vasopressor ร่วมกับสารน้ำเมื่อความดันต่ำไม่ตอบสนอง</li>
+    <li><b>ไม่ใช้ low-dose dopamine</b> เพื่อปกป้องไต <span class="rec no">1A ไม่แนะนำ</span></li>
+  </ul>
+  <h3>Diuretic</h3>
+  <ul>
+    <li>ใช้ loop diuretic <b>เมื่อมี volume overload</b> ที่มีความสำคัญทางคลินิก <span class="rec">2B</span> <span class="tag draft">ร่าง</span> — ไม่ใช้เพื่อ "เปลี่ยน oliguric เป็น non-oliguric" หรือเพื่อป้องกัน AKI</li>
+    <li>เริ่มด้วย <b>bolus เป็นระยะ</b> ก่อน continuous infusion · ลอง diuretic ก่อนดึงน้ำด้วยเครื่อง ถ้าไม่มีข้อบ่งชี้ KRT อื่น <span class="rec s1">1C</span> <span class="tag draft">ร่าง</span></li>
+  </ul>
+  <h3>Nephrotoxin stewardship</h3>
+  <ul>
+    <li>หยุดยาที่เป็นพิษ เปลี่ยนเป็นยาที่ปลอดภัยกว่า หรือลดขนาดยาที่พิษตามขนาด <span class="rec s1">1C</span> <span class="tag draft">ร่าง</span> · ทำ TDM ของ vancomycin, aminoglycoside, digoxin, CNI</li>
+    <li><b>ขนาดยาระหว่าง AKI</b>: อย่าใช้ CrCl หรือ eGFR สูตร steady state ตอนที่ SCr กำลังขึ้นหรือลง ให้ดูแนวโน้ม SCr และ urine output (KeGFR ช่วยได้) <span class="tag draft">ร่าง</span> — ยาต้านจุลชีพในผู้ป่วย sepsis ให้ loading dose เต็มเสมอ</li>
+    <li><b>Sick-day rules</b>: สอนผู้ป่วยให้หยุด ACEI/ARB, diuretic, metformin, SGLT2i, NSAIDs ชั่วคราวเมื่ออาเจียน ท้องเสีย กินไม่ได้ พร้อมแผนกลับมาเริ่ม <span class="rec">2D</span> <span class="tag draft">ร่าง</span></li>
+  </ul>
+  <h3>Contrast-associated AKI</h3>
+  <ul>
+    <li>อย่าเลื่อนการตรวจที่มีประโยชน์ชัดเจน แต่พิจารณา imaging อื่นในผู้เสี่ยงสูง · ใช้ iso/low-osmolar contrast ขนาดต่ำสุดที่ได้ผล</li>
+    <li>ผู้เสี่ยงสูง (AKI หรือ eGFR &lt;30) ที่ไม่มีน้ำเกิน: ให้ <b>0.9% NaCl ก่อนและหลังฉีด</b> <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> · NAC, bicarbonate, furosemide และการฟอกเลือดหลังฉีดไม่มีประโยชน์</li>
+    <li>Metformin: eGFR &gt;30 และไม่มี AKI ใช้ต่อได้ · นอกนั้นหยุดและไม่เริ่มใหม่อย่างน้อย 48 ชม.</li>
+    <li>ไม่ต้องหยุด ACEI/ARB เป็น routine ก่อนฉีด contrast <span class="rec">2C</span> <span class="tag draft">ร่าง</span></li>
+  </ul>
+  <h3>อื่นๆ</h3>
+  <ul>
+    <li>น้ำตาลในผู้ป่วยวิกฤต 140–180 mg/dL ยอมรับได้</li>
+    <li>อาหาร: ทางลำไส้ก่อน · <b>ไม่จำกัดโปรตีน</b> เพื่อเลื่อน dialysis และไม่ให้มากเกิน · ผู้ทำ CRRT ให้ water-soluble vitamin เสริม</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="complic" class="col">
+  <div class="sec-num">06</div>
+  <h2>ภาวะแทรกซ้อนที่ต้องจัดการ</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Hyperkalemia</h4>พบบ่อยและอันตรายที่สุด · ECG ทันทีเมื่อ K ≥6.0 · calcium → insulin-glucose → salbutamol → กำจัด K · หยุดยาที่เพิ่ม K<br><a href="../hyperkalemia/index.html">ดูหน้า Hyperkalemia →</a></div>
+    <div class="card c-warn"><h4>Metabolic acidosis</h4>ให้ sodium bicarbonate เมื่อ <b>pH &lt;7.20</b> ถ้ายังไม่มีข้อบ่งชี้ KRT เร่งด่วนอื่น <span class="rec">2C</span> <span class="tag draft">ร่าง</span> (อิง BICAR-ICU ซึ่งได้ประโยชน์ชัดในกลุ่ม AKI) · ระวัง volume/Na เกินและ Ca ต่ำ</div>
+    <div class="card c-vio"><h4>Volume overload</h4>Loop diuretic bolus (ขนาดสูงขึ้นเมื่อ GFR ต่ำ) · จำกัด Na/น้ำ · ถ้าไม่ตอบสนองและมี pulmonary edema → KRT</div>
+    <div class="card c-acc"><h4>Uremia</h4>Encephalopathy, pericarditis, bleeding (platelet dysfunction — DDAVP ช่วยได้) · เป็นข้อบ่งชี้ KRT · BUN ตัวเลขเดียวไม่ใช่เกณฑ์</div>
+  </div>
+  <div class="box note"><b>Electrolyte อื่น</b>Hyperphosphatemia, hypocalcemia (โดยเฉพาะ rhabdomyolysis, TLS), hyperuricemia, hypermagnesemia (ระวังยา antacid/Mg) · ปรับยาที่สะสม เช่น enoxaparin เปลี่ยนเป็น UFH เมื่อ CrCl &lt;30</div>
+</section>
+
+<!-- 7 -->
+<section id="krt">
+  <div class="col">
+    <div class="sec-num">07</div>
+    <h2>Kidney replacement therapy (KRT)</h2>
+    <div class="box key"><b>หลักใหญ่</b>ในผู้ใหญ่ <b>ไม่ต้องเริ่มเร็วแบบ pre-emptive</b> (เช่น เริ่มทันทีที่เข้า stage 3) ให้เริ่มเมื่อมีภาวะแทรกซ้อนที่แก้ด้วยยาไม่ได้ <span class="rec s1">1C</span> <span class="tag draft">ร่าง</span> — สอดคล้องกับ STARRT-AKI และ AKIKI ที่การเริ่มเร็วไม่ลดอัตราตายและเพิ่มการติด dialysis แต่การรอนานเกินไป (AKIKI 2) ก็มีแนวโน้มเป็นผลเสีย</div>
+  </div>
+  <div class="grid2">
+    <div class="tool">
+      <h3>ข้อบ่งชี้ (AEIOU) — ที่แก้ด้วยยาไม่ได้</h3>
+      <div class="tbl" style="margin:0"><table>
+        <tr><th>A</th><td><b>Acidosis</b> รุนแรงที่ไม่ตอบสนอง (เช่น pH &lt;7.15) หรือให้ bicarbonate ไม่ได้เพราะน้ำเกิน</td></tr>
+        <tr><th>E</th><td><b>Electrolyte</b>: K ≥6.5 หรือมี ECG เปลี่ยนแม้ได้ยา · Na ผิดปกติรุนแรงที่ต้องแก้แบบควบคุม</td></tr>
+        <tr><th>I</th><td><b>Intoxication</b> ที่ dialyze ได้: methanol, ethylene glycol, lithium, salicylate, metformin-associated lactic acidosis, valproate</td></tr>
+        <tr><th>O</th><td><b>Overload</b>: pulmonary edema/hypoxemia ที่ไม่ตอบสนองต่อ diuretic</td></tr>
+        <tr><th>U</th><td><b>Uremia</b>: encephalopathy, pericarditis, bleeding จาก uremia</td></tr>
+      </table></div>
+    </div>
+    <div class="tool">
+      <h3>เลือกวิธีและขนาด</h3>
+      <ul>
+        <li><b>Hemodynamic ไม่คงที่</b>: CRRT หรือ acute PD มากกว่า intermittent HD <span class="rec">2C</span> · prolonged intermittent (SLED) เป็นทางเลือก · มี ICP สูง/brain injury → CRRT</li>
+        <li><b>ขนาด</b>: CRRT effluent <span class="mono">20–25 mL/kg/h</span> (ตั้งไว้สูงกว่าเล็กน้อยเพราะหยุดเครื่องบ่อย) · intermittent Kt/V 3.9/สัปดาห์ <span class="rec s1">1B</span> · ไม่ใช้ high-volume hemofiltration ใน sepsis</li>
+        <li><b>Anticoagulation</b>: regional citrate มากกว่า heparin เมื่อมีและไม่มีข้อห้าม <span class="rec s1">1B</span></li>
+        <li><b>สายฟอกเลือด</b>: ชั่งความเสี่ยงติดเชื้อ/เลือดออก · ไม่เปลี่ยนสายตามกำหนด · ใช้ tunneled catheter เมื่อคาดว่าต้องใช้นาน</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <h3>ส่งต่อเมื่อไร (รพ.ที่ไม่มี dialysis)</h3>
+    <p>ร่าง KDIGO 2026 ให้ <b>วางแผนส่งต่อตั้งแต่ตอนที่ KRT มีแนวโน้มสูง</b> ไม่ต้องรอจนเกิดข้อบ่งชี้เร่งด่วน <span class="tag draft">ร่าง</span> — ใน รพ.ชุมชน ให้ปรึกษาอายุรแพทย์โรคไตเมื่อ stage 3, oliguria ต่อเนื่อง, furosemide stress test ไม่ตอบสนอง, K หรือ acidosis เริ่มคุมยาก หรือสงสัย RPGN/TMA</p>
+    <h3>การหยุด KRT</h3>
+    <p>ปัสสาวะ <span class="mono">&gt;450 mL/24 ชม.</span> โดยไม่มี diuretic หรือ <span class="mono">&gt;2300 mL/24 ชม.</span> เมื่อได้ diuretic ร่วมกับ 2-hour timed CrCl ≥23 mL/min ทำนายว่าหยุดได้สำเร็จ <span class="tag draft">ร่าง</span> · diuretic ไม่ได้ทำให้ไตฟื้นเร็วขึ้น</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="specific" class="col">
+  <div class="sec-num">08</div>
+  <h2>สาเหตุเฉพาะที่เจอบ่อย</h2>
+  <div class="steps">
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Sepsis-associated AKI</span></summary><div class="body">พบบ่อยที่สุดใน ICU · ให้ยาต้านจุลชีพเร็วและ loading dose เต็ม · balanced crystalloid · norepinephrine ให้ MAP ≥65 · หลีกเลี่ยงสารน้ำเกิน · หยุด nephrotoxin ร่วม (vancomycin + pip-tazo) · ดูหน้า <a href="../sepsis/index.html">Sepsis</a></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Rhabdomyolysis</span></summary><div class="body">CK สูง (มัก &gt;5,000 U/L เสี่ยง AKI), dipstick blood บวกแต่ไม่มี RBC · ให้ <b>crystalloid IV</b> ปริมาณมากตั้งแต่ต้น เป้าปัสสาวะประมาณ 200–300 mL/h <span class="tag add">เสริม</span> · ระวัง hyperK, hyperPO₄, hypoCa (ไม่ต้องแก้ Ca ถ้าไม่มีอาการ) · bicarbonate และ mannitol ไม่มีหลักฐานชัด</div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Tumor lysis syndrome</span></summary><div class="body">ป้องกันด้วยสารน้ำ <b>ไม่ต้องทำ urine alkalinization</b> · ผู้เสี่ยงสูง/เกิด TLS ให้ <b>rasburicase</b> มากกว่า allopurinol/febuxostat ยกเว้น G6PD deficiency <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> — ในไทยพบ G6PD deficiency บ่อย ต้องตรวจก่อน</div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Hepatorenal syndrome (HRS-AKI)</span></summary><div class="body">ตับแข็ง + ascites + AKI ไม่ดีขึ้นหลังหยุด diuretic และให้ albumin 1 g/kg/วัน × 2 วัน ไม่มี shock/nephrotoxin/structural injury · รักษาด้วย <b>vasoconstrictor</b> <span class="rec s1">1C</span>: terlipressin หรือ norepinephrine (+albumin) · midodrine + octreotide เป็นทางเลือก · ดูหน้า <a href="../cirrhosis/index.html">Cirrhosis</a></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Cardiorenal syndrome</span></summary><div class="body">SCr ขึ้นใน ADHF มักเกิดจาก venous congestion มากกว่าขาดน้ำ · ถ้ายังบวม ให้ diuretic ต่อ — SCr ขึ้นเล็กน้อยระหว่าง decongestion ที่ได้ผล ไม่ใช่ข้อบ่งชี้ให้หยุดยา</div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Leptospirosis</span></summary><div class="body">ไข้ ปวดน่อง ตาแดง เหลือง + AKI ที่มัก non-oliguric และ <b>hypokalemia</b> (ต่างจาก AKI ทั่วไป) · ให้ยาต้านจุลชีพเร็ว (penicillin G, ceftriaxone, doxycycline) · ระวัง pulmonary hemorrhage · ฟอกเลือดเร็วเมื่อ oliguric</div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Acute interstitial nephritis</span></summary><div class="body">อาจมีไข้ ผื่น eosinophilia (ไม่ครบทุกราย) · sterile pyuria, WBC cast · หยุดยาที่สงสัยทันที · steroid พิจารณาเมื่อไม่ดีขึ้นใน 3–5 วันหลังหยุดยา (ยืนยันด้วย biopsy ถ้าทำได้) <span class="tag add">เสริม</span></div></details>
+    <details class="step"><summary><span class="n">Dx</span><span class="t">Rapidly progressive GN</span></summary><div class="body">SCr ขึ้นในวัน–สัปดาห์ + RBC cast/dysmorphic RBC + proteinuria · ส่ง ANCA, anti-GBM, ANA, C3/C4 และ <b>ปรึกษาอายุรแพทย์โรคไตด่วน</b> เพื่อ biopsy และเริ่ม immunosuppression — ช้าแล้วไตเสียถาวร</div></details>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="followup" class="col">
+  <div class="sec-num">09</div>
+  <h2>หลังจำหน่าย: AKI ไม่ได้จบที่ SCr ลง</h2>
+  <ul>
+    <li>วางแผนติดตามตามความเสี่ยง มีแพทย์รับผิดชอบชัดเจน <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> · ใบสรุปจำหน่ายระบุ stage สูงสุด สถานะการฟื้นตัว ยาที่หยุด/ปรับ และนัดตรวจ</li>
+    <li>ติดตาม BP, volume, ยา, SCr และ <b>albuminuria</b> หลังจำหน่าย · ประเมินซ้ำที่ <b>3 เดือน</b> เพื่อดูว่าหายสนิท หรือกลายเป็น CKD</li>
+    <li><b>เริ่มหรือกลับมาใช้ ACEI/ARB</b> เมื่อไม่มีข้อห้าม <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> · พิจารณา SGLT2i, GLP-1 RA, MRA ตามข้อบ่งชี้</li>
+    <li>ผู้ที่หยุดฟอกเลือดแล้ว: พบอายุรแพทย์โรคไตภายใน 7 วัน และประเมินการทำงานไตที่ 90 วัน</li>
+    <li>สอน sick-day rules และหลีกเลี่ยง NSAIDs/สมุนไพร</li>
+  </ul>
+  <p><a href="../ckd/index.html">ต่อเนื่อง: CKD CPG 2565 →</a></p>
+</section>
+
+<!-- 10 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องคำนวณข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool" id="tStage">
+      <h3>KDIGO stage</h3>
+      <div class="fields">
+        <label class="f">Baseline SCr (mg/dL)<input type="number" id="stBase" value="1.0" step="0.1"></label>
+        <label class="f">SCr ปัจจุบัน (mg/dL)<input type="number" id="stCur" value="2.3" step="0.1"></label>
+        <label class="f">SCr เพิ่มใน 48 ชม. (mg/dL)<input type="number" id="stD48" value="0.6" step="0.1"></label>
+      </div>
+      <div class="muted" style="font-size:.82rem">Urine output</div>
+      <div class="radios">
+        <label><input type="radio" name="uo" value="0" checked>ปกติ / ไม่ทราบ</label>
+        <label><input type="radio" name="uo" value="1">&lt;0.5 mL/kg/h 6–12 ชม.</label>
+        <label><input type="radio" name="uo" value="2">&lt;0.5 mL/kg/h ≥12 ชม.</label>
+        <label><input type="radio" name="uo" value="3">&lt;0.3 ≥24 ชม. / anuria ≥12 ชม.</label>
+      </div>
+      <div class="checks"><label><input type="checkbox" id="stKrt"> เริ่ม KRT แล้ว</label></div>
+      <div class="out" id="stOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Urine output (mL/kg/h)</h3>
+      <div class="fields">
+        <label class="f">ปัสสาวะ (mL)<input type="number" id="uoVol" value="180"></label>
+        <label class="f">ในเวลา (ชม.)<input type="number" id="uoHr" value="6"></label>
+        <label class="f">น้ำหนัก (kg)<input type="number" id="uoWt" value="60"></label>
+      </div>
+      <div class="out" id="uoOut"></div>
+    </div>
+    <div class="tool">
+      <h3>FENa และ FEUrea</h3>
+      <div class="fields">
+        <label class="f">Urine Na<input type="number" id="feUNa" value="15"></label>
+        <label class="f">Plasma Na<input type="number" id="fePNa" value="138"></label>
+        <label class="f">Urine Cr (mg/dL)<input type="number" id="feUCr" value="90"></label>
+        <label class="f">Plasma Cr (mg/dL)<input type="number" id="fePCr" value="2.3"></label>
+        <label class="f">Urine urea N (mg/dL)<input type="number" id="feUUn" value="450"></label>
+        <label class="f">BUN (mg/dL)<input type="number" id="feBun" value="48"></label>
+      </div>
+      <div class="out" id="feOut"></div>
+    </div>
+    <div class="tool">
+      <h3>Furosemide stress test</h3>
+      <div class="fields">
+        <label class="f">น้ำหนัก (kg)<input type="number" id="fsWt" value="60"></label>
+        <label class="f">เคยได้ loop diuretic?<select id="fsPrev"><option value="1">ไม่เคย</option><option value="1.5">เคย</option></select></label>
+        <label class="f">ปัสสาวะ 2 ชม. หลังให้ (mL)<input type="number" id="fsUo" value="150"></label>
+      </div>
+      <div class="out" id="fsOut"></div>
+    </div>
+  </div>
+  <div class="tool" style="margin-top:12px">
+    <h3>ถึงเวลา KRT หรือยัง</h3>
+    <div class="checks" id="krtList">
+      <label><input type="checkbox" data-u="1"> K ≥6.5 หรือ ECG เปลี่ยน แม้ให้ยาแล้ว</label>
+      <label><input type="checkbox" data-u="1"> Acidosis รุนแรง (pH &lt;7.15) ไม่ตอบสนอง/ให้ bicarbonate ไม่ได้</label>
+      <label><input type="checkbox" data-u="1"> Pulmonary edema / hypoxemia ที่ diuretic ไม่ได้ผล</label>
+      <label><input type="checkbox" data-u="1"> Uremic encephalopathy / pericarditis / bleeding</label>
+      <label><input type="checkbox" data-u="1"> สารพิษที่ dialyze ได้ (methanol, lithium, salicylate, metformin + lactic acidosis)</label>
+      <label><input type="checkbox" data-u="0"> Stage 3 / oliguria ต่อเนื่อง &gt;24–48 ชม.</label>
+      <label><input type="checkbox" data-u="0"> Furosemide stress test ไม่ตอบสนอง</label>
+      <label><input type="checkbox" data-u="0"> Fluid balance บวกเรื่อยๆ ทั้งที่ต้องให้ยา/อาหารทางหลอดเลือด</label>
+    </div>
+    <div class="out" id="krtOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>เห็น SCr ขึ้น ถาม 3 ข้อก่อนเสมอ:</b> มีภาวะคุกคามชีวิตไหม (K, pH, น้ำท่วมปอด) · volume เป็นอย่างไร · มียาอะไรที่ต้องหยุด</div></div>
+    <div class="pearl"><div><b>ทำ bladder scan ให้เป็นนิสัย</b> โดยเฉพาะชายสูงอายุ ผู้ได้ยา anticholinergic/opioid หรือมีสายสวน — postrenal แก้ได้ทันที</div></div>
+    <div class="pearl"><div><b>Urine output บอกเร็วกว่า SCr</b> SCr ขึ้นช้ากว่าการบาดเจ็บ 24–48 ชม. ผู้ป่วยหนักควรมี I/O และ urine output รายชั่วโมง</div></div>
+    <div class="pearl"><div><b>ให้สารน้ำเพราะขาดและตอบสนอง ไม่ใช่เพราะ SCr สูง</b> ทุก bolus ควรประเมินซ้ำ การให้น้ำต่อในคนที่ไม่ตอบสนองทำให้น้ำท่วมปอดและไตแย่ลง</div></div>
+    <div class="pearl"><div><b>LR ใช้ได้ในผู้ป่วย K สูงเล็กน้อย</b> K ใน LR (4 mEq/L) ต่ำกว่าระดับในเลือด และ 0.9% NaCl ปริมาณมากทำให้เกิด hyperchloremic acidosis ซึ่งดัน K ขึ้นได้</div></div>
+    <div class="pearl"><div><b>Furosemide ไม่ได้รักษา AKI</b> ใช้เมื่อน้ำเกิน หรือเป็น stress test เพื่อทำนายเท่านั้น</div></div>
+    <div class="pearl"><div><b>อย่าใช้ eGFR คำนวณขนาดยาตอน SCr กำลังขึ้น</b> eGFR จะสูงเกินจริง ส่วนยาต้านจุลชีพ loading dose ให้เต็มเสมอ แล้วค่อยปรับ maintenance</div></div>
+    <div class="pearl"><div><b>Active sediment = ปรึกษาไตด่วน</b> RBC cast หรือ dysmorphic RBC ร่วมกับ SCr ขึ้นเร็ว อาจเป็น RPGN ที่เสียไตถาวรถ้าช้า</div></div>
+    <div class="pearl"><div><b>ไม่ต้องรีบฟอกเลือดเพียงเพราะตัวเลข</b> แต่ต้องรีบวางแผนส่งต่อเมื่อแนวโน้มชัด — ใน รพ.ชุมชน การส่งต่อใช้เวลา</div></div>
+    <div class="pearl"><div><b>Leptospirosis + AKI มักมี K ต่ำ</b> ถ้าเห็น AKI กับ hypokalemia ในผู้ป่วยไข้ ให้นึกถึงก่อน</div></div>
+    <div class="pearl"><div><b>นัดดูไตที่ 3 เดือนทุกราย</b> ตรวจ SCr และ UACR เพราะ AKI เพิ่มความเสี่ยง CKD แม้ SCr กลับมาปกติ</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hyperkalemia/index.html">อ่านต่อ: Hyperkalemia →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Kidney Disease: Improving Global Outcomes (KDIGO) Acute Kidney Injury Work Group. KDIGO Clinical Practice Guideline for Acute Kidney Injury. Kidney Int Suppl. 2012;2:1–138. · 2) KDIGO Clinical Practice Guideline for Acute Kidney Injury and Acute Kidney Disease — Public Review Draft, Summary of Recommendations and Practice Points (March 2026). · 3) STARRT-AKI Investigators. N Engl J Med 2020;383:240–51 · AKIKI 2. Lancet 2021;397:1293–300 · BICAR-ICU. Lancet 2018;392:31–40.<br>
+  <span class="tag draft">ร่าง</span> = คำแนะนำจากฉบับร่าง KDIGO 2026 ยังไม่ใช่ฉบับตีพิมพ์ · <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน · เกรดคำแนะนำ 1 = แนะนำ, 2 = เสนอแนะ · A–D = คุณภาพหลักฐาน · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','akiView');
+mountWalker({
+ start:{q:'มีภาวะคุกคามชีวิตหรือไม่?',h:'K สูงมาก/ECG เปลี่ยน, pH <7.15–7.2, pulmonary edema, uremic encephalopathy หรือ pericarditis',o:[['มี','urgent'],['ไม่มี','vol']]},
+ urgent:{leaf:true,cls:'danger',t:'แก้ภาวะเร่งด่วนก่อน',b:'Hyperkalemia: calcium + insulin-glucose + salbutamol · Acidosis pH <7.2: พิจารณา NaHCO₃ · Pulmonary edema: O₂/NIV + loop diuretic · ติดต่ออายุรแพทย์โรคไต/ทีม KRT ทันที ถ้าแก้ด้วยยาไม่ได้ = ข้อบ่งชี้ dialysis',next:['หาสาเหตุต่อ','vol']},
+ vol:{q:'Volume status และ hemodynamics?',h:'BP เทียบกับค่าปกติของผู้ป่วย, JVP, edema, ปอด, I/O, POCUS',o:[['ขาดน้ำ / ความดันต่ำ','pre'],['Euvolemic','obs'],['Volume เกิน','over']]},
+ pre:{q:'หลังให้ crystalloid และหยุดยาที่ลด perfusion — SCr/ปัสสาวะดีขึ้นใน 24–72 ชม.?',o:[['ดีขึ้น','preOk'],['ไม่ดีขึ้น','obs']]},
+ preOk:{leaf:true,cls:'warn',t:'Prerenal (hemodynamic) AKI',b:'สาเหตุ: GI loss, เลือดออก, sepsis ระยะแรก, NSAIDs/ACEI/diuretic · ให้สารน้ำเท่าที่จำเป็น เริ่มยาเดิมเมื่อคงที่ · สอน sick-day rules'},
+ over:{q:'มีโรคที่ทำให้ effective volume ลดหรือไม่?',o:[['Heart failure','crs'],['Cirrhosis + ascites','hrs'],['ไม่ใช่ทั้งสอง','obs']]},
+ crs:{leaf:true,cls:'violet',t:'Cardiorenal syndrome',b:'Congestion เป็นตัวหลัก · loop diuretic bolus ปรับขนาดตามการตอบสนอง · SCr ขึ้นเล็กน้อยระหว่าง decongestion ได้ผลไม่ต้องหยุดยา · ไม่ตอบสนอง → ปรึกษาเรื่อง ultrafiltration'},
+ hrs:{leaf:true,cls:'violet',t:'สงสัย HRS-AKI',b:'หยุด diuretic/nephrotoxin · albumin 1 g/kg/วัน × 2 วัน · ไม่ดีขึ้นและไม่มี shock/structural injury → terlipressin หรือ norepinephrine + albumin · หา SBP/GI bleed เป็นตัวกระตุ้น'},
+ obs:{q:'Bladder scan / ultrasound พบ obstruction หรือไม่?',o:[['พบ','post'],['ไม่พบ','sed']]},
+ post:{leaf:true,cls:'ok',t:'Postrenal AKI',b:'ใส่ Foley (BPH/neurogenic) · ureteric obstruction → ปรึกษา uro เพื่อ PCN/stent · หลังแก้ระวัง <b>post-obstructive diuresis</b>: ปัสสาวะมาก Na/K/Mg ต่ำ ต้องทดแทนสารน้ำบางส่วน'},
+ sed:{q:'Urinalysis และ urine sediment พบอะไร?',o:[['Muddy brown cast / RTE cell','atn'],['RBC cast / dysmorphic RBC + proteinuria','gn'],['WBC cast / sterile pyuria','ain'],['Blood บวก แต่ไม่มี RBC','pig'],['Bland / ไม่พบอะไร','bland']]},
+ atn:{leaf:true,t:'Acute tubular necrosis',b:'Ischemic (shock, sepsis) หรือ nephrotoxic (aminoglycoside, colistin, vancomycin, contrast) · ดูแลแบบประคับประคอง: hemodynamic, หยุด nephrotoxin, ปรับยา, จัดการ K/acid/volume · ฟื้นใน 1–3 สัปดาห์ ระยะฟื้นอาจปัสสาวะมาก'},
+ gn:{leaf:true,cls:'danger',t:'Glomerulonephritis / RPGN',b:'ส่ง ANCA, anti-GBM, ANA, C3/C4, UPCR, hepatitis/HIV · <b>ปรึกษาอายุรแพทย์โรคไตด่วน</b> เพื่อ biopsy และ immunosuppression · มี hemoptysis นึกถึง pulmonary-renal syndrome'},
+ ain:{leaf:true,t:'Acute interstitial nephritis',b:'ไล่ยา: β-lactam, PPI, NSAIDs, rifampicin, allopurinol, สมุนไพร · หยุดยาทันที · ไม่ดีขึ้น 3–5 วัน → พิจารณา steroid (biopsy ถ้าทำได้) · แยก pyelonephritis ด้วย culture'},
+ pig:{leaf:true,cls:'warn',t:'Pigment nephropathy',b:'Rhabdomyolysis (CK สูง) หรือ hemolysis (LDH สูง, haptoglobin ต่ำ, G6PD) · ให้ crystalloid IV ปริมาณมากตั้งแต่ต้น ติดตาม K, PO₄, Ca'},
+ bland:{leaf:true,t:'Bland sediment',b:'ทบทวน prerenal อีกครั้ง (โดยเฉพาะ NSAIDs/ACEI) · นึกถึง vascular: TMA (ดู smear, platelet, LDH), atheroembolic, renal infarct · และ AKI ที่ซ้อนบน CKD — ถ้าไม่ชัดให้ปรึกษาไต'}
+},'apTrail','apStage');
+
+/* stage */
+function stage(){
+  const b=num('stBase'),c=num('stCur'),d=num('stD48'),uo=+radio('uo'),krt=$('stKrt').checked;
+  let s=0,why=[];
+  if(b&&c){const r=c/b;
+    if(r>=3||(c>=4&&(r>=1.5||(d!==null&&d>=0.3)))){s=3;why.push(`SCr ${f2(r)}× baseline${c>=4?' / ≥4.0 mg/dL':''}`)}
+    else if(r>=2){s=Math.max(s,2);why.push(`SCr ${f2(r)}× baseline`)}
+    else if(r>=1.5){s=Math.max(s,1);why.push(`SCr ${f2(r)}× baseline`)}
+  }
+  if(d!==null&&d>=0.3&&s<1){s=1;why.push('SCr เพิ่ม ≥0.3 ใน 48 ชม.')}
+  if(uo>s){s=uo;why.push('เกณฑ์ urine output')}
+  if(krt){s=3;why.push('เริ่ม KRT')}
+  const col=['var(--ok)','var(--warn)','#C4571B','var(--danger)'][s];
+  $('stOut').innerHTML=s?`<span class="big" style="color:${col}">Stage ${s}</span><br>${why.join(' · ')}<br><span class="muted">ใช้เกณฑ์ที่ได้ stage สูงสุดระหว่าง SCr กับ urine output</span>`:'<b>ยังไม่เข้าเกณฑ์ AKI</b> ตามข้อมูลที่ใส่';
+}
+bindAll('#tStage input',stage);
+
+/* UO */
+function uo(){
+  const v=num('uoVol'),h=num('uoHr'),w=num('uoWt');
+  if(!v&&v!==0||!h||!w){$('uoOut').textContent='ใส่ค่าให้ครบ';return}
+  const r=v/w/h;
+  let t=r<0.3?'<b style="color:var(--danger)">&lt;0.3</b> — ถ้านาน ≥24 ชม. = stage 3':r<0.5?'<b style="color:var(--warn)">&lt;0.5</b> — ถ้านาน ≥6 ชม. เข้าเกณฑ์ AKI':'ปกติ (≥0.5)';
+  $('uoOut').innerHTML=`<span class="big">${f2(r)}</span> mL/kg/h<br>${t}`;
+}
+bindAll('#uoVol,#uoHr,#uoWt',uo);
+
+/* FE */
+function fe(){
+  const un=num('feUNa'),pn=num('fePNa'),uc=num('feUCr'),pc=num('fePCr'),uu=num('feUUn'),bun=num('feBun');
+  let s='';
+  if(un!==null&&pn&&uc&&pc){const fena=(un*pc)/(pn*uc)*100;
+    s+=`FENa <span class="big">${f2(fena)}%</span> ${fena<1?'→ เข้าได้กับ prerenal':fena>2?'→ เข้าได้กับ ATN':'→ ก้ำกึ่ง'}`;}
+  if(uu!==null&&bun&&uc&&pc){const feu=(uu*pc)/(bun*uc)*100;
+    s+=`<br>FEUrea <span class="mono"><b>${f1(feu)}%</b></span> ${feu<35?'→ prerenal':feu>50?'→ ATN':'→ ก้ำกึ่ง'} <span class="muted">(ใช้เมื่อได้ diuretic)</span>`;}
+  $('feOut').innerHTML=(s||'ใส่ค่าให้ครบ')+'<br><span class="muted">FENa ต่ำได้ใน contrast, pigment, sepsis, GN ระยะแรก · สูงหลอกใน CKD/diuretic</span>';
+}
+bindAll('#feUNa,#fePNa,#feUCr,#fePCr,#feUUn,#feBun',fe);
+
+/* FST */
+function fs(){
+  const w=num('fsWt'),k=parseFloat($('fsPrev').value),u=num('fsUo');
+  if(!w){$('fsOut').textContent='ใส่น้ำหนัก';return}
+  let s=`Furosemide IV <span class="big">${Math.round(w*k)}</span> mg (${k} mg/kg)`;
+  if(u!==null)s+=`<br>ปัสสาวะ 2 ชม. ${u} mL → ${u<200?'<b style="color:var(--danger)">&lt;200 mL: เสี่ยงเข้า stage 3/ต้อง KRT สูง</b> วางแผนปรึกษา/ส่งต่อ':'<b style="color:var(--ok)">≥200 mL: เสี่ยงต่ำกว่า</b>'}`;
+  s+='<br><span class="muted">ทำในผู้ที่ไม่ขาดน้ำ (euvolemic/hypervolemic) stage 1–2 · ทดแทนปัสสาวะที่ออกเพื่อไม่ให้ขาดน้ำ</span>';
+  $('fsOut').innerHTML=s;
+}
+bindAll('#fsWt,#fsPrev,#fsUo',fs);
+
+/* KRT */
+function krt(){
+  const ch=[...document.querySelectorAll('#krtList input:checked')];
+  const u=ch.filter(e=>e.dataset.u==='1').length,o=ch.length-u;
+  let t;
+  if(u)t=`<b style="color:var(--danger)">มีข้อบ่งชี้ KRT เร่งด่วน ${u} ข้อ</b> → เริ่ม/ส่งต่อเพื่อฟอกเลือดทันที ระหว่างรอให้รักษาด้วยยาต่อเนื่อง`;
+  else if(o)t=`<b style="color:var(--warn)">ยังไม่มีข้อบ่งชี้เร่งด่วน</b> แต่มีสัญญาณว่า KRT มีแนวโน้มสูง (${o} ข้อ) → ปรึกษาอายุรแพทย์โรคไตและวางแผนส่งต่อตั้งแต่ตอนนี้ ไม่ต้องเริ่มแบบ pre-emptive`;
+  else t='ยังไม่มีข้อบ่งชี้ → ดูแลแบบประคับประคอง ติดตาม K, pH, volume, urine output';
+  $('krtOut').innerHTML=t;
+}
+bindAll('#krtList input',krt);
+
+mountQuiz([
+ ['ชาย 65 ปี SCr baseline 1.0 วันนี้ 2.4 mg/dL ปัสสาวะ 0.4 mL/kg/h มา 8 ชม. อยู่ stage ใด',
+  ['Stage 1','Stage 2','Stage 3','ยังไม่เป็น AKI'],1,'SCr 2.4× baseline = stage 2 ส่วน UO <0.5 นาน 8 ชม. = stage 1 · ใช้เกณฑ์ที่ได้ stage สูงกว่า'],
+ ['ผู้ป่วย sepsis หลังได้ crystalloid 3 L ความดันยังต่ำ ปอดเริ่มมี crepitation SCr ขึ้น ขั้นต่อไปที่เหมาะสม',
+  ['ให้ NSS เพิ่มอีก 2 L','เริ่ม norepinephrine เป้า MAP ≥65','ให้ low-dose dopamine เพื่อปกป้องไต','ให้ furosemide drip เพื่อเพิ่มปัสสาวะ'],1,'ไม่ตอบสนองต่อสารน้ำและเริ่มมีน้ำเกิน ควรใช้ vasopressor ร่วม · low-dose dopamine ไม่แนะนำ (1A)'],
+ ['ข้อใดเป็นคำแนะนำเรื่องสารน้ำตามร่าง KDIGO 2026',
+  ['ใช้ albumin เป็นสารน้ำหลัก','ใช้ buffered crystalloid มากกว่า 0.9% NaCl (ยกเว้น TBI)','ใช้ starch ใน sepsis','จำกัดสารน้ำทุกรายที่มี AKI'],1,'Crystalloid มากกว่า colloid (1B) และ buffered crystalloid มากกว่า saline (1B) ยกเว้น traumatic brain injury'],
+ ['ชาย 75 ปี ปวดท้องน้อย ปัสสาวะออกน้อย SCr ขึ้นจาก 1.1 เป็น 3.0 หลังได้ยาแก้แพ้ ขั้นแรกที่ทำได้ทันที',
+  ['CT whole abdomen','Bladder scan / ใส่สายสวนปัสสาวะ','ส่งฟอกเลือด','ให้ NSS 2 L'],1,'นึกถึง urinary retention จากยา anticholinergic ในผู้ป่วย BPH — postrenal แก้ได้ทันที ระวัง post-obstructive diuresis'],
+ ['ข้อใดถูกเกี่ยวกับจังหวะเริ่ม KRT ในผู้ใหญ่',
+  ['เริ่มทันทีเมื่อเข้า stage 2','เริ่มเมื่อ BUN >100 เสมอ','เริ่มเมื่อมีภาวะแทรกซ้อนที่แก้ด้วยยาไม่ได้ ไม่ต้อง pre-emptive','ห้ามเริ่มจนกว่า anuria 72 ชม.'],2,'Deferred initiation ดีกว่า early pre-emptive (1C, ร่าง 2026) แต่ต้องวางแผนส่งต่อเมื่อแนวโน้มชัด'],
+ ['UA พบ RBC cast และ protein 2+ SCr ขึ้นจาก 0.9 เป็น 2.8 ใน 10 วัน ควรทำอะไร',
+  ['ให้สารน้ำแล้วรอดูอาการ','ปรึกษาอายุรแพทย์โรคไตด่วน ส่ง ANCA/anti-GBM/C3/C4','ให้ furosemide','นัดดูซ้ำ 1 เดือน'],1,'Active sediment + SCr ขึ้นเร็ว = RPGN ต้อง biopsy และให้ immunosuppression เร็ว'],
+ ['Furosemide stress test ในผู้ป่วย 60 kg ไม่เคยได้ยา ได้ปัสสาวะ 2 ชม. 120 mL แปลว่าอย่างไร',
+  ['ไตฟื้นแล้ว','เสี่ยงเข้า stage 3/ต้อง KRT สูง','ต้องให้สารน้ำเพิ่ม','ทดสอบผิดวิธี'],1,'ให้ furosemide 1 mg/kg = 60 mg · ปัสสาวะ <200 mL ใน 2 ชม. ทำนายการแย่ลง ควรปรึกษา/วางแผนส่งต่อ'],
+ ['หลังจำหน่ายผู้ป่วย AKI stage 2 ที่ SCr กลับมาเกือบปกติ ข้อใดเหมาะสมที่สุด',
+  ['ไม่ต้องนัด','นัดตรวจ SCr และ albuminuria ประมาณ 3 เดือน และกลับมาใช้ ACEI/ARB เมื่อไม่มีข้อห้าม','หยุด ACEI/ARB ตลอดไป','ห้ามใช้ contrast ตลอดชีวิต'],1,'AKI เพิ่มความเสี่ยง CKD ต้องประเมินที่ 3 เดือน และร่าง 2026 แนะนำให้เริ่ม/กลับมาใช้ RASi (1B)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
