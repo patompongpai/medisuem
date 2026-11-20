@@ -1,0 +1,686 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Asthma & COPD · Thai 2025 · GINA 2026 · GOLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Thai Asthma Guideline 2025 · GINA 2026 · GOLD 2026–2027</div>
+  <h1>Asthma และ COPD:<br>วินิจฉัยให้ถูก รักษาตามขั้น</h1>
+  <p class="sub">สรุปโรคหืดและโรคปอดอุดกั้นเรื้อรังในผู้ใหญ่สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การแยกสองโรค การวินิจฉัยด้วย spirometry การประเมิน control และกลุ่ม ABE การรักษาระยะยาวตามขั้น ไปจนถึงการดูแลอาการกำเริบในห้องฉุกเฉิน พร้อมเครื่องมือประเมินข้างเตียง · ใช้คู่กับหน้า <a href="../inhaler/index.html">คู่มือยาพ่น</a> และ <a href="../pft/index.html">PFT</a></p>
+  <p class="cite">อ้างอิงหลัก: แนวทางการวินิจฉัยและรักษาโรคหืดในประเทศไทยสำหรับผู้ใหญ่ พ.ศ. 2568 (สมาคมสภาองค์กรโรคหืดแห่งประเทศไทย) · GINA Strategy Report 2026 · GOLD Report 2026 และสาระสำคัญ GOLD 2027 · <span class="tag up">ใหม่</span> = เปลี่ยนในฉบับล่าสุด · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>Asthma</b>Airflow limitation ที่แปรปรวน · ICS เป็นแกน · ห้ามใช้ SABA อย่างเดียว</div>
+    <div class="stage" style="--c:var(--violet)"><b>COPD</b>Post-BD FEV₁/FVC &lt;0.7 · bronchodilator ออกฤทธิ์ยาวเป็นแกน · ICS เฉพาะบางกลุ่ม</div>
+    <div class="stage" style="--c:var(--danger)"><b>Exacerbation</b>Bronchodilator · systemic steroid · O₂ ตามเป้า · หาสาเหตุ · เริ่ม/ปรับยาระยะยาวก่อนจำหน่าย</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#diff">แยก Asthma vs COPD</a><a href="#adx">Asthma: วินิจฉัย</a><a href="#actl">Asthma: control</a><a href="#arx">Asthma: รักษาระยะยาว</a><a href="#aex">Asthma: กำเริบ</a><a href="#cdx">COPD: วินิจฉัยและ ABE</a><a href="#crx">COPD: รักษาด้วยยา</a><a href="#cnon">COPD: ไม่ใช้ยา</a><a href="#cex">COPD: กำเริบ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="diff" class="col">
+  <div class="sec-num">01</div>
+  <h2>แยก Asthma กับ COPD</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Asthma</th><th>COPD</th></tr>
+    <tr><td>อายุเริ่ม</td><td>มักเด็ก/วัยรุ่น (เริ่มผู้ใหญ่ได้)</td><td>มัก &gt;40 ปี</td></tr>
+    <tr><td>ปัจจัยเสี่ยง</td><td>ภูมิแพ้ ประวัติครอบครัว</td><td>บุหรี่ ควันไฟ/ชีวมวล ฝุ่นจากงาน</td></tr>
+    <tr><td>อาการ</td><td>เป็นๆ หายๆ แปรปรวน กลางคืน/เช้ามืด มีตัวกระตุ้น</td><td>เหนื่อยเรื้อรังค่อยๆ มากขึ้น ไอมีเสมหะ</td></tr>
+    <tr><td>Spirometry</td><td>Variable airflow limitation · BDR ชัด · อาจปกติช่วงไม่มีอาการ</td><td>Post-BD FEV₁/FVC &lt;0.7 คงอยู่</td></tr>
+    <tr><td>ยาหลัก</td><td><b>ICS</b> ทุกราย</td><td><b>LAMA/LABA</b> · ICS เมื่อกำเริบบ่อย + eos สูง</td></tr>
+  </table></div>
+  <div class="box warn"><b>มีลักษณะทั้งสองโรค</b>ให้รักษาแบบ asthma คือ <b>ต้องมี ICS เสมอ</b> และห้ามใช้ LABA โดยไม่มี ICS (GOLD/GINA)</div>
+</section>
+
+<!-- 2 -->
+<section id="adx" class="col">
+  <div class="sec-num">02</div>
+  <h2>Asthma — การวินิจฉัย</h2>
+  <p>อาการ (ไอ หวีด เหนื่อย แน่นหน้าอก) ที่ <b>แปรปรวนตามเวลาและความรุนแรง</b> ร่วมกับหลักฐาน <b>variable expiratory airflow limitation</b> อย่างน้อย 1 ข้อ (แนวทางไทย 2568):</p>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>เกณฑ์</th></tr>
+    <tr><td>Bronchodilator responsiveness</td><td class="mono">FEV₁ ↑ ≥12% และ ≥200 mL หลัง salbutamol 200–400 µg 10–15 นาที (หรือหลังรักษา 4 สัปดาห์)</td></tr>
+    <tr><td>PEF variability</td><td class="mono">≥10% (วัดเช้า–เย็น 2 สัปดาห์)</td></tr>
+    <tr><td>Methacholine challenge</td><td class="mono">FEV₁ ลด ≥20%</td></tr>
+    <tr><td>Exercise challenge</td><td class="mono">FEV₁ ลด ≥10% และ ≥200 mL</td></tr>
+  </table></div>
+  <p>GINA 2026 ยังใช้เกณฑ์ BDR ≥12% และ ≥200 mL ต่อไป (ไม่เปลี่ยนเป็น &gt;10% predicted) เพราะกลัววินิจฉัยตกหล่น <span class="tag up">ใหม่</span> · FeNO ≥20–25 ppb สนับสนุน type 2 inflammation · ดูการแปลผล spirometry ที่หน้า <a href="../pft/index.html">PFT</a></p>
+</section>
+
+<!-- 3 -->
+<section id="actl" class="col">
+  <div class="sec-num">03</div>
+  <h2>Asthma — ประเมิน control และความเสี่ยง</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Symptom control (4 สัปดาห์ที่ผ่านมา)</h4><ul><li>อาการกลางวัน &gt;2 ครั้ง/สัปดาห์</li><li>ตื่นกลางคืนเพราะหอบ</li><li>ใช้ยาบรรเทา (SABA) &gt;2 ครั้ง/สัปดาห์</li><li>จำกัดกิจกรรมเพราะหอบ</li></ul>0 ข้อ = well controlled · 1–2 = partly · 3–4 = uncontrolled</div>
+    <div class="card c-red"><h4>ความเสี่ยงกำเริบในอนาคต</h4><ul><li>เคยกำเริบรุนแรงใน 1 ปี · เคยใส่ท่อช่วยหายใจ</li><li>FEV₁ &lt;60% · BDR &gt;20%</li><li>ใช้ SABA มาก · ไม่ใช้/ใช้ ICS ไม่ถูกวิธี</li><li>โรคร่วม: rhinitis/sinusitis, GERD, อ้วน, เครียด/ซึมเศร้า · สูบบุหรี่</li></ul></div>
+  </div>
+  <p>ก่อนเพิ่มยาทุกครั้ง ตรวจ <b>วิธีพ่นยา</b>, <b>การใช้ยาสม่ำเสมอ</b>, ตัวกระตุ้น และโรคร่วม — ผู้ป่วยไทยประมาณครึ่งหนึ่งยังคุมโรคไม่ได้ และพบการใช้ ICS น้อยเกินไป</p>
+</section>
+
+<!-- 4 -->
+<section id="arx" class="col">
+  <div class="sec-num">04</div>
+  <h2>Asthma — การรักษาระยะยาว</h2>
+  <div class="box key"><b>หลักสำคัญ</b>ผู้ใหญ่ทุกรายต้องได้ <b>ICS</b> · ไม่ใช้ SABA อย่างเดียว · <b>GINA Track 1</b> (ICS-formoterol ขนาดต่ำเป็นทั้งยาบรรเทาและยาควบคุม: AIR-only หรือ MART) ยังเป็นทางเลือกที่แนะนำในผู้ใหญ่ เพราะลดการกำเริบรุนแรงได้มากกว่า</div>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>GINA Track 1 (ยาบรรเทา = ICS-formoterol)</th><th>Track 2 / แนวทางไทย 2568</th></tr>
+    <tr><td class="mono">1–2</td><td>Budesonide-formoterol ขนาดต่ำ <b>เมื่อมีอาการ</b> (AIR-only)</td><td>ICS ขนาดต่ำทุกวัน + SABA เมื่อมีอาการ · <b>ICS-SABA เมื่อมีอาการ</b> เป็นทางเลือกขั้น 1 <span class="tag up">GINA 2026</span></td></tr>
+    <tr><td class="mono">3</td><td>ICS-formoterol ขนาดต่ำทุกวัน + เมื่อมีอาการ (MART)</td><td>ICS/LABA ขนาดต่ำทุกวัน</td></tr>
+    <tr><td class="mono">4</td><td>MART ขนาดกลาง</td><td>ICS/LABA ขนาดกลาง</td></tr>
+    <tr><td class="mono">5</td><td colspan="2">ICS/LABA ขนาดกลาง–สูง + add-on: <b>LAMA</b>, LTRA, theophylline SR · ส่งประเมิน phenotype และ biologic · prednisolone ต่ำ (&lt;7.5 mg/วัน) เป็นทางเลือกสุดท้าย</td></tr>
+  </table></div>
+  <h3>เริ่มขั้นไหน (แนวทางไทย 2568)</h3>
+  <ul>
+    <li><b>Mild</b> (&lt;3 ครั้ง/สัปดาห์, FEV₁ &gt;80%): ICS ขนาดต่ำทุกวัน</li>
+    <li><b>Moderate</b> (≥4–5 วัน/สัปดาห์ หรือกลางคืน &gt;1 ครั้ง/สัปดาห์): ICS/LABA ขนาดต่ำ หรือ ICS ขนาดกลาง</li>
+    <li><b>Severe</b> (ทุกวัน, FEV₁ &lt;60%): ICS/LABA ขนาดกลาง–สูง</li>
+  </ul>
+  <h3>ขนาด ICS ที่มีในไทย (µg/วัน)</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Beclomethasone</th><th>Budesonide</th><th>Fluticasone propionate</th><th>Fluticasone furoate</th></tr>
+    <tr><td>ต่ำ</td><td class="mono">200–500</td><td class="mono">200–400</td><td class="mono">100–250</td><td class="mono">100</td></tr>
+    <tr><td>กลาง–สูง</td><td class="mono">&gt;500</td><td class="mono">&gt;400</td><td class="mono">&gt;250</td><td class="mono">200</td></tr>
+  </table></div>
+  <ul>
+    <li><b>ลดขั้น</b> เมื่อคุมได้ ≥3 เดือน (แนวทางไทยเน้นคุมได้ ≥12 เดือนและไม่มีปัจจัยเสี่ยงก่อนลดมาก) — ห้ามหยุด ICS ทั้งหมดในผู้ใหญ่</li>
+    <li><b>Severe asthma</b> (คุมไม่ได้แม้ขั้น 4–5 หลังแก้ adherence/วิธีพ่น/โรคร่วม): ส่งผู้เชี่ยวชาญ · biologic สำหรับ type 2 (eos ≥150/µL, IgE/allergen, FeNO ≥20) · คนไทยส่วนใหญ่เป็น type 2-high</li>
+    <li>ทุกคนควรมี <b>written asthma action plan</b> และตรวจวิธีพ่นยาทุกครั้ง · ดู <a href="../inhaler/index.html">คู่มือยาพ่น</a></li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="aex" class="col">
+  <div class="sec-num">05</div>
+  <h2>Asthma — อาการกำเริบในห้องฉุกเฉิน</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Mild–moderate</h4>พูดเป็นประโยค ไม่กระสับกระส่าย RR เพิ่ม ไม่ใช้กล้ามเนื้อช่วยหายใจ HR 100–120 SpO₂ 90–95%</div>
+    <div class="card c-red"><h4>Severe</h4>พูดเป็นคำ กระสับกระส่าย RR &gt;30 ใช้กล้ามเนื้อช่วยหายใจ HR &gt;120 SpO₂ &lt;90% · <b>Life-threatening</b>: ซึม สับสน silent chest cyanosis</div>
+  </div>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">Bronchodilator</span></summary><div class="body">Salbutamol MDI + spacer 4–10 puff หรือ nebulized 2.5–5 mg ทุก 20 นาทีใน ชม.แรก — GINA 2026 ให้ <b>ประเมินผลหลังโดสแรกก่อนให้ซ้ำ</b> และใช้ขนาดที่ระวังขึ้นเพื่อลดพิษ <span class="tag up">ใหม่</span> · Severe: เพิ่ม <b>ipratropium</b> 0.5 mg nebulized · Mild: ICS-formoterol เป็นทางเลือกแทน SABA ได้ <span class="tag up">GINA 2026</span></div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">Systemic corticosteroid ภายใน 1 ชม.</span></summary><div class="body">แนวทางไทย: <b>prednisolone 30–50 mg/วัน ไม่เกิน 5 วัน</b> (ไม่ต้องลดขนาด) · กินไม่ได้: dexamethasone/hydrocortisone IV · GINA 2026 เน้นขนาดต่ำสุดและสั้นที่สุดที่ได้ผล</div></details>
+    <details class="step" open><summary><span class="n">3</span><span class="t">Oxygen</span></summary><div class="body">แนวทางไทย: เป้า SpO₂ <b>93–95%</b> · GINA 2026: ให้ O₂ เมื่อ SpO₂ &lt;92% <span class="tag up">ใหม่</span> · หลีกเลี่ยง O₂ 100% ต่อเนื่องที่ทำให้ PaCO₂ ขึ้น</div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">ไม่ดีขึ้นใน 1 ชม.</span></summary><div class="body">ให้ bronchodilator ต่อ · <b>MgSO₄ 2 g IV ใน 20 นาที</b> <span class="tag add">เสริม</span> · ICS ขนาดสูงพ่น · ซึม สับสน หมดแรง PaCO₂ ปกติหรือสูง → ICU พิจารณาใส่ท่อ · ไม่ใช้ aminophylline เป็น routine · anaphylaxis ร่วม → adrenaline ก่อน</div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">จำหน่าย</span></summary><div class="body">อาการดีขึ้น vital signs คงที่ PEF/FEV₁ &gt;60–80% · <b>เริ่มหรือเพิ่ม ICS-containing controller</b> ทุกราย · prednisolone ต่อ 5 วัน · ตรวจวิธีพ่น · action plan · นัดภายใน 1 สัปดาห์</div></details>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="cdx" class="col">
+  <div class="sec-num">06</div>
+  <h2>COPD — วินิจฉัยและประเมิน</h2>
+  <ul>
+    <li><b>Post-bronchodilator FEV₁/FVC &lt;0.7</b> จำเป็นต่อการวินิจฉัย ในผู้มีอาการหรือมีปัจจัยเสี่ยง (บุหรี่ ควันชีวมวล ฝุ่น) — GOLD/GLI สรุปว่าใช้ 0.7 หรือ LLN ให้ผลต่างกันน้อยในทางปฏิบัติ</li>
+    <li>ความรุนแรงของ airflow: GOLD 1 FEV₁ ≥80% · GOLD 2 50–79% · GOLD 3 30–49% · GOLD 4 &lt;30%</li>
+    <li>อาการ: <b>mMRC</b> (0–1 น้อย · ≥2 มาก) หรือ <b>CAT</b> (&lt;10 น้อย · ≥10 มาก)</li>
+    <li>ตรวจ CBC (eosinophil), SpO₂ · GOLD 2027 แนะนำให้พิจารณา <b>CT ปอดอย่างน้อย 1 ครั้ง</b> ในการประเมินแรกถ้าทำได้ <span class="tag up">GOLD 2027</span></li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>นิยาม (GOLD 2026)</th></tr>
+    <tr><td><b>A</b></td><td>ไม่มีการกำเริบ · อาการน้อย (mMRC 0–1 / CAT &lt;10)</td></tr>
+    <tr><td><b>B</b></td><td>ไม่มีการกำเริบ · อาการมาก (mMRC ≥2 / CAT ≥10)</td></tr>
+    <tr><td><b>E</b></td><td><b>กำเริบ ≥1 ครั้ง (moderate หรือ severe) ใน 1 ปี</b> <span class="tag up">GOLD 2026</span> — เดิมต้อง ≥2 moderate หรือ ≥1 ครั้งที่นอน รพ.</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="crx" class="col">
+  <div class="sec-num">07</div>
+  <h2>COPD — การรักษาด้วยยา</h2>
+  <div class="grid3">
+    <div class="card c-ok"><h4>A</h4>Bronchodilator — GOLD 2027 เปลี่ยนเป็น <b>LAMA</b> เป็นตัวเลือกแรก <span class="tag up">GOLD 2027</span></div>
+    <div class="card c-warn"><h4>B</h4><b>LABA + LAMA</b> (ควรอยู่ในเครื่องพ่นเดียว)</div>
+    <div class="card c-red"><h4>E</h4><b>LABA + LAMA</b> · eos ≥300 → พิจารณา <b>LABA + LAMA + ICS</b></div>
+  </div>
+  <ul>
+    <li><b>ห้ามใช้ LABA + ICS โดยไม่มี LAMA</b> ใน COPD (ถ้ามีข้อบ่งชี้ ICS ให้ใช้ triple)</li>
+    <li><b>ติดตาม</b>: แยกตามปัญหาเด่น — <b>เหนื่อย</b>: ปรับวิธีพ่น เปลี่ยนเครื่อง เพิ่มเป็น LABA+LAMA หาสาเหตุอื่น · <b>กำเริบ</b>: LABA+LAMA → เพิ่ม ICS ถ้า eos ≥100 · eos &lt;100 พิจารณา azithromycin (อดีตผู้สูบ) หรือ roflumilast (FEV₁ &lt;50% + chronic bronchitis)</li>
+    <li>กำเริบเพียง <b>1 ครั้ง</b> ก็ควรพิจารณาเพิ่มยา <span class="tag up">GOLD 2026</span></li>
+    <li>กำเริบต่อแม้ได้ triple และ eos ≥300 → พิจารณา <b>dupilumab</b> หรือ <b>mepolizumab</b></li>
+    <li>ICS เพิ่มเสี่ยง pneumonia — ประเมินหยุด ICS เมื่อ pneumonia ซ้ำ, ไม่มีข้อบ่งชี้ หรือไม่ตอบสนอง (eos &lt;100)</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="cnon" class="col">
+  <div class="sec-num">08</div>
+  <h2>COPD — การรักษาที่ไม่ใช้ยา</h2>
+  <ul>
+    <li><b>เลิกบุหรี่</b> สำคัญที่สุด — ผู้ป่วยระยะแรกที่เลิกได้ ปอดเสื่อมช้าลงชัดเจน</li>
+    <li><b>วัคซีน</b>: influenza, COVID-19, pneumococcal, RSV (อายุ ≥60 หรือโรคร่วม), Tdap</li>
+    <li><b>Pulmonary rehabilitation</b> ในกลุ่ม B และ E · หลังนอน รพ.ให้เริ่มเร็วหลังจำหน่าย <span class="tag up">GOLD 2027</span></li>
+    <li><b>Long-term oxygen therapy</b> ≥15 ชม./วัน เมื่อ PaO₂ ≤55 mmHg หรือ SpO₂ ≤88% (หรือ PaO₂ 56–59 ร่วมกับ cor pulmonale, Hct &gt;55%) ตรวจซ้ำ 2 ครั้งใน 3 สัปดาห์ขณะคงที่</li>
+    <li><b>Home NIV</b> ใน chronic hypercapnia (PaCO₂ ≥52) หลังนอน รพ.</li>
+    <li>โรคร่วมทางหัวใจ: ใช้ cardioselective β-blocker และ SGLT2i ได้ใน HF · ไม่มีข้อห้ามยาคุม rate/rhythm ใน AF <span class="tag up">GOLD 2027</span></li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="cex" class="col">
+  <div class="sec-num">09</div>
+  <h2>COPD — อาการกำเริบ (AECOPD)</h2>
+  <p>เหนื่อย และ/หรือ ไอ เสมหะ เพิ่มขึ้นภายใน 14 วัน — แยกโรคอื่นเสมอ: <b>pneumonia, HF, PE, pneumothorax, ACS, arrhythmia</b></p>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">Oxygen และการหายใจ</span></summary><div class="body">เป้า <b>SpO₂ 88–92%</b> · ABG/VBG · <b>NIV</b> เมื่อ pH ≤7.35 และ PaCO₂ ≥45 mmHg หรือเหนื่อยมาก · ไม่ดีขึ้น/ซึม → ใส่ท่อ · ดูหน้า <a href="../abg/index.html">ABG</a></div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">Bronchodilator</span></summary><div class="body">SABA ± SAMA (salbutamol ± ipratropium) MDI+spacer หรือ nebulizer · ไม่ใช้ theophylline เป็น routine</div></details>
+    <details class="step" open><summary><span class="n">3</span><span class="t">Systemic corticosteroid</span></summary><div class="body"><b>Prednisolone 40 mg/วัน 5 วัน</b> — ได้ผลดีขึ้นเมื่อ eos ≥300</div></details>
+    <details class="step" open><summary><span class="n">4</span><span class="t">ยาต้านจุลชีพ</span></summary><div class="body">ให้เมื่อ <b>เสมหะเป็นหนอง</b> ร่วมกับเหนื่อยหรือเสมหะเพิ่ม หรือต้องใช้ NIV/ventilator · <b>5 วัน</b>: amoxicillin-clavulanate, doxycycline หรือ macrolide (ตามเชื้อดื้อยาในพื้นที่) · CRP/procalcitonin ช่วยลดการใช้ยา</div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">ก่อนจำหน่าย</span></summary><div class="body">เริ่ม/ปรับยาระยะยาว (กลุ่ม E: LABA+LAMA ± ICS) · ตรวจวิธีพ่น · วัคซีน · ส่ง pulmonary rehab · นัด 1–4 สัปดาห์ · ประเมินโรคหัวใจร่วม (ความเสี่ยง CV สูงขึ้นหลังกำเริบ)</div></details>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ไอ หอบ เหนื่อย เรื้อรัง/เป็นๆ หายๆ</b>Spirometry ก่อน–หลังยาขยายหลอดลม</div>
+      <div class="vline arrow"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">Variable / BDR ≥12% + 200 mL</span><div class="node dx eu"><b>Asthma</b>ICS ทุกราย<br>Track 1: ICS-formoterol (AIR/MART)<br>Track 2: ICS ± LABA + SABA/ICS-SABA<br>ปรับขั้นตาม control + ความเสี่ยง</div></div>
+        <div class="arm"><span class="lab">Post-BD FEV₁/FVC &lt;0.7</span><div class="node dx hyper"><b>COPD → กลุ่ม ABE</b>A: LAMA (bronchodilator)<br>B: LABA+LAMA<br>E: LABA+LAMA ± ICS (eos ≥300)<br>เลิกบุหรี่ · วัคซีน · rehab</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node red"><b>กำเริบ</b>Asthma: SABA (± ipratropium) + prednisolone + O₂ 93–95% → MgSO₄ ถ้ารุนแรง<br>COPD: SABA ± SAMA + prednisolone 40 mg × 5 วัน + O₂ 88–92% + NIV ถ้า pH ≤7.35 · ATB ถ้าเสมหะหนอง</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool" id="tCtl">
+      <h3>Asthma symptom control (4 สัปดาห์)</h3>
+      <div class="checks">
+        <label><input type="checkbox" checked> อาการกลางวัน &gt;2 ครั้ง/สัปดาห์</label>
+        <label><input type="checkbox"> ตื่นกลางคืนเพราะหอบ</label>
+        <label><input type="checkbox" checked> ใช้ยาบรรเทา &gt;2 ครั้ง/สัปดาห์</label>
+        <label><input type="checkbox"> จำกัดกิจกรรมเพราะหอบ</label>
+      </div>
+      <div class="out" id="ctlOut"></div>
+    </div>
+    <div class="tool" id="tAbe">
+      <h3>COPD: กลุ่ม ABE และยาเริ่มต้น</h3>
+      <div class="fields">
+        <label class="f">Moderate exacerbation ใน 1 ปี<input type="number" id="abeMod" value="1" min="0"></label>
+        <label class="f">ครั้งที่นอน รพ. ใน 1 ปี<input type="number" id="abeHosp" value="0" min="0"></label>
+        <label class="f">CAT<input type="number" id="abeCat" value="14"></label>
+        <label class="f">Eosinophil (/µL)<input type="number" id="abeEos" value="320"></label>
+      </div>
+      <div class="checks"><label><input type="checkbox" id="abeAst"> มีลักษณะ asthma ร่วม</label></div>
+      <div class="out" id="abeOut"></div>
+    </div>
+  </div>
+  <div class="tool plan" id="tEx" style="margin-top:12px">
+    <h3>วางแผนการรักษาอาการกำเริบ</h3>
+    <div class="radios">
+      <label><input type="radio" name="dis" value="a" checked>Asthma</label>
+      <label><input type="radio" name="dis" value="c">COPD</label>
+    </div>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">SpO₂ (%)<input type="number" id="exSp" value="91"></label>
+          <label class="f">RR<input type="number" id="exRr" value="32"></label>
+          <label class="f">HR<input type="number" id="exHr" value="125"></label>
+          <label class="f">pH (ถ้ามี)<input type="number" id="exPh" step="0.01" placeholder="7.30"></label>
+          <label class="f">PaCO₂ (ถ้ามี)<input type="number" id="exCo2" placeholder="55"></label>
+        </div>
+      </div>
+      <div>
+        <div class="checks">
+          <label><input type="checkbox" id="exAcc" checked> ใช้กล้ามเนื้อช่วยหายใจ / พูดเป็นคำ</label>
+          <label><input type="checkbox" id="exLt"> ซึม สับสน silent chest</label>
+          <label><input type="checkbox" id="exPur"> เสมหะเป็นหนอง (COPD)</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="exOut"></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ผู้ใหญ่ที่เป็น asthma ห้ามใช้ SABA อย่างเดียว</b> ต้องมี ICS เสมอ — การใช้ SABA มากโดยไม่มี ICS เพิ่มความเสี่ยงตาย</div></div>
+    <div class="pearl"><div><b>ก่อนเพิ่มขั้นยา ดูวิธีพ่นก่อน</b> ส่วนใหญ่ที่คุมไม่ได้เพราะพ่นผิดหรือไม่ได้ใช้</div></div>
+    <div class="pearl"><div><b>Asthma กำเริบที่ PaCO₂ ปกติหรือสูง = อันตราย</b> แปลว่ากล้ามเนื้อเริ่มล้า</div></div>
+    <div class="pearl"><div><b>จำหน่ายจาก ER ทุกครั้ง ต้องมี ICS-containing controller</b> ไม่ใช่แค่ prednisolone กับ salbutamol</div></div>
+    <div class="pearl"><div><b>COPD ต้องยืนยันด้วย spirometry</b> หลังพ่นยาขยายหลอดลม — การวินิจฉัยจากอาการอย่างเดียวผิดบ่อย</div></div>
+    <div class="pearl"><div><b>COPD กำเริบแค่ 1 ครั้งก็เป็นกลุ่ม E แล้ว</b> (GOLD 2026) ควรได้ LABA+LAMA</div></div>
+    <div class="pearl"><div><b>ICS ใน COPD ดูจาก eosinophil</b> ≥300 ให้ได้ประโยชน์ชัด · &lt;100 ประโยชน์น้อยและเสี่ยง pneumonia</div></div>
+    <div class="pearl"><div><b>O₂ ใน COPD เป้า 88–92%</b> ให้มากเกินทำ PaCO₂ ขึ้น · asthma เป้า 93–95%</div></div>
+    <div class="pearl"><div><b>Prednisolone 5 วันพอ</b> ทั้ง asthma และ COPD กำเริบ ไม่ต้องลดขนาด</div></div>
+    <div class="pearl"><div><b>เลิกบุหรี่และวัคซีน</b> คือการรักษา COPD ที่คุ้มที่สุด</div></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../inhaler/index.html">คู่มือยาพ่น →</a> · <a href="../pft/index.html">PFT →</a> · <a href="../cap/index.html">CAP →</a> · <a href="../abg/index.html">ABG →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สมาคมสภาองค์กรโรคหืดแห่งประเทศไทย. แนวทางการวินิจฉัยและรักษาโรคหืดในประเทศไทยสำหรับผู้ใหญ่ พ.ศ. 2568 (Thai Asthma Guideline in Adults 2025). · 2) Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2026 update (5 May 2026). · 3) Global Initiative for Chronic Obstructive Lung Disease. GOLD 2026 Report และ Key Changes (Nov 2025). · 4) GOLD 2027 Report key changes ตามที่นำเสนอใน GOLD International COPD Conference 2026 (ฉบับเต็มเผยแพร่ 18 พ.ย. 2026).<br>
+  <span class="tag up">ใหม่</span> = เปลี่ยนในฉบับล่าสุด (ระบุแหล่ง) · <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่ม · GOLD 2027 อ้างอิงจากสรุปการนำเสนอ ควรตรวจกับฉบับเต็มอีกครั้ง · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','acView');
+mountWalker({
+ start:{q:'ผู้ป่วยมาด้วยอะไร?',o:[['อาการกำเริบเฉียบพลัน','ex'],['ประเมินโรคเรื้อรัง / วินิจฉัยใหม่','spiro']]},
+ spiro:{q:'Spirometry ก่อน–หลังยาขยายหลอดลม?',o:[['BDR ≥12% และ ≥200 mL / variability','ast'],['Post-BD FEV₁/FVC <0.7','copd'],['ทั้งสองอย่าง','both'],['ปกติ','norm']]},
+ norm:{leaf:true,t:'Spirometry ปกติ',b:'Asthma ยังเป็นไปได้ (ช่วงไม่มีอาการ) → ตรวจซ้ำตอนมีอาการ, PEF variability, methacholine, FeNO · หรือคิดถึงโรคอื่น (HF, GERD, vocal cord dysfunction) · ผู้สูบบุหรี่ที่มีอาการแต่ spirometry ปกติ = pre-COPD ติดตาม'},
+ both:{leaf:true,cls:'warn',t:'มีลักษณะทั้ง asthma และ COPD',b:'รักษาแบบ asthma: <b>ต้องมี ICS</b> + LABA (± LAMA) · ห้าม LABA หรือ LAMA เดี่ยวโดยไม่มี ICS'},
+ ast:{q:'Asthma control (4 สัปดาห์)?',o:[['Well controlled','astOk'],['Partly / uncontrolled','astUp']]},
+ astOk:{leaf:true,cls:'ok',t:'คงขั้นเดิม',b:'ตรวจวิธีพ่น · คุมได้ ≥3 เดือน (ไทยเน้น ≥12 เดือนไม่มีปัจจัยเสี่ยง) → พิจารณาลดขั้น แต่ไม่หยุด ICS · action plan'},
+ astUp:{leaf:true,cls:'warn',t:'คุมไม่ได้',b:'ตรวจวิธีพ่น adherence ตัวกระตุ้น โรคร่วม ก่อน · แล้วเพิ่มขั้น: Track 1 AIR → MART ขนาดต่ำ → ขนาดกลาง · Track 2 ICS → ICS/LABA ต่ำ → กลาง → add LAMA/LTRA · คุมไม่ได้ที่ขั้น 4–5 → ส่งผู้เชี่ยวชาญ (biologic)'},
+ copd:{q:'กำเริบใน 1 ปีที่ผ่านมา?',o:[['≥1 ครั้ง (moderate/severe)','E'],['ไม่มี, อาการน้อย (CAT <10)','A'],['ไม่มี, อาการมาก (CAT ≥10)','B']]},
+ A:{leaf:true,cls:'ok',t:'กลุ่ม A',b:'Bronchodilator — <b>LAMA</b> เป็นตัวเลือกแรก (GOLD 2027) · เลิกบุหรี่ วัคซีน'},
+ B:{leaf:true,cls:'warn',t:'กลุ่ม B',b:'<b>LABA + LAMA</b> · pulmonary rehab · หาโรคร่วม (หัวใจ ซีด)'},
+ E:{leaf:true,cls:'danger',t:'กลุ่ม E',b:'<b>LABA + LAMA</b> · eos ≥300 → <b>+ ICS</b> (triple) · ห้าม LABA+ICS โดยไม่มี LAMA · rehab · วัคซีน'},
+ ex:{q:'โรคพื้นฐาน?',o:[['Asthma','axs'],['COPD','cx']]},
+ axs:{q:'ความรุนแรง?',o:[['Mild–moderate','axm'],['Severe','axv'],['Life-threatening (ซึม, silent chest)','axl']]},
+ axm:{leaf:true,cls:'warn',t:'Asthma กำเริบ mild–moderate',b:'Salbutamol MDI+spacer (หรือ ICS-formoterol) ประเมินหลังโดสแรก · prednisolone 30–50 mg · O₂ ถ้า SpO₂ ต่ำ (เป้า 93–95%) · ประเมินที่ 1 ชม. → ดีขึ้นจำหน่ายพร้อม ICS-containing controller'},
+ axv:{leaf:true,cls:'danger',t:'Asthma กำเริบรุนแรง',b:'Salbutamol + ipratropium nebulized ทุก 20 นาที · prednisolone/dexamethasone · O₂ 93–95% · ไม่ดีขึ้น 1 ชม. → MgSO₄ 2 g IV, ICS ขนาดสูงพ่น · ABG'},
+ axl:{leaf:true,cls:'danger',t:'Life-threatening asthma',b:'เรียกทีม ICU · O₂ · bronchodilator ต่อเนื่อง · steroid IV · MgSO₄ IV · เตรียมใส่ท่อ (ผู้ชำนาญ) · ระวัง PaCO₂ ปกติ/สูง = หมดแรง'},
+ cx:{q:'pH และ PaCO₂?',o:[['pH ≤7.35 และ PaCO₂ ≥45','cniv'],['pH ปกติ','cward']]},
+ cniv:{leaf:true,cls:'danger',t:'AECOPD + respiratory acidosis',b:'<b>NIV</b> · O₂ เป้า 88–92% · SABA ± SAMA · prednisolone 40 mg × 5 วัน · ยาต้านจุลชีพ 5 วัน (ใช้ NIV ถือว่ามีข้อบ่งชี้) · ไม่ดีขึ้น/ซึม → ใส่ท่อ'},
+ cward:{leaf:true,cls:'warn',t:'AECOPD ไม่มี acidosis',b:'O₂ 88–92% · SABA ± SAMA · prednisolone 40 mg × 5 วัน · ยาต้านจุลชีพเมื่อเสมหะเป็นหนอง · แยก pneumonia/HF/PE · ก่อนจำหน่ายปรับเป็นกลุ่ม E'}
+},'apTrail','apStage');
+
+function ctl(){const n=document.querySelectorAll('#tCtl input:checked').length;
+  $('ctlOut').innerHTML=`<span class="big">${n}</span> / 4 · ${n===0?'<b style="color:var(--ok)">Well controlled</b> → คงยา พิจารณาลดขั้นเมื่อคุมได้ต่อเนื่อง':n<=2?'<b style="color:var(--warn)">Partly controlled</b> → ตรวจวิธีพ่น adherence แล้วพิจารณาเพิ่มขั้น':'<b style="color:var(--danger)">Uncontrolled</b> → แก้ปัจจัยแล้วเพิ่มขั้น'}<br><span class="muted">ประเมินความเสี่ยงกำเริบแยกต่างหากด้วย</span>`;}
+bindAll('#tCtl input',ctl);
+
+function abe(){
+  const m=num('abeMod')||0,h=num('abeHosp')||0,cat=num('abeCat'),eos=num('abeEos'),ast=$('abeAst').checked;
+  let g,rx;
+  if(m+h>=1){g='E';rx='<b>LABA + LAMA</b>'+(eos!==null&&eos>=300?' + <b>ICS</b> (eos ≥300 → triple)':eos!==null&&eos>=100?' · ถ้ากำเริบต่อพิจารณาเพิ่ม ICS (eos ≥100)':' · eos <100: ICS ประโยชน์น้อย');}
+  else if(cat!==null&&cat>=10){g='B';rx='<b>LABA + LAMA</b>';}
+  else{g='A';rx='<b>LAMA</b> (GOLD 2027) หรือ bronchodilator';}
+  if(ast)rx='<b>มีลักษณะ asthma → ต้องมี ICS</b> (ICS/LABA ± LAMA)';
+  $('abeOut').innerHTML=`กลุ่ม <span class="big">${g}</span><br>ยาเริ่มต้น: ${rx}<br><span class="muted">ทุกกลุ่ม: เลิกบุหรี่ · วัคซีน · ตรวจวิธีพ่น${g!=='A'?' · pulmonary rehab':''}</span>`;
+}
+bindAll('#tAbe input',abe);
+
+function ex(){
+  const d=radio('dis'),sp=num('exSp'),rr=num('exRr'),hr=num('exHr'),ph=num('exPh'),co2=num('exCo2');
+  const acc=$('exAcc').checked,lt=$('exLt').checked,pur=$('exPur').checked;
+  const L=[];
+  if(d==='a'){
+    const sev=lt?'lt':(acc||(rr!==null&&rr>30)||(hr!==null&&hr>120)||(sp!==null&&sp<90))?'sev':'mod';
+    const lab={lt:'<b style="color:var(--danger)">Life-threatening</b>',sev:'<b style="color:var(--danger)">Severe</b>',mod:'<b style="color:var(--warn)">Mild–moderate</b>'}[sev];
+    L.push(`ความรุนแรง: ${lab}`);
+    if(sev==='lt')L.push('เรียกทีม ICU · เตรียมใส่ท่อโดยผู้ชำนาญ');
+    L.push(sev==='mod'?'Salbutamol MDI+spacer 4–10 puff (หรือ ICS-formoterol) → ประเมินหลังโดสแรก ซ้ำทุก 20 นาทีตามต้องการใน ชม.แรก':'Salbutamol 2.5–5 mg + <b>ipratropium 0.5 mg</b> nebulized ทุก 20 นาทีใน ชม.แรก');
+    L.push('Prednisolone 30–50 mg (≤5 วัน) หรือ steroid IV ถ้ากินไม่ได้ — ให้ภายใน 1 ชม.');
+    L.push(sp!==null&&sp<93?`O₂ เป้า SpO₂ 93–95% (ตอนนี้ ${sp}%)`:'O₂ เมื่อ SpO₂ ต่ำ (GINA: <92%, ไทย: เป้า 93–95%)');
+    if(sev!=='mod')L.push('ไม่ดีขึ้นใน 1 ชม.: <b>MgSO₄ 2 g IV ใน 20 นาที</b> · ICS ขนาดสูงพ่น · ABG');
+    if(co2!==null&&co2>=42)L.push(`<b style="color:var(--danger)">PaCO₂ ${co2}</b> ปกติ/สูงใน asthma กำเริบ = กำลังหมดแรง → ICU`);
+    L.push('จำหน่าย: เริ่ม/เพิ่ม ICS-containing controller · prednisolone 5 วัน · action plan · นัด ≤1 สัปดาห์');
+  }else{
+    L.push('O₂ เป้า <b>SpO₂ 88–92%</b>');
+    if(ph!==null&&co2!==null&&ph<=7.35&&co2>=45)L.push(`<b style="color:var(--danger)">pH ${ph}, PaCO₂ ${co2}</b> → <b>NIV</b> · ไม่ดีขึ้น 1–2 ชม./ซึม → ใส่ท่อ`);
+    else if(ph===null)L.push('ตรวจ VBG/ABG เพื่อดู pH และ PaCO₂');
+    L.push('SABA ± SAMA (salbutamol ± ipratropium)');
+    L.push('Prednisolone <b>40 mg/วัน × 5 วัน</b>');
+    const abx=pur||(ph!==null&&co2!==null&&ph<=7.35&&co2>=45);
+    L.push(abx?'<b>ยาต้านจุลชีพ 5 วัน</b>: amoxicillin-clavulanate, doxycycline หรือ macrolide':'ยังไม่จำเป็นต้องให้ยาต้านจุลชีพ (ไม่มีเสมหะหนอง/ไม่ต้องใช้ NIV)');
+    L.push('แยก pneumonia, HF, PE, pneumothorax · ก่อนจำหน่ายปรับเป็นกลุ่ม E (LABA+LAMA ± ICS) · rehab');
+  }
+  $('exOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tEx input',ex);
+
+mountQuiz([
+ ['หญิง 25 ปี หอบเป็นๆ หายๆ ใช้ salbutamol 3 ครั้ง/สัปดาห์ ยังไม่เคยได้ยาอื่น ข้อใดไม่เหมาะสม',
+  ['Budesonide-formoterol เมื่อมีอาการ','ICS ขนาดต่ำทุกวัน + SABA','ใช้ salbutamol อย่างเดียวต่อไป','ICS-SABA เมื่อมีอาการ'],2,'ผู้ใหญ่ที่เป็น asthma ไม่ควรใช้ SABA อย่างเดียว ต้องมี ICS เสมอ'],
+ ['เกณฑ์ bronchodilator responsiveness ที่ใช้วินิจฉัย asthma ตามแนวทางไทยและ GINA 2026',
+  ['FEV₁ ↑ ≥12% และ ≥200 mL','FEV₁ ↑ ≥5%','FVC ↓ ≥10%','FEV₁/FVC <0.7'],0,'GINA 2026 คงเกณฑ์ ≥12% และ ≥200 mL'],
+ ['ชาย 65 ปี COPD CAT 8 กำเริบต้องใช้ prednisolone 1 ครั้งในปีที่ผ่านมา ไม่เคยนอน รพ. ตาม GOLD 2026 อยู่กลุ่มใด',
+  ['A','B','E','ยังจัดกลุ่มไม่ได้'],2,'GOLD 2026 ลดเกณฑ์กลุ่ม E เหลือกำเริบ moderate/severe ≥1 ครั้ง'],
+ ['COPD กลุ่ม E eosinophil 350/µL ยาเริ่มต้นที่เหมาะสม',
+  ['LABA + ICS','LAMA เดี่ยว','LABA + LAMA + ICS','SABA อย่างเดียว'],2,'กลุ่ม E และ eos ≥300 พิจารณา triple · ห้าม LABA+ICS ใน COPD'],
+ ['AECOPD pH 7.30 PaCO₂ 62 SpO₂ 86% ข้อใดถูก',
+  ['O₂ ให้ SpO₂ 98–100%','NIV และเป้า SpO₂ 88–92%','ไม่ต้องให้ steroid','รอดูอาการ'],1,'Respiratory acidosis ใน AECOPD → NIV · เป้า SpO₂ 88–92%'],
+ ['Asthma กำเริบรุนแรง ได้ salbutamol + ipratropium + steroid 1 ชม. ยังเหนื่อยมาก ข้อใดควรพิจารณา',
+  ['MgSO₄ 2 g IV','Aminophylline ทุกราย','หยุด steroid','ให้ยาปฏิชีวนะทุกราย'],0,'ไม่ดีขึ้นใน 1 ชม. → MgSO₄ IV และ ICS ขนาดสูงพ่น'],
+ ['AECOPD เหนื่อยมากขึ้น เสมหะใสปริมาณเท่าเดิม ไม่ต้องใช้ NIV ยาต้านจุลชีพ',
+  ['ให้ทุกราย 14 วัน','ยังไม่จำเป็น','ให้ meropenem','ให้ 1 วัน'],1,'ให้เมื่อเสมหะเป็นหนองร่วมกับเหนื่อยหรือเสมหะเพิ่ม หรือต้องใช้ NIV/ventilator']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

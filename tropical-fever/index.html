@@ -1,0 +1,649 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tropical fever · ไข้เฉียบพลันในเขตร้อน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">ไข้เฉียบพลันในเขตร้อน · บริบทประเทศไทย</div>
+  <h1>Tropical fever:<br>ไข้ไม่ทราบสาเหตุ ต้องคิดอะไรบ้าง</h1>
+  <p class="sub">สรุปการดูแลไข้เฉียบพลันที่ยังไม่ทราบแหล่ง (acute undifferentiated fever) ในไทย สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ครอบคลุม leptospirosis, scrub typhus, murine typhus, melioidosis และ malaria (ไข้เลือดออกดูหน้า DHF) ตั้งแต่เบาะแสจากประวัติ การส่งตรวจ ยาที่เลือกเมื่อยังไม่รู้เชื้อ ไปจนถึงการรักษาเฉพาะโรค พร้อมเครื่องมือช่วยเลือกยาและคำนวณขนาดยามาลาเรีย</p>
+  <p class="cite">อ้างอิงหลัก: แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568 (คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย) · Treatment of melioidosis (Infect Dis Clin North Am 2026) · INTREST trial (NEJM 2023) · Phimda K, et al. Doxycycline vs azithromycin for leptospirosis and scrub typhus (2007) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--warn)"><b>ประวัติ exposure</b>นา น้ำท่วม ป่า สวน ชายแดน เดินทาง เบาหวาน สัตว์</div>
+    <div class="stage" style="--c:var(--accent)"><b>ตรวจร่างกาย</b>Eschar · ตาแดง ปวดน่อง · เหลือง · ฝี · ตับม้ามโต · ผื่น</div>
+    <div class="stage" style="--c:var(--danger)"><b>รุนแรง → ให้ยาก่อนผลตรวจ</b>Sepsis, ไตวาย, เลือดออกในปอด, ซึม · เพาะเชื้อก่อนให้ยา</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#aufi">แนวคิด AUF</a><a href="#clue">เบาะแสแยกโรค</a><a href="#lepto">Leptospirosis</a><a href="#scrub">Scrub · murine typhus</a><a href="#melio">Melioidosis</a><a href="#mal">Malaria</a><a href="#dengue">Dengue</a><a href="#empiric">ยาเมื่อยังไม่รู้เชื้อ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="aufi" class="col">
+  <div class="sec-num">01</div>
+  <h2>แนวคิด acute undifferentiated fever</h2>
+  <p>ไข้ ≤14 วัน โดยยังไม่พบแหล่งติดเชื้อชัดจากประวัติและตรวจร่างกาย · ในไทยสาเหตุสำคัญคือ <b>dengue, leptospirosis, scrub typhus, murine typhus, influenza/COVID</b> และในบางพื้นที่ <b>malaria</b> และ <b>melioidosis</b> (ซึ่งมักมาด้วย sepsis/ปอดอักเสบ)</p>
+  <div class="box key"><b>คำถาม 4 ข้อแรก</b>1) รุนแรงหรือไม่ (sepsis, อวัยวะล้มเหลว) · 2) มีลักษณะ dengue ไหม (เพราะการรักษาต่างกัน — ห้าม NSAIDs ระวังสารน้ำ) · 3) อยู่หรือเดินทางไปพื้นที่ malaria ไหม (ต้องตรวจ smear/RDT ทุกราย) · 4) มีปัจจัยเสี่ยง melioidosis ไหม (ยาต่างจาก CAP/sepsis ทั่วไป)</div>
+  <ul>
+    <li>Lab พื้นฐาน: CBC + smear, BUN/Cr, electrolyte (K), LFT, UA, CXR · เพาะเชื้อเลือดก่อนให้ยา · malaria smear/RDT ตาม exposure · NS1/dengue IgM ช่วงไข้ระยะแรก</li>
+    <li>การตรวจหาเชื้อเฉพาะ (lepto, rickettsia) มักได้ผลช้าหรือไวน้อยในระยะแรก — <b>อย่ารอผลเพื่อเริ่มยาในรายรุนแรง</b></li>
+  </ul>
+</section>
+
+<!-- 2 -->
+<section id="clue" class="col">
+  <div class="sec-num">02</div>
+  <h2>เบาะแสแยกโรค</h2>
+  <div class="tbl"><table>
+    <tr><th>เบาะแส</th><th>นึกถึง</th></tr>
+    <tr><td>แผล <b>eschar</b> (สะเก็ดดำ ไม่เจ็บ ที่ซอกพับ ขาหนีบ รักแร้ ใต้ราวนม) · ต่อมน้ำเหลืองโต · ผื่น</td><td><b>Scrub typhus</b> (eschar พบไม่ทุกราย ต้องตรวจทั่วตัว)</td></tr>
+    <tr><td>ลุยน้ำ/โคลน ทำนา น้ำท่วม · <b>ปวดน่องมาก</b> · <b>ตาแดง (conjunctival suffusion)</b> · เหลือง + ไตวาย · ไอเป็นเลือด</td><td><b>Leptospirosis</b> (AKI มัก non-oliguric + <b>K ต่ำ</b>)</td></tr>
+    <tr><td>ไข้ ปวดหัว ปวดเมื่อย ไม่มีจุดเด่น อยู่ในเมือง/ตลาด (หนู)</td><td><b>Murine typhus</b></td></tr>
+    <tr><td>เดินทาง/อาศัยป่าหรือชายแดน (ตาก แม่ฮ่องสอน กาญจนบุรี ยะลา ศรีสะเกษ อุบลฯ ฯลฯ) · ไข้หนาวสั่นเป็นพัก · ซีด ม้ามโต เกล็ดเลือดต่ำ</td><td><b>Malaria</b></td></tr>
+    <tr><td><b>เบาหวาน</b> ไตเรื้อรัง ดื่มสุรา ทำนา ภาคอีสาน หน้าฝน · ปอดอักเสบรุนแรง · ฝีหลายที่ (ตับ ม้าม ต่อมลูกหมาก ผิวหนัง)</td><td><b>Melioidosis</b></td></tr>
+    <tr><td>ไข้สูงลอย 2–7 วัน ปวดกระบอกตา tourniquet บวก WBC ต่ำ เกล็ดเลือดลด Hct เพิ่ม</td><td><b>Dengue</b></td></tr>
+    <tr><td>ALT/AST สูง + เกล็ดเลือดต่ำ + ไข้</td><td>เกิดได้ทั้ง dengue, scrub typhus, lepto, malaria — ใช้ภาพรวม</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ติดเชื้อร่วมพบได้ (เช่น lepto + scrub typhus) — doxycycline ครอบคลุมทั้งสอง <span class="tag add">เสริม</span></p>
+</section>
+
+<!-- 3 -->
+<section id="lepto" class="col">
+  <div class="sec-num">03</div>
+  <h2>Leptospirosis</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>อาการ</h4>ระยะแรก: ไข้สูงทันที ปวดหัว <b>ปวดกล้ามเนื้อน่อง</b> ตาแดง · รุนแรง (<b>Weil's disease</b>): เหลือง + ไตวาย + เลือดออก · <b>pulmonary hemorrhage</b> (อัตราตายสูง) · myocarditis</div>
+    <div class="card c-vio"><h4>ตรวจ</h4>Lab: AKI ที่ K ต่ำหรือปกติ, bilirubin สูงกว่า ALT มาก, CK สูง, เกล็ดเลือดต่ำ · วินิจฉัย: PCR (สัปดาห์แรก), RDT/IgM, MAT (มาตรฐาน แต่ผลช้า)</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ความรุนแรง</th><th>ยา</th></tr>
+    <tr><td>ไม่รุนแรง</td><td><b>Doxycycline 100 mg วันละ 2 ครั้ง 7 วัน</b> · หรือ azithromycin (หญิงตั้งครรภ์, เด็ก)</td></tr>
+    <tr><td>รุนแรง / นอน รพ.</td><td><b>Penicillin G 1.5 ล้านยูนิต IV ทุก 6 ชม.</b> หรือ <b>ceftriaxone 1 g IV วันละครั้ง</b> 7 วัน <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <ul>
+    <li><b>ฟอกเลือดเร็ว</b> เมื่อ oliguric AKI หรือ pulmonary hemorrhage · ใช้ lung-protective ventilation</li>
+    <li>ระวัง <b>Jarisch-Herxheimer reaction</b> (ไข้ หนาวสั่น ความดันต่ำ) ในไม่กี่ชั่วโมงหลังให้ยา</li>
+    <li>ดูหน้า <a href="../aki/index.html">AKI</a></li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="scrub" class="col">
+  <div class="sec-num">04</div>
+  <h2>Scrub typhus และ murine typhus</h2>
+  <p><b>Scrub typhus</b> (Orientia tsutsugamushi) ติดจากตัวอ่อนไรอ่อนในพื้นที่หญ้า/สวน/ป่า · พบราว 15–25% ของไข้ไม่ทราบสาเหตุที่นอน รพ.ในบางพื้นที่ทางเหนือ · ภาวะแทรกซ้อน: pneumonitis/ARDS, hepatitis, AKI, meningoencephalitis, myocarditis, shock</p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยา</th></tr>
+    <tr><td>ไม่รุนแรง</td><td><b>Doxycycline 100 mg วันละ 2 ครั้ง 7 วัน</b> — ยาตัวแรก (ไข้มักลงใน 24–48 ชม. ถ้าไม่ลดให้ทบทวนวินิจฉัย)</td></tr>
+    <tr><td>ตั้งครรภ์ / เด็กเล็ก / แพ้ doxycycline</td><td><b>Azithromycin</b> (เช่น 500 mg วันแรก แล้ว 250 mg/วัน รวม 5 วัน หรือ 1 g ครั้งเดียว ตามแนวทางสถาบัน) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>รุนแรง</b> (อวัยวะล้มเหลว)</td><td><b>Doxycycline IV + azithromycin IV ร่วมกัน</b> — INTREST trial พบว่าการให้ร่วมกันดีกว่าให้ตัวเดียว <span class="tag add">เสริม</span></td></tr>
+    <tr><td>Murine typhus</td><td>Doxycycline 100 mg วันละ 2 ครั้ง 7 วัน</td></tr>
+  </table></div>
+  <p>วินิจฉัย: IFA/ELISA IgM (ต้องดู cut-off ตามพื้นที่), RDT, PCR จากเลือดหรือ eschar · <b>Weil-Felix</b> ไวและจำเพาะต่ำ ไม่ควรใช้ตัดสิน</p>
+</section>
+
+<!-- 5 -->
+<section id="melio" class="col">
+  <div class="sec-num">05</div>
+  <h2>Melioidosis</h2>
+  <p>Burkholderia pseudomallei ในดินและน้ำ · เสี่ยงสูง: <b>เบาหวาน</b>, ไตเรื้อรัง, ดื่มสุรา, thalassemia, steroid, ทำนา · อาการ: sepsis, ปอดอักเสบ, ฝีหลายที่ (ตับ ม้าม ต่อมลูกหมาก กล้ามเนื้อ parotid ในเด็ก), ข้ออักเสบ · อัตราตายสูงในรายมี bacteremia</p>
+  <div class="box warn"><b>เชื้อดื้อ ceftriaxone, aminoglycoside และ penicillin รุ่นแรก</b>ถ้าสงสัย ต้องเลือกยาที่ครอบคลุมตั้งแต่โดสแรก และส่งเพาะเชื้อ (เลือด เสมหะ ปัสสาวะ หนอง คอ) แจ้งห้องปฏิบัติการ</div>
+  <div class="tbl"><table>
+    <tr><th>ระยะ</th><th>ยา</th><th>ระยะเวลา</th></tr>
+    <tr><td><b>Intensive (IV)</b></td><td><b>Ceftazidime 2 g IV ทุก 6–8 ชม.</b> หรือ <b>meropenem 1 g IV ทุก 8 ชม.</b> (2 g สำหรับ CNS) — meropenem เมื่อรุนแรง/ICU/ไม่ตอบสนอง</td><td>อย่างน้อย <b>10–14 วัน</b> · ยาวขึ้น (4–8 สัปดาห์) ในฝีลึก, ข้อ/กระดูก, สมอง · นับจากระบายหนองครั้งสุดท้าย</td></tr>
+    <tr><td><b>Eradication (กิน)</b></td><td><b>Co-trimoxazole</b> ขนาดตามน้ำหนัก (ผู้ใหญ่ทั่วไป 160/800 mg 2 เม็ด วันละ 2 ครั้ง) + folic acid · แพ้: amoxicillin-clavulanate</td><td><b>12–20 สัปดาห์</b> (ไทยใช้ 20 สัปดาห์ · การศึกษาพบ 12 สัปดาห์ไม่ด้อยกว่า)</td></tr>
+  </table></div>
+  <ul><li>ระบายหนองเมื่อทำได้ · ultrasound ช่องท้องหาฝีทุกราย · คุมน้ำตาล</li><li>ติดตามการกลับเป็นซ้ำ (relapse) โดยเฉพาะถ้าได้ยา eradication ไม่ครบ</li></ul>
+</section>
+
+<!-- 6 -->
+<section id="mal" class="col">
+  <div class="sec-num">06</div>
+  <h2>Malaria (แนวทางไทย 2568)</h2>
+  <p>ตรวจ <b>thick/thin smear หรือ RDT</b> ในผู้มีไข้ที่อาศัย/เดินทางในพื้นที่เสี่ยงภายใน 1 เดือน (หรือนานกว่าสำหรับ vivax relapse) · ส่งผลด่วนภายในไม่กี่ชั่วโมง</p>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>การรักษา</th></tr>
+    <tr><td><b>P. falciparum</b> ไม่รุนแรง</td><td><b>Dihydroartemisinin-piperaquine (DHA-PIP)</b> วันละครั้ง 3 วัน + <b>primaquine 0.5 mg/kg ครั้งเดียว</b> · ศรีสะเกษและอุบลราชธานี (มีเชื้อดื้อ DHA-PIP): <b>artesunate-pyronaridine</b> 3 วัน + primaquine ครั้งเดียว</td></tr>
+    <tr><td><b>P. vivax</b></td><td><b>Chloroquine 3 วัน</b> + radical cure ตาม <b>G6PD เชิงปริมาณ</b>: ปกติ (≥6.1 U/g Hb) → tafenoquine 300 mg ครั้งเดียว หรือ primaquine 0.5 mg/kg/วัน 7 วัน หรือ 0.25 mg/kg/วัน 14 วัน · intermediate → primaquine 0.25 mg/kg 14 วัน หรือ 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์ · deficient → 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์ · ตรวจ G6PD ไม่ได้ → 0.25 mg/kg 14 วัน + สอนอาการ hemolysis</td></tr>
+    <tr><td><b>P. ovale</b></td><td>Chloroquine 3 วัน + primaquine 0.25 mg/kg/วัน 14 วัน (ห้าม tafenoquine)</td></tr>
+    <tr><td>P. malariae / P. knowlesi</td><td>Chloroquine 3 วัน (knowlesi พิจารณา DHA-PIP) ไม่ต้อง primaquine</td></tr>
+    <tr><td>Mixed Pf + Pv/Po</td><td>DHA-PIP 3 วัน + primaquine 0.25 mg/kg/วัน 14 วัน</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>Severe malaria</h4>ซึม/โคม่า ชัก น้ำตาลต่ำ shock acidosis pulmonary edema เหลือง+parasite สูง ซีด ไตวาย เลือดออก parasitemia สูง (Pf &gt;10% RBC) · <b>Artesunate IV 2.4 mg/kg</b> ที่ 0, 12, 24 ชม. แล้ววันละครั้ง (น้ำหนัก &lt;20 kg ใช้ 3 mg/kg) · bolus เท่านั้น · กินได้แล้วเปลี่ยนเป็น ACT 3 วัน + primaquine · ไม่มี artesunate: quinine loading 20 mg/kg IV ใน 4 ชม. → 10 mg/kg ทุก 8 ชม. (ห้าม bolus, ระวังน้ำตาลต่ำ)</div>
+    <div class="card c-warn"><h4>ข้อควรจำ</h4><ul><li><b>ห้าม primaquine/tafenoquine ในหญิงตั้งครรภ์</b> — Pf ใช้ DHA-PIP · Pv/Po/Pm/Pk ใช้ chloroquine</li><li>Tafenoquine: Pv อย่างเดียว อายุ ≥16 ปี น้ำหนัก ≥35 kg G6PD ≥6.1 ห้ามร่วมกับ artemisinin/metformin</li><li>ก่อนส่งต่อ severe: ให้ artesunate IV โดสแรก (หรือ quinine loading)</li><li>นัดติดตาม Pf: วัน 3, 7, 28, 42 · Pv: วัน 14, 28, 60, 90</li></ul></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="dengue" class="col">
+  <div class="sec-num">07</div>
+  <h2>Dengue — สิ่งที่ต้องแยกเสมอ</h2>
+  <ul>
+    <li>ไข้สูงลอย 2–7 วัน ปวดหัว ปวดกระบอกตา ปวดเมื่อย · WBC ต่ำ เกล็ดเลือดลด Hct เพิ่ม · NS1 บวกช่วงแรก</li>
+    <li><b>Warning signs</b>: ปวดท้อง อาเจียนมาก มีน้ำในช่องท้อง/เยื่อหุ้มปอด เลือดออกตามเยื่อบุ ซึม ตับโต Hct เพิ่มพร้อมเกล็ดเลือดลดเร็ว</li>
+    <li>ห้าม NSAIDs/aspirin · ระวังสารน้ำช่วงรั่ว (critical phase) · ไม่ให้ยาต้านจุลชีพถ้าภาพเข้ากับ dengue ชัด แต่คิดถึงการติดเชื้อร่วมเมื่อไข้ไม่ลงหลังวันที่ 7 หรือมีจุดติดเชื้อ</li>
+    <li>ดูแนวทางเต็มที่หน้า <a href="../dhf/index.html">DHF</a></li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="empiric" class="col">
+  <div class="sec-num">08</div>
+  <h2>เลือกยาเมื่อยังไม่รู้เชื้อ</h2>
+  <span class="tag add">เสริม</span>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยาเริ่มต้น</th></tr>
+    <tr><td>ไข้ไม่ทราบแหล่ง ไม่รุนแรง ไม่เข้ากับ dengue malaria ลบ</td><td><b>Doxycycline 100 mg วันละ 2 ครั้ง</b> (ครอบคลุม lepto, scrub, murine) · ตั้งครรภ์: azithromycin</td></tr>
+    <tr><td>รุนแรง / sepsis ไม่มีปัจจัยเสี่ยง melioidosis</td><td><b>Ceftriaxone 2 g/วัน + doxycycline</b> (หรือ azithromycin IV) · ดูหน้า <a href="../sepsis/index.html">Sepsis</a></td></tr>
+    <tr><td>รุนแรง + เบาหวาน/ไตเรื้อรัง/ชาวนา/พื้นที่ระบาด</td><td><b>Ceftazidime 2 g ทุก 8 ชม. หรือ meropenem 1 g ทุก 8 ชม. + doxycycline/azithromycin</b></td></tr>
+    <tr><td>สงสัย severe scrub typhus</td><td>Doxycycline IV + azithromycin IV</td></tr>
+    <tr><td>Malaria smear/RDT บวก</td><td>รักษาตามชนิด (บท 06) · ยังต้องคิดถึงการติดเชื้อร่วมถ้าภาพไม่เข้ากัน</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ทบทวนภายใน 48–72 ชม. ตามผลเพาะเชื้อและการตอบสนอง · ไข้ไม่ลงใน 48 ชม. หลัง doxycycline ทำให้ scrub typhus น่าจะน้อยลง</p>
+</section>
+
+<!-- 9 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ไข้ ≤14 วัน ไม่ทราบแหล่ง</b>ประวัติ exposure · ตรวจหา eschar ตาแดง ปวดน่อง ฝี · CBC, LFT, Cr, K, UA, CXR, H/C</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">เข้ากับ dengue</span><div class="node dx eu"><b>Dengue</b>NS1/IgM · ห้าม NSAIDs · ระวังสารน้ำ · หน้า DHF</div></div>
+        <div class="arm"><span class="lab">พื้นที่ malaria</span><div class="node dx hypo"><b>Smear / RDT</b>บวก → รักษาตามชนิด<br>severe → artesunate IV</div></div>
+        <div class="arm"><span class="lab">อื่นๆ</span><div class="node q"><b>รุนแรงไหม?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>Doxycycline</b>lepto · scrub · murine</div></div>
+            <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>H/C แล้วให้ยาทันที</b>Ceftriaxone + doxy<br>เสี่ยง melioidosis → ceftazidime/meropenem</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับแนวทางและฉลากยา</p>
+  </div>
+  <div class="tool plan" id="tEmp" style="margin-top:12px">
+    <h3>ช่วยเลือกยาเริ่มต้นใน AUF</h3>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <label><input type="checkbox" id="eSev"> รุนแรง / sepsis / อวัยวะล้มเหลว</label>
+        <label><input type="checkbox" id="eDen"> ภาพเข้ากับ dengue</label>
+        <label><input type="checkbox" id="eMal"> อยู่/เดินทางพื้นที่ malaria</label>
+        <label><input type="checkbox" id="eMel"> เบาหวาน / CKD / ชาวนา / อีสาน</label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="eEsc"> พบ eschar</label>
+        <label><input type="checkbox" id="eLep"> ลุยน้ำ ปวดน่อง ตาแดง เหลือง+AKI</label>
+        <label><input type="checkbox" id="ePreg"> ตั้งครรภ์</label>
+        <label><input type="checkbox" id="eAbs"> ฝีในตับ/ม้าม/ต่อมลูกหมาก</label>
+      </div>
+    </div>
+    <div class="out" id="eOut"></div>
+  </div>
+  <div class="tool" id="tMal" style="margin-top:12px">
+    <h3>ขนาดยามาลาเรีย (แนวทางไทย 2568)</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="mWt" value="55"></label>
+      <label class="f">ชนิด<select id="mSp"><option value="pf">P. falciparum</option><option value="pfr">P. falciparum (ศรีสะเกษ/อุบลฯ)</option><option value="pv">P. vivax</option><option value="sev">Severe malaria</option></select></label>
+      <label class="f">G6PD (U/g Hb, ถ้ามี)<input type="number" id="mG6" step="0.1" placeholder="เช่น 7.5"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="mPreg"> ตั้งครรภ์</label></div>
+    <div class="out" id="mOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ถอดเสื้อผ้าหา eschar ทุกราย</b> ซอกพับ ขาหนีบ รักแร้ ใต้ราวนม หลังหู — เจอแล้วแทบวินิจฉัย scrub typhus ได้เลย</div></div>
+    <div class="pearl"><div><b>AKI + K ต่ำ + ไข้ = นึกถึง lepto</b> ต่างจาก AKI ทั่วไปที่ K สูง</div></div>
+    <div class="pearl"><div><b>ไข้ในคนที่ไปป่าหรือชายแดน ต้องตรวจ malaria</b> ทุกครั้ง และขอผลด่วน</div></div>
+    <div class="pearl"><div><b>เบาหวาน + sepsis/ปอดอักเสบรุนแรงในอีสาน → ceftazidime/meropenem</b> ceftriaxone ไม่ครอบคลุม melioidosis</div></div>
+    <div class="pearl"><div><b>Doxycycline คือยาหลักของไข้ไม่ทราบสาเหตุในไทย</b> ครอบคลุม lepto, scrub, murine typhus</div></div>
+    <div class="pearl"><div><b>อย่าใช้ Weil-Felix ตัดสิน</b> ไวและจำเพาะต่ำ</div></div>
+    <div class="pearl"><div><b>ห้าม NSAIDs ถ้ายังตัด dengue ไม่ได้</b></div></div>
+    <div class="pearl"><div><b>Primaquine ต้องรู้ G6PD</b> คนไทยพบ G6PD deficiency บ่อย · ห้ามในหญิงตั้งครรภ์</div></div>
+    <div class="pearl"><div><b>Artesunate IV ฉีดแบบ bolus</b> ไม่หยดต่อเนื่อง · ให้โดสแรกก่อนส่งต่อ severe malaria</div></div>
+    <div class="pearl"><div><b>Melioidosis ต้องได้ยา eradication ครบ</b> 12–20 สัปดาห์ ไม่ครบเสี่ยงกลับเป็นซ้ำ</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../dhf/index.html">DHF →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../cap/index.html">CAP →</a> · <a href="../aki/index.html">AKI →</a></p>
+<footer class="col">
+  อ้างอิง: 1) คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย. แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568 (มี.ค. 2568). · 2) Treatment of melioidosis. Infect Dis Clin North Am 2026;40:127–47. doi:10.1016/j.idc.2025.12.002 · 3) Chetchotisakd P, et al. 12 vs 20 weeks TMP-SMX eradication for melioidosis (non-inferiority RCT). · 4) Varghese GM, et al. Intravenous doxycycline, azithromycin, or both for severe scrub typhus (INTREST). N Engl J Med 2023;388:792–803. · 5) Phimda K, et al. Doxycycline versus azithromycin for treatment of leptospirosis and scrub typhus. Antimicrob Agents Chemother 2007;51:3259–63. · 6) WHO. Human leptospirosis: guidance for diagnosis, surveillance and control.<br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานหรือแนวปฏิบัติทั่วไปที่เพิ่ม ไม่ได้มาจากแนวทางระดับชาติฉบับเดียว · ขนาดยาสำหรับผู้ใหญ่ไตปกติ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','tfView');
+mountWalker({
+ start:{q:'มีภาวะรุนแรงหรือไม่?',h:'ความดันต่ำ, หายใจเหนื่อย/ไอเป็นเลือด, ซึม, ไตวาย, เหลือง, เลือดออก',o:[['รุนแรง','sev'],['ไม่รุนแรง','den']]},
+ sev:{q:'มีปัจจัยเสี่ยง melioidosis (เบาหวาน, CKD, ชาวนา, อีสาน)?',o:[['มี','sevMel'],['ไม่มี','sevStd']]},
+ sevMel:{leaf:true,cls:'danger',t:'Sepsis + เสี่ยง melioidosis',b:'H/C, เสมหะ, ปัสสาวะ แล้วให้ <b>meropenem 1 g q8h หรือ ceftazidime 2 g q8h</b> + doxycycline/azithromycin · malaria smear ถ้ามี exposure · ultrasound หาฝี'},
+ sevStd:{leaf:true,cls:'danger',t:'Sepsis ไม่ทราบแหล่ง',b:'H/C แล้วให้ <b>ceftriaxone 2 g + doxycycline</b> (หรือ azithromycin IV) · lepto รุนแรง: penicillin G/ceftriaxone · scrub รุนแรง: doxy IV + azithro IV · ตรวจ malaria ตาม exposure · หลีกเลี่ยง NSAIDs จนกว่าจะตัด dengue'},
+ den:{q:'ภาพเข้ากับ dengue หรือไม่?',h:'WBC ต่ำ, เกล็ดเลือดลด, Hct เพิ่ม, tourniquet บวก, NS1',o:[['เข้ากัน','dengue'],['ไม่เข้า','mal']]},
+ dengue:{leaf:true,cls:'warn',t:'Dengue',b:'Paracetamol · ห้าม NSAIDs · ติดตาม warning signs, Hct, เกล็ดเลือด · สารน้ำตามระยะ · ดูหน้า DHF'},
+ mal:{q:'อยู่หรือเดินทางพื้นที่ malaria ภายใน 1 เดือน?',o:[['ใช่','malt'],['ไม่ใช่','clue']]},
+ malt:{q:'Smear / RDT?',o:[['บวก','malpos'],['ลบ','clue']]},
+ malpos:{leaf:true,cls:'violet',t:'Malaria',b:'รักษาตามชนิด (แนวทางไทย 2568): Pf → DHA-PIP 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว · Pv → chloroquine + radical cure ตาม G6PD · severe → artesunate IV · ใช้เครื่องมือบท 10 คำนวณขนาดยา'},
+ clue:{q:'เบาะแสเด่น?',o:[['Eschar / ต่อมน้ำเหลืองโต','scrub'],['ลุยน้ำ ปวดน่อง ตาแดง เหลือง+AKI','lepto'],['ฝีในอวัยวะ / เบาหวาน','melio'],['ไม่มีเบาะแสชัด','nofocus']]},
+ scrub:{leaf:true,cls:'ok',t:'Scrub typhus',b:'<b>Doxycycline 100 mg bid 7 วัน</b> · ตั้งครรภ์: azithromycin · ไข้ไม่ลด 48 ชม. → ทบทวนการวินิจฉัย'},
+ lepto:{leaf:true,cls:'ok',t:'Leptospirosis',b:'ไม่รุนแรง: <b>doxycycline 100 mg bid 7 วัน</b> · ตรวจ K, Cr, bilirubin, CK · ระวัง pulmonary hemorrhage · AKI oliguric → ฟอกเลือดเร็ว'},
+ melio:{leaf:true,cls:'danger',t:'สงสัย melioidosis',b:'เพาะเชื้อทุกตำแหน่ง · <b>ceftazidime 2 g q6–8h</b> (meropenem ถ้ารุนแรง) ≥10–14 วัน · ระบายฝี · ต่อ co-trimoxazole 12–20 สัปดาห์'},
+ nofocus:{leaf:true,cls:'ok',t:'AUF ไม่รุนแรง',b:'<b>Doxycycline</b> ครอบคลุม lepto, scrub, murine · ส่ง H/C · นัดดูอาการ 48–72 ชม. · กลับมาทันทีถ้ามีอาการรุนแรง'}
+},'apTrail','apStage');
+
+function emp(){
+  const s=$('eSev').checked,d=$('eDen').checked,m=$('eMal').checked,me=$('eMel').checked,es=$('eEsc').checked,le=$('eLep').checked,pg=$('ePreg').checked,ab=$('eAbs').checked;
+  const L=[];
+  if(m)L.push('<b>ตรวจ malaria smear/RDT ด่วน</b> ก่อนหรือพร้อมเริ่มยา');
+  if(d&&!s)L.push('<b>ภาพเข้ากับ dengue</b>: ไม่ต้องให้ยาต้านจุลชีพ · ห้าม NSAIDs · ติดตาม warning signs (หน้า DHF)');
+  if(s){
+    if(me||ab)L.push('<b>Meropenem 1 g IV q8h</b> (หรือ ceftazidime 2 g q8h) — ครอบคลุม melioidosis');
+    else L.push('<b>Ceftriaxone 2 g IV/วัน</b>');
+    L.push(pg?'+ <b>azithromycin IV</b> (ตั้งครรภ์)':'+ <b>doxycycline</b> (IV/กิน)'+(es?' <b>+ azithromycin IV</b> (สงสัย severe scrub typhus — INTREST)':''));
+    if(le)L.push('Lepto รุนแรง: ceftriaxone หรือ penicillin G 1.5 MU IV q6h ครอบคลุมแล้ว · เตรียมฟอกเลือด/ICU ถ้า pulmonary hemorrhage');
+    L.push('เพาะเชื้อเลือดก่อนให้ยา · ทบทวนใน 48–72 ชม.');
+  }else if(!d){
+    if(me||ab)L.push('สงสัย melioidosis แม้ไม่รุนแรง (เช่น ฝี): <b>ceftazidime 2 g IV q8h</b> + เพาะเชื้อ + ultrasound');
+    else L.push(pg?'<b>Azithromycin</b> (ตั้งครรภ์ แทน doxycycline)':'<b>Doxycycline 100 mg วันละ 2 ครั้ง 7 วัน</b> — ครอบคลุม lepto, scrub, murine typhus');
+  }
+  if(es&&!s)L.push('Eschar → scrub typhus น่าจะเป็นมาก · ไข้ควรลดใน 24–48 ชม.');
+  if(le&&!s)L.push('ตรวจ Cr, K, bilirubin, CK · ระวัง pulmonary hemorrhage');
+  $('eOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tEmp input',emp);
+
+function mal(){
+  const w=num('mWt'),sp=$('mSp').value,g=num('mG6'),pg=$('mPreg').checked;
+  if(!w){$('mOut').textContent='ใส่น้ำหนัก';return}
+  const wp=Math.min(w,80);
+  const L=[];
+  const pqSingle=Math.round(0.5*wp*10)/10;
+  if(sp==='pf'){
+    const t=w<8?0.5:w<11?0.75:w<17?1:w<25?1.5:w<36?2:w<60?3:w<80?4:5;
+    L.push(`<b>DHA-PIP</b> (40/320 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน`);
+    L.push(pg?'<b>ห้าม primaquine</b> (ตั้งครรภ์)':`<b>Primaquine</b> 0.5 mg/kg = <b>${pqSingle} mg</b> ครั้งเดียว (≈ ${Math.round(pqSingle/7.5*2)/2} เม็ด 7.5 mg หรือ ${Math.round(pqSingle/15*2)/2} เม็ด 15 mg)`);
+    L.push('นัดตรวจวันที่ 3, 7, 28, 42');
+  }else if(sp==='pfr'){
+    if(pg){L.push('ตั้งครรภ์: แนวทางไทยให้ <b>DHA-PIP</b> สำหรับ Pf ไม่รุนแรง — ปรึกษาผู้เชี่ยวชาญในพื้นที่ดื้อยา');}
+    else if(w<20)L.push('Artesunate-pyronaridine ไม่ใช้ในน้ำหนัก <20 kg — ปรึกษาผู้เชี่ยวชาญ');
+    else{const t=w<24?1:w<45?2:w<65?3:4;L.push(`<b>Artesunate-pyronaridine</b> (60/180 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน`);}
+    L.push(pg?'<b>ห้าม primaquine</b>':`<b>Primaquine</b> 0.5 mg/kg = <b>${pqSingle} mg</b> ครั้งเดียว`);
+    L.push('นัดตรวจวันที่ 3, 7, 28, 42');
+  }else if(sp==='pv'){
+    const t=w<11?2:w<15?2.5:w<25?4:w<50?6:10;
+    L.push(`<b>Chloroquine</b> (250 mg = 150 mg base) รวม <span class="big">${t}</span> เม็ดใน 3 วัน${w>=50?' (เช่น 4-4-2)':''}`);
+    if(pg)L.push('<b>ห้าม primaquine/tafenoquine</b> ระหว่างตั้งครรภ์ — ให้ radical cure หลังคลอด');
+    else if(g===null)L.push(`G6PD ยังไม่ทราบ: ตรวจก่อน · ถ้าตรวจไม่ได้ <b>primaquine 0.25 mg/kg/วัน = ${Math.round(0.25*wp*10)/10} mg × 14 วัน</b> + สอนสังเกตปัสสาวะสีเข้ม/เหลือง/อ่อนเพลีย`);
+    else if(g>=6.1)L.push(`G6PD ปกติ: <b>tafenoquine 300 mg ครั้งเดียว</b> (อายุ ≥16, ≥35 kg) หรือ primaquine ${Math.round(0.5*wp*10)/10} mg/วัน × 7 วัน หรือ ${Math.round(0.25*wp*10)/10} mg/วัน × 14 วัน`);
+    else if(g>=4.1)L.push(`G6PD intermediate: primaquine ${Math.round(0.25*wp*10)/10} mg/วัน × 14 วัน หรือ ${Math.round(0.75*wp*10)/10} mg สัปดาห์ละครั้ง × 8 สัปดาห์`);
+    else L.push(`G6PD deficient: <b>primaquine ${Math.round(0.75*wp*10)/10} mg สัปดาห์ละครั้ง × 8 สัปดาห์</b>`);
+    L.push('นัดตรวจวันที่ 14, 28, 60, 90');
+  }else{
+    const d=Math.round((w<20?3:2.4)*w*10)/10;
+    L.push(`<b>Artesunate IV</b> ${w<20?'3':'2.4'} mg/kg = <span class="big">${d}</span> mg bolus ที่ 0, 12, 24 ชม. แล้ววันละครั้ง`);
+    L.push('กินได้แล้ว → ACT 3 วัน + primaquine (ถ้าไม่มีข้อห้าม)');
+    L.push(`ไม่มี artesunate: quinine loading ${Math.round(20*w)} mg IV ใน 4 ชม. → ${Math.round(10*w)} mg ทุก 8 ชม. (ห้าม bolus · ตรวจน้ำตาล)`);
+    L.push('ดูแลใน รพ.ที่ให้เลือดและฟอกเลือดได้ · ให้โดสแรกก่อนส่งต่อ');
+  }
+  $('mOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tMal input,#tMal select',mal);
+
+mountQuiz([
+ ['ชาวนา 45 ปี ไข้ 4 วัน ปวดน่องมาก ตาแดง Cr 3.2 K 3.1 bilirubin 6 นึกถึงอะไรมากที่สุด',
+  ['Dengue','Leptospirosis','Malaria','Scrub typhus'],1,'AKI ที่ K ต่ำ + เหลือง + ปวดน่อง + ตาแดง หลังลุยน้ำ เข้ากับ leptospirosis (Weil)'],
+ ['ผู้ป่วยไข้ ต่อมน้ำเหลืองโต พบแผลสะเก็ดดำที่ขาหนีบ ยาที่เหมาะสม',
+  ['Ceftriaxone','Doxycycline 100 mg bid 7 วัน','Amoxicillin','Ciprofloxacin'],1,'Eschar → scrub typhus · doxycycline เป็นยาตัวแรก'],
+ ['ชายเบาหวาน อุบลฯ หน้าฝน septic shock ปอดอักเสบ ฝีที่ม้าม ยาเริ่มต้นที่ต้องไม่พลาด',
+  ['Ceftriaxone + azithromycin','Meropenem หรือ ceftazidime','Amoxicillin-clavulanate','Gentamicin'],1,'Melioidosis ดื้อ ceftriaxone และ aminoglycoside'],
+ ['P. falciparum ไม่รุนแรง ในจังหวัดตาก น้ำหนัก 55 kg ตามแนวทางไทย 2568',
+  ['DHA-PIP 3 เม็ด × 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว','Chloroquine 3 วัน','Artesunate IV','Primaquine 14 วัน'],0,'นอกพื้นที่ดื้อยา (ศรีสะเกษ/อุบลฯ) ใช้ DHA-PIP 3 วัน (36–<60 kg = 3 เม็ด) + primaquine ครั้งเดียว'],
+ ['P. vivax G6PD 3.5 U/g Hb radical cure ที่เหมาะสม',
+  ['Tafenoquine 300 mg','Primaquine 0.5 mg/kg/วัน 7 วัน','Primaquine 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์','ไม่ต้องให้'],2,'G6PD deficient (<4.1) ใช้ weekly primaquine 8 สัปดาห์'],
+ ['Severe scrub typhus ที่มี ARDS และไตวาย ข้อใดตรงกับหลักฐานล่าสุด',
+  ['Doxycycline กินอย่างเดียว','Doxycycline IV + azithromycin IV ร่วมกัน','Ceftriaxone เดี่ยว','Chloramphenicol เดี่ยวเท่านั้น'],1,'INTREST trial: การให้ร่วมกันดีกว่าตัวเดียว'],
+ ['ข้อใดไม่ถูกต้องเกี่ยวกับ melioidosis',
+  ['Intensive phase อย่างน้อย 10–14 วัน','Eradication ด้วย co-trimoxazole 12–20 สัปดาห์','Ceftriaxone เป็นยาหลัก','ต้องระบายฝีเมื่อทำได้'],2,'B. pseudomallei ไม่ตอบสนองต่อ ceftriaxone']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

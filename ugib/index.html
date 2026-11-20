@@ -1,0 +1,650 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>UGIB · Upper GI bleeding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">ESGE 2026 · ACG 2021 · Baveno VII · APASL 2025</div>
+  <h1>Upper GI bleeding:<br>resuscitate ก่อน ส่องกล้องให้ทัน</h1>
+  <p class="sub">สรุปเลือดออกทางเดินอาหารส่วนบนสำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การกู้ชีพ การแบ่งความเสี่ยงด้วย Glasgow-Blatchford การให้เลือดแบบ restrictive ยาก่อนส่องกล้อง จังหวะการส่องกล้อง Forrest และการดูแลหลังห้ามเลือด ไปจนถึง variceal bleeding และการจัดการยาต้านเกล็ดเลือด/ยาต้านการแข็งตัวของเลือด พร้อมเครื่องคำนวณข้างเตียง</p>
+  <p class="cite">อ้างอิงหลัก: ESGE Guideline Update 2026 — peptic ulcer bleeding (Endoscopy 2026;58:899–924) <span class="tag up">2026</span> = คำแนะนำใหม่/ปรับปรุงในฉบับนี้ · ESGE 2021 NVUGIH · Laine L, et al. ACG Clinical Guideline: Upper GI and ulcer bleeding (2021) · Baveno VII (2022) · ESGE variceal hemorrhage (2022) · APASL acute variceal bleeding (2025) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--ok)"><b>GBS 0–1</b>เสี่ยงต่ำมาก → รักษาแบบผู้ป่วยนอกได้ และนัดส่องกล้อง</div>
+    <div class="stage" style="--c:var(--warn)"><b>GBS ≥2</b>Admit · resuscitate · PPI · ส่องกล้องภายใน 24 ชม.</div>
+    <div class="stage" style="--c:var(--danger)"><b>Unstable / สงสัย varices</b>ส่องกล้องเร็วขึ้น (varices ≤12 ชม.) · vasoactive + ceftriaxone</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามและสาเหตุ</a><a href="#resus">ประเมินและกู้ชีพ</a><a href="#risk">แบ่งความเสี่ยง</a><a href="#blood">การให้เลือด</a><a href="#preendo">ยาก่อนส่องกล้อง</a><a href="#endo">ส่องกล้องและ Forrest</a><a href="#post">หลังห้ามเลือด</a><a href="#varix">Variceal bleeding</a><a href="#anti">ยาต้านเกล็ดเลือดและ OAC</a><a href="#refer">บริบท รพ.ชุมชน</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและสาเหตุ</h2>
+  <p>เลือดออกเหนือ ligament of Treitz มาด้วย <b>hematemesis</b> (อาเจียนเป็นเลือดสด/coffee-ground) หรือ <b>melena</b> · UGIB รุนแรงทำให้ถ่ายเป็นเลือดแดง (hematochezia) ได้ราว 10–15% — ถ้ามี hematochezia ร่วมกับ shock ให้คิดถึง UGIB เสมอ</p>
+  <div class="grid3">
+    <div class="card c-red"><h4>Peptic ulcer</h4>สาเหตุที่พบบ่อยที่สุด · ปัจจัย: <b>NSAIDs/aspirin</b>, <b>H. pylori</b>, ยาต้านการแข็งตัว, steroid ร่วม NSAIDs, ภาวะเครียดใน ICU</div>
+    <div class="card c-vio"><h4>Varices</h4>Esophageal/gastric varices จาก portal hypertension · อัตราตาย 6 สัปดาห์ 10–20% · สงสัยเมื่อมีตับแข็ง ม้ามโต ascites เกล็ดเลือดต่ำ</div>
+    <div class="card c-acc"><h4>สาเหตุอื่น</h4>Erosive esophagitis/gastritis, Mallory-Weiss tear (อาเจียนแรงก่อน), มะเร็ง, Dieulafoy lesion, GAVE, angiodysplasia, aortoenteric fistula (เคยผ่าตัดเส้นเลือดใหญ่)</div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="resus" class="col">
+  <div class="sec-num">02</div>
+  <h2>ประเมินแรกรับและกู้ชีพ</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">A</span><span class="t">Airway</span></summary><div class="body">ใส่ท่อช่วยหายใจเมื่อ hematemesis มากต่อเนื่อง ซึม หรือ hepatic encephalopathy เพื่อป้องกันสำลักก่อนส่องกล้อง</div></details>
+    <details class="step" open><summary><span class="n">B·C</span><span class="t">Hemodynamics</span></summary><div class="body">เปิดเส้นใหญ่ 2 เส้น · crystalloid ทดแทนเพื่อให้ความดันคงที่ แต่ไม่ให้สารน้ำมากเกินใน variceal bleeding (เพิ่ม portal pressure) · Shock index (HR/SBP) &gt;1 = เสียเลือดมาก · ส่ง CBC, BUN/Cr, LFT, PT/INR, group & match</div></details>
+    <details class="step" open><summary><span class="n">Hx</span><span class="t">ประวัติที่ต้องถาม</span></summary><div class="body">NSAIDs/aspirin/clopidogrel/warfarin/DOAC, สุรา/ตับแข็ง, เคยมีแผลหรือ varices, อาเจียนแรงก่อนเลือดออก, ผ่าตัดหลอดเลือดแดงใหญ่, มะเร็ง, น้ำหนักลด</div></details>
+    <details class="step"><summary><span class="n">NG</span><span class="t">สายยางล้างกระเพาะ</span></summary><div class="body">ไม่จำเป็นต้องใส่เป็น routine เพื่อวินิจฉัยหรือพยากรณ์ <span class="tag add">เสริม</span> · BUN/Cr ratio สูง (&gt;30) สนับสนุน UGIB</div></details>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="risk" class="col">
+  <div class="sec-num">03</div>
+  <h2>แบ่งความเสี่ยง</h2>
+  <p>ESGE แนะนำ <b>Glasgow-Blatchford Score (GBS)</b> ก่อนส่องกล้อง · <b>GBS 0–1</b> เสี่ยงต่ำมาก ไม่ต้องส่องกล้องเร่งด่วนและไม่ต้องนอนโรงพยาบาล (นัดส่องกล้องแบบผู้ป่วยนอก) · Rockall ใช้ประเมินพยากรณ์ (pre-endoscopy และหลังส่องกล้อง)</p>
+  <div class="tbl"><table>
+    <tr><th>GBS</th><th>คะแนน</th></tr>
+    <tr><td>BUN (mg/dL)</td><td class="mono">18.2–22.3: 2 · 22.4–28: 3 · 28.1–70: 4 · &gt;70: 6</td></tr>
+    <tr><td>Hb ชาย (g/dL)</td><td class="mono">12–12.9: 1 · 10–11.9: 3 · &lt;10: 6</td></tr>
+    <tr><td>Hb หญิง (g/dL)</td><td class="mono">10–11.9: 1 · &lt;10: 6</td></tr>
+    <tr><td>SBP (mmHg)</td><td class="mono">100–109: 1 · 90–99: 2 · &lt;90: 3</td></tr>
+    <tr><td>อื่นๆ</td><td class="mono">HR ≥100: 1 · melena: 1 · syncope: 2 · โรคตับ: 2 · หัวใจล้มเหลว: 2</td></tr>
+  </table></div>
+  <p>คำนวณได้ในบท 12</p>
+</section>
+
+<!-- 4 -->
+<section id="blood" class="col">
+  <div class="sec-num">04</div>
+  <h2>การให้เลือด — restrictive</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ไม่มีโรคหัวใจ</h4>ให้ PRC เมื่อ <b>Hb ≤7 g/dL</b> เป้าหลังให้ 7–9 g/dL (ACG 2021 ใช้เกณฑ์ 7)</div>
+    <div class="card c-red"><h4>มีโรคหัวใจและหลอดเลือด</h4>ให้เมื่อ <b>Hb ≤8 g/dL</b> เป้า ≥10 g/dL (ESGE 2021)</div>
+  </div>
+  <ul>
+    <li>Variceal bleeding: เกณฑ์ 7 เป้า 7–8 (Baveno VII) — ให้มากเกินเพิ่ม portal pressure และเลือดออกซ้ำ</li>
+    <li>Hemodynamic ไม่คงที่หรือเลือดออกมากต่อเนื่อง: ให้เลือดตามดุลพินิจโดยไม่ต้องรอ Hb (Hb แรกรับมักสูงหลอกเพราะยังไม่ hemodilute)</li>
+    <li><b>Tranexamic acid ไม่แนะนำ</b> (HALT-IT ไม่ลดอัตราตาย เพิ่ม VTE)</li>
+    <li>ตับแข็ง: ไม่ต้องแก้ INR ด้วย FFP เป็น routine เพราะ INR ไม่สะท้อนความเสี่ยงเลือดออก (Baveno VII)</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="preendo" class="col">
+  <div class="sec-num">05</div>
+  <h2>ยาก่อนส่องกล้อง</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>คำแนะนำ</th></tr>
+    <tr><td><b>PPI ขนาดสูง IV</b></td><td>พิจารณาให้ก่อนส่องกล้อง แต่ <b>ต้องไม่ทำให้การส่องกล้องช้าลง</b> <span class="tag up">2026</span> · เช่น omeprazole/pantoprazole 80 mg IV bolus แล้ว 8 mg/h หรือ 40 mg IV ทุก 12 ชม. — ลดการพบ stigmata ความเสี่ยงสูง แต่ไม่ลดอัตราตาย</td></tr>
+    <tr><td><b>Erythromycin</b></td><td>250 mg IV ใน 5–30 นาที ก่อนส่องกล้อง 30–120 นาที ในรายเลือดออกมาก เพื่อเคลียร์กระเพาะ · <b>ถ้าไม่มี</b> ให้ metoclopramide IV แทนได้ในรายรุนแรง/ยังออกอยู่ <span class="tag up">2026</span> · ระวัง QT ยาว</td></tr>
+    <tr><td><b>สงสัย varices</b></td><td>เริ่ม <b>vasoactive</b> + <b>ceftriaxone 1 g/วัน</b> ทันทีก่อนส่องกล้อง (บท 08)</td></tr>
+    <tr><td>Tranexamic acid</td><td><b>ไม่ให้</b></td></tr>
+    <tr><td>Video capsule / blood-sensing capsule</td><td>ไม่ใช้เป็น routine <span class="tag up">2026</span></td></tr>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="endo" class="col">
+  <div class="sec-num">06</div>
+  <h2>จังหวะการส่องกล้องและ Forrest</h2>
+  <div class="box key"><b>จังหวะ</b>Non-variceal: ส่องกล้อง <b>ภายใน 24 ชม.</b> หลังกู้ชีพ · ESGE 2026 <b>ไม่แนะนำ</b> ส่องเร่งด่วน (≤6 หรือ ≤12 ชม.) <b>เว้นแต่</b> hemodynamic ยังไม่คงที่แม้กู้ชีพเต็มที่แล้ว <span class="tag up">2026</span> · สงสัย varices: ภายใน <b>12 ชม.</b></div>
+  <div class="tbl"><table>
+    <tr><th>Forrest</th><th>ลักษณะ</th><th>เลือดออกซ้ำถ้าไม่รักษา</th><th>รักษาทางกล้อง</th></tr>
+    <tr><td class="mono"><b>Ia</b></td><td>Spurting</td><td rowspan="2" class="mono">สูงมาก</td><td rowspan="2">Combination (epinephrine + thermal/clip) หรือ <b>OTS clip เดี่ยว</b> เป็นทางเลือกแรก <span class="tag up">2026</span> · hemostatic forceps soft coagulation เดี่ยวได้</td></tr>
+    <tr><td class="mono"><b>Ib</b></td><td>Oozing</td></tr>
+    <tr><td class="mono"><b>IIa</b></td><td>Non-bleeding visible vessel</td><td class="mono">~40–50%</td><td>Thermal, clip หรือ sclerosant (± epinephrine) · OTS clip เดี่ยวได้ <span class="tag up">2026</span></td></tr>
+    <tr><td class="mono"><b>IIb</b></td><td>Adherent clot</td><td class="mono">~20–30%</td><td>ลอกก้อนเลือดแล้วรักษา ถ้าผู้ส่องมีความชำนาญ <span class="tag up">2026</span></td></tr>
+    <tr><td class="mono"><b>IIc</b></td><td>Pigmented spot</td><td class="mono">&lt;10%</td><td rowspan="2">ไม่ต้องรักษาทางกล้อง · PPI ขนาดปกติ · กินอาหารได้</td></tr>
+    <tr><td class="mono"><b>III</b></td><td>Clean base</td><td class="mono">&lt;5%</td></tr>
+  </table></div>
+  <ul>
+    <li><b>ไม่ใช้ hemostatic powder เดี่ยว</b> เป็นการรักษาแรกใน stigmata ความเสี่ยงสูง · ใช้เมื่อเลือดออกต่อเนื่องดื้อต่อวิธีมาตรฐาน หรือใช้ OTS clip <span class="tag up">2026</span></li>
+    <li>ดื้อต่อทุกวิธีทางกล้อง → <b>transcatheter angiographic embolization (TAE)</b> → ผ่าตัดเมื่อ TAE ไม่มีหรือไม่สำเร็จ</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="post" class="col">
+  <div class="sec-num">07</div>
+  <h2>หลังห้ามเลือด (peptic ulcer)</h2>
+  <ul>
+    <li><b>PPI ขนาดสูง 72 ชม.</b> (continuous หรือ intermittent bolus ≥ วันละ 2 ครั้ง) ใน stigmata ความเสี่ยงสูงที่รักษาแล้ว · ต่อด้วย <b>PPI กินวันละ 2 ครั้งจนครบ 14 วัน</b> แล้ววันละครั้ง (ACG 2021)</li>
+    <li><b>เริ่มกินอาหารภายใน 24 ชม.</b> เมื่อห้ามเลือดได้แน่นอน <span class="tag up">2026</span></li>
+    <li><b>ตรวจ H. pylori</b> ทุกราย ถ้าผลลบในช่วงเลือดออก (ผลลบลวงได้) ตรวจซ้ำภายหลัง · ให้ยากำจัดเชื้อเมื่อบวก</li>
+    <li>ให้ <b>เหล็ก</b> ก่อนจำหน่ายในผู้ที่ขาดเหล็กหรือซีด <span class="tag up">2026</span></li>
+    <li><b>เลือดออกซ้ำ</b> → ส่องกล้องซ้ำ พิจารณา OTS clip → ไม่สำเร็จ TAE → ผ่าตัด <span class="tag up">2026</span> · TAE ป้องกันอาจพิจารณาในรายเสี่ยงสูงมาก (shock แรกรับ, แผลผนังหลัง duodenum, แผล &gt;2 cm)</li>
+    <li>Second-look endoscopy ไม่ต้องทำเป็น routine <span class="tag add">เสริม</span> · P-CAB หลังห้ามเลือด ยังไม่มีฉันทามติ</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="varix" class="col">
+  <div class="sec-num">08</div>
+  <h2>Variceal bleeding</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">Vasoactive drug ทันที — ก่อนส่องกล้อง</span></summary><div class="body">ให้ต่อ <b>2–5 วัน</b> · ตัวอย่างขนาด <span class="tag add">เสริม</span>:
+      <ul><li><b>Terlipressin</b> 2 mg IV ทุก 4 ชม. แล้วลดเป็น 1 mg ทุก 4 ชม. เมื่อหยุดเลือด (ระวัง ischemia, hyponatremia)</li><li><b>Octreotide</b> 50 µg IV bolus แล้ว 50 µg/h</li><li><b>Somatostatin</b> 250 µg IV bolus แล้ว 250 µg/h</li></ul></div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">ยาต้านจุลชีพป้องกัน</span></summary><div class="body"><b>Ceftriaxone 1 g/วัน นานไม่เกิน 7 วัน</b> ในผู้ป่วยตับแข็งทุกราย — ลดการติดเชื้อ เลือดออกซ้ำ และอัตราตาย</div></details>
+    <details class="step" open><summary><span class="n">3</span><span class="t">ส่องกล้องภายใน 12 ชม.</span></summary><div class="body">Esophageal varices: <b>band ligation (EBL)</b> · gastric varices (GOV2, IGV1): <b>cyanoacrylate injection</b> · erythromycin ก่อนส่อง</div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">Pre-emptive TIPS</span></summary><div class="body">ผู้เสี่ยงเลือดออกซ้ำสูง: <b>Child-Pugh C 10–13</b> หรือ <b>Child-Pugh B &gt;7 ที่ยังมีเลือดออกขณะส่องกล้อง</b> (หรือ HVPG &gt;20) → TIPS ภายใน 72 ชม. (ดีที่สุดภายใน 24 ชม.) · Child C ≥14 TIPS มักไร้ประโยชน์</div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">ห้ามเลือดไม่ได้</span></summary><div class="body">Balloon tamponade (Sengstaken–Blakemore, ใส่ไม่เกิน 24 ชม.) หรือ self-expanding esophageal stent เป็นสะพาน → rescue TIPS</div></details>
+    <details class="step"><summary><span class="n">6</span><span class="t">ระหว่างนอน และหลังหยุดเลือด</span></summary><div class="body">ป้องกัน hepatic encephalopathy (lactulose) · Hb เป้า 7–8 · หลังหยุด vasoactive เริ่ม <b>NSBB (propranolol/carvedilol) + EBL ซ้ำ</b> เพื่อป้องกันซ้ำ · ดูหน้า <a href="../cirrhosis/index.html">Cirrhosis</a></div></details>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="anti" class="col">
+  <div class="sec-num">09</div>
+  <h2>ยาต้านเกล็ดเลือดและยาต้านการแข็งตัวของเลือด</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ระหว่างเลือดออก</th><th>หลังห้ามเลือด</th></tr>
+    <tr><td>Aspirin ป้องกันปฐมภูมิ</td><td>หยุด</td><td>ทบทวนข้อบ่งชี้ — ส่วนใหญ่ไม่ต้องกลับมาใช้</td></tr>
+    <tr><td>Aspirin ป้องกันทุติยภูมิ (มีโรคหลอดเลือด)</td><td>ไม่ต้องหยุด หรือหยุดสั้นที่สุด</td><td>กลับมาใช้ทันทีหลังห้ามเลือด (ภายใน 3–5 วันในรายเสี่ยงสูง) ร่วมกับ PPI</td></tr>
+    <tr><td>DAPT (stent ใหม่)</td><td>คง aspirin · ปรึกษาอายุรแพทย์โรคหัวใจเรื่อง P2Y12</td><td>กลับมาให้ P2Y12 เร็วที่สุด (ภายใน ~5 วัน) — stent thrombosis อันตรายกว่าเลือดออกซ้ำ</td></tr>
+    <tr><td>Warfarin</td><td>หยุด · เลือดออกรุนแรง: vitamin K IV + PCC (หรือ FFP)</td><td>กลับมาใช้ <b>เร็วที่สุดตามความเสี่ยง thrombosis</b> <span class="tag up">2026</span></td></tr>
+    <tr><td>DOAC</td><td>หยุด · คุกคามชีวิต: idarucizumab (dabigatran) / andexanet หรือ PCC (anti-Xa)</td><td>เช่นเดียวกัน · ดูหน้า <a href="../af/index.html">AF</a></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">INR สูงเล็กน้อยไม่ควรทำให้การส่องกล้องช้า · ผู้ที่ต้องใช้ NSAIDs ต่อ ให้ใช้ COX-2 inhibitor + PPI และกำจัด H. pylori</p>
+</section>
+
+<!-- 10 -->
+<section id="refer" class="col">
+  <div class="sec-num">10</div>
+  <h2>บริบท รพ.ที่ไม่มีกล้อง</h2>
+  <span class="tag add">เสริม</span>
+  <ul>
+    <li>กู้ชีพ ให้เลือดตามเกณฑ์ ให้ PPI IV (และ vasoactive + ceftriaxone ถ้าสงสัย varices) <b>ก่อนส่งต่อ</b></li>
+    <li>ส่งต่อเพื่อส่องกล้องเมื่อ GBS ≥2, hemodynamic ไม่คงที่, ต้องให้เลือด, เลือดออกซ้ำ, สงสัย varices หรือมะเร็ง — โดยเฉพาะเมื่อ รพ.ปลายทางส่องได้ภายใน 24 ชม. (varices 12 ชม.)</li>
+    <li>ส่งต่อพร้อมเลือดที่ cross-match แล้ว ระหว่างทางมีสารน้ำ/เลือด และบุคลากรที่ดูแล airway ได้</li>
+    <li>GBS 0–1 กลับบ้านได้ พร้อม PPI และนัดส่องกล้อง/ตรวจ H. pylori</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผังการดูแล UGIB</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Hematemesis / melena</b>ABC · IV 2 เส้น · CBC, BUN, INR, G/M</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สงสัย varices? (ตับแข็ง/portal HT)</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node dx hyper"><b>Variceal pathway</b>Vasoactive ทันที · ceftriaxone 1 g · Hb เป้า 7–8 · erythromycin · EBL ≤12 ชม. · ± pre-emptive TIPS</div></div>
+        <div class="arm"><span class="lab">ไม่ใช่</span><div class="node q"><b>GBS</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">0–1</span><div class="node dx green"><b>OPD</b>PPI · นัดส่องกล้อง · H. pylori</div></div>
+            <div class="arm"><span class="lab">≥2</span><div class="node dx hypo"><b>Admit</b>PRC ถ้า Hb ≤7 (≤8 CVD) · PPI IV · erythromycin · หยุด/ปรับ antithrombotic · ส่องกล้อง ≤24 ชม.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>Forrest</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">Ia · Ib · IIa · (IIb)</span><div class="node red"><b>ห้ามเลือดทางกล้อง</b>→ PPI สูง 72 ชม. → bid ถึง 14 วัน · ออกซ้ำ → กล้องซ้ำ/OTS → TAE → ผ่าตัด</div></div>
+        <div class="arm"><span class="lab">IIc · III</span><div class="node dx grey"><b>เสี่ยงต่ำ</b>PPI กิน · กินอาหาร · จำหน่ายเร็ว</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องคำนวณข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ใส่ค่าตัวอย่างไว้ให้แล้ว</p>
+  </div>
+  <div class="tool" id="tGbs" style="margin-top:12px">
+    <h3>Glasgow-Blatchford Score</h3>
+    <div class="fields">
+      <label class="f">BUN (mg/dL)<input type="number" id="gBun" value="30"></label>
+      <label class="f">Hb (g/dL)<input type="number" id="gHb" value="9.5" step="0.1"></label>
+      <label class="f">เพศ<select id="gSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">SBP (mmHg)<input type="number" id="gSbp" value="105"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" data-g="1" checked> HR ≥100</label>
+      <label><input type="checkbox" data-g="1" checked> Melena</label>
+      <label><input type="checkbox" data-g="2"> Syncope</label>
+      <label><input type="checkbox" data-g="2"> โรคตับ</label>
+      <label><input type="checkbox" data-g="2"> หัวใจล้มเหลว</label>
+    </div>
+    <div class="out" id="gOut"></div>
+  </div>
+  <div class="tool" id="tRock" style="margin-top:12px">
+    <h3>Rockall score</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">อายุ</div>
+        <div class="radios"><label><input type="radio" name="rAge" value="0">&lt;60</label><label><input type="radio" name="rAge" value="1" checked>60–79</label><label><input type="radio" name="rAge" value="2">≥80</label></div>
+        <div class="muted" style="font-size:.82rem">Shock</div>
+        <div class="radios"><label><input type="radio" name="rSh" value="0">ไม่มี (HR&lt;100, SBP≥100)</label><label><input type="radio" name="rSh" value="1" checked>HR ≥100, SBP ≥100</label><label><input type="radio" name="rSh" value="2">SBP &lt;100</label></div>
+        <div class="muted" style="font-size:.82rem">โรคร่วม</div>
+        <div class="radios"><label><input type="radio" name="rCo" value="0" checked>ไม่มี</label><label><input type="radio" name="rCo" value="2">HF, IHD, โรคร่วมสำคัญ</label><label><input type="radio" name="rCo" value="3">ไตวาย ตับวาย มะเร็งแพร่กระจาย</label></div>
+      </div>
+      <div>
+        <div class="muted" style="font-size:.82rem">หลังส่องกล้อง (ถ้ามี)</div>
+        <div class="radios"><label><input type="radio" name="rDx" value="x" checked>ยังไม่ส่อง</label><label><input type="radio" name="rDx" value="0">Mallory-Weiss / ไม่พบรอยโรค</label><label><input type="radio" name="rDx" value="1">สาเหตุอื่น</label><label><input type="radio" name="rDx" value="2">มะเร็ง</label></div>
+        <div class="radios"><label><input type="radio" name="rSt" value="0" checked>ไม่มี stigmata / dark spot</label><label><input type="radio" name="rSt" value="2">เลือด, clot, visible vessel, spurting</label></div>
+      </div>
+    </div>
+    <div class="out" id="rOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Hb แรกรับปกติไม่ได้แปลว่าเลือดออกน้อย</b> ดู HR, SBP, shock index และ Hb ซ้ำหลังให้สารน้ำ</div></div>
+    <div class="pearl"><div><b>ให้เลือดเมื่อ Hb ≤7</b> (≤8 ในโรคหัวใจ) การให้มากเกินเพิ่มเลือดออกซ้ำ โดยเฉพาะ varices</div></div>
+    <div class="pearl"><div><b>สงสัย varices ให้ vasoactive + ceftriaxone ทันที</b> ไม่ต้องรอกล้อง</div></div>
+    <div class="pearl"><div><b>GBS 0–1 กลับบ้านได้</b> ลดการนอน รพ.โดยไม่เพิ่มความเสี่ยง</div></div>
+    <div class="pearl"><div><b>ไม่ต้องรีบส่องภายใน 12 ชม.</b> ถ้าคงที่แล้ว (ESGE 2026) — ภายใน 24 ชม. หลังกู้ชีพก็พอ ยกเว้นยังไม่คงที่หรือสงสัย varices</div></div>
+    <div class="pearl"><div><b>PPI ช่วยแต่ไม่แทนกล้อง</b> ห้ามให้ PPI แล้วทำให้การส่องกล้องหรือส่งต่อล่าช้า</div></div>
+    <div class="pearl"><div><b>ไม่ให้ tranexamic acid</b> ใน UGIB</div></div>
+    <div class="pearl"><div><b>Erythromycin ก่อนส่อง</b> ช่วยเคลียร์กระเพาะ ลดการส่องซ้ำ — ไม่มีให้ใช้ metoclopramide</div></div>
+    <div class="pearl"><div><b>Aspirin ป้องกันทุติยภูมิ ให้กลับมาใช้เร็ว</b> การหยุดนานเพิ่มอัตราตายจากหัวใจและหลอดเลือด</div></div>
+    <div class="pearl"><div><b>ตรวจ H. pylori ทุกราย</b> และตรวจซ้ำถ้าผลลบช่วงเลือดออก — การกำจัดเชื้อลดเลือดออกซ้ำได้มาก</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../hepbc/index.html">Hepatitis B &amp; C →</a> · <a href="../acs/index.html">ACS →</a> · <a href="../af/index.html">AF →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Gralnek IM, Morris J, Laursen SB, et al. Endoscopic diagnosis and management of peptic ulcer bleeding: ESGE Guideline – Update 2026. Endoscopy 2026;58(8):899–924. doi:10.1055/a-2863-8314 · 2) Gralnek IM, et al. ESGE Guideline NVUGIH – Update 2021. Endoscopy 2021;53:300–32. · 3) Laine L, Barkun AN, Saltzman JR, et al. ACG Clinical Guideline: Upper GI and ulcer bleeding. Am J Gastroenterol 2021;116:899–917. · 4) de Franchis R, et al. Baveno VII – Renewing consensus in portal hypertension. J Hepatol 2022;76:959–74. · 5) Gralnek IM, et al. ESGE Guideline: esophagogastric variceal hemorrhage. Endoscopy 2022;54:1094–120. · 6) Lesmana CRA, et al. Management of acute variceal bleeding: updated APASL guidelines. Hepatol Int 2025;19:1003–31. doi:10.1007/s12072-025-10894-4 · 7) HALT-IT Trial Collaborators. Lancet 2020;395:1927–36.<br>
+  <span class="tag up">2026</span> = คำแนะนำใหม่/ปรับปรุงใน ESGE 2026 · <span class="tag add">เสริม</span> = เนื้อหามาตรฐานหรือบริบทไทยที่เพิ่ม · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','ugibView');
+mountWalker({
+ start:{q:'Airway และ hemodynamic เป็นอย่างไร?',o:[['ซึม / อาเจียนเลือดมาก ไม่ปกป้อง airway','airway'],['Shock / HR >100 / SBP <100','shock'],['คงที่','varq']]},
+ airway:{leaf:true,cls:'danger',t:'ปกป้อง airway',b:'ใส่ท่อช่วยหายใจก่อนส่องกล้อง · IV 2 เส้น · group & match',next:['ต่อ: สงสัย varices ไหม','varq']},
+ shock:{leaf:true,cls:'danger',t:'กู้ชีพ',b:'Crystalloid ทดแทนพอให้ความดันคงที่ · ให้ PRC ตามดุลพินิจโดยไม่ต้องรอ Hb · เตรียมส่องกล้องเร็วเมื่อยังไม่คงที่แม้กู้ชีพแล้ว',next:['ต่อ: สงสัย varices ไหม','varq']},
+ varq:{q:'สงสัย variceal bleeding (ตับแข็ง, portal HT, เคยมี varices)?',o:[['ใช่','var'],['ไม่ใช่','gbs']]},
+ var:{leaf:true,cls:'violet',t:'Variceal pathway',b:'<b>Vasoactive ทันที</b> (terlipressin/octreotide/somatostatin) 2–5 วัน · <b>ceftriaxone 1 g/วัน</b> ≤7 วัน · PRC เมื่อ Hb ≤7 เป้า 7–8 · erythromycin · <b>EBL ภายใน 12 ชม.</b> · Child C 10–13 หรือ B >7 ที่ยังออก → pre-emptive TIPS ≤72 ชม. · lactulose'},
+ gbs:{q:'Glasgow-Blatchford score?',o:[['0–1','opd'],['≥2','admit']]},
+ opd:{leaf:true,cls:'ok',t:'เสี่ยงต่ำมาก',b:'รักษาแบบผู้ป่วยนอกได้ · PPI กิน · นัดส่องกล้อง · ตรวจ H. pylori · หยุด NSAIDs · กลับมาทันทีถ้าถ่ายดำ/อาเจียนเลือด/หน้ามืด'},
+ admit:{leaf:true,cls:'warn',t:'Admit',b:'PRC เมื่อ Hb ≤7 (≤8 CVD) · PPI IV ขนาดสูง (ไม่ทำให้กล้องช้า) · erythromycin ในรายเลือดออกมาก · จัดการ antithrombotic · ส่องกล้องภายใน 24 ชม.',next:['ผลส่องกล้อง','forrest']},
+ forrest:{q:'ผลส่องกล้อง (Forrest)?',o:[['Ia / Ib active bleeding','fhi'],['IIa visible vessel','fhi'],['IIb adherent clot','fclot'],['IIc / III','flow']]},
+ fhi:{leaf:true,cls:'danger',t:'Stigmata ความเสี่ยงสูง',b:'ห้ามเลือดทางกล้อง (combination หรือ OTS clip) → PPI ขนาดสูง 72 ชม. → กินวันละ 2 ครั้งถึง 14 วัน · กินอาหารภายใน 24 ชม.ถ้าห้ามเลือดได้ · ออกซ้ำ → กล้องซ้ำ/OTS → TAE → ผ่าตัด · H. pylori'},
+ fclot:{leaf:true,cls:'warn',t:'Adherent clot',b:'ลอกก้อนเลือดและรักษาถ้าผู้ส่องชำนาญ (ESGE 2026) · ไม่เช่นนั้นให้ PPI ขนาดสูง'},
+ flow:{leaf:true,cls:'ok',t:'Stigmata ความเสี่ยงต่ำ',b:'ไม่ต้องรักษาทางกล้อง · PPI กินวันละครั้ง · กินอาหารได้ · จำหน่ายเร็ว · ตรวจ H. pylori · หยุด NSAIDs'}
+},'apTrail','apStage');
+
+function gbs(){
+  const bun=num('gBun'),hb=num('gHb'),m=$('gSex').value==='m',sbp=num('gSbp');
+  let s=0;
+  if(bun!==null){s+=bun>70?6:bun>28?4:bun>=22.4?3:bun>=18.2?2:0}
+  if(hb!==null){ if(m)s+=hb<10?6:hb<12?3:hb<13?1:0; else s+=hb<10?6:hb<12?1:0; }
+  if(sbp!==null){s+=sbp<90?3:sbp<100?2:sbp<110?1:0}
+  document.querySelectorAll('#tGbs input[data-g]:checked').forEach(e=>s+=+e.dataset.g);
+  const t=s<=1?'<b style="color:var(--ok)">เสี่ยงต่ำมาก</b> → รักษาแบบผู้ป่วยนอกได้ นัดส่องกล้อง':s<=7?'<b style="color:var(--warn)">ต้อง admit</b> → ส่องกล้องภายใน 24 ชม.':'<b style="color:var(--danger)">เสี่ยงสูง</b> → อาจต้องให้เลือด/ห้ามเลือดทางกล้อง ใกล้ชิด';
+  const tx=(hb!==null&&hb<=8)?`<br>Hb ${hb}: ${hb<=7?'<b>ให้ PRC</b>':'ให้ PRC ถ้ามีโรคหัวใจและหลอดเลือด'}`:'';
+  $('gOut').innerHTML=`<span class="big">${s}</span> คะแนน · ${t}${tx}`;
+}
+bindAll('#tGbs input,#tGbs select',gbs);
+
+function rock(){
+  const pre=+radio('rAge')+ +radio('rSh')+ +radio('rCo');
+  const dx=radio('rDx');
+  let s=`Pre-endoscopy Rockall <span class="big">${pre}</span> / 7`;
+  if(dx!=='x'){const full=pre+ +dx+ +radio('rSt');
+    s+=`<br>Full Rockall <span class="mono"><b>${full}</b></span> / 11 · ${full<=2?'เสี่ยงต่ำ (เลือดออกซ้ำ/ตายต่ำ) → จำหน่ายเร็วได้':full<=4?'เสี่ยงปานกลาง':'<b style="color:var(--danger)">เสี่ยงสูง</b> (ตาย/เลือดออกซ้ำสูง)'}`;}
+  else s+=` · ${pre===0?'เสี่ยงต่ำ':'ใช้ร่วมกับ GBS'}`;
+  $('rOut').innerHTML=s;
+}
+bindAll('#tRock input',rock);
+
+mountQuiz([
+ ['ชาย 70 ปี ไม่มีโรคหัวใจ melena Hb 7.8 g/dL ความดันคงที่ ข้อใดถูก',
+  ['ให้ PRC ทันทีให้ Hb >10','ยังไม่ต้องให้ PRC ติดตาม Hb เกณฑ์ ≤7','ให้ FFP','ให้ tranexamic acid'],1,'Restrictive transfusion: ไม่มีโรคหัวใจให้เมื่อ Hb ≤7 · TXA ไม่แนะนำ'],
+ ['ผู้ป่วยตับแข็ง อาเจียนเลือด สิ่งที่ต้องให้ทันทีก่อนส่องกล้อง',
+  ['Vasoactive drug + ceftriaxone','FFP แก้ INR','Propranolol','Tranexamic acid'],0,'สงสัย variceal bleeding: vasoactive 2–5 วัน + ceftriaxone 1 g/วัน ≤7 วัน · ไม่แก้ INR เป็น routine'],
+ ['ผู้ป่วย UGIB GBS 0 ข้อใดเหมาะสม',
+  ['Admit ICU','รักษาแบบผู้ป่วยนอกและนัดส่องกล้อง','ส่องกล้องภายใน 6 ชม.','ให้ PRC'],1,'GBS 0–1 เสี่ยงต่ำมาก ไม่ต้องนอน รพ. (ESGE)'],
+ ['ตาม ESGE 2026 ผู้ป่วย non-variceal UGIB ที่กู้ชีพแล้วคงที่ ควรส่องกล้องเมื่อไร',
+  ['ภายใน 6 ชม.','ภายใน 12 ชม.','ภายใน 24 ชม.','หลัง 72 ชม.'],2,'ESGE 2026 ไม่แนะนำส่องเร่งด่วน ≤6 หรือ ≤12 ชม. ยกเว้นยังไม่คงที่แม้กู้ชีพแล้ว'],
+ ['Forrest IIa (non-bleeding visible vessel) ข้อใดถูก',
+  ['ไม่ต้องรักษาทางกล้อง','รักษาทางกล้อง แล้ว PPI ขนาดสูง 72 ชม.','ให้ hemostatic powder เดี่ยวเป็นการรักษาแรก','ผ่าตัดทันที'],1,'Stigmata ความเสี่ยงสูง ต้องห้ามเลือดทางกล้อง (thermal/clip/OTS) แล้ว PPI ขนาดสูง'],
+ ['ผู้ป่วยใส่ DES เมื่อ 1 เดือนก่อน ได้ aspirin + clopidogrel มา UGIB ข้อใดถูก',
+  ['หยุดทั้งสองตัว 4 สัปดาห์','คง aspirin ปรึกษาอายุรแพทย์โรคหัวใจ กลับมาให้ P2Y12 เร็วที่สุด','เปลี่ยนเป็น warfarin','หยุด aspirin ตลอดไป'],1,'Stent thrombosis อันตรายมาก ให้คง aspirin และกลับมาให้ P2Y12 เร็ว'],
+ ['ตับแข็ง Child-Pugh C 11 EBL แล้วหยุดเลือด ข้อใดลดอัตราตายได้',
+  ['Pre-emptive TIPS ภายใน 72 ชม.','ให้ PPI อย่างเดียว','หยุด ceftriaxone ทันที','ให้ FFP'],0,'Child C 10–13 (หรือ B >7 ที่ยังออก) → pre-emptive TIPS ภายใน 72 ชม. (ดีที่สุด 24 ชม.)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
