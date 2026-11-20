@@ -1,0 +1,742 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AF · Atrial fibrillation (Thai 2025)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Thai AF Guideline 2025 · เทียบ ESC 2024</div>
+  <h1>Atrial fibrillation:<br>ไม่เอา 3 อ</h1>
+  <p class="sub">สรุป AF สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตามแนวทางเวชปฏิบัติ AF ของไทยปี 2025 ที่ใช้หลัก "ไม่เอา 3 อ" — ไม่เอาอัมพฤกษ์อัมพาต · ไม่เอาอาการ · ไม่เอาอ้วนและอื่นๆ ตั้งแต่ CHA₂DS₂-VA การเลือกและขนาด DOAC/warfarin สำหรับคนไทย rate และ rhythm control ไปจนถึง AF ในห้องฉุกเฉินและกลุ่มพิเศษ พร้อมเครื่องคำนวณข้างเตียง</p>
+  <p class="cite">อ้างอิงหลัก: Ngarmukos T, Krittayaphong R, et al. 2025 Thai guideline for the diagnosis and management of atrial fibrillation. Asian Biomed 2025;19(5):220–265 (Thai Cardiac Electrophysiology Club, สมาคมแพทย์โรคหัวใจแห่งประเทศไทยฯ) · Van Gelder IC, et al. 2024 ESC Guidelines for the management of AF. Eur Heart J 2024 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>อ 1 · อัมพฤกษ์อัมพาต</b>CHA₂DS₂-VA ≥2 → OAC (DOAC ก่อน) · =1 พิจารณา · ห้ามใช้ aspirin แทน</div>
+    <div class="stage" style="--c:var(--warn)"><b>อ 2 · อาการ</b>Rate control HR &lt;110 · rhythm control เมื่อยังมีอาการหรือเป็น AF ระยะแรก</div>
+    <div class="stage" style="--c:var(--accent)"><b>อ 3 · อ้วนและอื่นๆ</b>ลดน้ำหนัก 10% · ออกกำลัง · งดเหล้า · คุม BP/DM · รักษา HF/OSA</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามและชนิด</a><a href="#eval">ประเมินแรกพบ</a><a href="#stroke">อ 1: ป้องกัน stroke</a><a href="#oac">เลือก OAC และขนาดยา</a><a href="#bleed">เลือดออกและการแก้ฤทธิ์</a><a href="#rate">อ 2: Rate control</a><a href="#rhythm">Rhythm control</a><a href="#er">AF ในห้องฉุกเฉิน</a><a href="#special">กลุ่มพิเศษ</a><a href="#comorb">อ 3: อ้วนและอื่นๆ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและชนิดของ AF</h2>
+  <p><b>Clinical AF</b> คือ AF ที่บันทึกได้จาก ECG 12 lead หรือ single-lead ≥30 วินาที: RR ไม่สม่ำเสมอ ไม่มี P wave ชัดเจน · <b>Device-detected subclinical AF</b> คือ AF ที่จับได้จากเครื่อง (pacemaker, ILR) ในผู้ไม่มีอาการและไม่เคยตรวจพบจาก ECG</p>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>นิยาม</th></tr>
+    <tr><td><b>First-diagnosed</b></td><td>พบครั้งแรก ยังไม่ระบุชนิด</td></tr>
+    <tr><td><b>Paroxysmal</b></td><td>แต่ละครั้งไม่เกิน 7 วัน หายเองหรือหลังรักษา</td></tr>
+    <tr><td><b>Persistent</b></td><td>นานกว่า 7 วัน</td></tr>
+    <tr><td><b>Long-standing persistent</b></td><td>นานกว่า 12 เดือน แต่ยังตั้งใจทำ rhythm control</td></tr>
+    <tr><td><b>Permanent</b></td><td>ผู้ป่วยและแพทย์ตกลงใช้ rate control อย่างเดียว ไม่พยายามกลับ sinus อีก</td></tr>
+  </table></div>
+  <div class="box note"><b>Atrial flutter</b>วงจรใน atrium ที่สม่ำเสมอ (มัก sawtooth ใน II, III, aVF; ventricular rate ~150 จาก 2:1) · ป้องกัน stroke เหมือน AF · catheter ablation ได้ผลดีมาก</div>
+</section>
+
+<!-- 2 -->
+<section id="eval" class="col">
+  <div class="sec-num">02</div>
+  <h2>ประเมินผู้ป่วย AF ครั้งแรก</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ประวัติและตรวจร่างกาย</h4><ul><li>อาการ (ใจสั่น เหนื่อย เวียนหัว เจ็บหน้าอก) และ EHRA symptom class</li><li>ชนิด/ระยะเวลา AF</li><li>โรคร่วม: HT, DM, HF, CAD, OSA, ไทรอยด์, โรคลิ้นหัวใจ, ดื่มสุรา</li><li>ยาที่ใช้ (ยาที่ interact กับ OAC)</li><li>ปัจจัยเสี่ยง stroke และเลือดออก</li></ul></div>
+    <div class="card c-vio"><h4>ส่งตรวจ</h4><ul><li><b>ECG 12 lead</b>: ยืนยัน AF, HR, QRS/QT, LVH, pre-excitation, ischemia</li><li><b>Lab</b>: CBC, coagulation, <b>Cr/CrCl</b>, electrolyte, LFT, glucose/HbA1c, <b>TSH</b></li><li><b>Echocardiogram (TTE)</b>: LA, ลิ้นหัวใจ (MS?), LVEF</li><li>TEE เมื่อต้องตัด LA thrombus ก่อน cardioversion</li></ul></div>
+  </div>
+  <div class="box warn"><b>หาตัวกระตุ้นเสมอ</b>Sepsis, pneumonia, หลังผ่าตัด, thyrotoxicosis, alcohol, PE, electrolyte ผิดปกติ — <b>trigger-induced AF</b> ยังมีโอกาสเป็นซ้ำสูง ควรพิจารณา OAC ระยะยาวในผู้เสี่ยงสูงและนัดติดตาม 30–60 วัน</div>
+</section>
+
+<!-- 3 -->
+<section id="stroke" class="col">
+  <div class="sec-num">03</div>
+  <h2>อ 1 — ไม่เอาอัมพฤกษ์อัมพาต: ประเมินความเสี่ยง stroke</h2>
+  <p>แนวทางไทย 2025 ใช้ <b>CHA₂DS₂-VA</b> (ตัดเพศหญิงออกจาก CHA₂DS₂-VASc) เหมือน ESC 2024 และ validate ในคนไทยแล้วจาก COOL-AF registry</p>
+  <div class="tbl"><table>
+    <tr><th>ปัจจัย</th><th>นิยาม</th><th class="mono">คะแนน</th></tr>
+    <tr><td><b>C</b> HF</td><td>อาการ/อาการแสดงของ HF ที่มีหลักฐานหัวใจทำงานผิดปกติ หรือ LVEF ≤40%</td><td class="mono">1</td></tr>
+    <tr><td><b>H</b> HT</td><td>BP &gt;140/90 อย่างน้อย 2 ครั้ง หรือกินยาลดความดัน</td><td class="mono">1</td></tr>
+    <tr><td><b>A₂</b> อายุ ≥75</td><td></td><td class="mono">2</td></tr>
+    <tr><td><b>D</b> DM</td><td>FBS ≥126 หรือกินยา/ฉีด insulin</td><td class="mono">1</td></tr>
+    <tr><td><b>S₂</b> Stroke/TIA/embolism</td><td>ischemic stroke, TIA, peripheral embolism, PE</td><td class="mono">2</td></tr>
+    <tr><td><b>V</b> Vascular</td><td>CAD (MI, angina, PCI, CABG), PAD, complex aortic plaque</td><td class="mono">1</td></tr>
+    <tr><td><b>A</b> อายุ 65–74</td><td></td><td class="mono">1</td></tr>
+  </table></div>
+  <div class="grid3">
+    <div class="card c-red"><h4>≥2 · เสี่ยงสูง</h4>แนะนำ OAC <span class="rec s1">I A</span></div>
+    <div class="card c-warn"><h4>1 · ปานกลาง</h4>ควรพิจารณา OAC ชั่งกับความเสี่ยงเลือดออก <span class="rec">IIa C</span></div>
+    <div class="card c-ok"><h4>0 · เสี่ยงต่ำ</h4>ไม่ต้องให้ OAC · ประเมินซ้ำเป็นระยะ</div>
+  </div>
+  <ul>
+    <li><b>ให้ OAC โดยไม่ต้องคิดคะแนน</b>: HCM, cardiac amyloidosis, <b>rheumatic MS ปานกลาง–รุนแรง</b>, ลิ้นหัวใจเทียมชนิดโลหะ <span class="rec s1">I B</span></li>
+    <li><b>Atrial flutter</b> ประเมินเหมือน AF <span class="rec s1">I B</span></li>
+    <li><b>ห้ามใช้ antiplatelet</b> (aspirin, clopidogrel) แทน OAC เพื่อป้องกัน stroke <span class="rec no">III A</span></li>
+    <li><b>บริบทไทย</b>: น้ำหนักตัวน้อยเพิ่มความเสี่ยง stroke แม้คะแนน 0 แต่ก็เพิ่มเลือดออกด้วย ต้องชั่งเป็นรายคน</li>
+    <li>ความเสี่ยงเปลี่ยนตามเวลา — ประเมินซ้ำทุกครั้งที่ติดตาม <span class="rec s1">I B</span></li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="oac">
+  <div class="col">
+    <div class="sec-num">04</div>
+    <h2>เลือก OAC และขนาดยา</h2>
+    <div class="box key"><b>หลัก</b><b>DOAC เป็นตัวเลือกแรก</b> ในผู้ที่ไม่มี rheumatic MS ปานกลาง–รุนแรงหรือลิ้นหัวใจโลหะ <span class="rec s1">I A</span> · warfarin เป็นทางเลือก · <b>MS ปานกลาง–รุนแรง/ลิ้นโลหะ ต้องใช้ warfarin</b> และห้ามใช้ DOAC</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาดมาตรฐาน</th><th>เกณฑ์ลดขนาด</th><th>การขับ</th></tr>
+    <tr><td><b>Dabigatran</b></td><td class="mono">150 mg bid</td><td>110 mg bid ถ้าอายุ ≥80 หรือใช้ร่วมกับ verapamil</td><td>ไต 80%</td></tr>
+    <tr><td><b>Rivaroxaban</b></td><td class="mono">20 mg od พร้อมอาหาร</td><td>15 mg od ถ้า CrCl 15–49</td><td>ไต 67%</td></tr>
+    <tr><td><b>Apixaban</b></td><td class="mono">5 mg bid</td><td>2.5 mg bid ถ้ามี <b>2 ใน 3</b>: อายุ ≥80 · น้ำหนัก ≤60 kg · SCr ≥1.5 mg/dL</td><td>ไต 27%</td></tr>
+    <tr><td><b>Edoxaban</b></td><td class="mono">60 mg od</td><td>30 mg od ถ้า CrCl 15–50, น้ำหนัก ≤60 kg หรือใช้ร่วมกับ ciclosporin, dronedarone, erythromycin, ketoconazole</td><td>ไต 50%</td></tr>
+    <tr><td><b>Warfarin</b></td><td>เริ่ม <span class="mono">2.5–3 mg/วัน</span> ในคนไทย (เฉลี่ย 2.6 mg/วัน)</td><td>INR 2.0–3.0 · อายุ ≥70 อาจใช้ 1.5–3.0 · ใช้ร่วม antiplatelet 2.0–2.5 · TTR ≥65%</td><td>ตับ</td></tr>
+  </table></div>
+  <div class="col">
+    <ul>
+      <li><b>อย่าลดขนาด DOAC เองโดยไม่เข้าเกณฑ์</b> — ในคนเอเชีย ขนาดต่ำลดเลือดออกได้แต่ป้องกัน stroke ได้น้อยกว่าขนาดมาตรฐาน ควรตัดสินร่วมกับผู้ป่วย</li>
+      <li>เริ่ม warfarin 5 mg ในคนไทยมัก INR เกิน เพราะความแตกต่างทางพันธุกรรม (CYP2C9, VKORC1)</li>
+      <li>DOAC ไม่ต้องตรวจระดับยา แต่ตรวจ CBC, LFT, Cr เป็นระยะ (ถี่ขึ้นในผู้สูงอายุ/ไตเสื่อม) · <span class="tag add">เสริม</span> CrCl &lt;15 หรือฟอกไต: ปรึกษาผู้เชี่ยวชาญก่อนใช้ DOAC · dabigatran ห้ามเมื่อ CrCl &lt;30</li>
+      <li>ระวังยาที่ interact: rifampicin, carbamazepine, phenytoin (ลดระดับ DOAC) · ketoconazole, itraconazole, ritonavir (เพิ่มระดับ) · warfarin: ยาปฏิชีวนะ ยาต้านเชื้อรา สมุนไพร</li>
+    </ul>
+    <p>คำนวณขนาด DOAC ได้ในบท 12</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="bleed" class="col">
+  <div class="sec-num">05</div>
+  <h2>ความเสี่ยงเลือดออกและการแก้ฤทธิ์ยา</h2>
+  <div class="box warn"><b>ความเสี่ยงเลือดออกสูง ไม่ใช่ข้อห้ามของ OAC</b>ใช้เพื่อหาและแก้ปัจจัยที่แก้ได้ ได้แก่ ความดันที่คุมไม่ได้, ดื่มสุรา, ยา antiplatelet/NSAIDs ที่ไม่จำเป็น, INR แกว่ง, ซีด, ไต/ตับ แล้วติดตามใกล้ชิด</div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Reversal agent เฉพาะ</th><th>ทางเลือกเมื่อไม่มี</th></tr>
+    <tr><td>Warfarin</td><td>Vitamin K IV + <b>PCC</b></td><td>FFP</td></tr>
+    <tr><td>Dabigatran</td><td><b>Idarucizumab</b></td><td>PCC, hemodialysis</td></tr>
+    <tr><td>Rivaroxaban / apixaban / edoxaban</td><td><b>Andexanet alfa</b></td><td>PCC</td></tr>
+  </table></div>
+  <ul>
+    <li>Minor bleeding: ลดหรือพักยาชั่วคราว ติดตามใกล้ชิด · Major bleeding: หยุดยา ห้ามเลือด ให้ reversal/blood product</li>
+    <li>กลับมาเริ่ม OAC: GI bleed ส่วนใหญ่กลับมาให้ได้ภายในไม่กี่สัปดาห์หลังคุมเลือดได้ · intracranial hemorrhage มักพิจารณาภายใน 3 เดือนร่วมกับแพทย์ระบบประสาท</li>
+    <li>Percutaneous LAA occlusion พิจารณาเมื่อมีข้อห้ามใช้ OAC เด็ดขาด <span class="rec">IIb</span></li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="rate" class="col">
+  <div class="sec-num">06</div>
+  <h2>อ 2 — ไม่เอาอาการ: Rate control</h2>
+  <ul>
+    <li>เป้า <b>HR พักน้อยกว่า 110</b> (lenient · RACE II) หรือต่ำกว่านั้นถ้ายังมีอาการ หลีกเลี่ยง bradycardia <span class="rec">IIa B</span></li>
+    <li>เลือกยาตาม <b>LVEF</b> และโรคร่วม:</li>
+  </ul>
+  <div class="grid2">
+    <div class="card c-acc"><h4>LVEF &gt;40%</h4><b>Beta-blocker</b>, <b>diltiazem/verapamil</b> หรือ digoxin <span class="rec s1">I A</span></div>
+    <div class="card c-red"><h4>LVEF ≤40%</h4><b>Beta-blocker</b> หรือ <b>digoxin</b> <span class="rec s1">I A</span> · <b>ห้าม non-DHP CCB</b> · amiodarone ถ้าใช้ยาอื่นไม่ได้ <span class="rec">IIb</span></div>
+  </div>
+  <ul>
+    <li>ใช้ 2 ตัวร่วมกันได้เมื่อคุมไม่ได้ ระวังหัวใจเต้นช้า <span class="rec">IIa C</span> · digoxin เป้าระดับ <span class="mono">≤1.2 ng/mL</span></li>
+    <li>คุมไม่ได้ด้วยยา: AV node ablation + pacemaker/CRT</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="rhythm" class="col">
+  <div class="sec-num">07</div>
+  <h2>Rhythm control</h2>
+  <p>พิจารณาเมื่อ <b>ยังมีอาการแม้คุม rate แล้ว</b>, <b>AF ระยะแรก</b> (วินิจฉัย &lt;1 ปี — EAST-AFNET 4) หรือ <b>HFrEF</b> โดยเฉพาะ tachycardia-induced cardiomyopathy · <b>rhythm control ไม่ได้แทน OAC</b> ต้องให้ OAC ต่อตามความเสี่ยง แม้กลับเป็น sinus</p>
+  <h3>Antiarrhythmic drugs</h3>
+  <div class="tbl"><table>
+    <tr><th>ผู้ป่วย</th><th>ยา</th><th>ขนาด (แนวทางไทย)</th></tr>
+    <tr><td>ไม่มี structural heart disease</td><td><b>Flecainide</b>, propafenone หรือ dronedarone</td><td>Flecainide 50 → 100–150 mg bid · propafenone 150 → 300 mg tid — <b>ต้องให้ AV nodal blocker ร่วม</b> ป้องกัน flutter 1:1</td></tr>
+    <tr><td>CAD, LVH (ไม่มี HF รุนแรง)</td><td><b>Dronedarone</b></td><td>400 mg bid · ตรวจ QTc, LFT</td></tr>
+    <tr><td>HF รุนแรง (NYHA III–IV) หรือใช้ตัวอื่นไม่ได้</td><td><b>Amiodarone</b></td><td>Loading รวม 6–10 g (IV 300 mg ใน 30–60 นาที → 900–1,200 mg/24 ชม. → กิน 200 mg tid) · maintenance 100–200 mg/วัน · ตรวจ TFT, LFT, QTc ทุก ~6 เดือน</td></tr>
+  </table></div>
+  <h3>Cardioversion และ OAC</h3>
+  <ul>
+    <li>AF นานเกินกำหนด (ESC 2024 ใช้ <b>&gt;24 ชม.</b>; แนวเดิม 48 ชม.) หรือไม่ทราบ → ให้ OAC อย่างน้อย <b>3 สัปดาห์</b> ก่อน หรือทำ TEE ตัด LA thrombus · หลัง cardioversion ให้ OAC ต่อ <b>อย่างน้อย 4 สัปดาห์</b> แล้วต่อระยะยาวตามคะแนน <span class="tag add">เสริม</span></li>
+    <li>Hemodynamic ไม่คงที่ → electrical cardioversion ทันที ไม่ต้องรอ OAC (ให้ heparin/DOAC เร็วที่สุด)</li>
+  </ul>
+  <h3>Catheter ablation</h3>
+  <ul>
+    <li>แนะนำเมื่อมีอาการแม้ใช้ยา <span class="rec s1">I</span> · AF + HFrEF ที่น่าจะเป็น tachycardia-induced <span class="rec s1">I</span> · เป็นทางเลือกแรกได้ใน paroxysmal AF ที่เหมาะสมหลังตัดสินใจร่วมกัน</li>
+    <li>OAC ≥3 สัปดาห์ก่อนทำ · ต่อ ≥2 เดือนหลังทำทุกราย · ระยะยาวตามความเสี่ยง</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="er" class="col">
+  <div class="sec-num">08</div>
+  <h2>AF ในห้องฉุกเฉิน</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">ไม่คงที่? → Synchronized cardioversion</span></summary><div class="body">ความดันต่ำ/shock, pulmonary edema, ischemia, ซึม ที่เกิดจาก AF ที่หัวใจเต้นเร็ว → synchronized cardioversion (biphasic ~120–200 J) <span class="tag add">เสริม</span> · ระหว่างเตรียม: amiodarone IV หรือ esmolol/digoxin IV ในผู้ที่ความดันต่ำหรือ LVEF ต่ำมาก <span class="rec">IIb C</span></div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">คงที่ → หาตัวกระตุ้นและคุม rate</span></summary><div class="body">Sepsis, ขาดน้ำ, ไข้, PE, thyrotoxicosis, ซีด, ปวด, alcohol withdrawal — แก้สาเหตุก่อน มัก HR ลดเอง · ยา IV ตัวอย่าง <span class="tag add">เสริม</span>:
+      <ul><li><b>Metoprolol</b> 2.5–5 mg IV ช้าๆ ซ้ำทุก 5 นาที (รวม ≤15 mg)</li><li><b>Diltiazem</b> 0.25 mg/kg IV ใน 2 นาที (ห้ามใน LVEF ≤40% หรือ HF เฉียบพลัน)</li><li><b>Digoxin</b> 0.25–0.5 mg IV แล้วเสริม 0.25 mg ได้ (ออกฤทธิ์ช้า หลายชั่วโมง) — ใช้ใน HF/ความดันต่ำ</li><li><b>Amiodarone</b> 300 mg IV ใน 30–60 นาที เมื่อ HFrEF/ความดันต่ำและยาอื่นใช้ไม่ได้ (อาจทำให้กลับ sinus — คำนึงเรื่อง OAC)</li></ul></div></details>
+    <details class="step"><summary><span class="n">!</span><span class="t">Pre-excited AF (WPW)</span></summary><div class="body">AF ที่ QRS กว้างแปลกๆ ไม่สม่ำเสมอ อัตราเร็วมาก (&gt;250) · <b>ห้าม</b> adenosine, verapamil, diltiazem, beta-blocker, digoxin <b>และ amiodarone IV</b> <span class="rec no">III</span> → <b>electrical cardioversion</b> <span class="rec s1">I B</span> แล้วส่ง ablation accessory pathway</div></details>
+    <details class="step"><summary><span class="n">3</span><span class="t">เริ่ม OAC ก่อนจำหน่าย</span></summary><div class="body">ประเมิน CHA₂DS₂-VA และปัจจัยเลือดออกตั้งแต่ ER · ถ้าตั้งใจ cardioversion ให้ OAC ตามบท 07 · นัดติดตามและส่ง echocardiogram</div></details>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="special" class="col">
+  <div class="sec-num">09</div>
+  <h2>กลุ่มพิเศษ</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">PCI</span><span class="t">AF + ACS หรือ PCI</span></summary><div class="body">ใช้ <b>DOAC มากกว่า warfarin</b> · aspirin ไม่เกิน 1 สัปดาห์ แล้วใช้ OAC + P2Y12 (ควรเป็น clopidogrel) · เสี่ยง thrombosis สูงให้ triple therapy ได้นานกว่า 1 สัปดาห์แต่ไม่เกิน 1 เดือน · ผู้เสี่ยงเลือดออกพิจารณา rivaroxaban 15 mg หรือ dabigatran 110 mg bid · warfarin ร่วม antiplatelet: INR 2.0–2.5 · ดูหน้า <a href="../acs/index.html">ACS</a></div></details>
+    <details class="step"><summary><span class="n">Th</span><span class="t">Hyperthyroidism</span></summary><div class="body">Rate control ด้วย <b>non-selective beta-blocker (propranolol)</b> · OAC ตามความเสี่ยง · rhythm control เมื่อ euthyroid แล้วอย่างน้อย 16 สัปดาห์ (มักกลับ sinus เอง) · ดูหน้า <a href="../thyroid/index.html">Thyroid</a></div></details>
+    <details class="step"><summary><span class="n">≥75</span><span class="t">ผู้สูงอายุ</span></summary><div class="body">Rate control เมื่อ HR &gt;110 <span class="rec s1">I A</span> · ใช้ warfarin แล้ว TTR &lt;65% → เปลี่ยนเป็น DOAC · อายุ ≥70 ใช้ warfarin อาจตั้ง INR 1.5–3.0 · อายุมากและเสี่ยงเลือดออกมาก มีข้อมูล edoxaban 15 mg ในกลุ่มเฉพาะ · ผู้สูงอายุไม่ใช่เหตุผลที่จะไม่ให้ OAC</div></details>
+    <details class="step"><summary><span class="n">MS</span><span class="t">โรคลิ้นหัวใจ</span></summary><div class="body">Rheumatic MS ปานกลาง–รุนแรง หรือลิ้นโลหะ → <b>warfarin</b> (ห้าม DOAC) · ลิ้นหัวใจผิดปกติอื่น (MR, AS, bioprosthetic) ใช้ DOAC ได้ · rheumatic heart disease ยังพบบ่อยในไทย ต้องทำ echo ทุกราย</div></details>
+    <details class="step"><summary><span class="n">Op</span><span class="t">AF หลังผ่าตัด / trigger-induced</span></summary><div class="body">คุม HR &lt;110 · rhythm control ตามอาการ · electrical cardioversion เมื่อไม่คงที่ · ผู้เสี่ยง stroke สูงพิจารณา OAC ระยะยาว · ติดตาม 30–60 วันเพื่อดูว่ายังต้อง rhythm control หรือไม่</div></details>
+    <details class="step"><summary><span class="n">Pg</span><span class="t">ตั้งครรภ์</span></summary><div class="body">Electrical cardioversion ทำได้ปลอดภัย · rate control ด้วย beta-1 selective blocker (ยกเว้น atenolol) · ห้าม amiodarone · ปรึกษาสูติแพทย์และอายุรแพทย์โรคหัวใจ</div></details>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="comorb" class="col">
+  <div class="sec-num">10</div>
+  <h2>อ 3 — ไม่เอาอ้วนและอื่นๆ</h2>
+  <p>การคุมปัจจัยเสี่ยงช่วยลดอาการ ลดการเป็นซ้ำ และเพิ่มความสำเร็จของ rhythm control แนวทางไทยใช้ "3 อ 3 ห" (ตามตัวเลขในแนวทาง)</p>
+  <div class="tbl"><table>
+    <tr><td><b>อ้วน</b></td><td>BMI &gt;27 kg/m² ลดน้ำหนัก ≥10%</td></tr>
+    <tr><td><b>ออกกำลังกาย</b></td><td>210 นาที/สัปดาห์</td></tr>
+    <tr><td><b>แอลกอฮอล์</b></td><td>งด หรือน้อยกว่า 3 ดื่มมาตรฐาน/สัปดาห์</td></tr>
+    <tr><td><b>HbA1c</b></td><td>&lt;7%</td></tr>
+    <tr><td><b>HT</b></td><td>120–129/70–79 mmHg หรือต่ำเท่าที่ทำได้ · ดูหน้า <a href="../htn/index.html">HT</a></td></tr>
+    <tr><td><b>HF</b></td><td>GDMT เต็มที่ และ <b>SGLT2i</b> ลดการนอน รพ. จาก HF <span class="rec s1">I</span></td></tr>
+  </table></div>
+  <p>คัดกรอง OSA (ไม่ใช้แบบสอบถามอาการอย่างเดียว), เลิกบุหรี่ · คัดกรอง AF ในกลุ่มเสี่ยงสูงด้วยการคลำชีพจรหรือ ECG</p>
+</section>
+
+<!-- 11 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผังการดูแล AF</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>AF ยืนยันด้วย ECG</b></div>
+      <div class="vline"></div>
+      <div class="node red"><b>Hemodynamic ไม่คงที่?</b>→ synchronized cardioversion · Pre-excited AF → cardioversion (ห้าม AV nodal blocker)</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>หาตัวกระตุ้น · ECG · lab · TSH · echo</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">อ 1</span><div class="node dx red"><b>MS ปานกลาง–รุนแรง / ลิ้นโลหะ?</b>ใช่ → warfarin INR 2–3<br>ไม่ใช่ → CHA₂DS₂-VA<br>≥2 DOAC · 1 พิจารณา · 0 ไม่ให้<br>แก้ปัจจัยเลือดออก</div></div>
+        <div class="arm"><span class="lab">อ 2</span><div class="node dx hypo"><b>Rate control HR &lt;110</b>LVEF &gt;40%: BB / diltiazem / digoxin<br>LVEF ≤40%: BB / digoxin<br>ยังมีอาการ / AF ระยะแรก / HFrEF → rhythm control</div></div>
+        <div class="arm"><span class="lab">อ 3</span><div class="node dx eu"><b>อ้วนและอื่นๆ</b>ลดน้ำหนัก ออกกำลัง งดเหล้า คุม BP/DM รักษา HF (SGLT2i) OSA</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx grey"><b>ติดตามสม่ำเสมอ</b>ประเมินคะแนนซ้ำ · Cr/CrCl ปรับขนาด DOAC · adherence · อาการ</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องคำนวณข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับฉลากยาและแนวทาง รพ.</p>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool" id="tCha">
+      <h3>CHA₂DS₂-VA</h3>
+      <div class="checks">
+        <label><input type="checkbox" data-s="1"> C — Heart failure / LVEF ≤40%</label>
+        <label><input type="checkbox" data-s="1" checked> H — Hypertension</label>
+        <label><input type="checkbox" data-s="1"> D — Diabetes</label>
+        <label><input type="checkbox" data-s="2"> S₂ — Stroke / TIA / embolism</label>
+        <label><input type="checkbox" data-s="1"> V — Vascular disease</label>
+      </div>
+      <div class="muted" style="font-size:.82rem">อายุ</div>
+      <div class="radios">
+        <label><input type="radio" name="chaAge" value="0">&lt;65</label>
+        <label><input type="radio" name="chaAge" value="1" checked>65–74</label>
+        <label><input type="radio" name="chaAge" value="2">≥75</label>
+      </div>
+      <div class="checks"><label><input type="checkbox" id="chaV"> HCM / amyloidosis / MS ปานกลาง–รุนแรง / ลิ้นโลหะ</label></div>
+      <div class="out" id="chaOut"></div>
+    </div>
+    <div class="tool" id="tHas">
+      <h3>HAS-BLED <span class="tag add">เสริม</span></h3>
+      <div class="checks">
+        <label><input type="checkbox"> H — SBP &gt;160 (คุมไม่ได้)</label>
+        <label><input type="checkbox"> A — ไตผิดปกติ (dialysis, Cr ≥2.26)</label>
+        <label><input type="checkbox"> A — ตับผิดปกติ (cirrhosis, bilirubin/AST สูง)</label>
+        <label><input type="checkbox"> S — เคย stroke</label>
+        <label><input type="checkbox"> B — เคยเลือดออก / มีแนวโน้มเลือดออก / ซีด</label>
+        <label><input type="checkbox"> L — INR แกว่ง (TTR &lt;60%)</label>
+        <label><input type="checkbox" checked> E — อายุ &gt;65</label>
+        <label><input type="checkbox"> D — ยา antiplatelet / NSAIDs</label>
+        <label><input type="checkbox"> D — ดื่มสุรา ≥8 ดื่ม/สัปดาห์</label>
+      </div>
+      <div class="out" id="hasOut"></div>
+    </div>
+  </div>
+  <div class="tool" id="tDoac" style="margin-top:12px">
+    <h3>ขนาด DOAC ตามแนวทางไทย 2025</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="dAge" value="82"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="dWt" value="55"></label>
+      <label class="f">SCr (mg/dL)<input type="number" id="dCr" value="1.2" step="0.1"></label>
+      <label class="f">เพศ<select id="dSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dVer"> ใช้ verapamil</label>
+      <label><input type="checkbox" id="dPgp"> ใช้ ciclosporin / dronedarone / erythromycin / ketoconazole</label>
+    </div>
+    <div class="out" id="doacOut"></div>
+  </div>
+  <div class="tool" id="tIv" style="margin-top:12px">
+    <h3>ยา IV คุม rate ใน ER <span class="tag add">เสริม</span></h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="ivWt" value="60"></label>
+      <label class="f">LVEF<select id="ivEf"><option value="ok">&gt;40% / ไม่ทราบแต่ไม่มี HF</option><option value="low">≤40% หรือ HF เฉียบพลัน</option></select></label>
+      <label class="f">ความดัน<select id="ivBp"><option value="ok">ปกติ</option><option value="low">ต่ำ / ก้ำกึ่ง</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="ivWpw"> สงสัย pre-excited AF (WPW)</label></div>
+    <div class="out" id="ivOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Aspirin ไม่ได้ป้องกัน stroke ใน AF</b> แต่เพิ่มเลือดออก — ผู้ป่วยที่ได้ aspirin อย่างเดียวเพื่อ AF ควรเปลี่ยนเป็น OAC หรือหยุด</div></div>
+    <div class="pearl"><div><b>Echo ทุกรายก่อนเลือก DOAC</b> rheumatic MS ยังพบบ่อยในไทย และเป็นข้อห้ามของ DOAC</div></div>
+    <div class="pearl"><div><b>ลดขนาด DOAC ตามเกณฑ์ ไม่ใช่ตามความรู้สึก</b> apixaban ลดเมื่อเข้า 2 ใน 3 ข้อเท่านั้น · ขนาดต่ำไม่ตรงเกณฑ์ป้องกัน stroke ได้น้อยลง</div></div>
+    <div class="pearl"><div><b>เริ่ม warfarin 2.5–3 mg ในคนไทย</b> 5 mg มัก INR เกิน</div></div>
+    <div class="pearl"><div><b>Rhythm control ไม่ได้แปลว่าหยุด OAC</b> กลับ sinus แล้วก็ยังต้องให้ตามคะแนน</div></div>
+    <div class="pearl"><div><b>ห้าม diltiazem/verapamil ใน LVEF ≤40%</b> ถ้าไม่รู้ LVEF และมี HF ใช้ beta-blocker ระวังหรือ digoxin/amiodarone</div></div>
+    <div class="pearl"><div><b>AF ที่ QRS กว้างเร็วมากไม่สม่ำเสมอ = นึกถึง WPW</b> ห้าม AV nodal blocker ใช้ไฟฟ้า</div></div>
+    <div class="pearl"><div><b>AF + sepsis แก้ sepsis ก่อน</b> HR มักลดเองเมื่อได้สารน้ำและยาต้านจุลชีพ — อย่ารีบให้ diltiazem ในคนความดันก้ำกึ่ง</div></div>
+    <div class="pearl"><div><b>ตรวจ Cr ซ้ำเป็นระยะในผู้ใช้ DOAC</b> โดยเฉพาะผู้สูงอายุ เพราะเกณฑ์ขนาดยาเปลี่ยนตามไต</div></div>
+    <div class="pearl"><div><b>อ 3 สำคัญเท่า อ 1 และ อ 2</b> ลดน้ำหนัก 10% และงดเหล้าลด AF burden ได้จริง</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../acs/index.html">ACS →</a> · <a href="../htn/index.html">HT →</a> · <a href="../stroke/index.html">Stroke →</a> · <a href="../thyroid/index.html">Thyroid →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Ngarmukos T, Methavigul K, Rungpradubvong V, et al. 2025 Thai guideline for the diagnosis and management of atrial fibrillation. Asian Biomed (Res Rev News) 2025;19(5):220–265. doi:10.2478/abm-2025-0028 · 2) Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation. Eur Heart J 2024;45:3314–414. · 3) Joglar JA, et al. 2023 ACC/AHA/ACCP/HRS Guideline for the diagnosis and management of AF. Circulation 2024;149:e1–e156.<br>
+  Class I/IIa/IIb/III และ A–C ตามแนวทางไทย 2025 · <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่ม ไม่ได้มาจากแนวทางไทยโดยตรง (เช่น ขนาดยา IV ใน ER, HAS-BLED) · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','afView');
+mountWalker({
+ start:{q:'Hemodynamic คงที่หรือไม่?',h:'ความดันต่ำ/shock, pulmonary edema, ischemia, ซึม ที่เกิดจาก AF เร็ว',o:[['ไม่คงที่','unstable'],['คงที่','wpw']]},
+ unstable:{leaf:true,cls:'danger',t:'Synchronized cardioversion',b:'ทำทันที ไม่ต้องรอ OAC · ให้ heparin/DOAC เร็วที่สุด · ระหว่างเตรียมพิจารณา amiodarone IV · หาตัวกระตุ้น',next:['วางแผน OAC ต่อ','valve']},
+ wpw:{q:'QRS กว้างแปลก ไม่สม่ำเสมอ เร็วมาก (pre-excited)?',o:[['ใช่','pre'],['ไม่ใช่','trigger']]},
+ pre:{leaf:true,cls:'danger',t:'Pre-excited AF (WPW)',b:'<b>ห้าม</b> adenosine, diltiazem, verapamil, beta-blocker, digoxin, amiodarone IV · <b>Electrical cardioversion</b> · ส่ง ablation accessory pathway'},
+ trigger:{q:'มีตัวกระตุ้นชัดเจน (sepsis, ขาดน้ำ, thyrotoxicosis, PE, หลังผ่าตัด)?',o:[['มี','trig'],['ไม่มี','ef']]},
+ trig:{leaf:true,cls:'warn',t:'แก้ตัวกระตุ้นก่อน',b:'สารน้ำ ยาต้านจุลชีพ รักษาไทรอยด์ (propranolol) · HR มักลดเอง · คุม rate อย่างระวังเมื่อความดันก้ำกึ่ง · ประเมิน OAC ระยะยาวในผู้เสี่ยงสูง และนัด 30–60 วัน',next:['เลือกยาคุม rate','ef']},
+ ef:{q:'LVEF หรือมี HF เฉียบพลัน?',o:[['LVEF >40% ไม่มี HF','efok'],['LVEF ≤40% / HF','eflow']]},
+ efok:{leaf:true,cls:'ok',t:'Rate control: LVEF >40%',b:'Metoprolol IV หรือ diltiazem IV แล้วต่อยากิน (beta-blocker, diltiazem/verapamil) ± digoxin · เป้า HR <110',next:['วางแผน OAC','valve']},
+ eflow:{leaf:true,cls:'warn',t:'Rate control: LVEF ≤40%',b:'Beta-blocker อย่างระวัง (ถ้าไม่ decompensated มาก) หรือ digoxin · amiodarone ถ้าใช้ตัวอื่นไม่ได้หรือความดันต่ำ · <b>ห้าม diltiazem/verapamil</b> · พิจารณา rhythm control/ablation (tachycardia-induced CMP)',next:['วางแผน OAC','valve']},
+ valve:{q:'มี rheumatic MS ปานกลาง–รุนแรง หรือลิ้นหัวใจโลหะ?',o:[['มี','warf'],['ไม่มี / echo แล้วไม่พบ','cha']]},
+ warf:{leaf:true,cls:'danger',t:'Warfarin',b:'เริ่ม 2.5–3 mg/วัน · INR 2.0–3.0 · TTR ≥65% · <b>ห้าม DOAC</b>'},
+ cha:{q:'CHA₂DS₂-VA เท่าไร (หรือ HCM/amyloidosis)?',o:[['≥2 หรือ HCM/amyloid','high'],['1','mid'],['0','low']]},
+ high:{leaf:true,cls:'danger',t:'แนะนำ OAC',b:'<b>DOAC</b> ขนาดตามเกณฑ์ (คำนวณในบท 12) · แก้ปัจจัยเลือดออก · ไม่ใช้ aspirin แทน'},
+ mid:{leaf:true,cls:'warn',t:'ควรพิจารณา OAC',b:'ชั่งประโยชน์กับความเสี่ยงเลือดออก ตัดสินใจร่วมกับผู้ป่วย · ประเมินซ้ำเป็นระยะ'},
+ low:{leaf:true,cls:'ok',t:'ไม่ต้องให้ OAC',b:'(คนไทยน้ำหนักน้อยเสี่ยงเพิ่ม แต่ต้องชั่งเลือดออก) · ประเมินซ้ำเมื่ออายุหรือโรคร่วมเปลี่ยน · เน้นคุมปัจจัยเสี่ยง'}
+},'apTrail','apStage');
+
+/* CHA2DS2-VA */
+function cha(){
+  let s=[...document.querySelectorAll('#tCha input[data-s]:checked')].reduce((a,e)=>a+ +e.dataset.s,0)+ +radio('chaAge');
+  const sp=$('chaV').checked;
+  let t;
+  if(sp)t='<b style="color:var(--danger)">ให้ OAC โดยไม่ต้องคิดคะแนน</b> · MS ปานกลาง–รุนแรง/ลิ้นโลหะ → <b>warfarin</b> · HCM/amyloidosis → DOAC';
+  else if(s>=2)t='<b style="color:var(--danger)">เสี่ยงสูง</b> → แนะนำ OAC (DOAC ก่อน) <span class="rec s1">I A</span>';
+  else if(s===1)t='<b style="color:var(--warn)">ปานกลาง</b> → ควรพิจารณา OAC ชั่งกับเลือดออก <span class="rec">IIa C</span>';
+  else t='<b style="color:var(--ok)">เสี่ยงต่ำ</b> → ไม่ต้องให้ OAC · ประเมินซ้ำ';
+  $('chaOut').innerHTML=`<span class="big">${s}</span> / 8 · ${t}`;
+}
+bindAll('#tCha input',cha);
+/* HAS-BLED */
+function has(){const n=document.querySelectorAll('#tHas input:checked').length;
+  $('hasOut').innerHTML=`<span class="big">${n}</span> / 9 · ${n>=3?'<b style="color:var(--danger)">เสี่ยงเลือดออกสูง</b> — ไม่ใช่ข้อห้าม OAC แต่ต้องแก้ปัจจัยที่แก้ได้และติดตามใกล้ชิด':'เสี่ยงไม่สูง'}<br><span class="muted">แก้ได้: BP, สุรา, antiplatelet/NSAIDs, INR แกว่ง, ซีด</span>`;}
+bindAll('#tHas input',has);
+/* DOAC */
+function doac(){
+  const age=num('dAge'),wt=num('dWt'),cr=num('dCr'),f=$('dSex').value==='f',ver=$('dVer').checked,pgp=$('dPgp').checked;
+  if(!age||!wt||!cr){$('doacOut').textContent='ใส่ค่าให้ครบ';return}
+  const crcl=((140-age)*wt)/(72*cr)*(f?0.85:1);
+  const L=[];
+  L.push(`CrCl (Cockcroft–Gault) ≈ <span class="big">${Math.round(crcl)}</span> mL/min`);
+  if(crcl<15){L.push('<b style="color:var(--danger)">CrCl &lt;15</b>: ไม่ใช้ DOAC เป็น routine — ปรึกษาอายุรแพทย์โรคหัวใจ/ไต · พิจารณา warfarin');}
+  else{
+    // dabigatran
+    if(crcl<30)L.push('<b>Dabigatran</b>: <span style="color:var(--danger)">ห้าม</span> (CrCl &lt;30)');
+    else L.push(`<b>Dabigatran</b>: ${age>=80||ver?'<b>110 mg bid</b> ('+[age>=80?'อายุ ≥80':'',ver?'verapamil':''].filter(Boolean).join(', ')+')':'150 mg bid'}`);
+    L.push(`<b>Rivaroxaban</b>: ${crcl<50?'<b>15 mg od</b> (CrCl 15–49)':'20 mg od'} พร้อมอาหาร`);
+    const ac=[age>=80?'อายุ ≥80':'',wt<=60?'น้ำหนัก ≤60':'',cr>=1.5?'SCr ≥1.5':''].filter(Boolean);
+    L.push(`<b>Apixaban</b>: ${ac.length>=2?'<b>2.5 mg bid</b> (เข้า '+ac.join(' + ')+')':'5 mg bid'+(ac.length===1?' (เข้าแค่ 1 ข้อ: '+ac[0]+' — ยังไม่ลดขนาด)':'')}`);
+    const ec=[crcl<=50?'CrCl 15–50':'',wt<=60?'น้ำหนัก ≤60':'',pgp?'P-gp inhibitor':''].filter(Boolean);
+    L.push(`<b>Edoxaban</b>: ${ec.length?'<b>30 mg od</b> ('+ec.join(', ')+')':'60 mg od'}${crcl>95?' <span class="muted">(CrCl สูงมาก — edoxaban อาจได้ผลลดลง)</span>':''}`);
+  }
+  $('doacOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol><span class="muted">ตรวจ Cr ซ้ำเป็นระยะ · เลือกยาตามโรคร่วม ราคา และการเข้าถึงยาใน รพ.</span>';
+}
+bindAll('#tDoac input,#tDoac select',doac);
+/* IV */
+function iv(){
+  const w=num('ivWt'),low=$('ivEf').value==='low',bp=$('ivBp').value==='low',wpw=$('ivWpw').checked;
+  let L=[];
+  if(wpw){$('ivOut').innerHTML='<b style="color:var(--danger)">Pre-excited AF</b>: ห้าม AV nodal blocker ทุกชนิดและ amiodarone IV → <b>electrical cardioversion</b>';return}
+  if(!low&&!bp){
+    L.push('<b>Metoprolol</b> 2.5–5 mg IV ช้าๆ ซ้ำทุก 5 นาที รวมไม่เกิน 15 mg');
+    if(w)L.push(`<b>Diltiazem</b> 0.25 mg/kg = <span class="mono"><b>${Math.round(0.25*w)}</b> mg</span> IV ใน 2 นาที · ซ้ำ 0.35 mg/kg (≈${Math.round(0.35*w)} mg) หลัง 15 นาทีถ้าไม่พอ`);
+    L.push('แล้วต่อยากินตัวเดียวกัน · เป้า HR &lt;110');
+  }else{
+    if(low)L.push('<b>ห้าม diltiazem/verapamil</b> (LVEF ≤40%/HF)');
+    L.push('<b>Digoxin</b> 0.25–0.5 mg IV แล้วเสริม 0.25 mg ได้ (ออกฤทธิ์ช้า) · ระวังไตเสื่อม K ต่ำ');
+    L.push('<b>Amiodarone</b> 300 mg IV ใน 30–60 นาที → 900–1,200 mg ใน 24 ชม. (อาจกลับ sinus — คำนึงเรื่อง OAC/ระยะเวลา AF)');
+    if(low&&!bp)L.push('Beta-blocker ขนาดต่ำได้อย่างระวังถ้าไม่ได้ decompensated มาก');
+    if(bp)L.push('<b>ความดันต่ำ</b>: แก้ตัวกระตุ้น · ถ้าไม่คงที่จาก AF → synchronized cardioversion');
+  }
+  $('ivOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tIv input,#tIv select',iv);
+
+mountQuiz([
+ ['หญิง 68 ปี AF ไม่มีโรคร่วมอื่น CHA₂DS₂-VA เท่าไร และควรทำอะไร',
+  ['2 — ให้ OAC','1 — ควรพิจารณา OAC ชั่งกับเลือดออก','0 — ไม่ต้องให้','3 — ให้ warfarin'],1,'CHA₂DS₂-VA ไม่นับเพศ · อายุ 65–74 = 1 คะแนน → พิจารณา OAC (IIa)'],
+ ['ผู้ป่วย AF มี rheumatic MS รุนแรง ยาป้องกัน stroke ที่ถูกต้อง',
+  ['Apixaban 5 mg bid','Aspirin 81 mg','Warfarin INR 2–3','Rivaroxaban 15 mg'],2,'MS ปานกลาง–รุนแรงหรือลิ้นโลหะ ต้องใช้ warfarin และห้าม DOAC'],
+ ['หญิง 82 ปี 55 kg SCr 1.1 mg/dL ขนาด apixaban ที่ถูกต้อง',
+  ['2.5 mg bid','5 mg bid','2.5 mg od','10 mg bid'],0,'เข้าเกณฑ์ 2 ใน 3 (อายุ ≥80 และน้ำหนัก ≤60) → 2.5 mg bid'],
+ ['ผู้ป่วยคนไทยเริ่ม warfarin ขนาดเริ่มต้นที่แนวทางไทย 2025 แนะนำ',
+  ['10 mg/วัน','5 mg/วัน','2.5–3 mg/วัน','1 mg/วัน'],2,'ในคนไทยเริ่ม 2.5–3 mg/วันถึงเป้าเร็วกว่า ส่วน 5 mg มัก INR เกิน'],
+ ['AF RVR HR 150 LVEF 30% ความดันปกติ ยาใดไม่ควรใช้',
+  ['Digoxin','Diltiazem','Amiodarone','Metoprolol ขนาดต่ำอย่างระวัง'],1,'Non-DHP CCB ห้ามใน LVEF ≤40%'],
+ ['AF QRS กว้าง ไม่สม่ำเสมอ HR 260 ผู้ป่วยวัยรุ่น ความดันปกติ ควรทำอะไร',
+  ['Adenosine','Diltiazem IV','Electrical cardioversion','Digoxin IV'],2,'Pre-excited AF ห้าม AV nodal blocker ทุกชนิด ใช้ cardioversion แล้วส่ง ablation'],
+ ['ข้อใดถูกเกี่ยวกับ rhythm control',
+  ['กลับ sinus แล้วหยุด OAC ได้ทุกราย','ไม่แทน OAC ต้องให้ OAC ต่อตามความเสี่ยง','ห้ามใช้ใน HFrEF','Flecainide ใช้ใน CAD ได้ดี'],1,'Rhythm control ไม่ใช่สิ่งทดแทน OAC · flecainide ห้ามใน structural heart disease'],
+ ['ผู้ป่วย AF ทำ PCI ด้วย ACS ใช้ DOAC อยู่ ตามแนวทางไทย aspirin ควรให้นานเท่าไร',
+  ['12 เดือน','6 เดือน','ไม่เกิน 1 สัปดาห์ (เสี่ยง thrombosis สูงไม่เกิน 1 เดือน)','ตลอดชีวิต'],2,'ให้ aspirin สั้นที่สุด แล้วใช้ OAC + P2Y12 (ควรเป็น clopidogrel)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

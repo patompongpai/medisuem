@@ -1,0 +1,756 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CAP · Community-acquired pneumonia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">ATS/IDSA 2019 · ATS CAP guideline update 2025</div>
+  <h1>Community-acquired pneumonia:<br>ประเมินความรุนแรง เลือกยา หยุดยาให้เป็น</h1>
+  <p class="sub">สรุป CAP ในผู้ใหญ่สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัย การเลือกที่รักษา (OPD · ward · ICU) การส่งตรวจหาเชื้อ ยาต้านจุลชีพตามกลุ่มผู้ป่วย ระยะเวลาให้ยา steroid ในรายรุนแรง และโรคเขตร้อนที่ต้องแยกในบริบทไทย พร้อมเครื่องคำนวณ PSI, CURB-65 และตัวช่วยเลือกยา</p>
+  <p class="cite">อ้างอิงหลัก: Metlay JP, et al. ATS/IDSA CAP guideline. Am J Respir Crit Care Med 2019;200:e45–67 · Jones BE, Ramirez JA, et al. Diagnosis and management of CAP: an official ATS clinical practice guideline. Am J Respir Crit Care Med 2025 · <span class="tag up">2025</span> = คำแนะนำที่ปรับใหม่ในฉบับ 2025 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--ok)"><b>OPD</b>PSI I–II · CURB-65 0–1 · ไม่มีภาวะแทรกซ้อน กินยาได้ มีคนดูแล</div>
+    <div class="stage" style="--c:var(--warn)"><b>Ward</b>PSI III–IV · CURB-65 2 · hypoxemia · โรคร่วมไม่คงที่</div>
+    <div class="stage" style="--c:var(--danger)"><b>ICU / severe CAP</b>Major 1 ข้อ หรือ minor ≥3 ข้อ (IDSA/ATS)</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามและเชื้อ</a><a href="#dx">วินิจฉัย</a><a href="#severity">ความรุนแรงและที่รักษา</a><a href="#micro">ส่งตรวจหาเชื้อ</a><a href="#abx">ยาต้านจุลชีพ</a><a href="#resist">MRSA · Pseudomonas · Aspiration</a><a href="#virus">ไวรัสบวก</a><a href="#duration">ระยะเวลาและเปลี่ยนเป็นยากิน</a><a href="#steroid">Steroid</a><a href="#thai">บริบทไทย</a><a href="#fail">ไม่ดีขึ้นและติดตาม</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องคำนวณ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและเชื้อก่อโรค</h2>
+  <div class="box key"><b>นิยาม</b>การติดเชื้อของเนื้อปอดที่เกิดนอกโรงพยาบาล ในผู้ที่ไม่ได้มีภูมิคุ้มกันบกพร่องรุนแรง · มีอาการทางเดินหายใจส่วนล่าง (ไอ เหนื่อย เจ็บหน้าอก ไข้) <b>ร่วมกับ</b> ภาพ infiltrate ใหม่จาก imaging</div>
+  <p>ATS/IDSA 2019 <b>เลิกใช้คำว่า HCAP</b> — การเคยนอน รพ. หรืออยู่บ้านพักคนชราไม่ได้แปลว่าต้องครอบคลุมเชื้อดื้อยาเสมอ ให้ใช้ปัจจัยเสี่ยงที่เจาะจงกว่า (บท 06)</p>
+  <div class="grid3">
+    <div class="card c-acc"><h4>เชื้อแบคทีเรียทั่วไป</h4><b>S. pneumoniae</b> (พบบ่อยที่สุด), H. influenzae, M. catarrhalis, S. aureus, Enterobacterales (โดยเฉพาะ <b>K. pneumoniae</b> ในผู้ดื่มสุรา/เบาหวาน)</div>
+    <div class="card c-vio"><h4>Atypical</h4>Mycoplasma, Chlamydophila, <b>Legionella</b> — ไม่ตอบสนองต่อ β-lactam ต้องใช้ macrolide, doxycycline หรือ fluoroquinolone</div>
+    <div class="card c-warn"><h4>ไวรัส</h4>Influenza, SARS-CoV-2, RSV, hMPV, adenovirus — พบบ่อยในยุคที่ตรวจได้ และมักมีแบคทีเรียติดเชื้อซ้อน (S. aureus หลัง influenza)</div>
+  </div>
+  <div class="box warn"><b>ในไทยต้องนึกถึงเสมอ</b><b>Burkholderia pseudomallei</b> (melioidosis) · <b>วัณโรค</b> · scrub typhus และ leptospirosis ที่มาด้วยอาการปอด — รายละเอียดบท 10</div>
+</section>
+
+<!-- 2 -->
+<section id="dx" class="col">
+  <div class="sec-num">02</div>
+  <h2>การวินิจฉัย</h2>
+  <ul>
+    <li><b>Imaging จำเป็น</b>: อาการและการตรวจร่างกายอย่างเดียวแยก pneumonia จาก bronchitis ได้ไม่ดี</li>
+    <li><b>Lung ultrasound</b> ใช้แทน CXR ได้ ถ้าผู้ทำมีความชำนาญ <span class="rec">conditional</span> <span class="tag up">2025</span> — มีประโยชน์ใน รพ.ที่ถ่ายภาพยาก ผู้ป่วยติดเตียง หรือหญิงตั้งครรภ์</li>
+    <li>CT chest เมื่อ CXR ไม่ชัด, สงสัยโพรง/ฝี/empyema, ภูมิคุ้มกันต่ำ หรือไม่ดีขึ้น</li>
+    <li><b>Procalcitonin</b>: <b>ไม่ใช้ตัดสินว่าจะเริ่มยาหรือไม่</b> ในผู้ที่มีอาการและภาพเข้าได้กับ CAP (ATS/IDSA 2019) · ใช้ช่วยตัดสินหยุดยาได้</li>
+    <li>Lab พื้นฐานสำหรับผู้ป่วยใน: CBC, BUN/Cr, electrolyte, glucose, LFT, <b>lactate</b> ถ้าสงสัย sepsis, VBG/ABG ถ้าเหนื่อย/ซึม · SpO₂ ทุกราย</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="severity" class="col">
+  <div class="sec-num">03</div>
+  <h2>ประเมินความรุนแรงและเลือกที่รักษา</h2>
+  <p>ATS/IDSA 2019 แนะนำให้ใช้ <b>PSI มากกว่า CURB-65</b> ช่วยตัดสินใจว่ารักษาแบบผู้ป่วยนอกได้หรือไม่ (เพราะ PSI ระบุกลุ่มเสี่ยงต่ำได้ดีกว่า) แต่ต้องใช้ดุลพินิจร่วม เช่น กินยาไม่ได้ ไม่มีคนดูแล hypoxemia หรือโรคร่วมแย่ลง · CURB-65 จำง่ายและใช้คัดกรองได้เร็ว</p>
+  <div class="grid2">
+    <div class="tool"><h3>IDSA/ATS severe CAP</h3>
+      <b>Major (≥1)</b><ul><li>Septic shock ที่ต้องใช้ vasopressor</li><li>Respiratory failure ที่ต้องใส่ท่อช่วยหายใจ</li></ul>
+      <b>Minor (≥3)</b><ul><li>RR ≥30 · P/F ≤250 · multilobar infiltrate</li><li>สับสน · BUN ≥20 mg/dL</li><li>WBC &lt;4,000 · platelet &lt;100,000 · อุณหภูมิ &lt;36°C</li><li>ความดันต่ำที่ต้องให้สารน้ำมาก</li></ul>
+      <span class="muted" style="font-size:.88rem">มี major หรือ minor ≥3 → ICU หรือ high-dependency unit และให้การรักษาแบบ severe CAP</span></div>
+    <div class="tool"><h3>CURB-65</h3>
+      <ul><li><b>C</b>onfusion</li><li><b>U</b>rea &gt;7 mmol/L (BUN &gt;19 mg/dL)</li><li><b>R</b>R ≥30</li><li><b>B</b>P: SBP &lt;90 หรือ DBP ≤60</li><li>อายุ ≥<b>65</b></li></ul>
+      <span class="muted" style="font-size:.88rem">0–1 พิจารณา OPD · 2 admit/สังเกตอาการ · 3–5 รุนแรง พิจารณา ICU (CRB-65 ใช้ได้เมื่อไม่มี BUN)</span></div>
+  </div>
+  <p>คำนวณได้ในบท 13</p>
+</section>
+
+<!-- 4 -->
+<section id="micro" class="col">
+  <div class="sec-num">04</div>
+  <h2>ส่งตรวจหาเชื้อ — ใครบ้าง</h2>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>ATS/IDSA 2019 แนะนำเมื่อ</th></tr>
+    <tr><td><b>Blood culture</b> และ <b>sputum Gram stain/culture</b> (ก่อนให้ยา)</td><td>Severe CAP · กำลังเริ่มยาครอบคลุม MRSA/Pseudomonas · เคยเพาะเชื้อพบ MRSA/PA · นอน รพ. + ได้ยาต้านจุลชีพ IV ใน 90 วัน · <span class="tag add">เสริม</span> บริบทไทย: สงสัย melioidosis ให้เพาะเชื้อเลือด/เสมหะ/ปัสสาวะและแจ้งห้องปฏิบัติการ</td></tr>
+    <tr><td>Urinary antigen: pneumococcus, Legionella</td><td>Severe CAP · Legionella เมื่อมีการระบาด/เดินทาง</td></tr>
+    <tr><td>Influenza (และ SARS-CoV-2) test</td><td>ช่วงที่มีการระบาดในชุมชน — ผลบวกในผู้ป่วยในให้ oseltamivir ไม่ว่าเป็นมากี่วัน</td></tr>
+    <tr><td>MRSA nasal PCR</td><td>ค่า NPV สูง ผลลบช่วยหยุด vancomycin/linezolid ได้</td></tr>
+    <tr><td>AFB sputum / GeneXpert</td><td><span class="tag add">เสริม</span> ไอนาน ไข้ต่ำๆ น้ำหนักลด ภาพ upper lobe/โพรง HIV — ในไทยควรตรวจง่าย ระวัง fluoroquinolone บดบัง TB</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ผู้ป่วยนอกที่ไม่รุนแรงไม่ต้องเพาะเชื้อเป็น routine</p>
+</section>
+
+<!-- 5 -->
+<section id="abx">
+  <div class="col">
+    <div class="sec-num">05</div>
+    <h2>ยาต้านจุลชีพเริ่มต้น (empirical)</h2>
+    <p>ขนาดยาสำหรับไตปกติ · ให้ยาโดสแรกเร็ว (ใน ER) โดยเฉพาะ sepsis · ปรับตามผลเพาะเชื้อ</p>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ทางเลือก (ATS/IDSA 2019)</th></tr>
+    <tr><td><b>OPD ไม่มีโรคร่วม</b></td><td><b>Amoxicillin 1 g วันละ 3 ครั้ง</b> · หรือ doxycycline 100 mg วันละ 2 ครั้ง · หรือ macrolide (azithromycin 500 mg วันแรก แล้ว 250 mg/วัน; clarithromycin 500 mg วันละ 2 ครั้ง) <b>เฉพาะพื้นที่ที่ pneumococcus ดื้อ macrolide &lt;25%</b></td></tr>
+    <tr><td><b>OPD มีโรคร่วม</b><br><span class="muted" style="font-size:.85rem">หัวใจ ปอด ตับ ไตเรื้อรัง เบาหวาน สุรา มะเร็ง ม้ามไม่ทำงาน</span></td><td><b>Amoxicillin-clavulanate</b> (500/125 mg ×3, 875/125 mg ×2 หรือ 2,000/125 mg ×2) หรือ cefpodoxime 200 mg ×2 / cefuroxime 500 mg ×2 <b>+ macrolide หรือ doxycycline</b> · หรือ respiratory FQ เดี่ยว (levofloxacin 750 mg/วัน, moxifloxacin 400 mg/วัน)</td></tr>
+    <tr><td><b>Ward (non-severe)</b></td><td><b>β-lactam + macrolide</b>: ceftriaxone 1–2 g/วัน, cefotaxime 1–2 g q8h หรือ ampicillin-sulbactam 1.5–3 g q6h + azithromycin 500 mg/วัน (หรือ clarithromycin) · หรือ <b>respiratory FQ เดี่ยว</b> · แพ้ทั้งสองแบบ: β-lactam + doxycycline</td></tr>
+    <tr><td><b>Severe CAP</b></td><td><b>β-lactam + macrolide</b> หรือ <b>β-lactam + respiratory FQ</b> (ไม่ใช้ FQ เดี่ยว) · เพิ่ม anti-MRSA/anti-Pseudomonas ตามปัจจัยเสี่ยง (บท 06)</td></tr>
+  </table></div>
+  <div class="col">
+    <div class="box note"><b>บริบทไทย</b> <span class="tag add">เสริม</span>อัตรา pneumococcus ดื้อ macrolide ในเอเชีย (รวมไทย) สูงกว่า 25% จึงไม่ควรใช้ macrolide เดี่ยวใน OPD · fluoroquinolone ใช้ด้วยความระวังเพราะอาจรักษา TB บางส่วนจนวินิจฉัยช้าและเกิดดื้อยา · Doxycycline ครอบคลุม atypical และ scrub typhus/leptospirosis ได้ด้วย</div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="resist" class="col">
+  <div class="sec-num">06</div>
+  <h2>MRSA · Pseudomonas · Aspiration</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>เมื่อไรต้องครอบคลุม MRSA / P. aeruginosa</h4>
+      <ul><li><b>เคยเพาะเชื้อจากทางเดินหายใจพบเชื้อนั้น</b> → ครอบคลุมทั้ง non-severe และ severe</li><li><b>นอน รพ. + ได้ยาต้านจุลชีพ IV ใน 90 วัน</b> (และปัจจัยเสี่ยงของพื้นที่) → severe: ครอบคลุมไปก่อนแล้วเพาะเชื้อ · non-severe: เพาะเชื้อก่อน ให้ยาเมื่อผลบวก</li></ul>
+      <span class="muted" style="font-size:.88rem">MRSA: vancomycin (ปรับตาม AUC/ระดับยา) หรือ linezolid 600 mg q12h · Pseudomonas: piperacillin-tazobactam 4.5 g q6h, cefepime 2 g q8h, ceftazidime 2 g q8h, meropenem 1 g q8h · หยุดใน 48 ชม. ถ้าเพาะเชื้อไม่พบและผู้ป่วยดีขึ้น</span></div>
+    <div class="card c-warn"><h4>Aspiration pneumonia</h4>ATS/IDSA 2019 <b>ไม่แนะนำให้เพิ่มยาครอบคลุม anaerobe เป็น routine</b> — ยกเว้นสงสัย lung abscess หรือ empyema · ปอดอักเสบจากการสำลักส่วนใหญ่เกิดจากเชื้อ CAP ทั่วไป · aspiration pneumonitis (สารเคมี) ไม่ต้องให้ยาต้านจุลชีพถ้าไม่มีหลักฐานติดเชื้อ <span class="tag add">เสริม</span></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="virus" class="col">
+  <div class="sec-num">07</div>
+  <h2>ตรวจพบไวรัส — ยังต้องให้ยาต้านแบคทีเรียไหม</h2>
+  <span class="tag up">2025</span>
+  <div class="tbl"><table>
+    <tr><th>ผู้ป่วยที่ตรวจไวรัสทางเดินหายใจได้ผลบวก</th><th>ATS 2025</th></tr>
+    <tr><td>OPD <b>ไม่มีโรคร่วม</b></td><td><b>ไม่ให้</b> ยาต้านแบคทีเรีย <span class="rec">conditional</span></td></tr>
+    <tr><td>OPD มีโรคร่วม</td><td>ให้ เพราะกังวลการติดเชื้อร่วม <span class="rec">conditional</span></td></tr>
+    <tr><td>Ward non-severe</td><td>ให้ <span class="rec">conditional</span></td></tr>
+    <tr><td>Severe</td><td>ให้ <span class="rec">conditional</span></td></tr>
+  </table></div>
+  <p>ปัจจัยที่ทำให้หยุดยาเร็วได้: ไวรัสอธิบายภาพทั้งหมด ภาพ imaging เข้ากับไวรัส inflammatory marker ต่ำ (procalcitonin) อาการไม่รุนแรง · <b>Influenza</b>: ให้ oseltamivir ในผู้ป่วยใน ไม่ว่าเป็นมากี่วัน และเฝ้าระวัง S. aureus ติดเชื้อซ้อน</p>
+</section>
+
+<!-- 8 -->
+<section id="duration" class="col">
+  <div class="sec-num">08</div>
+  <h2>ระยะเวลาให้ยาและการเปลี่ยนเป็นยากิน</h2>
+  <div class="box key"><b>หลักใหม่ <span class="tag up">2025</span></b>เมื่อ <b>clinically stable</b>: OPD และ ward non-severe ให้ <b>น้อยกว่า 5 วัน (อย่างน้อย 3 วัน)</b> <span class="rec">conditional</span> · Severe CAP ให้ <b>≥5 วัน</b> <span class="rec s1">strong</span></div>
+  <h3>เกณฑ์ clinical stability</h3>
+  <div class="tbl"><table>
+    <tr><td>อุณหภูมิ</td><td class="mono">≤37.8°C</td></tr>
+    <tr><td>ชีพจร</td><td class="mono">&lt;100 /min</td></tr>
+    <tr><td>หายใจ</td><td class="mono">&lt;24 /min</td></tr>
+    <tr><td>Oxygenation</td><td class="mono">SpO₂ ≥90% หรือ PaO₂ ≥60 room air (หรือเท่าระดับเดิมของผู้ป่วย)</td></tr>
+    <tr><td>SBP</td><td class="mono">≥90 mmHg</td></tr>
+    <tr><td>ความรู้สึกตัว</td><td>ปกติ · กินได้</td></tr>
+  </table></div>
+  <ul>
+    <li>เปลี่ยน IV → ยากินเมื่อ stable และกินได้ ไม่ต้องรอไข้ลงครบหลายวัน</li>
+    <li>ระยะยาวขึ้นใน: MRSA/Pseudomonas (มัก 7 วัน), Legionella, melioidosis (ระยะ intensive ≥10–14 วันแล้วต่อ eradication) <span class="tag add">เสริม</span>, empyema/abscess, bacteremia จาก S. aureus</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="steroid" class="col">
+  <div class="sec-num">09</div>
+  <h2>Corticosteroid</h2>
+  <span class="tag up">2025</span>
+  <div class="grid2">
+    <div class="card c-ok"><h4>Severe CAP — ให้</h4><span class="rec">conditional</span> · ยกเว้นเกิดจาก <b>influenza</b> · ไม่ได้กำหนดชนิด/ขนาด แต่การศึกษาที่ได้ผลดีที่สุด (CAPE COD) ใช้ <b>hydrocortisone 200 mg/วัน</b> IV ต่อเนื่อง แล้วลดขนาดรวม 8 หรือ 14 วันตามการตอบสนอง · ให้เร็วภายใน 24 ชม.แรก</div>
+    <div class="card c-red"><h4>Non-severe — ไม่ให้</h4><span class="rec no">strong ไม่แนะนำ</span> · ไม่ลดอัตราตาย เพิ่ม hyperglycemia และการติดเชื้อซ้ำ</div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ระวัง: TB ที่ยังไม่ได้รักษา, fungal infection, hyperglycemia, GI bleed · ข้อมูลของการศึกษาไม่สอดคล้องกันทั้งหมด (ESCAPe ไม่พบประโยชน์) จึงเป็นคำแนะนำแบบมีเงื่อนไข · ดูหน้า <a href="../sepsis/index.html">Sepsis</a> สำหรับ septic shock</p>
+</section>
+
+<!-- 10 -->
+<section id="thai" class="col">
+  <div class="sec-num">10</div>
+  <h2>บริบทไทย: โรคที่ต้องแยกและปรับยา</h2>
+  <span class="tag add">เสริม</span>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">Bp</span><span class="t">Melioidosis (B. pseudomallei)</span></summary><div class="body">เสี่ยงสูง: <b>เบาหวาน</b>, ทำนา/สัมผัสดินน้ำ, ไตเรื้อรัง, ดื่มสุรา, thalassemia — พบมากในภาคอีสานและฤดูฝน · มาด้วย pneumonia รุนแรง/sepsis, ฝีหลายที่ (ตับ ม้าม ต่อมลูกหมาก) · <b>ไม่ตอบสนองต่อ ceftriaxone</b> → severe CAP ในผู้เสี่ยงในพื้นที่ระบาดให้ <b>ceftazidime 2 g q8h หรือ meropenem 1 g q8h</b> ตามแนวทางของพื้นที่ และส่งเพาะเชื้อ · ระยะยาว: eradication ด้วย co-trimoxazole 12–20 สัปดาห์</div></details>
+    <details class="step"><summary><span class="n">TB</span><span class="t">วัณโรคปอด</span></summary><div class="body">ไอ &gt;2 สัปดาห์ ไข้ต่ำๆ เหงื่อออกกลางคืน น้ำหนักลด ภาพ upper lobe/โพรง HIV เบาหวาน · ส่ง AFB/GeneXpert · ระวัง FQ · ดูหน้า <a href="../tb/index.html">TB</a></div></details>
+    <details class="step"><summary><span class="n">ST</span><span class="t">Scrub typhus · leptospirosis</span></summary><div class="body">ไข้สูง ปวดเมื่อย มี eschar (scrub typhus) หรือปวดน่อง ตาแดง (lepto) ร่วมกับปอดอักเสบ/ARDS หรือ pulmonary hemorrhage · <b>doxycycline</b> ครอบคลุมทั้งสอง (lepto รุนแรงใช้ penicillin G/ceftriaxone ได้)</div></details>
+    <details class="step"><summary><span class="n">Flu</span><span class="t">Influenza</span></summary><div class="body">ระบาดหน้าฝนและหน้าหนาว · ผู้ป่วยในหรือกลุ่มเสี่ยงให้ <b>oseltamivir 75 mg วันละ 2 ครั้ง 5 วัน</b> (ปรับตามไต) โดยไม่ต้องรอผล · ห้าม steroid ใน influenza pneumonia</div></details>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="fail" class="col">
+  <div class="sec-num">11</div>
+  <h2>ไม่ดีขึ้น · ภาวะแทรกซ้อน · การติดตาม</h2>
+  <ul>
+    <li><b>ไม่ดีขึ้นใน 48–72 ชม.</b>: ทบทวนเชื้อที่ไม่ครอบคลุม (melioidosis, TB, เชื้อดื้อยา, Legionella), ภาวะแทรกซ้อน (parapneumonic effusion/empyema, ฝีในปอด, metastatic infection), การวินิจฉัยผิด (HF, PE, organizing pneumonia, มะเร็ง, vasculitis), ยาไม่ถึงขนาด</li>
+    <li><b>Pleural effusion</b> ปริมาณมากหรือไม่ดีขึ้น → เจาะตรวจ: pH &lt;7.2, glucose ต่ำ, หนอง หรือ Gram stain บวก → ใส่สายระบาย</li>
+    <li><b>CXR ติดตาม</b>: ไม่ต้องทำเป็น routine ถ้าอาการหาย · พิจารณาที่ 6–8 สัปดาห์ในผู้เสี่ยงมะเร็งปอด (สูบบุหรี่ อายุมาก)</li>
+    <li>หลังหาย: วัคซีน <b>pneumococcal</b> และ <b>influenza</b> · เลิกบุหรี่ · ทบทวนการกลืนในผู้สำลักซ้ำ</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผังการดูแล CAP</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>อาการทางเดินหายใจส่วนล่าง + infiltrate ใหม่ (CXR / lung US)</b></div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ความรุนแรง</b>Severe CAP criteria · PSI / CURB-65 · SpO₂ · ดุลพินิจ</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">OPD</span><div class="node dx green"><b>ไม่มีโรคร่วม</b>Amoxicillin หรือ doxycycline</div><div class="vline"></div><div class="node dx green"><b>มีโรคร่วม</b>Amox-clav/cephalosporin + macrolide/doxy หรือ resp FQ</div></div>
+        <div class="arm"><span class="lab">Ward</span><div class="node dx hypo"><b>β-lactam + macrolide</b>หรือ resp FQ · ไม่เพาะเชื้อเป็น routine (ยกเว้นเสี่ยง MRSA/PA)</div></div>
+        <div class="arm"><span class="lab">ICU / severe</span><div class="node red"><b>β-lactam + macrolide หรือ FQ</b>Blood/sputum culture · urinary Ag · ± MRSA/PA · steroid (ไม่ใช่ flu)</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node q"><b>บริบทไทย: เบาหวาน/ชาวนา/อีสาน + รุนแรง?</b>คิดถึง melioidosis → ceftazidime/meropenem · ไอเรื้อรัง → TB</div>
+      <div class="vline arrow"></div>
+      <div class="node dx grey"><b>Clinical stability → หยุดยา</b>Non-severe ≥3 วัน (&lt;5 วัน) · Severe ≥5 วัน · ไม่ดีขึ้น 72 ชม. → หาสาเหตุ</div>
+    </div>
+    <div class="legend"><span style="--c:var(--ok)">OPD</span><span style="--c:var(--warn)">Ward</span><span style="--c:var(--danger)">Severe</span></div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องคำนวณข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ร่วมกับดุลพินิจและแนวทาง/ข้อมูลเชื้อดื้อยาของ รพ.</p>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool" id="tCurb">
+      <h3>CURB-65</h3>
+      <div class="checks">
+        <label><input type="checkbox" data-c="1"> Confusion ใหม่</label>
+        <label><input type="checkbox" data-c="1"> BUN &gt;19 mg/dL (urea &gt;7 mmol/L)</label>
+        <label><input type="checkbox" data-c="1"> RR ≥30 /min</label>
+        <label><input type="checkbox" data-c="1"> SBP &lt;90 หรือ DBP ≤60</label>
+        <label><input type="checkbox" data-c="1"> อายุ ≥65 ปี</label>
+      </div>
+      <div class="out" id="curbOut"></div>
+    </div>
+    <div class="tool" id="tSev">
+      <h3>Severe CAP (IDSA/ATS)</h3>
+      <div class="muted" style="font-size:.82rem">Major</div>
+      <div class="checks">
+        <label><input type="checkbox" data-m="1"> Septic shock ต้องใช้ vasopressor</label>
+        <label><input type="checkbox" data-m="1"> ต้องใส่ท่อช่วยหายใจ</label>
+      </div>
+      <div class="muted" style="font-size:.82rem">Minor</div>
+      <div class="checks">
+        <label><input type="checkbox" data-n="1"> RR ≥30</label>
+        <label><input type="checkbox" data-n="1"> P/F ≤250</label>
+        <label><input type="checkbox" data-n="1"> Multilobar infiltrate</label>
+        <label><input type="checkbox" data-n="1"> Confusion</label>
+        <label><input type="checkbox" data-n="1"> BUN ≥20 mg/dL</label>
+        <label><input type="checkbox" data-n="1"> WBC &lt;4,000</label>
+        <label><input type="checkbox" data-n="1"> Platelet &lt;100,000</label>
+        <label><input type="checkbox" data-n="1"> อุณหภูมิ &lt;36°C</label>
+        <label><input type="checkbox" data-n="1"> ความดันต่ำต้องให้สารน้ำมาก</label>
+      </div>
+      <div class="out" id="sevOut"></div>
+    </div>
+  </div>
+  <div class="tool" id="tPsi" style="margin-top:12px">
+    <h3>Pneumonia Severity Index (PSI)</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="fields" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="f">อายุ (ปี)<input type="number" id="psiAge" value="72"></label>
+          <label class="f">เพศ<select id="psiSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+        </div>
+        <div class="muted" style="font-size:.82rem">ประวัติและโรคร่วม</div>
+        <div class="checks">
+          <label><input type="checkbox" data-p="10"> อยู่สถานดูแลผู้สูงอายุ</label>
+          <label><input type="checkbox" data-p="30" data-co="1"> มะเร็ง (active)</label>
+          <label><input type="checkbox" data-p="20" data-co="1"> โรคตับ</label>
+          <label><input type="checkbox" data-p="10" checked data-co="1"> หัวใจล้มเหลว</label>
+          <label><input type="checkbox" data-p="10" data-co="1"> โรคหลอดเลือดสมอง</label>
+          <label><input type="checkbox" data-p="10" data-co="1"> โรคไต</label>
+        </div>
+        <div class="muted" style="font-size:.82rem">ตรวจร่างกาย</div>
+        <div class="checks">
+          <label><input type="checkbox" data-p="20" data-ex="1"> ความรู้สึกตัวเปลี่ยน</label>
+          <label><input type="checkbox" data-p="20" data-ex="1"> RR ≥30</label>
+          <label><input type="checkbox" data-p="20" data-ex="1"> SBP &lt;90</label>
+          <label><input type="checkbox" data-p="15" data-ex="1"> อุณหภูมิ &lt;35 หรือ ≥40°C</label>
+          <label><input type="checkbox" data-p="10" data-ex="1"> ชีพจร ≥125</label>
+        </div>
+      </div>
+      <div>
+        <div class="muted" style="font-size:.82rem">Lab และ imaging</div>
+        <div class="checks">
+          <label><input type="checkbox" data-p="30"> Arterial pH &lt;7.35</label>
+          <label><input type="checkbox" data-p="20" checked> BUN ≥30 mg/dL</label>
+          <label><input type="checkbox" data-p="20"> Na &lt;130</label>
+          <label><input type="checkbox" data-p="10"> Glucose ≥250 mg/dL</label>
+          <label><input type="checkbox" data-p="10"> Hct &lt;30%</label>
+          <label><input type="checkbox" data-p="10"> PaO₂ &lt;60 หรือ SpO₂ &lt;90%</label>
+          <label><input type="checkbox" data-p="10"> Pleural effusion</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="psiOut"></div>
+  </div>
+  <div class="tool plan" id="tAbx" style="margin-top:12px">
+    <h3>ตัวช่วยเลือกยาเริ่มต้น</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">ที่รักษา</div>
+        <div class="radios">
+          <label><input type="radio" name="site" value="opd">OPD</label>
+          <label><input type="radio" name="site" value="ward" checked>Ward (non-severe)</label>
+          <label><input type="radio" name="site" value="sev">Severe / ICU</label>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" id="aCom"> มีโรคร่วม (สำหรับ OPD)</label>
+          <label><input type="checkbox" id="aPen"> แพ้ β-lactam รุนแรง</label>
+          <label><input type="checkbox" id="aFlu"> ตรวจพบ influenza</label>
+        </div>
+      </div>
+      <div>
+        <div class="checks">
+          <label><input type="checkbox" id="aMrsa"> เคยเพาะเชื้อพบ MRSA จากทางเดินหายใจ</label>
+          <label><input type="checkbox" id="aPa"> เคยเพาะเชื้อพบ Pseudomonas</label>
+          <label><input type="checkbox" id="aHosp"> นอน รพ. + ได้ยา IV ใน 90 วัน</label>
+          <label><input type="checkbox" id="aMel"> เสี่ยง melioidosis (DM/ชาวนา/อีสาน/หน้าฝน)</label>
+          <label><input type="checkbox" id="aTb"> สงสัย TB</label>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="abxOut"></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ไม่มี imaging ไม่ใช่ pneumonia</b> ไข้ ไอ crepitation อย่างเดียวแยกจาก bronchitis/HF ไม่ได้ — ถ้าไม่มี CXR ลอง lung ultrasound</div></div>
+    <div class="pearl"><div><b>ดุลพินิจชนะคะแนน</b> PSI/CURB-65 ต่ำแต่ SpO₂ &lt;92%, กินยาไม่ได้ หรืออยู่คนเดียว ควร admit</div></div>
+    <div class="pearl"><div><b>Severe CAP ในผู้ป่วยเบาหวานจากอีสาน = melioidosis จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</b> ceftriaxone ไม่ครอบคลุม</div></div>
+    <div class="pearl"><div><b>Macrolide เดี่ยวไม่เหมาะในไทย</b> pneumococcus ดื้อสูง ใช้ amoxicillin หรือ doxycycline ใน OPD ที่ไม่มีโรคร่วม</div></div>
+    <div class="pearl"><div><b>ระวัง FQ ในคนที่อาจเป็น TB</b> ทำให้ดีขึ้นชั่วคราว วินิจฉัยช้า และดื้อยา — ส่ง AFB/GeneXpert ก่อนเมื่อสงสัย</div></div>
+    <div class="pearl"><div><b>ไม่ต้องครอบคลุม anaerobe เพียงเพราะคิดว่าสำลัก</b> ยกเว้นมี abscess หรือ empyema</div></div>
+    <div class="pearl"><div><b>เปลี่ยนยากินเมื่อ stable</b> และหยุดได้ที่ 3–5 วันในรายไม่รุนแรง ไม่ต้องให้ครบ 7–10 วันตามความเคยชิน</div></div>
+    <div class="pearl"><div><b>Steroid เฉพาะ severe CAP ที่ไม่ใช่ influenza</b> hydrocortisone 200 mg/วันตามแบบ CAPE COD · ไม่ให้ใน non-severe</div></div>
+    <div class="pearl"><div><b>ผล influenza บวกในผู้ป่วยใน ให้ oseltamivir เสมอ</b> แม้เป็นมาเกิน 48 ชม.</div></div>
+    <div class="pearl"><div><b>ไม่ดีขึ้น 72 ชม. ให้ถาม 4 ข้อ</b> เชื้อไม่ครอบคลุม · มีภาวะแทรกซ้อน (empyema) · วินิจฉัยผิด · ยาไม่ถึง</div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../sepsis/index.html">Sepsis →</a> · <a href="../tb/index.html">TB →</a> · <a href="../abg/index.html">ABG →</a> · <a href="../inhaler/index.html">ยาพ่น Asthma–COPD →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Metlay JP, Waterer GW, Long AC, et al. Diagnosis and treatment of adults with community-acquired pneumonia. An official clinical practice guideline of the ATS and IDSA. Am J Respir Crit Care Med 2019;200:e45–e67. · 2) Jones BE, Ramirez JA, Oren E, et al. Diagnosis and management of community-acquired pneumonia. An official ATS clinical practice guideline. Am J Respir Crit Care Med 2025 (doi:10.1164/rccm.202507-1692ST). · 3) Dequin PF, et al. Hydrocortisone in severe CAP (CAPE COD). N Engl J Med 2023;388:1931–41. · 4) Fine MJ, et al. A prediction rule to identify low-risk patients with CAP (PSI). N Engl J Med 1997;336:243–50 · Lim WS, et al. CURB-65. Thorax 2003;58:377–82.<br>
+  <span class="tag up">2025</span> = คำแนะนำใหม่ในฉบับ ATS 2025 · <span class="tag add">เสริม</span> = เนื้อหาบริบทไทยหรือมาตรฐานที่เพิ่ม ไม่ได้มาจาก ATS/IDSA โดยตรง · ขนาดยาสำหรับไตปกติ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','capView');
+mountWalker({
+ start:{q:'มี infiltrate ใหม่จาก CXR หรือ lung ultrasound หรือไม่?',o:[['มี','sev'],['ไม่มี','noimg']]},
+ noimg:{leaf:true,t:'ยังไม่ใช่ pneumonia',b:'คิดถึง acute bronchitis (ส่วนใหญ่ไม่ต้องให้ยาต้านจุลชีพ), influenza, HF, COPD/asthma กำเริบ · ถ้ายังสงสัยมาก: lung US, CT หรือถ่ายภาพซ้ำ 24–48 ชม.'},
+ sev:{q:'มีเกณฑ์ severe CAP (major 1 หรือ minor ≥3) หรือไม่?',o:[['มี','severe'],['ไม่มี','psi']]},
+ psi:{q:'PSI / CURB-65 และดุลพินิจ',h:'SpO₂, กินยาได้ไหม, โรคร่วมคงที่ไหม, มีคนดูแลไหม',o:[['รักษาแบบผู้ป่วยนอกได้','opd'],['ต้อง admit','ward']]},
+ opd:{q:'มีโรคร่วมหรือไม่?',h:'หัวใจ ปอด ตับ ไตเรื้อรัง เบาหวาน สุรา มะเร็ง asplenia',o:[['ไม่มี','opd0'],['มี','opd1']]},
+ opd0:{leaf:true,cls:'ok',t:'OPD ไม่มีโรคร่วม',b:'<b>Amoxicillin 1 g วันละ 3 ครั้ง</b> หรือ <b>doxycycline 100 mg วันละ 2 ครั้ง</b> · ไม่ใช้ macrolide เดี่ยวในไทย · ให้ 3–5 วันเมื่อ stable · นัดดูอาการ 48–72 ชม.'},
+ opd1:{leaf:true,cls:'ok',t:'OPD มีโรคร่วม',b:'<b>Amoxicillin-clavulanate</b> (หรือ cefpodoxime/cefuroxime) <b>+ azithromycin หรือ doxycycline</b> · หรือ levofloxacin 750 mg / moxifloxacin 400 mg เดี่ยว (ระวัง TB) · 3–5 วันเมื่อ stable'},
+ ward:{q:'มีปัจจัยเสี่ยง MRSA/Pseudomonas หรือ melioidosis?',o:[['ไม่มี','ward0'],['เคยเพาะเชื้อพบ MRSA/PA','wardR'],['นอน รพ. + IV antibiotic ใน 90 วัน','wardH'],['เสี่ยง melioidosis','mel']]},
+ ward0:{leaf:true,cls:'warn',t:'Ward non-severe',b:'<b>Ceftriaxone 1–2 g/วัน + azithromycin 500 mg/วัน</b> หรือ respiratory FQ เดี่ยว · ไม่เพาะเชื้อเป็น routine · ไม่ให้ steroid · IV → oral เมื่อ stable · รวม 3–5 วัน'},
+ wardR:{leaf:true,cls:'danger',t:'ครอบคลุมเชื้อที่เคยพบ',b:'เพาะเชื้อเลือด/เสมหะ แล้วให้ยาครอบคลุม MRSA (vancomycin/linezolid) หรือ Pseudomonas (pip-tazo, cefepime, ceftazidime, meropenem) · หยุดใน 48 ชม. ถ้าเพาะไม่พบและดีขึ้น'},
+ wardH:{leaf:true,cls:'warn',t:'Non-severe + เคยนอน รพ./ได้ยา IV',b:'เพาะเชื้อก่อน ให้ยามาตรฐาน (β-lactam + macrolide) และเพิ่มยาครอบคลุมเมื่อผลเพาะเชื้อเป็นบวก'},
+ mel:{leaf:true,cls:'danger',t:'สงสัย melioidosis',b:'เพาะเชื้อเลือด เสมหะ ปัสสาวะ (แจ้ง lab) · รายรุนแรง/ปัจจัยเสี่ยงชัด: <b>ceftazidime 2 g q8h หรือ meropenem 1 g q8h</b> ตามแนวทางพื้นที่ + macrolide/doxycycline ครอบคลุม atypical · ultrasound ท้องหาฝี'},
+ severe:{q:'มีปัจจัยเสี่ยง MRSA/Pseudomonas?',o:[['ไม่มี','sev0'],['มี (เคยพบเชื้อ หรือ นอน รพ.+IV ใน 90 วัน)','sevR']]},
+ sev0:{leaf:true,cls:'danger',t:'Severe CAP',b:'<b>β-lactam + macrolide</b> หรือ <b>β-lactam + respiratory FQ</b> · blood/sputum culture, urinary Ag, influenza/COVID test · <b>hydrocortisone</b> ถ้าไม่ใช่ influenza · ในพื้นที่ระบาด melioidosis ใช้ ceftazidime/meropenem · ≥5 วัน'},
+ sevR:{leaf:true,cls:'danger',t:'Severe CAP + เสี่ยงเชื้อดื้อยา',b:'ยา severe CAP + <b>vancomycin หรือ linezolid</b> และ/หรือ <b>anti-pseudomonal β-lactam</b> · เพาะเชื้อก่อนให้ · MRSA nasal PCR ลบ → หยุด anti-MRSA · de-escalate ใน 48–72 ชม.'}
+},'apTrail','apStage');
+
+/* CURB */
+function curb(){const n=document.querySelectorAll('#tCurb input:checked').length;
+  const t=n<=1?'<b style="color:var(--ok)">เสี่ยงต่ำ</b> (ตาย 30 วัน ~1–3%) → พิจารณา OPD':n===2?'<b style="color:var(--warn)">ปานกลาง</b> (~9%) → admit หรือสังเกตอาการ':'<b style="color:var(--danger)">สูง</b> (~15–40%) → admit พิจารณา ICU';
+  $('curbOut').innerHTML=`<span class="big">${n}</span> / 5 · ${t}`;}
+bindAll('#tCurb input',curb);
+/* severe */
+function sev(){const M=document.querySelectorAll('#tSev input[data-m]:checked').length,m=document.querySelectorAll('#tSev input[data-n]:checked').length;
+  $('sevOut').innerHTML=(M||m>=3)?`<b style="color:var(--danger)">Severe CAP</b> (major ${M} · minor ${m}) → ICU/HDU · β-lactam + macrolide/FQ · culture · พิจารณา steroid`:`ยังไม่เข้าเกณฑ์ severe (major ${M} · minor ${m}/9)`;}
+bindAll('#tSev input',sev);
+/* PSI */
+function psi(){
+  const age=num('psiAge')||0,f=$('psiSex').value==='f';
+  const boxes=[...document.querySelectorAll('#tPsi input[type=checkbox]')];
+  const anyCo=boxes.some(b=>b.dataset.co&&b.checked),anyEx=boxes.some(b=>b.dataset.ex&&b.checked);
+  if(age<=50&&!anyCo&&!anyEx){$('psiOut').innerHTML='<b>Class I</b> (อายุ ≤50 ไม่มีโรคร่วมและการตรวจร่างกายปกติ) · ตาย ~0.1% → OPD';return}
+  let s=age-(f?10:0);boxes.forEach(b=>{if(b.checked)s+=+b.dataset.p});
+  let c,r,pl;
+  if(s<=70){c='II';r='~0.6%';pl='OPD'}else if(s<=90){c='III';r='~0.9–2.8%';pl='OPD หรือ admit สั้นๆ ตามดุลพินิจ'}else if(s<=130){c='IV';r='~8–9%';pl='Admit'}else{c='V';r='~27–31%';pl='Admit พิจารณา ICU'}
+  $('psiOut').innerHTML=`<span class="big">${s}</span> คะแนน · <b>Class ${c}</b> · ตาย 30 วัน ${r} → ${pl}`;}
+bindAll('#tPsi input,#tPsi select',psi);
+/* ABX */
+function abx(){
+  const site=radio('site'),com=$('aCom').checked,pen=$('aPen').checked,flu=$('aFlu').checked,mr=$('aMrsa').checked,pa=$('aPa').checked,hosp=$('aHosp').checked,mel=$('aMel').checked,tb=$('aTb').checked;
+  const L=[];
+  if(site==='opd'){
+    if(!com)L.push(pen?'<b>Doxycycline 100 mg วันละ 2 ครั้ง</b>':'<b>Amoxicillin 1 g วันละ 3 ครั้ง</b> หรือ <b>doxycycline 100 mg วันละ 2 ครั้ง</b> (ไม่ใช้ macrolide เดี่ยว: pneumococcus ดื้อสูงในไทย)');
+    else L.push(pen?'<b>Levofloxacin 750 mg/วัน</b> หรือ moxifloxacin 400 mg/วัน':'<b>Amoxicillin-clavulanate</b> 875/125 mg วันละ 2 ครั้ง (หรือ cefpodoxime 200 mg ×2) <b>+ azithromycin</b> 500 mg วันแรก แล้ว 250 mg/วัน (หรือ doxycycline) · ทางเลือก: levofloxacin/moxifloxacin เดี่ยว');
+    if(flu&&!com)L.push('ผลไวรัสบวก + ไม่มีโรคร่วม: ATS 2025 แนะนำ<b>ไม่ให้</b>ยาต้านแบคทีเรีย');
+  }
+  if(site==='ward'){
+    if(mel)L.push('<b>Ceftazidime 2 g IV q8h</b> (หรือ meropenem 1 g q8h ถ้ารุนแรง) + azithromycin/doxycycline · เพาะเชื้อ B. pseudomallei');
+    else L.push(pen?'<b>Levofloxacin 750 mg/วัน</b> หรือ moxifloxacin 400 mg/วัน':'<b>Ceftriaxone 1–2 g IV/วัน + azithromycin 500 mg/วัน</b> (หรือ ampicillin-sulbactam 1.5–3 g q6h) · ทางเลือก: respiratory FQ เดี่ยว');
+    if(mr||pa)L.push(`<b>เคยพบ${mr?' MRSA':''}${mr&&pa?' และ':''}${pa?' Pseudomonas':''}</b> → เพาะเชื้อและครอบคลุมทันที${mr?' · vancomycin หรือ linezolid 600 mg q12h':''}${pa?' · pip-tazo 4.5 g q6h / cefepime 2 g q8h / meropenem 1 g q8h':''}`);
+    else if(hosp)L.push('นอน รพ. + IV ใน 90 วัน (non-severe): <b>เพาะเชื้อก่อน</b> ให้ยามาตรฐาน และเพิ่มยาเมื่อผลเพาะเชื้อเป็นบวก');
+    L.push('ไม่ให้ steroid ใน non-severe');
+  }
+  if(site==='sev'){
+    if(mel)L.push('<b>Meropenem 1 g IV q8h</b> (หรือ ceftazidime 2 g q8h) + azithromycin · เพาะเชื้อ B. pseudomallei');
+    else L.push(pen?'<b>Aztreonam 2 g q8h + respiratory FQ</b> (ปรึกษา ID)':'<b>Ceftriaxone 2 g/วัน + azithromycin 500 mg/วัน</b> หรือ ceftriaxone + levofloxacin 750 mg/วัน');
+    if(mr||hosp)L.push('<b>เพิ่ม anti-MRSA</b>: vancomycin (ตาม AUC) หรือ linezolid 600 mg q12h · MRSA nasal PCR ลบ → หยุด');
+    if(pa||hosp)L.push('<b>เปลี่ยน β-lactam เป็น anti-pseudomonal</b>: pip-tazo 4.5 g q6h, cefepime 2 g q8h, ceftazidime 2 g q8h หรือ meropenem 1 g q8h');
+    L.push('Blood/sputum culture ก่อนให้ยา · urinary antigen · '+(flu?'<b>ไม่ให้ steroid</b> (influenza)':'<b>Hydrocortisone 200 mg/วัน</b> (แบบ CAPE COD) ถ้าไม่มีข้อห้าม'));
+  }
+  if(flu)L.push('<b>Oseltamivir 75 mg วันละ 2 ครั้ง × 5 วัน</b> (ปรับตามไต) · เฝ้าระวัง S. aureus');
+  if(tb)L.push('<b>สงสัย TB</b>: ส่ง AFB/GeneXpert ก่อน หลีกเลี่ยง fluoroquinolone ถ้าไม่จำเป็น · แยกห้อง');
+  L.push(`<b>ระยะเวลา:</b> ${site==='sev'?'≥5 วัน':'3–5 วัน (อย่างน้อย 3)'} เมื่อ clinically stable${mel?' · melioidosis: ระยะ intensive ≥10–14 วัน แล้วต่อ eradication':''}`);
+  $('abxOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tAbx input',abx);
+
+mountQuiz([
+ ['ชาย 35 ปี ไม่มีโรคประจำตัว ไข้ ไอ CXR พบ RLL infiltrate SpO₂ 97% CURB-65 = 0 ยาที่เหมาะสมในไทย',
+  ['Azithromycin เดี่ยว','Amoxicillin 1 g วันละ 3 ครั้ง','Ceftriaxone IV','Meropenem'],1,'OPD ไม่มีโรคร่วม: amoxicillin หรือ doxycycline · macrolide เดี่ยวไม่เหมาะเพราะ pneumococcus ดื้อ macrolide สูงในไทย'],
+ ['ข้อใดเป็น major criteria ของ severe CAP',
+  ['RR ≥30','Multilobar infiltrate','Septic shock ที่ต้องใช้ vasopressor','BUN ≥20'],2,'Major: septic shock ที่ต้องใช้ vasopressor หรือ respiratory failure ที่ต้องใส่ท่อ · ข้ออื่นเป็น minor'],
+ ['ผู้ป่วย ward non-severe CAP อาการ stable ตั้งแต่วันที่ 3 ตาม ATS 2025 ระยะเวลาให้ยา',
+  ['ครบ 14 วัน','อย่างน้อย 3 วัน และน้อยกว่า 5 วันได้','ต้องครบ 7 วันเสมอ','จนกว่า CXR ปกติ'],1,'ATS 2025: OPD และ ward non-severe ที่ stable ให้ <5 วัน (อย่างน้อย 3 วัน) · severe ≥5 วัน'],
+ ['ชายเบาหวาน ทำนาในอุบลฯ severe CAP + septic shock ยาเริ่มต้นที่สำคัญที่สุดที่ต้องไม่พลาด',
+  ['Ceftriaxone + azithromycin','Amoxicillin-clavulanate','Ceftazidime หรือ meropenem','Levofloxacin เดี่ยว'],2,'ต้องครอบคลุม B. pseudomallei ซึ่งไม่ตอบสนองต่อ ceftriaxone'],
+ ['Severe CAP จาก influenza A ข้อใดถูก',
+  ['ให้ hydrocortisone 200 mg/วัน','ไม่ให้ steroid และให้ oseltamivir + ยาต้านแบคทีเรีย','ไม่ต้องให้ยาต้านแบคทีเรียเพราะเป็นไวรัส','ให้ oseltamivir เฉพาะถ้าเป็นมา <48 ชม.'],1,'Steroid ยกเว้นใน influenza · severe ที่ไวรัสบวกยังแนะนำให้ยาต้านแบคทีเรีย · ผู้ป่วยในให้ oseltamivir ไม่ว่าเป็นมากี่วัน'],
+ ['ผู้สูงอายุสำลักอาหาร มีไข้ ปอดอักเสบ RLL ไม่มีโพรงหรือ empyema ข้อใดถูก',
+  ['ต้องเพิ่ม metronidazole ทุกราย','ใช้ยาแบบ CAP ทั่วไป ไม่ต้องเพิ่ม anaerobe coverage เป็น routine','ต้องใช้ meropenem','ไม่ต้องให้ยา'],1,'ATS/IDSA 2019 ไม่แนะนำ anaerobic coverage เป็น routine ยกเว้น abscess/empyema'],
+ ['ข้อใดไม่ถูกต้องเกี่ยวกับ procalcitonin ใน CAP',
+  ['ใช้ช่วยตัดสินหยุดยาได้','ใช้ตัดสินว่าจะไม่เริ่มยาในผู้ที่ภาพและอาการเข้ากับ CAP','ค่าต่ำสนับสนุนไวรัส','เป็นส่วนหนึ่งของการตัดสินร่วมกับคลินิก'],1,'ATS/IDSA 2019 ไม่แนะนำใช้ procalcitonin เพื่อไม่เริ่มยาในผู้ที่เข้าได้กับ CAP']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
