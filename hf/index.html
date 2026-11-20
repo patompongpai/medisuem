@@ -1,0 +1,1702 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Heart Failure 2026 · HFCT + AHA/ACC + ESC 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#F6F4EC;
+    --surface:#FFFFFF;
+    --surface-2:#EEEADC;
+    --ink:#182420;
+    --muted:#5B6B64;
+    --line:#DED6C1;
+    --accent:#1D6A84;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#DCEEF4;
+    --danger:#A93A2E;
+    --danger-soft:#F5E0DA;
+    --warn:#93692A;
+    --warn-soft:#F1E5CC;
+    --shadow: 0 1px 2px rgba(22,33,31,.07), 0 10px 28px rgba(22,33,31,.08);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B1613;
+      --surface:#11211C;
+      --surface-2:#16261F;
+      --ink:#E7F1EC;
+      --muted:#93A8A1;
+      --line:#25382F;
+      --accent:#7CC8E2;
+      --accent-ink:#05232D;
+      --accent-soft:#123543;
+      --danger:#FF9080;
+      --danger-soft:#3A1B16;
+      --warn:#F0BE63;
+      --warn-soft:#3A2C12;
+      --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1613;
+    --surface:#11211C;
+    --surface-2:#16261F;
+    --ink:#E7F1EC;
+    --muted:#93A8A1;
+    --line:#25382F;
+    --accent:#7CC8E2;
+    --accent-ink:#05232D;
+    --accent-soft:#123543;
+    --danger:#FF9080;
+    --danger-soft:#3A1B16;
+    --warn:#F0BE63;
+    --warn-soft:#3A2C12;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sarabun',"Noto Sans Thai","IBM Plex Sans Thai",sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{text-wrap:balance; font-family:'Sarabun',sans-serif; margin:0; font-weight:800;}
+  .num{font-family:'Fraunces',serif; font-variant-numeric:tabular-nums;}
+  .mono{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  ::selection{background:var(--accent-soft);}
+  :focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:30;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 22px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:18px;
+    flex:none;
+  }
+  .topbar .brand{display:flex; flex-direction:column; line-height:1.2;}
+  .topbar .brand b{font-size:16.5px; letter-spacing:.02em;}
+  .topbar .brand span{font-size:12px; color:var(--muted);}
+  .topbar .progress-pill{
+    margin-left:auto; display:flex; align-items:center; gap:9px;
+    padding:7px 14px; border-radius:999px; background:var(--surface-2);
+    border:1px solid var(--line); font-size:12.5px; color:var(--muted);
+    white-space:nowrap;
+  }
+  .progress-pill b{color:var(--ink); font-family:'IBM Plex Mono',monospace;}
+  .progress-pill .bar{width:64px; height:6px; border-radius:99px; background:var(--line); overflow:hidden;}
+  .progress-pill .bar i{display:block; height:100%; background:var(--accent); width:0%; transition:width .4s ease;}
+
+  /* ---------- shell ---------- */
+  .shell{display:grid; grid-template-columns:250px 1fr; max-width:1180px; margin:0 auto; align-items:start;}
+  .sidenav{
+    position:sticky; top:65px;
+    height:calc(100vh - 65px); overflow-y:auto;
+    padding:18px 10px 40px;
+    border-right:1px solid var(--line);
+  }
+  .sidenav .grp-label{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); padding:14px 12px 6px;}
+  .navitem{
+    display:flex; align-items:center; gap:10px;
+    width:100%; text-align:left; padding:9px 12px; border-radius:10px;
+    background:transparent; border:none; color:var(--ink); font-size:14.5px;
+    margin-bottom:2px;
+  }
+  .navitem:hover{background:var(--surface-2);}
+  .navitem.active{background:var(--accent-soft); color:var(--accent); font-weight:700;}
+  .navitem .n{font-family:'IBM Plex Mono',monospace; font-size:11.5px; width:20px; flex:none; color:var(--muted);}
+  .navitem.active .n{color:var(--accent);}
+  .navitem .check{margin-left:auto; width:16px; height:16px; border-radius:50%; border:1.5px solid var(--line); flex:none;}
+  .navitem .check.done{background:var(--accent); border-color:var(--accent); position:relative;}
+  .navitem .check.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg);}
+
+  .main{padding:28px 30px 90px; min-width:0;}
+  .panel{max-width:760px;}
+
+  /* ---------- home ---------- */
+  .hero-tag{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:999px; font-weight:700; letter-spacing:.03em;}
+  .hero h1{font-size:34px; margin-top:16px; line-height:1.25;}
+  .hero p.lead{color:var(--muted); font-size:16.5px; max-width:620px; margin-top:12px;}
+  .cta-row{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
+  .btn{
+    padding:12px 20px; border-radius:11px; border:1px solid var(--line);
+    background:var(--surface); color:var(--ink); font-size:14.5px; font-weight:700;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
+  .btn:hover{filter:brightness(0.97);}
+
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; margin-top:14px;}
+  .stat-tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 15px; box-shadow:var(--shadow);
+  }
+  .stat-tile .v{font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--accent); line-height:1.1;}
+  .stat-tile .l{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.4;}
+
+  .section-h{display:flex; align-items:baseline; gap:10px; margin:38px 0 14px;}
+  .section-h h2{font-size:19px;}
+  .section-h .line{flex:1; height:1px; background:var(--line);}
+
+  .ch-progress-list{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .ch-progress-row{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:10px 14px;}
+  .ch-progress-row .t{flex:1; font-size:14px; font-weight:600;}
+  .ch-progress-row .bar{width:110px; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden;}
+  .ch-progress-row .bar i{display:block; height:100%; background:var(--accent);}
+  .ch-progress-row .score{font-size:12px; color:var(--muted); font-family:'IBM Plex Mono',monospace; width:54px; text-align:right;}
+
+  /* ---------- chapter header ---------- */
+  .ch-head{display:flex; gap:16px; align-items:flex-start;}
+  .ch-head .bignum{font-family:'Fraunces',serif; font-size:44px; font-weight:600; color:var(--accent); line-height:1;}
+  .ch-head h1{font-size:25px; margin-top:2px;}
+  .ch-head .sub{font-size:13.5px; color:var(--muted); margin-top:4px;}
+
+  .chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+  .chip{background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:12.5px;}
+  .chip b{display:block; font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--accent);}
+
+  .bullets{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .bullets li{display:flex; gap:10px; font-size:15px;}
+  .bullets li::before{content:"•"; color:var(--accent); font-weight:800; flex:none;}
+
+  .rec-row{
+    display:flex; gap:12px; align-items:flex-start; padding:13px 14px; border:1px solid var(--line);
+    border-radius:12px; background:var(--surface); margin-bottom:9px;
+  }
+  .rec-row .badges{display:flex; flex-direction:column; gap:6px; flex:none; width:100px;}
+  .badge{font-size:10.5px; font-weight:700; letter-spacing:.03em; padding:4px 8px; border-radius:7px; text-align:center; white-space:nowrap;}
+  .badge.strong{background:var(--danger-soft); color:var(--danger);}
+  .badge.conditional{background:var(--warn-soft); color:var(--warn);}
+  .evid{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); text-align:center;}
+  .rec-row .txt{font-size:14.5px;}
+  .rec-row .txt code{background:var(--surface-2); padding:1px 5px; border-radius:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px;}
+
+  .legend{display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin:10px 0 16px;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:10px;height:10px;border-radius:3px; display:inline-block;}
+  .legend i.strong{background:var(--danger);}
+  .legend i.conditional{background:var(--warn);}
+
+  /* ---------- flashcards ---------- */
+  .fc-wrap{margin-top:10px;}
+  .fc-counter{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:8px;}
+  .flashcard{
+    perspective:1400px; height:200px; margin-bottom:14px;
+  }
+  .flashcard .inner{
+    position:relative; width:100%; height:100%; transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d; cursor:pointer;
+  }
+  .flashcard.flip .inner{transform:rotateY(180deg);}
+  .flashcard .face{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:16px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:26px; box-shadow:var(--shadow); border:1px solid var(--line);
+  }
+  .flashcard .front{background:var(--surface); font-size:17px; font-weight:700;}
+  .flashcard .back{background:var(--accent-soft); color:var(--ink); transform:rotateY(180deg); font-size:15px;}
+  .flashcard .hint{position:absolute; bottom:10px; left:0; right:0; text-align:center; font-size:11px; color:var(--muted); font-weight:400;}
+  .fc-controls{display:flex; gap:8px;}
+  .icon-btn{
+    padding:9px 15px; border-radius:9px; border:1px solid var(--line); background:var(--surface);
+    font-size:13.5px; font-weight:600; color:var(--ink);
+  }
+  .icon-btn:hover{background:var(--surface-2);}
+
+  /* ---------- quiz ---------- */
+  .quiz-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);}
+  .quiz-progress{display:flex; gap:5px; margin-bottom:16px;}
+  .quiz-progress i{flex:1; height:5px; border-radius:99px; background:var(--surface-2);}
+  .quiz-progress i.done{background:var(--accent);}
+  .quiz-q{font-size:16px; font-weight:700; margin-bottom:14px;}
+  .choice{
+    display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+    padding:12px 14px; border-radius:11px; border:1.5px solid var(--line); background:var(--surface);
+    margin-bottom:9px; font-size:14.5px; color:var(--ink);
+  }
+  .choice:hover{border-color:var(--accent);}
+  .choice .k{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); flex:none; margin-top:1px;}
+  .choice.correct{background:var(--accent-soft); border-color:var(--accent);}
+  .choice.wrong{background:var(--danger-soft); border-color:var(--danger);}
+  .choice[disabled]{cursor:default;}
+  .explain{margin-top:12px; padding:12px 14px; border-radius:11px; background:var(--surface-2); font-size:13.5px; color:var(--muted); display:none;}
+  .explain.show{display:block;}
+  .quiz-foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px;}
+  .quiz-score{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted);}
+  .quiz-done{text-align:center; padding:30px 10px;}
+  .quiz-done .v{font-family:'Fraunces',serif; font-size:48px; color:var(--accent); font-weight:600;}
+
+  .footnote{margin-top:60px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
+
+  @media (max-width:820px){
+    .shell{display:block;}
+    .sidenav{
+      position:sticky; top:65px; height:auto; width:100%;
+      display:flex; overflow-x:auto; gap:4px; padding:10px 12px; border-right:none; border-bottom:1px solid var(--line);
+      background:var(--surface);
+    }
+    .sidenav .grp-label{display:none;}
+    .navitem{flex:none; white-space:nowrap;}
+    .navitem .check{display:none;}
+    .main{padding:22px 16px 70px;}
+    .topbar .brand span{display:none;}
+  }
+
+  .badge.harm{background:var(--ink); color:var(--surface);}
+  .legend i.harm{background:var(--ink);}
+  .bullets li a{color:var(--accent);}
+  .muted-s{font-size:12.5px;color:var(--muted);margin:6px 0 12px;}
+  :root{--ecg-grid:#F1C9C3;--ecg-ink:#1E1A19}
+  :root[data-theme="dark"]{--ecg-grid:#3B2624;--ecg-ink:#F3E9E6}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ecg-grid:#3B2624;--ecg-ink:#F3E9E6}}
+  .ecg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
+  .ecg-fig{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;}
+  .ecg-fig svg{width:100%;height:auto;display:block;border-radius:6px;}
+  .ecg-fig figcaption{font-size:13px;margin-top:6px;color:var(--muted);} .ecg-fig figcaption b{color:var(--ink);}
+  .cmp-wrap{overflow-x:auto;} table.cmp{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;}
+  table.cmp th{background:var(--surface-2);font-size:12.5px;} table.cmp td:first-child{font-weight:700;}
+  .tool-nav{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 4px;} .tool-nav a{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--surface-2);}
+  .tool{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:18px;background:var(--surface);scroll-margin-top:80px;}
+  .tool h2{font-size:18px;margin:0 0 10px;} .tool h3{font-size:14px;margin:14px 0 6px;color:var(--muted);}
+  .q-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap;font-size:14px;}
+  .seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  .seg button{font:inherit;font-size:13px;border:0;background:var(--surface);color:var(--ink);padding:6px 10px;cursor:pointer;border-right:1px solid var(--line);}
+  .seg button:last-child{border-right:0;} .seg button.on{background:var(--accent);color:var(--accent-ink);font-weight:700;}
+  .ck{display:flex;flex-direction:column;gap:6px;font-size:14px;} .ck label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;} .ck input{margin-top:4px;accent-color:var(--accent);}
+  .inp-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}
+  .inp-row label{display:flex;flex-direction:column;font-size:12.5px;color:var(--muted);gap:4px;}
+  .inp-row input,.inp-row select{font:inherit;font-size:15px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);}
+  .result{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--accent-soft);font-size:14.5px;}
+  .result .big{font-family:'Fraunces',serif;font-size:26px;color:var(--accent);}
+  .dl{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);} .dl:last-child{border:0} .dl b{flex:0 0 200px;font-size:13.5px;} .dl span{font-size:14px;}
+  @media (max-width:560px){.dl{flex-direction:column;gap:2px}.dl b{flex:none}}
+  .warnline{margin-top:8px;color:var(--danger);font-weight:700;font-size:13.5px;}
+  .tag-y,.tag-n,.tag-w{display:inline-block;font-weight:800;padding:2px 10px;border-radius:999px;margin-right:6px;font-size:13px;}
+  .tag-y{background:#2E7D4F;color:#fff}.tag-n{background:var(--danger);color:#fff}.tag-w{background:var(--warn);color:#fff}
+  .flow{display:flex;flex-direction:column;gap:6px;font-size:13.5px;}
+  .fsplit{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .fsplit.tight{gap:6px;margin-top:6px;}
+  .fcol{display:flex;flex-direction:column;gap:6px;}
+  .fbox{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface-2);}
+  .fbox.red{border-color:var(--danger);background:var(--danger-soft);} .fbox.warn{border-color:var(--warn);background:var(--warn-soft);} .fbox.ok{border-color:#2E7D4F;background:rgba(46,125,79,.12);}
+  .farrow{text-align:center;color:var(--muted);line-height:1;}
+  @media (max-width:640px){.fsplit{grid-template-columns:1fr;}}
+  .chapbar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+  .cb-item{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;padding:6px 11px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;}
+  .cb-item i{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;min-width:22px;height:22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface-2);color:var(--accent);}
+  .cb-item.done i{background:#2E7D4F;color:#fff;}
+  .cb-item.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700;}
+  .cb-item.on i{background:rgba(255,255,255,.25);color:inherit;}
+  .pn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
+  .pn{font:inherit;font-size:14.5px;font-weight:700;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);cursor:pointer;}
+  .pn.next{text-align:right;} .pn small{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-bottom:2px;}
+  @media (max-width:820px){ .sidenav{display:none !important;} .cb-item{font-size:12.5px;} }
+
+  .panel.wide{max-width:980px;}
+  .lead-s{color:var(--muted);font-size:15px;margin:14px 0 6px;}
+  .callout{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;background:var(--surface);}
+  .callout .bullets{margin-top:8px;}
+  .bullets li a,.lead-s a{color:var(--accent);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:14px;}
+  @media (max-width:640px){.two-col{grid-template-columns:1fr;}}
+  .olist{margin:6px 0 0 0;padding-left:22px;font-size:14.5px;display:flex;flex-direction:column;gap:6px;}
+  /* LVEF scale */
+  .lv-ax{flex:1;position:relative;height:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+  .lv-ax span{position:absolute;top:0;transform:translateX(-50%);} .lv-ax span:first-child{transform:none;} .lv-ax span:last-child{transform:none;}
+  .lv-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .lv-lab{flex:0 0 160px;font-size:12.5px;font-weight:700;line-height:1.3;}
+  .lv-bar{flex:1;display:flex;height:32px;border-radius:9px;overflow:hidden;border:1px solid var(--line);}
+  .lv-bar i{font-style:normal;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;}
+  .lv-bar i.r{background:var(--danger-soft);color:var(--danger);} .lv-bar i.m{background:var(--warn-soft);color:var(--warn);font-size:10.5px;}
+  .lv-bar i.p{background:var(--accent-soft);color:var(--accent);} .lv-bar i.g{background:repeating-linear-gradient(45deg,var(--danger-soft),var(--danger-soft) 6px,var(--accent-soft) 6px,var(--accent-soft) 12px);color:var(--ink);font-size:10.5px;font-weight:600;}
+  @media (max-width:560px){.lv-row{flex-direction:column;align-items:stretch;gap:4px}.lv-lab{flex:none}.lv-axis .lv-lab{display:none}}
+  /* profile grid */
+  .prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .pcell{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface-2);font-size:13.5px;}
+  .pcell b{display:block;font-size:16px;} .pcell span{display:block;font-size:11.5px;color:var(--muted);margin-bottom:4px;}
+  .pcell.ok{border-color:#2E7D4F;background:rgba(46,125,79,.10);} .pcell.warn{border-color:var(--warn);background:var(--warn-soft);} .pcell.red{border-color:var(--danger);background:var(--danger-soft);}
+  /* ladder */
+  .ladder{display:flex;flex-direction:column;gap:6px;font-size:14px;}
+  .ladder div{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);}
+  .ladder i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;}
+  .ladder b{margin-right:6px;}
+  /* cases */
+  .case{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;background:var(--surface);box-shadow:var(--shadow);}
+  .case-h{display:flex;gap:10px;align-items:center;flex-wrap:wrap;} .case-h h3{font-size:16.5px;}
+  .tagset{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.03em;}
+  .tagset.acute{background:var(--danger-soft);color:var(--danger);} .tagset.opd{background:var(--accent-soft);color:var(--accent);}
+  .case-stem{margin-top:10px;padding:11px 13px;border-radius:10px;background:var(--surface-2);font-size:14.5px;}
+  .cstep{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);}
+  .cq{font-weight:700;font-size:15px;margin-bottom:8px;}
+  .copts{display:flex;flex-direction:column;gap:6px;}
+  .copts button{font:inherit;font-size:14px;text-align:left;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;}
+  .copts button:hover{border-color:var(--accent);}
+  .cstep.done .copts button{cursor:default;} .copts button.right{background:var(--accent-soft);border-color:var(--accent);} .copts button.wrong{background:var(--danger-soft);border-color:var(--danger);}
+  .cexp{font-size:13.5px;color:var(--muted);margin-top:8px;} .cexp:empty{display:none;}
+  .ctake{margin-top:14px;padding:11px 13px;border-radius:10px;background:var(--accent-soft);font-size:14px;}
+  /* walker */
+  .walker{min-height:120px;}
+  .wpath{font-size:12.5px;color:var(--muted);margin-bottom:8px;} .wpath span{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 8px;margin:0 4px 4px 0;}
+  .wpath span::after{content:" →";color:var(--muted);}
+  .wq{font-weight:700;font-size:16px;margin:4px 0 10px;}
+  .wopts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+  .wres{border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:14.5px;border:1px solid var(--line);}
+  .wres b{display:block;font-size:17px;margin-bottom:4px;}
+  .wres.ok{background:rgba(46,125,79,.10);border-color:#2E7D4F;} .wres.warn{background:var(--warn-soft);border-color:var(--warn);} .wres.red{background:var(--danger-soft);border-color:var(--danger);}
+  .wgo{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  /* gdmt assistant */
+  .gres{background:var(--surface-2);}
+  .gsec{margin-bottom:12px;} .gsec:last-child{margin-bottom:0;}
+  .gsec h4{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 6px;}
+  .galert{padding:8px 11px;border-radius:9px;font-size:14px;margin-bottom:6px;border-left:4px solid var(--line);background:var(--surface);}
+  .galert.red{border-left-color:var(--danger);background:var(--danger-soft);} .galert.warn{border-left-color:var(--warn);background:var(--warn-soft);} .galert.info{border-left-color:var(--accent);}
+  .gnext{margin:0;padding-left:22px;font-size:15px;display:flex;flex-direction:column;gap:6px;} .gnext b{color:var(--accent);}
+  .glist{margin:0;padding-left:20px;font-size:14px;display:flex;flex-direction:column;gap:4px;}
+  .inp-row select:disabled,.inp-row input:disabled{opacity:.5;}
+  .ck.static label{cursor:pointer;}
+  .panel.wide table.cmp{min-width:760px;}
+</style>
+
+<div class="topbar">
+  <div class="mark">HF</div>
+  <div class="brand"><b>Heart Failure 2026</b><span>HFCT 2019–2023 · AHA/ACC/HFSA 2022 · ACC ECDP 2024 · ESC 2026</span></div>
+  <div class="progress-pill">ความคืบหน้า <div class="bar"><i id="topProgressBar"></i></div> <b id="topProgressText">0%</b></div>
+</div>
+
+<div class="shell">
+  <nav class="sidenav" id="sidenav"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+/* ============================= DATA ============================= */
+const SECTIONS = [
+{ id:"home", nav:"หน้าแรก", isHome:true },
+
+/* ---------------- 1 ---------------- */
+{
+  id:"def", n:"1", title:"นิยาม การจำแนก และระยะของโรค", sub:"LVEF phenotype · Stage A–D · NYHA · ไทย/AHA เทียบ ESC 2026", nav:"นิยาม",
+  chips:[
+    {v:"≤40%", l:"HFrEF ตาม HFCT 2022 และ AHA 2022"},
+    {v:"<50%", l:"HFrEF ตาม ESC 2026 (ไม่มี HFmrEF แล้ว)"},
+    {v:"+≥10 จุด", l:"LVEF จาก ≤40% ขึ้นเป็น >40% = HFimpEF"},
+    {v:"A → D", l:"stage เดินหน้าอย่างเดียว · NYHA ขึ้นลงได้"}
+  ],
+  bullets:[
+    "<b>Heart failure เป็นกลุ่มอาการ (clinical syndrome)</b> ไม่ใช่โรคเดียว: มีอาการหรืออาการแสดงจากความผิดปกติของโครงสร้างหรือการทำงานของหัวใจ ร่วมกับหลักฐานสนับสนุน เช่น natriuretic peptide สูง หรือพบ congestion ที่ปอดหรือทั่วร่างกาย",
+    "<b>Universal Definition ฉบับที่ 2 (2026)</b> เน้นว่าการวินิจฉัยมาจากการรวบรวมหลายข้อมูล ไม่ใช่การตรวจใดการตรวจหนึ่ง และเมื่อวินิจฉัยแล้วให้คงการวินิจฉัย HF ไว้ตลอด แม้อาการหรือ LVEF จะดีขึ้น",
+    "<b>การแบ่งตาม LVEF แบบเดิม</b> (HFCT 2022, AHA 2022, Universal Definition 2021): <b>HFrEF</b> ≤40% · <b>HFmrEF</b> 41–49% · <b>HFpEF</b> ≥50% · <b>HFimpEF</b> = เคยมี LVEF ≤40% แล้วเพิ่มขึ้น ≥10 จุดจนเกิน 40%",
+    "<b>ESC 2026 เหลือ 2 กลุ่ม</b>: <b>HFrEF = LVEF &lt;50%</b> และ <b>HFpEF = LVEF ≥50%</b> โดยยุบ HFmrEF เข้า HFrEF เพราะตอบสนองต่อยาคล้ายกัน · Universal Definition 2026 ใช้ HFrEF / HFpEF / HFimpEF โดยไม่กำหนดจุดตัด LVEF ตายตัว",
+    "<b>ใช้อย่างไรในเวชปฏิบัติไทย</b>: ยังเขียนตาม HFCT ได้ แต่ถ้า LVEF 41–49% ให้คิดถึงการรักษาแบบ HFrEF มากขึ้น โดยเฉพาะเมื่อ LVEF อยู่ปลายล่าง (ดูหน้า <a href=\"#\" onclick=\"goTo('cmp');return false\">ไทย vs สากล</a>)",
+    "<b>Stage A (at risk)</b>: HT, DM, อ้วน, CAD, CKD, ได้ยาที่เป็นพิษต่อหัวใจ, ประวัติครอบครัวเป็น cardiomyopathy — ยังไม่มีความผิดปกติของหัวใจ",
+    "<b>Stage B (pre-HF)</b>: ไม่เคยมีอาการ แต่มีโครงสร้างผิดปกติ (LVH, LV โต, LVEF ลด, wall motion ผิดปกติ, ลิ้นหัวใจรุนแรง) หรือ filling pressure สูง หรือ NP/troponin สูงโดยไม่มีสาเหตุอื่น",
+    "<b>Stage C</b>: มีหรือเคยมีอาการ HF · <b>Stage D (advanced)</b>: อาการรบกวนชีวิตประจำวันและนอนโรงพยาบาลซ้ำแม้ได้ GDMT เต็มที่",
+    "<b>NYHA</b>: I ไม่จำกัดกิจกรรม · II เหนื่อยเมื่อทำกิจกรรมปกติ · III เหนื่อยเมื่อทำกิจกรรมน้อยกว่าปกติ · IV มีอาการขณะพัก — ใช้ใน stage C–D และเปลี่ยนได้ตามการรักษา",
+    "<b>ศัพท์ใหม่</b>: ESC 2026 และ Universal Definition 2026 ใช้ <b>decompensated HF</b> แทน acute HF เพราะผู้ป่วยหลายรายทรุดลงทีละน้อย และใช้ <b>worsening HF</b> สำหรับผู้ที่เป็น HF อยู่แล้วแล้วอาการแย่ลง"
+  ],
+  extraKey:"lvef",
+  recs:[
+    {t:"Stage B ที่ LVEF ≤40%: ให้ ACEI (หรือ ARB ถ้าทนไม่ได้) เพื่อลดการนอน รพ.และการเสียชีวิต", c:"แนะนำ", s:"strong", e:"ESC 2026"},
+    {t:"Stage B ที่ LVEF &lt;50%: ให้ beta-blocker", c:"แนะนำ", s:"strong", e:"ESC 2026"},
+    {t:"Stage A–B: แนะนำพฤติกรรมสุขภาพ (น้ำหนัก อาหาร ลดการนั่งนาน งดบุหรี่ จำกัดสุรา งดสารเสพติด เช่น amphetamine)", c:"แนะนำ", s:"strong", e:"ESC 2026"}
+  ],
+  cards:[
+    {f:"HFimpEF ตาม Universal Definition 2021 คืออะไร?", b:"เคยมี LVEF ≤40% แล้ววัดซ้ำได้ LVEF >40% โดยเพิ่มขึ้นอย่างน้อย 10 จุดจากค่าเดิม — ยังต้องให้ยา HFrEF ต่อ"},
+    {f:"ESC 2026 แบ่ง HF ตาม LVEF อย่างไร?", b:"2 กลุ่ม: HFrEF = LVEF <50% และ HFpEF = LVEF ≥50% (ยกเลิก HFmrEF)"},
+    {f:"Stage B (pre-HF) ต่างจาก stage A อย่างไร?", b:"Stage B มีความผิดปกติของหัวใจแล้ว (โครงสร้าง/การทำงาน/filling pressure หรือ NP สูง) แต่ยังไม่เคยมีอาการ · Stage A มีแค่ปัจจัยเสี่ยง"},
+    {f:"NYHA class III คือ?", b:"อาการเหนื่อยเมื่อทำกิจกรรมน้อยกว่าปกติ (เช่น เดินในบ้าน) แต่ขณะพักไม่มีอาการ"},
+    {f:"ผู้ป่วย stage C ที่อาการหายดีแล้ว กลับเป็น stage B ได้ไหม?", b:"ไม่ได้ stage เดินไปข้างหน้าอย่างเดียว ส่วน NYHA ขึ้นลงได้"}
+  ],
+  quiz:[
+    {q:"ชายอายุ 58 ปี เคย LVEF 30% หลังได้ยาครบ 1 ปี LVEF 47% ไม่มีอาการ ควรเรียกภาวะนี้ว่าอะไรตามนิยามที่ HFCT 2022 และ AHA 2022 ใช้?", c:["HFmrEF","HFimpEF","Stage B","หายจาก HF แล้ว"], a:1, e:"เดิม ≤40% เพิ่มขึ้น ≥10 จุดจนเกิน 40% = HFimpEF ต้องให้ GDMT ต่อ ไม่ใช่ HFmrEF ใหม่"},
+    {q:"หญิงอายุ 66 ปี เหนื่อย บวม LVEF 45% ไม่เคยมีค่าต่ำกว่านี้ ตาม ESC 2026 จัดเป็นกลุ่มใด?", c:["HFmrEF","HFpEF","HFrEF","HFimpEF"], a:2, e:"ESC 2026 ใช้ LVEF <50% = HFrEF (ยกเลิก HFmrEF) · ถ้าใช้ HFCT 2022 จะเรียก HFmrEF"},
+    {q:"ผู้ป่วยเบาหวาน ความดันสูง echo พบ LVH และ LA โต ไม่เคยมีอาการเหนื่อยหรือบวม อยู่ใน stage ใด?", c:["A","B","C","D"], a:1, e:"มีความผิดปกติของโครงสร้างหัวใจแต่ไม่เคยมีอาการ = pre-HF (stage B)"},
+    {q:"ผู้ป่วยมีอาการเหนื่อยขณะเดินจากเตียงไปห้องน้ำ แต่นั่งพักไม่เหนื่อย จัด NYHA class ใด?", c:["I","II","III","IV"], a:2, e:"กิจกรรมน้อยกว่าปกติทำให้มีอาการ แต่ขณะพักไม่มี = NYHA III"}
+  ]
+},
+
+/* ---------------- 2 ---------------- */
+{
+  id:"dx", n:"2", title:"การวินิจฉัยและการหาสาเหตุ", sub:"อาการ · NT-proBNP/BNP · ECG · CXR · echo · สาเหตุที่ต้องหาทุกราย", nav:"วินิจฉัย",
+  chips:[
+    {v:"<125", l:"NT-proBNP (pg/mL) ตัด HF เรื้อรังออก · BNP <35"},
+    {v:"<300", l:"NT-proBNP ตัด HF เฉียบพลันออก · BNP <100"},
+    {v:"450 / 900 / 1800", l:"rule-in เฉียบพลันตามอายุ <50 / 50–75 / >75 ปี"},
+    {v:"ต่ำลง", l:"ในคนอ้วน — ค่าปกติไม่ได้ตัด HF ออกเสมอ"}
+  ],
+  bullets:[
+    "<b>อาการที่จำเพาะกว่า</b>: orthopnea, paroxysmal nocturnal dyspnea, bendopnea · <b>อาการแสดงที่จำเพาะกว่า</b>: JVP สูง, hepatojugular reflux, S3 gallop, apex เลื่อนออกด้านข้าง · ส่วนบวมขา ไอกลางคืน น้ำหนักขึ้น เบื่ออาหาร เป็นอาการไม่จำเพาะ ผู้สูงอายุมักมาไม่ตรงแบบ",
+    "<b>ตรวจพื้นฐานทุกราย</b>: ECG, CXR, CBC, BUN/Cr/eGFR, electrolytes, LFT, TSH, glucose/HbA1c, lipid, <b>iron studies (ferritin + TSAT)</b>, urinalysis, NT-proBNP หรือ BNP และ echocardiogram",
+    "<b>ECG ปกติทั้งหมด</b> ทำให้ HF ไม่น่าเป็น · หาสาเหตุจาก ECG: Q wave/ST-T (ischemic), AF, LBBB (ดู CRT), low voltage + ผนังหนา (amyloid), LVH (HT, AS, HCM)",
+    "<b>Natriuretic peptide</b>: ค่าต่ำช่วยตัดออกได้ดีกว่ารวมเข้า · ค่าสูงขึ้นตาม <b>อายุ, AF, CKD</b>, PE, sepsis, ACS, pulmonary HT · ค่าต่ำกว่าจริงใน <b>อ้วน</b> (การศึกษาเสนอให้ลด cut-off ราว 33% เมื่อ BMI 30–34.9 และ 50% เมื่อ BMI ≥35) และใน flash pulmonary edema ระยะแรก",
+    "<b>ผู้ที่ได้ ARNI</b>: sacubitril ยับยั้งการทำลาย BNP ทำให้ BNP สูงขึ้น ให้ติดตามด้วย <b>NT-proBNP</b> แทน",
+    "<b>รพ.ที่ไม่มี NP หรือ echo</b>: ใช้ประวัติ ตรวจร่างกาย CXR (cardiomegaly, vascular redistribution, Kerley B, effusion) ECG และ POCUS (B-lines หลายตำแหน่งทั้งสองข้าง, IVC โป่งไม่ยุบ) แล้วส่ง echo เมื่อพร้อม",
+    "<b>Echo</b> ให้ข้อมูลหลัก: LVEF, ขนาดและความหนาของผนัง LV, regional wall motion, ลิ้นหัวใจ, LA volume, E/e′, TR velocity/PASP, RV function, pericardium",
+    "<b>HFpEF ต้องมีหลักฐานเพิ่ม</b> นอกจาก LVEF ≥50% — HFCT 2023 ใช้เกณฑ์อย่างง่าย (ดูตารางด้านล่าง) หรือ score H₂FPEF ≥6 / HFA-PEFF ≥5 (ยังไม่ได้ validate ในคนไทย)",
+    "<b>สาเหตุที่ต้องหาทุกราย</b>: ischemic (พบบ่อยสุด — regional WMA → ส่ง stress test/CTA/CAG, ดู <a href=\"../acs/index.html\">ACS</a>), <a href=\"../htn/index.html\">ความดันสูง</a>, ลิ้นหัวใจ (รวม rheumatic), cardiomyopathy, thyroid, alcohol",
+    "<b>สาเหตุที่พลาดบ่อยในไทย</b>: <b>methamphetamine (ยาบ้า)</b>, ขาดวิตามินบี 1 (beriberi — high-output, ดื่มสุรา/กินไม่พอ), tachycardia-induced (AF เร็วนาน), peripartum, myocarditis, ยาเคมีบำบัด (anthracycline, trastuzumab), ซีดมาก, thyrotoxicosis, constrictive pericarditis (รวม TB), amyloid (ผู้สูงอายุ ผนังหนาแต่ ECG voltage ต่ำ, carpal tunnel ทั้งสองข้าง)"
+  ],
+  extraKey:"np",
+  recs:[
+    {t:"ตรวจ BNP หรือ NT-proBNP ในผู้ที่มาด้วยเหนื่อยเพื่อช่วยวินิจฉัยหรือตัด HF ออก", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ทำ transthoracic echocardiogram ในผู้ที่สงสัยหรือเพิ่งวินิจฉัย HF เพื่อดูโครงสร้าง การทำงาน และ LVEF", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ตรวจ CBC, UA, electrolytes, BUN/Cr, glucose, lipid, LFT, iron studies และ TSH ในผู้ป่วย HF ทุกรายเพื่อหาสาเหตุและโรคร่วม", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ส่ง genetic testing ใน cardiomyopathy เมื่อผลมีผลต่อการวินิจฉัย การรักษา หรือการตรวจคัดกรองญาติ", c:"แนะนำ", s:"strong", e:"ESC 2026"},
+    {t:"สงสัย cardiac amyloidosis: เริ่มด้วย serum/urine immunofixation + serum free light chain + bone scintigraphy (DPD/PYP/HMDP)", c:"แนะนำ", s:"strong", e:"ESC 2026"}
+  ],
+  cards:[
+    {f:"NT-proBNP เท่าไรที่ช่วยตัด HF เรื้อรังออก?", b:"<125 pg/mL (BNP <35 pg/mL)"},
+    {f:"Cut-off NT-proBNP ตัด acute HF ออก และ rule-in ตามอายุ?", b:"ตัดออก <300 pg/mL · rule-in >450 (อายุ <50), >900 (50–75), >1800 (>75 ปี)"},
+    {f:"ทำไมติดตามผู้ป่วยที่ได้ sacubitril/valsartan ด้วย NT-proBNP ไม่ใช่ BNP?", b:"Sacubitril ยับยั้ง neprilysin ซึ่งทำลาย BNP ทำให้ BNP สูงขึ้นโดยไม่สะท้อนโรค แต่ NT-proBNP ไม่ใช่ substrate ของ neprilysin"},
+    {f:"ภาวะใดทำให้ NP ต่ำกว่าจริง?", b:"อ้วน (BMI ≥30) และ flash pulmonary edema ในชั่วโมงแรก"},
+    {f:"สาเหตุของ HF ที่ต้องถามทุกรายในบริบทไทยนอกจาก ischemic/HT/valve?", b:"Alcohol, methamphetamine, ขาดวิตามินบี 1, thyroid, tachycardia-induced (AF), peripartum, ยาเคมีบำบัด, ซีดมาก"},
+    {f:"H₂FPEF score มีอะไรบ้าง?", b:"Heavy BMI >30 (2), Hypertension ≥2 ยา (1), AF (3), Pulmonary HT PASP >35 (1), Elder >60 ปี (1), Filling E/e′ >9 (1) · รวม ≥6 น่าจะเป็น HFpEF"}
+  ],
+  quiz:[
+    {q:"ชายอายุ 82 ปี มาด้วยเหนื่อยเฉียบพลัน NT-proBNP 1,200 pg/mL ข้อใดถูกต้อง?", c:["เข้าเกณฑ์ rule-in acute HF ตามอายุแล้ว","อยู่ใน grey zone ต้องหาสาเหตุอื่นร่วม ส่ง echo","ตัด HF ออกได้","ค่าปกติสำหรับอายุนี้ ไม่ต้องสนใจ"], a:1, e:"อายุ >75 ปี ใช้ rule-in >1800 · ค่า 300–1800 เป็น grey zone ต้องใช้ข้อมูลทางคลินิกและ echo ประกอบ"},
+    {q:"หญิงอายุ 60 ปี BMI 38 เหนื่อยเวลาเดิน บวมขา JVP สูง NT-proBNP 110 pg/mL ควรทำอย่างไร?", c:["ตัด HF ออกเพราะ <125","ยังสงสัย HF ได้ เพราะอ้วนทำให้ NP ต่ำกว่าจริง ส่ง echo","ให้ furosemide แล้วนัด 1 ปี","ส่ง CT chest"], a:1, e:"คนอ้วนมาก NP ต่ำกว่าจริง ถ้าอาการและอาการแสดงชัด ต้องส่ง echo"},
+    {q:"ผู้ป่วย HFrEF ใหม่ อายุ 34 ปี ไม่มีโรคประจำตัว ประวัติข้อใดสำคัญที่สุดต้องถาม?", c:["การใช้ methamphetamine และสุรา","กรุ๊ปเลือด","ประวัติผ่าตัดไส้ติ่ง","การแพ้อาหารทะเล"], a:0, e:"Methamphetamine และ alcohol เป็นสาเหตุ cardiomyopathy ที่พบบ่อยในคนหนุ่มสาวไทย และรักษาได้ถ้าหยุด"},
+    {q:"ผู้ป่วยได้ sacubitril/valsartan 3 เดือน BNP สูงขึ้นจาก 300 เป็น 450 pg/mL อาการดีขึ้น ควรแปลผลอย่างไร?", c:["HF แย่ลง ต้องเพิ่มยาขับปัสสาวะ","BNP สูงขึ้นจากผลของยา ควรใช้ NT-proBNP ติดตาม","ต้องหยุด ARNI","ต้อง admit"], a:1, e:"ARNI ทำให้ BNP สูงขึ้นจากการยับยั้ง neprilysin ให้ดู NT-proBNP และอาการ"}
+  ]
+},
+
+/* ---------------- 3 ---------------- */
+{
+  id:"adhf", n:"3", title:"Decompensated HF ที่ ER และหอผู้ป่วย", sub:"Profile warm/cold–wet/dry · ยาขับปัสสาวะตาม natriuresis · vasodilator · inotrope · NIV · ตัวกระตุ้น · การส่งต่อ", nav:"ADHF",
+  chips:[
+    {v:"20–40 มก.", l:"furosemide IV ในผู้ไม่เคยใช้ loop"},
+    {v:"1–2.5 เท่า", l:"ของขนาดกินต่อวัน ถ้าใช้ loop อยู่แล้ว (ให้เป็น IV)"},
+    {v:"≥50–70", l:"mmol/L spot urine Na ที่ 2 ชม.หลังฉีด"},
+    {v:"≥100–150", l:"มล./ชม. ปริมาณปัสสาวะใน 6 ชม.แรก"}
+  ],
+  bullets:[
+    "<b>ประเมินทันที</b>: ทางเดินหายใจ SpO₂ BP perfusion · ECG ภายใน 10 นาที (STEMI → ดู <a href=\"../acs/index.html\">ACS</a>) · troponin, CXR, POCUS, NT-proBNP, CBC, BUN/Cr, electrolytes, glucose · ABG/lactate ถ้าเหนื่อยมากหรือ perfusion ไม่ดี",
+    "<b>หาสาเหตุที่ต้องแก้ทันที (CHAMPIT)</b>: ACS · Hypertensive emergency · Arrhythmia · Mechanical cause (MR เฉียบพลัน, VSD, AS รุนแรง) · Pulmonary embolism · Infection · Tamponade",
+    "<b>แบ่ง profile</b> จาก congestion (wet/dry) และ perfusion (warm/cold) — ส่วนใหญ่เป็น <b>warm–wet</b> · ดูตารางและเครื่องมือเลือก profile ด้านล่าง",
+    "<b>ออกซิเจน</b> เมื่อ SpO₂ &lt;90% หรือ PaO₂ &lt;60 มม.ปรอท ไม่ให้ routine · <b>NIV (CPAP/BiPAP)</b> เมื่อหายใจลำบาก RR &gt;25 หรือ SpO₂ &lt;90% แม้ให้ O₂ — ช่วยลดการใส่ท่อช่วยหายใจ ระวังใน BP ต่ำ",
+    "<b>ยาขับปัสสาวะ</b>: ให้ IV loop diuretic เร็วที่สุดใน wet profile · ไม่เคยใช้ยา: furosemide 20–40 มก. IV · ใช้อยู่แล้ว: IV 1–2 เท่าของขนาดกินต่อวัน (ESC) ถึง 2.5 เท่า (DOSE) แบ่งให้วันละ 2–3 ครั้งหรือ infusion ได้ผลใกล้กัน",
+    "<b>ประเมินการตอบสนองเร็ว</b>: spot urine Na ที่ 2 ชม. ≥50–70 mmol/L และ/หรือปัสสาวะ ≥100–150 มล./ชม.ใน 6 ชม.แรก ถ้าไม่ถึง → <b>เพิ่มขนาดเป็น 2 เท่า</b> (furosemide รวมสูงสุดราว 400–600 มก./วัน และถึง 1,000 มก./วันเมื่อไตเสื่อมมาก) · ชั่งน้ำหนักทุกวัน บันทึก I/O ตรวจ K/Na/Cr ทุกวัน",
+    "<b>Sequential nephron blockade</b> เมื่อดื้อต่อ loop ขนาดสูง: เพิ่ม thiazide (HCTZ 25–100 มก./วัน หรือ metolazone — CLOROTIC) หรือ acetazolamide 500 มก. IV วันละครั้ง (ADVOR) · ระวัง K และ Na ต่ำ (ดู <a href=\"../hypokalemia/index.html\">hypokalemia</a>) · SGLT2i ช่วยเพิ่ม natriuresis และ ESC 2026 แนะนำให้เริ่มในโรงพยาบาลเมื่ออาการคงที่",
+    "<b>Vasodilator</b>: nitroglycerin IV เมื่อ SBP &gt;110 มม.ปรอท โดยเฉพาะ hypertensive pulmonary edema เริ่ม 10–20 µg/นาที เพิ่มทีละขั้นได้ถึง 200 µg/นาที · ห้ามเมื่อ SBP &lt;90, RV infarction, AS รุนแรง, ใช้ PDE5 inhibitor ใน 24–48 ชม.",
+    "<b>Inotrope / vasopressor</b> เฉพาะ <b>cold profile ที่ perfusion ไม่พอ</b>: dobutamine 2–20 µg/kg/นาที · norepinephrine เมื่อ SBP &lt;90 ร่วมกับ hypoperfusion · ไม่ใช้ routine เพราะเพิ่ม arrhythmia และอัตราตาย · ดูการผสมยาที่ <a href=\"../icu-drugs/index.html\">ICU drugs</a>",
+    "<b>GDMT เดิม</b>: ให้ beta-blocker ต่อ ยกเว้น shock, BP ต่ำมาก, หัวใจเต้นช้ามาก · หยุด RASi/MRA ชั่วคราวเมื่อ BP ต่ำ, AKI มาก หรือ K สูง · ไม่ให้ morphine routine",
+    "<b>Creatinine ขึ้นขณะขับน้ำ</b>: ถ้า congestion ลดลงและผู้ป่วยดีขึ้น Cr ขึ้นเล็กน้อยมักไม่อันตราย <b>อย่าหยุดยาขับปัสสาวะเร็วเกินไป</b> · ที่น่ากังวลคือ Cr ขึ้นพร้อมยังบวมอยู่ หรือ perfusion แย่",
+    "<b>ตัวกระตุ้น (FAILURE)</b>: <b>F</b>orgot meds · <b>A</b>rrhythmia/Anemia · <b>I</b>schemia/Infection · <b>L</b>ifestyle (เกลือ น้ำ สุรา) · <b>U</b>pregulation (thyroid, ตั้งครรภ์) · <b>R</b>enal failure / <b>R</b>x (NSAIDs, non-DHP CCB, TZD) · <b>E</b>mbolism/Endocarditis",
+    "<b>เกณฑ์ส่งต่อจาก รพ.ชุมชน</b>: shock หรือ SBP &lt;90 ร่วมกับ hypoperfusion · ต้องใช้ inotrope/vasopressor · ACS/STEMI · หายใจล้มเหลวที่ต้องใส่ท่อเกินขีดความสามารถ · ดื้อต่อยาขับปัสสาวะแม้ให้ร่วม · arrhythmia ที่คุมไม่ได้ · สงสัย mechanical complication หรือลิ้นหัวใจรุนแรง · K สูงหรือ AKI ที่อาจต้องฟอกไต"
+  ],
+  extraKey:"adhf",
+  recs:[
+    {t:"ให้ IV loop diuretic ในผู้ป่วย decompensated HF ที่มี fluid overload เพื่อลด congestion และบรรเทาอาการ", c:"Class 1", s:"strong", e:"AHA 2022 · ESC"},
+    {t:"ถ้าการตอบสนองต่อยาขับปัสสาวะไม่พอ ให้เพิ่มขนาด loop diuretic", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"พิจารณาใช้ urinary sodium ช่วยปรับยาขับปัสสาวะในวันแรก ๆ เพื่อเพิ่ม natriuresis", c:"ควรพิจารณา", s:"conditional", e:"ESC 2026"},
+    {t:"เพิ่ม thiazide-type diuretic เมื่อบวมดื้อต่อการเพิ่มขนาด loop diuretic", c:"Class IIa", s:"conditional", e:"ESC 2021"},
+    {t:"เริ่ม SGLT2i ระหว่างนอนโรงพยาบาลหลังอาการคงที่ เพื่อลด congestion และการนอน รพ.ซ้ำ", c:"แนะนำ", s:"strong", e:"ESC 2026"},
+    {t:"ใช้ amiodarone IV หรือ digoxin ควบคุมอัตราเต้น AF เฉียบพลันใน HFrEF ที่ hemodynamics ไม่คงที่", c:"ควรพิจารณา", s:"conditional", e:"ESC 2026"},
+    {t:"ไม่ใช้ temporary mechanical circulatory support แบบ routine ใน cardiogenic shock จาก AMI ที่ไม่ได้คัดเลือก", c:"ไม่แนะนำ", s:"harm", e:"ESC 2026"}
+  ],
+  cards:[
+    {f:"ขนาด furosemide IV เริ่มต้นในผู้ที่กิน furosemide 40 มก. วันละ 2 ครั้ง?", b:"ขนาดกินต่อวัน 80 มก. → IV 80–160 มก./วัน (1–2 เท่า, ESC) ถึง 200 มก./วัน (2.5 เท่า, DOSE) แบ่งให้วันละ 2 ครั้ง"},
+    {f:"เกณฑ์การตอบสนองต่อ loop diuretic ที่ดีพอ?", b:"spot urine Na ≥50–70 mmol/L ที่ 2 ชม. และ/หรือปัสสาวะ ≥100–150 มล./ชม.ใน 6 ชม.แรก"},
+    {f:"Sequential nephron blockade ทำอย่างไร?", b:"Loop ขนาดสูง + thiazide (HCTZ/metolazone) หรือ + acetazolamide 500 มก. IV · SGLT2i ช่วยเสริม · ติดตาม K Na Cr ทุกวัน"},
+    {f:"Nitroglycerin IV ใช้เมื่อไรและห้ามเมื่อไร?", b:"ใช้เมื่อ SBP >110 (โดยเฉพาะ hypertensive pulmonary edema) · ห้ามเมื่อ SBP <90, RV infarct, AS รุนแรง, ใช้ PDE5i"},
+    {f:"FAILURE mnemonic?", b:"Forgot meds · Arrhythmia/Anemia · Ischemia/Infection · Lifestyle · Upregulation (thyroid/pregnancy) · Renal/Rx · Embolism/Endocarditis"},
+    {f:"Cold–wet profile รักษาอย่างไร?", b:"แก้ perfusion ก่อน: inotrope (dobutamine) ± vasopressor ถ้า BP ต่ำ แล้วจึงขับน้ำ · หาสาเหตุ (ACS, mechanical) · ปรึกษา/ส่งต่อ"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย ADHF กิน furosemide 40 มก./วัน มาด้วยบวมและเหนื่อย BP 148/86 ขนาด furosemide IV เริ่มต้นที่เหมาะสมที่สุดคือ?", c:["20 มก. IV ครั้งเดียว","40–100 มก. IV ต่อวัน แบ่งให้","500 มก. IV","ไม่ต้องให้ เพราะกินอยู่แล้ว"], a:1, e:"IV ควรเท่ากับหรือมากกว่าขนาดกินต่อวัน (1–2.5 เท่า) — 40 มก.×1–2.5 = 40–100 มก./วัน"},
+    {q:"หลังฉีด furosemide 80 มก. IV 2 ชม. spot urine Na 35 mmol/L ทำอย่างไรต่อ?", c:["รอ 24 ชม.แล้วประเมินใหม่","เพิ่มขนาดเป็น 2 เท่า (160 มก.) แล้วประเมินซ้ำ","หยุดยาขับปัสสาวะ","ให้ NSS"], a:1, e:"UNa <50–70 mmol/L ที่ 2 ชม. = natriuresis ไม่พอ ให้เพิ่มขนาดเป็น 2 เท่า"},
+    {q:"ผู้ป่วยเหนื่อยมาก BP 82/56 ปลายมือเย็น ซึม ปัสสาวะน้อย ปอดมี crackles ทั้งสองข้าง profile และการรักษาแรกคือ?", c:["Warm–wet: ให้ furosemide และ nitroglycerin","Cold–wet: เพิ่ม perfusion ด้วย inotrope ± vasopressor หาสาเหตุ และเตรียมส่งต่อ","Cold–dry: ให้ NSS 2 ลิตร","Warm–dry: ให้ยากินกลับบ้าน"], a:1, e:"Hypoperfusion + congestion = cold–wet ห้าม nitroglycerin เมื่อ SBP <90"},
+    {q:"ระหว่างขับน้ำ วันที่ 3 Cr ขึ้นจาก 1.2 เป็น 1.5 มก./ดล. บวมลดลงมาก หายใจดีขึ้น BP 118/70 ควรทำอย่างไร?", c:["หยุดยาขับปัสสาวะทันทีและให้ NSS","ขับน้ำต่อจนหายบวม ติดตาม Cr/K — Cr ขึ้นเล็กน้อยขณะ decongestion ดีขึ้นไม่ใช่ข้อห้าม","หยุด SGLT2i ถาวร","ส่ง dialysis"], a:1, e:"Cr ขึ้นเล็กน้อยระหว่าง decongestion ที่ได้ผลไม่สัมพันธ์กับผลเสีย การหยุดยาเร็วทำให้ congestion ค้างและกลับมานอน รพ."}
+  ]
+},
+
+/* ---------------- 4 ---------------- */
+{
+  id:"gdmt", n:"4", title:"GDMT ใน HFrEF: ยา 4 กลุ่มหลัก", sub:"ARNI/ACEI/ARB · beta-blocker · MRA · SGLT2i · ยาเสริม · การจัดการ K สูง Cr ขึ้น BP ต่ำ", nav:"GDMT",
+  chips:[
+    {v:"4 กลุ่ม", l:"ขนาดต่ำครบทุกกลุ่มดีกว่าขนาดสูงแค่ 1–2 กลุ่ม"},
+    {v:"1–2 สัปดาห์", l:"ปรับยาทุก 1–2 สัปดาห์ เจาะ K/Cr หลังปรับ"},
+    {v:"3 เดือน", l:"ควรถึงขนาดสูงสุดที่ทนได้ (ACC 2024)"},
+    {v:"36 ชม.", l:"หยุด ACEI ก่อนเริ่ม ARNI"}
+  ],
+  bullets:[
+    "<b>Foundational therapy</b> (ESC 2026 ใช้คำนี้แทน GDMT) ใน HFrEF: <b>ARNI</b> (หรือ ACEI/ARB) + <b>beta-blocker</b> ที่มีหลักฐาน + <b>MRA</b> + <b>SGLT2i</b> · ทุกกลุ่มลดการเสียชีวิตและการนอน รพ. เมื่อรวมกันลดความเสี่ยงได้มากกว่าการใช้ทีละตัวมาก",
+    "<b>ลำดับการเริ่มยาไม่ตายตัว</b> (ACC ECDP 2024): เริ่มขนาดต่ำทุกกลุ่มให้เร็วที่สุด · beta-blocker เริ่มเมื่อ <b>euvolemic</b> · ARNI, SGLT2i, MRA เริ่มได้แม้ยังมี congestion เล็กน้อย · ในการนอน รพ. ควรเริ่มให้ได้ก่อนจำหน่าย",
+    "<b>ARNI (sacubitril/valsartan)</b>: แนะนำเป็นตัวแรกใน NYHA II–III (AHA 2022) · เริ่ม 49/51 มก. วันละ 2 ครั้ง หรือ 24/26 มก. เมื่อไม่เคยได้ RASi, SBP ต่ำ, eGFR &lt;30, สูงอายุ · <b>หยุด ACEI 36 ชม.</b> ก่อน (เปลี่ยนจาก ARB ได้ทันที) · ห้ามใช้เมื่อเคย angioedema หรือตั้งครรภ์",
+    "<b>ACEI/ARB</b>: ใช้เมื่อไม่มีหรือใช้ ARNI ไม่ได้ · ARB เมื่อไอจาก ACEI · ไม่ใช้ ACEI + ARB + MRA ร่วมกัน (K สูง)",
+    "<b>Beta-blocker</b>: ใช้เฉพาะ <b>bisoprolol, carvedilol, metoprolol succinate</b> (ESC เพิ่ม nebivolol ในผู้สูงอายุ) · metoprolol tartrate ไม่มีหลักฐานใน HFrEF · เพิ่มเป็น 2 เท่าทุก 2 สัปดาห์ · อาการเพลียช่วงแรกมักหายเอง",
+    "<b>MRA</b>: spironolactone เริ่ม 12.5–25 มก./วัน · AHA 2022 ให้เมื่อ <b>eGFR &gt;30 และ K &lt;5.0</b> · เต้านมโตในผู้ชายเปลี่ยนเป็น eplerenone · งดเกลือแทนที่มี K และ K supplement ที่ไม่จำเป็น",
+    "<b>SGLT2i</b>: dapagliflozin หรือ empagliflozin 10 มก./วัน ไม่ต้องปรับขนาด · เริ่มได้เมื่อ eGFR ≥20–25 · eGFR ลดลงเล็กน้อยช่วงแรกเป็นผลที่คาดได้ ไม่ต้องหยุด · ระวัง genital mycotic infection และ euglycemic DKA (หยุดช่วงป่วยหนัก งดอาหาร หรือก่อนผ่าตัด)",
+    "<b>การติดตาม</b>: ตรวจ K และ Cr 1–2 สัปดาห์หลังเริ่มหรือเพิ่ม RASi/MRA · BP และ HR ทุกครั้ง · ความดันต่ำที่ไม่มีอาการไม่ใช่เหตุให้หยุดยา",
+    "<b>Cr ขึ้นหลังเริ่ม RASi</b>: ยอมรับได้ถึง 50% จากเดิม (หรือถึง 3.0 มก./ดล. หรือ eGFR 25) · ถ้าขึ้นเกิน 100% หรือเกิน 3.5 มก./ดล. หยุดยาและปรึกษา · ตรวจภาวะขาดน้ำ ลดยาขับปัสสาวะถ้า dry · หยุด NSAIDs",
+    "<b>K สูง</b>: ถึง 5.5 ยอมรับได้ · &gt;5.5 ลด MRA ครึ่งหนึ่ง (หรือหยุดชั่วคราว) และหาสาเหตุ · ≥6.0 หยุด MRA และ RASi ชั่วคราวและรักษา hyperkalemia · พิจารณา K binder เพื่อคง RASi/MRA ไว้",
+    "<b>BP ต่ำมีอาการ</b>: ลดหรือหยุดยาลดความดันที่ไม่ใช่ GDMT (nitrate, CCB, alpha-blocker) ก่อน · ลดยาขับปัสสาวะถ้าไม่มี congestion · แยกเวลากินยาแต่ละตัว · SGLT2i แทบไม่ลด BP",
+    "<b>ยาเสริม</b>: <b>ivabradine</b> เมื่อ sinus HR ≥70 และ LVEF ≤35% แม้ได้ beta-blocker สูงสุดที่ทนได้ · <b>vericiguat</b> หลัง worsening HF · <b>hydralazine + isosorbide dinitrate</b> ในผู้ที่ใช้ RASi ไม่ได้ (เช่น CKD ระยะท้ายที่ K สูง) · <b>digoxin</b> เมื่อยังมีอาการหรือคุม rate ใน AF (ESC 2026 เป็น IIa; ใช้ขนาดต่ำ 62.5–125 µg ในผู้สูงอายุหรือ CKD ไม่ต้อง loading)",
+    "<b>Loop diuretic</b> ใช้คุม congestion ให้ขนาดต่ำสุดที่ euvolemic ไม่ได้ลดอัตราตาย — เมื่อเริ่ม ARNI/SGLT2i อาจต้องลดขนาดลง",
+    "<b>LVEF ดีขึ้นแล้วอย่าหยุดยา</b>: ESC 2026 แนะนำให้คงขนาดสูงสุดที่ทนได้ต่อไป"
+  ],
+  extraKey:"dose",
+  recs:[
+    {t:"HFrEF NYHA II–III: ให้ ARNI เพื่อลดการเจ็บป่วยและการเสียชีวิต", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ให้ ACEI เมื่อใช้ ARNI ไม่ได้ · ARB เมื่อทน ACEI ไม่ได้", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ให้ beta-blocker ที่มีหลักฐาน (bisoprolol, carvedilol, metoprolol succinate)", c:"Class 1", s:"strong", e:"AHA 2022 · HFCT"},
+    {t:"NYHA II–IV: ให้ MRA เมื่อ eGFR >30 และ K <5.0", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"ให้ SGLT2i ไม่ว่าจะเป็นเบาหวานหรือไม่", c:"Class 1", s:"strong", e:"AHA 2022 · HFCT 2022"},
+    {t:"เพิ่มขนาดยา foundational ทุก 1–2 สัปดาห์ตามอาการ สัญญาณชีพ และผลเลือด จนถึงขนาดเป้าหมาย", c:"แนะนำ", s:"strong", e:"ESC 2026"},
+    {t:"Ivabradine: sinus HR ≥70 และ LVEF ≤35% แม้ได้ beta-blocker สูงสุดที่ทนได้", c:"Class 2a", s:"conditional", e:"AHA 2022"},
+    {t:"Digoxin หรือ digitoxin ในผู้ป่วยที่เลือกแล้วที่ยังมีอาการแม้ได้ foundational therapy เต็มที่", c:"Class IIa", s:"conditional", e:"ESC 2026"},
+    {t:"Vericiguat ในผู้ที่มี worsening HF แม้ได้ GDMT", c:"Class 2b", s:"conditional", e:"AHA 2022"}
+  ],
+  cards:[
+    {f:"ยา foundational 4 กลุ่มใน HFrEF?", b:"ARNI (หรือ ACEI/ARB) + beta-blocker (bisoprolol/carvedilol/metoprolol succinate) + MRA + SGLT2i"},
+    {f:"เปลี่ยนจาก enalapril เป็น sacubitril/valsartan ต้องทำอย่างไร?", b:"หยุด ACEI อย่างน้อย 36 ชม.ก่อนเริ่ม ARNI เพื่อลดความเสี่ยง angioedema · จาก ARB เปลี่ยนได้ทันที"},
+    {f:"เกณฑ์เริ่ม MRA ตาม AHA 2022?", b:"eGFR >30 มล./นาที/1.73 ม.² และ K <5.0 mmol/L"},
+    {f:"หลังเริ่ม ACEI Cr ขึ้นเท่าไรที่ยังยอมรับได้?", b:"ขึ้นได้ถึง 50% จากเดิม (หรือถึง 3.0 มก./ดล. / eGFR 25) · ขึ้นเกิน 100% หรือ >3.5 มก./ดล. ให้หยุดและปรึกษา"},
+    {f:"K เท่าไรให้ลด MRA และเท่าไรให้หยุด?", b:">5.5 ลดครึ่งหนึ่งและหาสาเหตุ · ≥6.0 หยุด MRA (และ RASi ชั่วคราว) แล้วรักษา hyperkalemia"},
+    {f:"Ivabradine ใช้เมื่อไร?", b:"Sinus rhythm HR ≥70 ครั้ง/นาที LVEF ≤35% แม้ได้ beta-blocker สูงสุดที่ทนได้ (ไม่ใช้ใน AF)"},
+    {f:"ขนาดเป้าหมายของ bisoprolol, carvedilol, spironolactone?", b:"Bisoprolol 10 มก./วัน · carvedilol 25 มก. วันละ 2 ครั้ง (50 มก. ถ้าน้ำหนัก >85 กก.) · spironolactone 25–50 มก./วัน"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย HFrEF LVEF 25% ได้ enalapril 10 มก. วันละ 2 ครั้ง ต้องการเปลี่ยนเป็น ARNI ข้อใดถูก?", c:["เริ่ม ARNI มื้อถัดไปได้เลย","หยุด enalapril 36 ชม.ก่อนเริ่ม ARNI","ให้ทั้งสองตัวร่วมกัน 1 สัปดาห์","ต้องหยุด beta-blocker ก่อน"], a:1, e:"ACEI + neprilysin inhibitor เพิ่มความเสี่ยง angioedema ต้องเว้น 36 ชม."},
+    {q:"OPD: HFrEF ได้ ARNI 49/51 bid, bisoprolol 5, spironolactone 25, dapagliflozin 10 · K 5.8 mmol/L Cr คงที่ ทำอย่างไรเหมาะที่สุด?", c:["หยุด GDMT ทุกตัว","ลด spironolactone ครึ่งหนึ่ง หาสาเหตุ (อาหาร ยา NSAIDs) และตรวจซ้ำ 1 สัปดาห์","หยุด dapagliflozin","เพิ่ม ARNI"], a:1, e:"K >5.5 ให้ลด MRA ครึ่งหนึ่ง (หรือหยุดชั่วคราว) ทบทวนสาเหตุ · SGLT2i ไม่ทำให้ K สูง และอาจช่วยลดความเสี่ยง hyperkalemia"},
+    {q:"ข้อใดไม่ใช่ beta-blocker ที่มีหลักฐานใน HFrEF?", c:["Bisoprolol","Carvedilol","Metoprolol succinate","Atenolol"], a:3, e:"Atenolol และ metoprolol tartrate ไม่มีหลักฐานลดอัตราตายใน HFrEF"},
+    {q:"ผู้ป่วยนอน รพ.ด้วย ADHF ยังบวมเล็กน้อย BP 118/70 ยาใดไม่ควรเริ่มในตอนนี้?", c:["SGLT2i","Beta-blocker ใหม่ (ยังไม่เคยได้)","ARNI ขนาดต่ำ","MRA ขนาดต่ำ"], a:1, e:"Beta-blocker ใหม่ควรเริ่มเมื่อ euvolemic · ถ้าได้อยู่เดิมให้ต่อได้"},
+    {q:"หลังเริ่ม dapagliflozin 2 สัปดาห์ eGFR ลดจาก 52 เป็น 47 ไม่มีอาการผิดปกติ ควรทำอย่างไร?", c:["หยุดยาถาวร","ให้ยาต่อ — eGFR ลดลงช่วงแรกเป็นผลทาง hemodynamic ที่คาดได้","ลดเหลือ 5 มก.","ส่งพบอายุรแพทย์โรคไตด่วน"], a:1, e:"SGLT2i ทำให้ eGFR ลดลงเล็กน้อยช่วงแรกแล้วคงที่ ระยะยาวช่วยชะลอไตเสื่อม"}
+  ]
+},
+
+/* ---------------- 5 ---------------- */
+{
+  id:"pef", n:"5", title:"HFmrEF · HFpEF · HFimpEF", sub:"SGLT2i · MRA/finerenone · GLP-1 RA ในคนอ้วน · คุมความดันและ AF", nav:"HFpEF",
+  chips:[
+    {v:"SGLT2i", l:"Class I ทุกช่วง LVEF (HFCT 2023 · ESC)"},
+    {v:"MRA", l:"Class I ทุก LVEF ใน ESC 2026 · IIa ใน HFCT 2023"},
+    {v:"BMI ≥30", l:"+ LVEF ≥45% → semaglutide/tirzepatide (ESC 2026 IIa)"},
+    {v:"<130", l:"SBP เป้าหมายใน HT/stage B (ESC 2026)"}
+  ],
+  bullets:[
+    "<b>HFmrEF (LVEF 41–49%) ตาม HFCT 2023</b>: SGLT2i Class I · MRA IIa · ARNI, ACEI/ARB, beta-blocker IIb · ESC 2026 นับกลุ่มนี้เป็น HFrEF จึงให้ foundational therapy ครบ 4 กลุ่ม — ในทางปฏิบัติ ถ้า LVEF ใกล้ 40% หรือเคยต่ำกว่านี้ ให้รักษาแบบ HFrEF",
+    "<b>HFpEF: ยาขับปัสสาวะ</b> สำหรับ congestion (Class I) · <b>SGLT2i</b> (EMPEROR-Preserved, DELIVER) ลดการนอน รพ.และ CV death — เป็นยาตัวแรกที่ควรให้",
+    "<b>MRA</b>: spironolactone (TOPCAT) และ <b>finerenone</b> (FINEARTS-HF ในผู้ที่ LVEF ≥40%) ลด HF events · ESC 2026 ให้ MRA Class I ใน HF ที่มีอาการทุกช่วง LVEF และระบุ finerenone เริ่ม 10–20 มก. เป้า 20–40 มก./วัน (ปรับตาม eGFR) · ระวัง K",
+    "<b>ARNI/ARB</b>: อาจได้ประโยชน์เมื่อ LVEF อยู่ปลายล่างของช่วง (PARAGON-HF ได้ผลในกลุ่ม LVEF ≤57%) — HFCT 2023 ให้ IIb",
+    "<b>อ้วน + HFpEF</b>: semaglutide (STEP-HFpEF) และ tirzepatide (SUMMIT) ลดน้ำหนัก ลดอาการ เพิ่มคุณภาพชีวิต · ESC 2026 ให้ IIa เมื่อ LVEF ≥45% และ BMI ≥30 ไม่ว่าจะเป็นเบาหวานหรือไม่",
+    "<b>ความดันโลหิต</b>: คุมให้ได้ตามเป้า (ESC 2026: SBP &lt;130 ใน HT และ stage B) ใช้ RASi/MRA/SGLT2i/diuretic เป็นหลัก · ดู <a href=\"../htn/index.html\">ความดันสูง</a>",
+    "<b>AF</b>: พบบ่อยและทำให้อาการแย่ลง — คุม rate หรือ rhythm, ให้ anticoagulant ตามความเสี่ยง · ใน HFpEF ใช้ diltiazem/verapamil คุม rate ได้ แต่ <b>ห้ามใน HFrEF</b>",
+    "<b>โรคร่วมอื่น</b>: CAD, OSA, CKD, เบาหวาน, iron deficiency · ส่งเสริมการออกกำลังกาย (เพิ่ม exercise capacity และคุณภาพชีวิต)",
+    "<b>หาสาเหตุเฉพาะ</b> ที่มีการรักษาจำเพาะ: cardiac amyloidosis, HCM, constrictive pericarditis, high-output HF, ลิ้นหัวใจ",
+    "<b>HFimpEF</b>: <b>ให้ GDMT ต่อ</b> — การหยุดยาทำให้กลับเป็นซ้ำราว 40% ใน 6 เดือน (TRED-HF) · ESC 2026 อาจพิจารณาค่อย ๆ ลดยาเฉพาะรายที่เลือกแล้วจริง (ไม่มีอาการ LV และ NP ปกติทั้งหมด แก้สาเหตุได้ ผู้ป่วยต้องการ) และติดตามใกล้ชิด"
+  ],
+  extraKey:"pef",
+  recs:[
+    {t:"HFmrEF และ HFpEF: ให้ dapagliflozin หรือ empagliflozin เพื่อลดการนอน รพ.จาก HF และ CV death", c:"Class I", s:"strong", e:"HFCT 2023"},
+    {t:"HFpEF: ควรพิจารณา MRA โดยเฉพาะเมื่อ LVEF อยู่ปลายล่าง", c:"Class IIa", s:"conditional", e:"HFCT 2023"},
+    {t:"HF ที่มีอาการ: ให้ MRA ไม่ว่า LVEF เท่าใด", c:"Class I", s:"strong", e:"ESC 2026"},
+    {t:"HFpEF: อาจพิจารณา sacubitril/valsartan หรือ ARB โดยเฉพาะเมื่อ LVEF อยู่ปลายล่าง", c:"Class IIb", s:"conditional", e:"HFCT 2023"},
+    {t:"HF ที่มีอาการ LVEF ≥45% และ BMI ≥30: semaglutide หรือ tirzepatide เพื่อลดน้ำหนัก เพิ่ม exercise capacity และคุณภาพชีวิต", c:"Class IIa", s:"conditional", e:"ESC 2026"},
+    {t:"HFimpEF: ให้ GDMT ต่อเพื่อป้องกันการกลับเป็นซ้ำ", c:"Class 1", s:"strong", e:"AHA 2022"}
+  ],
+  cards:[
+    {f:"ยาตัวแรกที่ควรให้ใน HFpEF ที่มีอาการ (นอกจากยาขับปัสสาวะ)?", b:"SGLT2i (dapagliflozin หรือ empagliflozin 10 มก./วัน) — Class I ใน HFCT 2023 และ ESC"},
+    {f:"ESC 2026 เปลี่ยนคำแนะนำ MRA อย่างไร?", b:"MRA เป็น Class I ใน HF ที่มีอาการทุกช่วง LVEF (HFrEF และ HFpEF)"},
+    {f:"เกณฑ์ใช้ semaglutide/tirzepatide ใน HF ตาม ESC 2026?", b:"HF ที่มีอาการ LVEF ≥45% และ BMI ≥30 ไม่ว่าจะเป็นเบาหวานหรือไม่ (Class IIa)"},
+    {f:"ทำไมห้ามหยุด GDMT ใน HFimpEF?", b:"TRED-HF: หยุดยาแล้วกลับเป็นซ้ำราว 40% ในครึ่งปี · LVEF ดีขึ้นเพราะยา ไม่ใช่หายขาด"},
+    {f:"Diltiazem ใช้คุม rate AF ใน HF ได้ไหม?", b:"ได้ใน HFpEF · ห้ามใน HFrEF เพราะกดการบีบตัวและทำให้ HF แย่ลง"}
+  ],
+  quiz:[
+    {q:"หญิงอายุ 72 ปี HFpEF LVEF 60% BMI 27 eGFR 48 K 4.4 ยังบวมเล็กน้อย ได้ furosemide 40 มก./วัน ยาที่ควรเพิ่มเป็นอันดับแรกคือ?", c:["Beta-blocker","SGLT2i","Digoxin","Ivabradine"], a:1, e:"SGLT2i ลดการนอน รพ.ใน HFpEF และเป็น Class I ทั้งไทยและสากล"},
+    {q:"ชาย HFpEF LVEF 55% BMI 34 ไม่เป็นเบาหวาน ข้อใดถูกตาม ESC 2026?", c:["GLP-1 RA ใช้ได้เฉพาะเบาหวาน","พิจารณา semaglutide หรือ tirzepatide ได้ (IIa)","ห้ามลดน้ำหนักใน HF","ใช้ได้เฉพาะ LVEF <40%"], a:1, e:"ESC 2026 ให้ IIa เมื่อ LVEF ≥45% และ BMI ≥30 ไม่ขึ้นกับเบาหวาน"},
+    {q:"ผู้ป่วย LVEF เดิม 28% ได้ GDMT ครบ 18 เดือน ตอนนี้ LVEF 55% ไม่มีอาการ ขอหยุดยา ควรแนะนำอย่างไร?", c:["หยุดได้ทุกตัว","ให้ยาต่อ เพราะหยุดแล้วกลับเป็นซ้ำบ่อย","หยุดเฉพาะ beta-blocker","เปลี่ยนเป็นวิตามิน"], a:1, e:"HFimpEF ต้องให้ GDMT ต่อ (AHA 2022 Class 1; ESC 2026 แนะนำคงขนาดเดิม)"},
+    {q:"ข้อใดเป็นคำแนะนำของ HFCT 2023 สำหรับ HFmrEF?", c:["SGLT2i Class I, MRA IIa, ARNI/ACEI/ARB/BB IIb","ทุกยา Class I","ไม่มียาใดแนะนำ","Ivabradine Class I"], a:0, e:"HFCT 2023: SGLT2i I A · MRA IIa C · ARNI, ACEI/ARB, beta-blocker IIb B"}
+  ]
+},
+
+/* ---------------- 6 ---------------- */
+{
+  id:"device", n:"6", title:"Device และการดูแลขั้นสูง", sub:"ICD · CRT (QRS/LVEF) · advanced HF · I NEED HELP", nav:"Device",
+  chips:[
+    {v:"≤35%", l:"LVEF หลัง GDMT ≥3 เดือน → พิจารณา ICD/CRT"},
+    {v:"LBBB ≥150", l:"ms + LVEF ≤35% + sinus = CRT Class I"},
+    {v:"≥40 วัน", l:"หลัง MI ก่อน ICD primary prevention"},
+    {v:">1 ปี", l:"ต้องคาดว่ามีชีวิตอย่างมีคุณภาพ"}
+  ],
+  bullets:[
+    "<b>ทำ echo ซ้ำหลังได้ GDMT เต็มที่อย่างน้อย 3 เดือน</b> ก่อนตัดสินใจเรื่อง device เพราะผู้ป่วยจำนวนมาก LVEF ดีขึ้นจนไม่ต้องใส่",
+    "<b>ICD primary prevention</b> (AHA 2022 Class 1): non-ischemic DCM หรือ ischemic ≥40 วันหลัง MI, LVEF ≤35%, NYHA II–III บน GDMT, คาดว่ามีชีวิตอย่างมีคุณภาพ &gt;1 ปี · หลัง MI ที่ NYHA I ใช้เกณฑ์ LVEF ≤30% · ESC 2021: ischemic Class I, non-ischemic IIa",
+    "<b>ICD secondary prevention</b>: รอดจาก VF หรือ VT ที่ hemodynamics ไม่คงที่ โดยไม่มีสาเหตุที่แก้ได้",
+    "<b>CRT</b>: LVEF ≤35%, sinus rhythm, NYHA II–ambulatory IV บน GDMT · <b>LBBB QRS ≥150 ms → Class 1</b> · LBBB 120–149 (AHA 2a) หรือ 130–149 (ESC IIa) · non-LBBB ≥150 (2a/IIa) · non-LBBB 120–149 (AHA 2b เฉพาะ NYHA III–IV) · QRS &lt;120–130 ms ไม่ได้ประโยชน์",
+    "<b>ESC 2026</b>: ใน LBBB QRS ≥150 และ LVEF ≤35% อาจวางแผน CRT ไปพร้อมกับเริ่ม GDMT แล้วประเมิน LVEF ซ้ำก่อนใส่",
+    "<b>AF กับ CRT</b>: ต้อง biventricular pacing ใกล้ 100% อาจต้องทำ AV node ablation · ผู้ที่มี pacemaker แล้ว pace RV มากและ HFrEF แย่ลง ให้พิจารณา upgrade เป็น CRT",
+    "<b>บทบาทของแพทย์ใน รพ.ชุมชน</b>: ดู QRS width และ morphology ใน ECG ทุกครั้งที่ติดตาม, บันทึก LVEF หลังให้ยาครบ 3 เดือน, ส่งต่อศูนย์ที่ใส่ device ได้",
+    "<b>Advanced HF (stage D)</b>: อาการรุนแรงต่อเนื่องแม้ได้การรักษาเต็มที่ ทางเลือกคือ heart transplant, LVAD, inotrope แบบประคับประคอง และ palliative care · ESC 2026 แนะนำให้ปรึกษาศูนย์ advanced HF แต่เนิ่น ๆ",
+    "<b>I NEED HELP</b> (สัญญาณส่งต่อ): <b>I</b>notropes · <b>N</b>YHA IIIb–IV หรือ NP สูงต่อเนื่อง · <b>E</b>nd-organ dysfunction · <b>E</b>F ต่ำมาก (ACC ใช้ ≤35%, HFA ใช้ &lt;20%) · <b>D</b>efibrillator shocks · <b>H</b>ospitalization &gt;1 ครั้งใน 12 เดือน · <b>E</b>dema แม้เพิ่มยาขับปัสสาวะ · <b>L</b>ow BP (SBP ≤90) / HR สูง · <b>P</b>rognostic medication — ต้องลดหรือหยุด GDMT",
+    "<b>Mitral TEER</b> สำหรับ secondary MR รุนแรงที่ยังมีอาการแม้ได้ยาเต็มที่ ได้รับคำแนะนำสูงขึ้นใน ESC 2026"
+  ],
+  extraKey:"device",
+  recs:[
+    {t:"ICD primary prevention: DCM หรือ ischemic ≥40 วันหลัง MI, LVEF ≤35%, NYHA II–III บน GDMT, คาดว่ามีชีวิต >1 ปี", c:"Class 1", s:"strong", e:"AHA 2022"},
+    {t:"CRT: LVEF ≤35%, sinus rhythm, LBBB QRS ≥150 ms, NYHA II–ambulatory IV บน GDMT", c:"Class 1", s:"strong", e:"AHA 2022 · ESC"},
+    {t:"CRT: LVEF ≤35%, sinus rhythm, LBBB QRS 120–149 ms", c:"Class 2a", s:"conditional", e:"AHA 2022"},
+    {t:"ไม่ใส่ CRT เมื่อ QRS <120 ms", c:"Class 3", s:"harm", e:"AHA 2022"},
+    {t:"ปรึกษาศูนย์ advanced HF แต่เนิ่น ๆ ในผู้ป่วยที่เข้าข่ายและไม่มีข้อห้ามสัมบูรณ์ต่อ transplant/durable MCS", c:"แนะนำ", s:"strong", e:"ESC 2026"}
+  ],
+  cards:[
+    {f:"เกณฑ์ ICD primary prevention ตาม AHA 2022?", b:"LVEF ≤35%, NYHA II–III บน GDMT ≥3 เดือน, ischemic ≥40 วันหลัง MI หรือ DCM, คาดว่ามีชีวิตอย่างมีคุณภาพ >1 ปี"},
+    {f:"CRT Class 1 คือผู้ป่วยแบบใด?", b:"LVEF ≤35%, sinus rhythm, LBBB QRS ≥150 ms, NYHA II–ambulatory IV บน GDMT"},
+    {f:"QRS เท่าไรที่ CRT ไม่ได้ประโยชน์?", b:"<120 ms (AHA) หรือ <130 ms (ESC)"},
+    {f:"I NEED HELP ย่อมาจาก?", b:"Inotropes · NYHA IIIb–IV/NP สูง · End-organ dysfunction · EF ต่ำมาก · Defibrillator shocks · Hospitalization >1/ปี · Edema แม้เพิ่มยา · Low BP · Prognostic meds ต้องลด"}
+  ],
+  quiz:[
+    {q:"ชายอายุ 62 ปี ischemic cardiomyopathy MI 2 สัปดาห์ก่อน LVEF 28% ข้อใดถูกเรื่อง ICD?", c:["ใส่ ICD ทันที","ให้ GDMT ก่อน รอ ≥40 วันหลัง MI แล้วประเมิน LVEF ซ้ำ","ไม่ต้องใส่ตลอดไป","ใส่ CRT แทนทุกราย"], a:1, e:"Primary prevention ICD ต้อง ≥40 วันหลัง MI และหลังได้ GDMT เต็มที่ LVEF อาจดีขึ้น"},
+    {q:"HFrEF LVEF 30% NYHA III sinus rhythm ECG LBBB QRS 168 ms ได้ GDMT ครบ 3 เดือน ควรทำอย่างไร?", c:["ให้ยาต่ออย่างเดียว","ส่งพิจารณา CRT (CRT-D)","ใส่ pacemaker ธรรมดา","ให้ digoxin"], a:1, e:"LBBB QRS ≥150 + LVEF ≤35% + sinus + NYHA II–IV = CRT Class 1"},
+    {q:"ข้อใดเป็นสัญญาณให้ส่งต่อศูนย์ advanced HF?", c:["นอน รพ.ด้วย HF 3 ครั้งในปีนี้ SBP 86 ต้องลด ARNI","NYHA I LVEF 45%","HFpEF ที่อาการคงที่","HFimpEF LVEF 55%"], a:0, e:"นอน รพ.ซ้ำ BP ต่ำ และต้องลด GDMT เป็นสัญญาณ I NEED HELP"}
+  ]
+},
+
+/* ---------------- 7 ---------------- */
+{
+  id:"fu", n:"7", title:"การดูแลต่อเนื่องและ OPD", sub:"จำหน่าย · นัด 7–14 วัน · เกลือ/น้ำ · ชั่งน้ำหนัก · วัคซีน · iron deficiency · ยาที่ต้องเลี่ยง · palliative care", nav:"ติดตาม",
+  chips:[
+    {v:"7–14 วัน", l:"นัดครั้งแรกหลังจำหน่าย (ESC 1–2 สัปดาห์ · AHA ≤7 วัน)"},
+    {v:"6 สัปดาห์", l:"ปรับยาเร็วและนัดถี่หลังจำหน่าย (STRONG-HF)"},
+    {v:"TSAT <20%", l:"นิยาม iron deficiency หลักใน ESC 2026"},
+    {v:"+2 กก./3 วัน", l:"น้ำหนักขึ้นเร็ว → ติดต่อทีมหรือเพิ่มยาขับปัสสาวะตามแผน"}
+  ],
+  bullets:[
+    "<b>ก่อนจำหน่าย</b>: congestion หมดหรือเกือบหมด · ได้ยาขับปัสสาวะชนิดกินที่ขนาดคงที่อย่างน้อย 24 ชม. · เริ่ม foundational therapy ให้ได้มากที่สุด · ตรวจ K/Cr · สอนผู้ป่วยและญาติ · นัดภายใน 7–14 วันพร้อมผลเลือด",
+    "<b>นัดหลังจำหน่าย</b>: ESC แนะนำนัด 1–2 สัปดาห์ (Class I) และเริ่ม/ปรับยาเร็วพร้อมนัดถี่ใน 6 สัปดาห์แรก (STRONG-HF) · AHA 2022 ให้นัดภายใน 7 วันและ/หรือโทรติดตามภายใน 3 วัน",
+    "<b>ทุกครั้งที่นัด</b>: อาการ NYHA น้ำหนัก BP HR ภาวะน้ำเกิน K/Cr ยาที่กินจริง และขั้นต่อไปของการปรับยา (ใช้เครื่องมือปรับ GDMT) · NT-proBNP เป็นแนวโน้ม · echo ซ้ำ 3–6 เดือนหลังได้ยาเต็มที่",
+    "<b>ชั่งน้ำหนักทุกเช้า</b> หลังปัสสาวะก่อนอาหาร จดลงสมุด · น้ำหนักขึ้นเร็ว (เช่น &gt;2 กก.ใน 3 วัน) หรือบวม/เหนื่อยมากขึ้นให้ติดต่อ · ผู้ป่วยบางรายสอนให้ปรับยาขับปัสสาวะเองตามแผน",
+    "<b>เกลือ</b>: เลี่ยงอาหารเค็มจัด (ESC 2021: เกลือไม่เกินราว 5 ก./วัน) อาหารไทยที่ต้องระวัง: น้ำปลา ซีอิ๊ว ผงปรุงรส ซุปก้อน อาหารหมักดอง ปลาร้า บะหมี่กึ่งสำเร็จรูป ขนมขบเคี้ยว · การจำกัดโซเดียมเข้มมากไม่ได้ลดเหตุการณ์ (SODIUM-HF) · ห้ามใช้เกลือ low-sodium ที่มี K เมื่อได้ MRA",
+    "<b>น้ำ</b>: จำกัด 1.5–2 ลิตร/วันเฉพาะรายที่ HF รุนแรงหรือ Na ต่ำ ไม่ต้องจำกัดทุกราย · งดสุราใน alcoholic cardiomyopathy · งดบุหรี่และสารเสพติด",
+    "<b>ออกกำลังกาย</b>: แนะนำการฝึกออกกำลังกายแบบเฉพาะบุคคลในผู้ป่วยที่อาการคงที่ (cardiac rehabilitation) ESC 2026 แนะนำทั้งในโปรแกรมและระยะยาว",
+    "<b>วัคซีน</b>: ไข้หวัดใหญ่ทุกปี, pneumococcal, COVID-19 ตามคำแนะนำ",
+    "<b>Iron deficiency</b>: ตรวจ ferritin + TSAT · เกณฑ์เดิม ferritin &lt;100 ng/mL หรือ 100–299 ร่วมกับ TSAT &lt;20% · ESC 2026 ใช้ <b>TSAT &lt;20%</b> เป็นนิยามหลัก · ให้ <b>IV iron</b> (ferric carboxymaltose หรือ ferric derisomaltose) ใน HFrEF ที่มีอาการ เพื่อลดอาการและเพิ่มคุณภาพชีวิต และพิจารณาเพื่อลดการนอน รพ. · ธาตุเหล็กชนิดกินไม่ได้ผล (IRONOUT-HF) · iron sucrose ที่มีใน รพ.ส่วนใหญ่มีหลักฐานน้อยกว่า ใช้ได้เมื่อไม่มียาอื่น",
+    "<b>ยาที่ต้องเลี่ยง</b>: NSAIDs/COX-2 inhibitor · non-DHP CCB (diltiazem, verapamil) ใน HFrEF · thiazolidinedione (pioglitazone) · saxagliptin · dronedarone ใน HF ที่รุนแรงหรือ decompensated · antiarrhythmic class I (flecainide) · cilostazol · K supplement/เกลือแทนเกลือร่วมกับ MRA · ยาสมุนไพรชะเอม · amphetamine และสุรา",
+    "<b>โรคร่วม</b>: ความดัน (<a href=\"../htn/index.html\">htn</a>) · CKD (<a href=\"../ckd/index.html\">ckd</a>) · K ต่ำจากยาขับปัสสาวะ (<a href=\"../hypokalemia/index.html\">hypokalemia</a>) · CAD (<a href=\"../acs/index.html\">acs</a>) · เบาหวาน (SGLT2i เหมาะทั้งสองโรค) · OSA · ซึมเศร้า",
+    "<b>Palliative care</b>: เมื่อเข้าสู่ stage D หรือภาระอาการสูง คุยเรื่องแนวโน้มโรค เป้าหมายการรักษา advance care planning (ESC 2026 แนะนำ) · ให้ยาขับปัสสาวะต่อเพื่อคุมอาการ · opioid ขนาดต่ำช่วยอาการเหนื่อยในระยะท้าย · คุยเรื่องการปิด ICD shock · ทบทวนยาที่ไม่จำเป็น"
+  ],
+  extraKey:"fu",
+  recs:[
+    {t:"นัดติดตามเร็วภายใน 1–2 สัปดาห์หลังจำหน่าย เพื่อประเมิน congestion ความทนต่อยา และเริ่ม/ปรับยา", c:"Class I", s:"strong", e:"ESC 2021"},
+    {t:"เริ่มยาและปรับขนาดอย่างรวดเร็วก่อนจำหน่ายและในการนัดถี่ช่วง 6 สัปดาห์แรก", c:"Class I", s:"strong", e:"ESC 2023"},
+    {t:"IV iron ใน HFrEF/HFmrEF ที่มีอาการและมี iron deficiency เพื่อลดอาการและเพิ่มคุณภาพชีวิต", c:"Class I", s:"strong", e:"ESC 2023"},
+    {t:"Ferric carboxymaltose หรือ ferric derisomaltose ใน HFrEF ที่มีอาการและ ID เพื่อลดการนอน รพ. (ผู้ที่ TSAT <20% น่าจะได้ประโยชน์มากสุด)", c:"ควรพิจารณา", s:"conditional", e:"ESC 2026"},
+    {t:"ฉีดวัคซีนป้องกันโรคทางเดินหายใจในผู้ป่วย HF", c:"Class 2a", s:"conditional", e:"AHA 2022"},
+    {t:"Non-DHP CCB (diltiazem, verapamil) ใน HFrEF เป็นอันตราย", c:"Class 3", s:"harm", e:"AHA 2022"},
+    {t:"เข้าถึงทีม palliative care แบบบูรณาการใน advanced HF", c:"แนะนำ", s:"strong", e:"ESC 2026"}
+  ],
+  cards:[
+    {f:"นัดครั้งแรกหลังจำหน่ายควรเมื่อไร?", b:"ภายใน 1–2 สัปดาห์ (ESC Class I) · AHA: ภายใน 7 วันและ/หรือโทรติดตามใน 3 วัน"},
+    {f:"เกณฑ์ iron deficiency ใน HF แบบเดิมและแบบ ESC 2026?", b:"เดิม: ferritin <100 หรือ 100–299 ร่วมกับ TSAT <20% · ESC 2026: TSAT <20% เป็นนิยามหลัก"},
+    {f:"ยาที่ต้องหลีกเลี่ยงใน HFrEF 5 ตัว?", b:"NSAIDs, diltiazem/verapamil, pioglitazone, saxagliptin, flecainide (และ dronedarone ใน HF รุนแรง)"},
+    {f:"จำกัดน้ำดื่มทุกรายไหม?", b:"ไม่ จำกัด 1.5–2 ลิตร/วันเฉพาะ HF รุนแรงหรือ hyponatremia"},
+    {f:"สอนผู้ป่วยเรื่องน้ำหนักอย่างไร?", b:"ชั่งทุกเช้าหลังปัสสาวะก่อนอาหาร ถ้าขึ้นเร็ว (เช่น >2 กก.ใน 3 วัน) หรือบวม/เหนื่อยมากขึ้นให้ติดต่อ"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย HFrEF ปวดเข่า ขอยาแก้ปวด ยาใดควรหลีกเลี่ยงที่สุด?", c:["Paracetamol","Diclofenac","Topical capsaicin","Tramadol ขนาดต่ำระยะสั้น"], a:1, e:"NSAIDs ทำให้คั่งน้ำและเกลือ ไตเสื่อม และ HF กำเริบ"},
+    {q:"HFrEF NYHA II Hb 12.1 ferritin 150 ng/mL TSAT 14% ข้อใดถูก?", c:["ไม่มี iron deficiency เพราะ ferritin >100","มี iron deficiency — พิจารณา IV iron","ให้ธาตุเหล็กชนิดกินพอ","ต้องรอให้ Hb <10 ก่อน"], a:1, e:"Ferritin 100–299 + TSAT <20% เข้าเกณฑ์เดิม และ TSAT <20% เข้าเกณฑ์ ESC 2026 · ธาตุเหล็กชนิดกินไม่ได้ผลใน HF"},
+    {q:"HFrEF ร่วมกับ AF rate 120 ข้อใดไม่ควรใช้คุม rate?", c:["Bisoprolol","Digoxin","Diltiazem","Amiodarone (กรณีจำเป็น)"], a:2, e:"Non-DHP CCB เป็น Class 3: Harm ใน HFrEF"},
+    {q:"ผู้ป่วยเพิ่งจำหน่ายหลัง ADHF ข้อใดเป็นแผนที่ดีที่สุด?", c:["นัด 3 เดือน","นัด 7–14 วัน พร้อมตรวจ K/Cr และปรับยา","ไม่ต้องนัด ให้มาเมื่อมีอาการ","นัด 6 เดือนทำ echo"], a:1, e:"ช่วงหลังจำหน่ายเสี่ยงกลับมานอน รพ.สูงสุด ต้องนัดเร็วและปรับยาเร็ว"}
+  ]
+},
+
+/* ---------------- pages ---------------- */
+{ id:"cmp", n:"⇄", nav:"ไทย vs สากล", isPage:true },
+{ id:"cases", n:"✚", nav:"เคสฝึก", isCase:true },
+{ id:"tools", n:"⚙", nav:"เครื่องมือ", isTool:true },
+{ id:"final", nav:"แบบทดสอบรวม", isFinal:true }
+];
+
+const COR_LABEL = {strong:"Class 1", conditional:"Class 2", harm:"Class 3"};
+
+const MUST_KNOW = [
+  {v:"<125", l:"NT-proBNP pg/mL ตัด HF เรื้อรังออก"},
+  {v:"<300", l:"NT-proBNP ตัด acute HF ออก"},
+  {v:"≤40 / <50", l:"LVEF ของ HFrEF: HFCT/AHA · ESC 2026"},
+  {v:"4 กลุ่ม", l:"ARNI · BB · MRA · SGLT2i"},
+  {v:"36 ชม.", l:"หยุด ACEI ก่อนเริ่ม ARNI"},
+  {v:"1–2.5×", l:"ขนาด IV เทียบ loop กินต่อวัน"},
+  {v:"≥50–70", l:"mmol/L spot urine Na ที่ 2 ชม."},
+  {v:">5.5 / ≥6.0", l:"K: ลด MRA ครึ่ง / หยุด"},
+  {v:"≤50%", l:"Cr ขึ้นได้หลังเริ่ม RASi"},
+  {v:"7–14 วัน", l:"นัดครั้งแรกหลังจำหน่าย"},
+  {v:"LBBB ≥150", l:"ms + LVEF ≤35% = CRT Class 1"},
+  {v:"TSAT <20%", l:"iron deficiency (ESC 2026)"}
+];
+
+/* ============================= EXTRAS ============================= */
+function tbl(head, rows, note){
+  return `<div class="cmp-wrap"><table class="cmp"><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${note?`<p class="muted-s">${note}</p>`:""}`;
+}
+function secH(t){ return `<div class="section-h"><h2>${t}</h2><div class="line"></div></div>`; }
+
+const EXTRAS = {
+  lvef: ()=>`
+    ${secH("LVEF แบ่งกลุ่มอย่างไรในแต่ละแนวทาง")}
+    <div class="lv-row lv-axis"><div class="lv-lab"></div><div class="lv-ax"><span style="left:0">0%</span><span style="left:57.14%">40</span><span style="left:71.43%">50</span><span style="right:0;left:auto">70%</span></div></div>
+    <div class="lv-row"><div class="lv-lab">HFCT 2022 · AHA 2022 · UD 2021</div>
+      <div class="lv-bar"><i class="r" style="flex:40">HFrEF ≤40</i><i class="m" style="flex:10">mrEF</i><i class="p" style="flex:20">HFpEF ≥50</i></div></div>
+    <div class="lv-row"><div class="lv-lab">ESC 2026</div>
+      <div class="lv-bar"><i class="r" style="flex:50">HFrEF &lt;50</i><i class="p" style="flex:20">HFpEF ≥50</i></div></div>
+    <div class="lv-row"><div class="lv-lab">Universal Definition 2026</div>
+      <div class="lv-bar"><i class="r" style="flex:35">HFrEF</i><i class="g" style="flex:15">ไม่มีจุดตัดตายตัว</i><i class="p" style="flex:20">HFpEF</i></div></div>
+    <p class="muted-s">ทุกแนวทางมีกลุ่ม <b>HFimpEF</b> เพิ่ม: เคยมี HFrEF แล้ว LVEF ดีขึ้น — ยังต้องให้ยาเดิมต่อ · ค่าปกติล่างของ LVEF ราว 52–53% (คนเอเชียสูงกว่าเล็กน้อย) จึงเป็นเหตุผลที่สากลขยับจุดตัดขึ้น</p>
+    ${secH("Stage กับ NYHA")}
+    ${tbl(["Stage","ลักษณะ","ตัวอย่าง / สิ่งที่ทำ"],[
+      ["A · At risk","มีปัจจัยเสี่ยง ยังไม่มีความผิดปกติของหัวใจ","HT, DM, อ้วน, CKD → คุมปัจจัยเสี่ยง, SGLT2i ใน DM/CKD"],
+      ["B · Pre-HF","โครงสร้าง/การทำงานผิดปกติ หรือ NP สูง แต่ไม่เคยมีอาการ","LVEF ลดหลัง MI → ACEI + BB · LVH → คุม BP"],
+      ["C · Symptomatic","มีหรือเคยมีอาการ HF","ให้ GDMT ตาม phenotype · NYHA I–IV"],
+      ["D · Advanced","อาการรุนแรงต่อเนื่อง นอน รพ.ซ้ำแม้ได้ GDMT","ส่งศูนย์ advanced HF · palliative care"]
+    ])}`,
+
+  np: ()=>`
+    ${secH("Natriuretic peptide: cut-off ที่ใช้บ่อย")}
+    ${tbl(["สถานการณ์","NT-proBNP (pg/mL)","BNP (pg/mL)"],[
+      ["HF เรื้อรัง / OPD — ตัดออก","&lt;125","&lt;35"],
+      ["Acute — ตัดออก","&lt;300","&lt;100"],
+      ["Acute — rule-in ตามอายุ","&gt;450 (&lt;50 ปี) · &gt;900 (50–75 ปี) · &gt;1800 (&gt;75 ปี)","—"],
+      ["HFpEF ตามเกณฑ์ HFCT 2023","&gt;125 (sinus) · &gt;365 (AF)","&gt;35 (sinus) · &gt;105 (AF)"]
+    ],"ค่าระหว่าง rule-out กับ rule-in = grey zone ใช้ข้อมูลทางคลินิกและ echo ประกอบ · คนอ้วนมีค่าต่ำกว่าจริง การศึกษาเสนอให้ลด cut-off ราว 33% (BMI 30–34.9) และ 50% (BMI ≥35)")}
+    ${secH("ปัจจัยที่ทำให้ NP เปลี่ยน")}
+    <div class="two-col">
+      <div class="fbox warn"><b>สูงขึ้นโดยไม่ใช่ HF อย่างเดียว</b><br>อายุมาก · AF · CKD/AKI · PE · pulmonary HT · sepsis · ACS/myocarditis · ลิ้นหัวใจ · ซีด · BNP สูงขึ้นจาก ARNI</div>
+      <div class="fbox"><b>ต่ำกว่าจริง</b><br>อ้วน · flash pulmonary edema ชั่วโมงแรก · constrictive pericarditis · MS · HF ที่คุมได้ดี</div>
+    </div>
+    ${secH("เกณฑ์ HFpEF ฉบับย่อของ HFCT 2023 (ต้องครบ 3 ข้อ)")}
+    <ol class="olist">
+      <li>มีอาการและอาการแสดงของ HF</li>
+      <li>LVEF ≥50%</li>
+      <li>หลักฐาน diastolic dysfunction / filling pressure สูงอย่างน้อย 1 ข้อ: LV mass index ≥95 (หญิง) / ≥115 (ชาย) ก./ม.² · LA volume index &gt;34 มล./ม.² (sinus) หรือ &gt;40 (AF) · E/e′ เฉลี่ย &gt;9 · PASP &gt;35 มม.ปรอท · TR velocity &gt;2.8 ม./วินาที · NT-proBNP &gt;125 (sinus) / &gt;365 (AF) หรือ BNP &gt;35 / &gt;105</li>
+    </ol>`,
+
+  adhf: ()=>`
+    ${secH("Profile ตาม congestion และ perfusion")}
+    <div class="prof-grid">
+      <div class="pcell ok"><b>Warm–Dry</b><span>compensated</span>ปรับยากิน · หาเหตุที่มา · ปรับ GDMT</div>
+      <div class="pcell warn"><b>Warm–Wet</b><span>พบบ่อยที่สุด</span>IV loop diuretic · nitroglycerin ถ้า SBP &gt;110 · NIV ถ้าเหนื่อยมาก</div>
+      <div class="pcell"><b>Cold–Dry</b><span>พบน้อย</span>ประเมิน volume อย่างระวัง · fluid challenge เล็กน้อยถ้าขาดน้ำ · inotrope ถ้ายัง hypoperfusion</div>
+      <div class="pcell red"><b>Cold–Wet</b><span>เสี่ยงสูงสุด</span>inotrope ± vasopressor ก่อน แล้วจึงขับน้ำ · หาสาเหตุ (ACS, mechanical) · ส่งต่อ</div>
+    </div>
+    <div class="two-col" style="margin-top:10px">
+      <div class="fbox"><b>หลักฐาน congestion (wet)</b><br>orthopnea, JVP สูง, crackles, S3, บวม, ascites, hepatojugular reflux, B-lines/IVC โป่ง</div>
+      <div class="fbox"><b>หลักฐาน hypoperfusion (cold)</b><br>ปลายมือเท้าเย็น ชื้น, pulse pressure แคบ, ซึม, ปัสสาวะน้อย, Cr ขึ้น, lactate สูง, SBP ต่ำ</div>
+    </div>
+    ${secH("บันไดยาขับปัสสาวะ")}
+    <div class="ladder">
+      <div><i>1</i><b>เริ่ม IV loop</b> naïve 20–40 มก. · เคยใช้ 1–2.5× ขนาดกิน/วัน</div>
+      <div><i>2</i><b>ประเมิน 2 และ 6 ชม.</b> UNa ≥50–70 · ปัสสาวะ ≥100–150 มล./ชม.</div>
+      <div><i>3</i><b>ไม่ถึงเป้า → เพิ่ม 2 เท่า</b> ถึงราว 400–600 มก./วัน (1,000 มก.ถ้าไตเสื่อมมาก)</div>
+      <div><i>4</i><b>ยังดื้อ → เพิ่มยากลุ่มที่สอง</b> HCTZ/metolazone หรือ acetazolamide 500 มก. IV · SGLT2i เมื่อคงที่</div>
+      <div><i>5</i><b>ยังไม่ได้ผล</b> ปรึกษา/ส่งต่อ · ultrafiltration หรือ dialysis ในศูนย์ที่ทำได้</div>
+    </div>`,
+
+  dose: ()=>`
+    ${secH("ขนาดยาเริ่มต้นและเป้าหมาย (HFrEF)")}
+    ${tbl(["ยา","ขนาดเริ่มต้น","ขนาดเป้าหมาย","หมายเหตุ"],[
+      ["<b>Sacubitril/valsartan</b>","49/51 มก. bid","97/103 มก. bid","24/26 มก. bid ถ้าไม่เคยได้ RASi, SBP ต่ำ, eGFR &lt;30, สูงอายุ (AHA)"],
+      ["Enalapril","2.5 มก. bid","10–20 มก. bid",""],
+      ["Ramipril","1.25–2.5 มก. bid","5 มก. bid","ESC 2026 · AHA: 1.25–2.5 od → 10 มก. od"],
+      ["Lisinopril","2.5–5 มก. od","20–35 มก. od","AHA: 20–40 มก."],
+      ["Captopril","6.25 มก. tid","50 มก. tid",""],
+      ["Losartan","12.5–50 มก. od","150 มก. od","ESC 2026 เริ่ม 12.5 (25–50) มก."],
+      ["Candesartan","4 มก. od","32 มก. od","AHA เริ่ม 4–8 มก."],
+      ["Valsartan","40 มก. bid","160 มก. bid",""],
+      ["<b>Bisoprolol</b>","1.25 มก. od","10 มก. od","เพิ่มเป็น 2 เท่าทุก 2 สัปดาห์"],
+      ["<b>Carvedilol</b>","3.125 มก. bid","25 มก. bid","50 มก. bid ถ้า &gt;85 กก. (AHA)"],
+      ["<b>Metoprolol succinate</b>","12.5–25 มก. od","200 มก. od","tartrate ไม่มีหลักฐานใน HFrEF"],
+      ["Nebivolol","1.25 มก. od","10 มก. od","ESC (ผู้สูงอายุ)"],
+      ["<b>Spironolactone</b>","12.5–25 มก. od","50 มก. od","AHA เป้า 25–50 มก."],
+      ["Eplerenone","25 มก. od","50 มก. od","เมื่อเต้านมโตจาก spironolactone"],
+      ["Finerenone","10–20 มก. od","20–40 มก. od","ESC 2026 · ปรับตาม eGFR · ข้อมูลหลักใน LVEF ≥40%"],
+      ["<b>Dapagliflozin</b>","10 มก. od","10 มก. od","ไม่ต้องปรับขนาด"],
+      ["<b>Empagliflozin</b>","10 มก. od","10 มก. od","ไม่ต้องปรับขนาด"],
+      ["Ivabradine","5 มก. bid (2.5 ในผู้สูงอายุ)","7.5 มก. bid","sinus HR ≥70"],
+      ["Vericiguat","2.5 มก. od","10 มก. od","เพิ่มเป็น 2 เท่าทุก 2 สัปดาห์"],
+      ["Digoxin","62.5–125 µg od","ปรับตามระดับยาในเลือด","ไม่ต้อง loading · ระวังไตเสื่อม ผู้สูงอายุ"],
+      ["Hydralazine + ISDN","25 มก. + 20 มก. tid","75 มก. + 40 มก. tid","เมื่อใช้ RASi ไม่ได้"]
+    ],"ตัวหนา = foundational therapy · แหล่ง: ESC 2026 (ตารางเทียบ 2021/2026) และ AHA/ACC/HFSA 2022 · ตรวจทานกับฉลากยาและบัญชียาของโรงพยาบาลก่อนสั่ง")}
+    ${secH("เมื่อ K สูง Cr ขึ้น BP ต่ำ HR ช้า")}
+    ${tbl(["ปัญหา","ยอมรับได้ / ทำต่อ","ต้องลดหรือหยุด"],[
+      ["Cr ขึ้นหลังเริ่ม RASi/ARNI","ขึ้นได้ถึง 50% (หรือถึง 3.0 มก./ดล. / eGFR 25) ให้ยาต่อ ตรวจซ้ำ 1–2 สัปดาห์","ขึ้น &gt;50%: ลดครึ่งหนึ่ง ตรวจ volume/NSAIDs · ขึ้น &gt;100% หรือ &gt;3.5 มก./ดล.: หยุดและปรึกษา"],
+      ["K","≤5.5 ให้ยาต่อ · MRA เริ่มใหม่เมื่อ K &lt;5.0","&gt;5.5: ลด MRA ครึ่ง (หรือหยุดชั่วคราว) · ≥6.0: หยุด MRA และ RASi ชั่วคราว รักษา hyperkalemia"],
+      ["SBP ต่ำ","ต่ำแต่ไม่มีอาการ: ให้ยาต่อ","มีอาการ: หยุดยาลด BP ที่ไม่ใช่ GDMT → ลด diuretic ถ้าไม่บวม → ลด RASi ก่อน BB"],
+      ["HR","50–60 ไม่มีอาการ: คงขนาด BB","&lt;50 หรือมีอาการ: ลด BB ครึ่งหนึ่ง ทบทวน digoxin/amiodarone"],
+      ["eGFR ลดหลังเริ่ม SGLT2i","ลดเล็กน้อยช่วงแรกเป็นผลที่คาดได้ ให้ต่อ","ป่วยหนัก งดอาหาร ขาดน้ำ ผ่าตัด: หยุดชั่วคราว (euglycemic DKA)"]
+    ],"สรุปจากแนวปฏิบัติ ESC/HFA และ SIGN 147 · ACC ECDP 2024 เน้นว่า eGFR ลดลงไม่จำเป็นต้องหยุดยาเสมอไป")}`,
+
+  pef: ()=>`
+    ${secH("ยาใน HFmrEF / HFpEF: ไทย เทียบสากล")}
+    ${tbl(["ยา","HFCT 2023 HFmrEF","HFCT 2023 HFpEF","ESC 2026"],[
+      ["SGLT2i","I","I","Class I ทุก LVEF"],
+      ["MRA","IIa","IIa (LVEF ปลายล่าง)","Class I ทุก LVEF"],
+      ["ARNI","IIb","IIb (LVEF ปลายล่าง)","HFpEF: พิจารณา ACEI/ARB/ARNI"],
+      ["ACEI/ARB","IIb","ARB IIb","—"],
+      ["Beta-blocker","IIb (sinus)","ไม่มีคำแนะนำ","HFrEF &lt;50% ให้เป็น foundational"],
+      ["Diuretic","I (congestion)","I (congestion)","ใช้เมื่อ congestion"],
+      ["GLP-1 RA / tirzepatide","—","—","IIa (LVEF ≥45%, BMI ≥30)"]
+    ],"ESC 2026 นับ LVEF 41–49% เป็น HFrEF จึงให้ foundational therapy 4 กลุ่มในช่วงนี้ด้วย")}
+    ${secH("H₂FPEF score (ใช้ประกอบเมื่อ LVEF ≥50%)")}
+    ${tbl(["ตัวแปร","เกณฑ์","คะแนน"],[
+      ["H — Heavy","BMI &gt;30","2"],["H — Hypertension","ใช้ยาลดความดัน ≥2 ตัว","1"],["F — AF","paroxysmal หรือ persistent","3"],
+      ["P — Pulmonary HT","PASP &gt;35 มม.ปรอท","1"],["E — Elder","อายุ &gt;60 ปี","1"],["F — Filling pressure","E/e′ &gt;9","1"]
+    ],"รวม 0–9 · ≥6 โอกาสเป็น HFpEF สูง · 2–5 ต้องตรวจเพิ่ม · คำนวณได้ในหน้าเครื่องมือ")}`,
+
+  device: ()=>`
+    ${secH("CRT: เทียบ AHA 2022 กับ ESC")}
+    ${tbl(["QRS และ morphology (LVEF ≤35%, sinus)","AHA 2022","ESC 2021"],[
+      ["LBBB ≥150 ms","1","I"],
+      ["LBBB 120/130–149 ms","2a (120–149)","IIa (130–149)"],
+      ["Non-LBBB ≥150 ms","2a","IIa"],
+      ["Non-LBBB 120/130–149 ms","2b (NYHA III–IV)","IIb (130–149)"],
+      ["QRS &lt;120 ms (AHA) / &lt;130 ms (ESC)","3: No benefit","III"]
+    ],"ESC 2026 เพิ่ม: LBBB QRS ≥150 และ LVEF ≤35% อาจวางแผน CRT ไปพร้อมการเริ่ม GDMT แล้วประเมิน LVEF ซ้ำก่อนใส่")}`,
+
+  fu: ()=>`
+    ${secH("Checklist ก่อนจำหน่าย")}
+    <div class="ck static">
+      <label><input type="checkbox"> Congestion หมดหรือเกือบหมด น้ำหนักแห้ง (dry weight) บันทึกไว้</label>
+      <label><input type="checkbox"> ยาขับปัสสาวะชนิดกินขนาดคงที่ ≥24 ชม.</label>
+      <label><input type="checkbox"> เริ่ม ARNI/ACEI/ARB · beta-blocker · MRA · SGLT2i ให้ได้มากที่สุด (ขนาดต่ำก่อน)</label>
+      <label><input type="checkbox"> หยุดยาที่ทำให้ HF แย่ลง (NSAIDs, non-DHP CCB, TZD)</label>
+      <label><input type="checkbox"> K, Cr, Na ก่อนกลับ · ส่ง iron studies</label>
+      <label><input type="checkbox"> สอนชั่งน้ำหนัก เกลือ อาการเตือน การกินยา ให้สมุดบันทึก</label>
+      <label><input type="checkbox"> นัด 7–14 วัน พร้อมเจาะ K/Cr · ส่งต่อข้อมูลให้ทีม OPD/รพ.สต.</label>
+      <label><input type="checkbox"> นัด echo ซ้ำหลังได้ยาเต็มที่ 3 เดือน (ดู ICD/CRT)</label>
+    </div>
+    <p class="muted-s">กล่องติ๊กใช้ทบทวนเท่านั้น ไม่บันทึก</p>`
+};
+
+/* ============================= THAI vs INTERNATIONAL ============================= */
+function renderCompare(){
+  const main = document.getElementById("main");
+  main.innerHTML = `
+  <div class="panel wide">
+    <div class="ch-head"><div class="bignum">⇄</div><div><h1>ไทย vs สากล</h1><div class="sub">HFCT 2019 + focused update 2022/2023 · AHA/ACC/HFSA 2022 + ACC ECDP 2024 · ESC 2021/2023 → ESC 2026</div></div></div>
+    <p class="lead-s">แนวทางไทยฉบับล่าสุดคือ HFCT 2019 ที่ปรับบางส่วนในปี 2022 (การจำแนกและยา HFrEF) และ 2023 (HFmrEF/HFpEF) ส่วน ESC ออกฉบับใหม่ทั้งเล่มในเดือนสิงหาคม 2026 และ AHA/ACC จะออกฉบับใหม่ราวปลายปี 2027 จุดที่ต่างกันมีดังนี้</p>
+    ${tbl(["ประเด็น","ไทย (HFCT)","AHA/ACC 2022 · ECDP 2024","ESC 2026"],[
+      ["การแบ่งตาม LVEF","HFrEF ≤40 · HFmrEF 41–49 · HFpEF ≥50 · HFimpEF (2022)","เหมือนไทย","HFrEF &lt;50 · HFpEF ≥50 (ไม่มี HFmrEF) · Universal Definition 2026 ไม่กำหนดจุดตัด"],
+      ["ชื่อเรียกการรักษา","GDMT","GDMT 4 pillars","Foundational / Additional medical therapy / Guideline-directed interventional therapy"],
+      ["RASi ใน HFrEF","ARNI หรือ ACEI/ARB · SGLT2i Class I (2022)","ARNI เป็นตัวแรก · ACEI เมื่อ ARNI ไม่ได้","ACEI/ARNI/ARB เป็น foundational"],
+      ["LVEF 41–49%","SGLT2i I · MRA IIa · ARNI/ACEI/ARB/BB IIb","SGLT2i 2a · ARNI/ACEI/ARB/MRA/BB 2b","เป็น HFrEF → ยา 4 กลุ่ม"],
+      ["HFpEF","SGLT2i I · MRA IIa · ARNI/ARB IIb","SGLT2i 2a · MRA/ARNI/ARB 2b","SGLT2i + MRA เป็น foundational (Class I) · GLP-1 RA IIa ในคนอ้วน"],
+      ["Finerenone","ไม่กล่าวถึง","ไม่กล่าวถึง (ออกก่อน FINEARTS-HF)","มีขนาดยาในตาราง (10–20 → 20–40 มก.)"],
+      ["Digoxin","—","2b","IIa (DIGIT-HF) · ไม่ loading"],
+      ["เกณฑ์วินิจฉัย HFpEF","เกณฑ์ย่อ: echo/NP อย่างน้อย 1 ข้อ · H₂FPEF ≥6 / HFA-PEFF ≥5","หลักฐาน filling pressure สูง (NP หรือ hemodynamic)","LVEF ≥50 + หลักฐาน diastolic dysfunction"],
+      ["Iron deficiency","ไม่ได้ปรับใน focused update 2022/2023","ferritin &lt;100 หรือ 100–299 + TSAT &lt;20% · IV iron 2a","TSAT &lt;20% เป็นนิยามหลัก · FCM/FDI พิจารณาเพื่อลดการนอน รพ."],
+      ["ยาขับปัสสาวะใน ADHF","ฉบับ 2019 (ไม่ได้ปรับ)","IV ทันที เพิ่มขนาดเมื่อตอบสนองไม่พอ","พิจารณาใช้ urinary Na ปรับยาช่วงแรก · เริ่ม SGLT2i ใน รพ."],
+      ["การปรับยา","—","เริ่มครบ 4 กลุ่มให้เร็ว ถึงขนาดสูงสุดใน 3 เดือน","ปรับทุก 1–2 สัปดาห์ · คงยาต่อแม้ LVEF ดีขึ้น"],
+      ["นัดหลังจำหน่าย","—","ภายใน 7 วัน (2a)","1–2 สัปดาห์ + ปรับยาเร็วใน 6 สัปดาห์ (ESC 2021/2023)"]
+    ])}
+    <div class="callout"><b>ข้อสังเกตในบริบทไทย</b>
+      <ul class="bullets">
+        <li><span>ARNI, IV iron ชนิด FCM/FDI, NT-proBNP และ echo อาจยังไม่มีใน รพ.ชุมชนหลายแห่ง — ACEI/ARB + beta-blocker + spironolactone + SGLT2i ที่หาได้ยังให้ประโยชน์มาก</span></li>
+        <li><span>การยุบ HFmrEF ของ ESC 2026 ยังไม่ใช่มาตรฐานไทย ให้เขียนเวชระเบียนตาม HFCT แต่ใช้เหตุผลของสากลประกอบการเลือกยาใน LVEF 41–49%</span></li>
+        <li><span>ข้อมูล ESC 2026 ในหน้านี้สรุปจากข่าวประชาสัมพันธ์ของ ESC และบทสรุปที่เผยแพร่ ส่วน class of recommendation ที่ไม่ได้ระบุชัดในแหล่งเหล่านั้น เขียนเป็น "แนะนำ" หรือ "ควรพิจารณา"</span></li>
+      </ul>
+    </div>
+  </div>`;
+}
+
+/* ============================= CASES ============================= */
+const CASES = [
+{ id:"c1", set:"acute", t:"ER · ชายอายุ 68 ปี เหนื่อยนอนราบไม่ได้หลังสงกรานต์",
+  stem:"HFrEF (LVEF 30% เมื่อปีก่อน) ยาเดิม furosemide 40 มก. bid, enalapril 5 มก. bid, carvedilol 12.5 มก. bid, spironolactone 25 มก. · ยาหมด 1 สัปดาห์ กินอาหารเค็มงานบุญ · BP 152/94 HR 112 (AF ใหม่) RR 30 SpO₂ 87% room air · JVP สูง crackles ถึงกลางปอด บวมกดบุ๋ม ปลายมืออุ่น · ECG: AF ไม่มี ST elevation · K 4.1 Cr 1.4 (เดิม 1.2)",
+  steps:[
+    {q:"Profile ของผู้ป่วยรายนี้คือ?", c:["Warm–dry","Warm–wet","Cold–wet","Cold–dry"], a:1, e:"มี congestion ชัด (JVP, crackles, บวม) และ perfusion ดี (อุ่น BP ดี) = warm–wet ซึ่งพบบ่อยที่สุด"},
+    {q:"การช่วยหายใจที่เหมาะสมที่สุดตอนนี้?", c:["O₂ cannula 2 ลิตร แล้วรอ","CPAP/BiPAP ร่วมกับ O₂ ให้ SpO₂ ≥90%","ใส่ท่อช่วยหายใจทันที","ไม่ต้องให้ O₂"], a:1, e:"RR 30 SpO₂ 87% = respiratory distress → NIV ลดการใส่ท่อ BP ดีพอให้ใช้ได้"},
+    {q:"ขนาด furosemide IV เริ่มต้นที่เหมาะสม (ขนาดกินเดิม 80 มก./วัน)?", c:["20 มก. IV ครั้งเดียว","80 มก. IV bolus แล้วให้ซ้ำทุก 12 ชม. (รวม 80–200 มก./วัน)","1,000 มก. IV","รอผล NT-proBNP ก่อน"], a:1, e:"IV 1–2.5 เท่าของขนาดกินต่อวัน แบ่งให้ · ไม่ต้องรอ NT-proBNP เมื่อภาพชัด"},
+    {q:"ให้ furosemide 80 มก. IV แล้ว 2 ชม. spot urine Na 42 mmol/L ทำอย่างไรต่อ?", c:["ให้ซ้ำขนาดเดิมอีก 12 ชม.","เพิ่มเป็น 160 มก. IV ทันทีแล้วประเมินซ้ำ","หยุดยาขับปัสสาวะ","ให้ NSS 500 มล."], a:1, e:"UNa <50–70 = natriuresis ไม่พอ ให้เพิ่มเป็น 2 เท่า"},
+    {q:"เรื่อง BP 152/94 ร่วมกับ pulmonary edema ยาใดช่วยได้?", c:["Nitroglycerin IV เริ่ม 10–20 µg/นาที","Dobutamine","Norepinephrine","Diltiazem IV"], a:0, e:"SBP >110 กับ pulmonary edema ใช้ nitroglycerin ได้ · diltiazem ห้ามใน HFrEF"},
+    {q:"Carvedilol ที่ได้อยู่ ควรทำอย่างไร?", c:["หยุดทันทีเพราะเป็น HF กำเริบ","ให้ต่อ (อาจลดขนาดชั่วคราวถ้า BP/HR ไม่เอื้อ) เพราะไม่ใช่ shock","เพิ่มเป็น 50 มก. bid","เปลี่ยนเป็น atenolol"], a:1, e:"ไม่หยุด beta-blocker ใน decompensation ที่ไม่ใช่ shock การหยุดเพิ่มอัตราตาย · ช่วยคุม rate AF ด้วย"},
+    {q:"วันที่ 4 หายบวม น้ำหนักลด 6 กก. BP 112/70 HR 82 K 4.4 eGFR 52 ก่อนจำหน่ายควรทำอะไรเพิ่ม?", c:["กลับบ้านด้วยยาเดิมทั้งหมด นัด 3 เดือน","เริ่ม SGLT2i, วางแผนเปลี่ยน enalapril เป็น ARNI (เว้น 36 ชม.), ให้ anticoagulant ตามความเสี่ยงของ AF, นัด 7–14 วัน","หยุด spironolactone","เพิ่ม digoxin loading"], a:1, e:"ใช้ช่วงนอน รพ.เติม foundational therapy ให้ครบ จัดการ AF และนัดเร็ว"}
+  ],
+  take:"ตัวกระตุ้นคือ ยาหมด + เค็ม + AF ใหม่ · ใส่ในแผนจำหน่ายทั้งสามข้อ (เติมยา สอนเรื่องเกลือ คุม AF)"},
+
+{ id:"c2", set:"acute", t:"ER · หญิงอายุ 54 ปี เหนื่อย ซึม ความดันต่ำ",
+  stem:"ไม่มีโรคประจำตัว เหนื่อยมากขึ้น 5 วัน ซึมลง · BP 84/62 HR 124 RR 32 SpO₂ 90% (O₂ mask) · ปลายมือเย็นชื้น capillary refill 4 วินาที ปัสสาวะออกน้อย JVP สูง crackles ทั้งสองข้าง · ECG: sinus tachycardia, ST elevation V1–V4 · lactate 4.6",
+  steps:[
+    {q:"Profile และภาวะคือ?", c:["Warm–wet, ADHF ธรรมดา","Cold–wet, cardiogenic shock จาก anterior STEMI","Cold–dry, hypovolemia","Sepsis"], a:1, e:"Hypoperfusion + congestion + ST elevation = cardiogenic shock จาก ACS"},
+    {q:"สิ่งที่ต้องทำเร่งด่วนที่สุดคือ?", c:["ให้ furosemide 80 มก. แล้วสังเกต 6 ชม.","Activate STEMI network ส่ง primary PCI โดยเร็วที่สุด พร้อมพยุงความดัน","ให้ nitroglycerin drip","เริ่ม ARNI"], a:1, e:"Cardiogenic shock จาก STEMI ต้อง reperfusion ด้วย PCI ไม่ว่าเวลาจะนานเท่าใด (ดูบท ACS)"},
+    {q:"ระหว่างรอส่งต่อ ยาพยุงความดันที่เหมาะสม?", c:["Norepinephrine ให้ MAP ≥65 ร่วมกับ dobutamine ถ้ายัง hypoperfusion","Nitroglycerin","Metoprolol IV","Diltiazem"], a:0, e:"SBP <90 + hypoperfusion: vasopressor ก่อน แล้วเพิ่ม inotrope · ห้ามยาลด BP และ beta-blocker"},
+    {q:"ยาขับปัสสาวะในรายนี้?", c:["ห้ามให้ตลอด","ให้หลัง perfusion ดีขึ้น ใช้ขนาดเหมาะสม","ให้ 500 มก. ทันที","ให้ NSS แทน"], a:1, e:"Cold–wet แก้ perfusion ก่อน แล้วจึงขับน้ำ"}
+  ],
+  take:"Cold–wet ต้องหาสาเหตุที่แก้ได้ (ACS, mechanical complication, arrhythmia) และส่งต่อศูนย์ที่ทำ PCI/MCS ได้เร็ว"},
+
+{ id:"c3", set:"acute", t:"Ward · ชายอายุ 76 ปี CKD บวมไม่ยุบ",
+  stem:"HFpEF LVEF 58% CKD eGFR 28 · นอน รพ. 3 วัน ได้ furosemide 120 มก. IV bid ปัสสาวะ 900 มล./วัน น้ำหนักไม่ลด ยังบวมถึงต้นขา · BP 138/72 · Na 134 K 3.6 Cr 2.1 (แรกรับ 1.9) · spot urine Na 2 ชม.หลังฉีด 38 mmol/L",
+  steps:[
+    {q:"ภาวะนี้เรียกว่า?", c:["Diuretic resistance","Cardiogenic shock","Hypovolemia","ผู้ป่วยหายบวมแล้ว"], a:0, e:"Loop ขนาดสูงแล้ว natriuresis ยังต่ำและยังบวม = diuretic resistance"},
+    {q:"ขั้นต่อไปที่เหมาะสม?", c:["หยุดยาขับปัสสาวะเพราะ Cr ขึ้น","Sequential nephron blockade: เพิ่ม HCTZ (หรือ metolazone) หรือ acetazolamide 500 มก. IV ร่วมกับ loop และเริ่ม/ให้ SGLT2i ต่อ","เปลี่ยนเป็น furosemide กิน","ให้ albumin ทุกราย"], a:1, e:"เมื่อ loop ขนาดสูงไม่พอ ให้ปิดกั้นหลายตำแหน่งของ nephron · ติดตาม K, Na, Cr ทุกวัน"},
+    {q:"Cr ขึ้นจาก 1.9 เป็น 2.1 ขณะยังบวมมาก ข้อใดถูก?", c:["ต้องหยุดขับน้ำทันที","Cr ขึ้นเล็กน้อยไม่ใช่เหตุให้หยุด ถ้ายังมี congestion ต้องขับน้ำต่อ","ให้ NSS","ส่งฟอกไตทันที"], a:1, e:"ความเสี่ยงจาก congestion ค้างมากกว่า Cr ขึ้นเล็กน้อย · ถ้ายังไม่ได้ผลจึงปรึกษาเรื่อง ultrafiltration/dialysis"},
+    {q:"หลังเพิ่ม HCTZ 2 วัน K 2.9 Na 129 ทำอย่างไร?", c:["หยุดทุกอย่าง","ให้ KCl ทดแทน ลดหรือเว้น thiazide เมื่อบวมลดลง ติดตาม Na และ K ใกล้ชิด","ให้ NSS 3% ทันที","เพิ่ม HCTZ"], a:1, e:"Thiazide ทำให้ K และ Na ต่ำได้มาก ต้องทดแทนและใช้ช่วงสั้น (ดูบท hypokalemia)"}
+  ],
+  take:"ใน CKD loop ต้องใช้ขนาดสูงกว่าปกติ ประเมินด้วย UNa และปัสสาวะ ไม่ใช่ดูแค่ Cr"},
+
+{ id:"c4", set:"opd", t:"OPD · นัด 10 วันหลังจำหน่าย: ปรับ GDMT",
+  stem:"ชายอายุ 60 ปี HFrEF LVEF 28% (ischemic) จำหน่ายพร้อม sacubitril/valsartan 24/26 bid, bisoprolol 1.25, spironolactone 12.5, dapagliflozin 10, furosemide 40 มก./วัน · วันนี้ NYHA II ไม่บวม น้ำหนักเท่าวันจำหน่าย · BP 116/72 HR 86 sinus · K 4.6 Cr 1.3 (ตอนจำหน่าย 1.2) eGFR 60 · ferritin 82 TSAT 15% Hb 12.4",
+  steps:[
+    {q:"การปรับยาวันนี้ที่เหมาะสมที่สุด?", c:["ไม่ปรับ รอ 3 เดือน","เพิ่ม bisoprolol เป็น 2.5 มก. และ/หรือ ARNI เป็น 49/51 bid แล้วเจาะ K/Cr ใน 1–2 สัปดาห์","หยุด spironolactone","เพิ่ม furosemide เป็น 80 มก."], a:1, e:"BP HR K Cr เอื้อให้เพิ่มยา · ปรับทีละ 1–2 ตัวทุก 1–2 สัปดาห์ (STRONG-HF)"},
+    {q:"ผล iron studies แปลว่าอะไร?", c:["ไม่มีปัญหาเพราะไม่ซีด","Iron deficiency — พิจารณา IV iron (FCM/FDI)","ให้ธาตุเหล็กกินพอ","ต้องส่องกล้องก่อนทุกราย"], a:1, e:"Ferritin <100 และ TSAT <20% เข้าเกณฑ์ทั้งเดิมและ ESC 2026 · ใน HF ไม่ต้องรอซีด · ถ้ามีข้อบ่งชี้หา GI blood loss ตามปกติ"},
+    {q:"Furosemide 40 มก. ควรทำอย่างไรในอนาคต?", c:["ให้ขนาดนี้ตลอดชีวิต","ลดลงหรือหยุดได้ถ้า euvolemic ต่อเนื่อง โดยเฉพาะเมื่อเพิ่ม ARNI/SGLT2i","เพิ่มทุกครั้งที่นัด","เปลี่ยนเป็น HCTZ"], a:1, e:"Loop ใช้คุม congestion เท่านั้น ลดขนาดเมื่อแห้งเพื่อเปิดทางให้ปรับ GDMT (BP ไม่ต่ำเกิน)"},
+    {q:"หลังได้ยาครบเป้าหมาย 3 เดือน echo ซ้ำ LVEF 32% ECG QRS 96 ms ขั้นต่อไป?", c:["ไม่ต้องทำอะไร","ส่งพิจารณา ICD primary prevention (LVEF ≤35%, NYHA II, >40 วันหลัง MI)","ใส่ CRT","หยุด bisoprolol"], a:1, e:"QRS แคบไม่เข้าเกณฑ์ CRT แต่เข้าเกณฑ์ ICD"}
+  ],
+  take:"นัดแรกหลังจำหน่ายเป็นโอกาสทองในการปรับยา — ดู BP, HR, K, Cr แล้วเพิ่มยาทันทีถ้าปลอดภัย"},
+
+{ id:"c5", set:"opd", t:"OPD · K สูงและ Cr ขึ้นหลังเพิ่ม MRA",
+  stem:"หญิงอายุ 70 ปี HFrEF LVEF 30% เบาหวาน CKD · 2 สัปดาห์ก่อนเพิ่ม spironolactone จาก 12.5 เป็น 25 มก. · ยาอื่น: enalapril 10 bid, carvedilol 12.5 bid, empagliflozin 10 · วันนี้ K 5.8 Cr 1.6 (เดิม 1.3, ขึ้น 23%) BP 108/64 · ซื้อยาแก้ปวดเข่ากินเองทุกวัน",
+  steps:[
+    {q:"ขั้นแรกที่ควรทำ?", c:["หยุดยา HF ทุกตัว","ถามและหยุด NSAIDs, ทบทวน K supplement/เกลือโพแทสเซียม/อาหาร K สูง และลด spironolactone เป็น 12.5 มก.","เพิ่ม enalapril","หยุด empagliflozin"], a:1, e:"K >5.5 ให้ลด MRA ครึ่งหนึ่งและหาสาเหตุ · NSAIDs เป็นตัวกระตุ้นสำคัญ"},
+    {q:"Cr ขึ้น 23% จากเดิม ควรทำอย่างไรกับ enalapril?", c:["หยุดถาวร","ให้ต่อ — ขึ้น <50% ยอมรับได้ ตรวจซ้ำ 1–2 สัปดาห์","เปลี่ยนเป็น diltiazem","เพิ่มเป็น 20 bid วันนี้"], a:1, e:"ยอมรับได้ถึง 50% แต่ยังไม่ควรเพิ่มขนาดจน K และ Cr คงที่"},
+    {q:"ถ้า K ≥6.0 พร้อม ECG มี peaked T ควรทำอย่างไร?", c:["นัด 1 เดือน","รักษา hyperkalemia เร่งด่วนที่ ER หยุด MRA และพัก ACEI ชั่วคราว","ให้ furosemide กินอย่างเดียว","ให้ KCl"], a:1, e:"K ≥6.0 ต้องหยุด MRA/RASi ชั่วคราวและรักษาภาวะฉุกเฉิน แล้วค่อยกลับมาเริ่มใหม่เมื่อปลอดภัย"}
+  ],
+  take:"K สูงเป็นสาเหตุอันดับต้นที่ทำให้ GDMT ถูกหยุดถาวร — แก้ที่สาเหตุแล้วกลับมาให้ยาใหม่ในขนาดที่ทนได้"},
+
+{ id:"c6", set:"opd", t:"OPD · HFpEF อ้วนกับ AF",
+  stem:"หญิงอายุ 74 ปี เหนื่อยเวลาขึ้นบันได 6 เดือน ขาบวม · HT ใช้ amlodipine + losartan, AF ได้ apixaban · BMI 33 · BP 146/82 HR 92 · echo LVEF 62% LA volume index 46 มล./ม.² E/e′ 14 PASP 42 · NT-proBNP 980 pg/mL · eGFR 55 K 4.3",
+  steps:[
+    {q:"เข้าเกณฑ์ HFpEF ตาม HFCT 2023 หรือไม่?", c:["ไม่เข้า เพราะ LVEF ปกติ","เข้า: อาการ + LVEF ≥50% + หลักฐาน diastolic dysfunction (LAVI >40 ใน AF, E/e′ >9, PASP >35, NT-proBNP >365 ใน AF)","ต้องทำ cardiac cath ก่อน","ต้องได้ H₂FPEF 9 คะแนน"], a:1, e:"ครบ 3 ข้อ · H₂FPEF = อ้วน 2 + HT 1 + AF 3 + PASP 1 + อายุ 1 + E/e′ 1 = 9"},
+    {q:"ยาที่ควรเริ่มก่อนคือ?", c:["SGLT2i (+ loop diuretic ขนาดต่ำถ้าบวม)","Ivabradine","Beta-blocker ขนาดสูงทุกราย","Digoxin loading"], a:0, e:"SGLT2i Class I ใน HFpEF · diuretic คุม congestion"},
+    {q:"ESC 2026 เพิ่มทางเลือกใดสำหรับคนไข้รายนี้?", c:["MRA (Class I) และ semaglutide/tirzepatide (IIa เพราะ LVEF ≥45%, BMI ≥30)","Dronedarone","ไม่มี","Pioglitazone"], a:0, e:"MRA ทุก LVEF และ GLP-1 based therapy ในคนอ้วน · ไทยให้ MRA IIa"},
+    {q:"คุม BP และ AF อย่างไร?", c:["หยุดยาความดันทั้งหมด","คุม BP ให้ได้เป้า (ปรับ RASi/MRA/diuretic) และคุม rate AF ให้เหมาะสม anticoagulant ต่อ","ให้ NSAIDs ลดปวดเข่า","หยุด apixaban"], a:1, e:"โรคร่วมเป็นตัวขับเคลื่อนหลักของ HFpEF"}
+  ],
+  take:"HFpEF = SGLT2i + diuretic + MRA (สากลแรงขึ้น) + จัดการอ้วน BP AF"},
+
+{ id:"c7", set:"opd", t:"OPD · LVEF ดีขึ้นแล้วอยากหยุดยา",
+  stem:"ชายอายุ 45 ปี เคยเป็น HFrEF LVEF 22% จาก alcohol + methamphetamine · หยุดทั้งสองอย่าง ได้ ARNI 97/103 bid, bisoprolol 10, spironolactone 25, dapagliflozin 10 มา 18 เดือน · ตอนนี้ไม่มีอาการ LVEF 54% LV ขนาดปกติ NT-proBNP 90 · ขอหยุดยาเพราะค่าใช้จ่าย",
+  steps:[
+    {q:"ภาวะนี้คือ?", c:["หายจาก HF แล้ว","HFimpEF","HFpEF ใหม่","HFmrEF"], a:1, e:"เดิม ≤40% ดีขึ้น ≥10 จุดเป็น >40% = HFimpEF · การวินิจฉัย HF ยังคงอยู่"},
+    {q:"คำแนะนำที่เหมาะสมที่สุด?", c:["หยุดยาทุกตัวทันที","ให้ยาต่อ อธิบายว่าหยุดแล้วกลับเป็นซ้ำบ่อย (TRED-HF) ช่วยหาทางลดค่าใช้จ่าย เช่น เปลี่ยน ARNI เป็น ACEI/ARB ในบัญชียาหลัก","หยุดเฉพาะ bisoprolol","เปลี่ยนเป็นยาสมุนไพร"], a:1, e:"AHA 2022 Class 1 ให้ GDMT ต่อ · ESC 2026 อาจพิจารณาค่อย ๆ ลดเฉพาะรายที่คัดเลือกอย่างเข้มงวดและติดตามใกล้ชิด"}
+  ],
+  take:"LVEF ดีขึ้นเพราะยาและการหยุดสารพิษ — ช่วยผู้ป่วยหาทางให้ยาต่อได้ ดีกว่าการหยุด"}
+];
+
+function renderCases(){
+  const main = document.getElementById("main");
+  const blk = (set,title)=>`<div class="section-h"><h2>${title}</h2><div class="line"></div></div>` +
+    CASES.filter(c=>c.set===set).map(c=>`<div class="case" id="${c.id}"><div class="case-h"><span class="tagset ${set}">${set==="acute"?"ER / ward":"OPD"}</span><h3>${c.t}</h3></div><div class="case-stem">${c.stem}</div><div class="case-steps" data-case="${c.id}"></div></div>`).join("");
+  main.innerHTML = `<div class="panel">
+    <div class="ch-head"><div class="bignum">✚</div><div><h1>เคสฝึก</h1><div class="sub">ตอบทีละขั้น คำถามถัดไปจะเปิดหลังตอบข้อก่อน · ${CASES.length} เคส</div></div></div>
+    ${blk("acute","Acute management: ER และหอผู้ป่วย")}
+    ${blk("opd","Follow-up management: OPD")}
+  </div>`;
+  CASES.forEach(c=>drawCase(c));
+}
+function drawCase(c){
+  const box = document.querySelector(`.case-steps[data-case="${c.id}"]`);
+  box.innerHTML = `<div class="ctake" hidden><b>ประเด็นสำคัญ:</b> ${c.take}</div>`;
+  addCaseStep(c, box, 0);
+}
+function addCaseStep(c, box, i){
+  const s = c.steps[i];
+  const st = document.createElement("div");
+  st.className = "cstep";
+  st.innerHTML = `<div class="cq"><b>${i+1}.</b> ${s.q}</div>
+    <div class="copts">${s.c.map((o,j)=>`<button type="button" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join("")}</div>
+    <div class="cexp"></div>`;
+  box.insertBefore(st, box.querySelector(".ctake"));
+  st.querySelectorAll(".copts button").forEach(b=>{
+    b.onclick = ()=>{
+      if(st.classList.contains("done")) return;
+      st.classList.add("done");
+      const j = +b.dataset.j;
+      b.classList.add(j===s.a?"right":"wrong");
+      st.querySelectorAll(".copts button")[s.a].classList.add("right");
+      st.querySelector(".cexp").innerHTML = (j===s.a?"<b>ถูกต้อง</b> — ":"<b>ยังไม่ใช่</b> — ")+s.e;
+      if(i===c.steps.length-1) box.querySelector(".ctake").hidden=false;
+      else addCaseStep(c, box, i+1);
+    };
+  });
+}
+
+/* ============================= TOOLS ============================= */
+function seg(name, opts, on){
+  return `<div class="seg" data-name="${name}">${opts.map((o,i)=>`<button type="button" data-v="${o[1]}" class="${(on===undefined?i===0:o[1]==on)?'on':''}">${o[0]}</button>`).join("")}</div>`;
+}
+function segVal(root, name){ const b=root.querySelector(`.seg[data-name="${name}"] .on`); return b?b.dataset.v:""; }
+
+/* --- flow walker --- */
+const FLOW = {
+  start:{q:"ผู้ป่วยมาด้วยเหนื่อยหรือบวม — อาการเฉียบพลันหรือรุนแรงหรือไม่?", o:[["เฉียบพลัน / ที่ ER","a1"],["ค่อยเป็นค่อยไป / OPD","c1"]]},
+  a1:{q:"มี shock, หายใจล้มเหลว หรือ ECG เป็น STEMI หรือไม่?", o:[["มี","aR0"],["ไม่มี","a2"]]},
+  aR0:{r:"red", t:"Resuscitate ก่อน", d:"ช่วยหายใจ (NIV/ใส่ท่อ) · พยุงความดัน · STEMI → เครือข่าย PCI · หาสาเหตุ CHAMPIT · ส่งต่อศูนย์ที่พร้อม", go:[["บท ADHF","adhf"],["บท ACS","acs"]]},
+  a2:{q:"ผล NT-proBNP (หรือ BNP)?", o:[["<300 (BNP <100)","aR1"],["อยู่ใน grey zone","a3"],["≥ cut-off ตามอายุ","aR2"],["ตรวจไม่ได้","a3"]]},
+  aR1:{r:"ok", t:"Acute HF ไม่น่าเป็น", d:"หาสาเหตุอื่น: pneumonia, COPD/asthma, PE, ซีด, metabolic acidosis, pneumothorax · ระวังคนอ้วนมากและ flash pulmonary edema ชั่วโมงแรก"},
+  a3:{q:"ตรวจร่างกาย / CXR / POCUS มีหลักฐาน congestion หรือไม่ (JVP, crackles, B-lines, effusion, IVC โป่ง)?", o:[["มี","aR2"],["ไม่มี","aR3"]]},
+  aR2:{r:"warn", t:"น่าจะเป็น decompensated HF", d:"แบ่ง profile → ให้ยาขับปัสสาวะตามเครื่องมือ · หาตัวกระตุ้น · ทำ echo (ถ้าไม่เคยมี) · เริ่ม/ปรับ GDMT เมื่อคงที่", go:[["เลือก profile","t-profile"],["คำนวณยาขับปัสสาวะ","t-diur"]]},
+  aR3:{r:"ok", t:"ยังไม่สนับสนุน HF", d:"ทบทวนการวินิจฉัยแยกโรค ติดตามอาการ ส่ง echo เมื่อพร้อมถ้ายังสงสัย"},
+  c1:{q:"ประวัติ ตรวจร่างกาย และ ECG เข้าได้กับ HF หรือไม่ (ECG ปกติทั้งหมดทำให้ HF ไม่น่าเป็น)?", o:[["เข้าได้","c2"],["ไม่เข้า","cR0"]]},
+  cR0:{r:"ok", t:"HF ไม่น่าเป็น", d:"หาสาเหตุอื่นของอาการเหนื่อย: ปอด ซีด thyroid อ้วน deconditioning ซึมเศร้า"},
+  c2:{q:"NT-proBNP ≥125 pg/mL (BNP ≥35)?", o:[["ใช่","c3"],["ไม่ใช่","cR1"],["ตรวจไม่ได้","c3"]]},
+  cR1:{r:"ok", t:"HF ไม่น่าเป็น", d:"ยกเว้นคนอ้วนมากหรือสงสัยมาก ให้ส่ง echo ต่อ"},
+  c3:{q:"Echo: LVEF เท่าไร?", o:[["≤40%","cR2"],["41–49%","cR3"],["≥50%","c4"]]},
+  cR2:{r:"warn", t:"HFrEF", d:"เริ่ม foundational therapy 4 กลุ่มให้เร็ว · หาสาเหตุ (ischemic, alcohol, ยาบ้า, thyroid, valve) · echo ซ้ำ 3 เดือนดู ICD/CRT", go:[["บท GDMT","gdmt"],["ตัวช่วยปรับ GDMT","t-gdmt"]]},
+  cR3:{r:"warn", t:"HFmrEF (ไทย/AHA) = HFrEF (ESC 2026)", d:"SGLT2i ทุกราย · พิจารณา ARNI/ACEI/ARB + beta-blocker + MRA โดยเฉพาะ LVEF ใกล้ 40% หรือเคยต่ำกว่า", go:[["บท HFpEF","pef"]]},
+  c4:{q:"มีหลักฐาน diastolic dysfunction หรือ filling pressure สูง (เกณฑ์ HFCT 2023 หรือ H₂FPEF ≥6)?", o:[["มี","cR4"],["ไม่ชัด","cR5"]]},
+  cR4:{r:"warn", t:"HFpEF", d:"Diuretic ถ้าบวม · SGLT2i · พิจารณา MRA · GLP-1 RA ถ้าอ้วน · คุม BP AF โรคร่วม · หาสาเหตุเฉพาะ (amyloid, HCM, constrictive)", go:[["บท HFpEF","pef"],["H₂FPEF","t-h2fpef"]]},
+  cR5:{r:"ok", t:"ยังยืนยัน HFpEF ไม่ได้", d:"หาสาเหตุอื่น · พิจารณา exercise/stress echo หรือส่งต่อ"}
+};
+function drawFlow(root, path){
+  const id = path[path.length-1], n = FLOW[id];
+  const trail = path.length>1 ? `<div class="wpath">${path.slice(0,-1).map((p,i)=>{ const nx=path[i+1]; const opt=FLOW[p].o.find(o=>o[1]===nx); return `<span>${opt?opt[0]:""}</span>`; }).join("")}</div>` : "";
+  let body;
+  if(n.r){
+    body = `<div class="wres ${n.r}"><b>${n.t}</b><div>${n.d}</div>${n.go?`<div class="wgo">${n.go.map(g=>`<button type="button" class="icon-btn" data-go="${g[1]}">${g[0]} →</button>`).join("")}</div>`:""}</div>`;
+  } else {
+    body = `<div class="wq">${n.q}</div><div class="wopts">${n.o.map(o=>`<button type="button" class="btn" data-next="${o[1]}">${o[0]}</button>`).join("")}</div>`;
+  }
+  root.innerHTML = trail + body + (path.length>1?`<button type="button" class="icon-btn wback">← ย้อน</button> <button type="button" class="icon-btn wreset">เริ่มใหม่</button>`:"");
+  root.querySelectorAll("[data-next]").forEach(b=>b.onclick=()=>drawFlow(root, path.concat(b.dataset.next)));
+  const bk=root.querySelector(".wback"); if(bk) bk.onclick=()=>drawFlow(root, path.slice(0,-1));
+  const rs=root.querySelector(".wreset"); if(rs) rs.onclick=()=>drawFlow(root, ["start"]);
+  root.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{
+    const g=b.dataset.go;
+    if(g==="acs"){ location.href="../acs/index.html"; return; }
+    if(g.startsWith("t-")){ document.getElementById(g).scrollIntoView({behavior:"smooth"}); return; }
+    goTo(g);
+  });
+}
+
+/* --- GDMT assistant data --- */
+const RAS_OPTS = [
+  ["none","ไม่ได้ยา"],
+  ["acei:1","Enalapril 2.5 มก. bid"],["acei:2","Enalapril 5 มก. bid"],["acei:3","Enalapril 10 มก. bid"],["acei:4","Enalapril 20 มก. bid (สูงสุด)"],
+  ["arb:1","Losartan 25 มก./วัน"],["arb:2","Losartan 50 มก./วัน"],["arb:3","Losartan 100 มก./วัน"],["arb:4","Losartan 150 มก./วัน (เป้า)"],
+  ["arni:1","Sacubitril/valsartan 24/26 มก. bid"],["arni:2","Sacubitril/valsartan 49/51 มก. bid"],["arni:3","Sacubitril/valsartan 97/103 มก. bid (เป้า)"]
+];
+const RAS_NAME = {acei:["","enalapril 2.5 มก. bid","enalapril 5 มก. bid","enalapril 10 มก. bid","enalapril 20 มก. bid"], arb:["","losartan 25 มก.","losartan 50 มก.","losartan 100 มก.","losartan 150 มก."], arni:["","24/26 มก. bid","49/51 มก. bid","97/103 มก. bid"]};
+const RAS_MAX = {acei:4, arb:4, arni:3};
+const BB_OPTS = [
+  ["none","ไม่ได้ยา"],
+  ["bis:1","Bisoprolol 1.25 มก."],["bis:2","Bisoprolol 2.5 มก."],["bis:3","Bisoprolol 5 มก."],["bis:4","Bisoprolol 7.5 มก."],["bis:5","Bisoprolol 10 มก. (เป้า)"],
+  ["car:1","Carvedilol 3.125 มก. bid"],["car:2","Carvedilol 6.25 มก. bid"],["car:3","Carvedilol 12.5 มก. bid"],["car:4","Carvedilol 25 มก. bid (เป้า)"],
+  ["met:1","Metoprolol succinate 25 มก."],["met:2","Metoprolol succinate 50 มก."],["met:3","Metoprolol succinate 100 มก."],["met:4","Metoprolol succinate 200 มก. (เป้า)"],
+  ["other","Atenolol / metoprolol tartrate / propranolol"]
+];
+const BB_NAME = {bis:["","1.25","2.5","5","7.5","10"].map(x=>x?`bisoprolol ${x} มก./วัน`:""), car:["","3.125","6.25","12.5","25"].map(x=>x?`carvedilol ${x} มก. bid`:""), met:["","25","50","100","200"].map(x=>x?`metoprolol succinate ${x} มก./วัน`:"")};
+const BB_MAX = {bis:5, car:4, met:4};
+const MRA_OPTS = [["none","ไม่ได้ยา"],["1","Spironolactone 12.5 มก."],["2","Spironolactone 25 มก."],["3","Spironolactone 50 มก."]];
+const SG_OPTS = [["none","ไม่ได้ยา"],["dapa","Dapagliflozin 10 มก."],["empa","Empagliflozin 10 มก."]];
+const opt = (arr, sel)=>arr.map(o=>`<option value="${o[0]}"${o[0]===sel?" selected":""}>${o[1]}</option>`).join("");
+
+function gdmtAdvice(m){
+  const g = id=>m.querySelector(id);
+  const ef = segVal(m.querySelector("#t-gdmt"),"ef"), wet = segVal(m.querySelector("#t-gdmt"),"vol")==="wet", rhythm = segVal(m.querySelector("#t-gdmt"),"rh");
+  const sbp=+g("#gSbp").value||0, hr=+g("#gHr").value||0, k=+g("#gK").value||0, egfr=+g("#gEgfr").value||0, cr=+g("#gCr").value||0;
+  const sympHypo=g("#gHypo").checked, angio=g("#gAngio").checked;
+  const ras=g("#gRas").value, bb=g("#gBb").value, mra=g("#gMra").value, sg=g("#gSg").value;
+  const A=[], N=[], F=[], L=[];
+  const H={rasStart:false,rasUp:false,rasStop:false,mraStart:false,mraUp:false,mraStop:false,bbStart:false,bbUp:false,sgStart:false};
+  // ----- safety -----
+  if(k>=6){ A.push(["red","K ≥6.0: หยุด MRA และพัก RASi/ARNI ชั่วคราว รักษา hyperkalemia (ECG, ยาลด K) แล้วตรวจซ้ำ"]); Object.assign(H,{rasStart:1,rasUp:1,rasStop:1,mraStart:1,mraUp:1,mraStop:1}); }
+  else if(k>5.5){ A.push(["warn","K >5.5: ลด MRA ครึ่งหนึ่ง (หรือหยุดชั่วคราว) ยังไม่เพิ่ม RASi · หาสาเหตุ: NSAIDs, K supplement, เกลือแทนเกลือ, อาหาร K สูง, ขาดน้ำ · ตรวจซ้ำใน 1 สัปดาห์"]); Object.assign(H,{rasUp:1,mraStart:1,mraUp:1}); if(mra!=="none") H.mraHalf=1; }
+  else if(k>=5.0){ A.push(["info","K 5.0–5.5: ให้ยาเดิมต่อได้ แต่ยังไม่เริ่ม MRA ใหม่ (AHA: เริ่มเมื่อ K <5.0) และเพิ่ม RASi อย่างระวัง"]); H.mraStart=1; }
+  if(cr>100){ A.push(["red","Cr ขึ้น >100%: หยุด RASi/MRA ชั่วคราว ประเมิน volume, NSAIDs, obstruction และปรึกษาอายุรแพทย์"]); Object.assign(H,{rasStart:1,rasUp:1,rasStop:1,mraStart:1,mraUp:1,mraStop:1}); }
+  else if(cr>50){ A.push(["warn","Cr ขึ้น >50%: ลด RASi/MRA ครึ่งหนึ่ง ดูว่าขาดน้ำหรือยาขับปัสสาวะมากไป หยุด NSAIDs ตรวจซ้ำ 1–2 สัปดาห์"]); Object.assign(H,{rasUp:1,mraStart:1,mraUp:1}); }
+  else if(cr>30){ A.push(["info","Cr ขึ้น 30–50%: ยอมรับได้ ให้ยาต่อ แต่ยังไม่เพิ่ม RASi/MRA ตรวจซ้ำ 1–2 สัปดาห์"]); Object.assign(H,{rasUp:1,mraUp:1}); }
+  if(egfr && egfr<20){ A.push(["info","eGFR <20: ไม่เริ่ม SGLT2i ใหม่ (ถ้าได้อยู่แล้ว โดยทั่วไปให้ต่อได้ — ปรึกษาอายุรแพทย์)"]); H.sgStart=1; }
+  if(egfr && egfr<=30){ A.push(["info","eGFR ≤30: ไม่เริ่ม MRA ใหม่ · ARNI เริ่ม 24/26 มก. bid"]); H.mraStart=1; }
+  if(sbp && (sbp<90 || sympHypo)){ A.push(["warn","BP ต่ำหรือมีอาการ: ยังไม่เพิ่มยาที่ลด BP · หยุดยาลด BP ที่ไม่ใช่ GDMT (nitrate, CCB, alpha-blocker) · ลดยาขับปัสสาวะถ้าไม่บวม · ถ้ายังมีอาการลด RASi ก่อน beta-blocker"]); Object.assign(H,{rasStart:1,rasUp:1,bbStart:1,bbUp:1}); }
+  else if(sbp && sbp<100){ A.push(["info","SBP 90–99: เพิ่มยาได้ทีละตัว เลือกยาที่ลด BP น้อยก่อน (SGLT2i, MRA)"]); H.rasUp=1; }
+  if(hr && hr<50){ A.push(["red","HR <50: ลด beta-blocker ครึ่งหนึ่ง ทบทวน digoxin/amiodarone/ivabradine"]); Object.assign(H,{bbStart:1,bbUp:1}); }
+  else if(hr && hr<60){ A.push(["info","HR 50–59: คงขนาด beta-blocker ไว้ก่อน"]); Object.assign(H,{bbStart:1,bbUp:1}); }
+  if(wet){ A.push(["warn","ยังมี congestion: ปรับยาขับปัสสาวะก่อน · ไม่เริ่ม beta-blocker ใหม่ (ถ้าได้อยู่ให้ต่อ) · ARNI, MRA, SGLT2i เริ่มได้ถ้า BP/K/ไตเอื้อ"]); Object.assign(H,{bbStart:1,bbUp:1}); }
+  if(angio && (ras==="none"||ras.startsWith("acei")||ras.startsWith("arni"))) A.push(["red","เคยมี angioedema: ห้าม ARNI · ถ้าเกิดจาก ACEI ห้าม ACEI · ใช้ ARB อย่างระวังหรือ hydralazine + ISDN"]);
+
+  // ----- non-HFrEF path -----
+  if(ef!=="r"){
+    if(sg==="none" && !H.sgStart) N.push(["เริ่ม SGLT2i","dapagliflozin หรือ empagliflozin 10 มก./วัน — Class I (HFCT 2023 · ESC)"]);
+    if(wet) N.push(["คุม congestion","loop diuretic ขนาดต่ำสุดที่ทำให้หายบวม"]);
+    if(mra==="none" && !H.mraStart) N.push(["พิจารณา MRA","spironolactone 12.5–25 มก. (HFCT IIa · ESC 2026 Class I) หรือ finerenone ถ้ามี · ตรวจ K/Cr ใน 1 สัปดาห์"]);
+    if(ef==="m"){ N.push(["LVEF 41–49%","พิจารณา ARNI/ACEI/ARB และ beta-blocker แบบ HFrEF (HFCT IIb; ESC 2026 นับเป็น HFrEF) โดยเฉพาะ LVEF ใกล้ 40% หรือเคยต่ำกว่า"]); }
+    else { N.push(["ARNI/ARB","อาจพิจารณาเมื่อ LVEF อยู่ปลายล่าง (HFCT IIb)"]); }
+    N.push(["โรคร่วม","คุม BP (ESC 2026 SBP <130 ใน HT) · AF: rate/rhythm + anticoagulant · BMI ≥30 และ LVEF ≥45%: semaglutide/tirzepatide (ESC 2026 IIa) · ออกกำลังกาย"]);
+    F.push("ตรวจ K/Cr 1–2 สัปดาห์หลังเริ่มหรือเพิ่ม MRA/RASi");
+    return render(A,N,F,L);
+  }
+
+  // ----- HFrEF: missing pillars -----
+  const [rT,rL] = ras==="none"?["none",0]:ras.split(":").map((x,i)=>i?+x:x);
+  const [bT,bL] = bb==="none"||bb==="other"?[bb,0]:bb.split(":").map((x,i)=>i?+x:x);
+  const mL = mra==="none"?0:+mra;
+  const miss=[];
+  if(sg==="none" && !H.sgStart) miss.push(["เริ่ม SGLT2i", (egfr && egfr<25)?"empagliflozin 10 มก./วัน (เริ่มได้ที่ eGFR ≥20; dapagliflozin เริ่มที่ ≥25)":"dapagliflozin หรือ empagliflozin 10 มก./วัน — ไม่ต้องปรับขนาด ลด BP น้อย"]);
+  if(rT==="none" && !H.rasStart && !H.rasStop){
+    if(angio) miss.push(["เริ่ม RASi","ARB ขนาดต่ำอย่างระวัง (ห้าม ARNI) หรือ hydralazine + ISDN"]);
+    else miss.push(["เริ่ม ARNI", (sbp>=100 && (!egfr||egfr>30))?"sacubitril/valsartan 24/26 มก. bid (ไม่เคยได้ RASi) — ถ้ามีไม่ได้ใช้ enalapril 2.5 มก. bid หรือ losartan 25 มก.":"sacubitril/valsartan 24/26 มก. bid (BP/eGFR ต่ำ) — ถ้าไม่มีใช้ enalapril 2.5 มก. bid"]);
+  }
+  if(mL===0 && !H.mraStart && !H.mraStop) miss.push(["เริ่ม MRA", `spironolactone ${(k>=4.5||(egfr&&egfr<50))?"12.5":"12.5–25"} มก./วัน · ตรวจ K/Cr ที่ 1 สัปดาห์`]);
+  if(bT==="none" && !H.bbStart) miss.push(["เริ่ม beta-blocker", rhythm==="af"?"bisoprolol 1.25 มก./วัน หรือ carvedilol 3.125 มก. bid (ช่วยคุม rate AF)":"bisoprolol 1.25 มก./วัน หรือ carvedilol 3.125 มก. bid"]);
+  if(bT==="other") miss.push(["เปลี่ยน beta-blocker","เปลี่ยนเป็น bisoprolol/carvedilol/metoprolol succinate (atenolol, tartrate ไม่มีหลักฐานใน HFrEF)"]);
+
+  // ----- uptitration candidates -----
+  const up=[];
+  const bbUp = (bT in BB_MAX) && bL<BB_MAX[bT] && !H.bbUp && hr>=60 && sbp>=90;
+  const rasUp = (rT in RAS_MAX) && rL<RAS_MAX[rT] && !H.rasUp && !H.rasStop && sbp>=100;
+  const rasSwitch = (rT==="acei"||rT==="arb") && !H.rasUp && !H.rasStop && sbp>=100 && !angio;
+  const mraUp = mL===1 && !H.mraUp && !H.mraStop && k<5.0 && (!egfr||egfr>30);
+  const bbTxt = bbUp ? ["เพิ่ม beta-blocker", `${BB_NAME[bT][bL]} → ${BB_NAME[bT][bL+1]}${hr>=70?" (HR ยังสูง)":""}`] : null;
+  let rasTxt=null;
+  if(rasSwitch) rasTxt = ["เปลี่ยนเป็น ARNI", rT==="acei" ? `หยุด enalapril 36 ชม.แล้วเริ่ม sacubitril/valsartan ${rL>=3?"49/51":"24/26"} มก. bid` : `หยุด losartan แล้วเริ่ม sacubitril/valsartan ${rL>=3?"49/51":"24/26"} มก. bid ได้ทันที`];
+  else if(rasUp) rasTxt = ["เพิ่ม RASi/ARNI", `${RAS_NAME[rT][rL]} → ${RAS_NAME[rT][rL+1]}`];
+  const mraTxt = mraUp ? ["เพิ่ม MRA","spironolactone 12.5 → 25 มก./วัน"] : null;
+  if(hr>=70){ if(bbTxt) up.push(bbTxt); if(rasTxt) up.push(rasTxt); } else { if(rasTxt) up.push(rasTxt); if(bbTxt) up.push(bbTxt); }
+  if(mraTxt) up.push(mraTxt);
+  if(H.mraHalf) N.push(["ลด MRA", mL>=2?`spironolactone ${["","12.5","25","50"][mL]} → ${["","6.25 (หรือวันเว้นวัน)","12.5","25"][mL]} มก.`:"spironolactone 12.5 มก. → วันเว้นวันหรือหยุดชั่วคราว"]);
+
+  if(miss.length){
+    N.push(...miss.slice(0,2));
+    if(miss.length>2) L.push("ยาที่ยังขาดอีก: "+miss.slice(2).map(x=>x[0].replace("เริ่ม ","")).join(", ")+" — เริ่มในนัดถัดไป (เป้าคือได้ครบ 4 กลุ่มขนาดต่ำก่อน)");
+    if(up.length) L.push("หลังได้ครบ 4 กลุ่มแล้วจึงเพิ่มขนาด: "+up.map(x=>x[0]).join(", "));
+  } else if(up.length){
+    N.push(...up.slice(0,2));
+    if(up.length>2) L.push("นัดถัดไป: "+up.slice(2).map(x=>x[0]).join(", "));
+  } else {
+    const atMax = (bT in BB_MAX && bL===BB_MAX[bT]) || H.bbUp;
+    N.push(["คงยาเดิม", (A.length?"แก้ปัญหาด้านบนก่อน แล้วค่อยประเมินการเพิ่มยา":"ยาหลักอยู่ที่ขนาดเป้าหมายหรือสูงสุดที่ทนได้")]);
+    if(rhythm==="sinus" && hr>=70 && atMax) L.push("Sinus HR ≥70 แม้ beta-blocker สูงสุดที่ทนได้ และ LVEF ≤35% → พิจารณา ivabradine 5 มก. bid (2.5 มก. ในผู้สูงอายุ)");
+    L.push("ยังมีอาการ: พิจารณา digoxin ขนาดต่ำ (ESC 2026 IIa) · หลัง worsening HF: vericiguat");
+  }
+  L.push("ตรวจ iron studies ถ้ายังไม่เคย (TSAT <20% → IV iron)");
+  L.push("Echo ซ้ำหลังได้ยาเต็มที่ ≥3 เดือน: LVEF ≤35% → ICD · + LBBB QRS ≥150 ms → CRT");
+  F.push("ปรับยาครั้งละ 1–2 ตัว ทุก 1–2 สัปดาห์");
+  F.push("ตรวจ K/Cr ใน 1–2 สัปดาห์หลังเริ่มหรือเพิ่ม RASi/ARNI/MRA");
+  if(sg!=="none"||miss.some(x=>x[0].includes("SGLT2"))) F.push("SGLT2i: หยุดชั่วคราวเมื่อป่วยหนัก งดอาหาร หรือก่อนผ่าตัด");
+  return render(A,N,F,L);
+
+  function render(A,N,F,L){
+    return `${A.length?`<div class="gsec"><h4>ความปลอดภัยก่อน</h4>${A.map(a=>`<div class="galert ${a[0]}">${a[1]}</div>`).join("")}</div>`:""}
+      <div class="gsec"><h4>ขั้นถัดไปที่แนะนำ (วันนี้)</h4><ol class="gnext">${N.map(n=>`<li><b>${n[0]}</b> — ${n[1]}</li>`).join("")}</ol></div>
+      ${L.length?`<div class="gsec"><h4>ต่อจากนี้</h4><ul class="glist">${L.map(x=>`<li>${x}</li>`).join("")}</ul></div>`:""}
+      <div class="gsec"><h4>ติดตาม</h4><ul class="glist">${F.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+  }
+}
+
+function diurAdvice(m){
+  const t = m.querySelector("#dType").value, dose=+m.querySelector("#dDose").value||0, egfr=+m.querySelector("#dEgfr").value||0;
+  const una = m.querySelector("#dUna").value, uo = m.querySelector("#dUo").value, cur=+m.querySelector("#dCur").value||0;
+  const f = {none:0, furo:1, tor:2, bum:40}[t];
+  const eq = Math.round(dose*f);
+  let out = "";
+  if(t==="none"||!eq){
+    out += `<div class="dl"><b>เริ่มต้น (ไม่เคยใช้ loop)</b><span>furosemide <b>${egfr&&egfr<30?"40":"20–40"} มก. IV</b> bolus${egfr&&egfr<30?" — eGFR <30 มักต้องใช้ขนาดปลายสูงหรือมากกว่า":""}</span></div>`;
+  } else {
+    const lo=eq, hi2=eq*2, hi25=Math.round(eq*2.5);
+    out += `<div class="dl"><b>Furosemide กินเทียบเท่า</b><span>${eq} มก./วัน${t!=="furo"?` (แปลงจาก ${t==="tor"?"torsemide":"bumetanide"} ${dose} มก.)`:""}</span></div>`;
+    out += `<div class="dl"><b>IV ต่อวัน</b><span><b>${lo}–${hi2} มก.</b> (1–2 เท่า, ESC) ถึง ${hi25} มก. (2.5 เท่า, DOSE) · แบ่งให้วันละ 2–3 ครั้ง เช่น ${Math.round(lo/2)}–${Math.round(hi25/2)} มก. IV ทุก 12 ชม.</span></div>`;
+    if(hi25>600) out += `<div class="warnline">ขนาดคำนวณเกิน 600 มก./วัน — ใช้ขนาดสูงสุดที่ปลอดภัย พิจารณาเพิ่มยากลุ่มที่สองแทนการเพิ่ม loop</div>`;
+  }
+  out += `<div class="dl"><b>ประเมินที่ 2 ชม.</b><span>spot urine Na เป้า ≥50–70 mmol/L</span></div><div class="dl"><b>ประเมินที่ 6 ชม.</b><span>ปัสสาวะ ≥100–150 มล./ชม.</span></div>`;
+  // response
+  let resp = "";
+  const unaN = una===""?null:+una, uoN = uo===""?null:+uo;
+  if(unaN!==null || uoN!==null){
+    const poor = (unaN!==null && unaN<50) || (uoN!==null && uoN<100);
+    const grey = !poor && ((unaN!==null && unaN<70) || (uoN!==null && uoN<150));
+    const base = cur || (eq?Math.round(eq):40);
+    if(poor){
+      const nd = Math.min(base*2, 600);
+      resp = `<span class="tag-n">ตอบสนองไม่พอ</span> เพิ่มเป็น 2 เท่า: ${base} → <b>${nd} มก. IV</b> ต่อครั้ง แล้วประเมินซ้ำที่ 2/6 ชม.`;
+      if(base*2>=400) resp += `<div class="warnline">ใกล้ขนาดสูงสุดแล้ว (furosemide ~400–600 มก./วัน, ถึง 1,000 มก.ถ้าไตเสื่อมมาก) → เพิ่ม sequential nephron blockade</div>`;
+    } else if(grey){
+      resp = `<span class="tag-w">ก้ำกึ่ง</span> ตอบสนองระดับปานกลาง — ถ้ายังบวมมากหรือปัสสาวะไม่ถึงเป้า พิจารณาเพิ่มขนาด มิฉะนั้นให้ขนาดเดิมซ้ำทุก 12 ชม.`;
+    } else {
+      resp = `<span class="tag-y">ตอบสนองดี</span> ให้ขนาดเดิมซ้ำทุก 12 ชม. ติดตามน้ำหนัก I/O K Na Cr ทุกวันจนหายบวม`;
+    }
+  }
+  if(resp) out += `<div class="dl"><b>การตอบสนอง</b><span>${resp}</span></div>`;
+  out += `<div class="dl"><b>ถ้ายังดื้อ</b><span>เพิ่ม HCTZ 25–100 มก./วัน หรือ metolazone 2.5–5 มก. (ระวัง K/Na ต่ำมาก) <i>หรือ</i> acetazolamide 500 มก. IV วันละครั้ง (ระวัง metabolic acidosis) · SGLT2i เมื่อคงที่ · ยังไม่ได้ผล → ปรึกษา/ส่งต่อ</span></div>`;
+  return out;
+}
+
+const H2 = [["bmi","BMI >30",2],["htn","ใช้ยาลดความดัน ≥2 ตัว",1],["af","AF (paroxysmal/persistent)",3],["pasp","PASP >35 มม.ปรอท",1],["age","อายุ >60 ปี",1],["ee","E/e′ >9",1]];
+
+function renderTools(){
+  const main = document.getElementById("main");
+  main.innerHTML = `
+  <div class="panel">
+    <div class="ch-head"><div class="bignum">⚙</div><div><h1>เครื่องมือข้างเตียง</h1><div class="sub">Flow วินิจฉัย · profile · ยาขับปัสสาวะ · ปรับ GDMT · ตารางยา · H₂FPEF · IV iron</div></div></div>
+    <div class="tool-nav">
+      <a href="#t-flow">Flow</a><a href="#t-profile">Profile</a><a href="#t-diur">ยาขับปัสสาวะ</a><a href="#t-gdmt">ปรับ GDMT</a><a href="#t-dose">ตารางยา</a><a href="#t-h2fpef">H₂FPEF</a><a href="#t-iron">IV iron</a>
+    </div>
+
+    <section class="tool" id="t-flow">
+      <h2>Flow: เหนื่อย → สงสัย HF → NT-proBNP/echo → จำแนก → รักษา</h2>
+      <div class="walker" id="flowBox"></div>
+    </section>
+
+    <section class="tool" id="t-profile">
+      <h2>Profile warm/cold–wet/dry</h2>
+      <div class="q-row"><span>มี congestion (orthopnea, JVP สูง, crackles, บวม, B-lines)?</span>${seg("wet",[["ใช่ (wet)","1"],["ไม่ (dry)","0"]])}</div>
+      <div class="q-row"><span>Perfusion พอ (ปลายอุ่น สติดี ปัสสาวะออก lactate ปกติ)?</span>${seg("warm",[["พอ (warm)","1"],["ไม่พอ (cold)","0"]])}</div>
+      <div class="q-row"><span>SBP (มม.ปรอท)</span>${seg("sbp",[["&gt;110","hi"],["90–110","mid"],["&lt;90","lo"]])}</div>
+      <div class="result" id="profOut"></div>
+    </section>
+
+    <section class="tool" id="t-diur">
+      <h2>เลือกขนาด loop diuretic ใน decompensated HF</h2>
+      <div class="inp-row">
+        <label>Loop ที่ใช้อยู่<select id="dType"><option value="furo">Furosemide กิน</option><option value="tor">Torsemide กิน</option><option value="bum">Bumetanide กิน</option><option value="none">ไม่เคยใช้</option></select></label>
+        <label>ขนาดต่อวัน (มก.)<input type="number" id="dDose" value="80" min="0" step="10"></label>
+        <label>eGFR<input type="number" id="dEgfr" value="45" min="0"></label>
+      </div>
+      <h3>ประเมินหลังให้ยา (ไม่บังคับ)</h3>
+      <div class="inp-row">
+        <label>ขนาด IV ต่อครั้งที่ให้ไป (มก.)<input type="number" id="dCur" value="" placeholder="เช่น 80" min="0"></label>
+        <label>Spot urine Na 2 ชม. (mmol/L)<input type="number" id="dUna" value="" placeholder="เช่น 45"></label>
+        <label>ปัสสาวะเฉลี่ย 6 ชม. (มล./ชม.)<input type="number" id="dUo" value="" placeholder="เช่น 120"></label>
+      </div>
+      <div class="result" id="diurOut"></div>
+      <p class="muted-s">เทียบเท่าโดยประมาณ: furosemide กิน 40 มก. ≈ furosemide IV 20 มก. ≈ torsemide 20 มก. ≈ bumetanide 1 มก. · ESC/HFA, DOSE trial, CLOROTIC, ADVOR</p>
+    </section>
+
+    <section class="tool" id="t-gdmt">
+      <h2>ตัวช่วยปรับ GDMT</h2>
+      <div class="q-row"><span>LVEF</span>${seg("ef",[["≤40%","r"],["41–49%","m"],["≥50%","p"]])}</div>
+      <div class="q-row"><span>ภาวะน้ำ</span>${seg("vol",[["ไม่บวม (euvolemic)","dry"],["ยังมี congestion","wet"]])}</div>
+      <div class="q-row"><span>จังหวะหัวใจ</span>${seg("rh",[["Sinus","sinus"],["AF","af"]])}</div>
+      <h3>ยาปัจจุบัน</h3>
+      <div class="inp-row">
+        <label>ARNI / ACEI / ARB<select id="gRas">${opt(RAS_OPTS,"arni:1")}</select></label>
+        <label>Beta-blocker<select id="gBb">${opt(BB_OPTS,"bis:1")}</select></label>
+        <label>MRA<select id="gMra">${opt(MRA_OPTS,"1")}</select></label>
+        <label>SGLT2i<select id="gSg">${opt(SG_OPTS,"none")}</select></label>
+      </div>
+      <h3>สัญญาณชีพและผลเลือด</h3>
+      <div class="inp-row">
+        <label>SBP (มม.ปรอท)<input type="number" id="gSbp" value="112"></label>
+        <label>HR (ครั้ง/นาที)<input type="number" id="gHr" value="84"></label>
+        <label>K (mmol/L)<input type="number" id="gK" value="4.6" step="0.1"></label>
+        <label>eGFR<input type="number" id="gEgfr" value="58"></label>
+        <label>Cr ขึ้นจากเดิม (%)<input type="number" id="gCr" value="0"></label>
+      </div>
+      <div class="ck" style="margin-top:8px"><label><input type="checkbox" id="gHypo"> มีอาการความดันต่ำ (หน้ามืด เวียนศีรษะเวลาลุก)</label><label><input type="checkbox" id="gAngio"> เคยมี angioedema</label></div>
+      <div class="result gres" id="gdmtOut"></div>
+      <p class="muted-s">ตรรกะตาม ACC ECDP 2024, AHA 2022, ESC 2026 และแนวปฏิบัติจัดการ K/Cr ของ ESC/HFA · เป็นเครื่องช่วยคิด ไม่แทนการตัดสินใจทางคลินิก</p>
+    </section>
+
+    <section class="tool" id="t-dose">
+      <h2>ตารางขนาดยา GDMT เริ่มต้น / เป้าหมาย</h2>
+      ${EXTRAS.dose()}
+    </section>
+
+    <section class="tool" id="t-h2fpef">
+      <h2>H₂FPEF score</h2>
+      <div class="ck" id="h2List">${H2.map(x=>`<label><input type="checkbox" data-w="${x[2]}"> ${x[1]} (+${x[2]})</label>`).join("")}</div>
+      <div class="result" id="h2Out"></div>
+    </section>
+
+    <section class="tool" id="t-iron">
+      <h2>IV iron: ferric carboxymaltose (ขนาดรวม)</h2>
+      <div class="inp-row">
+        <label>Hb (ก./ดล.)<input type="number" id="iHb" value="11.5" step="0.1"></label>
+        <label>น้ำหนัก (กก.)<input type="number" id="iWt" value="62"></label>
+        <label>Ferritin (ng/mL)<input type="number" id="iFer" value="80"></label>
+        <label>TSAT (%)<input type="number" id="iTsat" value="15"></label>
+      </div>
+      <div class="result" id="ironOut"></div>
+      <p class="muted-s">ขนาดตามฉลาก ferric carboxymaltose · ครั้งเดียวไม่เกิน 1,000 มก. (หรือ 20 มก./กก.) ห่างกันอย่างน้อย 7 วัน · ถ้าใช้ iron sucrose ให้คำนวณตามฉลากยานั้น</p>
+    </section>
+  </div>`;
+
+  drawFlow(main.querySelector("#flowBox"), ["start"]);
+  main.querySelectorAll(".seg").forEach(sg=>{
+    sg.addEventListener("click", e=>{
+      const b=e.target.closest("button"); if(!b) return;
+      sg.querySelectorAll("button").forEach(x=>x.classList.remove("on")); b.classList.add("on");
+      calcAll();
+    });
+  });
+  main.querySelectorAll("input,select").forEach(el=>el.addEventListener("input", calcAll));
+  main.querySelectorAll("input[type=checkbox],select").forEach(el=>el.addEventListener("change", calcAll));
+  calcAll();
+
+  function calcAll(){
+    const m = main;
+    // profile
+    const pr = m.querySelector("#t-profile"), wet=segVal(pr,"wet")==="1", warm=segVal(pr,"warm")==="1", sbp=segVal(pr,"sbp");
+    let p;
+    if(warm && !wet) p=`<b class="big">Warm–Dry</b><br>compensated · ปรับยากิน หาเหตุที่ทำให้มา ปรับ GDMT นัดติดตาม`;
+    else if(warm && wet) p=`<b class="big">Warm–Wet</b><br>IV loop diuretic ทันที (ดูเครื่องมือด้านล่าง) · ${sbp==="hi"?"<b>SBP &gt;110</b>: เพิ่ม nitroglycerin IV 10–20 µg/นาที ได้ · ":""}NIV ถ้า RR &gt;25 หรือ SpO₂ &lt;90% · หาตัวกระตุ้น · ให้ beta-blocker ต่อ`;
+    else if(!warm && wet) p=`<b class="big">Cold–Wet</b><br>${sbp==="lo"?"<b>SBP &lt;90</b>: norepinephrine ให้ MAP ≥65 + dobutamine 2–20 µg/kg/นาที · ":"inotrope (dobutamine) ถ้า hypoperfusion ชัด · "}ขับน้ำเมื่อ perfusion ดีขึ้น · ห้ามเริ่ม/เพิ่ม beta-blocker · หาสาเหตุ (ACS, mechanical, arrhythmia) · <b>ปรึกษา/ส่งต่อ</b>`;
+    else p=`<b class="big">Cold–Dry</b><br>ประเมิน volume อย่างระวัง (POCUS) · ถ้าขาดน้ำให้ NSS 250 มล.แล้วประเมิน · ถ้ายัง hypoperfusion พิจารณา inotrope · ทบทวนยาที่ลด BP/HR`;
+    if(sbp==="lo" && warm) p+=`<div class="warnline">SBP &lt;90 แต่ perfusion ดี: เฝ้าระวังใกล้ชิด งด vasodilator</div>`;
+    m.querySelector("#profOut").innerHTML=p;
+    // diuretic
+    m.querySelector("#dDose").disabled = m.querySelector("#dType").value==="none";
+    m.querySelector("#diurOut").innerHTML = diurAdvice(m);
+    // gdmt
+    m.querySelector("#gdmtOut").innerHTML = gdmtAdvice(m);
+    // h2fpef
+    const hs=[...m.querySelectorAll("#h2List input:checked")].reduce((a,x)=>a+(+x.dataset.w),0);
+    m.querySelector("#h2Out").innerHTML=`<b class="big">${hs}</b> / 9 คะแนน · ${hs>=6?"โอกาสเป็น HFpEF สูง":hs>=2?"ไม่แน่ชัด — ต้องตรวจเพิ่ม (NP, echo ละเอียด, stress echo หรือส่งต่อ)":"โอกาสเป็น HFpEF ต่ำ — หาสาเหตุอื่น"}`;
+    // iron
+    const hb=+m.querySelector("#iHb").value||0, wt=+m.querySelector("#iWt").value||0, fer=+m.querySelector("#iFer").value||0, ts=+m.querySelector("#iTsat").value||0;
+    const idOld = fer<100 || (fer<300 && ts<20), idNew = ts<20;
+    let tot = 0;
+    if(wt>=35){ if(hb<10) tot = wt<70?1500:2000; else if(hb<14) tot = wt<70?1000:1500; else tot = 500; }
+    const sched = tot<=1000 ? `${tot} มก. ครั้งเดียว (ครั้งละไม่เกิน ${Math.min(1000, Math.round(20*wt))} มก.)` : `แบ่ง 2 ครั้ง: 1,000 มก. แล้ว ${tot-1000} มก. ห่างกัน ≥7 วัน`;
+    m.querySelector("#ironOut").innerHTML = `
+      <div class="dl"><b>เกณฑ์เดิม (ferritin/TSAT)</b><span>${idOld?'<span class="tag-y">เข้าเกณฑ์</span>':'<span class="tag-n">ไม่เข้า</span>'}</span></div>
+      <div class="dl"><b>ESC 2026 (TSAT &lt;20%)</b><span>${idNew?'<span class="tag-y">เข้าเกณฑ์</span>':'<span class="tag-n">ไม่เข้า</span>'}</span></div>
+      <div class="dl"><b>ขนาด FCM รวม</b><span>${wt<35?"น้ำหนัก &lt;35 กก. ดูฉลากยา":`<b>${tot} มก.</b> — ${sched}`}</span></div>
+      <div class="dl"><b>ติดตาม</b><span>ตรวจ ferritin/TSAT ซ้ำ 3 เดือน · ระวัง hypophosphatemia เมื่อให้ FCM ซ้ำหลายครั้ง</span></div>`;
+  }
+}
+
+/* ============================= STATE ============================= */
+const PROGRESS_KEY = "hf_progress_v1";
+function loadProgress(){
+  try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }catch(e){ return {}; }
+}
+function saveProgress(p){
+  try{ localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }catch(e){}
+}
+let PROGRESS = loadProgress();
+const chapterList = SECTIONS.filter(s=>!s.isHome && !s.isFinal && !s.isTool && !s.isPage && !s.isCase);
+
+function chapterDone(id){
+  const p = PROGRESS[id];
+  return !!(p && p.quizDone);
+}
+function overallPercent(){
+  const total = chapterList.length;
+  const done = chapterList.filter(s=>chapterDone(s.id)).length;
+  return Math.round(done/total*100);
+}
+function updateTopProgress(){
+  const pct = overallPercent();
+  document.getElementById("topProgressBar").style.width = pct+"%";
+  document.getElementById("topProgressText").textContent = pct+"%";
+}
+
+/* ============================= NAV ============================= */
+let currentId = "home";
+
+function renderNav(){
+  const nav = document.getElementById("sidenav");
+  nav.innerHTML = "";
+  const label = document.createElement("div");
+  label.className = "grp-label"; label.textContent = "Heart Failure 2026";
+  nav.appendChild(label);
+  SECTIONS.forEach(s=>{
+    const btn = document.createElement("button");
+    btn.className = "navitem" + (s.id===currentId ? " active":"");
+    const n = document.createElement("span"); n.className="n"; n.textContent = s.isHome ? "•" : (s.isFinal ? "★" : s.n);
+    btn.appendChild(n);
+    const t = document.createElement("span"); t.textContent = s.nav; btn.appendChild(t);
+    if(!s.isHome && !s.isFinal && !s.isTool && !s.isPage && !s.isCase){
+      const chk = document.createElement("span");
+      chk.className = "check" + (chapterDone(s.id) ? " done":"");
+      btn.appendChild(chk);
+    }
+    btn.onclick = ()=>{ currentId = s.id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    nav.appendChild(btn);
+  });
+}
+
+/* ============================= RENDER: HOME ============================= */
+function renderHome(){
+  const main = document.getElementById("main");
+  const pct = overallPercent();
+  let statTiles = MUST_KNOW.map(m=>`<div class="stat-tile"><div class="v">${m.v}</div><div class="l">${m.l}</div></div>`).join("");
+  let progRows = chapterList.map(s=>{
+    const p = PROGRESS[s.id];
+    const score = p && p.quizBest ? p.quizBest.correct+"/"+p.quizBest.total : "—";
+    const barPct = p && p.quizBest ? Math.round(p.quizBest.correct/p.quizBest.total*100) : 0;
+    return `<div class="ch-progress-row">
+      <div class="t">${s.n}. ${s.title}</div>
+      <div class="bar"><i style="width:${barPct}%"></i></div>
+      <div class="score">${score}</div>
+    </div>`;
+  }).join("");
+  main.innerHTML = `
+    <div class="panel hero">
+      <span class="hero-tag">HFCT 2019 · 2022 · 2023 · AHA/ACC/HFSA 2022 · ACC ECDP 2024 · ESC 2026</span>
+      <h1>ห้องเรียน Heart Failure</h1>
+      <p class="lead">สรุปภาวะหัวใจล้มเหลวสำหรับแพทย์เวชปฏิบัติทั่วไปและนักศึกษาแพทย์ เน้นสิ่งที่ทำได้จริงที่ห้องฉุกเฉิน หอผู้ป่วย และ OPD ตั้งแต่การวินิจฉัยด้วย NT-proBNP การขับน้ำตาม natriuresis การเริ่มและปรับยา 4 กลุ่ม ไปจนถึงการนัดหลังจำหน่าย พร้อมเทียบแนวทางไทยกับ ESC 2026 ที่เพิ่งยกเลิก HFmrEF</p>
+      <div class="cta-row">
+        <button class="btn primary" onclick="goTo('def')">เริ่มเรียนบทที่ 1 →</button>
+        <button class="btn" onclick="goTo('tools')">เครื่องมือข้างเตียง</button>
+        <button class="btn" onclick="goTo('cases')">เคสฝึก</button>
+        <button class="btn" onclick="goTo('cmp')">ไทย vs สากล</button>
+      </div>
+    </div>
+
+    <div class="callout"><b>อัปเดต 2026 ที่ควรรู้</b>
+      <ul class="bullets">
+        <li><span><b>ESC 2026</b> (ส.ค. 2026) แบ่ง HF เหลือ HFrEF (LVEF &lt;50%) กับ HFpEF (≥50%) ให้ MRA และ SGLT2i เป็น Class I ทุกช่วง LVEF และแนะนำ semaglutide/tirzepatide ใน HFpEF ที่อ้วน</span></li>
+        <li><span><b>Universal Definition ฉบับที่ 2</b> (มิ.ย. 2026) ใช้ HFrEF / HFpEF / HFimpEF โดยไม่กำหนดจุดตัด LVEF ตายตัว และใช้คำว่า decompensated HF แทน acute HF</span></li>
+        <li><span>แนวทาง <b>AHA/ACC</b> ยังเป็นฉบับ 2022 (ฉบับใหม่คาดว่าออกปลายปี 2027) และแนวทาง <b>ไทย</b> ยังเป็น HFCT 2019 กับ focused update 2022/2023</span></li>
+      </ul>
+    </div>
+
+    <div class="section-h"><h2>ตัวเลขที่ต้องจำขึ้นใจ</h2><div class="line"></div></div>
+    <div class="stat-grid">${statTiles}</div>
+
+    <div class="section-h"><h2>ความคืบหน้ารายบท</h2><div class="line"></div></div>
+    <div class="ch-progress-list">${progRows}</div>
+
+    <div class="footnote"><b>อ้างอิง</b><br>
+      1. Ariyachaipanich A, Krittayaphong R, et al. Heart Failure Council of Thailand (HFCT) 2019 Heart Failure Guideline (series). J Med Assoc Thai 2019;102(2–4).<br>
+      2. Chirakarnjanakorn S, Krittayaphong R, Senthong V, et al. 2022 HFCT Focused Update of the 2019 HFCT Heart Failure Guidelines: Part 1 — Heart Failure Classification and Pharmacological Treatment for HFrEF. J Med Assoc Thai 2022;105(11):1153–9.<br>
+      3. Chirakarnjanakorn S, Senthong V, Ariyachaipanich A, et al. 2023 HFCT Focused Update of the 2019 HFCT Heart Failure Guidelines Part 2: Diagnosis and Management of HFmrEF and HFpEF. J Med Assoc Thai 2023;106(10):1005–14.<br>
+      4. Heidenreich PA, Bozkurt B, et al. 2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure. Circulation 2022;145:e895–e1032.<br>
+      5. Maddox TM, Januzzi JL Jr, Allen LA, et al. 2024 ACC Expert Consensus Decision Pathway for Treatment of Heart Failure With Reduced Ejection Fraction. J Am Coll Cardiol 2024;83:1444–88.<br>
+      6. McDonagh TA, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J 2021;42:3599–726 · 2023 Focused Update. Eur Heart J 2023;44:3627–39.<br>
+      7. Køber L, Adamo M, et al. 2026 ESC Guidelines for the management of heart failure. Eur Heart J 2026;47(38):5346–457. doi:10.1093/eurheartj/ehag100<br>
+      8. Walsh MN, et al. AHA/ACC/ESC/WHF Expert Consensus Document: Second Universal Definition of Heart Failure (2026). Eur Heart J 2026;47:4357–74 · J Am Coll Cardiol 2026.<br>
+      9. Mullens W, et al. The use of diuretics in heart failure with congestion — HFA position statement. Eur J Heart Fail 2019;21:137–55 · Meekers E, et al. Urinary sodium analysis — EJHF expert consensus. Eur J Heart Fail 2025.<br>
+      ข้อมูล ESC 2026 สรุปจากข่าวของ ESC และบทสรุปที่เผยแพร่ (ตารางยา 2021/2026, รายการคำแนะนำใหม่ 39 ข้อ) · เนื้อหาเพื่อการศึกษา การสั่งยาให้ตรวจสอบกับฉลากยาและแนวทางของโรงพยาบาล · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</div>
+  `;
+}
+window.goTo = (id)=>{ currentId = id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+
+/* ============================= RENDER: CHAPTER ============================= */
+function renderChapter(sec){
+  const main = document.getElementById("main");
+  let chips = sec.chips.map(c=>`<div class="chip"><b>${c.v}</b>${c.l}</div>`).join("");
+  let bullets = sec.bullets.map(b=>`<li><span>${b}</span></li>`).join("");
+  let recs = sec.recs.map(r=>{
+    if(!r.s) return `<div class="rec-row"><div class="badges"></div><div class="txt">${r.t}</div></div>`;
+    const cls = r.s==="strong" ? "strong" : (r.s==="harm" ? "harm" : "conditional");
+    const label = r.c || COR_LABEL[r.s];
+    return `<div class="rec-row">
+      <div class="badges"><span class="badge ${cls}">${label}</span><span class="evid">${r.e}</span></div>
+      <div class="txt">${r.t}</div>
+    </div>`;
+  }).join("");
+
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">${sec.n}</div>
+        <div>
+          <h1>${sec.title}</h1>
+          <div class="sub">${sec.sub}</div>
+        </div>
+      </div>
+      <div class="chip-row">${chips}</div>
+
+      <div class="section-h"><h2>สรุปสาระสำคัญ</h2><div class="line"></div></div>
+      <ul class="bullets">${bullets}</ul>
+      ${sec.extraKey ? EXTRAS[sec.extraKey]() : ""}
+
+      ${sec.recs.length ? `
+      <div class="section-h"><h2>คำแนะนำหลัก</h2><div class="line"></div></div>
+      <div class="legend">
+        <span><i class="strong"></i> Class 1/I หรือ "แนะนำ"</span>
+        <span><i class="conditional"></i> Class 2a/2b หรือ "ควร/อาจพิจารณา"</span>
+        <span><i class="harm"></i> Class 3 — ไม่มีประโยชน์/อันตราย</span>
+        <span>ใต้ป้าย = แนวทางที่มา</span>
+      </div>
+      ${recs}` : ""}
+
+      <div class="section-h"><h2>แฟลชการ์ดจำขึ้นใจ</h2><div class="line"></div></div>
+      <div id="fcArea"></div>
+
+      <div class="section-h"><h2>แบบทดสอบท้ายบท</h2><div class="line"></div></div>
+      <div id="quizArea"></div>
+
+    </div>
+  `;
+  mountFlashcards(sec);
+  mountQuiz(sec.id, sec.quiz);
+}
+
+/* ============================= FLASHCARDS ============================= */
+function mountFlashcards(sec){
+  const area = document.getElementById("fcArea");
+  let idx = 0;
+  const cards = sec.cards;
+  function draw(){
+    area.innerHTML = `
+      <div class="fc-counter">การ์ด ${idx+1} / ${cards.length} — คลิกที่การ์ดเพื่อดูคำตอบ</div>
+      <div class="flashcard" id="fcCard">
+        <div class="inner">
+          <div class="face front">${cards[idx].f}<span class="hint">คลิกเพื่อดูคำตอบ</span></div>
+          <div class="face back">${cards[idx].b}<span class="hint">คลิกเพื่อกลับ</span></div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="icon-btn" id="fcPrev">← ก่อนหน้า</button>
+        <button class="icon-btn" id="fcShuf">สุ่มการ์ด</button>
+        <button class="icon-btn" id="fcNext">ถัดไป →</button>
+      </div>
+    `;
+    const card = document.getElementById("fcCard");
+    card.onclick = ()=> card.classList.toggle("flip");
+    document.getElementById("fcPrev").onclick = ()=>{ idx = (idx-1+cards.length)%cards.length; draw(); };
+    document.getElementById("fcNext").onclick = ()=>{ idx = (idx+1)%cards.length; draw(); markCardsSeen(sec.id); };
+    document.getElementById("fcShuf").onclick = ()=>{ idx = Math.floor(Math.random()*cards.length); draw(); };
+  }
+  draw();
+}
+function markCardsSeen(id){
+  PROGRESS[id] = PROGRESS[id] || {};
+  PROGRESS[id].cardsSeen = true;
+  saveProgress(PROGRESS);
+}
+
+/* ============================= QUIZ ============================= */
+function mountQuiz(id, questions, isFinal){
+  const area = document.getElementById("quizArea");
+  let qi = 0, correct = 0, answered = false;
+  const order = questions.map((_,i)=>i);
+
+  function progressDots(){
+    return `<div class="quiz-progress">${order.map((_,i)=>`<i class="${i<qi?'done':''}"></i>`).join("")}</div>`;
+  }
+
+  function drawQuestion(){
+    answered = false;
+    const q = questions[order[qi]];
+    area.innerHTML = `
+      <div class="quiz-box">
+        ${progressDots()}
+        <div class="quiz-q">${qi+1}. ${q.q}</div>
+        <div id="choices">${q.c.map((c,i)=>`<button class="choice" data-i="${i}"><span class="k">${String.fromCharCode(65+i)}</span><span>${c}</span></button>`).join("")}</div>
+        <div class="explain" id="explainBox">${q.e}</div>
+        <div class="quiz-foot">
+          <span class="quiz-score">คะแนน: ${correct}/${qi}</span>
+          <button class="btn primary" id="nextBtn" style="display:none;">${qi===order.length-1 ? "ดูผลลัพธ์" : "ข้อถัดไป →"}</button>
+        </div>
+      </div>
+    `;
+    document.querySelectorAll("#choices .choice").forEach(btn=>{
+      btn.onclick = ()=>{
+        if(answered) return;
+        answered = true;
+        const i = parseInt(btn.dataset.i);
+        document.querySelectorAll("#choices .choice").forEach(b=>b.setAttribute("disabled","true"));
+        if(i===q.a){ btn.classList.add("correct"); correct++; }
+        else{
+          btn.classList.add("wrong");
+          document.querySelectorAll("#choices .choice")[q.a].classList.add("correct");
+        }
+        document.getElementById("explainBox").classList.add("show");
+        document.querySelector(".quiz-score").textContent = "คะแนน: "+correct+"/"+(qi+1);
+        document.getElementById("nextBtn").style.display = "inline-flex";
+      };
+    });
+    document.getElementById("nextBtn").onclick = ()=>{
+      qi++;
+      if(qi>=order.length){ finish(); } else { drawQuestion(); }
+    };
+  }
+
+  function finish(){
+    const pct = Math.round(correct/order.length*100);
+    area.innerHTML = `
+      <div class="quiz-box quiz-done">
+        <div style="font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">ผลการทดสอบ</div>
+        <div class="v">${correct}/${order.length}</div>
+        <p style="color:var(--muted);margin-top:6px;">คิดเป็น ${pct}% — ${pct>=80?"ยอดเยี่ยม จำแม่นมาก!":pct>=50?"ดี ลองทบทวนข้อที่พลาดอีกครั้ง":"ควรทบทวนสรุปสาระสำคัญและคำแนะนำหลักอีกรอบ"}</p>
+        <div class="cta-row" style="justify-content:center;">
+          <button class="btn" id="retryBtn">ทำแบบทดสอบอีกครั้ง</button>
+          ${!isFinal ? `<button class="btn primary" id="nextChBtn">ไปบทถัดไป →</button>` : ""}
+        </div>
+      </div>
+    `;
+    if(!isFinal){
+      PROGRESS[id] = PROGRESS[id] || {};
+      PROGRESS[id].quizDone = true;
+      const prevBest = PROGRESS[id].quizBest;
+      if(!prevBest || correct > prevBest.correct){ PROGRESS[id].quizBest = {correct, total: order.length}; }
+      saveProgress(PROGRESS);
+      renderNav();
+      updateTopProgress();
+    }
+    document.getElementById("retryBtn").onclick = ()=>{ qi=0; correct=0; drawQuestion(); };
+    const nb = document.getElementById("nextChBtn");
+    if(nb){
+      nb.onclick = ()=>{
+        const idx = chapterList.findIndex(s=>s.id===id);
+        const next = chapterList[idx+1];
+        currentId = next ? next.id : "final";
+        render();
+        window.scrollTo({top:0,behavior:"smooth"});
+      };
+    }
+  }
+
+  drawQuestion();
+}
+
+/* ============================= RENDER: FINAL QUIZ ============================= */
+function renderFinal(){
+  const main = document.getElementById("main");
+  const pool = [];
+  chapterList.forEach(s=> s.quiz.forEach(q=> pool.push(q)) );
+  // shuffle
+  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  const picked = pool.slice(0, 15);
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">★</div>
+        <div><h1>แบบทดสอบรวมทุกบท</h1><div class="sub">สุ่ม 15 ข้อจากทั้ง 7 บท เพื่อทบทวนก่อนขึ้นเวร/ก่อนสอบ</div></div>
+      </div>
+      <div id="quizArea" style="margin-top:20px;"></div>
+    </div>
+  `;
+  mountQuiz("final", picked, true);
+}
+
+/* ============================= MAIN RENDER ============================= */
+function render(){
+  renderNav();
+  updateTopProgress();
+  const sec = SECTIONS.find(s=>s.id===currentId);
+  if(sec.isHome) renderHome();
+  else if(sec.isFinal) renderFinal();
+  else if(sec.isTool) renderTools();
+  else if(sec.isPage) renderCompare();
+  else if(sec.isCase) renderCases();
+  else renderChapter(sec);
+  mountChapBar(sec);
+}
+function mountChapBar(sec){
+  const main=document.getElementById("main");
+  const items=SECTIONS.map(s=>{
+    const num = s.isHome ? "⌂" : (s.isFinal ? "★" : s.n);
+    const done = (!s.isHome && !s.isFinal && !s.isTool && !s.isPage && !s.isCase && chapterDone(s.id)) ? " done" : "";
+    return `<button type="button" class="cb-item${s.id===sec.id?' on':''}${done}" onclick="goTo('${s.id}')"><i>${num}</i>${s.nav}</button>`;
+  }).join("");
+  main.insertAdjacentHTML("afterbegin", `<nav class="chapbar" aria-label="เลือกบท">${items}</nav>`);
+  const idx=SECTIONS.findIndex(s=>s.id===sec.id);
+  const prev=SECTIONS[idx-1], next=SECTIONS[idx+1];
+  const btn=(s,dir)=> s ? `<button type="button" class="pn ${dir}" onclick="goTo('${s.id}')"><small>${dir==='prev'?'← บทก่อนหน้า':'บทถัดไป →'}</small>${s.isHome?'หน้าแรก':(s.isFinal||s.isTool||s.isPage||s.isCase?'':s.n+'. ')+s.nav}</button>` : `<span></span>`;
+  if(!sec.isHome) main.insertAdjacentHTML("beforeend", `<div class="pn-row">${btn(prev,'prev')}${btn(next,'next')}</div>`);
+}
+render();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
