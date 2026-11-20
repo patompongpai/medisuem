@@ -1,0 +1,1258 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>ACS 2025 · Acute Coronary Syndrome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#F6F4EC;
+    --surface:#FFFFFF;
+    --surface-2:#EEEADC;
+    --ink:#182420;
+    --muted:#5B6B64;
+    --line:#DED6C1;
+    --accent:#B3423A;
+    --accent-ink:#FFFFFF;
+    --accent-soft:#F7E4E1;
+    --danger:#A93A2E;
+    --danger-soft:#F5E0DA;
+    --warn:#93692A;
+    --warn-soft:#F1E5CC;
+    --shadow: 0 1px 2px rgba(22,33,31,.07), 0 10px 28px rgba(22,33,31,.08);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B1613;
+      --surface:#11211C;
+      --surface-2:#16261F;
+      --ink:#E7F1EC;
+      --muted:#93A8A1;
+      --line:#25382F;
+      --accent:#F29A90;
+      --accent-ink:#2A0F0C;
+      --accent-soft:#3A1E1C;
+      --danger:#FF9080;
+      --danger-soft:#3A1B16;
+      --warn:#F0BE63;
+      --warn-soft:#3A2C12;
+      --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1613;
+    --surface:#11211C;
+    --surface-2:#16261F;
+    --ink:#E7F1EC;
+    --muted:#93A8A1;
+    --line:#25382F;
+    --accent:#F29A90;
+    --accent-ink:#2A0F0C;
+    --accent-soft:#3A1E1C;
+    --danger:#FF9080;
+    --danger-soft:#3A1B16;
+    --warn:#F0BE63;
+    --warn-soft:#3A2C12;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sarabun',"Noto Sans Thai","IBM Plex Sans Thai",sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{text-wrap:balance; font-family:'Sarabun',sans-serif; margin:0; font-weight:800;}
+  .num{font-family:'Fraunces',serif; font-variant-numeric:tabular-nums;}
+  .mono{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  ::selection{background:var(--accent-soft);}
+  :focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:30;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 22px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:18px;
+    flex:none;
+  }
+  .topbar .brand{display:flex; flex-direction:column; line-height:1.2;}
+  .topbar .brand b{font-size:16.5px; letter-spacing:.02em;}
+  .topbar .brand span{font-size:12px; color:var(--muted);}
+  .topbar .progress-pill{
+    margin-left:auto; display:flex; align-items:center; gap:9px;
+    padding:7px 14px; border-radius:999px; background:var(--surface-2);
+    border:1px solid var(--line); font-size:12.5px; color:var(--muted);
+    white-space:nowrap;
+  }
+  .progress-pill b{color:var(--ink); font-family:'IBM Plex Mono',monospace;}
+  .progress-pill .bar{width:64px; height:6px; border-radius:99px; background:var(--line); overflow:hidden;}
+  .progress-pill .bar i{display:block; height:100%; background:var(--accent); width:0%; transition:width .4s ease;}
+
+  /* ---------- shell ---------- */
+  .shell{display:grid; grid-template-columns:250px 1fr; max-width:1180px; margin:0 auto; align-items:start;}
+  .sidenav{
+    position:sticky; top:65px;
+    height:calc(100vh - 65px); overflow-y:auto;
+    padding:18px 10px 40px;
+    border-right:1px solid var(--line);
+  }
+  .sidenav .grp-label{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); padding:14px 12px 6px;}
+  .navitem{
+    display:flex; align-items:center; gap:10px;
+    width:100%; text-align:left; padding:9px 12px; border-radius:10px;
+    background:transparent; border:none; color:var(--ink); font-size:14.5px;
+    margin-bottom:2px;
+  }
+  .navitem:hover{background:var(--surface-2);}
+  .navitem.active{background:var(--accent-soft); color:var(--accent); font-weight:700;}
+  .navitem .n{font-family:'IBM Plex Mono',monospace; font-size:11.5px; width:20px; flex:none; color:var(--muted);}
+  .navitem.active .n{color:var(--accent);}
+  .navitem .check{margin-left:auto; width:16px; height:16px; border-radius:50%; border:1.5px solid var(--line); flex:none;}
+  .navitem .check.done{background:var(--accent); border-color:var(--accent); position:relative;}
+  .navitem .check.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg);}
+
+  .main{padding:28px 30px 90px; min-width:0;}
+  .panel{max-width:760px;}
+
+  /* ---------- home ---------- */
+  .hero-tag{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:999px; font-weight:700; letter-spacing:.03em;}
+  .hero h1{font-size:34px; margin-top:16px; line-height:1.25;}
+  .hero p.lead{color:var(--muted); font-size:16.5px; max-width:620px; margin-top:12px;}
+  .cta-row{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
+  .btn{
+    padding:12px 20px; border-radius:11px; border:1px solid var(--line);
+    background:var(--surface); color:var(--ink); font-size:14.5px; font-weight:700;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
+  .btn:hover{filter:brightness(0.97);}
+
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; margin-top:14px;}
+  .stat-tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 15px; box-shadow:var(--shadow);
+  }
+  .stat-tile .v{font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--accent); line-height:1.1;}
+  .stat-tile .l{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.4;}
+
+  .section-h{display:flex; align-items:baseline; gap:10px; margin:38px 0 14px;}
+  .section-h h2{font-size:19px;}
+  .section-h .line{flex:1; height:1px; background:var(--line);}
+
+  .ch-progress-list{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .ch-progress-row{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:10px 14px;}
+  .ch-progress-row .t{flex:1; font-size:14px; font-weight:600;}
+  .ch-progress-row .bar{width:110px; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden;}
+  .ch-progress-row .bar i{display:block; height:100%; background:var(--accent);}
+  .ch-progress-row .score{font-size:12px; color:var(--muted); font-family:'IBM Plex Mono',monospace; width:54px; text-align:right;}
+
+  /* ---------- chapter header ---------- */
+  .ch-head{display:flex; gap:16px; align-items:flex-start;}
+  .ch-head .bignum{font-family:'Fraunces',serif; font-size:44px; font-weight:600; color:var(--accent); line-height:1;}
+  .ch-head h1{font-size:25px; margin-top:2px;}
+  .ch-head .sub{font-size:13.5px; color:var(--muted); margin-top:4px;}
+
+  .chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+  .chip{background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:12.5px;}
+  .chip b{display:block; font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--accent);}
+
+  .bullets{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .bullets li{display:flex; gap:10px; font-size:15px;}
+  .bullets li::before{content:"•"; color:var(--accent); font-weight:800; flex:none;}
+
+  .rec-row{
+    display:flex; gap:12px; align-items:flex-start; padding:13px 14px; border:1px solid var(--line);
+    border-radius:12px; background:var(--surface); margin-bottom:9px;
+  }
+  .rec-row .badges{display:flex; flex-direction:column; gap:6px; flex:none; width:100px;}
+  .badge{font-size:10.5px; font-weight:700; letter-spacing:.03em; padding:4px 8px; border-radius:7px; text-align:center; white-space:nowrap;}
+  .badge.strong{background:var(--danger-soft); color:var(--danger);}
+  .badge.conditional{background:var(--warn-soft); color:var(--warn);}
+  .evid{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); text-align:center;}
+  .rec-row .txt{font-size:14.5px;}
+  .rec-row .txt code{background:var(--surface-2); padding:1px 5px; border-radius:5px; font-family:'IBM Plex Mono',monospace; font-size:12.5px;}
+
+  .legend{display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin:10px 0 16px;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:10px;height:10px;border-radius:3px; display:inline-block;}
+  .legend i.strong{background:var(--danger);}
+  .legend i.conditional{background:var(--warn);}
+
+  /* ---------- flashcards ---------- */
+  .fc-wrap{margin-top:10px;}
+  .fc-counter{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-bottom:8px;}
+  .flashcard{
+    perspective:1400px; height:200px; margin-bottom:14px;
+  }
+  .flashcard .inner{
+    position:relative; width:100%; height:100%; transition:transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d; cursor:pointer;
+  }
+  .flashcard.flip .inner{transform:rotateY(180deg);}
+  .flashcard .face{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:16px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:26px; box-shadow:var(--shadow); border:1px solid var(--line);
+  }
+  .flashcard .front{background:var(--surface); font-size:17px; font-weight:700;}
+  .flashcard .back{background:var(--accent-soft); color:var(--ink); transform:rotateY(180deg); font-size:15px;}
+  .flashcard .hint{position:absolute; bottom:10px; left:0; right:0; text-align:center; font-size:11px; color:var(--muted); font-weight:400;}
+  .fc-controls{display:flex; gap:8px;}
+  .icon-btn{
+    padding:9px 15px; border-radius:9px; border:1px solid var(--line); background:var(--surface);
+    font-size:13.5px; font-weight:600; color:var(--ink);
+  }
+  .icon-btn:hover{background:var(--surface-2);}
+
+  /* ---------- quiz ---------- */
+  .quiz-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);}
+  .quiz-progress{display:flex; gap:5px; margin-bottom:16px;}
+  .quiz-progress i{flex:1; height:5px; border-radius:99px; background:var(--surface-2);}
+  .quiz-progress i.done{background:var(--accent);}
+  .quiz-q{font-size:16px; font-weight:700; margin-bottom:14px;}
+  .choice{
+    display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+    padding:12px 14px; border-radius:11px; border:1.5px solid var(--line); background:var(--surface);
+    margin-bottom:9px; font-size:14.5px; color:var(--ink);
+  }
+  .choice:hover{border-color:var(--accent);}
+  .choice .k{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); flex:none; margin-top:1px;}
+  .choice.correct{background:var(--accent-soft); border-color:var(--accent);}
+  .choice.wrong{background:var(--danger-soft); border-color:var(--danger);}
+  .choice[disabled]{cursor:default;}
+  .explain{margin-top:12px; padding:12px 14px; border-radius:11px; background:var(--surface-2); font-size:13.5px; color:var(--muted); display:none;}
+  .explain.show{display:block;}
+  .quiz-foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px;}
+  .quiz-score{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted);}
+  .quiz-done{text-align:center; padding:30px 10px;}
+  .quiz-done .v{font-family:'Fraunces',serif; font-size:48px; color:var(--accent); font-weight:600;}
+
+  .footnote{margin-top:60px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--muted);}
+
+  @media (max-width:820px){
+    .shell{display:block;}
+    .sidenav{
+      position:sticky; top:65px; height:auto; width:100%;
+      display:flex; overflow-x:auto; gap:4px; padding:10px 12px; border-right:none; border-bottom:1px solid var(--line);
+      background:var(--surface);
+    }
+    .sidenav .grp-label{display:none;}
+    .navitem{flex:none; white-space:nowrap;}
+    .navitem .check{display:none;}
+    .main{padding:22px 16px 70px;}
+    .topbar .brand span{display:none;}
+  }
+
+  .badge.harm{background:var(--ink); color:var(--surface);}
+  .legend i.harm{background:var(--ink);}
+  .bullets li a{color:var(--accent);}
+  .muted-s{font-size:12.5px;color:var(--muted);margin:6px 0 12px;}
+  :root{--ecg-grid:#F1C9C3;--ecg-ink:#1E1A19}
+  :root[data-theme="dark"]{--ecg-grid:#3B2624;--ecg-ink:#F3E9E6}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ecg-grid:#3B2624;--ecg-ink:#F3E9E6}}
+  .ecg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
+  .ecg-fig{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;}
+  .ecg-fig svg{width:100%;height:auto;display:block;border-radius:6px;}
+  .ecg-fig figcaption{font-size:13px;margin-top:6px;color:var(--muted);} .ecg-fig figcaption b{color:var(--ink);}
+  .cmp-wrap{overflow-x:auto;} table.cmp{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;}
+  table.cmp th{background:var(--surface-2);font-size:12.5px;} table.cmp td:first-child{font-weight:700;}
+  .tool-nav{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 4px;} .tool-nav a{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--surface-2);}
+  .tool{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:18px;background:var(--surface);scroll-margin-top:80px;}
+  .tool h2{font-size:18px;margin:0 0 10px;} .tool h3{font-size:14px;margin:14px 0 6px;color:var(--muted);}
+  .q-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap;font-size:14px;}
+  .seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  .seg button{font:inherit;font-size:13px;border:0;background:var(--surface);color:var(--ink);padding:6px 10px;cursor:pointer;border-right:1px solid var(--line);}
+  .seg button:last-child{border-right:0;} .seg button.on{background:var(--accent);color:var(--accent-ink);font-weight:700;}
+  .ck{display:flex;flex-direction:column;gap:6px;font-size:14px;} .ck label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;} .ck input{margin-top:4px;accent-color:var(--accent);}
+  .inp-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}
+  .inp-row label{display:flex;flex-direction:column;font-size:12.5px;color:var(--muted);gap:4px;}
+  .inp-row input,.inp-row select{font:inherit;font-size:15px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);}
+  .result{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--accent-soft);font-size:14.5px;}
+  .result .big{font-family:'Fraunces',serif;font-size:26px;color:var(--accent);}
+  .dl{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);} .dl:last-child{border:0} .dl b{flex:0 0 200px;font-size:13.5px;} .dl span{font-size:14px;}
+  @media (max-width:560px){.dl{flex-direction:column;gap:2px}.dl b{flex:none}}
+  .warnline{margin-top:8px;color:var(--danger);font-weight:700;font-size:13.5px;}
+  .tag-y,.tag-n,.tag-w{display:inline-block;font-weight:800;padding:2px 10px;border-radius:999px;margin-right:6px;font-size:13px;}
+  .tag-y{background:#2E7D4F;color:#fff}.tag-n{background:var(--danger);color:#fff}.tag-w{background:var(--warn);color:#fff}
+  .flow{display:flex;flex-direction:column;gap:6px;font-size:13.5px;}
+  .fsplit{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .fsplit.tight{gap:6px;margin-top:6px;}
+  .fcol{display:flex;flex-direction:column;gap:6px;}
+  .fbox{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface-2);}
+  .fbox.red{border-color:var(--danger);background:var(--danger-soft);} .fbox.warn{border-color:var(--warn);background:var(--warn-soft);} .fbox.ok{border-color:#2E7D4F;background:rgba(46,125,79,.12);}
+  .farrow{text-align:center;color:var(--muted);line-height:1;}
+  @media (max-width:640px){.fsplit{grid-template-columns:1fr;}}
+  .chapbar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+  .cb-item{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;padding:6px 11px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;}
+  .cb-item i{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:700;min-width:22px;height:22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface-2);color:var(--accent);}
+  .cb-item.done i{background:#2E7D4F;color:#fff;}
+  .cb-item.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700;}
+  .cb-item.on i{background:rgba(255,255,255,.25);color:inherit;}
+  .pn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
+  .pn{font:inherit;font-size:14.5px;font-weight:700;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);cursor:pointer;}
+  .pn.next{text-align:right;} .pn small{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-bottom:2px;}
+  @media (max-width:820px){ .sidenav{display:none !important;} .cb-item{font-size:12.5px;} }
+</style>
+
+<div class="topbar">
+  <div class="mark">A</div>
+  <div class="brand"><b>ACS 2025</b><span>Acute Coronary Syndrome — Thai ACS 2563 · ACC/AHA 2025</span></div>
+  <div class="progress-pill">ความคืบหน้า <div class="bar"><i id="topProgressBar"></i></div> <b id="topProgressText">0%</b></div>
+</div>
+
+<div class="shell">
+  <nav class="sidenav" id="sidenav"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+/* ============================= DATA ============================= */
+const SECTIONS = [
+{ id:"home", nav:"หน้าแรก", isHome:true },
+
+/* ---------------- 1 ---------------- */
+{
+  id:"def", n:"1", title:"นิยามและการจำแนก ACS", sub:"Fourth Universal Definition of MI · ขอบเขตของแนวทาง", nav:"นิยาม",
+  chips:[
+    {v:">99th", l:"percentile URL ของ troponin = myocardial injury"},
+    {v:"rise/fall", l:"ของ troponin = injury เฉียบพลัน"},
+    {v:"Type 1", l:"plaque rupture/erosion — เป้าหมายหลักของ guideline"}
+  ],
+  bullets:[
+    "ACS ประกอบด้วย <b>STEMI</b>, <b>NSTEMI</b> และ <b>unstable angina (UA)</b> — กลไกหลักคือ plaque แตกหรือกร่อนแล้วเกิดลิ่มเลือดอุดหลอดเลือดหัวใจบางส่วนหรือทั้งหมด",
+    "<b>Myocardial injury</b> = troponin สูงกว่า 99th percentile upper reference limit (URL) ถ้ามี rise และ/หรือ fall ถือเป็น injury เฉียบพลัน",
+    "<b>Acute MI</b> = acute myocardial injury + หลักฐานของ ischemia อย่างน้อย 1 ข้อ: อาการขาดเลือด, ECG เปลี่ยนแปลงใหม่, Q wave ใหม่, ภาพ imaging พบกล้ามเนื้อหัวใจเสียใหม่หรือ regional wall motion ผิดปกติใหม่, หรือพบ thrombus จากการฉีดสี",
+    "<b>Unstable angina</b> = อาการขาดเลือดขณะพักหรือเพิ่มขึ้นเร็ว แต่ troponin ไม่สูง — พบน้อยลงมากในยุค hs-troponin",
+    "<b>MI type 1</b> เกิดจาก atherothrombosis · <b>type 2</b> จาก supply–demand mismatch (เช่น anemia, tachyarrhythmia, sepsis, hypotension) · <b>type 3</b> เสียชีวิตก่อนได้ biomarker · <b>type 4–5</b> สัมพันธ์กับ PCI/CABG",
+    "แนวทาง ACC/AHA 2025 รวม STEMI และ NSTE-ACS ไว้ในฉบับเดียว และครอบคลุมเฉพาะ MI type 1 ไม่ครอบคลุม SCAD, coronary embolism หรือ vasospasm",
+    "สิ่งที่แยกการรักษาออกเป็นสองทางคือ ECG แรก: <b>ST elevation (หรือ STEMI equivalent)</b> → reperfusion ทันที · <b>ไม่มี ST elevation</b> → ประเมินด้วย troponin และ risk score"
+  ],
+  recs:[],
+  cards:[
+    {f:"เกณฑ์ acute MI ตาม Fourth Universal Definition คืออะไร?", b:"Troponin มี rise/fall โดยอย่างน้อย 1 ค่าเกิน 99th percentile URL ร่วมกับหลักฐาน ischemia อย่างน้อย 1 ข้อ (อาการ, ECG ใหม่, Q wave ใหม่, imaging ผิดปกติใหม่, thrombus จาก angiography)"},
+    {f:"MI type 2 คืออะไร ยกตัวอย่างสาเหตุ", b:"MI จาก supply–demand mismatch ไม่ใช่ plaque rupture เช่น ซีดมาก, tachyarrhythmia, sepsis/shock, hypoxemia, hypertensive emergency — รักษาที่สาเหตุ ไม่ใช่ DAPT/cath ทุกราย"},
+    {f:"Unstable angina ต่างจาก NSTEMI อย่างไร?", b:"อาการขาดเลือดคล้ายกัน แต่ UA มี troponin ไม่สูงเกิน 99th percentile ส่วน NSTEMI มี troponin rise/fall"},
+    {f:"แนวทาง ACC/AHA 2025 ครอบคลุม MI ชนิดใด?", b:"MI type 1 (atherothrombotic) ทั้ง STEMI และ NSTE-ACS ไม่ครอบคลุม SCAD, coronary embolism และ vasospasm"}
+  ],
+  quiz:[
+    {q:"ชายอายุ 72 ปี มาด้วย sepsis จากปอดอักเสบ BP 80/50 HR 130 hs-troponin สูงเล็กน้อยและขึ้นลง ไม่มีเจ็บหน้าอก ECG sinus tachycardia ไม่มี ST change ใหม่ ภาวะนี้น่าจะเป็นอะไรมากที่สุด?",
+     c:["STEMI","NSTEMI type 1 ควรให้ DAPT และส่ง cath ด่วน","Myocardial injury/MI type 2 จาก supply–demand mismatch","Unstable angina"], a:2,
+     e:"Troponin สูงจากภาวะที่เพิ่มความต้องการออกซิเจนหรือลดการส่งออกซิเจน (sepsis, shock, tachycardia) เข้ากับ MI type 2 หรือ myocardial injury — รักษาที่สาเหตุเป็นหลัก"},
+    {q:"ผู้ป่วยเจ็บหน้าอกขณะพัก 20 นาที ECG ไม่มี ST elevation hs-troponin 0 และ 2 ชม. ปกติทั้งคู่ วินิจฉัยใดเหมาะที่สุดถ้าอาการเข้าได้กับ ischemia?",
+     c:["NSTEMI","Unstable angina","STEMI","MI type 3"], a:1,
+     e:"อาการขาดเลือดแต่ troponin ไม่สูง = unstable angina (ต้องพิจารณาสาเหตุอื่นของเจ็บหน้าอกร่วมด้วย)"},
+    {q:"ข้อใดเป็นตัวแบ่งเส้นทางการรักษา ACS ที่ห้องฉุกเฉินเป็นอันดับแรก?",
+     c:["ผล troponin ครั้งแรก","ECG 12 lead ครั้งแรก","GRACE score","Echocardiogram"], a:1,
+     e:"ECG ภายใน 10 นาทีแยกผู้ป่วย STEMI (ต้อง reperfusion ทันที ไม่ต้องรอ troponin) ออกจาก NSTE-ACS"}
+  ]
+},
+
+/* ---------------- 2 ---------------- */
+{
+  id:"dx", n:"2", title:"การวินิจฉัย: อาการ ECG และ troponin", sub:"ECG ภายใน 10 นาที · STEMI equivalents · hs-troponin", nav:"วินิจฉัย",
+  chips:[
+    {v:"≤10 นาที", l:"FMC → ECG และแปลผล"},
+    {v:"≥1 มม.", l:"ST elevation ≥2 lead ติดกัน (ยกเว้น V2–V3)"},
+    {v:"0/1–2 ชม.", l:"hs-troponin ซ้ำ (ACC/AHA 2025)"},
+    {v:"0/3 ชม.", l:"rapid rule-out ตาม Thai ACS 2563"}
+  ],
+  bullets:[
+    "<b>อาการ</b>: เจ็บแน่นหน้าอกขณะพัก >10–20 นาที ร้าวไปแขน คอ กราม ใจสั่น เหงื่อแตก — ผู้สูงอายุ ผู้หญิง เบาหวาน และ CKD มักมาด้วยอาการไม่ทั่วไป เช่น เหนื่อย จุกแน่นลิ้นปี่ อ่อนเพลีย หมดสติ",
+    "<b>ECG ภายใน 10 นาที</b> นับจาก first medical contact ถ้า ECG แรกไม่ชัดให้ทำซ้ำเป็นระยะ โดยเฉพาะเมื่ออาการเปลี่ยน",
+    "<b>เกณฑ์ STEMI</b> (UDMI4): ST elevation ใหม่ที่ J point ใน ≥2 lead ติดกัน ≥1 มม. ทุก lead ยกเว้น V2–V3 ซึ่งใช้ ≥2 มม. ในชายอายุ ≥40 ปี, ≥2.5 มม. ในชายอายุ <40 ปี และ ≥1.5 มม. ในหญิง",
+    "<b>Posterior MI</b>: ST depression V1–V3 (มักมี R สูง T ตั้ง) → ทำ V7–V9 ถ้า ST elevation ≥0.5 มม. ถือเป็น STEMI · <b>RV infarction</b>: ทำ V3R–V4R ใน inferior STEMI ทุกราย ST elevation ≥0.5 มม. (≥1 มม. ในชายอายุ <30 ปี)",
+    "<b>STEMI equivalents ที่ต้องรู้จัก</b>: LBBB/paced rhythm ที่เข้าเกณฑ์ Sgarbossa หรือ Smith-modified, de Winter T waves, posterior MI — ส่วน Wellens และ ST depression หลาย lead + ST elevation ใน aVR บ่งชี้ high-risk NSTE-ACS ที่ต้องรีบ cath (ดูภาพด้านล่าง)",
+    "<b>Troponin</b>: ใช้ cardiac troponin ไม่ใช้ CK-MB · ACC/AHA 2025 แนะนำเจาะ hs-troponin ทันทีและซ้ำที่ 1–2 ชม. (conventional troponin ซ้ำที่ 3–6 ชม.) · Thai ACS 2563 ใช้ rapid rule-out ที่ 0 และ 3 ชม. — ให้ใช้ algorithm และ cut-off เฉพาะของ assay ที่โรงพยาบาลใช้",
+    "<b>STEMI ไม่ต้องรอผล troponin</b> ก่อนตัดสินใจ reperfusion",
+    "<b>โรคที่ต้องแยกเสมอ</b>: aortic dissection (ห้ามให้ยาละลายลิ่มเลือด/anticoagulant), pulmonary embolism, tension pneumothorax, pericarditis/myocarditis (ST elevation กระจายหลาย territory + PR depression), Takotsubo, esophageal rupture"
+  ],
+  extraKey:"ecg",
+  recs:[
+    {t:"ทำ ECG 12 lead ภายใน 10 นาทีหลัง first medical contact เพื่อหา STEMI", s:"strong", e:"ACC/AHA 2025 · B-NR"},
+    {t:"ถ้า ECG แรกไม่ช่วยวินิจฉัย ให้ทำ ECG ซ้ำเป็นระยะ", s:"strong", e:"ACC/AHA 2025 · B-NR"},
+    {t:"เจาะ hs-troponin ให้เร็วที่สุด และซ้ำที่ 1–2 ชม. หลัง time zero (หรือ conventional troponin ที่ 3–6 ชม.)", s:"strong", e:"ACC/AHA 2025 · B-NR"},
+    {t:"แจ้งโรงพยาบาลที่ทำ PCI ล่วงหน้าและ activate cath lab ตั้งแต่ก่อนถึงโรงพยาบาล", s:"strong", e:"ACC/AHA 2025 · B-NR"}
+  ],
+  cards:[
+    {f:"เกณฑ์ ST elevation ใน V2–V3 ตาม UDMI4?", b:"ชายอายุ ≥40 ปี ≥2 มม. · ชายอายุ <40 ปี ≥2.5 มม. · หญิงทุกอายุ ≥1.5 มม. (lead อื่น ≥1 มม.)"},
+    {f:"เมื่อเห็น ST depression V1–V3 ร่วมกับ R สูง ต้องทำอะไรต่อ?", b:"สงสัย posterior MI → ทำ V7–V9 ถ้า ST elevation ≥0.5 มม. ถือเป็น STEMI และต้อง reperfusion"},
+    {f:"Inferior STEMI ทุกรายต้องทำ lead อะไรเพิ่ม และทำไม?", b:"V3R–V4R เพื่อหา RV infarction (ST elevation ≥0.5 มม.) — ถ้ามีให้หลีกเลี่ยง nitrate และยาลด preload และให้สารน้ำเมื่อความดันต่ำ"},
+    {f:"de Winter T waves มีลักษณะอย่างไร?", b:"ST depression แบบ upsloping ≥1 มม. ที่ J point ใน precordial lead ตามด้วย T สูงสมมาตร มักมี ST elevation เล็กน้อยใน aVR — บ่งชี้ proximal LAD occlusion ถือเป็น STEMI equivalent"},
+    {f:"Wellens syndrome คืออะไร?", b:"T wave inversion ลึกสมมาตรหรือ biphasic ใน V2–V3 ขณะไม่มีอาการ บ่งชี้ critical proximal LAD stenosis — ห้าม exercise stress test และควรรีบ cath"},
+    {f:"Sgarbossa criteria (ใน LBBB) มีอะไรบ้าง?", b:"(1) concordant ST elevation ≥1 มม. (5 คะแนน) (2) concordant ST depression ≥1 มม. ใน V1–V3 (3 คะแนน) (3) discordant ST elevation ≥5 มม. (2 คะแนน) — ≥3 คะแนนสนับสนุน MI · Smith-modified ใช้ discordant STE/S ≥25% แทนข้อ 3"}
+  ],
+  quiz:[
+    {q:"หญิงอายุ 58 ปี เจ็บหน้าอก 1 ชม. ECG มี ST elevation 1.6 มม. ใน V2–V3 และ 1.2 มม. ใน V4 ข้อใดถูกต้อง?",
+     c:["ยังไม่เข้าเกณฑ์ STEMI เพราะ V2–V3 ต้อง ≥2 มม.","เข้าเกณฑ์ STEMI","ต้องรอ troponin ก่อน","เป็น early repolarization แน่นอน"], a:1,
+     e:"ในผู้หญิงใช้เกณฑ์ ≥1.5 มม. ใน V2–V3 และ V4 ใช้ ≥1 มม. จึงเข้าเกณฑ์ anterior STEMI และไม่ต้องรอ troponin"},
+    {q:"ผู้ป่วย inferior STEMI BP 82/50 หลังได้ nitroglycerin อมใต้ลิ้น JVP สูง ปอดใส ควรทำอะไรก่อน?",
+     c:["ให้ furosemide IV","ทำ V3R–V4R และให้ NSS bolus อย่างระวัง","ให้ nitroglycerin drip","ให้ metoprolol IV"], a:1,
+     e:"ภาพเข้าได้กับ RV infarction (inferior STEMI + hypotension + JVP สูง + ปอดใส) ซึ่งไวต่อการลด preload ควรยืนยันด้วย right-sided lead ให้สารน้ำ และเร่ง reperfusion"},
+    {q:"ECG ขณะไม่มีอาการพบ T inversion ลึกสมมาตรใน V2–V3 ในผู้ป่วยที่เพิ่งเจ็บหน้าอกเมื่อวาน ข้อใดไม่ควรทำ?",
+     c:["ส่ง coronary angiography","ทำ exercise stress test","ให้ aspirin","ตรวจ troponin ซ้ำ"], a:1,
+     e:"Wellens pattern บ่งชี้ critical proximal LAD stenosis การทำ stress test อาจกระตุ้นให้เกิด anterior MI ขนาดใหญ่"},
+    {q:"ข้อใดถูกเกี่ยวกับ troponin ใน STEMI?",
+     c:["ต้องได้ผล troponin ก่อนให้ยาละลายลิ่มเลือด","ไม่ต้องรอ troponin ก่อนตัดสินใจ reperfusion","ใช้ CK-MB แทนได้ดีกว่า","ถ้า troponin แรกปกติให้ยกเลิก STEMI"], a:1,
+     e:"STEMI วินิจฉัยจากอาการและ ECG การรอ biomarker ทำให้ reperfusion ช้าลง"}
+  ]
+},
+
+/* ---------------- 3 ---------------- */
+{
+  id:"er", n:"3", title:"การดูแลเบื้องต้นที่ห้องฉุกเฉิน", sub:"MONA ไม่ใช่สูตรสำเร็จอีกต่อไป · ยาต้านเกล็ดเลือดและยาต้านการแข็งตัว", nav:"ER",
+  chips:[
+    {v:"<90%", l:"SpO₂ ที่ควรให้ออกซิเจน"},
+    {v:"162–325", l:"มก. aspirin loading (เคี้ยว)"},
+    {v:"<24 ชม.", l:"เริ่ม oral beta-blocker ถ้าไม่มีข้อห้าม"},
+    {v:"3 ระดับ", l:"สถานพยาบาลตาม Thai ACS 2563"}
+  ],
+  bullets:[
+    "<b>ระดับสถานพยาบาล (Thai ACS 2563)</b>: ระดับ 1 ไม่มีแพทย์ประจำหรือ ECG → ส่งต่อด่วนด้วย EMS ห้ามให้ผู้ป่วยเดินทางเอง · ระดับ 2 มีแพทย์ อ่าน ECG และให้ยาละลายลิ่มเลือดได้แต่ทำ PCI ไม่ได้ · ระดับ 3 ให้ยาละลายลิ่มเลือดและทำ PCI ได้",
+    "<b>Oxygen</b> ให้เฉพาะ SpO₂ <90% ไม่ให้ทุกราย",
+    "<b>Aspirin</b> 162–325 มก. เคี้ยว แล้วต่อ 81–100 มก./วัน",
+    "<b>P2Y12 inhibitor</b> (loading): ticagrelor 180 มก. → 90 มก. วันละ 2 ครั้ง · prasugrel 60 มก. → 10 มก./วัน (5 มก. ถ้าอายุ ≥75 ปีหรือน้ำหนัก ≤60 กก.; ห้ามในผู้เคย stroke/TIA) · clopidogrel 600 มก. เมื่อทำ primary PCI, 300 มก. เมื่อให้ยาละลายลิ่มเลือดในผู้อายุ ≤75 ปี และ 75 มก. ไม่ loading ถ้าอายุ >75 ปี",
+    "<b>Nitrate</b> ออกฤทธิ์สั้นลดอาการเจ็บได้ — ห้ามใน RV infarction, ความดันต่ำ, ได้ sildenafil ภายใน 24 ชม. หรือ tadalafil ภายใน 48 ชม.",
+    "<b>Morphine</b> ลดระดับคำแนะนำเพราะอาจชะลอการดูดซึมของ P2Y12 inhibitor ชนิดกิน และไม่ควรใช้เพื่อกลบอาการ — เจ็บต่อเนื่องแม้ได้ nitrate คือข้อบ่งชี้ให้รีบ revascularize",
+    "<b>Beta-blocker</b> ชนิดกินเริ่มภายใน 24 ชม. ถ้าไม่มีข้อห้าม — หลีกเลี่ยงในผู้มี HF, low output, เสี่ยง cardiogenic shock (อายุ >70, SBP <120, HR >110 หรือ <60), AV block",
+    "<b>Anticoagulant</b>: UFH ใช้ได้ทุกกรณี · enoxaparin หรือ fondaparinux เป็นทางเลือกเมื่อยังไม่ทำ invasive เร็ว · ห้ามใช้ fondaparinux เป็นยาหลักระหว่าง PCI เพราะเกิด catheter thrombosis",
+    "<b>หลีกเลี่ยง NSAIDs</b> (ยกเว้น aspirin) ระหว่าง ACS",
+    "ใน รพ.ที่ไม่มีแพทย์โรคหัวใจ: NSTE-ACS ที่อาการและ ECG ชัดเจนเริ่ม DAPT ได้เลย ถ้าไม่ชัดให้รอ troponin สังเกตอาการ ทำ ECG และ troponin ซ้ำที่ 3–6 ชม."
+  ],
+  recs:[
+    {t:"ให้ออกซิเจนเมื่อ SpO₂ <90% เพื่อให้ ≥90%", s:"strong", e:"ACC/AHA 2025 · C-LD"},
+    {t:"ไม่ให้ออกซิเจนเป็น routine ถ้า SpO₂ ≥90%", s:"harm", c:"Class 3: No benefit", e:"ACC/AHA 2025 · A"},
+    {t:"ให้ aspirin loading แล้วต่อด้วย low-dose aspirin ทุกวัน", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ห้ามใช้ prasugrel ในผู้ที่เคยเป็น stroke หรือ TIA", s:"harm", c:"Class 3: Harm", e:"ACC/AHA 2025 · B-R"},
+    {t:"NSTE-ACS ที่คาดว่าจะฉีดสีหลัง 24 ชม. อาจพิจารณาให้ clopidogrel หรือ ticagrelor ล่วงหน้า (upstream)", s:"conditional", c:"Class 2b", e:"ACC/AHA 2025 · B-NR"},
+    {t:"เริ่ม beta-blocker ชนิดกินภายใน 24 ชม. ในผู้ไม่มีข้อห้าม เพื่อลด reinfarction และ ventricular arrhythmia", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ห้ามใช้ fondaparinux เป็น anticoagulant ระหว่าง PCI", s:"harm", c:"Class 3: Harm", e:"ACC/AHA 2025 · B-R"}
+  ],
+  cards:[
+    {f:"ขนาด aspirin ใน ACS?", b:"Loading 162–325 มก. (เคี้ยว) แล้วต่อ 81–100 มก./วัน"},
+    {f:"ขนาด clopidogrel ร่วมกับยาละลายลิ่มเลือด?", b:"อายุ ≤75 ปี: 300 มก. loading · อายุ >75 ปี: 75 มก. ไม่ต้อง loading (Thai ACS 2563)"},
+    {f:"Ticagrelor และ prasugrel loading dose?", b:"Ticagrelor 180 มก. → 90 มก. bid · Prasugrel 60 มก. → 10 มก./วัน (5 มก. ถ้าอายุ ≥75 หรือ ≤60 กก.) ห้าม prasugrel ถ้าเคย stroke/TIA"},
+    {f:"ข้อห้ามใช้ nitrate ใน ACS?", b:"RV infarction, SBP ต่ำ, ได้ sildenafil ใน 24 ชม. หรือ tadalafil ใน 48 ชม."},
+    {f:"ทำไม morphine ถูกลดบทบาท?", b:"ชะลอการดูดซึม P2Y12 inhibitor ชนิดกิน และกลบอาการ ischemia ที่ควรเป็นสัญญาณให้รีบ revascularize"},
+    {f:"ผู้ป่วยกลุ่มใดไม่ควรได้ beta-blocker ช่วงแรก?", b:"มี HF/low output, เสี่ยง cardiogenic shock (อายุ >70, SBP <120, HR >110 หรือ <60), PR ยาว/AV block, asthma กำเริบ"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย STEMI SpO₂ 96% room air ข้อใดถูกต้องเรื่องออกซิเจน?",
+     c:["ให้ O₂ cannula 3 ลิตรทุกราย","ให้ O₂ mask 10 ลิตร","ไม่จำเป็นต้องให้ O₂","ให้ high-flow nasal cannula"], a:2,
+     e:"ให้ออกซิเจนเฉพาะ SpO₂ <90% การให้เป็น routine เมื่อ SpO₂ ≥90% ไม่มีประโยชน์"},
+    {q:"ชายอายุ 80 ปี anterior STEMI อยู่ รพ.ชุมชน ห่าง PCI center 3 ชม. ได้ยาละลายลิ่มเลือด ควรให้ clopidogrel อย่างไร?",
+     c:["600 มก. loading","300 มก. loading","75 มก. ไม่ต้อง loading","ไม่ต้องให้ clopidogrel"], a:2,
+     e:"ผู้อายุ >75 ปีที่ได้ยาละลายลิ่มเลือด ให้ clopidogrel 75 มก. ไม่ loading เพื่อลดเลือดออกในสมอง"},
+    {q:"ผู้ป่วยเคยเป็น ischemic stroke เมื่อ 2 ปีก่อน มา NSTEMI จะทำ PCI ยา P2Y12 ใดห้ามใช้?",
+     c:["Ticagrelor","Clopidogrel","Prasugrel","Cangrelor"], a:2,
+     e:"Prasugrel เพิ่มเลือดออกในสมองในผู้ที่เคย stroke/TIA จึงเป็น Class 3: Harm"},
+    {q:"ผู้ป่วย inferior STEMI ใช้ sildenafil เมื่อคืน ยังเจ็บหน้าอก ข้อใดไม่ควรให้?",
+     c:["Aspirin","Nitroglycerin","Clopidogrel","Heparin"], a:1,
+     e:"ห้าม nitrate ภายใน 24 ชม. หลัง sildenafil เพราะความดันตกรุนแรง"}
+  ]
+},
+
+/* ---------------- 4 ---------------- */
+{
+  id:"stemi", n:"4", title:"STEMI: การเปิดหลอดเลือด (Reperfusion)", sub:"Primary PCI หรือยาละลายลิ่มเลือด · rescue PCI · pharmaco-invasive", nav:"STEMI",
+  chips:[
+    {v:"<12 ชม.", l:"นับจากเริ่มอาการ = ข้อบ่งชี้ reperfusion"},
+    {v:"≤120 นาที", l:"FMC → wire ถ้าต้อง transfer (ไม่ถึงให้ lysis)"},
+    {v:"≤10/30 นาที", l:"ให้ยาละลายลิ่มเลือดหลังวินิจฉัย"},
+    {v:"60–90 นาที", l:"ประเมินผลหลังยาละลายลิ่มเลือด"}
+  ],
+  bullets:[
+    "<b>ข้อบ่งชี้</b>: อาการ <12 ชม. + ST elevation หรือ STEMI equivalent → reperfusion ทุกราย · อาการ 12–24 ชม. ส่งทำ PCI ได้ (ACC/AHA Class 2a) · ช็อก/ไม่คงที่ → revascularize ไม่ว่าจะนานเท่าไร",
+    "<b>เลือกวิธี</b>: คาดว่า diagnosis → wire crossing <120 นาที → ส่ง primary PCI · คาดว่า >120 นาที → ให้ยาละลายลิ่มเลือดโดยเร็ว (เป้า ≤10 นาที ไม่เกิน 30 นาที) · มีข้อห้ามยาละลายลิ่มเลือด → ส่ง PCI แม้ช้า",
+    "<b>Streptokinase (SK)</b> 1.5 ล้านยูนิต ผสม NSS 100 มล. หยดใน 30–60 นาที — ห้ามให้ซ้ำในผู้เคยได้ SK · ระวังความดันตกและแพ้ยา",
+    "<b>Tenecteplase (TNK)</b> IV bolus ครั้งเดียวตามน้ำหนัก: <60 กก. 30 มก. · 60–<70 กก. 35 มก. · 70–<80 กก. 40 มก. · 80–<90 กก. 45 มก. · ≥90 กก. 50 มก. — อายุ ≥75 ปีลดเหลือครึ่งขนาด",
+    "<b>Alteplase</b> 15 มก. IV bolus → 0.75 มก./กก. (สูงสุด 50 มก.) ใน 30 นาที → 0.5 มก./กก. (สูงสุด 35 มก.) ใน 60 นาที รวมไม่เกิน 100 มก.",
+    "แนะนำยา fibrin-specific (โดยเฉพาะ TNK) มากกว่า SK เมื่อวางแผน pharmaco-invasive",
+    "<b>ยาร่วม</b>: aspirin + clopidogrel (ไม่ใช้ ticagrelor/prasugrel ร่วมกับ lysis ช่วงแรก) + anticoagulant — enoxaparin เป็นตัวเลือกหลัก: อายุ <75 ปี 30 มก. IV แล้ว 1 มก./กก. SC q12h · อายุ ≥75 ปี 0.75 มก./กก. SC q12h ไม่ bolus · CrCl <30 ให้ 1 มก./กก. SC q24h — ให้ต่อจนถึง revascularization หรือนานสุด 8 วัน",
+    "<b>ประเมินผลที่ 60–90 นาที</b>: สำเร็จ = ST elevation ลดลง ≥50% ใน lead ที่สูงสุด, อาการเจ็บหายหรือดีขึ้นมาก, อาจมี reperfusion arrhythmia (เช่น AIVR) · ไม่สำเร็จ หรือ shock/HF/arrhythmia รุนแรง → <b>rescue PCI ทันที</b>",
+    "<b>หลังยาละลายลิ่มเลือดสำเร็จ</b> ส่งต่อไป PCI center ทุกราย: ACC/AHA 2025 ให้ angiography ภายใน 2–24 ชม. · Thai ACS 2563 ให้ภายใน 24–72 ชม. ไม่เกิน 72 ชม.",
+    "ห้ามให้ยาละลายลิ่มเลือดในผู้ที่มีเพียง ST depression ยกเว้นสงสัย true posterior STEMI",
+    "<b>Cardiac arrest + STEMI</b>: ผู้ที่ฟื้นและรู้สึกตัวควรได้ primary PCI · ผู้ที่ยังโคม่าแต่ไม่มี STEMI ไม่ต้องฉีดสีทันที"
+  ],
+  extraKey:"compare",
+  recs:[
+    {t:"อาการ <12 ชม. ทำ primary PCI โดยมีเป้า FMC → device ≤90 นาที หรือ ≤120 นาทีถ้าต้อง transfer", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ให้ยาละลายลิ่มเลือดเมื่ออาการ <12 ชม. ไม่มีข้อห้าม และคาดว่า primary PCI ช้ากว่า 120 นาที", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"หลังยาละลายลิ่มเลือดให้ transfer ไป PCI center ทันที และฉีดสีภายใน 2–24 ชม.", s:"strong", e:"ACC/AHA 2025 · A / B-R"},
+    {t:"สงสัย reperfusion ล้มเหลว → angiography และ rescue PCI ทันที", s:"strong", e:"ACC/AHA 2025 · B-R"},
+    {t:"ให้ clopidogrel ร่วมกับยาละลายลิ่มเลือด", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"STEMI ได้ยาละลายลิ่มเลือดแต่ไม่ได้วางแผน invasive: ใช้ enoxaparin เป็น anticoagulant หลัก (fondaparinux เป็นทางเลือก)", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"อาการ 12–24 ชม. ส่งทำ primary PCI", s:"conditional", c:"Class 2a", e:"ACC/AHA 2025 · B-NR"},
+    {t:"ห้ามให้ยาละลายลิ่มเลือดเมื่อมีแค่ ST depression (ยกเว้น true posterior STEMI)", s:"harm", c:"Class 3: Harm", e:"ACC/AHA 2025 · B-R"}
+  ],
+  cards:[
+    {f:"เกณฑ์เลือก primary PCI vs ยาละลายลิ่มเลือด?", b:"คาด diagnosis → wire crossing <120 นาที → primary PCI · >120 นาที → ยาละลายลิ่มเลือดภายใน 10–30 นาที (ถ้าไม่มีข้อห้าม)"},
+    {f:"ขนาด streptokinase ใน STEMI?", b:"1.5 ล้านยูนิต ใน NSS 100 มล. IV drip 30–60 นาที ห้ามให้ซ้ำถ้าเคยได้ SK"},
+    {f:"ขนาด tenecteplase ตามน้ำหนัก?", b:"<60 กก. 30 มก. · 60–69 35 มก. · 70–79 40 มก. · 80–89 45 มก. · ≥90 50 มก. — อายุ ≥75 ปีให้ครึ่งขนาด"},
+    {f:"เกณฑ์ว่ายาละลายลิ่มเลือดได้ผล?", b:"ที่ 60–90 นาที: ST elevation ลดลง ≥50%, อาการเจ็บดีขึ้นชัด, อาจมี reperfusion arrhythmia เช่น AIVR"},
+    {f:"Pharmaco-invasive strategy คืออะไร?", b:"ให้ยาละลายลิ่มเลือดก่อน แล้วส่งฉีดสีตามนัดทุกราย (ACC/AHA 2–24 ชม. · ไทย 24–72 ชม.) แม้ยาได้ผล"},
+    {f:"Enoxaparin ร่วมกับยาละลายลิ่มเลือดในผู้อายุ ≥75 ปี?", b:"0.75 มก./กก. SC q12h ไม่ให้ IV bolus (CrCl <30: 1 มก./กก. SC q24h)"},
+    {f:"ข้อห้ามสัมบูรณ์ของยาละลายลิ่มเลือดตาม Thai ACS 2563?", b:"เคย hemorrhagic stroke · ischemic stroke ใน 6 เดือน · บาดเจ็บรุนแรง/ผ่าตัดใหญ่ใน 1 เดือน · GI bleed ใน 6 สัปดาห์ · สงสัย aortic dissection · เจาะหลอดเลือดที่กดไม่ได้ใน 24 ชม. · เคยได้ SK (ห้ามให้ SK ซ้ำ)"}
+  ],
+  quiz:[
+    {q:"ชายอายุ 55 ปี 70 กก. anterior STEMI อาการ 2 ชม. อยู่ รพ.ชุมชน เดินทางไป PCI center 3 ชม. ไม่มีข้อห้าม ข้อใดเหมาะที่สุด?",
+     c:["ส่งไปทำ primary PCI ทันทีโดยไม่ให้ยา","ให้ tenecteplase 40 มก. IV bolus แล้วส่งต่อ PCI center","ให้ heparin แล้วรอ troponin","ให้ tenecteplase 20 มก. เพราะอยู่ รพ.ชุมชน"], a:1,
+     e:"คาดว่า PCI ช้ากว่า 120 นาที จึงให้ยาละลายลิ่มเลือด TNK 70–<80 กก. = 40 มก. แล้วส่งต่อเพื่อทำ angiography ตาม pharmaco-invasive"},
+    {q:"หลังให้ SK 90 นาที ผู้ป่วยยังเจ็บหน้าอก ST ลดลงเพียง 20% ควรทำอย่างไร?",
+     c:["ให้ SK ซ้ำ","ให้ tenecteplase ต่อ","ส่ง rescue PCI ทันที","สังเกตอาการ 24 ชม."], a:2,
+     e:"ST ลดลง <50% และยังเจ็บ = reperfusion ล้มเหลว ต้อง rescue PCI การให้ยาละลายลิ่มเลือดซ้ำไม่แนะนำ"},
+    {q:"ข้อใดเป็นข้อห้ามสัมบูรณ์ของยาละลายลิ่มเลือด?",
+     c:["BP 170/100","ได้ warfarin อยู่","Ischemic stroke เมื่อ 3 เดือนก่อน","CPR 5 นาที"], a:2,
+     e:"Ischemic stroke ภายใน 6 เดือนเป็นข้อห้ามสัมบูรณ์ ส่วนการใช้ anticoagulant, ความดันสูง และ CPR นานเป็นข้อห้ามสัมพัทธ์ (และความดัน 170/100 ยังไม่ถึงเกณฑ์ >180/110)"},
+    {q:"STEMI อาการ 18 ชม. ยังเจ็บอยู่เล็กน้อย hemodynamic คงที่ อยู่ใกล้ PCI center ข้อใดเหมาะสม?",
+     c:["ให้ยาละลายลิ่มเลือด","ส่งทำ primary PCI","รักษาด้วยยาอย่างเดียว","รอฉีดสีหลัง 72 ชม."], a:1,
+     e:"อาการ 12–24 ชม. การส่ง primary PCI สมเหตุสมผล (Class 2a) ประโยชน์ของยาละลายลิ่มเลือดหลัง 12 ชม. มีน้อย"}
+  ]
+},
+
+/* ---------------- 5 ---------------- */
+{
+  id:"nste", n:"5", title:"NSTE-ACS: แบ่งความเสี่ยงและจังหวะการฉีดสี", sub:"GRACE · TIMI · immediate / early / in-hospital invasive", nav:"NSTE-ACS",
+  chips:[
+    {v:"<2 ชม.", l:"immediate invasive ใน very high risk"},
+    {v:"<24 ชม.", l:"early invasive ใน high risk (ACC/AHA)"},
+    {v:">140", l:"GRACE ที่สนับสนุนให้ฉีดสีเร็ว"},
+    {v:"≤72 ชม.", l:"ฉีดสีระหว่างนอน รพ. (Thai ACS 2563)"}
+  ],
+  bullets:[
+    "ประเมินความเสี่ยงทุกรายด้วย <b>GRACE</b> หรือ <b>TIMI</b> score (Thai ACS 2563) — ACC/AHA 2025 ระบุว่า GRACE 2.0 และ TIMI ช่วยเลือกผู้ที่ได้ประโยชน์จาก routine invasive",
+    "<b>Very high risk → immediate invasive (เร็วที่สุด, ภายใน 2 ชม.)</b>: ความดันไม่คงที่หรือช็อก, เจ็บหน้าอกไม่หายแม้ให้ยา, arrhythmia คุกคามชีวิตหรือ cardiac arrest, mechanical complication, acute HF ที่สัมพันธ์กับ ischemia, ST elevation เป็นพักๆ",
+    "<b>High risk</b>: troponin สูง (NSTEMI), ST/T เปลี่ยนแปลงแบบ dynamic, GRACE >140 → Thai ACS 2563 ให้ฉีดสีภายใน 72 ชม. · ACC/AHA 2025 ให้ early invasive ภายใน 24 ชม. (Class 2a)",
+    "<b>Intermediate risk</b>: เบาหวาน, CKD, LVEF <40% หรือ HF, angina หลัง MI, เคย PCI/CABG, GRACE 109–140 → invasive ระหว่างนอนโรงพยาบาล ช้าได้ถึง 48–72 ชม. โดยไม่เพิ่ม MACE",
+    "<b>Low risk</b>: ไม่มีลักษณะข้างต้น → non-invasive test (stress test หรือ CCTA) ก่อน แล้วเลือก invasive แบบ selective",
+    "<b>Anticoagulant</b>: UFH ใช้ได้เสมอ · enoxaparin 1 มก./กก. SC q12h (CrCl <30 → q24h) หรือ fondaparinux 2.5 มก. SC วันละครั้ง เป็นทางเลือกเมื่อไม่ได้ทำ invasive เร็ว · ให้ต่อจนกว่าจะ revascularize",
+    "<b>P2Y12</b>: ถ้าทำ PCI แนะนำ ticagrelor หรือ prasugrel มากกว่า clopidogrel · ถ้ายังไม่รู้กายวิภาคหลอดเลือดอย่าให้ prasugrel ล่วงหน้า",
+    "<b>CABG vs PCI</b>: เลือก CABG เมื่อ left main/multivessel ซับซ้อน, เบาหวาน, SYNTAX score สูง · เลือก PCI เมื่อเสี่ยงผ่าตัดสูง โรคร่วมมาก หรือยังมี ongoing ischemia — ตัดสินใจร่วมกับ heart team"
+  ],
+  recs:[
+    {t:"Refractory angina หรือ hemodynamic/electrical instability → immediate invasive strategy", s:"strong", e:"ACC/AHA 2025 · C-LD"},
+    {t:"Intermediate หรือ high risk ที่เหมาะกับ revascularization → invasive ระหว่างนอนโรงพยาบาล", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"Low risk → routine หรือ selective invasive ก็ได้", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"High risk → early invasive ภายใน 24 ชม.", s:"conditional", c:"Class 2a", e:"ACC/AHA 2025 · B-R"},
+    {t:"NSTE-ACS ที่ทำ PCI ใช้ ticagrelor หรือ prasugrel มากกว่า clopidogrel", s:"strong", e:"ACC/AHA 2025 · B-R"},
+    {t:"Enoxaparin หรือ fondaparinux เป็นทางเลือกแทน UFH เมื่อไม่ได้วางแผน early invasive", s:"strong", e:"ACC/AHA 2025 · B-R"}
+  ],
+  cards:[
+    {f:"ข้อบ่งชี้ immediate invasive (<2 ชม.) ใน NSTE-ACS?", b:"Shock/ความดันไม่คงที่, เจ็บไม่หายแม้ให้ยา, VT/VF หรือ arrest, mechanical complication, acute HF จาก ischemia, ST elevation เป็นพักๆ"},
+    {f:"ลักษณะ high risk NSTE-ACS?", b:"Troponin สูง (NSTEMI), ST/T dynamic, GRACE >140"},
+    {f:"TIMI score สำหรับ UA/NSTEMI มีอะไรบ้าง? (7 ข้อ)", b:"อายุ ≥65 · ปัจจัยเสี่ยง CAD ≥3 · รู้ว่ามี stenosis ≥50% · ใช้ aspirin ใน 7 วัน · angina ≥2 ครั้งใน 24 ชม. · ST deviation ≥0.5 มม. · marker บวก"},
+    {f:"GRACE score ที่ถือว่าเสี่ยงสูง?", b:">140 → สนับสนุนให้ฉีดสีเร็ว (ACC/AHA ภายใน 24 ชม., ไทยภายใน 72 ชม.) · 109–140 = intermediate"},
+    {f:"Enoxaparin ใน NSTE-ACS และเมื่อไตเสื่อม?", b:"1 มก./กก. SC q12h · CrCl <30 ลดเป็น 1 มก./กก. SC q24h"}
+  ],
+  quiz:[
+    {q:"NSTEMI อายุ 68 ปี troponin สูง ไม่เจ็บแล้ว hemodynamic คงที่ GRACE 152 จังหวะการฉีดสีตาม ACC/AHA 2025 คือ?",
+     c:["ภายใน 2 ชม.","ภายใน 24 ชม.","หลัง 72 ชม.","ทำ stress test ก่อน"], a:1,
+     e:"High risk (troponin สูง, GRACE >140) แต่ไม่มีลักษณะ very high risk จึงเหมาะกับ early invasive ภายใน 24 ชม."},
+    {q:"NSTEMI ที่เจ็บหน้าอกต่อเนื่องแม้ได้ nitrate, aspirin, heparin และมี VT เป็นพักๆ ควรทำอย่างไร?",
+     c:["Early invasive ภายใน 24 ชม.","Immediate invasive","ให้ยาละลายลิ่มเลือด","รักษาด้วยยาแล้วนัด stress test"], a:1,
+     e:"Refractory angina และ electrical instability คือ very high risk ต้อง immediate invasive ส่วนยาละลายลิ่มเลือดไม่มีประโยชน์ใน NSTE-ACS"},
+    {q:"ผู้ป่วยเจ็บหน้าอก ECG ปกติ troponin ไม่สูงทั้ง 2 ครั้ง ไม่มีปัจจัยเสี่ยงสูง ขั้นต่อไปที่เหมาะสมคือ?",
+     c:["ฉีดสีด่วน","Non-invasive test หรือหาสาเหตุอื่น","ให้ DAPT 12 เดือน","ให้ยาละลายลิ่มเลือด"], a:1,
+     e:"กลุ่มเสี่ยงต่ำใช้ non-invasive testing ก่อน และพิจารณาสาเหตุอื่นของการเจ็บหน้าอก"}
+  ]
+},
+
+/* ---------------- 6 ---------------- */
+{
+  id:"comp", n:"6", title:"ภาวะแทรกซ้อนของ MI", sub:"Cardiogenic shock · RV infarction · arrhythmia · mechanical complication", nav:"ภาวะแทรกซ้อน",
+  chips:[
+    {v:"~10%", l:"ของ AMI เกิด cardiogenic shock"},
+    {v:"40–50%", l:"อัตราตายช่วงแรกของ shock"},
+    {v:"culprit only", l:"PCI ใน shock — ไม่ทำ non-culprit"},
+    {v:"~3 เดือน", l:"anticoagulant ใน LV thrombus"}
+  ],
+  bullets:[
+    "<b>Killip class</b>: I ไม่มี HF · II มี crepitation/S3 · III pulmonary edema · IV cardiogenic shock — ยิ่งสูงยิ่งเสี่ยงตาย",
+    "<b>Cardiogenic shock</b>: revascularize culprit vessel ด่วน (PCI หรือ CABG) ไม่ว่าอาการเริ่มนานเท่าไร · <b>ห้าม</b> PCI หลอดเลือด non-culprit ในครั้งแรก · ACC/AHA 2025 ไม่แนะนำ IABP หรือ VA-ECMO เป็น routine · microaxial flow pump อาจพิจารณาในราย STEMI shock รุนแรงที่คัดเลือกแล้ว · Thai ACS 2563 ให้พิจารณา IABP หรือ ECMO",
+    "<b>RV infarction</b>: inferior STEMI + hypotension + JVP สูง + ปอดใส → ให้สารน้ำ หลีกเลี่ยง nitrate/diuretic/morphine รักษา AV synchrony และเร่ง reperfusion",
+    "<b>Bradycardia/AV block</b> (มักพบใน inferior MI): atropine และ temporary pacing เมื่อความดันต่ำหรือ high-grade AV block · ถ้า high-grade AV block ไม่หายพิจารณา permanent pacemaker",
+    "<b>AF with RVR</b>: amiodarone หรือ digoxin IV · electrical cardioversion เมื่อความดันต่ำหรือ HF เฉียบพลันจาก AF",
+    "<b>VT/VF</b> ใน 48 ชม.แรกมักเกิดจาก ischemia → revascularize แก้ K/Mg, beta-blocker · ICD เมื่อ LVEF ≤40% หลัง MI ≥40 วันและหลัง revascularization ≥90 วัน",
+    "<b>Mechanical complications</b> (papillary muscle rupture → acute MR, VSR, free wall rupture/tamponade): นึกถึงเมื่อมี murmur ใหม่หรือ shock ทันทีใน 2–7 วันหลัง MI — echo ด่วนและส่ง center ที่มีศัลยแพทย์หัวใจ",
+    "<b>Acute HF/HFrEF</b>: ACEI/ARB โดยเร็ว, beta-blocker ชนิดกินเมื่อคงที่, MRA, loop diuretic",
+    "<b>LV thrombus</b> (พบใน anterior MI ขนาดใหญ่): anticoagulant ประมาณ 3 เดือน ชั่งน้ำหนักกับความเสี่ยงเลือดออก",
+    "<b>Pericarditis หลัง MI</b>: high-dose aspirin หรือ colchicine ช่วยลดอาการ หลีกเลี่ยง NSAIDs อื่นและ glucocorticoid",
+    "<b>ซีด</b>: การให้เลือดเพื่อให้ Hb ≥10 ก./ดล. อาจสมเหตุสมผลในผู้ป่วย ACS ที่ซีดและไม่ได้มีเลือดออก"
+  ],
+  recs:[
+    {t:"ACS ที่มี cardiogenic shock: emergency revascularization ของ culprit vessel ด้วย PCI หรือ CABG", s:"strong", e:"ACC/AHA 2025 · B-R"},
+    {t:"ไม่ทำ PCI ของ non-infarct artery เป็น routine ในช่วง primary PCI ของผู้ป่วย shock", s:"harm", c:"Class 3: Harm", e:"ACC/AHA 2025 · B-R"},
+    {t:"ไม่ใช้ IABP หรือ VA-ECMO เป็น routine ใน cardiogenic shock", s:"harm", c:"Class 3: No benefit", e:"ACC/AHA 2025 · B-R"},
+    {t:"Microaxial flow pump ในผู้ป่วย STEMI shock รุนแรงที่คัดเลือกแล้ว", s:"conditional", c:"Class 2a", e:"ACC/AHA 2025 · B-R"},
+    {t:"Mechanical complication ดูแลใน center ที่มีศัลยแพทย์หัวใจ", s:"strong", e:"ACC/AHA 2025 · C-EO"},
+    {t:"ICD เมื่อ LVEF ≤40% หลัง MI ≥40 วัน และหลัง revascularization ≥90 วัน", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ให้เลือดเพื่อ Hb ≥10 ก./ดล. ในผู้ป่วย ACS ที่ซีดและไม่มีเลือดออก", s:"conditional", c:"Class 2b", e:"ACC/AHA 2025 · B-R"}
+  ],
+  cards:[
+    {f:"Killip class I–IV?", b:"I ไม่มี HF · II crepitation/S3/JVP สูง · III pulmonary edema · IV cardiogenic shock"},
+    {f:"Triad ของ RV infarction?", b:"Hypotension + JVP สูง + ปอดใส (มักร่วมกับ inferior STEMI) — ให้สารน้ำ งด nitrate/diuretic"},
+    {f:"การทำ PCI ใน cardiogenic shock?", b:"เปิดเฉพาะ culprit vessel ในครั้งแรก การทำ multivessel ทันทีเพิ่มอัตราตายและไตวาย"},
+    {f:"Murmur ใหม่ + shock 3 วันหลัง MI นึกถึงอะไร?", b:"Mechanical complication: papillary muscle rupture (acute MR) หรือ ventricular septal rupture → echo ด่วน ส่งผ่าตัด"},
+    {f:"ICD หลัง MI ใส่เมื่อไร?", b:"LVEF ≤40% ที่ ≥40 วันหลัง MI และ ≥90 วันหลัง revascularization"}
+  ],
+  quiz:[
+    {q:"Anterior STEMI ทำ primary PCI พบ LAD occlusion และ RCA ตีบ 85% ผู้ป่วยอยู่ใน cardiogenic shock ข้อใดถูก?",
+     c:["ทำ PCI ทั้ง LAD และ RCA ทันที","ทำ PCI เฉพาะ LAD (culprit)","ใส่ IABP ทุกรายก่อน PCI","รักษาด้วยยาก่อน 72 ชม."], a:1,
+     e:"ใน shock ให้เปิดเฉพาะ culprit (CULPRIT-SHOCK) การทำ non-culprit ทันทีเป็น Class 3: Harm และ IABP แบบ routine ไม่มีประโยชน์"},
+    {q:"วันที่ 4 หลัง inferior MI ผู้ป่วยเหนื่อยทันที pulmonary edema มี holosystolic murmur ใหม่ที่ apex ร้าวไปรักแร้ น่าจะเป็นอะไร?",
+     c:["Dressler syndrome","Papillary muscle rupture","LV thrombus","Reinfarction ของ LAD"], a:1,
+     e:"Acute MR จาก papillary muscle rupture (posteromedial papillary muscle ได้เลือดจาก RCA เส้นเดียว จึงสัมพันธ์กับ inferior MI)"},
+    {q:"Inferior STEMI HR 38 BP 78/40 ECG complete heart block ขั้นแรกที่เหมาะสม?",
+     c:["Metoprolol IV","Atropine และเตรียม transcutaneous/temporary pacing","Amiodarone IV","Furosemide IV"], a:1,
+     e:"Bradycardia ร่วมกับความดันต่ำหรือ high-grade AV block ให้ atropine และ pacing ควบคู่กับเร่ง reperfusion"}
+  ]
+},
+
+/* ---------------- 7 ---------------- */
+{
+  id:"sec", n:"7", title:"หลัง MI และการป้องกันระยะยาว", sub:"DAPT · ลดไขมัน · ยาหัวใจ · AF ที่ต้องกินยาต้านการแข็งตัว", nav:"หลัง MI",
+  chips:[
+    {v:"12 เดือน", l:"DAPT มาตรฐานถ้าไม่เสี่ยงเลือดออกสูง"},
+    {v:"≥1 เดือน", l:"เปลี่ยนเป็น ticagrelor เดี่ยวได้"},
+    {v:"<70 / 55", l:"มก./ดล. LDL-C เป้า / เกณฑ์เพิ่มยา"},
+    {v:"4–8 สัปดาห์", l:"ตรวจไขมันซ้ำหลังเริ่ม/ปรับยา"}
+  ],
+  bullets:[
+    "<b>DAPT</b> (aspirin + P2Y12 inhibitor) อย่างน้อย 12 เดือนในผู้ไม่เสี่ยงเลือดออกสูง แล้วให้ aspirin ต่อตลอดชีวิต",
+    "<b>ลดความเสี่ยงเลือดออก</b> (ACC/AHA 2025): ให้ PPI เมื่อเสี่ยง GI bleed · ผู้ที่ทน ticagrelor DAPT ได้ เปลี่ยนเป็น ticagrelor เดี่ยวได้ตั้งแต่ ≥1 เดือนหลัง PCI · อาจ de-escalate เป็น clopidogrel หลัง 1 เดือน · ผู้เสี่ยงเลือดออกสูงอาจเหลือยาต้านเกล็ดเลือดตัวเดียวหลัง 1 เดือน",
+    "<b>AF หรือข้อบ่งชี้ OAC อื่น</b>: ACC/AHA 2025 ให้หยุด aspirin หลัง PCI 1–4 สัปดาห์ แล้วใช้ P2Y12 (ควรเป็น clopidogrel) + OAC · Thai ACS 2563 ให้ triple therapy (aspirin + clopidogrel + OAC) ช่วงแรกถึงก่อนจำหน่าย เลือก NOAC มากกว่า warfarin และหลีกเลี่ยง ticagrelor/prasugrel ในช่วง triple",
+    "<b>Statin</b> ความแรงสูงทุกราย เริ่มเร็ว (atorvastatin 40–80 มก. หรือ rosuvastatin 20–40 มก.) — ACC/AHA ให้เริ่ม ezetimibe ไปพร้อมกันได้ · ตรวจไขมันซ้ำ 4–8 สัปดาห์",
+    "<b>เป้า LDL-C</b>: Thai ACS 2563 ลดลง ≥50% และ <70 มก./ดล. (<40 ถ้า ACS ซ้ำ) เพิ่ม ezetimibe แล้ว PCSK9 inhibitor ถ้าไม่ถึง · ACC/AHA 2025 เพิ่ม non-statin เมื่อ LDL-C ≥70 และสมเหตุสมผลที่จะเพิ่มเมื่อ 55–<70 มก./ดล. (ดูรายละเอียดในหน้า <a href=\"../lipid/index.html\">Lipid</a>)",
+    "<b>Beta-blocker</b> ชนิดกินในผู้ไม่มีข้อห้าม โดยเฉพาะ LVEF ≤40%",
+    "<b>ACEI/ARB</b> ใน LVEF ≤40%, ความดันสูง, เบาหวาน หรือ anterior STEMI (Class 1) และพิจารณาในรายอื่น · ห้ามใช้ ACEI ร่วมกับ ARB · <b>MRA</b> เมื่อ LVEF ≤40% ร่วมกับ HF หรือเบาหวาน",
+    "<b>SGLT2 inhibitor</b> ไม่ต้องรอเริ่ม ถ้ามีข้อบ่งชี้ (เบาหวาน, HF, CKD) · <b>Colchicine</b> ขนาดต่ำอาจพิจารณาเพื่อลด MACE (Class 2b)",
+    "<b>อื่นๆ</b>: เลิกบุหรี่, วัคซีนไข้หวัดใหญ่ทุกปี, ส่ง cardiac rehabilitation ก่อนจำหน่าย (home-based เป็นทางเลือก), echocardiography ก่อนจำหน่าย, หลีกเลี่ยง NSAIDs"
+  ],
+  recs:[
+    {t:"DAPT อย่างน้อย 1 ปีในผู้ไม่เสี่ยงเลือดออกสูง", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"เปลี่ยนเป็น ticagrelor monotherapy ได้ตั้งแต่ ≥1 เดือนหลัง PCI ในผู้ที่ทน ticagrelor DAPT ได้", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ให้ PPI ร่วมกับ DAPT หรือ anticoagulant ในผู้เสี่ยงเลือดออกทางเดินอาหารสูง", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"ผู้ที่ต้องใช้ OAC: หยุด aspirin หลัง PCI 1–4 สัปดาห์ แล้วให้ P2Y12 (ควรเป็น clopidogrel) + OAC", s:"strong", e:"ACC/AHA 2025 · B-R"},
+    {t:"De-escalate จาก ticagrelor/prasugrel เป็น clopidogrel หลัง 1 เดือน", s:"conditional", c:"Class 2b", e:"ACC/AHA 2025 · B-R"},
+    {t:"ACEI หรือ ARB ใน ACS เสี่ยงสูง (LVEF ≤40%, HT, DM, anterior STEMI)", s:"strong", e:"ACC/AHA 2025 · A"},
+    {t:"MRA ใน ACS ที่ LVEF ≤40% ร่วมกับ HF หรือเบาหวาน", s:"strong", e:"ACC/AHA 2025 · B-R"},
+    {t:"ตรวจไขมันซ้ำ 4–8 สัปดาห์หลังเริ่มหรือปรับยาลดไขมัน", s:"strong", e:"ACC/AHA 2025 · C-LD"},
+    {t:"Colchicine ขนาดต่ำเพื่อลด MACE หลัง ACS", s:"conditional", c:"Class 2b", e:"ACC/AHA 2025 · B-R"},
+    {t:"วัคซีนไข้หวัดใหญ่ทุกปี และส่ง cardiac rehabilitation ก่อนจำหน่าย", s:"strong", e:"ACC/AHA 2025 · A"}
+  ],
+  cards:[
+    {f:"ระยะเวลา DAPT มาตรฐานหลัง ACS?", b:"อย่างน้อย 12 เดือนถ้าไม่เสี่ยงเลือดออกสูง แล้ว aspirin ต่อตลอดชีวิต"},
+    {f:"Ticagrelor monotherapy เริ่มได้เมื่อไร?", b:"≥1 เดือนหลัง PCI ในผู้ที่ทน ticagrelor DAPT ได้ (ACC/AHA 2025 Class 1)"},
+    {f:"ACS + AF หลัง PCI ตาม ACC/AHA 2025?", b:"หยุด aspirin 1–4 สัปดาห์หลัง PCI แล้วใช้ clopidogrel + OAC (NOAC ดีกว่า warfarin)"},
+    {f:"เกณฑ์เพิ่ม non-statin หลัง ACS ตาม ACC/AHA 2025?", b:"LDL-C ≥70 มก./ดล. ขณะใช้ statin สูงสุดที่ทนได้ → แนะนำ · 55–<70 → สมเหตุสมผล"},
+    {f:"เป้า LDL-C ตาม Thai ACS 2563?", b:"ลดลง ≥50% และ <70 มก./ดล. · <40 ในผู้ที่เป็น ACS ซ้ำ"},
+    {f:"ข้อบ่งชี้ MRA หลัง MI?", b:"LVEF ≤40% ร่วมกับอาการ HF หรือเบาหวาน"}
+  ],
+  quiz:[
+    {q:"ผู้ป่วย NSTEMI ทำ PCI แล้วได้ aspirin + ticagrelor ผ่านไป 2 เดือนไม่มีปัญหา แต่มีความกังวลเรื่องเลือดออก ทางเลือกตาม ACC/AHA 2025 คือ?",
+     c:["หยุดยาทั้งหมด","เปลี่ยนเป็น ticagrelor เดี่ยว","เปลี่ยนเป็น aspirin + warfarin","เพิ่ม prasugrel"], a:1,
+     e:"ผู้ที่ทน ticagrelor DAPT ได้ เปลี่ยนเป็น ticagrelor monotherapy ได้ตั้งแต่ ≥1 เดือนหลัง PCI (Class 1)"},
+    {q:"ผู้ป่วย AF CHA₂DS₂-VASc 4 ทำ PCI จาก NSTEMI ข้อใดตรงกับ ACC/AHA 2025 มากที่สุด?",
+     c:["Aspirin + ticagrelor + warfarin 12 เดือน","หยุด aspirin หลัง 1–4 สัปดาห์ ต่อ clopidogrel + NOAC","Aspirin เดี่ยว","Prasugrel + NOAC"], a:1,
+     e:"ลดเลือดออกด้วยการหยุด aspirin เร็ว แล้วใช้ P2Y12 (ควรเป็น clopidogrel) ร่วมกับ OAC"},
+    {q:"หลัง ACS ได้ atorvastatin 80 มก. ครบ 6 สัปดาห์ LDL-C 82 มก./ดล. ควรทำอะไร?",
+     c:["คงยาเดิม","เพิ่ม ezetimibe","ลด statin","หยุด statin เปลี่ยนเป็น fibrate"], a:1,
+     e:"LDL-C ≥70 ขณะได้ statin สูงสุด → เพิ่ม non-statin เช่น ezetimibe (ทั้ง Thai และ ACC/AHA)"},
+    {q:"Anterior STEMI LVEF 35% เบาหวาน ยาใดไม่ใช่ Class 1 ในชุดยาก่อนจำหน่าย?",
+     c:["ACEI/ARB","MRA","Beta-blocker","Colchicine"], a:3,
+     e:"Colchicine ขนาดต่ำเป็น Class 2b ส่วน ACEI/ARB, MRA (LVEF ≤40% + DM) และ beta-blocker เป็นคำแนะนำหลัก"}
+  ]
+},
+
+/* ---------------- tools ---------------- */
+{ id:"tools", n:"⚙", nav:"เครื่องมือ", isTool:true },
+
+{ id:"final", nav:"แบบทดสอบรวม", isFinal:true }
+];
+
+const COR_LABEL = {strong:"Class 1", conditional:"Class 2", harm:"Class 3"};
+
+const MUST_KNOW = [
+  {v:"10 นาที", l:"FMC → ECG และแปลผล"},
+  {v:"120 นาที", l:"เส้นแบ่ง primary PCI vs ยาละลายลิ่มเลือด"},
+  {v:"10–30 นาที", l:"วินิจฉัย → เริ่มยาละลายลิ่มเลือด"},
+  {v:"≥50%", l:"ST ลดลงที่ 60–90 นาที = ยาได้ผล"},
+  {v:"2–24 ชม.", l:"ฉีดสีหลังยาละลายลิ่มเลือด (ACC/AHA) · ไทย 24–72"},
+  {v:"1.5 MU", l:"Streptokinase ใน 30–60 นาที"},
+  {v:"30–50 มก.", l:"Tenecteplase ตามน้ำหนัก (ครึ่งขนาดถ้า ≥75 ปี)"},
+  {v:"162–325", l:"มก. aspirin loading"},
+  {v:"<90%", l:"SpO₂ ที่ควรให้ออกซิเจน"},
+  {v:">140", l:"GRACE = high risk NSTE-ACS"},
+  {v:"12 เดือน", l:"DAPT มาตรฐาน"},
+  {v:"<70 / 55", l:"LDL-C (มก./ดล.) เป้า / เกณฑ์เพิ่มยา"}
+];
+
+/* ============================= EXTRAS (ECG + comparison) ============================= */
+function ecgPath(o){
+  // baseline y=70; negative = upward on screen. units: mm*6
+  const B=70, k=6;
+  const r=(o.r??6)*k, s=(o.s??1.2)*k, q=(o.q??0)*k, j=(o.j??0)*k, st=(o.st??o.j??0)*k;
+  const t=(o.t??2)*k, t2=(o.t2??0)*k;
+  let d=`M0 ${B} L18 ${B} Q26 ${B-5} 34 ${B} L48 ${B}`;
+  d+=` L51 ${B+q} L56 ${B-r} L61 ${B+s} L65 ${B-j}`;
+  if(o.up){ d+=` Q72 ${B-j} 78 ${B-st}`; } else { d+=` L78 ${B-st}`; }
+  if(t2){ // biphasic: up then down
+    d+=` Q86 ${B-st-t} 94 ${B}` + ` Q102 ${B+t2} 110 ${B}`;
+  } else {
+    d+=` Q94 ${B-st-t*2} 110 ${B}`;
+  }
+  d+=` L140 ${B}`;
+  return d;
+}
+function ecgFig(title, note, beats){
+  const w = 150*beats.length;
+  const grid = `<pattern id="g${title.length}" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M6 0H0V6" fill="none" stroke="var(--ecg-grid)" stroke-width=".5"/></pattern>`;
+  const paths = beats.map((b,i)=>`<g transform="translate(${i*150+5},0)"><path d="${ecgPath(b)}" fill="none" stroke="var(--ecg-ink)" stroke-width="2" stroke-linejoin="round"/>${b.lab?`<text x="4" y="16" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${b.lab}</text>`:""}</g>`).join("");
+  return `<figure class="ecg-fig"><svg viewBox="0 0 ${w+10} 120" role="img" aria-label="${title}"><defs>${grid}</defs><rect width="100%" height="100%" fill="url(#g${title.length})"/>${paths}</svg><figcaption><b>${title}</b> — ${note}</figcaption></figure>`;
+}
+const EXTRAS = {
+  ecg: ()=>`
+    <div class="section-h"><h2>ภาพ ECG แบบย่อ (schematic)</h2><div class="line"></div></div>
+    <p class="muted-s">ภาพวาดอย่างง่ายเพื่อจำรูปแบบ ไม่ใช่ ECG จริง</p>
+    <div class="ecg-grid">
+      ${ecgFig("STEMI", "ST elevation ที่ J point ต่อเนื่องเป็น convex/tombstone ใน ≥2 lead ติดกัน", [{lab:"ปกติ"},{lab:"STEMI", s:0.3, j:3.5, st:5, t:0.8}])}
+      ${ecgFig("Posterior MI", "V1–V3 ST depression + R สูง + T ตั้ง → ทำ V7–V9", [{lab:"V2", r:7, s:0.3, j:-3, st:-2.5, t:2.5},{lab:"V8", r:3, s:2, j:1, st:1.4, t:1.2}])}
+      ${ecgFig("de Winter", "upsloping ST depression ≥1 มม. ที่ J point + T สูงสมมาตร (proximal LAD)", [{lab:"V3", r:6, s:0.5, j:-3.2, st:-0.6, up:true, t:4.5},{lab:"V4", r:7, s:0.5, j:-3, st:-0.4, up:true, t:4.8}])}
+      ${ecgFig("Wellens", "Type A biphasic T / Type B T inversion ลึกสมมาตรใน V2–V3 ขณะไม่เจ็บ", [{lab:"Type A", j:0.2, st:0.3, t:1.2, t2:3},{lab:"Type B", j:0, st:0, t:-3}])}
+    </div>`,
+  compare: ()=>`
+    <div class="section-h"><h2>Thai ACS 2563 เทียบ ACC/AHA 2025</h2><div class="line"></div></div>
+    <div class="cmp-wrap"><table class="cmp">
+      <thead><tr><th>ประเด็น</th><th>Thai ACS 2563</th><th>ACC/AHA 2025</th></tr></thead>
+      <tbody>
+        <tr><td>hs-troponin ซ้ำ</td><td>rapid rule-out 0 และ 3 ชม.</td><td>0 และ 1–2 ชม. (conventional 3–6 ชม.)</td></tr>
+        <tr><td>ฉีดสีหลังยาละลายลิ่มเลือดสำเร็จ</td><td>24–72 ชม. ไม่เกิน 72 ชม.</td><td>2–24 ชม.</td></tr>
+        <tr><td>P2Y12 เมื่อทำ PCI</td><td>ticagrelor, prasugrel หรือ clopidogrel</td><td>ticagrelor/prasugrel ดีกว่า clopidogrel</td></tr>
+        <tr><td>DAPT</td><td>12 เดือน สั้น/ยาวกว่าได้ตามความเสี่ยง</td><td>≥12 เดือน + ticagrelor เดี่ยวได้ที่ ≥1 เดือน</td></tr>
+        <tr><td>NSTE-ACS high risk</td><td>ฉีดสีภายใน 72 ชม.</td><td>ภายใน 24 ชม. (Class 2a)</td></tr>
+        <tr><td>LDL-C</td><td>ลด ≥50% และ &lt;70 (&lt;40 ถ้า ACS ซ้ำ)</td><td>เพิ่ม non-statin ถ้า ≥70 · พิจารณาถ้า 55–&lt;70</td></tr>
+        <tr><td>AF + PCI</td><td>triple therapy ช่วงแรกถึงก่อนจำหน่าย</td><td>หยุด aspirin 1–4 สัปดาห์ → clopidogrel + OAC</td></tr>
+        <tr><td>Cardiogenic shock</td><td>พิจารณา IABP หรือ ECMO</td><td>ไม่ใช้ IABP/VA-ECMO เป็น routine</td></tr>
+      </tbody></table></div>
+    <p class="muted-s">ในบริบท รพ.ชุมชนไทยที่ต้องส่งต่อไกล การฉีดสีภายใน 24 ชม. อาจทำไม่ได้ทุกราย ให้ยึดระบบเครือข่าย STEMI ของจังหวัด</p>`
+};
+
+/* ============================= TOOLS ============================= */
+const ABS_CI = ["เคยมี hemorrhagic stroke","Ischemic stroke ภายใน 6 เดือน","บาดเจ็บรุนแรงหรือผ่าตัดใหญ่ภายใน 1 เดือน","GI หรือ intra-abdominal bleeding ภายใน 6 สัปดาห์","สงสัย aortic dissection","เจาะหลอดเลือดที่กดห้ามเลือดไม่ได้ภายใน 24 ชม.","มีเลือดออกอยู่ (active bleeding) / bleeding diathesis","เนื้องอกหรือความผิดปกติของหลอดเลือดในสมอง"];
+const REL_CI = ["TIA ภายใน 6 เดือน","ได้ยาต้านการแข็งตัวของเลือดอยู่","CPR นานกว่า 10 นาที","ความดัน >180/110 มม.ปรอท","Infective endocarditis","ตั้งครรภ์"];
+const TIMI_ST = [
+  ["age","อายุ",[["<65",0],["65–74",2],["≥75",3]]],
+  ["dm","เบาหวาน ความดันสูง หรือ angina",[["ไม่มี",0],["มี",1]]],
+  ["sbp","SBP <100 มม.ปรอท",[["ไม่",0],["ใช่",3]]],
+  ["hr","HR >100",[["ไม่",0],["ใช่",2]]],
+  ["killip","Killip II–IV",[["ไม่",0],["ใช่",2]]],
+  ["wt","น้ำหนัก <67 กก.",[["ไม่",0],["ใช่",1]]],
+  ["ant","Anterior STE หรือ LBBB",[["ไม่",0],["ใช่",1]]],
+  ["time","เวลาถึงการรักษา >4 ชม.",[["ไม่",0],["ใช่",1]]]
+];
+const TIMI_ST_MORT = [0.8,1.6,2.2,4.4,7.3,12.4,16.1,23.4,26.8,35.9];
+const TIMI_NST = ["อายุ ≥65 ปี","ปัจจัยเสี่ยง CAD ≥3 ข้อ (ประวัติครอบครัว, HT, ไขมันสูง, DM, สูบบุหรี่)","รู้ว่ามี coronary stenosis ≥50%","ใช้ aspirin ใน 7 วันที่ผ่านมา","Angina รุนแรง ≥2 ครั้งใน 24 ชม.","ST deviation ≥0.5 มม.","Cardiac marker บวก"];
+const TIMI_NST_RISK = [4.7,4.7,8.3,13.2,19.9,26.2,40.9,40.9];
+const HEART = [
+  ["h","History",[["น่าสงสัยน้อย",0],["ปานกลาง",1],["น่าสงสัยมาก",2]]],
+  ["e","ECG",[["ปกติ",0],["repolarization ผิดปกติแบบไม่จำเพาะ",1],["ST deviation ชัดเจน",2]]],
+  ["a","Age",[["<45",0],["45–64",1],["≥65",2]]],
+  ["r","Risk factors",[["ไม่มี",0],["1–2 ข้อ",1],["≥3 ข้อ หรือมีโรคหลอดเลือดแดงแข็ง",2]]],
+  ["t","Troponin",[["≤ ค่าปกติ",0],["1–3 เท่า",1],[">3 เท่า",2]]]
+];
+
+function seg(name, opts){
+  return `<div class="seg" data-name="${name}">${opts.map((o,i)=>`<button type="button" data-v="${o[1]}" class="${i===0?'on':''}">${o[0]}</button>`).join("")}</div>`;
+}
+function segVal(root, name){ const b=root.querySelector(`.seg[data-name="${name}"] .on`); return b?parseFloat(b.dataset.v):0; }
+
+function renderTools(){
+  const main = document.getElementById("main");
+  main.innerHTML = `
+  <div class="panel">
+    <div class="ch-head"><div class="bignum">⚙</div><div><h1>เครื่องมือข้างเตียง</h1><div class="sub">ตัดสินใจยาละลายลิ่มเลือด · ขนาดยา · risk score · flow</div></div></div>
+    <div class="tool-nav">
+      <a href="#t-flow">Flow</a><a href="#t-lysis">ยาละลายลิ่มเลือด</a><a href="#t-dose">ขนาดยา</a><a href="#t-timist">TIMI STEMI</a><a href="#t-timinst">TIMI NSTE</a><a href="#t-heart">HEART</a>
+    </div>
+
+    <section class="tool" id="t-flow">
+      <h2>ACS flow: ตั้งแต่เจ็บหน้าอกถึงการตัดสินใจ</h2>
+      <div class="flow">
+        <div class="fbox">เจ็บหน้าอก / สงสัย ACS → <b>ECG ภายใน 10 นาที</b> · aspirin · O₂ ถ้า SpO₂ &lt;90% · เจาะ troponin</div>
+        <div class="farrow">↓</div>
+        <div class="fsplit">
+          <div class="fcol">
+            <div class="fbox red"><b>STEMI / equivalent</b> อาการ &lt;12 ชม. (หรือ shock)</div>
+            <div class="farrow">↓</div>
+            <div class="fbox">คาด diagnosis → wire <b>&lt;120 นาที</b>?</div>
+            <div class="fsplit tight">
+              <div class="fcol"><div class="fbox ok">ใช่ → <b>Primary PCI</b><br>DAPT + UFH</div></div>
+              <div class="fcol"><div class="fbox warn">ไม่ใช่ → <b>ยาละลายลิ่มเลือด</b> ≤10–30 นาที<br>aspirin + clopidogrel + enoxaparin</div>
+                <div class="farrow">↓</div>
+                <div class="fbox">60–90 นาที: ST ลด ≥50%?</div>
+                <div class="fsplit tight">
+                  <div class="fcol"><div class="fbox ok">ได้ผล → ส่งฉีดสี 2–24 ชม. (ไทย ≤72 ชม.)</div></div>
+                  <div class="fcol"><div class="fbox red">ไม่ได้ผล → <b>Rescue PCI</b></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fcol">
+            <div class="fbox"><b>ไม่มี ST elevation</b> → hs-troponin ซ้ำ 1–2 ชม. · ECG ซ้ำ</div>
+            <div class="farrow">↓</div>
+            <div class="fbox red"><b>Very high risk</b> (shock, เจ็บไม่หาย, VT/VF, AHF) → ฉีดสีทันที &lt;2 ชม.</div>
+            <div class="fbox warn"><b>High risk</b> (NSTEMI, ST dynamic, GRACE &gt;140) → ฉีดสี &lt;24 ชม. (ไทย ≤72 ชม.)</div>
+            <div class="fbox">Intermediate → invasive ระหว่างนอน รพ.</div>
+            <div class="fbox ok">Low risk → non-invasive test / หาสาเหตุอื่น</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool" id="t-lysis">
+      <h2>ให้ยาละลายลิ่มเลือดได้หรือไม่</h2>
+      <div class="q-row"><span>อาการเริ่มมา &lt;12 ชม.</span>${seg("on",[["ใช่",1],["ไม่ใช่",0]])}</div>
+      <div class="q-row"><span>ECG เข้าเกณฑ์ STEMI / equivalent</span>${seg("ste",[["ใช่",1],["ไม่ใช่",0]])}</div>
+      <div class="q-row"><span>คาดว่า diagnosis → PCI &gt;120 นาที</span>${seg("delay",[["ใช่",1],["ไม่ใช่",0]])}</div>
+      <h3>ข้อห้ามสัมบูรณ์</h3><div class="ck" id="absList">${ABS_CI.map((x,i)=>`<label><input type="checkbox" data-k="a${i}"> ${x}</label>`).join("")}</div>
+      <h3>ข้อห้ามสัมพัทธ์</h3><div class="ck" id="relList">${REL_CI.map((x,i)=>`<label><input type="checkbox" data-k="r${i}"> ${x}</label>`).join("")}</div>
+      <div class="result" id="lysisOut"></div>
+      <p class="muted-s">ข้อห้ามตาม Thai ACS 2563 และเพิ่มข้อห้ามมาตรฐานสากล (active bleeding, รอยโรคในสมอง)</p>
+    </section>
+
+    <section class="tool" id="t-dose">
+      <h2>คำนวณขนาดยา</h2>
+      <div class="inp-row">
+        <label>น้ำหนัก (กก.)<input type="number" id="dWt" value="65" min="20" max="250"></label>
+        <label>อายุ (ปี)<input type="number" id="dAge" value="60" min="15" max="110"></label>
+        <label>Creatinine (มก./ดล.)<input type="number" id="dCr" value="1.0" step="0.1" min="0.1"></label>
+        <label>เพศ<select id="dSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      </div>
+      <div class="result" id="doseOut"></div>
+      <p class="muted-s">ตรวจทานกับฉลากยาและแนวทางของโรงพยาบาลก่อนสั่งยาทุกครั้ง · CrCl คำนวณด้วย Cockcroft-Gault</p>
+    </section>
+
+    <section class="tool" id="t-timist">
+      <h2>TIMI risk score — STEMI</h2>
+      ${TIMI_ST.map(x=>`<div class="q-row"><span>${x[1]}</span>${seg(x[0],x[2])}</div>`).join("")}
+      <div class="result" id="timistOut"></div>
+    </section>
+
+    <section class="tool" id="t-timinst">
+      <h2>TIMI risk score — UA/NSTEMI</h2>
+      <div class="ck" id="timinstList">${TIMI_NST.map((x,i)=>`<label><input type="checkbox"> ${x}</label>`).join("")}</div>
+      <div class="result" id="timinstOut"></div>
+    </section>
+
+    <section class="tool" id="t-heart">
+      <h2>HEART score — เจ็บหน้าอกที่ห้องฉุกเฉิน</h2>
+      ${HEART.map(x=>`<div class="q-row"><span>${x[1]}</span>${seg(x[0],x[2])}</div>`).join("")}
+      <div class="result" id="heartOut"></div>
+      <p class="muted-s">ใช้กับผู้ป่วยเจ็บหน้าอกที่ไม่มี STEMI เพื่อคัดผู้เสี่ยงต่ำ สำหรับ GRACE 2.0 ให้ใช้เครื่องคำนวณออนไลน์ฉบับทางการ</p>
+    </section>
+  </div>`;
+
+  main.querySelectorAll(".seg").forEach(sg=>{
+    sg.addEventListener("click", e=>{
+      const b=e.target.closest("button"); if(!b) return;
+      sg.querySelectorAll("button").forEach(x=>x.classList.remove("on")); b.classList.add("on");
+      calcAll();
+    });
+  });
+  main.querySelectorAll("input,select").forEach(el=>el.addEventListener("input", calcAll));
+  main.querySelectorAll("input[type=checkbox]").forEach(el=>el.addEventListener("change", calcAll));
+  calcAll();
+
+  function calcAll(){
+    const m = main;
+    // lysis
+    const on=segVal(m.querySelector("#t-lysis"),"on"), ste=segVal(m.querySelector("#t-lysis"),"ste"), dl=segVal(m.querySelector("#t-lysis"),"delay");
+    const nAbs=m.querySelectorAll("#absList input:checked").length, nRel=m.querySelectorAll("#relList input:checked").length;
+    let out;
+    if(!ste) out=`<span class="tag-n">ไม่ให้</span> ไม่เข้าเกณฑ์ STEMI — ห้ามให้ยาละลายลิ่มเลือดใน NSTE-ACS หรือ ST depression อย่างเดียว (ยกเว้น true posterior)`;
+    else if(nAbs) out=`<span class="tag-n">ห้ามให้</span> มีข้อห้ามสัมบูรณ์ → ส่ง primary PCI แม้จะช้า`;
+    else if(!on) out=`<span class="tag-w">ไม่แนะนำ</span> อาการเกิน 12 ชม. — พิจารณาส่ง PCI (12–24 ชม. หรือยังมี ischemia/shock)`;
+    else if(!dl) out=`<span class="tag-y">ส่ง Primary PCI</span> PCI ทำได้ภายใน 120 นาที ดีกว่ายาละลายลิ่มเลือด`;
+    else if(nRel) out=`<span class="tag-w">ชั่งน้ำหนัก</span> มีข้อห้ามสัมพัทธ์ ${nRel} ข้อ — ประเมินประโยชน์เทียบความเสี่ยงเลือดออก ปรึกษาอายุรแพทย์โรคหัวใจ และพิจารณาส่ง PCI`;
+    else out=`<span class="tag-y">ให้ได้</span> เริ่มยาละลายลิ่มเลือดภายใน 10–30 นาที แล้วส่งต่อ PCI center ทุกราย`;
+    m.querySelector("#lysisOut").innerHTML=out;
+
+    // dose
+    const wt=parseFloat(m.querySelector("#dWt").value)||0, age=parseFloat(m.querySelector("#dAge").value)||0, cr=parseFloat(m.querySelector("#dCr").value)||1, fem=m.querySelector("#dSex").value==="f";
+    const crcl = Math.round(((140-age)*wt)/(72*cr)*(fem?0.85:1));
+    let tnk = wt<60?30: wt<70?35: wt<80?40: wt<90?45:50;
+    const tnkTxt = age>=75 ? `${tnk/2} มก. (ครึ่งขนาดเพราะอายุ ≥75 ปี; ขนาดเต็มตามน้ำหนัก ${tnk} มก.)` : `${tnk} มก. IV bolus ครั้งเดียว`;
+    const alt1=Math.min(0.75*wt,50), alt2=Math.min(0.5*wt,35);
+    let enoxLysis;
+    if(crcl<30) enoxLysis=`${Math.round(wt)} มก. SC q24h (CrCl &lt;30)${age<75?" + 30 มก. IV bolus":" ไม่ bolus"}`;
+    else if(age>=75) enoxLysis=`${Math.round(0.75*wt)} มก. SC q12h ไม่ bolus (สูงสุด 75 มก./dose สำหรับ 2 dose แรก)`;
+    else enoxLysis=`30 มก. IV bolus แล้ว ${Math.round(wt)} มก. SC q12h (สูงสุด 100 มก./dose สำหรับ 2 dose แรก)`;
+    const enoxNste = crcl<30 ? `${Math.round(wt)} มก. SC q24h` : `${Math.round(wt)} มก. SC q12h`;
+    const ufhB=Math.min(Math.round(60*wt),4000), ufhI=Math.min(Math.round(12*wt),1000);
+    const clopi = age>75 ? "75 มก. ไม่ loading (อายุ >75 ปี)" : "300 มก. loading แล้ว 75 มก./วัน";
+    const pras = (age>=75||wt<=60) ? "60 มก. แล้ว 5 มก./วัน (อายุ ≥75 หรือ ≤60 กก.)" : "60 มก. แล้ว 10 มก./วัน";
+    m.querySelector("#doseOut").innerHTML = `
+      <div class="dl"><b>CrCl ประมาณ</b><span>${isFinite(crcl)?crcl:"—"} มล./นาที</span></div>
+      <div class="dl"><b>Tenecteplase</b><span>${tnkTxt}</span></div>
+      <div class="dl"><b>Alteplase</b><span>15 มก. bolus → ${alt1.toFixed(1)} มก. ใน 30 นาที → ${alt2.toFixed(1)} มก. ใน 60 นาที (รวม ${(15+alt1+alt2).toFixed(1)} มก.)</span></div>
+      <div class="dl"><b>Streptokinase</b><span>1.5 ล้านยูนิต ใน NSS 100 มล. หยด 30–60 นาที</span></div>
+      <div class="dl"><b>Enoxaparin + ยาละลายลิ่มเลือด</b><span>${enoxLysis}</span></div>
+      <div class="dl"><b>Enoxaparin ใน NSTE-ACS</b><span>${enoxNste}</span></div>
+      <div class="dl"><b>UFH + ยาละลายลิ่มเลือด</b><span>${ufhB} ยูนิต IV แล้ว ${ufhI} ยูนิต/ชม. (aPTT 1.5–2 เท่า)</span></div>
+      <div class="dl"><b>Clopidogrel + ยาละลายลิ่มเลือด</b><span>${clopi}</span></div>
+      <div class="dl"><b>Prasugrel (ถ้าไม่เคย stroke/TIA)</b><span>${pras}</span></div>
+      ${crcl<15?'<div class="warnline">CrCl &lt;15: หลีกเลี่ยง enoxaparin/fondaparinux ใช้ UFH แทน</div>':''}
+      ${crcl<20&&crcl>=15?'<div class="warnline">CrCl &lt;20: หลีกเลี่ยง fondaparinux</div>':''}`;
+
+    // TIMI STEMI
+    const ts = TIMI_ST.reduce((a,x)=>a+segVal(m.querySelector("#t-timist"),x[0]),0);
+    m.querySelector("#timistOut").innerHTML = `<b class="big">${ts}</b> / 14 คะแนน · อัตราตายที่ 30 วันประมาณ <b>${TIMI_ST_MORT[Math.min(ts,9)]}%</b>`;
+    // TIMI NSTE
+    const tn = m.querySelectorAll("#timinstList input:checked").length;
+    m.querySelector("#timinstOut").innerHTML = `<b class="big">${tn}</b> / 7 คะแนน · death/MI/urgent revascularization ที่ 14 วันประมาณ <b>${TIMI_NST_RISK[tn]}%</b> ${tn>=5?"· เสี่ยงสูง":tn>=3?"· เสี่ยงปานกลาง":"· เสี่ยงต่ำ"}`;
+    // HEART
+    const hs = HEART.reduce((a,x)=>a+segVal(m.querySelector("#t-heart"),x[0]),0);
+    const hr = hs<=3 ? "เสี่ยงต่ำ (MACE 6 สัปดาห์ราว 1–2%) → พิจารณาจำหน่ายพร้อมนัดติดตาม" : hs<=6 ? "เสี่ยงปานกลาง (MACE ราว 12–17%) → admit/สังเกตอาการ ทำ troponin ซ้ำและ non-invasive test" : "เสี่ยงสูง (MACE ราว 50–65%) → รักษาแบบ ACS พิจารณา invasive เร็ว";
+    m.querySelector("#heartOut").innerHTML = `<b class="big">${hs}</b> / 10 คะแนน · ${hr}`;
+  }
+}
+
+/* ============================= STATE ============================= */
+const PROGRESS_KEY = "acs_progress_v1";
+function loadProgress(){
+  try{ return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }catch(e){ return {}; }
+}
+function saveProgress(p){
+  try{ localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }catch(e){}
+}
+let PROGRESS = loadProgress();
+const chapterList = SECTIONS.filter(s=>!s.isHome && !s.isFinal && !s.isTool);
+
+function chapterDone(id){
+  const p = PROGRESS[id];
+  return !!(p && p.quizDone);
+}
+function overallPercent(){
+  const total = chapterList.length;
+  const done = chapterList.filter(s=>chapterDone(s.id)).length;
+  return Math.round(done/total*100);
+}
+function updateTopProgress(){
+  const pct = overallPercent();
+  document.getElementById("topProgressBar").style.width = pct+"%";
+  document.getElementById("topProgressText").textContent = pct+"%";
+}
+
+/* ============================= NAV ============================= */
+let currentId = "home";
+
+function renderNav(){
+  const nav = document.getElementById("sidenav");
+  nav.innerHTML = "";
+  const label = document.createElement("div");
+  label.className = "grp-label"; label.textContent = "ACS 2025";
+  nav.appendChild(label);
+  SECTIONS.forEach(s=>{
+    const btn = document.createElement("button");
+    btn.className = "navitem" + (s.id===currentId ? " active":"");
+    const n = document.createElement("span"); n.className="n"; n.textContent = s.isHome ? "•" : (s.isFinal ? "★" : s.n);
+    btn.appendChild(n);
+    const t = document.createElement("span"); t.textContent = s.nav; btn.appendChild(t);
+    if(!s.isHome && !s.isFinal && !s.isTool){
+      const chk = document.createElement("span");
+      chk.className = "check" + (chapterDone(s.id) ? " done":"");
+      btn.appendChild(chk);
+    }
+    btn.onclick = ()=>{ currentId = s.id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    nav.appendChild(btn);
+  });
+}
+
+/* ============================= RENDER: HOME ============================= */
+function renderHome(){
+  const main = document.getElementById("main");
+  const pct = overallPercent();
+  let statTiles = MUST_KNOW.map(m=>`<div class="stat-tile"><div class="v">${m.v}</div><div class="l">${m.l}</div></div>`).join("");
+  let progRows = chapterList.map(s=>{
+    const p = PROGRESS[s.id];
+    const score = p && p.quizBest ? p.quizBest.correct+"/"+p.quizBest.total : "—";
+    const barPct = p && p.quizBest ? Math.round(p.quizBest.correct/p.quizBest.total*100) : 0;
+    return `<div class="ch-progress-row">
+      <div class="t">${s.n}. ${s.title}</div>
+      <div class="bar"><i style="width:${barPct}%"></i></div>
+      <div class="score">${score}</div>
+    </div>`;
+  }).join("");
+  main.innerHTML = `
+    <div class="panel hero">
+      <span class="hero-tag">Thai ACS Guidelines 2563 · ACC/AHA/ACEP/NAEMSP/SCAI 2025</span>
+      <h1>ห้องเรียน Acute Coronary Syndrome</h1>
+      <p class="lead">สรุป ACS สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่ ECG ใน 10 นาทีแรก การเลือก primary PCI หรือยาละลายลิ่มเลือดในบริบท รพ.ที่ต้องส่งต่อ ไปจนถึงยาหลังจำหน่าย พร้อมเครื่องมือข้างเตียง แฟลชการ์ด และแบบทดสอบท้ายบท</p>
+      <div class="cta-row">
+        <button class="btn primary" onclick="goTo('def')">เริ่มเรียนบทที่ 1 →</button>
+        <button class="btn" onclick="goTo('tools')">เครื่องมือข้างเตียง</button>
+        <button class="btn" onclick="goTo('final')">ทำแบบทดสอบรวม</button>
+      </div>
+    </div>
+
+    <div class="section-h"><h2>ตัวเลขที่ต้องจำขึ้นใจ</h2><div class="line"></div></div>
+    <div class="stat-grid">${statTiles}</div>
+
+    <div class="section-h"><h2>ความคืบหน้ารายบท</h2><div class="line"></div></div>
+    <div class="ch-progress-list">${progRows}</div>
+
+    <div class="footnote"><b>อ้างอิง</b><br>
+      1. สมาคมแพทย์โรคหัวใจแห่งประเทศไทยฯ และคณะ. แนวเวชปฏิบัติการดูแลรักษาผู้ป่วยภาวะหัวใจขาดเลือดเฉียบพลัน พ.ศ. 2563 (Thai Acute Coronary Syndromes Guidelines 2020).<br>
+      2. Rao SV, O'Donoghue ML, Ruel M, et al. 2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients With Acute Coronary Syndromes. Circulation. 2025;151(13):e771–e862. doi:10.1161/CIR.0000000000001309<br>
+      3. Thygesen K, et al. Fourth Universal Definition of Myocardial Infarction (2018). Eur Heart J. 2019;40:237–269.<br>
+      4. Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023;44:3720–3826.<br>
+      5. Morrow DA, et al. TIMI risk score for STEMI. Circulation 2000;102:2031–7 · Antman EM, et al. TIMI risk score for UA/NSTEMI. JAMA 2000;284:835–42 · Six AJ, et al. HEART score. Neth Heart J 2008;16:191–6.<br>
+      เนื้อหาเพื่อการศึกษา การสั่งยาให้ตรวจสอบกับฉลากยาและแนวทางของโรงพยาบาล · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</div>
+  `;
+}
+window.goTo = (id)=>{ currentId = id; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+
+/* ============================= RENDER: CHAPTER ============================= */
+function renderChapter(sec){
+  const main = document.getElementById("main");
+  let chips = sec.chips.map(c=>`<div class="chip"><b>${c.v}</b>${c.l}</div>`).join("");
+  let bullets = sec.bullets.map(b=>`<li><span>${b}</span></li>`).join("");
+  let recs = sec.recs.map(r=>{
+    if(!r.s) return `<div class="rec-row"><div class="badges"></div><div class="txt">${r.t}</div></div>`;
+    const cls = r.s==="strong" ? "strong" : (r.s==="harm" ? "harm" : "conditional");
+    const label = r.c || COR_LABEL[r.s];
+    return `<div class="rec-row">
+      <div class="badges"><span class="badge ${cls}">${label}</span><span class="evid">${r.e}</span></div>
+      <div class="txt">${r.t}</div>
+    </div>`;
+  }).join("");
+
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">${sec.n}</div>
+        <div>
+          <h1>${sec.title}</h1>
+          <div class="sub">${sec.sub}</div>
+        </div>
+      </div>
+      <div class="chip-row">${chips}</div>
+
+      <div class="section-h"><h2>สรุปสาระสำคัญ</h2><div class="line"></div></div>
+      <ul class="bullets">${bullets}</ul>
+      ${sec.extraKey ? EXTRAS[sec.extraKey]() : ""}
+
+      ${sec.recs.length ? `
+      <div class="section-h"><h2>คำแนะนำหลัก</h2><div class="line"></div></div>
+      <div class="legend">
+        <span><i class="strong"></i> Class 1 — แนะนำ/ควรทำ</span>
+        <span><i class="conditional"></i> Class 2a/2b — สมเหตุสมผล/อาจพิจารณา</span>
+        <span><i class="harm"></i> Class 3 — ไม่มีประโยชน์/อันตราย</span>
+      </div>
+      ${recs}` : ""}
+
+      <div class="section-h"><h2>แฟลชการ์ดจำขึ้นใจ</h2><div class="line"></div></div>
+      <div id="fcArea"></div>
+
+      <div class="section-h"><h2>แบบทดสอบท้ายบท</h2><div class="line"></div></div>
+      <div id="quizArea"></div>
+
+    </div>
+  `;
+  mountFlashcards(sec);
+  mountQuiz(sec.id, sec.quiz);
+}
+
+/* ============================= FLASHCARDS ============================= */
+function mountFlashcards(sec){
+  const area = document.getElementById("fcArea");
+  let idx = 0;
+  const cards = sec.cards;
+  function draw(){
+    area.innerHTML = `
+      <div class="fc-counter">การ์ด ${idx+1} / ${cards.length} — คลิกที่การ์ดเพื่อดูคำตอบ</div>
+      <div class="flashcard" id="fcCard">
+        <div class="inner">
+          <div class="face front">${cards[idx].f}<span class="hint">คลิกเพื่อดูคำตอบ</span></div>
+          <div class="face back">${cards[idx].b}<span class="hint">คลิกเพื่อกลับ</span></div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="icon-btn" id="fcPrev">← ก่อนหน้า</button>
+        <button class="icon-btn" id="fcShuf">สุ่มการ์ด</button>
+        <button class="icon-btn" id="fcNext">ถัดไป →</button>
+      </div>
+    `;
+    const card = document.getElementById("fcCard");
+    card.onclick = ()=> card.classList.toggle("flip");
+    document.getElementById("fcPrev").onclick = ()=>{ idx = (idx-1+cards.length)%cards.length; draw(); };
+    document.getElementById("fcNext").onclick = ()=>{ idx = (idx+1)%cards.length; draw(); markCardsSeen(sec.id); };
+    document.getElementById("fcShuf").onclick = ()=>{ idx = Math.floor(Math.random()*cards.length); draw(); };
+  }
+  draw();
+}
+function markCardsSeen(id){
+  PROGRESS[id] = PROGRESS[id] || {};
+  PROGRESS[id].cardsSeen = true;
+  saveProgress(PROGRESS);
+}
+
+/* ============================= QUIZ ============================= */
+function mountQuiz(id, questions, isFinal){
+  const area = document.getElementById("quizArea");
+  let qi = 0, correct = 0, answered = false;
+  const order = questions.map((_,i)=>i);
+
+  function progressDots(){
+    return `<div class="quiz-progress">${order.map((_,i)=>`<i class="${i<qi?'done':''}"></i>`).join("")}</div>`;
+  }
+
+  function drawQuestion(){
+    answered = false;
+    const q = questions[order[qi]];
+    area.innerHTML = `
+      <div class="quiz-box">
+        ${progressDots()}
+        <div class="quiz-q">${qi+1}. ${q.q}</div>
+        <div id="choices">${q.c.map((c,i)=>`<button class="choice" data-i="${i}"><span class="k">${String.fromCharCode(65+i)}</span><span>${c}</span></button>`).join("")}</div>
+        <div class="explain" id="explainBox">${q.e}</div>
+        <div class="quiz-foot">
+          <span class="quiz-score">คะแนน: ${correct}/${qi}</span>
+          <button class="btn primary" id="nextBtn" style="display:none;">${qi===order.length-1 ? "ดูผลลัพธ์" : "ข้อถัดไป →"}</button>
+        </div>
+      </div>
+    `;
+    document.querySelectorAll("#choices .choice").forEach(btn=>{
+      btn.onclick = ()=>{
+        if(answered) return;
+        answered = true;
+        const i = parseInt(btn.dataset.i);
+        document.querySelectorAll("#choices .choice").forEach(b=>b.setAttribute("disabled","true"));
+        if(i===q.a){ btn.classList.add("correct"); correct++; }
+        else{
+          btn.classList.add("wrong");
+          document.querySelectorAll("#choices .choice")[q.a].classList.add("correct");
+        }
+        document.getElementById("explainBox").classList.add("show");
+        document.querySelector(".quiz-score").textContent = "คะแนน: "+correct+"/"+(qi+1);
+        document.getElementById("nextBtn").style.display = "inline-flex";
+      };
+    });
+    document.getElementById("nextBtn").onclick = ()=>{
+      qi++;
+      if(qi>=order.length){ finish(); } else { drawQuestion(); }
+    };
+  }
+
+  function finish(){
+    const pct = Math.round(correct/order.length*100);
+    area.innerHTML = `
+      <div class="quiz-box quiz-done">
+        <div style="font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;">ผลการทดสอบ</div>
+        <div class="v">${correct}/${order.length}</div>
+        <p style="color:var(--muted);margin-top:6px;">คิดเป็น ${pct}% — ${pct>=80?"ยอดเยี่ยม จำแม่นมาก!":pct>=50?"ดี ลองทบทวนข้อที่พลาดอีกครั้ง":"ควรทบทวนสรุปสาระสำคัญและคำแนะนำหลักอีกรอบ"}</p>
+        <div class="cta-row" style="justify-content:center;">
+          <button class="btn" id="retryBtn">ทำแบบทดสอบอีกครั้ง</button>
+          ${!isFinal ? `<button class="btn primary" id="nextChBtn">ไปบทถัดไป →</button>` : ""}
+        </div>
+      </div>
+    `;
+    if(!isFinal){
+      PROGRESS[id] = PROGRESS[id] || {};
+      PROGRESS[id].quizDone = true;
+      const prevBest = PROGRESS[id].quizBest;
+      if(!prevBest || correct > prevBest.correct){ PROGRESS[id].quizBest = {correct, total: order.length}; }
+      saveProgress(PROGRESS);
+      renderNav();
+      updateTopProgress();
+    }
+    document.getElementById("retryBtn").onclick = ()=>{ qi=0; correct=0; drawQuestion(); };
+    const nb = document.getElementById("nextChBtn");
+    if(nb){
+      nb.onclick = ()=>{
+        const idx = chapterList.findIndex(s=>s.id===id);
+        const next = chapterList[idx+1];
+        currentId = next ? next.id : "final";
+        render();
+        window.scrollTo({top:0,behavior:"smooth"});
+      };
+    }
+  }
+
+  drawQuestion();
+}
+
+/* ============================= RENDER: FINAL QUIZ ============================= */
+function renderFinal(){
+  const main = document.getElementById("main");
+  const pool = [];
+  chapterList.forEach(s=> s.quiz.forEach(q=> pool.push(q)) );
+  // shuffle
+  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  const picked = pool.slice(0, 15);
+  main.innerHTML = `
+    <div class="panel">
+      <div class="ch-head">
+        <div class="bignum">★</div>
+        <div><h1>แบบทดสอบรวมทุกบท</h1><div class="sub">สุ่ม 15 ข้อจากทั้ง 7 บท เพื่อทบทวนก่อนขึ้นเวร/ก่อนสอบ</div></div>
+      </div>
+      <div id="quizArea" style="margin-top:20px;"></div>
+    </div>
+  `;
+  mountQuiz("final", picked, true);
+}
+
+/* ============================= MAIN RENDER ============================= */
+function render(){
+  renderNav();
+  updateTopProgress();
+  const sec = SECTIONS.find(s=>s.id===currentId);
+  if(sec.isHome) renderHome();
+  else if(sec.isFinal) renderFinal();
+  else if(sec.isTool) renderTools();
+  else renderChapter(sec);
+  mountChapBar(sec);
+}
+function mountChapBar(sec){
+  const main=document.getElementById("main");
+  const items=SECTIONS.map(s=>{
+    const num = s.isHome ? "⌂" : (s.isFinal ? "★" : s.n);
+    const done = (!s.isHome && !s.isFinal && !s.isTool && chapterDone(s.id)) ? " done" : "";
+    return `<button type="button" class="cb-item${s.id===sec.id?' on':''}${done}" onclick="goTo('${s.id}')"><i>${num}</i>${s.nav}</button>`;
+  }).join("");
+  main.insertAdjacentHTML("afterbegin", `<nav class="chapbar" aria-label="เลือกบท">${items}</nav>`);
+  const idx=SECTIONS.findIndex(s=>s.id===sec.id);
+  const prev=SECTIONS[idx-1], next=SECTIONS[idx+1];
+  const btn=(s,dir)=> s ? `<button type="button" class="pn ${dir}" onclick="goTo('${s.id}')"><small>${dir==='prev'?'← บทก่อนหน้า':'บทถัดไป →'}</small>${s.isHome?'หน้าแรก':(s.isFinal||s.isTool?'':s.n+'. ')+s.nav}</button>` : `<span></span>`;
+  if(!sec.isHome) main.insertAdjacentHTML("beforeend", `<div class="pn-row">${btn(prev,'prev')}${btn(next,'next')}</div>`);
+}
+render();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
