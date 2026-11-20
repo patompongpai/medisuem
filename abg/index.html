@@ -1,0 +1,828 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ABG · Acid–Base</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Physiological approach · NEJM 2014 · ใช้คู่กับ VBG/ABG ข้างเตียง</div>
+  <h1>แปลผล ABG และ Acid–Base:<br>ทีละขั้น ไม่พลาด mixed disorder</h1>
+  <p class="sub">ตั้งแต่ค่าปกติ ความต่างของ ABG กับ VBG วิธีแปลผล 6 ขั้น สูตร compensation anion gap และ delta ratio ไปจนถึงสาเหตุของแต่ละภาวะและหลักการรักษา พร้อมตัวแปลผล ABG ที่ใส่ค่าแล้วอธิบายทุกขั้น และเคสฝึกแปลผลพร้อมเฉลย</p>
+  <p class="cite">อ้างอิงหลัก: Berend K, de Vries AP, Gans RO. Physiological approach to assessment of acid–base disturbances. N Engl J Med 2014;371:1434–45 · Seifter JL. Integration of acid–base and electrolyte disorders. N Engl J Med 2014;371:1821–31 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <style>@media (max-width:480px){.scale-ticks{font-size:.7rem}.tick b{font-size:.76rem}}</style>
+  <div class="scale" aria-label="ช่วง pH">
+    <div class="scale-bar" style="background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 25%,var(--warn) 25%,var(--warn) 42%,var(--ok) 42%,var(--ok) 58%,var(--violet) 58%,var(--violet) 75%,#3B3486 75%)"></div>
+    <div class="scale-ticks">
+      <div class="tick l" style="left:0"><b>6.9</b>&nbsp;</div>
+      <div class="tick" style="left:25%"><b>7.20</b>กรดรุนแรง</div>
+      <div class="tick" style="left:50%"><b>7.35–7.45</b>ปกติ</div>
+      <div class="tick" style="left:75%"><b>7.55</b>ด่างรุนแรง</div>
+      <div class="tick r" style="left:100%"><b>7.7</b>pH</div>
+    </div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#basics">พื้นฐานและค่าปกติ</a><a href="#vbg">ABG vs VBG</a><a href="#steps">แปลผล 6 ขั้น</a><a href="#comp">สูตร compensation</a><a href="#hagma">HAGMA</a><a href="#nagma">NAGMA และ RTA</a><a href="#malk">Metabolic alkalosis</a><a href="#resp">Respiratory</a><a href="#mixed">Mixed และ delta ratio</a><a href="#approach">แผนผัง Approach</a><a href="#treat">หลักการรักษา</a><a href="#tools">ตัวแปลผล ABG</a><a href="#cases">ฝึกแปลผล</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="basics" class="col">
+  <div class="sec-num">01</div>
+  <h2>พื้นฐานและค่าปกติ</h2>
+  <p>วิธี physiological approach ใช้ระบบบัฟเฟอร์ <b>carbonic acid–bicarbonate</b>: ปอดคุม PaCO₂ ไตคุม HCO₃⁻ และ pH ขึ้นกับ <b>สัดส่วน</b>ของทั้งสอง ไม่ใช่ค่าใดค่าหนึ่ง</p>
+  <div class="formula">pH = 6.1 + log( HCO₃⁻ / (0.03 × PaCO₂) )  ·  [H⁺] (nmol/L) = 24 × PaCO₂ / HCO₃⁻</div>
+  <div class="tbl"><table>
+    <tr><th>ค่า</th><th class="mono">ปกติ</th><th>หมายเหตุ</th></tr>
+    <tr><td>pH</td><td class="mono">7.35–7.45</td><td>ใช้ 7.40 เป็นจุดกลางเวลาคิด</td></tr>
+    <tr><td>PaCO₂</td><td class="mono">35–45 mmHg</td><td>ใช้ 40 เป็นจุดกลาง</td></tr>
+    <tr><td>HCO₃⁻</td><td class="mono">22–26 mmol/L</td><td>ใช้ 24 เป็นจุดกลาง · ค่าใน ABG คำนวณ ส่วน total CO₂ ใน electrolyte วัดจริง (มักสูงกว่า ~1–2)</td></tr>
+    <tr><td>Anion gap</td><td class="mono">≈ 8–12</td><td>ขึ้นกับเครื่องของแต่ละ รพ. (ISE รุ่นใหม่อาจต่ำกว่านี้) · ปรับตาม albumin เสมอ</td></tr>
+    <tr><td>PaO₂ (room air)</td><td class="mono">80–100 mmHg</td><td>ลดลงตามอายุ</td></tr>
+  </table></div>
+  <div class="box note"><b>Acidemia vs acidosis</b><b>-emia</b> คือ pH ในเลือด (&lt;7.35 หรือ &gt;7.45) · <b>-osis</b> คือกระบวนการที่เพิ่มกรดหรือด่าง ผู้ป่วยหนึ่งคนมีหลาย -osis ได้พร้อมกัน แต่มี -emia ได้แบบเดียว</div>
+</section>
+
+<!-- 2 -->
+<section id="vbg" class="col">
+  <div class="sec-num">02</div>
+  <h2>ABG หรือ VBG — และผลเชื่อถือได้ไหม</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>VBG ใช้แทนได้</h4><b>pH และ HCO₃⁻</b> ใกล้เคียง ABG พอใช้ทางคลินิก: venous pH ต่ำกว่า arterial ราว <span class="mono">0.03–0.04</span> · HCO₃⁻ สูงกว่าราว <span class="mono">1–2</span> mmol/L · เหมาะกับ DKA, ติดตาม acidosis, ดู K/lactate</div>
+    <div class="card c-warn"><h4>VBG ใช้แทนไม่ได้</h4><b>PCO₂</b> สูงกว่า arterial เฉลี่ยราว 4–6 mmHg แต่ช่วงกว้างมาก โดยเฉพาะใน shock — ใช้คัดกรอง (PvCO₂ ปกติ ตัด hypercapnia ได้ค่อนข้างดี) แต่ไม่ใช่ตัวเลขจริง · <b>PO₂</b> ใช้ไม่ได้เลย → ใช้ SpO₂ หรือเจาะ ABG</div>
+  </div>
+  <h3>ตรวจความถูกต้องของผล</h3>
+  <ul>
+    <li>เทียบ [H⁺] จากสูตร (24 × PaCO₂ / HCO₃⁻) กับ [H⁺] จาก pH — ถ้าต่างกันมาก ผลอาจผิดพลาดหรือบันทึกผิด</li>
+    <li>ช่วง pH 7.20–7.50: [H⁺] ≈ 80 − (ทศนิยม 2 ตำแหน่งของ pH) เช่น pH 7.30 → H⁺ ≈ 50 nmol/L</li>
+    <li>ฟองอากาศในหลอด → PaO₂ สูงหลอก PaCO₂ ต่ำหลอก · ส่งช้า/WBC สูงมาก → PaO₂ ต่ำหลอก (leukocyte larceny)</li>
+    <li>เจาะผิดเป็นเลือดดำ: PaO₂ ต่ำผิดคาด แต่ SpO₂ ดี</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="steps" class="col">
+  <div class="sec-num">03</div>
+  <h2>แปลผล 6 ขั้น</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">0</span><span class="t">เริ่มจากผู้ป่วย</span></summary><div class="body">ประวัติและการตรวจร่างกายบอกได้มากกว่าตัวเลข: อาเจียน ท้องเสีย ยา (diuretic, metformin, SGLT2i), เบาหวาน, ไต, ปอด, การหายใจ (Kussmaul, ซึม), สารพิษ — คาดก่อนว่าน่าจะเป็นภาวะอะไร แล้วใช้ตัวเลขยืนยัน</div></details>
+    <details class="step" open><summary><span class="n">1</span><span class="t">pH: acidemia หรือ alkalemia</span></summary><div class="body">&lt;7.35 acidemia · &gt;7.45 alkalemia · ปกติไม่ได้แปลว่าไม่มีความผิดปกติ (อาจเป็น mixed ที่หักล้างกัน)</div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">Primary disorder</span></summary><div class="body">ดูว่า PaCO₂ หรือ HCO₃⁻ ตัวไหนเปลี่ยน <b>ไปทางเดียวกับ pH</b>
+      <ul><li>pH ต่ำ + HCO₃⁻ ต่ำ → <b>metabolic acidosis</b> · pH ต่ำ + PaCO₂ สูง → <b>respiratory acidosis</b></li>
+      <li>pH สูง + HCO₃⁻ สูง → <b>metabolic alkalosis</b> · pH สูง + PaCO₂ ต่ำ → <b>respiratory alkalosis</b></li>
+      <li>ทั้งสองผิดปกติไปทางที่ทำให้ pH เปลี่ยนทางเดียวกัน (เช่น HCO₃⁻ ต่ำ + PaCO₂ สูง) → <b>mixed</b> ทันที</li></ul></div></details>
+    <details class="step" open><summary><span class="n">3</span><span class="t">Compensation พอดีหรือไม่</span></summary><div class="body">ใช้สูตรในบท 04 · ค่าจริงอยู่นอกช่วงที่คาด = มี disorder ที่สองซ้อน · การชดเชย <b>ไม่ทำให้ pH กลับมาปกติ</b> (ยกเว้น chronic respiratory alkalosis บางราย) และไม่ชดเชยเกินเลย</div></details>
+    <details class="step" open><summary><span class="n">4</span><span class="t">Anion gap — ทำทุกครั้ง แม้ pH ปกติ</span></summary><div class="body">AG = Na − (Cl + HCO₃⁻) · <b>ปรับ albumin</b>: AG + 2.5 × (4 − albumin g/dL) · AG สูงแปลว่ามี HAGMA เสมอ ไม่ว่า pH หรือ HCO₃⁻ จะเป็นอย่างไร</div></details>
+    <details class="step" open><summary><span class="n">5</span><span class="t">ถ้ามี HAGMA: delta ratio</span></summary><div class="body">ΔAG / ΔHCO₃⁻ = (AG − 12) / (24 − HCO₃⁻) เพื่อหา NAGMA หรือ metabolic alkalosis ที่ซ่อนอยู่ (บท 09)</div></details>
+    <details class="step" open><summary><span class="n">6</span><span class="t">หาสาเหตุ และดู oxygenation</span></summary><div class="body">HAGMA → osmolar gap, lactate, ketone · NAGMA → urine AG · Metabolic alkalosis → urine Cl · Respiratory → acute หรือ chronic · ถ้ามี PaO₂ คำนวณ A–a gradient และ P/F ratio</div></details>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="comp" class="col">
+  <div class="sec-num">04</div>
+  <h2>สูตร compensation</h2>
+  <div class="tbl"><table>
+    <tr><th>Primary disorder</th><th>การชดเชยที่คาด</th><th>เกินช่วง = มีอะไรซ้อน</th></tr>
+    <tr><td><b>Metabolic acidosis</b></td><td class="mono">PaCO₂ = 1.5 × HCO₃⁻ + 8 (± 2)</td><td>PaCO₂ สูงกว่า → resp acidosis ร่วม · ต่ำกว่า → resp alkalosis ร่วม</td></tr>
+    <tr><td><b>Metabolic alkalosis</b></td><td class="mono">PaCO₂ = 0.7 × HCO₃⁻ + 21 (± 2)</td><td>ชดเชยได้จำกัด (PaCO₂ ไม่ค่อยเกิน ~55)</td></tr>
+    <tr><td><b>Resp acidosis — acute</b></td><td class="mono">HCO₃⁻ ↑ 1 ต่อ PaCO₂ ↑ 10</td><td rowspan="2">HCO₃⁻ สูงกว่า chronic → met alkalosis ร่วม · ต่ำกว่า acute → met acidosis ร่วม · อยู่ระหว่าง = acute-on-chronic</td></tr>
+    <tr><td><b>Resp acidosis — chronic</b> (&gt;3–5 วัน)</td><td class="mono">HCO₃⁻ ↑ 3.5–4 ต่อ PaCO₂ ↑ 10</td></tr>
+    <tr><td><b>Resp alkalosis — acute</b></td><td class="mono">HCO₃⁻ ↓ 2 ต่อ PaCO₂ ↓ 10</td><td rowspan="2">ใช้หลักเดียวกัน</td></tr>
+    <tr><td><b>Resp alkalosis — chronic</b></td><td class="mono">HCO₃⁻ ↓ 4–5 ต่อ PaCO₂ ↓ 10</td></tr>
+  </table></div>
+  <div class="box key"><b>ทางลัดสำหรับ metabolic acidosis</b>PaCO₂ ที่คาด ≈ ทศนิยม 2 ตำแหน่งของ pH (เช่น pH 7.25 → PaCO₂ ≈ 25) ใช้ได้ในช่วง pH ~7.10–7.40 <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 5 -->
+<section id="hagma">
+  <div class="col">
+    <div class="sec-num">05</div>
+    <h2>High anion gap metabolic acidosis (HAGMA)</h2>
+    <p>มีกรดที่ไม่ใช่ HCl สะสม (anion ที่วัดไม่ได้เพิ่ม) จำด้วย <b>GOLDMARK</b></p>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ตัวย่อ</th><th>สาเหตุ</th><th>เบาะแส / ตรวจ</th></tr>
+    <tr><td class="mono">G</td><td>Glycols (ethylene, propylene glycol — lorazepam IV ขนาดสูง)</td><td>Osmolar gap สูง, calcium oxalate crystal</td></tr>
+    <tr><td class="mono">O</td><td>5-Oxoproline (pyroglutamic acid)</td><td>Paracetamol ระยะยาวในหญิง ขาดสารอาหาร sepsis CKD</td></tr>
+    <tr><td class="mono">L</td><td>L-lactate</td><td>Shock, sepsis, ischemia (type A) · metformin, ตับวาย, มะเร็ง, thiamine ขาด, ชัก (type B)</td></tr>
+    <tr><td class="mono">D</td><td>D-lactate</td><td>Short bowel/bypass หลังกินคาร์บ สับสนเป็นพัก · lactate ปกติ (เครื่องวัดแค่ L)</td></tr>
+    <tr><td class="mono">M</td><td>Methanol</td><td>สุราเถื่อน ตามัว osmolar gap สูง</td></tr>
+    <tr><td class="mono">A</td><td>Aspirin (salicylate)</td><td>มัก <b>resp alkalosis + HAGMA</b> หูอื้อ</td></tr>
+    <tr><td class="mono">R</td><td>Renal failure (uremia)</td><td>GFR ต่ำมาก (มัก &lt;15–20) · ระยะแรกเป็น NAGMA</td></tr>
+    <tr><td class="mono">K</td><td>Ketoacidosis</td><td>DKA (รวม <b>euglycemic DKA จาก SGLT2i</b>), alcoholic, starvation · วัด β-hydroxybutyrate</td></tr>
+  </table></div>
+  <div class="col">
+    <div class="box note"><b>Osmolar gap</b>Measured osm − (2Na + glucose/18 + BUN/2.8) · <span class="mono">&gt;10</span> = มี osmole ที่วัดไม่ได้ → ระวัง toxic alcohol (methanol, ethylene glycol) · ปกติได้ในระยะท้ายของพิษเพราะ alcohol ถูกเปลี่ยนเป็นกรดแล้ว · สูงได้ใน ethanol, ketoacidosis, lactic acidosis รุนแรง</div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="nagma">
+  <div class="col">
+    <div class="sec-num">06</div>
+    <h2>Normal anion gap (hyperchloremic) metabolic acidosis</h2>
+    <p>เสีย HCO₃⁻ หรือไตขับกรดไม่ได้ Cl จึงขึ้นแทน · คำถามหลักคือ <b>ไตขับ NH₄⁺ ได้ปกติไหม</b> → ใช้ <b>urine anion gap</b> (UAG = UNa + UK − UCl) เป็นตัวแทน</p>
+  </div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>UAG ลบ → ไตขับ NH₄⁺ ได้ (สาเหตุนอกไต)</h4><ul><li><b>ท้องเสีย</b>, ileostomy, fistula ตับอ่อน</li><li>ให้ 0.9% NaCl ปริมาณมาก (dilutional/hyperchloremic)</li><li>ระยะฟื้นของ DKA (ketone ถูกขับทางปัสสาวะ)</li><li>Ureteral diversion (ileal conduit)</li></ul></div>
+    <div class="card c-vio"><h4>UAG บวก → ไตขับ NH₄⁺ ไม่ได้ (RTA)</h4><ul><li>Distal RTA (type 1), type 4 RTA, CKD ระยะแรก</li><li>ระวัง: UAG ใช้ไม่ได้เมื่อมี anion อื่นในปัสสาวะ (ketone, hippurate) หรือ UNa &lt;20 · ใช้ <b>urine osmolal gap</b> แทนได้ (&gt;100–150 = NH₄⁺ ดี)</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>RTA</th><th>Distal (type 1)</th><th>Proximal (type 2)</th><th>Type 4</th></tr>
+    <tr><td>ความผิดปกติ</td><td>ขับ H⁺ ที่ distal ไม่ได้</td><td>ดูด HCO₃⁻ กลับที่ proximal ไม่ได้</td><td>Aldosterone ต่ำ/ดื้อ</td></tr>
+    <tr><td class="mono">K</td><td>ต่ำ</td><td>ต่ำ (ยิ่งให้ HCO₃⁻ ยิ่งต่ำ)</td><td><b>สูง</b></td></tr>
+    <tr><td>Urine pH</td><td class="mono">&gt;5.5 เสมอ</td><td class="mono">&lt;5.5 เมื่อ HCO₃⁻ ต่ำแล้ว</td><td class="mono">&lt;5.5 (มัก)</td></tr>
+    <tr><td>สาเหตุตัวอย่าง</td><td>Sjögren, SLE, ยา (amphotericin B, lithium), นิ่ว/nephrocalcinosis</td><td>Myeloma, tenofovir (TDF), ifosfamide, Fanconi syndrome</td><td>เบาหวาน, CKD, ACEI/ARB, MRA, trimethoprim, heparin, CNI</td></tr>
+  </table></div>
+  <div class="col"><p class="muted" style="font-size:.88rem">ในไทย distal RTA ที่สัมพันธ์กับ hypokalemic paralysis พบได้บ่อยในภาคตะวันออกเฉียงเหนือ (endemic distal RTA) <span class="tag add">เสริม</span> · ดูเพิ่ม <a href="../hypokalemia/index.html">Hypokalemia</a> และ <a href="../hyperkalemia/index.html">Hyperkalemia</a></p></div>
+</section>
+
+<!-- 7 -->
+<section id="malk" class="col">
+  <div class="sec-num">07</div>
+  <h2>Metabolic alkalosis</h2>
+  <p>ต้องมี 2 อย่าง: <b>สิ่งที่สร้าง</b> (เสียกรดทาง GI/ไต หรือได้ด่าง) และ <b>สิ่งที่คงไว้</b> (volume/Cl ขาด, K ต่ำ, aldosterone สูง) ทำให้ไตขับ HCO₃⁻ ส่วนเกินไม่ได้ · แยกด้วย <b>urine Cl</b> (ดีกว่า UNa เพราะ bicarbonaturia ลาก Na ออกมา)</p>
+  <div class="grid3">
+    <div class="card c-acc"><h4>UCl &lt;20 · chloride-responsive</h4><ul><li>อาเจียน, NG suction</li><li>หลังหยุด diuretic</li><li>Post-hypercapnia</li><li>Villous adenoma, chloride diarrhea</li></ul>รักษา: <b>0.9% NaCl + KCl</b></div>
+    <div class="card c-warn"><h4>UCl &gt;40 + ความดันปกติ/ต่ำ</h4><ul><li><b>กำลังได้ diuretic</b></li><li>Bartter, Gitelman</li><li>Mg ต่ำรุนแรง</li></ul></div>
+    <div class="card c-vio"><h4>UCl &gt;40 + ความดันสูง</h4><ul><li>Primary aldosteronism</li><li>Cushing, renal artery stenosis</li><li>Liddle, ชะเอมเทศ (licorice)</li></ul></div>
+  </div>
+  <div class="box note"><b>อื่นๆ</b>ได้ด่างมาก (NaHCO₃, citrate จากการให้เลือดมาก, milk-alkali syndrome) มักเป็นเมื่อไตเสื่อมร่วม · <b>Contraction alkalosis</b> จาก diuretic ใน HF: acetazolamide ช่วยได้ · alkalemia รุนแรง (pH &gt;7.55) เสี่ยง arrhythmia, ชัก, hypoventilation</div>
+</section>
+
+<!-- 8 -->
+<section id="resp" class="col">
+  <div class="sec-num">08</div>
+  <h2>Respiratory acidosis และ alkalosis</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Respiratory acidosis (hypoventilation)</h4>
+      <ul><li><b>สมอง</b>: opioid, benzodiazepine, stroke, obesity hypoventilation</li><li><b>เส้นประสาท/กล้ามเนื้อ</b>: GBS, myasthenia, งูเห่า/งูสามเหลี่ยม (neurotoxic), K/PO₄ ต่ำมาก</li><li><b>ทางเดินหายใจ/ปอด</b>: COPD/asthma กำเริบ (asthma ที่ PaCO₂ ปกติหรือสูง = อันตราย), pulmonary edema รุนแรง</li><li><b>ทรวงอก</b>: kyphoscoliosis, flail chest</li><li>ได้ O₂ มากเกินใน COPD ที่คั่ง CO₂ — เป้า SpO₂ 88–92%</li></ul></div>
+    <div class="card c-vio"><h4>Respiratory alkalosis (hyperventilation)</h4>
+      <ul><li><b>Hypoxemia</b>: PE, pneumonia, high altitude</li><li><b>ปอด</b>: asthma ระยะแรก, ILD, pulmonary edema</li><li><b>Sepsis</b> (สัญญาณแรก), ตับวาย, ตั้งครรภ์</li><li><b>Salicylate</b>, CNS lesion</li><li>ปวด กังวล — <b>คิดเป็นสาเหตุสุดท้าย</b> หลังตัด PE/sepsis แล้ว</li></ul></div>
+  </div>
+  <h3>Oxygenation</h3>
+  <div class="formula">PAO₂ = FiO₂ × (760 − 47) − PaCO₂ / 0.8   ·   A–a gradient = PAO₂ − PaO₂   ·   ปกติ ≈ อายุ/4 + 4</div>
+  <p>Hypoxemia ที่ <b>A–a gradient ปกติ</b> = hypoventilation (PaCO₂ สูง) หรือ FiO₂ ต่ำ · <b>A–a gradient กว้าง</b> = V/Q mismatch, shunt, diffusion · P/F ratio &lt;300/200/100 ใช้แบ่งความรุนแรง ARDS (เมื่อเข้าเกณฑ์อื่น)</p>
+</section>
+
+<!-- 9 -->
+<section id="mixed" class="col">
+  <div class="sec-num">09</div>
+  <h2>Mixed disorders และ delta ratio</h2>
+  <p>สงสัย mixed เมื่อ: compensation ไม่พอดี · PaCO₂ กับ HCO₃⁻ เปลี่ยนสวนทางกัน · pH ปกติแต่ PaCO₂/HCO₃⁻/AG ผิดปกติ · ภาพคลินิกมีหลายกระบวนการ (เช่น sepsis + อาเจียน + ไตวาย)</p>
+  <div class="tbl"><table>
+    <tr><th class="mono">Delta ratio (ΔAG/ΔHCO₃⁻)</th><th>แปลผล</th></tr>
+    <tr><td class="mono">&lt;0.4</td><td>NAGMA เป็นหลัก</td></tr>
+    <tr><td class="mono">0.4–0.8</td><td>HAGMA + NAGMA ร่วม (เช่น DKA ระยะฟื้น, ไตวาย + ท้องเสีย)</td></tr>
+    <tr><td class="mono">0.8–2.0</td><td>HAGMA อย่างเดียว (lactic มักราว 1.6 · DKA ราว 1)</td></tr>
+    <tr><td class="mono">&gt;2.0</td><td>HAGMA + <b>metabolic alkalosis</b> ร่วม (อาเจียน, diuretic) หรือ HCO₃⁻ เดิมสูงจาก chronic resp acidosis</td></tr>
+  </table></div>
+  <div class="box warn"><b>Triple disorder ที่ต้องจำ</b>Salicylate: resp alkalosis + HAGMA (± metabolic alkalosis จากอาเจียน) · Sepsis ที่อาเจียน: lactic HAGMA + metabolic alkalosis + resp alkalosis · pH อาจดูปกติทั้งที่ผู้ป่วยหนักมาก</div>
+  <p class="muted" style="font-size:.88rem">Delta ratio เป็นเครื่องช่วยคิด ไม่ใช่กฎตายตัว เพราะ AG ปกติและการกระจายของกรดแตกต่างกันระหว่างคน</p>
+</section>
+
+<!-- 10 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผังการ approach</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>pH · PaCO₂ · HCO₃⁻ · Na · Cl · albumin</b>ตรวจความสอดคล้อง · คำนวณ AG ทุกครั้ง</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>pH</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">&lt;7.35 Acidemia</span><div class="node q"><b>HCO₃⁻ ต่ำ หรือ PaCO₂ สูง?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">HCO₃⁻ ต่ำ</span><div class="node dx hypo"><b>Metabolic acidosis</b>Winter: PaCO₂ = 1.5×HCO₃⁻+8 ±2<br>→ AG (ปรับ albumin)<br>สูง: GOLDMARK + delta ratio<br>ปกติ: urine AG</div></div>
+            <div class="arm"><span class="lab">PaCO₂ สูง</span><div class="node dx red"><b>Respiratory acidosis</b>Acute ↑1 / chronic ↑3.5–4 ต่อ 10<br>หาสาเหตุ hypoventilation</div></div>
+          </div>
+        </div>
+        <div class="arm"><span class="lab">&gt;7.45 Alkalemia</span><div class="node q"><b>HCO₃⁻ สูง หรือ PaCO₂ ต่ำ?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">HCO₃⁻ สูง</span><div class="node dx eu"><b>Metabolic alkalosis</b>PaCO₂ = 0.7×HCO₃⁻+21 ±2<br>→ urine Cl ± BP</div></div>
+            <div class="arm"><span class="lab">PaCO₂ ต่ำ</span><div class="node dx hyper"><b>Respiratory alkalosis</b>Acute ↓2 / chronic ↓4–5 ต่อ 10<br>ตัด hypoxemia, PE, sepsis, salicylate</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx grey"><b>pH 7.35–7.45 แต่ PaCO₂/HCO₃⁻/AG ผิดปกติ</b>คิดถึง mixed disorder เสมอ · AG สูง = HAGMA ซ่อนอยู่</div>
+    </div>
+    <div class="legend"><span style="--c:var(--warn)">Metabolic acidosis</span><span style="--c:var(--danger)">Resp acidosis</span><span style="--c:var(--accent)">Metabolic alkalosis</span><span style="--c:var(--violet)">Resp alkalosis</span></div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="treat" class="col">
+  <div class="sec-num">11</div>
+  <h2>หลักการรักษา</h2>
+  <div class="box key"><b>รักษาสาเหตุ ไม่ใช่ตัวเลข</b>ABG บอกว่าผู้ป่วยมีปัญหาอะไร การรักษาหลักคือแก้ shock, ให้ insulin, หยุดยา, ช่วยหายใจ — ไม่ใช่ปรับ pH ให้ปกติ</div>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">Bic</span><span class="t">Sodium bicarbonate ใช้เมื่อไร</span></summary><div class="body">
+      <ul><li><b>NAGMA</b> (เสีย HCO₃⁻): ให้ได้ทั้ง IV/กิน เพราะเป็นการทดแทนสิ่งที่ขาด · CKD ที่ HCO₃⁻ &lt;22 ให้ชนิดกิน</li>
+      <li><b>Metabolic acidosis รุนแรงใน ICU</b>: pH ≤7.20 ร่วมกับ AKI ได้ประโยชน์ (BICAR-ICU) · ร่าง KDIGO 2026 แนะนำเมื่อ pH &lt;7.20 ในผู้ป่วย AKI · ดู <a href="../aki/index.html">AKI</a></li>
+      <li><b>DKA</b>: ไม่ให้เป็นประจำ พิจารณาเมื่อ pH &lt;7.0 · ดู <a href="../dka-hhs/index.html">DKA/HHS</a></li>
+      <li><b>Lactic acidosis จาก shock</b>: ไม่ช่วย outcome ถ้าไม่มี AKI — แก้ perfusion</li>
+      <li><b>พิษ</b>: salicylate (alkalinize ปัสสาวะ), TCA ที่ QRS กว้าง, methanol/ethylene glycol ระหว่างรอ fomepizole/dialysis</li></ul>
+      ผลเสีย: Na/volume เกิน, K ต่ำ, Ca ที่แตกตัวต่ำ, CO₂ เพิ่ม (ต้องหายใจออกได้) <span class="tag add">เสริม</span></div></details>
+    <details class="step"><summary><span class="n">Alk</span><span class="t">Metabolic alkalosis</span></summary><div class="body">Chloride-responsive: 0.9% NaCl + KCl · หยุด/ลด diuretic · PPI ลดการเสียกรดจาก NG · HF ที่ต้อง diuretic ต่อ: acetazolamide · Mineralocorticoid excess: spironolactone/รักษาสาเหตุ · รุนแรงมากและไตวาย: dialysis</div></details>
+    <details class="step"><summary><span class="n">Vent</span><span class="t">Respiratory disorders</span></summary><div class="body">Resp acidosis: รักษาสาเหตุ (naloxone, bronchodilator), NIV ใน COPD กำเริบที่ pH &lt;7.35 และ PaCO₂ &gt;45 · Chronic hypercapnia: ระวังลด PaCO₂ เร็วเกินจนเกิด post-hypercapnic alkalosis · Resp alkalosis: รักษาสาเหตุ (hypoxemia, PE, sepsis) — ไม่ใช้ถุงกระดาษ</div></details>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>ตัวแปลผล ABG ทีละขั้น</h2>
+    <p class="muted" style="font-size:.9rem">ใส่ค่าแล้วเครื่องจะไล่ 6 ขั้นให้ดู ใช้ช่วยคิดเท่านั้น ต้องดูร่วมกับคลินิก · AG ปกติใช้ 12 (ปรับตามเครื่องของ รพ.ได้)</p>
+  </div>
+  <div class="tool" id="interp" style="margin-top:12px">
+    <h3>ABG interpreter</h3>
+    <div class="fields">
+      <label class="f">pH<input type="number" id="iPh" value="7.12" step="0.01"></label>
+      <label class="f">PaCO₂ (mmHg)<input type="number" id="iCo2" value="18"></label>
+      <label class="f">HCO₃⁻ (mmol/L)<input type="number" id="iHco3" value="6"></label>
+      <label class="f">Na<input type="number" id="iNa" value="135"></label>
+      <label class="f">Cl<input type="number" id="iCl" value="100"></label>
+      <label class="f">Albumin (g/dL)<input type="number" id="iAlb" value="4.0" step="0.1"></label>
+      <label class="f">AG ปกติของ รพ.<input type="number" id="iAgN" value="12"></label>
+    </div>
+    <div class="muted" style="font-size:.82rem">ถ้าเป็น respiratory: ระยะเวลา</div>
+    <div class="radios">
+      <label><input type="radio" name="dur" value="u" checked>ไม่ทราบ</label>
+      <label><input type="radio" name="dur" value="a">Acute</label>
+      <label><input type="radio" name="dur" value="c">Chronic (&gt;3–5 วัน)</label>
+    </div>
+    <details class="step" style="margin:6px 0"><summary><span class="n">+</span><span class="t">ค่าเพิ่มเติม (ไม่บังคับ): oxygenation และ osmolar gap</span></summary><div class="body">
+      <div class="fields">
+        <label class="f">PaO₂<input type="number" id="iPo2" placeholder="เช่น 70"></label>
+        <label class="f">FiO₂ (0.21–1.0)<input type="number" id="iFio2" placeholder="0.21" step="0.01"></label>
+        <label class="f">อายุ<input type="number" id="iAge" placeholder="เช่น 60"></label>
+        <label class="f">Measured osm<input type="number" id="iOsm" placeholder="เช่น 310"></label>
+        <label class="f">Glucose (mg/dL)<input type="number" id="iGlu" placeholder="เช่น 100"></label>
+        <label class="f">BUN (mg/dL)<input type="number" id="iBun" placeholder="เช่น 14"></label>
+      </div></div></details>
+    <div class="out" id="iOut"></div>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="tool">
+      <h3>Urine anion gap</h3>
+      <div class="fields">
+        <label class="f">Urine Na<input type="number" id="uNa" value="40"></label>
+        <label class="f">Urine K<input type="number" id="uK" value="30"></label>
+        <label class="f">Urine Cl<input type="number" id="uCl" value="95"></label>
+      </div>
+      <div class="out" id="uOut"></div>
+    </div>
+    <div class="tool">
+      <h3>แปลง VBG → ประมาณ ABG</h3>
+      <div class="fields">
+        <label class="f">Venous pH<input type="number" id="vPh" value="7.28" step="0.01"></label>
+        <label class="f">Venous HCO₃⁻<input type="number" id="vHco3" value="16"></label>
+        <label class="f">Venous PCO₂<input type="number" id="vCo2" value="42"></label>
+      </div>
+      <div class="out" id="vOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="cases" class="col">
+  <div class="sec-num">13</div>
+  <h2>ฝึกแปลผล</h2>
+  <p>ลองแปลเองก่อน แล้วกด "ดูเฉลย" หรือ "ส่งเข้าตัวแปลผล" เพื่อดูทีละขั้น</p>
+  <div class="qz" id="caseList"></div>
+</section>
+
+<!-- 14 -->
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>คำนวณ AG ทุกครั้ง แม้ pH ปกติ</b> AG สูงคือ HAGMA เสมอ และเป็นเบาะแสเดียวของ mixed disorder ที่ pH หักล้างกันจนดูปกติ</div></div>
+    <div class="pearl"><div><b>ปรับ AG ตาม albumin</b> albumin ลด 1 g/dL ทำให้ AG ต่ำลง ~2.5 ผู้ป่วยตับแข็ง ไต ICU มักมี albumin ต่ำ HAGMA จึงถูกซ่อน</div></div>
+    <div class="pearl"><div><b>Compensation ไม่เคยเกินและไม่ทำให้ pH ปกติ</b> ถ้า pH ปกติทั้งที่ PaCO₂/HCO₃⁻ ผิดปกติมาก ให้คิดถึง mixed ก่อน</div></div>
+    <div class="pearl"><div><b>Metabolic acidosis ที่ PaCO₂ "ปกติ" คือ respiratory failure</b> เช่น HCO₃⁻ 10 PaCO₂ 40 แปลว่าผู้ป่วยหายใจไม่ไหวแล้ว — เตรียมช่วยหายใจ</div></div>
+    <div class="pearl"><div><b>Asthma ที่ PaCO₂ ปกติหรือสูง = อันตราย</b> asthma กำเริบควรมี PaCO₂ ต่ำ ถ้าขึ้นมาปกติแปลว่ากล้ามเนื้อเริ่มล้า</div></div>
+    <div class="pearl"><div><b>VBG พอสำหรับ pH และ HCO₃⁻</b> ไม่ต้องเจาะ ABG ใน DKA ทุกครั้ง แต่ PCO₂ และ PO₂ จาก VBG ใช้ตัดสินเรื่องการหายใจไม่ได้</div></div>
+    <div class="pearl"><div><b>Euglycemic DKA</b> ผู้ใช้ SGLT2i ที่มี HAGMA แม้น้ำตาลไม่สูง ให้ตรวจ ketone เสมอ</div></div>
+    <div class="pearl"><div><b>Resp alkalosis ที่ไม่มีคำอธิบาย ให้นึกถึง sepsis, PE, salicylate</b> ก่อนสรุปว่าเป็น anxiety</div></div>
+    <div class="pearl"><div><b>Metabolic alkalosis ใช้ urine Cl ไม่ใช่ urine Na</b> ในผู้อาเจียน UNa อาจสูงเพราะ bicarbonaturia แต่ UCl ต่ำ</div></div>
+    <div class="pearl"><div><b>HAGMA + osmolar gap สูง + ตามัว = methanol</b> ในไทยนึกถึงสุราเถื่อน ปรึกษาศูนย์พิษวิทยา (1367) และเตรียม dialysis</div></div>
+    <div class="pearl"><div><b>ให้ NSS มากๆ ทำให้เกิด NAGMA</b> ผู้ป่วยที่ได้สารน้ำมากแล้ว HCO₃⁻ ลด Cl ขึ้น อาจไม่ใช่ sepsis แย่ลง — พิจารณาเปลี่ยนเป็น balanced crystalloid</div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../aki/index.html">AKI →</a> · <a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../hypokalemia/index.html">Hypokalemia →</a> · <a href="../dka-hhs/index.html">DKA/HHS →</a> · <a href="../sepsis/index.html">Sepsis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Berend K, de Vries AP, Gans RO. Physiological approach to assessment of acid–base disturbances. N Engl J Med 2014;371:1434–45. · 2) Seifter JL. Integration of acid–base and electrolyte disorders. N Engl J Med 2014;371:1821–31. · 3) Bloom BM, et al. The role of venous blood gas in the emergency department: a systematic review and meta-analysis. Eur J Emerg Med 2014;21:81–8. · 4) Byrne AL, et al. Can venous blood gas analysis replace arterial in emergency medical care? Emerg Med Australas 2010;22:493–8. · 5) Jaber S, et al. BICAR-ICU. Lancet 2018;392:31–40.<br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่เพิ่มเพื่อความครบถ้วน · ช่วงปกติของ AG ขึ้นกับเครื่องวัดของแต่ละ รพ. · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','abgView');
+mountWalker({
+ start:{q:'pH เท่าไร?',o:[['< 7.35 (acidemia)','acid'],['> 7.45 (alkalemia)','alk'],['7.35–7.45','normal']]},
+ acid:{q:'ตัวไหนผิดปกติไปทางทำให้เป็นกรด?',o:[['HCO₃⁻ ต่ำ','ma'],['PaCO₂ สูง','ra'],['ทั้งสองอย่าง','mixA']]},
+ mixA:{leaf:true,cls:'danger',t:'Mixed metabolic + respiratory acidosis',b:'อันตราย pH ตกเร็ว เช่น cardiac arrest, shock + respiratory failure, พิษที่กดการหายใจ · แก้ทั้งการหายใจและสาเหตุ metabolic'},
+ ma:{q:'PaCO₂ เทียบกับ Winter (1.5×HCO₃⁻ + 8 ± 2)?',o:[['อยู่ในช่วง','agcalc'],['สูงกว่า','ma_ra'],['ต่ำกว่า','ma_ral']]},
+ ma_ra:{leaf:true,cls:'danger',t:'Metabolic acidosis + respiratory acidosis',b:'ผู้ป่วยชดเชยไม่ได้ = หายใจล้า/กดการหายใจ เตรียมช่วยหายใจ · คำนวณ AG ต่อ',next:['คำนวณ AG','agcalc']},
+ ma_ral:{leaf:true,cls:'violet',t:'Metabolic acidosis + respiratory alkalosis',b:'คิดถึง salicylate, sepsis, ตับวาย, PE · คำนวณ AG ต่อ',next:['คำนวณ AG','agcalc']},
+ agcalc:{q:'AG (ปรับ albumin) เท่าไร?',h:'AG = Na − (Cl + HCO₃⁻) + 2.5 × (4 − albumin)',o:[['> 12 (สูง)','hag'],['≤ 12 (ปกติ)','nag']]},
+ hag:{q:'Delta ratio (AG − 12)/(24 − HCO₃⁻)?',o:[['< 0.4','dr1'],['0.4–0.8','dr2'],['0.8–2','dr3'],['> 2','dr4']]},
+ dr1:{leaf:true,t:'NAGMA เป็นหลัก (AG สูงเล็กน้อย)',b:'ไล่สาเหตุ NAGMA ด้วย urine AG และดูว่า AG ที่สูงเล็กน้อยมาจาก albumin/lab หรือไม่'},
+ dr2:{leaf:true,cls:'warn',t:'HAGMA + NAGMA',b:'เช่น DKA ระยะฟื้นที่ได้ NSS มาก, ไตวาย + ท้องเสีย · หาสาเหตุทั้งสองกลุ่ม'},
+ dr3:{leaf:true,cls:'warn',t:'HAGMA อย่างเดียว',b:'ไล่ GOLDMARK: lactate, ketone (β-OHB), SCr/BUN, osmolar gap, salicylate, paracetamol · ผู้ใช้ SGLT2i นึกถึง euglycemic DKA'},
+ dr4:{leaf:true,cls:'violet',t:'HAGMA + metabolic alkalosis',b:'HCO₃⁻ ลดน้อยกว่าที่ AG เพิ่ม → มีด่างซ้อน: อาเจียน, NG suction, diuretic (หรือ HCO₃⁻ เดิมสูงจาก chronic resp acidosis)'},
+ nag:{q:'Urine anion gap (UNa + UK − UCl)?',o:[['ลบ','nagGI'],['บวก','nagRTA']]},
+ nagGI:{leaf:true,t:'NAGMA จากนอกไต',b:'ไตขับ NH₄⁺ ได้ดี → ท้องเสีย, ileostomy, NSS ปริมาณมาก, DKA ระยะฟื้น · ทดแทน HCO₃⁻/K ตามความเหมาะสม'},
+ nagRTA:{leaf:true,cls:'violet',t:'สงสัย RTA',b:'ดู K: ต่ำ → distal (urine pH >5.5) หรือ proximal (glycosuria, phosphaturia, Fanconi) · สูง → type 4 (DM, CKD, ACEI/ARB, MRA, trimethoprim) · ระวัง UAG ใช้ไม่ได้เมื่อมี ketonuria หรือ UNa <20'},
+ ra:{q:'HCO₃⁻ เพิ่มเท่าไรต่อ PaCO₂ ที่เพิ่ม 10?',o:[['≈ 1 (acute)','raA'],['≈ 3.5–4 (chronic)','raC'],['อยู่ระหว่าง','raAC'],['มากกว่า 4','raMA'],['น้อยกว่า 1 / HCO₃⁻ ต่ำ','raMAc']]},
+ raA:{leaf:true,cls:'danger',t:'Acute respiratory acidosis',b:'Opioid/sedative, stroke, neuromuscular, asthma รุนแรง, airway obstruction · รักษาสาเหตุ naloxone/ช่วยหายใจ'},
+ raC:{leaf:true,t:'Chronic respiratory acidosis',b:'COPD, obesity hypoventilation, kyphoscoliosis, neuromuscular เรื้อรัง · เป้า SpO₂ 88–92% ใน COPD'},
+ raAC:{leaf:true,cls:'warn',t:'Acute-on-chronic respiratory acidosis',b:'เช่น COPD กำเริบ · NIV เมื่อ pH <7.35 และ PaCO₂ >45 · หาตัวกระตุ้น (infection, O₂ มากเกิน, ยา)'},
+ raMA:{leaf:true,cls:'violet',t:'Respiratory acidosis + metabolic alkalosis',b:'COPD ที่ได้ diuretic/steroid หรืออาเจียน · หรือ post-hypercapnic alkalosis หลังลด PaCO₂ เร็ว'},
+ raMAc:{leaf:true,cls:'danger',t:'Respiratory acidosis + metabolic acidosis',b:'Cardiac arrest, shock + respiratory failure · คำนวณ AG'},
+ alk:{q:'ตัวไหนผิดปกติไปทางทำให้เป็นด่าง?',o:[['HCO₃⁻ สูง','mal'],['PaCO₂ ต่ำ','ral'],['ทั้งสองอย่าง','mixB']]},
+ mixB:{leaf:true,cls:'violet',t:'Mixed metabolic + respiratory alkalosis',b:'เช่น ตับวาย/sepsis ที่อาเจียนหรือได้ diuretic, ผู้ใช้ ventilator ที่หายใจเร็วเกินร่วมกับ NG suction · pH สูงมากเสี่ยง arrhythmia'},
+ mal:{q:'Urine Cl เท่าไร?',o:[['< 20','malCl'],['> 40 และความดันปกติ/ต่ำ','malDiu'],['> 40 และความดันสูง','malMin']]},
+ malCl:{leaf:true,cls:'ok',t:'Chloride-responsive metabolic alkalosis',b:'อาเจียน, NG suction, หลังหยุด diuretic, post-hypercapnia · ให้ 0.9% NaCl + KCl'},
+ malDiu:{leaf:true,t:'Chloride-resistant · BP ไม่สูง',b:'กำลังได้ diuretic, Bartter/Gitelman, Mg ต่ำรุนแรง · ดูหน้า Hypokalemia'},
+ malMin:{leaf:true,cls:'violet',t:'Mineralocorticoid excess',b:'Primary aldosteronism (aldosterone/renin ratio), Cushing, renovascular HT, Liddle, licorice'},
+ ral:{q:'HCO₃⁻ ลดเท่าไรต่อ PaCO₂ ที่ลด 10?',o:[['≈ 2 (acute)','ralA'],['≈ 4–5 (chronic)','ralC'],['ลดมากกว่าที่คาด','ralMA'],['ไม่ลดเลย/สูง','ralMal']]},
+ ralA:{leaf:true,t:'Acute respiratory alkalosis',b:'Hypoxemia, PE, pneumonia, sepsis ระยะแรก, salicylate, ปวด/กังวล · ตรวจ A–a gradient · ตัด PE และ sepsis ก่อนสรุปว่า anxiety'},
+ ralC:{leaf:true,t:'Chronic respiratory alkalosis',b:'ตั้งครรภ์, ตับแข็ง, high altitude, ILD, CNS lesion · เป็นภาวะเดียวที่ชดเชยจน pH เกือบปกติได้'},
+ ralMA:{leaf:true,cls:'warn',t:'Respiratory alkalosis + metabolic acidosis',b:'Salicylate, sepsis, ตับวาย · คำนวณ AG',next:['คำนวณ AG','agcalc']},
+ ralMal:{leaf:true,cls:'violet',t:'Respiratory alkalosis + metabolic alkalosis',b:'เช่น ventilator หายใจเร็วเกิน + NG suction/diuretic'},
+ normal:{q:'PaCO₂, HCO₃⁻ และ AG ปกติทั้งหมด?',o:[['ปกติทั้งหมด','ok'],['AG สูง','normAG'],['PaCO₂ และ HCO₃⁻ ผิดปกติ','normMix']]},
+ ok:{leaf:true,cls:'ok',t:'ไม่มีความผิดปกติของ acid–base ที่เห็นได้',b:'(ยกเว้น mixed ที่หักล้างพอดีซึ่งพบน้อย) ดู oxygenation ต่อถ้ามี PaO₂'},
+ normAG:{leaf:true,cls:'warn',t:'HAGMA ที่ถูกซ่อน',b:'pH และ HCO₃⁻ ปกติแต่ AG สูง = HAGMA + metabolic alkalosis ซ้อนกัน เช่น ไตวาย/DKA/lactic ที่อาเจียน · ไล่ GOLDMARK และหาสาเหตุ alkalosis'},
+ normMix:{leaf:true,t:'Mixed disorder ที่ pH ดูปกติ',b:'PaCO₂ สูง + HCO₃⁻ สูง → resp acidosis + met alkalosis (COPD + diuretic) · PaCO₂ ต่ำ + HCO₃⁻ ต่ำ → resp alkalosis + met acidosis (salicylate, sepsis) หรือ chronic resp alkalosis · ใช้ตัวแปลผลด้านล่างช่วย'}
+},'apTrail','apStage');
+
+/* ---------- interpreter ---------- */
+function interpret(){
+  const ph=num('iPh'),co2=num('iCo2'),hco3=num('iHco3'),na=num('iNa'),cl=num('iCl'),alb=num('iAlb'),agN=num('iAgN')||12,dur=radio('dur');
+  if(ph===null||co2===null||hco3===null){$('iOut').textContent='ใส่ pH, PaCO₂, HCO₃⁻';return}
+  const L=[];const dx=[];
+  // 1 consistency
+  const hCalc=24*co2/hco3,hPh=Math.pow(10,9-ph),diff=Math.abs(hCalc-hPh)/hPh;
+  L.push(`<b>ความสอดคล้อง:</b> [H⁺] จาก pH ${f1(hPh)} · จากสูตร ${f1(hCalc)} nmol/L → ${diff<0.15?'สอดคล้อง':'<b style="color:var(--danger)">ไม่สอดคล้อง ตรวจผล/การพิมพ์อีกครั้ง</b>'}`);
+  // 2 pH
+  const st=ph<7.35?'acid':ph>7.45?'alk':'norm';
+  L.push(`<b>pH ${ph}:</b> ${st==='acid'?'Acidemia':st==='alk'?'Alkalemia':'อยู่ในช่วงปกติ (ยังอาจมี mixed)'}`);
+  // 3 primary
+  const lowH=hco3<22,highH=hco3>26,highC=co2>45,lowC=co2<35;
+  let prim=null;
+  if(st==='acid'){ if(lowH&&highC)prim='mixacid'; else if(lowH)prim='ma'; else if(highC)prim='ra'; }
+  else if(st==='alk'){ if(highH&&lowC)prim='mixalk'; else if(highH)prim='mal'; else if(lowC)prim='ral'; }
+  else { if(lowH&&lowC)prim=ph<7.40?'ma':'ral'; else if(highH&&highC)prim=ph<7.40?'ra':'mal'; }
+  const PN={ma:'Metabolic acidosis',ra:'Respiratory acidosis',mal:'Metabolic alkalosis',ral:'Respiratory alkalosis',mixacid:'Metabolic + respiratory acidosis (mixed)',mixalk:'Metabolic + respiratory alkalosis (mixed)'};
+  L.push(`<b>Primary:</b> ${prim?PN[prim]:'ไม่พบ primary disorder จาก PaCO₂/HCO₃⁻'}`);
+  if(prim)dx.push(PN[prim]);
+  // 4 compensation
+  if(prim==='ma'){const e=1.5*hco3+8;
+    let t=`คาด PaCO₂ = 1.5×${hco3}+8 = <span class="mono">${f1(e-2)}–${f1(e+2)}</span> · จริง ${co2} → `;
+    if(co2>e+2){t+='<b>สูงกว่า → มี respiratory acidosis ร่วม</b>';dx.push('Respiratory acidosis ร่วม');}
+    else if(co2<e-2){t+='<b>ต่ำกว่า → มี respiratory alkalosis ร่วม</b>';dx.push('Respiratory alkalosis ร่วม');}
+    else t+='ชดเชยพอดี';
+    L.push('<b>Compensation:</b> '+t);}
+  if(prim==='mal'){const e=0.7*hco3+21;
+    let t=`คาด PaCO₂ = 0.7×${hco3}+21 = <span class="mono">${f1(e-2)}–${f1(e+2)}</span> · จริง ${co2} → `;
+    if(co2>e+2){t+='<b>สูงกว่า → มี respiratory acidosis ร่วม</b>';dx.push('Respiratory acidosis ร่วม');}
+    else if(co2<e-2){t+='<b>ต่ำกว่า → มี respiratory alkalosis ร่วม</b>';dx.push('Respiratory alkalosis ร่วม');}
+    else t+='ชดเชยพอดี';
+    L.push('<b>Compensation:</b> '+t);}
+  if(prim==='ra'){const d=(co2-40)/10,a=24+1*d,c=24+3.5*d,c2=24+4*d;
+    let t=`PaCO₂ ↑${f1(co2-40)} → HCO₃⁻ ที่คาด acute <span class="mono">${f1(a)}</span> · chronic <span class="mono">${f1(c)}–${f1(c2)}</span> · จริง ${hco3} → `;
+    if(hco3>c2+2){t+='<b>สูงกว่า chronic → metabolic alkalosis ร่วม</b>';dx.push('Metabolic alkalosis ร่วม');}
+    else if(hco3<a-2){t+='<b>ต่ำกว่า acute → metabolic acidosis ร่วม</b>';dx.push('Metabolic acidosis ร่วม');}
+    else if(hco3<=a+2){dx[0]='Acute respiratory acidosis';t+='เข้ากับ <b>acute</b>'+(dur==='c'?' (แต่ระบุว่า chronic → อาจมี metabolic acidosis ร่วม)':'');}
+    else if(hco3>=c-2){dx[0]='Chronic respiratory acidosis';t+='เข้ากับ <b>chronic</b>'+(dur==='a'?' (แต่ระบุว่า acute → อาจมี metabolic alkalosis ร่วม)':'');}
+    else {dx[0]='Acute-on-chronic respiratory acidosis';t+='อยู่ระหว่าง → <b>acute-on-chronic</b> หรือ mixed';}
+    L.push('<b>Compensation:</b> '+t);}
+  if(prim==='ral'){const d=(40-co2)/10,a=24-2*d,c=24-4*d,c2=24-5*d;
+    let t=`PaCO₂ ↓${f1(40-co2)} → HCO₃⁻ ที่คาด acute <span class="mono">${f1(a)}</span> · chronic <span class="mono">${f1(c2)}–${f1(c)}</span> · จริง ${hco3} → `;
+    if(hco3<c2-2){t+='<b>ต่ำกว่า chronic → metabolic acidosis ร่วม</b>';dx.push('Metabolic acidosis ร่วม');}
+    else if(hco3>a+2){t+='<b>สูงกว่า acute → metabolic alkalosis ร่วม</b>';dx.push('Metabolic alkalosis ร่วม');}
+    else if(hco3>=a-2){dx[0]='Acute respiratory alkalosis';t+='เข้ากับ <b>acute</b>';}
+    else if(hco3<=c+2){dx[0]='Chronic respiratory alkalosis (หรือร่วมกับ metabolic acidosis)';t+='เข้ากับ <b>chronic</b> — หรือเป็น metabolic acidosis ร่วม ถ้าประวัติเป็น acute';}
+    else t+='อยู่ระหว่าง acute และ chronic';
+    L.push('<b>Compensation:</b> '+t);}
+  if(prim==='mixacid'||prim==='mixalk')L.push('<b>Compensation:</b> ไม่ต้องคำนวณ — PaCO₂ และ HCO₃⁻ ผิดปกติไปทางเดียวกันกับ pH = mixed แน่นอน');
+  // 5 AG
+  if(na!==null&&cl!==null){
+    const ag=na-cl-hco3,agc=ag+2.5*(4-(alb??4));
+    let t=`AG = ${na} − (${cl} + ${hco3}) = <span class="mono">${f1(ag)}</span>`+(alb!==null&&alb!==4?` · ปรับ albumin ${alb} → <span class="mono"><b>${f1(agc)}</b></span>`:'');
+    if(agc>agN+2){
+      t+=' → <b style="color:var(--danger)">สูง = HAGMA</b>';
+      {const i=dx.findIndex(x=>/Metabolic acidosis/.test(x));if(i>=0)dx[i]=dx[i].replace('Metabolic acidosis','High AG metabolic acidosis');else if(prim==='mixacid')dx[0]='High AG metabolic acidosis + respiratory acidosis';else dx.push(dx.length?'HAGMA ร่วม':'HAGMA (ซ่อนอยู่)');}
+      const dAG=agc-agN,dH=24-hco3;
+      if(dH<=0){t+=`<br><b>Delta:</b> AG เพิ่ม ${f1(dAG)} แต่ HCO₃⁻ ไม่ลด → <b>มี metabolic alkalosis ร่วม</b>`;if(!dx.some(x=>/alkalosis ร่วม/.test(x)&&/Metabolic/.test(x)))dx.push('Metabolic alkalosis ร่วม');}
+      else{const r=dAG/dH;let m;
+        if(r<0.4){m='NAGMA เป็นหลัก';} else if(r<0.8){m='<b>HAGMA + NAGMA</b>';dx.push('NAGMA ร่วม');} else if(r<=2){m='HAGMA อย่างเดียว';} else {m='<b>HAGMA + metabolic alkalosis</b> (หรือ HCO₃⁻ เดิมสูง)';if(!dx.some(x=>/Metabolic alkalosis/.test(x)))dx.push('Metabolic alkalosis ร่วม');}
+        t+=`<br><b>Delta ratio</b> = ${f1(dAG)} / ${f1(dH)} = <span class="mono">${f2(r)}</span> → ${m}`;}
+    } else if(prim==='ma'||(lowH&&st!=='alk')){t+=' → ปกติ = <b>NAGMA</b> → ใช้ urine AG';{const i=dx.findIndex(x=>/Metabolic acidosis/.test(x));if(i>=0)dx[i]=dx[i].replace('Metabolic acidosis','Normal AG metabolic acidosis');}}
+    else t+=' → ปกติ';
+    L.push('<b>Anion gap:</b> '+t);
+  } else L.push('<b>Anion gap:</b> ใส่ Na และ Cl เพื่อคำนวณ');
+  // osm gap
+  const mo=num('iOsm'),glu=num('iGlu'),bun=num('iBun');
+  if(mo!==null&&na!==null&&glu!==null&&bun!==null){const co=2*na+glu/18+bun/2.8,g=mo-co;
+    L.push(`<b>Osmolar gap:</b> ${mo} − ${f1(co)} = <span class="mono">${f1(g)}</span> → ${g>10?'<b style="color:var(--danger)">สูง — นึกถึง toxic alcohol</b>':'ปกติ'}`);}
+  // oxygenation
+  const po2=num('iPo2'),fio2=num('iFio2'),age=num('iAge');
+  if(po2!==null&&fio2){const pao2=fio2*713-co2/0.8,aa=pao2-po2,exp=age?age/4+4:null,pf=po2/fio2;
+    L.push(`<b>Oxygenation:</b> PAO₂ ${f1(pao2)} · A–a gradient <span class="mono">${f1(aa)}</span>${exp?` (ปกติ ≈ ${f1(exp)}) → ${aa>exp+5?'<b>กว้าง</b>: V/Q mismatch/shunt/diffusion':'ปกติ: ถ้า hypoxemia เกิดจาก hypoventilation/FiO₂ ต่ำ'}`:''} · P/F <span class="mono">${Math.round(pf)}</span>`);}
+  // summary
+  const sum=dx.length?dx.join(' + '):'ไม่พบความผิดปกติของ acid–base';
+  $('iOut').innerHTML=`<div style="font-size:1.05rem;margin-bottom:6px"><b>สรุป:</b> <span style="color:var(--accent-ink)"><b>${sum}</b></span></div><ol>${L.map(x=>`<li>${x}</li>`).join('')}</ol>`;
+}
+bindAll('#interp input',interpret);
+
+/* UAG */
+function uag(){const a=num('uNa'),b=num('uK'),c=num('uCl');
+  if(a===null||b===null||c===null){$('uOut').textContent='ใส่ค่าให้ครบ';return}
+  const g=a+b-c;
+  $('uOut').innerHTML=`UAG <span class="big">${g}</span><br>${g<0?'<b>ลบ</b> → ไตขับ NH₄⁺ ได้ → NAGMA จากนอกไต (ท้องเสีย, NSS)':'<b>บวก</b> → ไตขับ NH₄⁺ ได้น้อย → คิดถึง RTA'}${a<20?'<br><span style="color:var(--warn)">UNa &lt;20: UAG เชื่อถือได้น้อย</span>':''}`;}
+bindAll('#uNa,#uK,#uCl',uag);
+
+/* VBG */
+function vbg(){const p=num('vPh'),h=num('vHco3'),c=num('vCo2');
+  if(p===null){$('vOut').textContent='ใส่ค่า';return}
+  let s=`Arterial pH ประมาณ <span class="big">${(p+0.035).toFixed(2)}</span> (venous + ~0.03–0.04)`;
+  if(h!==null)s+=`<br>Arterial HCO₃⁻ ประมาณ <span class="mono"><b>${f1(h-1.5)}</b></span> (venous − ~1–2)`;
+  if(c!==null)s+=`<br>PvCO₂ ${c}: ${c<=45?'ปกติ → hypercapnia ไม่น่าเป็น':'<b>สูง</b> → อาจมี hypercapnia เจาะ ABG ยืนยัน'} <span class="muted">(แปลงเป็นค่า arterial ไม่ได้แม่น)</span>`;
+  $('vOut').innerHTML=s;}
+bindAll('#vPh,#vHco3,#vCo2',vbg);
+
+/* cases */
+const C=[
+ {t:'ชาย 24 ปี เบาหวานชนิดที่ 1 ขาดยา อาเจียน หายใจหอบลึก',v:{iPh:7.12,iCo2:18,iHco3:6,iNa:135,iCl:100,iAlb:4},a:'<b>HAGMA ชดเชยพอดี</b> · Winter 17±2 · AG 29 · delta ratio ≈0.94 = HAGMA อย่างเดียว → <b>DKA</b>'},
+ {t:'หญิง 40 ปี อาเจียนมา 4 วัน',v:{iPh:7.52,iCo2:48,iHco3:38,iNa:138,iCl:88,iAlb:4},a:'<b>Metabolic alkalosis ชดเชยพอดี</b> (คาด PaCO₂ ≈47.6) · AG 12 · ตรวจ urine Cl คาดว่า &lt;20 → chloride-responsive ให้ NSS + KCl'},
+ {t:'ชาย 68 ปี COPD เหนื่อยมากขึ้น 2 วัน ไอเสมหะเขียว',v:{iPh:7.28,iCo2:70,iHco3:32,iNa:140,iCl:98,iAlb:3.6},a:'<b>Respiratory acidosis แบบ acute-on-chronic</b> · คาด HCO₃⁻ acute 27 · chronic 34.5–36 · จริง 32 อยู่ระหว่าง → COPD กำเริบ · NIV'},
+ {t:'หญิง 30 ปี ท้องเสียเป็นน้ำ 3 วัน',v:{iPh:7.30,iCo2:30,iHco3:15,iNa:138,iCl:113,iAlb:4},a:'<b>NAGMA ชดเชยพอดี</b> · Winter 30.5±2 · AG 10 → urine AG ควรเป็นลบ → เสีย HCO₃⁻ ทางลำไส้'},
+ {t:'หญิง 50 ปี กินยาแก้ปวดข้อจำนวนมาก หูอื้อ หายใจเร็ว',v:{iPh:7.45,iCo2:22,iHco3:15,iNa:140,iCl:103,iAlb:4},a:'<b>Respiratory alkalosis + HAGMA</b> · pH ปกติแต่ PaCO₂ ต่ำกว่าที่ metabolic acidosis คาด (30.5) · AG 22 → <b>salicylate toxicity</b>'},
+ {t:'ชาย 60 ปี septic shock และอาเจียนมาก',v:{iPh:7.40,iCo2:40,iHco3:24,iNa:145,iCl:95,iAlb:4},a:'<b>HAGMA + metabolic alkalosis</b> · ค่า pH, PaCO₂, HCO₃⁻ "ปกติ" แต่ AG 26 · HCO₃⁻ ไม่ลดเลย → lactic acidosis ซ้อนกับ alkalosis จากอาเจียน'},
+ {t:'ชาย 55 ปี ตับแข็ง ติดเชื้อ ความดันต่ำ',v:{iPh:7.32,iCo2:30,iHco3:15,iNa:135,iCl:108,iAlb:2.0},a:'AG 12 ดูปกติ แต่ปรับ albumin แล้ว = 17 → <b>HAGMA (lactic) + NAGMA</b> · delta ratio ≈0.56 · บทเรียน: ปรับ albumin ทุกครั้ง'},
+ {t:'หญิง 22 ปี หายใจเร็ว ชาปลายมือ หลังทะเลาะกับแฟน (SpO₂ 99%)',v:{iPh:7.55,iCo2:25,iHco3:21,iNa:139,iCl:105,iAlb:4.2},a:'<b>Acute respiratory alkalosis</b> · คาด HCO₃⁻ 21 · ถ้าประวัติและตรวจร่างกายเข้ากัน และ A–a gradient ปกติ จึงคิดถึง anxiety — ตัด PE ถ้ามีความเสี่ยง'},
+ {t:'ชาย 45 ปี ดื่มสุราเถื่อนกับเพื่อน ตามัว ซึม',v:{iPh:7.15,iCo2:18,iHco3:6,iNa:140,iCl:102,iAlb:4,iOsm:330,iGlu:90,iBun:14},a:'<b>HAGMA</b> AG 32 + <b>osmolar gap ≈40</b> → <b>methanol</b> · fomepizole/ethanol, bicarbonate, dialysis · ปรึกษาศูนย์พิษ 1367'},
+ {t:'ชาย 35 ปี ใช้ยาเสพติดเกินขนาด ซึม หายใจช้า รูม่านตาเล็ก',v:{iPh:7.20,iCo2:65,iHco3:26,iNa:140,iCl:104,iAlb:4},a:'<b>Acute respiratory acidosis</b> · คาด HCO₃⁻ 26.5 → ตรงกับ acute · opioid overdose → naloxone, ช่วยหายใจ'}
+];
+$('caseList').innerHTML=C.map((c,i)=>{const v=c.v;
+  const vals=`pH ${v.iPh} · PaCO₂ ${v.iCo2} · HCO₃⁻ ${v.iHco3} · Na ${v.iNa} · Cl ${v.iCl} · Alb ${v.iAlb}`+(v.iOsm?` · Osm ${v.iOsm} · Glu ${v.iGlu} · BUN ${v.iBun}`:'');
+  return `<div class="qcard"><b>เคส ${i+1}.</b> ${c.t}<div class="formula" style="margin:8px 0;white-space:normal">${vals}</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-ans="${i}">ดูเฉลย</button><button class="btn solid" data-load="${i}">ส่งเข้าตัวแปลผล</button></div><div class="ex" id="ans${i}" hidden>${c.a}</div></div>`}).join('');
+$('caseList').querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{const e=$('ans'+b.dataset.ans);e.hidden=!e.hidden});
+$('caseList').querySelectorAll('[data-load]').forEach(b=>b.onclick=()=>{
+  const v=C[+b.dataset.load].v;
+  ['iOsm','iGlu','iBun','iPo2','iFio2','iAge'].forEach(k=>$(k).value='');
+  Object.entries(v).forEach(([k,x])=>$(k).value=x);
+  document.querySelector('input[name=dur][value=u]').checked=true;
+  interpret();document.getElementById('interp').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+mountQuiz([
+ ['pH 7.25 PaCO₂ 38 HCO₃⁻ 16 แปลผลอย่างไร',
+  ['Metabolic acidosis ชดเชยพอดี','Metabolic acidosis + respiratory acidosis','Respiratory acidosis','Metabolic alkalosis'],1,'Winter = 1.5×16+8 = 32±2 แต่ PaCO₂ 38 สูงกว่า → ชดเชยไม่ได้ = respiratory acidosis ร่วม (หายใจล้า)'],
+ ['ผู้ป่วย albumin 2.0 g/dL AG ที่คำนวณได้ 11 AG ที่ปรับแล้วเท่าไร',
+  ['11','13.5','16','8.5'],2,'AG + 2.5×(4−2) = 11 + 5 = 16 → สูง = HAGMA ที่ถูกซ่อน'],
+ ['Delta ratio 2.6 ในผู้ป่วย DKA แปลว่าอะไร',
+  ['NAGMA ร่วม','Metabolic alkalosis ร่วม (เช่น อาเจียน)','Respiratory acidosis ร่วม','HAGMA อย่างเดียว'],1,'AG เพิ่มมากกว่า HCO₃⁻ ลด แปลว่ามีด่างซ้อน มักมาจากอาเจียนใน DKA'],
+ ['ข้อใดถูกเกี่ยวกับ VBG',
+  ['ใช้ PO₂ แทน PaO₂ ได้','pH และ HCO₃⁻ ใช้แทน ABG ได้พอสมควร แต่ PCO₂ เชื่อถือได้น้อย','PCO₂ จาก VBG เท่ากับ arterial เสมอ','ใช้ไม่ได้ใน DKA'],1,'pH ต่างกันราว 0.03–0.04 และ HCO₃⁻ ราว 1–2 แต่ PCO₂ มีช่วงต่างกว้าง และ PO₂ ใช้ไม่ได้'],
+ ['NAGMA urine Na 45 K 30 Cl 60 สาเหตุที่น่าจะเป็น',
+  ['ท้องเสีย','RTA','ได้ NSS มาก','DKA ระยะฟื้น'],1,'UAG = 45+30−60 = +15 (บวก) → ไตขับ NH₄⁺ ไม่ได้ = RTA'],
+ ['Metabolic alkalosis urine Cl 60 ความดัน 170/100 K 2.9 นึกถึงอะไร',
+  ['อาเจียน','Gitelman syndrome','Primary aldosteronism','หลังหยุด diuretic'],2,'Chloride-resistant + ความดันสูง + K ต่ำ = mineralocorticoid excess'],
+ ['COPD PaCO₂ 60 HCO₃⁻ 31 pH 7.37 แปลผลอย่างไร',
+  ['Acute respiratory acidosis','Chronic respiratory acidosis ชดเชย','Metabolic alkalosis + respiratory acidosis','ปกติ'],1,'PaCO₂ ↑20 → chronic คาด HCO₃⁻ 31–32 ตรงกัน และ pH เกือบปกติ'],
+ ['pH 7.40 PaCO₂ 40 HCO₃⁻ 24 Na 140 Cl 98 ข้อใดถูก',
+  ['ไม่มีความผิดปกติ','มี HAGMA ร่วมกับ metabolic alkalosis','NAGMA','Respiratory alkalosis'],1,'AG = 140−98−24 = 18 (สูง) แต่ HCO₃⁻ ไม่ลด → HAGMA + metabolic alkalosis ซ้อนกัน']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
