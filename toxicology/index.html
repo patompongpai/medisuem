@@ -1,0 +1,760 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Poisoning & Toxicology approach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Emergency · Toxicology · บริบทประเทศไทย</div>
+  <h1>Poisoning:<br>แนวทางผู้ป่วยได้รับสารพิษ</h1>
+  <p class="sub">หลักการดูแลผู้ป่วยได้รับสารพิษสำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ — กู้ชีพ ใช้ toxidrome อ่าน ECG และ gap การลดการดูดซึม/เร่งขจัด และสารพิษที่พบบ่อยหรืออันตรายในไทย: paracetamol (2023 consensus), organophosphate/carbamate, สารกำจัดวัชพืช, methanol, ยาโรคหัวใจ (CCB, BB, digoxin), TCA, salicylate, ยาบ้า และยาต้านพิษในระบบของประเทศไทย</p>
+  <p class="cite">อ้างอิงหลัก: Dart RC, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement (JAMA Netw Open 2023) · St-Onge M, et al. Experts consensus recommendations for CCB poisoning (Crit Care Med 2017) · EXTRIP workgroup (methanol, salicylate, lithium) · AACT/EAPCCT position papers (activated charcoal) · Eddleston M, et al. (organophosphate) · ศูนย์พิษวิทยารามาธิบดี / โครงการยาต้านพิษ · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>1. กู้ชีพก่อน</b>ABC · DTX · O₂ · ECG · ชัก → benzodiazepine</div>
+    <div class="stage" style="--c:var(--warn)"><b>2. หาว่าเป็นอะไร</b>ประวัติ · toxidrome · ECG (QRS/QTc) · AG/OG · paracetamol level</div>
+    <div class="stage" style="--c:var(--accent)"><b>3. รักษาเฉพาะ</b>Decontamination · antidote · เร่งขจัด · <b>ปรึกษา 1367</b></div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#abc">กู้ชีพ</a><a href="#tox">Toxidrome</a><a href="#inv">ECG · lab · gap</a><a href="#decon">ลดการดูดซึม · เร่งขจัด</a><a href="#apap">Paracetamol</a><a href="#op">Organophosphate</a><a href="#herb">สารกำจัดวัชพืช</a><a href="#meoh">Methanol</a><a href="#cv">CCB · BB · digoxin</a><a href="#tca">TCA · salicylate · lithium</a><a href="#other">สารอื่นที่พบในไทย</a><a href="#anti">ยาต้านพิษ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="abc" class="col">
+  <div class="sec-num">01</div>
+  <h2>กู้ชีพและสิ่งที่ต้องทำทุกราย</h2>
+  <ul>
+    <li><b>Airway/breathing</b>: GCS ต่ำ, สำลัก, หายใจกด → ใส่ท่อ · ระวัง <b>succinylcholine ใน organophosphate</b> (ฤทธิ์ยาว)</li>
+    <li><b>DTX ทุกราย</b> · ซึมไม่ทราบสาเหตุ: dextrose · พิษสุรา/ขาดอาหาร: <b>thiamine</b> · สงสัย opioid (รูม่านตาเล็ก หายใจกด): <b>naloxone</b> 0.04–0.4 mg IV ค่อยๆ เพิ่ม (2 mg ถ้าหยุดหายใจ)</li>
+    <li><b>ECG 12 leads</b> + monitor · ชัก → <b>benzodiazepine</b> (ไม่ใช้ phenytoin ในชักจากสารพิษ) <span class="tag add">เสริม</span></li>
+    <li>อุณหภูมิ: hyperthermia (sympathomimetic, anticholinergic, serotonin, NMS) → <b>ทำให้เย็นเร็ว</b> + benzodiazepine</li>
+    <li>ทุกรายที่ตั้งใจกินยาเกินขนาด: <b>ระดับ paracetamol</b> (มักไม่มีอาการช่วงแรก) · ตั้งครรภ์ · ประเมินความเสี่ยงฆ่าตัวตาย</li>
+    <li><b>ปรึกษาศูนย์พิษวิทยารามาธิบดี 1367</b> (24 ชม., LINE @rpc1367) — ช่วยหายาต้านพิษในระบบ</li>
+  </ul>
+</section>
+
+<!-- 2 -->
+<section id="tox" class="col">
+  <div class="sec-num">02</div>
+  <h2>Toxidromes</h2>
+  <div class="tbl"><table>
+    <tr><th>Toxidrome</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr>
+    <tr><td><b>Sympathomimetic</b></td><td>HR/BP สูง ไข้ รูม่านตาขยาย <b>เหงื่อออก</b> กระสับกระส่าย ชัก</td><td>ยาบ้า (methamphetamine), cocaine, ephedrine</td></tr>
+    <tr><td><b>Anticholinergic</b></td><td>HR สูง ไข้ รูม่านตาขยาย <b>ผิวแห้งร้อนแดง</b> ปัสสาวะคั่ง ลำไส้ไม่ทำงาน delirium</td><td>Antihistamine, TCA, ลำโพง (datura), benztropine</td></tr>
+    <tr><td><b>Cholinergic</b></td><td>รูม่านตาเล็ก <b>DUMBELS/SLUDGE</b> (น้ำลาย น้ำตา ปัสสาวะ อุจจาระ อาเจียน หลอดลมตีบ+เสมหะมาก) bradycardia กล้ามเนื้อกระตุก/อ่อนแรง</td><td><b>Organophosphate, carbamate</b> (ยาฆ่าแมลง)</td></tr>
+    <tr><td><b>Opioid</b></td><td>ซึม <b>หายใจช้า รูม่านตาเล็ก</b></td><td>Morphine, tramadol, heroin, <b>กระท่อมขนาดสูง</b></td></tr>
+    <tr><td><b>Sedative-hypnotic</b></td><td>ซึม สัญญาณชีพค่อนข้างปกติ</td><td>Benzodiazepine, barbiturate, alcohol</td></tr>
+    <tr><td><b>Serotonin syndrome</b></td><td>Clonus (โดยเฉพาะขา) hyperreflexia ไข้ ท้องเสีย กระสับกระส่าย เกิดเร็ว (ชม.)</td><td>SSRI + tramadol/linezolid/methylene blue/MAOI</td></tr>
+    <tr><td><b>NMS</b></td><td>Lead-pipe rigidity ไข้ ซึม CK สูง เกิดช้า (วัน)</td><td>Antipsychotic, metoclopramide</td></tr>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="inv" class="col">
+  <div class="sec-num">03</div>
+  <h2>ECG, lab และ gap</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ECG</h4><ul><li><b>QRS &gt;100 ms</b> (± R ใน aVR &gt;3 mm) = Na-channel blockade: <b>TCA</b>, carbamazepine, diphenhydramine, cocaine, flecainide → NaHCO₃</li><li><b>QTc ยาว</b>: antipsychotic, methadone, macrolide, ondansetron, K/Mg/Ca ต่ำ → torsades</li><li><b>Bradycardia/AV block</b>: BB, CCB, digoxin, clonidine, OP</li><li>Digoxin: arrhythmia หลายแบบ + K สูงในพิษเฉียบพลัน</li></ul></div>
+    <div class="card c-acc"><h4>Lab</h4><ul><li>Electrolyte, glucose, BUN/Cr, <b>ABG/lactate</b>, LFT, CK, <b>serum osmolality</b></li><li><b>Anion gap</b> = Na − (Cl + HCO₃) · สูง: <b>methanol</b>, ethylene glycol, salicylate, metformin, iron, isoniazid, CO/cyanide (lactate)</li><li><b>Osmolar gap</b> = Osm วัด − [2Na + glucose/18 + BUN/2.8 + ethanol/3.7] · &gt;10–20 → toxic alcohol (หรือ ethanol ที่ไม่ได้นับ)</li><li>Paracetamol level · salicylate level · ระดับยาเฉพาะ (digoxin, lithium)</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">Osmolar gap ปกติไม่ตัด toxic alcohol ระยะหลัง (ถูกเปลี่ยนเป็นกรดแล้ว AG จะสูงแทน) · หน้า <a href="../abg/index.html">ABG</a></p>
+</section>
+
+<!-- 4 -->
+<section id="decon" class="col">
+  <div class="sec-num">04</div>
+  <h2>ลดการดูดซึม และเร่งการขจัด</h2>
+  <div class="tbl"><table>
+    <tr><th>วิธี</th><th>เมื่อไร</th><th>ข้อห้าม / หมายเหตุ</th></tr>
+    <tr><td><b>Activated charcoal ครั้งเดียว</b> (ผู้ใหญ่ 50 g, เด็ก 1 g/kg)</td><td>กินสารที่ดูดซับได้ ปริมาณอาจเป็นพิษ <b>ภายใน 1 ชม.</b> (พิจารณาเกิน 1 ชม.ในยา sustained-release, anticholinergic, ปริมาณมาก) — <b>ไม่ให้ประจำทุกราย</b> (AACT/EAPCCT)</td><td>ทางเดินหายใจไม่ปลอดภัย · ลำไส้อุดตัน/ทะลุ · <b>สารกัดกร่อน, hydrocarbon</b> · <b>ไม่จับ</b>: alcohol, lithium, iron, โลหะ, กรด/ด่าง</td></tr>
+    <tr><td><b>Multiple-dose AC</b> (50–100 g แล้ว 25 g ทุก 2 ชม. หรือ 50 g ทุก 4 ชม.)</td><td>กินปริมาณอันตรายของ <b>carbamazepine, dapsone, phenobarbital, quinine, theophylline</b></td><td>ลำไส้ไม่เคลื่อนไหว</td></tr>
+    <tr><td>Gastric lavage</td><td><b>ไม่ทำประจำ</b> — พิจารณาเฉพาะสารอันตรายมากภายใน 1 ชม. และทางเดินหายใจปลอดภัย</td><td>ห้ามในสารกัดกร่อน/hydrocarbon</td></tr>
+    <tr><td>Whole bowel irrigation (PEG)</td><td>Iron, lithium, sustained-release ที่อันตราย, body packer</td><td>ทางเดินหายใจไม่ปลอดภัย ลำไส้อุดตัน</td></tr>
+    <tr><td><b>Urine alkalinization</b></td><td><b>Salicylate</b> (เป้า urine pH 7.5–8) · phenobarbital · 2,4-D</td><td>ระวัง K ต่ำ (ต้องแก้ K ก่อน), น้ำเกิน</td></tr>
+    <tr><td><b>Hemodialysis</b></td><td>สารที่โมเลกุลเล็ก Vd ต่ำ จับโปรตีนน้อย: <b>methanol, ethylene glycol, salicylate, lithium</b>, metformin (MALA), valproate, theophylline, phenobarbital (EXTRIP)</td><td>ไม่ได้ผลกับ digoxin, TCA, CCB, BB ที่ละลายในไขมัน</td></tr>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section id="apap" class="col">
+  <div class="sec-num">05</div>
+  <h2>Paracetamol (2023 US/Canada consensus)</h2>
+  <div class="box key"><b>ใช้ Rumack–Matthew nomogram เมื่อกินครั้งเดียว/ช่วงเวลา &lt;24 ชม. และเจาะที่ 4–24 ชม.</b><b>Treatment line 150 µg/mL ที่ 4 ชม.</b> · <b>High-risk line 300 µg/mL ที่ 4 ชม.</b> · ระดับก่อน 4 ชม.ใช้แปลผลไม่ได้ (ระดับที่ตรวจไม่พบที่ 2–4 ชม.มักตัดได้) · ตรวจเกณฑ์กับโปรโตคอลโรงพยาบาลหรือปรึกษา 1367 (เครื่องมือบท 14)</div>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>แนวทาง</th></tr>
+    <tr><td>ระดับ ≥ treatment line</td><td><b>เริ่ม NAC</b> · รวม <b>≥300 mg/kg ใน 20–24 ชม.แรก</b> (กินหรือ IV ไม่กำหนดสูตร) · <b>น้ำหนักคิดสูงสุด 100 kg</b></td></tr>
+    <tr><td>สงสัยกินมาก (<b>&gt;200 mg/kg หรือ &gt;10 g</b>) และรอผลจะเกิน 8 ชม.หลังกิน</td><td><b>ให้ NAC ไปก่อน</b> · เวลา/ประวัติไม่แน่นอน → ให้ NAC</td></tr>
+    <tr><td><b>High-risk</b>: กิน <b>≥30 g</b> หรือระดับเหนือ high-risk line</td><td>พิจารณา NAC ขนาดสูงขึ้น (ปรึกษา 1367) · ดู mitochondrial toxicity (ซึม acidosis lactate สูง)</td></tr>
+    <tr><td><b>กินซ้ำเกินขนาด (&gt;24 ชม.)</b></td><td><b>ไม่ใช้ nomogram</b> · ให้ NAC ถ้า paracetamol <b>&gt;20 µg/mL</b> หรือ AST/ALT ผิดปกติ</td></tr>
+    <tr><td>Extended-release / ร่วมกับ anticholinergic/opioid</td><td>ระดับ 4–12 ชม. ต่ำกว่าเส้นแต่ &gt;10 µg/mL → เจาะซ้ำอีก 4–6 ชม.</td></tr>
+    <tr><td>Activated charcoal</td><td>พิจารณา 50–100 g ถ้ากินปริมาณพิษ (และเกิน 4 ชม.ได้ใน high-risk/ER)</td></tr>
+    <tr><td>Hemodialysis</td><td>ระดับ ≥900 µg/mL ร่วมกับ acidosis หรือซึม (ให้ NAC ต่อ ≥12.5 mg/kg/ชม.ระหว่างฟอก)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>สูตร NAC IV ที่ใช้บ่อย</h4><ul><li><b>3-bag</b>: 150 mg/kg ใน 1 ชม. → 50 mg/kg ใน 4 ชม. → 100 mg/kg ใน 16 ชม. (300 mg/kg/21 ชม.)</li><li><b>2-bag</b>: 200 mg/kg ใน 4 ชม. → 100 mg/kg ใน 16 ชม. (anaphylactoid น้อยกว่า)</li><li>กิน: 140 mg/kg → 70 mg/kg ทุก 4 ชม. × 17 ครั้ง</li><li>Anaphylactoid ไม่ใช่ข้อห้าม — หยุดชั่วคราว antihistamine แล้วให้ต่อช้าลง</li></ul></div>
+    <div class="card c-ok"><h4>หยุด NAC เมื่อ (ประเมินซ้ำ ไม่หยุดเองที่ 21 ชม.)</h4><ul><li>Paracetamol ต่ำ (เช่น &lt;10 µg/mL) <span class="tag add">เสริม</span></li><li>AST/ALT ปกติ หรือลดลงชัด</li><li>INR &lt;2 · ผู้ป่วยดีขึ้น</li><li>ไม่เข้า → ให้ต่อในอัตราถุงสุดท้าย · ตับวาย/encephalopathy → ปรึกษาทีมปลูกถ่ายตับ</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">หน่วย: 1 µg/mL = 6.62 µmol/L (150 µg/mL ≈ 1000 µmol/L) · IV NAC ไม่อยู่ในโครงการยาต้านพิษ — ใช้ของคลังโรงพยาบาล</p>
+</section>
+
+<!-- 6 -->
+<section id="op" class="col">
+  <div class="sec-num">06</div>
+  <h2>Organophosphate และ carbamate</h2>
+  <p>สาเหตุสำคัญของการตายจากสารพิษในชนบท · อาการ <b>muscarinic</b> (เสมหะมาก หลอดลมตีบ bradycardia รูม่านตาเล็ก) + <b>nicotinic</b> (กล้ามเนื้อกระตุก อ่อนแรง หายใจล้มเหลว) + CNS (ซึม ชัก) · ตรวจ plasma/RBC cholinesterase ยืนยัน (ไม่รอผล)</p>
+  <div class="tbl"><table>
+    <tr><th>การรักษา</th><th>รายละเอียด</th></tr>
+    <tr><td>ทั่วไป</td><td>ถอดเสื้อผ้า ล้างตัว (บุคลากรใส่ PPE) · ดูดเสมหะ O₂ · ใส่ท่อเมื่อจำเป็น (<b>หลีกเลี่ยง succinylcholine</b>) · <b>ไม่ต้องรอ O₂ ให้ครบก่อนให้ atropine</b></td></tr>
+    <tr><td><b>Atropine — doubling regimen</b></td><td>เริ่ม <b>1.8–3 mg IV</b> · ประเมินทุก 5 นาที ถ้ายังไม่ถึงเป้า <b>เพิ่มเป็น 2 เท่า</b> (3 → 6 → 12 → 24 mg...) · ลดเวลาถึงเป้าจาก ~150 เป็น ~24 นาที และลดอัตราตายในการศึกษาบังกลาเทศ</td></tr>
+    <tr><td><b>เป้าหมาย atropinization</b></td><td>(1) <b>ปอดใส ไม่มี wheeze/เสมหะ</b> (สำคัญที่สุด) (2) HR &gt;80 (3) SBP &gt;80 (4) รักแร้แห้ง (5) รูม่านตาไม่เล็กเท่าหัวเข็ม</td></tr>
+    <tr><td>Atropine infusion</td><td><b>10–20% ของขนาดรวมที่ใช้ atropinize ต่อชั่วโมง</b> · ถ้าพิษ atropine (สับสน ไข้ ลำไส้ไม่ทำงาน ปัสสาวะคั่ง) หยุด 30 นาที แล้วเริ่มใหม่ลด 20%</td></tr>
+    <tr><td><b>Pralidoxime (2-PAM)</b></td><td>WHO: <b>30 mg/kg IV ใน 20–30 นาที → 8 mg/kg/ชม.</b> · <b>หลักฐานประโยชน์ไม่ชัด</b> (RCT ไม่ลดอัตราตาย) — ให้ตามโปรโตคอลท้องถิ่นใน OP รุนแรง · carbamate มักไม่ต้องให้</td></tr>
+    <tr><td>Intermediate syndrome</td><td>24–96 ชม.หลังพิษ: <b>คอตก อ่อนแรงต้นแขนขา cranial nerve หายใจล้มเหลว</b> แม้ muscarinic หายแล้ว → ติดตาม neck flexion, vital capacity · ไม่ตอบสนองต่อ atropine</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="herb" class="col">
+  <div class="sec-num">07</div>
+  <h2>สารกำจัดวัชพืช</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Paraquat</h4><ul><li>ไทยห้ามใช้ตั้งแต่ 1 มิ.ย. 2563 แต่ยังพบจากของค้าง <span class="tag add">เสริม</span></li><li>แผลไหม้ในปาก อาเจียน → ไตวาย ตับ → <b>pulmonary fibrosis</b> · กินตั้งใจมักเสียชีวิต</li><li><b>Sodium dithionite urine test</b>: ลบที่ ≥6 ชม. พยากรณ์ดี · สีน้ำเงินเข้ม พยากรณ์แย่</li><li><b>ไม่ให้ O₂ เว้นแต่ hypoxemia ชัด</b> (เร่ง oxidative injury)</li><li>Activated charcoal/Fuller's earth เร็ว · immunosuppression (cyclophosphamide + methylpred) <b>หลักฐานไม่ชัด/RCT ไม่ได้ประโยชน์</b> · คุย palliative เมื่อพยากรณ์แย่</li></ul></div>
+    <div class="card c-warn"><h4>Glyphosate และ glufosinate</h4><ul><li><b>Glyphosate-surfactant</b>: แผลทางเดินอาหาร ความดันต่ำ acidosis AKI · supportive · HD ในรายรุนแรง</li><li><b>Glufosinate</b>: <b>อาการช้าได้ถึง 4–60 ชม.</b> — ซึม ชัก หยุดหายใจ amnesia · <b>สังเกตอาการอย่างน้อย 24–48 ชม.</b> แม้ไม่มีอาการ <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="meoh" class="col">
+  <div class="sec-num">08</div>
+  <h2>Methanol (เหล้าเถื่อน/เหล้าปลอม)</h2>
+  <p>ระบาดเป็นระยะในไทย · อาการ 12–24 ชม.หลังดื่ม (ช้ากว่าถ้าดื่ม ethanol ร่วม): ปวดท้อง <b>ตามัว/มองเห็นเหมือนหิมะ</b> ซึม หายใจหอบ · <b>high AG metabolic acidosis</b> + osmolar gap สูง</p>
+  <div class="tbl"><table>
+    <tr><th>การรักษา</th><th>รายละเอียด</th></tr>
+    <tr><td><b>ยับยั้ง ADH</b></td><td><b>Fomepizole</b> 15 mg/kg → 10 mg/kg ทุก 12 ชม. × 4 → 15 mg/kg ทุก 12 ชม. (ทุก 4 ชม.ระหว่าง HD) · ไม่มี → <b>ethanol</b> เป้าระดับ 100–150 mg/dL (load ~0.6–0.8 g/kg เช่นเหล้า 40% ทาง NG แล้วหยด/กินต่อ — เพิ่มขนาดระหว่าง HD) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>NaHCO₃</b></td><td>แก้ acidosis (เช่น pH &lt;7.3) — ลดการเข้าสมอง/จอตาของ formate</td></tr>
+    <tr><td><b>Folinic/folic acid</b></td><td>50 mg IV ทุก 6 ชม. ช่วยกำจัด formate <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Hemodialysis (EXTRIP)</b></td><td>โคม่า ชัก <b>ตามัวใหม่</b> · <b>pH ≤7.15</b> · acidosis ไม่ดีขึ้นแม้รักษา · <b>AG &gt;24</b> · methanol &gt;700 mg/L (ได้ fomepizole) / &gt;600 (ได้ ethanol) / &gt;500 (ไม่ได้ ADH blocker) · หยุดเมื่อ methanol &lt;200 mg/L</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section id="cv" class="col">
+  <div class="sec-num">09</div>
+  <h2>ยาโรคหัวใจ: CCB, beta-blocker, digoxin</h2>
+  <div class="tbl"><table>
+    <tr><th>สารพิษ</th><th>การรักษา</th></tr>
+    <tr><td><b>CCB</b> (verapamil, diltiazem, amlodipine) — consensus 2017</td><td>ไม่มีอาการ: <b>สังเกตอาการ</b> (SR ถึง 24 ชม.) + พิจารณา decontamination · <b>First-line</b> (เลือกตามปัญหา): <b>calcium IV</b> (เช่น Ca gluconate 10% 30–60 mL ซ้ำทุก 10–20 นาที หรือหยดต่อเนื่อง · ตรวจ Ca) · <b>high-dose insulin (HIET)</b> 1 U/kg bolus → 1 U/kg/ชม. เพิ่มได้ถึง ~10 + dextrose + ติดตาม K/น้ำตาล · <b>norepinephrine/epinephrine</b> · atropine ถ้า brady · <b>Refractory</b>: เพิ่ม HIET, lipid emulsion, pacemaker, <b>VA-ECMO</b></td></tr>
+    <tr><td><b>Beta-blocker</b></td><td>Atropine · <b>glucagon 3–5 mg IV</b> (50 µg/kg) ช้าๆ ซ้ำได้ถึง 10 mg → หยดเท่าขนาดที่ได้ผลต่อชั่วโมง (อาเจียนบ่อย) · <b>HIET</b> · vasopressor · <b>propranolol</b>: QRS กว้าง/ชัก → NaHCO₃ · <b>sotalol</b>: QT ยาว → Mg, overdrive pacing <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Digoxin</b></td><td><b>Digoxin Fab</b> เมื่อ: arrhythmia คุกคามชีวิต · <b>K &gt;5.0 ในพิษเฉียบพลัน</b> · กิน &gt;10 mg (ผู้ใหญ่) · ระดับ ≥10 ng/mL ที่ ≥6 ชม.หรือ &gt;15 เวลาใดก็ได้ (ตำราพิษวิทยา) <span class="tag add">เสริม</span> · end-organ · ขนาด (vial): เฉียบพลัน = mg ที่กิน × 0.8 ÷ 0.5 · เรื้อรัง = ระดับ × น้ำหนัก ÷ 100 · ไม่ทราบ: 10 vials (เฉียบพลัน)/6 vials (เรื้อรัง) · แก้ K, Mg · ใน รพ.ที่ไม่มี Fab ปรึกษา 1367</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">หัวใจเต้นช้าจากยาร่วมกับไตวาย/K สูง = BRASH — หน้า <a href="../syncope-brady/index.html">Syncope & Bradyarrhythmia</a></p>
+</section>
+
+<!-- 10 -->
+<section id="tca" class="col">
+  <div class="sec-num">10</div>
+  <h2>TCA, salicylate, lithium</h2>
+  <div class="tbl"><table>
+    <tr><th>สารพิษ</th><th>การรักษา</th></tr>
+    <tr><td><b>TCA</b> (amitriptyline, nortriptyline)</td><td>ทรุดเร็วใน 6 ชม. · anticholinergic + ชัก + <b>QRS กว้าง</b> + ความดันต่ำ · <b>NaHCO₃ 1–2 mEq/kg IV bolus</b> ซ้ำจน QRS แคบลง เป้า pH 7.45–7.55 · ชัก: benzodiazepine · หลีกเลี่ยง physostigmine, class IA/IC · refractory: lipid emulsion <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Salicylate</b></td><td>หูอื้อ อาเจียน หายใจหอบ (respiratory alkalosis + HAGMA) · <b>urine alkalinization</b> (NaHCO₃ + แก้ K) · ถ้าใส่ท่อช่วยหายใจ ต้องให้ minute ventilation สูงต่อ · <b>HD (EXTRIP)</b>: ซึม/สับสน, hypoxemia ต้องใช้ O₂, ระดับ &gt;100 mg/dL (&gt;90 ถ้าไตเสื่อม) · พิจารณา &gt;90 (&gt;80 ถ้าไตเสื่อม) หรือ pH ≤7.20</td></tr>
+    <tr><td><b>Lithium</b></td><td>สั่น สับสน ataxia ชัก · NSS ให้ไตขับ · หยุดยา (ACEi, NSAID, thiazide) · WBI ถ้ากิน SR · <b>HD (EXTRIP)</b>: แนะนำเมื่อไตเสื่อมและ Li &gt;4.0 หรือซึม ชัก arrhythmia · พิจารณาเมื่อ Li &gt;5.0, สับสนมาก, หรือคาดว่าจะลดถึง &lt;1.0 นานเกิน 36 ชม.</td></tr>
+  </table></div>
+</section>
+
+<!-- 11 -->
+<section id="other" class="col">
+  <div class="sec-num">11</div>
+  <h2>สารอื่นที่พบในไทย</h2>
+  <div class="tbl"><table>
+    <tr><th>สาร</th><th>ประเด็นสำคัญ</th></tr>
+    <tr><td><b>ยาบ้า (methamphetamine)</b></td><td>Sympathomimetic: กระสับกระส่าย ไข้ ชัก rhabdo ACS · <b>benzodiazepine</b> เป็นหลัก · ทำให้เย็น · ตรวจ CK, Cr, ECG</td></tr>
+    <tr><td><b>กระท่อม (kratom)</b></td><td>ถูกกฎหมายในไทยตั้งแต่ 2564 · ขนาดต่ำกระตุ้น ขนาดสูงคล้าย opioid · ชัก, ตับอักเสบแบบ cholestatic, อาการถอน · naloxone ได้ผลบางส่วน <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Isoniazid</b> (ผู้ป่วยวัณโรค)</td><td>ชักดื้อยา + HAGMA · <b>pyridoxine 1 g ต่อ INH 1 g ที่กิน</b> (ไม่ทราบ: 5 g IV) + benzodiazepine</td></tr>
+    <tr><td><b>Dapsone</b></td><td><b>Methemoglobinemia</b> (SpO₂ ~85% ไม่ขึ้นด้วย O₂ เลือดสีช็อกโกแลต) → <b>methylene blue 1–2 mg/kg</b> · <b>G6PD deficiency (พบบ่อยในไทย)</b>: methylene blue อาจไม่ได้ผลและเกิด hemolysis (โดยเฉพาะพร่องรุนแรง) → ระวัง พิจารณา exchange transfusion/ascorbic acid ปรึกษา 1367 · MDAC</td></tr>
+    <tr><td><b>Sulfonylurea</b></td><td>น้ำตาลต่ำซ้ำ → dextrose + <b>octreotide 50 µg SC/IV ทุก 6 ชม.</b> · สังเกต ≥24 ชม.</td></tr>
+    <tr><td><b>Metformin</b></td><td>Lactic acidosis (MALA) · HD เมื่อ lactate/acidosis รุนแรง</td></tr>
+    <tr><td><b>CO / ควันไฟ</b></td><td>O₂ 100% · HBO ในรายรุนแรง · ควันไฟ + lactate สูง → คิดถึง <b>cyanide</b></td></tr>
+    <tr><td><b>Cyanide</b></td><td>Hydroxocobalamin 5 g IV · หรือ <b>sodium nitrite 3% + sodium thiosulfate 25%</b> (ในโครงการยาต้านพิษ หมวดต้องได้ใน 1 ชม.)</td></tr>
+    <tr><td><b>สารกัดกร่อน</b> (น้ำยาล้างห้องน้ำ โซดาไฟ)</td><td>ห้ามทำให้อาเจียน ห้าม charcoal ห้ามดื่มสารล้าง · ส่องกล้องภายใน 12–24 ชม.ถ้ามีอาการ · ระวังทางเดินหายใจ</td></tr>
+    <tr><td><b>งูพิษ</b></td><td>เซรุ่มจำเพาะชนิดในโครงการยาต้านพิษ (สภากาชาด) — ปรึกษา 1367 (หัวข้อแยก)</td></tr>
+  </table></div>
+</section>
+
+<!-- 12 -->
+<section id="anti" class="col">
+  <div class="sec-num">12</div>
+  <h2>ยาต้านพิษ และโครงการยาต้านพิษของไทย</h2>
+  <div class="tbl"><table>
+    <tr><th>ยาต้านพิษ</th><th>ใช้กับ</th><th>ขนาดผู้ใหญ่ <span class="tag add">เสริม</span></th></tr>
+    <tr><td>N-acetylcysteine</td><td>Paracetamol</td><td>บท 05</td></tr>
+    <tr><td>Atropine · pralidoxime</td><td>Organophosphate</td><td>บท 06</td></tr>
+    <tr><td>Naloxone</td><td>Opioid</td><td>0.04–0.4 mg IV ค่อยๆ เพิ่ม (หยุดหายใจ 2 mg)</td></tr>
+    <tr><td>Flumazenil</td><td>Benzodiazepine</td><td><b>ไม่ใช้ประจำ</b> (เสี่ยงชักใน TCA/ผู้ติดยา)</td></tr>
+    <tr><td>Fomepizole / ethanol</td><td>Methanol, ethylene glycol</td><td>บท 08</td></tr>
+    <tr><td>Glucagon</td><td>Beta-blocker</td><td>3–5 mg IV ซ้ำได้ถึง 10 mg</td></tr>
+    <tr><td>Calcium · insulin (HIET)</td><td>CCB</td><td>บท 09</td></tr>
+    <tr><td>Digoxin Fab</td><td>Digoxin, ยี่โถ</td><td>บท 09</td></tr>
+    <tr><td>NaHCO₃</td><td>TCA, Na-channel blocker, salicylate</td><td>1–2 mEq/kg bolus</td></tr>
+    <tr><td>Lipid emulsion 20%</td><td>Local anesthetic (LAST), refractory lipophilic drug</td><td>1.5 mL/kg bolus → 0.25 mL/kg/นาที</td></tr>
+    <tr><td>Methylene blue 1%</td><td>Methemoglobinemia</td><td>1–2 mg/kg IV ใน 5 นาที (ระวัง G6PD, serotonin)</td></tr>
+    <tr><td>Pyridoxine</td><td>Isoniazid</td><td>1 g ต่อ g INH (ไม่ทราบ 5 g)</td></tr>
+    <tr><td>Octreotide</td><td>Sulfonylurea</td><td>50 µg SC ทุก 6 ชม.</td></tr>
+    <tr><td>Sodium nitrite + thiosulfate / hydroxocobalamin</td><td>Cyanide</td><td>Nitrite 3% 10 mL + thiosulfate 25% 50 mL · หรือ hydroxocobalamin 5 g</td></tr>
+    <tr><td>BAL, CaNa₂EDTA, succimer</td><td>Arsenic, ตะกั่ว, โลหะหนัก</td><td>ปรึกษา 1367</td></tr>
+  </table></div>
+  <div class="box note"><b>โครงการยาต้านพิษ (สปสช. + องค์การเภสัชกรรม + ศูนย์พิษวิทยารามาธิบดี)</b>สำรองยากำพร้าตามความเร่งด่วน: <b>ภายใน 1 ชม.</b> sodium nitrite, sodium thiosulfate · <b>ภายใน 6 ชม.</b> methylene blue, BAL/CaNa₂EDTA (arsenic เฉียบพลัน/lead encephalopathy), เซรุ่มงูพิษต่อระบบประสาท/เลือดออกรุนแรง · <b>ภายใน 24 ชม.</b> botulinum antitoxin, diphtheria antitoxin, diphenhydramine ฯลฯ · ผู้ป่วยทุกสิทธิใช้ได้ · atropine, 2-PAM และ IV NAC <b>ไม่อยู่ในโครงการ</b> (ใช้คลัง รพ.) · โทร <b>1367</b> เพื่อหาแหล่งยาและวางแผนส่งยา/ส่งตัว</div>
+</section>
+
+<!-- 13 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัยได้รับสารพิษ</b>ABC · DTX · ECG · ชัก → BZD · paracetamol level (ตั้งใจกิน)</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Toxidrome / ECG / gap</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Cholinergic</span><div class="node red"><b>OP/carbamate</b>Atropine 1.8–3 mg ×2 ทุก 5 นาที<br>เป้า: ปอดใส HR&gt;80 SBP&gt;80</div></div>
+        <div class="arm"><span class="lab">QRS กว้าง / brady / ความดันต่ำ</span><div class="node dx hypo"><b>ยาหัวใจ / TCA</b>QRS กว้าง → NaHCO₃<br>CCB → Ca + HIET<br>BB → glucagon + HIET<br>Digoxin → Fab</div></div>
+        <div class="arm"><span class="lab">HAGMA + OG สูง</span><div class="node dx eu"><b>Toxic alcohol</b>Fomepizole/ethanol<br>NaHCO₃ · folate · HD</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>ทุกราย</b>Decontamination ตามข้อบ่งชี้ · ปรึกษา 1367 · ประเมินจิตเวชเมื่อปลอดภัย</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 14 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">14</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · กรณีจริงปรึกษาศูนย์พิษวิทยา 1367</p>
+  </div>
+  <div class="tool plan" id="tApap" style="margin-top:12px">
+    <h3>Paracetamol: nomogram และขนาด NAC</h3>
+    <div class="fields">
+      <label class="f">เวลาหลังกิน (ชม.)<input type="number" id="pT" step="0.5" value="8"></label>
+      <label class="f">ระดับ paracetamol<input type="number" id="pL" step="1" placeholder="เช่น 90"></label>
+      <label class="f">หน่วย<select id="pU"><option value="ug">µg/mL (mg/L)</option><option value="umol">µmol/L</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="pW" value="60"></label>
+      <label class="f">ปริมาณที่กิน (g, ถ้าทราบ)<input type="number" id="pG" step="0.5" placeholder="เช่น 15"></label>
+      <label class="f">สูตร NAC<select id="pR"><option value="3">IV 3-bag (21 ชม.)</option><option value="2">IV 2-bag (20 ชม.)</option><option value="po">กิน (72 ชม.)</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="pRsi"> กินซ้ำหลายครั้งนานกว่า 24 ชม.</label><label><input type="checkbox" id="pLft"> AST/ALT ผิดปกติ</label></div>
+    <div class="out" id="apapOut"></div>
+  </div>
+  <div class="tool" id="tGap" style="margin-top:12px">
+    <h3>Anion gap · osmolar gap · methanol</h3>
+    <div class="fields">
+      <label class="f">Na<input type="number" id="gNa" value="138"></label>
+      <label class="f">Cl<input type="number" id="gCl" value="100"></label>
+      <label class="f">HCO₃<input type="number" id="gHc" value="8"></label>
+      <label class="f">Glucose (mg/dL)<input type="number" id="gGlu" value="110"></label>
+      <label class="f">BUN (mg/dL)<input type="number" id="gBun" value="14"></label>
+      <label class="f">Osm วัด (mOsm/kg)<input type="number" id="gOsm" value="330"></label>
+      <label class="f">Ethanol (mg/dL)<input type="number" id="gEt" value="0"></label>
+      <label class="f">pH (ถ้ามี)<input type="number" id="gPh" step="0.01" placeholder="7.10"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="gVis"> ตามัว / โคม่า / ชัก</label></div>
+    <div class="out" id="gapOut"></div>
+  </div>
+  <div class="tool" id="tAtr" style="margin-top:12px">
+    <h3>Atropine doubling ladder (organophosphate)</h3>
+    <div class="fields">
+      <label class="f">ขนาดเริ่ม (mg)<input type="number" id="aStart" step="0.1" value="2"></label>
+      <label class="f">จำนวนรอบที่ให้แล้ว<input type="number" id="aRounds" value="4"></label>
+    </div>
+    <div class="out" id="atrOut"></div>
+  </div>
+  <div class="tool" id="tCv" style="margin-top:12px">
+    <h3>CCB / beta-blocker rescue</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="cW" value="60"></label>
+      <label class="f">Glucose (mg/dL)<input type="number" id="cG" value="180"></label>
+      <label class="f">K (mmol/L)<input type="number" id="cK" step="0.1" value="3.8"></label>
+      <label class="f">สารพิษ<select id="cDrug"><option value="ccb">CCB</option><option value="bb">Beta-blocker</option></select></label>
+    </div>
+    <div class="out" id="cvOut"></div>
+  </div>
+  <div class="tool" id="tDig" style="margin-top:12px">
+    <h3>Digoxin Fab (จำนวน vial)</h3>
+    <div class="fields">
+      <label class="f">ชนิด<select id="dType"><option value="acute">เฉียบพลัน</option><option value="chronic">เรื้อรัง</option></select></label>
+      <label class="f">Digoxin ที่กิน (mg, ถ้าทราบ)<input type="number" id="dMg" step="0.25" placeholder="เช่น 12.5"></label>
+      <label class="f">ระดับ digoxin (ng/mL, ถ้ามี)<input type="number" id="dLv" step="0.1" placeholder="เช่น 4.2"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="dW" value="60"></label>
+    </div>
+    <div class="out" id="digOut"></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="pearls" class="col">
+  <div class="sec-num">15</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ตั้งใจกินยาเกินขนาดทุกราย: ตรวจระดับ paracetamol</b></div></div>
+    <div class="pearl"><div><b>Paracetamol ระดับก่อน 4 ชม.ใช้ nomogram ไม่ได้</b> · กินมาก &gt;10 g และใกล้ 8 ชม. → ให้ NAC ก่อน</div></div>
+    <div class="pearl"><div><b>อย่าหยุด NAC ที่ 21 ชม.อัตโนมัติ</b> — ดูเกณฑ์หยุด</div></div>
+    <div class="pearl"><div><b>OP: atropine ขนาดเพิ่มเป็นเท่าตัวทุก 5 นาที</b> เป้าคือปอดใส ไม่ใช่รูม่านตาขยาย</div></div>
+    <div class="pearl"><div><b>OP: ดู intermediate syndrome</b> วันที่ 1–4 (คอตก หายใจล้มเหลว)</div></div>
+    <div class="pearl"><div><b>Paraquat: ไม่ให้ O₂ ถ้าไม่จำเป็น</b></div></div>
+    <div class="pearl"><div><b>Glufosinate: สังเกตอาการ 24–48 ชม.</b> แม้ไม่มีอาการตอนแรก</div></div>
+    <div class="pearl"><div><b>ตามัว + HAGMA หลังดื่มเหล้า = methanol</b> ใช้ ethanol ถ้าไม่มี fomepizole</div></div>
+    <div class="pearl"><div><b>QRS กว้างจาก TCA → NaHCO₃</b></div></div>
+    <div class="pearl"><div><b>CCB: calcium + high-dose insulin</b> ตั้งแต่แรก</div></div>
+    <div class="pearl"><div><b>Methylene blue ระวัง/หลีกเลี่ยงใน G6PD deficiency</b> (พบบ่อยในไทย) — อาจไม่ได้ผลและเกิด hemolysis</div></div>
+    <div class="pearl"><div><b>Activated charcoal ไม่จับ alcohol, lithium, iron, กรด-ด่าง</b></div></div>
+    <div class="pearl"><div><b>ปรึกษา 1367 ได้ 24 ชม.</b></div></div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section id="quiz" class="col">
+  <div class="sec-num">16</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../abg/index.html">ABG →</a> · <a href="../syncope-brady/index.html">Bradyarrhythmia →</a> · <a href="../status-epilepticus/index.html">Status epilepticus →</a> · <a href="../aki/index.html">AKI →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Dart RC, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open 2023;6:e2327739 · 2) St-Onge M, et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med 2017;45:e306–15 · 3) Roberts DM, et al. EXTRIP: methanol (Crit Care Med 2015), Juurlink DN, et al. salicylate (Ann Emerg Med 2015), Decker BS, et al. lithium (CJASN 2015) · 4) AACT/EAPCCT Position paper: single-dose activated charcoal (Clin Toxicol 2005); multi-dose activated charcoal (1999) · 5) Abedin MJ, et al. Atropine bolus vs incremental dosing in OP poisoning. J Med Toxicol 2012; Eddleston M, et al. Lancet 2008;371:597–607 · 6) ศูนย์พิษวิทยารามาธิบดี: โครงการเพิ่มการเข้าถึงยากำพร้ากลุ่มยาต้านพิษ · 7) DigiFab prescribing information<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','txView');
+mountWalker({
+ start:{q:'ผู้ป่วย unstable (หายใจไม่พอ ความดันต่ำ ชัก โคม่า)?',o:[['ใช่','abc'],['ไม่','tox']]},
+ abc:{leaf:true,cls:'danger',t:'กู้ชีพก่อน',b:'Airway (หลีกเลี่ยง succinylcholine ถ้าสงสัย OP) · DTX/dextrose · naloxone ถ้า opioid · ชัก → benzodiazepine · ECG · แล้วกลับมาประเมิน toxidrome · ปรึกษา 1367'},
+ tox:{q:'Toxidrome / ข้อมูลเด่น?',o:[['Cholinergic (เสมหะมาก รูม่านตาเล็ก brady)','op'],['QRS กว้าง / brady / ความดันต่ำ','cv'],['HAGMA + osmolar gap สูง / ตามัว','meoh'],['ตั้งใจกินยา ไม่มีอาการชัด','apap'],['Sympathomimetic (ยาบ้า)','symp']]},
+ op:{leaf:true,cls:'danger',t:'Organophosphate / carbamate',b:'<b>Atropine 1.8–3 mg IV เพิ่มเป็น 2 เท่าทุก 5 นาที</b> จนปอดใส HR >80 SBP >80 รักแร้แห้ง · infusion 10–20% ของขนาดรวม/ชม. · ± pralidoxime · ล้างตัว PPE · ติดตาม intermediate syndrome'},
+ cv:{q:'ลักษณะ ECG?',o:[['QRS กว้าง (>100 ms)','qrs'],['Brady/AV block + ความดันต่ำ','brady']]},
+ qrs:{leaf:true,cls:'warn',t:'Na-channel blocker (TCA ฯลฯ)',b:'<b>NaHCO₃ 1–2 mEq/kg IV bolus</b> ซ้ำจน QRS แคบ (เป้า pH 7.45–7.55) · ชัก: benzodiazepine · ความดันต่ำ: norepinephrine'},
+ brady:{leaf:true,cls:'warn',t:'CCB / BB / digoxin',b:'<b>CCB</b>: calcium + HIET + NE/epinephrine · <b>BB</b>: glucagon + HIET · <b>Digoxin</b>: Fab (K >5, arrhythmia) · atropine · pacing · refractory: lipid, ECMO'},
+ meoh:{leaf:true,cls:'violet',t:'Toxic alcohol (methanol)',b:'<b>Fomepizole หรือ ethanol</b> (เป้า 100–150 mg/dL) · NaHCO₃ · folinic acid · <b>HD</b> ถ้าตามัว/โคม่า/ชัก, pH ≤7.15, AG >24 หรือระดับสูง'},
+ apap:{q:'เวลาหลังกิน?',o:[['<4 ชม.','early'],['4–24 ชม.','nomo'],['>24 ชม. หรือไม่ทราบ','late']]},
+ early:{leaf:true,cls:'ok',t:'รอเจาะที่ 4 ชม.',b:'Activated charcoal 50–100 g ถ้ากินปริมาณพิษ (consensus 2023 ไม่จำกัด 1 ชม.) · เจาะระดับที่ 4 ชม. · ถ้ากิน >10 g หรือ >200 mg/kg และผลจะช้าเกิน 8 ชม. → เริ่ม NAC'},
+ nomo:{leaf:true,cls:'warn',t:'ใช้ nomogram',b:'ระดับ ≥ treatment line (150 ที่ 4 ชม.) → <b>NAC</b> · เหนือ high-risk line (300) หรือกิน ≥30 g → ปรึกษาเพิ่มขนาด · ใช้เครื่องมือบท 14'},
+ late:{leaf:true,cls:'warn',t:'Nomogram ใช้ไม่ได้',b:'ให้ NAC ถ้าระดับ paracetamol >20 µg/mL (กินซ้ำ) หรือตรวจพบ หรือ AST/ALT ผิดปกติ · ตรวจ INR · ให้ NAC ระหว่างรอผลถ้ามีอาการ'},
+ symp:{leaf:true,cls:'warn',t:'Sympathomimetic',b:'<b>Benzodiazepine</b> ขนาดพอ · ทำให้เย็นเร็ว · IV fluid · ตรวจ CK Cr ECG troponin · หลีกเลี่ยงการผูกมัดนาน'}
+},'apTrail','apStage');
+
+function apap(){
+  const t=num('pT'),u=$('pU').value,w0=num('pW'),g=num('pG'),rg=$('pR').value,rsi=$('pRsi').checked,lft=$('pLft').checked;
+  let lv=num('pL');if(lv!==null&&u==='umol')lv=lv/6.62;
+  const w=w0?Math.min(w0,100):null;const L=[];let nac=false;
+  const mgkg=(g&&w0)?g*1000/w0:null;
+  if(mgkg!==null)L.push(`กิน ~${g} g = <b>${Math.round(mgkg)} mg/kg</b>`+(g>=30?' · <b>high-risk ingestion (≥30 g)</b>':''));
+  if(rsi){L.push('<b>กินซ้ำ >24 ชม.: ไม่ใช้ nomogram</b>');if((lv!==null&&lv>20)||lft){L.push('<b>ให้ NAC</b> (ระดับ >20 µg/mL หรือ AST/ALT ผิดปกติ) จนเข้าเกณฑ์หยุด');nac=true;}else if(lv===null)L.push('ตรวจระดับ paracetamol + AST/ALT');else L.push('ระดับ ≤20 และ LFT ปกติ → ไม่ต้องให้ NAC');}
+  else if(t===null){L.push('ใส่เวลาหลังกิน');}
+  else if(t<4){L.push('<b>ยังไม่ถึง 4 ชม.</b> — ระดับตอนนี้ใช้ nomogram ไม่ได้ · เจาะที่ 4 ชม.');if((g!==null&&g>10)||(mgkg!==null&&mgkg>200))L.push('กิน >200 mg/kg หรือ >10 g: ถ้าผลจะเกิน 8 ชม.หลังกิน → <b>เริ่ม NAC ก่อน</b>');L.push('กินปริมาณอาจเป็นพิษ: พิจารณา activated charcoal 50–100 g (ทางเดินหายใจปลอดภัย)');}
+  else if(t>24){L.push('<b>>24 ชม.: nomogram ใช้ไม่ได้</b> — ให้ NAC ถ้าตรวจพบ paracetamol หรือ AST/ALT ผิดปกติ');if((lv!==null&&lv>0)||lft)nac=true;}
+  else{
+    const tl=150*Math.pow(0.5,(t-4)/4),hl=300*Math.pow(0.5,(t-4)/4);
+    L.push(`ที่ ${t} ชม.: treatment line = <b>${tl.toFixed(0)} µg/mL</b> · high-risk line = ${hl.toFixed(0)} µg/mL`);
+    if(lv===null){L.push('ใส่ระดับ paracetamol');if(((g!==null&&g>10)||(mgkg!==null&&mgkg>200))&&t>=6)L.push('กินมาก + ใกล้/เกิน 8 ชม. → เริ่ม NAC ระหว่างรอผล');}
+    else if(lv>=hl){L.push(`ระดับ ${lv.toFixed(0)} µg/mL <b>เหนือ high-risk line → NAC + ปรึกษา 1367 เรื่องเพิ่มขนาด</b>`);nac=true;}
+    else if(lv>=tl){L.push(`ระดับ ${lv.toFixed(0)} µg/mL <b>≥ treatment line → ให้ NAC</b>`);nac=true;}
+    else L.push(`ระดับ ${lv.toFixed(0)} µg/mL <b>ต่ำกว่า treatment line</b> → ไม่ต้อง NAC (ยกเว้น ER/anticholinergic/opioid ที่ระดับ >10: เจาะซ้ำ 4–6 ชม.)`);
+  }
+  if(nac&&w){
+    if(rg==='3')L.push(`<b>NAC 3-bag</b> (คิดน้ำหนัก ${w} kg): ${(150*w/1000).toFixed(1)} g ใน 1 ชม. → ${(50*w/1000).toFixed(1)} g ใน 4 ชม. → ${(100*w/1000).toFixed(1)} g ใน 16 ชม.`);
+    else if(rg==='2')L.push(`<b>NAC 2-bag</b> (คิดน้ำหนัก ${w} kg): ${(200*w/1000).toFixed(1)} g ใน 4 ชม. → ${(100*w/1000).toFixed(1)} g ใน 16 ชม.`);
+    else L.push(`<b>NAC กิน</b>: ${(140*w/1000).toFixed(1)} g แล้ว ${(70*w/1000).toFixed(1)} g ทุก 4 ชม. × 17 ครั้ง`);
+    L.push('ก่อนครบ: ตรวจ paracetamol, AST/ALT, INR → หยุดเมื่อระดับต่ำ LFT ปกติ/ลดลง INR <2 ผู้ป่วยดี · ไม่เข้า → ให้ต่อ');
+  }
+  $('apapOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tApap input,#tApap select',apap);
+
+function gap(){
+  const na=num('gNa'),cl=num('gCl'),hc=num('gHc'),gl=num('gGlu'),bun=num('gBun'),os=num('gOsm'),et=num('gEt')||0,ph=num('gPh'),vis=$('gVis').checked;
+  if([na,cl,hc].some(x=>x===null)){$('gapOut').textContent='ใส่ Na Cl HCO₃';return}
+  const ag=na-cl-hc;const L=[`Anion gap = <span class="big">${ag}</span>`+(ag>12?' (สูง)':' (ปกติ)')];
+  if(os!==null&&gl!==null&&bun!==null){
+    const calc=2*na+gl/18+bun/2.8+et/3.7,og=os-calc;
+    L.push(`Calculated osm = ${calc.toFixed(0)} · <b>Osmolar gap = ${og.toFixed(0)}</b>`+(og>10?' (สูง)':''));
+    if(og>10){const meoh=og*3.2;L.push(`ถ้าเป็น methanol ทั้งหมด ≈ <b>${Math.round(meoh)} mg/dL (${Math.round(meoh*10)} mg/L)</b> (ประมาณการคร่าวๆ)`);}
+    const hd=[];if(og>10||vis){if(vis)hd.push('ตามัว/โคม่า/ชัก');if(ph!==null&&ph<=7.15)hd.push('pH ≤7.15');if(ag>24)hd.push('AG >24');if(og>10&&og*32>500)hd.push('methanol ประมาณ >500 mg/L (เกณฑ์เมื่อยังไม่ได้ fomepizole/ethanol; ได้ ethanol >600, fomepizole >700)');}
+    if(ag>12&&og>10)L.push('<b>HAGMA + OG สูง → นึกถึง methanol/ethylene glycol</b> → fomepizole/ethanol + NaHCO₃ + folinic acid');
+    if(hd.length)L.push(`<b>ถ้าสงสัย methanol: เข้าเกณฑ์ HD (EXTRIP)</b>: ${hd.join(' · ')}`);
+  }
+  $('gapOut').innerHTML=L.join('<br>');
+}
+bindAll('#tGap input',gap);
+
+function atr(){
+  const s=num('aStart')||2,r=Math.max(1,Math.min(num('aRounds')||1,10));let tot=0;const L=[];
+  for(let i=0;i<r;i++){const d=s*Math.pow(2,i);tot+=d;L.push(`นาทีที่ ${i*5}: <b>${d} mg</b> (รวม ${tot} mg)`);}
+  L.push(`ถ้ายังไม่ถึงเป้า รอบถัดไป: <b>${s*Math.pow(2,r)} mg</b>`);
+  L.push(`ถึงเป้าแล้ว: infusion <b>${(tot*0.1).toFixed(1)}–${(tot*0.2).toFixed(1)} mg/ชม.</b> (10–20% ของ ${tot} mg)`);
+  $('atrOut').innerHTML=L.join('<br>')+'<br><span class="muted">เป้า: ปอดใส · HR >80 · SBP >80 · รักแร้แห้ง · รูม่านตาไม่เล็ก</span>';
+}
+bindAll('#tAtr input',atr);
+
+function cv(){
+  const w=num('cW'),g=num('cG'),k=num('cK'),d=$('cDrug').value;if(!w){$('cvOut').textContent='ใส่น้ำหนัก';return}
+  const L=[];
+  if(d==='ccb')L.push('<b>Calcium</b>: Ca gluconate 10% 30–60 mL (3–6 g) IV ซ้ำทุก 10–20 นาที หรือหยด 0.6–1.2 mL/kg/ชม. (หรือ CaCl 10% 10–20 mL ทาง central) · ตรวจ Ca');
+  else L.push(`<b>Glucagon</b> ${Math.min(10,Math.max(3,0.05*w)).toFixed(1)} mg IV ใน 1–2 นาที (50 µg/kg) ซ้ำได้ถึง 10 mg → หยดขนาดที่ได้ผลต่อชั่วโมง · ให้ยาแก้อาเจียน`);
+  L.push(`<b>HIET</b>: regular insulin <b>${Math.round(w)} U IV bolus</b> (1 U/kg) → <b>${Math.round(w)} U/ชม.</b> (1 U/kg/ชม.) ปรับเพิ่มได้ถึง ${Math.round(10*w)} U/ชม.`);
+  L.push((g!==null&&g<250)?`<b>Dextrose 25 g IV</b> ก่อน (glucose ${g}) แล้ว dextrose ~${(0.5*w).toFixed(0)} g/ชม. (0.5 g/kg/ชม.) ปรับตาม DTX ทุก 15–30 นาทีช่วงแรก`:`Dextrose ~${(0.5*w).toFixed(0)} g/ชม. (0.5 g/kg/ชม.) เมื่อ glucose <250 · DTX ทุก 15–30 นาทีช่วงแรก`);
+  if(k!==null&&k<2.5)L.push(`<b>K ${k}</b>: ให้ K ทดแทน (insulin ดัน K เข้าเซลล์)`);else L.push('ติดตาม K ทุก 1 ชม.ช่วงแรก (เป้า ~2.8–3.2 ขึ้นไป)');
+  L.push('Norepinephrine/epinephrine ตามความดัน · atropine/pacing ถ้า brady');
+  L.push(`Refractory: <b>lipid emulsion 20%</b> ${(1.5*w).toFixed(0)} mL bolus → ${(0.25*w).toFixed(1)} mL/นาที · VA-ECMO`);
+  $('cvOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tCv input,#tCv select',cv);
+
+function dig(){
+  const ty=$('dType').value,mg=num('dMg'),lv=num('dLv'),w=num('dW');let v,how;
+  if(lv!==null&&w){v=Math.ceil(lv*w/100);how=`ระดับ ${lv} × ${w} kg ÷ 100`+(ty==='acute'?' (ต้องเป็นระดับที่เจาะ ≥6 ชม.หลังกิน)':'');}
+  else if(ty==='acute'&&mg!==null){v=Math.ceil(mg*0.8/0.5);how=`${mg} mg × 0.8 ÷ 0.5`;}
+  else{v=ty==='acute'?10:6;how=ty==='acute'?'ไม่ทราบขนาด (เฉียบพลัน) — ให้ 10 แล้วซ้ำอีก 10 ถ้าจำเป็น (DigiFab: รวม 20)':'ไม่ทราบระดับ (เรื้อรัง)';}
+  $('digOut').innerHTML=`<span class="big">${v}</span> vials (40 mg/vial จับ digoxin ~0.5 mg) · ${how}<br><span class="muted">ระดับหลังให้ Fab วัดไม่ได้ (รวม bound) · ติดตาม K (ลดเร็ว) · พิษซ้ำได้ในไตวาย · ยี่โถ (oleander) ใช้ Fab ได้</span>`;
+}
+bindAll('#tDig input,#tDig select',dig);
+
+mountQuiz([
+ ['หญิง 20 ปี กิน paracetamol 20 g ระดับที่ 4 ชม. = 210 µg/mL ควรทำอย่างไร',
+  ['ไม่ต้องรักษา','ให้ NAC (≥ treatment line 150)','รอเจาะซ้ำที่ 8 ชม.','Hemodialysis'],1,'210 ≥150 ที่ 4 ชม. → NAC'],
+ ['กิน paracetamol ปริมาณมากไม่ทราบเวลา มาตอน 26 ชม. ระดับ 15 µg/mL ALT 340',
+  ['ใช้ nomogram ตัดสิน','ให้ NAC','ไม่ต้องให้','Activated charcoal'],1,'>24 ชม. ใช้ nomogram ไม่ได้ · ตรวจพบระดับ + LFT ผิดปกติ → NAC'],
+ ['ชาวนา กินยาฆ่าแมลง เสมหะมาก wheeze HR 46 รูม่านตาเล็ก ให้ atropine 2 mg ไป 5 นาทียังไม่ดีขึ้น ขั้นต่อไป',
+  ['Atropine 2 mg ซ้ำ','Atropine 4 mg','รอ 30 นาที','ให้ pralidoxime แทน atropine'],1,'Doubling regimen ทุก 5 นาที'],
+ ['ผู้ป่วยดื่มเหล้าเถื่อน 1 วันก่อน ตามัว pH 7.05 AG 30 OG 40 การรักษาข้อใดสำคัญที่สุดเพิ่มจาก ethanol/fomepizole',
+  ['Activated charcoal','Hemodialysis','Flumazenil','N-acetylcysteine'],1,'EXTRIP: ตามัว, pH ≤7.15, AG >24 → HD'],
+ ['TCA overdose QRS 140 ms ความดัน 80/50 ยาแรกที่ควรให้',
+  ['Amiodarone','NaHCO₃ 1–2 mEq/kg IV','Physostigmine','Procainamide'],1,'Na-channel blockade → sodium bicarbonate'],
+ ['Amlodipine overdose ความดันต่ำแม้ให้ calcium ขั้นต่อไปตาม consensus',
+  ['Glucagon อย่างเดียว','High-dose insulin + norepinephrine/epinephrine','Flumazenil','Hemodialysis'],1,'First-line: calcium, HIET, vasopressor'],
+ ['ผู้ป่วยโรคเรื้อนได้ dapsone SpO₂ 84% ไม่ขึ้นด้วย O₂ มีประวัติ G6PD deficiency ข้อใดถูก',
+  ['ให้ methylene blue 2 mg/kg ได้เลย','Methylene blue ไม่ได้ผล/เสี่ยง hemolysis พิจารณาทางเลือกอื่นและปรึกษา','ให้ NAC','ให้ naloxone'],1,'G6PD deficiency: methylene blue ต้องอาศัย NADPH']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

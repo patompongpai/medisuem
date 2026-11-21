@@ -1,0 +1,678 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Thyroid storm & Myxedema coma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrine emergency · ETA/BTA/SfE 2026 · ATA</div>
+  <h1>Thyroid storm และ<br>Myxedema coma</h1>
+  <p class="sub">ภาวะฉุกเฉินของต่อมไทรอยด์ทั้งสองขั้ว สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ — การวินิจฉัยทางคลินิกด้วย Burch–Wartofsky และ JTA/JES การรักษา thyroid storm (beta-blocker + antithyroid drug + steroid ให้ได้ทันที · <b>iodine หลัง antithyroid drug ≥1 ชม.</b>) ทางเลือกเมื่อดื้อการรักษา และการรักษา myxedema coma (steroid ก่อน levothyroxine) รวมถึงทางเลือกเมื่อไม่มียาฉีดในไทย</p>
+  <p class="cite">อ้างอิงหลัก: Management of thyroid emergencies: joint consensus statement on management of thyroid storm (ETA/BTA/SfE, European Thyroid Journal 2026) · 2016 ATA Guidelines for Hyperthyroidism · ATA Guidelines for the Treatment of Hypothyroidism 2014 · JTA/JES thyroid storm criteria 2016 · หน้า <a href="../thyroid/index.html">Thyroid</a> (แนวทางไทย) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Thyroid storm</b>ไข้ ใจสั่นเร็วเกินไข้ AF HF ซึม/กระสับกระส่าย ท้องเสีย เหลือง</div>
+    <div class="stage" style="--c:var(--violet)"><b>Myxedema coma</b>ซึม ตัวเย็น ช้า หายใจกด Na ต่ำ น้ำตาลต่ำ</div>
+    <div class="stage" style="--c:var(--accent)"><b>ทั้งคู่</b>วินิจฉัยทางคลินิก · รักษาก่อนผลกลับ · หาตัวกระตุ้น · ICU</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#stdx">Storm: วินิจฉัย</a><a href="#stgen">Storm: ทั่วไป</a><a href="#stbb">Beta-blocker</a><a href="#statd">Antithyroid drug</a><a href="#stio">Iodine · steroid</a><a href="#stref">ดื้อการรักษา · ต่อเนื่อง</a><a href="#mcdx">Myxedema: วินิจฉัย</a><a href="#mctx">Myxedema: รักษา</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="stdx" class="col">
+  <div class="sec-num">01</div>
+  <h2>Thyroid storm: วินิจฉัยทางคลินิก</h2>
+  <p>ภาวะ thyrotoxicosis รุนแรงร่วม <b>อวัยวะล้มเหลว</b> · <b>ไม่มีระดับฮอร์โมนที่แยก storm จาก thyrotoxicosis รุนแรงได้</b> · อัตราตาย ~8 ถึง &gt;30% · มักเป็น Graves (หรือ toxic nodular goiter)</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>ลักษณะเด่น</h4><ul><li><b>ไข้</b> (มัก &gt;38.5°C)</li><li><b>Tachycardia เกินสัดส่วนของไข้</b> · <b>AF</b></li><li><b>Heart failure</b>, pulmonary edema, cardiogenic shock</li><li><b>ระบบประสาท</b>: กระสับกระส่าย delirium ชัก โคม่า</li><li><b>GI/ตับ</b>: คลื่นไส้ อาเจียน ท้องเสีย <b>เหลือง</b></li></ul></div>
+    <div class="card c-warn"><h4>ตัวกระตุ้น</h4>ติดเชื้อ · <b>หยุดยา antithyroid</b> · ผ่าตัด/บาดเจ็บ · คลอด · DKA · MI/stroke · <b>สารทึบรังสีที่มี iodine</b> · RAI (น้อย) · ผู้สูงอายุอาจมาแบบ <b>apathetic</b> (ชีพจรไม่เร็วมาก ซึม)</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>เครื่องมือ</th><th>เกณฑ์</th></tr>
+    <tr><td><b>Burch–Wartofsky (BWPS)</b></td><td>≥45 = เข้าได้กับ storm · 25–44 = impending (ตัดสินร่วมกับผู้เชี่ยวชาญ) · &lt;25 = ไม่น่าเป็น · ไม่ต้องมีผล TFT · ไวแต่จำเพาะต่ำใน sepsis/ICU (เครื่องมือบท 10)</td></tr>
+    <tr><td><b>JTA/JES</b></td><td>ต้องมี FT3/FT4 สูง + combination ของ CNS, ไข้ ≥38, HR ≥130, CHF, GI/hepatic (bilirubin ≥3) → <b>TS1 (definite)</b> หรือ <b>TS2 (suspected)</b> · จำเพาะกว่า</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">แยกจาก: sepsis, encephalitis, heat stroke, sympathomimetic (amphetamine/ยาบ้า), NMS, serotonin syndrome, hypertensive encephalopathy · ใน ICU ระวังวินิจฉัยเกินในผู้ป่วยหนักที่มี TFT ผิดปกติร่วม</p>
+</section>
+
+<!-- 2 -->
+<section id="stgen" class="col">
+  <div class="sec-num">02</div>
+  <h2>Storm: การดูแลทั่วไป (ETJ 2026)</h2>
+  <ul>
+    <li><b>HDU/ICU</b> โดยเฉพาะเมื่อ: ความดันไม่คงที่/ต้องใช้ vasopressor, ระดับความรู้สึกตัวลด, ต้องช่วยหายใจ, HF/shock/arrhythmia, อวัยวะล้มเหลวหลายระบบ, ทรุดลงแม้รักษา · แจ้งศัลยแพทย์ไว้เผื่อผ่าตัดฉุกเฉิน</li>
+    <li><b>ลดไข้</b>: ประคบเย็น + <b>paracetamol</b> — <b>ห้าม aspirin/NSAIDs</b> (แย่งที่จับโปรตีน → free T4/T3 สูงขึ้น)</li>
+    <li>IV fluid ทดแทนการสูญเสีย · แก้ electrolyte · <b>ติดตามน้ำตาล</b> (เสี่ยงน้ำตาลต่ำ) · thiamine/โภชนาการ</li>
+    <li><b>รักษาตัวกระตุ้น</b> (ยาปฏิชีวนะถ้าติดเชื้อ) · <b>ตรวจการตั้งครรภ์</b> ในหญิงวัยเจริญพันธุ์</li>
+    <li>AF: anticoagulation ตาม CHA₂DS₂-VASc ชั่งกับเลือดออก (หลายรายกลับ sinus เมื่อ euthyroid)</li>
+    <li>ต้องการ sedation: chlorpromazine 50–100 mg IM (ลดไข้ด้วย)</li>
+    <li>ระวัง <b>DIC</b> เมื่อมีเลือดออกผิดปกติ · echo ประเมินหัวใจเร็ว</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="stbb" class="col">
+  <div class="sec-num">03</div>
+  <h2>Beta-blocker</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ETJ 2026)</th></tr>
+    <tr><td><b>Propranolol กิน</b></td><td><b>60–80 mg ทุก 4 ชม.</b> (ATA/ETA) — ขนาดสูงลดการแปลง T4→T3 ด้วย</td></tr>
+    <tr><td>Propranolol IV</td><td>1–3 mg ไม่เกิน 1 mg/นาที ซ้ำได้ 1 ครั้งหลัง 2 นาที · หยดต่อ 2–3 mg/ชม.</td></tr>
+    <tr><td><b>Esmolol IV</b></td><td>Load 500 µg/kg ใน 1 นาที → 0–200 µg/kg/นาที · <b>เลือกเมื่อสงสัย HF/ความดันไม่คงที่</b> (หยุดได้เร็ว)</td></tr>
+    <tr><td>Labetalol IV</td><td>5–20 mg ใน 2 นาที → 0.5 mg/นาที</td></tr>
+    <tr><td>Beta-blocker ใช้ไม่ได้ (asthma, HF แย่ลงจาก BB)</td><td><b>Diltiazem</b> 60–90 mg กินทุก 6 ชม. (หรือ IV)</td></tr>
+  </table></div>
+  <div class="box warn"><b>ระวัง thyrotoxic cardiomyopathy / cardiogenic shock</b>Beta-blocker อาจทำให้ความดันตกจากการตัด adrenergic ที่ชดเชยอยู่ · เริ่มขนาดต่ำ · ใช้ esmolol · ทำ echo เร็ว · JTA/JES ชอบ β1-selective (landiolol/bisoprolol) แต่ข้อมูลใหม่อัตราตายไม่ต่างจาก propranolol — เลือกตามผู้ป่วยและยาที่มี</div>
+</section>
+
+<!-- 4 -->
+<section id="statd" class="col">
+  <div class="sec-num">04</div>
+  <h2>Antithyroid drug ขนาดสูง</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ETJ 2026)</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>Methimazole (MMI)</b></td><td><b>60–80 mg/วัน</b> (แบ่งให้) · carbimazole 80–100 mg/วัน</td><td>ประสิทธิภาพไม่ต่างจาก PTU ในข้อมูลสังเกต · <b>เลือก MMI ถ้า bilirubin/ตับ &gt;3 เท่า</b></td></tr>
+    <tr><td><b>PTU</b></td><td><b>Load 500–1,000 mg</b> กิน/NG/ทางทวาร → <b>250 mg ทุก 4 ชม.</b></td><td>ลด T4→T3 เพิ่ม · เสี่ยงตับวาย · ใช้ในไตรมาสแรกของการตั้งครรภ์</td></tr>
+    <tr><td>เมื่อดีขึ้น</td><td>ลดเหลือ PTU 400 mg/วัน · MMI 30 mg/วัน · CBZ 40 mg/วัน</td><td>คงไว้จนตัดสินการรักษาถาวร</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ในไทยมีเฉพาะยาเม็ด — ให้ทาง NG หรือบดสวนทวารได้ (PTU/MMI) <span class="tag add">เสริม</span> · ค่าตับสูงเล็กน้อยพบบ่อยจาก storm เอง ไม่ใช่ข้อห้ามของ ATD</p>
+</section>
+
+<!-- 5 -->
+<section id="stio" class="col">
+  <div class="sec-num">05</div>
+  <h2>Iodine และ glucocorticoid</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Iodine — หลัง ATD ≥1 ชั่วโมง</h4><ul><li><b>Lugol's iodine 8 หยด วันละ 4 ครั้ง</b> หรือ <b>SSKI 5 หยด วันละ 4 ครั้ง</b> เจือจางในนม/น้ำผลไม้</li><li><b>ต้องให้ ATD ก่อน 1 ชม.</b> — ถ้าให้ iodine ก่อน อาจเป็น substrate สร้างฮอร์โมนเพิ่ม</li><li>ได้ผลใน Graves/toxic nodular goiter (Wolff–Chaikoff) · <b>ไม่ได้ผลใน thyroiditis</b>, factitious, AIT type 2</li><li>หยุดเมื่ออาการคงที่ · ทำให้ <b>เลื่อน RAI 2–3 เดือน</b></li></ul></div>
+    <div class="card c-vio"><h4>Glucocorticoid</h4><ul><li><b>Hydrocortisone 100 mg IV loading → 50 mg ทุก 6 ชม.</b> (ETJ 2026) · ATA: 300 mg load → 100 mg ทุก 8 ชม.</li><li>ลด T4→T3 · ครอบคลุม relative adrenal insufficiency</li><li><b>ติดตาม K</b> — steroid ขนาดสูงกระตุ้น <b>thyrotoxic periodic paralysis</b> ได้ (ชายเอเชียอายุน้อย) — หน้า <a href="../hypokalemia/index.html">Hypokalemia</a></li><li>หยุดเมื่อคงที่ (ถ้าไม่สงสัย AI)</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="stref" class="col">
+  <div class="sec-num">06</div>
+  <h2>ดื้อการรักษา และการดูแลต่อเนื่อง</h2>
+  <ul>
+    <li>ดีขึ้นชัดมักใน <b>24–72 ชม.</b> (ไข้ลง HR ลด ความดันดี รู้สึกตัวดี GI ดี) · <b>ไม่ใช้ TSH</b> ติดตามช่วงแรก (FT4/FT3 ลดภายในหลายวัน)</li>
+    <li>ไม่ดีขึ้นใน 24–48 ชม.: ตรวจซ้ำว่าได้ยาพอ/ดูดซึมได้, iodine ให้ถูกเวลา, ตัวกระตุ้นยังอยู่, cardiomyopathy</li>
+    <li>เสริม: <b>cholestyramine 4 g วันละ 3 ครั้ง</b> (ตัด enterohepatic circulation) · lithium 300 mg bid (ปรึกษาผู้เชี่ยวชาญ)</li>
+    <li>Rescue: <b>therapeutic plasma exchange</b> · <b>emergency thyroidectomy</b> (ศูนย์ที่มีประสบการณ์) · <b>VA-ECMO</b> ใน refractory cardiogenic shock</li>
+    <li>ก่อนกลับบ้าน: วางแผน <b>รักษาถาวร</b> (thyroidectomy หรือ RAI) · ATD จนกว่าจะได้รักษาถาวร</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="mcdx" class="col">
+  <div class="sec-num">07</div>
+  <h2>Myxedema coma: วินิจฉัย</h2>
+  <p>Hypothyroidism รุนแรงจนอวัยวะหลายระบบล้มเหลว — ส่วนใหญ่ <b>ไม่ได้โคม่าจริง</b> แต่ซึม/สับสน · อัตราตายสูง (รายงาน ~25–60%) · มักเป็นผู้สูงอายุหญิง ช่วงอากาศเย็น หรือมีตัวกระตุ้น</p>
+  <div class="grid2">
+    <div class="card c-vio"><h4>อาการ</h4><ul><li><b>ซึม สับสน</b> โคม่า ชัก</li><li><b>Hypothermia</b> (อาจไม่มีไข้แม้ติดเชื้อ)</li><li>Bradycardia, ความดันต่ำ, pericardial effusion, QT ยาว low voltage</li><li><b>Hypoventilation</b> (CO₂ คั่ง)</li><li><b>Na ต่ำ</b>, <b>น้ำตาลต่ำ</b>, CK สูง, ileus, ปัสสาวะคั่ง</li></ul></div>
+    <div class="card c-warn"><h4>ตัวกระตุ้น</h4>ติดเชื้อ (ปอดอักเสบ UTI) · อากาศเย็น · <b>ยากล่อมประสาท opioid ยาสลบ</b> · stroke, MI, HF · เลือดออก GI · <b>หยุด levothyroxine</b> · amiodarone · lithium · ผ่าตัด/บาดเจ็บ</div>
+  </div>
+  <ul>
+    <li>Lab: <b>TSH สูงมาก FT4 ต่ำ</b> (secondary hypothyroidism: TSH ต่ำ/ปกติ — ต้องคิดถึง AI ร่วมด้วย) · <b>cortisol</b> (เจาะก่อนให้ steroid), electrolyte, glucose, ABG, CK, culture</li>
+    <li>ใช้ <b>Popoveniuc diagnostic score</b> ช่วย: ≥60 เข้าได้มาก · 25–59 สนับสนุน · &lt;25 ไม่น่าเป็น (เครื่องมือบท 10)</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="mctx" class="col">
+  <div class="sec-num">08</div>
+  <h2>Myxedema coma: รักษา (ATA 2014)</h2>
+  <div class="box key"><b>ลำดับสำคัญ: steroid ก่อน thyroid hormone</b>ให้ <b>hydrocortisone IV ขนาด stress</b> (เช่น 100 mg ทุก 8 ชม.) <b>ก่อน levothyroxine</b> จนกว่าจะตัด adrenal insufficiency ได้ — thyroid hormone เร่ง cortisol metabolism อาจกระตุ้น adrenal crisis</div>
+  <div class="tbl"><table>
+    <tr><th>การรักษา</th><th>รายละเอียด</th></tr>
+    <tr><td><b>Levothyroxine IV</b> (strong)</td><td><b>Loading 200–400 µg IV</b> (ขนาดต่ำในผู้ป่วยตัวเล็ก สูงอายุ มี CAD/arrhythmia) → <b>1.6 µg/kg/วัน × 75%</b> (สูงอายุ/CAD อาจปรับช้ากว่า) ทาง IV จนกินได้</td></tr>
+    <tr><td><b>Liothyronine IV</b> (weak)</td><td>อาจเพิ่ม: load 5–20 µg → 2.5–10 µg ทุก 8 ชม. (ขนาดต่ำในผู้สูงอายุ/โรคหัวใจ) · ให้ต่อจนรู้สึกตัวดีขึ้น</td></tr>
+    <tr><td><b>ไม่มี IV levothyroxine</b> (หลาย รพ.ในไทย)</td><td>Levothyroxine กิน/ทางสายให้อาหารขนาดสูง — รายงานจากไทย (คณะผู้เขียนจากรามาธิบดี) ใช้ <b>200 µg ทุก 8 ชม. × 5 ครั้ง (รวม 1 mg) → 100 µg/วัน</b> ได้ผล · ดูดซึมไม่แน่นอนเมื่อมี ileus/บวม · ปรึกษาต่อมไร้ท่อ <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>หายใจ</b></td><td>ใส่ท่อช่วยหายใจเมื่อ CO₂ คั่ง/หายใจไม่พอ — มักต้องช่วยนาน</td></tr>
+    <tr><td><b>อุณหภูมิ</b></td><td><b>Passive rewarming</b> (ผ้าห่ม ห้องอุ่น) · หลีกเลี่ยง active external warming (หลอดเลือดขยาย → ความดันตก) ยกเว้น hypothermia รุนแรง <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Na ต่ำ · น้ำตาลต่ำ · ความดันต่ำ</b></td><td>หลีกเลี่ยงสารน้ำ hypotonic · แก้ Na ช้าๆ (หน้า <a href="../hyponatremia/index.html">Hyponatremia</a>) · dextrose · vasopressor มักตอบสนองเมื่อได้ thyroid hormone</td></tr>
+    <tr><td><b>ตัวกระตุ้น</b></td><td>ยาปฏิชีวนะ empirical ถ้าสงสัยติดเชื้อ (อาจไม่มีไข้/WBC ไม่สูง) · หยุดยากล่อมประสาท · ลดขนาดยาที่ขับช้า</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">เป้าหมาย: ความรู้สึกตัว หัวใจ และการหายใจดีขึ้น · ติดตาม FT4/FT3 ทุก 1–2 วัน · ระวัง arrhythmia/MI จาก thyroid hormone ขนาดสูง</p>
+</section>
+
+<!-- 9 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัยภาวะฉุกเฉินไทรอยด์</b>เจาะ TSH FT4 FT3 cortisol ก่อนให้ยา · ไม่รอผล</div>
+      <div class="vline arrow"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ร้อน เร็ว ซึม/กระสับกระส่าย</span><div class="node red"><b>Thyroid storm</b>BWPS ≥45 / JTA TS1<br>① Propranolol 60–80 q4h (esmolol ถ้า HF)<br>② MMI 60–80/วัน หรือ PTU 500–1000 → 250 q4h<br>③ Lugol 8 หยด qid หลัง ATD ≥1 ชม.<br>④ Hydrocortisone 100 → 50 q6h<br>Paracetamol · ICU · หาตัวกระตุ้น</div></div>
+        <div class="arm"><span class="lab">เย็น ช้า ซึม</span><div class="node dx hypo"><b>Myxedema coma</b>Popoveniuc ≥60<br>① Hydrocortisone (เช่น 100 q8h) ก่อน<br>② LT4 200–400 µg IV → 1.6 µg/kg ×75%<br>± LT3 5–20 µg → 2.5–10 q8h<br>Ventilation · passive rewarming · หลีกเลี่ยง hypotonic</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 10 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">คะแนนเป็นเครื่องช่วย ไม่ใช่ตัวตัดสิน — ใช้ร่วมกับดุลยพินิจทางคลินิก</p>
+  </div>
+  <div class="tool" id="tBw" style="margin-top:12px">
+    <h3>Burch–Wartofsky Point Scale</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">อุณหภูมิ (°C)</div>
+        <div class="radios"><label><input type="radio" name="bT" value="0">&lt;37.2</label><label><input type="radio" name="bT" value="5">37.2–37.7</label><label><input type="radio" name="bT" value="10">37.8–38.2</label><label><input type="radio" name="bT" value="15">38.3–38.8</label><label><input type="radio" name="bT" value="20" checked>38.9–39.4</label><label><input type="radio" name="bT" value="25">39.5–39.9</label><label><input type="radio" name="bT" value="30">≥40</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">CNS</div>
+        <div class="radios"><label><input type="radio" name="bC" value="0">ปกติ</label><label><input type="radio" name="bC" value="10" checked>Agitation</label><label><input type="radio" name="bC" value="20">Delirium/psychosis/lethargy</label><label><input type="radio" name="bC" value="30">ชัก/โคม่า</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">GI–ตับ</div>
+        <div class="radios"><label><input type="radio" name="bG" value="0">ไม่มี</label><label><input type="radio" name="bG" value="10" checked>ท้องเสีย คลื่นไส้ อาเจียน ปวดท้อง</label><label><input type="radio" name="bG" value="20">เหลือง</label></div>
+      </div>
+      <div>
+        <div class="muted" style="font-size:.82rem">HR (/min)</div>
+        <div class="radios"><label><input type="radio" name="bH" value="0">&lt;90</label><label><input type="radio" name="bH" value="5">90–109</label><label><input type="radio" name="bH" value="10">110–119</label><label><input type="radio" name="bH" value="15">120–129</label><label><input type="radio" name="bH" value="20" checked>130–139</label><label><input type="radio" name="bH" value="25">≥140</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">Heart failure</div>
+        <div class="radios"><label><input type="radio" name="bF" value="0" checked>ไม่มี</label><label><input type="radio" name="bF" value="5">ขาบวม</label><label><input type="radio" name="bF" value="10">Basal crepitation</label><label><input type="radio" name="bF" value="15">Pulmonary edema</label></div>
+        <div class="checks" style="margin-top:8px"><label><input type="checkbox" id="bAf"> Atrial fibrillation (+10)</label><label><input type="checkbox" id="bPr" checked> มีตัวกระตุ้น (+10)</label></div>
+      </div>
+    </div>
+    <div class="out" id="bwOut"></div>
+  </div>
+  <div class="tool" id="tJt" style="margin-top:12px">
+    <h3>JTA/JES criteria</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="jTx" checked> FT3 และ/หรือ FT4 สูง (จำเป็น)</label><label><input type="checkbox" id="jNa"> ยังไม่มีผล TFT แต่มีประวัติไทรอยด์/คอพอก/ตาโปน</label>
+      <label><input type="checkbox" id="jC" checked> CNS: กระสับกระส่าย delirium ซึม โคม่า</label>
+      <label><input type="checkbox" id="jF" checked> ไข้ ≥38°C</label>
+      <label><input type="checkbox" id="jH"> HR ≥130</label>
+      <label><input type="checkbox" id="jHf"> CHF (pulmonary edema, crepitation &gt;½ ปอด, cardiogenic shock, NYHA IV/Killip ≥III)</label>
+      <label><input type="checkbox" id="jG"> GI/ตับ: คลื่นไส้ อาเจียน ท้องเสีย bilirubin ≥3 mg/dL</label>
+    </div>
+    <div class="out" id="jtOut"></div>
+  </div>
+  <div class="tool" id="tMx" style="margin-top:12px">
+    <h3>Popoveniuc myxedema coma score</h3>
+    <div class="grid2" style="margin:0">
+      <div>
+        <div class="muted" style="font-size:.82rem">อุณหภูมิ (°C)</div>
+        <div class="radios"><label><input type="radio" name="mT" value="0">&gt;35</label><label><input type="radio" name="mT" value="10" checked>32–35</label><label><input type="radio" name="mT" value="20">&lt;32</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">CNS</div>
+        <div class="radios"><label><input type="radio" name="mC" value="0">ปกติ</label><label><input type="radio" name="mC" value="10">ง่วง/lethargic</label><label><input type="radio" name="mC" value="15" checked>Obtunded</label><label><input type="radio" name="mC" value="20">Stupor</label><label><input type="radio" name="mC" value="30">โคม่า/ชัก</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">GI</div>
+        <div class="radios"><label><input type="radio" name="mG" value="0">ปกติ</label><label><input type="radio" name="mG" value="5" checked>เบื่ออาหาร ปวดท้อง ท้องผูก</label><label><input type="radio" name="mG" value="15">การเคลื่อนไหวลำไส้ลดลง</label><label><input type="radio" name="mG" value="20">Paralytic ileus</label></div>
+        <div class="muted" style="font-size:.82rem;margin-top:8px">HR</div>
+        <div class="radios"><label><input type="radio" name="mH" value="0">≥60</label><label><input type="radio" name="mH" value="10" checked>50–59</label><label><input type="radio" name="mH" value="20">40–49</label><label><input type="radio" name="mH" value="30">&lt;40</label></div>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" class="mx" data-v="10" checked> มีตัวกระตุ้น (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> ECG อื่น: QT ยาว low voltage BBB ST-T heart block (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> Pericardial/pleural effusion (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="15"> Pulmonary edema (+15)</label>
+        <label><input type="checkbox" class="mx" data-v="15"> Cardiomegaly (+15)</label>
+        <label><input type="checkbox" class="mx" data-v="20"> ความดันต่ำ (+20)</label>
+        <label><input type="checkbox" class="mx" data-v="10" checked> Na ต่ำ (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> น้ำตาลต่ำ (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> Hypoxemia (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> Hypercarbia (+10)</label>
+        <label><input type="checkbox" class="mx" data-v="10"> GFR ลดลง (+10)</label>
+      </div>
+    </div>
+    <div class="out" id="mxOut"></div>
+  </div>
+  <div class="tool plan" id="tDose" style="margin-top:12px">
+    <h3>ขนาดยาเริ่มต้น</h3>
+    <div class="fields">
+      <label class="f">ภาวะ<select id="dCond"><option value="storm">Thyroid storm</option><option value="mc">Myxedema coma</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="dWt" value="60"></label>
+      <label class="f">อายุ<input type="number" id="dAge" value="45"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dHf"> สงสัย HF / cardiomyopathy / ความดันต่ำ</label>
+      <label><input type="checkbox" id="dLiver"> Bilirubin/ตับ &gt;3 เท่าของปกติ</label>
+      <label><input type="checkbox" id="dPreg"> ตั้งครรภ์ไตรมาสแรก</label>
+      <label><input type="checkbox" id="dAsth"> Asthma (ห้าม non-selective BB)</label>
+      <label><input type="checkbox" id="dCad"> CAD/arrhythmia (myxedema)</label>
+      <label><input type="checkbox" id="dIv"> มี levothyroxine IV</label>
+    </div>
+    <div class="out" id="doseOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Storm เป็นการวินิจฉัยทางคลินิก</b> ระดับฮอร์โมนไม่ได้บอกความรุนแรง</div></div>
+    <div class="pearl"><div><b>ATD ก่อน iodine อย่างน้อย 1 ชั่วโมง</b></div></div>
+    <div class="pearl"><div><b>ห้าม aspirin ใน storm</b> ใช้ paracetamol</div></div>
+    <div class="pearl"><div><b>สงสัย HF ใช้ esmolol</b> เริ่มขนาดต่ำ ทำ echo</div></div>
+    <div class="pearl"><div><b>ตับเสีย &gt;3 เท่า เลือก MMI</b> · ไตรมาสแรกเลือก PTU</div></div>
+    <div class="pearl"><div><b>Steroid ขนาดสูงใน storm → ระวัง K ต่ำ (TPP)</b></div></div>
+    <div class="pearl"><div><b>Iodine ไม่ช่วยใน thyroiditis</b> และทำให้เลื่อน RAI</div></div>
+    <div class="pearl"><div><b>Myxedema: hydrocortisone ก่อน levothyroxine เสมอ</b></div></div>
+    <div class="pearl"><div><b>Myxedema: passive rewarming</b> หลีกเลี่ยงสารน้ำ hypotonic และยากล่อมประสาท</div></div>
+    <div class="pearl"><div><b>ไม่มี LT4 IV: ให้ทางปาก/สายให้อาหารขนาดสูง</b> และปรึกษาต่อมไร้ท่อ</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../thyroid/index.html">Thyroid →</a> · <a href="../adrenal-crisis/index.html">Adrenal crisis →</a> · <a href="../af/index.html">AF →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Taylor P, Okosieme O, et al. Management of thyroid emergencies: joint consensus statement on management of thyroid storm. Eur Thyroid J 2026;15(4):ETJ260043. doi:10.1530/ETJ-26-0043 · 2) Ross DS, et al. 2016 ATA Guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid 2016;26:1343–421 · 3) Satoh T, et al. 2016 JTA/JES guidelines for the management of thyroid storm. Endocr J 2016;63:1025–64 · 4) Jonklaas J, et al. Guidelines for the treatment of hypothyroidism (ATA). Thyroid 2014;24:1670–751 · 5) Popoveniuc G, et al. A diagnostic scoring system for myxedema coma. Endocr Pract 2014;20:808–17 · 6) Charoensri S, Sriphrapradang C, Nimitphong H. Split high-dose oral levothyroxine treatment as a successful therapy option in myxedema coma. Clin Case Rep 2017;5:1706–11<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','teView');
+mountWalker({
+ start:{q:'ภาพรวมเป็นแบบไหน?',o:[['ร้อน ใจสั่นเร็ว กระสับกระส่าย (thyrotoxic)','st'],['เย็น ช้า ซึม (hypothyroid)','mc']]},
+ st:{q:'BWPS / JTA?',o:[['BWPS ≥45 หรือ JTA TS1','storm'],['BWPS 25–44 หรือ TS2','imp'],['BWPS <25','sev']]},
+ sev:{leaf:true,cls:'ok',t:'Thyrotoxicosis ไม่ใช่ storm',b:'Beta-blocker + ATD ขนาดปกติ · หาตัวกระตุ้น · ติดตามอาการทรุด'},
+ imp:{leaf:true,cls:'warn',t:'Impending storm',b:'ตัดสินร่วมกับอายุรแพทย์/ต่อมไร้ท่อ/ICU ว่าจะรักษาเต็มรูปแบบหรือไม่ · monitor ใกล้ชิด · หาสาเหตุอื่น (sepsis, ยาบ้า)'},
+ storm:{q:'มี HF / cardiomyopathy / ความดันต่ำ?',o:[['มี','stormhf'],['ไม่มี','stormok']]},
+ stormhf:{leaf:true,cls:'danger',t:'Storm + หัวใจล้มเหลว',b:'<b>Esmolol</b> ขนาดต่ำ titrate (หยุดได้เร็ว) · echo · ICU · MMI 60–80 mg/วัน (หรือ PTU) → <b>iodine หลัง 1 ชม.</b> · hydrocortisone 100 → 50 q6h · พิจารณา plasma exchange/ECMO ถ้าทรุด'},
+ stormok:{leaf:true,cls:'danger',t:'Thyroid storm',b:'<b>Propranolol 60–80 mg q4h</b> · <b>MMI 60–80 mg/วัน</b> หรือ <b>PTU 500–1000 mg → 250 mg q4h</b> · <b>Lugol 8 หยด qid หลัง ATD ≥1 ชม.</b> · <b>hydrocortisone 100 → 50 mg q6h</b> · paracetamol (ห้าม aspirin) · หาตัวกระตุ้น'},
+ mc:{q:'Popoveniuc score?',o:[['≥60','mcyes'],['25–59','mcmay'],['<25','mcno']]},
+ mcno:{leaf:true,cls:'ok',t:'Myxedema coma ไม่น่าเป็น',b:'หาสาเหตุอื่นของซึม/hypothermia (sepsis, ยา, stroke, น้ำตาลต่ำ)'},
+ mcmay:{leaf:true,cls:'warn',t:'สนับสนุน myxedema coma',b:'ประเมินร่วมกับ TSH/FT4 · ถ้า hypothyroid ชัดและอาการรุนแรง → รักษาแบบ myxedema coma'},
+ mcyes:{leaf:true,cls:'violet',t:'Myxedema coma',b:'เจาะ cortisol → <b>hydrocortisone 100 mg q8h ก่อน</b> · <b>LT4 200–400 µg IV</b> (ต่ำลงถ้าสูงอายุ/CAD) → 1.6 µg/kg × 75% IV · ± LT3 · ช่วยหายใจ · passive rewarming · แก้ Na/น้ำตาล · ยาปฏิชีวนะถ้าสงสัยติดเชื้อ'}
+},'apTrail','apStage');
+
+function bw(){
+  let s=['bT','bC','bG','bH','bF'].reduce((a,n)=>a+ +radio(n),0);
+  if($('bAf').checked)s+=10;if($('bPr').checked)s+=10;
+  $('bwOut').innerHTML=`BWPS = <span class="big">${s}</span> · `+(s>=45?'<b>เข้าได้กับ thyroid storm</b> → รักษาเต็มรูปแบบ ICU/HDU':s>=25?'<b>Impending storm</b> → ตัดสินร่วมกับผู้เชี่ยวชาญ':'<b>ไม่น่าเป็น storm</b>')+'<br><span class="muted">ไวแต่จำเพาะต่ำใน sepsis — ใช้ร่วมกับดุลยพินิจ</span>';
+}
+bindAll('#tBw input',bw);
+
+function jt(){
+  const tx=$('jTx').checked,na=$('jNa').checked,c=$('jC').checked,f=$('jF').checked,h=$('jH').checked,hf=$('jHf').checked,g=$('jG').checked;
+  const oth=[f,h,hf,g].filter(Boolean).length;let o;
+  const ts1=(c&&oth>=1)||(oth>=3);
+  if(!tx){o=(na&&ts1)?'<b>TS2 — suspected</b> (อาการเข้า TS1 แต่ยังไม่มีผล TFT ในผู้มีประวัติไทรอยด์/คอพอก/ตาโปน)':'ต้องมี FT3/FT4 สูง — ถ้ายังไม่มีผล ติ๊กช่องประวัติไทรอยด์เพื่อประเมิน TS2';}
+  else if(ts1)o='<b>TS1 — definite thyroid storm</b>';
+  else if(oth>=2)o='<b>TS2 — suspected thyroid storm</b>';
+  else o='<b>ไม่เข้าเกณฑ์</b> JTA/JES';
+  $('jtOut').innerHTML=o+`<br><span class="muted">CNS ${c?'มี':'ไม่มี'} · อาการอื่น ${oth} ข้อ</span>`;
+}
+bindAll('#tJt input',jt);
+
+function mx(){
+  let s=['mT','mC','mG','mH'].reduce((a,n)=>a+ +radio(n),0);
+  document.querySelectorAll('.mx').forEach(e=>{if(e.checked)s+=+e.dataset.v});
+  $('mxOut').innerHTML=`Score = <span class="big">${s}</span> · `+(s>=60?'<b>เข้าได้มากกับ myxedema coma</b>':s>=25?'<b>สนับสนุน / เสี่ยง myxedema coma</b>':'<b>ไม่น่าเป็น</b>');
+}
+bindAll('#tMx input',mx);
+
+function dose(){
+  const c=$('dCond').value,w=num('dWt'),a=num('dAge'),hf=$('dHf').checked,lv=$('dLiver').checked,pg=$('dPreg').checked,as=$('dAsth').checked,cad=$('dCad').checked,iv=$('dIv').checked;const L=[];
+  if(c==='storm'){
+    if(as)L.push('<b>Asthma: ห้าม propranolol</b> → esmolol (β1-selective) ระวัง หรือ <b>diltiazem 60–90 mg q6h</b>');
+    else if(hf)L.push(`<b>Esmolol</b> load ${w?Math.round(0.5*w)+' mg (500 µg/kg)':'500 µg/kg'} ใน 1 นาที → 0–200 µg/kg/นาที (เริ่มต่ำ titrate) · echo`);
+    else L.push('<b>Propranolol 60–80 mg กินทุก 4 ชม.</b> (IV 1–3 mg ถ้ากินไม่ได้)');
+    if(pg)L.push('<b>PTU 500–1000 mg load → 250 mg q4h</b> (ไตรมาสแรก)');
+    else if(lv)L.push('<b>Methimazole 60–80 mg/วัน</b> แบ่ง 3–4 ครั้ง (ตับ >3 เท่า — หลีกเลี่ยง PTU)');
+    else L.push('<b>Methimazole 60–80 mg/วัน</b> หรือ <b>PTU 500–1000 mg load → 250 mg q4h</b>');
+    L.push('<b>หลัง ATD ≥1 ชม.</b>: Lugol 8 หยด หรือ SSKI 5 หยด วันละ 4 ครั้ง (เจือจาง)');
+    L.push('<b>Hydrocortisone 100 mg IV → 50 mg q6h</b> · ติดตาม K');
+    L.push('Paracetamol + ประคบเย็น (ห้าม aspirin) · ดื้อ: cholestyramine 4 g tid, plasma exchange, thyroidectomy');
+  }else{
+    L.push('<b>Hydrocortisone ขนาด stress IV</b> เช่น 100 mg q8h (ก่อน LT4 · เจาะ cortisol ก่อน)');
+    const old=(a!==null&&a>=65)||cad||(w!==null&&w<50);
+    const load=old?'200':'300–400';
+    if(iv){L.push(`<b>Levothyroxine ${load} µg IV</b> loading`+(old?' (ขนาดต่ำ: สูงอายุ/CAD/ตัวเล็ก — เกณฑ์อายุ 65 เป็นของผู้เรียบเรียง)':''));if(w)L.push(`ต่อด้วย <b>${Math.round(1.6*w*0.75)} µg IV วันละครั้ง</b> (1.6 µg/kg × 75%) จนกินได้ → ${Math.round(1.6*w)} µg กิน (สูงอายุ/CAD ปรับช้ากว่า)`);}
+    else{L.push('<b>ไม่มี LT4 IV</b>: levothyroxine กิน/ทางสายให้อาหารขนาดสูง (รายงานไทย 200 µg q8h × 5 ครั้ง = 1 mg → 100 µg/วัน) — การดูดซึมไม่แน่นอน ปรึกษาต่อมไร้ท่อ');if(w)L.push(`ขนาดต่อเนื่องเป้าหมาย ~${Math.round(1.6*w)} µg/วัน (กิน)`);}
+    L.push(`± <b>Liothyronine</b> ${old?'5–10':'10–20'} µg load → ${old?'2.5–5':'2.5–10'} µg q8h (ถ้ามี)`);
+    L.push('ช่วยหายใจ · passive rewarming · ไม่ใช้สารน้ำ hypotonic · dextrose · ยาปฏิชีวนะถ้าสงสัยติดเชื้อ');
+  }
+  $('doseOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tDose input,#tDose select',dose);
+
+mountQuiz([
+ ['Graves หยุดยา 2 เดือน มาด้วยไข้ 39.6 HR 150 AF สับสน ท้องเสีย การให้ยาลำดับใดถูก',
+  ['Lugol ก่อน แล้ว MMI','MMI/PTU ก่อน แล้ว Lugol หลัง ≥1 ชม.','Aspirin ลดไข้','รอผล FT4 ก่อนรักษา'],1,'ATD ก่อน iodine ≥1 ชม. · ห้าม aspirin · ไม่รอผล'],
+ ['Thyroid storm ที่ echo พบ EF 20% ความดัน 85/50 beta-blocker ที่เหมาะสม',
+  ['Propranolol 80 mg q4h','Esmolol ขนาดต่ำ titrate','Atenolol 100 mg','ห้ามใช้ BB ทุกชนิดตลอด'],1,'ใช้ยาออกฤทธิ์สั้น หยุดได้เร็ว'],
+ ['Thyroid storm bilirubin 6 mg/dL (ปกติ <1.2) ไม่ได้ตั้งครรภ์ ควรเลือก',
+  ['PTU','Methimazole','ไม่ให้ ATD','Lithium เดี่ยว'],1,'ตับ >3 เท่า → MMI'],
+ ['ชายไทยอายุ 25 ปี thyroid storm หลังได้ hydrocortisone ขนาดสูง แขนขาอ่อนแรงทันที สิ่งที่ต้องตรวจ',
+  ['Ca','K','Mg','CK'],1,'Thyrotoxic periodic paralysis — K ต่ำ'],
+ ['หญิง 78 ปี ซึม T 33°C HR 48 Na 124 TSH 85 FT4 ต่ำ ยาตัวแรกที่ควรให้',
+  ['Levothyroxine 500 µg IV','Hydrocortisone IV','Liothyronine','Warming blanket อย่างเดียว'],1,'Steroid ก่อน thyroid hormone'],
+ ['Myxedema coma ใน รพ.ที่ไม่มี levothyroxine IV',
+  ['รอส่งต่อโดยไม่ให้อะไร','Levothyroxine กิน/ทางสายขนาดสูง + hydrocortisone','Liothyronine กินอย่างเดียว','Iodine'],1,'รายงานจากไทยใช้ 200 µg q8h × 5 ครั้ง (รวม 1 mg)'],
+ ['ข้อใดไม่ถูกเกี่ยวกับ BWPS',
+  ['≥45 เข้าได้กับ storm','ต้องมีผล FT4 สูงก่อนคำนวณ','25–44 = impending','จำเพาะต่ำใน sepsis'],1,'BWPS ไม่ต้องมีผล TFT (JTA/JES ต้องมี)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
