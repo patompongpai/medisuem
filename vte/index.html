@@ -1,0 +1,869 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>VTE / PE · AHA/ACC 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">VTE · AHA/ACC 2026 · ESC 2019 · CHEST</div>
+  <h1>VTE / PE และ<br>anticoagulation</h1>
+  <p class="sub">ลิ่มเลือดในหลอดเลือดดำ (DVT) และ pulmonary embolism สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัยด้วย pretest probability การแบ่งความรุนแรงแบบใหม่ <b>AHA/ACC PE Clinical Categories A–E</b> การเลือกและขนาดยาต้านการแข็งตัวของเลือด thrombolysis ระยะเวลาการรักษา การหยุดยาก่อนหัตถการ การป้องกันในผู้ป่วยใน และการติดตาม พร้อมเครื่องมือคำนวณครบชุด</p>
+  <p class="cite">อ้างอิงหลัก: 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for Acute PE (Circulation 2026;153:e977–e1051) · 2019 ESC/ERS Guidelines for acute PE · CHEST Antithrombotic Therapy for VTE Disease 2021 (2nd update) · ACCP Perioperative Management of Antithrombotic Therapy 2022 · ASH 2018–2020 VTE guidelines · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>1. วินิจฉัย</b>Pretest probability → PERC / D-dimer (YEARS, ปรับตามอายุ) → CTPA หรือ ultrasound</div>
+    <div class="stage" style="--c:var(--warn)"><b>2. แบ่งความรุนแรง</b>Category A–E: sPESI · troponin/BNP · RV · lactate · ความดัน</div>
+    <div class="stage" style="--c:var(--danger)"><b>3. รักษา</b>A–B: DOAC ผู้ป่วยนอก · C–E: LMWH + PERT · E: thrombolysis/CDT</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#risk">ปัจจัยเสี่ยง</a><a href="#dvt">วินิจฉัย DVT</a><a href="#pedx">วินิจฉัย PE</a><a href="#cat">Category A–E</a><a href="#tx">รักษาตาม category</a><a href="#lysis">Thrombolysis</a><a href="#ac">เลือกยา · ขนาดยา</a><a href="#special">กลุ่มพิเศษ</a><a href="#dur">ระยะเวลา</a><a href="#periop">หยุดยาก่อนหัตถการ</a><a href="#proph">ป้องกัน VTE</a><a href="#fu">ติดตาม</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="risk" class="col">
+  <div class="sec-num">01</div>
+  <h2>ปัจจัยเสี่ยง: provoked หรือ unprovoked</h2>
+  <p>การแยกชนิดปัจจัยเสี่ยงสำคัญที่สุดสำหรับ <b>การตัดสินระยะเวลาให้ยา</b> (บท 09)</p>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>ตัวอย่าง</th><th>ความเสี่ยงเป็นซ้ำหลังหยุดยา</th></tr>
+    <tr><td><b>Major transient</b> (provoked ชัด)</td><td>ผ่าตัดใหญ่ (ดมยา &gt;30 นาที), กระดูกหัก/บาดเจ็บขา, นอนโรงพยาบาลด้วยโรคเฉียบพลัน ≥3 วัน ภายใน 3 เดือน</td><td>ต่ำ (&lt;3%/ปี) → <b>3 เดือนพอ</b></td></tr>
+    <tr><td><b>Minor transient</b></td><td>ผ่าตัดเล็ก, นอน รพ. &lt;3 วัน, ยาคุม/ฮอร์โมน, ตั้งครรภ์/หลังคลอด, เดินทางไกล, ขาบาดเจ็บไม่หัก</td><td>ปานกลาง — พิจารณาเป็นรายๆ</td></tr>
+    <tr><td><b>Persistent</b></td><td>มะเร็ง active, IBD, autoimmune, APS, thrombophilia บางชนิด</td><td>สูง → ให้ยานาน</td></tr>
+    <tr><td><b>ไม่พบปัจจัย</b> (unprovoked)</td><td>—</td><td>สูง (~10% ปีแรก) → ให้ยาต่อเนื่อง ถ้าเสี่ยงเลือดออกไม่สูง</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">Unprovoked VTE: ซักประวัติ ตรวจร่างกาย CBC, CXR, ตรวจคัดกรองมะเร็งตามอายุ — <b>ไม่แนะนำ</b> CT ช่องท้องหรือ PET หามะเร็งทุกราย · ไม่ตรวจ thrombophilia ขณะรักษาระยะเฉียบพลัน <span class="tag add">เสริม</span></p>
+</section>
+
+<!-- 2 -->
+<section id="dvt" class="col">
+  <div class="sec-num">02</div>
+  <h2>วินิจฉัย DVT</h2>
+  <ul>
+    <li>ใช้ <b>Wells DVT</b> (เครื่องมือบท 14): <b>unlikely (≤1)</b> → D-dimer → ลบ = ตัดได้ · บวก → ultrasound · <b>likely (≥2)</b> → ultrasound (ถ้าลบ ตรวจ D-dimer หรือ US ซ้ำ 1 สัปดาห์)</li>
+    <li>Ultrasound: proximal compression (femoral–popliteal) หรือ whole-leg · กดไม่ยุบ = DVT</li>
+    <li><b>Isolated distal (calf) DVT</b>: ถ้าอาการน้อย เสี่ยงลุกลามต่ำ → US ซ้ำใน 2 สัปดาห์ได้ · ถ้าอาการมาก/มะเร็ง/ลิ่มยาว &gt;5 cm/ใกล้หลอดเลือดส่วนต้น → ให้ยา 3 เดือน (CHEST)</li>
+    <li>DVT แขน: มักสัมพันธ์กับสาย catheter/มะเร็ง · รักษาเหมือน DVT ขา อย่างน้อย 3 เดือน · ไม่ต้องถอดสายถ้ายังใช้ได้และอยู่ถูกตำแหน่ง <span class="tag add">เสริม</span></li>
+    <li>Superficial vein thrombosis ยาว ≥5 cm หรือใกล้ junction (&lt;3 cm) → fondaparinux 2.5 mg 45 วัน (ใกล้ junction ให้ขนาดรักษา) <span class="tag add">เสริม</span></li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="pedx" class="col">
+  <div class="sec-num">03</div>
+  <h2>วินิจฉัย PE</h2>
+  <div class="box warn"><b>ความดันต่ำ/shock ที่สงสัย PE</b>ทำ <b>bedside echo</b> ทันที — RV โตชัด + ไม่มีสาเหตุอื่น และย้ายไป CT ไม่ได้ → รักษาแบบ PE รุนแรงได้เลย · ถ้าคงที่พอ ทำ CTPA ด่วน</div>
+  <div class="tbl"><table>
+    <tr><th>Pretest probability</th><th>ขั้นตอน (AHA/ACC 2026 ใช้ Wells, revised Geneva หรือ gestalt)</th></tr>
+    <tr><td><b>ต่ำ</b> (&lt;15% โดย gestalt)</td><td><b>PERC</b> ครบ 8 ข้อลบ → ตัด PE ได้ ไม่ต้องตรวจเพิ่ม · ไม่ผ่าน → D-dimer/YEARS</td></tr>
+    <tr><td><b>PE unlikely</b> (Wells ≤4) / ไม่สูง</td><td>เลือก <b>1 กลยุทธ์</b>: <b>YEARS</b> — ไม่มี item → D-dimer &lt;1000 ng/mL ตัดได้ · มี ≥1 item → &lt;500 ตัดได้ · หรือ <b>D-dimer ปรับตามอายุ</b> (อายุ × 10 เมื่อ &gt;50 ปี; ใช้กับ Wells/Geneva — ADJUST-PE) · สูงกว่า → CTPA <span class="muted">(ไม่ควรใช้ age-adjusted ซ้อนบน YEARS — ยังไม่ได้ validate)</span></td></tr>
+    <tr><td><b>สูง</b> / Wells &gt;4 (likely)</td><td><b>ไม่ใช้ D-dimer</b> → CTPA เลย (เริ่ม anticoagulant ระหว่างรอถ้าเลือดออกไม่เสี่ยง)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>CTPA</b> เป็นมาตรฐาน · <b>V/Q scan</b> เมื่อแพ้สารทึบรังสี ไตเสื่อม ตั้งครรภ์ (CXR ปกติ)</li>
+    <li>ECG (S1Q3T3, RBBB, T inversion V1–V4, sinus tachycardia) และ CXR ช่วยหาโรคอื่น ไม่ใช่วินิจฉัย</li>
+    <li><b>ตั้งครรภ์</b>: pregnancy-adapted YEARS + D-dimer ลดการถ่ายภาพ · ขาบวมทำ compression US ก่อน (ถ้าพบ DVT ไม่ต้อง CT)</li>
+    <li>D-dimer สูงได้จากอายุ ตั้งครรภ์ มะเร็ง ติดเชื้อ หลังผ่าตัด — ใช้ "ตัดออก" เท่านั้น</li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="cat" class="col">
+  <div class="sec-num">04</div>
+  <h2>ความรุนแรง: AHA/ACC Acute PE Clinical Categories <span class="tag up">2026</span></h2>
+  <p>แทนคำว่า massive/submassive และ low/intermediate/high risk แบบเดิม · ผู้ป่วยเปลี่ยน category ได้เมื่อประเมินซ้ำ · เพิ่ม modifier <b>R</b> ตามระดับ: <b>C</b> — SpO₂ &lt;90%, หายใจเร็ว หรือต้องใช้ O₂ · <b>D</b> — O₂ &gt;6 L/min หรือ non-rebreather · <b>E</b> — ต้องใช้ NIV/เครื่องช่วยหายใจ (ถ้า R กับ hemodynamics ขัดกัน ให้ใช้ category ที่สูงกว่า)</p>
+  <div class="tbl"><table>
+    <tr><th>Category</th><th>นิยาม</th><th>เทียบ ESC 2019</th></tr>
+    <tr><td><b>A</b> subclinical</td><td>พบโดยบังเอิญ ไม่มีอาการ</td><td>—</td></tr>
+    <tr><td><b>B</b> symptomatic, severity score ต่ำ</td><td>sPESI 0 / PESI ≤85 / Hestia 0 / Bova ≤4 · <b>B1</b> subsegmental · <b>B2</b> segmental ขึ้นไป</td><td>Low risk</td></tr>
+    <tr><td><b>C1</b></td><td>severity score สูง (sPESI ≥1, PESI (sPESI ≥1, PESI &gt;85, Hestia ≥1)gt;85, Hestia ≥1, Bova (sPESI ≥1, PESI &gt;85, Hestia ≥1)gt;4) · RV และ biomarker ปกติ</td><td>Intermediate-low</td></tr>
+    <tr><td><b>C2</b></td><td>score สูง + <b>อย่างใดอย่างหนึ่ง</b>: RV ผิดปกติ (echo/CT) หรือ troponin/BNP สูง</td><td>Intermediate-low</td></tr>
+    <tr><td><b>C3</b></td><td>score สูง + <b>ทั้ง RV ผิดปกติและ biomarker สูง</b></td><td>Intermediate-high</td></tr>
+    <tr><td><b>D1</b> ใกล้ล้มเหลว</td><td>ความดันต่ำชั่วคราว (เช่น syncope) ตอบสนองสารน้ำ ไม่มี hypoperfusion</td><td>Intermediate-high</td></tr>
+    <tr><td><b>D2</b> normotensive shock</td><td>ความดันปกติแต่มี hypoperfusion (lactate สูง, AKI, ซึม)</td><td>Intermediate-high / high</td></tr>
+    <tr><td><b>E1</b></td><td>ความดันต่ำต่อเนื่อง/ซ้ำ + cardiogenic shock</td><td>High risk</td></tr>
+    <tr><td><b>E2</b> catastrophic</td><td>Refractory shock (SCAI D–E) หรือ cardiac arrest</td><td>High risk</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>sPESI (1 คะแนนต่อข้อ)</h4>อายุ &gt;80 · มะเร็ง · โรคหัวใจ/ปอดเรื้อรัง · HR ≥110 · SBP &lt;100 · SpO₂ &lt;90% → <b>0 = เสี่ยงต่ำ</b></div>
+    <div class="card c-warn"><h4>ตรวจเพิ่มเมื่อ score สูง</h4><b>Troponin, BNP/NT-proBNP</b> · <b>RV/LV ratio ≥1.0</b> บน CT หรือ echo · <b>lactate</b> ในผู้ที่ความดันปกติ (หา normotensive shock)</div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="tx" class="col">
+  <div class="sec-num">05</div>
+  <h2>รักษาตาม category (AHA/ACC 2026)</h2>
+  <div class="tbl"><table>
+    <tr><th>Category</th><th>การรักษา</th><th>Class</th></tr>
+    <tr><td><b>A–B</b></td><td><b>DOAC</b> (apixaban/rivaroxaban ไม่ต้องให้ยาฉีดนำ) มากกว่า warfarin รวมคนอ้วน · <b>รักษาแบบผู้ป่วยนอก</b>ได้ถ้า sPESI 0/Hestia 0 ไม่มีเลือดออก ผู้ป่วยพร้อม · B1 subsegmental ไม่มี DVT เสี่ยงต่ำ → สังเกตอาการได้ (CHEST)</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>C–E1</b> ต้องให้ยาฉีด</td><td><b>LMWH มากกว่า UFH</b> · นอนโรงพยาบาล ติดตาม 24–72 ชม.แรก</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>C–E</b></td><td>ปรึกษา <b>PERT</b> (ทีมสหสาขา) — ในไทยคือปรึกษาอายุรแพทย์หัวใจ/ปอด/ICU/รังสีร่วมรักษา</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>C3</b></td><td>Systemic thrombolysis, CDT, mechanical thrombectomy — ประโยชน์ไม่ชัด</td><td><span class="rec">2b</span></td></tr>
+    <tr><td><b>D</b></td><td>Thrombolysis, CDT, thrombectomy, surgical embolectomy — พิจารณาได้</td><td><span class="rec">2b</span></td></tr>
+    <tr><td><b>E</b></td><td><b>Reperfusion</b>: systemic thrombolysis, CDT, mechanical thrombectomy (E1/บาง D: surgical embolectomy เป็นทางเลือกเมื่อเลือดออกเสี่ยง) · E2: พิจารณา VA-ECMO</td><td><span class="rec">2a</span></td></tr>
+  </table></div>
+  <div class="box key"><b>HI-PEITHO (NEJM 2026)</b> <span class="tag up">2026</span>ผู้ป่วย intermediate-risk PE ที่มี RV/LV ≥1.0 + troponin สูง + อาการรุนแรง ≥2 ข้อ (HR ≥100, SBP ≤110, RR &gt;20 หรือ SpO₂ &lt;90%): ultrasound-facilitated CDT + anticoagulant ลด composite (PE death, decompensation, recurrence) ใน 7 วัน 4.0% vs 10.3% โดยไม่มีเลือดออกในสมอง — สนับสนุน CDT ในผู้ป่วยคัดเลือก (ข้อมูลออกพร้อม/หลังแนวทาง)</div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ดูแล RV failure <span class="tag add">เสริม</span></h4><ul><li><b>ระวังให้สารน้ำมาก</b> (≤500 mL) — RV โตกดทับ LV</li><li><b>Norepinephrine</b> ตัวแรก · ต่ำ cardiac output → เพิ่ม dobutamine</li><li>หลีกเลี่ยงการใส่ท่อช่วยหายใจถ้าได้ (induction + PPV ทำให้ทรุด) · ถ้าจำเป็นใช้ยาที่ไม่ลดความดัน</li><li>O₂ เมื่อ SpO₂ &lt;90%</li></ul></div>
+    <div class="card c-vio"><h4>IVC filter</h4>เฉพาะ <b>ให้ anticoagulant ไม่ได้</b> (เลือดออกรุนแรง) หรือ PE ซ้ำแม้ได้ยาเต็มที่ · ไม่ใส่ประจำร่วมกับยา (CHEST: ไม่แนะนำ) · ถอดออกเมื่อเริ่มยาได้</div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="lysis" class="col">
+  <div class="sec-num">06</div>
+  <h2>Systemic thrombolysis</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ESC 2019)</th></tr>
+    <tr><td><b>Alteplase (rtPA)</b></td><td><b>100 mg IV ใน 2 ชม.</b> · หรือ 0.6 mg/kg ใน 15 นาที (สูงสุด 50 mg) แบบเร่ง · ให้ UFH ต่อระหว่าง alteplase ได้ (streptokinase/urokinase ให้หยุด UFH ระหว่างหยด)</td></tr>
+    <tr><td><b>Streptokinase</b></td><td>250,000 IU ใน 30 นาที → 100,000 IU/ชม. 12–24 ชม. · แบบเร่ง <b>1.5 ล้าน IU ใน 2 ชม.</b> (ยาที่ รพ.ไทยหลายแห่งมี)</td></tr>
+    <tr><td><b>Urokinase</b></td><td>4,400 IU/kg ใน 10 นาที → 4,400 IU/kg/ชม. 12–24 ชม. · แบบเร่ง 3 ล้าน IU ใน 2 ชม.</td></tr>
+    <tr><td>Cardiac arrest จาก PE</td><td>ให้ thrombolysis ระหว่าง CPR ได้ · ทำ CPR ต่อ 60–90 นาทีหลังให้ <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ข้อห้ามเด็ดขาด</h4>เคย hemorrhagic stroke หรือ stroke ไม่ทราบสาเหตุ · ischemic stroke ใน 6 เดือน · เนื้องอก CNS · บาดเจ็บศีรษะ/ผ่าตัดใหญ่ใน 3 สัปดาห์ · bleeding diathesis · เลือดออกอยู่</div>
+    <div class="card c-warn"><h4>ข้อห้ามสัมพัทธ์</h4>TIA ใน 6 เดือน · ใช้ OAC · ตั้งครรภ์/หลังคลอด 1 สัปดาห์ · เจาะหลอดเลือดที่กดไม่ได้ · CPR ที่มีการบาดเจ็บ (traumatic resuscitation) · SBP &gt;180 ดื้อต่อการรักษา · ตับวาย · endocarditis · แผลในกระเพาะ</div>
+  </div>
+  <p>หลัง thrombolysis: เริ่ม UFH (ไม่ bolus) เมื่อ aPTT &lt;2 เท่าของปกติ แล้วเปลี่ยนเป็น LMWH/DOAC เมื่อคงที่ <span class="tag add">เสริม</span></p>
+</section>
+
+<!-- 7 -->
+<section id="ac" class="col">
+  <div class="sec-num">07</div>
+  <h2>เลือกยาและขนาดยา</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ระยะเริ่ม</th><th>ระยะรักษา</th><th>ไต (CrCl)</th></tr>
+    <tr><td><b>Apixaban</b></td><td><b>10 mg bid × 7 วัน</b></td><td>5 mg bid · ต่อเนื่อง (หลัง 6 เดือน) 2.5 mg bid</td><td>ไม่ปรับใน VTE · &lt;25 ข้อมูลน้อย</td></tr>
+    <tr><td><b>Rivaroxaban</b></td><td><b>15 mg bid × 21 วัน</b> (กินพร้อมอาหาร)</td><td>20 mg od · ต่อเนื่อง 10 mg od</td><td>หลีกเลี่ยง &lt;15 · ระวัง 15–30</td></tr>
+    <tr><td><b>Edoxaban</b></td><td>LMWH/UFH ≥5 วันก่อน</td><td>60 mg od · <b>30 mg</b> ถ้า CrCl 15–50, น้ำหนัก ≤60 kg หรือใช้ P-gp inhibitor</td><td>หลีกเลี่ยง &lt;15</td></tr>
+    <tr><td><b>Dabigatran</b></td><td>LMWH/UFH ≥5 วันก่อน</td><td>150 mg bid</td><td>ห้าม &lt;30</td></tr>
+    <tr><td><b>Enoxaparin</b></td><td colspan="2"><b>1 mg/kg SC q12h</b> (หรือ 1.5 mg/kg od) · มะเร็ง: เดือนแรก 1 mg/kg q12h</td><td>&lt;30: 1 mg/kg od · ติดตาม anti-Xa ในไตวาย/อ้วนมาก</td></tr>
+    <tr><td><b>Fondaparinux</b></td><td colspan="2">&lt;50 kg: 5 mg · 50–100 kg: 7.5 mg · &gt;100 kg: 10 mg SC od</td><td>ห้าม &lt;30</td></tr>
+    <tr><td><b>UFH</b></td><td colspan="2">80 U/kg bolus → 18 U/kg/ชม. ปรับตาม aPTT 1.5–2.5 เท่า (หรือ anti-Xa)</td><td>เลือกเมื่อ CrCl &lt;30, shock/จะทำ thrombolysis, เลือดออกเสี่ยงสูงต้องหยุดเร็ว</td></tr>
+    <tr><td><b>Warfarin</b></td><td colspan="2">เริ่มพร้อมยาฉีด <b>ให้ทับกัน ≥5 วัน และ INR ≥2 นาน 24 ชม.</b> · เป้า INR 2–3</td><td>ใช้ได้ทุกระดับไต</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ใช้ CrCl แบบ Cockcroft-Gault (น้ำหนักจริง) · DOAC เป็นยาแรกในผู้ป่วยส่วนใหญ่ (AHA/ACC 2026, CHEST 2021) · ในไทยยังใช้ warfarin มากเพราะราคา — ต้องติดตาม INR และปฏิกิริยาระหว่างยา · Reversal ดูหน้า <a href="../thrombocytopenia/index.html#rev">Thrombocytopenia</a></p>
+</section>
+
+<!-- 8 -->
+<section id="special" class="col">
+  <div class="sec-num">08</div>
+  <h2>กลุ่มพิเศษ</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ยาที่เลือก</th></tr>
+    <tr><td><b>มะเร็ง</b></td><td><b>Apixaban, edoxaban, rivaroxaban</b> หรือ LMWH · มะเร็งทางเดินอาหาร/ทางเดินปัสสาวะที่ยังมีก้อน: edoxaban/rivaroxaban เลือดออกมากกว่า → เลือก apixaban หรือ LMWH · ระวังยาเคมีที่มี interaction <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Antiphospholipid syndrome</b> (โดยเฉพาะ triple positive / arterial)</td><td><b>Warfarin</b> (หลีกเลี่ยง DOAC)</td></tr>
+    <tr><td><b>ตั้งครรภ์/ให้นมบุตร</b></td><td><b>LMWH</b> ตลอดการตั้งครรภ์ + ≥6 สัปดาห์หลังคลอด (รวมอย่างน้อย 3 เดือน) · ห้าม warfarin (ตั้งครรภ์) และ DOAC · ให้นมบุตรใช้ warfarin หรือ LMWH ได้</td></tr>
+    <tr><td><b>อ้วน</b> (BMI &gt;40 / &gt;120 kg)</td><td>Apixaban หรือ rivaroxaban ใช้ได้ (ISTH 2021) · หลีกเลี่ยง dabigatran/edoxaban</td></tr>
+    <tr><td><b>ตับแข็ง</b> Child-Pugh B–C</td><td>LMWH/warfarin · DOAC ส่วนใหญ่ห้ามใน Child C (rivaroxaban ห้ามตั้งแต่ B)</td></tr>
+    <tr><td><b>เกล็ดเลือดต่ำ</b></td><td>&gt;50: ขนาดเต็ม · 25–50: พิจารณาลดขนาด LMWH/ให้เกล็ดเลือด (ตามความเสี่ยงลิ่มเลือด) · &lt;25: หยุดชั่วคราว <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>HIT</b></td><td>ดูหน้า <a href="../thrombocytopenia/index.html#hit">Thrombocytopenia</a></td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section id="dur" class="col">
+  <div class="sec-num">09</div>
+  <h2>ระยะเวลาการรักษา</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>แนวทาง</th></tr>
+    <tr><td>VTE ครั้งแรก จาก <b>major transient</b> ไม่มีปัจจัยถาวร</td><td><b>หยุดหลัง 3 (–6) เดือน</b> <span class="rec s1">1</span></td></tr>
+    <tr><td>ครั้งแรก <b>ไม่มีปัจจัยกระตุ้นชัด</b> หรือมี <b>ปัจจัยถาวร</b></td><td><b>ให้ต่อเนื่อง (extended)</b> หลัง 3–6 เดือน ด้วย <b>apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> <span class="rec s1">1</span> · ประเมินเลือดออกและทบทวนทุกปี</td></tr>
+    <tr><td>Minor transient</td><td>3 เดือนเป็นอย่างน้อย · ตัดสินร่วมกับผู้ป่วยตามความเสี่ยงซ้ำ/เลือดออก</td></tr>
+    <tr><td>มะเร็ง active</td><td>≥6 เดือน และตราบที่มะเร็งยัง active หรือได้รับการรักษา</td></tr>
+    <tr><td>VTE ซ้ำ (unprovoked)</td><td>ให้ไม่มีกำหนด</td></tr>
+    <tr><td>Isolated distal DVT จากปัจจัยชั่วคราว</td><td>3 เดือน</td></tr>
+  </table></div>
+</section>
+
+<!-- 10 -->
+<section id="periop" class="col">
+  <div class="sec-num">10</div>
+  <h2>หยุดยาก่อนหัตถการ (ACCP 2022)</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>หัตถการเลือดออกเสี่ยงต่ำ–ปานกลาง</th><th>เสี่ยงสูง / neuraxial</th></tr>
+    <tr><td>Apixaban · rivaroxaban · edoxaban</td><td>หยุด <b>1 วัน</b> ก่อน (กินครั้งสุดท้าย 2 วันก่อน)</td><td>หยุด <b>2 วัน</b> ก่อน</td></tr>
+    <tr><td>Dabigatran CrCl ≥50</td><td>1 วัน</td><td>2 วัน</td></tr>
+    <tr><td>Dabigatran CrCl &lt;50</td><td>2 วัน</td><td>4 วัน</td></tr>
+    <tr><td>Warfarin</td><td colspan="2">หยุด <b>5 วัน</b> · ตรวจ INR วันก่อนผ่าตัด</td></tr>
+    <tr><td>Enoxaparin ขนาดรักษา</td><td colspan="2">โดสสุดท้าย 24 ชม.ก่อน (ให้ครึ่งเดียวของขนาดวัน)</td></tr>
+  </table></div>
+  <ul>
+    <li>เริ่ม DOAC กลับ: <b>24 ชม.</b> หลังหัตถการเสี่ยงต่ำ · <b>48–72 ชม.</b> หลังเสี่ยงสูง</li>
+    <li><b>ไม่ต้อง bridging</b> สำหรับ DOAC · Warfarin bridging เฉพาะความเสี่ยงลิ่มเลือดสูง: ลิ้นหัวใจเทียมชนิดกลไกที่เสี่ยงสูง (mitral, ลิ้นรุ่นเก่า, เคย stroke) หรือ VTE ภายใน 3 เดือน</li>
+    <li>หัตถการเลือดออกน้อยมาก (ถอนฟัน 1–2 ซี่, ต้อกระจก, ส่องกล้องไม่ตัดชิ้นเนื้อ) มักไม่ต้องหยุด</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="proph" class="col">
+  <div class="sec-num">11</div>
+  <h2>ป้องกัน VTE ในผู้ป่วยอายุรกรรม</h2>
+  <ul>
+    <li>ประเมินด้วย <b>Padua score</b> (เครื่องมือบท 14): <b>≥4 = เสี่ยงสูง</b> → <b>enoxaparin 40 mg SC วันละครั้ง</b> (CrCl &lt;30: 30 mg) หรือ UFH 5,000 U ทุก 8–12 ชม. หรือ fondaparinux 2.5 mg <span class="tag add">เสริม</span></li>
+    <li>เลือดออกเสี่ยงสูง/เกล็ดเลือดต่ำ → mechanical (intermittent pneumatic compression) · ไม่ใช้ถุงน่องแบบ graduated เป็นหลัก</li>
+    <li>ไม่ต้องให้ต่อหลังกลับบ้านเป็นประจำ · ผู้ป่วยเดินได้ดี/นอนสั้นไม่ต้องให้</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="fu" class="col">
+  <div class="sec-num">12</div>
+  <h2>การติดตาม <span class="tag up">2026</span></h2>
+  <ul>
+    <li><b>ติดต่อผู้ป่วยภายใน ~1 สัปดาห์</b> หลังจำหน่าย (โทร/นัด) — การกินยา เลือดออก อาการ <span class="rec s1">1</span></li>
+    <li><b>นัดตรวจภายใน 3 เดือน</b> ตัดสินระยะเวลาให้ยา <span class="rec s1">1</span></li>
+    <li>ยังเหนื่อยหลัง 3 เดือน → หา <b>CTEPD/CTEPH</b>: echo + <b>V/Q scan</b> (หรือ cardiopulmonary exercise test) — V/Q ปกติตัด CTEPH ได้</li>
+    <li>DVT: post-thrombotic syndrome — ไม่ต้องใส่ถุงน่องเป็นประจำเพื่อป้องกัน (CHEST) แต่ใช้บรรเทาอาการได้</li>
+    <li>หยุดยาแล้วเดินทางเครื่องบิน &gt;4 ชม. ในกลุ่มเสี่ยง: ขยับขาบ่อย ± LMWH/DOAC 1 โดส <span class="tag add">เสริม</span></li>
+  </ul>
+</section>
+
+<!-- 13 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัย PE</b>ความดันปกติ? → pretest probability</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ต่ำ</span><div class="node dx green"><b>PERC</b>ลบครบ → จบ<br>ไม่ผ่าน → D-dimer</div></div>
+        <div class="arm"><span class="lab">PE unlikely / Wells ≤4</span><div class="node dx eu"><b>D-dimer</b>YEARS: 0 item &lt;1000 · ≥1 item &lt;500<br>หรือ Wells + อายุ×10</div></div>
+        <div class="arm"><span class="lab">สูง / Wells &gt;4 / shock</span><div class="node red"><b>CTPA</b> (shock → bedside echo)<br>เริ่มยาระหว่างรอ</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ยืนยัน PE → Category</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">A–B</span><div class="node dx green"><b>DOAC</b>ผู้ป่วยนอกได้ (sPESI 0)</div></div>
+        <div class="arm"><span class="lab">C–D</span><div class="node dx hypo"><b>LMWH + admit + PERT</b>C3/D: พิจารณา CDT/lysis (2b)</div></div>
+        <div class="arm"><span class="lab">E</span><div class="node red"><b>Reperfusion</b>Alteplase 100 mg/2 ชม.<br>หรือ CDT/thrombectomy · NE</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 14 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">14</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจกับแนวทาง ฉลากยา และสภาพผู้ป่วย</p>
+  </div>
+
+  <div class="tool" id="tDx" style="margin-top:12px">
+    <h3>วินิจฉัย PE: Wells + PERC + YEARS + D-dimer</h3>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <div class="muted" style="font-size:.82rem">Wells (และ YEARS ★)</div>
+        <label><input type="checkbox" id="w1"> อาการแสดง DVT ★ (3)</label>
+        <label><input type="checkbox" id="w2"> PE น่าจะเป็นที่สุด ★ (3)</label>
+        <label><input type="checkbox" id="w3"> HR &gt;100 (1.5)</label>
+        <label><input type="checkbox" id="w4"> ไม่เคลื่อนไหว ≥3 วัน / ผ่าตัดใน 4 สัปดาห์ (1.5)</label>
+        <label><input type="checkbox" id="w5"> เคย DVT/PE (1.5)</label>
+        <label><input type="checkbox" id="w6"> ไอเป็นเลือด ★ (1)</label>
+        <label><input type="checkbox" id="w7"> มะเร็ง (1)</label>
+      </div>
+      <div class="checks">
+        <div class="muted" style="font-size:.82rem">PERC (ติ๊กข้อที่ "มี")</div>
+        <label><input type="checkbox" id="pc1"> อายุ ≥50</label>
+        <label><input type="checkbox" id="pc2"> HR ≥100</label>
+        <label><input type="checkbox" id="pc3"> SpO₂ &lt;95%</label>
+        <label><input type="checkbox" id="pc4"> ขาบวมข้างเดียว</label>
+        <label><input type="checkbox" id="pc5"> ไอเป็นเลือด</label>
+        <label><input type="checkbox" id="pc6"> ผ่าตัด/บาดเจ็บ ≤4 สัปดาห์</label>
+        <label><input type="checkbox" id="pc7"> เคย VTE</label>
+        <label><input type="checkbox" id="pc8"> ใช้ฮอร์โมน</label>
+      </div>
+    </div>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="dAge" value="62"></label>
+      <label class="f">D-dimer (ng/mL FEU, ถ้ามี)<input type="number" id="dDd" placeholder="เช่น 580"></label>
+      <label class="f">Gestalt probability<select id="dGes"><option value="low">ต่ำ (&lt;15%)</option><option value="mod" selected>ปานกลาง</option><option value="high">สูง</option></select></label>
+    </div>
+    <div class="out" id="dxOut"></div>
+  </div>
+
+  <div class="tool" id="tDvt" style="margin-top:12px">
+    <h3>Wells score สำหรับ DVT</h3>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <label><input type="checkbox" class="wd" data-v="1"> มะเร็ง active</label>
+        <label><input type="checkbox" class="wd" data-v="1"> อัมพาต/เข้าเฝือกขา</label>
+        <label><input type="checkbox" class="wd" data-v="1"> นอนติดเตียง &gt;3 วัน หรือผ่าตัดใหญ่ใน 12 สัปดาห์</label>
+        <label><input type="checkbox" class="wd" data-v="1" checked> กดเจ็บตามแนวหลอดเลือดดำลึก</label>
+        <label><input type="checkbox" class="wd" data-v="1"> ขาบวมทั้งขา</label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" class="wd" data-v="1" checked> น่องบวมมากกว่าอีกข้าง &gt;3 cm</label>
+        <label><input type="checkbox" class="wd" data-v="1"> Pitting edema ขาข้างที่มีอาการ</label>
+        <label><input type="checkbox" class="wd" data-v="1"> หลอดเลือดดำผิวเผิน collateral</label>
+        <label><input type="checkbox" class="wd" data-v="1"> เคยเป็น DVT</label>
+        <label><input type="checkbox" class="wd" data-v="-2"> มีโรคอื่นที่น่าจะเป็นเท่าๆ กัน (−2)</label>
+      </div>
+    </div>
+    <div class="out" id="wdOut"></div>
+  </div>
+
+  <div class="tool" id="tCat" style="margin-top:12px">
+    <h3>sPESI + จัด AHA/ACC Category</h3>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <div class="muted" style="font-size:.82rem">sPESI</div>
+        <label><input type="checkbox" id="s1"> อายุ &gt;80</label>
+        <label><input type="checkbox" id="s2"> มะเร็ง</label>
+        <label><input type="checkbox" id="s3"> โรคหัวใจ/ปอดเรื้อรัง</label>
+        <label><input type="checkbox" id="s4" checked> HR ≥110</label>
+        <label><input type="checkbox" id="s5"> SBP &lt;100</label>
+        <label><input type="checkbox" id="s6"> SpO₂ &lt;90%</label>
+      </div>
+      <div class="checks">
+        <div class="muted" style="font-size:.82rem">ข้อมูลเพิ่ม</div>
+        <label><input type="checkbox" id="c0"> พบโดยบังเอิญ ไม่มีอาการ</label>
+        <label><input type="checkbox" id="c1" checked> RV ผิดปกติ (RV/LV ≥1.0)</label>
+        <label><input type="checkbox" id="c2" checked> Troponin หรือ BNP สูง</label>
+        <label><input type="checkbox" id="c3"> ความดันต่ำชั่วคราว/syncope</label>
+        <label><input type="checkbox" id="c4"> Hypoperfusion (lactate สูง, AKI) ความดันปกติ</label>
+        <label><input type="checkbox" id="c5"> SBP &lt;90 ต่อเนื่อง / ต้องใช้ vasopressor</label>
+        <label><input type="checkbox" id="c6"> Refractory shock / cardiac arrest</label>
+        <label><input type="checkbox" id="cR"> ปัญหาหายใจตามระดับ category (modifier R)</label>
+      </div>
+    </div>
+    <div class="out" id="catOut"></div>
+  </div>
+
+  <div class="tool plan" id="tDose" style="margin-top:12px">
+    <h3>ขนาดยาต้านการแข็งตัวสำหรับ VTE</h3>
+    <div class="fields">
+      <label class="f">อายุ<input type="number" id="aAge" value="70"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="aWt" value="58"></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" id="aCr" step="0.1" value="1.2"></label>
+      <label class="f">เพศ<select id="aSex"><option value="m">ชาย</option><option value="f" selected>หญิง</option></select></label>
+      <label class="f">ยา<select id="aDrug"><option value="api">Apixaban</option><option value="riva">Rivaroxaban</option><option value="edo">Edoxaban</option><option value="dabi">Dabigatran</option><option value="enox">Enoxaparin</option><option value="fonda">Fondaparinux</option><option value="ufh">UFH</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="aPgp"> ใช้ P-gp inhibitor (เช่น dronedarone, ciclosporin, erythromycin, ketoconazole)</label></div>
+    <div class="out" id="doseOut"></div>
+  </div>
+
+  <div class="tool" id="tDur" style="margin-top:12px">
+    <h3>ระยะเวลาให้ยา</h3>
+    <div class="fields">
+      <label class="f">ปัจจัยกระตุ้น<select id="uProv"><option value="major">Major transient (ผ่าตัดใหญ่/กระดูกหัก/นอน รพ.)</option><option value="minor">Minor transient (ฮอร์โมน ตั้งครรภ์ เดินทาง)</option><option value="none" selected>ไม่พบ (unprovoked)</option><option value="persist">ปัจจัยถาวร (IBD, autoimmune)</option><option value="cancer">มะเร็ง active</option><option value="aps">APS</option></select></label>
+      <label class="f">ครั้งที่<select id="uN"><option value="1">ครั้งแรก</option><option value="2">เป็นซ้ำ</option></select></label>
+      <label class="f">ความเสี่ยงเลือดออก<select id="uB"><option value="low">ต่ำ</option><option value="high">สูง</option></select></label>
+    </div>
+    <div class="out" id="durOut"></div>
+  </div>
+
+  <div class="tool" id="tPad" style="margin-top:12px">
+    <h3>Padua prediction score (ป้องกัน VTE ผู้ป่วยใน)</h3>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <label><input type="checkbox" class="pd" data-v="3"> มะเร็ง active (3)</label>
+        <label><input type="checkbox" class="pd" data-v="3"> เคย VTE (3)</label>
+        <label><input type="checkbox" class="pd" data-v="3" checked> เคลื่อนไหวลดลง ≥3 วัน (3)</label>
+        <label><input type="checkbox" class="pd" data-v="3"> Thrombophilia (3)</label>
+        <label><input type="checkbox" class="pd" data-v="2"> บาดเจ็บ/ผ่าตัดใน 1 เดือน (2)</label>
+        <label><input type="checkbox" class="pd" data-v="1" checked> อายุ ≥70 (1)</label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" class="pd" data-v="1"> หัวใจ/การหายใจล้มเหลว (1)</label>
+        <label><input type="checkbox" class="pd" data-v="1"> MI หรือ ischemic stroke เฉียบพลัน (1)</label>
+        <label><input type="checkbox" class="pd" data-v="1"> ติดเชื้อเฉียบพลัน/โรครูมาติก (1)</label>
+        <label><input type="checkbox" class="pd" data-v="1"> BMI ≥30 (1)</label>
+        <label><input type="checkbox" class="pd" data-v="1"> ใช้ฮอร์โมน (1)</label>
+      </div>
+    </div>
+    <div class="out" id="padOut"></div>
+  </div>
+
+  <div class="tool" id="tPer" style="margin-top:12px">
+    <h3>วางแผนหยุด DOAC/warfarin ก่อนหัตถการ</h3>
+    <div class="fields">
+      <label class="f">ยา<select id="pDrug"><option value="xa">Apixaban / rivaroxaban / edoxaban</option><option value="dabi">Dabigatran</option><option value="war">Warfarin</option></select></label>
+      <label class="f">CrCl (mL/min)<input type="number" id="pCrcl" value="60"></label>
+      <label class="f">ความเสี่ยงเลือดออกของหัตถการ<select id="pRisk"><option value="low">ต่ำ–ปานกลาง</option><option value="high">สูง / neuraxial</option></select></label>
+      <label class="f">วันหัตถการ<input type="date" id="pDate"></label>
+    </div>
+    <div class="out" id="perOut"></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="pearls" class="col">
+  <div class="sec-num">15</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Pretest probability ก่อน D-dimer เสมอ</b> — probability สูงไม่ต้องเจาะ D-dimer</div></div>
+    <div class="pearl"><div><b>D-dimer ปรับตามอายุ = อายุ × 10</b> เมื่อ &gt;50 ปี ลด CT ที่ไม่จำเป็น</div></div>
+    <div class="pearl"><div><b>ไม่ใช้คำว่า submassive แล้ว</b> — ใช้ Category C1–C3, D1–D2</div></div>
+    <div class="pearl"><div><b>sPESI 0 = กลับบ้านด้วย DOAC ได้</b> ถ้าไม่มีปัญหาสังคม/เลือดออก</div></div>
+    <div class="pearl"><div><b>ผู้ป่วยใน C–E ใช้ LMWH มากกว่า UFH</b> — UFH เมื่อจะ lyse ไตวายมาก หรือต้องหยุดเร็ว</div></div>
+    <div class="pearl"><div><b>Apixaban 10 bid × 7 วัน · rivaroxaban 15 bid × 21 วัน</b> ไม่ต้องให้ยาฉีดนำ</div></div>
+    <div class="pearl"><div><b>PE + shock: อย่าให้สารน้ำมาก</b> ใช้ norepinephrine</div></div>
+    <div class="pearl"><div><b>Unprovoked = ให้ยานาน</b> ลดขนาดได้หลัง 6 เดือน</div></div>
+    <div class="pearl"><div><b>APS และตั้งครรภ์ ห้าม DOAC</b></div></div>
+    <div class="pearl"><div><b>DOAC ไม่ต้อง bridging</b> ก่อนหัตถการ</div></div>
+    <div class="pearl"><div><b>ยังเหนื่อยหลัง 3 เดือน → V/Q scan</b> หา CTEPH</div></div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section id="quiz" class="col">
+  <div class="sec-num">16</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../thrombocytopenia/index.html">Thrombocytopenia →</a> · <a href="../af/index.html">AF →</a> · <a href="../hf/index.html">Heart failure →</a> · <a href="../stroke/index.html">Stroke →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Creager MA, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults. Circulation 2026;153:e977–e1051; J Am Coll Cardiol 2026;87:1626–1710 · 2) Konstantinides SV, et al. 2019 ESC Guidelines for acute PE. Eur Heart J 2020;41:543–603 · 3) Stevens SM, et al. Antithrombotic therapy for VTE disease: second update of the CHEST guideline. Chest 2021;160:e545–e608 · 4) Douketis JD, et al. Perioperative management of antithrombotic therapy: ACCP guideline. Chest 2022;162:e207–e243 · 5) Ortel TL, et al. ASH 2020 guidelines: treatment of DVT and PE. Blood Adv 2020 · 6) HI-PEITHO. N Engl J Med 2026 (doi:10.1056/NEJMoa2516567) · 7) Barbar S, et al. Padua prediction score. J Thromb Haemost 2010 · 8) Martin KA, et al. ISTH guidance on DOACs in obesity 2021<br>
+  <span class="tag up">2026</span> = ใหม่ใน AHA/ACC 2026 · <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · Class ตาม AHA/ACC (1, 2a, 2b) · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','vteView');
+mountWalker({
+ start:{q:'ผู้ป่วยมีความดันต่ำ/shock หรือไม่?',h:'SBP <90 ต่อเนื่อง ต้องใช้ vasopressor หรือ hypoperfusion',o:[['ใช่','shock'],['ไม่ใช่','prob']]},
+ shock:{leaf:true,cls:'danger',t:'สงสัย PE + shock (Category E)',b:'Bedside echo: RV โตชัด + ไม่มีสาเหตุอื่น → UFH + <b>reperfusion</b> (alteplase 100 mg ใน 2 ชม. หรือ CDT/thrombectomy) · norepinephrine · หลีกเลี่ยงสารน้ำมาก · CTPA เมื่อคงที่พอ · ปรึกษา PERT/ICU'},
+ prob:{q:'Pretest probability (Wells / gestalt)?',o:[['ต่ำ (<15%)','perc'],['ปานกลาง / Wells ≤4','years'],['สูง / Wells >4','ct']]},
+ perc:{q:'PERC ลบครบ 8 ข้อ?',o:[['ลบครบ','out'],['มีอย่างน้อย 1 ข้อ','years']]},
+ out:{leaf:true,cls:'ok',t:'ตัด PE ได้',b:'ไม่ต้องตรวจ D-dimer หรือ CT · หาสาเหตุอื่นของอาการ'},
+ years:{q:'D-dimer ต่ำกว่าเกณฑ์? (YEARS 0 item: <1000 · ≥1 item: <500 — หรือกลยุทธ์ age-adjusted: <อายุ×10)',o:[['ต่ำกว่าเกณฑ์','out'],['สูงกว่า','ct']]},
+ ct:{q:'CTPA (หรือ V/Q) พบ PE?',o:[['พบ','sev'],['ไม่พบ','out2']]},
+ out2:{leaf:true,cls:'ok',t:'ไม่พบ PE',b:'ถ้า pretest สูงมากและ CT คุณภาพไม่ดี พิจารณาตรวจซ้ำ/ultrasound ขา · หาโรคอื่น'},
+ sev:{q:'sPESI?',o:[['0','b'],['≥1','rv']]},
+ b:{leaf:true,cls:'ok',t:'Category B',b:'<b>DOAC</b> (apixaban 10 mg bid 7 วัน → 5 mg bid หรือ rivaroxaban 15 mg bid 21 วัน → 20 mg od) · กลับบ้านได้ถ้าไม่มีปัญหาเลือดออก/สังคม · โทรติดตาม 1 สัปดาห์ นัด 3 เดือน'},
+ rv:{q:'RV ผิดปกติ และ/หรือ troponin/BNP สูง?',o:[['ไม่มีทั้งคู่ (C1)','c1'],['อย่างใดอย่างหนึ่ง (C2)','c2'],['ทั้งสองอย่าง (C3)','c3']]},
+ c1:{leaf:true,cls:'warn',t:'Category C1',b:'Admit · <b>LMWH</b> (enoxaparin 1 mg/kg q12h) · ติดตามสัญญาณชีพ · เปลี่ยนเป็น DOAC เมื่อคงที่'},
+ c2:{leaf:true,cls:'warn',t:'Category C2',b:'Admit · <b>LMWH</b> · ปรึกษา PERT · ตรวจ lactate หา normotensive shock · ติดตามใกล้ชิด 24–72 ชม.'},
+ c3:{leaf:true,cls:'danger',t:'Category C3',b:'Admit (monitored bed) · <b>LMWH</b> · PERT · lactate · CDT/thrombectomy/lysis ประโยชน์ไม่ชัด (2b) — พิจารณาเมื่อมีอาการรุนแรงทางคลินิก (HI-PEITHO) หรือทรุดลง → D/E'}
+},'apTrail','apStage');
+
+function wellsPE(){let s=0;[['w1',3],['w2',3],['w3',1.5],['w4',1.5],['w5',1.5],['w6',1],['w7',1]].forEach(([i,v])=>{if($(i).checked)s+=v});return s}
+function dx(){
+  const w=wellsPE(),age=num('dAge'),dd=num('dDd'),g=$('dGes').value;
+  const yrs=['w1','w2','w6'].filter(i=>$(i).checked).length;
+  let perc=0;for(let i=1;i<=8;i++)if($('pc'+i).checked)perc++;
+  const L=[`Wells = <span class="big">${w}</span> → <b>${w>4?'PE likely':'PE unlikely'}</b> · YEARS items = ${yrs} · PERC positive ${perc}/8`];
+  if(g==='high'||w>4){L.push('<b>ข้าม D-dimer → CTPA</b> (หรือ V/Q) · เริ่ม anticoagulant ระหว่างรอถ้าเลือดออกไม่เสี่ยง');}
+  else{
+    if(g==='low'&&perc===0){L.push('<b>PERC ลบครบ + gestalt ต่ำ → ตัด PE ได้</b> ไม่ต้องตรวจเพิ่ม');}
+    else{
+      const th=yrs===0?1000:500, ag=(age!==null&&age>50)?age*10:500;
+      L.push(`<b>กลยุทธ์ YEARS</b>: เกณฑ์ D-dimer <b>&lt;${th} ng/mL</b> (${yrs===0?'0 item':'≥1 item'})`+(dd!==null?(dd<th?' → <b>ตัด PE ได้</b>':' → <b>CTPA</b>'):''));
+      L.push(`<b>กลยุทธ์ Wells + age-adjusted</b>: เกณฑ์ <b>&lt;${ag} ng/mL</b>`+(age!==null&&age>50?` (${age}×10)`:'')+(dd!==null?(dd<ag?' → <b>ตัด PE ได้</b>':' → <b>CTPA</b>'):'')+' <span class="muted">— เลือกใช้กลยุทธ์ใดกลยุทธ์หนึ่ง ไม่ซ้อนกัน</span>');
+      if(dd===null)L.push('ส่ง D-dimer (ใส่ค่าเพื่อแปลผล)');
+      if(g==='low'&&perc>0)L.push('PERC ไม่ผ่าน จึงต้องใช้ D-dimer');
+    }
+  }
+  $('dxOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tDx input,#tDx select',dx);
+
+function wd(){let s=0;document.querySelectorAll('.wd').forEach(e=>{if(e.checked)s+=+e.dataset.v});
+  $('wdOut').innerHTML=`Wells DVT = <span class="big">${s}</span> · `+(s>=2?'<b>DVT likely</b> → compression ultrasound (ถ้าลบ: D-dimer หรือ US ซ้ำใน 1 สัปดาห์)':'<b>DVT unlikely</b> → D-dimer: ลบ = ตัดได้ · บวก → ultrasound');}
+bindAll('#tDvt input',wd);
+
+function cat(){
+  let sp=0;for(let i=1;i<=6;i++)if($('s'+i).checked)sp++;
+  const rv=$('c1').checked,bm=$('c2').checked,R=$('cR').checked;
+  let c,tx;
+  if($('c6').checked){c='E2';tx='Refractory shock/arrest: CPR + <b>systemic thrombolysis</b> · พิจารณา VA-ECMO, surgical embolectomy/thrombectomy ตามทรัพยากร (2a)';}
+  else if($('c5').checked){c='E1';tx='<b>Reperfusion</b>: alteplase 100 mg ใน 2 ชม. (หรือ streptokinase 1.5 MU ใน 2 ชม.) / CDT / mechanical thrombectomy (2a) · UFH · norepinephrine · ระวังสารน้ำ · PERT (1)';}
+  else if($('c4').checked){c='D2';tx='Normotensive shock: LMWH/UFH + PERT · thrombolysis/CDT/thrombectomy/embolectomy <b>พิจารณาได้ (2b)</b> · ICU';}
+  else if($('c3').checked){c='D1';tx='ความดันต่ำชั่วคราว: LMWH + PERT · advanced therapy พิจารณาได้ (2b) · ติดตามใกล้ชิดใน ICU/monitored bed';}
+  else if($('c0').checked){c='A';tx='พบโดยบังเอิญ: ส่วนใหญ่ยังให้ anticoagulant (โดยเฉพาะมะเร็ง/segmental ขึ้นไป) · ข้อมูลประโยชน์ยังศึกษาอยู่';}
+  else if(sp===0){c='B';tx='<b>DOAC แบบผู้ป่วยนอก</b> ได้ถ้าไม่มีปัญหาเลือดออก/สังคม (1)'+(rv||bm?' · <i>RV/biomarker ผิดปกติแม้ sPESI 0 — ESC จัดเป็น intermediate-low พิจารณา admit สังเกตอาการ</i>':'');}
+  else{const n=(rv?1:0)+(bm?1:0);c=n===0?'C1':n===1?'C2':'C3';tx='Admit · <b>LMWH มากกว่า UFH (1)</b> · PERT (1)'+(c==='C3'?' · CDT/lysis/thrombectomy ประโยชน์ไม่ชัด (2b) — HI-PEITHO สนับสนุน CDT ในรายมีอาการรุนแรง':'')+' · ตรวจ lactate';}
+  const cr=R&&/^[CDE]/.test(c)?c+'R':c;
+  $('catOut').innerHTML=`sPESI = <b>${sp}</b> · Category <span class="big">${cr}</span><br>${tx}`;
+}
+bindAll('#tCat input',cat);
+
+function crcl(){const a=num('aAge'),w=num('aWt'),cr=num('aCr');if(!a||!w||!cr)return null;let c=(140-a)*w/(72*cr);if($('aSex').value==='f')c*=0.85;return Math.round(c)}
+function dose(){
+  const c=crcl(),w=num('aWt'),a=num('aAge'),d=$('aDrug').value,pgp=$('aPgp').checked;
+  if(c===null){$('doseOut').textContent='ใส่อายุ น้ำหนัก creatinine';return}
+  const L=[`CrCl (Cockcroft-Gault) ≈ <b>${c}</b> mL/min`];
+  if(d==='api'){L.push('<b>Apixaban 10 mg bid × 7 วัน → 5 mg bid</b>');L.push('Extended (หลัง 6 เดือน): 2.5 mg bid');if(c<25)L.push('CrCl <25: ข้อมูลใน VTE จำกัด — พิจารณา LMWH ปรับขนาด/warfarin');}
+  else if(d==='riva'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง rivaroxaban</b>');else{L.push('<b>Rivaroxaban 15 mg bid × 21 วัน (พร้อมอาหาร) → 20 mg od</b>');L.push('Extended: 10 mg od');if(c<30)L.push('CrCl 15–30: ใช้อย่างระมัดระวัง');}}
+  else if(d==='edo'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง</b>');else{const red=c<=50||w<=60||pgp;L.push('ให้ LMWH/UFH ≥5 วันก่อน แล้ว');L.push(`<b>Edoxaban ${red?30:60} mg od</b>`+(red?` (ลดขนาดเพราะ ${[c<=50?'CrCl ≤50':'',w<=60?'น้ำหนัก ≤60 kg':'',pgp?'P-gp inhibitor':''].filter(Boolean).join(', ')})`:''));}}
+  else if(d==='dabi'){if(c<30)L.push('<b>CrCl <30: ห้ามใช้ dabigatran</b>');else{L.push('ให้ LMWH/UFH ≥5 วันก่อน แล้ว');L.push('<b>Dabigatran 150 mg bid</b>');if(a>=80)L.push('อายุ ≥80: ฉลากบางประเทศ (EU) ใช้ 110 mg bid');}}
+  else if(d==='enox'){const e=Math.round(w/10)*10;L.push(c<30?`<b>Enoxaparin ~${e} mg SC วันละครั้ง</b> (1 mg/kg od เพราะ CrCl <30) · ติดตาม anti-Xa`:`<b>Enoxaparin ~${e} mg SC ทุก 12 ชม.</b> (1 mg/kg)`);if(w>150)L.push('น้ำหนักมาก: พิจารณาติดตาม anti-Xa');}
+  else if(d==='fonda'){if(c<30)L.push('<b>CrCl <30: ห้ามใช้</b>');else{L.push(`<b>Fondaparinux ${w<50?5:w<=100?7.5:10} mg SC วันละครั้ง</b>`);if(c<50)L.push('CrCl 30–50: ระวัง');}}
+  else{const b=Math.round(80*w/100)*100,inf=Math.round(18*w/10)*10;L.push(`<b>UFH bolus ${b} U IV → ${inf} U/ชม.</b> (80 U/kg → 18 U/kg/ชม.)`);L.push('ตรวจ aPTT ทุก 6 ชม.จนอยู่ในเป้า (1.5–2.5 เท่า หรือ anti-Xa 0.3–0.7) · บางโปรโตคอลจำกัด bolus ≤10,000 U');}
+  $('doseOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tDose input,#tDose select',dose);
+
+function dur(){
+  const p=$('uProv').value,n=$('uN').value,b=$('uB').value;let o;
+  if(p==='major'&&n==='1')o='<b>3 เดือนแล้วหยุด</b> (AHA/ACC 2026 Class 1: 3–6 เดือน)';
+  else if(p==='cancer')o='<b>≥6 เดือน และตราบที่มะเร็ง active/กำลังรักษา</b> · apixaban/edoxaban/rivaroxaban หรือ LMWH';
+  else if(p==='aps')o='<b>Warfarin ระยะยาว</b> (INR 2–3) · หลีกเลี่ยง DOAC';
+  else if(p==='minor'&&n==='1')o='อย่างน้อย <b>3 เดือน</b> · ถ้าปัจจัยหมดไปและเสี่ยงซ้ำต่ำ หยุดได้ · ตัดสินร่วมกับผู้ป่วย';
+  else o=b==='low'?'<b>ให้ต่อเนื่องไม่มีกำหนด</b> · หลัง 6 เดือนลดเป็น <b>apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> · ทบทวนทุกปี':'อย่างน้อย 3–6 เดือน · เลือดออกเสี่ยงสูง: พิจารณาหยุดหลังครบ หรือใช้ขนาดลด · ทบทวนทุกปี';
+  if(n==='2'&&p!=='major')o='VTE ซ้ำ: '+o;
+  if(n==='2'&&p==='major')o='VTE ซ้ำแม้มี major transient: มักให้ยาต่อเนื่อง ประเมินเป็นรายๆ';
+  $('durOut').innerHTML=o;
+}
+bindAll('#tDur select',dur);
+
+function pad(){let s=0;document.querySelectorAll('.pd').forEach(e=>{if(e.checked)s+=+e.dataset.v});
+  $('padOut').innerHTML=`Padua = <span class="big">${s}</span> · `+(s>=4?'<b>เสี่ยงสูง</b> → enoxaparin 40 mg SC od (CrCl <30: 30 mg) หรือ UFH 5,000 U q8–12h ถ้าไม่มีข้อห้าม · เลือดออกเสี่ยง → IPC':'<b>เสี่ยงต่ำ</b> → ไม่ต้องให้ยาป้องกัน ส่งเสริมการเดิน');}
+bindAll('#tPad input',pad);
+
+(function(){const d=new Date();d.setDate(d.getDate()+7);$('pDate').value=d.toISOString().slice(0,10)})();
+function per(){
+  const dr=$('pDrug').value,c=num('pCrcl'),r=$('pRisk').value,ds=$('pDate').value;
+  if(!ds){$('perOut').textContent='เลือกวันหัตถการ';return}
+  const D=new Date(ds+'T00:00:00');const f=k=>{const x=new Date(D);x.setDate(x.getDate()+k);return x.toLocaleDateString('th-TH',{weekday:'short',day:'numeric',month:'short'})};
+  let omit,res;
+  if(dr==='war'){$('perOut').innerHTML=`<b>Warfarin</b>: โดสสุดท้าย ${f(-6)} (หยุด 5 วัน) · ตรวจ INR ${f(-1)} (ถ้า >1.5 พิจารณา vitamin K 1–2 mg กิน) · เริ่มกลับเย็นวันผ่าตัดหรือ ${f(1)} ถ้าห้ามเลือดได้ · bridging เฉพาะเสี่ยงลิ่มเลือดสูงมาก`;return}
+  if(dr==='xa')omit=r==='low'?1:2;
+  else{if(c===null){$('perOut').textContent='ใส่ CrCl';return}omit=c>=50?(r==='low'?1:2):(r==='low'?2:4);}
+  res=r==='low'?'24 ชม. ('+f(1)+')':'48–72 ชม. ('+f(2)+'–'+f(3)+')';
+  $('perOut').innerHTML=`หยุดยา <b>${omit} วัน</b> ก่อนหัตถการ → <b>กินครั้งสุดท้าย ${f(-(omit+1))}</b><br>เริ่มยากลับหลัง ${res} เมื่อห้ามเลือดได้ดี · ไม่ต้อง bridging`;
+}
+bindAll('#tPer input,#tPer select',per);
+
+mountQuiz([
+ ['หญิง 35 ปี เหนื่อยเฉียบพลัน gestalt ต่ำ อายุ <50 HR 88 SpO₂ 98% ไม่มีขาบวม ไม่ใช้ยาคุม ไม่เคย VTE ทำอย่างไร',
+  ['ส่ง D-dimer','PERC ลบครบ ตัด PE ได้','CTPA','V/Q scan'],1,'Gestalt ต่ำ + PERC ลบครบ 8 ข้อ ไม่ต้องตรวจเพิ่ม'],
+ ['ชาย 72 ปี Wells 1.5 ไม่มี YEARS item D-dimer 850 ng/mL',
+  ['ตัด PE ได้ (YEARS 0 item เกณฑ์ <1000)','ต้อง CTPA','ให้ heparin','V/Q'],0,'YEARS 0 item ใช้เกณฑ์ D-dimer <1000'],
+ ['PE sPESI 2, RV/LV 1.2, troponin สูง ความดันปกติ lactate ปกติ จัดเป็น',
+  ['B','C1','C3','E1'],2,'Score สูง + RV ผิดปกติ + biomarker สูง = C3'],
+ ['ผู้ป่วยใน PE category C ต้องการยาฉีด AHA/ACC 2026 แนะนำ',
+  ['UFH มากกว่า LMWH','LMWH มากกว่า UFH','Fondaparinux เท่านั้น','Warfarin เดี่ยว'],1,'Class 1: LMWH มากกว่า UFH ใน C–E1'],
+ ['PE SBP 78 ต้องใช้ norepinephrine ไม่มีข้อห้าม การรักษาที่เหมาะสม',
+  ['Enoxaparin เดี่ยว','IV fluid 3 ลิตร','Alteplase 100 mg ใน 2 ชม. หรือ CDT','IVC filter'],2,'Category E1 → reperfusion (2a) · ระวังสารน้ำมาก'],
+ ['Unprovoked PE ครั้งแรก รักษาครบ 6 เดือน เลือดออกเสี่ยงต่ำ ต่อไปควร',
+  ['หยุดยา','Apixaban 2.5 mg bid ต่อเนื่อง','Aspirin','Warfarin INR 1.5–2'],1,'Extended phase ใช้ขนาดลด (Class 1)'],
+ ['ผู้ป่วยใช้ apixaban จะผ่าตัดเปลี่ยนข้อสะโพก (เลือดออกเสี่ยงสูง) CrCl 70',
+  ['หยุด 1 วัน + bridging enoxaparin','หยุด 2 วัน ไม่ต้อง bridging','หยุด 5 วัน','ไม่ต้องหยุด'],1,'ACCP 2022: Xa inhibitor หัตถการเสี่ยงสูงหยุด 2 วัน ไม่ bridging']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

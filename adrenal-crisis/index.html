@@ -1,0 +1,680 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Adrenal crisis & Adrenal insufficiency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrine · ESE/Endocrine Society 2024 · ES 2016</div>
+  <h1>Adrenal crisis และ<br>Adrenal insufficiency</h1>
+  <p class="sub">ภาวะต่อมหมวกไตทำงานไม่พอ สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การจำ adrenal crisis และรักษาทันทีด้วย hydrocortisone การแยก primary/secondary การวินิจฉัย ภาวะที่พบบ่อยที่สุดในทางปฏิบัติคือ <b>glucocorticoid-induced adrenal insufficiency</b> (รวมจากยาชุด/ยาลูกกลอน) การลดยา steroid การทดสอบการฟื้นตัว stress dosing และการรักษาระยะยาว</p>
+  <p class="cite">อ้างอิงหลัก: ESE/Endocrine Society Joint Clinical Guideline: Diagnosis and Therapy of Glucocorticoid-induced Adrenal Insufficiency (JCEM 2024;109:1657–83; EJE 2024;190:G25–51) · Endocrine Society: Diagnosis and Treatment of Primary Adrenal Insufficiency (JCEM 2016;101:364–89) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>สงสัย crisis</b>Shock ไม่ตอบสนองสารน้ำ + อาเจียน/ซึม + เคยใช้ steroid</div>
+    <div class="stage" style="--c:var(--warn)"><b>ให้ทันที</b>Hydrocortisone 100 mg IV/IM + NSS · เจาะ cortisol/ACTH ก่อนถ้าไม่ทำให้ช้า</div>
+    <div class="stage" style="--c:var(--accent)"><b>ป้องกันซ้ำ</b>Sick day rules · บัตร steroid · ลดยาอย่างถูกวิธี</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#type">ชนิดและสาเหตุ</a><a href="#crisis">จำ adrenal crisis</a><a href="#rx">รักษา crisis</a><a href="#dx">วินิจฉัย AI</a><a href="#giai">Steroid-induced AI</a><a href="#taper">ลดยา steroid</a><a href="#gws">Withdrawal vs AI</a><a href="#stress">Stress dosing</a><a href="#maint">รักษาระยะยาว</a><a href="#special">สถานการณ์พิเศษ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="type" class="col">
+  <div class="sec-num">01</div>
+  <h2>ชนิดและสาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>สาเหตุ</th><th>ลักษณะเด่น</th></tr>
+    <tr><td><b>Primary</b> (Addison) — ต่อมหมวกไต</td><td>Autoimmune · <b>วัณโรค</b> (สำคัญในไทย) · HIV/CMV/fungal · <b>adrenal hemorrhage</b> (sepsis, anticoagulant, APS) · metastasis · ยา (ketoconazole, mitotane, etomidate) · CAH</td><td>ขาดทั้ง cortisol + <b>aldosterone</b> → <b>K สูง</b> Na ต่ำ · <b>ผิวคล้ำ</b> (ACTH สูง) · อยากเกลือ</td></tr>
+    <tr><td><b>Secondary/tertiary</b> — pituitary/hypothalamus</td><td><b>Glucocorticoid ภายนอก (พบบ่อยที่สุด)</b> · เนื้องอกต่อมใต้สมอง · pituitary apoplexy · Sheehan · หลังผ่าตัด/ฉายรังสี · <b>opioid</b> · immune checkpoint inhibitor (hypophysitis)</td><td>ขาด cortisol อย่างเดียว · aldosterone ปกติ → <b>K ปกติ</b> (Na ต่ำได้) · ไม่คล้ำ · อาจมี hormone อื่นขาด</td></tr>
+  </table></div>
+  <div class="box warn"><b>บริบทไทย: ยาชุด ยาลูกกลอน ยาสมุนไพรผสม steroid</b>ผู้ป่วยที่มีลักษณะ Cushing (หน้ากลม คอควาย ผิวบาง) แต่บอกว่า "ไม่เคยกิน steroid" — ให้ถามยาหม้อ ยาลูกกลอน ยาแก้ปวดข้อ ยาชุด ซึ่งมักมี <b>dexamethasone</b> · หยุดกะทันหันเสี่ยง adrenal crisis · ESE/ES 2024: ผู้มีลักษณะ exogenous Cushing ให้ <b>ถือว่ามี AI ไว้ก่อน</b> <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 2 -->
+<section id="crisis" class="col">
+  <div class="sec-num">02</div>
+  <h2>จำ adrenal crisis ให้ได้</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>นิยาม (ESE/ES 2024)</h4><b>ความดันต่ำหรือ hypovolemic shock</b> + อย่างน้อย 1 ข้อ: คลื่นไส้/อาเจียน · อ่อนเพลียรุนแรง · ไข้ · ระดับความรู้สึกตัวลดลง (ซึม สับสน ชัก โคม่า)<br><span class="muted">นอกเกณฑ์: มักมีปวดท้องเฉียบพลันร่วม (คล้าย acute abdomen)</span><br><br><b>Shock รุนแรงเกินสัดส่วนของตัวกระตุ้น</b> และ <b>ดื้อต่อสารน้ำ/vasopressor</b> ถ้าไม่ได้ steroid</div>
+    <div class="card c-warn"><h4>Lab ที่ช่วย (ไม่จำเป็นต้องมี)</h4>Na ต่ำ (urine Na สูง) · K สูง (primary) · BUN/Cr สูง · <b>น้ำตาลต่ำ</b> · eosinophilia · lymphocytosis</div>
+  </div>
+  <p><b>ตัวกระตุ้น</b>: ติดเชื้อ (กระเพาะลำไส้อักเสบพบบ่อย) · ไข้ · บาดเจ็บ · ผ่าตัด/หัตถการ · คลอด · ความเครียดรุนแรง · <b>หยุด steroid กะทันหัน</b> · ลดยาต่ำกว่าขนาดสรีรวิทยา · เปลี่ยนยาพ่น steroid · <b>เริ่มยากระตุ้น CYP3A4</b> (rifampicin, phenytoin, carbamazepine, phenobarbital) · ความเสี่ยงสูงในผู้เคย crisis, อายุ &gt;65 ปี, โรคร่วมมาก</p>
+</section>
+
+<!-- 3 -->
+<section id="rx" class="col">
+  <div class="sec-num">03</div>
+  <h2>รักษา adrenal crisis — อย่ารอผลตรวจ</h2>
+  <div class="box key"><b>ให้ทันที</b><ol><li>เจาะ <b>cortisol + ACTH</b> (+ electrolyte, glucose) ถ้า <b>ไม่ทำให้การรักษาช้า</b></li><li><b>Hydrocortisone 100 mg IV</b> (หรือ IM) bolus</li><li><b>0.9% NaCl 1 ลิตรในชั่วโมงแรก</b> แล้วตามภาวะน้ำ (มักต้องการ 2–4 ลิตรใน 24 ชม.) · <b>dextrose</b> ถ้าน้ำตาลต่ำ <span class="tag add">เสริม</span></li><li>ต่อด้วย <b>hydrocortisone 200 mg/24 ชม.</b> หยดต่อเนื่อง (หรือ <b>50 mg IV/IM ทุก 6 ชม.</b>) จนอาการดีขึ้น · น้ำหนักตัวมากอาจต้องขนาดสูงขึ้น</li><li>รักษาตัวกระตุ้น (ติดเชื้อ ฯลฯ)</li></ol></div>
+  <ul>
+    <li>ให้ steroid ระยะสั้นขนาดนี้ <b>ปลอดภัย</b> — เริ่มได้แม้ต่อมาจะพิสูจน์ว่าไม่ใช่ crisis</li>
+    <li>ไม่มี hydrocortisone: ทางเลือกรองคือ <b>prednisolone</b> (ES 2016) หรือ methylprednisolone 40 mg · <b>dexamethasone เป็นทางเลือกท้ายสุด</b> (4 mg ใช้ในทางปฏิบัติ ไม่มีฤทธิ์ mineralocorticoid) <span class="tag add">เสริม</span></li>
+    <li>Hydrocortisone ≥50 mg/วัน มีฤทธิ์ mineralocorticoid พอ — <b>ยังไม่ต้องให้ fludrocortisone</b> · เริ่ม fludrocortisone ใน primary AI เมื่อลด hydrocortisone &lt;50 mg/วัน</li>
+    <li>อาการดีขึ้น กินได้: ลดเป็นยากินขนาดสองเท่าของปกติ 1–3 วัน แล้วกลับขนาดปกติ</li>
+    <li>แก้ Na ต่ำช้าๆ — steroid + NSS ทำให้ Na ขึ้นเร็ว เสี่ยง ODS (ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a>)</li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="dx" class="col">
+  <div class="sec-num">04</div>
+  <h2>วินิจฉัย adrenal insufficiency</h2>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>แปลผล</th></tr>
+    <tr><td><b>Morning cortisol</b> (8 โมงเช้า)</td><td><b>&lt;5 µg/dL (&lt;140–150 nmol/L)</b> → AI น่าจะเป็นมาก · <b>&gt;10–15 µg/dL</b> → ไม่น่าเป็น (ขึ้นกับ assay และบริบท) · ระหว่างนั้น → ACTH stimulation</td></tr>
+    <tr><td><b>Cosyntropin (ACTH) stimulation 250 µg</b> IV/IM</td><td>Cortisol ที่ 30 หรือ 60 นาที <b>&lt;18 µg/dL (500 nmol/L)</b> = AI (ES 2016) · assay รุ่นใหม่/LC-MS ใช้ cut-off ต่ำกว่า ~14–15 µg/dL <span class="tag add">เสริม</span> · อาจปกติใน secondary AI ที่เพิ่งเกิด (&lt;4–6 สัปดาห์ เช่นหลัง apoplexy)</td></tr>
+    <tr><td><b>Plasma ACTH</b></td><td><b>สูง (&gt;2 เท่าของปกติ)</b> → primary · ต่ำ/ปกติ → secondary</td></tr>
+    <tr><td><b>Renin + aldosterone</b></td><td>Renin สูง aldosterone ต่ำ → primary (ต้องให้ fludrocortisone)</td></tr>
+    <tr><td>หาสาเหตุ</td><td>Primary: CT ต่อมหมวกไต (TB: ต่อมโต/หินปูน · hemorrhage), 21-hydroxylase antibody, HIV · Secondary: MRI ต่อมใต้สมอง, hormone อื่น (TSH/FT4, LH/FSH, prolactin), ประวัติ steroid/opioid</td></tr>
+  </table></div>
+  <ul>
+    <li>ตรวจ cortisol <b>หลังยาครั้งสุดท้าย ≥24 ชม.</b> (hydrocortisone/prednisolone รบกวนการวัด · dexamethasone ไม่ cross-react แต่กดแกนนาน)</li>
+    <li><b>Estrogen/ยาคุม</b> เพิ่ม CBG → cortisol สูงเกินจริง · albumin ต่ำ/ตับแข็ง/ไตวายโปรตีนรั่ว → cortisol ต่ำเกินจริง</li>
+    <li>ใน septic shock ไม่ต้องตรวจ cortisol เพื่อตัดสินให้ hydrocortisone (ดูหน้า <a href="../sepsis/index.html">Sepsis</a>)</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="giai" class="col">
+  <div class="sec-num">05</div>
+  <h2>Glucocorticoid-induced AI (ESE/ES 2024)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใครเสี่ยง</h4><ul><li>ใช้ยากินขนาด <b>สูงกว่าสรีรวิทยา</b> (&gt;hydrocortisone 15–25 mg = prednisolone 4–6 mg = methylpred 3–5 mg = dexamethasone 0.25–0.5 mg/วัน) <b>นาน ≥3–4 สัปดาห์</b></li><li>ทุก route กดแกนได้: inhaled, intranasal, intra-articular, topical, IV</li><li>ระวัง: ใช้หลาย route พร้อมกัน · inhaled/topical ขนาดสูงหรือ &gt;1 ปี · ฉีดข้อใน 2 เดือน · ใช้ร่วม <b>CYP3A4 inhibitor แรง</b> (ritonavir/cobicistat, itraconazole, clarithromycin) — fluticasone สำคัญ</li></ul></div>
+    <div class="card c-ok"><h4>หลักสำคัญ</h4><ul><li>Steroid <b>&lt;3–4 สัปดาห์ ขนาดเท่าไรก็หยุดได้เลย ไม่ต้อง taper ไม่ต้องตรวจ</b> <span class="rec">Suggest</span></li><li><b>ไม่ตรวจ</b> AI ขณะยังได้ขนาดสูงกว่าสรีรวิทยา/ยังต้องใช้รักษาโรค</li><li>เปลี่ยน dexamethasone/betamethasone เป็นยาออกฤทธิ์สั้น (hydrocortisone/prednisolone) เมื่อไม่จำเป็นแล้ว</li><li><b>ไม่ให้ fludrocortisone</b> (aldosterone ปกติ) <span class="rec s1">Recommend</span></li><li>ผู้ป่วยส่วนใหญ่ไม่ต้องพบแพทย์ต่อมไร้ท่อ</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Morning cortisol (ขณะได้ขนาดสรีรวิทยา, ≥24 ชม.หลังยา)</th><th>แนวทาง (ESE/ES 2024 R2.7)</th></tr>
+    <tr><td><b>&gt;300 nmol/L (10 µg/dL)</b></td><td>แกนฟื้นแล้ว — <b>หยุด steroid ได้</b></td></tr>
+    <tr><td>150–300 nmol/L (5–10 µg/dL)</td><td>ให้ขนาดสรีรวิทยาต่อ ตรวจซ้ำในหลายสัปดาห์–เดือน</td></tr>
+    <tr><td><b>&lt;150 nmol/L (5 µg/dL)</b></td><td>ให้ขนาดสรีรวิทยาต่อ ตรวจซ้ำในไม่กี่เดือน</td></tr>
+  </table></div>
+  <p>ไม่แนะนำทำ dynamic test เป็นประจำ · ไม่ฟื้นใน 1 ปี หรือเคย adrenal crisis → ส่งแพทย์ต่อมไร้ท่อ · ฟื้นได้นานถึง 2–4 ปี</p>
+</section>
+
+<!-- 6 -->
+<section id="taper" class="col">
+  <div class="sec-num">06</div>
+  <h2>การลดยา steroid (ESE/ES 2024 Table 4)</h2>
+  <p>ลดได้เมื่อ <b>โรคที่รักษาสงบแล้ว</b> · ลดเร็วในช่วงขนาดสูง แล้วช้าลงเมื่อใกล้ขนาดสรีรวิทยา</p>
+  <div class="tbl"><table>
+    <tr><th>Prednisolone ปัจจุบัน (mg/วัน)</th><th>ลดครั้งละ</th><th>ทุก</th></tr>
+    <tr><td>&gt;40</td><td>5–10 mg</td><td>1 สัปดาห์</td></tr>
+    <tr><td>20–40</td><td>5 mg</td><td>1 สัปดาห์</td></tr>
+    <tr><td>10–20</td><td>2.5 mg</td><td>1–4 สัปดาห์</td></tr>
+    <tr><td>5–10</td><td>1 mg</td><td>1–4 สัปดาห์</td></tr>
+    <tr><td>5 (ขนาดสรีรวิทยา)</td><td>ลด 1 mg ต่อ (ถ้าไม่มีอาการ) หรือตรวจ morning cortisol · ไม่มีเม็ดขนาดเล็ก: เปลี่ยนเป็น hydrocortisone 20 mg แล้วลดครั้งละ 5 mg</td><td>4 สัปดาห์</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="gws" class="col">
+  <div class="sec-num">07</div>
+  <h2>Glucocorticoid withdrawal syndrome vs AI</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Withdrawal syndrome</th><th>Adrenal insufficiency</th></tr>
+    <tr><td>อาการ</td><td>อ่อนเพลีย ปวดกล้ามเนื้อ/ข้อ คลื่นไส้ นอนไม่หลับ อารมณ์เปลี่ยน</td><td>คล้ายกัน + <b>น้ำหนักลด ความดันต่ำ orthostasis</b></td></tr>
+    <tr><td>ลักษณะ Cushing</td><td>มักยังมี</td><td>—</td></tr>
+    <tr><td>ช่วงที่เกิด</td><td>ระหว่าง taper ในช่วงขนาดสูงกว่าสรีรวิทยา (ขนาดสูง/นาน/ยาออกฤทธิ์ยาว เสี่ยงมาก)</td><td>เมื่อถึง/ต่ำกว่าขนาดสรีรวิทยา (prednisolone ~4–6 mg)</td></tr>
+    <tr><td>จัดการ</td><td>เพิ่มกลับขนาดล่าสุดที่ทนได้ ลดช้าลง</td><td>ให้ขนาดสรีรวิทยา + stress dose · ตรวจ cortisol</td></tr>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="stress" class="col">
+  <div class="sec-num">08</div>
+  <h2>Stress dosing / sick day rules</h2>
+  <p>ใช้กับผู้มี AI ที่ยืนยันแล้ว <b>และผู้ใช้ steroid ที่ยังไม่ได้ตรวจตัด AI</b> (ESE/ES 2024 R3.1)</p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ขนาด (ESE/ES 2024 Table 8)</th></tr>
+    <tr><td><b>Minor stress</b>: ไข้ ต้องนอนพัก ได้ยาปฏิชีวนะ (ผู้ป่วยนอก) เครียดรุนแรง</td><td>Hydrocortisone <b>40 mg/วัน</b> แบ่ง 3 (20-10-10) หรือ prednisolone <b>10 mg/วัน</b> หรือ dexamethasone 1 mg · <b>2–5 วัน</b> จนหาย · ถ้าได้ ≥HC 40/pred 10/dexa 1 อยู่แล้วไม่ต้องเพิ่ม</td></tr>
+    <tr><td>ผ่าตัดเล็ก/หัตถการใต้ยาชาเฉพาะที่</td><td>HC 40 mg/วัน (20 mg ก่อน 1 ชม., 10 mg หลัง 6 ชม., 10 mg อีก 6 ชม.) หรือ pred 10 mg ก่อน 1 ชม.</td></tr>
+    <tr><td>อาเจียน/ท้องเสียต่อเนื่อง (ยังอยู่บ้านได้)</td><td><b>Hydrocortisone 100 mg IM</b> ทันที ซ้ำได้หลัง 6 ชม. · ไม่ดีขึ้น → มา รพ.</td></tr>
+    <tr><td><b>Moderate–major</b>: นอน รพ. ติดเชื้อรุนแรง บาดเจ็บ</td><td>HC <b>100 mg IV/IM</b> แล้ว <b>200 mg/24 ชม.</b> (หรือ 50 mg q6h) · ถ้าได้ ≥HC 200/pred 50/dexa 6–8 อยู่แล้วไม่ต้องเพิ่ม</td></tr>
+    <tr><td>ผ่าตัดใต้ GA/regional</td><td>HC 100 mg IV ตอน induction → 200 mg/24 ชม. · หลังผ่าตัดกินได้: <b>ยากินขนาดเพิ่ม (HC 40/pred 10) 48 ชม.</b> แล้วกลับขนาดเดิม · NPO นาน: ให้ IV ต่อ</td></tr>
+  </table></div>
+  <p>Primary AI (ES 2016): ไข้ &gt;38°C เพิ่ม hydrocortisone <b>2 เท่า</b> · &gt;39°C <b>3 เท่า</b> · ให้ <b>บัตรแจ้งเตือน steroid</b> และสอนฉีด hydrocortisone 100 mg IM เอง</p>
+</section>
+
+<!-- 9 -->
+<section id="maint" class="col">
+  <div class="sec-num">09</div>
+  <h2>รักษาระยะยาว</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Glucocorticoid</h4><ul><li><b>Hydrocortisone 15–25 mg/วัน</b> แบ่ง 2–3 ครั้ง (เช่น 10-5-5 หรือ 10-5 ตื่นนอน/บ่าย) — ครั้งแรกตอนตื่น</li><li>หรือ <b>prednisolone 3–5 mg/วัน</b> ครั้งเดียว (ใช้มากในไทยเพราะหาง่าย)</li><li>ไม่ใช้ dexamethasone เป็นยาทดแทน (เกินขนาดง่าย)</li><li>ติดตามด้วย <b>อาการ</b> น้ำหนัก ความดัน — ไม่ปรับยาตามระดับ cortisol/ACTH</li></ul></div>
+    <div class="card c-vio"><h4>Mineralocorticoid (primary เท่านั้น)</h4><ul><li><b>Fludrocortisone 50–100 µg/วัน</b> ตอนเช้า · ไม่จำกัดเกลือ</li><li>ปรับตาม ความดัน (นอน/ยืน) K <b>renin</b> (เป้า upper-normal)</li><li>อากาศร้อน/เหงื่อออกมาก อาจต้องเพิ่ม</li><li>เกิน: บวม ความดันสูง K ต่ำ</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">Secondary AI: ตรวจและทดแทน hormone อื่น — <b>ให้ hydrocortisone ก่อน levothyroxine</b> (thyroxine เร่ง cortisol metabolism → crisis) · DHEA ในผู้หญิงที่อ่อนเพลีย/libido ลดแม้ทดแทนดี (ทดลอง 6 เดือน) <span class="tag add">เสริม</span></p>
+</section>
+
+<!-- 10 -->
+<section id="special" class="col">
+  <div class="sec-num">10</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <ul>
+    <li><b>วัณโรค + rifampicin</b>: rifampicin เร่ง metabolism ของ steroid — ผู้มี AI ที่เริ่ม rifampicin ต้อง <b>เพิ่ม hydrocortisone ~2 เท่า</b> · TB adrenalitis เป็นสาเหตุ primary AI ที่พบในไทย <span class="tag add">เสริม</span></li>
+    <li><b>ตั้งครรภ์</b>: ไตรมาส 3 อาจต้องเพิ่ม hydrocortisone 20–40% · คลอด: HC 100 mg IV แล้ว 200 mg/24 ชม. (ES 2016)</li>
+    <li><b>Septic shock</b> (CIRCI): hydrocortisone 200 mg/วัน เมื่อใช้ norepinephrine ≥0.25 µg/kg/min นาน ≥4 ชม. (SSC 2021) — ไม่ต้องตรวจ cortisol (หน้า <a href="../sepsis/index.html">Sepsis</a>)</li>
+    <li><b>Immune checkpoint inhibitor</b>: hypophysitis (ipilimumab) หรือ primary AI — อ่อนเพลีย ปวดหัว Na ต่ำ → ตรวจ cortisol/ACTH</li>
+    <li><b>Adrenal hemorrhage</b>: ปวดหลัง/ท้อง ความดันตก Hb ลด ในผู้ใช้ anticoagulant, HIT, APS, sepsis (Waterhouse-Friderichsen)</li>
+    <li><b>Opioid</b> ระยะยาว (เช่น morphine &gt;20 mg/วัน) กดแกน HPA ได้</li>
+  </ul>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัย AI</b>เคยใช้ steroid / ยาชุด · Na ต่ำ K สูง น้ำตาลต่ำ · อ่อนเพลีย ความดันต่ำ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Unstable (shock อาเจียน ซึม)?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่ → crisis</span><div class="node red"><b>ให้ทันที</b>เจาะ cortisol/ACTH (ถ้าไม่ช้า)<br>Hydrocortisone 100 mg IV/IM<br>NSS 1 L/ชม.แรก · dextrose<br>→ HC 200 mg/24 ชม.</div></div>
+        <div class="arm"><span class="lab">Stable</span><div class="node q"><b>กำลังใช้/เพิ่งหยุด steroid?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">ใช่</span><div class="node dx hypo"><b>GI-AI</b>Taper ถึงขนาดสรีรวิทยา<br>Morning cortisol ≥24 ชม.หลังยา<br>&gt;10 µg/dL หยุดได้</div></div>
+            <div class="arm"><span class="lab">ไม่</span><div class="node dx eu"><b>Morning cortisol + ACTH</b>ก้ำกึ่ง → cosyntropin 250 µg<br>ACTH สูง → primary (+fludro)<br>ACTH ต่ำ → MRI pituitary</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool" id="tEq" style="margin-top:12px">
+    <h3>เทียบขนาด steroid และความเสี่ยงกดแกน HPA</h3>
+    <div class="fields">
+      <label class="f">ยา<select id="eDrug"><option value="20">Hydrocortisone</option><option value="5" selected>Prednisolone/prednisone</option><option value="4">Methylprednisolone</option><option value="0.5">Dexamethasone</option><option value="0.5b">Betamethasone</option></select></label>
+      <label class="f">ขนาดต่อวัน (mg)<input type="number" id="eDose" step="0.25" value="20"></label>
+      <label class="f">ระยะเวลา (สัปดาห์)<input type="number" id="eWk" value="8"></label>
+    </div>
+    <div class="out" id="eqOut"></div>
+  </div>
+  <div class="tool plan" id="tSd" style="margin-top:12px">
+    <h3>Stress dose planner</h3>
+    <div class="fields">
+      <label class="f">ยาที่ใช้อยู่<select id="sDrug"><option value="none">ไม่ได้ใช้ทุกวัน (หยุดแล้ว/ยังไม่ตรวจ)</option><option value="hc">Hydrocortisone</option><option value="pred" selected>Prednisolone</option><option value="dexa">Dexamethasone</option></select></label>
+      <label class="f">ขนาดต่อวัน (mg)<input type="number" id="sDose" step="0.5" value="5"></label>
+      <label class="f">สถานการณ์<select id="sSit"><option value="minor">ไข้/ติดเชื้อ ผู้ป่วยนอก (minor)</option><option value="proc">หัตถการยาชาเฉพาะที่</option><option value="bowel">ส่องกล้อง/เตรียมลำไส้ (ไม่ดมยา)</option><option value="vomit">อาเจียน/ท้องเสียต่อเนื่อง</option><option value="major">นอน รพ. ป่วยหนัก/บาดเจ็บ</option><option value="ga">ผ่าตัด GA/regional</option><option value="crisis">สงสัย adrenal crisis</option></select></label>
+    </div>
+    <div class="out" id="sdOut"></div>
+  </div>
+  <div class="tool" id="tMc" style="margin-top:12px">
+    <h3>แปลผล cortisol</h3>
+    <div class="fields">
+      <label class="f">หน่วย<select id="mU"><option value="ug">µg/dL</option><option value="nmol">nmol/L</option></select></label>
+      <label class="f">Morning cortisol<input type="number" id="mVal" step="0.1" value="7.2"></label>
+      <label class="f">Cosyntropin peak (ถ้ามี)<input type="number" id="mStim" step="0.1" placeholder="30/60 นาที"></label>
+      <label class="f">บริบท<select id="mCtx"><option value="gc">ลด steroid (GI-AI)</option><option value="new">สงสัย AI ใหม่</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="mEst"> ใช้ estrogen/ยาคุม</label><label><input type="checkbox" id="mAlb"> Albumin ต่ำมาก/ตับแข็ง/nephrotic</label></div>
+    <div class="out" id="mcOut"></div>
+  </div>
+  <div class="tool" id="tTp" style="margin-top:12px">
+    <h3>วางแผนลด prednisolone</h3>
+    <div class="fields">
+      <label class="f">ขนาดปัจจุบัน (mg/วัน)<input type="number" id="tDose" value="30"></label>
+      <label class="f">ความเร็ว<select id="tSpeed"><option value="fast">เร็ว (ช่วงสั้นสุดของตาราง)</option><option value="slow">ช้า (ช่วงยาวสุด)</option></select></label>
+    </div>
+    <div class="out" id="tpOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Shock ที่ไม่ตอบสนอง + เคยใช้ steroid → hydrocortisone 100 mg ทันที</b></div></div>
+    <div class="pearl"><div><b>อย่ารอผล cortisol</b> — เจาะเก็บแล้วให้ยาเลย</div></div>
+    <div class="pearl"><div><b>ถามยาชุด/ยาลูกกลอน</b> ในคนหน้ากลมที่ "ไม่เคยกิน steroid"</div></div>
+    <div class="pearl"><div><b>Steroid &lt;3–4 สัปดาห์ หยุดได้เลย</b> ไม่ต้อง taper</div></div>
+    <div class="pearl"><div><b>K สูง + ผิวคล้ำ = primary</b> · K ปกติ = secondary/steroid-induced</div></div>
+    <div class="pearl"><div><b>GI-AI ไม่ต้องให้ fludrocortisone</b></div></div>
+    <div class="pearl"><div><b>Morning cortisol &gt;10 µg/dL (300 nmol/L) = หยุด steroid ได้</b> (เจาะ ≥24 ชม.หลังยา)</div></div>
+    <div class="pearl"><div><b>Rifampicin เร่งทำลาย steroid</b> — เพิ่มขนาดทดแทน</div></div>
+    <div class="pearl"><div><b>Secondary AI: ให้ hydrocortisone ก่อน thyroxine</b></div></div>
+    <div class="pearl"><div><b>ทุกคนที่มี AI ต้องได้บัตรแจ้งเตือน + สอน sick day rules</b></div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../sepsis/index.html">Sepsis →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a> · <a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../hypercalcemia/index.html">Hypercalcemia →</a> · <a href="../thyroid/index.html">Thyroid →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Beuschlein F, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline: diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. J Clin Endocrinol Metab 2024;109:1657–83; Eur J Endocrinol 2024;190:G25–51. doi:10.1210/clinem/dgae250 · 2) Bornstein SR, et al. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2016;101:364–89 · 3) Evans L, et al. Surviving Sepsis Campaign 2021<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','adView');
+mountWalker({
+ start:{q:'ผู้ป่วยมีความดันต่ำ/shock ร่วมกับอาเจียน ซึม ไข้ หรืออ่อนเพลียรุนแรง?',o:[['ใช่','crisis'],['ไม่ (stable)','gc']]},
+ crisis:{leaf:true,cls:'danger',t:'Adrenal crisis',b:'เจาะ cortisol + ACTH (ถ้าไม่ทำให้ช้า) → <b>hydrocortisone 100 mg IV/IM ทันที</b> · NSS 1 ลิตรชั่วโมงแรก · แก้น้ำตาลต่ำ · <b>HC 200 mg/24 ชม.</b> (หรือ 50 mg q6h) · รักษาตัวกระตุ้น · ระวังแก้ Na เร็วเกิน'},
+ gc:{q:'กำลังใช้หรือเพิ่งหยุด steroid (รวมยาชุด ยาพ่น ฉีดข้อ)?',o:[['ใช่','dur'],['ไม่ใช่','new']]},
+ dur:{q:'ใช้ขนาดสูงกว่าสรีรวิทยานาน ≥3–4 สัปดาห์?',o:[['ใช่','long'],['ไม่ (<3–4 สัปดาห์)','short']]},
+ short:{leaf:true,cls:'ok',t:'ใช้ระยะสั้น',b:'หยุดได้เลย ไม่ต้อง taper ไม่ต้องตรวจ (ESE/ES 2024 R2.1) · ยกเว้นมีอาการ AI หรือใช้ซ้ำบ่อย'},
+ long:{q:'โรคที่รักษาสงบแล้วและไม่ต้องใช้ steroid ต่อ?',o:[['ใช่','tp'],['ยังต้องใช้','keep']]},
+ keep:{leaf:true,cls:'warn',t:'ยังต้องใช้ steroid',b:'ไม่ต้องตรวจ AI (R2.4) · สอน stress dosing · ให้บัตรแจ้งเตือน · ป้องกันกระดูกพรุน/เบาหวาน'},
+ tp:{leaf:true,cls:'ok',t:'Taper → ทดสอบการฟื้น',b:'ลดตามตาราง (เครื่องมือบท 12) จนถึง prednisolone ~5 mg · จากนั้นลดต่อช้าๆ หรือเจาะ <b>morning cortisol ≥24 ชม.หลังยา</b>: >10 µg/dL หยุดได้ · 5–10 ตรวจซ้ำในสัปดาห์–เดือน · <5 ให้ต่อ ตรวจซ้ำในไม่กี่เดือน'},
+ new:{q:'Morning cortisol?',o:[['<5 µg/dL','acth'],['5–15 µg/dL','stim'],['>15 µg/dL','unl']]},
+ unl:{leaf:true,cls:'ok',t:'AI ไม่น่าเป็น',b:'ระวัง estrogen (CBG สูง) · ถ้าสงสัยมาก/เพิ่งเกิด pituitary apoplexy ตรวจซ้ำ'},
+ stim:{leaf:true,cls:'warn',t:'ทำ cosyntropin 250 µg',b:'Peak <18 µg/dL (500 nmol/L) ที่ 30/60 นาที = AI (assay ใหม่ cut-off ~14–15) · แล้วดู ACTH แยก primary/secondary'},
+ acth:{q:'Plasma ACTH?',o:[['สูง (>2× ULN)','pai'],['ต่ำ/ปกติ','sai']]},
+ pai:{leaf:true,cls:'violet',t:'Primary AI',b:'หาสาเหตุ: CT ต่อมหมวกไต (TB, hemorrhage, metastasis), antibody, HIV · <b>hydrocortisone 15–25 mg/วัน + fludrocortisone 50–100 µg</b> · ปรับตาม renin · บัตรแจ้งเตือน'},
+ sai:{leaf:true,cls:'violet',t:'Secondary AI',b:'MRI ต่อมใต้สมอง · ตรวจ TSH/FT4, LH/FSH, prolactin · ประวัติ steroid/opioid/checkpoint inhibitor · <b>hydrocortisone ก่อน thyroxine</b> · ไม่ต้อง fludrocortisone'}
+},'apTrail','apStage');
+
+const EQ={'20':20,'5':5,'4':4,'0.5':0.5,'0.5b':0.5};
+function eq(){
+  const k=$('eDrug').value,d=num('eDose'),w=num('eWk');if(d===null){$('eqOut').textContent='ใส่ขนาด';return}
+  const hc=d/EQ[k]*20;
+  const L=[`เทียบเท่า hydrocortisone <b>${hc.toFixed(0)} mg</b> = prednisolone <b>${(hc/4).toFixed(1)} mg</b> = methylprednisolone ${(hc/5).toFixed(1)} mg = dexamethasone ${(hc/40).toFixed(2)} mg ต่อวัน`];
+  const supra=hc>25;
+  if(!supra)L.push(hc>15?'อยู่ในช่วงสรีรวิทยา (HC 15–25 / pred 4–6 mg) — ความเสี่ยงต่ำ แต่ใช้นานมากหรือหลาย route ยังกดแกนได้':'ต่ำกว่าระดับสรีรวิทยา — ความเสี่ยงกดแกนต่ำ (ยกเว้นใช้หลาย route/ร่วม CYP3A4 inhibitor)');
+  else if(w===null)L.push('สูงกว่าสรีรวิทยา — <b>ใส่ระยะเวลา</b>เพื่อประเมินความเสี่ยง (เสี่ยงเมื่อ ≥3–4 สัปดาห์)');
+  else if(w<3)L.push('<b>ใช้ <3–4 สัปดาห์</b> → หยุดได้เลย ไม่ต้อง taper (ESE/ES 2024)');
+  else L.push('<b>สูงกว่าสรีรวิทยา ≥3–4 สัปดาห์ → เสี่ยง GI-AI</b>: taper เมื่อโรคสงบ · สอน stress dosing · บัตรแจ้งเตือน');
+  $('eqOut').innerHTML=L.join('<br>');
+}
+bindAll('#tEq input,#tEq select',eq);
+
+function sd(){
+  const dr=$('sDrug').value,d=num('sDose')||0,s=$('sSit').value;
+  const hc=dr==='hc'?d:dr==='pred'?d*4:dr==='dexa'?d*40:0;let o;
+  const keepMinor=(dr==='hc'&&d>=40)||(dr==='pred'&&d>=10)||(dr==='dexa'&&d>=1);
+  const keepMajor=(dr==='hc'&&d>=200)||(dr==='pred'&&d>=50)||(dr==='dexa'&&d>=6);
+  if(s==='minor'){o=keepMinor?'ขนาดที่ใช้อยู่พอแล้ว ไม่ต้องเพิ่ม (ยกเว้น hemodynamic ไม่คงที่)':dr==='pred'?'<b>Prednisolone 10 mg/วัน</b> (1–2 ครั้ง) 2–5 วันจนหาย':dr==='dexa'?'<b>Dexamethasone 1 mg/วัน</b> 2–5 วัน':'<b>Hydrocortisone 40 mg/วัน</b> แบ่ง 20-10-10 (ตื่น/เที่ยง/5 โมงเย็น) 2–5 วัน หรือตลอดยาปฏิชีวนะ';}
+  else if(s==='proc'){o=keepMinor?'ไม่ต้องเพิ่ม':dr==='pred'?'<b>Prednisolone 10 mg</b> 1 ชม.ก่อนหัตถการ':dr==='dexa'?'<b>Dexamethasone 1 mg</b> 1 ชม.ก่อน':'<b>Hydrocortisone 20 mg</b> 1 ชม.ก่อน → 10 mg หลัง 6 ชม. → 10 mg อีก 6 ชม.';}
+  else if(s==='bowel'){o=dr==='none'?'<b>Hydrocortisone 20 mg/วัน</b> แบ่ง 10 mg 1 ชม.ก่อน → 5 mg หลัง 6 ชม. → 5 mg อีก 6 ชม.':'ให้ขนาดเดิมต่อ · ถ้างดน้ำงดอาหารนาน ให้ขนาดเทียบเท่าทาง IV';}
+  else if(s==='vomit'){o='<b>Hydrocortisone 100 mg IM</b> ทันที ซ้ำได้หลัง 6 ชม. · ไม่ดีขึ้น/ความดันต่ำ → มา รพ. ให้ IV';}
+  else if(s==='major'){o=keepMajor?'ขนาดที่ใช้อยู่ (≥HC 200 eq) พอแล้ว — ให้ทาง IV ถ้ากินไม่ได้':'<b>Hydrocortisone 100 mg IV/IM</b> แล้ว <b>200 mg/24 ชม.</b> หยดต่อเนื่อง (หรือ 50 mg q6h) · ปรับลดตามอาการ';}
+  else if(s==='ga'){o=keepMajor?'ให้ขนาดเดิมทาง IV ระหว่างผ่าตัด':'<b>HC 100 mg IV</b> ตอน induction → <b>200 mg/24 ชม.</b> · หลังผ่าตัดกินได้: HC 40 mg/วัน หรือ pred 10 mg/วัน <b>48 ชม.</b> แล้วกลับขนาดเดิม · NPO นาน: IV ต่อ';}
+  else{o='<b>Hydrocortisone 100 mg IV/IM ทันที</b> + NSS 1 L ชั่วโมงแรก → <b>200 mg/24 ชม.</b> · เจาะ cortisol/ACTH ก่อนถ้าไม่ช้า';}
+  $('sdOut').innerHTML=(hc?`ขนาดปัจจุบัน ≈ HC ${hc.toFixed(0)} mg/วัน<br>`:'')+o;
+}
+bindAll('#tSd input,#tSd select',sd);
+
+function mc(){
+  let v=num('mVal'),st=num('mStim');const u=$('mU').value,ctx=$('mCtx').value;
+  if(v===null){$('mcOut').textContent='ใส่ค่า';return}
+  const nm=u==='nmol';const raw=v;const toUg=x=>nm?x/27.59:x;v=toUg(v);if(st!==null)st=toUg(st);
+  const L=[`Morning cortisol = <b>${v.toFixed(1)} µg/dL</b> (${(v*27.59).toFixed(0)} nmol/L)`];
+  if(ctx==='gc'){const hi=nm?raw>300:v>10,mid=nm?raw>=150:v>=5;L.push(hi?'<b>>10 µg/dL (>300 nmol/L) → แกน HPA ฟื้นแล้ว หยุด steroid ได้</b>':mid?'<b>5–10 µg/dL (150–300 nmol/L)</b> → ให้ขนาดสรีรวิทยาต่อ ตรวจซ้ำในหลายสัปดาห์–เดือน':'<b><5 µg/dL (<150 nmol/L)</b> → ให้ขนาดสรีรวิทยาต่อ ตรวจซ้ำในไม่กี่เดือน · ไม่ฟื้นใน 1 ปี → ส่งต่อมไร้ท่อ');L.push('ต้องเจาะ ≥24 ชม.หลังโดสสุดท้าย · ถ้าใช้ dexamethasone: แม้ไม่ cross-react กับ assay แต่กดแกนนาน — เปลี่ยนเป็น hydrocortisone/prednisolone ก่อนทดสอบ (R2.5)');L.push('<span class="muted">cut-off µg/dL และ nmol/L ในแนวทางเป็นค่าปัดเศษ ไม่ใช่การแปลงหน่วยตรง</span>');}
+  else{L.push(v<3?'<b><3 µg/dL → AI แทบแน่นอน</b> ตรวจ ACTH':v<5?'<b><5 µg/dL → AI น่าจะเป็นมาก</b> ยืนยันด้วย cosyntropin + ACTH':v>15?'<b>>15 µg/dL → AI ไม่น่าเป็น</b>':'<b>ก้ำกึ่ง</b> → cosyntropin 250 µg');}
+  if(st!==null)L.push(st<18?`Cosyntropin peak ${st.toFixed(1)} µg/dL <b><18 → เข้าได้กับ AI</b> (assay ใหม่/LC-MS cut-off ~14–15 — ตรวจกับห้องแล็บ)`:`Cosyntropin peak ${st.toFixed(1)} µg/dL <b>≥18 → ตัด primary AI ได้</b> (secondary ที่เพิ่งเกิดอาจผลปกติ)`);
+  if($('mEst').checked)L.push('Estrogen เพิ่ม CBG → cortisol สูงเกินจริง');
+  if($('mAlb').checked)L.push('Albumin/CBG ต่ำ → total cortisol ต่ำเกินจริง');
+  $('mcOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMc input,#tMc select',mc);
+
+function tp(){
+  let d=num('tDose');const fast=$('tSpeed').value==='fast';if(!d){$('tpOut').textContent='ใส่ขนาด';return}
+  if(d<=5){$('tpOut').innerHTML=`<b>${d} mg อยู่ในช่วงสรีรวิทยาแล้ว</b> → ลดต่อ 1 mg ทุก 4 สัปดาห์ถ้าไม่มีอาการ หรือเจาะ morning cortisol (≥24 ชม.หลังยา) · ไม่มีเม็ดเล็ก: เปลี่ยนเป็น hydrocortisone แล้วลดครั้งละ 5 mg`;return}
+  const S=[];let wk=0;let guard=0;
+  while(d>5&&guard++<80){
+    let step,int;
+    if(d>40){step=fast?10:5;int=1}else if(d>20){step=5;int=1}else if(d>10){step=2.5;int=fast?1:4}else{step=1;int=fast?1:4}
+    let nd=Math.max(5,+(d-step).toFixed(1));
+    if(d>40&&nd<40)nd=40;else if(d>20&&nd<20)nd=20;else if(d>10&&nd<10)nd=10;
+    S.push(`สัปดาห์ ${wk}: ${d} mg → ${nd} mg (อยู่ ${int} สัปดาห์)`);wk+=int;d=nd;
+  }
+  S.push(`<b>สัปดาห์ ${wk}: ถึง 5 mg (ขนาดสรีรวิทยา)</b> → ลดต่อ 1 mg ทุก 4 สัปดาห์ถ้าไม่มีอาการ หรือเจาะ morning cortisol`);
+  $('tpOut').innerHTML='<ol>'+S.map(x=>`<li>${x}</li>`).join('')+'</ol><span class="muted">ตาราง ESE/ES 2024 · ปรับตามโรคพื้นฐาน · มีอาการ withdrawal ให้กลับขนาดล่าสุดที่ทนได้</span>';
+}
+bindAll('#tTp input,#tTp select',tp);
+
+mountQuiz([
+ ['หญิง 55 ปี กินยาลูกกลอนแก้ปวดข้อ 2 ปี หยุดเอง 5 วัน มาด้วยอาเจียน BP 70/40 ไม่ตอบสนอง NSS 2 ลิตร Na 128 K 4.2 DTX 58',
+  ['ให้ norepinephrine อย่างเดียว','Hydrocortisone 100 mg IV ทันที','รอผล cortisol ก่อน','Fludrocortisone'],1,'Adrenal crisis จาก GI-AI · ให้ทันทีไม่ต้องรอผล'],
+ ['K สูง ผิวคล้ำ อยากกินเค็ม นึกถึง',
+  ['Secondary AI','Primary AI','GI-AI','Hypophysitis'],1,'ขาด aldosterone + ACTH สูง'],
+ ['ผู้ป่วยกิน prednisolone 40 mg 10 วันสำหรับ asthma exacerbation ควรหยุดยาอย่างไร',
+  ['Taper 4 สัปดาห์','หยุดได้เลย','ตรวจ cortisol ก่อน','เปลี่ยนเป็น hydrocortisone'],1,'<3–4 สัปดาห์ หยุดได้ไม่ต้อง taper'],
+ ['ลด prednisolone ถึง 5 mg เจาะ morning cortisol 24 ชม.หลังยาได้ 12 µg/dL',
+  ['หยุด steroid ได้','ให้ต่อ ตรวจซ้ำ 1 เดือน','ทำ cosyntropin','เพิ่มเป็น 10 mg'],0,'>10 µg/dL (300 nmol/L) = ฟื้นแล้ว'],
+ ['ข้อใดถูกเกี่ยวกับ glucocorticoid-induced AI',
+  ['ต้องให้ fludrocortisone','K มักสูง','ไม่ให้ fludrocortisone','ไม่เกิดจากยาพ่น'],2,'Aldosterone ปกติ · ยาพ่นขนาดสูงก็กดแกนได้'],
+ ['ผู้ป่วย Addison เริ่มยา TB ที่มี rifampicin ควรทำอย่างไรกับ hydrocortisone',
+  ['ลดขนาด','คงเดิม','เพิ่มประมาณ 2 เท่า','หยุด'],2,'Rifampicin เร่ง metabolism ของ steroid'],
+ ['Panhypopituitarism ใหม่ ควรเริ่ม hormone ใดก่อน',
+  ['Levothyroxine','Hydrocortisone','Testosterone','GH'],1,'Thyroxine ก่อนจะกระตุ้น adrenal crisis']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
