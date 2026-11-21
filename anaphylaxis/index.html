@@ -1,0 +1,671 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anaphylaxis · ภาวะแพ้รุนแรง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Allergy · Emergency · WAO 2020 · EAACI 2021 · RCUK 2021 · JTFPP 2023 · GA²LEN 2024</div>
+  <h1>ภาวะแพ้รุนแรง<br>Anaphylaxis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัยตามเกณฑ์ WAO <b>adrenaline IM ที่ต้นขา</b> ขนาดและการให้ซ้ำ ท่าผู้ป่วย สารน้ำ ภาวะ <b>refractory anaphylaxis</b> (adrenaline infusion, glucagon ในผู้ได้ beta-blocker) บทบาทที่จำกัดของ antihistamine/steroid ระยะเวลาสังเกตอาการ biphasic reaction การตรวจ tryptase และการวางแผนก่อนจำหน่าย</p>
+  <p class="cite">อ้างอิงหลัก: Cardona V, et al. WAO Anaphylaxis Guidance 2020 (World Allergy Organ J 2020;13:100472) · Muraro A, et al. EAACI guidelines: Anaphylaxis (2021 update) (Allergy 2022;77:357–77) · Resuscitation Council UK. Emergency treatment of anaphylaxis 2021 · Golden DBK, et al. Anaphylaxis: a 2023 practice parameter update (Ann Allergy Asthma Immunol 2024) · Dribin TE, et al. GA²LEN anaphylaxis definition 2024 (J Allergy Clin Immunol 2025;156:406–17) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Adrenaline IM ทันที</b>1 mg/mL · 0.01 mg/kg (ผู้ใหญ่ 0.5 mg) ต้นขาด้านหน้า-ข้าง · ซ้ำทุก 5 นาที</div>
+    <div class="stage" style="--c:var(--warn)"><b>นอนราบ ยกขา</b>ห้ามลุกยืน · O₂ · NSS bolus · salbutamol เสริม</div>
+    <div class="stage" style="--c:var(--accent)"><b>ไม่ดีขึ้นหลัง 2 เข็ม</b>= refractory → adrenaline IV infusion · ICU · glucagon ถ้าได้ beta-blocker</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#dx">วินิจฉัย</a><a href="#trig">สาเหตุ · ปัจจัยเสริม</a><a href="#first">5 นาทีแรก</a><a href="#adr">Adrenaline</a><a href="#ref">Refractory</a><a href="#adj">ยาเสริม</a><a href="#obs">สังเกตอาการ · biphasic</a><a href="#tryp">Tryptase</a><a href="#dc">ก่อนจำหน่าย</a><a href="#spec">สถานการณ์พิเศษ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="dx" class="col">
+  <div class="sec-num">01</div>
+  <h2>วินิจฉัย</h2>
+  <p>Anaphylaxis คือปฏิกิริยาภูมิไวเกินทั่วร่างกายที่รุนแรง เกิดเร็ว และอาจถึงตาย — <b>วินิจฉัยทางคลินิก</b> ไม่ต้องรอผลตรวจ</p>
+  <div class="box key"><b>เกณฑ์ WAO 2020 — เข้าข้อใดข้อหนึ่ง</b><b>1)</b> อาการเกิดเฉียบพลัน (นาที–ไม่กี่ชั่วโมง) ที่ <b>ผิวหนัง/เยื่อบุ</b> (ลมพิษทั่วตัว คัน แดง ปาก-ลิ้น-ลิ้นไก่บวม) <b>ร่วมกับ ≥1 ข้อ</b>: (ก) ระบบหายใจ — หอบ wheeze stridor PEF ลด SpO₂ ต่ำ · (ข) BP ต่ำ หรืออวัยวะขาดเลือด — หมดสติ เป็นลม ปัสสาวะราด · (ค) ทางเดินอาหารรุนแรง — ปวดท้องบิด อาเจียนซ้ำ (โดยเฉพาะสิ่งกระตุ้นที่ไม่ใช่อาหาร)<br><b>2)</b> หลังสัมผัสสารที่ทราบหรือน่าจะแพ้: <b>BP ต่ำ</b> หรือ <b>bronchospasm</b> หรือ <b>กล่องเสียงบวม</b> เฉียบพลัน <b>แม้ไม่มีอาการผิวหนัง</b></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>จุดที่พลาดบ่อย</h4><ul><li><b>ไม่มีผื่นได้ ~10–20%</b> (โดยเฉพาะ shock จากยา/ระหว่างผ่าตัด)</li><li>BP ต่ำในผู้ใหญ่: SBP &lt;90 หรือลดลง &gt;30% จากเดิม</li><li><b>ให้ adrenaline ได้แม้ไม่ครบเกณฑ์</b> ถ้าสงสัยและอาการลุกลาม (JTFPP 2023) — การให้ไม่ได้ยืนยันย้อนหลังว่าเป็น anaphylaxis</li><li>GA²LEN 2024 เสนอนิยามและ clinical support tool ใหม่แทน NIAID/FAAN 2006: 3 เกณฑ์ — ไม่ทราบการสัมผัส · น่าจะสัมผัส + ≥2 ระบบ (รวม GI รุนแรง) · สัมผัสที่ทราบ + ระบบหายใจหรือไหลเวียน</li></ul></div>
+    <div class="card c-vio"><h4>โรคที่คล้าย</h4><ul><li>Vasovagal (ซีด เหงื่อออก <b>ชีพจรช้า</b> ไม่มีผื่น)</li><li>Asthma กำเริบ · panic attack</li><li><b>Angioedema ที่ไม่มีลมพิษ</b>: ACEI, hereditary angioedema (bradykinin — adrenaline ได้ผลน้อย)</li><li>Scombroid (ปลาเน่า histamine) · flushing (carcinoid, alcohol)</li><li>Septic/cardiogenic shock · foreign body</li></ul></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="trig" class="col">
+  <div class="sec-num">02</div>
+  <h2>สาเหตุและปัจจัยเสริม</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>สาเหตุที่พบบ่อยในผู้ใหญ่</h4><ul><li><b>ยา</b>: beta-lactam, <b>NSAIDs</b>, contrast media, ยาระงับความรู้สึก (NMBA), chlorhexidine, biologic, <b>เซรุ่มจากม้า</b> (เซรุ่มงู ERIG)</li><li><b>อาหาร</b>: กุ้ง/หอย/ปู แป้งสาลี ถั่ว ไข่ นม · แมลงที่กินได้</li><li><b>แมลงต่อย</b>: ผึ้ง ต่อ แตน มดคันไฟ</li><li>ไม่ทราบสาเหตุ (idiopathic) · ออกกำลังกาย</li></ul></div>
+    <div class="card c-red"><h4>เพิ่มความรุนแรง / เสี่ยงตาย</h4><ul><li>หืดที่คุมไม่ได้ · โรคหัวใจ · ผู้สูงอายุ</li><li><b>Beta-blocker</b> (ดื้อต่อ adrenaline) · ACEI</li><li>Mastocytosis/tryptase พื้นฐานสูง</li><li>ปัจจัยเสริม (cofactor): <b>ออกกำลังกาย แอลกอฮอล์ NSAIDs</b> นอนไม่พอ ติดเชื้อ ประจำเดือน</li><li><b>ได้ adrenaline ช้า</b> — สัมพันธ์กับการเสียชีวิต (และอาจเพิ่ม biphasic)</li></ul></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="first" class="col">
+  <div class="sec-num">03</div>
+  <h2>5 นาทีแรก</h2>
+  <div class="tbl"><table>
+    <tr><th>ลำดับ</th><th>ทำ</th></tr>
+    <tr><td>1</td><td><b>หยุดสิ่งกระตุ้น</b> (หยุดยา/เลือด/contrast ที่หยด · ดึงเหล็กในผึ้งออก) · เรียกทีม</td></tr>
+    <tr><td>2</td><td><b>Adrenaline IM ทันที</b> — ต้นขาด้านหน้า-ข้าง (บท 04) <b>ก่อนเปิดเส้น ก่อน antihistamine</b></td></tr>
+    <tr><td>3</td><td><b>ท่า</b>: นอนราบยกขา · หายใจลำบากให้นั่ง (ขาราบ) · ตั้งครรภ์นอนตะแคงซ้าย · <b>ห้ามลุกยืน/เดินทันที</b> (เลือดไหลกลับหัวใจไม่พอ → arrest)</td></tr>
+    <tr><td>4</td><td><b>O₂</b> อัตราสูง · ประเมิน airway (เสียงแหบ stridor ลิ้นบวม → เตรียมใส่ท่อแต่เนิ่นๆ โดยผู้ชำนาญ)</td></tr>
+    <tr><td>5</td><td><b>เปิดเส้นใหญ่ 2 เส้น</b> · ความดันต่ำ → <b>crystalloid bolus</b> ผู้ใหญ่ 500–1,000 mL (เด็ก <b>10 mL/kg</b>) ซ้ำตามการตอบสนอง (อาจต้องหลายลิตร)</td></tr>
+    <tr><td>6</td><td>Monitor ECG, BP, SpO₂ · <b>ไม่ดีขึ้นใน 5 นาที → adrenaline IM ซ้ำ</b></td></tr>
+    <tr><td>7</td><td>หัวใจหยุดเต้น → CPR + adrenaline IV 1 mg ตาม ALS</td></tr>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="adr" class="col">
+  <div class="sec-num">04</div>
+  <h2>Adrenaline — ยาเดียวที่ช่วยชีวิต</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>IM adrenaline 1 mg/mL (1:1,000)</th></tr>
+    <tr><td>ผู้ใหญ่ และเด็ก &gt;12 ปี</td><td><b>0.5 mg = 0.5 mL</b> (เด็กตัวเล็ก/ก่อนวัยรุ่น 0.3 mg)</td></tr>
+    <tr><td>6–12 ปี</td><td>0.3 mg = 0.3 mL</td></tr>
+    <tr><td>6 เดือน–6 ปี</td><td>0.15 mg = 0.15 mL</td></tr>
+    <tr><td>&lt;6 เดือน</td><td>0.1–0.15 mg</td></tr>
+    <tr><td>คิดตามน้ำหนัก</td><td><b>0.01 mg/kg</b> สูงสุด 0.5 mg</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>หลักการ</h4><ul><li><b>IM ที่ต้นขาด้านหน้า-ข้าง</b> (vastus lateralis) ดูดซึมเร็วกว่าต้นแขน/SC</li><li><b>ซ้ำทุก 5 นาที</b> ถ้าอาการทางหายใจ/ไหลเวียนยังอยู่ · ~90% ตอบสนองเข็มเดียว</li><li><b>ไม่มีข้อห้ามที่แท้จริง</b> ในภาวะ anaphylaxis — รวมผู้สูงอายุ โรคหัวใจ ตั้งครรภ์</li><li>อาการข้างเคียงชั่วคราว: ใจสั่น ตัวสั่น ซีด ปวดหัว</li></ul></div>
+    <div class="card c-red"><h4>ระวังความผิดพลาด</h4><ul><li><b>ห้ามให้ 1 mg/mL ทาง IV bolus</b> — arrhythmia, MI, stroke</li><li>IV bolus (50 µg = 0.5 mL ของ 0.1 mg/mL) <b>เฉพาะผู้ชำนาญ</b>ใน monitored setting</li><li>ฉลาก "1:1,000" vs "1:10,000" สับสนบ่อย — ใช้หน่วย mg และ mL</li><li>Auto-injector หลายรุ่นให้ 0.3 mg (บางรุ่น 0.5 mg; ต่างประเทศมี adrenaline พ่นจมูก) — เข็มต่อไปใน รพ.ใช้กระบอกฉีดยา</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="ref" class="col">
+  <div class="sec-num">05</div>
+  <h2>Refractory anaphylaxis</h2>
+  <p><b>นิยาม</b>: อาการทางหายใจ/ไหลเวียนยังอยู่ แม้ได้ adrenaline ที่เหมาะสม <b>2 ครั้ง</b> (RCUK 2021) → ขอความช่วยเหลือผู้เชี่ยวชาญ/ICU ทันที</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>Adrenaline IV infusion</h4><ul><li>ระหว่างเตรียม: ให้ <b>IM เข็มที่ 3</b> ได้</li><li>สูตร RCUK (peripheral, low-dose): <b>adrenaline 1 mg ใน NSS 100 mL (10 µg/mL)</b> · เริ่ม <b>0.5–1 mL/kg/ชม.</b> (= 0.08–0.17 µg/kg/นาที) ปรับตาม BP/อาการ</li><li>ใช้ <b>สายแยกเฉพาะ</b> + monitor ต่อเนื่อง</li><li>crystalloid bolus ร่วมด้วยแม้ BP ยังไม่ต่ำมาก</li><li>ยังช็อก → เพิ่ม noradrenaline/vasopressin · พิจารณา ECMO ในศูนย์ที่มี</li></ul></div>
+    <div class="card c-warn"><h4>ได้ beta-blocker</h4><ul><li>ตอบสนองต่อ adrenaline ไม่ดี มีหัวใจเต้นช้า</li><li><b>Glucagon 1–5 mg IV ช้าๆ ใน 5 นาที</b> แล้ว infusion 5–15 µg/นาที (เด็ก 20–30 µg/kg สูงสุด 1 mg)</li><li>ผลข้างเคียง: <b>อาเจียน</b> → จัดท่าป้องกันสำลัก</li><li>Bronchospasm ไม่ตอบสนอง: salbutamol, ipratropium, magnesium ตามหลัก asthma</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="adj" class="col">
+  <div class="sec-num">06</div>
+  <h2>ยาเสริม — อย่าให้มาแทนหรือทำให้ adrenaline ช้า</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>บทบาท</th></tr>
+    <tr><td><b>Antihistamine H1</b> (chlorpheniramine 10 mg IV/IM, cetirizine PO)</td><td>บรรเทา <b>อาการผิวหนัง</b> (คัน ลมพิษ) เท่านั้น · <b>ไม่รักษาทางเดินหายใจหรือความดัน</b> · RCUK 2021: ไม่แนะนำในการรักษาฉุกเฉินระยะแรก · เลือกชนิด non-sedating ได้</td></tr>
+    <tr><td><b>Corticosteroid</b> (hydrocortisone 200 mg / methylprednisolone)</td><td><b>ไม่แนะนำ routine</b> · <b>ไม่ป้องกัน biphasic</b> · อาจใช้เป็นยาลำดับสามในหืดรุนแรงร่วมหรือ shock ดื้อ</td></tr>
+    <tr><td><b>Salbutamol พ่น</b></td><td>เสริมเมื่อ wheeze หลัง adrenaline · <b>ห้ามใช้แทน adrenaline เข็มต่อไป</b></td></tr>
+    <tr><td><b>H2 blocker</b></td><td>หลักฐานน้อย อาจช่วยผิวหนังร่วม H1</td></tr>
+    <tr><td><b>Adrenaline พ่นละออง</b></td><td>เสริมในกล่องเสียงบวม (stridor) ระหว่างรอ — ไม่แทน IM</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="obs" class="col">
+  <div class="sec-num">07</div>
+  <h2>สังเกตอาการและ biphasic reaction</h2>
+  <p><b>Biphasic</b> = อาการกลับมาหลังหายสนิท โดยไม่ได้สัมผัสสิ่งกระตุ้นซ้ำ ภายใน 1–72 ชม. (ส่วนใหญ่ใน 12 ชม.) · พบราว <b>5%</b> · เสี่ยงขึ้นเมื่อ <b>อาการเริ่มแรกรุนแรง</b> หรือ <b>ต้องใช้ adrenaline &gt;1 ครั้ง</b> หรือได้ adrenaline ช้า</p>
+  <div class="tbl"><table>
+    <tr><th>ระยะสังเกต (หลังอาการหาย) — RCUK 2021</th><th>เมื่อ</th></tr>
+    <tr><td><b>≥2 ชม.</b> (fast-track)</td><td>ตอบสนองดีใน 5–10 นาทีต่อ adrenaline <b>1 ครั้ง</b> ที่ให้ภายใน 30 นาทีจากเริ่มอาการ · <b>หายสนิท</b> · มี adrenaline auto-injector <b>2 อัน</b>ที่ยังไม่หมดอายุและสอนใช้แล้ว · มีคนดูแลหลังกลับบ้าน</td></tr>
+    <tr><td><b>≥6 ชม.</b></td><td>ต้องใช้ adrenaline <b>2 ครั้ง</b> · เคยมี biphasic reaction</td></tr>
+    <tr><td><b>≥12 ชม.</b></td><td>อาการรุนแรง ใช้ adrenaline <b>&gt;2 ครั้ง</b> · หืดรุนแรง/หายใจลำบากรุนแรง · อาจยังดูดซึมสารก่อแพ้ต่อ (ยาออกฤทธิ์นาน) · มาตอนกลางคืน/ไม่สามารถรับมือถ้าแย่ลง · บ้านไกลการรักษาฉุกเฉิน</td></tr>
+  </table></div>
+  <div class="box note"><b>บริบทไทย</b>ผู้ป่วยส่วนใหญ่ <b>ไม่มี adrenaline auto-injector</b> พกติดตัว จึงมักไม่เข้าเกณฑ์ fast-track 2 ชม. · ในทางปฏิบัติจึงมักใช้ระยะสังเกต <b>≥6 ชม.</b> เมื่อไม่ครบเกณฑ์ fast-track (การอนุมานจาก RCUK/NICE NG258 ไม่ใช่ข้อความในแนวทางโดยตรง · NICE: เด็ก &lt;16 ปีที่ไม่เข้าเกณฑ์ 2 ชม. ให้ admit) <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 8 -->
+<section id="tryp" class="col">
+  <div class="sec-num">08</div>
+  <h2>Serum tryptase</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เมื่อไรเจาะ</h4><ul><li><b>ครั้งที่ 1</b>: <b>เร็วที่สุด</b>หลังเริ่มรักษา (ไม่ต้องรอ)</li><li><b>ครั้งที่ 2</b>: <b>1–2 ชม.หลังเริ่มอาการ</b> (ไม่เกิน 4 ชม.) — RCUK 2021 · NICE NG258 (2026)</li><li><b>Baseline</b>: <b>≥24 ชม.</b>หลังหาย (หรือที่คลินิก allergy)</li><li><b>อย่าให้การเจาะทำให้การรักษาช้า</b></li></ul></div>
+    <div class="card c-ok"><h4>แปลผล</h4><ul><li><b>สูตร 20% + 2</b>: acute ≥ (1.2 × baseline) + 2 ng/mL → สนับสนุน mast cell activation</li><li>ปกติไม่ตัด anaphylaxis (โดยเฉพาะแพ้อาหาร/ไม่มี hypotension)</li><li><b>Baseline &gt;8 ng/mL</b> → คิดถึง hereditary α-tryptasemia หรือ mastocytosis (JTFPP 2023 แนะนำวัด baseline ในผู้ป่วยแพ้แมลงรุนแรง/ไม่ทราบสาเหตุ)</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="dc" class="col">
+  <div class="sec-num">09</div>
+  <h2>ก่อนจำหน่าย</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ต้องได้ทุกราย</h4><ul><li><b>อธิบายว่าเกิด anaphylaxis</b> สิ่งที่น่าสงสัย และวิธีหลีกเลี่ยง (อาหารแฝง ยาในกลุ่มเดียวกัน)</li><li><b>บันทึกการแพ้</b> ในระบบโรงพยาบาล (HOSxP) + <b>บัตรแพ้ยา</b> · แจ้งร้านยา/คลินิกที่ใช้บริการ</li><li><b>Anaphylaxis action plan</b> เขียนชัด: อาการไหน → ฉีด adrenaline → โทร 1669</li><li><b>Adrenaline พกติดตัว</b> (auto-injector 2 อัน ถ้าหาได้) + สอนวิธีใช้</li><li><b>ส่งต่อแพทย์โรคภูมิแพ้</b> เพื่อยืนยันสาเหตุ/ทดสอบ/desensitization/immunotherapy พิษแมลง</li></ul></div>
+    <div class="card c-warn"><h4>ทบทวน</h4><ul><li><b>Beta-blocker/ACEI</b> — พิจารณาเปลี่ยนเมื่อเหมาะสม (ชั่งกับโรคหัวใจ)</li><li>คุมหืดให้ดี</li><li>Antihistamine/steroid หลังจำหน่าย 2–3 วัน สำหรับผื่นที่เหลือเท่านั้น — <b>ไม่ใช่การป้องกัน</b></li><li>ในไทย adrenaline auto-injector หาได้จำกัด — บางสถานพยาบาลสอนการใช้ <b>prefilled syringe</b> แทน (ตามนโยบายของแต่ละที่) <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="spec" class="col">
+  <div class="sec-num">10</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ประเด็น</th></tr>
+    <tr><td><b>ระหว่างผ่าตัด/ดมยา</b></td><td>ไม่มีผื่นบ่อย อาการแรกอาจเป็นความดันตก/ventilate ยาก · สาเหตุ: NMBA, antibiotic, chlorhexidine, latex, blue dye · ส่ง tryptase และส่งต่อ allergy</td></tr>
+    <tr><td><b>Contrast media</b></td><td>Premedication ด้วย steroid/antihistamine <b>ไม่ป้องกันได้แน่นอน</b> · เคยแพ้รุนแรง → เปลี่ยนชนิด contrast/ใช้ imaging อื่น ร่วมกับทีมรังสี</td></tr>
+    <tr><td><b>เซรุ่มจากม้า</b> (งู ERIG)</td><td>เตรียม adrenaline ข้างเตียงเสมอ · เกิดปฏิกิริยา → หยุด รักษา แล้วให้ต่อจนครบเมื่ออาการดีขึ้น — หน้า <a href="../snakebite/index.html">งูพิษกัด</a> · <a href="../rabies/index.html">Rabies PEP</a></td></tr>
+    <tr><td><b>ตั้งครรภ์</b></td><td>Adrenaline ขนาดเดียวกัน · นอนตะแคงซ้าย · เป้า SBP ≥90 เพื่อทารก · ประเมินทารก</td></tr>
+    <tr><td><b>ACEI angioedema / HAE</b></td><td>บวมไม่มีลมพิษ ไม่คัน · bradykinin-mediated → adrenaline/antihistamine/steroid ได้ผลน้อย · <b>ทางเดินหายใจสำคัญที่สุด</b> · HAE: icatibant, C1-INH concentrate (FFP ถ้าไม่มี) · ACEI-angioedema: RCT ของ icatibant ไม่ได้ผลชัด · หยุด ACEI ถาวร (ARB ใช้ด้วยความระวัง)</td></tr>
+    <tr><td><b>NSAID-exacerbated</b></td><td>แบบ cross-reactive (COX-1): หลีกเลี่ยง NSAIDs ทั้งกลุ่ม (paracetamol/celecoxib มักใช้ได้ภายใต้การประเมิน) · แบบแพ้ยาตัวเดียว (IgE-type) อาจใช้ NSAID กลุ่มโครงสร้างอื่นได้ — ส่ง allergist</td></tr>
+  </table></div>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัย anaphylaxis</b>ผิวหนัง + หายใจ/ความดัน/GI รุนแรง · หรือ BP ต่ำ/bronchospasm หลังสัมผัสสารก่อแพ้</div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>Adrenaline IM 0.5 mg ต้นขา</b> (0.01 mg/kg) · หยุดสิ่งกระตุ้น · นอนยกขา · O₂ · เปิดเส้น</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>5 นาทีต่อมา ดีขึ้นไหม?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ดีขึ้น</span><div class="node dx green"><b>สังเกตอาการ</b>2–12 ชม. ตามเกณฑ์ · tryptase · action plan · บัตรแพ้ · allergy</div></div>
+        <div class="arm"><span class="lab">ไม่ดีขึ้น</span><div class="node dx hypo"><b>IM ซ้ำ + fluid bolus</b>500–1,000 mL · salbutamol ถ้า wheeze · ประเมิน airway</div></div>
+        <div class="arm"><span class="lab">ไม่ดีขึ้นหลัง 2 เข็ม</span><div class="node red"><b>Refractory</b>Adrenaline infusion 1 mg/100 mL เริ่ม 0.5–1 mL/kg/ชม. · ICU · beta-blocker → glucagon</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool plan" id="tAd" style="margin-top:12px">
+    <h3>ขนาด adrenaline และสารน้ำ</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="dW" value="60"></label>
+      <label class="f">อายุ (ปี)<input type="number" id="dA" step="0.5" value="35"></label>
+      <label class="f">จำนวนเข็ม IM ที่ให้แล้ว<input type="number" id="dN" value="0"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="dBb"> ได้ beta-blocker</label><label><input type="checkbox" id="dHypo"> ความดันต่ำ</label><label><input type="checkbox" id="dPreg"> ตั้งครรภ์</label></div>
+    <div class="out" id="adOut"></div>
+  </div>
+  <div class="tool" id="tDx" style="margin-top:12px">
+    <h3>เข้าเกณฑ์ WAO หรือไม่</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="xSk" checked> ผิวหนัง/เยื่อบุ (ลมพิษทั่วตัว คัน ปาก-ลิ้นบวม)</label>
+      <label><input type="checkbox" id="xRe" checked> ระบบหายใจ (หอบ wheeze stridor SpO₂ ลด)</label>
+      <label><input type="checkbox" id="xCv"> BP ต่ำ/เป็นลม/หมดสติ</label>
+      <label><input type="checkbox" id="xGi"> ปวดท้องรุนแรง/อาเจียนซ้ำ</label>
+      <label><input type="checkbox" id="xKn"> หลังสัมผัสสารที่ทราบ/น่าจะแพ้</label>
+      <label><input type="checkbox" id="xLx"> กล่องเสียงบวม (เสียงแหบ stridor)</label>
+      <label><input type="checkbox" id="xBr"> Bronchospasm</label>
+    </div>
+    <div class="out" id="dxOut"></div>
+  </div>
+  <div class="tool" id="tOb" style="margin-top:12px">
+    <h3>ระยะสังเกตอาการ (RCUK 2021)</h3>
+    <div class="fields">
+      <label class="f">จำนวน adrenaline ที่ใช้<input type="number" id="oN" value="1"></label>
+      <label class="f">อาการหายสนิทเวลา<input type="time" id="oT" value="15:30"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="oFast" checked> ให้ adrenaline ภายใน 30 นาที + ตอบสนองใน 5–10 นาที</label><label><input type="checkbox" id="oAai"> มี auto-injector 2 อัน + สอนใช้แล้ว</label><label><input type="checkbox" id="oSup" checked> มีคนดูแลที่บ้าน</label><label><input type="checkbox" id="oBi"> เคยมี biphasic</label><label><input type="checkbox" id="oAs"> หืดรุนแรง/หายใจลำบากรุนแรง</label><label><input type="checkbox" id="oSlow"> สารก่อแพ้อาจดูดซึมต่อ (ยาออกฤทธิ์นาน)</label><label><input type="checkbox" id="oNight"> มาตอนกลางคืน/บ้านไกลการรักษา</label></div>
+    <div class="out" id="obOut"></div>
+  </div>
+  <div class="tool" id="tTr" style="margin-top:12px">
+    <h3>แปลผล tryptase (20% + 2)</h3>
+    <div class="fields">
+      <label class="f">Acute tryptase (ng/mL)<input type="number" id="rA" step="0.1" value="14"></label>
+      <label class="f">Baseline tryptase (ng/mL)<input type="number" id="rB" step="0.1" value="4.5"></label>
+      <label class="f">เจาะ acute กี่ชม.หลังเริ่มอาการ<input type="number" id="rH" step="0.5" value="1.5"></label>
+    </div>
+    <div class="out" id="trOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>สงสัย = ฉีด adrenaline</b> · ช้าคือปัจจัยตาย</div></div>
+    <div class="pearl"><div><b>0.5 mg IM ต้นขา</b> (0.01 mg/kg) · ซ้ำทุก 5 นาที</div></div>
+    <div class="pearl"><div><b>ห้าม 1 mg/mL ทาง IV</b></div></div>
+    <div class="pearl"><div><b>นอนราบยกขา ห้ามลุกยืน</b></div></div>
+    <div class="pearl"><div><b>ไม่มีผื่นก็เป็น anaphylaxis ได้</b> (shock/bronchospasm หลังสัมผัส)</div></div>
+    <div class="pearl"><div><b>2 เข็มไม่ดีขึ้น = refractory</b> → infusion 1 mg/100 mL</div></div>
+    <div class="pearl"><div><b>Beta-blocker → glucagon 1–5 mg IV</b></div></div>
+    <div class="pearl"><div><b>Antihistamine = ผิวหนังเท่านั้น</b> · steroid ไม่ป้องกัน biphasic</div></div>
+    <div class="pearl"><div><b>สังเกต ≥6 ชม. เป็นค่าเริ่มต้น</b> (2 ชม.เฉพาะเข้าเกณฑ์ fast-track)</div></div>
+    <div class="pearl"><div><b>Tryptase 30 นาที–2 ชม.</b> + baseline ≥24 ชม. · 20% + 2</div></div>
+    <div class="pearl"><div><b>บัตรแพ้ + action plan + adrenaline พกติดตัว + allergist</b></div></div>
+    <div class="pearl"><div><b>Angioedema ไม่มีลมพิษ + ACEI</b> = bradykinin · adrenaline ช่วยน้อย</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../snakebite/index.html">งูพิษกัด →</a> · <a href="../rabies/index.html">Rabies PEP →</a> · <a href="../asthma-copd/index.html">Asthma/COPD →</a> · <a href="../sepsis/index.html">Sepsis/shock →</a> · <a href="../icu-drugs/index.html">ICU drugs →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Cardona V, Ansotegui IJ, Ebisawa M, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J 2020;13:100472 · 2) Muraro A, Worm M, Alviani C, et al. EAACI guidelines: Anaphylaxis (2021 update). Allergy 2022;77:357–77 · 3) Resuscitation Council UK. Emergency treatment of anaphylaxis: guidelines for healthcare providers. 2021 · 4) Dodd A, Hughes A, Sargant N, et al. Evidence update for the treatment of anaphylaxis. Resuscitation 2021;163:86–96 · 5) Golden DBK, Wang J, Waserman S, et al. Anaphylaxis: a 2023 practice parameter update. Ann Allergy Asthma Immunol 2024;132:124–76 · 6) NICE NG258. Anaphylaxis: assessment and referral after emergency treatment. 2026 · 7) Dribin TE, Sampson HA, et al. Epinephrine and EMS activation recommendations during acute allergic reactions in community settings: international consensus. J Allergy Clin Immunol 2026;157:429–41 · 8) Dribin TE, et al. Anaphylaxis definition, overview, and clinical support tool: 2024 consensus report — a GA²LEN project. J Allergy Clin Immunol 2025;156:406–17<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','anView');
+mountWalker({
+ start:{q:'อาการเฉียบพลันที่ผิวหนัง/เยื่อบุ (ลมพิษ คัน ปาก-ลิ้นบวม)?',o:[['มี','sk'],['ไม่มี','nsk']]},
+ sk:{q:'ร่วมกับ: หายใจลำบาก/wheeze/stridor · BP ต่ำ/เป็นลม · ปวดท้อง-อาเจียนรุนแรง อย่างน้อย 1 ข้อ?',o:[['มี','ana'],['ไม่มี — ผิวหนังอย่างเดียว','skin']]},
+ nsk:{q:'หลังสัมผัสสารที่ทราบ/น่าจะแพ้ เกิด BP ต่ำ หรือ bronchospasm หรือกล่องเสียงบวม?',o:[['ใช่','ana'],['ไม่ใช่','ddx']]},
+ skin:{leaf:true,cls:'warn',t:'ยังไม่เข้าเกณฑ์ anaphylaxis',b:'Antihistamine · <b>เฝ้าอาการใกล้ชิด</b> โดยเฉพาะหลังสัมผัสสารก่อแพ้ที่เคยรุนแรง · ลุกลามไปหายใจ/ความดัน → adrenaline ทันที (ให้ได้แม้ไม่ครบเกณฑ์ถ้าสงสัยและลุกลาม)'},
+ ddx:{leaf:true,cls:'violet',t:'คิดถึงโรคอื่น',b:'Vasovagal (ชีพจรช้า ไม่มีผื่น) · asthma · panic · <b>ACEI/hereditary angioedema</b> (บวมไม่มีลมพิษ) · sepsis/cardiogenic shock · scombroid'},
+ ana:{leaf:true,cls:'danger',t:'Anaphylaxis — adrenaline ทันที',b:'<b>Adrenaline 1 mg/mL IM 0.01 mg/kg (ผู้ใหญ่ 0.5 mg) ต้นขาด้านหน้า-ข้าง</b> · หยุดสิ่งกระตุ้น · นอนราบยกขา · O₂ · เปิดเส้น · BP ต่ำ → crystalloid 500–1,000 mL',next:['5 นาทีต่อมา','re']},
+ re:{q:'5 นาทีหลัง adrenaline — อาการหายใจ/ความดันดีขึ้น?',o:[['ดีขึ้น','obs'],['ไม่ดีขึ้น (เข็มแรก)','rep'],['ไม่ดีขึ้นหลัง 2 เข็ม','ref']]},
+ obs:{leaf:true,cls:'ok',t:'ดีขึ้น → สังเกตอาการ',b:'2 ชม. (fast-track ครบเกณฑ์) · <b>≥6 ชม.</b> (2 เข็ม/ค่าเริ่มต้น) · ≥12 ชม. (รุนแรง >2 เข็ม หืดรุนแรง กลางคืน) · tryptase 30 นาที–2 ชม. · บัตรแพ้ · action plan · adrenaline พกติดตัว · ส่ง allergist'},
+ rep:{leaf:true,cls:'warn',t:'ให้ IM ซ้ำ',b:'Adrenaline IM ซ้ำ · fluid bolus · salbutamol ถ้า wheeze (ไม่แทน adrenaline) · ประเมิน airway · เตรียม infusion'},
+ ref:{q:'ได้ beta-blocker หรือไม่?',o:[['ไม่ได้','refa'],['ได้','refb']]},
+ refa:{leaf:true,cls:'danger',t:'Refractory anaphylaxis',b:'IM เข็มที่ 3 ระหว่างเตรียม · <b>adrenaline 1 mg ใน NSS 100 mL เริ่ม 0.5–1 mL/kg/ชม.</b> สายแยก monitor ต่อเนื่อง · fluid bolus · ICU · ยังช็อก → noradrenaline/vasopressin'},
+ refb:{leaf:true,cls:'danger',t:'Refractory + beta-blocker',b:'Adrenaline infusion ตามสูตร + <b>glucagon 1–5 mg IV ใน 5 นาที</b> แล้ว 5–15 µg/นาที · ระวังอาเจียน/สำลัก · ICU'}
+},'apTrail','apStage');
+
+function ad(){
+  const w=num('dW'),a=num('dA'),n=num('dN');const L=[];
+  if(!w){$('adOut').textContent='ใส่น้ำหนัก';return}
+  const mg=Math.min(0.5,w*0.01);let band=null;
+  if(a!==null){if(a>12)band=['0.5 mg = 0.5 mL','>12 ปี/ผู้ใหญ่ (เด็กตัวเล็ก 0.3 mg)'];else if(a>=6)band=['0.3 mg = 0.3 mL','6–12 ปี'];else if(a>=0.5)band=['0.15 mg = 0.15 mL','6 เดือน–6 ปี'];else band=['0.1–0.15 mg = 0.1–0.15 mL','<6 เดือน'];}
+  L.push(band?`<b>Adrenaline 1 mg/mL IM ${band[0]}</b> (RCUK ตามอายุ: ${band[1]}) ที่ต้นขาด้านหน้า-ข้าง · เทียบตามน้ำหนัก 0.01 mg/kg = ${mg.toFixed(2)} mg`:`<b>Adrenaline 1 mg/mL IM ${mg.toFixed(2)} mg = ${mg.toFixed(2)} mL</b> (0.01 mg/kg สูงสุด 0.5) ที่ต้นขาด้านหน้า-ข้าง`);
+  if(n!==null&&n>=2)L.push(`<b>ได้แล้ว ${n} เข็มยังไม่ดีขึ้น = refractory</b> → เข็มถัดไประหว่างเตรียม + <b>infusion</b>: adrenaline 1 mg ใน NSS 100 mL (10 µg/mL) เริ่ม <b>${Math.round(w*0.5)}–${Math.round(w*1)} mL/ชม.</b> (0.5–1 mL/kg/ชม. = ${(w*0.5*10/60).toFixed(1)}–${(w*10/60).toFixed(1)} µg/นาที) ปรับตามอาการ · ขอ ICU/ผู้เชี่ยวชาญ`);
+  else L.push(`ไม่ดีขึ้นใน 5 นาที → ซ้ำได้ (เข็มที่ ${(n??0)+1})`);
+  const fb=a!==null&&a<=12?`${Math.round(w*10)} mL (10 mL/kg)`:'500–1,000 mL';
+  if($('dHypo').checked)L.push(`ความดันต่ำ → <b>crystalloid bolus ${fb}</b> ซ้ำตามการตอบสนอง · นอนราบยกขา`);
+  if($('dBb').checked){const g=a!==null&&a<=12?`${Math.min(1,w*0.03).toFixed(2)} mg (20–30 µg/kg สูงสุด 1 mg)`:'1–5 mg';L.push(`ได้ beta-blocker + ตอบสนองไม่ดี → <b>glucagon ${g} IV ช้าใน 5 นาที</b> แล้ว infusion 5–15 µg/นาที (ผู้ใหญ่) · ระวังอาเจียน`);}
+  if($('dPreg').checked)L.push('ตั้งครรภ์: ขนาด adrenaline เท่าเดิม · นอนตะแคงซ้าย · เป้า SBP ≥90');
+  L.push('<span class="muted">ห้ามให้ 1 mg/mL ทาง IV bolus · antihistamine เฉพาะผิวหนัง · steroid ไม่ routine</span>');
+  $('adOut').innerHTML=L.join('<br>');
+}
+bindAll('#tAd input',ad);
+
+function dx(){
+  const c=id=>$(id).checked;const L=[];
+  const c1=c('xSk')&&(c('xRe')||c('xCv')||c('xGi')||c('xLx')||c('xBr'));
+  const c2=c('xKn')&&(c('xCv')||c('xBr')||c('xLx')||c('xRe'));
+  if(c1||c2){L.push(`<b>เข้าเกณฑ์ anaphylaxis (WAO 2020 ข้อ ${[c1?'1':null,c2?'2':null].filter(Boolean).join(' และ ')})</b> → <b>adrenaline IM ทันที</b>`);}
+  else if(c('xSk')){L.push('ผิวหนังอย่างเดียว — <b>ยังไม่เข้าเกณฑ์</b> · antihistamine และเฝ้าใกล้ชิด');if(c('xKn'))L.push('หลังสัมผัสสารก่อแพ้ที่ทราบ: <b>ให้ adrenaline ได้ทันทีถ้าอาการลุกลาม</b> หรือเคยแพ้รุนแรง (ไม่ต้องรอครบเกณฑ์)');}
+  else if(c('xRe')||c('xCv')||c('xGi'))L.push((c('xKn')?'หลังสัมผัสสารก่อแพ้ แต่มีเฉพาะอาการทางเดินอาหาร':'มีอาการระบบอื่นโดยไม่มีผิวหนัง และไม่มีประวัติสัมผัส')+' → <b>ยังไม่เข้าเกณฑ์ WAO</b> · คิดถึงโรคอื่น (vasovagal, asthma, shock สาเหตุอื่น, ACEI angioedema) แต่ถ้าสงสัยสูงให้ adrenaline ได้');
+  else L.push('ยังไม่มีอาการที่เข้าเกณฑ์');
+  if(c('xGi')&&!c('xRe')&&!c('xCv')&&c('xSk'))L.push('<span class="muted">อาการทางเดินอาหารรุนแรงนับเป็นเกณฑ์ โดยเฉพาะเมื่อสิ่งกระตุ้นไม่ใช่อาหาร (เช่น ยา แมลง)</span>');
+  $('dxOut').innerHTML=L.join('<br>');
+}
+bindAll('#tDx input',dx);
+
+function ob(){
+  const n=num('oN'),t=$('oT').value;const c=id=>$(id).checked;
+  let h,why;
+  if((n!==null&&n>2)||c('oAs')||c('oSlow')||c('oNight')){h=12;why=[(n>2?'adrenaline >2 ครั้ง':null),c('oAs')?'หืด/หายใจลำบากรุนแรง':null,c('oSlow')?'สารก่อแพ้ดูดซึมต่อ':null,c('oNight')?'กลางคืน/บ้านไกล':null].filter(Boolean).join(' · ');}
+  else if((n!==null&&n===2)||c('oBi')){h=6;why=[n===2?'adrenaline 2 ครั้ง':null,c('oBi')?'เคย biphasic':null].filter(Boolean).join(' · ');}
+  else if(n===1&&c('oFast')&&c('oAai')&&c('oSup')){h=2;why='เข้าเกณฑ์ fast-track ครบ';}
+  else{h=6;why='ไม่ครบเกณฑ์ fast-track'+(!c('oAai')?' (ไม่มี auto-injector 2 อัน)':'')+' — ค่าที่ใช้ในทางปฏิบัติ (อนุมานจาก RCUK/NICE)';}
+  const L=[`<b>สังเกตอย่างน้อย ${h} ชม. หลังอาการหายสนิท</b> — ${why}`];
+  if(t){const [hh,mm]=t.split(':').map(Number);const e=hh*60+mm+h*60;const d=Math.floor(e/1440);L.push(`จำหน่ายได้เร็วสุด <b>${String(Math.floor((e%1440)/60)).padStart(2,'0')}:${String(e%60).padStart(2,'0')}${d?' (+1 วัน)':''}</b> ถ้ายังปกติ`);}
+  if(n===0)L.push('<span class="muted">ยังไม่ได้ adrenaline — ถ้าเข้าเกณฑ์ anaphylaxis ควรได้ทันที</span>');
+  L.push('ก่อนจำหน่าย: tryptase (ถ้าเจาะ) · บัตรแพ้/บันทึก HOSxP · action plan · adrenaline พกติดตัว + สอนใช้ · ส่ง allergist · ทบทวน beta-blocker/ACEI');
+  $('obOut').innerHTML=L.join('<br>');
+}
+bindAll('#tOb input',ob);
+
+function tr(){
+  const a=num('rA'),b=num('rB'),h=num('rH');const L=[];
+  if(a===null){$('trOut').textContent='ใส่ acute tryptase';return}
+  if(h!==null){if(h>4)L.push(`เจาะที่ ${h} ชม. — ช้าไป อาจลดลงแล้ว (ไม่ควรเกิน ~4 ชม.)`);}
+  if(b!==null){const th=1.2*b+2;L.push(`เกณฑ์ 20% + 2 = 1.2 × ${b} + 2 = <b>${th.toFixed(1)} ng/mL</b>`);
+    L.push(a>=th?`Acute ${a} ≥ ${th.toFixed(1)} → <b>สนับสนุน mast cell activation/anaphylaxis</b>`:`Acute ${a} < ${th.toFixed(1)} → ไม่ผ่านเกณฑ์ — <b>ไม่ตัด anaphylaxis</b> (พบบ่อยในแพ้อาหาร/ไม่มี hypotension)`);
+    if(b>20)L.push(`<b>Baseline ${b} >20 ng/mL</b> → เข้าเกณฑ์รองของ systemic mastocytosis · ส่ง allergist/โลหิตวิทยา`);else if(b>8)L.push(`<b>Baseline ${b} >8 ng/mL</b> → คิดถึง hereditary α-tryptasemia/mastocytosis · ส่ง allergist`);}
+  else L.push(a>11.4?`Acute ${a} สูงกว่าค่าปกติทั่วไป (~11.4) — แต่ต้องมี baseline (≥24 ชม.หลังหาย) เพื่อแปลผลด้วยสูตร 20% + 2`:'ยังไม่มี baseline — เจาะ ≥24 ชม.หลังหายเพื่อเทียบ');
+  $('trOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTr input',tr);
+
+mountQuiz([
+ ['หญิง 30 ปี กินกุ้ง 20 นาทีต่อมา ลมพิษทั่วตัว หอบ wheeze BP 100/60 ขั้นแรกที่สำคัญที่สุด',
+  ['Chlorpheniramine IV','Hydrocortisone IV','Adrenaline 0.5 mg IM ต้นขา','Salbutamol พ่น'],2,'Adrenaline คือยาหลัก ให้ก่อนอย่างอื่น'],
+ ['ข้อใดถูกเกี่ยวกับตำแหน่งฉีด adrenaline',
+  ['Deltoid IM','SC ที่ต้นแขน','IM ต้นขาด้านหน้า-ข้าง','IV push 1 mg/mL'],2,'ดูดซึมเร็วที่สุด'],
+ ['ผู้ป่วยแพ้ยาระหว่างให้ ceftriaxone BP 70/40 ไม่มีผื่น ข้อใดถูก',
+  ['ไม่ใช่ anaphylaxis เพราะไม่มีผื่น','เข้าเกณฑ์ (ความดันต่ำหลังสัมผัสสารที่น่าจะแพ้) ให้ adrenaline','ให้ antihistamine แล้วดูอาการ','ให้ steroid ก่อน'],1,'WAO เกณฑ์ข้อ 2'],
+ ['ได้ adrenaline IM ไปแล้ว 2 ครั้ง ยังความดันต่ำและหอบ ขั้นต่อไป',
+  ['Adrenaline 1 mg/mL 1 mL IV push','Adrenaline infusion (1 mg/100 mL) + fluid bolus + ICU','Hydrocortisone อย่างเดียว','รอ 30 นาที'],1,'Refractory anaphylaxis'],
+ ['ผู้ป่วยกิน propranolol ไม่ตอบสนองต่อ adrenaline ยาที่ควรเพิ่ม',
+  ['Atropine','Glucagon','Calcium','Methylene blue'],1,'Glucagon 1–5 mg IV ใน 5 นาที'],
+ ['ข้อใดถูกเกี่ยวกับ corticosteroid ใน anaphylaxis',
+  ['ป้องกัน biphasic ได้ดี','ไม่แนะนำ routine และไม่ป้องกัน biphasic','ให้ก่อน adrenaline','ทดแทน adrenaline ได้'],1,'RCUK 2021/JTFPP'],
+ ['ผู้ป่วยตอบสนองดีต่อ adrenaline 1 เข็ม แต่ไม่มี adrenaline พกติดตัว ควรสังเกตอาการอย่างน้อยเท่าไรหลังหาย',
+  ['30 นาที','2 ชม.','6 ชม.','24 ชม.'],2,'ไม่ครบเกณฑ์ fast-track 2 ชม.'],
+ ['Tryptase baseline 5 ng/mL acute 10 ng/mL แปลผลอย่างไร',
+  ['ไม่ใช่ anaphylaxis แน่นอน','ผ่านเกณฑ์ 20% + 2 (เกณฑ์ = 8) สนับสนุน mast cell activation','ต้องเกิน 20 ng/mL','ต้องเจาะซ้ำ 24 ชม.'],1,'1.2 × 5 + 2 = 8'],
+ ['ชายกิน enalapril ลิ้นและริมฝีปากบวมมาก ไม่มีลมพิษ ไม่คัน ข้อใดสำคัญที่สุด',
+  ['ให้ antihistamine แล้วกลับบ้าน','ประเมินและเตรียมทางเดินหายใจ หยุด ACEI ถาวร','ให้ ACEI ต่อแต่ลดขนาด','ไม่ต้องทำอะไร'],1,'Bradykinin-mediated — adrenaline/antihistamine ได้ผลน้อย']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

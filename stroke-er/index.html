@@ -1,0 +1,723 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Stroke code ที่ ER · TIA · Thrombolysis checklist · ICH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Neurology · Emergency · AHA/ASA 2026 · AHA TIA 2023 · ESO-EANS ICH 2025 · AHA ICH 2022</div>
+  <h1>Stroke code ที่ห้องฉุกเฉิน<br>TIA · Thrombolysis checklist · ICH</h1>
+  <p class="sub">ส่วนเสริมของหน้า <a href="../stroke/index.html">Acute Ischemic Stroke 2026</a> เน้นงานจริงที่ ER สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ได้แก่ 10 นาทีแรก แยก <b>stroke mimic/chameleon</b> เช็กข้อห้าม <b>IV thrombolysis</b> การเฝ้าระวังหลังให้ยา การจัดการ <b>sICH และ angioedema</b> หลังยาละลายลิ่มเลือด การประเมิน <b>TIA</b> และการดูแล <b>เลือดออกในสมอง (ICH)</b> ตั้งแต่ความดัน การแก้ฤทธิ์ยาต้านการแข็งตัวของเลือด จนถึงข้อบ่งชี้ผ่าตัด</p>
+  <p class="cite">อ้างอิงหลัก: Prabhakaran S, et al. 2026 AHA/ASA Guideline for the Early Management of Patients With AIS (Stroke 2026; doi:10.1161/STR.0000000000000513) · Amin HP, et al. Diagnosis, workup, risk reduction of TIA in the ED: AHA Scientific Statement (Stroke 2023;54:e109–21) · Steiner T, et al. ESO-EANS guideline on spontaneous ICH (Eur Stroke J 2025;10:1007–86) · Greenberg SM, et al. 2022 AHA/ASA Guideline for spontaneous ICH (Stroke 2022;53:e282–361) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>นาทีแรก</b>LKW · DTX · ABC · NIHSS/BE-FAST → CT ทันที · ไม่รอแล็บอื่น</div>
+    <div class="stage" style="--c:var(--accent)"><b>ตีบ/อุดตัน</b>Disabling + ≤4.5 ชม. + ไม่มีข้อห้าม → TNK/alteplase · BP &lt;185/110 · LVO → EVT</div>
+    <div class="stage" style="--c:var(--warn)"><b>เลือดออก</b>SBP เป้า ~140 · แก้ฤทธิ์ยาต้านการแข็งตัว &lt;1 ชม. · care bundle · ปรึกษาประสาทศัลย์</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#code">Stroke code</a><a href="#mimic">Mimic · chameleon</a><a href="#ivt">เช็กข้อห้าม IVT</a><a href="#post">หลังให้ยา</a><a href="#comp">sICH · angioedema</a><a href="#tia">TIA</a><a href="#ich">ICH: ประเมิน</a><a href="#ichrx">ICH: รักษา</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="code" class="col">
+  <div class="sec-num">01</div>
+  <h2>Stroke code: 10 นาทีแรกที่ ER</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ทำทันที (พร้อมกัน)</h4><ul><li><b>Last known well (LKW)</b> — เวลาที่เห็นปกติครั้งสุดท้าย ไม่ใช่เวลาที่พบ · ตื่นมาพร้อมอาการ = LKW คือก่อนนอน</li><li><b>เจาะ DTX ทุกราย</b> — น้ำตาลต่ำเลียนแบบ stroke ได้ (แก้ &lt;60 mg/dL)</li><li>ABC · SpO₂ (ให้ O₂ เมื่อ &lt;94%) · BP · ECG</li><li>NIHSS (หรือ BE-FAST) · <b>เน้นว่า deficit "disabling" หรือไม่</b></li><li><b>ส่ง CT สมอง (± CTA) ทันที</b> — door-to-CT เป้า ≤20–25 นาที</li><li>ประวัติยา: <b>warfarin/DOAC (เวลากินครั้งสุดท้าย)</b> ยาต้านเกล็ดเลือด ผ่าตัด/เลือดออกล่าสุด</li></ul></div>
+    <div class="card c-acc"><h4>อย่าให้ล่าช้า</h4><ul><li><b>ไม่ต้องรอผลแล็บก่อน IVT</b> ยกเว้น glucose — รอ platelet/INR เฉพาะสงสัยว่าผิดปกติ (ได้ warfarin, โรคตับ, มะเร็งเลือด)</li><li>ECG/troponin ทำได้แต่ <b>ห้ามทำให้ IVT/EVT ช้า</b></li><li>CTA ใน suspected LVO <b>ไม่ต้องรอ creatinine</b></li><li>ใส่สายสวน NG/foley/arterial line <b>เลื่อนออกไป</b> ถ้าทำได้</li><li>Thai <b>Stroke Fast Track</b>: โทร 1669 · รพ.ที่ทำ EVT ไม่ได้ให้ TNK แล้ว <b>drip-and-ship</b> (door-in-door-out ≤120 นาที)</li></ul></div>
+  </div>
+  <div class="box note"><b>เป้าหมายเวลา (ตัวชี้วัดที่ใช้กันทั่วไป)</b>Door-to-CT ≤20–25 นาที · <b>Door-to-needle ≤60 นาที</b> (หลายเครือข่ายตั้งเป้า ≤45) · Door-in-door-out สำหรับส่งต่อ EVT ≤120 นาที · ขนาดยา TNK/alteplase, EVT criteria และ pathophysiology อยู่ในหน้า <a href="../stroke/index.html">Acute Ischemic Stroke</a> <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 2 -->
+<section id="mimic" class="col">
+  <div class="sec-num">02</div>
+  <h2>Stroke mimic และ chameleon</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Mimic (ดูเหมือน stroke แต่ไม่ใช่)</h4><ul><li><b>Hypo/hyperglycemia</b></li><li><b>Seizure / Todd paresis</b></li><li>Migraine with aura (ค่อยๆ ลาม ±ปวดหัว)</li><li>Functional neurological disorder</li><li>Sepsis/ไข้ทำให้ deficit เก่าแย่ลง (recrudescence)</li><li>Subdural hematoma, เนื้องอก, ฝีในสมอง · Bell palsy · syncope · Wernicke · drug toxicity</li></ul></div>
+    <div class="card c-vio"><h4>Chameleon (stroke ที่หลอกว่าไม่ใช่)</h4><ul><li><b>เวียนศีรษะ/บ้านหมุนเฉียบพลัน</b> — posterior circulation: ตรวจ <b>HINTS</b> (head impulse ปกติ, nystagmus เปลี่ยนทิศ, skew) · เดินไม่ได้/ataxia</li><li>สับสนเฉียบพลัน (aphasia ถูกเข้าใจว่าสับสน)</li><li>Isolated dysarthria, monoparesis, hemianopia</li><li>Basilar occlusion: ซึม เวียน มองภาพซ้อน อาการขึ้นลง</li></ul></div>
+  </div>
+  <div class="box key"><b>อย่ารอแยก mimic จนเสียเวลา</b>AHA 2026: เลือดออกจาก IVT ในผู้ที่เป็น mimic (functional, migraine, seizure) <b>ต่ำมาก (~0.5%)</b> · ไม่ต้องตรวจเพิ่มเพื่อแยก mimic ยกเว้นบริบทเพิ่มความเสี่ยงเลือดออก · น้ำตาลผิดปกติ: แก้ก่อน ถ้า <b>deficit ที่ disabling ยังอยู่หลังแก้ → ให้ IVT ได้</b> · ชักตอนเริ่มอาการไม่ใช่ข้อห้ามถ้าเชื่อว่า deficit มาจากการขาดเลือด</div>
+</section>
+
+<!-- 3 -->
+<section id="ivt" class="col">
+  <div class="sec-num">03</div>
+  <h2>เช็กข้อห้าม IV thrombolysis</h2>
+  <p>AHA 2026 ปรับแนวคิดข้อห้ามจาก "ห้ามเด็ดขาด" เป็น <b>การชั่งประโยชน์–ความเสี่ยงรายบุคคล</b> มากขึ้น (Table 8) · ตารางนี้สรุปเพื่อการเรียน — ใช้ร่วมกับ checklist ของโรงพยาบาล</p>
+  <div class="tbl"><table>
+    <tr><th>หมวด</th><th>ภาวะ</th></tr>
+    <tr><td><span class="rec no">ไม่ให้</span></td><td>CT มี <b>เลือดออกในสมอง</b> หรือ <b>hypodensity ชัด/กว้าง</b> ที่อธิบายอาการ · <b>ไม่ disabling</b> (minor non-disabling → DAPT แทน) · BP ลดลง &lt;185/110 ไม่ได้ · <b>TBI ปานกลาง–รุนแรง ใน 14 วัน</b> · <b>ผ่าตัดสมอง/ไขสันหลัง ใน 14 วัน</b> · spinal cord injury ใน 3 เดือน · <b>intra-axial brain tumor</b> · สงสัย <b>infective endocarditis</b> · สงสัย <b>aortic arch dissection</b> · <b>coagulopathy รุนแรง: platelet &lt;100,000, INR &gt;1.7, aPTT &gt;40 s, PT &gt;15 s</b> · ARIA/ได้ยา amyloid immunotherapy</td></tr>
+    <tr><td><span class="rec s1">ชั่งรายบุคคล</span></td><td><b>DOAC ใน 48 ชม.</b> (2026: ไม่ใช่ข้อห้ามเด็ดขาด — ดูเวลา, ไต, ความรุนแรง, มี EVT/ยาแก้ฤทธิ์หรือไม่) · LMWH ขนาดรักษาใน 24 ชม. · <b>ischemic stroke ใน 3 เดือน</b> · เคยมี ICH (ดูสาเหตุ/ระยะเวลา) · <b>GI/GU bleeding ใน 21 วัน</b> · ผ่าตัดใหญ่/บาดเจ็บนอกสมองใน 14 วัน · เจาะหลอดเลือดแดงที่กดไม่ได้/เจาะหลังใน 7 วัน · STEMI ใน 3 เดือน · pericarditis · ตั้งครรภ์/หลังคลอด · ภาวะทุพพลภาพเดิม · CKD รุนแรง</td></tr>
+    <tr><td><span class="tag add">ให้ได้</span></td><td>ได้ antiplatelet เดี่ยวหรือ DAPT · microbleeds ≤10 (ไม่ต้องรอ MRI) · unruptured aneurysm (ไม่ใช่ giant) · extra-axial tumor (เช่น meningioma) · ประจำเดือน · early ischemic change เล็กน้อย–ปานกลาง · warfarin ที่ INR ≤1.7 · TIA ล่าสุด · ชักตอนเริ่มถ้าเชื่อว่าเป็น stroke · อายุมาก (ไม่มีอายุสูงสุด)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.86rem">สรุปจาก AHA/ASA 2026 Table 8 ผ่านเอกสารสรุปทุติยภูมิ (ฉบับเต็มเข้าถึงไม่ได้) — ตรวจทานกับฉบับเต็มก่อนใช้ · เกณฑ์ BP ก่อนให้ <b>&lt;185/110</b> และหลังให้ <b>&lt;180/105</b> นาน 24 ชม.</p>
+  <div class="box warn"><b>ห้ามให้ aspirin IV ร่วมหรือภายใน 90 นาที</b>หลังเริ่ม IVT · argatroban/eptifibatide/abciximab เสริม IVT ไม่แนะนำ · antiplatelet/anticoagulant หลัง IVT เริ่มหลังทำ CT/MRI ซ้ำที่ ~24 ชม.</div>
+</section>
+
+<!-- 4 -->
+<section id="post" class="col">
+  <div class="sec-num">04</div>
+  <h2>หลังให้ยาละลายลิ่มเลือด</h2>
+  <div class="tbl"><table>
+    <tr><th>ช่วงเวลา (นับจากเริ่มยา)</th><th>วัด BP + neuro check</th></tr>
+    <tr><td>ระหว่างให้ และ 2 ชม.แรก</td><td><b>ทุก 15 นาที</b></td></tr>
+    <tr><td>อีก 6 ชม.ถัดไป</td><td><b>ทุก 30 นาที</b></td></tr>
+    <tr><td>จนครบ 24 ชม.</td><td><b>ทุก 1 ชม.</b></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ดูแลทั่วไป</h4><ul><li>อยู่ stroke unit/ICU</li><li><b>BP &lt;180/105</b> ตลอด 24 ชม. (SBP &gt;180 หรือ DBP &gt;105 → วัดถี่ขึ้นและรักษา) · <b>ไม่กดถึง &lt;140</b> หลัง IVT</li><li>Glucose 140–180 mg/dL · อุณหภูมิ &gt;37.5°C ให้หาสาเหตุ/ลดไข้</li><li>NPO จน screen กลืนผ่าน</li><li><b>CT/MRI ซ้ำ ~24 ชม.</b> ก่อนเริ่ม antithrombotic</li></ul></div>
+    <div class="card c-red"><h4>สัญญาณอันตราย</h4><ul><li><b>ปวดศีรษะรุนแรง ความดันพุ่ง คลื่นไส้อาเจียน หรือ neuro แย่ลง</b> → หยุด alteplase (ถ้ายังหยด) → <b>CT ด่วน</b></li><li>ลิ้น/ปาก/คอบวม → orolingual angioedema</li><li>เลือดออกนอกสมอง (เหงือก ทางเดินอาหาร จุดเจาะ) → กดห้ามเลือด ประเมินรุนแรง</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="comp" class="col">
+  <div class="sec-num">05</div>
+  <h2>ภาวะแทรกซ้อน: sICH และ angioedema</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>sICH ภายใน 24 ชม.หลัง IVT (AHA 2026 Table 5)</h4><ul><li><b>หยุด</b> alteplase/TNK (ถ้ายังให้อยู่)</li><li>CBC, PT/INR, aPTT, <b>fibrinogen</b>, group &amp; match · CT ด่วน</li><li><b>Cryoprecipitate 10 U</b> IV ใน 10–30 นาที — เป้า <b>fibrinogen ≥150 mg/dL</b></li><li><b>Tranexamic acid 1 g IV ใน 10 นาที</b> (หรือ aminocaproic acid 4–5 g ใน 1 ชม. แล้ว 1 g/ชม.)</li><li>ปรึกษาโลหิตวิทยา/ประสาทศัลย์ · ดูแล BP, ICP, CPP, อุณหภูมิ, น้ำตาล</li></ul></div>
+    <div class="card c-warn"><h4>Orolingual angioedema (Table 6)</h4><ul><li><b>ทางเดินหายใจก่อน</b> — บวมแค่ลิ้นส่วนหน้า/ริมฝีปาก มักไม่ต้องใส่ท่อ · บวมถึงกล่องเสียง เพดาน พื้นปาก oropharynx หรือ <b>ลามเร็วใน 30 นาที</b> → เสี่ยงต้องใส่ท่อสูง</li><li>หยุดยาละลายลิ่มเลือด · <b>หยุด ACEI</b> (ปัจจัยเสี่ยงสำคัญ)</li><li>Methylprednisolone 125 mg IV + diphenhydramine 50 mg IV + famotidine 20 mg IV</li><li>บวมเพิ่ม → <b>adrenaline 0.1% 0.3 mL SC หรือพ่นละออง</b></li><li>ทางเลือก: icatibant 30 mg SC (ซ้ำได้ ≤3 ครั้ง/24 ชม.), C1-esterase inhibitor 20 IU/kg</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="tia" class="col">
+  <div class="sec-num">06</div>
+  <h2>TIA: เตือนก่อน stroke</h2>
+  <p>นิยามปัจจุบันเป็นแบบ <b>tissue-based</b>: อาการทางระบบประสาทเฉพาะที่ชั่วคราวจากการขาดเลือด <b>โดยไม่มีเนื้อสมองตายบนภาพ</b> (ไม่ใช้เกณฑ์เวลา 24 ชม.แล้ว) · ความเสี่ยง stroke ใน 90 วัน <b>~10–18%</b> และ <b>เกือบครึ่งเกิดใน 2 วันแรก</b> · ราว 40% ของผู้ที่มาด้วยอาการแบบ TIA พบ infarct บน MRI</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Workup ที่ ER (AHA 2023)</h4><ul><li><b>Brain imaging</b>: MRI-DWI ดีที่สุด <b>ภายใน 24 ชม.</b> · ไม่มี MRI → CT แล้ว admit/ส่งต่อทำ MRI</li><li><b>Vascular imaging หัว-คอ</b> (CTA/MRA หรือ carotid duplex) — หา carotid stenosis</li><li><b>ECG ± cardiac monitoring</b> หา AF</li><li>Glucose, CBC, electrolyte, lipid, HbA1c (ตัด mimic + risk factor)</li><li>ไม่มีแพทย์ระบบประสาท: นัดพบ <b>ภายใน 48 ชม. ไม่เกิน 1 สัปดาห์</b></li></ul></div>
+    <div class="card c-warn"><h4>ความเสี่ยงสูง → admit/ประเมินด่วน</h4><ul><li><b>ABCD2 ≥4</b> (แต่ <b>ห้ามใช้ ABCD2 อย่างเดียว</b> — ไม่รวม posterior circulation/การมองเห็น/เดินเซ)</li><li>อ่อนแรงหรือพูดผิดปกติ · อาการซ้ำหลายครั้ง (crescendo)</li><li><b>DWI บวก</b> · <b>carotid/intracranial stenosis ≥50%</b> ด้านที่ตรงอาการ</li><li><b>AF</b> หรือแหล่ง emboli จากหัวใจ</li><li>ทำ workup ให้ครบเร็วไม่ได้</li></ul></div>
+  </div>
+  <div class="box key"><b>Secondary prevention เริ่มที่ ER</b><b>High-risk TIA (ABCD2 ≥4) หรือ minor stroke (NIHSS ≤3; AHA 2026 รวม NIHSS 4–5) ภายใน 24 ชม. → DAPT</b> clopidogrel 300 mg loading + aspirin 75–300 mg แล้ว clopidogrel 75 + aspirin 75–100 mg/วัน <b>21 วัน</b> แล้ว SAPT (CHANCE/POINT) · ขยายถึง 72 ชม. ได้ในผู้ที่น่าเป็น atherosclerotic (INSPIRES) · <b>symptomatic carotid stenosis 70–99%</b> → CEA/stenting <b>ภายใน 2 สัปดาห์</b> · AF → anticoagulation · statin ความเข้มข้นสูง · คุม BP</div>
+</section>
+
+<!-- 7 -->
+<section id="ich" class="col">
+  <div class="sec-num">07</div>
+  <h2>ICH: ประเมินเร็ว</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>นึกถึงเมื่อ</h4><ul><li>อาการเฉพาะที่ + <b>ปวดศีรษะ อาเจียน ซึมลง</b> ความดันสูงมาก</li><li>แยกจาก ischemic ด้วยอาการไม่ได้ → <b>CT ทุกราย</b></li><li>สาเหตุ: ความดันสูง (deep: basal ganglia, thalamus, pons, cerebellum), <b>cerebral amyloid angiopathy</b> (lobar ผู้สูงอายุ), ยาต้านการแข็งตัว, AVM/aneurysm, เนื้องอก, venous thrombosis, ยาบ้า/โคเคน</li><li>อายุน้อย/lobar/ไม่มี HT → <b>CTA หา macrovascular cause</b></li></ul></div>
+    <div class="card c-warn"><h4>ประเมินความรุนแรง</h4><ul><li><b>ปริมาตร ABC/2</b> (A × B × C ซม. ÷ 2 = mL)</li><li><b>ICH score</b> (GCS, ปริมาตร ≥30 mL, IVH, infratentorial, อายุ ≥80) — ใช้สื่อสาร ไม่ใช่ตัดสินหยุดรักษา</li><li><b>Spot sign</b> บน CTA = เสี่ยงก้อนเลือดขยาย</li><li><b>หลีกเลี่ยง DNR/จำกัดการรักษาใน 24 ชม.แรก</b> (ESO 2025) — ให้เวลาประเมินพยากรณ์</li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="ichrx" class="col">
+  <div class="sec-num">08</div>
+  <h2>ICH: รักษา</h2>
+  <div class="box key"><b>Care bundle ภายใน 1 ชม. (INTERACT3 · ESO 2025 weak for)</b><b>SBP &lt;140 mmHg</b> · glucose 110–140 mg/dL (ไม่เป็นเบาหวาน) / 140–180 (เบาหวาน) · <b>อุณหภูมิ ≤37.5°C</b> · <b>แก้ warfarin ให้ INR &lt;1.3</b> (ESO; INTERACT3 ใช้ &lt;1.5) และแก้ฤทธิ์ DOAC เฉพาะยา · screen กลืน · ปรึกษาประสาทศัลย์เร็ว</div>
+  <div class="tbl"><table>
+    <tr><th>ประเด็น</th><th>แนวทาง</th></tr>
+    <tr><td><b>ความดัน</b></td><td>ICH เล็ก–ปานกลาง SBP 150–220: ลดสู่ <b>~140</b> เริ่มเร็ว (ESO: ภายใน 6 ชม. ดีที่สุดภายใน 2 ชม.) และให้ราบเรียบ · AHA 2022: คง 130–150, <b>ลด &lt;130 อาจเป็นอันตราย</b> · ESO 2025: <b>อย่าลดเกิน 70 mmHg</b> จากเดิม และ <b>อย่าลดต่ำกว่า 110</b> · ระวังเมื่อ SBP &gt;220, ก้อน &gt;30 mL หรือจะผ่าตัด · ยา: nicardipine/labetalol infusion</td></tr>
+    <tr><td><b>Warfarin (VKA)</b></td><td><b>4F-PCC</b> (ดีกว่า FFP): INR ≥2.0 → <b>30–50 IU/kg</b> · INR 1.3–1.9 → <b>10 IU/kg</b> (ESO consensus) + <b>vitamin K 10 mg IV</b> · ไม่มี PCC → FFP 10–15 mL/kg</td></tr>
+    <tr><td><b>Dabigatran</b></td><td><b>Idarucizumab 5 g IV</b> (2 × 2.5 g) ทันที</td></tr>
+    <tr><td><b>Factor Xa inhibitor</b> (rivaroxaban, apixaban, edoxaban)</td><td><b>4F-PCC 50 IU/kg</b> (ทางเลือกหลักเมื่อไม่มี andexanet; ชั่งความเสี่ยงลิ่มเลือด) · <b>Andexanet alfa</b> (ESO: ภายใน 15 ชม.หลังยาครั้งสุดท้ายและ 12 ชม.หลังเริ่มอาการ) — เพิ่ม thrombotic events และ<b>ถอนจากตลาดสหรัฐฯ ธ.ค. 2025</b> · ตรวจสอบความพร้อมในไทย · กินภายใน 2 ชม. → activated charcoal</td></tr>
+    <tr><td><b>Heparin</b></td><td>Protamine 1 mg ต่อ UFH 100 U ที่ให้ใน 2–3 ชม.ก่อน (สูงสุด 50 mg) <span class="tag add">AHA 2022</span></td></tr>
+    <tr><td><b>Antiplatelet</b></td><td><b>ไม่ให้ platelet transfusion</b> (PATCH: แย่ลง) ยกเว้นจะผ่าตัด · desmopressin ยังไม่ชัด</td></tr>
+    <tr><td><b>ไม่ได้ใช้ยาต้านลิ่มเลือด</b></td><td>rFVIIa ไม่แนะนำ routine · tranexamic acid ยังไม่ชัด (ไม่ใช่ routine)</td></tr>
+    <tr><td><b>ผ่าตัด</b></td><td><b>Cerebellar ICH &gt;15 mL</b>, กดก้านสมอง หรือ hydrocephalus → evacuation (ไม่ใช่ EVD อย่างเดียว) · supratentorial: <b>minimally invasive surgery</b> ได้ประโยชน์มากกว่า craniotomy (ENRICH: lobar 30–80 mL) · IVH + hydrocephalus → EVD (± intraventricular thrombolysis) · decompressive craniectomy ในรายรุนแรงคัดเลือก</td></tr>
+    <tr><td><b>ป้องกันภาวะแทรกซ้อน</b></td><td><b>IPC</b> ตั้งแต่วันแรก (ESO: 30 วันหรือจนเดินได้) · LMWH ป้องกันเฉพาะเมื่อใช้ IPC ไม่ได้/เสี่ยงลิ่มเลือดสูง หลังก้อนคงที่ (~24–48 ชม.; AHA 2022 2b) · <b>ไม่ให้ยากันชักป้องกัน</b> · ไม่ให้ steroid · ไม่ลดอุณหภูมิ/antibiotic ป้องกัน</td></tr>
+    <tr><td><b>ระยะยาว</b></td><td>BP <b>&lt;130/80</b> · เริ่ม antiplatelet ใหม่เมื่อมีข้อบ่งชี้ (ปลอดภัย) · anticoagulation ใน AF ชั่งรายบุคคล (CAA, microbleeds) · ปรึกษาเรื่อง LAAO</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>อาการทางระบบประสาทเฉียบพลัน</b>LKW · DTX · ABC · NIHSS · ยาต้านลิ่มเลือด → CT ทันที</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>CT/อาการตอนนี้</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">เลือดออก</span><div class="node red"><b>ICH</b>SBP ~140 (ไม่ &lt;110, ลด ≤70)<br>แก้ฤทธิ์ยา &lt;1 ชม.<br>Glucose · อุณหภูมิ · ประสาทศัลย์</div></div>
+        <div class="arm"><span class="lab">ไม่มีเลือด + deficit</span><div class="node dx hypo"><b>AIS</b>Disabling ≤4.5 ชม. + ไม่มีข้อห้าม → IVT<br>BP &lt;185/110 ก่อน · &lt;180/105 หลัง<br>LVO → EVT · non-disabling → DAPT</div></div>
+        <div class="arm"><span class="lab">อาการหายแล้ว</span><div class="node dx eu"><b>TIA</b>MRI-DWI ≤24 ชม. · CTA หัว-คอ · ECG<br>High risk → DAPT 21 วัน · admit<br>Carotid 70–99% → ผ่าตัด ≤2 สัปดาห์</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 10 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตัดสินตาม protocol โรงพยาบาลและแพทย์ผู้เชี่ยวชาญ</p>
+  </div>
+  <div class="tool plan" id="tIvt" style="margin-top:12px">
+    <h3>IVT checklist (≤4.5 ชม.)</h3>
+    <div class="fields">
+      <label class="f">LKW → ตอนนี้ (นาที)<input type="number" id="iT" value="150"></label>
+      <label class="f">DTX (mg/dL)<input type="number" id="iG" value="160"></label>
+      <label class="f">SBP<input type="number" id="iS" value="192"></label>
+      <label class="f">DBP<input type="number" id="iD" value="98"></label>
+      <label class="f">Platelet (ถ้ามี)<input type="number" id="iP" placeholder="เช่น 210000"></label>
+      <label class="f">INR (ถ้ามี)<input type="number" id="iI" step="0.1" placeholder="เช่น 1.1"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="iDis" checked> Deficit disabling</label>
+      <label><input type="checkbox" id="iCt"> CT มีเลือดออก/hypodensity กว้าง</label>
+      <label><input type="checkbox" id="iDoac"> กิน DOAC ภายใน 48 ชม.</label>
+      <label><input type="checkbox" id="iLmwh"> LMWH ขนาดรักษาใน 24 ชม.</label>
+      <label><input type="checkbox" id="iHx14"> TBI ปานกลาง–รุนแรง/ผ่าตัดสมอง-ไขสันหลัง ใน 14 วัน</label>
+      <label><input type="checkbox" id="iAbs"> Endocarditis / aortic dissection / intra-axial tumor</label>
+      <label><input type="checkbox" id="iSt3"> Ischemic stroke ใน 3 เดือน</label>
+      <label><input type="checkbox" id="iGi"> GI/GU bleed ใน 21 วัน หรือผ่าตัดใหญ่ใน 14 วัน</label>
+      <label><input type="checkbox" id="iIch"> เคยมี ICH</label>
+      <label><input type="checkbox" id="iWarf"> ได้ warfarin / สงสัย coagulopathy (รอแล็บ)</label>
+    </div>
+    <div class="out" id="ivtOut"></div>
+  </div>
+  <div class="tool" id="tMon" style="margin-top:12px">
+    <h3>ตารางเฝ้าระวังหลัง IVT</h3>
+    <div class="fields"><label class="f">เวลาเริ่มยา<input type="time" id="mT" value="14:20"></label></div>
+    <div class="out" id="monOut"></div>
+  </div>
+  <div class="tool" id="tTia" style="margin-top:12px">
+    <h3>TIA: ABCD2 และการจัดการ</h3>
+    <div class="fields">
+      <label class="f">อายุ<input type="number" id="tA" value="66"></label>
+      <label class="f">BP แรกรับ SBP<input type="number" id="tS" value="150"></label>
+      <label class="f">DBP<input type="number" id="tD" value="85"></label>
+      <label class="f">อาการเด่น<select id="tC"><option value="2">อ่อนแรงข้างเดียว</option><option value="1">พูดผิดปกติ ไม่อ่อนแรง</option><option value="0">อื่นๆ</option></select></label>
+      <label class="f">ระยะเวลาอาการ<select id="tDu"><option value="2">≥60 นาที</option><option value="1" selected>10–59 นาที</option><option value="0">&lt;10 นาที</option></select></label>
+      <label class="f">เริ่มอาการมาแล้ว<select id="tOn"><option value="24">≤24 ชม.</option><option value="72">24–72 ชม.</option><option value="99">&gt;72 ชม.</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="tDm"> เบาหวาน</label><label><input type="checkbox" id="tAf"> AF</label><label><input type="checkbox" id="tCar"> Carotid stenosis ≥50% ด้านที่ตรงอาการ</label><label><input type="checkbox" id="tDwi"> DWI บวก</label><label><input type="checkbox" id="tRep"> เป็นซ้ำหลายครั้ง</label><label><input type="checkbox" id="tPost"> อาการ posterior (เวียน เดินเซ ภาพซ้อน ตามัวครึ่งซีก)</label></div>
+    <div class="out" id="tiaOut"></div>
+  </div>
+  <div class="tool plan" id="tIch" style="margin-top:12px">
+    <h3>ICH: ICH score · ปริมาตร · แก้ฤทธิ์ยา</h3>
+    <div class="fields">
+      <label class="f">GCS<input type="number" id="hG" value="13"></label>
+      <label class="f">A (ซม.)<input type="number" id="hA" step="0.1" value="4"></label>
+      <label class="f">B (ซม.)<input type="number" id="hB" step="0.1" value="3"></label>
+      <label class="f">C (ซม. = จำนวนสไลซ์×ความหนา)<input type="number" id="hC" step="0.1" value="4"></label>
+      <label class="f">อายุ<input type="number" id="hAge" value="72"></label>
+      <label class="f">SBP ตอนนี้<input type="number" id="hS" value="205"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="hW" value="65"></label>
+      <label class="f">ยาต้านลิ่มเลือด<select id="hDrug"><option value="none">ไม่มี</option><option value="vka" selected>Warfarin</option><option value="dabi">Dabigatran</option><option value="xa">Rivaroxaban/apixaban/edoxaban</option><option value="ap">Antiplatelet</option><option value="ufh">Heparin (UFH)</option></select></label>
+      <label class="f">INR<input type="number" id="hI" step="0.1" value="2.6"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="hIvh"> มี IVH</label><label><input type="checkbox" id="hInf"> Infratentorial (cerebellum/brainstem)</label><label><input type="checkbox" id="hCb"> เป็น cerebellar ICH</label><label><input type="checkbox" id="hHyd"> Hydrocephalus/กดก้านสมอง</label></div>
+    <div class="out" id="ichOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>LKW ไม่ใช่เวลาที่พบ</b> · ตื่นมาพร้อมอาการ = เวลาก่อนนอน</div></div>
+    <div class="pearl"><div><b>DTX ก่อนทุกอย่าง</b> · แก้น้ำตาลแล้ว deficit ยังอยู่ → IVT ได้</div></div>
+    <div class="pearl"><div><b>ไม่รอแล็บ</b> นอกจาก glucose (ยกเว้นสงสัย coagulopathy)</div></div>
+    <div class="pearl"><div><b>Disabling ไม่ใช่ NIHSS</b> · non-disabling → DAPT</div></div>
+    <div class="pearl"><div><b>BP &lt;185/110 ก่อน · &lt;180/105 หลัง 24 ชม.</b></div></div>
+    <div class="pearl"><div><b>Neuro check q15 นาที ×2 ชม. → q30 ×6 ชม. → q1 ชม.</b></div></div>
+    <div class="pearl"><div><b>ปวดหัว/อาเจียน/แย่ลงหลัง IVT → หยุดยา CT ด่วน cryo + TXA</b></div></div>
+    <div class="pearl"><div><b>ลิ้นบวมหลัง IVT นึกถึง ACEI</b> · ดูทางเดินหายใจก่อน</div></div>
+    <div class="pearl"><div><b>TIA ครึ่งหนึ่งเกิด stroke ใน 2 วันแรก</b> → workup วันนี้</div></div>
+    <div class="pearl"><div><b>ABCD2 ห้ามใช้เดี่ยว</b> · posterior TIA ถูกให้คะแนนต่ำ</div></div>
+    <div class="pearl"><div><b>ICH: SBP ~140 · ไม่ต่ำกว่า 110 · ลดไม่เกิน 70</b></div></div>
+    <div class="pearl"><div><b>Warfarin-ICH: 4F-PCC + vit K 10 mg</b> · antiplatelet-ICH: ไม่ให้เกล็ดเลือด</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../stroke/index.html">Acute Ischemic Stroke 2026 →</a> · <a href="../htn-emergency/index.html">Hypertensive emergency →</a> · <a href="../status-epilepticus/index.html">Status epilepticus →</a> · <a href="../af/index.html">AF →</a> · <a href="../anaphylaxis/index.html">Anaphylaxis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Prabhakaran S, et al. 2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: AHA/ASA. Stroke 2026. doi:10.1161/STR.0000000000000513 · 2) Amin HP, Madsen TE, Bravata DM, et al. Diagnosis, workup, risk reduction of transient ischemic attack in the emergency department setting: AHA Scientific Statement. Stroke 2023;54:e109–21 · 3) Steiner T, Purrucker JC, Aguiar de Sousa D, et al. ESO and EANS guideline on stroke due to spontaneous intracerebral haemorrhage. Eur Stroke J 2025;10:1007–86 · 4) Greenberg SM, Ziai WC, Cordonnier C, et al. 2022 Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage: AHA/ASA. Stroke 2022;53:e282–361 · 5) Ma L, et al. INTERACT3. Lancet 2023;402:27–40 · 6) Pradilla G, et al. ENRICH. N Engl J Med 2024;390:1277–89 · 7) Hemphill JC, et al. The ICH score. Stroke 2001;32:891–7 · 8) Johnston SC, et al. ABCD2. Lancet 2007;369:283–92<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','seView');
+mountWalker({
+ start:{q:'อาการทางระบบประสาทเฉียบพลัน — DTX เท่าไร?',o:[['<60 mg/dL','hypo'],['60–400','ct'],['>400','hyper']]},
+ hypo:{leaf:true,cls:'warn',t:'แก้น้ำตาลต่ำก่อน',b:'50% glucose แล้วประเมิน neuro ซ้ำ · <b>deficit ที่ disabling ยังอยู่หลังแก้ → ดำเนิน stroke code ต่อ</b> (CT, พิจารณา IVT) ไม่ต้องรอ',next:['ถ้า deficit ยังอยู่','ct']},
+ hyper:{leaf:true,cls:'warn',t:'น้ำตาลสูงมาก',b:'แก้ไปพร้อมกัน (ประเมิน DKA-HHS) แล้วประเมินซ้ำ · deficit ที่ disabling ยังอยู่หลังแก้ → IVT ได้ถ้าเข้าเกณฑ์ (AHA 2026)',next:['ไปต่อ CT','ct']},
+ ct:{q:'CT สมอง',o:[['มีเลือดออก','ich'],['ไม่มีเลือดออก','sx']]},
+ ich:{q:'ได้ยาต้านการแข็งตัวของเลือดหรือไม่?',o:[['Warfarin','vka'],['Dabigatran','dabi'],['Factor Xa inhibitor','xa'],['ไม่ได้/antiplatelet','ichg']]},
+ vka:{leaf:true,cls:'danger',t:'Warfarin-associated ICH',b:'<b>4F-PCC</b> (INR ≥2: 30–50 IU/kg · 1.3–1.9: 10 IU/kg) + <b>vitamin K 10 mg IV</b> → เป้า INR <1.3 ภายใน 1 ชม. · SBP ~140 · care bundle · ปรึกษาประสาทศัลย์'},
+ dabi:{leaf:true,cls:'danger',t:'Dabigatran-associated ICH',b:'<b>Idarucizumab 5 g IV</b> ทันที · SBP ~140 · care bundle'},
+ xa:{leaf:true,cls:'danger',t:'FXa inhibitor-associated ICH',b:'<b>4F-PCC 50 IU/kg</b> · andexanet alfa ถ้ามี (≤15 ชม.หลังยา + ≤12 ชม.หลังเริ่มอาการ; ถอนจากตลาดสหรัฐฯ ธ.ค. 2025 จาก thrombosis) · กินภายใน 2 ชม. → activated charcoal · SBP ~140'},
+ ichg:{leaf:true,cls:'danger',t:'Spontaneous ICH',b:'SBP <b>~140</b> (ไม่ลดเกิน 70, ไม่ต่ำกว่า 110) · glucose · อุณหภูมิ ≤37.5 · antiplatelet: <b>ไม่ให้เกล็ดเลือด</b> (ยกเว้นผ่าตัด) · cerebellar >15 mL/hydrocephalus → ประสาทศัลย์ด่วน · IPC · ไม่ให้ยากันชักป้องกัน · หลีกเลี่ยง DNR ใน 24 ชม.แรก'},
+ sx:{q:'ตอนนี้ยังมีอาการอยู่หรือหายสนิทแล้ว?',o:[['ยังมีอาการ','dis'],['หายสนิท','tia']]},
+ dis:{q:'Deficit disabling และ LKW ≤4.5 ชม.?',o:[['ใช่','ci'],['ไม่ disabling','dapt'],['เกิน 4.5 ชม./ไม่ทราบ','late']]},
+ ci:{q:'มีข้อห้ามสำคัญ (coagulopathy รุนแรง, TBI/neurosurgery ใน 14 วัน, endocarditis, dissection, BP ลดไม่ได้)?',o:[['ไม่มี','ivt'],['มี/ไม่แน่ใจ','noivt']]},
+ ivt:{leaf:true,cls:'ok',t:'ให้ IV thrombolysis',b:'BP <185/110 ก่อน · <b>TNK 0.25 mg/kg (max 25 mg) หรือ alteplase 0.9 mg/kg</b> · neuro/BP q15 นาที ×2 ชม. → q30 ×6 ชม. → q1 ชม. ถึง 24 ชม. · BP <180/105 · CTA หา LVO → EVT/drip-and-ship'},
+ noivt:{leaf:true,cls:'warn',t:'ไม่ให้/ชั่งรายบุคคล',b:'ปรึกษาแพทย์ระบบประสาท · DOAC <48 ชม./GI bleed 21 วัน/stroke 3 เดือน = ชั่งประโยชน์–ความเสี่ยง · <b>LVO → EVT</b> ยังเป็นทางเลือกแม้ IVT ไม่ได้'},
+ dapt:{leaf:true,cls:'ok',t:'Minor non-disabling stroke',b:'<b>ไม่ให้ IVT</b> → DAPT (clopidogrel + aspirin) 21 วัน ถ้าน่าเป็น noncardioembolic · admit/workup หาสาเหตุ'},
+ late:{leaf:true,cls:'violet',t:'นอกช่วง 4.5 ชม.',b:'Perfusion/DWI-FLAIR mismatch → IVT 4.5–9 ชม.ในรายคัดเลือก · CTA หา LVO → EVT ถึง 24 ชม. — ดูหน้า Acute Ischemic Stroke'},
+ tia:{leaf:true,cls:'violet',t:'TIA',b:'MRI-DWI ≤24 ชม. · CTA/duplex หัว-คอ · ECG/monitor · labs · <b>high risk (ABCD2 ≥4, อ่อนแรง/พูดผิด, stenosis, AF, DWI+) → admit/ประเมินด่วน</b> · DAPT 21 วัน ใน high-risk noncardioembolic · carotid 70–99% → ผ่าตัด ≤2 สัปดาห์'}
+},'apTrail','apStage');
+
+function ivt(){
+  const t=num('iT'),g=num('iG'),s=num('iS'),d=num('iD'),inr=num('iI');let p=num('iP');if(p!==null&&p>0&&p<1000)p=p*1000;
+  const c=id=>$(id).checked;const no=[],ind=[],L=[];
+  if(c('iCt'))no.push('CT มีเลือดออก/hypodensity กว้าง');
+  if(!c('iDis'))no.push('ไม่ disabling → DAPT แทน');
+  if(c('iHx14'))no.push('TBI ปานกลาง–รุนแรง/ผ่าตัดสมอง-ไขสันหลัง ใน 14 วัน');
+  if(c('iAbs'))no.push('endocarditis/aortic dissection/intra-axial tumor');
+  if(p!==null&&p<100000)no.push(`platelet ${p.toLocaleString()} <100,000`);
+  if(inr!==null&&inr>1.7)no.push(`INR ${inr} >1.7`);
+  if(c('iDoac'))ind.push('DOAC ใน 48 ชม. (2026: ชั่งรายบุคคล — เวลา, ไต, ความรุนแรง, มี EVT/ยาแก้ฤทธิ์)');
+  if(c('iLmwh'))ind.push('LMWH ขนาดรักษาใน 24 ชม.');
+  if(c('iSt3'))ind.push('ischemic stroke ใน 3 เดือน');
+  if(c('iGi'))ind.push('GI/GU bleed 21 วัน/ผ่าตัดใหญ่ 14 วัน');
+  if(c('iIch'))ind.push('เคยมี ICH (ดูสาเหตุ/ระยะเวลา)');
+  if(t!==null){if(t>270){L.push(`LKW ${t} นาที (>4.5 ชม.) → <b>นอกช่วงมาตรฐาน</b> · ต้องใช้ advanced imaging (4.5–9 ชม.) หรือพิจารณา EVT`);}else L.push(`LKW ${t} นาที → เหลือเวลาในช่วง 4.5 ชม. <b>${270-t} นาที</b> (ยิ่งเร็วยิ่งดี)`);}
+  if(g!==null){if(g<60)L.push(`DTX ${g} → <b>แก้น้ำตาลก่อน</b> ประเมินซ้ำ — deficit ยังอยู่จึงให้`);else if(g>400)L.push(`DTX ${g} สูงมาก → แก้ควบคู่ · deficit ยังอยู่ให้ได้`);}
+  if(s!==null&&d!==null){if(s>=185||d>=110)L.push(`BP ${s}/${d} ≥185/110 → <b>ลดก่อนให้ยา</b>: labetalol 10–20 mg IV หรือ nicardipine 5 mg/ชม. titrate · ลดไม่ลง = ไม่ให้`);else L.push(`BP ${s}/${d} → ผ่านเกณฑ์ <185/110`);}
+  if(c('iWarf')&&(p===null||inr===null))L.push('ได้ warfarin/สงสัย coagulopathy → <b>รอ INR/platelet</b> ก่อนให้');
+  else if(p===null||inr===null)L.push('<span class="muted">ไม่ได้สงสัย coagulopathy → ไม่ต้องรอผล platelet/INR</span>');
+  const pend=[];
+  if(t===null)pend.push('ใส่เวลา LKW');
+  if(g!==null&&g<60)pend.push('แก้น้ำตาลแล้วประเมินซ้ำ');
+  if((s===null)!==(d===null))pend.push('ใส่ BP ให้ครบทั้ง SBP/DBP');
+  if(s!==null&&d!==null&&(s>=185||d>=110))pend.push('ลด BP <185/110 ก่อน');
+  if(c('iWarf')&&(p===null||inr===null))pend.push('รอ INR/platelet');
+  let head;
+  if(no.length)head=`<b>ไม่ให้ IVT</b>: ${no.join(' · ')}`;
+  else if(t!==null&&t>270)head='<b>ไม่อยู่ในช่วง 4.5 ชม.</b> — ดูทางเลือก extended window/EVT';
+  else if(pend.length)head=`<b>ยังไม่พร้อมให้ — ทำก่อน</b>: ${pend.join(' · ')}`+(ind.length?` · และต้องชั่งรายบุคคล: ${ind.join(' · ')}`:'');
+  else if(ind.length)head=`<b>ชั่งประโยชน์–ความเสี่ยงรายบุคคล</b> (ปรึกษาแพทย์ระบบประสาท): ${ind.join(' · ')}`;
+  else head='<b>ไม่พบข้อห้ามจากข้อมูลที่ใส่ → พิจารณา IVT</b>: TNK 0.25 mg/kg (max 25 mg) bolus หรือ alteplase 0.9 mg/kg (max 90 mg)';
+  L.unshift(head);
+  L.push('<span class="muted">ไม่ว่าจะให้ IVT หรือไม่: CTA หา LVO → EVT · ห้าม aspirin IV ร่วม/ใน 90 นาทีหลัง IVT</span>');
+  $('ivtOut').innerHTML=L.join('<br>');
+}
+bindAll('#tIvt input',ivt);
+
+function mon(){
+  const v=$('mT').value;if(!v){$('monOut').textContent='ใส่เวลา';return}
+  const [h,m]=v.split(':').map(Number);const b=h*60+m;
+  const f=x=>{const d=Math.floor(x/1440);x%=1440;return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')+(d?` <small>(+${d} วัน)</small>`:'')};
+  const L=[];
+  L.push(`<b>q15 นาที</b>: ${f(b)} → ${f(b+120)} (8 ครั้ง)`);
+  L.push(`<b>q30 นาที</b>: ${f(b+120)} → ${f(b+480)} (12 ครั้ง)`);
+  L.push(`<b>q1 ชม.</b>: ${f(b+480)} → ${f(b+1440)} (16 ครั้ง)`);
+  L.push(`<b>CT/MRI ซ้ำ</b> ราว ${f(b+1440)} ก่อนเริ่ม antiplatelet/anticoagulant · ห้าม aspirin IV ถึง ${f(b+90)}`);
+  L.push('ทุกครั้ง: BP (<180/105) + neuro (NIHSS/GCS) · ปวดหัว อาเจียน BP พุ่ง หรือ neuro แย่ลง → หยุดยา (ถ้ายังหยด) + CT ด่วน');
+  $('monOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMon input',mon);
+
+function tia(){
+  const a=num('tA'),s=num('tS'),d=num('tD'),cl=+$('tC').value,du=+$('tDu').value,on=+$('tOn').value;
+  let sc=0;const p=[];
+  if(a!==null&&a>=60){sc++;p.push('Age')}
+  if((s!==null&&s>=140)||(d!==null&&d>=90)){sc++;p.push('BP')}
+  sc+=cl;if(cl)p.push('Clinical '+cl);sc+=du;if(du)p.push('Duration '+du);
+  if($('tDm').checked){sc++;p.push('DM')}
+  const risk=sc>=6?'สูง (2-day stroke ~8%)':sc>=4?'ปานกลาง (2-day ~4%)':'ต่ำ (2-day ~1%) — ตามข้อมูลต้นฉบับ';
+  const L=[`<b>ABCD2 = ${sc}/7</b> (${p.join(', ')||'-'}) → ความเสี่ยง${risk}`];
+  const hi=[];if(sc>=4)hi.push('ABCD2 ≥4');if(cl>0)hi.push('อ่อนแรง/พูดผิดปกติ');if($('tCar').checked)hi.push('stenosis ≥50%');if($('tAf').checked)hi.push('AF');if($('tDwi').checked)hi.push('DWI บวก');if($('tRep').checked)hi.push('เป็นซ้ำ');
+  if($('tPost').checked)L.push('<b>อาการ posterior circulation</b> — ABCD2 ประเมินต่ำกว่าจริง อย่าใช้คะแนนต่ำเพื่อจำหน่าย');
+  L.push(hi.length?`<b>เสี่ยงสูง</b> (${hi.join(' · ')}) → admit/ประเมินด่วนครบใน 24 ชม.`:'ไม่มีลักษณะเสี่ยงสูงจากข้อมูลนี้ → workup ให้ครบเร็ว (MRI/vascular/ECG) จำหน่ายได้ถ้าครบและนัดแพทย์ระบบประสาท ≤48 ชม.–1 สัปดาห์');
+  if($('tAf').checked)L.push('<b>AF → anticoagulation</b> (ไม่ใช่ DAPT)');
+  else if($('tCar').checked)L.push('Carotid stenosis ด้านตรงอาการ → antiplatelet + statin และ <b>ส่ง CEA/stenting ภายใน 2 สัปดาห์</b> ถ้า 70–99% (50–69% พิจารณารายบุคคล)');
+  if(!$('tAf').checked){
+    if(sc>=4&&on===24)L.push('<b>DAPT</b>: clopidogrel 300 mg + aspirin 75–300 mg loading → ต่อ 21 วัน แล้ว SAPT (CHANCE/POINT)');
+    else if(sc>=4&&on===72)L.push('24–72 ชม. + น่าเป็น atherosclerotic → DAPT 21 วันสมเหตุสมผล (INSPIRES · AHA 2026 2a)');
+    else L.push('SAPT (aspirin หรือ clopidogrel) + statin + คุม BP/DM ระหว่างหาสาเหตุ');
+  }
+  L.push('<span class="muted">ABCD2: Age ≥60 = 1 · BP ≥140/90 = 1 · อ่อนแรง 2 / พูดผิดปกติ 1 · ≥60 นาที 2 / 10–59 นาที 1 · DM 1</span>');
+  $('tiaOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTia input,#tTia select',tia);
+
+function ich(){
+  const g=num('hG'),A=num('hA'),B=num('hB'),C=num('hC'),age=num('hAge'),s=num('hS'),w=num('hW'),inr=num('hI'),dr=$('hDrug').value;
+  const L=[];let sc=0;
+  let vol=null;if(A&&B&&C)vol=A*B*C/2;
+  if(g!==null)sc+=g<=4?2:g<=12?1:0;
+  if(vol!==null&&vol>=30)sc++;
+  if($('hIvh').checked)sc++;
+  if($('hInf').checked)sc++;
+  if(age!==null&&age>=80)sc++;
+  const mort=[0,13,26,72,97,100,100][sc];
+  L.push(`ปริมาตร ABC/2 = <b>${vol!==null?vol.toFixed(1):'-'} mL</b> · <b>ICH score ${sc}/6</b> (30-day mortality ต้นฉบับ ~${mort}%) — ใช้สื่อสาร ไม่ใช้ตัดสินหยุดรักษา`);
+  if(s!==null){
+    if(s>=150&&s<=220)L.push(`SBP ${s} → ลดสู่ <b>~140</b> (คง 130–150) ภายใน 1–2 ชม. · ไม่ลดเกิน 70 (ไม่ต่ำกว่า ${Math.max(110,s-70)})`);
+    else if(s>220)L.push(`SBP ${s} >220 → ลดอย่างระมัดระวังด้วย IV infusion · <b>ไม่ลดเกิน 70 mmHg</b> (เป้าแรก ≥${s-70}) แล้วค่อยๆ ไปสู่ ~140`);
+    else L.push(s>=140?`SBP ${s} → ลดให้ <140 ได้ถ้าลดราบเรียบ (AHA 2022 ข้อแนะนำครอบคลุม SBP 150–220) · หลีกเลี่ยง <110`:`SBP ${s} — อยู่ในเป้าแล้ว · หลีกเลี่ยง <110 และความแปรปรวน`);
+    if(vol!==null&&vol>30&&s>=150)L.push('<span class="muted">ก้อน >30 mL: หลักฐานการลด BP เข้มน้อย — ระวังมากขึ้น</span>');
+  }
+  if(dr==='vka'){
+    if(inr===null)L.push('<b>Warfarin แต่ยังไม่มี INR</b> → ส่ง INR ด่วน · vitamin K 10 mg IV · INR ≥2 → 4F-PCC 30–50 IU/kg (1.3–1.9 → 10 IU/kg)');
+    else if(inr>=1.3){const pcc=inr>=2?(w?`${Math.round(w*30)}–${Math.round(w*50)} IU (30–50 IU/kg)`:'30–50 IU/kg (ใส่น้ำหนักเพื่อคำนวณ)'):(w?`${Math.round(w*10)} IU (10 IU/kg)`:'10 IU/kg (ใส่น้ำหนักเพื่อคำนวณ)');L.push(`<b>Warfarin, INR ${inr}</b> → <b>4F-PCC ${pcc}</b> + <b>vitamin K 10 mg IV</b> · ตรวจ INR ซ้ำ 15–30 นาที เป้า <1.3 (ESO)`);}
+    else L.push(`Warfarin, INR ${inr} <1.3 → ไม่ต้อง PCC · vitamin K ตามความเหมาะสม`);
+  }else if(dr==='dabi')L.push('<b>Dabigatran → idarucizumab 5 g IV</b> (2 × 2.5 g) ทันที');
+  else if(dr==='xa')L.push(`<b>FXa inhibitor → 4F-PCC 50 IU/kg${w?` = ${Math.round(w*50)} IU`:''}</b> (ทางเลือกที่ใช้ได้จริงส่วนใหญ่) · andexanet alfa (ESO: ≤15 ชม.หลังยาครั้งสุดท้าย และ ≤12 ชม.หลังเริ่มอาการ) — เพิ่ม thrombosis และถอนจากตลาดสหรัฐฯ ธ.ค. 2025 ตรวจว่ามีในไทยหรือไม่ · กินภายใน 2 ชม. → charcoal`);
+  else if(dr==='ap')L.push('Antiplatelet → <b>ไม่ให้ platelet transfusion</b> (ยกเว้นจะผ่าตัด)');
+  else if(dr==='ufh')L.push('UFH → <b>protamine 1 mg ต่อ heparin 100 U</b> ที่ได้ใน 2–3 ชม.ล่าสุด (สูงสุด 50 mg)');
+  const surg=[];
+  if($('hCb').checked&&vol!==null&&vol>15)surg.push('cerebellar >15 mL → evacuation');
+  if($('hCb').checked&&$('hHyd').checked)surg.push('cerebellar + กดก้านสมอง/hydrocephalus → evacuation (ไม่ใช่ EVD อย่างเดียว)');
+  else if($('hHyd').checked)surg.push('hydrocephalus (เช่น IVH) → EVD');
+  if(surg.length)L.push(`<b>ปรึกษาประสาทศัลย์ด่วน</b>: ${surg.join(' · ')}`);
+  else if($('hInf').checked&&!$('hCb').checked)L.push('<span class="muted">Brainstem ICH: ไม่ใช่ข้อบ่งชี้ evacuation — ดูแลประคับประคอง/ICU</span>');
+  else if(!$('hInf').checked&&vol!==null&&vol>=30&&vol<=80)L.push('Supratentorial 30–80 mL → ปรึกษาเรื่อง <b>minimally invasive surgery</b> (ENRICH: lobar)');
+  L.push('Care bundle: glucose 110–180 (ตามเบาหวาน) · อุณหภูมิ ≤37.5 · IPC · ไม่ให้ยากันชักป้องกัน · ไม่ DNR ใน 24 ชม.แรก');
+  $('ichOut').innerHTML=L.join('<br>');
+}
+bindAll('#tIch input,#tIch select',ich);
+
+mountQuiz([
+ ['ชาย 68 ปี ตื่นนอน 06:00 พบแขนขาขวาอ่อนแรง พูดไม่ได้ เข้านอนปกติเวลา 22:00 มาถึง รพ. 07:00 LKW คือเวลาใด',
+  ['06:00','07:00','22:00 คืนก่อน','ไม่สามารถระบุได้'],2,'Wake-up stroke: LKW คือเวลาที่เห็นปกติครั้งสุดท้าย'],
+ ['หญิง 60 ปี hemiparesis เฉียบพลัน 1 ชม. DTX 42 mg/dL ให้ glucose แล้วอ่อนแรงยังเท่าเดิม CT ไม่มีเลือดออก ควรทำอย่างไร',
+  ['สรุปว่าเป็น hypoglycemic hemiparesis รอดู 24 ชม.','ดำเนิน stroke code ต่อ พิจารณา IVT ถ้าไม่มีข้อห้าม','MRI ก่อนเสมอ','ให้ aspirin 300 mg'],1,'Deficit ที่ disabling ยังอยู่หลังแก้น้ำตาล → IVT ได้'],
+ ['ข้อใดไม่ต้องรอผลก่อนให้ IVT ในผู้ป่วยที่ไม่มีประวัติยา/โรคเลือด',
+  ['Glucose','Platelet และ INR','CT สมอง','BP'],1,'รอเฉพาะเมื่อสงสัย coagulopathy'],
+ ['30 นาทีหลังเริ่ม alteplase ผู้ป่วยปวดศีรษะรุนแรง อาเจียน GCS ลดลง สิ่งแรกที่ควรทำ',
+  ['ให้ mannitol','หยุด alteplase และ CT ด่วน เจาะ fibrinogen','ให้ aspirin','ลด BP ให้ <120'],1,'สงสัย sICH → cryo 10 U + TXA 1 g ถ้ายืนยัน'],
+ ['ผู้ป่วยได้ enalapril หลังให้ TNK เกิดลิ้นบวมครึ่งหน้า ไม่มีเสียงแหบ ข้อใดเหมาะ',
+  ['ใส่ท่อทันทีทุกราย','หยุด ACEI ให้ methylprednisolone + antihistamine + H2 blocker เฝ้าทางเดินหายใจ','ให้ TNK ซ้ำ','ให้ FFP'],1,'บวมเฉพาะลิ้นหน้า/ริมฝีปากมักไม่ต้องใส่ท่อ · บวมเพิ่มให้ adrenaline'],
+ ['ชาย 65 ปี แขนขวาอ่อนแรง 40 นาทีแล้วหายสนิท BP 160/90 DM ABCD2 เท่าใด',
+  ['4','5','6','7'],2,'Age 1 + BP 1 + weakness 2 + 10–59 นาที 1 + DM 1 = 6'],
+ ['High-risk TIA ภายใน 24 ชม. ไม่มี AF ควรให้ antiplatelet อย่างไร',
+  ['Aspirin อย่างเดียวตลอดชีวิต','Clopidogrel + aspirin 21 วัน แล้วยาเดี่ยว','Ticagrelor + aspirin 90 วัน','Warfarin'],1,'CHANCE/POINT'],
+ ['ICH ขณะได้ warfarin INR 3.1 น้ำหนัก 60 kg การแก้ฤทธิ์ที่เหมาะสมที่สุด',
+  ['FFP 2 ยูนิต','4F-PCC 30–50 IU/kg + vitamin K 10 mg IV','Vitamin K 10 mg PO','Protamine'],1,'เป้า INR <1.3 ภายใน 1 ชม.'],
+ ['ICH 20 mL ใน basal ganglia SBP 210 ข้อใดถูกตาม ESO 2025',
+  ['ลด SBP ให้ <110 เร็วที่สุด','ลดสู่ <140 แต่ไม่ลดเกิน 70 mmHg และไม่ต่ำกว่า 110','ไม่ต้องลดความดัน','ลดสู่ <180 เท่านั้น'],1,'ลดเร็วแบบราบเรียบ เลี่ยงลดมากเกินไป'],
+ ['ICH ในผู้ป่วยที่ได้ aspirin + clopidogrel ไม่ได้ผ่าตัด ควรให้เกล็ดเลือดหรือไม่',
+  ['ให้ทุกราย','ไม่ให้ (PATCH พบผลแย่ลง)','ให้ถ้า platelet <150,000','ให้ desmopressin ทุกราย'],1,'ยกเว้นจะผ่าตัด']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

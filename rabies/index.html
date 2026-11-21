@@ -1,0 +1,646 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rabies PEP · สัตว์กัด วัคซีนพิษสุนัขบ้า</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Infectious disease · สถานเสาวภา 2561 · กรมควบคุมโรค (FAQ ฉบับพิมพ์ 2564) · WHO 2018</div>
+  <h1>สัตว์กัด และวัคซีนป้องกันโรคพิษสุนัขบ้า<br>Rabies post-exposure prophylaxis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การแบ่งระดับการสัมผัส การล้างแผล การตัดสินใจฉีดวัคซีนและอิมมูโนโกลบุลิน (RIG) สูตรฉีดที่ใช้ในไทยเทียบกับ WHO 2018 ผู้ที่เคยฉีดมาก่อน ผู้ภูมิคุ้มกันบกพร่อง การกักดูสัตว์ 10 วัน การฉีดล่าช้า PrEP ไปจนถึงการรู้จักผู้ป่วยโรคพิษสุนัขบ้าที่มีอาการแล้ว</p>
+  <p class="cite">อ้างอิงหลัก: สถานเสาวภา สภากาชาดไทย. แนวทางการดูแลรักษาผู้สัมผัสโรคพิษสุนัขบ้าและคำถามที่พบบ่อย พ.ศ. 2561 · กรมควบคุมโรค. แนวทางเวชปฏิบัติโรคพิษสุนัขบ้าและคำถามที่พบบ่อย (ISBN 978-616-11-1057-4; พิมพ์ครั้งที่ 7 ก.ค. 2564) · WHO. Rabies vaccines: WHO position paper (Wkly Epidemiol Rec 2018;93:201–20) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ล้างแผลทันที</b>สบู่ + น้ำไหล ≥15 นาที ถึงก้นแผล → povidone-iodine · ไม่เย็บปิดถ้าเลี่ยงได้</div>
+    <div class="stage" style="--c:var(--warn)"><b>ระดับ II</b>ถลอก/ข่วนไม่มีเลือด · เลียแผล → <b>วัคซีน</b></div>
+    <div class="stage" style="--c:var(--danger)"><b>ระดับ III</b>กัด/ข่วนเลือดออก · น้ำลายถูกเยื่อบุ · ค้างคาว → <b>วัคซีน + RIG</b></div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#cat">ระดับการสัมผัส</a><a href="#wound">ล้างแผล ยา บาดทะยัก</a><a href="#animal">สัตว์และการกักดู</a><a href="#vac">สูตรวัคซีน</a><a href="#rig">RIG</a><a href="#prev">เคยฉีดมาก่อน</a><a href="#special">กลุ่มพิเศษ</a><a href="#delay">ฉีดล่าช้า เปลี่ยนสูตร</a><a href="#prep">PrEP</a><a href="#clin">ผู้ป่วยมีอาการ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="cat" class="col">
+  <div class="sec-num">01</div>
+  <h2>ระดับการสัมผัสโรค (WHO category)</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>ลักษณะ</th><th>การป้องกัน (ไม่เคยฉีดมาก่อน)</th></tr>
+    <tr><td><b>I</b></td><td>สัมผัส ป้อนอาหาร ถูกเลียบนผิวหนังปกติ (ไม่มีแผล)</td><td>ล้างบริเวณที่สัมผัส · <b>ไม่ต้องฉีด</b></td></tr>
+    <tr><td><b>II</b></td><td>ถูกงับเป็นรอยช้ำ · <b>ข่วน/ถลอกไม่มีเลือดออก</b> (กรมควบคุมโรค: รวม "เลือดออกซิบๆ") · ถูกเลียบนแผล · <span class="tag add">ไทย</span> กินเนื้อ/ผลิตภัณฑ์ดิบจากสัตว์ที่สงสัยว่าเป็นโรค</td><td><b>วัคซีน</b></td></tr>
+    <tr><td><b>III</b></td><td><b>กัด/ข่วนทะลุผิวหนังมีเลือดออก</b> (แผลเดียวหรือหลายแผล) · <b>น้ำลายถูกเยื่อบุ</b> (ตา ปาก) หรือแผลเปิด · <b>สัมผัสค้างคาวโดยตรง</b> (กัด ข่วน สัมผัส)</td><td><b>วัคซีน + RIG</b></td></tr>
+  </table></div>
+  <div class="box warn"><b>ตำแหน่งเสี่ยงสูง</b>แผลที่ <b>ศีรษะ ใบหน้า คอ มือ นิ้ว อวัยวะเพศ</b> มีเส้นประสาทมาก ระยะฟักตัวสั้นได้ → เร่งให้ PEP และ RIG (ถ้าระดับ III) เร็วที่สุด · WHO 2018 ใช้ตำแหน่งเหล่านี้เป็น<b>ลำดับความสำคัญในการจัดสรร RIG ในระดับ III</b> เมื่อ RIG ขาดแคลน (ไม่ใช่ข้อบ่งชี้ RIG ในระดับ II) · ระดับ II ให้ RIG เฉพาะ <b>ภูมิคุ้มกันบกพร่องรุนแรง</b></div>
+</section>
+
+<!-- 2 -->
+<section id="wound" class="col">
+  <div class="sec-num">02</div>
+  <h2>ล้างแผล ยาปฏิชีวนะ บาดทะยัก</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ดูแลแผล — สำคัญเท่าวัคซีน</h4><ul><li><b>ล้างด้วยสบู่และน้ำไหลอย่างน้อย 15 นาที</b> ให้ถึงก้นแผล ล้างสบู่ออกให้หมด (ทำเบาๆ ไม่ให้ช้ำ)</li><li>ใส่ <b>povidone-iodine</b> หรือ chlorhexidine (ไม่มี → alcohol 70%)</li><li>ห้ามพอกยา สมุนไพร ทาครีม</li><li><b>หลีกเลี่ยงการเย็บปิดทันที</b> · แผลแมวกัด (puncture) ห้ามเย็บ · จำเป็นต้องเย็บ (ใบหน้า) → ฉีด RIG ก่อน เย็บหลวมๆ</li><li>น้ำลายเข้าตา: ล้างด้วย NSS ซ้ำหลายครั้ง</li></ul></div>
+    <div class="card c-warn"><h4>ยาปฏิชีวนะและบาดทะยัก</h4><ul><li><b>ป้องกัน 3–5 วัน</b> เมื่อแผลเสี่ยงติดเชื้อ: <b>แมวกัด</b> มือ/นิ้ว/อวัยวะเพศ แผลลึกถึงเอ็น กระดูก ข้อ แผลขยี้/ใหญ่ แผลที่ต้องเย็บ มาช้า ผู้ป่วยเบาหวาน ตับแข็ง ไม่มีม้าม ภูมิคุ้มกันต่ำ</li><li>ยา: <b>amoxicillin-clavulanate</b> (แนวทางไทยใช้ amoxicillin เป็นทางเลือกแรกในแผลทั่วไป) · แพ้ penicillin → doxycycline หรือ cefuroxime ± metronidazole/clindamycin</li><li>แผลติดเชื้อแล้ว 5–14 วัน · <b>Pasteurella</b> (แมว/สุนัข) ไม่ไวต่อ clindamycin, cloxacillin, cephalosporin รุ่น 1 ตัวเดียว</li><li><b>บาดทะยัก</b>: เคยฉีดครบ ≥3 เข็มและครั้งสุดท้าย &gt;5 ปี → Td/Tdap 1 เข็ม · ไม่ครบ/ไม่ทราบ → Td 0, 1, 6 เดือน (+ TIG ในแผลสกปรก) — ฉีดคนละตำแหน่งกับวัคซีนพิษสุนัขบ้า</li></ul></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="animal" class="col">
+  <div class="sec-num">03</div>
+  <h2>ชนิดสัตว์และการกักดูอาการ 10 วัน</h2>
+  <div class="tbl"><table>
+    <tr><th>สัตว์</th><th>แนวทาง</th></tr>
+    <tr><td><b>สุนัข แมว</b> (พาหะหลักในไทย)</td><td><b>เริ่ม PEP ทันที</b> ไม่ต้องรอดูอาการ · ถ้าสัตว์ยังปกติครบ <b>10 วัน</b> หลังกัด → หยุดฉีดได้ (เปลี่ยนเป็น PrEP ได้) · สัตว์ตาย/ป่วย/หนีหาย/จรจัด → ฉีดจนครบ</td></tr>
+    <tr><td>สัตว์เลี้ยงลูกด้วยนมอื่น (ลิง วัว ควาย แพะ ม้า)</td><td>ถือเป็นสัตว์เสี่ยง ให้ PEP ตามระดับ · กักดู 10 วันใช้ได้กับสุนัข/แมวเท่านั้น</td></tr>
+    <tr><td><b>ค้างคาว</b></td><td>ถือเป็นระดับ III เสมอ</td></tr>
+    <tr><td>หนู กระรอก กระต่าย</td><td><b>พิจารณารายกรณี</b> — WHO: ยังไม่มีรายงานคนติดจากสัตว์ฟันแทะกัด · FAQ กรมควบคุมโรค: นำโรคได้ ควรพิจารณาฉีดวัคซีน โดยเฉพาะสัตว์ผิดปกติ/กัดโดยไม่ยั่วยุ</td></tr>
+  </table></div>
+  <div class="box note"><b>รอดูอาการโดยยังไม่ฉีด</b>กรมควบคุมโรค: ทำได้เฉพาะสุนัข/แมวที่ <b>มีเจ้าของ สุขภาพดี เลี้ยงในขอบเขต ได้วัคซีน ≥2 ครั้งและครั้งล่าสุด ≤1 ปี และกัดเพราะถูกยั่วยุ</b> — ร่วมกับดุลยพินิจแพทย์ · สัตว์แสดงอาการระหว่างกักดู → เริ่มฉีดทันที · สัตว์ตาย → ส่งหัวตรวจ (แช่เย็น ห้ามใช้ formalin) ภายใน 24 ชม.</div>
+</section>
+
+<!-- 4 -->
+<section id="vac" class="col">
+  <div class="sec-num">04</div>
+  <h2>สูตรวัคซีนหลังสัมผัส (ผู้ที่ไม่เคยฉีด)</h2>
+  <div class="tbl"><table>
+    <tr><th>สูตร</th><th>วิธี</th><th>วันที่ฉีด</th><th>สถานะในไทย</th></tr>
+    <tr><td><b>Modified TRC-ID</b> (2-2-2-0-2)</td><td>ID 0.1 mL × <b>2 จุด</b> (ต้นแขน 2 ข้าง)</td><td><b>0, 3, 7, 28</b> (FAQ กรมควบคุมโรคเขียน 30)</td><td><b>สูตรหลักในไทย</b> — ประหยัดวัคซีน</td></tr>
+    <tr><td><b>Essen</b></td><td>IM 1 โด๊ส (deltoid; เด็ก &lt;2 ปี ต้นขาด้านหน้า-ข้าง)</td><td><b>0, 3, 7, 14, 28</b></td><td>ใช้ในไทย (WHO 2018 ยอมรับแบบ 4 เข็ม 0, 3, 7, 14–28)</td></tr>
+    <tr><td><b>Zagreb</b> (2-1-1)</td><td>IM: วันแรก 2 โด๊ส (deltoid ซ้าย-ขวา)</td><td><b>0 (×2), 7, 21</b></td><td>มีในแนวทางสถานเสาวภา</td></tr>
+    <tr><td>WHO 1-week ID (IPC)</td><td>ID 0.1 mL × 2 จุด</td><td>0, 3, 7</td><td>WHO 2018 แนะนำ · <b>ไทยยังใช้สูตรที่มีเข็มวันที่ 28</b></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เทคนิค</h4><ul><li>IM ที่ <b>deltoid ห้ามฉีดสะโพก</b> (ไขมันทำให้ภูมิขึ้นน้อย)</li><li>ID ต้องเห็น bleb (peau d'orange) · ใช้วัคซีนที่รับรองให้ฉีด ID · ขวดที่เปิดแล้วเก็บ 2–8°C ใช้ภายใน 8 ชม.</li><li>วัคซีนในไทย: PCEC (1 mL), PVRV (0.5 mL), CPRV, HDCV — <b>ขนาดเท่ากันทุกอายุ</b></li><li>ห้ามผสม Td กับวัคซีนในกระบอกเดียวกัน</li></ul></div>
+    <div class="card c-ok"><h4>เมื่อไรเริ่ม</h4><ul><li><b>เร็วที่สุด</b> — แต่มาช้า (วัน–สัปดาห์–เดือน) ก็ยังต้องให้เต็มสูตร (ระยะฟักตัวมักเป็นเดือน บางรายนานกว่า 1 ปี)</li><li>ไม่มีข้อห้ามในหญิงตั้งครรภ์/ให้นมบุตร</li><li>ผลข้างเคียง: ปวดบวมที่ฉีด 35–45% · ไข้ ปวดหัว 5–15%</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="rig" class="col">
+  <div class="sec-num">05</div>
+  <h2>Rabies immunoglobulin (RIG)</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ข้อบ่งชี้และขนาด</h4><ul><li><b>ระดับ III ที่ไม่เคยได้รับวัคซีนครบมาก่อน</b> · และ<b>ผู้ภูมิคุ้มกันบกพร่องรุนแรงทั้งระดับ II และ III</b> (WHO/กรมควบคุมโรค)</li><li><b>ERIG 40 IU/kg</b> · <b>HRIG 20 IU/kg</b> · ห้ามเกินขนาดตามน้ำหนัก (กดภูมิจากวัคซีน)</li><li>ให้วันแรกพร้อมวัคซีนเข็มแรก · ให้ไม่ได้ → ให้ภายหลังได้แต่ <b>ไม่เกินวันที่ 7</b> นับจากวัคซีนเข็มแรก</li><li><b>ห้ามให้</b> ในผู้ที่เคยฉีดวัคซีนครบมาก่อน</li><li>ห้ามใช้ ERIG ร่วมกับ HRIG ในคนเดียวกัน</li><li>WHO 2018: <b>monoclonal antibody</b> ต่อเชื้อพิษสุนัขบ้าใช้แทน RIG ได้ (ขึ้นทะเบียนในบางประเทศ เช่น อินเดีย — ตรวจสอบสถานะในไทย)</li></ul></div>
+    <div class="card c-acc"><h4>วิธีฉีด</h4><ul><li><b>ฉีดแทรกรอบและใต้แผลทุกแผลให้มากที่สุด</b> (รวมแผลที่สมานแล้ว) ใช้จำนวนครั้งที่แทงน้อยที่สุด</li><li>ปริมาณไม่พอหลายแผล → <b>เจือจาง NSS 2–3 เท่า</b> (ห้ามเพิ่มขนาด)</li><li>ที่เหลือ: แนวทางไทยให้ฉีด IM ห่างจากที่ฉีดวัคซีน · <b>WHO 2018 ให้ฉีดเฉพาะที่แผล</b> ไม่ต้องฉีดส่วนที่เหลือเข้ากล้าม</li><li>นิ้วมือ/เท้า: ฉีดทีละน้อยระวัง compartment</li><li>น้ำลายเข้าตา: หยอด/ล้างด้วย HRIG เจือจาง 1:10</li></ul></div>
+  </div>
+  <div class="box warn"><b>Skin test ก่อน ERIG — แหล่งอ้างอิงไม่ตรงกัน</b>สถานเสาวภา 2561: <b>ขึ้นกับดุลยพินิจแพทย์</b> · FAQ กรมควบคุมโรค: <b>ทำก่อนทุกครั้ง</b> · วิธี (ERIG เจือจาง 1:100, 0.02 mL ID เทียบ NSS อีกแขน · บวก = wheal &gt;10 mm ที่ 15 นาที → เปลี่ยนเป็น HRIG) · <b>WHO 2018: ไม่แนะนำ skin test</b> เพราะทำนายการแพ้ไม่ได้ — ให้ในที่ที่พร้อมรักษา anaphylaxis (adrenaline, ทางเดินหายใจ) — หน้า <a href="../anaphylaxis/index.html">Anaphylaxis</a> · เคยได้เซรุ่มม้า (เช่น เซรุ่มงู) → พิจารณา HRIG</div>
+</section>
+
+<!-- 6 -->
+<section id="prev" class="col">
+  <div class="sec-num">06</div>
+  <h2>ผู้ที่เคยได้รับวัคซีนครบมาก่อน</h2>
+  <p>"เคยฉีดครบ" = ได้ PEP อย่างน้อย 3 เข็ม (วันที่ 0, 3, 7) หรือ PrEP ครบ ด้วยวัคซีนเพาะเลี้ยงเซลล์ — <b>ไม่ต้องให้ RIG ทุกกรณี</b></p>
+  <div class="tbl"><table>
+    <tr><th>ระยะจากเข็มสุดท้าย</th><th>ไทย (สถานเสาวภา/กรมควบคุมโรค)</th><th>WHO 2018</th></tr>
+    <tr><td><b>≤6 เดือน</b></td><td>กระตุ้น <b>1 ครั้ง</b> วันที่ 0 (IM 1 โด๊ส หรือ ID 0.1 mL 1 จุด)</td><td rowspan="2">สัมผัสซ้ำ<b>ภายใน 3 เดือน</b>หลัง PEP ครบ → ดูแลแผลอย่างเดียว · <b>&gt;3 เดือน</b>: ID 1 จุด วันที่ 0, 3 หรือ ID 4 จุด วันที่ 0 หรือ IM 1 โด๊ส วันที่ 0, 3</td></tr>
+    <tr><td><b>&gt;6 เดือน</b> (นานเท่าไรก็ได้)</td><td>กระตุ้น <b>วันที่ 0 และ 3</b> (IM หรือ ID 1 จุด) หรือ <b>ID 4 จุด วันที่ 0</b> (ต้นแขน 2 + ต้นขา/สะบัก 2)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ถูกกัดซ้ำระหว่างยังฉีด PEP ชุดเดิมไม่ครบ → ฉีดต่อตามตารางเดิม ไม่ต้องเพิ่ม · เคยได้วัคซีนชนิดเก่าจากสมองสัตว์ (Semple) → ถือว่าไม่เคยฉีด</p>
+</section>
+
+<!-- 7 -->
+<section id="special" class="col">
+  <div class="sec-num">07</div>
+  <h2>กลุ่มพิเศษ</h2>
+  <div class="grid2">
+    <div class="card c-vio"><h4>ภูมิคุ้มกันบกพร่อง</h4><ul><li>HIV CD4 &lt;200, เคมีบำบัด, ปลูกถ่ายอวัยวะ, prednisolone &gt;20 mg/วัน (&gt;2 mg/kg/วัน) นาน &gt;14 วัน, ยากดภูมิ/TNF blocker</li><li><b>ฉีดแบบ IM เต็มสูตร</b> (กรมควบคุมโรค: ไม่ใช้ ID; WHO ยอมรับ ID หรือ IM) <b>+ RIG</b> (รวมระดับ II) · WHO ไม่นับผู้ติดเชื้อ HIV ที่คงที่ด้วย ART ว่าภูมิคุ้มกันบกพร่อง</li><li>แม้เคยฉีดครบมาก่อน → ให้แบบผู้ไม่เคยฉีด + RIG <span class="tag add">WHO</span></li><li><b>ตรวจ neutralizing antibody</b> ~14 วันหลังเริ่ม (เป้า ≥0.5 IU/mL) ถ้าทำได้</li></ul></div>
+    <div class="card c-ok"><h4>เด็ก หญิงตั้งครรภ์</h4><ul><li><b>ขนาดวัคซีนเท่าผู้ใหญ่</b> · RIG ตามน้ำหนัก</li><li>เด็กถูกกัดที่ใบหน้า/ศีรษะ → RIG ด่วน</li><li>ตั้งครรภ์/ให้นม: ฉีดเหมือนคนทั่วไป ไม่มีข้อห้าม · RIG คิดตามน้ำหนักปัจจุบัน</li><li>มีไข้ไม่ใช่เหตุให้เลื่อน PEP หลังสัมผัส <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="delay" class="col">
+  <div class="sec-num">08</div>
+  <h2>ฉีดล่าช้า ผิดนัด เปลี่ยนสูตร</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>แนวทาง</th></tr>
+    <tr><td>มาฉีดช้ากว่านัด</td><td><b>ไม่ต้องเริ่มใหม่</b> — ฉีดเข็มที่ค้างทันทีแล้วนับระยะห่างต่อจากวันที่ฉีดจริง (ไม่ฉีดเบิ้ล) · 3 เข็มแรกควรครบภายใน ~7 วัน</td></tr>
+    <tr><td>สุนัข/แมวปกติครบ 10 วัน</td><td>หยุด PEP ได้ (ที่ได้ไปแล้วเป็นเหมือน PrEP)</td></tr>
+    <tr><td>เปลี่ยนวิธี IM ↔ ID</td><td>กรมควบคุมโรค: ห้ามสลับไปมา · สถานเสาวภา/WHO: หลีกเลี่ยง ถ้าจำเป็น: เข็มแรก IM แล้วต่อ ID ตาม TRC ได้ / ID 2 จุดวันแรกแล้วต่อ IM ตาม Essen ได้ โดยไม่ต้องเริ่มใหม่</td></tr>
+    <tr><td>เปลี่ยนยี่ห้อวัคซีน</td><td>หลีกเลี่ยง แต่ทำได้ถ้าจำเป็น (วัคซีนเพาะเลี้ยงเซลล์ด้วยกัน)</td></tr>
+    <tr><td>RIG ขาด</td><td>อย่าเลื่อนวัคซีน · ยืม/ส่งต่อ รพ.ใกล้เคียง · ให้ RIG ภายในวันที่ 7</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section id="prep" class="col">
+  <div class="sec-num">09</div>
+  <h2>Pre-exposure prophylaxis (PrEP)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใคร</h4><ul><li>สัตวแพทย์ ผู้ช่วย คนจับสัตว์ เจ้าหน้าที่ห้องแล็บโรคพิษสุนัขบ้า</li><li>เด็กในพื้นที่เสี่ยง (ถูกกัดบ่อย ไม่บอกผู้ใหญ่)</li><li>นักเดินทางไปพื้นที่เสี่ยงที่ห่างไกลการรักษา</li></ul></div>
+    <div class="card c-ok"><h4>สูตร</h4><ul><li><b>สถานเสาวภา 2561/WHO 2018</b>: ID 0.1 mL × 2 จุด <b>วันที่ 0, 7</b> หรือ IM 1 โด๊ส วันที่ 0, 7 (FAQ กรมควบคุมโรคยังเขียนแบบ 3 ครั้ง)</li><li>สูตรดั้งเดิม 3 ครั้ง (0, 7, 21 หรือ 28) ยังใช้ได้ โดยเฉพาะผู้ภูมิคุ้มกันบกพร่อง/อาชีพเสี่ยงสูง</li><li>อาชีพเสี่ยงสูงต่อเนื่อง: ตรวจภูมิเป็นระยะ กระตุ้นเมื่อ &lt;0.5 IU/mL</li><li>เคยได้ PrEP แล้วถูกกัด → ใช้ตาราง "เคยฉีดครบ" ไม่ต้อง RIG</li></ul></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="clin" class="col">
+  <div class="sec-num">10</div>
+  <h2>ผู้ป่วยโรคพิษสุนัขบ้าที่มีอาการแล้ว</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>อาการ</h4><ul><li>ระยะฟักตัวมัก <b>1–3 เดือน</b> (ไม่กี่วันถึง &gt;1 ปี)</li><li>นำ: ไข้ <b>ปวด/ชา/คันบริเวณแผลเดิม</b></li><li><b>Furious (~80%)</b>: <b>กลัวน้ำ กลัวลม</b> (กล้ามเนื้อคอหอยกระตุก) กระวนกระวาย สลับรู้ตัวดี น้ำลายมาก</li><li><b>Paralytic (~20%)</b>: อ่อนแรงแบบ ascending คล้าย Guillain-Barré — วินิจฉัยพลาดบ่อย</li><li>ไทย ม.ค.–ก.ค. 2568 (เสียชีวิต 7 ราย): กลืนลำบากทุกราย · ระยะจากเข้า รพ.ถึงเสียชีวิต มัธยฐาน 2 วัน (1–9 วัน)</li></ul></div>
+    <div class="card c-warn"><h4>ทำอะไร</h4><ul><li>ไม่มีการรักษาที่ได้ผล — เกือบทุกรายเสียชีวิต · <b>ดูแลแบบประคับประคอง</b> ห้องแยก ลดสิ่งกระตุ้น ยาระงับปวด/สงบ</li><li>ส่งตรวจ: น้ำลาย (RT-PCR ซ้ำหลายครั้ง), nuchal skin biopsy, CSF · เสียชีวิต → เนื้อสมอง (DFA/PCR)</li><li><b>รายงาน 506</b> ทันที · สอบสวนผู้สัมผัส</li><li>บุคลากรที่ถูกน้ำลายเข้าเยื่อบุ/แผล → ให้ PEP · สวม PPE มาตรฐาน + กันน้ำลาย</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สัมผัสสัตว์</b>ล้างแผลสบู่ + น้ำ ≥15 นาที · povidone-iodine · บาดทะยัก · ยาปฏิชีวนะถ้าเสี่ยง</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เคยได้วัคซีนครบมาก่อนหรือไม่?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">เคย (ภูมิคุ้มกันปกติ)</span><div class="node dx eu"><b>กระตุ้น · ไม่ต้อง RIG</b>≤6 เดือน: 1 ครั้ง (วันที่ 0)<br>&gt;6 เดือน: วันที่ 0, 3 หรือ ID 4 จุดวันเดียว</div></div>
+        <div class="arm"><span class="lab">ไม่เคย/ไม่ครบ</span><div class="node q"><b>ระดับการสัมผัส</b></div>
+          <div class="branch b3">
+            <div class="arm"><span class="lab">I</span><div class="node dx green"><b>ไม่ต้องฉีด</b></div></div>
+            <div class="arm"><span class="lab">II</span><div class="node dx hypo"><b>วัคซีน</b>ID 0,3,7,28 ×2 จุด<br>หรือ IM 0,3,7,14,28</div></div>
+            <div class="arm"><span class="lab">III</span><div class="node red"><b>วัคซีน + RIG</b>ERIG 40 / HRIG 20 IU/kg<br>แทรกรอบแผล ≤วันที่ 7</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>สุนัข/แมวปกติครบ 10 วัน → หยุดได้</b> · ภูมิคุ้มกันบกพร่อง → IM เต็มสูตร + RIG</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตรวจสอบกับแนวทางของโรงพยาบาล/สถานเสาวภา</p>
+  </div>
+  <div class="tool plan" id="tPep" style="margin-top:12px">
+    <h3>ตัดสินใจ PEP และคำนวณ RIG</h3>
+    <div class="fields">
+      <label class="f">ลักษณะการสัมผัส<select id="pCat"><option value="1">ระดับ I — เลีย/สัมผัสผิวหนังปกติ</option><option value="2">ระดับ II — ข่วน/ถลอกไม่มีเลือด, เลียแผล</option><option value="3" selected>ระดับ III — กัด/ข่วนมีเลือด, น้ำลายเข้าเยื่อบุ</option></select></label>
+      <label class="f">สัตว์<select id="pAn"><option value="dog" selected>สุนัข/แมว</option><option value="mam">สัตว์เลี้ยงลูกด้วยนมอื่น (ลิง วัว ฯลฯ)</option><option value="bat">ค้างคาว</option><option value="rod">หนู กระรอก กระต่าย</option></select></label>
+      <label class="f">สถานะสัตว์<select id="pSt"><option value="obs">มีเจ้าของ กักดูได้ 10 วัน</option><option value="unk" selected>จรจัด/หนี/ไม่ทราบ</option><option value="sick">ป่วย/ตาย/ผลตรวจบวก</option></select></label>
+      <label class="f">ประวัติวัคซีน<select id="pPv"><option value="none" selected>ไม่เคย/ไม่ครบ 3 เข็ม</option><option value="le6">ครบ — ≤6 เดือน</option><option value="gt6">ครบ — &gt;6 เดือน</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="pW" value="60"></label>
+      <label class="f">RIG<select id="pRig"><option value="e">ERIG 40 IU/kg</option><option value="h">HRIG 20 IU/kg</option></select></label>
+      <label class="f">ความเข้มข้น RIG (IU/mL ตามฉลาก)<input type="number" id="pC" value="200"></label>
+      <label class="f">วันที่ได้วัคซีนเข็มแรก (นับจากวันนี้ ถ้าเริ่มไปแล้ว)<input type="number" id="pD" value="0"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="pImm"> ภูมิคุ้มกันบกพร่อง</label><label><input type="checkbox" id="pHn"> แผลที่ศีรษะ/ใบหน้า/คอ/มือ</label><label><input type="checkbox" id="pEq"> เคยได้เซรุ่มม้า/แพ้ ERIG</label></div>
+    <div class="out" id="pepOut"></div>
+  </div>
+  <div class="tool" id="tSch" style="margin-top:12px">
+    <h3>ปฏิทินนัดฉีด</h3>
+    <div class="fields">
+      <label class="f">วันที่ 0<input type="date" id="cD0" value="2026-11-21"></label>
+      <label class="f">สูตร<select id="cRe"><option value="trc">Modified TRC-ID (0,3,7,28)</option><option value="essen">IM Essen (0,3,7,14,28)</option><option value="zag">IM Zagreb (0×2,7,21)</option><option value="b2">กระตุ้น (0,3)</option><option value="b1">กระตุ้น (0)</option><option value="prep">PrEP (0,7)</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="cObs"> สุนัข/แมวกักดูได้ (แสดงวันครบ 10 วัน)</label></div>
+    <div class="out" id="schOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ล้างแผล 15 นาที</b> ลดความเสี่ยงได้มาก — ทำก่อนอย่างอื่น</div></div>
+    <div class="pearl"><div><b>ระดับ II = วัคซีน · ระดับ III = วัคซีน + RIG</b></div></div>
+    <div class="pearl"><div><b>สุนัข/แมว: เริ่มฉีดเลย</b> ครบ 10 วันสัตว์ปกติค่อยหยุด</div></div>
+    <div class="pearl"><div><b>ไทย: ID 2 จุด วันที่ 0, 3, 7, 28</b> หรือ IM 0, 3, 7, 14, 28</div></div>
+    <div class="pearl"><div><b>IM ที่ต้นแขน ห้ามสะโพก</b></div></div>
+    <div class="pearl"><div><b>ERIG 40 · HRIG 20 IU/kg</b> แทรกรอบแผล · ห้ามเกินขนาด · ไม่เกินวันที่ 7</div></div>
+    <div class="pearl"><div><b>เคยฉีดครบ = ไม่ต้อง RIG</b> · ≤6 เดือน 1 เข็ม · &gt;6 เดือน 2 เข็ม (0, 3)</div></div>
+    <div class="pearl"><div><b>ภูมิคุ้มกันบกพร่อง: IM เต็มสูตร + RIG</b> ตรวจภูมิ</div></div>
+    <div class="pearl"><div><b>ผิดนัดไม่ต้องเริ่มใหม่</b> ฉีดต่อ</div></div>
+    <div class="pearl"><div><b>มาช้าเป็นเดือนก็ยังต้องฉีด</b></div></div>
+    <div class="pearl"><div><b>ค้างคาว = ระดับ III</b></div></div>
+    <div class="pearl"><div><b>กลัวน้ำ กลัวลม · อัมพาตแบบ GBS</b> หลังถูกสัตว์กัด → คิดถึง rabies · รายงาน 506</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../snakebite/index.html">งูพิษกัด →</a> · <a href="../anaphylaxis/index.html">Anaphylaxis →</a> · <a href="../hiv/index.html">HIV →</a> · <a href="../tropical-fever/index.html">Tropical fever →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สถานเสาวภา สภากาชาดไทย. แนวทางการดูแลรักษาผู้สัมผัสโรคพิษสุนัขบ้าและคำถามที่พบบ่อย พ.ศ. 2561 · 2) กองโรคติดต่อทั่วไป กรมควบคุมโรค. แนวทางเวชปฏิบัติโรคพิษสุนัขบ้าและคำถามที่พบบ่อย. ISBN 978-616-11-1057-4 (พิมพ์ครั้งที่ 7, 2564) · 3) World Health Organization. Rabies vaccines: WHO position paper – April 2018. Wkly Epidemiol Rec 2018;93:201–20 · 4) WHO Expert Consultation on Rabies, third report. WHO TRS 1012, 2018 · 5) ชาญเกียรติ์ เพียรชนะ. แนวทางการป้องกันและการดูแลรักษาผู้ที่สัมผัสโรคพิษสุนัขบ้า. บทความการศึกษาต่อเนื่องทางเภสัชศาสตร์ 2563 · 6) กองระบาดวิทยา กรมควบคุมโรค. โรคพิษสุนัขบ้า ข้อมูล ณ 2 ก.ค. 2568<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','rbView');
+mountWalker({
+ start:{q:'ล้างแผลแล้ว — สัตว์อะไร?',o:[['สุนัข/แมว/สัตว์เลี้ยงลูกด้วยนมอื่น','cat'],['ค้างคาว','c3'],['หนู กระรอก กระต่าย','rod']]},
+ rod:{leaf:true,cls:'warn',t:'สัตว์ฟันแทะ/กระต่าย',b:'<b>พิจารณารายกรณี</b> — WHO: ยังไม่มีรายงานคนติดจากสัตว์ฟันแทะ · กรมควบคุมโรค: ควรพิจารณาฉีดวัคซีน โดยเฉพาะสัตว์ผิดปกติ/กัดโดยไม่ยั่วยุ · ดูแลแผล บาดทะยัก ยาปฏิชีวนะตามข้อบ่งชี้'},
+ cat:{q:'ระดับการสัมผัส?',o:[['I — สัมผัส/เลียบนผิวปกติ','c1'],['II — ข่วน/ถลอกไม่มีเลือด, เลียแผล','c2'],['III — กัด/ข่วนเลือดออก, น้ำลายเข้าเยื่อบุ','c3']]},
+ c1:{leaf:true,cls:'ok',t:'ระดับ I',b:'ล้างบริเวณที่สัมผัส · <b>ไม่ต้องฉีดวัคซีน</b>'},
+ c2:{q:'เคยได้วัคซีนครบ (PEP ≥3 เข็ม หรือ PrEP) มาก่อน?',o:[['ไม่เคย/ไม่ครบ','i2'],['เคยครบ','boost']]},
+ i2:{q:'ภูมิคุ้มกันปกติหรือไม่?',o:[['ปกติ','v2'],['บกพร่องรุนแรง','imm']]},
+ c3:{q:'เคยได้วัคซีนครบ (PEP ≥3 เข็ม หรือ PrEP) มาก่อน?',o:[['ไม่เคย/ไม่ครบ','v3'],['เคยครบ','boost']]},
+ v2:{leaf:true,cls:'warn',t:'วัคซีนอย่างเดียว',b:'<b>ID 0.1 mL × 2 จุด วันที่ 0, 3, 7, 28</b> หรือ <b>IM 0, 3, 7, 14, 28</b> · ไม่ต้อง RIG · สุนัข/แมวปกติครบ 10 วัน → หยุดได้'},
+ v3:{leaf:true,cls:'danger',t:'วัคซีน + RIG',b:'วัคซีนตามสูตร + <b>ERIG 40 IU/kg หรือ HRIG 20 IU/kg</b> แทรกรอบและใต้แผลทุกแผล (เจือจางได้ถ้าไม่พอ ห้ามเพิ่มขนาด) · ให้วันแรก อย่างช้าไม่เกินวันที่ 7 · ภูมิคุ้มกันบกพร่อง → IM เต็มสูตร'},
+ boost:{q:'ภูมิคุ้มกันปกติหรือไม่?',o:[['ปกติ','bst'],['บกพร่อง','imm']]},
+ bst:{leaf:true,cls:'ok',t:'ฉีดกระตุ้น — ไม่ต้อง RIG',b:'เข็มสุดท้าย ≤6 เดือน: <b>1 ครั้ง วันที่ 0</b> · >6 เดือน: <b>วันที่ 0, 3</b> (IM หรือ ID 1 จุด) หรือ <b>ID 4 จุดวันเดียว</b>'},
+ imm:{leaf:true,cls:'danger',t:'ภูมิคุ้มกันบกพร่อง',b:'ให้แบบ<b>ไม่เคยฉีด</b>: IM เต็มสูตร + RIG (ทั้งระดับ II และ III) · ตรวจ neutralizing antibody ~วันที่ 14'}
+},'apTrail','apStage');
+
+function pep(){
+  const cat=+$('pCat').value,an=$('pAn').value,st=$('pSt').value,pv=$('pPv').value,w=num('pW'),c=num('pC'),d=num('pD');
+  const imm=$('pImm').checked,hn=$('pHn').checked,eq=$('pEq').checked;
+  let ecat=an==='bat'&&cat>1?3:cat;if(an==='bat'&&cat===1)ecat=3;
+  const L=[];
+  if(an==='rod')L.push('<b>หนู กระรอก กระต่าย: พิจารณารายกรณี</b> — WHO: ยังไม่มีรายงานคนติดจากสัตว์ฟันแทะ · กรมควบคุมโรค: ควรพิจารณาฉีด (โดยเฉพาะสัตว์ผิดปกติ/กัดโดยไม่ยั่วยุ) · ถ้าตัดสินใจให้ ใช้คำแนะนำด้านล่าง');
+  if(an==='bat')L.push('<b>ค้างคาว → ถือเป็นระดับ III</b>');
+  if(ecat===1){$('pepOut').innerHTML='<b>ระดับ I</b> → ล้างบริเวณที่สัมผัส <b>ไม่ต้องฉีด</b>';return}
+  const boostOK=pv!=='none'&&!imm;
+  if(boostOK){
+    L.push('<b>เคยได้วัคซีนครบ → ฉีดกระตุ้น · ไม่ต้องให้ RIG</b>');
+    L.push(pv==='le6'?'เข็มสุดท้าย ≤6 เดือน → <b>1 ครั้ง วันที่ 0</b> (IM 1 โด๊ส หรือ ID 0.1 mL 1 จุด) — WHO 2018: ≤3 เดือนหลัง PEP ครบดูแลแผลอย่างเดียว, >3 เดือน วันที่ 0, 3':'เข็มสุดท้าย >6 เดือน → <b>วันที่ 0 และ 3</b> (IM หรือ ID 1 จุด) หรือ <b>ID 4 จุด วันที่ 0</b>');
+  }else{
+    if(pv!=='none'&&imm)L.push('<b>ภูมิคุ้มกันบกพร่อง</b> → ให้เหมือนไม่เคยฉีด (WHO) แม้เคยฉีดครบ');
+    L.push(imm?'<b>วัคซีน IM เต็มสูตร</b>: Essen 0, 3, 7, 14, 28 (ไม่ใช้ ID) · ตรวจ neutralizing antibody ~วันที่ 14':'<b>วัคซีน</b>: ID 0.1 mL × 2 จุด วันที่ 0, 3, 7, 28 <b>หรือ</b> IM วันที่ 0, 3, 7, 14, 28 (หรือ Zagreb 0×2, 7, 21)');
+    const needRig=ecat===3||imm;
+    if(needRig){
+      const why=ecat===3?'ระดับ III':'ภูมิคุ้มกันบกพร่องรุนแรง (ระดับ II)';
+      let type=$('pRig').value;if(eq&&type==='e'){L.push('เคยได้เซรุ่มม้า/แพ้ ERIG → <b>พิจารณา HRIG</b>');}
+      const iu=type==='e'?40:20;
+      if(d!==null&&d>7)L.push(`<b>ไม่ให้ RIG</b> — เริ่มวัคซีนมาแล้ว ${d} วัน (>7 วัน) ให้วัคซีนต่อตามสูตร`);
+      else if(!w)L.push(`<b>ต้องให้ RIG</b> (${why}) — ใส่น้ำหนักเพื่อคำนวณขนาด (${type==='e'?'ERIG 40':'HRIG 20'} IU/kg)`);
+      else{const tot=w*iu;L.push(`<b>RIG</b> (${why}): ${type==='e'?'ERIG':'HRIG'} ${iu} IU/kg × ${w} kg = <b>${Math.round(tot).toLocaleString()} IU</b>`+(c?` = <b>${(tot/c).toFixed(1)} mL</b> ที่ ${c} IU/mL`:'')+' · แทรกรอบและใต้แผลทุกแผล · ไม่พอ → เจือจาง NSS 2–3 เท่า (ห้ามเพิ่มขนาด) · เหลือ → ไทย: IM ห่างจากวัคซีน / WHO: ไม่ต้อง');
+        if(type==='e')L.push('ERIG skin test: สถานเสาวภา — ตามดุลยพินิจ · กรมควบคุมโรค — ทำทุกครั้ง · WHO — ไม่แนะนำ · เตรียม adrenaline ให้พร้อมเสมอ');
+        if(d!==null&&d>0)L.push(`<span class="muted">เริ่มวัคซีนมาแล้ว ${d} วัน — ยังให้ RIG ได้ถึงวันที่ 7</span>`);}
+    }else L.push('ไม่ต้องให้ RIG (ระดับ II ภูมิคุ้มกันปกติ)');
+  }
+  if(an==='dog'){
+    if(st==='obs')L.push('สุนัข/แมวกักดูได้: <b>เริ่มฉีดเลย</b> ถ้าสัตว์ยังปกติครบ 10 วัน → หยุดได้ (ที่ฉีดไปถือเป็น PrEP) · สัตว์มีอาการ/ตาย → ฉีดต่อจนครบ ส่งหัวตรวจ');
+    else if(st==='sick')L.push('<b>สัตว์ป่วย/ตาย/ผลบวก</b> → ฉีดจนครบ · สัตว์ตาย ส่งหัวตรวจ (แช่เย็น ห้าม formalin)');
+    else L.push('สัตว์จรจัด/หนี/ไม่ทราบ → ถือว่าอาจเป็นโรค <b>ฉีดจนครบ</b>');
+  }else if(an==='mam')L.push('สัตว์อื่นที่ไม่ใช่สุนัข/แมว: กักดู 10 วันใช้ไม่ได้ → ฉีดจนครบ');
+  if(hn)L.push('<b>แผลศีรษะ/ใบหน้า/คอ/มือ</b> — ระยะฟักตัวอาจสั้น เร่งให้วัคซีน (และ RIG ถ้าระดับ III) ตรงนัด · ระดับ II ไม่ต้อง RIG เพียงเพราะตำแหน่ง');
+  L.push('<span class="muted">ร่วมกับ: ล้างแผล 15 นาที · บาดทะยักตามประวัติ · ยาปฏิชีวนะในแผลเสี่ยง (แมวกัด มือ แผลลึก)</span>');
+  $('pepOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPep input,#tPep select',pep);
+
+const RE={trc:[[0,'ID 2 จุด'],[3,'ID 2 จุด'],[7,'ID 2 จุด'],[28,'ID 2 จุด']],essen:[[0,'IM'],[3,'IM'],[7,'IM'],[14,'IM'],[28,'IM']],zag:[[0,'IM 2 โด๊ส (แขนซ้าย+ขวา)'],[7,'IM'],[21,'IM']],b2:[[0,'IM หรือ ID 1 จุด'],[3,'IM หรือ ID 1 จุด']],b1:[[0,'IM หรือ ID 1 จุด']],prep:[[0,'ID 2 จุด หรือ IM'],[7,'ID 2 จุด หรือ IM']]};
+const TH=['อา','จ','อ','พ','พฤ','ศ','ส'];
+function sch(){
+  const v=$('cD0').value;if(!v){$('schOut').textContent='เลือกวันที่ 0';return}
+  const [y,m,d]=v.split('-').map(Number);const base=new Date(Date.UTC(y,m-1,d));
+  const fd=n=>{const x=new Date(base.getTime()+n*864e5);return `${TH[x.getUTCDay()]} ${x.getUTCDate()}/${x.getUTCMonth()+1}/${x.getUTCFullYear()+543}`};
+  const L=RE[$('cRe').value].map(([n,t])=>`วันที่ ${n}: <b>${fd(n)}</b> — ${t}`);
+  if($('cObs').checked&&$('cRe').value!=='prep')L.push(`ครบกักดูสุนัข/แมว 10 วัน: <b>${fd(10)}</b> — สัตว์ยังปกติ → หยุดฉีดเข็มที่เหลือได้`);
+  if(['trc','essen','zag'].includes($('cRe').value))L.push(`RIG (ถ้าต้องให้) ช้าสุด: <b>${fd(7)}</b>`);
+  L.push('<span class="muted">มาช้ากว่านัด: ฉีดทันทีแล้วเลื่อนนัดถัดไปตามระยะห่างเดิม ไม่ต้องเริ่มใหม่</span>');
+  $('schOut').innerHTML=L.join('<br>');
+}
+bindAll('#tSch input,#tSch select',sch);
+
+mountQuiz([
+ ['ชาย 30 ปี ถูกสุนัขจรจัดกัดที่น่องมีเลือดออก ไม่เคยฉีดวัคซีน ข้อใดเหมาะสมที่สุด',
+  ['วัคซีนอย่างเดียว','วัคซีน + RIG แทรกรอบแผล','รอดูสุนัข 10 วันก่อน','RIG อย่างเดียว'],1,'ระดับ III ไม่เคยฉีด → วัคซีน + RIG'],
+ ['เด็กถูกแมวข่วนเป็นรอยถลอกไม่มีเลือดออก ไม่เคยฉีด',
+  ['ไม่ต้องทำอะไร','ล้างแผลและฉีดวัคซีน','วัคซีน + ERIG','ให้ HRIG อย่างเดียว'],1,'ระดับ II'],
+ ['หญิงเคยได้ PEP ครบ 2 ปีก่อน ถูกสุนัขกัดเลือดออก ควรได้อะไร',
+  ['PEP ใหม่ทั้งชุด + RIG','กระตุ้นวันที่ 0 และ 3 ไม่ต้อง RIG','RIG อย่างเดียว','ไม่ต้องฉีด'],1,'เคยฉีดครบ >6 เดือน → 0, 3 หรือ ID 4 จุดวันเดียว · ไม่ให้ RIG'],
+ ['ขนาด ERIG ในผู้ใหญ่ 50 kg',
+  ['1,000 IU','2,000 IU','4,000 IU','ตามขนาดแผล ไม่จำกัด'],1,'40 IU/kg × 50 = 2,000 IU · ห้ามเกินขนาด'],
+ ['ผู้ป่วยมาวันที่ 10 หลังเริ่มวัคซีนเข็มแรก ยังไม่ได้ RIG (ระดับ III) ควรทำอย่างไร',
+  ['ให้ RIG ทันที','ไม่ให้ RIG แล้ว ฉีดวัคซีนต่อ','เริ่มวัคซีนใหม่ + RIG','ให้ RIG ครึ่งขนาด'],1,'RIG ไม่ให้หลังวันที่ 7 เพราะรบกวนภูมิจากวัคซีน'],
+ ['สูตร ID ที่ใช้เป็นหลักในไทยสำหรับผู้ไม่เคยฉีด',
+  ['0.1 mL 1 จุด วันที่ 0, 7','0.1 mL 2 จุด วันที่ 0, 3, 7, 28','0.5 mL 1 จุด วันที่ 0, 3, 7, 14, 28','0.1 mL 4 จุด วันที่ 0'],1,'Modified TRC-ID 2-2-2-0-2'],
+ ['ผู้ป่วยไม่มาตามนัดเข็มวันที่ 7 มาวันที่ 12 ควรทำอย่างไร',
+  ['เริ่มใหม่ทั้งหมด','ฉีดเข็มที่ค้างทันทีแล้วนับระยะต่อจากวันนี้','ฉีด 2 เข็มเพื่อชดเชย','หยุดฉีด'],1,'ไม่ต้องเริ่มใหม่ ไม่ฉีดเบิ้ล'],
+ ['ผู้ติดเชื้อ HIV CD4 90 ยังไม่ได้ ART ถูกสุนัขข่วนถลอกไม่มีเลือดออก',
+  ['ID TRC อย่างเดียว','วัคซีน IM เต็มสูตร + RIG และตรวจภูมิ','ไม่ต้องฉีด','กระตุ้น 2 เข็ม'],1,'ภูมิคุ้มกันบกพร่องรุนแรง: WHO แนะนำ RIG แม้ระดับ II · IM ไม่ใช่ ID'],
+ ['ชายถูกสุนัขกัด 2 เดือนก่อนไม่ได้ฉีด ตอนนี้กลืนน้ำไม่ได้ กลัวลม กระวนกระวาย ข้อใดถูก',
+  ['เริ่ม PEP + RIG ทันทีจะหาย','สงสัย rabies: ประคับประคอง ห้องแยก ส่งตรวจน้ำลาย รายงาน 506','ให้ acyclovir','ให้ ERIG ทางหลอดเลือด'],1,'มีอาการแล้วเกือบทุกรายเสียชีวิต']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
