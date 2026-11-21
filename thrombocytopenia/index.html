@@ -1,0 +1,698 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Thrombocytopenia & bleeding approach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hematology · ASH 2026 · ISTH 2025 · AABB 2025</div>
+  <h1>Thrombocytopenia<br>และ bleeding approach</h1>
+  <p class="sub">เกล็ดเลือดต่ำและเลือดออกผิดปกติ สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การยืนยันผล การแยกสาเหตุ ภาวะฉุกเฉินที่ห้ามพลาด (TTP, HIT, DIC) การรักษา ITP ตามแนวทาง ASH 2026 เกณฑ์ให้เกล็ดเลือด และการแปลผล PT/aPTT พร้อมเครื่องคำนวณ 4Ts, PLASMIC และ ISTH DIC</p>
+  <p class="cite">อ้างอิงหลัก: ASH 2026 Guidelines for ITP: initial and second-line therapy in adults (Blood Adv 2026) · ASH 2019 ITP guidelines · ISTH TTP guidelines 2020 + 2025 focused update · ASH 2018 HIT guidelines · AABB/ICTMG Platelet Transfusion Guidelines 2025 (JAMA) · ISTH DIC criteria · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>1. ยืนยัน</b>ดู blood smear · pseudothrombocytopenia (EDTA) → ตรวจซ้ำหลอด citrate</div>
+    <div class="stage" style="--c:var(--danger)"><b>2. ตัดภาวะฉุกเฉิน</b>Schistocyte → TTP · ได้ heparin → HIT · sepsis → DIC</div>
+    <div class="stage" style="--c:var(--ok)"><b>3. หาสาเหตุ · รักษา</b>Isolated → ITP/ยา · ร่วมกับ cytopenia อื่น → ไขกระดูก</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#first">เริ่มต้น</a><a href="#cause">แยกสาเหตุ</a><a href="#itp">ITP</a><a href="#ttp">TTP · HUS</a><a href="#hit">HIT</a><a href="#dic">DIC</a><a href="#other">ยา · ตับ · ติดเชื้อ · ครรภ์</a><a href="#ptx">ให้เกล็ดเลือดเมื่อไร</a><a href="#coag">Bleeding: PT/aPTT</a><a href="#rev">Reversal</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="first" class="col">
+  <div class="sec-num">01</div>
+  <h2>เริ่มต้น: ยืนยันและประเมินความเร่งด่วน</h2>
+  <p>Thrombocytopenia = เกล็ดเลือด <b>&lt;150 ×10³/µL</b> · ความเสี่ยงเลือดออกเองมักเกิดเมื่อ <b>&lt;20–30</b> และรุนแรงเมื่อ <b>&lt;10</b> (ขึ้นกับสาเหตุ — ITP เลือดออกน้อยกว่า aplastic ที่ค่าเท่ากัน)</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ยืนยันก่อนเสมอ</h4><ul><li><b>ดู peripheral blood smear</b> ด้วยตัวเอง — clumping, giant platelet, schistocyte, blast, ไข้มาลาเรีย</li><li>Pseudothrombocytopenia (EDTA) → เจาะซ้ำด้วย <b>sodium citrate</b> หรือ heparin tube</li><li>เทียบกับค่าเก่า: เฉียบพลันหรือเรื้อรัง</li></ul></div>
+    <div class="card c-red"><h4>เร่งด่วนเมื่อ</h4><ul><li>มีเลือดออกในเยื่อบุ (wet purpura) สมอง ทางเดินอาหาร</li><li>เกล็ดเลือดลดเร็ว + ได้ heparin</li><li>ซีด + schistocyte + LDH สูง (MAHA)</li><li>ไข้ + sepsis + PT/aPTT ยาว</li><li>ตั้งครรภ์ + ความดันสูง / ตับอักเสบ</li><li>Pancytopenia + blast</li></ul></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="cause" class="col">
+  <div class="sec-num">02</div>
+  <h2>แยกสาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>ลักษณะ</th><th>นึกถึง</th></tr>
+    <tr><td><b>Isolated</b> CBC อื่นปกติ ผู้ป่วยสบายดี</td><td>ITP, ยา, HIV/HCV/HBV, H. pylori, ตั้งครรภ์ (gestational), pseudo</td></tr>
+    <tr><td>ร่วมกับ <b>ซีด + schistocyte + LDH สูง</b></td><td><b>TTP</b>, HUS/aHUS, DIC, HELLP, malignant hypertension, prosthetic valve</td></tr>
+    <tr><td>ร่วมกับ <b>PT/aPTT ยาว fibrinogen ต่ำ</b></td><td><b>DIC</b> (sepsis, มะเร็ง, APL, ตั้งครรภ์), ตับวาย</td></tr>
+    <tr><td><b>Pancytopenia</b> / blast / MCV สูง</td><td>Leukemia, MDS, aplastic anemia, B12/folate, ยาเคมี, ไขกระดูกถูกแทนที่ → ส่ง hematology, bone marrow</td></tr>
+    <tr><td>ม้ามโต / ตับแข็ง</td><td>Hypersplenism, TPO ลด (ดูหน้า <a href="../cirrhosis/index.html">Cirrhosis</a>)</td></tr>
+    <tr><td>ไข้เฉียบพลัน</td><td>Dengue, malaria, leptospirosis, scrub typhus, sepsis, HIV ระยะแรก (ดูหน้า <a href="../tropical-fever/index.html">Tropical fever</a>, <a href="../dhf/index.html">DHF</a>)</td></tr>
+    <tr><td>อยู่ใน ICU</td><td>Sepsis/DIC (พบบ่อยสุด), ยา, HIT, dilution, ECMO/IABP</td></tr>
+  </table></div>
+  <p>Lab พื้นฐาน: CBC + smear, reticulocyte, PT/aPTT, fibrinogen, LDH, bilirubin, haptoglobin, Cr, LFT, <b>HIV, HCV, HBsAg/anti-HBc</b> (ก่อน rituximab), pregnancy test · ตามข้อบ่งชี้: ADAMTS13, B12/folate, H. pylori, ANA, TSH, bone marrow</p>
+</section>
+
+<!-- 3 -->
+<section id="itp" class="col">
+  <div class="sec-num">03</div>
+  <h2>Immune thrombocytopenia (ITP)</h2>
+  <p>วินิจฉัยโดย <b>การแยกโรคอื่นออก</b> · isolated thrombocytopenia &lt;100 ×10³/µL · smear: เกล็ดเลือดใหญ่ ไม่มีความผิดปกติอื่น · ไม่ต้องทำ bone marrow ทุกราย (ทำเมื่ออายุมาก มี cytopenia อื่น หรือไม่ตอบสนองการรักษา) · ระยะ: newly diagnosed &lt;3 เดือน, persistent 3–12 เดือน, chronic &gt;12 เดือน</p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์ (ผู้ใหญ่ ไม่มีเลือดออกหรือเลือดออกเล็กน้อย)</th><th>แนวทาง</th></tr>
+    <tr><td>เกล็ดเลือด <b>≥30</b></td><td><b>ไม่ให้ steroid</b> สังเกตอาการ (ASH 2019) — ยกเว้นต้องผ่าตัด ใช้ anticoagulant/antiplatelet อาชีพเสี่ยง</td></tr>
+    <tr><td>เกล็ดเลือด <b>&lt;30</b> newly diagnosed</td><td>เริ่มรักษา · <b>Corticosteroid ระยะสั้น ≤6 สัปดาห์</b>: prednisolone 0.5–2 mg/kg/วัน (ค่อยๆ ลด) หรือ <b>dexamethasone 40 mg/วัน × 4 วัน</b> (ทำซ้ำได้)</td></tr>
+    <tr><td>Initial therapy <span class="tag up">ASH 2026</span></td><td>แนะนำ <b>rituximab หรือ thrombopoietic agent (TPO-RA) ร่วมกับ corticosteroid</b> (± IVIG) มากกว่า steroid เดี่ยว — ถ้าไม่มี rituximab/TPO-RA ให้ steroid ± IVIG เดี่ยว (ไม่แนะนำ MMF + steroid)</td></tr>
+    <tr><td>เกล็ดเลือด <b>&lt;20</b> newly diagnosed</td><td>พิจารณานอน รพ. · ถ้าเป็น ITP เดิมที่ทราบการตอบสนอง ดูแลผู้ป่วยนอกได้</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Second-line (หลัง steroid) <span class="tag up">ASH 2026</span></h4><ul><li><b>TPO-RA</b> (eltrombopag, romiplostim, avatrombopag) — <b>strong recommendation</b> เพียงข้อเดียวของแนวทาง</li><li><b>Rituximab</b> (conditional)</li><li>ใช้ TPO-RA/rituximab ไม่ได้: <b>BTK inhibitor (rilzabrutinib), MMF หรือ SYK inhibitor (fostamatinib)</b></li><li>Splenectomy: เลื่อนไปหลัง 12 เดือน ใช้เมื่อทางเลือกอื่นไม่ได้ผล <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-red"><h4>ITP + เลือดออกรุนแรง <span class="tag add">เสริม</span></h4><ul><li><b>IVIG 1 g/kg/วัน × 1–2 วัน</b></li><li><b>Methylprednisolone 1 g IV/วัน × 3 วัน</b></li><li><b>Platelet transfusion</b> (ให้ได้ แม้ถูกทำลายเร็ว — อาจให้ซ้ำ/ต่อเนื่อง)</li><li>Tranexamic acid · หยุด antiplatelet/anticoagulant</li><li>เริ่ม TPO-RA ร่วม</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ในบริบทไทยที่ TPO-RA/rituximab เข้าถึงยาก steroid ± IVIG ยังเป็นการรักษาหลักที่สอดคล้องกับแนวทาง · ตรวจ HBV ก่อน rituximab (เสี่ยง reactivation) · เป้าหมายคือป้องกันเลือดออก (เกล็ดเลือด &gt;20–30) ไม่ใช่ทำให้ค่าปกติ</p>
+</section>
+
+<!-- 4 -->
+<section id="ttp" class="col">
+  <div class="sec-num">04</div>
+  <h2>TTP และ HUS — ฉุกเฉินทางโลหิตวิทยา</h2>
+  <div class="box warn"><b>MAHA + thrombocytopenia = คิดถึง TTP จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</b>ไม่ต้องรอให้ครบ pentad (ไข้ อาการทางสมอง ไตวาย) · iTTP ไม่รักษาอัตราตาย &gt;90%</div>
+  <ul>
+    <li>Lab: <b>schistocyte</b>, LDH สูงมาก, haptoglobin ต่ำ, indirect bilirubin สูง, reticulocyte สูง, Coombs ลบ, PT/aPTT มักปกติ, Cr มักขึ้นไม่มาก</li>
+    <li>ใช้ <b>PLASMIC score</b> ประเมินความน่าจะเป็นก่อนผล ADAMTS13 (เครื่องมือบท 12) · <b>เจาะ ADAMTS13 ก่อนให้ plasma</b> (activity &lt;10% = TTP)</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>การรักษา iTTP (ISTH 2020; 2025 ไม่เปลี่ยนสำหรับ iTTP)</th><th>รายละเอียด</th></tr>
+    <tr><td><b>Therapeutic plasma exchange (TPE)</b></td><td>เร่งด่วน ทุกวันจนเกล็ดเลือดปกติ · ถ้ายังทำ TPE ไม่ได้ ให้ <b>plasma infusion</b> ระหว่างส่งต่อ</td></tr>
+    <tr><td><b>Corticosteroid</b></td><td>Methylprednisolone 1 g/วัน × 3 วัน หรือ prednisolone 1 mg/kg/วัน</td></tr>
+    <tr><td><b>Rituximab</b></td><td>แนะนำในครั้งแรกและครั้งกลับเป็นซ้ำ</td></tr>
+    <tr><td><b>Caplacizumab</b></td><td>แนะนำร่วมกับ TPE + immunosuppression เมื่อสงสัยมากและตรวจ ADAMTS13 ได้</td></tr>
+    <tr><td>Platelet transfusion</td><td><b>หลีกเลี่ยง</b> ยกเว้นเลือดออกรุนแรง/ต้องทำหัตถการ</td></tr>
+  </table></div>
+  <p><b>HUS</b>: ไตวายเด่น · ท้องเสียเป็นเลือด (STEC) → supportive · <b>aHUS</b> (complement) → eculizumab/ravulizumab · <b>cTTP</b> (ADAMTS13 แต่กำเนิด) ISTH 2025: ให้ ADAMTS13 replacement (recombinant ถ้ามี) <span class="tag up">2025</span></p>
+</section>
+
+<!-- 5 -->
+<section id="hit" class="col">
+  <div class="sec-num">05</div>
+  <h2>Heparin-induced thrombocytopenia (HIT)</h2>
+  <p>ภาวะ <b>prothrombotic</b> (ไม่ใช่เลือดออก) · เกล็ดเลือดลด &gt;50% ในวันที่ <b>5–10</b> หลังเริ่ม heparin (เร็วกว่านั้นถ้าเคยได้ภายใน 30–100 วัน) · UFH เสี่ยงกว่า LMWH · nadir มัก 30–70 ×10³/µL (ไม่ค่อยต่ำกว่า 20)</p>
+  <div class="tbl"><table>
+    <tr><th>4Ts</th><th>การจัดการ (ASH 2018)</th></tr>
+    <tr><td><b>Low (0–3)</b></td><td>ไม่ต้องตรวจ HIT antibody ไม่ต้องหยุด heparin — หาสาเหตุอื่น <span class="rec s1">strong</span></td></tr>
+    <tr><td><b>Intermediate (4–5)</b> / <b>High (6–8)</b></td><td><b>หยุด heparin ทุกชนิด</b> (รวม flush, LMWH) · เริ่ม <b>non-heparin anticoagulant ขนาดรักษา</b> · ส่ง immunoassay (PF4/heparin) → ถ้าบวกและทำได้ ส่ง functional assay</td></tr>
+  </table></div>
+  <ul>
+    <li>ยา: <b>argatroban</b> (ตับ), bivalirudin, <b>fondaparinux</b>, <b>DOAC</b> (rivaroxaban, apixaban — ผู้ป่วย stable ไม่ต้อง bridging)</li>
+    <li><b>ห้ามเริ่ม warfarin</b> จนเกล็ดเลือด ≥150 (venous limb gangrene) · ถ้าได้อยู่แล้วให้ vitamin K กลับ</li>
+    <li>ไม่ให้ platelet transfusion ประจำ · ทำ <b>Doppler ultrasound ขาทั้งสองข้าง</b> หา DVT แฝง</li>
+    <li>ระยะเวลา: ไม่มี thrombosis ≥4 สัปดาห์ <span class="tag add">เสริม</span> · มี thrombosis 3 เดือน · ห้ามใช้ heparin ซ้ำ (ยกเว้น cardiac surgery กรณีพิเศษ)</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="dic" class="col">
+  <div class="sec-num">06</div>
+  <h2>Disseminated intravascular coagulation (DIC)</h2>
+  <p>เกิด <b>ตามหลังโรคพื้นฐานเสมอ</b>: sepsis, trauma, มะเร็ง (โดยเฉพาะ <b>APL</b>), ภาวะแทรกซ้อนการตั้งครรภ์ (placental abruption, AFE), งูพิษ · ใช้ <b>ISTH overt DIC score</b> (เครื่องมือบท 12) ≥5 = overt DIC</p>
+  <div class="tbl"><table>
+    <tr><th>หลักการ</th><th>รายละเอียด <span class="tag add">เสริม</span></th></tr>
+    <tr><td><b>รักษาสาเหตุ</b></td><td>ยาต้านจุลชีพ/source control, ATRA ใน APL, คลอด</td></tr>
+    <tr><td>Platelet</td><td>มีเลือดออก/หัตถการ: &gt;50 · ไม่มีเลือดออก: &lt;10 (AABB 2025: consumptive ไม่มีเลือดออกรุนแรง ให้เมื่อ &lt;10)</td></tr>
+    <tr><td>FFP 15–30 mL/kg</td><td>มีเลือดออก + PT/aPTT ยาว &gt;1.5 เท่า</td></tr>
+    <tr><td>Cryoprecipitate / fibrinogen</td><td>Fibrinogen &lt;1.5 g/L + เลือดออก</td></tr>
+    <tr><td>Heparin</td><td>เฉพาะ DIC ที่มี thrombosis เด่น (purpura fulminans, VTE)</td></tr>
+    <tr><td>Tranexamic acid</td><td><b>ไม่ใช้</b>ทั่วไปใน DIC จาก sepsis</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="other" class="col">
+  <div class="sec-num">07</div>
+  <h2>สาเหตุอื่นที่พบบ่อย</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ยา (drug-induced immune)</h4>มัก 5–10 วันหลังเริ่มยา เกล็ดเลือดต่ำมาก (&lt;20) · ยาที่พบบ่อย: <b>vancomycin, piperacillin-tazobactam, TMP-SMX, linezolid, rifampicin, valproate, carbamazepine, phenytoin, quinine, GP IIb/IIIa inhibitor</b> · หยุดยา เกล็ดเลือดกลับใน 1–2 สัปดาห์</div>
+    <div class="card c-vio"><h4>ตับ / สุรา</h4>Hypersplenism + TPO ลด + พิษสุราต่อไขกระดูก · มักไม่ต่ำกว่า 50 · ก่อนหัตถการพิจารณา TPO-RA (avatrombopag, lusutrombopag) แทนการให้เกล็ดเลือด</div>
+    <div class="card c-acc"><h4>ติดเชื้อ</h4>Dengue (ไม่ให้เกล็ดเลือดป้องกัน), malaria, leptospirosis, scrub typhus, HIV, HCV, sepsis</div>
+    <div class="card c-red"><h4>ตั้งครรภ์</h4><b>Gestational</b> (ไตรมาส 3, &gt;70, ไม่อันตราย) · <b>Preeclampsia/HELLP</b> (ความดันสูง ตับอักเสบ hemolysis → คลอด) · ITP · TTP/aHUS · AFLP</div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="ptx" class="col">
+  <div class="sec-num">08</div>
+  <h2>ให้เกล็ดเลือดเมื่อไร (AABB/ICTMG 2025)</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์ (ผู้ใหญ่ ไม่มีเลือดออกรุนแรง)</th><th>ให้เมื่อเกล็ดเลือด</th></tr>
+    <tr><td>Hypoproliferative จากเคมีบำบัด / allogeneic SCT</td><td><b>&lt;10</b> ×10³/µL</td></tr>
+    <tr><td>Autologous SCT · aplastic anemia เรื้อรัง</td><td>ไม่ให้แบบป้องกัน</td></tr>
+    <tr><td>Consumptive (เช่น DIC) ไม่มีเลือดออกรุนแรง</td><td><b>&lt;10</b></td></tr>
+    <tr><td><b>Dengue</b> ไม่มีเลือดออกรุนแรง</td><td><b>ไม่ให้</b></td></tr>
+    <tr><td>ใส่ CVC ตำแหน่งกดได้ (IJ, femoral)</td><td><b>&lt;10</b></td></tr>
+    <tr><td>Interventional radiology: low-risk · high-risk</td><td><b>&lt;20</b> · <b>&lt;50</b></td></tr>
+    <tr><td><b>Lumbar puncture</b></td><td><b>&lt;20</b></td></tr>
+    <tr><td>Major surgery ที่ไม่ใช่ neuraxial</td><td><b>&lt;50</b></td></tr>
+    <tr><td>Neurosurgery / ocular posterior segment / มีเลือดออกในสมอง</td><td>&lt;100 <span class="tag add">เสริม</span></td></tr>
+    <tr><td>มีเลือดออกรุนแรง (major bleeding)</td><td>คงไว้ &gt;50 <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">แนวทางสนับสนุน restrictive strategy · TTP และ HIT หลีกเลี่ยงการให้เกล็ดเลือดเว้นเลือดออกรุนแรง · 1 unit pooled/apheresis เพิ่มได้ ~30–50 ×10³/µL ในผู้ใหญ่</p>
+</section>
+
+<!-- 9 -->
+<section id="coag" class="col">
+  <div class="sec-num">09</div>
+  <h2>Bleeding approach: platelet หรือ coagulation?</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เลือดออกแบบ platelet / vWD</h4>เยื่อบุ: เลือดกำเดา เหงือก ประจำเดือนมาก · petechiae · เลือดออกทันทีหลังบาดแผล</div>
+    <div class="card c-warn"><h4>เลือดออกแบบ coagulation factor</h4>ข้อ (hemarthrosis) กล้ามเนื้อ ลึก · ecchymosis ใหญ่ · เลือดออกช้า (delayed) หลังผ่าตัด/ถอนฟัน</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>PT</th><th>aPTT</th><th>นึกถึง</th></tr>
+    <tr><td>ยาว</td><td>ปกติ</td><td>Warfarin, vitamin K deficiency, ตับเริ่มเสีย, factor VII deficiency</td></tr>
+    <tr><td>ปกติ</td><td>ยาว</td><td>Heparin, hemophilia A/B (FVIII/IX), FXI, vWD บางชนิด · <b>lupus anticoagulant</b> และ FXII (ไม่เลือดออก)</td></tr>
+    <tr><td>ยาว</td><td>ยาว</td><td>DIC, ตับวาย, vitamin K deficiency รุนแรง, warfarin/heparin เกินขนาด, dilution, common pathway (X, V, II, fibrinogen), DOAC</td></tr>
+    <tr><td>ปกติ</td><td>ปกติ</td><td>Platelet function (antiplatelet, uremia), <b>vWD</b>, FXIII deficiency, vascular (scurvy, steroid, Ehlers-Danlos)</td></tr>
+  </table></div>
+  <p><b>Mixing study</b> (ผสม plasma ปกติ 1:1): aPTT/PT <b>แก้ได้</b> → factor deficiency · <b>แก้ไม่ได้</b> → inhibitor (lupus anticoagulant, acquired hemophilia — ผู้สูงอายุ/หลังคลอดที่มี ecchymosis ใหญ่ + aPTT ยาว → ด่วน)</p>
+</section>
+
+<!-- 10 -->
+<section id="rev" class="col">
+  <div class="sec-num">10</div>
+  <h2>Reversal ยาต้านการแข็งตัวของเลือดเมื่อเลือดออกรุนแรง</h2>
+  <span class="tag add">เสริม</span>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Reversal</th></tr>
+    <tr><td><b>Warfarin</b></td><td>Vitamin K <b>10 mg IV</b> ช้าๆ + <b>4F-PCC</b> 25–50 U/kg ตาม INR · ไม่มี PCC: FFP 15 mL/kg</td></tr>
+    <tr><td><b>Dabigatran</b></td><td><b>Idarucizumab 5 g IV</b> · ไม่มี: PCC 50 U/kg ± hemodialysis</td></tr>
+    <tr><td><b>Rivaroxaban · apixaban · edoxaban</b></td><td>Andexanet alfa (ถ้ามี) หรือ <b>4F-PCC 50 U/kg</b> · activated charcoal ถ้ากินภายใน 2–4 ชม.</td></tr>
+    <tr><td><b>UFH</b></td><td><b>Protamine 1 mg ต่อ heparin 100 U</b> ที่ได้ใน 2–3 ชม.ที่ผ่านมา (สูงสุด 50 mg)</td></tr>
+    <tr><td><b>Enoxaparin</b></td><td>Protamine 1 mg ต่อ enoxaparin 1 mg (ภายใน 8 ชม.) — แก้ได้บางส่วน</td></tr>
+    <tr><td><b>Antiplatelet</b></td><td>หยุดยา · desmopressin 0.3 µg/kg ในบางกรณี · platelet transfusion <b>ไม่แนะนำ</b>ใน ICH ที่ไม่ผ่าตัด (PATCH)</td></tr>
+  </table></div>
+  <p>ดูหน้า <a href="../ugib/index.html">UGIB</a> (การจัดการยาต้านลิ่มเลือดเมื่อเลือดออกทางเดินอาหาร) และ <a href="../stroke/index.html">Stroke</a></p>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>เกล็ดเลือด &lt;150</b>ดู smear · ตัด pseudo (citrate tube) · เทียบค่าเก่า</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Schistocyte + LDH สูง</span><div class="node red"><b>MAHA</b>PLASMIC · ADAMTS13<br>สงสัย TTP → TPE + steroid ทันที<br>หลีกเลี่ยงการให้เกล็ดเลือด</div></div>
+        <div class="arm"><span class="lab">PT/aPTT ยาว</span><div class="node dx hypo"><b>DIC / ตับ</b>ISTH score · รักษาสาเหตุ<br>FFP · cryo · platelet ตามเลือดออก</div></div>
+        <div class="arm"><span class="lab">Coag ปกติ</span><div class="node q"><b>ได้ heparin 5–10 วัน?</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>4Ts ≥4</b>หยุด heparin · argatroban/fondaparinux/DOAC</div></div>
+            <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>Isolated?</b>ใช่ → ITP/ยา/HIV/HCV<br>Cytopenia อื่น → bone marrow</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool" id="t4t" style="margin-top:12px">
+    <h3>4Ts score (HIT)</h3>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">Thrombocytopenia</div>
+    <div class="radios"><label><input type="radio" name="t1" value="2" checked>ลด &gt;50% และ nadir ≥20</label><label><input type="radio" name="t1" value="1">ลด 30–50% หรือ nadir 10–19</label><label><input type="radio" name="t1" value="0">ลด &lt;30% หรือ nadir &lt;10</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">Timing</div>
+    <div class="radios"><label><input type="radio" name="t2" value="2" checked>วันที่ 5–10 หรือ ≤1 วันถ้าเคยได้ heparin ใน 30 วัน</label><label><input type="radio" name="t2" value="1">น่าจะ 5–10 แต่ไม่ชัด / หลังวันที่ 10 / ≤1 วันถ้าเคยได้ 30–100 วัน</label><label><input type="radio" name="t2" value="0">≤4 วัน ไม่เคยได้ heparin ใกล้ๆ</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">Thrombosis</div>
+    <div class="radios"><label><input type="radio" name="t3" value="2">Thrombosis ใหม่ยืนยันแล้ว / skin necrosis / systemic reaction หลัง UFH bolus</label><label><input type="radio" name="t3" value="1">Thrombosis ลุกลาม/ซ้ำ หรือสงสัย / ผื่นแดงที่ฉีด</label><label><input type="radio" name="t3" value="0" checked>ไม่มี</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">สาเหตุอื่น</div>
+    <div class="radios"><label><input type="radio" name="t4" value="2">ไม่มีสาเหตุอื่นชัด</label><label><input type="radio" name="t4" value="1" checked>อาจมี</label><label><input type="radio" name="t4" value="0">มีชัดเจน</label></div>
+    <div class="out" id="t4Out"></div>
+  </div>
+  <div class="tool" id="tPl" style="margin-top:12px">
+    <h3>PLASMIC score (TTP)</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="p1" checked> เกล็ดเลือด &lt;30</label>
+      <label><input type="checkbox" id="p2" checked> Hemolysis (retic &gt;2.5% หรือ haptoglobin ไม่พบ หรือ indirect bilirubin &gt;2)</label>
+      <label><input type="checkbox" id="p3" checked> ไม่มีมะเร็งที่ active</label>
+      <label><input type="checkbox" id="p4" checked> ไม่เคยปลูกถ่ายอวัยวะ/ไขกระดูก</label>
+      <label><input type="checkbox" id="p5"> MCV &lt;90 fL</label>
+      <label><input type="checkbox" id="p6" checked> INR &lt;1.5</label>
+      <label><input type="checkbox" id="p7" checked> Creatinine &lt;2.0 mg/dL</label>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+  <div class="tool" id="tDic" style="margin-top:12px">
+    <h3>ISTH overt DIC score</h3>
+    <p class="muted" style="font-size:.86rem">ใช้เมื่อมีโรคพื้นฐานที่ทำให้เกิด DIC ได้</p>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">เกล็ดเลือด (×10³/µL)</div>
+    <div class="radios"><label><input type="radio" name="d1" value="0">&gt;100</label><label><input type="radio" name="d1" value="1" checked>50–100</label><label><input type="radio" name="d1" value="2">&lt;50</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">D-dimer / FDP</div>
+    <div class="radios"><label><input type="radio" name="d2" value="0">ไม่เพิ่ม</label><label><input type="radio" name="d2" value="2">เพิ่มปานกลาง</label><label><input type="radio" name="d2" value="3" checked>เพิ่มมาก</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">PT ยาวกว่าปกติ</div>
+    <div class="radios"><label><input type="radio" name="d3" value="0">&lt;3 วินาที</label><label><input type="radio" name="d3" value="1" checked>3–6 วินาที</label><label><input type="radio" name="d3" value="2">&gt;6 วินาที</label></div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">Fibrinogen</div>
+    <div class="radios"><label><input type="radio" name="d4" value="0" checked>≥1 g/L</label><label><input type="radio" name="d4" value="1">&lt;1 g/L</label></div>
+    <div class="out" id="dOut"></div>
+  </div>
+  <div class="tool plan" id="tPt" style="margin-top:12px">
+    <h3>ควรให้เกล็ดเลือดไหม (AABB/ICTMG 2025)</h3>
+    <div class="fields">
+      <label class="f">เกล็ดเลือด (×10³/µL)<input type="number" id="xPlt" value="15"></label>
+      <label class="f">สถานการณ์<select id="xSit">
+        <option value="chemo">Hypoproliferative (เคมี/allo-SCT) ไม่มีเลือดออก</option>
+        <option value="cons">Consumptive (DIC) ไม่มีเลือดออกรุนแรง</option>
+        <option value="dengue">Dengue ไม่มีเลือดออกรุนแรง</option>
+        <option value="cvc">ใส่ CVC ตำแหน่งกดได้</option>
+        <option value="lp" selected>Lumbar puncture</option>
+        <option value="irl">IR หัตถการ low-risk</option>
+        <option value="irh">IR หัตถการ high-risk</option>
+        <option value="surg">ผ่าตัดใหญ่ (ไม่ใช่ neuraxial)</option>
+        <option value="neuro">Neurosurgery / ICH</option>
+        <option value="bleed">มีเลือดออกรุนแรง</option>
+      </select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="xTtp"> สงสัย TTP หรือ HIT</label><label><input type="checkbox" id="xItp"> ITP</label></div>
+    <div class="out" id="xOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ดู smear ทุกครั้ง</b> ก่อนเชื่อเลขจากเครื่อง</div></div>
+    <div class="pearl"><div><b>Platelet clumping → หลอด citrate</b> แล้วผลอาจปกติ</div></div>
+    <div class="pearl"><div><b>Schistocyte + เกล็ดเลือดต่ำ = TTP จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</b> เจาะ ADAMTS13 ก่อนให้ plasma</div></div>
+    <div class="pearl"><div><b>HIT ทำให้เกิดลิ่มเลือด ไม่ใช่เลือดออก</b> — หยุด heparin แล้วต้องให้ anticoagulant ตัวอื่น</div></div>
+    <div class="pearl"><div><b>4Ts ต่ำ ไม่ต้องส่ง HIT test</b></div></div>
+    <div class="pearl"><div><b>ห้าม warfarin ใน HIT ช่วงเกล็ดเลือดยังต่ำ</b></div></div>
+    <div class="pearl"><div><b>ITP เกล็ดเลือด ≥30 ไม่มีเลือดออก ไม่ต้องให้ steroid</b></div></div>
+    <div class="pearl"><div><b>Steroid ใน ITP ไม่เกิน 6 สัปดาห์</b> — dexamethasone 40 mg × 4 วัน เป็นทางเลือกที่สั้น</div></div>
+    <div class="pearl"><div><b>Dengue ไม่ให้เกล็ดเลือดป้องกัน</b></div></div>
+    <div class="pearl"><div><b>Lumbar puncture ให้เกล็ดเลือดเมื่อ &lt;20</b> · CVC ตำแหน่งกดได้ &lt;10</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../anemia/index.html">Anemia →</a> · <a href="../dhf/index.html">DHF →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../ugib/index.html">UGIB →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Cuker A, et al. American Society of Hematology 2026 Guidelines for ITP: initial and second-line therapy in adults with primary ITP. Blood Adv 2026. doi:10.1182/bloodadvances.2026021269 · 2) Neunert C, et al. ASH 2019 guidelines for immune thrombocytopenia. Blood Adv 2019;3:3829–66 · 3) Provan D, et al. Updated international consensus report on ITP. Blood Adv 2019;3:3780–817 · 4) Zheng XL, et al. ISTH guidelines for treatment of TTP. J Thromb Haemost 2020 + 2025 focused update (doi:10.1016/j.jtha.2025.06.002) · 5) Cuker A, et al. ASH 2018 guidelines: HIT. Blood Adv 2018;2:3360–92 · 6) Metcalf RA, et al. Platelet transfusion: 2025 AABB and ICTMG international clinical practice guidelines. JAMA 2025;334:606–17 · 7) Taylor FB, et al. ISTH DIC scoring (2001) · 8) Bendapudi PK, et al. PLASMIC score. Lancet Haematol 2017<br>
+  <span class="tag up">2026</span> = ใหม่ในแนวทางล่าสุด · <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','tpView');
+mountWalker({
+ start:{q:'ยืนยันแล้วว่าเกล็ดเลือดต่ำจริง?',h:'ดู smear หา clumping · เจาะซ้ำหลอด citrate',o:[['จริง','bleed'],['พบ clumping','pseudo']]},
+ pseudo:{leaf:true,cls:'ok',t:'Pseudothrombocytopenia',b:'EDTA-dependent clumping · ตรวจซ้ำด้วยหลอด citrate · ไม่ต้องรักษา บันทึกในเวชระเบียน'},
+ bleed:{q:'มีเลือดออกรุนแรง (สมอง, GI, เยื่อบุมาก) หรือไม่?',o:[['มี','major'],['ไม่มี','maha']]},
+ major:{leaf:true,cls:'danger',t:'เลือดออกรุนแรง',b:'ABC · ให้เกล็ดเลือดคงไว้ >50 (>100 ถ้าสมอง) · หยุด antiplatelet/anticoagulant + reversal · หาสาเหตุไปพร้อมกัน · ถ้าเป็น ITP: IVIG + methylpred + platelet'},
+ maha:{q:'Smear มี schistocyte / LDH สูง / hemolysis?',o:[['มี','ttp'],['ไม่มี','coag']]},
+ ttp:{leaf:true,cls:'danger',t:'MAHA — สงสัย TTP/HUS',b:'คำนวณ <b>PLASMIC</b> · เจาะ ADAMTS13 ก่อนให้ plasma · PLASMIC 6–7 → <b>TPE + steroid ทันที</b> (± caplacizumab, rituximab) · หลีกเลี่ยงการให้เกล็ดเลือด · ไตวายเด่น/ท้องเสีย → HUS · ตั้งครรภ์ → HELLP'},
+ coag:{q:'PT/aPTT ยาว หรือ fibrinogen ต่ำ?',o:[['ใช่','dic'],['ปกติ','hep']]},
+ dic:{leaf:true,cls:'warn',t:'DIC หรือโรคตับ',b:'ISTH score ≥5 = overt DIC · รักษาสาเหตุ (sepsis, APL, ตั้งครรภ์) · เลือดออก: platelet >50, FFP, cryo ถ้า fibrinogen <1.5'},
+ hep:{q:'ได้ heparin ใน 5–10 วัน (หรือ 100 วันที่ผ่านมา)?',o:[['ใช่','hit'],['ไม่ใช่','iso']]},
+ hit:{leaf:true,cls:'danger',t:'ประเมิน HIT',b:'คำนวณ <b>4Ts</b> · ≥4 → หยุด heparin ทุกชนิด + argatroban/fondaparinux/DOAC ขนาดรักษา + ส่ง PF4 immunoassay · Doppler ขา · ห้าม warfarin จนเกล็ดเลือด ≥150 · 0–3 → หาสาเหตุอื่น'},
+ iso:{q:'Cytopenia อื่นร่วมด้วย / blast / ม้ามโต?',o:[['Isolated','itp'],['มี cytopenia อื่น/blast','bm'],['ม้ามโต/ตับแข็ง','liver']]},
+ itp:{leaf:true,cls:'ok',t:'Isolated thrombocytopenia',b:'ทบทวนยา (หยุดยาที่สงสัย) · ตรวจ HIV, HCV, HBV, ตั้งครรภ์ · ไข้ → dengue/malaria/rickettsia · ถ้าตัดสาเหตุอื่นได้ → <b>ITP</b>: <30 รักษา (steroid ± rituximab/TPO-RA) · ≥30 สังเกต'},
+ bm:{leaf:true,cls:'violet',t:'สงสัยโรคไขกระดูก',b:'B12/folate · ส่ง hematology · bone marrow (leukemia, MDS, aplastic anemia, infiltration)'},
+ liver:{leaf:true,cls:'warn',t:'Hypersplenism / ตับ',b:'มักไม่ต่ำกว่า 50 · ก่อนหัตถการพิจารณา TPO-RA · ดูหน้า Cirrhosis'}
+},'apTrail','apStage');
+
+function t4(){
+  const s=+radio('t1')+ +radio('t2')+ +radio('t3')+ +radio('t4');
+  const [p,act]=s<=3?['Low (ความน่าจะเป็น <5%)','ไม่ต้องส่ง HIT test · ไม่ต้องหยุด heparin · หาสาเหตุอื่น']:s<=5?['Intermediate (~10–15%)','หยุด heparin ทุกชนิด · เริ่ม non-heparin anticoagulant ขนาดรักษา · ส่ง PF4/heparin immunoassay']:['High (~50–60%)','หยุด heparin ทุกชนิด · เริ่ม non-heparin anticoagulant ขนาดรักษา · ส่ง immunoassay ± functional assay · Doppler ขา'];
+  $('t4Out').innerHTML=`4Ts = <span class="big">${s}</span> / 8 · <b>${p}</b><br>${act}`;
+}
+bindAll('#t4t input',t4);
+
+function pl(){
+  let s=0;for(let i=1;i<=7;i++)if($('p'+i).checked)s++;
+  const r=s<=4?['Low (ความเสี่ยงมี ADAMTS13 <10% ต่ำมาก)','หาสาเหตุอื่นของ TMA (sepsis/DIC, HUS, ยา, มะเร็ง, HT รุนแรง)']:s===5?['Intermediate','ปรึกษา hematology · ส่ง ADAMTS13 · พิจารณา TPE ตามภาพรวม']:['High (ส่วนใหญ่ ADAMTS13 <10%)','<b>เริ่ม TPE + corticosteroid ทันที</b> (± caplacizumab, rituximab) หลังเจาะ ADAMTS13'];
+  $('pOut').innerHTML=`PLASMIC = <span class="big">${s}</span> / 7 · <b>${r[0]}</b><br>${r[1]}`;
+}
+bindAll('#tPl input',pl);
+
+function dic(){
+  const s=+radio('d1')+ +radio('d2')+ +radio('d3')+ +radio('d4');
+  $('dOut').innerHTML=`ISTH = <span class="big">${s}</span> · `+(s>=5?'<b>เข้ากับ overt DIC</b> — รักษาสาเหตุ ตรวจซ้ำทุกวัน':'<b>ยังไม่เข้า overt DIC</b> — ตรวจซ้ำใน 1–2 วันถ้ายังสงสัย');
+}
+bindAll('#tDic input',dic);
+
+function ptx(){
+  const p=num('xPlt'),s=$('xSit').value,ttp=$('xTtp').checked,itp=$('xItp').checked;
+  if(p===null){$('xOut').textContent='ใส่ค่าเกล็ดเลือด';return}
+  const T={chemo:[10,'Hypoproliferative ไม่มีเลือดออก'],cons:[10,'Consumptive ไม่มีเลือดออกรุนแรง'],dengue:[null,'Dengue ไม่มีเลือดออกรุนแรง'],cvc:[10,'CVC ตำแหน่งกดได้'],lp:[20,'Lumbar puncture'],irl:[20,'IR low-risk'],irh:[50,'IR high-risk'],surg:[50,'Major non-neuraxial surgery'],neuro:[100,'Neurosurgery / ICH (เสริม)'],bleed:[50,'Major bleeding (เสริม)']};
+  const [th,lab]=T[s];
+  let out;
+  if(th===null)out=`<b>${lab}</b>: ไม่แนะนำให้เกล็ดเลือด (AABB/ICTMG 2025)`;
+  else out=p<th?`<b>ให้เกล็ดเลือด</b> — ${lab} เกณฑ์ &lt;${th} (ค่าปัจจุบัน ${p})`:`<b>ไม่ต้องให้</b> — ${lab} เกณฑ์ &lt;${th} (ค่าปัจจุบัน ${p})`;
+  if(ttp)out+='<br><b>TTP/HIT</b>: หลีกเลี่ยงการให้เกล็ดเลือด ยกเว้นเลือดออกรุนแรงหรือหัตถการจำเป็น';
+  if(itp)out+='<br><b>ITP</b>: เกล็ดเลือดที่ให้ถูกทำลายเร็ว — ใช้ในเลือดออกรุนแรงร่วมกับ IVIG + steroid · ก่อนหัตถการเลือกนัดใช้ IVIG/steroid/TPO-RA ยกระดับก่อน';
+  $('xOut').innerHTML=out;
+}
+bindAll('#tPt input,#tPt select',ptx);
+
+mountQuiz([
+ ['เกล็ดเลือด 45 จากเครื่อง แต่ผู้ป่วยไม่มีอาการ smear พบ platelet clumping ทำอย่างไรต่อ',
+  ['ให้ steroid','เจาะซ้ำด้วยหลอด citrate','Bone marrow','ให้เกล็ดเลือด'],1,'Pseudothrombocytopenia จาก EDTA'],
+ ['หญิง 32 ปี ซึม เกล็ดเลือด 12 Hb 7.5 schistocyte LDH 1800 INR 1.1 Cr 1.3 MCV 88 ไม่มีโรคร่วม การรักษาที่สำคัญที่สุด',
+  ['Platelet transfusion','รอผล ADAMTS13','Plasma exchange + steroid ทันที','IVIG'],2,'PLASMIC 7 = high · เริ่ม TPE ทันทีหลังเจาะ ADAMTS13'],
+ ['ผู้ป่วยได้ UFH วันที่ 7 เกล็ดเลือดลดจาก 250 เป็น 90 พบ DVT ใหม่ ไม่มีสาเหตุอื่น 4Ts และการจัดการ',
+  ['3 คะแนน ให้ heparin ต่อ','8 คะแนน หยุด heparin ให้ argatroban/fondaparinux','5 คะแนน เปลี่ยนเป็น enoxaparin','8 คะแนน เริ่ม warfarin ทันที'],1,'4Ts สูง · เปลี่ยนเป็น LMWH ไม่ได้ (cross-reactivity) · warfarin ห้ามช่วงเกล็ดเลือดต่ำ'],
+ ['ITP newly diagnosed เกล็ดเลือด 40 มีจ้ำเลือดเล็กน้อย ตาม ASH',
+  ['Dexamethasone 40 mg × 4 วัน','สังเกตอาการ ไม่ให้ steroid','Splenectomy','IVIG'],1,'≥30 ไม่มีเลือดออกสำคัญ → observation'],
+ ['ASH 2026: second-line ใน ITP ที่ได้ strong recommendation คือ',
+  ['Splenectomy','Thrombopoietic agent (TPO-RA)','Danazol','Azathioprine'],1,'TPO-RA เป็นคำแนะนำ strong เพียงข้อเดียว'],
+ ['ข้อใดถูกตาม AABB/ICTMG 2025',
+  ['Dengue ให้เกล็ดเลือดเมื่อ <20','LP ให้เมื่อ <20','CVC ตำแหน่งกดได้ให้เมื่อ <50','Autologous SCT ให้ป้องกันเมื่อ <10'],1,'LP <20 · CVC compressible <10 · dengue ไม่ให้ · auto-SCT ไม่ให้ป้องกัน'],
+ ['PT ปกติ aPTT ยาว mixing study ไม่แก้ ผู้ป่วยหญิงหลังคลอดมี ecchymosis ใหญ่หลายที่ นึกถึง',
+  ['Hemophilia A แต่กำเนิด','Acquired hemophilia (FVIII inhibitor)','Vitamin K deficiency','Lupus anticoagulant ที่ไม่ทำให้เลือดออก'],1,'aPTT ยาว ไม่แก้ด้วย mixing + เลือดออกรุนแรง → acquired hemophilia (ฉุกเฉิน)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

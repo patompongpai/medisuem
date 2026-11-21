@@ -1,0 +1,720 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Heart failure · ESC 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Cardiology · ESC 2026 · HFCT</div>
+  <h1>Heart failure:<br>จาก 4 เสาหลัก ถึง ER</h1>
+  <p class="sub">สรุปการดูแลภาวะหัวใจล้มเหลวตาม ESC Heart Failure Guidelines 2026 สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ครอบคลุมนิยามใหม่ (ไม่มี HFmrEF แล้ว) การวินิจฉัย ยาหลัก (foundational medical therapy) ใน HFrEF และ HFpEF ยาเสริม อุปกรณ์ และการดูแล decompensated HF ตั้งแต่ ER จนถึงก่อนกลับบ้าน พร้อมเครื่องมือตรวจยาและวางแผนยาขับปัสสาวะ</p>
+  <p class="cite">อ้างอิงหลัก: 2026 ESC Guidelines for the management of heart failure (Eur Heart J 2026; doi:10.1093/eurheartj/ehag100) · Second Universal Definition of Heart Failure (AHA/ACC/ESC/WHF 2026) · HFCT 2019 Heart Failure Guideline + 2022/2023 focused updates · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>HFrEF · LVEF &lt;50%</b>4 เสาหลัก: BB + ACEi/ARB/ARNI + MRA + SGLT2i</div>
+    <div class="stage" style="--c:var(--violet)"><b>HFpEF · LVEF ≥50%</b>MRA + SGLT2i · อ้วน → semaglutide/tirzepatide</div>
+    <div class="stage" style="--c:var(--danger)"><b>Decompensated HF</b>IV loop diuretic · ดู natriuresis ที่ 2 ชม. · เริ่ม SGLT2i ใน รพ.</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#define">นิยามใหม่</a><a href="#dx">การวินิจฉัย</a><a href="#fmt">HFrEF: 4 เสาหลัก</a><a href="#dose">ขนาดยา</a><a href="#hfpef">HFpEF</a><a href="#amt">ยาเสริม</a><a href="#device">ICD · CRT</a><a href="#dhf">Decompensated HF</a><a href="#disch">ก่อนกลับบ้าน</a><a href="#safety">K · Cr · ยาที่ควรเลี่ยง</a><a href="#thai">แนวทางไทย</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="define" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและการแบ่งกลุ่ม (ESC 2026)</h2>
+  <div class="box key"><b>เปลี่ยนสำคัญ <span class="tag up">2026</span></b>ESC 2026 <b>ตัด HFmrEF ออก</b> เหลือ 2 phenotype: <b>HFrEF = LVEF &lt;50%</b> และ <b>HFpEF = LVEF ≥50%</b> · คำว่า "acute HF" เปลี่ยนเป็น <b>decompensated HF (DHF)</b> · GDMT เปลี่ยนชื่อเป็น <b>foundational medical therapy (FMT)</b> และ <b>additional medical therapy (AMT)</b> · ใช้ระบบ Stage A–D แบบ AHA/ACC</div>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>เกณฑ์</th></tr>
+    <tr><td><b>HFrEF</b></td><td>อาการ/อาการแสดงของ HF + LVEF &lt;50%</td></tr>
+    <tr><td><b>HFpEF</b></td><td>อาการ/อาการแสดง + LVEF ≥50% + หลักฐานความผิดปกติโครงสร้าง/การทำงาน (diastolic dysfunction, filling pressure สูง) + natriuretic peptide สูง</td></tr>
+    <tr><td><b>HF with improved EF</b></td><td>LVEF เพิ่มขึ้น ≥10 จุด และ &gt;40% — <b>ให้ยา FMT ต่อ</b> ขนาดสูงสุดที่ทนได้ <span class="rec s1">I · C</span></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Stage A–D</h4><ul><li><b>A</b> มีปัจจัยเสี่ยง (HT, DM, อ้วน, ยาพิษต่อหัวใจ)</li><li><b>B</b> pre-HF: โครงสร้างผิดปกติ ยังไม่มีอาการ (LVH, wall motion, valve)</li><li><b>C</b> มีอาการ HF</li><li><b>D</b> advanced HF</li></ul></div>
+    <div class="card c-vio"><h4>ป้องกัน (Stage A–B) <span class="tag up">2026</span></h4><ul><li>คุม <b>SBP &lt;130</b> ใน HT หรือ stage B</li><li>Stage B LVEF ≤40% → ACEi/ARB <span class="rec s1">I · A</span></li><li>Stage B LVEF &lt;50% → beta-blocker <span class="rec s1">I</span></li><li>T2DM + ปัจจัยเสี่ยง CV → SGLT2i; GLP-1 RA <span class="rec">IIa · A</span></li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">Second Universal Definition of HF (AHA/ACC/ESC/WHF, มิ.ย. 2026) เน้น congestion, stage B และเลิกยึด cut-off LVEF ตายตัว · แนวทาง AHA/ACC ฉบับใหม่คาดว่าจะออกปลาย 2027</p>
+</section>
+
+<!-- 2 -->
+<section id="dx" class="col">
+  <div class="sec-num">02</div>
+  <h2>การวินิจฉัย</h2>
+  <p>สงสัย HF เมื่อเหนื่อยง่าย orthopnea PND บวม JVP สูง crepitation S3 · ส่ง <b>NT-proBNP หรือ BNP</b> <span class="rec s1">I · C</span>, ECG, CXR, echo, CBC, Cr/eGFR + UACR, electrolyte, LFT, TSH, HbA1c, lipid และ <b>iron (ferritin + TSAT)</b></p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ตัด HF ออก (rule-out)</th><th>น่าจะเป็น HF</th></tr>
+    <tr><td><b>ผู้ป่วยนอก ไม่เฉียบพลัน</b></td><td>NT-proBNP &lt;125 · BNP &lt;35–40 pg/mL</td><td>NT-proBNP ≥125 (อายุ &lt;50) · ≥250 (50–75) · ≥500 (&gt;75 ปี) <span class="tag up">2026</span></td></tr>
+    <tr><td><b>ER / เฉียบพลัน</b></td><td>NT-proBNP &lt;300 · BNP &lt;100</td><td>NT-proBNP &gt;450 (&lt;50) · &gt;900 (50–75) · &gt;1800 (&gt;75) <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <ul>
+    <li>ค่าต่ำลงใน <b>คนอ้วน</b> · สูงขึ้นใน <b>ไตเสื่อม AF อายุมาก</b> · ARNI ทำให้ <b>BNP</b> สูง (NT-proBNP ไม่เปลี่ยน) — ผู้ที่ใช้ ARNI ให้ติดตามด้วย NT-proBNP</li>
+    <li>NT-proBNP &gt;2000 → เสี่ยงนอน รพ.เร็ว ควรได้พบผู้เชี่ยวชาญภายใน 2 สัปดาห์</li>
+    <li>หาสาเหตุ: CAD (angiography ถ้ามี angina และเป็นผู้เหมาะทำ revascularization), valve, HT, AF/tachycardia, ยา/สุรา, cardiomyopathy (CMR), amyloidosis (immunofixation, free light chain, bone scintigraphy)</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="fmt" class="col">
+  <div class="sec-num">03</div>
+  <h2>HFrEF: foundational medical therapy</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>4 เสาหลัก — Class I ทั้งหมด</h4><ol><li><b>Beta-blocker</b> (bisoprolol, carvedilol, metoprolol succinate, nebivolol)</li><li><b>ARNI</b> (sacubitril/valsartan) หรือ ACEi (หรือ ARB ถ้าทน ACEi ไม่ได้)</li><li><b>MRA</b> (spironolactone, eplerenone)</li><li><b>SGLT2i</b> (dapagliflozin, empagliflozin)</li></ol></div>
+    <div class="card c-ok"><h4>หลักการเริ่มยา</h4><ul><li>เริ่ม <b>หลายกลุ่มพร้อมกัน</b> ขนาดต่ำ ดีกว่าเริ่มทีละตัวจนถึงขนาดเป้าหมาย</li><li>ปรับขนาดเพิ่ม <b>ทุก 1–2 สัปดาห์</b> ตามอาการ สัญญาณชีพ และ lab <span class="rec s1">I · C</span></li><li>ขนาดต่ำของทุกตัว ดีกว่าขนาดสูงของตัวเดียว</li><li>SGLT2i และ MRA แทบไม่ลดความดัน — เริ่มได้แม้ SBP ไม่สูง</li></ul></div>
+  </div>
+  <div class="box warn"><b>Loop diuretic ไม่ใช่เสาหลัก</b>ใช้ลดอาการบวม/คั่งน้ำ ปรับลดเมื่อ euvolemic · ไม่ลดอัตราตาย</div>
+  <p>Advanced HFrEF ที่ hypoperfusion: พิจารณาลด/หยุด beta-blocker หรือ ivabradine ชั่วคราว <span class="rec">IIa</span> · ปรึกษาศูนย์ advanced HF เร็ว (transplant / LVAD)</p>
+</section>
+
+<!-- 4 -->
+<section id="dose" class="col">
+  <div class="sec-num">04</div>
+  <h2>ขนาดยาเริ่มต้นและเป้าหมาย</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>เริ่ม</th><th>เป้าหมาย</th></tr>
+    <tr><td>Sacubitril/valsartan</td><td>24/26 mg bid (49/51 bid ถ้าเคยใช้ ACEi/ARB และความดันดี)</td><td>97/103 mg bid</td></tr>
+    <tr><td>Enalapril · Ramipril · Lisinopril</td><td>2.5 mg bid · 2.5 mg od · 2.5–5 mg od</td><td>10–20 mg bid · 10 mg od · 20–35 mg od</td></tr>
+    <tr><td>Candesartan · Losartan · Valsartan</td><td>4–8 mg od · 50 mg od · 40 mg bid</td><td>32 mg od · 150 mg od · 160 mg bid</td></tr>
+    <tr><td>Bisoprolol</td><td>1.25 mg od</td><td>10 mg od</td></tr>
+    <tr><td>Carvedilol</td><td>3.125 mg bid</td><td>25 mg bid (50 bid ถ้า &gt;85 kg)</td></tr>
+    <tr><td>Metoprolol succinate</td><td>12.5–25 mg od</td><td>200 mg od</td></tr>
+    <tr><td>Spironolactone · Eplerenone</td><td>12.5–25 mg od · 25 mg od</td><td>50 mg od</td></tr>
+    <tr><td>Dapagliflozin · Empagliflozin</td><td>10 mg od</td><td>10 mg od (ไม่ต้องปรับ)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>ARNI</b>: หยุด ACEi อย่างน้อย <b>36 ชม.</b> ก่อนเริ่ม (angioedema) · ห้ามใช้ร่วม ACEi</li>
+    <li><b>MRA</b>: เริ่มเมื่อ K ≤5.0 และ eGFR ≥30 · ตรวจ K/Cr ที่ 1 และ 4 สัปดาห์</li>
+    <li><b>SGLT2i</b>: เริ่มได้ถึง eGFR ≥20–25 · eGFR ลดช่วงแรกเล็กน้อยเป็นเรื่องคาดได้ · ระวัง euglycemic DKA ใน DM ที่ป่วยหนัก/อดอาหาร</li>
+    <li><b>Beta-blocker</b>: เริ่มเมื่อ euvolemic (ไม่ใช่ตอนน้ำเกินรุนแรง/shock) · ชีพจรเป้าหมาย ~60–70 ใน sinus</li>
+  </ul>
+  <p class="muted" style="font-size:.88rem">ขนาดตามการศึกษาหลัก (ตาราง ESC) · ตรวจกับฉลากยาและปรับตามไต</p>
+</section>
+
+<!-- 5 -->
+<section id="hfpef" class="col">
+  <div class="sec-num">05</div>
+  <h2>HFpEF (LVEF ≥50%)</h2>
+  <div class="grid2">
+    <div class="card c-vio"><h4>FMT ของ HFpEF <span class="tag up">2026</span></h4><ul><li><b>SGLT2i</b> <span class="rec s1">I · A</span></li><li><b>MRA</b> (steroidal หรือ non-steroidal เช่น <b>finerenone</b>) — MRA เป็น Class I <b>ทุก LVEF</b> แล้ว <span class="rec s1">I · A</span></li></ul></div>
+    <div class="card c-acc"><h4>เพิ่มเติม</h4><ul><li><b>Semaglutide หรือ tirzepatide</b> ใน LVEF ≥45% + BMI ≥30 (ไม่ว่าเป็น DM หรือไม่) <span class="rec">IIa · B</span> <span class="tag up">2026</span></li><li>ACEi/ARB/ARNI อาจพิจารณาเพื่อลดการนอน รพ. <span class="rec">IIb · C</span></li><li>Loop diuretic เมื่อมีน้ำเกิน</li></ul></div>
+  </div>
+  <ul>
+    <li>รักษาโรคร่วม: คุมความดัน, AF (rhythm/rate + anticoagulation), อ้วน, OSA, CAD, เบาหวาน, CKD</li>
+    <li>นึกถึง <b>cardiac amyloidosis</b> (ATTR) เมื่อ HFpEF + carpal tunnel ทั้งสองข้าง, LV หนาแต่ ECG voltage ต่ำ, AS ในผู้สูงอายุ</li>
+    <li>ACC Expert Consensus Pathway HFpEF 2026: SGLT2i + non-steroidal MRA (finerenone มากกว่า spironolactone) เป็นยาพื้นฐาน <span class="tag add">เสริม</span></li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="amt" class="col">
+  <div class="sec-num">06</div>
+  <h2>Additional medical therapy</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ข้อบ่งชี้ (ESC 2026)</th></tr>
+    <tr><td><b>IV iron</b> (ferric carboxymaltose, ferric derisomaltose)</td><td>HFrEF มีอาการ + iron deficiency → ลดอาการ เพิ่ม QoL <span class="rec s1">I</span> · ลดการนอน รพ. <span class="rec">IIa</span> · นิยามใหม่ใช้ <b>TSAT &lt;20%</b> เป็นหลัก <span class="tag up">2026</span></td></tr>
+    <tr><td><b>Digoxin/digitoxin</b></td><td>HFrEF LVEF ≤40% ที่ยังมีอาการแม้ได้ FMT เต็มที่ → ลดการนอน รพ. <span class="rec">IIa</span> <span class="tag up">2026</span> · digoxin 0.0625–0.125 mg/วัน ระวังไต ผู้สูงอายุ K ต่ำ</td></tr>
+    <tr><td><b>Ivabradine</b></td><td>HFrEF LVEF ≤35%, sinus, HR &gt;70 แม้ได้ beta-blocker ขนาดสูงสุดที่ทนได้ <span class="rec">IIa</span> · 5 mg bid → 7.5 mg bid</td></tr>
+    <tr><td><b>Vericiguat</b></td><td>HFrEF LVEF &lt;45% ที่แย่ลงแม้ได้ FMT <span class="rec">IIb</span> · 2.5 → 10 mg/วัน</td></tr>
+    <tr><td><b>Hydralazine + ISDN</b></td><td>ทน ACEi/ARB/ARNI ไม่ได้ หรือยังมีอาการในผู้ป่วยเชื้อสายแอฟริกัน <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="device" class="col">
+  <div class="sec-num">07</div>
+  <h2>ICD และ CRT (สรุปเพื่อส่งต่อ)</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ICD</h4><ul><li><b>Secondary prevention</b>: รอดจาก VT/VF ที่ hemodynamic unstable, คาดว่ามีชีวิต &gt;1 ปี <span class="rec s1">I · A</span></li><li><b>Primary</b>: ischemic HFrEF NYHA II–III, <b>LVEF ≤35% หลังได้ FMT ≥3 เดือน</b>, ไม่ใช่ภายใน 40 วันหลัง MI <span class="rec s1">I</span> · non-ischemic <span class="rec">IIa</span></li><li>ไม่แนะนำภายใน 40 วันหลัง MI หรือ NYHA IV ที่ไม่ใช่ผู้เข้ารับ CRT/LVAD/transplant <span class="rec no">III</span></li></ul></div>
+    <div class="card c-acc"><h4>CRT</h4><ul><li><b>LBBB + QRS ≥150 ms + LVEF ≤35%</b> แม้ได้ FMT, sinus <span class="rec s1">I · A</span></li><li>LBBB QRS 130–149 หรือ non-LBBB ≥150 <span class="rec">IIa</span></li><li>ต้องกระตุ้นหัวใจห้องล่างบ่อย (AV block สูง) → CRT แทน RV pacing <span class="rec">IIa</span></li><li>QRS &lt;130 ms ไม่แนะนำ <span class="rec no">III</span></li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="dhf" class="col">
+  <div class="sec-num">08</div>
+  <h2>Decompensated HF: ER ถึง ward</h2>
+  <p>ESC 2026 แบ่ง 3 ระยะ: <b>initial management → stabilization → predischarge/early postdischarge</b> · บางรายที่ไม่รุนแรงดูแลแบบผู้ป่วยนอกได้</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>ค้นหาสาเหตุกระตุ้น (CHAMPIT)</h4><b>C</b>oronary (ACS) · <b>H</b>ypertensive emergency · <b>A</b>rrhythmia · <b>M</b>echanical (MR, VSR) · <b>P</b>ulmonary embolism · <b>I</b>nfection · <b>T</b>amponade · + ไม่กินยา กินเค็ม NSAIDs ไตวาย <span class="tag add">เสริม</span></div>
+    <div class="card c-warn"><h4>ประเมิน profile</h4><b>Warm-wet</b> (พบบ่อยสุด) → diuretic ± vasodilator · <b>Cold-wet</b> → diuretic + inotrope/vasopressor · <b>Cold-dry</b> → ระวัง hypovolemia · <b>Warm-dry</b> → ปรับยาเดิม <span class="tag add">เสริม</span></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>การรักษา</th><th>รายละเอียด</th><th>Class</th></tr>
+    <tr><td><b>O₂</b></td><td>เมื่อ SpO₂ &lt;90% หรือ PaO₂ &lt;60 mmHg (ไม่ให้ประจำ)</td><td><span class="rec s1">I · C</span></td></tr>
+    <tr><td><b>NIV</b> (CPAP/BiPAP)</td><td>RR &gt;25 และ SpO₂ &lt;90% เริ่มให้เร็วที่สุด</td><td><span class="rec">IIa</span></td></tr>
+    <tr><td><b>IV loop diuretic</b></td><td>ทุกรายที่มีน้ำเกิน · <b>ไม่เคยใช้: furosemide ~40 mg IV</b> · เคยใช้: <b>~2 เท่าของขนาดกินต่อวัน</b> เป็น IV (แบ่ง bolus หรือหยดต่อเนื่อง)</td><td><span class="rec s1">I · A</span></td></tr>
+    <tr><td><b>ประเมินการตอบสนอง</b></td><td><b>Urine Na ≥70 mEq/L ที่ 2 ชม.</b> หรือ <b>ปัสสาวะ ≥100 mL/ชม. ใน 6 ชม.แรก</b> · ไม่ถึง → เพิ่มขนาด loop diuretic เป็น 2 เท่า</td><td><span class="rec">IIb</span></td></tr>
+    <tr><td><b>Acetazolamide IV หรือ HCTZ</b></td><td>ยังมีน้ำเกินแม้ให้ loop diuretic (ADVOR: acetazolamide 500 mg IV วันละครั้ง 3 วัน · CLOROTIC: HCTZ) · ตรวจ K, Na, Cr ใกล้ชิด</td><td><span class="rec">IIa</span></td></tr>
+    <tr><td><b>IV vasodilator</b> (nitroglycerin)</td><td>SBP &gt;110 mmHg โดยเฉพาะ hypertensive pulmonary edema</td><td><span class="rec">IIb</span></td></tr>
+    <tr><td><b>Inotrope</b> (dobutamine)</td><td>SBP &lt;90 + hypoperfusion ไม่ตอบสนองการรักษาพื้นฐาน</td><td><span class="rec">IIb</span></td></tr>
+    <tr><td><b>Vasopressor</b></td><td><b>Norepinephrine</b> ใน cardiogenic shock</td><td><span class="rec">IIb</span></td></tr>
+    <tr><td>Morphine</td><td>ไม่ให้ประจำ</td><td><span class="rec no">III</span></td></tr>
+  </table></div>
+  <ul>
+    <li><b>Cr ขึ้นเล็กน้อยขณะขับน้ำได้ดี ไม่ใช่เหตุให้หยุด diuretic</b> — ที่น่ากังวลคือ Cr ขึ้นร่วมกับขับน้ำไม่ได้</li>
+    <li>AF เร็ว + hemodynamic unstable → <b>cardioversion ด่วน</b> <span class="rec s1">I</span> · คุม rate ด้วย amiodarone IV หรือ digoxin ได้ <span class="rec">IIb</span> (ดูหน้า <a href="../af/index.html">AF</a>) · สาเหตุ ACS → หน้า <a href="../acs/index.html">ACS</a></li>
+    <li><b>ไม่หยุด FMT เดิม</b> ถ้าไม่ได้ shock/hypotension รุนแรง (beta-blocker อาจลดขนาดใน cold profile)</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="disch" class="col">
+  <div class="sec-num">09</div>
+  <h2>Stabilization และก่อนกลับบ้าน</h2>
+  <div class="box key"><b>เริ่มยาเร็ว ขึ้นยาเร็ว นัดเร็ว</b><ul><li><b>เริ่ม SGLT2i ใน รพ.</b> หลังอาการคงที่ <span class="rec s1">I</span> <span class="tag up">2026</span></li><li><b>Intensive strategy</b>: เริ่มและปรับขนาด FMT ให้เร็วก่อนกลับบ้าน + นัดติดตามถี่ใน 6 สัปดาห์แรก (STRONG-HF) <span class="rec s1">I · B</span></li><li>ประเมินก่อนกลับบ้านว่า <b>ไม่มี congestion หลงเหลือ</b> <span class="rec s1">I · C</span></li><li>นัดครั้งแรกภายใน <b>1–2 สัปดาห์</b> ตรวจ K, Cr, อาการ, น้ำหนัก <span class="tag add">เสริม</span></li></ul></div>
+  <ul>
+    <li>สอนผู้ป่วย: ชั่งน้ำหนักทุกวัน (เพิ่ม &gt;2 kg ใน 3 วัน ให้ติดต่อ), จำกัดเกลือพอประมาณ, เลี่ยง NSAIDs, ออกกำลังกาย/cardiac rehabilitation, วัคซีนไข้หวัดใหญ่และ pneumococcus</li>
+    <li>ทีมสหวิชาชีพและ HF clinic ลดการกลับมานอน รพ. <span class="rec s1">I</span></li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="safety" class="col">
+  <div class="sec-num">10</div>
+  <h2>K, Cr และยาที่ควรเลี่ยง</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>จัดการ <span class="tag add">เสริม</span></th></tr>
+    <tr><td>Cr เพิ่ม &lt;50% (หรือ eGFR ลด &lt;30%) หลังเริ่ม RASi/ARNI/SGLT2i</td><td>คาดได้ ไม่ต้องหยุดยา ตรวจซ้ำ 1–2 สัปดาห์</td></tr>
+    <tr><td>Cr เพิ่ม &gt;100% หรือ Cr &gt;3.5 mg/dL</td><td>หยุด RASi/MRA ชั่วคราว หาสาเหตุ (hypovolemia, NSAIDs, renal artery stenosis)</td></tr>
+    <tr><td>K 5.1–5.5</td><td>ลด MRA ครึ่งหนึ่ง/ตรวจอาหาร ยา · พิจารณา potassium binder เพื่อคงยา</td></tr>
+    <tr><td>K &gt;5.5</td><td>หยุด MRA (และพิจารณาลด RASi) · ดูหน้า <a href="../hyperkalemia/index.html">Hyperkalemia</a></td></tr>
+    <tr><td>SBP &lt;90 ไม่มีอาการ</td><td>ไม่ต้องลดยา FMT · ถ้ามีอาการ: ลด diuretic/ยาลดความดันอื่นก่อน</td></tr>
+  </table></div>
+  <div class="box warn"><b>ยาที่ทำให้ HF แย่ลง</b>NSAIDs · thiazolidinediones (pioglitazone) · non-DHP CCB (diltiazem, verapamil) ใน HFrEF · saxagliptin · dronedarone ใน HFrEF ที่เพิ่งแย่ลง · class I antiarrhythmics · cilostazol · ยาเคมีบำบัดบางชนิด (anthracycline, trastuzumab)</div>
+</section>
+
+<!-- 11 -->
+<section id="thai" class="col">
+  <div class="sec-num">11</div>
+  <h2>แนวทางไทย (HFCT)</h2>
+  <ul>
+    <li><b>HFCT 2019</b> + focused update <b>2022</b> (HFrEF: 4 เสาหลักรวม SGLT2i) และ <b>2023</b> (HFmrEF/HFpEF: แนะนำ SGLT2i)</li>
+    <li>ฉบับไทยยังใช้ 3 กลุ่ม (HFrEF ≤40%, HFmrEF 41–49%, HFpEF ≥50%) — ESC 2026 รวม HFmrEF เข้า HFrEF แล้ว ในทางปฏิบัติกลุ่ม 41–49% จึงควรได้ FMT ครบ 4 ตัวเช่นเดียวกัน</li>
+    <li>ข้อจำกัดในไทย: ARNI, SGLT2i, IV iron บางสิทธิการรักษาเข้าถึงยาก — ถ้าเลือกได้จำกัด เริ่ม beta-blocker + ACEi/ARB + spironolactone (ราคาถูก) ก่อน แล้วเพิ่ม SGLT2i ตามสิทธิ</li>
+    <li>Thai HF Registry: อัตราตายและนอน รพ.ซ้ำยังสูง — การใช้ยาครบและขนาดเหมาะสมยังเป็นช่องว่างสำคัญ</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัย HF</b>NT-proBNP/BNP · ECG · CXR · echo</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Decompensated?</b>น้ำเกิน หอบ hypoperfusion</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>DHF</b>หาสาเหตุ CHAMPIT · O₂ ถ้า SpO₂ &lt;90 · NIV<br>IV furosemide 40 mg หรือ 2× ขนาดกิน<br>Urine Na 2 ชม. ≥70 · UO ≥100 mL/h<br>SBP &lt;90 + hypoperfusion → inotrope/NE</div><div class="vline arrow"></div><div class="node dx green"><b>คงที่แล้ว</b>เริ่ม SGLT2i + ขึ้น FMT · นัด 1–2 สัปดาห์</div></div>
+        <div class="arm"><span class="lab">ไม่ (chronic)</span><div class="node q"><b>LVEF</b></div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">&lt;50%</span><div class="node dx eu"><b>HFrEF</b>BB + ARNI/ACEi/ARB + MRA + SGLT2i<br>ขึ้นยาทุก 1–2 สัปดาห์<br>3 เดือน: LVEF ≤35% → ICD/CRT</div></div>
+            <div class="arm"><span class="lab">≥50%</span><div class="node dx hypo"><b>HFpEF</b>SGLT2i + MRA (finerenone)<br>BMI ≥30 → sema/tirzepatide<br>คุมโรคร่วม</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจกับแนวทางและสภาพผู้ป่วย</p>
+  </div>
+  <div class="tool plan" id="tFmt" style="margin-top:12px">
+    <h3>ตรวจยา FMT: ขาดอะไร เริ่มอะไรได้</h3>
+    <div class="fields">
+      <label class="f">LVEF (%)<input type="number" id="fEf" value="30"></label>
+      <label class="f">SBP (mmHg)<input type="number" id="fSbp" value="108"></label>
+      <label class="f">HR (/min)<input type="number" id="fHr" value="88"></label>
+      <label class="f">K (mmol/L)<input type="number" id="fK" step="0.1" value="4.6"></label>
+      <label class="f">eGFR<input type="number" id="fGfr" value="48"></label>
+      <label class="f">RASi ปัจจุบัน<select id="fRas"><option value="none">ไม่ได้</option><option value="acei">ACEi</option><option value="arb">ARB</option><option value="arni">ARNI</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fBb"> ได้ beta-blocker</label>
+      <label><input type="checkbox" id="fMra"> ได้ MRA</label>
+      <label><input type="checkbox" id="fSg"> ได้ SGLT2i</label>
+      <label><input type="checkbox" id="fCong"> ยังมีน้ำเกิน</label>
+      <label><input type="checkbox" id="fSr" checked> Sinus rhythm</label>
+      <label><input type="checkbox" id="fBmi"> BMI ≥30</label>
+    </div>
+    <div class="out" id="fOut"></div>
+  </div>
+  <div class="tool" id="tDiu" style="margin-top:12px">
+    <h3>วางแผน IV diuretic ใน DHF</h3>
+    <div class="fields">
+      <label class="f">Furosemide กินต่อวัน (mg, 0 = ไม่เคยใช้)<input type="number" id="dHome" value="40"></label>
+      <label class="f">Urine Na ที่ 2 ชม. (mEq/L)<input type="number" id="dUna" placeholder="ถ้ามี"></label>
+      <label class="f">ปัสสาวะ 6 ชม.แรก (mL)<input type="number" id="dUo" placeholder="ถ้ามี"></label>
+    </div>
+    <div class="out" id="dOut"></div>
+  </div>
+  <div class="tool" id="tNp" style="margin-top:12px">
+    <h3>แปลผล NT-proBNP</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="nAge" value="68"></label>
+      <label class="f">NT-proBNP (pg/mL)<input type="number" id="nVal" value="1200"></label>
+      <label class="f">สถานการณ์<select id="nSet"><option value="acute">ER / เฉียบพลัน</option><option value="op">ผู้ป่วยนอก</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="nAf"> AF</label><label><input type="checkbox" id="nObe"> BMI ≥30</label><label><input type="checkbox" id="nCkd"> eGFR &lt;60</label></div>
+    <div class="out" id="nOut"></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>LVEF 41–49% ตอนนี้คือ HFrEF</b> ตาม ESC 2026 — ให้ 4 เสาหลัก</div></div>
+    <div class="pearl"><div><b>เริ่มหลายตัวขนาดต่ำพร้อมกัน</b> ดีกว่าขึ้นตัวเดียวให้สุด</div></div>
+    <div class="pearl"><div><b>SGLT2i และ MRA แทบไม่ลดความดัน</b> ความดันไม่สูงไม่ใช่ข้ออ้างที่จะไม่ให้</div></div>
+    <div class="pearl"><div><b>MRA เป็น Class I ทุก LVEF แล้ว</b> รวม HFpEF</div></div>
+    <div class="pearl"><div><b>ใน ER ดู urine Na ที่ 2 ชม.</b> &lt;70 mEq/L = ขับน้ำไม่พอ → เพิ่มขนาด</div></div>
+    <div class="pearl"><div><b>Cr ขึ้นขณะขับน้ำได้ดีไม่ต้องตกใจ</b> อย่าหยุด diuretic ทั้งที่ยังบวม</div></div>
+    <div class="pearl"><div><b>เริ่ม SGLT2i ก่อนกลับบ้าน</b> และนัดภายใน 1–2 สัปดาห์</div></div>
+    <div class="pearl"><div><b>ARNI ต้องเว้น ACEi 36 ชม.</b></div></div>
+    <div class="pearl"><div><b>ตรวจ TSAT ทุกราย</b> &lt;20% = iron deficiency → IV iron</div></div>
+    <div class="pearl"><div><b>เลิก NSAIDs, pioglitazone, diltiazem/verapamil</b> ใน HFrEF</div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../acs/index.html">ACS →</a> · <a href="../af/index.html">AF →</a> · <a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../ckd/index.html">CKD →</a></p>
+<footer class="col">
+  อ้างอิง: 1) 2026 ESC Guidelines for the management of heart failure. Eur Heart J 2026;47:5346. doi:10.1093/eurheartj/ehag100 · 2) Second Universal Definition of Heart Failure. AHA/ACC/ESC/WHF Expert Consensus Document 2026 · 3) Heart Failure Council of Thailand (HFCT) 2019 Heart Failure Guideline. J Med Assoc Thai 2019;102 · 4) 2022 HFCT Focused Update Part 1 (HFrEF). J Med Assoc Thai 2022;105:1153–9 · 5) 2023 HFCT Focused Update Part 2 (HFmrEF/HFpEF). J Med Assoc Thai 2023;106:1005–14 · 6) 2026 ACC Expert Consensus Decision Pathway for HFpEF · 7) Mebazaa A, et al. STRONG-HF. Lancet 2022 · 8) Mullens W, et al. ADVOR. N Engl J Med 2022<br>
+  <span class="tag up">2026</span> = เปลี่ยนใหม่ใน ESC 2026 · <span class="tag add">เสริม</span> = เนื้อหาเสริมจากแหล่งอื่น/แนวปฏิบัติทั่วไป · Class/Level ตาม ESC · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','hfView');
+mountWalker({
+ start:{q:'ผู้ป่วยมาด้วยภาวะ decompensated หรือไม่?',h:'หอบ น้ำเกิน orthopnea ความดันต่ำ ปลายมือเท้าเย็น',o:[['ใช่ (DHF)','dhf'],['ไม่ — chronic HF','ef']]},
+ dhf:{q:'มี hypoperfusion (SBP <90, เย็น, ซึม, lactate สูง, ปัสสาวะน้อย)?',o:[['มี','cold'],['ไม่มี','warm']]},
+ cold:{leaf:true,cls:'danger',t:'Cold profile / cardiogenic shock',b:'หาสาเหตุ (ACS, arrhythmia, mechanical) · <b>norepinephrine</b> ถ้า shock · <b>dobutamine</b> ถ้า SBP <90 + hypoperfusion · diuretic เมื่อ perfusion ดีขึ้น · ปรึกษา ICU/cardiology · ลด beta-blocker ชั่วคราว'},
+ warm:{q:'SBP?',o:[['> 110 mmHg','vaso'],['90–110 mmHg','diu']]},
+ vaso:{leaf:true,cls:'warn',t:'Warm-wet + ความดันสูง',b:'<b>IV furosemide</b> (ไม่เคยใช้ 40 mg · เคยใช้ 2× ขนาดกิน) + <b>nitroglycerin IV</b> · O₂ ถ้า SpO₂ <90 · NIV ถ้า RR >25 · ตรวจ urine Na 2 ชม. / UO 6 ชม.'},
+ diu:{leaf:true,cls:'warn',t:'Warm-wet',b:'<b>IV furosemide</b> (40 mg หรือ 2× ขนาดกิน) · urine Na ≥70 ที่ 2 ชม. หรือ UO ≥100 mL/h → ดี · ไม่ถึง → เพิ่มเป็น 2 เท่า ± acetazolamide/HCTZ · คงที่แล้วเริ่ม SGLT2i'},
+ ef:{q:'LVEF?',o:[['< 50% (HFrEF)','ref'],['≥ 50% (HFpEF)','pef']]},
+ ref:{q:'ได้ครบ 4 เสาหลักหรือยัง?',o:[['ยังไม่ครบ','add'],['ครบแล้ว ยังมีอาการ','more']]},
+ add:{leaf:true,cls:'ok',t:'เติมเสาที่ขาด',b:'Beta-blocker + ARNI (หรือ ACEi/ARB) + MRA + SGLT2i · เริ่มขนาดต่ำพร้อมกัน ขึ้นทุก 1–2 สัปดาห์ · ตรวจ K/Cr · ใช้เครื่องมือบท 13'},
+ more:{leaf:true,cls:'violet',t:'ยาเสริม/อุปกรณ์',b:'TSAT <20% → IV iron · HR >70 sinus → ivabradine · LVEF ≤40% → digoxin · LVEF ≤35% หลัง 3 เดือน → ICD · LBBB QRS ≥150 → CRT · ส่งต่อ advanced HF ถ้า stage D'},
+ pef:{leaf:true,cls:'ok',t:'HFpEF',b:'<b>SGLT2i + MRA</b> (finerenone หรือ spironolactone) · BMI ≥30 + LVEF ≥45% → semaglutide/tirzepatide · diuretic ตามน้ำเกิน · คุมความดัน AF โรคร่วม · นึกถึง amyloidosis'}
+},'apTrail','apStage');
+
+function fmt(){
+  const ef=num('fEf'),sbp=num('fSbp'),hr=num('fHr'),k=num('fK'),g=num('fGfr'),ras=$('fRas').value;
+  const bb=$('fBb').checked,mra=$('fMra').checked,sg=$('fSg').checked,cong=$('fCong').checked,sr=$('fSr').checked,bmi=$('fBmi').checked;
+  if(ef===null){$('fOut').textContent='ใส่ LVEF';return}
+  const L=[];
+  const hfref=ef<50;
+  L.push(`<b>${hfref?'HFrEF':'HFpEF'}</b> (LVEF ${ef}%) ตาม ESC 2026${ef>40&&ef<50?' — เดิมเรียก HFmrEF':''}`);
+  const lowBP=sbp!==null&&sbp<90;
+  if(!sg){ if(g!==null&&g<20)L.push('SGLT2i: eGFR <20 — ยังไม่เริ่ม');else L.push('<b>เริ่ม SGLT2i</b> (dapagliflozin/empagliflozin 10 mg) — แทบไม่ลดความดัน');}
+  if(!mra){
+    if(k!==null&&k>5.0)L.push('MRA: K >5.0 — แก้ K ก่อน หรือพิจารณา potassium binder');
+    else if(g!==null&&g<30)L.push('MRA: eGFR <30 — ระวัง/ปรึกษา');
+    else L.push(hfref?'<b>เริ่ม MRA</b> spironolactone 12.5–25 mg (ตรวจ K/Cr ที่ 1 และ 4 สัปดาห์)':'<b>เริ่ม MRA</b> finerenone หรือ spironolactone (ตรวจ K/Cr)');
+  }
+  if(hfref){
+    if(!bb){ if(cong)L.push('Beta-blocker: เริ่มเมื่อหายน้ำเกิน (euvolemic) ขนาดต่ำ'); else if(hr!==null&&hr<60)L.push('Beta-blocker: HR <60 — ตรวจหา conduction disease ก่อน'); else L.push('<b>เริ่ม beta-blocker</b> bisoprolol 1.25 mg หรือ carvedilol 3.125 mg bid');}
+    if(ras==='none'){ if(lowBP)L.push('RASi: SBP <90 — เลื่อนไว้ก่อน เริ่ม SGLT2i/MRA ก่อน'); else L.push(`<b>เริ่ม ARNI</b> sacubitril/valsartan ${sbp!==null&&sbp<100?'24/26':'24/26–49/51'} mg bid (หรือ ACEi/ARB ถ้าเข้าถึงไม่ได้)`);}
+    else if(ras==='acei'||ras==='arb'){ if(!lowBP)L.push(`พิจารณา <b>เปลี่ยน ${ras==='acei'?'ACEi':'ARB'} เป็น ARNI</b>${ras==='acei'?' (หยุด ACEi 36 ชม.ก่อน)':''}`);}
+    if(bb&&sr&&hr!==null&&hr>70&&ef<=35)L.push('HR >70 แม้ได้ beta-blocker: ขึ้นขนาด BB ให้สุดก่อน แล้วพิจารณา <b>ivabradine</b>');
+    if(ef<=35)L.push('LVEF ≤35%: ประเมิน ICD/CRT หลังได้ FMT ≥3 เดือน');
+  }else{
+    if(bmi&&ef>=45)L.push('BMI ≥30: พิจารณา <b>semaglutide หรือ tirzepatide</b> (IIa)');
+    if(ras==='none')L.push('ACEi/ARB/ARNI ใน HFpEF: อาจพิจารณา (IIb) โดยเฉพาะถ้ามีความดันสูง');
+  }
+  if(cong)L.push('ยังมีน้ำเกิน: ปรับ loop diuretic · ชั่งน้ำหนักทุกวัน');
+  if(k!==null&&k>5.5)L.push('<b>K >5.5</b>: หยุด MRA ชั่วคราว ดูหน้า Hyperkalemia');
+  if(lowBP)L.push('SBP <90: ถ้ามีอาการ ลด diuretic/ยาลดความดันอื่นก่อนลด FMT');
+  if(hfref&&bb&&mra&&sg&&ras!=='none')L.push('<b>ได้ครบ 4 เสาหลักแล้ว</b> — ขึ้นขนาดถึงเป้าหมายทุก 1–2 สัปดาห์ · ตรวจ TSAT');
+  $('fOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tFmt input,#tFmt select',fmt);
+
+function diu(){
+  const h=num('dHome'),u=num('dUna'),uo=num('dUo');
+  const L=[];
+  const iv=(!h)?40:Math.min(Math.round(2*h/10)*10,400);
+  L.push(`<b>Furosemide IV เริ่มต้น ~<span class="big">${iv}</span> mg/วัน</b> ${h?'(2 × ขนาดกิน)':'(ไม่เคยใช้)'} — แบ่ง bolus 2 ครั้ง หรือ bolus แล้วหยดต่อเนื่อง`);
+  if(u!==null||uo!==null){
+    const ok=(u!==null&&u>=70)||(uo!==null&&uo>=600);
+    if(ok)L.push('<b>ตอบสนองดี</b> (Na ≥70 ที่ 2 ชม. หรือ ≥100 mL/h) — ให้ขนาดเดิมต่อ ประเมินซ้ำทุกวัน');
+    else L.push(`<b>ตอบสนองไม่พอ</b> → เพิ่มเป็น ~${Math.min(iv*2,800)} mg/วัน · ถ้ายังไม่ดี เพิ่ม acetazolamide 500 mg IV/วัน หรือ HCTZ · ตรวจ K Na Cr`);
+  }else L.push('ตรวจ <b>urine Na (spot) ที่ 2 ชม.</b> หลังโดสแรก และวัดปัสสาวะ 6 ชม.แรก');
+  L.push('เป้าหมาย: หาย congestion ก่อนกลับบ้าน · เริ่ม SGLT2i เมื่ออาการคงที่ · ลดเป็นยากินที่ขนาดต่ำสุดที่คุมได้');
+  $('dOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tDiu input',diu);
+
+function np(){
+  const a=num('nAge'),v=num('nVal'),s=$('nSet').value;
+  if(a===null||v===null){$('nOut').textContent='ใส่อายุและค่า';return}
+  let out,cls;
+  if(s==='acute'){
+    const hi=a<50?450:a<=75?900:1800;
+    if(v<300){out='<b>ตัด acute HF ออกได้ค่อนข้างดี</b> (<300)';}
+    else if(v>hi){out=`<b>น่าจะเป็น acute HF</b> (>${hi} สำหรับอายุ ${a})`;}
+    else out=`<b>Gray zone</b> (300–${hi}) — ใช้ echo/ultrasound ปอด/ภาพรวมทางคลินิก`;
+  }else{
+    const hi=a<50?125:a<=75?250:500;
+    if(v<125)out='<b>ตัด HF ออกได้</b> (<125)';
+    else if(v>=hi)out=`<b>น่าจะเป็น HF</b> (≥${hi} สำหรับอายุ ${a}) → ส่ง echo${v>2000?' · <b>>2000: ควรพบผู้เชี่ยวชาญภายใน 2 สัปดาห์</b>':''}`;
+    else out=`ค่าเกิน 125 แต่ต่ำกว่าเกณฑ์อายุ (${hi}) — พิจารณา echo ตามอาการ`;
+  }
+  const n=[];
+  if($('nAf').checked)n.push('AF ทำให้ค่าสูงขึ้น');
+  if($('nObe').checked)n.push('อ้วนทำให้ค่าต่ำลง (อาจต่ำเกินจริง)');
+  if($('nCkd').checked)n.push('ไตเสื่อมทำให้ค่าสูงขึ้น');
+  $('nOut').innerHTML=out+(n.length?'<br><span class="muted">'+n.join(' · ')+'</span>':'');
+}
+bindAll('#tNp input,#tNp select',np);
+
+mountQuiz([
+ ['ตาม ESC 2026 ผู้ป่วย HF มีอาการ LVEF 45% จัดเป็นกลุ่มใด',
+  ['HFmrEF','HFrEF','HFpEF','HFimpEF'],1,'ESC 2026 ตัด HFmrEF ออก HFrEF = LVEF <50%'],
+ ['ข้อใดไม่ใช่ foundational medical therapy ของ HFrEF',
+  ['Bisoprolol','Sacubitril/valsartan','Furosemide','Dapagliflozin'],2,'Loop diuretic ลดอาการ ไม่ใช่เสาหลักที่ลดอัตราตาย'],
+ ['HFpEF ยาใดเป็น Class I ใน ESC 2026',
+  ['Digoxin','SGLT2i และ MRA','Ivabradine','Sacubitril/valsartan'],1,'FMT ของ HFpEF คือ SGLT2i + MRA (รวม finerenone)'],
+ ['DHF ได้ furosemide 80 mg IV ที่ 2 ชม. urine Na 45 mEq/L ควรทำอย่างไร',
+  ['ให้ขนาดเดิม','หยุด diuretic','เพิ่ม loop diuretic เป็น 2 เท่า','ให้ IV fluid'],2,'Urine Na <70 ที่ 2 ชม. = ตอบสนองไม่พอ → เพิ่มขนาด'],
+ ['ผู้ป่วยกิน enalapril 10 mg bid จะเปลี่ยนเป็น ARNI',
+  ['เปลี่ยนได้ทันที','หยุด enalapril อย่างน้อย 36 ชม.','ให้ร่วมกัน 1 สัปดาห์','ต้องหยุด 7 วัน'],1,'เว้น 36 ชม.เพื่อลดความเสี่ยง angioedema'],
+ ['ข้อใดถูกเรื่อง O₂ ใน DHF',
+  ['ให้ทุกราย','ให้เมื่อ SpO₂ <90% หรือ PaO₂ <60','ให้เมื่อ SpO₂ <96%','ห้ามให้'],1,'ESC 2026 Class I เมื่อ SpO₂ <90% หรือ PaO₂ <60'],
+ ['HFrEF LVEF 30% ได้ FMT ครบ 3 เดือน ischemic NYHA II LVEF ยัง 30% ควรพิจารณา',
+  ['ICD primary prevention','หยุดยา','Ivabradine อย่างเดียว','รอ 1 ปี'],0,'Ischemic LVEF ≤35% หลัง FMT ≥3 เดือน → ICD (I)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
