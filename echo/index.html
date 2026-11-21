@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>อ่านผล Echo หัวใจ — หลักสูตร Interactive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8fc; --card:#fff; --ink:#1b2333; --muted:#5d6779; --line:#e3e8f1;
+  --brand:#d6336c; --brand2:#7048e8; --teal:#0c8599; --green:#2b8a3e; --amber:#e67700; --red:#c92a2a; --blue:#1971c2;
+  --soft-pink:#fff0f6; --soft-violet:#f3f0ff; --soft-teal:#e3fafc; --soft-green:#ebfbee; --soft-amber:#fff4e6; --soft-red:#fff5f5; --soft-blue:#e7f5ff;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans Thai",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+header.hero{background:linear-gradient(135deg,#d6336c 0%,#7048e8 60%,#1971c2 100%);color:#fff;padding:28px 18px 22px}
+.hero-in{max-width:1000px;margin:0 auto}
+.hero h1{margin:0 0 4px;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25}
+.hero p{margin:0;opacity:.92}
+.hero .meta{margin-top:10px;font-size:.85rem;opacity:.85}
+.progress-wrap{margin-top:14px;background:rgba(255,255,255,.25);border-radius:99px;height:10px;overflow:hidden}
+.progress-bar{height:100%;background:#fff;width:0;transition:width .4s}
+.progress-txt{font-size:.82rem;margin-top:4px;opacity:.9}
+nav.chbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(20,30,60,.05)}
+.chbar-in{max-width:1000px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 10px;scrollbar-width:thin}
+.chbtn{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink);white-space:nowrap}
+.chbtn.active{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+.chbtn.done:not(.active){border-color:var(--green);color:var(--green)}
+.chbtn.done:not(.active)::after{content:" ✓"}
+main{max-width:1000px;margin:0 auto;padding:18px 14px 60px}
+section.ch{display:none}
+section.ch.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:1.5rem;margin:6px 0 4px;line-height:1.3}
+h3{font-size:1.15rem;margin:22px 0 8px;color:var(--brand2)}
+h4{margin:14px 0 6px;font-size:1rem}
+.lead{color:var(--muted);margin:0 0 14px}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--soft-violet);color:var(--brand2);margin-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:12px 0;box-shadow:0 1px 3px rgba(20,30,60,.04)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:12px 14px;margin:10px 0}
+.box.pink{background:var(--soft-pink);border-left:4px solid var(--brand)}
+.box.violet{background:var(--soft-violet);border-left:4px solid var(--brand2)}
+.box.teal{background:var(--soft-teal);border-left:4px solid var(--teal)}
+.box.green{background:var(--soft-green);border-left:4px solid var(--green)}
+.box.amber{background:var(--soft-amber);border-left:4px solid var(--amber)}
+.box.red{background:var(--soft-red);border-left:4px solid var(--red)}
+.box.blue{background:var(--soft-blue);border-left:4px solid var(--blue)}
+.box b.t{display:block;margin-bottom:2px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:8px 0}
+th,td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+th{background:#f1f3f9;font-weight:600}
+.tblwrap{overflow-x:auto}
+.sev-mild{background:#ebfbee}.sev-mod{background:#fff4e6}.sev-sev{background:#fff5f5}
+label.f{display:block;font-size:.85rem;color:var(--muted);margin:6px 0 2px}
+input[type=number],select{width:100%;padding:8px 10px;border:1px solid #cfd6e4;border-radius:10px;font:inherit;background:#fff}
+.inrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 12px}
+.btn{display:inline-block;border:none;background:var(--brand2);color:#fff;border-radius:10px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer;margin:8px 6px 0 0}
+.btn.ghost{background:#fff;color:var(--brand2);border:1px solid var(--brand2)}
+.btn.small{padding:5px 10px;font-size:.85rem}
+.out{margin-top:12px;border-radius:12px;padding:12px 14px;background:#f8f9fc;border:1px dashed #c5cde0;min-height:20px}
+.out:empty{display:none}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;font-weight:600;font-size:.85rem}
+.p-green{background:#d3f9d8;color:#1b6b2c}.p-amber{background:#ffe8cc;color:#a64d00}.p-red{background:#ffe3e3;color:#a61e1e}.p-blue{background:#d0ebff;color:#14518c}.p-gray{background:#e9ecef;color:#495057}
+.chk{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px dashed var(--line)}
+.chk input{margin-top:5px;transform:scale(1.15)}
+.navfoot{display:flex;justify-content:space-between;gap:8px;margin-top:26px;flex-wrap:wrap}
+.mark{background:var(--green)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:8px 8px 8px 44px;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:6px;top:8px;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.mapcard{border-radius:12px;padding:12px;border:1px solid var(--line);background:#fff;cursor:pointer;transition:transform .15s}
+.mapcard:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(20,30,60,.08)}
+.mapcard .n{font-size:.75rem;font-weight:700;color:var(--brand)}
+.mapcard .h{font-weight:600}
+.mapcard .d{font-size:.83rem;color:var(--muted)}
+svg text{font-family:"IBM Plex Sans Thai",sans-serif}
+.hot{cursor:pointer;transition:opacity .15s}
+.hot:hover{opacity:.75}
+.hot.sel{stroke:#111;stroke-width:3}
+.viewtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.info{min-height:90px}
+.seg{cursor:pointer;stroke:#fff;stroke-width:2}
+.legend span{display:inline-flex;align-items:center;gap:4px;margin-right:10px;font-size:.82rem}
+.legend i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.q{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.q .qt{font-weight:600;margin-bottom:6px}
+.opt{display:block;width:100%;text-align:left;border:1px solid #d6dcea;background:#fbfcfe;border-radius:10px;padding:8px 12px;margin:5px 0;font:inherit;cursor:pointer}
+.opt:hover{background:#f1f3fa}
+.opt.right{background:#d3f9d8;border-color:#2b8a3e}
+.opt.wrong{background:#ffe3e3;border-color:#c92a2a}
+.opt:disabled{cursor:default}
+.expl{display:none;margin-top:8px;font-size:.92rem;background:var(--soft-blue);border-radius:10px;padding:8px 12px}
+.expl.show{display:block}
+.report{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;background:#10172a;color:#d7e3ff;border-radius:12px;padding:12px 14px;white-space:pre-wrap;line-height:1.55;overflow-x:auto}
+.casehead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.score{font-size:1.1rem;font-weight:700}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}
+details summary{cursor:pointer;font-weight:600}
+.small{font-size:.85rem;color:var(--muted)}
+footer{max-width:1000px;margin:0 auto;padding:0 14px 90px;font-size:.8rem;color:var(--muted)}
+.kbd{font-family:ui-monospace,monospace;background:#eef1f7;border-radius:6px;padding:0 5px;font-size:.88em}
+.formula{font-family:ui-monospace,monospace;background:#f3f0ff;border-radius:8px;padding:6px 10px;display:inline-block;margin:4px 0;font-size:.9rem}
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back:hover{transform:translateY(-1px)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>🫀 อ่านผล Echo หัวใจ ให้เป็นระบบ</h1>
+    <p>หลักสูตร interactive สำหรับแพทย์ทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนอายุรศาสตร์ — จากรายงาน echo หนึ่งใบ ไปสู่การตัดสินใจทางคลินิก</p>
+    <div class="meta">อ้างอิง ESC HF 2026 · ASE/EACVI chamber quantification 2015 · ASE diastolic function 2025 · ESC/ERS PH 2022 · ACC/AHA VHD 2020 · ASE valvular regurgitation 2017</div>
+    <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+    <div class="progress-txt" id="ptxt">ความคืบหน้า 0%</div>
+  </div>
+</header>
+<nav class="chbar"><div class="chbar-in" id="chbar"></div></nav>
+
+<main>
+
+<!-- ============ CH0 ============ -->
+<section class="ch" id="ch0" data-title="0 · ภาพรวม">
+  <span class="tag">บทที่ 0</span>
+  <h2>แผนที่หลักสูตร & วิธีอ่านรายงาน Echo</h2>
+  <p class="lead">เป้าหมาย: อ่านรายงาน TTE ของ รพ. แล้วตอบได้ 4 คำถาม — <b>หัวใจบีบดีไหม · คลายตัว/ความดันห้องบนสูงไหม · ซีกขวาและความดันปอดเป็นอย่างไร · ลิ้นหัวใจ/เยื่อหุ้มหัวใจมีปัญหาที่ต้องจัดการไหม</b></p>
+
+  <div class="map" id="mapcards"></div>
+
+  <h3>อ่านรายงาน 10 ขั้น (ใช้ทุกครั้ง)</h3>
+  <div class="card">
+  <ol class="steps">
+    <li><b>บริบท</b> — indication, rhythm (SR/AF), HR, BP, image quality, เทียบ echo ครั้งก่อน</li>
+    <li><b>LV size & wall thickness</b> — LVIDd, IVSd, PWd → LV mass index, RWT → geometry</li>
+    <li><b>LV systolic function</b> — LVEF (Simpson biplane), RWMA ตาม 17 segments, GLS ถ้ามี</li>
+    <li><b>Diastolic function & LAP</b> — e′, E/e′, TR velocity/PASP, E/A, LAVI, LARS</li>
+    <li><b>LA size</b> — LAVI &gt;34 mL/m² = โต (สะท้อนความดันสูงเรื้อรังหรือ AF/MV disease)</li>
+    <li><b>RV size & function</b> — RV basal diameter, TAPSE, RV S′, FAC</li>
+    <li><b>PASP & PH probability</b> — TR Vmax + RAP จาก IVC + echo signs</li>
+    <li><b>Valves</b> — stenosis (gradient, area) / regurgitation (VC, EROA, RVol) / morphology</li>
+    <li><b>Aorta</b> — aortic root, ascending aorta</li>
+    <li><b>Pericardium, IVC, masses</b> — effusion, tamponade physiology, thrombus/vegetation</li>
+  </ol>
+  </div>
+  <div class="box amber"><b class="t">⚠️ กฎทอง</b>ตัวเลขใน echo ต้องตีความร่วมกับ <b>clinical context, rhythm และ image quality</b> เสมอ — ตัวเลขเดียวที่ผิดปกติแต่ไม่สอดคล้องกับภาพรวม ให้สงสัยปัญหาทางเทคนิคก่อน</div>
+  <div class="navfoot"><span></span><button class="btn" onclick="go(1)">เริ่มบทที่ 1 →</button></div>
+</section>
+
+<!-- ============ CH1 ============ -->
+<section class="ch" id="ch1" data-title="1 · Views">
+  <span class="tag">บทที่ 1</span>
+  <h2>Standard views & กายวิภาคบนจอ</h2>
+  <p class="lead">คลิกโครงสร้างในภาพเพื่อดูว่า view นี้ใช้ประเมินอะไร (ภาพเป็น schematic อย่างง่าย)</p>
+  <div class="card">
+    <div class="viewtabs" id="viewtabs"></div>
+    <div class="grid2">
+      <div><svg id="viewsvg" viewBox="0 0 320 300" style="width:100%;max-width:420px;background:#0b1020;border-radius:12px"></svg></div>
+      <div class="info"><div id="viewdesc" class="box violet"></div><div id="structinfo" class="box teal">คลิกโครงสร้างในภาพ</div></div>
+    </div>
+  </div>
+
+  <h3>ตาราง: view ไหน วัดอะไร</h3>
+  <div class="tblwrap"><table>
+    <tr><th>View</th><th>ใช้ดู / วัด</th></tr>
+    <tr><td>PLAX</td><td>LVIDd, IVSd, PWd, LVOT diameter, aortic root, MV/AV morphology, pericardial effusion (หลัง LV, หน้า descending aorta)</td></tr>
+    <tr><td>PSAX (AV / MV / papillary / apex)</td><td>AV cusps (bicuspid?), MV planimetry ใน MS, RWMA รอบวง, RVOT/PA, D-shaped septum</td></tr>
+    <tr><td>A4C</td><td>LVEF (Simpson), RV size/TAPSE/S′, mitral inflow E/A, e′, TR jet, LA/RA volume</td></tr>
+    <tr><td>A2C / A3C (APLAX)</td><td>Biplane EF, RWMA anterior/inferior/inferolateral, LVOT VTI &amp; AV CW Doppler (A5C/A3C)</td></tr>
+    <tr><td>A5C</td><td>LVOT PW (VTI), AV CW (Vmax, mean gradient), AR jet</td></tr>
+    <tr><td>Subcostal</td><td>IVC diameter + collapsibility, effusion, ASD, ใช้ได้ดีในผู้ป่วยที่ apical window ไม่ดี</td></tr>
+    <tr><td>Suprasternal</td><td>Aortic arch, coarctation, holodiastolic flow reversal ใน descending aorta (severe AR)</td></tr>
+  </table></div>
+
+  <h3>ฝึกจับคู่</h3>
+  <div id="q-ch1"></div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(0)">← ก่อนหน้า</button><button class="btn" onclick="complete(1);go(2)">เข้าใจแล้ว ไปบทที่ 2 →</button></div>
+</section>
+
+<!-- ============ CH2 ============ -->
+<section class="ch" id="ch2" data-title="2 · LV size & geometry">
+  <span class="tag">บทที่ 2</span>
+  <h2>ขนาด LV ความหนา และ LV geometry</h2>
+  <p class="lead">LVH ไม่ได้มีแบบเดียว — การแยก concentric vs eccentric ช่วยบอกสาเหตุ (pressure vs volume overload)</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>ค่าปกติที่ควรจำ (ASE 2015)</h4>
+      <div class="tblwrap"><table>
+        <tr><th>ค่า</th><th>ชาย</th><th>หญิง</th></tr>
+        <tr><td>LVIDd</td><td>42–58 mm</td><td>38–52 mm</td></tr>
+        <tr><td>IVSd / PWd</td><td>6–10 mm</td><td>6–9 mm</td></tr>
+        <tr><td>LV mass index (linear)</td><td>≤115 g/m²</td><td>≤95 g/m²</td></tr>
+        <tr><td>LVEDV index</td><td>34–74 mL/m²</td><td>29–61 mL/m²</td></tr>
+        <tr><td>RWT</td><td colspan="2">≤0.42</td></tr>
+        <tr><td>LA volume index</td><td colspan="2">≤34 mL/m²</td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <h4>4 รูปแบบ geometry</h4>
+      <svg viewBox="0 0 300 210" style="width:100%">
+        <line x1="150" y1="10" x2="150" y2="200" stroke="#adb5bd" stroke-dasharray="4"/>
+        <line x1="10" y1="105" x2="290" y2="105" stroke="#adb5bd" stroke-dasharray="4"/>
+        <text x="150" y="207" text-anchor="middle" font-size="10" fill="#5d6779">RWT 0.42</text>
+        <text x="4" y="100" font-size="10" fill="#5d6779">LVMI ปกติ ↑ / โต ↓</text>
+        <!-- quadrants -->
+        <g transform="translate(75,55)"><circle r="30" fill="#ebfbee" stroke="#2b8a3e" stroke-width="6"/><text y="48" text-anchor="middle" font-size="11">Normal</text></g>
+        <g transform="translate(225,55)"><circle r="26" fill="#fff4e6" stroke="#e67700" stroke-width="11"/><text y="48" text-anchor="middle" font-size="11">Concentric remodeling</text></g>
+        <g transform="translate(75,155)"><circle r="38" fill="#e7f5ff" stroke="#1971c2" stroke-width="8"/><text y="52" text-anchor="middle" font-size="11">Eccentric LVH</text></g>
+        <g transform="translate(225,155)"><circle r="30" fill="#fff5f5" stroke="#c92a2a" stroke-width="15"/><text y="52" text-anchor="middle" font-size="11">Concentric LVH</text></g>
+      </svg>
+      <p class="small">ซ้าย = RWT ≤0.42 · ขวา = RWT &gt;0.42 · บน = LVMI ปกติ · ล่าง = LVMI เพิ่ม</p>
+    </div>
+  </div>
+
+  <div class="box violet"><b class="t">สาเหตุที่พบบ่อย</b>
+    <b>Concentric LVH</b> — HT, AS, HCM, infiltrative (amyloid: หนาแต่ ECG low voltage!) ·
+    <b>Eccentric LVH</b> — MR/AR เรื้อรัง, DCM, high-output state ·
+    <b>Concentric remodeling</b> — HT ระยะแรก, ผู้สูงอายุ</div>
+
+  <h3>🧮 LV mass & geometry calculator</h3>
+  <div class="card">
+    <div class="inrow">
+      <div><label class="f">เพศ</label><select id="g-sex"><option value="m">ชาย</option><option value="f">หญิง</option></select></div>
+      <div><label class="f">LVIDd (mm)</label><input type="number" id="g-lvid" value="48"></div>
+      <div><label class="f">IVSd (mm)</label><input type="number" id="g-ivs" value="13"></div>
+      <div><label class="f">PWd (mm)</label><input type="number" id="g-pw" value="13"></div>
+      <div><label class="f">ส่วนสูง (cm)</label><input type="number" id="g-ht" value="168"></div>
+      <div><label class="f">น้ำหนัก (kg)</label><input type="number" id="g-wt" value="72"></div>
+    </div>
+    <button class="btn" onclick="calcGeo()">คำนวณ</button>
+    <div class="out" id="g-out"></div>
+    <p class="small">LV mass (ASE cube formula) = 0.8 × 1.04 × [(IVS+LVID+PW)³ − LVID³] + 0.6 g (หน่วย cm) · BSA (Mosteller) · RWT = 2×PWd / LVIDd</p>
+  </div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(1)">← ก่อนหน้า</button><button class="btn" onclick="complete(2);go(3)">ไปบทที่ 3 →</button></div>
+</section>
+
+<!-- ============ CH3 ============ -->
+<section class="ch" id="ch3" data-title="3 · LVEF & RWMA">
+  <span class="tag">บทที่ 3</span>
+  <h2>LV systolic function: EF, RWMA, GLS</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>LVEF — แปลผล</h4>
+      <div class="tblwrap"><table>
+        <tr><th>LVEF</th><th>ความหมาย</th></tr>
+        <tr class="sev-mild"><td>≥ 50% (ปกติ ชาย 52–72, หญิง 54–74)</td><td>Preserved — ถ้ามี HF = <b>HFpEF</b></td></tr>
+        <tr class="sev-sev"><td>&lt; 50%</td><td><b>HFrEF</b> ตาม ESC 2026 → foundational medical therapy 4 ตัว</td></tr>
+      </table></div>
+      <p class="small">ESC 2026 ตัด HFmrEF ออก · HFCT (ไทย) และ ACC/AHA ยังแบ่ง 3 กลุ่ม (≤40, 41–49, ≥50%) — กลุ่ม 41–49% ในทางปฏิบัติควรได้ยาครบเช่นเดียวกับ HFrEF (ดูหน้า <a href="../hf/index.html">Heart failure</a>)</p>
+      <p class="small">ใช้ Simpson biplane เป็นหลัก · Teichholz/FS จาก M-mode ไม่แม่นเมื่อมี RWMA · visual estimate ของคนอ่านที่ชำนาญยอมรับได้</p>
+    </div>
+    <div class="card">
+      <h4>GLS (global longitudinal strain)</h4>
+      <p>ค่าเป็นลบ ยิ่งลบมากยิ่งดี — ปกติประมาณ <b>&lt; −18%</b> (เช่น −20%) · ค่าที่ “เข้าใกล้ 0” เช่น −12% = ผิดปกติ</p>
+      <ul>
+        <li>จับ LV dysfunction ได้ก่อน EF ลด — <b>cardio-oncology</b>: GLS ลดลง &gt;15% (relative) จาก baseline = สงสัย cardiotoxicity</li>
+        <li><b>Apical sparing pattern</b> (bullseye “cherry on top”) → นึกถึง cardiac amyloidosis</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🎯 17-segment bullseye — คลิกเพื่อกำหนด wall motion</h3>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <svg id="bull" viewBox="-160 -160 320 320" style="width:100%;max-width:360px"></svg>
+        <div class="legend" id="wmlegend"></div>
+      </div>
+      <div>
+        <div class="viewtabs">
+          <button class="btn small ghost" onclick="bullMode('wm')">โหมด wall motion</button>
+          <button class="btn small ghost" onclick="bullMode('terr')">โหมดเส้นเลือด</button>
+          <button class="btn small ghost" onclick="bullReset()">รีเซ็ต</button>
+        </div>
+        <div class="box teal" id="seginfo">คลิก segment เพื่อเปลี่ยน: ปกติ → hypokinetic → akinetic → dyskinetic</div>
+        <div class="out" id="wmsi"></div>
+        <div class="viewtabs" style="margin-top:8px">
+          <button class="btn small" onclick="bullPreset('lad')">ตัวอย่าง: LAD occlusion</button>
+          <button class="btn small" onclick="bullPreset('rca')">ตัวอย่าง: RCA</button>
+          <button class="btn small" onclick="bullPreset('lcx')">ตัวอย่าง: LCx</button>
+          <button class="btn small" onclick="bullPreset('tako')">ตัวอย่าง: Takotsubo</button>
+        </div>
+      </div>
+    </div>
+    <p class="small">WMSI = ผลรวมคะแนน ÷ 17 (1 ปกติ, 2 hypo, 3 akinetic, 4 dyskinetic) · WMSI 1.0 = ปกติ · segment apical inferior (15) และ apical lateral (16) เลือดเลี้ยงแปรผันได้ (LAD ที่ wrap รอบ apex)</p>
+  </div>
+  <div class="box red"><b class="t">RWMA ที่ห้ามพลาด</b>RWMA ตรงกับ territory เส้นเลือดเดียว → นึกถึง CAD/MI · RWMA ไม่ตรง territory (เช่น ทั้ง mid-apical รอบวง basal ดี) → Takotsubo, myocarditis · Apical akinesia/aneurysm → ดู <b>LV thrombus</b> ทุกครั้ง</div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(2)">← ก่อนหน้า</button><button class="btn" onclick="complete(3);go(4)">ไปบทที่ 4 →</button></div>
+</section>
+
+<!-- ============ CH4 ============ -->
+<section class="ch" id="ch4" data-title="4 · Diastolic & LAP">
+  <span class="tag">บทที่ 4</span>
+  <h2>Diastolic function & LA pressure (ASE 2025)</h2>
+  <p class="lead">ASE 2025 แทนที่ 2016 — ใช้อัลกอริทึมเดียวไม่แยกตาม EF, ลดผล “indeterminate” และเพิ่ม LA strain (LARS) เป็นตัวช่วย</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>ตัวแปรหลัก & cut-off</h4>
+      <div class="tblwrap"><table>
+        <tr><th>ตัวแปร</th><th>ผิดปกติเมื่อ</th><th>สะท้อน</th></tr>
+        <tr><td>e′ (TDI annulus)</td><td>septal ≤6, lateral ≤7, หรือ avg ≤6.5 cm/s</td><td>relaxation ช้า</td></tr>
+        <tr><td>E/e′</td><td>avg ≥14 (septal ≥15, lateral ≥13)</td><td>LAP สูง</td></tr>
+        <tr><td>PASP / TR Vmax</td><td>PASP ≥35 mmHg หรือ TR ≥2.8 m/s</td><td>LAP สูง (ส่งต่อไปปอด)</td></tr>
+        <tr><td>LAVI</td><td>&gt;34 mL/m²</td><td>LAP สูงเรื้อรัง</td></tr>
+        <tr><td>LARS</td><td>≤18%</td><td>LA เสื่อม/LAP สูง</td></tr>
+        <tr><td>PV S/D</td><td>≤0.67</td><td>LAP สูง</td></tr>
+      </table></div>
+      <p class="small">e′ cut-off ตามอายุ (ใช้ได้): อายุ 20–39 septal &lt;7/lateral &lt;10; 40–65 septal &lt;6/lateral &lt;8; &gt;65 septal &lt;6/lateral &lt;7</p>
+    </div>
+    <div class="card">
+      <h4>Grade</h4>
+      <div class="tblwrap"><table>
+        <tr><th>Grade</th><th>นิยาม</th></tr>
+        <tr class="sev-mild"><td>Normal</td><td>LAP ปกติ, relaxation ปกติ</td></tr>
+        <tr class="sev-mild"><td>Grade 1</td><td>e′ ลด (impaired relaxation) แต่ LAP ปกติ, E/A ≤0.8</td></tr>
+        <tr class="sev-mod"><td>Grade 2</td><td>LAP สูง (mild–moderate), E/A &lt;2</td></tr>
+        <tr class="sev-sev"><td>Grade 3</td><td>LAP สูงมาก, E/A ≥2 (restrictive filling)</td></tr>
+      </table></div>
+      <div class="box amber" style="margin-top:8px"><b class="t">ข้อยกเว้น</b>อัลกอริทึมนี้ใช้กับ <b>sinus rhythm</b> — ห้ามใช้ตรงๆ ใน AF, severe primary MR, MS, MAC ปานกลาง–รุนแรง, heart transplant, constriction, LVAD, non-cardiac PH</div>
+    </div>
+  </div>
+
+  <h3>🧭 Wizard: ประเมิน LAP & grade</h3>
+  <div class="card">
+    <div class="inrow">
+      <div><label class="f">septal e′ (cm/s)</label><input type="number" step="0.1" id="d-se" value="5"></div>
+      <div><label class="f">lateral e′ (cm/s)</label><input type="number" step="0.1" id="d-le" value="7"></div>
+      <div><label class="f">average E/e′</label><input type="number" step="0.1" id="d-ee" value="16"></div>
+      <div><label class="f">TR Vmax (m/s) — เว้นว่างถ้าไม่มี</label><input type="number" step="0.1" id="d-tr" value="3.0"></div>
+      <div><label class="f">E/A</label><input type="number" step="0.1" id="d-ea" value="1.1"></div>
+    </div>
+    <h4>ตัวแปรเพิ่มเติม (ใช้เมื่อผลก้ำกึ่ง)</h4>
+    <div class="inrow">
+      <div><label class="f">LARS (%)</label><input type="number" step="0.1" id="d-lars" placeholder="เช่น 22"></div>
+      <div><label class="f">LAVI (mL/m²)</label><input type="number" step="0.1" id="d-lavi" value="40"></div>
+      <div><label class="f">PV S/D ratio</label><input type="number" step="0.01" id="d-sd" placeholder="เช่น 1.1"></div>
+    </div>
+    <button class="btn" onclick="calcDiast()">ประเมิน</button>
+    <div class="out" id="d-out"></div>
+  </div>
+
+  <div class="box blue"><b class="t">ทำไม E/A อย่างเดียวไม่พอ?</b>E/A เป็นรูป U — ปกติ (&gt;0.8–2) กับ grade 2 “pseudonormal” ดูเหมือนกัน ต้องใช้ e′, E/e′, TR, LAVI ช่วยแยก</div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(3)">← ก่อนหน้า</button><button class="btn" onclick="complete(4);go(5)">ไปบทที่ 5 →</button></div>
+</section>
+
+<!-- ============ CH5 ============ -->
+<section class="ch" id="ch5" data-title="5 · RV & PH">
+  <span class="tag">บทที่ 5</span>
+  <h2>RV function, PASP และ PH probability</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>RV — ค่าผิดปกติ</h4>
+      <div class="tblwrap"><table>
+        <tr><th>ค่า</th><th>ผิดปกติ</th></tr>
+        <tr><td>RV basal diameter (A4C RV-focused)</td><td>&gt;41 mm = โต</td></tr>
+        <tr><td>RV/LV basal ratio</td><td>&gt;1.0</td></tr>
+        <tr><td>TAPSE</td><td>&lt;17 mm</td></tr>
+        <tr><td>RV S′ (TDI)</td><td>&lt;9.5 cm/s</td></tr>
+        <tr><td>RV FAC</td><td>&lt;35%</td></tr>
+        <tr><td>TAPSE/PASP</td><td>&lt;0.55 mm/mmHg (RV–PA uncoupling)</td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <h4>RAP จาก IVC</h4>
+      <div class="tblwrap"><table>
+        <tr><th>IVC</th><th>Collapse (sniff)</th><th>RAP</th></tr>
+        <tr><td>≤21 mm</td><td>&gt;50%</td><td>3 mmHg</td></tr>
+        <tr><td>≤21 mm</td><td>&lt;50%</td><td rowspan="2">8 mmHg (intermediate)</td></tr>
+        <tr><td>&gt;21 mm</td><td>&gt;50%</td></tr>
+        <tr><td>&gt;21 mm</td><td>&lt;50%</td><td>15 mmHg</td></tr>
+      </table></div>
+      <div class="formula">PASP = 4 × (TR Vmax)² + RAP</div>
+      <p class="small">ผู้ป่วยใส่ ventilator ใช้ IVC ประเมิน RAP ไม่ได้</p>
+    </div>
+  </div>
+
+  <h3>🧮 PASP & PH probability (ESC/ERS 2022)</h3>
+  <div class="card">
+    <div class="inrow">
+      <div><label class="f">TR Vmax (m/s)</label><input type="number" step="0.1" id="p-tr" value="3.8"></div>
+      <div><label class="f">IVC diameter (mm)</label><input type="number" id="p-ivc" value="23"></div>
+      <div><label class="f">IVC collapse &gt;50%?</label><select id="p-col"><option value="no">ไม่ (&lt;50%)</option><option value="yes">ใช่ (&gt;50%)</option></select></div>
+      <div><label class="f">TAPSE (mm)</label><input type="number" step="0.1" id="p-tapse" value="14"></div>
+    </div>
+    <h4>Echo signs อื่น (เลือกที่มี)</h4>
+    <div class="grid3">
+      <div><b class="small">A · Ventricles</b>
+        <label class="chk"><input type="checkbox" class="ps" data-c="A" id="ps-a1">RV/LV basal ratio &gt;1.0</label>
+        <label class="chk"><input type="checkbox" class="ps" data-c="A">Septal flattening (LV eccentricity index &gt;1.1)</label>
+        <label class="chk"><input type="checkbox" class="ps" data-c="A" id="ps-a3">TAPSE/PASP &lt;0.55 <span class="small">(คำนวณอัตโนมัติ)</span></label>
+      </div>
+      <div><b class="small">B · Pulmonary artery</b>
+        <label class="chk"><input type="checkbox" class="ps" data-c="B">RVOT AT &lt;105 ms และ/หรือ midsystolic notching</label>
+        <label class="chk"><input type="checkbox" class="ps" data-c="B">Early diastolic PR velocity &gt;2.2 m/s</label>
+        <label class="chk"><input type="checkbox" class="ps" data-c="B">PA diameter &gt; aortic root หรือ &gt;25 mm</label>
+      </div>
+      <div><b class="small">C · IVC & RA</b>
+        <label class="chk"><input type="checkbox" class="ps" data-c="C" id="ps-c1">IVC &gt;21 mm + collapse ลดลง <span class="small">(อัตโนมัติ)</span></label>
+        <label class="chk"><input type="checkbox" class="ps" data-c="C">RA area (end-systole) &gt;18 cm²</label>
+      </div>
+    </div>
+    <button class="btn" onclick="calcPH()">คำนวณ</button>
+    <div class="out" id="p-out"></div>
+    <p class="small">“มี signs” = พบ signs จาก <b>อย่างน้อย 2 ใน 3 หมวด</b> (A/B/C) · TR ≤2.8 ไม่มี signs → low · TR ≤2.8 มี signs หรือ 2.9–3.4 ไม่มี signs → intermediate · 2.9–3.4 มี signs หรือ &gt;3.4 → high</p>
+  </div>
+  <div class="box amber"><b class="t">Echo ไม่ได้ “วินิจฉัย” PH</b>Echo บอก <b>probability</b> — การวินิจฉัยต้อง right heart catheterization (mPAP &gt;20 mmHg) · intermediate/high → หาสาเหตุ: left heart disease (กลุ่ม 2 พบบ่อยที่สุด), lung disease, CTEPH (V/Q scan), PAH</div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(4)">← ก่อนหน้า</button><button class="btn" onclick="complete(5);go(6)">ไปบทที่ 6 →</button></div>
+</section>
+
+<!-- ============ CH6 ============ -->
+<section class="ch" id="ch6" data-title="6 · Valves">
+  <span class="tag">บทที่ 6</span>
+  <h2>ลิ้นหัวใจ: stenosis & regurgitation</h2>
+  <div class="viewtabs" id="valvetabs">
+    <button class="btn small" onclick="valveTab('as')">Aortic stenosis</button>
+    <button class="btn small ghost" onclick="valveTab('ms')">Mitral stenosis</button>
+    <button class="btn small ghost" onclick="valveTab('mr')">Mitral regurgitation</button>
+    <button class="btn small ghost" onclick="valveTab('ar')">Aortic regurgitation</button>
+    <button class="btn small ghost" onclick="valveTab('tr')">Tricuspid regurgitation</button>
+  </div>
+
+  <div class="vt" id="vt-as">
+    <div class="card">
+      <h4>Aortic stenosis — เกณฑ์ (ACC/AHA 2020)</h4>
+      <div class="tblwrap"><table>
+        <tr><th></th><th>Mild</th><th>Moderate</th><th>Severe</th></tr>
+        <tr><td>Vmax (m/s)</td><td class="sev-mild">2.0–2.9</td><td class="sev-mod">3.0–3.9</td><td class="sev-sev">≥4.0 (very severe ≥5)</td></tr>
+        <tr><td>Mean gradient</td><td class="sev-mild">&lt;20</td><td class="sev-mod">20–39</td><td class="sev-sev">≥40 mmHg</td></tr>
+        <tr><td>AVA</td><td class="sev-mild">&gt;1.5</td><td class="sev-mod">1.0–1.5</td><td class="sev-sev">≤1.0 cm² (AVAi ≤0.6)</td></tr>
+        <tr><td>DVI (VTI LVOT/AV)</td><td colspan="2">&gt;0.25</td><td class="sev-sev">≤0.25</td></tr>
+      </table></div>
+      <div class="formula">AVA = π(LVOT d/2)² × VTI<sub>LVOT</sub> / VTI<sub>AV</sub></div>
+    </div>
+    <div class="card">
+      <h4>🧮 Continuity equation & AS grader</h4>
+      <div class="inrow">
+        <div><label class="f">LVOT diameter (cm)</label><input type="number" step="0.01" id="a-d" value="2.0"></div>
+        <div><label class="f">VTI LVOT (cm)</label><input type="number" step="0.1" id="a-v1" value="16"></div>
+        <div><label class="f">VTI AV (cm)</label><input type="number" step="0.1" id="a-v2" value="70"></div>
+        <div><label class="f">AV Vmax (m/s)</label><input type="number" step="0.1" id="a-vmax" value="3.6"></div>
+        <div><label class="f">Mean gradient (mmHg)</label><input type="number" id="a-mg" value="32"></div>
+        <div><label class="f">LVEF (%)</label><input type="number" id="a-ef" value="65"></div>
+        <div><label class="f">BSA (m²)</label><input type="number" step="0.01" id="a-bsa" value="1.5"></div>
+      </div>
+      <button class="btn" onclick="calcAS()">วิเคราะห์</button>
+      <div class="out" id="a-out"></div>
+    </div>
+    <div class="box violet"><b class="t">Low-flow low-gradient AS</b>AVA ≤1.0 แต่ Vmax &lt;4 / MG &lt;40 →
+      ถ้า <b>EF &lt;50%</b> = classical LFLG → dobutamine stress echo ·
+      ถ้า <b>EF ≥50% + SVi &lt;35 mL/m²</b> = paradoxical LFLG → CT aortic valve calcium score (severe น่าจะเป็นถ้า ≥1300 AU หญิง / ≥2000 AU ชาย) · ก่อนสรุปให้ตรวจว่าวัด LVOT diameter ถูก (ผิด 1 mm → AVA ผิดมาก เพราะยกกำลังสอง)</div>
+  </div>
+
+  <div class="vt" id="vt-ms" style="display:none">
+    <div class="card">
+      <h4>Mitral stenosis (ส่วนใหญ่ rheumatic)</h4>
+      <div class="tblwrap"><table>
+        <tr><th></th><th>Progressive</th><th>Severe</th><th>Very severe</th></tr>
+        <tr><td>MVA (planimetry / PHT)</td><td>&gt;1.5 cm²</td><td class="sev-sev">≤1.5</td><td class="sev-sev">≤1.0</td></tr>
+        <tr><td>PHT</td><td>&lt;150 ms</td><td class="sev-sev">≥150</td><td class="sev-sev">≥220</td></tr>
+      </table></div>
+      <p class="small">Mean gradient ขึ้นกับ HR (มักใช้ประกอบ เช่น &gt;10 mmHg บ่งชี้ severe ที่ HR ปกติ) · PASP &gt;50 mmHg สนับสนุนว่ามีผลต่อ hemodynamics</p>
+      <div class="formula">MVA ≈ 220 / PHT</div>
+      <div class="inrow">
+        <div><label class="f">PHT (ms)</label><input type="number" id="m-pht" value="250"></div>
+        <div><label class="f">Mean gradient (mmHg)</label><input type="number" id="m-mg" value="12"></div>
+        <div><label class="f">HR</label><input type="number" id="m-hr" value="95"></div>
+      </div>
+      <button class="btn" onclick="calcMS()">คำนวณ</button>
+      <div class="out" id="m-out"></div>
+    </div>
+    <div class="box green"><b class="t">สิ่งที่ต้องอ่านต่อในรายงาน MS</b>Wilkins score (≤8 เหมาะกับ PMBC) · MR ระดับไหน (moderate ขึ้นไป = ข้อห้าม PMBC) · LA/LAA thrombus (ต้อง TEE ก่อน PMBC) · rhythm AF</div>
+  </div>
+
+  <div class="vt" id="vt-mr" style="display:none">
+    <div class="card">
+      <h4>Mitral regurgitation — severity</h4>
+      <div class="tblwrap"><table>
+        <tr><th></th><th>Mild</th><th>Moderate</th><th>Severe</th></tr>
+        <tr><td>Vena contracta</td><td class="sev-mild">&lt;0.3 cm</td><td class="sev-mod">0.3–0.69</td><td class="sev-sev">≥0.7 cm</td></tr>
+        <tr><td>EROA</td><td class="sev-mild">&lt;0.20 cm²</td><td class="sev-mod">0.20–0.39</td><td class="sev-sev">≥0.40 cm²</td></tr>
+        <tr><td>Regurgitant volume</td><td class="sev-mild">&lt;30 mL</td><td class="sev-mod">30–59</td><td class="sev-sev">≥60 mL</td></tr>
+        <tr><td>Regurgitant fraction</td><td class="sev-mild">&lt;30%</td><td class="sev-mod">30–49%</td><td class="sev-sev">≥50%</td></tr>
+        <tr><td>สัญญาณสนับสนุน</td><td colspan="2">—</td><td class="sev-sev">PV systolic flow reversal, flail leaflet, LA/LV โต, E dominant &gt;1.2 m/s</td></tr>
+      </table></div>
+      <p class="small">ต้องแยก <b>primary</b> (ตัวลิ้นผิด: prolapse/flail, rheumatic) vs <b>secondary/functional</b> (LV/LA โต) — การรักษาต่างกัน · ESC มักใช้ EROA ≥0.20 / RVol ≥30 สำหรับ severe secondary MR, ACC/AHA 2020 ใช้เกณฑ์เดียวกับ primary</p>
+    </div>
+    <div class="box red"><b class="t">Severe primary MR ที่ควรส่งผ่าตัด</b>มีอาการ หรือ ไม่มีอาการแต่ LVEF ≤60% หรือ LVESD ≥40 mm (ACC/AHA 2020)</div>
+  </div>
+
+  <div class="vt" id="vt-ar" style="display:none">
+    <div class="card">
+      <h4>Aortic regurgitation — severity</h4>
+      <div class="tblwrap"><table>
+        <tr><th></th><th>Mild</th><th>Moderate</th><th>Severe</th></tr>
+        <tr><td>Vena contracta</td><td class="sev-mild">&lt;0.3 cm</td><td class="sev-mod">0.3–0.6</td><td class="sev-sev">&gt;0.6 cm</td></tr>
+        <tr><td>Jet width / LVOT</td><td class="sev-mild">&lt;25%</td><td class="sev-mod">25–64%</td><td class="sev-sev">≥65%</td></tr>
+        <tr><td>EROA</td><td class="sev-mild">&lt;0.10</td><td class="sev-mod">0.10–0.29</td><td class="sev-sev">≥0.30 cm²</td></tr>
+        <tr><td>RVol / RF</td><td class="sev-mild">&lt;30 mL / &lt;30%</td><td class="sev-mod">30–59 / 30–49%</td><td class="sev-sev">≥60 mL / ≥50%</td></tr>
+        <tr><td>PHT</td><td class="sev-mild">&gt;500 ms</td><td class="sev-mod">200–500</td><td class="sev-sev">&lt;200 ms</td></tr>
+        <tr><td>Abdominal aorta</td><td colspan="2">—</td><td class="sev-sev">Holodiastolic flow reversal</td></tr>
+      </table></div>
+    </div>
+    <div class="box red"><b class="t">Severe AR ที่ควรส่งผ่าตัด</b>มีอาการ หรือ ไม่มีอาการแต่ LVEF ≤55% หรือ LVESD &gt;50 mm (หรือ LVESDi &gt;25 mm/m²) · ดู aortic root/ascending ด้วยเสมอ</div>
+  </div>
+
+  <div class="vt" id="vt-tr" style="display:none">
+    <div class="card">
+      <h4>Tricuspid regurgitation — severity (ASE 2017)</h4>
+      <div class="tblwrap"><table>
+        <tr><th></th><th>Mild</th><th>Moderate</th><th>Severe</th></tr>
+        <tr><td>Vena contracta</td><td class="sev-mild">&lt;0.3 cm</td><td class="sev-mod">0.3–0.69</td><td class="sev-sev">≥0.7 cm</td></tr>
+        <tr><td>EROA</td><td class="sev-mild">&lt;0.20</td><td class="sev-mod">0.20–0.39</td><td class="sev-sev">≥0.40 cm²</td></tr>
+        <tr><td>Hepatic vein flow</td><td class="sev-mild">systolic dominance</td><td class="sev-mod">systolic blunting</td><td class="sev-sev">systolic flow reversal</td></tr>
+        <tr><td>CW jet</td><td>faint/parabolic</td><td>dense parabolic</td><td class="sev-sev">dense, triangular, early peak</td></tr>
+      </table></div>
+      <div class="box amber"><b class="t">กับดัก</b>Severe TR แบบ “wide open” อาจมี TR Vmax ต่ำ (equalization ระหว่าง RV–RA) → PASP ที่คำนวณได้จะ <b>ต่ำกว่าความจริง</b></div>
+    </div>
+  </div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(5)">← ก่อนหน้า</button><button class="btn" onclick="complete(6);go(7)">ไปบทที่ 7 →</button></div>
+</section>
+
+<!-- ============ CH7 ============ -->
+<section class="ch" id="ch7" data-title="7 · Pericardium">
+  <span class="tag">บทที่ 7</span>
+  <h2>Pericardial effusion, tamponade, constriction</h2>
+  <div class="grid2">
+    <div class="card">
+      <h4>ขนาด effusion (วัดช่วง diastole)</h4>
+      <input type="range" min="0" max="35" value="12" id="eff" style="width:100%" oninput="effSize()">
+      <div class="out" id="eff-out"></div>
+      <svg viewBox="0 0 200 160" style="width:100%;max-width:280px;display:block;margin:auto">
+        <ellipse id="effring" cx="100" cy="80" rx="80" ry="65" fill="#1c3d6e"/>
+        <ellipse cx="100" cy="80" rx="55" ry="45" fill="#e64980"/>
+        <ellipse cx="100" cy="80" rx="30" ry="24" fill="#0b1020"/>
+        <text x="100" y="84" text-anchor="middle" fill="#fff" font-size="10">LV</text>
+      </svg>
+      <p class="small">ไม่ใช่ขนาดที่ทำให้ tamponade แต่เป็น <b>อัตราการสะสม</b> — 100 mL ที่มาเร็ว (trauma, post-procedure) ก็ tamponade ได้</p>
+    </div>
+    <div class="card">
+      <h4>✅ Tamponade checklist (echo)</h4>
+      <div id="tampchk"></div>
+      <div class="out" id="tamp-out"></div>
+    </div>
+  </div>
+
+  <h3>Constrictive pericarditis vs Restrictive cardiomyopathy</h3>
+  <div class="tblwrap"><table>
+    <tr><th>ลักษณะ</th><th>Constriction</th><th>Restriction</th></tr>
+    <tr><td>Septal motion</td><td>Septal bounce, respiratory shift</td><td>ปกติ</td></tr>
+    <tr><td>Medial e′</td><td><b>ปกติหรือสูง</b> (≥9 cm/s)</td><td><b>ต่ำ</b> (&lt;6–7 cm/s)</td></tr>
+    <tr><td>Medial e′ vs lateral e′</td><td>medial ≥ lateral (“annulus reversus”, ratio ≥0.91)</td><td>lateral &gt; medial ตามปกติ</td></tr>
+    <tr><td>Respiratory variation ของ mitral E</td><td>&gt;25%</td><td>&lt;10%</td></tr>
+    <tr><td>Hepatic vein</td><td>Expiratory diastolic flow reversal (ratio ≥0.79)</td><td>Inspiratory reversal</td></tr>
+    <tr><td>Pericardium</td><td>หนา/calcified (CT/MRI ช่วย)</td><td>ปกติ · myocardium หนา (เช่น amyloid)</td></tr>
+  </table></div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(6)">← ก่อนหน้า</button><button class="btn" onclick="complete(7);go(8)">ไปบทที่ 8 →</button></div>
+</section>
+
+<!-- ============ CH8 ============ -->
+<section class="ch" id="ch8" data-title="8 · Case lab">
+  <span class="tag">บทที่ 8</span>
+  <h2>Case lab: อ่านรายงานจริง</h2>
+  <p class="lead">อ่านรายงานแล้วตอบคำถาม — ผู้ป่วยสมมติ ตัวเลขออกแบบให้ฝึกคิด ใช้เครื่องคิดเลขในบทก่อนหน้าได้</p>
+  <div id="cases"></div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(7)">← ก่อนหน้า</button><button class="btn" onclick="complete(8);go(9)">ไปแบบทดสอบท้ายบท →</button></div>
+</section>
+
+<!-- ============ CH9 ============ -->
+<section class="ch" id="ch9" data-title="9 · Final quiz">
+  <span class="tag">บทที่ 9</span>
+  <h2>แบบทดสอบท้ายหลักสูตร</h2>
+  <div class="casehead"><p class="lead" style="margin:0">10 ข้อ · ตอบแล้วเห็นเฉลยทันที</p><span class="score" id="fscore">0 / 10</span></div>
+  <div id="final"></div>
+  <button class="btn ghost" onclick="resetFinal()">ทำใหม่</button>
+
+  <h3>📚 เอกสารอ้างอิง</h3>
+  <div class="card small">
+    <ol>
+      <li>Lang RM, et al. Recommendations for cardiac chamber quantification by echocardiography in adults. <i>J Am Soc Echocardiogr</i> 2015;28:1–39.</li>
+      <li>Nagueh SF, et al. Recommendations for the evaluation of LV diastolic function by echocardiography and for HFpEF diagnosis: an update from ASE. <i>J Am Soc Echocardiogr</i> 2025;38:537–69.</li>
+      <li>Humbert M, et al. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. <i>Eur Heart J</i> 2022;43:3618–731.</li>
+      <li>Otto CM, et al. 2020 ACC/AHA Guideline for the management of patients with valvular heart disease. <i>Circulation</i> 2021;143:e72–e227.</li>
+      <li>Zoghbi WA, et al. Recommendations for noninvasive evaluation of native valvular regurgitation. <i>J Am Soc Echocardiogr</i> 2017;30:303–71.</li>
+      <li>Baumgartner H, et al. Recommendations on the echocardiographic assessment of aortic valve stenosis (EACVI/ASE update). <i>J Am Soc Echocardiogr</i> 2017;30:372–92.</li>
+      <li>Rudski LG, et al. Guidelines for the echocardiographic assessment of the right heart in adults. <i>J Am Soc Echocardiogr</i> 2010;23:685–713.</li>
+      <li>Welch TD, et al. Echocardiographic diagnosis of constrictive pericarditis: Mayo Clinic criteria. <i>Circ Cardiovasc Imaging</i> 2014;7:526–34.</li>
+    </ol>
+    <p>สื่อการเรียนนี้ใช้เพื่อการศึกษา ไม่ใช่เครื่องมือวินิจฉัยแทนการอ่านผลโดยผู้เชี่ยวชาญ</p>
+  </div>
+  <div class="navfoot"><button class="btn ghost" onclick="go(8)">← ก่อนหน้า</button><button class="btn" onclick="complete(9);go(0)">จบหลักสูตร 🎉</button></div>
+</section>
+</main>
+<footer>Medisüem · หลักสูตรอ่านผล Echo · โดย นพ.ปฐมพงษ์ คูเจริญไพศาล</footer>
+
+<script>
+/* ---------- storage-safe helpers ---------- */
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v};
+const pill=(t,c)=>`<span class="pill p-${c}">${t}</span>`;
+
+/* ---------- chapters ---------- */
+const chs=[...document.querySelectorAll('section.ch')];
+let done=new Set(LS.get('echo-done',[]));
+function buildBar(){
+  $('chbar').innerHTML=chs.map((s,i)=>`<button class="chbtn${done.has(i)?' done':''}" data-i="${i}" onclick="go(${i})">${s.dataset.title}</button>`).join('');
+}
+function go(i){
+  chs.forEach((s,j)=>s.classList.toggle('show',j===i));
+  document.querySelectorAll('.chbtn').forEach(b=>b.classList.toggle('active',+b.dataset.i===i));
+  const b=document.querySelector(`.chbtn[data-i="${i}"]`); if(b&&b.scrollIntoView) b.scrollIntoView({inline:'center',block:'nearest'});
+  if(location.hash!=='#ch'+i) history.replaceState(null,'','#ch'+i);
+  window.scrollTo({top:0});
+}
+function complete(i){done.add(i);LS.set('echo-done',[...done]);const o={};done.forEach(j=>o['ch'+j]={quizDone:true});LS.set('echo_progress_v1',o);buildBar();prog();}
+function prog(){const p=Math.round(done.size/10*100);$('pbar').style.width=p+'%';$('ptxt').textContent='ความคืบหน้า '+p+'% ('+done.size+'/10 บท)';}
+window.addEventListener('hashchange',()=>{const m=location.hash.match(/ch(\d)/);if(m)go(+m[1])});
+
+/* map cards */
+const mapData=[
+ ['0','ภาพรวม & 10 ขั้น','ลำดับการอ่านรายงาน'],
+ ['1','Views','PLAX, PSAX, A4C… view ไหนวัดอะไร'],
+ ['2','LV size & geometry','LVH 4 แบบ + calculator'],
+ ['3','LVEF & RWMA','Bullseye 17 segments, GLS'],
+ ['4','Diastolic & LAP','ASE 2025 wizard'],
+ ['5','RV & PH','PASP, RAP, PH probability'],
+ ['6','Valves','AS/MS/MR/AR/TR + continuity'],
+ ['7','Pericardium','Tamponade, constriction'],
+ ['8','Case lab','6 เคสรายงานจริง'],
+ ['9','Final quiz','10 ข้อ + อ้างอิง']];
+$('mapcards').innerHTML=mapData.map(m=>`<div class="mapcard" onclick="go(${m[0]})"><div class="n">บทที่ ${m[0]}</div><div class="h">${m[1]}</div><div class="d">${m[2]}</div></div>`).join('');
+
+/* ---------- MCQ engine ---------- */
+function mcq(container,qs,onScore){
+  const el=typeof container==='string'?$(container):container;
+  let score=0,answered=0;
+  el.innerHTML='';
+  qs.forEach((q0,qi)=>{
+    const idx=q0.o.map((_,i)=>i);for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]]}
+    const q={q:q0.q,e:q0.e,o:idx.map(i=>q0.o[i]),a:idx.indexOf(q0.a)};
+    const d=document.createElement('div');d.className='q';
+    d.innerHTML=`<div class="qt">${q.q}</div>`+q.o.map((o,oi)=>`<button class="opt" data-oi="${oi}">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')+`<div class="expl">${q.e}</div>`;
+    d.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      const oi=+b.dataset.oi;
+      d.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(+x.dataset.oi===q.a)x.classList.add('right')});
+      if(oi!==q.a)b.classList.add('wrong');else score++;
+      answered++;
+      d.querySelector('.expl').classList.add('show');
+      if(onScore)onScore(score,answered);
+    });
+    el.appendChild(d);
+  });
+}
+
+/* ---------- CH1 views ---------- */
+const views={
+ plax:{name:'PLAX',desc:'Parasternal long axis — probe ช่องซี่โครง 3–4 ซ้ายข้าง sternum, marker ชี้ไหล่ขวา · ภาพ “แนวยาว” ของ LV ผ่าน MV และ AV',
+  s:[
+   {n:'RV (RVOT)',t:'RVOT อยู่บนสุด (ใกล้ probe) — RV โตจะเห็นว่าใหญ่กว่า aortic root ชัด',d:'M40 40 L280 40 L280 80 L40 80 Z',c:'#4dabf7'},
+   {n:'IVS',t:'วัด IVSd ตอน end-diastole (ปกติ ≤10 mm ชาย) — หนา → LVH, ดู asymmetric septal hypertrophy ใน HCM',d:'M40 82 L200 82 L200 100 L40 100 Z',c:'#fcc419'},
+   {n:'LV',t:'วัด LVIDd/LVIDs ตั้งฉากกับแกน LV ระดับ tip ของ mitral leaflet',d:'M40 102 L200 102 L200 180 L40 180 Z',c:'#e64980'},
+   {n:'Posterior wall',t:'วัด PWd — ใช้คำนวณ RWT และ LV mass',d:'M40 182 L200 182 L200 200 L40 200 Z',c:'#fcc419'},
+   {n:'Aortic valve / root',t:'วัด aortic root (sinus of Valsalva) และ LVOT diameter (ใกล้ annulus ช่วง mid-systole) สำหรับ continuity equation',d:'M205 82 L280 82 L280 128 L205 128 Z',c:'#94d82d'},
+   {n:'Mitral valve',t:'ดู morphology: prolapse, flail, rheumatic (hockey-stick AML), MAC',d:'M200 130 L215 130 L240 175 L225 178 Z',c:'#ffffff'},
+   {n:'LA',t:'LA อยู่หลัง aortic root — AP diameter ใน PLAX ใช้คร่าวๆ แต่ควรใช้ LA volume index',d:'M218 132 L280 132 L280 200 L240 200 Z',c:'#ae3ec9'},
+   {n:'Pericardial space / descending aorta',t:'effusion อยู่ “หน้า” descending aorta, pleural effusion อยู่ “หลัง”',d:'M40 205 L280 205 L280 222 L40 222 Z',c:'#15aabf'},
+  ]},
+ a4c:{name:'Apical 4-chamber',desc:'Probe ที่ apex, marker ชี้ซ้าย (3 นาฬิกา) · เห็นทั้ง 4 ห้อง — view หลักสำหรับ EF, diastolic, RV',
+  s:[
+   {n:'LV',t:'Simpson biplane (A4C+A2C) วัด LVEDV/LVESV → EF · ดู RWMA septum/lateral wall · apex ดู thrombus',d:'M165 40 L250 140 L170 150 Z',c:'#e64980'},
+   {n:'RV',t:'RV-focused view: basal diameter >41 mm = โต · TAPSE (M-mode ที่ lateral tricuspid annulus) · RV S′',d:'M155 40 L80 140 L150 150 Z',c:'#4dabf7'},
+   {n:'Mitral inflow',t:'PW ที่ tip ของ MV leaflet → E, A, E/A, DT · TDI ที่ septal & lateral annulus → e′',d:'M170 152 L250 145 L248 158 L172 162 Z',c:'#ffffff'},
+   {n:'LA',t:'LA volume (biplane A4C+A2C) ที่ end-systole → LAVI ปกติ ≤34 mL/m²',d:'M172 165 L250 162 L240 250 L180 250 Z',c:'#ae3ec9'},
+   {n:'RA',t:'RA area >18 cm² เป็น PH sign · RA collapse ใน tamponade',d:'M90 162 L150 165 L145 250 L95 250 Z',c:'#748ffc'},
+   {n:'Tricuspid valve',t:'CW ของ TR jet → TR Vmax → PASP = 4V² + RAP',d:'M80 145 L152 152 L150 160 L82 158 Z',c:'#94d82d'},
+  ]},
+ psax:{name:'PSAX (papillary level)',desc:'หมุน probe 90° จาก PLAX · ภาพตัดขวาง LV เป็นวงกลม',
+  s:[
+   {n:'LV (ตัดขวาง)',t:'ดู RWMA ครบ 6 segments รอบวง (anterior, anteroseptal, inferoseptal, inferior, inferolateral, anterolateral)',d:'M160 70 a70 70 0 1 0 0.1 0 Z',c:'#e64980'},
+   {n:'Interventricular septum',t:'D-shaped septum: แบนช่วง systole = RV pressure overload (PH), แบนช่วง diastole = RV volume overload',d:'M95 110 L120 110 L120 170 L95 170 Z',c:'#fcc419'},
+   {n:'RV',t:'RV อยู่ด้านหน้า-ขวาของภาพ เป็นรูปจันทร์เสี้ยว — ถ้ากลม/ใหญ่เท่า LV = RV dilation',d:'M40 70 Q60 140 40 210 L85 200 Q70 140 85 80 Z',c:'#4dabf7'},
+   {n:'Papillary muscles',t:'ใช้เป็น landmark ระดับ mid-ventricle',d:'M175 175 a10 10 0 1 0 0.1 0 Z M205 110 a10 10 0 1 0 0.1 0 Z',c:'#ffffff'},
+  ]},
+ sub:{name:'Subcostal / IVC',desc:'Probe ใต้ xiphoid · ใช้ดู IVC, effusion, และเป็น window สำรองใน COPD/ventilator',
+  s:[
+   {n:'IVC',t:'วัดห่างจาก RA junction 1–2 cm · ≤21 mm + collapse >50% → RAP 3 · >21 mm + collapse <50% → RAP 15',d:'M30 150 L180 140 L180 170 L30 175 Z',c:'#15aabf'},
+   {n:'Liver',t:'acoustic window — hepatic vein Doppler ดู TR severity (systolic reversal) และ constriction',d:'M20 40 L170 40 L170 135 L20 140 Z',c:'#a9775a'},
+   {n:'RA',t:'IVC เปิดเข้า RA',d:'M185 120 L250 115 L255 185 L185 180 Z',c:'#748ffc'},
+   {n:'Pericardial space',t:'effusion มักเห็นระหว่างตับกับ RV ใน view นี้ — ใช้นำทาง pericardiocentesis',d:'M180 90 L300 60 L305 75 L185 105 Z',c:'#ffd43b'},
+  ]},
+};
+let curView='plax',curStruct=null;
+function drawView(k){
+  curView=k;const v=views[k];
+  $('viewtabs').innerHTML=Object.keys(views).map(x=>`<button class="btn small${x===k?'':' ghost'}" onclick="drawView('${x}')">${views[x].name}</button>`).join('');
+  $('viewdesc').innerHTML=`<b class="t">${v.name}</b>${v.desc}`;
+  $('structinfo').innerHTML='คลิกโครงสร้างในภาพ';
+  $('viewsvg').innerHTML=`<text x="160" y="18" text-anchor="middle" fill="#9fb3d9" font-size="11">probe ▼ (ด้านบนของจอ = ใกล้ probe)</text>`+
+   v.s.map((s,i)=>`<path class="hot" data-i="${i}" d="${s.d}" fill="${s.c}" fill-opacity=".75" stroke="#0b1020" stroke-width="1"/>`).join('')+
+   v.s.map((s,i)=>{const p=s.d.match(/-?\d+(\.\d+)?/g).map(Number);let xs=[],ys=[];for(let j=0;j<p.length-1;j+=2){xs.push(p[j]);ys.push(p[j+1])}
+     const cx=k==='psax'&&i===0?160:xs.reduce((a,b)=>a+b)/xs.length, cy=k==='psax'&&i===0?140:ys.reduce((a,b)=>a+b)/ys.length;
+     return `<text x="${cx}" y="${cy}" text-anchor="middle" font-size="9" fill="#111" pointer-events="none" font-weight="600">${s.n.split(' ')[0]}</text>`}).join('');
+  document.querySelectorAll('#viewsvg .hot').forEach(p=>p.onclick=()=>{
+    document.querySelectorAll('#viewsvg .hot').forEach(x=>x.classList.remove('sel'));p.classList.add('sel');
+    const s=v.s[+p.dataset.i];$('structinfo').innerHTML=`<b class="t">${s.n}</b>${s.t}`;
+  });
+}
+drawView('plax');
+mcq('q-ch1',[
+ {q:'ต้องการวัด TAPSE ใช้ view ไหน?',o:['PLAX','Apical 4-chamber (RV-focused)','PSAX ระดับ AV','Suprasternal'],a:1,e:'TAPSE วัดด้วย M-mode ที่ lateral tricuspid annulus ใน A4C/RV-focused view'},
+ {q:'D-shaped septum ช่วง systole เห็นชัดที่สุดใน view ใด และหมายถึงอะไร?',o:['A4C — LV volume overload','PSAX — RV pressure overload','Subcostal — tamponade','PLAX — HCM'],a:1,e:'PSAX ระดับ papillary: septum แบนตอน systole = RV pressure overload (เช่น PH, PE)'},
+ {q:'Pericardial effusion vs left pleural effusion ใน PLAX แยกด้วย landmark ใด?',o:['Mitral valve','Descending aorta','Papillary muscle','IVC'],a:1,e:'Pericardial effusion อยู่หน้า descending aorta, pleural effusion อยู่หลัง'},
+]);
+
+/* ---------- CH2 geometry ---------- */
+function calcGeo(){
+  const sex=$('g-sex').value,lv=num('g-lvid'),ivs=num('g-ivs'),pw=num('g-pw'),ht=num('g-ht'),wt=num('g-wt');
+  if([lv,ivs,pw,ht,wt].includes(null)){$('g-out').innerHTML='กรอกข้อมูลให้ครบ';return}
+  const L=lv/10,I=ivs/10,P=pw/10;
+  const mass=0.8*1.04*(Math.pow(I+L+P,3)-Math.pow(L,3))+0.6;
+  const bsa=Math.sqrt(ht*wt/3600);
+  const lvmi=mass/bsa, rwt=2*pw/lv;
+  const lim=sex==='m'?115:95, lvidLim=sex==='m'?58:52;
+  const hyp=lvmi>lim, conc=rwt>0.42;
+  let g,c;
+  if(!hyp&&!conc){g='Normal geometry';c='green'}
+  else if(!hyp&&conc){g='Concentric remodeling';c='amber'}
+  else if(hyp&&!conc){g='Eccentric hypertrophy';c='blue'}
+  else{g='Concentric hypertrophy';c='red'}
+  const cause={ 'Normal geometry':'—','Concentric remodeling':'HT ระยะแรก, ผู้สูงอายุ','Eccentric hypertrophy':'volume overload: MR/AR เรื้อรัง, DCM, high-output','Concentric hypertrophy':'pressure overload: HT, AS · ถ้าหนามากร่วม ECG low voltage → นึกถึง amyloid; asymmetric septum → HCM'}[g];
+  $('g-out').innerHTML=`BSA ${bsa.toFixed(2)} m² · LV mass ${mass.toFixed(0)} g · <b>LVMI ${lvmi.toFixed(0)} g/m²</b> (เกณฑ์ ≤${lim}) · <b>RWT ${rwt.toFixed(2)}</b><br>
+  ผล: ${pill(g,c)} ${lv>lvidLim?pill('LV dilated','blue'):''}<br><span class="small">นึกถึง: ${cause}</span>`;
+}
+
+/* ---------- CH3 bullseye ---------- */
+const segs=[];// {id,name,terr,ring,a0,a1}
+const basalNames=['Basal anterior','Basal anteroseptal','Basal inferoseptal','Basal inferior','Basal inferolateral','Basal anterolateral'];
+const midNames=basalNames.map(n=>n.replace('Basal','Mid'));
+const terrB=['LAD','LAD','RCA','RCA','LCx','LCx'];
+const ang6=[[-120,-60],[-180,-120],[120,180],[60,120],[0,60],[-60,0]];
+for(let i=0;i<6;i++)segs.push({id:i+1,name:basalNames[i],terr:terrB[i],r0:105,r1:150,a:ang6[i]});
+for(let i=0;i<6;i++)segs.push({id:i+7,name:midNames[i],terr:terrB[i],r0:60,r1:105,a:ang6[i]});
+const ap=[['Apical anterior','LAD',[-135,-45]],['Apical septal','LAD',[135,225]],['Apical inferior','RCA (หรือ LAD wrap)',[45,135]],['Apical lateral','LCx (หรือ LAD)',[-45,45]]];
+ap.forEach((x,i)=>segs.push({id:13+i,name:x[0],terr:x[1],r0:22,r1:60,a:x[2]}));
+segs.push({id:17,name:'Apex (cap)',terr:'LAD',r0:0,r1:22,a:[0,360]});
+let wm=Array(17).fill(1),bmode='wm';
+const wmCol={1:'#d3f9d8',2:'#ffd8a8',3:'#ff8787',4:'#7048e8'},wmName={1:'Normal',2:'Hypokinetic',3:'Akinetic',4:'Dyskinetic'};
+const terrCol=t=>t.startsWith('LAD')?'#74c0fc':t.startsWith('RCA')?'#ffa8a8':'#b2f2bb';
+function arc(r0,r1,a0,a1){
+  const R=Math.PI/180,p=(r,a)=>[r*Math.cos(a*R),r*Math.sin(a*R)];
+  if(a1-a0>=360)return `M ${r1} 0 A ${r1} ${r1} 0 1 1 ${-r1} 0 A ${r1} ${r1} 0 1 1 ${r1} 0 Z`;
+  const [x1,y1]=p(r1,a0),[x2,y2]=p(r1,a1),[x3,y3]=p(r0,a1),[x4,y4]=p(r0,a0),lg=a1-a0>180?1:0;
+  return `M${x1} ${y1} A${r1} ${r1} 0 ${lg} 1 ${x2} ${y2} L${x3} ${y3} A${r0} ${r0} 0 ${lg} 0 ${x4} ${y4} Z`;
+}
+function drawBull(){
+  let h='';
+  segs.forEach((s,i)=>{
+    const fill=bmode==='wm'?wmCol[wm[i]]:terrCol(s.terr);
+    h+=`<path class="seg" data-i="${i}" d="${arc(s.r0,s.r1,s.a[0],s.a[1])}" fill="${fill}"/>`;
+    const am=(s.a[0]+s.a[1])/2*Math.PI/180,rm=s.id===17?0:(s.r0+s.r1)/2;
+    h+=`<text x="${rm*Math.cos(am)}" y="${rm*Math.sin(am)+4}" text-anchor="middle" font-size="11" font-weight="700" pointer-events="none">${s.id}</text>`;
+  });
+  h+=`<text x="0" y="-153" text-anchor="middle" font-size="10" fill="#5d6779">Anterior</text><text x="0" y="160" text-anchor="middle" font-size="10" fill="#5d6779">Inferior</text><text x="-157" y="4" text-anchor="middle" font-size="10" fill="#5d6779" transform="rotate(-90 -152 0)">Septal</text><text x="152" y="4" text-anchor="middle" font-size="10" fill="#5d6779" transform="rotate(90 152 0)">Lateral</text>`;
+  $('bull').innerHTML=h;
+  document.querySelectorAll('#bull .seg').forEach(p=>p.onclick=()=>{
+    const i=+p.dataset.i,s=segs[i];
+    if(bmode==='wm'){wm[i]=wm[i]%4+1}
+    $('seginfo').innerHTML=`<b class="t">Segment ${s.id}: ${s.name}</b>เส้นเลือดหลัก: <b>${s.terr}</b>${bmode==='wm'?' · สถานะ: '+wmName[wm[i]]:''}`;
+    drawBull();
+  });
+  $('wmlegend').innerHTML=bmode==='wm'?Object.keys(wmCol).map(k=>`<span><i style="background:${wmCol[k]}"></i>${wmName[k]}</span>`).join(''):
+    `<span><i style="background:#74c0fc"></i>LAD</span><span><i style="background:#ffa8a8"></i>RCA</span><span><i style="background:#b2f2bb"></i>LCx</span>`;
+  const wmsi=wm.reduce((a,b)=>a+b)/17;
+  const abn=segs.filter((s,i)=>wm[i]>1);
+  const t={LAD:0,RCA:0,LCx:0};abn.forEach(s=>{t[s.terr.split(' ')[0]]++});
+  let interp='';
+  if(abn.length){
+    const top=Object.entries(t).sort((a,b)=>b[1]-a[1]);
+    const mainT=top[0][1]>=abn.length*0.7?top[0][0]:null;
+    interp=mainT?`RWMA เข้าได้กับ territory <b>${mainT}</b>`:'RWMA กระจายหลาย territory → multivessel CAD หรือสาเหตุ non-coronary (Takotsubo, myocarditis, cardiomyopathy)';
+    if(wm[16]>=3)interp+=' · apex akinetic/dyskinetic → <b>ดู LV thrombus</b>';
+  }
+  $('wmsi').innerHTML=`WMSI = <b>${wmsi.toFixed(2)}</b> ${wmsi===1?pill('ปกติ','green'):wmsi<1.7?pill('ผิดปกติเล็กน้อย–ปานกลาง','amber'):pill('ผิดปกติมาก (มักสัมพันธ์ EF ต่ำ)','red')}<br>${interp}`;
+}
+function bullMode(m){bmode=m;drawBull()}
+function bullReset(){wm=Array(17).fill(1);drawBull()}
+function bullPreset(p){
+  wm=Array(17).fill(1);
+  const set=(ids,v)=>ids.forEach(id=>wm[id-1]=v);
+  if(p==='lad'){set([1,2,7,8],2);set([13,14,15,16],3);set([17],4)}
+  if(p==='rca'){set([3,4],3);set([9,10],2);set([15],2)}
+  if(p==='lcx'){set([5,6,11,12],3);set([16],2)}
+  if(p==='tako'){set([7,8,9,10,11,12],2);set([13,14,15,16,17],3)}
+  bmode='wm';drawBull();
+  $('seginfo').innerHTML={lad:'<b class="t">Proximal LAD occlusion</b>anterior + anteroseptal + apex ทั้งหมด (apical inferior/lateral มักโดนด้วยเพราะ LAD wrap)',rca:'<b class="t">RCA</b>inferior + inferoseptal — ดู RV involvement (TAPSE) ด้วย',lcx:'<b class="t">LCx</b>inferolateral + anterolateral — มัก ECG ไม่ชัด (“electrically silent”)',tako:'<b class="t">Takotsubo (apical ballooning)</b>mid–apical รอบวงผิดปกติ แต่ basal บีบดี (hyperkinetic) — ไม่ตรง territory เส้นเลือดเดียว'}[p];
+}
+drawBull();
+
+/* ---------- CH4 diastolic ---------- */
+function calcDiast(){
+  const se=num('d-se'),le=num('d-le'),ee=num('d-ee'),tr=num('d-tr'),ea=num('d-ea'),lars=num('d-lars'),lavi=num('d-lavi'),sd=num('d-sd');
+  const eRed=(se!==null&&se<=6)||(le!==null&&le<=7)||(se!==null&&le!==null&&(se+le)/2<=6.5);
+  const eeHigh=ee!==null&&ee>=14;
+  const trHigh=tr!==null&&tr>=2.8;
+  const avail=[se!==null||le!==null,ee!==null,tr!==null].filter(Boolean).length;
+  let lines=[`e′ ลด: ${eRed?pill('ใช่','red'):pill('ไม่','green')} · E/e′ ≥14: ${ee===null?pill('ไม่มี','gray'):eeHigh?pill('ใช่','red'):pill('ไม่','green')} · TR ≥2.8: ${tr===null?pill('ไม่มี','gray'):trHigh?pill('ใช่','red'):pill('ไม่','green')}`];
+  const nAbn=[eRed,eeHigh,trHigh].filter(Boolean).length;
+  let lap=null,need=false,why='';
+  if(avail<2){$('d-out').innerHTML=lines[0]+'<br>ข้อมูลหลักไม่พอ → ใช้ supplemental parameters (PR end-diastolic velocity, L-wave, Ar–A, Valsalva)';return}
+  if(nAbn===3){lap='high';why='ตัวแปรหลักผิดปกติครบ 3 ตัว'}
+  else if(nAbn===0){lap='normal';why='ตัวแปรหลักปกติทั้งหมด'}
+  else if(eRed&&!eeHigh&&!trHigh&&ea!==null&&ea<=0.8){lap='normal';why='e′ ลดอย่างเดียว + E/A ≤0.8'}
+  else {need=true;why=nAbn===1&&eRed?'e′ ลดอย่างเดียวแต่ E/A >0.8':'ผลก้ำกึ่ง (TR หรือ E/e′ ผิดปกติตัวเดียว หรือผิดปกติ 2 ใน 3)'}
+  if(need){
+    const add=[];if(lars!==null)add.push(['LARS ≤18%',lars<=18]);if(sd!==null)add.push(['PV S/D ≤0.67',sd<=0.67]);if(lavi!==null)add.push(['LAVI >34',lavi>34]);
+    if(!add.length){$('d-out').innerHTML=lines[0]+`<br>${why} → <b>ต้องใช้ตัวแปรเพิ่มเติม</b> (LARS, PV S/D, LAVI หรือ IVRT ≤70 ms) กรุณากรอก`;return}
+    const pos=add.filter(a=>a[1]);
+    lines.push(`${why} → ตัวแปรเพิ่มเติม: `+add.map(a=>a[0]+' '+(a[1]?pill('+','red'):pill('−','green'))).join(' · '));
+    lap=pos.length?'high':'normal';
+  } else lines.push(why);
+  let grade,c;
+  if(lap==='high'){grade=ea!==null&&ea>=2?'Grade 3 — LAP สูงมาก (restrictive)':'Grade 2 — LAP สูง (mild–moderate)';c=ea!==null&&ea>=2?'red':'amber'}
+  else {grade=eRed?'Grade 1 — impaired relaxation, LAP ปกติ':'Normal diastolic function, LAP ปกติ';c=eRed?'blue':'green'}
+  if(lap==='high'&&ea===null)grade+=' (กรอก E/A เพื่อแยก grade 2/3)';
+  lines.push(`<b>LAP: ${lap==='high'?'สูง':'ปกติ'}</b> → ${pill(grade,c)}`);
+  if(lap==='high')lines.push('<span class="small">ในผู้ป่วยหอบเหนื่อย + EF ≥50% ข้อนี้สนับสนุน HFpEF (ใช้ร่วมกับ NT-proBNP, H2FPEF score)</span>');
+  else if(eRed)lines.push('<span class="small">ถ้ามีอาการเหนื่อยแต่ LAP ขณะพักปกติ → พิจารณา diastolic stress echo</span>');
+  $('d-out').innerHTML=lines.join('<br>');
+}
+
+/* ---------- CH5 PH ---------- */
+function calcPH(){
+  const tr=num('p-tr'),ivc=num('p-ivc'),col=$('p-col').value==='yes',tapse=num('p-tapse');
+  let rap=8;if(ivc!==null){if(ivc<=21&&col)rap=3;else if(ivc>21&&!col)rap=15;}
+  const pasp=tr!==null?4*tr*tr+rap:null;
+  if(pasp&&tapse){$('ps-a3').checked=tapse/pasp<0.55}
+  if(ivc!==null)$('ps-c1').checked=ivc>21&&!col;
+  const cats=new Set([...document.querySelectorAll('.ps:checked')].map(x=>x.dataset.c));
+  const signs=cats.size>=2;
+  let prob,c;
+  if(tr===null||tr<=2.8){prob=signs?'Intermediate':'Low';c=signs?'amber':'green'}
+  else if(tr<=3.4){prob=signs?'High':'Intermediate';c=signs?'red':'amber'}
+  else{prob='High';c='red'}
+  let rv='';if(tapse!==null)rv=tapse<17?pill('TAPSE '+tapse+' mm — RV dysfunction','red'):pill('TAPSE '+tapse+' mm — ปกติ','green');
+  $('p-out').innerHTML=`RAP ≈ <b>${rap}</b> mmHg · PASP ≈ <b>${pasp?pasp.toFixed(0):'—'}</b> mmHg${pasp&&tapse?` · TAPSE/PASP ${(tapse/pasp).toFixed(2)}`:''}<br>
+  หมวด signs ที่พบ: ${cats.size?[...cats].join(', '):'ไม่มี'} (${signs?'≥2 หมวด = มี signs':'<2 หมวด'})<br>
+  PH probability: ${pill(prob,c)} ${rv}<br><span class="small">${prob==='High'?'→ หาสาเหตุ + ส่งพิจารณา RHC (โดยเฉพาะสงสัย PAH/CTEPH)':prob==='Intermediate'?'→ ดูปัจจัยเสี่ยง/อาการ ตรวจเพิ่มเติม พิจารณาส่งต่อ':'→ หาสาเหตุอื่นของอาการ'}</span>`;
+}
+
+/* ---------- CH6 valves ---------- */
+function valveTab(k){
+  document.querySelectorAll('.vt').forEach(v=>v.style.display=v.id==='vt-'+k?'block':'none');
+  document.querySelectorAll('#valvetabs .btn').forEach(b=>b.classList.toggle('ghost',!b.getAttribute('onclick').includes("'"+k+"'")));
+}
+function calcAS(){
+  const d=num('a-d'),v1=num('a-v1'),v2=num('a-v2'),vmax=num('a-vmax'),mg=num('a-mg'),ef=num('a-ef'),bsa=num('a-bsa');
+  if([d,v1,v2].includes(null)){$('a-out').innerHTML='กรอก LVOT d, VTI LVOT, VTI AV';return}
+  const area=Math.PI*Math.pow(d/2,2),sv=area*v1,ava=area*v1/v2,dvi=v1/v2;
+  const svi=bsa?sv/bsa:null,avai=bsa?ava/bsa:null;
+  const highG=(vmax!==null&&vmax>=4)||(mg!==null&&mg>=40);
+  let res,c;
+  if(highG){res='Severe AS (high-gradient)';c='red'}
+  else if(ava<=1.0){
+    if(ef!==null&&ef<50){res='Low-flow low-gradient AS, reduced EF (classical) → dobutamine stress echo';c='red'}
+    else if(svi!==null&&svi<35){res='Paradoxical low-flow low-gradient AS (EF ≥50%, SVi <35) → CT calcium score';c='red'}
+    else {res='AVA ≤1.0 แต่ gradient ต่ำและ flow ปกติ → สงสัย measurement error (LVOT d?) หรือ moderate AS';c='amber'}
+  }
+  else if((vmax!==null&&vmax>=3)||(mg!==null&&mg>=20)||ava<=1.5){res='Moderate AS';c='amber'}
+  else {res='Mild AS / ไม่มี AS ที่มีนัย';c='green'}
+  $('a-out').innerHTML=`LVOT area ${area.toFixed(2)} cm² · SV ${sv.toFixed(0)} mL${svi?` · SVi ${svi.toFixed(0)} mL/m²`:''}<br>
+  <b>AVA ${ava.toFixed(2)} cm²</b>${avai?` · AVAi ${avai.toFixed(2)} cm²/m²`:''} · DVI ${dvi.toFixed(2)}<br>ผล: ${pill(res,c)}`;
+}
+function calcMS(){
+  const pht=num('m-pht'),mg=num('m-mg'),hr=num('m-hr');
+  if(!pht){$('m-out').innerHTML='กรอก PHT';return}
+  const mva=220/pht;
+  let s,c;if(mva<=1.0){s='Very severe MS';c='red'}else if(mva<=1.5){s='Severe MS';c='red'}else{s='Progressive (mild–moderate) MS';c='amber'}
+  $('m-out').innerHTML=`MVA ≈ <b>${mva.toFixed(2)} cm²</b> → ${pill(s,c)}${mg!==null?`<br>Mean gradient ${mg} mmHg${hr?` ที่ HR ${hr}`:''}${hr&&hr>90?' — HR สูงทำให้ gradient สูงเกินจริง ควร rate control แล้วประเมินซ้ำ':''}`:''}<br><span class="small">PHT ไม่แม่นหลัง PMBC ทันที, ใน AR ร่วม, หรือ LV compliance ผิดปกติ → planimetry ดีกว่า</span>`;
+}
+
+/* ---------- CH7 ---------- */
+function effSize(){
+  const v=+$('eff').value;let s,c;
+  if(v===0){s='ไม่มี';c='green'}else if(v<10){s='Small (<10 mm)';c='green'}else if(v<=20){s='Moderate (10–20 mm)';c='amber'}else{s='Large (>20 mm)';c='red'}
+  $('eff-out').innerHTML=`ความกว้าง ${v} mm → ${pill(s,c)}`;
+  const r=55+v*1.0;$('effring').setAttribute('rx',r);$('effring').setAttribute('ry',45+v*0.9);
+}
+effSize();
+const tamp=[['RA collapse ช่วง systole นาน >1/3 ของ cardiac cycle',1],['RV diastolic collapse (specific กว่า)',2],['IVC plethora (>21 mm, collapse <50%)',1],['Mitral inflow respiratory variation >25%',1],['Tricuspid inflow respiratory variation >40%',1],['Swinging heart',0],['Clinical: hypotension, pulsus paradoxus, JVP สูง',2]];
+$('tampchk').innerHTML=tamp.map((t,i)=>`<label class="chk"><input type="checkbox" class="tp" data-w="${t[1]}" onchange="tampCalc()">${t[0]}</label>`).join('');
+function tampCalc(){
+  const ch=[...document.querySelectorAll('.tp:checked')];const ivcNeg=!document.querySelectorAll('.tp')[2].checked;
+  const n=ch.length;let s,c;
+  if(!n){$('tamp-out').innerHTML='';return}
+  if(n>=3||(document.querySelectorAll('.tp')[1].checked&&document.querySelectorAll('.tp')[6].checked)){s='Tamponade physiology น่าจะมี → เตรียม pericardiocentesis (tamponade เป็น clinical diagnosis)';c='red'}
+  else{s='มี echo signs บางส่วน → ติดตามใกล้ชิด ประเมิน clinical ซ้ำ';c='amber'}
+  $('tamp-out').innerHTML=pill(s,c)+(ivcNeg?'<br><span class="small">IVC ไม่ plethoric → tamponade ไม่น่าเป็น (high sensitivity, NPV สูง) ยกเว้น hypovolemia (“low-pressure tamponade”)</span>':'');
+}
+
+/* ---------- CH8 cases ---------- */
+const cases=[
+ {t:'Case 1 · ชาย 62 ปี HT 10 ปี เหนื่อยเวลาเดินขึ้นบันได',r:`Rhythm: SR, HR 78   BSA 1.84 m²
+LVIDd 48 mm  IVSd 13 mm  PWd 13 mm
+LVEF (biplane) 62%, no RWMA
+Mitral inflow E 0.9 m/s, A 0.82 m/s (E/A 1.1)
+e' septal 5 cm/s, lateral 7 cm/s, avg E/e' 15
+TR Vmax 3.0 m/s,  LAVI 40 mL/m²
+RV normal size/function, TAPSE 21 mm
+Valves: no significant stenosis/regurgitation`,
+ q:[{q:'LV geometry (LVMI ≈ 134 g/m²) เป็นแบบใด?',o:['Normal','Concentric remodeling','Concentric hypertrophy','Eccentric hypertrophy'],a:2,e:'RWT = 26/48 = 0.54 (>0.42) และ LVMI >115 → concentric LVH เข้ากับ HT เรื้อรัง'},
+    {q:'Diastolic function ตาม ASE 2025?',o:['Normal','Grade 1, LAP ปกติ','Grade 2, LAP สูง','Grade 3'],a:2,e:'e′ ลด + E/e′ ≥14 + TR ≥2.8 ครบ 3 ตัว → LAP สูง, E/A <2 → grade 2 · สนับสนุน HFpEF'}]},
+ {t:'Case 2 · ชาย 55 ปี anterior STEMI มาช้า 2 วัน',r:`Rhythm: SR, HR 92
+LVEF 35% (biplane)
+RWMA: akinetic mid anterior, mid anteroseptal,
+      all apical segments; apex dyskinetic
+Apical echodensity 1.8 x 1.4 cm, mobile
+Mild functional MR, PASP 38 mmHg`,
+ q:[{q:'Culprit artery น่าจะเป็น?',o:['RCA','LCx','LAD','Left main เท่านั้น'],a:2,e:'anterior + anteroseptal + apex = LAD territory (อาจเป็น LAD ที่ wrap รอบ apex)'},
+    {q:'สิ่งที่ต้องทำเพิ่มจากรายงานนี้คือ?',o:['ไม่ต้องทำอะไร','เริ่ม anticoagulation สำหรับ LV thrombus (warfarin หรือ DOAC ตามบริบท) และติดตาม echo','Thrombolysis ทันที','ให้ dobutamine'],a:1,e:'Mobile apical mass ใน akinetic/dyskinetic apex = LV thrombus → anticoagulation (มัก 3 เดือน) แล้ว echo ซ้ำ · พร้อม GDMT สำหรับ EF 35%'}]},
+ {t:'Case 3 · หญิง 78 ปี เป็นลมขณะเดิน',r:`Rhythm: SR, HR 70   BSA 1.50 m²
+LVEF 65%, small LV cavity, IVSd 12 mm
+AV: heavily calcified, restricted opening
+AV Vmax 3.6 m/s, mean gradient 32 mmHg
+LVOT diameter 2.0 cm, VTI LVOT 16 cm, VTI AV 70 cm`,
+ q:[{q:'AVA และ SVi ประมาณเท่าไร? (ใช้ calculator บทที่ 6)',o:['AVA 1.4, SVi 45','AVA 0.72, SVi 34','AVA 1.1, SVi 40','AVA 0.5, SVi 55'],a:1,e:'LVOT area 3.14 × 16 = SV 50 mL → SVi ≈34 · AVA = 50/70 = 0.72 cm²'},
+    {q:'การแปลผลและขั้นต่อไป?',o:['Moderate AS — follow up 1–2 ปี','Paradoxical low-flow low-gradient severe AS → CT aortic valve calcium score','Classical LFLG → dobutamine stress echo','Measurement error แน่นอน'],a:1,e:'AVA ≤1.0, gradient ต่ำ, EF ≥50%, SVi <35 → paradoxical LFLG · ยืนยันด้วย CT calcium score (หญิง ≥1300 AU) · มี syncope = symptomatic → พิจารณา AVR/TAVI'}]},
+ {t:'Case 4 · หญิง 34 ปี เหนื่อยมากขึ้น ใจสั่น',r:`Rhythm: AF, HR 105
+MV: thickened, commissural fusion, doming AML
+PHT 250 ms, mean gradient 12 mmHg
+MR mild, LA markedly dilated (LAVI 70 mL/m²)
+TR Vmax 3.7 m/s, IVC 1.8 cm >50% collapse`,
+ q:[{q:'MVA และความรุนแรง?',o:['1.8 cm² moderate','0.88 cm² very severe MS','1.3 cm² severe','2.5 cm² mild'],a:1,e:'220/250 = 0.88 cm² (≤1.0) → very severe MS · gradient ต้องแปลร่วมกับ HR 105 (AF)'},
+    {q:'PASP ประมาณ และก่อน PMBC ต้องทำอะไร?',o:['~58 mmHg; TEE ดู LA/LAA thrombus + Wilkins score','~30 mmHg; ไม่ต้องทำอะไร','~58 mmHg; ส่ง CABG','~80 mmHg; ให้ thrombolysis'],a:0,e:'4×3.7² = 55 + RAP 3 = 58 mmHg · ต้อง rate control + anticoagulate (AF+MS ใช้ warfarin) และ TEE ก่อน PMBC'}]},
+ {t:'Case 5 · ชาย 45 ปี เหนื่อย BP 88/60 JVP สูง',r:`Rhythm: sinus tachycardia 125
+Large circumferential pericardial effusion, 25 mm
+RA systolic collapse, RV diastolic collapse
+IVC 2.4 cm, <50% collapse
+Mitral inflow respiratory variation 35%
+LVEF hyperdynamic`,
+ q:[{q:'การแปลผล?',o:['Large effusion ไม่มี hemodynamic effect','Cardiac tamponade → urgent pericardiocentesis','Constrictive pericarditis','RV infarction'],a:1,e:'Large effusion + RV diastolic collapse + IVC plethora + mitral variation >25% + hypotension → tamponade · หลีกเลี่ยง diuretic/vasodilator, ให้ fluid ระหว่างรอ'}]},
+ {t:'Case 6 · หญิง 50 ปี เหนื่อยมากขึ้น 6 เดือน ขาบวม',r:`Rhythm: SR, HR 98
+LV small, LVEF 65%, D-shaped septum (systolic + diastolic)
+RV dilated, RV/LV basal ratio 1.3, TAPSE 14 mm
+TR Vmax 3.8 m/s, RA area 24 cm²
+IVC 2.3 cm, <50% collapse
+PA diameter 32 mm, RVOT AT 80 ms with notching
+No significant left-sided valve disease, LAVI 26`,
+ q:[{q:'PASP และ PH probability?',o:['~40 mmHg, low','~73 mmHg, high','~58 mmHg, intermediate','~30 mmHg, low'],a:1,e:'4×3.8² = 58 + RAP 15 = 73 mmHg · TR >3.4 → high probability (และมี signs ครบ 3 หมวด) · TAPSE 14 = RV dysfunction'},
+    {q:'ขั้นต่อไปที่เหมาะสม?',o:['เพิ่ม diuretic แล้วนัด 1 ปี','หาสาเหตุ: lung disease, V/Q scan (CTEPH), ส่ง PH center เพื่อ RHC','เริ่ม sildenafil เองเลย','ทำ CABG'],a:1,e:'LA ไม่โต, ไม่มี left heart disease → นึกถึง pre-capillary PH (PAH, CTEPH, lung) · V/Q scan เป็น screening CTEPH · RHC ยืนยันก่อนเริ่มยาเฉพาะ'}]},
+];
+const cEl=$('cases');
+cases.forEach((c,i)=>{
+  const d=document.createElement('details');if(i===0)d.open=true;
+  d.innerHTML=`<summary>${c.t}</summary><div class="report">${c.r}</div><div id="cq${i}"></div>`;
+  cEl.appendChild(d);mcq('cq'+i,c.q);
+});
+
+/* ---------- CH9 final ---------- */
+const finalQ=[
+ {q:'LVEF 45% ในผู้ป่วยมีอาการ HF จัดเป็นอะไรตาม ESC 2026?',o:['HFrEF','HFmrEF','HFpEF','HFimpEF'],a:0,e:'ESC 2026 ตัด HFmrEF ออก: LVEF <50% = HFrEF (ฉบับไทย/ACC/AHA ยังเรียก 41–49% ว่า HFmrEF)'},
+ {q:'RWT 0.50 และ LVMI ปกติ เรียกว่า?',o:['Concentric LVH','Eccentric LVH','Concentric remodeling','Normal'],a:2,e:'RWT >0.42 แต่ mass ปกติ = concentric remodeling'},
+ {q:'ตาม ASE 2025 ตัวแปรหลัก 3 ตัวสำหรับประเมิน LAP คือ?',o:['E/A, DT, IVRT','e′, E/e′, TR velocity/PASP','LAVI, LARS, PV S/D','EF, GLS, LAVI'],a:1,e:'e′ (relaxation), E/e′ และ TR/PASP · LAVI, LARS, PV S/D เป็นตัวแปรเพิ่มเติมเมื่อผลก้ำกึ่ง'},
+ {q:'IVC 25 mm collapse <50%, TR Vmax 3.0 m/s → PASP ประมาณ?',o:['39 mmHg','44 mmHg','51 mmHg','36 mmHg'],a:2,e:'4×9 = 36 + RAP 15 = 51 mmHg'},
+ {q:'Severe AS high-gradient ใช้เกณฑ์ใด?',o:['Vmax ≥3 m/s','Mean gradient ≥40 mmHg หรือ Vmax ≥4 m/s','AVA ≤1.5 cm²','DVI >0.25'],a:1,e:'Vmax ≥4 m/s หรือ MG ≥40 mmHg (AVA ≤1.0 cm² สนับสนุน)'},
+ {q:'ข้อใดบ่งชี้ severe AR?',o:['PHT 600 ms','Holodiastolic flow reversal ใน abdominal aorta','VC 0.2 cm','Jet width 20% LVOT'],a:1,e:'Holodiastolic reversal ใน abdominal aorta เป็น specific sign ของ severe AR'},
+ {q:'Echo sign ที่ไวที่สุด (NPV สูง) ในการ “ตัดออก” tamponade?',o:['RV diastolic collapse','IVC ไม่ plethoric (collapse ดี)','Swinging heart','Effusion >20 mm'],a:1,e:'IVC ที่ collapse ปกติทำให้ tamponade ไม่น่าเป็น (ยกเว้น low-pressure tamponade)'},
+ {q:'Medial e′ 11 cm/s, annulus reversus, septal bounce ชี้ไปที่?',o:['Restrictive cardiomyopathy','Constrictive pericarditis','Amyloidosis','HFpEF ทั่วไป'],a:1,e:'Constriction: myocardium relax ได้ดี (e′ ปกติ/สูง) แต่ถูกบีบจาก pericardium'},
+ {q:'Bullseye GLS แบบ apical sparing นึกถึง?',o:['Takotsubo','Cardiac amyloidosis','LAD infarct','Athlete heart'],a:1,e:'Apical sparing (basal strain ลดมาก, apex ปกติ) เป็นลักษณะ cardiac amyloidosis'},
+ {q:'TAPSE 13 mm หมายถึง?',o:['RV ปกติ','RV systolic dysfunction','LV dysfunction','Severe TR แน่นอน'],a:1,e:'TAPSE <17 mm = RV systolic dysfunction'},
+];
+function resetFinal(){$('fscore').textContent='0 / 10';mcq('final',finalQ,(s,n)=>{$('fscore').textContent=s+' / 10';if(n===10){const best=Math.max(s,LS.get('echo-best',0));LS.set('echo-best',best);$('fscore').textContent=s+' / 10 (ดีที่สุด '+best+')';complete(9)}})}
+resetFinal();
+
+/* ---------- init ---------- */
+buildBar();prog();
+const m=location.hash.match(/ch(\d)/);go(m?+m[1]:0);
+</script>
+<div class="imhub-bar"><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script src="../mds-search.js" defer></script>
+</body>
+</html>
