@@ -1,0 +1,726 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Pituitary: apoplexy, hypopituitarism, Cushing, prolactinoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrine · Pituitary Society 2021/2023/2026 · Endocrine Society 2016 · SfE Emergency Guidance</div>
+  <h1>ต่อมใต้สมอง: Pituitary apoplexy<br>Hypopituitarism · Cushing · Prolactinoma</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ เริ่มจากภาวะฉุกเฉิน <b>pituitary apoplexy</b> (ให้ hydrocortisone ก่อน ตรวจลานสายตา) การประเมินก้อนที่ต่อมใต้สมอง ภาวะขาดฮอร์โมน (ลำดับ steroid ก่อน thyroxine) <b>AVP deficiency</b> (ชื่อใหม่ของ central DI) prolactinoma การคัดกรองและหาตำแหน่ง <b>Cushing syndrome</b> acromegaly และการติดตาม incidentaloma</p>
+  <p class="cite">อ้างอิงหลัก: Fleseriu M, et al. Consensus on diagnosis and management of Cushing's disease (Pituitary Society; Lancet Diabetes Endocrinol 2021;9:847–75) · Fleseriu M, et al. Biomarker utility for ACTH-dependent Cushing syndrome: Pituitary Society Delphi (JCEM 2026) · Petersenn S, et al. Prolactinoma consensus (Nat Rev Endocrinol 2023;19:722–40) · Fleseriu M, et al. Hormonal replacement in hypopituitarism (Endocrine Society; JCEM 2016;101:3888–921) · Rajasekaran S, et al. UK guidelines for pituitary apoplexy (Clin Endocrinol 2011;74:9–20) · Baldeweg SE, et al. SfE Emergency guidance: pituitary apoplexy (Endocr Connect 2016;5:G12–5) · Arima H, et al. Changing the name of diabetes insipidus (2022) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Apoplexy</b>ปวดหัวรุนแรงทันที + ตามัว/ลานสายตาแคบ/ตาเหล่ → hydrocortisone 100–200 mg IV · MRI · ประสาทศัลย์</div>
+    <div class="stage" style="--c:var(--warn)"><b>Hypopituitarism</b>Cortisol ก่อน thyroxine · FT4 ไม่ใช่ TSH · ระวัง AVP deficiency ถูกบัง</div>
+    <div class="stage" style="--c:var(--accent)"><b>ฮอร์โมนเกิน</b>Prolactinoma → cabergoline · Cushing: ตัด steroid ภายนอกก่อน → คัดกรอง 2 วิธี → ACTH → MRI/BIPSS</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#mass">ก้อนต่อมใต้สมอง</a><a href="#apo">Pituitary apoplexy</a><a href="#hypo">Hypopituitarism</a><a href="#avp">AVP deficiency (DI)</a><a href="#prl">Prolactinoma</a><a href="#cs">Cushing: คัดกรอง</a><a href="#csloc">Cushing: หาตำแหน่ง รักษา</a><a href="#acro">Acromegaly</a><a href="#inc">Incidentaloma</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="mass" class="col">
+  <div class="sec-num">01</div>
+  <h2>ก้อนที่ต่อมใต้สมอง: ถาม 3 คำถาม</h2>
+  <p>เนื้องอกต่อมใต้สมอง (WHO 2022 เรียก <b>pituitary neuroendocrine tumor, PitNET</b>) แบ่งตามขนาด <b>micro &lt;10 mm</b> และ <b>macro ≥10 mm</b> ทุกรายต้องตอบ 3 คำถาม</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>1. กดเบียดหรือไม่ (mass effect)</h4><ul><li>ปวดศีรษะ · <b>bitemporal hemianopia</b> (กด optic chiasm) — ส่ง <b>ตรวจลานสายตา (formal visual field)</b> เมื่อก้อนแตะ/กด chiasm</li><li>เส้นประสาท III, IV, VI (cavernous sinus) · hydrocephalus</li><li>Hyperprolactinemia จาก <b>stalk effect</b> (มัก &lt;100 µg/L)</li></ul></div>
+    <div class="card c-warn"><h4>2. ฮอร์โมนขาดหรือไม่</h4><ul><li>Macroadenoma ทุกรายตรวจ: <b>morning cortisol, FT4 (+TSH), LH/FSH + testosterone/estradiol, IGF-1, prolactin, Na</b></li><li>ลำดับที่มักเสีย: GH → LH/FSH → TSH → ACTH</li><li>AVP deficiency พบน้อยในเนื้องอก — <b>ถ้ามี DI ก่อนผ่าตัด นึกถึงรอยโรคอื่น</b> (craniopharyngioma, hypophysitis, germinoma, metastasis, LCH, TB/sarcoid)</li></ul></div>
+  </div>
+  <div class="card c-acc" style="margin-top:10px"><h4>3. ฮอร์โมนเกินหรือไม่</h4>Prolactin (prolactinoma พบบ่อยที่สุดในก้อนที่ทำงาน) · IGF-1 (acromegaly) · ถ้ามีลักษณะทางคลินิก: คัดกรอง Cushing · TSH-oma (FT4 สูงแต่ TSH ไม่กด) พบน้อย</div>
+</section>
+
+<!-- 2 -->
+<section id="apo" class="col">
+  <div class="sec-num">02</div>
+  <h2>Pituitary apoplexy — ภาวะฉุกเฉิน</h2>
+  <p>เลือดออกหรือขาดเลือดในเนื้องอกต่อมใต้สมองอย่างเฉียบพลัน <b>ส่วนใหญ่ไม่เคยรู้ว่ามีเนื้องอกมาก่อน</b> อาการคล้าย SAH/meningitis จึงพลาดได้บ่อย</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>อาการ</h4><ul><li><b>ปวดศีรษะรุนแรงทันที</b> (thunderclap) มักหลังลูกตา</li><li><b>ตามัว ลานสายตาแคบ</b> · <b>ตาเหล่/หนังตาตก</b> (CN III พบบ่อยสุด)</li><li>คลื่นไส้ อาเจียน คอแข็ง ซึม</li><li><b>Adrenal insufficiency เฉียบพลัน</b> (ความดันต่ำ Na ต่ำ) — สาเหตุการตายหลัก</li></ul></div>
+    <div class="card c-warn"><h4>ปัจจัยกระตุ้น</h4><ul><li>ยาต้านการแข็งตัวของเลือด/ต้านเกล็ดเลือด · ผ่าตัดใหญ่ (โดยเฉพาะหัวใจ)</li><li>การทดสอบกระตุ้นต่อมใต้สมอง · เริ่ม/หยุด dopamine agonist</li><li>ตั้งครรภ์ · ความดันสูง · บาดเจ็บศีรษะ · ไข้เลือดออก/เกล็ดเลือดต่ำ <span class="tag add">เสริม</span></li><li><b>Sheehan syndrome</b> = pituitary infarction หลังตกเลือดหลังคลอด</li></ul></div>
+  </div>
+  <div class="box key"><b>การดูแลทันที (SfE 2016 · UK 2011)</b>1) ประคับประคองระบบไหลเวียน แก้สารน้ำ/เกลือแร่ · 2) <b>เจาะ cortisol, FT4, TSH, prolactin, IGF-1, LH/FSH, testosterone/estradiol, electrolyte, renal, LFT, CBC, coag</b> · 3) <b>Hydrocortisone 100–200 mg IV bolus</b> แล้ว <b>2–4 mg/ชม. IV infusion</b> หรือ <b>50–100 mg IM ทุก 6 ชม.</b> — ให้ทันที (ไม่รอผล) ถ้า <b>hemodynamic ไม่คงที่ ซึมลง ตามัว หรือลานสายตาบกพร่องรุนแรง</b> · รายอื่นให้เมื่อ <b>cortisol 9 น. &lt;550 nmol/L (~20 µg/dL)</b> หรืออาการไม่ดี (UK 2011) · 4) <b>MRI</b> (ยืนยันได้ &gt;90%; CT ถ้าทำ MRI ไม่ได้ — CT เห็นน้อยกว่ามาก) · 5) ตรวจ visual acuity/field และกลอกตา · 6) <b>ปรึกษาประสาทศัลยแพทย์และต่อมไร้ท่อ</b></div>
+  <div class="tbl"><table>
+    <tr><th>ผ่าตัดหรือรักษาประคับประคอง</th><th>รายละเอียด</th></tr>
+    <tr><td><b>พิจารณาผ่าตัด (transsphenoidal)</b></td><td><b>Visual acuity ลดลงมาก</b> · <b>ลานสายตาบกพร่องรุนแรง ต่อเนื่อง หรือแย่ลง</b> · <b>ระดับความรู้สึกตัวแย่ลง</b> · UK 2011: ทำโดยทีมมีประสบการณ์ ควรภายใน ~7 วันจากเริ่มอาการ</td></tr>
+    <tr><td><b>รักษาประคับประคอง</b></td><td><b>Ocular palsy อย่างเดียว</b> (III, IV, VI) ไม่ใช่ข้อบ่งชี้ผ่าตัดเร่งด่วน — มักฟื้นเอง · ลานสายตาปกติ/บกพร่องเล็กน้อยและคงที่ · ติดตาม visual ทุกวันในช่วงแรก → แย่ลงเปลี่ยนเป็นผ่าตัด</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">การทบทวน/meta-analysis ช่วงหลัง (J Neurooncol 2024; Front Surg 2025 — ข้อมูลส่วนใหญ่ retrospective) พบผลลัพธ์ด้าน visual acuity ลานสายตา และฮอร์โมนใกล้เคียงกันระหว่างผ่าตัดกับประคับประคองใน <b>ผู้ป่วยที่คัดเลือกแล้ว</b> (ผู้ที่ผ่าตัดมักอาการหนักกว่า) แต่ ocular palsy อาจฟื้นดีกว่าในกลุ่มผ่าตัด จึงตัดสินรายบุคคลด้วยทีมสหสาขา · <b>Pituitary Apoplexy Score (PAS)</b> ใช้บันทึกความรุนแรงและติดตาม (เครื่องมือบท 11)</p>
+  <div class="box warn"><b>หลัง apoplexy</b>ส่วนใหญ่มี hypopituitarism ถาวรบางส่วน (ACTH deficiency พบบ่อยสุด) · ติดตาม Na: <b>AVP deficiency หรือ SIADH</b> เกิดได้ · ตรวจฮอร์โมนซ้ำ 4–8 สัปดาห์ · MRI ติดตาม — หน้า <a href="../adrenal-crisis/index.html">Adrenal crisis</a> · <a href="../hyponatremia/index.html">Hyponatremia</a></div>
+</section>
+
+<!-- 3 -->
+<section id="hypo" class="col">
+  <div class="sec-num">03</div>
+  <h2>Hypopituitarism: วินิจฉัยและทดแทน</h2>
+  <div class="tbl"><table>
+    <tr><th>แกน</th><th>วินิจฉัย</th><th>ทดแทน</th></tr>
+    <tr><td><b>ACTH</b> (secondary AI)</td><td>Cortisol เช้า (8–9 น.) <b>&lt;3 µg/dL (~80 nmol/L) = AI</b> · <b>&gt;15 µg/dL (~400 nmol/L) ตัดได้ส่วนใหญ่</b> (ES 2016; assay รุ่นใหม่ค่าต่ำกว่า — ใช้เกณฑ์ของห้องแล็บ) · ก้ำกึ่ง → cosyntropin/ITT (ภายใน 4–6 สัปดาห์หลังเกิดโรคใหม่ cosyntropin อาจปกติลวง)</td><td>Hydrocortisone 15–20 mg/วัน แบ่ง 2–3 ครั้ง · <b>ไม่ต้อง fludrocortisone</b> · stress dose · บัตรแจ้งเตือน</td></tr>
+    <tr><td><b>TSH</b> (central hypothyroidism)</td><td><b>FT4 ต่ำ/ต่ำค่อนล่าง + TSH ต่ำ/ปกติ/สูงเล็กน้อย</b> — <b>ใช้ FT4 ไม่ใช่ TSH</b></td><td>Levothyroxine ปรับให้ <b>FT4 อยู่ครึ่งบนของค่าปกติ</b> · <b>ประเมิน/ให้ cortisol ก่อน</b></td></tr>
+    <tr><td><b>LH/FSH</b></td><td>ชาย: testosterone เช้าต่ำ + LH/FSH ไม่สูง · หญิง: ประจำเดือนขาด + E2 ต่ำ + LH/FSH ไม่สูง · วัยหมดประจำเดือน: FSH ไม่สูงตามวัย</td><td>Testosterone / estrogen ± progestin · ต้องการมีบุตร → gonadotropin</td></tr>
+    <tr><td><b>GH</b></td><td>IGF-1 ต่ำ (ร่วมกับขาด ≥3 แกน ช่วยวินิจฉัย) · ยืนยันด้วย stimulation test</td><td>ผู้ใหญ่: พิจารณาโดยผู้เชี่ยวชาญ (ไม่มีมะเร็ง active)</td></tr>
+    <tr><td><b>AVP</b></td><td>บท 04</td><td>Desmopressin</td></tr>
+  </table></div>
+  <div class="box key"><b>ลำดับสำคัญ: hydrocortisone ก่อน levothyroxine</b>Thyroxine เร่ง metabolism ของ cortisol → กระตุ้น adrenal crisis · และ <b>การให้ glucocorticoid อาจเผย AVP deficiency ที่ซ่อนอยู่</b> (ปัสสาวะมากขึ้นหลังเริ่ม hydrocortisone) <span class="rec s1">ES 2016</span></div>
+  <div class="grid2">
+    <div class="card c-vio"><h4>สาเหตุที่ควรนึกถึง</h4><ul><li>เนื้องอก/ผ่าตัด/ฉายรังสีต่อมใต้สมอง (ขาดค่อยๆ หลายปีหลังฉายรังสี)</li><li><b>Sheehan</b> — หลังตกเลือดคลอด ไม่มีน้ำนม ประจำเดือนไม่กลับ (อาจวินิจฉัยหลังหลายปี)</li><li>บาดเจ็บศีรษะ SAH · hypophysitis</li><li><b>Immune checkpoint inhibitor</b> (โดยเฉพาะ anti-CTLA-4): hypophysitis → ACTH deficiency มักถาวร</li></ul></div>
+    <div class="card c-warn"><h4>Pitfalls</h4><ul><li>ผู้ป่วย estrogen/ยาคุม: CBG สูง → total cortisol สูงเกินจริง</li><li>Opioid และ glucocorticoid ภายนอกกดแกน ACTH/LH</li><li>ป่วยหนัก (non-thyroidal illness) FT4/TSH แปลผลยาก</li><li>Hypopit + Na ต่ำ: คิดถึง <b>cortisol ขาด</b> ก่อน SIADH</li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="avp" class="col">
+  <div class="sec-num">04</div>
+  <h2>AVP deficiency (central diabetes insipidus)</h2>
+  <p>ปี 2022 สมาคมต่อมไร้ท่อนานาชาติเสนอเปลี่ยนชื่อ <b>central DI → arginine vasopressin deficiency (AVP-D)</b> และ <b>nephrogenic DI → AVP resistance (AVP-R)</b> เพื่อไม่ให้สับสนกับ diabetes mellitus</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>วินิจฉัย</h4><ul><li><b>Hypotonic polyuria</b>: ปัสสาวะ &gt;50 mL/kg/24 ชม. (ผู้ใหญ่ &gt;3 L) + <b>urine osm &lt;800 mOsm/kg</b> (เกณฑ์ในการศึกษา copeptin) · <b>&lt;300</b> = complete AVP-D/AVP-R · <b>300–800</b> = partial AVP-D หรือ primary polydipsia · ตัด glucosuria, hypercalcemia, hypokalemia, ยา (lithium)</li><li>Na สูง-ปกติค่อนสูง + ปัสสาวะเจือจาง → AVP-D/AVP-R · Na ต่ำ-ปกติค่อนต่ำ → <b>primary polydipsia</b></li><li><b>Copeptin</b> (ถ้ามี): basal &gt;21.4 pmol/L (ไม่อดน้ำ) = AVP-R · <b>hypertonic saline-stimulated ≤4.9 pmol/L</b> (Na ≥150) หรือ <b>arginine-stimulated ≤3.8 pmol/L</b> ที่ 60 นาที = AVP-D</li><li>ไม่มี copeptin: water deprivation test + desmopressin ในศูนย์ที่ทำได้</li></ul></div>
+    <div class="card c-warn"><h4>หลังผ่าตัดต่อมใต้สมอง</h4><ul><li><b>AVP-D ชั่วคราว</b> วันที่ 1–2 (ปัสสาวะมาก เจือจาง Na สูงขึ้น)</li><li><b>SIADH</b> ราววันที่ 5–10 (พีคราววันที่ 7) → Na ต่ำล่าช้า (พบราว 10–25% ใกล้เคียง AVP-D ชั่วคราว) — ตรวจ Na ราวสัปดาห์ที่ 1 หลังผ่าตัด</li><li><b>Triphasic</b>: DI → SIADH → DI ถาวร (จาก stalk injury)</li><li>อย่าให้ desmopressin แบบตายตัวโดยไม่ดู Na/ปัสสาวะ</li></ul></div>
+  </div>
+  <div class="box warn"><b>Desmopressin เสี่ยง hyponatremia</b>เริ่มขนาดต่ำ (เช่น 0.1 mg PO หรือ 1–2 µg SC/IV ครั้งเดียว) ปรับตามอาการ · สอน <b>ให้ปัสสาวะออกมาก (escape) อย่างน้อยสัปดาห์ละครั้ง</b> เพื่อป้องกัน Na ต่ำ · ผู้ป่วยกระหายน้ำบกพร่อง (adipsic) อันตรายมาก ต้องกำหนดน้ำดื่มและชั่งน้ำหนักทุกวัน — หน้า <a href="../hypernatremia/index.html">Hypernatremia</a> <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 5 -->
+<section id="prl" class="col">
+  <div class="sec-num">05</div>
+  <h2>Hyperprolactinemia และ prolactinoma</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>แปลผล prolactin</h4><ul><li>ตรวจซ้ำ 1 ครั้งถ้าสูงเล็กน้อย (เครียด/เจาะยาก) · ไม่ต้องตรวจหลายจุดเวลา</li><li><b>ตัดสาเหตุรอง</b>: ตั้งครรภ์ · <b>ยา</b> (antipsychotic โดยเฉพาะ risperidone/amisulpride, metoclopramide, domperidone, methyldopa, SSRI, opioid) · <b>hypothyroidism</b> · CKD · ตับแข็ง · กระตุ้นหัวนม/ผนังอก</li><li><b>&gt;250 µg/L มักเป็น prolactinoma</b> (macro มักสูงตามขนาด) · stalk effect มัก &lt;100</li><li><b>Macroprolactin</b>: PRL สูงไม่มีอาการ → ตรวจ (PEG precipitation)</li><li><b>Hook effect</b>: macroadenoma ใหญ่แต่ PRL สูงเล็กน้อย → <b>ส่งเจือจาง</b> ก่อนสรุปว่าเป็น non-functioning</li></ul></div>
+    <div class="card c-ok"><h4>รักษา prolactinoma</h4><ul><li><b>Cabergoline</b> เป็นยาหลัก (ดีกว่า bromocriptine) แม้ macroadenoma ที่กด chiasm — ลานสายตามักดีขึ้นเร็ว · เริ่ม 0.25–0.5 mg สัปดาห์ละ 1–2 ครั้ง ปรับตาม PRL</li><li>2023: <b>ผ่าตัดเป็นทางเลือกแรกได้</b> ใน microprolactinoma หรือ macro ขอบชัด (ไม่ลุก cavernous sinus) โดยศัลยแพทย์ที่ชำนาญ — คุยทางเลือกกับผู้ป่วย</li><li>ผลข้างเคียง: คลื่นไส้ เวียนหัว · <b>impulse control disorder</b> (พนัน ซื้อของ hypersexuality) — ถามทุกครั้ง · echocardiography (valvulopathy): ตรวจพื้นฐาน แล้วราวทุก 5 ปีถ้า ≤2 mg/สัปดาห์ และถี่ขึ้นถ้าขนาดสูงกว่า</li><li>หยุดยาได้: ใช้ ≥2 ปี + PRL ปกติ + ก้อนหาย/ยุบมาก → ค่อยๆ ลด ติดตาม PRL (กลับเป็นซ้ำได้บ่อย)</li></ul></div>
+  </div>
+  <div class="box note"><b>ตั้งครรภ์</b>Microprolactinoma: <b>หยุด cabergoline เมื่อทราบว่าตั้งครรภ์</b> ไม่ต้องตรวจ PRL ระหว่างตั้งครรภ์ (สูงตามสรีรวิทยา) · Macroprolactinoma: เสี่ยงก้อนโต → ตรวจลานสายตาเป็นระยะ ± ให้ยาต่อ/กลับมาให้ถ้ามีอาการ · antipsychotic-induced: ปรึกษาจิตแพทย์เปลี่ยนเป็น aripiprazole แทนการให้ DA <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 6 -->
+<section id="cs" class="col">
+  <div class="sec-num">06</div>
+  <h2>Cushing syndrome: ใครควรคัดกรอง และคัดกรองอย่างไร</h2>
+  <div class="box warn"><b>ก่อนอื่น: ตัด exogenous glucocorticoid</b>สาเหตุ Cushing ที่พบบ่อยในไทยคือ <b>ยาชุด ยาลูกกลอน ยาหม้อผสม dexamethasone</b>, ยาฉีดข้อ ยาพ่น/ทาขนาดสูง (รวม ritonavir + fluticasone/budesonide) · ผล cortisol อาจ <b>ต่ำ</b> (แกนถูกกด) และหยุดยาเองเสี่ยง adrenal crisis — หน้า <a href="../adrenal-crisis/index.html">Adrenal crisis</a></div>
+  <div class="grid2">
+    <div class="card c-vio"><h4>ควรคัดกรองเมื่อ</h4><ul><li>ลักษณะจำเพาะ: <b>ผิวบาง ช้ำง่าย ลายแตกสีม่วงกว้าง &gt;1 cm</b>, กล้ามเนื้อต้นแขนขาอ่อนแรง, หน้าแดงกลม</li><li>ลักษณะผิดอายุ: กระดูกพรุน/ความดันสูงในคนอายุน้อย</li><li>อาการหลายอย่างค่อยๆ เพิ่ม (อ้วนลงพุง DM HT ซึมเศร้า ประจำเดือนผิดปกติ)</li><li><b>Adrenal incidentaloma</b> (ใช้ 1-mg DST)</li></ul></div>
+    <div class="card c-acc"><h4>Screening tests (เริ่ม 1 วิธี · วินิจฉัยเมื่อผิดปกติ ≥2 วิธี)</h4><ul><li><b>Late-night salivary cortisol (LNSC)</b> ≥2 ครั้ง &gt;ULN ของ assay — 2026 Delphi: เป็นการตรวจยืนยันที่ผู้เชี่ยวชาญใช้มากที่สุดในรายอาการน้อยที่ screening ผิดปกติเล็กน้อย (UFC ใช้มากในรายรุนแรง)</li><li><b>1-mg overnight DST</b>: dexamethasone 1 mg 23.00 น. → cortisol 8.00 น. <b>&gt;1.8 µg/dL (50 nmol/L) = ไม่กด</b></li><li><b>24-h UFC</b> ≥2 ครั้ง &gt;ULN (รายรุนแรงชัด ใช้มาก)</li><li>ตรวจซ้ำในรายก้ำกึ่ง · cyclic Cushing ต้องตรวจหลายครั้งช่วงมีอาการ</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Pitfall</th><th>ผลต่อการตรวจ</th></tr>
+    <tr><td><b>Pseudo-Cushing</b> (non-neoplastic hypercortisolism): ซึมเศร้า, <b>แอลกอฮอล์</b>, อ้วนมาก, เบาหวานคุมไม่ได้, ป่วยหนัก, ตั้งครรภ์</td><td>ผลผิดปกติเล็กน้อยได้ทุกวิธี → รักษาสาเหตุแล้วตรวจซ้ำ / ส่งต่อมไร้ท่อ</td></tr>
+    <tr><td><b>ยาเร่ง CYP3A4</b>: rifampicin, carbamazepine, phenytoin, phenobarbital</td><td>Dexamethasone ถูกทำลายเร็ว → <b>DST ผลบวกลวง</b> (วัดระดับ dexamethasone ช่วยได้)</td></tr>
+    <tr><td><b>Estrogen/ยาคุม</b>, ตั้งครรภ์</td><td>CBG สูง → serum cortisol สูง → DST บวกลวง (หยุดยาคุม ~6 สัปดาห์ หรือใช้ UFC/LNSC)</td></tr>
+    <tr><td>สูบบุหรี่/ชะเอม (licorice) ก่อนเก็บน้ำลาย · ทำงานกะดึก</td><td>LNSC ผิด</td></tr>
+    <tr><td>CKD (eGFR &lt;60) · ดื่มน้ำมาก</td><td>UFC ต่ำลวง / สูงลวง</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="csloc" class="col">
+  <div class="sec-num">07</div>
+  <h2>Cushing: หาตำแหน่งและรักษา</h2>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>แนวทาง (Pituitary Society 2021 · 2026 Delphi)</th></tr>
+    <tr><td><b>ACTH (เช้า)</b></td><td><b>&lt;10 pg/mL → ACTH-independent</b> (adrenal) → CT ต่อมหมวกไต · <b>&gt;20 pg/mL → ACTH-dependent</b> · 10–20 ก้ำกึ่ง (ตรวจซ้ำ/CRH test)</td></tr>
+    <tr><td><b>ACTH-dependent</b></td><td><b>Cushing disease (pituitary) ~80%</b> vs ectopic ACTH (lung/thymic carcinoid, SCLC, pancreatic NET, MTC) · MRI ต่อมใต้สมองแบบละเอียด (dynamic) · dynamic tests (CRH/desmopressin, HDDST)</td></tr>
+    <tr><td><b>BIPSS</b></td><td>มาตรฐานแยก pituitary vs ectopic เมื่อ <b>MRI ไม่เห็นก้อน ก้ำกึ่ง หรือก้อนเล็ก</b> หรือผลไม่สอดคล้อง · ก้อน ≥10 mm + biochemical สอดคล้อง อาจไม่ต้อง BIPSS (6–9 mm แล้วแต่ศูนย์) · central:peripheral ACTH ≥2 (basal) หรือ ≥3 (หลังกระตุ้น) = pituitary</td></tr>
+    <tr><td><b>รักษา</b></td><td><b>Transsphenoidal surgery</b> โดยศัลยแพทย์ที่ชำนาญเป็นหลัก · ยาลด cortisol ก่อนผ่าตัด/ผ่าตัดไม่หาย: steroidogenesis inhibitors (osilodrostat, metyrapone, ketoconazole/levoketoconazole), pasireotide, cabergoline, mifepristone · <b>block-and-replace</b> ใช้ได้ใน cyclic/รุนแรง (2026) · รังสีรักษา · bilateral adrenalectomy (เสี่ยง Nelson)</td></tr>
+    <tr><td><b>หลังผ่าตัด</b></td><td>Cortisol ต่ำมากหลังผ่าตัด = บ่งชี้หาย → ต้องให้ hydrocortisone ทดแทน (แกนกลับมาเป็นเดือน–ปี) · <b>ติดตามตลอดชีวิต</b> ด้วย LNSC/1-mg DST ทุก 6–12 เดือน (กลับเป็นซ้ำได้)</td></tr>
+  </table></div>
+  <div class="box note"><b>ดูแลภาวะร่วมตั้งแต่วินิจฉัย</b>ความดัน เบาหวาน <b>K ต่ำ</b> (ectopic ACTH รุนแรง) · <b>VTE สูง</b> → พิจารณา thromboprophylaxis ตั้งแต่วินิจฉัยถึงหลังผ่าตัด (Pituitary Society 2021 · ESE-endorsed Delphi position statement 2025) · <b>ติดเชื้อฉวยโอกาส</b> (cortisol สูงมาก → พิจารณาป้องกัน PJP) · กระดูกพรุน · ซึมเศร้า <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 8 -->
+<section id="acro" class="col">
+  <div class="sec-num">08</div>
+  <h2>Acromegaly (ย่อ)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>นึกถึงและวินิจฉัย</h4><ul><li>มือเท้าใหญ่ขึ้น (แหวน/รองเท้าคับ) ใบหน้าเปลี่ยน ฟันห่าง เหงื่อมาก นอนกรน carpal tunnel</li><li>ภาวะร่วม: DM, HT, cardiomyopathy, sleep apnea, ติ่งเนื้อลำไส้/มะเร็งลำไส้</li><li><b>คัดกรอง IGF-1</b> (เทียบอายุ/เพศ) · ยืนยัน: <b>OGTT 75 g → GH nadir &lt;1 µg/L ตัดได้</b> (assay ไวสูง &lt;0.4)</li><li>IGF-1 ลวง: ตั้งครรภ์ วัยรุ่น (สูง) · ตับ/ไตวาย ขาดอาหาร oral estrogen (ต่ำ)</li></ul></div>
+    <div class="card c-ok"><h4>รักษา</h4><ul><li><b>Transsphenoidal surgery</b> เป็นหลัก</li><li>ไม่หาย: somatostatin receptor ligand (octreotide/lanreotide, pasireotide), pegvisomant, cabergoline (IGF-1 สูงเล็กน้อย) · รังสีรักษา</li><li>เป้า: IGF-1 ปกติตามอายุ · คัดกรอง colonoscopy · คุม CV risk</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="inc" class="col">
+  <div class="sec-num">09</div>
+  <h2>Pituitary incidentaloma</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Microincidentaloma (&lt;10 mm)</th><th>Macroincidentaloma (≥10 mm)</th></tr>
+    <tr><td><b>ตรวจฮอร์โมน</b></td><td>Prolactin, IGF-1 · คัดกรอง Cushing ถ้ามีอาการ · ก้อนค่อนใหญ่ (~6–9 mm) อาจตรวจ hypopit ร่วม</td><td>เหมือน micro + <b>ตรวจ hypopituitarism ทุกแกน</b></td></tr>
+    <tr><td><b>ลานสายตา</b></td><td>ไม่จำเป็น (ยกเว้นมีอาการ)</td><td>เมื่อก้อน <b>แตะ/กด optic chiasm</b> หรือมีอาการ</td></tr>
+    <tr><td><b>MRI ติดตาม</b></td><td>ที่ 1 ปี แล้วทุก 1–2 ปี × 3 ปี จากนั้นห่างได้ถ้าไม่โต</td><td>ที่ 6 เดือน แล้วทุกปี × 3 ปี จากนั้นห่างขึ้น</td></tr>
+    <tr><td><b>ส่งผ่าตัด</b></td><td colspan="2">ลานสายตาบกพร่อง · ก้อนกด chiasm/เส้นประสาทตา · apoplexy ที่มีปัญหาสายตา · ฮอร์โมนเกิน (ยกเว้น prolactinoma ซึ่งให้ยาได้) · ก้อนโตต่อเนื่อง · ใกล้ chiasm + วางแผนตั้งครรภ์ <span class="tag add">ES 2011</span></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">Rathke cleft cyst, craniopharyngioma, meningioma, hypophysitis, aneurysm อาจคล้ายก้อนต่อมใต้สมอง — ให้รังสีแพทย์อ่าน MRI แบบ pituitary protocol</p>
+</section>
+
+<!-- 10 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัยโรคต่อมใต้สมอง</b>ปวดหัว/ตามัว · อาการขาดหรือเกินฮอร์โมน · ก้อนจาก imaging</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เฉียบพลัน: ปวดหัวรุนแรงทันที + ตา/ซึม/ความดันต่ำ?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่ → apoplexy</span><div class="node red"><b>ฉุกเฉิน</b>เจาะฮอร์โมน → HC 100–200 mg IV<br>MRI · visual acuity/field<br>ประสาทศัลย์: ตาแย่/ซึมลง → ผ่าตัด</div></div>
+        <div class="arm"><span class="lab">ไม่ (subacute/ตรวจพบ)</span><div class="node q"><b>3 คำถาม</b>กดเบียด? · ขาดฮอร์โมน? · ฮอร์โมนเกิน?</div>
+          <div class="branch b2">
+            <div class="arm"><span class="lab">ขาด</span><div class="node dx hypo"><b>Hypopituitarism</b>Cortisol ก่อน T4<br>FT4 ไม่ใช่ TSH<br>ดู AVP-D หลังให้ HC</div></div>
+            <div class="arm"><span class="lab">เกิน</span><div class="node dx eu"><b>PRL → cabergoline</b>(ตัดยา/hypothyroid/hook)<br>Cushing → 2 tests → ACTH → MRI/BIPSS<br>IGF-1 สูง → OGTT GH</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 11 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool plan" id="tPas" style="margin-top:12px">
+    <h3>Pituitary Apoplexy Score และแผนดูแลทันที</h3>
+    <div>
+      <div class="muted" style="font-size:.82rem">ระดับความรู้สึกตัว (GCS)</div>
+      <div class="radios"><label><input type="radio" name="pG" value="0" checked>15</label><label><input type="radio" name="pG" value="2">8–14</label><label><input type="radio" name="pG" value="4">&lt;8</label></div>
+      <div class="muted" style="font-size:.82rem;margin-top:8px">Visual acuity</div>
+      <div class="radios"><label><input type="radio" name="pA" value="0">ปกติ (6/6)</label><label><input type="radio" name="pA" value="1" checked>ลดลงข้างเดียว</label><label><input type="radio" name="pA" value="2">ลดลงสองข้าง</label></div>
+      <div class="muted" style="font-size:.82rem;margin-top:8px">ลานสายตา</div>
+      <div class="radios"><label><input type="radio" name="pF" value="0">ปกติ</label><label><input type="radio" name="pF" value="1" checked>บกพร่องข้างเดียว</label><label><input type="radio" name="pF" value="2">บกพร่องสองข้าง</label></div>
+      <div class="muted" style="font-size:.82rem;margin-top:8px">Ocular paresis</div>
+      <div class="radios"><label><input type="radio" name="pO" value="0">ไม่มี</label><label><input type="radio" name="pO" value="1" checked>ข้างเดียว</label><label><input type="radio" name="pO" value="2">สองข้าง</label></div>
+    </div>
+    <div class="checks" style="margin-top:8px"><label><input type="checkbox" id="pHd"> ความดันต่ำ/hemodynamic ไม่คงที่</label><label><input type="checkbox" id="pWorse"> สายตา/ความรู้สึกตัวแย่ลงต่อเนื่อง</label><label><input type="checkbox" id="pAc"> ได้ยาต้านการแข็งตัวของเลือด</label></div>
+    <div class="out" id="pasOut"></div>
+  </div>
+  <div class="tool" id="tCs" style="margin-top:12px">
+    <h3>แปลผลคัดกรอง Cushing</h3>
+    <div class="fields">
+      <label class="f">1-mg DST cortisol<input type="number" id="cD" step="0.1" value="4.2"></label>
+      <label class="f">หน่วย<select id="cDu"><option value="ug">µg/dL</option><option value="nmol">nmol/L</option></select></label>
+      <label class="f">24-h UFC (× ULN)<input type="number" id="cU" step="0.1" value="2.5"></label>
+      <label class="f">LNSC (× ULN)<input type="number" id="cL" step="0.1" placeholder="เช่น 1.8"></label>
+      <label class="f">ACTH เช้า (pg/mL)<input type="number" id="cA" step="1" value="45"></label>
+      <label class="f">MRI ต่อมใต้สมอง<select id="cM"><option value="na">ยังไม่ทำ</option><option value="neg" selected>ไม่เห็นก้อน</option><option value="small">ก้อน &lt;6 mm</option><option value="mid">ก้อน 6–9 mm</option><option value="big">ก้อน ≥10 mm</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="cEx"> ใช้ steroid/ยาชุด/ยาพ่น-ทาขนาดสูง</label><label><input type="checkbox" id="cInd"> ใช้ rifampicin/carbamazepine/phenytoin</label><label><input type="checkbox" id="cEst"> ใช้ estrogen/ยาคุม/ตั้งครรภ์</label><label><input type="checkbox" id="cPs"> ซึมเศร้า/แอลกอฮอล์/อ้วนมาก/DM คุมไม่ได้</label><label><input type="checkbox" id="cK"> K ต่ำรุนแรง/อาการเร็วมาก</label></div>
+    <div class="out" id="csOut"></div>
+  </div>
+  <div class="tool" id="tPrl" style="margin-top:12px">
+    <h3>แปลผล prolactin</h3>
+    <div class="fields">
+      <label class="f">Prolactin (µg/L = ng/mL)<input type="number" id="rV" value="85"></label>
+      <label class="f">MRI<select id="rM"><option value="none">ยังไม่ทำ/ไม่เห็นก้อน</option><option value="micro">ก้อน &lt;10 mm</option><option value="macro" selected>ก้อน 10–30 mm</option><option value="giant">ก้อน &gt;30 mm</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="rDrug"> ใช้ antipsychotic/metoclopramide/domperidone ฯลฯ</label><label><input type="checkbox" id="rPreg"> ตั้งครรภ์ได้/ไม่ได้ตรวจ</label><label><input type="checkbox" id="rTsh"> TSH สูง (hypothyroid)</label><label><input type="checkbox" id="rCkd"> CKD</label><label><input type="checkbox" id="rAsx"> ไม่มีอาการ (ประจำเดือนปกติ ไม่มีน้ำนม)</label><label><input type="checkbox" id="rVf"> ลานสายตาบกพร่อง</label></div>
+    <div class="out" id="prlOut"></div>
+  </div>
+  <div class="tool" id="tPu" style="margin-top:12px">
+    <h3>Polyuria: AVP deficiency หรือไม่</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="uW" value="60"></label>
+      <label class="f">ปัสสาวะ 24 ชม. (L)<input type="number" id="uV" step="0.1" value="5"></label>
+      <label class="f">Urine osm (mOsm/kg)<input type="number" id="uO" value="140"></label>
+      <label class="f">Serum Na (mmol/L)<input type="number" id="uNa" value="146"></label>
+      <label class="f">Copeptin (pmol/L)<input type="number" id="uC" step="0.1" placeholder="ถ้ามี"></label>
+      <label class="f">ชนิด copeptin<select id="uCt"><option value="basal">Basal (ไม่อดน้ำ)</option><option value="hs">หลัง hypertonic saline (Na ≥150)</option><option value="arg">60 นาทีหลัง arginine</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="uGlu"> Glucosuria/น้ำตาลสูง</label><label><input type="checkbox" id="uCa"> Ca สูง หรือ K ต่ำ</label><label><input type="checkbox" id="uLi"> ใช้ lithium</label><label><input type="checkbox" id="uOp"> หลังผ่าตัดต่อมใต้สมอง/บาดเจ็บศีรษะ</label></div>
+    <div class="out" id="puOut"></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ปวดหัวรุนแรงทันที + ตามัว/ตาเหล่ → คิดถึง apoplexy</b> ไม่ใช่แค่ SAH</div></div>
+    <div class="pearl"><div><b>Apoplexy: hydrocortisone ก่อน</b> — adrenal insufficiency เฉียบพลันฆ่าคนไข้</div></div>
+    <div class="pearl"><div><b>Ocular palsy อย่างเดียว</b> ไม่ใช่ข้อบ่งชี้ผ่าตัดด่วน · ตามัว/ลานสายตาแย่ลง/ซึมลง → ผ่าตัด</div></div>
+    <div class="pearl"><div><b>Hydrocortisone ก่อน thyroxine</b> เสมอใน hypopituitarism</div></div>
+    <div class="pearl"><div><b>Central hypothyroid: ดู FT4</b> TSH ใช้ไม่ได้</div></div>
+    <div class="pearl"><div><b>เริ่ม steroid แล้วปัสสาวะมาก</b> → AVP deficiency ที่ถูกบัง</div></div>
+    <div class="pearl"><div><b>Na ต่ำวันที่ 7–10 หลังผ่าตัดต่อมใต้สมอง</b> = SIADH ล่าช้า</div></div>
+    <div class="pearl"><div><b>Macroadenoma + PRL สูงเล็กน้อย</b> → hook effect (เจือจาง) vs stalk effect</div></div>
+    <div class="pearl"><div><b>Prolactinoma กด chiasm ก็ให้ cabergoline ก่อนได้</b> · ถาม impulse control ทุกครั้ง</div></div>
+    <div class="pearl"><div><b>Cushing: ตัดยาชุด/steroid ภายนอกก่อน</b> · ต้องผิดปกติ ≥2 วิธี</div></div>
+    <div class="pearl"><div><b>DST บวกลวง</b>: rifampicin, carbamazepine, phenytoin, ยาคุม</div></div>
+    <div class="pearl"><div><b>ACTH &lt;10 = adrenal · &gt;20 = ACTH-dependent</b> → MRI ± BIPSS</div></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../adrenal-crisis/index.html">Adrenal crisis →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a> · <a href="../hypernatremia/index.html">Hypernatremia →</a> · <a href="../thyroid/index.html">Thyroid →</a> · <a href="../thyroid-emergency/index.html">Thyroid storm/Myxedema →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Fleseriu M, Auchus R, Bancos I, et al. Consensus on diagnosis and management of Cushing's disease: a guideline update. Lancet Diabetes Endocrinol 2021;9:847–75 · 2) Fleseriu M, Biller BMK, Bancos I, et al. Consensus on biomarker utility for ACTH-dependent Cushing syndrome: a Pituitary Society modified Delphi panel. J Clin Endocrinol Metab 2026;111(12):3325–45. doi:10.1210/clinem/dgag279 · 3) Petersenn S, et al. Diagnosis and management of prolactin-secreting pituitary adenomas: a Pituitary Society international Consensus Statement. Nat Rev Endocrinol 2023;19:722–40 · 4) Fleseriu M, et al. Hormonal replacement in hypopituitarism in adults: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2016;101:3888–921 · 5) Rajasekaran S, et al. UK guidelines for the management of pituitary apoplexy. Clin Endocrinol 2011;74:9–20 · 6) Baldeweg SE, et al. Society for Endocrinology endocrine emergency guidance: emergency management of pituitary apoplexy in adult patients. Endocr Connect 2016;5:G12–5 · 7) Arima H, et al. Changing the name of diabetes insipidus: a position statement of the Working Group for Renaming Diabetes Insipidus. Eur J Endocrinol 2022 (ตีพิมพ์พร้อมกันหลายวารสาร) · Timper K, et al. Diagnostic accuracy of copeptin in the differential diagnosis of the polyuria-polydipsia syndrome. J Clin Endocrinol Metab 2015;100:2268–74 · 8) Fenske W, et al. A copeptin-based approach in the diagnosis of diabetes insipidus. N Engl J Med 2018;379:428–39 · Winzeler B, et al. Arginine-stimulated copeptin measurements in the differential diagnosis of diabetes insipidus. Lancet 2019;394:587–95 · 9) Freda PU, et al. Pituitary incidentaloma: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2011;96:894–904 · 10) Katznelson L, et al. Acromegaly: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2014;99:3933–51 · 11) Giustina A, et al. Consensus on criteria for acromegaly diagnosis and remission. Pituitary 2024;27:7–22 · 12) ESE-endorsed Delphi panel position statement on thromboprophylaxis of VTE in endogenous Cushing's syndrome. Eur J Endocrinol 2025<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','piView');
+mountWalker({
+ start:{q:'อาการเฉียบพลัน: ปวดศีรษะรุนแรงทันที ร่วมกับตามัว/ลานสายตาแคบ/ตาเหล่ ซึม หรือความดันต่ำ?',o:[['ใช่','apo'],['ไม่ใช่','q3']]},
+ apo:{leaf:true,cls:'danger',t:'สงสัย pituitary apoplexy',b:'เจาะ cortisol, FT4, TSH, PRL, IGF-1, LH/FSH, sex steroid, Na, Cr, CBC, coag → <b>hydrocortisone 100–200 mg IV</b> แล้ว 2–4 mg/ชม. (หรือ 50–100 mg IM q6h) ถ้า hemodynamic ไม่คงที่/ซึม/ตามัวหรือลานสายตาบกพร่องรุนแรง · <b>MRI</b> · visual acuity/field · ปรึกษาประสาทศัลย์+ต่อมไร้ท่อ · หยุด/แก้ฤทธิ์ anticoagulant ตามความเสี่ยง',next:['ตัดสินผ่าตัดหรือไม่','apo2']},
+ apo2:{q:'Visual acuity ลดมาก / ลานสายตาบกพร่องรุนแรงหรือแย่ลง / ความรู้สึกตัวแย่ลง?',o:[['ใช่','surg'],['ไม่ (เช่น ตาเหล่อย่างเดียว)','cons']]},
+ surg:{leaf:true,cls:'danger',t:'พิจารณาผ่าตัด transsphenoidal',b:'โดยทีมประสาทศัลย์ที่ชำนาญ (UK: ควรภายใน ~7 วัน) · ให้ stress-dose steroid ต่อ · เฝ้า Na (AVP-D/SIADH) หลังผ่าตัด'},
+ cons:{leaf:true,cls:'warn',t:'รักษาประคับประคอง',b:'Hydrocortisone · ตรวจ visual acuity/field และกลอกตาทุกวันในช่วงแรก · แย่ลง → ผ่าตัด · ocular palsy มักฟื้นเอง · ตรวจฮอร์โมนซ้ำ 4–8 สัปดาห์ · MRI ติดตาม'},
+ q3:{q:'ปัญหาหลักคืออะไร?',o:[['อาการขาดฮอร์โมน (อ่อนเพลีย Na ต่ำ ประจำเดือนขาด)','hp'],['น้ำนมไหล/ประจำเดือนขาด/PRL สูง','prl'],['ลักษณะ Cushing','cs'],['ปัสสาวะมาก','pu'],['พบก้อนโดยบังเอิญ','inc']]},
+ hp:{leaf:true,cls:'violet',t:'Hypopituitarism',b:'Morning cortisol (<3 µg/dL = AI, >15 ตัดได้ส่วนใหญ่), FT4 + TSH, LH/FSH + testosterone/E2, IGF-1, PRL, Na · <b>hydrocortisone ก่อน levothyroxine</b> · ปรับ LT4 ตาม FT4 · MRI ต่อมใต้สมอง · ประวัติตกเลือดหลังคลอด (Sheehan), ICI, ฉายรังสี'},
+ prl:{q:'ตัดสาเหตุรองแล้ว (ตั้งครรภ์ ยา hypothyroid CKD)?',o:[['แล้ว ยังสูง','prl2'],['ยัง','prlsec']]},
+ prlsec:{leaf:true,cls:'warn',t:'ตัดสาเหตุรองก่อน',b:'β-hCG · TSH · Cr · ทบทวนยา (antipsychotic, metoclopramide, domperidone) — ยาเป็นสาเหตุ: ปรึกษาเปลี่ยนยา (เช่น aripiprazole) ไม่ควรหยุดเอง · ไม่มีอาการ → ตรวจ macroprolactin'},
+ prl2:{leaf:true,cls:'ok',t:'MRI → prolactinoma?',b:'PRL >250 + ก้อน → prolactinoma: <b>cabergoline</b> (แม้กด chiasm) หรือผ่าตัดใน micro/macro ขอบชัดโดยผู้ชำนาญ · macroadenoma แต่ PRL สูงเล็กน้อย → <b>เจือจาง (hook effect)</b> หรือ stalk effect · ถาม impulse control'},
+ cs:{q:'ใช้ steroid/ยาชุด/ยาหม้อ/ยาฉีดข้อ หรือยาพ่น-ทาขนาดสูง?',o:[['ใช่/ไม่แน่ใจ','exo'],['ไม่ใช่','cs2']]},
+ exo:{leaf:true,cls:'warn',t:'Exogenous Cushing',b:'ไม่ต้องตรวจคัดกรอง endogenous · <b>อย่าหยุด steroid ทันที</b> (เสี่ยง adrenal crisis) · ลดยาตามแผน + สอน stress dosing — หน้า Adrenal crisis'},
+ cs2:{leaf:true,cls:'violet',t:'คัดกรอง endogenous Cushing',b:'เลือก 1–2: <b>LNSC ×2</b>, <b>1-mg DST (>1.8 µg/dL ผิดปกติ)</b>, <b>24-h UFC ×2</b> · ผิดปกติ ≥2 วิธี → ACTH: <10 pg/mL adrenal (CT) · >20 ACTH-dependent → MRI → ≥10 mm + สอดคล้อง ผ่าตัดได้ · ไม่เห็น/ก้ำกึ่ง → BIPSS · ส่งต่อมไร้ท่อ'},
+ pu:{leaf:true,cls:'violet',t:'Hypotonic polyuria',b:'ยืนยัน >50 mL/kg/วัน + Uosm <800 (<300 = complete; 300–800 = partial AVP-D หรือ primary polydipsia) · ตัด glucose, Ca สูง, K ต่ำ, lithium · Na สูง-ปกติ → AVP-D/AVP-R · Na ต่ำ-ปกติ → primary polydipsia · copeptin (basal >21.4 = AVP-R; hypertonic saline ≤4.9 หรือ arginine ≤3.8 = AVP-D) · MRI ต่อมใต้สมอง (ไม่เห็น posterior bright spot, stalk หนา)'},
+ inc:{leaf:true,cls:'ok',t:'Pituitary incidentaloma',b:'ทุกราย: PRL, IGF-1 (± Cushing ถ้ามีอาการ) · Macro (≥10 mm): ตรวจ hypopit ทุกแกน + ลานสายตาถ้าแตะ chiasm · MRI: micro ที่ 1 ปี · macro ที่ 6 เดือน · ส่งผ่าตัดถ้าลานสายตาบกพร่อง กด chiasm โต หรือฮอร์โมนเกิน (ยกเว้น prolactinoma)'}
+},'apTrail','apStage');
+
+function pas(){
+  const s=['pG','pA','pF','pO'].reduce((a,n)=>a+ +radio(n),0);
+  const g=+radio('pG'),a=+radio('pA'),f=+radio('pF'),o=+radio('pO');
+  const L=[`<b>Pituitary Apoplexy Score = ${s}/10</b> (GCS ${g} · acuity ${a} · field ${f} · ocular ${o})`];
+  const need=$('pHd').checked||g>0||a>0||f>0;
+  if(need)L.push('<b>ทันที</b>: เจาะฮอร์โมน/เกลือแร่ → <b>hydrocortisone 100–200 mg IV bolus</b> แล้ว 2–4 mg/ชม. หรือ 50–100 mg IM ทุก 6 ชม. โดยไม่รอผล ('+[$('pHd').checked?'hemodynamic ไม่คงที่':null,g>0?'ความรู้สึกตัวลดลง':null,a>0?'visual acuity ลดลง':null,f>0?'ลานสายตาบกพร่อง (UK: เกณฑ์คือรุนแรง — ให้ไว้ก่อนปลอดภัยกว่า)':null].filter(Boolean).join(' · ')+')');
+  else L.push('ไม่มีเกณฑ์ให้ steroid ฉุกเฉิน → เจาะ cortisol เช้า (9 น.) ฯลฯ · <b>ให้ hydrocortisone ถ้า cortisol <550 nmol/L (~20 µg/dL)</b> หรืออาการไม่ดี (UK 2011)');
+  L.push('MRI · ปรึกษาประสาทศัลย์และต่อมไร้ท่อ');
+  const surg=$('pWorse').checked||a===2||f===2;
+  if(surg)L.push('<b>พิจารณาผ่าตัด transsphenoidal</b> — '+($('pWorse').checked?'สายตา/ความรู้สึกตัวแย่ลงต่อเนื่อง':'สายตาบกพร่องสองข้าง (ถ้ารุนแรง/ไม่ดีขึ้น/แย่ลง)')+' · UK 2011: VA ลดมาก, ลานสายตาบกพร่องรุนแรง/ต่อเนื่อง/แย่ลง, ความรู้สึกตัวแย่ลง · ตัดสินโดยทีมสหสาขา');
+  else if(g>0)L.push('ความรู้สึกตัวลดลง: แก้ cortisol/Na ก่อนแล้วประเมินซ้ำ — <b>ยังแย่ลง → ผ่าตัด</b>');
+  else if(a===1||f===1)L.push('บกพร่องสายตาข้างเดียว: ตัดสินรายบุคคล — ถ้าเลือกประคับประคองต้องตรวจ visual ทุกวัน แย่ลงเปลี่ยนเป็นผ่าตัด');
+  else L.push('ไม่มีปัญหาสายตา/ความรู้สึกตัว'+(o>0?' (ocular palsy อย่างเดียว — มักฟื้นเอง ไม่ใช่ข้อบ่งชี้ผ่าตัดด่วน)':'')+' → <b>ประคับประคอง</b> ตรวจ visual ทุกวันในช่วงแรก');
+  if($('pAc').checked)L.push('ได้ยาต้านการแข็งตัวของเลือด → ประเมินหยุด/แก้ฤทธิ์ตามความเสี่ยงลิ่มเลือด (ปรึกษาทีม)');
+  L.push('<span class="muted">ติดตาม Na ทุกวัน (AVP-D/SIADH) · PAS ใช้บันทึกความรุนแรงและติดตามการเปลี่ยนแปลง ไม่ใช่เกณฑ์ตัดสินผ่าตัดเดี่ยว</span>');
+  $('pasOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPas input',pas);
+
+function cs(){
+  const L=[];
+  if($('cEx').checked){$('csOut').innerHTML='<b>ใช้ glucocorticoid ภายนอก</b> → นี่คือ <b>exogenous Cushing</b> ไม่ต้องตรวจคัดกรอง endogenous (ผลจะแปลไม่ได้/cortisol ต่ำจากแกนถูกกด) · ห้ามหยุดยาทันที · ลดยาตามแผน + stress dosing (หน้า Adrenal crisis)';return}
+  let d=num('cD');const u=num('cU'),l=num('cL'),acth=num('cA'),m=$('cM').value;
+  let ab=0,done=0;
+  if(d!==null){done++;const ug=$('cDu').value==='nmol'?d/27.59:d;const nm=$('cDu').value==='nmol'?d:d*27.59;
+    if(ug>1.8){ab++;L.push(`1-mg DST ${ug.toFixed(1)} µg/dL (${Math.round(nm)} nmol/L) <b>>1.8 → ไม่กด (ผิดปกติ)</b>`+(ug>5?' · >5 µg/dL ยิ่งจำเพาะ':''));}
+    else L.push(`1-mg DST ${ug.toFixed(1)} µg/dL ≤1.8 → กดได้ปกติ`);}
+  if(u!==null){done++;if(u>1){ab++;L.push(`UFC ${u}× ULN <b>ผิดปกติ</b>`+(u>=3?' (≥3× ULN สนับสนุนมากขึ้น · pseudo-Cushing มักไม่สูงขนาดนี้)':''));}else L.push(`UFC ${u}× ULN ปกติ`);}
+  if(l!==null){done++;if(l>1){ab++;L.push(`LNSC ${l}× ULN <b>ผิดปกติ</b>`);}else L.push(`LNSC ${l}× ULN ปกติ`);}
+  if(!done){L.push('ใส่ผล screening อย่างน้อย 1 อย่าง');}
+  else if(ab>=2)L.unshift('<b>ผิดปกติ ≥2 วิธี → เข้าได้กับ Cushing syndrome</b> (ตัด pseudo-Cushing/ยาก่อน) → ตรวจ ACTH');
+  else if(ab===1)L.unshift('<b>ผิดปกติ 1 วิธี</b> → ยังวินิจฉัยไม่ได้ ตรวจวิธีที่สอง/ทำซ้ำ (UFC/LNSC อย่างน้อย 2 ครั้ง)');
+  else L.unshift('<b>ผลที่มีปกติ</b> → Cushing ไม่น่าเป็น (ยกเว้นอาการชัดหรือ cyclic → ตรวจซ้ำช่วงมีอาการ)');
+  if($('cInd').checked&&d!==null)L.push('ใช้ยาเร่ง CYP3A4 → <b>DST อาจบวกลวง</b> · ใช้ UFC/LNSC หรือวัดระดับ dexamethasone');
+  if($('cEst').checked&&d!==null)L.push('Estrogen/ตั้งครรภ์ → CBG สูง DST บวกลวงได้ · ใช้ UFC/LNSC หรือหยุดยาคุม ~6 สัปดาห์');
+  if($('cPs').checked)L.push('ภาวะ pseudo-Cushing → ผลผิดปกติเล็กน้อยแปลผลยาก · รักษาสาเหตุแล้วตรวจซ้ำ / ส่งต่อมไร้ท่อ');
+  if(acth!==null&&ab>=2){
+    if(acth<10)L.push(`ACTH ${acth} pg/mL <10 → <b>ACTH-independent (adrenal)</b> → CT ต่อมหมวกไต`);
+    else if(acth<=20)L.push(`ACTH ${acth} pg/mL 10–20 → ก้ำกึ่ง ตรวจซ้ำ/CRH test`);
+    else{L.push(`ACTH ${acth} pg/mL >20 → <b>ACTH-dependent</b> → MRI ต่อมใต้สมอง`);
+      if(m==='big')L.push('ก้อน ≥10 mm + ผลสอดคล้อง → Cushing disease น่าเป็นมาก อาจไม่ต้อง BIPSS → ส่งผ่าตัด');
+      else if(m==='mid')L.push('ก้อน 6–9 mm → แล้วแต่ศูนย์/dynamic test ว่าต้อง BIPSS หรือไม่');
+      else if(m==='neg'||m==='small')L.push('<b>ไม่เห็นก้อน/ก้อน <6 mm → BIPSS</b> (central:peripheral ACTH ≥2 basal หรือ ≥3 หลังกระตุ้น = pituitary)');
+      if($('cK').checked)L.push('K ต่ำรุนแรง/อาการเร็ว → คิดถึง <b>ectopic ACTH</b> · แก้ K · ควบคุม cortisol เร่งด่วน · ป้องกัน PJP/VTE');}
+  }else if(acth!==null)L.push('<span class="muted">แปลผล ACTH เมื่อยืนยัน Cushing syndrome แล้วเท่านั้น</span>');
+  $('csOut').innerHTML=L.join('<br>');
+}
+bindAll('#tCs input,#tCs select',cs);
+
+function prl(){
+  const v=num('rV'),m=$('rM').value;const L=[];
+  if(v===null){$('prlOut').textContent='ใส่ค่า prolactin';return}
+  const sec=[];if($('rPreg').checked)sec.push('ตรวจ β-hCG');if($('rDrug').checked)sec.push('ยา (antipsychotic/prokinetic) — ปรึกษาเปลี่ยนยา เช่น aripiprazole หรือหยุดยาชั่วคราว 3 วันถ้าปลอดภัยแล้วตรวจซ้ำ');if($('rTsh').checked)sec.push('รักษา hypothyroidism แล้วตรวจซ้ำ');if($('rCkd').checked)sec.push('CKD ทำให้ PRL สูงได้');
+  if(sec.length)L.push('<b>สาเหตุรองที่ต้องจัดการก่อน</b>: '+sec.join(' · '));
+  if($('rAsx').checked)L.push('ไม่มีอาการ → <b>ตรวจ macroprolactin</b> (PEG) — ถ้าเป็น macroprolactinemia ไม่ต้องรักษา');
+  if(m==='none'){
+    L.push(v>250?`PRL ${v} >250 → prolactinoma น่าเป็น → <b>MRI ต่อมใต้สมอง</b>`:v>100?`PRL ${v} → หาสาเหตุรอง แล้ว MRI ถ้ายังอธิบายไม่ได้`:`PRL ${v} สูงเล็กน้อย → ตรวจซ้ำ ตัดสาเหตุรอง/macroprolactin → MRI ถ้ายังสูงไม่ทราบสาเหตุ`);
+  }else if(m==='micro'){
+    L.push(v>=100?`Microadenoma + PRL ${v} → <b>microprolactinoma</b> น่าเป็น (หลังตัดสาเหตุรอง)`:`Microadenoma + PRL ${v} สูงเล็กน้อย → อาจเป็น microprolactinoma หรือ <b>incidentaloma ร่วมกับ PRL สูงจากสาเหตุอื่นโดยบังเอิญ</b> — ตัดสาเหตุรอง/macroprolactin ก่อน`);
+    L.push('รักษาเมื่อมีอาการ (ประจำเดือน/มีบุตร/hypogonadism/น้ำนม) · <b>cabergoline</b> 0.25–0.5 mg 1–2 ครั้ง/สัปดาห์ หรือ <b>ผ่าตัด</b>โดยผู้ชำนาญเป็นทางเลือกแรกได้ · ไม่มีอาการ+ไม่ต้องการมีบุตร อาจติดตาม (หญิงวัยทองขาด estrogen ให้ hormone replacement ได้)');
+  }else{
+    if(v>=250){L.push(`Macroadenoma + PRL ${v} ≥250 → <b>macroprolactinoma</b>`);L.push('<b>Cabergoline เป็นการรักษาแรก แม้กด chiasm</b> — ติดตามลานสายตาและ PRL ใกล้ชิด · ตรวจ hypopituitarism ทุกแกน');}
+    else{L.push(`Macroadenoma แต่ PRL ${v} <250 → <b>ส่งเจือจาง (hook effect)</b> โดยเฉพาะก้อนใหญ่${m==='giant'?' (>30 mm เสี่ยงมาก)':''}`);L.push('เจือจางแล้ว: <b><100</b> → น่าเป็น <b>non-functioning adenoma + stalk effect</b> → ส่งประสาทศัลย์ (ยา DA ลด PRL ได้แต่ก้อนไม่ยุบ) · <b>100–250</b> → ก้ำกึ่ง (macroprolactinoma ขนาด 10–20 mm อาจมี PRL ช่วงนี้) → ส่งผู้เชี่ยวชาญ/ลอง cabergoline แล้วดูว่าก้อนยุบหรือไม่');}
+    if($('rVf').checked)L.push('ลานสายตาบกพร่อง: prolactinoma ให้ cabergoline ได้ (มักดีขึ้นใน วัน–สัปดาห์) · ไม่ใช่ prolactinoma/ไม่ดีขึ้น → ผ่าตัด');
+  }
+  L.push('<span class="muted">Cabergoline: ถาม impulse control (พนัน ซื้อของ hypersexuality) ทุกครั้ง · หยุดยาได้เมื่อใช้ ≥2 ปี + PRL ปกติ + ก้อนหาย/ยุบมาก</span>');
+  $('prlOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPrl input,#tPrl select',prl);
+
+function pu(){
+  const w=num('uW'),v=num('uV'),o=num('uO'),na=num('uNa'),c=num('uC'),ct=$('uCt').value;const L=[];
+  if(!w||v===null){$('puOut').textContent='ใส่น้ำหนักและปริมาณปัสสาวะ';return}
+  const pk=v*1000/w;const poly=pk>50||v>3;
+  L.push(`ปัสสาวะ ${v} L/วัน = ${Math.round(pk)} mL/kg/วัน → ${poly?'<b>polyuria</b>':'ยังไม่ถึงเกณฑ์ polyuria (>50 mL/kg/วัน หรือ >3 L)'}`);
+  if(!poly){$('puOut').innerHTML=L.join('<br>');return}
+  const solute=$('uGlu').checked;
+  if(solute){L.push('<b>Glucosuria → osmotic (solute) diuresis</b> น่าเป็นสาเหตุ · คุมน้ำตาลแล้วประเมินซ้ำ ก่อนสรุปว่าเป็น AVP-D');$('puOut').innerHTML=L.join('<br>');return}
+  if(o!==null){
+    if(o>=800)L.push(`Uosm ${o} ≥800 → <b>ไม่ใช่ AVP-D/AVP-R</b> → คิดถึง solute diuresis (glucose, urea หลังแก้ obstruction, NSS ปริมาณมาก, mannitol)`);
+    else{L.push(o<300?`Uosm ${o} <300 → <b>hypotonic polyuria</b> (เข้าได้กับ complete AVP-D/AVP-R หรือ primary polydipsia)`:`Uosm ${o} 300–799 → <b>hypotonic polyuria แบบก้ำกึ่ง</b>: partial AVP-D หรือ primary polydipsia (หรือ solute diuresis ถ้ามี mannitol/urea สูง) → copeptin/water deprivation`);
+      if($('uCa').checked)L.push('Ca สูง/K ต่ำ ทำให้ไตตอบสนอง AVP ลดลง (AVP-R ที่แก้ได้) → แก้ก่อนแล้วประเมินซ้ำ');
+      if($('uLi').checked)L.push('Lithium → <b>AVP resistance</b> (nephrogenic) ที่พบบ่อยที่สุด');
+      if(na!==null)L.push(na>=145?`Na ${na} สูง/ค่อนสูง → AVP-D หรือ AVP-R มากกว่า primary polydipsia`:na<=137?`Na ${na} ค่อนต่ำ → <b>primary polydipsia</b> น่าเป็น`:`Na ${na} ก้ำกึ่ง → ต้อง copeptin/water deprivation`);
+      if(c!==null){
+        if(ct==='basal')L.push(c>21.4?`Basal copeptin ${c} >21.4 → <b>AVP resistance (nephrogenic)</b>`:'Basal copeptin ≤21.4 → แยก AVP-D กับ primary polydipsia ด้วย stimulated copeptin');
+        else if(ct==='hs')L.push(c<=4.9?`Copeptin หลัง hypertonic saline ${c} ≤4.9 → <b>AVP deficiency</b>`:`Copeptin ${c} >4.9 → <b>primary polydipsia</b> มากกว่า`);
+        else L.push(c<=3.8?`Copeptin 60 นาทีหลัง arginine ${c} ≤3.8 → <b>AVP deficiency</b>`:`Copeptin ${c} >3.8 → <b>primary polydipsia</b> มากกว่า`);
+      }
+      if($('uOp').checked)L.push('หลังผ่าตัด/บาดเจ็บ: AVP-D มักชั่วคราววันที่ 1–2 · ระวัง SIADH วันที่ 7–10 (triphasic) · desmopressin ขนาดต่ำครั้งละโดส ดู Na/ปัสสาวะก่อนให้ซ้ำ');
+    }
+  }
+  L.push('<span class="muted">AVP-D ใหม่ → MRI ต่อมใต้สมอง/stalk และตรวจแกนอื่น · ระวัง desmopressin ทำให้ Na ต่ำ</span>');
+  $('puOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPu input,#tPu select',pu);
+
+mountQuiz([
+ ['ชาย 58 ปี ได้ warfarin ปวดศีรษะรุนแรงทันที อาเจียน ตามัวสองข้าง ตาขวาเหล่ออก หนังตาตก BP 88/50 Na 129 CT สมองไม่พบ SAH ขั้นแรกที่สำคัญที่สุด',
+  ['LP หา xanthochromia','เจาะเลือดแล้วให้ hydrocortisone 100–200 mg IV ทันที','Levothyroxine IV','รอ MRI ก่อนให้ยา'],1,'Pituitary apoplexy + AI เฉียบพลัน · steroid ก่อน · MRI ยืนยัน'],
+ ['ผู้ป่วย apoplexy มีเพียง CN III palsy ข้างเดียว visual acuity และลานสายตาปกติ รู้สึกตัวดี',
+  ['ผ่าตัดภายใน 24 ชม.','รักษาประคับประคองพร้อม steroid และตรวจ visual ทุกวัน','ฉายรังสี','ให้ cabergoline'],1,'Ocular palsy อย่างเดียวไม่ใช่ข้อบ่งชี้ผ่าตัดด่วน มักฟื้นเอง'],
+ ['หญิง 35 ปี หลังตกเลือดคลอดเมื่อ 3 ปีก่อน ไม่มีน้ำนม ประจำเดือนไม่มา อ่อนเพลีย FT4 0.6 (ต่ำ) TSH 1.2 ควรเริ่มยาใดก่อน',
+  ['Levothyroxine','Hydrocortisone (หลังเจาะ cortisol)','Estrogen','Desmopressin'],1,'Sheehan · ให้ cortisol ก่อน thyroxine'],
+ ['ข้อใดถูกเกี่ยวกับการติดตาม levothyroxine ใน central hypothyroidism',
+  ['ปรับให้ TSH ปกติ','ปรับให้ FT4 อยู่ครึ่งบนของค่าปกติ','ตรวจ TSH ทุก 6 สัปดาห์','ไม่ต้องตรวจ'],1,'TSH ใช้ไม่ได้ในโรคของต่อมใต้สมอง'],
+ ['ชาย 45 ปี ก้อนต่อมใต้สมอง 32 mm กด chiasm prolactin 68 µg/L ข้อใดเหมาะที่สุดต่อไป',
+  ['สรุปว่าเป็น non-functioning adenoma ส่งผ่าตัดทันที','ส่งตรวจ prolactin แบบเจือจาง','เริ่ม bromocriptine','ตรวจ macroprolactin'],1,'Hook effect ในก้อนใหญ่ · ถ้าเจือจางแล้วสูงมาก = macroprolactinoma ให้ cabergoline'],
+ ['ข้อใดไม่ใช่สาเหตุของ 1-mg DST ผลบวกลวง',
+  ['Rifampicin','ยาคุมกำเนิด','Carbamazepine','Fluconazole'],3,'ยาเร่ง CYP3A4 และ estrogen ทำให้บวกลวง · fluconazole ยับยั้ง CYP3A4 (ถ้ามีผลจะทำให้ลบลวง)'],
+ ['ยืนยัน Cushing syndrome แล้ว ACTH 6 pg/mL ขั้นต่อไป',
+  ['MRI ต่อมใต้สมอง','BIPSS','CT ต่อมหมวกไต','CT ทรวงอก'],2,'ACTH <10 = ACTH-independent (adrenal)'],
+ ['หลังผ่าตัด transsphenoidal วันที่ 8 ผู้ป่วยคลื่นไส้ Na 124 euvolemic สาเหตุที่น่าเป็นที่สุด',
+  ['AVP deficiency','SIADH ล่าช้า (phase 2)','Cerebral salt wasting','Hypothyroid'],1,'Triphasic response · SIADH ช่วงวันที่ 7–10 — แต่ตรวจ cortisol ร่วมด้วยเสมอ'],
+ ['ผู้ป่วยหญิงมีลักษณะ Cushing ชัด บอกว่ากินยาลูกกลอนแก้ปวดเมื่อยมา 2 ปี สิ่งที่ควรทำ',
+  ['1-mg DST','24-h UFC','ถือเป็น exogenous Cushing ไม่หยุดยาทันที วางแผนลดยาและสอน stress dosing','BIPSS'],2,'ยาชุด/ลูกกลอนมักผสม dexamethasone · หยุดทันทีเสี่ยง adrenal crisis']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

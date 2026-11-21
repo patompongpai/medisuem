@@ -1,0 +1,702 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Acute pancreatitis · ตับอ่อนอักเสบเฉียบพลัน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Gastroenterology · IAP/APA 2025 · ACG 2024 · Revised Atlanta 2012</div>
+  <h1>ตับอ่อนอักเสบเฉียบพลัน<br>Acute pancreatitis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัย 2 ใน 3 หาสาเหตุ แบ่งความรุนแรงตาม Revised Atlanta สารน้ำแบบ <b>moderate (LR 1.5 mL/kg/h)</b> ตามหลัง WATERFALL อาหารทางปากแต่เนิ่นๆ ไม่ให้ยาปฏิชีวนะป้องกัน จังหวะ ERCP และผ่าตัดถุงน้ำดี ภาวะไตรกลีเซอไรด์สูง จนถึง necrosis แบบ step-up และการติดตามเบาหวานหลังป่วย</p>
+  <p class="cite">อ้างอิงหลัก: IAP/APA/EPC/IPC/JPS Working Group. International Association of Pancreatology Revised Guidelines on Acute Pancreatitis 2025 (Pancreatology 2025;25:770–814) · Tenner S, et al. ACG Guideline: Management of Acute Pancreatitis (Am J Gastroenterol 2024;119:419–37) · Banks PA, et al. Revised Atlanta Classification (Gut 2013;62:102–11) · de-Madaria E, et al. WATERFALL (NEJM 2022;387:989–1000) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>วินิจฉัย 2 ใน 3</b>ปวดท้องส่วนบน · lipase/amylase &gt;3× ULN · ภาพเข้าได้ · CT ไม่จำเป็นทุกราย</div>
+    <div class="stage" style="--c:var(--warn)"><b>48 ชม.แรก</b>LR 1.5 mL/kg/h (bolus 10 mL/kg ถ้าขาดน้ำ) · ระงับปวด · กินเร็ว · ไม่ให้ antibiotic ป้องกัน</div>
+    <div class="stage" style="--c:var(--danger)"><b>Severe = organ failure &gt;48 ชม.</b>Modified Marshall ≥2 · ICU · necrosis ติดเชื้อ → step-up หลังผนังหุ้ม ~4 สัปดาห์</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#dx">วินิจฉัย</a><a href="#cause">สาเหตุ</a><a href="#sev">ความรุนแรง</a><a href="#fluid">สารน้ำ</a><a href="#pain">ปวดและอาหาร</a><a href="#abx">ยาปฏิชีวนะ</a><a href="#biliary">นิ่ว: ERCP และผ่าตัด</a><a href="#htg">TG สูง · แอลกอฮอล์</a><a href="#local">ภาวะแทรกซ้อนเฉพาะที่</a><a href="#icu">ICU · จำหน่าย · ติดตาม</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="dx" class="col">
+  <div class="sec-num">01</div>
+  <h2>การวินิจฉัย</h2>
+  <div class="box key"><b>วินิจฉัยเมื่อมี 2 ใน 3 ข้อ</b>1) <b>ปวดท้องส่วนบน</b> แบบตับอ่อนอักเสบ (เฉียบพลัน รุนแรง ต่อเนื่อง มักร้าวไปหลัง) · 2) <b>lipase หรือ amylase &gt;3 เท่าของค่าปกติสูงสุด</b> · 3) <b>ภาพรังสีเข้าได้</b> (CECT, MRI หรือ US) <span class="rec s1">IAP 2025 #1</span></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เลือกตรวจอะไร</h4><ul><li><b>Lipase</b> ดีกว่า amylase (สูงนานกว่า จำเพาะกว่า) · ระดับ <b>ไม่สัมพันธ์กับความรุนแรง</b> · ไม่ต้องตรวจซ้ำเพื่อติดตาม</li><li>Amylase สูงได้จาก parotitis, ไตวาย, macroamylasemia, ลำไส้ทะลุ/ขาดเลือด, ectopic pregnancy</li><li>ปวดท้องเข้าได้ + enzyme &gt;3× → <b>วินิจฉัยได้เลย ไม่ต้อง CT</b></li></ul></div>
+    <div class="card c-warn"><h4>เมื่อไรต้อง CT</h4><ul><li><b>วินิจฉัยไม่ชัด</b> (ต้องแยก ลำไส้ทะลุ/ขาดเลือด AAA)</li><li><b>ไม่ดีขึ้น/แย่ลง</b> หลังรักษา</li><li>ช่วงเวลาที่เห็น necrosis ชัด: <b>≥72–96 ชม.หลังเริ่มปวด</b> — CT วันแรกมัก underestimate <span class="rec s1">IAP #7</span></li><li><b>ไม่ทำ CT ซ้ำเป็น routine</b> · ทำเมื่อจะทำหัตถการหรืออาการแย่ลง</li></ul></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="cause" class="col">
+  <div class="sec-num">02</div>
+  <h2>สาเหตุและการหาสาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>เบาะแส / สิ่งที่ตรวจ</th></tr>
+    <tr><td><b>นิ่วในถุงน้ำดี</b> (พบบ่อยสุด)</td><td><b>US ช่องท้องทุกราย</b> · <b>ALT &gt;150 U/L ภายใน 48 ชม.แรก</b>ชี้นิ่ว · bilirubin/ALP สูง · ท่อน้ำดีขยาย</td></tr>
+    <tr><td><b>แอลกอฮอล์</b></td><td>ดื่มหนักต่อเนื่องหลายปี (ไม่ใช่ดื่มครั้งเดียว) · ซักประวัติปริมาณ · มักเป็นซ้ำ → chronic pancreatitis</td></tr>
+    <tr><td><b>Hypertriglyceridemia</b></td><td><b>TG &gt;1,000 mg/dL (11.3 mmol/L)</b> ถือเป็นสาเหตุ (ACG 2024; &gt;500 ชี้นำสูง — iLATAM-AP 2026) · เบาหวานคุมไม่ได้ อ้วน ตั้งครรภ์ แอลกอฮอล์ ยา · ตรวจ TG <b>เร็วที่สุด</b> (ลดเร็วเมื่ออด)</td></tr>
+    <tr><td><b>Hypercalcemia</b></td><td>Ca สูง → หา PTH · สารน้ำใช้ <b>NSS ไม่ใช่ LR</b> (IAP #63) — หน้า <a href="../hypercalcemia/index.html">Hypercalcemia</a></td></tr>
+    <tr><td><b>Post-ERCP</b></td><td>หลังหัตถการ · ป้องกันด้วย rectal indomethacin, LR, PD stent ในรายเสี่ยงสูง</td></tr>
+    <tr><td><b>ยา</b></td><td>Azathioprine/6-MP, valproate, didanosine, pentamidine, L-asparaginase, mesalamine, estrogen ฯลฯ — วินิจฉัยเมื่อตัดสาเหตุอื่นแล้ว</td></tr>
+    <tr><td><b>เนื้องอก</b></td><td>อายุ &gt;40 ปีและไม่พบสาเหตุ → คิดถึงมะเร็งตับอ่อน/IPMN (CT/MRI/EUS)</td></tr>
+    <tr><td>อื่นๆ</td><td>Autoimmune (IgG4), บาดเจ็บ, ติดเชื้อ, กายวิภาคผิดปกติ, พันธุกรรม (PRSS1, SPINK1, CFTR)</td></tr>
+  </table></div>
+  <div class="box note"><b>ระหว่างนอน รพ. ตรวจ (IAP 2025 #2)</b>ประวัติละเอียด (ยา แอลกอฮอล์ ครอบครัว) · liver tests · <b>calcium · triglyceride</b> · US ถุงน้ำดี · ถ้า "idiopathic": <b>US ซ้ำหลังจำหน่าย → EUS → MRI/MRCP</b> · ยังไม่พบและเป็นซ้ำ → พิจารณา genetic testing <span class="rec s1">IAP #3</span></div>
+</section>
+
+<!-- 3 -->
+<section id="sev" class="col">
+  <div class="sec-num">03</div>
+  <h2>ความรุนแรง: Revised Atlanta และการทำนาย</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>นิยาม</th><th>ความหมาย</th></tr>
+    <tr><td><b>Mild</b></td><td><b>ไม่มี organ failure</b> และไม่มีภาวะแทรกซ้อนเฉพาะที่/ทั่วร่างกาย</td><td>พบมากที่สุด หายใน ~1 สัปดาห์ ตายน้อยมาก</td></tr>
+    <tr><td><b>Moderately severe</b></td><td><b>Organ failure ชั่วคราว (หายใน 48 ชม.)</b> และ/หรือ ภาวะแทรกซ้อนเฉพาะที่ และ/หรือ โรคประจำตัวกำเริบ</td><td>อาจนอนนาน ต้องหัตถการ</td></tr>
+    <tr><td><b>Severe</b></td><td><b>Organ failure คงอยู่ &gt;48 ชม.</b> (อวัยวะเดียวหรือหลายอวัยวะ)</td><td>ตายสูง โดยเฉพาะร่วมกับ infected necrosis</td></tr>
+  </table></div>
+  <div class="box key"><b>Organ failure = Modified Marshall score ≥2 ในระบบใดระบบหนึ่ง</b>ระบบหายใจ (PaO₂/FiO₂), ไต (creatinine), หัวใจหลอดเลือด (SBP และการตอบสนองต่อสารน้ำ) — คำนวณในเครื่องมือบท 12 · <b>organ failure คงอยู่ &gt;48 ชม. เป็นตัวกำหนดการตายที่สำคัญที่สุด</b> <span class="rec s1">IAP #5</span></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>การทำนายตั้งแต่แรก</h4><ul><li><b>SIRS ตอนรับ และ SIRS คงอยู่ที่ 48 ชม.</b> (± CRP/IL-6 สูง) ทำนาย severe AP <span class="rec s1">IAP #4</span></li><li><b>BISAP ≥3</b>: BUN &gt;25, mental status ผิดปกติ, SIRS, อายุ &gt;60, pleural effusion</li><li>Hct ≥44% และ BUN ที่สูงขึ้นใน 24 ชม. บ่งชี้ไม่ดี · CRP ≥150 mg/L ที่ 48 ชม.</li><li>ไม่มีคะแนนใดแม่นพอ — <b>ประเมินซ้ำทางคลินิก</b> สำคัญที่สุด</li></ul></div>
+    <div class="card c-vio"><h4>ภาวะแทรกซ้อนเฉพาะที่ (Atlanta)</h4><ul><li><b>&lt;4 สัปดาห์</b>: APFC (interstitial) · ANC (necrotizing)</li><li><b>≥4 สัปดาห์ มีผนังหุ้ม</b>: pseudocyst (จาก APFC) · <b>WON</b> (จาก ANC)</li><li>แต่ละชนิด sterile หรือ infected ได้</li><li>อื่น: splanchnic vein thrombosis, pseudoaneurysm, gastric outlet obstruction, colonic necrosis</li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="fluid" class="col">
+  <div class="sec-num">04</div>
+  <h2>สารน้ำ: moderate ไม่ใช่ aggressive</h2>
+  <div class="box key"><b>Lactated Ringer's ดีกว่า NSS · อัตราประมาณ 1.5 mL/kg/h</b>ให้ bolus (เช่น <b>10 mL/kg</b>) เฉพาะเมื่อ <b>ขาดน้ำ/ความดันต่ำ</b> · ปรับตามสัญญาณชีพ ปัสสาวะ Hct BUN · <b>ไม่แนะนำ aggressive fluid</b> <span class="rec s1">IAP #10–11 · ACG 2024</span></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>WATERFALL (NEJM 2022)</h4><ul><li><b>Aggressive</b>: LR 20 mL/kg bolus แล้ว 3 mL/kg/h</li><li><b>Moderate</b>: LR 10 mL/kg bolus เฉพาะ hypovolemia แล้ว 1.5 mL/kg/h</li><li>หยุดก่อนกำหนดเพราะกลุ่ม aggressive <b>fluid overload มากกว่า</b> (20.5% vs 6.3%) โดย <b>ไม่ลด</b> moderately severe/severe AP</li></ul></div>
+    <div class="card c-ok"><h4>เป้าหมายที่สมเหตุสมผล (IAP #12)</h4><ul><li>MAP 65–85 mmHg</li><li>ปัสสาวะ ≥0.5 mL/kg/h</li><li>BUN &lt;20 mg/dL · Hct &lt;44%</li><li>ประเมินซ้ำบ่อยใน 24–48 ชม.แรก · ระวังหัวใจ/ไตเสื่อม ผู้สูงอายุ</li><li>Invasive monitoring เฉพาะใน ICU</li></ul></div>
+  </div>
+  <div class="box warn"><b>สารน้ำมากเกินเป็นอันตราย</b>Pulmonary edema, <b>intra-abdominal hypertension/abdominal compartment syndrome</b> — หลัง 24–48 ชม.แรกให้ลดลงเมื่อผู้ป่วยคงที่ · ความดันต่ำที่ไม่ตอบสนองต่อสารน้ำให้ vasopressor ตามหลักใน <a href="../sepsis/index.html">Sepsis</a></div>
+</section>
+
+<!-- 5 -->
+<section id="pain" class="col">
+  <div class="sec-num">05</div>
+  <h2>ระงับปวดและอาหาร</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ระงับปวด</h4><ul><li>ประเมินปวดซ้ำด้วย VAS/NRS</li><li><b>Opioid หรือ NSAIDs</b> ได้ทั้งคู่ · ปวดรุนแรง opioid ได้ผลกว่า <span class="rec s1">IAP #14</span></li><li><b>หลีกเลี่ยง NSAIDs เมื่อมี AKI</b> หรือเสี่ยงไตวาย</li><li>Opioid ไม่ทำให้ตับอ่อนอักเสบแย่ลงทางคลินิก</li></ul></div>
+    <div class="card c-ok"><h4>อาหาร — กินเร็ว</h4><ul><li><b>Mild/moderate: เริ่มอาหารแข็งไขมันต่ำทันทีที่หิวและไม่อาเจียน</b> (มักภายใน 24–48 ชม.) ไม่ต้องเริ่มจากน้ำใส ไม่ต้องรอ lipase ลด <span class="rec s1">IAP #22</span></li><li>กินไม่ได้ → <b>enteral feeding ภายใน 72 ชม.</b> · <b>NG หรือ NJ ได้ทั้งคู่</b> · polymeric formula</li><li><b>Parenteral</b> เฉพาะ enteral ไม่ถึงเป้า</li><li>อด NPO นาน → ลำไส้ขาดสารอาหาร bacterial translocation</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="abx" class="col">
+  <div class="sec-num">06</div>
+  <h2>ยาปฏิชีวนะ</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ไม่ให้</h4><ul><li><b>Prophylactic antibiotic</b> ไม่ว่าความรุนแรงหรือ necrosis มากเท่าไร <span class="rec no">IAP #19 · ACG</span></li><li>Probiotics <span class="rec no">IAP #20</span> · selective gut decontamination · antifungal ป้องกัน</li><li>เริ่มเพียงเพราะ CRP/WBC/procalcitonin สูง</li></ul></div>
+    <div class="card c-acc"><h4>ให้เมื่อ</h4><ul><li><b>มีการติดเชื้อนอกตับอ่อนชัด</b>: cholangitis, ปอดอักเสบ, UTI, bacteremia</li><li><b>สงสัย infected necrosis</b>: แย่ลงหลังสัปดาห์แรก ไข้ organ failure ใหม่ · <b>ฟองอากาศใน collection บน CT</b> · เพาะเชื้อจากสารน้ำบวก <span class="rec s1">IAP #17–18</span></li><li>ยาที่เข้าเนื้อตับอ่อนดี: <b>piperacillin-tazobactam, cephalosporin รุ่น 3–4, carbapenem, quinolone</b> (± metronidazole) — เลือกตามเชื้อในพื้นที่ ไม่จำเป็นต้องเริ่ม carbapenem ทุกราย <span class="tag add">IAP 2025 · ACG 2024</span></li><li><b>ไม่เจาะ FNA เป็น routine</b> — วินิจฉัยจากคลินิก+ภาพ</li></ul></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="biliary" class="col">
+  <div class="sec-num">07</div>
+  <h2>Biliary pancreatitis: ERCP และผ่าตัดถุงน้ำดี</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>แนวทาง</th></tr>
+    <tr><td><b>มี cholangitis</b> (ไข้ เหลือง ท่อน้ำดีอักเสบ)</td><td><b>ERCP/sphincterotomy เร่งด่วน</b> (ACG 2024: ภายใน 24 ชม. · IAP #28(iii): early) <span class="rec s1">IAP · ACG</span></td></tr>
+    <tr><td>ไม่มี cholangitis (mild หรือ severe)</td><td><b>ไม่ทำ early ERCP</b> — ไม่ลดภาวะแทรกซ้อน/ตาย <span class="rec no">IAP #28</span></td></tr>
+    <tr><td>สงสัยนิ่วค้างในท่อน้ำดี ไม่มี cholangitis</td><td>MRCP หรือ EUS ก่อน → มีนิ่วจึง elective ERCP <span class="rec s1">IAP #29</span></td></tr>
+    <tr><td><b>Mild biliary AP</b></td><td><b>ผ่าตัดถุงน้ำดีใน admission เดียวกัน</b> ป้องกันเป็นซ้ำ (รอนานเสี่ยงกลับมาเป็นซ้ำสูง) <span class="rec s1">IAP #84</span></td></tr>
+    <tr><td>Moderately severe/severe มี collection</td><td><b>เลื่อนผ่าตัด</b> จน collection ยุบเกือบหมด/ผ่านช่วงอักเสบ <span class="rec s1">IAP #85</span></td></tr>
+    <tr><td>ผ่าตัดไม่ได้ในครั้งนี้ (เสี่ยงสูง)</td><td>ERCP + sphincterotomy ลดการเป็นซ้ำได้ <span class="tag add">IAP #28(iv)</span></td></tr>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="htg" class="col">
+  <div class="sec-num">08</div>
+  <h2>Hypertriglyceridemia และแอลกอฮอล์</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>HTG-induced AP</h4><ul><li><b>Insulin</b> เป็นทางเลือกแรก (เบาหวาน: ให้แน่นอน; ไม่เป็นเบาหวาน: พิจารณาเป็นอันดับแรก) — IV insulin + dextrose ป้องกันน้ำตาลต่ำ <span class="rec s1">IAP #64</span></li><li>LMWH ระยะสั้น (&lt;3 วัน) พิจารณาได้ <span class="tag add">IAP #64</span></li><li><b>Plasmapheresis</b>: พิจารณาเมื่อ <b>organ failure คงอยู่</b> + TG สูงมาก โดยเฉพาะร่วม AKI <span class="tag add">IAP #65 · หลักฐานต่ำ</span></li><li>งดอาหาร 48 ชม. แล้วอาหารอ่อนไขมันต่ำ · <b>ห้าม IV lipid emulsion ถ้า TG ≥400</b> (ระวัง propofol)</li><li>หลังจำหน่าย: fibrate, คุมเบาหวาน งดเหล้า · <b>TG &lt;500 mg/dL</b> ป้องกันซ้ำ — หน้า <a href="../lipid/index.html">Dyslipidemia</a></li></ul></div>
+    <div class="card c-vio"><h4>Alcohol-associated AP</h4><ul><li><b>Brief alcohol intervention ระหว่างนอน รพ.</b> และส่งต่อโปรแกรมเลิกสุรา/บำบัดพฤติกรรม (ACG 2013 · IAP 2025 #91) — ลดการเป็นซ้ำ</li><li>เฝ้า <b>alcohol withdrawal</b>: CIWA-Ar, thiamine ก่อนให้ glucose</li><li>งดบุหรี่ร่วมด้วย (เพิ่มความเสี่ยง chronic pancreatitis)</li><li>เป็นซ้ำบ่อย → ประเมิน chronic pancreatitis: ปวดเรื้อรัง ถ่ายเป็นมัน เบาหวาน หินปูนในตับอ่อน</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="local" class="col">
+  <div class="sec-num">09</div>
+  <h2>ภาวะแทรกซ้อนเฉพาะที่และ necrosis</h2>
+  <div class="box key"><b>Step-up approach และ "delay–drain–debride"</b>Sterile necrosis รักษาประคับประคอง <span class="rec s1">IAP #30</span> · Infected necrosis เริ่มด้วย <b>ยาปฏิชีวนะ + โภชนาการ</b> · ถ้าแย่ลง → <b>เลื่อนหัตถการจนผนังหุ้ม (~3–4 สัปดาห์)</b> → <b>drainage</b> (percutaneous หรือ endoscopic transluminal) → necrosectomy แบบ minimally invasive ถ้ายังไม่ดีขึ้น <span class="rec s1">IAP #36–44</span></div>
+  <div class="tbl"><table>
+    <tr><th>ภาวะ</th><th>แนวทาง</th></tr>
+    <tr><td>Pseudocyst / WON ไม่มีอาการ</td><td>สังเกต ส่วนใหญ่หายเอง · <b>ขนาดใหญ่อย่างเดียวไม่ใช่ข้อบ่งชี้</b></td></tr>
+    <tr><td>Infected necrosis + แย่ลง</td><td>ข้อบ่งชี้หัตถการ (ดีที่สุดเมื่อ walled-off) · drainage ก่อน &lt;4 สัปดาห์ได้ถ้าการรักษาทางยาล้มเหลวและ collection หุ้มบางส่วน · LAMS เมื่อ necrosis &gt;30%</td></tr>
+    <tr><td>Abdominal compartment syndrome</td><td><b>ความดันในช่องท้อง (intra-abdominal pressure) &gt;20 mmHg ต่อเนื่อง + organ dysfunction ใหม่</b> (IAH = &gt;12 mmHg ต่อเนื่อง/ซ้ำ) · วัดความดันกระเพาะปัสสาวะใน severe AP · drainage ascites, NG decompression, ลดสารน้ำบวก, ระงับปวด → ผ่าตัด decompress เมื่อล้มเหลว</td></tr>
+    <tr><td>Pseudoaneurysm/เลือดออก</td><td>CTA → <b>angioembolization</b></td></tr>
+    <tr><td>Splanchnic vein thrombosis</td><td>Splenic vein อย่างเดียว <b>ไม่ต้อง anticoagulate</b> · portal/mesenteric กว้าง พิจารณา anticoagulation</td></tr>
+  </table></div>
+</section>
+
+<!-- 10 -->
+<section id="icu" class="col">
+  <div class="sec-num">10</div>
+  <h2>ICU ส่งต่อ จำหน่าย และติดตาม</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ICU / ส่งต่อ</h4><ul><li><b>Modified Marshall ≥2</b> (organ failure) → ICU <span class="tag add">IAP #15</span></li><li>Infected necrosis ร่วม sepsis เลือดออก fistula → HDU/ICU</li><li>ไม่มีความเชี่ยวชาญด้าน organ failure หรือ infected necrosis → <b>ส่ง รพ.ที่มีทีม</b> (GI/interventional/ผ่าตัด) <span class="tag add">IAP #6</span></li><li>ไม่ triage จาก lactate/CRP/Hct/BUN ตัวเดียว</li></ul></div>
+    <div class="card c-ok"><h4>จำหน่ายและติดตาม</h4><ul><li>จำหน่ายได้เมื่อ: กินได้ ปวดน้อย (ไม่ต้องใช้ opioid หรือแทบไม่ต้อง) ไม่มีไข้ markers ดีขึ้น</li><li>นัดผ่าตัดถุงน้ำดี (ถ้ายังไม่ได้ทำ) · TG · งดเหล้า</li><li><b>คัดกรองเบาหวาน</b>: glucose + HbA1c <b>ทุก 12 เดือน</b> เริ่ม 3–6 เดือนหลังหาย <span class="rec s1">IAP #88</span></li><li>Steatorrhea/น้ำหนักลด + fecal elastase ต่ำ → enzyme replacement</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ปวดท้องส่วนบน</b>Lipase &gt;3× ULN → AP (CT เฉพาะเมื่อไม่ชัด)<br>US ถุงน้ำดี · Ca · TG · LFT · SIRS/BISAP · Marshall</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ทุกราย 24–48 ชม.แรก</b></div>
+      <div class="node dx green"><b>LR 1.5 mL/kg/h</b> (bolus 10 mL/kg ถ้าขาดน้ำ) · ระงับปวด · <b>กินเร็ว</b> · ไม่ให้ antibiotic ป้องกัน</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Cholangitis</span><div class="node red"><b>ERCP เร่งด่วน</b>+ antibiotic</div></div>
+        <div class="arm"><span class="lab">Organ failure</span><div class="node dx hypo"><b>ICU</b>Marshall ≥2 · &gt;48 ชม. = severe<br>CT ≥72 ชม. ถ้าไม่ดีขึ้น<br>Infected necrosis → step-up</div></div>
+        <div class="arm"><span class="lab">Mild</span><div class="node dx eu"><b>ดีขึ้นเร็ว</b>นิ่ว → cholecystectomy ใน admission<br>TG สูง → insulin, fibrate<br>Alcohol → brief intervention</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool" id="tMar" style="margin-top:12px">
+    <h3>Modified Marshall + ความรุนแรงตาม Revised Atlanta</h3>
+    <div class="fields">
+      <label class="f">PaO₂ (mmHg)<input type="number" id="mPa" value="80"></label>
+      <label class="f">FiO₂ (0.21–1.0)<input type="number" id="mFi" step="0.01" value="0.4"></label>
+      <label class="f">Creatinine<input type="number" id="mCr" step="0.1" value="1.6"></label>
+      <label class="f">หน่วย Cr<select id="mCu"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">ระบบไหลเวียน<select id="mCv"><option value="0" selected>SBP ≥90</option><option value="1">SBP &lt;90 ตอบสนองต่อสารน้ำ</option><option value="2">SBP &lt;90 ไม่ตอบสนอง</option><option value="3">SBP &lt;90 + pH &lt;7.3</option><option value="4">SBP &lt;90 + pH &lt;7.2</option></select></label>
+      <label class="f">Organ failure นานเท่าไร<select id="mDur"><option value="lt">หายภายใน 48 ชม. / ยังไม่ถึง 48 ชม.</option><option value="gt">คงอยู่ &gt;48 ชม.</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="mLoc"> มีภาวะแทรกซ้อนเฉพาะที่ (collection/necrosis)</label><label><input type="checkbox" id="mCom"> โรคประจำตัวกำเริบ</label><label><input type="checkbox" id="mCkd"> มี CKD เดิม (Cr พื้นฐาน ≥1.4 mg/dL)</label></div>
+    <div class="out" id="marOut"></div>
+  </div>
+  <div class="tool" id="tBis" style="margin-top:12px">
+    <h3>BISAP และ SIRS</h3>
+    <div class="fields">
+      <label class="f">BUN (mg/dL)<input type="number" id="bBun" value="28"></label>
+      <label class="f">อายุ (ปี)<input type="number" id="bAge" value="64"></label>
+      <label class="f">อุณหภูมิ (°C)<input type="number" id="bT" step="0.1" value="38.4"></label>
+      <label class="f">HR<input type="number" id="bHr" value="112"></label>
+      <label class="f">RR<input type="number" id="bRr" value="22"></label>
+      <label class="f">WBC (×10³/µL)<input type="number" id="bW" step="0.1" value="14.5"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="bMs"> สับสน/GCS &lt;15</label><label><input type="checkbox" id="bPe"> Pleural effusion</label><label><input type="checkbox" id="bCo2"> PaCO₂ &lt;32 mmHg</label><label><input type="checkbox" id="bBand"> Band &gt;10%</label></div>
+    <div class="out" id="bisOut"></div>
+  </div>
+  <div class="tool plan" id="tFl" style="margin-top:12px">
+    <h3>สารน้ำ 24 ชม.แรก (moderate ตาม WATERFALL/IAP 2025)</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="fW" value="60"></label>
+      <label class="f">Hct (%)<input type="number" id="fH" step="0.1" placeholder="เช่น 46"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="fHypo"> Hypovolemia/ความดันต่ำ</label><label><input type="checkbox" id="fHf"> หัวใจล้มเหลว/LVEF ต่ำ</label><label><input type="checkbox" id="fCkd"> CKD/ฟอกไต</label><label><input type="checkbox" id="fCa"> Ca สูง (ใช้ NSS)</label></div>
+    <div class="out" id="flOut"></div>
+  </div>
+  <div class="tool" id="tTg" style="margin-top:12px">
+    <h3>แปลผล TG และ ALT หาสาเหตุ</h3>
+    <div class="fields">
+      <label class="f">Triglyceride<input type="number" id="gTg" value="1650"></label>
+      <label class="f">หน่วย<select id="gU"><option value="mg">mg/dL</option><option value="mmol">mmol/L</option></select></label>
+      <label class="f">ALT (U/L)<input type="number" id="gAlt" placeholder="เช่น 40"></label>
+      <label class="f">Corrected Ca (mg/dL)<input type="number" id="gCa" step="0.1" placeholder="เช่น 9.2"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="gUs"> US พบนิ่วในถุงน้ำดี/ท่อน้ำดีขยาย</label><label><input type="checkbox" id="gEt"> ดื่มสุราหนักต่อเนื่อง</label><label><input type="checkbox" id="gDm"> เบาหวาน</label><label><input type="checkbox" id="gOf"> Organ failure</label></div>
+    <div class="out" id="tgOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>2 ใน 3</b> — ปวด + lipase &gt;3× เพียงพอ ไม่ต้อง CT</div></div>
+    <div class="pearl"><div><b>ระดับ lipase ไม่บอกความรุนแรง</b> ไม่ต้องตรวจซ้ำ</div></div>
+    <div class="pearl"><div><b>US ถุงน้ำดี + Ca + TG ทุกราย</b></div></div>
+    <div class="pearl"><div><b>LR 1.5 mL/kg/h</b> · bolus 10 mL/kg เมื่อขาดน้ำ · aggressive = overload</div></div>
+    <div class="pearl"><div><b>Severe = organ failure &gt;48 ชม.</b> ไม่ใช่ CT หรือ lipase</div></div>
+    <div class="pearl"><div><b>กินเร็ว</b> อาหารแข็งไขมันต่ำเมื่อหิว · กินไม่ได้ → NG feeding ได้</div></div>
+    <div class="pearl"><div><b>ไม่ให้ antibiotic ป้องกัน</b> แม้ necrosis มาก</div></div>
+    <div class="pearl"><div><b>ERCP เร่งด่วนเฉพาะ cholangitis</b></div></div>
+    <div class="pearl"><div><b>Mild biliary AP → ผ่าตัดถุงน้ำดีใน admission เดียวกัน</b></div></div>
+    <div class="pearl"><div><b>CT ≥72–96 ชม.</b> เมื่อไม่ดีขึ้น · necrosis หัตถการหลังผนังหุ้ม ~4 สัปดาห์</div></div>
+    <div class="pearl"><div><b>TG &gt;1,000 → insulin</b> · ระวัง propofol/lipid</div></div>
+    <div class="pearl"><div><b>คัดกรองเบาหวานทุกปี</b> หลังหาย</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../ugib/index.html">UGIB →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../lipid/index.html">Dyslipidemia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) IAP/APA/EPC/IPC/JPS Working Group. International Association of Pancreatology Revised Guidelines on Acute Pancreatitis 2025. Pancreatology 2025;25:770–814. doi:10.1016/j.pan.2025.04.020 · 2) Tenner S, Vege SS, Sheth SG, et al. American College of Gastroenterology Guidelines: Management of Acute Pancreatitis. Am J Gastroenterol 2024;119:419–37 · 3) Banks PA, et al. Classification of acute pancreatitis—2012: revision of the Atlanta classification and definitions by international consensus. Gut 2013;62:102–11 · 4) de-Madaria E, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis (WATERFALL). N Engl J Med 2022;387:989–1000 · 5) Wu BU, et al. The early prediction of mortality in acute pancreatitis: BISAP. Gut 2008;57:1698–703 · 6) Cárdenas-Jaén K, et al. Ibero-Latin American Guidelines on Acute Pancreatitis (iLATAM-AP). United European Gastroenterol J 2026;14(5):e70190 · 7) Tenner S, et al. ACG guideline: management of acute pancreatitis. Am J Gastroenterol 2013;108:1400–15<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','paView');
+mountWalker({
+ start:{q:'ปวดท้องส่วนบนเข้าได้ + lipase/amylase >3× ULN?',o:[['ใช่ทั้งสองข้อ','dx'],['มีข้อเดียว','ct']]},
+ ct:{leaf:true,cls:'warn',t:'วินิจฉัยยังไม่ครบ 2 ใน 3',b:'ทำภาพรังสี (CECT/MRI; US ช่วยดูนิ่ว) เพื่อยืนยันและแยกโรคอื่น: ลำไส้ทะลุ/ขาดเลือด AAA acute coronary syndrome/MI · lipase สูงเล็กน้อยพบได้ในไตวาย/DKA',next:['ถ้ายืนยันว่าเป็น AP','dx']},
+ dx:{q:'มี cholangitis (ไข้ เหลือง ท่อน้ำดีอักเสบ/อุดตัน)?',o:[['ใช่','chol'],['ไม่','of']]},
+ chol:{leaf:true,cls:'danger',t:'Biliary AP + cholangitis',b:'<b>ERCP/sphincterotomy เร่งด่วน</b> (ACG 2024: ภายใน 24 ชม.) + antibiotic ครอบคลุม biliary sepsis · LR 1.5 mL/kg/h · ส่งต่อ รพ.ที่ทำ ERCP ได้'},
+ of:{q:'มี organ failure (Modified Marshall ≥2: P/F ≤300, Cr ≥1.9 mg/dL, SBP <90 ไม่ตอบสนองสารน้ำ)?',o:[['มี','icu'],['ไม่มี','cause']]},
+ icu:{leaf:true,cls:'danger',t:'Organ failure → ICU',b:'LR โดยประเมินซ้ำ (ไม่ aggressive) · vasopressor ถ้าไม่ตอบสนอง · ประเมินที่ 48 ชม.: คงอยู่ = <b>severe</b> · enteral feeding (NG/NJ) ภายใน 72 ชม. · <b>ไม่ให้ antibiotic ป้องกัน</b> · CT ≥72–96 ชม. ถ้าไม่ดีขึ้น · วัด bladder pressure · ไม่มีทีม → ส่งต่อ',next:['ถ้าต่อมาแย่ลงหลังสัปดาห์แรก','nec']},
+ nec:{q:'สงสัย infected necrosis (ไข้ แย่ลง ฟองอากาศใน collection/เพาะเชื้อบวก)?',o:[['ใช่','inf'],['ไม่ (sterile)','ster']]},
+ inf:{leaf:true,cls:'violet',t:'Infected necrosis — step-up',b:'ยาที่เข้าเนื้อตับอ่อนได้ดี (เช่น <b>piperacillin-tazobactam, cephalosporin รุ่น 3–4, carbapenem, quinolone</b> ± metronidazole ตามเชื้อในพื้นที่) + โภชนาการ · คงที่ → รอให้ผนังหุ้ม (~4 สัปดาห์) · แย่ลง → percutaneous/endoscopic drainage → minimally invasive necrosectomy ถ้ายังไม่ดีขึ้น'},
+ ster:{leaf:true,cls:'ok',t:'Sterile necrosis',b:'รักษาประคับประคอง · ไม่ให้ antibiotic · หัตถการเฉพาะ WON ที่มีอาการต่อเนื่อง (gastric outlet obstruction, ปวด, กินไม่ได้) หลัง ~4 สัปดาห์'},
+ cause:{q:'สาเหตุหลักจาก US/แล็บ?',o:[['นิ่ว','bil'],['TG >1,000 mg/dL','tg'],['แอลกอฮอล์','alc'],['ไม่พบ','idio']]},
+ bil:{leaf:true,cls:'ok',t:'Mild biliary AP',b:'LR 1.5 mL/kg/h · กินอาหารไขมันต่ำเมื่อหิว · <b>cholecystectomy ใน admission เดียวกัน</b> · สงสัยนิ่วค้างท่อ (ไม่มี cholangitis) → MRCP/EUS ก่อน ERCP'},
+ tg:{leaf:true,cls:'warn',t:'HTG-induced AP',b:'<b>IV insulin + dextrose</b> (เบาหวานให้แน่นอน) · งดอาหาร ~48 ชม. · ห้าม lipid emulsion ถ้า TG ≥400 (ระวัง propofol) · plasmapheresis เมื่อ organ failure คงอยู่ · หลังจำหน่าย fibrate คุมเบาหวาน <b>TG <500</b>'},
+ alc:{leaf:true,cls:'warn',t:'Alcohol-associated AP',b:'<b>Brief alcohol intervention</b> ระหว่างนอน · thiamine · เฝ้า withdrawal (CIWA-Ar) · งดบุหรี่ · เป็นซ้ำ → ประเมิน chronic pancreatitis'},
+ idio:{leaf:true,cls:'violet',t:'ยังไม่พบสาเหตุ',b:'ทบทวนยา Ca TG (เจาะเร็ว) · <b>US ซ้ำหลังจำหน่าย → EUS → MRI/MRCP</b> · อายุ >40 ปี คิดถึงเนื้องอก/IPMN · เป็นซ้ำ → พิจารณา genetic testing'}
+},'apTrail','apStage');
+
+function mar(){
+  const pa=num('mPa'),fi=num('mFi'),cr0=num('mCr'),cv=+$('mCv').value,gt=$('mDur').value==='gt';
+  const L=[];
+  let r=null,k=null;
+  if(pa!==null&&fi){let f=fi>1?fi/100:fi;const pf=pa/f;r=pf>400?0:pf>300?1:pf>200?2:pf>101?3:4;L.push(`P/F = ${Math.round(pf)} → ระบบหายใจ <b>${r}</b>`);}
+  if(cr0!==null){if($('mCu').value==='mg'){k=cr0<1.4?0:cr0<1.9?1:cr0<=3.6?2:cr0<=4.9?3:4;L.push(`Cr ${cr0} mg/dL → ไต <b>${k}</b>`);}else{k=cr0<134?0:cr0<170?1:cr0<=310?2:cr0<=439?3:4;L.push(`Cr ${Math.round(cr0)} µmol/L → ไต <b>${k}</b>`);}}
+  L.push(`ระบบไหลเวียน <b>${cv}</b>`);
+  const sc=[r,k,cv].filter(x=>x!==null);const mx=Math.max(...sc);
+  const ofs=[r>=2?'หายใจ':null,k>=2?'ไต':null,cv>=2?'ไหลเวียน':null].filter(Boolean);
+  let sev,cls;
+  if(mx>=2){
+    L.push(`<b>Organ failure: ${ofs.join(', ')}</b> (${ofs.length>1?'multiple':'single'} organ) → <b>ICU/HDU</b>`);
+    if(gt){sev='SEVERE (persistent organ failure >48 ชม.)';}
+    else{sev='อย่างน้อย MODERATELY SEVERE — ประเมินซ้ำที่ 48 ชม. (คงอยู่ = severe)';}
+  }else{
+    sev=($('mLoc').checked||$('mCom').checked)?'MODERATELY SEVERE (ไม่มี organ failure แต่มีภาวะแทรกซ้อนเฉพาะที่/โรคประจำตัวกำเริบ)':'MILD (ยังไม่มี organ failure — ประเมินซ้ำใน 48 ชม.แรก)';
+  }
+  L.unshift(`<b>Revised Atlanta: ${sev}</b>`);
+  if($('mCkd').checked)L.push('<b>มี CKD เดิม</b>: คะแนนไตอาจสูงจากค่าพื้นฐาน ไม่ใช่ organ failure ใหม่ — Banks 2013 ไม่มีสูตรปรับ ให้ตัดสินจากการที่ไตแย่ลงจากค่าพื้นฐาน');
+  L.push('<span class="muted">ไม่ได้ใส่ท่อ ประมาณ FiO₂: room air 0.21 · O₂ 2 L/min 0.25 · 4 L 0.30 · 6–8 L 0.40 · 9–10 L 0.50 (Banks 2013)</span>');
+  $('marOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMar input,#tMar select',mar);
+
+function bis(){
+  const bun=num('bBun'),age=num('bAge'),t=num('bT'),hr=num('bHr'),rr=num('bRr'),w=num('bW');
+  let sirs=0;const sx=[];
+  if(t!==null&&(t>38||t<36)){sirs++;sx.push('T')}
+  if(hr!==null&&hr>90){sirs++;sx.push('HR>90')}
+  if((rr!==null&&rr>20)||$('bCo2').checked){sirs++;sx.push('RR>20/PaCO₂<32')}
+  if((w!==null&&(w>12||w<4))||$('bBand').checked){sirs++;sx.push('WBC')}
+  const isS=sirs>=2;
+  const B=[];let s=0;
+  if(bun!==null&&bun>25){s++;B.push('BUN>25')}
+  if($('bMs').checked){s++;B.push('mental status')}
+  if(isS){s++;B.push('SIRS')}
+  if(age!==null&&age>60){s++;B.push('อายุ>60')}
+  if($('bPe').checked){s++;B.push('pleural effusion')}
+  const L=[`SIRS: <b>${sirs}/4</b> ${isS?'→ <b>มี SIRS</b>':'→ ไม่มี SIRS'} ${sx.length?'('+sx.join(', ')+')':''}`];
+  L.push(`<b>BISAP ${s}/5</b> ${B.length?'('+B.join(', ')+')':''} → ${s>=3?'<b>เสี่ยงสูง</b> (ตายราว 5–20% ตามการศึกษาเดิม) — เฝ้าใกล้ชิด/พิจารณา HDU':'เสี่ยงต่ำ (ตาย ≤2%)'}`);
+  L.push(isS?'IAP 2025: <b>SIRS ที่คงอยู่ถึง 48 ชม.</b> ทำนาย severe AP — ประเมิน SIRS ซ้ำที่ 48 ชม.':'ประเมินซ้ำ — SIRS อาจเกิดใน 24–48 ชม.แรก');
+  L.push('<span class="muted">คะแนนทำนายทุกตัวแม่นปานกลาง — การประเมินทางคลินิกซ้ำสำคัญกว่า</span>');
+  $('bisOut').innerHTML=L.join('<br>');
+}
+bindAll('#tBis input,#tBis select',bis);
+
+function fl(){
+  const w=num('fW'),h=num('fH');
+  if(!w){$('flOut').textContent='ใส่น้ำหนัก';return}
+  const hypo=$('fHypo').checked,hf=$('fHf').checked,ckd=$('fCkd').checked,ca=$('fCa').checked;
+  const fluid=ca?'<b>NSS</b> (Ca สูง เช่น PHPT → ใช้ NSS ไม่ใช่ LR · IAP 2025 #63)':'<b>Lactated Ringer\'s</b>';
+  const L=[];
+  if(hypo){const b=Math.round(w*10);L.push(`Bolus <b>${b} mL</b> (10 mL/kg) ใน ~2 ชม. แล้วประเมินซ้ำ`+(hf||ckd?' — <b>หัวใจ/ไตเสื่อม: ให้ทีละน้อย (เช่น 250–500 mL) ประเมินหลังทุกครั้ง</b>':''));}
+  const rate=Math.round(w*1.5);
+  L.push(`${fluid} <b>${rate} mL/h</b> (1.5 mL/kg/h) ≈ ${Math.round(rate*24/100)/10} L/24 ชม.`);
+  if(hf||ckd)L.push('ผู้ป่วยหัวใจล้มเหลว/CKD: เริ่มต่ำกว่านี้ได้ ประเมิน volume บ่อย (lung US, ฟังปอด, SpO₂, น้ำหนัก)');
+  if(h!==null)L.push(h>=44?`Hct ${h}% ≥44 → บ่งชี้ hemoconcentration · ตรวจซ้ำ 12–24 ชม. เป้า <44%`:`Hct ${h}% — ใช้ติดตามแนวโน้ม`);
+  L.push('<b>ประเมินซ้ำ</b> (WATERFALL: ที่ 3, 12, 24, 48, 72 ชม.) — hypovolemia → bolus เพิ่ม · fluid overload → ลด/หยุด · ไม่มีปัญหาและกินได้ → หยุด IV เร็ว');
+  L.push('เป้า: MAP 65–85 · ปัสสาวะ ≥0.5 mL/kg/h · BUN <20 · Hct <44%');
+  L.push(`<span class="muted">เทียบ aggressive arm (ไม่แนะนำ): bolus 20 mL/kg (${Math.round(w*20)} mL) + 3 mL/kg/h (${Math.round(w*3)} mL/h) → overload 20.5% vs 6.3%</span>`);
+  $('flOut').innerHTML=L.join('<br>');
+}
+bindAll('#tFl input,#tFl select',fl);
+
+function tg(){
+  let v=num('gTg');const alt=num('gAlt'),ca=num('gCa');const L=[];
+  if(v!==null){const mg=$('gU').value==='mmol'?v*88.5:v;
+    if(mg>1000){L.push(`TG ${Math.round(mg)} mg/dL (${(mg/88.5).toFixed(1)} mmol/L) <b>>1,000 → HTG น่าเป็นสาเหตุ</b>`);
+      L.push(($('gDm').checked?'เบาหวาน → <b>IV insulin infusion</b> (+ dextrose เมื่อน้ำตาลลด)':'ไม่เป็นเบาหวาน → <b>พิจารณา insulin เป็นอันดับแรก</b>')+' · ติดตาม TG ทุก 12–24 ชม. · ห้าม lipid emulsion/ระวัง propofol');
+      if($('gOf').checked)L.push('<b>Organ failure คงอยู่ + TG สูงมาก</b> → พิจารณา plasmapheresis (โดยเฉพาะมี AKI) — หลักฐานต่ำ');
+      L.push('หลังหาย: fibrate ± omega-3 · คุมเบาหวาน งดเหล้า · เป้า TG <500 mg/dL');}
+    else if(mg>=500)L.push(`TG ${Math.round(mg)} mg/dL: 500–1,000 สนับสนุน (iLATAM-AP 2026: >500 ชี้นำสูง) อาจเป็นสาเหตุ/ร่วม (โดยเฉพาะเจาะช้า/อดอาหารแล้ว) · ห้าม lipid emulsion ถ้า ≥400`);
+    else L.push(`TG ${Math.round(mg)} mg/dL: ไม่น่าเป็นสาเหตุ (ถ้าเจาะภายใน 24–72 ชม.แรก)${mg>=400?' · ยังห้าม lipid emulsion (≥400)':''}`);
+  }
+  if(alt!==null)L.push(alt>150?`ALT ${alt} >150 U/L ภายใน 48 ชม.แรก → <b>สนับสนุน biliary</b> (PPV >85% แม้ US ไม่เห็นนิ่ว)`:`ALT ${alt}: ไม่สูงมาก ไม่ตัด biliary`);
+  if($('gUs').checked)L.push('<b>นิ่ว/ท่อน้ำดีขยาย → biliary AP</b>: mild → cholecystectomy ใน admission · cholangitis → ERCP เร่งด่วน');
+  if(ca!==null)L.push(ca>10.5?`Ca ${ca} สูง → หาสาเหตุ (PTH) — hypercalcemia เป็นสาเหตุได้`:ca<8?`Ca ${ca} ต่ำ — พบใน AP รุนแรง (saponification) · ติดตาม/ทดแทนถ้ามีอาการ`:`Ca ${ca} ปกติ`);
+  if($('gEt').checked)L.push('ดื่มหนัก → alcohol-associated (ถ้าไม่มีสาเหตุอื่น) · brief intervention · thiamine');
+  if(!L.length)L.push('ใส่ค่า');
+  $('tgOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTg input,#tTg select',tg);
+
+mountQuiz([
+ ['ชาย 45 ปี ปวดท้องส่วนบนร้าวไปหลัง 6 ชม. lipase 1,200 U/L (ULN 60) สัญญาณชีพปกติ ขั้นต่อไปที่เหมาะสมที่สุด',
+  ['CECT ช่องท้องทันที','US ช่องท้อง + LR + ระงับปวด','MRCP','ERCP'],1,'วินิจฉัยครบ 2 ใน 3 แล้ว ไม่ต้อง CT · US หานิ่วทุกราย'],
+ ['อัตราสารน้ำที่แนะนำใน AP ทั่วไปที่ไม่มีภาวะขาดน้ำ (IAP 2025/ACG 2024)',
+  ['LR 3 mL/kg/h','LR 1.5 mL/kg/h','NSS 250 mL/h ทุกคน','D5W 1 mL/kg/h'],1,'WATERFALL: aggressive (3 mL/kg/h) overload มากกว่าโดยไม่ดีขึ้น'],
+ ['ข้อใดนิยาม severe AP ตาม Revised Atlanta',
+  ['Lipase >10× ULN','Necrosis >30% บน CT','Organ failure คงอยู่ >48 ชม.','BISAP ≥3'],2,'ความรุนแรงตัดสินจาก persistent organ failure'],
+ ['ผู้ป่วย necrotizing pancreatitis 40% วันที่ 3 ไม่มีไข้ ควรให้ antibiotic หรือไม่',
+  ['ให้ imipenem ป้องกัน','ไม่ให้ prophylaxis','ให้ fluconazole','ให้ probiotics'],1,'ไม่ให้ prophylactic antibiotic ไม่ว่า necrosis มากเท่าไร'],
+ ['Biliary AP ไม่มี cholangitis bilirubin ปกติ ควรทำ ERCP เมื่อใด',
+  ['ภายใน 24 ชม.','ภายใน 72 ชม.','ไม่ทำ early ERCP ถ้าสงสัยนิ่วค้างให้ MRCP/EUS ก่อน','ทำทุกรายก่อนผ่าตัด'],2,'Early ERCP เฉพาะ cholangitis'],
+ ['Mild gallstone pancreatitis ดีขึ้นใน 3 วัน ควรผ่าตัดถุงน้ำดีเมื่อใด',
+  ['6–8 สัปดาห์','ใน admission เดียวกัน','เมื่อเป็นซ้ำ','ไม่ต้องผ่าตัด'],1,'รอนานเสี่ยงกลับมาเป็นซ้ำ'],
+ ['หญิงตั้งครรภ์ 30 สัปดาห์ AP TG 2,400 mg/dL ไม่มี organ failure ข้อใดเหมาะ',
+  ['Propofol sedation','IV insulin + dextrose งดอาหาร','Plasmapheresis ทันทีทุกราย','IV lipid emulsion'],1,'Insulin ทางเลือกแรก · plasmapheresis เมื่อ organ failure คงอยู่ · ห้าม lipid ถ้า TG ≥400'],
+ ['Mild AP วันที่ 2 ผู้ป่วยหิว ไม่อาเจียน ควรให้อาหารอย่างไร',
+  ['NPO จน lipase ปกติ','เริ่มน้ำใสก่อน 3 วัน','อาหารแข็งไขมันต่ำได้เลย','TPN'],2,'IAP 2025 #22'],
+ ['ควรทำ CECT เพื่อประเมิน necrosis เมื่อใด',
+  ['ทันทีที่มาถึงทุกราย','≥72–96 ชม.หลังเริ่มปวด ถ้าไม่ดีขึ้น','ทุก 48 ชม.','เมื่อ lipase สูง >10×'],1,'CT เร็วเกินไป underestimate necrosis']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
