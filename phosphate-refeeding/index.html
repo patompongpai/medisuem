@@ -1,0 +1,706 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hypo/Hyperphosphatemia · Refeeding syndrome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Electrolytes · Nutrition · ASPEN 2020 · NICE CG32 · KDIGO CKD-MBD 2017</div>
+  <h1>ฟอสเฟตต่ำ/สูง และ Refeeding syndrome<br>Hypo/Hyperphosphatemia · Refeeding</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ฟอสเฟตเป็นเกลือแร่ที่มักลืมตรวจ แต่ต่ำมากทำให้ <b>หายใจล้มเหลว หัวใจบีบตัวอ่อน กล้ามเนื้อสลาย และเม็ดเลือดแดงแตก</b> · ผู้ที่เสี่ยงที่สุดคือผู้ป่วยที่ <b>กินไม่ได้นานแล้วเริ่มให้อาหาร</b> (refeeding), ผู้ติดสุรา และ DKA ระหว่างรักษา · หน้านี้ครอบคลุมสาเหตุ วิธีแยก การให้ฟอสเฟตทางปาก/หลอดเลือด การป้องกัน refeeding syndrome และการจัดการฟอสเฟตสูง</p>
+  <p class="cite">อ้างอิงหลัก: da Silva JSV, et al. ASPEN consensus recommendations for refeeding syndrome (Nutr Clin Pract 2020;35:178–95) · NICE CG32. Nutrition support for adults (2006, updated 2017) · KDIGO 2017 CKD-MBD guideline update (Kidney Int Suppl 2017;7:1–59) · Felsenfeld AJ, Levine BS. Approach to treatment of hypophosphatemia (Am J Kidney Dis 2012;60:655–61) · Brown KA, et al. A new graduated dosing regimen for phosphorus replacement in patients receiving nutrition support (JPEN 2006;30:209–14) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>P &lt;1 mg/dL = อันตราย</b>หายใจล้มเหลว ถอดเครื่องช่วยหายใจไม่ได้ หัวใจวาย rhabdo hemolysis → ให้ทางหลอดเลือด</div>
+    <div class="stage" style="--c:var(--warn)"><b>Refeeding</b>กินน้อย &gt;5–10 วัน แล้วเริ่มอาหาร → P/K/Mg ดิ่ง · <b>thiamine ก่อน</b> เริ่มช้า 10–20 kcal/kg (NICE ≤10, เสี่ยงสูงมาก 5)</div>
+    <div class="stage" style="--c:var(--accent)"><b>P สูง</b>ส่วนใหญ่จากไตวาย · เฉียบพลัน: tumor lysis, rhabdo, ยาสวนที่มีฟอสเฟต · เรื้อรัง: อาหาร + ยาจับฟอสเฟต</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#basic">ฟอสเฟตพื้นฐาน</a><a href="#cause">ฟอสเฟตต่ำ: สาเหตุ</a><a href="#sx">อาการ · ความรุนแรง</a><a href="#work">แยกสาเหตุด้วยปัสสาวะ</a><a href="#rx">ให้ฟอสเฟต</a><a href="#rfs">Refeeding: ใครเสี่ยง</a><a href="#prev">เริ่มอาหารอย่างปลอดภัย</a><a href="#rfsrx">เมื่อเกิด refeeding</a><a href="#hyper">ฟอสเฟตสูง: สาเหตุ</a><a href="#hyprx">ฟอสเฟตสูง: รักษา</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="basic" class="col">
+  <div class="sec-num">01</div>
+  <h2>ฟอสเฟตพื้นฐาน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ค่าที่ต้องจำ</h4><ul><li>ปกติ (ผู้ใหญ่) <b>2.5–4.5 mg/dL</b> (0.81–1.45 mmol/L)</li><li>แปลงหน่วย: <b>mmol/L × 3.1 = mg/dL</b></li><li>ต่ำเล็กน้อย 2.0–2.5 · ปานกลาง 1.0–1.9 · <b>รุนแรง &lt;1.0 mg/dL</b> (&lt;0.32 mmol/L)</li><li>1 g ฟอสฟอรัส ≈ <b>32 mmol</b></li><li>85% อยู่ในกระดูก · ในเลือดน้อยมาก → ค่าในเลือดปกติไม่ได้แปลว่าในร่างกายปกติ</li></ul></div>
+    <div class="card c-warn"><h4>ฟอสเฟตทำอะไร</h4><ul><li>สร้าง <b>ATP</b> (พลังงานกล้ามเนื้อ หัวใจ กะบังลม)</li><li><b>2,3-DPG</b> ในเม็ดเลือดแดง → ส่งออกซิเจนให้เนื้อเยื่อ</li><li>ควบคุมโดย PTH (ขับทิ้งทางไต), vitamin D (ดูดซึม), FGF23 (ขับทิ้งทางไต)</li><li>ไตเป็นอวัยวะหลักที่รักษาสมดุล → <b>ไตวายจึงทำให้ฟอสเฟตสูง</b></li></ul></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="cause" class="col">
+  <div class="sec-num">02</div>
+  <h2>ฟอสเฟตต่ำ: 3 กลไก</h2>
+  <div class="tbl"><table>
+    <tr><th>กลไก</th><th>สาเหตุที่พบบ่อย</th></tr>
+    <tr><td><b>ย้ายเข้าเซลล์</b> (พบบ่อยที่สุดใน รพ.)</td><td><b>Refeeding</b> (อาหารทางปาก/สาย/หลอดเลือด, glucose IV) · <b>รักษา DKA ด้วย insulin</b> (หน้า <a href="../dka-hhs/index.html">DKA/HHS</a>) · <b>ถอนสุรา</b> · respiratory alkalosis (sepsis หายใจเร็ว ตับวาย ภาวะหายใจหอบ) · hungry bone หลังผ่าตัด parathyroid · ยา: salbutamol, catecholamine</td></tr>
+    <tr><td><b>ดูดซึมลดลง</b></td><td>กินน้อย/ขาดอาหาร · <b>สุรา</b> · ยาลดกรดที่มี Al/Mg, ยาจับฟอสเฟตเกินขนาด · ขาด vitamin D · ท้องเสียเรื้อรัง/ดูดซึมผิดปกติ</td></tr>
+    <tr><td><b>ไตขับทิ้งมาก</b></td><td>Hyperparathyroidism · <b>Fanconi syndrome</b> (<b>tenofovir</b>, multiple myeloma, ifosfamide) · <b>ferric carboxymaltose IV</b> (ผ่าน FGF23) · osmotic diuresis (น้ำตาลสูง) · acetazolamide · ภาวะหลังไตปลูกถ่าย · โรคพันธุกรรม (XLH) · (ไม่ใช่ทางไตแต่พบบ่อยใน ICU: <b>CRRT</b> ดึงฟอสเฟตออก)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ผู้ป่วยสุราที่เข้า รพ. มักมีครบทั้ง 3 กลไก (กินน้อย + ถอนสุรา/หายใจเร็ว + เริ่มให้ glucose) · ฟอสเฟตต่ำบ่อยร่วมกับ <b>K ต่ำและ Mg ต่ำ</b> — ตรวจด้วยกันเสมอ (หน้า <a href="../hypokalemia/index.html">Hypokalemia</a>)</p>
+</section>
+
+<!-- 3 -->
+<section id="sx" class="col">
+  <div class="sec-num">03</div>
+  <h2>อาการและความรุนแรง</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ต่ำรุนแรง (&lt;1 mg/dL) หรือลดลงเร็ว</h4><ul><li><b>กล้ามเนื้ออ่อนแรง</b> · กะบังลมอ่อน → <b>หายใจล้มเหลว / ถอดเครื่องช่วยหายใจไม่ได้</b></li><li><b>หัวใจบีบตัวลดลง</b> หัวใจเต้นผิดจังหวะ</li><li><b>Rhabdomyolysis</b> (โดยเฉพาะผู้ป่วยสุรา) · ดูหน้า <a href="../rhabdo-heat/index.html">Rhabdomyolysis</a></li><li><b>Hemolysis</b> · เม็ดเลือดขาว/เกล็ดเลือดทำงานผิดปกติ</li><li>สับสน ชัก ชา โคม่า</li></ul></div>
+    <div class="card c-ok"><h4>ต่ำเล็กน้อย–ปานกลาง</h4><ul><li>มักไม่มีอาการ</li><li>เรื้อรัง: ปวดกระดูก กระดูกนิ่ม (osteomalacia) กล้ามเนื้ออ่อนแรง</li><li>ค่าที่ลดลงเร็วในผู้ป่วยหนักสำคัญกว่าค่าตัวเลขอย่างเดียว</li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="work" class="col">
+  <div class="sec-num">04</div>
+  <h2>แยกสาเหตุด้วยฟอสเฟตในปัสสาวะ</h2>
+  <p>ถ้าสาเหตุไม่ชัดจากประวัติ (refeeding, DKA, สุรา) ให้ส่งตรวจ <b>ฟอสเฟตและ creatinine ในปัสสาวะ (spot) พร้อมเลือด</b></p>
+  <div class="box key"><b>FEPO₄</b>= (urine P × serum Cr) ÷ (serum P × urine Cr) × 100 · เมื่อฟอสเฟตในเลือดต่ำ: <b>FEPO₄ &gt;5%</b> หรือ <b>ปัสสาวะ 24 ชม. &gt;100 mg/วัน</b> → <b>ไตขับทิ้ง</b> (ตรวจ Ca, PTH, vitamin D, glucose/protein/HCO₃ ในปัสสาวะหา Fanconi, ประวัติ tenofovir/ferric carboxymaltose) · <b>FEPO₄ &lt;5% / &lt;100 mg/วัน</b> → ย้ายเข้าเซลล์หรือเสียทางลำไส้</div>
+  <div class="tbl"><table>
+    <tr><th>ร่วมกับ</th><th>คิดถึง</th></tr>
+    <tr><td>Ca สูง + PTH สูง</td><td>Primary hyperparathyroidism</td></tr>
+    <tr><td>Ca ต่ำ/ปกติ + PTH สูง + vitamin D ต่ำ</td><td>ขาด vitamin D (secondary hyperparathyroidism)</td></tr>
+    <tr><td>Glycosuria โดยน้ำตาลในเลือดปกติ + proteinuria + HCO₃ ต่ำ (normal AG)</td><td><b>Fanconi</b>: tenofovir disoproxil, myeloma, ยาบางชนิด</td></tr>
+    <tr><td>หลังได้ ferric carboxymaltose 1–3 สัปดาห์</td><td>FGF23 สูงชั่วคราว · มักหายเอง · เป็นซ้ำบ่อย → เปลี่ยนยาเหล็ก</td></tr>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section id="rx" class="col">
+  <div class="sec-num">05</div>
+  <h2>ให้ฟอสเฟต: ทางปากหรือหลอดเลือด</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>แนวทาง</th></tr>
+    <tr><td>2.0–2.5 mg/dL ไม่มีอาการ</td><td>แก้สาเหตุ · อาหารที่มีฟอสเฟต (นม ไข่ เนื้อสัตว์) · ผู้ป่วยเสี่ยง/กำลัง refeeding → ฟอสเฟตทางปาก</td></tr>
+    <tr><td>1.0–1.9 mg/dL ไม่มีอาการ กินได้</td><td><b>ทางปาก 1–2 g ฟอสฟอรัส/วัน (~30–60 mmol)</b> แบ่ง 2–4 ครั้ง · ท้องเสียเป็นผลข้างเคียงหลัก · นมพร่องมันเนย 1 ลิตร ≈ 1 g</td></tr>
+    <tr><td><b>&lt;1.0 mg/dL</b>, มีอาการ, ใส่เครื่องช่วยหายใจ, กินไม่ได้</td><td><b>ทางหลอดเลือด</b> (ดูตารางล่าง) แล้วเปลี่ยนเป็นทางปากเมื่อทำได้</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>Phosphate ในเลือด</th><th>IV ตามน้ำหนัก (ไตปกติ) — ขนาดแบบระมัดระวัง</th></tr>
+    <tr><td>2.0–2.5 mg/dL (ถ้าจำเป็นต้องให้ IV)</td><td>0.08–0.16 mmol/kg</td></tr>
+    <tr><td>1.0–1.9 mg/dL</td><td>0.16–0.32 mmol/kg</td></tr>
+    <tr><td>&lt;1.0 mg/dL</td><td>0.32–0.64 mmol/kg (ขนาดสูงในผู้ป่วยวิกฤตที่มีการตามแล็บใกล้ชิด)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">โปรโตคอล ICU บางแห่งใช้ขนาดสูงกว่านี้: Taylor 2004 ให้ขนาดคงที่ตามช่วงน้ำหนักและระดับ P (~0.2–0.6 mmol/kg) · Brown 2006 0.32/0.64/1.0 mmol/kg (P 2.3–3.0/1.6–2.2/≤1.5) อัตรา 7.5 mmol/ชม. — ใช้เฉพาะที่ตามแล็บได้ใกล้ชิดและไตปกติ</p>
+  <div class="grid2">
+    <div class="card c-warn"><h4>วิธีให้อย่างปลอดภัย</h4><ul><li>หยดใน <b>4–6 ชม.</b> · อัตราไม่เกินราว <b>7.5 mmol/ชม.</b> (ตามโปรโตคอลของ รพ.)</li><li>คนอ้วน: คำนวณด้วย adjusted body weight · ต่อ dose ส่วนใหญ่ไม่เกิน ~50 mmol</li><li><b>ไตเสื่อม (CrCl &lt;30)/AKI: ลดขนาดลงครึ่งหนึ่ง</b> และตามบ่อย</li><li>ตรวจซ้ำ <b>2–6 ชม.หลังให้ครบ</b> พร้อม Ca, K, Mg</li><li>อ่านฉลาก: <b>potassium phosphate</b> มี K ด้วย (ระวัง K สูง/อัตรา K) · <b>sodium glycerophosphate</b> (เช่น Glycophos 1 mmol P + 2 mmol Na ต่อ mL) มี Na</li><li><b>ห้ามผสมสายเดียวกับ calcium</b> (ตกตะกอน)</li></ul></div>
+    <div class="card c-red"><h4>อันตรายจากการให้มากหรือเร็วเกิน</h4><ul><li><b>Ca ต่ำเฉียบพลัน</b> (tetany หัวใจเต้นผิดจังหวะ)</li><li>Ca-P ตกตะกอนในเนื้อเยื่อ/ไต → AKI</li><li>K สูง (ถ้าใช้ potassium phosphate)</li><li><b>ไม่ให้ IV เมื่อ Ca สูง</b> หรือฟอสเฟตปกติ/สูงอยู่แล้ว</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="rfs" class="col">
+  <div class="sec-num">06</div>
+  <h2>Refeeding syndrome: ใครเสี่ยง</h2>
+  <p>เมื่อเริ่มให้อาหาร (โดยเฉพาะ <b>คาร์โบไฮเดรต</b>) หลังอดนาน → insulin หลั่ง → <b>P, K, Mg ไหลเข้าเซลล์</b> + ใช้ <b>thiamine</b> เพิ่ม + เก็บ Na และน้ำ → หัวใจวาย น้ำเกิน หายใจล้มเหลว หัวใจเต้นผิดจังหวะ Wernicke encephalopathy · เกิดได้ทั้งอาหารทางปาก ทางสาย และทางหลอดเลือด รวมถึง glucose IV อย่างเดียว</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>เสี่ยงสูง (NICE CG32): มี ≥1 ข้อ</h4><ul><li>BMI <b>&lt;16</b> kg/m²</li><li>น้ำหนักลดโดยไม่ตั้งใจ <b>&gt;15%</b> ใน 3–6 เดือน</li><li>กินน้อยมาก/ไม่ได้กิน <b>&gt;10 วัน</b></li><li><b>K, P หรือ Mg ต่ำก่อนเริ่มอาหาร</b></li></ul></div>
+    <div class="card c-warn"><h4>หรือมี ≥2 ข้อ</h4><ul><li>BMI &lt;18.5</li><li>น้ำหนักลด &gt;10% ใน 3–6 เดือน</li><li>กินน้อยมาก &gt;5 วัน</li><li>ประวัติ <b>สุรา</b> หรือยา: insulin, เคมีบำบัด, ยาลดกรด, diuretic</li></ul></div>
+  </div>
+  <div class="box note"><b>ผู้ป่วยที่เจอบ่อยในไทย <span class="tag add">ไทย</span></b>ผู้สูงอายุติดเตียงกินไม่ได้หลายวันแล้วเริ่มใส่สายให้อาหาร · stroke กลืนไม่ได้ · มะเร็ง/HIV ผอมมาก · ติดสุรา · anorexia nervosa · ผู้ป่วย ICU ที่งดอาหารนาน · หลังผ่าตัดลำไส้ · <b>เสี่ยงสูงมาก</b>: BMI &lt;14 หรือแทบไม่ได้กิน &gt;15 วัน</div>
+  <p class="muted" style="font-size:.88rem">นิยาม ASPEN 2020: P, K และ/หรือ Mg ลดลง <b>10–20% (mild), 20–30% (moderate), &gt;30% หรือมีอวัยวะผิดปกติ/ขาด thiamine (severe)</b> ภายใน 5 วันหลังเริ่มให้พลังงาน</p>
+</section>
+
+<!-- 7 -->
+<section id="prev" class="col">
+  <div class="sec-num">07</div>
+  <h2>เริ่มอาหารอย่างปลอดภัย</h2>
+  <div class="tbl"><table>
+    <tr><th>เรื่อง</th><th>ASPEN 2020</th><th>NICE CG32</th></tr>
+    <tr><td>ก่อนเริ่ม</td><td>ตรวจ P, K, Mg · แก้ค่าที่ต่ำ · ถ้า P/K/Mg <b>ต่ำมาก</b> พิจารณา<b>ชะลอการเริ่ม/เพิ่มพลังงาน</b>จนกว่าจะได้เสริมหรือกลับมาปกติ</td><td>ไม่จำเป็นต้องแก้ให้ปกติก่อนเริ่ม · ให้เสริมไปพร้อมกัน</td></tr>
+    <tr><td><b>Thiamine</b></td><td><b>100 mg ก่อนเริ่มอาหาร/ก่อน glucose IV</b> แล้ววันละ 100 mg × 5–7 วัน (นานกว่าถ้าอดนาน/สุรา)</td><td>200–300 mg/วัน + vitamin B รวม + วิตามินรวม เริ่มก่อนให้อาหารและต่อ 10 วัน</td></tr>
+    <tr><td><b>พลังงานเริ่มต้น</b></td><td><b>10–20 kcal/kg/วัน</b> (หรือ glucose 100–150 g) ใน 24 ชม.แรก · เพิ่ม <b>~33% ของเป้าทุก 1–2 วัน</b></td><td>เสี่ยงสูง: <b>ไม่เกิน 10 kcal/kg/วัน</b> · เสี่ยงสูงมาก: <b>5 kcal/kg/วัน</b> · ค่อยเพิ่มถึงเป้าใน 4–7 วัน</td></tr>
+    <tr><td>เกลือแร่เสริม</td><td>ให้ตามค่า (ไม่มีขนาดตายตัว)</td><td>K 2–4 mmol/kg/วัน · P 0.3–0.6 mmol/kg/วัน · Mg 0.2 (IV)–0.4 (กิน) mmol/kg/วัน (เว้นถ้าค่าสูงอยู่แล้ว)</td></tr>
+    <tr><td>ติดตาม</td><td><b>P, K, Mg ทุก 12 ชม. ใน 3 วันแรก</b> (เสี่ยงสูง) · สัญญาณชีพทุก 4 ชม.ใน 24 ชม.แรก · น้ำเข้าออก น้ำหนัก ทุกวัน</td><td>Electrolyte ทุกวันช่วงแรก · ECG monitor ในเสี่ยงสูงมาก</td></tr>
+    <tr><td>สารน้ำ/Na</td><td colspan="2">ระวังน้ำเกิน — ให้สารน้ำและ Na อย่างระมัดระวังในช่วงแรก</td></tr>
+  </table></div>
+  <div class="box warn"><b>อย่าทำให้ผู้ป่วยอดอาหารนานเกินเพราะกลัว refeeding</b>ความเสี่ยงคือ "เริ่มเร็วเกิน" ไม่ใช่ "เริ่มให้อาหาร" · ให้เริ่มช้า ตามแล็บ แล้วเพิ่มขึ้นจนถึงเป้า</div>
+</section>
+
+<!-- 8 -->
+<section id="rfsrx" class="col">
+  <div class="sec-num">08</div>
+  <h2>เมื่อเกิด refeeding แล้ว</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ทำทันที</h4><ul><li>P/K/Mg ลดลงเร็วหรือแก้ยาก → <b>ลดพลังงาน/glucose ลง ~50%</b> (ASPEN) แล้วค่อยเพิ่มใหม่ ~33% ทุก 1–2 วันเมื่อคงที่</li><li>แก้ <b>P</b> (หัวข้อ 05), <b>K</b>, <b>Mg</b> (Mg ต่ำทำให้แก้ K ไม่ขึ้น)</li><li><b>Thiamine ขนาดสูง</b> ถ้าสับสน ตากระตุก เดินเซ (Wernicke): เช่น 500 mg IV วันละ 3 ครั้ง</li><li>น้ำเกิน/หัวใจวาย → จำกัดน้ำและ Na, diuretic, ICU ถ้าหายใจล้มเหลว/หัวใจเต้นผิดจังหวะ</li></ul></div>
+    <div class="card c-acc"><h4>เฝ้าระวัง</h4><ul><li>มักเกิดใน <b>2–5 วันแรก</b></li><li>บวม หายใจเหนื่อย ชีพจรเร็ว หัวใจเต้นผิดจังหวะ</li><li>อ่อนแรง สับสน ชัก</li><li>น้ำตาลสูง (insulin ไม่พอ)</li><li>เมื่อเกลือแร่คงที่ ค่อยเพิ่มอาหารจนถึงเป้า</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="hyper" class="col">
+  <div class="sec-num">09</div>
+  <h2>ฟอสเฟตสูง (&gt;4.5 mg/dL): สาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>กลไก</th><th>สาเหตุ</th></tr>
+    <tr><td><b>ไตขับไม่ได้</b> (บ่อยสุด)</td><td><b>CKD</b> (เริ่มสูงชัดเมื่อ eGFR &lt;~30) · AKI · hypoparathyroidism · acromegaly · ยา bisphosphonate บางตัว</td></tr>
+    <tr><td><b>ออกจากเซลล์</b></td><td><b>Tumor lysis syndrome</b> · <b>rhabdomyolysis</b> · hemolysis · DKA ก่อนรักษา · lactic acidosis</td></tr>
+    <tr><td><b>ได้รับมาก</b></td><td><b>ยาสวน/ยาระบายที่มี sodium phosphate</b> (ผู้สูงอายุ/CKD → ฟอสเฟตสูงรุนแรง, acute phosphate nephropathy) · ให้ phosphate IV มาก · vitamin D เกิน</td></tr>
+    <tr><td><b>ค่าสูงลวง</b></td><td>Paraprotein (<b>multiple myeloma</b>) · hemolysis ในหลอดเก็บเลือด · ไขมันสูง/bilirubin สูง · heparin · <b>liposomal amphotericin B</b> · tPA (รบกวนวิธีตรวจ) → ผิดกับภาพทางคลินิก ให้ปรึกษาห้องแล็บ</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">อาการส่วนใหญ่มาจาก <b>Ca ต่ำ</b> (P จับ Ca) — tetany, ชัก, QT ยาว · ระยะยาวใน CKD: หลอดเลือดแข็งตัวจากหินปูน secondary hyperparathyroidism · ดูหน้า <a href="../hypocalcemia/index.html">Hypocalcemia</a></p>
+</section>
+
+<!-- 10 -->
+<section id="hyprx" class="col">
+  <div class="sec-num">10</div>
+  <h2>ฟอสเฟตสูง: รักษา</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>เฉียบพลัน</h4><ul><li>ไตปกติ: มักลดลงเองใน 6–12 ชม. · <b>NSS</b> ช่วยขับ (ระวังน้ำเกิน และ Ca ลดลงจากการเจือจาง)</li><li>หยุดแหล่งฟอสเฟต (ยาสวน ยาระบาย สารน้ำที่มี P)</li><li><b>P สูงมาก + Ca ต่ำมีอาการ</b> โดยเฉพาะเมื่อมี AKI/ไตเสื่อม → <b>ล้างไต</b></li><li>Ca ต่ำ: ให้ Ca <b>เฉพาะเมื่อมีอาการ</b> (tetany ชัก หัวใจ) เพราะเสี่ยงตกตะกอน Ca-P (โดยเฉพาะ Ca × P &gt;60–70)</li><li>Tumor lysis: ป้องกันด้วยสารน้ำ + allopurinol/rasburicase</li></ul></div>
+    <div class="card c-acc"><h4>เรื้อรังใน CKD (KDIGO 2017)</h4><ul><li><b>ลดฟอสเฟตที่สูงให้เข้าใกล้ค่าปกติ</b> (ไม่ได้ตั้งค่าเป้าตายตัว) · ดูแนวโน้มร่วมกับ Ca และ PTH</li><li><b>อาหาร</b>: ลด <b>สารเติมแต่งฟอสเฟตในอาหารแปรรูป</b> (ไส้กรอก แฮม น้ำอัดลมสีเข้ม อาหารสำเร็จรูป) ซึ่งดูดซึมเกือบหมด · โปรตีนจากพืชดูดซึมน้อยกว่า</li><li><b>ยาจับฟอสเฟต</b>กินพร้อมอาหาร: calcium carbonate/acetate (<b>จำกัด</b>ขนาด เลี่ยง Ca สูง), sevelamer, lanthanum, ยาที่มีธาตุเหล็ก</li><li>ล้างไตให้เพียงพอ (ผู้ป่วยฟอกเลือด)</li><li>ไม่ใช้ยาที่มี aluminium ระยะยาว</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง: ฟอสเฟตต่ำ</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Phosphate &lt;2.5 mg/dL</b>ตรวจ K, Mg, Ca, Cr, glucose ด้วย</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>รุนแรงแค่ไหน?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">&lt;1.0 / มีอาการ / ventilator</span><div class="node red"><b>IV</b>0.32–0.64 mmol/kg ใน 4–6 ชม. (ไตเสื่อม ลดครึ่ง) · ตามซ้ำ</div></div>
+        <div class="arm"><span class="lab">1.0–1.9 กินได้</span><div class="node dx hypo"><b>ทางปาก</b>1–2 g/วัน แบ่งให้ · (IV 0.16–0.32 mmol/kg ถ้ากินไม่ได้)</div></div>
+        <div class="arm"><span class="lab">2.0–2.5</span><div class="node dx green"><b>แก้สาเหตุ</b>อาหาร · ให้เสริมถ้ากำลัง refeeding</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>หาสาเหตุ</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">มีเหตุชัด</span><div class="node dx eu"><b>Refeeding · DKA · สุรา · alkalosis</b>ลดพลังงาน/thiamine/แก้ K Mg</div></div>
+        <div class="arm"><span class="lab">ไม่ชัด</span><div class="node dx eu"><b>FEPO₄</b>&gt;5% → ไตขับทิ้ง (PTH, vit D, Fanconi, ยา) · &lt;5% → ลำไส้/เข้าเซลล์</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดโปรโตคอลและความเข้มข้นของยาใน รพ. ของท่าน</p>
+  </div>
+  <div class="tool plan" id="tRf" style="margin-top:12px">
+    <h3>Refeeding: ประเมินความเสี่ยงและแผนเริ่มอาหาร</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="rW" value="38"></label>
+      <label class="f">ส่วนสูง (cm)<input type="number" id="rH" value="158"></label>
+      <label class="f">น้ำหนักลดใน 3–6 เดือน (%)<input type="number" id="rL" value="12"></label>
+      <label class="f">กินน้อยมาก/ไม่ได้กินมา (วัน)<input type="number" id="rD" value="7"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="rLow"> K/P/Mg ต่ำก่อนเริ่มอาหาร</label>
+      <label><input type="checkbox" id="rEtoh" checked> สุรา หรือได้ insulin/เคมีบำบัด/ยาลดกรด/diuretic</label>
+    </div>
+    <div class="out" id="rfOut"></div>
+  </div>
+
+  <div class="tool" id="tIv" style="margin-top:12px">
+    <h3>คำนวณฟอสเฟตทางหลอดเลือด</h3>
+    <div class="fields">
+      <label class="f">Phosphate (mg/dL)<input type="number" step="0.1" id="iP" value="0.9"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="iW" value="60"></label>
+      <label class="f">ส่วนสูง (cm) — สำหรับคนอ้วน<input type="number" id="iH" placeholder="ไม่บังคับ"></label>
+      <label class="f">เพศ<select id="iSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">CrCl (mL/min)<input type="number" id="iCr" value="70"></label>
+      <label class="f">Calcium (mg/dL)<input type="number" step="0.1" id="iCa" value="8.6"></label>
+      <label class="f">K (mmol/L)<input type="number" step="0.1" id="iK" value="3.8"></label>
+      <label class="f">ยาที่ใช้<select id="iProd"><option value="gly">Sodium glycerophosphate (1 mmol P + 2 mmol Na/mL)</option><option value="kp">Potassium phosphate (3 mmol P + 4.4 mEq K/mL)</option><option value="other">ความเข้มข้นอื่น — อ่านฉลาก</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="iSym" checked> มีอาการ/ใส่เครื่องช่วยหายใจ/กินไม่ได้</label>
+      <label><input type="checkbox" id="iIcu"> ICU ตามแล็บได้ทุก 4–6 ชม.</label>
+    </div>
+    <div class="out" id="ivOut"></div>
+  </div>
+
+  <div class="tool" id="tFe" style="margin-top:12px">
+    <h3>แปลผลฟอสเฟตต่ำ: FEPO₄</h3>
+    <div class="fields">
+      <label class="f">Serum phosphate (mg/dL)<input type="number" step="0.1" id="fSp" value="1.8"></label>
+      <label class="f">Serum creatinine (mg/dL)<input type="number" step="0.01" id="fSc" value="0.8"></label>
+      <label class="f">Urine phosphate (mg/dL)<input type="number" step="0.1" id="fUp" value="40"></label>
+      <label class="f">Urine creatinine (mg/dL)<input type="number" step="0.1" id="fUc" value="90"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fTdf"> ได้ tenofovir disoproxil</label>
+      <label><input type="checkbox" id="fFcm"> ได้ ferric carboxymaltose IV ใน 1–2 เดือน</label>
+      <label><input type="checkbox" id="fGlu"> Glycosuria ทั้งที่น้ำตาลในเลือดปกติ</label>
+      <label><input type="checkbox" id="fCa"> Ca สูง</label>
+    </div>
+    <div class="out" id="feOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>mmol/L × 3.1 = mg/dL</b> · ปกติ 2.5–4.5 mg/dL</div></div>
+    <div class="pearl"><div><b>ตรวจ P ทุกครั้งที่ตรวจ K และ Mg</b> ในผู้ป่วยเสี่ยง</div></div>
+    <div class="pearl"><div><b>P &lt;1 mg/dL หรือมีอาการ → IV</b></div></div>
+    <div class="pearl"><div><b>ไตเสื่อม → ลดขนาด IV ครึ่งหนึ่ง</b></div></div>
+    <div class="pearl"><div><b>Potassium phosphate มี K</b> · glycerophosphate มี Na</div></div>
+    <div class="pearl"><div><b>ห้ามผสม phosphate กับ calcium</b> ในสายเดียวกัน</div></div>
+    <div class="pearl"><div><b>ถอดเครื่องช่วยหายใจไม่ได้ → ดู P</b></div></div>
+    <div class="pearl"><div><b>กินน้อย &gt;5–10 วัน → thiamine ก่อนอาหาร/glucose</b></div></div>
+    <div class="pearl"><div><b>เริ่ม ASPEN 10–20 · NICE ≤10 kcal/kg</b> (เสี่ยงสูงมาก 5) แล้วค่อยเพิ่ม</div></div>
+    <div class="pearl"><div><b>P/K/Mg ทุก 12 ชม. ใน 3 วันแรก</b></div></div>
+    <div class="pearl"><div><b>P ดิ่ง → ลดอาหาร 50%</b> แล้วเพิ่มใหม่ช้าๆ</div></div>
+    <div class="pearl"><div><b>เลี่ยงยาสวนฟอสเฟตในผู้สูงอายุ/CKD</b></div></div>
+    <div class="pearl"><div><b>P สูง + Ca ต่ำ ไม่มีอาการ → ไม่ให้ Ca</b></div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hypocalcemia/index.html">Hypocalcemia →</a> · <a href="../hypokalemia/index.html">Hypokalemia →</a> · <a href="../dka-hhs/index.html">DKA/HHS →</a> · <a href="../rhabdo-heat/index.html">Rhabdomyolysis →</a> · <a href="../aki/index.html">AKI →</a></p>
+<footer class="col">
+  อ้างอิง: 1) da Silva JSV, Seres DS, Sabino K, et al. ASPEN consensus recommendations for refeeding syndrome. Nutr Clin Pract 2020;35:178–95 · 2) National Institute for Health and Care Excellence. Nutrition support for adults: oral nutrition support, enteral tube feeding and parenteral nutrition (CG32). 2006, updated 2017 · 3) KDIGO 2017 clinical practice guideline update for the diagnosis, evaluation, prevention, and treatment of CKD-MBD. Kidney Int Suppl 2017;7:1–59 · 4) Felsenfeld AJ, Levine BS. Approach to treatment of hypophosphatemia. Am J Kidney Dis 2012;60:655–61 · 5) Brown KA, Dickerson RN, Morgan LM, et al. A new graduated dosing regimen for phosphorus replacement in patients receiving nutrition support. JPEN 2006;30:209–14 · 6) Taylor BE, Huey WY, Buchman TG, et al. Treatment of hypophosphatemia using a protocol based on patient weight and serum phosphorus level in a surgical ICU. J Am Coll Surg 2004;198:198–204 · 7) Amanzadeh J, Reilly RF. Hypophosphatemia: an evidence-based approach to its clinical consequences and management. Nat Clin Pract Nephrol 2006;2:136–48 · 8) Mehanna HM, Moledina J, Travis J. Refeeding syndrome: what it is, and how to prevent and treat it. BMJ 2008;336:1495–8 · 9) Umpierrez GE, Davis GM, ElSayed NA, et al. Hyperglycemic crises in adults with diabetes: a consensus report. Diabetes Care 2024;47:1257–75<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','phView');
+mountWalker({
+ start:{q:'Phosphate เท่าไร?',o:[['ต่ำ &lt;2.5 mg/dL','lo'],['สูง &gt;4.5 mg/dL','hi']]},
+ lo:{q:'รุนแรงแค่ไหน?',o:[['&lt;1.0 หรือมีอาการ/ใส่เครื่องช่วยหายใจ/กินไม่ได้','iv'],['1.0–1.9 ไม่มีอาการ กินได้','po'],['2.0–2.5','mild']]},
+ iv:{leaf:true,cls:'danger',t:'ให้ทางหลอดเลือด',b:'0.32 mmol/kg (ICU ที่ตามแล็บใกล้ชิดได้ถึง 0.64) (1.0–1.9: 0.16–0.32) หยดใน 4–6 ชม. · <b>CrCl &lt;30/AKI ลดครึ่ง</b> · ไม่ผสมกับ Ca · ตรวจซ้ำ 2–6 ชม.หลังให้ครบ + Ca K Mg',next:['หาสาเหตุ','why']},
+ po:{leaf:true,cls:'warn',t:'ให้ทางปาก',b:'1–2 g ฟอสฟอรัส/วัน (~30–60 mmol) แบ่ง 2–4 ครั้ง · ท้องเสีย → ลดขนาด/แบ่งถี่ขึ้น',next:['หาสาเหตุ','why']},
+ mild:{leaf:true,cls:'ok',t:'แก้สาเหตุ',b:'อาหารที่มีฟอสเฟต · ถ้ากำลังเริ่มอาหารหลังอดนาน → ให้เสริมและตามแล็บ',next:['หาสาเหตุ','why']},
+ why:{q:'มีเหตุชัดไหม?',o:[['เพิ่งเริ่มอาหาร/glucose หลังกินน้อยนาน','rf'],['กำลังรักษา DKA','dka'],['สุรา/ถอนสุรา/หายใจเร็ว','etoh'],['ไม่ชัด','fe']]},
+ rf:{leaf:true,cls:'danger',t:'Refeeding syndrome',b:'<b>ลดพลังงาน ~50%</b> แล้วค่อยเพิ่ม 33% ทุก 1–2 วัน · thiamine · แก้ P K Mg · ระวังน้ำเกิน/หัวใจ · P/K/Mg ทุก 12 ชม.'},
+ dka:{leaf:true,cls:'ok',t:'ฟอสเฟตลดจาก insulin',b:'ไม่ให้ routine · พิจารณาให้เมื่อ phosphate <b>&lt;1.0 mmol/L (~3.1 mg/dL)</b> ตามเอกสาร 2024 <span class="muted">(แนวทางเดิม ADA 2009 และส่วนอื่นของหน้านี้ใช้ &lt;1.0 mg/dL — ในทางปฏิบัติให้เมื่อ P ต่ำจริงร่วมกับมีอาการ)</span> ร่วมกับกล้ามเนื้ออ่อนแรง หายใจหรือหัวใจทำงานผิดปกติ · ขนาด 20–30 mmol potassium phosphate ผสมในสารน้ำ (ADA/EASD 2024) · ดูหน้า DKA/HHS'},
+ etoh:{leaf:true,cls:'warn',t:'ผู้ป่วยสุรา',b:'มักขาดทั้ง P K Mg และ thiamine · <b>thiamine ก่อน glucose</b> · ระวัง refeeding · ดู CK (rhabdo จาก P ต่ำ)'},
+ fe:{q:'FEPO₄ (หรือ urine P 24 ชม.)?',o:[['&gt;5% / &gt;100 mg/วัน','ren'],['&lt;5% / &lt;100 mg/วัน','gi']]},
+ ren:{leaf:true,cls:'warn',t:'ไตขับทิ้ง',b:'Ca + PTH + 25-OH vitamin D · Ca สูง + PTH สูง → primary HPT · glycosuria/proteinuria/HCO₃ ต่ำ → Fanconi (tenofovir, myeloma) · ferric carboxymaltose · เป็นแต่เด็ก → พันธุกรรม'},
+ gi:{leaf:true,cls:'ok',t:'เสียทางลำไส้หรือย้ายเข้าเซลล์',b:'กินน้อย ท้องเสียเรื้อรัง ยาลดกรด/ยาจับฟอสเฟต · respiratory alkalosis · hungry bone'},
+ hi:{q:'ค่าสูงตรงกับภาพทางคลินิกไหม?',o:[['ไม่ตรง (เช่น myeloma, ได้ L-AmB, ตัวอย่างเลือด hemolysis)','pseudo'],['ตรง','hc']]},
+ pseudo:{leaf:true,cls:'ok',t:'คิดถึงค่าสูงลวง',b:'Paraprotein, hemolysis, ไขมัน/bilirubin สูง, heparin, liposomal amphotericin B · ปรึกษาห้องแล็บ/ตรวจวิธีอื่น'},
+ hc:{q:'ไตเป็นอย่างไร?',o:[['CKD เรื้อรัง','ckd'],['AKI หรือมีเหตุเฉียบพลัน (TLS, rhabdo, ยาสวน)','acute']]},
+ ckd:{leaf:true,cls:'ok',t:'CKD-MBD',b:'ลดเข้าหาค่าปกติ · ลดสารเติมแต่งฟอสเฟตในอาหารแปรรูป · ยาจับฟอสเฟตกินพร้อมอาหาร (จำกัด calcium-based) · ดู Ca PTH ร่วม'},
+ acute:{leaf:true,cls:'danger',t:'ฟอสเฟตสูงเฉียบพลัน',b:'หยุดแหล่งฟอสเฟต · NSS ถ้าไตยังดี · <b>Ca ต่ำมีอาการ หรือ AKI + P สูงมาก → ล้างไต</b> · ให้ Ca เฉพาะมีอาการ'}
+},'apTrail','apStage');
+
+function rf(){
+  const w=num('rW'),h=num('rH'),l=num('rL'),d=num('rD');const c=id=>$(id).checked;const L=[];
+  const bmi=(w&&h)?w/((h/100)**2):null;
+  const major=[bmi!==null&&bmi<16?`BMI ${bmi.toFixed(1)} <16`:null,l!==null&&l>15?`น้ำหนักลด ${l}% >15%`:null,d!==null&&d>10?`กินน้อย ${d} วัน >10`:null,c('rLow')?'K/P/Mg ต่ำก่อนเริ่ม':null].filter(Boolean);
+  const minor=[bmi!==null&&bmi<18.5&&bmi>=16?`BMI ${bmi.toFixed(1)} <18.5`:null,l!==null&&l>10&&l<=15?`น้ำหนักลด ${l}% >10%`:null,d!==null&&d>5&&d<=10?`กินน้อย ${d} วัน >5`:null,c('rEtoh')?'สุรา/ยาเสี่ยง':null].filter(Boolean);
+  const ext=(bmi!==null&&bmi<14)||(d!==null&&d>15);
+  const hi=major.length>=1||minor.length>=2;
+  if(bmi!==null)L.push(`BMI <b>${bmi.toFixed(1)}</b>`);
+  if(ext)L.push(`<b>เสี่ยงสูงมาก</b> (${bmi!==null&&bmi<14?'BMI <14':''}${bmi!==null&&bmi<14&&d>15?' · ':''}${d>15?'แทบไม่ได้กิน >15 วัน':''})`);
+  else if(hi)L.push(`<b>เสี่ยงสูง</b> (NICE: ${major.length?major.join(', '):minor.join(', ')})`);
+  else if(d!==null&&d>5)L.push('<b>มีความเสี่ยง</b> (กินน้อย >5 วัน) — เริ่มอาหารได้ แต่ตามแล็บ');
+  else L.push('ไม่เข้าเกณฑ์เสี่ยงสูงของ NICE · ยังควรตรวจ P/K/Mg ถ้าป่วยหนัก');
+  if(ext||hi){
+    const kc=ext?5:10;
+    L.push(`<b>Thiamine ก่อนเริ่มอาหาร/glucose</b>: 100 mg (ASPEN) – 200–300 mg/วัน (NICE) × 5–10 วัน + วิตามินรวม`);
+    if(w)L.push(`พลังงานเริ่มต้น: NICE <b>${kc} kcal/kg = ~${Math.round(w*kc)} kcal/วัน</b>`+(ext?'':` · ASPEN 10–20 kcal/kg = ${Math.round(w*10)}–${Math.round(w*20)} kcal/วัน`)+' → เพิ่มทีละ ~33% ของเป้าทุก 1–2 วัน ถึงเป้าใน 4–7 วัน');
+    if(w)L.push(`ความต้องการโดยประมาณ (NICE) — ให้ตามผลแล็บ ปรับลดในไตเสื่อม/K สูง ไม่ใช่ขนาดตายตัว: K ${Math.round(w*2)}–${Math.round(w*4)} mmol/วัน · P ${Math.round(w*0.3)}–${Math.round(w*0.6)} mmol/วัน · Mg ${(w*0.2).toFixed(0)} (IV)–${(w*0.4).toFixed(0)} (กิน) mmol/วัน`);
+    L.push('<b>P, K, Mg ทุก 12 ชม. ใน 3 วันแรก</b> · สัญญาณชีพทุก 4 ชม.ใน 24 ชม.แรก · น้ำหนัก น้ำเข้าออกทุกวัน'+(ext?' · <b>ECG monitor</b>':''));
+    L.push('ค่าลดลงเร็ว/แก้ยาก → <b>ลดพลังงานลง ~50%</b> แล้วค่อยเพิ่มใหม่');
+  }
+  $('rfOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRf input',rf);
+
+function iv(){
+  const p=num('iP'),w=num('iW'),h=num('iH'),cr=num('iCr'),ca=num('iCa'),k=num('iK'),pr=$('iProd').value;const c=id=>$(id).checked;const L=[];
+  if(p===null||!w){$('ivOut').textContent='ใส่ phosphate และน้ำหนัก';return}
+  if(p>=2.5){$('ivOut').innerHTML=`Phosphate ${p} mg/dL ไม่ต่ำ → <b>ไม่ต้องให้</b>`;return}
+  if(ca!==null&&ca>10.5){$('ivOut').innerHTML=`<b>Ca ${ca} สูง → ไม่ควรให้ phosphate IV</b> (เสี่ยงตกตะกอน) · แก้ Ca ก่อน/ให้ทางปากอย่างระวัง · ปรึกษา`;return}
+  if(!c('iSym')&&p>=1){L.push(`Phosphate ${p} mg/dL ไม่มีอาการ → <b>ให้ทางปากได้</b> 1–2 g/วัน (~30–60 mmol) แบ่งให้ · ใช้ IV เมื่อกินไม่ได้`);}
+  let bw=w,ibwT='';
+  if(h){const ibw=(h-152.4)/2.54*2.3+($('iSex').value==='f'?45.5:50);if(w>1.3*ibw){bw=ibw+0.4*(w-ibw);ibwT=` (adjusted BW ${bw.toFixed(0)} kg)`;}}
+  let lo,hi;
+  if(p<1){lo=0.32;hi=c('iIcu')?0.64:0.32;}else if(p<2){lo=0.16;hi=0.32;}else{lo=0.08;hi=0.16;}
+  let a=bw*lo,b=bw*hi;const ren=cr!==null&&cr<30;
+  if(ren){a/=2;b/=2;}
+  a=Math.min(a,50);b=Math.min(b,50);
+  const rng=a===b?`${a.toFixed(0)}`:`${a.toFixed(0)}–${b.toFixed(0)}`;
+  L.push(`${!c('iSym')&&p>=1?'<span class="muted">ถ้าจำเป็นต้องให้ IV (กินไม่ได้):</span> ':''}ขนาด IV: <b>${rng} mmol P</b> = ${lo}${hi!==lo?'–'+hi:''} mmol/kg${ibwT}${ren?' · <b>ลดครึ่งเพราะ CrCl <30</b>':''}${((ren?bw*hi/2:bw*hi)>50)?' · จำกัด ~50 mmol ต่อครั้ง':''}${p<1&&!c('iIcu')?' <span class="muted">(ICU ที่ตามแล็บใกล้ชิดใช้ได้ถึง 0.64 mmol/kg)</span>':''}`);
+  const hrs=Math.max(4,Math.ceil(b/7.5),pr==='kp'?Math.ceil(b/3*4.4/10):0);
+  L.push(`หยดใน <b>${hrs>=6?hrs:hrs+'–6'} ชม.</b> (≤ ~7.5 mmol/ชม.)`);
+  if(pr==='gly')L.push(`Sodium glycerophosphate (1 mmol/mL): <b>${a.toFixed(0)}${a!==b?'–'+b.toFixed(0):''} mL</b> · Na ${(a*2).toFixed(0)}${a!==b?'–'+(b*2).toFixed(0):''} mmol · เจือจางใน NSS/D5W (หลอดเลือดส่วนปลาย ไม่เกิน ~10 mmol P ต่อ 100 mL)`);
+  else if(pr==='kp'){const ka=a/3*4.4,kb=b/3*4.4;if((k!==null&&k>=4)||ren)L.push(`<b>${k!==null&&k>=4?'K '+k+' ≥4':'ไตเสื่อม'} → ควรใช้ sodium glycerophosphate แทน potassium phosphate</b>`);L.push(`Potassium phosphate (3 mmol P/mL): <b>${(a/3).toFixed(1)}${a!==b?'–'+(b/3).toFixed(1):''} mL</b> · <b>K ${ka.toFixed(0)}${a!==b?'–'+kb.toFixed(0):''} mEq</b> — อัตรา K ทางหลอดเลือดส่วนปลายไม่เกิน ~10 mEq/ชม.${kb>40?' · <b>K รวมสูง → พิจารณาใช้ sodium glycerophosphate หรือแบ่งให้</b>':''}`);
+}
+  else L.push('อ่านฉลาก: mmol P ต่อ mL และปริมาณ K/Na ต่อ mL ก่อนคำนวณปริมาตร');
+  L.push('<b>ห้ามผสมกับ calcium</b> · ตรวจ P, Ca, K, Mg ซ้ำ <b>2–6 ชม.หลังให้ครบ</b> · ซ้ำได้ตามผล · เปลี่ยนเป็นทางปากเมื่อกินได้');
+  if(ca!==null&&ca<8)L.push(`Ca ${ca} ต่ำ → ให้ phosphate อาจทำให้ Ca ลดอีก · ตาม Ca ใกล้ชิด (ถ้า albumin ต่ำ คำนวณ corrected Ca)`);
+  $('ivOut').innerHTML=L.join('<br>');
+}
+bindAll('#tIv input,#tIv select',iv);
+
+function fe(){
+  const sp=num('fSp'),sc=num('fSc'),up=num('fUp'),uc=num('fUc');const c=id=>$(id).checked;const L=[];
+  if([sp,sc,up,uc].some(v=>!v)){$('feOut').textContent='ใส่ค่าให้ครบ';return}
+  const f=(up*sc)/(sp*uc)*100;
+  L.push(`FEPO₄ = <b>${f.toFixed(1)}%</b>`);
+  if(sc>=2)L.push('<span class="muted">Cr สูง/CKD: FEPO₄ สูงขึ้นเองตามไตที่เหลือน้อย — เกณฑ์ 5% ใช้ไม่ได้ดี</span>');
+  if(sp>=2.5)L.push('<span class="muted">ฟอสเฟตในเลือดไม่ต่ำ — FEPO₄ ใช้แปลเมื่อฟอสเฟตต่ำ</span>');
+  else if(f>5){L.push('<b>&gt;5% → ไตขับทิ้งผิดปกติ</b>');
+    const s=[];if(c('fCa'))s.push('Ca สูง → <b>primary hyperparathyroidism</b> (PTH)');
+    if(c('fGlu')||c('fTdf'))s.push('<b>Fanconi syndrome</b>'+(c('fTdf')?' จาก tenofovir disoproxil → เปลี่ยนเป็น TAF/ยาอื่น':'')+' · ตรวจ protein, HCO₃, uric acid ในปัสสาวะ · myeloma');
+    if(c('fFcm'))s.push('<b>Ferric carboxymaltose</b> (FGF23) → มักหายใน 1–3 เดือน · ครั้งต่อไปพิจารณายาเหล็กชนิดอื่น');
+    if(!s.length)s.push('ตรวจ Ca, PTH, 25-OH vitamin D, glucose/protein ในปัสสาวะ · ทบทวนยา (acetazolamide, ยาขับปัสสาวะ) · ภาวะหลังปลูกถ่ายไต · พันธุกรรม (XLH)');
+    L.push(s.join('<br>'));}
+  else L.push('<b>&lt;5% → ไตเก็บฟอสเฟตเหมาะสม</b> → ย้ายเข้าเซลล์ (refeeding, insulin, alkalosis) หรือเสียทางลำไส้/กินน้อย (ยาลดกรด, ท้องเสีย, สุรา)');
+  if(sp<2.5&&f>5&&!(c('fCa')||c('fGlu')||c('fTdf')||c('fFcm')))L.push('<span class="muted">ถ้าเพิ่งได้ glucose/insulin หรือ NSS ปริมาณมาก FEPO₄ อาจแปลผลยาก</span>');
+  $('feOut').innerHTML=L.join('<br>');
+}
+bindAll('#tFe input',fe);
+
+mountQuiz([
+ ['Phosphate 0.5 mmol/L เท่ากับกี่ mg/dL',['0.5','1.55','3.1','5.0'],1,'× 3.1'],
+ ['ผู้ป่วย ICU ใส่เครื่องช่วยหายใจ ถอดไม่ได้ phosphate 0.8 mg/dL ไตปกติ ควรทำอย่างไร',
+  ['ให้ทางปาก 500 mg/วัน','ให้ phosphate IV ตามน้ำหนัก ใน 4–6 ชม. แล้วตรวจซ้ำ','รอให้ขึ้นเอง','ให้ calcium gluconate'],1,'P <1 + กล้ามเนื้อหายใจอ่อนแรง → IV'],
+ ['หญิงผอม BMI 15 กินไม่ได้ 2 สัปดาห์ จะเริ่มให้อาหารทางสาย ข้อใดถูกที่สุด',
+  ['เริ่มเต็มเป้า 30 kcal/kg ทันที','ให้ thiamine ก่อน เริ่ม ≤10 kcal/kg แล้วเพิ่มช้าๆ ตาม P/K/Mg','งดอาหารจนกว่า P/K/Mg จะปกติ','ให้ glucose 10% อย่างเดียว 3 วันก่อน'],1,'NICE: ≤10 kcal/kg · ไม่ต้องรอแก้ให้ปกติก่อน (ASPEN: ถ้าต่ำมากพิจารณาชะลอ)'],
+ ['วันที่ 2 ของการให้อาหาร phosphate ลดจาก 3.0 เป็น 1.4 mg/dL ข้อใดเหมาะสม',
+  ['เพิ่มอาหารเป็นเต็มเป้า','ลดพลังงาน ~50% แก้ P/K/Mg แล้วค่อยเพิ่มใหม่','หยุดอาหารถาวร','ให้ furosemide'],1,'ASPEN'],
+ ['ข้อใดไม่ใช่สาเหตุของ hypophosphatemia จากไตขับทิ้ง',
+  ['Tenofovir disoproxil','Ferric carboxymaltose','Primary hyperparathyroidism','Refeeding syndrome'],3,'Refeeding = ย้ายเข้าเซลล์'],
+ ['Potassium phosphate IV ข้อใดต้องระวังมากที่สุด',
+  ['มี Na สูง','มี K ด้วย — ระวัง K สูงและอัตราการให้ K','ทำให้ Ca สูง','ผสมกับ calcium ได้'],1,'มี K 4.4 mEq ต่อ 3 mmol P · ระวัง K สูง/อัตรา K ≤10 mEq/ชม. ทางหลอดเลือดส่วนปลาย'],
+ ['หญิง 82 ปี CKD ได้ยาสวน sodium phosphate ก่อนส่องกล้อง ต่อมา phosphate 12 mg/dL Ca 6.5 tetany Cr เพิ่มขึ้น ควรทำอย่างไร',
+  ['รอให้ลดลงเอง','ให้ calcium สำหรับ tetany และปรึกษาล้างไต','ให้ phosphate binder อย่างเดียว','ให้ vitamin D'],1,'Ca ต่ำมีอาการ + AKI + P สูงมาก'],
+ ['ผู้ป่วย CKD phosphate สูง วิธีด้านอาหารที่ได้ผลมาก',
+  ['งดโปรตีนทั้งหมด','ลดอาหารแปรรูปที่มีสารเติมแต่งฟอสเฟต','ดื่มนมมากขึ้น','กินยาลดกรด aluminium ระยะยาว'],1,'Phosphate additive ดูดซึมเกือบหมด'],
+ ['Phosphate 11 mg/dL ในผู้ป่วย multiple myeloma ไม่มีอาการ Ca และไตปกติ คิดถึงอะไรก่อน',
+  ['Tumor lysis','ค่าสูงลวงจาก paraprotein','Hypoparathyroidism','ได้ phosphate มาก'],1,'Pseudohyperphosphatemia']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

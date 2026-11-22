@@ -1,0 +1,722 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Heat stroke · Rhabdomyolysis · โรคลมร้อนและกล้ามเนื้อลายสลาย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Emergency · Nephrology · WMS 2024 · SCCM 2025 · ACSM 2023 · AAST 2022 · EAST 2022</div>
+  <h1>โรคลมร้อนและกล้ามเนื้อลายสลาย<br>Heat stroke / Rhabdomyolysis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การแยก heat exhaustion กับ heat stroke การลดอุณหภูมิที่ถูกวิธี (<b>ทำให้เย็นก่อน แล้วค่อยส่งต่อ</b>) ภาวะแทรกซ้อน ไปจนถึงกล้ามเนื้อลายสลาย (rhabdomyolysis) ซึ่งอาจทำให้ไตวายเฉียบพลัน การให้สารน้ำ การแก้เกลือแร่ และ compartment syndrome · ฤดูร้อนในไทย (มี.ค.–พ.ค.) มีผู้ป่วยและเสียชีวิตทุกปี</p>
+  <p class="cite">อ้างอิงหลัก: Eifling KP, et al. WMS clinical practice guidelines for heat illness: 2024 update (Wilderness Environ Med 2024;35(1 Suppl):112S–127S) · Barletta JF, et al. SCCM guideline for the treatment of heat stroke (Crit Care Med 2025;53:e490–500) · Roberts WO, et al. ACSM expert consensus statement on exertional heat illness (Curr Sports Med Rep 2023;22:134–49) · Kodadek L, et al. AAST rhabdomyolysis consensus (Trauma Surg Acute Care Open 2022;7:e000836) · Sawhney JS, Kasotakis G, et al. EAST practice management guideline: rhabdomyolysis (Am J Surg 2022;224:196–204) · McMahon GM, et al. JAMA Intern Med 2013 · กรมควบคุมโรค/กรมอุตุนิยมวิทยา · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ตัวร้อน + สมองผิดปกติ</b>= heat stroke จนกว่าจะพิสูจน์ได้ว่าไม่ใช่ · ไม่ต้องรอวัดอุณหภูมิแกนกลาง</div>
+    <div class="stage" style="--c:var(--warn)"><b>เย็นก่อน ส่งทีหลัง</b>แช่น้ำเย็น/น้ำแข็งทั้งตัว · ให้ต่ำกว่า 39°C ภายใน 30 นาที · ยาลดไข้ไม่ช่วย</div>
+    <div class="stage" style="--c:var(--accent)"><b>CK สูง = ไตเสี่ยง</b>สารน้ำ isotonic เร็ว · ตาม K/Ca/P · ดู compartment · bicarbonate/mannitol ไม่ใช่ routine</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#spec">สเปกตรัมโรคจากความร้อน</a><a href="#cool">ลดอุณหภูมิ</a><a href="#hsc">Heat stroke: ตรวจและแทรกซ้อน</a><a href="#ddx">ไข้สูงที่ไม่ใช่ลมร้อน</a><a href="#rhabdo">Rhabdomyolysis</a><a href="#risk">ประเมินความเสี่ยงไต</a><a href="#fluid">สารน้ำ</a><a href="#lytes">เกลือแร่</a><a href="#cs">Compartment · crush</a><a href="#after">RRT · ติดตาม · กลับไปทำงาน</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="spec" class="col">
+  <div class="sec-num">01</div>
+  <h2>สเปกตรัมโรคจากความร้อน</h2>
+  <div class="tbl"><table>
+    <tr><th>ภาวะ</th><th>ลักษณะ</th><th>อุณหภูมิแกนกลาง</th><th>สมอง</th><th>จัดการ</th></tr>
+    <tr><td>Heat cramps</td><td>ตะคริวกล้ามเนื้อมัดใหญ่ระหว่าง/หลังออกแรง</td><td>ปกติ</td><td>ปกติ</td><td>พัก ยืดกล้ามเนื้อ เกลือแร่ทางปาก</td></tr>
+    <tr><td>Heat syncope</td><td>หน้ามืด/หมดสติชั่วครู่ ฟื้นเร็วเมื่อนอนราบ</td><td>ปกติ/สูงเล็กน้อย</td><td>ฟื้นเป็นปกติทันที</td><td>นอนราบ ยกขา ที่ร่ม ดื่มน้ำ · คิดถึงสาเหตุหัวใจ</td></tr>
+    <tr><td>Heat exhaustion</td><td>อ่อนเพลีย ปวดหัว คลื่นไส้ ใจสั่น เหงื่อมาก</td><td>&lt;40°C</td><td><b>ปกติ</b></td><td>หยุดกิจกรรม ที่เย็น ถอดเสื้อผ้า ดื่มน้ำ/ORS · ไม่ดีขึ้นใน 30 นาที → ส่ง รพ.</td></tr>
+    <tr><td><b>Heat stroke</b></td><td>สับสน พูดไม่รู้เรื่อง ชัก หมดสติ · อาจยังมีเหงื่อ (โดยเฉพาะ exertional)</td><td><b>&gt;40°C</b> (ถ้าวัดช้า อาจต่ำกว่า)</td><td><b>ผิดปกติ</b></td><td><b>ฉุกเฉิน</b> — ลดอุณหภูมิทันที (หัวข้อ 02)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>Classic (non-exertional)</h4><ul><li>อยู่ในที่ร้อนนานหลายวัน (คลื่นความร้อน บ้านไม่มีลมระบาย)</li><li><b>ผู้สูงอายุ เด็กเล็ก โรคเรื้อรัง ติดเตียง</b> สมองเสื่อม จิตเวช สุรา</li><li>ยา: diuretic, anticholinergic, antipsychotic, beta-blocker, antihistamine</li><li>ผิวมักแห้ง ร้อน · มาช้า มีโรคร่วม → ตายสูงกว่า</li></ul></div>
+    <div class="card c-warn"><h4>Exertional</h4><ul><li>ออกแรงหนักในที่ร้อน/ชื้น: <b>ทหารฝึก นักวิ่ง คนงานก่อสร้าง เกษตรกร</b></li><li>คนหนุ่มสาวแข็งแรงก็เป็นได้ · <b>เหงื่อยังออกได้</b></li><li>ปัจจัย: ไม่คุ้นชินความร้อน อดนอน ไข้ไม่สบาย อ้วน ขาดน้ำ ยา/สารกระตุ้น</li><li>มักมี <b>rhabdomyolysis</b> และ AKI ร่วม</li></ul></div>
+  </div>
+  <div class="box note"><b>บริบทไทย <span class="tag add">ไทย</span></b>กรมควบคุมโรคมีรายงานผู้เสียชีวิตจากความร้อนช่วง มี.ค.–พ.ค. ทุกปี (เฉลี่ยราว 33 รายต่อปีในช่วงปี 2558–2564; ปี 2567 มี 63 ราย) ส่วนมากเป็นชายวัยกลางคน–สูงอายุ ทำงานกลางแจ้ง มีโรคประจำตัว หรือดื่มสุรา · กรมอุตุนิยมวิทยาประกาศ <b>ดัชนีความร้อน (heat index)</b> 4 ระดับ: เฝ้าระวัง 27–32.9 · เตือนภัย 33–41.9 · <b>อันตราย 42–51.9</b> · อันตรายมาก ≥52°C</div>
+</section>
+
+<!-- 2 -->
+<section id="cool" class="col">
+  <div class="sec-num">02</div>
+  <h2>ลดอุณหภูมิ: หัวใจของการรักษา</h2>
+  <div class="box key"><b>หลักสำคัญ</b>ความเสียหายของอวัยวะขึ้นกับ <b>อุณหภูมิสูงแค่ไหนและนานแค่ไหน</b> · สงสัย heat stroke → <b>เริ่มลดอุณหภูมิทันที แม้ยังไม่ได้วัดอุณหภูมิแกนกลาง</b> (WMS 2024) · เป้าหมาย <b>ต่ำกว่า 39°C ภายใน 30 นาที</b> (SCCM 2025) · ถ้าทำได้ในที่เกิดเหตุ ให้ <b>"cool first, transport second"</b> แล้วโทร 1669 พร้อมกัน</div>
+  <div class="tbl"><table>
+    <tr><th>วิธี</th><th>อัตราลดอุณหภูมิโดยประมาณ</th><th>ใช้เมื่อ</th></tr>
+    <tr><td><b>แช่น้ำเย็น/น้ำแข็งทั้งตัว</b> (cold/ice-water immersion, คอขึ้นไปพ้นน้ำ)</td><td><b>~0.15–0.35°C/นาที</b> (เร็วที่สุด)</td><td>วิธีหลัก (WMS strong; SCCM แนะนำเป็น good practice) · ใน ER ใช้ถุงห่อศพ (body bag)/อ่าง/ผ้าใบใส่น้ำแข็งได้ · classic heat stroke ก็ใช้ได้ถ้าดูแลทางเดินหายใจได้</td></tr>
+    <tr><td>TACO (tarp-assisted cooling with oscillation): ห่อผ้าใบ เทน้ำแข็ง+น้ำ เขย่า</td><td>~0.14–0.17°C/นาที</td><td>ไม่มีอ่าง ที่เกิดเหตุ/รถพยาบาล</td></tr>
+    <tr><td>Evaporative: พ่นละอองน้ำ + พัดลมแรง</td><td>~0.03–0.1°C/นาที (ช้ามากในอากาศชื้นแบบไทย)</td><td>ทางเลือกเมื่อแช่ไม่ได้ · ใช้ร่วมกัน</td></tr>
+    <tr><td>Ice pack/ผ้าเย็น</td><td>ช้า ถ้าวางแค่ซอกคอ/รักแร้/ขาหนีบ</td><td><b>วางคลุมทั้งตัว</b> หรือผ้าชุบน้ำเย็นจัดสลับเปลี่ยนบ่อย</td></tr>
+    <tr><td>สารน้ำเย็นทางหลอดเลือด (4°C)</td><td>ช่วยเสริมเล็กน้อย</td><td>เสริมเท่านั้น · ระวังน้ำเกินในผู้สูงอายุ/หัวใจ</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ทำ</h4><ul><li>วัด <b>อุณหภูมิทางทวารหนัก</b> (แม่นสุด) ซ้ำทุก 5 นาที · หรือ esophageal probe ใน ICU · <b>อุณหภูมิหู/หน้าผาก/รักแร้ ใช้ไม่ได้</b></li><li><b>หยุดแช่เมื่อ ~38.6–39°C</b> (กันตัวเย็นเกิน) แล้วตามวัดต่อ ไข้กลับขึ้นได้</li><li>ABC · ท่าตะแคงถ้าซึม · glucose ข้างเตียง</li><li>สั่น (shivering) หรือกระสับกระส่ายมาก → <b>benzodiazepine</b> ขนาดต่ำ</li><li>ชัก → benzodiazepine</li></ul></div>
+    <div class="card c-red"><h4>ไม่ทำ</h4><ul><li><b>ยาลดไข้</b> (paracetamol, NSAIDs, aspirin) — <b>ไม่ได้ผล</b> เพราะไม่ใช่ไข้จาก set-point · paracetamol เพิ่มภาระตับ NSAIDs เพิ่ม AKI (SCCM)</li><li><b>Dantrolene</b> — SCCM 2025 แนะนำ <b>ไม่ให้</b></li><li>เช็ดตัวด้วยแอลกอฮอล์</li><li>รอ CT/ผลแล็บ/รถพยาบาล ก่อนเริ่มลดอุณหภูมิ</li><li>ให้สารน้ำปริมาณมากโดยไม่ประเมิน (ช็อกส่วนใหญ่ดีขึ้นเมื่ออุณหภูมิลด) · <b>ตรวจ Na ก่อน</b> — นักวิ่ง/ทหารที่ดื่มน้ำเปล่ามาก อาจเป็น <b>exercise-associated hyponatremia</b> (สับสน ชัก แต่อุณหภูมิไม่สูงมาก) → ห้ามให้น้ำ hypotonic</li><li>ยาฆ่าเชื้อหรือยากันชักแบบป้องกัน (SCCM: ใช้เฉพาะในงานวิจัย)</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ACSM 2023 หยุดที่ราว 38°C ส่วน Korey Stringer Institute หยุดที่ 39°C · ถ้าวัดทางทวารหนักไม่ได้ ให้แช่ ~10–15 นาที แล้วส่งต่อ (KSI) · ถ้าสติไม่ดีขึ้นใน 30–40 นาที ให้หาสาเหตุอื่น (ACSM) · อย่าใช้ "สติกลับมา" เป็นเกณฑ์หยุดเพียงอย่างเดียว</p>
+</section>
+
+<!-- 3 -->
+<section id="hsc" class="col">
+  <div class="sec-num">03</div>
+  <h2>Heat stroke: ตรวจอะไร และแทรกซ้อนอะไรตามมา</h2>
+  <div class="tbl"><table>
+    <tr><th>ระบบ</th><th>ภาวะแทรกซ้อน</th><th>ตรวจ/ทำ</th></tr>
+    <tr><td>สมอง</td><td>สับสน ชัก โคม่า · สมองน้อยเสียหาย (เดินเซถาวร)</td><td>GCS ซ้ำ · glucose · CT ถ้าไม่ดีขึ้นหลังเย็นแล้ว/มีอาการเฉพาะที่</td></tr>
+    <tr><td>หัวใจ-ไหลเวียน</td><td>ช็อก (ขาดน้ำ + หลอดเลือดขยาย) · หัวใจเต้นผิดจังหวะ · troponin สูง</td><td>ECG · ประเมินสารน้ำ · ส่วนใหญ่ BP ดีขึ้นเมื่อตัวเย็น · ช็อกไม่ดีขึ้น → sepsis/โรคหัวใจ</td></tr>
+    <tr><td>ไต</td><td><b>AKI</b> (ขาดน้ำ + rhabdo + อุณหภูมิทำลายโดยตรง)</td><td>Cr, ปัสสาวะ, CK, ปัสสาวะออก</td></tr>
+    <tr><td>กล้ามเนื้อ</td><td><b>Rhabdomyolysis</b> (โดยเฉพาะ exertional)</td><td>CK ซ้ำ ทุก 6–12 ชม. (ขึ้นสูงสุดวันที่ 1–3)</td></tr>
+    <tr><td>ตับ</td><td>AST/ALT สูง <b>มักสูงสุดวันที่ 1–4</b> (ผิดปกติได้นาน ~2 สัปดาห์) · ตับวายเฉียบพลันได้</td><td>LFT, INR ซ้ำ · ดูหน้า <a href="../liver-failure/index.html">ตับวายเฉียบพลัน</a></td></tr>
+    <tr><td>เลือด</td><td><b>DIC</b> · เกล็ดเลือดต่ำ</td><td>CBC, PT/aPTT, fibrinogen</td></tr>
+    <tr><td>เมตาบอลิก</td><td>K สูงหรือต่ำ · Na ต่ำ (ดื่มน้ำเปล่ามาก) · น้ำตาลต่ำ · lactic acidosis · Ca/P ผิดปกติ</td><td>Electrolyte, Ca, P, Mg, glucose, blood gas, lactate</td></tr>
+  </table></div>
+  <div class="box warn"><b>รับไว้ใน รพ.ทุกราย</b>Heat stroke แม้รู้สึกตัวดีขึ้นเร็ว ก็ต้องสังเกตอาการอย่างน้อย 24–72 ชม. เพราะตับ ไต DIC มักแย่ลงในวันที่ 1–3 · ผู้ป่วยหนักควรอยู่ ICU</div>
+</section>
+
+<!-- 4 -->
+<section id="ddx" class="col">
+  <div class="sec-num">04</div>
+  <h2>ตัวร้อนจัด + สับสน ที่ไม่ใช่ลมร้อน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ต้องคิดถึงเสมอ</h4><ul><li><b>Sepsis / meningitis / encephalitis</b> — ไม่แน่ใจ → เจาะเลือดเพาะเชื้อ + ให้ยาฆ่าเชื้อร่วมกับลดอุณหภูมิ (หน้า <a href="../meningitis/index.html">Meningitis</a>, <a href="../sepsis/index.html">Sepsis</a>)</li><li><b>Malaria</b> ในพื้นที่เสี่ยง</li><li><b>Thyroid storm</b> (หน้า <a href="../thyroid-emergency/index.html">Thyroid emergency</a>)</li><li>ชักต่อเนื่อง · เลือดออกในสมอง</li></ul></div>
+    <div class="card c-warn"><h4>ยา/สาร</h4><ul><li><b>Sympathomimetic</b>: แอมเฟตามีน/ยาบ้า โคเคน <span class="tag add">ไทย</span></li><li><b>Anticholinergic</b> (ผิวแห้ง รูม่านตาขยาย ปัสสาวะคั่ง)</li><li><b>Serotonin syndrome</b> (clonus) · <b>NMS</b> (antipsychotic, rigidity ช้าๆ)</li><li>Malignant hyperthermia (หลังยาสลบ) · salicylate · ถอนสุรา/ยานอนหลับ</li><li>ดูหน้า <a href="../toxicology/index.html">Toxicology</a></li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">เบาะแสว่าเป็น heat stroke: มีประวัติความร้อน/ออกแรง และสติดีขึ้นเมื่ออุณหภูมิลด · ถ้าตัวเย็นแล้วสติยังไม่กลับ ให้หาสาเหตุอื่นเพิ่ม</p>
+</section>
+
+<!-- 5 -->
+<section id="rhabdo" class="col">
+  <div class="sec-num">05</div>
+  <h2>Rhabdomyolysis: กล้ามเนื้อลายสลาย</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>สาเหตุ</h4><ul><li><b>ออกแรงหนัก</b> (ฝึกทหาร วิ่งมาราธอน ออกกำลังเกินตัว) · heat stroke</li><li><b>นอนนิ่งนาน</b>: เมาหมดสติ ล้มอยู่ในบ้านนานหลายชั่วโมง ยาเกินขนาด</li><li>บาดเจ็บ/กดทับ (crush) · ไฟฟ้าช็อต · ชัก · กล้ามเนื้อเกร็ง</li><li>ยา/สาร: <b>สุรา ยาบ้า/แอมเฟตามีน</b>, โคเคน, <b>statin</b> (โดยเฉพาะ + gemfibrozil, colchicine, macrolide, azole) <span class="tag add">ไทย</span></li><li>ติดเชื้อ: <b>leptospirosis</b>, influenza, dengue, sepsis</li><li>เกลือแร่: <b>K ต่ำ, P ต่ำ</b> (ดูหน้า <a href="../phosphate-refeeding/index.html">Phosphate / refeeding</a>), Na เปลี่ยนเร็ว</li><li>พิษ: <b>งูทะเล</b> (myotoxic) · ดูหน้า <a href="../snakebite/index.html">งูพิษกัด</a></li><li>เป็นซ้ำ/ไม่มีเหตุชัด → โรคกล้ามเนื้อทางพันธุกรรม/เมตาบอลิก, myositis</li></ul></div>
+    <div class="card c-acc"><h4>วินิจฉัย</h4><ul><li>อาการ: ปวด/กดเจ็บ/อ่อนแรงกล้ามเนื้อ · ปัสสาวะสีชา/โค้ก — <b>ครบ 3 อย่างพบไม่ถึง 10%</b></li><li><b>CK &gt;5 เท่าของค่าปกติ (มัก &gt;1,000 U/L)</b> · เสี่ยงไตมากขึ้นเมื่อ CK &gt;15,000 (และคะแนน McMahon ให้แต้มเมื่อ &gt;40,000) แต่ CK ตัวเดียวทำนายไม่ดี</li><li>CK ขึ้นใน 2–12 ชม. <b>สูงสุด 24–72 ชม.</b> ลดลงราว 40% ต่อวัน → <b>เจาะซ้ำ</b> ถ้ามาเร็ว</li><li><b>Urine dipstick blood บวก แต่ไม่พบ RBC</b> ในกล้อง = myoglobinuria (หรือ hemoglobinuria)</li><li>AST สูง (จากกล้ามเนื้อ) อย่าเข้าใจผิดว่าเป็นตับ · LDH, K, P, uric acid สูง · Ca ต่ำ</li><li>BUN:Cr ต่ำกว่าปกติ เพราะ creatine จากกล้ามเนื้อที่สลายกลายเป็น creatinine</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="risk" class="col">
+  <div class="sec-num">06</div>
+  <h2>ใครเสี่ยงไตวาย: McMahon score</h2>
+  <p>ใช้ค่าตอนแรกรับ ในผู้ใหญ่ที่ CK &gt;5,000 ภายใน 72 ชม. (ไม่ใช้ใน ESRD หรือ CK สูงจาก MI)</p>
+  <div class="tbl"><table>
+    <tr><th>ตัวแปร</th><th>คะแนน</th></tr>
+    <tr><td>อายุ</td><td>≤50 = 0 · 51–70 = 1.5 · 71–80 = 2.5 · &gt;80 = 3</td></tr>
+    <tr><td>เพศหญิง</td><td>1</td></tr>
+    <tr><td>Creatinine แรกรับ</td><td>&lt;1.4 = 0 · 1.4–2.2 = 1.5 · &gt;2.2 mg/dL = 3</td></tr>
+    <tr><td>Calcium &lt;7.5 mg/dL</td><td>2</td></tr>
+    <tr><td>CK &gt;40,000 U/L</td><td>2</td></tr>
+    <tr><td>สาเหตุ <b>ไม่ใช่</b> ชัก, หมดสติชั่วครู่, ออกกำลัง, statin, myositis</td><td>3</td></tr>
+    <tr><td>Phosphate</td><td>&lt;4.0 = 0 · 4.0–5.4 = 1.5 · &gt;5.4 mg/dL = 3</td></tr>
+    <tr><td>Bicarbonate &lt;19 mmol/L</td><td>2</td></tr>
+  </table></div>
+  <div class="box key"><b>แปลผล</b><b>&lt;5</b> = เสี่ยงต่ำ (ตาย/ต้องล้างไต ~2–3%) · <b>≥6</b> = เสี่ยง (AAST ใช้จุดนี้) → ให้สารน้ำเต็มที่และตามใกล้ชิด · <b>&gt;10</b> ≈ 60% · ค่า CK ตัวเดียวทำนายไตได้ไม่ดี — ดูทั้งภาพ (ขาดน้ำ, acidosis, sepsis, ยา)</div>
+</section>
+
+<!-- 7 -->
+<section id="fluid" class="col">
+  <div class="sec-num">07</div>
+  <h2>สารน้ำ: การรักษาที่ได้ผลที่สุด</h2>
+  <div class="tbl"><table>
+    <tr><th>ประเด็น</th><th>แนวทาง</th></tr>
+    <tr><td>ชนิด</td><td><b>Isotonic crystalloid</b>: NSS หรือ Ringer's lactate/balanced (AAST: ใช้ได้ทั้งคู่) · ให้ปริมาณมาก NSS เกิด hyperchloremic acidosis ได้</td></tr>
+    <tr><td>เริ่ม</td><td><b>เร็วที่สุด</b> · ขาดน้ำชัด → bolus 1–2 L ก่อน · AAST: เริ่มราว <b>400 mL/ชม.</b> แล้วปรับ</td></tr>
+    <tr><td>เป้าหมาย</td><td><b>ปัสสาวะ 1–3 mL/kg/ชม. (ไม่เกิน ~300 mL/ชม.)</b> · หลายตำราตั้งเป้า ~200–300 mL/ชม. ในรายเสี่ยงสูง · ใส่สายสวนปัสสาวะในรายหนัก</td></tr>
+    <tr><td>หยุดเมื่อ</td><td>CK ลดลงต่อเนื่อง (มักต่ำกว่า ~5,000) <b>และ</b> ปัสสาวะใส · ลดอัตราเป็นขั้น</td></tr>
+    <tr><td>Crush (ติดอยู่ใต้ซากตึก)</td><td>เริ่มให้สารน้ำ <b>ก่อนเอาตัวออก</b> NSS ~1,000 mL/ชม. (ลดเหลือ ~500 mL/ชม. ถ้าเอาตัวออกนานเกิน 2 ชม.; น้อยลงในผู้สูงอายุ/ตัวเล็ก) (ISN/ERBP)</td></tr>
+    <tr><td>ระวัง</td><td>ผู้สูงอายุ หัวใจวาย ไตวายปัสสาวะไม่ออก → <b>น้ำเกิน/ปอดบวมน้ำ</b> · ประเมินซ้ำทุก 2–4 ชม. · ปัสสาวะไม่ออกแม้ได้สารน้ำพอ → หยุดอัดน้ำ ปรึกษาไต</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Sodium bicarbonate</h4><ul><li><b>ไม่แนะนำ routine</b> (EAST 2022 แนะนำไม่ใช้; AAST ไม่สนับสนุน) — ไม่ลด AKI/ล้างไต/ตาย</li><li>ใช้เมื่อมีเหตุอื่น: <b>acidosis รุนแรง</b> หรือ <b>K สูง</b></li><li>ทำให้ Ca ต่ำลงอีก (ionized Ca)</li></ul></div>
+    <div class="card c-warn"><h4>Mannitol / furosemide</h4><ul><li><b>ไม่แนะนำ routine</b> — ไม่มีประโยชน์ชัด</li><li>Furosemide ใช้ได้เฉพาะเมื่อ <b>น้ำเกิน</b> และยังมีปัสสาวะ</li><li>Mannitol อาจทำให้ไตแย่ลงถ้าปัสสาวะไม่ออก</li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="lytes" class="col">
+  <div class="sec-num">08</div>
+  <h2>เกลือแร่ที่เปลี่ยนไป</h2>
+  <div class="tbl"><table>
+    <tr><th>เกลือแร่</th><th>ทำไม</th><th>จัดการ</th></tr>
+    <tr><td><b>K สูง</b></td><td>รั่วจากเซลล์กล้ามเนื้อ + AKI · อาจสูงเร็วใน 12–36 ชม.แรก</td><td><b>อันตรายที่สุด</b> · ECG · calcium, insulin+glucose, salbutamol · ไม่ลง → ล้างไต · ดูหน้า <a href="../hyperkalemia/index.html">Hyperkalemia</a></td></tr>
+    <tr><td><b>Ca ต่ำ</b> (ช่วงแรก)</td><td>Ca ไปจับในกล้ามเนื้อที่ตาย + P สูง</td><td><b>ให้ Ca เฉพาะเมื่อ</b> มีอาการ (tetany, ชัก) <b>หรือ</b> K สูงจนมีผลต่อหัวใจ/ECG ผิดปกติ · ถ้าไม่มีทั้งสองอย่าง ไม่ต้องให้ — เพราะ Ca ที่ให้จะไปตกตะกอนในกล้ามเนื้อ และ <b>ช่วงฟื้นตัว Ca จะสูงเกิน</b> (rebound)</td></tr>
+    <tr><td><b>P สูง</b></td><td>รั่วจากเซลล์ + AKI</td><td>สารน้ำ · ถ้าสูงมากร่วมกับ AKI → ล้างไต · ดูหน้า <a href="../phosphate-refeeding/index.html">Phosphate</a></td></tr>
+    <tr><td>Ca สูง (ช่วงฟื้น)</td><td>Ca ที่ตกตะกอนละลายกลับ + vitamin D/PTH ปรับ</td><td>พบในราว 20–30% ของรายที่มี AKI · ตาม Ca ในช่วงปัสสาวะเริ่มออกดี</td></tr>
+    <tr><td>Uric acid สูง · metabolic acidosis</td><td>จากเซลล์แตก</td><td>สารน้ำ · ไม่ต้องให้ยาลดกรดยูริกทุกราย</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section id="cs" class="col">
+  <div class="sec-num">09</div>
+  <h2>Compartment syndrome และ crush</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Compartment syndrome</h4><ul><li>เกิดได้ตั้งแต่แรก หรือ <b>หลังให้สารน้ำมาก</b> (กล้ามเนื้อบวม)</li><li><b>ปวดมากเกินกว่าที่เห็น</b> ปวดเพิ่มเมื่อยืดกล้ามเนื้อ · ตึงแข็ง · ชา · ชีพจรมักยังคลำได้ (หายไปเป็นอาการท้าย)</li><li>วัดความดันใน compartment: <b>&gt;30 mmHg</b> หรือ ΔP (diastolic − compartment) <b>&lt;30 mmHg</b></li><li>→ <b>ปรึกษาศัลยกรรม/ออร์โธปิดิกส์ด่วน</b> เพื่อ fasciotomy</li><li>ห้ามยกขาสูงเกินระดับหัวใจ (ลดเลือดไปเลี้ยง)</li></ul></div>
+    <div class="card c-warn"><h4>Crush/กดทับนาน</h4><ul><li>K สูงเฉียบพลันเมื่อปลดแรงกด → ECG/เตรียม calcium, insulin</li><li>สารน้ำก่อนเอาตัวออก</li><li>ตรวจหาแผล กระดูกหัก เส้นประสาทถูกกด (ผู้ที่นอนทับแขนขาตัวเองนาน)</li></ul></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="after" class="col">
+  <div class="sec-num">10</div>
+  <h2>ล้างไต · ติดตาม · กลับไปทำงาน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ล้างไต (RRT)</h4><ul><li>ใช้ข้อบ่งชี้เดียวกับ AKI ทั่วไป: <b>K สูงดื้อการรักษา, acidosis รุนแรง, น้ำเกิน, uremia</b> (ดูหน้า <a href="../aki/index.html">AKI</a>)</li><li><b>ไม่ใช้ล้างไตเพื่อ "ล้าง myoglobin" ป้องกันไตวาย</b> (AAST)</li><li>ส่วนใหญ่ไตฟื้นได้ในหลายสัปดาห์</li></ul></div>
+    <div class="card c-ok"><h4>ติดตามและป้องกันซ้ำ</h4><ul><li>หยุด/เลี่ยงยาที่ทำให้เป็น (statin — เริ่มใหม่ด้วยตัวอื่น/ขนาดต่ำเมื่อ CK ปกติ, ตรวจยาที่ตีกัน)</li><li>เป็นซ้ำ, เกิดจากออกแรงไม่มาก, CK สูงค้าง, ครอบครัวเป็น → ส่งตรวจโรคกล้ามเนื้อ</li><li><b>หลัง heat stroke</b>: งดออกกำลังอย่างน้อย 7 วันหลังออกจาก รพ. ตรวจซ้ำ (CK ตับ ไต) แล้วค่อยเพิ่มทีละขั้นในที่เย็น 2–4 สัปดาห์ · ทำไม่ได้ใน 4–6 สัปดาห์ → ส่งตรวจเพิ่ม (ACSM) · ปรับตัวกับความร้อน 1–2 สัปดาห์</li><li>ป้องกัน: ดื่มน้ำตามกระหาย (ไม่ดื่มน้ำเปล่ามากเกิน → Na ต่ำ) · พักในที่ร่มช่วง 11–15 น. · ดูแลผู้สูงอายุ/ติดเตียงในวันร้อน</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>อยู่ในที่ร้อน/ออกแรง + อาการผิดปกติ</b>ABC · glucose · วัดอุณหภูมิทางทวารหนัก</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สมองผิดปกติ? (สับสน ชัก ซึม)</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>Heat stroke</b>แช่น้ำเย็น/น้ำแข็งทันที → &lt;39°C ใน 30 นาที · ไม่ใช้ยาลดไข้ · หา sepsis/ยา</div></div>
+        <div class="arm"><span class="lab">ไม่</span><div class="node dx eu"><b>Heat exhaustion</b>ที่เย็น ดื่มน้ำ/ORS · ไม่ดีขึ้น 30 นาที → รพ.</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>CK &gt;5× ปกติ / ปัสสาวะสีชา?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">McMahon ≥6 / AKI</span><div class="node dx hypo"><b>เสี่ยงสูง</b>Isotonic เต็มที่ ปัสสาวะ 1–3 mL/kg/ชม. (≤300) · K/Ca/P ทุก 6–12 ชม.</div></div>
+        <div class="arm"><span class="lab">McMahon &lt;6</span><div class="node dx eu"><b>เสี่ยงต่ำ</b>สารน้ำ (ทางปาก/IV) · CK ซ้ำจนลดลง</div></div>
+        <div class="arm"><span class="lab">ปวดตึงแขนขา</span><div class="node red"><b>Compartment</b>วัดความดัน · fasciotomy</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 12 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตัดสินใจตามสภาพผู้ป่วยจริง</p>
+  </div>
+  <div class="tool plan" id="tHs" style="margin-top:12px">
+    <h3>ประเมิน heat illness และติดตามการลดอุณหภูมิ</h3>
+    <div class="fields">
+      <label class="f">อุณหภูมิทางทวารหนักตอนเริ่ม (°C)<input type="number" step="0.1" id="hT0" value="41.2"></label>
+      <label class="f">อุณหภูมิล่าสุด (°C)<input type="number" step="0.1" id="hT1" value="40.0"></label>
+      <label class="f">เวลาที่ทำให้เย็นไปแล้ว (นาที)<input type="number" id="hMin" value="8"></label>
+      <label class="f">วิธีที่ใช้<select id="hMeth"><option value="cwi">แช่น้ำเย็น/น้ำแข็ง</option><option value="taco">TACO (ผ้าใบ+น้ำแข็ง)</option><option value="evap">พ่นน้ำ + พัดลม</option><option value="pack">Ice pack บางจุด</option><option value="none">ยังไม่ได้เริ่ม</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="hCns" checked> สมองผิดปกติ (สับสน ชัก ซึม)</label>
+      <label><input type="checkbox" id="hRect"> ไม่ได้วัดทางทวารหนัก (ใช้หู/รักแร้/หน้าผาก)</label>
+      <label><input type="checkbox" id="hInf"> มีเบาะแสติดเชื้อ (คอแข็ง แหล่งติดเชื้อ)</label>
+      <label><input type="checkbox" id="hDrug"> ยาบ้า/ยาจิตเวช/ยาใหม่</label>
+      <label><input type="checkbox" id="hShock"> ความดันต่ำ</label>
+    </div>
+    <div class="out" id="hsOut"></div>
+  </div>
+
+  <div class="tool" id="tMc" style="margin-top:12px">
+    <h3>McMahon score</h3>
+    <div class="fields">
+      <label class="f">อายุ<input type="number" id="mA" value="45"></label>
+      <label class="f">เพศ<select id="mS"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" step="0.1" id="mCr" value="1.8"></label>
+      <label class="f">Calcium (mg/dL)<input type="number" step="0.1" id="mCa" value="8.0"></label>
+      <label class="f">CK (U/L)<input type="number" id="mCk" value="52000"></label>
+      <label class="f">Phosphate (mg/dL)<input type="number" step="0.1" id="mP" value="5.0"></label>
+      <label class="f">HCO₃ (mmol/L)<input type="number" id="mHc" value="18"></label>
+      <label class="f">สาเหตุ<select id="mC"><option value="low">ออกกำลัง (exertional rhabdo)/ชัก/หมดสติชั่วครู่/statin/myositis</option><option value="hi" selected>อื่นๆ (นอนนิ่งนาน, ยา/สุรา, บาดเจ็บ, sepsis, classic heat stroke) · exertional heat stroke นับเป็น "ออกกำลัง"</option></select></label>
+    </div>
+    <div class="out" id="mcOut"></div>
+  </div>
+
+  <div class="tool" id="tFl" style="margin-top:12px">
+    <h3>แผนสารน้ำ rhabdomyolysis</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="fW" value="65"></label>
+      <label class="f">ปัสสาวะ 2 ชม.ล่าสุด (mL/ชม.)<input type="number" id="fU" value="80"></label>
+      <label class="f">CK ล่าสุด (U/L)<input type="number" id="fCk" value="52000"></label>
+      <label class="f">แนวโน้ม CK<select id="fTr"><option value="up">ยังขึ้น/ยังไม่รู้</option><option value="down">ลดลงแล้ว</option></select></label>
+      <label class="f">K (mmol/L)<input type="number" step="0.1" id="fK" value="5.4"></label>
+      <label class="f">pH<input type="number" step="0.01" id="fPh" placeholder="เช่น 7.25"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fHf"> หัวใจวาย/ผู้สูงอายุมาก/ไตเรื้อรัง</label>
+      <label><input type="checkbox" id="fOl"> มีน้ำเกิน (ปอดบวมน้ำ บวม)</label>
+      <label><input type="checkbox" id="fUrine" checked> ปัสสาวะยังสีชา/dipstick blood บวก</label>
+    </div>
+    <div class="out" id="flOut"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ตัวร้อน + สับสนในวันร้อน = heat stroke</b> จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</div></div>
+    <div class="pearl"><div><b>แช่น้ำเย็นทั้งตัว คือวิธีที่ดีที่สุด</b> · &lt;39°C ใน 30 นาที</div></div>
+    <div class="pearl"><div><b>วัดทางทวารหนัก</b> · หู/หน้าผาก/รักแร้ ต่ำกว่าจริง</div></div>
+    <div class="pearl"><div><b>ยาลดไข้และ dantrolene ไม่ช่วย</b></div></div>
+    <div class="pearl"><div><b>หยุดแช่ที่ ~38.6–39°C</b> กันตัวเย็นเกิน</div></div>
+    <div class="pearl"><div><b>Heat stroke รับไว้ทุกราย</b> ตับ/ไต/DIC แย่ลงวันที่ 1–3</div></div>
+    <div class="pearl"><div><b>Dipstick blood บวก แต่ RBC ไม่พบ</b> → คิดถึง myoglobin</div></div>
+    <div class="pearl"><div><b>CK สูงสุดวันที่ 1–3</b> · มาเร็วต้องเจาะซ้ำ</div></div>
+    <div class="pearl"><div><b>Isotonic เร็ว · ปัสสาวะ 1–3 mL/kg/ชม.</b> · ระวังน้ำเกิน</div></div>
+    <div class="pearl"><div><b>Bicarbonate/mannitol ไม่ใช่ routine</b></div></div>
+    <div class="pearl"><div><b>Ca ต่ำช่วงแรก ไม่ต้องให้ Ca</b> ยกเว้นมีอาการ หรือ K สูงจน ECG ผิดปกติ</div></div>
+    <div class="pearl"><div><b>K สูงคือตัวฆ่า</b> · ECG ทุกราย</div></div>
+    <div class="pearl"><div><b>ปวดเกินเหตุ + ตึงแข็ง</b> → compartment → fasciotomy</div></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../aki/index.html">AKI →</a> · <a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../hypocalcemia/index.html">Hypocalcemia →</a> · <a href="../phosphate-refeeding/index.html">Phosphate / refeeding →</a> · <a href="../toxicology/index.html">Toxicology →</a> · <a href="../sepsis/index.html">Sepsis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness: 2024 update. Wilderness Environ Med 2024;35(1 Suppl):112S–127S · 2) Barletta JF, Palmieri TL, Toomey SA, et al. Society of Critical Care Medicine guidelines for the treatment of heat stroke. Crit Care Med 2025;53:e490–e500 · 3) Roberts WO, Armstrong LE, Sawka MN, et al. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep 2023;22:134–49 · 4) Belval LN, et al. Consensus statement: prehospital care of exertional heat stroke. Prehosp Emerg Care 2018;22:392–7 · 5) Kodadek L, Carmichael SP, Seshadri A, et al. Rhabdomyolysis: an AAST Critical Care Committee clinical consensus document. Trauma Surg Acute Care Open 2022;7:e000836 · 6) Eastern Association for the Surgery of Trauma. Management of rhabdomyolysis: a practice management guideline. Am J Surg 2022;224:196–204 · 7) McMahon GM, Zeng X, Waikar SS. A risk prediction score for kidney failure or mortality in rhabdomyolysis. JAMA Intern Med 2013;173:1821–8 · 8) Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. N Engl J Med 2009;361:62–72 · 9) Sever MS, Vanholder R, et al. Recommendations for the management of crush victims in mass disasters. Nephrol Dial Transplant 2012;27 Suppl 1:i1–67 · 10) กรมควบคุมโรค กระทรวงสาธารณสุข: ข้อมูลการเฝ้าระวังการเจ็บป่วย/เสียชีวิตจากภาวะอากาศร้อน · กรมอุตุนิยมวิทยา: เกณฑ์ดัชนีความร้อน<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','rhView');
+mountWalker({
+ start:{q:'ผู้ป่วยอยู่ในที่ร้อน/ออกแรง แล้วสมองผิดปกติหรือไม่? (สับสน ชัก ซึม หมดสติ)',o:[['ใช่','hs'],['ไม่ — แค่อ่อนเพลีย ปวดหัว คลื่นไส้','he'],['หมดสติชั่วครู่แล้วฟื้นทันที','sync']]},
+ he:{leaf:true,cls:'ok',t:'Heat exhaustion',b:'หยุดกิจกรรม ย้ายไปที่เย็น ถอดเสื้อผ้า ดื่มน้ำ/ORS · วัดอุณหภูมิทางทวารหนักถ้าทำได้ · <b>ไม่ดีขึ้นใน 30 นาที หรือเริ่มสับสน → รักษาแบบ heat stroke</b>',next:['ตรวจกล้ามเนื้อ/CK','ck']},
+ sync:{leaf:true,cls:'ok',t:'Heat syncope',b:'นอนราบ ยกขา ที่ร่ม ดื่มน้ำ · ถ้าหมดสติขณะออกแรง/ใจสั่น/เจ็บอก หรือฟื้นไม่ทันที → หาสาเหตุหัวใจ (ECG)'},
+ hs:{q:'เริ่มลดอุณหภูมิแล้วหรือยัง?',h:'ไม่ต้องรอวัดอุณหภูมิแกนกลาง',o:[['ยังไม่เริ่ม / เริ่มแล้วแต่ยัง ≥39°C','cool'],['เริ่มแล้ว อุณหภูมิ &lt;39°C','cooled']]},
+ cool:{leaf:true,cls:'danger',t:'ทำให้เย็นทันที',b:'<b>แช่น้ำเย็น/น้ำแข็งทั้งตัว</b> (หรือ TACO) · ไม่มี → พ่นน้ำ + พัดลม + ice pack คลุมทั้งตัว · วัด rectal ทุก 5 นาที · <b>หยุดที่ ~38.6–39°C</b> · ไม่ใช้ยาลดไข้/dantrolene · benzodiazepine ถ้าสั่น/ชัก',next:['ลดได้แล้ว','cooled']},
+ cooled:{q:'หลังตัวเย็นแล้ว สติกลับมาหรือไม่?',o:[['กลับมา','adm'],['ยังไม่กลับ/มีไข้นำมาก่อน/คอแข็ง','alt']]},
+ alt:{leaf:true,cls:'warn',t:'หาสาเหตุอื่นร่วม',b:'Sepsis/meningitis (เพาะเชื้อ + ยาฆ่าเชื้อ), malaria, thyroid storm, ยาบ้า/anticholinergic/serotonin/NMS, ชักต่อเนื่อง, เลือดออกในสมอง (CT)',next:['รับไว้','adm']},
+ adm:{leaf:true,cls:'warn',t:'รับไว้ใน รพ. (ICU ถ้าหนัก)',b:'CBC, coag/DIC, electrolyte, Ca/P/Mg, glucose, Cr, LFT (สูงสุดวันที่ 1–4), CK, UA, blood gas, ECG · ตามซ้ำวันที่ 1–3',next:['ดู CK/ไต','ck']},
+ ck:{q:'CK &gt;5 เท่าของค่าปกติ (มัก &gt;1,000) หรือปัสสาวะสีชา?',o:[['ใช่','rh'],['ไม่','noRh']]},
+ noRh:{leaf:true,cls:'ok',t:'ยังไม่มี rhabdo',b:'ถ้ามาเร็ว (&lt;12 ชม.) หรือยังปวดกล้ามเนื้อ → <b>เจาะ CK ซ้ำใน 6–12 ชม.</b> เพราะ CK สูงสุดวันที่ 1–3'},
+ rh:{q:'ปวดตึงแขนขามาก ปวดเพิ่มเมื่อยืด ชา?',o:[['ใช่','cs'],['ไม่','mc']]},
+ cs:{leaf:true,cls:'danger',t:'สงสัย compartment syndrome',b:'วัดความดัน compartment (&gt;30 mmHg หรือ ΔP &lt;30) · <b>ปรึกษาศัลยกรรมด่วนเพื่อ fasciotomy</b> · อย่ายกขาสูง · ให้สารน้ำต่อ',next:['ประเมินไต','mc']},
+ mc:{q:'McMahon score เท่าไร / มี AKI แล้ว?',o:[['≥6 หรือมี AKI','hi'],['&lt;6 และไตปกติ','lo']]},
+ hi:{leaf:true,cls:'danger',t:'เสี่ยงไตวายสูง',b:'<b>Isotonic crystalloid</b> เริ่ม ~400 mL/ชม. (bolus ถ้าขาดน้ำ) · เป้า <b>ปัสสาวะ 1–3 mL/kg/ชม.</b> (≤300) · K/Ca/P/Cr/CK ทุก 6–12 ชม. · ECG · ไม่ให้ bicarbonate/mannitol routine · <b>ปัสสาวะไม่ออกแม้สารน้ำพอ/K สูงดื้อ/น้ำเกิน → ปรึกษาไตเพื่อล้างไต</b>'},
+ lo:{leaf:true,cls:'ok',t:'เสี่ยงต่ำ',b:'สารน้ำทางปาก/IV ให้ปัสสาวะออกดี · หยุดยาที่เกี่ยวข้อง (statin) · CK ซ้ำจนลดลง · exertional rhabdo ที่<b>ไม่ใช่ heat stroke</b> และไม่มีภาวะแทรกซ้อน อาจกลับบ้านได้ถ้าดื่มน้ำได้และนัดตรวจซ้ำ'}
+},'apTrail','apStage');
+
+function hs(){
+  const t0=num('hT0'),t1=num('hT1'),m=num('hMin'),me=$('hMeth').value;const c=id=>$(id).checked;const L=[];
+  const cns=c('hCns');const cur=t1!==null?t1:t0;
+  if(cns)L.push('<b>สมองผิดปกติ → รักษาแบบ heat stroke</b> (ไม่ต้องรออุณหภูมิ)');
+  else if(cur!==null&&cur>=40)L.push('อุณหภูมิ ≥40°C แต่สมองปกติ → <b>ทำให้เย็นต่อและประเมินสมองซ้ำบ่อยๆ</b> (heat stroke ระยะแรก/วัดช้าได้)');
+  else L.push('สมองปกติ → น่าเป็น heat exhaustion · ที่เย็น ดื่มน้ำ/ORS · ไม่ดีขึ้นใน 30 นาที → รพ.');
+  if(c('hRect'))L.push('<b>อุณหภูมิหู/รักแร้/หน้าผากต่ำกว่าแกนกลาง</b> — อย่าใช้ตัดสินหยุดทำให้เย็น ใช้ rectal ถ้าทำได้');
+  if(cns||(cur!==null&&cur>=40)){
+    if(me==='none')L.push('<b>เริ่มแช่น้ำเย็น/น้ำแข็งทั้งตัวทันที</b> (ไม่มี → TACO หรือพ่นน้ำ + พัดลม + ice pack คลุมทั้งตัว)');
+    else if(me==='pack')L.push('<b>Ice pack บางจุดช้าเกินไป</b> → เปลี่ยนเป็นแช่ทั้งตัว/TACO หรือคลุมทั้งตัว');
+    else if(me==='evap')L.push('พ่นน้ำ + พัดลมช้ากว่าแช่หลายเท่า (โดยเฉพาะอากาศชื้น) → ถ้ามีอ่าง/ผ้าใบ เปลี่ยนเป็นแช่');
+    if(t0!==null&&t1!==null&&m){
+      const r=(t0-t1)/m;L.push(`อัตราลด <b>${r.toFixed(2)}°C/นาที</b>`+(r>=0.15?' (ดี ≥0.15)':' — <b>ช้ากว่าเป้า 0.15°C/นาที</b> เพิ่มน้ำแข็ง/คนช่วย/เปลี่ยนวิธี'));
+      if(t1>39){const need=r>0?Math.ceil((t1-39)/r):null;L.push(need?`ที่อัตรานี้อีก ~<b>${need} นาที</b> ถึง 39°C`+(m+need>30?' — <b>จะเกิน 30 นาที</b> เร่งการทำให้เย็น':''):'อุณหภูมิไม่ลด → ตรวจวิธี วัดซ้ำ คิดสาเหตุอื่น');}
+    }
+    if(cur!==null&&c('hRect')){L.push('<b>อุณหภูมินี้ไม่ใช่ rectal — ห้ามใช้ตัดสินหยุดแช่</b> · ถ้าวัด rectal ไม่ได้ ให้แช่ ~10–15 นาที แล้วส่งต่อ (KSI)');}else if(cur!==null){if(cur<=38.6)L.push(`<b>${cur}°C — หยุดแช่</b> เช็ดตัวให้แห้ง ห่มผ้าบาง วัดซ้ำทุก 10–15 นาที (กลับขึ้นได้ / ตัวเย็นเกิน)`);else if(cur<=39)L.push(`<b>${cur}°C — ถึงเกณฑ์หยุด (38.6–39)</b> ยกออกจากน้ำ วัดซ้ำ`);else L.push(`${cur}°C — <b>ทำให้เย็นต่อ</b> · วัดทุก 5 นาที`);}
+    L.push('<b>ไม่ใช้</b> paracetamol/NSAIDs/dantrolene · ชัก/สั่นมาก → benzodiazepine');
+  }
+  if(c('hShock'))L.push('ความดันต่ำ: ให้ crystalloid ทีละ 500 mL แล้วประเมิน · ส่วนใหญ่ดีขึ้นเมื่อตัวเย็น · ไม่ดีขึ้น → sepsis/หัวใจ, vasopressor');
+  if(c('hInf'))L.push('<b>เบาะแสติดเชื้อ</b> → blood culture + ยาฆ่าเชื้อพร้อมกับทำให้เย็น · ดูหน้า Meningitis/Sepsis');
+  if(c('hDrug'))L.push('ยา/สาร → คิดถึง sympathomimetic, anticholinergic, serotonin syndrome, NMS · ทำให้เย็นเหมือนกัน + benzodiazepine');
+  if(cns)L.push('ตรวจ: CBC, coag, electrolyte, Ca/P/Mg, Cr, LFT, CK, UA, glucose, blood gas, ECG · <b>รับไว้</b> ตามซ้ำวันที่ 1–3');
+  $('hsOut').innerHTML=L.join('<br>');
+}
+bindAll('#tHs input,#tHs select',hs);
+
+function mc(){
+  const a=num('mA'),cr=num('mCr'),ca=num('mCa'),ck=num('mCk'),p=num('mP'),hc=num('mHc');const L=[];const pts=[];let s=0;
+  const add=(v,l)=>{if(v){s+=v;pts.push(`${l} ${v}`)}};
+  if(a!==null)add(a>80?3:a>70?2.5:a>50?1.5:0,'อายุ');
+  if($('mS').value==='f')add(1,'หญิง');
+  if(cr!==null)add(cr>2.2?3:cr>=1.4?1.5:0,'Cr');
+  if(ca!==null&&ca<7.5)add(2,'Ca<7.5');
+  if(ck!==null&&ck>40000)add(2,'CK>40,000');
+  if($('mC').value==='hi')add(3,'สาเหตุอื่น');
+  if(p!==null)add(p>5.4?3:p>=4?1.5:0,'P');
+  if(hc!==null&&hc<19)add(2,'HCO₃<19');
+  const miss=[a,cr,ca,ck,p,hc].some(v=>v===null);
+  L.push(`McMahon = <b>${s}</b>`+(pts.length?` (${pts.join(' + ')})`:'')+(miss?' <span class="muted">— ยังกรอกไม่ครบ</span>':''));
+  if(miss)L.push('กรอกให้ครบก่อนแปลผล');else L.push(s>=6?'<b>≥6: เสี่ยงต่อการล้างไต/เสียชีวิต</b>'+(s>10?' (>10 ≈ 60%)':'')+' → สารน้ำเต็มที่ ตามแล็บทุก 6–12 ชม. แจ้งทีมไต':'<b>&lt;6: ไม่ถึงเกณฑ์เสี่ยงสูง</b>'+(s<5?' (<5: ตาย/ล้างไต ~2–3%)':'')+' · ยังต้องให้สารน้ำและตาม CK');
+  if(ck!==null&&ck<5000)L.push('<span class="muted">คะแนนพัฒนาในผู้ที่ CK &gt;5,000 — ถ้า CK ต่ำกว่านี้ ใช้ด้วยความระวัง</span>');
+  if(ca!==null&&ca<7.5)L.push('Ca ต่ำ: <b>ไม่ต้องให้ Ca</b> ถ้าไม่มีอาการ/K ไม่ทำพิษหัวใจ');
+  $('mcOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMc input,#tMc select',mc);
+
+function fl(){
+  const w=num('fW'),u=num('fU'),ck=num('fCk'),tr=$('fTr').value,k=num('fK'),ph=num('fPh');const c=id=>$(id).checked;const L=[];
+  if(!w){$('flOut').textContent='ใส่น้ำหนัก';return}
+  const lo=Math.round(w*1),hi=Math.min(Math.round(w*3),300);
+  const tgt=`เป้าปัสสาวะ <b>${lo}–${hi} mL/ชม.</b> (1–3 mL/kg/ชม., ไม่เกิน ~300)`;
+  if(c('fOl')){L.push('<b>มีน้ำเกิน → หยุด/ลดสารน้ำ</b> · furosemide ถ้ายังมีปัสสาวะ · ปรึกษาไตเรื่องล้างไต');}
+  else{
+    const done=tr==='down'&&ck!==null&&ck<5000&&!c('fUrine');
+    if(done)L.push('CK ลดลง &lt;5,000 และปัสสาวะใส → <b>ลดสารน้ำเป็นขั้นแล้วหยุด</b> · ดื่มน้ำทางปาก');
+    else{
+      L.push(tgt);
+      if(u!==null){
+        if(u<lo)L.push(`ปัสสาวะ ${u} mL/ชม. <b>ต่ำกว่าเป้า</b> → ประเมินสารน้ำ (JVP, ultrasound IVC/ปอด) · ขาด → bolus ${c('fHf')?'250–500':'500–1,000'} mL แล้วเพิ่มอัตรา · ไม่ขาดแต่ไม่ออก → <b>AKI oliguric: หยุดอัดน้ำ ปรึกษาไต</b>`);
+        else if(u>hi)L.push(`ปัสสาวะ ${u} mL/ชม. <b>เกินเป้า</b> → ลดอัตราสารน้ำ · ระวัง polyuria ช่วงฟื้น ตาม Na/K/Ca`);else L.push(`ปัสสาวะ ${u} mL/ชม. ถึงเป้า → ให้สารน้ำต่อ ปรับอัตราให้ปัสสาวะอยู่ในเป้า (เริ่ม ~400 mL/ชม. ช่วง 200–1,000)`);
+      }
+      L.push('Isotonic: NSS หรือ RL/balanced · ประเมินซ้ำทุก 2–4 ชม. · CK/K/Ca/P/Cr ทุก 6–12 ชม.');
+    }
+  }
+  if(c('fHf'))L.push('<b>หัวใจวาย/สูงอายุ/CKD</b> → ให้เป็น bolus เล็ก 250–500 mL ประเมินบ่อย · ICU ถ้าทำได้');
+  if(k!==null&&k>=6)L.push(`<b>K ${k} — อันตราย</b> → ECG · calcium gluconate · insulin + glucose · salbutamol · ไม่ลง/ปัสสาวะน้อย → ล้างไต`);
+  else if(k!==null&&k>5)L.push(`K ${k} → ECG · ตามทุก 4–6 ชม. · ไม่เติม KCl ในสารน้ำ · RL (K 4 mmol/L) ใช้ได้ ถ้า K สูงขึ้นเร็ว เลือก NSS`);
+  if(ph!==null&&ph<7.1)L.push(`pH ${ph} → acidosis รุนแรง: <b>bicarbonate มีที่ใช้</b> (ไม่ใช่เพื่อป้องกันไต) · ระวัง Ca ต่ำลง`);
+  else L.push('<span class="muted">ไม่ให้ bicarbonate/mannitol routine (EAST 2022, AAST 2022)</span>');
+  $('flOut').innerHTML=L.join('<br>');
+}
+bindAll('#tFl input,#tFl select',fl);
+
+mountQuiz([
+ ['ทหารฝึกวิ่งกลางแดด ล้มลง สับสน พูดไม่รู้เรื่อง อุณหภูมิหน้าผาก 38.4°C ข้อใดถูกที่สุด',
+  ['ไม่ใช่ heat stroke เพราะไม่ถึง 40°C','ให้ paracetamol แล้วส่งต่อ','แช่น้ำเย็นทั้งตัวทันที แล้ววัด rectal temperature','รอ CT สมองก่อน'],2,'สมองผิดปกติหลังออกแรงในที่ร้อน = heat stroke · อุณหภูมิหน้าผากต่ำกว่าแกนกลาง · เริ่มทำให้เย็นได้โดยไม่ต้องรอ'],
+ ['วิธีลดอุณหภูมิที่เร็วที่สุดใน heat stroke',
+  ['Ice pack ที่ซอกรักแร้และขาหนีบ','พัดลมอย่างเดียว','แช่น้ำเย็น/น้ำแข็งทั้งตัว','สารน้ำเย็นทางหลอดเลือด'],2,'Cold/ice-water immersion ~0.15–0.35°C/นาที'],
+ ['ควรหยุดแช่น้ำเย็นเมื่ออุณหภูมิทางทวารหนักประมาณเท่าใด',
+  ['37.0°C','38.6–39°C','40°C','เมื่อผู้ป่วยรู้สึกตัวเท่านั้น'],1,'กันตัวเย็นเกิน · SCCM เป้า <39°C ภายใน 30 นาที'],
+ ['ข้อใดไม่แนะนำใน heat stroke',
+  ['Benzodiazepine เมื่อสั่น/ชัก','Dantrolene','วัดอุณหภูมิซ้ำทุก 5 นาที','ตรวจ CK และ LFT ซ้ำ'],1,'SCCM 2025 แนะนำไม่ให้ dantrolene และไม่ใช้ยาลดไข้'],
+ ['ชายเมาหมดสติในห้อง 18 ชม. ปัสสาวะสีโค้ก dipstick blood 3+ กล้องไม่พบ RBC แปลว่า',
+  ['Glomerulonephritis','Myoglobinuria จาก rhabdomyolysis','นิ่วในไต','ติดเชื้อทางเดินปัสสาวะ'],1,'Heme บวกแต่ไม่มี RBC'],
+ ['การให้สารน้ำใน rhabdomyolysis ข้อใดถูก',
+  ['ให้ D5W','Isotonic crystalloid เป้าปัสสาวะ 1–3 mL/kg/ชม. (ไม่เกิน ~300 mL/ชม.)','ให้ mannitol ทุกราย','ให้ bicarbonate ทุกรายที่ CK >5,000'],1,'NSS/RL ทั้งคู่ใช้ได้ (AAST) · bicarbonate/mannitol ไม่ routine'],
+ ['Ca 7.2 mg/dL ในผู้ป่วย rhabdo ไม่มีอาการ K 4.8 ECG ปกติ ควรทำอย่างไร',
+  ['ให้ calcium gluconate ทันที','ไม่ต้องให้ Ca ติดตามต่อ','ให้ vitamin D','ให้ bicarbonate'],1,'Ca ไปตกตะกอนในกล้ามเนื้อ และ Ca สูงเกินในช่วงฟื้น'],
+ ['หลังให้สารน้ำ 6 ชม. ผู้ป่วยปวดน่องขวามาก ปวดเพิ่มเมื่อกระดกเท้า น่องตึงแข็ง ชีพจรยังคลำได้',
+  ['ให้ยาแก้ปวดแล้วสังเกต','ยกขาสูง','วัดความดัน compartment / ปรึกษาศัลยกรรมด่วน','ชีพจรยังคลำได้ จึงตัด compartment syndrome'],2,'ชีพจรหายเป็นอาการท้าย'],
+ ['McMahon score ใช้ทำนายอะไร',
+  ['ความรุนแรงของ heat stroke','การต้องล้างไตหรือเสียชีวิตใน rhabdomyolysis','ความเสี่ยง compartment syndrome','ระยะเวลาที่ CK จะลด'],1,'≥6 = เสี่ยง']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

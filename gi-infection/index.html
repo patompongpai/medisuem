@@ -1,0 +1,742 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Acute diarrhea · C. difficile · Cholangitis (TG18)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Gastroenterology · Infectious disease · ACG 2016 · IDSA/SHEA 2017/2021 · ACG 2021 · Tokyo Guidelines 2018 · RDU ไทย</div>
+  <h1>ท้องร่วงเฉียบพลัน · C. difficile · ท่อน้ำดีอักเสบ<br>Acute diarrhea / C. difficile / Cholangitis (TG18)</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ภาวะติดเชื้อทางเดินอาหารที่พบบ่อยที่ ER/OPD/ward: <b>ท้องร่วงเฉียบพลัน</b> (เมื่อไรควรให้และไม่ควรให้ยาฆ่าเชื้อตามหลัก RDU), <b>C. difficile</b> (ท้องเสียหลังได้ยาฆ่าเชื้อในโรงพยาบาล) และ <b>ท่อน้ำดีอักเสบเฉียบพลัน</b> ตาม Tokyo Guidelines 2018 (เกณฑ์วินิจฉัย ความรุนแรง และเวลาที่ต้องระบายน้ำดี) · ใช้คู่กับหน้า <a href="../pancreatitis/index.html">ตับอ่อนอักเสบเฉียบพลัน</a></p>
+  <p class="cite">อ้างอิงหลัก: Riddle MS, et al. ACG clinical guideline: acute diarrheal infections in adults (Am J Gastroenterol 2016;111:602–22) · Shane AL, et al. IDSA infectious diarrhea guideline (Clin Infect Dis 2017;65:e45–80) · McDonald LC, et al. IDSA/SHEA CDI 2017 (CID 2018;66:e1–48) + Johnson S, et al. focused update 2021 (CID 2021;73:e1029–44) · Kelly CR, et al. ACG CDI guideline (Am J Gastroenterol 2021;116:1124–47) · Tokyo Guidelines 2018 series (J Hepatobiliary Pancreat Sci 2018;25:1–100) · คู่มือโรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล (RDU Hospital) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ท้องร่วงส่วนใหญ่ไม่ต้องใช้ยาฆ่าเชื้อ</b>ให้สารน้ำ/ORS · ยาฆ่าเชื้อเมื่อ <b>ไข้ + ถ่ายเป็นมูกเลือด</b> หรือภูมิคุ้มกันต่ำ/sepsis</div>
+    <div class="stage" style="--c:var(--warn)"><b>ท้องเสียหลังได้ยาฆ่าเชื้อ</b>≥3 ครั้ง/วัน → ตรวจ C. difficile · รักษาด้วย vancomycin หรือ fidaxomicin กิน</div>
+    <div class="stage" style="--c:var(--danger)"><b>ไข้ + ดีซ่าน + ท่อน้ำดีขยาย</b>= cholangitis · ยาฆ่าเชื้อ + <b>ระบายน้ำดี</b> · Grade III ต้องระบายเร็วหลังประคองอาการ</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#ad">ท้องร่วงเฉียบพลัน: ประเมิน</a><a href="#adrx">ดูแลทั่วไป</a><a href="#abx">ยาฆ่าเชื้อเมื่อไร</a><a href="#bug">ตรวจอุจจาระ · เชื้อเฉพาะ</a><a href="#cdi">C. difficile: ตรวจ · ความรุนแรง</a><a href="#cdirx">C. difficile: รักษา</a><a href="#tg">Cholangitis: วินิจฉัย</a><a href="#grade">ความรุนแรง TG18</a><a href="#drain">ระบายน้ำดี</a><a href="#tgabx">ยาฆ่าเชื้อ TG18</a><a href="#chole">Cholecystitis สั้นๆ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="ad" class="col">
+  <div class="sec-num">01</div>
+  <h2>ท้องร่วงเฉียบพลัน: ประเมินผู้ป่วย</h2>
+  <p>ถ่ายเหลว <b>≥3 ครั้งต่อวัน</b> นาน <b>&lt;14 วัน</b> (14–30 วัน = persistent, &gt;30 วัน = chronic) · ส่วนใหญ่เกิดจากไวรัส/สารพิษในอาหาร และหายเองใน 1–3 วัน</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ถามให้ได้</h4><ul><li><b>เริ่มกี่ชั่วโมงหลังกิน</b>: 1–6 ชม. อาเจียนเด่น → สารพิษ S. aureus/B. cereus (ข้าวผัดค้าง) · 8–16 ชม. → C. perfringens · &gt;16 ชม. → เชื้อแบคทีเรีย/ไวรัส</li><li><b>ไข้ อุจจาระมีมูก/เลือด ปวดเบ่ง</b> → invasive (Shigella, Campylobacter, Salmonella, E. histolytica)</li><li>ถ่ายเป็น <b>น้ำซาวข้าวปริมาณมาก</b> → cholera · อาหารทะเลดิบ → V. parahaemolyticus</li><li><b>ได้ยาฆ่าเชื้อ/อยู่ รพ. ใน 3 เดือน</b> → C. difficile (หัวข้อ 05)</li><li>คนรอบข้างเป็นพร้อมกัน · เดินทาง · HIV/ยากดภูมิ · ยาใหม่ (metformin, Mg, colchicine)</li></ul></div>
+    <div class="card c-red"><h4>สัญญาณอันตราย</h4><ul><li><b>ขาดน้ำรุนแรง</b>: ซึม ชีพจรเร็ว BP ต่ำ/ลดลงเมื่อลุกนั่ง ปัสสาวะน้อย</li><li>ไข้ ≥38.5°C · ถ่ายเป็นเลือด · ปวดท้องรุนแรง (ไส้ติ่ง/ลำไส้ขาดเลือด)</li><li>อายุ ≥65 ปี · โรคร่วม · ภูมิคุ้มกันต่ำ · ตั้งครรภ์</li><li>อาการ &gt;7 วัน · ถ่าย &gt;6 ครั้ง/วัน</li><li>ถ่ายเป็นเลือดแต่ไม่มีไข้ + ปวดท้องมาก → <b>STEC</b> (เสี่ยง HUS)</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ท้องเสีย + ไข้สูงในไทย อย่าลืม <b>typhoid</b>, <b>dengue, leptospirosis, scrub typhus, malaria</b> และ sepsis จากแหล่งอื่น (ดูหน้า <a href="../tropical-fever/index.html">Tropical fever</a>)</p>
+</section>
+
+<!-- 2 -->
+<section id="adrx" class="col">
+  <div class="sec-num">02</div>
+  <h2>ดูแลทั่วไป</h2>
+  <div class="tbl"><table>
+    <tr><th>เรื่อง</th><th>แนวทาง</th></tr>
+    <tr><td>สารน้ำ</td><td><b>ORS</b> (ผงเกลือแร่ชนิด reduced osmolarity) จิบบ่อยๆ ตามที่ถ่าย · ขาดน้ำรุนแรง/อาเจียนมาก → <b>IV Ringer's lactate หรือ NSS</b> · ขาดน้ำเล็กน้อยในผู้ใหญ่ ดื่มน้ำ/น้ำแกงจืดที่มีเกลือได้ · <b>เลี่ยงเครื่องดื่มเกลือแร่สำหรับนักกีฬาเป็นสารน้ำหลักเมื่อขาดน้ำมาก</b> (โซเดียมต่ำ น้ำตาลสูง)</td></tr>
+    <tr><td>อาหาร</td><td>กินได้ตามปกติแบบอ่อน ย่อยง่าย · ไม่ต้องงดอาหาร</td></tr>
+    <tr><td><b>Loperamide</b></td><td>ช่วยลดจำนวนครั้งใน <b>ท้องร่วงเป็นน้ำ ไม่มีไข้ ไม่มีเลือด</b> · <b>เลี่ยงเมื่อมีไข้สูงหรือถ่ายเป็นเลือด</b> (ยกเว้นให้ร่วมกับยาฆ่าเชื้อใน traveler's diarrhea) · ห้ามใน C. difficile</td></tr>
+    <tr><td>Bismuth subsalicylate</td><td>ใช้ได้ในท้องร่วงไม่รุนแรง</td></tr>
+    <tr><td>Probiotic/prebiotic</td><td><b>ACG 2016: ไม่แนะนำ</b>ให้ใช้รักษาท้องร่วงเฉียบพลันในผู้ใหญ่ (ยกเว้นท้องเสียที่สัมพันธ์กับยาฆ่าเชื้อ)</td></tr>
+    <tr><td>ยาแก้อาเจียน</td><td>Ondansetron/domperidone ช่วยให้ดื่ม ORS ได้</td></tr>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="abx" class="col">
+  <div class="sec-num">03</div>
+  <h2>ยาฆ่าเชื้อ: ให้เมื่อไร ให้อะไร</h2>
+  <div class="box key"><b>หลัก RDU <span class="tag add">ไทย</span></b>ท้องร่วงที่ <b>ไม่มีไข้ ถ่ายเป็นน้ำ หรือมีมูกเล็กน้อย</b> และอาหารเป็นพิษ → <b>ไม่ให้ยาฆ่าเชื้อ</b> · ให้เมื่อ <b>ไข้ ≥38°C ร่วมกับถ่ายมีมูกเลือด (หรือพบ RBC/WBC ในอุจจาระ)</b>, ภูมิคุ้มกันต่ำ/ใช้ steroid, มีลักษณะ sepsis, หรือสงสัย cholera · การศึกษาในโรงพยาบาลมหาวิทยาลัยแห่งหนึ่งของไทยพบว่า 77% ของผู้ป่วยนอกที่ได้รับยาฆ่าเชื้อสำหรับท้องร่วงเฉียบพลัน เป็นการใช้ไม่สมเหตุผล</div>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยา (ผู้ใหญ่)</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>Dysentery มีไข้</b> (สงสัย Shigella/Campylobacter)</td><td><b>Azithromycin 1 g ครั้งเดียว</b> หรือ 500 mg วันละครั้ง × 3 วัน<br>หรือ ciprofloxacin 500 mg bid × 3 วัน (RDU ไทย: norfloxacin 400 mg bid × 3–5 วัน)</td><td><b>Campylobacter ในไทย/เอเชียตะวันออกเฉียงใต้ดื้อ fluoroquinolone สูงมาก</b> → ACG แนะนำ azithromycin สำหรับ dysentery/ไข้ และผู้กลับจากเอเชียใต้-ตะวันออกเฉียงใต้</td></tr>
+    <tr><td>มีลักษณะ sepsis/รับไว้ใน รพ.</td><td><b>Ceftriaxone 2 g IV วันละครั้ง</b> (หรือ ciprofloxacin) 3–7 วัน</td><td>เพาะเชื้อเลือดและอุจจาระก่อน · Salmonella bacteremia/ผู้สูงอายุที่มีหลอดเลือดเทียม ต้องนานกว่า</td></tr>
+    <tr><td><b>Cholera</b> (ถ่ายน้ำซาวข้าวมาก ขาดน้ำเร็ว)</td><td><b>Doxycycline 300 mg ครั้งเดียว</b> หรือ azithromycin 1 g ครั้งเดียว (RDU ไทย: doxycycline 100 mg bid × 3 วัน หรือ 300 mg ครั้งเดียว)</td><td><b>สารน้ำสำคัญที่สุด</b> (แก้ K ต่ำ/acidosis ด้วย) · ยาฆ่าเชื้อลดปริมาณและระยะเวลา · แจ้งระบาดวิทยา (รง.506)</td></tr>
+    <tr><td>Traveler's diarrhea ปานกลาง–รุนแรง</td><td>Azithromycin 1 g ครั้งเดียว ± loperamide</td><td>ส่วนใหญ่ 1 dose ก็พอ</td></tr>
+    <tr><td><b>ถ่ายเป็นเลือด ไม่มีไข้ ปวดท้องมาก</b></td><td><b>ไม่ให้ยาฆ่าเชื้อ</b> จนกว่าจะตัด STEC ได้</td><td>ยาฆ่าเชื้อเพิ่มความเสี่ยง HUS ใน E. coli O157 · ตาม CBC/Cr</td></tr>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="bug" class="col">
+  <div class="sec-num">04</div>
+  <h2>ตรวจอุจจาระเมื่อไร · เชื้อที่รักษาเฉพาะ</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ส่งตรวจอุจจาระ/เพาะเชื้อเมื่อ</h4><ul><li><b>Dysentery</b> ปานกลาง–รุนแรง · ไข้ · มีอาการ &gt;7 วัน</li><li>ภูมิคุ้มกันต่ำ · ระบาดเป็นกลุ่ม · ผู้สัมผัสอาหาร</li><li>สงสัย cholera (เพาะเชื้อ/rapid test)</li><li>ได้ยาฆ่าเชื้อ/อยู่ รพ. → <b>C. difficile</b> (ไม่ใช่ stool culture ทั่วไป)</li><li>Stool exam: WBC/RBC บอกว่า invasive · ไข่/trophozoite ของพยาธิ/โปรโตซัว</li><li>ส่วนใหญ่ <b>ไม่ต้องส่ง</b> (ท้องร่วงเป็นน้ำ 1–3 วัน)</li></ul></div>
+    <div class="card c-warn"><h4>เชื้อที่ต้องรักษาเฉพาะ</h4><ul><li><b>E. histolytica</b> (amoebic dysentery, ฝีในตับ): <b>metronidazole 500–750 mg tid × 7–10 วัน</b> ตามด้วยยากำจัดเชื้อที่ค้างในลำไส้ (luminal agent เช่น paromomycin)</li><li><b>Giardia</b>: tinidazole 2 g ครั้งเดียว หรือ metronidazole 250–500 mg tid × 5–7 วัน</li><li><b>V. parahaemolyticus</b> (อาหารทะเลดิบ): มักหายเอง · ไม่ต้องใช้ยา</li><li><b>Salmonella</b> non-typhoidal ที่ไม่รุนแรง: <b>ไม่ให้ยา</b> (ทำให้เป็นพาหะนานขึ้น) ยกเว้นอายุ &gt;50 ปีที่สงสัยหลอดเลือดแดงแข็ง, มีลิ้นหัวใจ/หลอดเลือดเทียม/ข้อเทียม ภูมิคุ้มกันต่ำ หรือ bacteremia</li><li><b>Cyclospora/Cystoisospora</b>: TMP-SMX</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="cdi" class="col">
+  <div class="sec-num">05</div>
+  <h2>C. difficile: เมื่อไรตรวจ และรุนแรงแค่ไหน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ตรวจเมื่อ</h4><ul><li><b>ถ่ายเหลว ≥3 ครั้งใน 24 ชม.</b> โดยไม่มีคำอธิบายอื่น</li><li><b>ไม่ได้ใช้ยาระบาย</b>ใน 48 ชม.</li><li>ปัจจัยเสี่ยง: <b>ยาฆ่าเชื้อ</b> (clindamycin, fluoroquinolone, cephalosporin รุ่น 3–4, carbapenem), อยู่ รพ./บ้านพักคนชรา, อายุมาก, PPI, เคมีบำบัด, IBD</li><li><b>ไม่ตรวจ</b>ในคนไม่มีอาการ · <b>ไม่ตรวจซ้ำ</b>ใน 7 วัน · <b>ไม่ตรวจหลังรักษาหาย</b> (test of cure) — เพราะพาหะพบได้บ่อย</li></ul></div>
+    <div class="card c-warn"><h4>วิธีตรวจ</h4><ul><li><b>NAAT (PCR)</b> เพียงอย่างเดียว — เมื่อเลือกส่งเฉพาะรายที่เข้าเกณฑ์ข้างบน</li><li>หรือ <b>หลายขั้น</b>: GDH + toxin EIA → ถ้าไม่ตรงกัน ตัดสินด้วย NAAT</li><li>PCR บวก แต่ toxin ลบ → อาจเป็นแค่พาหะ ดูอาการประกอบ</li><li>Fulminant/ileus → CT ท้อง (ผนังลำไส้หนา megacolon) · ไม่ต้องรอผลก่อนเริ่มยาในรายหนัก</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ความรุนแรง (IDSA/SHEA 2017)</th><th>เกณฑ์</th></tr>
+    <tr><td>Non-severe</td><td>WBC ≤15,000 <b>และ</b> Cr &lt;1.5 mg/dL</td></tr>
+    <tr><td><b>Severe</b></td><td>WBC <b>≥15,000</b> <b>หรือ</b> Cr <b>&gt;1.5 mg/dL</b></td></tr>
+    <tr><td><b>Fulminant</b></td><td><b>ความดันต่ำ/ช็อก, ileus หรือ megacolon</b></td></tr>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="cdirx" class="col">
+  <div class="sec-num">06</div>
+  <h2>C. difficile: รักษา</h2>
+  <div class="box key"><b>ทำทุกราย</b><b>หยุดยาฆ่าเชื้อตัวที่ทำให้เกิด</b>ถ้าทำได้ · ทบทวน PPI · ห้ามยาหยุดถ่าย (loperamide/opioid) · <b>contact precaution</b> + สวมถุงมือ + ล้างมือด้วย <b>สบู่และน้ำ</b> (แอลกอฮอล์ฆ่าสปอร์ไม่ได้ ใช้สบู่เสมอเมื่อมีการระบาด) · ทำความสะอาดด้วยน้ำยาฆ่าสปอร์ (คลอรีน)</div>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยาที่แนะนำ</th><th>ทางเลือก</th></tr>
+    <tr><td><b>ครั้งแรก</b> (non-severe/severe)</td><td><b>Fidaxomicin 200 mg bid × 10 วัน</b> (IDSA 2021 แนะนำมากกว่า vancomycin — ลดการกลับเป็นซ้ำ)</td><td><b>Vancomycin 125 mg กิน qid × 10 วัน</b> · Metronidazole 500 mg tid × 10 วัน <b>เฉพาะ non-severe เมื่อไม่มียาอื่น</b></td></tr>
+    <tr><td><b>Fulminant</b></td><td><b>Vancomycin 500 mg กิน/ทาง NG qid</b> + <b>metronidazole 500 mg IV q8h</b> · ileus → + <b>vancomycin สวนทวาร</b> 500 mg ใน NSS 100 mL q6h</td><td><b>ปรึกษาศัลยกรรมเร็ว</b>: ช็อก, lactate &gt;5, WBC &gt;50,000, megacolon/ทะลุ → subtotal colectomy หรือ loop ileostomy + colonic lavage</td></tr>
+    <tr><td>กลับเป็นซ้ำครั้งแรก</td><td><b>Fidaxomicin</b> (10 วัน หรือแบบ extended: 200 mg bid × 5 วัน แล้ววันเว้นวัน วันที่ 7–25)</td><td>Vancomycin แบบ <b>taper/pulse</b> (125 mg qid 10–14 วัน → bid 7 วัน → วันละครั้ง 7 วัน → ทุก 2–3 วัน 2–8 สัปดาห์) · vancomycin 10 วัน ถ้าครั้งแรกได้ metronidazole</td></tr>
+    <tr><td>กลับเป็นซ้ำ ≥2 ครั้ง</td><td>Fidaxomicin · vancomycin taper/pulse · vancomycin แล้วตามด้วย rifaximin</td><td><b>Fecal microbiota transplantation (FMT)</b> ในศูนย์ที่ทำได้</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag add">ไทย</span> fidaxomicin อาจยังหาไม่ได้/หาได้จำกัดในไทย ส่วนใหญ่ใช้ <b>vancomycin ชนิดฉีดผสมน้ำให้กิน</b> (vancomycin ฉีดเข้าเส้นไม่ได้ผลต่อ C. difficile) · Bezlotoxumab ที่เคยแนะนำในการกลับเป็นซ้ำ ผู้ผลิตยุติการจำหน่ายแล้ว (2025)</p>
+</section>
+
+<!-- 7 -->
+<section id="tg" class="col">
+  <div class="sec-num">07</div>
+  <h2>ท่อน้ำดีอักเสบเฉียบพลัน: เกณฑ์วินิจฉัย TG18</h2>
+  <p>Charcot's triad (ไข้ ปวดท้องขวาบน ดีซ่าน) ไวต่ำ · <b>Reynolds' pentad</b> (+ ช็อก + สับสน) พบน้อยแต่รุนแรง · TG18 ใช้ 3 กลุ่ม:</p>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ข้อ</th></tr>
+    <tr><td><b>A. การอักเสบทั่วร่างกาย</b></td><td>A-1 ไข้ &gt;38°C และ/หรือหนาวสั่น · A-2 แล็บ: WBC &lt;4,000 หรือ &gt;10,000, CRP ≥1 mg/dL</td></tr>
+    <tr><td><b>B. น้ำดีคั่ง</b></td><td>B-1 ดีซ่าน: total bilirubin ≥2 mg/dL · B-2 LFT ผิดปกติ: ALP, GGT, AST, ALT &gt;1.5 เท่าของค่าปกติ</td></tr>
+    <tr><td><b>C. ภาพถ่ายทางรังสี</b></td><td>C-1 ท่อน้ำดีขยาย · C-2 เห็นสาเหตุ (นิ่ว ตีบ stent)</td></tr>
+  </table></div>
+  <div class="box note"><b>การแปล</b><b>Suspected</b> = A 1 ข้อ + (B หรือ C) 1 ข้อ · <b>Definite</b> = A + B + C อย่างละ 1 ข้อ · ไม่แน่ใจ → ประเมินซ้ำทุก 6–12 ชม. · Ultrasound ทำได้เร็วข้างเตียง CT ช่วยหาสาเหตุ/ภาวะแทรกซ้อน MRCP ดูนิ่วได้ดีกว่า</div>
+  <p class="muted" style="font-size:.88rem"><span class="tag add">ไทย</span> สาเหตุในไทย: นิ่วในท่อน้ำดี (บ่อยสุด), <b>มะเร็งท่อน้ำดี/ตับอ่อน</b> (ภาคอีสาน: พยาธิใบไม้ตับ Opisthorchis viverrini จากปลาดิบ), stent อุดตัน, นิ่วในท่อน้ำดีในตับ (recurrent pyogenic cholangitis)</p>
+</section>
+
+<!-- 8 -->
+<section id="grade" class="col">
+  <div class="sec-num">08</div>
+  <h2>ความรุนแรง TG18</h2>
+  <div class="tbl"><table>
+    <tr><th>Grade</th><th>เกณฑ์</th></tr>
+    <tr><td><b>III (severe)</b></td><td>มีอวัยวะล้มเหลว <b>≥1 ระบบ</b>: <b>หัวใจ</b> — BP ต่ำต้องใช้ dopamine ≥5 µg/kg/นาที หรือ norepinephrine ขนาดใดก็ได้ · <b>สมอง</b> — สติผิดปกติ · <b>หายใจ</b> — PaO₂/FiO₂ &lt;300 · <b>ไต</b> — ปัสสาวะน้อย หรือ Cr &gt;2.0 mg/dL · <b>ตับ</b> — PT-INR &gt;1.5 · <b>เลือด</b> — เกล็ดเลือด &lt;100,000</td></tr>
+    <tr><td><b>II (moderate)</b></td><td>ไม่มีอวัยวะล้มเหลว แต่มี <b>≥2 ข้อ</b>: WBC &gt;12,000 หรือ &lt;4,000 · ไข้ ≥39°C · อายุ ≥75 ปี · total bilirubin ≥5 mg/dL · albumin &lt;0.7 เท่าของค่าปกติล่าง</td></tr>
+    <tr><td><b>I (mild)</b></td><td>ไม่เข้าเกณฑ์ II หรือ III</td></tr>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section id="drain" class="col">
+  <div class="sec-num">09</div>
+  <h2>ระบายน้ำดี (biliary drainage)</h2>
+  <div class="tbl"><table>
+    <tr><th>Grade</th><th>TG18 flowchart</th></tr>
+    <tr><td><b>I</b></td><td>ยาฆ่าเชื้อ + สารน้ำ · <b>ไม่ดีขึ้นใน 24 ชม. → ระบายน้ำดี</b> · รักษาสาเหตุ (เช่น เอานิ่วออก) ได้ในครั้งเดียวกัน</td></tr>
+    <tr><td><b>II</b></td><td><b>ระบายน้ำดีเร็ว (early drainage)</b> ร่วมกับยาฆ่าเชื้อ · ข้อมูล TG18 พบว่าสัมพันธ์กับอัตราตาย 30 วันต่ำกว่าใน Grade II · เพาะเชื้อเลือด</td></tr>
+    <tr><td><b>III</b></td><td>ประคองอวัยวะ (สารน้ำ ยาเพิ่มความดัน ช่วยหายใจ) แล้ว <b>ระบายน้ำดีด่วน (urgent) ทันทีที่ทำได้อย่างปลอดภัย</b> · รักษาสาเหตุภายหลังเมื่ออาการดีขึ้น · เพาะเชื้อเลือดและน้ำดี</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>วิธี</h4><ul><li><b>ERCP</b> (endoscopic) เป็นวิธีแรก: ใส่ plastic stent หรือ nasobiliary drain · Grade III มักทำแค่ระบาย ไม่เอานิ่วออกในครั้งแรก</li><li>ERCP ไม่สำเร็จ/ทำไม่ได้ → <b>PTBD</b> (ผ่านผิวหนัง) หรือ EUS-guided drainage</li><li>Coagulopathy/ยาต้านเกล็ดเลือด: stent/nasobiliary ไม่ต้องตัดหูรูด</li><li>ESGE 2019: ช็อกจาก cholangitis ระบาย<b>โดยเร็วที่สุด (ภายใน 12 ชม.)</b> · Grade II ภายใน 48–72 ชม. · Grade I ทำแบบไม่เร่งด่วน (elective)</li></ul></div>
+    <div class="card c-warn"><h4>สำหรับแพทย์ รพ.ชุมชน</h4><ul><li>เริ่มยาฆ่าเชื้อ<b>ภายใน 1 ชม.</b>ถ้าช็อก (ภายใน 6 ชม.ในรายอื่นตาม TG18) + สารน้ำ + เพาะเชื้อเลือด</li><li>Grade II–III หรือ Grade I ไม่ดีขึ้น 24 ชม. → <b>ติดต่อส่งต่อ รพ.ที่ทำ ERCP/PTBD ได้</b></li><li>แยกโรคที่คล้ายกัน: <b>ฝีในตับ</b> (bacterial, amoebic, melioidosis ในอีสาน) — ultrasound ช่วยแยก</li><li>นิ่วท่อน้ำดีร่วมตับอ่อนอักเสบ → ดูหน้า <a href="../pancreatitis/index.html">Pancreatitis</a> (cholangitis ร่วม → ERCP ภายใน 24 ชม.)</li><li>หลังหาย: ผ่าตัดถุงน้ำดีในรายที่เป็นนิ่วถุงน้ำดี (ESGE: ภายใน ~2 สัปดาห์หลัง ERCP)</li></ul></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="tgabx" class="col">
+  <div class="sec-num">10</div>
+  <h2>ยาฆ่าเชื้อ TG18 และระยะเวลา</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ตัวอย่างยาตาม TG18</th><th>ในทางปฏิบัติ (ไทย)</th></tr>
+    <tr><td>ชุมชน Grade I</td><td>Cefazolin/cefuroxime/ceftriaxone ± metronidazole · ertapenem · fluoroquinolone ± metronidazole · ampicillin/sulbactam (เฉพาะเมื่อ E. coli ในพื้นที่ดื้อ &lt;20%)</td><td><b>Ceftriaxone 2 g IV วันละครั้ง</b> ± metronidazole</td></tr>
+    <tr><td>ชุมชน Grade II</td><td>Piperacillin/tazobactam · ceftriaxone/cefotaxime/cefepime ± metronidazole · ertapenem · fluoroquinolone ± metronidazole</td><td>Ceftriaxone ± metronidazole · เสี่ยง ESBL → ertapenem</td></tr>
+    <tr><td><b>ชุมชน Grade III</b> และ <b>ติดเชื้อในโรงพยาบาล/หลังทำหัตถการ</b></td><td><b>Piperacillin/tazobactam</b> · cefepime/ceftazidime ± metronidazole · <b>meropenem/imipenem</b> · + <b>vancomycin</b> (enterococcus) · ยาต้าน MRSA/VRE ตามความชุกในพื้นที่</td><td>Pip/tazo หรือ meropenem ± vancomycin · ปรับตามผลเพาะเชื้อ</td></tr>
+  </table></div>
+  <div class="box key"><b>ระยะเวลา (TG18)</b>เมื่อ<b>ระบายน้ำดี/กำจัดต้นเหตุได้แล้ว ให้ต่อ 4–7 วัน</b> · <b>bacteremia จาก Enterococcus/Streptococcus ≥2 สัปดาห์</b> · ยังมีนิ่ว/ท่อตีบที่ยังไม่แก้ → ให้จนแก้ได้ · <b>ครอบคลุม anaerobe (metronidazole)</b> เมื่อมีการต่อท่อน้ำดีกับลำไส้ (biliary-enteric anastomosis)</div>
+</section>
+
+<!-- 11 -->
+<section id="chole" class="col">
+  <div class="sec-num">11</div>
+  <h2>Acute cholecystitis (TG18) สั้นๆ</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>วินิจฉัย</h4><ul><li>A: <b>Murphy's sign</b>, ปวด/กดเจ็บ/คลำก้อนท้องขวาบน</li><li>B: ไข้, CRP สูง, WBC สูง</li><li>C: ภาพ (ultrasound: ผนังหนา ถุงโต sonographic Murphy, ของเหลวรอบถุง)</li><li>Suspected = A + B · Definite = A + B + C</li></ul></div>
+    <div class="card c-warn"><h4>ความรุนแรงและการรักษา</h4><ul><li><b>Grade III</b>: อวัยวะล้มเหลว (เกณฑ์เดียวกับ cholangitis)</li><li><b>Grade II</b>: WBC &gt;18,000 · คลำก้อนกดเจ็บ · อาการ &gt;72 ชม. · อักเสบรุนแรงเฉพาะที่ (gangrenous, emphysematous, ฝี, peritonitis)</li><li>Grade I–II ผ่าตัดได้ (CCI ≤5, ASA-PS ≤2) → <b>laparoscopic cholecystectomy เร็ว</b></li><li>เสี่ยงผ่าตัดสูง หรือ Grade III ที่ไม่เข้าเกณฑ์ผ่าตัดเร็ว (TG18: Grade III ผ่าตัดเร็วได้เฉพาะเมื่ออวัยวะล้มเหลวฟื้นเร็ว, CCI ≤3, ASA-PS ≤2, ไม่มีดีซ่าน/สมองหรือหายใจล้มเหลว ใน รพ.ที่เชี่ยวชาญ) → ยา ± <b>percutaneous cholecystostomy</b> แล้วผ่าตัดภายหลัง</li><li>ยาฆ่าเชื้อหลังผ่าตัด Grade I–II หยุดภายใน 24 ชม.</li></ul></div>
+  </div>
+</section>
+
+<!-- 12 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง: ท่อน้ำดีอักเสบ</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น (ทั้ง 3 เรื่อง)</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ไข้ ± ปวดท้องขวาบน ± ดีซ่าน</b>CBC, CRP, LFT, Cr, coag, lactate, blood culture · ultrasound</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เข้าเกณฑ์ TG18 (A + B/C)?</b> → ให้ยาฆ่าเชื้อ + สารน้ำ แล้วจัด Grade</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Grade I</span><div class="node dx green"><b>ยาฆ่าเชื้อ</b>ไม่ดีขึ้น 24 ชม. → ระบายน้ำดี · รักษาสาเหตุ</div></div>
+        <div class="arm"><span class="lab">Grade II</span><div class="node dx hypo"><b>ระบายน้ำดีเร็ว</b>ERCP + ยาฆ่าเชื้อ · เพาะเชื้อเลือด</div></div>
+        <div class="arm"><span class="lab">Grade III</span><div class="node red"><b>ประคองอวัยวะ → ระบายด่วน</b>ERCP/PTBD ทันทีที่ปลอดภัย · pip/tazo หรือ meropenem + vancomycin</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>หลังกำจัดต้นเหตุ</b>ยาฆ่าเชื้อต่อ 4–7 วัน (Enterococcus/Strep bacteremia ≥2 สัปดาห์)</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 13 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ปรับตามเชื้อดื้อยาในโรงพยาบาลของท่าน</p>
+  </div>
+  <div class="tool plan" id="tAd" style="margin-top:12px">
+    <h3>ท้องร่วงเฉียบพลัน: ต้องให้ยาฆ่าเชื้อไหม</h3>
+    <div class="fields">
+      <label class="f">อุณหภูมิ (°C)<input type="number" step="0.1" id="aT" value="38.6"></label>
+      <label class="f">ระยะเวลา (วัน)<input type="number" id="aD" value="2"></label>
+      <label class="f">ลักษณะอุจจาระ<select id="aSt"><option value="water">เป็นน้ำ</option><option value="rice">น้ำซาวข้าวปริมาณมาก</option><option value="muc" selected>มูกเลือด/ปวดเบ่ง</option><option value="blood">เลือดสด ไม่มีไข้</option></select></label>
+      <label class="f">ขาดน้ำ<select id="aDh"><option value="no">ไม่มี/เล็กน้อย</option><option value="mod">ปานกลาง</option><option value="sev">รุนแรง/ช็อก</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aImm"> ภูมิคุ้มกันต่ำ/steroid/HIV</label>
+      <label><input type="checkbox" id="aSep"> ลักษณะ sepsis (ซึม BP ต่ำ หายใจเร็ว)</label>
+      <label><input type="checkbox" id="aAbx"> ได้ยาฆ่าเชื้อ/อยู่ รพ. ใน 3 เดือน</label>
+      <label><input type="checkbox" id="aFood"> อาเจียนเด่น เริ่ม 1–6 ชม.หลังกิน</label>
+      <label><input type="checkbox" id="aOld"> อายุ ≥65/โรคร่วมมาก/ตั้งครรภ์</label>
+      <label><input type="checkbox" id="aSea"> อาหารทะเลดิบ</label>
+    </div>
+    <div class="out" id="adOut"></div>
+  </div>
+
+  <div class="tool" id="tCd" style="margin-top:12px">
+    <h3>C. difficile: ความรุนแรงและยา</h3>
+    <div class="fields">
+      <label class="f">WBC (/mm³)<input type="number" id="cWbc" value="17000"></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" step="0.1" id="cCr" value="1.2"></label>
+      <label class="f">ครั้งที่<select id="cEp"><option value="1">ครั้งแรก</option><option value="2">กลับเป็นซ้ำครั้งแรก</option><option value="3">กลับเป็นซ้ำ ≥2 ครั้ง</option></select></label>
+      <label class="f">ยาที่หาได้<select id="cDrug"><option value="v">Vancomycin กิน</option><option value="f">มีทั้ง fidaxomicin และ vancomycin</option><option value="m">มีแค่ metronidazole</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="cShock"> ความดันต่ำ/ช็อก</label>
+      <label><input type="checkbox" id="cIleus"> Ileus/ท้องอืด ไม่ถ่าย</label>
+      <label><input type="checkbox" id="cMega"> Megacolon/ทะลุ (ภาพรังสี)</label>
+      <label><input type="checkbox" id="cPrevM"> ครั้งก่อนได้ metronidazole</label>
+    </div>
+    <div class="out" id="cdOut"></div>
+  </div>
+
+  <div class="tool" id="tTg" style="margin-top:12px">
+    <h3>Cholangitis: TG18 วินิจฉัย · Grade · แผน</h3>
+    <div class="fields">
+      <label class="f">อุณหภูมิสูงสุด (°C)<input type="number" step="0.1" id="tT" value="39.2"></label>
+      <label class="f">WBC (/mm³)<input type="number" id="tW" value="14500"></label>
+      <label class="f">CRP (mg/dL)<input type="number" step="0.1" id="tCrp" placeholder="mg/dL (ไม่ใช่ mg/L)"></label>
+      <label class="f">Total bilirubin (mg/dL)<input type="number" step="0.1" id="tB" value="4.1"></label>
+      <label class="f">อายุ<input type="number" id="tA" value="78"></label>
+      <label class="f">Albumin (g/dL)<input type="number" step="0.1" id="tAlb" placeholder="เช่น 2.4"></label>
+      <label class="f">ค่าปกติล่างของ albumin<input type="number" step="0.1" id="tAlbL" value="3.5"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="tChill"> หนาวสั่น</label>
+      <label><input type="checkbox" id="tLft" checked> ALP/GGT/AST/ALT &gt;1.5 เท่าของค่าปกติ</label>
+      <label><input type="checkbox" id="tDil" checked> ท่อน้ำดีขยาย (US/CT)</label>
+      <label><input type="checkbox" id="tEt"> เห็นสาเหตุ (นิ่ว ตีบ stent)</label>
+      <label><input type="checkbox" id="oCv"> ต้องใช้ norepinephrine/dopamine ≥5</label>
+      <label><input type="checkbox" id="oCns"> สติผิดปกติ</label>
+      <label><input type="checkbox" id="oResp"> PaO₂/FiO₂ &lt;300</label>
+      <label><input type="checkbox" id="oRen"> ปัสสาวะน้อย หรือ Cr &gt;2.0</label>
+      <label><input type="checkbox" id="oInr"> INR &gt;1.5</label>
+      <label><input type="checkbox" id="oPlt"> เกล็ดเลือด &lt;100,000</label>
+      <label><input type="checkbox" id="tHosp"> ติดเชื้อใน รพ./หลัง ERCP/มี stent</label>
+      <label><input type="checkbox" id="tAnas"> มีการต่อท่อน้ำดีกับลำไส้</label>
+    </div>
+    <div class="out" id="tgOut"></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ท้องร่วงเป็นน้ำ ไม่มีไข้ → ORS ไม่ต้องใช้ยาฆ่าเชื้อ</b></div></div>
+    <div class="pearl"><div><b>ไข้ + มูกเลือด → azithromycin</b> (Campylobacter ไทยดื้อ quinolone)</div></div>
+    <div class="pearl"><div><b>เลือดสด ไม่มีไข้ ปวดท้องมาก → คิดถึง STEC</b> งดยาฆ่าเชื้อ</div></div>
+    <div class="pearl"><div><b>Cholera: สารน้ำก่อน</b> + doxycycline 300 mg ครั้งเดียว</div></div>
+    <div class="pearl"><div><b>Loperamide ห้ามใน dysentery ที่ไม่ได้ยาฆ่าเชื้อ และ C. difficile</b></div></div>
+    <div class="pearl"><div><b>ท้องเสียหลังยาฆ่าเชื้อ ≥3 ครั้ง/วัน → ตรวจ C. difficile</b> · ไม่ตรวจ test of cure</div></div>
+    <div class="pearl"><div><b>CDI: vancomycin กิน 125 mg qid</b> หรือ fidaxomicin · IV vancomycin ไม่ได้ผล</div></div>
+    <div class="pearl"><div><b>Fulminant CDI: vanco 500 qid + metronidazole IV</b> ± สวนทวาร · ปรึกษาศัลย์</div></div>
+    <div class="pearl"><div><b>ล้างมือด้วยสบู่</b> · แอลกอฮอล์ไม่ฆ่าสปอร์</div></div>
+    <div class="pearl"><div><b>TG18: A + B + C = definite cholangitis</b></div></div>
+    <div class="pearl"><div><b>อวัยวะล้มเหลวข้อเดียว = Grade III</b> → ระบายด่วนหลังประคองอาการ</div></div>
+    <div class="pearl"><div><b>Grade II → ระบายน้ำดีเร็ว</b> · Grade I ไม่ดีขึ้น 24 ชม. → ระบาย</div></div>
+    <div class="pearl"><div><b>หลังระบายได้ ยาฆ่าเชื้อ 4–7 วัน</b> · Enterococcus/Strep bacteremia ≥2 สัปดาห์</div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../pancreatitis/index.html">Pancreatitis →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../tropical-fever/index.html">Tropical fever →</a> · <a href="../hypokalemia/index.html">Hypokalemia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Riddle MS, DuPont HL, Connor BA. ACG clinical guideline: diagnosis, treatment, and prevention of acute diarrheal infections in adults. Am J Gastroenterol 2016;111:602–22 · 2) Shane AL, Mody RK, Crump JA, et al. 2017 IDSA clinical practice guidelines for the diagnosis and management of infectious diarrhea. Clin Infect Dis 2017;65:e45–80 · 3) McDonald LC, Gerding DN, Johnson S, et al. Clinical practice guidelines for Clostridium difficile infection in adults and children: 2017 update by IDSA and SHEA. Clin Infect Dis 2018;66:e1–48 · 4) Johnson S, Lavergne V, Skinner AM, et al. IDSA/SHEA 2021 focused update: management of CDI in adults. Clin Infect Dis 2021;73:e1029–44 · 5) Kelly CR, Fischer M, Allegretti JR, et al. ACG clinical guidelines: prevention, diagnosis, and treatment of C. difficile infections. Am J Gastroenterol 2021;116:1124–47 · 6) Kiriyama S, Kozaka K, Takada T, et al. TG18: diagnostic criteria and severity grading of acute cholangitis. J Hepatobiliary Pancreat Sci 2018;25:17–30 · 7) Miura F, Okamoto K, Takada T, et al. TG18: initial management of acute biliary infection and flowchart for acute cholangitis. JHBPS 2018;25:31–40 · 8) Gomi H, Solomkin JS, Schlossberg D, et al. TG18: antimicrobial therapy for acute cholangitis and cholecystitis. JHBPS 2018;25:3–16 · 9) Okamoto K, Suzuki K, Takada T, et al. TG18: flowchart for the management of acute cholecystitis. JHBPS 2018;25:55–72 · 9b) Yokoe M, Hata J, Takada T, et al. TG18: diagnostic criteria and severity grading of acute cholecystitis. JHBPS 2018;25:41–54 · 10) Manes G, Paspatis G, Aabakken L, et al. Endoscopic management of common bile duct stones: ESGE guideline. Endoscopy 2019;51:472–91 · 11) คณะอนุกรรมการส่งเสริมการใช้ยาอย่างสมเหตุผล. คู่มือการดำเนินงานโครงการโรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล. อย. 2558 · 12) พิราภรณ์ อยู่เหลี่ยง และคณะ. การประเมินความเหมาะสมของการใช้ยาปฏิชีวนะสำหรับโรคอุจจาระร่วงเฉียบพลันในโรงพยาบาลมหาวิทยาลัยแห่งหนึ่ง. Thai Journal of Hospital Pharmacy 2025;35(1):23–32<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','giView');
+mountWalker({
+ start:{q:'ปัญหาหลักคืออะไร?',o:[['ท้องร่วงเฉียบพลันในชุมชน','ad'],['ท้องเสียหลังได้ยาฆ่าเชื้อ/อยู่ รพ.','cd'],['ไข้ + ปวดท้องขวาบน/ดีซ่าน','tg']]},
+ ad:{q:'ขาดน้ำรุนแรงหรือช็อก?',o:[['ใช่','adShock'],['ไม่','adFev']]},
+ adShock:{leaf:true,cls:'danger',t:'แก้ขาดน้ำก่อน',b:'IV Ringer\'s lactate/NSS bolus · ตรวจ electrolyte (K ต่ำ), Cr, glucose · ถ่ายน้ำซาวข้าว → cholera: + doxycycline 300 mg ครั้งเดียว · sepsis → เพาะเชื้อ + ceftriaxone',next:['ดูลักษณะอุจจาระต่อ','adFev']},
+ adFev:{q:'ไข้ ≥38°C + ถ่ายมีมูกเลือด/ปวดเบ่ง?',o:[['ใช่','adDys'],['เลือดสด ไม่มีไข้ ปวดท้องมาก','adStec'],['ถ่ายเป็นน้ำ (มีหรือไม่มีไข้) / มูกไม่มีไข้','adWat']]},
+ adDys:{leaf:true,cls:'warn',t:'Invasive diarrhea (dysentery)',b:'<b>Azithromycin 1 g ครั้งเดียว</b> (หรือ 500 mg × 3 วัน) · ทางเลือก ciprofloxacin/norfloxacin (Campylobacter ไทยดื้อสูง) · stool exam/culture ถ้ารุนแรง · amoeba (trophozoite กิน RBC) → metronidazole · ไม่ให้ loperamide ถ้าไม่ได้ยาฆ่าเชื้อ'},
+ adStec:{leaf:true,cls:'danger',t:'สงสัย STEC',b:'<b>ไม่ให้ยาฆ่าเชื้อและยาหยุดถ่าย</b> · เพาะเชื้อ/ตรวจ Shiga toxin · ตาม CBC เกล็ดเลือด Cr (HUS) · คิดถึงลำไส้ขาดเลือด IBD'},
+ adWat:{q:'ภูมิคุ้มกันต่ำ หรือลักษณะ sepsis?',o:[['ใช่','adImm'],['ไม่','adSup']]},
+ adImm:{leaf:true,cls:'warn',t:'กลุ่มเสี่ยง',b:'เพาะเชื้อเลือด/อุจจาระ · พิจารณายาฆ่าเชื้อ (ciprofloxacin หรือ ceftriaxone, azithromycin) · HIV: คิดถึง Cryptosporidium, CMV, MAC'},
+ adSup:{leaf:true,cls:'ok',t:'ดูแลตามอาการ',b:'<b>ORS</b> · อาหารอ่อน · loperamide ได้ · <b>ไม่ให้ยาฆ่าเชื้อ ไม่ต้องส่งตรวจอุจจาระ</b> · นัดกลับถ้าไข้ เลือดออก ขาดน้ำ หรือ &gt;7 วัน'},
+ cd:{q:'ถ่ายเหลว ≥3 ครั้ง/24 ชม. และไม่ได้ใช้ยาระบาย?',o:[['ใช่','cdTest'],['ไม่','cdNo']]},
+ cdNo:{leaf:true,cls:'ok',t:'ไม่ใช่ CDI ตอนนี้',b:'ยังไม่เข้าเกณฑ์ตรวจหรือผลลบ → หยุดยาระบาย สังเกต 24–48 ชม. · หาสาเหตุอื่น (อาหารทางสาย ยา) · ไม่ตรวจคนไม่มีอาการ'},
+ cdTest:{q:'ส่งตรวจ C. difficile (NAAT หรือ GDH/toxin) — มีช็อก ileus หรือ megacolon? (รายหนักเริ่มยาได้ก่อนผล)',o:[['มี','cdFul'],['ไม่มี และผลบวก','cdSev'],['ผลตรวจลบ','cdNo']]},
+ cdFul:{leaf:true,cls:'danger',t:'Fulminant CDI',b:'<b>Vancomycin 500 mg กิน/NG qid + metronidazole 500 mg IV q8h</b> · ileus → + vancomycin สวนทวาร 500 mg/100 mL q6h · <b>ปรึกษาศัลยกรรม</b> (colectomy) · CT ท้อง'},
+ cdSev:{leaf:true,cls:'warn',t:'Non-severe / severe',b:'Severe = WBC ≥15,000 หรือ Cr &gt;1.5 · ยา: <b>fidaxomicin 200 mg bid × 10 วัน</b> หรือ <b>vancomycin 125 mg กิน qid × 10 วัน</b> · หยุดยาฆ่าเชื้อที่เป็นต้นเหตุ · contact precaution · ล้างมือด้วยสบู่'},
+ tg:{q:'มี A (ไข้/หนาวสั่น หรือ WBC/CRP ผิดปกติ) + B (bilirubin ≥2/LFT >1.5×) หรือ C (ท่อน้ำดีขยาย/เห็นสาเหตุ)?',o:[['มี A + B/C','tgGr'],['ไม่ชัด','tgRe']]},
+ tgRe:{leaf:true,cls:'ok',t:'ยังไม่เข้าเกณฑ์',b:'ประเมินซ้ำทุก 6–12 ชม. · คิดถึง cholecystitis, ฝีในตับ, ตับอักเสบ, pneumonia ฐานปอดขวา · ultrasound/CT'},
+ tgGr:{q:'มีอวัยวะล้มเหลวอย่างน้อย 1 ระบบ? (ยาเพิ่มความดัน, สติผิดปกติ, P/F <300, Cr >2/ปัสสาวะน้อย, INR >1.5, เกล็ดเลือด <100k)',o:[['มี','g3'],['ไม่มี','g2q']]},
+ g3:{leaf:true,cls:'danger',t:'Grade III',b:'สารน้ำ ยาเพิ่มความดัน ช่วยหายใจ · เพาะเชื้อเลือด · <b>pip/tazo หรือ meropenem + vancomycin ภายใน 1 ชม.</b> · <b>ระบายน้ำดีด่วน</b> (ERCP/PTBD) ทันทีที่ปลอดภัย · ส่งต่อ รพ.ที่ทำได้'},
+ g2q:{q:'มี ≥2 ข้อ: WBC >12,000/<4,000 · ไข้ ≥39 · อายุ ≥75 · bilirubin ≥5 · albumin <0.7×ค่าปกติล่าง',o:[['มี ≥2','g2'],['น้อยกว่า 2','g1']]},
+ g2:{leaf:true,cls:'warn',t:'Grade II',b:'Ceftriaxone ± metronidazole (เสี่ยง ESBL → ertapenem/pip-tazo) · เพาะเชื้อเลือด · <b>ระบายน้ำดีเร็ว</b> (ERCP) · ยาต่อ 4–7 วันหลังระบายได้'},
+ g1:{leaf:true,cls:'ok',t:'Grade I',b:'Ceftriaxone ± metronidazole · <b>ไม่ดีขึ้นใน 24 ชม. → ระบายน้ำดี</b> · รักษาสาเหตุ (ERCP เอานิ่ว) · ยาต่อ 4–7 วันหลังกำจัดต้นเหตุ'}
+},'apTrail','apStage');
+
+function ad(){
+  const t=num('aT'),d=num('aD'),st=$('aSt').value,dh=$('aDh').value;const c=id=>$(id).checked;const L=[];
+  const fev=t!==null&&t>=38;
+  if(dh==='sev')L.push('<b>ขาดน้ำรุนแรง → IV Ringer\'s lactate/NSS bolus ทันที</b> · K, Cr, glucose');
+  else if(dh==='mod')L.push('ขาดน้ำปานกลาง → <b>ORS</b> 50–100 mL/kg ใน 3–4 ชม. (ทั้งดื่มไม่ได้ → IV)');
+  else L.push('ORS/ดื่มน้ำตามที่ถ่าย');
+  if(c('aAbx'))L.push('<b>ได้ยาฆ่าเชื้อ/อยู่ รพ.</b> → ถ้าถ่าย ≥3 ครั้ง/วัน ตรวจ <b>C. difficile</b> (เครื่องมือถัดไป) · งด loperamide');
+  if(c('aFood')&&!fev&&st!=='muc')L.push('เริ่ม 1–6 ชม.หลังกิน อาเจียนเด่น → <b>สารพิษในอาหาร</b> (S. aureus/B. cereus) · หายเองใน 24 ชม. · <b>ไม่ใช้ยาฆ่าเชื้อ</b>');
+  let rx=null;
+  if(t===null)L.push('<b>กรุณาใส่อุณหภูมิ</b> — ผลด้านล่างถือว่าไม่มีไข้');
+  if(st==='blood'&&!fev&&!c('aSep')&&!c('aImm')){rx='<b>ไม่ให้ยาฆ่าเชื้อ/ยาหยุดถ่าย</b> — สงสัย STEC (HUS) · เพาะเชื้อ/Shiga toxin · ตาม CBC Cr';}
+  else if(c('aSep')&&st!=='rice'){rx='<b>Sepsis</b> → blood + stool culture · <b>ceftriaxone 2 g IV วันละครั้ง</b> (3–7 วัน) · รับไว้'+(st==='blood'?' · ถ่ายเป็นเลือด + sepsis → ให้ยาฆ่าเชื้อได้แม้สงสัย STEC (ประโยชน์มากกว่าความเสี่ยง) · ตาม CBC/Cr':'');}
+  else if(st==='rice'){rx='สงสัย <b>cholera</b> → สารน้ำสำคัญสุด + <b>doxycycline 300 mg ครั้งเดียว</b> (หรือ azithromycin 1 g ครั้งเดียว) · rapid test/เพาะเชื้อ · แจ้งระบาดวิทยา (รง.506)'+(c('aSep')?' · ช็อกใน cholera ส่วนใหญ่เป็น hypovolemic → IV Ringer\'s lactate เร็ว + แก้ K ต่ำ/acidosis':'');}
+  else if((st==='muc'||st==='blood')&&fev){rx='<b>Dysentery มีไข้</b> → <b>azithromycin 1 g ครั้งเดียว</b> หรือ 500 mg/วัน × 3 วัน (ทางเลือก: ciprofloxacin 500 mg bid × 3 วัน — Campylobacter ไทยดื้อสูง) · stool exam: trophozoite กิน RBC → metronidazole (amoeba)';}
+  else if(st==='muc'&&!c('aImm')){rx='มูกเลือดไม่มีไข้ → stool exam (amoeba, WBC/RBC) · ปวดท้องมาก/เลือดมาก → คิดถึง STEC, ลำไส้ขาดเลือด, IBD · ไม่ให้ยาฆ่าเชื้อโดยอัตโนมัติ';}
+  else if(c('aImm')){rx='ภูมิคุ้มกันต่ำ → stool culture + พิจารณายาฆ่าเชื้อ (azithromycin หรือ ciprofloxacin) · HIV CD4 ต่ำ: Cryptosporidium, Cystoisospora, CMV';}
+  else {rx='<b>ไม่ให้ยาฆ่าเชื้อ</b> (RDU) · ORS'+((c('aAbx')||dh==='sev')?'':' · loperamide ได้ถ้าไม่มีไข้/เลือด')+(fev?' · มีไข้แต่ถ่ายเป็นน้ำ → ส่วนใหญ่ไวรัส ติดตาม และคิดถึงไข้จากโรคอื่น (dengue, lepto, scrub typhus)':'');}
+  L.push(rx);
+  if(c('aSea')&&st==='water')L.push('อาหารทะเลดิบ → V. parahaemolyticus มักหายเอง');
+  if(c('aOld'))L.push('อายุมาก/โรคร่วม/ตั้งครรภ์ → ประเมินขาดน้ำใกล้ชิด นัดเร็ว · Salmonella ในผู้สูงอายุที่มีโรคหลอดเลือด/ลิ้นเทียม → ให้ยา');
+  if(d!==null&&d>7)L.push(`อาการ ${d} วัน (&gt;7) → <b>ส่งตรวจอุจจาระ</b> (พยาธิ/โปรโตซัว เช่น Giardia, amoeba)`);
+  if(st==='muc'||st==='blood'||fev)L.push('<span class="muted">เลี่ยง loperamide ถ้ามีไข้/ถ่ายเป็นเลือด ยกเว้นให้ร่วมกับยาฆ่าเชื้อ</span>');
+  $('adOut').innerHTML=L.join('<br>');
+}
+bindAll('#tAd input,#tAd select',ad);
+
+function cd(){
+  const w=num('cWbc'),cr=num('cCr'),ep=$('cEp').value,dr=$('cDrug').value;const c=id=>$(id).checked;const L=[];
+  const ful=c('cShock')||c('cIleus')||c('cMega');const sev=(w!==null&&w>=15000)||(cr!==null&&cr>1.5);
+  L.push(ful?'<b>Fulminant</b> (ช็อก/ileus/megacolon)':sev?`<b>Severe</b> (${[w>=15000?'WBC ≥15,000':null,cr>1.5?'Cr >1.5':null].filter(Boolean).join(', ')})`:'<b>Non-severe</b>');
+  if(ful){
+    L.push('<b>Vancomycin 500 mg กิน/NG qid + metronidazole 500 mg IV q8h</b>');
+    if(dr==='m')L.push('<b>ไม่มี vancomycin กิน → ใช้ vancomycin ชนิดฉีดผสมน้ำให้ทางปาก/NG/สวนทวาร</b> · metronidazole IV อย่างเดียวไม่พอ → ส่งต่อด่วน');
+    if(c('cIleus')||c('cMega'))L.push('+ <b>vancomycin สวนทวาร 500 mg ใน NSS 100 mL q6h</b> (คาไว้)');
+    L.push('<b>ปรึกษาศัลยกรรมทันที</b> · CT ท้อง · lactate &gt;5, WBC &gt;50,000, megacolon/ทะลุ → colectomy/loop ileostomy');
+  }else if(ep==='1'){
+    if(dr==='f')L.push('<b>Fidaxomicin 200 mg bid × 10 วัน</b> (แนะนำ) หรือ vancomycin 125 mg qid × 10 วัน');
+    else if(dr==='v')L.push('<b>Vancomycin 125 mg กิน qid × 10 วัน</b> (ใช้ยาฉีดผสมน้ำให้กินได้)');
+    else L.push(sev?'<b>Severe ไม่ควรใช้ metronidazole</b> → หา vancomycin กิน (ยาฉีดผสมกินได้) / ส่งต่อ':'Metronidazole 500 mg tid × 10 วัน (<b>เฉพาะ non-severe เมื่อไม่มี vancomycin/fidaxomicin</b>)');
+  }else if(ep==='2'){
+    if(dr==='f')L.push('<b>Fidaxomicin</b> 200 mg bid × 10 วัน หรือแบบ extended (bid × 5 วัน แล้ววันเว้นวัน วันที่ 7–25)');
+    if(dr!=='m')L.push(c('cPrevM')?'ครั้งก่อนได้ metronidazole → <b>vancomycin 125 mg qid × 10 วัน</b> ได้':(dr==='f'?'หรือ ':'')+'<b>vancomycin taper/pulse</b>: 125 mg qid 10–14 วัน → bid 7 วัน → วันละครั้ง 7 วัน → ทุก 2–3 วัน 2–8 สัปดาห์');
+    else L.push('กลับเป็นซ้ำ <b>ไม่ใช้ metronidazole</b> → หา vancomycin/fidaxomicin');
+  }else{
+    L.push('กลับเป็นซ้ำ ≥2 ครั้ง: fidaxomicin · vancomycin taper/pulse · vancomycin แล้วตาม rifaximin · <b>ส่งต่อพิจารณา FMT</b>');
+  }
+  L.push('หยุดยาฆ่าเชื้อตัวต้นเหตุ · ทบทวน PPI · <b>งด loperamide/opioid</b> · contact precaution · ล้างมือด้วยสบู่');
+  L.push('<span class="muted">อย่าตรวจซ้ำเพื่อดูว่าหาย (test of cure) — ผลบวกค้างได้</span>');
+  $('cdOut').innerHTML=L.join('<br>');
+}
+bindAll('#tCd input,#tCd select',cd);
+
+function albRatio(){const a=num('tAlb'),l=num('tAlbL');return (a&&l)?a/l:null}
+function tg(){
+  const t=num('tT'),w=num('tW'),crp=num('tCrp'),b=num('tB'),a=num('tA');const c=id=>$(id).checked;const L=[];
+  const A=(t!==null&&t>38)||c('tChill')||(w!==null&&(w<4000||w>10000))||(crp!==null&&crp>=1);
+  const B=(b!==null&&b>=2)||c('tLft');const C=c('tDil')||c('tEt');
+  let dx=A&&B&&C?'<b>Definite cholangitis</b> (A + B + C)':A&&(B||C)?'<b>Suspected cholangitis</b> (A + '+(B?'B':'C')+') → ทำ imaging/ประเมินซ้ำ':'ยังไม่เข้าเกณฑ์ TG18 → ประเมินซ้ำทุก 6–12 ชม.';
+  L.push(dx);
+  if(!(A&&(B||C))){if(['oCv','oCns','oResp','oRen','oInr','oPlt'].some(c))L.push('<b>มีอวัยวะล้มเหลว → อย่ารอ:</b> รักษาแบบ sepsis เพาะเชื้อ + ยาฆ่าเชื้อภายใน 1 ชม. · ผู้สูงอายุอาจไม่มีไข้ · ทำ US/CT หาแหล่งติดเชื้อทางเดินน้ำดี');$('tgOut').innerHTML=L.join('<br>');return}
+  const org=[c('oCv')?'หัวใจ':null,c('oCns')?'สมอง':null,c('oResp')?'หายใจ':null,c('oRen')?'ไต':null,c('oInr')?'ตับ (INR)':null,c('oPlt')?'เลือด':null].filter(Boolean);
+  const ar=albRatio();
+  const m=[(w!==null&&(w>12000||w<4000))?'WBC':null,(t!==null&&t>=39)?'ไข้ ≥39':null,(a!==null&&a>=75)?'อายุ ≥75':null,(b!==null&&b>=5)?'bilirubin ≥5':null,(ar!==null&&ar<0.7)?'albumin <0.7×':null].filter(Boolean);
+  const g=org.length?3:m.length>=2?2:1;
+  L.push(`<b>Grade ${g==3?'III (severe)':g==2?'II (moderate)':'I (mild)'}</b> — `+(g==3?`อวัยวะล้มเหลว: ${org.join(', ')}`:g==2?`${m.join(', ')}`:(m.length?`มี ${m.join(', ')} (ต้อง ≥2 จึงเป็น Grade II)`:'ไม่มีปัจจัย')));
+  const hosp=c('tHosp');let ab;
+  if(g==3||hosp)ab='<b>Piperacillin/tazobactam 4.5 g IV q6h</b> หรือ <b>meropenem 1 g IV q8h</b> (เสี่ยง ESBL) + <b>vancomycin</b> (enterococcus)';
+  else if(g==2)ab='<b>Ceftriaxone 2 g IV วันละครั้ง</b> ± metronidazole · เสี่ยง ESBL (ได้ยาฆ่าเชื้อ/อยู่ รพ.ใน 90 วัน) → ertapenem หรือ pip/tazo';
+  else ab='<b>Ceftriaxone 2 g IV วันละครั้ง</b> (หรือ cefazolin/cefuroxime ตามเชื้อในพื้นที่) ± metronidazole';
+  if(c('tAnas'))ab+=(g==3||hosp)?' · มีการต่อท่อน้ำดีกับลำไส้: pip/tazo และ meropenem ครอบคลุม anaerobe อยู่แล้ว':' · <b>มีการต่อท่อน้ำดีกับลำไส้ → ต้องให้ metronidazole ร่วม</b> (anaerobe)';
+  L.push('ยา: '+ab+(g==3?' · <b>ภายใน 1 ชม.</b>':''));
+  L.push(g==3?'<b>ประคองอวัยวะ แล้วระบายน้ำดีด่วน</b> (ERCP stent/nasobiliary; ไม่ได้ → PTBD) · รักษานิ่วภายหลัง · เพาะเชื้อเลือด + น้ำดี':g==2?'<b>ระบายน้ำดีเร็ว</b> (ERCP) + เพาะเชื้อเลือด · ส่งต่อถ้าทำไม่ได้':'ยา + สารน้ำ · <b>ไม่ดีขึ้นใน 24 ชม. → ระบายน้ำดี</b> · รักษาสาเหตุ (ERCP เอานิ่ว)');
+  L.push('หลังระบาย/กำจัดต้นเหตุ: <b>ยาต่อ 4–7 วัน</b> · Enterococcus/Streptococcus ในเลือด ≥2 สัปดาห์');
+  $('tgOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTg input,#tTg select',tg);
+
+mountQuiz([
+ ['ชาย 30 ปี ถ่ายเหลวเป็นน้ำ 6 ครั้ง 1 วัน ไม่มีไข้ ไม่มีเลือด ขาดน้ำเล็กน้อย การรักษาที่เหมาะที่สุด',
+  ['Norfloxacin 400 mg bid × 5 วัน','ORS และอาหารอ่อน ไม่ต้องใช้ยาฆ่าเชื้อ','Metronidazole','Ceftriaxone IV'],1,'RDU: ท้องร่วงไม่มีไข้ ถ่ายเป็นน้ำ ไม่ให้ยาฆ่าเชื้อ'],
+ ['หญิง 25 ปี ไข้ 38.8°C ปวดเบ่ง ถ่ายมีมูกเลือด ยาที่เหมาะในไทยมากที่สุด',
+  ['Azithromycin 1 g ครั้งเดียว','Loperamide อย่างเดียว','Amoxicillin','ไม่ต้องให้ยา'],0,'Campylobacter ในไทยดื้อ fluoroquinolone สูง'],
+ ['ถ่ายเป็นเลือดสด ไม่มีไข้ ปวดท้องบิดรุนแรง หลังกินเนื้อวัวไม่สุก ข้อใดควรเลี่ยง',
+  ['ส่งเพาะเชื้ออุจจาระ','ตรวจ CBC และ Cr','ให้ยาฆ่าเชื้อทันที','ให้สารน้ำ'],2,'STEC: ยาฆ่าเชื้อเพิ่มความเสี่ยง HUS'],
+ ['ผู้ป่วย ward ได้ ceftriaxone มา 5 วัน ถ่ายเหลว 5 ครั้ง/วัน WBC 18,000 Cr 1.1 C. difficile PCR บวก การรักษา',
+  ['Metronidazole กิน','Vancomycin 125 mg กิน qid × 10 วัน (หรือ fidaxomicin)','Vancomycin IV','Loperamide'],1,'Severe (WBC ≥15,000) · IV vancomycin ไม่เข้าลำไส้'],
+ ['ข้อใดถูกเกี่ยวกับการตรวจ C. difficile',
+  ['ตรวจซ้ำหลังรักษาครบเพื่อยืนยันว่าหาย','ตรวจในผู้ที่ถ่ายเหลว ≥3 ครั้ง/24 ชม. และไม่ได้ใช้ยาระบาย','ตรวจคัดกรองผู้ป่วยไม่มีอาการทุกรายที่ได้ยาฆ่าเชื้อ','ผลลบให้ตรวจซ้ำวันรุ่งขึ้น'],1,'ไม่ตรวจ test of cure · ไม่ตรวจซ้ำใน 7 วัน'],
+ ['ตาม TG18 ผู้ป่วย cholangitis ที่ได้ norepinephrine จัดเป็น',
+  ['Grade I','Grade II','Grade III','ยังจัดไม่ได้จนกว่าจะได้ bilirubin'],2,'อวัยวะล้มเหลว ≥1 ระบบ = Grade III'],
+ ['หญิง 80 ปี ไข้ 39.3°C bilirubin 3.2 ท่อน้ำดีขยาย WBC 9,000 ไม่มีอวัยวะล้มเหลว Grade ตาม TG18',
+  ['Grade I','Grade II','Grade III','ไม่ใช่ cholangitis'],1,'อายุ ≥75 + ไข้ ≥39 = 2 ข้อ'],
+ ['Cholangitis Grade I ได้ยาฆ่าเชื้อ 24 ชม. แล้วยังไข้สูง ปวด ทำอย่างไร',
+  ['เปลี่ยนยาฆ่าเชื้อแล้วรออีก 3 วัน','ระบายน้ำดี (ERCP/PTBD)','ผ่าตัดถุงน้ำดีทันที','หยุดยาฆ่าเชื้อ'],1,'TG18: ไม่ตอบสนองใน 24 ชม. → drainage'],
+ ['หลัง ERCP ระบายน้ำดีได้ดี ผล blood culture E. coli ควรให้ยาฆ่าเชื้อต่ออีกนานเท่าไร',
+  ['24 ชม.','4–7 วัน','2 สัปดาห์','6 สัปดาห์'],1,'TG18: กำจัดต้นเหตุได้แล้ว ให้ต่อ 4–7 วัน แม้มี E. coli ในเลือด · ≥2 สัปดาห์เฉพาะ Enterococcus/Streptococcus']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
