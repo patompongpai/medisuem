@@ -1,0 +1,626 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hypoglycemia · ภาวะน้ำตาลในเลือดต่ำ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrine · Emergency · ADA Standards of Care 2026 · Endocrine Society 2009/2023</div>
+  <h1>ภาวะน้ำตาลในเลือดต่ำ<br>Hypoglycemia</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่ระดับความรุนแรงตาม ADA การรักษาในผู้ป่วยรู้สึกตัวและไม่รู้สึกตัว (กฎ 15-15, 50% glucose, glucagon) น้ำตาลต่ำจาก <b>sulfonylurea</b> (octreotide) ผู้ป่วยใน การป้องกันที่ OPD จนถึงการสืบค้น <b>น้ำตาลต่ำในคนไม่เป็นเบาหวาน</b> (Whipple triad, insulin/C-peptide) และเรื่องใกล้เคียงคือการป้องกัน <b>euglycemic DKA จากยา SGLT2i</b></p>
+  <p class="cite">อ้างอิงหลัก: American Diabetes Association. 6. Glycemic Goals, Hypoglycemia, and Hyperglycemic Crises: Standards of Care in Diabetes—2026 (Diabetes Care 2026;49 Suppl 1:S132–49) · McCall AL, et al. Management of individuals with diabetes at high risk for hypoglycemia: an Endocrine Society guideline (JCEM 2023;108:529–62) · Cryer PE, et al. Evaluation and management of adult hypoglycemic disorders: an Endocrine Society guideline (JCEM 2009;94:709–28) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--warn)"><b>Level 1</b>&lt;70 mg/dL (≥54) · กินคาร์บ 15 g ตรวจซ้ำ 15 นาที</div>
+    <div class="stage" style="--c:var(--danger)"><b>Level 2</b>&lt;54 mg/dL · อันตรายจริง · ทบทวนการรักษา</div>
+    <div class="stage" style="--c:var(--accent)"><b>Level 3</b>ต้องมีคนช่วย (สับสน หมดสติ ชัก) ไม่ว่าน้ำตาลเท่าไร · IV glucose/glucagon</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#def">นิยามและอาการ</a><a href="#tx">รักษาทันที</a><a href="#su">Sulfonylurea และ insulin เกินขนาด</a><a href="#admit">Admit หรือกลับบ้าน</a><a href="#inpt">ผู้ป่วยใน</a><a href="#prev">ป้องกันที่ OPD</a><a href="#nondm">ไม่เป็นเบาหวาน</a><a href="#sglt">SGLT2i และ euDKA</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="def" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและอาการ</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ (ADA)</th><th>เกณฑ์</th><th>ความหมาย</th></tr>
+    <tr><td><b>Level 1</b></td><td>glucose <b>&lt;70 mg/dL</b> (3.9 mmol/L) และ ≥54</td><td>ต้องรักษาด้วยคาร์โบไฮเดรตออกฤทธิ์เร็ว และพิจารณาปรับยา</td></tr>
+    <tr><td><b>Level 2</b></td><td>glucose <b>&lt;54 mg/dL</b> (3.0 mmol/L)</td><td>ระดับที่เริ่มเกิด neuroglycopenia · มีความสำคัญทางคลินิกชัดเจน</td></tr>
+    <tr><td><b>Level 3</b></td><td>ไม่กำหนดค่าน้ำตาล</td><td>สติ/ร่างกายเปลี่ยนแปลงจน <b>ต้องมีคนช่วย</b> ในการรักษา</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>อาการ</h4><ul><li><b>Autonomic</b>: ใจสั่น มือสั่น เหงื่อออก หิว วิตกกังวล ชาปาก</li><li><b>Neuroglycopenic</b>: สับสน พฤติกรรมเปลี่ยน พูดไม่ชัด ตามัว <b>อ่อนแรงครึ่งซีก (เลียนแบบ stroke)</b> ชัก หมดสติ</li><li>ผู้สูงอายุ: อาการไม่ชัด สับสน หกล้ม</li></ul></div>
+    <div class="card c-red"><h4>Hypoglycemia unawareness</h4><ul><li>ไม่มีอาการเตือน — พบในผู้เป็นเบาหวานนาน เคยน้ำตาลต่ำบ่อย ใช้ beta-blocker</li><li>การหลีกเลี่ยงน้ำตาลต่ำ <b>อย่างน้อย 2–3 สัปดาห์</b> ช่วยให้อาการเตือนกลับมา</li><li>ผลเสีย: arrhythmia, หกล้ม กระดูกหัก, อุบัติเหตุขับรถ, สมองเสื่อม, เสียชีวิต</li></ul></div>
+  </div>
+  <div class="box key"><b>ทุกคนที่สับสน ชัก ซึม หรืออ่อนแรงเฉียบพลัน ต้องเจาะ DTX</b>รวมถึงผู้ป่วย stroke code — หน้า <a href="../stroke-er/index.html">Stroke code ที่ ER</a> · ค่า DTX จากปลายนิ้วอาจคลาดเคลื่อนในภาวะช็อก ซีดมาก หรือ Hct ผิดปกติ → ยืนยันด้วย plasma glucose เมื่อสงสัย</div>
+</section>
+
+<!-- 2 -->
+<section id="tx" class="col">
+  <div class="sec-num">02</div>
+  <h2>รักษาทันที</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>รู้สึกตัว กลืนได้ — กฎ 15-15</h4><ul><li><b>Glucose 15 g</b> (ADA 2026; แหล่งเดิม 15–20 g · ผู้ใช้ automated insulin delivery 5–10 g) (กลูโคสเม็ด, น้ำหวาน/น้ำผลไม้ ~150–200 mL, น้ำตาลทราย 3 ช้อนชา ละลายน้ำ)</li><li><b>ตรวจซ้ำ 15 นาที</b> ยังต่ำ → ให้ซ้ำ</li><li>น้ำตาลกลับปกติแล้ว → <b>กินอาหาร/ของว่าง</b> ป้องกันตกซ้ำ</li><li>เลี่ยงไขมัน/โปรตีนสูง (ช็อกโกแลต) เพราะดูดซึมช้า · ไม่ใช้โปรตีนรักษาน้ำตาลต่ำ (อาจกระตุ้น insulin)</li><li>ผู้ใช้ acarbose: ต้องใช้ <b>glucose</b> (น้ำตาลทรายดูดซึมช้า)</li></ul></div>
+    <div class="card c-red"><h4>ไม่รู้สึกตัว/กลืนไม่ได้</h4><ul><li><b>50% glucose 25–50 mL IV</b> (12.5–25 g) แล้วตามด้วย <b>10% dextrose drip</b> · ตรวจซ้ำ 15 นาที</li><li>หรือ 10% dextrose 100–250 mL (10–25 g) — ระคายหลอดเลือดน้อยกว่า</li><li>ไม่มีเส้น: <b>glucagon 1 mg IM/SC</b> หรือ <b>nasal glucagon 3 mg</b> — ได้ผลน้อยถ้าตับไม่มี glycogen (สุรา ขาดอาหาร ตับวาย) · ระวังอาเจียน</li><li>ผู้ดื่มสุรา/ขาดอาหาร: <b>thiamine 100 mg IV</b> ร่วมด้วย — <b>อย่าเลื่อนการให้ glucose เพื่อรอ thiamine</b></li></ul></div>
+  </div>
+  <div class="box warn"><b>หาสาเหตุทุกครั้ง</b>ยา (insulin, sulfonylurea), กินน้อย/ไม่กิน, ออกกำลังกาย, แอลกอฮอล์, <b>ไตเสื่อม</b> (ยาค้าง), <b>sepsis</b>, ตับวาย, adrenal insufficiency, malaria/quinine · ถ้าเจาะ glucose ต่ำครั้งแรกในคนไม่เป็นเบาหวาน → <b>เก็บเลือดก่อนแก้</b> (บท 07) ถ้าทำได้โดยไม่ทำให้ล่าช้า</div>
+</section>
+
+<!-- 3 -->
+<section id="su" class="col">
+  <div class="sec-num">03</div>
+  <h2>Sulfonylurea และ insulin เกินขนาด</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Sulfonylurea (glibenclamide, glipizide, gliclazide, glimepiride)</h4><ul><li>น้ำตาลต่ำ <b>นานและกลับซ้ำ</b> โดยเฉพาะ glibenclamide และผู้ป่วย <b>ไตเสื่อม/สูงอายุ</b></li><li>การให้ dextrose ปริมาณมากกระตุ้น insulin ซ้ำ → น้ำตาลแกว่งตกซ้ำ</li><li><b>Octreotide 50–100 µg SC/IV ทุก 6–8 ชม.</b> (ลดการหลั่ง insulin) เมื่อน้ำตาลต่ำซ้ำหลังให้ dextrose</li><li>เด็กกิน sulfonylurea แม้ 1 เม็ด → สังเกตอาการ ≥24 ชม.</li><li>Glucagon ไม่แนะนำเป็นหลัก (กระตุ้น insulin ต่อ)</li></ul></div>
+    <div class="card c-warn"><h4>Insulin เกินขนาด</h4><ul><li>Long-acting (glargine, detemir, degludec) → น้ำตาลต่ำได้ <b>หลายวัน</b></li><li>10% dextrose infusion ต่อเนื่อง ปรับตาม DTX ทุก 1 ชม.</li><li><b>เฝ้า K และ phosphate ต่ำ</b> (insulin ดัน K เข้าเซลล์)</li><li>ฉีดเกินขนาดตั้งใจ → ประเมินความเสี่ยงฆ่าตัวตาย ปรึกษาจิตแพทย์</li><li>ปรึกษาศูนย์พิษวิทยา 1367 — หน้า <a href="../toxicology/index.html">Toxicology</a></li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="admit" class="col">
+  <div class="sec-num">04</div>
+  <h2>Admit หรือกลับบ้าน</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ควรนอนโรงพยาบาล/สังเกตนาน</h4><ul><li>น้ำตาลต่ำจาก <b>sulfonylurea</b> (โดยเฉพาะ glibenclamide, ไตเสื่อม)</li><li>Insulin long-acting เกินขนาด/ตั้งใจ</li><li>น้ำตาลต่ำซ้ำหลังรักษา · ต้องใช้ dextrose ต่อเนื่อง</li><li>มีสาเหตุร่วม: sepsis, AKI, ตับวาย, กินไม่ได้</li><li>อาการทางระบบประสาทไม่หายหลังน้ำตาลปกติ</li><li>อยู่คนเดียว/ไม่มีคนดูแล</li></ul></div>
+    <div class="card c-ok"><h4>กลับบ้านได้เมื่อ</h4><ul><li>สาเหตุชัดและแก้ได้ (เช่น ฉีด insulin rapid-acting แล้วไม่กิน)</li><li>รู้สึกตัวดี กินได้ น้ำตาลคงที่หลังกินอาหารและสังเกตอาการ</li><li>ปรับยาแล้ว + สอนกฎ 15-15 + ผู้ใช้ insulin ได้ glucagon (ถ้ามี) + มีคนดูแล</li><li>นัดติดตามภายในไม่กี่วัน</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="inpt" class="col">
+  <div class="sec-num">05</div>
+  <h2>ผู้ป่วยในโรงพยาบาล</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ป้องกัน</th></tr>
+    <tr><td>NPO/กินน้อยลง</td><td>ลด basal insulin (เช่น ~20–25% <span class="tag add">เสริม</span>) · งด prandial insulin เมื่อไม่กิน · ใช้ basal-bolus-correction แทน sliding scale อย่างเดียว</td></tr>
+    <tr><td>ลด steroid ลง</td><td>ลด insulin ตาม (น้ำตาลจะลดลงเร็ว)</td></tr>
+    <tr><td>หยุด enteral/parenteral nutrition กะทันหัน</td><td>ให้ dextrose ทดแทนระหว่างที่ insulin ยังออกฤทธิ์</td></tr>
+    <tr><td>AKI · ตับวาย · sepsis</td><td>ลดยา · ตรวจ DTX ถี่ขึ้น</td></tr>
+    <tr><td>หลังเกิด level 2–3</td><td><b>ทบทวนแผนการให้ insulin ทุกครั้ง</b> และบันทึกสาเหตุ</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ADA §16: เป้าน้ำตาล ward (non-ICU) 100–180 · ICU 140–180 mg/dL (บางราย 110–140) · ทุกโรงพยาบาลควรมี hypoglycemia protocol ที่พยาบาลเริ่มรักษาได้ทันที <span class="tag add">เสริม</span></p>
+</section>
+
+<!-- 6 -->
+<section id="prev" class="col">
+  <div class="sec-num">06</div>
+  <h2>ป้องกันที่ OPD</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ประเมินทุก visit</h4><ul><li>ถามน้ำตาลต่ำทุกครั้ง (ความถี่ ระดับ อาการเตือน)</li><li>ปัจจัยเสี่ยง: insulin/sulfonylurea, CKD, สมองเสื่อม, อยู่คนเดียว, แอลกอฮอล์, ผู้สูงอายุ, A1C เป้าเข้มเกิน</li><li>เกิด level 2 หรือ 3 → <b>ปรับแผนการรักษา</b> (ลดความเข้ม เปลี่ยนยา)</li></ul></div>
+    <div class="card c-ok"><h4>ทำอะไรได้</h4><ul><li><b>เปลี่ยนจาก glibenclamide</b> → gliclazide/glipizide หรือยาที่ไม่ทำให้น้ำตาลต่ำ (metformin, DPP-4i, SGLT2i, GLP-1 RA)</li><li>ผู้สูงอายุ/โรคร่วมมาก: <b>ผ่อนเป้า A1C</b> (เช่น &lt;8.0%)</li><li>ใช้ insulin analog (basal analog เสี่ยงน้ำตาลต่ำกลางคืนน้อยกว่า NPH)</li><li><b>CGM</b> ในผู้ใช้ insulin ที่เสี่ยง (ES 2023, ADA)</li><li><b>Glucagon</b> สำหรับผู้ใช้ insulin (ADA: เลือกชนิดไม่ต้องผสม) + สอนญาติ</li><li>สอน: พกน้ำตาล ตรวจก่อนขับรถ ปรับยาเมื่อออกกำลัง/ดื่ม</li></ul></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="nondm" class="col">
+  <div class="sec-num">07</div>
+  <h2>น้ำตาลต่ำในคนไม่เป็นเบาหวาน</h2>
+  <div class="box key"><b>Whipple triad ก่อนสืบค้น</b>1) อาการเข้าได้กับน้ำตาลต่ำ · 2) <b>plasma glucose ต่ำ</b> (วัดด้วยวิธีที่แม่นยำ) ขณะมีอาการ · 3) อาการหายเมื่อน้ำตาลขึ้น — ถ้าไม่ครบ ไม่ต้องสืบค้นต่อ (ES 2009)</div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ดูป่วย (ill-appearing)</h4><ul><li><b>Sepsis</b>, ตับวาย, ไตวาย, หัวใจล้มเหลวรุนแรง, ขาดอาหาร</li><li><b>Adrenal insufficiency</b> (± hypopituitarism) — หน้า <a href="../adrenal-crisis/index.html">Adrenal crisis</a></li><li>ยา: insulin/SU (รวมได้ยาผิด), <b>quinine</b>, pentamidine, co-trimoxazole ขนาดสูงในไตวาย, fluoroquinolone, beta-blocker, แอลกอฮอล์</li><li>Non-islet cell tumor (IGF-II): ก้อนใหญ่ เช่น sarcoma, hepatoma</li><li><b>Malaria รุนแรง</b> — หน้า <a href="../tropical-fever/index.html">Tropical fever</a></li></ul></div>
+    <div class="card c-vio"><h4>ดูแข็งแรง (well-appearing)</h4><ul><li><b>Endogenous hyperinsulinism</b>: insulinoma, post-bariatric (หลังอาหาร), noninsulinoma pancreatogenous</li><li><b>ได้ยาเบาหวานโดยไม่รู้/แอบใช้</b> (factitious, ยาผิด, ยาชุด/อาหารเสริมผสม SU)</li><li>Autoimmune (insulin antibody — เช่นหลังได้ยากลุ่ม sulfhydryl)</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ตรวจขณะ glucose &lt;55 mg/dL (ช่วงมีอาการ/72-h fast)</th><th>Endogenous hyperinsulinism (insulinoma, SU)</th><th>Exogenous insulin</th><th>ไม่ใช่ insulin (IGF-II, adrenal, ฯลฯ)</th></tr>
+    <tr><td>Insulin</td><td>≥3 µU/mL</td><td>สูง (มัก &gt;&gt;)</td><td>ต่ำ</td></tr>
+    <tr><td>C-peptide</td><td><b>≥0.6 ng/mL</b> (≥0.2 nmol/L)</td><td><b>ต่ำ</b></td><td>ต่ำ</td></tr>
+    <tr><td>Proinsulin</td><td>≥5 pmol/L</td><td>ต่ำ</td><td>ต่ำ</td></tr>
+    <tr><td>β-hydroxybutyrate</td><td>≤2.7 mmol/L</td><td>≤2.7</td><td>ต่ำ (IGF-II) / สูง (ketotic)</td></tr>
+    <tr><td>ตอบสนองต่อ glucagon 1 mg IV</td><td>glucose เพิ่ม ≥25 mg/dL</td><td>เพิ่ม ≥25</td><td>IGF-II: เพิ่ม ≥25 · ketotic: ไม่เพิ่ม</td></tr>
+    <tr><td>ระดับยา sulfonylurea</td><td><b>insulinoma: ลบ · SU: บวก</b></td><td>ลบ</td><td>ลบ</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ไม่มีอาการขณะมาพบแพทย์ → <b>prolonged supervised fast (72 ชม.)</b> หรือ mixed-meal test (สงสัยน้ำตาลต่ำหลังอาหาร) ในโรงพยาบาล · พบ endogenous hyperinsulinism + SU ลบ → หาตำแหน่ง insulinoma (CT/MRI, EUS) — ส่งต่อมไร้ท่อ</p>
+</section>
+
+<!-- 8 -->
+<section id="sglt" class="col">
+  <div class="sec-num">08</div>
+  <h2>SGLT2 inhibitor และ euglycemic DKA (ป้องกัน)</h2>
+  <p>SGLT2i ไม่ทำให้น้ำตาลต่ำเมื่อใช้เดี่ยว แต่ทำให้เกิด <b>DKA ที่น้ำตาลไม่สูง</b> (มัก &lt;200–250 mg/dL) ได้ — การวินิจฉัยและรักษาอยู่ในหน้า <a href="../dka-hhs/index.html">DKA/HHS</a></p>
+  <div class="grid2">
+    <div class="card c-warn"><h4>นึกถึงเมื่อ</h4><ul><li>ใช้ SGLT2i + คลื่นไส้ อาเจียน ปวดท้อง หอบ อ่อนเพลีย — <b>แม้ DTX ปกติ</b></li><li>ตัวกระตุ้น: ผ่าตัด, อดอาหาร, ป่วยเฉียบพลัน, ลด/หยุด insulin, แอลกอฮอล์, low-carb/ketogenic diet, ตั้งครรภ์</li><li>ตรวจ <b>ketone (β-hydroxybutyrate)</b> และ venous blood gas · anion gap สูง</li></ul></div>
+    <div class="card c-ok"><h4>ป้องกัน (sick-day rules)</h4><ul><li><b>หยุด SGLT2i เมื่อป่วยเฉียบพลัน</b> กินไม่ได้ ขาดน้ำ — กลับมาใช้เมื่อกินดื่มปกติ</li><li><b>ก่อนผ่าตัด: หยุด 3 วัน</b> (ertugliflozin 4 วัน) ตามคำแนะนำ FDA</li><li>ห้ามหยุด/ลด insulin มากเกินไปในผู้ป่วยที่ต้องใช้ insulin</li><li>ระวังใน LADA/type 1 ที่ถูกวินิจฉัยเป็น type 2</li></ul></div>
+  </div>
+  <div class="box note"><b>หญิงตั้งครรภ์</b>DKA เกิดได้ที่น้ำตาลต่ำกว่าปกติ (บางรายใกล้ปกติ) และอันตรายต่อทารก → ตรวจ ketone เมื่อป่วย/อาเจียน · รักษาร่วมสูติแพทย์และติดตามทารก — รายละเอียดใน <a href="../dka-hhs/index.html">DKA/HHS: กลุ่มพิเศษ</a></div>
+</section>
+
+<!-- 9 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>DTX &lt;70 mg/dL หรือมีอาการ</b>ยืนยันด้วย plasma glucose ถ้าสงสัยค่าผิด</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>รู้สึกตัว กลืนได้?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ได้</span><div class="node dx green"><b>Glucose 15 g</b>ตรวจซ้ำ 15 นาที · ปกติ → กินอาหาร</div></div>
+        <div class="arm"><span class="lab">ไม่ได้</span><div class="node red"><b>50% glucose 25–50 mL IV</b>→ 10% dextrose drip<br>ไม่มีเส้น: glucagon 1 mg IM / 3 mg nasal</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สาเหตุ</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Sulfonylurea</span><div class="node dx hypo"><b>Admit</b>ตกซ้ำ → octreotide 50–100 µg SC q6–8h<br>DTX ทุก 1 ชม.</div></div>
+        <div class="arm"><span class="lab">Insulin</span><div class="node dx eu"><b>ดูชนิด/ขนาด</b>long-acting เกิน → dextrose นาน · K/PO₄</div></div>
+        <div class="arm"><span class="lab">ไม่เป็นเบาหวาน</span><div class="node dx eu"><b>Whipple triad</b>เจาะ insulin, C-peptide, BHB, SU screen ขณะต่ำ<br>sepsis · ตับ · ไต · adrenal</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 10 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool plan" id="tRx" style="margin-top:12px">
+    <h3>แผนรักษาน้ำตาลต่ำ</h3>
+    <div class="fields">
+      <label class="f">Glucose (mg/dL)<input type="number" id="rG" value="42"></label>
+      <label class="f">หน่วย<select id="rU"><option value="mg">mg/dL</option><option value="mmol">mmol/L</option></select></label>
+      <label class="f">สาเหตุที่สงสัย<select id="rC"><option value="ins">Insulin rapid/short</option><option value="lins">Insulin long-acting/เกินขนาด</option><option value="su" selected>Sulfonylurea</option><option value="oth">อื่น/ไม่เป็นเบาหวาน</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="rCon"> สับสน/หมดสติ/กลืนไม่ได้</label><label><input type="checkbox" id="rIv" checked> มีเส้นเลือด</label><label><input type="checkbox" id="rAlc"> ดื่มสุรา/ขาดอาหาร</label><label><input type="checkbox" id="rCkd"> CKD/อายุมาก</label><label><input type="checkbox" id="rRec"> ตกซ้ำหลังให้ dextrose</label><label><input type="checkbox" id="rAca"> ใช้ acarbose</label></div>
+    <div class="out" id="rxOut"></div>
+  </div>
+  <div class="tool" id="tNd" style="margin-top:12px">
+    <h3>แปลผลน้ำตาลต่ำในคนไม่เป็นเบาหวาน (ES 2009)</h3>
+    <div class="fields">
+      <label class="f">Plasma glucose (mg/dL)<input type="number" id="nG" value="45"></label>
+      <label class="f">Insulin (µU/mL)<input type="number" id="nI" step="0.1" value="12"></label>
+      <label class="f">C-peptide (ng/mL)<input type="number" id="nC" step="0.1" value="2.1"></label>
+      <label class="f">Proinsulin (pmol/L)<input type="number" id="nP" step="0.1" placeholder="ถ้ามี"></label>
+      <label class="f">β-hydroxybutyrate (mmol/L)<input type="number" id="nB" step="0.1" value="0.3"></label>
+      <label class="f">Sulfonylurea screen<select id="nS"><option value="na">ไม่ได้ส่ง</option><option value="neg" selected>ลบ</option><option value="pos">บวก</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="nW" checked> Whipple triad ครบ</label><label><input type="checkbox" id="nIll"> ดูป่วย (sepsis/ตับ/ไต/adrenal)</label><label><input type="checkbox" id="nPost"> เกิดหลังอาหาร/เคยผ่าตัดกระเพาะ</label></div>
+    <div class="out" id="ndOut"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Level 1 &lt;70 · Level 2 &lt;54 · Level 3 ต้องมีคนช่วย</b></div></div>
+    <div class="pearl"><div><b>กฎ 15-15</b> (glucose 15 g) แล้วตามด้วยอาหาร</div></div>
+    <div class="pearl"><div><b>หมดสติ: 50% glucose 25–50 mL → 10% drip</b></div></div>
+    <div class="pearl"><div><b>Glucagon</b> 1 mg IM / 3 mg nasal — ได้ผลน้อยในคนดื่มสุรา/ตับวาย</div></div>
+    <div class="pearl"><div><b>Sulfonylurea = admit</b> · ตกซ้ำ → octreotide</div></div>
+    <div class="pearl"><div><b>Glibenclamide + CKD/สูงอายุ</b> → เปลี่ยนยา</div></div>
+    <div class="pearl"><div><b>Long-acting insulin เกินขนาด</b> → dextrose หลายวัน · ดู K</div></div>
+    <div class="pearl"><div><b>สับสน/อ่อนแรงเฉียบพลัน → DTX ทุกราย</b></div></div>
+    <div class="pearl"><div><b>Level 2–3 = ทบทวนแผนยาทุกครั้ง</b></div></div>
+    <div class="pearl"><div><b>ไม่เป็นเบาหวาน: Whipple triad ก่อน</b> · เจาะ insulin/C-peptide ขณะต่ำ</div></div>
+    <div class="pearl"><div><b>Insulin สูง C-peptide ต่ำ = insulin จากภายนอก</b></div></div>
+    <div class="pearl"><div><b>SGLT2i: หยุดเมื่อป่วย และ 3 วันก่อนผ่าตัด</b> · euDKA น้ำตาลไม่สูง</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../dka-hhs/index.html">DKA/HHS →</a> · <a href="../adrenal-crisis/index.html">Adrenal crisis →</a> · <a href="../toxicology/index.html">Toxicology →</a> · <a href="../liver-failure/index.html">Acute liver failure →</a></p>
+<footer class="col">
+  อ้างอิง: 1) American Diabetes Association Professional Practice Committee. 6. Glycemic goals, hypoglycemia, and hyperglycemic crises: Standards of Care in Diabetes—2026. Diabetes Care 2026;49(Suppl 1):S132–49 (และ §16 Diabetes care in the hospital) · 2) McCall AL, Lieb DC, Gianchandani R, et al. Management of individuals with diabetes at high risk for hypoglycemia: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2023;108:529–62 · 3) Cryer PE, Axelrod L, Grossman AB, et al. Evaluation and management of adult hypoglycemic disorders: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2009;94:709–28 · 4) Umpierrez GE, et al. Hyperglycemic crises in adults with diabetes: a consensus report. Diabetes Care 2024;47:1257–75 · 5) US FDA. Drug Safety Communication: SGLT2 inhibitors — stop before scheduled surgery (2020) · 6) สมาคมโรคเบาหวานแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566<br>
+  <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','hgView');
+mountWalker({
+ start:{q:'DTX/plasma glucose <70 mg/dL — รู้สึกตัวและกลืนได้?',o:[['ได้','oral'],['ไม่ได้','iv']]},
+ oral:{leaf:true,cls:'ok',t:'กฎ 15-15',b:'Glucose 15 g (ADA 2026; น้ำหวาน ~150 mL/กลูโคสเม็ด) · ตรวจซ้ำ 15 นาที ยังต่ำให้ซ้ำ · ปกติแล้วกินอาหาร · ใช้ acarbose ต้องเป็น glucose',next:['หาสาเหตุ','cause']},
+ iv:{q:'มีเส้นเลือดหรือไม่?',o:[['มี','ivg'],['ไม่มี','glu']]},
+ ivg:{leaf:true,cls:'danger',t:'IV glucose',b:'<b>50% glucose 25–50 mL IV</b> (12.5–25 g) → <b>10% dextrose drip</b> · DTX 15 นาที · ดื่มสุรา/ขาดอาหาร: thiamine 100 mg IV',next:['หาสาเหตุ','cause']},
+ glu:{leaf:true,cls:'warn',t:'Glucagon',b:'<b>Glucagon 1 mg IM/SC</b> หรือ <b>nasal 3 mg</b> · ได้ผลน้อยในคนดื่มสุรา/ขาดอาหาร/ตับวาย · ตะแคงกันสำลัก (อาเจียน) · เปิดเส้นให้ได้',next:['หาสาเหตุ','cause']},
+ cause:{q:'สาเหตุที่น่าเป็น?',o:[['Sulfonylurea','su'],['Insulin','ins'],['ไม่เป็นเบาหวาน/ไม่ได้ใช้ยา','nd']]},
+ su:{leaf:true,cls:'danger',t:'Sulfonylurea-induced',b:'<b>Admit</b> · DTX ทุก 1 ชม. · dextrose ตามต้องการ · <b>ตกซ้ำ → octreotide 50–100 µg SC/IV ทุก 6–8 ชม.</b> · ระวังใน CKD/สูงอายุ/glibenclamide · เปลี่ยนยาก่อนกลับ'},
+ ins:{q:'ชนิด insulin/สถานการณ์?',o:[['Rapid/short + ไม่ได้กิน','insr'],['Long-acting/เกินขนาด/ตั้งใจ','insl']]},
+ insr:{leaf:true,cls:'ok',t:'Insulin ออกฤทธิ์สั้น',b:'แก้แล้วกินอาหาร สังเกตจนพ้นฤทธิ์ insulin · ปรับขนาด/เวลาฉีด · สอนกฎ 15-15 · glucagon สำหรับญาติ · กลับบ้านได้ถ้าคงที่และมีคนดูแล'},
+ insl:{leaf:true,cls:'danger',t:'Insulin long-acting/เกินขนาด',b:'<b>Admit</b> · 10% dextrose ต่อเนื่อง DTX ทุก 1 ชม. อาจนานหลายวัน · <b>K/PO₄ ต่ำ</b> · ตั้งใจ → ประเมินจิตเวช · ปรึกษา 1367'},
+ nd:{leaf:true,cls:'violet',t:'ไม่เป็นเบาหวาน',b:'ยืนยัน <b>Whipple triad</b> · <b>เจาะ glucose, insulin, C-peptide, proinsulin, BHB, SU screen ขณะน้ำตาลต่ำ</b> (ก่อนแก้ถ้าไม่ทำให้ช้า) · ดูป่วย → sepsis, ตับ/ไตวาย, adrenal insufficiency, malaria, quinine · ดูแข็งแรง → insulinoma/แอบใช้ยา · ส่งต่อมไร้ท่อ'}
+},'apTrail','apStage');
+
+function rx(){
+  let g=num('rG');const c=$('rC').value;const L=[];
+  if(g===null){$('rxOut').textContent='ใส่ค่า glucose';return}
+  if($('rU').value==='mmol')g=g*18;
+  const con=$('rCon').checked,iv=$('rIv').checked;
+  if(con&&g>=70){$('rxOut').innerHTML=`glucose ${Math.round(g)} mg/dL ไม่ต่ำ แต่สับสน/หมดสติ → <b>ไม่ใช่ hypoglycemia</b> (ยกเว้นวัดหลังได้รับการรักษาแล้ว) → หาสาเหตุอื่น: stroke, sepsis, ยา/สารพิษ, ชัก, hyponatremia · ไม่ให้ dextrose`;return}
+  const lv=g<54?2:g<70?1:0;
+  if(con)L.push(`<b>Level 3</b> (ต้องมีคนช่วย) — glucose ${Math.round(g)} mg/dL`);
+  else L.push(lv?`<b>Level ${lv}</b> — glucose ${Math.round(g)} mg/dL`:`glucose ${Math.round(g)} mg/dL ไม่ต่ำ (≥70) — ถ้ามีอาการให้ทวนค่า/หาสาเหตุอื่น`);
+  if(lv||con){
+    if(!con)L.push($('rAca').checked?'กิน <b>glucose (เม็ด/ผง) 15 g</b> — ใช้ acarbose: น้ำตาลทรายดูดซึมช้า':'กิน <b>glucose 15 g</b> (ADA 2026; น้ำหวาน/น้ำผลไม้ ~150 mL) → ตรวจซ้ำ 15 นาที → ยังต่ำให้ซ้ำ → ปกติแล้วกินอาหาร');
+    else if(iv)L.push('<b>50% glucose 25–50 mL IV</b> → ตามด้วย <b>10% dextrose</b> (เช่น 100 mL/ชม. ปรับตาม DTX) · ตรวจซ้ำ 15 นาที');
+    else L.push('<b>Glucagon 1 mg IM/SC</b> หรือ <b>nasal 3 mg</b> · เปิดเส้นให้ได้เร็วที่สุด'+($('rAlc').checked?' · <b>ดื่มสุรา/ขาดอาหาร: glucagon อาจไม่ได้ผล</b>':''));
+    if($('rAlc').checked)L.push('Thiamine 100 mg IV ร่วมด้วย — อย่าเลื่อน glucose เพื่อรอ thiamine');
+  }
+  if(c==='su'){L.push('<b>Sulfonylurea → admit</b> สังเกตอย่างน้อย 24 ชม. (นานกว่าใน CKD/glibenclamide) · DTX ทุก 1 ชม.');
+    if($('rRec').checked)L.push('<b>ตกซ้ำหลัง dextrose → octreotide 50–100 µg SC หรือ IV ทุก 6–8 ชม.</b> ลด dextrose bolus ที่กระตุ้น insulin');}
+  else if(c==='lins')L.push('<b>Insulin long-acting/เกินขนาด → admit</b> · 10% dextrose ต่อเนื่อง · DTX ทุก 1 ชม. · <b>ตรวจ K และ PO₄</b> · ตั้งใจ → ประเมินความเสี่ยงฆ่าตัวตาย');
+  else if(c==='ins')L.push('Insulin ออกฤทธิ์สั้น: กินอาหาร สังเกตจนพ้นฤทธิ์ · ปรับขนาด · กลับบ้านได้ถ้าคงที่และมีคนดูแล'+($('rRec').checked?' — <b>แต่ตกซ้ำ → admit</b>':''));
+  else L.push('ไม่เป็นเบาหวาน/ไม่ทราบสาเหตุ → <b>เจาะ insulin, C-peptide, BHB, SU screen ขณะน้ำตาลต่ำ</b> · ตรวจ sepsis, ตับ, ไต, cortisol');
+  if($('rCkd').checked)L.push('CKD/สูงอายุ: ยาค้างนาน → สังเกตนานขึ้น · ทบทวนยา (เลี่ยง glibenclamide)');
+  L.push('<span class="muted">Level 2–3 → ทบทวนแผนยาเบาหวานทุกครั้ง</span>');
+  $('rxOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRx input,#tRx select',rx);
+
+function nd(){
+  const g=num('nG'),ins=num('nI'),cp=num('nC'),pi=num('nP'),b=num('nB'),su=$('nS').value;const L=[];
+  if(!$('nW').checked){$('ndOut').innerHTML='<b>Whipple triad ไม่ครบ</b> → ไม่ต้องสืบค้น hypoglycemic disorder (ES 2009) · ทบทวนวิธีวัด (DTX อาจผิด)'+($('nIll').checked?' · แต่ผู้ป่วยดูป่วยและมี plasma glucose ต่ำจริง → หาสาเหตุ: sepsis, ตับ/ไตวาย, adrenal, ยา':'');return}
+  if(g===null){$('ndOut').textContent='ใส่ glucose';return}
+  if(g>=55){$('ndOut').innerHTML=`Glucose ${g} ≥55 mg/dL → <b>แปลผล insulin/C-peptide ไม่ได้</b> (insulin ≥3 ปกติได้เมื่อน้ำตาลปกติ) · เจาะซ้ำขณะเกิดอาการเอง หรือทำ 72-h supervised fast`;return}
+  if($('nIll').checked)L.push('<b>ดูป่วย</b> → หาสาเหตุหลักก่อน: sepsis, ตับ/ไตวาย, adrenal insufficiency (cortisol/ACTH), malaria, ยา (quinine, pentamidine, co-trimoxazole, fluoroquinolone), ขาดอาหาร');
+  const hiI=ins!==null&&ins>=3,hiC=cp!==null&&cp>=0.6,loB=b!==null&&b<=2.7;
+  if(hiI&&hiC){
+    L.push(`Insulin ${ins} (≥3) + C-peptide ${cp} (≥0.6)${loB?` + BHB ${b} (≤2.7)`:''} → <b>endogenous hyperinsulinism</b>`);
+    if(su==='pos')L.push('<b>SU screen บวก → sulfonylurea</b> (ได้ยาผิด/แอบใช้/ยาชุดหรืออาหารเสริมผสม)');
+    else if(su==='neg')L.push(($('nPost').checked?'หลังอาหาร/เคยผ่าตัดกระเพาะ → <b>post-bariatric hypoglycemia หรือ NIPHS</b> · ':'')+'SU ลบ → <b>insulinoma</b> น่าเป็น'+(pi!==null&&pi>=5?` (proinsulin ${pi} ≥5 สนับสนุน)`:'')+' → CT/MRI ตับอ่อน, EUS · ส่งต่อมไร้ท่อ · พิจารณา insulin antibody');
+    else L.push('ส่ง <b>sulfonylurea screen</b> เพื่อแยก SU กับ insulinoma');
+  }else if(hiI&&cp!==null&&!hiC){
+    L.push(`Insulin ${ins} สูง แต่ C-peptide ${cp} ต่ำ → <b>exogenous insulin</b> (ได้ insulin ผิด/แอบฉีด/ถูกฉีด) — ปรึกษาจิตแพทย์/สอบสวนตามเหมาะสม`);
+  }else if(ins!==null&&!hiI&&(hiC||(pi!==null&&pi>=5))){
+    L.push(`Insulin ${ins} <3 แต่ ${hiC?`C-peptide ${cp} ≥0.6`:''}${hiC&&pi>=5?' และ ':''}${pi!==null&&pi>=5?`proinsulin ${pi} ≥5`:''} → <b>อาจเป็น endogenous hyperinsulinism</b> (insulinoma บางรายมี insulin <3) · ส่ง SU screen · ส่งต่อมไร้ท่อ`);
+  }else if(ins!==null&&!hiI){
+    L.push(`Insulin ${ins} ต่ำ (<3) → <b>ไม่ใช่ insulin-mediated</b> (ถ้า assay ตรวจ insulin analog ได้)`);
+    if(b!==null)L.push(loB?`BHB ${b} ต่ำ → ก่อนคิดถึง IGF-II ให้ <b>ตัด insulin analog</b> (glargine/detemir/aspart บาง assay ตรวจไม่พบ → ส่ง analog-specific assay) · แล้วคิดถึง <b>IGF-II (non-islet cell tumor)</b> · ตรวจ IGF-II/IGF-I`:`BHB ${b} สูง → ketotic: ขาดอาหาร, แอลกอฮอล์, adrenal insufficiency/GH deficiency, ตับวาย`);
+  }else L.push('ใส่ insulin และ C-peptide ที่เจาะขณะน้ำตาลต่ำ');
+  L.push('<span class="muted">ไม่มีอาการขณะพบแพทย์ → 72-h supervised fast หรือ mixed-meal test ในโรงพยาบาล</span>');
+  $('ndOut').innerHTML=L.join('<br>');
+}
+bindAll('#tNd input,#tNd select',nd);
+
+mountQuiz([
+ ['ชาย 70 ปี CKD stage 4 ใช้ glibenclamide มาด้วยสับสน DTX 38 mg/dL ให้ 50% glucose 50 mL ดีขึ้น 2 ชม.ต่อมา DTX 45 อีก ข้อใดเหมาะที่สุด',
+  ['ให้กลับบ้านพร้อมอาหาร','Admit + dextrose และให้ octreotide','ให้ glucagon ซ้ำทุก 1 ชม.','ให้ hydrocortisone'],1,'Sulfonylurea + CKD → น้ำตาลต่ำนาน · octreotide ลดการหลั่ง insulin'],
+ ['ผู้ป่วยรู้สึกตัวดี DTX 62 mg/dL ใช้ insulin ข้อใดถูก',
+  ['ให้ 50% glucose IV','กิน glucose 15–20 g แล้วตรวจซ้ำ 15 นาที','ไม่ต้องทำอะไร','ให้ glucagon 1 mg'],1,'กฎ 15-15'],
+ ['Level 2 hypoglycemia ตาม ADA คือ',
+  ['<70 mg/dL','<54 mg/dL','<40 mg/dL','ต้องมีคนช่วย'],1,'Level 3 คือต้องมีคนช่วยโดยไม่กำหนดค่า'],
+ ['ชายดื่มสุราหนัก หมดสติ DTX 30 ไม่มีเส้นเลือด glucagon ได้ผลน้อยเพราะ',
+  ['ดื้อต่อ glucagon','glycogen ในตับหมด','ไตขับเร็ว','glucagon ถูกทำลายโดยแอลกอฮอล์'],1,'ต้องเปิดเส้นให้ glucose + thiamine'],
+ ['หญิงไม่เป็นเบาหวาน glucose 40 insulin 25 µU/mL C-peptide 0.1 ng/mL บ่งชี้',
+  ['Insulinoma','Sulfonylurea','Exogenous insulin','IGF-II tumor'],2,'Insulin สูงแต่ C-peptide ต่ำ'],
+ ['glucose 42 insulin 10 C-peptide 2.0 SU screen บวก',
+  ['Insulinoma','Sulfonylurea','Exogenous insulin','Adrenal insufficiency'],1,'Endogenous hyperinsulinism + SU บวก'],
+ ['ผู้ป่วยใช้ acarbose + insulin น้ำตาลต่ำรู้สึกตัว ควรให้อะไร',
+  ['น้ำตาลทราย','glucose','นมจืด','ช็อกโกแลต'],1,'Acarbose ยับยั้งการย่อย sucrose'],
+ ['ผู้ป่วยใช้ dapagliflozin จะผ่าตัดใหญ่ ควรหยุดยาก่อนกี่วัน',
+  ['ไม่ต้องหยุด','1 วัน','3 วัน','14 วัน'],2,'FDA: canagliflozin/dapagliflozin/empagliflozin 3 วัน · ertugliflozin 4 วัน'],
+ ['ข้อใดไม่ใช่สาเหตุน้ำตาลต่ำในผู้ป่วยไม่เป็นเบาหวานที่ดูป่วย',
+  ['Sepsis','Adrenal insufficiency','Quinine ใน malaria','Metformin เดี่ยวในคนไตปกติ'],3,'Metformin เดี่ยวไม่ทำให้น้ำตาลต่ำ']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

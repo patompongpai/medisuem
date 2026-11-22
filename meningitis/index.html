@@ -1,0 +1,708 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Meningitis / Encephalitis · เยื่อหุ้มสมองอักเสบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Infectious disease · Neurology · IDSA 2004/2008 · ESCMID 2016 · NICE NG240 (2024) · WHO 2022 · แนวทาง HIV ไทย 2564/2565</div>
+  <h1>เยื่อหุ้มสมองอักเสบและสมองอักเสบ<br>Meningitis / Encephalitis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่ลำดับงานที่ ER (เพาะเชื้อ → CT เมื่อจำเป็น → LP → <b>dexamethasone + ยาฆ่าเชื้อภายใน 1 ชม.</b>) การแปลผล CSF การเลือกยาเริ่มต้นในบริบทไทย เชื้อที่สำคัญในไทย (<b>Streptococcus suis</b> จากหมูดิบ, <b>cryptococcus</b> ในผู้ติดเชื้อเอชไอวี, วัณโรค, <b>eosinophilic meningitis</b> จากหอยโข่ง/ปลาดิบ) จนถึง HSV encephalitis</p>
+  <p class="cite">อ้างอิงหลัก: van de Beek D, et al. ESCMID guideline: acute bacterial meningitis (Clin Microbiol Infect 2016;22 Suppl 3:S37–62) · NICE NG240. Meningitis (bacterial) and meningococcal disease (2024) · Tunkel AR, et al. IDSA practice guidelines for bacterial meningitis (Clin Infect Dis 2004;39:1267–84) · Tunkel AR, et al. IDSA: management of encephalitis (CID 2008;47:303–27) · WHO. Guidelines for cryptococcal disease in PLHIV 2022 · แนวทางการตรวจรักษาและป้องกันการติดเชื้อเอชไอวี ประเทศไทย 2564/2565 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ภายใน 1 ชม.</b>Blood culture → dexamethasone → ceftriaxone 2 g (± vancomycin, ampicillin, acyclovir) · CT ไม่ทำให้ยาช้า</div>
+    <div class="stage" style="--c:var(--warn)"><b>CSF บอกทาง</b>Neutrophil + glucose ต่ำ = bacterial · lymphocyte + glucose ต่ำ = TB/crypto · eosinophil ≥10% = พยาธิ</div>
+    <div class="stage" style="--c:var(--accent)"><b>บริบทไทย</b>หมูดิบ → S. suis (หูหนวก) · HIV → CrAg · หอยโข่ง → Angiostrongylus</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#rec">อาการและเชื้อ</a><a href="#er">ลำดับงานที่ ER</a><a href="#csf">แปลผล CSF</a><a href="#emp">ยาเริ่มต้น</a><a href="#dex">Dexamethasone</a><a href="#path">ตามเชื้อ · ระยะเวลา</a><a href="#suis">S. suis</a><a href="#enc">Encephalitis · HSV</a><a href="#crypto">Cryptococcal</a><a href="#tbm">TB meningitis</a><a href="#eos">Eosinophilic</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="rec" class="col">
+  <div class="sec-num">01</div>
+  <h2>อาการและเชื้อที่ต้องคิดถึง</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>อาการ</h4><ul><li>ไข้ ปวดศีรษะ คอแข็ง สติเปลี่ยน — <b>ครบ 3 อาการไม่ถึงครึ่ง</b> แต่ ≥2 ใน 4 (รวมปวดหัว) พบเกือบทุกราย</li><li>Kernig/Brudzinski ไวต่ำ — <b>ตรวจไม่พบไม่ตัดโรค</b></li><li>ผื่นจ้ำเลือด (purpura) → meningococcal</li><li>ผู้สูงอายุ/ภูมิคุ้มกันต่ำ: สับสนเฉยๆ ไข้ไม่สูง</li><li>สับสน พฤติกรรมเปลี่ยน ชัก อ่อนแรง → <b>encephalitis</b></li></ul></div>
+    <div class="card c-acc"><h4>เชื้อสำคัญในผู้ใหญ่ไทย</h4><ul><li><b>S. pneumoniae</b> (หูอักเสบ ไซนัส ปอด สุรา ไม่มีม้าม น้ำไขสันหลังรั่ว)</li><li><b>S. suis</b> — กินหมูดิบ/เลือดหมู สัมผัสหมู · <b>หูหนวก</b> <span class="tag add">ไทย</span></li><li><b>Listeria</b> — อายุ &gt;50, ตั้งครรภ์, สุรา, ภูมิคุ้มกันต่ำ</li><li>Gram-negative (Klebsiella ฯลฯ) — เบาหวาน, ผ่าตัดสมอง, ติดเชื้อในโรงพยาบาล</li><li>N. meningitidis (พบน้อยในไทย แต่มีการระบาด)</li><li><b>Subacute</b>: <b>Cryptococcus</b> (HIV), <b>TB</b>, <b>Angiostrongylus/Gnathostoma</b> · ไวรัส: enterovirus, HSV, JE · scrub typhus, leptospirosis, melioidosis</li></ul></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="er" class="col">
+  <div class="sec-num">02</div>
+  <h2>ลำดับงานที่ ER</h2>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>ทำ</th></tr>
+    <tr><td>1</td><td>ABC · ช็อก → resuscitate (หน้า <a href="../sepsis/index.html">Sepsis</a>) · glucose</td></tr>
+    <tr><td>2</td><td><b>Blood culture 2 ชุด</b> (ก่อนยา แต่ไม่ทำให้ช้า) · CBC, electrolyte (Na), Cr, glucose (คู่กับ CSF), coag, lactate · <b>HIV test</b> · serum CrAg ถ้า HIV/ภูมิคุ้มกันต่ำ</td></tr>
+    <tr><td>3</td><td>ต้องทำ <b>CT ก่อน LP</b> หรือไม่ (กล่องล่าง) — ถ้าต้องทำ: <b>ให้ dexamethasone + ยาฆ่าเชื้อก่อนไป CT</b></td></tr>
+    <tr><td>4</td><td><b>LP</b>: opening pressure, cell count + diff, protein, glucose, Gram stain, culture, (CrAg, AFB/Xpert, PCR, India ink ตามบริบท) · เก็บ CSF ส่วนเกินไว้</td></tr>
+    <tr><td>5</td><td><b>Dexamethasone</b> ก่อน/พร้อมยาฆ่าเชื้อเข็มแรก + <b>ยาฆ่าเชื้อภายใน 1 ชม.</b> — ยิ่งช้ายิ่งตาย</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>CT ก่อน LP เมื่อ (IDSA 2004)</h4><ul><li>ภูมิคุ้มกันบกพร่อง (HIV, ยากดภูมิ, ปลูกถ่ายอวัยวะ)</li><li>เคยมีโรคระบบประสาทส่วนกลาง (ก้อน, stroke, การติดเชื้อเฉพาะที่)</li><li>ชักครั้งใหม่ภายใน 1 สัปดาห์</li><li>Papilledema</li><li>ระดับความรู้สึกตัวผิดปกติ</li><li>Focal neurological deficit</li></ul><p class="muted" style="font-size:.84rem">NICE NG240 แคบกว่า (CT น้อยกว่า — ไม่ทำ CT routine): CT เมื่อมีปัจจัยเสี่ยงก้อนในสมอง หรือ focal deficit ใหม่/ชัก/posturing, รูม่านตาผิดปกติ, GCS ≤9 หรือลดลงเร็ว</p></div>
+    <div class="card c-red"><h4>ห้าม/เลื่อน LP</h4><ul><li>สัญญาณความดันในกะโหลกสูง/ก้อนที่ทำให้สมองเคลื่อน</li><li><b>ผื่นจ้ำเลือดลามเร็ว</b> · coagulopathy/เกล็ดเลือดต่ำมาก · ติดเชื้อที่ตำแหน่งเจาะ</li><li>ช็อก หายใจล้มเหลว ชักไม่หยุด → แก้ก่อน</li><li>เลื่อน LP <b>ไม่ใช่เหตุให้เลื่อนยา</b> · ทำ LP เมื่อปลอดภัย (culture ยังมีประโยชน์ใน 1–4 ชม.แรก; PCR/antigen ช่วยหลังได้ยา)</li><li><b>Crypto: ความดันสูงไม่ใช่ข้อห้าม LP</b> (WHO) — LP คือการรักษา</li></ul></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="csf" class="col">
+  <div class="sec-num">03</div>
+  <h2>แปลผล CSF</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>WBC (/mm³)</th><th>เซลล์เด่น</th><th>Glucose (CSF/serum)</th><th>Protein (mg/dL)</th><th>อื่นๆ</th></tr>
+    <tr><td><b>Bacterial</b></td><td>&gt;1,000 (100–10,000)</td><td>Neutrophil</td><td><b>&lt;40 mg/dL · ratio ≤0.4</b></td><td>&gt;100–200</td><td>Gram stain ~60–90% · lactate สูง</td></tr>
+    <tr><td><b>Viral</b></td><td>10–500</td><td>Lymphocyte (ช่วงแรกอาจ neutrophil)</td><td>ปกติ</td><td>ปกติ–สูงเล็กน้อย</td><td>HSV: RBC/xanthochromia ได้</td></tr>
+    <tr><td><b>TB</b></td><td>50–500</td><td>Lymphocyte</td><td><b>ต่ำ</b> (ratio &lt;0.5)</td><td><b>สูงมาก</b> (100–500+)</td><td>Xpert MTB/RIF Ultra · ADA</td></tr>
+    <tr><td><b>Cryptococcal</b></td><td>0–500 (HIV มักต่ำมาก)</td><td>Lymphocyte</td><td>ต่ำ/ปกติ</td><td>สูง/ปกติ</td><td><b>OP สูงมาก</b> · CrAg (ไว &gt;95%) · India ink</td></tr>
+    <tr><td><b>Eosinophilic</b></td><td>100–2,000</td><td><b>Eosinophil ≥10 cells หรือ ≥10%</b></td><td>ปกติ/ต่ำเล็กน้อย</td><td>สูงเล็กน้อย</td><td>Gnathostoma: RBC/xanthochromia</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ค่าเป็นแนวโน้ม ไม่ใช่เกณฑ์ตายตัว · ได้ยาฆ่าเชื้อก่อนแล้ว (partially treated) CSF อาจคล้าย viral แต่ glucose ยังต่ำ · ทั้ง CSF ปกติก็ไม่ตัด crypto ในผู้ติดเชื้อ HIV — ส่ง CrAg เสมอ</p>
+</section>
+
+<!-- 4 -->
+<section id="emp" class="col">
+  <div class="sec-num">04</div>
+  <h2>ยาฆ่าเชื้อเริ่มต้น (ผู้ใหญ่ ไตปกติ)</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ยา</th></tr>
+    <tr><td><b>อายุ 18–50 ปี ชุมชน</b></td><td><b>Ceftriaxone 2 g IV ทุก 12 ชม.</b> ± <b>vancomycin</b> 15–20 mg/kg ทุก 8–12 ชม. (IDSA 2004: ให้ routine ร่วมกับ cephalosporin · ESCMID 2016: เพิ่มตามความชุก pneumococcus ดื้อ ceftriaxone ในพื้นที่)</td></tr>
+    <tr><td><b>อายุ &gt;50 ปี</b> / ตั้งครรภ์ / สุรา / ภูมิคุ้มกันต่ำ</td><td>ข้างบน + <b>ampicillin 2 g IV ทุก 4 ชม.</b> (Listeria — cephalosporin ไม่ครอบคลุม)</td></tr>
+    <tr><td><b>หลังผ่าตัดสมอง/shunt/บาดเจ็บศีรษะทะลุ</b></td><td><b>Vancomycin + cefepime 2 g ทุก 8 ชม.</b> หรือ meropenem 2 g ทุก 8 ชม. (หรือ ceftazidime)</td></tr>
+    <tr><td><b>สงสัย encephalitis</b></td><td>เพิ่ม <b>acyclovir 10 mg/kg IV ทุก 8 ชม.</b> (คนอ้วนใช้ ideal/adjusted body weight · ปรับตามไต) · ไข้ในชนบท + eschar → <b>doxycycline</b> (scrub typhus)</td></tr>
+    <tr><td>แพ้ beta-lactam รุนแรง</td><td>Vancomycin + moxifloxacin (± co-trimoxazole แทน ampicillin สำหรับ Listeria) — ปรึกษา ID</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">NICE NG240 (UK): ceftriaxone ขนาดสูงสุด ± amoxicillin เมื่อมีปัจจัยเสี่ยง Listeria · ไม่ให้ acyclovir routine ยกเว้นสงสัย HSV encephalitis · ในไทยขึ้นกับความไวของเชื้อในพื้นที่ — ปรึกษา ID</p>
+</section>
+
+<!-- 5 -->
+<section id="dex" class="col">
+  <div class="sec-num">05</div>
+  <h2>Dexamethasone</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ให้</h4><ul><li><b>Dexamethasone 10 mg (0.15 mg/kg) IV ทุก 6 ชม. × 4 วัน</b></li><li>ให้ <b>ก่อนหรือพร้อม</b> ยาฆ่าเชื้อเข็มแรก · NICE: ล่าช้า &lt;12 ชม.ยังให้ได้ (ESCMID: ภายใน 4 ชม.)</li><li><b>ทราบเชื้อแล้ว</b>: ให้ต่อใน <b>pneumococcus</b> (และ Hib) · <b>S. suis</b>: ลดการสูญเสียการได้ยิน (Vietnam RCT) · เชื้ออื่น → หยุด (NICE)</li><li>ลดการตายใน pneumococcal meningitis ในประเทศรายได้สูง</li></ul></div>
+    <div class="card c-red"><h4>ไม่ให้ / ระวัง</h4><ul><li><b>Cryptococcal meningitis — ห้าม</b> (CryptoDex: แย่ลง)</li><li>ได้ยาฆ่าเชื้อมานานแล้ว (หลายวัน)</li><li>Septic shock อย่างเดียว (ไม่ใช่ meningitis) → ใช้ hydrocortisone ตาม sepsis แทน</li><li>TB meningitis: ใช้ขนาด/ระยะเวลาต่างหาก (บท 10)</li><li>ไม่ช่วยในประเทศรายได้ต่ำ/HIV สูง (African trials)</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="path" class="col">
+  <div class="sec-num">06</div>
+  <h2>ปรับยาตามเชื้อและระยะเวลา</h2>
+  <div class="tbl"><table>
+    <tr><th>เชื้อ</th><th>ยา</th><th>ระยะเวลา (NICE / IDSA)</th></tr>
+    <tr><td>S. pneumoniae</td><td>Ceftriaxone (penicillin G ถ้า MIC ไวต่อ penicillin) · ดื้อ ceftriaxone → + vancomycin ± rifampicin</td><td>10 วัน (ถ้าหาย) / 10–14 วัน</td></tr>
+    <tr><td>N. meningitidis</td><td>Ceftriaxone / penicillin G</td><td>5 วัน / 7 วัน</td></tr>
+    <tr><td>Listeria</td><td>Ampicillin ± gentamicin (หรือ co-trimoxazole 7 วันแรก — NICE)</td><td>21 วัน</td></tr>
+    <tr><td>Gram-negative bacilli</td><td>ตามความไว (ceftriaxone/cefepime/meropenem)</td><td>21 วัน</td></tr>
+    <tr><td><b>S. suis</b></td><td>Ceftriaxone หรือ penicillin G</td><td>~10–14 วัน (นานขึ้นถ้า endocarditis/ข้ออักเสบ)</td></tr>
+    <tr><td>ไม่พบเชื้อ แต่ CSF แบบ bacterial</td><td>Ceftriaxone</td><td>10 วัน (NICE)</td></tr>
+  </table></div>
+  <div class="box note"><b>Meningococcal: ป้องกันผู้สัมผัสใกล้ชิด</b>(ร่วมบ้าน จูบ บุคลากรที่สัมผัสน้ำลายโดยตรง เช่น ใส่ท่อโดยไม่สวมหน้ากาก) — <b>ciprofloxacin 500 mg ครั้งเดียว</b> หรือ rifampicin 600 mg ทุก 12 ชม. × 2 วัน หรือ ceftriaxone 250 mg IM ครั้งเดียว · <b>รายงาน 506</b> · ผู้ป่วยแยกแบบ droplet 24 ชม.แรกของการรักษา <span class="tag add">เสริม</span></div>
+</section>
+
+<!-- 7 -->
+<section id="suis" class="col">
+  <div class="sec-num">07</div>
+  <h2>Streptococcus suis — เยื่อหุ้มสมองอักเสบจากหมู</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>นึกถึงเมื่อ</h4><ul><li><b>กินหมูดิบ/สุกๆ ดิบๆ (ลาบ ก้อย หลู้ เลือดหมู)</b> หรือทำงานสัมผัสหมู · ผู้ชาย · <b>ดื่มสุรา</b></li><li>พบมากในภาคเหนือ/อีสาน เป็นสาเหตุ bacterial meningitis สำคัญในผู้ใหญ่</li><li><b>หูดับ/หูหนวกเฉียบพลัน</b> + เวียนศีรษะ (vestibular) — ลักษณะเด่น</li><li>อาจมี septic shock ผื่นจ้ำเลือด DIC, ข้ออักเสบ, endocarditis, endophthalmitis, spondylodiscitis</li><li>Gram stain เป็น gram-positive cocci — <b>อาจถูกรายงานผิดเป็น S. pneumoniae/viridans</b></li></ul></div>
+    <div class="card c-acc"><h4>ดูแล</h4><ul><li>ไวต่อ penicillin และ ceftriaxone</li><li><b>Dexamethasone</b> ลดการสูญเสียการได้ยิน</li><li>ตรวจการได้ยิน (audiogram) ก่อนจำหน่าย · สูญเสียการได้ยินพบบ่อย (~40% ใน meta-analysis) แต่ตายน้อย (~3%) · ส่ง ENT (cochlear implant)</li><li>ตรวจหา endocarditis (echo) เมื่อ bacteremia นาน/มีเสียงฟู่</li><li>สอบสวนโรค · ให้ความรู้งดกินหมูดิบ</li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="enc" class="col">
+  <div class="sec-num">08</div>
+  <h2>Encephalitis และ HSV</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>HSV encephalitis</h4><ul><li>ไข้ + สับสน/พฤติกรรมเปลี่ยน/ชัก/aphasia เฉียบพลัน</li><li><b>เริ่ม acyclovir 10 mg/kg IV ทุก 8 ชม. ทันที</b> ไม่รอผล (ปรับตามไต · ดื่มน้ำ/ให้สารน้ำพอ ป้องกันไตจากผลึกยา)</li><li><b>MRI</b>: temporal lobe/insula · EEG: periodic lateralized discharges</li><li>CSF HSV PCR — <b>ลบใน 72 ชม.แรกได้</b> → สงสัยต่อให้เจาะซ้ำ 3–7 วัน</li><li>ระยะเวลา <b>14–21 วัน</b> (IDSA)</li></ul></div>
+    <div class="card c-vio"><h4>สาเหตุอื่นที่ต้องคิด</h4><ul><li><b>Japanese encephalitis</b> (เด็ก/ชนบท, parkinsonism) — ป้องกันด้วยวัคซีน</li><li><b>Scrub typhus</b> (eschar) → doxycycline · leptospirosis · melioidosis (ฝีในสมอง)</li><li><b>Rabies</b> — ประวัติสัตว์กัด — หน้า <a href="../rabies/index.html">Rabies</a></li><li><b>Autoimmune encephalitis</b> (anti-NMDAR: อายุน้อย จิตเวช ชัก dyskinesia · ตรวจหา ovarian teratoma)</li><li>Toxoplasma/CMV/PML ใน HIV · VZV · ไม่ติดเชื้อ: Wernicke, sepsis-associated, ยา</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="crypto" class="col">
+  <div class="sec-num">09</div>
+  <h2>Cryptococcal meningitis</h2>
+  <p>สาเหตุ meningitis ที่สำคัญที่สุดในผู้ติดเชื้อเอชไอวีระยะท้ายในไทย (CD4 &lt;100) · ปวดหัวค่อยเป็นค่อยไปหลายสัปดาห์ ไข้ต่ำ คอแข็งอาจไม่มี ตามัว/ภาพซ้อน (CN VI) จากความดันสูง</p>
+  <div class="tbl"><table>
+    <tr><th>Induction (2 สัปดาห์)</th><th>สูตร</th></tr>
+    <tr><td><b>WHO 2022 (preferred)</b></td><td><b>Liposomal AmB 10 mg/kg ครั้งเดียว</b> + <b>flucytosine 100 mg/kg/วัน</b> (แบ่ง 4) × 14 วัน + <b>fluconazole 1,200 mg/วัน</b> × 14 วัน</td></tr>
+    <tr><td><b>แนวทางไทย (HIV CPG)</b> สูตร 1</td><td><b>AmB deoxycholate 1.0 mg/kg/วัน IV + flucytosine 100 mg/kg/วัน</b> × 1 สัปดาห์ → <b>fluconazole 1,200 mg/วัน</b> × 1 สัปดาห์</td></tr>
+    <tr><td><b>แนวทางไทย</b> สูตร 2 (ไม่มี flucytosine)</td><td><b>AmB 0.7–1.0 mg/kg/วัน + fluconazole 800–1,200 mg/วัน</b> × 2 สัปดาห์</td></tr>
+    <tr><td><b>Consolidation → maintenance</b></td><td>Fluconazole <b>800 mg/วัน × 8 สัปดาห์</b> (WHO) → <b>200 mg/วัน</b> · หยุดเมื่อได้ ≥1 ปี + ART จน CD4 ≥100 นาน &gt;3 เดือน + VL undetectable (แนวทางไทย)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ความดันในกะโหลกสูง — สาเหตุตายสำคัญ</h4><ul><li><b>วัด opening pressure ทุกครั้ง</b></li><li><b>OP ≥25 cmH₂O</b> (หรือมีอาการ) → <b>therapeutic LP</b> ระบายจน &lt;20 หรือลดครึ่งหนึ่ง · ทำซ้ำทุกวันจนคงที่ (ลดการตาย)</li><li><b>ไม่ใช้</b> steroid, acetazolamide, mannitol ลดความดัน</li><li>ไม่ดีขึ้น → ปรึกษาทำ lumbar drain/shunt</li></ul></div>
+    <div class="card c-warn"><h4>Amphotericin B deoxycholate — ป้องกันพิษ (WHO)</h4><ul><li><b>NSS 1 L ก่อนให้ AmB</b> ทุกวัน</li><li><b>KCl</b> (เช่น 40 mEq/วัน) + <b>Mg</b> ทดแทน</li><li>ตรวจ Cr, K, Mg, Hb อย่างน้อยสัปดาห์ละ 2–3 ครั้ง</li><li>Flucytosine: ตรวจ CBC (กดไขกระดูก) ปรับตามไต</li></ul></div>
+  </div>
+  <div class="box key"><b>เริ่ม ART เมื่อรักษา crypto meningitis ได้ 4–6 สัปดาห์</b>เริ่มเร็วกว่านี้เพิ่มการตาย (IRIS) — แนวทางไทย · <b>CrAg screening</b>: CD4 &lt;100 → serum CrAg ก่อนเริ่ม ART · บวก + ไม่มีอาการ → LP เสมอ · CSF ปกติ → fluconazole (ไทย 400–800 mg/วัน × 8–10 สัปดาห์ เริ่ม ART หลัง ≥2 สัปดาห์ · WHO 800–1,200 mg × 2 สัปดาห์ แล้ว 800 mg) · WHO: พิจารณาคัดกรองที่ CD4 &lt;200 ได้ · WHO หยุด maintenance เมื่อ CD4 &gt;200 + VL suppressed (ไทยใช้ CD4 ≥100) — หน้า <a href="../hiv/index.html">HIV</a></div>
+  <p class="muted" style="font-size:.88rem">ผู้ไม่ติดเชื้อ HIV (IDSA 2010): <b>ปลูกถ่ายอวัยวะ</b> → liposomal AmB + flucytosine ≥2 สัปดาห์ · <b>ไม่ใช่ HIV/ไม่ใช่ปลูกถ่าย</b> (ยากดภูมิ ตับแข็ง คนปกติ, C. gattii) → AmB + flucytosine ≥4 สัปดาห์ (6 สัปดาห์ถ้ามีภาวะแทรกซ้อนทางระบบประสาท) — ปรึกษา ID</p>
+</section>
+
+<!-- 10 -->
+<section id="tbm" class="col">
+  <div class="sec-num">10</div>
+  <h2>TB meningitis</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>นึกถึงเมื่อ</h4><ul><li>ปวดหัว ไข้ <b>&gt;5 วัน–สัปดาห์</b> · <b>cranial nerve palsy</b> (VI, III) · สับสน · อ่อนแรง</li><li><b>Hyponatremia</b> (SIADH/cerebral salt wasting) · HIV</li><li>CSF: lymphocyte, glucose ต่ำ, <b>protein สูงมาก</b> · CT/MRI: basal enhancement, hydrocephalus, infarct</li><li><b>Xpert MTB/RIF Ultra</b> ใน CSF (ปริมาณมาก ≥6 mL) · AFB/culture · ไม่ตัดโรคถ้าผลลบ</li></ul></div>
+    <div class="card c-acc"><h4>รักษา</h4><ul><li><b>เริ่มรักษาทันทีเมื่อสงสัยสูง</b> ไม่รอผลยืนยัน (พยากรณ์ขึ้นกับระยะตอนเริ่มยา)</li><li><b>2HRZE / 10HR</b> (รวม ~12 เดือน) ตามแนวทางวัณโรคไทย</li><li><b>Dexamethasone</b> (HIV ลบ): 0.3–0.4 mg/kg/วัน แล้วลดขนาดใน 6–8 สัปดาห์ — ลดการตาย (Thwaites 2004) · <b>HIV บวก: ACT HIV trial ไม่พบประโยชน์</b></li><li>ART ในผู้ติดเชื้อ HIV: หลังรักษา TB CNS <b>4–8 สัปดาห์</b> (แนวทางไทย)</li><li>Hydrocephalus → ปรึกษาประสาทศัลย์</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="eos" class="col">
+  <div class="sec-num">11</div>
+  <h2>Eosinophilic meningitis</h2>
+  <p>CSF eosinophil <b>≥10 cells/mm³ หรือ ≥10%</b> ของเม็ดเลือดขาว · พบในไทยมากโดยเฉพาะภาคอีสาน</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4><i>Angiostrongylus cantonensis</i> (พยาธิปอดหนู)</h4><ul><li>กิน <b>หอยโข่ง/หอยเชอรี่ดิบ</b> (ก้อยหอย) หรือผักที่ปนเปื้อน</li><li><b>ปวดศีรษะรุนแรง</b> คลื่นไส้ ชาผิวหนัง/ปวดแสบร้อน · ไข้ต่ำ สติดี</li><li>มัก self-limited แต่ปวดหัวนาน</li><li><b>Prednisolone 60 mg/วัน (แบ่ง 3) × 2 สัปดาห์</b> — ลดปวดหัวและระยะเวลา (Chotmongkol RCT) ± albendazole 15 mg/kg/วัน × 2 สัปดาห์</li><li><b>LP ซ้ำ</b> ช่วยลดปวดหัวเมื่อความดันสูง</li></ul></div>
+    <div class="card c-red"><h4><i>Gnathostoma spinigerum</i> (พยาธิตัวจี๊ด)</h4><ul><li>กิน <b>ปลาน้ำจืด กบ ไก่ ปลาไหลดิบ</b> (ส้มฟัก ปลาร้าดิบ)</li><li>ประวัติ <b>ก้อนบวมเคลื่อนที่ใต้ผิวหนัง</b></li><li><b>Radiculomyelitis</b> (ปวดร้าวรุนแรง → อัมพาต) · <b>เลือดออกในสมอง/SAH</b> · CSF xanthochromia</li><li>รุนแรงกว่า มีความพิการ/ตายได้</li><li><b>Albendazole 400 mg วันละ 2 ครั้ง × 21 วัน</b> (หรือ ivermectin — ข้อมูลจากโรคทางผิวหนัง; ใน neurognathostomiasis เป็นความเห็นผู้เชี่ยวชาญ) · steroid ช่วยอาการ · ปรึกษาผู้เชี่ยวชาญ</li></ul></div>
+  </div>
+</section>
+
+<!-- 12 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ไข้ + ปวดหัว/คอแข็ง/สับสน</b>ABC · blood culture · glucose · HIV</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ต้อง CT ก่อน LP?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ต้อง</span><div class="node red"><b>Dexamethasone + ยาฆ่าเชื้อก่อน</b> → CT → LP เมื่อปลอดภัย</div></div>
+        <div class="arm"><span class="lab">ไม่ต้อง</span><div class="node dx eu"><b>LP ทันที</b> → dexamethasone + ยาฆ่าเชื้อ ภายใน 1 ชม.</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>CSF</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Neutrophil · glucose ต่ำ</span><div class="node dx hypo"><b>Bacterial</b>Ceftriaxone ± vanco ± ampicillin<br>Dex ต่อถ้า pneumo/S. suis</div></div>
+        <div class="arm"><span class="lab">Lymphocyte · glucose ต่ำ</span><div class="node dx hypo"><b>TB / Crypto</b>CrAg · OP · Xpert<br>Crypto: AmB + 5FC/fluc · therapeutic LP</div></div>
+        <div class="arm"><span class="lab">Eosinophil ≥10%</span><div class="node dx green"><b>พยาธิ</b>Angiostrongylus → prednisolone 14 วัน<br>Gnathostoma → albendazole 21 วัน</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 13 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ปรับตามผลเพาะเชื้อและ ID</p>
+  </div>
+  <div class="tool plan" id="tEmp" style="margin-top:12px">
+    <h3>ลำดับงานและยาเริ่มต้น</h3>
+    <div class="fields">
+      <label class="f">อายุ<input type="number" id="eA" value="58"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="eW" value="60"></label>
+      <label class="f">CrCl (mL/min)<input type="number" id="eCr" value="80"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="eImm"> ภูมิคุ้มกันบกพร่อง/HIV</label>
+      <label><input type="checkbox" id="eCns"> เคยมีโรค CNS (ก้อน stroke)</label>
+      <label><input type="checkbox" id="eSz"> ชักครั้งใหม่ ≤1 สัปดาห์</label>
+      <label><input type="checkbox" id="ePap"> Papilledema</label>
+      <label><input type="checkbox" id="eLoc" checked> ความรู้สึกตัวผิดปกติ</label>
+      <label><input type="checkbox" id="eFoc"> Focal deficit</label>
+      <label><input type="checkbox" id="eNs"> หลังผ่าตัดสมอง/shunt/บาดเจ็บศีรษะทะลุ</label>
+      <label><input type="checkbox" id="eEnc"> ลักษณะ encephalitis (พฤติกรรมเปลี่ยน ชัก aphasia)</label>
+      <label><input type="checkbox" id="ePork"> กินหมูดิบ/สัมผัสหมู · หูดับ</label>
+      <label><input type="checkbox" id="ePreg"> ตั้งครรภ์/ติดสุรา</label>
+      <label><input type="checkbox" id="ePurp"> ผื่นจ้ำเลือด</label>
+    </div>
+    <div class="out" id="empOut"></div>
+  </div>
+  <div class="tool" id="tCsf" style="margin-top:12px">
+    <h3>แปลผล CSF</h3>
+    <div class="fields">
+      <label class="f">WBC (/mm³)<input type="number" id="cW" value="1200"></label>
+      <label class="f">% neutrophil<input type="number" id="cN" value="85"></label>
+      <label class="f">% eosinophil<input type="number" id="cE" value="0"></label>
+      <label class="f">CSF glucose (mg/dL)<input type="number" id="cG" value="22"></label>
+      <label class="f">Serum glucose (mg/dL)<input type="number" id="cSg" value="130"></label>
+      <label class="f">Protein (mg/dL)<input type="number" id="cP" value="240"></label>
+      <label class="f">Opening pressure (cmH₂O)<input type="number" id="cOp" placeholder="เช่น 18"></label>
+      <label class="f">Gram stain<select id="cGs"><option value="na">ยังไม่มี/ไม่พบ</option><option value="gpc">Gram-positive cocci</option><option value="gnd">Gram-negative diplococci</option><option value="gpb">Gram-positive bacilli</option><option value="gnb">Gram-negative bacilli</option></select></label>
+      <label class="f">CrAg<select id="cCr"><option value="na">ไม่ได้ส่ง</option><option value="neg">ลบ</option><option value="pos">บวก</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="cHiv"> HIV/ภูมิคุ้มกันต่ำ</label><label><input type="checkbox" id="cAbx"> ได้ยาฆ่าเชื้อก่อน LP</label><label><input type="checkbox" id="cSub"> อาการ &gt;5 วัน</label></div>
+    <div class="out" id="csfOut"></div>
+  </div>
+  <div class="tool" id="tCry" style="margin-top:12px">
+    <h3>Cryptococcal meningitis: induction และ LP</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="yW" value="50"></label>
+      <label class="f">Opening pressure (cmH₂O)<input type="number" id="yOp" value="36"></label>
+      <label class="f">ยาที่มี<select id="yR"><option value="th1">AmB-d + flucytosine (ไทย สูตร 1)</option><option value="th2" selected>AmB-d + fluconazole (ไทย สูตร 2)</option><option value="who">L-AmB 10 mg/kg + 5FC + fluconazole (WHO)</option></select></label>
+      <label class="f">CrCl (mL/min)<input type="number" id="yCr" value="90"></label>
+    </div>
+    <div class="out" id="cryOut"></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ยาฆ่าเชื้อภายใน 1 ชม.</b> · CT/LP ไม่ใช่เหตุให้ช้า</div></div>
+    <div class="pearl"><div><b>Dexamethasone ก่อน/พร้อมเข็มแรก</b> 10 mg q6h × 4 วัน</div></div>
+    <div class="pearl"><div><b>อายุ &gt;50/ภูมิคุ้มกันต่ำ/ตั้งครรภ์ → + ampicillin</b> (Listeria)</div></div>
+    <div class="pearl"><div><b>สับสน/ชัก/พฤติกรรมเปลี่ยน → + acyclovir</b> · PCR ลบช่วงแรกได้</div></div>
+    <div class="pearl"><div><b>หมูดิบ + หูดับ = S. suis</b> · dexamethasone · ตรวจการได้ยิน</div></div>
+    <div class="pearl"><div><b>HIV + ปวดหัวเรื้อรัง → CrAg + วัด OP</b></div></div>
+    <div class="pearl"><div><b>Crypto OP ≥25 → therapeutic LP ทุกวัน</b> · ห้าม steroid</div></div>
+    <div class="pearl"><div><b>Crypto: ART หลัง 4–6 สัปดาห์</b></div></div>
+    <div class="pearl"><div><b>TB meningitis: เริ่มยาเมื่อสงสัยสูง</b> + dexamethasone (HIV ลบ)</div></div>
+    <div class="pearl"><div><b>Eosinophil ≥10% + หอยดิบ → Angiostrongylus</b> → prednisolone 60 mg × 14 วัน</div></div>
+    <div class="pearl"><div><b>ปลาดิบ + ปวดร้าว/อัมพาต/เลือดออก → Gnathostoma</b></div></div>
+    <div class="pearl"><div><b>Meningococcal → ป้องกันผู้สัมผัส</b> ciprofloxacin 500 mg ครั้งเดียว</div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hiv/index.html">HIV →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../tropical-fever/index.html">Tropical fever →</a> · <a href="../status-epilepticus/index.html">Status epilepticus →</a> · <a href="../rabies/index.html">Rabies →</a></p>
+<footer class="col">
+  อ้างอิง: 1) van de Beek D, Cabellos C, Dzupova O, et al. ESCMID guideline: diagnosis and treatment of acute bacterial meningitis. Clin Microbiol Infect 2016;22 Suppl 3:S37–62 · 2) NICE NG240. Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management. 2024 · 3) Tunkel AR, Hartman BJ, Kaplan SL, et al. Practice guidelines for the management of bacterial meningitis. Clin Infect Dis 2004;39:1267–84 · 4) Tunkel AR, Glaser CA, Bloch KC, et al. The management of encephalitis: IDSA clinical practice guidelines. Clin Infect Dis 2008;47:303–27 · 5) WHO. Guidelines for diagnosing, preventing and managing cryptococcal disease among adults, adolescents and children living with HIV. 2022 · 6) แนวทางการตรวจรักษาและป้องกันการติดเชื้อเอชไอวี ประเทศไทย ปี 2564/2565 · 7) Mai NTH, et al. Streptococcus suis meningitis in adults in Vietnam. Clin Infect Dis 2008;46:659–67 · Mai NTH, et al. Dexamethasone in Vietnamese adolescents and adults with bacterial meningitis. N Engl J Med 2007;357:2431–40 · 8) van Samkar A, et al. Streptococcus suis meningitis: a systematic review and meta-analysis. PLoS Negl Trop Dis 2015;9:e0004191 · 9) Chotmongkol V, et al. Corticosteroid treatment of eosinophilic meningitis. Clin Infect Dis 2000;31:660–2 · 10) Thwaites GE, et al. Dexamethasone for tuberculous meningitis. N Engl J Med 2004;351:1741–51 · 11) Donovan J, et al. Adjunctive dexamethasone for tuberculous meningitis in HIV-positive adults (ACT HIV). N Engl J Med 2023;389:1357–67 · 12) Beardsley J, et al. Adjunctive dexamethasone in HIV-associated cryptococcal meningitis (CryptoDex). N Engl J Med 2016;374:542–54<br>
+  <span class="tag add">เสริม</span> / <span class="tag add">ไทย</span> = แนวปฏิบัติทั่วไป/บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','mnView');
+mountWalker({
+ start:{q:'อาการเป็นมากี่วัน?',o:[['เฉียบพลัน (ชั่วโมง–ไม่กี่วัน)','acute'],['กึ่งเฉียบพลัน/เรื้อรัง (>5 วัน–สัปดาห์)','sub']]},
+ acute:{q:'ต้อง CT ก่อน LP? (ภูมิคุ้มกันต่ำ, โรค CNS เดิม, ชักใหม่, papilledema, สติผิดปกติ, focal deficit)',o:[['ต้อง','ct'],['ไม่ต้อง','lp']]},
+ ct:{leaf:true,cls:'danger',t:'ยาก่อน แล้วค่อย CT',b:'Blood culture → <b>dexamethasone 10 mg IV + ceftriaxone 2 g (± vancomycin ± ampicillin ± acyclovir)</b> ภายใน 1 ชม. → CT → LP เมื่อปลอดภัย',next:['ได้ผล CSF','csf']},
+ lp:{leaf:true,cls:'warn',t:'LP ทันที',b:'วัด opening pressure · cell, protein, glucose (คู่ serum), Gram, culture ± CrAg/PCR → <b>dexamethasone + ยาฆ่าเชื้อภายใน 1 ชม.</b>',next:['ได้ผล CSF','csf']},
+ csf:{q:'CSF เด่นแบบใด?',o:[['Neutrophil + glucose ต่ำ','bact'],['Lymphocyte + glucose ปกติ','viral'],['Lymphocyte + glucose ต่ำ','sub'],['Eosinophil ≥10%','eos']]},
+ bact:{q:'ปัจจัย?',o:[['กินหมูดิบ/หูดับ','suis'],['ทั่วไป','bgen']]},
+ suis:{leaf:true,cls:'danger',t:'สงสัย S. suis',b:'Ceftriaxone (หรือ penicillin G) ~10–14 วัน · <b>ให้ dexamethasone ต่อ</b> (ลดหูหนวก) · audiogram · หา endocarditis/ข้ออักเสบ'},
+ bgen:{leaf:true,cls:'danger',t:'Bacterial meningitis',b:'Ceftriaxone 2 g q12h ± vancomycin · อายุ >50/ภูมิคุ้มกันต่ำ → + ampicillin 2 g q4h · ปรับตามเชื้อ · dexamethasone ต่อเฉพาะ pneumococcus (และ S. suis) · meningococcal → ป้องกันผู้สัมผัส'},
+ viral:{leaf:true,cls:'ok',t:'Aseptic/viral',b:'มีอาการสมอง (สับสน ชัก พฤติกรรม) → <b>acyclovir 10 mg/kg q8h</b> + MRI + HSV PCR (ซ้ำถ้าลบใน 72 ชม.แรก) · ไม่มี → ประคับประคอง · คิดถึง partially treated bacterial, scrub typhus, leptospirosis, HIV seroconversion'},
+ sub:{q:'CrAg (serum/CSF) ผลเป็นอย่างไร?',h:'HIV/ภูมิคุ้มกันต่ำ → ส่ง CrAg ทุกราย',o:[['บวก','cry'],['ลบ/ไม่มีภูมิคุ้มกันต่ำ','tb']]},
+ cry:{leaf:true,cls:'danger',t:'Cryptococcal meningitis',b:'<b>CrAg</b> serum/CSF · วัด OP · Induction: AmB + flucytosine (หรือ + fluconazole 800–1,200) / WHO: L-AmB 10 mg/kg ครั้งเดียว + 5FC + fluconazole 14 วัน · <b>OP ≥25 → therapeutic LP ทุกวัน</b> · ห้าม steroid · ART หลัง 4–6 สัปดาห์'},
+ tb:{leaf:true,cls:'warn',t:'TB meningitis (สงสัย)',b:'ใน HIV ที่ CrAg ลบ TB เป็นสาเหตุหลัก (± toxoplasma/lymphoma/syphilis) · Protein สูงมาก CN palsy Na ต่ำ · Xpert Ultra/AFB/culture CSF ปริมาณมาก · <b>เริ่ม 2HRZE/10HR เมื่อสงสัยสูง</b> · dexamethasone ใน HIV ลบ · MRI (hydrocephalus/infarct)'},
+ eos:{q:'ประวัติการกิน/อาการเด่น?',o:[['หอยโข่ง/หอยดิบ · ปวดหัว ชา สติดี','ang'],['ปลา/กบดิบ · ปวดร้าว อัมพาต เลือดออก','gna']]},
+ ang:{leaf:true,cls:'ok',t:'Angiostrongylus cantonensis',b:'<b>Prednisolone 60 mg/วัน × 14 วัน</b> ± albendazole 15 mg/kg/วัน · LP ซ้ำลดปวดหัว · ส่วนใหญ่หายดี'},
+ gna:{leaf:true,cls:'danger',t:'Gnathostoma spinigerum',b:'CT/MRI หาเลือดออก · <b>albendazole 400 mg bid × 21 วัน</b> (หรือ ivermectin) ± steroid · ปรึกษาผู้เชี่ยวชาญ · พิการ/ตายได้'}
+},'apTrail','apStage');
+
+function emp(){
+  const a=num('eA'),w=num('eW'),cr=num('eCr');const c=id=>$(id).checked;const L=[];
+  const ctr=[c('eImm')?'ภูมิคุ้มกันบกพร่อง':null,c('eCns')?'โรค CNS เดิม':null,c('eSz')?'ชักใหม่':null,c('ePap')?'papilledema':null,c('eLoc')?'สติผิดปกติ':null,c('eFoc')?'focal deficit':null].filter(Boolean);
+  if(ctr.length)L.push(`<b>ต้อง CT ก่อน LP</b> (${ctr.join(' · ')}) → <b>เจาะ blood culture แล้วให้ dexamethasone + ยาฆ่าเชื้อก่อนไป CT</b>`);
+  else L.push('<b>ไม่ต้อง CT ก่อน LP</b> → LP ทันที แล้วให้ยาภายใน 1 ชม.');
+  if(c('ePurp'))L.push('ผื่นจ้ำเลือดลามเร็ว → <b>เลื่อน LP</b> · ให้ยาทันที · สงสัย meningococcal → droplet precaution');
+  const rx=[];
+  if(c('eNs')){rx.push(`<b>Vancomycin</b> ${w?`${Math.round(w*15/250)*250}–${Math.round(w*20/250)*250} mg`:'15–20 mg/kg'} IV q8–12h (ปรับตามไต/ระดับยา)`);rx.push('<b>Cefepime 2 g IV q8h</b> หรือ meropenem 2 g IV q8h');}
+  else{rx.push('<b>Ceftriaxone 2 g IV q12h</b>');rx.push(`± <b>vancomycin</b> ${w?`${Math.round(w*15/250)*250}–${Math.round(w*20/250)*250} mg`:'15–20 mg/kg'} IV q8–12h (IDSA: routine · ESCMID: ตามความชุกเชื้อดื้อในพื้นที่)`);
+    if((a!==null&&a>50)||c('eImm')||c('ePreg'))rx.push('+ <b>ampicillin 2 g IV q4h</b> (Listeria: '+[(a>50?'อายุ >50':null),(c('eImm')?'ภูมิคุ้มกันต่ำ':null),(c('ePreg')?'ตั้งครรภ์/สุรา':null)].filter(Boolean).join(', ')+')');}
+  if(c('eEnc'))rx.push(`+ <b>acyclovir 10 mg/kg IV q8h</b>${w?` = ${Math.round(w*10)} mg (คนอ้วนใช้ ideal/adjusted weight)`:''}${cr!==null&&cr<50?` (CrCl ${cr} → ${cr>=25?'q12h':cr>=10?'q24h':'5 mg/kg q24h'})`:''} · ให้สารน้ำพอ`);
+  L.push('ยา: '+rx.join(' · '));
+  L.push(c('eNs')?'Dexamethasone: ไม่มีหลักฐานใน post-neurosurgical meningitis':'<b>Dexamethasone 10 mg (0.15 mg/kg) IV q6h × 4 วัน</b> — ก่อน/พร้อมยาเข็มแรก · ทราบเชื้อแล้วให้ต่อเฉพาะ pneumococcus (และ S. suis)');
+  if(c('ePork'))L.push('<b>สงสัย S. suis</b> → ceftriaxone ครอบคลุม · dexamethasone ช่วยลดหูหนวก · audiogram');
+  if(c('eImm'))L.push('ภูมิคุ้มกันต่ำ/HIV → ส่ง <b>CrAg</b> (serum/CSF), วัด OP, AFB/Xpert · <b>ถ้า CrAg บวก หยุด dexamethasone</b>');
+  if(cr!==null&&cr<50)L.push(`<span class="muted">CrCl ${cr}: ปรับ ampicillin/vancomycin/cefepime/meropenem/acyclovir ตามไต · ceftriaxone ไม่ต้องปรับ</span>`);
+  $('empOut').innerHTML=L.join('<br>');
+}
+bindAll('#tEmp input',emp);
+
+function csf(){
+  const w=num('cW'),n=num('cN'),e=num('cE'),g=num('cG'),sg=num('cSg'),p=num('cP'),op=num('cOp'),gs=$('cGs').value,cr=$('cCr').value;const L=[];
+  const r=(g!==null&&sg)?g/sg:null;
+  if(r!==null)L.push(`CSF/serum glucose = <b>${r.toFixed(2)}</b>${r<=0.4?' (≤0.4 ต่ำ)':r<0.6?' (ค่อนต่ำ)':''}`);
+  if(op!==null)L.push(op>=25?`Opening pressure ${op} cmH₂O <b>สูง</b>${cr==='pos'||$('cHiv').checked?' → crypto: therapeutic LP':''}`:`Opening pressure ${op} cmH₂O`);
+  let dx=null;
+  if(cr==='pos')dx='<b>Cryptococcal meningitis</b> (CrAg บวก) — ห้าม steroid · induction + therapeutic LP';
+  else if(e!==null&&(e>=10||(w!==null&&w<500&&w*e/100>=10))&&!(n!==null&&n>=50&&e<10))dx=`<b>Eosinophilic meningitis</b> (eosinophil ${e}% ≈ ${Math.round(w*e/100)} cells) → Angiostrongylus (หอยดิบ) / Gnathostoma (ปลาดิบ, เลือดออก) · ตัด crypto/TB/lymphoma/ยา`;
+  else if(w!==null&&n!==null){
+    const neut=n>=50,lowG=(g!==null&&g<40)||(r!==null&&r<=0.4);
+    if(neut&&(w>=1000||lowG||(p!==null&&p>200)))dx='<b>Bacterial meningitis น่าเป็นมาก</b> — ยาฆ่าเชื้อเต็มที่';
+    else if(neut&&w<1000)dx='Neutrophil เด่นแต่ไม่สูงมาก → bacterial ระยะแรก/partially treated หรือ viral ระยะแรก → <b>รักษาแบบ bacterial จนผลเพาะเชื้อออก</b>';
+    else if(!neut&&lowG)dx=`<b>Lymphocytic + glucose ต่ำ</b> → <b>TB</b>${p>200?' (protein สูงมาก)':''} หรือ <b>cryptococcus</b>${$('cHiv').checked?' (HIV → CrAg ด่วน)':''} · partially treated bacterial · Listeria · มะเร็ง`;
+    else if(!neut)dx='<b>Lymphocytic + glucose ปกติ</b> → viral (enterovirus, HSV — ถ้ามีอาการสมองให้ acyclovir), scrub typhus, leptospirosis, HIV · ระยะแรกของ TB/crypto ได้';
+  }
+  if(gs==='gpc')L.push('Gram-positive cocci → S. pneumoniae หรือ <b>S. suis</b> (ถามประวัติหมู) → ceftriaxone ± vancomycin + dexamethasone ต่อ');
+  else if(gs==='gnd')L.push('Gram-negative diplococci → <b>N. meningitidis</b> → ceftriaxone · ป้องกันผู้สัมผัส · หยุด dexamethasone');
+  else if(gs==='gpb')L.push('Gram-positive bacilli → <b>Listeria</b> → ampicillin ± gentamicin 21 วัน');
+  else if(gs==='gnb')L.push('Gram-negative bacilli → Klebsiella/Enterobacterales (± melioidosis) → ตามความไว 21 วัน · meropenem ถ้าสงสัยเชื้อดื้อ/melioidosis');
+  if(cr==='neg'&&$('cHiv').checked)L.push('CrAg ลบ → crypto ไม่น่าเป็น (ไวสูง)');
+  else if(cr==='na'&&$('cHiv').checked)L.push('<b>HIV → ส่ง CrAg</b> แม้ CSF ปกติ');
+  if($('cAbx').checked)L.push('<span class="muted">ได้ยาก่อน LP: culture อาจลบ · cell/glucose อาจคล้าย viral — ใช้ PCR/antigen ช่วย</span>');
+  if($('cSub').checked&&!dx?.includes('Cryptococcal'))L.push('อาการ >5 วัน → คิดถึง TB/crypto/eosinophilic มากขึ้น');
+  L.unshift(dx||'ใส่ค่า CSF ให้ครบ');
+  $('csfOut').innerHTML=L.join('<br>');
+}
+bindAll('#tCsf input,#tCsf select',csf);
+
+function cry(){
+  const w=num('yW'),op=num('yOp'),r=$('yR').value,cr=num('yCr');if(!w){$('cryOut').textContent='ใส่น้ำหนัก';return}
+  const L=[];const f5=Math.round(w*100/4/500)*500;
+  if(r==='who'){L.push(`<b>Liposomal AmB ${Math.round(w*10)} mg</b> (10 mg/kg) IV ครั้งเดียว วันที่ 1`);L.push(`+ <b>flucytosine ${Math.round(w*100)} mg/วัน</b> (≈${f5} mg ทุก 6 ชม.) × 14 วัน + <b>fluconazole 1,200 mg/วัน</b> × 14 วัน`);}
+  else if(r==='th1'){L.push(`<b>AmB deoxycholate ${Math.round(w*1)} mg/วัน</b> (1.0 mg/kg) IV + <b>flucytosine ${Math.round(w*100)} mg/วัน</b> (≈${f5} mg ทุก 6 ชม.) × 7 วัน`);L.push('→ <b>fluconazole 1,200 mg/วัน</b> × 7 วัน');}
+  else{L.push(`<b>AmB deoxycholate ${Math.round(w*0.7)}–${Math.round(w*1)} mg/วัน</b> (0.7–1.0 mg/kg) IV + <b>fluconazole 800–1,200 mg/วัน</b> × 14 วัน`);}
+  if(r!=='who')L.push('ป้องกันพิษ AmB: <b>NSS 1 L ก่อนให้</b> · KCl ~40 mEq/วัน + Mg · Cr/K/Mg/Hb สัปดาห์ละ 2–3 ครั้ง');
+  else L.push('L-AmB ครั้งเดียว: <b>NSS 1 L ก่อนให้</b> + K/Mg ก่อนให้และ K/Mg กินต่อ 2–3 วัน · ตรวจ K, Cr, Hb');
+  if(r!=='th2')L.push('Flucytosine: CBC สัปดาห์ละ 2 ครั้ง'+(cr!==null&&cr<50?` · <b>CrCl ${cr} → ลดขนาด flucytosine</b> (ปรึกษาเภสัช)`:''));
+  if(cr!==null&&cr<50)L.push(`<span class="muted">CrCl ${cr}: fluconazole ขนาดรักษาหลังวันแรกลดลงตามไต</span>`);
+  L.push('ต่อด้วย <b>fluconazole 800 mg/วัน × 8 สัปดาห์</b> → 200 mg/วัน (maintenance)');
+  if(op!==null){if(op>=25)L.push(`<b>OP ${op} cmH₂O ≥25 → therapeutic LP</b>: ระบายจน <20 หรือเหลือครึ่ง (≤${Math.max(Math.round(op/2),19)}) · ทำซ้ำทุกวันจน OP <20 ต่อเนื่อง 2 วัน · ไม่ใช้ steroid/acetazolamide/mannitol`);else L.push(`OP ${op} — ไม่สูง · LP ซ้ำถ้ามีอาการความดันสูง (ปวดหัว ตามัว) และราววันที่ 14`);}
+  L.push('<b>ART หลังเริ่มรักษา 4–6 สัปดาห์</b> (เร็วกว่านี้เพิ่มการตายจาก IRIS)');
+  $('cryOut').innerHTML=L.join('<br>');
+}
+bindAll('#tCry input,#tCry select',cry);
+
+mountQuiz([
+ ['ชาย 55 ปี ไข้ ปวดหัว คอแข็ง สับสนเล็กน้อย ข้อใดคือลำดับที่ถูกต้อง',
+  ['LP ก่อนแล้วค่อยให้ยาเมื่อได้ผล','Blood culture → dexamethasone + ยาฆ่าเชื้อ → CT → LP','CT → รอผล → LP → ยา','ให้ยาหลัง CT และ LP เสร็จ'],1,'สติผิดปกติ → CT ก่อน LP แต่ยาต้องไม่ช้า'],
+ ['ยาเริ่มต้นสำหรับ bacterial meningitis ชุมชนในผู้ป่วยอายุ 62 ปี',
+  ['Ceftriaxone อย่างเดียว','Ceftriaxone ± vancomycin + ampicillin','Meropenem','Ceftazidime + amikacin'],1,'อายุ >50 → ครอบคลุม Listeria'],
+ ['ชาวนาจากภาคเหนือ กินลาบหมูดิบ 2 วันก่อน ไข้ คอแข็ง หูดับสองข้าง เชื้อน่าเป็นที่สุด',
+  ['N. meningitidis','S. suis','Listeria','Cryptococcus'],1,'หมูดิบ + หูหนวก'],
+ ['ผู้ติดเชื้อ HIV CD4 30 ปวดหัว 3 สัปดาห์ CrAg บวก OP 38 cmH₂O ข้อใดผิด',
+  ['ให้ AmB + flucytosine','ทำ therapeutic LP ทุกวัน','ให้ dexamethasone ลดสมองบวม','เริ่ม ART หลัง 4–6 สัปดาห์'],2,'Steroid เป็นอันตรายใน crypto (CryptoDex)'],
+ ['CSF WBC 300 lymphocyte 90% glucose 25 (serum 110) protein 380 Na ในเลือด 126 CN VI palsy คิดถึง',
+  ['Viral meningitis','TB meningitis','Bacterial meningitis','Angiostrongylus'],1,'Lymphocytic + glucose ต่ำ + protein สูงมาก + Na ต่ำ + CN palsy'],
+ ['ชายกินก้อยหอยโข่ง ปวดหัวรุนแรง ชาผิวหนัง CSF eosinophil 30% การรักษาที่มีหลักฐาน RCT ในไทย',
+  ['Albendazole อย่างเดียว','Prednisolone 60 mg/วัน × 14 วัน','Ceftriaxone','Amphotericin B'],1,'Chotmongkol 2000'],
+ ['หญิง 30 ปี ไข้ พฤติกรรมเปลี่ยน ชัก MRI temporal lobe ผิดปกติ CSF HSV PCR ลบ (วันที่ 2) ควรทำอย่างไร',
+  ['หยุด acyclovir','ให้ acyclovir ต่อและเจาะ PCR ซ้ำ','เปลี่ยนเป็น ganciclovir','ให้ steroid อย่างเดียว'],1,'PCR ลบลวงได้ใน 72 ชม.แรก'],
+ ['Dexamethasone ใน bacterial meningitis ข้อใดถูก',
+  ['ให้หลังยาฆ่าเชื้อ 24 ชม.','ให้ก่อนหรือพร้อมเข็มแรก และให้ต่อถ้าเป็น pneumococcus','ให้ทุกเชื้อครบ 14 วัน','ห้ามให้ใน S. suis'],1,'S. suis: ลดหูหนวก'],
+ ['ผู้สัมผัสใกล้ชิดผู้ป่วย meningococcal meningitis ควรได้ยาใด',
+  ['Amoxicillin 7 วัน','Ciprofloxacin 500 mg ครั้งเดียว','ไม่ต้องให้','Doxycycline 14 วัน'],1,'หรือ rifampicin 2 วัน / ceftriaxone 250 mg IM']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

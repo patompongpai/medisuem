@@ -1,0 +1,669 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Acute liver failure · ตับวายเฉียบพลัน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hepatology · ICU · ACG 2023 · EASL 2017 · US/Canada APAP consensus 2023</div>
+  <h1>ตับวายเฉียบพลัน<br>Acute liver failure</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่นิยามและการแยกจาก acute-on-chronic liver failure การหาสาเหตุที่รักษาได้เฉพาะ (paracetamol, HBV reactivation, ยา/สมุนไพร, Wilson, ตั้งครรภ์, เห็ดพิษ, dengue) <b>NAC ทั้งใน APAP และ non-APAP</b> การดูแลในไอซียู (สมองบวม ammonia, Na 145–155, CRRT, norepinephrine, coagulopathy) จนถึง <b>King's College criteria</b> และการส่งต่อศูนย์ปลูกถ่ายตับแต่เนิ่นๆ</p>
+  <p class="cite">อ้างอิงหลัก: Shingina A, et al. ACG Clinical Guideline: Acute Liver Failure (Am J Gastroenterol 2023;118:1128–53) · EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure (J Hepatol 2017;66:1047–81) · Dart RC, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement (JAMA Netw Open 2023;6:e2327739) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>นิยาม</b>INR ≥1.5 + hepatic encephalopathy · ป่วย &lt;26 สัปดาห์ · ไม่มีโรคตับเรื้อรังเดิม</div>
+    <div class="stage" style="--c:var(--warn)"><b>ทำทันที</b>Glucose ถี่ · NAC (APAP และ non-APAP) · หาสาเหตุเฉพาะ · ไม่ให้ FFP ป้องกัน</div>
+    <div class="stage" style="--c:var(--accent)"><b>ส่งต่อเร็ว</b>HE ใดๆ ร่วมกับ INR ≥1.5 → ติดต่อศูนย์ปลูกถ่ายตับตั้งแต่วันแรก</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#def">นิยาม</a><a href="#cause">สาเหตุ</a><a href="#work">ตรวจอะไร</a><a href="#apap">Paracetamol</a><a href="#nac">NAC ใน non-APAP</a><a href="#spec">รักษาตามสาเหตุ</a><a href="#icu">ดูแลในไอซียู</a><a href="#coag">Coagulopathy · ติดเชื้อ</a><a href="#lt">ปลูกถ่ายตับ · ส่งต่อ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<!-- 1 -->
+<section id="def" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและการแบ่งกลุ่ม</h2>
+  <div class="box key"><b>Acute liver failure (ALF)</b>การบาดเจ็บของตับรุนแรงเฉียบพลัน + <b>coagulopathy (INR ≥1.5)</b> + <b>hepatic encephalopathy (HE) ระดับใดก็ได้</b> ในผู้ที่ <b>ไม่มีโรคตับแข็งเดิม</b> และป่วย <b>&lt;26 สัปดาห์</b> · ข้อยกเว้นที่นับเป็น ALF แม้มีโรคตับเดิม: Wilson disease, HBV ติดจากแม่, autoimmune hepatitis ที่เพิ่งวินิจฉัย</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ระยะเวลาจากตัวเหลืองถึง HE (O'Grady 1993)</h4><ul><li><b>Hyperacute ≤7 วัน</b>: APAP, HAV/HEV, ischemic — <b>สมองบวมบ่อย</b> แต่ฟื้นเองได้มากกว่า</li><li><b>Acute 8–28 วัน</b>: HBV</li><li><b>Subacute 29 วัน–12 สัปดาห์</b>: DILI, idiopathic — สมองบวมน้อย แต่ <b>รอดโดยไม่ปลูกถ่ายน้อย</b></li></ul></div>
+    <div class="card c-warn"><h4>แยกจากภาวะที่คล้าย</h4><ul><li><b>Acute liver injury</b>: INR ≥1.5 แต่ <b>ยังไม่มี HE</b> (EASL) · ACG ใช้ "severe ALI" = INR &gt;2 + bilirubin &gt;3 ไม่มี HE — เฝ้าใกล้ชิด อาจเป็น ALF ได้</li><li><b>ACLF / decompensated cirrhosis</b>: มีตับแข็งเดิม (ม้ามโต ascites, เกล็ดเลือดต่ำเรื้อรัง, US ตับขรุขระ) — การจัดการต่างกันมาก — หน้า <a href="../cirrhosis/index.html">Cirrhosis</a></li><li>Sepsis + cholestasis, ischemic hepatitis หลังช็อก</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>HE (West Haven)</th><th>ลักษณะ</th></tr>
+    <tr><td>Grade I</td><td>สมาธิสั้น นอนกลับวัน สับสนเล็กน้อย</td></tr>
+    <tr><td>Grade II</td><td>ซึม สับสนเรื่องเวลา พฤติกรรมเปลี่ยน <b>asterixis</b></td></tr>
+    <tr><td>Grade III</td><td>ซึมมาก ปลุกตื่นได้ สับสนสถานที่ พูดไม่เข้าใจ</td></tr>
+    <tr><td>Grade IV</td><td>Coma</td></tr>
+  </table></div>
+</section>
+
+<!-- 2 -->
+<section id="cause" class="col">
+  <div class="sec-num">02</div>
+  <h2>สาเหตุ — หาให้เจอเพราะหลายอย่างรักษาเฉพาะได้</h2>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>เบาะแส</th></tr>
+    <tr><td><b>Paracetamol (APAP)</b></td><td>กินครั้งเดียวเกินขนาด หรือกินซ้ำเกินขนาดหลายวัน (ปวดฟัน ไข้) · <b>ALT/AST สูงมาก (หลายพัน)</b> bilirubin ไม่สูงมาก · ปัจจัยเสี่ยง: สุรา อดอาหาร</td></tr>
+    <tr><td><b>ยา/สมุนไพร/อาหารเสริม (DILI)</b></td><td><b>ยาวัณโรค</b> (INH, rifampicin, PZA), antiepileptic, antibiotic, NSAIDs, สมุนไพร/ยาลูกกลอน/อาหารเสริมลดน้ำหนัก · มักเป็น subacute</td></tr>
+    <tr><td><b>ไวรัส</b></td><td>HAV, <b>HEV</b> (รุนแรงในหญิงตั้งครรภ์), <b>HBV เฉียบพลัน/reactivation</b> (หลังเคมีบำบัด rituximab steroid), HSV (ไข้สูง ALT สูงมาก bilirubin ต่ำ ±ผื่น), CMV/EBV</td></tr>
+    <tr><td><b>ไข้เลือดออก (dengue)</b></td><td>ในไทยเป็นสาเหตุสำคัญ · ช็อก/ขาดเลือด + พิษไวรัส · ALT/AST สูงมาก — หน้า <a href="../tropical-fever/index.html">Tropical fever</a> <span class="tag add">ไทย</span></td></tr>
+    <tr><td><b>Ischemic hepatitis</b></td><td>หลังช็อก/หัวใจล้มเหลว · ALT หลายพันลดเร็ว · LDH สูงมาก</td></tr>
+    <tr><td><b>ตั้งครรภ์</b></td><td>AFLP, HELLP (ไตรมาส 3) — คลอดเป็นการรักษา</td></tr>
+    <tr><td><b>Wilson disease</b></td><td>อายุน้อย <b>Coombs-negative hemolysis</b> · ALP ต่ำผิดปกติ · <b>ALP/bilirubin &lt;4 และ AST/ALT &gt;2.2</b></td></tr>
+    <tr><td>Autoimmune hepatitis</td><td>ANA/ASMA, IgG สูง (อาจไม่สูงในแบบเฉียบพลัน)</td></tr>
+    <tr><td>เห็ดพิษ (Amanita)</td><td>ท้องเสียรุนแรง 6–24 ชม.หลังกิน แล้วตับวายวันที่ 2–4</td></tr>
+    <tr><td>Budd-Chiari · malignant infiltration</td><td>ปวดท้อง ตับโต ascites · lymphoma/มะเร็งแพร่กระจาย</td></tr>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="work" class="col">
+  <div class="sec-num">03</div>
+  <h2>ตรวจอะไรตั้งแต่แรก</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ความรุนแรง</h4><ul><li>PT/INR, CBC, <b>glucose ถี่</b>, electrolyte (Na, K, PO₄, Mg), creatinine</li><li>LFT, LDH, <b>arterial/venous blood gas + lactate</b></li><li><b>Arterial ammonia</b></li><li>Fibrinogen, blood group (เตรียมปลูกถ่าย)</li><li>Lipase · β-hCG ในหญิง</li></ul></div>
+    <div class="card c-warn"><h4>สาเหตุ</h4><ul><li><b>Paracetamol level</b> (ทุกราย แม้ไม่ให้ประวัติ) · tox screen · alcohol</li><li>HAV IgM, <b>HBsAg, anti-HBc IgM, HBV DNA</b>, anti-HCV, <b>HEV IgM</b>, HSV PCR, dengue NS1/IgM</li><li>สงสัย Wilson (อายุ &lt;40): <b>ALP/bilirubin และ AST/ALT ratio</b> คัดกรองเร็วกว่า · ceruloplasmin ต่ำได้ใน ALF ทั่วไป (ไม่จำเพาะ) · urine copper, slit lamp</li><li>ANA, ASMA, IgG</li><li><b>Doppler US</b> ตับ (hepatic vein, portal vein, ก้อน, ตับแข็ง) · HIV</li></ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="apap" class="col">
+  <div class="sec-num">04</div>
+  <h2>Paracetamol hepatotoxicity</h2>
+  <p>การรักษาตั้งแต่ได้รับยาเกินขนาด (nomogram, NAC 2 ถุง) อยู่ในหน้า <a href="../toxicology/index.html">Toxicology</a> · บทนี้เน้นเมื่อมี <b>ตับบาดเจ็บ/ตับวายแล้ว</b></p>
+  <div class="grid2">
+    <div class="card c-red"><h4>เมื่อมาช้าหรือมี ALF</h4><ul><li><b>ให้ NAC ทันที ไม่ว่ามากี่ชั่วโมงหลังกิน</b> — ยังได้ประโยชน์แม้มาช้ากว่า 24 ชม. หรือมี ALF แล้ว (ACG 2023: strong)</li><li>Nomogram ใช้ไม่ได้ในกรณี: ไม่ทราบเวลากิน, กินหลายครั้ง (repeated supratherapeutic), มาช้า &gt;24 ชม., ยาออกฤทธิ์นาน</li><li>ไม่ทราบเวลา + มี APAP ในเลือดหรือ ALT สูง → ให้ NAC</li></ul></div>
+    <div class="card c-ok"><h4>หยุด NAC เมื่อไร (2023 consensus)</h4><ul><li>APAP ในเลือด <b>ตรวจไม่พบ</b> (&lt;10 µg/mL)</li><li><b>INR &lt;2</b> และกำลังดีขึ้น</li><li><b>ALT ลดลง</b> (เช่น ลดจากค่าสูงสุด ≥25–50%) หรือปกติ</li><li>อาการทางคลินิกดีขึ้น (ไม่มี HE)</li><li>ไม่ครบ → ให้ NAC ต่อในอัตราของถุงสุดท้าย</li></ul></div>
+  </div>
+  <div class="box warn"><b>APAP-ALF มีลักษณะเฉพาะ</b>Hyperacute · สมองบวมบ่อย · <b>metabolic acidosis/lactate สูง</b> และ AKI พบบ่อย · พยากรณ์ใช้ <b>King's College criteria แบบ APAP</b> (pH &lt;7.30 หลังให้สารน้ำ หรือ INR &gt;6.5 + Cr &gt;3.4 + HE III–IV) · การฟื้นเองได้มากกว่า non-APAP ถ้าผ่านช่วงวิกฤต</div>
+</section>
+
+<!-- 5 -->
+<section id="nac" class="col">
+  <div class="sec-num">05</div>
+  <h2>NAC ใน non-APAP ALF</h2>
+  <div class="box key"><b>ACG 2023: แนะนำ IV NAC ใน non-APAP ALF</b>ได้ประโยชน์ชัดที่สุดใน <b>HE grade I–II</b> (เพิ่มการรอดโดยไม่ต้องปลูกถ่าย — Lee 2009) · ไม่ได้ประโยชน์ชัดเมื่อ HE III–IV แต่ยังให้ได้ · ใช้ได้ใน DILI, HBV, autoimmune, idiopathic (และนิยมใช้ใน dengue-associated ALF ในไทย แม้หลักฐานจำกัด) · <b>เด็ก</b>: RCT (Squires 2013) ไม่พบประโยชน์ — ข้อแนะนำนี้สำหรับผู้ใหญ่</div>
+  <div class="tbl"><table>
+    <tr><th>สูตร 72 ชม. (Lee 2009)</th><th>ขนาด</th></tr>
+    <tr><td>ถุงที่ 1</td><td><b>150 mg/kg</b> ใน 1 ชม.</td></tr>
+    <tr><td>ถุงที่ 2</td><td><b>12.5 mg/kg/ชม.</b> × 4 ชม. (= 50 mg/kg)</td></tr>
+    <tr><td>ถุงที่ 3</td><td><b>6.25 mg/kg/ชม.</b> × 67 ชม.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ผลข้างเคียง: anaphylactoid reaction (ผื่น หลอดลมตีบ) ส่วนใหญ่ในถุงแรก — หยุดชั่วคราว ให้ antihistamine แล้วให้ต่อช้าลง · ระวังปริมาณน้ำในผู้ป่วยน้ำหนักน้อย/ไตวาย</p>
+</section>
+
+<!-- 6 -->
+<section id="spec" class="col">
+  <div class="sec-num">06</div>
+  <h2>รักษาเฉพาะตามสาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>การรักษาเฉพาะ</th></tr>
+    <tr><td><b>HBV (เฉียบพลัน/reactivation)</b></td><td><b>Entecavir หรือ tenofovir ทันที</b> (ACG 2023: strong) · ป้องกัน: ตรวจ HBsAg/anti-HBc ก่อนเคมีบำบัด/rituximab แล้วให้ยาป้องกัน</td></tr>
+    <tr><td><b>HSV</b></td><td><b>Acyclovir IV 10 mg/kg ทุก 8 ชม.</b> — เริ่มทันทีเมื่อสงสัย (ไข้ ALT สูงมาก bilirubin ต่ำ ตั้งครรภ์/ภูมิคุ้มกันต่ำ)</td></tr>
+    <tr><td><b>DILI/สมุนไพร</b></td><td>หยุดยาที่สงสัยทั้งหมด · NAC · ยาวัณโรคตับอักเสบ → หยุดยา แล้วพิจารณาสูตรที่ไม่เป็นพิษต่อตับ (ปรึกษา)</td></tr>
+    <tr><td><b>AFLP/HELLP</b></td><td><b>คลอดโดยเร็ว</b> ร่วมกับสูติแพทย์</td></tr>
+    <tr><td><b>Autoimmune hepatitis</b></td><td>Corticosteroid IV (เช่น methylprednisolone ~1 mg/kg/วัน ≈60 mg) ใน acute severe AIH (ACG) · ไม่ดีขึ้นใน ~7 วัน หรือกลายเป็น ALF → ประเมินปลูกถ่าย · ระวังติดเชื้อ</td></tr>
+    <tr><td><b>Wilson disease</b></td><td>ALF จาก Wilson มัก <b>ต้องปลูกถ่าย</b> · plasma exchange/albumin dialysis เป็นสะพาน</td></tr>
+    <tr><td><b>Amanita</b></td><td>Activated charcoal (ถ้ามาเร็ว) · <b>silibinin IV</b> (ไม่มี → penicillin G ขนาดสูง) · NAC · ส่งต่อปลูกถ่ายเร็ว · ปรึกษา 1367</td></tr>
+    <tr><td><b>Budd-Chiari</b></td><td>Anticoagulation · TIPS/ปลูกถ่าย</td></tr>
+    <tr><td>Ischemic hepatitis</td><td>แก้ระบบไหลเวียน/หัวใจ · มักดีขึ้นเอง</td></tr>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="icu" class="col">
+  <div class="sec-num">07</div>
+  <h2>ดูแลในไอซียู</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>สมองบวม (intracranial hypertension)</h4><ul><li>เสี่ยงสูง: <b>HE III–IV + ammonia &gt;150–200 µmol/L</b> + hyperacute + อายุน้อย + ต้องใช้ vasopressor/CRRT</li><li><b>ใส่ท่อช่วยหายใจเมื่อ HE III–IV</b> · หัวสูง 30° · เลี่ยงไอ/เบ่ง · sedation สั้น (propofol)</li><li><b>Na 145–155 mmol/L</b> ด้วย hypertonic saline (ป้องกัน) · ICP พุ่ง: hypertonic saline หรือ mannitol 0.5–1 g/kg bolus</li><li>ไข้ → ทำให้ปกติ · PaCO₂ ปกติ (hyperventilation สั้นๆ เฉพาะกู้ชีพ)</li><li><b>Early CRRT</b> ลด ammonia (ACG 2023 conditional/หลักฐานต่ำ: HE ≥II + ammonia สูง แม้ไม่มีข้อบ่งชี้ RRT ทั่วไป)</li><li><b>Lactulose/rifaximin: ไม่มีหลักฐานว่าได้ประโยชน์</b> (ACG 2023) — ไม่ใช้เป็น routine (ท้องอืด สำลัก บดบังการผ่าตัด)</li></ul></div>
+    <div class="card c-acc"><h4>ระบบอื่น</h4><ul><li><b>Glucose ทุก 1–2 ชม.</b> · 10% dextrose drip เมื่อต่ำ</li><li>ไหลเวียน: สารน้ำพอเหมาะ (crystalloid) · <b>norepinephrine เป็น vasopressor แรก</b> (ACG strong) · MAP ≥65 (CPP 50–80 ถ้าวัด ICP) · ดื้อ → vasopressin, ตรวจ cortisol</li><li><b>AKI</b> พบบ่อย (โดยเฉพาะ APAP) → CRRT (ไม่ใช่ intermittent HD เพราะ BP แกว่ง/สมองบวม)</li><li><b>Hypophosphatemia</b> = ตับกำลังฟื้น (PO₄ สูงคงที่ = พยากรณ์ไม่ดี)</li><li>โภชนาการทาง enteral แต่เนิ่นๆ · โปรตีน 1–1.5 g/kg/วัน (ลดชั่วคราวถ้า ammonia สูงมาก)</li><li>ไม่ให้ยากันชักป้องกัน · PPI ป้องกันแผลเครียด</li></ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="coag" class="col">
+  <div class="sec-num">08</div>
+  <h2>Coagulopathy และการติดเชื้อ</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>เลือดไม่แข็งตัว — อย่ารีบแก้ตัวเลข</h4><ul><li>INR ใน ALF <b>ไม่สะท้อนความเสี่ยงเลือดออก</b> (สารต้านการแข็งตัวก็ลดด้วย — rebalanced hemostasis)</li><li><b>ไม่แก้ INR/เกล็ดเลือดเป็น routine</b> เมื่อไม่มีเลือดออกหรือหัตถการเสี่ยงสูง (ACG 2023) · <b>INR เป็นตัวพยากรณ์</b> — ให้ FFP ทำให้ประเมินไม่ได้และเกินน้ำ</li><li>Vitamin K 10 mg IV ครั้งเดียวได้ (แก้การขาด)</li><li>ก่อนหัตถการเสี่ยงสูง (ICP monitor, CVC บางตำแหน่ง): platelet ~50,000, fibrinogen &gt;100–150 mg/dL · ใช้ viscoelastic test ถ้ามี</li></ul></div>
+    <div class="card c-vio"><h4>ติดเชื้อ</h4><ul><li>ติดเชื้อแบคทีเรีย/รา พบบ่อย และเป็นสาเหตุตายสำคัญ</li><li><b>ไม่ให้ antibiotic ป้องกันเป็น routine</b> (ACG 2023 conditional) · เพาะเชื้อเป็นระยะ</li><li><b>เริ่ม antibiotic ทันที</b> เมื่อ: HE แย่ลง, SIRS, ความดันต่ำต้องใช้ยาเพิ่ม, อยู่ในรายชื่อรอปลูกถ่าย</li></ul></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="lt" class="col">
+  <div class="sec-num">09</div>
+  <h2>ปลูกถ่ายตับและการส่งต่อ</h2>
+  <div class="box key"><b>ติดต่อศูนย์ปลูกถ่ายตับ "วันแรก" ที่เป็น ALF</b>ผู้ป่วยแย่ลงเร็วจนส่งต่อไม่ได้ — ไม่ต้องรอให้เข้า King's College criteria · ส่งต่อขณะยังปลอดภัย (ก่อน HE III–IV หรือใส่ท่อก่อนส่ง) · ACG 2023: ใช้ <b>King's College criteria หรือ MELD</b> (MELD &gt;25 = เสี่ยงสูง) พยากรณ์ความจำเป็นต้องปลูกถ่าย</div>
+  <div class="tbl"><table>
+    <tr><th>King's College criteria</th><th>เกณฑ์ (เข้าเกณฑ์ = พยากรณ์รอดโดยไม่ปลูกถ่ายต่ำ)</th></tr>
+    <tr><td><b>APAP</b></td><td><b>Arterial pH &lt;7.30</b> หลังให้สารน้ำเพียงพอ (ไม่ขึ้นกับ HE) <b>หรือ</b> ครบทั้ง 3 ใน 24 ชม.: <b>INR &gt;6.5</b> + <b>Cr &gt;3.4 mg/dL</b> + <b>HE III–IV</b> · (modified — Bernal 2002: lactate &gt;3.5 ที่ 4 ชม.หลังรับไว้ หรือ &gt;3.0 ที่ 12 ชม.หลังให้สารน้ำ)</td></tr>
+    <tr><td><b>Non-APAP</b></td><td><b>INR &gt;6.5</b> (ไม่ขึ้นกับ HE) <b>หรือ</b> ≥3 ใน 5: อายุ &lt;10 หรือ &gt;40 ปี · สาเหตุ non-A non-B/ยา/halothane · ตัวเหลืองก่อน HE &gt;7 วัน · INR &gt;3.5 · bilirubin &gt;17.5 mg/dL</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">King's College criteria จำเพาะสูงแต่ไวปานกลาง — ไม่เข้าเกณฑ์ไม่ได้แปลว่าปลอดภัย · ข้อห้ามปลูกถ่ายที่พบบ่อย: สมองบวมรุนแรงไม่ตอบสนอง, sepsis ไม่ควบคุม, multiorgan failure รุนแรง, ปัญหาทางจิตสังคม (ตั้งใจกินยาซ้ำ) — ตัดสินโดยศูนย์</p>
+</section>
+
+<!-- 10 approach -->
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ตับอักเสบรุนแรง + INR ≥1.5</b>ไม่มีตับแข็งเดิม · ป่วย &lt;26 สัปดาห์</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>มี HE หรือไม่?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ไม่มี</span><div class="node dx eu"><b>Acute liver injury</b>เฝ้า HE/INR/glucose ถี่ · หาสาเหตุ · NAC ถ้า APAP</div></div>
+        <div class="arm"><span class="lab">มี</span><div class="node red"><b>ALF</b>ไอซียู · ติดต่อศูนย์ปลูกถ่ายตับ · glucose ถี่<br>NAC (APAP และ non-APAP)</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">สาเหตุ</span><div class="node dx hypo"><b>รักษาเฉพาะ</b>HBV → ETV/TDF · HSV → acyclovir<br>AFLP/HELLP → คลอด · หยุดยา/สมุนไพร</div></div>
+        <div class="arm"><span class="lab">สมอง</span><div class="node dx hypo"><b>HE III–IV</b>ใส่ท่อ · Na 145–155 · ammonia สูง → CRRT<br>lactulose ไม่ใช่ routine</div></div>
+        <div class="arm"><span class="lab">ระบบอื่น</span><div class="node dx hypo"><b>NE แรก</b> · ไม่ FFP ป้องกัน<br>ไม่ antibiotic ป้องกัน · King's criteria</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<!-- 11 tools -->
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool plan" id="tTri" style="margin-top:12px">
+    <h3>ALF หรือไม่ · triage · ส่งต่อ</h3>
+    <div class="fields">
+      <label class="f">INR<input type="number" id="aI" step="0.1" value="2.4"></label>
+      <label class="f">HE (West Haven)<select id="aH"><option value="0">ไม่มี</option><option value="1">I</option><option value="2" selected>II</option><option value="3">III</option><option value="4">IV</option></select></label>
+      <label class="f">ระยะตัวเหลือง → HE (วัน)<input type="number" id="aD" value="5"></label>
+      <label class="f">Ammonia (µmol/L)<input type="number" id="aN" placeholder="เช่น 160"></label>
+      <label class="f">Glucose (mg/dL)<input type="number" id="aG" value="65"></label>
+      <label class="f">ALP (U/L)<input type="number" id="aAlp" placeholder="ถ้าสงสัย Wilson"></label>
+      <label class="f">Bilirubin (mg/dL)<input type="number" id="aB" step="0.1" value="6"></label>
+      <label class="f">AST/ALT (เช่น 900/350 หรือ ratio)<input type="text" id="aAA" placeholder="900/350"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="aCir"> มีตับแข็ง/โรคตับเรื้อรังเดิม</label><label><input type="checkbox" id="aApap" checked> สงสัย paracetamol</label><label><input type="checkbox" id="aMap"> MAP &lt;65 หลังให้สารน้ำ</label><label><input type="checkbox" id="aAki"> AKI/oliguria</label></div>
+    <div class="out" id="triOut"></div>
+  </div>
+  <div class="tool" id="tKcc" style="margin-top:12px">
+    <h3>King's College criteria</h3>
+    <div class="fields">
+      <label class="f">ชนิด<select id="kT"><option value="apap">APAP</option><option value="non">Non-APAP</option></select></label>
+      <label class="f">Arterial pH (หลังให้สารน้ำ)<input type="number" id="kPh" step="0.01" value="7.33"></label>
+      <label class="f">Lactate (mmol/L)<input type="number" id="kL" step="0.1" placeholder="หลังให้สารน้ำ"></label>
+      <label class="f">INR<input type="number" id="kI" step="0.1" value="5.2"></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" id="kC" step="0.1" value="3.8"></label>
+      <label class="f">HE grade<select id="kH"><option value="0">0</option><option value="1">I</option><option value="2">II</option><option value="3" selected>III</option><option value="4">IV</option></select></label>
+      <label class="f">อายุ<input type="number" id="kA" value="28"></label>
+      <label class="f">Bilirubin (mg/dL)<input type="number" id="kB" step="0.1" value="4"></label>
+      <label class="f">ตัวเหลือง → HE (วัน)<input type="number" id="kD" value="2"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="kEt"> สาเหตุ non-A non-B / ยา (idiosyncratic) / halothane</label><label><input type="checkbox" id="kL12"> lactate วัดที่ 12 ชม. (ไม่ใช่ 4 ชม.)</label></div>
+    <div class="out" id="kccOut"></div>
+  </div>
+  <div class="tool" id="tNac" style="margin-top:12px">
+    <h3>NAC สำหรับ non-APAP ALF (สูตร 72 ชม.)</h3>
+    <div class="fields"><label class="f">น้ำหนัก (kg)<input type="number" id="nW" value="60"></label><label class="f">เวลาเริ่ม<input type="time" id="nT" value="10:00"></label></div>
+    <div class="out" id="nacOut"></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ALF = INR ≥1.5 + HE ใดๆ</b> ไม่มีตับแข็งเดิม</div></div>
+    <div class="pearl"><div><b>ส่ง paracetamol level ทุกราย</b></div></div>
+    <div class="pearl"><div><b>NAC ทั้ง APAP (ทุกเวลา) และ non-APAP</b> (ดีสุด HE I–II)</div></div>
+    <div class="pearl"><div><b>HBV reactivation → ETV/TDF ทันที</b></div></div>
+    <div class="pearl"><div><b>ไข้ + ALT สูงมาก + bilirubin ต่ำ → acyclovir</b></div></div>
+    <div class="pearl"><div><b>Glucose ทุก 1–2 ชม.</b></div></div>
+    <div class="pearl"><div><b>HE III–IV → ใส่ท่อ · Na 145–155 · ammonia สูง → CRRT</b></div></div>
+    <div class="pearl"><div><b>Lactulose ไม่มีหลักฐานใน ALF</b> — ไม่ใช้เป็น routine</div></div>
+    <div class="pearl"><div><b>ไม่ให้ FFP เพื่อแก้ INR</b> ถ้าไม่มีเลือดออก/หัตถการ</div></div>
+    <div class="pearl"><div><b>Norepinephrine เป็น vasopressor แรก</b></div></div>
+    <div class="pearl"><div><b>Wilson: ALP/bili &lt;4 + AST/ALT &gt;2.2</b> + hemolysis</div></div>
+    <div class="pearl"><div><b>ติดต่อศูนย์ปลูกถ่ายตับวันแรก</b> ไม่รอ King's criteria</div></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../toxicology/index.html">Toxicology (paracetamol) →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../hepbc/index.html">Hepatitis B/C →</a> · <a href="../hypoglycemia/index.html">Hypoglycemia →</a> · <a href="../aki/index.html">AKI →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Shingina A, Mukhtar N, Wakim-Fleming J, et al. Acute liver failure guidelines. Am J Gastroenterol 2023;118:1128–53 · 2) European Association for the Study of the Liver. EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure. J Hepatol 2017;66:1047–81 · 3) Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open 2023;6:e2327739 · 4) Lee WM, Hynan LS, Rossaro L, et al. Intravenous N-acetylcysteine improves transplant-free survival in early stage non-acetaminophen acute liver failure. Gastroenterology 2009;137:856–64 · 5) O'Grady JG, et al. Early indicators of prognosis in fulminant hepatic failure (King's College criteria). Gastroenterology 1989;97:439–45 · 6) O'Grady JG, Schalm SW, Williams R. Acute liver failure: redefining the syndromes. Lancet 1993;342:273–5 · 7) Bernal W, et al. Blood lactate as an early predictor of outcome in paracetamol-induced acute liver failure. Lancet 2002;359:558–63 · 8) Squires RH, et al. Intravenous NAC in pediatric non-acetaminophen ALF. Hepatology 2013;57:1542–9 · 9) Korman JD, et al. Screening for Wilson disease in acute liver failure. Hepatology 2008;48:1167–74<br>
+  <span class="tag add">เสริม</span> / <span class="tag add">ไทย</span> = แนวปฏิบัติทั่วไป/บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','lfView');
+mountWalker({
+ start:{q:'ตับอักเสบรุนแรง + INR ≥1.5 — มีตับแข็ง/โรคตับเรื้อรังเดิมหรือไม่?',o:[['ไม่มี','he'],['มี','aclf']]},
+ aclf:{leaf:true,cls:'violet',t:'ไม่ใช่ ALF',b:'คิดถึง <b>ACLF/decompensated cirrhosis</b> — หาตัวกระตุ้น (ติดเชื้อ, เลือดออก, สุรา, HBV flare, ยา) · ยกเว้น Wilson, AIH ที่เพิ่งวินิจฉัย, HBV จากแม่ ซึ่งนับเป็น ALF ได้'},
+ he:{q:'มี hepatic encephalopathy (สับสน ซึม asterixis) หรือไม่?',o:[['ไม่มี','ali'],['มี','alf']]},
+ ali:{leaf:true,cls:'warn',t:'Acute liver injury (ยังไม่ใช่ ALF)',b:'Admit · INR, glucose, สติทุก 4–6 ชม. · หาสาเหตุ (APAP level, HBV, HAV/HEV, ยา) · <b>APAP → NAC</b> · INR สูงขึ้น/เริ่มสับสน → ติดต่อศูนย์ปลูกถ่ายตับ'},
+ alf:{q:'สาเหตุจาก paracetamol หรือไม่?',o:[['ใช่/สงสัย','apap'],['ไม่ใช่','non']]},
+ apap:{leaf:true,cls:'danger',t:'APAP-ALF',b:'<b>NAC ทันที ไม่ว่ากินมากี่ชั่วโมง</b> · ICU · glucose ทุก 1–2 ชม. · ติดตาม pH, lactate, INR, Cr → <b>King\'s criteria (APAP)</b>: pH <7.30 หรือ INR >6.5 + Cr >3.4 + HE III–IV · ติดต่อศูนย์ปลูกถ่ายตับ · หยุด NAC เมื่อ APAP ตรวจไม่พบ + INR <2 + ALT ลด',next:['ดูแลสมอง','brain']},
+ non:{q:'พบสาเหตุที่รักษาเฉพาะได้?',o:[['HBV','hbv'],['HSV (สงสัย)','hsv'],['ตั้งครรภ์ (AFLP/HELLP)','preg'],['ยา/สมุนไพร/ไม่ทราบ','dili']]},
+ hbv:{leaf:true,cls:'danger',t:'HBV-associated ALF',b:'<b>Entecavir หรือ tenofovir ทันที</b> · IV NAC (ดีสุด HE I–II) · ติดต่อศูนย์ปลูกถ่ายตับ',next:['ดูแลสมอง','brain']},
+ hsv:{leaf:true,cls:'danger',t:'HSV hepatitis',b:'<b>Acyclovir 10 mg/kg IV ทุก 8 ชม.</b> เริ่มทันทีระหว่างรอ PCR · NAC · ICU',next:['ดูแลสมอง','brain']},
+ preg:{leaf:true,cls:'danger',t:'AFLP/HELLP',b:'<b>คลอดโดยเร็ว</b> ร่วมกับสูติแพทย์ · glucose ถี่ · แก้ coagulopathy ก่อนคลอด/ผ่าตัด',next:['ดูแลสมอง','brain']},
+ dili:{leaf:true,cls:'warn',t:'Non-APAP ALF',b:'หยุดยา/สมุนไพรทั้งหมด · <b>IV NAC 72 ชม.</b> (ดีสุด HE I–II) · ตรวจ Wilson (อายุน้อย, hemolysis), AIH, Budd-Chiari, เห็ดพิษ, dengue · <b>King\'s criteria (non-APAP)</b>',next:['ดูแลสมอง','brain']},
+ brain:{q:'HE grade III–IV?',o:[['ใช่','he34'],['ไม่ (I–II)','he12']]},
+ he34:{leaf:true,cls:'danger',t:'HE III–IV',b:'<b>ใส่ท่อช่วยหายใจ</b> · หัวสูง 30° · <b>Na 145–155</b> (hypertonic saline) · ammonia >150–200 → <b>CRRT</b> · ICP พุ่ง → hypertonic saline/mannitol · NE ให้ MAP ≥65 · ไม่ใช้ lactulose เป็น routine · ไม่ให้ FFP ป้องกัน · ส่งต่อ/ปลูกถ่าย'},
+ he12:{leaf:true,cls:'warn',t:'HE I–II',b:'ICU/HDU · ประเมินสติถี่ · หลีกเลี่ยงยากล่อมประสาท · ammonia สูง + HE II → พิจารณา CRRT · เตรียมส่งต่อขณะยังปลอดภัย'}
+},'apTrail','apStage');
+
+function tri(){
+  const inr=num('aI'),he=+$('aH').value,d=num('aD'),nh=num('aN'),g=num('aG'),alp=num('aAlp'),bil=num('aB');const L=[];
+  if($('aCir').checked){$('triOut').innerHTML='<b>มีตับแข็ง/โรคตับเรื้อรังเดิม</b> → น่าเป็น <b>ACLF/decompensated cirrhosis</b> ไม่ใช่ ALF (ยกเว้น Wilson, AIH ใหม่, HBV จากแม่) — การจัดการต่างกัน';return}
+  if(inr===null){$('triOut').textContent='ใส่ INR';return}
+  if(inr<1.5)L.push(`INR ${inr} <1.5 → <b>ยังไม่เข้า ALF</b> · ติดตาม`);
+  else if(he===0)L.push(`INR ${inr} แต่ไม่มี HE → <b>Acute liver injury</b> · admit เฝ้า HE/INR/glucose · หาสาเหตุ`);
+  else{
+    L.push(`<b>Acute liver failure</b> (INR ${inr} + HE grade ${['','I','II','III','IV'][he]}) → <b>ICU และติดต่อศูนย์ปลูกถ่ายตับวันนี้</b>`);
+    if(d!==null)L.push(d<=7?`ตัวเหลือง → HE ${d} วัน: <b>hyperacute</b> (APAP, HAV/HEV, ischemic) — สมองบวมบ่อย`:d<=28?`${d} วัน: <b>acute</b> (เช่น HBV)`:`${d} วัน: <b>subacute</b> (DILI, idiopathic) — รอดโดยไม่ปลูกถ่ายน้อย`);
+    if(he>=3)L.push('<b>HE III–IV → ใส่ท่อช่วยหายใจ</b> · หัวสูง 30° · Na 145–155');
+  }
+  if(nh!==null)L.push(nh>150?`Ammonia ${nh} >150 µmol/L → <b>เสี่ยงสมองบวม</b>${nh>200?' สูงมาก':''} · Na 145–155`+(he>=2?' · <b>พิจารณา CRRT</b> (HE ≥II)':' · เฝ้า HE — ถ้า ≥II พิจารณา CRRT'):`Ammonia ${nh}`);
+  if(g!==null&&g<70)L.push(`Glucose ${g} ต่ำ → 50% glucose แล้ว 10% dextrose drip · ตรวจทุก 1–2 ชม.`);
+  if($('aMap').checked)L.push('MAP <65 หลังสารน้ำ → <b>norepinephrine</b> · ดื้อ → vasopressin + ตรวจ cortisol');
+  if($('aAki').checked)L.push('AKI/oliguria → <b>CRRT</b> (ไม่ใช่ intermittent HD)');
+  if($('aApap').checked)L.push('สงสัย APAP → <b>NAC ทันทีไม่ว่ากินมากี่ชั่วโมง</b> (ดูหน้า Toxicology สำหรับสูตร)');
+  else if(inr>=1.5&&he>0)L.push('Non-APAP → <b>IV NAC 72 ชม.</b> (ดีสุด HE I–II) + หาสาเหตุเฉพาะ (HBV, HSV, ตั้งครรภ์, Wilson, AIH, เห็ด)');
+  const raw=($('aAA').value||'').trim();let aa=raw.split('/').map(x=>parseFloat(x));if(aa.length===1&&aa[0]>0)aa=[aa[0],1];
+  if(alp!==null&&bil){const r=alp/bil;let t=`ALP/bilirubin = ${r.toFixed(1)}`;
+    if(aa.length===2&&aa[0]>0&&aa[1]>0){const r2=aa[0]/aa[1];t+=` · AST/ALT = ${r2.toFixed(1)}`;if(r<4&&r2>2.2)t+=' → <b>เข้าได้กับ Wilson disease</b> (ALP/bili <4 + AST/ALT >2.2) → ceruloplasmin, urine Cu, slit lamp · มักต้องปลูกถ่าย';else t+=' → ไม่เข้าคู่เกณฑ์ Wilson';}
+    else t+=r<4?' (<4 — ใส่ AST/ALT เพื่อประเมิน Wilson)':'';
+    L.push(t);}
+  L.push('<span class="muted">ไม่แก้ INR ด้วย FFP ถ้าไม่มีเลือดออก/หัตถการ · ไม่ให้ antibiotic ป้องกัน routine · lactulose ไม่มีหลักฐานว่าได้ประโยชน์</span>');
+  $('triOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTri input,#tTri select',tri);
+
+function kcc(){
+  const t=$('kT').value,ph=num('kPh'),lac=num('kL'),inr=num('kI'),cr=num('kC'),he=+$('kH').value,age=num('kA'),bil=num('kB'),d=num('kD');const L=[];let met=false;
+  if(t==='apap'){
+    if(ph!==null&&ph<7.30){met=true;L.push(`pH ${ph} <7.30 (หลังให้สารน้ำ) → <b>เข้าเกณฑ์</b>`);}
+    const three=(inr!==null&&inr>6.5)&&(cr!==null&&cr>3.4)&&he>=3;
+    L.push(`INR ${inr??'-'} ${inr>6.5?'✓':'✗'} >6.5 · Cr ${cr??'-'} ${cr>3.4?'✓':'✗'} >3.4 · HE ${['0','I','II','III','IV'][he]} ${he>=3?'✓':'✗'} III–IV`);
+    if(three){met=true;L.push('<b>ครบ 3 ข้อ → เข้าเกณฑ์</b>');}
+    if(lac!==null){const thr=$('kL12').checked?3.0:3.5;if(lac>thr){met=true;L.push(`Lactate ${lac} >${thr} ${$('kL12').checked?'ที่ 12 ชม.หลังให้สารน้ำ':'ที่ 4 ชม.หลังรับไว้'} → <b>เข้าเกณฑ์ modified (Bernal)</b>`);}else L.push(`Lactate ${lac} ≤${thr}`);}
+  }else{
+    if(inr!==null&&inr>6.5){met=true;L.push(`INR ${inr} >6.5 → <b>เข้าเกณฑ์</b> (ไม่ขึ้นกับ HE)`);}
+    const c=[];if(age!==null&&(age<10||age>40))c.push(`อายุ ${age}`);if($('kEt').checked)c.push('สาเหตุ non-A non-B/ยา/halothane');if(d!==null&&d>7)c.push(`ตัวเหลือง→HE ${d} วัน >7`);if(inr!==null&&inr>3.5)c.push(`INR ${inr} >3.5`);if(bil!==null&&bil>17.5)c.push(`bilirubin ${bil} >17.5`);
+    L.push(`เกณฑ์ย่อย ${c.length}/5: ${c.join(' · ')||'-'}`);
+    if(c.length>=3){met=true;L.push('<b>≥3 ข้อ → เข้าเกณฑ์</b>');}
+  }
+  L.unshift(met?'<b>เข้า King\'s College criteria</b> → พยากรณ์รอดโดยไม่ปลูกถ่ายต่ำ · เร่งประเมินปลูกถ่าย':'<b>ยังไม่เข้าเกณฑ์</b> — ไวปานกลาง ไม่ได้แปลว่าปลอดภัย · ประเมินซ้ำทุกวัน');
+  $('kccOut').innerHTML=L.join('<br>');
+}
+bindAll('#tKcc input,#tKcc select',kcc);
+
+function nac(){
+  const w=num('nW'),t=$('nT').value;if(!w){$('nacOut').textContent='ใส่น้ำหนัก';return}
+  let b=null;if(t){const [h,m]=t.split(':').map(Number);b=h*60+m}
+  const f=x=>{const d=Math.floor(x/1440);return String(Math.floor((x%1440)/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')+(d?` <small>(+${d} วัน)</small>`:'')};
+  const ww=Math.min(w,100);
+  const L=[`<b>ถุง 1</b>: ${Math.round(ww*150).toLocaleString()} mg (150 mg/kg) ใน 1 ชม.${b!==null?` · ${f(b)}–${f(b+60)}`:''}`,
+   `<b>ถุง 2</b>: ${(ww*12.5).toFixed(0)} mg/ชม. × 4 ชม. = ${Math.round(ww*50).toLocaleString()} mg${b!==null?` · ${f(b+60)}–${f(b+300)}`:''}`,
+   `<b>ถุง 3</b>: ${(ww*6.25).toFixed(0)} mg/ชม. × 67 ชม. = ${Math.round(ww*6.25*67).toLocaleString()} mg${b!==null?` · ${f(b+300)}–${f(b+4320)}`:''}`,
+   `รวม ~${Math.round(ww*(150+50+6.25*67)).toLocaleString()} mg ใน 72 ชม.`];
+  if(w>100)L.push('<span class="muted">คำนวณที่น้ำหนักสูงสุด 100 kg (ตามแนวปฏิบัติทั่วไปของ NAC)</span>');
+  L.push('<span class="muted">สูตรนี้สำหรับ non-APAP ALF (Lee 2009) · APAP: ใช้สูตรในหน้า Toxicology และหยุดตามเกณฑ์ 2023 consensus · anaphylactoid → หยุดชั่วคราว antihistamine แล้วให้ต่อช้าลง</span>');
+  $('nacOut').innerHTML=L.join('<br>');
+}
+bindAll('#tNac input',nac);
+
+mountQuiz([
+ ['หญิง 25 ปี ไม่มีโรคตับเดิม ตัวเหลือง 4 วัน สับสน INR 2.8 ข้อใดถูก',
+  ['Acute liver injury','Acute liver failure','ACLF','Decompensated cirrhosis'],1,'INR ≥1.5 + HE ไม่มีตับแข็ง'],
+ ['ผู้ป่วยกิน paracetamol ปริมาณมากเมื่อ 40 ชม.ก่อน ALT 6,000 INR 3.2 ควรให้ NAC หรือไม่',
+  ['ไม่ เพราะเกิน 24 ชม.','ให้ NAC ทันทีไม่ว่ากินมากี่ชั่วโมง','ให้เฉพาะถ้าระดับยาเหนือเส้น nomogram','ให้ activated charcoal แทน'],1,'NAC ยังได้ประโยชน์ใน APAP-ALF'],
+ ['ALF จาก HBV reactivation หลังได้ rituximab ควรเริ่มยาใด',
+  ['Lamivudine','Entecavir หรือ tenofovir','Interferon','ไม่ต้องให้ยาต้านไวรัส'],1,'ACG 2023 strong'],
+ ['ข้อใดเกี่ยวกับ coagulopathy ใน ALF ถูกต้อง',
+  ['ให้ FFP ให้ INR <1.5 ทุกราย','ไม่แก้เป็น routine ถ้าไม่มีเลือดออกหรือหัตถการเสี่ยงสูง','ให้ platelet ให้ >100,000','ให้ rFVIIa ทุกราย'],1,'INR เป็นตัวพยากรณ์ และไม่สะท้อนความเสี่ยงเลือดออก'],
+ ['ALF HE grade IV ammonia 230 µmol/L ข้อใดเหมาะสม',
+  ['Lactulose ทาง NG','ใส่ท่อ Na 145–155 และ CRRT','Hypotonic fluid','ให้ยากันชักป้องกัน'],1,'ลดความเสี่ยงสมองบวม'],
+ ['King\'s College criteria ใน APAP ข้อใดเข้าเกณฑ์ด้วยตัวเอง',
+  ['INR >3.5','Arterial pH <7.30 หลังให้สารน้ำ','Bilirubin >17.5','อายุ >40'],1,'หรือครบ INR >6.5 + Cr >3.4 + HE III–IV'],
+ ['ชาย 19 ปี ALF + hemolysis Coombs ลบ ALP 30 bilirubin 20 AST/ALT 3 คิดถึงอะไร',
+  ['HAV','Wilson disease','AIH','APAP'],1,'ALP/bili <4 + AST/ALT >2.2'],
+ ['Vasopressor แรกในผู้ป่วย ALF ที่ความดันต่ำหลังให้สารน้ำ',
+  ['Dopamine','Norepinephrine','Phenylephrine','Epinephrine'],1,'ACG 2023 strong'],
+ ['ข้อใดคือประโยชน์ของ IV NAC ใน non-APAP ALF',
+  ['ไม่มีประโยชน์ห้ามให้','เพิ่มการรอดโดยไม่ปลูกถ่าย โดยเฉพาะ HE I–II','ใช้เฉพาะเห็ดพิษ','ใช้แทนการปลูกถ่าย'],1,'Lee 2009 · ACG 2023']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
