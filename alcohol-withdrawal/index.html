@@ -1,0 +1,621 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Alcohol withdrawal · Wernicke encephalopathy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Toxicology · Neurology · ASAM 2020 · EFNS 2010 · RCP/NICE CG100</div>
+  <h1>ภาวะถอนสุราและ Wernicke encephalopathy<br>Alcohol withdrawal · Wernicke</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผู้ป่วยดื่มสุราประจำที่นอน รพ. ด้วยเรื่องอื่น (อุบัติเหตุ ปอดอักเสบ เลือดออกทางเดินอาหาร) มักเริ่มสั่น กระสับกระส่ายในวันที่ 1–2 และอาจชักหรือเพ้อ (delirium tremens) ได้ · หน้านี้ครอบคลุมการคาดการณ์ความรุนแรง (PAWSS) การให้คะแนน CIWA-Ar การใช้ benzodiazepine แบบตามอาการ การรักษาชักและ DT รายดื้อยา และ <b>thiamine</b> เพื่อป้องกัน/รักษา Wernicke</p>
+  <p class="cite">อ้างอิงหลัก: The ASAM clinical practice guideline on alcohol withdrawal management (J Addict Med 2020;14(3S Suppl 1):1–72) · Galvin R, et al. EFNS guidelines for diagnosis, therapy and prevention of Wernicke encephalopathy (Eur J Neurol 2010;17:1408–18) · NICE CG100: Alcohol-use disorders: diagnosis and management of physical complications (2010, updated 2017) · Sullivan JT, et al. CIWA-Ar (Br J Addict 1989;84:1353–7) · Maldonado JR, et al. PAWSS (Alcohol 2014;48(4):375–90) · Caine D, et al. Operational criteria for Wernicke (J Neurol Neurosurg Psychiatry 1997;62:51–60) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>คาดการณ์ก่อน</b>PAWSS ≥4 = เสี่ยงถอนรุนแรง · CIWA-Ar ใช้ติดตาม ไม่ใช่วินิจฉัย</div>
+    <div class="stage" style="--c:var(--warn)"><b>Benzodiazepine คือยาหลัก</b>ให้ตามอาการ (CIWA-Ar) · ตับแย่/สูงอายุ → lorazepam</div>
+    <div class="stage" style="--c:var(--danger)"><b>Thiamine ก่อน glucose</b>สงสัย Wernicke → ขนาดสูงทาง IV · triad ครบพบ &lt;20%</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#time">ลำดับอาการ</a><a href="#risk">คัดกรองและคาดการณ์</a><a href="#ciwa">CIWA-Ar และที่ดูแล</a><a href="#bzd">Benzodiazepine</a><a href="#cx">ชัก · DT · ดื้อยา</a><a href="#supp">ดูแลร่วม · แยกโรค</a><a href="#we">Wernicke</a><a href="#we-rx">Thiamine</a><a href="#aud">หลังผ่านช่วงถอน</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="time" class="col">
+  <div class="sec-num">01</div>
+  <h2>ลำดับอาการหลังหยุดดื่ม</h2>
+  <div class="tbl"><table>
+    <tr><th>เวลาหลังดื่มครั้งสุดท้าย</th><th>อาการ</th></tr>
+    <tr><td><b>6–24 ชม.</b></td><td>ถอนเล็กน้อย: มือสั่น เหงื่อออก ใจสั่น นอนไม่หลับ คลื่นไส้ กระวนกระวาย · <b>สติปกติ</b></td></tr>
+    <tr><td><b>6–48 ชม.</b> (ชักสูงสุด ~24 ชม.; hallucinosis 12–48 ชม.)</td><td><b>ชักแบบทั้งตัว</b> (มักครั้งเดียวหรือเป็นชุดสั้นๆ) · <b>alcoholic hallucinosis</b> (เห็น/ได้ยินสิ่งที่ไม่มี แต่<b>สติยังดี</b> สัญญาณชีพมักปกติ)</td></tr>
+    <tr><td><b>48–96 ชม.</b> (บางรายถึง 5 วัน)</td><td><b>Delirium tremens (alcohol withdrawal delirium)</b>: สับสน สติขึ้นลง เห็นภาพหลอน + ระบบประสาทอัตโนมัติทำงานมาก (ไข้ ชีพจรเร็ว ความดันสูง เหงื่อท่วม) · อัตราตาย ~1–4% เมื่อรักษา (สูงขึ้นมากถ้าไม่รักษา)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ถอนอาจเริ่มได้ทั้งที่ระดับแอลกอฮอล์ในเลือดยังไม่เป็นศูนย์ในผู้ดื่มหนักประจำ · ซักเวลาดื่มครั้งสุดท้ายเสมอ</p>
+</section>
+
+<section id="risk" class="col">
+  <div class="sec-num">02</div>
+  <h2>คัดกรองและคาดการณ์ความรุนแรง</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ทำกับผู้ป่วยที่ดื่มทุกราย</h4><ul><li>ASAM: ผู้ป่วยใน รพ.ที่ดื่มประจำ/เพิ่งดื่ม → <b>คัดกรองความเสี่ยงถอน</b> แม้ยังไม่มีอาการ (เช่น AUDIT-C/AUDIT-PC)</li><li>ใช้ <b>PAWSS</b> คาดการณ์ถอนรุนแรง/มีภาวะแทรกซ้อน (ชัก DT) · <b>≥4 = เสี่ยงสูง</b></li><li><b>ไม่ใช้ CIWA-Ar ในการวินิจฉัย</b> — ใช้ติดตามผู้ที่ถอนแล้ว</li></ul></div>
+    <div class="card c-red"><h4>ปัจจัยเสี่ยงถอนรุนแรง</h4><ul><li>เคยชักหรือเคย DT</li><li>เคยถอนหลายครั้ง · ดื่มหนักนาน</li><li>ใช้ยานอนหลับ/benzodiazepine ร่วม</li><li>ระดับแอลกอฮอล์สูงแต่มีอาการถอนแล้ว</li><li>ป่วยหนักร่วม (sepsis, บาดเจ็บ, ผ่าตัด) · อายุมาก</li><li>ชีพจรเร็ว/อาการถอนตั้งแต่แรกรับ</li></ul></div>
+  </div>
+</section>
+
+<section id="ciwa" class="col">
+  <div class="sec-num">03</div>
+  <h2>CIWA-Ar และสถานที่ดูแล</h2>
+  <p>CIWA-Ar มี 10 ข้อ (คลื่นไส้อาเจียน สั่น เหงื่อ วิตกกังวล กระสับกระส่าย ประสาทสัมผัสผิดปกติทางผิว/หู/ตา ปวดหัว และการรับรู้วันเวลาสถานที่) คะแนนเต็ม 67 · <b>ผู้ป่วยต้องสื่อสารได้</b> (ใช้ไม่ได้ในผู้ป่วยใส่ท่อ/เพ้อมาก → ใช้ RASS)</p>
+  <div class="tbl"><table>
+    <tr><th>CIWA-Ar (ASAM)</th><th>ความรุนแรง</th><th>ที่ดูแล</th></tr>
+    <tr><td>&lt;10</td><td>เล็กน้อย</td><td>ผู้ป่วยนอกได้ถ้าเสี่ยงต่ำ มีคนดูแล ติดตามได้ · ยาบรรเทาอาการ/ไม่ต้องใช้ยา</td></tr>
+    <tr><td>10–18</td><td>ปานกลาง</td><td>ผู้ป่วยนอกได้ในบางราย (เสี่ยงต่ำ มีระบบติดตามรายวัน) · ถ้ามีปัจจัยเสี่ยง/ป่วยร่วม/ติดตามไม่ได้ → รับไว้ใน รพ.</td></tr>
+    <tr><td><b>≥19</b></td><td><b>รุนแรง</b></td><td><b>รับไว้</b> · ประเมินบ่อย · ICU ถ้า DT/ต้องใช้ยาขนาดสูง/ป่วยหนักร่วม</td></tr>
+  </table></div>
+  <div class="box warn"><b>ควรรับไว้ใน รพ.</b>PAWSS ≥4, เคยชัก/DT, CIWA-Ar ≥19, สับสน, ป่วยหนักร่วม, ตั้งครรภ์, ไม่มีผู้ดูแล, ดื่มต่อแน่นอน, ใช้สารอื่นร่วม</div>
+</section>
+
+<section id="bzd" class="col">
+  <div class="sec-num">04</div>
+  <h2>Benzodiazepine: ยาหลัก</h2>
+  <div class="tbl"><table>
+    <tr><th>รูปแบบ</th><th>ตัวอย่าง (ผู้ใหญ่)</th><th>ใช้เมื่อ</th></tr>
+    <tr><td><b>ตามอาการ (symptom-triggered)</b> — ASAM แนะนำมากกว่า</td><td>CIWA-Ar ทุก 1–4 ชม. · <b>≥10</b> → <b>diazepam 10–20 mg</b> (หรือ lorazepam 1–4 mg) แล้วประเมินซ้ำใน 1 ชม.</td><td>มีพยาบาลประเมินได้สม่ำเสมอ · ใช้ยารวมน้อยกว่า นอนสั้นกว่า</td></tr>
+    <tr><td><b>Front-loading</b></td><td>Diazepam 10–20 mg ทุก 1–2 ชม. จน<b>สงบหรือง่วงเล็กน้อย</b> · diazepam ออกฤทธิ์ยาว ค่อยหมดฤทธิ์เอง</td><td>CIWA สูง/เสี่ยงสูง</td></tr>
+    <tr><td><b>กำหนดเวลา (fixed schedule)</b></td><td>เช่น diazepam 10 mg ทุก 6 ชม. 4 ครั้ง → 5 mg ทุก 6 ชม. 8 ครั้ง ± เสริมตามอาการ</td><td>ประเมินตามอาการไม่ได้ · เสี่ยงสูงที่ยังไม่มีอาการ</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เลือกตัวยา</h4><ul><li><b>Diazepam</b>: ออกฤทธิ์เร็ว ยาว ลดอาการกลับ · มีทั้งกินและฉีด <span class="tag add">ไทย</span></li><li><b>Lorazepam</b>: ไม่ต้องผ่าน oxidation ที่ตับ → เลือกใน <b>ตับแข็งรุนแรง, ผู้สูงอายุ, หายใจไม่ดี</b></li><li>หลีกเลี่ยง diazepam IM (ดูดซึมไม่แน่นอน)</li><li>ระวังกดการหายใจโดยเฉพาะร่วม opioid · ปรับขนาดตามระดับง่วง</li></ul></div>
+    <div class="card c-warn"><h4>ยาอื่น</h4><ul><li><b>Carbamazepine/gabapentin</b>: ทางเลือกในถอนเล็กน้อย–ปานกลาง (ผู้ป่วยนอก) หรือเมื่อใช้ benzodiazepine ไม่ได้ (ไม่ได้พิสูจน์ว่าลดชัก/DT)</li><li><b>Phenobarbital</b>: ทางเลือกแทน benzodiazepine ในถอนรุนแรง โดยผู้มีประสบการณ์ · ใช้เสริมในรายดื้อ benzodiazepine</li><li><b>Clonidine/dexmedetomidine</b>: เสริมเพื่อลดอาการระบบประสาทอัตโนมัติ <b>ไม่ใช้เดี่ยว</b> · ใน DT/ดื้อยาใช้เป็นยาเสริมใน ICU ได้เท่านั้น</li><li><b>Haloperidol</b>: เสริมเมื่อยังเห็นภาพหลอน/กระสับกระส่ายหลังได้ benzodiazepine พอ · ไม่ใช้เดี่ยว (ลดเกณฑ์ชัก · ระวัง QT ยาว)</li><li><span class="tag add">ไทย</span> ตรวจรายการยา: lorazepam ส่วนใหญ่มีแต่ชนิดกิน · chlordiazepoxide หายาก · diazepam (กิน/ฉีด) และ phenobarbital ฉีดมักมี</li><li>ใช้ยาขนาดสูง: ตามการหายใจ SpO₂ ระดับง่วง · <b>ไม่ใช้ flumazenil</b> routine (กระตุ้นชัก)</li></ul></div>
+  </div>
+</section>
+
+<section id="cx" class="col">
+  <div class="sec-num">05</div>
+  <h2>ชัก · Delirium tremens · ดื้อยา</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ชักจากถอนสุรา</h4><ul><li>ให้ <b>benzodiazepine ออกฤทธิ์เร็ว IV</b> (diazepam/lorazepam) แล้วให้ต่อเพื่อคุมการถอน</li><li><b>Phenytoin ไม่ได้ผล</b>กับชักจากถอนสุรา</li><li>ชักครั้งแรก, ชักเฉพาะที่, ชักต่อเนื่อง, มีบาดเจ็บศีรษะ, ไข้ → หาสาเหตุอื่น (<b>CT สมอง</b>, glucose, Na, Mg, ติดเชื้อ) · ดูหน้า <a href="../status-epilepticus/index.html">Status epilepticus</a></li></ul></div>
+    <div class="card c-red"><h4>Delirium tremens</h4><ul><li>รับ <b>ICU</b>/หอที่ดูใกล้ชิด · ป้องกันบาดเจ็บ</li><li>Benzodiazepine IV ซ้ำบ่อย (เช่น diazepam เริ่ม 5–10 mg IV ทุก 5–10 นาที เพิ่มเป็น 20 mg ได้ถ้าไม่ตอบสนอง; หรือ lorazepam 1–4 mg ทุก 5–15 นาที) จนสงบเล็กน้อย · อาจต้องใช้ขนาดรวมสูงมาก</li><li><b>ดื้อ benzodiazepine</b> (ใช้ diazepam &gt;50 mg ใน 1 ชม. หรือ &gt;200 mg ใน 4 ชม. ยังไม่คุม — ยังไม่มีนิยามมาตรฐาน ตัวอย่างจาก ASAM 2020): เพิ่ม <b>phenobarbital</b> (เช่น 130–260 mg IV แล้ว 130 mg ทุก 15–30 นาทีตามอาการ ร่วมกับ ICU) · ไม่ได้ผล → ใส่ท่อช่วยหายใจ + <b>propofol</b></li><li>สารน้ำ (มักขาดมาก), คุมไข้, electrolyte, thiamine</li><li>หาภาวะร่วม: ปอดอักเสบสำลัก, ตับอ่อนอักเสบ, เลือดออกทางเดินอาหาร, บาดเจ็บศีรษะ</li></ul></div>
+  </div>
+</section>
+
+<section id="supp" class="col">
+  <div class="sec-num">06</div>
+  <h2>ดูแลร่วมและแยกโรค</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ดูแลร่วม</h4><ul><li><b>Thiamine ทุกราย</b> (หัวข้อ 08) — ให้ <b>ก่อนหรือพร้อม glucose</b> แต่ <b>ห้ามเลื่อนการให้ glucose ในผู้ป่วยน้ำตาลต่ำ</b></li><li>ตรวจแก้ <b>K, Mg, P</b> (ต่ำบ่อย · ระวัง refeeding) ดูหน้า <a href="../magnesium/index.html">Mg</a>, <a href="../phosphate-refeeding/index.html">P/refeeding</a></li><li>สารน้ำ · โภชนาการ · ห้องเงียบ แสงพอดี ญาติอยู่ด้วย</li><li>วิตามินรวม/folate</li></ul></div>
+    <div class="card c-warn"><h4>แยกโรคที่คล้ายหรือร่วม</h4><ul><li><b>น้ำตาลต่ำ</b>, hepatic encephalopathy (ดูหน้า <a href="../cirrhosis/index.html">ตับแข็ง</a>)</li><li><b>Wernicke</b> (อาจเกิดพร้อมกัน)</li><li>ติดเชื้อ/sepsis, meningitis · บาดเจ็บศีรษะ/subdural hematoma</li><li>ถอนยานอนหลับ/opioid · พิษยาบ้า/anticholinergic (ดูหน้า <a href="../toxicology/index.html">Toxicology</a>) · thyroid storm</li><li>Alcoholic ketoacidosis · พิษ methanol (สุราเถื่อน — ตามัว, anion gap กว้าง) <span class="tag add">ไทย</span></li></ul></div>
+  </div>
+</section>
+
+<section id="we" class="col">
+  <div class="sec-num">07</div>
+  <h2>Wernicke encephalopathy</h2>
+  <p>ขาด thiamine (vitamin B1) เฉียบพลัน · พบในสุรา, อาเจียนมาก (hyperemesis), หลังผ่าตัดลดน้ำหนัก, มะเร็ง, refeeding, ฟอกไต, อดอาหาร · <b>วินิจฉัยทางคลินิก</b> รอแล็บไม่ได้</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>Triad คลาสสิก (ครบพบ &lt;20%)</h4><ul><li>สับสน/สติผิดปกติ</li><li>ตาผิดปกติ: nystagmus, กลอกตาไม่ได้ (ophthalmoplegia โดยเฉพาะ lateral rectus)</li><li>เดินเซ (ataxia)</li></ul></div>
+    <div class="card c-acc"><h4>Caine criteria (ในผู้ติดสุรา): ≥2 ใน 4</h4><ul><li>ขาดสารอาหาร</li><li>ตาผิดปกติ</li><li>Cerebellar dysfunction</li><li>สติผิดปกติ <b>หรือ</b> ความจำบกพร่องเล็กน้อย</li></ul><p class="muted" style="font-size:.85rem">ไวกว่า triad มาก (EFNS แนะนำใช้) · MRI ช่วยยืนยัน (mammillary body, thalamus) แต่ผลปกติไม่ตัดโรค</p></div>
+  </div>
+  <div class="box warn"><b>ไม่รักษา → Korsakoff syndrome</b>ความจำใหม่เสียถาวร + แต่งเรื่อง (confabulation) · Wernicke ที่ไม่รักษามีอัตราตาย ~15–20%</div>
+</section>
+
+<section id="we-rx" class="col">
+  <div class="sec-num">08</div>
+  <h2>Thiamine: ขนาดตามสถานการณ์</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ขนาด</th><th>แหล่ง</th></tr>
+    <tr><td><b>สงสัย/วินิจฉัย Wernicke</b></td><td><b>200 mg IV วันละ 3 ครั้ง</b> (EFNS) ถึง <b>500 mg IV วันละ 3 ครั้ง × 3 วัน</b> (RCP/Thomson 2002) ถ้าตอบสนอง ต่อ 250 mg/วัน อีก 5 วัน แล้วทางปาก · NICE: ให้ทางหลอดเลือดอย่างน้อย 5 วัน เว้นแต่ตัด Wernicke ได้</td><td>EFNS 2010, RCP, NICE CG100 (ระยะเวลา)</td></tr>
+    <tr><td><b>ป้องกันในผู้ป่วยเสี่ยงที่นอน รพ.</b> (ถอนสุรา ขาดสารอาหาร)</td><td><b>100–250 mg IV/IM วันละครั้ง × 3–5 วัน</b> (ASAM: 100 mg/วัน)</td><td>ASAM 2020 (100 mg), RCP/UK (250 mg)</td></tr>
+    <tr><td>ผู้ป่วยนอกที่ดื่มหนัก ไม่มีอาการ</td><td>Thiamine ทางปาก (ดูดซึมไม่ดีในผู้ดื่มสุรา)</td><td>NICE CG100</td></tr>
+  </table></div>
+  <ul class="muted" style="font-size:.9rem"><li>ผสมใน NSS 50–100 mL หยด 30 นาที · แพ้รุนแรงพบน้อยมาก</li><li><b>แก้ Mg</b> ร่วมด้วย (Mg เป็น cofactor — Mg ต่ำอาจทำให้ตอบสนองต่อ thiamine ไม่ดี) · ไทยมักเป็นแอมพูล 100 mg → 500 mg = 5 แอมพูลต่อครั้ง <span class="tag add">ไทย</span></li><li>ตาผิดปกติมักดีขึ้นในไม่กี่ชั่วโมง–วัน · เดินเซและความจำฟื้นช้า/ไม่ครบ</li></ul>
+</section>
+
+<section id="aud" class="col">
+  <div class="sec-num">09</div>
+  <h2>หลังผ่านช่วงถอน: อย่าปล่อยกลับไปดื่ม</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>เริ่มรักษา alcohol use disorder</h4><ul><li>คุยแบบไม่ตำหนิ (brief intervention) · เป้าหมายร่วมกัน</li><li><b>Naltrexone</b> 50 mg/วัน — ห้ามในผู้ใช้ opioid, ตับวาย/ตับอักเสบเฉียบพลัน</li><li><b>Acamprosate</b> — ปลอดภัยในโรคตับ ปรับขนาดตามไต</li><li><b>Baclofen</b> — มีข้อมูลในผู้ป่วยตับแข็ง</li><li>Topiramate · disulfiram (ต้องมีผู้ดูแล, ห้ามในโรคตับ/หัวใจ)</li><li>ตรวจสอบรายการยาใน รพ. — บางตัวหาไม่ได้ในไทย</li></ul></div>
+    <div class="card c-acc"><h4>ส่งต่อและติดตาม</h4><ul><li><b>สายด่วนเลิกเหล้า 1413</b> <span class="tag add">ไทย</span> · คลินิกบำบัดสุรา/จิตเวช</li><li>Diazepam กลับบ้าน: จ่ายสั้น จำนวนจำกัด ไม่ดื่มร่วม</li><li>คัดกรองโรคตับ ตับอ่อน หัวใจ ภาวะซึมเศร้า</li><li>วิตามินและ thiamine ต่อ</li></ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยดื่มสุราประจำ</b>เวลาดื่มครั้งสุดท้าย · glucose · <b>thiamine</b> · PAWSS</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สับสน/ตากลอกผิดปกติ/เดินเซ?</b> → คิด Wernicke (thiamine ขนาดสูง) และ DT</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>CIWA-Ar</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">&lt;10</span><div class="node dx green"><b>เล็กน้อย</b>สังเกต ประเมินซ้ำ · ผู้ป่วยนอกได้ถ้าเสี่ยงต่ำ</div></div>
+        <div class="arm"><span class="lab">10–18</span><div class="node dx hypo"><b>ปานกลาง</b>Diazepam 10–20 mg ตามอาการ · ประเมินทุก 1 ชม.</div></div>
+        <div class="arm"><span class="lab">≥19 / DT / ชัก</span><div class="node red"><b>รุนแรง</b>Benzodiazepine IV ซ้ำ · ICU · ดื้อ → phenobarbital/propofol</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool" id="tPw" style="margin-top:12px">
+    <h3>PAWSS: ใครเสี่ยงถอนรุนแรง</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="p0" checked> <b>เกณฑ์เริ่ม</b>: ดื่มใน 30 วันที่ผ่านมา หรือแอลกอฮอล์ในเลือดบวกตอนแรกรับ</label>
+      <label><input type="checkbox" id="p1"> เคยถอนสุรา</label>
+      <label><input type="checkbox" id="p2"> เคยชักจากถอนสุรา</label>
+      <label><input type="checkbox" id="p3"> เคย DT</label>
+      <label><input type="checkbox" id="p4"> เคยเข้ารับบำบัดสุรา</label>
+      <label><input type="checkbox" id="p5"> เคย blackout</label>
+      <label><input type="checkbox" id="p6"> ใช้ยากดประสาท (benzodiazepine/barbiturate) ร่วมใน 90 วัน</label>
+      <label><input type="checkbox" id="p7"> ใช้สารเสพติดอื่นร่วมใน 90 วัน</label>
+      <label><input type="checkbox" id="p8"> ระดับแอลกอฮอล์ในเลือดแรกรับ ≥200 mg/dL</label>
+      <label><input type="checkbox" id="p10"> เมาในช่วง 30 วันที่ผ่านมา</label>
+      <label><input type="checkbox" id="p9"> ระบบประสาทอัตโนมัติทำงานมาก (HR &gt;120, สั่น, เหงื่อ, กระสับกระส่าย, คลื่นไส้)</label>
+    </div>
+    <div class="out" id="pwOut"></div>
+  </div>
+
+  <div class="tool plan" id="tCi" style="margin-top:12px">
+    <h3>CIWA-Ar และขนาดยาตามอาการ</h3>
+    <div class="fields">
+      <label class="f">คลื่นไส้/อาเจียน (0–7)<input type="number" min="0" max="7" id="c1" value="3"></label>
+      <label class="f">มือสั่น (0–7)<input type="number" min="0" max="7" id="c2" value="4"></label>
+      <label class="f">เหงื่อออก (0–7)<input type="number" min="0" max="7" id="c3" value="2"></label>
+      <label class="f">วิตกกังวล (0–7)<input type="number" min="0" max="7" id="c4" value="3"></label>
+      <label class="f">กระสับกระส่าย (0–7)<input type="number" min="0" max="7" id="c5" value="2"></label>
+      <label class="f">ความรู้สึกผิดปกติทางผิว (0–7)<input type="number" min="0" max="7" id="c6" value="0"></label>
+      <label class="f">หูได้ยินผิดปกติ (0–7)<input type="number" min="0" max="7" id="c7" value="0"></label>
+      <label class="f">ตาเห็นผิดปกติ (0–7)<input type="number" min="0" max="7" id="c8" value="1"></label>
+      <label class="f">ปวดหัว/ตึงศีรษะ (0–7)<input type="number" min="0" max="7" id="c9" value="1"></label>
+      <label class="f">การรับรู้วัน/สถานที่ (0–4)<input type="number" min="0" max="4" id="c10" value="0"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="cLiv"> ตับแข็งรุนแรง/ผู้สูงอายุ/หายใจไม่ดี</label>
+      <label><input type="checkbox" id="cCom"> สื่อสารไม่ได้ (ใส่ท่อ/เพ้อมาก)</label>
+      <label><input type="checkbox" id="cTot"> ได้ diazepam รวม &gt;50 mg ในชั่วโมงที่ผ่านมาแล้วยังไม่คุม</label>
+    </div>
+    <div class="out" id="ciOut"></div>
+  </div>
+
+  <div class="tool" id="tWe" style="margin-top:12px">
+    <h3>Wernicke: Caine criteria และ thiamine</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="w1" checked> ขาดสารอาหาร (ผอม กินน้อย อาเจียนมาก)</label>
+      <label><input type="checkbox" id="w2"> ตาผิดปกติ (nystagmus, กลอกตาไม่ได้)</label>
+      <label><input type="checkbox" id="w3"> Cerebellar (เดินเซ, finger-nose ผิด)</label>
+      <label><input type="checkbox" id="w4" checked> สับสน/สติผิดปกติ หรือความจำบกพร่องเล็กน้อย</label>
+      <label><input type="checkbox" id="wHypo"> น้ำตาลต่ำตอนนี้</label>
+      <label><input type="checkbox" id="wMg"> Mg ต่ำ</label>
+    </div>
+    <div class="out" id="weOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ถามเวลาดื่มครั้งสุดท้ายทุกราย</b></div></div>
+    <div class="pearl"><div><b>PAWSS ≥4 = เสี่ยงถอนรุนแรง</b></div></div>
+    <div class="pearl"><div><b>CIWA-Ar ใช้ติดตาม ไม่ใช่วินิจฉัย</b></div></div>
+    <div class="pearl"><div><b>Benzodiazepine ตามอาการ</b> · ตับแย่ → lorazepam</div></div>
+    <div class="pearl"><div><b>ชักจากถอนสุรา: benzodiazepine</b> ไม่ใช่ phenytoin (ยกเว้นมีโรคลมชักเดิม)</div></div>
+    <div class="pearl"><div><b>DT: ICU</b> · ดื้อ → phenobarbital/propofol</div></div>
+    <div class="pearl"><div><b>Antipsychotic/clonidine ใช้เสริม ไม่ใช้เดี่ยว</b></div></div>
+    <div class="pearl"><div><b>Thiamine ก่อน glucose</b> แต่ไม่เลื่อน glucose ในน้ำตาลต่ำ</div></div>
+    <div class="pearl"><div><b>Caine ≥2 ใน 4 = Wernicke</b> → thiamine ขนาดสูง IV</div></div>
+    <div class="pearl"><div><b>แก้ Mg ร่วม</b> thiamine จึงได้ผลดี</div></div>
+    <div class="pearl"><div><b>สุราเถื่อน + ตามัว + AG กว้าง → methanol</b></div></div>
+    <div class="pearl"><div><b>ก่อนกลับบ้าน: เริ่มรักษา AUD + 1413</b></div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../magnesium/index.html">Magnesium →</a> · <a href="../phosphate-refeeding/index.html">Phosphate / refeeding →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../status-epilepticus/index.html">Status epilepticus →</a> · <a href="../toxicology/index.html">Toxicology →</a> · <a href="../pancreatitis/index.html">Pancreatitis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) American Society of Addiction Medicine. The ASAM clinical practice guideline on alcohol withdrawal management. J Addict Med 2020;14(3S Suppl 1):1–72 · 2) Ganatra RB, Breu AC, Ronan MV. Clinical guideline highlights for the hospitalist: 2020 ASAM guideline on alcohol withdrawal management. J Hosp Med 2022;17(1):47–9 · 3) Galvin R, Bråthen G, Ivashynka A, et al. EFNS guidelines for diagnosis, therapy and prevention of Wernicke encephalopathy. Eur J Neurol 2010;17:1408–18 · 4) NICE CG100. Alcohol-use disorders: diagnosis and management of physical complications. 2010 (updated 2017) · 5) Sullivan JT, Sykora K, Schneiderman J, et al. Assessment of alcohol withdrawal: the revised CIWA-Ar. Br J Addict 1989;84:1353–7 · 6) Maldonado JR, Sher Y, Ashouri JF, et al. The "Prediction of Alcohol Withdrawal Severity Scale" (PAWSS). Alcohol 2014;48(4):375–90 · 7) Caine D, Halliday GM, Kril JJ, Harper CG. Operational criteria for the classification of chronic alcoholics: identification of Wernicke's encephalopathy. J Neurol Neurosurg Psychiatry 1997;62:51–60 · 8) Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med 2014;371:2109–13 · 9) Sachdeva A, Choudhary M, Chandra M. Alcohol withdrawal syndrome: benzodiazepines and beyond. J Clin Diagn Res 2015;9:VE01–07<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','awView');
+mountWalker({
+ start:{q:'ผู้ป่วยดื่มสุราประจำ — มีอาการอะไรตอนนี้?',o:[['ยังไม่มีอาการ (เพิ่งรับไว้)','pre'],['สั่น เหงื่อ ใจสั่น สติดี','mild'],['ชัก','sz'],['สับสน เพ้อ ภาพหลอน + ชีพจรเร็ว ไข้','dt'],['สับสน + ตากลอกผิดปกติ/เดินเซ','we']]},
+ pre:{leaf:true,cls:'ok',t:'คัดกรองและป้องกัน',b:'ซักเวลาดื่มครั้งสุดท้าย · <b>PAWSS</b> (≥4 เสี่ยงสูง → พิจารณา benzodiazepine แบบกำหนดเวลา/ติดตามถี่) · thiamine 100 mg IV/IM วันละครั้ง · ตรวจ K Mg P glucose · CIWA-Ar เมื่อเริ่มมีอาการ'},
+ mild:{q:'CIWA-Ar เท่าไร?',o:[['&lt;10','m1'],['10–18','m2'],['≥19','m3']]},
+ m1:{leaf:true,cls:'ok',t:'ถอนเล็กน้อย',b:'ประเมิน CIWA-Ar ซ้ำทุก 4–8 ชม. (ASAM: เฝ้าดูได้ถึง 36 ชม.) · ยังไม่ต้องให้ยา ถ้าไม่มีปัจจัยเสี่ยง · thiamine · สารน้ำ/อาหาร'},
+ m2:{leaf:true,cls:'warn',t:'ถอนปานกลาง',b:'<b>Diazepam 10–20 mg</b> (หรือ lorazepam 1–4 mg ถ้าตับแย่/สูงอายุ) แล้วประเมิน CIWA-Ar ใน 1 ชม. ให้ซ้ำเมื่อ ≥10 · thiamine · K Mg P'},
+ m3:{leaf:true,cls:'danger',t:'ถอนรุนแรง',b:'รับไว้ · benzodiazepine ขนาดสูง/front-loading จนสงบ · ประเมินทุก 1 ชม. · เตรียม ICU ถ้าต้องใช้ยามากหรือเริ่มสับสน',next:['ถ้าเริ่มเพ้อ','dt']},
+ sz:{q:'เป็นลักษณะชักจากถอนสุราทั่วไป? (ชักทั้งตัว ครั้งเดียว/ชุดสั้น 6–48 ชม.หลังหยุดดื่ม ไม่มีบาดเจ็บศีรษะ ไม่มีไข้)',o:[['ใช่','szT'],['ไม่ใช่ (ครั้งแรก เฉพาะที่ ชักต่อเนื่อง บาดเจ็บ ไข้)','szW']]},
+ szT:{leaf:true,cls:'warn',t:'ชักจากถอนสุรา',b:'<b>Diazepam/lorazepam IV</b> แล้วให้ benzodiazepine ต่อเพื่อคุมการถอน · <b>ไม่ใช้ phenytoin</b> · glucose, Na, Mg · สังเกตใกล้ชิด (เสี่ยง DT)'},
+ szW:{leaf:true,cls:'danger',t:'หาสาเหตุอื่น',b:'Benzodiazepine ก่อน · <b>CT สมอง</b> (subdural) · glucose Na Mg Ca · ไข้/คอแข็ง → LP/ยาฆ่าเชื้อ · ชักต่อเนื่อง → แนวทาง status epilepticus'},
+ dt:{leaf:true,cls:'danger',t:'Delirium tremens',b:'<b>ICU</b> · diazepam 5–10 mg IV ทุก 5–10 นาที (หรือ lorazepam) จนสงบเล็กน้อย · ดื้อ (diazepam IV &gt;50 mg ใน 1 ชม. หรือ &gt;200 mg ใน 4 ชม.) → <b>phenobarbital</b> → ใส่ท่อ + propofol · สารน้ำ thiamine ขนาดสูง electrolyte · หา sepsis/บาดเจ็บศีรษะ/ตับอ่อนอักเสบ',next:['สงสัย Wernicke ร่วม?','we']},
+ we:{leaf:true,cls:'danger',t:'สงสัย Wernicke',b:'<b>Thiamine 200–500 mg IV วันละ 3 ครั้ง</b> × 3 วัน แล้ว 250 mg/วัน 5 วัน · ให้ก่อน glucose (แต่ไม่เลื่อน glucose ถ้าน้ำตาลต่ำ) · แก้ Mg · Caine ≥2 ใน 4 ก็ให้ได้เลย'}
+},'apTrail','apStage');
+
+function pw(){
+  const c=id=>$(id).checked;let s=0;for(let i=1;i<=10;i++)if(c('p'+i))s++;const L=[];
+  if(!c('p0')){$('pwOut').innerHTML='ไม่เข้าเกณฑ์เริ่ม (ไม่ได้ดื่มใน 30 วัน) → PAWSS ไม่จำเป็น · ความเสี่ยงถอนต่ำ';return}
+  L.push(`PAWSS = <b>${s}</b>/10`);
+  L.push(s>=4?'<b>≥4: เสี่ยงถอนรุนแรง/มีภาวะแทรกซ้อน</b> → รับไว้ · ติดตาม CIWA-Ar ถี่ · พิจารณา benzodiazepine แบบกำหนดเวลา/front-loading ตั้งแต่เริ่มมีอาการ · thiamine':'<b>&lt;4: เสี่ยงต่ำ</b> → ติดตามอาการ · ให้ยาตาม CIWA-Ar เมื่อมีอาการ · thiamine');
+  if(c('p2')||c('p3'))L.push('<b>เคยชัก/DT</b> — ปัจจัยเสี่ยงสำคัญที่สุด ไม่ควรดูแลแบบผู้ป่วยนอก');
+  $('pwOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPw input',pw);
+
+function ci(){
+  const c=id=>$(id).checked;const L=[];let s=0,miss=false;
+  for(let i=1;i<=10;i++){let v=num('c'+i);if(v===null){miss=true;continue}const mx=i==10?4:7;v=Math.max(0,Math.min(mx,Math.round(v)));s+=v;}
+  if(c('cCom')){$('ciOut').innerHTML='<b>สื่อสารไม่ได้ → CIWA-Ar ใช้ไม่ได้</b> · ใช้ RASS/สัญญาณชีพ · ใส่ท่อ/เพ้อ = รุนแรง → ICU, ให้ยาตามเป้า RASS 0 ถึง −1';return}
+  L.push(`CIWA-Ar = <b>${s}</b>/67`);
+  if(miss){L.push('<b>กรอกให้ครบ 10 ข้อก่อน</b> — คะแนนที่ได้ยังใช้ตัดสินให้ยาไม่ได้');$('ciOut').innerHTML=L.join('<br>');return}
+  const lz=c('cLiv');const d=lz?'lorazepam 1–2 mg':'diazepam 10 mg';const D=lz?'lorazepam 2–4 mg (ถ้าไม่มีชนิดฉีด: diazepam IV ขนาดเล็ก 5 mg ซ้ำ titrate ตามระดับง่วง หรือ midazolam IV ใน ICU)':'diazepam 20 mg';
+  if(c('cTot'))L.push('<b>ดื้อ benzodiazepine</b> → ย้าย ICU · เพิ่ม <b>phenobarbital</b> (ผู้มีประสบการณ์) · ไม่ได้ผล → ใส่ท่อ + propofol · dexmedetomidine เสริมได้ (ไม่ใช้เดี่ยว)');
+  if(c('cTot')&&s<10)L.push('คะแนนต่ำหลังได้ยาขนาดสูง อาจเป็นผลจากยา — ประเมินระดับง่วง/การหายใจ ไม่ใช่หยุดยาเพราะคะแนน');
+  else if(s<10)L.push('<b>&lt;10 เล็กน้อย</b> → ยังไม่ต้องให้ benzodiazepine · ประเมินซ้ำทุก 4 ชม. (ทุก 1–2 ชม.ถ้าเสี่ยงสูง)');
+  else if(s<19)L.push(`<b>10–18 ปานกลาง</b> → <b>${lz?'lorazepam 1–2 mg':'diazepam 10–20 mg'}</b> ทางปาก/IV · ประเมินซ้ำใน 1 ชม. ให้ซ้ำเมื่อ ≥10`);
+  else L.push(`<b>≥19 รุนแรง</b> → <b>${D}</b> (IV ได้) ซ้ำทุก 1 ชม. (หรือถี่กว่าใน ICU) จนคะแนน &lt;10/สงบ · รับไว้/พิจารณา ICU`);
+  if(num('c10')!==null&&num('c10')>=3)L.push('<b>การรับรู้เสีย (≥3)</b> → คิดถึง DT, Wernicke, encephalopathy อื่น ไม่ใช่แค่ถอนเล็กน้อย');
+  if(num('c8')>=4||num('c7')>=4)L.push('ภาพ/เสียงหลอนเด่น: ถ้าสติดี = alcoholic hallucinosis · สติขึ้นลง = DT');
+  L.push('<span class="muted">ทุกราย: thiamine · K Mg P glucose · สารน้ำ · หาเหตุร่วม (ติดเชื้อ บาดเจ็บศีรษะ ตับ)</span>');
+  $('ciOut').innerHTML=L.join('<br>');
+}
+bindAll('#tCi input',ci);
+
+function we(){
+  const c=id=>$(id).checked;const n=['w1','w2','w3','w4'].filter(c).length;const L=[];
+  L.push(`Caine criteria <b>${n}/4</b>`);
+  if(n>=2)L.push('<b>≥2 → วินิจฉัย Wernicke ได้ (ในผู้ติดสุรา)</b> → <b>thiamine 200 mg (EFNS) – 500 mg (RCP) IV วันละ 3 ครั้ง × 3 วัน</b> (ผสม NSS 100 mL หยด 30 นาที) ถ้าตอบสนอง 250 mg/วัน อีก 5 วัน → ทางปากต่อ (NICE: IV อย่างน้อย 5 วัน) · MRI ถ้าไม่แน่ใจ (ผลปกติไม่ตัดโรค)');
+  else L.push('&lt;2 → ยังไม่เข้าเกณฑ์ · <b>ถ้ายังสงสัย Wernicke ทางคลินิก (เช่น สับสนอธิบายไม่ได้) ให้ขนาดรักษาเลย</b> ไม่ต้องรอครบเกณฑ์ · ถ้าแค่เสี่ยง (สุรา/ขาดอาหาร/อาเจียนมาก) ให้ <b>thiamine ป้องกัน 100–250 mg IV/IM วันละครั้ง × 3–5 วัน</b> · ประเมินตา/การเดินซ้ำ');
+  if(c('wHypo'))L.push('<b>น้ำตาลต่ำ → ให้ glucose ทันที ห้ามรอ</b> · ให้ thiamine พร้อมกันหรือหลังทันที');
+  else L.push('ให้ thiamine <b>ก่อน</b>สารน้ำที่มี glucose');
+  if(c('wMg'))L.push('<b>Mg ต่ำ → แก้ด้วย</b> (thiamine ใช้ Mg เป็น cofactor)');
+  $('weOut').innerHTML=L.join('<br>');
+}
+bindAll('#tWe input',we);
+
+mountQuiz([
+ ['ชายดื่มสุราทุกวัน นอน รพ.ด้วยขาหัก 30 ชม.หลังดื่มครั้งสุดท้าย ชักทั้งตัว 1 ครั้ง ไม่มีบาดเจ็บศีรษะ ยาที่เหมาะ',['Phenytoin loading','Diazepam/lorazepam IV แล้วคุมการถอนต่อ','Haloperidol','ไม่ต้องให้ยา'],1,'Phenytoin ไม่ได้ผลกับชักจากถอนสุรา'],
+ ['CIWA-Ar ใช้เพื่ออะไรตาม ASAM 2020',['วินิจฉัยว่ามีการถอนสุรา','ติดตามความรุนแรงและกำหนดการให้ยาในผู้ที่ถอน','คัดกรองผู้ดื่มสุราทุกคน','ทำนาย Wernicke'],1,'วินิจฉัยใช้ประวัติ คาดการณ์ใช้ PAWSS'],
+ ['ผู้ป่วยตับแข็ง Child C ถอนสุรา ควรเลือก benzodiazepine ตัวใด',['Diazepam','Lorazepam','Chlordiazepoxide','Midazolam infusion ทุกราย'],1,'Glucuronidation ไม่ต้องผ่าน oxidation'],
+ ['วันที่ 3 หลังหยุดดื่ม สับสน สติขึ้นลง เห็นแมลงบนผนัง ไข้ 38.5 HR 130 BP 170/100 คือ',['Alcoholic hallucinosis','Delirium tremens','ถอนเล็กน้อย','Korsakoff'],1,'สติเสีย + autonomic hyperactivity'],
+ ['ข้อใดไม่ควรใช้เป็นยาเดี่ยวรักษา DT',['Diazepam','Lorazepam','Dexmedetomidine','Phenobarbital (ผู้มีประสบการณ์)'],2,'α2 agonist ใช้เสริมเท่านั้น'],
+ ['Caine criteria สำหรับ Wernicke ต้องมีอย่างน้อยกี่ข้อ',['1','2','3','4'],1,'ขาดอาหาร ตา cerebellar สติ/ความจำ'],
+ ['ผู้ป่วยติดสุรา น้ำตาล 40 mg/dL ซึม ควรทำอย่างไร',['รอให้ thiamine ก่อน 30 นาที','ให้ glucose ทันที พร้อม thiamine','ให้ glucose อย่างเดียว ไม่ต้อง thiamine','ให้ thiamine ทางปาก'],1,'ห้ามเลื่อน glucose'],
+ ['ผู้ป่วยดื่มสุราเถื่อน ตามัว หายใจหอบ anion gap กว้าง ควรคิดถึง',['DT','Methanol poisoning','Wernicke','Alcoholic hallucinosis'],1,'ดูหน้า Toxicology'],
+ ['ข้อใดถูกเกี่ยวกับ naltrexone',['ใช้ได้ในผู้ป่วยตับวาย','ห้ามในผู้ใช้ opioid','ทำให้อาเจียนเมื่อดื่ม','ต้องปรับตามไตเป็นหลัก'],1,'Acamprosate ปรับตามไต · disulfiram ทำให้อาการเมื่อดื่ม']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

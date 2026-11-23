@@ -1,0 +1,628 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tumor lysis syndrome · Oncologic emergencies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Oncology · Hematology · Nephrology · Cairo-Bishop · BSH 2015 · IDSA/ASCO 2018 · NICE NG234 2023</div>
+  <h1>ภาวะฉุกเฉินทางมะเร็ง<br>Tumor lysis syndrome · Oncologic emergencies</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผู้ป่วยมะเร็งที่มา ER/ward ด้วยปัญหาที่ต้องรู้ทันที: <b>tumor lysis syndrome</b> (เกลือแร่ผิดปกติ + ไตวาย), <b>ไข้ขณะเม็ดเลือดขาวต่ำ</b> (ยาฆ่าเชื้อภายใน 1 ชม.), <b>ไขสันหลังถูกกด</b> (ปวดหลัง + อ่อนแรง), <b>SVC syndrome</b>, <b>leukostasis/hyperviscosity</b> และ <b>Ca สูงจากมะเร็ง</b> · บริบทไทย: <b>G6PD deficiency พบบ่อย</b> — ห้ามใช้ rasburicase ก่อนรู้ผล G6PD</p>
+  <p class="cite">อ้างอิงหลัก: Cairo MS, Bishop M (Br J Haematol 2004;127:3–11) · Howard SC, et al. The tumor lysis syndrome (N Engl J Med 2011;364:1844–54) · Jones GL, et al. BSH guideline for TLS (Br J Haematol 2015;169:661–71) · Taplitz RA, et al. Outpatient management of fever and neutropenia: ASCO/IDSA update (J Clin Oncol 2018;36:1443–53) · Freifeld AG, et al. IDSA febrile neutropenia guideline (Clin Infect Dis 2011;52:e56–93) · NICE NG234. Spinal metastases and metastatic spinal cord compression (2023) · Wilson LD, et al. SVC syndrome (N Engl J Med 2007;356:1862–9) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ไข้ + ANC &lt;500</b>ยาฆ่าเชื้อครอบคลุม Pseudomonas <b>ภายใน 60 นาที</b></div>
+    <div class="stage" style="--c:var(--warn)"><b>TLS</b>ป้องกันด้วยสารน้ำ + allopurinol/rasburicase · ตาม K P Ca uric Cr ทุก 6–12 ชม.</div>
+    <div class="stage" style="--c:var(--accent)"><b>มะเร็ง + ปวดหลังใหม่</b>คิด cord compression · dexamethasone + MRI ทั้งกระดูกสันหลัง</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#tls">TLS: นิยาม</a><a href="#tlsrisk">TLS: ความเสี่ยงและป้องกัน</a><a href="#tlsrx">TLS: รักษา</a><a href="#fn">ไข้ขณะเม็ดเลือดขาวต่ำ</a><a href="#fnrx">FN: ยาฆ่าเชื้อ</a><a href="#mscc">ไขสันหลังถูกกด</a><a href="#svc">SVC syndrome</a><a href="#leuko">Leukostasis · hyperviscosity</a><a href="#ca">Ca สูง · อื่นๆ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="tls" class="col">
+  <div class="sec-num">01</div>
+  <h2>Tumor lysis syndrome: นิยาม</h2>
+  <p>เซลล์มะเร็งแตกจำนวนมาก (เองหรือหลังเริ่มยา) → <b>K, P, uric acid สูง</b> และ <b>Ca ต่ำ</b> (P จับ Ca) → ผลึก uric acid/Ca-P ในท่อไต → AKI · มักเกิดใน <b>12–72 ชม.หลังเริ่มเคมีบำบัด</b> หรือเกิดเองในมะเร็งโตเร็ว</p>
+  <div class="tbl"><table>
+    <tr><th>Laboratory TLS (Cairo-Bishop): ≥2 ข้อ ภายใน 3 วันก่อน–7 วันหลังเริ่มรักษา</th><th>ค่า (ผู้ใหญ่)</th></tr>
+    <tr><td>Uric acid</td><td>≥8 mg/dL (476 µmol/L) หรือเพิ่ม 25%</td></tr>
+    <tr><td>Potassium</td><td>≥6.0 mmol/L หรือเพิ่ม 25%</td></tr>
+    <tr><td>Phosphate</td><td>≥4.5 mg/dL (1.45 mmol/L) หรือเพิ่ม 25%</td></tr>
+    <tr><td>Calcium</td><td>≤7 mg/dL (1.75 mmol/L) หรือลด 25%</td></tr>
+  </table></div>
+  <div class="box key"><b>Clinical TLS</b>= Laboratory TLS + อย่างน้อย 1 ข้อ: <b>Cr ≥1.5 เท่าของค่าปกติ</b>, หัวใจเต้นผิดจังหวะ/เสียชีวิตเฉียบพลัน, หรือ<b>ชัก</b> · Howard (NEJM 2011) แนะนำนับเฉพาะค่าที่ผิดปกติจริง (ไม่ใช้เกณฑ์ "เปลี่ยน 25%") และนับ Ca ต่ำที่มีอาการเป็น clinical TLS</div>
+</section>
+
+<section id="tlsrisk" class="col">
+  <div class="sec-num">02</div>
+  <h2>TLS: ความเสี่ยงและการป้องกัน</h2>
+  <div class="tbl"><table>
+    <tr><th>ความเสี่ยง</th><th>ตัวอย่าง</th><th>ป้องกัน</th></tr>
+    <tr><td><b>สูง</b> (&gt;5%)</td><td><b>Burkitt</b>, lymphoblastic lymphoma, <b>ALL WBC ≥100,000</b>, <b>AML WBC ≥100,000</b>, DLBCL ก้อนใหญ่ + LDH สูง, ระดับกลางที่มีไตเสื่อม/uric/K/P สูงอยู่แล้ว</td><td>สารน้ำ + <b>rasburicase</b> (ถ้า G6PD ปกติ) · monitor ICU/หอใกล้ชิด · ตามแล็บทุก 6–8 ชม.</td></tr>
+    <tr><td><b>ปานกลาง</b> (1–5%)</td><td>AML WBC 25,000–100,000, ALL WBC &lt;100,000, DLBCL/lymphoma ระดับกลาง, CLL ได้ venetoclax (ต้องเพิ่มขนาดทีละขั้น + ป้องกัน TLS + แล็บถี่), มะเร็งก้อนตันไวต่อยา (small cell, germ cell, neuroblastoma) ที่ก้อนใหญ่</td><td>สารน้ำ + <b>allopurinol</b> (เริ่มก่อนเคมีบำบัด 1–2 วัน) · ตามแล็บทุก 8–12 ชม.</td></tr>
+    <tr><td><b>ต่ำ</b> (&lt;1%)</td><td>มะเร็งก้อนตันส่วนใหญ่, myeloma, CML, lymphoma ระดับต่ำ</td><td>สารน้ำ ± allopurinol · ติดตาม</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>สารน้ำ</h4><ul><li><b>2–3 L/m²/วัน</b> (ราว 3 L/วันในผู้ใหญ่) ถ้าหัวใจ/ไตรับได้</li><li>เป้าปัสสาวะ <b>≥80–100 mL/m²/ชม.</b> (~2 mL/kg/ชม.)</li><li><b>ไม่ให้ bicarbonate เพื่อทำปัสสาวะเป็นด่าง</b> — เพิ่มการตกตะกอน Ca-P และ xanthine</li><li>Diuretic เฉพาะเมื่อน้ำเกินและไม่มีภาวะขาดน้ำ</li></ul></div>
+    <div class="card c-warn"><h4>ยาลด uric acid</h4><ul><li><b>Allopurinol</b> 100 mg/m² ทุก 8 ชม. (ผู้ใหญ่มัก 300–600 mg/วัน; สูงสุด 800 mg/วัน; ปรับตามไต) · ตรวจ HLA-B*58:01 ก่อนถ้ารอได้ (ใน TLS มักรอไม่ได้ → ใช้ระยะสั้น เฝ้าระวังผื่น) · ลดการสร้างใหม่ ไม่ลดที่มีอยู่ · ระวัง SJS/TEN (HLA-B*58:01 พบบ่อยในคนไทย <span class="tag add">ไทย</span>), ปฏิกิริยากับ azathioprine/6-MP</li><li><b>Rasburicase</b> 0.2 mg/kg IV วันละครั้ง (ฉลาก ≤5 วัน; หลายที่ใช้ครั้งเดียว 3–6 mg แล้วดูผล) · ลด uric acid ได้ภายในชั่วโมง</li><li><b>ห้าม rasburicase ใน G6PD deficiency</b> → hemolysis, methemoglobinemia · <b>ตรวจ G6PD ก่อน</b> (ไทยพบได้บ่อย) <span class="tag add">ไทย</span></li><li>หลังได้ rasburicase: เก็บเลือดตรวจ uric <b>แช่น้ำแข็งส่งทันที</b> (ยาย่อย uric ในหลอดต่อ)</li><li>Febuxostat: ทางเลือกเมื่อแพ้ allopurinol</li></ul></div>
+  </div>
+</section>
+
+<section id="tlsrx" class="col">
+  <div class="sec-num">03</div>
+  <h2>TLS: รักษาเมื่อเกิดแล้ว</h2>
+  <div class="tbl"><table>
+    <tr><th>ปัญหา</th><th>จัดการ</th></tr>
+    <tr><td><b>K สูง</b></td><td>อันตรายที่สุด · ECG · calcium gluconate (ถ้า ECG ผิด), insulin + glucose, salbutamol · <b>ไม่ใช้ K ในสารน้ำ</b> · ดูหน้า <a href="../hyperkalemia/index.html">Hyperkalemia</a></td></tr>
+    <tr><td><b>P สูง</b></td><td>งดฟอสเฟต · ยาจับฟอสเฟต · สูงมาก/AKI → ล้างไต · ดูหน้า <a href="../phosphate-refeeding/index.html">Phosphate</a></td></tr>
+    <tr><td><b>Ca ต่ำ</b></td><td><b>ให้ Ca เฉพาะมีอาการ</b> (tetany, ชัก, arrhythmia) — calcium gluconate ขนาดต่ำที่สุด เพราะ Ca × P สูงเสี่ยงตกตะกอน</td></tr>
+    <tr><td>Uric acid สูง</td><td>Rasburicase (ถ้า G6PD ปกติ) · สารน้ำ</td></tr>
+    <tr><td><b>AKI</b></td><td>สารน้ำถ้ายังขาด · <b>ล้างไตเร็ว</b>เมื่อ K/P สูงดื้อการรักษา, Ca ต่ำมีอาการ, น้ำเกิน, ปัสสาวะน้อย (เกณฑ์ต่ำกว่า AKI ทั่วไป เพราะ K เพิ่มเร็ว) · ดูหน้า <a href="../aki/index.html">AKI</a></td></tr>
+  </table></div>
+</section>
+
+<section id="fn" class="col">
+  <div class="sec-num">04</div>
+  <h2>ไข้ขณะเม็ดเลือดขาวต่ำ (Febrile neutropenia)</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>นิยาม (IDSA)</h4><ul><li><b>ไข้</b>: วัดทางปาก <b>≥38.3°C ครั้งเดียว</b> หรือ <b>≥38.0°C นาน ≥1 ชม.</b></li><li><b>Neutropenia</b>: ANC <b>&lt;500/µL</b> หรือคาดว่าจะ &lt;500 ใน 48 ชม. (ANC = WBC × (%neutrophil + %band)/100)</li><li>ผู้ป่วยหลังเคมีบำบัด 7–14 วันที่มีไข้ → ถือเป็น FN จนกว่าจะรู้ผล CBC</li><li>Steroid/สูงอายุอาจไม่มีไข้ — ซึม ความดันต่ำก็ถือว่าติดเชื้อ</li></ul></div>
+    <div class="card c-acc"><h4>ประเมินเร็ว</h4><ul><li><b>เริ่มยาฆ่าเชื้อภายใน 60 นาที</b> หลังมาถึง — ไม่รอผล CBC ถ้าประวัติชัด</li><li>Blood culture <b>2 ชุด</b> (ชุดหนึ่งจาก central line ถ้ามี) · UA/urine culture · CXR · เพาะเชื้อจากแหล่งที่สงสัย</li><li>ตรวจปาก ผิวหนัง สายสวน รอบทวาร (<b>ไม่ตรวจทางทวารหนัก</b>)</li><li><b>MASCC ≥21</b> = เสี่ยงต่ำ (อาจดูแลแบบผู้ป่วยนอกได้ถ้ามีระบบ) · &lt;21 = รับไว้</li></ul></div>
+  </div>
+</section>
+
+<section id="fnrx" class="col">
+  <div class="sec-num">05</div>
+  <h2>FN: ยาฆ่าเชื้อ</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยา</th></tr>
+    <tr><td><b>เสี่ยงสูง/รับไว้</b></td><td>Beta-lactam ต้าน Pseudomonas ตัวเดียว: <b>cefepime 2 g IV q8h</b> หรือ <b>piperacillin/tazobactam 4.5 g IV q6h</b> หรือ <b>meropenem 1 g IV q8h</b> (เสี่ยง ESBL/เคยมีเชื้อดื้อ/ช็อก) · ปรับตามเชื้อใน รพ.</td></tr>
+    <tr><td>+ <b>Vancomycin</b> เมื่อ</td><td>ความดันต่ำ/ช็อก · ปอดอักเสบ · ติดเชื้อผิวหนัง/สายสวน · เคยมี MRSA · พบ gram-positive cocci ในเลือดก่อนรู้ชนิด · mucositis รุนแรง (ได้ quinolone ป้องกันมาก่อน) · <b>หยุดใน 2–3 วันถ้าไม่พบเชื้อ</b></td></tr>
+    <tr><td><b>เสี่ยงต่ำ (MASCC ≥21)</b> ดูแลแบบผู้ป่วยนอกได้</td><td><b>Ciprofloxacin + amoxicillin/clavulanate</b> ทางปาก (ASCO/IDSA 2018) — ต้องกินยาได้, ไม่ได้ quinolone ป้องกันมาก่อน, อยู่ใกล้ รพ., โทรติดตามได้ · ให้ dose แรกใน รพ.และสังเกต ≥4 ชม.</td></tr>
+    <tr><td>ไข้ไม่ลง 4–7 วัน</td><td>หาเชื้อรา (CT ปอด, galactomannan) · พิจารณายาต้านเชื้อรา (empiric/pre-emptive)</td></tr>
+    <tr><td>สงสัย melioidosis <span class="tag add">ไทย</span></td><td>เลือก <b>ceftazidime หรือ meropenem</b> (pip/tazo และ cefepime ไม่ใช่ยาหลัก) · ดูหน้า <a href="../lepto-melioid/index.html">Lepto/Melioidosis</a></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ระยะเวลา: พบเชื้อ → ตามชนิดและแหล่ง · ไม่พบเชื้อ → ให้จนไข้ลง ≥48 ชม. และ ANC ฟื้น (≥500) หรือหยุดก่อนได้ตามแนวทางรุ่นใหม่ในบางราย · G-CSF ไม่ใช้ routine ใน FN ที่เกิดแล้ว (ใช้ในรายเสี่ยงสูงมาก)</p>
+</section>
+
+<section id="mscc" class="col">
+  <div class="sec-num">06</div>
+  <h2>ไขสันหลังถูกกดจากมะเร็ง (MSCC)</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>สงสัยเมื่อ</h4><ul><li>ผู้ป่วยมะเร็ง (เต้านม ปอด ต่อมลูกหมาก myeloma ไต lymphoma) มี <b>ปวดหลังใหม่/รุนแรงขึ้น</b> โดยเฉพาะ <b>กระดูกสันหลังส่วนอก</b>, ปวดตอนกลางคืน/นอนราบ, ปวดร้าวรอบอก, ไอจามแล้วปวด</li><li>อาการทางประสาท: ขาอ่อนแรง ชา เดินลำบาก ปัสสาวะ/อุจจาระผิดปกติ — <b>มาเมื่อยังเดินได้ ผลดีกว่ามาก</b></li></ul></div>
+    <div class="card c-acc"><h4>ทำ (NICE NG234)</h4><ul><li><b>MRI ทั้งกระดูกสันหลัง</b>: มีอาการทางประสาท → <b>ภายใน 24 ชม.</b> · ปวดอย่างเดียวที่สงสัยมะเร็งกระจาย → ภายใน 1 สัปดาห์</li><li>มีอาการทางประสาท: <b>dexamethasone 16 mg</b> (ทางปาก/IV) ทันที แล้ว 16 mg/วัน ระหว่างรอผ่าตัด/ฉายแสง → ค่อยๆ ลดหลังเริ่มรักษา · + PPI · หยุดถ้า MRI ไม่พบ MSCC · คุมน้ำตาล</li><li>ปรึกษาเร่งด่วน: ศัลยกรรมกระดูกสันหลัง/รังสีรักษา (ผ่าตัด + ฉายแสง หรือฉายแสงอย่างเดียว)</li><li>ยังไม่รู้ว่าเป็นมะเร็ง + สงสัย lymphoma: ปรึกษาก่อนให้ steroid ถ้าไม่เร่งด่วน (อาจทำให้ชิ้นเนื้อวินิจฉัยยาก)</li><li>ระวังกระดูกสันหลังไม่มั่นคง · ป้องกัน VTE แผลกดทับ ปัสสาวะคั่ง</li></ul></div>
+  </div>
+</section>
+
+<section id="svc" class="col">
+  <div class="sec-num">07</div>
+  <h2>Superior vena cava syndrome</h2>
+  <ul><li>หน้า คอ แขนบวม เส้นเลือดดำที่อกโป่ง หายใจลำบาก ปวดหัว อาการแย่ลงเมื่อก้ม/นอนราบ · สาเหตุ: <b>มะเร็งปอด</b> (NSCLC ~50%, small cell ~25%), lymphoma (~10%), germ cell/thymoma · และ<b>ลิ่มเลือดจากสายสวน/สาย port</b></li>
+  <li><b>ฉุกเฉินจริง</b>เมื่อมี <b>stridor/ทางเดินหายใจตีบ</b> หรือ <b>สมองบวม</b> (สับสน ซึม) → <b>ใส่ stent ที่ SVC</b> ได้ผลเร็ว ± ท่อช่วยหายใจ</li>
+  <li>ส่วนใหญ่มีเวลา → <b>CT อกฉีดสี</b> และ <b>เอาชิ้นเนื้อวินิจฉัยก่อน</b> (steroid ก่อนชิ้นเนื้ออาจบดบังการวินิจฉัย lymphoma) · ยกหัวสูง · ให้ steroid เมื่อเป็น lymphoma/thymoma หรือหลอดลมบวม</li>
+  <li>เกิดจากลิ่มเลือด → ยาต้านการแข็งตัว ± ถอดสาย · ดูหน้า <a href="../vte/index.html">VTE</a></li></ul>
+</section>
+
+<section id="leuko" class="col">
+  <div class="sec-num">08</div>
+  <h2>Leukostasis · Hyperviscosity · APL</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Leukostasis</h4><ul><li>มัก AML ที่ WBC <b>&gt;100,000</b> (หรือ blast สูงกว่า 50,000 ใน monocytic) · CML blast crisis</li><li>หายใจเหนื่อย hypoxemia, สับสน ปวดหัว ตามัว, เลือดออกในสมอง</li><li>ส่งต่อด่วนเพื่อ <b>cytoreduction</b>: hydroxyurea, เริ่มเคมีบำบัด ± leukapheresis (<b>ห้ามในผู้ที่สงสัย APL</b>) · ป้องกัน TLS</li><li><b>เลี่ยงให้เลือดแดงมาก</b> (เพิ่มความหนืด) เว้นจำเป็น · PaO₂ อาจต่ำลวงจากเม็ดเลือดขาวใช้ O₂ ในหลอด → ดู SpO₂</li></ul></div>
+    <div class="card c-warn"><h4>Hyperviscosity · APL</h4><ul><li><b>Hyperviscosity</b> (Waldenström, myeloma IgA): เลือดออกเยื่อบุ ตามัว (จอประสาทตาเลือดออก) ปวดหัว สับสน → <b>plasmapheresis</b></li><li><b>สงสัย acute promyelocytic leukemia (APL)</b>: เม็ดเลือดขาวผิดปกติ + DIC/เลือดออก → <b>ให้ ATRA ทันทีที่สงสัย</b> (ไม่รอยืนยันพันธุกรรม) + แก้ coagulopathy (เป้า platelet &gt;30,000–50,000, fibrinogen &gt;100–150 mg/dL) · เลี่ยง central line/LP จนแก้ coagulopathy · ระวัง differentiation syndrome หลังเริ่ม ATRA · ส่งต่อศูนย์โลหิตวิทยา</li></ul></div>
+  </div>
+</section>
+
+<section id="ca" class="col">
+  <div class="sec-num">09</div>
+  <h2>Ca สูงจากมะเร็ง และภาวะอื่น</h2>
+  <ul><li><b>Hypercalcemia of malignancy</b> (PTHrP, กระดูกถูกทำลาย, lymphoma สร้าง calcitriol): สารน้ำ NSS, calcitonin ช่วงแรก, <b>zoledronic acid</b> (หรือ denosumab ถ้าไตเสื่อม/ดื้อ) — ดูหน้า <a href="../hypercalcemia/index.html">Hypercalcemia</a></li>
+  <li><b>Na ต่ำจาก SIADH</b> (small cell lung cancer) — ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a></li>
+  <li>เลือดออก/ลิ่มเลือดจากมะเร็ง (DIC, VTE), น้ำในเยื่อหุ้มหัวใจ (tamponade), สมองบวมจากมะเร็งกระจาย (ปวดหัว อาเจียน ชัก → dexamethasone), ทางเดินหายใจ/ลำไส้อุดตัน</li>
+  <li>พิษจากยามุ่งเป้า/ภูมิคุ้มกันบำบัด (immune checkpoint inhibitor): ลำไส้อักเสบ ปอดอักเสบ ต่อมไร้ท่อ (adrenal/hypophysitis) — ปรึกษาทีมมะเร็ง</li></ul>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง: ผู้ป่วยมะเร็งมา ER</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยมะเร็ง/หลังเคมีบำบัด มา ER</b>ABC · glucose · CBC, electrolyte, Ca, P, uric, Cr, LFT</div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ไข้</span><div class="node red"><b>FN?</b>Culture → cefepime/pip-tazo/meropenem ใน 60 นาที</div></div>
+        <div class="arm"><span class="lab">K/P/uric สูง Ca ต่ำ</span><div class="node dx hypo"><b>TLS</b>สารน้ำ · rasburicase (G6PD ปกติ) · ล้างไตเร็ว</div></div>
+        <div class="arm"><span class="lab">ปวดหลัง/ขาอ่อน</span><div class="node red"><b>MSCC</b>Dexamethasone 16 mg · MRI 24 ชม.</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>อื่นๆ</b>หน้าบวม/stridor → SVC · WBC &gt;100k → leukostasis · DIC → APL? ATRA · ซึม → Ca สูง/Na ต่ำ</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดแนวทางของหน่วยมะเร็ง/โลหิตวิทยาใน รพ.</p>
+  </div>
+  <div class="tool plan" id="tTl" style="margin-top:12px">
+    <h3>TLS: Cairo-Bishop และแผน</h3>
+    <div class="fields">
+      <label class="f">Uric acid (mg/dL)<input type="number" step="0.1" id="tU" value="9.2"></label>
+      <label class="f">K (mmol/L)<input type="number" step="0.1" id="tK" value="5.6"></label>
+      <label class="f">Phosphate (mg/dL)<input type="number" step="0.1" id="tP" value="5.1"></label>
+      <label class="f">Ca (mg/dL)<input type="number" step="0.1" id="tCa" value="7.8"></label>
+      <label class="f">Cr (mg/dL)<input type="number" step="0.01" id="tCr" value="1.9"></label>
+      <label class="f">Cr ค่าปกติบน (mg/dL)<input type="number" step="0.01" id="tCrU" value="1.2"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="tW" value="60"></label>
+      <label class="f">G6PD<select id="tG"><option value="unk">ยังไม่รู้</option><option value="n">ปกติ</option><option value="d">พร่อง</option></select></label>
+      <label class="f">ความเสี่ยงของโรค<select id="tR"><option value="hi">สูง</option><option value="mid">ปานกลาง</option><option value="lo">ต่ำ</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="tArr"> หัวใจเต้นผิดจังหวะ</label>
+      <label><input type="checkbox" id="tSz"> ชัก/tetany</label>
+      <label><input type="checkbox" id="tOl"> น้ำเกิน/ปัสสาวะน้อย</label>
+    </div>
+    <div class="out" id="tlOut"></div>
+  </div>
+
+  <div class="tool" id="tMa" style="margin-top:12px">
+    <h3>Febrile neutropenia: ANC + MASCC</h3>
+    <div class="fields">
+      <label class="f">WBC (/µL)<input type="number" id="mW" value="900"></label>
+      <label class="f">%Neutrophil + %Band<input type="number" id="mN" value="40"></label>
+      <label class="f">อุณหภูมิ (°C)<input type="number" step="0.1" id="mT" value="38.5"></label>
+      <label class="f">อาการโดยรวม<select id="mB"><option value="5">ไม่มี/น้อย</option><option value="3">ปานกลาง</option><option value="0">รุนแรง</option></select></label>
+      <label class="f">อายุ (ไม่กรอก = ไม่ได้ 2 คะแนน)<input type="number" id="mA" value="55"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="mHypo"> SBP &lt;90</label>
+      <label><input type="checkbox" id="mCopd"> มี COPD</label>
+      <label><input type="checkbox" id="mFung"> มะเร็งเลือดที่เคยติดเชื้อรา (ถ้าเป็นก้อนตัน/ไม่เคย ไม่ติ๊ก)</label>
+      <label><input type="checkbox" id="mDeh"> ขาดน้ำต้องให้ IV</label>
+      <label><input type="checkbox" id="mIn"> ไข้เกิดขณะนอน รพ.</label>
+      <label><input type="checkbox" id="mVanc"> ปอดอักเสบ/ผิวหนัง/สายสวนติดเชื้อ/เคย MRSA/GPC ในเลือด</label>
+      <label><input type="checkbox" id="mEsbl"> เคยมีเชื้อ ESBL/ได้ยาฆ่าเชื้อกว้างเร็วๆ นี้</label>
+      <label><input type="checkbox" id="mFq"> ได้ quinolone ป้องกันอยู่</label>
+      <label><input type="checkbox" id="mLong"> คาดว่า ANC &lt;100 หรือ neutropenia นาน &gt;7 วัน (induction leukemia/HSCT)</label>
+    </div>
+    <div class="out" id="maOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>TLS: K P uric สูง + Ca ต่ำ</b> · 12–72 ชม.หลังเคมีบำบัด</div></div>
+    <div class="pearl"><div><b>สารน้ำคือหัวใจ</b> · ไม่ทำปัสสาวะเป็นด่าง</div></div>
+    <div class="pearl"><div><b>Rasburicase: ตรวจ G6PD ก่อน</b> (ไทยพบบ่อย)</div></div>
+    <div class="pearl"><div><b>Uric หลัง rasburicase: เก็บแช่น้ำแข็ง</b></div></div>
+    <div class="pearl"><div><b>Ca ต่ำใน TLS ให้ Ca เฉพาะมีอาการ</b></div></div>
+    <div class="pearl"><div><b>TLS + AKI: ล้างไตเร็วกว่าปกติ</b></div></div>
+    <div class="pearl"><div><b>ไข้หลังเคมีบำบัด = FN</b> จนกว่าจะพิสูจน์ได้ว่าไม่ใช่ · ยาใน 60 นาที</div></div>
+    <div class="pearl"><div><b>Cefepime/pip-tazo/meropenem</b> · vanco เฉพาะมีข้อบ่งชี้</div></div>
+    <div class="pearl"><div><b>MASCC ≥21 = เสี่ยงต่ำ</b></div></div>
+    <div class="pearl"><div><b>มะเร็ง + ปวดหลังใหม่ = MSCC</b> จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</div></div>
+    <div class="pearl"><div><b>SVC: ชิ้นเนื้อก่อน steroid</b> ถ้าไม่มี stridor</div></div>
+    <div class="pearl"><div><b>สงสัย APL → ATRA ทันที</b></div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../hypercalcemia/index.html">Hypercalcemia →</a> · <a href="../phosphate-refeeding/index.html">Phosphate →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../vte/index.html">VTE →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Cairo MS, Bishop M. Tumour lysis syndrome: new therapeutic strategies and classification. Br J Haematol 2004;127:3–11 · 2) Cairo MS, Coiffier B, Reiter A, Younes A. Recommendations for the evaluation of risk and prophylaxis of TLS in adults and children with malignant diseases: an expert TLS panel consensus. Br J Haematol 2010;149:578–86 · 3) Howard SC, Jones DP, Pui CH. The tumor lysis syndrome. N Engl J Med 2011;364:1844–54 · 4) Jones GL, Will A, Jackson GH, et al. Guidelines for the management of tumour lysis syndrome in adults and children with haematological malignancies (BSH). Br J Haematol 2015;169:661–71 · 5) Freifeld AG, Bow EJ, Sepkowitz KA, et al. Clinical practice guideline for the use of antimicrobial agents in neutropenic patients with cancer: 2010 update by IDSA. Clin Infect Dis 2011;52:e56–93 · 6) Taplitz RA, Kennedy EB, Bow EJ, et al. Outpatient management of fever and neutropenia in adults treated for malignancy: ASCO and IDSA clinical practice guideline update. J Clin Oncol 2018;36:1443–53 · 7) Klastersky J, Paesmans M, Rubenstein EB, et al. The MASCC risk index. J Clin Oncol 2000;18:3038–51 · 8) NICE NG234. Spinal metastases and metastatic spinal cord compression. 2023 · 9) Wilson LD, Detterbeck FC, Yahalom J. Superior vena cava syndrome with malignant causes. N Engl J Med 2007;356:1862–9 · 10) Sanz MA, Fenaux P, Tallman MS, et al. Management of acute promyelocytic leukemia: updated recommendations from an expert panel of the European LeukemiaNet. Blood 2019;133:1630–43<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','onView');
+mountWalker({
+ start:{q:'ผู้ป่วยมะเร็งมาด้วยอะไร?',o:[['ไข้ (โดยเฉพาะหลังเคมีบำบัด)','fn'],['เกลือแร่ผิด/ไตวาย หลังเริ่มยา หรือมะเร็งโตเร็ว','tls'],['ปวดหลัง/ขาอ่อนแรง','mscc'],['หน้า คอ แขนบวม หายใจลำบาก','svc'],['WBC สูงมาก/เลือดออก DIC','leu']]},
+ fn:{q:'ANC &lt;500 (หรือคาดว่าจะต่ำ) หรือยังไม่รู้ผล?',o:[['ใช่/ยังไม่รู้','fn2'],['ANC ปกติ','fnN']]},
+ fnN:{leaf:true,cls:'ok',t:'ไม่ใช่ neutropenia',b:'หาแหล่งไข้ตามปกติ · ระวังสายสวน/port, ยาภูมิคุ้มกัน, tumor fever (วินิจฉัยหลังตัดติดเชื้อ)'},
+ fn2:{q:'ช็อก/ปอดอักเสบ/ผิวหนังหรือสายสวนติดเชื้อ?',o:[['มี','fnHi'],['ไม่มี — MASCC?','fnM']]},
+ fnHi:{leaf:true,cls:'danger',t:'FN เสี่ยงสูง',b:'Blood culture 2 ชุด → <b>cefepime 2 g q8h หรือ pip/tazo 4.5 g q6h</b> (meropenem ถ้าช็อก/เสี่ยง ESBL) <b>+ vancomycin</b> ภายใน 60 นาที · สารน้ำ · ICU ถ้าช็อก'},
+ fnM:{q:'MASCC ≥21?',o:[['≥21','fnLo'],['&lt;21','fnAd']]},
+ fnLo:{leaf:true,cls:'ok',t:'FN เสี่ยงต่ำ',b:'อาจรักษาแบบผู้ป่วยนอก: <b>ciprofloxacin + amoxicillin/clavulanate</b> ถ้ากินได้ ไม่ได้ quinolone ป้องกัน อยู่ใกล้ รพ. ติดตามได้ · dose แรกใน รพ.'},
+ fnAd:{leaf:true,cls:'warn',t:'FN — รับไว้',b:'<b>Cefepime 2 g q8h</b> หรือ <b>pip/tazo 4.5 g q6h</b> (meropenem ถ้าเสี่ยง ESBL) ภายใน 60 นาที · ไข้ไม่ลง 4–7 วัน → หาเชื้อรา'},
+ tls:{q:'Lab TLS ≥2 ข้อ (uric ≥8, K ≥6, P ≥4.5, Ca ≤7)?',o:[['ใช่','tlsC'],['ไม่ — แต่เสี่ยง','tlsP']]},
+ tlsP:{leaf:true,cls:'ok',t:'ป้องกัน TLS',b:'สารน้ำ 2–3 L/m²/วัน · เสี่ยงปานกลาง → allopurinol · เสี่ยงสูง → rasburicase (ตรวจ G6PD) · แล็บทุก 6–12 ชม.'},
+ tlsC:{q:'มี Cr ≥1.5×ULN, arrhythmia หรือชัก?',o:[['มี (clinical TLS)','tlsX'],['ไม่มี (lab TLS)','tlsL']]},
+ tlsL:{leaf:true,cls:'warn',t:'Laboratory TLS',b:'สารน้ำ · rasburicase (G6PD ปกติ) · แก้ K/P · Ca ให้เฉพาะมีอาการ · แล็บทุก 6 ชม. · monitor ECG'},
+ tlsX:{leaf:true,cls:'danger',t:'Clinical TLS',b:'ICU · แก้ K ด่วน · rasburicase · <b>ปรึกษาล้างไตเร็ว</b> (K/P ดื้อ, Ca ต่ำมีอาการ, น้ำเกิน, ปัสสาวะน้อย)'},
+ mscc:{leaf:true,cls:'danger',t:'สงสัยไขสันหลังถูกกด',b:'มีอาการทางประสาท → <b>dexamethasone 16 mg</b> ทันที + PPI · <b>MRI ทั้งกระดูกสันหลังภายใน 24 ชม.</b> · ปรึกษาศัลยกรรม/รังสีรักษาด่วน · นอนราบถ้าสงสัยไม่มั่นคง'},
+ svc:{q:'Stridor หรือสมองบวม (สับสน ซึม)?',o:[['มี','svcE'],['ไม่มี','svcN']]},
+ svcE:{leaf:true,cls:'danger',t:'SVC ฉุกเฉิน',b:'ดูแลทางเดินหายใจ · <b>stent SVC</b> ด่วน · steroid ถ้าหลอดลมบวม'},
+ svcN:{leaf:true,cls:'warn',t:'SVC ไม่เร่งด่วน',b:'CT อกฉีดสี · <b>ชิ้นเนื้อก่อน steroid</b> · ยกหัวสูง · สายสวนมีลิ่มเลือด → anticoagulant ± ถอดสาย'},
+ leu:{leaf:true,cls:'danger',t:'Leukostasis / APL',b:'WBC &gt;100k + หอบ/สับสน → ส่งต่อด่วน hydroxyurea/เคมีบำบัด ± leukapheresis (<b>ห้ามทำ leukapheresis ถ้าสงสัย APL</b> — DIC แย่ลง) · เลี่ยงให้เลือดแดง · เลือดออก + DIC + สงสัย APL → <b>ATRA ทันที</b> + platelet/cryo'}
+},'apTrail','apStage');
+
+function tl(){
+  const u=num('tU'),k=num('tK'),p=num('tP'),ca=num('tCa'),cr=num('tCr'),cu=num('tCrU'),w=num('tW'),g=$('tG').value,r=$('tR').value;const c=id=>$(id).checked;const L=[];
+  const f=[u!==null&&u>=8?'uric ≥8':null,k!==null&&k>=6?'K ≥6':null,p!==null&&p>=4.5?'P ≥4.5':null,ca!==null&&ca<=7?'Ca ≤7':null].filter(Boolean);
+  const lab=f.length>=2;const crit=[cr&&cu&&cr>=1.5*cu?'Cr ≥1.5×ULN':null,c('tArr')?'arrhythmia':null,c('tSz')?'ชัก':null].filter(Boolean);
+  if(lab&&crit.length)L.push(`<b>Clinical TLS</b> (${f.join(', ')} + ${crit.join(', ')})`);
+  else if(lab)L.push(`<b>Laboratory TLS</b> (${f.join(', ')})`);
+  else L.push(`ยังไม่เข้า laboratory TLS (${f.length?f.join(', '):'ไม่มีค่าผิดปกติ'} — ต้อง ≥2 ข้อ)`);
+  const bsa=w?Math.sqrt(w*165/3600):null;
+  L.push(`สารน้ำ <b>~${w?Math.round(2.5*Math.sqrt(w*165/3600)*10)/10:'2–3'} L/วัน</b> (2–3 L/m²; BSA ประมาณจากน้ำหนัก สมมติสูง 165 ซม. · ลดลงถ้ามีโรคหัวใจ/ไต) เป้าปัสสาวะ ≥80–100 mL/m²/ชม. (~${bsa?Math.round(90*bsa):'150'} mL/ชม.) · <b>ไม่ให้ bicarbonate</b>`+(c('tOl')?' · <b>น้ำเกิน/ปัสสาวะน้อย → ลดสารน้ำ ปรึกษาล้างไต</b>':''));
+  const needR=r==='hi'||(u!==null&&u>=8);
+  if(needR){
+    if(g==='d')L.push('<b>G6PD พร่อง → ห้าม rasburicase</b> → allopurinol + สารน้ำ · uric สูงมาก/AKI → ล้างไต');
+    else if(g==='unk')L.push('ควรใช้ rasburicase แต่ <b>G6PD ยังไม่รู้ → ตรวจด่วนก่อนให้</b> (ระหว่างรอ: allopurinol + สารน้ำ)');
+    else L.push(`<b>Rasburicase</b> ${w?(0.2*w).toFixed(1)+' mg':'0.2 mg/kg'} IV (0.2 mg/kg; หลายที่ใช้ 3–6 mg ครั้งเดียวแล้วดูผล) · ตรวจ uric ซ้ำโดยเก็บเลือด<b>แช่น้ำแข็ง</b>`);
+  }else if(r==='mid')L.push('<b>Allopurinol</b> 100 mg/m² ทุก 8 ชม. (ผู้ใหญ่มัก 300–600 mg/วัน; สูงสุด 800; ปรับตามไต) เริ่มก่อนเคมีบำบัด 1–2 วัน');
+  else L.push('เสี่ยงต่ำ: สารน้ำ ± allopurinol · ติดตามแล็บ');
+  if(k!==null&&k>=6)L.push(`<b>K ${k}</b> → ECG · calcium gluconate ถ้า ECG ผิด · insulin + glucose · salbutamol · ไม่ลง → ล้างไต`);
+  else if(k!==null&&k>5)L.push(`K ${k} → งด K ในสารน้ำ · ตามทุก 4–6 ชม. · ECG`);
+  if(ca!==null&&ca<=7)L.push(c('tSz')||c('tArr')?'Ca ต่ำ<b>มีอาการ</b> → calcium gluconate ขนาดต่ำ (ระวัง Ca×P ตกตะกอน)':'Ca ต่ำ <b>ไม่มีอาการ → ไม่ต้องให้ Ca</b>');
+  if(p!==null&&p>=4.5)L.push('P สูง → งดฟอสเฟต · ยาจับฟอสเฟต · สูงมาก+AKI → ล้างไต');
+  if(crit.length&&(k>=6||c('tOl')||(p!==null&&p>=8)||c('tSz')))L.push('<b>ปรึกษาล้างไตเร็ว</b>');
+  L.push(`ตรวจ K P Ca uric Cr ทุก <b>${r==='hi'||lab?'6–8':'8–12'} ชม.</b>`);
+  $('tlOut').innerHTML=L.join('<br>');
+}
+bindAll('#tTl input,#tTl select',tl);
+
+function ma(){
+  const w=num('mW'),n=num('mN'),t=num('mT'),b=+$('mB').value,a=num('mA');const c=id=>$(id).checked;const L=[];
+  const anc=(w!==null&&n!==null)?w*n/100:null;
+  if(anc!==null)L.push(`ANC = <b>${Math.round(anc)}/µL</b>`+(anc<500?' — <b>neutropenia</b>':anc<1000?' — ต่ำ (คาดว่าจะ &lt;500 ไหม? ถ้าใช่ถือเป็น FN)':' — ไม่ neutropenic'));
+  if(t!==null)L.push(t>=38.3?`ไข้ ${t}°C — เข้าเกณฑ์`:t>=38?`${t}°C — เข้าเกณฑ์ถ้า ≥38.0 นาน ≥1 ชม.`:`${t}°C — ยังไม่เข้าเกณฑ์ไข้ (ผู้ป่วยใช้ steroid/สูงอายุอาจไม่มีไข้)`);
+  let s=b+(c('mHypo')?0:5)+(c('mCopd')?0:4)+(c('mFung')?0:4)+(c('mDeh')?0:3)+(c('mIn')?0:3)+(a!==null&&a<60?2:0);
+  L.push(`MASCC = <b>${s}</b>/26 → ${s>=21?'<b>เสี่ยงต่ำ</b>':'<b>เสี่ยงสูง → รับไว้</b>'}`);
+  if(anc!==null&&anc>=1000){L.push('ไม่ใช่ FN → หาแหล่งไข้ตามปกติ');$('maOut').innerHTML=L.join('<br>');return}
+  L.push('<b>Blood culture 2 ชุด แล้วให้ยาภายใน 60 นาที</b>');
+  if(c('mLong'))L.push('<b>คาด ANC <100 หรือ neutropenia >7 วัน → เสี่ยงสูงตาม IDSA แม้ MASCC ≥21 → รับไว้</b>');
+  if(s>=21&&!c('mHypo')&&!c('mVanc')&&!c('mFq')&&!c('mLong')&&!c('mEsbl')&&!c('mIn'))L.push('อาจดูแลแบบผู้ป่วยนอกได้: <b>ciprofloxacin 750 mg bid + amoxicillin/clavulanate 875/125 mg bid</b> (ถ้ากินได้ มีคนดูแล อยู่ใกล้ รพ. โทรติดตามได้ · dose แรกใน รพ.) · แพ้ penicillin: clindamycin แทน amox/clav');
+  else{
+    if(c('mIn'))L.push('ไข้เกิดใน รพ. → ใช้ยา IV ตามสูตรผู้ป่วยใน');
+    const bl=(c('mEsbl')||c('mHypo'))?'<b>Meropenem 1 g IV q8h</b>':'<b>Cefepime 2 g IV q8h</b> หรือ <b>piperacillin/tazobactam 4.5 g IV q6h</b>';
+    L.push('ยา: '+bl+(c('mVanc')||c('mHypo')?' <b>+ vancomycin</b> (หยุดใน 48–72 ชม.ถ้าไม่พบ gram-positive)':''));
+    if(s>=21&&c('mFq'))L.push('<span class="muted">ได้ quinolone ป้องกันอยู่ → ไม่ใช้สูตรกินแบบผู้ป่วยนอก</span>');
+  }
+  if(c('mHypo'))L.push('<b>ช็อก</b> → สารน้ำ 30 mL/kg, vasopressor, ICU · ดูหน้า Sepsis');
+  L.push('<span class="muted">ถ้าอยู่ในพื้นที่ melioidosis และสงสัย → ceftazidime/meropenem</span>');
+  $('maOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMa input,#tMa select',ma);
+
+mountQuiz([
+ ['ผู้ป่วย Burkitt lymphoma หลังเคมีบำบัด 24 ชม. K 6.3, P 6.0, uric 11, Ca 6.8, Cr เพิ่มจาก 0.8 เป็น 2.1 คือ',['Laboratory TLS','Clinical TLS','ยังไม่ใช่ TLS','Pseudohyperkalemia'],1,'Lab ≥2 + Cr ≥1.5×ULN'],
+ ['ก่อนให้ rasburicase ในคนไทย ต้องตรวจอะไร',['HLA-B*58:01','G6PD','TPMT','Ferritin'],1,'Hemolysis/methemoglobinemia · HLA-B*58:01 เกี่ยวกับ allopurinol'],
+ ['ข้อใดไม่แนะนำในการป้องกัน TLS',['สารน้ำ 2–3 L/m²/วัน','Allopurinol ในความเสี่ยงปานกลาง','ให้ sodium bicarbonate ทำปัสสาวะเป็นด่างทุกราย','ตามแล็บถี่'],2,'เพิ่มการตกตะกอน Ca-P'],
+ ['Ca 6.9 mg/dL ใน TLS ไม่มีอาการ P 8 ควรทำอย่างไร',['ให้ calcium gluconate ทันที','ไม่ต้องให้ Ca รักษา P','ให้ vitamin D','ให้ bicarbonate'],1,'Ca×P สูง เสี่ยงตกตะกอน'],
+ ['หลังเคมีบำบัด 10 วัน ไข้ 38.6 ANC 200 BP ปกติ ยาเริ่มต้นที่เหมาะ',['Ceftriaxone','Cefepime หรือ pip/tazo','Vancomycin เดี่ยว','รอผลเพาะเชื้อ'],1,'ต้าน Pseudomonas · vanco เฉพาะมีข้อบ่งชี้'],
+ ['MASCC ≥ เท่าใดถือว่าเสี่ยงต่ำ',['15','18','21','26'],2,'เต็ม 26'],
+ ['ผู้ป่วยมะเร็งเต้านม ปวดหลังส่วนอก 2 สัปดาห์ ขาอ่อนแรงเมื่อเช้า ควรทำอย่างไร',['ยาแก้ปวด นัด 1 เดือน','Dexamethasone 16 mg + MRI ทั้งกระดูกสันหลังภายใน 24 ชม.','X-ray อย่างเดียว','กายภาพบำบัด'],1,'NICE NG234'],
+ ['ผู้ป่วยก้อนที่ mediastinum หน้าบวม ไม่มี stridor สติดี ยังไม่ทราบชนิดมะเร็ง',['ให้ steroid ขนาดสูงทันที','CT + เอาชิ้นเนื้อวินิจฉัยก่อนให้ steroid','ฉายแสงทันทีโดยไม่มีชิ้นเนื้อ','ไม่ต้องทำอะไร'],1,'Steroid อาจบดบัง lymphoma'],
+ ['สงสัย APL (DIC + เลือดออก + promyelocyte) ควร',['รอผล PML-RARA ก่อน','ให้ ATRA ทันที + แก้ coagulopathy','ให้ heparin','ให้ G-CSF'],1,'ELN']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

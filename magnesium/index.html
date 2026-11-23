@@ -1,0 +1,619 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hypo/Hypermagnesemia · แมกนีเซียมต่ำ/สูง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Electrolytes · Nephrology · AHA ACLS · KDIGO · UpToDate-style synthesis</div>
+  <h1>แมกนีเซียมต่ำ/สูง<br>Hypomagnesemia · Hypermagnesemia</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · แมกนีเซียมเป็น "เกลือแร่ที่ถูกลืม" แต่ต่ำแล้วทำให้ <b>K และ Ca แก้ไม่ขึ้น</b>, หัวใจเต้นผิดจังหวะ (<b>torsades de pointes</b>) และชัก · ส่วนสูงมักเกิดจาก <b>ไตวาย + ยาระบาย/ยาลดกรดที่มีแมกนีเซียม</b> หรือการให้ MgSO₄ ในครรภ์เป็นพิษ · หน้านี้เข้าชุดกับหน้า <a href="../phosphate-refeeding/index.html">ฟอสเฟต/refeeding</a>, <a href="../hypokalemia/index.html">K ต่ำ</a> และ <a href="../hypocalcemia/index.html">Ca ต่ำ</a></p>
+  <p class="cite">อ้างอิงหลัก: Ayuk J, Gittoes NJ. How should hypomagnesaemia be investigated and treated? (Clin Endocrinol (Oxf) 2011;75:743–6) · Hansen BA, Bruserud Ø. Hypomagnesemia in critically ill patients (J Intensive Care 2018;6:21) · Van Laecke S. Hypomagnesemia and hypermagnesemia (Acta Clin Belg 2019;74:41–7) · 2025 AHA guidelines: adult advanced life support (Circulation 2025;152 Suppl 2) + ACLS provider manual · ACOG Practice Bulletin 222 (2020) · KDIGO Gitelman syndrome controversies conference (Kidney Int 2017;91:24–33) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Torsades / ชักจากครรภ์เป็นพิษ</b>MgSO₄ IV ทันที (ไม่ต้องรอผล Mg) · ชักทั่วไปให้ benzodiazepine ก่อน ให้ Mg เมื่อ Mg ต่ำ</div>
+    <div class="stage" style="--c:var(--warn)"><b>K หรือ Ca แก้ไม่ขึ้น</b>ตรวจ Mg และแก้ Mg ก่อน · สาเหตุพบบ่อย: PPI, ยาขับปัสสาวะ, สุรา, ท้องเสีย</div>
+    <div class="stage" style="--c:var(--accent)"><b>Mg สูง</b>หยุดแหล่ง Mg · calcium gluconate ถ้ามีอาการ · ล้างไตถ้าไตวาย</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#basic">พื้นฐานและหน่วย</a><a href="#cause">Mg ต่ำ: สาเหตุ</a><a href="#sx">อาการ · ผลต่อ K/Ca</a><a href="#work">แยกสาเหตุ: FEMg</a><a href="#rx">ให้แมกนีเซียม</a><a href="#spec">สถานการณ์พิเศษ</a><a href="#hyper">Mg สูง</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="basic" class="col">
+  <div class="sec-num">01</div>
+  <h2>พื้นฐานและหน่วย</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ค่าที่ต้องจำ</h4><ul><li>ปกติ (ผู้ใหญ่) ราว <b>1.7–2.4 mg/dL</b> (0.7–1.0 mmol/L; ค่าอ้างอิงต่างกันเล็กน้อยตามแล็บ)</li><li><b>mg/dL × 0.411 = mmol/L</b> · 1 mmol = 2 mEq</li><li><b>MgSO₄ 1 g ≈ 4 mmol ≈ 8 mEq</b> Mg²⁺</li><li>MgSO₄ 50% = 500 mg/mL (ขวด/แอมพูลมีหลายขนาด — <b>ดูฉลากเสมอ</b>)</li></ul></div>
+    <div class="card c-warn"><h4>ทำไมค่าในเลือดหลอกได้</h4><ul><li>Mg ในเลือด &lt;1% ของทั้งร่างกาย (ส่วนใหญ่ในกระดูกและเซลล์)</li><li><b>Mg ในเลือดปกติ ยังขาดได้</b> — ถ้า K/Ca ต่ำดื้อการรักษา ให้ Mg ได้ถ้าไตปกติ</li><li>~30% จับ albumin · ใน ICU albumin ต่ำทำให้ค่ารวมต่ำ</li><li>ไตปรับการขับได้เร็ว (ดูดกลับที่ thick ascending limb และ distal tubule)</li></ul></div>
+  </div>
+</section>
+
+<section id="cause" class="col">
+  <div class="sec-num">02</div>
+  <h2>Mg ต่ำ: สาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>กลไก</th><th>สาเหตุ</th></tr>
+    <tr><td><b>เสียทางลำไส้/ดูดซึมลดลง</b></td><td><b>PPI ระยะยาว</b> (omeprazole ฯลฯ ลดการดูดซึมผ่าน TRPM6) · <b>ท้องเสียเรื้อรัง</b>, short bowel, malabsorption · กินน้อย · <b>สุรา</b> · ตับอ่อนอักเสบ (Mg จับไขมัน)</td></tr>
+    <tr><td><b>ไตขับทิ้ง</b></td><td><b>Loop/thiazide diuretics</b> · <b>aminoglycoside, amphotericin B, cisplatin, foscarnet, pentamidine</b> · <b>calcineurin inhibitor</b> (tacrolimus, cyclosporine) · <b>EGFR antibody</b> (cetuximab, panitumumab) · สุรา · DKA/glycosuria · ระยะปัสสาวะมากหลัง ATN/หลังแก้การอุดกั้นทางเดินปัสสาวะ (post-obstructive diuresis) · hypercalcemia · <b>Gitelman</b> (K ต่ำ + Mg ต่ำ + Ca ในปัสสาวะต่ำ)/Bartter</td></tr>
+    <tr><td><b>ย้ายเข้าเซลล์/กระดูก</b></td><td><b>Refeeding</b> · หลังรักษา DKA ด้วย insulin · <b>hungry bone</b> หลังผ่าตัด parathyroid/thyroid · ถอนสุรา · catecholamine</td></tr>
+    <tr><td>อื่นๆ</td><td>Massive transfusion (citrate) · CRRT · ผ่าตัดหัวใจ · ไฟไหม้ · ให้นมบุตร/ตั้งครรภ์</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag add">ไทย</span> ผู้ป่วยที่เจอบ่อย: ผู้สูงอายุกิน omeprazole นานหลายปีร่วมกับ diuretic · ผู้ป่วยสุรา · ท้องเสียหนัก · ผู้ป่วยมะเร็งได้ cisplatin · ผู้ป่วยปลูกถ่ายไตได้ tacrolimus · ผู้ป่วยเชื้อราได้ amphotericin B</p>
+</section>
+
+<section id="sx" class="col">
+  <div class="sec-num">03</div>
+  <h2>อาการ และผลต่อ K/Ca</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>อาการ (มักเมื่อ &lt;1.2 mg/dL)</h4><ul><li><b>หัวใจ</b>: PR/QT ยาว, ventricular arrhythmia, <b>torsades de pointes</b>, ไวต่อพิษ digoxin, AF</li><li><b>ประสาท-กล้ามเนื้อ</b>: สั่น, Chvostek/Trousseau, tetany, ชัก, กล้ามเนื้ออ่อนแรง, nystagmus, สับสน</li><li>อาการส่วนใหญ่ปนกับ K ต่ำ/Ca ต่ำที่มาด้วยกัน</li></ul></div>
+    <div class="card c-warn"><h4>ทำไม K และ Ca แก้ไม่ขึ้น</h4><ul><li><b>K ต่ำ</b>: Mg ในเซลล์ต่ำ ปลดการยับยั้งช่อง ROMK ที่ท่อไตส่วนปลาย → <b>ไตขับ K ทิ้งต่อเนื่อง</b> → ให้ K เท่าไรก็ไม่ขึ้นจนกว่าจะแก้ Mg</li><li><b>Ca ต่ำ</b>: Mg ต่ำมาก (มัก &lt;1.2 mg/dL หรือ 0.5 mmol/L) → <b>หลั่ง PTH ไม่ได้ และอวัยวะดื้อ PTH</b> → Ca ต่ำ + PTH ต่ำ/ปกติ</li><li>จึงควร <b>ตรวจ Mg ทุกครั้งที่ K หรือ Ca ต่ำ</b></li></ul></div>
+  </div>
+</section>
+
+<section id="work" class="col">
+  <div class="sec-num">04</div>
+  <h2>แยกสาเหตุ: FEMg</h2>
+  <p>ส่วนใหญ่สาเหตุชัดจากประวัติ (ยา สุรา ท้องเสีย) · ถ้าไม่ชัด ส่งตรวจ Mg และ creatinine ในปัสสาวะ (spot) พร้อมเลือด <b>ก่อนให้ Mg</b></p>
+  <div class="box key"><b>FEMg</b>= (urine Mg × serum Cr) ÷ (<b>0.7</b> × serum Mg × urine Cr) × 100 (0.7 คือส่วนที่ไม่จับ albumin และกรองผ่านได้) · เมื่อ Mg ในเลือดต่ำ: <b>FEMg &gt;2%</b> (ไตปกติ) หรือ <b>Mg ในปัสสาวะ 24 ชม. &gt;24 mg/วัน</b> (≈1 mmol) → <b>ไตขับทิ้ง</b> · <b>FEMg &lt;2% / &lt;24 mg/วัน</b> → เสียทางลำไส้ ย้ายเข้าเซลล์ หรือกินน้อย</div>
+  <div class="tbl"><table>
+    <tr><th>ภาพ</th><th>คิดถึง</th></tr>
+    <tr><td>K ต่ำ + metabolic alkalosis + BP ปกติ + <b>Ca ในปัสสาวะต่ำ</b> + Mg ต่ำ</td><td><b>Gitelman</b> (หรือ thiazide ที่ซ่อนอยู่)</td></tr>
+    <tr><td>K ต่ำ + alkalosis + Ca ในปัสสาวะสูง</td><td>Bartter หรือ loop diuretic</td></tr>
+    <tr><td>ได้ cisplatin/aminoglycoside/amphotericin/tacrolimus</td><td>พิษต่อท่อไตจากยา · ตาม Mg สม่ำเสมอระหว่างได้ยา</td></tr>
+    <tr><td>FEMg ต่ำ + ใช้ PPI นาน</td><td>PPI-induced hypomagnesemia → <b>หยุด/เปลี่ยนเป็น H2 blocker</b> ถ้าทำได้</td></tr>
+  </table></div>
+</section>
+
+<section id="rx" class="col">
+  <div class="sec-num">05</div>
+  <h2>ให้แมกนีเซียม</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ขนาด (ผู้ใหญ่ ไตปกติ)</th></tr>
+    <tr><td><b>Torsades de pointes / VF ที่สงสัย Mg ต่ำ</b></td><td><b>MgSO₄ 1–2 g IV</b> · cardiac arrest: เจือจางใน 10 mL D5W ให้ IV push/5–20 นาที · torsades มีชีพจร: เจือจางใน 50–100 mL ให้ใน 5–60 นาที (ACLS provider manual) · ให้ซ้ำได้ · AHA 2025: ให้ Mg ใน polymorphic VT ที่ <b>QT ยาว</b> (ไม่ใช้ routine ใน cardiac arrest) · แก้ K ให้ ~4.5–5</td></tr>
+    <tr><td><b>มีอาการ/ชัก/tetany หรือ Mg &lt;1.0 mg/dL</b></td><td><b>MgSO₄ 1–2 g IV ใน 5–60 นาที</b> (ชัก: เร็วได้) แล้วต่อ <b>4–8 g ใน 12–24 ชม.</b> · ให้ต่อ 2–5 วันเพื่อเติมคลัง</td></tr>
+    <tr><td>ไม่มีอาการ 1.0–1.6 mg/dL กินไม่ได้/ICU</td><td>MgSO₄ <b>1–4 g IV</b> หยด ~1 g/ชม. (ช้าดีกว่า — ให้เร็วไตขับทิ้งมาก)</td></tr>
+    <tr><td>ไม่มีอาการ กินได้</td><td><b>ทางปาก</b> แบ่งวันละหลายครั้ง (เช่น magnesium oxide หรือ Mg ชนิดออกฤทธิ์นาน 240–1,000 mg elemental/วัน) · ผลข้างเคียงหลัก <b>ท้องเสีย</b></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ข้อควรระวัง</h4><ul><li><b>ไตเสื่อม (eGFR &lt;30)/AKI: ลดขนาด ~50%</b> ตาม Mg บ่อย · ระวัง Mg สูง</li><li>ระหว่างให้ IV ขนาดสูง: ตาม <b>deep tendon reflex, การหายใจ, BP</b> (ร้อนวูบวาบ ความดันลดได้)</li><li>ตรวจซ้ำหลังให้ ~6–12 ชม. (ค่าขึ้นเร็วแต่คลังยังไม่เต็ม — ค่าที่ขึ้นทันทีหลังให้ IV หลอกว่าพอแล้ว)</li><li>แก้ K และ Ca ไปพร้อมกัน — เมื่อ Mg ต่ำ ให้ Mg ก่อนหรือพร้อม Ca</li><li>ผู้ใช้ digoxin: ตรวจ Mg (Mg ต่ำเพิ่มพิษ digoxin) · ก่อนใช้ PPI ระยะยาวร่วม diuretic/digoxin ตรวจ Mg ตั้งต้น (FDA)</li></ul></div>
+    <div class="card c-ok"><h4>ป้องกันการเป็นซ้ำ</h4><ul><li>หยุด/ลดยาต้นเหตุ (PPI → H2 blocker ถ้าเหมาะ)</li><li>Diuretic: เพิ่ม <b>amiloride/spironolactone</b> ช่วยลดการเสีย Mg และ K</li><li>Gitelman: Mg + KCl ทางปากตลอด ± K-sparing diuretic</li><li>ผู้ป่วยสุรา: thiamine + Mg ด้วยกัน (เอนไซม์ที่ใช้ thiamine ต้องอาศัย Mg — ขาด Mg ให้ thiamine อาจไม่ได้ผล)</li></ul></div>
+  </div>
+</section>
+
+<section id="spec" class="col">
+  <div class="sec-num">06</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>บทบาทของ MgSO₄</th></tr>
+    <tr><td><b>Preeclampsia รุนแรง/eclampsia</b></td><td>ป้องกัน/รักษาชัก: <b>4–6 g IV ใน 20–30 นาที แล้ว 1–2 g/ชม.</b> (ACOG) · ตาม reflex, การหายใจ, ปัสสาวะ · <b>ปัสสาวะน้อย/Cr สูง → ลดหรือหยุด maintenance</b> · ระดับรักษา ~4.8–8.4 mg/dL · พิษ → calcium gluconate</td></tr>
+    <tr><td>Asthma กำเริบรุนแรง</td><td>MgSO₄ 2 g IV ใน 20 นาที ครั้งเดียว เมื่อไม่ตอบสนองยาพ่นเบื้องต้น (ดูหน้า <a href="../asthma-copd/index.html">Asthma/COPD</a>)</td></tr>
+    <tr><td>AF เร็ว / หลังผ่าตัดหัวใจ</td><td>ใช้เสริมได้ (ลดอัตราการเต้น) — ไม่ใช่ยาหลัก</td></tr>
+    <tr><td>Torsades de pointes</td><td>ยาหลัก แม้ Mg ปกติ · หยุดยาที่ทำให้ QT ยาว แก้ K ให้ ~4.5–5 (อย่างน้อย ≥4) · อัตราช้า → overdrive pacing/isoproterenol</td></tr>
+    <tr><td>DKA, refeeding, ถอนสุรา</td><td>Mg ต่ำร่วมกับ P/K ต่ำบ่อย — ตรวจและแก้ด้วยกัน</td></tr>
+  </table></div>
+</section>
+
+<section id="hyper" class="col">
+  <div class="sec-num">07</div>
+  <h2>Mg สูง</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>สาเหตุและอาการ</h4><ul><li>เกือบทุกรายมี <b>ไตวาย/AKI + ได้ Mg</b>: ยาระบาย <b>milk of magnesia (Mg hydroxide)</b>, Mg citrate/ยาเตรียมลำไส้, ยาลดกรด, ยาสวน Mg · <b>MgSO₄ IV</b> (ครรภ์เป็นพิษ) · ผู้สูงอายุท้องผูก/ลำไส้ไม่เคลื่อน <span class="tag add">ไทย</span></li><li>อื่นๆ: tumor lysis, rhabdo, lithium, hypothyroid, adrenal insufficiency (มักเล็กน้อย)</li><li>อาการตามระดับ (โดยประมาณ): <b>4–6 mg/dL</b> คลื่นไส้ ร้อนวูบวาบ ง่วง · <b>6–10</b> reflex ลด/หาย, ความดันต่ำ, หัวใจช้า, ECG ผิดปกติ · <b>&gt;10–12</b> หายใจล้มเหลว, อัมพาต, complete heart block · <b>&gt;15</b> หัวใจหยุดเต้น</li><li><b>Deep tendon reflex หายไป</b> เป็นสัญญาณเตือนแรกที่ตรวจข้างเตียงได้</li></ul></div>
+    <div class="card c-acc"><h4>รักษา</h4><ul><li><b>หยุดแหล่ง Mg ทั้งหมด</b> (ทบทวนยาระบาย/ยาลดกรด)</li><li>มีอาการหัวใจ/หายใจ/reflex หาย → <b>calcium gluconate 10% 10–20 mL IV</b> (1–2 g) ใน 5–10 นาที (ต้านฤทธิ์ชั่วคราว) · ซ้ำได้</li><li>ไตยังดี: <b>NSS + furosemide</b> เพิ่มการขับ (ระวังน้ำเกิน/Ca ต่ำ)</li><li><b>ไตวาย หรือรุนแรง → ล้างไต</b> (hemodialysis ได้ผลเร็ว)</li><li>ช่วยหายใจ · temporary pacing ถ้าหัวใจช้ามาก</li></ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">08</div>
+    <h2>แผนผัง: Mg ต่ำ</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Mg ต่ำ (หรือ K/Ca ต่ำดื้อการรักษา)</b>ECG · K · Ca · P · Cr</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Torsades/arrhythmia/ชัก/tetany?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>MgSO₄ 1–2 g IV</b>ทันที แล้ว 4–8 g ใน 12–24 ชม.</div></div>
+        <div class="arm"><span class="lab">ไม่ · &lt;1.0 / กินไม่ได้</span><div class="node dx hypo"><b>IV ช้าๆ</b>~1 g/ชม. · ไตเสื่อมลดครึ่ง</div></div>
+        <div class="arm"><span class="lab">ไม่ · กินได้</span><div class="node dx green"><b>ทางปาก</b>แบ่งหลายมื้อ</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>หาสาเหตุ</b>PPI · diuretic · สุรา · ท้องเสีย · ยาพิษต่อไต · FEMg (&gt;2% = ไตขับทิ้ง)</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดความเข้มข้นยาและโปรโตคอลของ รพ.</p>
+  </div>
+  <div class="tool plan" id="tMg" style="margin-top:12px">
+    <h3>แผนให้แมกนีเซียม</h3>
+    <div class="fields">
+      <label class="f">Mg (mg/dL)<input type="number" step="0.1" id="gMg" value="0.9"></label>
+      <label class="f">eGFR (mL/min/1.73m²)<input type="number" id="gEg" value="70"></label>
+      <label class="f">K (mmol/L)<input type="number" step="0.1" id="gK" value="2.9"></label>
+      <label class="f">Ca (mg/dL)<input type="number" step="0.1" id="gCa" value="7.6"></label>
+      <label class="f">หน่วยของ Mg<select id="gU"><option value="mg">mg/dL</option><option value="mmol">mmol/L</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="gTdp"> Torsades/ventricular arrhythmia</label>
+      <label><input type="checkbox" id="gSz"> ชัก/tetany</label>
+      <label><input type="checkbox" id="gPo" checked> กินได้</label>
+      <label><input type="checkbox" id="gPpi"> ใช้ PPI ระยะยาว</label>
+      <label><input type="checkbox" id="gDiu"> ใช้ loop/thiazide</label>
+      <label><input type="checkbox" id="gEtoh"> ดื่มสุรา</label>
+    </div>
+    <div class="out" id="mgOut"></div>
+  </div>
+
+  <div class="tool" id="tFe" style="margin-top:12px">
+    <h3>FEMg</h3>
+    <div class="fields">
+      <label class="f">Serum Mg (mg/dL)<input type="number" step="0.1" id="fSm" value="1.2"></label>
+      <label class="f">Serum Cr (mg/dL)<input type="number" step="0.01" id="fSc" value="0.9"></label>
+      <label class="f">Urine Mg (mg/dL)<input type="number" step="0.1" id="fUm" value="6"></label>
+      <label class="f">Urine Cr (mg/dL)<input type="number" step="0.1" id="fUc" value="80"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="fGiven"> เพิ่งได้ Mg ทาง IV ใน 24 ชม.</label></div>
+    <div class="out" id="feOut"></div>
+  </div>
+
+  <div class="tool" id="tHy" style="margin-top:12px">
+    <h3>Mg สูง: ต้องทำอะไร</h3>
+    <div class="fields">
+      <label class="f">Mg (mg/dL)<input type="number" step="0.1" id="hMg" value="7.5"></label>
+      <label class="f">eGFR<input type="number" id="hEg" value="25"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="hRef" checked> Reflex ลด</label>
+      <label><input type="checkbox" id="hRefL"> Reflex หาย</label>
+      <label><input type="checkbox" id="hBrady"> หัวใจช้า/ความดันต่ำ/ECG ผิดปกติ</label>
+      <label><input type="checkbox" id="hResp"> หายใจช้า/ซึมมาก</label>
+      <label><input type="checkbox" id="hPreg"> กำลังได้ MgSO₄ (ครรภ์เป็นพิษ)</label>
+    </div>
+    <div class="out" id="hyOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">10</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>K/Ca ต่ำดื้อการรักษา → ตรวจและแก้ Mg</b></div></div>
+    <div class="pearl"><div><b>Torsades → MgSO₄ 2 g IV</b> แม้ Mg ปกติ</div></div>
+    <div class="pearl"><div><b>MgSO₄ 1 g ≈ 4 mmol ≈ 8 mEq</b></div></div>
+    <div class="pearl"><div><b>PPI ระยะยาว</b> สาเหตุที่ถูกมองข้าม</div></div>
+    <div class="pearl"><div><b>ให้ IV ช้าๆ</b> คลังเติมดีกว่า ไตขับทิ้งน้อยกว่า</div></div>
+    <div class="pearl"><div><b>ไตเสื่อม → ลดขนาดครึ่ง</b> ตามค่าบ่อย</div></div>
+    <div class="pearl"><div><b>FEMg &gt;2% ทั้งที่ Mg ต่ำ = ไตขับทิ้ง</b></div></div>
+    <div class="pearl"><div><b>Gitelman: K ต่ำ + Mg ต่ำ + Ca ปัสสาวะต่ำ</b></div></div>
+    <div class="pearl"><div><b>Mg สูง = ไตวาย + ยาระบาย/ยาลดกรด Mg</b></div></div>
+    <div class="pearl"><div><b>Reflex หาย = เตือนพิษ Mg</b> → calcium gluconate</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">11</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hypokalemia/index.html">Hypokalemia →</a> · <a href="../hypocalcemia/index.html">Hypocalcemia →</a> · <a href="../phosphate-refeeding/index.html">Phosphate / refeeding →</a> · <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal →</a> · <a href="../ckd/index.html">CKD →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Ayuk J, Gittoes NJ. How should hypomagnesaemia be investigated and treated? Clin Endocrinol 2011;75:743–6 · 2) Hansen BA, Bruserud Ø. Hypomagnesemia in critically ill patients. J Intensive Care 2018;6:21 · 3) Van Laecke S. Hypomagnesemia and hypermagnesemia. Acta Clin Belg 2019;74:41–7 · 4) Wigginton JG, et al. Part 9: Adult advanced life support: 2025 AHA guidelines for CPR and ECC. Circulation 2025;152(16 Suppl 2):S538–77 · 5) ACOG Practice Bulletin No. 222: Gestational hypertension and preeclampsia. Obstet Gynecol 2020;135:e237–60 · 6) Blanchard A, Bockenhauer D, Bolignano D, et al. Gitelman syndrome: consensus and guidance from a KDIGO controversies conference. Kidney Int 2017;91:24–33 · 7) Huang CL, Kuo E. Mechanism of hypokalemia in magnesium deficiency. J Am Soc Nephrol 2007;18:2649–52 · 8) U.S. FDA Drug Safety Communication: low magnesium levels with long-term PPI use (2011)<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','mgView');
+mountWalker({
+ start:{q:'ปัญหาคืออะไร?',o:[['Mg ต่ำ / K หรือ Ca ต่ำดื้อการรักษา','lo'],['Mg สูง','hi'],['Torsades de pointes','tdp']]},
+ tdp:{leaf:true,cls:'danger',t:'Torsades de pointes',b:'<b>MgSO₄ 1–2 g IV</b> (มีชีพจร: เจือจาง 50–100 mL ใน 5–60 นาที · ไม่มีชีพจร → defibrillate + push) · ไม่ต้องรอผล Mg · หยุดยาที่ทำให้ QT ยาว · แก้ K ให้ ~4.5–5 (อย่างน้อย ≥4) · ซ้ำได้'},
+ lo:{q:'มีอาการรุนแรง (arrhythmia, ชัก, tetany) หรือ Mg &lt;1.0 mg/dL?',o:[['ใช่','sev'],['ไม่','mild']]},
+ sev:{leaf:true,cls:'danger',t:'ให้ทางหลอดเลือด',b:'MgSO₄ 1–2 g IV ใน 5–60 นาที แล้ว 4–8 g ใน 12–24 ชม. · ไตเสื่อมลดครึ่ง · ตาม reflex/BP/การหายใจ · แก้ K, Ca ร่วม',next:['หาสาเหตุ','why']},
+ mild:{q:'กินได้และไม่มีลำไส้ผิดปกติ?',o:[['ได้','po'],['ไม่ได้/ICU','iv']]},
+ po:{leaf:true,cls:'ok',t:'ทางปาก',b:'Mg ทางปากแบ่งหลายมื้อ · ท้องเสียเป็นผลข้างเคียง · ตรวจซ้ำในไม่กี่วัน',next:['หาสาเหตุ','why']},
+ iv:{leaf:true,cls:'warn',t:'IV ช้าๆ',b:'MgSO₄ 1–4 g หยด ~1 g/ชม. · ตรวจซ้ำ 6–12 ชม.หลังให้',next:['หาสาเหตุ','why']},
+ why:{q:'สาเหตุชัดจากประวัติไหม?',o:[['ชัด (PPI, diuretic, สุรา, ท้องเสีย, ยา, refeeding)','obv'],['ไม่ชัด','fe']]},
+ obv:{leaf:true,cls:'ok',t:'แก้ที่ต้นเหตุ',b:'PPI → พิจารณา H2 blocker · diuretic → เพิ่ม amiloride/spironolactone · สุรา → thiamine + Mg · ยาพิษต่อท่อไต → ตาม Mg ระหว่างให้ยา'},
+ fe:{q:'FEMg (ก่อนให้ Mg)?',o:[['&gt;2%','ren'],['&lt;2%','gi']]},
+ ren:{leaf:true,cls:'warn',t:'ไตขับทิ้ง',b:'ทบทวนยา (diuretic, aminoglycoside, amphotericin, cisplatin, calcineurin inhibitor, EGFR Ab) · K ต่ำ + alkalosis + Ca ปัสสาวะต่ำ → Gitelman · Ca ปัสสาวะสูง → Bartter/loop · hypercalcemia · ระยะปัสสาวะมาก'},
+ gi:{leaf:true,cls:'ok',t:'ลำไส้/ย้ายเข้าเซลล์',b:'PPI ระยะยาว · ท้องเสียเรื้อรัง · กินน้อย · ตับอ่อนอักเสบ · hungry bone · refeeding'},
+ hi:{q:'Reflex หาย, หัวใจช้า/ความดันต่ำ หรือหายใจช้า?',o:[['มี','hiSev'],['ไม่มี','hiMild']]},
+ hiSev:{leaf:true,cls:'danger',t:'พิษ Mg',b:'หยุด Mg ทุกแหล่ง · <b>calcium gluconate 10% 10–20 mL IV</b> · ช่วยหายใจ · <b>ล้างไต</b>ถ้าไตวาย/รุนแรง · ไตดี: NSS + furosemide'},
+ hiMild:{leaf:true,cls:'ok',t:'Mg สูงเล็กน้อย',b:'หยุดยาระบาย/ยาลดกรดที่มี Mg · ตรวจไต · ตามค่า reflex และ ECG'}
+},'apTrail','apStage');
+
+function mgPlan(){
+  let m=num('gMg');const eg=num('gEg'),k=num('gK'),ca=num('gCa');const c=id=>$(id).checked;const L=[];
+  if(m===null){$('mgOut').textContent='ใส่ค่า Mg';return}
+  if($('gU').value==='mmol'){if(m>1.6)L.push('<b>ค่านี้สูงเกินสำหรับ mmol/L — ตรวจหน่วยอีกครั้ง</b>');L.push(`${m} mmol/L = <b>${(m/0.411).toFixed(2)} mg/dL</b>`);m=m/0.411;}
+  const ren=eg!==null&&eg<30;
+  if(c('gTdp'))L.push('<b>Torsades → MgSO₄ 1–2 g IV</b> (มีชีพจร: ใน 50–100 mL ให้ 5–60 นาที; arrest: push) ไม่ต้องรอผล · ซ้ำได้ · แก้ K ให้ ~4.5–5');
+  if(m>2.4){L.push(`Mg ${m.toFixed(1)} mg/dL <b>สูง</b> → ไม่ต้องให้เพื่อทดแทน · ถ้ามี torsades ร่วม ปรึกษาก่อนให้ซ้ำ · ใช้เครื่องมือ Mg สูง`);$('mgOut').innerHTML=L.join('<br>');return}
+  const sev=((c('gTdp')||c('gSz'))&&m<1.7)||m<1.0;
+  if(c('gSz')&&m>=1.7)L.push('ชักขณะ Mg ปกติ → Mg ไม่ใช่ยาหลัก (ยกเว้นครรภ์เป็นพิษ) · รักษาตามแนวทางชัก');
+  if(eg===null)L.push('<span class="muted">ไม่ได้ใส่ eGFR — คำนวณแบบไตปกติ</span>');
+  if(m>=1.7&&!sev){L.push(`Mg ${m.toFixed(1)} mg/dL อยู่ในเกณฑ์ปกติ`+((k!==null&&k<3.5)||(ca!==null&&ca<8.5)?' · แต่ถ้า K/Ca ต่ำดื้อการรักษาและไตปกติ ให้ Mg เสริมได้ (คลังอาจพร่อง)':''));}
+  else if(sev){
+    if(!c('gTdp'))L.push(`<b>${c('gSz')?'ชัก/tetany':'Mg <1.0 mg/dL'} → MgSO₄ 1–2 g IV</b> ใน ${c('gSz')?'5–15':'15–60'} นาที`);
+    L.push(`ต่อด้วย <b>${ren?'2–4':'4–8'} g IV ใน 12–24 ชม.</b>${ren?' (<b>ลดครึ่งเพราะ eGFR <30</b>)':''} · ให้ต่อ 2–5 วันเพื่อเติมคลัง (ต่อเป็นทางปากได้)`);
+  }else{
+    if(c('gPo'))L.push('ไม่มีอาการ กินได้ → <b>Mg ทางปาก</b> แบ่งวันละหลายครั้ง · ท้องเสีย → ลดขนาด/แบ่งถี่'+(ren?' · <b>eGFR <30: ลดขนาด ตาม Mg ใกล้ชิด</b>':''));
+    else L.push(`กินไม่ได้ → <b>MgSO₄ ${ren?'1–2':'2–4'} g IV หยด ~1 g/ชม.</b>${ren?' (ลดเพราะไตเสื่อม)':''}`);
+  }
+  if(eg!==null&&eg<15)L.push('<b>eGFR <15/ฟอกไต</b>: ให้ทีละ 1 g แล้วเจาะ Mg ซ้ำก่อนให้ต่อ · ปรึกษาอายุรแพทย์โรคไต');
+  if(k!==null&&k<3.5)L.push(`K ${k} ต่ำ → <b>แก้ Mg ไปพร้อมกัน</b> ไม่งั้น K ไม่ขึ้น (ไตขับ K ทิ้งต่อ)`);
+  if(ca!==null&&ca<8.5)L.push(`Ca ${ca} ต่ำ → Mg ต่ำมากทำให้ PTH หลั่งไม่ได้ · แก้ Mg ก่อน/พร้อมกัน (ปรับ Ca ตาม albumin)`);
+  if(sev||!c('gPo'))L.push('ระหว่างให้ IV: ตาม reflex, BP, การหายใจ · ตรวจ Mg ซ้ำ 6–12 ชม.หลังให้'+(ren?' · <b>ไตเสื่อม ตามบ่อยขึ้น</b>':''));
+  const why=[c('gPpi')?'PPI → พิจารณาหยุด/เปลี่ยนเป็น H2 blocker':null,c('gDiu')?'diuretic → พิจารณาเพิ่ม amiloride/spironolactone':null,c('gEtoh')?'สุรา → thiamine + Mg ร่วม, ระวัง refeeding':null].filter(Boolean);
+  if(why.length)L.push('ต้นเหตุ: '+why.join(' · '));
+  $('mgOut').innerHTML=L.join('<br>');
+}
+bindAll('#tMg input,#tMg select',mgPlan);
+
+function fe(){
+  const sm=num('fSm'),sc=num('fSc'),um=num('fUm'),uc=num('fUc');const L=[];
+  if([sm,sc,um,uc].some(v=>!v)){$('feOut').textContent='ใส่ค่าให้ครบ';return}
+  const f=(um*sc)/(0.7*sm*uc)*100;
+  L.push(`FEMg = <b>${f.toFixed(1)}%</b>`);
+  if($('fGiven').checked)L.push('<b>เพิ่งได้ Mg IV → FEMg สูงขึ้นเอง แปลผลไม่ได้</b> — ตรวจก่อนให้ Mg หรือหลังหยุด 24 ชม.ขึ้นไป');
+  else if(sm>=1.7)L.push('<span class="muted">Mg ในเลือดไม่ต่ำ — FEMg ใช้แปลเมื่อ Mg ต่ำ</span>');
+  else if(f>2)L.push('<b>&gt;2% → ไตขับทิ้ง</b>: diuretic, aminoglycoside, amphotericin, cisplatin, calcineurin inhibitor, EGFR antibody, สุรา, Gitelman/Bartter, ระยะปัสสาวะมาก'+(sc>=2?' <span class="muted">(Cr สูง: FEMg สูงขึ้นเองได้ แปลด้วยความระวัง)</span>':''));
+  else L.push('<b>&lt;2% → ไตเก็บ Mg ดี</b> → เสียทางลำไส้ (PPI, ท้องเสีย), กินน้อย, ย้ายเข้าเซลล์ (refeeding, hungry bone)');
+  $('feOut').innerHTML=L.join('<br>');
+}
+bindAll('#tFe input',fe);
+
+function hy(){
+  const m=num('hMg'),eg=num('hEg');const c=id=>$(id).checked;const L=[];
+  if(m===null){$('hyOut').textContent='ใส่ค่า Mg';return}
+  if(m<=2.4){$('hyOut').innerHTML='Mg ไม่สูง';return}
+  const sev=c('hBrady')||c('hResp')||c('hRefL');
+  L.push(m>12?'<b>สูงมาก (&gt;12)</b> — เสี่ยงหายใจล้มเหลว/หัวใจหยุดเต้น':m>6?'<b>สูงปานกลาง–มาก (6–12)</b> — reflex ลด/หาย ความดันต่ำ หัวใจช้าได้':m>4?'สูง (4–6) — คลื่นไส้ ร้อนวูบวาบ ง่วง':'สูงเล็กน้อย — มักไม่มีอาการ');
+  L.push('<b>หยุดแหล่ง Mg ทั้งหมด</b> (ยาระบาย/ยาลดกรด/ยาสวน/MgSO₄ IV)');
+  if(sev||m>10)L.push('<b>Calcium gluconate 10% 10–20 mL IV ใน 5–10 นาที</b> (ซ้ำได้) · ช่วยหายใจถ้าจำเป็น · monitor ECG');
+  if(c('hRefL'))L.push('Reflex หาย → <b>calcium gluconate 10% 10–20 mL IV</b> · หยุด Mg · monitor การหายใจ/ECG');
+  else if(c('hRef')&&!(sev||m>10))L.push('Reflex ลด → หยุด Mg ทันที ตามใกล้ชิด · เตรียม calcium gluconate');
+  if(c('hPreg'))L.push('ครรภ์เป็นพิษ: <b>หยุด MgSO₄ drip</b> · reflex หาย/หายใจช้า → calcium gluconate 1 g IV · ตามปัสสาวะ (ไตขับไม่ทัน → สะสม)');
+  if(eg!==null&&eg<30)L.push(`eGFR ${eg} → ไตขับไม่ได้ · ${sev||m>8?'<b>ปรึกษาล้างไต</b>':'ตามค่าใกล้ชิด พิจารณาล้างไตถ้าเพิ่มขึ้น/มีอาการ'}`);
+  else if(eg===null)L.push('ไม่ได้ใส่ eGFR — Mg สูงส่วนใหญ่มีไตวาย ตรวจ Cr ก่อน · อย่าเริ่ม NSS + furosemide จนกว่าจะรู้ว่าไตยังดี');
+  else L.push('ไตยังดี → NSS + furosemide ช่วยขับ (ระวังน้ำเกิน)'+(sev?' · ไม่ตอบสนอง → ล้างไต':''));
+  $('hyOut').innerHTML=L.join('<br>');
+}
+bindAll('#tHy input',hy);
+
+mountQuiz([
+ ['หญิง 70 ปี กิน omeprazole 5 ปี + HCTZ K 2.8 ให้ KCl 3 วันยังไม่ขึ้น ควรทำอะไรต่อ',['เพิ่ม KCl เป็นสองเท่า','ตรวจ Mg และแก้ Mg','ให้ insulin','ตรวจ cortisol'],1,'Mg ต่ำ → ไตขับ K ทิ้งต่อเนื่อง'],
+ ['MgSO₄ 1 g มี Mg ประมาณเท่าใด',['1 mmol','4 mmol (8 mEq)','10 mmol','20 mEq'],1,'MW MgSO₄·7H₂O ~246'],
+ ['ECG เป็น torsades de pointes มีชีพจร การรักษาแรก',['Amiodarone','MgSO₄ 2 g IV','Procainamide','Adenosine'],1,'แม้ Mg ปกติ'],
+ ['Mg 1.1 mg/dL Ca 6.8 PTH ต่ำ-ปกติ สาเหตุที่ Ca ต่ำ',['Primary hypoparathyroidism แน่นอน','Mg ต่ำมากทำให้หลั่ง PTH ไม่ได้/ดื้อ PTH','Vitamin D เกิน','Pseudohypocalcemia'],1,'แก้ Mg แล้ว Ca มักดีขึ้น'],
+ ['FEMg 6% ขณะ Mg ในเลือด 1.2 mg/dL (ยังไม่ได้ให้ Mg) บ่งชี้',['เสียทางลำไส้','ไตขับทิ้ง','ย้ายเข้าเซลล์','ค่าปกติ'],1,'>2%'],
+ ['K ต่ำ + metabolic alkalosis + BP ปกติ + Mg ต่ำ + Ca ในปัสสาวะต่ำ คิดถึง',['Bartter','Gitelman','Conn syndrome','RTA type 1'],1,'Ca ปัสสาวะต่ำ = Gitelman/thiazide'],
+ ['ผู้ป่วย CKD stage 5 กิน milk of magnesia ทุกวัน ซึม reflex หาย BP 85/50 Mg 9 การรักษาที่เหมาะ',['ให้ MgSO₄','Calcium gluconate IV + หยุด Mg + ปรึกษาล้างไต','Furosemide อย่างเดียว','สังเกตอาการ'],1,'ไตวาย → ล้างไต'],
+ ['ข้อใดถูกเกี่ยวกับการให้ MgSO₄ IV ในไตเสื่อม eGFR 20',['ให้ขนาดเท่าเดิม','ลดขนาดราวครึ่งและตามค่าบ่อย','ห้ามให้เด็ดขาด','ให้เร็วขึ้น'],1,'เสี่ยง Mg สูง']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

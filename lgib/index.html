@@ -1,0 +1,578 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lower GI bleeding · เลือดออกทางเดินอาหารส่วนล่าง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Gastroenterology · ACG 2023 · BSG 2019 · ESGE 2021</div>
+  <h1>เลือดออกทางเดินอาหารส่วนล่าง<br>Lower GI bleeding</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ถ่ายเป็นเลือดสด/เลือดแดงคล้ำ (hematochezia) จากลำไส้ใหญ่และทวาร · ส่วนใหญ่หยุดเอง แต่ต้อง <b>แยกเลือดออกส่วนบนที่ออกเร็ว</b>, แยกผู้ป่วยเสี่ยงต่ำที่กลับบ้านได้ (<b>Oakland score</b>), ใช้ <b>CTA</b> เมื่อยังออกและความดันไม่คงที่ และจัดการยาต้านเกล็ดเลือด/ยาต้านการแข็งตัวของเลือด · ใช้คู่กับหน้า <a href="../ugib/index.html">เลือดออกทางเดินอาหารส่วนบน</a></p>
+  <p class="cite">อ้างอิงหลัก: Sengupta N, et al. Management of patients with acute lower GI bleeding: an updated ACG guideline (Am J Gastroenterol 2023;118:208–31) · Oakland K, et al. BSG guideline: diagnosis and management of acute lower GI bleeding (Gut 2019;68:776–89) · Oakland K, et al. Derivation and validation of a novel risk score for safe discharge after acute LGIB (Lancet Gastroenterol Hepatol 2017;2:635–43) · Triantafyllou K, et al. ESGE guideline: diagnosis and management of acute LGIB (Endoscopy 2021;53:850–68) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>เลือดสด + ช็อก</b>คิดเลือดออกส่วนบน ~11–15% → พิจารณา EGD ก่อน · shock index &gt;1 → CTA</div>
+    <div class="stage" style="--c:var(--accent)"><b>Oakland ≤8</b>เสี่ยงต่ำ กลับบ้านได้ · นัด colonoscopy แบบผู้ป่วยนอก</div>
+    <div class="stage" style="--c:var(--warn)"><b>Colonoscopy ไม่ต้องรีบ</b>ทำระหว่างนอน รพ.หลังเตรียมลำไส้ · ภายใน 24 ชม. ไม่ได้ลดตาย</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#cause">สาเหตุ</a><a href="#init">ประเมินแรกรับ</a><a href="#upper">แยกเลือดออกส่วนบน</a><a href="#risk">Oakland score</a><a href="#tx">ให้เลือด</a><a href="#ac">ยาต้านเกล็ดเลือด/การแข็งตัวของเลือด</a><a href="#dx">CTA · colonoscopy</a><a href="#spec">โรคเฉพาะ</a><a href="#thai">รพ.ที่ไม่มีกล้อง</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="cause" class="col">
+  <div class="sec-num">01</div>
+  <h2>สาเหตุ</h2>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>ลักษณะ</th></tr>
+    <tr><td><b>Diverticular bleeding</b> (พบบ่อยในผู้สูงอายุ)</td><td>เลือดออกมาก <b>ไม่ปวดท้อง</b> หยุดเองส่วนใหญ่ · ในเอเชียพบด้านขวาได้มาก · ความเสี่ยง: NSAIDs, aspirin, anticoagulant</td></tr>
+    <tr><td><b>ริดสีดวงทวาร</b></td><td>เลือดสดหยดตามหลังอุจจาระ/ติดกระดาษ · ปริมาณน้อย · <b>อย่าสรุปว่าเป็นริดสีดวงในผู้ที่อายุมาก/มีเลือดจาง/น้ำหนักลด</b> → ต้องส่องกล้อง</td></tr>
+    <tr><td><b>Ischemic colitis</b></td><td>ผู้สูงอายุ <b>ปวดท้องแบบบิดก่อน แล้วถ่ายเลือดปนเหลว</b> · หลังความดันต่ำ/ขาดน้ำ · ส่วนใหญ่หายเอง</td></tr>
+    <tr><td>Angiodysplasia</td><td>เลือดออกซ้ำ/ซีด ผู้สูงอายุ ไตวาย aortic stenosis</td></tr>
+    <tr><td>หลังตัดติ่งเนื้อ (post-polypectomy)</td><td>ทันที หรือ ล่าช้า (ส่วนใหญ่ภายใน 1 สัปดาห์ แต่ได้ถึง ~30 วัน)</td></tr>
+    <tr><td><b>มะเร็งลำไส้ใหญ่/ทวารหนัก</b></td><td>เลือดปนอุจจาระ ซีดเรื้อรัง ขับถ่ายเปลี่ยน น้ำหนักลด</td></tr>
+    <tr><td>ลำไส้อักเสบ (IBD, ติดเชื้อ)</td><td>ถ่ายเหลวปนเลือด ไข้ ปวดเบ่ง · ดูหน้า <a href="../gi-infection/index.html">ท้องร่วงเฉียบพลัน</a></td></tr>
+    <tr><td>อื่นๆ</td><td>Radiation proctitis, stercoral/solitary rectal ulcer (ผู้สูงอายุท้องผูก), anal fissure (ปวดมาก), Meckel's diverticulum (คนอายุน้อย)</td></tr>
+  </table></div>
+</section>
+
+<section id="init" class="col">
+  <div class="sec-num">02</div>
+  <h2>ประเมินแรกรับและกู้ชีพ</h2>
+  <ul><li>สัญญาณชีพ · <b>shock index</b> = HR ÷ SBP (&gt;1 = ไม่คงที่) · เปิดเส้น 2 เส้น · CBC, BUN/Cr, coag, group &amp; cross-match</li>
+  <li>ซักประวัติ: ยา (<b>aspirin, clopidogrel, warfarin, DOAC, NSAIDs</b>), เคยเลือดออก, ตัดติ่งเนื้อล่าสุด, โรคตับ (varices), ฉายแสงอุ้งเชิงกราน</li>
+  <li><b>ตรวจทางทวารหนัก (DRE)</b> ทุกราย ± <b>ส่องทวาร (anoscopy)</b> — ดูลักษณะเลือด หาก้อน ริดสีดวง</li>
+  <li>สารน้ำ crystalloid ตามความดัน · <b>ไม่ให้มากเกิน</b></li></ul>
+</section>
+
+<section id="upper" class="col">
+  <div class="sec-num">03</div>
+  <h2>แยกเลือดออกทางเดินอาหารส่วนบน</h2>
+  <div class="box warn"><b>Hematochezia + ช็อก</b>ราว 11–15% (BSG 2019) มาจาก<b>ส่วนบน</b> (แผลกระเพาะ/ลำไส้เล็กส่วนต้น เลือดออกเร็ว) · ACG/BSG: ถ้าความดันไม่คงที่และสงสัยส่วนบน (ประวัติแผล ยา NSAIDs ตับแข็ง <b>BUN:Cr สูง &gt;30</b>) → <b>EGD ก่อน</b> · ใส่ NG ดูดได้เลือดหรือน้ำดีช่วยตัดสินบ้าง แต่ไม่แม่น</div>
+</section>
+
+<section id="risk" class="col">
+  <div class="sec-num">04</div>
+  <h2>Oakland score: ใครกลับบ้านได้</h2>
+  <div class="tbl"><table>
+    <tr><th>ตัวแปร</th><th>คะแนน</th></tr>
+    <tr><td>อายุ</td><td>&lt;40 = 0 · 40–69 = 1 · ≥70 = 2</td></tr>
+    <tr><td>เพศชาย</td><td>1</td></tr>
+    <tr><td>เคยนอน รพ.ด้วย LGIB</td><td>1</td></tr>
+    <tr><td>DRE พบเลือด</td><td>1</td></tr>
+    <tr><td>ชีพจร</td><td>&lt;70 = 0 · 70–89 = 1 · 90–109 = 2 · ≥110 = 3</td></tr>
+    <tr><td>SBP</td><td>50–89 = 5 · 90–119 = 4 · 120–129 = 3 · 130–159 = 2 · ≥160 = 0</td></tr>
+    <tr><td>Hb (g/dL)</td><td>3.6–6.9 = 22 · 7.0–8.9 = 17 · 9.0–10.9 = 13 · 11.0–12.9 = 8 · 13.0–15.9 = 4 · ≥16 = 0</td></tr>
+  </table></div>
+  <div class="box key"><b>แปลผล</b><b>≤8</b> = เสี่ยงต่ำ (BSG 2019, ACG 2023) → กลับบ้านได้ถ้าไม่มีเหตุอื่น และนัดตรวจลำไส้แบบผู้ป่วยนอก · ใช้ร่วมกับดุลยพินิจเสมอ (ผู้ป่วยกินยาต้านการแข็งตัว ไม่มีผู้ดูแล โรคร่วมมาก → พิจารณารับไว้)</div>
+</section>
+
+<section id="tx" class="col">
+  <div class="sec-num">05</div>
+  <h2>ให้เลือด</h2>
+  <ul><li><b>Restrictive</b> (ผู้ป่วยที่คงที่): ให้เลือดเมื่อ <b>Hb &lt;7 g/dL</b> (เป้า 7–9) · โรคหัวใจหลอดเลือด: <b>Hb &lt;8</b> (เป้า ~10) — เกณฑ์ ACG 2023 / เป้าหมาย BSG 2019</li>
+  <li>เลือดออกมาก/ช็อก ให้ตามอาการ ไม่รอค่า Hb</li>
+  <li>เลือดออกรุนแรง: ให้เกล็ดเลือดถ้า &lt;30,000 (&lt;50,000 ถ้าจะทำหัตถการผ่านกล้อง) · ไม่ให้ routine ในผู้กินยาต้านเกล็ดเลือด</li><li><b>ไม่แนะนำ tranexamic acid</b> ใน LGIB (ACG 2023)</li><li>หัตถการผ่านกล้องทำได้ปลอดภัยเมื่อ INR ≤2.5</li></ul>
+</section>
+
+<section id="ac" class="col">
+  <div class="sec-num">06</div>
+  <h2>ยาต้านเกล็ดเลือดและยาต้านการแข็งตัวของเลือด</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>แนวทาง (ACG 2023)</th></tr>
+    <tr><td><b>Aspirin ป้องกันปฐมภูมิ</b></td><td><b>หยุด</b> และส่วนใหญ่ไม่ต้องเริ่มใหม่</td></tr>
+    <tr><td><b>Aspirin ป้องกันทุติยภูมิ</b> (เคยเป็น MI/stroke/stent)</td><td><b>ไม่หยุด</b> หรือหยุดสั้นที่สุด · เริ่มใหม่ทันทีที่เลือดหยุด (หยุดนานเพิ่มเหตุการณ์หัวใจ)</td></tr>
+    <tr><td>DAPT (เช่น stent ใหม่)</td><td>ปรึกษาอายุรแพทย์โรคหัวใจ · มักคง aspirin หยุด P2Y12 ชั่วคราว เริ่มใหม่ภายใน ~5 วัน</td></tr>
+    <tr><td><b>Warfarin</b></td><td>หยุดชั่วคราว · <b>ย้อนฤทธิ์ (4F-PCC + vitamin K) เฉพาะเลือดออกรุนแรงเป็นอันตรายถึงชีวิต</b> · ACG: ไม่แนะนำ FFP/PCC ทุกรายที่ INR สูง</td></tr>
+    <tr><td><b>DOAC</b></td><td>หยุดชั่วคราว (ฤทธิ์หมดใน 1–2 วันถ้าไตปกติ) · ยาต้านฤทธิ์เฉพาะ: idarucizumab (dabigatran) · andexanet alfa (apixaban/rivaroxaban) ถ้าไม่มี → 4F-PCC — <b>เฉพาะเลือดออกคุกคามชีวิตที่ไม่ตอบสนองต่อการกู้ชีพ และกินยาภายใน 24 ชม.</b></td></tr>
+    <tr><td>เริ่มยาต้านการแข็งตัวใหม่</td><td>เมื่อเลือดหยุดแล้ว (BSG: ความเสี่ยงลิ่มเลือดต่ำ ภายใน ~7 วัน; สูง เช่นลิ้นหัวใจกลชนิด mitral → LMWH ราว 48 ชม.)</td></tr>
+    <tr><td>NSAIDs</td><td><b>หยุด</b> (เพิ่มเลือดออกซ้ำจาก diverticula)</td></tr>
+  </table></div>
+</section>
+
+<section id="dx" class="col">
+  <div class="sec-num">07</div>
+  <h2>CTA และ colonoscopy</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>CT angiography (CTA)</h4><ul><li><b>ยังเลือดออกและความดันไม่คงที่</b> (shock index &gt;1) → <b>CTA เป็นการตรวจแรก</b> (ACG/BSG) หลังกู้ชีพ</li><li>พบรอยรั่ว → <b>embolization</b> โดยรังสีร่วมรักษา (ควรทำเร็วที่สุด (BSG: ภายใน 60 นาทีใน รพ.ที่มีรังสีร่วมรักษา 24 ชม.; ACG: ทำภายใน 90 นาทีพบจุดเลือดออกมากกว่า) · CTA ไม่พบจุดออกในผู้ป่วยไม่คงที่ → EGD ทันที) หรือ colonoscopy เฉพาะจุด</li><li>ไม่คุ้มในเลือดออกน้อย/หยุดแล้ว (ผลมักลบ)</li><li>ระวังไตจากสารทึบรังสี — แต่ไม่ใช่เหตุให้เลื่อนในผู้ป่วยไม่คงที่</li></ul></div>
+    <div class="card c-acc"><h4>Colonoscopy</h4><ul><li>แนะนำในผู้ป่วยส่วนใหญ่ที่นอน รพ. <b>หลังเตรียมลำไส้</b> (PEG 4–6 L ใน 3–4 ชม. หรือจนใส · ใส่ NG ถ้าดื่มไม่ได้และไม่เสี่ยงสำลัก)</li><li><b>ภายใน 24 ชม. ไม่ลดเลือดออกซ้ำ/ตาย</b>เมื่อเทียบกับทำภายหลังระหว่างนอน รพ. (ACG 2023)</li><li>รักษาผ่านกล้อง: clip (diverticula), APC (angiodysplasia), clip/ฉีด (post-polypectomy)</li><li>อาจไม่ต้องทำซ้ำถ้าเลือดหยุดและเพิ่งส่องกล้องคุณภาพดีใน 12 เดือนที่พบแค่ diverticulosis</li><li>ไม่พบจุดเลือดออก + ส่วนบนปกติ → นึกถึงลำไส้เล็ก (capsule, CT enterography)</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ผ่าตัด: เมื่อเลือดออกต่อทั้งที่ทำ embolization/กล้องไม่สำเร็จ · ทราบตำแหน่งก่อนผ่าตัดเสมอถ้าทำได้ (ตัดลำไส้ใหญ่ทั้งหมดโดยไม่รู้ตำแหน่งมีอัตราตายสูง)</p>
+</section>
+
+<section id="spec" class="col">
+  <div class="sec-num">08</div>
+  <h2>โรคเฉพาะที่ควรรู้</h2>
+  <ul><li><b>Diverticular bleeding</b>: ส่วนใหญ่หยุดเอง (~80%) · กลับเป็นซ้ำได้ (~10–40%) · หยุด NSAIDs · aspirin ปฐมภูมิหยุด</li>
+  <li><b>Ischemic colitis</b>: CT เห็นผนังลำไส้หนา · ส่วนใหญ่สารน้ำ พักลำไส้ · ปวดมาก/peritonitis/lactate สูง/ด้านขวา → ศัลยกรรม (เสี่ยงเนื้อตาย) · แยก acute mesenteric ischemia (ปวดมากเกินกว่าตรวจร่างกาย)</li>
+  <li><b>Angiodysplasia</b>: ซีดจากเลือดออกเรื้อรัง · APC · ให้ธาตุเหล็ก</li>
+  <li><b>Radiation proctitis</b>: หลังฉายแสงมะเร็งปากมดลูก/ต่อมลูกหมาก · APC, sucralfate enema <span class="tag add">ไทย</span></li></ul>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">09</div>
+  <h2>โรงพยาบาลที่ไม่มีกล้อง/CTA</h2>
+  <ul><li>กู้ชีพ ให้เลือดแบบ restrictive หยุด NSAIDs/aspirin ปฐมภูมิ หยุด anticoagulant</li>
+  <li><b>ส่งต่อ</b>: ความดันไม่คงที่/shock index &gt;1 ต่อเนื่อง · ต้องให้เลือดซ้ำ · Hb ลดเร็ว · สงสัยส่วนบน · ใช้ยาต้านการแข็งตัวที่เลือดไม่หยุด</li>
+  <li>Oakland ≤8 และไม่มีเหตุอื่น → นัดส่องกล้องลำไส้แบบผู้ป่วยนอก (โดยเฉพาะอายุ ≥45–50 ปี หรือมีเลือดจาง/อาการเตือนมะเร็ง)</li>
+  <li>ผู้ที่ดูเหมือนริดสีดวงแต่ <b>อายุ ≥45–50 ปี/ซีด/น้ำหนักลด/ประวัติครอบครัวมะเร็งลำไส้</b> → ส่งส่องกล้อง</li></ul>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ถ่ายเป็นเลือดสด/แดงคล้ำ</b>สัญญาณชีพ · shock index · CBC BUN/Cr coag · DRE · ยา</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ไม่คงที่ (shock index &gt;1)?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ใช่ + สงสัยส่วนบน</span><div class="node red"><b>EGD ก่อน</b>BUN:Cr &gt;30, แผล, NSAIDs, ตับแข็ง</div></div>
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>CTA</b>→ embolization · ศัลยกรรมถ้าล้มเหลว</div></div>
+        <div class="arm"><span class="lab">คงที่</span><div class="node dx hypo"><b>Oakland</b>≤8 กลับบ้าน · &gt;8 รับไว้ → colonoscopy หลังเตรียมลำไส้</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ยา</b>aspirin ทุติยภูมิคงไว้ · ปฐมภูมิหยุด · anticoagulant หยุด/ย้อนฤทธิ์เฉพาะรุนแรง · หยุด NSAIDs</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น</p>
+  </div>
+  <div class="tool plan" id="tOk" style="margin-top:12px">
+    <h3>Oakland score + แผนแรกรับ</h3>
+    <div class="fields">
+      <label class="f">อายุ<input type="number" id="oA" value="72"></label>
+      <label class="f">เพศ<select id="oS"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">ชีพจร (/นาที)<input type="number" id="oHr" value="96"></label>
+      <label class="f">SBP (mmHg)<input type="number" id="oSbp" value="118"></label>
+      <label class="f">Hb (g/dL)<input type="number" step="0.1" id="oHb" value="10.2"></label>
+      <label class="f">BUN (mg/dL)<input type="number" id="oBun" placeholder="ไม่บังคับ"></label>
+      <label class="f">Cr (mg/dL)<input type="number" step="0.01" id="oCr" placeholder="ไม่บังคับ"></label>
+      <label class="f">ยา<select id="oDrug"><option value="none">ไม่มี</option><option value="asa1">Aspirin ป้องกันปฐมภูมิ</option><option value="asa2">Aspirin ป้องกันทุติยภูมิ</option><option value="dapt">DAPT</option><option value="warf">Warfarin</option><option value="doac">DOAC</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="oPrev"> เคยนอน รพ.ด้วย LGIB</label>
+      <label><input type="checkbox" id="oDre" checked> DRE พบเลือด</label>
+      <label><input type="checkbox" id="oOng"> ยังออกต่อเนื่อง</label>
+      <label><input type="checkbox" id="oUp"> ประวัติแผลกระเพาะ/NSAIDs/ตับแข็ง</label>
+      <label><input type="checkbox" id="oCv"> โรคหัวใจหลอดเลือด</label>
+      <label><input type="checkbox" id="oLife"> เลือดออกรุนแรงคุกคามชีวิต</label>
+    </div>
+    <div class="out" id="okOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Hematochezia + ช็อก → คิดส่วนบน</b> · BUN:Cr &gt;30</div></div>
+    <div class="pearl"><div><b>DRE ทุกราย</b></div></div>
+    <div class="pearl"><div><b>Oakland ≤8 กลับบ้านได้</b></div></div>
+    <div class="pearl"><div><b>Shock index &gt;1 + ยังออก → CTA</b> → embolization</div></div>
+    <div class="pearl"><div><b>Colonoscopy หลังเตรียมลำไส้</b> ไม่ต้องรีบใน 24 ชม.</div></div>
+    <div class="pearl"><div><b>ให้เลือด Hb &lt;7</b> (หัวใจ &lt;8)</div></div>
+    <div class="pearl"><div><b>Aspirin ทุติยภูมิอย่าหยุด</b> · ปฐมภูมิหยุด</div></div>
+    <div class="pearl"><div><b>ย้อนฤทธิ์ anticoagulant เฉพาะรุนแรง</b></div></div>
+    <div class="pearl"><div><b>หยุด NSAIDs</b></div></div>
+    <div class="pearl"><div><b>ปวดบิดแล้วถ่ายเลือดในผู้สูงอายุ = ischemic colitis</b></div></div>
+    <div class="pearl"><div><b>"ริดสีดวง" ในผู้สูงอายุ/ซีด → ส่องกล้อง</b></div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../ugib/index.html">UGIB →</a> · <a href="../anemia/index.html">Anemia →</a> · <a href="../af/index.html">AF (anticoagulant) →</a> · <a href="../vte/index.html">VTE →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Sengupta N, Feuerstein JD, Jairath V, et al. Management of patients with acute lower gastrointestinal bleeding: an updated ACG guideline. Am J Gastroenterol 2023;118:208–31 · 2) Oakland K, Chadwick G, East JE, et al. Diagnosis and management of acute lower gastrointestinal bleeding: guidelines from the British Society of Gastroenterology. Gut 2019;68:776–89 · 3) Oakland K, Jairath V, Uberoi R, et al. Derivation and validation of a novel risk score for safe discharge after acute lower gastrointestinal bleeding: a modelling study. Lancet Gastroenterol Hepatol 2017;2:635–43 · 4) Triantafyllou K, Gkolfakis P, Gralnek IM, et al. Diagnosis and management of acute lower gastrointestinal bleeding: ESGE guideline. Endoscopy 2021;53:850–68 · 5) Niikura R, Nagata N, Yamada A, et al. Efficacy and safety of early vs elective colonoscopy for acute lower gastrointestinal bleeding. Gastroenterology 2020;158:168–75 · 6) Brandt LJ, Feuerstadt P, Longstreth GF, Boley SJ. ACG clinical guideline: epidemiology, risk factors, patterns of presentation, diagnosis, and management of colon ischemia. Am J Gastroenterol 2015;110:18–44<br>
+  <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','lgView');
+mountWalker({
+ start:{q:'ถ่ายเป็นเลือดสด/แดงคล้ำ — สัญญาณชีพ?',o:[['ไม่คงที่ (shock index &gt;1, SBP &lt;90)','uns'],['คงที่','st']]},
+ uns:{q:'สงสัยเลือดออกส่วนบน? (แผล NSAIDs ตับแข็ง BUN:Cr &gt;30 NG มีเลือด)',o:[['ใช่','egd'],['ไม่','cta']]},
+ egd:{leaf:true,cls:'danger',t:'EGD ก่อน',b:'กู้ชีพ ให้เลือด · PPI IV · <b>EGD</b> · ปกติ → CTA/colonoscopy · ดูหน้า UGIB'},
+ cta:{leaf:true,cls:'danger',t:'CTA',b:'กู้ชีพ · <b>CTA</b> → พบรอยรั่ว → <b>embolization</b> โดยเร็ว · ไม่พบ + ยังไม่คงที่ → <b>EGD ทันที</b> · คงที่แล้ว → colonoscopy หลังเตรียมลำไส้ · ล้มเหลว → ศัลยกรรม · ไม่มี CTA/IR → ส่งต่อ'},
+ st:{q:'Oakland score?',o:[['≤8','low'],['&gt;8','adm']]},
+ low:{leaf:true,cls:'ok',t:'เสี่ยงต่ำ',b:'กลับบ้านได้ถ้าไม่มีเหตุอื่น · หยุด NSAIDs · นัด colonoscopy แบบผู้ป่วยนอก (โดยเฉพาะอายุ ≥45–50/ซีด) · อาการเตือนให้กลับ'},
+ adm:{leaf:true,cls:'warn',t:'รับไว้',b:'ให้เลือดเมื่อ Hb &lt;7 (หัวใจ &lt;8) · จัดการยา · <b>colonoscopy หลังเตรียมลำไส้</b> ระหว่างนอน รพ. (ไม่ต้องภายใน 24 ชม.) · ออกซ้ำไม่คงที่ → CTA'}
+},'apTrail','apStage');
+
+function ok(){
+  const a=num('oA'),hr=num('oHr'),sbp=num('oSbp');let hb=num('oHb');const _x=0,bun=num('oBun'),cr=num('oCr'),dr=$('oDrug').value;const c=id=>$(id).checked;const L=[];
+  let hbNote='';if(hb!==null&&hb>25){hb=hb/10;hbNote=`แปลง Hb จาก g/L เป็น <b>${hb.toFixed(1)} g/dL</b>`;}
+  const miss=[a,hr,sbp,hb].some(v=>v===null);
+  let s=0;
+  if(a!==null)s+=a>=70?2:a>=40?1:0;
+  if($('oS').value==='m')s+=1;if(c('oPrev'))s+=1;if(c('oDre'))s+=1;
+  if(hr!==null)s+=hr>=110?3:hr>=90?2:hr>=70?1:0;
+  if(sbp!==null)s+=sbp>=160?0:sbp>=130?2:sbp>=120?3:sbp>=90?4:5;
+  if(hb!==null)s+=hb>=16?0:hb>=13?4:hb>=11?8:hb>=9?13:hb>=7?17:22;
+  const si=(hr&&sbp)?hr/sbp:null;
+  L.push(`Oakland = <b>${s}</b>`+(miss?' <span class="muted">(กรอกไม่ครบ)</span>':'')+(si!==null?` · shock index <b>${si.toFixed(2)}</b>`:''));
+  const uns=(si!==null&&si>1)||(sbp!==null&&sbp<90);
+  if(uns){
+    L.push('<b>ไม่คงที่</b> → กู้ชีพ เปิดเส้น 2 เส้น cross-match');
+    const up=c('oUp')||(bun&&cr&&bun/cr>30);
+    if(up)L.push(`<b>สงสัยส่วนบน</b>${bun&&cr?` (BUN:Cr ${(bun/cr).toFixed(0)})`:''} → <b>EGD ก่อน</b> + PPI IV`);
+    L.push(c('oOng')?'ยังออกต่อเนื่อง → <b>CTA</b> → embolization · ไม่มี CTA/IR → ส่งต่อ':'ถ้ายังออก → CTA');
+  }else if(!miss){
+    const lowOK=s<=8&&!c('oLife')&&!c('oOng');
+    L.push(lowOK?'<b>≤8 เสี่ยงต่ำ</b> → กลับบ้านได้ถ้าไม่มีเหตุอื่น (ยาต้านการแข็งตัว ไม่มีผู้ดูแล โรคร่วม) · นัด colonoscopy':s<=8?'Oakland ≤8 แต่ยังออก/รุนแรง → <b>รับไว้</b> ไม่ใช้ score ตัดสินกลับบ้าน':'<b>&gt;8</b> → รับไว้ · colonoscopy หลังเตรียมลำไส้ระหว่างนอน รพ.');
+    if(bun&&cr&&bun/cr>30)L.push(`BUN:Cr ${(bun/cr).toFixed(0)} สูง → พิจารณาเลือดออกส่วนบน`);
+    if(c('oOng'))L.push('ยังออกต่อเนื่อง → รับไว้ · ถ้ามากหรือสัญญาณชีพแย่ลง → CTA');
+  }
+  if(hbNote)L.push(hbNote);
+  if(cr!==null&&cr>20)L.push('<b>ตรวจหน่วย Cr (ต้องเป็น mg/dL)</b>');
+  if(uns)L.push('<b>ไม่คงที่ → ให้เลือดตามสัญญาณชีพ/การเสียเลือด ไม่รอค่า Hb</b> (Hb แรกรับอาจยังไม่ลด)');
+  else if(hb!==null){const t=c('oCv')?8:7;L.push(hb<t?`<b>Hb ${hb} &lt;${t} → ให้เลือด</b> (เกณฑ์ ACG 2023; เป้า ${c('oCv')?'~10':'7–9'} ตาม BSG)`:`Hb ${hb} — ยังไม่ต้องให้เลือดถ้าไม่ออกต่อ (เกณฑ์ ${t})`);}
+  const D={none:null,asa1:'Aspirin ปฐมภูมิ → <b>หยุด</b> (ส่วนใหญ่ไม่ต้องเริ่มใหม่)',asa2:'Aspirin ทุติยภูมิ → <b>คงไว้/หยุดสั้นที่สุด</b> เริ่มใหม่ทันทีที่เลือดหยุด',dapt:'DAPT → ปรึกษาโรคหัวใจ · มักคง aspirin หยุด P2Y12 ชั่วคราว (เริ่มใหม่ ~5 วัน)',warf:'Warfarin → หยุด · '+(c('oLife')?'<b>คุกคามชีวิต → 4F-PCC + vitamin K IV</b>':'ไม่ย้อนฤทธิ์ routine (เฉพาะคุกคามชีวิต)'),doac:'DOAC → หยุด · '+(c('oLife')?'<b>คุกคามชีวิตที่ไม่ตอบสนองการกู้ชีพ + กินยาภายใน 24 ชม. → idarucizumab (dabigatran) · andexanet alfa (apixaban/rivaroxaban) ถ้าไม่มี → 4F-PCC</b>':'ไม่ย้อนฤทธิ์ routine · ฤทธิ์หมดใน 1–2 วันถ้าไตปกติ')}[dr];
+  if(D)L.push(D);
+  L.push('<span class="muted">หยุด NSAIDs · DRE ± anoscopy · หลังเลือดหยุดค่อยประเมินเริ่ม anticoagulant ใหม่</span>');
+  $('okOut').innerHTML=L.join('<br>');
+}
+bindAll('#tOk input,#tOk select',ok);
+
+mountQuiz([
+ ['ชาย 65 ปี ถ่ายเลือดแดงคล้ำมาก HR 125 SBP 85 มีประวัติกิน NSAIDs BUN 60 Cr 1.0 ควรทำอะไรก่อน',['Colonoscopy ทันที','กู้ชีพ + EGD','กลับบ้าน','Barium enema'],1,'BUN:Cr 60 + ช็อก → คิดส่วนบน'],
+ ['Oakland score ≤ เท่าใดถือว่าเสี่ยงต่ำ กลับบ้านได้',['4','8','12','16'],1,'ACG 2023 / BSG 2019'],
+ ['ผู้ป่วยยังเลือดออก shock index 1.3 ไม่สงสัยส่วนบน การตรวจแรกที่แนะนำ',['Colonoscopy ไม่เตรียมลำไส้','CT angiography','Capsule endoscopy','Tagged RBC scan เท่านั้น'],1,'→ embolization'],
+ ['ข้อใดถูกเกี่ยวกับ timing ของ colonoscopy ใน LGIB ที่คงที่',['ต้องทำภายใน 6 ชม.','ทำภายใน 24 ชม. ไม่ได้ลดตาย/เลือดออกซ้ำ ทำหลังเตรียมลำไส้ระหว่างนอน รพ. ได้','ไม่ต้องทำเลย','ทำได้หลังจำหน่าย 3 เดือนเท่านั้น'],1,'ACG 2023'],
+ ['ผู้ป่วยกิน aspirin หลังใส่ stent 3 ปี มี LGIB หยุดแล้ว ควร',['หยุด aspirin ถาวร','เริ่ม aspirin ใหม่โดยเร็ว','เปลี่ยนเป็น warfarin','เพิ่ม clopidogrel'],1,'Secondary prevention'],
+ ['ผู้ป่วย DOAC มี LGIB เล็กน้อย Hb 11 สัญญาณชีพคงที่',['ให้ PCC ทันที','หยุด DOAC ชั่วคราว ไม่ต้องย้อนฤทธิ์','ให้ FFP','ให้ vitamin K'],1,'ย้อนฤทธิ์เฉพาะคุกคามชีวิต'],
+ ['หญิง 78 ปี ปวดท้องซ้ายแบบบิด แล้วถ่ายเหลวปนเลือด หลังท้องเสียขาดน้ำ คิดถึง',['Diverticular bleeding','Ischemic colitis','Hemorrhoids','Angiodysplasia'],1,'ปวดนำก่อนเลือด'],
+ ['เกณฑ์ให้เลือดใน LGIB ที่ไม่มีโรคหัวใจ (ACG 2023)',['Hb <10','Hb <9','Hb <7','Hb <5'],2,'โรคหัวใจ <8']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
