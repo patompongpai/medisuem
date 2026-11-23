@@ -1,0 +1,941 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Infective endocarditis · เยื่อบุหัวใจอักเสบติดเชื้อ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Infectious disease · Cardiology · ESC 2023 · Duke-ISCVID 2023 · AHA scientific statement 2026</div>
+  <h1>เยื่อบุหัวใจอักเสบติดเชื้อ<br>Infective endocarditis (IE)</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · IE เป็นโรคที่ <b>"ต้องนึกถึงก่อนจึงจะเจอ"</b> — ไข้ + เสียงฟู่, ไข้ในผู้มีลิ้นหัวใจเทียม/เครื่องกระตุ้นหัวใจ, ผู้ใช้สารเสพติดฉีด, เชื้อ <i>S. aureus</i>/streptococcus ในเลือด หรือมีลิ่มอุดตันหลอดเลือดโดยไม่ทราบสาเหตุ · หน้านี้ช่วยตั้งแต่ <b>สงสัย → เจาะ blood culture 3 ชุด → echo → ใช้เกณฑ์ Duke → เริ่มยา → ประเมินผ่าตัด → ส่งต่อ</b> พร้อมขนาดยาที่ปรับตามไต และบริบทไทย (<i>S. suis</i>, โรคหัวใจรูมาติก, ได้ยาฆ่าเชื้อมาก่อนเพาะเชื้อ)</p>
+  <p class="cite">อ้างอิงหลัก: Delgado V, et al. 2023 ESC Guidelines for the management of endocarditis (Eur Heart J 2023;44:3948–4042) · Fowler VG Jr, et al. The 2023 Duke-ISCVID criteria for infective endocarditis (Clin Infect Dis 2023;77:518–26) · DeSimone DC, et al. Infective endocarditis: diagnosis, antibiotic therapy, and management — AHA scientific statement (Circulation 2026;154:e593–e619) · Baddour LM, et al. AHA scientific statement on IE in adults (Circulation 2015;132:1435–86) · Wilson WR, et al. AHA prevention of viridans group streptococcal IE (Circulation 2021;143:e963–78) · Iversen K, et al. POET trial (N Engl J Med 2019;380:415–24) · Watt G, et al. Infective endocarditis in northeastern Thailand (Emerg Infect Dis 2014;20:473–6) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Blood culture 3 ชุด ก่อนยา</b>คนละแทง ห่างกัน ~30 นาที ชุดละ 10 mL (aerobic + anaerobic) · ช็อก → เจาะ 3 ชุดเร็วๆ แล้วให้ยาทันที</div>
+    <div class="stage" style="--c:var(--warn)"><b>TTE ก่อน → TEE เกือบทุกราย</b>TEE บังคับใน prosthetic valve/CIED, TTE ไม่ชัด, ก่อนเปลี่ยนเป็นยากิน · ลบแต่ยังสงสัย → ซ้ำใน 5–7 วัน</div>
+    <div class="stage" style="--c:var(--accent)"><b>ส่ง Endocarditis Team เร็ว</b>HF, abscess, เชื้อดื้อ/รา, vegetation ≥10 mm + emboli → ผ่าตัด emergency (&lt;24 ชม.) หรือ urgent (3–5 วัน)</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#suspect">ใครต้องสงสัย IE</a><a href="#work">Blood culture · echo · imaging</a><a href="#duke">เกณฑ์ Duke 2023</a><a href="#bcne">Culture-negative · บริบทไทย</a><a href="#emp">ยาเริ่มต้น (empirical)</a><a href="#path">ยาตามเชื้อ</a><a href="#oral">เปลี่ยนเป็นยากิน (POET)</a><a href="#surg">ผ่าตัด · Endocarditis Team</a><a href="#neuro">ภาวะแทรกซ้อนทางสมอง</a><a href="#prev">ยาป้องกันก่อนทำฟัน</a><a href="#fu">ติดตามระหว่าง/หลังรักษา</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="suspect" class="col">
+  <div class="sec-num">01</div>
+  <h2>ใครต้องสงสัย IE</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>สงสัยทันที เมื่อมีไข้ร่วมกับ</h4><ul><li><b>เสียงฟู่ใหม่</b> หรือเสียงฟู่เดิมเปลี่ยน</li><li><b>ลิ้นหัวใจเทียม</b> (ผ่าตัด/TAVI) หรือเคยซ่อมลิ้น · <b>เคยเป็น IE</b></li><li><b>CIED</b> (pacemaker, ICD, CRT) · สายฟอกไต/สายสวนหลอดเลือดค้าง</li><li><b>ผู้ใช้สารเสพติดฉีด (PWID)</b> — มักเป็นลิ้น tricuspid + <i>S. aureus</i> · มีปอดอักเสบหลายจุด/ฝีปอด (septic pulmonary emboli)</li><li>โรคหัวใจรูมาติก โรคหัวใจพิการแต่กำเนิด ลิ้นตีบ/รั่วมากกว่าเล็กน้อย HOCM</li><li><b>ลิ่มอุดตันโดยไม่ทราบสาเหตุ</b>: stroke ในคนอายุน้อยที่มีไข้, ม้าม/ไตขาดเลือด, แขนขาขาดเลือดเฉียบพลัน</li><li>ไข้ + <b>AV block ใหม่</b> (สงสัย aortic root abscess)</li></ul></div>
+    <div class="card c-warn"><h4>เชื้อในเลือดที่ต้องคิดถึง IE</h4><ul><li><b><i>S. aureus</i> bacteremia</b> — ต้องทำ echo ทุกราย <span class="rec">IIa · B</span></li><li><b>Viridans (oral) streptococci, <i>S. gallolyticus</i></b> (เดิมคือ <i>S. bovis</i> → <b>ส่องกล้องลำไส้ใหญ่</b> หามะเร็ง)</li><li><b><i>E. faecalis</i></b> โดยเฉพาะชุมชน ไม่มีแหล่งติดเชื้ออื่น</li><li><b>HACEK</b> (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella)</li><li><i>S. lugdunensis</i> · <i>Streptococcus suis</i> <span class="tag add">ไทย</span></li><li>เชื้อขึ้นซ้ำหลายชุด/เพาะเชื้อยังขึ้นแม้ได้ยาเหมาะสม</li></ul></div>
+  </div>
+  <p>ลักษณะอื่นที่ช่วย: อาการกึ่งเฉียบพลัน (น้ำหนักลด ซีด ม้ามโต นิ้วปุ้ม) · <b>Osler nodes</b> (ปุ่มเจ็บที่ปลายนิ้ว), <b>Janeway lesions</b> (จุดแดงไม่เจ็บที่ฝ่ามือ/ฝ่าเท้า), <b>Roth spots</b>, เลือดออกใต้เยื่อบุตา/ใต้เล็บ · glomerulonephritis (ปัสสาวะมีเลือด/โปรตีน) · กระดูกสันหลังอักเสบติดเชื้อ (spondylodiscitis) ที่เพาะได้เชื้อ typical → หา IE ด้วย echo <span class="rec s1">I · C</span></p>
+  <div class="box warn"><b>Acute vs subacute</b><b>Acute</b> (มักเป็น <i>S. aureus</i>): ไข้สูง ป่วยหนักภายในวัน ลิ้นพังเร็ว HF/ช็อก → เจาะ blood culture แล้วให้ยาทันที · <b>Subacute</b> (viridans strep, enterococcus, HACEK): ไข้ต่ำๆ เป็นสัปดาห์–เดือน อ่อนเพลีย น้ำหนักลด · ผู้ป่วยกึ่งเฉียบพลันที่อาการคงที่ AHA 2015 ยอมให้<b>รอผลเพาะเชื้อ 24–48 ชม.</b> (และเจาะเพิ่ม) ก่อนเริ่มยาได้ เพื่อไม่ให้เพาะเชื้อไม่ขึ้น</div>
+</section>
+
+<section id="work" class="col">
+  <div class="sec-num">02</div>
+  <h2>Blood culture · echo · imaging</h2>
+  <div class="box key"><b>Blood culture (ESC 2023)</b><b>อย่างน้อย 3 ชุด</b> จากหลอดเลือดดำส่วนปลาย <b>คนละแทง ห่างกัน ~30 นาที</b> ชุดละ <b>10 mL</b> ใส่ทั้งขวด aerobic และ anaerobic · <b>ก่อนให้ยาฆ่าเชื้อ</b> · ไม่ต้องรอให้มีไข้ (เชื้อในเลือดของ IE ออกต่อเนื่อง) · ไม่เจาะจากสายสวนที่ค้างไว้ (ปนเปื้อนง่าย) · แจ้งห้องแล็บว่าสงสัย IE (บางแล็บบ่มนานขึ้น) · ได้ยามาก่อน → เพาะเชื้อไม่ขึ้นได้บ่อย</div>
+  <div class="tbl"><table>
+    <tr><th>ตรวจ</th><th>ใช้เมื่อ (ESC 2023)</th></tr>
+    <tr><td><b>TTE</b></td><td>ตรวจแรกทุกรายที่สงสัย <span class="rec s1">I · B</span> · ราคาถูก ทำได้ข้างเตียง แต่ไวต่ำ (ราว 40–66%) โดยเฉพาะลิ้นเทียม/abscess</td></tr>
+    <tr><td><b>TEE</b></td><td>TTE ลบ/ไม่ชัดแต่ยังสงสัย <span class="rec s1">I · B</span> · <b>มีลิ้นหัวใจเทียมหรือ CIED</b> <span class="rec s1">I · B</span> · <b>แม้ TTE บวก ก็แนะนำ TEE</b> (ดู abscess, perforation) ยกเว้น IE ลิ้นขวาข้างเดียวที่ TTE ภาพดีและชัดเจน <span class="rec s1">I · C</span> · <b>ก่อนเปลี่ยนเป็นยากิน</b> <span class="rec s1">I · B</span></td></tr>
+    <tr><td>Echo ซ้ำ</td><td>ครั้งแรกลบ/ไม่ชัดแต่ยังสงสัยมาก → <b>ซ้ำใน 5–7 วัน</b> <span class="rec s1">I · C</span> · ทันทีที่สงสัยภาวะแทรกซ้อนใหม่ (เสียงฟู่ใหม่, emboli, ไข้/เชื้อในเลือดไม่หาย, HF, AV block) <span class="rec s1">I · B</span> · <b>จบการรักษา</b> (ไม่ได้ผ่าตัด) เป็น baseline ใหม่ <span class="rec s1">I · C</span></td></tr>
+    <tr><td><b>Cardiac CTA</b></td><td>Possible NVE เพื่อหา lesion ยืนยันวินิจฉัย <span class="rec s1">I · B</span> · หา abscess/pseudoaneurysm เมื่อ echo ไม่ชัด <span class="rec s1">I · B</span> · ใช้แทน coronary angiography ก่อนผ่าตัดในรายที่มี vegetation ที่ลิ้น aortic</td></tr>
+    <tr><td><b>[18F]FDG-PET/CT</b></td><td>Possible <b>PVE</b> (ร่วมกับ cardiac CTA) <span class="rec s1">I · B</span> · สงสัย CIED-IE <span class="rec">IIb · B</span> · ไม่ช่วยในลิ้นธรรมชาติ (ไวต่ำ)</td></tr>
+    <tr><td>WBC SPECT/CT</td><td>สงสัย PVE มาก echo ลบ/ไม่ชัด และไม่มี PET/CT <span class="rec">IIa · C</span></td></tr>
+    <tr><td><b>CT/MRI สมองและทั้งตัว</b></td><td>ผู้ป่วยมีอาการสงสัย emboli (ปวดหัว อ่อนแรง ปวดท้อง/หลัง) <span class="rec s1">I · B</span> · คัดกรองในผู้ไม่มีอาการ <span class="rec">IIb · B</span> · พบ emboli ที่ไม่มีอาการ = นับเป็น minor criterion ได้</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4><i>S. aureus</i> bacteremia (SAB)</h4><ul><li><b>Echo ทุกราย</b> (TTE ก่อน) · TEE เมื่อมีลิ้นเทียม/CIED, เชื้อในเลือดยังขึ้น &gt;72 ชม., ไม่ทราบแหล่ง/ได้มาจากชุมชน, มี emboli หรือ spondylodiscitis, PWID, ฟอกไต</li><li>VIRSTA score ช่วยเลือกผู้ที่ไม่ต้อง TEE (คะแนน ≤2 = เสี่ยงต่ำมาก) <span class="tag add">เสริม</span></li><li>เจาะ blood culture ซ้ำทุก 24–48 ชม. จนลบ — วันแรกที่ลบใช้นับระยะเวลายา</li></ul></div>
+    <div class="card c-warn"><h4>ในไทย <span class="tag add">ไทย</span></h4><ul><li><b>TEE, cardiac CT, PET/CT</b> มีเฉพาะ รพ.ศูนย์/โรงเรียนแพทย์ → รพ.ชุมชน/ทั่วไป: เจาะ blood culture 3 ชุด + TTE (ถ้าทำได้) + เริ่มยา แล้ว<b>ส่งต่อ</b>/ปรึกษาเครือข่ายเร็ว</li><li>ไม่มีแล็บเพาะเชื้อ: เก็บขวดเลือดส่งต่อพร้อมผู้ป่วย อย่าให้ยาก่อนเจาะ</li></ul></div>
+  </div>
+</section>
+
+<section id="duke" class="col">
+  <div class="sec-num">03</div>
+  <h2>เกณฑ์ Duke 2023: Duke-ISCVID เทียบ ESC 2023</h2>
+  <p>มีเกณฑ์ปรับปรุงพร้อมกัน 2 ชุดในปี 2023 · <b>วิธีนับเหมือนกัน</b>: <b>Definite</b> = พยาธิ/เพาะเชื้อจากลิ้น หรือ <b>2 major</b> หรือ <b>1 major + 3 minor</b> หรือ <b>5 minor</b> · <b>Possible</b> = 1 major + 1 minor หรือ 3 minor · <b>Rejected</b> = มีการวินิจฉัยอื่นชัด, อาการหายด้วยยา ≤4 วัน, ผ่าตัด/ชันสูตรไม่พบ IE หลังยา ≤4 วัน หรือไม่ถึง possible · AHA 2026 ใช้ Duke-ISCVID · <b>หน้านี้แสดงทั้งสองชุด และใช้ Duke-ISCVID เป็นหลัก</b> (ครอบคลุมเชื้อ streptococcus อื่นๆ รวม <i>S. suis</i> ซึ่งพบในไทย)</p>
+  <div class="tbl"><table>
+    <tr><th></th><th>Duke-ISCVID 2023 (Fowler, CID)</th><th>ESC 2023 modified Duke</th></tr>
+    <tr><td><b>Major: จุลชีววิทยา</b></td><td>เชื้อ <b>typical ≥2 ชุด</b> แยกกัน: <i>S. aureus</i>, <i>S. lugdunensis</i>, <i>E. faecalis</i>, <b>streptococcus ทุกชนิด ยกเว้น <i>S. pneumoniae</i> และ <i>S. pyogenes</i></b>, Granulicatella, Abiotrophia, Gemella, HACEK · ถ้ามี<b>วัสดุเทียมในหัวใจ</b> นับเพิ่ม: CoNS, <i>Corynebacterium striatum/jeikeium</i>, <i>Serratia marcescens</i>, <i>P. aeruginosa</i>, <i>Cutibacterium acnes</i>, NTM, Candida · เชื้อ non-typical <b>≥3 ชุด</b> · <b>ไม่ต้องเว้นระยะเวลาระหว่างชุด</b><br>· <i>Coxiella</i>: เพาะขึ้น 1 ชุด หรือ phase I IgG &gt;1:800 · <b>PCR</b> ในเลือดพบ <i>Coxiella</i>, <i>Bartonella</i>, <i>T. whipplei</i> · <i>Bartonella</i> IFA IgG ≥1:800</td><td>เชื้อ typical 2 ชุด: <b>oral streptococci, <i>S. gallolyticus</i>, HACEK, <i>S. aureus</i>, <i>E. faecalis</i></b> · หรือ <b>เพาะขึ้นต่อเนื่อง</b>: ≥2 ชุดที่เจาะห่างกัน &gt;12 ชม. หรือขึ้นทั้ง 3 ชุด/ส่วนใหญ่ของ ≥4 ชุด (ชุดแรกกับชุดสุดท้ายห่าง ≥1 ชม.) · <i>Coxiella</i>: เพาะขึ้น 1 ชุด หรือ phase I IgG &gt;1:800</td></tr>
+    <tr><td><b>Major: ภาพ</b></td><td><b>Echo และ/หรือ cardiac CT</b>: vegetation, ลิ้นทะลุ/โป่ง, abscess, pseudoaneurysm, fistula · echo: <b>ลิ้นรั่วใหม่ที่มีนัยสำคัญ</b> (รั่วเดิมแย่ลงไม่นับ) · ลิ้นเทียมหลุดบางส่วนใหม่ · <b>FDG-PET/CT</b> ผิดปกติที่ลิ้น (ลิ้นเทียมต้อง <b>≥3 เดือน</b>หลังใส่), aortic graft (ร่วมกับลิ้น), สาย CIED, วัสดุเทียม</td><td>รอยโรคที่ลิ้น/รอบลิ้น/ลิ้นเทียม/วัสดุเทียม ที่เข้ากับ IE จาก <b>TTE/TEE, cardiac CT, FDG-PET/CT(A) หรือ WBC SPECT/CT</b> · PET/CT ผิดปกติรอบลิ้นเทียม <b>นับเป็น major ไม่ว่าผ่าตัดมานานเท่าไร</b> (ต้องแปลผลโดยผู้ชำนาญ)</td></tr>
+    <tr><td><b>Major: ผ่าตัด</b></td><td>ศัลยแพทย์เห็นหลักฐาน IE ระหว่างผ่าตัด (แม้ไม่มีผลพยาธิ/เพาะเชื้อ)</td><td>— (ไม่มีข้อนี้)</td></tr>
+    <tr><td><b>Minor</b></td><td>① <b>ปัจจัยเสี่ยง</b>: เคย IE, ลิ้นเทียม, เคยซ่อมลิ้น, หัวใจพิการแต่กำเนิด, ลิ้นรั่ว/ตีบมากกว่าเล็กน้อย, <b>CIED</b>, <b>HOCM</b>, ฉีดสารเสพติด ② <b>ไข้ ≥38.0 °C</b> ③ <b>หลอดเลือด</b> (ทางคลินิกหรือภาพ): arterial emboli, septic pulmonary infarct, ฝีสมอง/ม้าม, mycotic aneurysm, เลือดออกในสมอง, เลือดออกใต้เยื่อบุตา, Janeway, purulent purpura ④ <b>ภูมิคุ้มกัน</b>: GN, Osler, Roth, RF บวก ⑤ <b>จุลชีวะ</b>ไม่ถึง major: เพาะขึ้นแต่ไม่ถึงเกณฑ์, culture/PCR บวกจากตำแหน่งปลอดเชื้ออื่น ⑥ <b>PET/CT</b> ผิดปกติ <b>ภายใน 3 เดือน</b>หลังใส่ลิ้นเทียม/วัสดุ ⑦ <b>ฟังได้เสียงลิ้นรั่วใหม่</b> (เฉพาะเมื่อไม่มี echo)</td><td>① ปัจจัยเสี่ยง (หัวใจเสี่ยงสูง/ปานกลาง หรือ PWID) ② ไข้ &gt;38 °C ③ <b>emboli</b> รวมที่พบจากภาพอย่างเดียว: emboli/infarct/ฝีในอวัยวะ, <b>spondylodiscitis/ข้ออักเสบติดเชื้อ</b>, mycotic aneurysm, รอยโรคสมอง (ขาดเลือด/เลือดออก), เลือดออกใต้เยื่อบุตา, Janeway ④ ภูมิคุ้มกัน: GN, Osler, Roth, RF ⑤ จุลชีวะ: เพาะขึ้นไม่ถึง major หรือ serology บ่งการติดเชื้อที่เข้ากับ IE (เช่น <i>Bartonella</i>)</td></tr>
+  </table></div>
+  <div class="box note"><b>ความต่างที่ใช้จริง</b>① <i>S. suis</i>, streptococcus group B/C/G ขึ้น 2 ชุด = major ใน ISCVID แต่ใน ESC ต้องเข้าเกณฑ์ "เพาะขึ้นต่อเนื่อง" ② <i>Bartonella</i> serology/PCR = major ใน ISCVID, ESC เป็น minor ③ PET/CT ลิ้นเทียม &lt;3 เดือน: ISCVID = minor, ESC = major ④ ISCVID มี major จากการผ่าตัด และ minor จากการฟังเสียงฟู่เมื่อไม่มี echo ⑤ ESC รวม WBC SPECT/CT · ทั้งสองชุดยังต้อง<b>ใช้ดุลพินิจทางคลินิก</b> — เกณฑ์สร้างเพื่อการวิจัยและช่วยจำแนก ไม่ใช่ทดแทนการตัดสินใจรักษา · ลองใช้ <a href="#tools">เครื่องคำนวณ Duke</a></div>
+</section>
+
+<section id="bcne" class="col">
+  <div class="sec-num">04</div>
+  <h2>Culture-negative IE และบริบทไทย</h2>
+  <p>Blood culture–negative IE (BCNIE) = เข้าเกณฑ์ IE แต่เพาะเชื้อในเลือดไม่ขึ้น · <b>สาเหตุที่พบมากที่สุดคือได้ยาฆ่าเชื้อมาก่อนเจาะ</b> · รองลงมาคือเชื้อที่เพาะยาก</p>
+  <div class="tbl"><table>
+    <tr><th>เชื้อ</th><th>เบาะแส</th><th>ตรวจ</th><th>ยา (ESC 2023)</th></tr>
+    <tr><td><b>ได้ยาฆ่าเชื้อมาก่อน</b></td><td>ซื้อยากินเอง ได้ยาฉีดจากคลินิก — พบบ่อยในไทย</td><td>เพาะซ้ำหลังหยุดยา (ถ้าอาการคงที่) · ส่งชิ้นลิ้นหัวใจเพาะ/PCR ถ้าผ่าตัด</td><td>รักษาแบบ empirical ที่คลุม strep/enterococcus/staph/HACEK</td></tr>
+    <tr><td><i>Bartonella</i> spp.</td><td>สัมผัสแมว (<i>B. henselae</i>) · คนไร้บ้าน เหา (<i>B. quintana</i>) · มักลิ้น aortic vegetation ใหญ่ ไตอักเสบ</td><td>Serology IFA (IgG ≥1:800) · PCR ลิ้น/เลือด</td><td>Doxycycline 100 mg PO q12h 4 สัปดาห์ + gentamicin 3 mg/kg/วัน IV 2 สัปดาห์</td></tr>
+    <tr><td><i>Coxiella burnetii</i> (Q fever)</td><td>สัมผัสวัว แพะ แกะ (คลอด/รก) · มีลิ้นผิดปกติเดิม · vegetation เล็กหรือไม่เห็น</td><td>Phase I IgG &gt;1:800 · PCR</td><td>Doxycycline 200 mg/วัน + hydroxychloroquine 200–600 mg/วัน <b>≥18 เดือน</b> (ตามระดับ hydroxychloroquine และ serology)</td></tr>
+    <tr><td><i>Brucella</i> spp.</td><td>นมดิบ สัมผัสแพะ/แกะ · พบน้อยในไทย</td><td>Serology · เพาะเชื้อนาน (แจ้งแล็บ — ติดต่อสู่บุคลากรแล็บได้)</td><td>Doxycycline 200 mg/วัน + co-trimoxazole 960 mg q12h + rifampicin 300–600 mg/วัน ≥3–6 เดือน (± gentamicin ช่วงแรก)</td></tr>
+    <tr><td>อื่นๆ</td><td><i>T. whipplei</i>, เชื้อรา (Candida, Aspergillus), Mycoplasma, Legionella · โรคที่ไม่ใช่การติดเชื้อ: <b>Libman-Sacks (SLE/APS)</b>, marantic (มะเร็ง)</td><td>PCR/พยาธิวิทยาของลิ้น · ANA, antiphospholipid</td><td>ตามเชื้อ · ปรึกษาโรคติดเชื้อ</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ข้อมูลจากไทย <span class="tag add">ไทย</span></h4><ul><li>ขอนแก่น 2010–2012 (132 ราย; Watt 2014): <b>ไม่พบเชื้อเลย ~55%</b>, <b>ได้ยาฆ่าเชื้อในสัปดาห์ก่อนมา 58%</b>, โรคพื้นฐานที่พบมากสุดคือ <b>โรคหัวใจรูมาติก (28%)</b>, เชื้อที่พบมากสุดคือ <b>viridans streptococci</b> · เชื้อจากสัตว์ (zoonosis) 11% ของทั้งหมด: <i>Coxiella</i> 5, <i>B. henselae</i> 4, <b><i>S. suis</i></b> 4 · ~3/4 ได้ผ่าตัด</li><li>บทเรียน: <b>เจาะ blood culture ก่อนให้ยาเสมอ</b> และส่ง serology <i>Bartonella</i>/<i>Coxiella</i> ใน BCNIE</li></ul></div>
+    <div class="card c-warn"><h4>เชื้อเด่นในไทย <span class="tag add">ไทย</span></h4><ul><li><b><i>Streptococcus suis</i></b>: กินหมูดิบ/ลาบเลือด/สัมผัสหมู · ชายดื่มสุรา ภาคเหนือ/อีสาน · ส่วนใหญ่เป็นเยื่อหุ้มสมองอักเสบ+<b>หูหนวก</b> แต่ endocarditis พบราว 1 ใน 8 (meta-analysis; Huong 2014) · รักษาแบบ streptococcus: penicillin G หรือ ceftriaxone ตาม MIC · ดูหน้า <a href="../meningitis/index.html">Meningitis</a></li><li><b><i>Burkholderia pseudomallei</i></b> (melioidosis): IE พบน้อยมาก แต่ถ้าเพาะได้ใช้ ceftazidime/meropenem (ไม่ใช่ ceftriaxone)</li><li><b>Gram-negative ที่ไม่ใช่ HACEK</b> (เช่น <i>Salmonella</i>, <i>P. aeruginosa</i>) มักสัมพันธ์กับการดูแลใน รพ. — มักต้องผ่าตัด · ดูหน้า <a href="../mdr-gnb/index.html">MDR-GNB</a></li></ul></div>
+  </div>
+</section>
+
+<section id="emp" class="col">
+  <div class="sec-num">05</div>
+  <h2>ยาเริ่มต้น (empirical) — หลังเจาะ blood culture 3 ชุด</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ESC 2023 (ผู้ใหญ่)</th></tr>
+    <tr><td><b>NVE จากชุมชน</b> หรือ <b>PVE ระยะหลัง</b> (≥12 เดือนหลังผ่าตัด)</td><td><b>Ampicillin 12 g/วัน IV</b> (2 g q4h) <b>+ ceftriaxone 4 g/วัน</b> (2 g q12h) · หรือ <b>ampicillin + (flu)cloxacillin 12 g/วัน</b> (2 g q4h) <b>+ gentamicin 3 mg/kg/วัน</b> วันละครั้ง <span class="rec">IIa · C</span></td></tr>
+    <tr><td><b>PVE ระยะแรก</b> (&lt;12 เดือน) หรือ <b>ติดเชื้อจาก รพ./การดูแลสุขภาพ</b> (ฟอกไต สายสวน หลังหัตถการ)</td><td><b>Vancomycin 30 mg/kg/วัน</b> แบ่ง 2 ครั้ง <b>หรือ daptomycin 10 mg/kg/วัน</b> + gentamicin 3 mg/kg/วัน + rifampicin 900–1,200 mg/วัน แบ่ง 2–3 ครั้ง <span class="rec">IIb · C</span></td></tr>
+    <tr><td>แพ้ beta-lactam (NVE ชุมชน/PVE ระยะหลัง)</td><td><b>Cefazolin 6 g/วัน</b> (2 g q8h) <b>หรือ vancomycin</b> + gentamicin <span class="rec">IIb · C</span> · แพ้แบบ anaphylaxis → vancomycin</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ปรับใช้ในไทย <span class="tag add">ไทย</span></h4><ul><li>ยาในบัญชียาหลักที่หาได้: ampicillin, <b>cloxacillin</b> (ใช้แทน flucloxacillin), cefazolin, ceftriaxone, penicillin G sodium, gentamicin, vancomycin, rifampicin · <b>amoxicillin IV ไม่มีทั่วไป → ใช้ ampicillin</b> · <b>daptomycin</b> อยู่นอกบัญชี ราคาสูง มีใน รพ.ใหญ่</li><li>อาการ<b>เฉียบพลัน/สงสัย <i>S. aureus</i></b> (PWID, แผลผิวหนัง, ช็อก) → เลือกสูตรที่มี <b>cloxacillin</b> (ceftriaxone ฆ่า <i>S. aureus</i> ได้ไม่ดีพอ) <span class="tag add">เสริม</span></li><li>เสี่ยง MRSA (เคยมี MRSA, ฟอกไต, นอน รพ.นาน) → ใช้ vancomycin-based</li><li>ช็อกจากการติดเชื้อใน รพ./เสี่ยง gram-negative → เพิ่มยาคลุม GNB เช่น cefepime หรือ carbapenem ตามเชื้อดื้อยาใน รพ. <span class="tag add">เสริม</span> · ดู <a href="../sepsis/index.html">Sepsis</a></li></ul></div>
+    <div class="card c-warn"><h4>Gentamicin: ใช้ให้น้อยที่สุด</h4><ul><li>3 mg/kg IV วันละครั้ง (ESC) · จำกัด <b>≤240 mg/วัน</b> <span class="tag add">เสริม</span> · ระยะสั้น (≤2 สัปดาห์) · ตาม Cr และระดับยา (trough &lt;1 mg/L)</li><li><b>ไม่ใช้ใน <i>S. aureus</i> NVE</b> (ไม่ได้ประโยชน์ ไตวายมากขึ้น) · AHA 2026 ไม่ใช้เป็นประจำแม้ใน PVE</li><li>CrCl &lt;30 หรือเสี่ยง AKI → หลีกเลี่ยง เลือกสูตร ampicillin + ceftriaxone · ดูหน้า <a href="../aki/index.html">AKI</a></li></ul></div>
+  </div>
+</section>
+
+<section id="path" class="col">
+  <div class="sec-num">06</div>
+  <h2>ยาตามเชื้อ (ผู้ใหญ่ ไตปกติ)</h2>
+  <div class="tbl"><table>
+    <tr><th>เชื้อ</th><th>สูตรยา</th><th>ระยะเวลา</th></tr>
+    <tr><td><b>Viridans strep / <i>S. gallolyticus</i></b><br>penicillin MIC ≤0.125 mg/L</td><td><b>Penicillin G 12–18 ล้านยูนิต/วัน</b> IV (3 MU q4h) · หรือ <b>ceftriaxone 2 g IV วันละครั้ง</b> · หรือ amoxicillin 100–200 mg/kg/วัน IV <span class="rec s1">I · B</span><br><b>สูตร 2 สัปดาห์</b> (NVE ไม่มีภาวะแทรกซ้อน ไตปกติ): beta-lactam ข้างต้น + gentamicin 3 mg/kg/วัน (สูงสุด 240 mg) <span class="rec s1">I · B</span><br>แพ้ penicillin: vancomycin 30 mg/kg/วัน แบ่ง 2 <span class="rec s1">I · C</span></td><td>NVE <b>4 สัปดาห์</b> (หรือ 2 สัปดาห์ถ้าใช้สูตรคู่ gentamicin) · PVE <b>6 สัปดาห์</b></td></tr>
+    <tr><td>Strep ไวลดลง/ดื้อ penicillin<br>MIC &gt;0.125–2 mg/L</td><td><b>Penicillin G 24 ล้านยูนิต/วัน</b> หรือ ceftriaxone 2 g/วัน หรือ amoxicillin 200 mg/kg/วัน <b>+ gentamicin 2 สัปดาห์แรก</b> <span class="rec s1">I · B</span> · AHA 2026: <b>ceftriaxone เดี่ยวได้ถ้า MIC ≤0.5 mg/L</b></td><td>NVE 4 · PVE 6 สัปดาห์</td></tr>
+    <tr><td><b><i>S. aureus</i> MSSA</b> — NVE</td><td><b>Cloxacillin 2 g IV q4h</b> (12 g/วัน) <b>หรือ cefazolin 2 g IV q8h</b> (6 g/วัน) <span class="rec s1">I · B</span> · AHA 2026: cefazolin เท่าเทียมเป็นยาแรกได้ · <b>ไม่ใส่ gentamicin</b></td><td><b>4–6 สัปดาห์</b> (ESC) · AHA 2026: 4 สัปดาห์ (ไม่มีภาวะแทรกซ้อน)</td></tr>
+    <tr><td>MSSA — PVE</td><td>Cloxacillin หรือ cefazolin + <b>rifampicin 900 mg/วัน</b> (300 mg q8h) + gentamicin 2 สัปดาห์ <span class="rec s1">I · B</span> · <b>AHA 2026: ไม่ใช้ gentamicin เป็นประจำ</b> และเริ่ม rifampicin <b>หลัง blood culture ลบ</b> (~5–7 วัน)</td><td><b>≥6 สัปดาห์</b></td></tr>
+    <tr><td><b>MRSA</b> — NVE</td><td><b>Vancomycin 30–60 mg/kg/วัน</b> IV แบ่ง 2–3 ครั้ง (ตามระดับยา) <span class="rec s1">I · B</span> · หรือ <b>daptomycin 10 mg/kg IV วันละครั้ง</b> (± ร่วมกับ cloxacillin/ceftaroline/fosfomycin) <span class="rec">IIb · C</span></td><td>4–6 สัปดาห์</td></tr>
+    <tr><td>MRSA — PVE</td><td>Vancomycin + rifampicin 900–1,200 mg/วัน + gentamicin 2 สัปดาห์ <span class="rec s1">I · B</span> (AHA 2026: gentamicin ไม่เป็นประจำ)</td><td>≥6 สัปดาห์</td></tr>
+    <tr><td><b><i>E. faecalis</i></b> (ไวต่อ ampicillin)</td><td><b>Ampicillin 2 g IV q4h + ceftriaxone 2 g IV q12h</b> <span class="rec s1">I · B</span> — สูตรหลัก ไม่เป็นพิษต่อไต ใช้ได้แม้ <b>HLAR</b> (high-level aminoglycoside resistance) · ทางเลือก: ampicillin + gentamicin 2 สัปดาห์ (ไม่ใช้ถ้า HLAR)</td><td><b>6 สัปดาห์</b> (ทั้ง NVE และ PVE)</td></tr>
+    <tr><td><i>E. faecium</i> ดื้อ ampicillin</td><td>Vancomycin 6 สัปดาห์ + gentamicin 2 สัปดาห์ · ดื้อ vancomycin (VRE): daptomycin 10–12 mg/kg + ampicillin/fosfomycin/ceftaroline/ertapenem — ปรึกษาโรคติดเชื้อ</td><td>6 สัปดาห์</td></tr>
+    <tr><td><b>HACEK</b></td><td><b>Ceftriaxone 2 g IV วันละครั้ง</b> · ไม่สร้าง beta-lactamase: ampicillin ได้ · ทางเลือก: ciprofloxacin 400 mg IV q8–12h หรือ 750 mg PO q12h</td><td>NVE 4 · PVE 6 สัปดาห์</td></tr>
+    <tr><td><i>S. suis</i> <span class="tag add">ไทย</span></td><td>รักษาแบบ streptococcus ตาม MIC: penicillin G หรือ ceftriaxone (มีเยื่อหุ้มสมองอักเสบร่วม → ceftriaxone 2 g q12h) <span class="tag add">เสริม</span></td><td>มัก 4 สัปดาห์ (NVE)</td></tr>
+  </table></div>
+  <div class="box key"><b>นับวันอย่างไร</b>นับจาก<b>วันแรกที่ blood culture ลบ</b> (ไม่ใช่วันแรกที่ได้ยา) เมื่อ blood culture เคยขึ้น · ถ้าผ่าตัดลิ้น: นับวันยาที่ได้ก่อนผ่าตัดรวมด้วย และให้ต่ออย่างน้อย <b>2 สัปดาห์หลังผ่าตัด</b> — ไม่ต้องเริ่มนับใหม่ทั้งคอร์ส (AHA 2026) · ผลเพาะลิ้นบวกอย่างเดียวไม่ได้กำหนดระยะเวลา</div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>CrCl ≥50</th><th>30–49</th><th>10–29</th><th>&lt;10 / HD</th></tr>
+    <tr><td>Ampicillin</td><td>2 g q4h</td><td>2 g q6h</td><td>2 g q8h</td><td>2 g q12h (HD: ให้หลังฟอก)</td></tr>
+    <tr><td>Cloxacillin · ceftriaxone</td><td colspan="4">ไม่ต้องปรับตามไต (cloxacillin 2 g q4h · ceftriaxone 2 g q12–24h)</td></tr>
+    <tr><td>Cefazolin</td><td>2 g q8h</td><td>2 g q8h</td><td>2 g q12h</td><td>2 g q24h · HD: 2 g หลังฟอกทุกครั้ง</td></tr>
+    <tr><td>Penicillin G</td><td>3–4 MU q4h</td><td colspan="2">ลด ~25–50% (เช่น 2–3 MU q4h)</td><td>ลด 50–75% · ระวังชัก</td></tr>
+    <tr><td>Vancomycin</td><td colspan="4">Loading 25–30 mg/kg (สูงสุด 3 g) → ขนาดต่อตาม <b>AUC 400–600</b> (หรือ trough 15–20 mg/L ตาม ESC) · ไตเสื่อม/HD: ให้ตามระดับยา</td></tr>
+    <tr><td>Daptomycin</td><td colspan="2">10 mg/kg q24h</td><td colspan="2">10 mg/kg q48h (HD: หลังฟอก) · ตรวจ CK ทุกสัปดาห์ หยุด statin</td></tr>
+    <tr><td>Gentamicin</td><td>3 mg/kg q24h (≤240 mg)</td><td>ใช้ได้ระวัง ตามระดับยา</td><td colspan="2">หลีกเลี่ยง</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ตารางปรับตามไตเป็นแนวทางประมาณ <span class="tag add">เสริม</span> (อิงเอกสารกำกับยาและตำราการใช้ยา) — ตรวจสอบกับเภสัชกรและโปรโตคอลของ รพ. · ใช้ Cockcroft-Gault กับน้ำหนักจริง (อ้วนมาก → adjusted body weight)</p>
+</section>
+
+<section id="oral" class="col">
+  <div class="sec-num">07</div>
+  <h2>เปลี่ยนเป็นยากิน (partial oral) — POET</h2>
+  <p><b>POET</b> (เดนมาร์ก, NEJM 2019; 400 ราย): IE ลิ้นซ้ายจาก streptococcus, <i>E. faecalis</i>, <i>S. aureus</i> (MSSA) หรือ CoNS ที่อาการคงที่ สุ่มให้เปลี่ยนเป็น<b>ยากิน 2 ตัวต่างกลุ่ม</b> เทียบกับ IV จนครบ → ผลรวม (ตาย, ผ่าตัดไม่ได้วางแผน, emboli, เชื้อกลับมา) <b>9.0% vs 12.1% — ยากินไม่ด้อยกว่า</b> · ติดตาม 5 ปียังดีกว่าหรือเท่ากัน · ESC 2023 <span class="rec">IIa · A</span> · AHA 2026: เป็นทางเลือกในผู้ป่วยที่คัดเลือกอย่างดี</p>
+  <div class="grid2">
+    <div class="card c-ok"><h4>เกณฑ์ (ต้องครบทุกข้อ)</h4><ul><li>IE ลิ้นซ้าย จาก <b>Streptococcus, <i>E. faecalis</i>, MSSA หรือ CoNS</b> (รู้เชื้อและผลความไว)</li><li>ได้ IV ที่เหมาะสม <b>≥10 วัน</b> (ถ้าผ่าตัด: <b>≥7 วันหลังผ่าตัด</b>)</li><li><b>ไม่มีไข้ &gt;2 วัน</b> (AHA 2026: ≥3 วัน) · blood culture ลบ</li><li><b>CRP &lt;25% ของค่าสูงสุด หรือ &lt;20 mg/L</b> และ <b>WBC &lt;15 × 10⁹/L</b></li><li><b>TEE</b> (ภายใน ~2 วันก่อนเปลี่ยน) ไม่มี abscess หรือลิ้นผิดปกติที่ต้องผ่าตัด</li><li>กินยาได้ ดูดซึมดี มาตามนัดได้</li></ul></div>
+    <div class="card c-red"><h4>ไม่เหมาะ (ESC <span class="rec no">III · C</span>)</h4><ul><li>เชื้อรักษายาก (MRSA, gram-negative, รา, Coxiella) · ตับแข็ง Child-Pugh B/C</li><li>Emboli ในสมองรุนแรง · ฝีนอกหัวใจขนาดใหญ่ที่ยังไม่ระบาย</li><li>ลิ้นมีภาวะแทรกซ้อน/ต้องผ่าตัด · ภาวะแทรกซ้อนรุนแรงหลังผ่าตัด</li><li><b>IE ในผู้ฉีดสารเสพติด</b> (ESC) · ไตเสื่อม (ESC supplement) · BMI &gt;40 · ลำไส้ดูดซึมไม่ดี · มีการติดเชื้ออื่นที่ต้องให้ IV</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>เชื้อ</th><th>ตัวอย่างสูตรยากินใน POET (ผู้ใหญ่ ไตปกติ — เลือกตามผลความไว)</th></tr>
+    <tr><td>Streptococcus</td><td>Amoxicillin 1 g PO วันละ 4 ครั้ง + rifampicin 600 mg PO วันละ 2 ครั้ง · หรือ amoxicillin + moxifloxacin 400 mg วันละครั้ง · หรือ linezolid 600 mg วันละ 2 ครั้ง + ยาตัวที่สอง</td></tr>
+    <tr><td><i>E. faecalis</i></td><td>Amoxicillin 1 g × 4 + moxifloxacin 400 mg × 1 · หรือ amoxicillin + linezolid 600 mg × 2 · หรือ linezolid + moxifloxacin</td></tr>
+    <tr><td>MSSA / CoNS</td><td><b>Dicloxacillin 1 g PO วันละ 4 ครั้ง + rifampicin 600 mg วันละ 2 ครั้ง</b> · หรือ linezolid 600 mg × 2 + rifampicin · หรือ moxifloxacin + rifampicin · (fusidic acid 750 mg × 2 + ยาอื่น)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag add">ไทย</span> dicloxacillin, amoxicillin, rifampicin, moxifloxacin มีในไทย · <b>rifampicin ทำให้ระดับ warfarin/DOAC และยาอื่นลดลงมาก</b> — ตรวจ interaction ทุกครั้ง · linezolid ระยะยาวเสี่ยงเกล็ดเลือดต่ำ/ประสาทอักเสบ (ตาม CBC ทุกสัปดาห์) · ในไทยควรตัดสินใจร่วมกับอายุรแพทย์โรคติดเชื้อ/โรคหัวใจ · ทางเลือกอื่นในผู้ที่ไม่เหมาะกับยากิน: OPAT (ceftriaxone วันละครั้ง) หรือ dalbavancin (ยังไม่ใช่มาตรฐาน)</p>
+</section>
+
+<section id="surg" class="col">
+  <div class="sec-num">08</div>
+  <h2>ผ่าตัด และ Endocarditis Team</h2>
+  <p>ราวครึ่งหนึ่งของ IE ลิ้นซ้ายต้องผ่าตัด · ESC 2023: IE ที่มีภาวะแทรกซ้อน <b>ควรดูแลที่ Heart Valve Centre</b> ที่ผ่าตัดได้ทันทีและมี Endocarditis Team (อายุรแพทย์โรคหัวใจ ศัลยแพทย์หัวใจ โรคติดเชื้อ จุลชีววิทยา ภาพวินิจฉัย ประสาทวิทยา) <span class="rec s1">I · B</span> · IE ไม่ซับซ้อนดูแลที่ รพ.ส่งต่อได้ แต่<b>ต้องสื่อสารกับทีมตั้งแต่ต้นและสม่ำเสมอ</b> <span class="rec s1">I · B</span></p>
+  <div class="box warn"><b>เวลา (ESC 2023)</b><b>Emergency</b> = ภายใน <b>24 ชม.</b> ไม่ว่าได้ยามานานเท่าไร · <b>Urgent</b> = ภายใน <b>3–5 วัน</b> · <b>Non-urgent</b> = ระหว่างนอน รพ.ครั้งเดียวกัน · AHA 2026: เมื่อมีข้อบ่งชี้ ผ่าตัดเร็ว (ราว 48–72 ชม.) ดีกว่ารอ</div>
+  <div class="tbl"><table>
+    <tr><th>ข้อบ่งชี้ (IE ลิ้น aortic/mitral; NVE หรือ PVE)</th><th>เวลา</th><th>Class</th></tr>
+    <tr><td><b>Heart failure</b>: ลิ้นรั่ว/อุดกั้นรุนแรงเฉียบพลัน หรือ fistula → <b>pulmonary oedema ที่ดื้อการรักษา หรือ cardiogenic shock</b></td><td><b>Emergency</b></td><td><span class="rec s1">I · B</span></td></tr>
+    <tr><td>ลิ้นรั่ว/อุดกั้นรุนแรง → มีอาการ HF หรือ echo บ่งว่าทนไม่ไหว</td><td>Urgent</td><td><span class="rec s1">I · B</span></td></tr>
+    <tr><td><b>ติดเชื้อคุมไม่ได้เฉพาะที่</b>: abscess, pseudoaneurysm, fistula, vegetation โตขึ้น, ลิ้นเทียมหลุด, <b>AV block ใหม่</b></td><td>Urgent</td><td><span class="rec s1">I · B</span></td></tr>
+    <tr><td>เชื้อรา หรือเชื้อดื้อยาหลายขนาน</td><td>Urgent/non-urgent</td><td><span class="rec s1">I · C</span></td></tr>
+    <tr><td>Blood culture ยังขึ้นแม้ได้ยาเหมาะสมและควบคุมแหล่งติดเชื้ออื่นแล้ว</td><td>Urgent</td><td><span class="rec">IIa · B</span></td></tr>
+    <tr><td>PVE จาก <i>S. aureus</i> หรือ gram-negative ที่ไม่ใช่ HACEK</td><td>Urgent/non-urgent</td><td><span class="rec">IIa · C</span></td></tr>
+    <tr><td><b>PVE ระยะแรก</b> (≤6 เดือนหลังผ่าตัดลิ้น) — แนะนำผ่าตัดเปลี่ยนลิ้นใหม่และ debridement ทั้งหมด</td><td>Urgent</td><td><span class="rec s1">I · C</span></td></tr>
+    <tr><td><b>ป้องกัน emboli</b>: vegetation <b>≥10 mm</b> ยังอยู่หลังเกิด emboli ≥1 ครั้ง แม้ได้ยาเหมาะสม</td><td>Urgent</td><td><span class="rec s1">I · B</span></td></tr>
+    <tr><td>Vegetation ≥10 mm + มีข้อบ่งชี้ผ่าตัดอื่น</td><td>Urgent</td><td><span class="rec s1">I · C</span></td></tr>
+    <tr><td>Vegetation ≥10 mm ไม่มีลิ้นเสียรุนแรง ไม่มี emboli และความเสี่ยงผ่าตัดต่ำ</td><td>Urgent</td><td><span class="rec">IIb · B</span></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>IE ลิ้นขวา (tricuspid) — ส่วนใหญ่รักษาด้วยยาได้</h4><ul><li>TR รุนแรง + RV ทำงานผิดปกติ ไม่ตอบสนองยาขับปัสสาวะ <span class="rec s1">I · B</span></li><li>Vegetation ค้าง + หายใจล้มเหลวต้องใช้เครื่องช่วยหายใจหลัง septic pulmonary emboli ซ้ำ <span class="rec s1">I · B</span></li><li>Vegetation tricuspid <b>&gt;20 mm</b> หลัง emboli ปอดซ้ำ <span class="rec s1">I · C</span> · มีลิ้นซ้ายร่วม <span class="rec s1">I · C</span></li><li>เชื้อในเลือด/sepsis ไม่หายหลังยา ≥1 สัปดาห์ <span class="rec">IIa · C</span> · ซ่อมดีกว่าเปลี่ยนลิ้น <span class="rec">IIa · B</span></li><li>ดูดลิ่มผ่านสายสวน (percutaneous aspiration) ในรายเสี่ยงผ่าตัดสูง <span class="rec">IIb · C</span></li></ul></div>
+    <div class="card c-warn"><h4>CIED-related IE</h4><ul><li>เจาะ blood culture ≥3 ชุดก่อนยา · TTE + TEE <span class="rec s1">I · B</span></li><li><b>ถอดทั้งระบบ (generator + สายทั้งหมด) โดยไม่ล่าช้า</b> <span class="rec s1">I · B</span></li><li>ใส่ใหม่อีกข้าง เมื่อ blood culture ลบ ≥72 ชม. (หรือ ≥2 สัปดาห์ถ้ามี vegetation) <span class="rec s1">I · C</span></li><li>ยาหลังถอด 4–6 สัปดาห์ถ้ามี emboli/ลิ้นเทียม <span class="rec">IIa · C</span></li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ก่อนผ่าตัด: ชายอายุ &gt;40 ปี หญิงวัยหมดประจำเดือน หรือมีปัจจัยเสี่ยงหลอดเลือดหัวใจ → ประเมิน coronary (ถ้ามี vegetation ลิ้น aortic ใช้ CT coronary แทนการสวน) · ดูหน้า <a href="../hf/index.html">Heart failure</a> · <a href="../echo/index.html">Echo</a></p>
+</section>
+
+<section id="neuro" class="col">
+  <div class="sec-num">09</div>
+  <h2>ภาวะแทรกซ้อนทางสมอง และยาต้านลิ่มเลือด</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Stroke ใน IE</h4><ul><li>พบ 20–40% (ส่วนใหญ่ภายใน 2 สัปดาห์แรก ลดลงเร็วหลังได้ยาที่ได้ผล) · ไข้ + stroke → คิดถึง IE เสมอ</li><li><b>ห้ามให้ thrombolysis (rtPA/TNK)</b> ใน embolic stroke จาก IE — เลือดออกในสมองสูง <span class="rec no">III · C</span></li><li><b>Mechanical thrombectomy</b> พิจารณาได้ในหลอดเลือดใหญ่อุดตัน ถ้ามีความชำนาญ</li><li>ปวดหัว/ชัก/เลือดออกในสมอง → CTA/MRA หา <b>infective (mycotic) aneurysm</b> <span class="rec s1">I · B</span> · โป่งใหญ่/โตขึ้น/แตก → ประสาทศัลย์/endovascular <span class="rec s1">I · C</span></li></ul></div>
+    <div class="card c-acc"><h4>เวลาผ่าตัดหัวใจหลัง stroke</h4><ul><li><b>TIA หรือ ischemic stroke</b> ที่ไม่มีเลือดออกและไม่โคม่า → <b>ไม่ต้องเลื่อนผ่าตัด</b> ถ้ามีข้อบ่งชี้ (HF, ติดเชื้อคุมไม่ได้, abscess, emboli เสี่ยงสูงต่อ) <span class="rec s1">I · B</span></li><li><b>เลือดออกในสมองมาก</b> → มักเลื่อน <b>≥4 สัปดาห์</b> (ESC) · AHA 2026: อย่างน้อย 2 ดีที่สุด 4 สัปดาห์ ยกเว้นหัวใจไม่คงที่ — ชั่งร่วมกับประสาทศัลยแพทย์</li><li><b>โคม่า</b> → โดยทั่วไปไม่ผ่าตัดหัวใจ</li><li>ดูหน้า <a href="../stroke-er/index.html">Stroke ที่ ER</a></li></ul></div>
+  </div>
+  <div class="box key"><b>ยาต้านลิ่มเลือด/เกล็ดเลือด</b>IE <b>ไม่ใช่</b>ข้อบ่งชี้ให้ยาต้านเกล็ดเลือดหรือยาต้านการแข็งตัวของเลือด (aspirin ไม่ลด emboli) · <b>เลือดออกรุนแรง รวมถึงเลือดออกในสมอง → หยุดทั้งหมด</b> <span class="rec s1">I · C</span> · มีลิ้นกลไก + เลือดออกในสมอง → เริ่ม UFH ใหม่เร็วที่สุดเมื่อปลอดภัย (ปรึกษาทีม) <span class="rec">IIa · C</span> · กำลังกิน warfarin/DOAC และอาจต้องผ่าตัด → พิจารณาเปลี่ยนเป็น <b>UFH</b> (ปรับ/หยุดได้เร็ว) <span class="rec">IIa · C</span> · ระวัง rifampicin ลดระดับ warfarin/DOAC</div>
+</section>
+
+<section id="prev" class="col">
+  <div class="sec-num">10</div>
+  <h2>ยาป้องกันก่อนทำฟัน (ESC 2023 · AHA 2021)</h2>
+  <p>หลักใหม่: <b>ให้เฉพาะผู้เสี่ยงสูง ก่อนหัตถการฟันที่เสี่ยง</b> · สุขอนามัยช่องปากและพบทันตแพทย์ทุก 6–12 เดือนสำคัญกว่ายาป้องกัน (เชื้อในเลือดเกิดทุกวันจากการแปรงฟัน/เคี้ยว)</p>
+  <div class="tbl"><table>
+    <tr><th>กลุ่มผู้ป่วย</th><th>ยาป้องกันก่อนทำฟันที่เสี่ยง</th></tr>
+    <tr><td><b>เคยเป็น IE</b></td><td>แนะนำ <span class="rec s1">I · B</span></td></tr>
+    <tr><td><b>ลิ้นหัวใจเทียมจากการผ่าตัด</b> หรือมีวัสดุซ่อมลิ้น (ring, chord, clip) · <b>TAVI</b>/ลิ้น pulmonary ผ่านสายสวน</td><td>แนะนำ <span class="rec s1">I · C</span></td></tr>
+    <tr><td>หัวใจพิการแต่กำเนิดชนิดเขียวที่ยังไม่แก้ หรือมี shunt/conduit/วัสดุเทียม (หลังซ่อมสมบูรณ์ไม่มีรอยรั่ว: เฉพาะ 6 เดือนแรก) · <b>VAD</b></td><td>แนะนำ <span class="rec s1">I · C</span></td></tr>
+    <tr><td>ซ่อมลิ้น mitral/tricuspid ผ่านสายสวน</td><td>ควรพิจารณา <span class="rec">IIa · C</span></td></tr>
+    <tr><td>ปลูกถ่ายหัวใจ</td><td>อาจพิจารณา <span class="rec">IIb · C</span> (AHA 2021: เมื่อมีลิ้นผิดปกติ)</td></tr>
+    <tr><td><b>โรคหัวใจรูมาติก</b>, ลิ้น bicuspid, MVP, ลิ้นเสื่อม, HCM, <b>CIED อย่างเดียว</b></td><td><b>ไม่ให้เป็นประจำ</b> — เน้นสุขอนามัยช่องปาก <span class="tag add">ไทย</span> RHD พบมากในไทย แต่ไม่ใช่กลุ่มเสี่ยงสูง (ยกเว้นเคย IE/ลิ้นเทียม)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>หัตถการที่ต้องให้</h4><ul><li><b>ถอนฟัน ผ่าตัดในช่องปาก</b> (รากเทียม ตัดชิ้นเนื้อ ศัลยกรรมปริทันต์)</li><li>หัตถการที่<b>ยุ่งกับเหงือกหรือปลายรากฟัน</b> รวม <b>ขูดหินปูน รักษารากฟัน</b> <span class="rec s1">I · B</span></li><li><b>ไม่ต้อง</b>: ฉีดยาชาในเนื้อเยื่อที่ไม่ติดเชื้อ, ถ่ายภาพรังสี, ปรับเครื่องมือจัดฟัน, ฟันน้ำนมหลุด, บาดเจ็บริมฝีปาก</li><li>ส่องกล้องทางเดินอาหาร/ปัสสาวะ/หลอดลม, TEE, คลอด: ไม่ให้เป็นประจำ (ESC: อาจพิจารณาในกลุ่มเสี่ยงสูงที่ทำหัตถการรุกล้ำ <span class="rec">IIb · C</span>)</li></ul></div>
+    <div class="card c-ok"><h4>สูตรยา (ครั้งเดียว 30–60 นาทีก่อนทำ)</h4><ul><li><b>Amoxicillin 2 g PO</b> (เด็ก 50 mg/kg)</li><li>กินไม่ได้: ampicillin 2 g IV/IM หรือ cefazolin/ceftriaxone 1 g IV/IM</li><li>แพ้ penicillin (ไม่รุนแรง): <b>cephalexin 2 g PO</b></li><li>แพ้รุนแรง/anaphylaxis: <b>azithromycin หรือ clarithromycin 500 mg PO</b> หรือ <b>doxycycline 100 mg PO</b></li><li><b>ไม่ใช้ clindamycin แล้ว</b> (เสี่ยง <i>C. difficile</i>)</li><li>ลืมให้: AHA 2021 ให้ได้ถึง 2 ชม.หลังทำ</li></ul></div>
+  </div>
+</section>
+
+<section id="fu" class="col">
+  <div class="sec-num">11</div>
+  <h2>ติดตามระหว่างและหลังรักษา</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ระหว่างรักษา</h4><ul><li><b>Blood culture ซ้ำทุก 24–48 ชม.</b> จนลบ (โดยเฉพาะ <i>S. aureus</i>)</li><li>ไข้ไม่ลง &gt;7 วัน หรือเชื้อยังขึ้น → หา abscess รอบลิ้น ฝีที่อื่น (ม้าม กระดูกสันหลัง) เชื้อดื้อ ไข้จากยา/สาย → echo ซ้ำ ปรึกษาผ่าตัด</li><li><b>ECG ซ้ำ</b> ดู PR ยาวขึ้น/AV block (aortic root abscess)</li><li>Cr ทุก 2–3 วัน (gentamicin, vancomycin, GN, emboli ไต) · ระดับ vancomycin/gentamicin · CBC (linezolid, beta-lactam ขนาดสูงทำให้เม็ดเลือดขาวต่ำได้) · CK (daptomycin)</li><li>CRP ลดลง = ตอบสนอง</li></ul></div>
+    <div class="card c-ok"><h4>หลังจบการรักษา</h4><ul><li><b>TTE ตอนจบการรักษา</b> เป็น baseline <span class="rec s1">I · C</span> · blood culture หลังหยุดยา (ESC)</li><li>นัด 1, 3, 6, 12 เดือน · สอน<b>อาการกลับเป็นซ้ำ</b>: ไข้ หนาวสั่น → เจาะ blood culture ก่อนให้ยาทุกครั้ง</li><li><b>Relapse</b> (เชื้อเดิม มักภายใน 6 เดือน) = รักษาไม่สำเร็จ หาแหล่งค้าง/พิจารณาผ่าตัด · <b>Reinfection</b> (เชื้อใหม่ มัก &gt;6 เดือน)</li><li><b>ฟัน</b>: ตรวจและรักษาฟันผุ/ปริทันต์ (ระหว่างนอน รพ. ถ้าทำได้ก่อนผ่าตัดลิ้น) <span class="rec s1">I · C</span></li><li>ผู้ฉีดสารเสพติด: บำบัดการติดสาร (เช่น methadone) <span class="rec s1">I · C</span></li><li><i>S. gallolyticus</i> → colonoscopy · HF/ลิ้นรั่วเหลือ → ติดตามโรคลิ้นหัวใจ</li></ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ไข้ + สงสัย IE</b>เสียงฟู่ · ลิ้นเทียม/CIED · PWID · <i>S. aureus</i>/strep ในเลือด · emboli</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Blood culture 3 ชุด ก่อนยา</b>ช็อก/acute → ให้ยาทันทีหลังเจาะ · subacute คงที่ → รอผลได้ 24–48 ชม.</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>TTE → TEE</b>TEE: ลิ้นเทียม/CIED · TTE ลบแต่ยังสงสัย · ลบแต่สงสัยมาก → ซ้ำ 5–7 วัน · CTA/PET-CT</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Definite</span><div class="node red"><b>ยาตามเชื้อ + Endocarditis Team</b>ประเมินผ่าตัด: HF · abscess · เชื้อคุมไม่ได้ · veg ≥10 mm + emboli</div></div>
+        <div class="arm"><span class="lab">Possible</span><div class="node dx hypo"><b>หาเพิ่ม</b>TEE ซ้ำ · cardiac CTA · PET/CT (PVE) · CT/MRI สมอง-ทั้งตัว · serology</div></div>
+        <div class="arm"><span class="lab">Rejected</span><div class="node dx green"><b>หาสาเหตุอื่น</b>ทบทวนถ้ามีข้อมูลใหม่</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>IV ≥10 วัน · คงที่ · TEE ไม่มี abscess</b>Strep/E. faecalis/MSSA/CoNS ลิ้นซ้าย → พิจารณายากิน (POET)</div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>จบการรักษา</b>TTE baseline · ฟัน · สอนอาการกลับเป็นซ้ำ · ยาป้องกันก่อนทำฟันถ้าเสี่ยงสูง</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ไม่ใช่คำสั่งการรักษา · ตรวจขนาดยากับเภสัชกรและโปรโตคอลของ รพ.</p>
+  </div>
+
+  <div class="tool" id="tDk" style="margin-top:12px">
+    <h3>เครื่องคำนวณ Duke (ISCVID 2023 / ESC 2023)</h3>
+    <div class="fields">
+      <label class="f">เกณฑ์<select id="dSet"><option value="isc">Duke-ISCVID 2023</option><option value="esc">ESC 2023 modified Duke</option></select></label>
+      <label class="f">Blood culture / serology<select id="dMic">
+        <option value="none">ไม่มี/ยังไม่ทราบ/เพาะไม่ขึ้น</option>
+        <option value="typ2" selected>เชื้อ typical ≥2 ชุด (S. aureus, E. faecalis, viridans/S. gallolyticus, HACEK)</option>
+        <option value="strep2">Strep อื่น (S. suis, group B/C/G) หรือ S. lugdunensis ≥2 ชุด</option>
+        <option value="pve2">มีวัสดุเทียม + CoNS/C. striatum/P. aeruginosa/Serratia/C. acnes/Candida 2 ชุด</option>
+        <option value="non3">เชื้ออื่นขึ้น ≥3 ชุด (เพาะขึ้นต่อเนื่อง)</option>
+        <option value="cox">Coxiella: เพาะขึ้น 1 ชุด หรือ phase I IgG &gt;1:800</option>
+        <option value="bart">Bartonella IgG ≥1:800 หรือ PCR ในเลือด (Bartonella/Coxiella/T. whipplei)</option>
+        <option value="one">เพาะขึ้นแต่ไม่ถึงเกณฑ์ major</option>
+      </select></label>
+      <label class="f">ภาพ (echo / CT / PET)<select id="dImg">
+        <option value="none">ไม่พบ/ยังไม่ได้ทำ</option>
+        <option value="veg">Vegetation, abscess, pseudoaneurysm, fistula, ลิ้นทะลุ/โป่ง, ลิ้นเทียมหลุดใหม่</option>
+        <option value="reg">Echo: ลิ้นรั่วใหม่ที่มีนัยสำคัญ อย่างเดียว</option>
+        <option value="pet3">PET/CT ผิดปกติที่ลิ้นเทียม/วัสดุ (≥3 เดือนหลังใส่)</option>
+        <option value="pet0">PET/CT ผิดปกติที่ลิ้นเทียม/วัสดุ (&lt;3 เดือนหลังใส่)</option>
+        <option value="spect">WBC SPECT/CT ผิดปกติ</option>
+      </select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dPath"> พยาธิ/เพาะเชื้อจาก vegetation หรือเนื้อเยื่อหัวใจ</label>
+      <label><input type="checkbox" id="dSurg"> ศัลยแพทย์เห็น IE ระหว่างผ่าตัด</label>
+      <label><input type="checkbox" id="dPre" checked> ปัจจัยเสี่ยง (ลิ้นเทียม, เคย IE, RHD/ลิ้นรั่ว-ตีบ, CHD, CIED, HOCM, PWID)</label>
+      <label><input type="checkbox" id="dFev" checked> ไข้ ≥38.0 °C</label>
+      <label><input type="checkbox" id="dVas"> หลอดเลือด: emboli, septic pulmonary infarct, ฝีสมอง/ม้าม, mycotic aneurysm, ICH, Janeway</label>
+      <label><input type="checkbox" id="dImm"> ภูมิคุ้มกัน: GN, Osler, Roth, RF บวก</label>
+      <label><input type="checkbox" id="dSpd"> Spondylodiscitis/ข้ออักเสบติดเชื้อ (ไม่มีข้ออื่นในหมวดหลอดเลือด)</label>
+      <label><input type="checkbox" id="dMur"> ฟังได้เสียงลิ้นรั่วใหม่ (ยังไม่มี echo)</label>
+      <label><input type="checkbox" id="dAlt"> มีการวินิจฉัยอื่นที่ชัดเจน</label>
+      <label><input type="checkbox" id="dRes"> อาการหายหลังได้ยา ≤4 วัน</label>
+    </div>
+    <div class="out" id="dkOut"></div>
+  </div>
+
+  <div class="tool plan" id="tEm" style="margin-top:12px">
+    <h3>ยาเริ่มต้น (empirical) + ขนาดยาตามไต</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="eWt" value="60"></label>
+      <label class="f">CrCl (Cockcroft-Gault, mL/min)<input type="number" id="eCr" value="80"></label>
+      <label class="f">ลิ้น/อุปกรณ์<select id="eV"><option value="nat">ลิ้นธรรมชาติ (NVE)</option><option value="pl">ลิ้นเทียม ≥12 เดือนหลังผ่าตัด</option><option value="pe">ลิ้นเทียม &lt;12 เดือน</option><option value="cied">CIED (pacemaker/ICD)</option></select></label>
+      <label class="f">แหล่งที่ติด<select id="eA"><option value="com">ชุมชน</option><option value="hca">รพ./การดูแลสุขภาพ (ฟอกไต สายสวน หลังหัตถการ)</option></select></label>
+      <label class="f">แพ้ beta-lactam<select id="eAl"><option value="no">ไม่แพ้</option><option value="mild">แพ้ penicillin ไม่รุนแรง (ผื่น ไม่ใช่ anaphylaxis)</option><option value="ana">Anaphylaxis/แพ้รุนแรง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="eHD"> ฟอกเลือด (HD)</label>
+      <label><input type="checkbox" id="eAc"> Acute/ช็อก/สงสัย S. aureus</label>
+      <label><input type="checkbox" id="eMr"> เสี่ยง MRSA (เคยมี MRSA, ฟอกไต, นอน รพ.นาน)</label>
+      <label><input type="checkbox" id="eIv"> ฉีดสารเสพติด (PWID)</label>
+      <label><input type="checkbox" id="eGn"> Septic shock ใน รพ./เสี่ยง gram-negative ดื้อยา</label>
+    </div>
+    <div class="out" id="emOut"></div>
+  </div>
+
+  <div class="tool" id="tSx" style="margin-top:12px">
+    <h3>ข้อบ่งชี้ผ่าตัด (ESC 2023)</h3>
+    <div class="fields">
+      <label class="f">ตำแหน่ง<select id="sSide"><option value="l">ลิ้นซ้าย (aortic/mitral)</option><option value="r">ลิ้นขวา (tricuspid) อย่างเดียว</option></select></label>
+      <label class="f">ชนิดลิ้น<select id="sV"><option value="n">ลิ้นธรรมชาติ</option><option value="p">ลิ้นเทียม</option></select></label>
+      <label class="f">ขนาด vegetation ใหญ่สุด<input type="number" step="0.1" id="sVeg" value="12"></label>
+      <label class="f">หน่วย<select id="sU"><option value="mm">mm</option><option value="cm">cm</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sShock"> Pulmonary oedema ดื้อการรักษา/cardiogenic shock</label>
+      <label><input type="checkbox" id="sHf"> อาการ HF จากลิ้นรั่ว/อุดกั้นรุนแรง</label>
+      <label><input type="checkbox" id="sSev"> ลิ้นรั่ว/ตีบรุนแรง (ยังไม่มี HF)</label>
+      <label><input type="checkbox" id="sAbs"> Abscess/pseudoaneurysm/fistula/vegetation โตขึ้น/ลิ้นเทียมหลุด/AV block ใหม่</label>
+      <label><input type="checkbox" id="sFun"> เชื้อรา หรือเชื้อดื้อยาหลายขนาน</label>
+      <label><input type="checkbox" id="sBc"> Blood culture ยังขึ้นแม้ได้ยาเหมาะสม ~1 สัปดาห์</label>
+      <label><input type="checkbox" id="sSa"> เชื้อ S. aureus หรือ gram-negative ที่ไม่ใช่ HACEK</label>
+      <label><input type="checkbox" id="sEmb"> เกิด emboli แล้ว ≥1 ครั้ง (ลิ้นขวา: septic pulmonary emboli ซ้ำ)</label>
+      <label><input type="checkbox" id="sLow"> ความเสี่ยงผ่าตัดต่ำ</label>
+      <label><input type="checkbox" id="sTr"> (ลิ้นขวา) TR รุนแรง + RV ผิดปกติ ไม่ตอบสนองยาขับปัสสาวะ</label>
+      <label><input type="checkbox" id="sResp"> (ลิ้นขวา) หายใจล้มเหลวต้องใช้เครื่องช่วยหายใจหลัง emboli ปอดซ้ำ</label>
+      <label><input type="checkbox" id="sStk"> Ischemic stroke/TIA (ไม่มีเลือดออก)</label>
+      <label><input type="checkbox" id="sIch"> เลือดออกในสมอง</label>
+      <label><input type="checkbox" id="sComa"> โคม่า</label>
+    </div>
+    <div class="out" id="sxOut"></div>
+  </div>
+
+  <div class="tool" id="tPx" style="margin-top:12px">
+    <h3>ยาป้องกัน IE ก่อนทำฟัน</h3>
+    <div class="fields">
+      <label class="f">ภาวะหัวใจ<select id="pC">
+        <option value="pie">เคยเป็น IE</option>
+        <option value="pv" selected>ลิ้นหัวใจเทียม (ผ่าตัด) / วัสดุซ่อมลิ้น</option>
+        <option value="tavi">TAVI / ลิ้น pulmonary ผ่านสายสวน</option>
+        <option value="chd">CHD เขียวที่ยังไม่แก้ / มี shunt-conduit / ซ่อมด้วยวัสดุเทียม ≤6 เดือนหรือมีรอยรั่วเหลือ</option>
+        <option value="vad">Ventricular assist device</option>
+        <option value="tmv">ซ่อมลิ้น mitral/tricuspid ผ่านสายสวน</option>
+        <option value="htx">ปลูกถ่ายหัวใจ</option>
+        <option value="int">โรคหัวใจรูมาติก / bicuspid / MVP / ลิ้นเสื่อม / HCM</option>
+        <option value="cied">มี pacemaker/ICD อย่างเดียว</option>
+        <option value="none">ไม่มีโรคหัวใจข้างต้น</option>
+      </select></label>
+      <label class="f">หัตถการ<select id="pP">
+        <option value="dent">ถอนฟัน/ขูดหินปูน/รักษารากฟัน/ผ่าตัดในช่องปาก/รากเทียม</option>
+        <option value="dlow">ฉีดยาชา (เนื้อเยื่อปกติ)/ถ่ายภาพรังสี/ปรับเครื่องมือจัดฟัน</option>
+        <option value="nond">ส่องกล้อง GI/GU/หลอดลม, TEE, คลอด</option>
+      </select></label>
+      <label class="f">แพ้ยา<select id="pAl"><option value="no">ไม่แพ้</option><option value="mild">แพ้ penicillin ไม่รุนแรง (ผื่นธรรมดา)</option><option value="ana">Anaphylaxis/ลมพิษ/angioedema/แพ้รุนแรง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pPo" checked> กินยาได้</label>
+      <label><input type="checkbox" id="pRf"> กำลังกิน/ฉีด penicillin ป้องกันไข้รูมาติก</label>
+    </div>
+    <div class="out" id="pxOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ไข้ + เสียงฟู่ = เจาะ blood culture 3 ชุดก่อนให้ยา</b></div></div>
+    <div class="pearl"><div><b><i>S. aureus</i> ในเลือด → echo ทุกราย</b> · ลิ้นเทียม/CIED/เชื้อไม่หาย → TEE</div></div>
+    <div class="pearl"><div><b>TTE ปกติไม่ได้ตัด IE</b> → TEE หรือซ้ำใน 5–7 วัน</div></div>
+    <div class="pearl"><div><b>เพาะไม่ขึ้นในไทยส่วนใหญ่เพราะได้ยามาก่อน</b> · ส่ง Bartonella/Coxiella serology</div></div>
+    <div class="pearl"><div><b><i>S. suis</i> = typical organism ใน Duke-ISCVID</b> · ถามประวัติหมูดิบ</div></div>
+    <div class="pearl"><div><b><i>E. faecalis</i> → ampicillin + ceftriaxone 6 สัปดาห์</b> (ไม่เป็นพิษต่อไต)</div></div>
+    <div class="pearl"><div><b>MSSA → cloxacillin หรือ cefazolin</b> ดีกว่า vancomycin · ไม่ใส่ gentamicin ใน NVE</div></div>
+    <div class="pearl"><div><b>นับวันยาจากวันที่ blood culture ลบ</b></div></div>
+    <div class="pearl"><div><b>IV ≥10 วัน + คงที่ + TEE ดี → พิจารณายากิน (POET)</b></div></div>
+    <div class="pearl"><div><b>Stroke จาก IE: ห้าม thrombolysis</b> · ischemic ไม่ต้องเลื่อนผ่าตัด · ICH เลื่อน ~4 สัปดาห์</div></div>
+    <div class="pearl"><div><b>CIED-IE → ถอดทั้งระบบ</b></div></div>
+    <div class="pearl"><div><b>ยาป้องกันก่อนทำฟัน = เสี่ยงสูงเท่านั้น</b> · amoxicillin 2 g · ไม่ใช้ clindamycin</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../sepsis/index.html">Sepsis →</a> · <a href="../stroke-er/index.html">Stroke ที่ ER →</a> · <a href="../hf/index.html">Heart failure →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../mdr-gnb/index.html">MDR-GNB →</a> · <a href="../meningitis/index.html">Meningitis (S. suis) →</a> · <a href="../echo/index.html">Echo →</a> · <a href="../cap/index.html">CAP →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44:3948–4042 · 2) Fowler VG Jr, Durack DT, Selton-Suty C, et al. The 2023 Duke-International Society for Cardiovascular Infectious Diseases criteria for infective endocarditis: updating the modified Duke criteria. Clin Infect Dis 2023;77:518–26 · 3) DeSimone DC, Marks L, Dayer MJ, et al. Infective endocarditis: diagnosis, antibiotic therapy, and management: a scientific statement from the American Heart Association. Circulation 2026;154:e593–e619 · 4) Baddour LM, Wilson WR, Bayer AS, et al. Infective endocarditis in adults: diagnosis, antimicrobial therapy, and management of complications: a scientific statement for healthcare professionals from the American Heart Association. Circulation 2015;132:1435–86 · 5) Wilson WR, Gewitz M, Lockhart PB, et al. Prevention of viridans group streptococcal infective endocarditis: a scientific statement from the American Heart Association. Circulation 2021;143:e963–78 · 6) Iversen K, Ihlemann N, Gill SU, et al. Partial oral versus intravenous antibiotic treatment of endocarditis. N Engl J Med 2019;380:415–24 · 7) Pries-Heje MM, Wiingaard C, Ihlemann N, et al. Five-year outcomes of the Partial Oral Treatment of Endocarditis (POET) trial. N Engl J Med 2022;386:601–2 · 8) Gould FK, Denning DW, Elliott TSJ, et al. Guidelines for the diagnosis and antibiotic treatment of endocarditis in adults: a report of the Working Party of the British Society for Antimicrobial Chemotherapy. J Antimicrob Chemother 2012;67:269–89 · 9) Rybak MJ, Le J, Lodise TP, et al. Therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: a revised consensus guideline (ASHP/IDSA/PIDS/SIDP). Am J Health Syst Pharm 2020;77:835–64 · 10) Liu C, Bayer A, Cosgrove SE, et al. Clinical practice guidelines by the Infectious Diseases Society of America for the treatment of methicillin-resistant Staphylococcus aureus infections in adults and children. Clin Infect Dis 2011;52:e18–55 · 11) Watt G, Pachirat O, Baggett HC, et al. Infective endocarditis in northeastern Thailand. Emerg Infect Dis 2014;20:473–6 · 12) Huong VTL, Ha N, Huy NT, et al. Epidemiology, clinical manifestations, and outcomes of Streptococcus suis infection in humans. Emerg Infect Dis 2014;20:1105–14 · 13) Tubiana S, Duval X, Alla F, et al. The VIRSTA score, a prediction score to estimate risk of infective endocarditis and determine priority for echocardiography in patients with Staphylococcus aureus bacteremia. J Infect 2016;72:544–53<br>
+  <span class="tag add">เสริม</span> = เนื้อหาเสริมที่ไม่ได้มาจากแนวทางหลัก · <span class="tag add">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','ieView');
+mountWalker({
+ start:{q:'ไข้ + สงสัย IE — สัญญาณชีพคงที่ไหม?',o:[['ช็อก / pulmonary oedema / sepsis รุนแรง','unst'],['คงที่','bc']]},
+ unst:{leaf:true,cls:'danger',t:'ไม่คงที่',b:'เจาะ <b>blood culture 3 ชุดภายในเวลาสั้น</b> (คนละแทง) แล้ว<b>ให้ยา empirical ทันที</b> · Echo ด่วน · Pulmonary oedema ดื้อการรักษา/cardiogenic shock จากลิ้นรั่วเฉียบพลัน = <b>ผ่าตัด emergency ภายใน 24 ชม.</b> → ติดต่อศัลยแพทย์หัวใจ/Heart Valve Centre ทันที',next:['ต่อ: echo','echo']},
+ bc:{q:'เจาะ blood culture 3 ชุดแล้ว — ลักษณะอาการ?',o:[['Acute: ไข้สูง ป่วยเร็ว PWID สงสัย S. aureus','acute'],['Subacute: ไข้ต่ำๆ หลายสัปดาห์ อาการคงที่','sub']]},
+ acute:{leaf:true,cls:'warn',t:'เริ่มยาทันทีหลังเจาะ',b:'สูตรที่คลุม <i>S. aureus</i>: <b>ampicillin 2 g q4h + cloxacillin 2 g q4h (+ gentamicin 3 mg/kg/วัน ถ้าไตดี)</b> · เสี่ยง MRSA/ติดใน รพ./ลิ้นเทียม &lt;12 เดือน → <b>vancomycin</b> (± gentamicin) · ใช้เครื่องมือ empirical ด้านล่าง',next:['ต่อ: echo','echo']},
+ sub:{leaf:true,cls:'ok',t:'Subacute คงที่',b:'รอผลเพาะเชื้อ 24–48 ชม. ได้ (AHA 2015) — เจาะเพิ่มถ้าได้ยามาก่อน · ถ้าจะเริ่มยา: <b>ampicillin 2 g q4h + ceftriaxone 2 g q12h</b> (ESC 2023)',next:['ต่อ: echo','echo']},
+ echo:{q:'TTE ผลเป็นอย่างไร?',o:[['พบ vegetation/abscess/ลิ้นทะลุ','tPos'],['ปกติหรือไม่ชัด แต่ยังสงสัย (หรือมีลิ้นเทียม/CIED)','tNeg'],['ปกติ ภาพดี ลิ้นธรรมชาติ สงสัยต่ำ ไม่ใช่ S. aureus','low']]},
+ tPos:{leaf:true,cls:'warn',t:'TTE บวก',b:'ยังแนะนำ <b>TEE</b> เพื่อหา abscess/perforation (ยกเว้น IE ลิ้นขวาข้างเดียวที่ภาพ TTE ดีและชัด) · ส่ง/ปรึกษา Endocarditis Team',next:['ใช้เกณฑ์ Duke','duke']},
+ tNeg:{leaf:true,cls:'warn',t:'ต้องทำ TEE',b:'<b>TEE</b> · ลบแต่ยังสงสัย → <b>ซ้ำใน 5–7 วัน</b> · Possible NVE → cardiac CTA · Possible PVE → <b>FDG-PET/CT + cardiac CTA</b> · มีอาการทางสมอง/ปวดท้อง → CT/MRI',next:['ใช้เกณฑ์ Duke','duke']},
+ low:{leaf:true,cls:'ok',t:'โอกาสต่ำ',b:'TTE ภาพดีที่ปกติในผู้มีโอกาสต่ำ ช่วยลดโอกาส IE · หาสาเหตุไข้อื่น · <b>ถ้าเชื้อในเลือดเป็น <i>S. aureus</i>/เชื้อ typical หรือมีข้อมูลใหม่ → TEE</b>',next:['ใช้เกณฑ์ Duke','duke']},
+ duke:{q:'ตามเกณฑ์ Duke-ISCVID / ESC 2023?',o:[['Definite','sx'],['Possible','poss'],['Rejected','rej']]},
+ poss:{leaf:true,cls:'warn',t:'Possible IE',b:'รักษาแบบ IE ถ้ายังสงสัยมาก · หาเพิ่ม: TEE ซ้ำ 5–7 วัน, cardiac CTA, PET/CT (ลิ้นเทียม), CT/MRI สมองและช่องท้อง (emboli ที่ไม่มีอาการ = minor), serology <i>Bartonella</i>/<i>Coxiella</i> ถ้าเพาะไม่ขึ้น',next:['ประเมินผ่าตัด','sx']},
+ rej:{leaf:true,cls:'ok',t:'Rejected',b:'หาการวินิจฉัยอื่น · ประเมินใหม่ถ้ามีข้อมูลใหม่ (เชื้อขึ้น, emboli, เสียงฟู่ใหม่)'},
+ sx:{q:'มีข้อบ่งชี้ผ่าตัดไหม?',o:[['Pulmonary oedema ดื้อการรักษา/cardiogenic shock','emer'],['HF, abscess/fistula/AV block ใหม่, เชื้อรา/ดื้อยา, เชื้อไม่หาย, vegetation ≥10 mm + emboli','urg'],['ไม่มี','med']]},
+ emer:{leaf:true,cls:'danger',t:'Emergency (ภายใน 24 ชม.)',b:'ผ่าตัดไม่ว่าได้ยามานานเท่าไร · CT/MRI สมองถ้าทำได้โดยไม่ทำให้ช้า — ischemic stroke ไม่ใช่เหตุให้เลื่อน · เลือดออกในสมอง/โคม่า → ชั่งร่วมกับประสาทศัลย์'},
+ urg:{leaf:true,cls:'warn',t:'Urgent (ภายใน 3–5 วัน)',b:'ส่ง Heart Valve Centre · CT/MRI สมองก่อนผ่าตัด · ischemic stroke/TIA ไม่เลื่อน · ICH มาก → มักเลื่อน ≥4 สัปดาห์ · ยาหลังผ่าตัด ≥2 สัปดาห์ นับรวมวันก่อนผ่าตัด',next:['ระหว่างรักษาด้วยยา','med']},
+ med:{q:'ครบเกณฑ์ POET ไหม? (ลิ้นซ้าย, Strep/E. faecalis/MSSA/CoNS, IV ≥10 วัน, ไม่มีไข้ >2 วัน, CRP ลด, WBC <15, TEE ไม่มี abscess)',o:[['ครบ','oral'],['ไม่ครบ/เชื้ออื่น/PWID','iv']]},
+ oral:{leaf:true,cls:'ok',t:'พิจารณายากิน 2 ตัว (ESC IIa)',b:'เช่น amoxicillin 1 g × 4 + rifampicin 600 mg × 2 (strep), dicloxacillin 1 g × 4 + rifampicin (MSSA), amoxicillin + moxifloxacin (<i>E. faecalis</i>) · ตรวจ interaction ของ rifampicin · นัดติดตามใกล้ชิด · จบ: TTE baseline + ฟัน'},
+ iv:{leaf:true,cls:'warn',t:'ให้ IV ต่อจนครบ',b:'NVE strep 4 สัปดาห์ · <i>S. aureus</i> NVE 4–6 · <i>E. faecalis</i> 6 · PVE ≥6 สัปดาห์ (นับจากวัน blood culture ลบ) · OPAT (เช่น ceftriaxone วันละครั้ง) ได้ในรายที่คงที่ · จบ: TTE baseline + ฟัน'}
+},'apTrail','apStage');
+
+/* ---------- Duke calculator ---------- */
+function duke(){
+  const set=$('dSet').value,mic=$('dMic').value,img=$('dImg').value;const c=id=>$(id).checked;const isc=set==='isc';
+  const Mj=[],Mn=[],N=[];
+  // microbiology
+  if(mic==='typ2')Mj.push('เชื้อ typical ≥2 ชุด');
+  else if(mic==='strep2'){if(isc)Mj.push('Streptococcus (ยกเว้น pneumococcus/S. pyogenes) ≥2 ชุด = typical');else{Mn.push('เพาะขึ้นแต่ไม่ถึง major');N.push('ESC: <i>S. suis</i>/strep กลุ่มอื่นไม่อยู่ในรายการ typical — เป็น major ได้ถ้า<b>เพาะขึ้นต่อเนื่อง</b> (≥2 ชุดห่าง &gt;12 ชม. หรือขึ้นทั้ง 3 ชุด) → เลือก "เชื้ออื่นขึ้น ≥3 ชุด"');}}
+  else if(mic==='pve2'){if(isc)Mj.push('มีวัสดุเทียม + เชื้อกลุ่มนี้ ≥2 ชุด = typical (ISCVID)');else{Mn.push('เพาะขึ้นแต่ไม่ถึง major');N.push('ESC: ต้องเพาะขึ้นต่อเนื่องจึงเป็น major');}}
+  else if(mic==='non3')Mj.push(isc?'เชื้อ non-typical ≥3 ชุด':'เพาะขึ้นต่อเนื่อง');
+  else if(mic==='cox')Mj.push('<i>Coxiella</i> (เพาะ 1 ชุด/phase I IgG &gt;1:800)');
+  else if(mic==='bart'){if(isc)Mj.push('<i>Bartonella</i> IgG ≥1:800 / PCR ในเลือด');else{Mn.push('serology บ่งการติดเชื้อที่เข้ากับ IE');N.push('ESC: serology/PCR <i>Bartonella</i> นับเป็น minor');}}
+  else if(mic==='one')Mn.push('เพาะขึ้นแต่ไม่ถึง major');
+  // imaging
+  if(img==='veg')Mj.push('ภาพ: vegetation/abscess/ลิ้นทะลุ/fistula/ลิ้นเทียมหลุด');
+  else if(img==='reg'){if(isc)Mj.push('Echo: ลิ้นรั่วใหม่ที่มีนัยสำคัญ');else N.push('ESC 2023 ไม่ได้ระบุ "ลิ้นรั่วใหม่อย่างเดียว" เป็นเกณฑ์แยก — ไม่นับ · ทำ TEE หา lesion');}
+  else if(img==='pet3')Mj.push('PET/CT ผิดปกติ (≥3 เดือนหลังใส่)');
+  else if(img==='pet0'){if(isc){Mn.push('PET/CT ผิดปกติภายใน 3 เดือนหลังใส่');}else Mj.push('PET/CT ผิดปกติรอบลิ้นเทียม (ESC นับเป็น major ไม่ว่าเวลาใด)');}
+  else if(img==='spect'){if(isc)N.push('Duke-ISCVID ไม่ได้รวม WBC SPECT/CT — ไม่นับ');else Mj.push('WBC SPECT/CT ผิดปกติ');}
+  if(c('dSurg')){if(isc)Mj.push('เห็น IE ระหว่างผ่าตัด');else N.push('ESC ไม่มี major จากการผ่าตัด — ส่งลิ้นตรวจพยาธิ/เพาะเชื้อ');}
+  if(c('dPre'))Mn.push('ปัจจัยเสี่ยง');
+  if(c('dFev'))Mn.push('ไข้');
+  if(c('dVas'))Mn.push('ปรากฏการณ์ทางหลอดเลือด');
+  if(c('dSpd')&&!c('dVas')){if(isc)N.push('ISCVID: spondylodiscitis ไม่ได้อยู่ในหมวดหลอดเลือด — นับเป็น minor ทางจุลชีวะได้ถ้าเพาะ/PCR จากตำแหน่งนั้นบวก');else Mn.push('Spondylodiscitis/ข้ออักเสบติดเชื้อ (ESC นับในหมวด emboli)');}
+  if(c('dImm'))Mn.push('ปรากฏการณ์ทางภูมิคุ้มกัน');
+  if(c('dMur')){if(!isc)N.push('ESC ไม่มีเกณฑ์จากการฟังเสียงฟู่');else if(img!=='none')N.push('มีผลภาพแล้ว — ไม่นับเสียงฟู่ (ใช้เฉพาะเมื่อไม่มี echo)');else Mn.push('ฟังได้เสียงลิ้นรั่วใหม่');}
+  const M=Mj.length,m=Mn.length;const L=[];
+  if(!c('dPath')&&M+m===0&&!c('dAlt')&&!c('dRes')){$('dkOut').innerHTML='เลือกข้อมูลที่ผู้ป่วยมี (blood culture, ภาพ, minor criteria)';return}
+  const lab=isc?'Duke-ISCVID 2023':'ESC 2023';
+  let cls;
+  if(c('dPath'))cls='<b style="color:var(--danger)">Definite IE</b> (pathologic criteria)';
+  else if(M>=2||(M===1&&m>=3)||m>=5)cls='<b style="color:var(--danger)">Definite IE</b> (clinical)';
+  else if(c('dAlt')||c('dRes'))cls='<b style="color:var(--ok)">Rejected</b> — '+(c('dAlt')?'มีการวินิจฉัยอื่นชัดเจน':'อาการหายหลังยา ≤4 วัน');
+  else if((M===1&&m>=1)||m>=3)cls='<b style="color:var(--warn)">Possible IE</b>';
+  else cls='<b>ไม่ถึงเกณฑ์ possible (rejected ตามเกณฑ์)</b> — ถ้ายังสงสัยมาก: blood culture เพิ่ม, TEE ซ้ำ 5–7 วัน';
+  L.push(`${lab}: ${cls}`);
+  L.push(`Major <b>${M}</b> · Minor <b>${m}</b>`);
+  if(M)L.push('Major: '+Mj.join(' · '));
+  if(m)L.push('Minor: '+Mn.join(' · '));
+  N.forEach(x=>L.push('<span class="muted">'+x+'</span>'));
+  if(cls.indexOf('Possible')>=0)L.push('Possible → TEE ซ้ำ, cardiac CTA (NVE), PET/CT + CTA (PVE), CT/MRI สมองและทั้งตัว, serology ถ้าเพาะไม่ขึ้น');
+  if(cls.indexOf('Definite')>=0)L.push('Definite → ยาตามเชื้อ + ประเมินข้อบ่งชี้ผ่าตัด + ปรึกษา Endocarditis Team');
+  L.push('<span class="muted">เกณฑ์ช่วยจำแนก ไม่ใช่ทดแทนดุลพินิจทางคลินิก</span>');
+  $('dkOut').innerHTML=L.join('<br>');
+}
+bindAll('#tDk input,#tDk select',duke);
+
+/* ---------- Empirical regimen ---------- */
+function emp(){
+  const wt=num('eWt'),cr=num('eCr');const c=id=>$(id).checked;const hd=c('eHD');
+  const v=$('eV').value,acq=$('eA').value,al=$('eAl').value;const L=[];
+  if(wt===null||wt<30||wt>250){$('emOut').innerHTML='ใส่น้ำหนักจริงเป็นกิโลกรัม (30–250 kg)';return}
+  if(!hd&&(cr===null||cr<=0||cr>250)){$('emOut').innerHTML='ใส่ CrCl (Cockcroft-Gault) 1–250 mL/min หรือเลือก "ฟอกเลือด (HD)"';return}
+  const k=hd?5:cr;
+  const r250=x=>Math.round(x/250)*250,r50=x=>Math.round(x/50)*50,r10=x=>Math.round(x/10)*10;
+  const amp='<b>Ampicillin '+(k>=50?'2 g IV q4h':k>=30?'2 g IV q6h':k>=10?'2 g IV q8h':'2 g IV q12h')+'</b>'+(hd?' (วันฟอกให้หลังฟอก)':'');
+  const cro='<b>Ceftriaxone 2 g IV q12h</b>';
+  const clox='<b>Cloxacillin 2 g IV q4h</b>';
+  const cfz='<b>Cefazolin '+(hd?'2 g IV หลังฟอกทุกครั้ง':k>=30?'2 g IV q8h':k>=10?'2 g IV q12h':'2 g IV q24h')+'</b>';
+  const gOK=k>=30;
+  const gDose=Math.min(240,r10(3*wt));
+  const gent=gOK?`<b>Gentamicin ${gDose} mg IV วันละครั้ง</b> (3 mg/kg, สูงสุด 240 mg)`+(k<60?' — ไตเสื่อม: ตามระดับยา trough &lt;1 mg/L':''):null;
+  const vLD=Math.min(3000,r250(25*wt)),vMD=Math.min(2000,Math.max(500,r250(15*wt)));
+  const vanc=`<b>Vancomycin loading ${vLD} mg IV</b> แล้ว `+(hd?'ให้ตามระดับยาหลังฟอก':k>=50?`<b>${vMD} mg IV q12h</b>`:k>=30?`<b>${vMD} mg IV q24h</b>`:'ให้ตามระดับยา (เจาะระดับก่อนให้ครั้งต่อไป)')+' · เป้า AUC 400–600 (หรือ trough 15–20)';
+  const dDose=r50(10*wt);
+  const dapt=`daptomycin ${dDose} mg IV `+(k>=30?'q24h':'q48h')+' (10 mg/kg)';
+  const rif='<b>Rifampicin 300 mg PO/IV q8h</b> (900 mg/วัน) — ESC ใส่ใน PVE/วัสดุเทียม · AHA 2026: เริ่มเมื่อ blood culture ลบแล้ว (~5–7 วัน) · ตรวจ interaction (warfarin/DOAC)';
+  const fep='<b>Cefepime '+(hd?'1 g IV q24h (หลังฟอก)':k>60?'2 g IV q8h':k>=30?'2 g IV q12h':k>=11?'2 g IV q24h':'1 g IV q24h')+'</b>';
+  L.push(`น้ำหนัก ${wt} kg · ${hd?'ฟอกเลือด (HD)':'CrCl '+cr+' mL/min'}`);
+  if(wt>100)L.push('<span class="muted">น้ำหนักมาก: gentamicin ใช้ adjusted body weight · vancomycin ปรับตามระดับยา · CrCl จาก Cockcroft-Gault อาจคลาดเคลื่อน</span>');
+  const hca=acq==='hca'||v==='pe'||v==='cied'||c('eMr');
+  const gNote=gOK?'':'<b>งด gentamicin</b> (CrCl &lt;30/HD — เสี่ยงไตวายมาก)';
+  if(!hca){
+    L.push('<b>กลุ่ม: NVE จากชุมชน'+(v==='pl'?' / PVE ระยะหลัง (≥12 เดือน)':'')+'</b> (ESC 2023)');
+    if(al==='no'){
+      const A=`${amp} + ${cro}`;
+      const B=`${amp} + ${clox}`+(gent?` + ${gent}`:'');
+      const pB=c('eAc')||c('eIv');
+      L.push((pB?'ทางเลือก':'<b>แนะนำ</b>')+' ①: '+A+' <span class="muted">(คลุม strep, enterococcus, HACEK; ฆ่า S. aureus ได้ไม่ดี)</span>');
+      L.push((pB?'<b>แนะนำ</b>':'ทางเลือก')+' ②: '+B+(pB?' <span class="muted">(acute/PWID → ต้องคลุม S. aureus เต็มที่)</span>':''));
+      if(!gOK)L.push(gNote+' · สูตร ② ใช้ ampicillin + cloxacillin');
+    }else if(al==='mild'){
+      L.push('<b>แนะนำ</b>: '+cfz+(gent?' + '+gent:'')+' (ESC IIb) <span class="muted">— cefazolin ไม่คลุม enterococcus: ถ้าสงสัย (สูงอายุ หลังหัตถการทางเดินปัสสาวะ/ลำไส้) ใช้ vancomycin แทน</span>');
+      if(!gOK)L.push(gNote);
+    }else{
+      L.push('<b>แนะนำ</b>: '+vanc+(gent?' + '+gent:''));
+      if(!gOK)L.push(gNote);
+    }
+    if(c('eIv'))L.push('PWID: เชื้อหลัก <i>S. aureus</i> (มัก tricuspid) · เคยมี MRSA/ใช้เข็มร่วม → เลือก "เสี่ยง MRSA" · ESC ไม่แนะนำยากิน step-down ใน PWID');
+    if(c('eGn'))L.push('Septic shock: ceftriaxone ในสูตร ① คลุม GNB ชุมชนส่วนใหญ่ · เสี่ยงเชื้อดื้อ → ปรึกษา ID');
+  }else{
+    const why=[acq==='hca'?'ติดจาก รพ./การดูแลสุขภาพ':null,v==='pe'?'PVE ระยะแรก (&lt;12 เดือน)':null,v==='cied'?'CIED':null,c('eMr')?'เสี่ยง MRSA':null].filter(Boolean).join(', ');
+    L.push(`<b>กลุ่ม: ${why}</b> → ESC 2023 (IIb): vancomycin หรือ daptomycin + gentamicin (+ rifampicin ถ้ามีวัสดุเทียม)`);
+    L.push('<b>แนะนำ</b>: '+vanc+(gent?' + '+gent:''));
+    L.push('ทางเลือกแทน vancomycin: '+dapt+' — นอกบัญชียาหลัก, ตรวจ CK');
+    if(v==='pe'||v==='pl'||v==='cied')L.push(rif);
+    if(!gOK)L.push(gNote);
+    if(c('eGn'))L.push('เสี่ยง gram-negative/ช็อก: เพิ่ม '+fep+' หรือ carbapenem ตามเชื้อดื้อยาใน รพ. <span class="muted">(เสริม — ดูหน้า MDR-GNB)</span>');
+    if(v==='cied')L.push('<b>CIED → วางแผนถอดทั้งระบบ</b> โดยไม่ล่าช้า');
+    if(c('eMr')&&acq==='com'&&v==='nat'&&al!=='ana')L.push('<span class="muted">ถ้าผลเป็น MSSA → เปลี่ยนเป็น cloxacillin/cefazolin ทันที (ดีกว่า vancomycin)</span>');
+  }
+  if(al==='ana'&&hca)L.push('<span class="muted">แพ้รุนแรง: สูตร vancomycin ไม่มี beta-lactam — เหมาะ</span>');
+  L.push('เปลี่ยนเป็น<b>ยาตามเชื้อ</b>ทันทีที่ทราบผล · ปรึกษา Endocarditis Team · ขนาดยาอิงน้ำหนักจริง ตรวจกับเภสัชกร');
+  $('emOut').innerHTML=L.join('<br>');
+}
+bindAll('#tEm input,#tEm select',emp);
+
+/* ---------- Surgery checker ---------- */
+function sx(){
+  const side=$('sSide').value,pv=$('sV').value==='p',u=$('sU').value;const c=id=>$(id).checked;
+  const raw=num('sVeg');let mm=null;const L=[],E=[],U=[],O=[];
+  if(raw!==null){
+    if(raw<0){$('sxOut').innerHTML='ขนาด vegetation ต้องเป็นค่าบวก (หรือเว้นว่าง/0 ถ้าไม่พบ)';return}
+    if(u==='cm'&&raw>8){$('sxOut').innerHTML=`${raw} cm ใหญ่ผิดปกติ — ตรวจหน่วย (ใส่เป็น mm หรือเปล่า?)`;return}
+    mm=u==='cm'?raw*10:raw;
+    if(mm>80){$('sxOut').innerHTML=`${raw} ${u} ใหญ่ผิดปกติ (&gt;80 mm) — ตรวจค่าและหน่วย`;return}
+    if(mm===0)mm=null;
+  }
+  const vegTxt=mm===null?'ไม่ได้ใส่ขนาด vegetation':`Vegetation ${Math.round(mm*10)/10} mm`+(u==='mm'&&raw>0&&raw<=3?' <span class="muted">(ค่าน้อยมาก — ตั้งใจใส่เป็น cm หรือไม่?)</span>':'');
+  L.push(vegTxt);
+  if(side==='l'){
+    if(c('sShock'))E.push('HF: pulmonary oedema ดื้อการรักษา/cardiogenic shock <span class="rec s1">I · B</span>');
+    if(c('sHf'))U.push('HF จากลิ้นรั่ว/อุดกั้นรุนแรง <span class="rec s1">I · B</span>');
+    if(c('sAbs'))U.push('ติดเชื้อคุมไม่ได้เฉพาะที่ (abscess/fistula/AV block ใหม่) <span class="rec s1">I · B</span>');
+    if(c('sFun'))U.push('เชื้อรา/ดื้อยาหลายขนาน (urgent หรือ non-urgent ตามความคงที่) <span class="rec s1">I · C</span>');
+    if(c('sBc'))U.push('Blood culture ยังขึ้นแม้ได้ยาเหมาะสมและคุมแหล่งอื่นแล้ว <span class="rec">IIa · B</span>');
+    if(c('sSa')&&pv)U.push('PVE จาก <i>S. aureus</i>/gram-negative ที่ไม่ใช่ HACEK <span class="rec">IIa · C</span>');
+    const other=E.length+U.length>0;
+    if(mm!==null&&mm>=10){
+      if(c('sEmb'))U.push('Vegetation ≥10 mm + เกิด emboli แล้ว <span class="rec s1">I · B</span>');
+      else if(other)U.push('Vegetation ≥10 mm + มีข้อบ่งชี้อื่น <span class="rec s1">I · C</span>');
+      else if(!c('sSev')&&c('sLow'))O.push('Vegetation ≥10 mm ไม่มีลิ้นเสียรุนแรง/emboli + เสี่ยงผ่าตัดต่ำ → <b>อาจพิจารณา urgent surgery</b> <span class="rec">IIb · B</span>');
+      else if(c('sSev'))O.push('Vegetation ≥10 mm + ลิ้นรั่ว/ตีบรุนแรง (ยังไม่มี HF) → ปรึกษาทีมผ่าตัด ชั่งความเสี่ยงผ่าตัด');
+      else O.push('Vegetation ≥10 mm อย่างเดียว ความเสี่ยงผ่าตัดไม่ต่ำ → ยังไม่ใช่ข้อบ่งชี้ชัด ตาม echo ใกล้ชิด');
+    }else if(c('sEmb'))O.push('เกิด emboli แต่ vegetation '+(mm===null?'ไม่ทราบขนาด':'&lt;10 mm')+' → ยังไม่ใช่ข้อบ่งชี้เดี่ยว · echo ซ้ำ ตามเกิดซ้ำ');
+    if(c('sSa')&&!pv)O.push('<i>S. aureus</i> ในลิ้นธรรมชาติ: ไม่ใช่ข้อบ่งชี้เดี่ยว แต่มีภาวะแทรกซ้อนบ่อย — echo ซ้ำ');
+  }else{
+    if(c('sTr'))U.push('TR รุนแรง + RV ผิดปกติ ไม่ตอบสนองยาขับปัสสาวะ <span class="rec s1">I · B</span>');
+    if(c('sResp'))U.push('Vegetation ค้าง + หายใจล้มเหลวหลัง emboli ปอดซ้ำ <span class="rec s1">I · B</span>');
+    if(mm!==null&&mm>20&&c('sEmb'))U.push('Vegetation tricuspid &gt;20 mm หลัง septic pulmonary emboli ซ้ำ <span class="rec s1">I · C</span>');
+    else if(mm!==null&&mm>20)O.push('Vegetation &gt;20 mm แต่ยังไม่มี emboli ปอดซ้ำ → ติดตามใกล้ชิด');
+    if(c('sBc'))U.push('เชื้อในเลือด/sepsis ไม่หายหลังยา ≥1 สัปดาห์ <span class="rec">IIa · C</span>');
+    if(c('sShock'))E.push('ช็อก/HF รุนแรง — ปรึกษาทีมผ่าตัดด่วน');
+    if(c('sAbs')||c('sFun'))U.push('ติดเชื้อคุมไม่ได้/เชื้อรา — ปรึกษาทีมผ่าตัด');
+    if(c('sHf')||c('sSev')||c('sLow'))O.push('<span class="muted">ตัวเลือก HF/ลิ้นรุนแรง/ความเสี่ยงผ่าตัด ใช้กับลิ้นซ้าย — ลิ้นขวาใช้ข้อ TR + RV ผิดปกติ</span>');
+    if(E.length+U.length>0)O.push('ลิ้นขวา: ซ่อมดีกว่าเปลี่ยน <span class="rec">IIa · B</span> · เสี่ยงผ่าตัดสูง → พิจารณาดูดลิ่มผ่านสายสวน <span class="rec">IIb · C</span>');
+  }
+  if(E.length)L.push('<b style="color:var(--danger)">EMERGENCY — ภายใน 24 ชม.</b><br>• '+E.join('<br>• '));
+  if(U.length)L.push('<b style="color:var(--warn)">'+(E.length?'ข้อบ่งชี้อื่น (urgent 3–5 วัน)':'URGENT — ภายใน 3–5 วัน')+'</b><br>• '+U.join('<br>• '));
+  O.forEach(x=>L.push(x));
+  const any=E.length+U.length>0;
+  if(!any&&!O.length)L.push('ยังไม่พบข้อบ่งชี้ผ่าตัดจากข้อมูลที่เลือก → รักษาด้วยยา · echo ซ้ำเมื่อมีภาวะแทรกซ้อนใหม่');
+  // neuro overlay
+  if(c('sComa'))L.push('<b>โคม่า</b> → โดยทั่วไปไม่ผ่าตัดหัวใจ (พยากรณ์สมองแย่) — ตัดสินร่วมกับประสาทแพทย์/ทีม');
+  else if(c('sIch'))L.push('<b>เลือดออกในสมอง</b> → มักเลื่อนผ่าตัด <b>≥4 สัปดาห์</b> (ESC; AHA 2026 อย่างน้อย 2 ดีที่สุด 4 สัปดาห์) ยกเว้นหัวใจไม่คงที่ — ชั่งร่วมกับประสาทศัลย์ · หยุดยาต้านลิ่มเลือดทั้งหมด · CTA หา mycotic aneurysm');
+  else if(c('sStk'))L.push('Ischemic stroke/TIA ไม่มีเลือดออก ไม่โคม่า → <b>ไม่ต้องเลื่อนผ่าตัด</b> ถ้ามีข้อบ่งชี้ <span class="rec s1">I · B</span>');
+  if(c('sStk')||c('sIch'))L.push('<b>ห้าม thrombolysis</b> ใน stroke จาก IE <span class="rec no">III · C</span> · thrombectomy พิจารณาได้');
+  if(any)L.push('ส่ง Heart Valve Centre / Endocarditis Team · CT/MRI สมองก่อนผ่าตัด (ถ้าไม่ทำให้ล่าช้าใน emergency)');
+  $('sxOut').innerHTML=L.join('<br>');
+}
+bindAll('#tSx input,#tSx select',sx);
+
+/* ---------- Dental prophylaxis ---------- */
+function px(){
+  const cnd=$('pC').value,pr=$('pP').value,al=$('pAl').value;const c=id=>$(id).checked;const L=[];
+  const hi={pie:'เคยเป็น IE (ESC I · B)',pv:'ลิ้นเทียม/วัสดุซ่อมลิ้น (ESC I · C)',tavi:'ลิ้นผ่านสายสวน aortic/pulmonary (ESC I · C)',chd:'CHD กลุ่มเสี่ยงสูง (ESC I · C)',vad:'VAD (ESC I · C)'};
+  let level;
+  if(hi[cnd]){level='rec';L.push('<b>กลุ่มเสี่ยงสูง</b>: '+hi[cnd]);}
+  else if(cnd==='tmv'){level='con';L.push('ซ่อมลิ้น mitral/tricuspid ผ่านสายสวน: <b>ควรพิจารณา</b> <span class="rec">IIa · C</span>');}
+  else if(cnd==='htx'){level='may';L.push('ปลูกถ่ายหัวใจ: <b>อาจพิจารณา</b> <span class="rec">IIb · C</span> (AHA 2021: เมื่อมีลิ้นผิดปกติ)');}
+  else if(cnd==='int'){level='no';L.push('<b>เสี่ยงปานกลาง</b> (RHD, bicuspid, MVP, ลิ้นเสื่อม, HCM): <b>ไม่ให้ยาป้องกันเป็นประจำ</b> — เน้นสุขอนามัยช่องปาก พบทันตแพทย์สม่ำเสมอ');}
+  else if(cnd==='cied'){level='no';L.push('มี pacemaker/ICD อย่างเดียว: <b>ไม่ต้องให้ยาป้องกันก่อนทำฟัน</b>');}
+  else{level='no';L.push('ไม่มีโรคหัวใจกลุ่มเสี่ยง: <b>ไม่ต้องให้ยาป้องกัน</b>');}
+  if(pr==='dlow'){$('pxOut').innerHTML=L.concat(['หัตถการนี้ (ฉีดยาชาในเนื้อเยื่อปกติ/ถ่ายภาพรังสี/ปรับเครื่องมือจัดฟัน) <b>ไม่ต้องให้ยาป้องกัน</b> ในทุกกลุ่ม']).join('<br>');return}
+  if(pr==='nond'){
+    L.push('หัตถการที่ไม่ใช่ฟัน (ส่องกล้อง GI/GU/หลอดลม, TEE, คลอด): <b>ไม่ให้ยาป้องกัน IE เป็นประจำ</b>'+((level==='rec')?' · ESC: อาจพิจารณาในกลุ่มเสี่ยงสูงที่ทำหัตถการรุกล้ำ <span class="rec">IIb · C</span> · ถ้ามีการติดเชื้อที่ตำแหน่งนั้นอยู่ ให้รักษาการติดเชื้อด้วยยาที่คลุมเชื้อก่อโรค':''));
+    $('pxOut').innerHTML=L.join('<br>');return;
+  }
+  if(level==='no'){L.push('<span class="muted">ถ้ามีฟันผุ/เหงือกอักเสบ ให้รักษา — สุขอนามัยช่องปากสำคัญกว่ายา</span>');$('pxOut').innerHTML=L.join('<br>');return}
+  L.push((level==='rec'?'<b>แนะนำให้ยาป้องกัน</b>':level==='con'?'<b>ควรพิจารณาให้ยาป้องกัน</b>':'<b>อาจพิจารณาให้ยาป้องกัน</b>')+' ครั้งเดียว <b>30–60 นาทีก่อนทำ</b>:');
+  const po=c('pPo');let rx;
+  const nonPen='<b>Azithromycin 500 mg PO</b> หรือ <b>clarithromycin 500 mg PO</b> หรือ <b>doxycycline 100 mg PO</b>';
+  if(al==='no'){
+    if(c('pRf')&&po)rx=nonPen+' <span class="muted">(กำลังได้ penicillin ป้องกันไข้รูมาติก → เชื้อในปากอาจดื้อ — เลือกยาต่างกลุ่ม; เสริมจาก AHA)</span>';
+    else rx=po?'<b>Amoxicillin 2 g PO</b>':'<b>Ampicillin 2 g IV/IM</b> หรือ <b>cefazolin/ceftriaxone 1 g IV/IM</b>';
+    if(c('pRf')&&!po)rx+=' <span class="muted">(กำลังได้ penicillin ป้องกันไข้รูมาติก → เลือก cefazolin/ceftriaxone)</span>';
+  }else if(al==='mild'){
+    rx=po?'<b>Cephalexin 2 g PO</b> (หรือ '+nonPen+')':'<b>Cefazolin หรือ ceftriaxone 1 g IV/IM</b>';
+  }else{
+    rx=po?nonPen:'ไม่มีสูตรฉีดมาตรฐานสำหรับผู้แพ้รุนแรงที่กินไม่ได้ (cephalosporin ห้ามในผู้มีประวัติ anaphylaxis) → เลื่อนหัตถการจนกินได้ หรือปรึกษา ID';
+  }
+  L.push(rx);
+  L.push('<b>ไม่ใช้ clindamycin</b> (ESC 2023/AHA 2021 — เสี่ยง <i>C. difficile</i>) · ลืมให้ → ให้ได้ถึง 2 ชม.หลังทำ (AHA 2021)');
+  $('pxOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPx input,#tPx select',px);
+
+mountQuiz([
+ ['ชาย 55 ปี ไข้ 3 สัปดาห์ เสียงฟู่ mitral regurgitation ใหม่ ยังไม่ได้ยา อาการคงที่ ขั้นแรกที่สำคัญที่สุด',['ให้ ceftriaxone ทันทีแล้วค่อยเจาะเลือด','เจาะ blood culture 3 ชุดคนละแทง ก่อนให้ยา','ทำ PET/CT','เจาะ blood culture 1 ชุดพอ'],1,'≥3 ชุด ห่าง ~30 นาที ชุดละ 10 mL ก่อนยา · subacute ที่คงที่รอผลได้ 24–48 ชม.'],
+ ['ผู้ป่วยลิ้นหัวใจเทียม มีไข้ blood culture ขึ้น S. aureus TTE ปกติ ควรทำอย่างไรต่อ',['ตัด IE ได้แล้ว','ทำ TEE (± PET/CT + cardiac CTA ถ้ายังไม่ชัด)','รอดูอาการ','ทำ TTE ซ้ำปีหน้า'],1,'ลิ้นเทียม/CIED ต้อง TEE ทุกราย · possible PVE → PET/CT + CTA'],
+ ['ตาม Duke-ISCVID 2023 ข้อใด "นับเป็น major criterion" ได้ แต่ ESC 2023 ไม่นับเป็น major โดยตรง',['S. aureus ขึ้น 2 ชุด','Streptococcus suis ขึ้น 2 ชุด','Vegetation จาก TEE','Coxiella phase I IgG >1:800'],1,'ISCVID: streptococcus ทุกชนิด (ยกเว้น pneumococcus/S. pyogenes) เป็น typical · ESC: ต้องเพาะขึ้นต่อเนื่อง'],
+ ['การจำแนก "Definite IE" ทางคลินิกข้อใดถูก',['1 major + 1 minor','3 minor','1 major + 3 minor','2 minor'],2,'Definite: 2 major / 1 major + 3 minor / 5 minor · Possible: 1 major + 1 minor / 3 minor'],
+ ['E. faecalis endocarditis ลิ้นธรรมชาติ ผู้ป่วยอายุ 78 ปี CrCl 35 สูตรที่เหมาะที่สุด',['Ceftriaxone เดี่ยว','Ampicillin + ceftriaxone 6 สัปดาห์','Cefazolin 4 สัปดาห์','Vancomycin + gentamicin 6 สัปดาห์'],1,'Enterococcus ดื้อ cephalosporin โดยธรรมชาติ แต่ ampicillin + ceftriaxone เสริมฤทธิ์กัน ไม่พิษต่อไต ใช้ได้แม้ HLAR'],
+ ['MSSA native valve endocarditis ยาที่เหมาะสม',['Vancomycin','Cloxacillin หรือ cefazolin 4–6 สัปดาห์ ไม่ต้องใส่ gentamicin','Ceftriaxone + gentamicin','Cloxacillin + gentamicin 6 สัปดาห์'],1,'Gentamicin ไม่ลดตายแต่เพิ่มไตวาย · vancomycin ด้อยกว่า beta-lactam ใน MSSA'],
+ ['ข้อใด "ไม่ใช่" เกณฑ์ของ POET สำหรับเปลี่ยนเป็นยากิน',['ได้ IV ที่เหมาะสม ≥10 วัน','ไม่มีไข้ >2 วัน CRP ลด WBC <15','TEE ไม่มี abscess','IE ในผู้ฉีดสารเสพติดจาก MRSA'],3,'POET รวม strep, E. faecalis, MSSA, CoNS · ESC ไม่แนะนำยากินใน MRSA/PWID'],
+ ['IE ลิ้น mitral vegetation 14 mm เกิด splenic infarct ระหว่างได้ยาเหมาะสม ไม่มี HF ข้อบ่งชี้คือ',['ไม่ต้องผ่าตัด','ผ่าตัด urgent (ภายใน 3–5 วัน)','ผ่าตัดหลังครบยา 6 สัปดาห์','ให้ aspirin ป้องกัน emboli'],1,'Vegetation ≥10 mm + emboli แม้ได้ยา = urgent surgery (ESC I · B) · aspirin ไม่ช่วย'],
+ ['ผู้ป่วย IE เกิด acute ischemic stroke ภายใน 2 ชม. NIHSS 10 ไม่มีเลือดออกใน CT การรักษาข้อใด "ห้าม"',['Mechanical thrombectomy ถ้ามี LVO','IV thrombolysis (rtPA/TNK)','MRI สมอง','ผ่าตัดลิ้นถ้ามีข้อบ่งชี้โดยไม่เลื่อน'],1,'Thrombolysis ใน IE เสี่ยงเลือดออกในสมอง — ESC III · C'],
+ ['ผู้ป่วยโรคหัวใจรูมาติก MR ปานกลาง ไม่เคยเป็น IE ไม่มีลิ้นเทียม จะถอนฟัน',['Amoxicillin 2 g ก่อนถอน','ไม่ต้องให้ยาป้องกันเป็นประจำ เน้นสุขอนามัยช่องปาก','Clindamycin 600 mg','Amoxicillin 2 g + gentamicin'],1,'RHD เป็นกลุ่มเสี่ยงปานกลาง — ESC/AHA ให้เฉพาะกลุ่มเสี่ยงสูง (เคย IE, ลิ้นเทียม, CHD บางชนิด, VAD)'],
+ ['IE ที่ blood culture ไม่ขึ้นในไทย สาเหตุที่พบบ่อยที่สุดคือ',['Brucella','ได้ยาฆ่าเชื้อมาก่อนเจาะเลือด','Tropheryma whipplei','เชื้อรา'],1,'ขอนแก่น: ได้ยาในสัปดาห์ก่อนมา 58% · ไม่พบเชื้อ ~55% · ส่ง Bartonella/Coxiella serology'],
+ ['Pacemaker endocarditis (มี vegetation ที่สาย) การรักษาหลัก',['ยาฆ่าเชื้อ 6 สัปดาห์โดยไม่ถอดเครื่อง','ถอดเครื่องและสายทั้งระบบโดยไม่ล่าช้า + ยาฆ่าเชื้อ','ถอดเฉพาะ generator','ให้ยาป้องกันตลอดชีวิต'],1,'ESC I · B · ใส่ใหม่อีกข้างเมื่อ blood culture ลบ ≥72 ชม. (≥2 สัปดาห์ถ้ามี vegetation)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

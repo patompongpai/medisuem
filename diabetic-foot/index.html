@@ -1,0 +1,1000 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Diabetic foot · แผลและการติดเชื้อที่เท้าเบาหวาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrine · Infectious disease · Vascular · IWGDF 2023 · IWGDF/IDSA 2023 · ADA 2026 · แนวทางเบาหวานไทย 2566</div>
+  <h1>แผลและการติดเชื้อที่เท้าเบาหวาน<br>Diabetic foot: ulcer · infection · PAD · Charcot</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป (OPD และหอผู้ป่วย) นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้ครอบคลุมตั้งแต่<b>ตรวจเท้าประจำปีและจัดกลุ่มเสี่ยง</b> → <b>ประเมินแผล</b> (SINBAD, WIfI) → <b>หาเส้นเลือดตีบ</b> (ABI/TBI/toe pressure) → <b>offloading และการทำแผล</b> → <b>วินิจฉัยและให้ยาฆ่าเชื้อ</b>ตามความรุนแรง (IWGDF/IDSA 1–4) พร้อมขนาดยาและการปรับตามไต → <b>Charcot foot</b> และการส่งต่อ</p>
+  <p class="cite">อ้างอิงหลัก: IWGDF 2023 Practical guidelines (Schaper NC, et al. Diabetes Metab Res Rev 2024;40:e3657) · IWGDF 2023 Prevention (Bus SA, et al. DMRR 2024;40:e3651) · Offloading (Bus SA, et al. DMRR 2024;40:e3647) · Wound healing (Chen P, et al. DMRR 2024;40:e3644) · IWGDF/ESVS/SVS PAD (Fitridge R, et al. Eur J Vasc Endovasc Surg 2023;66:454–83) · IWGDF/IDSA 2023 Infection (Senneville É, et al. DMRR 2024;40:e3687) · Classification (Monteiro-Soares M, et al. DMRR 2024;40:e3648) · Charcot (Wukich DK, et al. DMRR 2024;40:e3646) · ADA Standards of Care 2026 §12 (Diabetes Care 2026;49 Suppl 1:S261–76) · แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ถอดรองเท้าทุกครั้ง</b>ตรวจเท้าอย่างน้อยปีละครั้ง · จัดกลุ่มเสี่ยง IWGDF 0–3 แล้วนัดถี่ตามกลุ่ม</div>
+    <div class="stage" style="--c:var(--warn)"><b>แผล = 3 คำถาม</b>ติดเชื้อไหม (เกรด 1–4) · เลือดพอไหม (ABI/TBI/toe pressure) · ลดแรงกดหรือยัง (offloading)</div>
+    <div class="stage" style="--c:var(--danger)"><b>ติดเชื้อรุนแรง = ผ่าตัด</b>Gas, necrotizing, ฝีลึก, compartment → ปรึกษาศัลยแพทย์ด่วน · ยาอย่างเดียวไม่พอ</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#screen">ตรวจเท้าและจัดกลุ่มเสี่ยง</a><a href="#prevent">ป้องกันและรองเท้า</a><a href="#ulcer">ประเมินแผล: SINBAD · WIfI</a><a href="#pad">PAD: ABI · TBI · ส่ง revascularisation</a><a href="#offload">Offloading</a><a href="#wound">ทำแผลและสิ่งที่ไม่ควรทำ</a><a href="#dfi">วินิจฉัยการติดเชื้อและกระดูกอักเสบ</a><a href="#abx">ยาฆ่าเชื้อเริ่มต้น</a><a href="#dur">ระยะเวลายาและการผ่าตัดด่วน</a><a href="#ward">ดูแลในหอผู้ป่วยและส่งต่อ</a><a href="#charcot">Charcot foot</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="screen" class="col">
+  <div class="sec-num">01</div>
+  <h2>ตรวจเท้าประจำปีและจัดกลุ่มเสี่ยง</h2>
+  <p>แผลเท้าเบาหวานเกิดจาก <b>เส้นประสาทเสื่อมจนไม่รู้สึกเจ็บ (LOPS)</b> + <b>แรงกดซ้ำๆ/บาดเจ็บ</b> (รองเท้าคับ เดินเท้าเปล่า เท้าผิดรูป ตาปลา) ± <b>เส้นเลือดตีบ (PAD)</b> · เมื่อมีแผลแล้วติดเชื้อง่ายและลุกลามเร็ว · ผู้ที่เคยเป็นแผลแล้วกลับเป็นซ้ำบ่อย จึงต้องดูแลต่อเนื่องตลอดชีวิต</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ตรวจอะไรทุกปี <span class="rec s1">ADA A</span></h4><ul>
+      <li><b>ประวัติ</b>: แผล/ตัดนิ้วหรือขาเดิม Charcot เคยทำ bypass/บอลลูน สูบบุหรี่ ตาและไตเสื่อม อาการชา/แสบร้อน ปวดน่องเวลาเดิน (claudication) ปวดขาตอนกลางคืนที่ดีขึ้นเมื่อห้อยขา</li>
+      <li><b>ดูผิวหนัง</b>: แผล ตาปลา/callus เลือดออกใต้ callus ตุ่มน้ำ เชื้อราซอกนิ้ว เล็บขบ ผิวแห้งแตก</li>
+      <li><b>รูปเท้า</b>: นิ้วงอ (hammer/claw toe) หัวแม่เท้าเอียง (hallux valgus) ปุ่มกระดูกฝ่าเท้ายื่น เท้าโก่ง/แบนผิดรูป (Charcot) ข้อขยับได้น้อย</li>
+      <li><b>เส้นประสาท</b>: <b>10-g monofilament</b> (หรือ Ipswich touch test) <b>+ อีกอย่างน้อย 1 อย่าง</b> (vibration 128 Hz, pinprick, อุณหภูมิ) <span class="rec">ADA B</span></li>
+      <li><b>หลอดเลือด</b>: คลำชีพจร dorsalis pedis และ posterior tibial · สีผิว capillary refill ขนร่วง ผิวบาง</li></ul></div>
+    <div class="card c-ok"><h4>ทำ monofilament / vibration ให้ถูก</h4><ul>
+      <li><b>Monofilament 10 g</b>: ให้ผู้ป่วยหลับตา กดตั้งฉากจน<b>เส้นงอ</b> ค้าง ~2 วินาที ที่ฝ่าเท้า (เช่น โคนหัวแม่เท้า หัว metatarsal ที่ 1 และ 5) · <b>ไม่กดบนแผล ตาปลา หรือแผลเป็น</b> · สลับกับการ "หลอก" (ไม่กดจริง) · ตอบผิด ≥2 ใน 3 ครั้งที่จุดใด = ผิดปกติ</li>
+      <li><b>Vibration 128 Hz</b>: วางที่ข้อนิ้วโป้งเท้าด้านบน · ผู้ป่วยบอกไม่ได้ว่าสั่นหรือหยุด = ผิดปกติ</li>
+      <li><b>Ipswich touch test</b>: ใช้ปลายนิ้วแตะเบาๆ 1–2 วินาที ที่ปลายนิ้วเท้าที่ 1, 3, 5 ทั้งสองข้าง · ไม่รู้สึก ≥2 ใน 6 จุด = LOPS (ใช้เมื่อไม่มี monofilament)</li>
+      <li>Monofilament ใช้ซ้ำมากเส้นจะล้า → เปลี่ยนตามคำแนะนำผู้ผลิต <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+  <h3>IWGDF 2023 risk stratification</h3>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ความเสี่ยงเกิดแผล</th><th>ลักษณะ</th><th>ตรวจเท้าทุก</th></tr>
+    <tr><td><b>0</b></td><td>ต่ำมาก</td><td>ไม่มี LOPS และไม่มี PAD</td><td><b>ปีละครั้ง</b></td></tr>
+    <tr><td><b>1</b></td><td>ต่ำ</td><td>LOPS <b>หรือ</b> PAD</td><td><b>6–12 เดือน</b></td></tr>
+    <tr><td><b>2</b></td><td>ปานกลาง</td><td>LOPS + PAD · หรือ LOPS + เท้าผิดรูป · หรือ PAD + เท้าผิดรูป</td><td><b>3–6 เดือน</b></td></tr>
+    <tr><td><b>3</b></td><td>สูง</td><td>LOPS หรือ PAD <b>และ</b>อย่างน้อย 1 ข้อ: เคยเป็นแผลที่เท้า · เคยตัดนิ้ว/เท้า/ขา (minor หรือ major) · ไตวายระยะสุดท้าย (ESKD)</td><td><b>1–3 เดือน</b></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ADA 2026 (§12, ตาราง 12.1) ใช้ตารางเดียวกันนี้ · ผู้ที่มี LOPS เคยเป็นแผล หรือเคยตัดนิ้ว/ขา → <b>ดูเท้าทุกครั้งที่มาตรวจ</b> <span class="rec s1">ADA A</span> · <span class="tag th">ไทย</span> แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 แนะนำตรวจเท้าอย่างน้อยปีละครั้งและจัดกลุ่มความเสี่ยง (ต่ำ/ปานกลาง/สูง) เช่นกัน เพื่อกำหนดความถี่นัดและส่งคลินิกเท้า · <b>หน้านี้ใช้ตาราง IWGDF/ADA</b> เพราะมีเกณฑ์ชัดและตรงกับฉบับล่าสุด</p>
+</section>
+
+<section id="prevent" class="col">
+  <div class="sec-num">02</div>
+  <h2>ป้องกันแผล: สอนผู้ป่วยและเลือกรองเท้า</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>สอนผู้ป่วย (กลุ่ม 1–3)</h4><ul>
+      <li><b>ดูเท้าทุกวัน</b> (ใช้กระจก/ให้ญาติช่วย) ทั้งฝ่าเท้าและซอกนิ้ว</li>
+      <li>ล้างเท้าทุกวัน <b>เช็ดซอกนิ้วให้แห้ง</b> · ทาโลชั่นผิวแห้ง (ไม่ทาซอกนิ้ว) · ตัดเล็บตรง</li>
+      <li><b>ห้ามเดินเท้าเปล่า</b> ทั้งในและนอกบ้าน · ไม่ใส่แค่ถุงเท้าหรือรองเท้าแตะพื้นบาง</li>
+      <li>ตรวจในรองเท้าก่อนใส่ (กรวด เศษวัสดุ) · ถุงเท้าไม่มีตะเข็บ ไม่รัด</li>
+      <li><b>มีแผล รอยแดง พอง บวม หรือร้อนผิดปกติ → มารพ.ทันที</b> อย่ารอนัด</li>
+      <li>กลุ่ม 2–3: พิจารณาให้<b>วัดอุณหภูมิผิวเท้า</b>เทียบสองข้าง · ต่างกัน &gt;2.2 °C 2 วันติด → ลดการเดินและมาพบแพทย์ <span class="rec">conditional</span></li></ul></div>
+    <div class="card c-acc"><h4>รองเท้า</h4><ul>
+      <li>ความยาวด้านใน <b>ยาวกว่าเท้า 1–2 cm</b> · กว้างเท่าความกว้างที่ข้อโคนนิ้ว · หน้ารองเท้าสูงพอไม่กดนิ้ว · ลองตอนบ่าย (เท้าบวมสุด)</li>
+      <li>เท้าผิดรูป/มีตาปลา: รองเท้าลึกพิเศษ แผ่นรองในสั่งตัด หรืออุปกรณ์ซิลิโคนที่นิ้ว</li>
+      <li><b>เคยเป็นแผลที่ฝ่าเท้า (กลุ่ม 3)</b>: รองเท้าเพื่อการรักษาที่ <b>ลดแรงกดฝ่าเท้าได้จริง</b> (เป้าลดแรงกด ≥30% ที่ตำแหน่งแผลเดิม) และ<b>ใส่ตลอดเวลา</b>ทั้งในและนอกบ้าน <span class="rec s1">strong</span></li>
+      <li><span class="tag th">ไทย</span> หลายรพ.ใช้รองเท้าแตะหุ้มส้น/รองเท้าจากหน่วยกายอุปกรณ์ · คนไทยถอดรองเท้าเข้าบ้าน → แนะนำ<b>รองเท้าใส่ในบ้าน</b>แยกไว้</li></ul></div>
+  </div>
+  <div class="box key"><b>รักษารอยโรคก่อนเป็นแผล</b>ขูด callus เลือดออกใต้ callus รักษาเล็บขบและเชื้อราซอกนิ้ว โดยบุคลากรที่ฝึกมา · นิ้วงอแบบยังขยับได้ (flexible hammertoe) ที่มีตาปลา/เกือบเป็นแผลที่ปลายนิ้ว → พิจารณา <b>digital flexor tenotomy</b> · ไม่แนะนำผ่าตัด nerve decompression เพื่อป้องกันแผล · กลุ่ม 1–2 ออกกำลังเท้าและข้อเท้าได้ · คุมน้ำตาล ความดัน ไขมัน และ<b>เลิกบุหรี่</b></div>
+</section>
+
+<section id="ulcer" class="col">
+  <div class="sec-num">03</div>
+  <h2>ประเมินแผล: SINBAD · WIfI · IWGDF/IDSA</h2>
+  <p>ทุกแผลให้บันทึก: <b>ตำแหน่ง</b> (ฝ่าเท้า/หลังเท้า/นิ้ว/ส้น) · <b>ขนาด</b> (ยาว × กว้าง, cm²) · <b>ความลึก</b> (ถึงเอ็น กระดูก ข้อ? ใช้ probe ปลายทู่) · เนื้อตาย/gangrene · <b>สัญญาณติดเชื้อ</b> · <b>ชีพจรเท้า</b> · ความรู้สึก · สาเหตุจากรองเท้า/บาดเจ็บ · ถ่ายรูปเก็บไว้เทียบ · ขูด callus ที่ปิดแผลออกก่อนวัด</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>SINBAD (คะแนน 0–6) — ใช้สื่อสารระหว่างบุคลากร <span class="rec">IWGDF 2023</span></h4>
+      <div class="tbl"><table>
+        <tr><th>ตัวแปร</th><th>0</th><th>1</th></tr>
+        <tr><td><b>S</b>ite</td><td>เท้าส่วนหน้า (forefoot)</td><td>เท้าส่วนกลาง/ส้น</td></tr>
+        <tr><td><b>I</b>schaemia</td><td>เลือดไปเท้าดี (คลำชีพจรได้ ≥1)</td><td>มีหลักฐานเลือดไปน้อย</td></tr>
+        <tr><td><b>N</b>europathy</td><td>ความรู้สึกปกติ</td><td>LOPS</td></tr>
+        <tr><td><b>B</b>acterial infection</td><td>ไม่มี</td><td>มี</td></tr>
+        <tr><td><b>A</b>rea</td><td>&lt;1 cm²</td><td>≥1 cm²</td></tr>
+        <tr><td><b>D</b>epth</td><td>ผิวหนัง/ใต้ผิวหนัง</td><td>ถึงกล้ามเนื้อ เอ็น หรือลึกกว่า</td></tr>
+      </table></div>
+      <p class="muted" style="font-size:.86rem">IWGDF แนะนำให้<b>บอกทีละตัวแปร</b> (เช่น "forefoot, ischaemia+, LOPS+, ไม่ติดเชื้อ, 2 cm², ถึงเอ็น") มากกว่าบอกคะแนนรวม · คะแนนรวม ≥3 สัมพันธ์กับการหายช้า</p></div>
+    <div class="card c-warn"><h4>WIfI — ใช้เมื่อมี PAD <span class="rec">IWGDF 2023</span></h4><ul>
+      <li><b>W</b>ound 0–3: 0 = ปวดขณะพักไม่มีแผล · 1 = แผลเล็กตื้น · 2 = แผลลึกเห็นกระดูก/ข้อ/เอ็น หรือ gangrene จำกัดที่นิ้ว · 3 = แผลกว้างลึก/ส้นเท้าลึก/gangrene กว้าง</li>
+      <li><b>I</b>schaemia 0–3 (ใช้ค่าที่แย่ที่สุด; ถ้าหลอดเลือดแข็งใช้ TP):
+        <div class="tbl"><table><tr><th>เกรด</th><th>ABI</th><th>Ankle SBP</th><th>TP / TcPO₂</th></tr>
+        <tr><td>0</td><td>≥0.80</td><td>≥100</td><td>≥60</td></tr><tr><td>1</td><td>0.60–0.79</td><td>70–99</td><td>40–59</td></tr><tr><td>2</td><td>0.40–0.59</td><td>50–69</td><td>30–39</td></tr><tr><td>3</td><td>&lt;0.40</td><td>&lt;50</td><td>&lt;30</td></tr></table></div></li>
+      <li><b>fI</b> (foot Infection) 0–3 = IWGDF/IDSA เกรด 1–4</li>
+      <li>ใช้ประเมิน<b>โอกาสตัดขาและประโยชน์ของ revascularisation</b> (ร่วมกับศัลยแพทย์หลอดเลือด)</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">แผลที่ติดเชื้อ → ใช้ <b>IWGDF/IDSA</b> (หัวข้อ 07) · ไม่มีระบบใดใช้ทำนายผลในผู้ป่วยรายบุคคลได้ดีพอ (IWGDF 2023)</p>
+</section>
+
+<section id="pad" class="col">
+  <div class="sec-num">04</div>
+  <h2>PAD: ABI · TBI · toe pressure และเมื่อไรส่ง revascularisation</h2>
+  <p>PAD พบในราว<b>ครึ่งหนึ่ง</b>ของผู้ป่วยแผลเท้าเบาหวาน มักเป็นที่หลอดเลือดใต้เข่า และ<b>มักไม่มีอาการ claudication</b> (เพราะชา) · คลำชีพจรอย่างเดียวไม่พอ <b>ไม่มีการตรวจข้างเตียงใดตัด PAD ได้แน่นอน</b></p>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>PAD น่าจะไม่มี</th><th>ชี้ว่ามี PAD / รุนแรง</th></tr>
+    <tr><td><b>ABI</b> = ankle SBP ÷ brachial SBP (แขนข้างที่สูงกว่า)</td><td>0.9–1.3</td><td>&lt;0.9 = PAD · <b>&gt;1.3 = หลอดเลือดแข็งกดไม่ลง</b> (แปลผลไม่ได้) · &lt;0.4 = รุนแรง</td></tr>
+    <tr><td><b>TBI</b> = toe SBP ÷ brachial SBP</td><td>≥0.70</td><td>&lt;0.70 = PAD</td></tr>
+    <tr><td><b>Toe pressure (TP)</b></td><td>≥30 mmHg: โอกาสแผลหายดีขึ้น</td><td>&lt;30 mmHg: เสี่ยงตัดขา · &lt;60 พิจารณา revascularisation</td></tr>
+    <tr><td><b>TcPO₂</b> (เมื่อวัด TP ไม่ได้)</td><td>≥25 mmHg: โอกาสหายดีขึ้น</td><td>&lt;25–30 mmHg: เสี่ยงตัดขา</td></tr>
+    <tr><td>Pedal Doppler waveform</td><td>triphasic/biphasic</td><td>monophasic หรือไม่มีสัญญาณ</td></tr>
+    <tr><td>Ankle pressure</td><td>≥100 mmHg</td><td>&lt;100 พิจารณา revasc · &lt;50 = รุนแรง</td></tr>
+  </table></div>
+  <div class="box warn"><b>ข้อควรระวังของ ABI ในเบาหวาน</b>หลอดเลือดแข็งมีหินปูน (medial calcinosis) โดยเฉพาะ<b>ไตวาย/ฟอกไต</b>และเบาหวานนาน → ความดันที่ข้อเท้า<b>สูงเกินจริง</b> ABI ปกติหรือ &gt;1.3 ทั้งที่มี PAD → <b>ต้องวัด TBI/toe pressure ร่วมกับ Doppler waveform เสมอ</b> (IWGDF แนะนำทำ 3 อย่างร่วมกัน) · หลอดเลือดที่นิ้วมักไม่แข็ง TBI จึงเชื่อถือได้กว่า · IWGDF 2023 แนะนำใช้<b>ความดันที่ต่ำกว่า</b>ระหว่าง DP กับ PT ในการคิด ABI ของผู้ป่วยมีแผล (นิยามดั้งเดิมของ AHA ใช้ค่าที่สูงกว่า — ให้ระบุว่าใช้แบบใด)</div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ปรึกษาศัลยแพทย์หลอดเลือด<b>ด่วน</b> <span class="rec">BPS</span></h4><ul>
+      <li>TP &lt;30 mmHg · ankle pressure &lt;50 mmHg · ABI &lt;0.4 · TcPO₂ &lt;30 mmHg</li>
+      <li>แผลติดเชื้อหรือมี gangrene <b>ร่วมกับ</b> PAD (ต้องวางลำดับระบายหนองกับ revascularisation)</li>
+      <li>ช้ากว่า 2 สัปดาห์สัมพันธ์กับตัดขามากขึ้น</li></ul></div>
+    <div class="card c-warn"><h4>พิจารณา revascularisation / ส่งตรวจภาพหลอดเลือด</h4><ul>
+      <li>คลำชีพจรไม่ได้ · waveform monophasic · ankle &lt;100 · TP &lt;60 mmHg</li>
+      <li><b>แผลเล็กลง &lt;50% ใน 4 สัปดาห์</b>ทั้งที่ดูแลดี → ประเมินหลอดเลือดซ้ำ</li>
+      <li>ตรวจภาพตลอดขาตั้งแต่ aorta ถึงเท้า (duplex/CTA/MRA/DSA) · หลีกเลี่ยงถ้าความเสี่ยงสูงกว่าประโยชน์ชัดเจน</li>
+      <li>ระวัง contrast ในไตเสื่อม → ดูหน้า <a href="../ckd/index.html">CKD</a></li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ทุกรายที่มี PAD + แผล: statin (LDL &lt;70 mg/dL และลด ≥50%; ถ้าทนได้ &lt;55) · ยาต้านเกล็ดเลือดตัวเดียว (clopidogrel อาจดีกว่า aspirin) · aspirin + rivaroxaban 2.5 mg วันละ 2 ครั้ง ถ้าเลือดออกเสี่ยงต่ำ · BP &lt;140/90 · HbA1c &lt;8% · เลิกบุหรี่ (IWGDF PAD 2023 rec 23–25) · <b>IWGDF: ไม่เริ่ม SGLT2 inhibitor ใหม่ในผู้ที่มีแผล/gangrene</b> และพิจารณาหยุดชั่วคราวจนแผลหาย <span class="rec">BPS</span></p>
+</section>
+
+<section id="offload" class="col">
+  <div class="sec-num">05</div>
+  <h2>Offloading: หัวใจของการทำให้แผลหาย</h2>
+  <p>แผลที่ฝ่าเท้าจาก neuropathy <b>ไม่หายถ้ายังเดินลงน้ำหนักบนแผล</b> — ทำแผลดีแค่ไหนก็ไม่พอ</p>
+  <div class="tbl"><table>
+    <tr><th>ลำดับ</th><th>แผลฝ่าเท้าส่วนหน้า/กลางจาก neuropathy (IWGDF 2023)</th></tr>
+    <tr><td><b>1</b> <span class="rec s1">strong</span></td><td><b>อุปกรณ์สูงถึงเข่าแบบถอดไม่ได้</b>: <b>total contact cast (TCC)</b> หรือ <b>knee-high walker ที่ทำให้ถอดไม่ได้</b> (พันทับด้วยเฝือก/ผ้ายืด — "instant TCC")</td></tr>
+    <tr><td>2</td><td>ถ้าใช้แบบถอดไม่ได้ไม่ได้/ทนไม่ได้ → <b>removable knee-high walker</b> (หรือ ankle-high) · ย้ำให้ใส่ตลอดเวลาที่ลุกเดิน</td></tr>
+    <tr><td>3</td><td>ไม่มีอุปกรณ์ → รองเท้าที่พอดี + <b>felted foam</b> เจาะรูรอบแผล</td></tr>
+    <tr><td>4</td><td>ยังไม่หาย: ศัลยกรรม offloading (Achilles tendon lengthening, metatarsal head resection) · แผลปลายนิ้วจากนิ้วงอแบบ flexible → digital flexor tenotomy</td></tr>
+  </table></div>
+  <div class="box warn"><b>เมื่อมีติดเชื้อหรือขาดเลือดร่วม</b>ติดเชื้อเล็กน้อย<b>หรือ</b>ขาดเลือดเล็กน้อย → ใช้แบบถอดไม่ได้ได้ · ติดเชื้อปานกลาง/ขาดเลือดปานกลาง หรือมีทั้งสองอย่างเล็กน้อย → ใช้<b>แบบถอดได้</b> (ต้องดูแผลบ่อย) · ติดเชื้อรุนแรง/ขาดเลือดรุนแรง → <b>แก้ติดเชื้อและเลือดก่อน</b> แล้วใช้แบบถอดได้ตามการเดิน · แผลที่ส้น/ไม่ใช่ฝ่าเท้า → ลดแรงกดตามตำแหน่ง (รองเท้าเปิดส้น/ตัดรองเท้า) · ใช้ไม้ค้ำ/วีลแชร์ร่วมได้ <span class="tag th">ไทย</span> หลายรพ.ชุมชนไม่มี TCC → ส่งต่อหน่วยกายอุปกรณ์ หรือใช้ walker พันทับ</div>
+</section>
+
+<section id="wound" class="col">
+  <div class="sec-num">06</div>
+  <h2>ทำแผลพื้นฐานและสิ่งที่ไม่ควรทำ</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ควรทำ (IWGDF 2023 wound healing)</h4><ul>
+      <li><b>Sharp debridement</b> ตัดเนื้อตาย callus ขอบแผลที่หนา (ระวังในแผลขาดเลือด — ประเมิน/แก้เลือดก่อน) <span class="rec s1">strong</span></li>
+      <li>ล้างแผลด้วย<b>น้ำเกลือหรือน้ำสะอาด</b></li>
+      <li>เลือก dressing ตาม<b>ปริมาณน้ำเหลือง ความสบาย และราคา</b> — ให้แผลชุ่มชื้นพอดี ไม่แฉะ ไม่แห้ง</li>
+      <li>แผล neuro-ischaemic ไม่ติดเชื้อที่ไม่หายใน 2 สัปดาห์ทั้งที่ดูแลดี: <b>sucrose octasulfate dressing</b> <span class="rec">conditional</span></li>
+      <li>แผลไม่หายทั้งที่ดูแลมาตรฐานดีแล้ว: NPWT หลังผ่าตัด, hyperbaric oxygen (แผลขาดเลือด), topical oxygen, ผลิตภัณฑ์จากรก, LeucoPatch — <b>เป็นทางเลือกเสริม ไม่ใช่แทน offloading/revasc</b></li>
+      <li>นัดดูแผลอย่างน้อยทุก 1–2 สัปดาห์ · วัดขนาดเทียบ</li></ul></div>
+    <div class="card c-red"><h4>ไม่ควรทำ</h4><ul>
+      <li><b>Dressing/ยาทาฆ่าเชื้อ</b> (silver, iodine, น้ำผึ้ง) <b>เพื่อให้แผลหาย</b> — ไม่มีหลักฐานว่าช่วย <span class="rec no">ไม่แนะนำ</span></li>
+      <li><b>ยาทาปฏิชีวนะ</b>ร่วมกับยากิน/ฉีด ในแผลติดเชื้อ <span class="rec no">ไม่แนะนำ</span></li>
+      <li><b>ให้ยาปฏิชีวนะในแผลที่ไม่ติดเชื้อ</b> "เพื่อกันติดเชื้อ" หรือ "ช่วยแผลหาย" <span class="rec no">BPS</span></li>
+      <li><b>แช่เท้า</b>ในน้ำ/น้ำยา/น้ำอุ่น — ผิวเปื่อย เสี่ยงลวก และติด Pseudomonas</li>
+      <li>ประคบร้อน กระเป๋าน้ำร้อน ยาสมุนไพรพอกแผล ยากัดตาปลา ผู้ป่วยตัด callus เอง <span class="tag th">ไทย</span></li>
+      <li><b>Swab ผิวแผลส่งเพาะเชื้อ</b>ทั้งที่แผลไม่ติดเชื้อ</li>
+      <li>Debride แรงในแผลขาดเลือด/แผลแห้งดำที่ยังไม่ได้ประเมินหลอดเลือด</li>
+      <li>ให้เดินลงน้ำหนักบนแผลต่อ</li></ul></div>
+  </div>
+</section>
+
+<section id="dfi" class="col">
+  <div class="sec-num">07</div>
+  <h2>วินิจฉัยการติดเชื้อและกระดูกอักเสบ</h2>
+  <p>วินิจฉัยติดเชื้อ<b>จากอาการทางคลินิก</b> ไม่ใช่จากผลเพาะเชื้อ (ทุกแผลมีเชื้อ) · เบาหวาน/PAD อาจมีอาการน้อยกว่าที่ควร</p>
+  <div class="tbl"><table>
+    <tr><th>IWGDF/IDSA 2023</th><th>เกณฑ์</th><th>PEDIS</th></tr>
+    <tr><td><b>1 ไม่ติดเชื้อ</b></td><td>ไม่มีอาการทั่วไปหรือเฉพาะที่</td><td>1</td></tr>
+    <tr><td><b>2 เล็กน้อย (mild)</b></td><td>ติดเชื้อ = มี<b>อย่างน้อย 2 ใน 5</b>: บวม/แข็ง · <b>แดง &gt;0.5 cm</b> รอบแผล · กดเจ็บ/ปวด · ร้อน · หนอง — และไม่มีสาเหตุอื่น (เกาต์ Charcot กระดูกหัก DVT บาดเจ็บ) · <b>เฉพาะผิวหนัง/ใต้ผิวหนัง</b> และแดง <b>&lt;2 cm</b></td><td>2</td></tr>
+    <tr><td><b>3 ปานกลาง (moderate)</b></td><td>แดง <b>≥2 cm</b> <b>หรือ</b>ลึกกว่าใต้ผิวหนัง (เอ็น กล้ามเนื้อ ข้อ กระดูก ฝีลึก) · <b>ไม่มี SIRS</b></td><td>3</td></tr>
+    <tr><td><b>4 รุนแรง (severe)</b></td><td>ติดเชื้อที่เท้า + <b>SIRS ≥2</b>: T &gt;38 หรือ &lt;36 °C · HR &gt;90 · RR &gt;20 หรือ PaCO₂ &lt;32 mmHg · WBC &gt;12,000 หรือ &lt;4,000 หรือ band &gt;10%</td><td>4</td></tr>
+    <tr><td><b>"(O)"</b> <span class="tag up">2023</span></td><td>มี <b>osteomyelitis</b> → เติม (O) เช่น <b>3(O)</b> หรือ <b>4(O)</b> · กระดูกอักเสบอย่างเดียวโดยไม่มีอาการอักเสบอื่น = <b>3(O)</b> (หรือ 4(O) ถ้า SIRS ≥2)</td><td>—</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เพาะเชื้ออย่างไร</h4><ul>
+      <li><b>เพาะเฉพาะแผลที่ติดเชื้อ</b> (เกรด 2–4) · ไม่เพาะแผลที่ไม่ติดเชื้อ</li>
+      <li>ส่ง<b>เนื้อเยื่อจากก้นแผล</b> หลังล้างและ debride (ขูดด้วย curette หรือตัดชิ้นเนื้อ) <b>ดีกว่า swab</b> <span class="rec">conditional</span> · หนองที่ดูดด้วยเข็มก็ใช้ได้</li>
+      <li>เกรด 4: <b>hemoculture 2 ชุด</b> ก่อนยา</li>
+      <li>สงสัย osteomyelitis: <b>ชิ้นกระดูก</b> (ระหว่างผ่าตัดหรือเจาะผ่านผิวหนัง) ส่งเพาะ ± พยาธิ — แม่นกว่าเนื้อเยื่ออ่อน · ถ้าเป็นไปได้หยุดยาก่อนสักระยะ</li>
+      <li><span class="tag th">ไทย</span> เบาหวานในอีสาน/ชาวนา มีฝี: <b>แจ้งห้องแล็บว่าสงสัย melioidosis</b> (ใช้ selective media)</li></ul></div>
+    <div class="card c-warn"><h4>Osteomyelitis: ตรวจอะไร <span class="rec">conditional</span></h4><ul>
+      <li>นึกถึงเมื่อ: <b>probe ถึงกระดูก</b> เห็นกระดูก แผลลึก/กว้าง (&gt;2 cm²) ไม่หายนาน &gt;6 สัปดาห์ทั้งที่ offload และเลือดพอ · นิ้วบวมแดงทั้งนิ้ว ("sausage toe")</li>
+      <li>เริ่มด้วย 3 อย่างร่วมกัน: <b>probe-to-bone</b> + <b>X-ray เท้า</b> + <b>ESR/CRP</b> (ESR ≥70 mm/hr สนับสนุน)</li>
+      <li>Probe-to-bone (ปลาย probe โลหะทู่ ปลอดเชื้อ แตะกระดูกแข็ง): sensitivity ~0.87 specificity ~0.83 · <b>บวกในแผลเสี่ยงสูง = น่าจะเป็น · ลบในแผลเสี่ยงต่ำ = ช่วยตัดออก</b></li>
+      <li>X-ray ปกติในช่วงแรก (กระดูกต้องเสีย 30–50% จึงเห็น) → <b>ถ่ายซ้ำใน 2–3 สัปดาห์</b> ถ้ายังสงสัย</li>
+      <li>ยังไม่แน่ใจ → <b>MRI</b> <span class="rec s1">strong</span> · ทำไม่ได้: PET/CT, WBC scan, SPECT/CT</li>
+      <li>CRP/ESR/procalcitonin ใช้<b>เมื่อตรวจร่างกายก้ำกึ่ง</b> เท่านั้น ไม่ใช้เดี่ยวๆ</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">X-ray ยังช่วยหา<b>ก๊าซในเนื้อเยื่อ</b> สิ่งแปลกปลอม และ Charcot · ไม่ใช้การวัดอุณหภูมิเท้าหรือ quantitative culture เพื่อวินิจฉัยติดเชื้อ · ใช้ culture แบบดั้งเดิมก่อน molecular</p>
+</section>
+
+<section id="abx" class="col">
+  <div class="sec-num">08</div>
+  <h2>ยาฆ่าเชื้อเริ่มต้น (empirical)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เชื้อที่พบ</h4><ul>
+      <li>ทั่วโลก: <b><i>S. aureus</i></b> พบบ่อยสุด (MRSA ราว 18% ของ S. aureus ในงานวิเคราะห์รวม) · streptococci · แผลเรื้อรัง/เคยได้ยา: gram-negative (Enterobacterales, <i>Pseudomonas</i>) · แผลขาดเลือด/เนื้อตาย/กลิ่นเหม็น: anaerobe</li>
+      <li><span class="tag th">ไทย</span> ประเทศรายได้ปานกลาง-ต่ำ/อากาศร้อน: <b>gram-negative สัดส่วนสูงกว่า</b> (Proteus, E. coli, Klebsiella, Pseudomonas) · ESBL พบได้ในผู้ที่เคยนอนรพ./ได้ยาบ่อย</li>
+      <li><span class="tag th">ไทย</span> <b><i>Burkholderia pseudomallei</i></b> ทำให้ฝีเนื้อเยื่ออ่อน ข้อ และกระดูกอักเสบในเบาหวานภาคอีสาน — <b>ceftriaxone และ amoxicillin/clavulanate ขนาดปกติไม่ใช่ยารักษา</b> → ceftazidime หรือ meropenem · ดู <a href="../lepto-melioid/index.html">Melioidosis</a></li></ul></div>
+    <div class="card c-warn"><h4>เมื่อไรต้องครอบคลุม MRSA / Pseudomonas</h4><ul>
+      <li><b>MRSA</b>: เคยติดเชื้อหรือมี MRSA colonization (โดยเฉพาะใน 1 ปี) · ร่วมกับปัจจัยเสี่ยง: นอนรพ.นาน/เพิ่งออก ICU ได้ยาปฏิชีวนะบ่อย ฟอกเลือด อยู่สถานดูแล · หรือติดเชื้อรุนแรงในพื้นที่ที่ MRSA สูง → เพิ่ม <b>vancomycin</b></li>
+      <li><b>Pseudomonas</b> (IWGDF/IDSA 2023 rec 15): ไม่ต้องครอบคลุมในเขตอากาศอบอุ่น · <b>ในเขตร้อน/กึ่งร้อน (เช่นไทย) ที่ติดเชื้อปานกลาง-รุนแรง</b>ให้ครอบคลุมถ้า<b>เคยเพาะได้ Pseudomonas จากแผลนี้ในไม่กี่สัปดาห์ก่อน</b> · แผลเปียกเปื่อย/แช่น้ำบ่อย หรือเพิ่งได้ยา/นอนรพ. ก็ใช้ยาที่ครอบคลุม (ตาราง 4 ของแนวทาง)</li>
+      <li>ESBL เสี่ยง (เคยเพาะได้ ESBL, ได้ยากลุ่ม cephalosporin/quinolone บ่อย) → <b>carbapenem</b> · ดู <a href="../mdr-gnb/index.html">MDR-GNB</a></li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ความรุนแรง</th><th>ที่รักษา</th><th>ยาที่แนะนำ (ผู้ใหญ่ ไตปกติ) — เลือก 1 สูตร</th></tr>
+    <tr><td><b>2 เล็กน้อย</b></td><td>OPD ยากิน</td><td>เน้น <b>gram-positive</b>: <b>dicloxacillin 500 mg q6h</b> หรือ <b>cephalexin 500 mg q6h</b> · เพิ่งได้ยาปฏิชีวนะ/แผลเรื้อรัง: <b>amoxicillin/clavulanate 875/125 mg q12h</b> · แพ้ beta-lactam: <b>clindamycin 300–450 mg q6–8h</b> · เสี่ยง MRSA: clindamycin (ถ้าเชื้อในพื้นที่ไว), doxycycline 100 mg q12h หรือ co-trimoxazole (160/800) 1–2 เม็ด q12h (สองตัวหลังครอบคลุม streptococci ไม่ดี — ให้ร่วมกับ cephalexin/amox-clav)</td></tr>
+    <tr><td><b>3 ปานกลาง</b></td><td>OPD ยากินได้ถ้าไม่ขาดเลือดและติดตามได้ · ส่วนใหญ่ IV ก่อน</td><td><b>Amoxicillin/clavulanate 1.2 g IV q8h</b> (กิน 875/125 q12h) หรือ <b>ceftriaxone 1–2 g IV q24h + metronidazole 500 mg q8h</b> (ขาดเลือด/เนื้อตาย/กลิ่นเหม็น) · ปัจจัยเสี่ยง Pseudomonas/เพิ่งได้ยา/นอนรพ.: <b>piperacillin/tazobactam 4.5 g IV q6–8h</b> · ESBL: <b>ertapenem 1 g IV q24h</b> · แพ้ beta-lactam: clindamycin 600 mg IV q8h + ciprofloxacin 400 mg IV q12h (หรือ levofloxacin 750 mg q24h)</td></tr>
+    <tr><td><b>4 รุนแรง</b></td><td>Admit · ปรึกษาศัลย์ด่วน</td><td><b>Piperacillin/tazobactam 4.5 g IV q6h</b> · ESBL หรือ<b>สงสัย melioidosis</b> (อีสาน ฝี sepsis): <b>meropenem 1 g IV q8h</b> · เสี่ยง MRSA: <b>+ vancomycin</b> (loading 20–35 mg/kg ไม่เกิน 3 g แล้วปรับตามระดับยา) · แพ้ beta-lactam รุนแรง: ปรึกษา (vancomycin + ciprofloxacin + metronidazole หรือ carbapenem ที่ cross-reactivity ต่ำ)</td></tr>
+  </table></div>
+  <h3>ปรับขนาดตามไต (CrCl, Cockcroft–Gault)</h3>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ไตปกติ</th><th>ไตเสื่อม</th></tr>
+    <tr><td>Dicloxacillin / clindamycin / ceftriaxone / metronidazole / doxycycline</td><td>ตามตาราง</td><td><b>ไม่ต้องปรับ</b> (ceftriaxone ไม่เกิน 2 g/วัน ถ้าตับและไตเสื่อมร่วมกัน)</td></tr>
+    <tr><td>Cephalexin</td><td>500 mg q6h</td><td>30–59: สูงสุด 1 g/วัน (500 mg q12h) · 15–29: 250 mg q8–12h · &lt;15: 250 mg q24h</td></tr>
+    <tr><td>Amox/clav กิน</td><td>875/125 q12h</td><td>&lt;30: ห้ามเม็ด 875 → 500/125 q12h (10–30) · q24h (&lt;10)</td></tr>
+    <tr><td>Amox/clav IV</td><td>1.2 g q8h</td><td>10–30: 1.2 g แล้ว 600 mg q12h · &lt;10: 1.2 g แล้ว 600 mg q24h</td></tr>
+    <tr><td>Co-trimoxazole</td><td>1–2 DS q12h</td><td>15–30: ลดครึ่ง · &lt;15: หลีกเลี่ยง · ระวัง K สูง</td></tr>
+    <tr><td>Piperacillin/tazobactam</td><td>4.5 g q6h (รุนแรง) / q8h</td><td>20–40: 3.375 g q6h (รุนแรง) หรือ 2.25 g q6h · &lt;20: 2.25 g q6h (รุนแรง) หรือ q8h · ฟอกเลือด: 2.25 g q8h (รุนแรง) หรือ q12h + 0.75 g หลังฟอก</td></tr>
+    <tr><td>Meropenem</td><td>1 g q8h</td><td>26–50: 1 g q12h · 10–25: 500 mg q12h · &lt;10: 500 mg q24h</td></tr>
+    <tr><td>Ertapenem</td><td>1 g q24h</td><td>≤30: 500 mg q24h</td></tr>
+    <tr><td>Ceftazidime</td><td>2 g q8h (melioid 2 g q6–8h)</td><td>31–50: 1 g q12h · 16–30: 1 g q24h · 6–15: 500 mg q24h (ติดเชื้อรุนแรงเพิ่มได้ 50%)</td></tr>
+    <tr><td>Cefazolin (MSSA เมื่อรู้ผล)</td><td>2 g q8h</td><td>35–54: q8h ขนาดเต็ม · 11–34: 1 g q12h · ≤10: 1 g q24h</td></tr>
+    <tr><td>Ciprofloxacin</td><td>750 mg กิน q12h / 400 mg IV q8–12h</td><td>30–50: 250–500 mg กิน q12h · &lt;30: 250–500 mg q18–24h</td></tr>
+    <tr><td>Levofloxacin</td><td>750 mg q24h</td><td>20–49: 750 mg q48h · 10–19: 750 mg แล้ว 500 mg q48h</td></tr>
+    <tr><td>Vancomycin</td><td>Loading 20–35 mg/kg (สูงสุด 3 g) → 15–20 mg/kg q8–12h</td><td>Loading เท่าเดิม · CrCl &lt;50 ยืดช่วงยา (q24h หรือนานกว่า) · ปรับตามระดับยา (AUC 400–600 หรือ trough)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> Dicloxacillin, cephalexin, amoxicillin/clavulanate, clindamycin, co-trimoxazole, doxycycline, ceftriaxone, metronidazole, cefazolin, ceftazidime, ciprofloxacin อยู่ในบัญชียาหลักแห่งชาติ · piperacillin/tazobactam, carbapenem, vancomycin เป็นยาที่มีเงื่อนไขการสั่งใช้ (บัญชี ง/แบบกำกับการใช้ยา) ตรวจสอบตามรพ. · ได้ผลเพาะเชื้อแล้ว<b>ลดสเปกตรัม</b> และเปลี่ยนเป็นยากินเมื่ออาการดีขึ้น · เชื้อที่เพาะได้แต่ไม่ใช่ตัวก่อโรค (เช่น coagulase-negative staph, corynebacteria จากผิว) ไม่ต้องตามทุกตัวถ้าอาการดีขึ้น</p>
+</section>
+
+<section id="dur" class="col">
+  <div class="sec-num">09</div>
+  <h2>ระยะเวลายาและการผ่าตัดด่วน</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ระยะเวลา (IWGDF/IDSA 2023)</th></tr>
+    <tr><td>ผิวหนัง/เนื้อเยื่ออ่อน (ทุกความรุนแรง)</td><td><b>1–2 สัปดาห์</b> <span class="rec s1">strong</span> · ตารางในแนวทาง: เล็กน้อย 1–2, ปานกลาง-รุนแรง 2–4 สัปดาห์ตามการตอบสนอง · หายช้าหรือ PAD รุนแรง: <b>ได้ถึง 3–4 สัปดาห์</b> · <b>ยังไม่หายที่ 4 สัปดาห์ → ประเมินใหม่</b> (ฝีที่ยังไม่ระบาย กระดูกอักเสบ เลือดไม่พอ เชื้อดื้อ) แทนการให้ยาต่อไปเรื่อยๆ</td></tr>
+    <tr><td>กระดูก: ตัด/ผ่าเอากระดูกติดเชื้อออกหมด ขอบสะอาด</td><td>~<b>2–5 วัน</b> (ถ้าไม่มีเนื้อเยื่ออ่อนติดเชื้อเหลือ)</td></tr>
+    <tr><td>กระดูก: <b>minor amputation แต่ขอบกระดูกเพาะเชื้อ/พยาธิบวก</b></td><td><b>3 สัปดาห์</b> <span class="tag up">2023</span></td></tr>
+    <tr><td>กระดูก: <b>ไม่ได้ผ่าตัด</b> (ยาอย่างเดียว) หรือเหลือกระดูกตาย</td><td><b>6 สัปดาห์</b> <span class="tag up">2023</span></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><b>ส่วนที่ถูกแทนที่จาก IDSA 2012</b>: เดิมเหลือกระดูกติดเชื้อที่ยังมีชีวิต 4–6 สัปดาห์ และไม่ผ่าตัด/เหลือกระดูกตาย ≥3 เดือน → ฉบับ 2023 สั้นลงเป็น <b>3 สัปดาห์</b> และ <b>6 สัปดาห์</b> ตามลำดับ (มี RCT สนับสนุน) · ประเมินว่า osteomyelitis หาย (remission) ต้องติดตาม<b>อย่างน้อย 6 เดือน</b>หลังหยุดยา · กระดูกอักเสบที่นิ้ว/เท้าส่วนหน้า ไม่มีฝี ไม่มี PAD ไม่เห็นกระดูก → ให้ยาอย่างเดียวได้ <span class="rec">conditional</span></p>
+  <div class="box warn"><b>ปรึกษาศัลยแพทย์ด่วน (ภายในชั่วโมง)</b>ติดเชื้อรุนแรงทุกราย หรือปานกลางที่มี: <b>ก๊าซในเนื้อเยื่อ</b> (crepitus/X-ray) · <b>necrotizing fasciitis</b> (ปวดมากเกินกว่าที่เห็น ผิวคล้ำ/ตุ่มน้ำเลือด ชา ลุกลามเร็ว) · <b>ฝีลึกใต้ fascia</b> · <b>compartment syndrome</b> ของเท้า · gangrene กว้าง · ขาดเลือดรุนแรงร่วม → ผ่า/ระบายหนอง ตัดเนื้อตาย (หนองที่อยู่ใต้แรงดันควรระบายภายใน ~24 ชม.; ติดเชื้อปานกลาง-รุนแรงพิจารณาผ่าตัดภายใน 24–48 ชม.) · มี PAD ร่วม → ศัลย์ทั่วไป/กระดูก + <b>ศัลย์หลอดเลือด</b> พร้อมกัน · <b>ยาอย่างเดียวไม่พอในภาวะเหล่านี้</b></div>
+  <p class="muted" style="font-size:.88rem">ไม่แนะนำ: G-CSF, ยาฆ่าเชื้อเฉพาะที่, silver, น้ำผึ้ง, phage, NPWT <b>เพื่อรักษาการติดเชื้อ</b> · hyperbaric/topical oxygen <b>เป็นการรักษาติดเชื้อเพียงอย่างเดียว</b></p>
+</section>
+
+<section id="ward" class="col">
+  <div class="sec-num">10</div>
+  <h2>ดูแลในหอผู้ป่วยและการส่งต่อ</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เมื่อไร admit <span class="rec">conditional</span></h4><ul>
+      <li><b>เกรด 4 ทุกราย</b></li>
+      <li>เกรด 3 ที่มี: PAD สำคัญ · ต้องผ่าตัด/ตรวจที่ทำใน OPD ไม่ได้ · กินยาหรือมาติดตามไม่ได้ · ไตวาย ภูมิคุ้มกันต่ำ น้ำตาลสูงมาก/DKA-HHS · ไม่ดีขึ้นกับยากิน</li>
+      <li>นอนพักขา ยกเท้าสูง (ยกเว้นขาดเลือด) · ห้ามเดินลงน้ำหนักบนแผล</li></ul></div>
+    <div class="card c-ok"><h4>คุมน้ำตาลระหว่างติดเชื้อ <span class="rec s1">ADA 2026 §16</span></h4><ul>
+      <li>การติดเชื้อทำให้น้ำตาลสูงขึ้น และน้ำตาลสูงทำให้เม็ดเลือดขาวทำงานแย่ลง</li>
+      <li>เริ่ม <b>insulin</b> เมื่อน้ำตาล ≥180 mg/dL ซ้ำ · เป้า <b>140–180 mg/dL</b> · ใช้ <b>basal + prandial/correction</b> ไม่ใช้ sliding scale อย่างเดียว</li>
+      <li>หยุด <b>metformin</b> ช่วง sepsis/AKI/ฉีดสารทึบรังสี · หยุด <b>SGLT2 inhibitor</b> ช่วงเจ็บป่วยเฉียบพลัน งดอาหาร หรือก่อนผ่าตัด (เสี่ยง euglycemic DKA)</li>
+      <li>DTX ก่อนอาหารและก่อนนอน (งดอาหาร: ทุก 4–6 ชม.) · ระวังน้ำตาลต่ำหลังติดเชื้อดีขึ้น/ตัดขา (ความต้องการ insulin ลดลงเร็ว)</li>
+      <li>ดูหน้า <a href="../dm/index.html">Diabetes</a> · sepsis ดู <a href="../sepsis/index.html">Sepsis</a></li></ul></div>
+  </div>
+  <h3>เส้นทางส่งต่อ (OPD → รพ.ที่มีทีมเท้า)</h3>
+  <div class="tbl"><table>
+    <tr><th>ความเร่งด่วน</th><th>สถานการณ์</th></tr>
+    <tr><td><b style="color:var(--danger)">ทันที (ER/ศัลย์)</b></td><td>ติดเชื้อรุนแรง/sepsis · gas · necrotizing · ฝีลึก · gangrene ลุกลาม · ขาดเลือดเฉียบพลัน (ขาเย็นซีด ไม่มีชีพจรใหม่)</td></tr>
+    <tr><td><b style="color:var(--warn)">ภายใน 1–2 วันทำการ</b></td><td>แผลใหม่ทุกแผลในผู้มี PAD · ติดเชื้อปานกลาง · สงสัย osteomyelitis · <b>สงสัย active Charcot</b> · TP &lt;30 / ABI &lt;0.4</td></tr>
+    <tr><td><b>ภายใน 1–2 สัปดาห์</b></td><td>แผลไม่ติดเชื้อที่ไม่ดีขึ้นใน 2 สัปดาห์ หรือ<b>เล็กลง &lt;50% ใน 4 สัปดาห์</b> · ต้องการ TCC/รองเท้าพิเศษ · กลุ่มเสี่ยง 2–3 ที่ไม่มีคลินิกเท้า</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ทีมสหสาขา (แพทย์ ศัลย์หลอดเลือด/กระดูก พยาบาลแผล นักกายอุปกรณ์/podiatrist) ลดอัตราตัดขาได้ <span class="rec">ADA B</span> · <span class="tag th">ไทย</span> หลายจังหวัดมีคลินิกเท้าเบาหวานใน รพ.ศูนย์/รพ.ทั่วไป และระบบส่งต่อตาม Service Plan · ผู้ป่วยไตวายระยะสุดท้าย/ฟอกไตเป็นกลุ่มเสี่ยงสูงสุด (ดู <a href="../ckd/index.html">CKD</a>)</p>
+</section>
+
+<section id="charcot" class="col">
+  <div class="sec-num">11</div>
+  <h2>Charcot foot (Charcot neuro-osteoarthropathy)</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>นึกถึงเมื่อ</h4><ul>
+      <li>ผู้ป่วยมี <b>neuropathy</b> + <b>เท้าบวม แดง ร้อนข้างเดียว</b> (ต่างจากอีกข้าง <b>&gt;2 °C</b>) · <b>ผิวหนังไม่มีแผล</b> · อาจปวดน้อยกว่าที่ดู · มักมีบาดเจ็บเล็กน้อยนำ</li>
+      <li>มัก<b>วินิจฉัยผิดเป็น</b> cellulitis, เกาต์, DVT, ข้อเท้าแพลง → ให้ยาฆ่าเชื้อไปเรื่อยๆ ขณะที่เท้ายุบผิดรูป</li>
+      <li>แยกจากติดเชื้อ: ไม่มีแผล/ประตูเชื้อ ไม่มีไข้ CRP ไม่สูงมาก · ยกขาสูงแล้วแดงลดลง (ช่วยได้บ้าง) · ถ้ามีแผลร่วมต้องคิดถึง osteomyelitis</li></ul></div>
+    <div class="card c-warn"><h4>ทำอะไร (IWGDF 2023)</h4><ul>
+      <li><b>X-ray เท้าและข้อเท้าแบบลงน้ำหนัก</b> · ช่วงแรก X-ray อาจปกติ → <b>MRI</b> (bone marrow oedema, microfracture)</li>
+      <li><b>อย่ารอผล — ให้ immobilise/offload ทันที</b> ใน<b>อุปกรณ์สูงถึงเข่าแบบถอดไม่ได้ (TCC)</b> · ใช้ไม้ค้ำ/วีลแชร์ · ไม่ได้ → knee-high walker แบบถอดได้</li>
+      <li><b>ส่งต่อทีมเท้า/ศัลย์กระดูกด่วน</b></li>
+      <li>ใส่จนเข้าระยะสงบ (อุณหภูมิต่างกัน &lt;2 °C ร่วมกับภาพรังสีคงที่) มัก<b>หลายเดือน</b> แล้วค่อยเปลี่ยนเป็นรองเท้า/อุปกรณ์เฉพาะ</li>
+      <li>ไม่แนะนำยา (bisphosphonate ฯลฯ) เพื่อรักษา active Charcot</li></ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยเบาหวาน — ถอดรองเท้าดูเท้า</b>ไม่มีแผล → จัดกลุ่ม IWGDF 0–3 · เท้าบวมแดงร้อนไม่มีแผล → Charcot vs ติดเชื้อ · มีแผล → ไปต่อ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สัญญาณอันตราย?</b>SIRS ≥2 · gas · necrotizing · ฝีลึก · compartment · gangrene ลุกลาม</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">มี</span><div class="node red"><b>เกรด 4 / ผ่าตัดด่วน</b>Admit · H/C · pip/tazo (melioid/ESBL → meropenem) ± vancomycin · ศัลย์ + หลอดเลือด</div></div>
+        <div class="arm"><span class="lab">ติดเชื้อ (≥2 อาการ)</span><div class="node dx hypo"><b>เกรด 2–3</b>เพาะเนื้อเยื่อ · probe-to-bone + X-ray + ESR/CRP · ยาตามเกรด 1–2 สัปดาห์</div></div>
+        <div class="arm"><span class="lab">ไม่ติดเชื้อ</span><div class="node dx green"><b>เกรด 1</b>ไม่ให้ยาปฏิชีวนะ · ไม่ swab</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เลือดพอไหม?</b>ชีพจร + Doppler waveform + ABI + TBI/toe pressure</div>
+      <div class="branch">
+        <div class="arm"><span class="lab">TP &lt;30 / ABI &lt;0.4 / ติดเชื้อ+PAD</span><div class="node red"><b>ศัลย์หลอดเลือดด่วน</b></div></div>
+        <div class="arm"><span class="lab">PAD ไม่รุนแรง / ไม่หายใน 4 สัปดาห์</span><div class="node dx hypo"><b>ส่งตรวจหลอดเลือด</b>พิจารณา revascularisation</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ทุกแผล</b>Offloading (TCC/knee-high) · debridement · dressing ธรรมดา · คุมน้ำตาล · หลังหาย = กลุ่ม 3 รองเท้าเฉพาะ ตรวจทุก 1–3 เดือน</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตรวจสอบขนาดยากับเภสัชกรและแนวทางของโรงพยาบาล</p>
+  </div>
+
+  <div class="tool" id="tRisk" style="margin-top:12px">
+    <h3>1) IWGDF risk category และนัดตรวจเท้า</h3>
+    <div class="checks">
+      <label><input type="checkbox" id="rLops"> LOPS (monofilament/Ipswich ผิดปกติ)</label>
+      <label><input type="checkbox" id="rPad"> PAD (ชีพจรไม่ได้, ABI &lt;0.9 หรือ &gt;1.3, TBI &lt;0.7)</label>
+      <label><input type="checkbox" id="rDef"> เท้าผิดรูป (นิ้วงอ ปุ่มกระดูกยื่น Charcot เดิม)</label>
+      <label><input type="checkbox" id="rUlc"> เคยเป็นแผลที่เท้า</label>
+      <label><input type="checkbox" id="rAmp"> เคยตัดนิ้ว/เท้า/ขา</label>
+      <label><input type="checkbox" id="rEskd"> ไตวายระยะสุดท้าย (ESKD/ฟอกไต)</label>
+      <label><input type="checkbox" id="rNow"> ตอนนี้มีแผลอยู่</label>
+      <label><input type="checkbox" id="rHot"> ตอนนี้เท้าบวมแดงร้อนข้างเดียว</label>
+    </div>
+    <div class="out" id="riskOut"></div>
+  </div>
+
+  <div class="tool plan" id="tInf" style="margin-top:12px">
+    <h3>2) เกรดการติดเชื้อ IWGDF/IDSA → ที่รักษา + ยาเริ่มต้น</h3>
+    <div class="fields">
+      <label class="f">รอยแดงรอบแผล<select id="iEry"><option value="0">ไม่มี / ≤0.5 cm</option><option value="1">&gt;0.5 ถึง &lt;2 cm</option><option value="2">≥2 cm</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="iAge" value="62"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="iWt" value="60"></label>
+      <label class="f">เพศ<select id="iSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="iCr" value="1.1"></label>
+      <label class="f">หน่วย Cr<select id="iCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">ฟอกไต<select id="iHd"><option value="n">ไม่ได้ฟอก</option><option value="y">ฟอกเลือด/ล้างไตทางช่องท้อง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="iSw" checked> บวม/แข็ง</label>
+      <label><input type="checkbox" id="iTe" checked> กดเจ็บ/ปวด</label>
+      <label><input type="checkbox" id="iWa"> ร้อน</label>
+      <label><input type="checkbox" id="iPu"> หนอง</label>
+      <label><input type="checkbox" id="iDeep"> ลึกถึงเอ็น/กล้ามเนื้อ/ข้อ/กระดูก หรือฝีลึก</label>
+      <label><input type="checkbox" id="iOm"> มี osteomyelitis (PTB บวก/X-ray/MRI)</label>
+      <label><input type="checkbox" id="sT"> T &gt;38 หรือ &lt;36 °C</label>
+      <label><input type="checkbox" id="sH"> HR &gt;90</label>
+      <label><input type="checkbox" id="sR"> RR &gt;20 (หรือ PaCO₂ &lt;32)</label>
+      <label><input type="checkbox" id="sW"> WBC &gt;12,000 หรือ &lt;4,000 หรือ band &gt;10%</label>
+      <label><input type="checkbox" id="iEmg"> ก๊าซ/necrotizing/ฝีลึก/compartment/gangrene ลุกลาม</label>
+      <label><input type="checkbox" id="iIsch"> PAD/ขาดเลือดสำคัญ</label>
+      <label><input type="checkbox" id="iRecent"> ได้ยาปฏิชีวนะใน 1 เดือน/เพิ่งนอนรพ.</label>
+      <label><input type="checkbox" id="iPs"> Pseudomonas จากแผลนี้ไม่กี่สัปดาห์ก่อน / แผลเปียกเปื่อย-แช่น้ำ</label>
+      <label><input type="checkbox" id="iMrsa"> เสี่ยง MRSA (เคยมี MRSA, ฟอกเลือด, นอนรพ.นาน)</label>
+      <label><input type="checkbox" id="iEsbl"> เคยเพาะได้ ESBL</label>
+      <label><input type="checkbox" id="iMel"> อีสาน/ชาวนา/สัมผัสดินโคลน (เสี่ยง melioidosis)</label>
+      <label><input type="checkbox" id="iAll"> แพ้ beta-lactam รุนแรง</label>
+    </div>
+    <div class="out" id="infOut"></div>
+  </div>
+
+  <div class="tool" id="tAbi" style="margin-top:12px">
+    <h3>3) แปลผล ABI · TBI · toe pressure</h3>
+    <div class="fields">
+      <label class="f">Brachial SBP ขวา<input type="number" id="aBr" value="140"></label>
+      <label class="f">Brachial SBP ซ้าย<input type="number" id="aBl" value="135"></label>
+      <label class="f">Dorsalis pedis SBP<input type="number" id="aDp" value="150"></label>
+      <label class="f">Posterior tibial SBP<input type="number" id="aPt" value="170"></label>
+      <label class="f">Toe pressure (mmHg)<input type="number" id="aTp" value="45"></label>
+      <label class="f">TcPO₂ (mmHg)<input type="number" id="aTc" value=""></label>
+      <label class="f">Pedal Doppler waveform<select id="aWf"><option value="u">ไม่ได้ตรวจ</option><option value="t">triphasic</option><option value="b">biphasic</option><option value="m">monophasic</option><option value="a">ไม่มีสัญญาณ</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aUlc" checked> มีแผล/gangrene</label>
+      <label><input type="checkbox" id="aInf"> แผลติดเชื้อ</label>
+      <label><input type="checkbox" id="aSlow"> แผลเล็กลง &lt;50% ใน 4 สัปดาห์</label>
+    </div>
+    <div class="out" id="abiOut"></div>
+  </div>
+
+  <div class="tool" id="tDur" style="margin-top:12px">
+    <h3>4) ระยะเวลายาปฏิชีวนะ</h3>
+    <div class="fields">
+      <label class="f">สถานการณ์<select id="dTy">
+        <option value="st1">เนื้อเยื่ออ่อน — เล็กน้อย</option>
+        <option value="st2">เนื้อเยื่ออ่อน — ปานกลาง/รุนแรง</option>
+        <option value="bc">กระดูก — ตัด/ผ่าออกหมด ขอบสะอาด</option>
+        <option value="bp">กระดูก — minor amputation ขอบกระดูกบวก</option>
+        <option value="bn">กระดูก — ไม่ผ่าตัด/เหลือกระดูกตาย</option>
+        <option value="un">แผลไม่ติดเชื้อ (เกรด 1)</option>
+      </select></label>
+      <label class="f">ให้ยามาแล้ว (วัน)<input type="number" id="dDays" value="5"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dSlow"> ตอบสนองช้า หรือ PAD รุนแรง</label>
+      <label><input type="checkbox" id="dSoft"> ยังมีเนื้อเยื่ออ่อนติดเชื้อเหลือหลังผ่าตัด</label>
+    </div>
+    <div class="out" id="durOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ถอดรองเท้าและถุงเท้าทุกครั้ง</b>ที่ตรวจผู้ป่วยเบาหวานเสี่ยงสูง</div></div>
+    <div class="pearl"><div><b>Monofilament + อีก 1 การตรวจ</b> ปีละครั้งเป็นอย่างน้อย</div></div>
+    <div class="pearl"><div><b>เคยเป็นแผล = กลุ่ม 3</b> นัดทุก 1–3 เดือน รองเท้าเฉพาะใส่ตลอด</div></div>
+    <div class="pearl"><div><b>แผลฝ่าเท้าไม่หาย</b> → ถามก่อนว่า offload หรือยัง</div></div>
+    <div class="pearl"><div><b>ABI ปกติ/สูงในเบาหวานไม่ตัด PAD</b> → TBI/toe pressure + Doppler</div></div>
+    <div class="pearl"><div><b>Toe pressure &lt;30 mmHg</b> → ศัลย์หลอดเลือดด่วน</div></div>
+    <div class="pearl"><div><b>แผลไม่ติดเชื้อ ไม่ให้ยาปฏิชีวนะ</b> ไม่ swab</div></div>
+    <div class="pearl"><div><b>เพาะเนื้อเยื่อก้นแผล</b> หลัง debride ดีกว่า swab</div></div>
+    <div class="pearl"><div><b>Probe-to-bone + X-ray + ESR</b> → ยังสงสัยทำ MRI</div></div>
+    <div class="pearl"><div><b>อีสาน + ฝี + ไม่ตอบสนอง ceftriaxone</b> → คิดถึง melioidosis</div></div>
+    <div class="pearl"><div><b>Soft tissue 1–2 สัปดาห์</b> · OM ขอบบวก 3 สัปดาห์ · ไม่ผ่าตัด 6 สัปดาห์</div></div>
+    <div class="pearl"><div><b>เท้าบวมแดงร้อน ไม่มีแผล + ชา</b> = Charcot จนกว่าจะพิสูจน์ได้ → immobilise</div></div>
+    <div class="pearl"><div><b>ห้ามแช่เท้า</b> ห้ามประคบร้อน ห้ามพอกยา</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../dm/index.html">Diabetes →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../lepto-melioid/index.html">Lepto/Melioidosis →</a> · <a href="../mdr-gnb/index.html">MDR-GNB →</a> · <a href="../ckd/index.html">CKD →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Schaper NC, van Netten JJ, Apelqvist J, et al. Practical guidelines on the prevention and management of diabetes-related foot disease (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40:e3657 · 2) Bus SA, Sacco ICN, Monteiro-Soares M, et al. Guidelines on the prevention of foot ulcers in persons with diabetes (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40:e3651 · 3) Bus SA, Armstrong DG, Crews RT, et al. Guidelines on offloading foot ulcers in persons with diabetes (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40:e3647 · 4) Chen P, Vilorio NC, Dhatariya K, et al. Guidelines on interventions to enhance healing of foot ulcers in people with diabetes (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40:e3644 · 5) Fitridge R, Chuter V, Mills JL, et al. The intersocietal IWGDF, ESVS, SVS guidelines on peripheral artery disease in people with diabetes and a foot ulcer. Eur J Vasc Endovasc Surg 2023;66:454–83 · 6) Senneville É, Albalawi Z, van Asten SA, et al. IWGDF/IDSA guidelines on the diagnosis and treatment of diabetes-related foot infections (IWGDF/IDSA 2023). Diabetes Metab Res Rev 2024;40:e3687 · 7) Monteiro-Soares M, Hamilton EJ, Russell DA, et al. Guidelines on the classification of foot ulcers in people with diabetes (IWGDF 2023 update). Diabetes Metab Res Rev 2024;40:e3648 · 8) Wukich DK, Schaper NC, Gooday C, et al. Guidelines on the diagnosis and treatment of active Charcot neuro-osteoarthropathy in persons with diabetes mellitus (IWGDF 2023). Diabetes Metab Res Rev 2024;40:e3646 · 9) Lipsky BA, Berendt AR, Cornia PB, et al. 2012 Infectious Diseases Society of America clinical practice guideline for the diagnosis and treatment of diabetic foot infections. Clin Infect Dis 2012;54:e132–73 · 10) American Diabetes Association Professional Practice Committee. 12. Retinopathy, neuropathy, and foot care: Standards of Care in Diabetes—2026. Diabetes Care 2026;49(Suppl 1):S261–76 · 11) American Diabetes Association Professional Practice Committee. 16. Diabetes care in the hospital: Standards of Care in Diabetes—2026. Diabetes Care 2026;49(Suppl 1) · 12) สมาคมโรคเบาหวานแห่งประเทศไทย และคณะ. แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน พ.ศ. 2566 · 13) Mills JL Sr, Conte MS, Armstrong DG, et al. The Society for Vascular Surgery lower extremity threatened limb classification system: risk stratification based on wound, ischemia, and foot infection (WIfI). J Vasc Surg 2014;59:220–34 · 14) Ince P, Abbas ZG, Lutale JK, et al. Use of the SINBAD classification system and score in comparing outcome of foot ulcer management on three continents. Diabetes Care 2008;31:964–7 · 15) Macdonald KE, Boeckh S, Stacey HJ, Jones JD. The microbiology of diabetic foot infections: a meta-analysis. BMC Infect Dis 2021;21:770 · 16) Sullivan RP, Marshall CS, Anstey NM, Ward L, Currie BJ. 2020 review and revision of the 2015 Darwin melioidosis treatment guideline. PLoS Negl Trop Dis 2020;14:e0008659<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = ไม่ได้มาจากแนวทางหลัก · <span class="tag up">2023</span> = เปลี่ยนจากฉบับก่อน · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','dfView');
+mountWalker({
+ start:{q:'ผู้ป่วยเบาหวาน — เท้าเป็นอย่างไร?',o:[['ไม่มีแผล (ตรวจประจำปี)','scr'],['เท้าบวมแดงร้อนข้างเดียว ผิวหนังไม่มีแผล','hot'],['มีแผล','sys']]},
+ scr:{leaf:true,cls:'ok',t:'คัดกรองและจัดกลุ่มเสี่ยง',b:'Monofilament (หรือ Ipswich) + vibration · คลำชีพจร ± ABI/TBI · ดูเท้าผิดรูป ประวัติแผล/ตัดขา/ESKD → <b>IWGDF 0</b> ปีละครั้ง · <b>1</b> ทุก 6–12 เดือน · <b>2</b> ทุก 3–6 เดือน · <b>3</b> ทุก 1–3 เดือน · สอนดูเท้าทุกวัน ห้ามเดินเท้าเปล่า รองเท้าพอดี'},
+ hot:{q:'มีไข้ มีแผล/ประตูเชื้อ หรือ CRP สูงมาก?',o:[['มี','cell'],['ไม่มี และมี neuropathy','charcot']]},
+ cell:{leaf:true,cls:'warn',t:'คิดถึงติดเชื้อ (cellulitis/ฝีลึก)',b:'หาแผลเล็กๆ ซอกนิ้ว เล็บ · X-ray · ESR/CRP · ให้ยาตามเกรด IWGDF/IDSA · แยกเกาต์ DVT · ถ้ามีแผลร่วม Charcot ต้องคิดถึง osteomyelitis ด้วย'},
+ charcot:{leaf:true,cls:'danger',t:'สงสัย active Charcot',b:'อุณหภูมิต่างกัน &gt;2 °C · <b>X-ray ลงน้ำหนัก</b> (ช่วงแรกอาจปกติ → MRI) · <b>immobilise ทันทีใน TCC/อุปกรณ์สูงถึงเข่าแบบถอดไม่ได้</b> + ไม้ค้ำ · ส่งทีมเท้า/ศัลย์กระดูกด่วน · อย่าให้ยาปฏิชีวนะแทนการ offload'},
+ sys:{q:'มีสัญญาณอันตราย? (SIRS ≥2, ช็อก, ก๊าซ/crepitus, ปวดเกินกว่าที่เห็น/ผิวคล้ำ, ฝีลึก, compartment, gangrene ลุกลาม)',o:[['มี','sev'],['ไม่มี','inf']]},
+ sev:{leaf:true,cls:'danger',t:'ติดเชื้อรุนแรง (เกรด 4) / ต้องผ่าตัดด่วน',b:'Admit · hemoculture 2 ชุด · <b>piperacillin/tazobactam 4.5 g IV q6h</b> (อีสาน/ESBL → <b>meropenem 1 g q8h</b>) ± vancomycin ถ้าเสี่ยง MRSA (ปรับตามไต) · <b>ปรึกษาศัลยแพทย์ด่วน</b> ระบาย/ตัดเนื้อตาย · คุมน้ำตาล 140–180 mg/dL',next:['ประเมินหลอดเลือดต่อ','pad']},
+ inf:{q:'แผลติดเชื้อไหม? (≥2 ใน 5: บวม/แข็ง, แดง &gt;0.5 cm, เจ็บ, ร้อน, หนอง)',o:[['ไม่ติดเชื้อ','unin'],['ติดเชื้อ','ext']]},
+ unin:{leaf:true,cls:'ok',t:'เกรด 1 — ไม่ติดเชื้อ',b:'<b>ไม่ให้ยาปฏิชีวนะ</b> · ไม่ swab · debride · dressing ธรรมดา · ทำต่อ: ตรวจกระดูก (ถ้าแผลลึก/นาน) และหลอดเลือด',next:['ตรวจกระดูก','bone']},
+ ext:{q:'แดง ≥2 cm หรือลึกกว่าใต้ผิวหนัง (เอ็น กล้ามเนื้อ ข้อ กระดูก ฝี)?',o:[['ไม่ — ตื้นและแดง &lt;2 cm','mild'],['ใช่','mod']]},
+ mild:{leaf:true,cls:'ok',t:'เกรด 2 — เล็กน้อย',b:'OPD ยากิน เน้น gram-positive: <b>dicloxacillin 500 mg q6h</b> หรือ <b>cephalexin 500 mg q6h</b> (เพิ่งได้ยา: amox/clav 875/125 q12h · แพ้: clindamycin) · <b>1–2 สัปดาห์</b> · เพาะเนื้อเยื่อก้นแผลถ้าเคยได้ยา/ไม่ตอบสนอง · นัด 2–3 วัน',next:['ตรวจกระดูก','bone']},
+ mod:{leaf:true,cls:'warn',t:'เกรด 3 — ปานกลาง',b:'ส่วนใหญ่ admit/IV: <b>amox/clav 1.2 g IV q8h</b> หรือ <b>ceftriaxone + metronidazole</b> · เสี่ยง Pseudomonas/เพิ่งได้ยา → pip/tazo · ESBL → ertapenem · MRSA → + vancomycin · อีสาน+ฝี → คิดถึง melioid (ceftazidime/meropenem) · เพาะเนื้อเยื่อ · ฝีลึก/เนื้อตาย → ผ่าตัด 24–48 ชม.',next:['ตรวจกระดูก','bone']},
+ bone:{q:'Probe ถึงกระดูก เห็นกระดูก แผลลึก/ไม่หาย &gt;6 สัปดาห์ หรือนิ้วบวมแดงทั้งนิ้ว?',o:[['ใช่','om'],['ไม่','pad']]},
+ om:{leaf:true,cls:'warn',t:'สงสัย osteomyelitis',b:'<b>X-ray + ESR/CRP</b> (ESR ≥70 สนับสนุน) · ยังไม่แน่ใจ → <b>MRI</b> (หรือ X-ray ซ้ำ 2–3 สัปดาห์) · ชิ้นกระดูกส่งเพาะ · ผ่าตัดเอาออก + ยา หรือยาอย่างเดียว (forefoot, ไม่มี PAD/ฝี) · ระยะยา: ขอบสะอาด 2–5 วัน · ขอบบวก 3 สัปดาห์ · ไม่ผ่าตัด 6 สัปดาห์',next:['ประเมินหลอดเลือด','pad']},
+ pad:{q:'คลำชีพจรเท้าได้ และ ABI 0.9–1.3 + TBI ≥0.70 + Doppler tri/biphasic?',o:[['ใช่ ทั้งหมด','off'],['ไม่ใช่/ยังไม่ได้ตรวจ','padY']]},
+ padY:{q:'TP &lt;30, ankle &lt;50, ABI &lt;0.4, TcPO₂ &lt;30 หรือมีติดเชื้อ/gangrene ร่วมกับ PAD?',o:[['ใช่','vascU'],['ไม่','vascC']]},
+ vascU:{leaf:true,cls:'danger',t:'ปรึกษาศัลยแพทย์หลอดเลือดด่วน',b:'ภาพหลอดเลือดตลอดขา (ระวัง contrast ในไตเสื่อม) · วางแผน revascularisation (ล่าช้า &gt;2 สัปดาห์ตัดขามากขึ้น) · ติดเชื้อ+PAD → ระบายหนองและ revasc ร่วมกัน · statin + antiplatelet · เลิกบุหรี่',next:['Offloading และทำแผล','off']},
+ vascC:{leaf:true,cls:'warn',t:'มีหรืออาจมี PAD',b:'วัด TBI/toe pressure + Doppler ถ้ายังไม่ได้ทำ (ABI หลอกได้จากหลอดเลือดแข็ง) · ankle &lt;100, TP &lt;60, monophasic หรือ<b>แผลเล็กลง &lt;50% ใน 4 สัปดาห์</b> → ส่งตรวจหลอดเลือดพิจารณา revasc',next:['Offloading และทำแผล','off']},
+ off:{leaf:true,cls:'ok',t:'ทุกแผล: offloading + ทำแผล',b:'แผลฝ่าเท้า: <b>TCC หรือ knee-high walker แบบถอดไม่ได้</b> (ติดเชื้อ/ขาดเลือดปานกลาง → แบบถอดได้) · sharp debridement · dressing ตามน้ำเหลือง (ไม่ใช้ silver/iodine เพื่อให้แผลหาย) · <b>ห้ามแช่เท้า</b> · คุมน้ำตาล · วัดขนาดแผลทุก 1–2 สัปดาห์ · หลังหาย = <b>IWGDF 3</b>: รองเท้าเฉพาะ ตรวจทุก 1–3 เดือน'}
+},'apTrail','apStage');
+
+/* ---------- 1) IWGDF risk ---------- */
+function risk(){
+  const c=id=>$(id).checked;const L=[];
+  const lops=c('rLops'),pad=c('rPad'),def=c('rDef'),hist=c('rUlc')||c('rAmp')||c('rEskd');
+  let cat;
+  if((lops||pad)&&hist)cat=3;
+  else if((lops&&pad)||(lops&&def)||(pad&&def))cat=2;
+  else if(lops||pad)cat=1;
+  else cat=0;
+  const name=['0 — ความเสี่ยงต่ำมาก','1 — ความเสี่ยงต่ำ','2 — ความเสี่ยงปานกลาง','3 — ความเสี่ยงสูง'][cat];
+  const iv=['ปีละครั้ง','ทุก 6–12 เดือน','ทุก 3–6 เดือน','ทุก 1–3 เดือน'][cat];
+  if(c('rNow'))L.push('<b style="color:var(--danger)">ตอนนี้มีแผล → ไม่ใช่การคัดกรอง</b> จัดการแผลวันนี้: เกรดติดเชื้อ (เครื่องมือ 2) · ประเมินเลือด (เครื่องมือ 3) · offloading');
+  if(c('rHot'))L.push('<b style="color:var(--danger)">เท้าบวมแดงร้อนข้างเดียว + neuropathy → สงสัย active Charcot</b> (หรือติดเชื้อ) · X-ray ± MRI · immobilise · ส่งต่อด่วน');
+  const odd=hist&&!(lops||pad);
+  if(odd)L.push('<b>มีประวัติแผล/ตัดขา/ESKD แต่ไม่ได้ติ๊ก LOPS หรือ PAD</b> → ไม่เข้าตาราง IWGDF · ตรวจซ้ำให้แน่ (monofilament + vibration, Doppler/ABI/TBI) · ระหว่างนี้ดูแลแบบความเสี่ยงสูง ตรวจเท้าทุก 1–3 เดือน <span class="tag add">เสริม</span>');
+  else L.push(`IWGDF risk category <b>${name}</b> → ตรวจเท้า <b>${iv}</b>`);
+  if(def&&!lops&&!pad)L.push('เท้าผิดรูปอย่างเดียว (ไม่มี LOPS/PAD) ยังเป็นกลุ่ม 0 · แนะนำรองเท้าที่รองรับรูปเท้า');
+  if(cat===0&&!odd)L.push('สอนดูแลเท้าทั่วไป · ตรวจ LOPS และ PAD ปีละครั้ง');
+  if(cat>=1)L.push('สอน: ดูเท้าทุกวัน · ห้ามเดินเท้าเปล่า/ใส่แค่ถุงเท้า · รองเท้าพอดี (ยาวกว่าเท้า 1–2 cm) · รักษา callus เล็บขบ เชื้อรา');
+  if(cat>=2)L.push('รองเท้าเพื่อการรักษา/แผ่นรองในที่รับรูปเท้า · พิจารณาวัดอุณหภูมิเท้า (ต่าง &gt;2.2 °C 2 วันติด → ลดเดิน มาพบแพทย์) · ส่งคลินิกเท้า/ทีมสหสาขา');
+  if(cat===3)L.push('<b>เคยเป็นแผลที่ฝ่าเท้า → รองเท้าที่ลดแรงกดได้จริง ใส่ตลอดเวลาทั้งในและนอกบ้าน</b> · ดูเท้าทุกครั้งที่มาตรวจ');
+  if(pad)L.push('PAD: statin, antiplatelet, เลิกบุหรี่ · ถ้ามีแผลให้ประเมิน TBI/toe pressure');
+  if(c('rEskd'))L.push('ESKD/ฟอกไต: เสี่ยงแผลและตัดขาสูงมาก · ABI มักสูงเกินจริงจากหลอดเลือดแข็ง → ใช้ toe pressure');
+  $('riskOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRisk input',risk);
+
+/* ---------- 2) infection grade + empirical antibiotics ---------- */
+function crcl(){
+  if($('iHd').value==='y')return {v:5,hd:true,txt:'ฟอกไต → ใช้ขนาดยาสำหรับฟอกไต (ให้หลังฟอกในวันที่ฟอก)'};
+  const a=num('iAge'),w=num('iWt');let cr=num('iCr');
+  if(a===null||w===null||cr===null)return null;
+  if($('iCrU').value==='um')cr=cr/88.4;
+  if(a<18||a>110||w<25||w>250||cr<0.2||cr>20)return null;
+  let v=(140-a)*w/(72*cr);if($('iSex').value==='f')v*=0.85;
+  return {v:v,hd:false,txt:`CrCl (Cockcroft–Gault, น้ำหนักจริง) ≈ <b>${Math.round(v)} mL/min</b>`};
+}
+const D={
+  diclox:()=>'dicloxacillin 500 mg PO q6h (ท้องว่าง)',
+  ceph:c=>'cephalexin '+(c>=60?'500 mg PO q6h':c>=30?'500 mg PO q12h (สูงสุด 1 g/วัน)':c>=15?'250 mg PO q8–12h':'250 mg PO q24h'),
+  amcPO:c=>'amoxicillin/clavulanate '+(c>=30?'875/125 mg PO q12h':c>=10?'500/125 mg PO q12h (ห้ามเม็ด 875)':'500/125 mg PO q24h'),
+  amcIV:c=>'amoxicillin/clavulanate '+(c>30?'1.2 g IV q8h':c>=10?'1.2 g IV แล้ว 600 mg IV q12h':'1.2 g IV แล้ว 600 mg IV q24h'),
+  clinPO:()=>'clindamycin 300–450 mg PO q6–8h',
+  clinIV:()=>'clindamycin 600 mg IV q8h',
+  ctx:()=>'ceftriaxone 1–2 g IV q24h',
+  metro:()=>'metronidazole 500 mg IV/PO q8h',
+  doxy:()=>'doxycycline 100 mg PO q12h',
+  cotri:c=>c>30?'co-trimoxazole (160/800) 1–2 เม็ด PO q12h':c>=15?'co-trimoxazole (160/800) 1 เม็ด PO q12h (ลดครึ่ง)':null,
+  ptz:(c,sev,hd)=>'piperacillin/tazobactam '+(hd?(sev?'2.25 g IV q8h':'2.25 g IV q12h')+' + 0.75 g หลังฟอก':c>40?(sev?'4.5 g IV q6h':'4.5 g IV q8h'):c>=20?(sev?'3.375 g IV q6h':'2.25 g IV q6h'):(sev?'2.25 g IV q6h':'2.25 g IV q8h')),
+  mero:c=>'meropenem '+(c>50?'1 g IV q8h':c>=26?'1 g IV q12h':c>=10?'500 mg IV q12h':'500 mg IV q24h'),
+  erta:c=>'ertapenem '+(c>30?'1 g IV q24h':'500 mg IV q24h'),
+  ceftaz:c=>'ceftazidime '+(c>50?'2 g IV q8h':c>30?'1 g IV q12h (รุนแรงเพิ่มได้ 50%)':c>15?'1 g IV q24h':'500 mg IV q24h'),
+  cipIV:c=>'ciprofloxacin '+(c>=30?'400 mg IV q12h':'400 mg IV q24h'),
+  levo:c=>'levofloxacin '+(c>=50?'750 mg IV/PO q24h':c>=20?'750 mg q48h':'750 mg แล้ว 500 mg q48h')
+};
+function vanco(c,hd){
+  const w=num('iWt');let ld='';
+  if(w!==null&&w>=25&&w<=250){const d=Math.min(3000,Math.round(w*25/250)*250);ld=`loading ~${d} mg IV (25 mg/kg, สูงสุด 3 g)`;}
+  else ld='loading 20–35 mg/kg IV (สูงสุด 3 g)';
+  const mt=hd?'แล้วให้หลังฟอกตามระดับยา':c>=50?'แล้ว 15–20 mg/kg q8–12h':c>=20?'แล้ว 15–20 mg/kg q24h':'แล้วให้ซ้ำตามระดับยา';
+  return `<b>+ vancomycin</b> ${ld} ${mt} · ปรับตาม AUC/trough`;
+}
+function inf(){
+  const c=id=>$(id).checked;const L=[];
+  const ery=+$('iEry').value;
+  const loc=['iSw','iTe','iWa','iPu'].filter(c).length+(ery>=1?1:0);
+  const sirs=['sT','sH','sR','sW'].filter(c).length;
+  const om=c('iOm'),emg=c('iEmg');
+  const infected=loc>=2||om||emg;
+  let g;
+  if(!infected)g=1;
+  else if(sirs>=2)g=4;
+  else if(ery>=2||c('iDeep')||om||emg)g=3;
+  else g=2;
+  const gTxt=g+(om&&g>=3?'(O)':'');
+  const gName={1:'ไม่ติดเชื้อ',2:'เล็กน้อย (mild)',3:'ปานกลาง (moderate)',4:'รุนแรง (severe)'}[g];
+  L.push(`อาการเฉพาะที่ ${loc}/5 · SIRS ${sirs}/4 → <b>IWGDF/IDSA เกรด ${gTxt} — ${gName}</b> (PEDIS ${g})`);
+  if(!infected&&sirs>=2)L.push('<b>SIRS ≥2 แต่แผลไม่มีอาการติดเชื้อ</b> → หาแหล่งติดเชื้ออื่น (ปอด ทางเดินปัสสาวะ ฝีลึกที่มองไม่เห็น) · ตรวจเท้าซ้ำ X-ray หาก๊าซ/กระดูก');
+  if(g===1){L.push('<b>ไม่ให้ยาปฏิชีวนะ</b> · ไม่ swab · debride + offloading + dressing ธรรมดา · ประเมินเลือด (เครื่องมือ 3)');$('infOut').innerHTML=L.join('<br>');return;}
+  if(om&&loc<2&&!emg)L.push('Osteomyelitis โดยไม่มีอาการอักเสบเฉพาะที่ → จัดเป็น 3(O) (หรือ 4(O) ถ้า SIRS ≥2)');
+  // setting
+  let set;
+  if(g===4)set='<b>Admit</b> · hemoculture 2 ชุด · สารน้ำ · ดูหน้า Sepsis';
+  else if(g===3)set=(c('iIsch')||c('iDeep')||emg)?'<b>Admit</b> (ปานกลาง + PAD/ฝีลึก/ต้องผ่าตัด)':'ส่วนใหญ่ <b>admit/เริ่ม IV</b> · OPD ยากินได้ถ้าไม่มี PAD ติดตามได้ใกล้ชิดและมาตามนัด';
+  else set='<b>OPD ยากิน</b> · นัดดูแผล 2–3 วัน';
+  L.push('ที่รักษา: '+set);
+  if(emg)L.push('<b style="color:var(--danger)">ผ่าตัดด่วน — ปรึกษาศัลยแพทย์ทันที</b> (ก๊าซ/necrotizing/ฝีลึก/compartment/gangrene ลุกลาม → ผ่า ระบาย ตัดเนื้อตาย · ยาอย่างเดียวไม่พอ)'+(c('iIsch')?' + <b>ศัลย์หลอดเลือดพร้อมกัน</b>':''));
+  else if(g===4)L.push('<b style="color:var(--danger)">ปรึกษาศัลยแพทย์ด่วน</b> ประเมินระบาย/debride (ติดเชื้อรุนแรงทุกราย)'+(c('iIsch')?' + <b>ศัลย์หลอดเลือดพร้อมกัน</b>':''));
+  else if(g===3&&(c('iDeep')||c('iIsch')))L.push('พิจารณาผ่าตัด debride/ระบายภายใน 24–48 ชม.'+(c('iIsch')?' · มี PAD → ปรึกษาศัลย์หลอดเลือดด่วน':''));
+  const r=crcl();
+  if(!r){L.push('<span class="muted">ใส่อายุ (18–110) น้ำหนัก (25–250 kg) และ Cr ให้ถูกต้อง (หรือเลือกฟอกไต) เพื่อดูยาและขนาดยาที่ปรับตามไต</span>');$('infOut').innerHTML=L.join('<br>');return;}
+  const k=r.v,hd=r.hd;L.push(r.txt);
+  const A=[];
+  if(g===2){
+    if(c('iAll'))A.push('<b>'+D.clinPO()+'</b> (แพ้ beta-lactam; ครอบคลุม MRSA บางส่วน)');
+    else if(c('iMrsa')){const t=D.cotri(k);A.push('<b>'+D.clinPO()+'</b> (ถ้าเชื้อในพื้นที่ไว) หรือ <b>'+D.doxy()+'</b>'+(t?' / <b>'+t+'</b>':'')+' ร่วมกับ '+(c('iRecent')?D.amcPO(k):D.ceph(k))+' (doxy/co-trimoxazole คลุม strep ไม่ดี)');if(!t)A.push('CrCl &lt;15: หลีกเลี่ยง co-trimoxazole');}
+    else if(c('iRecent'))A.push('<b>'+D.amcPO(k)+'</b> (เพิ่งได้ยา → คลุม gram-negative ด้วย)');
+    else A.push('<b>'+D.diclox()+'</b> หรือ <b>'+D.ceph(k)+'</b>');
+    if(c('iPs'))A.push('<span class="muted">IWGDF: เกรดเล็กน้อยไม่ต้องคลุม Pseudomonas เป็นยาเริ่มต้น · ดูผลเพาะเชื้อ</span>');
+  }else if(g===3){
+    if(c('iAll'))A.push('<b>'+D.clinIV()+' + '+D.cipIV(k)+'</b> (หรือ '+D.levo(k)+')');
+    else if(c('iEsbl'))A.push('<b>'+(c('iPs')?D.mero(k):D.erta(k))+'</b> (เคยมี ESBL'+(c('iPs')?' + เสี่ยง Pseudomonas — ertapenem ไม่คลุม Pseudomonas':'')+')');
+    else if(c('iPs')||c('iRecent'))A.push('<b>'+D.ptz(k,false,hd)+'</b> (เสี่ยง Pseudomonas/เพิ่งได้ยา)');
+    else if(c('iIsch'))A.push('<b>'+D.ctx()+' + '+D.metro()+'</b> (ขาดเลือด/เนื้อตาย → คลุม anaerobe)');
+    else A.push('<b>'+D.amcIV(k)+'</b> หรือ <b>'+D.ctx()+' + '+D.metro()+'</b> · อาการไม่มาก ติดตามได้: '+D.amcPO(k));
+    if(c('iMel')&&!c('iEsbl'))A.push('<b>เสี่ยง melioidosis</b>: ceftriaxone/amox-clav ไม่ใช่ยารักษา · มีฝี ไข้สูง หรือไม่ดีขึ้น 48–72 ชม. → <b>'+D.ceftaz(k)+' + '+D.clinIV()+'</b> หรือ <b>'+D.mero(k)+'</b> · ฝีลึก/กระดูก/ข้อ → Darwin 2020 เพิ่ม <b>TMP-SMX</b> ร่วมในช่วง IV · แจ้งแล็บสงสัย melioid');
+    if(c('iMrsa'))A.push(vanco(k,hd));
+  }else{
+    if(c('iAll'))A.push('<b>ปรึกษา ID</b>: vancomycin + '+D.cipIV(k)+' + '+D.metro()+' หรือ carbapenem (cross-reactivity ต่ำ) ตามชนิดการแพ้');
+    else if(c('iEsbl')||c('iMel'))A.push('<b>'+D.mero(k)+'</b> ('+(c('iMel')?'คลุม melioidosis':'')+(c('iMel')&&c('iEsbl')?' + ':'')+(c('iEsbl')?'ESBL':'')+')');
+    else A.push('<b>'+D.ptz(k,true,hd)+'</b> (เขตร้อน: คลุม gram-negative รวม Pseudomonas และ anaerobe)');
+    if(c('iMrsa')||c('iAll'))A.push(c('iAll')?'vancomycin: '+vanco(k,hd).replace('<b>+ vancomycin</b> ',''):vanco(k,hd));
+  }
+  L.push('ยาเริ่มต้น:<ol>'+A.map(x=>'<li>'+x+'</li>').join('')+'</ol>');
+  if(k<60&&!hd)L.push('<span class="muted">ขนาดปรับตาม CrCl แล้ว · ยาที่ไม่ต้องปรับ: dicloxacillin, clindamycin, ceftriaxone, metronidazole, doxycycline</span>');
+  L.push('เพาะเชื้อ: <b>เนื้อเยื่อก้นแผล</b>หลัง debride (ไม่ใช่ swab)'+(om?' · <b>ชิ้นกระดูก</b>':'')+' · ได้ผลแล้วลดสเปกตรัม เปลี่ยนเป็นยากินเมื่อดีขึ้น');
+  L.push('ระยะเวลา: '+(om?'กระดูก — ขอบสะอาด ~2–5 วัน · minor amputation ขอบบวก <b>3 สัปดาห์</b> · ไม่ผ่าตัด <b>6 สัปดาห์</b>':'<b>1–2 สัปดาห์</b> (หายช้า/PAD รุนแรง ได้ถึง 3–4 สัปดาห์)'));
+  if(g>=3)L.push('คุมน้ำตาล <b>140–180 mg/dL</b> ด้วย insulin · หยุด metformin/SGLT2i ช่วงป่วยหนัก');
+  $('infOut').innerHTML=L.join('<br>');
+}
+bindAll('#tInf input,#tInf select',inf);
+
+/* ---------- 3) ABI / TBI ---------- */
+function abi(){
+  const c=id=>$(id).checked;const L=[];
+  const rd=id=>{const v=num(id);return v};
+  const br1=rd('aBr'),br2=rd('aBl'),dp=rd('aDp'),pt=rd('aPt'),tp=rd('aTp'),tc=rd('aTc');const wf=$('aWf').value;
+  const okB=v=>v!==null&&v>=50&&v<=300, okA=v=>v!==null&&v>=0&&v<=300, okT=v=>v!==null&&v>=0&&v<=200;
+  const bad=[[br1,okB],[br2,okB],[dp,okA],[pt,okA],[tp,okT],[tc,okT]].some(([v,f])=>v!==null&&!f(v));
+  if(bad){$('abiOut').innerHTML='<span class="muted">มีค่าที่ไม่สมเหตุสมผล (brachial 50–300, ankle 0–300, toe/TcPO₂ 0–200 mmHg) — ตรวจตัวเลขอีกครั้ง</span>';return}
+  const bs=[br1,br2].filter(okB);
+  if(!bs.length){$('abiOut').innerHTML='<span class="muted">ใส่ brachial SBP อย่างน้อย 1 แขน</span>';return}
+  const br=Math.max(...bs);const an=[dp,pt].filter(okA);
+  if(!an.length&&tp===null&&tc===null){$('abiOut').innerHTML='<span class="muted">ใส่ความดันที่ข้อเท้า (DP/PT) หรือ toe pressure</span>';return}
+  let abiL=null,abiH=null,tbi=null,nc=false;
+  if(an.length){abiL=Math.min(...an)/br;abiH=Math.max(...an)/br;nc=abiH>1.3;
+    L.push(`Brachial ที่ใช้ ${br} mmHg · <b>ABI ${f2(abiL)}</b> (ใช้ข้อเท้าค่าต่ำ ตาม IWGDF 2023)`+(an.length>1&&Math.abs(abiH-abiL)>=0.01?` · ใช้ค่าสูง (AHA) ${f2(abiH)}`:''));
+    if(Math.min(...an)===0)L.push('ข้อเท้าวัดได้ 0 = ไม่มีสัญญาณ Doppler → ขาดเลือดรุนแรง');
+    if(abiL>1.3)L.push('<b>ABI &gt;1.3 → หลอดเลือดแข็งกดไม่ลง</b> แปลผลไม่ได้ (พบบ่อยใน ESKD/เบาหวานนาน) → ใช้ TBI/toe pressure + waveform');
+    else if(nc)L.push('มีหลอดเลือดข้อเท้าเส้นหนึ่ง &gt;1.3 (แข็ง) → ABI อาจสูงเกินจริง ใช้ TBI ช่วย');
+    else if(abiL>=0.9)L.push('ABI 0.9–1.3: PAD น้อยลง แต่<b>ตัดไม่ได้</b>ในเบาหวาน');
+    else if(abiL>=0.4)L.push('<b>ABI &lt;0.9 → มี PAD</b>');
+    else L.push('<b>ABI &lt;0.4 → PAD รุนแรง</b>');
+  }
+  if(tp!==null){tbi=tp/br;L.push(`<b>TBI ${f2(tbi)}</b> → `+(tbi>=0.7?'≥0.70 (PAD น้อยลง)':'<b>&lt;0.70 = PAD</b>')+` · toe pressure ${tp} mmHg`);}
+  if(wf!=='u')L.push('Doppler: '+({t:'triphasic (PAD น้อยลง)',b:'biphasic (PAD น้อยลง)',m:'<b>monophasic → ขาดเลือด</b>',a:'<b>ไม่มีสัญญาณ → ขาดเลือดรุนแรง</b>'})[wf]);
+  const abiUse=(abiL!==null&&!nc&&abiL<=1.3);
+  const padYes=(abiUse&&abiL<0.9)||(tbi!==null&&tbi<0.7)||wf==='m'||wf==='a';
+  const padNo=abiUse&&abiL>=0.9&&tbi!==null&&tbi>=0.7&&(wf==='t'||wf==='b');
+  L.push(padYes?'สรุป: <b>มี PAD</b>':padNo?'สรุป: <b>PAD น่าจะไม่มี</b> (ABI 0.9–1.3 + TBI ≥0.70 + tri/biphasic)':'สรุป: <b>ยังสรุปไม่ได้</b> → ทำให้ครบ ABI + TBI/toe pressure + Doppler waveform');
+  // WIfI ischaemia
+  const gs=[];
+  if(abiUse){gs.push(abiL>=0.8?0:abiL>=0.6?1:abiL>=0.4?2:3);const a=Math.min(...an);gs.push(a>=100?0:a>=70?1:a>=50?2:3);}
+  const tt=tp!==null?tp:tc;
+  if(tt!==null)gs.push(tt>=60?0:tt>=40?1:tt>=30?2:3);
+  if(gs.length)L.push(`WIfI Ischaemia เกรด <b>${Math.max(...gs)}</b>`+(nc&&tt===null?' <span class="muted">(ใช้ ABI ไม่ได้ — ต้องมี toe pressure/TcPO₂)</span>':''));
+  if(c('aUlc')){
+    const ank=abiUse?Math.min(...an):null;
+    const urg=(tp!==null&&tp<30)||(tc!==null&&tc<30)||(ank!==null&&ank<50)||(abiUse&&abiL<0.4)||wf==='a';
+    const con=(tp!==null&&tp<60)||(ank!==null&&ank<100)||wf==='m'||c('aSlow')||padYes;
+    if(urg||(c('aInf')&&padYes))L.push('<b style="color:var(--danger)">ปรึกษาศัลยแพทย์หลอดเลือดด่วน</b> — '+(urg?'ขาดเลือดรุนแรง (TP/TcPO₂ &lt;30, ankle &lt;50, ABI &lt;0.4 หรือไม่มีสัญญาณ Doppler — IWGDF PAD rec 13)':'')+(urg&&c('aInf')&&padYes?' · ':'')+(c('aInf')&&padYes?'ติดเชื้อร่วมกับ PAD':'')+' · ตรวจภาพหลอดเลือดตลอดขาเพื่อ revascularisation');
+    else if(con)L.push('<b>พิจารณาส่งตรวจหลอดเลือด/revascularisation</b>'+(c('aSlow')?' (แผลไม่ลดลงครึ่งหนึ่งใน 4 สัปดาห์)':'')+' — ankle &lt;100, TP &lt;60, monophasic หรือมี PAD');
+    else L.push('ยังไม่มีข้อบ่งชี้ส่ง revasc ตอนนี้ · ถ้าแผลเล็กลง &lt;50% ใน 4 สัปดาห์ → ประเมินซ้ำ');
+    if(tp!==null)L.push(tp>=30?'Toe pressure ≥30 mmHg: โอกาสแผลหายดีขึ้น':'Toe pressure &lt;30 mmHg: เสี่ยงตัดขาสูง');
+    else if(tc!==null)L.push(tc>=25?'TcPO₂ ≥25 mmHg: โอกาสแผลหายดีขึ้น':'TcPO₂ &lt;25 mmHg: เสี่ยงตัดขาสูง');
+  }else if(padYes)L.push('ไม่มีแผล: รักษาปัจจัยเสี่ยงหลอดเลือด (statin, antiplatelet, เลิกบุหรี่) · IWGDF risk ≥1 · ปวดขณะพัก/claudication ที่จำกัดชีวิต → ส่งศัลย์หลอดเลือด');
+  $('abiOut').innerHTML=L.join('<br>');
+}
+bindAll('#tAbi input,#tAbi select',abi);
+
+/* ---------- 4) duration ---------- */
+function dur(){
+  const ty=$('dTy').value;const c=id=>$(id).checked;const L=[];
+  const raw=$('dDays').value.trim();const d=num('dDays');
+  if(raw!==''&&(d===null||d<0||d>365||Math.floor(d)!==d)){$('durOut').innerHTML='<span class="muted">ใส่จำนวนวันที่ให้ยามาแล้วเป็นจำนวนเต็ม 0–365 (หรือเว้นว่าง)</span>';return}
+  if(ty==='un'){$('durOut').innerHTML='<b>แผลไม่ติดเชื้อ → ไม่ให้ยาปฏิชีวนะ</b> (ไม่ช่วยให้แผลหายหรือป้องกันติดเชื้อ) · ถ้าให้อยู่ → หยุดได้';return}
+  let lo,hi,txt;
+  if(ty==='st1'||ty==='st2'){
+    if(c('dSlow')){lo=21;hi=28;txt='เนื้อเยื่ออ่อนที่ตอบสนองช้า/PAD รุนแรง: <b>ได้ถึง 3–4 สัปดาห์</b> (IWGDF/IDSA rec 12c)';}
+    else{lo=7;hi=14;txt='เนื้อเยื่ออ่อน: <b>1–2 สัปดาห์</b> (rec 12b)'+(ty==='st2'?' · ตารางแนวทาง: ปานกลาง/รุนแรง 2–4 สัปดาห์ตามการตอบสนอง — เริ่ม IV แล้วเปลี่ยนเป็นยากินเมื่อดีขึ้น':' · ยากิน');}
+  }else if(ty==='bc'){
+    if(c('dSoft')){lo=7;hi=14;txt='กระดูกออกหมดแต่<b>ยังมีเนื้อเยื่ออ่อนติดเชื้อ</b> → ให้ตามเนื้อเยื่ออ่อน <b>1–2 สัปดาห์</b>';}
+    else{lo=2;hi=5;txt='ตัด/ผ่ากระดูกติดเชื้อออกหมด ขอบสะอาด ไม่มีเนื้อเยื่ออ่อนติดเชื้อเหลือ: <b>~2–5 วัน</b>';}
+  }else if(ty==='bp'){lo=21;hi=21;txt='Minor amputation ขอบกระดูกบวก (เพาะเชื้อ/พยาธิ): <b>3 สัปดาห์</b> (IWGDF/IDSA 2023 rec 16)';}
+  else{lo=42;hi=42;txt='Osteomyelitis ไม่ผ่าตัด/เหลือกระดูกตาย: <b>6 สัปดาห์</b> (rec 16) · ถ้าไม่ดีขึ้นพิจารณาผ่าตัด';}
+  L.push(txt);
+  if(ty==='bn'||ty==='bp')L.push('<span class="muted">IDSA 2012 เดิมแนะนำ 4–6 สัปดาห์ (เหลือกระดูกมีชีวิต) และ ≥3 เดือน (ไม่ผ่าตัด) — ถูกแทนที่แล้ว</span>');
+  if(raw!==''){
+    if(d<lo)L.push(`ให้มาแล้ว ${d} วัน → เหลืออีก <b>${lo-d}${hi>lo?'–'+(hi-d):''} วัน</b> (ถ้าอาการติดเชื้อหายตามคาด)`);
+    else if(d<=hi)L.push(`ให้มาแล้ว ${d} วัน → <b>อยู่ในช่วงที่หยุดได้</b> ถ้าอาการอักเสบหายแล้ว (แผลไม่จำเป็นต้องปิดสนิท)`);
+    else L.push(`ให้มาแล้ว ${d} วัน → <b>เกินระยะที่แนะนำ</b> · ถ้าหายแล้วหยุดยา · ถ้ายังไม่หาย <b>ประเมินใหม่</b>: ฝีที่ยังไม่ระบาย กระดูกอักเสบ เลือดไม่พอ เชื้อดื้อ/เชื้อที่ไม่ครอบคลุม`);
+    if((ty==='st1'||ty==='st2')&&d>=28)L.push('<b>ครบ 4 สัปดาห์แล้วยังไม่หาย → ประเมินใหม่ (rec 12d)</b> แทนการต่อยา');
+  }
+  L.push(ty.startsWith('b')?'ติดตามอย่างน้อย <b>6 เดือน</b>หลังหยุดยาก่อนสรุปว่า osteomyelitis หาย':'แผลยังต้อง offloading และทำแผลต่อหลังหยุดยา');
+  $('durOut').innerHTML=L.join('<br>');
+}
+bindAll('#tDur input,#tDur select',dur);
+
+mountQuiz([
+ ['ผู้ป่วยเบาหวานมี LOPS และเคยเป็นแผลที่ฝ่าเท้าซึ่งหายแล้ว ตาม IWGDF ควรนัดตรวจเท้าบ่อยแค่ไหน',['ปีละครั้ง','ทุก 6–12 เดือน','ทุก 3–6 เดือน','ทุก 1–3 เดือน'],3,'LOPS + เคยเป็นแผล = กลุ่ม 3 (ความเสี่ยงสูง) → ทุก 1–3 เดือน และใส่รองเท้าที่ลดแรงกดตลอดเวลา'],
+ ['แผลที่หัวแม่เท้า แดงรอบแผล 1 cm กดเจ็บ ไม่ลึก ไม่มีไข้ HR 84 จัดเกรด IWGDF/IDSA ได้เท่าไร',['1','2','3','4'],1,'มีอาการเฉพาะที่ ≥2 (แดง >0.5 cm + เจ็บ) ตื้น แดง <2 cm ไม่มี SIRS = เกรด 2 → ยากินเน้น gram-positive'],
+ ['แผลไม่ติดเชื้อที่ฝ่าเท้า 2 cm² ควรทำอะไร',['ให้ amoxicillin/clavulanate ป้องกัน','Swab เพาะเชื้อ','Offloading + debridement + ไม่ให้ยาปฏิชีวนะ','ทา silver sulfadiazine'],2,'แผลไม่ติดเชื้อไม่ให้ยาปฏิชีวนะและไม่ swab · ไม่มีหลักฐานว่า antimicrobial dressing ช่วยแผลหาย'],
+ ['ผู้ป่วยฟอกไต ABI 1.45 แผลที่นิ้วไม่หาย 6 สัปดาห์ การตรวจถัดไปที่เหมาะที่สุด',['สรุปว่าเลือดดี','Toe pressure/TBI + Doppler waveform','ESR','ทำ ABI ซ้ำ'],1,'ABI >1.3 = หลอดเลือดแข็งกดไม่ลง แปลผลไม่ได้ → ใช้ toe pressure/TBI'],
+ ['ค่าใดบ่งว่าควรปรึกษาศัลยแพทย์หลอดเลือดด่วนในผู้ป่วยที่มีแผล',['TBI 0.75','Toe pressure 25 mmHg','ABI 1.0 + triphasic','TcPO₂ 45 mmHg'],1,'TP <30 mmHg (หรือ ankle <50, ABI <0.4, TcPO₂ <30) = ขาดเลือดรุนแรง เสี่ยงตัดขา'],
+ ['การส่งเพาะเชื้อที่เหมาะที่สุดในแผลติดเชื้อปานกลาง',['Swab ผิวแผลก่อนล้าง','เนื้อเยื่อจากก้นแผลหลังล้างและ debride','เพาะเชื้อปัสสาวะ','ไม่ต้องเพาะ'],1,'IWGDF/IDSA 2023: เนื้อเยื่อ (curettage/biopsy) แม่นกว่า swab'],
+ ['แผลลึก probe ถึงกระดูก X-ray ปกติ ESR 85 ขั้นต่อไปที่เหมาะ',['สรุปว่าไม่มี osteomyelitis','MRI (หรือ X-ray ซ้ำ 2–3 สัปดาห์)','ให้ยา 2 สัปดาห์แล้วจบ','ตัดขา'],1,'X-ray ช่วงแรกมักปกติ · ยังสงสัย → MRI'],
+ ['Osteomyelitis นิ้วเท้า รักษาด้วยยาอย่างเดียวไม่ผ่าตัด ระยะเวลายาที่แนะนำ (2023)',['1–2 สัปดาห์','3 สัปดาห์','6 สัปดาห์','≥3 เดือน'],2,'6 สัปดาห์ · ≥3 เดือนเป็นคำแนะนำ IDSA 2012 ที่ถูกแทนที่'],
+ ['หลัง minor amputation ขอบกระดูกเพาะเชื้อบวก ควรให้ยาต่อนานเท่าไร',['2–5 วัน','3 สัปดาห์','6 สัปดาห์','3 เดือน'],1,'IWGDF/IDSA 2023 rec 16: 3 สัปดาห์'],
+ ['ชายเบาหวานชาวนาจากอีสาน ฝีที่เท้า ไข้ 39 HR 110 ไม่ดีขึ้นด้วย ceftriaxone 3 วัน ควรเปลี่ยนเป็น',['Dicloxacillin','Meropenem (หรือ ceftazidime) + แจ้งแล็บสงสัย melioid + ระบายฝี','Ciprofloxacin กิน','หยุดยา'],1,'Melioidosis ไม่ตอบสนอง ceftriaxone · ต้องระบายฝีและปรึกษาศัลย์ด้วย'],
+ ['หญิงเบาหวานชา เท้าขวาบวมแดงร้อน ร้อนกว่าอีกข้าง 3 °C ไม่มีแผล ไม่มีไข้ CRP ปกติ ควรทำอะไร',['Cephalexin 2 สัปดาห์','X-ray ลงน้ำหนัก ± MRI และ immobilise ใน TCC/knee-high + ส่งต่อด่วน','ให้เดินมากขึ้น','ฉีด steroid เข้าข้อ'],1,'สงสัย active Charcot → offload/immobilise ทันที ไม่รอผล'],
+ ['แผลฝ่าเท้าส่วนหน้าจาก neuropathy ไม่ติดเชื้อ ไม่ขาดเลือด offloading ที่เป็นทางเลือกแรก',['รองเท้าแตะ','Total contact cast หรือ knee-high walker แบบถอดไม่ได้','ให้นอนพักอย่างเดียว','Ankle-high walker แบบถอดได้'],1,'IWGDF 2023: อุปกรณ์สูงถึงเข่าแบบถอดไม่ได้เป็นทางเลือกแรก']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

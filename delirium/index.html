@@ -1,0 +1,934 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Delirium · ภาวะสับสนเฉียบพลันในผู้สูงอายุ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Geriatrics · Neurology · Critical care · NICE CG103 (2023) · SIGN 157 (2019) · AGS Beers 2023 · SCCM PADIS 2018 + 2025</div>
+  <h1>ภาวะสับสนเฉียบพลันในผู้สูงอายุ<br>Delirium in older adults</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไปที่ ER, หอผู้ป่วย และ OPD นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผู้สูงอายุที่ "ซึมลง กินน้อย พูดไม่รู้เรื่อง" หรือ "เอะอะ ดึงสาย นอนไม่หลับ" ตอนกลางคืน มักเป็น <b>delirium</b> ซึ่งเป็นภาวะสมองล้มเหลวเฉียบพลัน (acute brain failure) และเป็นสัญญาณว่ามีโรคทางกายหรือยาเป็นต้นเหตุ · หน้านี้ครอบคลุมนิยาม การคัดกรองด้วย 4AT การแยกโรค การหาสาเหตุ การป้องกัน การดูแลแบบไม่ใช้ยา ข้อบ่งชี้และขนาดยาต้านโรคจิต delirium ใน ICU และการดูแลหลังหาย · เข้าชุดกับหน้า <a href="../alcohol-withdrawal/index.html">ถอนสุรา/Wernicke</a>, <a href="../hyponatremia/index.html">Na ต่ำ</a>, <a href="../hypoglycemia/index.html">น้ำตาลต่ำ</a>, <a href="../sepsis/index.html">Sepsis</a> และ <a href="../toxicology/index.html">พิษวิทยา</a></p>
+  <p class="cite">อ้างอิงหลัก: NICE CG103 Delirium: prevention, diagnosis and management in hospital and long-term care (2010, ปรับปรุง 2023) · SIGN 157 Risk reduction and management of delirium (2019) · 2023 American Geriatrics Society Beers Criteria (J Am Geriatr Soc 2023;71:2052–81) · SCCM PADIS guideline (Crit Care Med 2018;46:e825–73) และ PADIS focused update (Crit Care Med 2025;53:e711–27) · DSM-5-TR (APA 2022) · Tieges Z, et al. 4AT meta-analysis (Age Ageing 2021;50:733–43) · 4AT ฉบับภาษาไทย (Neuropsychiatr Dis Treat 2016;12:437–43) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>คัดกรองทุกคน</b>ผู้สูงอายุที่มา ER/นอน รพ. ทำ 4AT · ≥4 = อาจเป็น delirium · ชนิดซึม (hypoactive) พบบ่อยที่สุดและถูกมองข้าม</div>
+    <div class="stage" style="--c:var(--warn)"><b>หาสาเหตุ ไม่ใช่แค่ทำให้สงบ</b>น้ำตาล O₂ ติดเชื้อ ยา ปัสสาวะค้าง ท้องผูก ปวด Na ถอนสุรา · มักมีหลายสาเหตุพร้อมกัน</div>
+    <div class="stage" style="--c:var(--danger)"><b>ยาน้อยที่สุด สั้นที่สุด</b>ไม่ใช้ยาก่อนเสมอ · haloperidol 0.5 mg เฉพาะทุกข์ทรมาน/อันตราย · benzodiazepine เฉพาะถอนสุรา/ถอนยา</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#def">นิยามและชนิด</a><a href="#why">ทำไมสำคัญ</a><a href="#risk">ปัจจัยเสี่ยง</a><a href="#screen">คัดกรอง · วินิจฉัย</a><a href="#ddx">แยกโรค</a><a href="#cause">หาสาเหตุ · ยา</a><a href="#prevent">ป้องกัน</a><a href="#nondrug">ดูแลแบบไม่ใช้ยา</a><a href="#drug">ยาต้านโรคจิต · BZD</a><a href="#icu">Delirium ใน ICU</a><a href="#after">หลังหาย · คุยกับญาติ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="def" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและชนิด</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เกณฑ์ DSM-5-TR (2022) — ต้องครบ A–E</h4><ul>
+      <li><b>A</b> ความผิดปกติของ <b>attention</b> (จดจ่อ คงความสนใจ หรือเปลี่ยนความสนใจไม่ได้) และ <b>awareness</b> (รับรู้สิ่งแวดล้อมลดลง)</li>
+      <li><b>B</b> เกิด <b>เร็ว</b> (เป็นชั่วโมงถึงไม่กี่วัน) เปลี่ยนจากเดิมของผู้ป่วย และ <b>ขึ้นๆ ลงๆ</b> ในวันเดียวกัน</li>
+      <li><b>C</b> มีความผิดปกติด้าน cognition เพิ่ม เช่น ความจำ สับสนเวลา/สถานที่ ภาษา การรับรู้ (เห็นภาพหลอน)</li>
+      <li><b>D</b> อธิบายไม่ได้ด้วย neurocognitive disorder เดิม และไม่ได้เกิดในภาวะตื่นตัวลดลงรุนแรง (เช่น coma)</li>
+      <li><b>E</b> มีหลักฐานว่าเกิดจาก <b>โรคทางกาย ยา/สาร การเป็นพิษ การถอนยา</b> หรือหลายสาเหตุร่วมกัน</li></ul>
+      <p class="muted" style="font-size:.86rem">ระบุเพิ่ม: <b>acute</b> (ชั่วโมง–วัน) หรือ <b>persistent</b> (สัปดาห์–เดือน) · ชนิดตามพฤติกรรม (ขวา)</p></div>
+    <div class="card c-warn"><h4>3 ชนิดตามพฤติกรรม</h4><ul>
+      <li><b>Hyperactive</b>: กระสับกระส่าย เอะอะ ดึงสายน้ำเกลือ/สายสวน ปีนเตียง เห็นภาพหลอน · ทีมสังเกตเห็นง่าย</li>
+      <li><b>Hypoactive</b>: <b>ซึม เงียบ นอนมาก กินน้อย ตอบช้า</b> · <b>พบบ่อยที่สุดในผู้สูงอายุและใน ICU</b> · มักถูกเข้าใจว่า "เพลีย" หรือ "ซึมเศร้า" · พยากรณ์โรคแย่กว่า</li>
+      <li><b>Mixed</b>: สลับกันระหว่างวัน เช่น กลางวันซึม กลางคืนเอะอะ</li>
+      <li><b>Subsyndromal delirium</b>: มีอาการบางข้อแต่ไม่ครบเกณฑ์ · ผลเสียอยู่กึ่งกลาง · ดูแลเหมือน delirium</li>
+      <li><b>Delirium superimposed on dementia</b>: พบบ่อย · ให้ถามญาติว่า "ต่างจากปกติของเขาอย่างไร"</li></ul></div>
+  </div>
+  <div class="box key"><b>หัวใจของการวินิจฉัย</b><b>เฉียบพลัน + ขึ้นๆ ลงๆ + inattention</b> · การทดสอบ attention ที่ง่ายที่สุดคือให้ <b>บอกเดือนย้อนหลัง</b> (ธันวาคม → มกราคม) · ถ้าพูดไม่ได้ ให้บีบมือเมื่อได้ยินตัวอักษรที่กำหนด (แบบ CAM-ICU)</div>
+</section>
+
+<section id="why" class="col">
+  <div class="sec-num">02</div>
+  <h2>ทำไมสำคัญ</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>พบบ่อยและถูกมองข้าม</h4><ul>
+      <li>พบมากในผู้ป่วยสูงอายุที่นอนแผนกอายุรกรรม หลังผ่าตัดใหญ่/กระดูกสะโพกหัก และใน ICU (ผู้ป่วยใส่ท่อช่วยหายใจพบได้มากกว่าครึ่ง) · พบที่ ER ได้ราว 1 ใน 10</li>
+      <li>แพทย์และพยาบาลตรวจไม่พบเป็นส่วนใหญ่ถ้าไม่ใช้เครื่องมือคัดกรอง โดยเฉพาะชนิด hypoactive</li>
+      <li>ป้องกันได้ราว <b>1 ใน 3</b> ด้วยการดูแลหลายด้านร่วมกัน (multicomponent)</li></ul></div>
+    <div class="card c-warn"><h4>ผลเสียระยะยาว (Witlox, JAMA 2010)</h4><ul>
+      <li><b>เสียชีวิต</b> มากขึ้น (HR 1.95 ที่ ~23 เดือน หลังปรับปัจจัยกวน)</li>
+      <li><b>ต้องย้ายไปอยู่สถานดูแล</b> มากขึ้น (OR 2.41)</li>
+      <li><b>สมองเสื่อม</b> ตามมามากขึ้น (OR 12.5 จาก 2 การศึกษา — ช่วงความเชื่อมั่นกว้าง)</li>
+      <li>ใน ICU ยิ่ง delirium นาน ยิ่งสัมพันธ์กับ cognition ระยะยาวแย่ลง</li>
+      <li>นอน รพ. นานขึ้น หกล้ม แผลกดทับ สำลัก ค่าใช้จ่ายสูงขึ้น</li></ul></div>
+  </div>
+  <div class="box warn"><b>มองให้เป็นภาวะฉุกเฉิน</b>Delirium ใหม่ = "สัญญาณชีพตัวที่ 6" ที่บอกว่าผู้ป่วยแย่ลง · อาจเป็นอาการแรก (หรืออาการเดียว) ของ sepsis, hypoxia, hypoglycemia, MI, stroke, ปัสสาวะค้าง หรือพิษยา</div>
+</section>
+
+<section id="risk" class="col">
+  <div class="sec-num">03</div>
+  <h2>ปัจจัยเสี่ยง: พื้นฐาน × ตัวกระตุ้น</h2>
+  <p>โมเดลของ Inouye: ผู้ที่ <b>เปราะบางมาก</b> (สมองเสื่อม อายุมาก) เกิด delirium ได้จากตัวกระตุ้นเล็กน้อย (ยานอนหลับ 1 เม็ด ท้องผูก) · ผู้ที่แข็งแรงต้องมีตัวกระตุ้นรุนแรง (sepsis ผ่าตัดใหญ่) · <b>NICE</b> ให้ประเมินความเสี่ยงทุกคนที่มา รพ.: <b>อายุ ≥65 ปี, cognitive impairment/สมองเสื่อม, กระดูกสะโพกหัก, ป่วยหนัก</b></p>
+  <div class="tbl"><table>
+    <tr><th>Predisposing (พื้นฐานของผู้ป่วย)</th><th>Precipitating (ตัวกระตุ้นระหว่างป่วย)</th></tr>
+    <tr><td><b>สมองเสื่อม/cognitive impairment</b> (ปัจจัยแรงที่สุด) · อายุมาก · เคยเป็น delirium · มองไม่เห็น/หูตึง · ช่วยเหลือตัวเองได้น้อย (ADL) · ขาดสารอาหาร · โรคร่วมหลายโรค · stroke/Parkinson เดิม · ดื่มสุรา · ซึมเศร้า</td><td><b>ยา</b> (anticholinergic, benzodiazepine, opioid, steroid, ยาหลายตัว) · <b>ติดเชื้อ</b> · hypoxia · ขาดน้ำ · Na/Ca/glucose ผิดปกติ · ไต/ตับวาย · <b>ปัสสาวะค้าง</b> · <b>ท้องผูก</b> · ปวด · ผ่าตัด/ดมยา · <b>ใส่สายสวนปัสสาวะ</b> · <b>ผูกมัด</b> · นอนไม่หลับ · ย้ายห้อง/เตียงบ่อย · ถอนสุรา/ยานอนหลับ</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> ตัวกระตุ้นที่เจอบ่อยในบ้านเรา: ยาแก้แพ้ <b>chlorpheniramine (CPM)</b> ในยาแก้หวัด, hydroxyzine แก้คัน, dimenhydrinate แก้เวียนหัว, amitriptyline ให้นอนหลับ/แก้ปวด, ยาคลายกล้ามเนื้อผสม orphenadrine, diazepam/lorazepam/alprazolam ที่กินมานาน, <b>ยาลูกกลอน/ยาชุดที่อาจผสม steroid</b>, <b>น้ำมันกัญชา (THC)</b> และการหยุดดื่มเหล้าขาวกะทันหันเมื่อนอน รพ.</p>
+</section>
+
+<section id="screen" class="col">
+  <div class="sec-num">04</div>
+  <h2>คัดกรองและวินิจฉัย</h2>
+  <div class="tbl"><table>
+    <tr><th>เครื่องมือ</th><th>ใช้ที่ไหน · ทำอย่างไร</th><th>ความแม่น</th></tr>
+    <tr><td><b>4AT</b> <span class="rec s1">NICE 2023</span> <span class="rec s1">SIGN R</span></td><td>ER, หอผู้ป่วย, หลังผ่าตัด, (ชุมชน) · <b>&lt;2 นาที ไม่ต้องอบรม</b> · ทำได้แม้ผู้ป่วยซึมหรือพูดไม่ได้ (ได้คะแนน "ทดสอบไม่ได้") · 4 ข้อ: <b>Alertness</b> (0/4) · <b>AMT4</b>: อายุ วันเกิด สถานที่ ปีปัจจุบัน (0/1/2) · <b>Attention</b>: เดือนย้อนหลัง (0/1/2) · <b>Acute change/fluctuation</b> (0/4) · <b>≥4 = อาจเป็น delirium</b> · 1–3 = อาจมี cognitive impairment · 0 = ไม่น่าเป็น</td><td>Meta-analysis 17 การศึกษา (3,702 ครั้ง): sensitivity <b>88%</b>, specificity <b>88%</b> · <span class="tag th">ไทย</span> 4AT-T (ผู้ป่วยอายุรกรรม ≥60 ปี, cut-off ≥4): 83% / 86%</td></tr>
+    <tr><td><b>CAM</b> (Confusion Assessment Method)</td><td>หอผู้ป่วย · ต้องคุย/ตรวจสภาพจิตก่อน และต้องฝึกใช้ · บวกเมื่อ <b>(1) เฉียบพลัน+ขึ้นลง และ (2) inattention</b> ร่วมกับ <b>(3) ความคิดสับสน หรือ (4) ระดับความรู้สึกตัวเปลี่ยน</b></td><td><span class="tag th">ไทย</span> Thai CAM: sens 90%, spec 95% · แพทย์เวชศาสตร์ครอบครัวที่ฝึกแล้วใช้ได้ดี (sens 92%, spec 100%)</td></tr>
+    <tr><td><b>CAM-ICU</b> / ICDSC <span class="rec s1">NICE 2023</span></td><td>ICU และห้องพักฟื้น · ทำ <b>RASS</b> ก่อน: ถ้า −4/−5 (coma) ประเมินไม่ได้ · ข้อ 2 ใช้ฟังตัวอักษรแล้วบีบมือ (SAVEAHAART) ผิด &gt;2 ครั้ง = inattention · ใช้กับผู้ใส่ท่อช่วยหายใจได้ · ICDSC ≥4/8 = delirium</td><td><span class="tag th">ไทย</span> Thai CAM-ICU (SICU ≥60 ปี): sens 92%, spec 95% · ใช้เวลา ~1 นาที</td></tr>
+    <tr><td><b>UB-2</b> (Ultra-Brief 2-item)</td><td>คัดกรองขั้นแรกเร็วที่สุด: "วันนี้วันอะไร" + "บอกเดือนย้อนหลังจากธันวาคม" · ผิดข้อใดข้อหนึ่ง = บวก → ต้องประเมินต่อด้วย CAM/4AT</td><td>ผู้ป่วยอายุ ≥75 ปี: sens <b>93%</b> แต่ spec <b>64%</b> (บวกลวงมาก — ใช้คัดออก ไม่ใช้ยืนยัน)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ทำเมื่อไร</h4><ul><li>ผู้สูงอายุทุกคนที่มา ER หรือรับไว้นอน รพ. (NICE: ดู indicators ทุกวัน)</li><li>ทุกครั้งที่ญาติ/พยาบาลบอกว่า "ไม่เหมือนเดิม" "ซึมลง" "พูดแปลกๆ" "ไม่ยอมกิน"</li><li>ICU: CAM-ICU/ICDSC ทุกเวร</li><li>บันทึกผลและคำวินิจฉัย <b>delirium</b> ในเวชระเบียนและใบส่งต่อ/ใบสรุปจำหน่าย (NICE 1.5.2, 1.6.4)</li></ul></div>
+    <div class="card c-warn"><h4>ข้อควรระวัง</h4><ul><li>เครื่องมือคัดกรอง ≠ การวินิจฉัย · ผู้ที่มีความชำนาญยืนยันตาม DSM-5-TR (NICE 1.6.2)</li><li>ถ้าไม่รู้ baseline ให้ <b>โทรถามญาติ/ผู้ดูแล</b> — ข้อ "เปลี่ยนเฉียบพลัน" ได้ 4 คะแนนเต็ม</li><li>หูตึง/สายตาไม่ดี/ภาษาต่างกัน (เช่น ผู้ป่วยเมียนมา) ทำให้ผลเพี้ยน — ใช้ล่ามและแว่น/เครื่องช่วยฟัง</li><li>NICE: แยกไม่ออกระหว่าง delirium กับ dementia → <b>ดูแลแบบ delirium ไว้ก่อน</b></li></ul></div>
+  </div>
+</section>
+
+<section id="ddx" class="col">
+  <div class="sec-num">05</div>
+  <h2>แยก delirium จาก dementia, depression, psychosis</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>Delirium</th><th>Dementia</th><th>Depression</th><th>Primary psychosis</th></tr>
+    <tr><td><b>เริ่ม</b></td><td><b>ชั่วโมง–วัน</b></td><td>ค่อยเป็นค่อยไป (เดือน–ปี)</td><td>สัปดาห์–เดือน</td><td>มักเริ่มก่อนวัยกลางคน</td></tr>
+    <tr><td><b>ขึ้นลงในวันเดียว</b></td><td><b>เด่น</b> (มักแย่ตอนเย็น/กลางคืน)</td><td>ค่อนข้างคงที่ (ยกเว้น DLB)</td><td>คงที่</td><td>คงที่</td></tr>
+    <tr><td><b>Attention</b></td><td><b>เสียมาก</b></td><td>ปกติในระยะแรก</td><td>อาจลดเล็กน้อย</td><td>มักปกติ</td></tr>
+    <tr><td><b>ระดับความรู้สึกตัว</b></td><td><b>ผิดปกติ</b> (ซึมหรือตื่นเกิน)</td><td>ปกติ</td><td>ปกติ</td><td>ปกติ</td></tr>
+    <tr><td><b>ภาพหลอน</b></td><td>บ่อย มักเป็น <b>ภาพ</b></td><td>ระยะท้าย/DLB</td><td>ไม่ค่อยพบ</td><td>มักเป็น <b>เสียง</b></td></tr>
+    <tr><td><b>หายได้</b></td><td>ส่วนใหญ่ (แต่บางรายนานหลายสัปดาห์)</td><td>ไม่หาย</td><td>รักษาได้</td><td>ควบคุมได้</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ภาวะที่เลียนแบบ — อย่าพลาด</h4><ul><li><b>Non-convulsive status epilepticus</b>: ซึม กระพริบตา/มุมปากกระตุก หลังชัก → EEG (ดู <a href="../status-epilepticus/index.html">Status epilepticus</a>)</li><li><b>Stroke</b> ที่ทำให้ aphasia (พูดไม่เป็นภาษา) หรือ neglect ดูเหมือนสับสน (ดู <a href="../stroke-er/index.html">Stroke ที่ ER</a>)</li><li><b>Wernicke encephalopathy</b>: สับสน + ตากลอก/เดินเซ ในผู้ดื่มสุรา/ขาดอาหาร</li><li><b>Dementia with Lewy bodies</b>: fluctuation + ภาพหลอนเห็นภาพ + parkinsonism — ไวต่อยาต้านโรคจิตมาก</li></ul></div>
+    <div class="card c-warn"><h4>หลักจำ</h4><ul><li>ผู้สูงอายุ "เป็นจิตเวชครั้งแรก" = <b>delirium จนกว่าจะพิสูจน์ได้ว่าไม่ใช่</b></li><li>Hypoactive delirium มักถูกส่งปรึกษาจิตเวชว่า "ซึมเศร้า" — ทดสอบ attention ก่อน</li><li>Delirium กับ dementia อยู่ด้วยกันได้ — คนสมองเสื่อมเสี่ยง delirium สูงสุด</li></ul></div>
+  </div>
+</section>
+
+<section id="cause" class="col">
+  <div class="sec-num">06</div>
+  <h2>หาสาเหตุ และทบทวนยา</h2>
+  <div class="box danger"><b>5 นาทีแรก: แก้สิ่งที่ฆ่าได้ก่อน</b><b>DTX</b> (hypoglycemia) · <b>SpO₂/การหายใจ</b> (hypoxia, CO₂ คั่ง) · <b>BP/HR/อุณหภูมิ</b> (shock, sepsis) · <b>focal deficit/ม่านตา/คอแข็ง</b> (stroke, meningitis) · ชัก/สงสัย NCSE · <b>สงสัย Wernicke → thiamine IV ก่อนหรือพร้อม glucose</b> (อย่าเลื่อนการแก้น้ำตาลต่ำ) (ขนาดตามหน้า <a href="../alcohol-withdrawal/index.html">ถอนสุรา/Wernicke</a>)</div>
+  <p>สาเหตุมัก <b>มากกว่า 1 อย่าง</b> · ใช้ช่วยจำ <b>PINCH ME</b> <span class="tag add">เสริม</span> แล้วตามด้วยการตรวจตามข้อบ่งชี้ (ใช้เครื่องมือสร้าง checklist ในบท <a href="#tools">เครื่องมือ</a>)</p>
+  <div class="tbl"><table>
+    <tr><th>PINCH ME</th><th>สิ่งที่ต้องหา</th></tr>
+    <tr><td><b>P</b>ain</td><td>ปวดที่ไม่ได้รักษา (กระดูกหัก แผล ปวดท้อง) · คนพูดไม่ได้ให้ดูสีหน้า/การขยับ · <b>ปัสสาวะค้าง</b> ก็ปวด</td></tr>
+    <tr><td><b>I</b>nfection</td><td>ปอดอักเสบ (สำลัก), ทางเดินปัสสาวะ, ผิวหนัง/แผลกดทับ, ท่อ/สาย, ช่องท้อง · ผู้สูงอายุอาจไม่มีไข้ · <b>ระวัง</b>: bacteriuria ไม่มีอาการพบบ่อยมาก อย่าสรุปว่า UTI จากผลปัสสาวะอย่างเดียวถ้ายังไม่ได้หาสาเหตุอื่น (ดู <a href="../sepsis/index.html">Sepsis</a>, <a href="../cap/index.html">CAP</a>, <a href="../meningitis/index.html">Meningitis</a>)</td></tr>
+    <tr><td><b>N</b>utrition</td><td>ขาดน้ำ/อาหาร, thiamine, B12 · <b>glucose ต่ำ/สูง</b> (ดู <a href="../hypoglycemia/index.html">น้ำตาลต่ำ</a>, <a href="../dka-hhs/index.html">DKA/HHS</a>)</td></tr>
+    <tr><td><b>C</b>onstipation</td><td>ท้องผูก/อุจจาระอัดแน่น · ตรวจท้องและทางทวารหนัก</td></tr>
+    <tr><td><b>H</b>ydration / <b>H</b>ypoxia</td><td>ขาดน้ำ, AKI · <b>Na</b> ต่ำ/สูง, <b>Ca</b> สูง (ดู <a href="../hyponatremia/index.html">Na ต่ำ</a>, <a href="../hypernatremia/index.html">Na สูง</a>, <a href="../hypercalcemia/index.html">Ca สูง</a>) · hypoxia/hypercapnia, หัวใจล้มเหลว, MI (อาจไม่เจ็บหน้าอก)</td></tr>
+    <tr><td><b>M</b>edication</td><td>ยาใหม่/ปรับขนาด/หยุดกะทันหัน (ถอนสุรา ถอน benzodiazepine) · พิษยา (digoxin, lithium, phenytoin, ยาที่สะสมเมื่อไตเสื่อม) (ดู <a href="../toxicology/index.html">พิษวิทยา</a>)</td></tr>
+    <tr><td><b>E</b>nvironment</td><td>ย้ายห้อง แสงจ้า/เสียงกลางคืน ไม่มีแว่น/เครื่องช่วยฟัง ผูกมัด สายระโยงระยาง ญาติไม่อยู่</td></tr>
+  </table></div>
+  <h3 style="margin-top:18px">ยาที่ทำให้เกิด/แย่ลง (AGS Beers 2023)</h3>
+  <div class="grid2">
+    <div class="card c-red"><h4>Beers 2023 ตาราง 3: เลี่ยงในผู้ที่เป็นหรือเสี่ยง delirium <span class="rec s1">Strong</span></h4><ul>
+      <li><b>Anticholinergic</b> (ตาราง 7): first-gen antihistamine (chlorpheniramine, hydroxyzine, diphenhydramine, dimenhydrinate, promethazine), TCA (amitriptyline, nortriptyline, imipramine), paroxetine, ยากระเพาะปัสสาวะ (oxybutynin, tolterodine, solifenacin), antispasmodic (hyoscine/scopolamine, dicyclomine, atropine), ยาคลายกล้ามเนื้อ (orphenadrine, cyclobenzaprine), chlorpromazine, olanzapine, trihexyphenidyl</li>
+      <li><b>Benzodiazepine</b> และ <b>Z-drug</b> (zolpidem)</li>
+      <li><b>Antipsychotic</b> (ยกเว้นทุกข์ทรมาน/อันตรายเมื่อวิธีไม่ใช้ยาล้มเหลว)</li>
+      <li><b>Corticosteroid</b> ทั้งกินและฉีด (ถ้าจำเป็น: ขนาดต่ำสุด ระยะสั้นสุด)</li>
+      <li><b>H2-receptor antagonist</b> (cimetidine, famotidine) — หลักฐานต่ำ</li>
+      <li><b>Opioid</b> <span class="tag up">ใหม่ 2023</span> (เพิ่มเข้ามาแทน meperidine) · แต่ <b>ปวดที่ไม่ได้รักษาก็ทำให้ delirium</b> — ใช้ขนาดต่ำที่พอคุมปวด ร่วมกับ paracetamol</li></ul></div>
+    <div class="card c-warn"><h4>คู่ยาและยาอื่นที่ต้องดู</h4><ul>
+      <li><b>CNS-active ≥3 ตัว</b> (antiepileptic, antidepressant, antipsychotic, BZD, Z-drug, opioid, ยาคลายกล้ามเนื้อ) → เลี่ยง (Beers ตาราง 5, หลักฐานสูง)</li>
+      <li><b>Opioid + BZD</b> และ <b>opioid + gabapentin/pregabalin</b> → เลี่ยง (กดการหายใจ ซึม)</li>
+      <li><b>Pethidine (meperidine)</b> → เลี่ยง (metabolite สะสมเมื่อไตเสื่อม ชัก/สับสน)</li>
+      <li><b>Sulfonylurea</b> (glibenclamide, glipizide) → น้ำตาลต่ำ · <b>thiazide, SSRI, carbamazepine</b> → Na ต่ำ</li>
+      <li>ยาที่สะสมเมื่อไตเสื่อม: <b>cefepime</b>, penicillin ขนาดสูง, aciclovir, gabapentin, tramadol · fluoroquinolone · digoxin · lithium</li>
+      <li><b>Parkinson</b>: metoclopramide, prochlorperazine, promethazine, antipsychotic (ยกเว้น quetiapine, clozapine, pimavanserin) → เลี่ยง</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>รายการ</th></tr>
+    <tr><td><b>ทุกราย</b></td><td>Vital signs ครบ + <b>DTX</b> + <b>SpO₂</b> · ตรวจร่างกายทั้งตัว (รวมผิวหนัง แผลกดทับ ท้อง ทวารหนัก) · <b>bladder scan</b>/คลำกระเพาะปัสสาวะ · CBC · Na K Ca (± Mg, PO₄) · BUN/Cr · glucose · LFT · UA (แปลผลด้วยความระวัง) · <b>ECG</b> (MI ที่ไม่เจ็บอก, arrhythmia, QTc ก่อนให้ยา) · ทบทวนรายการยาทั้งหมด (รวมยาซื้อเอง/สมุนไพร)</td></tr>
+    <tr><td><b>ตามข้อบ่งชี้</b></td><td>CXR, hemoculture, lactate (สงสัยติดเชื้อ) · ABG/VBG (CO₂ คั่ง) · troponin · TSH, B12 · ระดับยา (digoxin, lithium, phenytoin, valproate + ammonia) · ammonia (โรคตับ) · toxicology screen</td></tr>
+    <tr><td><b>CT brain</b> <span class="rec">SIGN R (conditional)</span></td><td><b>ไม่ทำทุกราย</b> · ทำเมื่อ <b>focal deficit ใหม่</b>, ความรู้สึกตัวลดลงที่อธิบายไม่ได้, <b>หกล้ม/บาดเจ็บศีรษะ</b>, หรือ <b>ได้ยาต้านการแข็งตัวของเลือด</b></td></tr>
+    <tr><td><b>LP / EEG</b></td><td>LP ไม่ทำ routine — ทำเมื่อสงสัย meningitis/encephalitis · EEG เมื่อสงสัย NCSE/ชัก</td></tr>
+  </table></div>
+</section>
+
+<section id="prevent" class="col">
+  <div class="sec-num">07</div>
+  <h2>ป้องกัน: multicomponent intervention</h2>
+  <p>การดูแลหลายด้านพร้อมกัน (แบบ <b>HELP</b> — Hospital Elder Life Program) เป็นวิธีที่มีหลักฐานดีที่สุด: RCT ดั้งเดิมลด delirium จาก 15.0% เหลือ 9.9% (NEJM 1999) และ meta-analysis ลดโอกาสเกิด delirium (OR 0.47) และลดการหกล้ม · <b>NICE</b> ให้ทำเป็นชุดที่ปรับตามผู้ป่วยแต่ละราย ภายใน 24 ชม.แรกที่รับไว้ · <b>SIGN</b> แนะนำเช่นกัน <span class="rec">SIGN R (conditional)</span></p>
+  <div class="tbl"><table>
+    <tr><th>ด้าน</th><th>สิ่งที่ทำ (NICE CG103 / SIGN 157)</th></tr>
+    <tr><td><b>Orientation · cognition</b></td><td>นาฬิกา ปฏิทิน ป้ายชัด แสงพอดี · บอกว่าอยู่ที่ไหน ใครดูแล · กิจกรรมกระตุ้นความคิด (คุยเรื่องเก่าๆ) · <b>ให้ญาติ/คนคุ้นเคยอยู่ด้วย</b></td></tr>
+    <tr><td><b>แว่น · เครื่องช่วยฟัง</b></td><td>ให้ใส่ตลอด · ตรวจขี้หูอุดตัน · ตรวจว่าแบตเตอรี่เครื่องช่วยฟังใช้ได้</td></tr>
+    <tr><td><b>น้ำ · อาหาร · ฟัน</b></td><td>ชวนดื่มน้ำ (ระวังหัวใจล้มเหลว/ไต) · ช่วยป้อน · ใส่ฟันปลอม</td></tr>
+    <tr><td><b>เคลื่อนไหว</b></td><td>ลุกนั่ง/เดินเร็ว · คนเดินไม่ได้ให้ทำ range-of-motion · หลีกเลี่ยงการนอนติดเตียง</td></tr>
+    <tr><td><b>นอน</b></td><td>ไม่ทำหัตถการ/ให้ยา/วัดสัญญาณชีพตอนดึกถ้าไม่จำเป็น · ลดเสียงและแสง · ไม่ใช้ยานอนหลับเป็นประจำ</td></tr>
+    <tr><td><b>ปวด · ขับถ่าย</b></td><td>ประเมินปวดรวมถึงอาการที่ไม่ใช้คำพูด · ป้องกันท้องผูก · <b>เลี่ยง/ถอดสายสวนปัสสาวะเร็ว</b></td></tr>
+    <tr><td><b>ติดเชื้อ · O₂</b></td><td>หาและรักษาติดเชื้อ · เลี่ยงสาย/ท่อที่ไม่จำเป็น · แก้ hypoxia</td></tr>
+    <tr><td><b>ยา</b> <span class="rec s1">SIGN R</span></td><td><b>ทบทวนยาทุกราย</b>ที่เสี่ยง โดยแพทย์ที่มีประสบการณ์ · หยุดยาตาม Beers ที่ไม่จำเป็น</td></tr>
+    <tr><td><b>ระบบ</b></td><td><b>ไม่ย้ายห้อง/เตียง</b> ถ้าไม่จำเป็น · ทีมเดิมดูแลต่อเนื่อง · ก่อนผ่าตัดบอกผู้ป่วย/ญาติเรื่องความเสี่ยง</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ยาเพื่อป้องกัน?</h4><ul><li>ผู้ป่วยอายุรกรรม: <b>ไม่ให้ antipsychotic ป้องกัน</b> (SIGN: หลักฐานไม่พอ; PADIS 2018: ไม่แนะนำใน ICU)</li><li>ICU: <b>melatonin</b> ได้รับคำแนะนำแบบมีเงื่อนไข (PADIS 2025, หลักฐานต่ำ — ไม่ระบุขนาด)</li><li>หลังผ่าตัด <span class="tag add">เสริม</span>: network meta-analysis (BMJ 2026, 158 RCT) พบ <b>dexmedetomidine</b> ระหว่าง/หลังผ่าตัดลด delirium ได้ชัดที่สุด (OR 0.46) แต่ความดันต่ำ/หัวใจช้ามากขึ้น — เป็นการตัดสินใจของทีมวิสัญญี/ICU</li></ul></div>
+    <div class="card c-warn"><h4><span class="tag th">ไทย</span> ปรับใช้ในหอผู้ป่วยไทย</h4><ul><li><b>ญาติเฝ้าไข้</b> คือทรัพยากรสำคัญ — สอนญาติให้ช่วย orientation พาเดิน ป้อนน้ำ/อาหาร</li><li>หอผู้ป่วยรวมแสงสว่างทั้งคืน: ปิดไฟบางส่วน ให้ผ้าปิดตา/ที่อุดหู</li><li><b>ลดการผูกมัด</b> — เพิ่ม delirium บาดเจ็บ และแผลกดทับ · ใช้ญาติเฝ้า/เตียงต่ำ/ย้ายใกล้เคาน์เตอร์พยาบาลแทน</li><li>สายสวนปัสสาวะ "ไว้วัด I/O" ทำให้เกิด delirium — ใช้เท่าที่จำเป็น</li></ul></div>
+  </div>
+</section>
+
+<section id="nondrug" class="col">
+  <div class="sec-num">08</div>
+  <h2>การดูแลแบบไม่ใช้ยา (การรักษาหลัก)</h2>
+  <p>ไม่มียาใดรักษา delirium ให้หายเร็วขึ้น · การรักษาหลักคือ <b>แก้สาเหตุ + ดูแลแบบป้องกันข้างต้นต่อไป + คุมพฤติกรรมโดยไม่ใช้ยา</b> (NICE 1.7.1–1.7.3, SIGN) · แนวคิด <b>TIME</b> ของสกอตแลนด์ <span class="tag add">เสริม</span>: <b>T</b>hink/treat ภาวะอันตราย → <b>I</b>nvestigate หาสาเหตุ → <b>M</b>anage ดูแลอาการ → <b>E</b>ngage คุยกับผู้ป่วยและญาติ</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เมื่อผู้ป่วยกระสับกระส่าย</h4><ul>
+      <li><b>De-escalation</b>: พูดช้าๆ น้ำเสียงสงบ แนะนำตัว บอกว่าอยู่ที่ไหน ไม่เถียงกับความเชื่อผิดๆ หันเหความสนใจ</li>
+      <li>หาสิ่งที่ทำให้ไม่สบาย: <b>ปวด ปัสสาวะค้าง ท้องผูก หิว/กระหายน้ำ หนาว อยากเข้าห้องน้ำ</b></li>
+      <li>ถอด/ซ่อนสายที่ไม่จำเป็น (สายสวน, IV ที่ไม่ใช้, monitor ที่ไม่จำเป็น)</li>
+      <li>ให้ญาติอยู่ด้วย · ห้องเงียบ แสงพอดี</li>
+      <li><b>ผูกมัดเป็นทางเลือกสุดท้าย</b> ชั่วคราว ประเมินซ้ำบ่อย และบันทึกเหตุผล</li></ul></div>
+    <div class="card c-ok"><h4>ดูแลพื้นฐาน <span class="tag add">เสริม</span></h4><ul>
+      <li><b>ปวด</b>: paracetamol 500–1,000 mg PO ทุก 6 ชม. ตามเวลา (สูงสุด 4 g/วัน; <b>≤3 g/วัน</b> ถ้าน้ำหนัก &lt;50 kg, โรคตับ, ดื่มสุรา, ขาดอาหาร) · เพิ่ม opioid ขนาดต่ำถ้ายังปวด (ไตเสื่อมลดขนาด/เลี่ยง morphine เมื่อ eGFR &lt;30)</li>
+      <li><b>ท้องผูก</b>: senna 7.5–15 mg PO ก่อนนอน และ/หรือ lactulose 15–30 mL PO วันละ 1–2 ครั้ง · อุจจาระอัดแน่นให้สวน</li>
+      <li><b>ปัสสาวะค้าง</b>: bladder scan (ค้าง &gt;300 mL ให้ระบาย) · ใช้ in-out catheter แทนการคาสาย ถ้าทำได้</li>
+      <li><b>นอนไม่หลับ</b>: ปรับสิ่งแวดล้อมก่อน · หลีกเลี่ยง BZD, Z-drug, hydroxyzine, CPM, amitriptyline เป็นยานอนหลับ</li></ul></div>
+  </div>
+</section>
+
+<section id="drug" class="col">
+  <div class="sec-num">09</div>
+  <h2>ยาต้านโรคจิต และ benzodiazepine</h2>
+  <div class="box key"><b>ใช้ยาเมื่อไร (NICE 1.7.4)</b>ผู้ป่วย <b>ทุกข์ทรมานมาก</b> (เช่น หวาดกลัวจากภาพหลอน) หรือ <b>เป็นอันตรายต่อตนเอง/ผู้อื่น</b> (ดึงท่อช่วยหายใจ/สาย central line ปีนเตียง ทำร้ายผู้อื่น) <b>และ</b> de-escalation ไม่ได้ผลหรือไม่เหมาะ → พิจารณา <b>haloperidol ระยะสั้น (ปกติ ≤1 สัปดาห์)</b> เริ่มขนาดต่ำสุดและปรับอย่างระมัดระวัง · <b>ไม่ใช้เพื่อ "ให้หลับ" หรือรักษา hypoactive delirium</b></div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ผู้สูงอายุ)</th><th>ข้อควรระวัง</th></tr>
+    <tr><td><b>Haloperidol</b> (ยาหลักที่มีทะเบียนสำหรับ delirium ใน UK)</td><td><b>0.5 mg PO หรือ IM</b> · ประเมินซ้ำ แล้วให้ซ้ำได้ <b>ทุก 2–4 ชม.</b> ถ้ายังจำเป็น · <b>สูงสุด 5 mg/วัน</b> (SmPC; ผู้ใหญ่อายุน้อยกว่า: เริ่ม 0.5–1 mg สูงสุด 10 mg/วัน) · ไม่ต้องปรับตามไต · ตับวายรุนแรง: ลดขนาด · หยุดเมื่อพ้นภาวะอันตราย</td><td><b>ห้ามใน Parkinson disease และ DLB</b> · <b>ทำ ECG ก่อน</b> (MHRA) — ห้ามถ้า QTc ยาวเดิม · แก้ K/Mg ต่ำ · เลี่ยงร่วมกับยาที่ทำให้ QT ยาว · EPS, ล้ม, สำลัก, NMS · IV มีความเสี่ยง QT สูงกว่า — ใช้เฉพาะ ICU ที่มี monitor <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Quetiapine</b> <span class="tag add">เสริม</span> (off-label)</td><td><b>12.5–25 mg PO</b> ให้ซ้ำได้ · ผู้สูงอายุมักไม่เกิน 50–100 mg/วัน (ไม่มีขนาดมาตรฐานสำหรับ delirium) · ไม่ต้องปรับตามไต · ตับบกพร่อง: เริ่มต่ำ</td><td>ทางเลือกเมื่อมี <b>Parkinson/DLB</b> (Beers ยกเว้น quetiapine ใน Parkinson) · ง่วง ความดันตกเมื่อลุกยืน (ล้ม) · มีแต่รูปแบบกิน</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>หลักฐาน: ยาต้านโรคจิตไม่ได้ทำให้ delirium หายเร็วขึ้น</h4><ul>
+      <li><b>MIND-USA</b> (NEJM 2018, ICU): haloperidol/ziprasidone ไม่เพิ่มวันที่มีชีวิตโดยไม่มี delirium/coma</li>
+      <li><b>AID-ICU</b> (NEJM 2022): haloperidol 2.5 mg IV วันละ 3 ครั้ง ไม่เพิ่มวันที่มีชีวิตนอก รพ.ที่ 90 วัน (ผลรอง: ตายน้อยกว่า 36.3% vs 43.3% — ใช้ตั้งสมมติฐานเท่านั้น)</li>
+      <li><b>Agar</b> (JAMA Intern Med 2017, palliative care): risperidone/haloperidol ทำให้อาการ <b>แย่กว่า</b> placebo, EPS มากขึ้น และกลุ่ม haloperidol รอดชีวิตน้อยกว่า</li>
+      <li>SIGN 157: หลักฐานไม่พอแนะนำ antipsychotic, BZD, dexmedetomidine หรือ cholinesterase inhibitor เพื่อรักษา · PADIS 2025: <b>ไม่แนะนำทั้งให้และไม่ให้</b></li>
+      <li>สรุป: ใช้เพื่อ <b>ความปลอดภัย/ลดความทุกข์ระยะสั้น</b> เท่านั้น</li></ul></div>
+    <div class="card c-vio"><h4>Benzodiazepine: เฉพาะถอนสุรา/ถอนยา BZD</h4><ul>
+      <li>BZD <b>ทำให้ delirium แย่ลง</b> และเพิ่มการล้ม (Beers: เลี่ยง)</li>
+      <li>ใช้เป็นยาหลักเฉพาะ <b>alcohol withdrawal / delirium tremens</b> และ <b>ถอน BZD</b> — ดูขนาดและ CIWA-Ar ในหน้า <a href="../alcohol-withdrawal/index.html">ถอนสุรา</a> (ผู้สูงอายุ/ตับไม่ดี เลือก lorazepam)</li>
+      <li>อาจใช้ในชักร่วม และใน DLB/Parkinson ที่ไม่มีทางเลือกอื่น โดยผู้เชี่ยวชาญ</li>
+      <li>ถอนสุรา: antipsychotic <b>ไม่ใช้เป็นยาเดี่ยว</b> (ลดเกณฑ์ชัก) — ใช้เสริมเฉพาะภาพหลอนเด่นที่ได้ BZD พอแล้ว</li></ul></div>
+  </div>
+  <div class="box warn"><b><span class="tag th">ไทย</span> ระวังความผิดพลาดขนาดยา</b>Haloperidol ฉีดในไทยส่วนใหญ่ <b>5 mg/mL</b> → 0.5 mg = <b>0.1 mL</b> · ใช้ syringe 1 mL และเขียนคำสั่งเป็น mg ชัดเจน · คำสั่ง "haloperidol 1 amp IM prn" = 5 mg = <b>10 เท่าของขนาดเริ่มต้น</b>ในผู้สูงอายุ · ถ้ามียาเม็ด 0.5 mg ใน รพ. ให้ใช้รูปแบบนี้เมื่อกินได้ · หลีกเลี่ยงการสั่ง diazepam IV, hydroxyzine หรือ promethazine "ให้นอน"</div>
+</section>
+
+<section id="icu" class="col">
+  <div class="sec-num">10</div>
+  <h2>Delirium ใน ICU: PADIS และ ABCDEF bundle</h2>
+  <div class="tbl"><table>
+    <tr><th>Bundle</th><th>สิ่งที่ทำ</th></tr>
+    <tr><td><b>A</b> Assess, prevent, manage pain</td><td>ประเมินปวดด้วยเครื่องมือ (CPOT/BPS ถ้าพูดไม่ได้) · analgesia-first</td></tr>
+    <tr><td><b>B</b> Both SAT and SBT</td><td>ปลุกจากยานอนหลับทุกวัน (spontaneous awakening) คู่กับทดลองหายใจเอง (spontaneous breathing)</td></tr>
+    <tr><td><b>C</b> Choice of analgesia and sedation</td><td><b>Light sedation</b> · เลี่ยง BZD infusion (PADIS 2018: propofol หรือ dexmedetomidine ดีกว่า BZD) · <span class="tag up">2025</span> <b>dexmedetomidine มากกว่า propofol</b> เมื่อเป้าหมายหลักคือ light sedation/ลด delirium <span class="rec">Conditional · moderate</span></td></tr>
+    <tr><td><b>D</b> Delirium: assess, prevent, manage</td><td>CAM-ICU/ICDSC ทุกเวร · หาสาเหตุเหมือนหอผู้ป่วย · ไม่ให้ antipsychotic routine <span class="tag up">2025</span> <span class="rec">No recommendation</span> · PADIS 2018: dexmedetomidine เมื่อ agitation ทำให้ถอดท่อช่วยหายใจไม่ได้ <span class="rec">Conditional · low</span></td></tr>
+    <tr><td><b>E</b> Early mobility and exercise</td><td><span class="tag up">2025</span> <b>enhanced mobilization</b> มากกว่า usual care (เริ่มเร็ว วันละ 2 ครั้ง ปั่นจักรยานบนเตียง) <span class="rec">Conditional · moderate</span></td></tr>
+    <tr><td><b>F</b> Family engagement</td><td>ให้ครอบครัวเยี่ยม/มีส่วนร่วมในการดูแลและวางแผน</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>นอนหลับใน ICU</h4><ul><li>ลดแสง/เสียงกลางคืน · ที่อุดหู (SIGN: พิจารณาได้)</li><li><span class="tag up">2025</span> <b>melatonin</b> <span class="rec">Conditional · low</span> — PADIS ไม่ระบุขนาด ให้ตามโปรโตคอล ICU</li><li>Dexmedetomidine: ดูขนาด ข้อควรระวัง (หัวใจช้า ความดันต่ำ) ในหน้า <a href="../icu-drugs/index.html">ยาใน ICU</a></li></ul></div>
+    <div class="card c-warn"><h4>หลังออกจาก ICU</h4><ul><li>ความจำ/สมาธิบกพร่อง ซึมเศร้า วิตกกังวล PTSD พบบ่อย (post-intensive care syndrome)</li><li>SIGN: พิจารณานัดติดตามผลทางจิตใจและ cognition</li></ul></div>
+  </div>
+</section>
+
+<section id="after" class="col">
+  <div class="sec-num">11</div>
+  <h2>หลังหาย และการคุยกับญาติ</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ก่อนจำหน่าย</h4><ul>
+      <li>เขียนคำวินิจฉัย <b>delirium</b> และสาเหตุใน <b>ใบสรุปจำหน่าย/ใบส่งต่อ</b> (SIGN, NICE)</li>
+      <li><b>หยุด antipsychotic</b> ที่เริ่มใน รพ. — อย่าให้ติดกลับบ้านโดยไม่มีแผนหยุด</li>
+      <li>ทบทวนยา: ตัดยาตาม Beers (CPM, amitriptyline, BZD, Z-drug ฯลฯ)</li>
+      <li>หลายรายยังไม่หายสนิทตอนกลับบ้าน (อาการค้างได้หลายสัปดาห์–เดือน) — นัดติดตาม</li>
+      <li>ประเมินความเสี่ยงล้ม การกิน และผู้ดูแลที่บ้าน</li></ul></div>
+    <div class="card c-ok"><h4>นัดติดตาม (OPD/GP)</h4><ul>
+      <li>ประเมิน <b>cognition หลังอาการหายแล้ว</b> (SIGN: พิจารณาในผู้สูงอายุ — มักพบสมองเสื่อมที่ไม่เคยรู้มาก่อน) · ใช้ <span class="tag th">ไทย</span> TMSE หรือ MoCA ฉบับภาษาไทย · รอให้ delirium หายก่อน (มักนัดหลายสัปดาห์ถึง ~3 เดือน) <span class="tag add">เสริม</span></li>
+      <li>ผิดปกติ → ประเมิน dementia ต่อ (TSH, B12, ภาพสมองตามข้อบ่งชี้) และวางแผนดูแลล่วงหน้า</li>
+      <li>บอกญาติว่าครั้งหน้าเสี่ยงเป็นซ้ำ — แจ้งทีมทุกครั้งที่นอน รพ./ผ่าตัด</li></ul></div>
+  </div>
+  <div class="box note"><b>ประโยคตัวอย่างสำหรับคุยกับญาติ <span class="tag add">เสริม</span></b>"ตอนนี้คุณพ่อมีภาวะ <b>สับสนเฉียบพลัน</b> ซึ่งเกิดจาก <b>ตัวโรค (เช่น ติดเชื้อ) และยา</b> ทำให้สมองทำงานผิดปกติชั่วคราว ไม่ใช่เป็นบ้าหรือสมองเสื่อมทันที · อาการจะดีขึ้นๆ ลงๆ มักแย่ตอนกลางคืน · ส่วนใหญ่ดีขึ้นเมื่อรักษาสาเหตุ แต่บางคนใช้เวลาหลายสัปดาห์ · สิ่งที่ญาติช่วยได้มากคือ <b>อยู่ด้วย เรียกชื่อ บอกวันเวลา นำแว่น/เครื่องช่วยฟัง ของใช้คุ้นเคยมา ช่วยให้ดื่มน้ำ กินข้าว และพาลุกเดิน</b> · ถ้าเห็นว่าซึมลงหรือเปลี่ยนไป แจ้งพยาบาลทันที" · NICE: ให้ข้อมูลว่า delirium <b>พบบ่อยและมักเป็นชั่วคราว</b> · หลังหาย ผู้ป่วยบางคนจำเหตุการณ์ที่น่ากลัวได้ เปิดโอกาสให้เล่าและอธิบาย</div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง: ผู้สูงอายุสับสนเฉียบพลัน</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้สูงอายุ ซึม/สับสน/พฤติกรรมเปลี่ยนเฉียบพลัน</b>ถามญาติ: ต่างจากปกติอย่างไร เริ่มเมื่อไร</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>4AT</b> (ICU: CAM-ICU)</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">≥4</span><div class="node red"><b>อาจเป็น delirium</b>ดูแลแบบ delirium ทันที</div></div>
+        <div class="arm"><span class="lab">1–3</span><div class="node dx hypo"><b>อาจมี cognitive impairment</b>ประเมินซ้ำ · ถามญาติ</div></div>
+        <div class="arm"><span class="lab">0</span><div class="node dx green"><b>ไม่น่าเป็น</b>คัดกรองซ้ำเมื่ออาการเปลี่ยน</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>แก้ภาวะอันตรายก่อน</b>DTX · SpO₂ · shock/sepsis · focal deficit/บาดเจ็บศีรษะ · ชัก/NCSE · Wernicke → thiamine</div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>หาสาเหตุ (PINCH ME) + ทบทวนยา</b>ปวด · ติดเชื้อ · อาหาร/น้ำตาล · ท้องผูก · ขาดน้ำ/Na/O₂ · ยา/ถอนยา · สิ่งแวดล้อม · ปัสสาวะค้าง</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ทุกข์ทรมาน/อันตราย หลังใช้วิธีไม่ใช้ยาแล้ว?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>ไม่ใช้ยา</b>multicomponent care · ญาติอยู่ด้วย</div></div>
+        <div class="arm"><span class="lab">ถอนสุรา/BZD</span><div class="node dx hypo"><b>Benzodiazepine</b>ตาม CIWA-Ar + thiamine</div></div>
+        <div class="arm"><span class="lab">ใช่ อื่นๆ</span><div class="node red"><b>Haloperidol 0.5 mg</b>PO/IM · ≤5 mg/วัน · ECG ก่อน · PD/DLB → quetiapine</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ก่อนกลับบ้าน</b>หยุดยาต้านโรคจิต · ระบุ delirium ในใบสรุป · นัดประเมิน cognition</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดการประเมินผู้ป่วย บัญชียาและโปรโตคอลของ รพ.</p>
+  </div>
+
+  <div class="tool" id="t4at" style="margin-top:12px">
+    <h3>4AT (คัดกรอง delirium)</h3>
+    <div class="muted" style="font-size:.82rem">1. Alertness — ระดับความตื่นตัว (ดูหรือปลุกเรียกชื่อ/แตะไหล่)</div>
+    <div class="radios">
+      <label><input type="radio" name="a1" value="0">ปกติ หรือง่วงเล็กน้อย &lt;10 วินาทีหลังปลุก</label>
+      <label><input type="radio" name="a1" value="4">ผิดปกติชัดเจน (ซึมมาก/ตื่นเกิน)</label>
+    </div>
+    <div class="muted" style="font-size:.82rem">2. AMT4 — อายุ · วันเดือนปีเกิด · สถานที่ (ชื่อ รพ./อาคาร) · ปีปัจจุบัน</div>
+    <div class="radios">
+      <label><input type="radio" name="a2" value="0">ไม่ผิด</label>
+      <label><input type="radio" name="a2" value="1">ผิด 1 ข้อ</label>
+      <label><input type="radio" name="a2" value="2">ผิด ≥2 ข้อ / ทดสอบไม่ได้</label>
+    </div>
+    <div class="muted" style="font-size:.82rem">3. Attention — "บอกชื่อเดือนย้อนหลัง เริ่มจากธันวาคม"</div>
+    <div class="radios">
+      <label><input type="radio" name="a3" value="0">ได้ ≥7 เดือนถูกต้อง</label>
+      <label><input type="radio" name="a3" value="1">เริ่มได้แต่ &lt;7 เดือน / ไม่ยอมทำ</label>
+      <label><input type="radio" name="a3" value="2">ทดสอบไม่ได้ (ซึม/ไม่สนใจ/ป่วยเกิน)</label>
+    </div>
+    <div class="muted" style="font-size:.82rem">4. Acute change or fluctuating course — เปลี่ยนชัดใน 2 สัปดาห์ และยังเป็นใน 24 ชม.ที่ผ่านมา (ถามญาติ/พยาบาล/บันทึก)</div>
+    <div class="radios">
+      <label><input type="radio" name="a4" value="0">ไม่มี</label>
+      <label><input type="radio" name="a4" value="4">มี</label>
+    </div>
+    <div class="out" id="atOut"></div>
+  </div>
+
+  <div class="tool" id="tDrug" style="margin-top:12px">
+    <h3>ตรวจยาเสี่ยง delirium (Beers 2023)</h3>
+    <div class="muted" style="font-size:.82rem">ติ๊กยาที่ผู้ป่วยได้รับ (รวมยาซื้อเอง)</div>
+    <div class="checks">
+      <label><input type="checkbox" id="dAh"> Chlorpheniramine/hydroxyzine/diphenhydramine/dimenhydrinate</label>
+      <label><input type="checkbox" id="dTca"> Amitriptyline/nortriptyline/imipramine</label>
+      <label><input type="checkbox" id="dPar"> Paroxetine</label>
+      <label><input type="checkbox" id="dBla"> Oxybutynin/tolterodine/solifenacin</label>
+      <label><input type="checkbox" id="dSpa"> Hyoscine/dicyclomine/atropine</label>
+      <label><input type="checkbox" id="dMr"> Orphenadrine/cyclobenzaprine</label>
+      <label><input type="checkbox" id="dTri"> Trihexyphenidyl/benztropine</label>
+      <label><input type="checkbox" id="dApF"> Chlorpromazine/olanzapine/perphenazine</label>
+      <label><input type="checkbox" id="dApO"> Antipsychotic อื่น (haloperidol, risperidone)</label>
+      <label><input type="checkbox" id="dQue"> Quetiapine</label>
+      <label><input type="checkbox" id="dBzd"> Benzodiazepine (diazepam, lorazepam, alprazolam, clonazepam)</label>
+      <label><input type="checkbox" id="dZ"> Zolpidem (Z-drug)</label>
+      <label><input type="checkbox" id="dOp"> Opioid (morphine, tramadol, codeine, fentanyl)</label>
+      <label><input type="checkbox" id="dPet"> Pethidine (meperidine)</label>
+      <label><input type="checkbox" id="dGab"> Gabapentin/pregabalin</label>
+      <label><input type="checkbox" id="dAed"> ยากันชักอื่น (phenytoin, valproate, carbamazepine, levetiracetam)</label>
+      <label><input type="checkbox" id="dSsri"> SSRI/SNRI อื่น (sertraline, fluoxetine, venlafaxine)</label>
+      <label><input type="checkbox" id="dSte"> Corticosteroid (รวมยาลูกกลอน/ยาชุดที่สงสัย)</label>
+      <label><input type="checkbox" id="dH2"> Famotidine/cimetidine</label>
+      <label><input type="checkbox" id="dMeto"> Metoclopramide/prochlorperazine/promethazine</label>
+      <label><input type="checkbox" id="dSu"> Sulfonylurea (glibenclamide, glipizide, gliclazide)</label>
+      <label><input type="checkbox" id="dThz"> Thiazide</label>
+      <label><input type="checkbox" id="dDig"> Digoxin / lithium</label>
+      <label><input type="checkbox" id="dAbx"> Cefepime / fluoroquinolone / aciclovir</label>
+      <label><input type="checkbox" id="dThc"> กัญชา (THC)</label>
+    </div>
+    <div class="muted" style="font-size:.82rem">ภาวะของผู้ป่วย</div>
+    <div class="checks">
+      <label><input type="checkbox" id="dPd"> Parkinson disease / DLB</label>
+      <label><input type="checkbox" id="dCkd"> eGFR &lt;30</label>
+      <label><input type="checkbox" id="dWd"> หยุดดื่มสุรา/หยุด BZD กะทันหัน</label>
+    </div>
+    <div class="out" id="drOut"></div>
+  </div>
+
+  <div class="tool plan" id="tWu" style="margin-top:12px">
+    <h3>สร้าง checklist หาสาเหตุ</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="wAge" value="82"></label>
+      <label class="f">DTX<input type="number" step="0.1" id="wGlu" placeholder="ถ้ามี"></label>
+      <label class="f">หน่วย DTX<select id="wGu"><option value="mg">mg/dL</option><option value="mmol">mmol/L</option></select></label>
+      <label class="f">SpO₂ (%)<input type="number" id="wSat" placeholder="ถ้ามี"></label>
+      <label class="f">ที่ดูแล<select id="wSet"><option value="er">ER</option><option value="ward">หอผู้ป่วย</option><option value="icu">ICU</option><option value="opd">OPD/ชุมชน</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="wFev"> ไข้/หนาวสั่น/ความดันต่ำ/หายใจเร็ว</label>
+      <label><input type="checkbox" id="wFoc"> Focal deficit ใหม่</label>
+      <label><input type="checkbox" id="wFall"> หกล้ม/บาดเจ็บศีรษะ</label>
+      <label><input type="checkbox" id="wAc"> ได้ยาต้านการแข็งตัวของเลือด</label>
+      <label><input type="checkbox" id="wSz"> ชัก/กระตุก/ซึมหลังชัก</label>
+      <label><input type="checkbox" id="wMen"> ปวดศีรษะ/คอแข็ง/ภูมิคุ้มกันต่ำ</label>
+      <label><input type="checkbox" id="wEt"> ดื่มสุราประจำ/ขาดอาหาร</label>
+      <label><input type="checkbox" id="wDm"> เบาหวานใช้ insulin/sulfonylurea</label>
+      <label><input type="checkbox" id="wUr"> ปัสสาวะไม่ออก/เพิ่งถอดสาย/ท้องน้อยโป่ง</label>
+      <label><input type="checkbox" id="wCon"> ไม่ถ่าย ≥3 วัน</label>
+      <label><input type="checkbox" id="wPain"> ปวด/กระดูกหัก/หลังผ่าตัด</label>
+      <label><input type="checkbox" id="wMed"> ยาใหม่/ปรับยา/ยาหลายตัว</label>
+      <label><input type="checkbox" id="wLiv"> โรคตับ/ตาเหลือง</label>
+      <label><input type="checkbox" id="wCkd"> โรคไต</label>
+      <label><input type="checkbox" id="wChest"> เหนื่อย/ใจสั่น/เจ็บอก/บวม</label>
+    </div>
+    <div class="out" id="wuOut"></div>
+  </div>
+
+  <div class="tool plan" id="tAp" style="margin-top:12px">
+    <h3>ควรให้ยาต้านโรคจิตหรือไม่ · ขนาดเท่าไร</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="pAge" value="84"></label>
+      <label class="f">QTc (ms)<input type="number" id="pQt" placeholder="จาก ECG"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pDang" checked> ทุกข์ทรมานมาก/อันตรายต่อตนเองหรือผู้อื่น</label>
+      <label><input type="checkbox" id="pDe"> ลอง de-escalation/แก้สาเหตุแล้วไม่ได้ผล</label>
+      <label><input type="checkbox" id="pHypo"> เป็นชนิด hypoactive (ซึม เงียบ)</label>
+      <label><input type="checkbox" id="pWd"> ถอนสุรา/ถอน benzodiazepine</label>
+      <label><input type="checkbox" id="pPd"> Parkinson disease / DLB</label>
+      <label><input type="checkbox" id="pK"> K หรือ Mg ต่ำที่ยังไม่แก้</label>
+      <label><input type="checkbox" id="pQd"> ได้ยาอื่นที่ทำให้ QT ยาว</label>
+      <label><input type="checkbox" id="pNpo"> กินไม่ได้</label>
+      <label><input type="checkbox" id="pLiv"> ตับบกพร่องรุนแรง</label>
+    </div>
+    <div class="out" id="apOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ผู้สูงอายุซึมลง กินน้อย = คิดถึง hypoactive delirium</b> ไม่ใช่ "เพลีย"</div></div>
+    <div class="pearl"><div><b>4AT ≥4</b> = อาจเป็น delirium · ใช้ &lt;2 นาที มีฉบับภาษาไทย</div></div>
+    <div class="pearl"><div><b>ถามญาติเสมอ</b>: "ต่างจากปกติอย่างไร" — ข้อ acute change ได้ 4 คะแนน</div></div>
+    <div class="pearl"><div><b>DTX และ SpO₂ ก่อนทุกอย่าง</b> · ดื่มสุรา → thiamine ก่อนหรือพร้อม glucose (อย่ารอ thiamine ถ้าน้ำตาลต่ำ)</div></div>
+    <div class="pearl"><div><b>คลำกระเพาะปัสสาวะและตรวจท้องผูก</b> ทุกราย</div></div>
+    <div class="pearl"><div><b>CPM, hydroxyzine, amitriptyline, BZD</b> ในผู้สูงอายุ = ตัวการบ่อย</div></div>
+    <div class="pearl"><div><b>อย่าสรุป UTI</b> จาก UA อย่างเดียว · หาสาเหตุอื่นด้วย</div></div>
+    <div class="pearl"><div><b>CT brain ไม่ต้องทุกราย</b> · ทำเมื่อ focal deficit, ล้ม/บาดเจ็บศีรษะ, ได้ยาต้านเลือดแข็ง, ซึมอธิบายไม่ได้</div></div>
+    <div class="pearl"><div><b>Haloperidol 0.5 mg = 0.1 mL</b> ของ 5 mg/mL · สูงสุด 5 mg/วันในผู้สูงอายุ</div></div>
+    <div class="pearl"><div><b>Parkinson/DLB ห้าม haloperidol</b> · ถ้าจำเป็นใช้ quetiapine ขนาดต่ำ</div></div>
+    <div class="pearl"><div><b>BZD เฉพาะถอนสุรา/ถอน BZD</b> · อย่างอื่นทำให้แย่ลง</div></div>
+    <div class="pearl"><div><b>หยุดยาต้านโรคจิตก่อนกลับบ้าน</b> · นัดประเมิน cognition หลังหาย</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../alcohol-withdrawal/index.html">Alcohol withdrawal →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a> · <a href="../hypoglycemia/index.html">Hypoglycemia →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../stroke-er/index.html">Stroke ที่ ER →</a> · <a href="../toxicology/index.html">Toxicology →</a> · <a href="../icu-drugs/index.html">ยาใน ICU →</a> · <a href="../status-epilepticus/index.html">Status epilepticus →</a></p>
+<footer class="col">
+  อ้างอิง: 1) National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care (CG103). London: NICE; 2010 (updated 2023) · 2) Scottish Intercollegiate Guidelines Network. SIGN 157: Risk reduction and management of delirium. Edinburgh: SIGN; 2019 · 3) 2023 American Geriatrics Society Beers Criteria Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults. J Am Geriatr Soc 2023;71:2052–81 · 4) Devlin JW, Skrobik Y, Gélinas C, et al. Clinical practice guidelines for the prevention and management of pain, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU. Crit Care Med 2018;46:e825–73 · 5) Lewis K, Balas MC, Stollings JL, et al. A focused update to the clinical practice guidelines for the prevention and management of pain, anxiety, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU. Crit Care Med 2025;53:e711–27 · 6) American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed, Text Revision (DSM-5-TR). Washington DC: APA; 2022 · 7) Tieges Z, Maclullich AMJ, Anand A, et al. Diagnostic accuracy of the 4AT for delirium detection in older adults: systematic review and meta-analysis. Age Ageing 2021;50:733–43 · 8) Kuladee S, Prachason T. Development and validation of the Thai version of the 4 'A's Test for delirium screening in hospitalized elderly patients with acute medical illnesses. Neuropsychiatr Dis Treat 2016;12:437–43 · 9) Charoensak S, Thunmanurukkit A, Sittironnarit G, Sartra T. Validity and reliability of the Thai version of the confusion assessment method. J Med Assoc Thai 2014;97:113–7 · 10) Wongpakaran N, Wongpakaran T, Bookamana P, et al. Diagnosing delirium in elderly Thai patients: utilization of the CAM algorithm. BMC Fam Pract 2011;12:65 · 11) Pipanmekaporn T, Wongpakaran N, Mueankwan S, et al. Validity and reliability of the Thai version of the Confusion Assessment Method for the Intensive Care Unit (CAM-ICU). Clin Interv Aging 2014;9:879–85 · 12) Fick DM, Inouye SK, Guess J, et al. Preliminary development of an ultrabrief two-item bedside test for delirium. J Hosp Med 2015;10:645–50 · 13) Inouye SK, van Dyck CH, Alessi CA, et al. Clarifying confusion: the confusion assessment method. Ann Intern Med 1990;113:941–8 · 14) Inouye SK, Charpentier PA. Precipitating factors for delirium in hospitalized elderly persons. JAMA 1996;275:852–7 · 15) Witlox J, Eurelings LS, de Jonghe JF, et al. Delirium in elderly patients and the risk of postdischarge mortality, institutionalization, and dementia: a meta-analysis. JAMA 2010;304:443–51 · 16) Inouye SK, Bogardus ST Jr, Charpentier PA, et al. A multicomponent intervention to prevent delirium in hospitalized older patients. N Engl J Med 1999;340:669–76 · 17) Hshieh TT, Yue J, Oh E, et al. Effectiveness of multicomponent nonpharmacological delirium interventions: a meta-analysis. JAMA Intern Med 2015;175:512–20 · 18) Marcantonio ER. Delirium in hospitalized older adults. N Engl J Med 2017;377:1456–66 · 19) Girard TD, Exline MC, Carson SS, et al. Haloperidol and ziprasidone for treatment of delirium in critical illness. N Engl J Med 2018;379:2506–16 · 20) Andersen-Ranberg NC, Poulsen LM, Perner A, et al. Haloperidol for the treatment of delirium in ICU patients. N Engl J Med 2022;387:2425–35 · 21) Agar MR, Lawlor PG, Quinn S, et al. Efficacy of oral risperidone, haloperidol, or placebo for symptoms of delirium among patients in palliative care: a randomized clinical trial. JAMA Intern Med 2017;177:34–42 · 22) Wilcox ME, Girard TD, Hough CL. Delirium and long term cognition in critically ill patients. BMJ 2021;373:n1007 · 23) Luney M, Holdsworth L, Hanaga A, et al. Effectiveness of drug interventions to prevent delirium after surgery for older adults: systematic review and network meta-analysis of randomised controlled trials. BMJ 2026;392:e085539 · 24) Pun BT, Balas MC, Barnes-Daly MA, et al. Caring for critically ill patients with the ABCDEF bundle: results of the ICU Liberation Collaborative in over 15,000 adults. Crit Care Med 2019;47:3–14 · 25) Medicines and Healthcare products Regulatory Agency. Haloperidol (Haldol): reminder of risks when used in elderly patients for the acute treatment of delirium. Drug Safety Update 2021;15(5):1 · haloperidol Summary of Product Characteristics (UK)<br>
+  <span class="tag add">เสริม</span> = นอกเหนือแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','dlView');
+mountWalker({
+ start:{q:'ผู้สูงอายุซึม/สับสน/พฤติกรรมเปลี่ยนเฉียบพลัน — 4AT ได้เท่าไร?',h:'ICU ใช้ CAM-ICU แทน · ถามญาติว่าต่างจากปกติอย่างไร',o:[['≥4','emerg','อาจเป็น delirium'],['1–3','cog'],['0','zero']]},
+ cog:{leaf:true,cls:'warn',t:'อาจมี cognitive impairment',b:'ยังไม่ตัด delirium: ถ้าข้อ acute change ยังไม่ได้ถามญาติ ให้ถามก่อน · ประเมินซ้ำเมื่ออาการเปลี่ยน · ถ้ายังสงสัย ให้ดูแลแบบ delirium ไว้ก่อน (NICE) · นัดประเมิน cognition เมื่อพ้นภาวะเจ็บป่วย',next:['ยังสงสัย delirium → ประเมินต่อ','emerg']},
+ zero:{leaf:true,cls:'ok',t:'Delirium ไม่น่าเป็นตอนนี้',b:'ยังเกิดได้ภายหลัง: ทำ multicomponent prevention ในผู้เสี่ยง (อายุ ≥65, สมองเสื่อม, สะโพกหัก, ป่วยหนัก) · สังเกตทุกวันและคัดกรองซ้ำเมื่อพฤติกรรมเปลี่ยน'},
+ emerg:{q:'มีภาวะอันตรายเร่งด่วนข้อใด?',h:'ตรวจ DTX, SpO₂, vital signs, neuro exam ทันที',o:[['DTX ต่ำ','hypo'],['SpO₂ ต่ำ/หายใจผิดปกติ','hypox'],['ไข้/ความดันต่ำ/สงสัย sepsis','sep'],['Focal deficit/ล้ม/ได้ยาต้านเลือดแข็ง','neuro'],['ชัก/กระตุก/สงสัย NCSE','sz'],['ดื่มสุราประจำ/ขาดอาหาร','etoh'],['ไม่มี','cause']]},
+ hypo:{leaf:true,cls:'danger',t:'Hypoglycemia',b:'แก้น้ำตาลทันทีตามหน้า <a href="../hypoglycemia/index.html">Hypoglycemia</a> · ดื่มสุรา/ขาดอาหาร → thiamine ก่อนหรือพร้อม glucose · ได้ sulfonylurea → เฝ้าระวังนาน (ต่ำซ้ำได้)',next:['หาสาเหตุอื่นร่วม','cause']},
+ hypox:{leaf:true,cls:'danger',t:'Hypoxia / CO₂ คั่ง',b:'ให้ O₂ ตามเป้า (COPD 88–92%) · ABG/VBG ดู CO₂ · หาสาเหตุ: ปอดอักเสบ/สำลัก, หัวใจล้มเหลว, PE, ยากดการหายใจ (opioid, BZD)',next:['หาสาเหตุอื่นร่วม','cause']},
+ sep:{leaf:true,cls:'danger',t:'สงสัย sepsis',b:'เพาะเชื้อ lactate และให้ยาปฏิชีวนะ/สารน้ำตามหน้า <a href="../sepsis/index.html">Sepsis</a> · ผู้สูงอายุอาจไม่มีไข้ · อย่าสรุป UTI จาก UA อย่างเดียว',next:['หาสาเหตุอื่นร่วม','cause']},
+ neuro:{leaf:true,cls:'danger',t:'CT brain',b:'Focal deficit ใหม่ → ดูหน้า <a href="../stroke-er/index.html">Stroke ที่ ER</a> (เวลาเริ่มอาการสำคัญ) · ล้ม/บาดเจ็บศีรษะ/ได้ยาต้านเลือดแข็ง → CT หา subdural/ICH · ปวดศีรษะ คอแข็ง ไข้ → คิดถึง meningitis',next:['หาสาเหตุอื่นร่วม','cause']},
+ sz:{leaf:true,cls:'danger',t:'ชัก / NCSE',b:'รักษาตามหน้า <a href="../status-epilepticus/index.html">Status epilepticus</a> · ซึมนานหลังชักหรือกระตุกเล็กน้อย → EEG · ตรวจ Na, Ca, glucose, ระดับยากันชัก',next:['หาสาเหตุอื่นร่วม','cause']},
+ etoh:{leaf:true,cls:'warn',t:'ถอนสุรา / Wernicke',b:'สับสน + ตากลอก/เดินเซ → <b>thiamine IV ขนาดสูง</b> · มือสั่น เหงื่อ ใจสั่น หลังหยุดดื่ม 1–3 วัน → CIWA-Ar และ benzodiazepine · ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a>',next:['หาสาเหตุอื่นร่วม','cause']},
+ cause:{leaf:true,cls:'violet',t:'หาสาเหตุ: PINCH ME + ทบทวนยา',b:'ปวด · ติดเชื้อ · อาหาร/glucose · ท้องผูก · ขาดน้ำ/Na/Ca/O₂ · ยา (anticholinergic, BZD, opioid, steroid) และการถอนยา · สิ่งแวดล้อม · <b>ปัสสาวะค้าง</b> · Lab: CBC, Na K Ca, BUN/Cr, glucose, LFT, UA, ECG · CT ตามข้อบ่งชี้เท่านั้น',next:['จัดการอาการ','beh']},
+ beh:{q:'ผู้ป่วยทุกข์ทรมานมาก หรือเป็นอันตรายต่อตนเอง/ผู้อื่น ทั้งที่ใช้วิธีไม่ใช้ยาแล้ว?',o:[['ไม่','nod'],['ใช่','wd']]},
+ nod:{leaf:true,cls:'ok',t:'ไม่ต้องใช้ยา',b:'Multicomponent care: orientation, แว่น/เครื่องช่วยฟัง, ญาติอยู่ด้วย, น้ำ/อาหาร, ลุกเดิน, นอนกลางคืน, ถอดสายที่ไม่จำเป็น, เลี่ยงการผูกมัด · <b>hypoactive delirium ไม่ให้ยาต้านโรคจิต</b>',next:['ก่อนจำหน่าย','fu']},
+ wd:{q:'เป็นการถอนสุรา หรือถอน benzodiazepine?',o:[['ใช่','bzd'],['ไม่ใช่','pd']]},
+ bzd:{leaf:true,cls:'warn',t:'Benzodiazepine',b:'ยาหลักเฉพาะกรณีนี้ · ให้ตามอาการ (CIWA-Ar) · ผู้สูงอายุ/ตับไม่ดี → lorazepam · thiamine ร่วม · antipsychotic ไม่ใช้เป็นยาเดี่ยว · ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a>',next:['ก่อนจำหน่าย','fu']},
+ pd:{q:'มี Parkinson disease หรือ dementia with Lewy bodies?',o:[['มี','pdy'],['ไม่มี','qt']]},
+ pdy:{leaf:true,cls:'danger',t:'ห้าม haloperidol',b:'ไวต่อยามาก (แข็งเกร็ง ล้ม NMS) · ถ้าจำเป็นจริง: <b>quetiapine 12.5 mg PO</b> ขนาดต่ำสุด · ปรึกษาอายุรแพทย์/ประสาทแพทย์ · ทบทวนยา Parkinson (อย่าหยุดกะทันหัน) และยา anticholinergic',next:['ก่อนจำหน่าย','fu']},
+ qt:{q:'ECG: QTc ≥500 ms?',h:'ทำ ECG และตรวจ K/Mg ก่อนให้ยา (MHRA)',o:[['ใช่ (≥500)','qtl'],['ไม่ (&lt;500)','hal']]},
+ qtl:{leaf:true,cls:'danger',t:'เลี่ยงยาต้านโรคจิต',b:'แก้ K/Mg · หยุดยาที่ทำให้ QT ยาว · เน้นวิธีไม่ใช้ยาและคนเฝ้า · ถ้าจำเป็นจริงให้ปรึกษาอายุรแพทย์และ monitor ECG',next:['ก่อนจำหน่าย','fu']},
+ hal:{leaf:true,cls:'warn',t:'Haloperidol ขนาดต่ำ ระยะสั้น',b:'<b>0.5 mg PO หรือ IM</b> (ฉีด 5 mg/mL = 0.1 mL) · ให้ซ้ำได้ทุก 2–4 ชม.ถ้ายังจำเป็น · <b>สูงสุด 5 mg/วัน</b> ในผู้สูงอายุ · ทบทวนทุกวัน หยุดภายใน ~1 สัปดาห์ · QTc 470–499: แก้ K/Mg และ ECG ซ้ำ',next:['ก่อนจำหน่าย','fu']},
+ fu:{leaf:true,cls:'ok',t:'ก่อนจำหน่าย และติดตาม',b:'หยุดยาต้านโรคจิต · ตัดยาตาม Beers · เขียน delirium ในใบสรุป · อธิบายญาติ (พบบ่อย มักชั่วคราว อาจนานหลายสัปดาห์ เสี่ยงเป็นซ้ำ) · นัดประเมิน cognition หลังหาย (TMSE/MoCA)'}
+},'apTrail','apStage');
+
+/* ---- 4AT ---- */
+function at4(){
+  const v=['a1','a2','a3','a4'].map(radio);const n=v.filter(x=>x!==null).length;
+  const s=v.reduce((a,x)=>a+(x===null?0:+x),0);const L=[];
+  if(n<4){
+    if(n===0){$('atOut').textContent='เลือกคำตอบทั้ง 4 ข้อ';return}
+    L.push(`ตอบแล้ว ${n}/4 ข้อ · คะแนนชั่วคราว ${s}`);
+    if(s>=4)L.push('<b>คะแนน ≥4 แล้ว — อาจเป็น delirium</b> (ตอบข้อที่เหลือให้ครบ)');
+    else L.push('ตอบให้ครบก่อนแปลผล');
+    $('atOut').innerHTML=L.join('<br>');return;
+  }
+  L.push(`4AT = <b>${s}</b> / 12`);
+  if(s>=4)L.push('<b>≥4: อาจเป็น delirium ± cognitive impairment</b> → ประเมินภาวะอันตราย (DTX, SpO₂, vital signs) หาสาเหตุ และให้แพทย์ยืนยันตาม DSM-5-TR');
+  else if(s>=1)L.push('<b>1–3: อาจมี cognitive impairment</b> → ต้องประเมินเพิ่ม · ยังเป็น delirium ได้ถ้าข้อมูลข้อ 4 ไม่ครบ (ถามญาติ)');
+  else L.push('<b>0: ไม่น่าเป็น delirium หรือ cognitive impairment รุนแรง</b> · ถ้าข้อมูลข้อ 4 ไม่ครบ ยังเป็น delirium ได้ · คัดกรองซ้ำเมื่ออาการเปลี่ยน');
+  if(v[0]==='4')L.push('Alertness ผิดปกติชัด เป็นตัวบ่งชี้ delirium ที่แรง · ถ้าปลุกไม่ตื่น/coma ใช้ GCS/RASS และรักษาแบบภาวะหมดสติ');
+  if(v[2]==='2'&&v[0]==='0')L.push('<span class="muted">ทดสอบ attention ไม่ได้ทั้งที่ตื่นดี — ตรวจการได้ยิน ภาษา และ aphasia ด้วย</span>');
+  $('atOut').innerHTML=L.join('<br>');
+}
+bindAll('#t4at input',at4);
+
+/* ---- drug checker ---- */
+function drugs(){
+  const c=id=>$(id).checked;const L=[];
+  const ids=['dAh','dTca','dPar','dBla','dSpa','dMr','dTri','dApF','dApO','dQue','dBzd','dZ','dOp','dPet','dGab','dAed','dSsri','dSte','dH2','dMeto','dSu','dThz','dDig','dAbx','dThc'];
+  if(!ids.some(c)){
+    if(c('dWd'))$('drOut').innerHTML='<b>หยุดสุรา/BZD กะทันหัน</b> → ประเมิน withdrawal (CIWA-Ar) ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a> · ติ๊กยาที่ผู้ป่วยได้รับเพื่อตรวจต่อ';
+    else $('drOut').textContent='ติ๊กยาที่ผู้ป่วยได้รับ';
+    return;
+  }
+  const ach=[['dAh','first-gen antihistamine → ใช้ loratadine/cetirizine แทน (แก้คัน: emollient)'],['dTca','TCA → หยุด/ลดช้าๆ · ปวดปลายประสาท: ยาทาเฉพาะที่ หรือยาอื่นที่ปรับตามไต'],['dPar','paroxetine → เปลี่ยนเป็น sertraline (ตาม Na)'],['dBla','ยากระเพาะปัสสาวะ antimuscarinic → หยุด ตรวจปัสสาวะค้าง · พิจารณา mirabegron'],['dSpa','antispasmodic → หยุดถ้าไม่จำเป็น'],['dMr','ยาคลายกล้ามเนื้อ → หยุด ใช้ paracetamol/ประคบ'],['dTri','trihexyphenidyl/benztropine → ทบทวนข้อบ่งชี้กับผู้สั่ง'],['dApF','antipsychotic ที่ anticholinergic สูง → ทบทวนข้อบ่งชี้']].filter(x=>c(x[0]));
+  if(ach.length)L.push(`<b>Anticholinergic แรง ${ach.length} กลุ่ม</b> (Beers ตาราง 7 · เลี่ยงใน delirium): `+ach.map(x=>x[1]).join(' · '));
+  if(c('dBzd'))L.push(c('dWd')?'<b>BZD</b>: ผู้ป่วยหยุดสุรา/BZD กะทันหัน — <b>อย่าหยุด BZD ทันที</b> (ถอนยาทำให้ delirium/ชัก) · ใช้ตาม CIWA-Ar แล้วค่อยลด':'<b>Benzodiazepine</b> → เลี่ยง (delirium, ล้ม) · ถ้ากินประจำนาน <b>อย่าหยุดทันที</b> — ลดช้าๆ หลังพ้นภาวะเฉียบพลัน');
+  if(c('dZ'))L.push('<b>Zolpidem</b> → หยุด · แก้การนอนด้วยสิ่งแวดล้อม');
+  if(c('dPet'))L.push('<b>Pethidine</b> → หยุด เปลี่ยนเป็น opioid อื่นขนาดต่ำ (metabolite สะสม ชัก/สับสน)'+(c('dCkd')?' · <b>ยิ่งอันตรายเมื่อ eGFR &lt;30</b>':''));
+  if(c('dOp'))L.push('<b>Opioid</b> (Beers 2023 เพิ่มในรายการ delirium) → ใช้ขนาดต่ำสุดที่คุมปวด + paracetamol ตามเวลา · อย่าหยุดจนปวด (ปวดก็ทำให้ delirium)'+(c('dCkd')?' · eGFR &lt;30: เลี่ยง morphine/codeine, ลด tramadol':''));
+  if((c('dOp')||c('dPet'))&&c('dBzd'))L.push('<b>Opioid + BZD</b> → เลี่ยง (กดการหายใจ เสียชีวิต) — Beers ตาราง 5');
+  if((c('dOp')||c('dPet'))&&c('dGab'))L.push('<b>Opioid + gabapentinoid</b> → เลี่ยง (ซึม กดการหายใจ)');
+  if(c('dGab'))L.push('<b>Gabapentin/pregabalin</b> → ทบทวนข้อบ่งชี้'+(c('dCkd')?' · <b>eGFR &lt;30 ต้องลดขนาด</b> (สะสมทำให้ซึม/สับสน)':' · ปรับตามไต'));
+  if(c('dApO')||c('dApF')||c('dQue'))L.push('<b>Antipsychotic</b> → ใช้เฉพาะทุกข์ทรมาน/อันตราย ระยะสั้น · ตรวจ QTc · ทบทวนทุกวัน หยุดก่อนจำหน่าย');
+  if(c('dSte'))L.push('<b>Corticosteroid</b> → ขนาดต่ำสุด ระยะสั้นสุด เฝ้าระวัง delirium · ยาลูกกลอน/ยาชุดที่มี steroid: อย่าหยุดทันทีถ้ากินนาน (เสี่ยง adrenal insufficiency)');
+  if(c('dH2'))L.push('<b>H2 blocker</b> → Beers ให้เลี่ยงใน delirium (หลักฐานต่ำ) · ถ้าจำเป็นต้องลดกรด ทบทวนข้อบ่งชี้'+(c('dCkd')?' · famotidine ต้องลดขนาดเมื่อไตเสื่อม':''));
+  if(c('dMeto'))L.push(c('dPd')?'<b>Metoclopramide/prochlorperazine/promethazine + Parkinson/DLB → ห้าม</b> (Beers) · คลื่นไส้: domperidone ขนาดต่ำ (ตรวจ QTc) หรือ ondansetron':'<b>Metoclopramide/prochlorperazine/promethazine</b> → EPS/anticholinergic · ใช้สั้นที่สุด');
+  if(c('dPd')&&(c('dApO')||c('dApF')))L.push('<b>Parkinson/DLB + antipsychotic (ไม่ใช่ quetiapine/clozapine) → ห้าม</b> · ถ้าจำเป็นใช้ quetiapine ขนาดต่ำ');
+  if(c('dSu'))L.push('<b>Sulfonylurea</b> → ตรวจ DTX · น้ำตาลต่ำซ้ำได้นาน (glibenclamide)'+(c('dCkd')?' · <b>eGFR &lt;30: เลี่ยง glibenclamide</b>':''));
+  if(c('dThz')||c('dSsri')||(c('dAed')))L.push('<b>Thiazide/SSRI/SNRI/carbamazepine</b> → ตรวจ <b>Na</b> (SIADH/Na ต่ำ) — ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a>');
+  if(c('dDig'))L.push('<b>Digoxin/lithium</b> → ตรวจระดับยา K Mg Cr (พิษทำให้สับสน)');
+  if(c('dAbx'))L.push('<b>Cefepime/fluoroquinolone/aciclovir</b> → พิษต่อระบบประสาท'+(c('dCkd')?' · <b>ตรวจว่าปรับขนาดตามไตแล้ว</b>':' · ปรับขนาดตามไต'));
+  if(c('dThc'))L.push('<b>กัญชา (THC)</b> → สับสน ภาพหลอน ล้ม ในผู้สูงอายุ · หยุดและถามผลิตภัณฑ์ที่ใช้');
+
+  const cnsN=[['dTca','dPar','dSsri'],['dApF','dApO','dQue'],['dBzd'],['dZ'],['dOp','dPet'],['dGab','dAed'],['dMr']].filter(g=>g.some(c)).length;
+  if(cnsN>=3)L.push(`<b>CNS-active ${cnsN} กลุ่ม (≥3)</b> → Beers ให้เลี่ยง (ล้ม กระดูกหัก) · ลดให้เหลือน้อยที่สุด`);
+  if(!L.length)L.push('ไม่พบยาเสี่ยงในรายการที่เลือก');
+  L.push('<span class="muted">รายการนี้ไม่ครบทุกยา · ทบทวนยาทั้งหมดร่วมกับเภสัชกร</span>');
+  if(c('dWd')&&!c('dBzd'))L.push('<b>หยุดสุรา/BZD กะทันหัน</b> → ประเมิน withdrawal (CIWA-Ar) ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a>');
+  $('drOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+}
+bindAll('#tDrug input',drugs);
+
+/* ---- work-up checklist ---- */
+function workup(){
+  const age=num('wAge');const c=id=>$(id).checked;const set=$('wSet').value;
+  if(age===null){$('wuOut').textContent='ใส่อายุผู้ป่วย';return}
+  if(age<18||age>120){$('wuOut').textContent='อายุไม่อยู่ในช่วงที่ใช้ได้ (18–120 ปี) — ตรวจค่าที่ใส่';return}
+  let g=num('wGlu');const sat=num('wSat');const U=[],R=[],O=[];
+  if(g!==null){
+    if(g<=0){$('wuOut').textContent='ค่า DTX ไม่ถูกต้อง — ตรวจค่าที่ใส่';return}
+    if($('wGu').value==='mmol'){if(g>60){$('wuOut').textContent='ค่า DTX สูงเกินสำหรับ mmol/L — ตรวจหน่วย';return}g=g*18;}
+    else if(g<10){$('wuOut').textContent='ค่า DTX ต่ำผิดปกติสำหรับ mg/dL — ตรวจหน่วย (อาจเป็น mmol/L)';return}
+  }
+  if(sat!==null&&(sat<=0||sat>100)){$('wuOut').textContent='SpO₂ ต้องอยู่ระหว่าง 1–100%';return}
+  if(g!==null&&g<70)U.push(`<b>DTX ${Math.round(g)} mg/dL = hypoglycemia</b> → แก้ทันที (หน้า <a href="../hypoglycemia/index.html">Hypoglycemia</a>)`+(c('wEt')?' · <b>thiamine ก่อน/พร้อม glucose</b>':''));
+  else if(g!==null&&g>=600)U.push(`<b>DTX ${Math.round(g)} mg/dL</b> → สงสัย HHS: serum osmolality, Na, ketone (หน้า <a href="../dka-hhs/index.html">DKA/HHS</a>)`);
+  else if(g!==null&&g>=250)R.push(`DTX ${Math.round(g)} mg/dL สูง → ตรวจ ketone/osmolality ถ้าซึมมาก`);
+  if(sat!==null&&sat<92)U.push(`<b>SpO₂ ${sat}% ต่ำ</b> → O₂, ABG/VBG (CO₂ คั่ง), CXR`);
+  if(g===null)U.push('<b>DTX</b> ทันที');
+  if(sat===null)U.push('<b>SpO₂</b> + vital signs ครบ');
+  if(c('wEt'))U.push('ดื่มสุรา/ขาดอาหาร → <b>thiamine IV</b> (สงสัย Wernicke ใช้ขนาดสูง) · ประเมินถอนสุรา CIWA-Ar (หน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a>)');
+  if(c('wFev'))U.push('<b>สงสัย sepsis</b> → hemoculture ×2, lactate, หาแหล่งติดเชื้อ, ให้ยาปฏิชีวนะ (หน้า <a href="../sepsis/index.html">Sepsis</a>)');
+  if(c('wFoc'))U.push('<b>Focal deficit ใหม่</b> → CT brain ด่วน ± ระบบ stroke fast track (หน้า <a href="../stroke-er/index.html">Stroke ที่ ER</a>)');
+  if(c('wFall')||c('wAc'))U.push('<b>'+(c('wFall')?'ล้ม/บาดเจ็บศีรษะ':'')+(c('wFall')&&c('wAc')?' + ':'')+(c('wAc')?'ได้ยาต้านการแข็งตัวของเลือด':'')+'</b> → <b>CT brain</b> (subdural/ICH)'+(c('wAc')?' · PT/INR หรือระดับยา':''));
+  if(c('wSz'))U.push('<b>ชัก/กระตุก</b> → รักษาชัก · EEG ถ้าซึมนานหรือสงสัย NCSE · ระดับยากันชัก (หน้า <a href="../status-epilepticus/index.html">Status epilepticus</a>)');
+  if(c('wMen'))U.push('<b>ปวดศีรษะ/คอแข็ง/ภูมิคุ้มกันต่ำ</b> → hemoculture + ยาปฏิชีวนะ, CT ก่อน LP ตามข้อบ่งชี้, LP (หน้า <a href="../meningitis/index.html">Meningitis</a>)');
+  R.push('ตรวจร่างกายทั้งตัว: ผิวหนัง/แผลกดทับ ปอด ท้อง <b>คลำกระเพาะปัสสาวะ/bladder scan</b> ทวารหนัก · ประเมินปวด');
+  R.push('CBC · Na K Ca (± Mg, PO₄) · BUN/Cr · glucose · LFT · UA (อย่าสรุป UTI จากผลนี้อย่างเดียว) · <b>ECG</b>');
+  R.push('ทบทวนยาทั้งหมด รวมยาซื้อเอง/สมุนไพร/กัญชา (ใช้เครื่องมือตรวจยาข้างบน)');
+  if(c('wUr'))O.push('<b>สงสัยปัสสาวะค้าง</b> → bladder scan/in-out catheter (ค้าง &gt;300 mL ให้ระบาย) · หายาที่เป็นสาเหตุ (anticholinergic, opioid)');
+  if(c('wCon'))O.push('<b>ท้องผูก</b> → ตรวจทวารหนัก ± ภาพรังสีช่องท้อง · senna/lactulose/สวน');
+  if(c('wPain'))O.push('<b>ปวด</b> → paracetamol ตามเวลา ± opioid ขนาดต่ำ · หากระดูกหักที่ซ่อนอยู่ (สะโพก) ถ้าล้ม');
+  if(c('wMed'))O.push('<b>ยาใหม่/ปรับยา</b> → เทียบเวลาที่เริ่มยากับอาการ · หยุดยาที่น่าสงสัยถ้าทำได้');
+  if(c('wDm'))O.push('<b>เบาหวาน insulin/SU</b> → DTX ซ้ำทุก 1–2 ชม.จนคงที่ถ้าเคยต่ำ · HbA1c ไม่ช่วยในภาวะเฉียบพลัน');
+  if(c('wLiv'))O.push('<b>โรคตับ</b> → hepatic encephalopathy: หาตัวกระตุ้น (ติดเชื้อ/SBP, เลือดออก, ยา, ท้องผูก, K ต่ำ) · ammonia ไม่จำเป็นต้องใช้วินิจฉัย (หน้า <a href="../cirrhosis/index.html">Cirrhosis</a>)');
+  if(c('wCkd'))O.push('<b>โรคไต</b> → uremia, ยาที่สะสม (gabapentin, cefepime, aciclovir, tramadol, pethidine) · ตรวจ BUN/Cr เทียบค่าเดิม');
+  if(c('wChest'))O.push('<b>หัวใจ</b> → ECG ซ้ำ, troponin (MI ในผู้สูงอายุอาจไม่เจ็บอก), CXR, หัวใจล้มเหลว/arrhythmia');
+  O.push('ตามข้อบ่งชี้: CXR · troponin · ABG/VBG · TSH · B12 · ระดับยา (digoxin, lithium, phenytoin, valproate) · Ca สูง (มะเร็ง)');
+  if(!(c('wFoc')||c('wFall')||c('wAc')))O.push('<span class="muted">CT brain ยังไม่จำเป็น — ทำเมื่อ focal deficit, ล้ม/บาดเจ็บศีรษะ, ได้ยาต้านเลือดแข็ง หรือซึมที่อธิบายไม่ได้ (SIGN)</span>');
+  const tail={er:'ER: บันทึก 4AT และ baseline จากญาติ · ถ้ารับไว้ ส่งต่อเรื่อง delirium ให้หอผู้ป่วย',ward:'หอผู้ป่วย: multicomponent care ทุกวัน · 4AT ซ้ำเมื่ออาการเปลี่ยน · เลี่ยงย้ายเตียง',icu:'ICU: CAM-ICU/ICDSC ทุกเวร · light sedation · SAT/SBT · ลุกเร็ว · ดูยาเพิ่มเติมในหน้า <a href="../icu-drugs/index.html">ยาใน ICU</a>',opd:'OPD/ชุมชน: delirium ใหม่มักต้องส่ง รพ. เพื่อตรวจหาสาเหตุ ยกเว้นสาเหตุชัดและแก้ได้ที่บ้าน (เช่น หยุดยาที่เพิ่งเริ่ม) และมีผู้ดูแลใกล้ชิด'}[set];
+  if(age<65)O.push('<span class="muted">อายุ &lt;65 ปี: แนวทางเดียวกัน แต่คิดถึงสาเหตุจากสาร/ยาเสพติด สุรา encephalitis และโรคจิตเวชมากขึ้น</span>');
+  const sec=(h,a)=>a.length?`<b>${h}</b><ol>${a.map(x=>`<li>${x}</li>`).join('')}</ol>`:'';
+  $('wuOut').innerHTML=sec('1) ทำก่อน: ภาวะอันตราย',U)+sec('2) ทุกราย',R)+sec('3) ตามอาการที่ติ๊ก',O)+tail;
+}
+bindAll('#tWu input,#tWu select',workup);
+
+/* ---- antipsychotic decision ---- */
+function apDec(){
+  const age=num('pAge'),qt=num('pQt');const c=id=>$(id).checked;const L=[];
+  if(age===null){$('apOut').textContent='ใส่อายุผู้ป่วย';return}
+  if(age<18||age>120){$('apOut').textContent='อายุไม่อยู่ในช่วงที่ใช้ได้ (18–120 ปี) — ตรวจค่าที่ใส่';return}
+  if(c('pWd')){$('apOut').innerHTML='<b>ถอนสุรา/ถอน BZD → benzodiazepine เป็นยาหลัก</b> ไม่ใช่ antipsychotic · ให้ตาม CIWA-Ar (ผู้สูงอายุ/ตับไม่ดี เลือก lorazepam) + thiamine · antipsychotic ใช้เสริมเฉพาะภาพหลอนเด่นหลังได้ BZD พอแล้ว · ดูขนาดในหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a>';return}
+  if(!c('pDang')){$('apOut').innerHTML='<b>ไม่มีข้อบ่งชี้ให้ยา</b> — ยาต้านโรคจิตไม่ทำให้ delirium หายเร็วขึ้น · หาสาเหตุ + multicomponent care'+(c('pHypo')?' · <b>hypoactive delirium ไม่ให้ยาต้านโรคจิต</b>':'');return}
+  if(c('pHypo'))L.push('<span class="muted">ติ๊กทั้ง hypoactive และอันตราย — ยาใช้เฉพาะช่วงที่กระสับกระส่าย/อันตรายเท่านั้น</span>');
+  if(!c('pDe'))L.push('<b>ลอง de-escalation และแก้สาเหตุที่แก้ได้เร็วก่อน</b> (ปวด ปัสสาวะค้าง หิว ญาติอยู่ด้วย) — ให้ยาทันทีเฉพาะเมื่ออันตรายเฉพาะหน้า');
+  if(qt===null){L.push('<b>ใส่ QTc</b> — ทำ ECG และตรวจ K/Mg ก่อนให้ยา (MHRA) · ถ้าอันตรายเฉพาะหน้าและทำ ECG ไม่ได้ ปรึกษาแพทย์อาวุโส');$('apOut').innerHTML=L.join('<br>');return}
+  if(qt<300||qt>700){L.push('ค่า QTc ไม่สมเหตุสมผล (300–700 ms) — ตรวจค่าที่ใส่/อ่าน ECG ใหม่');$('apOut').innerHTML=L.join('<br>');return}
+  const old=age>=65;
+  if(c('pPd')){
+    L.push('<b>Parkinson/DLB → ห้าม haloperidol</b> (แข็งเกร็ง ล้ม NMS)');
+    if(qt>=500)L.push(`QTc ${qt} ms ≥500 → เลี่ยงยาต้านโรคจิตทุกตัว · แก้ K/Mg · ปรึกษาอายุรแพทย์/ประสาทแพทย์`);
+    else if(c('pNpo'))L.push('กินไม่ได้ → quetiapine มีแต่รูปแบบกิน · <b>ปรึกษาอายุรแพทย์/ประสาทแพทย์</b> · ห้ามใช้ haloperidol ฉีด');
+    else L.push('ถ้าจำเป็นจริง: <b>quetiapine 12.5 mg PO</b> (off-label) ให้ซ้ำได้ตามอาการ · ใช้ขนาดต่ำสุด มักไม่เกิน 50 mg/วันในกลุ่มนี้ · ระวังความดันตก/ล้ม · ปรึกษาประสาทแพทย์ · อย่าหยุดยา Parkinson กะทันหัน'+(qt>=470||c('pK')||c('pQd')?` · <b>ความเสี่ยง QT</b>${qt>=470?` (QTc ${qt})`:''}: แก้ K/Mg${c('pQd')?' · หยุด/เปลี่ยนยาที่ทำให้ QT ยาวก่อน':''} และ ECG ซ้ำ`:''));
+    $('apOut').innerHTML=L.join('<br>');return;
+  }
+  if(qt>=500){L.push(`<b>QTc ${qt} ms ≥500 → เลี่ยงยาต้านโรคจิต</b> · แก้ K/Mg · หยุดยาที่ทำให้ QT ยาว · คนเฝ้า/วิธีไม่ใช้ยา · ถ้าจำเป็นจริงให้ปรึกษาอายุรแพทย์และ monitor ECG`);$('apOut').innerHTML=L.join('<br>');return}
+  if(qt>=470||c('pK')||c('pQd'))L.push(`<b>ความเสี่ยง QT</b>${qt>=470?` (QTc ${qt} ms)`:''}: แก้ K/Mg ให้ปกติก่อนให้ยา${c('pQd')?' · หยุด/เปลี่ยนยาที่ทำให้ QT ยาวก่อน (SmPC ห้ามใช้ร่วม)':''} · ECG ซ้ำหลังให้ยา · ใช้ขนาดต่ำสุด`);
+  const route=c('pNpo')?'IM':'PO (หรือ IM ถ้าไม่ยอมกิน)';
+  if(old){
+    L.push(`<b>Haloperidol 0.5 mg ${route}</b>${c('pNpo')?' (ฉีด 5 mg/mL = <b>0.1 mL</b>)':''} · ประเมินซ้ำ แล้วให้ซ้ำได้ทุก 2–4 ชม.ถ้ายังจำเป็น · <b>สูงสุด 5 mg/วัน</b>`);
+  }else{
+    L.push(`<b>Haloperidol 0.5–1 mg ${route}</b>${c('pNpo')?' (ฉีด 5 mg/mL: 0.5 mg = 0.1 mL)':''} · ให้ซ้ำได้ทุก 2–4 ชม.ถ้ายังจำเป็น · <b>สูงสุด 10 mg/วัน</b> (ผู้ใหญ่อายุ &lt;65 ปี)`);
+  }
+  if(c('pLiv'))L.push('<b>ตับบกพร่องรุนแรง</b>: ใช้ขนาดเริ่มต้นครึ่งหนึ่งและเพิ่มช้า <span class="muted">(ไม่ต้องปรับตามไต)</span>');
+  else L.push('<span class="muted">ไม่ต้องปรับตามไต</span>');
+  if(!c('pNpo'))L.push(`ทางเลือก <span class="tag add">เสริม</span>: quetiapine ${old?'12.5–25':'25'} mg PO (off-label; ง่วง ความดันตก)`);
+  L.push('ไม่ให้ IV นอก ICU ที่มี monitor · เฝ้าระวัง EPS, ง่วงมาก, สำลัก, ล้ม · <b>ทบทวนทุกวัน หยุดภายใน ~1 สัปดาห์ และไม่ให้ต่อหลังจำหน่าย</b>');
+  $('apOut').innerHTML=L.join('<br>');
+}
+bindAll('#tAp input',apDec);
+
+mountQuiz([
+ ['หญิง 84 ปี นอน รพ. ด้วยปอดอักเสบวันที่ 2 พยาบาลบอกว่า "นอนทั้งวัน กินข้าวไม่ได้ ตอบช้า" ญาติบอกปกติคุยรู้เรื่อง ข้อใดเหมาะที่สุด',['บันทึกว่าเพลียจากไข้ และสังเกตอาการ','ทำ 4AT และคิดถึง hypoactive delirium','ปรึกษาจิตแพทย์เรื่องซึมเศร้า','ให้ haloperidol 0.5 mg'],1,'ซึมเงียบเฉียบพลันคือ hypoactive delirium ซึ่งพบบ่อยที่สุดและถูกมองข้าม ไม่ให้ยาต้านโรคจิตในชนิด hypoactive'],
+ ['4AT: ตื่นดี (0) ตอบ AMT4 ผิด 1 ข้อ (1) บอกเดือนย้อนหลังได้ 4 เดือน (1) ญาติบอกว่าสับสนขึ้นลงมา 2 วัน (4) แปลผลอย่างไร',['คะแนน 2 อาจมี cognitive impairment','คะแนน 6 อาจเป็น delirium','คะแนน 6 ปกติ','ต้องทำ CAM-ICU แทน'],1,'0+1+1+4 = 6 ซึ่ง ≥4 คือ possible delirium'],
+ ['ข้อใด <b>ไม่ใช่</b> ข้อบ่งชี้ทำ CT brain ในผู้สูงอายุที่เป็น delirium ตาม SIGN 157',['Focal deficit ใหม่','หกล้มศีรษะกระแทก','ได้ warfarin','ผลปัสสาวะมีเม็ดเลือดขาวมาก'],3,'CT ไม่ทำทุกราย · ทำเมื่อ focal deficit, ซึมที่อธิบายไม่ได้, ล้ม/บาดเจ็บศีรษะ, ได้ยาต้านเลือดแข็ง'],
+ ['ชาย 78 ปี เป็น Parkinson disease สับสนเอะอะกลางคืนจนปีนเตียง de-escalation ไม่ได้ผล QTc 440 ms ยาใดเหมาะที่สุดถ้าจำเป็นต้องใช้',['Haloperidol 0.5 mg IM','Quetiapine 12.5 mg PO','Metoclopramide','Promethazine IM'],1,'Haloperidol ห้ามใน Parkinson/DLB · Beers ยกเว้น quetiapine/clozapine/pimavanserin · promethazine/metoclopramide แย่ลง'],
+ ['ขนาดสูงสุดของ haloperidol ต่อวันสำหรับ delirium ในผู้สูงอายุตาม SmPC (UK)',['2 mg','5 mg','10 mg','20 mg'],1,'ผู้สูงอายุเริ่ม 0.5 mg สูงสุด 5 mg/วัน (ผู้ใหญ่ทั่วไปสูงสุด 10 mg/วัน)'],
+ ['ข้อใดถูกเกี่ยวกับ benzodiazepine ใน delirium',['เป็นยาแรกสำหรับทุกชนิด','ใช้เป็นยาหลักเฉพาะถอนสุรา/ถอน BZD','ลด delirium ใน ICU ได้ดีกว่า dexmedetomidine','ปลอดภัยกว่า haloperidol ในผู้สูงอายุ'],1,'BZD ทำให้ delirium แย่ลง ยกเว้น alcohol/BZD withdrawal'],
+ ['การศึกษา AID-ICU (NEJM 2022) และ MIND-USA (NEJM 2018) บอกอะไร',['Haloperidol ทำให้ delirium หายเร็วขึ้นชัดเจน','ยาต้านโรคจิตไม่ได้เพิ่ม outcome หลักอย่างมีนัยสำคัญ','Ziprasidone ดีกว่า haloperidol','ควรให้ haloperidol ป้องกันทุกราย'],1,'ทั้งสองไม่พบประโยชน์ต่อ outcome หลัก · PADIS 2025 จึงไม่แนะนำทั้งให้และไม่ให้'],
+ ['ยาใดอยู่ในตาราง 3 ของ Beers 2023 ที่ให้เลี่ยงในผู้ป่วย delirium และ <b>เพิ่มเข้ามาใหม่</b> ในฉบับ 2023',['Opioid','Paracetamol','Levetiracetam','Amlodipine'],0,'Beers 2023 เพิ่ม opioid (แทนการระบุ meperidine) · แต่ต้องคุมปวดให้พอ'],
+ ['ในการป้องกัน delirium ข้อใดมีหลักฐานดีที่สุด',['Haloperidol ขนาดต่ำทุกคืน','Multicomponent intervention แบบ HELP','ผูกมัดเพื่อกันตกเตียง','ใส่สายสวนปัสสาวะเพื่อวัดปัสสาวะ'],1,'HELP/NICE multicomponent ลด delirium ราว 1 ใน 3 · ผูกมัดและสายสวนเป็นตัวกระตุ้น'],
+ ['Haloperidol ฉีดความเข้มข้น 5 mg/mL ขนาด 0.5 mg เท่ากับกี่ mL',['0.01 mL','0.1 mL','0.5 mL','1 mL'],1,'0.5 ÷ 5 = 0.1 mL · ใช้ syringe 1 mL'],
+ ['ชาย 80 ปี หลังหาย delirium กำลังจะกลับบ้าน ยังได้ haloperidol 0.5 mg ก่อนนอน ควรทำอะไร',['ให้ต่อที่บ้านตลอดไป','หยุดยา เขียน delirium ในใบสรุป และนัดประเมิน cognition','เปลี่ยนเป็น diazepam ก่อนนอน','เพิ่มขนาดเป็น 2 mg'],1,'ยาต้านโรคจิตใช้ระยะสั้น ไม่ให้ต่อหลังจำหน่าย · หลายรายมี cognitive impairment ที่ยังไม่รู้'],
+ ['PADIS 2025 focused update แนะนำข้อใดสำหรับผู้ใหญ่ใส่เครื่องช่วยหายใจที่ต้องการ light sedation',['Midazolam infusion','Dexmedetomidine มากกว่า propofol (conditional)','Haloperidol ทุกราย','Deep sedation'],1,'Conditional recommendation, moderate certainty · ร่วมกับ enhanced mobilization และ melatonin (conditional)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

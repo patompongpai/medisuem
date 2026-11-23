@@ -1,0 +1,997 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hepatic encephalopathy &amp; SBP · สมองเสื่อมจากตับ และ SBP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hepatology · Cirrhosis complications · AASLD/EASL HE 2014 · EASL HE 2022 · ACG HE 2026 · AASLD ascites/SBP 2021 · EASL decompensated cirrhosis 2018 · Baveno VII · THASL 2568</div>
+  <h1>สมองเสื่อมจากตับ และเยื่อบุช่องท้องติดเชื้อเอง<br>Hepatic encephalopathy &amp; Spontaneous bacterial peritonitis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · สองภาวะแทรกซ้อนของตับแข็งที่เจอบ่อยที่สุดในหอผู้ป่วย และมักมาด้วยกัน: <b>ซึมสับสน (HE)</b> ที่มี "ตัวกระตุ้น" ซ่อนอยู่เกือบทุกราย และ <b>น้ำในท้องติดเชื้อ (SBP)</b> ที่อาจไม่มีไข้หรือปวดท้องเลย · หน้านี้ลงลึกกว่าหน้า <a href="../cirrhosis/index.html">ตับแข็ง (แนวทางไทย 2568)</a>: หาตัวกระตุ้นอย่างเป็นระบบ ปรับ lactulose ให้ได้เป้า แปลผลน้ำในท้อง เลือกยาฆ่าเชื้อตามแหล่งติดเชื้อ คำนวณ albumin และเลือกคนที่ควรได้ยาป้องกัน</p>
+  <p class="cite">อ้างอิงหลัก: Vilstrup H, et al. AASLD/EASL practice guideline: Hepatic encephalopathy in chronic liver disease (Hepatology 2014;60:715–35) · EASL CPG on the management of hepatic encephalopathy (J Hepatol 2022;77:807–24) · Bajaj JS, et al. ACG clinical guideline: Hepatic encephalopathy (Am J Gastroenterol 2026;121:588–618) · Biggins SW, et al. AASLD 2021 practice guidance: ascites, SBP and HRS (Hepatology 2021;74:1014–48) · EASL CPG for decompensated cirrhosis (J Hepatol 2018;69:406–60) · de Franchis R, et al. Baveno VII (J Hepatol 2022;76:959–74) · แนวทางเวชปฏิบัติการดูแลรักษาผู้ป่วยโรคตับแข็งในประเทศไทย พ.ศ. 2568 (สมาคมโรคตับแห่งประเทศไทย) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ซึมในตับแข็ง = หาตัวกระตุ้นก่อน</b>เจาะน้ำตาลปลายนิ้ว · ติดเชื้อ (เจาะท้อง) · เลือดออก · ยานอนหลับ · ขาดน้ำ/K ต่ำ · ท้องผูก</div>
+    <div class="stage" style="--c:var(--warn)"><b>Lactulose ให้ถ่ายนิ่ม 2–3 ครั้ง/วัน</b>ไม่ต้องตรวจแอมโมเนียซ้ำ · ไม่ลดโปรตีน · เกิดซ้ำ → เพิ่ม rifaximin</div>
+    <div class="stage" style="--c:var(--accent)"><b>ท้องมาน + นอน รพ. → เจาะท้องทุกราย</b>PMN ≥250 = รักษาเป็น SBP ทันที · ceftriaxone + albumin (กลุ่มเสี่ยงไต) · เจาะซ้ำ 48 ชม.</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#types">HE: นิยามและระดับ</a><a href="#precip">ตัวกระตุ้นและโรคที่ต้องแยก</a><a href="#ammonia">แอมโมเนียและการตรวจ</a><a href="#herx">รักษา overt HE</a><a href="#nutri">โภชนาการ</a><a href="#prevent">ป้องกัน HE · TIPS</a><a href="#tap">SBP: เจาะและแปลผล</a><a href="#sbprx">รักษา SBP · albumin</a><a href="#proph">ป้องกัน SBP</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="types" class="col">
+  <div class="sec-num">01</div>
+  <h2>HE: นิยาม การจำแนก และระดับความรุนแรง</h2>
+  <p><b>Hepatic encephalopathy (HE)</b> คือสมองทำงานผิดปกติจากตับทำงานไม่พอและ/หรือเลือดลัด portosystemic shunt · อาการมีตั้งแต่ตรวจพบด้วยแบบทดสอบเท่านั้น จนถึงโคม่า · เป็น<b>การวินิจฉัยโดยตัดโรคอื่นออก</b> (ไม่มีแล็บใดยืนยันได้)</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>แบ่ง 4 แกน (AASLD/EASL 2014)</h4><ul>
+      <li><b>โรคพื้นฐาน</b>: <b>Type A</b> = ตับวายเฉียบพลัน (ดูหน้า <a href="../liver-failure/index.html">Acute liver failure</a> — กลไกสมองบวม ต่างจาก type C) · <b>Type B</b> = portosystemic bypass/shunt โดยตับปกติ · <b>Type C</b> = ตับแข็ง (พบมากที่สุด — หน้านี้เน้น type C)</li>
+      <li><b>ความรุนแรง</b>: West Haven (ตารางขวา)</li>
+      <li><b>รูปแบบเวลา</b>: episodic · <b>recurrent</b> (ห่างกัน ≤6 เดือน) · persistent (ไม่กลับสู่ปกติระหว่างครั้ง)</li>
+      <li><b>มีตัวกระตุ้นหรือไม่</b>: precipitated หรือ non-precipitated (spontaneous)</li></ul></div>
+    <div class="card c-warn"><h4>Covert vs overt</h4><ul>
+      <li><b>Covert HE</b> = minimal HE + West Haven 1 (แยกกันยากข้างเตียง) · ดูปกติแต่ขับรถ/ทำงานแย่ลง หกล้มง่าย</li>
+      <li><b>Overt HE</b> = West Haven 2–4 · <b>เริ่มที่สับสนเรื่องเวลา หรือมี asterixis</b></li>
+      <li>ในไทย minimal HE พบ ~27% ใน compensated cirrhosis <span class="tag th">ไทย</span></li>
+      <li>Overt HE ครั้งแรก = ตับแข็งระยะ decompensated → <b>ส่งประเมินปลูกถ่ายตับ</b></li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>West Haven</th><th>ลักษณะทางคลินิก</th><th>กลุ่ม</th></tr>
+    <tr><td>Minimal</td><td>ข้างเตียงปกติ · ผิดปกติเฉพาะ psychometric/neurophysiologic test (เช่น animal naming, PHES, Stroop)</td><td rowspan="2">Covert</td></tr>
+    <tr><td>1</td><td>ยัง<b>รู้วันเวลาสถานที่</b> · สมาธิสั้น วิตกกังวล/ร่าเริงผิดปกติ คิดเลขบวกลบผิด <b>นอนกลางวันตื่นกลางคืน</b> (ญาติมักสังเกตได้)</td></tr>
+    <tr><td>2</td><td><b>สับสนวันเวลา</b> · เฉื่อยชา บุคลิกเปลี่ยน พฤติกรรมไม่เหมาะ พูดช้า dyspraxia · <b>asterixis</b></td><td rowspan="3">Overt</td></tr>
+    <tr><td>3</td><td>ง่วงซึมแต่ปลุกตื่น · สับสนสถานที่ด้วย พฤติกรรมแปลก · clonus, rigidity · asterixis อาจหายเพราะทำตามสั่งไม่ได้</td></tr>
+    <tr><td>4</td><td><b>โคม่า</b> ไม่ตอบสนองต่อความเจ็บปวด</td></tr>
+  </table></div>
+  <div class="box note"><b>ข้างเตียง</b>ระดับ 3–4 ให้บันทึก <b>GCS</b> ร่วมด้วยเพื่อติดตาม (EASL 2022, แนวทางไทย) · <b>Asterixis ไม่จำเพาะ</b> — พบใน uremia, CO₂ คั่ง, ยาบางชนิด (เช่น gabapentin) ได้</div>
+</section>
+
+<section id="precip" class="col">
+  <div class="sec-num">02</div>
+  <h2>ตัวกระตุ้น (precipitants) และโรคที่ต้องแยก</h2>
+  <p>ราว <b>80–90%</b> ของ overt HE ในตับแข็งมีตัวกระตุ้น และ <b>~3 ใน 4 มีมากกว่า 1 อย่าง</b> (แนวทางไทย) · แก้ตัวกระตุ้นได้ HE มักหาย · หาให้ครบ "ทุกข้อ" แม้เจอข้อแรกแล้ว</p>
+  <div class="tbl"><table>
+    <tr><th>ตัวกระตุ้น</th><th>หาอย่างไร</th></tr>
+    <tr><td><b>ติดเชื้อ</b> (SBP, ปอดอักเสบ, UTI, ผิวหนัง, bacteremia)</td><td><b>เจาะน้ำในท้องทุกรายที่มีท้องมาน</b> · CXR · UA/urine culture · blood culture · ดูผิวหนังขา/cellulitis · ไข้อาจไม่มี</td></tr>
+    <tr><td><b>เลือดออกทางเดินอาหาร</b></td><td>ถามถ่ายดำ ตรวจทางทวารหนัก · Hb/BUN เทียบเดิม (BUN ขึ้นนำ) · ดูหน้า <a href="../ugib/index.html">UGIB</a></td></tr>
+    <tr><td><b>ยา</b>: benzodiazepine, opioid, gabapentin/pregabalin, antihistamine ที่ง่วง, ยานอนหลับ</td><td>ทบทวนยาทุกตัว (รวมยาที่ญาติซื้อเอง) · <b>PPI</b> สัมพันธ์กับ HE (ACG 2026)</td></tr>
+    <tr><td><b>ขาดน้ำ / ยาขับปัสสาวะเกิน / AKI</b></td><td>น้ำหนัก ความดัน Cr BUN · lactulose มากเกินก็ทำให้ขาดน้ำได้ · ดูหน้า <a href="../aki/index.html">AKI</a></td></tr>
+    <tr><td><b>K ต่ำ, metabolic alkalosis</b></td><td>K ต่ำเพิ่มการสร้างแอมโมเนียที่ไต · alkalosis ทำให้ NH₃ เข้าสมองง่าย</td></tr>
+    <tr><td><b>Na ต่ำ</b></td><td>ตับแข็ง + Na &lt;130 เสี่ยง HE · แก้ช้า ไม่เกิน 8 mmol/L ใน 24 ชม. (เสี่ยง osmotic demyelination สูง) · ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a></td></tr>
+    <tr><td><b>ท้องผูก / ไม่กินยา lactulose</b></td><td>ถามจำนวนครั้งที่ถ่ายใน 24–48 ชม. · หยุดยาเองเพราะท้องเสีย (พบบ่อย)</td></tr>
+    <tr><td>อื่นๆ</td><td>หลัง TIPS/มี shunt ใหญ่ · ดื่มสุรา/alcoholic hepatitis · HCC/portal vein thrombosis · ผ่าตัด · กินโปรตีนมากผิดปกติ (พบน้อยกว่าที่เคยเชื่อ)</td></tr>
+  </table></div>
+  <h3 style="margin-top:18px">โรคที่ต้องแยก — "อย่าโยนทุกอย่างให้ HE"</h3>
+  <div class="grid2">
+    <div class="card c-red"><h4>ต้องตรวจทันทีทุกราย</h4><ul>
+      <li><b>Hypoglycemia</b> — เจาะ DTX ก่อนอย่างอื่น (ตับแข็งสร้างน้ำตาลไม่พอ โดยเฉพาะ alcoholic hepatitis, sepsis, กินไม่ได้)</li>
+      <li><b>Wernicke encephalopathy</b> — ผู้ดื่มสุรา/ขาดอาหาร: ให้ <b>thiamine IV ก่อนหรือพร้อม glucose</b> · สงสัย Wernicke: 200–500 mg IV วันละ 3 ครั้ง × 3 วัน · ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal/Wernicke</a></li>
+      <li><b>เลือดออกในสมอง</b> (ICH, subdural) — เกล็ดเลือดต่ำ INR สูง หกล้มบ่อย ดื่มสุรา → <b>CT สมอง</b></li>
+      <li><b>Alcohol withdrawal / intoxication</b> · ยาเกิน (benzodiazepine, opioid)</li></ul></div>
+    <div class="card c-acc"><h4>ส่ง CT สมองเมื่อ <span class="tag add">เสริม</span></h4><ul>
+      <li>อาการทางระบบประสาทเฉพาะที่ (focal deficit) · ชัก</li>
+      <li>มีประวัติล้ม/บาดเจ็บศีรษะ · ปวดศีรษะ</li>
+      <li>HE ครั้งแรก <b>และหาตัวกระตุ้นไม่เจอ</b></li>
+      <li>ไม่ดีขึ้นหลังรักษาเต็มที่ 24–48 ชม.</li>
+      <li>แนวทางไทย/EASL: CT/MRI ใช้วินิจฉัย HE ไม่ได้ แต่ช่วยหาโรคอื่นเมื่อประวัติ/ตรวจร่างกายแยกไม่ได้</li></ul>
+      <p class="muted" style="font-size:.86rem">อื่นๆ: sepsis encephalopathy · Na/Ca/glucose ผิดปกติ (HHS, DKA) · uremia · CO₂ คั่ง · meningitis · non-convulsive status (EEG) · ภาวะทางจิตเวช</p></div>
+  </div>
+</section>
+
+<section id="ammonia" class="col">
+  <div class="sec-num">03</div>
+  <h2>แอมโมเนียและการตรวจ: เมื่อไรมีประโยชน์ เมื่อไรไม่มี</h2>
+  <div class="tbl"><table>
+    <tr><th>แนวทาง</th><th>สิ่งที่บอก</th></tr>
+    <tr><td>AASLD/EASL 2014</td><td>แอมโมเนียสูง<b>อย่างเดียว</b> ไม่ช่วยวินิจฉัย แบ่งระดับ หรือพยากรณ์ HE ในตับแข็ง · แต่ถ้า<b>ค่าปกติ</b> ในคนที่สงสัย HE → <b>ทบทวนการวินิจฉัยใหม่</b></td></tr>
+    <tr><td>EASL 2022</td><td>แอมโมเนียปกติในผู้ป่วยที่สงสัย overt HE → คิดถึงโรคอื่น · ถ้าจะตรวจต้อง<b>เก็บให้ถูกวิธี</b>: ไม่รัดสายนาน/ไม่กำมือ ใส่หลอดบนน้ำแข็ง ส่งตรวจภายใน ~30 นาที</td></tr>
+    <tr><td>ACG 2026 <span class="tag up">2026</span></td><td>ไม่ใช้แอมโมเนียตัดสินใจรักษาผู้ป่วยใน <span class="rec">Conditional · very low</span> · ใช้แอมโมเนียอย่างเดียววินิจฉัย covert HE ไม่ได้ · ค่าปกติให้คิดถึงโรคอื่น</td></tr>
+    <tr><td>แนวทางไทย 2568 <span class="tag th">ไทย</span></td><td><span class="rec no">ไม่แนะนำ</span> วินิจฉัย HE ด้วยแอมโมเนีย · ค่าปกติช่วยคัดออกได้บ้าง (NPV ~49%) · <b>ไม่ต้องตรวจติดตามระหว่างรักษา</b></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>สรุปใช้จริง</h4><ul>
+      <li><b>ไม่จำเป็นต้องส่ง</b> ในคนที่ภาพชัด (ตับแข็ง + ตัวกระตุ้น + asterixis)</li>
+      <li><b>มีประโยชน์</b>เมื่อ<b>ไม่แน่ใจ</b>ว่าซึมจาก HE หรือไม่ — ค่าปกติ (เก็บถูกวิธี) ช่วยผลักไปหาโรคอื่น</li>
+      <li><b>ไม่ต้องเจาะซ้ำ</b>เพื่อดูว่าดีขึ้น — ดูจากอาการ</li>
+      <li>ตับวายเฉียบพลัน (type A) ต่างกัน: แอมโมเนียสูงมากสัมพันธ์กับสมองบวม (ดูหน้า <a href="../liver-failure/index.html">ALF</a>)</li></ul></div>
+    <div class="card c-acc"><h4>ตรวจ covert HE ในผู้ป่วยนอก</h4><ul>
+      <li><b>Animal naming test</b>: บอกชื่อสัตว์ใน 60 วินาที · &lt;15 ตัวผิดปกติ (แนวทางไทยระบุเกณฑ์ &lt;15 หรือ &lt;22 ตามแบบทดสอบ) — ทำได้ทุก OPD <span class="tag th">ไทย</span></li>
+      <li>ยืนยันด้วย psychometric test (PHES, Stroop/EncephalApp — แอปนี้ในคนไทยยังแม่นไม่พอ)</li>
+      <li>ACG 2026: ใช้การทดสอบ 1 อย่างพอ (ไม่ต้อง 2) · covert HE แนะนำ lactulose มากกว่าไม่รักษา <span class="rec">Conditional · low</span></li>
+      <li>คุยเรื่อง<b>การขับรถ</b>และการหกล้ม</li></ul></div>
+  </div>
+</section>
+
+<section id="herx" class="col">
+  <div class="sec-num">04</div>
+  <h2>รักษา overt HE</h2>
+  <div class="timeline">
+    <div><b>1. ทางเดินหายใจและที่อยู่</b> — ระดับ 3–4 หรือ GCS ≤8/สำลัก → ICU · <b>ใส่ท่อช่วยหายใจเพื่อป้องกันสำลัก</b> · ศีรษะสูง 30° · ใส่ NG tube สำหรับให้ยา · ระวังตกเตียง</div>
+    <div><b>2. DTX + thiamine</b> — แก้น้ำตาลต่ำ · ผู้ดื่มสุรา/ขาดอาหาร thiamine IV</div>
+    <div><b>3. หาและแก้ตัวกระตุ้นทุกข้อ</b> (หัวข้อ 02) — เจาะท้อง, culture, หยุดยาง่วง/ยาขับปัสสาวะ, ให้สารน้ำ, แก้ K/Na</div>
+    <div><b>4. Lactulose</b> (หรือ PEG) → ถ่ายนิ่ม 2–3 ครั้ง/วัน</div>
+    <div><b>5. ไม่ดีขึ้นใน 24–48 ชม.</b> → ทบทวนวินิจฉัย/ตัวกระตุ้นที่หลุด · เพิ่ม rifaximin</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ผู้ใหญ่)</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>Lactulose</b> (10 g/15 mL) <span class="rec s1">ACG: Strong</span> <span class="rec s1">ไทย: แนะนำอย่างยิ่ง</span></td><td><b>ระยะเฉียบพลัน</b>: 25 mL กิน/NG ทุก 1–2 ชม. จนถ่ายนิ่ม ≥2 ครั้ง (AASLD/EASL 2014) — แนวทางไทย 15–45 mL ทุก 2–6 ชม. · <b>จากนั้นปรับ</b>ให้ถ่ายนิ่ม <b>2–3 ครั้ง/วัน</b> (มักราว 15–30 mL วันละ 2–3 ครั้ง)</td><td>ไม่มีขนาดตายตัว — <b>ปรับตามอุจจาระ</b> · มากเกิน → ท้องเสีย ขาดน้ำ Na สูง K ต่ำ AKI → HE แย่ลง · ไม่ต้องรอผลอื่นก่อนเริ่ม</td></tr>
+    <tr><td><b>Lactulose สวนทวาร</b></td><td>AASLD/EASL 2014: ใช้ได้เมื่อให้ทางปาก/NG ไม่ได้ (สูตรที่ใช้กันทั่วไป: lactulose 300 mL + น้ำ 700 mL สวนเก็บไว้ <span class="tag add">เสริม</span>)</td><td><b>แนวทางไทยไม่แนะนำ</b> <span class="tag th">ไทย</span> → หน้านี้: ใส่ NG ก่อนเสมอ ใช้สวนเฉพาะเมื่อให้ทางทางเดินอาหารส่วนบนไม่ได้จริง</td></tr>
+    <tr><td><b>PEG 3350-electrolyte</b> <span class="rec">ACG: Conditional · low</span></td><td><b>4 ลิตร ใน 4 ชม.</b> (กิน/NG) ครั้งเดียว (HELP trial)</td><td>HE ดีขึ้นเร็วกว่า lactulose (ภายใน 24 ชม. 91% vs 52%) · ใช้แทนเมื่อทน lactulose ไม่ได้/ไม่ตอบสนอง · ระดับ 3–4 ต้องป้องกันทางเดินหายใจก่อนให้ทาง NG (สำลัก) · ใช้ผง PEG-electrolyte ชนิดเตรียมลำไส้ <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Rifaximin</b> <span class="rec">ACG: Conditional (acute)</span></td><td><b>550 mg กิน วันละ 2 ครั้ง</b> (หรือ 400 mg วันละ 3 ครั้ง) <b>ร่วมกับ</b> lactulose</td><td>เพิ่มในระยะเฉียบพลันได้เมื่อไม่ดีขึ้น · ไม่ใช้เดี่ยวเป็นยาแรก · ไม่ต้องปรับตามไต · ในไทยราคาสูง ไม่มีทุก รพ. — ตรวจสอบกับเภสัชกร <span class="tag th">ไทย</span></td></tr>
+    <tr><td>อื่นๆ</td><td>IV albumin, LOLA, BCAA, zinc (เมื่อขาด)</td><td>แนวทางไทย: albumin เสริมได้เมื่อการรักษามาตรฐานไม่ได้ผล · LOLA ไม่ดีกว่ามาตรฐาน · neomycin/metronidazole เป็นทางเลือกเก่า ผลข้างเคียงมาก (ไต หู เส้นประสาท) — ไม่ใช้ระยะยาว</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>เลี่ยงยาเหล่านี้</h4><ul>
+      <li><b>Benzodiazepine</b> (ยกเว้นรักษา alcohol withdrawal จริง — เลือก lorazepam ขนาดต่ำ ให้ตามอาการ)</li>
+      <li>Opioid, gabapentinoid, antihistamine ง่วง, ยานอนหลับ</li>
+      <li>กระสับกระส่ายมาก: แก้สาเหตุก่อน · ถ้าจำเป็นใช้ยาขนาดต่ำที่ออกฤทธิ์สั้น และเฝ้าการหายใจ <span class="tag add">เสริม</span></li>
+      <li>ใส่ท่อแล้ว: propofol/dexmedetomidine ดีกว่า benzodiazepine <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-warn"><h4>ไม่ทำแล้ว</h4><ul>
+      <li><b>ไม่จำกัดโปรตีน</b> (หัวข้อ 05) — แม้ระหว่างมี HE</li>
+      <li>ไม่ตรวจแอมโมเนียซ้ำเพื่อติดตาม</li>
+      <li>ไม่ให้ flumazenil เป็น routine (ช่วยเฉพาะได้ benzodiazepine มา)</li>
+      <li>ไม่หยุด lactulose เมื่อดีขึ้นแล้วกลับบ้าน — ต่อเป็น secondary prophylaxis</li></ul></div>
+  </div>
+</section>
+
+<section id="nutri" class="col">
+  <div class="sec-num">05</div>
+  <h2>โภชนาการใน HE</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>เป้าหมาย</h4><ul>
+      <li>พลังงาน <b>~35 kcal/kg/วัน</b> (AASLD/EASL 2014: 35–40) · โปรตีน <b>1.2–1.5 g/kg/วัน</b> (แนวทางไทย, ESPEN 2019, ACG 2026 <span class="rec s1">Strong · moderate</span>)</li>
+      <li><b>ห้ามจำกัดโปรตีน</b> — ทำให้กล้ามเนื้อลีบ (กล้ามเนื้อช่วยกำจัดแอมโมเนีย) และ HE แย่ลง</li>
+      <li><b>กินบ่อย ทุก 3–4 ชม.</b> + <b>มื้อดึก (late evening snack)</b> ที่มีคาร์โบไฮเดรต — ลดการสลายกล้ามเนื้อช่วงอดอาหารกลางคืน</li>
+      <li>อ้วน: BMI 30–40 ให้ 25–35 kcal/kg (IBW) · BMI &gt;40 ให้ 20–25 kcal/kg (แนวทางไทย)</li></ul></div>
+    <div class="card c-acc"><h4>ถ้ากินโปรตีนไม่ได้ตามเป้า</h4><ul>
+      <li>เลือก<b>โปรตีนจากพืชและนม</b>มากขึ้น (ทนได้ดีกว่าเนื้อแดงในบางราย)</li>
+      <li><b>BCAA ทางปาก</b> เมื่ออาหารอย่างเดียวไม่ถึงเป้า (ACG 2026 <span class="rec s1">Strong · moderate</span>) — ลดอาการ overt HE แต่ไม่ลดการตาย (แนวทางไทย)</li>
+      <li>Zinc เสริมเมื่อมี HE และระดับต่ำ · วิตามินดี</li>
+      <li>ออกกำลังกายตามสภาพ ลดหกล้ม</li>
+      <li>Na &lt;5 g เกลือ/วัน เมื่อมีท้องมาน · ไม่จำกัดเข้มเกินจนกินไม่ได้</li></ul></div>
+  </div>
+</section>
+
+<section id="prevent" class="col">
+  <div class="sec-num">06</div>
+  <h2>ป้องกัน HE · HE หลัง TIPS</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>คำแนะนำ</th></tr>
+    <tr><td><b>หลัง overt HE ครั้งแรก</b> (secondary prophylaxis)</td><td><b>Lactulose ต่อเนื่อง</b> ปรับให้ถ่ายนิ่ม 2–3 ครั้ง/วัน (เกิดซ้ำ 20% vs 47%) <span class="rec s1">ACG: Strong · high</span> · ใช้ Bristol stool scale ช่วยสอนผู้ป่วย · สอนญาติให้สังเกตอาการเริ่มต้น (นอนสลับวันคืน พูดช้า)</td></tr>
+    <tr><td><b>เกิดซ้ำทั้งที่กิน lactulose</b></td><td><b>เพิ่ม rifaximin 550 mg วันละ 2 ครั้ง</b> (HE ซ้ำใน 6 เดือน 22% vs 46%; ~91% ได้ lactulose ร่วม) <span class="rec s1">ACG: Strong · high</span> · แนวทางไทย: เมื่อเกิด HE ที่ไม่มีตัวกระตุ้น ≥2 ครั้งใน 6 เดือน · AASLD/EASL 2014: หลังครั้งที่สอง</td></tr>
+    <tr><td><b>ป้องกันครั้งแรก</b> (primary)</td><td>ไม่ให้ยาเป็น routine · ยกเว้น <b>เลือดออกทางเดินอาหาร</b>: lactulose ทางปาก/NG ลด overt HE (7% vs 28%) <span class="tag th">ไทย</span> · rifaximin ป้องกันครั้งแรกหลักฐานยังไม่พอ</td></tr>
+    <tr><td><b>Covert HE</b></td><td>รักษาเหมือน HE ด้วย lactulose (หรือ rifaximin) เพื่อคุณภาพชีวิตและลดการเกิด overt HE</td></tr>
+    <tr><td><b>หยุดยาป้องกันได้เมื่อ</b></td><td>ตับและโภชนาการดีขึ้นชัด (เช่น หยุดสุราได้นาน ไวรัสถูกกด) หรือ HE เกิดจากตัวกระตุ้นที่แก้ได้และไม่น่าเกิดซ้ำ — พิจารณาเป็นรายๆ</td></tr>
+    <tr><td><b>HE ดื้อ/เกิดซ้ำบ่อย</b></td><td>หา spontaneous portosystemic shunt ใหญ่ (CT) → embolization ในรายที่ตับยังพอ (ACG 2026) · <b>ส่งประเมินปลูกถ่ายตับ</b></td></tr>
+  </table></div>
+  <div class="box warn"><b>TIPS และ HE</b>หลัง TIPS เกิด overt HE ได้ ~1/3–1/2 (ส่วนใหญ่ใน 1–3 เดือนแรก) · ปัจจัยเสี่ยง: เคยมี HE, อายุมาก, Child-Pugh/MELD สูง, Na ต่ำ, sarcopenia · <b>เคยมี HE เกิดซ้ำ/ต่อเนื่องที่ยังคุมไม่ได้ = ข้อห้ามของ TIPS แบบ elective</b> · ป้องกัน: <b>rifaximin เริ่ม 14 วันก่อน TIPS และให้ต่อ ≥6 เดือน</b> (RCT Bureau 2021: 34% vs 53%; ACG 2026 <span class="rec s1">Strong · moderate</span> <span class="tag up">2026</span>) · ใช้ stent ขนาดเล็ก (เช่น 8 mm) · HE ดื้อหลัง TIPS → ส่งกลับทีม IR พิจารณาลดขนาด/ปิด shunt</div>
+</section>
+
+<section id="tap" class="col">
+  <div class="sec-num">07</div>
+  <h2>SBP: ใครต้องเจาะท้อง และแปลผลน้ำ</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>เจาะท้องวินิจฉัย (diagnostic paracentesis) เมื่อ</h4><ul>
+      <li><b>ทุกครั้งที่นอน รพ.</b> ในผู้ป่วยตับแข็งที่มีท้องมาน — แม้ไม่มีอาการติดเชื้อ</li>
+      <li><b>เลือดออกทางเดินอาหาร</b></li>
+      <li><b>อาการแย่ลง</b>: ไข้ ปวด/กดเจ็บท้อง <b>HE</b> <b>AKI</b> ตัวเหลืองมากขึ้น ความดันต่ำ WBC สูง ท้องเสีย</li>
+      <li>ท้องมานเกิดใหม่</li>
+      <li><b>เจาะก่อนให้ยาฆ่าเชื้อ</b> (ไม่เลื่อนยาเกิน ~ไม่กี่ชั่วโมงเพื่อรอเจาะ) — ไม่ต้องให้ FFP/เกล็ดเลือดเป็น routine (AASLD 2021) · ข้อห้าม: DIC ชัด/hyperfibrinolysis</li></ul></div>
+    <div class="card c-acc"><h4>ส่งตรวจอะไร</h4><ul>
+      <li><b>Cell count + differential</b> → PMN = WBC × %neutrophil</li>
+      <li><b>เพาะเชื้อในขวด hemoculture ข้างเตียง</b> (ขวด aerobic + anaerobic ขวดละ ~10 mL) — เพิ่มโอกาสพบเชื้อมาก</li>
+      <li><b>Total protein, albumin</b> (SAAG = serum alb − ascitic alb; ≥1.1 = portal hypertension) · Gram stain</li>
+      <li>สงสัย secondary: <b>glucose, LDH</b> (+ CEA, ALP <span class="tag add">เสริม</span>)</li>
+      <li>Blood culture 2 ชุด · UA · CXR</li>
+      <li>น้ำปนเลือด: <b>หัก PMN 1 ตัว ต่อ RBC 250 ตัว</b></li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ภาวะ</th><th>PMN (/mm³)</th><th>เพาะเชื้อ</th><th>ทำอย่างไร</th></tr>
+    <tr><td><b>SBP</b> (culture-positive)</td><td>≥250</td><td>1 ชนิด</td><td>ยาฆ่าเชื้อ + albumin ทันที</td></tr>
+    <tr><td><b>Culture-negative neutrocytic ascites (CNNA)</b></td><td>≥250</td><td>ไม่ขึ้น</td><td><b>รักษาเหมือน SBP</b> (เพาะไม่ขึ้นจากเทคนิค/เชื้อน้อย/ได้ยามาก่อน) · ตัดสาเหตุอื่นของ PMN สูง: pancreatitis, TB, peritoneal carcinomatosis, เลือดในน้ำ</td></tr>
+    <tr><td><b>Monomicrobial bacterascites</b></td><td>&lt;250</td><td>1 ชนิด</td><td><b>มีอาการติดเชื้อ → รักษาเหมือน SBP</b> · ไม่มีอาการ → <b>เจาะซ้ำ</b> (หายเองได้หลายราย; PMN ขึ้น ≥250 หรือยังขึ้นเชื้อ → รักษา)</td></tr>
+    <tr><td><b>Polymicrobial bacterascites</b></td><td>&lt;250</td><td>หลายชนิด</td><td>มักเข็มเจาะโดนลำไส้ · ส่วนใหญ่ไม่ต้องรักษา เจาะซ้ำ/ติดตามอาการ</td></tr>
+    <tr><td><b>Secondary bacterial peritonitis</b></td><td>≥250 (มักสูงมาก หลักพัน)</td><td><b>หลายชนิด</b></td><td>หาอวัยวะทะลุ/ฝี: <b>CT ช่องท้องด่วน + ปรึกษาศัลยกรรม</b> · ยาครอบคลุม anaerobe</td></tr>
+  </table></div>
+  <div class="box key"><b>Runyon criteria — คิดถึง secondary peritonitis</b>PMN ≥250 ร่วมกับ <b>≥2 ใน 3</b>: <b>total protein &gt;1 g/dL</b> · <b>glucose &lt;50 mg/dL</b> · <b>LDH &gt; ค่าสูงสุดปกติของ LDH ในเลือด</b> · เบาะแสอื่น: Gram stain/เพาะเชื้อหลายชนิด, PMN ไม่ลดหรือเพิ่มหลังยา 48 ชม., CEA &gt;5 ng/mL หรือ ALP &gt;240 U/L ในน้ำ (บ่งลำไส้ทะลุ) <span class="tag add">เสริม</span> · มีลมใต้กะบังลม/อาการเฉพาะที่</div>
+</section>
+
+<section id="sbprx" class="col">
+  <div class="sec-num">08</div>
+  <h2>รักษา SBP: ยาฆ่าเชื้อ · albumin · เจาะซ้ำ</h2>
+  <p>เริ่มยา IV <b>ทันที</b>เมื่อ PMN ≥250 หรือสงสัยติดเชื้อน้ำในท้องอย่างมาก ไม่ต้องรอผลเพาะเชื้อ (แนวทางไทย <span class="rec">A · มีเงื่อนไข</span>) · เชื้อพบบ่อย: <i>E. coli</i>, <i>Klebsiella</i>, streptococci · ไทยมีเชื้อดื้อ 3rd-gen cephalosporin และ quinolone สูง <span class="tag th">ไทย</span></p>
+  <div class="tbl"><table>
+    <tr><th>แหล่งติดเชื้อ</th><th>ยาเริ่มต้น (ผู้ใหญ่)</th><th>ปรับไต</th></tr>
+    <tr><td><b>Community-acquired</b> ไม่มีความเสี่ยงเชื้อดื้อ ไม่ช็อก</td><td><b>Ceftriaxone 2 g IV วันละครั้ง</b> หรือ cefotaxime 2 g IV ทุก 8 ชม. (แนวทางไทย 4–6 g/วัน) · อย่างน้อย <b>5–7 วัน</b></td><td>Ceftriaxone ไม่ต้องปรับ · cefotaxime CrCl &lt;20 ลดครึ่ง</td></tr>
+    <tr><td><b>Healthcare-associated</b> (สัมผัส รพ. ใน 90 วัน, เคยได้ยาฆ่าเชื้อกว้าง, เคยมีเชื้อดื้อ, <b>กิน quinolone ป้องกันอยู่</b>) หรือ <b>nosocomial</b> (เกิด ≥48 ชม.หลังนอน รพ.)</td><td><b>Piperacillin/tazobactam 4.5 g IV ทุก 6 ชม.</b> หรือ <b>meropenem 1 g IV ทุก 8 ชม.</b> (เมื่อเสี่ยง ESBL สูง/ช็อก) · ± ยาครอบคลุม gram-positive ดื้อยา (vancomycin; daptomycin/linezolid ถ้าเคยมี VRE) ตามข้อมูลเชื้อของ รพ.</td><td>Pip/tazo: CrCl 20–40 → 3.375 g ทุก 6 ชม.; &lt;20 → 2.25 g ทุก 6 ชม. · Meropenem: CrCl 26–50 → 1 g ทุก 12 ชม.; 10–25 → 500 mg ทุก 12 ชม.; &lt;10 → 500 mg ทุก 24 ชม.</td></tr>
+    <tr><td><b>Sepsis/septic shock</b></td><td>ครอบคลุมเชื้อดื้อตั้งแต่แรก (แนวทางไทย 4.4) · ดูหน้า <a href="../sepsis/index.html">Sepsis</a> และ <a href="../mdr-gnb/index.html">MDR-GNB</a></td><td>ให้ loading dose เต็มเสมอ</td></tr>
+    <tr><td>แพ้ beta-lactam</td><td>Ciprofloxacin IV 400 mg ทุก 12 ชม. — <b>ไม่ใช้ในผู้ที่กิน quinolone ป้องกันอยู่</b></td><td>CrCl &lt;30 → ทุก 18–24 ชม.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">De-escalate ตามผลเพาะเชื้อ · เพิ่ม metronidazole/ยาครอบคลุม anaerobe เมื่อสงสัย secondary peritonitis · ข้อมูลเชื้อดื้อยาท้องถิ่น (antibiogram ของ รพ.) สำคัญกว่าตารางนี้ <span class="tag th">ไทย</span></p>
+
+  <h3 style="margin-top:18px">IV albumin ใน SBP — ลด HRS-AKI และการตาย</h3>
+  <div class="box key"><b>ขนาด (Sort, NEJM 1999)</b><b>วันที่ 1: 1.5 g/kg ภายใน 6 ชม.</b>หลังวินิจฉัย · <b>วันที่ 3: 1 g/kg</b> · ใช้น้ำหนักจริง · albumin 20% 50 mL = 10 g · ในการศึกษาต้นแบบ ไตวาย 10% vs 33% และตายใน รพ. 10% vs 29%</div>
+  <div class="tbl"><table>
+    <tr><th>แนวทาง</th><th>ให้ใคร</th></tr>
+    <tr><td>แนวทางไทย 2568 <span class="tag th">ไทย</span> <span class="rec">A · มีเงื่อนไข</span></td><td>เฉพาะกลุ่มเสี่ยง HRS อย่างน้อย 1 ข้อ: <b>bilirubin &gt;4 mg/dL</b> หรือ <b>Cr &gt;1 mg/dL</b> หรือ <b>BUN &gt;30 mg/dL</b></td></tr>
+    <tr><td>EASL 2018</td><td>SBP ทุกราย</td></tr>
+    <tr><td>AASLD 2021</td><td>ให้ใน SBP โดยเฉพาะผู้ที่มี AKI หรือตัวเหลือง</td></tr>
+  </table></div>
+  <div class="box note"><b>หน้านี้ยึดตามแนวทางไทย</b>ให้แน่นอนเมื่อเข้าเกณฑ์ (bili &gt;4, Cr &gt;1, BUN &gt;30) · รายเสี่ยงต่ำ (ไม่เข้าเกณฑ์) ประโยชน์ยังไม่ชัด ให้ได้ตาม EASL หากไม่มีข้อห้าม · <b>ระวังน้ำเกิน/น้ำท่วมปอด</b> (โรคหัวใจ ไตวาย) ฟังปอด SpO₂ ระหว่างให้ · albumin <b>ไม่มีประโยชน์ในการติดเชื้ออื่นที่ไม่ใช่ SBP</b> และเพิ่มน้ำท่วมปอด (แนวทางไทย 4.5)</div>
+
+  <div class="grid2">
+    <div class="card c-warn"><h4>เจาะซ้ำที่ 48 ชม.</h4><ul>
+      <li>ทำเมื่อ<b>อาการไม่ดีขึ้น</b> เชื้อไม่ทราบ/เพาะไม่ขึ้น หรือเชื้อผิดปกติ (แนวทางไทย, EASL) · ไม่จำเป็นถ้าเชื้อไวต่อยาและอาการดีขึ้นชัด</li>
+      <li><b>PMN ลดลง &lt;25%</b> จากเดิม = รักษาล้มเหลว → ขยายยา + หา secondary peritonitis (CT)</li></ul></div>
+    <div class="card c-red"><h4>ระหว่างรักษา: ป้องกัน HRS-AKI</h4><ul>
+      <li>SBP ทำให้เกิด AKI ~1/3 · <b>หยุดยาขับปัสสาวะ, NSAIDs, ยาพิษต่อไต</b></li>
+      <li><b>NSBB</b> (propranolol/carvedilol): ลดหรือหยุดเมื่อ SBP &lt;90 mmHg, Na &lt;130 หรือ AKI (Baveno VII)</li>
+      <li>หลีกเลี่ยงการเจาะระบายน้ำปริมาณมาก (LVP) ช่วงติดเชื้อเฉียบพลัน ถ้าไม่จำเป็น <span class="tag add">เสริม</span></li>
+      <li>เกิด AKI → ประเมินตาม ICA: หยุดยา + albumin 1 g/kg/วัน × 2 วัน · ไม่ดีขึ้น/เข้าเกณฑ์ HRS-AKI → terlipressin/norepinephrine + albumin (หน้า <a href="../aki/index.html">AKI</a>, <a href="../cirrhosis/index.html">ตับแข็ง บทที่ 5</a>)</li></ul></div>
+  </div>
+</section>
+
+<section id="proph" class="col">
+  <div class="sec-num">09</div>
+  <h2>ป้องกัน SBP: ใครควรได้ยา</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ยา (ผู้ใหญ่)</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>ตับแข็ง + เลือดออกทางเดินอาหารส่วนบน</b> (มีหรือไม่มีท้องมาน)</td><td><b>Ceftriaxone 1 g IV วันละครั้ง ไม่เกิน 7 วัน</b> (แนวทางไทย 5–7 วัน)</td><td>Baveno VII: เป็นส่วนหนึ่งของการรักษา · ลดติดเชื้อ เลือดออกซ้ำ และการตาย · หยุดได้เมื่อเลือดหยุดและหยุด vasoactive แล้ว · หน้า <a href="../ugib/index.html">UGIB</a></td></tr>
+    <tr><td><b>เคยเป็น SBP</b> (secondary)</td><td><b>Norfloxacin 400 mg กิน วันละครั้ง</b> หรือ <b>ciprofloxacin 500 mg กิน วันละครั้ง</b> หรือ <b>TMP-SMX (800/160 mg) 1 เม็ด วันละครั้ง</b></td><td>ระยะยาวจนกว่าท้องมานหาย/ปลูกถ่ายตับ · SBP ซ้ำใน 1 ปีลดจาก ~68% เหลือ ~20% (norfloxacin; Ginés 1990) · ทุกรายควรส่งประเมินปลูกถ่ายตับ</td></tr>
+    <tr><td><b>ไม่เคยเป็น SBP</b> (primary) — <b>ascitic protein &lt;1.5 g/dL</b> ร่วมกับ</td><td colspan="2"><b>ไตไม่ดี</b>: Cr ≥1.2 mg/dL หรือ BUN ≥25 mg/dL หรือ Na ≤130 mmol/L · <b>หรือ ตับแย่มาก</b>: Child-Pugh ≥9 และ bilirubin ≥3 mg/dL (เกณฑ์ RCT Fernández 2007: SBP ใน 1 ปี 7% vs 61%, รอด 3 เดือนดีขึ้น) · แนวทางไทยใช้เกณฑ์เดียวกันแต่เขียนเป็น &gt;1.2, &gt;25, &lt;130, &gt;9, &gt;3 และให้ "พิจารณาในรายที่เหมาะสม" (เช่น ผู้รอปลูกถ่ายตับ) <span class="tag th">ไทย</span></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ข้อเสียของยาป้องกันระยะยาว</h4><ul>
+      <li>เชื้อดื้อ quinolone/gram-positive · <i>C. difficile</i> · เอ็นอักเสบ/ฉีก QT ยาว (quinolone) · K สูง ผื่น เม็ดเลือดต่ำ (TMP-SMX)</li>
+      <li>ไทยมีเชื้อดื้อ quinolone สูง → <b>เลือกใช้เฉพาะรายที่ได้ประโยชน์ชัด</b> <span class="tag th">ไทย</span></li>
+      <li>ผู้ที่กินยาป้องกันแล้วเกิด SBP → ถือว่าเสี่ยงเชื้อดื้อ อย่ารักษาด้วย quinolone</li>
+      <li>TMP-SMX: CrCl 15–30 ลดครึ่ง · &lt;15 เลี่ยง · quinolone ขนาดวันละครั้งนี้ใช้ได้เมื่อ CrCl ≥30 (ต่ำกว่านั้นปรึกษาเภสัชกร)</li></ul></div>
+    <div class="card c-acc"><h4>PPI: ใช้เท่าที่จำเป็น</h4><ul>
+      <li>PPI เพิ่มความเสี่ยง SBP/การติดเชื้อ และ HE ในตับแข็ง (แนวทางไทย 4.6 <span class="rec">B · มีเงื่อนไข</span>; ACG 2026)</li>
+      <li>หลังรัดหลอดเลือดขอด: PPI ระยะสั้นพอ (ไม่ต้องให้ยาวโดยไม่มีข้อบ่งชี้)</li>
+      <li>ทบทวนทุกครั้งที่จำหน่าย: หยุด PPI ที่ไม่มีข้อบ่งชี้ <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง: ตับแข็ง นอน รพ. ซึม/ท้องมาน</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ตับแข็ง นอน รพ. (ซึม ท้องมาน ไข้ AKI หรือเลือดออก)</b>ABC · DTX · ท้องมาน → เจาะท้องทุกราย · culture · CXR · UA</div>
+      <div class="vline arrow"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ซึม/สับสน (HE)</span>
+          <div class="node red"><b>ระดับ 3–4 / GCS ≤8</b>ICU · ป้องกันทางเดินหายใจ · NG</div><div class="vline"></div>
+          <div class="node q"><b>ตัด hypoglycemia, Wernicke, ICH, ยา</b>CT ถ้า focal/บาดเจ็บ/หาตัวกระตุ้นไม่เจอ</div><div class="vline"></div>
+          <div class="node dx hypo"><b>แก้ตัวกระตุ้นทุกข้อ + lactulose</b>ถ่ายนิ่ม 2–3 ครั้ง/วัน · ทางเลือก PEG 4 L</div><div class="vline"></div>
+          <div class="node dx green"><b>ดีขึ้น → secondary prophylaxis</b>lactulose ต่อ · เกิดซ้ำ → + rifaximin · โปรตีน 1.2–1.5 g/kg</div></div>
+        <div class="arm"><span class="lab">ท้องมาน (SBP)</span>
+          <div class="node q"><b>PMN ≥250?</b>+ เพาะเชื้อในขวด hemoculture</div><div class="vline"></div>
+          <div class="node red"><b>≥250: Runyon ≥2 / หลายเชื้อ?</b>ใช่ → secondary peritonitis: CT + ศัลยกรรม</div><div class="vline"></div>
+          <div class="node dx hypo"><b>SBP/CNNA</b>ceftriaxone 2 g/วัน (HCA/nosocomial/ช็อก → pip/tazo หรือ meropenem) + albumin 1.5 → 1 g/kg (bili &gt;4, Cr &gt;1, BUN &gt;30)</div><div class="vline"></div>
+          <div class="node dx eu"><b>48 ชม.: PMN ลด &lt;25%?</b>→ ขยายยา หา secondary · หายแล้ว → norfloxacin/cipro/TMP-SMX ระยะยาว</div></div>
+      </div>
+      <div class="vline arrow" style="margin-top:12px"></div>
+      <div class="node dx eu"><b>ทุกราย</b>หยุดยาง่วง/NSAIDs/PPI ที่ไม่จำเป็น · ระวัง AKI (หยุด diuretic) · ส่งประเมินปลูกถ่ายตับ</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดโปรโตคอลและ antibiogram ของ รพ. · ขนาดยาสำหรับผู้ใหญ่</p>
+  </div>
+
+  <div class="tool plan" id="tHe" style="margin-top:12px">
+    <h3>HE: ระดับ West Haven และสิ่งที่ต้องทำ</h3>
+    <div class="fields">
+      <label class="f">ระดับ West Haven<select id="hGr"><option value="">— เลือก —</option><option value="m">Minimal (ข้างเตียงปกติ แบบทดสอบผิด)</option><option value="1">1: รู้เวลา แต่สมาธิสั้น/นอนสลับ</option><option value="2" selected>2: สับสนวันเวลา/asterixis</option><option value="3">3: ง่วงซึม ปลุกตื่น สับสนสถานที่</option><option value="4">4: โคม่า</option></select></label>
+      <label class="f">GCS (ถ้ามี)<input type="number" id="hGcs" step="1"></label>
+      <label class="f">DTX/glucose (mg/dL)<input type="number" id="hGlu" value="110"></label>
+      <label class="f">overt HE ใน 6 เดือนก่อนหน้า<select id="hEp"><option value="0">ไม่เคย (ครั้งแรก)</option><option value="1">เคย 1 ครั้ง</option><option value="2">เคย ≥2 ครั้ง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="hOnL"> กิน lactulose สม่ำเสมออยู่แล้ว</label>
+      <label><input type="checkbox" id="hInf"> ไข้/สงสัยติดเชื้อ/มีท้องมาน</label>
+      <label><input type="checkbox" id="hGib"> ถ่ายดำ/อาเจียนเป็นเลือด</label>
+      <label><input type="checkbox" id="hCon"> ท้องผูก/ไม่ได้ถ่าย ≥2 วัน</label>
+      <label><input type="checkbox" id="hDeh"> ขาดน้ำ/ยาขับปัสสาวะเกิน/AKI</label>
+      <label><input type="checkbox" id="hK"> K ต่ำ/alkalosis</label>
+      <label><input type="checkbox" id="hNa"> Na &lt;130</label>
+      <label><input type="checkbox" id="hSed"> ได้ยาง่วง (benzodiazepine, opioid, gabapentin)</label>
+      <label><input type="checkbox" id="hEtoh"> ดื่มสุรา/ขาดอาหาร</label>
+      <label><input type="checkbox" id="hFoc"> Focal deficit/ชัก/ล้มหัวกระแทก</label>
+      <label><input type="checkbox" id="hTips"> มี TIPS/shunt</label>
+    </div>
+    <div class="out" id="heOut"></div>
+  </div>
+
+  <div class="tool" id="tAf" style="margin-top:12px">
+    <h3>แปลผลน้ำในช่องท้อง (SBP · CNNA · bacterascites · secondary)</h3>
+    <div class="fields">
+      <label class="f">WBC น้ำ (cells/mm³)<input type="number" id="aWbc" value="800"></label>
+      <label class="f">Neutrophil (%)<input type="number" id="aPct" value="70"></label>
+      <label class="f">RBC น้ำ (cells/mm³, ถ้ามี)<input type="number" id="aRbc"></label>
+      <label class="f">ผลเพาะเชื้อ<select id="aCx"><option value="p">ยังไม่ทราบ/รอผล</option><option value="n">ไม่ขึ้นเชื้อ</option><option value="1">ขึ้น 1 ชนิด</option><option value="poly">ขึ้นหลายชนิด</option></select></label>
+      <label class="f">Total protein น้ำ (g/dL)<input type="number" step="0.1" id="aTp" value="0.9"></label>
+      <label class="f">Glucose น้ำ (mg/dL)<input type="number" id="aGlu"></label>
+      <label class="f">LDH น้ำ (U/L)<input type="number" id="aLdh"></label>
+      <label class="f">ค่าสูงสุดปกติ LDH เลือด (U/L)<input type="number" id="aUln" value="250"></label>
+      <label class="f">Albumin เลือด (g/dL)<input type="number" step="0.1" id="aSa"></label>
+      <label class="f">Albumin น้ำ (g/dL)<input type="number" step="0.1" id="aAa"></label>
+      <label class="f">PMN ซ้ำที่ 48 ชม. (ถ้ามี)<input type="number" id="a48"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aSym"> มีอาการ/อาการแสดงติดเชื้อ (ไข้ ปวดท้อง HE AKI ช็อก)</label>
+      <label><input type="checkbox" id="aAbx"> ได้ยาฆ่าเชื้อก่อนเจาะ</label>
+    </div>
+    <div class="out" id="afOut"></div>
+  </div>
+
+  <div class="tool" id="tSb" style="margin-top:12px">
+    <h3>SBP: ขนาด albumin และเกณฑ์ยาป้องกัน</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="sWt" value="60"></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="sCr" value="1.3"></label>
+      <label class="f">หน่วย Cr<select id="sCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">BUN/urea<input type="number" step="0.1" id="sBun" value="28"></label>
+      <label class="f">หน่วย<select id="sBunU"><option value="mg">BUN mg/dL</option><option value="mmol">Urea mmol/L</option></select></label>
+      <label class="f">Total bilirubin<input type="number" step="0.1" id="sBil" value="3.5"></label>
+      <label class="f">หน่วย bilirubin<select id="sBilU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">Na (mmol/L)<input type="number" id="sNa" value="132"></label>
+      <label class="f">Ascitic total protein (g/dL)<input type="number" step="0.1" id="sTp" value="1.0"></label>
+      <label class="f">Child-Pugh score (5–15)<input type="number" id="sCtp" value="10"></label>
+      <label class="f">CrCl (mL/min, ถ้ามี)<input type="number" id="sCrcl"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sSbp" checked> เป็น SBP/CNNA ตอนนี้ (PMN ≥250)</label>
+      <label><input type="checkbox" id="sPrev"> เคยเป็น SBP มาก่อน</label>
+      <label><input type="checkbox" id="sGib"> เลือดออกทางเดินอาหารส่วนบนตอนนี้</label>
+      <label><input type="checkbox" id="sPpi"> ใช้ PPI อยู่</label>
+    </div>
+    <div class="out" id="sbOut"></div>
+  </div>
+
+  <div class="tool" id="tLac" style="margin-top:12px">
+    <h3>ปรับขนาด lactulose (10 g/15 mL)</h3>
+    <div class="fields">
+      <label class="f">ระยะ<select id="lPh"><option value="">— เลือก —</option><option value="a" selected>Overt HE เฉียบพลัน (ใน รพ.)</option><option value="m">ป้องกันซ้ำ/ผู้ป่วยนอก</option></select></label>
+      <label class="f">ถ่ายกี่ครั้งใน 24 ชม.<input type="number" id="lBm" value="1"></label>
+      <label class="f">ลักษณะอุจจาระ<select id="lBr"><option value="h">แข็ง/เป็นก้อน (Bristol 1–3)</option><option value="s">นิ่ม (Bristol 4–5)</option><option value="w">เหลวเป็นน้ำ (Bristol 6–7)</option></select></label>
+      <label class="f">ขนาดปัจจุบัน (mL/ครั้ง)<input type="number" id="lDose" value="30"></label>
+      <label class="f">จำนวนครั้ง/วัน<input type="number" id="lFreq" value="2"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="lNg"> กินเองไม่ได้ (ต้อง NG)</label>
+      <label><input type="checkbox" id="lDeh"> ขาดน้ำ/Na สูงขึ้น/Cr สูงขึ้น/K ต่ำ</label>
+      <label><input type="checkbox" id="lIleus"> ท้องอืดมาก ไม่ผายลม สงสัย ileus/อุดตัน</label>
+      <label><input type="checkbox" id="lConf"> ถ่ายได้ตามเป้าแล้วแต่ยังสับสน</label>
+    </div>
+    <div class="out" id="lacOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ตับแข็งซึม → DTX ก่อน</b> แล้วค่อยคิด HE</div></div>
+    <div class="pearl"><div><b>HE ทุกรายที่มีท้องมาน → เจาะท้อง</b> SBP อาจไม่มีไข้</div></div>
+    <div class="pearl"><div><b>หาตัวกระตุ้นให้ครบ</b> มักมีมากกว่า 1 อย่าง</div></div>
+    <div class="pearl"><div><b>แอมโมเนียไม่ต้องส่งซ้ำ</b> ค่าปกติ → คิดโรคอื่น</div></div>
+    <div class="pearl"><div><b>Lactulose เป้า = ถ่ายนิ่ม 2–3 ครั้ง/วัน</b> มากไปก็ทำให้ HE แย่</div></div>
+    <div class="pearl"><div><b>ไม่จำกัดโปรตีน</b> 1.2–1.5 g/kg + มื้อดึก</div></div>
+    <div class="pearl"><div><b>เกิดซ้ำทั้งที่กิน lactulose → + rifaximin</b></div></div>
+    <div class="pearl"><div><b>ผู้ดื่มสุราซึม → thiamine ก่อน/พร้อม glucose</b> น้ำตาลต่ำให้ glucose ทันที ไม่ต้องรอ</div></div>
+    <div class="pearl"><div><b>PMN = WBC × %neutrophil ≥250 → รักษาเลย</b> ไม่รอเพาะเชื้อ</div></div>
+    <div class="pearl"><div><b>เพาะเชื้อในขวด hemoculture ข้างเตียง</b></div></div>
+    <div class="pearl"><div><b>หลายเชื้อ / Runyon ≥2 → secondary peritonitis</b> → CT</div></div>
+    <div class="pearl"><div><b>Albumin 1.5 g/kg (6 ชม.) + 1 g/kg วันที่ 3</b> bili &gt;4, Cr &gt;1, BUN &gt;30</div></div>
+    <div class="pearl"><div><b>ตับแข็ง + UGIB → ceftriaxone 1 g/วัน ≤7 วัน</b></div></div>
+    <div class="pearl"><div><b>หาย SBP แล้ว → ยาป้องกันระยะยาว</b> + ส่งประเมินปลูกถ่ายตับ</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../cirrhosis/index.html">ตับแข็ง (แนวทางไทย 2568) →</a> · <a href="../ugib/index.html">UGIB →</a> · <a href="../aki/index.html">AKI / HRS →</a> · <a href="../liver-failure/index.html">Acute liver failure →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a> · <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal / Wernicke →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../mdr-gnb/index.html">MDR-GNB →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Vilstrup H, Amodio P, Bajaj J, et al. Hepatic encephalopathy in chronic liver disease: 2014 practice guideline by the AASLD and EASL. Hepatology 2014;60:715–35 · 2) European Association for the Study of the Liver. EASL Clinical Practice Guidelines on the management of hepatic encephalopathy. J Hepatol 2022;77:807–24 · 3) Bajaj JS, et al. ACG clinical guideline: hepatic encephalopathy. Am J Gastroenterol 2026;121:588–618 · 4) Biggins SW, Angeli P, Garcia-Tsao G, et al. Diagnosis, evaluation, and management of ascites, spontaneous bacterial peritonitis and hepatorenal syndrome: 2021 practice guidance by the AASLD. Hepatology 2021;74:1014–48 · 5) European Association for the Study of the Liver. EASL Clinical Practice Guidelines for the management of patients with decompensated cirrhosis. J Hepatol 2018;69:406–60 · 6) de Franchis R, Bosch J, Garcia-Tsao G, et al. Baveno VII – renewing consensus in portal hypertension. J Hepatol 2022;76:959–74 · 7) สมาคมโรคตับแห่งประเทศไทย. แนวทางเวชปฏิบัติการดูแลรักษาผู้ป่วยโรคตับแข็งในประเทศไทย พ.ศ. 2568 (e-book มกราคม 2569) · 8) Sort P, Navasa M, Arroyo V, et al. Effect of intravenous albumin on renal impairment and mortality in patients with cirrhosis and spontaneous bacterial peritonitis. N Engl J Med 1999;341:403–9 · 9) Bass NM, Mullen KD, Sanyal A, et al. Rifaximin treatment in hepatic encephalopathy. N Engl J Med 2010;362:1071–81 · 10) Rahimi RS, Singal AG, Cuthbert JA, Rockey DC. Lactulose vs polyethylene glycol 3350–electrolyte solution for treatment of overt hepatic encephalopathy: the HELP randomized clinical trial. JAMA Intern Med 2014;174:1727–33 · 11) Sharma BC, Sharma P, Agrawal A, Sarin SK. Secondary prophylaxis of hepatic encephalopathy: an open-label randomized controlled trial of lactulose versus placebo. Gastroenterology 2009;137:885–91 · 12) Bureau C, Thabut D, Jezequel C, et al. The use of rifaximin in the prevention of overt hepatic encephalopathy after TIPS: a randomized controlled trial. Ann Intern Med 2021;174:633–40 · 13) Fernández J, Navasa M, Planas R, et al. Primary prophylaxis of spontaneous bacterial peritonitis delays hepatorenal syndrome and improves survival in cirrhosis. Gastroenterology 2007;133:818–24 · 14) Ginés P, Rimola A, Planas R, et al. Norfloxacin prevents spontaneous bacterial peritonitis recurrence in cirrhosis: results of a double-blind, placebo-controlled trial. Hepatology 1990;12:716–24 · 15) Fernández J, Ruiz del Arbol L, Gómez C, et al. Norfloxacin vs ceftriaxone in the prophylaxis of infections in patients with advanced cirrhosis and hemorrhage. Gastroenterology 2006;131:1049–56 · 16) Akriviadis EA, Runyon BA. Utility of an algorithm in differentiating spontaneous from secondary bacterial peritonitis. Gastroenterology 1990;98:127–33 · 17) Plauth M, Bernal W, Dasarathy S, et al. ESPEN guideline on clinical nutrition in liver disease. Clin Nutr 2019;38:485–521<br>
+  <span class="tag th">ไทย</span> = บริบท/แนวทางไทย · <span class="tag add">เสริม</span> = นอกเหนือแนวทางหลัก · <span class="tag up">2026</span> = อัปเดตใหม่ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','hsView');
+mountWalker({
+ start:{q:'ผู้ป่วยตับแข็งมาด้วยปัญหาอะไร?',o:[['ซึม/สับสน (สงสัย HE)','he'],['ท้องมาน นอน รพ./ไข้/ปวดท้อง/AKI','asc'],['เลือดออกทางเดินอาหารส่วนบน','gib']]},
+ he:{q:'ระดับ 3–4 หรือ GCS ≤8 / ป้องกันทางเดินหายใจไม่ได้?',o:[['ใช่','air'],['ไม่ (ระดับ 1–2)','dtx']]},
+ air:{leaf:true,cls:'danger',t:'ป้องกันทางเดินหายใจก่อน',b:'ICU · <b>ใส่ท่อช่วยหายใจ</b>ถ้า GCS ≤8/สำลัก · ศีรษะสูง 30° · ใส่ NG ให้ lactulose · หลีกเลี่ยง benzodiazepine (ใส่ท่อแล้วใช้ propofol/dexmedetomidine)',next:['ไปต่อ: ตรวจน้ำตาลและแยกโรค','dtx']},
+ dtx:{q:'DTX ต่ำ (&lt;70 mg/dL) หรือดื่มสุรา/ขาดอาหาร?',o:[['น้ำตาลต่ำ','hypo'],['ดื่มสุรา/ขาดอาหาร (น้ำตาลปกติ)','wern'],['ไม่ใช่ทั้งสอง','foc']]},
+ hypo:{leaf:true,cls:'danger',t:'แก้น้ำตาลต่ำ',b:'Glucose IV ทันที (ผู้ดื่มสุราให้ thiamine ร่วม แต่ไม่เลื่อน glucose) · ตามน้ำตาลถี่ · ยังซึมหลังน้ำตาลปกติ → คิด HE/โรคอื่นต่อ',next:['ไปต่อ: อาการเฉพาะที่?','foc']},
+ wern:{leaf:true,cls:'warn',t:'คิดถึง Wernicke ด้วย',b:'<b>Thiamine IV ก่อน/พร้อม glucose</b> · สงสัย Wernicke: 200–500 mg IV วันละ 3 ครั้ง × 3 วัน · ประเมิน alcohol withdrawal (benzodiazepine เท่าที่จำเป็น เลือก lorazepam)',next:['ไปต่อ: อาการเฉพาะที่?','foc']},
+ foc:{q:'มี focal deficit, ชัก, ล้มหัวกระแทก หรือหาตัวกระตุ้นไม่เจอใน HE ครั้งแรก?',o:[['มี','ct'],['ไม่มี','pre']]},
+ ct:{leaf:true,cls:'danger',t:'CT สมองก่อน',b:'หา ICH/subdural (เกล็ดเลือดต่ำ INR สูง) · ชัก → EEG/ยากันชัก · ระหว่างรอ เริ่ม lactulose และหาตัวกระตุ้นได้',next:['ไปต่อ: หาตัวกระตุ้น','pre']},
+ pre:{q:'หาตัวกระตุ้นครบแล้ว — พบอะไร?',o:[['ติดเชื้อ/ท้องมาน','pInf'],['เลือดออก GI','pGib'],['ยาง่วง/ขาดน้ำ/K ต่ำ/Na ต่ำ/ท้องผูก','pMet'],['ไม่พบ','pNone']]},
+ pInf:{leaf:true,cls:'warn',t:'ติดเชื้อ',b:'<b>เจาะท้อง</b> (PMN, เพาะเชื้อในขวด hemoculture) · blood/urine culture · CXR · เริ่มยาตามแหล่งติดเชื้อ · + lactulose',next:['ไปต่อ: ผลการรักษา','resp']},
+ pGib:{leaf:true,cls:'warn',t:'เลือดออกทางเดินอาหาร',b:'ดูแลตาม UGIB · vasoactive + <b>ceftriaxone 1 g/วัน ≤7 วัน</b> · lactulose ช่วยระบายเลือดออกจากลำไส้ · ส่องกล้อง',next:['ไปต่อ: ผลการรักษา','resp']},
+ pMet:{leaf:true,cls:'warn',t:'ยา/เมแทบอลิก',b:'หยุดยาง่วงและยาขับปัสสาวะ · สารน้ำถ้าขาด · แก้ K · Na แก้ช้า ≤8 mmol/L/24 ชม. · ท้องผูก → lactulose ขนาดเฉียบพลัน (หรือ PEG 4 L)',next:['ไปต่อ: ผลการรักษา','resp']},
+ pNone:{leaf:true,cls:'violet',t:'ไม่พบตัวกระตุ้น',b:'หาซ้ำ (เจาะท้อง culture ทบทวนยา) · พิจารณา CT สมอง · หา shunt ใหญ่/portal vein thrombosis/HCC · เริ่ม lactulose',next:['ไปต่อ: ผลการรักษา','resp']},
+ resp:{q:'Lactulose ให้ถ่ายนิ่ม 2–3 ครั้ง/วัน แล้วดีขึ้นใน 24–48 ชม.?',o:[['ดีขึ้น','ok'],['ไม่ดีขึ้น','nr']]},
+ ok:{q:'เคยเกิด HE ซ้ำทั้งที่กิน lactulose หรือ ≥2 ครั้งใน 6 เดือน?',o:[['ใช่','rif'],['ไม่ใช่ (ครั้งแรก)','sec']]},
+ sec:{leaf:true,cls:'ok',t:'Secondary prophylaxis',b:'<b>Lactulose ต่อเนื่อง</b> ถ่ายนิ่ม 2–3 ครั้ง/วัน · โปรตีน 1.2–1.5 g/kg + มื้อดึก · สอนญาติดูอาการเริ่มต้น · คุยเรื่องขับรถ · ส่งประเมินปลูกถ่ายตับ'},
+ rif:{leaf:true,cls:'ok',t:'Lactulose + rifaximin',b:'<b>Rifaximin 550 mg วันละ 2 ครั้ง</b> ร่วมกับ lactulose · ตรวจการกินยา · หา shunt ใหญ่ (CT) → embolization · ส่งประเมินปลูกถ่ายตับ'},
+ nr:{leaf:true,cls:'danger',t:'ไม่ตอบสนอง',b:'ทบทวนวินิจฉัย (แอมโมเนียปกติ? CT? EEG non-convulsive status?) · ตัวกระตุ้นที่หลุด (SBP, เลือดออก, ยา) · เพิ่ม <b>rifaximin</b> · พิจารณา PEG 4 L · IV albumin เสริมได้ (แนวทางไทย) · ปรึกษาอายุรแพทย์ระบบทางเดินอาหาร'},
+ asc:{q:'ผลเจาะท้อง: PMN (= WBC × %neutrophil)?',o:[['≥250/mm³','pmnH'],['&lt;250/mm³','pmnL']]},
+ pmnH:{q:'เพาะเชื้อ/Gram หลายชนิด หรือ Runyon ≥2 (protein &gt;1 g/dL, glucose &lt;50, LDH &gt; ULN เลือด)?',o:[['ใช่','secP'],['ไม่ใช่','src']]},
+ secP:{leaf:true,cls:'danger',t:'สงสัย secondary peritonitis',b:'<b>CT ช่องท้องด่วน + ปรึกษาศัลยกรรม</b> · ยาครอบคลุม anaerobe (เช่น ceftriaxone + metronidazole หรือ pip/tazo/meropenem ตามความเสี่ยง) · CEA &gt;5/ALP &gt;240 ในน้ำ → ลำไส้ทะลุ'},
+ src:{q:'แหล่งติดเชื้อ/ความรุนแรง?',o:[['ชุมชน ไม่เสี่ยงเชื้อดื้อ ไม่ช็อก','ca'],['HCA/nosocomial/กิน quinolone ป้องกัน/ช็อก','hca']]},
+ ca:{leaf:true,cls:'warn',t:'Community-acquired SBP',b:'<b>Ceftriaxone 2 g IV วันละครั้ง</b> 5–7 วัน · albumin 1.5 g/kg ใน 6 ชม. + 1 g/kg วันที่ 3 ถ้า bili &gt;4, Cr &gt;1 หรือ BUN &gt;30 · หยุด diuretic/NSAIDs',next:['ไปต่อ: ประเมิน 48 ชม.','h48']},
+ hca:{leaf:true,cls:'danger',t:'เสี่ยงเชื้อดื้อ',b:'<b>Pip/tazo 4.5 g IV q6h</b> หรือ <b>meropenem 1 g IV q8h</b> ± vancomycin ตาม antibiogram · ปรับขนาดตามไต · albumin ตามเกณฑ์ · ช็อก → ดูแลแบบ sepsis',next:['ไปต่อ: ประเมิน 48 ชม.','h48']},
+ h48:{q:'48 ชม.: อาการดีขึ้น หรือ PMN ซ้ำลดลง ≥25%?',o:[['ดีขึ้น/ลด ≥25%','done'],['ไม่ดีขึ้น/ลด &lt;25%','fail']]},
+ done:{leaf:true,cls:'ok',t:'ตอบสนอง',b:'ให้ยาครบ 5–7 วัน de-escalate ตามผลเพาะเชื้อ · <b>เริ่ม secondary prophylaxis</b>: norfloxacin 400 mg หรือ ciprofloxacin 500 mg หรือ TMP-SMX DS วันละครั้ง · ทบทวน PPI · ส่งประเมินปลูกถ่ายตับ'},
+ fail:{leaf:true,cls:'danger',t:'รักษาล้มเหลว',b:'ขยายยาให้ครอบคลุมเชื้อดื้อ · <b>CT หา secondary peritonitis</b> · ดูผลเพาะเชื้อ · ระวัง HRS-AKI'},
+ pmnL:{q:'ผลเพาะเชื้อน้ำ?',o:[['ขึ้น 1 ชนิด','bact'],['ขึ้นหลายชนิด','poly'],['ไม่ขึ้น/รอผล','noSbp']]},
+ bact:{q:'มีอาการติดเชื้อ (ไข้ ปวดท้อง HE AKI)?',o:[['มี','bactT'],['ไม่มี','bactR']]},
+ bactT:{leaf:true,cls:'warn',t:'Bacterascites มีอาการ',b:'รักษาเหมือน SBP (ยาตามแหล่งติดเชื้อ ปรับตามผลความไว)'},
+ bactR:{leaf:true,cls:'ok',t:'Bacterascites ไม่มีอาการ',b:'<b>เจาะซ้ำ</b> · PMN ขึ้น ≥250 หรือยังขึ้นเชื้อ → รักษา · ไม่เช่นนั้นติดตาม'},
+ poly:{leaf:true,cls:'violet',t:'Polymicrobial bacterascites',b:'มักเข็มโดนลำไส้ · ติดตามอาการ/เจาะซ้ำ · ถ้า PMN ขึ้นหรือมีอาการ → คิด secondary peritonitis'},
+ noSbp:{leaf:true,cls:'ok',t:'ไม่ใช่ SBP ตอนนี้',b:'หาแหล่งติดเชื้ออื่นถ้ามีไข้ · <b>ascitic protein &lt;1.5 g/dL</b> + Cr ≥1.2/BUN ≥25/Na ≤130 หรือ Child-Pugh ≥9 + bili ≥3 → พิจารณา primary prophylaxis · ทบทวน PPI'},
+ gib:{leaf:true,cls:'danger',t:'ตับแข็ง + UGIB',b:'<b>Ceftriaxone 1 g IV วันละครั้ง ≤7 วัน</b> (ป้องกันติดเชื้อ ลดเลือดออกซ้ำและการตาย) · vasoactive · ส่องกล้อง ≤12 ชม. · <b>lactulose</b> ป้องกัน HE · มีท้องมาน → เจาะท้องด้วย'}
+},'apTrail','apStage');
+
+/* ---------- Tool 1: HE grade + actions ---------- */
+function heTool(){
+  const g=$('hGr').value;const c=id=>$(id).checked;const L=[];
+  if(!g){$('heOut').innerHTML='เลือกระดับ West Haven เพื่อดูสิ่งที่ต้องทำ';return}
+  let gcs=num('hGcs');const glu=num('hGlu');
+  if(gcs!==null&&(gcs<3||gcs>15||gcs%1!==0)){L.push('<span class="muted">GCS ต้องเป็นจำนวนเต็ม 3–15 — ไม่นำค่านี้มาใช้</span>');gcs=null}
+  const sev=g==='3'||g==='4'||(gcs!==null&&gcs<=8);
+  if(glu!==null){
+    if(glu<=0)L.push('<span class="muted">ค่า glucose ไม่ถูกต้อง — ตรวจซ้ำ</span>');
+    else if(glu<70)L.push(`<b>DTX ${glu} mg/dL ต่ำ → แก้น้ำตาลก่อน</b> (glucose IV) · ซึมอาจไม่ใช่ HE`+(c('hEtoh')?' · ให้ thiamine ร่วม แต่ไม่เลื่อน glucose':'')+(glu<20?' <span class="muted">(ค่าต่ำมาก — ยืนยันด้วยเลือดดำ)</span>':''));
+    else if(glu>600)L.push(`DTX ${glu} สูงมาก → คิดถึง HHS/DKA เป็นสาเหตุซึม`);
+    else if(glu>250)L.push(`DTX ${glu} สูง → คุมน้ำตาล คิดถึง HHS/DKA ถ้าซึมมาก`);
+  }else L.push('<b>เจาะ DTX ก่อน</b> — ตัด hypoglycemia');
+  if(g==='m'||g==='1'){
+    L.push(`<b>Covert HE</b> (${g==='m'?'minimal':'West Haven 1'}) · มักดูแลแบบผู้ป่วยนอกได้ถ้าไม่มีตัวกระตุ้นรุนแรง · ยืนยันด้วย animal naming/psychometric test · พิจารณา <b>lactulose</b> ปรับให้ถ่ายนิ่ม 2–3 ครั้ง/วัน · คุยเรื่อง<b>ขับรถ</b>และการหกล้ม`);
+  }else if(g==='2'){
+    L.push('<b>Overt HE ระดับ 2</b> → นอน รพ. · ระวังสำลัก/ตกเตียง · <b>lactulose</b> 25 mL ทุก 1–2 ชม. จนถ่ายนิ่ม ≥2 ครั้ง แล้วปรับให้ 2–3 ครั้ง/วัน (หรือ PEG 4 L ใน 4 ชม.)');
+  }
+  if(sev){
+    L.push(`<b>${g==='4'?'ระดับ 4 (โคม่า)':g==='3'?'ระดับ 3':'GCS ≤8'} → ICU</b> · <b>ใส่ท่อช่วยหายใจ</b>ถ้า GCS ≤8/ป้องกันทางเดินหายใจไม่ได้ · ศีรษะสูง 30° · <b>NG tube</b> ให้ lactulose (สวนทวารเฉพาะเมื่อให้ทาง NG ไม่ได้ — แนวทางไทยไม่แนะนำเป็น routine) · ติดตาม GCS`);
+    if(gcs===null)L.push('<span class="muted">บันทึก GCS ไว้ติดตาม (แนะนำในระดับ 3–4)</span>');
+  }
+  // precipitants
+  const P=[];
+  if(c('hInf'))P.push('<b>ติดเชื้อ</b>: เจาะท้อง (PMN, เพาะเชื้อในขวด hemoculture), blood/urine culture, CXR → เริ่มยาตามแหล่ง');
+  if(c('hGib'))P.push('<b>เลือดออก GI</b>: ดูแลตาม UGIB · ceftriaxone 1 g/วัน ≤7 วัน · lactulose ช่วยระบายเลือด');
+  if(c('hCon'))P.push('<b>ท้องผูก</b>: lactulose ขนาดเฉียบพลัน หรือ PEG 4 L');
+  if(c('hDeh'))P.push('<b>ขาดน้ำ/AKI</b>: หยุด diuretic, NSAIDs · สารน้ำ/albumin ตามภาวะ · ดูว่าได้ lactulose มากเกินไหม');
+  if(c('hK'))P.push('<b>K ต่ำ/alkalosis</b>: แก้ K (K ต่ำเพิ่มการสร้างแอมโมเนียที่ไต)');
+  if(c('hNa'))P.push('<b>Na &lt;130</b>: หยุด diuretic · แก้ช้า <b>ไม่เกิน 8 mmol/L ใน 24 ชม.</b>');
+  if(c('hSed'))P.push('<b>ยาง่วง</b>: หยุด benzodiazepine/opioid/gabapentinoid · flumazenil/naloxone เฉพาะเมื่อได้ยานั้นมาจริงและไม่มีข้อห้าม');
+  if(c('hEtoh'))P.push('<b>สุรา/ขาดอาหาร</b>: <b>thiamine IV ก่อนหรือพร้อม glucose</b> (สงสัย Wernicke 200–500 mg IV วันละ 3 ครั้ง) · ประเมิน alcohol withdrawal');
+  if(P.length)L.push('ตัวกระตุ้นที่ต้องแก้:<ol>'+P.map(x=>'<li>'+x+'</li>').join('')+'</ol>');
+  else L.push('<b>ยังไม่พบตัวกระตุ้น</b> → หาให้ครบ: เจาะท้อง, culture, ถ่ายดำ?, ทบทวนยา, Cr/Na/K, ถ่ายกี่ครั้ง · ~80–90% ของ overt HE มีตัวกระตุ้น');
+  if(c('hFoc')||(!P.length&&$('hEp').value==='0'&&g!=='m'&&g!=='1'))L.push(c('hFoc')?'<b>Focal deficit/ชัก/ล้ม → CT สมองก่อน</b> (ICH/subdural) · ชัก → พิจารณา EEG':'HE ครั้งแรกที่หาตัวกระตุ้นไม่เจอ → <b>พิจารณา CT สมอง</b>');
+  // recurrence
+  const ep=$('hEp').value;
+  if(g!=='m'&&g!=='1'){
+    if(c('hOnL')||ep!=='0')L.push(`<b>${c('hOnL')?'เกิดซ้ำทั้งที่กิน lactulose':'เกิด ≥2 ครั้งใน 6 เดือน (รวมครั้งนี้)'} → เพิ่ม rifaximin 550 mg วันละ 2 ครั้ง</b> ร่วมกับ lactulose (ACG 2026 strong; แนวทางไทย: HE ไม่มีตัวกระตุ้น ≥2 ครั้ง/6 เดือน) · ตรวจการกินยา · หา shunt ใหญ่`);
+    else L.push('หลังหาย: <b>lactulose ต่อเป็น secondary prophylaxis</b> · '+(ep==='0'?'HE ครั้งแรก = decompensation → ส่งประเมินปลูกถ่ายตับ':'ถ้าเกิดอีกให้เพิ่ม rifaximin'));
+  }
+  if(c('hTips'))L.push('<b>มี TIPS/shunt</b>: HE ดื้อ → ส่งทีม IR พิจารณาลดขนาด/ปิด shunt · rifaximin ร่วม');
+  L.push('<span class="muted">ไม่ต้องตรวจแอมโมเนียซ้ำ · ไม่จำกัดโปรตีน (1.2–1.5 g/kg/วัน) · เลี่ยงยาง่วง</span>');
+  $('heOut').innerHTML=L.join('<br>');
+}
+bindAll('#tHe input,#tHe select',heTool);
+
+/* ---------- Tool 2: ascitic fluid ---------- */
+function afTool(){
+  const wbc=num('aWbc'),pct=num('aPct'),rbc=num('aRbc'),cx=$('aCx').value;const c=id=>$(id).checked;const L=[];
+  if(wbc===null||pct===null){$('afOut').innerHTML='ใส่ WBC ของน้ำในท้อง และ % neutrophil';return}
+  if(wbc<0||pct<0||pct>100){$('afOut').innerHTML='ค่าไม่ถูกต้อง: WBC ต้อง ≥0 และ % neutrophil ต้องอยู่ 0–100';return}
+  let pmn=wbc*pct/100;
+  L.push(`PMN = ${wbc} × ${pct}% = <b>${f1(pmn)} /mm³</b>`);
+  if(rbc!==null&&rbc>0){
+    if(rbc>=10000){const adj=Math.max(0,pmn-rbc/250);L.push(`น้ำปนเลือด (RBC ${rbc}) → หัก 1 PMN ต่อ 250 RBC = <b>PMN ปรับแล้ว ${f1(adj)}</b>`);pmn=adj;}
+    else L.push(`<span class="muted">RBC ${rbc} (&lt;10,000) ไม่ต้องปรับ PMN</span>`);
+  }
+  // Runyon
+  let tp=num('aTp');const glu=num('aGlu'),ldh=num('aLdh'),uln=num('aUln');
+  if(tp!==null&&(tp<0||tp>10)){L.push(`<span class="muted">Total protein ${tp} ดูไม่ใช่หน่วย g/dL (ถ้าเป็น g/L ให้หาร 10) — ไม่นำมาใช้</span>`);tp=null}
+  const R=[];let known=0;
+  if(tp!==null){known++;if(tp>1)R.push('protein &gt;1 g/dL')}
+  if(glu!==null&&glu>=0){known++;if(glu<50)R.push('glucose &lt;50 mg/dL')}
+  if(ldh!==null&&ldh>=0&&uln!==null&&uln>0){known++;if(ldh>uln)R.push('LDH &gt; ULN เลือด')}
+  const high=pmn>=250;
+  if(high){
+    const sec=cx==='poly'||R.length>=2;
+    if(sec)L.push(`<b>สงสัย secondary bacterial peritonitis</b> (${cx==='poly'?'เพาะเชื้อหลายชนิด':''}${cx==='poly'&&R.length>=2?' + ':''}${R.length>=2?'Runyon '+R.length+'/3: '+R.join(', '):''}) → <b>CT ช่องท้องด่วน + ปรึกษาศัลยกรรม</b> · ยาครอบคลุม anaerobe`);
+    else{
+      const nm=cx==='1'?'<b>SBP (culture-positive)</b>':cx==='n'?'<b>Culture-negative neutrocytic ascites (CNNA)</b> → รักษาเหมือน SBP':'<b>SBP</b> (รอผลเพาะเชื้อ)';
+      L.push(nm+' → <b>เริ่มยาฆ่าเชื้อ IV ทันที</b> (ชุมชน: ceftriaxone 2 g/วัน · HCA/nosocomial/ช็อก: pip/tazo หรือ meropenem) + <b>albumin</b> ตามเกณฑ์ (ใช้เครื่องมือถัดไป)');
+      if(R.length===1)L.push(`Runyon 1/3 (${R[0]}) — ยังไม่เข้าเกณฑ์ secondary แต่ติดตาม 48 ชม.`);
+      if(known<3)L.push('<span class="muted">Runyon ประเมินได้ '+known+'/3 ข้อ — ส่ง glucose, LDH, protein ในน้ำถ้าสงสัย secondary</span>');
+      if(cx==='n'&&pmn<500)L.push('<span class="muted">CNNA: ตัด pancreatitis, TB peritonitis, มะเร็งเยื่อบุช่องท้อง ถ้าไม่ตอบสนอง</span>');
+    }
+    const p48=num('a48');
+    if(p48!==null&&p48>=0){const d=(pmn-p48)/pmn*100;
+      L.push(d<25?`48 ชม.: PMN ${Math.round(pmn)} → ${p48} (ลด ${Math.round(d)}%) <b>&lt;25% = ล้มเหลว</b> → ขยายยา + CT หา secondary peritonitis`:`48 ชม.: PMN ลด ${Math.round(d)}% (≥25%) → ตอบสนอง ให้ยาครบ 5–7 วัน`);}
+    else L.push('<span class="muted">เจาะซ้ำที่ 48 ชม. ถ้าอาการไม่ดีขึ้น/เพาะเชื้อไม่ขึ้น — ใส่ PMN ซ้ำเพื่อประเมิน</span>');
+    L.push('หลังหาย → <b>secondary prophylaxis</b> ระยะยาว');
+  }else{
+    if(cx==='1')L.push(c('aSym')?'<b>Monomicrobial bacterascites มีอาการ → รักษาเหมือน SBP</b>':'<b>Monomicrobial bacterascites ไม่มีอาการ → เจาะซ้ำ</b> · PMN ขึ้น ≥250 หรือยังขึ้นเชื้อ → รักษา');
+    else if(cx==='poly')L.push('<b>Polymicrobial bacterascites</b> → มักเข็มโดนลำไส้ · ติดตาม/เจาะซ้ำ · มีอาการหรือ PMN ขึ้น → คิด secondary peritonitis');
+    else L.push(`PMN &lt;250 → <b>ไม่เข้าเกณฑ์ SBP</b>`+(cx==='p'?' (รอผลเพาะเชื้อ)':'')+(c('aSym')?' · แต่มีอาการติดเชื้อ → หาแหล่งอื่น (ปอด ทางเดินปัสสาวะ ผิวหนัง กระแสเลือด) · สงสัยมากให้ยาได้ระหว่างรอผล':''));
+    if(c('aAbx'))L.push('<span class="muted">ได้ยาฆ่าเชื้อก่อนเจาะ → PMN/เพาะเชื้ออาจต่ำลวง แปลผลระวัง</span>');
+    if(tp!==null&&tp<1.5)L.push(`Ascitic protein ${tp} g/dL (&lt;1.5) → ตรวจเกณฑ์ <b>primary prophylaxis</b> (Cr/BUN/Na, Child-Pugh + bilirubin)`);
+  }
+  const sa=num('aSa'),aa=num('aAa');
+  if(sa!==null&&aa!==null){
+    if(sa<=0||sa>6||aa<0||aa>6)L.push('<span class="muted">Albumin ต้องเป็น g/dL (0–6) — คำนวณ SAAG ไม่ได้</span>');
+    else{const s=sa-aa;L.push(`SAAG = ${f1(s)} g/dL → ${s>=1.1?'<b>≥1.1 = portal hypertension</b> (เข้ากับตับแข็ง)':'<b>&lt;1.1</b> = ไม่ใช่ portal hypertension → คิดถึง TB, มะเร็งเยื่อบุช่องท้อง, ตับอ่อน, nephrotic'}`);}
+  }
+  $('afOut').innerHTML=L.join('<br>');
+}
+bindAll('#tAf input,#tAf select',afTool);
+
+/* ---------- Tool 3: albumin + prophylaxis ---------- */
+function sbTool(){
+  const c=id=>$(id).checked;const L=[];
+  const wt=num('sWt');let cr=num('sCr'),bun=num('sBun'),bil=num('sBil');const na=num('sNa'),tp0=num('sTp'),ctp0=num('sCtp'),crcl=num('sCrcl');
+  const W=[];
+  if(cr!==null){if($('sCrU').value==='um')cr=cr/88.4;else if(cr>25){W.push('Cr '+cr+' สูงเกินสำหรับ mg/dL — เลือกหน่วย µmol/L?');cr=null}
+    if(cr!==null&&cr<=0){W.push('Cr ต้อง &gt;0');cr=null}}
+  if(bun!==null){if($('sBunU').value==='mmol')bun=bun*2.8;if(bun<=0||bun>400){W.push('BUN/urea ค่าไม่สมเหตุผล — ตรวจหน่วย');bun=null}}
+  if(bil!==null){if($('sBilU').value==='um')bil=bil/17.1;else if(bil>60){W.push('Bilirubin '+bil+' สูงเกินสำหรับ mg/dL — เลือกหน่วย µmol/L?');bil=null}
+    if(bil!==null&&bil<0){W.push('Bilirubin ต้อง ≥0');bil=null}}
+  const naV=na!==null&&na>=100&&na<=180?na:null;if(na!==null&&naV===null)W.push('Na ต้องอยู่ 100–180 mmol/L');
+  const ctp=ctp0!==null&&ctp0>=5&&ctp0<=15&&ctp0%1===0?ctp0:null;if(ctp0!==null&&ctp===null)W.push('Child-Pugh ต้องเป็นจำนวนเต็ม 5–15');
+  const tp=tp0!==null&&tp0>=0&&tp0<=10?tp0:null;if(tp0!==null&&tp===null)W.push('Ascitic protein '+tp0+' ดูไม่ใช่ g/dL (g/L ให้หาร 10)');
+  if(W.length)L.push('<span class="muted">'+W.join(' · ')+'</span>');
+  const conv=[];
+  if(cr!==null&&$('sCrU').value==='um')conv.push('Cr = '+f2(cr)+' mg/dL');
+  if(bun!==null&&$('sBunU').value==='mmol')conv.push('BUN ≈ '+f1(bun)+' mg/dL');
+  if(bil!==null&&$('sBilU').value==='um')conv.push('bilirubin = '+f1(bil)+' mg/dL');
+  if(conv.length)L.push('<span class="muted">แปลงหน่วย: '+conv.join(' · ')+'</span>');
+
+  if(!c('sSbp')&&!c('sPrev')&&!c('sGib')&&tp===null){
+    L.push('เลือกสถานการณ์ (SBP ตอนนี้ / เคยเป็น SBP / UGIB) หรือใส่ ascitic protein เพื่อประเมินยาป้องกัน');
+    $('sbOut').innerHTML=L.join('<br>');return;
+  }
+  /* albumin */
+  if(c('sSbp')){
+    const hr=[];if(bil!==null&&bil>4)hr.push('bili &gt;4');if(cr!==null&&cr>1)hr.push('Cr &gt;1');if(bun!==null&&bun>30)hr.push('BUN &gt;30');
+    const miss=[bil,cr,bun].some(v=>v===null);
+    let head;
+    if(hr.length)head=`<b>ให้ albumin</b> — เสี่ยง HRS (${hr.join(', ')}) ตามแนวทางไทย`;
+    else if(miss)head='<b>ใส่ bilirubin, Cr, BUN ให้ครบ</b> เพื่อตัดสินตามแนวทางไทย (EASL 2018 ให้ SBP ทุกราย)';
+    else head='ไม่เข้าเกณฑ์เสี่ยงสูงของแนวทางไทย (bili ≤4, Cr ≤1, BUN ≤30) → ประโยชน์ไม่ชัด · EASL 2018 ให้ทุกราย — ใช้ดุลยพินิจ';
+    L.push('<b>Albumin ใน SBP</b>: '+head);
+    if(wt===null||wt<30||wt>250)L.push('ใส่น้ำหนักจริง (30–250 kg) เพื่อคำนวณขนาด');
+    else{
+      const d1=1.5*wt,d3=1*wt;
+      const b=g=>Math.ceil(g/10-1e-9);
+      L.push(`ขนาด: <b>วันที่ 1 = ${Math.round(d1)} g ภายใน 6 ชม.</b> (≈ ${b(d1)} ขวด 20% 50 mL) · <b>วันที่ 3 = ${Math.round(d3)} g</b> (≈ ${b(d3)} ขวด) <span class="muted">(ขวด 20% 50 mL = 10 g; ปัดขึ้นเป็นขวดเต็ม)</span>`);
+      if(wt>100)L.push('<span class="muted">น้ำหนักมาก → ปริมาณสูง ระวังน้ำเกิน/น้ำท่วมปอด และตรวจโปรโตคอลขนาดสูงสุดของ รพ.</span>');
+      L.push('<span class="muted">ระวังน้ำเกินในโรคหัวใจ/ไตวาย: ฟังปอด SpO₂ ระหว่างให้</span>');
+    }
+    L.push('ยาฆ่าเชื้อ: ชุมชน <b>ceftriaxone 2 g IV วันละครั้ง</b> 5–7 วัน · HCA/nosocomial/ช็อก/กิน quinolone ป้องกันอยู่ → pip/tazo หรือ meropenem · หยุด diuretic/NSAIDs · NSBB ลด/หยุดถ้า SBP &lt;90, Na &lt;130 หรือ AKI');
+  }
+  /* prophylaxis */
+  const drugs=()=>{
+    let s='<b>Norfloxacin 400 mg</b> หรือ <b>ciprofloxacin 500 mg</b> หรือ <b>TMP-SMX 800/160 mg 1 เม็ด</b> กินวันละครั้ง';
+    if(crcl!==null&&crcl>0&&crcl<200){
+      if(crcl<15)s+=` · CrCl ${crcl}: <b>เลี่ยง TMP-SMX</b> · quinolone ปรึกษาเภสัชกรเรื่องขนาด`;
+      else if(crcl<30)s+=` · CrCl ${crcl}: TMP-SMX <b>ลดครึ่ง</b> (½ เม็ด DS) · quinolone ปรึกษาเภสัชกรเรื่องขนาด`;
+      else s+=` · CrCl ${crcl}: ใช้ขนาดปกติ`;
+    }else if(crcl!==null)s+=' <span class="muted">(CrCl ไม่สมเหตุผล — ไม่นำมาใช้)</span>';
+    return s;
+  };
+  if(c('sGib'))L.push('<b>UGIB → ceftriaxone 1 g IV วันละครั้ง ไม่เกิน 7 วัน</b> (หยุดเมื่อเลือดหยุดและหยุด vasoactive แล้ว)'+(c('sSbp')?' · <span class="muted">ระหว่างรักษา SBP ใช้ขนาดรักษา (2 g) แทน</span>':''));
+  if(c('sPrev')||c('sSbp')){
+    L.push('<b>Secondary prophylaxis</b> '+(c('sSbp')&&!c('sPrev')?'(เริ่มหลังรักษา SBP ครั้งนี้ครบ) ':'')+'ระยะยาวจนท้องมานหาย/ปลูกถ่ายตับ: '+drugs()+' · ส่งประเมินปลูกถ่ายตับ');
+  }else if(!c('sGib')||tp!==null){
+    if(tp===null)L.push('Primary prophylaxis: <b>ใส่ ascitic total protein</b> เพื่อประเมิน');
+    else if(tp>=1.5)L.push(`Ascitic protein ${tp} g/dL (≥1.5) → <b>ไม่เข้าเกณฑ์ primary prophylaxis</b>`);
+    else{
+      const M=[],E=[];
+      if(cr!==null&&cr>=1.2){M.push('Cr ≥1.2');if(Math.abs(cr-1.2)<0.005)E.push('Cr')}
+      if(bun!==null&&bun>=25){M.push('BUN ≥25');if(Math.abs(bun-25)<0.05)E.push('BUN')}
+      if(naV!==null&&naV<=130){M.push('Na ≤130');if(naV===130)E.push('Na')}
+      if(ctp!==null&&ctp>=9&&bil!==null&&bil>=3){M.push('Child-Pugh ≥9 + bili ≥3');if(ctp===9||Math.abs(bil-3)<0.05)E.push('Child-Pugh/bili')}
+      const miss=[cr,bun,naV].some(v=>v===null)||ctp===null||bil===null;
+      if(M.length){
+        L.push(`Ascitic protein ${tp} g/dL (&lt;1.5) + ${M.join(', ')} → <b>เข้าเกณฑ์ primary prophylaxis</b> (Fernández 2007/AASLD/EASL; แนวทางไทย "พิจารณาในรายที่เหมาะสม"): `+drugs());
+        if(E.length&&E.length>=M.length)L.push(`<span class="muted">ค่า ${E.join(', ')} ตรงเกณฑ์พอดี — เกณฑ์งานวิจัยต้นแบบนับว่าเข้า แต่แนวทางไทยเขียนเป็น &gt;/&lt; (อาจไม่นับ) ใช้ดุลยพินิจ</span>`);
+        L.push('<span class="muted">ชั่งข้อเสีย: เชื้อดื้อ quinolone (สูงในไทย), C. difficile, เอ็น/QT</span>');
+      }else if(miss)L.push(`Ascitic protein ${tp} g/dL (&lt;1.5) — <b>ใส่ Cr, BUN, Na, Child-Pugh และ bilirubin ให้ครบ</b> เพื่อตัดสินเกณฑ์`);
+      else L.push(`Ascitic protein ${tp} g/dL (&lt;1.5) แต่ไตและตับยังไม่เข้าเกณฑ์ → <b>ยังไม่ให้ primary prophylaxis</b> · ประเมินซ้ำเมื่อค่าเปลี่ยน`);
+    }
+  }
+  if(c('sPpi'))L.push('<b>ใช้ PPI</b> → เพิ่ม SBP/HE · หยุดถ้าไม่มีข้อบ่งชี้ชัด (หลัง EVL ใช้ระยะสั้น)');
+  $('sbOut').innerHTML=L.join('<br>');
+}
+bindAll('#tSb input,#tSb select',sbTool);
+
+/* ---------- Tool 4: lactulose titration ---------- */
+function lacTool(){
+  const ph=$('lPh').value;const c=id=>$(id).checked;const L=[];
+  if(!ph){$('lacOut').innerHTML='เลือกระยะ (เฉียบพลัน หรือ ป้องกันซ้ำ)';return}
+  const bm=num('lBm'),br=$('lBr').value,dose=num('lDose'),fr=num('lFreq');
+  if(bm===null||bm<0||bm%1!==0){$('lacOut').innerHTML='ใส่จำนวนครั้งที่ถ่ายใน 24 ชม. (จำนวนเต็ม ≥0)';return}
+  if(bm>20)L.push('<span class="muted">ถ่าย &gt;20 ครั้ง/วัน — ตรวจข้อมูลอีกครั้ง</span>');
+  const route=c('lNg')?'ทาง NG':'กิน';
+  let tot=null;
+  if(dose!==null&&fr!==null&&dose>0&&fr>0&&fr%1===0&&fr<=24){
+    if(dose>100)L.push('<span class="muted">ขนาด &gt;100 mL/ครั้ง ผิดปกติ — ตรวจข้อมูล</span>');
+    tot=dose*fr;L.push(`ขนาดปัจจุบัน ${dose} mL × ${fr} = <b>${tot} mL/วัน</b> (≈ ${f1(tot*10/15)} g lactulose)`);
+  }else if(dose!==null||fr!==null)L.push('<span class="muted">ใส่ขนาด (mL/ครั้ง) และจำนวนครั้ง/วัน (จำนวนเต็ม 1–24) เพื่อคำนวณขนาดรวม</span>');
+  if(c('lIleus')){
+    L.push('<b>สงสัย ileus/ลำไส้อุดตัน → หยุดยาระบายทางปาก/NG ชั่วคราว</b> · X-ray ท้อง แก้ K/Mg · หาสาเหตุ · ถ้าต้องลดแอมโมเนียต่อ: lactulose สวนทวารเป็นทางเลือก (AASLD/EASL 2014)');
+    $('lacOut').innerHTML=L.join('<br>');return;
+  }
+  const over=bm>3||br==='w'||c('lDeh');
+  const under=bm<2||br==='h';
+  if(over){
+    L.push(`<b>มากเกินไป</b> (${bm>3?'ถ่าย '+bm+' ครั้ง':''}${br==='w'?(bm>3?', ':'')+'เหลวเป็นน้ำ':''}${c('lDeh')?((bm>3||br==='w')?', ':'')+'มีขาดน้ำ/เกลือแร่ผิดปกติ':''}) → <b>ลดขนาด</b>`+(tot?` เช่น เหลือราว ${Math.round(tot/2)} mL/วัน หรืองดมื้อถัดไป`:' (ลดราวครึ่ง หรืองดมื้อถัดไป)')+' · ตรวจ Na, K, Cr · ให้สารน้ำถ้าขาด — ถ่ายเหลวมากเกินทำให้ Na สูง K ต่ำ AKI และ HE แย่ลง');
+  }else if(under){
+    if(ph==='a')L.push(`<b>ยังไม่ถึงเป้า</b> (ถ่าย ${bm} ครั้ง${br==='h'?', แข็ง':''}) → <b>lactulose 25 mL ${route} ทุก 1–2 ชม.</b> จนถ่ายนิ่ม ≥2 ครั้ง (AASLD/EASL 2014) — หรือตามแนวทางไทย 15–45 mL ทุก 2–6 ชม. · แล้วปรับเป็นขนาดคงที่ให้ถ่ายนิ่ม 2–3 ครั้ง/วัน · ทางเลือก: <b>PEG 4 L ${route} ใน 4 ชม.</b>`+(c('lNg')?' (ป้องกันทางเดินหายใจก่อนถ้าซึมมาก)':''));
+    else L.push(`<b>ยังไม่ถึงเป้า</b> (ถ่าย ${bm} ครั้ง${br==='h'?', แข็ง':''}) → <b>เพิ่มขนาด</b>`+(tot&&fr?` เช่น เพิ่มครั้งละ ~10–15 mL (เป็น ${dose+15} mL × ${fr}) หรือเพิ่มอีก 1 มื้อ`:' ทีละ ~10–15 mL ต่อครั้ง หรือเพิ่ม 1 มื้อ')+' · ถามว่ากินยาครบไหม (หยุดเองเพราะท้องเสีย/ไม่สะดวกเดินทางพบบ่อย) · ใช้ Bristol scale สอนผู้ป่วย');
+  }else{
+    L.push(`<b>ถึงเป้าแล้ว</b> (ถ่ายนิ่ม ${bm} ครั้ง/วัน) → <b>คงขนาดเดิม</b>`+(ph==='a'?' · เปลี่ยนจากทุก 1–2 ชม. เป็นขนาดคงที่ (มักราว 15–30 mL วันละ 2–3 ครั้ง)':' · ต่อเนื่องเป็น secondary prophylaxis'));
+  }
+  if(c('lConf')){
+    L.push(over?'ยังสับสน + ถ่ายมาก → <b>อย่าเพิ่ม lactulose</b> · แก้น้ำ/เกลือแร่ · หาตัวกระตุ้นอื่น':'<b>ถ่ายได้แต่ยังสับสน</b> → อย่าแก้ด้วยการเพิ่ม lactulose อย่างเดียว · หาตัวกระตุ้นที่หลุด (SBP, เลือดออก, ยา, Na) · ทบทวนวินิจฉัย (CT, EEG, glucose) · <b>เพิ่ม rifaximin 550 mg วันละ 2 ครั้ง</b>');
+  }
+  L.push('<span class="muted">Lactulose 15 mL = 10 g · เป้า: ถ่ายนิ่ม 2–3 ครั้ง/วัน (Bristol 4–5)</span>');
+  $('lacOut').innerHTML=L.join('<br>');
+}
+bindAll('#tLac input,#tLac select',lacTool);
+
+mountQuiz([
+ ['ชาย 55 ปี ตับแข็งจากสุรา มีท้องมาน ซึมสับสนวันเวลา มี asterixis ไม่มีไข้ ไม่ปวดท้อง สิ่งที่ควรทำร่วมกับเจาะ DTX ตั้งแต่แรก',['ตรวจแอมโมเนียเพื่อยืนยัน HE','เจาะน้ำในท้องส่ง PMN และเพาะเชื้อ','MRI สมองทุกราย','จำกัดโปรตีน 0.5 g/kg'],1,'SBP อาจไม่มีไข้/ปวดท้อง · ผู้ป่วยตับแข็งที่มีท้องมานและนอน รพ./HE ต้องเจาะท้องทุกราย'],
+ ['ข้อใดถูกเกี่ยวกับแอมโมเนียใน HE ของตับแข็ง',['ค่าสูงยืนยัน HE','ควรตรวจซ้ำทุกวันเพื่อปรับยา','ค่าปกติ (เก็บถูกวิธี) ควรทำให้คิดถึงโรคอื่น','ค่ายิ่งสูงยิ่งต้องจำกัดโปรตีน'],2,'AASLD/EASL, ACG 2026 และแนวทางไทย: ไม่ใช้วินิจฉัย/ติดตาม · ค่าปกติให้ทบทวนวินิจฉัย'],
+ ['เป้าหมายการปรับ lactulose ใน HE',['ถ่ายเหลว 5–6 ครั้ง/วัน','ถ่ายนิ่ม 2–3 ครั้ง/วัน','ถ่ายวันละครั้ง','ไม่ต้องดูการถ่าย ดูแอมโมเนีย'],1,'มากเกินทำให้ขาดน้ำ เกลือแร่ผิดปกติ และ HE แย่ลง'],
+ ['ผู้ป่วยเคยมี overt HE 2 ครั้งใน 6 เดือน ทั้งที่กิน lactulose สม่ำเสมอ ควรทำอะไร',['หยุด lactulose เปลี่ยนเป็น rifaximin เดี่ยว','เพิ่ม rifaximin 550 mg วันละ 2 ครั้ง ร่วมกับ lactulose','จำกัดโปรตีน','ให้ benzodiazepine ช่วยนอน'],1,'Bass 2010: HE ซ้ำ 22% vs 46% · ~91% ได้ lactulose ร่วม'],
+ ['ข้อใดถูกเรื่องโภชนาการในผู้ป่วย HE',['งดโปรตีนช่วงมี HE','โปรตีน 1.2–1.5 g/kg/วัน และมีมื้อดึก','กินวันละ 2 มื้อใหญ่','BCAA ห้ามใช้'],1,'การจำกัดโปรตีนทำให้กล้ามเนื้อลีบและ HE แย่ลง'],
+ ['น้ำในท้อง WBC 600 neutrophil 50% เพาะเชื้อไม่ขึ้น ไม่มีลักษณะ secondary การวินิจฉัย',['ปกติ ไม่ต้องรักษา','Culture-negative neutrocytic ascites — รักษาเหมือน SBP','Polymicrobial bacterascites','Secondary peritonitis'],1,'PMN = 300 (≥250) เพาะไม่ขึ้น = CNNA'],
+ ['น้ำในท้อง PMN 3,200 เพาะเชื้อขึ้น E. coli, Bacteroides และ Enterococcus · protein 2.4 g/dL glucose 30 mg/dL ทำอะไรต่อ',['Ceftriaxone อย่างเดียวพอ','CT ช่องท้องด่วน + ปรึกษาศัลยกรรม + ยาครอบคลุม anaerobe','เจาะซ้ำพรุ่งนี้แล้วค่อยตัดสิน','ให้ norfloxacin กิน'],1,'หลายเชื้อ + Runyon ≥2 = secondary peritonitis'],
+ ['SBP ในผู้ป่วยน้ำหนัก 60 kg bilirubin 5 mg/dL ขนาด albumin ที่ถูกต้อง',['1 g/kg ทุกวันจนหาย','90 g วันที่ 1 (ใน 6 ชม.) และ 60 g วันที่ 3','25 g ครั้งเดียว','ไม่ต้องให้เพราะ Cr ปกติ'],1,'1.5 g/kg วันที่ 1 + 1 g/kg วันที่ 3 · bili >4 เข้าเกณฑ์แนวทางไทย'],
+ ['หลังให้ยา 48 ชม. PMN ในน้ำลดจาก 1,000 เหลือ 850 แปลว่า',['ตอบสนองดี','ลด <25% = รักษาล้มเหลว ต้องขยายยาและหา secondary peritonitis','ให้หยุดยาได้','ต้องเปลี่ยนเป็นยากิน'],1,'ลดเพียง 15%'],
+ ['ผู้ป่วยตับแข็งไม่เคยเป็น SBP ascitic protein 1.0 g/dL Cr 1.4 mg/dL ควรพิจารณา',['ไม่ต้องให้อะไร','Primary prophylaxis เช่น norfloxacin 400 mg หรือ ciprofloxacin 500 mg วันละครั้ง','Ceftriaxone 2 g ทุกวันตลอดไป','Albumin สัปดาห์ละครั้ง'],1,'protein <1.5 + Cr ≥1.2 เข้าเกณฑ์ (Fernández 2007) · แนวทางไทย: พิจารณาในรายที่เหมาะสม'],
+ ['ตับแข็งมาด้วยอาเจียนเป็นเลือด ยาฆ่าเชื้อป้องกันที่แนะนำ',['ไม่ต้องให้ถ้าไม่มีไข้','Ceftriaxone 1 g IV วันละครั้ง ไม่เกิน 7 วัน','Vancomycin','Metronidazole'],1,'Baveno VII และแนวทางไทย — ลดการติดเชื้อ เลือดออกซ้ำ และการตาย'],
+ ['ผู้ป่วยกำลังจะทำ TIPS แบบนัด ข้อใดลด overt HE หลัง TIPS ได้ตาม RCT',['Lactulose สวนทวารทุกวัน','Rifaximin เริ่ม 14 วันก่อน TIPS และให้ต่อ ~6 เดือน','จำกัดโปรตีน','Benzodiazepine ก่อนนอน'],1,'Bureau 2021: 34% vs 53% · ACG 2026 strong']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

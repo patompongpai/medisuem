@@ -1,0 +1,837 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Drug-induced &amp; contrast AKI · AKI จากยาและสารทึบรังสี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Nephrology · Pharmacology · KDIGO AKI 2012 + ร่าง KDIGO AKI/AKD 2026 · ACR–NKF 2020 · ACR Manual 2025 · ESUR 2018 · ASHP/IDSA 2020</div>
+  <h1>AKI จากยาและสารทึบรังสี<br>Drug-induced &amp; contrast-associated AKI</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้เจาะลึกเฉพาะ <b>"ยา"</b> ที่ทำให้ไตบาดเจ็บ: จำกลไก 6 แบบ (hemodynamic, ATN, AIN, crystal, osmotic, TMA/rhabdo) · sick-day rules · การฉีด <b>contrast</b> อย่างปลอดภัย (ใครต้องให้น้ำเกลือ ใครไม่ต้อง) · metformin กับ contrast · gadolinium · การทำ TDM ของ vancomycin/aminoglycoside · การปรับขนาดยาเมื่อ creatinine ยังไม่นิ่ง · เรื่องนิยาม การแบ่งระยะ และการดูแล AKI ทั่วไป ดูหน้า <a href="../aki/index.html">AKI</a></p>
+  <p class="cite">อ้างอิงหลัก: KDIGO Clinical Practice Guideline for AKI (Kidney Int Suppl 2012) · KDIGO 2026 AKI/AKD Guideline — Public Review Draft (มี.ค. 2026; ณ พ.ย. 2026 ยังไม่ออกฉบับจริง) <span class="tag draft">ร่าง</span> · Davenport MS, et al. ACR–NKF consensus on IV iodinated contrast (Radiology 2020) · Weinreb JC, et al. ACR–NKF consensus on gadolinium (Radiology 2021) · ACR Manual on Contrast Media (บท NSF ปรับปรุง 2025) · ESUR Contrast Media Safety Committee: PC-AKI Part 1–2 (Eur Radiol 2018) · Rybak MJ, et al. Vancomycin consensus ASHP/IDSA/PIDS/SIDP (Am J Health Syst Pharm 2020) · Perazella MA, Rosner MH. Drug-induced AKI (CJASN 2022) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>หยุดยาต้นเหตุก่อน</b>ทบทวนยาทุกตัวในทุกเคส AKI · NSAIDs + ACEi/ARB + diuretic = "triple whammy" · AIN ไม่ดีขึ้นใน 3–7 วัน → คิดเรื่อง steroid</div>
+    <div class="stage" style="--c:var(--warn)"><b>Contrast: กลัวน้อยลงแต่ไม่ประมาท</b>ให้ 0.9% NaCl ป้องกันเฉพาะ eGFR &lt;30 (ไม่ได้ฟอกไต) หรือมี AKI · NAC/bicarbonate ไม่ต้องใช้ · ห้ามงด contrast ในภาวะคุกคามชีวิต</div>
+    <div class="stage" style="--c:var(--accent)"><b>ขนาดยา</b>Loading dose เต็มเสมอ · SCr ยังไม่นิ่ง = CrCl/eGFR หลอก · Vancomycin ใช้ AUC 400–600 แทน trough</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#recap">ภาพรวม 6 กลไก</a><a href="#hemo">Hemodynamic</a><a href="#atn">ATN จากยา</a><a href="#ain">AIN · ICI</a><a href="#other">Crystal · Osmotic · TMA · Rhabdo</a><a href="#sick">Sick-day · เริ่มยาใหม่</a><a href="#contrast">Contrast · Metformin · Gadolinium</a><a href="#tdm">TDM · ขนาดยาใน AKI</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="recap" class="col">
+  <div class="sec-num">01</div>
+  <h2>ภาพรวม: ยาทำร้ายไตได้ 6 แบบ</h2>
+  <p>ยาเป็นสาเหตุ AKI ที่พบบ่อยในโรงพยาบาล (ราว 1 ใน 5 ของ AKI ในผู้ป่วยใน) และ<b>แก้ได้ถ้าหยุดเร็ว</b> · ทวนสั้นๆ: AKI = SCr ขึ้น ≥0.3 mg/dL ใน 48 ชม. หรือ ≥1.5 เท่าของ baseline ใน 7 วัน หรือปัสสาวะ &lt;0.5 mL/kg/h นาน 6 ชม. (KDIGO) · รายละเอียด staging/การดูแลทั่วไป → <a href="../aki/index.html">หน้า AKI</a></p>
+  <div class="tbl"><table>
+    <tr><th>กลไก</th><th>ยาตัวอย่าง</th><th>เบาะแส</th></tr>
+    <tr><td><b>1. Hemodynamic</b> (ลดเลือดเข้า glomerulus)</td><td>NSAIDs, ACEi/ARB, diuretics, SGLT2i (ตอนขาดน้ำ), calcineurin inhibitor (CNI)</td><td>ปัสสาวะใส ตะกอนปกติ · FENa ต่ำ · ดีขึ้นเร็วเมื่อหยุดยา/ให้น้ำ</td></tr>
+    <tr><td><b>2. ATN</b> (พิษตรงต่อท่อไต)</td><td>Aminoglycoside, vancomycin, amphotericin B, cisplatin, colistin, tenofovir (TDF), zoledronate</td><td>Muddy brown granular casts · K/Mg ต่ำ (aminoglycoside, ampho) · มักเกิดหลังได้ยา 5–7 วัน</td></tr>
+    <tr><td><b>3. AIN</b> (ภูมิแพ้ที่ไต)</td><td>β-lactam, PPI, NSAIDs, rifampicin, sulfonamide, allopurinol, immune checkpoint inhibitor (ICI)</td><td>Sterile pyuria, WBC cast · ผื่น/ไข้/eosinophil พบไม่บ่อย</td></tr>
+    <tr><td><b>4. Crystal</b></td><td>Acyclovir IV, methotrexate ขนาดสูง, sulfadiazine/TMP-SMX ขนาดสูง, indinavir/atazanavir</td><td>ผลึกในปัสสาวะ · ขาดน้ำ · ให้ยาเร็ว/ขนาดสูง</td></tr>
+    <tr><td><b>5. Osmotic nephrosis</b></td><td>IVIG ที่มี sucrose, mannitol ขนาดสูง, hydroxyethyl starch</td><td>เกิดใน 1–5 วันหลังได้ยา</td></tr>
+    <tr><td><b>6. TMA / Rhabdomyolysis</b></td><td>TMA: gemcitabine, mitomycin C, CNI, VEGF inhibitor, quinine · Rhabdo: statin + ยาตีกัน, colchicine, daptomycin, propofol, ยาบ้า/โคเคน</td><td>TMA: เกล็ดเลือดต่ำ + schistocyte + LDH สูง · Rhabdo: CK สูง, dipstick blood บวกแต่ไม่มี RBC</td></tr>
+  </table></div>
+  <div class="box warn"><b>"Pseudo-AKI": creatinine ขึ้นแต่ GFR ไม่ลด</b>ยาที่ยับยั้งการหลั่ง creatinine ที่ท่อไต: <b>trimethoprim</b> (ใน co-trimoxazole), cimetidine, <b>dolutegravir</b>, bictegravir, cobicistat, rilpivirine, (fenofibrate) · SCr ขึ้นเล็กน้อย (มัก ~0.1–0.3 mg/dL) ภายในไม่กี่วันแรกแล้วคงที่ · BUN และปัสสาวะปกติ · ถ้าสงสัยตรวจ <b>cystatin C</b> · ระวัง: trimethoprim ยังทำ <b>K สูงจริง</b> (ยับยั้ง ENaC) → ดูหน้า <a href="../hyperkalemia/index.html">Hyperkalemia</a> <span class="tag add">เสริม</span></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> สิ่งที่เจอบ่อยในบ้านเรา: NSAIDs ซื้อเอง/<b>ยาชุด</b>/ยาฉีดแก้ปวดในคลินิก · สมุนไพรและอาหารเสริม · amikacin/colistin ใน ICU สำหรับเชื้อดื้อยา · amphotericin B deoxycholate (ถูกกว่า liposomal) · tenofovir (TDF) ในผู้ป่วย HIV/HBV · ยาบ้า/ไอซ์กับ rhabdomyolysis</p>
+</section>
+
+<section id="hemo" class="col">
+  <div class="sec-num">02</div>
+  <h2>Hemodynamic: NSAIDs, ACEi/ARB, SGLT2i, "triple whammy"</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>กลไกง่ายๆ</h4><ul><li>ความดันใน glomerulus = เลือด<b>เข้า</b> (afferent) − เลือด<b>ออก</b> (efferent)</li><li><b>NSAIDs</b> ตัด prostaglandin → afferent หด (เลือดเข้าน้อย) · <b>CNI</b> ก็ทำ afferent หด</li><li><b>ACEi/ARB</b> คลาย efferent (เลือดออกง่าย) · <b>SGLT2i</b> เพิ่ม Na ที่ macula densa → afferent หด (tubuloglomerular feedback)</li><li><b>Diuretics</b> ลด volume</li><li>ในคนปกติชดเชยได้ · <b>ขาดน้ำ, HF, cirrhosis, CKD, ผู้สูงอายุ, renal artery stenosis</b> ชดเชยไม่ได้ → AKI</li></ul></div>
+    <div class="card c-warn"><h4>Triple whammy</h4><ul><li><b>NSAID + diuretic + ACEi/ARB</b> พร้อมกัน → เสี่ยง AKI สูงขึ้น โดยเฉพาะ <b>30 วันแรก</b>ที่เริ่มยาครบสามตัว (Lapi, BMJ 2013)</li><li>ผู้ป่วย HT/HF ที่ได้ ACEi + furosemide แล้วไปซื้อ NSAID แก้ปวดเข่า = ตัวอย่างคลาสสิก</li><li>แก้: ใช้ paracetamol/ยาทาแทน · ถ้าจำเป็นต้องใช้ NSAID ให้สั้นที่สุดและตาม Cr/K</li><li>NSAID แบบ COX-2 selective ก็ทำไตเสียได้เหมือนกัน · ยาทา (topical) เสี่ยงน้อยกว่ามาก <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Creatinine ขึ้นเท่าไร "ยอมรับได้"</th><th>ทำอย่างไร</th></tr>
+    <tr><td><b>ACEi / ARB</b> (เริ่มใหม่หรือเพิ่มขนาด)</td><td>ขึ้นได้ถึง <b>30% ใน 4 สัปดาห์</b> (KDIGO CKD 2024)</td><td>ขึ้น &gt;30% → หา volume depletion, NSAIDs, renal artery stenosis แล้วลดขนาด · ไม่ต้องหยุดถาวรเพราะ Cr ขึ้นเล็กน้อย</td></tr>
+    <tr><td><b>SGLT2i</b></td><td>eGFR ลด (dip) ช่วงแรกเล็กน้อย (มักไม่กี่ mL/min) แล้วคงที่ · กลับคืนเมื่อหยุดยา</td><td><b>ไม่ใช่เหตุให้หยุดยา</b> (ร่าง KDIGO 2026 จัดเป็น "physiological hemodynamic adjustment" ที่ถูกเข้าใจผิดว่าเป็น AKI) · แต่หยุดชั่วคราวเมื่อป่วยขาดน้ำ/ก่อนผ่าตัด</td></tr>
+    <tr><td><b>NSAIDs</b></td><td>ไม่มีค่าที่ "ยอมรับได้" ในผู้เสี่ยง</td><td>หยุด · หลีกเลี่ยงใน CKD eGFR &lt;30, HF, cirrhosis, ขาดน้ำ, ได้ ACEi/ARB + diuretic</td></tr>
+    <tr><td><b>CNI</b> (tacrolimus, cyclosporine)</td><td>ขึ้นตามระดับยา</td><td>ตรวจระดับยา (trough) · ระวังยาตีกัน (azole, macrolide, diltiazem เพิ่มระดับ) · ส่งต่อทีมปลูกถ่ายไต</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ใน advanced CKD (eGFR &lt;30) การหยุด ACEi/ARB ไม่ได้ชะลอการเสื่อมของไต (STOP-ACEi, NEJM 2022) — อย่าหยุดยาที่ปกป้องไตและหัวใจโดยไม่มีเหตุ <span class="tag add">เสริม</span></p>
+</section>
+
+<section id="atn" class="col">
+  <div class="sec-num">03</div>
+  <h2>ATN จากยา (direct tubular toxicity)</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ลักษณะ</th><th>ป้องกัน/จัดการ</th></tr>
+    <tr><td><b>Aminoglycoside</b> (gentamicin, amikacin)</td><td>สะสมใน proximal tubule · AKI แบบ<b>ปัสสาวะไม่น้อย</b> หลังได้ยา ~5–7 วัน · K/Mg ต่ำ · พิษต่อหูร่วม</td><td>ให้<b>วันละครั้ง</b> (extended interval) · ใช้สั้นที่สุด · ตรวจระดับยา · เลี่ยงร่วมกับ nephrotoxin อื่น/ขาดน้ำ → ดู <a href="#tdm">TDM</a></td></tr>
+    <tr><td><b>Vancomycin</b></td><td>ความเสี่ยงเพิ่มตามระดับยา (AUC &gt;600, trough สูง), ระยะเวลา, ICU, ใช้ร่วม nephrotoxin</td><td>ใช้ <b>AUC-guided dosing</b> · ทบทวนความจำเป็นทุก 48–72 ชม. (de-escalate เมื่อไม่พบ MRSA)</td></tr>
+    <tr><td><b>Vancomycin + piperacillin-tazobactam</b></td><td>งานศึกษาเชิงสังเกตพบ AKI มากกว่า vancomycin + cefepime/meropenem · ส่วนหนึ่งอาจเป็นแค่ creatinine ขึ้น (pip-tazo อาจลดการหลั่ง creatinine)</td><td>RCT <b>ACORN</b> (JAMA 2023, ผู้ป่วยส่วนใหญ่ได้ vancomycin ร่วม): <b>AKI/เสียชีวิตไม่ต่างจาก cefepime</b> แต่ cefepime มีปัญหาทางสมอง (delirium/coma) มากกว่า → ไม่ต้องเลี่ยง pip-tazo เพราะเรื่องไตอย่างเดียว แต่ให้ตาม Cr และหยุด vancomycin เร็วเมื่อไม่จำเป็น</td></tr>
+    <tr><td><b>Amphotericin B</b></td><td>หด afferent + ทำลายท่อไต · <b>K ต่ำ, Mg ต่ำ, distal RTA</b></td><td>เลือก <b>liposomal</b> (3–5 mg/kg/วัน) ถ้าเข้าถึงได้ · deoxycholate 0.7–1 mg/kg/วัน: ให้ <b>0.9% NaCl 500–1,000 mL ก่อน</b> (และหลัง) ทุกครั้งถ้าไม่มีน้ำเกิน · ทดแทน K/Mg · ตาม Cr, K, Mg ทุกวันช่วงแรก <span class="tag th">ไทย</span> รพ.ส่วนใหญ่ยังใช้ deoxycholate</td></tr>
+    <tr><td><b>Cisplatin</b></td><td>Proximal tubule · Mg ต่ำเรื้อรัง · ขึ้นกับขนาดสะสม</td><td>NSS hydration + เสริม Mg ตามโปรโตคอลมะเร็ง · ทีม onco ปรับ/เปลี่ยนเป็น carboplatin · ดู <a href="../magnesium/index.html">Magnesium</a></td></tr>
+    <tr><td><b>Colistin</b> (colistimethate)</td><td>AKI พบบ่อยมาก ขึ้นกับขนาด · ขับทางไต</td><td>Loading 300 mg CBA (≈9 ล้านหน่วย) แล้ว maintenance <b>ปรับตาม CrCl</b> ตาม international consensus 2019 · ใช้เมื่อจำเป็นจริง หยุดเมื่อได้ยาทางเลือก · <b>polymyxin B</b> ไม่ต้องปรับตามไต (แต่ก็ทำ AKI ได้) · ดู <a href="../mdr-gnb/index.html">MDR-GNB</a></td></tr>
+    <tr><td><b>Tenofovir (TDF)</b></td><td>Proximal tubulopathy, Fanconi (glycosuria ทั้งที่น้ำตาลปกติ, PO₄ ต่ำ, proteinuria)</td><td>เปลี่ยนเป็น <b>TAF</b> หรือยาอื่นเมื่อ eGFR ลด/มี tubulopathy · ปรับระยะห่างยาตาม CrCl <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Zoledronic acid</b></td><td>ATN (และ collapsing FSGS)</td><td>ขนาดกระดูกพรุน 5 mg: ห้ามเมื่อ CrCl &lt;35 · ขนาดมะเร็ง: ลดขนาดเมื่อ CrCl 30–60, ไม่แนะนำเมื่อ CrCl &lt;30 · ให้ช้า ≥15 นาที <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <div class="box key"><b>หลักป้องกัน ATN จากยา (nephrotoxin stewardship)</b>ร่าง KDIGO 2026: แนะนำ drug/nephrotoxin stewardship แบบหลายมิติในผู้ที่มีหรือเสี่ยง AKI <span class="rec s1">1C</span> <span class="tag draft">ร่าง</span> = หยุดยาพิษที่ไม่จำเป็น · เปลี่ยนเป็นยาที่ปลอดภัยกว่า · ลดขนาดยาพิษตามขนาด · <b>TDM</b> · มองหายาตีกัน · ให้เภสัชกรทบทวนยา · ใช้ระบบเตือนในคอมพิวเตอร์ · <span class="tag add">เสริม</span> โปรแกรม NINJA (เด็ก) ใช้เกณฑ์ "ได้ nephrotoxin ≥3 ตัวพร้อมกัน หรือ aminoglycoside IV ≥3 วัน" เป็นสัญญาณให้ตรวจ Cr ทุกวัน</div>
+</section>
+
+<section id="ain" class="col">
+  <div class="sec-num">04</div>
+  <h2>AIN จากยา และ ICI nephritis</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>วินิจฉัย</h4><ul><li>ยาที่พบบ่อย: <b>β-lactam</b> (penicillin, cephalosporin), <b>PPI</b>, <b>NSAIDs</b>, rifampicin, sulfonamide (co-trimoxazole), allopurinol, ciprofloxacin, <b>ICI</b></li><li>เวลา: มัก 7–14 วันหลังเริ่มยา (เร็วกว่าถ้าเคยแพ้) · <b>PPI/NSAIDs อาจนานเป็นเดือน</b></li><li>Triad ไข้ + ผื่น + eosinophilia พบ <b>ส่วนน้อย</b> (ไม่มีก็ไม่ตัดทิ้ง) · NSAID-AIN อาจมาเป็น nephrotic syndrome</li><li>ปัสสาวะ: <b>sterile pyuria, WBC cast</b>, โปรตีนเล็กน้อย · ปกติก็ไม่ตัด AIN</li><li><b>Urine eosinophil ไม่ช่วย</b> (sensitivity ต่ำ) — ร่าง KDIGO 2026 PP 2.5.2 <span class="tag draft">ร่าง</span></li><li>ยืนยันด้วย <b>kidney biopsy</b> (มาตรฐาน) · urine TNF-α/IL-9 กำลังศึกษา</li></ul></div>
+    <div class="card c-ok"><h4>รักษา</h4><ul><li><b>หยุดยาต้นเหตุทันที</b> (สำคัญที่สุด) · เลี่ยงยากลุ่มเดียวกันในอนาคต · บันทึกแพ้ยา</li><li>ไม่ดีขึ้นใน <b>3–7 วัน</b> หลังหยุดยา หรือรุนแรงตั้งแต่ต้น → ปรึกษาอายุรแพทย์โรคไต พิจารณา biopsy และ <b>corticosteroid</b></li><li>ขนาดที่ใช้บ่อย (expert opinion): <b>prednisolone 0.5–1 mg/kg/วัน (สูงสุด ~60 mg)</b> 1–4 สัปดาห์ แล้วค่อยลดจนหยุดในรวม ~6–12 สัปดาห์ · รุนแรงอาจเริ่ม methylprednisolone 250–500 mg IV/วัน × 3 วัน <span class="tag add">เสริม</span></li><li>เริ่ม steroid เร็ว (ภายใน ~7 วันหลังหยุดยา) สัมพันธ์กับไตฟื้นดีกว่า (González, Kidney Int 2008) แต่หลักฐานยังเป็นการศึกษาย้อนหลัง · systematic review 2025 ยังไม่มีขนาด/ระยะเวลาที่เป็นมาตรฐาน</li><li>ร่าง KDIGO 2026 <b>ไม่มีคำแนะนำมีเกรด</b>เรื่อง steroid ใน AIN</li></ul></div>
+  </div>
+  <h3>ICI nephritis (immune checkpoint inhibitor)</h3>
+  <p>Pembrolizumab, nivolumab, atezolizumab, ipilimumab ฯลฯ · AKI จาก ICI พบราว 2–5% · มักเกิด <b>~3 เดือนหลังเริ่มยา</b> (ช่วงกว้าง เกิดหลังหยุดยาแล้วก็ได้) · ส่วนใหญ่เป็น AIN · ปัจจัยเสี่ยง: <b>ใช้ PPI ร่วม</b>, eGFR ตั้งต้นต่ำ, ใช้ ICI สองตัว (Cortazar, JASN 2020) · ตัดสาเหตุอื่นก่อน (ขาดน้ำ, contrast, อุดกั้น, ยาอื่น)</p>
+  <div class="tbl"><table>
+    <tr><th>ระดับ (เทียบ baseline)</th><th>ICI</th><th>Steroid</th></tr>
+    <tr><td>G1: Cr 1.5–2×</td><td>ASCO: พิจารณาพักชั่วคราวระหว่างหาสาเหตุ (บางแนวทางให้ต่อได้) · ตาม Cr ทุกสัปดาห์</td><td>ไม่ต้อง · หยุด nephrotoxin, ให้น้ำ</td></tr>
+    <tr><td>G2: Cr 2–3×</td><td><b>พักยา</b></td><td><b>Prednisone 0.5–1 mg/kg/วัน</b> · ดีขึ้นถึง G1 แล้วลดใน ≥4 สัปดาห์</td></tr>
+    <tr><td>G3–4: Cr &gt;3× หรือ &gt;4 mg/dL / ต้องฟอกไต</td><td>มัก<b>หยุดถาวร</b> (ตัดสินร่วมกับ oncologist)</td><td><b>1–2 mg/kg/วัน</b> (prednisone หรือ methylpred IV) · ลดใน ≥4–6 สัปดาห์ · ดื้อ steroid → ปรึกษา (เช่น mycophenolate)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ตาม ASCO irAE guideline 2021 และแนวทาง Cancer Care Ontario · หยุด PPI ถ้าไม่จำเป็น · rechallenge ICI กลับเป็นซ้ำราว 1 ใน 4 · ดูเพิ่ม <a href="../onco-emergency/index.html">ภาวะฉุกเฉินทางมะเร็ง</a></p>
+</section>
+
+<section id="other" class="col">
+  <div class="sec-num">05</div>
+  <h2>Crystal · Osmotic · TMA · Rhabdomyolysis</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Crystal nephropathy</h4><ul><li><b>Acyclovir IV</b>: ผลึกตกในท่อไตเมื่อให้ขนาดสูง ให้เร็ว หรือขาดน้ำ · <b>หยดอย่างน้อย 1 ชม.</b> + ให้น้ำพอ · คิดขนาดด้วย IBW ในคนอ้วน · ปรับตามไต: ปกติ 5–10 mg/kg q8h → CrCl 25–50: q12h · 10–25: q24h · &lt;10: ครึ่งขนาด q24h · AKI ทำให้เกิดพิษต่อสมอง (สับสน ชัก) ได้</li><li><b>Methotrexate ขนาดสูง</b>: ให้น้ำ + <b>ทำปัสสาวะเป็นด่าง pH ≥7</b> · เลี่ยงยาที่ลดการขับ (NSAIDs, PPI, co-trimoxazole, penicillin) · ระดับยาสูง + ไตวาย → leucovorin + <b>glucarpidase 50 units/kg IV ครั้งเดียว</b> (ถ้ามี) · ทีม onco ดูแล</li><li><b>Sulfadiazine / co-trimoxazole ขนาดสูง</b>: ให้น้ำ ปัสสาวะเป็นด่าง</li><li>อื่นๆ: indinavir, atazanavir, ciprofloxacin (ปัสสาวะด่าง), vitamin C ขนาดสูง (oxalate), oral sodium phosphate เตรียมลำไส้ (acute phosphate nephropathy) · uric acid ใน tumor lysis → <a href="../onco-emergency/index.html">Onco-emergency</a></li></ul></div>
+    <div class="card c-vio"><h4>Osmotic nephrosis</h4><ul><li><b>IVIG</b> ที่ใช้ <b>sucrose</b> เป็น stabilizer เสี่ยงที่สุด · เลือกสูตรไม่มี sucrose, หยดช้า, ให้น้ำพอ, ตาม Cr ในผู้เสี่ยง (CKD, เบาหวาน, อายุมาก)</li><li><b>Mannitol</b> ขนาดสูง/ต่อเนื่อง: ระวังเมื่อ <b>osmolal gap &gt;55–60 mOsm/kg</b> (บ่งว่ายาสะสม) · ไตวายแล้วยาไม่ถูกขับ → วงจรร้าย</li><li><b>Hydroxyethyl starch</b>: เพิ่ม AKI และการฟอกไตใน sepsis → ไม่ใช้ (ดู <a href="../sepsis/index.html">Sepsis</a>)</li></ul><h4 style="margin-top:12px">TMA จากยา</h4><ul><li><b>Immune</b> (เกิดเร็ว ขึ้นกับภูมิ): <b>quinine</b> (รวมน้ำโทนิค/ยาตะคริว) — ห้ามใช้ซ้ำตลอดชีวิต</li><li><b>Dose-dependent</b> (ค่อยๆ เกิด): gemcitabine, mitomycin C, CNI, VEGF inhibitor (bevacizumab), cocaine</li><li>เกล็ดเลือดต่ำ + schistocyte + LDH สูง + AKI/ความดันสูง → หยุดยา · ส่ง ADAMTS13 เพื่อแยก TTP · ปรึกษา hematology · ดู <a href="../thrombocytopenia/index.html">Thrombocytopenia</a></li></ul></div>
+  </div>
+  <div class="card c-red" style="margin-top:12px"><h4>Rhabdomyolysis จากยา/สาร</h4><ul><li><b>Statin</b> โดยเฉพาะขนาดสูงหรือใช้ร่วม <b>gemfibrozil</b>, ยายับยั้ง CYP3A4 (clarithromycin, azole, ritonavir) กับ simvastatin/atorvastatin, <b>colchicine</b> ในคนไตเสื่อม</li><li><b>Daptomycin</b> (ตรวจ CK ทุกสัปดาห์; พักยา statin) · <b>propofol infusion syndrome</b> (ขนาดสูงนาน) · antipsychotic (NMS) · serotonin syndrome · succinylcholine</li><li>สารเสพติด: <b>ยาบ้า/ไอซ์ (methamphetamine)</b>, โคเคน, สุรา <span class="tag th">ไทย</span> · ร่วมกับ heat stroke/ออกกำลังหนัก</li><li>จัดการ: หยุดยา · ให้น้ำเร็ว ตาม CK/K/Ca → ดู <a href="../rhabdo-heat/index.html">Rhabdomyolysis &amp; heat stroke</a></li></ul></div>
+</section>
+
+<section id="sick" class="col">
+  <div class="sec-num">06</div>
+  <h2>Sick-day rules (SADMANS) และการเริ่มยากลับหลัง AKI</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>SADMANS — หยุดชั่วคราวเมื่อป่วยขาดน้ำ</h4><ul><li><b>S</b>ulfonylurea (น้ำตาลต่ำ)</li><li><b>A</b>CE inhibitor</li><li><b>D</b>iuretic</li><li><b>M</b>etformin (lactic acidosis)</li><li><b>A</b>RB (รวม ARNI)</li><li><b>N</b>SAIDs</li><li><b>S</b>GLT2 inhibitor (ขาดน้ำ + euglycemic DKA)</li></ul><p style="font-size:.9rem;margin:.4rem 0 0">เมื่อ: <b>อาเจียน ท้องเสีย ไข้สูงเหงื่อออกมาก กินดื่มไม่ได้</b> · กลับมากินยาเมื่อ<b>กินดื่มได้ปกติ 24–48 ชม.</b> · ไม่ดีขึ้นใน 48 ชม. → พบแพทย์ · <b>อย่าหยุด insulin</b> (ปรับขนาด ตรวจน้ำตาลบ่อย)</p></div>
+    <div class="card c-acc"><h4>หลักฐานและข้อควรระวัง</h4><ul><li>ร่าง KDIGO 2026: เสนอให้หยุดยาบางกลุ่มชั่วคราวเมื่อป่วยเฉียบพลัน <span class="rec">2D</span> <span class="tag draft">ร่าง</span> — หลักฐานอ่อน (ส่วนใหญ่เป็นความเห็นผู้เชี่ยวชาญ)</li><li>ต้องให้ <b>แผนการเริ่มยากลับที่ชัดเจน</b> ทุกครั้ง (PP 4.11.1) — ปัญหาที่พบจริงคือผู้ป่วยหยุดยาที่ปกป้องหัวใจ/ไตแล้วไม่กลับมากิน</li><li>สอนให้เป็นลายลักษณ์อักษร (การ์ด/สติ๊กเกอร์ซองยา) โดยเฉพาะผู้สูงอายุ, CKD, HF, เบาหวาน</li><li>ก่อนผ่าตัดใหญ่: SGLT2i หยุด ≥3 วัน (ertugliflozin ≥4 วัน; FDA) (ดู <a href="../ckd/index.html">CKD</a>, <a href="../dm/index.html">DM</a>)</li></ul></div>
+  </div>
+  <h3>เริ่มยากลับหลัง AKI</h3>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>เมื่อไร</th></tr>
+    <tr><td><b>ACEi / ARB</b></td><td>ร่าง KDIGO 2026: <b>แนะนำเริ่มหรือกลับมาให้ RASi ในผู้ใหญ่หลัง AKI ถ้าไม่มีข้อห้าม</b> <span class="rec s1">1B</span> <span class="tag draft">ร่าง</span> · ทำเมื่อ volume กลับปกติ ความดันพอ K ไม่สูง และ Cr เริ่มลด/คงที่ · ตรวจ Cr และ K ซ้ำ ~1–2 สัปดาห์หลังเริ่ม <span class="tag add">เสริม</span> · การศึกษาเชิงสังเกตพบว่าได้ ACEi/ARB หลัง AKI สัมพันธ์กับอัตราตายต่ำกว่า (Brar, JAMA Intern Med 2018)</td></tr>
+    <tr><td><b>SGLT2i, MRA, GLP-1 RA</b></td><td>ประเมินข้อบ่งชี้และเริ่มกลับเมื่อพร้อม (PP 6.2.1) · SGLT2i เริ่มได้เมื่อกินดื่มได้ ไม่ขาดน้ำ · MRA ระวัง K</td></tr>
+    <tr><td><b>Diuretic</b></td><td>เริ่มเมื่อเริ่มมีน้ำเกิน/บวม (ผู้ป่วย HF มักต้องเริ่มเร็ว) · ขนาดต่ำกว่าเดิมแล้วปรับตามน้ำหนักตัว</td></tr>
+    <tr><td><b>Metformin</b></td><td>เมื่อไตคงที่และ eGFR ≥30 (eGFR 30–44 ใช้ไม่เกิน 1,000 mg/วัน)</td></tr>
+    <tr><td><b>NSAIDs</b></td><td>หลีกเลี่ยงต่อเนื่อง · บอกผู้ป่วยว่า "เคยไตวายจากยานี้"</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ทบทวนยาทุกตัวตอนจำหน่าย (PP 6.2.2) และนัดตรวจไต ~3 เดือนหลัง AKI (ดู <a href="../aki/index.html#followup">AKI: หลังจำหน่าย</a>)</p>
+</section>
+
+<section id="contrast" class="col">
+  <div class="sec-num">07</div>
+  <h2>Contrast-associated AKI, metformin และ gadolinium</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ศัพท์และความเสี่ยงจริง</h4><ul><li><b>CA-AKI</b> (contrast-associated) = AKI ใน 48 ชม. หลังได้ contrast — อาจไม่ได้เกิดจาก contrast</li><li><b>CI-AKI</b> (contrast-induced) = ส่วนที่เกิดจาก contrast จริง · พิสูจน์ได้ต้องมีกลุ่มเปรียบเทียบ</li><li>ข้อมูลใหม่ (คุมปัจจัยกวน) พบว่า contrast ทาง IV แบบ low/iso-osmolar ทำ AKI <b>น้อยกว่าที่เคยเชื่อมาก</b> · eGFR ≥45 ความเสี่ยง CI-AKI แทบเป็นศูนย์ · eGFR &lt;30 ยังไม่แน่ชัด</li><li>ตัวเลข "CIN" แบบเก่า (Cr ขึ้น 25%/0.5 mg/dL) เลิกใช้แล้ว ใช้นิยาม KDIGO แทน</li><li>Cr มักสูงสุดวันที่ 2–5 หลังฉีด</li></ul></div>
+    <div class="card c-red"><h4>ห้ามพลาด</h4><ul><li><b>ภาวะคุกคามชีวิต</b> (aortic dissection, stroke, PE, trauma, STEMI) <b>ห้ามงด/เลื่อน contrast เพราะค่าไต</b> — ให้ NSS ร่วมได้ถ้าไม่มีข้อห้าม แต่ไม่ต้องรอ</li><li>ไม่จำเป็นต้องรอผล Cr ก่อนฉีดในทุกคน · ACR–NKF: เหตุที่คุ้มส่งตรวจ Cr คือ <b>มีประวัติโรคไต</b> (อายุ/HT อย่างเดียวให้ผลบวกลวงมาก)</li><li>ไตข้างเดียว (solitary kidney) <b>ไม่ใช่</b>ปัจจัยตัดสินความเสี่ยง</li><li>ผู้ฟอกไตที่<b>ไม่มีปัสสาวะ (anuric)</b>: ไม่ต้องป้องกัน ไม่ต้องฟอกเพิ่มหลังฉีด ไม่ต้องเปลี่ยนตารางฟอก</li></ul></div>
+  </div>
+  <h3>ใครเสี่ยงสูง และควรให้สารน้ำป้องกัน</h3>
+  <div class="tbl"><table>
+    <tr><th>แนวทาง</th><th>เสี่ยงสูง → ให้สารน้ำป้องกัน</th><th>ก้ำกึ่ง</th><th>ไม่ต้อง</th></tr>
+    <tr><td><b>ACR–NKF 2020</b> (IV เท่านั้น)</td><td><b>eGFR &lt;30</b> ที่ไม่ได้ฟอกไต · <b>AKI</b> · ฟอกไตแต่ยังมีปัสสาวะ (&gt;~100 mL/วัน) ถือว่าเสี่ยงเท่า AKI (ใช้ contrast อย่างระวัง แต่ ACR–NKF <b>ไม่แนะนำสารน้ำป้องกัน</b>ในผู้ฟอกไต)</td><td>eGFR 30–44: พิจารณาเป็นรายๆ ถ้ามีปัจจัยเสี่ยงหลายอย่าง</td><td>eGFR ≥45</td></tr>
+    <tr><td><b>ESUR 2018</b></td><td>IV หรือ IA แบบ second-pass: <b>eGFR &lt;30</b> · IA แบบ <b>first-pass</b> หรือผู้ป่วย ICU: <b>eGFR &lt;45</b> · AKI</td><td>—</td><td>นอกเหนือจากนี้</td></tr>
+    <tr><td><b>ร่าง KDIGO 2026</b> <span class="tag draft">ร่าง</span></td><td>ผู้ใหญ่เสี่ยงสูง (AKI หรือ eGFR &lt;30) ที่ไม่มีน้ำเกิน: <b>0.9% NaCl รอบหัตถการ</b> ดีกว่าสารน้ำ hypotonic/bicarbonate/ไม่ให้ <span class="rec s1">1B</span></td><td>—</td><td>—</td></tr>
+    <tr><td>KDIGO 2012 (เดิม)</td><td colspan="3">ใช้ eGFR &lt;60 เป็นเกณฑ์ตรวจ/ระวัง — <b>เข้มเกินไปตามหลักฐานปัจจุบัน</b> หน้านี้ใช้เกณฑ์ &lt;30 ตาม ACR–NKF/ร่าง KDIGO 2026</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><b>First-pass</b> = contrast ไปถึงไตแบบยังไม่เจือจาง: ฉีดเข้าหัวใจห้องซ้าย (LV gram), aorta ส่วนอกหรือเหนือหลอดเลือดไต, renal artery · <b>Second-pass</b> = ผ่านปอด/ร่างกายก่อนถึงไต: IV, หัวใจห้องขวา, pulmonary, coronary (ESUR), carotid, mesenteric, aorta ใต้ไต · คำแนะนำ ACR–NKF ใช้กับ IV เท่านั้น ส่วน IA แบบ second-pass ESUR ถือว่าเสี่ยงเท่า IV</p>
+  <div class="box key"><b>วิธีป้องกันที่ได้ผล (มีเท่านี้)</b><ul style="margin:.3rem 0 0"><li><b>0.9% NaCl IV</b>: ACR–NKF ยกตัวอย่าง <b>เริ่ม 1 ชม.ก่อน ต่อ 3–12 ชม.หลัง</b> ที่ <b>1–3 mL/kg/h</b> หรือ 500 mL ก่อน + 500 mL หลัง · สูตรยาว (~12 ชม.) สัมพันธ์กับ CA-AKI น้อยกว่า · ประเมิน volume ก่อนทุกครั้ง (HF, น้ำเกิน → ลด/งด) <span class="tag add">เสริม</span> สูตรผู้ป่วยในที่ใช้บ่อย 1 mL/kg/h 6–12 ชม.ก่อนและหลัง</li><li>ใช้ <b>iso- หรือ low-osmolar contrast ขนาดต่ำสุด</b>ที่ได้ภาพพอ (ร่าง KDIGO 2026 <span class="rec s1">1B</span>) · หลีกเลี่ยงฉีดซ้ำในเวลาใกล้กันถ้าไม่จำเป็น · พิจารณา imaging ที่ไม่ใช้ contrast ในผู้เสี่ยงสูง</li><li>ผู้เสี่ยงสูง: <b>หยุด nephrotoxin ที่ไม่จำเป็น 24–48 ชม.ก่อน และ 48 ชม.หลัง</b> · <b>พัก diuretic</b> ขณะให้สารน้ำป้องกัน (PP 4.9.2.2)</li></ul></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ไม่แนะนำ</h4><ul><li><b>N-acetylcysteine (NAC)</b> — ไม่ได้ผลชัด (PRESERVE trial) <span class="rec no">ไม่แนะนำ</span></li><li><b>Sodium bicarbonate</b> — ไม่ดีกว่า NaCl (ESUR ถือว่าเท่ากัน; ACR–NKF/ร่าง KDIGO เลือก NaCl เพราะหาง่าย ไม่ต้องผสม)</li><li>Furosemide, statin ขนาดสูง, vitamin C, theophylline</li><li><b>ฟอกเลือดป้องกันหลังฉีด</b> — อาจมีผลเสีย</li><li>ดื่มน้ำอย่างเดียวแทน IV ในผู้เสี่ยงสูง (ESUR ไม่แนะนำเป็นวิธีเดียว)</li></ul></div>
+    <div class="card c-warn"><h4>ACEi/ARB ก่อนฉีด: แนวทางไม่ตรงกัน</h4><ul><li><b>ACR–NKF 2020</b>: หลักฐานขัดแย้ง ผู้ส่งตรวจ "อาจพิจารณาหยุด ≥48 ชม." ก่อนตรวจแบบนัด</li><li><b>ร่าง KDIGO 2026</b>: เสนอ<b>ไม่ต้องหยุด RASi เป็น routine</b> ก่อนหัตถการ <span class="rec">2C</span> <span class="tag draft">ร่าง</span></li><li><b>หน้านี้ใช้ตาม KDIGO</b>: ไม่หยุดเป็น routine · หยุดเฉพาะรายที่ความดันต่ำ/ขาดน้ำ/มี AKI อยู่แล้ว</li></ul></div>
+  </div>
+  <div class="box note"><span class="tag th">ไทย</span> <b>ยังไม่มีแนวทางระดับชาติของไทย</b>เรื่อง CA-AKI โดยตรง รพ.ส่วนใหญ่อ้าง ACR/ESUR/KDIGO · การศึกษาย้อนหลังที่ รพ.ราชวิถี (วารสารสมาคมโรคไตฯ 2025; ผู้ป่วย eGFR 15–59 ฉีด contrast ทาง IV ทำ CT) พบ CA-AKI ~9% ปัจจัยเสี่ยงคือ <b>CKD G3b และมี AKI อยู่ก่อน</b> · และยังพบการให้ <b>NAC มากกว่าครึ่ง</b> ของผู้ป่วย — ควรเลิกใช้ตามหลักฐานปัจจุบัน</div>
+
+  <h3>Metformin กับ contrast</h3>
+  <p>Metformin <b>ไม่ได้ทำให้เกิด CA-AKI</b> · ปัญหาคือถ้าเกิด AKI แล้วยาสะสม → lactic acidosis จึงหยุดเฉพาะกลุ่มเสี่ยง</p>
+  <div class="tbl"><table>
+    <tr><th>แนวทาง</th><th>ใช้ต่อได้</th><th>หยุด ณ เวลาฉีด</th><th>เริ่มกลับ</th></tr>
+    <tr><td><b>ACR Manual</b></td><td>eGFR ≥30 และไม่มี AKI (ไม่ต้องตรวจไตซ้ำ)</td><td>AKI · eGFR &lt;30 · ตรวจสวนหลอดเลือดแดงที่อาจมี emboli เข้าหลอดเลือดไต</td><td>หยุด 48 ชม. แล้วตรวจไตซ้ำ ไตไม่แย่ลงจึงเริ่ม</td></tr>
+    <tr><td><b>ESUR 2018</b></td><td>eGFR ≥30 กับ IV/IA second-pass</td><td>eGFR &lt;30 · AKI · <b>IA first-pass ทุกราย</b></td><td>ตรวจ eGFR ภายใน 48 ชม. ไม่เปลี่ยนมากจึงเริ่ม</td></tr>
+    <tr><td><b>ร่าง KDIGO 2026</b> <span class="tag draft">ร่าง</span></td><td>eGFR &gt;30 และไม่มี AKI</td><td>AKI หรือ <b>eGFR ≤30</b></td><td>ไม่เริ่มใหม่อย่างน้อย 48 ชม.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ขนาด metformin ตามไต (ESUR/FDA): eGFR 45–59 ≤2,000 mg/วัน · 30–44 ≤1,000 mg/วัน และไม่เริ่มใหม่ · &lt;30 ห้ามใช้ · ACR–NKF ให้ eGFR 30–59 ตัดสินเป็นรายๆ · หน้านี้ใช้เกณฑ์กลาง: <b>eGFR ≤30 หรือ AKI หรือ IA first-pass → หยุด 48 ชม. แล้วตรวจไตก่อนเริ่ม</b></p>
+
+  <h3>Gadolinium (MRI) และ NSF</h3>
+  <div class="grid2">
+    <div class="card c-ok"><h4>Group II — ปลอดภัยมาก</h4><ul><li><b>Gadobutrol</b> (Gadovist), <b>gadoterate</b> (Dotarem, Clariscan), <b>gadoteridol</b> (ProHance), <b>gadobenate</b> (MultiHance), <b>gadopiclenol</b> (Elucirem/Vueway; ACR จัดเป็น group II ปี 2023)</li><li>ACR–NKF 2021: ความเสี่ยง NSF ต่ำมากจน<b>ไม่ต้องงดให้</b>ในคน eGFR &lt;30/AKI ถ้ามีข้อบ่งชี้ · การคัดกรอง eGFR ก่อนให้ <b>ไม่จำเป็น</b> (optional)</li><li>ใช้ขนาดมาตรฐานหรือต่ำกว่า</li></ul></div>
+    <div class="card c-red"><h4>Group I — เลี่ยงในไตเสื่อม</h4><ul><li>Gadodiamide (Omniscan), gadopentetate (Magnevist), gadoversetamide — เป็นต้นเหตุ NSF เกือบทั้งหมด · ห้ามใช้ใน eGFR &lt;30, AKI, ฟอกไต</li><li><b>Group III</b>: gadoxetate (Primovist/Eovist ใช้ดูตับ) — ข้อมูลน้อย ใช้ด้วยความระวังในไตเสื่อมรุนแรง</li><li>ผู้ฟอกเลือดอยู่แล้ว: นัดฟอก<b>เร็วที่สุดหลังตรวจ</b> (ไม่ต้องฟอกฉุกเฉิน) · <b>ไม่เริ่มฟอกไต</b>เพียงเพราะได้ gadolinium</li><li>Gadolinium ไม่ใช่ทางเลือกแทน iodinated contrast ในการถ่าย CT/angiography (ต้องใช้ขนาดสูง)</li></ul></div>
+  </div>
+</section>
+
+<section id="tdm" class="col">
+  <div class="sec-num">08</div>
+  <h2>TDM ของ vancomycin/aminoglycoside และขนาดยาใน AKI</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Vancomycin (ASHP/IDSA/PIDS/SIDP 2020)</h4><ul><li>เป้าหมาย <b>AUC₂₄ 400–600 mg·h/L</b> (สมมติ MIC = 1) สำหรับ MRSA รุนแรง</li><li><b>เลิกใช้ trough 15–20 เป็นเป้า</b> — ได้ประโยชน์ไม่ต่าง แต่ AKI มากขึ้น</li><li>คำนวณ AUC: <b>Bayesian software</b> (ดีที่สุด เจาะได้ตั้งแต่ 24–48 ชม.แรก) หรือเจาะ <b>2 ระดับ</b> (peak + trough) ที่ steady state</li><li>Loading: <b>20–35 mg/kg</b> (น้ำหนักจริง) <b>สูงสุด 3,000 mg</b> ในผู้ป่วยหนัก · อ้วน: 20–25 mg/kg สูงสุด 3,000 mg และ maintenance เริ่มต้นไม่เกิน 4,500 mg/วัน</li><li>Maintenance ไตปกติ: <b>15–20 mg/kg q8–12h</b> แล้วปรับตาม AUC · <b>มี AKI: ยังให้ loading เต็ม</b> แล้วเว้นระยะ/ปรับตามระดับยา</li><li>Continuous infusion เป็นทางเลือกได้ (ICU)</li><li><span class="tag th">ไทย</span> ถ้า รพ. ยังไม่มีโปรแกรม AUC ให้ปรึกษาเภสัชกรคลินิก · trough สูง (&gt;15–20) เป็นสัญญาณเสี่ยงไต</li></ul></div>
+    <div class="card c-warn"><h4>Aminoglycoside วันละครั้ง (extended-interval)</h4><ul><li><b>Gentamicin 5–7 mg/kg IV q24h</b> · <b>amikacin 15–20 mg/kg IV q24h</b> · หยด 30–60 นาที</li><li>น้ำหนักที่ใช้: <b>IBW</b> · ถ้าน้ำหนักจริง &lt;IBW ใช้น้ำหนักจริง · ถ้า &gt;120% IBW ใช้ <b>AdjBW = IBW + 0.4×(TBW−IBW)</b></li><li><b>Hartford nomogram</b> (gentamicin 7 mg/kg): เจาะระดับสุ่ม <b>6–14 ชม.</b>หลังเริ่มยา แล้วอ่านช่วงห่าง q24/q36/q48h จากกราฟ · ค่าอยู่เหนือเส้น q48h → เปลี่ยนเป็น dosing แบบดั้งเดิมตามระดับยา</li><li>ระยะห่างเริ่มต้นตาม CrCl: <b>≥60 q24h · 40–59 q36h · 20–39 q48h</b> · <b>&lt;20, ฟอกไต, burn &gt;20%, ascites, ตั้งครรภ์</b> → ไม่ใช้ nomogram ให้ตามระดับยา</li><li>เป้า: trough แทบตรวจไม่พบ (gentamicin &lt;1 mg/L) · ใช้ให้สั้นที่สุด (มัก ≤5–7 วัน) · ตาม Cr อย่างน้อยวันเว้นวัน</li></ul></div>
+  </div>
+  <h3>ขนาดยาเมื่อ creatinine ยังไม่นิ่ง</h3>
+  <div class="box warn"><b>ร่าง KDIGO 2026 PP 4.5.1–4.5.2</b> <span class="tag draft">ร่าง</span>ขณะเป็น AKI <b>อย่าคิดขนาดยาจาก CrCl หรือ eGFR สูตร steady state</b> · ให้ดู <b>แนวโน้ม SCr และปัสสาวะ</b> · <b>kinetic eGFR (KeGFR)</b> ช่วยได้เมื่อมี SCr หลายค่า (เสนอให้คำนวณ KeGFR ในผู้ป่วยใน <span class="rec">2B</span>)<br>• <b>SCr กำลังขึ้น</b> → GFR จริง <b>ต่ำกว่า</b>ที่สูตรคำนวณ (ระวังยาเกิน: ยาพิษแคบ เช่น aminoglycoside, digoxin, enoxaparin)<br>• <b>SCr กำลังลด</b> (ไตฟื้น) → GFR จริง <b>สูงกว่า</b>ที่คำนวณ (ระวังยาต้านจุลชีพต่ำเกิน → รักษาล้มเหลว)<br>• <b>Loading dose ไม่ต้องลดตามไต</b> · ยาต้านจุลชีพ β-lactam ในช่วง 24–48 ชม.แรกของ sepsis หลายผู้เชี่ยวชาญแนะนำยังไม่ลดขนาดตามไต เพราะ AKI จำนวนมากฟื้นเร็ว <span class="tag add">เสริม</span></div>
+  <div class="tbl"><table>
+    <tr><th>คำถาม</th><th>คำตอบสั้น</th></tr>
+    <tr><td>ใช้ CrCl (Cockcroft–Gault) หรือ eGFR?</td><td>ฉลากยาเก่าส่วนใหญ่ทดสอบด้วย CG จึงใช้ <b>CG สำหรับยาที่ฉลากระบุ CrCl</b> เช่น <b>DOACs</b> (dabigatran, rivaroxaban, apixaban, edoxaban), aminoglycoside nomogram · ยาทั่วไปใช้ eGFR (CKD-EPI) ได้ (KDIGO CKD 2024, FDA 2024)</td></tr>
+    <tr><td>eGFR แบบ "/1.73 m²" ต้องแปลงไหม?</td><td>สำหรับขนาดยาในคนตัวใหญ่หรือเล็กมาก แปลงเป็น mL/min จริง: <b>eGFR × BSA ÷ 1.73</b></td></tr>
+    <tr><td>ยาพิษแคบในคนกล้ามเนื้อน้อย (ผู้สูงอายุติดเตียง, ตัดขา, cirrhosis)?</td><td>SCr ต่ำหลอก → CG/eGFR สูงเกินจริง · ใช้ <b>eGFRcr-cys (cystatin C)</b> หรือวัด GFR/เก็บปัสสาวะ 24 ชม. · TDM ถ้ามี</td></tr>
+    <tr><td>น้ำหนักใน CG?</td><td>ผอม (BMI &lt;18.5) ใช้น้ำหนักจริง · ปกติใช้ IBW (หรือน้ำหนักจริงถ้าน้อยกว่า) · BMI ≥25 ใช้ AdjBW (แม่นที่สุดใน Winter 2012) — ดูเครื่องมือด้านล่าง</td></tr>
+    <tr><td>ปัด SCr ต่ำขึ้นเป็น 1.0 ในผู้สูงอายุ?</td><td>ไม่แนะนำทำเป็น routine (ทำให้ CrCl ต่ำเกินจริงได้) · ใช้วิจารณญาณ/cystatin C แทน <span class="tag add">เสริม</span></td></tr>
+    <tr><td>CRRT / ฟอกไต?</td><td>ขนาดยาขึ้นกับชนิดและความแรงของการฟอก (PP 4.5.4) · ปรึกษาเภสัชกร · ดู <a href="../icu-drugs/index.html">ยาใน ICU</a></td></tr>
+  </table></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง: สงสัย AKI จากยา</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Cr ขึ้นในผู้ป่วยที่ได้ยา/contrast</b>ยืนยัน AKI ตาม KDIGO · ตัด prerenal อื่นและ obstruction (U/S) · ดูปัสสาวะ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Cr ขึ้นจริงไหม?</b>BUN ปกติ ปัสสาวะดี ได้ trimethoprim/dolutegravir/cimetidine → pseudo-AKI (ตรวจ cystatin C)</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Urinalysis + ประวัติยา บอกกลไกอะไร?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ตะกอนปกติ · NSAID/ACEi/ARB/diuretic/SGLT2i</span><div class="node dx hypo"><b>Hemodynamic</b>หยุด/พักยา · แก้ volume · วางแผนเริ่ม RASi/SGLT2i กลับ</div></div>
+        <div class="arm"><span class="lab">Muddy brown cast · aminoglycoside/vanco/ampho/colistin/cisplatin</span><div class="node red"><b>ATN</b>หยุดหรือเปลี่ยนยา · TDM · หลีกเลี่ยง nephrotoxin อื่น</div></div>
+        <div class="arm"><span class="lab">Sterile pyuria/WBC cast · β-lactam/PPI/NSAID/ICI</span><div class="node dx hyper"><b>AIN</b>หยุดยา · ไม่ดีขึ้น 3–7 วัน → biopsy/steroid · ICI → ตาม grade</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ไม่เข้าสามแบบแรก?</b>ดูผลึก · CBC/smear · CK · ประวัติ contrast</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ผลึก · acyclovir/MTX/sulfa</span><div class="node dx eu"><b>Crystal</b>ให้น้ำ · หยดช้า/ลดขนาด · MTX → alkalinize ± glucarpidase</div></div>
+        <div class="arm"><span class="lab">เกล็ดเลือดต่ำ + schistocyte / CK สูง</span><div class="node red"><b>TMA / Rhabdo</b>หยุดยา · ADAMTS13 + hematology · rhabdo → สารน้ำ</div></div>
+        <div class="arm"><span class="lab">ได้ contrast ใน 48 ชม.</span><div class="node dx grey"><b>CA-AKI</b>หาสาเหตุอื่นร่วม · ดูแลแบบ AKI ทั่วไป · มักฟื้นใน 1–3 สัปดาห์</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>ทุกกลไก</b>ปรับขนาดยาตามแนวโน้ม SCr (ไม่ใช่ CrCl ค่าเดียว) · บันทึกแพ้ยา · แผนเริ่มยาที่ปกป้องไต/หัวใจกลับ · ตามไตหลังจำหน่าย</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดโปรโตคอลของ รพ. และปรึกษาเภสัชกร/อายุรแพทย์โรคไตเมื่อไม่แน่ใจ</p>
+  </div>
+
+  <div class="tool plan" id="tCa" style="margin-top:12px">
+    <h3>Contrast (iodinated): ความเสี่ยงและการป้องกัน</h3>
+    <div class="fields">
+      <label class="f">eGFR (mL/min/1.73m²)<input type="number" id="caEg" value="25"></label>
+      <label class="f">น้ำหนัก (kg) — ใช้คำนวณอัตราน้ำเกลือ<input type="number" id="caWt" value="60"></label>
+      <label class="f">ทางที่ฉีด<select id="caRt"><option value="iv">IV (CT ทั่วไป)</option><option value="ia2">Intra-arterial second-pass (เช่น coronary)</option><option value="ia1">Intra-arterial first-pass (LV/aorta เหนือไต/renal)</option></select></label>
+      <label class="f">การฟอกไต<select id="caDx"><option value="no">ไม่ได้ฟอกไต</option><option value="anuric">ฟอกไต · ไม่มีปัสสาวะ</option><option value="res">ฟอกไต · ยังมีปัสสาวะ &gt;100 mL/วัน</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="caAki"> มี AKI / SCr ยังไม่นิ่ง</label>
+      <label><input type="checkbox" id="caIcu"> ผู้ป่วย ICU</label>
+      <label><input type="checkbox" id="caOv"> น้ำเกิน / HF ไม่คงที่</label>
+      <label><input type="checkbox" id="caEm"> ภาวะคุกคามชีวิต (ฉุกเฉิน)</label>
+      <label><input type="checkbox" id="caDiu"> ได้ diuretic</label>
+      <label><input type="checkbox" id="caRas"> ได้ ACEi/ARB</label>
+    </div>
+    <div class="out" id="caOut"></div>
+  </div>
+
+  <div class="tool" id="tMf" style="margin-top:12px">
+    <h3>Metformin ก่อนฉีด contrast</h3>
+    <div class="fields">
+      <label class="f">eGFR (mL/min/1.73m²)<input type="number" id="mfEg" value="40"></label>
+      <label class="f">ทางที่ฉีด<select id="mfRt"><option value="iv">IV / IA second-pass</option><option value="ia1">IA first-pass / สวนหลอดเลือดไต</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="mfAki"> มี AKI</label>
+    </div>
+    <div class="out" id="mfOut"></div>
+  </div>
+
+  <div class="tool" id="tNx" style="margin-top:12px">
+    <h3>Nephrotoxin checklist</h3>
+    <div class="fields">
+      <label class="f">eGFR (ถ้ามี)<input type="number" id="nxEg" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="nxAki" checked> ตอนนี้มี AKI</label>
+      <label><input type="checkbox" id="nxSick"> อาเจียน/ท้องเสีย/กินไม่ได้</label>
+      <label><input type="checkbox" id="nxCm"> จะฉีด contrast</label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dNsaid" checked> NSAIDs</label>
+      <label><input type="checkbox" id="dRas" checked> ACEi/ARB/ARNI</label>
+      <label><input type="checkbox" id="dDiu" checked> Diuretic</label>
+      <label><input type="checkbox" id="dSglt"> SGLT2i</label>
+      <label><input type="checkbox" id="dMet"> Metformin</label>
+      <label><input type="checkbox" id="dSu"> Sulfonylurea</label>
+      <label><input type="checkbox" id="dVan"> Vancomycin</label>
+      <label><input type="checkbox" id="dPtz"> Piperacillin-tazobactam</label>
+      <label><input type="checkbox" id="dAg"> Aminoglycoside</label>
+      <label><input type="checkbox" id="dAmp"> Amphotericin B</label>
+      <label><input type="checkbox" id="dCol"> Colistin</label>
+      <label><input type="checkbox" id="dAcv"> Acyclovir IV</label>
+      <label><input type="checkbox" id="dTmp"> Co-trimoxazole</label>
+      <label><input type="checkbox" id="dPpi"> PPI</label>
+      <label><input type="checkbox" id="dLi"> Lithium</label>
+      <label><input type="checkbox" id="dTdf"> Tenofovir (TDF)</label>
+      <label><input type="checkbox" id="dCni"> Tacrolimus/cyclosporine</label>
+      <label><input type="checkbox" id="dIci"> Immune checkpoint inhibitor</label>
+    </div>
+    <div class="out" id="nxOut"></div>
+  </div>
+
+  <div class="tool" id="tCg" style="margin-top:12px">
+    <h3>Cockcroft–Gault พร้อมเลือกน้ำหนัก</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="cgAge" value="70"></label>
+      <label class="f">เพศ<select id="cgSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="cgWt" value="85"></label>
+      <label class="f">ส่วนสูง (cm)<input type="number" id="cgHt" value="165"></label>
+      <label class="f">SCr<input type="number" step="0.01" id="cgCr" value="1.2"></label>
+      <label class="f">หน่วย SCr<select id="cgU"><option value="mg">mg/dL</option><option value="umol">µmol/L</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="cgNs"> SCr ยังไม่นิ่ง (AKI กำลังขึ้น/ลด)</label>
+      <label><input type="checkbox" id="cgMm"> กล้ามเนื้อน้อยมาก (ติดเตียง/ตัดขา/cirrhosis)</label>
+    </div>
+    <div class="out" id="cgOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>AKI ทุกเคส = ไล่ใบสั่งยาทุกตัว</b> รวมยาซื้อเอง ยาชุด สมุนไพร</div></div>
+    <div class="pearl"><div><b>NSAID + ACEi/ARB + diuretic</b> = triple whammy · เสี่ยงสุดเดือนแรก</div></div>
+    <div class="pearl"><div><b>SGLT2i eGFR dip ไม่ใช่ AKI</b> · ACEi/ARB Cr ขึ้น ≤30% ยอมรับได้</div></div>
+    <div class="pearl"><div><b>Sterile pyuria + ได้ β-lactam/PPI</b> → คิดถึง AIN · urine eosinophil ไม่ช่วย</div></div>
+    <div class="pearl"><div><b>AIN ไม่ดีขึ้น 3–7 วันหลังหยุดยา</b> → ปรึกษา biopsy/steroid</div></div>
+    <div class="pearl"><div><b>Trimethoprim/dolutegravir</b> ทำ Cr ขึ้นโดย GFR ไม่ลด → cystatin C</div></div>
+    <div class="pearl"><div><b>Contrast: ป้องกันเฉพาะ eGFR &lt;30 หรือ AKI</b> ด้วย 0.9% NaCl · ไม่ใช้ NAC</div></div>
+    <div class="pearl"><div><b>ฉุกเฉินคุกคามชีวิต → ห้ามงด contrast</b> เพราะค่าไต</div></div>
+    <div class="pearl"><div><b>Metformin หยุดเฉพาะ eGFR ≤30/AKI/IA first-pass</b> แล้วตรวจไตก่อนเริ่มใน 48 ชม.</div></div>
+    <div class="pearl"><div><b>Gadolinium group II</b> ใช้ได้แม้ eGFR &lt;30 · ไม่ต้องฟอกไตเพิ่ม</div></div>
+    <div class="pearl"><div><b>Vancomycin: AUC 400–600</b> · loading เต็มแม้มี AKI</div></div>
+    <div class="pearl"><div><b>SCr กำลังขึ้น = CrCl สูงเกินจริง</b> · SCr กำลังลด = ยาต่ำเกินได้</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../aki/index.html">AKI →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../hyperkalemia/index.html">Hyperkalemia →</a> · <a href="../rhabdo-heat/index.html">Rhabdomyolysis / heat stroke →</a> · <a href="../onco-emergency/index.html">Oncologic emergencies →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../mdr-gnb/index.html">MDR-GNB →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Kidney Disease: Improving Global Outcomes (KDIGO) Acute Kidney Injury Work Group. KDIGO clinical practice guideline for acute kidney injury. Kidney Int Suppl 2012;2:1–138 · 2) KDIGO 2026 Clinical Practice Guideline for Acute Kidney Injury (AKI) and Acute Kidney Disease (AKD) — Public Review Draft (March 2026) · 3) Davenport MS, Perazella MA, Yee J, et al. Use of intravenous iodinated contrast media in patients with kidney disease: consensus statements from the American College of Radiology and the National Kidney Foundation. Radiology 2020;294:660–8 (Kidney Med 2020;2:85–93) · 4) ACR Committee on Drugs and Contrast Media. ACR Manual on Contrast Media. American College of Radiology (NSF chapter updated 2025) · 5) van der Molen AJ, Reimer P, Dekkers IA, et al. Post-contrast acute kidney injury – Part 1: definition, clinical features, incidence, role of contrast medium and risk factors. Eur Radiol 2018;28:2845–55 · 6) van der Molen AJ, Reimer P, Dekkers IA, et al. Post-contrast acute kidney injury. Part 2: risk stratification, role of hydration and other prophylactic measures, patients taking metformin and chronic dialysis patients. Eur Radiol 2018;28:2856–69 · 7) Weinreb JC, Rodby RA, Yee J, et al. Use of intravenous gadolinium-based contrast media in patients with kidney disease: consensus statements from the American College of Radiology and the National Kidney Foundation. Radiology 2021;298:28–35 · 8) Rybak MJ, Le J, Lodise TP, et al. Therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: a revised consensus guideline and review by ASHP, IDSA, PIDS and SIDP. Am J Health Syst Pharm 2020;77:835–64 · 9) Nicolau DP, Freeman CD, Belliveau PP, et al. Experience with a once-daily aminoglycoside program administered to 2,184 adult patients. Antimicrob Agents Chemother 1995;39:650–5 · 10) Qian ET, Casey JD, Wright A, et al. Cefepime vs piperacillin-tazobactam in adults hospitalized with acute infection: the ACORN randomized clinical trial. JAMA 2023;330:1557–67 · 11) Perazella MA, Rosner MH. Drug-induced acute kidney injury. Clin J Am Soc Nephrol 2022;17:1220–33 · 12) Perazella MA, Markowitz GS. Drug-induced acute interstitial nephritis. Nat Rev Nephrol 2010;6:461–70 · 13) González E, Gutiérrez E, Galeano C, et al. Early steroid treatment improves the recovery of renal function in patients with drug-induced acute interstitial nephritis. Kidney Int 2008;73:940–6 · 14) Yu Y, Biros E, Chang X, Mallett AJ. A systematic review of treatment for acute interstitial nephritis. Kidney Int Rep 2025;10:2575–84 · 15) Cortazar FB, Kibbelaar ZA, Glezerman IG, et al. Clinical features and outcomes of immune checkpoint inhibitor-associated AKI: a multicenter study. J Am Soc Nephrol 2020;31:435–46 · 16) Schneider BJ, Naidoo J, Santomasso BD, et al. Management of immune-related adverse events in patients treated with immune checkpoint inhibitor therapy: ASCO guideline update. J Clin Oncol 2021;39:4073–126 · 17) Lapi F, Azoulay L, Yin H, et al. Concurrent use of diuretics, angiotensin converting enzyme inhibitors, and angiotensin receptor blockers with non-steroidal anti-inflammatory drugs and risk of acute kidney injury: nested case-control study. BMJ 2013;346:e8525 · 18) KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney Int 2024;105(4S):S117–314 · 19) Bhandari S, Mehta S, Khwaja A, et al. Renin–angiotensin system inhibition in advanced chronic kidney disease (STOP-ACEi). N Engl J Med 2022;387:2021–32 · 20) Brar S, Ye F, James MT, et al. Association of angiotensin-converting enzyme inhibitor or angiotensin receptor blocker use with outcomes after acute kidney injury. JAMA Intern Med 2018;178:1681–90 · 21) Chen S. Retooling the creatinine clearance equation to estimate kinetic GFR when the plasma creatinine is changing acutely. J Am Soc Nephrol 2013;24:877–88 · 22) Winter MA, Guhr KN, Berg GM. Impact of various body weights and serum creatinine concentrations on the bias and accuracy of the Cockcroft-Gault equation. Pharmacotherapy 2012;32:604–12 · 23) Tsuji BT, Pogue JM, Zavascki AP, et al. International consensus guidelines for the optimal use of the polymyxins. Pharmacotherapy 2019;39:10–39 · 24) Meepornbucha K, Meenune W, Srisakorn P. Prevalence and associated factors of contrast-associated acute kidney injury in kidney disease: a retrospective cohort study. J Nephrol Soc Thai 2025;31:231–43<br>
+  <span class="tag draft">ร่าง</span> = คำแนะนำจากฉบับร่าง KDIGO 2026 ยังไม่ใช่ฉบับตีพิมพ์ · <span class="tag add">เสริม</span> = เนื้อหามาตรฐาน/ความเห็นผู้เชี่ยวชาญที่ไม่ได้มาจากแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · เกรด 1 = แนะนำ, 2 = เสนอแนะ · A–D = คุณภาพหลักฐาน · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','nxView');
+mountWalker({
+ start:{q:'Cr ขึ้นหลังได้ยาหรือ contrast — เป็น AKI จริงไหม?',h:'ดู BUN, ปัสสาวะ, ยาที่ลดการหลั่ง creatinine',o:[['AKI จริง (BUN/ปัสสาวะเปลี่ยนด้วย หรือ Cr ขึ้นมาก)','mech'],['สงสัย pseudo-AKI','pseudo','ได้ trimethoprim, dolutegravir, cimetidine, cobicistat']]},
+ pseudo:{leaf:true,cls:'ok',t:'Pseudo-AKI',b:'ยายับยั้งการหลั่ง creatinine ที่ท่อไต → Cr ขึ้นเล็กน้อย (มัก ~0.1–0.3 mg/dL) แล้วคงที่ · BUN/ปัสสาวะปกติ · ยืนยันด้วย <b>cystatin C</b> · ไม่ต้องหยุดยาถ้าจำเป็น · แต่ trimethoprim ทำ <b>K สูงจริง</b> ให้ตาม K',next:['ถ้า cystatin C/BUN ขึ้นด้วย → AKI จริง','mech']},
+ mech:{q:'Urinalysis + ยาที่ได้ เข้ากับกลไกไหน?',o:[['ตะกอนปกติ · NSAID/ACEi/ARB/diuretic/SGLT2i','hemo'],['Muddy brown cast · aminoglycoside/vanco/ampho/colistin/cisplatin','atn'],['Sterile pyuria/WBC cast · β-lactam/PPI/NSAID/ICI','ain'],['ผลึก · acyclovir/MTX/sulfa','cry'],['เกล็ดเลือดต่ำ + schistocyte','tma'],['CK สูง · statin/colchicine/ยาบ้า','rh'],['หลัง IVIG/mannitol','osm'],['ได้ contrast ใน 48 ชม.','cm']]},
+ hemo:{leaf:true,cls:'warn',t:'Hemodynamic',b:'หยุด NSAIDs · <b>พัก</b> ACEi/ARB/diuretic/SGLT2i ชั่วคราวถ้าขาดน้ำ/ความดันต่ำ · แก้ volume · มักดีขึ้นใน 24–72 ชม. · ระวัง triple whammy · SGLT2i eGFR dip เล็กน้อยไม่ใช่ AKI',next:['เมื่อหาย: เริ่มยากลับ','restart']},
+ restart:{leaf:true,cls:'ok',t:'เริ่มยากลับหลัง AKI',b:'ร่าง KDIGO 2026: <b>แนะนำกลับมาให้ RASi</b> ถ้าไม่มีข้อห้าม (1B) · ประเมิน SGLT2i/MRA · เริ่มเมื่อ volume ปกติ ความดันพอ K ไม่สูง · ตรวจ Cr/K ~1–2 สัปดาห์ · NSAIDs หลีกเลี่ยงต่อ',next:['ปรับขนาดยาช่วง AKI','dose']},
+ atn:{leaf:true,cls:'danger',t:'ATN จากยา',b:'หยุดหรือเปลี่ยนเป็นยาที่ปลอดภัยกว่า · ยาที่ต้องใช้ต่อ → <b>TDM</b> (vancomycin AUC 400–600, aminoglycoside วันละครั้ง + ระดับยา) · amphotericin → liposomal + NSS ก่อนให้ · ตาม K/Mg · หลีกเลี่ยง nephrotoxin/contrast เพิ่ม · ดูแลแบบ AKI ทั่วไป',next:['ปรับขนาดยาช่วง AKI','dose']},
+ ain:{q:'เป็นยากลุ่ม immune checkpoint inhibitor ไหม?',o:[['ใช่ (pembrolizumab, nivolumab ฯลฯ)','ici'],['ไม่ใช่ (β-lactam, PPI, NSAID ฯลฯ)','ainD']]},
+ ainD:{q:'หยุดยาต้นเหตุแล้ว 3–7 วัน ไตดีขึ้นไหม?',o:[['ดีขึ้น','ainOk'],['ไม่ดีขึ้น หรือรุนแรงตั้งแต่แรก','ainSt']]},
+ ainOk:{leaf:true,cls:'ok',t:'AIN ฟื้นเมื่อหยุดยา',b:'ไม่ต้องให้ steroid · <b>บันทึกแพ้ยา</b> และเลี่ยงยากลุ่มเดียวกัน · ตามไตจนกลับ baseline'},
+ ainSt:{leaf:true,cls:'danger',t:'พิจารณา steroid',b:'ปรึกษาอายุรแพทย์โรคไต · <b>kidney biopsy</b> ถ้าทำได้ · prednisolone 0.5–1 mg/kg/วัน (สูงสุด ~60 mg) 1–4 สัปดาห์แล้วลดจนหยุดรวม ~6–12 สัปดาห์ (expert opinion) · เริ่มเร็วดีกว่าช้า'},
+ ici:{q:'Cr เทียบ baseline?',o:[['1.5–2 เท่า','ici1'],['2–3 เท่า','ici2'],['มากกว่า 3 เท่า หรือต้องฟอกไต','ici3']]},
+ ici1:{leaf:true,cls:'ok',t:'ICI nephritis G1',b:'ASCO: พิจารณาพัก ICI ชั่วคราวระหว่างหาสาเหตุ (บางแนวทางให้ต่อได้) · หยุด nephrotoxin, PPI ที่ไม่จำเป็น · ให้น้ำ · ตาม Cr ทุกสัปดาห์'},
+ ici2:{leaf:true,cls:'warn',t:'ICI nephritis G2',b:'<b>พัก ICI</b> · prednisone 0.5–1 mg/kg/วัน · ดีขึ้นถึง G1 แล้วลดใน ≥4 สัปดาห์ · ไม่ดีขึ้น 1 สัปดาห์ → จัดการแบบ G3'},
+ ici3:{leaf:true,cls:'danger',t:'ICI nephritis G3–4',b:'มักหยุด ICI ถาวร (ร่วมตัดสินกับ oncologist) · prednisone/methylpred 1–2 mg/kg/วัน · ปรึกษาโรคไต (biopsy) · ลด steroid ใน ≥4–6 สัปดาห์ · ดื้อ steroid → mycophenolate'},
+ cry:{leaf:true,cls:'warn',t:'Crystal nephropathy',b:'ให้น้ำพอ · <b>acyclovir</b>: หยด ≥1 ชม., ปรับตาม CrCl, IBW ในคนอ้วน · <b>methotrexate</b>: ปัสสาวะด่าง pH ≥7, เลี่ยง NSAID/PPI/co-trimoxazole, ระดับสูง + ไตวาย → glucarpidase 50 units/kg IV · sulfadiazine: ให้น้ำ ปัสสาวะด่าง',next:['ปรับขนาดยาช่วง AKI','dose']},
+ tma:{leaf:true,cls:'danger',t:'TMA จากยา',b:'หยุดยา (quinine, gemcitabine, mitomycin C, CNI, VEGF inhibitor) · ส่ง ADAMTS13 แยก TTP · ปรึกษา hematology · quinine = ห้ามใช้ซ้ำตลอดชีวิต'},
+ rh:{leaf:true,cls:'danger',t:'Rhabdomyolysis จากยา',b:'หยุด statin/colchicine/daptomycin · สารน้ำเร็ว ตาม CK, K, Ca, ปัสสาวะ · ดูหน้า Rhabdomyolysis & heat stroke'},
+ osm:{leaf:true,cls:'warn',t:'Osmotic nephrosis',b:'หยุด mannitol/IVIG ที่มี sucrose · mannitol: ตรวจ osmolal gap (&gt;55–60 = สะสม) · รุนแรง/ยาสะสมในไตวาย → พิจารณาฟอกไต · ครั้งหน้าใช้ IVIG ไม่มี sucrose หยดช้า'},
+ cm:{leaf:true,cls:'violet',t:'CA-AKI',b:'หาสาเหตุอื่นร่วมเสมอ (sepsis, ความดันต่ำ, ยา, atheroemboli หลังสวนหลอดเลือด) · Cr มักสูงสุดวันที่ 2–5 แล้วฟื้นใน 1–3 สัปดาห์ · ดูแลแบบ AKI ทั่วไป · ไม่มียารักษาเฉพาะ · ครั้งต่อไปไม่ใช่ข้อห้ามเด็ดขาด แต่ป้องกันตามความเสี่ยง',next:['ปรับขนาดยาช่วง AKI','dose']},
+ dose:{leaf:true,cls:'ok',t:'ขนาดยาช่วง AKI',b:'<b>Loading dose เต็ม</b> · maintenance ดูแนวโน้ม SCr + ปัสสาวะ (ไม่ใช้ CrCl/eGFR ค่าเดียว) · KeGFR ช่วยได้ · SCr ขึ้น → ระวังยาเกิน · SCr ลด → ระวังยาต่ำเกิน · ใช้ TDM ถ้ามี · ปรึกษาเภสัชกร'}
+},'apTrail','apStage');
+
+/* ---------- contrast tool ---------- */
+function ca(){
+  const eg=num('caEg'),wt=num('caWt'),rt=$('caRt').value,dx=$('caDx').value;const c=id=>$(id).checked;const L=[];const out=$('caOut');
+  if(dx==='anuric'){
+    if(c('caEm'))L.push('<b>ฉุกเฉินคุกคามชีวิต → ฉีด contrast ได้เลย</b>');
+    L.push('<b>ฟอกไตและไม่มีปัสสาวะ</b> → ไม่มีไตเหลือให้ปกป้อง: <b>ไม่ต้องให้สารน้ำป้องกัน</b> (เสี่ยงน้ำเกิน) · <b>ไม่ต้องฟอกเพิ่ม</b>หรือเปลี่ยนตารางฟอก (อาจนัดฟอกใกล้วันฉีดถ้ากังวลน้ำเกิน)');
+    out.innerHTML=L.join('<br>');return;
+  }
+  const aki=c('caAki'),res=dx==='res';
+  if(eg!==null&&(eg<=0||eg>200)){out.innerHTML='ค่า eGFR ไม่สมเหตุสมผล — ใส่ค่า 1–200';return}
+  if(eg===null&&!aki&&!res){out.innerHTML='ใส่ eGFR (หรือเลือก "มี AKI")';return}
+  const hi=[];
+  if(aki)hi.push('มี AKI');
+  if(res)hi.push('ฟอกไตแต่ยังมีปัสสาวะ (ACR–NKF ถือว่าเสี่ยงเท่า AKI)');
+  if(eg!==null&&eg<30)hi.push('eGFR <30');
+  if(eg!==null&&eg>=30&&eg<45&&rt==='ia1')hi.push('IA first-pass + eGFR <45 (ESUR)');
+  if(eg!==null&&eg>=30&&eg<45&&c('caIcu')&&rt!=='ia1')hi.push('ผู้ป่วย ICU + eGFR <45 (ESUR)');
+  const mid=!hi.length&&eg!==null&&eg<45;
+  if(c('caEm'))L.push('<b>ฉุกเฉินคุกคามชีวิต → ฉีด contrast ได้เลย ห้ามงด/เลื่อนเพราะค่าไต</b>'+(hi.length&&!c('caOv')&&!res?' · ให้ 0.9% NaCl ร่วมระหว่างและหลังตรวจได้ แต่ไม่ต้องรอให้ครบสูตร':''));
+  if(hi.length){
+    L.push(`<b style="color:var(--danger)">เสี่ยงสูง</b>: ${hi.join(' · ')}`);
+    if(res){
+      L.push('<b>ผู้ฟอกไตที่ยังมีปัสสาวะ</b>: ACR–NKF <b>ไม่แนะนำสารน้ำป้องกัน</b>ในผู้ฟอกไต (เสี่ยงน้ำเกิน) · ใช้ contrast ขนาดต่ำสุด เพื่อถนอมไตที่เหลือ · <b>ไม่ต้องฟอกเพิ่ม</b>หรือเปลี่ยนตารางฟอก');
+    }else if(c('caOv')){
+      L.push('<b>มีน้ำเกิน/HF ไม่คงที่ → ไม่ให้สารน้ำตามสูตร</b> · ใช้ contrast ขนาดต่ำสุด · พิจารณา imaging ที่ไม่ใช้ contrast · ปรึกษาอายุรแพทย์/โรคไต');
+    }else{
+      let r='';
+      if(wt===null)r=' · <span class="muted">ใส่น้ำหนักเพื่อคำนวณอัตรา</span>';
+      else if(wt<20||wt>250)r=' · <span class="muted">น้ำหนักไม่สมเหตุสมผล (20–250 kg) — ไม่คำนวณอัตรา</span>';
+      else r=` · 1–3 mL/kg/h = <b>${Math.round(wt)}–${Math.round(wt*3)} mL/h</b> (ผู้สูงอายุ/หัวใจไม่ดี เริ่มที่ ${Math.round(wt)} mL/h)`;
+      L.push('<b>ให้ 0.9% NaCl IV ป้องกัน</b> (ACR–NKF; ร่าง KDIGO 2026 1B): เริ่ม ≥1 ชม.ก่อน (งานนัด เริ่มได้ 3–12 ชม.ก่อน) ต่อ 3–12 ชม.หลัง'+r+' · หรือ 500 mL ก่อน + 500 mL หลัง');
+      if(c('caDiu'))L.push('พัก <b>diuretic</b> ระหว่างให้สารน้ำป้องกัน (ร่าง KDIGO PP 4.9.2.2)');
+    }
+    L.push('หยุด nephrotoxin ที่ไม่จำเป็น (NSAIDs ฯลฯ) <b>24–48 ชม.ก่อน และ 48 ชม.หลัง</b> · ตรวจ Cr ซ้ำ 48–72 ชม.หลังฉีด');
+  }else if(mid){
+    L.push('<b style="color:var(--warn)">ก้ำกึ่ง</b>: eGFR 30–44 (IV/second-pass) → ไม่ต้องให้สารน้ำเป็น routine · พิจารณาให้เป็นรายๆ ถ้ามีปัจจัยเสี่ยงหลายอย่าง (ACR–NKF)');
+  }else{
+    L.push('<b style="color:var(--ok)">เสี่ยงต่ำ</b> (eGFR ≥45) → <b>ไม่ต้องให้สารน้ำป้องกัน</b> ไม่ต้องหยุดยา ไม่ต้องตรวจ Cr ซ้ำเพราะ contrast');
+  }
+  if(c('caRas')&&(hi.length||mid))L.push('ACEi/ARB: <b>ไม่ต้องหยุดเป็น routine</b> (ร่าง KDIGO 2026 2C) · ACR–NKF ให้พิจารณาหยุด ≥48 ชม.ก่อนงานนัด · หยุดถ้าความดันต่ำ/ขาดน้ำ/มี AKI');
+  if(aki&&eg!==null)L.push('<span class="muted">ขณะมี AKI ค่า eGFR สูงเกินจริง — ถือเป็นเสี่ยงสูงไม่ว่า eGFR เท่าไร</span>');
+  L.push('ทุกราย: iso/low-osmolar contrast ขนาดต่ำสุด · <b>ไม่ใช้ NAC, bicarbonate, ฟอกเลือดป้องกัน</b>');
+  if(rt!=='iv')L.push('<span class="muted">ACR–NKF ครอบคลุมเฉพาะ IV · ทางหลอดเลือดแดงใช้เกณฑ์ ESUR (first-pass ใช้ eGFR &lt;45)</span>');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tCa input,#tCa select',ca);
+
+/* ---------- metformin ---------- */
+function mf(){
+  const eg=num('mfEg'),rt=$('mfRt').value,aki=$('mfAki').checked;const L=[];const out=$('mfOut');
+  if(eg!==null&&(eg<=0||eg>200)){out.innerHTML='ค่า eGFR ไม่สมเหตุสมผล — ใส่ค่า 1–200';return}
+  if(eg===null&&!aki){out.innerHTML='ใส่ eGFR (หรือเลือก "มี AKI")';return}
+  const why=[];
+  if(aki)why.push('มี AKI');
+  if(eg!==null&&eg<30)why.push('eGFR <30');
+  else if(eg!==null&&eg===30)why.push('eGFR = 30 พอดี: ACR ให้ใช้ต่อ (≥30) แต่ร่าง KDIGO 2026 ให้หยุด (≤30) → เลือกหยุดเพื่อความปลอดภัย');
+  if(rt==='ia1')why.push('IA first-pass: ESUR หยุดทุกราย · ACR หยุดเมื่อสวนหลอดเลือดแดงที่อาจมี emboli เข้าหลอดเลือดไต');
+  if(why.length){
+    L.push('<b style="color:var(--danger)">หยุด metformin ณ เวลาฉีด</b> — '+why.join(' · '));
+    L.push('งดต่อ <b>48 ชม.</b> แล้ว<b>ตรวจ Cr/eGFR ซ้ำ</b> → ไตไม่แย่ลง (ไม่มี AKI) จึงเริ่มกลับ · ถ้าเกิด AKI รอจนไตคงที่');
+  }else{
+    L.push('<b style="color:var(--ok)">ใช้ metformin ต่อได้</b> ไม่ต้องหยุดก่อนหรือหลังฉีด และไม่ต้องตรวจไตซ้ำเพื่อ metformin (ACR, ESUR, ร่าง KDIGO 2026 ตรงกัน)');
+  }
+  if(eg!==null){
+    if(eg<30)L.push('eGFR <30: <b>ห้ามใช้ metformin อยู่แล้ว</b> — ทบทวนและเปลี่ยนยาเบาหวาน');
+    else if(eg<45)L.push('ขนาด metformin ที่ eGFR 30–44: <b>ไม่เกิน 1,000 mg/วัน</b> และไม่เริ่มยาใหม่');
+    else if(eg<60)L.push('ขนาด metformin ที่ eGFR 45–59: ไม่เกิน 2,000 mg/วัน (ESUR)');
+  }
+  if(aki&&eg!==null)L.push('<span class="muted">eGFR ขณะ AKI ไม่สะท้อนไตจริง</span>');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tMf input,#tMf select',mf);
+
+/* ---------- nephrotoxin checklist ---------- */
+function nx(){
+  const eg=num('nxEg');const c=id=>$(id).checked;const L=[];const out=$('nxOut');
+  if(eg!==null&&(eg<=0||eg>200)){out.innerHTML='ค่า eGFR ไม่สมเหตุสมผล — เว้นว่างได้ หรือใส่ 1–200';return}
+  const ids=['dNsaid','dRas','dDiu','dSglt','dMet','dSu','dVan','dPtz','dAg','dAmp','dCol','dAcv','dTmp','dPpi','dLi','dTdf','dCni','dIci'];
+  if(!ids.some(c)){out.innerHTML='เลือกยาที่ผู้ป่วยได้รับ';return}
+  const aki=c('nxAki'),sick=c('nxSick'),cm=c('nxCm'),ctx=aki||sick,low=eg!==null&&eg<30;
+  const A=[];const add=(n,t)=>A.push(`<li><b>${n}</b>: ${t}</li>`);
+  if(c('dNsaid'))add('NSAIDs',ctx||low?'<b>หยุด</b> → paracetamol/ยาทา':'ใช้สั้นที่สุด · เลี่ยงใน CKD eGFR &lt;30, HF, cirrhosis, ผู้ได้ ACEi/ARB + diuretic');
+  if(c('dRas'))add('ACEi/ARB/ARNI',ctx?'<b>พักชั่วคราว</b> ถ้าความดันต่ำ/ขาดน้ำ · <b>วางแผนเริ่มกลับ</b>เมื่อหาย (ร่าง KDIGO 2026 แนะนำกลับมาให้ 1B)':'ใช้ต่อ · Cr ขึ้น ≤30% ใน 4 สัปดาห์หลังเริ่มยอมรับได้'+(cm?' · ไม่ต้องหยุด routine ก่อน contrast':''));
+  if(c('dDiu'))add('Diuretic',ctx?'พักถ้าขาดน้ำ/ความดันต่ำ · ใช้ต่อถ้ามีน้ำเกิน':'ใช้ต่อ ปรับตาม volume'+(cm?' · พักระหว่างให้สารน้ำป้องกัน contrast':''));
+  if(c('dSglt'))add('SGLT2i',ctx?'<b>พักชั่วคราว</b> (ขาดน้ำ + euglycemic DKA) · เริ่มกลับเมื่อกินดื่มได้ปกติ':'ใช้ต่อ · eGFR dip ช่วงแรกไม่ใช่เหตุให้หยุด');
+  if(c('dMet'))add('Metformin',aki||low?'<b>หยุด</b> (เสี่ยง lactic acidosis) · เริ่มเมื่อไตคงที่และ eGFR ≥30':sick?'พักจนกินได้ปกติ':(eg!==null&&eg<45?'eGFR 30–44: ไม่เกิน 1,000 mg/วัน':'ใช้ต่อ')+(cm?' · ดูเครื่องมือ metformin ก่อน contrast':''));
+  if(c('dSu'))add('Sulfonylurea',ctx||low?'<b>เสี่ยงน้ำตาลต่ำ</b> (ยาสะสม/กินน้อย) → พักหรือลดขนาด · เลี่ยง glibenclamide ในไตเสื่อม':'ตามน้ำตาล · เลี่ยง glibenclamide ถ้าไตเสื่อม');
+  if(c('dVan'))add('Vancomycin','ปรับด้วย <b>AUC 400–600</b> (Bayesian หรือ 2 ระดับ) · ทบทวนความจำเป็นทุก 48–72 ชม.'+(aki?' · มี AKI: ให้ตามระดับยา ไม่ใช่ CrCl ค่าเดียว':''));
+  if(c('dPtz'))add('Pip-tazo',c('dVan')?'ใช้ร่วม vancomycin: observational พบ AKI มากขึ้น แต่ ACORN (RCT) ไม่ต่างจาก cefepime · <b>หยุด vancomycin เร็ว</b>เมื่อไม่พบ MRSA':'ไม่ใช่ nephrotoxin หลัก · ปรับขนาดตามไตหลัง 24–48 ชม.แรก · อาจทำ AIN ได้ (β-lactam)');
+  if(c('dAg'))add('Aminoglycoside','ให้วันละครั้ง + ระดับยา (Hartford/โปรโตคอล รพ.) · ใช้สั้นที่สุด'+(aki?' · <b>มี AKI: เปลี่ยนยาถ้ามีทางเลือก</b> ถ้าจำเป็นให้ตามระดับยา':''));
+  if(c('dAmp'))add('Amphotericin B','ใช้ liposomal ถ้าได้ · deoxycholate: <b>NSS 500–1,000 mL ก่อนให้</b> (ถ้าไม่มีน้ำเกิน) · ตาม K/Mg ทุกวัน');
+  if(c('dCol'))add('Colistin','ปรับ maintenance ตาม CrCl (consensus 2019) · หยุดเมื่อมียาทางเลือก · polymyxin B ไม่ต้องปรับตามไต');
+  if(c('dAcv'))add('Acyclovir IV','หยด ≥1 ชม. ให้น้ำพอ · ปรับตาม CrCl · ใช้ IBW ในคนอ้วน'+(aki?' · AKI: ระวังพิษต่อสมอง':''));
+  if(c('dTmp'))add('Co-trimoxazole','Cr ขึ้นเล็กน้อยได้โดย GFR ไม่ลด · แต่ <b>K สูงจริง</b> → ตาม K'+(c('dRas')?' · <b>ร่วม ACEi/ARB เสี่ยง K สูงมาก</b>':'')+' · ขนาดสูงเกิดผลึกได้');
+  if(c('dPpi'))add('PPI','ทำ AIN ได้ (ช้า มักไม่มีผื่น) · หยุดถ้าไม่มีข้อบ่งชี้ชัด'+(aki?' · AKI ไม่มีคำอธิบาย + pyuria → คิดถึง AIN':''));
+  if(c('dLi'))add('Lithium','ระดับยาขึ้นเมื่อ AKI/ขาดน้ำ, NSAIDs, ACEi/ARB, thiazide → <b>ตรวจระดับ lithium</b> · พักยาเมื่อป่วยขาดน้ำ');
+  if(c('dTdf'))add('Tenofovir (TDF)','ดู Fanconi (glycosuria, PO₄ ต่ำ) · eGFR ลด → ปรับระยะห่าง/พิจารณาเปลี่ยนเป็น TAF');
+  if(c('dCni'))add('Tacrolimus/cyclosporine','ตรวจระดับยา · ระวังยาตีกัน (azole, macrolide, diltiazem) · ปรึกษาทีมปลูกถ่าย');
+  if(c('dIci'))add('ICI',aki?'ตัดสาเหตุอื่น · สงสัย ICI nephritis: G2 พักยา + prednisone 0.5–1 mg/kg/วัน · หยุด PPI ร่วม · ปรึกษา onco/โรคไต':'ตรวจ Cr ก่อนทุกรอบ · เลี่ยง PPI ที่ไม่จำเป็น');
+  const W=[];
+  if(c('dNsaid')&&c('dRas')&&c('dDiu'))W.push('<b style="color:var(--danger)">Triple whammy</b> (NSAID + ACEi/ARB + diuretic) → หยุด NSAID ก่อนเป็นอันดับแรก');
+  if(c('dLi')&&(c('dNsaid')||c('dRas')||c('dDiu')))W.push('<b>Lithium + NSAID/ACEi/ARB/diuretic</b> → เสี่ยงพิษ lithium');
+  const direct=['dNsaid','dVan','dAg','dAmp','dCol','dAcv','dTdf','dCni'].filter(c).length+(cm?1:0);
+  if(direct>=3)W.push(`ได้ยา/สารที่เป็นพิษต่อไตโดยตรง <b>${direct} ชนิด</b> → ภาระ nephrotoxin สูง: ตรวจ Cr ทุกวัน ตัดตัวที่ไม่จำเป็น <span class="muted">(แนวคิด NINJA ≥3 ตัว)</span>`);
+  if(cm)W.push('จะฉีด contrast → ใช้เครื่องมือ contrast ด้านบนประเมินว่าต้องให้สารน้ำป้องกันไหม');
+  if(ctx&&(c('dRas')||c('dDiu')||c('dSglt')||c('dMet')||c('dNsaid')||c('dSu')))W.push('ยาที่พักไว้ → <b>เขียนแผนเริ่มกลับให้ชัด</b> (ร่าง KDIGO PP 4.11.1)');
+  out.innerHTML=(W.length?W.join('<br>')+'<br>':'')+'<ol>'+A.join('')+'</ol>';
+}
+bindAll('#tNx input',nx);
+
+/* ---------- Cockcroft-Gault ---------- */
+function cg(){
+  const age=num('cgAge'),wt=num('cgWt'),ht=num('cgHt');let cr=num('cgCr');const f=$('cgSex').value==='f',u=$('cgU').value;const out=$('cgOut');const L=[];
+  if(age===null||wt===null||cr===null){out.innerHTML='ใส่อายุ น้ำหนัก และ SCr';return}
+  if(age<18||age>120){out.innerHTML='สูตรนี้ใช้ในผู้ใหญ่ อายุ 18–120 ปี';return}
+  if(wt<25||wt>350){out.innerHTML='น้ำหนักไม่สมเหตุสมผล (25–350 kg)';return}
+  if(u==='umol'){
+    if(cr<20||cr>2000){out.innerHTML='SCr ไม่สมเหตุสมผลสำหรับ µmol/L (20–2000) — ตรวจหน่วย';return}
+    cr=cr/88.4;
+  }else if(cr<0.1||cr>25){
+    out.innerHTML=cr>25&&cr<=2000?'SCr ค่านี้น่าจะเป็น µmol/L — เปลี่ยนหน่วย':'SCr ไม่สมเหตุสมผล (0.1–25 mg/dL)';return;
+  }
+  if(ht!==null&&(ht<120||ht>230)){out.innerHTML='ส่วนสูงไม่สมเหตุสมผล (120–230 cm) — หรือเว้นว่าง';return}
+  const k=(140-age)/(72*cr)*(f?0.85:1);const cc=w=>Math.round(k*w);
+  if(u==='umol')L.push(`SCr = <b>${cr.toFixed(2)} mg/dL</b>`);
+  if($('cgNs').checked)L.push('<b style="color:var(--danger)">SCr ยังไม่นิ่ง → ห้ามใช้ตัวเลขนี้กำหนดขนาดยาลำพัง</b> (ร่าง KDIGO 2026 PP 4.5.1) · SCr ขึ้น = GFR จริงต่ำกว่านี้ · SCr ลด = สูงกว่านี้ · loading dose เต็ม แล้วใช้แนวโน้ม SCr/ปัสสาวะ/KeGFR/TDM');
+  if(ht===null){
+    L.push(`CrCl (น้ำหนักจริง) = <b>${cc(wt)} mL/min</b>`);
+    L.push('<span class="muted">ไม่ได้ใส่ส่วนสูง → เลือกน้ำหนักไม่ได้ · ในคนอ้วนค่านี้สูงเกินจริง</span>');
+  }else{
+    const ibw=(f?45.5:50)+0.9055*(ht-152.4),bmi=wt/Math.pow(ht/100,2),adj=ibw+0.4*(wt-ibw);
+    let w,why;
+    if(bmi<18.5){w=wt;why='ผอม (BMI &lt;18.5) → ใช้น้ำหนักจริง'}
+    else if(bmi<25){if(wt<ibw){w=wt;why='BMI ปกติ น้ำหนักจริงน้อยกว่า IBW → ใช้น้ำหนักจริง'}else{w=ibw;why='BMI ปกติ → ใช้ IBW'}}
+    else if(wt>ibw){w=adj;why='BMI ≥25 → ใช้ AdjBW (แม่นที่สุดตาม Winter 2012)'}
+    else{w=wt;why='น้ำหนักจริงไม่เกิน IBW → ใช้น้ำหนักจริง'}
+    L.push(`BMI ${bmi.toFixed(1)} · IBW ${ibw.toFixed(1)} kg · AdjBW ${(wt>ibw?adj:wt).toFixed(1)} kg · น้ำหนักจริง = ${Math.round(wt/ibw*100)}% ของ IBW`);
+    L.push(`CrCl: น้ำหนักจริง <b>${cc(wt)}</b> · IBW <b>${cc(ibw)}</b> · AdjBW <b>${cc(wt>ibw?adj:wt)}</b> mL/min`);
+    L.push(`<b>แนะนำ: ${cc(w)} mL/min</b> — ${why}`);
+    if(ht<152.4)L.push('<span class="muted">ส่วนสูงต่ำกว่า 152 cm: สูตร IBW (Devine) แม่นน้อยลง</span>');
+  }
+  L.push('<span class="muted">DOACs: ฉลาก/การศึกษาต้นแบบใช้ CG กับ<b>น้ำหนักจริง</b> · aminoglycoside nomogram ใช้น้ำหนักตามโปรโตคอล (IBW/AdjBW)</span>');
+  if(cr<0.6||$('cgMm').checked)L.push('SCr ต่ำ/กล้ามเนื้อน้อย → CrCl <b>สูงเกินจริง</b> · ยาพิษแคบใช้ cystatin C หรือ TDM · ไม่แนะนำปัด SCr ขึ้นเป็น 1.0 เป็น routine');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tCg input,#tCg select',cg);
+
+mountQuiz([
+ ['ชาย 72 ปี HT + HF ได้ enalapril และ furosemide ซื้อ ibuprofen กินแก้ปวดเข่า 10 วัน Cr ขึ้นจาก 1.1 เป็น 2.4 ตะกอนปัสสาวะปกติ กลไกที่น่าจะเป็นที่สุด',['ATN จากยา','Hemodynamic (triple whammy)','AIN','Crystal nephropathy'],1,'NSAID ทำ afferent หด + ACEi คลาย efferent + diuretic ลด volume · หยุด NSAID พักยาชั่วคราว แก้ volume แล้ววางแผนเริ่ม ACEi กลับ'],
+ ['ผู้ป่วยเบาหวาน CKD เริ่ม empagliflozin 4 สัปดาห์ eGFR ลดจาก 48 เป็น 44 ไม่มีอาการ กินได้ปกติ ควรทำอย่างไร',['หยุดยาถาวร','ให้ยาต่อ eGFR dip เป็นเรื่องที่คาดได้','ลดขนาดครึ่งหนึ่ง','ให้ NSS 1 ลิตร'],1,'eGFR ลดเล็กน้อยช่วงแรกจากการปรับ hemodynamic ไม่ใช่ AKI และกลับคืนได้ · KDIGO ไม่ให้หยุดยาเพราะเหตุนี้'],
+ ['หญิง 65 ปี ได้ omeprazole 3 เดือน Cr ค่อยๆ ขึ้น ปัสสาวะมี WBC 20–30/HPF เพาะเชื้อไม่ขึ้น ไม่มีผื่น ไม่มีไข้ ข้อใดถูก',['ไม่มีผื่นและไข้ จึงตัด AIN ได้','ควรส่ง urine eosinophil เพื่อยืนยัน','หยุด PPI และถ้าไม่ดีขึ้นใน 3–7 วันปรึกษาเรื่อง biopsy และ steroid','ให้ prednisolone ทันทีโดยไม่ต้องหยุดยา'],2,'PPI-AIN มักช้าและไม่มี triad · urine eosinophil ไม่ช่วย · หยุดยาเป็นขั้นแรก'],
+ ['ผู้ป่วยนอก eGFR 52 ไม่มี AKI นัดทำ CT ท้องฉีด contrast ทาง IV ควรเตรียมอย่างไร',['ให้ NSS 1 mL/kg/h 12 ชม.ก่อนและหลัง','ให้ NAC 600 mg วันละ 2 ครั้ง','ไม่ต้องให้สารน้ำป้องกัน','ให้ sodium bicarbonate'],2,'eGFR 45 ขึ้นไปความเสี่ยงต่ำมาก · ACR–NKF ให้สารน้ำเฉพาะ eGFR ต่ำกว่า 30 หรือมี AKI'],
+ ['ผู้ป่วย eGFR 22 ไม่ได้ฟอกไต สงสัย aortic dissection ต้องทำ CTA ด่วน ข้อใดเหมาะสมที่สุด',['เลื่อน CTA จนกว่าจะให้สารน้ำครบ 12 ชม.','ทำ CTA ทันที ให้ NSS ร่วมถ้าไม่มีน้ำเกิน','ทำ MRA แบบไม่ฉีดสีเท่านั้น','ฟอกเลือดทันทีหลังฉีด'],1,'ภาวะคุกคามชีวิตห้ามงด contrast เพราะค่าไต · การฟอกเลือดป้องกันไม่มีประโยชน์และอาจมีผลเสีย'],
+ ['ผู้ป่วยได้ metformin 1,000 mg/วัน eGFR 38 ไม่มี AKI จะทำ CT ฉีด contrast ทาง IV ตาม ACR ควรทำอย่างไรกับ metformin',['หยุด 48 ชม.ก่อนฉีด','ใช้ต่อได้ไม่ต้องหยุด','หยุดและไม่เริ่มใหม่อีกเลย','หยุดเฉพาะวันที่ฉีด แล้วกินต่อโดยไม่ต้องตรวจไต'],1,'eGFR 30 ขึ้นไปและไม่มี AKI ใช้ต่อได้ (ACR, ESUR, ร่าง KDIGO) · หยุดเฉพาะ AKI, eGFR ต่ำกว่า 30 หรือ IA first-pass'],
+ ['ผู้ป่วย eGFR 18 ต้องทำ MRI ฉีด gadolinium ข้อใดถูกต้อง',['ห้ามฉีด gadolinium ทุกชนิด','ใช้ group II agent เช่น gadobutrol หรือ gadoterate ได้ถ้ามีข้อบ่งชี้','ต้องเริ่มฟอกไตหลังฉีด','ใช้ gadodiamide เพราะราคาถูก'],1,'Group II ความเสี่ยง NSF ต่ำมาก ACR–NKF 2021 ไม่ให้งดเมื่อมีข้อบ่งชี้ · ไม่เริ่มฟอกไตเพียงเพราะได้ gadolinium · group I ห้ามใช้'],
+ ['ข้อใดถูกต้องเกี่ยวกับการติดตามระดับ vancomycin ตามแนวทาง 2020 สำหรับ MRSA รุนแรง',['ใช้ trough 15–20 mg/L เป็นเป้าหมาย','ใช้ AUC 400–600 mg·h/L โดย Bayesian หรือเจาะ 2 ระดับ','ไม่ต้องติดตามระดับยา','ลด loading dose ลงครึ่งหนึ่งเมื่อมี AKI'],1,'Trough-only ทำให้ AKI มากขึ้นโดยไม่เพิ่มประสิทธิภาพ · loading dose ไม่ลดตามไต'],
+ ['ผู้ป่วย sepsis Cr เพิ่มจาก 0.9 เป็น 2.0 ใน 24 ชม. คำนวณ CrCl ได้ 35 mL/min ข้อใดถูก',['CrCl 35 คือไตจริงตอนนี้ ปรับยาทุกตัวตามนี้','GFR จริงน่าจะต่ำกว่าที่คำนวณ เพราะ SCr ยังไม่ถึงจุดคงที่','GFR จริงน่าจะสูงกว่าที่คำนวณ','ควรลด loading dose ยาต้านจุลชีพ'],1,'ขณะ SCr กำลังขึ้น สูตร steady state ประเมินเกินจริง · ใช้แนวโน้ม SCr ปัสสาวะ KeGFR และ TDM · loading dose เต็ม'],
+ ['ผู้ป่วย HIV เริ่ม dolutegravir 2 สัปดาห์ Cr ขึ้นจาก 0.90 เป็น 1.05 คงที่ BUN ปกติ ปัสสาวะปกติ คิดถึงอะไร',['ATN จาก dolutegravir','ยับยั้งการหลั่ง creatinine ที่ท่อไต (pseudo-AKI)','AIN','Crystal nephropathy'],1,'Dolutegravir, trimethoprim, cimetidine ยับยั้งการหลั่ง creatinine ทำให้ Cr ขึ้นเล็กน้อยโดย GFR ไม่เปลี่ยน · ยืนยันด้วย cystatin C'],
+ ['ผู้ป่วยมะเร็งปอดได้ pembrolizumab 4 เดือนและกิน omeprazole Cr ขึ้นจาก 0.8 เป็น 2.0 ตัดสาเหตุอื่นแล้ว การจัดการที่เหมาะสม',['ให้ ICI ต่อและตาม Cr ทุกสัปดาห์','พัก ICI ให้ prednisone 0.5–1 mg/kg/วัน และหยุด PPI ถ้าไม่จำเป็น','หยุด ICI ถาวรและไม่ต้องให้ steroid','ให้ NAC'],1,'Cr 2–3 เท่าของ baseline = G2 · พักยา + steroid · PPI เป็นปัจจัยเสี่ยงของ ICI-AIN'],
+ ['ข้อใดเป็นวิธีป้องกัน contrast-associated AKI ที่มีหลักฐานและแนวทางแนะนำ ในผู้ป่วย eGFR 25 ไม่มีน้ำเกิน',['N-acetylcysteine','0.9% NaCl IV ก่อนและหลังฉีด','Furosemide หลังฉีด','ฟอกเลือดทันทีหลังฉีด'],1,'ร่าง KDIGO 2026 แนะนำ 0.9% NaCl (1B) · NAC furosemide และการฟอกเลือดป้องกันไม่แนะนำ']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

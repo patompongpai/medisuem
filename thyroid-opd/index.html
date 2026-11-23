@@ -1,0 +1,960 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ไทรอยด์ที่ OPD · Hyperthyroid & Hypothyroid follow-up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Endocrinology · OPD follow-up · CPG ไทย 2568 · ATA 2016 · ETA 2018 · ATA 2014 · ATA 2026 (pregnancy)</div>
+  <h1>ไทรอยด์ที่ OPD<br>Hyperthyroid &amp; Hypothyroid follow-up</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้เป็น <b>คู่มือ "วันนัดตรวจ"</b>: ผู้ป่วย Graves กิน <b>methimazole (MMI)</b> มาตรวจ ต้องปรับยาอย่างไร เมื่อไรหยุด เมื่อไรส่ง RAI/ผ่าตัด มีไข้เจ็บคอต้องทำอะไร · ผู้ป่วยกิน <b>levothyroxine (LT4)</b> เริ่มกี่ µg ปรับทีละเท่าไร จัดยาจากเม็ด 50/100 µg อย่างไร · ส่วนการวินิจฉัย ก้อน มะเร็ง และคำแนะนำทุกข้อของ CPG ไทย อยู่ที่หน้า <a href="../thyroid/index.html">โรคต่อมไทรอยด์ 2568</a> · ภาวะวิกฤตอยู่ที่หน้า <a href="../thyroid-emergency/index.html">Thyroid storm &amp; Myxedema coma</a></p>
+  <p class="cite">อ้างอิงหลัก: คำแนะนำสำหรับภาวะความผิดปกติของต่อมไทรอยด์ พ.ศ. 2568 สมาคมต่อมไร้ท่อแห่งประเทศไทย <span class="tag th">ไทย</span> · Ross DS, et al. 2016 ATA guidelines for hyperthyroidism and other causes of thyrotoxicosis (Thyroid 2016;26:1343–421) · Kahaly GJ, et al. 2018 ETA guideline for Graves' hyperthyroidism (Eur Thyroid J 2018;7:167–86) · Jonklaas J, et al. ATA guidelines for the treatment of hypothyroidism (Thyroid 2014;24:1670–751) · Korevaar TIM, Leung AM, et al. ATA 2026 guidelines for thyroid disease in preconception, pregnancy, and postpartum (Thyroid 2026;36(5)) <span class="tag up">2026</span> = ข้อมูลใหม่ในฉบับนี้ · Bartalena L, et al. 2018 ETA amiodarone guideline · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ไข้/เจ็บคอ ขณะกิน MMI/PTU</b>หยุดยาทันที · CBC with differential วันนั้น · ANC &lt;500 = agranulocytosis ห้ามใช้ยากลุ่มนี้อีก</div>
+    <div class="stage" style="--c:var(--accent)"><b>Graves: ปรับยาตาม FT4 + T3</b>ไม่ใช่ TSH (TSH ต่ำค้างได้หลายเดือน) · ตรวจทุก 4–6 สัปดาห์ · MMI 12–18 เดือน</div>
+    <div class="stage" style="--c:var(--ok)"><b>LT4: ปรับตาม TSH</b>ครั้งละ 12.5–25 µg/วัน · ตรวจซ้ำ 6–8 สัปดาห์ · ตั้งครรภ์ → เพิ่ม ~25–30% ทันที</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#start">Graves: เริ่มยา</a><a href="#titr">ปรับ MMI ทุกนัด</a><a href="#stop">หยุดยา · relapse · RAI/ผ่าตัด</a><a href="#safe">ผลข้างเคียงยาต้านไทรอยด์</a><a href="#other">TNG · thyroiditis</a><a href="#lt4">LT4: เริ่มและวิธีกิน</a><a href="#adj">LT4: ปรับยาและเป้า TSH</a><a href="#spec">ตั้งครรภ์ · amiodarone · lithium · SCH</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="start" class="col">
+  <div class="sec-num">01</div>
+  <h2>Graves: เริ่มยาวันแรก</h2>
+  <p>ยืนยันก่อนว่าเป็น <b>hyperthyroidism จริง</b> (Graves/TNG) ไม่ใช่ thyroiditis — ถ้าอาการ &lt;2 เดือน ไม่มีคอพอก/ตา หรือหลังคลอด ให้คิดถึง thyroiditis (ดูบทที่ 05) เพราะ <b>ยาต้านไทรอยด์ไม่ช่วย</b> · การแยกสาเหตุอยู่ที่หน้า <a href="../thyroid/index.html">Thyroid CPG</a></p>
+  <div class="tbl"><table>
+    <tr><th>FT4 เทียบกับค่าสูงสุดปกติ (ULN)</th><th>MMI ขนาดเริ่ม (กินวันละครั้ง)</th></tr>
+    <tr><td>1–1.5 เท่า</td><td><b>5–10 mg/วัน</b></td></tr>
+    <tr><td>1.5–2 เท่า</td><td><b>10–20 mg/วัน</b></td></tr>
+    <tr><td>2–3 เท่า</td><td><b>30–40 mg/วัน</b> (≥20 mg แบ่งวันละ 2 ครั้งได้ เมื่ออาการมาก) <span class="tag th">ไทย</span></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ATA 2016 และ CPG ไทย 2568 ใช้ตารางเดียวกัน · ETA 2018 ให้เริ่ม 10–30 mg/วัน ตามความรุนแรง · ปรับขึ้นเมื่อ <b>T3 สูงเด่น</b> คอพอกใหญ่ หรืออาการมาก · ขนาดสูงสุดที่ใช้ทั่วไป ~40 mg/วัน · <span class="tag th">ไทย</span> MMI เม็ด 5 mg, PTU เม็ด 50 mg (บัญชียาหลัก) · MMI ไม่ต้องปรับตามไต</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Beta-blocker (คุมอาการระหว่างรอยาออกฤทธิ์ 3–8 สัปดาห์)</h4><ul>
+      <li>ให้ทุกรายที่มีอาการ โดยเฉพาะ <b>ผู้สูงอายุ ชีพจร &gt;90 หรือมีโรคหัวใจ</b> <span class="rec s1">ATA strong</span></li>
+      <li><b>Propranolol</b> 10–40 mg วันละ 3–4 ครั้ง (ขนาดสูงลดการเปลี่ยน T4→T3) · ใช้ได้ในตั้งครรภ์/ให้นม (ระยะสั้น)</li>
+      <li><b>Atenolol</b> 25–100 mg วันละ 1–2 ครั้ง · CrCl 15–35 สูงสุด 50 mg/วัน, &lt;15 สูงสุด 25 mg/วัน <span class="tag add">เสริม</span> · ไม่แนะนำในตั้งครรภ์</li>
+      <li><b>Metoprolol</b> 25–50 mg วันละ 2–3 ครั้ง</li>
+      <li>หอบหืด → cardioselective ขนาดต่ำ หรือ <b>diltiazem</b> 30–60 mg ทุก 6–8 ชม. (สูงสุด 360 mg/วัน) <span class="tag add">เสริม</span></li>
+      <li><b>ค่อยๆ ลดจนหยุด</b> เมื่อ FT4/T3 ปกติ</li></ul></div>
+    <div class="card c-warn"><h4>สิ่งที่ต้องทำวันแรก</h4><ul>
+      <li><b>CBC with diff + LFT ก่อนเริ่มยา</b> (ไว้เทียบ — Graves เองทำ ANC ต่ำเล็กน้อยและ ALT สูงได้) · ANC &lt;1,000 หรือ transaminase &gt;5 เท่า → ทบทวนอย่างจริงจังก่อนใช้ยาต้านไทรอยด์ (ATA 2016) ปรึกษาอายุรแพทย์ต่อมไร้ท่อ</li>
+      <li><b>สอนอาการเตือน</b> และให้กระดาษ (บทที่ 04)</li>
+      <li>ถามการตั้งครรภ์/วางแผนมีบุตร → PTU หรือวางแผน definitive therapy (บทที่ 08)</li>
+      <li>ถาม/ตรวจ <b>ตา</b> (CAS ที่หน้า Thyroid CPG) · <b>เลิกบุหรี่</b> (เพิ่มทั้ง GO และ relapse)</li>
+      <li>ชีพจรไม่สม่ำเสมอ → ECG หา <a href="../af/index.html">AF</a></li>
+      <li>นัด <b>4–6 สัปดาห์</b> ตรวจ FT4 + T3 (หรือ FT3)</li></ul></div>
+  </div>
+  <div class="box note"><b>PTU ใช้เฉพาะ 3 กรณี:</b> ตั้งครรภ์ไตรมาสแรก (และช่วงวางแผนตั้งครรภ์) · thyroid storm · แพ้ MMI แบบไม่รุนแรงและไม่รับ RAI/ผ่าตัด · ขนาดเริ่ม <b>50–150 mg วันละ 3 ครั้ง</b> ลดเหลือ 50 mg วันละ 2–3 ครั้ง · เทียบ <b>MMI : PTU ≈ 1 : 20</b> (MMI 5 mg ≈ PTU 50 mg วันละ 2 ครั้ง) · PTU เสี่ยงตับวายรุนแรงและ ANCA vasculitis</div>
+</section>
+
+<section id="titr" class="col">
+  <div class="sec-num">02</div>
+  <h2>ปรับ MMI ทุกนัด (titration)</h2>
+  <div class="timeline">
+    <div><b>สัปดาห์ 4–6</b> · FT4 + T3/FT3 (ATA: 2–6 สัปดาห์ · ETA: 3–4 สัปดาห์) — ไม่ต้องดู TSH ช่วงนี้</div>
+    <div><b>ทุก 4–8 สัปดาห์</b> · ปรับยาจน FT4 และ T3 ปกติ</div>
+    <div><b>เมื่อปกติ</b> · ลด MMI ราว <b>30–50%</b> ต่อครั้ง จนเหลือขนาดต่ำสุดที่คุมได้ (ส่วนใหญ่ <b>2.5–5 mg/วัน</b>; ETA 2.5–10 mg)</div>
+    <div><b>คงที่แล้ว</b> · ตรวจทุก 2–3 เดือน · เริ่มใช้ TSH ได้เมื่อ TSH กลับมาวัดได้</div>
+    <div><b>12–18 เดือน</b> · ตรวจ TSH + TRAb → ตัดสินใจหยุดยา (บทที่ 03)</div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ผลที่นัด</th><th>ทำอะไร</th></tr>
+    <tr><td>FT4/T3 ยังสูง แต่ <b>ลดลงชัด</b></td><td>คงขนาดเดิม ตรวจซ้ำ 4–6 สัปดาห์</td></tr>
+    <tr><td>FT4/T3 ยังสูง และ <b>ไม่ลด</b></td><td>ถามการกินยาก่อน (ลืม/กินไม่ครบเป็นสาเหตุบ่อยที่สุด) → เพิ่ม 5–10 mg/วัน · ≥20 mg แบ่ง 2 เวลา · ยังคุมไม่ได้ที่ 30–40 mg → ส่งพิจารณา RAI/ผ่าตัด</td></tr>
+    <tr><td>FT4 และ T3 <b>ปกติ</b></td><td>ลดยา 30–50% (ปัดเป็นครึ่งเม็ด 2.5 mg)</td></tr>
+    <tr><td><b>FT4 ปกติ แต่ T3 สูง</b></td><td>ยังไม่ euthyroid (T3-predominant Graves พบในคอพอกใหญ่/TRAb สูง) → <b>อย่าลดยา</b> · เพิ่มขนาดถ้าจำเป็น</td></tr>
+    <tr><td>FT4 ต่ำ หรือ TSH สูงขึ้น</td><td>ยามากเกิน → <b>ลดยาราวครึ่ง</b> ตรวจซ้ำ 4 สัปดาห์ · ระวังโดยเฉพาะผู้ที่มีตา (hypothyroid ทำ GO แย่ลง)</td></tr>
+    <tr><td>FT4/T3 ปกติ แต่ <b>TSH ยังต่ำ</b></td><td>ปกติในช่วงหลายเดือนแรก (TSH ตามหลัง) → <b>ห้ามเพิ่มยาเพราะ TSH ต่ำอย่างเดียว</b></td></tr>
+  </table></div>
+  <div class="box warn"><b>Block-and-replace</b> (MMI ขนาดสูง + LT4) <b>ไม่แนะนำเป็นวิธีหลัก</b> — โอกาสหายไม่ต่างจาก titration แต่ผลข้างเคียงมากกว่า (ATA 2016, ETA 2018) และห้ามใช้ในตั้งครรภ์ · ใช้ได้บางรายที่ผลแกว่งมาก โดยผู้เชี่ยวชาญ</div>
+</section>
+
+<section id="stop" class="col">
+  <div class="sec-num">03</div>
+  <h2>หยุดยา · relapse · ส่ง RAI/ผ่าตัด</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>หยุดยาเมื่อไร</h4><ul>
+      <li>ให้ MMI <b>12–18 เดือน</b> (ผู้ใหญ่) <span class="rec s1">ETA rec 7</span></li>
+      <li>หยุดได้เมื่อ <b>TSH ปกติ และ TRAb ปกติ</b> ขณะกินขนาดต่ำ</li>
+      <li><b>TRAb ยังสูง</b> ที่ 12–18 เดือน → (1) กิน MMI ต่ออีก 12 เดือนแล้วตรวจ TRAb ซ้ำ หรือ (2) RAI/ผ่าตัด <span class="rec s1">ETA rec 9</span> · TRAb ยังสูงตอนหยุด กลับเป็นซ้ำ 80–100%</li>
+      <li>หลังหยุด: ตรวจ FT4/T3/TSH ภายใน <b>1–3 เดือน</b> แล้วทุก 3 เดือนจนครบ 1 ปี แล้ว <b>ปีละครั้งตลอดไป</b> <span class="tag th">ไทย</span> (relapse ส่วนใหญ่ใน 6–12 เดือนแรก · บางรายกลายเป็น hypothyroid ในระยะยาว)</li>
+      <li>สอนผู้ป่วย: อาการใจสั่น น้ำหนักลด กลับมา → มาตรวจก่อนนัด · <b>ตั้งครรภ์/หลังคลอด</b> เสี่ยงกำเริบ</li></ul></div>
+    <div class="card c-warn"><h4>ปัจจัยเสี่ยงกลับเป็นซ้ำ</h4><ul>
+      <li><b>อายุน้อย</b>, <b>FT4 สูงมาก</b> ตอนวินิจฉัย, <b>TRAb สูง</b>, <b>คอพอกใหญ่</b> (4 ข้อนี้คือ <b>GREAT score</b>, Vos 2016)</li>
+      <li>ผู้ชาย · <b>สูบบุหรี่</b> · ต่อม &gt;80 g · T3-predominant · Doppler เลือดมาก · TRAb ยังสูงตอนหยุด</li>
+      <li>Remission หลังหยุดยาโดยรวม ~50% (ยุโรป/เอเชีย) · GREAT study กลับเป็นซ้ำ 37% ใน 2 ปีหลังหยุดครั้งแรก</li>
+      <li>ความเสี่ยงสูง → คุยเรื่อง definitive therapy หรือ MMI ระยะยาวตั้งแต่ต้น</li></ul></div>
+  </div>
+  <div class="box key"><b>MMI ขนาดต่ำระยะยาว (long-term low-dose MMI)</b> เป็นทางเลือกที่ยอมรับแล้ว: ATA 2016 "พิจารณาได้" เมื่อยังไม่ remission และผู้ป่วยต้องการ · ETA 2018 rec 13 ทางเลือกหลัง relapse · CPG ไทย 2568: relapse + มีข้อห้าม/ไม่ต้องการ RAI/ผ่าตัด → MMI ขนาดต่ำระยะยาว <span class="rec s1">++ · 1</span> · ขนาดมัก <b>2.5–5 mg/วัน</b> (ไม่ต้องหยุดที่ 18 เดือน) · meta-analysis (&gt;24 เดือน): remission หลังหยุด ~57% และผลข้างเคียงรุนแรง ~1.5% (ส่วนใหญ่เกิดช่วงแรก) · ยังต้องสอนอาการเตือน agranulocytosis ตลอด</div>
+  <div class="tbl"><table>
+    <tr><th>ส่งพิจารณา RAI</th><th>ส่งพิจารณาผ่าตัด (total thyroidectomy)</th></tr>
+    <tr><td>Relapse หลังครบคอร์ส · แพ้ยารุนแรง (agranulocytosis/ตับ) · คุมด้วยยาไม่ได้/กินยาไม่สม่ำเสมอ · AF, HF, periodic paralysis · TMNG/toxic adenoma · <b>ห้าม</b>: ตั้งครรภ์/ให้นม, จะตั้งครรภ์ใน 6 เดือน, GO active ปานกลาง–รุนแรง, ก้อนสงสัยมะเร็ง</td><td>คอพอกใหญ่ (≥80 g)/กดเบียด · ก้อนสงสัยมะเร็ง · GO active ปานกลาง–รุนแรง · จะตั้งครรภ์ภายใน 4–6 เดือน · hyperparathyroidism ร่วม · ไม่ต้องการ RAI · ต้องคุมให้ euthyroid ก่อน (± KI/Lugol 10 วัน) · หลังผ่าตัดเริ่ม LT4 1.6 µg/kg และติดตาม Ca (ดู <a href="../hypocalcemia/index.html">Ca ต่ำ</a>)</td></tr>
+  </table></div>
+  <div class="card c-acc"><h4>เตรียมผู้ป่วยก่อน RAI (ที่ OPD)</h4><ul>
+    <li><b>หยุด MMI ก่อน RAI</b>: CPG ไทย 3–7 วัน · ATA 2016 2–3 วัน · ETA 2018 ราว 1 สัปดาห์ → <b>ทำตามหน่วยเวชศาสตร์นิวเคลียร์ของ รพ.</b> · รายเสี่ยง (ผู้สูงอายุ โรคหัวใจ) เริ่ม MMI ใหม่ได้ 3–7 วันหลัง RAI · ใช้ MMI ไม่ใช้ PTU ก่อน RAI (PTU ลดผล RAI มากกว่า)</li>
+    <li>ให้ <b>beta-blocker ต่อ</b> ช่วงหยุด MMI</li>
+    <li>หญิงวัยเจริญพันธุ์: <b>ตรวจการตั้งครรภ์ภายใน 48 ชม.</b> ก่อน RAI · หยุดให้นม · คุมกำเนิดหลัง RAI หญิง 4–6 เดือน ชาย 3–4 เดือน <span class="tag th">ไทย</span> (ETA: ≥6 เดือนทั้งคู่)</li>
+    <li>เลี่ยงไอโอดีนปริมาณมาก/สารทึบรังสีก่อน RAI · <b>ตา</b>: ประเมิน CAS · GO active ไม่รุนแรง หรือสูบบุหรี่ → prednisolone 0.4–0.5 mg/kg/วัน เริ่ม 1–3 วันหลัง RAI นาน 1 เดือน แล้วลดจนหยุดใน 2 เดือน <span class="tag th">ไทย</span></li>
+    <li>หลัง RAI: ตรวจ FT4/T3/TSH ภายใน 1–2 เดือน แล้วทุก 1–2 เดือน · <b>hypothyroid มักเกิดเดือนที่ 2–6</b> → เริ่ม LT4 อย่ารอให้เป็น overt</li></ul></div>
+</section>
+
+<section id="safe" class="col">
+  <div class="sec-num">04</div>
+  <h2>ผลข้างเคียงยาต้านไทรอยด์</h2>
+  <div class="tbl"><table>
+    <tr><th>ผลข้างเคียง</th><th>ลักษณะ</th><th>ทำอะไร</th></tr>
+    <tr><td><b>Agranulocytosis</b> (ANC &lt;500/µL)</td><td>0.1–0.5% · ส่วนใหญ่ใน <b>3 เดือนแรก</b> แต่เกิดเมื่อไรก็ได้ รวมถึงตอน <b>กลับมาใช้ยาซ้ำ</b> · MMI สัมพันธ์กับขนาด (น้อยมากเมื่อ &lt;15 mg/วัน) · เกิดเร็วฉับพลัน การเจาะ CBC เป็นระยะจึงไม่ช่วยป้องกัน</td><td><b>หยุดถาวร ห้ามเปลี่ยนไปอีกตัว</b> (ข้ามกันได้) · มีไข้ = febrile neutropenia → admit, เพาะเชื้อ, broad-spectrum antibiotic, พิจารณา G-CSF · beta-blocker · ส่ง RAI/ผ่าตัด</td></tr>
+    <tr><td><b>ตับ</b></td><td>MMI: cholestatic ส่วนใหญ่ · PTU: hepatocellular อาจตับวาย · มักใน 6 เดือนแรก</td><td>มีอาการ (ตัวเหลือง ปัสสาวะเข้ม อุจจาระซีด คัน ปวดท้องขวาบน คลื่นไส้) → หยุดยา ตรวจ LFT · ALT ≥3 เท่าที่ไม่ลดใน 1 สัปดาห์ หรือ ≥5 เท่า/ตัวเหลือง → หยุดยา <span class="tag th">ไทย</span></td></tr>
+    <tr><td>ผื่นคัน/ลมพิษเล็กน้อย</td><td>พบบ่อยที่สุด (~5%)</td><td><b>antihistamine ต่อยาได้</b> · ไม่ดีขึ้นใน 2–3 สัปดาห์ → เปลี่ยนยา/RAI/ผ่าตัด · ผื่นรุนแรง → หยุด</td></tr>
+    <tr><td>ปวดข้อหลายข้อ (ATD arthritis syndrome)</td><td>migratory polyarthritis</td><td><b>หยุดยาถาวร</b> → RAI/ผ่าตัด · ปวดข้อเล็กน้อยชั่วคราว ให้ NSAID ได้</td></tr>
+    <tr><td>PTU: ANCA vasculitis</td><td>ผื่นจ้ำเลือด ไตอักเสบ ไอเป็นเลือด · เสี่ยงตามระยะเวลาใช้</td><td>หยุดยา ส่งต่อ</td></tr>
+    <tr><td>MMI ในไตรมาสแรก</td><td>aplasia cutis, choanal/esophageal atresia (สัปดาห์ 6–10 เสี่ยงสุด)</td><td>วางแผนก่อนตั้งครรภ์ (บทที่ 08)</td></tr>
+  </table></div>
+  <div class="box danger"><b>ประโยคที่ต้องพูดทุกครั้งที่จ่ายยา</b> (ให้เป็นกระดาษด้วย): <i>"ถ้ามีไข้ เจ็บคอ หรือแผลในปาก ให้หยุดยาไทรอยด์ทันที แล้วมาเจาะเลือด (CBC) ที่ รพ. ภายในวันนั้น บอกเจ้าหน้าที่ว่ากินยาต้านไทรอยด์อยู่ · ถ้าตัวเหลือง ปัสสาวะสีเข้ม อุจจาระซีด ให้หยุดยาและมา รพ. เช่นกัน"</i> · ATA 2016: ตรวจ <b>CBC with differential</b> เมื่อมีไข้หรือเจ็บคอ <span class="rec s1">ATA strong</span> · ETA 2018 rec 10–11</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>แปลผล CBC เมื่อมีไข้/เจ็บคอ</h4><ul>
+      <li><b>ANC &lt;500</b> → agranulocytosis (ด้านบน)</li>
+      <li><b>ANC 500–1,000</b> → หยุดยาไว้ก่อน ตรวจซ้ำใน 1–3 วัน ปรึกษาอายุรแพทย์ <span class="tag add">เสริม</span></li>
+      <li><b>ANC 1,000–1,500</b> → เทียบค่าก่อนเริ่มยา (Graves เองทำ ANC ต่ำเล็กน้อยได้ พบบ่อยในคนเอเชีย) · ตาม CBC ใกล้ชิด</li>
+      <li><b>ANC ≥1,500</b> → น่าจะเป็นการติดเชื้อทั่วไป รักษาตามเหตุ แล้วกลับมากินยาต่อได้</li></ul></div>
+    <div class="card c-warn"><h4>ถ้าต้องหยุดยาถาวร ทำอย่างไรต่อ</h4><ul>
+      <li>คุมอาการด้วย <b>beta-blocker</b></li>
+      <li>ส่งอายุรแพทย์ต่อมไร้ท่อ เพื่อ <b>RAI หรือผ่าตัด</b> (เตรียมด้วย iodine/cholestyramine/steroid ตามผู้เชี่ยวชาญ)</li>
+      <li>บันทึกแพ้ยาให้ชัดเจนทั้ง MMI และ PTU</li></ul></div>
+  </div>
+</section>
+
+<section id="other" class="col">
+  <div class="sec-num">05</div>
+  <h2>Toxic nodular goitre และ thyroiditis</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Toxic MNG / toxic adenoma</h4><ul>
+      <li>ก้อน autonomous <b>ไม่หายด้วยยา</b> — หยุด MMI แล้วกลับมาเป็นแทบทุกราย</li>
+      <li>รักษาหลัก: <b>RAI หรือผ่าตัด</b> (ร่วมตัดสินใจ) · ผ่าตัดเมื่อกดเบียด ก้อนใหญ่ สงสัยมะเร็ง</li>
+      <li><b>MMI ขนาดต่ำระยะยาว</b> เหมาะกับผู้สูงอายุ โรคร่วมมาก อายุขัยจำกัด หรือไม่ต้องการ RAI/ผ่าตัด (มักใช้ 2.5–10 mg/วัน)</li>
+      <li>ผู้สูงอายุ/โรคหัวใจ: คุมด้วย MMI + beta-blocker ก่อน RAI</li>
+      <li>เลี่ยง <b>สารทึบรังสี/ไอโอดีน</b> (กระตุ้นเป็นพิษ — Jod-Basedow) · ไม่ให้ไอโอดีนก่อนผ่าตัด TNG</li>
+      <li>Subclinical (TSH ต่ำ FT4/T3 ปกติ): รักษาเมื่อ TSH &lt;0.1 + อายุ ≥65 ปี/โรคหัวใจ/กระดูกพรุน — ใช้เครื่องมือที่หน้า <a href="../thyroid/index.html">Thyroid CPG</a></li></ul></div>
+    <div class="card c-warn"><h4>Thyroiditis = ฮอร์โมนรั่ว ไม่ได้สร้างเพิ่ม</h4><ul>
+      <li><b>ไม่ให้ MMI/PTU</b> — ไม่ได้ผล และเสี่ยงผลข้างเคียงโดยเปล่าประโยชน์</li>
+      <li>เบาะแส: อาการ &lt;2 เดือน, ไม่มีตา/คอพอกโตทั่ว, <b>RAIU ต่ำ</b>, T3/T4 ratio ต่ำ, Doppler เลือดน้อย, TRAb ลบ</li>
+      <li>ระยะ: เป็นพิษ 1–3 เดือน → พร่อง 2–6 เดือน → ส่วนใหญ่ปกติใน ~12 เดือน · ตรวจ TFT ทุก 4–8 สัปดาห์</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>ลักษณะ</th><th>รักษา</th></tr>
+    <tr><td><b>Subacute (de Quervain)</b></td><td>หลังหวัด · <b>ปวดคอ ต่อมกดเจ็บ</b> ร้าวไปหู ไข้ · ESR/CRP สูงมาก</td><td>beta-blocker + <b>NSAID</b> (เช่น ibuprofen 400–600 mg วันละ 3 ครั้ง หลังอาหาร สูงสุด 2,400 mg/วัน <span class="tag add">เสริม</span>) · ไม่ดีขึ้น/ปวดมาก → <b>prednisolone 40 mg/วัน 1–2 สัปดาห์ แล้วลดใน 2–4 สัปดาห์</b> (ATA) · ลดเร็วกำเริบได้</td></tr>
+    <tr><td><b>Painless (silent)</b></td><td>ไม่เจ็บ · มักมี anti-TPO บวก · ยา (lithium, amiodarone type 2, interferon, ICI)</td><td>beta-blocker เมื่อมีอาการ · steroid เฉพาะรายรุนแรง</td></tr>
+    <tr><td><b>Postpartum</b></td><td>ภายใน 12 เดือนหลังคลอด/แท้ง · แยกจาก Graves กำเริบหลังคลอด (TRAb, Doppler; ห้าม RAI ขณะให้นม)</td><td>ระยะเป็นพิษ: beta-blocker ขนาดต่ำสุด (propranolol/metoprolol ใช้ได้ขณะให้นม) · <b>ไม่ให้ยาต้านไทรอยด์</b> · ระยะพร่อง: LT4 ถ้ามีอาการ ให้นม หรือจะตั้งครรภ์ใน 6 เดือน · ลองลด/หยุด LT4 ราว 1 ปีหลังคลอดถ้ายังไม่วางแผนมีบุตร <span class="tag up">2026</span> · ตรวจ TSH ปีละครั้ง (เสี่ยง hypothyroid ถาวรภายหลัง)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ระยะพร่องของ subacute/painless: LT4 เฉพาะเมื่อมีอาการหรือ TSH สูงมาก แล้วหยุดหลังประมาณ 3–6 เดือนเมื่อการทำงานกลับปกติ (ATA 2016)</p>
+</section>
+
+<section id="lt4" class="col">
+  <div class="sec-num">06</div>
+  <h2>LT4: เริ่มยาและวิธีกิน</h2>
+  <div class="tbl"><table>
+    <tr><th>ผู้ป่วย</th><th>ขนาดเริ่ม</th></tr>
+    <tr><td>อายุน้อย สุขภาพดี overt hypothyroid · หลัง total thyroidectomy/RAI</td><td><b>Full dose 1.6 µg/kg/วัน</b> (ราว 100 µg) · อ้วนมากใช้ <b>น้ำหนักตัวในอุดมคติ</b> <span class="tag th">ไทย</span></td></tr>
+    <tr><td>อาการน้อย ผลผิดปกติเล็กน้อย / SCH</td><td>25–75 µg/วัน (SCH มัก 25–50 µg)</td></tr>
+    <tr><td>อายุ &gt;50 ปี (CPG ไทย) / ผู้สูงอายุ (ATA)</td><td><b>50 µg/วัน</b> <span class="tag th">ไทย</span> · ผู้สูงอายุมาก/เปราะบาง 25 µg</td></tr>
+    <tr><td><b>โรคหลอดเลือดหัวใจ</b>/arrhythmia</td><td><b>12.5–25 µg/วัน</b> เพิ่มทีละ 12.5–25 µg ทุก 4–6 สัปดาห์ ตามอาการเจ็บหน้าอก</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ขนาดต่ำทำให้ TSH ปกติช้ากว่า แต่อาการดีขึ้นใกล้เคียงกัน · ขนาดเต็มส่วนใหญ่ไม่เกิน ~200 µg/วัน — ต้องใช้ &gt;2 µg/kg ให้คิดถึงการกินผิดวิธี/ดูดซึมไม่ดี · central hypothyroid: ตรวจ/รักษา <b>cortisol ก่อน</b> (ดูหน้า <a href="../pituitary/index.html">Pituitary</a>)</p>
+  <div class="grid2">
+    <div class="card c-ok"><h4>สอนวิธีกิน</h4><ul>
+      <li>กินกับ <b>น้ำเปล่า ตอนท้องว่าง</b>: ก่อนอาหารเช้า <b>30–60 นาที</b> หรือ <b>ก่อนนอน</b> ห่างมื้อเย็น ≥3–4 ชม. · เลือกเวลาเดียวให้สม่ำเสมอ</li>
+      <li>กาแฟ/นม/น้ำผลไม้: รอ 30–60 นาทีหลังกินยา</li>
+      <li><b>แคลเซียม เหล็ก วิตามินรวม ยาลดกรด sucralfate sevelamer</b>: กิน <b>ห่าง ≥4 ชม.</b></li>
+      <li><b>PPI</b> ลดการดูดซึม (แยกเวลาไม่ช่วยมาก) → ตรวจ TSH 6–8 สัปดาห์หลังเริ่ม/หยุด PPI</li>
+      <li><b>ลืมกิน</b>: กินทันทีที่นึกได้ หรือวันถัดไปกินเพิ่มได้ (ยาออกฤทธิ์ยาว ครึ่งชีวิต ~7 วัน) · นับเป็นขนาดต่อสัปดาห์</li>
+      <li>เปลี่ยนยี่ห้อ → ตรวจ TSH 6–8 สัปดาห์</li></ul></div>
+    <div class="card c-acc"><h4>เม็ดยาในไทย <span class="tag th">ไทย</span></h4><ul>
+      <li>ใช้ทั่วไป <b>50 µg และ 100 µg</b> (ตาม CPG ไทย) · บางยี่ห้อ/บาง รพ. มี 25 µg — ตรวจกับห้องยา</li>
+      <li>คิดเป็น <b>ขนาดต่อสัปดาห์</b> แล้วแบ่งแต่ละวันไม่เท่ากันได้ เช่น 75 µg/วัน ≈ 500 µg/สัปดาห์ = <b>100 µg 3 วัน + 50 µg 4 วัน</b> (71 µg/วัน) หรือหักครึ่งเม็ด 50 ทุกวัน</li>
+      <li>เพิ่ม 2 เม็ดของขนาดเดิมต่อสัปดาห์ = เพิ่ม ~29% (ใช้ตอนตั้งครรภ์)</li>
+      <li>ใช้เครื่องมือ <a href="#tools">จัดยา LT4</a> ด้านล่าง</li></ul></div>
+  </div>
+</section>
+
+<section id="adj" class="col">
+  <div class="sec-num">07</div>
+  <h2>LT4: ปรับยา เป้า TSH และเมื่อผลไม่เข้ากัน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ปรับยาตาม TSH (primary hypothyroid)</h4><ul>
+      <li>ตรวจ TSH <b>6–8 สัปดาห์</b> หลังเริ่ม/ปรับ/เปลี่ยนยี่ห้อ (ระดับคงที่ใช้ ~5 ครึ่งชีวิต · CPG ไทย 4–8 สัปดาห์)</li>
+      <li>ปรับ <b>ครั้งละ 12.5–25 µg/วัน</b> (TSH สูงมาก &gt;10 และไม่มีโรคหัวใจ ปรับได้ 25–50 µg)</li>
+      <li>TSH ปกติแล้ว → ตรวจทุก <b>6–12 เดือน</b></li>
+      <li>เจาะเลือดก่อนกินยาเช้านั้นหรือเวลาใดก็ได้ (TSH ไม่ค่อยเปลี่ยน) · FT4 อาจสูงเล็กน้อยถ้าเพิ่งกินยา</li>
+      <li><b>Central hypothyroid</b>: ใช้ <b>FT4 ครึ่งบนของค่าปกติ</b> ไม่ใช้ TSH</li></ul></div>
+    <div class="card c-ok"><h4>เป้า TSH ตามอายุ</h4><ul>
+      <li>ผู้ใหญ่ทั่วไป: <b>ในช่วงค่าปกติของแล็บ</b> (~0.4–4.5) · หลายคนรู้สึกดีที่ครึ่งล่าง</li>
+      <li>วางแผนตั้งครรภ์/ตั้งครรภ์: <b>&lt;2.5</b> (ในช่วงปกติ) <span class="tag up">2026</span></li>
+      <li>อายุ ≥70–80 ปี: ยอมรับ <b>TSH 4–6</b> ได้ (ATA 2014) · อายุ &gt;80 ปี ใช้ upper limit ~7 <span class="tag th">ไทย</span></li>
+      <li>หลีกเลี่ยง <b>TSH &lt;0.1</b> โดยเฉพาะผู้สูงอายุ (AF กระดูกพรุน) — ยกเว้นมะเร็งไทรอยด์ที่ตั้งใจกด TSH</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ต้องการยา <b>เพิ่ม</b></th><th>ต้องการยา <b>ลด</b></th></tr>
+    <tr><td>ตั้งครรภ์ · estrogen (ยาคุม, HRT) · น้ำหนักเพิ่ม · กินผิดวิธี/ไม่สม่ำเสมอ · Ca, Fe, PPI, sevelamer, cholestyramine, orlistat · ยาเหนี่ยวนำเอนไซม์ (<b>rifampicin, carbamazepine, phenytoin, phenobarbital</b>) · TKI (imatinib ฯลฯ) · การดูดซึมผิดปกติ (celiac, atrophic gastritis, <i>H. pylori</i>, ผ่าตัดลำไส้) · nephrotic syndrome</td><td>อายุมากขึ้น · น้ำหนักลด · หลังคลอด · หยุด estrogen · เริ่ม androgen · ระยะฟื้นของ thyroiditis · Hashimoto ที่มี TRAb กระตุ้นร่วม · หยุดยาที่รบกวนการดูดซึม</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>TSH ปกติแต่ยังเหนื่อย/อ้วน/ไม่สดชื่น</h4><ul>
+      <li>ตรวจ: กินถูกวิธีไหม · <b>ซีด, B12, เบาหวาน, ไต, OSA, ซึมเศร้า, ขาดวิตามินดี, adrenal insufficiency, celiac</b> · ยาอื่น</li>
+      <li>อย่าเพิ่มยาจน TSH ถูกกด (ไม่ช่วยอาการ เพิ่มความเสี่ยง)</li>
+      <li><b>ไม่ใช้ LT4+LT3 เป็น routine</b> (ATA 2014, CPG ไทย − ไม่น่าทำ) · ATA/BTA/ETA 2021: 14 RCT ไม่เห็นประโยชน์ที่สม่ำเสมอ · ไม่ใช้ desiccated thyroid</li>
+      <li>ไม่ให้ LT4 เพื่อลดน้ำหนักหรือรักษาซึมเศร้าในคนไทรอยด์ปกติ</li></ul></div>
+    <div class="card c-red"><h4>ผลแล็บหลอก</h4><ul>
+      <li><b>Biotin</b> ขนาดสูง (≥5 mg/วัน เช่น วิตามินบำรุงผม/เล็บ): ในเครื่องที่ใช้ streptavidin–biotin → <b>TSH ต่ำลวง FT4/T3 สูงลวง และ TRAb บวกลวง</b> → ดูเหมือน Graves · หยุด biotin <b>≥2 วัน</b> แล้วตรวจใหม่ (ขนาดสูงมากอาจต้องนานกว่า)</li>
+      <li><b>Heterophile antibody</b>: TSH สูงลวง → ผลไม่เข้ากับอาการ ส่งตรวจวิธีอื่น</li>
+      <li>เจ็บป่วยหนัก (NTI) · ฟื้นจากป่วย TSH สูงชั่วคราว (&lt;20) → ตรวจซ้ำหลังหาย</li>
+      <li>ไล่ 5 ขั้นของ discordant TFT ที่หน้า <a href="../thyroid/index.html">Thyroid CPG ภาคผนวก ข</a></li></ul></div>
+  </div>
+</section>
+
+<section id="spec" class="col">
+  <div class="sec-num">08</div>
+  <h2>ตั้งครรภ์ · amiodarone · lithium · subclinical hypothyroid</h2>
+  <div class="grid2">
+    <div class="card c-vio"><h4>Hypothyroid + ตั้งครรภ์ <span class="tag up">2026</span></h4><ul>
+      <li>ตรวจครรภ์บวก → <b>เพิ่ม LT4 ~25% ทันที</b> (ATA 2026) หรือ <b>เพิ่ม 2 เม็ดของขนาดเดิมต่อสัปดาห์</b> (~29%) · CPG ไทย ~30% · ความต้องการเพิ่ม ~25% ที่ 12 สัปดาห์ และ ~50% ที่ 20 สัปดาห์</li>
+      <li>สอนล่วงหน้า: <b>รู้ว่าตั้งครรภ์ให้เพิ่มยาเองแล้วมาตรวจ</b></li>
+      <li>ตรวจ TSH ~2 สัปดาห์หลังรู้ว่าตั้งครรภ์ แล้ว <b>ทุก 4 สัปดาห์ในครึ่งแรก</b> อย่างน้อย 1 ครั้งในไตรมาส 3 · เป้า TSH <b>&lt;2.5</b> (ในช่วงปกติ)</li>
+      <li>ระวังเกิน: TSH ก่อนตั้งครรภ์ &lt;1.5 หรือขนาดเดิม &gt;100 µg</li>
+      <li>หลังคลอด → <b>กลับขนาดเดิม</b> ตรวจ TFT ~6 สัปดาห์</li></ul></div>
+    <div class="card c-vio"><h4>Graves + ตั้งครรภ์/ให้นม <span class="tag up">2026</span></h4><ul>
+      <li>วางแผนตั้งครรภ์: <b>เปลี่ยน MMI → PTU ก่อนตั้งครรภ์</b> (ATA 2026 strong) หรือคุยเรื่อง RAI/ผ่าตัดก่อน (RAI ต้องรอ ≥6 เดือน)</li>
+      <li>ตั้งครรภ์ขณะกิน MMI: พิจารณาเปลี่ยนเป็น PTU ทันที (ถึง 16 สัปดาห์) · ถ้า euthyroid ด้วยยาขนาดต่ำ (MMI &lt;5–10 mg) &gt;6 เดือน → <b>พิจารณาหยุดยา</b> แล้วตรวจทุก 1–2 สัปดาห์ในไตรมาสแรก</li>
+      <li>เป้า FT4 <b>ขอบบน (1/3 บน) หรือสูงเล็กน้อย</b> — ใช้ยาน้อยสุด · ห้าม block-replace</li>
+      <li>หลัง 16 สัปดาห์: ETA 2018 ให้กลับ MMI · ATA 2026 ว่ายังไม่ชัด (euthyroid ด้วย PTU ต่ำๆ ใช้ต่อได้)</li>
+      <li>ให้นม: <b>MMI ≤20 mg/วัน</b> ปลอดภัย (ถึง 30 mg บางราย) · PTU ≤450 mg/วัน · เลือก MMI</li>
+      <li>ส่งร่วมดูแลกับสูติแพทย์/อายุรแพทย์ต่อมไร้ท่อ (TRAb และทารก)</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ผลต่อไทรอยด์</th><th>ทำอะไรที่ OPD</th></tr>
+    <tr><td><b>Amiodarone</b> (ไอโอดีน ~37% ของน้ำหนัก)</td><td><b>Hypothyroid</b> (บ่อยกว่าในพื้นที่ไอโอดีนพอ, anti-TPO บวก) · <b>3 เดือนแรก</b>: FT4 สูงเล็กน้อย T3 ต่ำลง TSH สูงเล็กน้อย = ปกติ ไม่ต้องรักษา · <b>AIT</b> type 1 (มีก้อน/Graves เดิม — สร้างเพิ่ม) / type 2 (ต่อมอักเสบ — รั่ว) เกิดได้แม้หยุดยาแล้วหลายเดือน</td><td>TFT ก่อนเริ่ม · ภายใน 3 เดือน · แล้ว <b>ทุก 3–6 เดือน</b> (ATA 2016) · Hypothyroid → <b>LT4 และใช้ amiodarone ต่อได้</b> · AIT → ส่งต่อ: type 1 MMI 40 mg/วัน · type 2 prednisone 40 mg/วัน 2–4 สัปดาห์ แล้วลดใน 2–3 เดือน · การหยุด amiodarone ตัดสินร่วมกับแพทย์โรคหัวใจ (ดูหน้า <a href="../af/index.html">AF</a>)</td></tr>
+    <tr><td><b>Lithium</b></td><td>คอพอก และ hypothyroid (มัก subclinical) พบบ่อย · บางราย painless thyroiditis/hyperthyroid · hypercalcemia จาก PTH สูงได้</td><td>TSH ก่อนเริ่ม แล้ว <b>ทุก 6–12 เดือน</b> · พร่อง → <b>เติม LT4 ใช้ lithium ต่อ</b> (ไม่ต้องหยุดยาจิตเวช) · ตรวจ Ca ด้วย (ดู <a href="../hypercalcemia/index.html">Ca สูง</a>)</td></tr>
+  </table></div>
+  <div class="box key"><b>Subclinical hypothyroid (TSH สูง FT4 ปกติ) — สรุปสั้น</b>: ยืนยันซ้ำใน 1–3 เดือนก่อน (ครึ่งหนึ่งกลับปกติเอง) · <b>TSH ≥10 → ให้ LT4</b> (อายุ &lt;70 ชัดเจน) · TSH ULN–10: พิจารณาเฉพาะอายุน้อยที่มีอาการ (ลองให้ 3–6 เดือน ประเมินอาการ) anti-TPO บวก คอพอก หรือวางแผนตั้งครรภ์ · <b>อายุ ≥65–70 ปี TSH &lt;10 ไม่รักษา</b> (TRUST trial 2017: ไม่ช่วยอาการ) · ตั้งครรภ์: ATA 2026 พิจารณาเฉพาะที่พบในไตรมาสแรก · ใช้เครื่องมือ SCH ที่หน้า <a href="../thyroid/index.html">Thyroid CPG</a></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">09</div>
+    <h2>แผนผัง: วันนัดตรวจไทรอยด์</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยไทรอยด์มาตามนัด</b>ถามการกินยา · อาการเตือน · ตั้งครรภ์? · ยาใหม่</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ไข้/เจ็บคอ/แผลในปาก ขณะกิน MMI/PTU?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>หยุดยา + CBC diff วันนี้</b>ANC &lt;500 → หยุดถาวร · admit ถ้ามีไข้</div></div>
+        <div class="arm"><span class="lab">ไม่</span><div class="node q"><b>กินยาอะไร?</b></div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">MMI (Graves)</span><div class="node dx hyper"><b>ดู FT4 + T3 (ไม่ใช่ TSH)</b>สูงไม่ลด → ถามการกินยา/เพิ่ม · ปกติ → ลด 30–50% · ต่ำ → ลดครึ่ง · 12–18 เดือน + TSH, TRAb ปกติ → หยุด · TRAb สูง → ต่ออีก 12 เดือน / RAI / ผ่าตัด / MMI ระยะยาว</div></div>
+        <div class="arm"><span class="lab">LT4</span><div class="node dx hypo"><b>ดู TSH (6–8 สัปดาห์หลังปรับ)</b>ตั้งครรภ์ → +25–30% · สูง → หาเหตุก่อน แล้ว +12.5–25 µg · ต่ำ → −12.5–25 µg · ปกติแต่มีอาการ → หาโรคอื่น ไม่ใช่ T3</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>Thyrotoxicosis รายใหม่</b>Graves → MMI ตาม FT4×ULN + beta-blocker · thyroiditis → beta-blocker/NSAID/steroid ไม่ใช้ ATD · TNG → RAI/ผ่าตัด หรือ MMI ระยะยาว</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดค่าอ้างอิงของแล็บและแนวทางของ รพ. · ใส่ FT4 และ ULN หน่วยเดียวกัน (ng/dL หรือ pmol/L ก็ได้)</p>
+  </div>
+  <div class="tool plan" id="tMmi" style="margin-top:12px">
+    <h3>MMI: เริ่มยาและปรับยาวันนัด</h3>
+    <div class="fields">
+      <label class="f">FT4 ครั้งนี้<input type="number" step="0.01" id="mFt4" value="3.6"></label>
+      <label class="f">FT4 ค่าสูงสุดปกติ (ULN)<input type="number" step="0.01" id="mUln" value="1.8"></label>
+      <label class="f">FT4 ค่าต่ำสุดปกติ (LLN)<input type="number" step="0.01" id="mLln" value="0.9"></label>
+      <label class="f">MMI ที่กินอยู่ (mg/วัน; 0 = ยังไม่เริ่ม)<input type="number" step="2.5" id="mDose" value="0"></label>
+      <label class="f">กินยามาแล้ว (เดือน)<input type="number" step="0.5" id="mMo" value="0"></label>
+      <label class="f">T3 / FT3<select id="mT3"><option value="nd">ไม่ได้ตรวจ</option><option value="hi">สูง</option><option value="nl">ปกติ</option><option value="lo">ต่ำ</option></select></label>
+      <label class="f">TSH<select id="mTsh"><option value="sup">ต่ำ/วัดไม่ได้</option><option value="nl">ปกติ</option><option value="hi">สูง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="mDrop"> FT4 ลดลงชัดจากครั้งก่อน</label>
+      <label><input type="checkbox" id="mAdh"> ลืมกินยาบ่อย</label>
+      <label><input type="checkbox" id="mTrab"> TRAb ยังสูง (ตรวจแล้ว)</label>
+      <label><input type="checkbox" id="mPreg"> ตั้งครรภ์ไตรมาสแรก/วางแผนตั้งครรภ์</label>
+      <label><input type="checkbox" id="mOld"> อายุ ≥60/โรคหัวใจ/AF</label>
+    </div>
+    <div class="out" id="mmiOut"></div>
+  </div>
+
+  <div class="tool" id="tStart" style="margin-top:12px">
+    <h3>LT4: ขนาดเริ่ม + จัดยาเม็ด 50/100 µg ต่อสัปดาห์</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="sWt" value="60"></label>
+      <label class="f">ส่วนสูง (cm) — ไว้คิดน้ำหนักในอุดมคติ<input type="number" id="sHt" value="160"></label>
+      <label class="f">เพศ<select id="sSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="sAge" value="40"></label>
+      <label class="f">ข้อบ่งชี้<select id="sCase"><option value="overt">Overt hypothyroid</option><option value="post">หลัง total thyroidectomy/RAI</option><option value="sch">Subclinical/อาการน้อย</option></select></label>
+      <label class="f">หรือใส่ขนาดที่ต้องการเอง (µg/วัน)<input type="number" step="12.5" id="sMan" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sCad"> โรคหลอดเลือดหัวใจ/arrhythmia</label>
+      <label><input type="checkbox" id="sFrail"> ผู้สูงอายุเปราะบาง</label>
+      <label><input type="checkbox" id="sHalf"> หักครึ่งเม็ด 50 ได้ (25 µg)</label>
+    </div>
+    <div class="out" id="stOut"></div>
+  </div>
+
+  <div class="tool" id="tAdj" style="margin-top:12px">
+    <h3>LT4: ปรับยาจากค่า TSH</h3>
+    <div class="fields">
+      <label class="f">LT4 ที่กินอยู่ (µg/วัน เฉลี่ย)<input type="number" step="12.5" id="aDose" value="75"></label>
+      <label class="f">TSH (mIU/L)<input type="number" step="0.01" id="aTsh" value="8.2"></label>
+      <label class="f">TSH ULN ของแล็บ<input type="number" step="0.1" id="aUln" value="4.5"></label>
+      <label class="f">อายุ (ปี)<input type="number" id="aAge" value="45"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="aWt" value="60"></label>
+      <label class="f">ปรับยาครั้งล่าสุดมาแล้ว (สัปดาห์)<input type="number" id="aWk" value="8"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aPreg"> ตั้งครรภ์/วางแผน</label>
+      <label><input type="checkbox" id="aCad"> โรคหัวใจ/AF</label>
+      <label><input type="checkbox" id="aCen"> Central hypothyroid</label>
+      <label><input type="checkbox" id="aDtc"> มะเร็งไทรอยด์ที่ตั้งใจกด TSH</label>
+      <label><input type="checkbox" id="aCause"> มีเหตุ: กินผิดวิธี/Ca, Fe/PPI/ยาเหนี่ยวนำ/estrogen</label>
+      <label><input type="checkbox" id="aHalf"> หักครึ่งเม็ด 50 ได้</label>
+    </div>
+    <div class="out" id="adjOut"></div>
+  </div>
+
+  <div class="tool" id="tSide" style="margin-top:12px">
+    <h3>Triage อาการขณะกินยาต้านไทรอยด์</h3>
+    <div class="fields">
+      <label class="f">ANC (ถ้ามี; เซลล์/µL หรือ ×10³/µL)<input type="number" step="1" id="tAnc" value=""></label>
+      <label class="f">ALT ครั้งนี้ (U/L ถ้ามี)<input type="number" id="tAlt" value=""></label>
+      <label class="f">ALT ULN<input type="number" id="tAltU" value="40"></label>
+      <label class="f">ยาที่ใช้<select id="tDrug"><option value="mmi">MMI</option><option value="ptu">PTU</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="tFev" checked> ไข้</label>
+      <label><input type="checkbox" id="tThr" checked> เจ็บคอ/แผลในปาก</label>
+      <label><input type="checkbox" id="tJau"> ตัวเหลือง/ปัสสาวะเข้ม/อุจจาระซีด</label>
+      <label><input type="checkbox" id="tAbd"> คลื่นไส้/ปวดท้องขวาบน/คัน</label>
+      <label><input type="checkbox" id="tRash"> ผื่นคัน/ลมพิษเล็กน้อย</label>
+      <label><input type="checkbox" id="tSev"> ผื่นรุนแรง/บวมหน้า-ปาก</label>
+      <label><input type="checkbox" id="tArth"> ปวด/บวมข้อหลายข้อ</label>
+      <label><input type="checkbox" id="tVas"> จ้ำเลือด/ปัสสาวะเป็นเลือด/ไอเป็นเลือด</label>
+    </div>
+    <div class="out" id="sideOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">11</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ไข้ + เจ็บคอ + MMI = หยุดยา เจาะ CBC วันนี้</b></div></div>
+    <div class="pearl"><div><b>Agranulocytosis → ห้ามเปลี่ยนเป็น PTU</b></div></div>
+    <div class="pearl"><div><b>ปรับ MMI ตาม FT4 + T3</b> TSH ต่ำค้างได้หลายเดือน</div></div>
+    <div class="pearl"><div><b>FT4 ปกติแต่ T3 สูง = ยังไม่หาย</b> อย่าลดยา</div></div>
+    <div class="pearl"><div><b>MMI 12–18 เดือน</b> หยุดเมื่อ TSH + TRAb ปกติ</div></div>
+    <div class="pearl"><div><b>Relapse → RAI/ผ่าตัด หรือ MMI ต่ำระยะยาว</b></div></div>
+    <div class="pearl"><div><b>Thyroiditis ไม่ใช้ MMI</b> beta-blocker ± NSAID/steroid</div></div>
+    <div class="pearl"><div><b>LT4 ท้องว่าง ห่าง Ca/Fe 4 ชม.</b></div></div>
+    <div class="pearl"><div><b>ปรับ LT4 ทีละ 12.5–25 µg</b> ตรวจซ้ำ 6–8 สัปดาห์</div></div>
+    <div class="pearl"><div><b>รู้ว่าตั้งครรภ์ → เพิ่ม LT4 2 เม็ด/สัปดาห์</b></div></div>
+    <div class="pearl"><div><b>ผู้สูงอายุ: TSH 4–6 ได้</b> อย่ากดจน &lt;0.1</div></div>
+    <div class="pearl"><div><b>Biotin ทำผลเหมือน Graves</b> หยุด ≥2 วันแล้วตรวจใหม่</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">12</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../thyroid/index.html">Thyroid CPG 2568 →</a> · <a href="../thyroid-emergency/index.html">Thyroid storm &amp; Myxedema coma →</a> · <a href="../af/index.html">AF →</a> · <a href="../pituitary/index.html">Pituitary →</a> · <a href="../hypercalcemia/index.html">Hypercalcemia →</a> · <a href="../hypocalcemia/index.html">Hypocalcemia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สมาคมต่อมไร้ท่อแห่งประเทศไทย. คำแนะนำสำหรับภาวะความผิดปกติของต่อมไทรอยด์ พ.ศ. 2568. พิมพ์ครั้งที่ 1, 2568 · 2) Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid 2016;26:1343–421 · 3) Kahaly GJ, Bartalena L, Hegedüs L, et al. 2018 European Thyroid Association guideline for the management of Graves' hyperthyroidism. Eur Thyroid J 2018;7:167–86 · 4) Jonklaas J, Bianco AC, Bauer AJ, et al. Guidelines for the treatment of hypothyroidism: prepared by the ATA task force on thyroid hormone replacement. Thyroid 2014;24:1670–751 · 5) Korevaar TIM, Leung AM, et al. American Thyroid Association 2026 guidelines for thyroid disease in preconception, pregnancy, and postpartum. Thyroid 2026;36(5). doi:10.1177/10507256261445624 · 6) Alexander EK, Pearce EN, Brent GA, et al. 2017 guidelines of the ATA for the diagnosis and management of thyroid disease during pregnancy and the postpartum. Thyroid 2017;27:315–89 · 7) Garber JR, Cobin RH, Gharib H, et al. Clinical practice guidelines for hypothyroidism in adults: cosponsored by the AACE and the ATA. Endocr Pract 2012;18:988–1028 · 8) Bartalena L, Bogazzi F, Chiovato L, et al. 2018 European Thyroid Association (ETA) guidelines for the management of amiodarone-associated thyroid dysfunction. Eur Thyroid J 2018;7:55–66 · 9) Pearce SHS, Brabant G, Duntas LH, et al. 2013 ETA guideline: management of subclinical hypothyroidism. Eur Thyroid J 2013;2:215–28 · 10) Jonklaas J, Bianco AC, Cappola AR, et al. Evidence-based use of levothyroxine/liothyronine combinations in treating hypothyroidism: a consensus document. Thyroid 2021;31:156–82 · 11) Azizi F, Malboosbaf R. Long-term antithyroid drug treatment: a systematic review and meta-analysis. Thyroid 2017;27:1223–31 · 12) Vos XG, Endert E, Zwinderman AH, et al. Predicting the risk of recurrence before the start of antithyroid drug therapy in patients with Graves' hyperthyroidism. J Clin Endocrinol Metab 2016;101:1381–9 · 13) Stott DJ, Rodondi N, Kearney PM, et al. Thyroid hormone therapy for older adults with subclinical hypothyroidism. N Engl J Med 2017;376:2534–44 · 14) U.S. FDA Safety Communication: biotin may interfere with lab tests (2017, updated 2019)<br>
+  <span class="tag th">ไทย</span> = CPG ไทย/บริบทไทย · <span class="tag up">2026</span> = ATA 2026 · <span class="tag add">เสริม</span> = นอกเหนือแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','toView');
+mountWalker({
+ start:{q:'ผู้ป่วยมาด้วยเรื่องอะไร?',o:[['Graves กิน MMI มาตามนัด','gv'],['ไทรอยด์เป็นพิษรายใหม่','nw'],['กิน LT4 มาตามนัด','lt'],['ไข้/เจ็บคอ ขณะกินยาต้านไทรอยด์','fev']]},
+ fev:{leaf:true,cls:'danger',t:'สงสัย agranulocytosis',b:'<b>หยุด MMI/PTU ทันที</b> · CBC with differential วันนี้ · <b>ANC &lt;500</b> → หยุดถาวร ห้ามเปลี่ยนไปอีกตัว · มีไข้ → admit เพาะเชื้อ broad-spectrum antibiotic ± G-CSF · beta-blocker · ส่ง RAI/ผ่าตัด · ANC ≥1,500 → ติดเชื้อทั่วไป กลับมากินยาได้'},
+ nw:{q:'ลักษณะเข้าได้กับอะไร?',o:[['Graves (คอพอกโตทั่ว, ตา, TRAb บวก, RAIU สูง)','gst'],['ปวดคอ ต่อมกดเจ็บ ไข้ ESR สูง','sub'],['ไม่เจ็บ อาการ &lt;2 เดือน/หลังคลอด RAIU ต่ำ','pl'],['ก้อน/หลายก้อน scan เป็น hot','tng']]},
+ gst:{leaf:true,cls:'ok',t:'เริ่ม MMI ตาม FT4 × ULN',b:'1–1.5 เท่า → 5–10 mg · 1.5–2 → 10–20 mg · 2–3 → 30–40 mg (≥20 mg แบ่ง 2 เวลาได้) · beta-blocker เช่น propranolol 10–40 mg วันละ 3–4 ครั้ง · CBC/LFT ก่อนเริ่ม · <b>สอนอาการเตือน</b> · ตั้งครรภ์ไตรมาสแรก/วางแผน → PTU · นัด 4–6 สัปดาห์ ตรวจ FT4 + T3',next:['วันนัดถัดไป','gv']},
+ sub:{leaf:true,cls:'warn',t:'Subacute thyroiditis',b:'<b>ไม่ใช้ยาต้านไทรอยด์</b> · beta-blocker + NSAID · ไม่ดีขึ้น → prednisolone 40 mg/วัน 1–2 สัปดาห์ แล้วลดใน 2–4 สัปดาห์ · ตรวจ TFT ทุก 4–8 สัปดาห์ (ระยะพร่องตามมา)'},
+ pl:{leaf:true,cls:'warn',t:'Painless/postpartum thyroiditis',b:'<b>ไม่ใช้ยาต้านไทรอยด์</b> · beta-blocker ขนาดต่ำสุดเมื่อมีอาการ · ระยะพร่อง → LT4 ถ้ามีอาการ ให้นม หรือจะตั้งครรภ์ใน 6 เดือน · ลองหยุดราว 1 ปี · TSH ปีละครั้ง'},
+ tng:{leaf:true,cls:'ok',t:'Toxic MNG / toxic adenoma',b:'ยาไม่ทำให้หาย → <b>RAI หรือผ่าตัด</b> · ผู้สูงอายุ/โรคร่วมมาก/ไม่ต้องการ → MMI ขนาดต่ำระยะยาว · เลี่ยงสารทึบรังสี/ไอโอดีน'},
+ gv:{q:'ผล FT4/T3 ครั้งนี้?',o:[['ยังสูง','gh'],['ปกติทั้ง FT4 และ T3','gn'],['FT4 ต่ำ หรือ TSH สูงขึ้น','gl']]},
+ gh:{q:'FT4/T3 ลดลงชัดจากครั้งก่อนไหม?',o:[['ลดลงชัด','ghk'],['ไม่ลด/สูงขึ้น','ghu']]},
+ ghk:{leaf:true,cls:'ok',t:'คงขนาดเดิม',b:'กำลังตอบสนอง · คงขนาด ตรวจ FT4 + T3 ใน 4–6 สัปดาห์ · ไม่ใช้ TSH ตัดสิน (ต่ำค้างได้หลายเดือน)'},
+ ghu:{leaf:true,cls:'warn',t:'ยังคุมไม่ได้',b:'ถามการกินยาก่อน · กินครบแล้ว → เพิ่ม 5–10 mg/วัน (≥20 mg แบ่ง 2 เวลา) · ไม่ลดแม้ 30–40 mg → ส่งพิจารณา RAI/ผ่าตัด · FT4 ปกติแต่ T3 สูง = ยังไม่หาย อย่าลดยา'},
+ gl:{leaf:true,cls:'warn',t:'ยามากเกิน',b:'ลด MMI ราวครึ่ง (หรือหยุดชั่วคราวถ้า 2.5 mg) · ตรวจซ้ำ 4 สัปดาห์ · มี Graves eye → ระวังเป็นพิเศษ (hypothyroid ทำตาแย่ลง)'},
+ gn:{q:'กินยามานานเท่าไร?',o:[['น้อยกว่า 12 เดือน','gr'],['12–18 เดือนขึ้นไป','gs']]},
+ gr:{leaf:true,cls:'ok',t:'ลดยา',b:'ลด MMI ราว 30–50% จนเหลือขนาดต่ำสุดที่คุมได้ (มัก 2.5–5 mg/วัน) · ตรวจทุก 4–8 สัปดาห์ แล้วทุก 2–3 เดือน · ค่อยๆ ลด beta-blocker จนหยุด'},
+ gs:{q:'TSH ปกติ และ TRAb ปกติ?',o:[['ใช่ทั้งคู่','gstop'],['TRAb ยังสูง/TSH ยังต่ำ','gcont']]},
+ gstop:{leaf:true,cls:'ok',t:'หยุดยาได้',b:'หยุด MMI · ตรวจ FT4/T3/TSH ภายใน 1–3 เดือน แล้วทุก 3 เดือนจนครบ 1 ปี แล้วปีละครั้ง · relapse ส่วนใหญ่ใน 6–12 เดือนแรก · ระวังช่วงตั้งครรภ์/หลังคลอด'},
+ gcont:{leaf:true,cls:'warn',t:'ยังไม่ควรหยุด',b:'เลือก: (1) MMI ต่ออีก 12 เดือนแล้วตรวจ TRAb ซ้ำ (2) RAI (3) ผ่าตัด (4) <b>MMI ขนาดต่ำระยะยาว</b> 2.5–5 mg/วัน · ให้ผู้ป่วยร่วมตัดสินใจ'},
+ lt:{q:'ตั้งครรภ์หรือวางแผนตั้งครรภ์?',o:[['ตั้งครรภ์','pg'],['ไม่','lt2']]},
+ pg:{leaf:true,cls:'violet',t:'Hypothyroid + ตั้งครรภ์',b:'<b>เพิ่ม LT4 ~25–30% ทันที</b> (เพิ่ม 2 เม็ดของขนาดเดิมต่อสัปดาห์) · TSH ~2 สัปดาห์หลังรู้ แล้วทุก 4 สัปดาห์ในครึ่งแรก · เป้า TSH &lt;2.5 · หลังคลอดกลับขนาดเดิม ตรวจ 6 สัปดาห์'},
+ lt2:{q:'TSH ครั้งนี้เทียบกับเป้า (ตามอายุ)?',o:[['สูงกว่าเป้า','lh'],['อยู่ในเป้า','lo'],['ต่ำกว่าเป้า','ll']]},
+ lh:{q:'มีเหตุที่แก้ได้ไหม? (กินผิดเวลา, Ca/Fe, PPI, ยาเหนี่ยวนำ, estrogen, น้ำหนักขึ้น, ลืมกิน)',o:[['มี','lfix'],['ไม่มี','lup']]},
+ lfix:{leaf:true,cls:'warn',t:'แก้ที่เหตุก่อน',b:'สอนกินตอนท้องว่าง ห่าง Ca/Fe ≥4 ชม. · ทบทวนยา · ตรวจซ้ำ 6–8 สัปดาห์ · TSH &gt;10 หรือเหตุแก้ไม่ได้ (เช่น ต้องใช้ estrogen/rifampicin) → เพิ่มยาไปพร้อมกัน'},
+ lup:{leaf:true,cls:'ok',t:'เพิ่ม LT4',b:'เพิ่ม <b>12.5–25 µg/วัน</b> (ผู้สูงอายุ/โรคหัวใจ 12.5 µg) · จัดจากเม็ด 50/100 ด้วยตารางรายสัปดาห์ · ตรวจ TSH 6–8 สัปดาห์ · ต้องใช้ &gt;2 µg/kg → คิดถึงการดูดซึม/ไม่กินยา'},
+ lo:{q:'ยังมีอาการ (เหนื่อย อ้วน ไม่สดชื่น)?',o:[['มี','lsym'],['ไม่มี','lok']]},
+ lsym:{leaf:true,cls:'warn',t:'TSH ปกติแต่ยังมีอาการ',b:'หาโรคอื่น: ซีด B12 เบาหวาน ไต OSA ซึมเศร้า adrenal insufficiency celiac · อย่ากด TSH · <b>ไม่ใช้ LT4+LT3 เป็น routine</b> · ไม่ใช้ desiccated thyroid'},
+ lok:{leaf:true,cls:'ok',t:'คงขนาดเดิม',b:'ตรวจ TSH ทุก 6–12 เดือน · ตรวจเร็วขึ้นเมื่อน้ำหนักเปลี่ยนมาก เริ่ม/หยุดยาที่มีผล ตั้งครรภ์ หรือเปลี่ยนยี่ห้อ'},
+ ll:{leaf:true,cls:'warn',t:'ลด LT4',b:'TSH 0.1–ต่ำกว่าเป้า → ลด 12.5–25 µg · <b>TSH &lt;0.1</b> → ลด 25 µg ขึ้นไป โดยเฉพาะผู้สูงอายุ/AF/กระดูกพรุน · ยกเว้นมะเร็งไทรอยด์ที่ตั้งใจกด TSH · ตรวจซ้ำ 6–8 สัปดาห์'}
+},'apTrail','apStage');
+
+const r25=x=>Math.round(x/2.5)*2.5;
+const r125=x=>Math.round(x/12.5)*12.5;
+const fx=x=>(Math.round(x*10)/10).toString();
+
+/* ---------- MMI ---------- */
+function mmi(){
+  const ft4=num('mFt4'),uln=num('mUln'),lln=num('mLln'),dose=num('mDose'),mo=num('mMo');
+  const t3=$('mT3').value,tsh=$('mTsh').value,c=id=>$(id).checked;const L=[];const o=$('mmiOut');
+  if(ft4===null||uln===null){o.textContent='ใส่ FT4 และค่าสูงสุดปกติ (ULN) ของแล็บ';return}
+  if(ft4<=0||uln<=0){o.textContent='FT4 และ ULN ต้องมากกว่า 0';return}
+  if(dose===null||dose<0){o.textContent='ใส่ขนาด MMI ที่กินอยู่ (ใส่ 0 ถ้ายังไม่เริ่มยา)';return}
+  const llnOk=lln!==null&&lln>0&&lln<uln;
+  const r=ft4/uln;
+  L.push(`FT4 = <b>${fx(r)} เท่า</b> ของ ULN`+(llnOk?'':' <span class="muted">(ไม่ได้ใส่ LLN ที่ถูกต้อง — ประเมิน FT4 ต่ำไม่ได้)</span>'));
+  if(r>6)L.push('<span class="muted">FT4 สูงกว่า ULN มากผิดปกติ — ตรวจหน่วยของ FT4 และ ULN ว่าตรงกัน</span>');
+  const ptu=(lo,hi)=>{const a=Math.min(lo*20,450),b=Math.min(hi*20,450);return `<b>ตั้งครรภ์ไตรมาสแรก/วางแผน → ใช้ PTU แทน MMI</b> (MMI:PTU ≈ 1:20) ≈ PTU ${a===b?a:a+'–'+b} mg/วัน แบ่งวันละ 2–3 ครั้ง`+(hi*20>450?' · ต้องการมากกว่า 450 mg/วัน → ปรึกษาอายุรแพทย์ต่อมไร้ท่อ':'')+' · ส่งร่วมดูแลกับสูติแพทย์'};
+  if(dose===0){
+    let lo,hi;
+    if(r<=1){
+      if(t3==='hi'){lo=5;hi=10;L.push('FT4 ไม่สูง แต่ <b>T3 สูง</b> (T3-toxicosis) → เริ่ม <b>MMI 5–10 mg/วัน</b> ตามความรุนแรงของ T3 และอาการ');}
+      else{L.push('FT4 ไม่สูง → <b>ยังไม่ต้องเริ่ม MMI</b> · ถ้า TSH ต่ำอย่างเดียว = subclinical hyperthyroidism → ตรวจซ้ำและใช้เครื่องมือ subclinical hyper ที่หน้า Thyroid CPG · ไม่ได้ตรวจ T3 → ส่ง T3/FT3');
+        o.innerHTML=L.join('<br>');return}
+    }else if(r<=1.5){lo=5;hi=10}else if(r<=2){lo=10;hi=20}else{lo=30;hi=40}
+    if(r>1)L.push(`ขนาดเริ่ม (ATA 2016/CPG ไทย): <b>MMI ${lo}–${hi} mg/วัน</b>`+(hi>=20?' · ≥20 mg แบ่งวันละ 2 ครั้งได้เมื่ออาการมาก':' กินวันละครั้ง')+` · เม็ด 5 mg = ${lo/5}–${hi/5} เม็ด/วัน`);
+    if(r>3)L.push('<b>FT4 &gt;3 เท่า</b> → อาการรุนแรง: ประเมิน thyroid storm (ไข้ สับสน HF, AF เร็ว) · ปรึกษาอายุรแพทย์');
+    if(t3==='hi'&&r>1&&r<=2)L.push('T3 สูงเด่น → เลือกขนาดค่อนไปทางสูงของช่วง');
+    if(c('mPreg'))L.push(ptu(lo,hi));
+    L.push('Beta-blocker: propranolol 10–40 mg วันละ 3–4 ครั้ง หรือ atenolol 25–100 mg/วัน (CrCl &lt;35 ลดขนาด) · หอบหืด → cardioselective ขนาดต่ำ หรือ diltiazem'+(c('mOld')?' · <b>อายุ ≥60/โรคหัวใจ: ให้ทุกราย</b> · AF → ประเมินยาต้านการแข็งตัว (หน้า AF)':''));
+    L.push('ก่อนเริ่ม: <b>CBC with diff + LFT</b> · สอน: <b>ไข้/เจ็บคอ/แผลในปาก → หยุดยา เจาะ CBC วันนั้น</b> · ตัวเหลือง ปัสสาวะเข้ม → หยุดยา มา รพ.');
+    L.push('นัด <b>4–6 สัปดาห์</b> ตรวจ FT4 + T3/FT3 (ไม่ใช้ TSH ปรับยาช่วงแรก)');
+    o.innerHTML=L.join('<br>');return;
+  }
+  /* follow-up */
+  if(dose>40)L.push('<span class="muted">MMI &gt;40 mg/วัน สูงกว่าที่ใช้ทั่วไป — ตรวจค่าที่ใส่</span>');
+  const low=r<=1&&t3!=='hi'&&((llnOk&&ft4<lln)||tsh==='hi'||t3==='lo');
+  const high=r>1||t3==='hi';
+  if(high&&tsh==='hi')L.push('<b>FT4/T3 สูงแต่ TSH สูง = ผลไม่เข้ากัน</b> → อย่าลดยาจาก TSH · ตรวจซ้ำ/คิดถึง assay interference หรือ TSH-secreting adenoma · ปรึกษาอายุรแพทย์ต่อมไร้ท่อ');
+  let nd=null;
+  if(low){
+    nd=r25(dose/2);if(nd<2.5||nd>=dose)nd=0;
+    L.push('<b>FT4 ต่ำ/TSH สูง = ยามากเกิน</b> → '+(nd<2.5?'<b>หยุด MMI ชั่วคราว</b>':`ลด MMI เป็น <b>${nd} mg/วัน</b> (ราวครึ่ง)`)+' · ตรวจซ้ำ 4 สัปดาห์ · มี Graves eye ระวังเป็นพิเศษ');
+  }else if(high){
+    if(r<=1&&t3==='hi'){
+      L.push('<b>FT4 ปกติแต่ T3 ยังสูง</b> → ยังไม่ euthyroid (T3-predominant) · <b>ไม่ลดยา</b> · ถ้า T3 ไม่ลดจากครั้งก่อน เพิ่ม 5 mg/วัน');
+    }else if(c('mDrop')){
+      L.push(`FT4 ยังสูงแต่ลดลงชัด → <b>คงขนาด ${dose} mg/วัน</b>`);
+    }else{
+      if(c('mAdh'))L.push('<b>ลืมกินยาบ่อย</b> → แก้ที่การกินยาก่อน (กินวันละครั้ง ตั้งนาฬิกา ให้ญาติช่วย) ถ้ากินครบแล้วยังสูงจึงเพิ่มยา');
+      if(dose>=40)L.push('คุมไม่ได้ทั้งที่ใช้ MMI ≥40 mg/วัน → <b>ส่งพิจารณา RAI/ผ่าตัด</b> · ตรวจการกินยา');
+      else{nd=Math.min(dose+(dose<20?5:10),40);L.push(`FT4 ยังสูงและไม่ลด → เพิ่มเป็น <b>MMI ${nd} mg/วัน</b>`+(nd>=20?' (แบ่ง 2 เวลาได้)':''));}
+    }
+  }else{
+    if(t3==='nd')L.push('<span class="muted">ไม่ได้ตรวจ T3 — FT4 ปกติอย่างเดียวยังไม่พอ ถ้า T3 สูงอยู่ไม่ควรลดยา</span>');
+    if(dose>5){
+      let lo=Math.max(2.5,r25(dose*0.5)),hi=r25(dose*0.7);if(hi>=dose)hi=dose-2.5;if(hi<lo)hi=lo;
+      L.push(`FT4${t3==='nl'?' และ T3':''} ปกติ → <b>ลด MMI เป็น ${lo===hi?lo:lo+'–'+hi} mg/วัน</b> (ลด 30–50%)`);
+    }else{
+      L.push(`ขนาดต่ำแล้ว (${dose} mg/วัน) → <b>คงขนาด</b> 2.5–5 mg/วัน`);
+      if(mo!==null&&mo>=12){
+        if(tsh==='nl'&&!c('mTrab'))L.push('กินยา ≥12 เดือน + TSH ปกติ → <b>ตรวจ TRAb</b> · ปกติ → <b>หยุดยาได้</b> แล้วตรวจ TFT ใน 1–3 เดือน ทุก 3 เดือนจนครบปี แล้วปีละครั้ง');
+        else if(c('mTrab'))L.push('<b>TRAb ยังสูง</b> → ต่อ MMI อีก 12 เดือนแล้วตรวจซ้ำ · หรือ RAI/ผ่าตัด · หรือ <b>MMI ขนาดต่ำระยะยาว</b>');
+        else L.push('TSH ยังต่ำ → ยังไม่ควรหยุด · ตรวจ T3 · ต่อยาแล้วตรวจซ้ำ 2–3 เดือน');
+      }
+    }
+    if(tsh==='sup'&&(mo===null||mo<6))L.push('TSH ยังต่ำ = ปกติในช่วงแรก (ตามหลัง FT4 หลายเดือน) → ไม่ต้องเพิ่มยาเพราะ TSH');
+  }
+  if(mo!==null&&mo>=18&&high&&!low)L.push('กินยา ≥18 เดือนแล้วยังเป็นพิษ → โอกาสหายด้วยยาต่ำ คุยเรื่อง <b>RAI/ผ่าตัด</b> หรือ MMI ระยะยาว');
+  if(c('mPreg')){const d=nd!==null?nd:dose;L.push(d>0?ptu(d,d):'ตั้งครรภ์: ส่งร่วมดูแลกับสูติแพทย์ · ตรวจ TFT ทุก 1–2 สัปดาห์ในไตรมาสแรกหลังหยุดยา');
+    if(!high&&dose<=10)L.push('ATA 2026: euthyroid ด้วยยาขนาดต่ำ (MMI &lt;5–10 mg) มา &gt;6 เดือน → <b>พิจารณาหยุดยาเมื่อตั้งครรภ์</b> และตรวจทุก 1–2 สัปดาห์');}
+  L.push('นัด '+(high||low?'<b>4–6 สัปดาห์</b>':'<b>6–8 สัปดาห์</b> (คงที่แล้วทุก 2–3 เดือน)')+' · ย้ำอาการเตือนไข้/เจ็บคอทุกครั้ง');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tMmi input,#tMmi select',mmi);
+
+/* ---------- weekly tablet planner ---------- */
+const DAYS=['จ','อ','พ','พฤ','ศ','ส','อา'];
+function tabTxt(x){if(x<=0)return 'ไม่กิน';const n=Math.floor(x/100);let r=x-100*n;const p=[];if(n)p.push(n>1?`100×${n}`:'100');if(r>=50){p.push('50');r-=50}if(r>=25)p.push('½ ของ 50');return p.join(' + ')}
+function plan(d,half){
+  const step=half?25:50;
+  if(!(d>0))return 'ไม่มีขนาดที่ต้องจัด';
+  const W=Math.round(d*7/step)*step;
+  if(W<step)return `ขนาด ${fx(d)} µg/วัน ต่ำเกินกว่าจะจัดจากเม็ดที่มี${half?'':' — ลองเลือก "หักครึ่งเม็ด 50 ได้"'}`;
+  const base=Math.floor(W/7/step)*step;const extra=Math.round((W-7*base)/step);
+  const days=Array(7).fill(base);for(let k=0;k<extra;k++)days[Math.floor(k*7/extra)]=base+step;
+  const g={};days.forEach((v,i)=>{(g[v]=g[v]||[]).push(DAYS[i])});
+  let n100=0,n50=0;days.forEach(v=>{const a=Math.floor(v/100);n100+=a;n50+=(v-100*a)/50});
+  const avg=W/7;
+  let s=`<b>${W} µg/สัปดาห์</b> = เฉลี่ย <b>${fx(avg)} µg/วัน</b>`+(Math.abs(avg-d)>0.05?` (เป้า ${fx(d)})`:'')+'<ol>';
+  Object.keys(g).map(Number).sort((a,b)=>b-a).forEach(v=>{s+=`<li><b>${v} µg</b> (${tabTxt(v)}): ${g[v].join(' ')}</li>`});
+  s+='</ol>'+`ใช้ต่อสัปดาห์: เม็ด 100 µg <b>${n100}</b> เม็ด · เม็ด 50 µg <b>${fx(n50)}</b> เม็ด`;
+  if(Math.abs(avg-d)/d>0.1)s+='<br><span class="muted">ต่างจากเป้า &gt;10% เพราะขนาดเม็ด — ปัดได้ หรือเลือกหักครึ่งเม็ด</span>';
+  return s;
+}
+
+/* ---------- LT4 start ---------- */
+function lt4Start(){
+  const wt=num('sWt'),ht=num('sHt'),age=num('sAge'),man=num('sMan');const sex=$('sSex').value,cs=$('sCase').value;const c=id=>$(id).checked;const L=[];const o=$('stOut');
+  let d=null;
+  if(man!==null&&man>0){
+    d=man;L.push(`ขนาดที่ใส่เอง: <b>${fx(man)} µg/วัน</b>`);
+    if(man>300)L.push('<b>&gt;300 µg/วัน สูงผิดปกติ</b> — คิดถึงไม่กินยา/ดูดซึมไม่ดี ก่อนเพิ่มยา');
+  }else{
+    if(wt===null||wt<=0){o.textContent='ใส่น้ำหนัก (kg) หรือใส่ขนาดที่ต้องการเอง';return}
+    if(wt<25||wt>250){o.textContent='น้ำหนักนอกช่วงที่ใช้ได้ (25–250 kg) — ตรวจค่าที่ใส่';return}
+    let w=wt,note='น้ำหนักจริง';
+    if(ht!==null&&ht>=120&&ht<=230){
+      const bmi=wt/Math.pow(ht/100,2);const ibw=(sex==='m'?50:45.5)+0.91*(ht-152.4);
+      if(bmi>=30&&ibw>0&&ibw<wt){w=ibw;note=`น้ำหนักในอุดมคติ ${fx(ibw)} kg (BMI ${fx(bmi)} อ้วน — CPG ไทย)`}
+      else note=`น้ำหนักจริง (BMI ${fx(bmi)})`;
+    }else if(ht!==null)L.push('<span class="muted">ส่วนสูงนอกช่วง 120–230 cm — ใช้น้ำหนักจริง</span>');
+    const full=r125(1.6*w);
+    L.push(`Full dose 1.6 µg/kg × ${note} = <b>${full} µg/วัน</b>`);
+    if(age===null)L.push('<span class="muted">ไม่ได้ใส่อายุ — ถ้าอายุ &gt;50 ปีหรือมีโรคหัวใจ ต้องเริ่มต่ำกว่านี้</span>');
+    if(age!==null&&(age<15||age>110))L.push('<span class="muted">อายุนอกช่วงผู้ใหญ่ — เด็กใช้ขนาดตามน้ำหนักต่างจากนี้</span>');
+    if(c('sCad')){d=c('sFrail')?12.5:25;L.push(`<b>โรคหลอดเลือดหัวใจ</b> → เริ่ม <b>${d===12.5?'12.5':'12.5–25'} µg/วัน</b> เพิ่มทีละ 12.5–25 µg ทุก 4–6 สัปดาห์ ดูอาการเจ็บหน้าอก/ใจสั่น`);}
+    else if(c('sFrail')||(age!==null&&age>=80)){d=25;L.push('ผู้สูงอายุมาก/เปราะบาง → เริ่ม <b>25 µg/วัน</b> ค่อยๆ เพิ่ม');}
+    else if(age!==null&&age>50){d=Math.min(50,full);L.push(`อายุ &gt;50 ปี → เริ่ม <b>${d} µg/วัน</b> (CPG ไทย) แล้วเพิ่มตาม TSH ทุก 6–8 สัปดาห์ จนถึงราว ${full} µg`);}
+    else if(cs==='sch'){d=Math.min(50,full);L.push(`Subclinical/อาการน้อย → เริ่ม <b>25–${d} µg/วัน</b> (คำนวณตารางที่ ${d} µg)`);}
+    else{d=full;L.push(cs==='post'?`หลัง total thyroidectomy/RAI → เริ่ม <b>full dose ${full} µg/วัน</b>`:`อายุน้อย ไม่มีโรคหัวใจ → เริ่ม <b>full dose ${full} µg/วัน</b> ได้เลย`);}
+    if(cs==='post'&&(c('sCad')||c('sFrail')||(age!==null&&age>50)))L.push('<span class="muted">หลังผ่าตัดในผู้สูงอายุ/โรคหัวใจ ยังควรเริ่มต่ำแล้วเพิ่ม</span>');
+  }
+  L.push('<b>ตารางจัดยา</b>: '+plan(d,c('sHalf')));
+  L.push('กินตอนท้องว่าง ก่อนอาหารเช้า 30–60 นาที หรือก่อนนอน · ห่าง Ca/Fe ≥4 ชม. · ตรวจ TSH <b>6–8 สัปดาห์</b>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tStart input,#tStart select',lt4Start);
+
+/* ---------- LT4 adjust ---------- */
+function lt4Adj(){
+  const dose=num('aDose'),tsh=num('aTsh'),age=num('aAge'),wt=num('aWt'),wk=num('aWk');let uln=num('aUln');const c=id=>$(id).checked;const L=[];const o=$('adjOut');
+  if(dose===null||dose<=0){o.textContent='ใส่ขนาด LT4 ที่กินอยู่ (µg/วัน)';return}
+  if(c('aCen')){o.innerHTML='<b>Central hypothyroid</b>: TSH ใช้ปรับยาไม่ได้ → ปรับให้ <b>FT4 อยู่ครึ่งบนของค่าปกติ</b> (เจาะก่อนกินยาเช้านั้น) · ปรับครั้งละ 12.5–25 µg · ตรวจว่าได้ steroid ทดแทนแล้ว (หน้า Pituitary)';return}
+  if(tsh===null||tsh<0){o.textContent='ใส่ค่า TSH (mIU/L)';return}
+  if(dose>400)L.push('<span class="muted">ขนาด &gt;400 µg/วัน — ตรวจค่าที่ใส่</span>');
+  if(uln===null||uln<=0||uln>10){uln=4.5;L.push('<span class="muted">ใช้ ULN 4.5 (ค่าที่ใส่ไม่ถูกต้อง)</span>');}
+  const preg=c('aPreg'),cad=c('aCad'),old=age!==null&&age>=70;
+  let up=uln,lo=0.4;
+  if(preg){up=2.5;lo=0.1}else if(age!==null&&age>=80){up=Math.max(uln,7)}else if(old){up=Math.max(uln,6)}
+  L.push(`เป้า TSH: <b>${lo}–${up}</b>`+(preg?' (ตั้งครรภ์/วางแผน: &lt;2.5)':old?` (อายุ ${age} ปี ยอมให้สูงได้)`:' (ช่วงปกติของแล็บ)'));
+  if(wk!==null&&wk>=0&&wk<6&&!preg)L.push(`<span class="muted">เพิ่งปรับ ${wk} สัปดาห์ — TSH ยังไม่คงที่ ควรรอ 6–8 สัปดาห์ก่อนปรับซ้ำ (ยกเว้น TSH สูงมาก)</span>`);
+  if(c('aDtc'))L.push('<b>มะเร็งไทรอยด์</b>: เป้า TSH ขึ้นกับ ATA risk และการตอบสนอง → ใช้เครื่องมือเป้า TSH ใน DTC ที่หน้า Thyroid CPG');
+  let nd=null;
+  if(tsh>up){
+    if(tsh>=50)L.push('<b>TSH สูงมาก</b> → ถามว่ากินยาจริงไหม · ตรวจ FT4 · ซึม ตัวเย็น หัวใจช้า → ประเมิน myxedema coma');
+    let step;
+    if(preg)step=tsh>=10?50:25;
+    else if(cad||old)step=tsh>10?25:12.5;
+    else step=tsh>10?25:12.5;
+    if(c('aCause')&&!preg&&tsh<=10){
+      L.push(`TSH ${tsh} สูงกว่าเป้า แต่ <b>มีเหตุที่แก้ได้</b> → แก้ก่อน (กินท้องว่าง ห่าง Ca/Fe ≥4 ชม. ทบทวน PPI/ยาเหนี่ยวนำ/estrogen) แล้วตรวจซ้ำ 6–8 สัปดาห์ · เหตุแก้ไม่ได้ → เพิ่มยา ${step} µg/วัน`);
+    }else{
+      nd=dose+step;
+      if(c('aCause'))L.push('มีเหตุร่วม → แก้ไปพร้อมกัน');
+      L.push(`TSH ${tsh} สูงกว่าเป้า → <b>เพิ่ม ${step} µg/วัน เป็น ${fx(nd)} µg/วัน</b>`+(preg?' · ตรวจ TSH ใน 4 สัปดาห์':(cad?' · โรคหัวใจ: เพิ่มช้า ดูอาการเจ็บหน้าอก':'')));
+      if(preg)L.push('ตั้งครรภ์ใหม่และยังไม่เคยเพิ่ม → เพิ่ม ~25–30% (2 เม็ดของขนาดเดิมต่อสัปดาห์) ทันที');
+    }
+  }else if(tsh<lo&&!c('aDtc')){
+    if(preg&&tsh>=0.01)L.push('ตั้งครรภ์ไตรมาสแรก TSH ต่ำได้จาก hCG → ดู FT4 ก่อน ถ้า FT4 สูงจึงลดยา');
+    const step=tsh<0.1?25:12.5;nd=dose-step;
+    if(nd<=0){L.push(`TSH ${tsh} ต่ำ ขณะกินขนาดต่ำมาก → ทบทวนว่ายังต้องใช้ LT4 หรือไม่ (thyroiditis หาย? Graves?) · ตรวจ FT4/T3`);nd=null}
+    else L.push(`TSH ${tsh} ต่ำกว่าเป้า → ${preg?'ถ้า FT4 สูง: ':''}<b>ลด ${step} µg/วัน เป็น ${fx(nd)} µg/วัน</b>`+(tsh<0.1&&(old||cad)?' · <b>อายุมาก/โรคหัวใจ เสี่ยง AF และกระดูกพรุน — ลดทันที</b>':''));
+  }else if(tsh<lo&&c('aDtc')){
+    L.push(`TSH ${tsh} ต่ำ — ถ้าตั้งใจกด TSH ตามเป้า DTC คงขนาดได้`);
+  }else{
+    L.push(`TSH ${tsh} <b>อยู่ในเป้า</b> → คงขนาด ${fx(dose)} µg/วัน · ตรวจทุก 6–12 เดือน`+(preg?' (ตั้งครรภ์: ทุก 4 สัปดาห์ในครึ่งแรก)':''));
+    L.push('ยังมีอาการ → หาโรคอื่น (ซีด B12 เบาหวาน OSA ซึมเศร้า) · ไม่ใช้ T3 เป็น routine');
+  }
+  if(wt!==null&&wt>=25&&wt<=250){const d2=(nd||dose)/wt;if(d2>2)L.push(`ขนาด ${fx(d2)} µg/kg/วัน (&gt;2) → คิดถึงกินผิดวิธี ไม่กินยา หรือดูดซึมไม่ดี (celiac, atrophic gastritis, <i>H. pylori</i>)`);}
+  if(nd!==null)L.push('<b>ตารางจัดยาใหม่</b>: '+plan(nd,c('aHalf'))+'<br>ตรวจ TSH ซ้ำ <b>'+(preg?'4 สัปดาห์':'6–8 สัปดาห์')+'</b>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tAdj input,#tAdj select',lt4Adj);
+
+/* ---------- ATD side-effect triage ---------- */
+function side(){
+  let anc=num('tAnc');const alt=num('tAlt'),altU=num('tAltU');const drug=$('tDrug').value;const c=id=>$(id).checked;const L=[];const o=$('sideOut');
+  let stop=false,perm=false;
+  if(anc!==null&&anc<0){o.textContent='ANC ต้องไม่ติดลบ';return}
+  if(anc!==null&&anc>0&&anc<20){L.push(`<b>อ่าน ANC ${anc} เป็น ×10³/µL = ${Math.round(anc*1000)} เซลล์/µL</b> `+(Number.isInteger(anc)?` · ถ้าค่านี้เป็น <b>${anc} เซลล์/µL จริง = agranulocytosis</b> → หยุดยาถาวร (ใส่เป็นเซลล์/µL เพื่อให้แปลผลถูก)`:''));anc=anc*1000}
+  const fev=c('tFev')||c('tThr');
+  if(fev){stop=true;L.push('<b>ไข้/เจ็บคอ → หยุด '+(drug==='ptu'?'PTU':'MMI')+' ทันที + CBC with differential วันนี้</b>');
+    if(anc===null)L.push('ยังไม่มีผล ANC → เจาะทันที · ระหว่างรอผล <b>ไม่กินยาต่อ</b>');}
+  if(anc!==null){
+    if(anc<500){stop=perm=true;L.push(`<b>ANC ${Math.round(anc)} &lt;500 = agranulocytosis</b> → หยุดยาถาวร <b>ห้ามเปลี่ยนเป็น ${drug==='ptu'?'MMI':'PTU'}</b>`+(fev?' · มีไข้ = febrile neutropenia → <b>admit</b> เพาะเชื้อ broad-spectrum antibiotic พิจารณา G-CSF':' · เฝ้าระวังไข้ใกล้ชิด ปรึกษาอายุรแพทย์'));}
+    else if(anc<1000){stop=true;L.push(`ANC ${Math.round(anc)} (500–1,000) → <b>หยุดยาไว้ก่อน</b> ตรวจซ้ำ 1–3 วัน ปรึกษาอายุรแพทย์ต่อมไร้ท่อ`);}
+    else if(anc<1500)L.push(`ANC ${Math.round(anc)} (1,000–1,500) → neutropenia เล็กน้อย เทียบค่าก่อนเริ่มยา (Graves เองทำให้ต่ำได้) · ตาม CBC ใกล้ชิด`+(fev?' · ไข้: หาสาเหตุติดเชื้อ ตัดสินใจกลับมากินยาร่วมกับผู้เชี่ยวชาญ':''));
+    else L.push(`ANC ${Math.round(anc)} ≥1,500 → ไม่ใช่ agranulocytosis`+(fev?' · รักษาการติดเชื้อตามเหตุ แล้ว<b>กลับมากินยาต่อได้</b> · ย้ำอาการเตือน':''));
+  }
+  if(c('tJau')||c('tAbd')){stop=true;L.push('อาการตับ → <b>หยุดยา ตรวจ LFT</b> (ALT, ALP, bilirubin)'+(drug==='ptu'?' + INR · <b>PTU เสี่ยงตับวายรุนแรง</b>':' · MMI มักเป็น cholestatic'));}
+  if(alt!==null&&alt>0){
+    if(altU===null||altU<=0)L.push('<span class="muted">ใส่ ALT ULN เพื่อแปลผล ALT</span>');
+    else{const x=alt/altU;
+      if(x>=5||(x>=3&&c('tJau'))){stop=perm=true;L.push(`ALT ${fx(x)} เท่าของ ULN → <b>หยุดยาถาวร</b> ไม่กลับมาใช้ยาตัวนี้ · ส่ง RAI/ผ่าตัด`);}
+      else if(x>=3){stop=true;L.push(`ALT ${fx(x)} เท่า → <b>หยุดยา</b> ตรวจซ้ำ 1 สัปดาห์ · ไม่ลดลง → หยุดถาวร`);}
+      else if(x>1)L.push(`ALT ${fx(x)} เท่า → สูงเล็กน้อย (Graves เองทำได้) เทียบค่าก่อนเริ่มยา ตามซ้ำ`);
+      else L.push(`ALT ${fx(x)} เท่า → ปกติ`);}
+  }
+  if(c('tSev')){stop=perm=true;L.push('<b>ผื่นรุนแรง/บวมหน้า-ปาก</b> → หยุดยาถาวร · angioedema/หายใจลำบาก → ห้องฉุกเฉิน (หน้า Anaphylaxis) · ห้ามเปลี่ยนไปอีกตัว');}
+  else if(c('tRash'))L.push('ผื่นคัน/ลมพิษเล็กน้อย → <b>antihistamine และกินยาต่อได้</b> · ไม่ดีขึ้นใน 2–3 สัปดาห์ → เปลี่ยนยา/RAI/ผ่าตัด');
+  if(c('tArth')){stop=perm=true;L.push('ปวด/บวมข้อหลายข้อ (ATD arthritis syndrome) → <b>หยุดยาถาวร</b> · NSAID');}
+  if(c('tVas')){stop=perm=true;L.push((drug==='ptu'?'<b>สงสัย PTU-induced ANCA vasculitis</b>':'อาการ vasculitis (พบน้อยกับ MMI)')+' → หยุดยา ตรวจ UA, Cr, ANCA · ส่งต่อ');}
+  if(!L.length)L.push('ไม่มีอาการเตือน → <b>กินยาต่อ</b> · ย้ำ: ไข้/เจ็บคอ/แผลในปาก → หยุดยาและเจาะ CBC วันนั้น · ตัวเหลือง ปัสสาวะเข้ม → หยุดยามา รพ.');
+  if(perm)L.push('<b>หยุดถาวรแล้ว</b>: คุมอาการด้วย beta-blocker · ส่งอายุรแพทย์ต่อมไร้ท่อเพื่อ <b>RAI หรือผ่าตัด</b> · บันทึกแพ้ยาทั้ง MMI และ PTU');
+  else if(stop)L.push('ระหว่างหยุดยา: beta-blocker คุมอาการ · ตัดสินใจกลับมาใช้ยาเมื่อได้ผลตรวจ');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tSide input,#tSide select',side);
+
+mountQuiz([
+ ['หญิง 30 ปี Graves กิน MMI 20 mg มา 6 สัปดาห์ FT4 ปกติ T3 ปกติ TSH ยัง &lt;0.01 ควรทำอย่างไร',['เพิ่ม MMI เพราะ TSH ยังต่ำ','ลด MMI ราว 30–50%','หยุดยา','เปลี่ยนเป็น PTU'],1,'TSH ตามหลัง FT4 หลายเดือน — ปรับยาตาม FT4 และ T3'],
+ ['ผู้ป่วยกิน MMI 15 mg มีไข้ 38.8 °C เจ็บคอ 1 วัน สิ่งแรกที่ควรทำ',['ให้ amoxicillin แล้วกินยาต่อ','หยุด MMI และตรวจ CBC with differential วันนี้','เปลี่ยนเป็น PTU','ลด MMI ครึ่งหนึ่ง'],1,'สงสัย agranulocytosis จนกว่าจะพิสูจน์ได้ว่าไม่ใช่'],
+ ['ANC 300/µL ขณะกิน MMI ข้อใดถูก',['เปลี่ยนเป็น PTU ได้','หยุดยาถาวร ห้ามใช้ PTU และวางแผน RAI/ผ่าตัด','กลับมาใช้ MMI ขนาดต่ำได้เมื่อ ANC ขึ้น','ไม่ต้องหยุดยาถ้าไม่มีไข้'],1,'Agranulocytosis ข้ามกันระหว่าง MMI และ PTU ได้'],
+ ['FT4 2.5 เท่าของ ULN ใน Graves ขนาด MMI เริ่มต้นที่เหมาะสม',['2.5 mg/วัน','5–10 mg/วัน','10–20 mg/วัน','30–40 mg/วัน'],3,'ATA 2016/CPG ไทย: 2–3 เท่า → 30–40 mg/วัน'],
+ ['Graves กิน MMI 2.5 mg ครบ 18 เดือน TSH ปกติ TRAb ยังสูง ข้อใด <b>ไม่</b> เหมาะสม',['กิน MMI ต่ออีก 12 เดือนแล้วตรวจ TRAb ซ้ำ','ส่ง RAI','MMI ขนาดต่ำระยะยาว','หยุดยาเพราะครบ 18 เดือนแล้ว'],3,'TRAb สูงตอนหยุดยา กลับเป็นซ้ำ 80–100%'],
+ ['หญิงหลังคลอด 4 เดือน ใจสั่น ไม่มีคอพอกโต ไม่เจ็บคอ TRAb ลบ FT4 สูง การรักษาที่เหมาะ',['MMI 20 mg/วัน','PTU','Beta-blocker ขนาดต่ำ ไม่ใช้ยาต้านไทรอยด์','RAI'],2,'Postpartum thyroiditis: ฮอร์โมนรั่ว ยาต้านไทรอยด์ไม่ช่วย'],
+ ['หญิง 32 ปี กิน LT4 100 µg ตรวจพบว่าตั้งครรภ์ 5 สัปดาห์ ควรทำอะไร',['รอผล TSH ก่อนค่อยปรับ','เพิ่ม LT4 ~25–30% ทันที (เช่น เพิ่ม 2 เม็ด/สัปดาห์)','ลดยาเพราะ hCG กระตุ้นไทรอยด์','เปลี่ยนเป็น LT3'],1,'ATA 2026: เพิ่ม ~25% เมื่อตั้งครรภ์ แล้วตรวจ TSH ทุก 4 สัปดาห์'],
+ ['ชาย 82 ปี กิน LT4 50 µg TSH 5.8 ไม่มีอาการ ควรทำอย่างไร',['เพิ่มเป็น 75 µg','คงขนาดเดิม','หยุดยา','เพิ่ม LT3'],1,'อายุ &gt;80 ปี ยอมรับ TSH สูงกว่าคนหนุ่มสาวได้'],
+ ['ผู้ป่วยกิน LT4 พร้อมแคลเซียมและเหล็กตอนเช้า TSH สูงขึ้น ขั้นแรกที่เหมาะ',['เพิ่ม LT4 50 µg','กิน LT4 ตอนท้องว่าง แยกห่างแคลเซียม/เหล็ก ≥4 ชม. แล้วตรวจซ้ำ','เปลี่ยนเป็น desiccated thyroid','ตรวจ T3'],1,'แก้วิธีกินก่อนเพิ่มยา'],
+ ['ผู้หญิงกินวิตามินบำรุงผม (biotin 10 mg/วัน) ผล TSH ต่ำ FT4 สูง แต่ไม่มีอาการ ทำอะไรก่อน',['เริ่ม MMI','หยุด biotin อย่างน้อย 2 วันแล้วตรวจซ้ำ','ส่ง RAI','เริ่ม propranolol'],1,'Biotin รบกวน immunoassay แบบ streptavidin–biotin ทำผลดูเหมือน Graves'],
+ ['ผู้ป่วย AF กิน amiodarone 8 เดือน TSH 14 FT4 ต่ำ ข้อใดถูก',['หยุด amiodarone ทันที','ให้ LT4 และใช้ amiodarone ต่อได้','ให้ MMI','ให้ prednisolone'],1,'Amiodarone-induced hypothyroidism รักษาด้วย LT4'],
+ ['ข้อใดถูกเกี่ยวกับ block-and-replace ใน Graves',['เป็นวิธีหลักเพราะหายมากกว่า','ไม่แนะนำเป็นวิธีหลักเพราะผลข้างเคียงมากกว่าโดยหายไม่ต่างกัน','ใช้ได้ดีในหญิงตั้งครรภ์','ใช้แทน RAI ได้เสมอ'],1,'ATA 2016 และ ETA 2018 แนะนำ titration']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
