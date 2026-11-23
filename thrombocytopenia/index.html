@@ -207,6 +207,7 @@ html{scroll-behavior:smooth}
 .rec.no{background:var(--danger-soft);color:var(--danger)}
 .tag.draft{background:var(--warn-soft);color:var(--warn)}
 .tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
 .ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
 .ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
 .ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
@@ -219,7 +220,7 @@ html{scroll-behavior:smooth}
 .out ol{margin:.2rem 0;padding-left:1.3rem}
 .out li{margin:.3rem 0}
 nav.toc a{scroll-margin-inline:40px}
-.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+
 </style>
 
 <div class="wrap">
@@ -227,7 +228,7 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="eyebrow">Hematology · ASH 2026 · ISTH 2025 · AABB 2025</div>
   <h1>Thrombocytopenia<br>และ bleeding approach</h1>
   <p class="sub">เกล็ดเลือดต่ำและเลือดออกผิดปกติ สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การยืนยันผล การแยกสาเหตุ ภาวะฉุกเฉินที่ห้ามพลาด (TTP, HIT, DIC) การรักษา ITP ตามแนวทาง ASH 2026 เกณฑ์ให้เกล็ดเลือด และการแปลผล PT/aPTT พร้อมเครื่องคำนวณ 4Ts, PLASMIC และ ISTH DIC</p>
-  <p class="cite">อ้างอิงหลัก: ASH 2026 Guidelines for ITP: initial and second-line therapy in adults (Blood Adv 2026) · ASH 2019 ITP guidelines · ISTH TTP guidelines 2020 + 2025 focused update · ASH 2018 HIT guidelines · AABB/ICTMG Platelet Transfusion Guidelines 2025 (JAMA) · ISTH DIC criteria · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <p class="cite">อ้างอิงหลัก: Cuker A, et al. ASH 2026 guidelines for immune thrombocytopenia: initial and second-line therapy for adults with primary ITP (Blood Adv 2026;10(20):7076–97) · ASH 2019 ITP guidelines · ISTH TTP guidelines 2020 + 2025 focused update · ASH 2018 HIT guidelines · AABB/ICTMG Platelet Transfusion Guidelines 2025 (JAMA) · ISTH DIC criteria · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
   <div class="stage-row">
     <div class="stage" style="--c:var(--accent)"><b>1. ยืนยัน</b>ดู blood smear · pseudothrombocytopenia (EDTA) → ตรวจซ้ำหลอด citrate</div>
     <div class="stage" style="--c:var(--danger)"><b>2. ตัดภาวะฉุกเฉิน</b>Schistocyte → TTP · ได้ heparin → HIT · sepsis → DIC</div>
@@ -274,18 +275,25 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">03</div>
   <h2>Immune thrombocytopenia (ITP)</h2>
   <p>วินิจฉัยโดย <b>การแยกโรคอื่นออก</b> · isolated thrombocytopenia &lt;100 ×10³/µL · smear: เกล็ดเลือดใหญ่ ไม่มีความผิดปกติอื่น · ไม่ต้องทำ bone marrow ทุกราย (ทำเมื่ออายุมาก มี cytopenia อื่น หรือไม่ตอบสนองการรักษา) · ระยะ: newly diagnosed &lt;3 เดือน, persistent 3–12 เดือน, chronic &gt;12 เดือน</p>
+  <p class="muted" style="font-size:.88rem">ASH 2026 เป็น focused update เรื่อง<b>การเลือกยา initial และ second-line ใน primary ITP ผู้ใหญ่</b>เท่านั้น — เกณฑ์เริ่มรักษา การนอน รพ. ระยะเวลาและชนิด steroid ยังใช้ ASH 2019 (Table 1 ของแนวทาง 2026 ระบุว่า "not updated")</p>
   <div class="tbl"><table>
-    <tr><th>สถานการณ์ (ผู้ใหญ่ ไม่มีเลือดออกหรือเลือดออกเล็กน้อย)</th><th>แนวทาง</th></tr>
-    <tr><td>เกล็ดเลือด <b>≥30</b></td><td><b>ไม่ให้ steroid</b> สังเกตอาการ (ASH 2019) — ยกเว้นต้องผ่าตัด ใช้ anticoagulant/antiplatelet อาชีพเสี่ยง</td></tr>
-    <tr><td>เกล็ดเลือด <b>&lt;30</b> newly diagnosed</td><td>เริ่มรักษา · <b>Corticosteroid ระยะสั้น ≤6 สัปดาห์</b>: prednisolone 0.5–2 mg/kg/วัน (ค่อยๆ ลด) หรือ <b>dexamethasone 40 mg/วัน × 4 วัน</b> (ทำซ้ำได้)</td></tr>
-    <tr><td>Initial therapy <span class="tag up">ASH 2026</span></td><td>แนะนำ <b>rituximab หรือ thrombopoietic agent (TPO-RA) ร่วมกับ corticosteroid</b> (± IVIG) มากกว่า steroid เดี่ยว — ถ้าไม่มี rituximab/TPO-RA ให้ steroid ± IVIG เดี่ยว (ไม่แนะนำ MMF + steroid)</td></tr>
-    <tr><td>เกล็ดเลือด <b>&lt;20</b> newly diagnosed</td><td>พิจารณานอน รพ. · ถ้าเป็น ITP เดิมที่ทราบการตอบสนอง ดูแลผู้ป่วยนอกได้</td></tr>
+    <tr><th>สถานการณ์ (ผู้ใหญ่ newly diagnosed ไม่มีเลือดออกหรือเลือดออกที่ผิวหนัง/เยื่อบุเล็กน้อย)</th><th>แนวทาง</th></tr>
+    <tr><td>เกล็ดเลือด <b>≥30</b></td><td><b>ไม่ให้ steroid</b> สังเกตอาการ <span class="rec s1">strong</span> (ASH 2019) — อาจพิจารณารักษาถ้าค่าใกล้ 30, มีโรคร่วม, ใช้ anticoagulant/antiplatelet, ต้องทำหัตถการ หรืออายุ &gt;60 ปี</td></tr>
+    <tr><td>เกล็ดเลือด <b>&lt;30</b></td><td>แนะนำให้รักษามากกว่าสังเกต (conditional, ASH 2019) — บางรายสังเกตได้ (ดูความรุนแรง โรคร่วม ยา หัตถการ อายุ)</td></tr>
+    <tr><td>เลือก initial therapy <span class="tag up">ASH 2026 · Rec 1</span></td><td><b>Suggests</b> <b>rituximab + corticosteroid</b> หรือ <b>thrombopoietic agent (TPO-RA) + corticosteroid</b> (± IVIG) มากกว่า steroid ± IVIG เดี่ยว หรือ MMF + steroid <span class="rec">conditional · low certainty</span> — เหตุผล: sustained response off treatment (SRoT) ที่ 6–12 เดือนสูงกว่า เลือดออกเล็กน้อยและการต้องใช้ rescue therapy น้อยกว่า คุณภาพชีวิตดีกว่า<br>• <b>ถ้าไม่มี rituximab/TPO-RA</b> → steroid ± IVIG เดี่ยว มากกว่า MMF + steroid <span class="rec">conditional · very low</span><br>• ไม่แน่ใจการวินิจฉัย → ให้ steroid ± IVIG ระยะสั้น (≤2 สัปดาห์) ก่อน ถ้าเกล็ดเลือดขึ้นจะมั่นใจว่าเป็น ITP มากขึ้น แล้วค่อยเริ่มยาร่วม</td></tr>
+    <tr><td>Steroid (ทั้งแบบเดี่ยวและแบบร่วม)</td><td><b>Dexamethasone 40 mg/วัน × 4 วัน</b> (ในการรักษาแบบร่วม ศึกษามากที่สุด: 1–3 รอบ ห่างกัน 2–4 สัปดาห์) หรือ <b>prednis(ol)one 0.5–2 mg/kg/วัน</b> แล้วลดขนาด · ASH 2019: เลือกได้ทั้งสองแบบ ถ้าต้องการให้เกล็ดเลือดขึ้นเร็ว (ที่ 7 วัน) dexamethasone อาจดีกว่า · <b>รวมทั้งช่วงลดยาไม่เกิน 6 สัปดาห์</b> <span class="rec s1">strong</span> (ASH 2019 · ย้ำใน 2026)</td></tr>
+    <tr><td>ขนาดยาร่วม (2026 remarks)</td><td><b>Rituximab 375 mg/m² สัปดาห์ละครั้ง × 4</b> (ศึกษามากที่สุด; ขนาดต่ำกว่าใช้ได้ตามบริบท, biosimilar ใช้แทนได้) · <b>TPO-RA</b> ตัวใดก็ได้ที่ได้รับอนุมัติ ขนาดเริ่มมาตรฐาน ระยะเวลาตามการตอบสนอง/ผลข้างเคียง · เมื่อตอบสนอง <b>ลด steroid ก่อน TPO-RA</b> (บางรายต้องลดเร็วเพื่อกันเกล็ดเลือดสูงเกิน)</td></tr>
+    <tr><td>เกล็ดเลือด <b>&lt;20</b></td><td>Newly diagnosed: พิจารณานอน รพ. · ITP เดิมที่ทราบการดำเนินโรค: ดูแลผู้ป่วยนอกได้ (conditional, ASH 2019) · ไม่ได้นอน รพ. → ให้ความรู้และนัดพบ hematologist เร็ว</td></tr>
   </table></div>
   <div class="grid2">
-    <div class="card c-acc"><h4>Second-line (หลัง steroid) <span class="tag up">ASH 2026</span></h4><ul><li><b>TPO-RA</b> (eltrombopag, romiplostim, avatrombopag) — <b>strong recommendation</b> เพียงข้อเดียวของแนวทาง</li><li><b>Rituximab</b> (conditional)</li><li>ใช้ TPO-RA/rituximab ไม่ได้: <b>BTK inhibitor (rilzabrutinib), MMF หรือ SYK inhibitor (fostamatinib)</b></li><li>Splenectomy: เลื่อนไปหลัง 12 เดือน ใช้เมื่อทางเลือกอื่นไม่ได้ผล <span class="tag add">เสริม</span></li></ul></div>
-    <div class="card c-red"><h4>ITP + เลือดออกรุนแรง <span class="tag add">เสริม</span></h4><ul><li><b>IVIG 1 g/kg/วัน × 1–2 วัน</b></li><li><b>Methylprednisolone 1 g IV/วัน × 3 วัน</b></li><li><b>Platelet transfusion</b> (ให้ได้ แม้ถูกทำลายเร็ว — อาจให้ซ้ำ/ต่อเนื่อง)</li><li>Tranexamic acid · หยุด antiplatelet/anticoagulant</li><li>เริ่ม TPO-RA ร่วม</li></ul></div>
+    <div class="card c-acc"><h4>ต้องการยาเพิ่มหลัง steroid ± IVIG <span class="tag up">ASH 2026 · Rec 2</span></h4><ul><li><b>Rec 2a: TPO-RA</b> (eltrombopag, romiplostim, avatrombopag, hetrombopag, rhTPO — ถือว่าใช้แทนกันได้) <span class="rec s1">strong · moderate</span> เป็น <b>strong recommendation เพียงข้อเดียว</b>ของแนวทาง · ~30% หยุดยาได้และยังคงตอบสนอง (SRoT)</li><li><b>Rec 2a: หรือ rituximab</b> <span class="rec">conditional · low</span> — เหมาะกับผู้ที่อยากเลี่ยงยากินระยะยาว หรือใช้/เข้าถึง/ทน TPO-RA ไม่ได้</li><li><b>Rec 2b</b> ใช้ทั้งสองอย่างไม่ได้หรือไม่ต้องการ: <b>BTK inhibitor (เช่น rilzabrutinib), MMF หรือ SYK inhibitor (fostamatinib)</b> <span class="rec">conditional · very low</span> — ยังจัดอันดับไม่ได้ เลือกตามผลข้างเคียง ราคา การเข้าถึง</li><li><b>Azathioprine</b>: ประโยชน์/โทษด้อยกว่ากลุ่มข้างบน (ตอบสนองช้าถึง 3 เดือน) แต่ <b>ราคาถูก หาง่าย ใช้ในครรภ์ได้</b> จึงยังมีที่ใช้ในบางบริบท</li><li>ลำดับโดยรวม: TPO-RA → rituximab → BTKi/MMF/SYKi → AZA · anti-CD38 หลักฐานไม่พอ</li></ul></div>
+    <div class="card c-red"><h4>ITP + เลือดออกรุนแรง <span class="tag add">เสริม</span></h4><ul><li><b>IVIG 1 g/kg/วัน × 1–2 วัน</b></li><li><b>Methylprednisolone 1 g IV/วัน × 3 วัน</b></li><li><b>Platelet transfusion</b> (ให้ได้ แม้ถูกทำลายเร็ว — อาจให้ซ้ำ/ต่อเนื่อง)</li><li>Tranexamic acid · หยุด antiplatelet/anticoagulant</li><li>เริ่ม TPO-RA ร่วม</li><li class="muted">ASH 2026 ไม่ครอบคลุม critical bleeding — ดูแนวทางแยก (Chowdhury SR, et al. Blood Adv 2026;10(16):5558–75)</li></ul></div>
   </div>
-  <p class="muted" style="font-size:.88rem">ในบริบทไทยที่ TPO-RA/rituximab เข้าถึงยาก steroid ± IVIG ยังเป็นการรักษาหลักที่สอดคล้องกับแนวทาง · ตรวจ HBV ก่อน rituximab (เสี่ยง reactivation) · เป้าหมายคือป้องกันเลือดออก (เกล็ดเลือด &gt;20–30) ไม่ใช่ทำให้ค่าปกติ</p>
+  <div class="grid2">
+    <div class="card c-vio"><h4>Splenectomy <span class="tag up">2026 · good practice</span></h4><ul><li>ใช้เมื่อ ล้มเหลว/ทนยาหลายขนานไม่ได้, ต้องการเลี่ยงยาระยะยาว หรือเกล็ดเลือดต่ำรุนแรงต้องรักษาด่วนและยาไม่ได้ผล</li><li><b>ถ้าเป็นไปได้ เลื่อนไป ≥1 ปีหลังวินิจฉัย</b> (อาจหายเอง)</li><li>ให้วัคซีนที่เหมาะสม <b>≥2 สัปดาห์ก่อนผ่าตัด</b> · สอนเรื่องยาปฏิชีวนะ ความเสี่ยง sepsis และ thrombosis ตลอดชีวิต · มีไข้ต้องรีบรักษา · ติดตามอย่างน้อยปีละครั้ง</li></ul></div>
+    <div class="card c-ok"><h4>เปลี่ยน TPO-RA <span class="tag up">2026 · good practice</span></h4><ul><li>เปลี่ยนเป็น TPO-RA ตัวอื่นได้เมื่อตอบสนองไม่พอ ผลข้างเคียง โรคร่วม กินยาไม่สม่ำเสมอ หรือผู้ป่วยต้องการ</li><li>ตัดสินใจร่วมกับผู้ป่วย บันทึกเหตุผล <b>อย่าให้มีช่วงขาดยา</b> ตรวจเกล็ดเลือดถี่ช่วงเปลี่ยน</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">ในบริบทไทยที่ TPO-RA/rituximab เข้าถึงยาก steroid ± IVIG เดี่ยว (≤6 สัปดาห์) ยังสอดคล้องกับแนวทาง (Rec 1 ข้อรอง) · ข้อควรระวัง: <b>rituximab</b> — ตรวจ HBsAg/anti-HBc ก่อน (HBV reactivation), ติดเชื้อเพิ่ม, การตอบสนองต่อวัคซีนลดลง ≥6 เดือน · <b>TPO-RA</b> — thrombosis โดยเฉพาะผู้มีปัจจัยเสี่ยง, eltrombopag มีข้อจำกัดเรื่องอาหารและพิษต่อตับ · <b>MMF</b> ห้ามใช้ในครรภ์ · เป้าหมายคือป้องกันเลือดออกและคุณภาพชีวิต ไม่ใช่ทำให้เกล็ดเลือดปกติ</p>
 </section>
 
 <!-- 4 -->
@@ -520,7 +528,8 @@ nav.toc a{scroll-margin-inline:40px}
     <div class="pearl"><div><b>4Ts ต่ำ ไม่ต้องส่ง HIT test</b></div></div>
     <div class="pearl"><div><b>ห้าม warfarin ใน HIT ช่วงเกล็ดเลือดยังต่ำ</b></div></div>
     <div class="pearl"><div><b>ITP เกล็ดเลือด ≥30 ไม่มีเลือดออก ไม่ต้องให้ steroid</b></div></div>
-    <div class="pearl"><div><b>Steroid ใน ITP ไม่เกิน 6 สัปดาห์</b> — dexamethasone 40 mg × 4 วัน เป็นทางเลือกที่สั้น</div></div>
+    <div class="pearl"><div><b>Steroid ใน ITP ไม่เกิน 6 สัปดาห์</b> (รวมช่วงลดยา) — dexamethasone 40 mg × 4 วัน เป็นทางเลือกที่สั้น</div></div>
+    <div class="pearl"><div><b>ITP ต้องการยาเพิ่มหลัง steroid → TPO-RA</b> (strong) หรือ rituximab · splenectomy เลื่อนไป ≥1 ปี</div></div>
     <div class="pearl"><div><b>Dengue ไม่ให้เกล็ดเลือดป้องกัน</b></div></div>
     <div class="pearl"><div><b>Lumbar puncture ให้เกล็ดเลือดเมื่อ &lt;20</b> · CVC ตำแหน่งกดได้ &lt;10</div></div>
   </div>
@@ -535,7 +544,7 @@ nav.toc a{scroll-margin-inline:40px}
 
 <p class="col" style="margin-top:32px"><a href="../anemia/index.html">Anemia →</a> · <a href="../dhf/index.html">DHF →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../ugib/index.html">UGIB →</a></p>
 <footer class="col">
-  อ้างอิง: 1) Cuker A, et al. American Society of Hematology 2026 Guidelines for ITP: initial and second-line therapy in adults with primary ITP. Blood Adv 2026. doi:10.1182/bloodadvances.2026021269 · 2) Neunert C, et al. ASH 2019 guidelines for immune thrombocytopenia. Blood Adv 2019;3:3829–66 · 3) Provan D, et al. Updated international consensus report on ITP. Blood Adv 2019;3:3780–817 · 4) Zheng XL, et al. ISTH guidelines for treatment of TTP. J Thromb Haemost 2020 + 2025 focused update (doi:10.1016/j.jtha.2025.06.002) · 5) Cuker A, et al. ASH 2018 guidelines: HIT. Blood Adv 2018;2:3360–92 · 6) Metcalf RA, et al. Platelet transfusion: 2025 AABB and ICTMG international clinical practice guidelines. JAMA 2025;334:606–17 · 7) Taylor FB, et al. ISTH DIC scoring (2001) · 8) Bendapudi PK, et al. PLASMIC score. Lancet Haematol 2017<br>
+  อ้างอิง: 1) Cuker A, Terrell DR, Sowdagar H, et al. American Society of Hematology 2026 guidelines for immune thrombocytopenia: initial and second-line therapy for adults with primary ITP. Blood Adv 2026;10(20):7076–97. doi:10.1182/bloodadvances.2026021269 · 2) Neunert C, et al. ASH 2019 guidelines for immune thrombocytopenia. Blood Adv 2019;3:3829–66 · 3) Provan D, et al. Updated international consensus report on ITP. Blood Adv 2019;3:3780–817 · 4) Zheng XL, et al. ISTH guidelines for treatment of TTP. J Thromb Haemost 2020 + 2025 focused update (doi:10.1016/j.jtha.2025.06.002) · 5) Cuker A, et al. ASH 2018 guidelines: HIT. Blood Adv 2018;2:3360–92 · 6) Metcalf RA, et al. Platelet transfusion: 2025 AABB and ICTMG international clinical practice guidelines. JAMA 2025;334:606–17 · 7) Taylor FB, et al. ISTH DIC scoring (2001) · 8) Bendapudi PK, et al. PLASMIC score. Lancet Haematol 2017<br>
   <span class="tag up">2026</span> = ใหม่ในแนวทางล่าสุด · <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
 </footer>
 </div>
@@ -624,7 +633,7 @@ mountWalker({
  hep:{q:'ได้ heparin ใน 5–10 วัน (หรือ 100 วันที่ผ่านมา)?',o:[['ใช่','hit'],['ไม่ใช่','iso']]},
  hit:{leaf:true,cls:'danger',t:'ประเมิน HIT',b:'คำนวณ <b>4Ts</b> · ≥4 → หยุด heparin ทุกชนิด + argatroban/fondaparinux/DOAC ขนาดรักษา + ส่ง PF4 immunoassay · Doppler ขา · ห้าม warfarin จนเกล็ดเลือด ≥150 · 0–3 → หาสาเหตุอื่น'},
  iso:{q:'Cytopenia อื่นร่วมด้วย / blast / ม้ามโต?',o:[['Isolated','itp'],['มี cytopenia อื่น/blast','bm'],['ม้ามโต/ตับแข็ง','liver']]},
- itp:{leaf:true,cls:'ok',t:'Isolated thrombocytopenia',b:'ทบทวนยา (หยุดยาที่สงสัย) · ตรวจ HIV, HCV, HBV, ตั้งครรภ์ · ไข้ → dengue/malaria/rickettsia · ถ้าตัดสาเหตุอื่นได้ → <b>ITP</b>: <30 รักษา (steroid ± rituximab/TPO-RA) · ≥30 สังเกต'},
+ itp:{leaf:true,cls:'ok',t:'Isolated thrombocytopenia',b:'ทบทวนยา (หยุดยาที่สงสัย) · ตรวจ HIV, HCV, HBV, ตั้งครรภ์ · ไข้ → dengue/malaria/rickettsia · ถ้าตัดสาเหตุอื่นได้ → <b>ITP</b>: ≥30 ไม่มีเลือดออก → สังเกต · <30 → รักษา: ASH 2026 suggests steroid + rituximab หรือ TPO-RA (ไม่มี → steroid ± IVIG เดี่ยว ≤6 สัปดาห์) · ต้องการยาเพิ่ม → TPO-RA (strong) หรือ rituximab'},
  bm:{leaf:true,cls:'violet',t:'สงสัยโรคไขกระดูก',b:'B12/folate · ส่ง hematology · bone marrow (leukemia, MDS, aplastic anemia, infiltration)'},
  liver:{leaf:true,cls:'warn',t:'Hypersplenism / ตับ',b:'มักไม่ต่ำกว่า 50 · ก่อนหัตถการพิจารณา TPO-RA · ดูหน้า Cirrhosis'}
 },'apTrail','apStage');
@@ -673,7 +682,11 @@ mountQuiz([
  ['ITP newly diagnosed เกล็ดเลือด 40 มีจ้ำเลือดเล็กน้อย ตาม ASH',
   ['Dexamethasone 40 mg × 4 วัน','สังเกตอาการ ไม่ให้ steroid','Splenectomy','IVIG'],1,'≥30 ไม่มีเลือดออกสำคัญ → observation'],
  ['ASH 2026: second-line ใน ITP ที่ได้ strong recommendation คือ',
-  ['Splenectomy','Thrombopoietic agent (TPO-RA)','Danazol','Azathioprine'],1,'TPO-RA เป็นคำแนะนำ strong เพียงข้อเดียว'],
+  ['Splenectomy','Thrombopoietic agent (TPO-RA)','Danazol','Azathioprine'],1,'Rec 2a: TPO-RA strong (moderate certainty) เป็น strong recommendation เพียงข้อเดียว · rituximab conditional · splenectomy เป็น good practice statement ให้เลื่อนไป ≥1 ปี'],
+ ['ASH 2026: ITP ผู้ใหญ่เกล็ดเลือด 15 ต้องเริ่มรักษา รพ.มี TPO-RA และ rituximab ทางเลือกที่แนวทาง suggest คือ',
+  ['Dexamethasone เดี่ยว','MMF + steroid','Rituximab หรือ TPO-RA ร่วมกับ steroid (± IVIG)','Splenectomy'],2,'Rec 1 (conditional, low certainty): ยาร่วมให้ SRoT ที่ 6–12 เดือนดีกว่า · ถ้าไม่มี rituximab/TPO-RA → steroid ± IVIG เดี่ยว ไม่ใช่ MMF + steroid'],
+ ['ITP ล้มเหลวต่อ steroid ใช้ TPO-RA และ rituximab ไม่ได้ ข้อใดไม่ใช่ทางเลือกที่ ASH 2026 suggest ในลำดับเดียวกัน',
+  ['BTK inhibitor (rilzabrutinib)','Fostamatinib','MMF','Azathioprine'],3,'Rec 2b: BTKi, MMF, SYKi (ไม่จัดอันดับ) · AZA ด้อยกว่า แต่ยังใช้ได้บางบริบทเพราะถูก หาง่าย ใช้ในครรภ์ได้'],
  ['ข้อใดถูกตาม AABB/ICTMG 2025',
   ['Dengue ให้เกล็ดเลือดเมื่อ <20','LP ให้เมื่อ <20','CVC ตำแหน่งกดได้ให้เมื่อ <50','Autologous SCT ให้ป้องกันเมื่อ <10'],1,'LP <20 · CVC compressible <10 · dengue ไม่ให้ · auto-SCT ไม่ให้ป้องกัน'],
  ['PT ปกติ aPTT ยาว mixing study ไม่แก้ ผู้ป่วยหญิงหลังคลอดมี ecchymosis ใหญ่หลายที่ นึกถึง',

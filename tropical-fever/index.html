@@ -207,6 +207,7 @@ html{scroll-behavior:smooth}
 .rec.no{background:var(--danger-soft);color:var(--danger)}
 .tag.draft{background:var(--warn-soft);color:var(--warn)}
 .tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
 .ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
 .ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
 .ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
@@ -227,7 +228,7 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="eyebrow">ไข้เฉียบพลันในเขตร้อน · บริบทประเทศไทย</div>
   <h1>Tropical fever:<br>ไข้ไม่ทราบสาเหตุ ต้องคิดอะไรบ้าง</h1>
   <p class="sub">สรุปการดูแลไข้เฉียบพลันที่ยังไม่ทราบแหล่ง (acute undifferentiated fever) ในไทย สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ครอบคลุม leptospirosis, scrub typhus, murine typhus, melioidosis และ malaria (ไข้เลือดออกดูหน้า DHF) ตั้งแต่เบาะแสจากประวัติ การส่งตรวจ ยาที่เลือกเมื่อยังไม่รู้เชื้อ ไปจนถึงการรักษาเฉพาะโรค พร้อมเครื่องมือช่วยเลือกยาและคำนวณขนาดยามาลาเรีย</p>
-  <p class="cite">อ้างอิงหลัก: แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568 (คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย) · Treatment of melioidosis (Infect Dis Clin North Am 2026) · INTREST trial (NEJM 2023) · Phimda K, et al. Doxycycline vs azithromycin for leptospirosis and scrub typhus (2007) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <p class="cite">อ้างอิงหลัก: แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568 (คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย · กองโรคติดต่อนำโดยแมลง กรมควบคุมโรค) · Treatment of melioidosis (Infect Dis Clin North Am 2026) · INTREST trial (NEJM 2023) · Phimda K, et al. Doxycycline vs azithromycin for leptospirosis and scrub typhus (2007) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
   <div class="stage-row">
     <div class="stage" style="--c:var(--warn)"><b>ประวัติ exposure</b>นา น้ำท่วม ป่า สวน ชายแดน เดินทาง เบาหวาน สัตว์</div>
     <div class="stage" style="--c:var(--accent)"><b>ตรวจร่างกาย</b>Eschar · ตาแดง ปวดน่อง · เหลือง · ฝี · ตับม้ามโต · ผื่น</div>
@@ -323,19 +324,73 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="mal" class="col">
   <div class="sec-num">06</div>
   <h2>Malaria (แนวทางไทย 2568)</h2>
-  <p>ตรวจ <b>thick/thin smear หรือ RDT</b> ในผู้มีไข้ที่อาศัย/เดินทางในพื้นที่เสี่ยงภายใน 1 เดือน (หรือนานกว่าสำหรับ vivax relapse) · ส่งผลด่วนภายในไม่กี่ชั่วโมง</p>
+  <p><b>สงสัยเมื่อ</b> มีไข้ (± หนาวสั่น ปวดหัว ปวดเมื่อย คลื่นไส้) ร่วมกับ <b>อาศัยหรือเดินทางมาจากพื้นที่มีการแพร่เชื้อภายใน 1 เดือน</b> หรือ <b>เคยป่วยเป็นมาลาเรียภายใน 1 ปี</b> (บท 1.2) · ส่วนใหญ่พบตามแนวชายแดนตะวันตก เป็น P. vivax มากที่สุด แต่พบได้ทุกจังหวัดเพราะคนย้ายถิ่น</p>
+  <ul>
+    <li><b>Thick + thin film คู่กันเสมอ</b> (thick ไวกว่า 20–40 เท่า, thin ใช้แยกชนิด) · RDT ใช้ในที่ไม่มีกล้อง — ลบปลอมได้ถ้าเชื้อน้อย และ RDT ชนิด HRP2 บวกค้างได้หลายสัปดาห์หลังรักษา</li>
+    <li><b>P. knowlesi</b> (จากลิง วงจร 24 ชม. รุนแรงเร็ว) ดูด้วยกล้องแยกจาก P. malariae ยาก — สงสัยต้องส่ง <b>PCR</b> · ส่ง PCR ด้วยเมื่อสงสัยมาลาเรียแต่ผลอื่นลบ หรือรายรุนแรง</li>
+    <li>ตรวจ <b>G6PD</b> (หรือถามประวัติปัสสาวะดำ) ทุกราย โดยเฉพาะ Pv/Po ก่อนให้ primaquine/tafenoquine · ขนาดยาคิดจาก <b>ideal body weight ไม่เกิน 80 kg</b> · ไม่แนะนำยาป้องกันมาลาเรียสำหรับคนในไทย</li>
+  </ul>
   <div class="tbl"><table>
-    <tr><th>ชนิด</th><th>การรักษา</th></tr>
-    <tr><td><b>P. falciparum</b> ไม่รุนแรง</td><td><b>Dihydroartemisinin-piperaquine (DHA-PIP)</b> วันละครั้ง 3 วัน + <b>primaquine 0.5 mg/kg ครั้งเดียว</b> · ศรีสะเกษและอุบลราชธานี (มีเชื้อดื้อ DHA-PIP): <b>artesunate-pyronaridine</b> 3 วัน + primaquine ครั้งเดียว</td></tr>
-    <tr><td><b>P. vivax</b></td><td><b>Chloroquine 3 วัน</b> + radical cure ตาม <b>G6PD เชิงปริมาณ</b>: ปกติ (≥6.1 U/g Hb) → tafenoquine 300 mg ครั้งเดียว หรือ primaquine 0.5 mg/kg/วัน 7 วัน หรือ 0.25 mg/kg/วัน 14 วัน · intermediate → primaquine 0.25 mg/kg 14 วัน หรือ 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์ · deficient → 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์ · ตรวจ G6PD ไม่ได้ → 0.25 mg/kg 14 วัน + สอนอาการ hemolysis</td></tr>
-    <tr><td><b>P. ovale</b></td><td>Chloroquine 3 วัน + primaquine 0.25 mg/kg/วัน 14 วัน (ห้าม tafenoquine)</td></tr>
-    <tr><td>P. malariae / P. knowlesi</td><td>Chloroquine 3 วัน (knowlesi พิจารณา DHA-PIP) ไม่ต้อง primaquine</td></tr>
-    <tr><td>Mixed Pf + Pv/Po</td><td>DHA-PIP 3 วัน + primaquine 0.25 mg/kg/วัน 14 วัน</td></tr>
+    <tr><th>ชนิด (ไม่มีภาวะแทรกซ้อน)</th><th>การรักษา (บท 3)</th></tr>
+    <tr><td><b>P. falciparum</b></td><td><b>Dihydroartemisinin-piperaquine (DHA-PIP)</b> วันละครั้ง 3 วัน + <b>primaquine 0.5 mg/kg ครั้งเดียว</b> (วันใดก็ได้ที่กินได้ไม่อาเจียน) · <b>ศรีสะเกษ และอุบลราชธานี</b> (พบเชื้อดื้อ DHA-PIP): <b>artesunate-pyronaridine</b> 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว</td></tr>
+    <tr><td><b>P. vivax</b></td><td><b>Chloroquine 3 วัน</b> + radical cure ตามผล G6PD (ตารางถัดไป)</td></tr>
+    <tr><td><b>P. ovale</b></td><td>Chloroquine 3 วัน + primaquine 0.25 mg/kg/วัน 14 วัน · <b>ห้าม tafenoquine</b></td></tr>
+    <tr><td><b>P. malariae / P. knowlesi</b></td><td>Chloroquine 3 วัน (knowlesi พิจารณา DHA-PIP 3 วันแทนได้) · ไม่ต้อง primaquine · <b>knowlesi = กลุ่มเสี่ยงสูง</b> ควรรับไว้ใน รพ.</td></tr>
+    <tr><td><b>ผสม Pf + Pv หรือ Po</b></td><td>DHA-PIP 3 วัน (ศรีสะเกษ/อุบลฯ: artesunate-pyronaridine) + <b>primaquine 0.25 mg/kg/วัน 14 วัน</b> · ห้าม tafenoquine</td></tr>
+    <tr><td><b>ผสม Pf + Pm หรือ Pk</b></td><td>รักษาแบบ Pf: DHA-PIP (หรือ artesunate-pyronaridine ในพื้นที่ดื้อ) 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว</td></tr>
   </table></div>
+  <div class="tbl"><table>
+    <tr><th>P. vivax: ผล G6PD</th><th>Radical cure (ร่วมกับ chloroquine 3 วัน)</th></tr>
+    <tr><td><b>เชิงปริมาณ ≥6.1 U/g Hb</b> (ปกติ, &gt;70%)</td><td>เลือก 1 ใน 3: <b>tafenoquine 300 mg ครั้งเดียว</b> · หรือ primaquine 0.5 mg/kg/วัน 7 วัน · หรือ 0.25 mg/kg/วัน 14 วัน</td></tr>
+    <tr><td><b>เชิงปริมาณ 4.1 – &lt;6.1</b> (intermediate, 30–70%)</td><td>Primaquine 0.25 mg/kg/วัน 14 วัน · หรือ 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์</td></tr>
+    <tr><td><b>เชิงปริมาณ &lt;4.1</b> (deficient, &lt;30%) หรือมีประวัติปัสสาวะดำ</td><td>Primaquine <b>0.75 mg/kg (ไม่เกิน 45 mg) สัปดาห์ละครั้ง 8 สัปดาห์</b></td></tr>
+    <tr><td>เชิงคุณภาพ (fluorescent spot test) ปกติ</td><td>Primaquine 0.5 mg/kg/วัน 7 วัน หรือ 0.25 mg/kg/วัน 14 วัน (<b>ห้าม tafenoquine</b> — ต้องใช้ผลเชิงปริมาณเท่านั้น)</td></tr>
+    <tr><td>เชิงคุณภาพ พร่อง</td><td>Primaquine 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์</td></tr>
+    <tr><td>ตรวจไม่ได้และส่งตรวจไม่ได้</td><td>Primaquine 0.25 mg/kg/วัน 14 วัน + สอนให้หยุดยาแล้วกลับมาทันทีถ้าปัสสาวะสีเข้ม/ดำ อ่อนเพลีย ตาเหลือง</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">เครื่อง biosensor: ถ้า Hb บนเครื่อง ≤7 g/dL แปลผล G6PD ไม่ได้ · <b>Tafenoquine</b> ใช้เมื่อ Pv เดี่ยว อายุ ≥16 ปี น้ำหนัก ≥35 kg G6PD เชิงปริมาณ ≥6.1 เท่านั้น · ห้ามในหญิงตั้งครรภ์ ให้นมบุตร ใช้ร่วมกับยากลุ่ม artemisinin หรือผู้ที่ต้องใช้ metformin (ภาคผนวก 3, ตาราง 5)</p>
   <div class="grid2">
-    <div class="card c-red"><h4>Severe malaria</h4>ซึม/โคม่า ชัก น้ำตาลต่ำ shock acidosis pulmonary edema เหลือง+parasite สูง ซีด ไตวาย เลือดออก parasitemia สูง (Pf &gt;10% RBC) · <b>Artesunate IV 2.4 mg/kg</b> ที่ 0, 12, 24 ชม. แล้ววันละครั้ง (น้ำหนัก &lt;20 kg ใช้ 3 mg/kg) · bolus เท่านั้น · กินได้แล้วเปลี่ยนเป็น ACT 3 วัน + primaquine · ไม่มี artesunate: quinine loading 20 mg/kg IV ใน 4 ชม. → 10 mg/kg ทุก 8 ชม. (ห้าม bolus, ระวังน้ำตาลต่ำ)</div>
-    <div class="card c-warn"><h4>ข้อควรจำ</h4><ul><li><b>ห้าม primaquine/tafenoquine ในหญิงตั้งครรภ์</b> — Pf ใช้ DHA-PIP · Pv/Po/Pm/Pk ใช้ chloroquine</li><li>Tafenoquine: Pv อย่างเดียว อายุ ≥16 ปี น้ำหนัก ≥35 kg G6PD ≥6.1 ห้ามร่วมกับ artemisinin/metformin</li><li>ก่อนส่งต่อ severe: ให้ artesunate IV โดสแรก (หรือ quinine loading)</li><li>นัดติดตาม Pf: วัน 3, 7, 28, 42 · Pv: วัน 14, 28, 60, 90</li></ul></div>
+    <div class="card c-warn"><h4>กลุ่มเสี่ยงสูง (ยังไม่รุนแรง) → รักษาใน รพ.ชุมชนขึ้นไป พิจารณารับไว้</h4><ul>
+      <li>เด็ก &lt;1 ปี หรือ &lt;11 kg → Pf: DHA-PIP 3 วัน · Pv: chloroquine 3 วัน (ไม่ให้ primaquine)</li>
+      <li>เด็ก &lt;5 ปีไข้ &gt;39 °C · หญิงตั้งครรภ์/ขาดประจำเดือน · G6PD พร่อง/ปัสสาวะสีเข้ม · สงสัย P. knowlesi · โรคประจำตัว (อ้วน สุรา ตับ ไต เบาหวาน ความดัน โรคเลือด ภูมิคุ้มกันบกพร่อง) · แพ้ยามาลาเรีย (ปรึกษา 1422)</li>
+      <li><b>กินยาไม่ได้หรืออาเจียนซ้ำภายใน 1 ชม.</b> → artesunate IV 2.4 mg/kg ที่ 0, 12, 24 ชม. แล้ววันละครั้งจนกินได้ แล้วเริ่มยากินตามชนิดเชื้อ (นับวันที่กินได้เป็นวันที่ 0)</li>
+      <li><b>Pf &gt;100,000/µL</b> (≈2,500 ตัว/WBC 200 ใน thick film หรือ 25/RBC 1,000 ใน thin film) หรือเห็น <b>schizont</b> · <b>Pk &gt;100,000/µL</b> หรือเหลือง + &gt;20,000/µL → <b>รับไว้และรักษาแบบ severe</b></li>
+    </ul></div>
+    <div class="card c-red"><h4>Severe malaria (ข้อใดข้อหนึ่ง)</h4>ซึม/หมดสติ · อ่อนเพลียจนนั่ง ยืน เดินเองไม่ได้ · <b>ชัก &gt;2 ครั้งใน 24 ชม.</b> · หอบเหนื่อย · เหลือง + bilirubin สูง ร่วมกับเชื้อ &gt;100,000/µL · ซีด ร่วมกับเชื้อ &gt;10,000/µL · shock · ปัสสาวะออกน้อย/ไม่ออกใน 4 ชม. หรือไตวาย · เลือดออกผิดปกติ · น้ำตาลต่ำ · acidosis (lactate สูง/HCO₃ ต่ำ) · น้ำท่วมปอด · เชื้อมาก: <b>Pf &gt;10% ของ RBC</b>, <b>Pk &gt;100,000/µL</b> หรือเหลือง + &gt;20,000/µL (บท 2B)</div>
   </div>
+  <div class="box warn"><b>รักษา severe malaria (บท 5)</b><b>Artesunate IV</b> ฉีด <b>bolus เท่านั้น</b> (ห้าม infusion/drip) 2.4 mg/kg ทันที แล้วซ้ำที่ 12 และ 24 ชม. จากนั้นวันละครั้งจนกินได้ — <b>น้ำหนัก &lt;20 kg ใช้ 3 mg/kg</b> · ให้ IV อย่างน้อย 24 ชม.แรก · ไม่ต้องปรับขนาดในตับ/ไตวาย · ยาที่ผสมแล้วใช้ไม่หมดให้ทิ้ง → กินได้เปลี่ยนเป็น <b>DHA-PIP หรือ artesunate-pyronaridine 3 วัน + primaquine</b> (ถ้าไม่มีข้อห้าม)<br>
+  <b>ไม่มี artesunate</b>: quinine dihydrochloride <b>20 mg/kg drip ใน 4 ชม.</b> → 10 mg/kg drip ใน 2–4 ชม. ทุก 8 ชม. (ห้าม bolus — หัวใจเต้นผิดจังหวะ · เฝ้าน้ำตาลต่ำ · ตับ/ไตวายลดเหลือ ½–⅔ ของ maintenance ในวันที่ 3) → กินได้เปลี่ยนเป็น ACT 3 วัน หรือ quinine/artesunate กิน + doxycycline หรือ clindamycin 7 วัน (doxycycline ห้ามในหญิงตั้งครรภ์ ให้นมบุตร เด็ก &lt;8 ปี)<br>
+  <b>ส่งต่อ</b>: ฉีด artesunate bolus หรือ quinine loading ก่อนส่ง · ถ้าไม่มียาฉีดและยังกินได้ ให้ DHA-PIP หรือ artesunate-pyronaridine ไปก่อน · รักษาใน รพ.ที่ให้ส่วนประกอบของเลือดและฟอกเลือดได้ · ซึมโดยไม่มี localizing sign นึกถึง hypoglycemia และ cerebral malaria · หาการติดเชื้อร่วม</div>
+  <div class="grid2">
+    <div class="card c-vio"><h4>หญิงตั้งครรภ์ · ให้นมบุตร</h4><ul>
+      <li><b>ห้าม primaquine และ tafenoquine เด็ดขาด</b> ในหญิงตั้งครรภ์</li>
+      <li>Pf ไม่รุนแรง → <b>DHA-PIP</b> · Pv, Po, Pm, Pk ทุกอายุครรภ์ → <b>chloroquine 3 วัน</b> · radical cure พิจารณาหลังคลอด <span class="tag add">เสริม</span></li>
+      <li>ให้นมบุตร: รักษาตามชนิดเชื้อ <b>ห้าม tafenoquine</b> · ไม่ให้ primaquine ยกเว้นตรวจแล้วว่าทั้งแม่และลูกไม่พร่อง G6PD</li>
+    </ul></div>
+    <div class="card c-acc"><h4>นัดติดตาม (นับจากวันเริ่มยา, ภาคผนวก 1)</h4><ul>
+      <li><b>Pf, Pm, Pk</b> และเชื้อผสมที่มี Pf: วันที่ <b>3, 7, 28, 42</b></li>
+      <li><b>Pv, Po</b> (และเชื้อผสมกับ Pv): วันที่ <b>14, 28, 60, 90</b></li>
+      <li>Pv ที่ได้ <b>tafenoquine หรือ primaquine 7 วัน</b>: เพิ่ม<b>วันที่ 7</b> (ดู hemolysis) → 7, 14, 28, 60, 90</li>
+      <li>ทุกนัด: ดูอาการ + thick/thin film · กลับก่อนนัดถ้าไข้สูง อาเจียน กินยาแล้วอาเจียน หอบ ซึม <b>ปัสสาวะดำ/ออกน้อย</b> เหลือง</li>
+    </ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem"><b>รักษาล้มเหลว</b> (อาการแย่ลงและพบเชื้อเดิม · อาการกลับมา · หรือพบเชื้อเดิมภายใน 28 วัน) → ส่ง รพ. ใช้ยาขนานที่สอง (บท 6) เช่น Pf ที่ได้ DHA-PIP มาก่อน → artesunate-pyronaridine (และกลับกัน), atovaquone-proguanil, artemether-lumefantrine หรือ quinine + clindamycin/doxycycline ร่วมกับ primaquine ครั้งเดียว · ปรึกษาสายด่วนกรมควบคุมโรค <b>1422</b> (24 ชม.)</p>
+
+  <h3 style="margin-top:20px">ตารางขนาดยาตามน้ำหนัก (บท 7)</h3>
+  <div class="tbl"><table>
+    <tr><th>ยา (เม็ด)</th><th>จำนวนเม็ดตามน้ำหนัก (kg)</th></tr>
+    <tr><td><b>DHA-PIP</b> 40/320 mg<br>วันละครั้ง × 3 วัน</td><td>5–&lt;8: ½ · 8–&lt;11: ¾ · 11–&lt;17: 1 · 17–&lt;25: 1½ · 25–&lt;36: 2 · <b>36–&lt;60: 3</b> · 60–&lt;80: 4 · ≥80: 5</td></tr>
+    <tr><td><b>Artesunate-pyronaridine</b> 60/180 mg<br>วันละครั้ง × 3 วัน</td><td><b>&lt;20: ห้ามจ่าย</b> · 20–&lt;24: 1 · 24–&lt;45: 2 · 45–&lt;65: 3 · ≥65: 4</td></tr>
+    <tr><td><b>Chloroquine</b> 250 mg (= 150 mg base)<br>วันที่ 0 – 1 – 2 (รวม)</td><td>&lt;11: 1 – ½ – ½ (2) · 11–&lt;15: 1½ – ½ – ½ (2½) · 15–&lt;25: 2 – 1 – 1 (4) · 25–&lt;50: 3 – 1½ – 1½ (6) · <b>≥50: 4 – 4 – 2 (10)</b></td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>น้ำหนัก (kg)</th><th>Primaquine 0.25 mg/kg/วัน × 14 วัน</th><th>0.5 mg/kg/วัน × 7 วัน<br>(Pf ใช้ขนาดนี้ 1 วัน)</th><th>0.75 mg/kg สัปดาห์ละครั้ง × 8</th></tr>
+    <tr><td>&lt;15 หรืออายุ &lt;1 ปี</td><td colspan="3">ห้ามจ่าย primaquine</td></tr>
+    <tr><td>15–&lt;25</td><td>7.5 mg (7.5 mg × 1)</td><td>15 mg (15 mg × 1)</td><td>15 mg (15 mg × 1)</td></tr>
+    <tr><td>25–&lt;50</td><td>11.25 mg (7.5 mg × 1½)</td><td>22.5 mg (15 + 7.5 mg)</td><td>30 mg (15 mg × 2)</td></tr>
+    <tr><td>≥50</td><td>15 mg (15 mg × 1)</td><td>30 mg (15 mg × 2)</td><td>45 mg (15 mg × 3)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">Tafenoquine 150 mg × 2 เม็ด (300 mg) ครั้งเดียว วันที่ 0 · Artesunate IV ขวด 60 mg · ตารางจากแนวทางไทย 2568 ตาราง 1–6 (ตาราง artesunate เขียน "≤20 kg = 3 mg/kg" ส่วนเนื้อความเขียน "&lt;20 kg")</p>
 </section>
 
 <!-- 7 -->
@@ -382,7 +437,7 @@ nav.toc a{scroll-margin-inline:40px}
       <div class="vline arrow"></div>
       <div class="branch b3">
         <div class="arm"><span class="lab">เข้ากับ dengue</span><div class="node dx eu"><b>Dengue</b>NS1/IgM · ห้าม NSAIDs · ระวังสารน้ำ · หน้า DHF</div></div>
-        <div class="arm"><span class="lab">พื้นที่ malaria</span><div class="node dx hypo"><b>Smear / RDT</b>บวก → รักษาตามชนิด<br>severe → artesunate IV</div></div>
+        <div class="arm"><span class="lab">พื้นที่ malaria</span><div class="node dx hypo"><b>Thick/thin film · RDT</b>บวก → รักษาตามชนิด + G6PD<br>severe/เชื้อ &gt;100,000/µL → artesunate IV</div></div>
         <div class="arm"><span class="lab">อื่นๆ</span><div class="node q"><b>รุนแรงไหม?</b></div>
           <div class="branch b2">
             <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>Doxycycline</b>lepto · scrub · murine</div></div>
@@ -403,7 +458,7 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="col">
     <div class="sec-num">10</div>
     <h2>เครื่องมือข้างเตียง</h2>
-    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับแนวทางและฉลากยา</p>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ตรวจขนาดยากับแนวทางและฉลากยา · เครื่องมือมาลาเรียใช้ตารางน้ำหนักของแนวทางไทย 2568 (ใช้ ideal body weight ไม่เกิน 80 kg)</p>
   </div>
   <div class="tool plan" id="tEmp" style="margin-top:12px">
     <h3>ช่วยเลือกยาเริ่มต้นใน AUF</h3>
@@ -427,10 +482,12 @@ nav.toc a{scroll-margin-inline:40px}
     <h3>ขนาดยามาลาเรีย (แนวทางไทย 2568)</h3>
     <div class="fields">
       <label class="f">น้ำหนัก (kg)<input type="number" id="mWt" value="55"></label>
-      <label class="f">ชนิด<select id="mSp"><option value="pf">P. falciparum</option><option value="pfr">P. falciparum (ศรีสะเกษ/อุบลฯ)</option><option value="pv">P. vivax</option><option value="sev">Severe malaria</option></select></label>
-      <label class="f">G6PD (U/g Hb, ถ้ามี)<input type="number" id="mG6" step="0.1" placeholder="เช่น 7.5"></label>
+      <label class="f">อายุ (ปี)<input type="number" id="mAge" value="30"></label>
+      <label class="f">ชนิด<select id="mSp"><option value="pf">P. falciparum</option><option value="pv">P. vivax</option><option value="po">P. ovale</option><option value="pmk">P. malariae / P. knowlesi</option><option value="mixv">ผสม Pf + Pv/Po</option><option value="mixk">ผสม Pf + Pm/Pk</option><option value="sev">Severe malaria (หรือกินยาไม่ได้)</option></select></label>
+      <label class="f">ตรวจ G6PD แบบ<select id="mG6t"><option value="q">เชิงปริมาณ (ใส่ค่า)</option><option value="fn">เชิงคุณภาพ: ปกติ</option><option value="fd">เชิงคุณภาพ: พร่อง</option><option value="na">ตรวจไม่ได้</option></select></label>
+      <label class="f">G6PD (U/g Hb)<input type="number" id="mG6" step="0.1" placeholder="เช่น 7.5"></label>
     </div>
-    <div class="checks"><label><input type="checkbox" id="mPreg"> ตั้งครรภ์</label></div>
+    <div class="checks"><label><input type="checkbox" id="mRes"> ติดเชื้อจากศรีสะเกษ/อุบลราชธานี (Pf ดื้อ DHA-PIP)</label><label><input type="checkbox" id="mPreg"> ตั้งครรภ์</label><label><input type="checkbox" id="mBf"> ให้นมบุตร</label><label><input type="checkbox" id="mMet"> ต้องใช้ metformin</label></div>
     <div class="out" id="mOut"></div>
   </div>
 </section>
@@ -447,8 +504,9 @@ nav.toc a{scroll-margin-inline:40px}
     <div class="pearl"><div><b>Doxycycline คือยาหลักของไข้ไม่ทราบสาเหตุในไทย</b> ครอบคลุม lepto, scrub, murine typhus</div></div>
     <div class="pearl"><div><b>อย่าใช้ Weil-Felix ตัดสิน</b> ไวและจำเพาะต่ำ</div></div>
     <div class="pearl"><div><b>ห้าม NSAIDs ถ้ายังตัด dengue ไม่ได้</b></div></div>
-    <div class="pearl"><div><b>Primaquine ต้องรู้ G6PD</b> คนไทยพบ G6PD deficiency บ่อย · ห้ามในหญิงตั้งครรภ์</div></div>
-    <div class="pearl"><div><b>Artesunate IV ฉีดแบบ bolus</b> ไม่หยดต่อเนื่อง · ให้โดสแรกก่อนส่งต่อ severe malaria</div></div>
+    <div class="pearl"><div><b>Primaquine/tafenoquine ต้องรู้ G6PD</b> tafenoquine ใช้ได้เฉพาะผลเชิงปริมาณ ≥6.1 U/g Hb · ห้ามทั้งสองตัวในหญิงตั้งครรภ์ · primaquine ห้ามในเด็ก &lt;15 kg หรือ &lt;1 ปี</div></div>
+    <div class="pearl"><div><b>Artesunate IV ฉีดแบบ bolus</b> ไม่หยดต่อเนื่อง · ให้โดสแรกก่อนส่งต่อ severe malaria · กินยาแล้วอาเจียนซ้ำใน 1 ชม. ก็ใช้ artesunate IV ได้</div></div>
+    <div class="pearl"><div><b>Pf ที่ศรีสะเกษ/อุบลฯ ใช้ artesunate-pyronaridine</b> จังหวัดอื่นใช้ DHA-PIP · ถามเสมอว่าติดเชื้อมาจากที่ไหน</div></div>
     <div class="pearl"><div><b>Melioidosis ต้องได้ยา eradication ครบ</b> 12–20 สัปดาห์ ไม่ครบเสี่ยงกลับเป็นซ้ำ</div></div>
   </div>
 </section>
@@ -462,7 +520,7 @@ nav.toc a{scroll-margin-inline:40px}
 
 <p class="col" style="margin-top:32px"><a href="../dhf/index.html">DHF →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../cap/index.html">CAP →</a> · <a href="../aki/index.html">AKI →</a></p>
 <footer class="col">
-  อ้างอิง: 1) คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย. แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568 (มี.ค. 2568). · 2) Treatment of melioidosis. Infect Dis Clin North Am 2026;40:127–47. doi:10.1016/j.idc.2025.12.002 · 3) Chetchotisakd P, et al. 12 vs 20 weeks TMP-SMX eradication for melioidosis (non-inferiority RCT). · 4) Varghese GM, et al. Intravenous doxycycline, azithromycin, or both for severe scrub typhus (INTREST). N Engl J Med 2023;388:792–803. · 5) Phimda K, et al. Doxycycline versus azithromycin for treatment of leptospirosis and scrub typhus. Antimicrob Agents Chemother 2007;51:3259–63. · 6) WHO. Human leptospirosis: guidance for diagnosis, surveillance and control.<br>
+  อ้างอิง: 1) คณะกรรมการนโยบายและแนวทางการใช้ยารักษาโรคไข้มาลาเรีย. แนวทางเวชปฏิบัติในการรักษาผู้ป่วยโรคไข้มาลาเรีย สำหรับแพทย์ ประเทศไทย พ.ศ. 2568. นนทบุรี: กองโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข; พิมพ์ครั้งที่ 1 ก.ค. 2568 (รับรอง มี.ค. 2568). ISBN 978-616-11-5366-3. · 2) Treatment of melioidosis. Infect Dis Clin North Am 2026;40:127–47. doi:10.1016/j.idc.2025.12.002 · 3) Chetchotisakd P, et al. 12 vs 20 weeks TMP-SMX eradication for melioidosis (non-inferiority RCT). · 4) Varghese GM, et al. Intravenous doxycycline, azithromycin, or both for severe scrub typhus (INTREST). N Engl J Med 2023;388:792–803. · 5) Phimda K, et al. Doxycycline versus azithromycin for treatment of leptospirosis and scrub typhus. Antimicrob Agents Chemother 2007;51:3259–63. · 6) WHO. Human leptospirosis: guidance for diagnosis, surveillance and control.<br>
   <span class="tag add">เสริม</span> = เนื้อหามาตรฐานหรือแนวปฏิบัติทั่วไปที่เพิ่ม ไม่ได้มาจากแนวทางระดับชาติฉบับเดียว · ขนาดยาสำหรับผู้ใหญ่ไตปกติ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
 </footer>
 </div>
@@ -520,6 +578,9 @@ function mountWalker(T,trailId,stageId){
 }
 /* quiz engine */
 function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
   $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
   $(id).querySelectorAll('.qcard').forEach(card=>{
     const q=Q[+card.dataset.i];
@@ -543,9 +604,9 @@ mountWalker({
  sevStd:{leaf:true,cls:'danger',t:'Sepsis ไม่ทราบแหล่ง',b:'H/C แล้วให้ <b>ceftriaxone 2 g + doxycycline</b> (หรือ azithromycin IV) · lepto รุนแรง: penicillin G/ceftriaxone · scrub รุนแรง: doxy IV + azithro IV · ตรวจ malaria ตาม exposure · หลีกเลี่ยง NSAIDs จนกว่าจะตัด dengue'},
  den:{q:'ภาพเข้ากับ dengue หรือไม่?',h:'WBC ต่ำ, เกล็ดเลือดลด, Hct เพิ่ม, tourniquet บวก, NS1',o:[['เข้ากัน','dengue'],['ไม่เข้า','mal']]},
  dengue:{leaf:true,cls:'warn',t:'Dengue',b:'Paracetamol · ห้าม NSAIDs · ติดตาม warning signs, Hct, เกล็ดเลือด · สารน้ำตามระยะ · ดูหน้า DHF'},
- mal:{q:'อยู่หรือเดินทางพื้นที่ malaria ภายใน 1 เดือน?',o:[['ใช่','malt'],['ไม่ใช่','clue']]},
- malt:{q:'Smear / RDT?',o:[['บวก','malpos'],['ลบ','clue']]},
- malpos:{leaf:true,cls:'violet',t:'Malaria',b:'รักษาตามชนิด (แนวทางไทย 2568): Pf → DHA-PIP 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว · Pv → chloroquine + radical cure ตาม G6PD · severe → artesunate IV · ใช้เครื่องมือบท 10 คำนวณขนาดยา'},
+ mal:{q:'อยู่/เดินทางพื้นที่ malaria ภายใน 1 เดือน หรือเคยเป็น malaria ใน 1 ปี?',o:[['ใช่','malt'],['ไม่ใช่','clue']]},
+ malt:{q:'Thick/thin film หรือ RDT?',h:'RDT อาจลบปลอมถ้าเชื้อน้อย · สงสัยมากแต่ผลลบ ตรวจซ้ำ/ส่ง PCR',o:[['บวก','malpos'],['ลบ','clue']]},
+ malpos:{leaf:true,cls:'violet',t:'Malaria',b:'รักษาตามชนิด (แนวทางไทย 2568): Pf → DHA-PIP 3 วัน (ศรีสะเกษ/อุบลฯ: artesunate-pyronaridine) + primaquine 0.5 mg/kg ครั้งเดียว · Pv → chloroquine 3 วัน + radical cure ตาม G6PD · Po → chloroquine + primaquine 14 วัน · Pm/Pk → chloroquine · severe, กินยาไม่ได้ หรือ Pf &gt;100,000/µL → artesunate IV · ตั้งครรภ์ห้าม primaquine/tafenoquine · ใช้เครื่องมือบท 10 คำนวณขนาดยา'},
  clue:{q:'เบาะแสเด่น?',o:[['Eschar / ต่อมน้ำเหลืองโต','scrub'],['ลุยน้ำ ปวดน่อง ตาแดง เหลือง+AKI','lepto'],['ฝีในอวัยวะ / เบาหวาน','melio'],['ไม่มีเบาะแสชัด','nofocus']]},
  scrub:{leaf:true,cls:'ok',t:'Scrub typhus',b:'<b>Doxycycline 100 mg bid 7 วัน</b> · ตั้งครรภ์: azithromycin · ไข้ไม่ลด 48 ชม. → ทบทวนการวินิจฉัย'},
  lepto:{leaf:true,cls:'ok',t:'Leptospirosis',b:'ไม่รุนแรง: <b>doxycycline 100 mg bid 7 วัน</b> · ตรวจ K, Cr, bilirubin, CK · ระวัง pulmonary hemorrhage · AKI oliguric → ฟอกเลือดเร็ว'},
@@ -575,38 +636,75 @@ function emp(){
 bindAll('#tEmp input',emp);
 
 function mal(){
-  const w=num('mWt'),sp=$('mSp').value,g=num('mG6'),pg=$('mPreg').checked;
+  const w=num('mWt'),age=num('mAge'),sp=$('mSp').value,gt=$('mG6t').value,g=num('mG6'),res=$('mRes').checked,pg=$('mPreg').checked,bf=$('mBf').checked,met=$('mMet').checked;
   if(!w){$('mOut').textContent='ใส่น้ำหนัก';return}
+  const a=age===null?30:age;
   const wp=Math.min(w,80);
   const L=[];
-  const pqSingle=Math.round(0.5*wp*10)/10;
-  if(sp==='pf'){
-    const t=w<8?0.5:w<11?0.75:w<17?1:w<25?1.5:w<36?2:w<60?3:w<80?4:5;
-    L.push(`<b>DHA-PIP</b> (40/320 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน`);
-    L.push(pg?'<b>ห้าม primaquine</b> (ตั้งครรภ์)':`<b>Primaquine</b> 0.5 mg/kg = <b>${pqSingle} mg</b> ครั้งเดียว (≈ ${Math.round(pqSingle/7.5*2)/2} เม็ด 7.5 mg หรือ ${Math.round(pqSingle/15*2)/2} เม็ด 15 mg)`);
-    L.push('นัดตรวจวันที่ 3, 7, 28, 42');
-  }else if(sp==='pfr'){
-    if(pg){L.push('ตั้งครรภ์: แนวทางไทยให้ <b>DHA-PIP</b> สำหรับ Pf ไม่รุนแรง — ปรึกษาผู้เชี่ยวชาญในพื้นที่ดื้อยา');}
-    else if(w<20)L.push('Artesunate-pyronaridine ไม่ใช้ในน้ำหนัก <20 kg — ปรึกษาผู้เชี่ยวชาญ');
-    else{const t=w<24?1:w<45?2:w<65?3:4;L.push(`<b>Artesunate-pyronaridine</b> (60/180 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน`);}
-    L.push(pg?'<b>ห้าม primaquine</b>':`<b>Primaquine</b> 0.5 mg/kg = <b>${pqSingle} mg</b> ครั้งเดียว`);
-    L.push('นัดตรวจวันที่ 3, 7, 28, 42');
-  }else if(sp==='pv'){
-    const t=w<11?2:w<15?2.5:w<25?4:w<50?6:10;
-    L.push(`<b>Chloroquine</b> (250 mg = 150 mg base) รวม <span class="big">${t}</span> เม็ดใน 3 วัน${w>=50?' (เช่น 4-4-2)':''}`);
-    if(pg)L.push('<b>ห้าม primaquine/tafenoquine</b> ระหว่างตั้งครรภ์ — ให้ radical cure หลังคลอด');
-    else if(g===null)L.push(`G6PD ยังไม่ทราบ: ตรวจก่อน · ถ้าตรวจไม่ได้ <b>primaquine 0.25 mg/kg/วัน = ${Math.round(0.25*wp*10)/10} mg × 14 วัน</b> + สอนสังเกตปัสสาวะสีเข้ม/เหลือง/อ่อนเพลีย`);
-    else if(g>=6.1)L.push(`G6PD ปกติ: <b>tafenoquine 300 mg ครั้งเดียว</b> (อายุ ≥16, ≥35 kg) หรือ primaquine ${Math.round(0.5*wp*10)/10} mg/วัน × 7 วัน หรือ ${Math.round(0.25*wp*10)/10} mg/วัน × 14 วัน`);
-    else if(g>=4.1)L.push(`G6PD intermediate: primaquine ${Math.round(0.25*wp*10)/10} mg/วัน × 14 วัน หรือ ${Math.round(0.75*wp*10)/10} mg สัปดาห์ละครั้ง × 8 สัปดาห์`);
-    else L.push(`G6PD deficient: <b>primaquine ${Math.round(0.75*wp*10)/10} mg สัปดาห์ละครั้ง × 8 สัปดาห์</b>`);
-    L.push('นัดตรวจวันที่ 14, 28, 60, 90');
+  if(w>80)L.push('คิดขนาดยาจาก ideal body weight ไม่เกิน 80 kg');
+  // weight bands: Thai guideline 2568, tables 1-4.3
+  const dha=x=>x<5?null:x<8?'½':x<11?'¾':x<17?'1':x<25?'1½':x<36?'2':x<60?'3':x<80?'4':'5';
+  const asp=x=>x<20?null:x<24?'1':x<45?'2':x<65?'3':'4';
+  const cq=x=>x<11?['1 – ½ – ½','2']:x<15?['1½ – ½ – ½','2½']:x<25?['2 – 1 – 1','4']:x<50?['3 – 1½ – 1½','6']:['4 – 4 – 2','10'];
+  const pq25=x=>x<25?'7.5 mg (7.5 mg × 1 เม็ด)':x<50?'11.25 mg (7.5 mg × 1½ เม็ด)':'15 mg (15 mg × 1 เม็ด)';
+  const pq5=x=>x<25?'15 mg (15 mg × 1 เม็ด)':x<50?'22.5 mg (15 mg + 7.5 mg อย่างละ 1 เม็ด)':'30 mg (15 mg × 2 เม็ด)';
+  const pq75=x=>x<25?'15 mg (15 mg × 1 เม็ด)':x<50?'30 mg (15 mg × 2 เม็ด)':'45 mg (15 mg × 3 เม็ด)';
+  const pqKid=w<15||a<1;
+  const g6=gt==='q'?(g===null?'unk':g>=6.1?'n':g>=4.1?'i':'d'):gt==='fn'?'qn':gt==='fd'?'d':'na';
+  const pqBlock=()=>pg?'<b>ห้าม primaquine/tafenoquine</b> (ตั้งครรภ์)':pqKid?'<b>ไม่ให้ primaquine</b> (น้ำหนัก &lt;15 kg หรืออายุ &lt;1 ปี)':bf?'ให้นมบุตร: <b>ไม่ให้ primaquine</b> เว้นแต่ตรวจแล้วว่าแม่และลูกไม่พร่อง G6PD · ห้าม tafenoquine':null;
+  const act=()=>{
+    if(res&&!pg&&!(a<1||w<11)){const t=asp(wp);if(t)return `<b>Artesunate-pyronaridine</b> (60/180 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน (พื้นที่ดื้อ DHA-PIP)`;
+      return 'Artesunate-pyronaridine <b>ห้ามใช้ในน้ำหนัก &lt;20 kg</b> — พิจารณายาขนานอื่น ปรึกษาสายด่วน 1422';}
+    const t=dha(wp);if(!t)return 'น้ำหนัก &lt;5 kg ไม่มีในตาราง DHA-PIP — ปรึกษาผู้เชี่ยวชาญ / 1422';
+    return `<b>DHA-PIP</b> (40/320 mg) <span class="big">${t}</span> เม็ด วันละครั้ง × 3 วัน`+(res&&pg?' (ตั้งครรภ์: แนวทางกำหนด DHA-PIP · ปรึกษา 1422 เรื่องพื้นที่ดื้อยา)':'');
+  };
+  const cqLine=()=>{const c=cq(wp);return `<b>Chloroquine</b> 250 mg (150 mg base) วันที่ 0 – 1 – 2: <span class="big">${c[0]}</span> เม็ด (รวม ${c[1]} เม็ด)`};
+  const pfPQ=()=>{const b=pqBlock();if(b)return b;
+    let s=`<b>Primaquine 0.5 mg/kg ครั้งเดียว</b> = ${pq5(wp)} (แถบน้ำหนักตาราง 4.2 ให้ 1 วัน) วันใดก็ได้ที่กินได้ไม่อาเจียน`;
+    if(g6==='d')s+=' · G6PD พร่องรุนแรง อาจพิจารณาไม่ให้ (เป้าหมายคือลดการแพร่เชื้อ)';
+    return s;};
+  const hiRisk=[];
+  if(a<1||w<11)hiRisk.push('เด็ก &lt;1 ปีหรือ &lt;11 kg');
+  if(pg)hiRisk.push('ตั้งครรภ์');
+  if(g6==='d')hiRisk.push('G6PD พร่อง');
+  if(sp==='pmk')hiRisk.push('ถ้าเป็น P. knowlesi');
+  if(sp==='pf'||sp==='mixk'){
+    L.push(act());
+    L.push((a<1||w<11)?'<b>ไม่ให้ primaquine</b> (เด็ก &lt;1 ปีหรือ &lt;11 kg ให้ DHA-PIP อย่างเดียว)':pfPQ());
+    L.push('นัดตรวจเลือดวันที่ <b>3, 7, 28, 42</b>');
+  }else if(sp==='pv'||sp==='po'||sp==='mixv'){
+    L.push(sp==='mixv'?act():cqLine());
+    const b=pqBlock();
+    if(b)L.push(b+(pg?' · ให้ chloroquine อย่างเดียว ทุกอายุครรภ์':''));
+    else{
+      const tqOK=sp==='pv'&&g6==='n'&&a>=16&&w>=35&&!met;
+      const tqWhy=sp!=='pv'?'':g6!=='n'?'':a<16?' (tafenoquine: อายุ &lt;16 ปี ใช้ไม่ได้)':w<35?' (tafenoquine: น้ำหนัก &lt;35 kg ใช้ไม่ได้)':met?' (tafenoquine: ใช้ metformin อยู่ ใช้ไม่ได้)':'';
+      if(g6==='unk')L.push('ใส่ค่า G6PD เชิงปริมาณ หรือเลือกชนิดการตรวจอื่น');
+      else if(g6==='d')L.push(`G6PD พร่อง: <b>primaquine 0.75 mg/kg สัปดาห์ละครั้ง × 8 สัปดาห์</b> = ${pq75(wp)} ต่อสัปดาห์`);
+      else if(g6==='na')L.push(`ตรวจ G6PD ไม่ได้: <b>primaquine 0.25 mg/kg/วัน × 14 วัน</b> = ${pq25(wp)} ต่อวัน + สอนหยุดยาแล้วกลับมาทันทีถ้าปัสสาวะสีเข้ม/ดำ อ่อนเพลีย ตาเหลือง`);
+      else if(sp!=='pv'){ // Po or mixed: 14-day only, no TQ
+        L.push(`<b>Primaquine 0.25 mg/kg/วัน × 14 วัน</b> = ${pq25(wp)} ต่อวัน (ห้าม tafenoquine)`);
+      }
+      else if(g6==='n'){
+        L.push((tqOK?'G6PD ≥6.1 เลือก 1 ใน 3: <b>tafenoquine 300 mg (150 mg × 2 เม็ด) ครั้งเดียว</b> · หรือ ':'G6PD ≥6.1'+tqWhy+' เลือก ')+`<b>primaquine 0.5 mg/kg/วัน × 7 วัน</b> = ${pq5(wp)} ต่อวัน · หรือ primaquine 0.25 mg/kg/วัน × 14 วัน = ${pq25(wp)} ต่อวัน`);
+      }
+      else if(g6==='qn')L.push(`G6PD เชิงคุณภาพปกติ: primaquine 0.5 mg/kg/วัน × 7 วัน = ${pq5(wp)} ต่อวัน · หรือ 0.25 mg/kg/วัน × 14 วัน = ${pq25(wp)} ต่อวัน (<b>ห้าม tafenoquine</b> ต้องใช้ผลเชิงปริมาณ)`);
+      else if(g6==='i')L.push(`G6PD intermediate (4.1–&lt;6.1): primaquine 0.25 mg/kg/วัน × 14 วัน = ${pq25(wp)} ต่อวัน · หรือ 0.75 mg/kg สัปดาห์ละครั้ง × 8 = ${pq75(wp)} ต่อสัปดาห์`);
+      L.push('สอนสังเกตภาวะเม็ดเลือดแดงแตก (ปัสสาวะสีเข้ม/ดำ เหนื่อย ซีด เหลือง) ทุกรายที่ได้ primaquine/tafenoquine');
+    }
+    L.push(sp==='mixv'?'นัด: แนวทางระบุเชื้อผสมที่มี Pf วันที่ 3, 7, 28, 42 และเชื้อผสมกับ Pv วันที่ 14, 28, 60, 90 — นัดให้ครอบคลุมทั้งสองชุด':'นัดตรวจเลือดวันที่ <b>14, 28, 60, 90</b>'+(sp==='pv'&&!pg&&!pqKid&&!bf?' · ถ้าได้ tafenoquine หรือ primaquine 7 วัน เพิ่ม<b>วันที่ 7</b> ดู hemolysis':''));
+  }else if(sp==='pmk'){
+    L.push(cqLine());
+    L.push(`P. knowlesi พิจารณา <b>DHA-PIP</b> ${dha(wp)||'-'} เม็ด วันละครั้ง × 3 วัน แทนได้ · ไม่ต้อง primaquine · ยืนยัน knowlesi ด้วย PCR`);
+    L.push('Pk &gt;100,000/µL หรือเหลือง + &gt;20,000/µL → รักษาแบบ severe · นัดวันที่ <b>3, 7, 28, 42</b>');
   }else{
-    const d=Math.round((w<20?3:2.4)*w*10)/10;
-    L.push(`<b>Artesunate IV</b> ${w<20?'3':'2.4'} mg/kg = <span class="big">${d}</span> mg bolus ที่ 0, 12, 24 ชม. แล้ววันละครั้ง`);
-    L.push('กินได้แล้ว → ACT 3 วัน + primaquine (ถ้าไม่มีข้อห้าม)');
-    L.push(`ไม่มี artesunate: quinine loading ${Math.round(20*w)} mg IV ใน 4 ชม. → ${Math.round(10*w)} mg ทุก 8 ชม. (ห้าม bolus · ตรวจน้ำตาล)`);
-    L.push('ดูแลใน รพ.ที่ให้เลือดและฟอกเลือดได้ · ให้โดสแรกก่อนส่งต่อ');
+    const mk=w<20?3:2.4;const d=Math.round(mk*wp*10)/10;
+    L.push(`<b>Artesunate IV</b> ${mk} mg/kg = <span class="big">${d}</span> mg (≈ ${Math.ceil(d/60)} ขวด 60 mg) <b>bolus</b> ทันที แล้วซ้ำที่ 12 และ 24 ชม. จากนั้นวันละครั้งจนกินได้ (IV อย่างน้อย 24 ชม.)`+(w===20?' · น้ำหนัก 20 kg พอดี: ตาราง 6 ระบุ ≤20 kg ใช้ 3 mg/kg (เนื้อความระบุ &lt;20 kg) — ตรวจสอบกับแนวทาง':''));
+    L.push('กินได้แล้ว → DHA-PIP หรือ artesunate-pyronaridine 3 วัน + primaquine (ถ้าไม่มีข้อห้าม) · ไม่ต้องปรับขนาด artesunate ในตับ/ไตวาย');
+    L.push(`ไม่มี artesunate: quinine dihydrochloride <b>${Math.round(20*wp)} mg</b> drip ใน 4 ชม. → ${Math.round(10*wp)} mg drip ใน 2–4 ชม. ทุก 8 ชม. (ห้าม bolus · เฝ้าน้ำตาลต่ำ)`);
+    L.push('ดูแลใน รพ.ที่ให้ส่วนประกอบของเลือดและฟอกเลือดได้ · ส่งต่อ: ฉีดโดสแรกก่อนส่ง');
   }
+  if(hiRisk.length&&sp!=='sev')L.unshift('<b>กลุ่มเสี่ยงสูง</b> ('+hiRisk.join(', ')+') → รักษาใน รพ.ชุมชนขึ้นไป พิจารณารับไว้');
   $('mOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
 }
 bindAll('#tMal input,#tMal select',mal);
@@ -619,9 +717,15 @@ mountQuiz([
  ['ชายเบาหวาน อุบลฯ หน้าฝน septic shock ปอดอักเสบ ฝีที่ม้าม ยาเริ่มต้นที่ต้องไม่พลาด',
   ['Ceftriaxone + azithromycin','Meropenem หรือ ceftazidime','Amoxicillin-clavulanate','Gentamicin'],1,'Melioidosis ดื้อ ceftriaxone และ aminoglycoside'],
  ['P. falciparum ไม่รุนแรง ในจังหวัดตาก น้ำหนัก 55 kg ตามแนวทางไทย 2568',
-  ['DHA-PIP 3 เม็ด × 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว','Chloroquine 3 วัน','Artesunate IV','Primaquine 14 วัน'],0,'นอกพื้นที่ดื้อยา (ศรีสะเกษ/อุบลฯ) ใช้ DHA-PIP 3 วัน (36–<60 kg = 3 เม็ด) + primaquine ครั้งเดียว'],
+  ['DHA-PIP 3 เม็ด × 3 วัน + primaquine 0.5 mg/kg ครั้งเดียว','Chloroquine 3 วัน','Artesunate IV','Primaquine 14 วัน'],0,'นอกพื้นที่ดื้อยา (ศรีสะเกษ/อุบลฯ) ใช้ DHA-PIP 3 วัน (36–<60 kg = 3 เม็ด) + primaquine 0.5 mg/kg ครั้งเดียว (≥50 kg = 30 mg)'],
+ ['หญิงตั้งครรภ์ 20 สัปดาห์ ติดเชื้อ P. vivax ไม่รุนแรง G6PD ปกติ การรักษาตามแนวทางไทย 2568',
+  ['Chloroquine 3 วัน + tafenoquine 300 mg','Chloroquine 3 วัน อย่างเดียว ห้าม primaquine/tafenoquine','Chloroquine 3 วัน + primaquine 14 วัน','DHA-PIP 3 วัน + primaquine'],1,'หญิงตั้งครรภ์ห้าม primaquine และ tafenoquine เด็ดขาด · Pv/Po/Pm/Pk ทุกอายุครรภ์ใช้ chloroquine 3 วัน'],
+ ['ผู้ป่วย P. falciparum รู้สึกตัวดี กินได้ แต่ parasite count 150,000/µL ควรทำอย่างไร',
+  ['DHA-PIP กินที่บ้าน นัดวันที่ 3','รับไว้ใน รพ. และรักษาแบบ severe malaria (artesunate IV)','Chloroquine 3 วัน','รอดูอาการ 24 ชม.'],1,'Pf &gt;100,000/µL หรือพบ schizont เป็นกลุ่มเสี่ยงสูง แนวทางให้รับไว้และรักษาแบบ severe เพื่อป้องกันภาวะแทรกซ้อน'],
+ ['P. vivax ได้ chloroquine + tafenoquine ควรนัดติดตามวันใด',
+  ['3, 7, 28, 42','7, 14, 28, 60, 90','14, 28, 60, 90 เท่านั้น','ไม่ต้องนัด'],1,'Pv ที่ได้ tafenoquine หรือ primaquine 7 วัน เพิ่มนัดวันที่ 7 เพื่อดู acute hemolytic anemia แล้วตามด้วย 14, 28, 60, 90'],
  ['P. vivax G6PD 3.5 U/g Hb radical cure ที่เหมาะสม',
-  ['Tafenoquine 300 mg','Primaquine 0.5 mg/kg/วัน 7 วัน','Primaquine 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์','ไม่ต้องให้'],2,'G6PD deficient (<4.1) ใช้ weekly primaquine 8 สัปดาห์'],
+  ['Tafenoquine 300 mg','Primaquine 0.5 mg/kg/วัน 7 วัน','Primaquine 0.75 mg/kg สัปดาห์ละครั้ง 8 สัปดาห์','ไม่ต้องให้'],2,'G6PD deficient (<4.1 U/g Hb) ใช้ primaquine 0.75 mg/kg (ไม่เกิน 45 mg) สัปดาห์ละครั้ง 8 สัปดาห์ · tafenoquine ต้อง ≥6.1'],
  ['Severe scrub typhus ที่มี ARDS และไตวาย ข้อใดตรงกับหลักฐานล่าสุด',
   ['Doxycycline กินอย่างเดียว','Doxycycline IV + azithromycin IV ร่วมกัน','Ceftriaxone เดี่ยว','Chloramphenicol เดี่ยวเท่านั้น'],1,'INTREST trial: การให้ร่วมกันดีกว่าตัวเดียว'],
  ['ข้อใดไม่ถูกต้องเกี่ยวกับ melioidosis',

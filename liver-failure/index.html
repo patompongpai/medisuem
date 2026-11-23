@@ -207,6 +207,7 @@ html{scroll-behavior:smooth}
 .rec.no{background:var(--danger-soft);color:var(--danger)}
 .tag.draft{background:var(--warn-soft);color:var(--warn)}
 .tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
 .ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
 .ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
 .ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
@@ -224,14 +225,14 @@ nav.toc a{scroll-margin-inline:40px}
 
 <div class="wrap">
 <header class="hero">
-  <div class="eyebrow">Hepatology · ICU · ACG 2023 · EASL 2017 · US/Canada APAP consensus 2023</div>
+  <div class="eyebrow">Hepatology · ICU · ACG Clinical Guideline 2023</div>
   <h1>ตับวายเฉียบพลัน<br>Acute liver failure</h1>
-  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่นิยามและการแยกจาก acute-on-chronic liver failure การหาสาเหตุที่รักษาได้เฉพาะ (paracetamol, HBV reactivation, ยา/สมุนไพร, Wilson, ตั้งครรภ์, เห็ดพิษ, dengue) <b>NAC ทั้งใน APAP และ non-APAP</b> การดูแลในไอซียู (สมองบวม ammonia, Na 145–155, CRRT, norepinephrine, coagulopathy) จนถึง <b>King's College criteria</b> และการส่งต่อศูนย์ปลูกถ่ายตับแต่เนิ่นๆ</p>
-  <p class="cite">อ้างอิงหลัก: Shingina A, et al. ACG Clinical Guideline: Acute Liver Failure (Am J Gastroenterol 2023;118:1128–53) · EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure (J Hepatol 2017;66:1047–81) · Dart RC, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement (JAMA Netw Open 2023;6:e2327739) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่นิยามและการแยกจาก acute-on-chronic liver failure การหาสาเหตุที่รักษาได้เฉพาะ (paracetamol, HBV reactivation, HSV, ยา/สมุนไพร, Wilson, AIH, ตั้งครรภ์, เห็ดพิษ, Budd-Chiari) <b>NAC ทั้งใน APAP และ non-APAP</b> การดูแลในไอซียู (สมองบวม ammonia, CRRT, norepinephrine, coagulopathy, ติดเชื้อ, โภชนาการ) จนถึง <b>King's College criteria / MELD</b> และการติดต่อศูนย์ปลูกถ่ายตับแต่เนิ่นๆ · ทุกข้อแนะนำระบุ <b>strength · quality of evidence</b> ตาม GRADE ของ ACG</p>
+  <p class="cite">อ้างอิงหลัก: Shingina A, Mukhtar N, Wakim-Fleming J, et al. ACG Clinical Guideline: Acute Liver Failure. Am J Gastroenterol 2023;118(7):1128–53. doi:10.14309/ajg.0000000000002340 · เสริม: EASL CPG acute (fulminant) liver failure (J Hepatol 2017;66:1047–81) · Dart RC, et al. APAP poisoning consensus (JAMA Netw Open 2023;6:e2327739) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
   <div class="stage-row">
-    <div class="stage" style="--c:var(--danger)"><b>นิยาม</b>INR ≥1.5 + hepatic encephalopathy · ป่วย &lt;26 สัปดาห์ · ไม่มีโรคตับเรื้อรังเดิม</div>
-    <div class="stage" style="--c:var(--warn)"><b>ทำทันที</b>Glucose ถี่ · NAC (APAP และ non-APAP) · หาสาเหตุเฉพาะ · ไม่ให้ FFP ป้องกัน</div>
-    <div class="stage" style="--c:var(--accent)"><b>ส่งต่อเร็ว</b>HE ใดๆ ร่วมกับ INR ≥1.5 → ติดต่อศูนย์ปลูกถ่ายตับตั้งแต่วันแรก</div>
+    <div class="stage" style="--c:var(--danger)"><b>นิยาม</b>INR ≥1.5 + hepatic encephalopathy ระดับใดก็ได้ · ป่วย &lt;26 สัปดาห์ · ไม่มีโรคตับเดิม</div>
+    <div class="stage" style="--c:var(--warn)"><b>ทำทันที</b>Glucose/สติทุก 1 ชม. · NAC (APAP และ non-APAP) · หาสาเหตุเฉพาะ · ไม่แก้ INR ถ้าไม่มีเลือดออก</div>
+    <div class="stage" style="--c:var(--accent)"><b>ส่งต่อเร็ว</b>เริ่มมี HE (grade 1) → ติดต่อศูนย์ปลูกถ่ายตับและเริ่มส่งต่อ · HE ≥2 → ICU</div>
   </div>
   <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
   <div class="contents" id="contents"></div>
@@ -245,17 +246,17 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="def" class="col">
   <div class="sec-num">01</div>
   <h2>นิยามและการแบ่งกลุ่ม</h2>
-  <div class="box key"><b>Acute liver failure (ALF)</b>การบาดเจ็บของตับรุนแรงเฉียบพลัน + <b>coagulopathy (INR ≥1.5)</b> + <b>hepatic encephalopathy (HE) ระดับใดก็ได้</b> ในผู้ที่ <b>ไม่มีโรคตับแข็งเดิม</b> และป่วย <b>&lt;26 สัปดาห์</b> · ข้อยกเว้นที่นับเป็น ALF แม้มีโรคตับเดิม: Wilson disease, HBV ติดจากแม่, autoimmune hepatitis ที่เพิ่งวินิจฉัย</div>
+  <div class="box key"><b>Acute liver failure (ALF) — ACG 2023</b>ตับบาดเจ็บเฉียบพลัน (LFT ผิดปกติ) + <b>coagulopathy (INR ≥1.5)</b> + <b>hepatic encephalopathy (HE) ระดับใดก็ได้</b> ในผู้ที่ <b>ไม่มีโรคตับหรือตับแข็งเดิม</b> และป่วย <b>&lt;26 สัปดาห์</b> · ข้อยกเว้น (อาจมี fibrosis มากอยู่เดิมแต่มาแบบเฉียบพลัน ยังนับเป็น ALF): <b>autoimmune hepatitis, Budd-Chiari syndrome, Wilson disease</b> · HBV reactivation = โรคเรื้อรังที่มาแบบเฉียบพลัน (ACG หน้า 1131–2)</div>
   <div class="grid2">
-    <div class="card c-acc"><h4>ระยะเวลาจากตัวเหลืองถึง HE (O'Grady 1993)</h4><ul><li><b>Hyperacute ≤7 วัน</b>: APAP, HAV/HEV, ischemic — <b>สมองบวมบ่อย</b> แต่ฟื้นเองได้มากกว่า</li><li><b>Acute 8–28 วัน</b>: HBV</li><li><b>Subacute 29 วัน–12 สัปดาห์</b>: DILI, idiopathic — สมองบวมน้อย แต่ <b>รอดโดยไม่ปลูกถ่ายน้อย</b></li></ul></div>
-    <div class="card c-warn"><h4>แยกจากภาวะที่คล้าย</h4><ul><li><b>Acute liver injury</b>: INR ≥1.5 แต่ <b>ยังไม่มี HE</b> (EASL) · ACG ใช้ "severe ALI" = INR &gt;2 + bilirubin &gt;3 ไม่มี HE — เฝ้าใกล้ชิด อาจเป็น ALF ได้</li><li><b>ACLF / decompensated cirrhosis</b>: มีตับแข็งเดิม (ม้ามโต ascites, เกล็ดเลือดต่ำเรื้อรัง, US ตับขรุขระ) — การจัดการต่างกันมาก — หน้า <a href="../cirrhosis/index.html">Cirrhosis</a></li><li>Sepsis + cholestasis, ischemic hepatitis หลังช็อก</li></ul></div>
+    <div class="card c-acc"><h4>แบ่งตามระยะเวลาเกิด HE (O'Grady; ACG Table 4)</h4><ul><li><b>Hyperacute &lt;7 วัน</b>: APAP, HAV/HEV, ischemic — <b>สมองบวมเสี่ยงสูง</b> แต่ <b>เสี่ยงตายต่ำสุด</b> (ฟื้นเองได้มากที่สุด)</li><li><b>Acute 7–21 วัน</b>: HBV — เสี่ยงปานกลางทั้งคู่</li><li><b>Subacute &gt;21 วัน ถึง &lt;26 สัปดาห์</b>: DILI ที่ไม่ใช่ APAP — สมองบวมน้อย แต่ <b>เสี่ยงตายสูง</b> (ไม่ปลูกถ่ายมักไม่รอด)</li><li>ระวัง: อย่าเข้าใจผิดว่า subacute ALF เป็นตับวายเรื้อรัง</li></ul></div>
+    <div class="card c-warn"><h4>แยกจากภาวะที่คล้าย (ACG Table 6)</h4><ul><li><b>Acute liver injury (ALI)</b>: ตับบาดเจ็บ + INR สูง แต่ <b>ยังไม่มี HE</b> — เมื่อเริ่มมี HE ให้ส่งต่อศูนย์ปลูกถ่ายตับ</li><li><b>ACLF / decompensated cirrhosis</b>: พบบ่อยกว่า ALF มาก · อายุมากกว่า มี portal hypertension · ตัวกระตุ้น: ติดเชื้อ สุรา เลือดออกทางเดินอาหาร · HE ตอบสนองต่อ lactulose/rifaximin · AKI แบบ HRS · ใช้ MELD — หน้า <a href="../cirrhosis/index.html">Cirrhosis</a></li><li>ภาพตับเล็ก ขรุขระ เป็นก้อน ชวนคิดตับแข็ง แต่ ALF ที่ตับตายมาก (massive collapse) ก็ทำให้ตับเล็กได้</li></ul></div>
   </div>
   <div class="tbl"><table>
-    <tr><th>HE (West Haven)</th><th>ลักษณะ</th></tr>
-    <tr><td>Grade I</td><td>สมาธิสั้น นอนกลับวัน สับสนเล็กน้อย</td></tr>
-    <tr><td>Grade II</td><td>ซึม สับสนเรื่องเวลา พฤติกรรมเปลี่ยน <b>asterixis</b></td></tr>
-    <tr><td>Grade III</td><td>ซึมมาก ปลุกตื่นได้ สับสนสถานที่ พูดไม่เข้าใจ</td></tr>
-    <tr><td>Grade IV</td><td>Coma</td></tr>
+    <tr><th>HE (West Haven)</th><th>ลักษณะ</th><th>ทำอะไรใน ALF (ACG Table 7)</th></tr>
+    <tr><td>Grade 1</td><td>สมาธิสั้น นอนกลับวัน คิดเลขบวกลบไม่ได้</td><td><b>ติดต่อศูนย์ปลูกถ่ายตับและเริ่มส่งต่อ</b> · CT สมองเป็น baseline</td></tr>
+    <tr><td>Grade 2</td><td>ซึม เฉยเมย สับสนเรื่องเวลา พฤติกรรมเปลี่ยน <b>asterixis</b></td><td><b>ย้ายเข้าไอซียู</b> · ประเมินระบบประสาททุก 1 ชม.</td></tr>
+    <tr><td>Grade 3</td><td>ง่วงมากเกือบ stupor ยังตอบสนองต่อการกระตุ้น สับสนมาก พฤติกรรมแปลก</td><td><b>ใส่ท่อช่วยหายใจ</b> · CT ซ้ำ · เลี่ยง opioid/benzodiazepine · ใช้ propofol (ครึ่งชีวิตสั้น)</td></tr>
+    <tr><td>Grade 4</td><td>Coma</td><td>CT ซ้ำ · พิจารณา ICP monitor ถ้าเป็นผู้รอปลูกถ่าย · เริ่มรักษาสมองบวม</td></tr>
   </table></div>
 </section>
 
@@ -263,72 +264,81 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="cause" class="col">
   <div class="sec-num">02</div>
   <h2>สาเหตุ — หาให้เจอเพราะหลายอย่างรักษาเฉพาะได้</h2>
+  <p>สาเหตุต่างกันตามภูมิภาค: ประเทศตะวันตก DILI (รวม APAP) นำ · ประเทศกำลังพัฒนา <b>ไวรัสตับอักเสบเฉียบพลัน</b> นำ · ACG อ้างข้อมูลไทย อุบัติการณ์ ALF ~6.3 ต่อแสนคน-ปี (Thanapirom 2019) · ACG Table 5</p>
   <div class="tbl"><table>
-    <tr><th>สาเหตุ</th><th>เบาะแส</th></tr>
-    <tr><td><b>Paracetamol (APAP)</b></td><td>กินครั้งเดียวเกินขนาด หรือกินซ้ำเกินขนาดหลายวัน (ปวดฟัน ไข้) · <b>ALT/AST สูงมาก (หลายพัน)</b> bilirubin ไม่สูงมาก · ปัจจัยเสี่ยง: สุรา อดอาหาร</td></tr>
-    <tr><td><b>ยา/สมุนไพร/อาหารเสริม (DILI)</b></td><td><b>ยาวัณโรค</b> (INH, rifampicin, PZA), antiepileptic, antibiotic, NSAIDs, สมุนไพร/ยาลูกกลอน/อาหารเสริมลดน้ำหนัก · มักเป็น subacute</td></tr>
-    <tr><td><b>ไวรัส</b></td><td>HAV, <b>HEV</b> (รุนแรงในหญิงตั้งครรภ์), <b>HBV เฉียบพลัน/reactivation</b> (หลังเคมีบำบัด rituximab steroid), HSV (ไข้สูง ALT สูงมาก bilirubin ต่ำ ±ผื่น), CMV/EBV</td></tr>
-    <tr><td><b>ไข้เลือดออก (dengue)</b></td><td>ในไทยเป็นสาเหตุสำคัญ · ช็อก/ขาดเลือด + พิษไวรัส · ALT/AST สูงมาก — หน้า <a href="../tropical-fever/index.html">Tropical fever</a> <span class="tag add">ไทย</span></td></tr>
-    <tr><td><b>Ischemic hepatitis</b></td><td>หลังช็อก/หัวใจล้มเหลว · ALT หลายพันลดเร็ว · LDH สูงมาก</td></tr>
-    <tr><td><b>ตั้งครรภ์</b></td><td>AFLP, HELLP (ไตรมาส 3) — คลอดเป็นการรักษา</td></tr>
-    <tr><td><b>Wilson disease</b></td><td>อายุน้อย <b>Coombs-negative hemolysis</b> · ALP ต่ำผิดปกติ · <b>ALP/bilirubin &lt;4 และ AST/ALT &gt;2.2</b></td></tr>
-    <tr><td>Autoimmune hepatitis</td><td>ANA/ASMA, IgG สูง (อาจไม่สูงในแบบเฉียบพลัน)</td></tr>
-    <tr><td>เห็ดพิษ (Amanita)</td><td>ท้องเสียรุนแรง 6–24 ชม.หลังกิน แล้วตับวายวันที่ 2–4</td></tr>
-    <tr><td>Budd-Chiari · malignant infiltration</td><td>ปวดท้อง ตับโต ascites · lymphoma/มะเร็งแพร่กระจาย</td></tr>
+    <tr><th>สาเหตุ</th><th>เบาะแส (ACG Table 5)</th></tr>
+    <tr><td><b>Paracetamol (APAP)</b></td><td>กินครั้งเดียว &gt;10–15 g (มักตั้งใจ) หรือ <b>กินเกินขนาดซ้ำหลายวัน (&gt;10 g)</b> จากหลายผลิตภัณฑ์ · อดอาหาร/สุราเพิ่มความเสี่ยงแม้ขนาดปกติ · <b>ALT/AST มัก &gt;3,000</b> bilirubin ไม่สูงมาก · ตับวายภายใน 72–96 ชม. พร้อม <b>น้ำตาลต่ำ lactic acidosis ไตวาย</b> · ระดับยาอาจตรวจไม่พบตอนมา</td></tr>
+    <tr><td><b>ยา/สมุนไพร/อาหารเสริม (idiosyncratic DILI)</b></td><td>Acute–subacute · ไม่ขึ้นกับขนาดยา · ยาต้านจุลชีพพบบ่อยสุด (<b>ยาวัณโรค</b>, sulfa, nitrofurantoin, terbinafine, azole) รองลงมา <b>สมุนไพร/อาหารเสริม/ลดน้ำหนัก/เพาะกาย</b> (รุนแรงกว่ายาแผนปัจจุบัน) · ตัวเหลืองมาก (bilirubin มัก &gt;15) แต่ ALT มัก &lt;1,000 · พยากรณ์ไม่ดี · DRESS, immune checkpoint inhibitor ก็เป็นได้</td></tr>
+    <tr><td><b>ไวรัส</b></td><td>มักมีไข้ ปวดเมื่อย คลื่นไส้ ท้องเสียนำมาก่อน · HAV · <b>HBV เฉียบพลัน/reactivation</b> (ภูมิคุ้มกันต่ำ เคมีบำบัด rituximab) · ร่วมกับ <b>HDV</b> เสี่ยงสูง · <b>HEV</b> (รุนแรงในหญิงตั้งครรภ์ ตายถึง 25%, มี DIC) · HCV แทบไม่ทำให้ ALF · HSV/VZV/CMV/EBV/adenovirus พบน้อย ส่วนใหญ่ในภูมิคุ้มกันต่ำ — <b>HSV อาจไม่มีผื่น</b></td></tr>
+    <tr><td><b>ไข้เลือดออก (dengue)</b></td><td>ไม่ได้อยู่ใน ACG แต่ในไทยเป็นสาเหตุสำคัญ · ช็อก/ขาดเลือด + ผลจากไวรัส · ALT/AST สูงมาก — หน้า <a href="../tropical-fever/index.html">Tropical fever</a> <span class="tag add">ไทย</span></td></tr>
+    <tr><td><b>Ischemic hepatitis</b></td><td>หัวใจล้มเหลว sepsis บาดเจ็บ หลังผ่าตัดใหญ่ (อาจไม่พบช่วงความดันต่ำ) · <b>AST &gt;10,000</b> · ทรานส์อะมิเนสลดเร็ว แต่ bilirubin/INR อาจแย่ลงตามมา · ดีขึ้นเมื่อระบบไหลเวียนกลับมา</td></tr>
+    <tr><td><b>ตั้งครรภ์</b></td><td><b>HELLP, AFLP</b> — ไตรมาส 3 หรือ <b>หลังคลอดทันที</b> · AST/ALT มัธยฐาน ~10 เท่า ULN · <b>ครึ่งหนึ่งเป็นสาเหตุแบบคนไม่ตั้งครรภ์ โดยเฉพาะ APAP</b> · AFLP ใช้ Swansea criteria ช่วยวินิจฉัย</td></tr>
+    <tr><td><b>Wilson disease</b></td><td>อายุน้อย (5–35 ปี) หญิง:ชาย 2:1 · <b>Coombs-negative hemolysis</b> ไตวายเร็ว · ALT/AST สูงไม่มาก · <b>ALP ปกติหรือต่ำมาก (มัก &lt;40)</b> · serum copper สูง · ceruloplasmin ต่ำได้ใน ALF ทุกสาเหตุ (ไม่จำเพาะ) · อาจเกิดหลังหยุดยาขับทองแดง · คัดกรองเร็ว: <b>ALP/bilirubin &lt;4 + AST/ALT &gt;2.2</b> (Korman 2008) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Autoimmune hepatitis</b></td><td>Acute–subacute · ANA, anti-smooth muscle (F-actin), IgG สูง (อาจไม่สูงในแบบเฉียบพลัน) · ALF ที่ "ไม่ทราบสาเหตุ" จำนวนมากที่แท้เป็น AIH · ชิ้นเนื้อช่วยวินิจฉัย</td></tr>
+    <tr><td><b>เห็ดพิษ (amatoxin: Amanita, Galerina, Lepiota)</b></td><td>ต้มแล้วพิษไม่หาย · <b>6–12 ชม.</b> ท้องเสีย อาเจียนรุนแรง → <b>24–36 ชม.</b> อาการดูดีขึ้นแต่ LFT แย่ลง → <b>4–7 วัน</b> ตับวาย/หลายอวัยวะล้มเหลว · ไม่มีการตรวจยืนยัน → <b>ถามประวัติกินเห็ดทุกราย</b></td></tr>
+    <tr><td><b>Budd-Chiari</b></td><td>หญิงวัย 30–50 ปี · ภาวะเลือดแข็งง่าย (ตั้งครรภ์ ยาคุม polycythemia vera, web) · <b>ปวดท้อง + ascites</b> · AST &gt;ALT ระดับพัน · Doppler US</td></tr>
+    <tr><td>Malignant infiltration</td><td>Lymphoma/leukemia มะเร็งเต้านม ลำไส้ใหญ่ · ปวดท้อง ตับโต · <b>ALP/GGT สูงร่วม</b> · ภาพถ่ายเห็นก้อน &lt;ครึ่ง → ต้องเจาะชิ้นเนื้อตับ/ไขกระดูก · พยากรณ์แย่มาก ไม่ปลูกถ่าย</td></tr>
+    <tr><td>Indeterminate</td><td>ทบทวนแล้วเกือบครึ่งพบสาเหตุ (บ่อยสุด <b>APAP</b> และ <b>AIH</b>) — อย่ารีบสรุปว่าไม่ทราบสาเหตุ</td></tr>
   </table></div>
 </section>
 
 <!-- 3 -->
 <section id="work" class="col">
   <div class="sec-num">03</div>
-  <h2>ตรวจอะไรตั้งแต่แรก</h2>
+  <h2>ตรวจอะไรตั้งแต่แรก (ACG Table 8)</h2>
+  <p>ซักประวัติ: ลำดับเวลาอาการ โรคตับเดิม สุรา ความเสี่ยงไวรัส <b>ยาทุกชนิดรวมยาซื้อเอง สมุนไพร อาหารเสริม</b> · ถ้าผู้ป่วยให้ประวัติไม่ได้ ต้องติดต่อญาติ/ผู้ที่อยู่ด้วย · ตรวจร่างกาย: สัญญาณชีพ ตัวเหลือง อาการโรคตับเรื้อรัง และ <b>ระดับความรู้สึกตัว</b></p>
   <div class="grid2">
-    <div class="card c-acc"><h4>ความรุนแรง</h4><ul><li>PT/INR, CBC, <b>glucose ถี่</b>, electrolyte (Na, K, PO₄, Mg), creatinine</li><li>LFT, LDH, <b>arterial/venous blood gas + lactate</b></li><li><b>Arterial ammonia</b></li><li>Fibrinogen, blood group (เตรียมปลูกถ่าย)</li><li>Lipase · β-hCG ในหญิง</li></ul></div>
-    <div class="card c-warn"><h4>สาเหตุ</h4><ul><li><b>Paracetamol level</b> (ทุกราย แม้ไม่ให้ประวัติ) · tox screen · alcohol</li><li>HAV IgM, <b>HBsAg, anti-HBc IgM, HBV DNA</b>, anti-HCV, <b>HEV IgM</b>, HSV PCR, dengue NS1/IgM</li><li>สงสัย Wilson (อายุ &lt;40): <b>ALP/bilirubin และ AST/ALT ratio</b> คัดกรองเร็วกว่า · ceruloplasmin ต่ำได้ใน ALF ทั่วไป (ไม่จำเพาะ) · urine copper, slit lamp</li><li>ANA, ASMA, IgG</li><li><b>Doppler US</b> ตับ (hepatic vein, portal vein, ก้อน, ตับแข็ง) · HIV</li></ul></div>
+    <div class="card c-acc"><h4>ทุกราย — ความรุนแรง/ทั่วไป</h4><ul><li>CBC, electrolyte/BUN/Cr/LFT, <b>Mg, PO₄</b>, LDH, CK, <b>glucose ถี่</b></li><li>PT/INR, fibrinogen</li><li><b>ABG + arterial lactate</b> · ammonia (ช่วยประเมินความเสี่ยงสมองบวม) <span class="tag add">เสริม</span></li><li>Hemoculture, urine culture</li><li><b>ABO group</b> (เตรียมปลูกถ่าย) · <b>β-hCG ในหญิงทุกราย</b></li><li>ECG, CXR, <b>US ช่องท้องพร้อม Doppler</b> (hepatic/portal vein, ก้อน, ตับแข็ง) · <b>CT สมองเมื่อมี HE</b></li></ul></div>
+    <div class="card c-warn"><h4>ทุกราย — สาเหตุ</h4><ul><li><b>Paracetamol level</b> (ทุกราย แม้ไม่ให้ประวัติ) · salicylate · urine drug screen · สุรา: ethyl glucuronide/PEth ถ้ามี</li><li>ไวรัส: HAV IgM, <b>HBsAg, anti-HBc IgM, HBV DNA</b>, HCV RNA, <b>HEV</b> (IgM/PCR — ไทยเป็นพื้นที่ระบาด), HSV/VZV/CMV/EBV PCR · dengue NS1/IgM <span class="tag add">ไทย</span></li><li>Autoimmune: ANA, anti-smooth muscle (F-actin), IgG/IgM/IgA</li><li>Metabolic: ceruloplasmin, ferritin · สงสัย Wilson: ALP/bilirubin, AST/ALT ratio, urine copper, slit lamp</li></ul></div>
   </div>
+  <div class="box note"><b>ผู้ที่อาจได้ปลูกถ่าย</b>HIV, QuantiFERON, cryptococcal Ag, treponemal Ab, ABO ซ้ำครั้งที่ 2, echocardiogram · ปรึกษาจิตแพทย์/สังคมสงเคราะห์/ศัลยแพทย์ตับ · <b>เจาะชิ้นเนื้อตับไม่ทำเป็น routine</b> — พิจารณาเมื่อสงสัย AIH, malignant infiltration หรือหาข้อห้ามปลูกถ่าย โดยเลือก <b>transjugular</b> (ACG key concepts)</div>
 </section>
 
 <!-- 4 -->
 <section id="apap" class="col">
   <div class="sec-num">04</div>
   <h2>Paracetamol hepatotoxicity</h2>
-  <p>การรักษาตั้งแต่ได้รับยาเกินขนาด (nomogram, NAC 2 ถุง) อยู่ในหน้า <a href="../toxicology/index.html">Toxicology</a> · บทนี้เน้นเมื่อมี <b>ตับบาดเจ็บ/ตับวายแล้ว</b></p>
+  <p>การรักษาตั้งแต่ได้รับยาเกินขนาด (nomogram) อยู่ในหน้า <a href="../toxicology/index.html">Toxicology</a> · บทนี้เน้นเมื่อมี <b>ตับบาดเจ็บ/ตับวายแล้ว</b></p>
   <div class="grid2">
-    <div class="card c-red"><h4>เมื่อมาช้าหรือมี ALF</h4><ul><li><b>ให้ NAC ทันที ไม่ว่ามากี่ชั่วโมงหลังกิน</b> — ยังได้ประโยชน์แม้มาช้ากว่า 24 ชม. หรือมี ALF แล้ว (ACG 2023: strong)</li><li>Nomogram ใช้ไม่ได้ในกรณี: ไม่ทราบเวลากิน, กินหลายครั้ง (repeated supratherapeutic), มาช้า &gt;24 ชม., ยาออกฤทธิ์นาน</li><li>ไม่ทราบเวลา + มี APAP ในเลือดหรือ ALT สูง → ให้ NAC</li></ul></div>
-    <div class="card c-ok"><h4>หยุด NAC เมื่อไร (2023 consensus)</h4><ul><li>APAP ในเลือด <b>ตรวจไม่พบ</b> (&lt;10 µg/mL)</li><li><b>INR &lt;2</b> และกำลังดีขึ้น</li><li><b>ALT ลดลง</b> (เช่น ลดจากค่าสูงสุด ≥25–50%) หรือปกติ</li><li>อาการทางคลินิกดีขึ้น (ไม่มี HE)</li><li>ไม่ครบ → ให้ NAC ต่อในอัตราของถุงสุดท้าย</li></ul></div>
+    <div class="card c-red"><h4>NAC และ decontamination</h4><ul><li><b>สงสัย APAP → ให้ NAC เร็วที่สุด</b> <span class="rec s1">Strong · low</span> (ACG Rec 6) — <b>ให้ได้แม้มาช้า</b> (มีประโยชน์จริง) โดยเฉพาะเมื่อไม่ทราบเวลากิน · ไม่ต้องรอผลตรวจ</li><li>IV เป็นทางหลัก: <b>150 mg/kg ใน 1 ชม. → 50 mg/kg ใน 4 ชม. (12.5 mg/kg/ชม.) → 100 mg/kg ใน 16 ชม. (6.25 mg/kg/ชม.)</b> รวม 300 mg/kg (ACG Table 10) · ใน ALF อาจใช้สูตรขยาย (Fontana 2008)</li><li><b>Activated charcoal 1–2 g/kg ครั้งเดียว</b> ถ้ากินมา <b>≤4 ชม.</b> (ACG key concept) — ระวังสำลักในผู้ที่ซึม</li><li>Nomogram ใช้ได้ดีเฉพาะกินครั้งเดียวทราบเวลา · ใช้ไม่ได้ใน กินซ้ำหลายวัน ยาออกฤทธิ์นาน ไม่ทราบเวลา</li></ul></div>
+    <div class="card c-ok"><h4>ให้ NAC นานเท่าไร</h4><ul><li><b>ปรับตามอาการและผลเลือดรายบุคคล</b> (ACG key concept) — ให้ต่อหลังครบสูตรถ้า <b>INR &gt;1.5 หรือยังมี HE</b></li><li>จุดหยุดที่ใช้บ่อยสุด (ACG): <b>INR &lt;1.5</b></li><li>เกณฑ์อื่นที่มีผู้เสนอ: <b>ALT &lt;50% ของค่าสูงสุด</b> (หรือ &lt;1,000 สามครั้งติด), <b>INR &lt;2</b>, และ/หรือ <b>APAP ตรวจไม่พบ</b> (สอดคล้อง US/Canada consensus 2023)</li><li>ยังไม่ครบ → ให้ต่อในอัตราของถุงสุดท้าย</li></ul></div>
   </div>
-  <div class="box warn"><b>APAP-ALF มีลักษณะเฉพาะ</b>Hyperacute · สมองบวมบ่อย · <b>metabolic acidosis/lactate สูง</b> และ AKI พบบ่อย · พยากรณ์ใช้ <b>King's College criteria แบบ APAP</b> (pH &lt;7.30 หลังให้สารน้ำ หรือ INR &gt;6.5 + Cr &gt;3.4 + HE III–IV) · การฟื้นเองได้มากกว่า non-APAP ถ้าผ่านช่วงวิกฤต</div>
+  <div class="box warn"><b>APAP-ALF มีลักษณะเฉพาะ</b>Hyperacute · สมองบวมบ่อย · <b>lactic acidosis, น้ำตาลต่ำ, AKI</b> พบบ่อย · ส่วนใหญ่ฟื้นได้ด้วยการรักษาเต็มที่ แต่ตาย ~28% และ <b>ต้องปลูกถ่ายได้ถึง 1/3</b> · แย่ลงเร็วกว่า non-APAP จึงต้องส่งต่อเร็ว · พยากรณ์ด้วย <b>King's College criteria แบบ APAP</b> หรือ MELD (บทที่ 09)</div>
 </section>
 
 <!-- 5 -->
 <section id="nac" class="col">
   <div class="sec-num">05</div>
   <h2>NAC ใน non-APAP ALF</h2>
-  <div class="box key"><b>ACG 2023: แนะนำ IV NAC ใน non-APAP ALF</b>ได้ประโยชน์ชัดที่สุดใน <b>HE grade I–II</b> (เพิ่มการรอดโดยไม่ต้องปลูกถ่าย — Lee 2009) · ไม่ได้ประโยชน์ชัดเมื่อ HE III–IV แต่ยังให้ได้ · ใช้ได้ใน DILI, HBV, autoimmune, idiopathic (และนิยมใช้ใน dengue-associated ALF ในไทย แม้หลักฐานจำกัด) · <b>เด็ก</b>: RCT (Squires 2013) ไม่พบประโยชน์ — ข้อแนะนำนี้สำหรับผู้ใหญ่</div>
+  <div class="box key"><b>ACG Rec 7: non-APAP ALF → เริ่ม IV NAC</b><span class="rec s1">Strong · moderate</span> (ในเอกสารใช้คำว่า "suggest" แต่ GRADE ระบุ strong) · RCT ของ US ALFSG (Lee 2009): <b>รอดโดยไม่ต้องปลูกถ่าย 52% vs 30%</b> เฉพาะกลุ่ม <b>HE grade I–II</b> · meta-analysis 883 รายพบอัตรารอดดีขึ้น · ใช้ใน DILI ("พิจารณาใน coma grade ต้นๆ"), indeterminate, ischemic (รายงานผู้ป่วย), เห็ดพิษ · <b>เด็ก</b>: RCT (Squires 2013) ไม่พบประโยชน์ <span class="tag add">เสริม</span> · ในไทยนิยมใช้ใน dengue-associated ALF แม้หลักฐานจำกัด <span class="tag add">ไทย</span></div>
   <div class="tbl"><table>
-    <tr><th>สูตร 72 ชม. (Lee 2009)</th><th>ขนาด</th></tr>
+    <tr><th>สูตร 72 ชม. (Lee 2009 — ACG อ้างอิง)</th><th>ขนาด</th></tr>
     <tr><td>ถุงที่ 1</td><td><b>150 mg/kg</b> ใน 1 ชม.</td></tr>
     <tr><td>ถุงที่ 2</td><td><b>12.5 mg/kg/ชม.</b> × 4 ชม. (= 50 mg/kg)</td></tr>
     <tr><td>ถุงที่ 3</td><td><b>6.25 mg/kg/ชม.</b> × 67 ชม.</td></tr>
   </table></div>
-  <p class="muted" style="font-size:.88rem">ผลข้างเคียง: anaphylactoid reaction (ผื่น หลอดลมตีบ) ส่วนใหญ่ในถุงแรก — หยุดชั่วคราว ให้ antihistamine แล้วให้ต่อช้าลง · ระวังปริมาณน้ำในผู้ป่วยน้ำหนักน้อย/ไตวาย</p>
+  <p class="muted" style="font-size:.88rem">ผลข้างเคียง: anaphylactoid reaction (ผื่น หลอดลมตีบ) ส่วนใหญ่ในถุงแรก — หยุดชั่วคราว ให้ antihistamine แล้วให้ต่อช้าลง · ระวังปริมาณน้ำในผู้ป่วยน้ำหนักน้อย/ไตวาย · ACG แจ้งว่าสูตรแบบ APAP ก็ใช้ได้</p>
 </section>
 
 <!-- 6 -->
 <section id="spec" class="col">
   <div class="sec-num">06</div>
-  <h2>รักษาเฉพาะตามสาเหตุ</h2>
+  <h2>รักษาเฉพาะตามสาเหตุ (ACG Table 10)</h2>
   <div class="tbl"><table>
     <tr><th>สาเหตุ</th><th>การรักษาเฉพาะ</th></tr>
-    <tr><td><b>HBV (เฉียบพลัน/reactivation)</b></td><td><b>Entecavir หรือ tenofovir ทันที</b> (ACG 2023: strong) · ป้องกัน: ตรวจ HBsAg/anti-HBc ก่อนเคมีบำบัด/rituximab แล้วให้ยาป้องกัน</td></tr>
-    <tr><td><b>HSV</b></td><td><b>Acyclovir IV 10 mg/kg ทุก 8 ชม.</b> — เริ่มทันทีเมื่อสงสัย (ไข้ ALT สูงมาก bilirubin ต่ำ ตั้งครรภ์/ภูมิคุ้มกันต่ำ)</td></tr>
-    <tr><td><b>DILI/สมุนไพร</b></td><td>หยุดยาที่สงสัยทั้งหมด · NAC · ยาวัณโรคตับอักเสบ → หยุดยา แล้วพิจารณาสูตรที่ไม่เป็นพิษต่อตับ (ปรึกษา)</td></tr>
-    <tr><td><b>AFLP/HELLP</b></td><td><b>คลอดโดยเร็ว</b> ร่วมกับสูติแพทย์</td></tr>
-    <tr><td><b>Autoimmune hepatitis</b></td><td>Corticosteroid IV (เช่น methylprednisolone ~1 mg/kg/วัน ≈60 mg) ใน acute severe AIH (ACG) · ไม่ดีขึ้นใน ~7 วัน หรือกลายเป็น ALF → ประเมินปลูกถ่าย · ระวังติดเชื้อ</td></tr>
-    <tr><td><b>Wilson disease</b></td><td>ALF จาก Wilson มัก <b>ต้องปลูกถ่าย</b> · plasma exchange/albumin dialysis เป็นสะพาน</td></tr>
-    <tr><td><b>Amanita</b></td><td>Activated charcoal (ถ้ามาเร็ว) · <b>silibinin IV</b> (ไม่มี → penicillin G ขนาดสูง) · NAC · ส่งต่อปลูกถ่ายเร็ว · ปรึกษา 1367</td></tr>
-    <tr><td><b>Budd-Chiari</b></td><td>Anticoagulation · TIPS/ปลูกถ่าย</td></tr>
-    <tr><td>Ischemic hepatitis</td><td>แก้ระบบไหลเวียน/หัวใจ · มักดีขึ้นเอง</td></tr>
+    <tr><td><b>HBV reactivation</b></td><td><b>Entecavir หรือ tenofovir</b> <span class="rec s1">Strong · low</span> (ACG Rec 8) · ไม่มีข้อมูล TAF ในภาวะนี้ · ป้องกัน: ตรวจ HBsAg/anti-HBc ก่อนเคมีบำบัด/rituximab แล้วให้ยาป้องกัน — หน้า <a href="../hepbc/index.html">Hepatitis B/C</a></td></tr>
+    <tr><td><b>HBV เฉียบพลันครั้งแรก</b></td><td>ACG: ประโยชน์ของยาต้านไวรัส <b>ยังขัดแย้ง</b> (ไวรัสมักต่ำแล้ว ตับเสียจากภูมิคุ้มกัน) · แนวทางอื่น (EASL) แนะนำให้ nucleos(t)ide analogue และในทางปฏิบัติมักให้ เพราะแยกจาก reactivation ยาก · HDV ร่วม: ไม่มียาเฉพาะ (ห้าม interferon) · พยากรณ์ไม่ดี (ถึง 75% ต้องปลูกถ่ายหรือตาย)</td></tr>
+    <tr><td><b>HSV / VZV</b></td><td><b>Acyclovir IV เริ่มทันทีเมื่อสงสัย</b> ไม่ต้องรอ PCR (ACG key concept) · ขนาดทั่วไป 10 mg/kg ทุก 8 ชม. <span class="tag add">เสริม</span> · ดื้อยา (พบถึง 10% ในภูมิคุ้มกันต่ำ) → foscarnet · ปลูกถ่ายแล้วต้องกินยากดไวรัสตลอดชีวิต</td></tr>
+    <tr><td>CMV · EBV</td><td>CMV → <b>ganciclovir IV</b> · EBV → acyclovir หรือ ganciclovir</td></tr>
+    <tr><td>HAV · HEV</td><td>รักษาประคับประคอง (ไม่มียาต้านไวรัสที่ได้ผล) · HAV ที่แย่: ปลูกถ่ายเร็วผลดี · HEV-ALF: ปลูกถ่ายเป็นทางเดียว</td></tr>
+    <tr><td><b>DILI/สมุนไพร</b></td><td><b>หยุดยาที่สงสัยทั้งหมดทันที</b> · NAC (HE ต้นๆ) · steroid เฉพาะรายที่มีลักษณะ hypersensitivity/autoimmune (เช่น minocycline, nitrofurantoin) · ตรวจสอบยาใน LiverTox · ยาวัณโรคตับอักเสบ → หยุดยา แล้วปรึกษาเรื่องสูตรใหม่</td></tr>
+    <tr><td><b>Autoimmune hepatitis (acute severe)</b></td><td><b>Corticosteroid IV</b> (ACG key concept) · ขนาดเทียบ prednisolone 0.5–1 mg/kg/วัน หรือ ~60 mg/วัน · <b>ไม่ดีขึ้นใน ~3 วัน</b> (INR/bilirubin ไม่ลด — SURFASA) → ส่งปลูกถ่าย · <b>ถ้ากลายเป็น ALF แล้ว → ประเมินปลูกถ่ายทันที</b> (steroid ได้ผลไม่แน่นอน) · การให้ยาต้องไม่ทำให้การประเมินปลูกถ่ายช้า · เฝ้าระวังติดเชื้อ · ไม่แนะนำ budesonide/tacrolimus</td></tr>
+    <tr><td><b>Wilson disease</b></td><td><b>เริ่มประเมินปลูกถ่ายตั้งแต่ตอนวินิจฉัย</b> (ACG key concept) — ยาขับทองแดง (penicillamine, trientine) ไม่ได้ผลในระยะนี้ · plasma exchange, albumin dialysis, continuous hemofiltration ลดทองแดงเป็นสะพานชั่วคราว · ไม่ต้องรอผล copper ในเนื้อตับ/ยีน</td></tr>
+    <tr><td><b>HELLP / AFLP</b></td><td><b>คลอดโดยเร็วที่สุด</b> ร่วมกับสูติแพทย์ + ประคับประคอง (ACG key concept) · หลังคลอดแล้วไม่ดีขึ้น → ประเมินปลูกถ่ายทันที · HELLP ระวังเลือดออก/ก้อนเลือด/ตับแตก</td></tr>
+    <tr><td><b>เห็ดพิษ (amatoxin)</b></td><td><b>Silibinin IV เร็วที่สุด</b> (เช่น 5 mg/kg ใน 1 ชม. แล้ว 20 mg/kg/วัน × 6 วัน หรือ 20–50 mg/kg/วัน × 48–96 ชม.) · ไม่มี → <b>penicillin G IV</b> (1 ล้าน IU/kg วันแรก, 1.5 ล้าน IU/kg วันที่ 2–3) <span class="rec">Conditional · very low</span> (ACG Rec 9) · <b>NAC</b> · ล้างท้องภายใน 1 ชม. (ถ้าไม่มีข้อห้าม) + <b>activated charcoal ซ้ำ</b> (50 g ทุก 4 ชม. หรือ 25 g ทุก 2 ชม.) · IV fluid ให้ปัสสาวะ 100–200 mL/ชม. 4–5 วัน · ฟอกเลือดไม่ช่วย · <b>Escudié criteria</b>: กินถึงท้องเสีย &lt;8 ชม. หรือ prothrombin index &lt;10% (≈INR &gt;6) ตั้งแต่วันที่ 4 → ประเมินปลูกถ่ายได้ก่อนมี HE · ปรึกษาศูนย์พิษวิทยา (รามาธิบดี 1367) <span class="tag add">ไทย</span></td></tr>
+    <tr><td><b>Budd-Chiari</b></td><td><b>Heparin เป็นการรักษาแรก</b> ถ้าไม่มีข้อห้าม (เริ่มเร็วรอดมากกว่า) · angioplasty/stent (ดีใน membranous web) · <b>ไม่ตอบสนองต่อ anticoagulation → TIPS</b> (PTFE-covered) · ไม่ตอบสนองทั้งหมด → ปลูกถ่าย · หาภาวะเลือดแข็งง่าย</td></tr>
+    <tr><td>Ischemic hepatitis</td><td>แก้ระบบไหลเวียน/หัวใจ (vasopressor ถ้าจำเป็น) · มักไม่ต้องปลูกถ่าย · NAC มีรายงานผู้ป่วยว่าช่วย</td></tr>
+    <tr><td>Malignant infiltration</td><td>รักษามะเร็งถ้าทำได้ · ไม่ปลูกถ่ายตับ</td></tr>
   </table></div>
 </section>
 
@@ -337,9 +347,10 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">07</div>
   <h2>ดูแลในไอซียู</h2>
   <div class="grid2">
-    <div class="card c-red"><h4>สมองบวม (intracranial hypertension)</h4><ul><li>เสี่ยงสูง: <b>HE III–IV + ammonia &gt;150–200 µmol/L</b> + hyperacute + อายุน้อย + ต้องใช้ vasopressor/CRRT</li><li><b>ใส่ท่อช่วยหายใจเมื่อ HE III–IV</b> · หัวสูง 30° · เลี่ยงไอ/เบ่ง · sedation สั้น (propofol)</li><li><b>Na 145–155 mmol/L</b> ด้วย hypertonic saline (ป้องกัน) · ICP พุ่ง: hypertonic saline หรือ mannitol 0.5–1 g/kg bolus</li><li>ไข้ → ทำให้ปกติ · PaCO₂ ปกติ (hyperventilation สั้นๆ เฉพาะกู้ชีพ)</li><li><b>Early CRRT</b> ลด ammonia (ACG 2023 conditional/หลักฐานต่ำ: HE ≥II + ammonia สูง แม้ไม่มีข้อบ่งชี้ RRT ทั่วไป)</li><li><b>Lactulose/rifaximin: ไม่มีหลักฐานว่าได้ประโยชน์</b> (ACG 2023) — ไม่ใช้เป็น routine (ท้องอืด สำลัก บดบังการผ่าตัด)</li></ul></div>
-    <div class="card c-acc"><h4>ระบบอื่น</h4><ul><li><b>Glucose ทุก 1–2 ชม.</b> · 10% dextrose drip เมื่อต่ำ</li><li>ไหลเวียน: สารน้ำพอเหมาะ (crystalloid) · <b>norepinephrine เป็น vasopressor แรก</b> (ACG strong) · MAP ≥65 (CPP 50–80 ถ้าวัด ICP) · ดื้อ → vasopressin, ตรวจ cortisol</li><li><b>AKI</b> พบบ่อย (โดยเฉพาะ APAP) → CRRT (ไม่ใช่ intermittent HD เพราะ BP แกว่ง/สมองบวม)</li><li><b>Hypophosphatemia</b> = ตับกำลังฟื้น (PO₄ สูงคงที่ = พยากรณ์ไม่ดี)</li><li>โภชนาการทาง enteral แต่เนิ่นๆ · โปรตีน 1–1.5 g/kg/วัน (ลดชั่วคราวถ้า ammonia สูงมาก)</li><li>ไม่ให้ยากันชักป้องกัน · PPI ป้องกันแผลเครียด</li></ul></div>
+    <div class="card c-red"><h4>สมอง: HE และสมองบวม</h4><ul><li><b>HE grade ≥2 → ไอซียู</b> · <b>grade 3–4 → ใส่ท่อช่วยหายใจ</b> (ACG key concepts) · sedation ด้วย propofol</li><li><b>Early CRRT ลด ammonia</b> ใน HE ≥2 แม้ไม่มีข้อบ่งชี้ฟอกไตทั่วไป <span class="rec">Conditional · very low</span> (ACG Rec 1) — ammonia ที่ลดลงสัมพันธ์กับรอดมากขึ้น</li><li>ammonia สูงมาก (เช่น &gt;150–200 µmol/L) + hyperacute + อายุน้อย + ต้องใช้ vasopressor/RRT = เสี่ยงสมองบวมสูง <span class="tag add">เสริม (EASL)</span></li><li>ICP สูง แนวแรก: <b>hyperosmolar (mannitol หรือ hypertonic saline)</b>, hyperventilation (ชั่วคราว), CRRT · หัวสูง 30° ไข้ให้ปกติ <span class="tag add">เสริม</span></li><li><b>Na</b>: ห้ามต่ำ · ที่ใช้กันทั่วไปตั้งเป้า <b>145–150 mmol/L</b> (ACG: เป็นแนวปฏิบัติ ไม่มีหลักฐานสนับสนุนชัด) · แก้ช้า <b>ไม่เกิน 6–8 mmol/L ใน 24 ชม.</b> · 3% NaCl bolus 250–500 mL หรือ drip ให้ Na <b>&lt;160</b></li><li><b>Lactulose/rifaximin: ไม่มีหลักฐานชัดทั้งสนับสนุนหรือคัดค้าน</b> (ACG) — บางที่ใช้ lactulose ทางปากใน HE 1–2 ที่ยังป้องกันทางเดินหายใจได้ · <b>หยุดเมื่อ HE 3–4/ใส่ท่อ</b> · ระวังลำไส้โป่งขัดขวางการผ่าตัดปลูกถ่าย</li><li>ไม่แนะนำเป็น routine: ICP monitor (พิจารณาในศูนย์ที่ชำนาญ รายที่คัดเลือก), hypothermia, ornithine phenylacetate</li></ul></div>
+    <div class="card c-acc"><h4>ไหลเวียน · ไต · เมตาบอลิก</h4><ul><li>ไหลเวียนคล้าย septic shock (CO สูง SVR ต่ำ) → <b>IV fluid ก่อน</b> (ระวังเกินจนสมองบวม)</li><li>ความดันต่ำหลังให้สารน้ำ → <b>norepinephrine เป็นตัวแรก</b> <span class="rec s1">Strong · moderate</span> (Rec 4) · ไม่ตอบสนอง → <b>เพิ่ม vasopressin</b> <span class="rec">Conditional · low</span> (Rec 5) · เป้า MAP ให้ <b>CPP 60–80 mmHg</b></li><li><b>AKI</b> พบถึง 70% (30% ต้องฟอกไต) ส่วนใหญ่ไตฟื้นเมื่อหาย · ฟอกไตเร็วเมื่อ AKI, กรด-ด่าง/เกลือแร่ผิดปกติ, น้ำเกิน · <b>เลือก CRRT มากกว่า intermittent HD</b> (ACG key concept)</li><li><b>Glucose และสติทุก 1–2 ชม.</b> (Figure 1: ทุก 1 ชม. ในศูนย์) · น้ำตาลต่ำ → <b>10% dextrose drip</b> ให้ glucose <b>150–180 mg/dL</b> · <b>เลี่ยงสารน้ำ hypotonic</b></li><li><b>Mg, PO₄ ทุก 8–12 ชม.</b> เติมตามต้องการ · PO₄ ต่ำ = ตับกำลังฟื้น/สร้างใหม่ <span class="tag add">เสริม</span></li><li>โภชนาการ: กินได้ถ้า HE น้อย · <b>คาดว่ากินไม่ได้ใน 5–7 วัน → enteral</b> สูตรมาตรฐาน · โปรตีน <b>1.0–1.5 g/kg/วัน</b> · ammonia &gt;150 → อาจเลื่อนโปรตีน 24–48 ชม. แล้วเริ่มที่ 1.0 g/kg พร้อมติดตาม ammonia</li></ul></div>
   </div>
+  <div class="box note"><b>อุปกรณ์พยุงตับ</b>High-volume plasma exchange (8–12 L หรือ 15% ของน้ำหนักตัว ด้วย FFP) เคยพบว่าเพิ่มการรอดโดยไม่ปลูกถ่าย แต่ ACG สรุปว่า <b>หลักฐานยังไม่พอจะแนะนำหรือคัดค้านเป็น routine</b> ทั้ง HVPE และ artificial/bioartificial liver support (MARS ฯลฯ) · Wilson ใช้ plasma exchange เป็นสะพานได้</div>
 </section>
 
 <!-- 8 -->
@@ -347,8 +358,8 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">08</div>
   <h2>Coagulopathy และการติดเชื้อ</h2>
   <div class="grid2">
-    <div class="card c-warn"><h4>เลือดไม่แข็งตัว — อย่ารีบแก้ตัวเลข</h4><ul><li>INR ใน ALF <b>ไม่สะท้อนความเสี่ยงเลือดออก</b> (สารต้านการแข็งตัวก็ลดด้วย — rebalanced hemostasis)</li><li><b>ไม่แก้ INR/เกล็ดเลือดเป็น routine</b> เมื่อไม่มีเลือดออกหรือหัตถการเสี่ยงสูง (ACG 2023) · <b>INR เป็นตัวพยากรณ์</b> — ให้ FFP ทำให้ประเมินไม่ได้และเกินน้ำ</li><li>Vitamin K 10 mg IV ครั้งเดียวได้ (แก้การขาด)</li><li>ก่อนหัตถการเสี่ยงสูง (ICP monitor, CVC บางตำแหน่ง): platelet ~50,000, fibrinogen &gt;100–150 mg/dL · ใช้ viscoelastic test ถ้ามี</li></ul></div>
-    <div class="card c-vio"><h4>ติดเชื้อ</h4><ul><li>ติดเชื้อแบคทีเรีย/รา พบบ่อย และเป็นสาเหตุตายสำคัญ</li><li><b>ไม่ให้ antibiotic ป้องกันเป็น routine</b> (ACG 2023 conditional) · เพาะเชื้อเป็นระยะ</li><li><b>เริ่ม antibiotic ทันที</b> เมื่อ: HE แย่ลง, SIRS, ความดันต่ำต้องใช้ยาเพิ่ม, อยู่ในรายชื่อรอปลูกถ่าย</li></ul></div>
+    <div class="card c-warn"><h4>เลือดไม่แข็งตัว — อย่ารีบแก้ตัวเลข</h4><ul><li>INR ใน ALF <b>ไม่สะท้อนความเสี่ยงเลือดออก</b> — สารต้านการแข็งตัวก็ลดด้วย (rebalanced hemostasis) · เลือดออกรุนแรงพบน้อย (เป็นสาเหตุตาย ~5%)</li><li><b>ไม่แก้ coagulopathy เป็น routine</b> ถ้าไม่มีเลือดออกหรือไม่ได้จะทำหัตถการเสี่ยงสูง <span class="rec no">Conditional · very low</span> (ACG Rec 2) — FFP/cryo/เกล็ดเลือดเพิ่มความเสี่ยงตายหรือต้องปลูกถ่าย (น้ำเกิน TRALI ลิ่มเลือด) · INR เป็นตัวพยากรณ์ด้วย</li><li><b>Viscoelastic test</b> (ROTEM/TEG) อาจประเมินได้แม่นกว่า INR</li><li>ก่อนหัตถการเสี่ยงสูง (เช่น ICP monitor) อาจต้องแก้ก่อน · Vitamin K 10 mg IV ครั้งเดียวทำได้ <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-vio"><h4>ติดเชื้อ</h4><ul><li>ติดเชื้อแบคทีเรียพบบ่อยและสัมพันธ์กับการตาย · <b>เชื้อราถึง 32%</b></li><li><b>ไข้/WBC สูงไม่มีได้ถึง 30%</b> → ประเมินหาการติดเชื้อตั้งแต่แรก · procalcitonin ใช้ไม่ได้</li><li><b>ไม่ให้ยาต้านจุลชีพป้องกันเป็น routine</b> <span class="rec no">Conditional · low</span> (ACG Rec 3) — ไม่ลด bloodstream infection หรือการตายที่ 21 วัน</li><li><b>เพาะเชื้อเฝ้าระวังเป็นระยะ</b> (เลือด ปัสสาวะ เสมหะ)</li><li><b>อาการแย่ลง → พิจารณา antibiotic + antifungal แบบ empiric</b> ตามเชื้อดื้อยาในพื้นที่</li></ul></div>
   </div>
 </section>
 
@@ -356,13 +367,19 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="lt" class="col">
   <div class="sec-num">09</div>
   <h2>ปลูกถ่ายตับและการส่งต่อ</h2>
-  <div class="box key"><b>ติดต่อศูนย์ปลูกถ่ายตับ "วันแรก" ที่เป็น ALF</b>ผู้ป่วยแย่ลงเร็วจนส่งต่อไม่ได้ — ไม่ต้องรอให้เข้า King's College criteria · ส่งต่อขณะยังปลอดภัย (ก่อน HE III–IV หรือใส่ท่อก่อนส่ง) · ACG 2023: ใช้ <b>King's College criteria หรือ MELD</b> (MELD &gt;25 = เสี่ยงสูง) พยากรณ์ความจำเป็นต้องปลูกถ่าย</div>
+  <div class="box key"><b>ติดต่อศูนย์ปลูกถ่ายตับแต่เนิ่นๆ</b>ACG: ปรึกษา hepatology/GI ทันทีที่พบ ALF · <b>เริ่มมี HE ใน ALI → ส่งต่อศูนย์ปลูกถ่าย</b> (APAP แย่ลงเร็วเป็นพิเศษ) · การส่งต่อต้องใช้เวลาจัดการ ผู้ป่วยแย่ลงเร็ว · ระบุผู้เสี่ยงพยากรณ์แย่ให้ได้เร็วเพื่อส่งต่อ · ใช้ <b>King's College criteria (KCC) หรือ MELD</b> — <b>เข้า KCC หรือ MELD &gt;25 = เสี่ยงผลลัพธ์แย่</b> <span class="rec">Conditional · low</span> (ACG Rec 10)</div>
   <div class="tbl"><table>
-    <tr><th>King's College criteria</th><th>เกณฑ์ (เข้าเกณฑ์ = พยากรณ์รอดโดยไม่ปลูกถ่ายต่ำ)</th></tr>
-    <tr><td><b>APAP</b></td><td><b>Arterial pH &lt;7.30</b> หลังให้สารน้ำเพียงพอ (ไม่ขึ้นกับ HE) <b>หรือ</b> ครบทั้ง 3 ใน 24 ชม.: <b>INR &gt;6.5</b> + <b>Cr &gt;3.4 mg/dL</b> + <b>HE III–IV</b> · (modified — Bernal 2002: lactate &gt;3.5 ที่ 4 ชม.หลังรับไว้ หรือ &gt;3.0 ที่ 12 ชม.หลังให้สารน้ำ)</td></tr>
-    <tr><td><b>Non-APAP</b></td><td><b>INR &gt;6.5</b> (ไม่ขึ้นกับ HE) <b>หรือ</b> ≥3 ใน 5: อายุ &lt;10 หรือ &gt;40 ปี · สาเหตุ non-A non-B/ยา/halothane · ตัวเหลืองก่อน HE &gt;7 วัน · INR &gt;3.5 · bilirubin &gt;17.5 mg/dL</td></tr>
+    <tr><th>ช่วงเวลา (ACG Figure 1)</th><th>ทำอะไร</th></tr>
+    <tr><td>ห้องฉุกเฉิน 2–4 ชม.แรก</td><td>ทำให้คงที่ · ส่งตรวจเบื้องต้น · มี HE → ไอซียู · <b>ติดต่อศูนย์ปลูกถ่าย</b></td></tr>
+    <tr><td>ไอซียู/ศูนย์ปลูกถ่าย 4–12 ชม.</td><td>ปรึกษาจิตเวช/สังคมสงเคราะห์/ศัลยกรรมตับ ประเมินสิทธิ์ปลูกถ่าย · electrolyte/INR/PO₄ ทุก 6 ชม. · <b>glucose และ neuro check ทุก 1 ชม.</b> · ป้องกันสมองบวม · เหมาะสม → ขึ้นทะเบียน (status 1A)</td></tr>
   </table></div>
-  <p class="muted" style="font-size:.88rem">King's College criteria จำเพาะสูงแต่ไวปานกลาง — ไม่เข้าเกณฑ์ไม่ได้แปลว่าปลอดภัย · ข้อห้ามปลูกถ่ายที่พบบ่อย: สมองบวมรุนแรงไม่ตอบสนอง, sepsis ไม่ควบคุม, multiorgan failure รุนแรง, ปัญหาทางจิตสังคม (ตั้งใจกินยาซ้ำ) — ตัดสินโดยศูนย์</p>
+  <div class="tbl"><table>
+    <tr><th>King's College criteria</th><th>เกณฑ์ (เข้าเกณฑ์ = โอกาสรอดโดยไม่ปลูกถ่ายต่ำ)</th></tr>
+    <tr><td><b>APAP</b><br><small>sens 65% · spec 93%</small></td><td><b>Arterial pH &lt;7.30</b> หลังให้สารน้ำเพียงพอ <b>หรือ</b> ครบทั้ง 3: <b>INR &gt;6.5</b> + <b>Cr &gt;3.4 mg/dL</b> + <b>HE III–IV</b> · เพิ่ม lactate (&gt;3 mmol/L หลังให้สารน้ำ) ทำให้ไวขึ้น (~91%) — modified (Bernal 2002): lactate &gt;3.5 ที่ 4 ชม. หรือ &gt;3.0 ที่ 12 ชม.</td></tr>
+    <tr><td><b>Non-APAP</b><br><small>sens 68% · spec 82%</small></td><td><b>INR &gt;6.5</b> (ไม่ขึ้นกับ HE) <b>หรือ</b> ≥3 ใน 5: สาเหตุ indeterminate/DILI · อายุ &gt;40 (ต้นฉบับรวม &lt;10) · ตัวเหลืองก่อน HE &gt;7 วัน · bilirubin &gt;17.5 mg/dL (ACG ใช้ 17.4) · INR &gt;3.5</td></tr>
+    <tr><td><b>MELD</b></td><td>INR, bilirubin, creatinine · meta-analysis: ไวกว่า KCC (74% vs 59%) แต่จำเพาะน้อยกว่า (67% vs 79%) · KCC ทำนายดีกว่าใน APAP, MELD ดีกว่าใน non-APAP · ACG ใช้ <b>&gt;25</b> เป็นเสี่ยงสูง (การศึกษาใช้จุดตัด 25–37)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">KCC จำเพาะสูงแต่ไวจำกัด — ไม่เข้าเกณฑ์ไม่ได้แปลว่าปลอดภัย · <b>ข้อห้ามเด็ดขาดอย่างเดียวคือสมองตาย</b> · ข้อห้ามสัมพัทธ์: multiorgan dysfunction, sepsis, ARDS, ตับอ่อนอักเสบ, มะเร็ง · พิจารณาด้านจิตสังคม (สุรา ตั้งใจกินยา) โดยทีมสหสาขาของศูนย์ · ศูนย์ปลูกถ่ายอาจใช้ living donor หรือ ABO-incompatible graft เมื่อแย่ลงเร็ว · หลังปลูกถ่ายรอด 1 ปี ~80% 5 ปี ~75%</p>
 </section>
 
 <!-- 10 approach -->
@@ -377,18 +394,18 @@ nav.toc a{scroll-margin-inline:40px}
   </div>
   <div id="apFull" class="flow-wrap">
     <div class="flow">
-      <div class="node start"><b>ตับอักเสบรุนแรง + INR ≥1.5</b>ไม่มีตับแข็งเดิม · ป่วย &lt;26 สัปดาห์</div>
+      <div class="node start"><b>ตับอักเสบรุนแรง + INR ≥1.5</b>ไม่มีโรคตับเดิม · ป่วย &lt;26 สัปดาห์</div>
       <div class="vline arrow"></div>
       <div class="node q"><b>มี HE หรือไม่?</b></div>
       <div class="branch b2">
         <div class="arm"><span class="lab">ไม่มี</span><div class="node dx eu"><b>Acute liver injury</b>เฝ้า HE/INR/glucose ถี่ · หาสาเหตุ · NAC ถ้า APAP</div></div>
-        <div class="arm"><span class="lab">มี</span><div class="node red"><b>ALF</b>ไอซียู · ติดต่อศูนย์ปลูกถ่ายตับ · glucose ถี่<br>NAC (APAP และ non-APAP)</div></div>
+        <div class="arm"><span class="lab">มี</span><div class="node red"><b>ALF</b>ติดต่อศูนย์ปลูกถ่ายตับ · HE ≥2 → ICU<br>glucose/สติทุก 1 ชม. · NAC (APAP และ non-APAP)</div></div>
       </div>
       <div class="vline arrow"></div>
       <div class="branch b3">
-        <div class="arm"><span class="lab">สาเหตุ</span><div class="node dx hypo"><b>รักษาเฉพาะ</b>HBV → ETV/TDF · HSV → acyclovir<br>AFLP/HELLP → คลอด · หยุดยา/สมุนไพร</div></div>
-        <div class="arm"><span class="lab">สมอง</span><div class="node dx hypo"><b>HE III–IV</b>ใส่ท่อ · Na 145–155 · ammonia สูง → CRRT<br>lactulose ไม่ใช่ routine</div></div>
-        <div class="arm"><span class="lab">ระบบอื่น</span><div class="node dx hypo"><b>NE แรก</b> · ไม่ FFP ป้องกัน<br>ไม่ antibiotic ป้องกัน · King's criteria</div></div>
+        <div class="arm"><span class="lab">สาเหตุ</span><div class="node dx hypo"><b>รักษาเฉพาะ</b>HBV reactivation → ETV/TDF · HSV → acyclovir<br>HELLP/AFLP → คลอด · เห็ด → silibinin · BCS → heparin</div></div>
+        <div class="arm"><span class="lab">สมอง</span><div class="node dx hypo"><b>HE III–IV</b>ใส่ท่อ · Na 145–150 (ไม่ให้ต่ำ) · HE ≥2 + ammonia สูง → CRRT<br>หยุด lactulose เมื่อใส่ท่อ</div></div>
+        <div class="arm"><span class="lab">ระบบอื่น</span><div class="node dx hypo"><b>NE แรก → +vasopressin</b> · ไม่แก้ INR routine<br>ไม่ antibiotic ป้องกัน · KCC / MELD &gt;25</div></div>
       </div>
     </div>
   </div>
@@ -413,15 +430,16 @@ nav.toc a{scroll-margin-inline:40px}
       <label class="f">ระยะตัวเหลือง → HE (วัน)<input type="number" id="aD" value="5"></label>
       <label class="f">Ammonia (µmol/L)<input type="number" id="aN" placeholder="เช่น 160"></label>
       <label class="f">Glucose (mg/dL)<input type="number" id="aG" value="65"></label>
+      <label class="f">Na (mmol/L)<input type="number" id="aNa" placeholder="เช่น 138"></label>
       <label class="f">ALP (U/L)<input type="number" id="aAlp" placeholder="ถ้าสงสัย Wilson"></label>
       <label class="f">Bilirubin (mg/dL)<input type="number" id="aB" step="0.1" value="6"></label>
       <label class="f">AST/ALT (เช่น 900/350 หรือ ratio)<input type="text" id="aAA" placeholder="900/350"></label>
     </div>
-    <div class="checks"><label><input type="checkbox" id="aCir"> มีตับแข็ง/โรคตับเรื้อรังเดิม</label><label><input type="checkbox" id="aApap" checked> สงสัย paracetamol</label><label><input type="checkbox" id="aMap"> MAP &lt;65 หลังให้สารน้ำ</label><label><input type="checkbox" id="aAki"> AKI/oliguria</label></div>
+    <div class="checks"><label><input type="checkbox" id="aCir"> มีตับแข็ง/โรคตับเรื้อรังเดิม</label><label><input type="checkbox" id="aApap" checked> สงสัย paracetamol</label><label><input type="checkbox" id="aMap"> MAP &lt;65 หลังให้สารน้ำ</label><label><input type="checkbox" id="aNe"> ได้ norepinephrine อยู่แล้วยังต่ำ</label><label><input type="checkbox" id="aAki"> AKI/oliguria/น้ำเกิน</label></div>
     <div class="out" id="triOut"></div>
   </div>
   <div class="tool" id="tKcc" style="margin-top:12px">
-    <h3>King's College criteria</h3>
+    <h3>King's College criteria + MELD</h3>
     <div class="fields">
       <label class="f">ชนิด<select id="kT"><option value="apap">APAP</option><option value="non">Non-APAP</option></select></label>
       <label class="f">Arterial pH (หลังให้สารน้ำ)<input type="number" id="kPh" step="0.01" value="7.33"></label>
@@ -433,12 +451,12 @@ nav.toc a{scroll-margin-inline:40px}
       <label class="f">Bilirubin (mg/dL)<input type="number" id="kB" step="0.1" value="4"></label>
       <label class="f">ตัวเหลือง → HE (วัน)<input type="number" id="kD" value="2"></label>
     </div>
-    <div class="checks"><label><input type="checkbox" id="kEt"> สาเหตุ non-A non-B / ยา (idiosyncratic) / halothane</label><label><input type="checkbox" id="kL12"> lactate วัดที่ 12 ชม. (ไม่ใช่ 4 ชม.)</label></div>
+    <div class="checks"><label><input type="checkbox" id="kEt"> สาเหตุ indeterminate (non-A non-B) / DILI (รวม halothane)</label><label><input type="checkbox" id="kL12"> lactate วัดที่ 12 ชม. (ไม่ใช่ 4 ชม.)</label><label><input type="checkbox" id="kRrt"> ฟอกไต ≥2 ครั้ง/สัปดาห์หรือ CRRT (MELD ใช้ Cr = 4)</label></div>
     <div class="out" id="kccOut"></div>
   </div>
   <div class="tool" id="tNac" style="margin-top:12px">
-    <h3>NAC สำหรับ non-APAP ALF (สูตร 72 ชม.)</h3>
-    <div class="fields"><label class="f">น้ำหนัก (kg)<input type="number" id="nW" value="60"></label><label class="f">เวลาเริ่ม<input type="time" id="nT" value="10:00"></label></div>
+    <h3>คำนวณ NAC IV</h3>
+    <div class="fields"><label class="f">สูตร<select id="nR"><option value="non">Non-APAP ALF 72 ชม. (Lee 2009)</option><option value="apap">APAP 21 ชม. (ACG Table 10)</option></select></label><label class="f">น้ำหนัก (kg)<input type="number" id="nW" value="60"></label><label class="f">เวลาเริ่ม<input type="time" id="nT" value="10:00"></label></div>
     <div class="out" id="nacOut"></div>
   </div>
 </section>
@@ -448,18 +466,19 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">12</div>
   <h2>Practical points</h2>
   <div class="pearls">
-    <div class="pearl"><div><b>ALF = INR ≥1.5 + HE ใดๆ</b> ไม่มีตับแข็งเดิม</div></div>
-    <div class="pearl"><div><b>ส่ง paracetamol level ทุกราย</b></div></div>
-    <div class="pearl"><div><b>NAC ทั้ง APAP (ทุกเวลา) และ non-APAP</b> (ดีสุด HE I–II)</div></div>
-    <div class="pearl"><div><b>HBV reactivation → ETV/TDF ทันที</b></div></div>
-    <div class="pearl"><div><b>ไข้ + ALT สูงมาก + bilirubin ต่ำ → acyclovir</b></div></div>
-    <div class="pearl"><div><b>Glucose ทุก 1–2 ชม.</b></div></div>
-    <div class="pearl"><div><b>HE III–IV → ใส่ท่อ · Na 145–155 · ammonia สูง → CRRT</b></div></div>
-    <div class="pearl"><div><b>Lactulose ไม่มีหลักฐานใน ALF</b> — ไม่ใช้เป็น routine</div></div>
-    <div class="pearl"><div><b>ไม่ให้ FFP เพื่อแก้ INR</b> ถ้าไม่มีเลือดออก/หัตถการ</div></div>
-    <div class="pearl"><div><b>Norepinephrine เป็น vasopressor แรก</b></div></div>
-    <div class="pearl"><div><b>Wilson: ALP/bili &lt;4 + AST/ALT &gt;2.2</b> + hemolysis</div></div>
-    <div class="pearl"><div><b>ติดต่อศูนย์ปลูกถ่ายตับวันแรก</b> ไม่รอ King's criteria</div></div>
+    <div class="pearl"><div><b>ALF = INR ≥1.5 + HE ใดๆ</b> ไม่มีโรคตับเดิม · &lt;26 สัปดาห์</div></div>
+    <div class="pearl"><div><b>ส่ง paracetamol level ทุกราย</b> · ถามสมุนไพร/อาหารเสริม/เห็ด</div></div>
+    <div class="pearl"><div><b>NAC: APAP (strong, ให้ได้แม้มาช้า) และ non-APAP (strong, ดีสุด HE I–II)</b></div></div>
+    <div class="pearl"><div><b>HBV reactivation → ETV/TDF</b> (strong)</div></div>
+    <div class="pearl"><div><b>สงสัย HSV → acyclovir IV ไม่ต้องรอ PCR</b> (ผื่นอาจไม่มี)</div></div>
+    <div class="pearl"><div><b>Glucose/สติทุก 1–2 ชม.</b> · D10 ให้ 150–180 · ไม่ให้ hypotonic</div></div>
+    <div class="pearl"><div><b>HE 1 → ติดต่อศูนย์ปลูกถ่าย · HE 2 → ICU · HE 3–4 → ใส่ท่อ</b></div></div>
+    <div class="pearl"><div><b>HE ≥2 + ammonia สูง → early CRRT</b> · Na 145–150 ห้ามต่ำ</div></div>
+    <div class="pearl"><div><b>Lactulose ไม่มีหลักฐานชัดใน ALF</b> — หยุดเมื่อใส่ท่อ</div></div>
+    <div class="pearl"><div><b>ไม่แก้ INR/ไม่ให้ antibiotic ป้องกัน เป็น routine</b></div></div>
+    <div class="pearl"><div><b>Norepinephrine แรก → เพิ่ม vasopressin</b> · RRT เลือก CRRT</div></div>
+    <div class="pearl"><div><b>Wilson / AIH ที่เป็น ALF / เห็ด (Escudié) → ประเมินปลูกถ่ายเร็ว</b></div></div>
+    <div class="pearl"><div><b>เข้า KCC หรือ MELD &gt;25 = เสี่ยงสูง</b> · ไม่เข้าไม่ได้แปลว่าปลอดภัย</div></div>
   </div>
 </section>
 
@@ -472,8 +491,8 @@ nav.toc a{scroll-margin-inline:40px}
 
 <p class="col" style="margin-top:32px"><a href="../toxicology/index.html">Toxicology (paracetamol) →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../hepbc/index.html">Hepatitis B/C →</a> · <a href="../hypoglycemia/index.html">Hypoglycemia →</a> · <a href="../aki/index.html">AKI →</a></p>
 <footer class="col">
-  อ้างอิง: 1) Shingina A, Mukhtar N, Wakim-Fleming J, et al. Acute liver failure guidelines. Am J Gastroenterol 2023;118:1128–53 · 2) European Association for the Study of the Liver. EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure. J Hepatol 2017;66:1047–81 · 3) Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open 2023;6:e2327739 · 4) Lee WM, Hynan LS, Rossaro L, et al. Intravenous N-acetylcysteine improves transplant-free survival in early stage non-acetaminophen acute liver failure. Gastroenterology 2009;137:856–64 · 5) O'Grady JG, et al. Early indicators of prognosis in fulminant hepatic failure (King's College criteria). Gastroenterology 1989;97:439–45 · 6) O'Grady JG, Schalm SW, Williams R. Acute liver failure: redefining the syndromes. Lancet 1993;342:273–5 · 7) Bernal W, et al. Blood lactate as an early predictor of outcome in paracetamol-induced acute liver failure. Lancet 2002;359:558–63 · 8) Squires RH, et al. Intravenous NAC in pediatric non-acetaminophen ALF. Hepatology 2013;57:1542–9 · 9) Korman JD, et al. Screening for Wilson disease in acute liver failure. Hepatology 2008;48:1167–74<br>
-  <span class="tag add">เสริม</span> / <span class="tag add">ไทย</span> = แนวปฏิบัติทั่วไป/บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+  อ้างอิง: 1) Shingina A, Mukhtar N, Wakim-Fleming J, Alqahtani S, Wong RJ, Limketkai BN, Larson AM, Grant L. Acute liver failure guidelines (ACG Clinical Guideline). Am J Gastroenterol 2023;118(7):1128–53. doi:10.14309/ajg.0000000000002340 · 2) European Association for the Study of the Liver. EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure. J Hepatol 2017;66:1047–81 · 3) Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open 2023;6:e2327739 · 4) Lee WM, Hynan LS, Rossaro L, et al. Intravenous N-acetylcysteine improves transplant-free survival in early stage non-acetaminophen acute liver failure. Gastroenterology 2009;137:856–64 · 5) O'Grady JG, et al. Early indicators of prognosis in fulminant hepatic failure (King's College criteria). Gastroenterology 1989;97:439–45 · 6) O'Grady JG, Schalm SW, Williams R. Acute liver failure: redefining the syndromes. Lancet 1993;342:273–5 · 7) Bernal W, et al. Blood lactate as an early predictor of outcome in paracetamol-induced acute liver failure. Lancet 2002;359:558–63 · 8) Squires RH, et al. Intravenous NAC in pediatric non-acetaminophen ALF. Hepatology 2013;57:1542–9 · 9) Korman JD, et al. Screening for Wilson disease in acute liver failure. Hepatology 2008;48:1167–74 · 10) Thanapirom K, et al. Incidence, etiologies, outcomes, and predictors of mortality of acute liver failure in Thailand. BMC Gastroenterol 2019;19:18<br>
+  ป้าย Strong/Conditional · quality = GRADE ของ ACG 2023 · <span class="tag add">เสริม</span> / <span class="tag add">ไทย</span> = แนวปฏิบัติทั่วไปนอก ACG/บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
 </footer>
 </div>
 
@@ -551,44 +570,52 @@ function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventLi
 toggleView('apFull','apWalk','apFullBtn','apWalkBtn','lfView');
 mountWalker({
  start:{q:'ตับอักเสบรุนแรง + INR ≥1.5 — มีตับแข็ง/โรคตับเรื้อรังเดิมหรือไม่?',o:[['ไม่มี','he'],['มี','aclf']]},
- aclf:{leaf:true,cls:'violet',t:'ไม่ใช่ ALF',b:'คิดถึง <b>ACLF/decompensated cirrhosis</b> — หาตัวกระตุ้น (ติดเชื้อ, เลือดออก, สุรา, HBV flare, ยา) · ยกเว้น Wilson, AIH ที่เพิ่งวินิจฉัย, HBV จากแม่ ซึ่งนับเป็น ALF ได้'},
+ aclf:{leaf:true,cls:'violet',t:'ไม่ใช่ ALF',b:'คิดถึง <b>ACLF/decompensated cirrhosis</b> — หาตัวกระตุ้น (ติดเชื้อ, สุรา, เลือดออกทางเดินอาหาร, HBV flare, ยา) · ข้อยกเว้นที่ยังนับเป็น ALF (ACG): <b>AIH, Budd-Chiari, Wilson</b>'},
  he:{q:'มี hepatic encephalopathy (สับสน ซึม asterixis) หรือไม่?',o:[['ไม่มี','ali'],['มี','alf']]},
- ali:{leaf:true,cls:'warn',t:'Acute liver injury (ยังไม่ใช่ ALF)',b:'Admit · INR, glucose, สติทุก 4–6 ชม. · หาสาเหตุ (APAP level, HBV, HAV/HEV, ยา) · <b>APAP → NAC</b> · INR สูงขึ้น/เริ่มสับสน → ติดต่อศูนย์ปลูกถ่ายตับ'},
+ ali:{leaf:true,cls:'warn',t:'Acute liver injury (ยังไม่ใช่ ALF)',b:'Admit · INR, glucose, สติถี่ · หาสาเหตุ (APAP level, HBV, HAV/HEV, ยา/สมุนไพร, เห็ด) · <b>APAP → NAC</b> · <b>เริ่มมี HE → ติดต่อศูนย์ปลูกถ่ายตับและส่งต่อ</b>'},
  alf:{q:'สาเหตุจาก paracetamol หรือไม่?',o:[['ใช่/สงสัย','apap'],['ไม่ใช่','non']]},
- apap:{leaf:true,cls:'danger',t:'APAP-ALF',b:'<b>NAC ทันที ไม่ว่ากินมากี่ชั่วโมง</b> · ICU · glucose ทุก 1–2 ชม. · ติดตาม pH, lactate, INR, Cr → <b>King\'s criteria (APAP)</b>: pH <7.30 หรือ INR >6.5 + Cr >3.4 + HE III–IV · ติดต่อศูนย์ปลูกถ่ายตับ · หยุด NAC เมื่อ APAP ตรวจไม่พบ + INR <2 + ALT ลด',next:['ดูแลสมอง','brain']},
- non:{q:'พบสาเหตุที่รักษาเฉพาะได้?',o:[['HBV','hbv'],['HSV (สงสัย)','hsv'],['ตั้งครรภ์ (AFLP/HELLP)','preg'],['ยา/สมุนไพร/ไม่ทราบ','dili']]},
- hbv:{leaf:true,cls:'danger',t:'HBV-associated ALF',b:'<b>Entecavir หรือ tenofovir ทันที</b> · IV NAC (ดีสุด HE I–II) · ติดต่อศูนย์ปลูกถ่ายตับ',next:['ดูแลสมอง','brain']},
- hsv:{leaf:true,cls:'danger',t:'HSV hepatitis',b:'<b>Acyclovir 10 mg/kg IV ทุก 8 ชม.</b> เริ่มทันทีระหว่างรอ PCR · NAC · ICU',next:['ดูแลสมอง','brain']},
- preg:{leaf:true,cls:'danger',t:'AFLP/HELLP',b:'<b>คลอดโดยเร็ว</b> ร่วมกับสูติแพทย์ · glucose ถี่ · แก้ coagulopathy ก่อนคลอด/ผ่าตัด',next:['ดูแลสมอง','brain']},
- dili:{leaf:true,cls:'warn',t:'Non-APAP ALF',b:'หยุดยา/สมุนไพรทั้งหมด · <b>IV NAC 72 ชม.</b> (ดีสุด HE I–II) · ตรวจ Wilson (อายุน้อย, hemolysis), AIH, Budd-Chiari, เห็ดพิษ, dengue · <b>King\'s criteria (non-APAP)</b>',next:['ดูแลสมอง','brain']},
- brain:{q:'HE grade III–IV?',o:[['ใช่','he34'],['ไม่ (I–II)','he12']]},
- he34:{leaf:true,cls:'danger',t:'HE III–IV',b:'<b>ใส่ท่อช่วยหายใจ</b> · หัวสูง 30° · <b>Na 145–155</b> (hypertonic saline) · ammonia >150–200 → <b>CRRT</b> · ICP พุ่ง → hypertonic saline/mannitol · NE ให้ MAP ≥65 · ไม่ใช้ lactulose เป็น routine · ไม่ให้ FFP ป้องกัน · ส่งต่อ/ปลูกถ่าย'},
- he12:{leaf:true,cls:'warn',t:'HE I–II',b:'ICU/HDU · ประเมินสติถี่ · หลีกเลี่ยงยากล่อมประสาท · ammonia สูง + HE II → พิจารณา CRRT · เตรียมส่งต่อขณะยังปลอดภัย'}
+ apap:{leaf:true,cls:'danger',t:'APAP-ALF',b:'<b>NAC ทันที ให้ได้แม้มาช้า</b> (ACG strong) · charcoal ถ้ากิน ≤4 ชม. · ICU · glucose ทุก 1–2 ชม. · ติดตาม pH, lactate, INR, Cr → <b>King\'s criteria (APAP)</b> หรือ MELD >25 · ติดต่อศูนย์ปลูกถ่ายตับ · ให้ NAC ต่อจน INR <1.5 (หรือเกณฑ์ ALT/INR <2/APAP ตรวจไม่พบ) ปรับรายบุคคล',next:['ดูแลสมอง','brain']},
+ non:{q:'พบสาเหตุที่รักษาเฉพาะได้?',o:[['HBV','hbv'],['HSV/VZV (สงสัย)','hsv'],['ตั้งครรภ์ (AFLP/HELLP)','preg'],['เห็ดพิษ','mush'],['AIH','aih'],['Wilson','wil'],['Budd-Chiari','bcs'],['ยา/สมุนไพร/ไม่ทราบ','dili']]},
+ hbv:{leaf:true,cls:'danger',t:'HBV-associated ALF',b:'Reactivation → <b>entecavir หรือ tenofovir</b> (ACG strong) · HBV เฉียบพลันครั้งแรก: หลักฐานขัดแย้ง แต่มักให้ในทางปฏิบัติ · IV NAC (ดีสุด HE I–II) · ติดต่อศูนย์ปลูกถ่ายตับ',next:['ดูแลสมอง','brain']},
+ hsv:{leaf:true,cls:'danger',t:'HSV/VZV hepatitis',b:'<b>Acyclovir IV เริ่มทันที</b> ไม่ต้องรอ PCR · ผื่นอาจไม่มี · ดื้อยา → foscarnet · พยากรณ์ไม่ดีแม้รักษาเร็ว → ติดต่อศูนย์ปลูกถ่าย',next:['ดูแลสมอง','brain']},
+ preg:{leaf:true,cls:'danger',t:'AFLP/HELLP',b:'<b>คลอดโดยเร็ว</b> ร่วมกับสูติแพทย์ + ประคับประคอง · ยังต้องส่ง APAP level (ครึ่งหนึ่งของ ALF ในครรภ์เป็นสาเหตุอื่น) · หลังคลอดไม่ดีขึ้น → ประเมินปลูกถ่ายทันที',next:['ดูแลสมอง','brain']},
+ mush:{leaf:true,cls:'danger',t:'Amatoxin mushroom',b:'<b>Silibinin IV เร็วที่สุด</b> (ไม่มี → penicillin G IV) · NAC · charcoal ซ้ำ · IV fluid ให้ปัสสาวะ 100–200 mL/ชม. · ปรึกษาศูนย์พิษวิทยา · <b>Escudié criteria</b> → ประเมินปลูกถ่ายได้ก่อนมี HE',next:['ดูแลสมอง','brain']},
+ aih:{leaf:true,cls:'warn',t:'Autoimmune hepatitis',b:'<b>Corticosteroid IV</b> (≈ prednisolone 0.5–1 mg/kg หรือ 60 mg/วัน) · ไม่ดีขึ้นใน ~3 วัน → ส่งปลูกถ่าย · <b>ถ้าเป็น ALF แล้ว → ประเมินปลูกถ่ายทันที</b> · เฝ้าระวังติดเชื้อ',next:['ดูแลสมอง','brain']},
+ wil:{leaf:true,cls:'danger',t:'Wilson disease',b:'<b>เริ่มประเมินปลูกถ่ายตั้งแต่วินิจฉัย</b> · ยาขับทองแดงไม่ได้ผล · plasma exchange/albumin dialysis/CRRT เป็นสะพาน',next:['ดูแลสมอง','brain']},
+ bcs:{leaf:true,cls:'warn',t:'Budd-Chiari',b:'<b>Heparin ทันที</b> ถ้าไม่มีข้อห้าม · angioplasty/stent · ไม่ตอบสนอง → <b>TIPS</b> · ยังไม่ดีขึ้น → ปลูกถ่าย',next:['ดูแลสมอง','brain']},
+ dili:{leaf:true,cls:'warn',t:'Non-APAP ALF (DILI/indeterminate)',b:'หยุดยา/สมุนไพรทั้งหมด · <b>IV NAC</b> (ACG strong, ดีสุด HE I–II) · steroid เฉพาะลักษณะ hypersensitivity/autoimmune · ทบทวนหา APAP, AIH, HEV · <b>King\'s criteria (non-APAP) หรือ MELD</b>',next:['ดูแลสมอง','brain']},
+ brain:{q:'HE grade เท่าไร?',o:[['III–IV','he34'],['II','he2'],['I','he1']]},
+ he34:{leaf:true,cls:'danger',t:'HE III–IV',b:'<b>ใส่ท่อช่วยหายใจ</b> · propofol · CT สมองซ้ำ · หยุด lactulose · Na 145–150 (ไม่ให้ต่ำ, ไม่ให้ >160) · ammonia สูง → <b>CRRT</b> · ICP สูง → mannitol/hypertonic saline · NE → +vasopressin · ไม่แก้ INR routine · ส่งต่อ/ปลูกถ่าย'},
+ he2:{leaf:true,cls:'warn',t:'HE II',b:'<b>ย้ายเข้าไอซียู</b> · neuro check ทุก 1 ชม. · ammonia สูง → <b>พิจารณา early CRRT</b> (conditional) · เลี่ยง opioid/benzodiazepine · เตรียมส่งต่อขณะยังปลอดภัย'},
+ he1:{leaf:true,cls:'warn',t:'HE I',b:'<b>ติดต่อศูนย์ปลูกถ่ายตับและเริ่มส่งต่อ</b> · CT สมอง baseline · glucose/สติทุก 1–2 ชม. · เลี่ยงยากล่อมประสาท'}
 },'apTrail','apStage');
 
 function tri(){
-  const inr=num('aI'),he=+$('aH').value,d=num('aD'),nh=num('aN'),g=num('aG'),alp=num('aAlp'),bil=num('aB');const L=[];
-  if($('aCir').checked){$('triOut').innerHTML='<b>มีตับแข็ง/โรคตับเรื้อรังเดิม</b> → น่าเป็น <b>ACLF/decompensated cirrhosis</b> ไม่ใช่ ALF (ยกเว้น Wilson, AIH ใหม่, HBV จากแม่) — การจัดการต่างกัน';return}
+  const inr=num('aI'),he=+$('aH').value,d=num('aD'),nh=num('aN'),g=num('aG'),na=num('aNa'),alp=num('aAlp'),bil=num('aB');const L=[];
+  if($('aCir').checked){$('triOut').innerHTML='<b>มีตับแข็ง/โรคตับเรื้อรังเดิม</b> → น่าเป็น <b>ACLF/decompensated cirrhosis</b> ไม่ใช่ ALF (ยกเว้น AIH, Budd-Chiari, Wilson) — การจัดการต่างกัน';return}
   if(inr===null){$('triOut').textContent='ใส่ INR';return}
   if(inr<1.5)L.push(`INR ${inr} <1.5 → <b>ยังไม่เข้า ALF</b> · ติดตาม`);
-  else if(he===0)L.push(`INR ${inr} แต่ไม่มี HE → <b>Acute liver injury</b> · admit เฝ้า HE/INR/glucose · หาสาเหตุ`);
+  else if(he===0)L.push(`INR ${inr} แต่ไม่มี HE → <b>Acute liver injury</b> · admit เฝ้า HE/INR/glucose · หาสาเหตุ · เริ่มมี HE → ติดต่อศูนย์ปลูกถ่ายตับ`);
   else{
-    L.push(`<b>Acute liver failure</b> (INR ${inr} + HE grade ${['','I','II','III','IV'][he]}) → <b>ICU และติดต่อศูนย์ปลูกถ่ายตับวันนี้</b>`);
-    if(d!==null)L.push(d<=7?`ตัวเหลือง → HE ${d} วัน: <b>hyperacute</b> (APAP, HAV/HEV, ischemic) — สมองบวมบ่อย`:d<=28?`${d} วัน: <b>acute</b> (เช่น HBV)`:`${d} วัน: <b>subacute</b> (DILI, idiopathic) — รอดโดยไม่ปลูกถ่ายน้อย`);
-    if(he>=3)L.push('<b>HE III–IV → ใส่ท่อช่วยหายใจ</b> · หัวสูง 30° · Na 145–155');
+    L.push(`<b>Acute liver failure</b> (INR ${inr} + HE grade ${['','I','II','III','IV'][he]}) → <b>ติดต่อศูนย์ปลูกถ่ายตับและเริ่มส่งต่อ</b>`);
+    if(d!==null)L.push(d<7?`ตัวเหลือง → HE ${d} วัน: <b>hyperacute (&lt;7 วัน)</b> (APAP, HAV/HEV, ischemic) — สมองบวมเสี่ยงสูง แต่เสี่ยงตายต่ำ`:d<=21?`${d} วัน: <b>acute (7–21 วัน)</b> (เช่น HBV) — เสี่ยงปานกลาง`:`${d} วัน: <b>subacute (&gt;21 วัน)</b> (DILI) — สมองบวมน้อย แต่เสี่ยงตายสูง`);
+    if(he>=3)L.push('<b>HE III–IV → ICU + ใส่ท่อช่วยหายใจ</b> · propofol · CT สมองซ้ำ · หยุด lactulose');
+    else if(he===2)L.push('<b>HE II → ย้ายเข้าไอซียู</b> · neuro check ทุก 1 ชม.');
+    else L.push('HE I → CT สมอง baseline · ประเมินสติถี่');
   }
-  if(nh!==null)L.push(nh>150?`Ammonia ${nh} >150 µmol/L → <b>เสี่ยงสมองบวม</b>${nh>200?' สูงมาก':''} · Na 145–155`+(he>=2?' · <b>พิจารณา CRRT</b> (HE ≥II)':' · เฝ้า HE — ถ้า ≥II พิจารณา CRRT'):`Ammonia ${nh}`);
-  if(g!==null&&g<70)L.push(`Glucose ${g} ต่ำ → 50% glucose แล้ว 10% dextrose drip · ตรวจทุก 1–2 ชม.`);
-  if($('aMap').checked)L.push('MAP <65 หลังสารน้ำ → <b>norepinephrine</b> · ดื้อ → vasopressin + ตรวจ cortisol');
-  if($('aAki').checked)L.push('AKI/oliguria → <b>CRRT</b> (ไม่ใช่ intermittent HD)');
-  if($('aApap').checked)L.push('สงสัย APAP → <b>NAC ทันทีไม่ว่ากินมากี่ชั่วโมง</b> (ดูหน้า Toxicology สำหรับสูตร)');
-  else if(inr>=1.5&&he>0)L.push('Non-APAP → <b>IV NAC 72 ชม.</b> (ดีสุด HE I–II) + หาสาเหตุเฉพาะ (HBV, HSV, ตั้งครรภ์, Wilson, AIH, เห็ด)');
+  if(nh!==null)L.push(nh>150?`Ammonia ${nh} >150 µmol/L → เสี่ยงสมองบวม${nh>200?' (สูงมาก)':''}`+(he>=2?' · <b>พิจารณา early CRRT</b> (HE ≥2; ACG conditional)':' · เฝ้า HE — ถ้า ≥2 พิจารณา early CRRT')+' · อาจเลื่อนโปรตีน 24–48 ชม. แล้วเริ่ม 1.0 g/kg':`Ammonia ${nh}`);
+  if(na!==null){if(na<145)L.push(`Na ${na} → <b>ไม่ให้ Na ต่ำ</b> · ที่ใช้ทั่วไปตั้งเป้า 145–150 (เพิ่มช้า ≤6–8 mmol/L/24 ชม.) · เลี่ยง hypotonic fluid`);else if(na>=160)L.push(`Na ${na} ≥160 → <b>สูงเกิน</b> (3% NaCl ให้ Na &lt;160)`);else L.push(`Na ${na} — อยู่ในช่วงที่ยอมรับได้ (ไม่ให้เกิน 160)`);}
+  if(g!==null&&g<70)L.push(`Glucose ${g} ต่ำ → แก้ทันที แล้ว <b>10% dextrose drip</b> ให้ 150–180 mg/dL · ตรวจทุก 1–2 ชม.`);
+  if($('aMap').checked)L.push($('aNe').checked?'ความดันต่ำแม้ได้ norepinephrine → <b>เพิ่ม vasopressin</b> (ACG conditional) · เป้า CPP 60–80':'MAP <65 หลังสารน้ำ → <b>norepinephrine</b> (ACG strong) · ไม่ตอบสนอง → เพิ่ม vasopressin');
+  if($('aAki').checked)L.push('AKI/oliguria/น้ำเกิน → ฟอกไตเร็ว ใช้ <b>CRRT</b> (ไม่ใช่ intermittent HD)');
+  if($('aApap').checked)L.push('สงสัย APAP → <b>NAC ทันที ให้ได้แม้มาช้า</b> · charcoal ถ้ากิน ≤4 ชม. (ดูหน้า Toxicology)');
+  else if(inr>=1.5&&he>0)L.push('Non-APAP → <b>IV NAC</b> (ดีสุด HE I–II) + หาสาเหตุเฉพาะ (HBV, HSV, ตั้งครรภ์, Wilson, AIH, เห็ด, Budd-Chiari)');
   const raw=($('aAA').value||'').trim();let aa=raw.split('/').map(x=>parseFloat(x));if(aa.length===1&&aa[0]>0)aa=[aa[0],1];
   if(alp!==null&&bil){const r=alp/bil;let t=`ALP/bilirubin = ${r.toFixed(1)}`;
-    if(aa.length===2&&aa[0]>0&&aa[1]>0){const r2=aa[0]/aa[1];t+=` · AST/ALT = ${r2.toFixed(1)}`;if(r<4&&r2>2.2)t+=' → <b>เข้าได้กับ Wilson disease</b> (ALP/bili <4 + AST/ALT >2.2) → ceruloplasmin, urine Cu, slit lamp · มักต้องปลูกถ่าย';else t+=' → ไม่เข้าคู่เกณฑ์ Wilson';}
+    if(aa.length===2&&aa[0]>0&&aa[1]>0){const r2=aa[0]/aa[1];t+=` · AST/ALT = ${r2.toFixed(1)}`;if(r<4&&r2>2.2)t+=' → <b>เข้าได้กับ Wilson disease</b> (ALP/bili <4 + AST/ALT >2.2) → ceruloplasmin, urine Cu, slit lamp · <b>เริ่มประเมินปลูกถ่ายทันที</b>';else t+=' → ไม่เข้าคู่เกณฑ์ Wilson';}
     else t+=r<4?' (<4 — ใส่ AST/ALT เพื่อประเมิน Wilson)':'';
     L.push(t);}
-  L.push('<span class="muted">ไม่แก้ INR ด้วย FFP ถ้าไม่มีเลือดออก/หัตถการ · ไม่ให้ antibiotic ป้องกัน routine · lactulose ไม่มีหลักฐานว่าได้ประโยชน์</span>');
+  L.push('<span class="muted">ไม่แก้ INR ถ้าไม่มีเลือดออก/หัตถการเสี่ยงสูง · ไม่ให้ยาต้านจุลชีพป้องกัน routine แต่เพาะเชื้อเป็นระยะ · lactulose ไม่มีหลักฐานชัดใน ALF</span>');
   $('triOut').innerHTML=L.join('<br>');
 }
 bindAll('#tTri input,#tTri select',tri);
@@ -600,52 +627,76 @@ function kcc(){
     const three=(inr!==null&&inr>6.5)&&(cr!==null&&cr>3.4)&&he>=3;
     L.push(`INR ${inr??'-'} ${inr>6.5?'✓':'✗'} >6.5 · Cr ${cr??'-'} ${cr>3.4?'✓':'✗'} >3.4 · HE ${['0','I','II','III','IV'][he]} ${he>=3?'✓':'✗'} III–IV`);
     if(three){met=true;L.push('<b>ครบ 3 ข้อ → เข้าเกณฑ์</b>');}
-    if(lac!==null){const thr=$('kL12').checked?3.0:3.5;if(lac>thr){met=true;L.push(`Lactate ${lac} >${thr} ${$('kL12').checked?'ที่ 12 ชม.หลังให้สารน้ำ':'ที่ 4 ชม.หลังรับไว้'} → <b>เข้าเกณฑ์ modified (Bernal)</b>`);}else L.push(`Lactate ${lac} ≤${thr}`);}
+    if(lac!==null){const thr=$('kL12').checked?3.0:3.5;if(lac>thr){met=true;L.push(`Lactate ${lac} >${thr} ${$('kL12').checked?'ที่ 12 ชม.หลังให้สารน้ำ':'ที่ 4 ชม.หลังรับไว้'} → <b>เข้าเกณฑ์ modified (Bernal)</b>`);}else L.push(`Lactate ${lac} ≤${thr}`+(lac>3?' (ACG Table 11 ใช้ >3 หลังให้สารน้ำ — ถือว่าเสี่ยง)':''));}
   }else{
     if(inr!==null&&inr>6.5){met=true;L.push(`INR ${inr} >6.5 → <b>เข้าเกณฑ์</b> (ไม่ขึ้นกับ HE)`);}
-    const c=[];if(age!==null&&(age<10||age>40))c.push(`อายุ ${age}`);if($('kEt').checked)c.push('สาเหตุ non-A non-B/ยา/halothane');if(d!==null&&d>7)c.push(`ตัวเหลือง→HE ${d} วัน >7`);if(inr!==null&&inr>3.5)c.push(`INR ${inr} >3.5`);if(bil!==null&&bil>17.5)c.push(`bilirubin ${bil} >17.5`);
+    const c=[];if(age!==null&&(age<10||age>40))c.push(`อายุ ${age}`);if($('kEt').checked)c.push('สาเหตุ indeterminate/DILI');if(d!==null&&d>7)c.push(`ตัวเหลือง→HE ${d} วัน >7`);if(inr!==null&&inr>3.5)c.push(`INR ${inr} >3.5`);if(bil!==null&&bil>17.5)c.push(`bilirubin ${bil} >17.5`);
     L.push(`เกณฑ์ย่อย ${c.length}/5: ${c.join(' · ')||'-'}`);
     if(c.length>=3){met=true;L.push('<b>≥3 ข้อ → เข้าเกณฑ์</b>');}
   }
-  L.unshift(met?'<b>เข้า King\'s College criteria</b> → พยากรณ์รอดโดยไม่ปลูกถ่ายต่ำ · เร่งประเมินปลูกถ่าย':'<b>ยังไม่เข้าเกณฑ์</b> — ไวปานกลาง ไม่ได้แปลว่าปลอดภัย · ประเมินซ้ำทุกวัน');
+  let meld=null;
+  if(inr!==null&&bil!==null&&(cr!==null||$('kRrt').checked)){
+    const cl=x=>Math.max(1,x);let c2=$('kRrt').checked?4:Math.min(4,cl(cr));
+    meld=Math.min(40,Math.round(10*(0.957*Math.log(c2)+0.378*Math.log(cl(bil))+1.120*Math.log(cl(inr))+0.643)));
+    L.push(`MELD = <b>${meld}</b> ${meld>25?'→ <b>&gt;25 เสี่ยงผลลัพธ์แย่</b> (ACG Rec 10)':'(≤25)'}`);
+  }
+  const high=met||(meld!==null&&meld>25);
+  L.unshift(met?'<b>เข้า King\'s College criteria</b> → โอกาสรอดโดยไม่ปลูกถ่ายต่ำ · เร่งส่งต่อ/ประเมินปลูกถ่าย':high?'<b>ยังไม่เข้า KCC แต่ MELD &gt;25</b> → เสี่ยงสูง · เร่งส่งต่อ/ประเมินปลูกถ่าย':'<b>ยังไม่เข้าเกณฑ์เสี่ยงสูง</b> — KCC ไวจำกัด ไม่ได้แปลว่าปลอดภัย · ประเมินซ้ำทุกวัน');
   $('kccOut').innerHTML=L.join('<br>');
 }
 bindAll('#tKcc input,#tKcc select',kcc);
 
 function nac(){
-  const w=num('nW'),t=$('nT').value;if(!w){$('nacOut').textContent='ใส่น้ำหนัก';return}
+  const w=num('nW'),t=$('nT').value,r=$('nR').value;if(!w){$('nacOut').textContent='ใส่น้ำหนัก';return}
   let b=null;if(t){const [h,m]=t.split(':').map(Number);b=h*60+m}
   const f=x=>{const d=Math.floor(x/1440);return String(Math.floor((x%1440)/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')+(d?` <small>(+${d} วัน)</small>`:'')};
-  const ww=Math.min(w,100);
-  const L=[`<b>ถุง 1</b>: ${Math.round(ww*150).toLocaleString()} mg (150 mg/kg) ใน 1 ชม.${b!==null?` · ${f(b)}–${f(b+60)}`:''}`,
-   `<b>ถุง 2</b>: ${(ww*12.5).toFixed(0)} mg/ชม. × 4 ชม. = ${Math.round(ww*50).toLocaleString()} mg${b!==null?` · ${f(b+60)}–${f(b+300)}`:''}`,
-   `<b>ถุง 3</b>: ${(ww*6.25).toFixed(0)} mg/ชม. × 67 ชม. = ${Math.round(ww*6.25*67).toLocaleString()} mg${b!==null?` · ${f(b+300)}–${f(b+4320)}`:''}`,
-   `รวม ~${Math.round(ww*(150+50+6.25*67)).toLocaleString()} mg ใน 72 ชม.`];
+  const ww=Math.min(w,100);let L;
+  if(r==='apap'){
+    L=[`<b>ถุง 1</b>: ${Math.round(ww*150).toLocaleString()} mg (150 mg/kg) ใน 1 ชม.${b!==null?` · ${f(b)}–${f(b+60)}`:''}`,
+     `<b>ถุง 2</b>: ${Math.round(ww*50).toLocaleString()} mg (50 mg/kg) ใน 4 ชม. = ${(ww*12.5).toFixed(0)} mg/ชม.${b!==null?` · ${f(b+60)}–${f(b+300)}`:''}`,
+     `<b>ถุง 3</b>: ${Math.round(ww*100).toLocaleString()} mg (100 mg/kg) ใน 16 ชม. = ${(ww*6.25).toFixed(0)} mg/ชม.${b!==null?` · ${f(b+300)}–${f(b+1260)}`:''}`,
+     `รวม ${Math.round(ww*300).toLocaleString()} mg (300 mg/kg) ใน 21 ชม.`,
+     '<span class="muted">มีตับบาดเจ็บ/ALF → ให้ต่อในอัตราถุง 3 จน INR &lt;1.5 (หรือเกณฑ์ ALT &lt;50% ของค่าสูงสุด, INR &lt;2, APAP ตรวจไม่พบ) ปรับรายบุคคล</span>'];
+  }else{
+    L=[`<b>ถุง 1</b>: ${Math.round(ww*150).toLocaleString()} mg (150 mg/kg) ใน 1 ชม.${b!==null?` · ${f(b)}–${f(b+60)}`:''}`,
+     `<b>ถุง 2</b>: ${(ww*12.5).toFixed(0)} mg/ชม. × 4 ชม. = ${Math.round(ww*50).toLocaleString()} mg${b!==null?` · ${f(b+60)}–${f(b+300)}`:''}`,
+     `<b>ถุง 3</b>: ${(ww*6.25).toFixed(0)} mg/ชม. × 67 ชม. = ${Math.round(ww*6.25*67).toLocaleString()} mg${b!==null?` · ${f(b+300)}–${f(b+4320)}`:''}`,
+     `รวม ~${Math.round(ww*(150+50+6.25*67)).toLocaleString()} mg ใน 72 ชม.`,
+     '<span class="muted">Non-APAP ALF (Lee 2009) — ได้ประโยชน์ชัดใน HE I–II</span>'];
+  }
   if(w>100)L.push('<span class="muted">คำนวณที่น้ำหนักสูงสุด 100 kg (ตามแนวปฏิบัติทั่วไปของ NAC)</span>');
-  L.push('<span class="muted">สูตรนี้สำหรับ non-APAP ALF (Lee 2009) · APAP: ใช้สูตรในหน้า Toxicology และหยุดตามเกณฑ์ 2023 consensus · anaphylactoid → หยุดชั่วคราว antihistamine แล้วให้ต่อช้าลง</span>');
+  L.push('<span class="muted">anaphylactoid → หยุดชั่วคราว antihistamine แล้วให้ต่อช้าลง</span>');
   $('nacOut').innerHTML=L.join('<br>');
 }
-bindAll('#tNac input',nac);
+bindAll('#tNac input,#tNac select',nac);
 
 mountQuiz([
  ['หญิง 25 ปี ไม่มีโรคตับเดิม ตัวเหลือง 4 วัน สับสน INR 2.8 ข้อใดถูก',
-  ['Acute liver injury','Acute liver failure','ACLF','Decompensated cirrhosis'],1,'INR ≥1.5 + HE ไม่มีตับแข็ง'],
+  ['Acute liver injury','Acute liver failure','ACLF','Decompensated cirrhosis'],1,'INR ≥1.5 + HE ใดๆ ไม่มีโรคตับเดิม ป่วย <26 สัปดาห์'],
  ['ผู้ป่วยกิน paracetamol ปริมาณมากเมื่อ 40 ชม.ก่อน ALT 6,000 INR 3.2 ควรให้ NAC หรือไม่',
-  ['ไม่ เพราะเกิน 24 ชม.','ให้ NAC ทันทีไม่ว่ากินมากี่ชั่วโมง','ให้เฉพาะถ้าระดับยาเหนือเส้น nomogram','ให้ activated charcoal แทน'],1,'NAC ยังได้ประโยชน์ใน APAP-ALF'],
+  ['ไม่ เพราะเกิน 24 ชม.','ให้ NAC ทันทีแม้มาช้า','ให้เฉพาะถ้าระดับยาเหนือเส้น nomogram','ให้ activated charcoal แทน'],1,'ACG Rec 6 (strong, low): NAC เร็วที่สุด และมีประโยชน์แม้ให้ช้า · charcoal ใช้เฉพาะกินมา ≤4 ชม.'],
  ['ALF จาก HBV reactivation หลังได้ rituximab ควรเริ่มยาใด',
-  ['Lamivudine','Entecavir หรือ tenofovir','Interferon','ไม่ต้องให้ยาต้านไวรัส'],1,'ACG 2023 strong'],
+  ['Lamivudine','Entecavir หรือ tenofovir','Interferon','ไม่ต้องให้ยาต้านไวรัส'],1,'ACG Rec 8 (strong, low)'],
  ['ข้อใดเกี่ยวกับ coagulopathy ใน ALF ถูกต้อง',
-  ['ให้ FFP ให้ INR <1.5 ทุกราย','ไม่แก้เป็น routine ถ้าไม่มีเลือดออกหรือหัตถการเสี่ยงสูง','ให้ platelet ให้ >100,000','ให้ rFVIIa ทุกราย'],1,'INR เป็นตัวพยากรณ์ และไม่สะท้อนความเสี่ยงเลือดออก'],
+  ['ให้ FFP ให้ INR <1.5 ทุกราย','ไม่แก้เป็น routine ถ้าไม่มีเลือดออกหรือหัตถการเสี่ยงสูง','ให้ platelet ให้ >100,000','ให้ rFVIIa ทุกราย'],1,'ACG Rec 2 (conditional, very low) · INR ไม่สะท้อนความเสี่ยงเลือดออก'],
  ['ALF HE grade IV ammonia 230 µmol/L ข้อใดเหมาะสม',
-  ['Lactulose ทาง NG','ใส่ท่อ Na 145–155 และ CRRT','Hypotonic fluid','ให้ยากันชักป้องกัน'],1,'ลดความเสี่ยงสมองบวม'],
+  ['Lactulose ทาง NG ขนาดสูง','ใส่ท่อ ไม่ให้ Na ต่ำ (เป้าทั่วไป 145–150) และ early CRRT','Hypotonic fluid','ให้ยากันชักป้องกัน'],1,'ACG Rec 1 (conditional, very low) · lactulose ไม่มีหลักฐานชัดและควรหยุดเมื่อใส่ท่อ'],
+ ['ผู้ป่วย ALF เริ่มมี HE grade 2 ข้อใดควรทำตาม ACG',
+  ['รักษาในหอผู้ป่วยทั่วไปต่อ','ย้ายเข้าไอซียูและ neuro check ทุก 1 ชม.','ใส่ท่อช่วยหายใจทันทีทุกราย','ให้ FFP ก่อนย้าย'],1,'HE 1 → ติดต่อศูนย์ปลูกถ่าย · HE 2 → ICU · HE 3–4 → ใส่ท่อ'],
  ['King\'s College criteria ใน APAP ข้อใดเข้าเกณฑ์ด้วยตัวเอง',
   ['INR >3.5','Arterial pH <7.30 หลังให้สารน้ำ','Bilirubin >17.5','อายุ >40'],1,'หรือครบ INR >6.5 + Cr >3.4 + HE III–IV'],
- ['ชาย 19 ปี ALF + hemolysis Coombs ลบ ALP 30 bilirubin 20 AST/ALT 3 คิดถึงอะไร',
-  ['HAV','Wilson disease','AIH','APAP'],1,'ALP/bili <4 + AST/ALT >2.2'],
- ['Vasopressor แรกในผู้ป่วย ALF ที่ความดันต่ำหลังให้สารน้ำ',
-  ['Dopamine','Norepinephrine','Phenylephrine','Epinephrine'],1,'ACG 2023 strong'],
+ ['ตาม ACG Rec 10 ค่า MELD เท่าใดที่ถือว่าเสี่ยงผลลัพธ์แย่ใน ALF',
+  ['>15','>20','>25','>40'],2,'เข้า KCC หรือ MELD >25 = เสี่ยงสูง (conditional, low)'],
+ ['ชาย 19 ปี ALF + hemolysis Coombs ลบ ALP 30 bilirubin 20 AST/ALT 3 ควรทำอะไรต่อ',
+  ['ให้ D-penicillamine แล้วรอดูอาการ','คิดถึง Wilson และเริ่มประเมินปลูกถ่ายตับทันที','ให้ steroid','รอผล copper ในเนื้อตับก่อน'],1,'ALP/bili <4 + AST/ALT >2.2 · ยาขับทองแดงไม่ได้ผลใน ALF'],
+ ['Vasopressor แรกในผู้ป่วย ALF ที่ความดันต่ำหลังให้สารน้ำ และถ้าไม่ตอบสนอง',
+  ['Dopamine → epinephrine','Norepinephrine → เพิ่ม vasopressin','Phenylephrine → dopamine','Epinephrine → milrinone'],1,'ACG Rec 4 (strong, moderate) และ Rec 5 (conditional, low)'],
+ ['ผู้ป่วย ALF จากเห็ดพิษ ยาเฉพาะที่ ACG แนะนำเป็นตัวแรกคือ',
+  ['Penicillin G','Silibinin IV','Steroid','Hemodialysis'],1,'ACG Rec 9 (conditional, very low) · penicillin G เมื่อไม่มี silibinin'],
+ ['ข้อใดถูกเรื่องการติดเชื้อใน ALF',
+  ['ให้ antibiotic ป้องกันทุกราย','ไม่ให้ป้องกันเป็น routine แต่เพาะเชื้อเป็นระยะ และให้ empiric เมื่ออาการแย่ลง','ใช้ procalcitonin ตัดสินใจ','ไข้เป็นตัวบ่งชี้ที่เชื่อถือได้'],1,'ACG Rec 3 (conditional, low) · ไข้/WBC ไม่มีได้ถึง 30%'],
  ['ข้อใดคือประโยชน์ของ IV NAC ใน non-APAP ALF',
-  ['ไม่มีประโยชน์ห้ามให้','เพิ่มการรอดโดยไม่ปลูกถ่าย โดยเฉพาะ HE I–II','ใช้เฉพาะเห็ดพิษ','ใช้แทนการปลูกถ่าย'],1,'Lee 2009 · ACG 2023']
+  ['ไม่มีประโยชน์ห้ามให้','เพิ่มการรอดโดยไม่ปลูกถ่าย โดยเฉพาะ HE I–II','ใช้เฉพาะเห็ดพิษ','ใช้แทนการปลูกถ่าย'],1,'Lee 2009: 52% vs 30% · ACG Rec 7 (strong, moderate)']
 ],'qz');
 
 })();

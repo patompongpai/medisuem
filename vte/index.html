@@ -207,6 +207,7 @@ html{scroll-behavior:smooth}
 .rec.no{background:var(--danger-soft);color:var(--danger)}
 .tag.draft{background:var(--warn-soft);color:var(--warn)}
 .tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
 .ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
 .ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
 .ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
@@ -219,19 +220,19 @@ html{scroll-behavior:smooth}
 .out ol{margin:.2rem 0;padding-left:1.3rem}
 .out li{margin:.3rem 0}
 nav.toc a{scroll-margin-inline:40px}
-.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+
 </style>
 
 <div class="wrap">
 <header class="hero">
-  <div class="eyebrow">VTE · AHA/ACC 2026 · ESC 2019 · CHEST</div>
+  <div class="eyebrow">VTE · AHA/ACC 2026 · แนวทางไทย 2565 · ESC 2019 · CHEST</div>
   <h1>VTE / PE และ<br>anticoagulation</h1>
-  <p class="sub">ลิ่มเลือดในหลอดเลือดดำ (DVT) และ pulmonary embolism สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัยด้วย pretest probability การแบ่งความรุนแรงแบบใหม่ <b>AHA/ACC PE Clinical Categories A–E</b> การเลือกและขนาดยาต้านการแข็งตัวของเลือด thrombolysis ระยะเวลาการรักษา การหยุดยาก่อนหัตถการ การป้องกันในผู้ป่วยใน และการติดตาม พร้อมเครื่องมือคำนวณครบชุด</p>
-  <p class="cite">อ้างอิงหลัก: 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for Acute PE (Circulation 2026;153:e977–e1051) · 2019 ESC/ERS Guidelines for acute PE · CHEST Antithrombotic Therapy for VTE Disease 2021 (2nd update) · ACCP Perioperative Management of Antithrombotic Therapy 2022 · ASH 2018–2020 VTE guidelines · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <p class="sub">ลิ่มเลือดในหลอดเลือดดำ (DVT) และ pulmonary embolism สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ตั้งแต่การวินิจฉัยด้วย pretest probability การแบ่งความรุนแรงแบบใหม่ <b>AHA/ACC Acute PE Clinical Categories A–E</b> การเลือกและขนาดยาต้านการแข็งตัวของเลือด (เทียบแนวทาง AHA/ACC 2026 กับแนวทางสมาคมโลหิตวิทยาแห่งประเทศไทย 2565) thrombolysis/หัตถการ ระยะเวลาการรักษา การหยุดยาก่อนหัตถการ การป้องกันในผู้ป่วยใน และการติดตาม พร้อมเครื่องมือคำนวณครบชุด</p>
+  <p class="cite">อ้างอิงหลัก: Creager MA, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults. Circulation 2026;153(12):e977–e1051 (doi:10.1161/CIR.0000000000001415) · สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาโรคหลอดเลือดดำชั้นลึกอุดตันในผู้ใหญ่: การรักษาระยะเฉียบพลันและระยะยาว ปรับปรุง พ.ศ. 2565 · เสริมด้วย ESC 2019, CHEST 2021, ACCP perioperative 2022 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
   <div class="stage-row">
-    <div class="stage" style="--c:var(--accent)"><b>1. วินิจฉัย</b>Pretest probability → PERC / D-dimer (YEARS, ปรับตามอายุ) → CTPA หรือ ultrasound</div>
-    <div class="stage" style="--c:var(--warn)"><b>2. แบ่งความรุนแรง</b>Category A–E: sPESI · troponin/BNP · RV · lactate · ความดัน</div>
-    <div class="stage" style="--c:var(--danger)"><b>3. รักษา</b>A–B: DOAC ผู้ป่วยนอก · C–E: LMWH + PERT · E: thrombolysis/CDT</div>
+    <div class="stage" style="--c:var(--accent)"><b>1. วินิจฉัย</b>Clinical probability (&lt;15% / 15–50% / &gt;50%) → PERC / D-dimer + YEARS (หรือปรับตามอายุ) → CTPA</div>
+    <div class="stage" style="--c:var(--warn)"><b>2. แบ่งความรุนแรง</b>Category A–E: sPESI/PESI/Hestia · troponin/BNP · RV · lactate · ความดัน · modifier R</div>
+    <div class="stage" style="--c:var(--danger)"><b>3. รักษา</b>A–B: DOAC ผู้ป่วยนอกได้ · C1–E1: LMWH + PERT · C2 ห้าม systemic lysis · E: reperfusion (2a)</div>
   </div>
   <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
   <div class="contents" id="contents"></div>
@@ -245,89 +246,112 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="risk" class="col">
   <div class="sec-num">01</div>
   <h2>ปัจจัยเสี่ยง: provoked หรือ unprovoked</h2>
-  <p>การแยกชนิดปัจจัยเสี่ยงสำคัญที่สุดสำหรับ <b>การตัดสินระยะเวลาให้ยา</b> (บท 09)</p>
+  <p>การแยกชนิดปัจจัยเสี่ยงสำคัญที่สุดสำหรับ <b>การตัดสินระยะเวลาให้ยา</b> (บท 09) · ตารางตาม AHA/ACC 2026 Table 9 (ดัดแปลงจาก ISTH/Kearon 2016)</p>
   <div class="tbl"><table>
     <tr><th>ชนิด</th><th>ตัวอย่าง</th><th>ความเสี่ยงเป็นซ้ำหลังหยุดยา</th></tr>
-    <tr><td><b>Major transient</b> (provoked ชัด)</td><td>ผ่าตัดใหญ่ (ดมยา &gt;30 นาที), กระดูกหัก/บาดเจ็บขา, นอนโรงพยาบาลด้วยโรคเฉียบพลัน ≥3 วัน ภายใน 3 เดือน</td><td>ต่ำ (&lt;3%/ปี) → <b>3 เดือนพอ</b></td></tr>
-    <tr><td><b>Minor transient</b></td><td>ผ่าตัดเล็ก, นอน รพ. &lt;3 วัน, ยาคุม/ฮอร์โมน, ตั้งครรภ์/หลังคลอด, เดินทางไกล, ขาบาดเจ็บไม่หัก</td><td>ปานกลาง — พิจารณาเป็นรายๆ</td></tr>
-    <tr><td><b>Persistent</b></td><td>มะเร็ง active, IBD, autoimmune, APS, thrombophilia บางชนิด</td><td>สูง → ให้ยานาน</td></tr>
-    <tr><td><b>ไม่พบปัจจัย</b> (unprovoked)</td><td>—</td><td>สูง (~10% ปีแรก) → ให้ยาต่อเนื่อง ถ้าเสี่ยงเลือดออกไม่สูง</td></tr>
+    <tr><td><b>Major reversible</b> (provoked ชัด)</td><td>ผ่าตัดที่ดมยาสลบ <b>≥30 นาที</b> · นอน รพ.ด้วยโรคเฉียบพลัน <b>≥72 ชม.และติดเตียง</b> · ผ่าคลอด · กระดูกขาหัก</td><td>ต่ำ (หลังผ่าตัด &lt;1%/ปี) → <b>หยุดยาเมื่อครบ 3–6 เดือน</b></td></tr>
+    <tr><td><b>Minor reversible</b></td><td>ผ่าตัดดมยา &lt;30 นาที · นอน รพ. &lt;72 ชม. · ป่วยเฉียบพลันนอนติดเตียงที่บ้าน ≥72 ชม. · estrogen (ยาคุม/ฮอร์โมนทดแทน) · ช่วงตั้งครรภ์–หลังคลอด · บาดเจ็บที่ทำให้เคลื่อนไหวน้อย ≥72 ชม.</td><td>ปานกลาง (4–7%/ปี) — <b>ตัดสินร่วมกับผู้ป่วย</b></td></tr>
+    <tr><td><b>Persistent</b></td><td>มะเร็ง active (กำลังรักษาหรือไม่ก็ตาม) · autoimmune (RA, SLE) · IBD · ติดเตียงเรื้อรัง <span class="muted">(APS/thrombophilia บางชนิดก็จัดเป็นปัจจัยถาวร — ดูบท 08)</span></td><td>สูง → ให้ยาต่อเนื่อง</td></tr>
+    <tr><td><b>ไม่พบปัจจัย</b> (unprovoked)</td><td>—</td><td>สูง (~30–40% ใน 10 ปีหลังหยุดยา) → ให้ยาต่อเนื่อง</td></tr>
   </table></div>
-  <p class="muted" style="font-size:.88rem">Unprovoked VTE: ซักประวัติ ตรวจร่างกาย CBC, CXR, ตรวจคัดกรองมะเร็งตามอายุ — <b>ไม่แนะนำ</b> CT ช่องท้องหรือ PET หามะเร็งทุกราย · ไม่ตรวจ thrombophilia ขณะรักษาระยะเฉียบพลัน <span class="tag add">เสริม</span></p>
+  <ul>
+    <li><b>PE ที่ไม่พบปัจจัยเสี่ยง</b>: ซักประวัติ ตรวจร่างกาย และ <b>ตรวจคัดกรองมะเร็งตามอายุ</b> <span class="rec s1">1</span> · <b>ไม่แนะนำ</b> CT หรือ PET-CT หามะเร็งทุกราย <span class="rec no">3: No benefit</span></li>
+    <li><b>Thrombophilia</b>: พิจารณาเฉพาะไม่มี major reversible RF และ (อายุ &lt;55 ปี หรือมีประวัติครอบครัว) และผลจะเปลี่ยนการรักษา <span class="rec">2b</span> · ไม่ตรวจถ้ามี major reversible RF · การตรวจที่อาศัยการแข็งตัวของเลือด (protein C/S, antithrombin, lupus anticoagulant) <b>ไม่ตรวจในระยะเฉียบพลันหรือขณะได้ยา</b></li>
+  </ul>
 </section>
 
 <!-- 2 -->
 <section id="dvt" class="col">
   <div class="sec-num">02</div>
   <h2>วินิจฉัย DVT</h2>
+  <p class="muted" style="font-size:.88rem">AHA/ACC 2026 ครอบคลุมเฉพาะ PE (DVT เดี่ยวอยู่นอกขอบเขต) — บทนี้อิง CHEST/แนวทางทั่วไป และแนวทางไทย 2565 ในข้อบ่งชี้การให้ยา</p>
   <ul>
     <li>ใช้ <b>Wells DVT</b> (เครื่องมือบท 14): <b>unlikely (≤1)</b> → D-dimer → ลบ = ตัดได้ · บวก → ultrasound · <b>likely (≥2)</b> → ultrasound (ถ้าลบ ตรวจ D-dimer หรือ US ซ้ำ 1 สัปดาห์)</li>
     <li>Ultrasound: proximal compression (femoral–popliteal) หรือ whole-leg · กดไม่ยุบ = DVT</li>
-    <li><b>Isolated distal (calf) DVT</b>: ถ้าอาการน้อย เสี่ยงลุกลามต่ำ → US ซ้ำใน 2 สัปดาห์ได้ · ถ้าอาการมาก/มะเร็ง/ลิ่มยาว &gt;5 cm/ใกล้หลอดเลือดส่วนต้น → ให้ยา 3 เดือน (CHEST)</li>
+    <li><b>ข้อบ่งชี้ให้ยาต้านการแข็งตัวตามแนวทางไทย 2565</b> <span class="tag th">ไทย 2565</span>: PE · proximal DVT (เหนือเข่า) · distal DVT (ใต้เข่า) ที่มีอาการรุนแรง — ทั้ง 3 ข้อเป็นคำแนะนำระดับ ++</li>
+    <li><b>Isolated distal (calf) DVT</b> อาการน้อย เสี่ยงลุกลามต่ำ → US ซ้ำใน 2 สัปดาห์ได้ · อาการมาก/มะเร็ง/ลิ่มยาว &gt;5 cm/ใกล้หลอดเลือดส่วนต้น → ให้ยา 3 เดือน (CHEST) <span class="tag add">เสริม</span></li>
     <li>DVT แขน: มักสัมพันธ์กับสาย catheter/มะเร็ง · รักษาเหมือน DVT ขา อย่างน้อย 3 เดือน · ไม่ต้องถอดสายถ้ายังใช้ได้และอยู่ถูกตำแหน่ง <span class="tag add">เสริม</span></li>
-    <li>Superficial vein thrombosis ยาว ≥5 cm หรือใกล้ junction (&lt;3 cm) → fondaparinux 2.5 mg 45 วัน (ใกล้ junction ให้ขนาดรักษา) <span class="tag add">เสริม</span></li>
+    <li>Superficial vein thrombosis ยาว ≥5 cm → fondaparinux 2.5 mg 45 วัน · ใกล้ junction (&lt;3 cm) ให้ขนาดรักษา <span class="tag add">เสริม</span></li>
   </ul>
 </section>
 
 <!-- 3 -->
 <section id="pedx" class="col">
   <div class="sec-num">03</div>
-  <h2>วินิจฉัย PE</h2>
-  <div class="box warn"><b>ความดันต่ำ/shock ที่สงสัย PE</b>ทำ <b>bedside echo</b> ทันที — RV โตชัด + ไม่มีสาเหตุอื่น และย้ายไป CT ไม่ได้ → รักษาแบบ PE รุนแรงได้เลย · ถ้าคงที่พอ ทำ CTPA ด่วน</div>
+  <h2>วินิจฉัย PE (AHA/ACC 2026 Figure 1)</h2>
+  <p>ซักประวัติ ตรวจร่างกาย แล้วประเมิน <b>clinical probability</b> ด้วยเครื่องมือที่ validate แล้ว (Wells, revised Geneva หรือ clinical gestalt) <span class="rec s1">1</span></p>
   <div class="tbl"><table>
-    <tr><th>Pretest probability</th><th>ขั้นตอน (AHA/ACC 2026 ใช้ Wells, revised Geneva หรือ gestalt)</th></tr>
-    <tr><td><b>ต่ำ</b> (&lt;15% โดย gestalt)</td><td><b>PERC</b> ครบ 8 ข้อลบ → ตัด PE ได้ ไม่ต้องตรวจเพิ่ม · ไม่ผ่าน → D-dimer/YEARS</td></tr>
-    <tr><td><b>PE unlikely</b> (Wells ≤4) / ไม่สูง</td><td>เลือก <b>1 กลยุทธ์</b>: <b>YEARS</b> — ไม่มี item → D-dimer &lt;1000 ng/mL ตัดได้ · มี ≥1 item → &lt;500 ตัดได้ · หรือ <b>D-dimer ปรับตามอายุ</b> (อายุ × 10 เมื่อ &gt;50 ปี; ใช้กับ Wells/Geneva — ADJUST-PE) · สูงกว่า → CTPA <span class="muted">(ไม่ควรใช้ age-adjusted ซ้อนบน YEARS — ยังไม่ได้ validate)</span></td></tr>
-    <tr><td><b>สูง</b> / Wells &gt;4 (likely)</td><td><b>ไม่ใช้ D-dimer</b> → CTPA เลย (เริ่ม anticoagulant ระหว่างรอถ้าเลือดออกไม่เสี่ยง)</td></tr>
+    <tr><th>Clinical probability</th><th>ขั้นตอน</th></tr>
+    <tr><td><b>ต่ำ &lt;15%</b><br><span class="muted">(เช่น Wells &lt;2)</span></td><td><b>PERC</b> ครบ 8 ข้อ (อายุ &lt;50, HR &lt;100, SpO₂ ≥95%, ไม่ไอเป็นเลือด, ไม่ใช้ estrogen, ไม่เคย DVT/PE, ไม่มีขาบวมข้างเดียว, ไม่มีผ่าตัด/บาดเจ็บที่ต้องนอน รพ.ใน 4 สัปดาห์) → <b>ไม่ต้องตรวจต่อ</b> · ไม่ครบ → ทำแบบกลุ่มกลาง</td></tr>
+    <tr><td><b>ปานกลาง 15–50%</b><br><span class="muted">(Wells 2–6)</span></td><td><b>D-dimer + YEARS</b> <span class="rec">2a</span>: <b>0 item</b> และ D-dimer <b>&lt;1000 ng/mL</b> → ตัด PE ได้ · <b>≥1 item</b> และ D-dimer <b>&lt;500 หรือต่ำกว่าเกณฑ์ปรับตามอายุ</b> (อายุ × 10 เมื่อ &gt;50 ปี) → ตัด PE ได้ · สูงกว่า → ถ่ายภาพ<br><span class="muted">YEARS item = อาการแสดงของ DVT · ไอเป็นเลือด · PE น่าจะเป็นที่สุด · ใช้ <b>age-adjusted D-dimer เดี่ยวๆ</b> แทน YEARS ก็ได้ <span class="rec">2a</span> (ใช้กับ assay แบบ FEU)</span></td></tr>
+    <tr><td><b>สูง &gt;50%</b><br><span class="muted">(Wells &gt;6)</span></td><td><b>ไม่ใช้ D-dimer</b> → ถ่ายภาพเลย <span class="rec s1">1</span> · สงสัย Category C2 ขึ้นไป + เลือดออกเสี่ยงต่ำ + ถ่ายภาพล่าช้า → ให้ anticoagulant ขนาดรักษาระหว่างรอ <span class="rec">2a</span></td></tr>
   </table></div>
+  <p class="muted" style="font-size:.86rem">ข้อควรระวัง: D-dimer strategies ศึกษาในผู้ที่ <b>ไม่ได้ anticoagulant ขนาดรักษา</b> (ภายใน 24 ชม.) · ในที่ prevalence สูงอาจพลาด PE ได้ · การใช้ Wells 2 ระดับแบบเดิม (&gt;4 = likely → CTPA เลย; ≤4 → D-dimer) ยังเป็นแนวทางที่ใช้ได้ (ESC 2019)</p>
   <ul>
-    <li><b>CTPA</b> เป็นมาตรฐาน · <b>V/Q scan</b> เมื่อแพ้สารทึบรังสี ไตเสื่อม ตั้งครรภ์ (CXR ปกติ)</li>
-    <li>ECG (S1Q3T3, RBBB, T inversion V1–V4, sinus tachycardia) และ CXR ช่วยหาโรคอื่น ไม่ใช่วินิจฉัย</li>
-    <li><b>ตั้งครรภ์</b>: pregnancy-adapted YEARS + D-dimer ลดการถ่ายภาพ · ขาบวมทำ compression US ก่อน (ถ้าพบ DVT ไม่ต้อง CT)</li>
-    <li>D-dimer สูงได้จากอายุ ตั้งครรภ์ มะเร็ง ติดเชื้อ หลังผ่าตัด — ใช้ "ตัดออก" เท่านั้น</li>
+    <li><b>CTPA</b> เป็นการตรวจหลัก แนะนำมากกว่า V/Q <span class="rec s1">1</span> · CTPA บวก หรือ V/Q high probability <b>พอวินิจฉัยได้</b> <span class="rec s1">1</span></li>
+    <li>ทำ CTPA ไม่ได้ (แพ้สารทึบรังสี ไตเสื่อมรุนแรง) → <b>V/Q scan</b> (SPECT ดีกว่า planar) มากกว่า MRA <span class="rec">2a</span></li>
+    <li>CTPA ควรรายงาน <b>RV/LV ratio เป็นตัวเลข</b> (≥1.0 = ผิดปกติ) <span class="rec s1">1</span></li>
+    <li><b>Echo ไม่ใช้ยืนยันหรือตัด PE</b> <span class="rec no">3: No benefit</span> (ใช้ประเมิน RV หลังวินิจฉัยแล้ว) · CTV ขา/IVC ร่วมกับ CTPA ไม่ทำประจำ <span class="rec no">3: No benefit</span> · CTPA ลบแล้วไม่ต้องทำ duplex ขาซ้ำ <span class="rec no">3: No benefit</span></li>
+    <li>ยืนยัน PE แล้ว ทำ duplex ขาได้ถ้ามีอาการ DVT หรือผลจะเปลี่ยนการรักษา (เช่น พิจารณา IVC filter) <span class="rec">2b</span></li>
+    <li><b>ตั้งครรภ์</b>: pregnancy-adapted YEARS ลดการถ่ายภาพ <span class="rec">2b</span> · ขาบวมทำ compression US ก่อน (พบ DVT → รักษาได้ไม่ต้อง CT) · ถ้าต้องถ่ายภาพและ CXR ปกติ → <b>low-dose CTPA</b> มากกว่า low-dose perfusion scan <span class="rec">2a</span></li>
+    <li>ECG (S1Q3T3, RBBB, T inversion V1–V4, sinus tachycardia) และ CXR ช่วยหาโรคอื่น ไม่ใช่วินิจฉัย · D-dimer สูงได้จากอายุ ตั้งครรภ์ มะเร็ง ติดเชื้อ หลังผ่าตัด — ใช้ "ตัดออก" เท่านั้น</li>
   </ul>
+  <div class="box warn"><b>ความดันต่ำ/shock ที่สงสัย PE</b>ผู้ป่วยไม่คงที่ <b>ห้ามส่งต่อก่อน stabilize</b> <span class="rec no">3: Harm</span> — การรักษาที่ทำได้ทั่วไป เช่น systemic thrombolysis ไม่ควรล่าช้า · ESC 2019: ถ้าย้ายไป CT ไม่ได้ bedside echo พบ RV โตชัดโดยไม่มีสาเหตุอื่น → รักษาแบบ PE รุนแรงได้ (AHA ไม่ให้ใช้ echo วินิจฉัยในผู้ป่วยทั่วไป) · ถ้าคงที่พอ ทำ CTPA ด่วน</div>
 </section>
 
 <!-- 4 -->
 <section id="cat" class="col">
   <div class="sec-num">04</div>
   <h2>ความรุนแรง: AHA/ACC Acute PE Clinical Categories <span class="tag up">2026</span></h2>
-  <p>แทนคำว่า massive/submassive และ low/intermediate/high risk แบบเดิม · ผู้ป่วยเปลี่ยน category ได้เมื่อประเมินซ้ำ · เพิ่ม modifier <b>R</b> ตามระดับ: <b>C</b> — SpO₂ &lt;90%, หายใจเร็ว หรือต้องใช้ O₂ · <b>D</b> — O₂ &gt;6 L/min หรือ non-rebreather · <b>E</b> — ต้องใช้ NIV/เครื่องช่วยหายใจ (ถ้า R กับ hemodynamics ขัดกัน ให้ใช้ category ที่สูงกว่า)</p>
+  <p>แทนคำว่า massive/submassive และ low/intermediate/high risk แบบเดิม · เลือก category ตามตัวชี้วัดที่ <b>รุนแรงที่สุด</b> · ผู้ป่วยเปลี่ยน category ได้เมื่อประเมินซ้ำ · เพิ่ม <b>modifier R</b> (เช่น C3R, D2R) เมื่อมีปัญหาการหายใจเด่น: <b>C</b> — SpO₂ &lt;90%, RR ≥30 หรือต้องใช้ O₂ · <b>D</b> — O₂ &gt;6 L/min ทาง cannula หรือ non-rebreather · <b>E</b> — หายใจล้มเหลว ต้องใช้ NIV/เครื่องช่วยหายใจ</p>
   <div class="tbl"><table>
-    <tr><th>Category</th><th>นิยาม</th><th>เทียบ ESC 2019</th></tr>
-    <tr><td><b>A</b> subclinical</td><td>พบโดยบังเอิญ ไม่มีอาการ</td><td>—</td></tr>
-    <tr><td><b>B</b> symptomatic, severity score ต่ำ</td><td>sPESI 0 / PESI ≤85 / Hestia 0 / Bova ≤4 · <b>B1</b> subsegmental · <b>B2</b> segmental ขึ้นไป</td><td>Low risk</td></tr>
-    <tr><td><b>C1</b></td><td>severity score สูง (sPESI ≥1, PESI (sPESI ≥1, PESI &gt;85, Hestia ≥1)gt;85, Hestia ≥1, Bova (sPESI ≥1, PESI &gt;85, Hestia ≥1)gt;4) · RV และ biomarker ปกติ</td><td>Intermediate-low</td></tr>
-    <tr><td><b>C2</b></td><td>score สูง + <b>อย่างใดอย่างหนึ่ง</b>: RV ผิดปกติ (echo/CT) หรือ troponin/BNP สูง</td><td>Intermediate-low</td></tr>
-    <tr><td><b>C3</b></td><td>score สูง + <b>ทั้ง RV ผิดปกติและ biomarker สูง</b></td><td>Intermediate-high</td></tr>
-    <tr><td><b>D1</b> ใกล้ล้มเหลว</td><td>ความดันต่ำชั่วคราว (เช่น syncope) ตอบสนองสารน้ำ ไม่มี hypoperfusion</td><td>Intermediate-high</td></tr>
-    <tr><td><b>D2</b> normotensive shock</td><td>ความดันปกติแต่มี hypoperfusion (lactate สูง, AKI, ซึม)</td><td>Intermediate-high / high</td></tr>
-    <tr><td><b>E1</b></td><td>ความดันต่ำต่อเนื่อง/ซ้ำ + cardiogenic shock</td><td>High risk</td></tr>
-    <tr><td><b>E2</b> catastrophic</td><td>Refractory shock (SCAI D–E) หรือ cardiac arrest</td><td>High risk</td></tr>
+    <tr><th>Category</th><th>นิยาม (Figure 2)</th><th>เทียบ ESC 2019 (โดยประมาณ)</th></tr>
+    <tr><td><b>A</b> subclinical</td><td>พบโดยบังเอิญ ไม่มีอาการ (เช่น CT staging มะเร็ง)</td><td>—</td></tr>
+    <tr><td><b>B</b> symptomatic, severity score ต่ำ</td><td>sPESI 0 / PESI ≤85 (class I–II) / Hestia 0 / Bova ≤4 · <b>B1</b> subsegmental (เดี่ยวหรือหลายตำแหน่ง) · <b>B2</b> segmental ขึ้นไป</td><td>Low risk</td></tr>
+    <tr><td><b>C1</b></td><td>severity score สูง (sPESI ≥1, PESI &gt;85, Hestia ≥1 หรือ Bova &gt;4) · <b>RV ปกติและ biomarker ปกติ</b></td><td>Intermediate-low</td></tr>
+    <tr><td><b>C2</b></td><td>score สูง + <b>RV ผิดปกติ หรือ</b> biomarker ผิดปกติ ≥1 ตัว (อย่างใดอย่างหนึ่ง)</td><td>Intermediate-low</td></tr>
+    <tr><td><b>C3</b></td><td>score สูง + <b>RV ผิดปกติ และ</b> biomarker ผิดปกติ ≥1 ตัว</td><td>Intermediate-high</td></tr>
+    <tr><td><b>D1</b> incipient failure</td><td><b>ความดันต่ำชั่วคราว</b>: SBP &lt;90 หรือลดลง &gt;40 mmHg นาน &lt;15 นาที หรือตอบสนองต่อสารน้ำ · ไม่มี hypoperfusion</td><td>Intermediate-high</td></tr>
+    <tr><td><b>D2</b> normotensive shock</td><td>มี hypoperfusion อย่างใดอย่างหนึ่ง: lactate &gt;2 mmol/L, AKI, ปัสสาวะ &lt;0.5 mL/kg/ชม., ซึม/สับสน, cardiac index &lt;2.2, MAP &lt;60, SCAI stage สูงขึ้น</td><td>Intermediate-high / ใกล้ high</td></tr>
+    <tr><td><b>E1</b> cardiopulmonary failure</td><td>ความดันต่ำ <b>ต่อเนื่องหรือเป็นซ้ำ</b> ร่วมกับ cardiogenic shock (≈ SCAI C)</td><td>High risk</td></tr>
+    <tr><td><b>E2</b></td><td><b>Refractory</b> cardiogenic shock (SCAI D–E) หรือ cardiac arrest</td><td>High risk</td></tr>
   </table></div>
   <div class="grid2">
-    <div class="card c-acc"><h4>sPESI (1 คะแนนต่อข้อ)</h4>อายุ &gt;80 · มะเร็ง · โรคหัวใจ/ปอดเรื้อรัง · HR ≥110 · SBP &lt;100 · SpO₂ &lt;90% → <b>0 = เสี่ยงต่ำ</b></div>
-    <div class="card c-warn"><h4>ตรวจเพิ่มเมื่อ score สูง</h4><b>Troponin, BNP/NT-proBNP</b> · <b>RV/LV ratio ≥1.0</b> บน CT หรือ echo · <b>lactate</b> ในผู้ที่ความดันปกติ (หา normotensive shock)</div>
+    <div class="card c-acc"><h4>sPESI (1 คะแนนต่อข้อ)</h4>อายุ &gt;80 · มะเร็ง · โรคหัวใจ/ปอดเรื้อรัง · HR ≥110 · SBP &lt;100 · SpO₂ &lt;90% → <b>0 = เสี่ยงต่ำ</b> · Category A–B ใช้ Hestia/PESI/sPESI หาผู้เสี่ยงต่ำ <span class="rec s1">1</span></div>
+    <div class="card c-warn"><h4>ตรวจเพิ่มเมื่อ score สูง (C–D)</h4><b>Troponin หรือ BNP อย่างน้อย 1 ตัว</b> <span class="rec s1">1</span> · <b>Lactate</b> ใน C–E ทุกราย <span class="rec s1">1</span> · <b>ประเมิน RV</b> <span class="rec s1">1</span> — echo ดีกว่า CT สำหรับแบ่งความเสี่ยง <span class="rec">2a</span> (POCUS ใช้แทนได้ถ้าไม่มี echo) · C3: MAP &lt;80 บ่งว่าอาจต้องเพิ่มระดับการรักษา <span class="rec">2a</span> · ไม่ใช้ปริมาณลิ่มเลือดบน CT แบ่งความเสี่ยงใน A–C <span class="rec no">3: No benefit</span></div>
   </div>
 </section>
 
 <!-- 5 -->
 <section id="tx" class="col">
   <div class="sec-num">05</div>
-  <h2>รักษาตาม category (AHA/ACC 2026)</h2>
+  <h2>รักษาตาม category (AHA/ACC 2026 Figure 3)</h2>
   <div class="tbl"><table>
     <tr><th>Category</th><th>การรักษา</th><th>Class</th></tr>
-    <tr><td><b>A–B</b></td><td><b>DOAC</b> (apixaban/rivaroxaban ไม่ต้องให้ยาฉีดนำ) มากกว่า warfarin รวมคนอ้วน · <b>รักษาแบบผู้ป่วยนอก</b>ได้ถ้า sPESI 0/Hestia 0 ไม่มีเลือดออก ผู้ป่วยพร้อม · B1 subsegmental ไม่มี DVT เสี่ยงต่ำ → สังเกตอาการได้ (CHEST)</td><td><span class="rec s1">1</span></td></tr>
-    <tr><td><b>C–E1</b> ต้องให้ยาฉีด</td><td><b>LMWH มากกว่า UFH</b> · นอนโรงพยาบาล ติดตาม 24–72 ชม.แรก</td><td><span class="rec s1">1</span></td></tr>
-    <tr><td><b>C–E</b></td><td>ปรึกษา <b>PERT</b> (ทีมสหสาขา) — ในไทยคือปรึกษาอายุรแพทย์หัวใจ/ปอด/ICU/รังสีร่วมรักษา</td><td><span class="rec s1">1</span></td></tr>
-    <tr><td><b>C3</b></td><td>Systemic thrombolysis, CDT, mechanical thrombectomy — ประโยชน์ไม่ชัด</td><td><span class="rec">2b</span></td></tr>
-    <tr><td><b>D</b></td><td>Thrombolysis, CDT, thrombectomy, surgical embolectomy — พิจารณาได้</td><td><span class="rec">2b</span></td></tr>
-    <tr><td><b>E</b></td><td><b>Reperfusion</b>: systemic thrombolysis, CDT, mechanical thrombectomy (E1/บาง D: surgical embolectomy เป็นทางเลือกเมื่อเลือดออกเสี่ยง) · E2: พิจารณา VA-ECMO</td><td><span class="rec">2a</span></td></tr>
+    <tr><td><b>ทุกราย</b></td><td>เริ่ม anticoagulant ทันทีถ้าไม่มีข้อห้ามเด็ดขาด · ยากิน: <b>DOAC มากกว่า warfarin</b> (ถ้าไม่มีข้อห้าม)</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>A–B</b></td><td><b>DOAC</b> (apixaban/rivaroxaban เริ่มได้เลยไม่ต้องให้ยาฉีดนำ) · A: กลับบ้านจาก ER ได้ · B: <b>รักษาแบบผู้ป่วยนอก</b>ได้ในรายคัดเลือก (Hestia/PESI/sPESI ต่ำ) — ต้องได้ยาทันทีและนัดติดตามได้แน่นอน <span class="muted">· B1 subsegmental ไม่มี DVT เสี่ยงซ้ำต่ำ → CHEST ให้เลือกสังเกตอาการได้</span></td><td><span class="rec s1">1</span> / <span class="rec">2a</span> (ผู้ป่วยนอก)</td></tr>
+    <tr><td><b>C1–E1</b> ที่ต้องเริ่มยาฉีด</td><td><b>LMWH มากกว่า UFH</b> (ลด recurrent VTE และเลือดออก) · นอน รพ. ติดตามใกล้ชิด 24–72 ชม.แรก · <b>E2</b>: LMWH หรือ UFH</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>C–E</b></td><td>ปรึกษา <b>PERT</b> (ทีมสหสาขา) — ในไทยคือปรึกษาอายุรแพทย์หัวใจ/ปอด/ICU/รังสีร่วมรักษา/ศัลยแพทย์หัวใจ</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>D2–E2</b></td><td>Vasopressor และ/หรือ inotrope เพื่อเพิ่ม cardiac output</td><td><span class="rec s1">1</span></td></tr>
+    <tr><td><b>C3–E2</b> + clot-in-transit (ลิ่มลอยใน RA/RV)</td><td>Advanced therapy มากกว่า anticoagulant อย่างเดียว</td><td><span class="rec">2a</span></td></tr>
+    <tr><td><b>E2</b></td><td>VA-ECMO ถ้ามีทรัพยากร · ระหว่าง ECMO ให้ anticoagulant ต่อถ้าไม่มีเลือดออก <span class="rec s1">1</span></td><td><span class="rec">2a</span></td></tr>
+    <tr><td><b>ส่งต่อ</b></td><td>C3–D (คงที่แต่เสี่ยงสูง) พิจารณาส่ง รพ.ที่ทำ advanced therapy ได้ <span class="rec">2b</span> · <b>E ห้ามส่งต่อก่อน stabilize</b> (ให้ systemic lysis ได้ก่อน)</td><td><span class="rec no">3: Harm</span></td></tr>
   </table></div>
-  <div class="box key"><b>HI-PEITHO (NEJM 2026)</b> <span class="tag up">2026</span>ผู้ป่วย intermediate-risk PE ที่มี RV/LV ≥1.0 + troponin สูง + อาการรุนแรง ≥2 ข้อ (HR ≥100, SBP ≤110, RR &gt;20 หรือ SpO₂ &lt;90%): ultrasound-facilitated CDT + anticoagulant ลด composite (PE death, decompensation, recurrence) ใน 7 วัน 4.0% vs 10.3% โดยไม่มีเลือดออกในสมอง — สนับสนุน CDT ในผู้ป่วยคัดเลือก (ข้อมูลออกพร้อม/หลังแนวทาง)</div>
+  <h3>Advanced therapy ตาม category (Table 7)</h3>
+  <div class="tbl"><table>
+    <tr><th>Category</th><th>Systemic lysis</th><th>CDL (catheter-directed lysis)</th><th>Mechanical thrombectomy</th><th>Surgical embolectomy</th></tr>
+    <tr><td><b>A–C1</b></td><td><span class="rec no">3: Harm</span></td><td><span class="rec no">3: NB</span></td><td><span class="rec no">3: NB</span></td><td><span class="rec no">3: NB</span></td></tr>
+    <tr><td><b>C2</b></td><td><span class="rec no">3: Harm</span></td><td><span class="rec">2b</span> ไม่ชัด</td><td><span class="rec">2b</span> ไม่ชัด</td><td><span class="rec no">3: NB</span></td></tr>
+    <tr><td><b>C3</b></td><td><span class="rec">2b</span> ไม่ชัด</td><td><span class="rec">2b</span> ไม่ชัด</td><td><span class="rec">2b</span> ไม่ชัด</td><td><span class="rec no">3: NB</span></td></tr>
+    <tr><td><b>D1–D2</b></td><td><span class="rec">2b</span> พิจารณาได้</td><td><span class="rec">2b</span> พิจารณาได้</td><td><span class="rec">2b</span> พิจารณาได้</td><td><span class="rec">2b</span></td></tr>
+    <tr><td><b>E1</b></td><td><span class="rec">2a</span></td><td><span class="rec">2a</span></td><td><span class="rec">2a</span></td><td><span class="rec">2a</span></td></tr>
+    <tr><td><b>E2</b></td><td><span class="rec">2a</span> (ถ้าเลือดออกเสี่ยงรับได้)</td><td>—</td><td>—</td><td><span class="rec no">3: NB</span> (ถ้าไม่ได้ใส่ MCS)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">NB = no benefit · D1–E1 ที่กำลังพิจารณา lysis: CDL, MT หรือ surgical embolectomy อาจเลือกแทน systemic lysis เพื่อลดเลือดออก/ICH <span class="rec">2b</span> · C2–D2: CDL กับ MT ไม่ทราบว่าแบบใดดีกว่า (PEERLESS) <span class="rec">2b</span> · PEITHO (C3–D2): tenecteplase ลดการทรุดลงแต่เลือดออกในสมองมากขึ้น — rescue lysis เมื่อทรุดลงก็ได้ประโยชน์</p>
+  <div class="box note"><b>HI-PEITHO</b> <span class="tag add">เสริม</span>RCT ของ ultrasound-facilitated CDT + anticoagulant เทียบ anticoagulant เดี่ยวในกลุ่ม intermediate-high (≈C3) ที่มีอาการรุนแรง — แนวทาง AHA/ACC 2026 อ้างถึงเพียง design ของการศึกษา (ทบทวนหลักฐานถึง เม.ย. 2025) คำแนะนำในแนวทางสำหรับ C3 จึงยังเป็น <span class="rec">2b</span> · ผลการศึกษาให้ตรวจจากบทความต้นฉบับ</div>
   <div class="grid2">
-    <div class="card c-red"><h4>ดูแล RV failure <span class="tag add">เสริม</span></h4><ul><li><b>ระวังให้สารน้ำมาก</b> (≤500 mL) — RV โตกดทับ LV</li><li><b>Norepinephrine</b> ตัวแรก · ต่ำ cardiac output → เพิ่ม dobutamine</li><li>หลีกเลี่ยงการใส่ท่อช่วยหายใจถ้าได้ (induction + PPV ทำให้ทรุด) · ถ้าจำเป็นใช้ยาที่ไม่ลดความดัน</li><li>O₂ เมื่อ SpO₂ &lt;90%</li></ul></div>
-    <div class="card c-vio"><h4>IVC filter</h4>เฉพาะ <b>ให้ anticoagulant ไม่ได้</b> (เลือดออกรุนแรง) หรือ PE ซ้ำแม้ได้ยาเต็มที่ · ไม่ใส่ประจำร่วมกับยา (CHEST: ไม่แนะนำ) · ถอดออกเมื่อเริ่มยาได้</div>
+    <div class="card c-red"><h4>ดูแล RV failure / ทางเดินหายใจ</h4><ul><li><b>Norepinephrine</b> ตัวแรก · ถ้าต้องใช้ &gt;15 µg/min เพิ่มตัวที่สอง (vasopressin) แทนเพิ่มขนาด · cardiac output ต่ำ → เพิ่ม <b>dobutamine</b> (D2 อาจใช้เป็นตัวแรก)</li><li><b>สารน้ำ ≤500 mL</b> เฉพาะ D1–D2 ที่สงสัย preload ต่ำ <span class="rec">2b</span> — ห้ามให้ปริมาณมาก</li><li>Inhaled pulmonary vasodilator (C2–E) <span class="rec">2b</span></li><li>SpO₂ ต่ำปานกลาง–รุนแรง → <b>HFNC</b> ดีกว่า cannula ธรรมดา <span class="rec">2a</span></li><li><b>หลีกเลี่ยง deep sedation/ใส่ท่อ</b> ใน C–E ถ้าไม่จำเป็น <span class="rec no">3: Harm</span> · ถ้าต้องใส่ เตรียม vasopressor/inotrope/ECMO ให้พร้อม <span class="rec s1">1</span></li></ul></div>
+    <div class="card c-vio"><h4>IVC filter</h4><ul><li><b>ให้ anticoagulant ไม่ได้</b> → ใส่ filter ลด PE ซ้ำระยะสั้น <span class="rec">2a</span> ใช้ชนิด <b>ถอดได้</b> <span class="rec s1">1</span> และ <b>ถอดเร็วที่สุด</b>เมื่อให้ยาได้ <span class="rec s1">1</span> พร้อมระบบติดตามนัดถอด <span class="rec">2a</span></li><li>PE ซ้ำแม้ได้ยาเต็มที่ <span class="rec">2b</span> · D–E ที่ทำ advanced therapy ประโยชน์ไม่ชัด <span class="rec">2b</span></li><li><b>ไม่ใส่ประจำ</b>ในผู้ที่ได้ยาขนาดรักษาแล้ว <span class="rec no">3: Harm</span></li></ul></div>
   </div>
 </section>
 
@@ -335,18 +359,21 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="lysis" class="col">
   <div class="sec-num">06</div>
   <h2>Systemic thrombolysis</h2>
+  <p><b>ข้อบ่งชี้ (AHA/ACC 2026)</b>: E1–E2 ที่เลือดออกเสี่ยงรับได้ <span class="rec">2a</span> · D1–D2 <span class="rec">2b</span> · C3 ประโยชน์ไม่ชัด <span class="rec">2b</span> · <b>A1–C2 ห้ามให้</b> (เลือดออก/ICH มากขึ้น) <span class="rec no">3: Harm</span> · รับไว้ ICU/intermediate care ระหว่างให้ยา <span class="rec s1">1</span></p>
   <div class="tbl"><table>
-    <tr><th>ยา</th><th>ขนาด (ESC 2019)</th></tr>
-    <tr><td><b>Alteplase (rtPA)</b></td><td><b>100 mg IV ใน 2 ชม.</b> · หรือ 0.6 mg/kg ใน 15 นาที (สูงสุด 50 mg) แบบเร่ง · ให้ UFH ต่อระหว่าง alteplase ได้ (streptokinase/urokinase ให้หยุด UFH ระหว่างหยด)</td></tr>
-    <tr><td><b>Streptokinase</b></td><td>250,000 IU ใน 30 นาที → 100,000 IU/ชม. 12–24 ชม. · แบบเร่ง <b>1.5 ล้าน IU ใน 2 ชม.</b> (ยาที่ รพ.ไทยหลายแห่งมี)</td></tr>
-    <tr><td><b>Urokinase</b></td><td>4,400 IU/kg ใน 10 นาที → 4,400 IU/kg/ชม. 12–24 ชม. · แบบเร่ง 3 ล้าน IU ใน 2 ชม.</td></tr>
-    <tr><td>Cardiac arrest จาก PE</td><td>ให้ thrombolysis ระหว่าง CPR ได้ · ทำ CPR ต่อ 60–90 นาทีหลังให้ <span class="tag add">เสริม</span></td></tr>
+    <tr><th>ยา</th><th>ขนาด</th></tr>
+    <tr><td><b>Alteplase (rtPA)</b></td><td><b>100 mg IV ใน 2 ชม.</b> (ขนาดมาตรฐานที่ใช้มากที่สุด — AHA 2026) · ESC 2019: แบบเร่ง 0.6 mg/kg ใน 15 นาที (สูงสุด 50 mg) ในภาวะวิกฤต · <b>ขนาดต่ำ (25–50 mg)</b> อาจพิจารณาเพื่อลดเลือดออก <span class="rec">2b</span> (ยังรอ PEITHO-3)</td></tr>
+    <tr><td><b>Streptokinase</b></td><td>ESC 2019: 250,000 IU ใน 30 นาที → 100,000 IU/ชม. 12–24 ชม. · แบบเร่ง <b>1.5 ล้าน IU ใน 2 ชม.</b> · AHA ระบุว่าไม่ใช้แล้วในสหรัฐฯ (ต้องหยดนาน) แต่ <b>ยังเป็นยาที่ รพ.ไทยหลายแห่งมี</b> · หยุด UFH ระหว่างหยด</td></tr>
+    <tr><td><b>Urokinase</b></td><td>ESC 2019: 4,400 IU/kg ใน 10 นาที → 4,400 IU/kg/ชม. 12–24 ชม. · แบบเร่ง 3 ล้าน IU ใน 2 ชม.</td></tr>
+    <tr><td>Tenecteplase</td><td>มีการศึกษา (PEITHO) แต่ FDA ยังไม่รับรองสำหรับ PE</td></tr>
+    <tr><td>CDL (ผ่านสายสวน)</td><td>Alteplase <b>5–10 mg ต่อ PA</b> (มาตรฐาน) · ลดเหลือ &lt;5 mg/PA ไม่แนะนำ <span class="rec no">3: No benefit</span> · ให้ anticoagulant ร่วมระหว่างทำ (LMWH/UFH ขนาดรักษา หรือ UFH ขนาดต่ำ) <span class="rec s1">1</span></td></tr>
+    <tr><td>Cardiac arrest จาก PE</td><td>ให้ thrombolysis ระหว่าง CPR ได้ · ทำ CPR ต่อ 60–90 นาทีหลังให้ (ESC) <span class="tag add">เสริม</span></td></tr>
   </table></div>
   <div class="grid2">
-    <div class="card c-red"><h4>ข้อห้ามเด็ดขาด</h4>เคย hemorrhagic stroke หรือ stroke ไม่ทราบสาเหตุ · ischemic stroke ใน 6 เดือน · เนื้องอก CNS · บาดเจ็บศีรษะ/ผ่าตัดใหญ่ใน 3 สัปดาห์ · bleeding diathesis · เลือดออกอยู่</div>
-    <div class="card c-warn"><h4>ข้อห้ามสัมพัทธ์</h4>TIA ใน 6 เดือน · ใช้ OAC · ตั้งครรภ์/หลังคลอด 1 สัปดาห์ · เจาะหลอดเลือดที่กดไม่ได้ · CPR ที่มีการบาดเจ็บ (traumatic resuscitation) · SBP &gt;180 ดื้อต่อการรักษา · ตับวาย · endocarditis · แผลในกระเพาะ</div>
+    <div class="card c-red"><h4>ข้อห้ามเด็ดขาด (ESC 2019)</h4>เคย hemorrhagic stroke หรือ stroke ไม่ทราบสาเหตุ · ischemic stroke ใน 6 เดือน · เนื้องอก CNS · บาดเจ็บศีรษะ/ผ่าตัดใหญ่ใน 3 สัปดาห์ · bleeding diathesis · เลือดออกอยู่</div>
+    <div class="card c-warn"><h4>ข้อห้ามสัมพัทธ์ (ESC 2019)</h4>TIA ใน 6 เดือน · ใช้ OAC · ตั้งครรภ์/หลังคลอด 1 สัปดาห์ · เจาะหลอดเลือดที่กดไม่ได้ · CPR ที่มีการบาดเจ็บ · SBP &gt;180 ดื้อต่อการรักษา · ตับวายรุนแรง · endocarditis · แผลในกระเพาะ</div>
   </div>
-  <p>หลัง thrombolysis: เริ่ม UFH (ไม่ bolus) เมื่อ aPTT &lt;2 เท่าของปกติ แล้วเปลี่ยนเป็น LMWH/DOAC เมื่อคงที่ <span class="tag add">เสริม</span></p>
+  <p>หลัง thrombolysis หรือหัตถการ: AHA 2026 แนะนำให้ anticoagulant ต่อด้วย <b>LMWH มากกว่า UFH</b> <span class="rec s1">1</span> · ถ้าคาดว่าจะทำหัตถการ เลือก LMWH มากกว่า UFH ได้ <span class="rec">2a</span> · ในทางปฏิบัติหลัง alteplase/streptokinase เริ่ม heparin เมื่อ aPTT &lt;2 เท่าของปกติ (ESC) <span class="tag add">เสริม</span></p>
 </section>
 
 <!-- 7 -->
@@ -354,17 +381,47 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">07</div>
   <h2>เลือกยาและขนาดยา</h2>
   <div class="tbl"><table>
-    <tr><th>ยา</th><th>ระยะเริ่ม</th><th>ระยะรักษา</th><th>ไต (CrCl)</th></tr>
-    <tr><td><b>Apixaban</b></td><td><b>10 mg bid × 7 วัน</b></td><td>5 mg bid · ต่อเนื่อง (หลัง 6 เดือน) 2.5 mg bid</td><td>ไม่ปรับใน VTE · &lt;25 ข้อมูลน้อย</td></tr>
-    <tr><td><b>Rivaroxaban</b></td><td><b>15 mg bid × 21 วัน</b> (กินพร้อมอาหาร)</td><td>20 mg od · ต่อเนื่อง 10 mg od</td><td>หลีกเลี่ยง &lt;15 · ระวัง 15–30</td></tr>
-    <tr><td><b>Edoxaban</b></td><td>LMWH/UFH ≥5 วันก่อน</td><td>60 mg od · <b>30 mg</b> ถ้า CrCl 15–50, น้ำหนัก ≤60 kg หรือใช้ P-gp inhibitor</td><td>หลีกเลี่ยง &lt;15</td></tr>
-    <tr><td><b>Dabigatran</b></td><td>LMWH/UFH ≥5 วันก่อน</td><td>150 mg bid</td><td>ห้าม &lt;30</td></tr>
-    <tr><td><b>Enoxaparin</b></td><td colspan="2"><b>1 mg/kg SC q12h</b> (หรือ 1.5 mg/kg od) · มะเร็ง: เดือนแรก 1 mg/kg q12h</td><td>&lt;30: 1 mg/kg od · ติดตาม anti-Xa ในไตวาย/อ้วนมาก</td></tr>
-    <tr><td><b>Fondaparinux</b></td><td colspan="2">&lt;50 kg: 5 mg · 50–100 kg: 7.5 mg · &gt;100 kg: 10 mg SC od</td><td>ห้าม &lt;30</td></tr>
-    <tr><td><b>UFH</b></td><td colspan="2">80 U/kg bolus → 18 U/kg/ชม. ปรับตาม aPTT 1.5–2.5 เท่า (หรือ anti-Xa)</td><td>เลือกเมื่อ CrCl &lt;30, shock/จะทำ thrombolysis, เลือดออกเสี่ยงสูงต้องหยุดเร็ว</td></tr>
-    <tr><td><b>Warfarin</b></td><td colspan="2">เริ่มพร้อมยาฉีด <b>ให้ทับกัน ≥5 วัน และ INR ≥2 นาน 24 ชม.</b> · เป้า INR 2–3</td><td>ใช้ได้ทุกระดับไต</td></tr>
+    <tr><th>ยา</th><th>ระยะเริ่ม</th><th>ระยะรักษา</th><th>ไต (CrCl) / หมายเหตุ</th></tr>
+    <tr><td><b>Apixaban</b></td><td><b>10 mg bid × 7 วัน</b></td><td>5 mg bid · extended (หลังครบ 3–6 เดือน) <b>2.5 mg bid</b></td><td>ไม่ปรับในช่วง CrCl ≥25 ตามฉลาก · CKD 4–5/ฟอกไต: ข้อมูล registry เท่านั้น <span class="rec">2b</span></td></tr>
+    <tr><td><b>Rivaroxaban</b></td><td><b>15 mg bid × 21 วัน</b> (กินพร้อมอาหาร)</td><td>20 mg od (พร้อมอาหาร) · extended <b>10 mg od</b></td><td>หลีกเลี่ยง &lt;15 · ระวัง 15–30</td></tr>
+    <tr><td><b>Edoxaban</b></td><td>ยาฉีด ≥5 วันก่อน (AHA/ฉลาก) · <span class="tag th">ไทย</span> LMWH 7–10 วัน</td><td>60 mg od · <b>30 mg</b> ถ้า CrCl 15–50, น้ำหนัก ≤60 kg หรือใช้ P-gp inhibitor (ฉลาก)</td><td>หลีกเลี่ยง &lt;15</td></tr>
+    <tr><td><b>Dabigatran</b></td><td>ยาฉีด ≥5 วันก่อน (AHA/ฉลาก) · <span class="tag th">ไทย</span> LMWH 7–10 วัน</td><td>150 mg bid</td><td>ขับทางไต 80% · ฉลากส่วนใหญ่ห้าม &lt;30 · <span class="tag th">ไทย</span> CrCl 15–30 ลดเหลือ 75 mg bid · กินก่อนยา P-gp inhibitor ≥2 ชม. · ห้ามใช้กับ rifampin</td></tr>
+    <tr><td><b>Enoxaparin</b></td><td colspan="2"><b>1 mg/kg SC q12h</b> หรือ 1.5 mg/kg SC q24h · BMI &gt;40 อาจลดขนาด (เช่น 0.8 mg/kg q12h) <span class="rec">2b</span></td><td>&lt;30: 1 mg/kg od + ติดตาม anti-Xa <span class="rec">2a</span></td></tr>
+    <tr><td><b>Nadroparin</b> / <b>Tinzaparin</b> <span class="tag th">ไทย</span></td><td colspan="2">Nadroparin 86 U/kg q12h หรือ 171 U/kg q24h · Tinzaparin 175 U/kg q24h</td><td>LMWH ขับทางไต ~80%</td></tr>
+    <tr><td><b>Fondaparinux</b></td><td colspan="2">&lt;50 kg: 5 mg · 50–100 kg: 7.5 mg · &gt;100 kg: 10 mg SC od</td><td>ขับทางไต 100% — ห้าม &lt;30</td></tr>
+    <tr><td><b>UFH</b></td><td colspan="2">IV: 80 U/kg (หรือ 5,000 U) bolus → 18 U/kg/ชม. ปรับให้ aPTT 1.5–2.5 เท่าของค่ากลางปกติ หรือ anti-Xa 0.3–0.7 U/mL · <span class="tag th">ไทย</span> SC: 333 U/kg → 250 U/kg q12h</td><td>เลือกเมื่อ CrCl &lt;30, shock/จะ lyse, ต้องหยุดยาเร็ว</td></tr>
+    <tr><td><b>Warfarin</b></td><td colspan="2">0.5–6 mg/วัน · เริ่มพร้อมยาฉีด <b>ให้ทับกัน ≥5 วัน และ INR 2–3 ติดต่อกัน 24 ชม.</b> จึงหยุดยาฉีด · <b>ห้ามเริ่ม warfarin เดี่ยว</b> (++) <span class="tag th">ไทย</span> · เป้า INR 2–3</td><td>ใช้ได้ทุกระดับไต</td></tr>
   </table></div>
-  <p class="muted" style="font-size:.88rem">ใช้ CrCl แบบ Cockcroft-Gault (น้ำหนักจริง) · DOAC เป็นยาแรกในผู้ป่วยส่วนใหญ่ (AHA/ACC 2026, CHEST 2021) · ในไทยยังใช้ warfarin มากเพราะราคา — ต้องติดตาม INR และปฏิกิริยาระหว่างยา · Reversal ดูหน้า <a href="../thrombocytopenia/index.html#rev">Thrombocytopenia</a></p>
+  <div class="tbl"><table>
+    <tr><th>ประเด็น</th><th>AHA/ACC 2026 (PE)</th><th>แนวทางไทย 2565 (VTE)</th></tr>
+    <tr><td>ยาระยะเริ่ม (5–7 วันแรก)</td><td>LMWH มากกว่า UFH (C1–E1) <span class="rec s1">1</span></td><td>LMWH (++) · UFH IV (+) · UFH SC (+/−) · fondaparinux (+) · rivaroxaban (+) · apixaban (+)</td></tr>
+    <tr><td>ยากินระยะยาว</td><td><b>DOAC มากกว่า VKA</b> <span class="rec s1">1</span></td><td>Warfarin (++) · dabigatran / rivaroxaban / apixaban (+) — ไทยให้ warfarin น้ำหนักคำแนะนำสูงสุด เพราะราคาและการเข้าถึง</td></tr>
+    <tr><td>CrCl &lt;30</td><td>Apixaban vs VKA ยังไม่แน่ชัด <span class="rec">2b</span> · LMWH ปรับขนาด + anti-Xa <span class="rec">2a</span></td><td><b>Warfarin</b> (หลีกเลี่ยง DOAC และ LMWH)</td></tr>
+    <tr><td>เคยเลือดออกทางเดินอาหาร</td><td>—</td><td><b>Warfarin หรือ apixaban</b> (dabigatran/rivaroxaban/edoxaban เลือดออก GI มากกว่า)</td></tr>
+    <tr><td>Anti-Xa (LMWH)</td><td>ไม่ต้องตรวจประจำ <span class="rec no">3: NB</span> · ถ้าตรวจ ใช้ระดับ peak 3–5 ชม.หลังฉีด หลังได้ ≥3 โดส <span class="rec s1">1</span></td><td>ตรวจเฉพาะไตผิดปกติ/อ้วนรุนแรง · หลังได้ ≥3 โดส ที่ 3–5 ชม. · เป้า enoxaparin 0.6–1.0 (q12h) หรือ 1.0–2.0 U/mL (od)</td></tr>
+  </table></div>
+  <h3>ปรับ warfarin ตาม INR <span class="tag th">ไทย 2565</span></h3>
+  <div class="tbl"><table>
+      <tr><th>INR</th><th>ปรับขนาดต่อสัปดาห์</th><th>ตรวจซ้ำ</th></tr>
+      <tr><td>&lt;1.5</td><td>เพิ่ม 15%</td><td>1 สัปดาห์</td></tr>
+      <tr><td>1.5–&lt;2</td><td>เพิ่ม 10%</td><td>1 สัปดาห์</td></tr>
+      <tr><td>2–3</td><td>คงเดิม</td><td>—</td></tr>
+      <tr><td>3.1–3.5</td><td>ลด 0–10%</td><td>2 สัปดาห์</td></tr>
+      <tr><td>3.6–4</td><td>งด 1 วัน + ลด 10–15%</td><td>1 สัปดาห์</td></tr>
+      <tr><td>4.1–8.9</td><td>งด 1–2 วัน + vit K 2.5 mg กิน + ลด 10–15%</td><td>2 วัน</td></tr>
+      <tr><td>&gt;9</td><td>งด 2 วัน + vit K 2.5–5 mg กิน + ลด 15–20%</td><td>12–24 ชม.</td></tr>
+  </table></div>
+  <h3>UFH nomogram <span class="tag th">ไทย 2565</span></h3>
+  <div class="tbl"><table>
+      <tr><th>aPTT (anti-Xa)</th><th>ปรับ heparin</th></tr>
+      <tr><td>&lt;35 วิ (&lt;0.1)</td><td>bolus 80 U/kg + เพิ่ม 4 U/kg/ชม.</td></tr>
+      <tr><td>35–44 วิ (0.1–0.29)</td><td>bolus 40 U/kg + เพิ่ม 2 U/kg/ชม.</td></tr>
+      <tr><td>45–70 วิ (0.3–0.7)</td><td>คงเดิม</td></tr>
+      <tr><td>71–90 วิ (0.71–1.2)</td><td>ลด 2 U/kg/ชม.</td></tr>
+      <tr><td>&gt;90 วิ (&gt;1.2)</td><td>หยุด 1 ชม. แล้วลด 3 U/kg/ชม.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.82rem">ค่า aPTT ปกติของตารางนี้ 22–33 วินาที — ใช้ค่าอ้างอิงของห้องแล็บตนเอง</p>
+  <p class="muted" style="font-size:.88rem">ใช้ CrCl แบบ Cockcroft-Gault · DOAC ทุกตัวหลีกเลี่ยงร่วมกับยายับยั้ง CYP3A4 + P-gp อย่างแรง (itraconazole, voriconazole, posaconazole, ketoconazole, ritonavir) (++) <span class="tag th">ไทย</span> · Rivaroxaban 15/20 mg ต้องกินพร้อมอาหาร · เลี่ยง DOAC ≥4 สัปดาห์หลังผ่าตัดลดน้ำหนัก · Reversal ดูหน้า <a href="../thrombocytopenia/index.html#rev">Thrombocytopenia</a></p>
 </section>
 
 <!-- 8 -->
@@ -372,14 +429,17 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">08</div>
   <h2>กลุ่มพิเศษ</h2>
   <div class="tbl"><table>
-    <tr><th>กลุ่ม</th><th>ยาที่เลือก</th></tr>
-    <tr><td><b>มะเร็ง</b></td><td><b>Apixaban, edoxaban, rivaroxaban</b> หรือ LMWH · มะเร็งทางเดินอาหาร/ทางเดินปัสสาวะที่ยังมีก้อน: edoxaban/rivaroxaban เลือดออกมากกว่า → เลือก apixaban หรือ LMWH · ระวังยาเคมีที่มี interaction <span class="tag add">เสริม</span></td></tr>
-    <tr><td><b>Antiphospholipid syndrome</b> (โดยเฉพาะ triple positive / arterial)</td><td><b>Warfarin</b> (หลีกเลี่ยง DOAC)</td></tr>
-    <tr><td><b>ตั้งครรภ์/ให้นมบุตร</b></td><td><b>LMWH</b> ตลอดการตั้งครรภ์ + ≥6 สัปดาห์หลังคลอด (รวมอย่างน้อย 3 เดือน) · ห้าม warfarin (ตั้งครรภ์) และ DOAC · ให้นมบุตรใช้ warfarin หรือ LMWH ได้</td></tr>
-    <tr><td><b>อ้วน</b> (BMI &gt;40 / &gt;120 kg)</td><td>Apixaban หรือ rivaroxaban ใช้ได้ (ISTH 2021) · หลีกเลี่ยง dabigatran/edoxaban</td></tr>
-    <tr><td><b>ตับแข็ง</b> Child-Pugh B–C</td><td>LMWH/warfarin · DOAC ส่วนใหญ่ห้ามใน Child C (rivaroxaban ห้ามตั้งแต่ B)</td></tr>
-    <tr><td><b>เกล็ดเลือดต่ำ</b></td><td>&gt;50: ขนาดเต็ม · 25–50: พิจารณาลดขนาด LMWH/ให้เกล็ดเลือด (ตามความเสี่ยงลิ่มเลือด) · &lt;25: หยุดชั่วคราว <span class="tag add">เสริม</span></td></tr>
-    <tr><td><b>HIT</b></td><td>ดูหน้า <a href="../thrombocytopenia/index.html#hit">Thrombocytopenia</a></td></tr>
+    <tr><th>กลุ่ม</th><th>AHA/ACC 2026</th><th>แนวทางไทย 2565 / หมายเหตุ</th></tr>
+    <tr><td><b>มะเร็ง</b></td><td>ระยะ extended: <b>DOAC หรือ LMWH มากกว่า VKA</b> <span class="rec s1">1</span> · apixaban 2.5 mg bid หลังครบ ≥6 เดือนได้ผลใกล้เคียง 5 mg และเลือดออกน้อยกว่า (API-CAT) · PE ซ้ำขณะได้ LMWH → เพิ่มขนาด 20–25% <span class="rec">2a</span></td><td>แนวทางไทยฉบับนี้ไม่ครอบคลุม cancer-associated VTE · มะเร็งทางเดินอาหาร/ปัสสาวะที่ยังมีก้อน: edoxaban/rivaroxaban เลือดออกมากกว่า → เลือก apixaban หรือ LMWH <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>เนื้องอกสมอง</b> (ปฐมภูมิ/แพร่กระจาย)</td><td>DOAC อาจดีกว่า LMWH (ICH น้อยกว่า) <span class="rec">2b</span></td><td>—</td></tr>
+    <tr><td><b>Antiphospholipid syndrome</b> (thrombotic)</td><td><b>VKA มากกว่า DOAC</b> <span class="rec s1">1</span> · มี antibody ชนิดเดียว (aCL หรือ β2GPI) ไม่มี arterial event → DOAC เป็นทางเลือกได้ <span class="rec">2b</span></td><td>Triple positive / เคย arterial thrombosis หลีกเลี่ยง DOAC</td></tr>
+    <tr><td><b>ตั้งครรภ์</b></td><td><b>LMWH หรือ UFH</b> <span class="rec s1">1</span> · DOAC และ warfarin อาจทำให้แท้ง/ทารกพิการ <span class="rec no">3: Harm</span> · ตรวจ anti-Xa ทุกไตรมาส ประโยชน์ไม่ชัด <span class="rec">2b</span></td><td><b>LMWH</b> <span class="tag th">ไทย</span> · ให้ต่อหลังคลอด ≥6 สัปดาห์ (รวม ≥3 เดือน) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>ให้นมบุตร</b></td><td>LMWH, UFH หรือ <b>warfarin</b> มากกว่า DOAC <span class="rec s1">1</span></td><td>—</td></tr>
+    <tr><td><b>อ้วน</b></td><td>BMI &gt;30: DOAC มากกว่า VKA <span class="rec">2a</span> (ข้อมูลส่วนใหญ่ apixaban/rivaroxaban) · BMI &gt;40 ได้ LMWH: อาจลดขนาด <span class="rec">2b</span> · &gt;150 kg/BMI &gt;40: ประโยชน์ของการตรวจ anti-Xa ไม่ชัด <span class="rec">2b</span> · หลังผ่าตัดลดน้ำหนัก เลี่ยง DOAC ≥4 สัปดาห์</td><td>ISTH 2021: หลีกเลี่ยง dabigatran/edoxaban ในอ้วนมาก <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>ไตเสื่อม</b></td><td>CKD 2–3: DOAC มากกว่า VKA <span class="rec s1">1</span> · CKD 4–5/ฟอกไต: apixaban ดีกว่า VKA หรือไม่ยังไม่แน่ชัด <span class="rec">2b</span></td><td>CrCl &lt;30 → <b>warfarin</b> <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>โรคตับเรื้อรัง</b></td><td>Child-Pugh A: DOAC มากกว่า VKA <span class="rec">2a</span> · B: DOAC อาจพิจารณา <span class="rec">2b</span> · <b>C: ห้าม DOAC</b> <span class="rec no">3: Harm</span></td><td>โรคตับที่มี coagulopathy (INR ผิดปกติ) → <b>LMWH</b> <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>เกล็ดเลือดต่ำ</b></td><td>—</td><td>&gt;50: ขนาดเต็ม · 25–50: พิจารณาลดขนาด LMWH/ให้เกล็ดเลือด · &lt;25: หยุดชั่วคราว <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>HIT</b></td><td colspan="2">ดูหน้า <a href="../thrombocytopenia/index.html#hit">Thrombocytopenia</a></td></tr>
   </table></div>
 </section>
 
@@ -387,21 +447,31 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="dur" class="col">
   <div class="sec-num">09</div>
   <h2>ระยะเวลาการรักษา</h2>
+  <p>AHA/ACC 2026 แบ่งเป็น <b>initiation</b> (apixaban 7 วัน / rivaroxaban 21 วัน / ยาฉีด ≥5 วัน) → <b>initial treatment phase 3–6 เดือน</b> → <b>extended phase</b> (ต่อโดยไม่มีวันหยุดที่กำหนด) · <span class="tag th">ไทย 2565</span> ระยะยาวขั้นต่ำ <b>3 เดือน</b> บางรายให้นานกว่า (extended)</p>
   <div class="tbl"><table>
-    <tr><th>สถานการณ์</th><th>แนวทาง</th></tr>
-    <tr><td>VTE ครั้งแรก จาก <b>major transient</b> ไม่มีปัจจัยถาวร</td><td><b>หยุดหลัง 3 (–6) เดือน</b> <span class="rec s1">1</span></td></tr>
-    <tr><td>ครั้งแรก <b>ไม่มีปัจจัยกระตุ้นชัด</b> หรือมี <b>ปัจจัยถาวร</b></td><td><b>ให้ต่อเนื่อง (extended)</b> หลัง 3–6 เดือน ด้วย <b>apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> <span class="rec s1">1</span> · ประเมินเลือดออกและทบทวนทุกปี</td></tr>
-    <tr><td>Minor transient</td><td>3 เดือนเป็นอย่างน้อย · ตัดสินร่วมกับผู้ป่วยตามความเสี่ยงซ้ำ/เลือดออก</td></tr>
-    <tr><td>มะเร็ง active</td><td>≥6 เดือน และตราบที่มะเร็งยัง active หรือได้รับการรักษา</td></tr>
-    <tr><td>VTE ซ้ำ (unprovoked)</td><td>ให้ไม่มีกำหนด</td></tr>
-    <tr><td>Isolated distal DVT จากปัจจัยชั่วคราว</td><td>3 เดือน</td></tr>
+    <tr><th>สถานการณ์</th><th>แนวทาง (AHA/ACC 2026)</th></tr>
+    <tr><td>PE ครั้งแรก จาก <b>major reversible RF</b></td><td><b>หยุดยาเมื่อครบ 3–6 เดือน</b> <span class="rec s1">1</span></td></tr>
+    <tr><td>PE ครั้งแรก <b>ไม่มี major reversible RF</b> (รวม unprovoked)</td><td><b>ให้ต่อเนื่อง (extended)</b> <span class="rec s1">1</span></td></tr>
+    <tr><td>PE ครั้งแรก จาก <b>persistent RF</b></td><td>ให้ต่อเนื่อง <span class="rec s1">1</span></td></tr>
+    <tr><td>PE ครั้งแรก จาก <b>minor reversible RF</b></td><td><b>ตัดสินร่วมกับผู้ป่วย</b> ว่าหยุดหรือให้ต่อ <span class="rec">2a</span></td></tr>
+    <tr><td>ยาในระยะ extended</td><td><b>DOAC มากกว่า VKA</b> <span class="rec s1">1</span> · <b>ลดครึ่งขนาด: apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> <span class="rec s1">1</span> (RENOVE, EINSTEIN-CHOICE, AMPLIFY-EXT) · ห้าม DOAC (ไม่มีมะเร็ง) → VKA มากกว่า aspirin <span class="rec s1">1</span> · ไม่ยอม/ห้ามใช้ anticoagulant → aspirin ขนาดต่ำดีกว่าไม่ให้ <span class="rec">2a</span></td></tr>
+    <tr><td>มะเร็ง</td><td>ระยะ extended ใช้ DOAC หรือ LMWH <span class="rec s1">1</span> · ให้ตราบที่มะเร็ง active/กำลังรักษา</td></tr>
+    <tr><td>ระหว่าง extended</td><td><b>ทบทวนความเสี่ยงเลือดออก/เป็นซ้ำเป็นระยะ</b> (อย่างน้อยปีละครั้ง) รวมยาที่ทำปฏิกิริยา ไต ตับ <span class="rec s1">1</span></td></tr>
+    <tr><td>Isolated distal DVT จากปัจจัยชั่วคราว</td><td>3 เดือน (CHEST) <span class="tag add">เสริม</span></td></tr>
   </table></div>
+  <h3>PE ซ้ำ</h3>
+  <ul>
+    <li>อาการสงสัย PE ซ้ำ → <b>ยืนยันด้วย CTPA</b> (หรือ V/Q ถ้ามี V/Q เดิมเทียบ) <span class="rec s1">1</span> · D-dimer สูงอย่างเดียวใช้วินิจฉัยไม่ได้</li>
+    <li>เป็นซ้ำขณะได้ยา → หาสาเหตุ: กินยาไม่สม่ำเสมอ ขนาดต่ำ ยาตีกัน (P-gp/CYP3A4 inducer) rivaroxaban ไม่กินพร้อมอาหาร มะเร็ง APS HIT <span class="rec s1">1</span></li>
+    <li>เป็นซ้ำทั้งที่ได้ยาขนาดรักษาสม่ำเสมอ → <b>เปลี่ยนกลุ่มยา</b> (มักเป็น LMWH) <span class="rec">2a</span> · เป็นซ้ำขณะได้ DOAC ครึ่งขนาด → กลับไปขนาดเต็มตัวเดิม <span class="rec">2a</span></li>
+  </ul>
 </section>
 
 <!-- 10 -->
 <section id="periop" class="col">
   <div class="sec-num">10</div>
   <h2>หยุดยาก่อนหัตถการ (ACCP 2022)</h2>
+  <p class="muted" style="font-size:.88rem">หัวข้อนี้ไม่อยู่ในแนวทาง AHA/ACC 2026 และแนวทางไทย 2565 — อิง ACCP perioperative guideline 2022 <span class="tag add">เสริม</span></p>
   <div class="tbl"><table>
     <tr><th>ยา</th><th>หัตถการเลือดออกเสี่ยงต่ำ–ปานกลาง</th><th>เสี่ยงสูง / neuraxial</th></tr>
     <tr><td>Apixaban · rivaroxaban · edoxaban</td><td>หยุด <b>1 วัน</b> ก่อน (กินครั้งสุดท้าย 2 วันก่อน)</td><td>หยุด <b>2 วัน</b> ก่อน</td></tr>
@@ -421,8 +491,9 @@ nav.toc a{scroll-margin-inline:40px}
 <section id="proph" class="col">
   <div class="sec-num">11</div>
   <h2>ป้องกัน VTE ในผู้ป่วยอายุรกรรม</h2>
+  <p class="muted" style="font-size:.88rem">AHA/ACC 2026 ไม่ครอบคลุมการป้องกันปฐมภูมิ — บทนี้อิงแนวทางทั่วไป <span class="tag add">เสริม</span></p>
   <ul>
-    <li>ประเมินด้วย <b>Padua score</b> (เครื่องมือบท 14): <b>≥4 = เสี่ยงสูง</b> → <b>enoxaparin 40 mg SC วันละครั้ง</b> (CrCl &lt;30: 30 mg) หรือ UFH 5,000 U ทุก 8–12 ชม. หรือ fondaparinux 2.5 mg <span class="tag add">เสริม</span></li>
+    <li>ประเมินด้วย <b>Padua score</b> (เครื่องมือบท 14): <b>≥4 = เสี่ยงสูง</b> → <b>enoxaparin 40 mg SC วันละครั้ง</b> (CrCl &lt;30: 30 mg) หรือ UFH 5,000 U ทุก 8–12 ชม. หรือ fondaparinux 2.5 mg</li>
     <li>เลือดออกเสี่ยงสูง/เกล็ดเลือดต่ำ → mechanical (intermittent pneumatic compression) · ไม่ใช้ถุงน่องแบบ graduated เป็นหลัก</li>
     <li>ไม่ต้องให้ต่อหลังกลับบ้านเป็นประจำ · ผู้ป่วยเดินได้ดี/นอนสั้นไม่ต้องให้</li>
   </ul>
@@ -433,11 +504,15 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">12</div>
   <h2>การติดตาม <span class="tag up">2026</span></h2>
   <ul>
-    <li><b>ติดต่อผู้ป่วยภายใน ~1 สัปดาห์</b> หลังจำหน่าย (โทร/นัด) — การกินยา เลือดออก อาการ <span class="rec s1">1</span></li>
-    <li><b>นัดตรวจภายใน 3 เดือน</b> ตัดสินระยะเวลาให้ยา <span class="rec s1">1</span></li>
-    <li>ยังเหนื่อยหลัง 3 เดือน → หา <b>CTEPD/CTEPH</b>: echo + <b>V/Q scan</b> (หรือ cardiopulmonary exercise test) — V/Q ปกติตัด CTEPH ได้</li>
-    <li>DVT: post-thrombotic syndrome — ไม่ต้องใส่ถุงน่องเป็นประจำเพื่อป้องกัน (CHEST) แต่ใช้บรรเทาอาการได้</li>
-    <li>หยุดยาแล้วเดินทางเครื่องบิน &gt;4 ชม. ในกลุ่มเสี่ยง: ขยับขาบ่อย ± LMWH/DOAC 1 โดส <span class="tag add">เสริม</span></li>
+    <li><b>ติดตามภายในสัปดาห์แรก</b>หลังจำหน่าย (โทร/นัด) — สอนผู้ป่วย การกินยา อุปสรรค เลือดออก <span class="rec s1">1</span></li>
+    <li><b>นัดตรวจภายใน 3 เดือน</b> ตัดสินระยะเวลาให้ยา ทบทวนการตรวจเพิ่ม และอาการที่ยังเหลือ <span class="rec s1">1</span></li>
+    <li><b>ถามอาการเหนื่อย/ข้อจำกัดการทำกิจกรรมทุกครั้งที่มาตรวจ อย่างน้อย 1 ปี</b> เพื่อคัดกรอง CTEPD <span class="rec s1">1</span> · คัดกรองวิตกกังวล/ซึมเศร้าด้วยแบบสอบถาม <span class="rec">2a</span> · ยังมีอาการที่ 3–6 เดือน ทำ 6-minute walk test ได้ <span class="rec">2b</span></li>
+    <li>ยังเหนื่อยหลังได้ยา ≥3 เดือน → ตรวจหา <b>CTEPD</b> <span class="rec s1">1</span>: <b>echo + lung perfusion scan (V/Q)</b> ดีกว่า echo อย่างเดียว <span class="rec">2a</span> หรือ CPET <span class="rec">2a</span> · ให้ยาต่อจนตรวจเสร็จ <span class="rec s1">1</span> · CTEPH → ส่งศูนย์เชี่ยวชาญ <span class="rec s1">1</span> · ตัด CTEPD แล้วยังเหนื่อย → pulmonary rehabilitation <span class="rec">2a</span></li>
+    <li>อาการหายดีและสงสัย CTEPD ต่ำ → <b>ไม่ต้อง</b> CTPA/V/Q ซ้ำเพื่อดูการละลายของลิ่ม <span class="rec no">3: No benefit</span></li>
+    <li>ส่งคลินิกเฉพาะทางในรายซับซ้อน (INR แกว่ง ไตเปลี่ยน เป็นซ้ำ ตั้งครรภ์ มะเร็ง อาการไม่หาย) <span class="rec">2a</span></li>
+    <li><b>กิจกรรมและการเดินทาง</b>: ลุกเดินเร็วดีกว่านอนพัก <span class="rec">2a</span> · เดินทางไกล ≥5 ชม. ใส่ถุงน่องลดความเสี่ยง DVT <span class="rec">2a</span> · เคย PE จากการเดินทาง/ไม่เคลื่อนไหวและหยุดยาแล้ว → LMWH หรือ DOAC ขนาดป้องกัน 1 โดสในวันเดินทางไกล <span class="rec">2b</span> · C2–E: เลี่ยงการเดินทางไกล 4 สัปดาห์หลังเริ่มรักษาหรือจนอาการหาย <span class="rec">2b</span></li>
+    <li><b>ผู้หญิงวัยเจริญพันธุ์</b>: ให้คำปรึกษาเรื่องคุมกำเนิดและยาที่ปลอดภัยหากตั้งครรภ์ <span class="rec s1">1</span> · ประจำเดือนมากระหว่างได้ยา → รักษาทางนรีเวช/ฮอร์โมน หรือเปลี่ยนยา แทนการหยุดยา <span class="rec">2a</span> · ฮอร์โมนที่มี estrogen ใช้ต่อได้ถ้าจำเป็นและยังได้ยาขนาดรักษา <span class="rec">2b</span></li>
+    <li>DVT: post-thrombotic syndrome — ไม่ต้องใส่ถุงน่องเป็นประจำเพื่อป้องกัน (CHEST) แต่ใช้บรรเทาอาการได้ <span class="tag add">เสริม</span></li>
   </ul>
 </section>
 
@@ -453,19 +528,19 @@ nav.toc a{scroll-margin-inline:40px}
   </div>
   <div id="apFull" class="flow-wrap">
     <div class="flow">
-      <div class="node start"><b>สงสัย PE</b>ความดันปกติ? → pretest probability</div>
+      <div class="node start"><b>สงสัย PE</b>ความดันปกติ? → clinical probability</div>
       <div class="vline arrow"></div>
       <div class="branch b3">
-        <div class="arm"><span class="lab">ต่ำ</span><div class="node dx green"><b>PERC</b>ลบครบ → จบ<br>ไม่ผ่าน → D-dimer</div></div>
-        <div class="arm"><span class="lab">PE unlikely / Wells ≤4</span><div class="node dx eu"><b>D-dimer</b>YEARS: 0 item &lt;1000 · ≥1 item &lt;500<br>หรือ Wells + อายุ×10</div></div>
-        <div class="arm"><span class="lab">สูง / Wells &gt;4 / shock</span><div class="node red"><b>CTPA</b> (shock → bedside echo)<br>เริ่มยาระหว่างรอ</div></div>
+        <div class="arm"><span class="lab">ต่ำ &lt;15%</span><div class="node dx green"><b>PERC</b>ครบ 8 ข้อ → จบ<br>ไม่ครบ → D-dimer + YEARS</div></div>
+        <div class="arm"><span class="lab">ปานกลาง 15–50%</span><div class="node dx eu"><b>D-dimer + YEARS</b>0 item &lt;1000 · ≥1 item &lt;500 หรือ &lt;อายุ×10<br>สูงกว่า → CTPA</div></div>
+        <div class="arm"><span class="lab">สูง &gt;50% / shock</span><div class="node red"><b>CTPA</b> (shock: stabilize ก่อน ห้ามส่งต่อ)<br>สงสัย ≥C2 → เริ่มยาระหว่างรอ</div></div>
       </div>
       <div class="vline arrow"></div>
       <div class="node q"><b>ยืนยัน PE → Category</b></div>
       <div class="branch b3">
-        <div class="arm"><span class="lab">A–B</span><div class="node dx green"><b>DOAC</b>ผู้ป่วยนอกได้ (sPESI 0)</div></div>
-        <div class="arm"><span class="lab">C–D</span><div class="node dx hypo"><b>LMWH + admit + PERT</b>C3/D: พิจารณา CDT/lysis (2b)</div></div>
-        <div class="arm"><span class="lab">E</span><div class="node red"><b>Reperfusion</b>Alteplase 100 mg/2 ชม.<br>หรือ CDT/thrombectomy · NE</div></div>
+        <div class="arm"><span class="lab">A–B</span><div class="node dx green"><b>DOAC</b>ผู้ป่วยนอกได้ (sPESI/Hestia 0)</div></div>
+        <div class="arm"><span class="lab">C1–D2</span><div class="node dx hypo"><b>LMWH + admit + PERT</b>troponin/BNP · lactate · RV<br>C2 ห้าม lyse · C3/D advanced (2b)</div></div>
+        <div class="arm"><span class="lab">E</span><div class="node red"><b>Reperfusion (2a)</b>Alteplase 100 mg/2 ชม.<br>หรือ CDL/MT/ผ่าตัด · NE · E2: ECMO</div></div>
       </div>
     </div>
   </div>
@@ -484,7 +559,7 @@ nav.toc a{scroll-margin-inline:40px}
   </div>
 
   <div class="tool" id="tDx" style="margin-top:12px">
-    <h3>วินิจฉัย PE: Wells + PERC + YEARS + D-dimer</h3>
+    <h3>วินิจฉัย PE: Wells + PERC + YEARS + D-dimer (AHA/ACC 2026)</h3>
     <div class="grid2" style="margin:0">
       <div class="checks">
         <div class="muted" style="font-size:.82rem">Wells (และ YEARS ★)</div>
@@ -503,16 +578,17 @@ nav.toc a{scroll-margin-inline:40px}
         <label><input type="checkbox" id="pc3"> SpO₂ &lt;95%</label>
         <label><input type="checkbox" id="pc4"> ขาบวมข้างเดียว</label>
         <label><input type="checkbox" id="pc5"> ไอเป็นเลือด</label>
-        <label><input type="checkbox" id="pc6"> ผ่าตัด/บาดเจ็บ ≤4 สัปดาห์</label>
+        <label><input type="checkbox" id="pc6"> ผ่าตัด/บาดเจ็บที่ต้องนอน รพ. ≤4 สัปดาห์</label>
         <label><input type="checkbox" id="pc7"> เคย VTE</label>
-        <label><input type="checkbox" id="pc8"> ใช้ฮอร์โมน</label>
+        <label><input type="checkbox" id="pc8"> ใช้ estrogen</label>
       </div>
     </div>
     <div class="fields">
       <label class="f">อายุ (ปี)<input type="number" id="dAge" value="62"></label>
       <label class="f">D-dimer (ng/mL FEU, ถ้ามี)<input type="number" id="dDd" placeholder="เช่น 580"></label>
-      <label class="f">Gestalt probability<select id="dGes"><option value="low">ต่ำ (&lt;15%)</option><option value="mod" selected>ปานกลาง</option><option value="high">สูง</option></select></label>
+      <label class="f">Gestalt probability<select id="dGes"><option value="low">ต่ำ (&lt;15%)</option><option value="mod" selected>ปานกลาง (15–50%)</option><option value="high">สูง (&gt;50%)</option></select></label>
     </div>
+    <div class="checks"><label><input type="checkbox" id="dAc"> กำลังได้ anticoagulant ขนาดรักษา (ภายใน 24 ชม.)</label><label><input type="checkbox" id="dPreg"> ตั้งครรภ์</label></div>
     <div class="out" id="dxOut"></div>
   </div>
 
@@ -552,11 +628,12 @@ nav.toc a{scroll-margin-inline:40px}
       <div class="checks">
         <div class="muted" style="font-size:.82rem">ข้อมูลเพิ่ม</div>
         <label><input type="checkbox" id="c0"> พบโดยบังเอิญ ไม่มีอาการ</label>
-        <label><input type="checkbox" id="c1" checked> RV ผิดปกติ (RV/LV ≥1.0)</label>
+        <label><input type="checkbox" id="cSub"> ลิ่มเลือดเฉพาะ subsegmental</label>
+        <label><input type="checkbox" id="c1" checked> RV ผิดปกติ (echo/CT, RV/LV ≥1.0)</label>
         <label><input type="checkbox" id="c2" checked> Troponin หรือ BNP สูง</label>
-        <label><input type="checkbox" id="c3"> ความดันต่ำชั่วคราว/syncope</label>
-        <label><input type="checkbox" id="c4"> Hypoperfusion (lactate สูง, AKI) ความดันปกติ</label>
-        <label><input type="checkbox" id="c5"> SBP &lt;90 ต่อเนื่อง / ต้องใช้ vasopressor</label>
+        <label><input type="checkbox" id="c3"> ความดันต่ำชั่วคราว (SBP &lt;90 หรือลด &gt;40 นาน &lt;15 นาที / ตอบสนองสารน้ำ)</label>
+        <label><input type="checkbox" id="c4"> Hypoperfusion (lactate &gt;2, AKI, ปัสสาวะน้อย, ซึม) ความดันปกติ</label>
+        <label><input type="checkbox" id="c5"> ความดันต่ำต่อเนื่อง/ซ้ำ + cardiogenic shock</label>
         <label><input type="checkbox" id="c6"> Refractory shock / cardiac arrest</label>
         <label><input type="checkbox" id="cR"> ปัญหาหายใจตามระดับ category (modifier R)</label>
       </div>
@@ -571,7 +648,7 @@ nav.toc a{scroll-margin-inline:40px}
       <label class="f">น้ำหนัก (kg)<input type="number" id="aWt" value="58"></label>
       <label class="f">Creatinine (mg/dL)<input type="number" id="aCr" step="0.1" value="1.2"></label>
       <label class="f">เพศ<select id="aSex"><option value="m">ชาย</option><option value="f" selected>หญิง</option></select></label>
-      <label class="f">ยา<select id="aDrug"><option value="api">Apixaban</option><option value="riva">Rivaroxaban</option><option value="edo">Edoxaban</option><option value="dabi">Dabigatran</option><option value="enox">Enoxaparin</option><option value="fonda">Fondaparinux</option><option value="ufh">UFH</option></select></label>
+      <label class="f">ยา<select id="aDrug"><option value="api">Apixaban</option><option value="riva">Rivaroxaban</option><option value="edo">Edoxaban</option><option value="dabi">Dabigatran</option><option value="enox">Enoxaparin</option><option value="fonda">Fondaparinux</option><option value="ufh">UFH</option><option value="war">Warfarin</option></select></label>
     </div>
     <div class="checks"><label><input type="checkbox" id="aPgp"> ใช้ P-gp inhibitor (เช่น dronedarone, ciclosporin, erythromycin, ketoconazole)</label></div>
     <div class="out" id="doseOut"></div>
@@ -580,7 +657,7 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="tool" id="tDur" style="margin-top:12px">
     <h3>ระยะเวลาให้ยา</h3>
     <div class="fields">
-      <label class="f">ปัจจัยกระตุ้น<select id="uProv"><option value="major">Major transient (ผ่าตัดใหญ่/กระดูกหัก/นอน รพ.)</option><option value="minor">Minor transient (ฮอร์โมน ตั้งครรภ์ เดินทาง)</option><option value="none" selected>ไม่พบ (unprovoked)</option><option value="persist">ปัจจัยถาวร (IBD, autoimmune)</option><option value="cancer">มะเร็ง active</option><option value="aps">APS</option></select></label>
+      <label class="f">ปัจจัยเสี่ยง<select id="uProv"><option value="major">Major reversible (ผ่าตัด ≥30 นาที/นอน รพ. ≥72 ชม./ผ่าคลอด/กระดูกขาหัก)</option><option value="minor">Minor reversible (estrogen ตั้งครรภ์ ผ่าตัดเล็ก)</option><option value="none" selected>ไม่พบ (unprovoked)</option><option value="persist">ปัจจัยถาวร (IBD, autoimmune, ติดเตียง)</option><option value="cancer">มะเร็ง active</option><option value="aps">APS</option></select></label>
       <label class="f">ครั้งที่<select id="uN"><option value="1">ครั้งแรก</option><option value="2">เป็นซ้ำ</option></select></label>
       <label class="f">ความเสี่ยงเลือดออก<select id="uB"><option value="low">ต่ำ</option><option value="high">สูง</option></select></label>
     </div>
@@ -626,17 +703,20 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">15</div>
   <h2>Practical points</h2>
   <div class="pearls">
-    <div class="pearl"><div><b>Pretest probability ก่อน D-dimer เสมอ</b> — probability สูงไม่ต้องเจาะ D-dimer</div></div>
-    <div class="pearl"><div><b>D-dimer ปรับตามอายุ = อายุ × 10</b> เมื่อ &gt;50 ปี ลด CT ที่ไม่จำเป็น</div></div>
-    <div class="pearl"><div><b>ไม่ใช้คำว่า submassive แล้ว</b> — ใช้ Category C1–C3, D1–D2</div></div>
-    <div class="pearl"><div><b>sPESI 0 = กลับบ้านด้วย DOAC ได้</b> ถ้าไม่มีปัญหาสังคม/เลือดออก</div></div>
-    <div class="pearl"><div><b>ผู้ป่วยใน C–E ใช้ LMWH มากกว่า UFH</b> — UFH เมื่อจะ lyse ไตวายมาก หรือต้องหยุดเร็ว</div></div>
-    <div class="pearl"><div><b>Apixaban 10 bid × 7 วัน · rivaroxaban 15 bid × 21 วัน</b> ไม่ต้องให้ยาฉีดนำ</div></div>
-    <div class="pearl"><div><b>PE + shock: อย่าให้สารน้ำมาก</b> ใช้ norepinephrine</div></div>
-    <div class="pearl"><div><b>Unprovoked = ให้ยานาน</b> ลดขนาดได้หลัง 6 เดือน</div></div>
-    <div class="pearl"><div><b>APS และตั้งครรภ์ ห้าม DOAC</b></div></div>
-    <div class="pearl"><div><b>DOAC ไม่ต้อง bridging</b> ก่อนหัตถการ</div></div>
-    <div class="pearl"><div><b>ยังเหนื่อยหลัง 3 เดือน → V/Q scan</b> หา CTEPH</div></div>
+    <div class="pearl"><div><b>Clinical probability ก่อน D-dimer เสมอ</b> — probability สูง (&gt;50%) ไม่ต้องเจาะ D-dimer ถ่ายภาพเลย</div></div>
+    <div class="pearl"><div><b>YEARS: 0 item ใช้ 1000 · ≥1 item ใช้ 500 หรือ อายุ×10</b> — ลด CT ที่ไม่จำเป็น (ไม่ใช้ในผู้ที่ได้ยาขนาดรักษาอยู่)</div></div>
+    <div class="pearl"><div><b>Echo ไม่ใช่เครื่องมือวินิจฉัย PE</b> — ใช้ประเมิน RV หลังยืนยันแล้ว</div></div>
+    <div class="pearl"><div><b>ไม่ใช้คำว่า submassive แล้ว</b> — ใช้ Category C1–C3, D1–D2 และเติม R เมื่อหายใจล้มเหลว</div></div>
+    <div class="pearl"><div><b>sPESI/Hestia 0 = รักษาแบบผู้ป่วยนอกด้วย DOAC ได้ (2a)</b> ถ้าได้ยาทันทีและนัดติดตามได้</div></div>
+    <div class="pearl"><div><b>C1–E1 ที่ต้องใช้ยาฉีด: LMWH มากกว่า UFH (1)</b> — หลัง lysis/หัตถการก็ใช้ LMWH</div></div>
+    <div class="pearl"><div><b>Systemic lysis ใน A–C2 = 3: Harm</b> · C3 ไม่ชัด (2b) · D (2b) · E (2a)</div></div>
+    <div class="pearl"><div><b>Apixaban 10 bid × 7 วัน · rivaroxaban 15 bid × 21 วัน</b> ไม่ต้องให้ยาฉีดนำ · edoxaban/dabigatran ต้องให้ยาฉีดนำ (ไทย: LMWH 7–10 วัน)</div></div>
+    <div class="pearl"><div><b>PE + shock: สารน้ำ ≤500 mL เท่านั้น</b> ใช้ norepinephrine · เลี่ยงการใส่ท่อถ้าไม่จำเป็น</div></div>
+    <div class="pearl"><div><b>ไม่มี major reversible RF = ให้ยาต่อเนื่อง</b> ลดครึ่งขนาด (apixaban 2.5 bid / rivaroxaban 10 od) หลังครบ 3–6 เดือน</div></div>
+    <div class="pearl"><div><b>APS, ตั้งครรภ์, ให้นมบุตร: ไม่ใช้ DOAC</b> · ให้นมบุตรใช้ warfarin/LMWH ได้</div></div>
+    <div class="pearl"><div><b>ไทย: CrCl &lt;30 → warfarin · เคยเลือดออก GI → warfarin หรือ apixaban · ตับมี coagulopathy → LMWH</b></div></div>
+    <div class="pearl"><div><b>Warfarin ต้องทับกับยาฉีด ≥5 วัน และ INR 2–3 นาน 24 ชม.</b> ห้ามเริ่ม warfarin เดี่ยว</div></div>
+    <div class="pearl"><div><b>ยังเหนื่อยหลัง 3 เดือน → echo + V/Q perfusion scan</b> หา CTEPD · ถามอาการทุกครั้งที่มาอย่างน้อย 1 ปี</div></div>
   </div>
 </section>
 
@@ -649,8 +729,8 @@ nav.toc a{scroll-margin-inline:40px}
 
 <p class="col" style="margin-top:32px"><a href="../thrombocytopenia/index.html">Thrombocytopenia →</a> · <a href="../af/index.html">AF →</a> · <a href="../hf/index.html">Heart failure →</a> · <a href="../stroke/index.html">Stroke →</a></p>
 <footer class="col">
-  อ้างอิง: 1) Creager MA, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults. Circulation 2026;153:e977–e1051; J Am Coll Cardiol 2026;87:1626–1710 · 2) Konstantinides SV, et al. 2019 ESC Guidelines for acute PE. Eur Heart J 2020;41:543–603 · 3) Stevens SM, et al. Antithrombotic therapy for VTE disease: second update of the CHEST guideline. Chest 2021;160:e545–e608 · 4) Douketis JD, et al. Perioperative management of antithrombotic therapy: ACCP guideline. Chest 2022;162:e207–e243 · 5) Ortel TL, et al. ASH 2020 guidelines: treatment of DVT and PE. Blood Adv 2020 · 6) HI-PEITHO. N Engl J Med 2026 (doi:10.1056/NEJMoa2516567) · 7) Barbar S, et al. Padua prediction score. J Thromb Haemost 2010 · 8) Martin KA, et al. ISTH guidance on DOACs in obesity 2021<br>
-  <span class="tag up">2026</span> = ใหม่ใน AHA/ACC 2026 · <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · Class ตาม AHA/ACC (1, 2a, 2b) · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+  อ้างอิง: 1) Creager MA, Barnes GD, Giri J, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults: a report of the ACC/AHA Joint Committee on Clinical Practice Guidelines. Circulation 2026;153(12):e977–e1051. doi:10.1161/CIR.0000000000001415 (copublished in J Am Coll Cardiol) · 2) คณะกรรมการจัดทำแนวทางการรักษาโรคหลอดเลือดดำชั้นลึกอุดตันในผู้ใหญ่ สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาโรคหลอดเลือดดำชั้นลึกอุดตันในผู้ใหญ่ (Management of Venous Thromboembolism in Adults): การรักษาระยะเฉียบพลันและระยะยาว. ปรับปรุง พ.ศ. 2565 · 3) Konstantinides SV, et al. 2019 ESC Guidelines for acute PE. Eur Heart J 2020;41:543–603 · 4) Stevens SM, et al. Antithrombotic therapy for VTE disease: second update of the CHEST guideline. Chest 2021;160:e545–e608 · 5) Douketis JD, et al. Perioperative management of antithrombotic therapy: ACCP guideline. Chest 2022;162:e207–e243 · 6) HI-PEITHO investigators (ultrasound-facilitated catheter-directed thrombolysis in intermediate-high-risk PE) · 7) Barbar S, et al. Padua prediction score. J Thromb Haemost 2010 · 8) Martin KA, et al. ISTH guidance on DOACs in obesity 2021<br>
+  <span class="tag up">2026</span> = ใหม่ใน AHA/ACC 2026 · <span class="tag th">ไทย</span> = แนวทางสมาคมโลหิตวิทยาแห่งประเทศไทย 2565 (น้ำหนักคำแนะนำ ++ / + / +/−) · <span class="tag add">เสริม</span> = แนวปฏิบัติทั่วไป/แหล่งอื่น · Class ตาม AHA/ACC (1, 2a, 2b, 3: No benefit, 3: Harm) · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
 </footer>
 </div>
 
@@ -727,39 +807,45 @@ function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventLi
 
 toggleView('apFull','apWalk','apFullBtn','apWalkBtn','vteView');
 mountWalker({
- start:{q:'ผู้ป่วยมีความดันต่ำ/shock หรือไม่?',h:'SBP <90 ต่อเนื่อง ต้องใช้ vasopressor หรือ hypoperfusion',o:[['ใช่','shock'],['ไม่ใช่','prob']]},
- shock:{leaf:true,cls:'danger',t:'สงสัย PE + shock (Category E)',b:'Bedside echo: RV โตชัด + ไม่มีสาเหตุอื่น → UFH + <b>reperfusion</b> (alteplase 100 mg ใน 2 ชม. หรือ CDT/thrombectomy) · norepinephrine · หลีกเลี่ยงสารน้ำมาก · CTPA เมื่อคงที่พอ · ปรึกษา PERT/ICU'},
- prob:{q:'Pretest probability (Wells / gestalt)?',o:[['ต่ำ (<15%)','perc'],['ปานกลาง / Wells ≤4','years'],['สูง / Wells >4','ct']]},
- perc:{q:'PERC ลบครบ 8 ข้อ?',o:[['ลบครบ','out'],['มีอย่างน้อย 1 ข้อ','years']]},
- out:{leaf:true,cls:'ok',t:'ตัด PE ได้',b:'ไม่ต้องตรวจ D-dimer หรือ CT · หาสาเหตุอื่นของอาการ'},
- years:{q:'D-dimer ต่ำกว่าเกณฑ์? (YEARS 0 item: <1000 · ≥1 item: <500 — หรือกลยุทธ์ age-adjusted: <อายุ×10)',o:[['ต่ำกว่าเกณฑ์','out'],['สูงกว่า','ct']]},
- ct:{q:'CTPA (หรือ V/Q) พบ PE?',o:[['พบ','sev'],['ไม่พบ','out2']]},
- out2:{leaf:true,cls:'ok',t:'ไม่พบ PE',b:'ถ้า pretest สูงมากและ CT คุณภาพไม่ดี พิจารณาตรวจซ้ำ/ultrasound ขา · หาโรคอื่น'},
- sev:{q:'sPESI?',o:[['0','b'],['≥1','rv']]},
- b:{leaf:true,cls:'ok',t:'Category B',b:'<b>DOAC</b> (apixaban 10 mg bid 7 วัน → 5 mg bid หรือ rivaroxaban 15 mg bid 21 วัน → 20 mg od) · กลับบ้านได้ถ้าไม่มีปัญหาเลือดออก/สังคม · โทรติดตาม 1 สัปดาห์ นัด 3 เดือน'},
- rv:{q:'RV ผิดปกติ และ/หรือ troponin/BNP สูง?',o:[['ไม่มีทั้งคู่ (C1)','c1'],['อย่างใดอย่างหนึ่ง (C2)','c2'],['ทั้งสองอย่าง (C3)','c3']]},
- c1:{leaf:true,cls:'warn',t:'Category C1',b:'Admit · <b>LMWH</b> (enoxaparin 1 mg/kg q12h) · ติดตามสัญญาณชีพ · เปลี่ยนเป็น DOAC เมื่อคงที่'},
- c2:{leaf:true,cls:'warn',t:'Category C2',b:'Admit · <b>LMWH</b> · ปรึกษา PERT · ตรวจ lactate หา normotensive shock · ติดตามใกล้ชิด 24–72 ชม.'},
- c3:{leaf:true,cls:'danger',t:'Category C3',b:'Admit (monitored bed) · <b>LMWH</b> · PERT · lactate · CDT/thrombectomy/lysis ประโยชน์ไม่ชัด (2b) — พิจารณาเมื่อมีอาการรุนแรงทางคลินิก (HI-PEITHO) หรือทรุดลง → D/E'}
+ start:{q:'ผู้ป่วยมีความดันต่ำ/shock หรือไม่?',h:'SBP <90 ต่อเนื่อง/ซ้ำ ต้องใช้ vasopressor หรือ hypoperfusion',o:[['ใช่','shock'],['ไม่ใช่','prob']]},
+ shock:{leaf:true,cls:'danger',t:'สงสัย PE + shock (Category E)',b:'<b>Stabilize ก่อน ห้ามส่งต่อ</b> (3: Harm) · heparin (E1: LMWH; E2: LMWH หรือ UFH) · norepinephrine ± dobutamine · สารน้ำไม่เกิน 500 mL · เลี่ยงการใส่ท่อถ้าไม่จำเป็น · <b>reperfusion (2a)</b>: alteplase 100 mg ใน 2 ชม. ถ้าเลือดออกเสี่ยงรับได้ หรือ CDL/thrombectomy/ผ่าตัด (E1) · E2: VA-ECMO (2a) · CTPA เมื่อคงที่พอ (ESC: ถ้าทำ CT ไม่ได้ ใช้ bedside echo เห็น RV โตชัด) · ปรึกษา PERT/ICU'},
+ prob:{q:'Clinical probability (Wells / revised Geneva / gestalt)?',o:[['ต่ำ <15% (Wells <2)','perc'],['ปานกลาง 15–50% (Wells 2–6)','years'],['สูง >50% (Wells >6)','ct']]},
+ perc:{q:'PERC ครบ 8 ข้อ?',o:[['ครบ','out'],['ไม่ครบอย่างน้อย 1 ข้อ','years']]},
+ out:{leaf:true,cls:'ok',t:'ตัด PE ได้',b:'ไม่ต้องตรวจ D-dimer หรือ CT ต่อ · หาสาเหตุอื่นของอาการ'},
+ years:{q:'D-dimer ต่ำกว่าเกณฑ์ YEARS? (0 item: <1000 · ≥1 item: <500 หรือ < อายุ×10 ถ้าอายุ >50)',h:'YEARS item = อาการแสดง DVT · ไอเป็นเลือด · PE น่าจะเป็นที่สุด · ใช้ไม่ได้ถ้ากำลังได้ยาขนาดรักษา',o:[['ต่ำกว่าเกณฑ์','out'],['สูงกว่า','ct']]},
+ ct:{q:'CTPA (หรือ V/Q ถ้าทำ CT ไม่ได้) พบ PE?',h:'ระหว่างรอ: สงสัย Category ≥C2 + เลือดออกเสี่ยงต่ำ → ให้ยาขนาดรักษาได้ (2a)',o:[['พบ','sev'],['ไม่พบ','out2']]},
+ out2:{leaf:true,cls:'ok',t:'ไม่พบ PE',b:'CTPA ลบ ไม่ต้องทำ duplex ขาซ้ำ (3: No benefit) · ถ้า CT คุณภาพไม่ดีพิจารณาตรวจใหม่ · หาโรคอื่น'},
+ sev:{q:'Severity score (sPESI / PESI / Hestia)?',o:[['ต่ำ (sPESI 0, PESI ≤85, Hestia 0)','b'],['สูง (sPESI ≥1, PESI >85, Hestia ≥1)','rv']]},
+ b:{leaf:true,cls:'ok',t:'Category B (B1 subsegmental · B2 segmental ขึ้นไป)',b:'<b>DOAC</b> (apixaban 10 mg bid 7 วัน → 5 mg bid หรือ rivaroxaban 15 mg bid 21 วัน → 20 mg od) · รักษาแบบผู้ป่วยนอกได้ (2a) ถ้าได้ยาทันทีและนัดติดตามได้ · ติดตามภายใน 1 สัปดาห์ นัดภายใน 3 เดือน'},
+ rv:{q:'ความดันต่ำชั่วคราวหรือ hypoperfusion?',o:[['ไม่มี','rv2'],['ความดันต่ำชั่วคราว ไม่มี hypoperfusion (D1)','d1'],['Hypoperfusion ทั้งที่ความดันปกติ (D2)','d2']]},
+ rv2:{q:'RV ผิดปกติ และ/หรือ troponin/BNP สูง?',h:'ตรวจ biomarker อย่างน้อย 1 ตัว + lactate + ประเมิน RV (echo ดีกว่า CT) — Class 1',o:[['ไม่มีทั้งคู่ (C1)','c1'],['อย่างใดอย่างหนึ่ง (C2)','c2'],['ทั้งสองอย่าง (C3)','c3']]},
+ c1:{leaf:true,cls:'warn',t:'Category C1',b:'Admit · <b>LMWH</b> มากกว่า UFH (1) · PERT (1) · lactate · ไม่ทำ advanced therapy (lysis 3: Harm) · เปลี่ยนเป็น DOAC เมื่อคงที่'},
+ c2:{leaf:true,cls:'warn',t:'Category C2',b:'Admit · <b>LMWH</b> (1) · PERT (1) · lactate · <b>ห้าม systemic lysis (3: Harm)</b> · CDL/thrombectomy ประโยชน์ไม่ชัด (2b) · ติดตามใกล้ชิด 24–72 ชม.'},
+ c3:{leaf:true,cls:'danger',t:'Category C3',b:'Admit (monitored bed) · <b>LMWH</b> (1) · PERT (1) · lactate · MAP <80 = สัญญาณต้องเพิ่มระดับการรักษา (2a) · systemic lysis/CDL/thrombectomy ประโยชน์ไม่ชัด (2b) · ถ้าทรุดลงเป็น D/E → rescue reperfusion · พิจารณาส่งต่อ รพ.ที่ทำ advanced therapy ได้ (2b)'},
+ d1:{leaf:true,cls:'danger',t:'Category D1',b:'ICU/monitored bed · <b>LMWH</b> (1) · PERT (1) · สารน้ำ ≤500 mL ถ้าสงสัย preload ต่ำ (2b) · advanced therapy (lysis/CDL/MT/ผ่าตัด) <b>พิจารณาได้ (2b)</b> ถ้าเลือดออกเสี่ยงรับได้'},
+ d2:{leaf:true,cls:'danger',t:'Category D2 — normotensive shock',b:'ICU · <b>LMWH</b> (1) · PERT (1) · vasopressor/inotrope (1) — dobutamine อาจเป็นตัวแรก · advanced therapy พิจารณาได้ (2b) · เฝ้าระวังการทรุดเป็น E'}
 },'apTrail','apStage');
 
 function wellsPE(){let s=0;[['w1',3],['w2',3],['w3',1.5],['w4',1.5],['w5',1.5],['w6',1],['w7',1]].forEach(([i,v])=>{if($(i).checked)s+=v});return s}
 function dx(){
-  const w=wellsPE(),age=num('dAge'),dd=num('dDd'),g=$('dGes').value;
+  const w=wellsPE(),age=num('dAge'),dd=num('dDd'),g=$('dGes').value,onAc=$('dAc').checked,preg=$('dPreg').checked;
   const yrs=['w1','w2','w6'].filter(i=>$(i).checked).length;
   let perc=0;for(let i=1;i<=8;i++)if($('pc'+i).checked)perc++;
-  const L=[`Wells = <span class="big">${w}</span> → <b>${w>4?'PE likely':'PE unlikely'}</b> · YEARS items = ${yrs} · PERC positive ${perc}/8`];
-  if(g==='high'||w>4){L.push('<b>ข้าม D-dimer → CTPA</b> (หรือ V/Q) · เริ่ม anticoagulant ระหว่างรอถ้าเลือดออกไม่เสี่ยง');}
+  const wt=w<2?0:w<=6?1:2, gt={low:0,mod:1,high:2}[g], tier=Math.max(wt,gt);
+  const tn=['ต่ำ (<15%)','ปานกลาง (15–50%)','สูง (>50%)'][tier];
+  const L=[`Wells = <span class="big">${w}</span> (${w<2?'low':w<=6?'moderate':'high'} · แบบ 2 ระดับ: ${w>4?'PE likely':'PE unlikely'}) · YEARS items = ${yrs} · PERC ไม่ผ่าน ${perc}/8 → clinical probability <b>${tn}</b>`];
+  if(tier===2){L.push('<b>ข้าม D-dimer → CTPA</b> (หรือ V/Q ถ้าทำ CT ไม่ได้) (Class 1) · ถ้าสงสัย Category ≥C2 + เลือดออกเสี่ยงต่ำ + ถ่ายภาพล่าช้า → ให้ anticoagulant ขนาดรักษาระหว่างรอ (2a)');}
+  else if(tier===0&&perc===0){L.push('<b>Probability ต่ำ + PERC ครบ 8 ข้อ → ตัด PE ได้</b> ไม่ต้องตรวจเพิ่ม');}
   else{
-    if(g==='low'&&perc===0){L.push('<b>PERC ลบครบ + gestalt ต่ำ → ตัด PE ได้</b> ไม่ต้องตรวจเพิ่ม');}
-    else{
-      const th=yrs===0?1000:500, ag=(age!==null&&age>50)?age*10:500;
-      L.push(`<b>กลยุทธ์ YEARS</b>: เกณฑ์ D-dimer <b>&lt;${th} ng/mL</b> (${yrs===0?'0 item':'≥1 item'})`+(dd!==null?(dd<th?' → <b>ตัด PE ได้</b>':' → <b>CTPA</b>'):''));
-      L.push(`<b>กลยุทธ์ Wells + age-adjusted</b>: เกณฑ์ <b>&lt;${ag} ng/mL</b>`+(age!==null&&age>50?` (${age}×10)`:'')+(dd!==null?(dd<ag?' → <b>ตัด PE ได้</b>':' → <b>CTPA</b>'):'')+' <span class="muted">— เลือกใช้กลยุทธ์ใดกลยุทธ์หนึ่ง ไม่ซ้อนกัน</span>');
-      if(dd===null)L.push('ส่ง D-dimer (ใส่ค่าเพื่อแปลผล)');
-      if(g==='low'&&perc>0)L.push('PERC ไม่ผ่าน จึงต้องใช้ D-dimer');
-    }
+    if(tier===0)L.push('PERC ไม่ครบ จึงต้องใช้ D-dimer + YEARS');
+    const ag=(age!==null&&age>50)?age*10:500;
+    const th=yrs===0?1000:ag;
+    L.push(`<b>D-dimer + YEARS</b> (2a): เกณฑ์ <b>&lt;${th} ng/mL</b> (${yrs===0?'0 item → 1000':'≥1 item → '+(ag>500?`ปรับตามอายุ ${age}×10`:'500')})`+(dd!==null?(dd<th?' → <b>ตัด PE ได้</b>':' → <b>CTPA</b>'):''));
+    L.push(`<span class="muted">ทางเลือก: age-adjusted D-dimer เดี่ยว (ไม่ใช้ YEARS) เกณฑ์ &lt;${ag} ng/mL`+(dd!==null?(dd<ag?' → ตัด PE ได้':' → CTPA'):'')+'</span>');
+    if(dd===null)L.push('ส่ง D-dimer (ใส่ค่าเพื่อแปลผล)');
   }
+  if(onAc&&tier<2)L.push('<b style="color:var(--danger)">ระวัง</b>: กลยุทธ์ D-dimer/YEARS ศึกษาในผู้ที่ไม่ได้ anticoagulant ขนาดรักษา — D-dimer ต่ำอาจเป็นผลจากยา พิจารณาถ่ายภาพ');
+  if(preg)L.push('ตั้งครรภ์: ใช้ <b>pregnancy-adapted YEARS</b> (2b) · ขามีอาการ → compression US ก่อน (พบ DVT รักษาได้เลย) · ถ้าต้องถ่ายภาพและ CXR ปกติ → low-dose CTPA (2a)');
   $('dxOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
 }
 bindAll('#tDx input,#tDx select',dx);
@@ -772,15 +858,16 @@ function cat(){
   let sp=0;for(let i=1;i<=6;i++)if($('s'+i).checked)sp++;
   const rv=$('c1').checked,bm=$('c2').checked,R=$('cR').checked;
   let c,tx;
-  if($('c6').checked){c='E2';tx='Refractory shock/arrest: CPR + <b>systemic thrombolysis</b> · พิจารณา VA-ECMO, surgical embolectomy/thrombectomy ตามทรัพยากร (2a)';}
-  else if($('c5').checked){c='E1';tx='<b>Reperfusion</b>: alteplase 100 mg ใน 2 ชม. (หรือ streptokinase 1.5 MU ใน 2 ชม.) / CDT / mechanical thrombectomy (2a) · UFH · norepinephrine · ระวังสารน้ำ · PERT (1)';}
-  else if($('c4').checked){c='D2';tx='Normotensive shock: LMWH/UFH + PERT · thrombolysis/CDT/thrombectomy/embolectomy <b>พิจารณาได้ (2b)</b> · ICU';}
-  else if($('c3').checked){c='D1';tx='ความดันต่ำชั่วคราว: LMWH + PERT · advanced therapy พิจารณาได้ (2b) · ติดตามใกล้ชิดใน ICU/monitored bed';}
-  else if($('c0').checked){c='A';tx='พบโดยบังเอิญ: ส่วนใหญ่ยังให้ anticoagulant (โดยเฉพาะมะเร็ง/segmental ขึ้นไป) · ข้อมูลประโยชน์ยังศึกษาอยู่';}
-  else if(sp===0){c='B';tx='<b>DOAC แบบผู้ป่วยนอก</b> ได้ถ้าไม่มีปัญหาเลือดออก/สังคม (1)'+(rv||bm?' · <i>RV/biomarker ผิดปกติแม้ sPESI 0 — ESC จัดเป็น intermediate-low พิจารณา admit สังเกตอาการ</i>':'');}
-  else{const n=(rv?1:0)+(bm?1:0);c=n===0?'C1':n===1?'C2':'C3';tx='Admit · <b>LMWH มากกว่า UFH (1)</b> · PERT (1)'+(c==='C3'?' · CDT/lysis/thrombectomy ประโยชน์ไม่ชัด (2b) — HI-PEITHO สนับสนุน CDT ในรายมีอาการรุนแรง':'')+' · ตรวจ lactate';}
-  const cr=R&&/^[CDE]/.test(c)?c+'R':c;
-  $('catOut').innerHTML=`sPESI = <b>${sp}</b> · Category <span class="big">${cr}</span><br>${tx}`;
+  if($('c6').checked){c='E2';tx='Refractory shock/arrest: LMWH หรือ UFH · CPR + <b>systemic thrombolysis</b> ถ้าเลือดออกเสี่ยงรับได้ (2a) · <b>VA-ECMO</b> (2a) · surgical embolectomy ที่ไม่ได้ใส่ MCS ไม่แนะนำเหนือวิธีอื่น (3: NB) · vasopressor/inotrope (1) · PERT (1)';}
+  else if($('c5').checked){c='E1';tx='<b>Reperfusion (2a)</b>: alteplase 100 mg ใน 2 ชม. / CDL / mechanical thrombectomy / surgical embolectomy · LMWH มากกว่า UFH (1) · norepinephrine (1) · สารน้ำไม่มาก · PERT (1) · ห้ามส่งต่อก่อน stabilize (3: Harm)';}
+  else if($('c4').checked){c='D2';tx='Normotensive shock: LMWH (1) + PERT (1) · vasopressor/inotrope (1) · lactate · systemic lysis/CDL/thrombectomy/embolectomy <b>พิจารณาได้ (2b)</b> · ICU';}
+  else if($('c3').checked){c='D1';tx='ความดันต่ำชั่วคราว: LMWH (1) + PERT (1) · สารน้ำ ≤500 mL ถ้าสงสัย preload ต่ำ (2b) · advanced therapy พิจารณาได้ (2b) · ติดตามใกล้ชิดใน ICU/monitored bed';}
+  else if($('c0').checked){c='A';tx='พบโดยบังเอิญ ไม่มีอาการ: ให้ anticoagulant (DOAC) และกลับบ้านจาก ER ได้ · advanced therapy ห้าม (lysis 3: Harm)';}
+  else if(sp===0){c=$('cSub').checked?'B1':'B2';tx='<b>DOAC</b> (1) · รักษาแบบผู้ป่วยนอกได้ (2a) ถ้าได้ยาทันทีและนัดติดตามได้ (Hestia ช่วยคัดกรองข้อห้ามทางสังคม/การแพทย์)'+(c==='B1'?' · subsegmental ไม่มี DVT เสี่ยงต่ำ — CHEST ให้สังเกตอาการได้':'')+(rv||bm?' · <i>RV/biomarker ผิดปกติแม้ sPESI 0 — AHA จัดยังเป็น B (นิยามตาม score) แต่ ESC จัดเป็น intermediate-low ควรพิจารณา admit สังเกตอาการ</i>':'');}
+  else{const n=(rv?1:0)+(bm?1:0);c=n===0?'C1':n===1?'C2':'C3';tx='Admit · <b>LMWH มากกว่า UFH (1)</b> · PERT (1) · ตรวจ lactate (1)'+(c==='C1'?' · ไม่ทำ advanced therapy':c==='C2'?' · <b>ห้าม systemic lysis (3: Harm)</b> · CDL/MT ประโยชน์ไม่ชัด (2b)':' · systemic lysis/CDL/MT ประโยชน์ไม่ชัด (2b) · MAP &lt;80 → อาจต้องเพิ่มระดับการรักษา (2a) · พิจารณาส่งต่อ (2b)');}
+  const Rtxt={C:'SpO₂ <90%, RR ≥30 หรือต้องใช้ O₂',D:'O₂ >6 L/min หรือ non-rebreather',E:'หายใจล้มเหลว ต้องใช้ NIV/เครื่องช่วยหายใจ'};
+  const k=c[0],cr=R&&Rtxt[k]?c+'R':c;
+  $('catOut').innerHTML=`sPESI = <b>${sp}</b> · Category <span class="big">${cr}</span><br>${tx}`+(R&&Rtxt[k]?`<br><span class="muted">modifier R ระดับ ${k}: ${Rtxt[k]} · ระดับปานกลาง–รุนแรงใช้ HFNC (2a)</span>`:'');
 }
 bindAll('#tCat input',cat);
 
@@ -789,26 +876,31 @@ function dose(){
   const c=crcl(),w=num('aWt'),a=num('aAge'),d=$('aDrug').value,pgp=$('aPgp').checked;
   if(c===null){$('doseOut').textContent='ใส่อายุ น้ำหนัก creatinine';return}
   const L=[`CrCl (Cockcroft-Gault) ≈ <b>${c}</b> mL/min`];
-  if(d==='api'){L.push('<b>Apixaban 10 mg bid × 7 วัน → 5 mg bid</b>');L.push('Extended (หลัง 6 เดือน): 2.5 mg bid');if(c<25)L.push('CrCl <25: ข้อมูลใน VTE จำกัด — พิจารณา LMWH ปรับขนาด/warfarin');}
-  else if(d==='riva'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง rivaroxaban</b>');else{L.push('<b>Rivaroxaban 15 mg bid × 21 วัน (พร้อมอาหาร) → 20 mg od</b>');L.push('Extended: 10 mg od');if(c<30)L.push('CrCl 15–30: ใช้อย่างระมัดระวัง');}}
-  else if(d==='edo'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง</b>');else{const red=c<=50||w<=60||pgp;L.push('ให้ LMWH/UFH ≥5 วันก่อน แล้ว');L.push(`<b>Edoxaban ${red?30:60} mg od</b>`+(red?` (ลดขนาดเพราะ ${[c<=50?'CrCl ≤50':'',w<=60?'น้ำหนัก ≤60 kg':'',pgp?'P-gp inhibitor':''].filter(Boolean).join(', ')})`:''));}}
-  else if(d==='dabi'){if(c<30)L.push('<b>CrCl <30: ห้ามใช้ dabigatran</b>');else{L.push('ให้ LMWH/UFH ≥5 วันก่อน แล้ว');L.push('<b>Dabigatran 150 mg bid</b>');if(a>=80)L.push('อายุ ≥80: ฉลากบางประเทศ (EU) ใช้ 110 mg bid');}}
-  else if(d==='enox'){const e=Math.round(w/10)*10;L.push(c<30?`<b>Enoxaparin ~${e} mg SC วันละครั้ง</b> (1 mg/kg od เพราะ CrCl <30) · ติดตาม anti-Xa`:`<b>Enoxaparin ~${e} mg SC ทุก 12 ชม.</b> (1 mg/kg)`);if(w>150)L.push('น้ำหนักมาก: พิจารณาติดตาม anti-Xa');}
+  if(c<30&&d!=='war'&&d!=='ufh')L.push('<span class="tag th">ไทย 2565</span> CrCl &lt;30 แนะนำ <b>warfarin</b> (หลีกเลี่ยง DOAC และ LMWH) · AHA 2026: apixaban เทียบ VKA ในไตเสื่อมระยะ 4–5 ยังไม่แน่ชัด (2b)');
+  if(d==='api'){L.push('<b>Apixaban 10 mg bid × 7 วัน → 5 mg bid</b>');L.push('Extended (หลังครบ 3–6 เดือน): <b>2.5 mg bid</b> (Class 1)');if(c<25)L.push('CrCl <25: ข้อมูลใน VTE จำกัด (registry) — พิจารณา warfarin หรือ LMWH ปรับขนาด + anti-Xa');}
+  else if(d==='riva'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง rivaroxaban</b>');else{L.push('<b>Rivaroxaban 15 mg bid × 21 วัน (พร้อมอาหาร) → 20 mg od</b>');L.push('Extended: <b>10 mg od</b> (Class 1)');if(c<30)L.push('CrCl 15–30: ใช้อย่างระมัดระวัง');}}
+  else if(d==='edo'){if(c<15)L.push('<b>CrCl <15: หลีกเลี่ยง</b>');else{const red=c<=50||w<=60||pgp;L.push('ให้ยาฉีดนำ ≥5 วัน (AHA/ฉลาก) · <span class="tag th">ไทย</span> LMWH 7–10 วัน แล้ว');L.push(`<b>Edoxaban ${red?30:60} mg od</b>`+(red?` (ลดขนาดตามฉลากเพราะ ${[c<=50?'CrCl ≤50':'',w<=60?'น้ำหนัก ≤60 kg':'',pgp?'P-gp inhibitor':''].filter(Boolean).join(', ')})`:''));}}
+  else if(d==='dabi'){if(c<15)L.push('<b>CrCl <15: ห้ามใช้ dabigatran</b>');else{L.push('ให้ยาฉีดนำ ≥5 วัน (AHA/ฉลาก) · <span class="tag th">ไทย</span> LMWH 7–10 วัน แล้ว');if(c<30)L.push('<b>CrCl 15–30</b>: ฉลากส่วนใหญ่ห้ามใช้ · <span class="tag th">ไทย</span> ลดขนาด 50% เป็น <b>75 mg bid</b>');else L.push('<b>Dabigatran 150 mg bid</b>');if(a>=80)L.push('อายุ ≥80: ฉลากบางประเทศ (EU) ใช้ 110 mg bid');if(pgp)L.push('P-gp inhibitor: <span class="tag th">ไทย</span> กิน dabigatran ก่อนยานั้น ≥2 ชม.');L.push('ห้ามใช้ร่วมกับ rifampin');}}
+  else if(d==='enox'){const e=Math.round(w/10)*10,e15=Math.round(w*1.5/10)*10;L.push(c<30?`<b>Enoxaparin ~${e} mg SC วันละครั้ง</b> (1 mg/kg od เพราะ CrCl <30) · ติดตาม anti-Xa (2a)`:`<b>Enoxaparin ~${e} mg SC ทุก 12 ชม.</b> (1 mg/kg) หรือ ~${e15} mg วันละครั้ง (1.5 mg/kg)`);L.push('ถ้าตรวจ anti-Xa: peak 3–5 ชม.หลังฉีด หลังได้ ≥3 โดส · เป้า 0.6–1.0 (q12h) / 1.0–2.0 U/mL (od) <span class="tag th">ไทย</span>');if(w>150)L.push('น้ำหนัก >150 kg: ตัดสินขนาดเป็นรายๆ · BMI >40 อาจลดขนาด (2b)');}
   else if(d==='fonda'){if(c<30)L.push('<b>CrCl <30: ห้ามใช้</b>');else{L.push(`<b>Fondaparinux ${w<50?5:w<=100?7.5:10} mg SC วันละครั้ง</b>`);if(c<50)L.push('CrCl 30–50: ระวัง');}}
-  else{const b=Math.round(80*w/100)*100,inf=Math.round(18*w/10)*10;L.push(`<b>UFH bolus ${b} U IV → ${inf} U/ชม.</b> (80 U/kg → 18 U/kg/ชม.)`);L.push('ตรวจ aPTT ทุก 6 ชม.จนอยู่ในเป้า (1.5–2.5 เท่า หรือ anti-Xa 0.3–0.7) · บางโปรโตคอลจำกัด bolus ≤10,000 U');}
+  else if(d==='war'){L.push('<b>Warfarin</b> เริ่ม 0.5–6 mg/วัน (มักเริ่มต่ำในผู้สูงอายุ/น้ำหนักน้อย) <b>พร้อมกับ</b> LMWH/UFH');L.push('ให้ยาฉีด <b>ทับกัน ≥5 วัน และ INR 2–3 ติดต่อกัน 24 ชม.</b> จึงหยุดยาฉีด · ห้ามเริ่ม warfarin เดี่ยว (++) <span class="tag th">ไทย</span>');L.push('ปรับขนาดต่อสัปดาห์ตามตาราง INR ในบท 07 · AHA 2026: ถ้าไม่มีข้อห้าม DOAC ดีกว่า VKA (1)');}
+  else{const b=Math.round(80*w/100)*100,inf=Math.round(18*w/10)*10;L.push(`<b>UFH bolus ${b} U IV → ${inf} U/ชม.</b> (80 U/kg → 18 U/kg/ชม.)`);L.push('ตรวจ aPTT ทุก 6 ชม.จนอยู่ในเป้า (1.5–2.5 เท่าของค่ากลางปกติ หรือ anti-Xa 0.3–0.7) แล้วปรับตาม nomogram บท 07 · บางโปรโตคอลจำกัด bolus ≤10,000 U');L.push('AHA 2026: C1–E1 ใช้ LMWH มากกว่า UFH (1) — เลือก UFH เมื่อไตวายรุนแรง จะ lyse หรือต้องหยุดยาเร็ว');}
   $('doseOut').innerHTML='<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
 }
 bindAll('#tDose input,#tDose select',dose);
 
 function dur(){
   const p=$('uProv').value,n=$('uN').value,b=$('uB').value;let o;
-  if(p==='major'&&n==='1')o='<b>3 เดือนแล้วหยุด</b> (AHA/ACC 2026 Class 1: 3–6 เดือน)';
-  else if(p==='cancer')o='<b>≥6 เดือน และตราบที่มะเร็ง active/กำลังรักษา</b> · apixaban/edoxaban/rivaroxaban หรือ LMWH';
-  else if(p==='aps')o='<b>Warfarin ระยะยาว</b> (INR 2–3) · หลีกเลี่ยง DOAC';
-  else if(p==='minor'&&n==='1')o='อย่างน้อย <b>3 เดือน</b> · ถ้าปัจจัยหมดไปและเสี่ยงซ้ำต่ำ หยุดได้ · ตัดสินร่วมกับผู้ป่วย';
-  else o=b==='low'?'<b>ให้ต่อเนื่องไม่มีกำหนด</b> · หลัง 6 เดือนลดเป็น <b>apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> · ทบทวนทุกปี':'อย่างน้อย 3–6 เดือน · เลือดออกเสี่ยงสูง: พิจารณาหยุดหลังครบ หรือใช้ขนาดลด · ทบทวนทุกปี';
+  const ext=b==='low'?'<b>ให้ต่อเนื่อง (extended) ไม่มีวันหยุดที่กำหนด</b> (1) · หลังครบ 3–6 เดือนลดเป็น <b>apixaban 2.5 mg bid หรือ rivaroxaban 10 mg od</b> (1) · DOAC มากกว่า VKA (1) · ทบทวนความเสี่ยงเป็นระยะ (1)':'ยังแนะนำ extended (1) แต่เลือดออกเสี่ยงสูง: ใช้ DOAC ครึ่งขนาด ทบทวนบ่อย · ถ้าห้าม/ไม่ยอมใช้ anticoagulant → aspirin ขนาดต่ำดีกว่าไม่ให้ (2a)';
+  if(p==='major'&&n==='1')o='<b>หยุดยาเมื่อครบ 3–6 เดือน</b> (AHA/ACC 2026 Class 1) · ไม่ต้องตรวจ thrombophilia';
+  else if(p==='cancer')o='<b>ให้ตราบที่มะเร็ง active/กำลังรักษา</b> · ระยะ extended ใช้ <b>DOAC หรือ LMWH มากกว่า VKA</b> (1) · apixaban 2.5 mg bid หลัง ≥6 เดือนเป็นทางเลือก (API-CAT)'+(n==='2'?' · เป็นซ้ำขณะได้ LMWH → เพิ่มขนาด 20–25% (2a)':'');
+  else if(p==='aps')o='<b>Warfarin ระยะยาว</b> (INR 2–3) — VKA มากกว่า DOAC (1) · antibody ชนิดเดียวและไม่เคย arterial event: DOAC เป็นทางเลือกได้ (2b)';
+  else if(p==='minor'&&n==='1')o='ครบ 3–6 เดือนแล้ว <b>ตัดสินร่วมกับผู้ป่วย</b> ว่าหยุดหรือให้ต่อ (2a) — ชั่งความเสี่ยงเป็นซ้ำ (~4–7%/ปีหลังหยุด) กับเลือดออก'+(b==='high'?' · เลือดออกเสี่ยงสูงเอนไปทางหยุดยา':'');
+  else if(p==='persist'&&n==='1')o='ปัจจัยถาวร: '+ext;
+  else o=ext;
   if(n==='2'&&p!=='major')o='VTE ซ้ำ: '+o;
-  if(n==='2'&&p==='major')o='VTE ซ้ำแม้มี major transient: มักให้ยาต่อเนื่อง ประเมินเป็นรายๆ';
+  if(n==='2'&&p==='major')o='VTE ซ้ำแม้มี major reversible RF: มักให้ยาต่อเนื่อง ประเมินเป็นรายๆ · ถ้าเป็นซ้ำ <i>ขณะได้ยา</i> หาสาเหตุ (adherence, ยาตีกัน, มะเร็ง, APS) และเปลี่ยนกลุ่มยา (2a)';
+  o+='<br><span class="muted"><span class="tag th">ไทย 2565</span> ระยะยาวขั้นต่ำ 3 เดือน · ยากินระยะยาว warfarin (++) / DOAC (+)</span>';
   $('durOut').innerHTML=o;
 }
 bindAll('#tDur select',dur);
@@ -832,18 +924,28 @@ function per(){
 bindAll('#tPer input,#tPer select',per);
 
 mountQuiz([
- ['หญิง 35 ปี เหนื่อยเฉียบพลัน gestalt ต่ำ อายุ <50 HR 88 SpO₂ 98% ไม่มีขาบวม ไม่ใช้ยาคุม ไม่เคย VTE ทำอย่างไร',
-  ['ส่ง D-dimer','PERC ลบครบ ตัด PE ได้','CTPA','V/Q scan'],1,'Gestalt ต่ำ + PERC ลบครบ 8 ข้อ ไม่ต้องตรวจเพิ่ม'],
- ['ชาย 72 ปี Wells 1.5 ไม่มี YEARS item D-dimer 850 ng/mL',
-  ['ตัด PE ได้ (YEARS 0 item เกณฑ์ <1000)','ต้อง CTPA','ให้ heparin','V/Q'],0,'YEARS 0 item ใช้เกณฑ์ D-dimer <1000'],
+ ['หญิง 35 ปี เหนื่อยเฉียบพลัน gestalt ต่ำ (<15%) HR 88 SpO₂ 98% ไม่มีขาบวม ไม่ใช้ยาคุม ไม่เคย VTE ไม่ไอเป็นเลือด ไม่มีผ่าตัด ทำอย่างไร',
+  ['ส่ง D-dimer','PERC ครบ 8 ข้อ ตัด PE ได้','CTPA','V/Q scan'],1,'Probability ต่ำ + PERC ครบ 8 ข้อ ไม่ต้องตรวจเพิ่ม (AHA/ACC 2026 Figure 1)'],
+ ['ชาย 72 ปี Wells 1.5 อายุ ≥50 จึงไม่ผ่าน PERC ไม่มี YEARS item D-dimer 850 ng/mL',
+  ['ตัด PE ได้ (YEARS 0 item เกณฑ์ <1000)','ต้อง CTPA','ให้ heparin','V/Q'],0,'PERC ไม่ผ่าน → D-dimer + YEARS · 0 item ใช้เกณฑ์ <1000'],
+ ['หญิง 70 ปี probability ปานกลาง มีไอเป็นเลือด (YEARS 1 item) D-dimer 620 ng/mL ตาม AHA/ACC 2026 Figure 1',
+  ['ตัด PE ได้ เพราะต่ำกว่าเกณฑ์ปรับตามอายุ 700','ต้อง CTPA เพราะ >500','ใช้เกณฑ์ 1000','ใช้ D-dimer ไม่ได้เพราะอายุมาก'],0,'≥1 YEARS item: ตัด PE ได้เมื่อ D-dimer <500 หรือต่ำกว่าเกณฑ์ปรับตามอายุ (70×10 = 700)'],
  ['PE sPESI 2, RV/LV 1.2, troponin สูง ความดันปกติ lactate ปกติ จัดเป็น',
-  ['B','C1','C3','E1'],2,'Score สูง + RV ผิดปกติ + biomarker สูง = C3'],
+  ['B2','C1','C3','D2'],2,'Score สูง + RV ผิดปกติ + biomarker สูง = C3'],
+ ['PE sPESI 1 troponin สูง RV ปกติ ความดันปกติ (Category C2) การให้ systemic thrombolysis',
+  ['แนะนำ Class 2a','พิจารณาได้ 2b','ไม่ควรให้ (3: Harm)','ให้ขนาดครึ่งหนึ่งเสมอ'],2,'AHA/ACC 2026: systemic lysis ใน A1–C2 เพิ่มเลือดออกและ ICH — 3: Harm'],
  ['ผู้ป่วยใน PE category C ต้องการยาฉีด AHA/ACC 2026 แนะนำ',
-  ['UFH มากกว่า LMWH','LMWH มากกว่า UFH','Fondaparinux เท่านั้น','Warfarin เดี่ยว'],1,'Class 1: LMWH มากกว่า UFH ใน C–E1'],
- ['PE SBP 78 ต้องใช้ norepinephrine ไม่มีข้อห้าม การรักษาที่เหมาะสม',
-  ['Enoxaparin เดี่ยว','IV fluid 3 ลิตร','Alteplase 100 mg ใน 2 ชม. หรือ CDT','IVC filter'],2,'Category E1 → reperfusion (2a) · ระวังสารน้ำมาก'],
+  ['UFH มากกว่า LMWH','LMWH มากกว่า UFH','Fondaparinux เท่านั้น','Warfarin เดี่ยว'],1,'Class 1: LMWH มากกว่า UFH ใน C1–E1 (ลด recurrent VTE และเลือดออก)'],
+ ['PE SBP 78 ต่อเนื่อง ต้องใช้ norepinephrine ไม่มีข้อห้ามต่อการละลายลิ่มเลือด การรักษาที่เหมาะสม',
+  ['Enoxaparin เดี่ยว','IV fluid 3 ลิตร','Alteplase 100 mg ใน 2 ชม. หรือ CDL/thrombectomy','ส่งต่อทันทีก่อน stabilize'],2,'Category E1 → reperfusion (2a) · สารน้ำไม่เกิน 500 mL · ห้ามส่งต่อก่อน stabilize (3: Harm)'],
  ['Unprovoked PE ครั้งแรก รักษาครบ 6 เดือน เลือดออกเสี่ยงต่ำ ต่อไปควร',
-  ['หยุดยา','Apixaban 2.5 mg bid ต่อเนื่อง','Aspirin','Warfarin INR 1.5–2'],1,'Extended phase ใช้ขนาดลด (Class 1)'],
+  ['หยุดยา','Apixaban 2.5 mg bid ต่อเนื่อง','Aspirin','Warfarin INR 1.5–2'],1,'ไม่มี major reversible RF → extended (1) ด้วย DOAC ครึ่งขนาด (1)'],
+ ['หญิงหลังคลอดให้นมบุตร เป็น PE ยาใดไม่ควรเลือก',
+  ['LMWH','Warfarin','UFH','Rivaroxaban'],3,'ให้นมบุตร: LMWH, UFH หรือ warfarin มากกว่า DOAC (Class 1)'],
+ ['ตามแนวทางไทย 2565 ผู้ป่วย VTE ที่ CrCl 22 mL/min ควรใช้ยาระยะยาวใด',
+  ['Rivaroxaban','Warfarin','Dabigatran 150 mg bid','Fondaparinux'],1,'แนวทางไทยตารางที่ 2: CrCl <30 แนะนำ warfarin (หลีกเลี่ยง DOAC และ LMWH)'],
+ ['เริ่ม warfarin ร่วมกับ enoxaparin วันที่ 5 INR 2.3 (ครั้งแรกที่ถึงเป้า) ควร',
+  ['หยุด enoxaparin วันนี้','ให้ enoxaparin ต่อจน INR 2–3 ติดต่อกัน 24 ชม.','หยุด warfarin','เพิ่ม warfarin'],1,'ต้องทับกัน ≥5 วัน และ INR 2–3 ติดต่อกัน 24 ชม. จึงหยุดยาฉีด'],
  ['ผู้ป่วยใช้ apixaban จะผ่าตัดเปลี่ยนข้อสะโพก (เลือดออกเสี่ยงสูง) CrCl 70',
   ['หยุด 1 วัน + bridging enoxaparin','หยุด 2 วัน ไม่ต้อง bridging','หยุด 5 วัน','ไม่ต้องหยุด'],1,'ACCP 2022: Xa inhibitor หัตถการเสี่ยงสูงหยุด 2 วัน ไม่ bridging']
 ],'qz');
