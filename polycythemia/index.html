@@ -1,0 +1,855 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Erythrocytosis & Polycythemia vera · ภาวะเม็ดเลือดแดงสูง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hematology · WHO 2022 · ICC 2022 · ELN 2021 · NCCN MPN 2026 · BSH 2019 · Tefferi AJH</div>
+  <h1>ภาวะเม็ดเลือดแดงสูง<br>Erythrocytosis · Polycythemia vera</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · เจอ <b>Hb/Hct สูงใน CBC</b> ที่ OPD หรือหอผู้ป่วยแล้วควรคิดอย่างไร: <b>ซ้ำ CBC ก่อน</b> → แยก relative กับ absolute → หา <b>สาเหตุทุติยภูมิ</b> (บุหรี่ testosterone SGLT2 inhibitor OSA COPD) → ส่ง <b>JAK2 V617F + serum EPO</b> → ถ้าเป็น <b>polycythemia vera (PV)</b> ให้เจาะเลือดออกให้ <b>Hct &lt;45%</b> + aspirin และประเมินความจำเป็นของยากดไขกระดูก · มีเครื่องมือข้างเตียง 4 ชิ้น · ดูหน้า <a href="../anemia/index.html">โลหิตจาง</a> และ <a href="../thalassemia/index.html">ธาลัสซีเมีย</a> ประกอบ</p>
+  <p class="cite">อ้างอิงหลัก: WHO Classification 5th ed (Khoury, Leukemia 2022) · International Consensus Classification (Arber, Blood 2022) · ELN 2021 recommendations for PV cytoreduction (Marchetti, Lancet Haematol 2022) · NCCN Guidelines: Myeloproliferative Neoplasms 2026 (ฉบับปรับปรุง ก.ย. 2026) · BSH guidelines: diagnosis/management of PV และ specific situations/secondary erythrocytosis (McMullin, Br J Haematol 2019) · Tefferi &amp; Barbui, PV 2024 update (Am J Hematol 2023) · Tremblay et al. JAMA 2025 review · CYTO-PV (NEJM 2013) · ECLAP (NEJM 2004) · Endocrine Society testosterone guideline 2018 · ข้อมูลผู้ป่วย PV ไทย (J Hematol Transfus Med 2021) · <span class="tag up">ใหม่</span> = เปลี่ยน/อนุมัติล่าสุด · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ซ้ำ CBC ก่อนเสมอ</b>แก้ขาดน้ำ หยุด diuretic ถ้าทำได้ · ชาย Hb &gt;16.5 / Hct &gt;49% · หญิง Hb &gt;16.0 / Hct &gt;48% (WHO/ICC)</div>
+    <div class="stage" style="--c:var(--warn)"><b>ส่วนใหญ่เป็นทุติยภูมิ</b>บุหรี่ testosterone SGLT2i OSA COPD · RBC สูง + MCV ต่ำ + Hb ไม่สูง = <b>ธาลัสซีเมียแฝง ไม่ใช่ erythrocytosis</b></div>
+    <div class="stage" style="--c:var(--danger)"><b>PV: Hct &lt;45% + aspirin</b>อายุ ≥60 หรือเคยมี thrombosis = high risk → ยากดไขกระดูก · ห้ามให้ธาตุเหล็กเอง</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#basic">นิยามและเกณฑ์</a><a href="#relative">แท้หรือเทียม · ธาลัสซีเมีย</a><a href="#cause">สาเหตุ · ซักประวัติ ตรวจร่างกาย</a><a href="#work">ส่งตรวจทีละขั้น</a><a href="#dx">เกณฑ์วินิจฉัย PV · แยก MPN อื่น</a><a href="#rx">รักษา PV: พื้นฐาน</a><a href="#cyto">ยากดไขกระดูก</a><a href="#sec">Erythrocytosis ทุติยภูมิ</a><a href="#comp">ภาวะแทรกซ้อน · ส่งต่อ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="basic" class="col">
+  <div class="sec-num">01</div>
+  <h2>นิยามและเกณฑ์</h2>
+  <p><b>Erythrocytosis</b> = Hb หรือ Hct สูงกว่าเกณฑ์ (คำว่า polycythemia มักใช้แทนกันได้ แต่ <b>polycythemia vera</b> คือโรค MPN ชนิดหนึ่งเท่านั้น) · ใช้ <b>Hb และ Hct</b> ตัดสิน <b>ไม่ใช้จำนวน RBC</b></p>
+  <div class="tbl"><table>
+    <tr><th>เกณฑ์</th><th>ชาย</th><th>หญิง</th><th>ใช้ทำอะไร</th></tr>
+    <tr><td><b>WHO 2022 / ICC 2022</b> (major criterion 1 ของ PV)</td><td class="mono">Hb &gt;16.5 g/dL หรือ Hct &gt;49%</td><td class="mono">Hb &gt;16.0 g/dL หรือ Hct &gt;48%</td><td>เกณฑ์วินิจฉัย PV · ICC ยังยอมรับ red cell mass &gt;25% ของค่าคาดหมาย ส่วน WHO 2022 ตัด red cell mass ออก</td></tr>
+    <tr><td><b>BSH 2019</b></td><td class="mono">Hct &gt;0.52 (52%) ต่อเนื่อง</td><td class="mono">Hct &gt;0.48 (48%) ต่อเนื่อง</td><td>เกณฑ์ที่ <b>ควรสืบค้นหาสาเหตุ</b></td></tr>
+    <tr><td>BSH 2019</td><td class="mono">Hct &gt;0.60</td><td class="mono">Hct &gt;0.56</td><td>ถือว่าเป็น <b>absolute erythrocytosis</b> ได้เลย (ไม่ต้องวัด red cell mass)</td></tr>
+    <tr><td>WHO/ICC</td><td class="mono">Hb &gt;18.5 / Hct &gt;55.5%</td><td class="mono">Hb &gt;16.5 / Hct &gt;49.5%</td><td>ถ้าสูงต่อเนื่องระดับนี้ + JAK2 บวก + EPO ต่ำ <b>อาจไม่ต้องทำ bone marrow biopsy</b></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>หน่วยที่ต้องระวัง</h4><ul><li>Hct รายงานเป็น % (เช่น 52%) หรือเป็นสัดส่วน (0.52) — <b>ค่าเดียวกัน</b></li><li>Hb หน่วย g/dL (บางแล็บใช้ g/L: 165 g/L = 16.5 g/dL)</li><li>เกณฑ์ WHO เป็น "เกณฑ์วินิจฉัย PV" ส่วนเกณฑ์ BSH เป็น "เกณฑ์ที่ควรสืบค้น" — <b>หน้านี้ใช้ WHO/ICC เป็นเกณฑ์หลัก</b> และใช้ BSH ช่วยตัดสินว่าจะสืบค้นมากแค่ไหน</li></ul></div>
+    <div class="card c-warn"><h4>พบบ่อยแค่ไหน</h4><ul><li>การศึกษาประชากรเนเธอร์แลนด์ (~147,000 คน): erythrocytosis ตามเกณฑ์ WHO 2016 <b>~3.5%</b> (ชาย 7.6% หญิง 0.4%) — ส่วนใหญ่ <b>ไม่ใช่ PV</b></li><li>PV เป็นโรคหายาก (อุบัติการณ์ราว 0.5–4 ต่อแสนต่อปี) อายุเฉลี่ยตอนวินิจฉัย ~60–65 ปี</li><li>ในกลุ่มที่ Hb สูงมากแต่ <b>WBC/Plt ปกติ</b> แทบไม่พบ JAK2 (0/88 ราย) · ถ้ามี WBC หรือ Plt สูงร่วม พบ JAK2 ~16%</li></ul></div>
+  </div>
+</section>
+
+<section id="relative" class="col">
+  <div class="sec-num">02</div>
+  <h2>แท้หรือเทียม · ธาลัสซีเมีย</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Relative (apparent/spurious) erythrocytosis</h4><ul><li>Red cell mass ปกติ แต่ <b>plasma volume ลดลง</b> → Hct สูงเทียม</li><li>สาเหตุ: <b>ขาดน้ำ</b> (ท้องเสีย อาเจียน เหงื่อออกมาก ไข้) · <b>ยาขับปัสสาวะ</b> · สุรา · ไฟไหม้ · capillary leak</li><li><b>Gaisböck syndrome</b> (stress polycythemia): ชายวัยกลางคน อ้วน ความดันสูง สูบบุหรี่ ดื่มสุรา ได้ diuretic — แก้ที่ปัจจัยเสี่ยง</li><li>Hct ที่ขึ้นพร้อม albumin/BUN สูง ชี้ว่าเป็นจากขาดน้ำ</li></ul></div>
+    <div class="card c-ok"><h4>ซ้ำ CBC ก่อน</h4><ul><li>แก้ขาดน้ำ หยุด/ลด diuretic ถ้าทำได้ แล้ว <b>ซ้ำ CBC</b> (พร้อม blood smear)</li><li>BSH ให้สืบค้นเมื่อ Hct สูง <b>ต่อเนื่อง</b> · JAMA 2025 ใช้คำว่า "สูงต่อเนื่อง" ราว ≥3 เดือน เมื่อพิจารณาข้าม BM biopsy</li><li><b>ไม่ต้องรอ</b> ถ้า Hct ≥60% (ชาย)/≥56% (หญิง), มี thrombosis, ม้ามโต หรือ WBC/Plt สูง → สืบค้น/ส่งต่อทันที</li></ul></div>
+  </div>
+  <div class="box warn"><b>RBC count สูง ≠ erythrocytosis</b> <span class="tag th">ไทย</span> คนไทยเป็นพาหะธาลัสซีเมีย/HbE บ่อยมาก · <b>thalassemia trait และ HbE</b> ให้ภาพ <b>RBC สูง (มัก &gt;5.5–6 ×10¹²/L) + MCV ต่ำ + Hb ปกติหรือต่ำ</b> → นี่ <b>ไม่ใช่</b> erythrocytosis และไม่ต้องส่ง JAK2 · ช่วยแยกด้วย <b>Mentzer index = MCV ÷ RBC</b>: &lt;13 สนับสนุนธาลัสซีเมียแฝง · &gt;13 สนับสนุนขาดธาตุเหล็ก (ใช้คัดกรองเท่านั้น ความแม่นยำปานกลาง โดยเฉพาะกับ HbE) → ยืนยันด้วย <b>Hb typing</b> และ ferritin · ดูหน้า <a href="../thalassemia/index.html">ธาลัสซีเมีย</a> และ <a href="../anemia-flow/index.html">Anemia Flow</a></div>
+  <div class="box danger"><b>กับดัก: PV ที่ถูกซ่อนด้วยขาดเหล็ก (masked PV)</b> ผู้ป่วย PV ที่เลือดออกเรื้อรัง (เช่น ทางเดินอาหาร) หรือเคยเจาะเลือดออก จะขาดเหล็ก → <b>Hb/Hct อาจไม่ถึงเกณฑ์</b> แต่ RBC สูง MCV ต่ำ ferritin ต่ำ · สงสัยเมื่อ <b>Plt หรือ WBC สูง ม้ามโต คันหลังอาบน้ำ หรือมี thrombosis แปลกที่</b> → ส่ง JAK2 และปรึกษาโลหิตแพทย์ · <b>อย่าให้ธาตุเหล็กเอง</b> เพราะ Hct จะพุ่งขึ้นเร็ว</div>
+</section>
+
+<section id="cause" class="col">
+  <div class="sec-num">03</div>
+  <h2>สาเหตุ · ซักประวัติ ตรวจร่างกาย</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>สาเหตุ</th><th>ประเด็นที่ต้องถาม/ตรวจ</th></tr>
+    <tr><td><b>Primary</b> (EPO ต่ำ)</td><td><b>Polycythemia vera</b> (JAK2 V617F ~95–97%, exon 12 ~2–3%) · congenital: EPO receptor mutation</td><td>ม้ามโต คันหลังอาบน้ำ erythromelalgia WBC/Plt สูง thrombosis แปลกที่ · คนอายุน้อยหรือมีประวัติครอบครัว → congenital</td></tr>
+    <tr><td><b>ยา/สาร</b></td><td><b>Testosterone</b>, anabolic steroid · <b>SGLT2 inhibitor</b> (empagliflozin, dapagliflozin ฯลฯ) · <b>EPO/ESA</b> (รวมใช้เพิ่มสมรรถนะกีฬา)</td><td>ถามตรงๆ รวมยาฉีดจากคลินิก/ฟิตเนส · SGLT2i ทำให้ Hct ขึ้นราว 2–4 จุดเปอร์เซ็นต์ <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Hypoxic</b> (EPO สูง)</td><td><b>สูบบุหรี่</b> (carboxyhemoglobin) · <b>OSA/obesity hypoventilation</b> · <b>COPD</b>/โรคปอดเรื้อรัง · <b>cyanotic congenital heart disease</b>/right-to-left shunt · อยู่ที่สูง · high-affinity hemoglobin (P50 ต่ำ)</td><td>นอนกรน ง่วงกลางวัน (STOP-BANG) · หอบเหนื่อย · clubbing cyanosis · <b>SpO₂ ปกติไม่ตัด COHb</b> เพราะ pulse oximeter อ่าน COHb เป็น oxyHb</td></tr>
+    <tr><td><b>Non-hypoxic EPO สูง</b></td><td>เนื้องอกสร้าง EPO: <b>renal cell carcinoma</b>, <b>HCC</b>, <b>uterine leiomyoma</b> (เนื้องอกมดลูกขนาดใหญ่), cerebellar hemangioblastoma, pheochromocytoma, meningioma · ไต: ถุงน้ำ hydronephrosis renal artery stenosis · <b>หลังปลูกถ่ายไต</b> (post-transplant erythrocytosis)</td><td>ปัสสาวะเลือด ก้อนท้อง ประจำเดือนผิดปกติ ตับแข็ง/HBV · <b>อัลตราซาวด์ช่องท้อง</b> (ไต ตับ ม้าม มดลูก)</td></tr>
+    <tr><td><b>Idiopathic</b></td><td>หาสาเหตุไม่พบหลังสืบค้นครบ</td><td>วินิจฉัยโดยการตัดออก · ส่งโลหิตแพทย์</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>อาการ/อาการแสดงที่ชี้ไปทาง PV</h4><ul><li><b>Aquagenic pruritus</b> คันหรือแสบซ่าหลังโดนน้ำ (~1/3 ตอนวินิจฉัย)</li><li><b>Erythromelalgia</b> ปลายมือปลายเท้าแดง ร้อน ปวดแสบ (~5%) — ตอบสนองดีต่อ aspirin</li><li><b>ม้ามโต</b> (~36%) อิ่มเร็ว ปวดท้องซ้ายบน</li><li><b>Plethora</b> หน้าแดงก่ำ ตาแดง (conjunctival injection)</li><li>ปวดศีรษะ มึน ตามัว/ภาพผิดปกติชั่วคราว (~14%)</li><li>Thrombosis: สมอง หัวใจ DVT/PE และ <b>ที่แปลก: Budd–Chiari, portal/mesenteric vein, cerebral venous sinus</b></li><li>WBC สูง (~49%) Plt สูง (~53%)</li></ul></div>
+    <div class="card c-acc"><h4>ลักษณะที่ชี้ไปทางทุติยภูมิ</h4><ul><li>WBC และ Plt <b>ปกติ</b> ไม่มีม้ามโต ไม่มีคันหลังอาบน้ำ</li><li>สูบบุหรี่จัด (โดยเฉพาะ ≥1 ซอง/วัน) · อ้วน กรน · COPD</li><li>เริ่ม testosterone หรือ SGLT2i ก่อน Hct ขึ้น</li><li>Hct ขึ้นหลังปลูกถ่ายไตภายใน 1–2 ปี</li><li>clubbing cyanosis เสียงหัวใจผิดปกติ</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> ข้อมูลผู้ป่วย PV ไทย 60 ราย (รพ.วชิระภูเก็ต 2010–2019): ชาย:หญิง ~3.6:1 (หญิง 22%), เกือบครึ่ง (43%) พบโดยบังเอิญจากตรวจสุขภาพ, 22% มาด้วย arterial thrombosis, ม้ามโตและคันพบไม่บ่อย, JAK2 V617F บวกเพียง 73% (ต่ำกว่าต่างประเทศ — อาจปนผู้ป่วยทุติยภูมิ เพราะส่วนหนึ่งตรวจต่อไม่ได้ด้วยข้อจำกัดค่าใช้จ่าย) · ในไทยคนสูบบุหรี่มาก และใช้ SGLT2i มากขึ้นเรื่อยๆ ใน <a href="../dm/index.html">เบาหวาน</a> และ <a href="../hf/index.html">หัวใจล้มเหลว</a></p>
+</section>
+
+<section id="work" class="col">
+  <div class="sec-num">04</div>
+  <h2>ส่งตรวจทีละขั้น</h2>
+  <div class="steps">
+    <details class="step" open><summary><span class="n">1</span><span class="t">ยืนยันว่าสูงจริงและต่อเนื่อง</span></summary><div class="body">ซ้ำ CBC + <b>blood smear</b> หลังแก้ขาดน้ำ/หยุด diuretic · ดู WBC, Plt, MCV, RBC · ถ้า MCV ต่ำ + RBC สูง + Hb ไม่ถึงเกณฑ์ → คิดถึงธาลัสซีเมียก่อน (Mentzer, Hb typing)</div></details>
+    <details class="step" open><summary><span class="n">2</span><span class="t">ตรวจขั้นแรก (BSH stage 1)</span></summary><div class="body"><b>JAK2 V617F</b> (วิธีที่ไวถึง allele burden 1–3%) + <b>serum EPO</b> (เจาะก่อนเจาะเลือดออก) · <b>ferritin/iron studies</b> (ขาดเหล็กซ่อน PV ได้) · Cr, LFT, Ca · <b>SpO₂</b> · <b>carboxyhemoglobin</b> ในผู้สูบบุหรี่ (จาก blood gas ที่มี co-oximetry) · <b>อัลตราซาวด์ช่องท้อง</b> ดูม้าม ไต ตับ (± มดลูก)</div></details>
+    <details class="step" open><summary><span class="n">3</span><span class="t">ตามผล JAK2 และ EPO</span></summary><div class="body"><b>JAK2 V617F บวก</b> → PV น่าจะเป็นมาก ส่งโลหิตแพทย์ · <b>JAK2 ลบ + EPO ต่ำ</b> → ส่ง <b>JAK2 exon 12</b> และโลหิตแพทย์ (ถ้า exon 12 ลบ: คิดถึง congenital เช่น EPOR mutation — ส่ง gene panel) · <b>JAK2 ลบ + EPO ปกติ/สูง</b> → หาสาเหตุทุติยภูมิต่อ (EPO ปกติไม่ตัด PV ทั้งหมด — ถ้ามีลักษณะ MPN ยังควรตรวจ exon 12)</div></details>
+    <details class="step"><summary><span class="n">4</span><span class="t">หาสาเหตุทุติยภูมิตามแนวที่สงสัย</span></summary><div class="body">Hypoxic: <b>ABG</b>, spirometry, CXR, <b>sleep study</b>/overnight oximetry (OSA), echocardiogram (shunt) · Non-hypoxic: อัลตราซาวด์/CT ไต-ตับ, ปัสสาวะ (เลือด), อัลตราซาวด์มดลูก, MRI สมองถ้ามีอาการ cerebellar · คนอายุน้อย/ประวัติครอบครัว: P50 (high-affinity Hb), gene panel (EPOR, VHL, EGLN1, EPAS1) ผ่านโลหิตแพทย์</div></details>
+    <details class="step"><summary><span class="n">5</span><span class="t">Bone marrow biopsy (โดยโลหิตแพทย์)</span></summary><div class="body">เป็น major criterion ของ WHO/ICC · ช่วยแยก PV จาก ET/prefibrotic PMF และดู fibrosis ตั้งต้น (พยากรณ์การกลายเป็น myelofibrosis) · <b>อาจไม่ต้องทำ</b>ถ้า Hb &gt;18.5 (ชาย)/&gt;16.5 (หญิง) หรือ Hct &gt;55.5%/&gt;49.5% ต่อเนื่อง + JAK2 บวก + EPO ต่ำ · Tefferi: แนะนำแต่ไม่บังคับ</div></details>
+  </div>
+  <div class="box note"><b>ตรวจ JAK2 เมื่อไหร่แม้ CBC ไม่ถึงเกณฑ์</b> <b>splanchnic vein thrombosis</b> (Budd–Chiari, portal vein) ที่ไม่ได้เกิดจากมะเร็งในท้อง และ cerebral venous thrombosis ที่หาสาเหตุไม่ได้ → ตรวจ JAK2 V617F (ถ้าลบ ตรวจ CALR) <span class="rec s1">BSH 1A</span> · ม้ามที่โตขยายตัวลดเลือดในกระแส ทำให้ Hct "ดูปกติ" ได้ · ดูหน้า <a href="../vte/index.html">VTE</a></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> JAK2 V617F, exon 12 และ serum EPO มักต้องส่งตรวจนอก (รพ.มหาวิทยาลัย/แล็บเอกชน) มีค่าใช้จ่าย และสิทธิ์การรักษาอาจไม่ครอบคลุมทุกรายการ → <b>ซักประวัติหาสาเหตุทุติยภูมิให้ครบก่อน</b> และส่งตรวจที่ตอบคำถามได้ตรงที่สุด (ส่วนใหญ่ JAK2 V617F ก่อน)</p>
+</section>
+
+<section id="dx" class="col">
+  <div class="sec-num">05</div>
+  <h2>เกณฑ์วินิจฉัย PV · แยก MPN อื่น</h2>
+  <div class="tbl"><table>
+    <tr><th>WHO 2022 / ICC 2022: Polycythemia vera</th><th>รายละเอียด</th></tr>
+    <tr><td><b>Major 1</b></td><td>Hb &gt;16.5 g/dL (ชาย) / &gt;16.0 g/dL (หญิง) หรือ Hct &gt;49% / &gt;48% <span class="muted">(ICC: หรือ red cell mass &gt;25% เหนือค่าคาดหมาย)</span></td></tr>
+    <tr><td><b>Major 2</b></td><td>Bone marrow: hypercellular ตามอายุ มี <b>panmyelosis</b> (erythroid, granulocytic, megakaryocyte เพิ่ม; megakaryocyte โตเต็มที่ รูปร่างหลากหลาย)</td></tr>
+    <tr><td><b>Major 3</b></td><td><b>JAK2 V617F</b> หรือ <b>JAK2 exon 12</b> mutation <span class="muted">(ICC: ถ้า VAF &lt;1% ให้ตรวจซ้ำด้วยวิธีไวสูง)</span></td></tr>
+    <tr><td><b>Minor</b></td><td><b>Serum EPO ต่ำกว่าปกติ</b></td></tr>
+    <tr><td><b>วินิจฉัย</b></td><td><b>ครบ 3 major</b> หรือ <b>major 1 + 2 + minor</b> (เส้นทางของ PV ที่ JAK2 ลบ) · <b>ข้าม BM biopsy ได้</b>เมื่อ Hb/Hct สูงต่อเนื่องถึงระดับในบทที่ 1 + major 3 (JAK2) + minor (EPO ต่ำ)</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>โรค MPN</th><th>ลักษณะเด่น</th><th>ต่างจาก PV</th></tr>
+    <tr><td><b>Essential thrombocythemia (ET)</b></td><td>Plt ≥450 ×10⁹/L ต่อเนื่อง · megakaryocyte โตผิดปกติใน BM · JAK2 (~55–60%), CALR, MPL หรือ clonal marker อื่น</td><td>Hb/Hct <b>ไม่ถึงเกณฑ์ PV</b> (ระวัง PV ที่ขาดเหล็ก — แก้เหล็กแล้วดู Hct)</td></tr>
+    <tr><td><b>Primary myelofibrosis (PMF)</b> / prefibrotic</td><td>megakaryocyte atypia + reticulin fibrosis · JAK2/CALR/MPL · minor: ซีด, WBC ≥11, ม้ามโตคลำได้, LDH สูง, leukoerythroblastosis</td><td>มักซีด teardrop cell ม้ามโตมาก</td></tr>
+    <tr><td><b>Post-PV myelofibrosis</b></td><td>PV เดิม → fibrosis grade 2–3 + ซีด/ไม่ต้องเจาะเลือดอีก, ม้ามโตขึ้น, leukoerythroblastosis, อาการทั่วไป</td><td>ระยะท้ายของ PV (ไม่ใช่โรคใหม่)</td></tr>
+    <tr><td>CML</td><td>BCR::ABL1 บวก</td><td>WBC สูงเด่น basophil สูง — ส่ง BCR::ABL1 ถ้า WBC สูงมาก/left shift</td></tr>
+  </table></div>
+  <div class="box key"><b>JAK2 บวกไม่ได้แปลว่า PV เสมอ</b>JAK2 V617F พบใน PV, ET, PMF และ <b>clonal hematopoiesis (CHIP)</b> ในคนปกติราว 3% (การศึกษาเดนมาร์ก) · <b>PV ต้องมี erythrocytosis</b> ตามเกณฑ์ · JAK2 บวก + Plt สูง + Hb ปกติ = คิดถึง ET (หรือ PV ที่ขาดเหล็ก)</div>
+</section>
+
+<section id="rx" class="col">
+  <div class="sec-num">06</div>
+  <h2>รักษา PV: พื้นฐาน</h2>
+  <div class="tbl"><table>
+    <tr><th>ความเสี่ยง thrombosis</th><th>นิยาม</th><th>การรักษา</th></tr>
+    <tr><td><b>Low risk</b></td><td>อายุ &lt;60 ปี <b>และ</b> ไม่เคยมี thrombosis</td><td>Phlebotomy ให้ Hct &lt;45% + aspirin ขนาดต่ำ + คุมปัจจัยเสี่ยงหัวใจหลอดเลือด · ยากดไขกระดูกเฉพาะเมื่อมีข้อบ่งชี้ (บทถัดไป)</td></tr>
+    <tr><td><b>High risk</b></td><td>อายุ <b>≥60 ปี</b> และ/หรือ <b>เคยมี arterial/venous thrombosis</b></td><td>ทั้งหมดข้างบน <b>+ ยากดไขกระดูก (cytoreduction)</b></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ความต่างของเกณฑ์อายุ: ELN 2021, NCCN และ JAMA 2025 ใช้ <b>≥60 ปี</b> · Tefferi ใช้ &gt;60 ปี · BSH 2019 ใช้ <b>≥65 ปี</b> → <b>หน้านี้ใช้ ≥60 ปี ตาม ELN/NCCN</b> · ปัจจัยเสริม: WBC &gt;11 ×10⁹/L, Hct &gt;45%, ต้องเจาะเลือดออก ≥3 ครั้ง/ปีทั้งที่ได้ hydroxyurea, ปัจจัยเสี่ยงหัวใจหลอดเลือด</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>Phlebotomy (venesection) ให้ Hct &lt;45%</h4><ul><li><b>CYTO-PV</b> (365 ราย, NEJM 2013): เป้า Hct &lt;45% เทียบ 45–50% → CV death/major thrombosis <b>2.7% vs 9.8%</b> (HR 3.91) <span class="rec s1">BSH 1A</span></li><li>เป้า <b>&lt;45% ทั้งชายและหญิง</b> (เป้าต่ำกว่านี้ในผู้หญิงยังไม่มีข้อมูลพิสูจน์)</li><li>ครั้งละ <b>200–500 mL</b> ตามขนาดตัวและความทน (BSH) · ใน CYTO-PV เริ่ม 250–500 mL วันเว้นวันหรือสัปดาห์ละ 2 ครั้งจนถึงเป้า</li><li><b>ผู้สูงอายุ, โรคหัวใจหลอดเลือด, ตัวเล็ก</b>: ครั้งละน้อยลง (~250–300 mL) ห่างขึ้น ± ให้ NSS ทดแทนปริมาตร <span class="tag add">เสริม</span></li><li>ถึงเป้าแล้ว: ตรวจ CBC ทุก ~4–8 สัปดาห์ เจาะออกเมื่อ Hct ≥45%</li><li>ภาวะ <b>ขาดเหล็กจากการเจาะเลือดออก เป็นผลที่ต้องการ</b> (ช่วยคุม Hct)</li></ul></div>
+    <div class="card c-acc"><h4>Aspirin และปัจจัยเสี่ยง</h4><ul><li><b>Aspirin 75–100 mg วันละครั้ง</b> (ในไทยใช้ 81 mg) ทุกรายที่ไม่มีข้อห้าม <span class="rec s1">BSH 1A</span></li><li><b>ECLAP</b> (518 ราย, NEJM 2004): aspirin 100 mg ลด MI/stroke/VTE/CV death <b>3.2% vs 7.9%</b> ไม่เพิ่ม major bleeding อย่างมีนัยสำคัญ</li><li>Tefferi: ใช้ aspirin วันละ 1–2 ครั้งได้ (เช่น อาการ microvascular ไม่หาย)</li><li><b>Plt &gt;1,000 ×10⁹/L</b> หรือมีประวัติเลือดออก → ตรวจ <b>acquired von Willebrand (vWF:RCo)</b> ก่อนให้ aspirin</li><li>ได้ anticoagulant อยู่แล้ว (เช่นหลัง VTE) → มักไม่ให้ aspirin ร่วม ยกเว้นมีข้อบ่งชี้ arterial (เลือดออกเพิ่มมาก)</li><li><b>คุม BP ไขมัน เบาหวาน เลิกบุหรี่</b> <span class="rec s1">BSH 1B</span></li></ul></div>
+  </div>
+  <div class="box note"><b>สิ่งที่ต้องบอกผู้ป่วย</b><b>ห้ามกินธาตุเหล็ก/วิตามินที่มีธาตุเหล็กเอง</b> (Hct จะพุ่ง ต้องเจาะเลือดถี่ขึ้น — BSH: ให้เหล็กเฉพาะกรณีจำเป็นภายใต้การดูแลใกล้ชิด) · ดื่มน้ำพอ ก่อน/หลังเจาะเลือดออก · เลิกบุหรี่ · มาก่อนนัดถ้ามีอาการ stroke, เจ็บหน้าอก, ขาบวมข้างเดียว, ปวดท้อง/ท้องโตเร็ว (Budd–Chiari), เลือดออกผิดปกติ · คันหลังอาบน้ำ: อาบน้ำอุ่นไม่ร้อน ซับตัวเบาๆ · ผู้หญิงวัยเจริญพันธุ์: วางแผนการตั้งครรภ์กับโลหิตแพทย์ (hydroxyurea ต้องหยุดก่อนตั้งครรภ์ ≥3 เดือน)</div>
+</section>
+
+<section id="cyto" class="col">
+  <div class="sec-num">07</div>
+  <h2>ยากดไขกระดูก (Cytoreduction)</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ข้อบ่งชี้</h4><ul><li><b>High risk</b> ทุกราย (อายุ ≥60 หรือเคยมี thrombosis)</li><li><b>Low risk</b> ถ้ามีอย่างน้อย 1 ข้อ (ELN 2021): <ul><li>ทนการเจาะเลือดออกไม่ได้ (นิยามเคร่งครัด) หรือคุม Hct ไม่ได้ ต้องเจาะบ่อย</li><li>ม้ามโตมีอาการหรือโตขึ้นเรื่อยๆ</li><li>WBC &gt;15 ×10⁹/L ต่อเนื่อง หรือ WBC เพิ่มขึ้นมาก (≥100% ถ้าเดิม &lt;10, ≥50% ถ้าเดิม &gt;10)</li><li><b>Plt &gt;1,500 ×10⁹/L</b></li><li>ความเสี่ยงหัวใจหลอดเลือดสูงต่อเนื่อง · อาการของโรคมาก (คัน อ่อนเพลีย เหงื่อออกกลางคืน)</li></ul></li><li>NCCN: low risk ที่ทนเจาะเลือดไม่ได้, WBC/Plt สูงขึ้น, ม้ามโต, thrombosis/เลือดออกใหม่, มีอาการ</li></ul></div>
+    <div class="card c-acc"><h4>เลือกยาอย่างไร</h4><ul><li><b>อายุน้อย (&lt;60), อยากมีบุตร, ตั้งครรภ์</b> → <b>interferon</b> (ropeginterferon alfa-2b หรือ pegIFN alfa-2a) — ELN แนะนำเป็นตัวแรกใน low risk ที่ต้องใช้ยา</li><li><b>อายุ ≥60</b> → <b>hydroxyurea</b> หรือ interferon (NCCN ให้ ropeginterferon เป็น preferred) <span class="tag up">NCCN 2024+</span></li><li>ดื้อ/ทน hydroxyurea ไม่ได้ → <b>ruxolitinib</b> หรือ interferon</li><li>ผู้สูงอายุมาก/อายุขัยจำกัด → <b>busulfan</b> หรือ ³²P (เพิ่มความเสี่ยง leukemia — ไม่ใช้ในคนอายุน้อย)</li><li><span class="tag th">ไทย</span> hydroxyurea ใช้ได้ทั่วไปและเป็นยาหลักในไทย (77% ของผู้ป่วยในข้อมูลไทย) · interferon สำหรับ PV เข้าถึงยาก/ราคาสูง (บทบรรณาธิการไทย 2021: ยังไม่ได้รับอนุมัติข้อบ่งใช้ PV ในไทย) · ruxolitinib ราคาสูง</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด (ผู้ใหญ่)</th><th>ติดตาม/ข้อควรระวัง</th></tr>
+    <tr><td><b>Hydroxyurea</b> (hydroxycarbamide) 500 mg cap</td><td>เริ่ม <b>500 mg PO วันละ 2 ครั้ง</b> (หรือ 500–1,000 mg/วัน ~15–20 mg/kg/วัน) · ปรับทุก 2–4 สัปดาห์ตาม CBC · สูงสุดตามการตอบสนอง (มักไม่เกิน ~2,000 mg/วัน; ≥2 g/วัน ≥3 เดือนแล้วยังไม่ตอบสนอง = ดื้อยา) · <b>CrCl &lt;60: ลดขนาด 50%</b> · ฟอกไต: ให้หลังฟอก</td><td>CBC ทุก 1–2 สัปดาห์ช่วงปรับยา แล้วทุก 2–3 เดือน · เป้า Hct &lt;45%, Plt &lt;400, WBC &lt;10 · หยุดชั่วคราวถ้า WBC &lt;2.5 หรือ Plt &lt;100 ×10⁹/L (ตามฉลากยา) · MCV โตเป็นปกติของยา · แผลในปาก/แผลที่ขา, <b>มะเร็งผิวหนังชนิดไม่ใช่ melanoma</b> (ทาครีมกันแดด ตรวจผิวหนังทุกปี) · <b>ห้ามในตั้งครรภ์</b> หยุด ≥3 เดือนก่อนตั้งครรภ์และคุมกำเนิด (BSH)</td></tr>
+    <tr><td><b>Ropeginterferon alfa-2b</b> (Besremi)</td><td><b>100 mcg SC ทุก 2 สัปดาห์</b> (ถ้าเปลี่ยนจาก hydroxyurea เริ่ม 50 mcg แล้วค่อยลด HU จนหยุดภายในสัปดาห์ที่ 13) · เพิ่มครั้งละ 50 mcg ทุก 2 สัปดาห์ · <b>สูงสุด 500 mcg</b> · คงที่ ≥1 ปี ห่างเป็นทุก 4 สัปดาห์ได้</td><td>ห้าม: ซึมเศร้ารุนแรง/คิดฆ่าตัวตาย, autoimmune รุนแรง/ไม่ได้รักษา, ตับแข็ง Child-Pugh B–C, ผู้รับปลูกถ่ายที่กดภูมิ · eGFR &lt;30: หลีกเลี่ยง (ฉลากยา) · ตรวจ TSH, LFT, CBC, อารมณ์ · ไข้ ปวดเมื่อยแบบไข้หวัด · <b>Low-PV trial</b>: ใน low risk ช่วยคุม Hct ดีกว่า phlebotomy อย่างเดียว</td></tr>
+    <tr><td><b>PegIFN alfa-2a</b> (off-label)</td><td>เริ่ม <b>45 mcg SC สัปดาห์ละครั้ง</b> ค่อยๆ เพิ่ม · สูงสุด ~180 mcg/สัปดาห์</td><td>ผลข้างเคียงคล้าย ropeg (ซึมเศร้า ~15%, ปลายประสาทอักเสบ) · มีข้อมูลความปลอดภัยในการตั้งครรภ์ (เลือกใช้เมื่อจำเป็นต้องกดไขกระดูกระหว่างตั้งครรภ์ — ตัดสินโดยโลหิตแพทย์ร่วมสูติแพทย์ แม้ฉลากยากลุ่ม interferon เตือนเรื่องทารก)</td></tr>
+    <tr><td><b>Ruxolitinib</b> (2nd line)</td><td>เริ่ม <b>10 mg PO วันละ 2 ครั้ง</b> · ปรับได้ถึง 25 mg วันละ 2 ครั้ง</td><td>RESPONSE trial: ดีกว่า best available therapy ในการคุม Hct + ลดขนาดม้าม และลดอาการคัน · งูสวัด (ฉีดวัคซีน recombinant zoster ก่อน), น้ำหนักขึ้น, มะเร็งผิวหนัง · ปรับขนาดตามไต/ตับ/ยา CYP3A4 (CrCl 15–59 หรือโรคตับ: 5 mg วันละ 2 ครั้ง · ฟอกไต: 10 mg วันละครั้งหลังฟอก · CrCl &lt;15 ไม่ฟอก: หลีกเลี่ยง)</td></tr>
+    <tr><td>Busulfan</td><td>2–4 mg PO วันละครั้ง (BSH) ตรวจ CBC บ่อย</td><td>เฉพาะผู้สูงอายุ/อายุขัยจำกัด · กดไขกระดูกนาน · เพิ่ม leukemia</td></tr>
+    <tr><td><b>Rusfertide</b> (Mimrylo) <span class="tag up">FDA ส.ค. 2026</span></td><td>SC สัปดาห์ละครั้ง (เริ่ม 19 mg) ปรับให้ Hct &lt;45%</td><td>hepcidin mimetic จำกัดเหล็กที่ใช้สร้าง RBC · VERIFY trial: ผู้ที่ยังต้องเจาะเลือดบ่อยแม้ได้การรักษามาตรฐาน — ไม่ต้องเจาะเลือดออกช่วงสัปดาห์ที่ 20–32: 76.9% vs 32.9% (placebo) · NCCN 2026 ให้เป็น category 1 ทั้ง low และ high risk · ยังไม่มีในไทย</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ยากดไขกระดูก <b>ไม่ได้แทน</b> phlebotomy และ aspirin — ยังคุม Hct &lt;45% ต่อ · การเริ่มยากดไขกระดูกควรทำโดยโลหิตแพทย์/อายุรแพทย์ · GP มีบทบาทติดตาม CBC และผลข้างเคียงร่วมกับทีม</p>
+</section>
+
+<section id="sec" class="col">
+  <div class="sec-num">08</div>
+  <h2>Erythrocytosis ทุติยภูมิ: รักษาที่ต้นเหตุ</h2>
+  <p><b>หลักใหญ่</b>: แก้สาเหตุ · <b>ไม่ใช้เป้า Hct &lt;45% แบบ PV</b> (Hct ที่สูงขึ้นเป็นการชดเชยออกซิเจน ลดมากไปผู้ป่วยแย่ลงได้) · เจาะเลือดออกเฉพาะเมื่อ Hct สูงมากหรือมีอาการ hyperviscosity (ปวดศีรษะ มึน ตามัว สับสน) · ข้อมูลว่าการเจาะเลือดออกลด thrombosis ในกลุ่มนี้ <b>ยังไม่มี</b></p>
+  <div class="tbl"><table>
+    <tr><th>สาเหตุ</th><th>แนวทาง</th></tr>
+    <tr><td><b>Testosterone/anabolic steroid</b></td><td>Endocrine Society 2018: ตรวจ Hct ก่อนเริ่ม, 3–6 เดือน แล้วปีละครั้ง · <b>Hct ตั้งต้น &gt;48%</b> (&gt;50% ถ้าอยู่ที่สูง) เป็นข้อห้ามสัมพัทธ์ · <b>Hct &gt;54% → หยุดยา</b> จน Hct ลดลงถึงระดับปลอดภัย, หา hypoxia/OSA, แล้วเริ่มใหม่ขนาดต่ำลง (หรือเปลี่ยนรูปแบบยา: ยาฉีดออกฤทธิ์สั้นทำให้ Hct ขึ้นมากกว่ายาทา) · anabolic steroid ที่ใช้เองโดยไม่มีข้อบ่งชี้: แนะนำหยุด</td></tr>
+    <tr><td><b>SGLT2 inhibitor</b></td><td>Hct ขึ้นเล็กน้อย (~2–4 จุดเปอร์เซ็นต์) จากขับน้ำและกระตุ้น EPO · ชุดผู้ป่วย Mayo (Blood 2021): JAK2 ลบ ส่วนใหญ่ไม่มี thrombosis <span class="tag add">เสริม</span> · <b>มักไม่ต้องหยุดยา</b> เพราะประโยชน์ต่อหัวใจ/ไตสูง และไม่ต้องเจาะเลือดออก · ยังต้องสืบค้นถ้า Hct สูงมาก, มีลักษณะ MPN หรือมีสาเหตุอื่นร่วม (เช่นสูบบุหรี่, OSA)</td></tr>
+    <tr><td><b>สูบบุหรี่</b></td><td>COHb ในผู้สูบบุหรี่มัก ~5–10% (SpO₂ ปกติหลอก) · <b>เลิกบุหรี่</b> — Hct มักลดลงภายในเดือน · ไม่ต้องเจาะเลือดออกตามปกติ</td></tr>
+    <tr><td><b>OSA / obesity hypoventilation</b></td><td>Sleep study → <b>CPAP</b> ลด erythrocytosis · ลดน้ำหนัก</td></tr>
+    <tr><td><b>COPD / โรคปอดที่มี hypoxia</b></td><td>ส่งอายุรแพทย์โรคปอด พิจารณา <b>long-term oxygen therapy</b>/NIV <span class="rec s1">BSH 1A</span> · เจาะเลือดออกเมื่อมีอาการ hyperviscosity หรือ <b>Hct &gt;0.56 → ลดเหลือ 0.50–0.52</b> <span class="rec">BSH 2C</span> · <b>ต่ำกว่า 0.45 เป็นผลเสีย</b> · ดูหน้า <a href="../asthma-copd/index.html">Asthma/COPD</a></td></tr>
+    <tr><td><b>หลังปลูกถ่ายไต (PTE)</b></td><td>นิยามที่ใช้บ่อย: Hct &gt;51% นาน &gt;1 เดือน มักเกิดในปีแรก หายเองได้ใน 1–4 ปี · <b>ACEi (enalapril, captopril) หรือ ARB (losartan)</b> <span class="rec">BSH 2B</span> · aspirin ไม่มีประโยชน์ · เจาะเลือดออกถ้ามีอาการต่อเนื่อง เป้า Hct 0.50 · ไม่ตอบสนอง → ตรวจ JAK2</td></tr>
+    <tr><td><b>Cyanotic congenital heart disease</b></td><td>ดูแลโดยคลินิกหัวใจเฉพาะทาง · <b>ไม่เจาะเลือดออกเป็นประจำ</b> (ทำให้ขาดเหล็ก RBC เล็ก แข็ง เสี่ยง stroke มากขึ้น) · เจาะเฉพาะ hyperviscosity ชัดเจนหลังแก้ขาดน้ำ/ขาดเหล็กแล้ว</td></tr>
+    <tr><td><b>เนื้องอกสร้าง EPO</b></td><td>รักษาเนื้องอก (ผ่าตัดไต/ตับ/มดลูก) → Hct มักกลับปกติ</td></tr>
+    <tr><td><b>Idiopathic</b></td><td>ตัดสาเหตุอื่นครบก่อน · <b>ไม่ใช้ยากดไขกระดูก</b> <span class="rec s1">BSH 1B</span> · aspirin ตามข้อบ่งชี้ป้องกันทั่วไป · เจาะเลือดออกในบางราย ปรับเป้าตามประวัติ thrombosis (มักใช้ Hct &lt;0.55)</td></tr>
+  </table></div>
+</section>
+
+<section id="comp" class="col">
+  <div class="sec-num">09</div>
+  <h2>ภาวะแทรกซ้อน · ส่งต่อ</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ภาวะแทรกซ้อนของ PV</h4><ul><li><b>Thrombosis</b>: arterial 16% และ venous 7% ก่อน/ขณะวินิจฉัย · หลังวินิจฉัยเพิ่มอีก ~12% และ ~9% · <b>splanchnic</b> (Budd–Chiari, portal) และ cerebral venous sinus พบบ่อยกว่าคนทั่วไป โดยเฉพาะหญิงอายุน้อย · VTE ที่ไม่มีเหตุกระตุ้น → <b>anticoagulant ระยะยาว</b> + คุมเลือดให้ถึงเป้า (BSH) · ดู <a href="../stroke/index.html">Stroke</a>, <a href="../vte/index.html">VTE</a></li><li><b>เลือดออก</b>: Plt สูงมาก (≥1,000–1,500) → <b>acquired von Willebrand syndrome</b> · aspirin + anticoagulant ร่วมกันเพิ่มเลือดออก ~6 เท่า · เลือดออกมาก: หยุด/ลด aspirin, tranexamic acid ± platelet transfusion (BSH) · ดู <a href="../thrombocytopenia/index.html">การแปลผล coagulation</a></li><li><b>Post-PV myelofibrosis</b> ~13% และ <b>AML</b> ~7% (ติดตาม ~12 ปี) · Tefferi: 20 ปี thrombosis ~26%, MF ~16%, AML ~4% · สัญญาณ: ซีดลง ไม่ต้องเจาะเลือดอีก ม้ามโตขึ้น teardrop cell blast ในเลือด</li><li>อาการ: คัน (ถึง 85% ตลอดโรค), อ่อนเพลีย, erythromelalgia</li><li>อัตรารอดชีวิตมัธยฐาน ~15–19 ปี (อายุ ≤40 ปี &gt;35 ปี)</li></ul></div>
+    <div class="card c-warn"><h4>ส่งโลหิตแพทย์/อายุรแพทย์</h4><ul><li><b>ด่วน (วันเดียวกัน/ภายในไม่กี่วัน)</b>: thrombosis ใดๆ ร่วม Hct สูง โดยเฉพาะ Budd–Chiari/portal/CVT · Hct ≥60% (ชาย)/≥56% (หญิง) หรือมีอาการ hyperviscosity · Plt &gt;1,500 หรือเลือดออก · WBC สูงมาก/มี blast · ม้ามโตมากหรือปวด</li><li><b>นัดปกติ</b>: JAK2 บวก · JAK2 ลบแต่ EPO ต่ำ · Hct สูงต่อเนื่องหาสาเหตุไม่ได้ · ม้ามโต/WBC/Plt สูงเล็กน้อย · อายุน้อยหรือประวัติครอบครัว (congenital)</li><li>GP ดูแลเองได้: secondary ที่ชัดเจน (บุหรี่, SGLT2i, testosterone, OSA) ที่ Hct ไม่สูงมากและไม่มีลักษณะ MPN — แก้สาเหตุแล้วติดตาม CBC</li></ul></div>
+  </div>
+  <div class="box warn"><b>ผ่าตัด/ตั้งครรภ์ใน PV</b>ผ่าตัด: คุม Hct/Plt ให้ถึงเป้าก่อนผ่าตัดใหญ่ เสี่ยงทั้ง thrombosis และเลือดออก ให้ VTE prophylaxis ตามมาตรฐาน · ตั้งครรภ์: ดูแลร่วมสูติแพทย์ครรภ์เสี่ยงสูงกับโลหิตแพทย์ · aspirin ทุกราย · LMWH หลังคลอด 6 สัปดาห์ · ถ้าต้องกดไขกระดูก ใช้ interferon (ไม่ใช้ hydroxyurea) (BSH 2019)</div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง: Hb/Hct สูง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>CBC: Hb/Hct สูง</b>ชาย Hb &gt;16.5 / Hct &gt;49% · หญิง Hb &gt;16.0 / Hct &gt;48% · ดู MCV, RBC, WBC, Plt</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Hb/Hct ถึงเกณฑ์จริง หรือแค่ RBC สูง + MCV ต่ำ?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">RBC สูง MCV ต่ำ Hb ไม่สูง</span><div class="node dx grey"><b>ธาลัสซีเมีย/HbE แฝง</b>Mentzer &lt;13 · Hb typing · ไม่ใช่ erythrocytosis</div></div>
+        <div class="arm"><span class="lab">ถึงเกณฑ์</span><div class="node dx hypo"><b>ซ้ำ CBC</b>แก้ขาดน้ำ หยุด diuretic · ปกติแล้ว = relative</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>สัญญาณอันตราย?</b>thrombosis (splanchnic/CVT) · Hct ≥60/56% · hyperviscosity · ม้ามโต · WBC/Plt สูง → ส่งโลหิตแพทย์ด่วน</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ซักประวัติสาเหตุทุติยภูมิ</b>บุหรี่ · testosterone · SGLT2i · EPO · OSA · COPD · CHD · ปลูกถ่ายไต</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>JAK2 V617F + serum EPO</b> (+ ferritin, SpO₂, COHb, US ช่องท้อง)</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">JAK2 บวก</span><div class="node red"><b>PV น่าจะเป็น</b>โลหิตแพทย์ · Hct &lt;45% + aspirin · ประเมิน risk</div></div>
+        <div class="arm"><span class="lab">JAK2 ลบ · EPO ต่ำ</span><div class="node dx hyper"><b>JAK2 exon 12</b>+ โลหิตแพทย์ · congenital?</div></div>
+        <div class="arm"><span class="lab">JAK2 ลบ · EPO ปกติ/สูง</span><div class="node dx eu"><b>Secondary</b>hypoxic (ABG, sleep study) vs non-hypoxic (ยา, เนื้องอกไต/ตับ/มดลูก, PTE)</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>PV: อายุ ≥60 หรือเคย thrombosis = high risk</b>+ hydroxyurea หรือ interferon · low risk: ยาเฉพาะเมื่อมีข้อบ่งชี้ ELN</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ไม่แทนการประเมินของแพทย์และโลหิตแพทย์ · ยึดค่าอ้างอิงและโปรโตคอลของ รพ.</p>
+  </div>
+  <div class="tool" id="tEc" style="margin-top:12px">
+    <h3>1) Hb/Hct สูงจริงไหม · Mentzer</h3>
+    <div class="fields">
+      <label class="f">เพศ<select id="eSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">Hb (g/dL)<input type="number" step="0.1" id="eHb" value="17.2"></label>
+      <label class="f">Hct (% หรือ 0.xx)<input type="number" step="0.1" id="eHct" value="52"></label>
+      <label class="f">MCV (fL)<input type="number" step="0.1" id="eMcv" value="88"></label>
+      <label class="f">RBC (×10¹²/L)<input type="number" step="0.01" id="eRbc" value="5.8"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="eDry"> ขาดน้ำ/ป่วยเฉียบพลัน</label>
+      <label><input type="checkbox" id="eDiu"> ได้ยาขับปัสสาวะ</label>
+      <label><input type="checkbox" id="eRep"> ซ้ำแล้วยังสูง (≥2 ครั้ง)</label>
+    </div>
+    <div class="out" id="ecOut"></div>
+  </div>
+
+  <div class="tool plan" id="tWu" style="margin-top:12px">
+    <h3>2) วางแผนส่งตรวจ + แปลผล JAK2/EPO</h3>
+    <div class="fields">
+      <label class="f">SpO₂ ขณะพัก (%)<input type="number" id="wSp" value="97"></label>
+      <label class="f">ผล JAK2 V617F<select id="wJ"><option value="nd">ยังไม่ได้ตรวจ</option><option value="pos">บวก</option><option value="neg">ลบ</option></select></label>
+      <label class="f">ผล JAK2 exon 12<select id="wX"><option value="nd">ยังไม่ได้ตรวจ</option><option value="pos">บวก</option><option value="neg">ลบ</option></select></label>
+      <label class="f">Serum EPO<select id="wE"><option value="nd">ยังไม่ได้ตรวจ</option><option value="low">ต่ำกว่าปกติ</option><option value="nl">ปกติ</option><option value="hi">สูง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="wSmk"> สูบบุหรี่</label>
+      <label><input type="checkbox" id="wSg"> ใช้ SGLT2 inhibitor</label>
+      <label><input type="checkbox" id="wTe"> Testosterone/anabolic steroid</label>
+      <label><input type="checkbox" id="wEpo"> ได้ EPO/ESA</label>
+      <label><input type="checkbox" id="wOsa"> อ้วน/กรน สงสัย OSA</label>
+      <label><input type="checkbox" id="wCopd"> COPD/โรคปอดเรื้อรัง</label>
+      <label><input type="checkbox" id="wChd"> Cyanotic heart disease</label>
+      <label><input type="checkbox" id="wTx"> หลังปลูกถ่ายไต</label>
+      <label><input type="checkbox" id="wSpl"> ม้ามโต</label>
+      <label><input type="checkbox" id="wPru"> คันหลังอาบน้ำ</label>
+      <label><input type="checkbox" id="wEry"> Erythromelalgia</label>
+      <label><input type="checkbox" id="wWbc"> WBC สูง</label>
+      <label><input type="checkbox" id="wPlt"> Plt สูง (≥450)</label>
+      <label><input type="checkbox" id="wThr"> Thrombosis แปลกที่ (splanchnic/CVT)</label>
+      <label><input type="checkbox" id="wFe"> ขาดเหล็ก/MCV ต่ำ</label>
+      <label><input type="checkbox" id="wYng"> อายุน้อย/ประวัติครอบครัว</label>
+    </div>
+    <div class="out" id="wuOut"></div>
+  </div>
+
+  <div class="tool" id="tRk" style="margin-top:12px">
+    <h3>3) PV: ความเสี่ยงและแผนรักษา</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="rAge" value="64"></label>
+      <label class="f">Hct (% หรือ 0.xx)<input type="number" step="0.1" id="rHct" value="54"></label>
+      <label class="f">WBC (×10⁹/L)<input type="number" step="0.1" id="rWbc" value="12"></label>
+      <label class="f">Platelet (×10⁹/L)<input type="number" id="rPlt" value="520"></label>
+      <label class="f">CrCl (mL/min)<input type="number" id="rCr" value="70"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="rThr"> เคยมี thrombosis (arterial/venous)</label>
+      <label><input type="checkbox" id="rAc"> ได้ anticoagulant อยู่</label>
+      <label><input type="checkbox" id="rBld"> เคยเลือดออกผิดปกติ</label>
+      <label><input type="checkbox" id="rSpl"> ม้ามโตมีอาการ/โตขึ้น</label>
+      <label><input type="checkbox" id="rSym"> อาการของโรคมาก (คัน อ่อนเพลีย)</label>
+      <label><input type="checkbox" id="rPhl"> ทนเจาะเลือดไม่ได้/ต้องเจาะบ่อย</label>
+      <label><input type="checkbox" id="rCv"> ปัจจัยเสี่ยงหัวใจ (HT/DM/บุหรี่/ไขมัน)</label>
+      <label><input type="checkbox" id="rPreg"> ตั้งครรภ์/วางแผนมีบุตร</label>
+    </div>
+    <div class="out" id="rkOut"></div>
+  </div>
+
+  <div class="tool" id="tPh" style="margin-top:12px">
+    <h3>4) เจาะเลือดออก: ปริมาณและจำนวนครั้ง (โดยประมาณ)</h3>
+    <div class="fields">
+      <label class="f">ภาวะ<select id="pTy"><option value="pv">Polycythemia vera</option><option value="hyp">Hypoxic lung disease</option><option value="ptx">หลังปลูกถ่ายไต</option><option value="idio">Idiopathic</option></select></label>
+      <label class="f">Hct ตอนนี้ (% หรือ 0.xx)<input type="number" step="0.1" id="pHct" value="55"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="pWt" value="65"></label>
+      <label class="f">อายุ (ปี)<input type="number" id="pAge" value="58"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pCvd"> โรคหัวใจ/หลอดเลือดสมอง/HF</label>
+      <label><input type="checkbox" id="pSx"> มีอาการ hyperviscosity</label>
+    </div>
+    <div class="out" id="phOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ซ้ำ CBC ก่อน</b> แก้ขาดน้ำ หยุด diuretic</div></div>
+    <div class="pearl"><div><b>ใช้ Hb/Hct ไม่ใช้ RBC count</b> — RBC สูง + MCV ต่ำ = ธาลัสซีเมียแฝง</div></div>
+    <div class="pearl"><div><b>ส่วนใหญ่เป็นทุติยภูมิ</b>: บุหรี่ testosterone SGLT2i OSA</div></div>
+    <div class="pearl"><div><b>SpO₂ ปกติไม่ตัด COHb</b> ในผู้สูบบุหรี่</div></div>
+    <div class="pearl"><div><b>JAK2 V617F ก่อน</b> · ลบ + EPO ต่ำ → exon 12</div></div>
+    <div class="pearl"><div><b>Plt/WBC สูง ม้ามโต คันหลังอาบน้ำ</b> = คิดถึง PV</div></div>
+    <div class="pearl"><div><b>Budd–Chiari/portal vein thrombosis</b> → ตรวจ JAK2 แม้ CBC ปกติ</div></div>
+    <div class="pearl"><div><b>PV: Hct &lt;45% + aspirin 81–100 mg</b> ทุกราย</div></div>
+    <div class="pearl"><div><b>อายุ ≥60 หรือเคย thrombosis</b> = high risk → ยากดไขกระดูก</div></div>
+    <div class="pearl"><div><b>Plt &gt;1,000</b> ตรวจ acquired vWD ก่อน aspirin</div></div>
+    <div class="pearl"><div><b>ห้ามให้ธาตุเหล็กเอง</b> ใน PV</div></div>
+    <div class="pearl"><div><b>Testosterone: Hct &gt;54% หยุดยา</b> · SGLT2i มักไม่ต้องหยุด</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../anemia/index.html">Anemia →</a> · <a href="../anemia-flow/index.html">Anemia Flow →</a> · <a href="../thalassemia/index.html">Thalassemia →</a> · <a href="../thrombocytopenia/index.html">Thrombocytopenia →</a> · <a href="../vte/index.html">VTE →</a> · <a href="../stroke/index.html">Stroke →</a> · <a href="../asthma-copd/index.html">Asthma/COPD →</a> · <a href="../hf/index.html">Heart failure →</a> · <a href="../dm/index.html">Diabetes →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Khoury JD, Solary E, Abla O, et al. The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms. Leukemia 2022;36:1703–19 · 2) Arber DA, Orazi A, Hasserjian RP, et al. International Consensus Classification of Myeloid Neoplasms and Acute Leukemias. Blood 2022;140:1200–28 · 3) Marchetti M, Vannucchi AM, Griesshammer M, et al. Appropriate management of polycythaemia vera with cytoreductive drug therapy: European LeukemiaNet 2021 recommendations. Lancet Haematol 2022;9:e301–11 · 4) National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology: Myeloproliferative Neoplasms, 2026 update (rusfertide added, Sep 2026) · 5) McMullin MF, Harrison CN, Ali S, et al. A guideline for the diagnosis and management of polycythaemia vera. A British Society for Haematology Guideline. Br J Haematol 2019;184:176–91 · 6) McMullin MFF, Mead AJ, Ali S, et al. A guideline for the management of specific situations in polycythaemia vera and secondary erythrocytosis: A British Society for Haematology Guideline. Br J Haematol 2019;184:161–75 · 7) Tefferi A, Barbui T. Polycythemia vera: 2024 update on diagnosis, risk-stratification, and management. Am J Hematol 2023;98:1465–87 · 8) Tremblay D, Kremyanskaya M, Mascarenhas J, Hoffman R. Diagnosis and treatment of polycythemia vera: a review. JAMA 2025;333:153–60 · 9) Marchioli R, Finazzi G, Specchia G, et al. Cardiovascular events and intensity of treatment in polycythemia vera (CYTO-PV). N Engl J Med 2013;368:22–33 · 10) Landolfi R, Marchioli R, Kutti J, et al. Efficacy and safety of low-dose aspirin in polycythemia vera (ECLAP). N Engl J Med 2004;350:114–24 · 11) Barbui T, Vannucchi AM, De Stefano V, et al. Ropeginterferon alfa-2b versus phlebotomy in low-risk patients with polycythaemia vera (Low-PV study). Lancet Haematol 2021;8:e175–84 · 12) Vannucchi AM, Kiladjian JJ, Griesshammer M, et al. Ruxolitinib versus standard therapy for the treatment of polycythemia vera (RESPONSE). N Engl J Med 2015;372:426–35 · 13) Bhasin S, Brito JP, Cunningham GR, et al. Testosterone therapy in men with hypogonadism: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2018;103:1715–44 · 14) Gangat N, Szuber N, Alkhateeb H, et al. JAK2 wild-type erythrocytosis associated with sodium-glucose cotransporter 2 inhibitor therapy. Blood 2021;138:2886–9 · 15) Nicolson PLR, Asif M, Buka RJ, et al. Common themes and uncertainties in management of secondary polycythaemia: an international clinician survey of practice. EJHaem 2025;6:e70171 · 16) Mentzer WC Jr. Differentiation of iron deficiency from thalassaemia trait. Lancet 1973;1:882 · 17) Rattarittamrong E. Polycythemia vera [editorial]. J Hematol Transfus Med 2021;31(1):5–7 · 18) Suttantapidok S, Owattanapanich W. Clinical characteristics and outcomes of patients with polycythemia vera in Thailand: a single center study. J Hematol Transfus Med 2021;31:57–64 · 19) BESREMi (ropeginterferon alfa-2b-njft) US prescribing information, 2026 · 20) U.S. FDA. FDA approves first drug of its kind for polycythemia vera (rusfertide, Mimrylo), Aug 2026<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = ข้อมูลเสริมนอกแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','pvView');
+mountWalker({
+ start:{q:'CBC แสดงอะไร?',o:[['Hb/Hct สูงเกินเกณฑ์ WHO/ICC','rep','ชาย Hb >16.5 หรือ Hct >49% · หญิง Hb >16.0 หรือ Hct >48%'],['RBC สูง แต่ Hb ปกติ/ต่ำ และ MCV ต่ำ','thal']]},
+ thal:{leaf:true,cls:'ok',t:'ไม่ใช่ erythrocytosis — คิดถึงธาลัสซีเมีย/HbE แฝง',b:'Mentzer index (MCV ÷ RBC) &lt;13 สนับสนุนธาลัสซีเมียแฝง · ยืนยันด้วย Hb typing + ferritin · <b>ไม่ต้องส่ง JAK2</b> · ยกเว้นมี Plt/WBC สูง ม้ามโต คันหลังอาบน้ำ หรือ thrombosis แปลกที่ → คิดถึง PV ที่ขาดเหล็ก (masked PV) ส่ง JAK2 และ<b>ห้ามให้เหล็กเอง</b>'},
+ rep:{q:'ซ้ำ CBC หลังแก้ขาดน้ำ/ทบทวน diuretic แล้วยังสูงไหม?',o:[['ไม่สูงแล้ว','rel'],['ยังสูง','red']]},
+ rel:{leaf:true,cls:'ok',t:'Relative (apparent) erythrocytosis',b:'Plasma volume ลด ไม่ใช่ RBC เพิ่ม · แก้ขาดน้ำ ทบทวน diuretic · Gaisböck: ลดน้ำหนัก คุม BP เลิกบุหรี่ ลดสุรา · ตรวจ CBC ซ้ำเป็นระยะ'},
+ red:{q:'มีสัญญาณอันตรายไหม?',h:'thrombosis (โดยเฉพาะ splanchnic/CVT) · Hct ≥60% ชาย/≥56% หญิง · อาการ hyperviscosity · ม้ามโต · WBC/Plt สูง',o:[['มี','urg'],['ไม่มี','his']]},
+ urg:{leaf:true,cls:'danger',t:'ส่งโลหิตแพทย์ด่วน',b:'รักษา thrombosis ตามแนวทาง (ดูหน้า VTE/Stroke) · ส่ง JAK2 V617F + EPO ทันที · ถ้า PV น่าจะเป็น (Plt/WBC สูง ม้ามโต) เริ่มเจาะเลือดออกให้ Hct &lt;45% ได้ (ผู้สูงอายุ/โรคหัวใจ ครั้งละน้อย + NSS ทดแทน)',next:['ต่อ: แปลผล JAK2','lab']},
+ his:{q:'มีสาเหตุทุติยภูมิชัดจากประวัติไหม?',h:'สูบบุหรี่ · testosterone/anabolic · SGLT2i · EPO · OSA · COPD · cyanotic heart disease · ปลูกถ่ายไต',o:[['มี','sec1'],['ไม่มี/ไม่แน่ใจ','lab']]},
+ sec1:{q:'มีลักษณะ MPN ร่วมไหม?',h:'ม้ามโต · คันหลังอาบน้ำ · erythromelalgia · WBC/Plt สูง',o:[['ไม่มี','secRx'],['มี','lab']]},
+ secRx:{leaf:true,cls:'warn',t:'แก้ที่สาเหตุก่อน แล้วตาม CBC',b:'บุหรี่: เลิก (ตรวจ COHb — SpO₂ ปกติหลอกได้) · testosterone: Hct &gt;54% หยุดยา หา OSA แล้วเริ่มใหม่ขนาดต่ำ · SGLT2i: มักไม่ต้องหยุด · OSA: sleep study + CPAP · COPD: ประเมิน O₂ ระยะยาว · PTE: ACEi/ARB · ถ้าแก้แล้วยังสูง หรือ Hct สูงมาก → ส่ง JAK2 + EPO',next:['ถ้ายังสูง: แปลผล JAK2','lab']},
+ lab:{q:'ผล JAK2 V617F?',h:'ส่งพร้อม serum EPO, ferritin, SpO₂, COHb (ผู้สูบบุหรี่), US ช่องท้อง',o:[['บวก','jakp'],['ลบ','epo']]},
+ jakp:{leaf:true,cls:'danger',t:'PV น่าจะเป็นมาก',b:'ถ้า Hb/Hct ถึงเกณฑ์: JAK2 + EPO ต่ำ = major 1 + 3 + minor · BM biopsy โดยโลหิตแพทย์ (อาจข้ามได้ถ้า Hb &gt;18.5/16.5 หรือ Hct &gt;55.5/49.5% ต่อเนื่อง) · เริ่ม <b>Hct &lt;45%</b> + <b>aspirin 81–100 mg</b> · JAK2 บวก + Plt สูง + Hb ไม่สูง → คิดถึง ET/PV ที่ขาดเหล็ก',next:['วางแผนรักษา','risk']},
+ epo:{q:'Serum EPO?',o:[['ต่ำกว่าปกติ','ex12'],['ปกติ','epoN'],['สูง','epoH']]},
+ ex12:{leaf:true,cls:'violet',t:'ส่ง JAK2 exon 12 + โลหิตแพทย์',b:'PV ที่ JAK2 V617F ลบ (~2–3% เป็น exon 12) · ถ้า exon 12 ลบ: congenital erythrocytosis (EPOR) หรือ PV JAK2-ลบที่หายาก → gene panel/BM biopsy โดยโลหิตแพทย์ · ตรวจ ferritin (ขาดเหล็กรบกวนการแปลผล)'},
+ epoN:{leaf:true,cls:'warn',t:'EPO ปกติ: ยังสรุปไม่ได้',b:'EPO ปกติพบได้ทั้งทุติยภูมิและ PV บางราย · มีลักษณะ MPN → ส่ง exon 12/โลหิตแพทย์ · ไม่มี → หาสาเหตุทุติยภูมิต่อ (ยา บุหรี่ OSA เนื้องอกไต/ตับ/มดลูก) · หาไม่พบ = idiopathic (ตัดออก) ส่งโลหิตแพทย์'},
+ epoH:{q:'มี hypoxia หรือโรคที่ทำให้ hypoxia ไหม?',h:'SpO₂/ABG ต่ำ · OSA · COPD · cyanotic heart disease · สูบบุหรี่ (COHb สูง)',o:[['มี (hypoxic)','hyp'],['ไม่มี (non-hypoxic)','nonhyp']]},
+ hyp:{leaf:true,cls:'ok',t:'Secondary: hypoxic',b:'รักษาโรคต้นเหตุ: O₂ ระยะยาว/NIV, CPAP, เลิกบุหรี่ · <b>ไม่ใช้เป้า Hct &lt;45%</b> · เจาะเลือดออกเฉพาะมีอาการ hyperviscosity หรือ Hct &gt;0.56 → ลดเหลือ 0.50–0.52 (BSH) · cyanotic heart disease ให้หัวใจเฉพาะทางตัดสิน'},
+ nonhyp:{leaf:true,cls:'warn',t:'Secondary: non-hypoxic',b:'ยา: testosterone, EPO, SGLT2i · หลังปลูกถ่ายไต → ACEi/ARB · หาเนื้องอกสร้าง EPO: US/CT ไต (RCC, ถุงน้ำ, hydronephrosis), ตับ (HCC), มดลูก (leiomyoma), MRI สมองถ้ามีอาการ cerebellar · ผู้สูบบุหรี่ตรวจ COHb'},
+ risk:{q:'อายุ ≥60 ปี หรือเคยมี thrombosis?',o:[['ใช่ → high risk','hi'],['ไม่ → low risk','lo']]},
+ hi:{leaf:true,cls:'danger',t:'PV high risk',b:'Phlebotomy ให้ Hct &lt;45% + aspirin + <b>ยากดไขกระดูก</b>: hydroxyurea 500 mg วันละ 2 ครั้ง (CrCl &lt;60 ลดครึ่ง) หรือ interferon (ropeginterferon 100 mcg SC ทุก 2 สัปดาห์) · คุม BP ไขมัน เบาหวาน เลิกบุหรี่ · VTE ไม่มีเหตุกระตุ้น → anticoagulant ระยะยาว'},
+ lo:{leaf:true,cls:'ok',t:'PV low risk',b:'Phlebotomy ให้ Hct &lt;45% + aspirin + คุมปัจจัยเสี่ยง · ยากดไขกระดูก (แนะนำ interferon) เมื่อมีข้อบ่งชี้ ELN: ทนเจาะเลือดไม่ได้/ต้องเจาะบ่อย, ม้ามโตมีอาการ, WBC &gt;15 ต่อเนื่อง, Plt &gt;1,500, อาการมาก, CV risk สูงต่อเนื่อง'}
+},'apTrail','apStage');
+
+const hctOf=id=>{const v=num(id);if(v===null)return null;return (v>0&&v<1)?v*100:v};
+const okR=(v,a,b)=>v!==null&&v>=a&&v<=b;
+
+function ec(){
+  const sex=$('eSex').value,hb=num('eHb'),hct=hctOf('eHct'),mcv=num('eMcv'),rbc=num('eRbc');const c=id=>$(id).checked;const L=[];
+  const hbBad=hb!==null&&!okR(hb,3,26),hctBad=hct!==null&&!okR(hct,10,80);
+  if(hb===null&&hct===null){$('ecOut').textContent='ใส่ Hb (g/dL) หรือ Hct';return}
+  if(hbBad||hctBad){$('ecOut').innerHTML='ตรวจค่าที่ใส่: '+(hbBad?'Hb ควรอยู่ราว 3–26 g/dL'+(hb>26&&hb<=260?' (ถ้าแล็บรายงาน g/L ให้หารด้วย 10)':''):'')+(hbBad&&hctBad?' · ':'')+(hctBad?'Hct ใส่เป็น % (เช่น 52) หรือสัดส่วน (0.52)':'');return}
+  const T=sex==='m'?{hb:16.5,hct:49,bsh:52,abs:60,bmHb:18.5,bmHct:55.5,an:13,s:'ชาย'}:{hb:16.0,hct:48,bsh:48,abs:56,bmHb:16.5,bmHct:49.5,an:12,s:'หญิง'};
+  if(hct!==null&&num('eHct')<1)L.push(`Hct ${num('eHct')} = <b>${f1(hct)}%</b>`);
+  const meet=(hb!==null&&hb>T.hb)||(hct!==null&&hct>T.hct);
+  let mz=null;const mcvOk=okR(mcv,50,130),rbcOk=okR(rbc,1,10);
+  if((mcv!==null&&!mcvOk)||(rbc!==null&&!rbcOk))L.push('<span class="muted">MCV (50–130 fL) หรือ RBC (1–10 ×10¹²/L) ไม่อยู่ในช่วงที่เป็นไปได้ — ไม่คำนวณ Mentzer</span>');
+  else if(mcvOk&&rbcOk)mz=mcv/rbc;
+  const micro=mcvOk&&mcv<80;
+  if(meet){
+    L.push(`<b>ถึงเกณฑ์ erythrocytosis (WHO/ICC ${T.s}: Hb &gt;${T.hb.toFixed(1)} หรือ Hct &gt;${T.hct}%)</b>`);
+    if(hct!==null&&hct>T.abs)L.push(`<b>Hct &gt;${T.abs}% → absolute erythrocytosis แน่นอน (BSH)</b> · สืบค้นและส่งโลหิตแพทย์โดยไม่ต้องรอซ้ำ · ถามอาการ hyperviscosity และ thrombosis`);
+    else if((hb!==null&&hb>T.bmHb)||(hct!==null&&hct>T.bmHct))L.push(`สูงถึงระดับที่ ถ้าสูงต่อเนื่อง + JAK2 บวก + EPO ต่ำ อาจไม่ต้องทำ bone marrow biopsy`);
+    if(sex==='m'&&hct!==null&&hct<=T.bsh&&!(hb!==null&&hb>T.bmHb))L.push('Hct เกินเกณฑ์ WHO แต่ยังไม่เกิน 52% (เกณฑ์สืบค้นของ BSH) → ถ้าไม่มีลักษณะ MPN ติดตามซ้ำได้ · มี WBC/Plt สูง ม้ามโต คัน thrombosis → สืบค้นเลย');
+    if(c('eDry')||c('eDiu'))L.push('<b>อาจเป็น relative</b>: '+[c('eDry')?'แก้ขาดน้ำ':null,c('eDiu')?'ทบทวน/หยุด diuretic ถ้าทำได้':null].filter(Boolean).join(' · ')+' แล้วซ้ำ CBC ก่อนสืบค้น (ยกเว้นมีสัญญาณอันตราย)');
+    else if(c('eRep'))L.push('<b>สูงต่อเนื่อง → สืบค้นหาสาเหตุ</b> (ใช้เครื่องมือ 2): JAK2 V617F + EPO + ferritin + SpO₂ ± COHb + US ช่องท้อง');
+    else L.push('ซ้ำ CBC + blood smear เพื่อยืนยันว่าสูงต่อเนื่อง แล้วสืบค้น (เครื่องมือ 2)');
+    if(micro)L.push('<b>Hb/Hct สูงทั้งที่ MCV ต่ำ</b> → คิดถึง PV ร่วมขาดเหล็ก หรือธาลัสซีเมียแฝงร่วมสาเหตุทุติยภูมิ · ตรวจ ferritin · <b>ห้ามให้ธาตุเหล็กเอง</b>');
+  }else{
+    const hiR=rbcOk&&rbc>=(sex==='m'?5.9:5.2);
+    if(hiR&&micro)L.push('<b>ไม่ใช่ erythrocytosis</b>: RBC สูง + MCV ต่ำ แต่ Hb/Hct ไม่ถึงเกณฑ์ → คิดถึง <b>ธาลัสซีเมีย/HbE แฝง</b> (ส่ง Hb typing + ferritin) · ไม่ต้องส่ง JAK2');
+    else L.push(`Hb/Hct <b>ไม่ถึงเกณฑ์</b> erythrocytosis (WHO/ICC ${T.s}: Hb &gt;${T.hb.toFixed(1)} หรือ Hct &gt;${T.hct}%)`);
+    if(hb!==null&&hb<T.an)L.push(`Hb ${hb} ต่ำกว่า ${T.an} g/dL = ซีด → ดูหน้า <a href="../anemia/index.html">Anemia</a>`);
+    if(micro)L.push('ถ้ามี Plt/WBC สูง ม้ามโต คันหลังอาบน้ำ หรือ thrombosis แปลกที่ → นึกถึง <b>masked PV</b> (PV ที่ขาดเหล็ก) ส่ง JAK2 · ห้ามให้เหล็กเอง');
+  }
+  if(mz!==null){
+    if(micro)L.push(`Mentzer index = <b>${f1(mz)}</b> → ${mz<13?'<b>&lt;13 สนับสนุนธาลัสซีเมียแฝง</b>':'<b>≥13 สนับสนุนขาดธาตุเหล็ก</b>'} <span class="muted">(คัดกรองเท่านั้น — HbE/ขาดเหล็กร่วมทำให้คลาดได้)</span>`);
+    else L.push(`Mentzer index = ${f1(mz)} <span class="muted">(MCV ไม่ต่ำ — ไม่ใช้แปลผล)</span>`);
+  }
+  $('ecOut').innerHTML=L.join('<br>');
+}
+bindAll('#tEc input,#tEc select',ec);
+
+function wu(){
+  const sp=num('wSp');const c=id=>$(id).checked;const J=$('wJ').value,X=$('wX').value,E=$('wE').value;
+  if(sp!==null&&!okR(sp,50,100)){$('wuOut').textContent='ตรวจค่า SpO₂ (50–100%) หรือเว้นว่างไว้';return}
+  const lowSp=sp!==null&&sp<92;
+  const mpn=c('wSpl')||c('wPru')||c('wEry')||c('wWbc')||c('wPlt')||c('wThr');
+  const hypo=c('wSmk')||c('wOsa')||c('wCopd')||c('wChd')||lowSp;
+  const drug=c('wSg')||c('wTe')||c('wEpo');
+  const L=[];
+  if(c('wThr'))L.push('<b>Thrombosis แปลกที่ → ส่งโลหิตแพทย์ด่วน</b> · ตรวจ JAK2 V617F แม้ CBC ไม่ถึงเกณฑ์ (ถ้าลบ ตรวจ CALR) · รักษา thrombosis ตามแนวทาง');
+  const T=['ซ้ำ CBC + blood smear (ยืนยัน Hb/Hct ถึงเกณฑ์ ไม่ใช่แค่ RBC สูง)','<b>JAK2 V617F + serum EPO</b> (เจาะ EPO ก่อนเจาะเลือดออก) + <b>ferritin/iron studies</b> + Cr, LFT, Ca',
+    'SpO₂'+(sp!==null?` (${sp}%${lowSp?' ต่ำ → ABG':''})`:'')+(c('wSmk')?' + <b>carboxyhemoglobin</b> (blood gas co-oximetry; SpO₂ ปกติหลอก)':''),
+    'อัลตราซาวด์ช่องท้อง: ม้าม ไต ตับ (± มดลูกในผู้หญิง)'];
+  if(c('wOsa'))T.push('Sleep study / overnight oximetry (OSA, obesity hypoventilation)');
+  if(c('wCopd')||lowSp)T.push('ABG, spirometry, CXR → อายุรแพทย์โรคปอด (O₂ ระยะยาว/NIV)');
+  if(c('wChd'))T.push('Echocardiogram · ดูแลโดยคลินิกหัวใจเฉพาะทาง');
+  if(c('wYng'))T.push('อายุน้อย/ประวัติครอบครัว: P50 (high-affinity Hb), gene panel (EPOR, VHL ฯลฯ) ผ่านโลหิตแพทย์');
+  if(c('wFe'))T.push('ขาดเหล็ก/MCV ต่ำ: Hb typing ถ้ายังไม่เคยตรวจ (ธาลัสซีเมีย/HbE) · <b>ห้ามให้เหล็กเอง</b> จนกว่าจะตัด PV');
+  L.push('<b>ส่งตรวจตามลำดับ</b><ol>'+T.map(x=>`<li>${x}</li>`).join('')+'</ol>');
+  const A=[];
+  if(c('wSmk'))A.push('บุหรี่: เลิกบุหรี่ — Hct มักลดลงในไม่กี่เดือน');
+  if(c('wTe'))A.push('Testosterone: Hct &gt;54% → หยุดยาจน Hct ลด หา OSA/hypoxia แล้วเริ่มใหม่ขนาดต่ำ (Endocrine Society 2018) · anabolic steroid ที่ใช้เอง → หยุด');
+  if(c('wSg'))A.push('SGLT2i: Hct ขึ้น ~2–4 จุดเปอร์เซ็นต์ มักไม่อันตราย · <b>ไม่ต้องหยุดยา</b>ถ้ามีข้อบ่งชี้หัวใจ/ไต/เบาหวาน · ยังสืบค้นถ้ามีลักษณะ MPN');
+  if(c('wEpo'))A.push('EPO/ESA: ทบทวนขนาดและข้อบ่งชี้ ลด/หยุดเมื่อ Hb สูงเกินเป้า');
+  if(c('wOsa'))A.push('OSA: CPAP ลด erythrocytosis');
+  if(c('wCopd'))A.push('COPD/hypoxic: เจาะเลือดออกเฉพาะอาการ hyperviscosity หรือ Hct &gt;56% → 50–52% (BSH)');
+  if(c('wTx'))A.push('หลังปลูกถ่ายไต: ACEi/ARB (BSH 2B) · ไม่ตอบสนอง → ตรวจ JAK2');
+  if(c('wChd'))A.push('Cyanotic heart disease: ไม่เจาะเลือดออกเป็นประจำ');
+  if(A.length)L.push('<b>จัดการสาเหตุที่พบ</b><br>'+A.join('<br>'));
+  let I='';
+  if(J==='pos'||X==='pos'){
+    I=`<b>JAK2 ${J==='pos'?'V617F':'exon 12'} บวก → PV น่าจะเป็นมาก</b> (เมื่อ Hb/Hct ถึงเกณฑ์) → ส่งโลหิตแพทย์ · ระหว่างรอ: เจาะเลือดออกให้ Hct &lt;45% + aspirin 81–100 mg ถ้าไม่มีข้อห้าม (ใช้เครื่องมือ 3–4)`;
+    if(E==='hi')I+='<br>EPO สูงไม่เข้ากับ PV → มีสาเหตุทุติยภูมิร่วม (เช่นสูบบุหรี่) หรือ JAK2 ระดับต่ำแบบ CHIP → ให้โลหิตแพทย์ทบทวน';
+    if(c('wPlt'))I+='<br>Plt สูงเด่น → แยก ET (ดู Hb/Hct หลังแก้ขาดเหล็ก)';
+    if(c('wFe'))I+='<br>ขาดเหล็กร่วม = masked PV ได้ · ห้ามให้เหล็กเอง';
+  }else if(J==='neg'){
+    if(X==='neg'){
+      I=E==='low'?'<b>JAK2 V617F และ exon 12 ลบ + EPO ต่ำ</b> → congenital (EPOR mutation) หรือ PV JAK2-ลบที่หายาก → โลหิตแพทย์ (gene panel, BM biopsy)':E==='hi'?'<b>JAK2 ลบทั้งหมด + EPO สูง → secondary</b> · '+(hypo?'มีเหตุ hypoxic — รักษาต้นเหตุ':'non-hypoxic: ทบทวนยา, PTE, หาเนื้องอกสร้าง EPO (US/CT ไต ตับ มดลูก)'):E==='nl'?'<b>JAK2 ลบทั้งหมด + EPO ปกติ</b> → secondary หรือ idiopathic · หาสาเหตุให้ครบ แล้วส่งโลหิตแพทย์ถ้ายังไม่พบ':'JAK2 ลบทั้งหมด → ส่ง serum EPO เพื่อแยก primary/secondary';
+    }else{
+      I=E==='low'?'<b>JAK2 V617F ลบ + EPO ต่ำ → ส่ง JAK2 exon 12</b> + ส่งโลหิตแพทย์':E==='nl'?(mpn?'<b>JAK2 V617F ลบ + EPO ปกติ แต่มีลักษณะ MPN</b> → ส่ง exon 12/โลหิตแพทย์ (EPO ปกติไม่ตัด PV)':'<b>JAK2 V617F ลบ + EPO ปกติ</b> → น่าจะเป็น secondary หรือ idiopathic · หาสาเหตุตามรายการ ติดตาม CBC'):E==='hi'?'<b>JAK2 V617F ลบ + EPO สูง → secondary</b> · '+(hypo?'hypoxic: SpO₂/ABG, COHb, sleep study, ปอด/หัวใจ':'non-hypoxic: ยา (testosterone, EPO, SGLT2i), PTE, เนื้องอกสร้าง EPO (US/CT ไต ตับ มดลูก)'):'JAK2 V617F ลบ → ส่ง serum EPO ต่อ (ต่ำ = ส่ง exon 12; สูง = secondary)';
+    }
+  }else{
+    I=X==='neg'?'ควรตรวจ JAK2 V617F ก่อน (พบ ~95% ของ PV) · exon 12 ใช้เมื่อ V617F ลบ':E==='low'?'<b>EPO ต่ำ</b> → สนับสนุน primary · ส่ง JAK2 V617F':E==='hi'?'<b>EPO สูง</b> → secondary น่าเป็นกว่า · ยังส่ง JAK2 ถ้ามีลักษณะ MPN':E==='nl'?'EPO ปกติ → ยังแยกไม่ได้ ส่ง JAK2 V617F':'ยังไม่มีผล JAK2/EPO → ส่งตามรายการข้างบน';
+  }
+  L.push('<b>แปลผล</b><br>'+I);
+  const K=[];
+  if(J==='pos'||X==='pos')K.push('Primary: polycythemia vera');
+  else if(J==='neg'&&E==='low')K.push('Primary ที่ JAK2 V617F ลบ (exon 12/congenital)');
+  else{
+    if(hypo)K.push('Secondary: hypoxic'+(c('wSmk')?' (บุหรี่/COHb)':''));
+    if(drug)K.push('Secondary: จากยา');
+    if(c('wTx'))K.push('Secondary: post-transplant');
+    if(mpn&&J!=='neg')K.push('ต้องแยก PV (มีลักษณะ MPN)');
+    if(mpn&&J==='neg'&&X!=='neg'&&E!=='low')K.push('มีลักษณะ MPN แต่ V617F ลบ → exon 12/โลหิตแพทย์');
+  }
+  L.push('<b>กลุ่มที่น่าจะเป็น</b>: '+(K.length?K.join(' · '):'ยังไม่ชัด — สืบค้นตามลำดับ'));
+  $('wuOut').innerHTML=L.join('<br>');
+}
+bindAll('#tWu input,#tWu select',wu);
+
+function rk(){
+  const age=num('rAge'),hct=hctOf('rHct'),wbc=num('rWbc'),plt=num('rPlt'),cr=num('rCr');const c=id=>$(id).checked;const L=[];
+  if(!okR(age,15,110)){$('rkOut').textContent='ใส่อายุ (15–110 ปี)';return}
+  const bad=[hct!==null&&!okR(hct,15,80)?'Hct (% หรือ 0.xx)':null,wbc!==null&&!okR(wbc,0.5,300)?'WBC (0.5–300 ×10⁹/L)':null,plt!==null&&!okR(plt,5,5000)?'Platelet (5–5,000 ×10⁹/L)':null,cr!==null&&!okR(cr,5,200)?'CrCl (5–200 mL/min)':null].filter(Boolean);
+  if(bad.length){$('rkOut').textContent='ตรวจค่า: '+bad.join(' · ')+' หรือเว้นว่าง';return}
+  const high=age>=60||c('rThr');
+  L.push(high?`<b>High risk</b> (${[age>=60?'อายุ ≥60':null,c('rThr')?'เคยมี thrombosis':null].filter(Boolean).join(' + ')}) — ELN/NCCN`:'<b>Low risk</b> (อายุ &lt;60 และไม่เคยมี thrombosis)');
+  if(age>=60&&age<65&&!c('rThr'))L.push('<span class="muted">BSH 2019 ใช้อายุ ≥65 — รายนี้จะเป็น low risk ตาม BSH · หน้านี้ใช้ ≥60 ตาม ELN/NCCN</span>');
+  if(hct===null)L.push('Phlebotomy: เป้า <b>Hct &lt;45%</b>');
+  else if(hct>=45)L.push(`Hct ${f1(hct)}% → <b>เจาะเลือดออกจน Hct &lt;45%</b> (ใช้เครื่องมือ 4)${hct>=60?' · <b>สูงมาก: ส่งโลหิตแพทย์ด่วน</b>':''}`);
+  else L.push(`Hct ${f1(hct)}% ถึงเป้าแล้ว (&lt;45%) → ตรวจ CBC ทุก ~4–8 สัปดาห์ เจาะเมื่อ ≥45%`);
+  if(plt!==null&&plt>1000)L.push(`<b>Plt ${plt} &gt;1,000 → ตรวจ acquired von Willebrand (vWF:RCo) ก่อนให้ aspirin</b> · ถ้า vWF:RCo &lt;30% งด aspirin · ปรึกษาโลหิตแพทย์`);
+  else if(c('rBld'))L.push('เคยเลือดออกผิดปกติ → หาสาเหตุและตรวจ acquired vWD ก่อนตัดสินใจ aspirin');
+  else if(c('rAc'))L.push('ได้ anticoagulant อยู่ → มักไม่ให้ aspirin ร่วม (เลือดออกเพิ่มมาก) ยกเว้นมีข้อบ่งชี้ arterial ชัดเจน');
+  else L.push('<b>Aspirin 81–100 mg PO วันละครั้ง</b> (ถ้าไม่มีข้อห้าม)');
+  const R=[];
+  if(high)R.push('high risk');
+  if(plt!==null&&plt>1500)R.push('Plt &gt;1,500');
+  if(wbc!==null&&wbc>15)R.push('WBC &gt;15 ต่อเนื่อง');
+  if(c('rSpl'))R.push('ม้ามโตมีอาการ/โตขึ้น');
+  if(c('rSym'))R.push('อาการของโรคมาก');
+  if(c('rPhl'))R.push('ทนเจาะเลือดไม่ได้/ต้องเจาะบ่อย');
+  if(c('rCv')&&!high)R.push('CV risk สูงต่อเนื่อง (ELN/BSH ให้พิจารณา)');
+  if(R.length){
+    L.push('<b>มีข้อบ่งชี้ยากดไขกระดูก</b>: '+R.join(' · ')+' → เริ่มโดย/ร่วมกับโลหิตแพทย์');
+    const hu=cr!==null&&cr<60?`<b>Hydroxyurea</b>: CrCl ${cr} &lt;60 → <b>ลด 50%</b> (เช่น 500 mg PO วันละครั้ง) ตาม CBC ใกล้ชิด${cr<15?' · ฟอกไต: ให้หลังฟอก':''}`:'<b>Hydroxyurea</b> เริ่ม 500 mg PO วันละ 2 ครั้ง (หรือ 500–1,000 mg/วัน) ปรับตาม CBC ทุก 1–2 สัปดาห์ช่วงแรก'+(cr===null?' <span class="muted">(ไม่ได้ใส่ CrCl — ถ้า &lt;60 ลดครึ่ง)</span>':'');
+    const ifn='<b>Ropeginterferon alfa-2b</b> 100 mcg SC ทุก 2 สัปดาห์ เพิ่มครั้งละ 50 mcg (สูงสุด 500 mcg) หรือ <b>pegIFN alfa-2a</b> 45 mcg SC สัปดาห์ละครั้ง'+(cr!==null&&cr<30?' <b>(CrCl &lt;30: หลีกเลี่ยง ropeginterferon ตามฉลากยา)</b>':'');
+    if(c('rPreg'))L.push('ตั้งครรภ์/วางแผนมีบุตร → <b>interferon</b> — นิยม <b>pegIFN alfa-2a</b> (มีข้อมูลในการตั้งครรภ์มากกว่า; ฉลาก ropeginterferon เตือนอันตรายต่อทารก) ('+ifn+') · <b>ห้าม hydroxyurea</b> (หยุด ≥3 เดือนก่อนตั้งครรภ์) · ดูแลร่วมสูติแพทย์');
+    else if(age<60)L.push('อายุ &lt;60 → แนะนำ <b>interferon</b> เป็นตัวแรก (ELN 2021): '+ifn+' · ถ้าเข้าถึงไม่ได้ (พบบ่อยในไทย): '+hu);
+    else L.push('อายุ ≥60 → '+hu+' · หรือ '+ifn+(age>=75?' · อายุขัยจำกัด: busulfan เป็นทางเลือก (โลหิตแพทย์)':''));
+    if(!c('rPreg'))L.push('ดื้อ/ทน hydroxyurea ไม่ได้ → ruxolitinib 10 mg PO วันละ 2 ครั้ง หรือ interferon'+(cr!==null&&cr<60?(cr>=15?` <b>(CrCl ${cr}: ruxolitinib 5 mg วันละ 2 ครั้ง)</b>`:' <b>(CrCl &lt;15: ruxolitinib หลีกเลี่ยงถ้าไม่ได้ฟอกไต · ฟอกไต 10 mg วันละครั้งหลังฟอก)</b>'):''));
+  }else L.push('ยังไม่มีข้อบ่งชี้ยากดไขกระดูก → phlebotomy + aspirin · ติดตาม WBC, Plt, ขนาดม้าม, อาการ, จำนวนครั้งที่ต้องเจาะเลือด');
+  if(c('rPreg')&&!R.length)L.push('ตั้งครรภ์/วางแผน: aspirin + คุม Hct ตามช่วงอายุครรภ์ · LMWH หลังคลอด 6 สัปดาห์ · ดูแลร่วมสูติแพทย์และโลหิตแพทย์');
+  if(c('rThr'))L.push('เคยมี VTE ที่ไม่มีเหตุกระตุ้น → anticoagulant ระยะยาว (ดูหน้า <a href="../vte/index.html">VTE</a>) · arterial → aspirin ต่อ');
+  if(wbc!==null&&wbc>11&&wbc<=15)L.push(`WBC ${wbc} &gt;11 เพิ่มความเสี่ยง thrombosis — ติดตามใกล้ชิด`);
+  if(c('rCv'))L.push('คุม BP ไขมัน เบาหวาน และเลิกบุหรี่ให้เข้มงวด');
+  $('rkOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRk input',rk);
+
+function ph(){
+  const ty=$('pTy').value,hct=hctOf('pHct'),wt=num('pWt'),age=num('pAge');const c=id=>$(id).checked;const L=[];
+  if(!okR(hct,20,80)){$('phOut').textContent='ใส่ Hct ปัจจุบัน (% เช่น 55 หรือสัดส่วน 0.55)';return}
+  const bad=[wt!==null&&!okR(wt,25,250)?'น้ำหนัก (25–250 kg)':null,age!==null&&!okR(age,15,110)?'อายุ (15–110 ปี)':null].filter(Boolean);
+  if(bad.length){$('phOut').textContent='ตรวจค่า: '+bad.join(' · ')+' หรือเว้นว่าง';return}
+  const why=[age!==null&&age>=70?'อายุ ≥70':null,c('pCvd')?'โรคหัวใจ/หลอดเลือด':null,wt!==null&&wt<50?'น้ำหนัก <50 kg':null].filter(Boolean);
+  const small=why.length>0,vol=small?300:500,drop=3*vol/500;
+  const volTxt=small?`ครั้งละ <b>~250–300 mL</b> (${why.join(', ')}) + ให้ NSS ทดแทนปริมาตรใกล้เคียงกัน`:'ครั้งละ <b>450–500 mL</b>';
+  const freq=small?'สัปดาห์ละ 1–2 ครั้ง ตามความทน':'วันเว้นวัน หรือสัปดาห์ละ 2 ครั้ง ตามความทน';
+  const est=aim=>{const n=Math.max(1,Math.ceil((hct-aim)/drop));return `ประมาณ <b>${n} ครั้ง</b> (กฎคร่าวๆ: เลือด 450–500 mL ลด Hct ~3 จุด → ครั้งนี้ ~${f1(drop)} จุด · คนตัวเล็กลดมากกว่านี้) · <b>ตรวจ Hct ก่อนเจาะทุกครั้ง</b>`};
+  L.push(`Hct ตอนนี้ <b>${f1(hct)}%</b>`);
+  if(ty==='pv'){
+    if(hct<45)L.push('ถึงเป้าแล้ว (&lt;45%) → <b>ไม่ต้องเจาะเพิ่ม</b> · ตรวจ CBC ทุก ~4–8 สัปดาห์ เจาะเมื่อ Hct ≥45%');
+    else{
+      L.push('เป้า <b>Hct &lt;45%</b> (CYTO-PV) ทั้งชายและหญิง');
+      L.push(volTxt+' · '+freq);
+      L.push(est(44));
+      L.push('ถึงเป้าแล้ว: ตรวจ CBC ทุก ~4–8 สัปดาห์ · aspirin ต่อ · <b>ไม่ให้ธาตุเหล็ก</b>');
+      if(hct>=60)L.push('<b>Hct ≥60%: ปรึกษาโลหิตแพทย์ด่วน</b> · มี thrombosis/hyperviscosity เริ่มเจาะได้ทันที (ระวังในผู้สูงอายุ/โรคหัวใจ ใช้ปริมาตรน้อย + NSS)');
+    }
+  }else if(ty==='hyp'){
+    if(hct>56||c('pSx')){
+      if(hct<=52)L.push('Hct อยู่ที่ ≤52% แล้ว → <b>ไม่ควรเจาะเพิ่ม</b> (เป้า 50–52%; ต่ำกว่า 45% เป็นผลเสีย) · อาการอาจมาจากสาเหตุอื่น');
+      else{L.push('เป้า <b>Hct 50–52%</b> (BSH 2C) · <b>ห้ามลดต่ำกว่า 45%</b>');L.push(volTxt+' · '+freq);L.push(est(51));}
+    }else L.push('Hct ≤56% และไม่มีอาการ → <b>ไม่ต้องเจาะเลือดออก</b>');
+    L.push('รักษา hypoxia: O₂ ระยะยาว/NIV/CPAP, เลิกบุหรี่ (อายุรแพทย์โรคปอด)');
+  }else if(ty==='ptx'){
+    L.push('<b>ACEi หรือ ARB ก่อน</b> (BSH 2B) · aspirin ไม่มีประโยชน์');
+    if(c('pSx')&&hct>50){L.push('มีอาการต่อเนื่อง → เจาะเลือดออกได้ เป้า <b>Hct 50%</b> (BSH 2C)');L.push(volTxt+' · '+freq);L.push(est(50));}
+    else L.push('ไม่มีอาการ → <b>ไม่แนะนำเจาะเลือดออก</b> (ไม่ลด thrombosis) · ติดตาม Hct · ไม่ตอบสนองต่อ ACEi/ARB → ตรวจ JAK2');
+  }else{
+    if(hct>=55){L.push('เป้าโดยทั่วไป <b>Hct &lt;55%</b> · ปรับตามประวัติ thrombosis และความเสี่ยง (โลหิตแพทย์) · ไม่ใช้ยากดไขกระดูก');L.push(volTxt+' · '+freq);L.push(est(54));}
+    else L.push('Hct &lt;55% → มักไม่ต้องเจาะ · ตัดสาเหตุอื่นให้ครบ · ปรับตามประวัติ thrombosis (โลหิตแพทย์)');
+  }
+  if(wt===null)L.push('<span class="muted">ไม่ได้ใส่น้ำหนัก — ใช้ปริมาตรสำหรับผู้ใหญ่ทั่วไป</span>');
+  $('phOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPh input,#tPh select',ph);
+
+mountQuiz([
+ ['ชาย 45 ปี ตรวจสุขภาพ Hb 14.2 g/dL, Hct 44%, RBC 6.4 ×10¹²/L, MCV 66 fL, WBC และ Plt ปกติ ขั้นต่อไปที่เหมาะสม',['ส่ง JAK2 V617F','ส่ง Hb typing และ ferritin','เจาะเลือดออก','ส่ง serum EPO'],1,'Hb/Hct ไม่ถึงเกณฑ์ · RBC สูง MCV ต่ำ Mentzer ~10 → ธาลัสซีเมีย/HbE แฝง ไม่ใช่ erythrocytosis'],
+ ['เกณฑ์ Hb/Hct ใน major criterion ของ PV ตาม WHO 2022/ICC 2022 สำหรับผู้หญิงคือข้อใด',['Hb >16.5 หรือ Hct >49%','Hb >16.0 หรือ Hct >48%','Hb >15.0 หรือ Hct >45%','Hct >56%'],1,'ชาย Hb >16.5 / Hct >49%'],
+ ['ชาย 52 ปี เบาหวาน เริ่ม empagliflozin 6 เดือนก่อน Hct จาก 46% เป็น 50% ไม่มีม้ามโต WBC/Plt ปกติ ข้อใดเหมาะที่สุด',['หยุด empagliflozin ทันที','เจาะเลือดออกให้ Hct <45%','ส่ง hydroxyurea','ทบทวนสาเหตุอื่น (บุหรี่ OSA) ใช้ยาต่อ และติดตาม CBC'],3,'SGLT2i ทำให้ Hct ขึ้นเล็กน้อย มักไม่อันตราย ไม่ต้องหยุดยา'],
+ ['ผู้สูบบุหรี่จัด Hct 54% SpO₂ 98% ข้อใดถูก',['SpO₂ ปกติจึงตัดเหตุ hypoxic ได้','ควรตรวจ carboxyhemoglobin','ต้องเริ่ม aspirin ทุกราย','EPO มักต่ำ'],1,'Pulse oximeter อ่าน COHb เป็น oxyHb → SpO₂ ปกติหลอก'],
+ ['JAK2 V617F ลบ และ serum EPO ต่ำ ในผู้ป่วย Hct 56% ขั้นต่อไป',['สรุปว่าเป็น secondary','ส่ง JAK2 exon 12 และส่งโลหิตแพทย์','เริ่ม testosterone','ไม่ต้องทำอะไร'],1,'PV ที่ V617F ลบ ~2–3% มี exon 12 mutation'],
+ ['เป้า Hct ใน PV ตาม CYTO-PV',['<50%','<48% ชาย <45% หญิง','<45%','<55%'],2,'Hct <45% ลด CV death/major thrombosis 2.7% vs 9.8%'],
+ ['PV อายุ 66 ปี ไม่เคยมี thrombosis Hct คุมได้ด้วยการเจาะเลือด ตาม ELN/NCCN',['Low risk ไม่ต้องใช้ยาเพิ่ม','High risk ควรได้ยากดไขกระดูก','ให้ busulfan เป็นตัวแรก','หยุด aspirin'],1,'อายุ ≥60 = high risk (BSH ใช้ ≥65)'],
+ ['PV Plt 1,400 ×10⁹/L มีจ้ำเลือดง่าย ก่อนให้ aspirin ควรทำอะไร',['ให้ aspirin ขนาดสูงขึ้น','ตรวจ vWF ristocetin cofactor activity (acquired vWD)','ให้ clopidogrel แทน','ให้ธาตุเหล็ก'],1,'Plt สูงมาก → acquired von Willebrand syndrome เสี่ยงเลือดออก'],
+ ['หญิง 30 ปี PV วางแผนตั้งครรภ์ และต้องใช้ยากดไขกระดูก ยาที่เหมาะคือ',['Hydroxyurea','Interferon alfa (pegIFN/ropeginterferon)','Busulfan','³²P'],1,'Hydroxyurea ต้องหยุด ≥3 เดือนก่อนตั้งครรภ์'],
+ ['ชายได้ testosterone ฉีด Hct 55% การจัดการตาม Endocrine Society 2018',['ให้ต่อขนาดเดิม','หยุดยาจน Hct ลด หา OSA/hypoxia แล้วเริ่มใหม่ขนาดต่ำ','เริ่ม hydroxyurea','ส่ง bone marrow biopsy'],1,'Hct >54% → stop, evaluate, reinitiate at reduced dose'],
+ ['ผู้ป่วย COPD SpO₂ 86% Hct 58% ปวดศีรษะ มึนงง ตาม BSH เจาะเลือดออกให้ Hct เท่าใด',['<45%','50–52%','<40%','ไม่ต้องเจาะเลย'],1,'Hct ต่ำกว่า 45% เป็นผลเสียในโรคปอดที่มี hypoxia · รักษา hypoxia ด้วย O₂'],
+ ['หญิง 32 ปี ปวดท้อง ท้องมาน พบ hepatic vein thrombosis (Budd–Chiari) Hb 13.5 Plt 480 ควรตรวจอะไรเพิ่ม',['ไม่ต้อง เพราะ Hb ปกติ','JAK2 V617F (ถ้าลบ ตรวจ CALR)','Hb typing อย่างเดียว','Serum EPO อย่างเดียว'],1,'Splanchnic vein thrombosis → ตรวจ JAK2 แม้ CBC ไม่ถึงเกณฑ์ (BSH 1A)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
