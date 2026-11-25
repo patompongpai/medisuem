@@ -1,0 +1,942 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Perioperative anticoagulants · ยาต้านลิ่มเลือดช่วงผ่าตัด</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hematology · Perioperative · ACCP/CHEST 2022 · ACC/AHA 2024 (ยืนยันซ้ำ 2026) · ESC 2022 · ASRA 2025 · ACC 2020 bleeding ECDP</div>
+  <h1>ยาต้านการแข็งตัวของเลือดและยาต้านเกล็ดเลือดช่วงผ่าตัด/หัตถการ<br>Perioperative anticoagulants, antiplatelets &amp; reversal</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผู้ป่วยกิน <b>warfarin, DOAC, aspirin หรือ P2Y12 inhibitor</b> แล้วต้องผ่าตัด ถอนฟัน ส่องกล้อง หรือฉีดยาชาเข้าไขสันหลัง · ตอบ 3 คำถาม: <b>หัตถการเลือดออกมากแค่ไหน</b>, <b>ผู้ป่วยเสี่ยงลิ่มเลือดแค่ไหน</b>, <b>ยาตัวไหนหยุดกี่วัน</b> · พร้อมการแก้ INR สูง และการย้อนฤทธิ์ยาเมื่อเลือดออกรุนแรงหรือต้องผ่าตัดด่วน</p>
+  <p class="cite">อ้างอิงหลัก: Douketis JD, et al. Perioperative management of antithrombotic therapy: an ACCP clinical practice guideline (Chest 2022;162:e207–43) · Douketis JD, et al. PAUSE (JAMA Intern Med 2019;179:1469–78) · Douketis JD, et al. BRIDGE (N Engl J Med 2015;373:823–33) · Thompson A, et al. 2024 AHA/ACC perioperative guideline for noncardiac surgery (Circulation 2024;150:e351–442; ยืนยันซ้ำ 2026) · Halvorsen S, et al. 2022 ESC non-cardiac surgery guideline (Eur Heart J 2022;43:3826–924) · Kopp SL, et al. ASRA 5th edition (Reg Anesth Pain Med 2025) · Tomaselli GF, et al. 2020 ACC ECDP on bleeding with oral anticoagulants (J Am Coll Cardiol 2020;76:594–622) · แนวทางการรักษาผู้ป่วยด้วยยาต้านการแข็งตัวของเลือดชนิดรับประทาน (warfarin) พ.ศ. 2553 สมาคมแพทย์โรคหัวใจแห่งประเทศไทยฯ · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--ok)"><b>หัตถการเล็ก = ไม่ต้องหยุด</b>ถอนฟัน ต้อกระจก ผิวหนัง ใส่ pacemaker · ต่อ warfarin/aspirin ได้</div>
+    <div class="stage" style="--c:var(--accent)"><b>DOAC: หยุด 1 หรือ 2 วัน</b>ตาม PAUSE · ไม่ต้อง bridging · dabigatran + CrCl &lt;50 หยุดนานขึ้น</div>
+    <div class="stage" style="--c:var(--danger)"><b>AF ไม่ต้อง bridging</b>BRIDGE: bridging เลือดออกมากขึ้นโดยไม่ลด stroke · bridging เฉพาะลิ้นหัวใจกล/เสี่ยงสูง</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#bleed">ความเสี่ยงเลือดออก</a><a href="#thrombo">ความเสี่ยงลิ่มเลือด</a><a href="#warf">Warfarin · bridging</a><a href="#doac">DOAC · PAUSE</a><a href="#neur">Spinal/epidural</a><a href="#ap">ยาต้านเกล็ดเลือด · stent</a><a href="#minor">หัตถการเล็ก</a><a href="#inr">INR สูง</a><a href="#rev">Reversal · ผ่าตัดด่วน</a><a href="#thai">บริบทไทย</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="bleed" class="col">
+  <div class="sec-num">01</div>
+  <h2>ความเสี่ยงเลือดออกของหัตถการ</h2>
+  <p>ACCP 2022 แบ่ง 3 ระดับ (ความเสี่ยงเลือดออกรุนแรงใน 30 วัน) · ใช้ตัดสินว่า <b>ต้องหยุดยาหรือไม่ และหยุดกี่วัน</b></p>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>ตัวอย่าง</th><th>หลักการ</th></tr>
+    <tr><td><b style="color:var(--ok)">น้อยมาก (minimal)</b></td><td>ถอนฟัน/อุดฟัน/ขูดหินปูน · ผ่าตัดผิวหนังเล็ก · <b>ต้อกระจก</b> (ยาชาหยอด) · <b>ใส่ pacemaker/ICD</b> · ฉีดยาเข้าข้อ · ฉีดสีหัวใจทางข้อมือ (radial)</td><td><b>ต่อยาได้</b> · DOAC: ต่อ หรือข้ามมื้อเช้าวันทำ</td></tr>
+    <tr><td><b style="color:var(--warn)">ต่ำ–ปานกลาง (&lt;2%)</b></td><td>ผ่าตัดไส้เลื่อน · ถุงน้ำดีผ่านกล้อง · ตัดมดลูกทางหน้าท้อง · ริดสีดวง · ตัดชิ้นเนื้อต่อมน้ำเหลือง · ผ่าตัดมือ/เท้า · arthroscopy · <b>ส่องกล้องทางเดินอาหาร ± biopsy</b> · bronchoscopy · ฉีดสีหัวใจทางขาหนีบ</td><td>หยุดยาระยะสั้น · DOAC หยุด 1 วัน</td></tr>
+    <tr><td><b style="color:var(--danger)">สูง (≥2%)</b></td><td>ผ่าตัด &gt;45 นาที · ผ่าตัดหัวใจ · ผ่าตัดช่องท้อง/ลำไส้ · มะเร็ง · ข้อสะโพก/เข่า · ผ่าตัดทรวงอก · <b>สมองและกระดูกสันหลัง</b> · ไต ตับ ม้าม (เจาะชิ้นเนื้อไต) · <b>TURP/ตัดเนื้องอกกระเพาะปัสสาวะ</b> · ตัดติ่งเนื้อ &gt;1 cm · <b>spinal/epidural anesthesia</b> · deep nerve block</td><td>หยุดยานานขึ้น · DOAC หยุด 2 วัน · เริ่มยาคืนช้า (48–72 ชม.)</td></tr>
+  </table></div>
+  <div class="box warn"><b>Closed-space / ห้ามมีเลือดออกเลย</b>ผ่าตัดสมอง ไขสันหลัง ช่องหลังลูกตา (posterior chamber) และ TURP — เลือดออกนิดเดียวก็อันตราย · <b>ต้องหยุดแม้แต่ aspirin</b> (ESC 2022: หยุด 7 วัน <span class="rec s1">I C</span>)</div>
+  <p class="muted" style="font-size:.88rem">ปัจจัยของผู้ป่วยที่เพิ่มเลือดออก: เคยเลือดออกช่วงหัตถการ เกล็ดเลือดต่ำ/ทำงานผิดปกติ ไตเสื่อม ตับแข็ง ได้ยาต้านเกล็ดเลือดร่วม INR เกินช่วงเป้าหมาย</p>
+</section>
+
+<section id="thrombo" class="col">
+  <div class="sec-num">02</div>
+  <h2>ความเสี่ยงลิ่มเลือดของผู้ป่วย (สำหรับ warfarin)</h2>
+  <p>ใช้ตัดสิน <b>bridging</b> เป็นหลัก · เสี่ยงสูง = ลิ่มเลือดแดง &gt;10%/ปี หรือ VTE &gt;10%/เดือน (ACCP 2022)</p>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>ลิ้นหัวใจกล</th><th>AF</th><th>VTE</th></tr>
+    <tr><td><b style="color:var(--danger)">สูง</b></td><td>ลิ้นกล <b>mitral</b> ทุกชนิด · ลิ้น aortic รุ่นเก่า (caged-ball, tilting-disc) · stroke/TIA ใน 3 เดือน</td><td>CHA₂DS₂-VASc ≥7 (CHADS₂ 5–6) · stroke/TIA ใน 3 เดือน · rheumatic valve (mitral stenosis)</td><td>VTE <b>ใน 3 เดือน</b> · thrombophilia รุนแรง (protein C/S, antithrombin deficiency, <b>antiphospholipid syndrome</b>) · มะเร็งที่เสี่ยง VTE สูง</td></tr>
+    <tr><td><b style="color:var(--warn)">ปานกลาง</b></td><td>Bileaflet aortic + ปัจจัยเสี่ยง (AF, เคย stroke, HT, DM, HF, อายุ &gt;75)</td><td>CHA₂DS₂-VASc 5–6 (CHADS₂ 3–4)</td><td>VTE 3–12 เดือน · VTE ซ้ำ · มะเร็ง active · thrombophilia ไม่รุนแรง</td></tr>
+    <tr><td><b style="color:var(--ok)">ต่ำ</b></td><td>Bileaflet aortic ไม่มีปัจจัยเสี่ยง</td><td>CHA₂DS₂-VASc ≤4 (CHADS₂ 0–2) ไม่เคย stroke</td><td>VTE &gt;12 เดือน ไม่มีปัจจัยอื่น</td></tr>
+  </table></div>
+  <div class="box note"><b>เลื่อนผ่าตัดถ้าเลื่อนได้</b>VTE ใน 3 เดือนแรก หรือ stroke/TIA ใน 3 เดือน → <b>เลื่อนผ่าตัดที่ไม่ด่วน</b> ให้ครบ 3 เดือนก่อน · VTE ใน 1 เดือนที่ต้องผ่าตัดจริง → ปรึกษาเรื่อง bridging เต็มขนาดหรือ IVC filter ชั่วคราว <span class="tag add">เสริม</span> · ดูหน้า <a href="../vte/index.html">VTE</a> และ <a href="../af/index.html">AF</a></div>
+</section>
+
+<section id="warf" class="col">
+  <div class="sec-num">03</div>
+  <h2>Warfarin และ bridging</h2>
+  <div class="box key"><b>นับวันอย่างไร</b><b>วัน 0 = วันผ่าตัด</b> · "หยุด 5 วัน" = กินมื้อสุดท้าย <b>วัน −6</b> แล้วไม่กินวัน −5 ถึง −1 · ใช้แบบนี้ทั้งหน้า</div>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>สิ่งที่ทำ</th></tr>
+    <tr><td><b>หยุด warfarin</b></td><td><b>≥5 วัน</b>ก่อนผ่าตัด (มื้อสุดท้ายวัน −6) <span class="rec">ACCP conditional</span> · หัตถการเลือดออกน้อยมาก → <b>ไม่ต้องหยุด</b></td></tr>
+    <tr><td><b>ตรวจ INR วัน −1</b></td><td>เป้า INR <b>&lt;1.5</b> (ผ่าตัดใหญ่/spinal ควรใกล้ปกติ) · ถ้า INR ยัง <b>&gt;1.5 → vitamin K1 1–2 mg กิน</b> แล้วตรวจซ้ำเช้าวันผ่าตัด (แนวทางไทย 2553; ACCP)</td></tr>
+    <tr><td><b>เริ่ม warfarin กลับ</b></td><td><b>12–24 ชม.หลังผ่าตัด</b> (เย็นวันผ่าตัดหรือวัน +1) <b>ขนาดเดิม</b> ถ้าห้ามเลือดได้และกินได้ · ไม่ต้อง loading · INR จะถึงเป้าใน ~5–7 วัน</td></tr>
+  </table></div>
+  <h3>ใครต้อง bridging</h3>
+  <div class="grid2">
+    <div class="card c-red"><h4>Bridge</h4><ul><li><b>ลิ้นหัวใจกล</b> ความเสี่ยงสูง (mitral, aortic รุ่นเก่า, stroke ใน 3 เดือน) <span class="rec">ACCP conditional</span> · ESC 2022 <span class="rec">IIa C</span></li><li>Bileaflet aortic + ปัจจัยเสี่ยง → <b>พิจารณาเป็นรายๆ</b> (ESC 2022 IIa ให้ bridge)</li><li>VTE ใน 3 เดือนที่เลื่อนผ่าตัดไม่ได้ · thrombophilia รุนแรง/APS <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-ok"><h4>ไม่ bridge</h4><ul><li><b>AF</b> — ACCP 2022 <b>strong recommendation ไม่ให้ bridge</b> <span class="rec no">Strong against</span></li><li><b>VTE เป็นข้อบ่งชี้เดียว</b> (เกิน 3 เดือน) → ไม่ bridge <span class="rec">ACCP conditional</span> · ให้ VTE prophylaxis หลังผ่าตัดตามปกติ</li><li>Bileaflet aortic ไม่มีปัจจัยเสี่ยง</li><li>ESC 2022: ความเสี่ยงต่ำ–ปานกลาง ไม่ bridge <span class="rec no">III B</span></li></ul></div>
+  </div>
+  <div class="box warn"><b>BRIDGE trial (NEJM 2015)</b>AF 1,884 ราย หยุด warfarin 5 วัน สุ่มให้ dalteparin 100 IU/kg วันละ 2 ครั้ง หรือยาหลอก · ลิ่มเลือดแดง <b>0.4% (ไม่ bridge) vs 0.3% (bridge)</b> — ไม่ด้อยกว่า · เลือดออกรุนแรง <b>1.3% vs 3.2%</b> — bridging เลือดออกมากกว่าราว 2.5 เท่า</div>
+  <h3>ตาราง bridging ด้วย LMWH (enoxaparin)</h3>
+  <div class="timeline">
+    <div><b>วัน −6</b> warfarin มื้อสุดท้าย</div>
+    <div><b>วัน −3</b> เริ่ม enoxaparin <b>1 mg/kg SC ทุก 12 ชม.</b> (CrCl &lt;30: 1 mg/kg วันละครั้ง) · ใช้น้ำหนักจริง</div>
+    <div><b>วัน −1</b> ให้ <b>เฉพาะมื้อเช้า</b> (= ครึ่งหนึ่งของขนาดต่อวัน) ห่างจากผ่าตัด <b>~24 ชม.</b> <span class="rec">ACCP conditional</span> · ตรวจ INR</div>
+    <div><b>วัน 0</b> ผ่าตัด · เย็นวันผ่าตัดเริ่ม warfarin ขนาดเดิม (ถ้าห้ามเลือดได้)</div>
+    <div><b>หลังผ่าตัด</b> enoxaparin ขนาดรักษา: เลือดออกต่ำ–ปานกลาง <b>≥24 ชม.</b> (วัน +1) · เลือดออกสูง <b>48–72 ชม.</b> (วัน +2 ถึง +3; ระหว่างนั้นใช้ขนาดป้องกัน) · หยุดเมื่อ INR อยู่ในเป้า</div>
+  </div>
+  <p class="muted" style="font-size:.88rem">UFH IV (ไตวายรุนแรง/ฟอกไต หรือลิ้นกลที่ต้องการควบคุมใกล้ชิด): <b>หยุด 4–6 ชม.ก่อนผ่าตัด</b> · เริ่มคืนไม่เร็วกว่า 24 ชม.หลังผ่าตัด ไม่ให้ bolus · ESC 2022: ลิ้นกลใช้ LMWH แทน UFH ได้ <span class="rec s1">I B</span> · น้ำหนัก &gt;150 kg หรือตั้งครรภ์ → พิจารณาวัด anti-Xa <span class="tag add">เสริม</span></p>
+</section>
+
+<section id="doac" class="col">
+  <div class="sec-num">04</div>
+  <h2>DOAC: ตาราง PAUSE</h2>
+  <p>PAUSE (JAMA Intern Med 2019): AF 3,007 ราย หยุด DOAC ตามตาราง <b>ไม่ bridging ไม่ตรวจระดับยา</b> · เลือดออกรุนแรง 30 วัน 0.9–1.85% · ลิ่มเลือดแดง 0.16–0.60% · ACCP 2022 ใช้ตารางนี้</p>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>เลือดออกต่ำ–ปานกลาง</th><th>เลือดออกสูง</th></tr>
+    <tr><td><b>Apixaban · rivaroxaban · edoxaban</b></td><td>งด <b>1 วัน</b> (วัน −1) · มื้อสุดท้ายวัน −2 · ห่าง ~30–36 ชม.</td><td>งด <b>2 วัน</b> (วัน −2, −1) · มื้อสุดท้ายวัน −3 · ห่าง ~60–68 ชม.</td></tr>
+    <tr><td><b>Dabigatran CrCl ≥50</b></td><td>งด <b>1 วัน</b></td><td>งด <b>2 วัน</b></td></tr>
+    <tr><td><b>Dabigatran CrCl 30–49</b></td><td>งด <b>2 วัน</b></td><td>งด <b>4 วัน</b></td></tr>
+    <tr><td><b>เริ่มกลับ</b></td><td><b>~24 ชม.</b> (วัน +1)</td><td><b>48–72 ชม.</b> (วัน +2 ถึง +3)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>ไม่ bridging</b> ด้วย heparin <span class="rec">ACCP conditional</span> · <b>ไม่ตรวจระดับยา routine</b> ก่อนผ่าตัดนัด</li>
+    <li>ระหว่างรอเริ่ม DOAC หลังผ่าตัดเลือดออกสูง ผู้ที่เสี่ยง VTE → ให้ LMWH <b>ขนาดป้องกัน</b> (เช่น enoxaparin 40 mg SC วันละครั้ง) ได้</li>
+    <li>DOAC ออกฤทธิ์เต็มใน 1–3 ชม.หลังกิน — <b>เริ่มกลับขนาดปกติ ไม่ต้องลดขนาด</b> (ESC 2022: ไม่แนะนำลดขนาดเพื่อกันเลือดออก <span class="rec no">III C</span>)</li>
+    <li><b>Xa inhibitor + CrCl 15–29</b>: ข้อมูลน้อย — EHRA 2021 ให้หยุด ≥36 ชม. (ต่ำ) / ≥48 ชม. (สูง) หรือนานกว่า · <b>CrCl &lt;15</b> ไม่มีตารางรองรับ ปรึกษาผู้เชี่ยวชาญ <span class="tag add">เสริม</span></li>
+    <li>Dabigatran ห้ามใช้เมื่อ CrCl &lt;30 · ยาที่ยับยั้ง CYP3A4/P-gp แรง ตับเสื่อม → พิจารณาหยุดนานขึ้น</li>
+  </ul>
+  <div class="box note"><b>EHRA 2021 (ทางเลือก นับเป็นชั่วโมง)</b>Xa inhibitor CrCl ≥30: ≥24 ชม. (ต่ำ) / ≥48 ชม. (สูง) · Dabigatran CrCl ≥80: 24/48 · 50–79: 36/72 · 30–49: 48/96 ชม. · ใกล้เคียง PAUSE · หน้านี้ใช้ PAUSE/ACCP เป็นหลักเพราะมีข้อมูลผลลัพธ์จริง</div>
+</section>
+
+<section id="neur" class="col">
+  <div class="sec-num">05</div>
+  <h2>Spinal/epidural anesthesia (ASRA 2025)</h2>
+  <p>ASRA ฉบับที่ 5 (Kopp SL, et al. 2025) — เลือดคั่งในช่องไขสันหลัง (spinal epidural hematoma) พบน้อยแต่ทำให้อัมพาต · ใช้กับ deep plexus/deep nerve block ด้วย · <b>ยึดตามวิสัญญีแพทย์ของ รพ.</b></p>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>หยุดก่อนแทงเข็ม/ถอดสาย</th><th>เริ่มกลับหลังแทงเข็ม/ถอดสาย</th></tr>
+    <tr><td>Apixaban · rivaroxaban · edoxaban (ขนาดรักษา)</td><td><b>≥72 ชม.</b> (3 วัน)</td><td><b>≥24 ชม.</b></td></tr>
+    <tr><td>Dabigatran (ขนาดรักษา)</td><td>CrCl ≥50: <b>≥72 ชม.</b> · 30–49: <b>≥120 ชม.</b> · &lt;30: หลีกเลี่ยงการทำ neuraxial</td><td>≥24 ชม.</td></tr>
+    <tr><td>DOAC ขนาดต่ำ (เช่น rivaroxaban 10 mg, apixaban 2.5 mg)</td><td>ASRA 2025 แยกเป็นขนาดต่ำ ใช้เวลาสั้นกว่า (~24–36 ชม.) — ตรวจกับวิสัญญีแพทย์</td><td>≥6 ชม.</td></tr>
+    <tr><td>Warfarin</td><td>หยุด ~5 วัน และ <b>INR ปกติ</b> · ถอดสายเมื่อ INR &lt;1.5</td><td>—</td></tr>
+    <tr><td>Enoxaparin ขนาดต่ำ (ป้องกัน)</td><td><b>≥12 ชม.</b></td><td>≥4 ชม.หลังถอดสาย (≥12 ชม.หลังแทงเข็ม)</td></tr>
+    <tr><td>Enoxaparin ขนาดสูง (รักษา)</td><td><b>≥24 ชม.</b></td><td>≥24 ชม.และถอดสายก่อน</td></tr>
+    <tr><td>UFH IV</td><td>หยุด <b>4–6 ชม.</b> และ aPTT ปกติ</td><td>≥1 ชม.หลังแทงเข็ม</td></tr>
+    <tr><td>UFH SC 5,000 U วันละ 2–3 ครั้ง</td><td>4–6 ชม. (หรือ coag ปกติ)</td><td>—</td></tr>
+    <tr><td>Aspirin/NSAIDs เดี่ยว</td><td><b>ไม่ต้องหยุด</b></td><td>—</td></tr>
+    <tr><td>Clopidogrel · ticagrelor · prasugrel</td><td><b>5–7 วัน · 5 วัน · 7–10 วัน</b></td><td>หลังถอดสาย</td></tr>
+  </table></div>
+  <div class="box warn"><b>ตารางนี้นานกว่า PAUSE</b>PAUSE งด Xa inhibitor 2 วันก่อนหัตถการเลือดออกสูง (~60–68 ชม.) แต่ ASRA ต้องการ ≥72 ชม. · ถ้าวางแผน spinal/epidural ให้ใช้ <b>ASRA</b> · หลังผ่าตัดสังเกตขาอ่อนแรง/ชา ปัสสาวะไม่ออก ปวดหลังมาก → MRI ด่วน</div>
+</section>
+
+<section id="ap" class="col">
+  <div class="sec-num">06</div>
+  <h2>ยาต้านเกล็ดเลือดและ coronary stent</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ถ้าต้องหยุด หยุดก่อนผ่าตัด</th><th>เริ่มกลับ</th></tr>
+    <tr><td><b>Aspirin</b> (ป้องกันทุติยภูมิ/มี stent)</td><td><b>ต่อยา</b>เกือบทุกหัตถการ <span class="rec">ACCP conditional</span> · ยกเว้น closed-space (สมอง ไขสันหลัง ตาส่วนหลัง TURP) → หยุด <b>7 วัน</b></td><td>เมื่อห้ามเลือดได้ (≤24–48 ชม.)</td></tr>
+    <tr><td><b>Aspirin ป้องกันปฐมภูมิ</b></td><td>หยุด (ACC/AHA 2024) ยกเว้นผ่าตัดหลอดเลือดแดงคอ · POISE-2: aspirin ก่อนผ่าตัดไม่ลด MI แต่เพิ่มเลือดออก</td><td>ทบทวนว่าจำเป็นหรือไม่</td></tr>
+    <tr><td><b>Clopidogrel</b></td><td><b>5 วัน</b> <span class="rec s1">ESC I B</span></td><td>ภายใน 24 ชม. (ACCP) ถึง 48 ชม. (ESC) เมื่อห้ามเลือดได้</td></tr>
+    <tr><td><b>Ticagrelor</b></td><td><b>3–5 วัน</b> (ESC/ACCP) · ACC/AHA 2024: 3 วัน</td><td>เช่นเดียวกัน</td></tr>
+    <tr><td><b>Prasugrel</b></td><td><b>7 วัน</b> (ESC, ACC/AHA) · ACCP: 7–10 วัน</td><td>เช่นเดียวกัน</td></tr>
+  </table></div>
+  <h3>ผ่าตัดหลังใส่ stent: รอนานแค่ไหน</h3>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ESC 2022</th><th>ACC/AHA 2024</th></tr>
+    <tr><td>PCI แบบนัด (chronic coronary syndrome)</td><td>เลื่อนผ่าตัดนัดถึง <b>6 เดือน</b> <span class="rec s1">I A</span></td><td>รอ <b>≥6 เดือน</b> (reasonable)</td></tr>
+    <tr><td>PCI จาก ACS</td><td>เลื่อนถึง <b>12 เดือน</b> <span class="rec s1">I A</span></td><td>รอ <b>≥12 เดือน</b></td></tr>
+    <tr><td>ผ่าตัดที่รอนานไม่ได้ (time-sensitive เช่น มะเร็ง)</td><td>PCI นัด: ให้ DAPT ครบ <b>≥1 เดือน</b> <span class="rec s1">I B</span> · ACS: DAPT ≥3 เดือน <span class="rec">IIa C</span></td><td>DES: <b>≥3 เดือน</b> ถ้าการรอเสี่ยงกว่า</td></tr>
+    <tr><td>ใน 30 วันแรกหลัง stent</td><td colspan="2"><b>ห้ามผ่าตัดนัดที่ต้องหยุดยาต้านเกล็ดเลือด</b> (ACC/AHA: harm) · ถ้าต้องผ่าตัดด่วน ให้ DAPT ต่อถ้าเลือดออกรับได้</td></tr>
+    <tr><td>Balloon อย่างเดียว</td><td colspan="2">รอ ≥14 วัน (ACC/AHA)</td></tr>
+  </table></div>
+  <div class="box key"><b>หลักง่ายๆ</b>พ้นช่วงข้างบนแล้ว → <b>ต่อ aspirin หยุดเฉพาะ P2Y12</b> · ตัดสินร่วมกันระหว่างอายุรแพทย์โรคหัวใจ ศัลยแพทย์ และวิสัญญีแพทย์ <span class="rec s1">ESC I C</span> · การ "bridge" ด้วยยาฉีดต้านเกล็ดเลือด/heparin ไม่ได้ช่วยลด stent thrombosis (heparin ไม่ใช่ยาต้านเกล็ดเลือด) · ดูหน้า <a href="../acs/index.html">ACS</a></div>
+</section>
+
+<section id="minor" class="col">
+  <div class="sec-num">07</div>
+  <h2>หัตถการเล็กที่พบบ่อย</h2>
+  <div class="tbl"><table>
+    <tr><th>หัตถการ</th><th>Warfarin</th><th>DOAC</th><th>ยาต้านเกล็ดเลือด</th></tr>
+    <tr><td><b>ถอนฟัน 1–3 ซี่/ขูดหินปูน</b></td><td>ต่อยา ตรวจ INR ใน 72 ชม.ก่อนทำ (อยู่ในเป้า) · ห้ามเลือดเฉพาะที่ + <b>tranexamic acid บ้วนปาก</b> <span class="tag add">เสริม</span> · ACCP: ต่อยา + prohemostatic หรือหยุด 2–3 วัน</td><td>ต่อยา หรือ<b>งดมื้อเช้า</b>วันทำ (apixaban/dabigatran) · ยาวันละครั้งเลื่อนไปเย็นหลังทำ</td><td>ต่อทุกตัว</td></tr>
+    <tr><td><b>ต้อกระจก</b> (ยาชาหยอด)</td><td>ต่อยา</td><td>ต่อยา</td><td>ต่อ · ระวังการฉีดยาชาหลังลูกตา (retrobulbar)</td></tr>
+    <tr><td><b>ผ่าตัดผิวหนังเล็ก</b></td><td>ต่อยา</td><td>ต่อยา/งด 1 มื้อ</td><td>ต่อ</td></tr>
+    <tr><td><b>Pacemaker/ICD</b></td><td><b>ต่อ warfarin</b> ไม่ bridge <span class="rec s1">ACCP strong</span> (BRUISE CONTROL: hematoma 3.5% vs 16% เมื่อ bridge)</td><td>ต่อ หรือหยุดสั้น — BRUISE CONTROL-2 ผลไม่ต่างกัน</td><td>DAPT เพิ่ม hematoma · พิจารณาหยุด P2Y12 ถ้าไม่ใช่ stent ใหม่</td></tr>
+    <tr><td><b>ส่องกล้องวินิจฉัย ± biopsy</b></td><td>ต่อยา (INR ไม่เกินเป้า)</td><td>งดมื้อเช้าวันทำ</td><td>ต่อ</td></tr>
+    <tr><td><b>ส่องกล้องเสี่ยงสูง</b> (ตัดติ่งเนื้อ &gt;1 cm, EMR/ESD, sphincterotomy, PEG, EUS-FNA)</td><td>หยุด 5 วัน · bridge เฉพาะเสี่ยงสูง</td><td>ตาม PAUSE (งด 1–2 วัน)</td><td>ต่อ aspirin · หยุด P2Y12 5–7 วัน ถ้าไม่ใช่ stent ใหม่</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ส่องกล้องตาม BSG/ESGE 2021 <span class="tag add">เสริม</span> · หลังตัดติ่งเนื้อใหญ่ อาจเลื่อนเริ่ม DOAC อีก 1–2 วัน · ดูหน้า <a href="../ugib/index.html">UGIB</a> และ <a href="../lgib/index.html">LGIB</a></p>
+</section>
+
+<section id="inr" class="col">
+  <div class="sec-num">08</div>
+  <h2>INR สูงจาก warfarin</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>แนวทางไทย 2553 / ACCP 2012</th></tr>
+    <tr><td>INR เกินเป้า แต่ &lt;5 ไม่มีเลือดออก</td><td>งด 1 มื้อ หรือลดขนาดต่อสัปดาห์ ~10% · ตรวจซ้ำ</td></tr>
+    <tr><td><b>INR 5–9</b> ไม่มีเลือดออก</td><td><b>งด 1–2 มื้อ</b> ตรวจ INR ทุก 24–48 ชม. เริ่มใหม่ลดขนาด ~10–20% · <b>vitamin K1 1–2.5 mg กิน</b> เฉพาะผู้เสี่ยงเลือดออกสูง (ACCP 2012: INR 4.5–10 ไม่ให้ vitamin K routine)</td></tr>
+    <tr><td><b>INR &gt;9</b> (ACCP: &gt;10) ไม่มีเลือดออก</td><td>งดยา + <b>vitamin K1 2.5–5 mg กิน</b> · INR ลดใน 24–48 ชม. · ซ้ำ 1–2 mg ได้</td></tr>
+    <tr><td>เลือดออกไม่รุนแรง</td><td>งดยา ห้ามเลือดเฉพาะที่ · vitamin K 2–5 mg กิน/IV (ACC 2020) · หาสาเหตุ</td></tr>
+    <tr><td><b>เลือดออกรุนแรง/คุกคามชีวิต</b> (ทุกค่า INR)</td><td><b>Vitamin K1 5–10 mg IV ช้าๆ</b> (ไทย: 10 mg) + <b>4F-PCC</b> ตาม INR (ด้านล่าง) · ไม่มี PCC → <b>FFP 10–15 mL/kg</b> · ซ้ำ vitamin K ทุก 12 ชม.ได้</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>INR (เลือดออกรุนแรง)</th><th>4F-PCC (ACC 2020)</th><th>สูงสุด</th></tr>
+    <tr><td>2 – &lt;4</td><td><b>25 IU/kg</b></td><td>2,500 IU</td></tr>
+    <tr><td>4 – 6</td><td><b>35 IU/kg</b></td><td>3,500 IU</td></tr>
+    <tr><td>&gt;6</td><td><b>50 IU/kg</b></td><td>5,000 IU</td></tr>
+    <tr><td colspan="3">ขนาดคงที่ทางเลือก: <b>1,000 IU</b> (เลือดออกรุนแรงที่ไม่ใช่สมอง) · <b>1,500 IU</b> (เลือดออกในสมอง) · ตรวจ INR 15–30 นาทีหลังให้ · ขนาดสูงสุดตามฉลาก Kcentra (คิดน้ำหนักไม่เกิน 100 kg)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Vitamin K IV</b>: เจือจางใน NSS 50 mL หยดช้า ≥20 นาที (anaphylaxis พบน้อย) · <b>ไม่ฉีด SC</b> (ดูดซึมไม่แน่นอน) · กินออกฤทธิ์ใน ~24 ชม. · IV ~6–12 ชม. · PCC ออกฤทธิ์ในไม่กี่นาที แต่หมดฤทธิ์ใน 6–8 ชม. → <b>ต้องให้ vitamin K ร่วมเสมอ</b></li>
+    <li><b>ลิ้นหัวใจกล</b>: ถ้าไม่ได้เลือดออกรุนแรง เลี่ยง vitamin K ขนาดสูง (ดื้อ warfarin นานหลายวัน) — ใช้ขนาดต่ำ</li>
+    <li><b>FFP</b>: ปริมาณมาก (70 kg ≈ 700–1,000 mL) เสี่ยงน้ำเกิน/TACO · แก้ INR ได้ไม่ต่ำกว่า ~1.5 · ช้ากว่า PCC มาก</li>
+    <li>หาสาเหตุ INR สูงทุกครั้ง: ยาตีกัน (antibiotic, amiodarone, fluconazole, metronidazole) กินน้อย ท้องเสีย ตับ หัวใจวาย กินยาผิด</li>
+  </ul>
+</section>
+
+<section id="rev" class="col">
+  <div class="sec-num">09</div>
+  <h2>Reversal: เลือดออกรุนแรงหรือผ่าตัดด่วน</h2>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Reversal</th></tr>
+    <tr><td><b>Warfarin</b></td><td>ผ่าตัดใน 24 ชม.: vitamin K1 <b>2.5–5 mg กิน/IV</b> · ผ่าตัดใน 6–8 ชม./เลือดออกรุนแรง: <b>4F-PCC ตาม INR + vitamin K IV</b></td></tr>
+    <tr><td><b>Dabigatran</b></td><td><b>Idarucizumab 5 g IV</b> (2 × 2.5 g ติดกัน) — ผ่าตัดด่วนที่เลือดออกปานกลาง–สูง (ESC <span class="rec">IIa B</span>) หรือเลือดออกคุกคามชีวิต · ไม่มี → <b>PCC 50 IU/kg</b> (หรือ aPCC 50 IU/kg) ± <b>ฟอกเลือด</b> (dabigatran ขจัดด้วย hemodialysis ได้)</td></tr>
+    <tr><td><b>Apixaban · rivaroxaban · edoxaban</b></td><td>Andexanet alfa (<b>ไม่มีในไทย</b>) → <b>4F-PCC 50 IU/kg</b> <span class="rec">ESC IIa C</span> · activated charcoal ถ้ากินภายใน 2–4 ชม.</td></tr>
+    <tr><td><b>UFH</b></td><td>Protamine <b>1 mg ต่อ heparin 100 U</b> ที่ได้ใน 2–3 ชม.ก่อน · สูงสุด 50 mg ต่อครั้ง</td></tr>
+    <tr><td><b>Enoxaparin</b></td><td>ภายใน 8 ชม.: protamine 1 mg ต่อ enoxaparin 1 mg · 8–12 ชม.: 0.5 mg ต่อ 1 mg · แก้ได้บางส่วน</td></tr>
+    <tr><td><b>Aspirin/P2Y12</b></td><td>ไม่มียาต้านฤทธิ์ · ผ่าตัดด่วนที่เลือดออกมาก → ให้เกล็ดเลือด (ได้ผลน้อยกับ ticagrelor ที่ยังอยู่ในเลือด) · desmopressin ในบางกรณี <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <div class="box warn"><b>Andexanet alfa ถอนออกจากตลาดสหรัฐฯ (ธันวาคม 2568)</b>FDA พบลิ่มเลือดรุนแรงเพิ่มขึ้น (การศึกษาแบบสุ่มใน ICH — ANNEXA-I: หยุดเลือดได้ดีกว่า แต่ลิ่มเลือดมากกว่า; FDA รายงาน thrombosis 14.6% vs 6.9%) · ในไทยไม่มีจำหน่าย → ใช้ <b>4F-PCC 50 IU/kg</b> เป็นหลัก</div>
+  <div class="box key"><b>DOAC + ผ่าตัดด่วน (Douketis &amp; Spyropoulos, JAMA 2024)</b>ผ่าตัด &lt;6 ชม. และกินยาครั้งสุดท้าย <b>&lt;48 ชม.</b> (หรือไม่ทราบ) → พิจารณา reversal · ผ่าตัดได้ใน 6–24 ชม. → รอให้ยาหมดฤทธิ์ถ้าทำได้ · รอได้ 1–2 วัน → เลื่อนให้ครบ <b>≥48 ชม.</b>หลังมื้อสุดท้าย (ไตเสื่อมนานกว่า) · ระดับยา &lt;50 ng/mL (ถ้าตรวจได้) ผ่าตัดได้ · ดูหน้า <a href="../stroke-er/index.html">Stroke ER</a> สำหรับ ICH และ <a href="../thrombocytopenia/index.html#rev">Thrombocytopenia</a></div>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">10</div>
+  <h2>บริบทไทย <span class="tag th">ไทย</span></h2>
+  <div class="tbl"><table>
+    <tr><th>หัวข้อ</th><th>ในไทย</th></tr>
+    <tr><td>แนวทาง warfarin ไทย (2553)</td><td>สมาคมแพทย์โรคหัวใจฯ: หยุด warfarin 4–5 วัน (เป้า INR &lt;1.5) · เริ่มคืน 12–24 ชม. · ถอนฟัน/ผิวหนัง/ต้อกระจกไม่ต้องหยุด · <b>แบ่ง AF ตาม CHADS₂ และแนะนำ bridging ในความเสี่ยงปานกลาง</b> — ออกก่อน BRIDGE (2015)</td></tr>
+    <tr><td>แนวทาง VTE ไทย 2565</td><td>ไม่มีหัวข้อช่วงหัตถการ → หน้านี้ใช้ ACCP 2022</td></tr>
+    <tr><td>Vitamin K1</td><td>Phytomenadione ฉีด 10 mg/mL มีทั่วไป · <b>ยาเม็ดหายาก</b> — หลาย รพ.ให้ <b>ยาฉีดชนิด mixed micelle (Konakion MM) ทางปาก</b> แทน · ตรวจกับเภสัชกร รพ.</td></tr>
+    <tr><td>PCC</td><td>มี 4F-PCC (เช่น Prothromplex 600 IU/ขวด) และ 3F-PCC (เช่น Profilnine 500 IU/ขวด) เฉพาะบาง รพ. · 3F-PCC มี factor VII น้อย แก้ warfarin ได้ไม่ครบ · รพ.ชุมชนส่วนใหญ่มีแค่ FFP</td></tr>
+    <tr><td>Idarucizumab</td><td>ขึ้นทะเบียนในไทย (ยาต้านฤทธิ์ DOAC ชนิดจำเพาะตัวเดียวที่ขึ้นทะเบียน ณ 2564) · มีเฉพาะ รพ.ใหญ่บางแห่ง</td></tr>
+    <tr><td>Andexanet alfa</td><td>ไม่มีในไทย</td></tr>
+  </table></div>
+  <div class="box note"><b>ไทยกับต่างประเทศขัดกันอย่างไร</b>แนวทางไทย 2553 ยังให้ bridging ใน AF ความเสี่ยงปานกลาง และใช้ CHADS₂ · <b>หน้านี้ยึด ACCP 2022 และ ESC 2022</b> (AF ไม่ bridge) เพราะมี RCT ชัดเจน (BRIDGE) · ส่วนการแก้ INR สูงไม่มีเลือดออก ไทยและ ACCP ใกล้เคียงกัน (ไทยใช้จุดตัด INR 9 ส่วน ACCP 2012 ใช้ 10)</div>
+  <p>ส่งต่อ/ปรึกษา: ลิ้นหัวใจกลที่ต้อง bridging · stent ใหม่ที่ต้องผ่าตัด · ผ่าตัดด่วนในผู้กิน DOAC ที่ รพ.ไม่มี PCC · เลือดออกรุนแรงที่ต้องใช้ PCC · ไตเสื่อมมาก (ดูหน้า <a href="../ckd/index.html">CKD</a>)</p>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยกินยาต้านลิ่มเลือด ต้องทำหัตถการ</b>ยาอะไร · ข้อบ่งชี้ · CrCl · stent เมื่อไร · หัตถการอะไร</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ด่วน หรือ นัด?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ด่วน/เลือดออก</span><div class="node red"><b>Reversal</b>warfarin: vitamin K ± 4F-PCC · dabigatran: idarucizumab · Xa: 4F-PCC 50 IU/kg</div></div>
+        <div class="arm"><span class="lab">นัด</span><div class="node q"><b>เลือดออกน้อยมาก?</b>ฟัน ตา ผิวหนัง pacemaker</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Warfarin</span><div class="node dx hypo"><b>หยุด 5 วัน · INR วัน −1</b>bridge เฉพาะลิ้นกล/เสี่ยงสูง · AF ไม่ bridge</div></div>
+        <div class="arm"><span class="lab">DOAC</span><div class="node dx eu"><b>PAUSE</b>งด 1 วัน (ต่ำ) / 2 วัน (สูง) · dabigatran CrCl &lt;50: 2/4 · spinal: ≥72 ชม.</div></div>
+        <div class="arm"><span class="lab">ยาต้านเกล็ดเลือด</span><div class="node dx green"><b>ต่อ aspirin · หยุด P2Y12</b>clopidogrel 5 · ticagrelor 3–5 · prasugrel 7 วัน · stent ใหม่ → เลื่อนผ่าตัด</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx grey"><b>หลังผ่าตัด</b>warfarin 12–24 ชม. · DOAC 24 ชม. (ต่ำ) / 48–72 ชม. (สูง) · P2Y12 ภายใน 24–48 ชม.</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · วัน 0 = วันผ่าตัด · CrCl คำนวณแบบ Cockcroft-Gault ด้วยน้ำหนักจริง</p>
+  </div>
+
+  <div class="tool plan" id="tDoac" style="margin-top:12px">
+    <h3>1. วางแผนหยุด–เริ่ม DOAC</h3>
+    <div class="fields">
+      <label class="f">ยา<select id="dDrug"><option value="api">Apixaban</option><option value="riv">Rivaroxaban</option><option value="edo">Edoxaban</option><option value="dab">Dabigatran</option></select></label>
+      <label class="f">ความเสี่ยงเลือดออก<select id="dRisk"><option value="min">น้อยมาก (ฟัน ตา ผิวหนัง pacemaker)</option><option value="low" selected>ต่ำ–ปานกลาง</option><option value="high">สูง</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="dAge" value="74"></label>
+      <label class="f">เพศ<select id="dSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="dWt" value="62"></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" step="0.01" id="dCr" value="1.1"></label>
+      <label class="f">วันผ่าตัด<input type="date" id="dDate"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dNeur"> จะทำ spinal/epidural หรือ deep block</label>
+      <label><input type="checkbox" id="dLow"> ใช้ขนาดต่ำ (rivaroxaban 10 mg / apixaban 2.5 mg ป้องกัน)</label>
+      <label><input type="checkbox" id="dInt"> ใช้ยายับยั้ง CYP3A4/P-gp แรง หรือตับเสื่อม</label>
+    </div>
+    <div class="out" id="doacOut"></div>
+  </div>
+
+  <div class="tool" id="tWarf" style="margin-top:12px">
+    <h3>2. แผน warfarin และ bridging</h3>
+    <div class="fields">
+      <label class="f">ข้อบ่งชี้<select id="wInd"><option value="af">AF</option><option value="mvm">ลิ้นกล mitral</option><option value="mvo">ลิ้นกล aortic รุ่นเก่า (caged-ball/tilting)</option><option value="mvr">ลิ้นกล aortic bileaflet + ปัจจัยเสี่ยง</option><option value="mva">ลิ้นกล aortic bileaflet ไม่มีปัจจัยเสี่ยง</option><option value="vte">VTE</option></select></label>
+      <label class="f">VTE ครั้งล่าสุด<select id="wVt"><option value="gt12">&gt;12 เดือน</option><option value="m3">3–12 เดือน</option><option value="m1">1–3 เดือน</option><option value="lt1">&lt;1 เดือน</option></select></label>
+      <label class="f">ความเสี่ยงเลือดออก<select id="wRisk"><option value="min">น้อยมาก</option><option value="low" selected>ต่ำ–ปานกลาง</option><option value="high">สูง</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="wAge" value="68"></label>
+      <label class="f">เพศ<select id="wSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="wWt" value="58"></label>
+      <label class="f">Creatinine (mg/dL)<input type="number" step="0.01" id="wCr" value="1.0"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="wStroke"> Stroke/TIA ใน 3 เดือน</label>
+      <label><input type="checkbox" id="wVhr"> AF: CHA₂DS₂-VASc ≥7 หรือ rheumatic mitral stenosis</label>
+      <label><input type="checkbox" id="wThr"> Thrombophilia รุนแรง/APS</label>
+      <label><input type="checkbox" id="wNeur"> จะทำ spinal/epidural</label>
+    </div>
+    <div class="out" id="warfOut"></div>
+  </div>
+
+  <div class="tool" id="tInr" style="margin-top:12px">
+    <h3>3. INR สูง / เลือดออก / ผ่าตัดด่วน</h3>
+    <div class="fields">
+      <label class="f">ยา<select id="iDrug"><option value="war">Warfarin</option><option value="dab">Dabigatran</option><option value="xa">Apixaban / rivaroxaban / edoxaban</option></select></label>
+      <label class="f">สถานการณ์<select id="iSit"><option value="none">INR สูง ไม่มีเลือดออก</option><option value="minor">เลือดออกไม่รุนแรง</option><option value="major">เลือดออกรุนแรง/คุกคามชีวิต</option><option value="ich">เลือดออกในสมอง</option><option value="urg24">ผ่าตัดด่วนภายใน 24 ชม.</option><option value="emer">ผ่าตัดฉุกเฉิน &lt;6–8 ชม.</option></select></label>
+      <label class="f">INR<input type="number" step="0.1" id="iInr" value="7.5"></label>
+      <label class="f">เป้า INR สูงสุด<select id="iTgt"><option value="3">3.0 (เป้า 2–3)</option><option value="3.5">3.5 (เป้า 2.5–3.5)</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="iWt" value="60"></label>
+      <label class="f">ชม.ตั้งแต่ DOAC มื้อสุดท้าย<input type="number" id="iHr" placeholder="เฉพาะ DOAC"></label>
+      <label class="f">PCC ที่มี<select id="iPcc"><option value="4f">4F-PCC</option><option value="3f">3F-PCC เท่านั้น</option><option value="no">ไม่มี PCC (มี FFP)</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="iBr"> เสี่ยงเลือดออกสูง (สูงอายุ เคยเลือดออก เกล็ดเลือดต่ำ)</label>
+      <label><input type="checkbox" id="iMv"> ลิ้นหัวใจกล</label>
+      <label><input type="checkbox" id="iIda"> มี idarucizumab</label>
+    </div>
+    <div class="out" id="inrOut"></div>
+  </div>
+
+  <div class="tool" id="tAp" style="margin-top:12px">
+    <h3>4. ยาต้านเกล็ดเลือด / ระยะเวลาหลัง stent</h3>
+    <div class="fields">
+      <label class="f">ยาที่ใช้<select id="aDrug"><option value="asa1">Aspirin ป้องกันปฐมภูมิ</option><option value="asa2">Aspirin ป้องกันทุติยภูมิ</option><option value="clo" selected>Aspirin + clopidogrel</option><option value="tic">Aspirin + ticagrelor</option><option value="pra">Aspirin + prasugrel</option><option value="cloM">Clopidogrel เดี่ยว</option></select></label>
+      <label class="f">Stent/PCI<select id="aPci"><option value="none">ไม่มี/นานมาก</option><option value="ccs" selected>PCI แบบนัด (CCS)</option><option value="acs">PCI จาก ACS</option><option value="poba">Balloon อย่างเดียว</option></select></label>
+      <label class="f">กี่เดือนหลัง PCI<input type="number" step="0.5" id="aMo" value="8"></label>
+      <label class="f">ความเร่งด่วน<select id="aUrg"><option value="el">ผ่าตัดนัด เลื่อนได้</option><option value="ts">รอนานไม่ได้ (เช่น มะเร็ง)</option><option value="em">ฉุกเฉิน</option></select></label>
+      <label class="f">ความเสี่ยงเลือดออก<select id="aRisk"><option value="min">น้อยมาก</option><option value="low">ต่ำ–ปานกลาง</option><option value="high" selected>สูง</option><option value="cs">Closed-space (สมอง ไขสันหลัง ตาส่วนหลัง TURP)</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aNeur"> จะทำ spinal/epidural</label>
+      <label><input type="checkbox" id="aCar"> ผ่าตัดหลอดเลือดแดงคอ (carotid)</label>
+    </div>
+    <div class="out" id="apOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ถามก่อนเสมอ: หัตถการเลือดออกมากแค่ไหน</b> · น้อยมาก = ไม่ต้องหยุดยา</div></div>
+    <div class="pearl"><div><b>Warfarin: มื้อสุดท้ายวัน −6 · INR วัน −1 · &gt;1.5 → vitamin K 1–2 mg กิน</b></div></div>
+    <div class="pearl"><div><b>AF ไม่ bridge</b> (BRIDGE: เลือดออก 3.2% vs 1.3%)</div></div>
+    <div class="pearl"><div><b>Bridge เฉพาะลิ้นกล mitral/รุ่นเก่า, VTE &lt;3 เดือน, thrombophilia รุนแรง</b></div></div>
+    <div class="pearl"><div><b>Enoxaparin เข็มสุดท้ายเช้าวัน −1 (~24 ชม.) ครึ่งขนาดต่อวัน</b></div></div>
+    <div class="pearl"><div><b>DOAC: งด 1 วัน (ต่ำ) / 2 วัน (สูง)</b> · dabigatran CrCl &lt;50: 2 / 4 วัน · ไม่ bridge</div></div>
+    <div class="pearl"><div><b>Spinal/epidural: Xa inhibitor ≥72 ชม.</b> · นานกว่าตาราง PAUSE</div></div>
+    <div class="pearl"><div><b>Aspirin ทุติยภูมิ: ต่อยา</b> ยกเว้นสมอง ไขสันหลัง ตาส่วนหลัง TURP</div></div>
+    <div class="pearl"><div><b>P2Y12: clopidogrel 5 · ticagrelor 3–5 · prasugrel 7 วัน</b></div></div>
+    <div class="pearl"><div><b>Stent: ผ่าตัดนัดรอ 6 เดือน (PCI นัด) / 12 เดือน (ACS)</b> · 30 วันแรกห้ามหยุดยา</div></div>
+    <div class="pearl"><div><b>Pacemaker: ต่อ warfarin</b> ดีกว่า bridge (hematoma 3.5% vs 16%)</div></div>
+    <div class="pearl"><div><b>เลือดออกรุนแรงจาก warfarin: vitamin K 10 mg IV + 4F-PCC</b> · ไม่มี PCC → FFP 10–15 mL/kg</div></div>
+    <div class="pearl"><div><b>Xa inhibitor เลือดออกรุนแรงในไทย: 4F-PCC 50 IU/kg</b> (ไม่มี andexanet)</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../vte/index.html">VTE →</a> · <a href="../af/index.html">AF →</a> · <a href="../acs/index.html">ACS →</a> · <a href="../stroke-er/index.html">Stroke ER →</a> · <a href="../ugib/index.html">UGIB →</a> · <a href="../lgib/index.html">LGIB →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../thrombocytopenia/index.html">Thrombocytopenia →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Douketis JD, Spyropoulos AC, Murad MH, et al. Perioperative management of antithrombotic therapy: an American College of Chest Physicians clinical practice guideline. Chest 2022;162:e207–43 · 2) Douketis JD, Spyropoulos AC, Duncan J, et al. Perioperative management of patients with atrial fibrillation receiving a direct oral anticoagulant (PAUSE). JAMA Intern Med 2019;179:1469–78 · 3) Douketis JD, Spyropoulos AC, Kaatz S, et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). N Engl J Med 2015;373:823–33 · 4) Douketis JD, Spyropoulos AC. Perioperative management of patients taking direct oral anticoagulants: a review. JAMA 2024;332:825–34 · 5) Thompson A, Fleischmann KE, Smilowitz NR, et al. 2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM guideline for perioperative cardiovascular management for noncardiac surgery. Circulation 2024;150:e351–442 (ยืนยันซ้ำ 2026) · 6) Halvorsen S, Mehilli J, Cassese S, et al. 2022 ESC guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery. Eur Heart J 2022;43:3826–924 · 7) Kopp SL, Vandermeulen E, McBane RD, et al. Regional anesthesia in the patient receiving antithrombotic or thrombolytic therapy: ASRA evidence-based guidelines (fifth edition). Reg Anesth Pain Med 2026;51:1233–61 (online 2025; doi:10.1136/rapm-2024-105766) · 8) Tomaselli GF, Mahaffey KW, Cuker A, et al. 2020 ACC expert consensus decision pathway on management of bleeding in patients on oral anticoagulants. J Am Coll Cardiol 2020;76:594–622 · 9) Doherty JU, Gluckman TJ, Hucker WJ, et al. 2017 ACC expert consensus decision pathway for periprocedural management of anticoagulation in patients with nonvalvular atrial fibrillation. J Am Coll Cardiol 2017;69:871–98 · 10) Steffel J, Collins R, Antz M, et al. 2021 EHRA practical guide on the use of non-vitamin K antagonist oral anticoagulants in patients with atrial fibrillation. Europace 2021;23:1612–76 · 11) Holbrook A, Schulman S, Witt DM, et al. Evidence-based management of anticoagulant therapy: antithrombotic therapy and prevention of thrombosis, 9th ed: ACCP guidelines. Chest 2012;141(2 Suppl):e152S–84S · 12) Birnie DH, Healey JS, Wells GA, et al. Pacemaker or defibrillator surgery without interruption of anticoagulation (BRUISE CONTROL). N Engl J Med 2013;368:2084–93 · 13) Devereaux PJ, Mrkobrada M, Sessler DI, et al. Aspirin in patients undergoing noncardiac surgery (POISE-2). N Engl J Med 2014;370:1494–503 · 14) Connolly SJ, Sharma M, Cohen AT, et al. Andexanet for factor Xa inhibitor–associated acute intracerebral hemorrhage (ANNEXA-I). N Engl J Med 2024;390:1745–55 · 15) Pollack CV Jr, Reilly PA, van Ryn J, et al. Idarucizumab for dabigatran reversal — full cohort analysis (RE-VERSE AD). N Engl J Med 2017;377:431–41 · 16) Veitch AM, Radaelli F, Alikhan R, et al. Endoscopy in patients on antiplatelet or anticoagulant therapy: BSG and ESGE guideline update. Gut 2021;70:1611–28 · 17) สมาคมแพทย์โรคหัวใจแห่งประเทศไทย ในพระบรมราชูปถัมภ์. แนวทางการรักษาผู้ป่วยด้วยยาต้านการแข็งตัวของเลือดชนิดรับประทาน (warfarin) พ.ศ. 2553 · 18) Thammatinno V. ยาต้านพิษจำเพาะสำหรับยาต้านการแข็งตัวของเลือดชนิดรับประทานที่ออกฤทธิ์โดยตรง. Thai Bull Pharm Sci 2021;16(2):61–70 · 19) US FDA. Update on safety of Andexxa (andexanet alfa) — market withdrawal, December 2025<br>
+  <span class="tag add">เสริม</span> = เนื้อหามาตรฐานที่ไม่ได้มาจากแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · ตาราง ASRA 2025 สรุปจากแหล่งทุติยภูมิ ควรตรวจกับฉบับเต็มและวิสัญญีแพทย์ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','pacView');
+mountWalker({
+ start:{q:'สถานการณ์ไหน?',o:[['ผ่าตัด/หัตถการนัด','el'],['ผ่าตัดด่วน หรือมีเลือดออก','urg'],['INR สูงจาก warfarin ไม่มีเลือดออก','inr']]},
+ el:{q:'หัตถการเลือดออกน้อยมาก?',h:'ถอนฟัน/ขูดหินปูน ต้อกระจก ผิวหนังเล็ก ใส่ pacemaker/ICD',o:[['ใช่','minL'],['ไม่ (ต่ำ–ปานกลาง หรือ สูง)','drug']]},
+ minL:{leaf:true,cls:'ok',t:'ต่อยาได้',b:'<b>Warfarin</b>: ต่อยา ตรวจ INR ให้อยู่ในเป้า · ถอนฟันใช้ห้ามเลือดเฉพาะที่ + tranexamic acid บ้วนปาก · pacemaker: ต่อ warfarin ไม่ bridge · <b>DOAC</b>: ต่อ หรืองดมื้อเช้าวันทำ (ยาวันละครั้งเลื่อนไปเย็น) · <b>ยาต้านเกล็ดเลือด</b>: ต่อทุกตัว'},
+ drug:{q:'ผู้ป่วยกินยาอะไร?',o:[['Warfarin','wr'],['DOAC','dr'],['ยาต้านเกล็ดเลือด','ar']]},
+ wr:{q:'ความเสี่ยงลิ่มเลือดสูง?',h:'ลิ้นกล mitral/aortic รุ่นเก่า · stroke/TIA ใน 3 เดือน · VTE ใน 3 เดือน · thrombophilia รุนแรง/APS',o:[['ใช่','wBr'],['ไม่ (รวม AF ทั่วไป, VTE เกิน 3 เดือน)','wNo']]},
+ wBr:{leaf:true,cls:'danger',t:'หยุด warfarin + bridging',b:'Warfarin มื้อสุดท้ายวัน −6 · <b>enoxaparin 1 mg/kg SC ทุก 12 ชม.</b> เริ่มวัน −3 (CrCl &lt;30: วันละครั้ง) · วัน −1 ให้เฉพาะมื้อเช้า (~24 ชม.ก่อนผ่าตัด) · INR วัน −1 &gt;1.5 → vitamin K 1–2 mg กิน · หลังผ่าตัด warfarin ขนาดเดิม 12–24 ชม. · enoxaparin ขนาดรักษา 24 ชม. (ต่ำ) / 48–72 ชม. (สูง) จน INR ถึงเป้า · VTE/stroke ใน 3 เดือน → เลื่อนผ่าตัดนัดก่อน'},
+ wNo:{leaf:true,cls:'ok',t:'หยุด warfarin ไม่ bridge',b:'มื้อสุดท้ายวัน −6 · INR วัน −1 (&gt;1.5 → vitamin K 1–2 mg กิน) · เริ่มขนาดเดิม 12–24 ชม.หลังผ่าตัด · <b>AF ไม่ bridge</b> (BRIDGE: เลือดออกมากขึ้น ไม่ลด stroke) · VTE prophylaxis หลังผ่าตัดตามปกติ'},
+ dr:{q:'DOAC ตัวไหน และไต?',o:[['Apixaban / rivaroxaban / edoxaban','dX'],['Dabigatran CrCl ≥50','dD1'],['Dabigatran CrCl 30–49','dD2']]},
+ dX:{leaf:true,cls:'ok',t:'Xa inhibitor (PAUSE)',b:'เลือดออกต่ำ–ปานกลาง: <b>งด 1 วัน</b> (มื้อสุดท้ายวัน −2) · สูง: <b>งด 2 วัน</b> (มื้อสุดท้ายวัน −3) · spinal/epidural: <b>≥72 ชม.</b> · เริ่มกลับ 24 ชม. (ต่ำ) / 48–72 ชม. (สูง) · ไม่ bridge · CrCl 15–29 ข้อมูลน้อย พิจารณาหยุดนานขึ้น'},
+ dD1:{leaf:true,cls:'ok',t:'Dabigatran CrCl ≥50',b:'ต่ำ–ปานกลาง: <b>งด 1 วัน</b> · สูง: <b>งด 2 วัน</b> · spinal/epidural: ≥72 ชม. · เริ่มกลับ 24 / 48–72 ชม. · ไม่ bridge'},
+ dD2:{leaf:true,cls:'warn',t:'Dabigatran CrCl 30–49',b:'ต่ำ–ปานกลาง: <b>งด 2 วัน</b> · สูง: <b>งด 4 วัน</b> · spinal/epidural: <b>≥120 ชม.</b> · ไตขับยาช้า · CrCl &lt;30 ห้ามใช้ dabigatran'},
+ ar:{q:'ใส่ stent เมื่อไร?',o:[['PCI นัด &lt;6 เดือน หรือ ACS &lt;12 เดือน','aRec'],['พ้นช่วงนั้น หรือไม่มี stent','aOld']]},
+ aRec:{leaf:true,cls:'warn',t:'Stent ยังใหม่',b:'ผ่าตัดนัด → <b>เลื่อน</b>ให้ครบ 6 เดือน (PCI นัด) / 12 เดือน (ACS) · ผ่าตัดที่รอไม่ได้: PCI นัด DAPT ≥1 เดือน, ACS ≥3 เดือน (ESC) · <b>30 วันแรกห้ามหยุดยาต้านเกล็ดเลือด</b> · ตัดสินร่วมกับอายุรแพทย์โรคหัวใจ'},
+ aOld:{leaf:true,cls:'ok',t:'ต่อ aspirin หยุด P2Y12',b:'Aspirin ทุติยภูมิ: ต่อ (ยกเว้นสมอง ไขสันหลัง ตาส่วนหลัง TURP → หยุด 7 วัน) · aspirin ปฐมภูมิ: หยุด · <b>clopidogrel 5 · ticagrelor 3–5 · prasugrel 7 วัน</b> · เริ่มกลับภายใน 24–48 ชม.เมื่อห้ามเลือดได้'},
+ urg:{q:'ยาอะไร?',o:[['Warfarin','urgW'],['Dabigatran','urgD'],['Apixaban / rivaroxaban / edoxaban','urgX'],['ยาต้านเกล็ดเลือด','urgA']]},
+ urgW:{leaf:true,cls:'danger',t:'Warfarin: reversal',b:'ผ่าตัดใน 24 ชม.: vitamin K 2.5–5 mg กิน/IV · ผ่าตัดใน 6–8 ชม. หรือเลือดออกรุนแรง: <b>vitamin K 5–10 mg IV + 4F-PCC</b> 25/35/50 IU/kg ตาม INR 2–&lt;4 / 4–6 / &gt;6 · ไม่มี PCC → <b>FFP 10–15 mL/kg</b>'},
+ urgD:{leaf:true,cls:'danger',t:'Dabigatran: reversal',b:'<b>Idarucizumab 5 g IV</b> · ไม่มี → PCC 50 IU/kg (หรือ aPCC) + พิจารณาฟอกเลือด · activated charcoal ถ้ากินภายใน 2–4 ชม. · รอได้ → เลื่อนให้ ≥48 ชม.หลังมื้อสุดท้าย (ไตเสื่อมนานกว่า)'},
+ urgX:{leaf:true,cls:'danger',t:'Xa inhibitor: reversal',b:'ในไทยไม่มี andexanet → <b>4F-PCC 50 IU/kg</b> สำหรับเลือดออกคุกคามชีวิต/ผ่าตัดฉุกเฉินที่กินยา &lt;48 ชม. · charcoal ถ้ากินภายใน 2–4 ชม. · รอได้ → เลื่อนให้ ≥48 ชม.'},
+ urgA:{leaf:true,cls:'warn',t:'ยาต้านเกล็ดเลือด',b:'ไม่มียาต้านฤทธิ์ · ผ่าตัดฉุกเฉินได้เลย ต่อ aspirin ถ้าทำได้ · เลือดออกมาก → ให้เกล็ดเลือด (ได้ผลน้อยกับ ticagrelor) · stent ใหม่ → ปรึกษาอายุรแพทย์โรคหัวใจทันที'},
+ inr:{q:'INR เท่าไร?',o:[['เกินเป้า แต่ &lt;5','i1'],['5–9','i2'],['&gt;9','i3']]},
+ i1:{leaf:true,cls:'ok',t:'INR เกินเป้าเล็กน้อย',b:'งด 1 มื้อ หรือลดขนาดต่อสัปดาห์ ~10% · ไม่ต้องให้ vitamin K · ตรวจซ้ำ · หาสาเหตุ (ยาตีกัน กินน้อย ท้องเสีย)'},
+ i2:{leaf:true,cls:'warn',t:'INR 5–9',b:'<b>งด 1–2 มื้อ</b> ตรวจ INR ทุก 24–48 ชม. เริ่มใหม่ลดขนาด · vitamin K1 <b>1–2.5 mg กิน</b> เฉพาะผู้เสี่ยงเลือดออกสูง · ไม่ให้ vitamin K routine (ACCP 2012)'},
+ i3:{leaf:true,cls:'danger',t:'INR &gt;9',b:'งดยา + <b>vitamin K1 2.5–5 mg กิน</b> (ACCP ใช้จุดตัด &gt;10) · ตรวจ INR ใน 24 ชม. ซ้ำ 1–2 mg ได้ · ลิ้นกลใช้ขนาดต่ำสุดที่ได้ผล · มีเลือดออกรุนแรง → vitamin K IV + PCC'}
+},'apTrail','apStage');
+
+/* ---------- helpers ---------- */
+const P='<span class="muted">';
+function cg(ageId,sexId,wtId,crId){
+  const a=num(ageId),w=num(wtId);let cr=num(crId);const notes=[];
+  if(a===null||w===null||cr===null)return {err:'ใส่อายุ น้ำหนัก และ creatinine ให้ครบ'};
+  if(a<18||a>110)return {err:'อายุควรอยู่ระหว่าง 18–110 ปี'};
+  if(w<30||w>250)return {err:'น้ำหนักควรอยู่ระหว่าง 30–250 kg'};
+  if(cr<=0)return {err:'ค่า creatinine ไม่ถูกต้อง'};
+  if(cr>20){notes.push(`แปลง Cr ${cr} µmol/L → <b>${(cr/88.4).toFixed(2)} mg/dL</b>`);cr=cr/88.4;}
+  if(cr<0.2||cr>20)return {err:'ค่า creatinine ไม่ถูกต้อง (ใส่หน่วย mg/dL)'};
+  let c=(140-a)*w/(72*cr);if($(sexId).value==='f')c*=0.85;
+  return {v:c,w:w,notes:notes};
+}
+function dayFn(dateId){
+  const ds=$(dateId)?$(dateId).value:'';
+  if(!ds)return k=>`วัน ${k>0?'+':k<0?'−':''}${Math.abs(k)}`;
+  const D=new Date(ds+'T00:00:00');
+  return k=>{const x=new Date(D);x.setDate(x.getDate()+k);return `วัน ${k>0?'+':k<0?'−':''}${Math.abs(k)} (${x.toLocaleDateString('th-TH',{weekday:'short',day:'numeric',month:'short'})})`};
+}
+const r10=x=>Math.round(x/10)*10;
+
+/* ---------- 1. DOAC ---------- */
+(function(){const d=new Date();d.setDate(d.getDate()+7);$('dDate').value=d.toISOString().slice(0,10)})();
+function doac(){
+  const o=$('doacOut'),dr=$('dDrug').value,risk=$('dRisk').value,neur=$('dNeur').checked,low=$('dLow').checked,inh=$("dInt").checked;
+  const k=cg('dAge','dSex','dWt','dCr');
+  if(k.err){o.textContent=k.err;return}
+  const c=k.v,f=dayFn('dDate'),L=[...k.notes];
+  const name={api:'Apixaban',riv:'Rivaroxaban',edo:'Edoxaban',dab:'Dabigatran'}[dr];
+  const bid=(dr==='api'||dr==='dab');
+  L.push(`CrCl (Cockcroft-Gault) ≈ <b>${Math.floor(c)} mL/min</b>`);
+  if(dr==='dab'&&c<30){L.push('<b>Dabigatran ห้ามใช้เมื่อ CrCl &lt;30</b> — ยาสะสม เลือดออกง่าย · ไม่มีตารางหยุดยาที่รองรับ → ปรึกษาอายุรแพทย์ ± ตรวจ thrombin time/ระดับยา และทบทวนการเปลี่ยนยา');o.innerHTML=L.join('<br>');return}
+  if(dr!=='dab'&&c<15){L.push(`<b>CrCl &lt;15</b> — ไม่มีตารางหยุด ${name} ที่รองรับ · ปรึกษาอายุรแพทย์โรคไต/โลหิต ± ตรวจระดับยา (anti-Xa)`);o.innerHTML=L.join('<br>');return}
+  if(neur){
+    let h;
+    if(dr==='dab')h=c>=50?72:120;else h=72;
+    const omit=h/24;
+    L.push(`<b>Spinal/epidural (ASRA 2025)</b>: หยุด ${name} ขนาดรักษา <b>≥${h} ชม.</b>ก่อนแทงเข็ม → งด ${omit} วันเต็ม · <b>มื้อสุดท้าย ${f(-(omit+1))}</b>`);
+    if(dr!=='dab'&&c<30)L.push('<b>CrCl &lt;30</b>: Xa inhibitor ขับช้า 72 ชม.อาจไม่พอ → ปรึกษาวิสัญญีแพทย์ ± ตรวจ anti-Xa ก่อนแทงเข็ม หรือเลี่ยง neuraxial');
+    if(low)L.push('ใช้ขนาดต่ำ: ASRA 2025 ให้ระยะสั้นกว่า (ราว 24–36 ชม.) — <b>ยืนยันกับวิสัญญีแพทย์</b> ถ้าไม่แน่ใจใช้ระยะของขนาดรักษา');
+    L.push('เริ่มกลับขนาดรักษา <b>≥24 ชม.หลังแทงเข็ม/ถอดสาย</b> (ขนาดต่ำ ≥6 ชม.) · ไม่คาสาย epidural ระหว่างให้ขนาดรักษา · หลังผ่าตัดเฝ้าขาอ่อนแรง/ชา');
+  }else if(risk==='min'){
+    L.push(`<b>หัตถการเลือดออกน้อยมาก</b> → ต่อ ${name} ได้ · หรือ`+(bid?' <b>งดมื้อเช้า</b>วันทำ แล้วกินมื้อเย็นตามปกติถ้าห้ามเลือดได้':' <b>เลื่อนมื้อของวันทำ</b>ไปกินเย็นหลังทำ ถ้าห้ามเลือดได้'));
+    L.push('ไม่ต้อง bridging · ถอนฟัน: ห้ามเลือดเฉพาะที่ ± tranexamic acid บ้วนปาก');
+  }else{
+    let omit;
+    if(dr==='dab')omit=c>=50?(risk==='low'?1:2):(risk==='low'?2:4);
+    else omit=risk==='low'?1:2;
+    L.push(`<b>${name} · เลือดออก${risk==='low'?'ต่ำ–ปานกลาง':'สูง'}</b> (PAUSE/ACCP 2022): งด <b>${omit} วัน</b> (${f(-omit)}${omit>1?' ถึง '+f(-1):''})`);
+    L.push(`→ <b>มื้อสุดท้าย ${f(-(omit+1))}</b>${bid?' (มื้อเย็น)':''} · วันผ่าตัด ${f(0)} ไม่กินยา`);
+    if(dr==='dab'&&c<50)L.push('CrCl 30–49 → dabigatran ขับช้า จึงงดนานขึ้น');
+    if(dr!=='dab'&&c<30)L.push('<b>CrCl 15–29</b>: ข้อมูลน้อย — EHRA 2021 ให้หยุด ≥36 ชม. (ต่ำ) / ≥48 ชม. (สูง) หรือนานกว่า · พิจารณาเพิ่ม 1 วัน');
+    L.push(risk==='low'?`เริ่มกลับขนาดปกติ <b>~24 ชม.</b> (${f(1)}) เมื่อห้ามเลือดได้`:`เริ่มกลับขนาดปกติ <b>48–72 ชม.</b> (${f(2)} ถึง ${f(3)}) · ระหว่างรอ ถ้าเสี่ยง VTE ให้ LMWH ขนาดป้องกัน`);
+    L.push('<b>ไม่ต้อง bridging</b> · ไม่ต้องตรวจระดับยา routine');
+  }
+  if(inh)L.push('ยายับยั้ง CYP3A4/P-gp แรง หรือตับเสื่อม → <b>พิจารณาหยุดนานขึ้น</b>');
+  if(low&&!neur)L.push(P+'ขนาดต่ำใช้ตารางเดียวกัน (ตารางนี้ศึกษาในขนาดรักษา AF)</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tDoac input,#tDoac select',doac);
+
+/* ---------- 2. Warfarin ---------- */
+function warf(){
+  const o=$('warfOut'),ind=$('wInd').value,vt=$('wVt').value,neur=$('wNeur').checked;let risk=$('wRisk').value;
+  const k=cg('wAge','wSex','wWt','wCr');
+  if(k.err){o.textContent=k.err;return}
+  const c=k.v,w=k.w,L=[...k.notes],f=dayFn(null);
+  const st=$('wStroke').checked,vhr=$('wVhr').checked,thr=$('wThr').checked;
+  if(neur&&risk!=='high'){risk='high';L.push('จะทำ spinal/epidural → ถือเป็นเลือดออกสูง');}
+  // thrombotic risk
+  let tr,br,why;
+  if(ind==='af'){
+    if(st||vhr||thr){tr='สูง';br='consider';why='AF ความเสี่ยงสูง (stroke ใน 3 เดือน/CHA₂DS₂-VASc ≥7/rheumatic MS/thrombophilia) — ACCP 2022 ยังไม่แนะนำ bridging routine · <b>stroke/TIA ใน 3 เดือน → เลื่อนผ่าตัดนัด</b> · ถ้าต้องทำ ปรึกษาอายุรแพทย์โรคหัวใจ (บางรายพิจารณา bridge)';}
+    else{tr='ต่ำ–ปานกลาง';br='no';why='<b>AF → ไม่ bridge</b> (ACCP 2022 strong · BRIDGE: เลือดออก 3.2% vs 1.3% ไม่ลด stroke)';}
+  }else if(ind==='mvm'||ind==='mvo'){tr='สูง';br='yes';why='ลิ้นกล '+(ind==='mvm'?'mitral':'aortic รุ่นเก่า')+' → <b>bridge</b> (ACCP conditional · ESC IIa)';}
+  else if(ind==='mvr'){if(st||thr){tr='สูง';br='yes';why='ลิ้นกล aortic + stroke ใน 3 เดือน/thrombophilia → <b>bridge</b>';}else{tr='ปานกลาง';br='consider';why='Bileaflet aortic + ปัจจัยเสี่ยง → <b>พิจารณาเป็นรายๆ</b> (ESC 2022 IIa ให้ bridge) ปรึกษาอายุรแพทย์โรคหัวใจ';}}
+  else if(ind==='mva'){if(st||thr){tr='สูง';br='yes';why='ลิ้นกล aortic + stroke ใน 3 เดือน/thrombophilia → <b>bridge</b>';}else{tr='ต่ำ';br='no';why='Bileaflet aortic ไม่มีปัจจัยเสี่ยง → <b>ไม่ bridge</b>';}}
+  else{ // vte
+    if(vt==='lt1'||vt==='m1'){tr='สูง';br='yes';why=`VTE ${vt==='lt1'?'&lt;1':'1–3'} เดือน → <b>เลื่อนผ่าตัดนัดให้ครบ 3 เดือนก่อน</b> · ถ้าเลื่อนไม่ได้ → bridge`+(vt==='lt1'?' · VTE &lt;1 เดือนที่ต้องผ่าตัด → ปรึกษาเรื่อง IVC filter ชั่วคราว':'');}
+    else if(thr){tr='สูง';br='yes';why='Thrombophilia รุนแรง/APS → <b>bridge</b>';}
+    else{tr=vt==='m3'?'ปานกลาง':'ต่ำ';br='no';why=`VTE ${vt==='m3'?'3–12':'&gt;12'} เดือน → <b>ไม่ bridge</b> (ACCP conditional) · ให้ VTE prophylaxis หลังผ่าตัด`;}
+  }
+  L.push(`ความเสี่ยงลิ่มเลือด: <b>${tr}</b> · CrCl ≈ <b>${Math.floor(c)} mL/min</b>`);
+  if(risk==='min'){
+    L.push('<b>หัตถการเลือดออกน้อยมาก → ต่อ warfarin ไม่ต้อง bridge</b> · ตรวจ INR ก่อนทำ (ใน 72 ชม.) ให้อยู่ในเป้า ไม่เกินเป้า');
+    L.push('ถอนฟัน: ห้ามเลือดเฉพาะที่ + tranexamic acid บ้วนปาก · pacemaker/ICD: ต่อ warfarin (ACCP strong)');
+    o.innerHTML=L.join('<br>');return;
+  }
+  L.push(why);
+  L.push(`<b>Warfarin มื้อสุดท้าย ${f(-6)}</b> (ไม่กิน ${f(-5)} ถึง ${f(-1)})`);
+  if(br!=='no'){
+    let reg;
+    if(c<15)reg='CrCl &lt;15/ฟอกไต → ใช้ <b>UFH IV</b> แทน LMWH (เริ่มเมื่อ INR ต่ำกว่าเป้า ปรับตาม aPTT) · <b>หยุด 4–6 ชม.ก่อนผ่าตัด</b>';
+    else if(c<30){const d=r10(w);reg=`วัน −3 และ −2: <b>enoxaparin ${d} mg SC วันละครั้ง</b> (1 mg/kg เพราะ CrCl &lt;30) · ${f(-1)} เช้า: <b>${r10(w/2)} mg</b> (ครึ่งขนาด) ~24 ชม.ก่อนผ่าตัด`;}
+    else{const d=r10(w);reg=`วัน −3 และ −2: <b>enoxaparin ${d} mg SC ทุก 12 ชม.</b> (1 mg/kg) · ${f(-1)}: <b>เฉพาะมื้อเช้า ${d} mg</b> (ครึ่งขนาดต่อวัน) ~24 ชม.ก่อนผ่าตัด`;}
+    L.push((br==='consider'?'<b>ถ้าตัดสินใจ bridge</b>: ':'<b>Bridging</b>: ')+reg);
+    if(w>150)L.push('น้ำหนัก &gt;150 kg → พิจารณาวัด anti-Xa');
+  }
+  L.push(`<b>ตรวจ INR ${f(-1)}</b>: &gt;1.5 → vitamin K1 <b>1–2 mg กิน</b> แล้วตรวจซ้ำเช้าวันผ่าตัด`+(neur?' · spinal/epidural ต้องการ INR ปกติ (ถอดสายเมื่อ INR &lt;1.5)':''));
+  L.push(`<b>หลังผ่าตัด</b>: warfarin ขนาดเดิม 12–24 ชม. (เย็น ${f(0)} หรือ ${f(1)}) เมื่อห้ามเลือดได้`);
+  if(br!=='no'){
+    const post=c<15?'UFH IV':c<30?'enoxaparin 1 mg/kg วันละครั้ง':'enoxaparin 1 mg/kg ทุก 12 ชม.';
+    L.push(risk==='high'?`${post} เริ่ม <b>48–72 ชม.</b> (${f(2)} ถึง ${f(3)}) · ระหว่างนั้นใช้ขนาดป้องกันเมื่อห้ามเลือดได้ · หยุดเมื่อ INR ถึงเป้า`:`${post} เริ่ม <b>≥24 ชม.</b> (${f(1)}) · หยุดเมื่อ INR ถึงเป้า`);
+  }else L.push('ไม่ bridge → ให้ VTE prophylaxis หลังผ่าตัดตามความเสี่ยงของการผ่าตัด');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tWarf input,#tWarf select',warf);
+
+/* ---------- 3. High INR / bleeding / reversal ---------- */
+function pccDose(inr,w){
+  const wc=Math.min(w,100);
+  if(inr<2)return null;
+  const u=inr<4?25:inr<=6?35:50;const mx=inr<4?2500:inr<=6?3500:5000;
+  return {u:u,iu:Math.min(Math.round(u*wc),mx),mx:mx};
+}
+function inrT(){
+  const o=$('inrOut'),dr=$('iDrug').value,s=$('iSit').value,t=parseFloat($('iTgt').value),pc=$('iPcc').value;
+  const inr=num('iInr'),w=num('iWt'),hr=num('iHr');const c=id=>$(id).checked;const L=[];
+  const wOK=w!==null&&w>=30&&w<=250;
+  const needW=['major','ich','emer'].includes(s);
+  if(dr==='war'){
+    if(inr===null){o.textContent='ใส่ค่า INR';return}
+    if(inr<0.8||inr>25){o.textContent='ค่า INR ควรอยู่ระหว่าง 0.8–25 — ตรวจค่าอีกครั้ง';return}
+    if(needW&&!wOK){o.textContent='ใส่น้ำหนัก (30–250 kg) เพื่อคำนวณขนาด PCC/FFP';return}
+    const mv=c('iMv');
+    if(s==='none'){
+      if(inr<=t){L.push(`INR ${inr} ไม่เกินเป้า (≤${t}) — ไม่ต้องแก้`+(inr<2?' · ต่ำกว่าเป้า: ทบทวนการกินยา/ปรับขนาด':''));}
+      else if(inr<5){L.push(`INR ${inr} เกินเป้าเล็กน้อย → <b>งด 1 มื้อ หรือลดขนาดต่อสัปดาห์ ~10%</b> · ไม่ต้องให้ vitamin K · ตรวจซ้ำใน 1 สัปดาห์`);}
+      else if(inr<=9){L.push(`INR ${inr} → <b>งด warfarin 1–2 มื้อ</b> ตรวจ INR ทุก 24–48 ชม. · เริ่มใหม่ลดขนาด ~10–20% เมื่อเข้าเป้า`);
+        L.push(c('iBr')?'เสี่ยงเลือดออกสูง → <b>vitamin K1 1–2.5 mg กิน</b>':'ไม่เสี่ยงเลือดออกสูง → <b>ไม่ต้องให้ vitamin K</b> (ACCP 2012: INR 4.5–10 ไม่ให้ routine; ไทย: ให้ 1–2.5 mg เมื่อเสี่ยงเลือดออก)');}
+      else{L.push(`INR ${inr} → <b>งด warfarin + vitamin K1 2.5–5 mg กิน</b> · ตรวจ INR ใน 24 ชม. ซ้ำ 1–2 mg ได้ถ้ายังสูง`+(inr<=10?' · <span class="muted">INR 9–10: ไทยให้ vitamin K, ACCP 2012 ใช้จุดตัด &gt;10</span>':''));
+        if(mv)L.push('ลิ้นกล: ใช้ขนาดต่ำสุดที่ได้ผล (เช่น 1–2.5 mg) เพื่อเลี่ยงดื้อ warfarin');}
+    }else if(s==='minor'){
+      L.push('<b>เลือดออกไม่รุนแรง</b> → งด warfarin · ห้ามเลือดเฉพาะที่ (กด เย็บ tranexamic acid เฉพาะที่) · หาตำแหน่งเลือดออก');
+      L.push(inr>t?`INR ${inr} เกินเป้า → vitamin K1 <b>2–5 mg กิน/IV</b> (ACC 2020)`+(mv?' · ลิ้นกล: ใช้ขนาดต่ำ':''):`INR ${inr} อยู่ในเป้า → ไม่ต้องให้ vitamin K · หาสาเหตุเฉพาะที่ (เช่น แผล เนื้องอก)`);
+    }else if(s==='urg24'){
+      if(inr<=1.5)L.push(`INR ${inr} ≤1.5 → ผ่าตัดส่วนใหญ่ทำได้ ไม่ต้องให้ vitamin K (spinal ต้องการ INR ปกติ)`);
+      else{L.push(`ผ่าตัดใน 24 ชม. → <b>vitamin K1 2.5–5 mg กิน หรือ IV ช้าๆ</b> · ตรวจ INR ซ้ำใน 12–24 ชม. · ยังสูงตอนผ่าตัด → PCC/FFP`);
+        if(mv)L.push('ลิ้นกล: แนวทางไทย 2553 เลี่ยง vitamin K — พิจารณาขนาดต่ำ หรือใช้ PCC/FFP ตอนผ่าตัด ปรึกษาอายุรแพทย์โรคหัวใจ');}
+    }else{
+      const ich=s==='ich',em=s==='emer';
+      if(em&&inr<=1.5){L.push(`INR ${inr} ≤1.5 → ผ่าตัดได้ ไม่ต้อง reversal`);o.innerHTML=L.join('<br>');return}
+      L.push(`<b>${ich?'เลือดออกในสมอง':em?'ผ่าตัดฉุกเฉิน':'เลือดออกรุนแรง'}</b> → หยุด warfarin · <b>vitamin K1 ${em&&mv?'1–2.5':'10'} mg IV</b> เจือจางหยดช้า ≥20 นาที`+(em&&mv?' (ลิ้นกล: ขนาดต่ำเพื่อไม่ดื้อยาหลังผ่าตัด)':' (ACC 2020: 5–10 mg) · ซ้ำได้ทุก 12 ชม.'));
+      const p=pccDose(inr,w);
+      if(!p){L.push(`INR ${inr} &lt;2 → ไม่มีขนาด PCC ตามตาราง ACC · ฤทธิ์ warfarin เหลือน้อย ประเมินสาเหตุอื่นของเลือดออก · ปรึกษาโลหิตแพทย์`+(pc==='no'?' · พิจารณา FFP ตามคลินิก':''));}
+      else if(pc==='4f'){L.push(`<b>4F-PCC ${p.u} IU/kg = ${p.iu} IU IV</b> (สูงสุด ${p.mx} IU; คิดน้ำหนักไม่เกิน 100 kg) ≈ ${Math.ceil(p.iu/600)} ขวด ถ้าขวดละ 600 IU · หยดไม่เกินอัตราตามฉลาก`);
+        L.push(`ทางเลือกขนาดคงที่: <b>${ich?'1,500':'1,000'} IU</b> (ACC 2020) · ตรวจ INR 15–30 นาทีหลังให้`);}
+      else if(pc==='3f'){L.push(`<b>3F-PCC</b>: factor VII ต่ำ แก้ INR ได้ไม่ครบ · ขนาดเทียบตาราง ${p.u} IU/kg = ${p.iu} IU ≈ ${Math.ceil(p.iu/500)} ขวด ถ้าขวดละ 500 IU · หลายสถาบันให้ FFP ร่วม — ปรึกษาโลหิตแพทย์ <span class="tag add">เสริม</span>`);}
+      else{L.push(`<b>FFP 10–15 mL/kg = ${r10(10*w)}–${r10(15*w)} mL</b> · ระวังน้ำเกิน (TACO) · แก้ INR ได้ไม่ต่ำกว่า ~1.5 · ส่งต่อ รพ.ที่มี PCC ถ้าทำได้`);}
+      if(ich)L.push('ICH: แก้ให้เร็วที่สุด เป้า INR &lt;1.3–1.5 · คุม SBP · ดูหน้า Stroke ER');
+    }
+    L.push(P+'หาสาเหตุ INR สูงทุกครั้ง: ยาตีกัน กินน้อย ท้องเสีย ตับ หัวใจวาย กินยาผิด</span>');
+    o.innerHTML=L.join('<br>');return;
+  }
+  // DOAC
+  const nm=dr==='dab'?'Dabigatran':'Xa inhibitor';
+  if(hr!==null&&(hr<0||hr>240)){o.textContent='ชั่วโมงตั้งแต่มื้อสุดท้ายควรอยู่ระหว่าง 0–240';return}
+  const hrTxt=hr===null?'ไม่ทราบเวลามื้อสุดท้าย (ถือว่ายังมีฤทธิ์)':`มื้อสุดท้าย ${hr} ชม.ก่อน`;
+  if(s==='none'){L.push(`${nm}: INR ใช้ประเมินฤทธิ์ DOAC ไม่ได้ · ไม่มีเลือดออก → ไม่ต้องให้ยาต้านฤทธิ์ · ข้ามมื้อ/ทบทวนขนาดตามไต · vitamin K ไม่ช่วย`);o.innerHTML=L.join('<br>');return}
+  if(s==='minor'){L.push(`<b>เลือดออกไม่รุนแรง</b> → งด ${nm} 1–2 มื้อ ห้ามเลือดเฉพาะที่ · ไม่ต้องให้ยาต้านฤทธิ์ · ตรวจไต/CBC`);o.innerHTML=L.join('<br>');return}
+  L.push(hrTxt);
+  if(hr!==null&&hr<=4)L.push('กินภายใน 2–4 ชม. → <b>activated charcoal 50 g</b> ถ้าไม่เสี่ยงสำลัก');
+  if(s==='urg24'){
+    if(hr!==null&&hr>=48)L.push(`ครบ ≥48 ชม.แล้ว → ส่วนใหญ่ผ่าตัดได้${dr==='dab'?' (CrCl &lt;50: ฤทธิ์ค้างนานกว่า ตรวจ thrombin time/aPTT)':''}`);
+    else L.push(`ผ่าตัดใน 6–24 ชม. → <b>รอให้ยาหมดฤทธิ์ให้มากที่สุด</b> (ตรวจระดับยา &lt;50 ng/mL ถ้าทำได้)`+(dr==='dab'?' · ผ่าตัดเลือดออกปานกลาง–สูงที่รอไม่ได้ → พิจารณา idarucizumab 5 g IV (ESC IIa B)':' · ถ้ารอไม่ได้และกิน &lt;48 ชม. → พิจารณา 4F-PCC เหมือนผ่าตัดฉุกเฉิน'));
+    o.innerHTML=L.join('<br>');return;
+  }
+  if(s==='emer'&&hr!==null&&hr>=48){L.push(`ผ่าตัดฉุกเฉิน + กิน ≥48 ชม.แล้ว → ส่วนใหญ่ไม่ต้อง reversal${dr==='dab'?' (ไตเสื่อมยังค้างได้ ตรวจ TT/aPTT)':''}`);o.innerHTML=L.join('<br>');return}
+  if(dr==='dab'){
+    if(c('iIda'))L.push('<b>Idarucizumab 5 g IV</b> (2.5 g × 2 ติดกัน) · ซ้ำได้ถ้ายังเลือดออกและยังมีฤทธิ์ยา');
+    else{
+      if(!wOK){L.push('ไม่มี idarucizumab — <b>ใส่น้ำหนัก (30–250 kg)</b> เพื่อคำนวณ PCC');o.innerHTML=L.join('<br>');return}
+      L.push(pc==='no'?'ไม่มี idarucizumab และ PCC → <b>ฟอกเลือด (hemodialysis)</b> ช่วยขจัด dabigatran · ส่งต่อด่วน · FFP ได้ผลน้อย':`ไม่มี idarucizumab → <b>${pc==='3f'?'3F-':'4F-'}PCC 50 IU/kg = ${Math.min(4000,Math.round(50*w))} IU IV</b> (สูงสุด 4,000 IU; ACC 2020) หรือ aPCC 50 IU/kg · พิจารณาฟอกเลือดร่วม`);
+    }
+  }else{
+    if(!wOK){o.textContent='ใส่น้ำหนัก (30–250 kg) เพื่อคำนวณขนาด PCC';return}
+    L.push(pc==='no'?'ไม่มี PCC → FFP ไม่แนะนำเพื่อย้อนฤทธิ์ DOAC (ปริมาณมาก ได้ผลน้อย) · ประคับประคอง ห้ามเลือดเฉพาะที่ · <b>ส่งต่อ รพ.ที่มี PCC</b>':`<b>${pc==='3f'?'3F-':'4F-'}PCC 50 IU/kg = ${Math.round(50*Math.min(w,100))} IU IV</b> (ESC 2022/EHRA 2021; คิดน้ำหนักไม่เกิน 100 kg) · ACC 2020 ใช้ขนาดคงที่ 2,000 IU · andexanet ไม่มีในไทย`+(pc==='3f'?' · 3F-PCC ข้อมูลน้อยกว่า':''));
+  }
+  L.push(P+'ให้ยาต้านฤทธิ์เฉพาะเลือดออกคุกคามชีวิต/ตำแหน่งสำคัญ หรือผ่าตัดฉุกเฉิน · ร่วมกับกู้ชีพ ให้เลือด ห้ามเลือดที่ต้นเหตุ</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tInr input,#tInr select',inrT);
+
+/* ---------- 4. Antiplatelet / stent ---------- */
+function apT(){
+  const o=$('apOut'),dr=$('aDrug').value,pci=$('aPci').value,urg=$('aUrg').value,risk=$('aRisk').value,neur=$('aNeur').checked,car=$('aCar').checked;
+  const m=num('aMo'),L=[];
+  if(pci!=='none'){
+    if(m===null){o.textContent='ใส่จำนวนเดือนหลัง PCI';return}
+    if(m<0||m>480){o.textContent='จำนวนเดือนหลัง PCI ควรอยู่ระหว่าง 0–480';return}
+  }
+  const hasAsa=dr!=='cloM',p2={clo:'clopidogrel',tic:'ticagrelor',pra:'prasugrel',cloM:'clopidogrel'}[dr]||'';
+  const stopD={clopidogrel:neur?'5–7':'5',ticagrelor:neur?'5':'3–5',prasugrel:neur?'7–10':'7'}[p2];
+  const eff=neur&&risk!=='cs'?'high':risk;
+  // stent timing
+  let recent=false;
+  if(pci!=='none'){
+    const elMin={ccs:6,acs:12,poba:0.5}[pci],tsMin={ccs:1,acs:3,poba:0.5}[pci];
+    const lab={ccs:'PCI แบบนัด',acs:'PCI จาก ACS',poba:'balloon อย่างเดียว'}[pci];
+    if(urg==='em'){L.push(`<b>ผ่าตัดฉุกเฉิน</b> → ผ่าตัดได้เลย · ${m<1?'<b>stent &lt;30 วัน: ให้ DAPT ต่อ</b>ถ้าเลือดออกรับได้':'ต่อ aspirin ถ้าทำได้'} · เลือดออกมาก → ให้เกล็ดเลือด · แจ้งอายุรแพทย์โรคหัวใจ`);o.innerHTML=L.join('<br>');return}
+    if(urg==='el'&&m<elMin){L.push(`${lab} ${m} เดือน → <b>เลื่อนผ่าตัดนัดให้ครบ ${pci==='poba'?'14 วัน':elMin+' เดือน'}</b> (${pci==='poba'?'ACC/AHA':'ESC 2022 I A · ACC/AHA 2024'}) · อีกประมาณ ${pci==='poba'?Math.max(0,Math.round(14-m*30))+' วัน':(Math.round((elMin-m)*10)/10)+' เดือน'}`);
+      L.push(P+'ระหว่างรอ: ให้ยาต้านเกล็ดเลือดต่อตามแผนของอายุรแพทย์โรคหัวใจ</span>');o.innerHTML=L.join('<br>');return}
+    if(urg==='ts'&&m<tsMin){L.push(`${lab} ${m} เดือน + ผ่าตัดที่รอนานไม่ได้ → ${pci==='ccs'?'ESC: รอให้ DAPT ครบ <b>≥1 เดือน</b> (I B) · ACC/AHA: DES ≥3 เดือน':pci==='acs'?'ESC: ให้ DAPT ต่อเนื่อง <b>≥3 เดือน</b> ก่อน (IIa C)':'รอ ≥14 วัน'} · ถ้ารอไม่ได้จริง → <b>ผ่าตัดโดยให้ DAPT ต่อ</b> · ตัดสินร่วมกับอายุรแพทย์โรคหัวใจ`);o.innerHTML=L.join('<br>');return}
+    if(m<1&&pci!=='poba'){L.push('<b>Stent &lt;30 วัน</b>: ห้ามผ่าตัดนัดที่ต้องหยุดยาต้านเกล็ดเลือด (ACC/AHA: harm) · ถ้าต้องทำ ให้ DAPT ต่อ');recent=true;}
+    else if(m<elMin){recent=true;L.push(`${lab} ${m} เดือน (ยังไม่ครบ ${elMin} เดือน) — ผ่าตัดได้เพราะรอไม่ได้ · <b>ให้ DAPT ต่อถ้าเลือดออกรับได้</b> · ถ้าต้องหยุด หยุดเฉพาะ P2Y12 ต่อ aspirin`);}
+    else L.push(`${lab} ${m} เดือน — พ้นช่วงต้องเลื่อนผ่าตัดแล้ว`);
+  }else if(urg==='em'){L.push('<b>ผ่าตัดฉุกเฉิน</b> → ไม่ต้องรอ · ต่อ aspirin ถ้าทำได้ · เลือดออกมาก → ให้เกล็ดเลือด (ได้ผลน้อยกับ ticagrelor)');o.innerHTML=L.join('<br>');return}
+  // drug management
+  if(eff==='min'){L.push('<b>หัตถการเลือดออกน้อยมาก → ต่อยาต้านเกล็ดเลือดทุกตัว</b>');o.innerHTML=L.join('<br>');return}
+  if(hasAsa){
+    if(dr==='asa1')L.push(car?'Aspirin ปฐมภูมิ + ผ่าตัด carotid → <b>ต่อ aspirin</b>':risk==='cs'?'Aspirin ปฐมภูมิ → <b>หยุด 7 วัน</b> (มื้อสุดท้ายวัน −8)':'Aspirin ปฐมภูมิ → <b>หยุด</b> (ACC/AHA 2024) ราว 7 วันก่อน · ทบทวนว่าจำเป็นหรือไม่');
+    else if(risk==='cs')L.push('Closed-space → <b>หยุด aspirin 7 วัน</b> (ESC I C; มื้อสุดท้ายวัน −8)'+(recent||pci!=='none'?' · มี stent: <b>ปรึกษาอายุรแพทย์โรคหัวใจก่อนหยุด</b>':''));
+    else L.push('<b>ต่อ aspirin</b> (ACCP 2022; ESC/ACC-AHA ในผู้มี stent)');
+  }
+  if(p2){
+    if(recent&&risk!=='cs'&&!neur)L.push(`${p2}: ถ้าศัลยแพทย์รับเลือดออกได้ → ให้ต่อ · ถ้าต้องหยุด → <b>หยุด ${stopD} วัน</b>`);
+    else L.push(`<b>หยุด ${p2} ${stopD} วัน</b>ก่อนผ่าตัด (มื้อสุดท้ายวัน −${parseInt(stopD.split('–').pop())+1})`+(neur?' — ตาม ASRA 2025 สำหรับ spinal/epidural':''));
+    if(dr==='cloM'&&risk==='low')L.push(P+'Clopidogrel เดี่ยว + เลือดออกต่ำ–ปานกลาง: บางหัตถการต่อได้ ถามศัลยแพทย์</span>');
+    L.push('เริ่มกลับ <b>ภายใน 24–48 ชม.</b> เมื่อห้ามเลือดได้ (ACCP 24 ชม. · ESC ≤48 ชม.)');
+  }
+  if(neur&&hasAsa&&risk!=='cs')L.push(P+'Spinal/epidural: aspirin เดี่ยวไม่ต้องหยุด (ASRA)</span>');
+  L.push(P+'ไม่ bridge ด้วย heparin · ตัดสินร่วมกันระหว่างอายุรแพทย์โรคหัวใจ ศัลยแพทย์ วิสัญญีแพทย์</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tAp input,#tAp select',apT);
+
+mountQuiz([
+ ['ชาย 70 ปี AF CHA₂DS₂-VASc 4 กิน warfarin จะผ่าตัดไส้เลื่อนแบบนัด ข้อใดเหมาะที่สุด',['หยุด warfarin 5 วัน + enoxaparin bridging','หยุด warfarin 5 วัน ไม่ต้อง bridge','ไม่ต้องหยุด warfarin','เปลี่ยนเป็น aspirin ก่อนผ่าตัด'],1,'BRIDGE: bridging ใน AF เลือดออกมากขึ้น (3.2% vs 1.3%) โดยไม่ลดลิ่มเลือดแดง · ACCP 2022 strong against'],
+ ['หญิง 55 ปี ลิ้นหัวใจกล mitral กิน warfarin จะผ่าตัดมดลูก ข้อใดถูก',['ไม่ต้องหยุด warfarin','หยุด warfarin 5 วัน ไม่ bridge','หยุด warfarin 5 วัน + bridging ด้วย LMWH/UFH','เปลี่ยนเป็น apixaban ชั่วคราว'],2,'ลิ้นกล mitral = ความเสี่ยงลิ่มเลือดสูง → bridge · ห้ามใช้ DOAC ในลิ้นกล'],
+ ['ผู้ป่วยกิน apixaban 5 mg วันละ 2 ครั้ง CrCl 70 จะผ่าตัดลำไส้ใหญ่ (เลือดออกสูง) วันจันทร์ ไม่ทำ spinal ควรกินยามื้อสุดท้ายเมื่อไร',['เย็นวันอาทิตย์','เย็นวันเสาร์','เย็นวันศุกร์','เย็นวันพุธ'],2,'PAUSE: เลือดออกสูง งด 2 วัน (เสาร์ อาทิตย์) → มื้อสุดท้ายวัน −3 = ศุกร์'],
+ ['Dabigatran CrCl 40 ผ่าตัดเลือดออกสูง ตาม PAUSE ต้องงดยากี่วัน',['1 วัน','2 วัน','3 วัน','4 วัน'],3,'Dabigatran CrCl &lt;50: ต่ำ 2 วัน / สูง 4 วัน'],
+ ['ผู้ป่วยกิน rivaroxaban 20 mg ไตปกติ จะทำ spinal anesthesia ตาม ASRA 2025 ต้องหยุดยาอย่างน้อย',['24 ชม.','36 ชม.','48 ชม.','72 ชม.'],3,'Xa inhibitor ขนาดรักษา ≥72 ชม. — นานกว่าตาราง PAUSE'],
+ ['ผู้ป่วยกิน warfarin INR 2.4 จะถอนฟัน 2 ซี่ ข้อใดเหมาะ',['หยุด warfarin 5 วัน','ต่อ warfarin + ห้ามเลือดเฉพาะที่และ tranexamic acid บ้วนปาก','หยุด warfarin + bridging','ให้ vitamin K ก่อนถอน'],1,'ถอนฟันเป็นหัตถการเลือดออกน้อยมาก'],
+ ['ใส่ DES จาก ACS เมื่อ 4 เดือนก่อน กิน aspirin + ticagrelor ต้องการผ่าตัดเปลี่ยนข้อเข่าแบบนัด ควร',['หยุดทั้งสองตัว 7 วันแล้วผ่าตัด','หยุด ticagrelor 5 วันแล้วผ่าตัด','เลื่อนผ่าตัดให้ครบ 12 เดือนหลัง ACS','bridge ด้วย enoxaparin'],2,'ESC 2022 I A: เลื่อนผ่าตัดนัด 12 เดือนหลัง ACS (6 เดือนหลัง PCI นัด)'],
+ ['ผู้ป่วยใส่ stent 3 ปีก่อน กิน aspirin เดี่ยว จะผ่าตัดถุงน้ำดีผ่านกล้อง',['หยุด aspirin 7 วัน','ต่อ aspirin','หยุด aspirin 3 วัน + เริ่ม clopidogrel','เปลี่ยนเป็น enoxaparin'],1,'Aspirin ทุติยภูมิ ต่อยาเกือบทุกหัตถการ ยกเว้น closed-space'],
+ ['ผู้ป่วยกิน warfarin INR 7.2 ไม่มีเลือดออก ไม่มีความเสี่ยงเลือดออกสูง',['Vitamin K 10 mg IV','FFP 2 units','งด warfarin 1–2 มื้อ ตรวจ INR ซ้ำใน 24–48 ชม. ไม่ต้องให้ vitamin K','4F-PCC 25 IU/kg'],2,'INR 5–9 ไม่มีเลือดออก: งดยา ± vitamin K 1–2.5 mg กินเฉพาะผู้เสี่ยงเลือดออกสูง'],
+ ['ผู้ป่วย 60 kg กิน warfarin INR 5.0 มี GI bleeding ความดันต่ำ รพ.มี 4F-PCC ขนาดที่เหมาะสม',['Vitamin K 10 mg IV + 4F-PCC 35 IU/kg (2,100 IU)','Vitamin K 1 mg กิน','4F-PCC 50 IU/kg อย่างเดียว ไม่ต้องให้ vitamin K','FFP 2 units อย่างเดียว'],0,'INR 4–6 → 35 IU/kg · ต้องให้ vitamin K IV ร่วมเพราะ PCC หมดฤทธิ์ใน 6–8 ชม.'],
+ ['ผู้ป่วยกิน apixaban มีเลือดออกในสมอง กินยาครั้งล่าสุด 6 ชม.ก่อน ในโรงพยาบาลไทยที่มี 4F-PCC ควรให้',['Idarucizumab 5 g','Andexanet alfa','4F-PCC 50 IU/kg','Vitamin K 10 mg IV'],2,'Andexanet ไม่มีในไทยและถอนจากตลาดสหรัฐฯ · idarucizumab ใช้กับ dabigatran เท่านั้น'],
+ ['ผู้ป่วยกิน warfarin จะใส่ pacemaker ACCP 2022 แนะนำ (strong)',['หยุด warfarin 5 วัน + bridging','ต่อ warfarin','หยุด warfarin 3 วัน','เปลี่ยนเป็น UFH'],1,'BRUISE CONTROL: hematoma 3.5% (ต่อยา) vs 16% (bridging)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

@@ -1,0 +1,879 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Proteinuria · Hematuria · Nephrotic syndrome · โปรตีนและเลือดในปัสสาวะ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Nephrology · KDIGO 2021 Glomerular Diseases · KDIGO 2025 IgAN/IgAV · KDIGO 2024 Lupus nephritis · KDIGO 2024 CKD · AUA/SUFU Microhematuria 2025</div>
+  <h1>โปรตีนรั่วและเลือดในปัสสาวะ · Nephrotic/Nephritic syndrome<br>Proteinuria · Hematuria · Glomerular disease</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · เริ่มจาก <b>ผล dipstick ที่ผิดปกติ</b> → ยืนยันด้วย <b>UACR/UPCR</b> → แยก <b>โปรตีนรั่วชั่วคราว</b> ออก → แยกเลือดในปัสสาวะว่ามาจาก <b>ไต (glomerular)</b> หรือ <b>ทางเดินปัสสาวะ (เสี่ยงมะเร็ง)</b> → จับ <b>RPGN</b> ให้ได้เร็ว → ดูแล <b>nephrotic syndrome</b> แบบ supportive ระหว่างรอ biopsy · หน้านี้เข้าชุดกับหน้า <a href="../ckd/index.html">CKD</a>, <a href="../aki/index.html">AKI</a> และ <a href="../sle/index.html">SLE</a></p>
+  <p class="cite">อ้างอิงหลัก: KDIGO 2021 Clinical Practice Guideline for the Management of Glomerular Diseases (Kidney Int 2021;100(4S):S1–S276) · KDIGO 2025 Guideline for IgA Nephropathy and IgA Vasculitis (Kidney Int 2025;108(4S):S1–S71) · KDIGO 2024 Lupus Nephritis Guideline (Kidney Int 2024;105(1S):S1–S69) · KDIGO 2024 ANCA-Associated Vasculitis Guideline (Kidney Int 2024;105(3S):S71–S116) · KDIGO 2024 CKD Guideline (Kidney Int 2024;105(4S):S117–S314) · Barocas DA, et al. Updates to Microhematuria: AUA/SUFU Guideline 2025 (J Urol 2025;213:547–57) · คำแนะนำการดูแลผู้ป่วยโรคไตเรื้อรังก่อนการบำบัดทดแทนไต พ.ศ. 2565 สมาคมโรคไตแห่งประเทศไทย · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>Cr ขึ้นเร็ว + เลือด/cast ในปัสสาวะ</b>คิด RPGN → ส่งอายุรแพทย์โรคไต <b>วันนี้</b> · ส่ง ANCA, anti-GBM, C3/C4, ANA</div>
+    <div class="stage" style="--c:var(--warn)"><b>UPCR &gt;3,000 mg/g + albumin ต่ำ + บวม</b>Nephrotic syndrome → ACEi/ARB, diuretic, เกลือ &lt;2 g Na · ประเมิน VTE · ส่ง biopsy</div>
+    <div class="stage" style="--c:var(--accent)"><b>Dipstick บวกครั้งเดียว ≠ โรคไต</b>ยืนยัน UACR/UPCR ซ้ำ 2 ใน 3 ครั้งใน 3 เดือน · ตัดสาเหตุชั่วคราว</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#test">Dipstick · UACR · UPCR</a><a href="#confirm">ชั่วคราว · orthostatic · ยืนยัน</a><a href="#hema">เลือดในปัสสาวะ</a><a href="#nephritic">Nephritic · RPGN</a><a href="#nephrotic">Nephrotic syndrome</a><a href="#cause">สาเหตุและการตรวจ</a><a href="#support">Supportive care</a><a href="#disease">โรคเฉพาะ</a><a href="#thai">บริบทไทย</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="test" class="col">
+  <div class="sec-num">01</div>
+  <h2>Dipstick · UACR · UPCR</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ข้อจำกัดของ dipstick protein</h4><ul><li>ตรวจ <b>albumin เป็นหลัก</b> · ไม่เห็น light chain (Bence Jones), β2-microglobulin หรือโปรตีนจากท่อไต → <b>dipstick ลบ แต่ UPCR สูง</b> ได้ในมะเร็งเม็ดเลือด myeloma</li><li>วัด <b>ความเข้มข้น</b> (mg/dL) ไม่ใช่ปริมาณต่อวัน · ปัสสาวะเจือจางให้ผลลบลวง · ปัสสาวะเข้มข้นให้บวกลวง</li><li>บวกลวง: ปัสสาวะด่างมาก (pH ≥8), จุ่มนานเกิน, ปนน้ำยาฆ่าเชื้อ (chlorhexidine), เลือดปนมาก</li><li>ค่าโดยประมาณ <span class="tag add">เสริม</span>: trace ≈ 15–30 · 1+ ≈ 30 · 2+ ≈ 100 · 3+ ≈ 300 · 4+ ≥1,000 mg/dL</li><li>ตรวจไม่เจอ moderately increased albuminuria (A2) ส่วนใหญ่ → <b>เบาหวาน/ความดันสูง ที่ dipstick ลบ ต้องตรวจ UACR</b> <span class="tag th">ไทย</span> (CKD CPG 2565)</li></ul></div>
+    <div class="card c-acc"><h4>UACR vs UPCR</h4><ul><li><b>UACR</b> (albumin:creatinine) ไวกว่าในระยะต้น ใช้คัดกรองและ <b>จัดระดับ A ของ CKD</b> · เป็นค่าที่ KDIGO แนะนำ</li><li><b>UPCR</b> (protein:creatinine) ใช้ <b>ติดตามโรค glomerular</b> และเมื่อโปรตีนรั่วมาก · <b>UPCR (mg/g) ≈ โปรตีนต่อวัน (mg/วัน)</b> โดยประมาณ (สมมุติขับ creatinine ~1 g/วัน)</li><li>ผิดพลาดได้ในคนกล้ามเนื้อมาก/น้อยมาก (ผู้สูงอายุผอม ตัดขา) → ใช้ปัสสาวะ 24 ชม. ถ้าการตัดสินใจขึ้นกับค่าแน่นอน (KDIGO 2021 ใช้ 24 ชม. ก่อนเริ่ม/ปรับยากดภูมิ)</li><li><b>UACR/UPCR ต่ำมาก</b> (โปรตีนส่วนใหญ่ไม่ใช่ albumin) → คิด tubular proteinuria หรือ light chain → ส่ง SPEP/serum free light chain <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+  <div class="box key"><b>แปลงหน่วย</b>creatinine 1 mmol = 113 mg → <b>mg/mmol × 8.84 = mg/g</b> · <b>mg/g ÷ 8.84 = mg/mmol</b> · g/g (= mg/mg) × 1,000 = mg/g · KDIGO ใช้ค่าตัดแบบปัดเศษ: 30 mg/g ≈ 3 mg/mmol, 300 mg/g ≈ 30 mg/mmol</div>
+  <div class="tbl"><table>
+    <tr><th>KDIGO</th><th>UACR</th><th>UPCR</th><th>โปรตีน 24 ชม.</th><th>Dipstick (โดยประมาณ)</th></tr>
+    <tr><td><b>A1</b> ปกติ–เพิ่มเล็กน้อย</td><td>&lt;30 mg/g (&lt;3 mg/mmol)</td><td>&lt;150 mg/g (&lt;15 mg/mmol)</td><td>&lt;150 mg</td><td>ลบ–trace</td></tr>
+    <tr><td><b>A2</b> เพิ่มปานกลาง</td><td>30–300 mg/g (3–30)</td><td>150–500 mg/g (15–50)</td><td>150–500 mg</td><td>trace–1+</td></tr>
+    <tr><td><b>A3</b> เพิ่มมาก</td><td>&gt;300 mg/g (&gt;30)</td><td>&gt;500 mg/g (&gt;50)</td><td>&gt;500 mg</td><td>≥1+</td></tr>
+    <tr><td><b>Nephrotic range</b></td><td>ราว &gt;2,200 mg/g</td><td><b>&gt;3,000–3,500 mg/g</b> (&gt;300–350 mg/mmol)</td><td><b>&gt;3.5 g</b></td><td>3+–4+</td></tr>
+  </table></div>
+</section>
+
+<section id="confirm" class="col">
+  <div class="sec-num">02</div>
+  <h2>โปรตีนรั่วชั่วคราว · orthostatic · การยืนยัน</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>Transient proteinuria</h4><ul><li>เกิดจาก <b>ไข้, ออกกำลังกายหนัก, UTI, ประจำเดือน/ตกขาวปน, น้ำตาลสูงมาก, HF กำเริบ, ความดันสูงมาก</b>, ชัก</li><li>มักน้อยกว่า 1 g/วัน และ <b>หายเมื่อเหตุหายไป</b></li><li>ตรวจซ้ำเมื่อหายแล้ว (เช่น หลังรักษา UTI หรือหายไข้) — <b>ไม่ต้องส่งต่อถ้าผลซ้ำปกติ</b></li></ul></div>
+    <div class="card c-acc"><h4>Orthostatic proteinuria <span class="tag add">เสริม</span></h4><ul><li>พบใน <b>วัยรุ่น–ผู้ใหญ่ตอนต้น (มัก &lt;30 ปี)</b> · โปรตีนรั่วเฉพาะตอนยืน/เดิน · มัก &lt;1 g/วัน · ไม่มีเลือดในปัสสาวะ ไตปกติ ความดันปกติ</li><li><b>ทดสอบ</b>: เทียบ <b>ปัสสาวะแรกตอนตื่น</b> (ปัสสาวะทิ้งก่อนนอน แล้วเก็บตอนตื่นทันที) กับปัสสาวะช่วงกลางวัน → แรกตื่นปกติ (UPCR &lt;150–200 mg/g) แต่กลางวันสูง = orthostatic</li><li>หรือ <b>split 24-h urine</b>: ช่วงนอนราบ 8 ชม. &lt;50 mg</li><li>พยากรณ์ดีมาก ไม่ต้องรักษา · ตรวจซ้ำเป็นระยะ</li></ul></div>
+  </div>
+  <div class="box note"><b>ยืนยันก่อนเรียกว่า CKD</b>Albuminuria ต้องผิดปกติ <b>นานกว่า 3 เดือน</b> · Thai CKD CPG 2565 ให้ใช้ผลบวก <b>2 ใน 3 ครั้งในช่วง 3 เดือน</b> (ใช้ปัสสาวะเช้าเป็นหลัก) <span class="tag th">ไทย</span> · KDIGO 2024 แนะนำ <b>UACR</b> เป็นค่าหลัก และยืนยันผลที่ผิดปกติด้วยการตรวจซ้ำ · จัด stage ด้วย G + A (ดูหน้า <a href="../ckd/index.html">CKD</a>) · <b>ถ้ามี nephrotic range, เลือดในปัสสาวะร่วม หรือ Cr ขึ้น — ไม่ต้องรอ 3 เดือน</b> ส่งต่อ/ตรวจเพิ่มได้เลย</div>
+  <div class="tbl"><table>
+    <tr><th>เมื่อไรส่งอายุรแพทย์โรคไต (โปรตีนรั่ว)</th><th>ที่มา</th></tr>
+    <tr><td>UACR ≥300 mg/g หรือ UPCR ≥500 mg/g <b>หลังคุมความดันแล้ว</b></td><td>Thai CKD CPG 2565 <span class="tag th">ไทย</span></td></tr>
+    <tr><td>UACR ≥300 mg/g (≥30 mg/mmol) หรือ UPCR ≥500 mg/g หรือ AER ≥300 mg/24 ชม.</td><td>KDIGO 2024 CKD</td></tr>
+    <tr><td>Nephrotic range หรือ nephrotic syndrome · โปรตีนรั่ว + เลือดในปัสสาวะ (glomerular) · eGFR ลดเร็ว</td><td>KDIGO 2021 GD</td></tr>
+    <tr><td>UACR ≥2,200 mg/g ในเบาหวาน (มาก/เร็วเกินเบาหวาน) หรือไม่มี retinopathy</td><td><span class="tag add">เสริม</span></td></tr>
+  </table></div>
+</section>
+
+<section id="hema" class="col">
+  <div class="sec-num">03</div>
+  <h2>เลือดในปัสสาวะ (Microscopic hematuria)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>นิยาม</h4><ul><li><b>AUA/SUFU 2020/2025: ≥3 RBC/HPF</b> จากกล้องจุลทรรศน์ (ปัสสาวะกลางสาย) <b>ครั้งเดียวก็เริ่มประเมิน</b></li><li><b>Dipstick ใช้วินิจฉัยไม่ได้</b> · dipstick blood ≥trace → ส่ง microscopy ทุกครั้ง</li><li>Dipstick blood บวก แต่ <b>RBC &lt;3/HPF</b> → คิด <b>myoglobin</b> (rhabdomyolysis) หรือ <b>hemoglobin</b> (hemolysis) — ดูหน้า <a href="../rhabdo-heat/index.html">Rhabdomyolysis</a></li><li><span class="tag th">ไทย</span> Thai CKD CPG 2565 ถือ <b>RBC &gt;5/HPF</b> (ปัสสาวะปั่น) เป็นผิดปกติ — <b>หน้านี้ใช้ ≥3/HPF ตาม AUA</b> เพื่อไม่พลาดมะเร็งในกลุ่มเสี่ยง แต่ในคนอายุน้อยเสี่ยงต่ำ 3–5/HPF ให้ตรวจซ้ำก่อน</li></ul></div>
+    <div class="card c-warn"><h4>สาเหตุชั่วคราว / ไม่ใช่มะเร็ง</h4><ul><li>UTI · ประจำเดือน · ออกกำลังกายหนัก · เพศสัมพันธ์ · บาดเจ็บ · นิ่ว · ต่อมลูกหมากโต</li><li>รักษาเหตุก่อน แล้ว <b>ตรวจปัสสาวะซ้ำ</b> · ถ้ายังมี → ประเมินต่อตามความเสี่ยง</li><li><b>กินยาต้านเกล็ดเลือด/ยาต้านการแข็งตัวของเลือด ไม่ใช่คำอธิบาย</b> → ประเมินเหมือนคนทั่วไป</li><li>ผู้หญิง: เก็บปัสสาวะผ่านสายสวน/ตรวจภายใน แยกเลือดจากอวัยวะสืบพันธุ์</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ลักษณะ</th><th>Glomerular (ไต)</th><th>Non-glomerular (ทางเดินปัสสาวะ)</th></tr>
+    <tr><td>รูปร่าง RBC</td><td><b>Dysmorphic</b> · acanthocyte (≥5% ชวนสงสัยมาก) <span class="tag add">เสริม</span></td><td>รูปร่างปกติ (isomorphic)</td></tr>
+    <tr><td>Cast</td><td><b>RBC cast</b> = มาจาก glomerulus แน่นอน</td><td>ไม่มี</td></tr>
+    <tr><td>โปรตีน</td><td>มักมี (UACR/UPCR สูง)</td><td>ไม่มี/น้อย</td></tr>
+    <tr><td>อื่นๆ</td><td>Cr สูง, ความดันสูง, บวม · ปัสสาวะสีโค้ก/ชา · ไม่มีลิ่มเลือด</td><td><b>ลิ่มเลือด</b>, ปัสสาวะแดงสด, ปวดหลัง/ขัด</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ถ้ามีลักษณะ glomerular → ประเมินไต (UPCR, Cr, serology) และส่งอายุรแพทย์โรคไต · AUA 2025 ระบุว่า <b>แม้สงสัยโรคไต ก็ยังต้องประเมินความเสี่ยงมะเร็งทางเดินปัสสาวะตามปกติ</b></p>
+  <h3>AUA/SUFU 2025: แบ่งกลุ่มเสี่ยงมะเร็งทางเดินปัสสาวะ <span class="tag up">2025</span></h3>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม (ความเสี่ยงมะเร็ง)</th><th>เกณฑ์</th><th>การตรวจ</th></tr>
+    <tr><td><b>Low/negligible</b> (0–0.4%)<br><span class="muted">ต้องครบทุกข้อ</span></td><td>RBC <b>3–10</b>/HPF ครั้งเดียว · หญิง <b>&lt;60</b> ปี หรือชาย <b>&lt;40</b> ปี · ไม่สูบ หรือ <b>&lt;10 pack-years</b> · ไม่มีปัจจัยเสี่ยงอื่น</td><td><b>ตรวจปัสสาวะซ้ำภายใน 6 เดือน</b> (ไม่ต้องส่องกล้อง/ภาพทันที) · ซ้ำยังมี → ประเมินตามกลุ่มใหม่</td></tr>
+    <tr><td><b>Intermediate</b> (0.2–3.1%)<br><span class="muted">ข้อใดข้อหนึ่ง</span></td><td>RBC <b>11–25</b>/HPF · หญิง <b>≥60</b> ปี · ชาย <b>40–59</b> ปี · <b>10–30 pack-years</b> · มีปัจจัยเสี่ยงอื่น ≥1 · เคยเป็น low risk ที่ยังไม่ได้ตรวจ แล้วซ้ำได้ 3–25/HPF</td><td><b>Cystoscopy + ultrasound ไต/กระเพาะปัสสาวะ</b> · ผู้ที่ไม่อยากส่องกล้อง: urine cytology หรือ urine tumor marker (ถ้าลบ → ตรวจปัสสาวะซ้ำใน 12 เดือน)</td></tr>
+    <tr><td><b>High</b> (1.3–6.3%)<br><span class="muted">ข้อใดข้อหนึ่ง</span></td><td>RBC <b>&gt;25</b>/HPF · <b>เคยมีปัสสาวะเป็นเลือดที่เห็นด้วยตา</b> · ชาย <b>≥60</b> ปี · <b>&gt;30 pack-years</b></td><td><b>Cystoscopy + CT urography (multiphasic)</b> · ใช้ contrast ไม่ได้ → MR urography หรือ CT ไม่ฉีดสี/US + retrograde pyelography</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ปัจจัยเสี่ยงอื่นของมะเร็งทางเดินปัสสาวะ: อาการระคายเคือง/LUTS, เคยได้ cyclophosphamide/ifosfamide, ทำงานสัมผัส benzene/aromatic amine (สีย้อม ยาง), คาสายสวนนาน, ฉายแสงอุ้งเชิงกราน, ญาติเป็นมะเร็งทางเดินปัสสาวะหรือ Lynch syndrome · ญาติเป็นมะเร็งไต/กลุ่มอาการทางพันธุกรรม → <b>ตรวจภาพทางเดินปัสสาวะส่วนบนทุกกลุ่ม</b> · <b>2025 เปลี่ยน: ผู้หญิงไม่ถูกจัดเป็น high risk จากอายุอย่างเดียว</b> (2020 หญิง ≥60 = high) · <b>Gross hematuria</b> → ส่งศัลยแพทย์ระบบปัสสาวะประเมินแบบ high risk เสมอ (ยกเว้นชัดว่าเป็น glomerular เช่นปัสสาวะสีโค้กพร้อมเจ็บคอใน IgAN)</p>
+</section>
+
+<section id="nephritic" class="col">
+  <div class="sec-num">04</div>
+  <h2>Nephritic syndrome · RPGN</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Nephritic syndrome</h4><ul><li><b>เลือดในปัสสาวะแบบ glomerular</b> (dysmorphic RBC, RBC cast) + โปรตีนรั่ว (มัก &lt;3.5 g/วัน) + <b>ความดันสูง</b> + บวม + Cr สูง/ปัสสาวะออกน้อย</li><li>ตัวอย่าง: post-infectious GN (หลังเจ็บคอ/ผิวหนังติดเชื้อ 1–3 สัปดาห์), IgAN, lupus nephritis, ANCA vasculitis, anti-GBM, endocarditis, cryoglobulinemia (HCV)</li></ul></div>
+    <div class="card c-red"><h4>RPGN — red flags</h4><ul><li><b>eGFR ลดลง ≥50% ในวัน–3 เดือน</b> ร่วมกับปัสสาวะแบบ nephritic</li><li>Cr เพิ่มทุกครั้งที่ตรวจ · ปัสสาวะออกน้อย · ความดันสูงขึ้นใหม่</li><li><b>ไอเป็นเลือด/ฝ้าในปอด</b> (pulmonary–renal syndrome) · ผื่นจ้ำเลือดคลำได้ · ไซนัสอักเสบเรื้อรัง ปลายประสาทอักเสบ · อาการ SLE</li><li>→ <b>ส่งอายุรแพทย์โรคไตด่วนวันนั้น</b> · biopsy เร็ว · ไตเสียถาวรในไม่กี่วัน–สัปดาห์ถ้าช้า</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Serology</th><th>ช่วยอะไร</th></tr>
+    <tr><td><b>ANCA</b> (MPO, PR3 แบบ antigen-specific immunoassay)</td><td>ANCA vasculitis — สาเหตุ RPGN ที่พบบ่อยในผู้สูงอายุ (KDIGO 2024 AAV)</td></tr>
+    <tr><td><b>Anti-GBM</b></td><td>Goodpasture/anti-GBM disease — ฉุกเฉินที่สุด (plasma exchange) · ANCA บวกร่วมได้ (double positive)</td></tr>
+    <tr><td><b>C3, C4</b></td><td><b>C3 ต่ำ</b>: post-infectious GN, C3 glomerulopathy/MPGN, endocarditis/shunt · <b>C3 + C4 ต่ำ</b>: lupus nephritis, cryoglobulinemia (C4 ต่ำเด่น) · <b>ปกติ</b>: IgAN, ANCA, anti-GBM</td></tr>
+    <tr><td><b>ANA, anti-dsDNA</b></td><td>Lupus nephritis (หญิงอายุน้อย) — ดูหน้า <a href="../sle/index.html">SLE</a></td></tr>
+    <tr><td>ASO/anti-DNase B · HBsAg · anti-HCV · HIV · cryoglobulin · hemoculture</td><td>ตามประวัติ: ติดเชื้อนำ, ตับอักเสบ (ดู <a href="../hepbc/index.html">Hep B/C</a>), HIV (ดู <a href="../hiv/index.html">HIV</a>), ไข้ + murmur</td></tr>
+    <tr><td>CBC + smear, LDH, platelet</td><td>แยก TMA (schistocyte, platelet ต่ำ) ซึ่งรักษาต่างกัน</td></tr>
+  </table></div>
+  <div class="box warn"><b>บทบาท GP</b>ตรวจปัสสาวะด้วยกล้องเอง (ดู RBC cast) · ส่ง Cr, K, CBC, UPCR, serology <b>แล้วส่งต่อทันที — ไม่ต้องรอผล serology</b> · ตัดสาเหตุ AKI อื่น (อุดกั้น ขาดน้ำ ยา — ดู <a href="../aki/index.html">AKI</a>, <a href="../aki-drug/index.html">AKI จากยา</a>) · <b>ข้อบ่งชี้ล้างไตฉุกเฉิน</b> (K สูงดื้อยา, น้ำท่วมปอด, uremia, acidosis รุนแรง) ส่งทันที · การให้ methylprednisolone pulse, cyclophosphamide/rituximab, plasma exchange เป็นหน้าที่ของอายุรแพทย์โรคไต (KDIGO 2024 AAV: ถ้าอาการหนักและ biopsy ช้า เริ่มรักษาได้ก่อนผล biopsy)</div>
+</section>
+
+<section id="nephrotic" class="col">
+  <div class="sec-num">05</div>
+  <h2>Nephrotic syndrome: นิยามและภาวะแทรกซ้อน</h2>
+  <div class="box key"><b>นิยาม (ผู้ใหญ่)</b>โปรตีนรั่ว <b>&gt;3.5 g/วัน</b> (หรือ <b>UPCR &gt;3,000–3,500 mg/g</b>) + <b>albumin ต่ำ</b> (&lt;3.0 g/dL ด้วยวิธี BCP/immunoassay; วิธี <b>BCG อ่านสูงกว่า</b> → KDIGO 2021 เทียบ 3.0 (BCP) ≈ 3.2 (BCG) และ 2.0 (BCP) ≈ 2.5 (BCG)) ± <b>บวม</b> ± <b>ไขมันสูง</b> · มีแต่ proteinuria &gt;3.5 g/วัน โดย albumin ปกติ = <b>nephrotic-range proteinuria</b> (มักพบใน FSGS แบบ secondary, DKD)</div>
+  <div class="tbl"><table>
+    <tr><th>ภาวะแทรกซ้อน</th><th>สิ่งที่ต้องทำ</th></tr>
+    <tr><td><b>VTE</b> (DVT, PE, <b>renal vein thrombosis</b>) — เสี่ยงสูงสุดใน <b>membranous</b> และเมื่อ albumin ต่ำมาก · arterial thrombosis ได้</td><td>VTE เกิดแล้ว → <b>anticoagulant เต็มขนาด</b> (KDIGO PP 1.7.1) · ประเมินให้ prophylaxis (ดูบทที่ 07) · ดูหน้า <a href="../vte/index.html">VTE</a></td></tr>
+    <tr><td><b>ติดเชื้อ</b> — เสีย IgG และ complement: cellulitis, peritonitis (pneumococcus), ปอดอักเสบ</td><td>วัคซีน · ไข้ + ปวดท้องในคนบวมมาก → นึกถึง peritonitis</td></tr>
+    <tr><td><b>AKI</b> — จากขาดน้ำในหลอดเลือด (diuretic มากไป), NSAIDs, RVT, ไตบวม</td><td>ตาม Cr ระหว่างปรับยาขับปัสสาวะ · หยุด NSAIDs</td></tr>
+    <tr><td><b>ไขมันสูง</b> (LDL, Lp(a))</td><td>Statin เมื่อเป็นต่อเนื่อง/เสี่ยงหัวใจ</td></tr>
+    <tr><td>อื่นๆ: เสีย thyroid-binding globulin (TSH สูงเล็กน้อย), vitamin D-binding protein · ยาที่จับ albumin มีระดับอิสระสูง</td><td>แปลผล thyroid ระวัง · ทบทวนขนาดยา</td></tr>
+  </table></div>
+</section>
+
+<section id="cause" class="col">
+  <div class="sec-num">06</div>
+  <h2>สาเหตุในผู้ใหญ่และการตรวจ</h2>
+  <div class="tbl"><table>
+    <tr><th>โรค</th><th>เบาะแส</th></tr>
+    <tr><td><b>Minimal change disease (MCD)</b></td><td>บวมเร็วทันที (วัน–สัปดาห์) · ปัสสาวะไม่ค่อยมีเลือด · ความดันปกติ · AKI ได้ในผู้สูงอายุ · ยา <b>NSAIDs</b>, lithium · lymphoma (Hodgkin)</td></tr>
+    <tr><td><b>FSGS</b></td><td>Primary: nephrotic syndrome เต็มรูป · Secondary (adaptive: อ้วน ไตน้อย reflux, ยา, HIV, พันธุกรรม): โปรตีนรั่วมากแต่ albumin มักปกติ</td></tr>
+    <tr><td><b>Membranous (MN)</b></td><td>ผู้ใหญ่วัยกลางคน–สูงอายุ · บวมค่อยเป็นค่อยไป · <b>VTE บ่อย</b> · <b>anti-PLA2R</b> บวก ~70–80% ของ primary MN <span class="tag add">เสริม</span> · Secondary: <b>HBV</b>, SLE (class V), มะเร็ง (ปอด ลำไส้), NSAIDs, <b>ครีมผิวขาวที่มีปรอท</b> <span class="tag add">เสริม</span>, syphilis</td></tr>
+    <tr><td><b>Diabetic kidney disease</b></td><td>เบาหวานนาน + <b>retinopathy</b> · albuminuria ค่อยๆ เพิ่ม · ไม่มี active sediment — สาเหตุ nephrotic-range ที่พบบ่อยที่สุดโดยรวม (ดูหน้า <a href="../dm/index.html">DM</a>)</td></tr>
+    <tr><td><b>Lupus nephritis</b></td><td>หญิงอายุน้อย · ผื่น ข้ออักเสบ เม็ดเลือดต่ำ · C3/C4 ต่ำ, anti-dsDNA · class V = nephrotic, class III/IV = nephritic ± nephrotic</td></tr>
+    <tr><td><b>Amyloidosis</b> (AL, AA)</td><td>อายุ &gt;50 · ไตโต ตับโต หัวใจหนา ปลายประสาทชา · <b>SPEP + serum free light chain</b> · AA: การอักเสบเรื้อรัง (TB, bronchiectasis, RA)</td></tr>
+    <tr><td><b>ติดเชื้อ</b></td><td>HBV (MN, MPGN) · HCV (MPGN/cryoglobulin) · <b>HIV</b> (HIVAN = collapsing FSGS) · syphilis (MN)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ตรวจเบื้องต้น (GP ทำได้)</h4><ul><li>UA + <b>ส่องกล้องดูตะกอน</b> · UPCR (± UACR) · Cr/eGFR · albumin · lipid · glucose/HbA1c · CBC · electrolyte</li><li><b>HBsAg, anti-HCV, anti-HIV, VDRL</b> (KDIGO PP 1.8.2 แนะนำตรวจ TB/HBV/HCV/HIV/syphilis ตามความเหมาะสม)</li><li>ANA, C3, C4 · อายุ &gt;50 หรือสงสัย: SPEP, serum free light chain</li><li><b>Ultrasound ไต</b> (ขนาด, ไตเดียว, ก่อน biopsy) · CXR</li><li><b>Anti-PLA2R</b> ถ้ามี (ส่งต่อแล็บ) — บวกในบริบทที่เหมาะสม ช่วยวินิจฉัย MN โดยอาจไม่ต้อง biopsy (ตามดุลยพินิจอายุรแพทย์โรคไต)</li></ul></div>
+    <div class="card c-warn"><h4>Kidney biopsy</h4><ul><li><b>ผู้ใหญ่ nephrotic syndrome ส่วนใหญ่ต้อง biopsy</b> (ต่างจากเด็ก) — MCD, FSGS, IgAN วินิจฉัยไม่ได้หากไม่ biopsy</li><li>ยกเว้นที่อาจไม่ต้อง: เบาหวานนาน + retinopathy + ภาพเข้ากับ DKD · anti-PLA2R บวก + eGFR ปกติ (ตามดุลยพินิจ)</li><li>ก่อน biopsy: คุมความดัน, หยุด antiplatelet/anticoagulant ตามแนวทาง รพ., ตรวจ CBC/coagulation</li><li><b>อย่าเริ่ม steroid เองก่อน biopsy</b> (ทำให้ผลชิ้นเนื้อแปลยาก และอาจไม่จำเป็น)</li></ul></div>
+  </div>
+</section>
+
+<section id="support" class="col">
+  <div class="sec-num">07</div>
+  <h2>Supportive care (KDIGO 2021 + KDIGO 2024 CKD)</h2>
+  <div class="tbl"><table>
+    <tr><th>เรื่อง</th><th>แนวทาง</th></tr>
+    <tr><td><b>ACEi/ARB</b></td><td>ให้ทุกรายที่ proteinuria &gt;0.5 g/วัน <span class="rec s1">1B</span> <span class="muted">(KDIGO 2021 GD; KDIGO 2024 CKD: A3 หรือเบาหวาน A2–A3 = 1B, A2 ไม่มีเบาหวาน = 2C)</span> (ยกเว้น MCD ที่คาดว่าจะหายเร็วด้วย steroid — ไม่จำเป็นต้องใช้) · <b>ปรับถึงขนาดสูงสุดที่ทนได้</b> <span class="muted">(practice point)</span> · ตัวอย่าง: <b>enalapril</b> 2.5–5 mg PO วันละ 2 ครั้ง → สูงสุด 20 mg วันละ 2 ครั้ง · <b>losartan</b> 25–50 mg PO วันละครั้ง → สูงสุด 100 mg/วัน · eGFR &lt;30: เริ่มขนาดต่ำ (enalapril 2.5 mg/วัน) · ตรวจ <b>Cr และ K ภายใน 2–4 สัปดาห์</b> หลังเริ่ม/เพิ่มยา · <b>Cr เพิ่ม ≤30%</b> ให้ยาต่อได้ · ห้ามใช้ ACEi + ARB ร่วมกัน · ห้ามในหญิงตั้งครรภ์ · หยุดชั่วคราวเมื่อขาดน้ำ/ท้องเสีย/อาเจียน</td></tr>
+    <tr><td><b>ความดัน</b></td><td>เป้า <b>SBP &lt;120 mmHg</b> ถ้าทนได้ (KDIGO 2021 BP in CKD) · IgAN: ≤120/70 (KDIGO 2025) — ดูหน้า <a href="../htn/index.html">ความดันโลหิตสูง</a></td></tr>
+    <tr><td><b>เกลือ</b></td><td><b>Sodium &lt;2 g/วัน</b> (≈ เกลือแกง 5 g/1 ช้อนชา; KDIGO 2021 ระบุ 1.5–2 g/วัน หรือ 60–90 mmol) · งดน้ำปลา ซีอิ๊ว ผงชูรส อาหารแปรรูป <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>บวม: diuretic</b></td><td><b>Loop diuretic เป็นหลัก</b> แบ่งให้วันละ 2 ครั้ง: <b>furosemide</b> 20–40 mg PO วันละ 1–2 ครั้ง (บวมน้อย) · บวมมาก/ลำไส้บวม ดูดซึมไม่ดี → <b>IV 20–40 mg วันละ 2 ครั้ง</b> แล้วเพิ่มขนาดเป็นเท่าตัวจนได้ผล (ขนาด IV ต่อครั้งไม่เกิน ~160–200 mg) · eGFR &lt;30 ต้องขนาดสูงกว่า · <b>ดื้อยา</b> → เพิ่ม <b>hydrochlorothiazide 25–50 mg/วัน</b> (หรือ metolazone, amiloride, spironolactone ตาม K) · ตามน้ำหนักทุกวัน, Na, K, Cr · <b>ลดน้ำหนักทีละน้อย (~0.5–1 kg/วัน)</b> <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Albumin IV</b></td><td><b>ใช้น้อยมาก</b> · พิจารณาเฉพาะบวมรุนแรงดื้อยา + albumin ต่ำมาก (&lt;2 g/dL) หรือมีภาวะขาดน้ำในหลอดเลือด/AKI จาก hypovolemia · ผลอยู่ไม่นาน (รั่วออกทางปัสสาวะ)</td></tr>
+    <tr><td><b>SGLT2i</b></td><td>KDIGO 2024 CKD: <b>eGFR ≥20 + UACR ≥200 mg/g</b> (หรือมี HF/เบาหวาน) <span class="rec s1">1A</span> · <b>dapagliflozin 10 mg</b> หรือ <b>empagliflozin 10 mg</b> PO วันละครั้ง · ไม่เริ่มใหม่เมื่อ eGFR &lt;20 แต่ใช้ต่อได้จนล้างไต · eGFR ลดเล็กน้อยช่วงแรกไม่ต้องหยุด · หยุดชั่วคราวเมื่อป่วย/อดอาหาร · <b>หลักฐานใน GN</b>: DAPA-CKD/EMPA-KIDNEY มี IgAN, FSGS แต่ <b>ไม่รวมผู้ที่ได้ยากดภูมิ/LN/ANCA</b> → ใช้เป็น supportive ใน CKD ที่ proteinuria ค้าง หลังวินิจฉัยแล้ว (KDIGO 2025 IgAN แนะนำ <span class="rec">2B</span>)</td></tr>
+    <tr><td><b>Statin</b></td><td>Nephrotic ต่อเนื่อง หรือมีความเสี่ยงหัวใจ/อายุ ≥50 + CKD → <b>atorvastatin 10–20 mg</b> (หรือ simvastatin 20–40 mg) PO วันละครั้ง · MCD ที่คาดว่าจะหายเร็ว รอได้ · ดูหน้า <a href="../lipid/index.html">ไขมัน</a></td></tr>
+    <tr><td><b>Anticoagulation prophylaxis</b></td><td><b>Membranous</b> (เสี่ยงสูงสุด): albumin <b>&lt;2.5 g/dL (BCG) ≈ &lt;2.0 (BCP)</b> → ประเมินเสี่ยง VTE vs เลือดออกด้วย <b>KDIGO/UNC GN tool</b> · <b>โรคอื่น</b>: พิจารณาเมื่อ albumin ต่ำระดับนี้ + ปัจจัยเสี่ยงเพิ่ม: <b>proteinuria &gt;10 g/วัน, BMI &gt;35, เคยเป็น VTE, ประวัติครอบครัว + thrombophilia, HF NYHA III–IV, ผ่าตัดช่องท้อง/กระดูกเร็วๆ นี้, นอนติดเตียง</b> · ให้เมื่อ <b>เสี่ยงเลือดออกต่ำ</b> · ยา: <b>warfarin INR 2–3</b> (เริ่มคู่ LMWH) หรือ LMWH (เช่น enoxaparin 40 mg SC วันละครั้ง; CrCl &lt;30 → 30 mg) · DOAC ข้อมูลจำกัด · เสี่ยงเลือดออกสูง: ไม่ให้ anticoagulant; aspirin ช่วย arterial แต่ <b>ป้องกัน VTE ไม่พอ</b> · <b>เริ่ม steroid ไม่ใช่เหตุให้หยุด prophylaxis</b> (steroid เพิ่มเสี่ยง thrombosis)</td></tr>
+    <tr><td><b>ติดเชื้อ/วัคซีน</b></td><td><b>Pneumococcal</b> (PCV20 หรือ PCV13/15 + PPSV23), <b>influenza</b> (ผู้ป่วยและคนในบ้าน), <b>zoster</b> (recombinant) — ฉีดก่อนเริ่มยากดภูมิถ้าทำได้ · ห้ามวัคซีนเชื้อเป็นขณะได้ยากดภูมิ · คัดกรอง <b>HBV</b> ก่อน steroid/rituximab (HBsAg บวก → antiviral ป้องกัน) · ยากดภูมิขนาดสูง → <b>co-trimoxazole ป้องกัน PJP</b> (KDIGO PP 1.8.4) · <b>Strongyloides</b>: ผู้อยู่เขตร้อน + eosinophil สูง → พิจารณา <b>ivermectin 200 µg/kg PO วันละครั้ง × 2 วัน</b> ก่อนยากดภูมิ <span class="tag th">ไทย</span> (KDIGO PP 1.8.3)</td></tr>
+    <tr><td><b>อาหาร/ยาอื่น</b></td><td>ไม่ต้องกินโปรตีนสูง (ไม่ช่วยและเพิ่มโปรตีนรั่ว) · <b>หยุด NSAIDs</b> สมุนไพร/ยาลูกกลอนที่ไม่ทราบส่วนผสม · ปรับยาตาม eGFR</td></tr>
+  </table></div>
+  <div class="box warn"><b>Steroid ไม่ใช่ยา GP เริ่มเอง</b>ให้หลังมีผล biopsy/ปรึกษาอายุรแพทย์โรคไต · <b>MCD (KDIGO 2021)</b>: prednisone/prednisolone <b>1 mg/kg/วัน (สูงสุด 80 mg) วันละครั้ง</b> หรือ 2 mg/kg วันเว้นวัน (สูงสุด 120 mg) อย่างน้อย 4 สัปดาห์ และ <b>ไม่เกิน 16 สัปดาห์</b> · เริ่มลดยา 2 สัปดาห์หลัง remission · รวม ~24 สัปดาห์ · Primary FSGS: steroid ขนาดสูงจน remission หรือถึง 16 สัปดาห์ · ระหว่างให้: ป้องกันกระดูก/กระเพาะ, ตามน้ำตาล, PJP prophylaxis, HBV prophylaxis ถ้า HBsAg บวก</div>
+</section>
+
+<section id="disease" class="col">
+  <div class="sec-num">08</div>
+  <h2>โรคเฉพาะ (ฉบับย่อ)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Membranous nephropathy (KDIGO 2021)</h4><ul><li>ความเสี่ยงต่ำ (proteinuria &lt;3.5 g/วัน, albumin &gt;3.0, eGFR &gt;60) → <b>supportive อย่างเดียว</b> และติดตาม (MN หายเองได้ราว 1/3)</li><li>มีปัจจัยเสี่ยงไตเสื่อม → <b>rituximab</b>, หรือ cyclophosphamide + steroid สลับเดือน 6 เดือน, หรือ CNI ≥6 เดือน <span class="rec s1">1B</span></li><li>ตาม <b>anti-PLA2R</b> ทุก 3–6 เดือน (หายไปก่อน proteinuria ลด)</li><li><b>HBV-associated MN</b>: รักษา HBV ด้วย antiviral (เช่น entecavir) · หลีกเลี่ยงยากดภูมิ</li><li>KDIGO ยังไม่ออก MN ฉบับใหม่ (ณ พ.ย. 2026 ใช้ 2021)</li></ul></div>
+    <div class="card c-vio"><h4>IgA nephropathy (KDIGO 2025) <span class="tag up">2025</span></h4><ul><li>พบบ่อยที่สุดของ primary GN · ปัสสาวะสีโค้ก <b>พร้อม/หลังเจ็บคอ 1–2 วัน</b> (synpharyngitic) ต่างจาก post-strep (1–3 สัปดาห์)</li><li>วินิจฉัยต้อง biopsy · พิจารณา biopsy ในผู้ใหญ่ที่ proteinuria ≥0.5 g/วัน</li><li><b>เป้าใหม่: proteinuria &lt;0.5 g/วัน, ดีที่สุด &lt;0.3</b> (เดิม &lt;1 g) · eGFR ลด &lt;1 mL/min/ปี · BP ≤120/70 · Na &lt;2 g</li><li>CKD care: <b>ACEi/ARB ขนาดสูงสุด</b> <span class="rec s1">1B</span> · <b>SGLT2i</b> <span class="rec">2B</span> · <b>sparsentan</b> (DEARA) แทน ACEi/ARB ถ้ามี <span class="rec">2B</span></li><li>ลดการสร้าง IgA ผิดปกติ: <b>targeted-release budesonide (Nefecon) 9 เดือน</b> <span class="rec">2B</span> · ไม่มี → methylprednisolone 0.4 mg/kg/วัน (สูงสุด 32 mg) 2 เดือนแล้วลด 4 mg/วัน ทุกเดือน รวม 6–9 เดือน + PJP/HBV/กระเพาะ/กระดูก</li><li>ยาใหม่ (iptacopan, atrasentan, sibeprenlimab) มีผลลดโปรตีน — ใช้ตามการอนุมัติ/อายุรแพทย์โรคไต <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-red"><h4>Lupus nephritis (KDIGO 2024)</h4><ul><li><b>Biopsy เมื่อ proteinuria ≥0.5 g/วัน</b> (UPCR ≥500 mg/g), active sediment หรือ eGFR ลดโดยไม่มีสาเหตุอื่น</li><li>ทุกราย: <b>hydroxychloroquine</b> ≤5 mg/kg/วัน (น้ำหนักจริง) · eGFR &lt;30 ลดขนาด ≥25% · + ACEi/ARB, คุมความดัน</li><li>Class III/IV ± V: steroid + MMF หรือ cyclophosphamide ขนาดต่ำ ± belimumab หรือ CNI (voclosporin/tacrolimus) — อายุรแพทย์โรคไต/รูมาติสซั่ม</li><li>เป้า: UPCR &lt;500 mg/g ใน 12 เดือน · ดูหน้า <a href="../sle/index.html">SLE</a></li></ul></div>
+    <div class="card c-ok"><h4>Diabetic kidney disease</h4><ul><li>คัดกรอง UACR + eGFR ปีละครั้ง</li><li>4 เสาหลัก: <b>ACEi/ARB</b> (ถ้ามี albuminuria) · <b>SGLT2i</b> (eGFR ≥20) · <b>finerenone</b> (T2D, UACR ≥30, eGFR ≥25, K ปกติ) · <b>GLP-1 RA</b> · + statin</li><li><b>สงสัยโรคอื่น → ส่ง biopsy</b>: ไม่มี retinopathy, proteinuria ขึ้นเร็ว/nephrotic ทันที, active sediment, eGFR ลดเร็ว, มีอาการโรคระบบ</li><li>ดูหน้า <a href="../dm/index.html">DM</a> และ <a href="../ckd/index.html">CKD</a></li></ul></div>
+  </div>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">09</div>
+  <h2>บริบทไทย <span class="tag th">ไทย</span></h2>
+  <div class="tbl"><table>
+    <tr><th>ประเด็น</th><th>สิ่งที่ควรรู้</th></tr>
+    <tr><td><b>โรคที่พบจาก biopsy</b></td><td>ข้อมูล รพ.รามาธิบดี (2011–2020, 949 ราย): <b>lupus nephritis พบบ่อยที่สุด (~27%)</b> รองลงมา IgAN (~18%) และ FSGS (~14%) ตามด้วย MN, MCD · DKD เพิ่มขึ้นตามเบาหวาน (ข้อมูลศูนย์เดียว)</td></tr>
+    <tr><td><b>เข้าถึง biopsy</b></td><td>ทำได้ใน รพ.ที่มีอายุรแพทย์โรคไต · รพ.ชุมชน/ทั่วไป: ทำ work-up และ supportive care ให้ครบก่อนส่ง เพื่อลดเวลารอ · ระหว่างรอ <b>ไม่เริ่ม steroid เอง</b> ยกเว้นอายุรแพทย์โรคไตสั่ง</td></tr>
+    <tr><td><b>Lupus nephritis ในหญิงอายุน้อย</b></td><td>หญิงวัยเจริญพันธุ์บวม/ปัสสาวะเป็นฟอง + ผื่น/ข้อ/ผมร่วง/ซีด → ส่ง ANA, C3/C4, UPCR เร็ว · ระวัง ACEi/ARB และ MMF/cyclophosphamide ในการตั้งครรภ์ — วางแผนคุมกำเนิด</td></tr>
+    <tr><td><b>HBV ระบาด</b></td><td>คนไทยเป็นพาหะ HBV จำนวนมาก → <b>ตรวจ HBsAg ทุกราย</b> ก่อน steroid/rituximab · HBV-MN รักษาด้วย antiviral (ดูหน้า <a href="../hepbc/index.html">Hep B/C</a>)</td></tr>
+    <tr><td><b>NSAIDs/สมุนไพร</b></td><td>ยาแก้ปวดกล้ามเนื้อ/ยาชุด/ยาลูกกลอน (อาจมี NSAIDs หรือ steroid ผสม) → MCD, MN, AKI · <b>ครีมผิวขาวที่มีปรอท</b> → MN · ถามทุกครั้ง</td></tr>
+    <tr><td><b>ติดเชื้อนำ</b></td><td>Post-infectious GN หลังติดเชื้อผิวหนัง (impetigo) ในเด็ก/ชนบท · melioidosis/endocarditis ในผู้ใหญ่ · <b>Strongyloides</b> พบบ่อย ก่อนยากดภูมิพิจารณา ivermectin</td></tr>
+    <tr><td><b>ยาในประเทศไทย</b></td><td>Enalapril, losartan, furosemide, HCTZ, spironolactone, simvastatin/atorvastatin, warfarin, prednisolone มีใน รพ.ทั่วไป · SGLT2i, anti-PLA2R, rituximab, budesonide (Nefecon), sparsentan — ขึ้นกับสิทธิ์และเงื่อนไขของแต่ละ รพ.</td></tr>
+  </table></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง: ปัสสาวะผิดปกติ</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>Dipstick protein/blood ผิดปกติ</b>ตรวจตะกอนด้วยกล้อง · Cr/eGFR · BP · ซักยา (NSAIDs, สมุนไพร)</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>Cr ขึ้นเร็ว + เลือด/RBC cast ± ไอเป็นเลือด?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>สงสัย RPGN</b>ส่งอายุรแพทย์โรคไตวันนี้ · ANCA, anti-GBM, C3/C4, ANA</div></div>
+        <div class="arm"><span class="lab">ไม่ · โปรตีนเด่น</span><div class="node dx hypo"><b>ตัดเหตุชั่วคราว → UACR/UPCR ซ้ำ</b>2 ใน 3 ครั้ง/3 เดือน · อายุน้อย: ทดสอบ orthostatic</div></div>
+        <div class="arm"><span class="lab">ไม่ · เลือดเด่น</span><div class="node dx eu"><b>RBC ≥3/HPF?</b>ลักษณะ glomerular → ไต · ไม่ใช่ → AUA risk</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Nephrotic range + albumin ต่ำ</span><div class="node red"><b>Nephrotic syndrome</b>ACEi/ARB · diuretic · Na &lt;2 g · statin · ประเมิน VTE · ส่ง biopsy</div></div>
+        <div class="arm"><span class="lab">A2–A3 ไม่ถึง nephrotic</span><div class="node dx hypo"><b>CKD care</b>ACEi/ARB · SGLT2i · ส่งต่อถ้า UACR ≥300/UPCR ≥500 หลังคุม BP หรือมีเลือดร่วม</div></div>
+        <div class="arm"><span class="lab">เลือดแบบ non-glomerular</span><div class="node dx green"><b>AUA 2025</b>Low: UA ซ้ำ 6 เดือน · Int: cystoscopy + US · High: cystoscopy + CT urography</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ไม่แทนการตัดสินใจของแพทย์และอายุรแพทย์โรคไต · ยึดยาและโปรโตคอลของ รพ.</p>
+  </div>
+  <div class="tool" id="tPi" style="margin-top:12px">
+    <h3>1. แปลผลโปรตีนในปัสสาวะ</h3>
+    <div class="fields">
+      <label class="f">ชนิดการตรวจ<select id="pT"><option value="upcr">UPCR</option><option value="uacr">UACR</option><option value="u24">โปรตีน 24 ชม.</option><option value="dip">Dipstick</option></select></label>
+      <label class="f">ค่าที่ได้<input type="number" step="any" id="pV" value="250"></label>
+      <label class="f">หน่วย (UACR/UPCR)<select id="pU"><option value="mgg">mg/g</option><option value="mgmmol">mg/mmol</option><option value="gg">g/g (mg/mg)</option></select></label>
+      <label class="f">หน่วย (24 ชม.)<select id="pU24"><option value="g">g/วัน</option><option value="mg">mg/วัน</option></select></label>
+      <label class="f">Dipstick<select id="pD"><option value="0">ลบ</option><option value="tr">trace</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pTr"> มีไข้/ออกกำลังกายหนัก/UTI/ประจำเดือน/น้ำตาลสูงมาก</label>
+      <label><input type="checkbox" id="pYg"> อายุ &lt;30 ปี (นึกถึง orthostatic)</label>
+      <label><input type="checkbox" id="pHe"> มีเลือดในปัสสาวะร่วม</label>
+      <label><input type="checkbox" id="pDm"> เบาหวาน/ความดันสูง</label>
+    </div>
+    <div class="out" id="piOut"></div>
+  </div>
+
+  <div class="tool" id="tHu" style="margin-top:12px">
+    <h3>2. ช่วยประเมินเลือดในปัสสาวะ (AUA/SUFU 2025)</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="hA" value="55"></label>
+      <label class="f">เพศ<select id="hS"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">สูบบุหรี่ (pack-years)<input type="number" step="any" id="hP" value="15"></label>
+      <label class="f">RBC/HPF (กล้อง)<input type="number" step="any" id="hR" value="8"></label>
+      <label class="f">ชนิด<select id="hG"><option value="micro">Microscopic</option><option value="gross">Gross (เห็นด้วยตา) ตอนนี้</option></select></label>
+      <label class="f">UA ครั้งนี้<select id="hRep"><option value="1">ครั้งแรก</option><option value="2">ตรวจซ้ำ (เดิม low risk ยังไม่เคยตรวจ)</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="hGh"> เคยมีปัสสาวะเป็นเลือดเห็นด้วยตา</label>
+      <label><input type="checkbox" id="hRf"> ปัจจัยเสี่ยงอื่น (LUTS ระคายเคือง, cyclophosphamide, สารเคมี, คาสายสวน, ฉายแสง, ญาติเป็นมะเร็งทางเดินปัสสาวะ/Lynch)</label>
+      <label><input type="checkbox" id="hFh"> ญาติเป็นมะเร็งไต/กลุ่มอาการพันธุกรรมของไต</label>
+      <label><input type="checkbox" id="hBn"> มีเหตุชั่วคราว (UTI, ประจำเดือน, ออกกำลังกายหนัก, นิ่ว)</label>
+      <label><input type="checkbox" id="hGl"> ลักษณะ glomerular (dysmorphic RBC/RBC cast/proteinuria)</label>
+      <label><input type="checkbox" id="hCr"> Cr สูง/eGFR ลด หรือความดันสูงใหม่</label>
+      <label><input type="checkbox" id="hAc"> กินยาต้านเกล็ดเลือด/ต้านการแข็งตัวของเลือด</label>
+    </div>
+    <div class="out" id="huOut"></div>
+  </div>
+
+  <div class="tool plan" id="tNs" style="margin-top:12px">
+    <h3>3. วางแผน supportive care ใน nephrotic syndrome</h3>
+    <div class="fields">
+      <label class="f">Albumin (g/dL)<input type="number" step="0.1" id="nA" value="2.2"></label>
+      <label class="f">วิธีวัด albumin<select id="nAs"><option value="bcg">BCG (แล็บทั่วไป)</option><option value="bcp">BCP/immunoassay</option><option value="u">ไม่ทราบ</option></select></label>
+      <label class="f">UPCR<input type="number" step="any" id="nP" value="6500"></label>
+      <label class="f">หน่วย UPCR<select id="nPu"><option value="mgg">mg/g</option><option value="mgmmol">mg/mmol</option><option value="gg">g/g</option></select></label>
+      <label class="f">eGFR (mL/min/1.73m²)<input type="number" id="nE" value="75"></label>
+      <label class="f">SBP (mmHg)<input type="number" id="nB" value="138"></label>
+      <label class="f">K (mmol/L)<input type="number" step="0.1" id="nK" value="4.3"></label>
+      <label class="f">บวม<select id="nO"><option value="0">ไม่บวม</option><option value="1">บวมเล็กน้อย</option><option value="2">บวมปานกลาง–มาก</option><option value="3">บวมทั้งตัว/น้ำในช่องท้อง-ปอด</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="nMn"> สงสัย/ยืนยัน membranous (anti-PLA2R บวก)</label>
+      <label><input type="checkbox" id="nVt"> มี VTE/renal vein thrombosis ตอนนี้</label>
+      <label><input type="checkbox" id="nRf"> ปัจจัยเสี่ยง VTE เพิ่ม (UPCR &gt;10 g, BMI &gt;35, เคยเป็น VTE, HF III–IV, ผ่าตัด/นอนติดเตียง)</label>
+      <label><input type="checkbox" id="nBl"> เสี่ยงเลือดออกสูง</label>
+      <label><input type="checkbox" id="nDm"> เบาหวาน</label>
+      <label><input type="checkbox" id="nPg"> ตั้งครรภ์/วางแผนตั้งครรภ์</label>
+      <label><input type="checkbox" id="nAc"> Cr ขึ้นเร็ว หรือ active sediment</label>
+      <label><input type="checkbox" id="nHb"> HBsAg บวก</label>
+    </div>
+    <div class="out" id="nsOut"></div>
+  </div>
+
+  <div class="tool" id="tRp" style="margin-top:12px">
+    <h3>4. ตรวจ red flag ของ RPGN</h3>
+    <div class="fields">
+      <label class="f">Cr เดิม (mg/dL)<input type="number" step="0.01" id="rC0" value="0.9"></label>
+      <label class="f">Cr ตอนนี้ (mg/dL)<input type="number" step="0.01" id="rC1" value="2.4"></label>
+      <label class="f">ห่างกัน (วัน)<input type="number" id="rD" value="21"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="rH" checked> เลือดในปัสสาวะ (RBC ≥3/HPF)</label>
+      <label><input type="checkbox" id="rCa"> RBC cast / dysmorphic RBC</label>
+      <label><input type="checkbox" id="rP" checked> โปรตีนรั่ว (≥1+ หรือ UPCR &gt;500)</label>
+      <label><input type="checkbox" id="rHt"> ความดันสูงขึ้นใหม่/บวม</label>
+      <label><input type="checkbox" id="rOl"> ปัสสาวะออกน้อย</label>
+      <label><input type="checkbox" id="rLu"> ไอเป็นเลือด/ฝ้าในปอด</label>
+      <label><input type="checkbox" id="rSy"> ผื่นจ้ำเลือด/ข้ออักเสบ/ไซนัส/ปลายประสาทอักเสบ</label>
+      <label><input type="checkbox" id="rSl"> อาการ SLE (หญิงอายุน้อย ผื่น ซีด ผมร่วง)</label>
+      <label><input type="checkbox" id="rIn"> ติดเชื้อนำ 1–3 สัปดาห์ (คอ/ผิวหนัง)</label>
+      <label><input type="checkbox" id="rFe"> ไข้ + เสียงหัวใจผิดปกติ</label>
+      <label><input type="checkbox" id="rEm"> K สูงดื้อยา/น้ำท่วมปอด/uremia</label>
+    </div>
+    <div class="out" id="rpOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Dipstick เห็นแต่ albumin</b> · ลบแต่ UPCR สูง → คิด light chain</div></div>
+    <div class="pearl"><div><b>UPCR mg/g ≈ mg/วัน</b> · mg/mmol × 8.84 = mg/g</div></div>
+    <div class="pearl"><div><b>ยืนยัน 2 ใน 3 ครั้งใน 3 เดือน</b> ก่อนจัด stage CKD</div></div>
+    <div class="pearl"><div><b>วัยรุ่นโปรตีนรั่วเล็กน้อย</b> → เทียบปัสสาวะแรกตื่น (orthostatic)</div></div>
+    <div class="pearl"><div><b>Dipstick blood บวก แต่ไม่มี RBC</b> → myoglobin/hemoglobin</div></div>
+    <div class="pearl"><div><b>RBC cast = glomerular</b> · ลิ่มเลือด = ทางเดินปัสสาวะ</div></div>
+    <div class="pearl"><div><b>Anticoagulant ไม่ใช่คำอธิบายของเลือดในปัสสาวะ</b></div></div>
+    <div class="pearl"><div><b>Cr ขึ้น + nephritic urine = ส่งวันนี้</b> ไม่ต้องรอ serology</div></div>
+    <div class="pearl"><div><b>C3 ต่ำ</b>: PIGN, LN, MPGN, endocarditis · <b>ปกติ</b>: IgAN, ANCA, anti-GBM</div></div>
+    <div class="pearl"><div><b>Nephrotic ผู้ใหญ่ → biopsy</b> ไม่เริ่ม steroid เอง</div></div>
+    <div class="pearl"><div><b>MN + albumin &lt;2.5 (BCG)</b> → คิดเรื่อง anticoagulant prophylaxis</div></div>
+    <div class="pearl"><div><b>HBsAg ทุกรายก่อนยากดภูมิ</b> · ivermectin ถ้าเสี่ยง Strongyloides</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../ckd/index.html">CKD →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../aki-drug/index.html">AKI จากยา →</a> · <a href="../sle/index.html">SLE →</a> · <a href="../dm/index.html">DM →</a> · <a href="../htn/index.html">ความดันโลหิตสูง →</a> · <a href="../hepbc/index.html">Hep B/C →</a> · <a href="../vte/index.html">VTE →</a> · <a href="../hiv/index.html">HIV →</a> · <a href="../lipid/index.html">ไขมัน →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Kidney Disease: Improving Global Outcomes (KDIGO) Glomerular Diseases Work Group. KDIGO 2021 clinical practice guideline for the management of glomerular diseases. Kidney Int 2021;100(4S):S1–S276 · 2) Rovin BH, Adler SG, Barratt J, et al. Executive summary of the KDIGO 2021 guideline for the management of glomerular diseases. Kidney Int 2021;100:753–79 · 3) KDIGO IgAN and IgAV Work Group. KDIGO 2025 clinical practice guideline for the management of immunoglobulin A nephropathy (IgAN) and immunoglobulin A vasculitis (IgAV). Kidney Int 2025;108(4S):S1–S71 · 4) Floege J, Barratt J, Cook HT, et al. Executive summary of the KDIGO 2025 IgAN/IgAV guideline. Kidney Int 2025;108:548–54 · 5) KDIGO Lupus Nephritis Work Group. KDIGO 2024 clinical practice guideline for the management of lupus nephritis. Kidney Int 2024;105(1S):S1–S69 · 6) KDIGO ANCA Vasculitis Work Group. KDIGO 2024 clinical practice guideline for the management of antineutrophil cytoplasmic antibody (ANCA)-associated vasculitis. Kidney Int 2024;105(3S):S71–S116 · 7) KDIGO CKD Work Group. KDIGO 2024 clinical practice guideline for the evaluation and management of chronic kidney disease. Kidney Int 2024;105(4S):S117–S314 · 8) Barocas DA, Boorjian SA, Alvarez RD, et al. Microhematuria: AUA/SUFU guideline. J Urol 2020;204:778–86 · 9) Barocas DA, Lotan Y, Matulewicz RS, et al. Updates to microhematuria: AUA/SUFU guideline (2025). J Urol 2025;213:547–57 · 10) KDIGO Blood Pressure Work Group. KDIGO 2021 clinical practice guideline for the management of blood pressure in CKD. Kidney Int 2021;99(3S):S1–S87 · 11) สมาคมโรคไตแห่งประเทศไทย. คำแนะนำสำหรับการดูแลผู้ป่วยโรคไตเรื้อรังก่อนการบำบัดทดแทนไต พ.ศ. 2565 · 12) Janphram C, Worawichawong S, Assanatham M, et al. Years of life lost and long-term outcomes due to glomerular disease in a Southeast Asian cohort. Sci Rep 2023;13:19119 · 13) Parker K, Ragy O, Hamilton P, et al. Thromboembolism in nephrotic syndrome: controversies and uncertainties. Res Pract Thromb Haemost 2023;7:102162<br>
+  <span class="tag add">เสริม</span> = ไม่ได้มาจากแนวทางหลักโดยตรง · <span class="tag th">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','pnView');
+mountWalker({
+ start:{q:'ผลปัสสาวะที่ผิดปกติเป็นแบบไหน?',o:[['โปรตีนอย่างเดียว','prot'],['เลือดอย่างเดียว','hem'],['เลือด + โปรตีน / Cr สูง','neph'],['บวม + โปรตีนมาก','nsq']]},
+ prot:{q:'มีเหตุชั่วคราวไหม (ไข้ ออกกำลังกายหนัก UTI ประจำเดือน น้ำตาลสูงมาก HF กำเริบ)?',o:[['มี','transient'],['ไม่มี','prot2']]},
+ transient:{leaf:true,cls:'ok',t:'โปรตีนรั่วชั่วคราว',b:'แก้เหตุก่อน แล้วตรวจซ้ำเมื่อหาย · ผลซ้ำปกติ → ไม่ต้องตรวจเพิ่ม',next:['ผลซ้ำยังผิดปกติ','prot2']},
+ prot2:{q:'ตรวจ UACR/UPCR ซ้ำ (ปัสสาวะเช้า) ได้ผลเท่าไร?',o:[['ปกติ (A1)','protNeg'],['A2–A3 แต่ไม่ถึง nephrotic','protCkd'],['Nephrotic range (UPCR >3,000 mg/g)','nsq']]},
+ protNeg:{leaf:true,cls:'ok',t:'ปกติเมื่อตรวจซ้ำ',b:'อายุน้อยและผลกลางวันสูงแต่ปัสสาวะแรกตื่นปกติ → <b>orthostatic proteinuria</b> พยากรณ์ดี ไม่ต้องรักษา · ตรวจซ้ำเป็นระยะ'},
+ protCkd:{leaf:true,cls:'warn',t:'Albuminuria ค้าง (A2–A3)',b:'ยืนยัน 2 ใน 3 ครั้งใน 3 เดือน → จัด stage CKD (G + A) · ACEi/ARB ปรับถึงขนาดสูงสุด · SGLT2i ถ้า eGFR ≥20 และ UACR ≥200 mg/g หรือเป็นเบาหวาน · ส่งอายุรแพทย์โรคไตถ้า UACR ≥300/UPCR ≥500 mg/g หลังคุม BP, มีเลือดในปัสสาวะร่วม หรือ eGFR ลดเร็ว'},
+ hem:{q:'Dipstick blood บวก แต่กล้องพบ RBC <3/HPF?',o:[['ใช่','pigment'],['ไม่ — RBC ≥3/HPF','hem2']]},
+ pigment:{leaf:true,cls:'warn',t:'Heme pigment',b:'คิด <b>myoglobin</b> (rhabdomyolysis: CK) หรือ <b>hemoglobin</b> (hemolysis: LDH, bilirubin, smear) · ไม่ใช่ microhematuria'},
+ hem2:{q:'มีเหตุชั่วคราว/ไม่ใช่มะเร็ง (UTI ประจำเดือน ออกกำลังกาย นิ่ว)?',o:[['มี','hemTx'],['ไม่มี','hem3']]},
+ hemTx:{leaf:true,cls:'ok',t:'รักษาเหตุก่อน',b:'รักษา UTI/นิ่ว หรือรอหมดประจำเดือน แล้วตรวจ UA ด้วยกล้องซ้ำ · ยังมีอยู่ → ประเมินต่อตามความเสี่ยง',next:['ซ้ำแล้วยังมี','hem3']},
+ hem3:{q:'มีลักษณะ glomerular (dysmorphic RBC, RBC cast, proteinuria, Cr สูง, ความดันสูงใหม่)?',o:[['มี','neph'],['ไม่มี','hemRisk']]},
+ hemRisk:{q:'กลุ่มเสี่ยงมะเร็งตาม AUA/SUFU 2025?',o:[['Low: RBC 3–10, หญิง <60/ชาย <40, สูบ <10 pack-yr, ไม่มีปัจจัยเสี่ยงอื่น','hLow'],['Intermediate: RBC 11–25, หญิง ≥60, ชาย 40–59, 10–30 pack-yr, มีปัจจัยเสี่ยง','hMid'],['High: RBC >25, เคยมี gross hematuria, ชาย ≥60, >30 pack-yr','hHigh']]},
+ hLow:{leaf:true,cls:'ok',t:'Low/negligible risk',b:'<b>ตรวจ UA ซ้ำภายใน 6 เดือน</b> · ไม่ต้อง cystoscopy/ภาพทันที · ซ้ำยังมี (3–25/HPF) → ย้ายเป็น intermediate'},
+ hMid:{leaf:true,cls:'warn',t:'Intermediate risk',b:'<b>Cystoscopy + ultrasound ไตและกระเพาะปัสสาวะ</b> · ไม่อยากส่องกล้อง (ปรึกษาแล้ว) → urine cytology/tumor marker; ลบ → UA ซ้ำใน 12 เดือน'},
+ hHigh:{leaf:true,cls:'danger',t:'High risk',b:'<b>Cystoscopy + CT urography</b> · ใช้ contrast ไม่ได้ → MR urography หรือ US + retrograde pyelography · gross hematuria อยู่ในกลุ่มนี้เสมอ'},
+ neph:{q:'Cr ขึ้นเร็ว (วัน–สัปดาห์), ปัสสาวะออกน้อย หรือไอเป็นเลือด?',o:[['ใช่','rpgn'],['ไม่','nephSlow']]},
+ rpgn:{leaf:true,cls:'danger',t:'สงสัย RPGN',b:'<b>ส่งอายุรแพทย์โรคไตวันนี้</b> · ส่ง ANCA (MPO/PR3), anti-GBM, C3/C4, ANA/anti-dsDNA, HBV/HCV/HIV, CBC + smear · ไม่ต้องรอผล · ข้อบ่งชี้ล้างไตฉุกเฉิน → ส่งทันที · biopsy เร็ว'},
+ nephSlow:{leaf:true,cls:'warn',t:'Glomerular hematuria แบบไม่เร่งด่วน',b:'UPCR, Cr, C3/C4, ANA, HBsAg, anti-HCV · คิด IgAN (สีโค้กพร้อมเจ็บคอ), post-infectious GN (1–3 สัปดาห์หลังติดเชื้อ), lupus nephritis · ส่งอายุรแพทย์โรคไตภายในไม่กี่สัปดาห์ (เร็วขึ้นถ้า proteinuria ≥0.5 g/วัน) · ตาม Cr ระหว่างรอ'},
+ nsq:{q:'บริบทเข้ากับโรคใด?',o:[['เบาหวานนาน + retinopathy, ไม่มี active sediment','dkd'],['หญิงอายุน้อย อาการ SLE','ln'],['อื่นๆ / ไม่ชัด','nsGen']]},
+ dkd:{leaf:true,cls:'warn',t:'น่าจะเป็น DKD',b:'ACEi/ARB + SGLT2i + finerenone (T2D) ± GLP-1 RA + statin · <b>biopsy ถ้า</b> proteinuria ขึ้นเร็ว, ไม่มี retinopathy, active sediment หรือ eGFR ลดเร็ว'},
+ ln:{leaf:true,cls:'danger',t:'สงสัย lupus nephritis',b:'ANA, anti-dsDNA, C3/C4, CBC · <b>biopsy เมื่อ proteinuria ≥0.5 g/วัน</b> · hydroxychloroquine ทุกราย · ACEi/ARB (ไม่ใช้ในการตั้งครรภ์) · ส่งอายุรแพทย์โรคไต/รูมาติสซั่ม'},
+ nsGen:{leaf:true,cls:'warn',t:'Nephrotic syndrome — ยังไม่ทราบสาเหตุ',b:'Supportive: ACEi/ARB, furosemide ± HCTZ, Na &lt;2 g, statin · ประเมิน VTE prophylaxis (MN + albumin &lt;2.5 BCG) · HBsAg, anti-HCV, HIV, VDRL, ANA, C3/C4, SPEP/FLC (อายุ &gt;50), anti-PLA2R · หยุด NSAIDs/สมุนไพร · <b>ส่ง biopsy</b> · ไม่เริ่ม steroid เอง'}
+},'apTrail','apStage');
+
+const fmt=x=>x>=100?Math.round(x).toLocaleString('en-US'):x>=10?f1(x):f2(x);
+
+function pi(){
+  const t=$('pT').value;const c=id=>$(id).checked;const L=[];let cat=null,neph=false,nephNote='';
+  if(t==='dip'){
+    const d=$('pD').value;
+    const m={'0':['ลบ','A1 (แต่ dipstick ตัด A2 ไม่ได้)'],'tr':['trace','A1–A2'],'1':['1+','A2–A3'],'2':['2+','น่าจะ A3'],'3':['3+','A3 · อาจถึง nephrotic range'],'4':['4+','A3 · อาจถึง nephrotic range']}[d];
+    L.push(`Dipstick ${m[0]} → ประมาณ <b>${m[1]}</b>`);
+    L.push('Dipstick วัดความเข้มข้นของ <b>albumin</b> เท่านั้น · <b>ยืนยันด้วย UACR (หรือ UPCR) เสมอ</b>');
+    if(d==='0'&&c('pDm'))L.push('เบาหวาน/ความดันสูง ที่ dipstick ลบ → <b>ตรวจ UACR</b> (CKD CPG 2565)');
+    if(d==='3'||d==='4')L.push('ส่ง <b>UPCR + albumin ในเลือด</b> เพื่อดู nephrotic syndrome');
+    if(d!=='0')cat=d==='tr'?1.5:d==='1'?2.5:3;
+  }else{
+    const v=num('pV');
+    if(v===null||v<0){$('piOut').textContent='ใส่ค่าที่ตรวจได้ (ตัวเลข ≥0)';return}
+    if(t==='u24'){
+      const mg=$('pU24').value==='g'?v*1000:v;
+      if($('pU24').value==='g'&&v>40)L.push('<b>ค่าสูงผิดปกติสำหรับ g/วัน — ตรวจหน่วยอีกครั้ง</b> (อาจเป็น mg/วัน)');
+      L.push(`โปรตีน 24 ชม. = <b>${fmt(mg)} mg/วัน</b> (${f2(mg/1000)} g/วัน)`);
+      cat=mg<150?1:mg<=500?2:3;
+      if(mg>3500){neph=true;nephNote='&gt;3.5 g/วัน'}
+    }else{
+      const u=$('pU').value;let mgg,mmol;
+      if(u==='mgg'){mgg=v;mmol=v/8.84}else if(u==='mgmmol'){mmol=v;mgg=v*8.84}else{mgg=v*1000;mmol=mgg/8.84}
+      if(u==='gg'&&v>30)L.push('<b>ค่าสูงผิดปกติสำหรับ g/g — ตรวจหน่วยอีกครั้ง</b> (อาจเป็น mg/g)');
+      if(u==='mgmmol'&&v>2000)L.push('<b>ค่าสูงผิดปกติสำหรับ mg/mmol — ตรวจหน่วยอีกครั้ง</b> (อาจเป็น mg/g)');
+      if(u==='mgg'&&v>0&&v<1)L.push('<span class="muted">ค่าน้อยกว่า 1 mg/g — ถ้าแล็บรายงานเป็น g/g ให้เปลี่ยนหน่วย</span>');
+      const nm=t==='uacr'?'UACR':'UPCR';
+      L.push(`${nm} = <b>${fmt(mgg)} mg/g</b> = <b>${fmt(mmol)} mg/mmol</b> = ${f2(mgg/1000)} g/g`);
+      if(t==='uacr'){
+        cat=u==='mgmmol'?(v<3?1:v<=30?2:3):(mgg<30?1:mgg<=300?2:3);
+        if(mgg>2200){neph=true;nephNote='UACR &gt;2,200 mg/g ≈ nephrotic range (ยืนยันด้วย UPCR/24 ชม.)'}
+        L.push('<span class="muted">UACR แปลงเป็นโปรตีน 24 ชม. ตรงๆ ไม่ได้ · เทียบ KDIGO: UACR 30 ≈ UPCR 150, UACR 300 ≈ UPCR 500 mg/g</span>');
+      }else{
+        cat=u==='mgmmol'?(v<15?1:v<=50?2:3):(mgg<150?1:mgg<=500?2:3);
+        L.push(`ประมาณโปรตีน 24 ชม. ≈ <b>${f2(mgg/1000)} g/วัน</b> <span class="muted">(สมมุติขับ creatinine ~1 g/วัน · คนกล้ามเนื้อมาก/น้อยคลาดได้)</span>`);
+        if(mgg>3500){neph=true;nephNote='UPCR &gt;3,500 mg/g'}else if(mgg>3000){neph=true;nephNote='UPCR &gt;3,000 mg/g (บางนิยามใช้ 3,500)'}
+      }
+    }
+    L.push(`KDIGO: <b>A${cat}</b> ${cat===1?'(ปกติ–เพิ่มเล็กน้อย)':cat===2?'(เพิ่มปานกลาง)':'(เพิ่มมาก)'}`);
+  }
+  if(neph)L.push(`<b style="color:var(--danger)">Nephrotic range</b> (${nephNote}) → ตรวจ albumin, lipid, Cr, ตะกอนปัสสาวะ · ถ้า albumin ต่ำ + บวม = nephrotic syndrome → ใช้เครื่องมือที่ 3 และส่งอายุรแพทย์โรคไต`);
+  if(c('pTr')&&cat!==null&&cat>1)L.push('มีเหตุชั่วคราว → <b>แก้เหตุแล้วตรวจซ้ำ</b> ก่อนสรุปว่าผิดปกติ');
+  if(c('pYg')&&cat!==null&&cat>1&&!neph&&!c('pHe'))L.push('อายุน้อย ไม่มีเลือดในปัสสาวะ → ทดสอบ <b>orthostatic</b>: เทียบปัสสาวะแรกตื่นกับช่วงกลางวัน (แรกตื่นปกติ = orthostatic)');
+  if(c('pHe')&&cat!==null&&cat>1)L.push('<b>โปรตีน + เลือดในปัสสาวะ</b> → คิดโรค glomerular · ส่องตะกอนหา RBC cast · ตรวจ Cr · ส่งอายุรแพทย์โรคไต (ไม่ต้องรอครบ 3 เดือน) · Cr ขึ้นเร็ว → เครื่องมือที่ 4');
+  if(cat!==null&&cat>1&&!neph)L.push('ยืนยัน: ผิดปกติ <b>2 ใน 3 ครั้งในช่วง 3 เดือน</b> (ปัสสาวะเช้า) ก่อนจัด stage CKD');
+  if(cat!==null&&cat>=3&&t!=='dip')L.push('A3 (UACR &gt;300 / UPCR &gt;500 mg/g) → ACEi/ARB ปรับถึงขนาดสูงสุด · ส่งอายุรแพทย์โรคไตถ้ายังค้างหลังคุม BP (Thai CKD CPG 2565, KDIGO 2024)');
+  else if(cat===2&&t!=='dip')L.push('A2 → คุม BP · ACEi/ARB โดยเฉพาะถ้าเป็นเบาหวาน · ตรวจซ้ำตามระยะ CKD');
+  if(c('pDm')&&cat!==null&&cat>1)L.push('เบาหวาน: ACEi/ARB + SGLT2i (eGFR ≥20) ± finerenone (T2D, UACR ≥30, K ปกติ)');
+  if(cat===1&&t!=='dip')L.push('ไม่มี albuminuria ที่มีนัยสำคัญ'+(c('pDm')?' · เบาหวาน/ความดัน: ตรวจ UACR ปีละครั้ง':''));
+  $('piOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPi input,#tPi select',pi);
+
+function hu(){
+  const a=num('hA'),p=num('hP'),r=num('hR');const sx=$('hS').value,gr=$('hG').value==='gross';const c=id=>$(id).checked;const L=[];
+  if(a===null||a<18||a>110){$('huOut').textContent='ใส่อายุ (ผู้ใหญ่ 18–110 ปี)';return}
+  if(p===null||p<0){$('huOut').textContent='ใส่ pack-years (ไม่สูบ = 0)';return}
+  if(!gr&&(r===null||r<0)){$('huOut').textContent='ใส่จำนวน RBC/HPF จากกล้องจุลทรรศน์';return}
+  if(!gr&&r<3){
+    L.push(`RBC ${r}/HPF <b>ไม่เข้าเกณฑ์ microhematuria</b> (≥3/HPF)`);
+    L.push('ถ้า dipstick blood บวก แต่ RBC น้อย → คิด <b>myoglobin</b> (ตรวจ CK) หรือ <b>hemoglobin</b> (LDH, bilirubin, smear)');
+    $('huOut').innerHTML=L.join('<br>');return;
+  }
+  const m=sx==='m';
+  const hi=gr||r>25||c('hGh')||(m&&a>=60)||p>30;
+  const mid=!hi&&(r>10||(!m&&a>=60)||(m&&a>=40)||p>=10||c('hRf')||$('hRep').value==='2');
+  const grp=hi?'high':mid?'mid':'low';
+  if(c('hBn'))L.push('<b>มีเหตุชั่วคราว</b> → รักษาเหตุก่อน (เช่น UTI) แล้ว <b>ตรวจ UA ด้วยกล้องซ้ำ</b> · ยังมีอยู่ → ประเมินตามกลุ่มด้านล่าง');
+  const why=[];
+  if(gr)why.push('gross hematuria');if(!gr&&r>25)why.push('RBC >25/HPF');if(c('hGh'))why.push('เคยมี gross hematuria');if(m&&a>=60)why.push('ชาย ≥60 ปี');if(p>30)why.push('>30 pack-years');
+  if(!hi){if(r>10)why.push('RBC 11–25/HPF');if(!m&&a>=60)why.push('หญิง ≥60 ปี');if(m&&a>=40)why.push('ชาย 40–59 ปี');if(p>=10)why.push('10–30 pack-years');if(c('hRf'))why.push('มีปัจจัยเสี่ยงอื่น');if($('hRep').value==='2')why.push('เดิม low risk แล้ว UA ซ้ำยังพบเลือด');}
+  const head={high:'<b style="color:var(--danger)">High risk</b> (มะเร็ง ~1.3–6.3%)',mid:'<b style="color:var(--warn)">Intermediate risk</b> (~0.2–3.1%)',low:'<b style="color:var(--ok)">Low/negligible risk</b> (~0–0.4%)'}[grp];
+  L.push((c('hBn')?'ถ้ายังมีหลังรักษา: ':'')+head+(why.length?' — '+why.join(', '):' — ครบทุกเกณฑ์ low risk'));
+  if(grp==='high')L.push('→ <b>Cystoscopy + CT urography (multiphasic)</b> · ใช้ contrast ไม่ได้ (eGFR ต่ำ/แพ้) → MR urography หรือ US + retrograde pyelography · ส่งศัลยแพทย์ระบบปัสสาวะ'+(gr?' · <b>ลิ่มเลือด/ปัสสาวะไม่ออก → ส่งด่วน</b>':''));
+  else if(grp==='mid')L.push('→ <b>Cystoscopy + ultrasound ไตและกระเพาะปัสสาวะ</b> · ผู้ที่ไม่อยากส่องกล้อง (ปรึกษาแล้ว): urine cytology/urine tumor marker → ลบให้ตรวจ UA ซ้ำใน 12 เดือน, ยังมี → cystoscopy');
+  else L.push('→ <b>ตรวจ UA ด้วยกล้องซ้ำภายใน 6 เดือน</b> · ยังไม่ต้อง cystoscopy/ภาพ · ซ้ำยังพบ 3–25/HPF → ย้ายเป็น intermediate (เลือก “ตรวจซ้ำ” ด้านบน)');
+  if(c('hFh'))L.push('ญาติเป็นมะเร็งไต/กลุ่มอาการพันธุกรรม → <b>ตรวจภาพทางเดินปัสสาวะส่วนบนด้วย</b> ไม่ว่ากลุ่มใด');
+  if(c('hGl')||c('hCr'))L.push('<b>ลักษณะ glomerular/ไตเสื่อม</b> → UPCR, Cr, C3/C4, ANA, HBsAg/anti-HCV · ส่งอายุรแพทย์โรคไต · Cr ขึ้นเร็ว → ใช้เครื่องมือที่ 4 (RPGN) · AUA: ยังประเมินความเสี่ยงทางเดินปัสสาวะตามกลุ่มด้านบนด้วย');
+  if(c('hAc'))L.push('ยาต้านเกล็ดเลือด/ต้านการแข็งตัวของเลือด <b>ไม่ใช่คำอธิบาย</b> → ประเมินเหมือนคนทั่วไป');
+  $('huOut').innerHTML=L.join('<br>');
+}
+bindAll('#tHu input,#tHu select',hu);
+
+function ns(){
+  const A=num('nA'),P=num('nP'),E=num('nE'),K=num('nK'),B=num('nB');const c=id=>$(id).checked;const L=[];
+  if(A===null||A<=0||A>6){$('nsOut').textContent=(A!==null&&A>10&&A<=60)?'Albumin ดูเหมือนเป็น g/L — ใส่เป็น g/dL (หาร 10)':'ใส่ albumin (g/dL)';return}
+  if(P===null||P<0){$('nsOut').textContent='ใส่ UPCR';return}
+  if(E===null||E<=0||E>200){$('nsOut').textContent='ใส่ eGFR (1–200)';return}
+  if(K===null||K<1.5||K>9){$('nsOut').textContent='ใส่ K (mmol/L)';return}
+  const u=$('nPu').value;const mgg=u==='mgg'?P:u==='mgmmol'?P*8.84:P*1000;
+  if(u==='gg'&&P>30)L.push('<b>UPCR สูงผิดปกติสำหรับ g/g — ตรวจหน่วย</b>');
+  const as=$('nAs').value;const tNS=as==='bcp'?3.0:3.2,tAC=as==='bcp'?2.0:2.5;
+  const bOk=B!==null&&B>=50&&B<=300;
+  const rng=mgg>3000,nsy=rng&&A<tNS;
+  L.push(`UPCR ${fmt(mgg)} mg/g (${fmt(mgg/8.84)} mg/mmol ≈ ${f2(mgg/1000)} g/วัน) · albumin ${A} g/dL (${as==='bcp'?'BCP':as==='bcg'?'BCG':'ไม่ทราบวิธี — ใช้เกณฑ์ BCG'})`);
+  L.push(nsy?'<b style="color:var(--danger)">เข้าได้กับ nephrotic syndrome</b> (ร่วมกับบวม/ไขมันสูง)':rng?'<b>Nephrotic-range proteinuria</b> แต่ albumin ยังไม่ต่ำ — คิด secondary FSGS, DKD':mgg>=500?'Proteinuria ไม่ถึง nephrotic range (A3)':mgg>=150?'Proteinuria ระดับ A2':'UPCR &lt;150 mg/g — ไม่มีโปรตีนรั่วที่มีนัยสำคัญ');
+  // referral
+  if(c('nAc')||E<30)L.push('<b>ส่งอายุรแพทย์โรคไตด่วน (ภายใน 24 ชม.)</b>'+(c('nAc')?' — Cr ขึ้นเร็ว/active sediment → ใช้เครื่องมือที่ 4':' — eGFR &lt;30'));
+  else if(nsy||rng)L.push('<b>ส่งอายุรแพทย์โรคไตเพื่อ biopsy</b> (ภายใน 1–2 สัปดาห์) · ส่งก่อน: HBsAg, anti-HCV, HIV, VDRL, ANA, C3/C4, SPEP/FLC (อายุ &gt;50), anti-PLA2R ถ้ามี, US ไต'+(c('nDm')?' · เบาหวานนาน + retinopathy + ไม่มี active sediment อาจไม่ต้อง biopsy':''));
+  if(mgg<150&&!c('nAc')){L.push('ไม่มีข้อบ่งชี้ใช้ยาลดโปรตีน · ตรวจซ้ำถ้ามีอาการ');$('nsOut').innerHTML=L.join('<br>');return}
+  // RAS
+  let ras;
+  if(c('nPg'))ras='<b>ตั้งครรภ์/วางแผน: ห้าม ACEi/ARB, SGLT2i, statin</b> → ปรึกษาสูติแพทย์และอายุรแพทย์โรคไต (คุม BP ด้วย labetalol/nifedipine)';
+  else if(K>5.5)ras=`K ${K} &gt;5.5 → <b>ยังไม่เริ่ม ACEi/ARB</b> · แก้ K ก่อน (ทบทวนยา/อาหาร, loop diuretic, potassium binder)`;
+  else if(bOk&&B<100)ras=`SBP ${B} &lt;100 → <b>ยังไม่เริ่ม ACEi/ARB</b> · ประเมินภาวะขาดน้ำ`;
+  else{
+    ras=`<b>ACEi/ARB</b>: ${E<30?'enalapril 2.5 mg PO วันละครั้ง หรือ losartan 25 mg PO วันละครั้ง (eGFR &lt;30 เริ่มต่ำ)':'enalapril 5 mg PO วันละ 2 ครั้ง หรือ losartan 50 mg PO วันละครั้ง'} → ปรับทุก 2–4 สัปดาห์ถึงขนาดสูงสุดที่ทนได้ (enalapril 20 mg วันละ 2 ครั้ง, losartan 100 mg/วัน) · ตรวจ Cr/K ${E<30||K>=5?'ใน 1–2 สัปดาห์':'ภายใน 2–4 สัปดาห์'} · Cr เพิ่ม ≤30% ใช้ต่อ · ห้าม ACEi + ARB`;
+    if(K>=5)ras+=` · K ${K} (5.0–5.5): เริ่มขนาดต่ำ ตาม K ใกล้ชิด`;
+    if(nsy&&A<2)ras+=' · บวมมาก albumin ต่ำมาก/ภาพเหมือน MCD: ระวัง AKI — เริ่มเมื่อ volume คงที่ (MCD ไม่จำเป็นต้องใช้)';
+  }
+  L.push(ras);
+  if(!bOk)L.push('<span class="muted">ใส่ SBP เพื่อดูเป้าความดัน</span>');
+  else if(c('nPg'))L.push(`SBP ${B} · ตั้งครรภ์: <b>ไม่ใช้เป้า &lt;120</b> → เป้าตามสูติแพทย์ (ทั่วไป &lt;140/90)`);
+  else if(B>=120)L.push(`SBP ${B} → เป้า <b>&lt;120 mmHg</b> ถ้าทนได้ (KDIGO 2021)`);
+  // diuretic
+  const o=$('nO').value;
+  if(o==='0')L.push('บวม: ไม่มี → ยังไม่ต้องใช้ diuretic · <b>Na &lt;2 g/วัน</b>');
+  else{
+    let d='<b>Na &lt;2 g/วัน</b> + ';
+    if(o==='1')d+=`<b>furosemide ${E<30?'40–80':'20–40'} mg PO วันละ 1–2 ครั้ง</b>`;
+    else if(o==='2')d+=`<b>furosemide ${E<30?'80 mg PO วันละ 2 ครั้ง หรือ IV 40–80 mg วันละ 2 ครั้ง':'40 mg PO วันละ 2 ครั้ง หรือ IV 20–40 mg วันละ 2 ครั้ง'}</b> · ไม่ได้ผลเพิ่มเป็นเท่าตัว (IV ต่อครั้งไม่เกิน ~160–200 mg)`;
+    else d+=`<b>รับไว้ใน รพ.</b> · <b>furosemide IV ${E<30?'80':'40'} mg วันละ 2 ครั้ง</b> เพิ่มเป็นเท่าตัวจนได้ผล · ดื้อยา → เพิ่ม <b>HCTZ 25–50 mg PO วันละครั้ง</b>`;
+    d+=' · ชั่งน้ำหนักทุกวัน (ลด ~0.5–1 kg/วัน) · ตาม Na, K, Cr';
+    if(o==='3'&&A<2)d+=' · <b>albumin IV</b> พิจารณาเฉพาะดื้อยาจริงหรือขาดน้ำในหลอดเลือด/AKI';
+    if(K<3.5)d+=` · K ${K} ต่ำ → เสริม K หรือเพิ่ม amiloride/spironolactone`;
+    if(K>5)d+=' · K สูง → เลี่ยง spironolactone/amiloride';
+    L.push(d);
+  }
+  // SGLT2i
+  if(!c('nPg')){
+    if(E<20)L.push('SGLT2i: eGFR &lt;20 → ไม่เริ่มใหม่ (ใช้อยู่แล้วให้ต่อได้)');
+    else if(c('nDm'))L.push('SGLT2i: เบาหวาน + eGFR ≥20 → <b>dapagliflozin 10 mg หรือ empagliflozin 10 mg PO วันละครั้ง</b> · หยุดชั่วคราวเมื่อป่วย/อดอาหาร');
+    else if(mgg>=300)L.push('SGLT2i: CKD ที่ UACR ≥200 mg/g + eGFR ≥20 ได้ประโยชน์ (dapagliflozin/empagliflozin 10 mg วันละครั้ง) · <b>ใน GN ใช้หลังวินิจฉัยและเมื่อ proteinuria ค้าง</b> — ข้อมูลน้อยในช่วงรอ biopsy/ได้ยากดภูมิ → ตัดสินร่วมกับอายุรแพทย์โรคไต');
+  }
+  // statin
+  if(!c('nPg')&&(nsy||rng))L.push('Statin: nephrotic ต่อเนื่องหรือเสี่ยงหัวใจ → <b>atorvastatin 10–20 mg PO วันละครั้ง</b> · ภาพเหมือน MCD ที่คาดว่าหายเร็วรอได้');
+  // anticoagulation
+  const enox=E<30?'enoxaparin 30 mg SC วันละครั้ง (CrCl &lt;30)':'enoxaparin 40 mg SC วันละครั้ง';
+  if(c('nVt'))L.push(`<b style="color:var(--danger)">มี VTE/RVT → anticoagulant เต็มขนาด</b> (LMWH แล้วต่อ ${c('nPg')?'LMWH ตลอดการตั้งครรภ์':'warfarin INR 2–3'}) ตลอดช่วงที่ยัง nephrotic · ปรึกษาอายุรแพทย์`);
+  else if(A<tAC){
+    if(c('nBl'))L.push(`Albumin &lt;${tAC.toFixed(1)} แต่ <b>เสี่ยงเลือดออกสูง</b> → ไม่ให้ anticoagulant prophylaxis · aspirin ช่วยด้าน arterial เท่านั้น ไม่ป้องกัน VTE พอ · เน้นเดิน/ไม่ขาดน้ำ`);
+    else if(c('nMn')||c('nRf'))L.push(`<b>Albumin &lt;${tAC.toFixed(1)} g/dL ${c('nMn')?'+ membranous':'+ ปัจจัยเสี่ยง VTE'}</b> → <b>พิจารณา prophylactic anticoagulation</b> (ประเมินด้วย KDIGO/UNC GN tool) · ${c('nPg')?'ตั้งครรภ์: LMWH':`${enox} หรือ warfarin INR 2–3`} · ให้ต่อจน albumin ขึ้น · เริ่ม steroid ไม่ใช่เหตุให้หยุด`);
+    else L.push(`Albumin &lt;${tAC.toFixed(1)} แต่ไม่ใช่ MN และไม่มีปัจจัยเสี่ยงเพิ่ม → ส่วนใหญ่ยังไม่ให้ · ประเมินซ้ำเมื่อมีปัจจัยเสี่ยง (นอนติดเตียง ผ่าตัด)`);
+  }else L.push(`Albumin ≥${tAC.toFixed(1)} → ยังไม่ถึงเกณฑ์ anticoagulant prophylaxis`);
+  // infection
+  L.push('วัคซีน: <b>pneumococcal, influenza, zoster (recombinant)</b> ก่อนยากดภูมิถ้าทำได้ · คัดกรอง HBV/HCV/HIV/TB/syphilis · เสี่ยง Strongyloides (eosinophil สูง) → <b>ivermectin 200 µg/kg PO วันละครั้ง × 2 วัน</b> ก่อน steroid'+(c('nHb')?' · <b>HBsAg บวก → เริ่ม antiviral (เช่น entecavir) ก่อน/พร้อมยากดภูมิ</b>; HBV-MN รักษาด้วย antiviral':''));
+  L.push('<b>หยุด NSAIDs/สมุนไพรที่ไม่ทราบส่วนผสม</b> · <b>ไม่เริ่ม steroid ก่อน biopsy</b> (MCD หลังยืนยัน: prednisolone 1 mg/kg/วัน สูงสุด 80 mg ตามอายุรแพทย์โรคไต)');
+  $('nsOut').innerHTML=L.join('<br>');
+}
+bindAll('#tNs input,#tNs select',ns);
+
+function rp(){
+  const c0=num('rC0'),c1=num('rC1'),d=num('rD');const c=id=>$(id).checked;const L=[];
+  if(c0===null||c1===null||c0<=0||c1<=0||c0>25||c1>25){$('rpOut').textContent='ใส่ Cr เดิมและ Cr ตอนนี้ (mg/dL)';return}
+  if(d!==null&&d<1){$('rpOut').textContent='ใส่จำนวนวันที่ห่างกัน (≥1) หรือเว้นว่างถ้าไม่ทราบ';return}
+  const ratio=c1/c0,diff=c1-c0;
+  const rising=ratio>=1.5||(diff>=0.3&&d!==null&&d<=2);
+  const win=d===null?'ไม่ทราบช่วงเวลา':d<=7?`ใน ${d} วัน`:d<=90?`ใน ${d} วัน (≤3 เดือน)`:`ใน ${d} วัน (&gt;3 เดือน)`;
+  L.push(ratio>1?`Cr ${c0} → ${c1} mg/dL = <b>เพิ่ม ${f2(ratio)} เท่า</b> ${win}`:`Cr ${c0} → ${c1} mg/dL — <b>ไม่เพิ่ม</b>`);
+  const glom=c('rCa')||(c('rH')&&c('rP'));
+  const sys=c('rLu')||c('rSy')||c('rSl');
+  const emer=c('rEm')||(c('rLu')&&(c('rH')||rising))||(rising&&(glom||(c('rH')&&(c('rHt')||c('rOl')||sys))));
+  const urg=!emer&&((rising&&c('rH'))||glom||(c('rH')&&(c('rHt')||sys))||(rising&&sys));
+  if(emer){
+    L.push('<b style="color:var(--danger)">Red flag RPGN/ภาวะฉุกเฉินทางไต</b> → <b>ส่งอายุรแพทย์โรคไต/รับไว้วันนี้</b> · ไม่ต้องรอผล serology');
+    if(c('rLu'))L.push('<b>ไอเป็นเลือด/ฝ้าในปอด = pulmonary–renal syndrome</b> (ANCA, anti-GBM, SLE) → ICU/อายุรแพทย์ด่วน · CXR, O₂ sat');
+    if(c('rEm'))L.push('<b>ข้อบ่งชี้ล้างไตฉุกเฉิน</b> → รักษาเบื้องต้น (ดูหน้า Hyperkalemia/AKI) และส่งต่อทันที');
+  }else if(urg)L.push('<b style="color:var(--warn)">ปัสสาวะแบบ nephritic</b> → ส่งอายุรแพทย์โรคไต <b>ภายใน 24–72 ชม.</b> · ตาม Cr ซ้ำใน 24–48 ชม. · Cr ขึ้นต่อ = ด่วนทันที');
+  else if(rising)L.push('Cr ขึ้นแต่ไม่มีปัสสาวะแบบ nephritic → ทำ <b>AKI work-up</b> ก่อน (ขาดน้ำ, อุดกั้น: US, ยา/สารทึบรังสี, rhabdo) · <b>ส่องตะกอนปัสสาวะด้วยตัวเอง</b>');
+  else{L.push('ยังไม่พบ red flag ของ RPGN · ถ้ามีเลือด/โปรตีนในปัสสาวะ ใช้เครื่องมือที่ 1–2 และติดตาม Cr'+(c('rH')||c('rP')?'':' · ตรวจ UA ด้วยกล้องเพื่อยืนยัน'));$('rpOut').innerHTML=L.join('<br>');return}
+  if(d!==null&&d>90&&ratio>=1.5)L.push('<span class="muted">ช่วงเวลา &gt;3 เดือน: เป็นไตเสื่อมเร็ว (progressive) มากกว่า RPGN แบบคลาสสิก — ยังต้องส่งต่อ</span>');
+  if(emer||urg){
+    const s=['<b>ANCA</b> (MPO/PR3)','<b>anti-GBM</b>','<b>C3, C4</b>','<b>ANA</b>'+(c('rSl')?' + anti-dsDNA':''),'HBsAg, anti-HCV, anti-HIV','CBC + smear, LDH (แยก TMA)','UPCR, UA ส่องตะกอน'];
+    if(c('rIn'))s.push('ASO/anti-DNase B');
+    if(c('rFe'))s.push('hemoculture ≥2 ชุด + echocardiogram (endocarditis)');
+    if(c('rSy'))s.push('cryoglobulin');
+    if(c('rLu'))s.push('CXR');
+    L.push('ส่งตรวจ: '+s.join(' · '));
+    L.push('แปลผล complement: <b>C3 ต่ำ</b> → post-infectious GN, C3G/MPGN, endocarditis · <b>C3 + C4 ต่ำ</b> → lupus nephritis, cryoglobulinemia · <b>ปกติ</b> → ANCA, anti-GBM, IgAN');
+    const dx=[];if(c('rLu')||c('rSy'))dx.push('ANCA vasculitis/anti-GBM');if(c('rSl'))dx.push('lupus nephritis');if(c('rIn'))dx.push('post-infectious GN (หรือ IgAN ถ้าเลือดออกพร้อมเจ็บคอ)');if(c('rFe'))dx.push('infective endocarditis');
+    if(dx.length)L.push('คิดถึง: '+dx.join(' · '));
+    L.push('การรักษาเฉพาะ (methylprednisolone pulse, cyclophosphamide/rituximab, plasma exchange) <b>ให้อายุรแพทย์โรคไตตัดสิน</b> · หยุดยาพิษต่อไต (NSAIDs) · คุมความดัน/น้ำ');
+  }
+  $('rpOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRp input',rp);
+
+mountQuiz([
+ ['ชาย 62 ปี เป็น myeloma สงสัย dipstick protein ลบ แต่ UPCR 2,800 mg/g อธิบายได้อย่างไร',['Dipstick เสีย','Dipstick ตรวจ albumin เป็นหลัก ไม่เห็น light chain','UPCR ผิดเสมอ','ปัสสาวะเข้มข้นเกินไป'],1,'UACR/UPCR ต่ำมาก + dipstick ลบ → คิด light chain → SPEP/serum free light chain'],
+ ['UACR 45 mg/mmol เท่ากับประมาณกี่ mg/g และอยู่ KDIGO ระดับใด',['45 mg/g, A2','~400 mg/g, A3','~5 mg/g, A1','~4,000 mg/g, nephrotic'],1,'mg/mmol × 8.84 = mg/g · >30 mg/mmol (>300 mg/g) = A3'],
+ ['นักศึกษาชาย 19 ปี dipstick protein 1+ ตอนตรวจสุขภาพ ไม่มีเลือดในปัสสาวะ BP และ Cr ปกติ ขั้นต่อไปที่เหมาะ',['ส่ง kidney biopsy','เริ่ม enalapril','ตรวจ UPCR จากปัสสาวะแรกตื่นเทียบกับช่วงกลางวัน','ไม่ต้องทำอะไรเลย'],2,'แรกตื่นปกติแต่กลางวันสูง = orthostatic proteinuria พยากรณ์ดี'],
+ ['ตาม AUA/SUFU 2025 หญิง 64 ปี ไม่สูบบุหรี่ RBC 6/HPF ไม่มีปัจจัยเสี่ยงอื่น อยู่กลุ่มใดและควรทำอะไร',['Low — UA ซ้ำใน 6 เดือน','Intermediate — cystoscopy + ultrasound','High — cystoscopy + CT urography','ไม่ต้องตรวจเพราะเป็นผู้หญิง'],1,'2025: หญิง ≥60 = intermediate (ไม่จัด high จากอายุอย่างเดียวแล้ว)'],
+ ['ชาย 66 ปี กิน warfarin INR 2.5 พบ RBC 15/HPF สูบบุหรี่ 40 pack-years ควรทำอย่างไร',['คิดว่าเกิดจาก warfarin หยุดยาแล้วจบ','Cystoscopy + CT urography','UA ซ้ำใน 6 เดือน','ส่ง ANCA'],1,'ยาต้านการแข็งตัวของเลือดไม่ใช่คำอธิบาย · ชาย ≥60 และ >30 pack-years = high risk'],
+ ['หญิง 24 ปี Cr 0.8 → 2.6 mg/dL ใน 3 สัปดาห์ ปัสสาวะมี RBC cast ความดัน 160/100 สิ่งที่ควรทำ',['นัดตรวจซ้ำ 1 เดือน','ส่งอายุรแพทย์โรคไตวันนี้ พร้อมส่ง ANCA, anti-GBM, C3/C4, ANA','เริ่ม prednisolone 1 mg/kg เองแล้วนัดดูอาการ','ให้ NSAIDs ลดปวด'],1,'RPGN — ไม่ต้องรอผล serology'],
+ ['Glomerulonephritis ใดที่มัก C3 และ C4 ปกติ',['Lupus nephritis','Post-streptococcal GN','IgA nephropathy','Cryoglobulinemic GN'],2,'IgAN, ANCA, anti-GBM: complement ปกติ'],
+ ['ผู้ป่วย nephrotic syndrome สงสัย membranous albumin 2.1 g/dL (BCG) UPCR 9,000 mg/g ไม่มีประวัติเลือดออก ข้อใดเหมาะ',['ไม่ต้องคิดเรื่อง VTE','พิจารณา prophylactic anticoagulation หลังประเมินความเสี่ยงเลือดออก','ให้ aspirin อย่างเดียวพอป้องกัน DVT','รอให้เกิด DVT ก่อนจึงให้ยา'],1,'MN + albumin <2.5 g/dL (BCG) เสี่ยง VTE สูง · aspirin ป้องกัน VTE ไม่พอ'],
+ ['ข้อใดถูกเกี่ยวกับการรักษาบวมใน nephrotic syndrome',['ให้ albumin IV ทุกราย','Loop diuretic + จำกัด Na <2 g/วัน · ดื้อยาเพิ่ม thiazide','ห้ามใช้ diuretic','ให้ดื่มน้ำมากๆ'],1,'Albumin IV ใช้น้อยมาก'],
+ ['ตาม KDIGO 2025 เป้า proteinuria ใน IgA nephropathy คือ',['<3.5 g/วัน','<1 g/วัน','<0.5 g/วัน (ดีที่สุด <0.3)','ไม่มีเป้า'],2,'เปลี่ยนจากเดิม <1 g/วัน'],
+ ['ผู้ใหญ่ nephrotic syndrome ใหม่ ไม่ใช่เบาหวาน ข้อใดเหมาะที่สุดสำหรับ GP',['เริ่ม prednisolone 1 mg/kg ทันทีโดยไม่ biopsy','Supportive care + ตรวจ HBsAg/HCV/HIV/ANA/C3/C4 + ส่ง biopsy','ให้ furosemide อย่างเดียวแล้วไม่ต้องส่งต่อ','ให้ cyclophosphamide'],1,'ผู้ใหญ่ต้องหาสาเหตุด้วย biopsy · ตรวจ HBsAg ก่อนยากดภูมิ'],
+ ['หญิง SLE proteinuria UPCR 800 mg/g ควรทำอะไรตาม KDIGO 2024',['รอให้ถึง 3.5 g/วัน','ส่ง kidney biopsy (proteinuria ≥0.5 g/วัน)','ไม่ต้องทำเพราะ Cr ปกติ','หยุด hydroxychloroquine'],1,'Biopsy เมื่อ proteinuria ≥0.5 g/วัน · hydroxychloroquine ทุกราย']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

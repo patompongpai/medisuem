@@ -1,0 +1,997 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Abnormal LFT · แนวทางเมื่อ LFT ผิดปกติ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hepatology · ACG 2017 · BSG 2018 · AASLD 2023 · EASL–EASD–EASO 2024 · EASL DILI 2019 · ACG DILI 2021</div>
+  <h1>แนวทางเมื่อ LFT ผิดปกติ<br>Approach to abnormal liver tests</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผล LFT ผิดปกติพบบ่อยมากทั้ง OPD และ ward · หน้านี้ช่วย <b>อ่านว่าแต่ละค่าบอกอะไร</b>, แยก <b>รูปแบบ</b> ด้วย R ratio, ดู <b>ขนาด</b> ความผิดปกติ, เลือก <b>ตรวจหาสาเหตุ</b> ให้ครบในครั้งเดียว (ไม่ใช่แค่เจาะซ้ำ), ประเมิน <b>MASLD/fibrosis</b> ด้วย FIB-4, คิดถึง <b>ยา/สมุนไพร</b> และรู้ว่า <b>เมื่อไรต้องส่งต่อด่วน</b> · มีบริบทไทย: ไวรัสบี พยาธิใบไม้ตับ ธาลัสซีเมีย G6PD กระท่อม</p>
+  <p class="cite">อ้างอิงหลัก: Kwo PY, et al. ACG Clinical Guideline: Evaluation of abnormal liver chemistries (Am J Gastroenterol 2017;112:18–35) · Newsome PN, et al. Guidelines on the management of abnormal liver blood tests (Gut 2018;67:6–19) · Rinella ME, et al. AASLD practice guidance on NAFLD/MASLD (Hepatology 2023;77:1797–835) · Rinella ME, et al. Multisociety Delphi consensus on new fatty liver disease nomenclature (Hepatology 2023;78:1966–86) · EASL–EASD–EASO Clinical Practice Guidelines on MASLD (J Hepatol 2024;81:492–542) · EASL CPG: Drug-induced liver injury (J Hepatol 2019;70:1222–61) · Chalasani NP, et al. ACG Clinical Guideline: idiosyncratic DILI (Am J Gastroenterol 2021;116:878–98) · Hayashi PH, et al. RECAM (Hepatology 2022;76:18–31) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>R ratio บอกทาง</b>(ALT/ULN) ÷ (ALP/ULN) · ≥5 เซลล์ตับ · ≤2 ท่อน้ำดี (cholestatic) · ระหว่างนั้น mixed</div>
+    <div class="stage" style="--c:var(--warn)"><b>อย่าแค่เจาะซ้ำ</b>BSG: ผิดปกติแล้วให้ <b>หาสาเหตุ</b> (liver aetiology screen + ultrasound) ยกเว้นมีเหตุชั่วคราวชัดเจน</div>
+    <div class="stage" style="--c:var(--danger)"><b>INR ≥1.5 + ซึม = ตับวาย</b>ส่งต่อด่วน · ไข้ + ดีซ่าน = คิดถึง cholangitis · ALT &gt;1000 ถามเรื่อง paracetamol</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#tests">แต่ละค่าบอกอะไร</a><a href="#pattern">รูปแบบ R ratio</a><a href="#mag">ขนาด · ALT &gt;1000</a><a href="#iso">ค่าผิดปกติเดี่ยว</a><a href="#screen">ตรวจหาสาเหตุ</a><a href="#masld">MASLD · FIB-4</a><a href="#alc">สุรา</a><a href="#dili">ยา/สมุนไพร (DILI)</a><a href="#viral">ไวรัส · ขาดเลือด · AIH · Wilson</a><a href="#chol">Cholestasis</a><a href="#special">ครรภ์ · ไข้เขตร้อน</a><a href="#refer">ส่งต่อด่วน</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="tests" class="col">
+  <div class="sec-num">01</div>
+  <h2>แต่ละค่าบอกอะไร</h2>
+  <p>"LFT" ส่วนใหญ่ <b>ไม่ได้วัดการทำงานของตับ</b> แต่บอกว่า <b>เซลล์ตับบาดเจ็บ</b> หรือ <b>น้ำดีไหลไม่ดี</b> · ค่าที่บอก "การทำงาน" (synthetic function) จริงๆ คือ <b>albumin, INR และ bilirubin</b> · BSG แนะนำชุดพื้นฐานคือ bilirubin, albumin, ALT, ALP, GGT (+ CBC ถ้าไม่ได้ตรวจใน 12 เดือน)</p>
+  <div class="tbl"><table>
+    <tr><th>ค่า</th><th>มาจากไหน / บอกอะไร</th><th>ข้อควรรู้</th></tr>
+    <tr><td><b>ALT</b></td><td>เซลล์ตับเป็นหลัก → <b>บาดเจ็บของเซลล์ตับ (injury)</b></td><td>จำเพาะต่อตับกว่า AST · ACG เสนอค่าปกติของคนสุขภาพดี <b>ชาย 29–33, หญิง 19–25 U/L</b> (ต่ำกว่า ULN ของแล็บส่วนใหญ่ที่ ~40) · ค่าในแต่ละวันแกว่งได้</td></tr>
+    <tr><td><b>AST</b></td><td>ตับ <b>กล้ามเนื้อ หัวใจ เม็ดเลือดแดง</b> ไต</td><td>AST สูงเด่น → นึกถึงสุรา ตับแข็ง <b>กล้ามเนื้อ (ตรวจ CK)</b> เม็ดเลือดแดงแตก (hemolysis ในหลอดเลือดหรือในหลอดเก็บเลือด)</td></tr>
+    <tr><td><b>ALP</b></td><td>ท่อน้ำดีในตับ <b>กระดูก รก</b> ลำไส้</td><td>สูงเด่น → cholestasis หรือกระดูก · <b>ใช้ GGT ยืนยันว่ามาจากตับ</b> · ปกติสูงในวัยรุ่นที่กำลังโต และไตรมาส 3 ของครรภ์</td></tr>
+    <tr><td><b>GGT</b></td><td>ตับและท่อน้ำดี (<b>ไม่มีในกระดูก</b>)</td><td>ไวแต่ไม่จำเพาะ · ถูกเหนี่ยวนำโดย <b>สุรา ยากันชัก (phenytoin, carbamazepine)</b> ไขมันพอกตับ · ACG: ไม่ใช้ GGT เดี่ยวเป็นการตรวจคัดกรอง</td></tr>
+    <tr><td><b>Bilirubin</b> total / direct</td><td>Indirect (unconjugated) = ผลิตมาก (เม็ดเลือดแดงแตก) หรือจับคู่ไม่ได้ (Gilbert) · Direct (conjugated) = ตับ/ท่อน้ำดีขับไม่ได้</td><td>ปกติ total ≲1.2 mg/dL (~20 µmol/L) · <b>1 mg/dL = 17.1 µmol/L</b> · direct สูง → ปัสสาวะสีชา (direct ละลายน้ำ)</td></tr>
+    <tr><td><b>Albumin</b></td><td><b>การสร้าง (synthetic)</b></td><td>ครึ่งชีวิต ~3 สัปดาห์ → บอกโรคเรื้อรัง ไม่บอกเฉียบพลัน · ต่ำได้จากอักเสบ ขาดอาหาร nephrotic</td></tr>
+    <tr><td><b>INR/PT</b></td><td><b>การสร้าง (synthetic)</b> ไวและเร็ว</td><td>ยาวได้จาก <b>ขาดวิตามินเค</b> (cholestasis, กินไม่ได้, ยาฆ่าเชื้อ) หรือ warfarin · ทดสอบ: vitamin K 10 mg IV ช้าๆ ครั้งเดียว แล้ว INR ซ้ำใน 24 ชม. — ดีขึ้นชัด = ขาดวิตามินเค · ไม่ดีขึ้น = ตับสร้างไม่ได้ <span class="tag add">เสริม</span></td></tr>
+    <tr><td>Platelet</td><td>ทางอ้อม</td><td>ต่ำ + ม้ามโต → portal hypertension/ตับแข็ง · ใช้คำนวณ FIB-4</td></tr>
+  </table></div>
+  <div class="box key"><b>หลักคิด</b>แยก 2 คำถาม: (1) <b>บาดเจ็บแบบไหน</b> — เซลล์ตับ (ALT/AST) หรือท่อน้ำดี (ALP/GGT) และ (2) <b>ตับยังทำงานได้ไหม</b> — INR, bilirubin, albumin, ความรู้สึกตัว · ALT 2,000 แต่ INR ปกติ อันตรายน้อยกว่า ALT 300 ที่ INR 2.0 และซึม</div>
+</section>
+
+<section id="pattern" class="col">
+  <div class="sec-num">02</div>
+  <h2>รูปแบบ: hepatocellular · cholestatic · mixed (R ratio)</h2>
+  <div class="box note"><b>R ratio = (ALT ÷ ULN ของ ALT) ÷ (ALP ÷ ULN ของ ALP)</b>ใช้ค่าในวันเดียวกัน (ควรเป็นค่าแรกที่ผิดปกติ) · ใช้ ULN ของแล็บตัวเอง · หน้านี้ใช้จุดตัดตาม EASL DILI 2019: <b>R ≥5 hepatocellular · R ≤2 cholestatic · 2 &lt; R &lt; 5 mixed</b> (ACG 2017 เขียน &gt;5, 2–5, &lt;2 — ต่างกันแค่ค่าที่ตรงจุดตัด)</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Hepatocellular (R ≥5)</h4><ul><li>ALT/AST สูงเด่น ALP ปกติหรือสูงเล็กน้อย</li><li>MASLD, สุรา, <b>ไวรัส (บี ซี เอ อี)</b>, ยา/สมุนไพร, AIH, ขาดเลือด, Wilson, hemochromatosis/เหล็กเกิน</li></ul></div>
+    <div class="card c-warn"><h4>Cholestatic (R ≤2)</h4><ul><li>ALP (+GGT) สูงเด่น ± bilirubin</li><li><b>ultrasound ก่อน</b>: ท่อน้ำดีขยาย = อุดตันนอกตับ (นิ่ว มะเร็ง) · ไม่ขยาย = ในตับ (PBC, ยา, infiltrative, sepsis)</li></ul></div>
+    <div class="card c-vio"><h4>Mixed (2–5)</h4><ul><li>พบบ่อยใน <b>DILI</b> (เช่น amoxicillin/clavulanate), นิ่วที่หลุดผ่าน, ตับอักเสบจากเชื้อในระบบ</li><li>ส่งตรวจทั้งสองฝั่ง</li></ul></div>
+    <div class="card c-red"><h4>ระวัง</h4><ul><li>R เปลี่ยนตามเวลา — นิ่วอุดตันช่วงแรก ALT พุ่งก่อน (ดูเหมือน hepatocellular) แล้ว ALP ค่อยขึ้น</li><li>ALT ปกติ + ALP ปกติ แต่ bilirubin สูง → ไม่ใช้ R ไปดู <a href="#iso">ค่าผิดปกติเดี่ยว</a></li></ul></div>
+  </div>
+</section>
+
+<section id="mag" class="col">
+  <div class="sec-num">03</div>
+  <h2>ขนาดความผิดปกติ และ ALT &gt;1000</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ ALT/AST (ACG 2017)</th><th>นึกถึง</th></tr>
+    <tr><td>Borderline &lt;2×ULN · <b>Mild 2–5×</b></td><td><b>MASLD</b> (พบบ่อยที่สุด) · สุรา · ยา/สมุนไพร · <b>HBV/HCV เรื้อรัง</b> · AIH · เหล็กเกิน (รวมธาลัสซีเมีย) · Wilson (คนอายุน้อย) · พบน้อย: ไทรอยด์ กล้ามเนื้อ adrenal insufficiency celiac</td></tr>
+    <tr><td><b>Moderate 5–15×</b></td><td>ไวรัสเฉียบพลัน · <b>DILI</b> · AIH · HBV flare · ตับอักเสบจากสุรา (มัก AST &lt;400 ไม่ถึงพัน)</td></tr>
+    <tr><td><b>Severe &gt;15×</b> (มัก &gt;1000 U/L) · Massive &gt;10,000</td><td><b>ขาดเลือด (ischemic hepatitis/shock liver)</b> · <b>paracetamol</b>/ยา/สารพิษ · ไวรัสเฉียบพลัน (A, B, E, HSV) · <b>นิ่วหลุดผ่านท่อน้ำดี</b> · AIH · Wilson · Budd–Chiari · ไข้เลือดออกรุนแรง · heat stroke · ACG: &gt;10,000 ส่วนใหญ่ = ขาดเลือด หรือยา/สารพิษ</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>ALT &gt;1000: เบาะแสแยกสาเหตุ</th><th>ลักษณะ</th></tr>
+    <tr><td><b>Ischemic hepatitis</b></td><td>หลังช็อก/หัวใจล้มเหลว/หัวใจหยุดเต้น/hypoxia · ขึ้นสูงสุดใน 1–3 วันแล้ว <b>ลดลงเร็ว</b> (ราวครึ่งหนึ่งใน 2–3 วัน) · <b>LDH สูงมาก</b> · Cr มักขึ้นด้วย <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>Paracetamol</b></td><td>ACG: ALT &gt;1000 ต้องซักประวัติ paracetamol อย่างละเอียดทุกราย (รวมยาสูตรผสม แก้หวัด กินเกินขนาดซ้ำๆ ร่วมกับสุรา/อดอาหาร) · เจาะระดับยา · ดูหน้า <a href="../toxicology/index.html">Toxicology</a> และ <a href="../liver-failure/index.html">ตับวายเฉียบพลัน</a></td></tr>
+    <tr><td><b>นิ่วหลุดผ่านท่อน้ำดี</b></td><td>ปวดท้องขวาบน/ลิ้นปี่เฉียบพลัน · ALT พุ่งได้ถึงพันแล้ว <b>ลดลงใน 24–72 ชม.</b> · ALP/bilirubin ตามมา · ตรวจ lipase ด้วย (ALT &gt;150 ในตับอ่อนอักเสบชวนคิดนิ่ว — ดู <a href="../pancreatitis/index.html">ตับอ่อนอักเสบ</a>) <span class="tag add">เสริม</span></td></tr>
+    <tr><td>ไวรัสเฉียบพลัน</td><td>อาการนำ (ไข้ต่ำ คลื่นไส้ เบื่ออาหาร) แล้วดีซ่าน · ALT ลดช้ากว่าแบบขาดเลือด · IgM anti-HAV, HBsAg + IgM anti-HBc, IgM anti-HEV, (HSV ในครรภ์/ภูมิต่ำ)</td></tr>
+    <tr><td>AIH · Wilson</td><td>AIH: ANA/ASMA + IgG สูง · Wilson (คนอายุน้อย): เม็ดเลือดแดงแตก + ALP ต่ำผิดสัดส่วน — ในตับวาย ALP/bilirubin &lt;4 และ AST/ALT &gt;2.2 ชวนคิด Wilson <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+</section>
+
+<section id="iso" class="col">
+  <div class="sec-num">04</div>
+  <h2>ค่าผิดปกติเดี่ยว: bilirubin · ALP · GGT · AST &gt; ALT</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Bilirubin สูงเดี่ยว (indirect เด่น)</h4><ul>
+      <li>ส่ง <b>direct bilirubin</b> · direct &lt;~20% ของ total = unconjugated <span class="tag add">เสริม</span></li>
+      <li><b>Gilbert syndrome</b>: พบบ่อย ไม่อันตราย · สูงขึ้นเวลาอดอาหาร ป่วย เครียด · ACG: indirect สูงเล็กน้อย <b>&lt;4 mg/dL</b> + ALT/ALP ปกติ + ไม่มีเม็ดเลือดแดงแตก → สันนิษฐานว่า Gilbert ได้ ไม่ต้องตรวจเพิ่ม · BSG: unconjugated <b>&gt;40 µmol/L (~2.3 mg/dL)</b> ให้นึกถึงสาเหตุอื่น/ตรวจยีน (สองแนวทางใช้ค่าต่างกัน หน้านี้ใช้ทั้งคู่: &lt;2.3 สบายใจ, 2.3–4 ทบทวนให้ครบก่อนสรุป)</li>
+      <li><b>เม็ดเลือดแดงแตก</b>: CBC, reticulocyte, LDH, haptoglobin, peripheral smear · <b>ไทย: ธาลัสซีเมีย</b> (Hb typing — ดู <a href="../thalassemia/index.html">ธาลัสซีเมีย</a>) และ <b>G6PD deficiency</b> (หลังติดเชื้อ ยา เช่น primaquine, dapsone, ถั่วปากอ้า) <span class="tag th">ไทย</span></li>
+      <li>G6PD ตรวจระหว่างแตกเฉียบพลันอาจได้ค่าปกติหลอก (เซลล์ใหม่มี enzyme สูง) → ตรวจซ้ำหลัง ~2–3 เดือน <span class="tag add">เสริม</span></li>
+      <li>ยาที่ทำให้ indirect สูง: rifampicin, atazanavir</li></ul></div>
+    <div class="card c-warn"><h4>ALP สูงเดี่ยว</h4><ul>
+      <li><b>ตรวจ GGT</b>: GGT สูงด้วย → มาจากตับ → ultrasound + AMA (ดู <a href="#chol">cholestasis</a>) · <b>GGT ปกติ → มักไม่ใช่ตับ</b> (BSG)</li>
+      <li>ไม่ใช่ตับ: <b>กระดูก</b> (วัยรุ่นกำลังโต กระดูกหัก มะเร็งกระจายไปกระดูก Paget <b>ขาดวิตามินดี/osteomalacia</b> hyperparathyroidism) · <b>ตั้งครรภ์</b> (รก) · CKD · ลำไส้ (หลังอาหารไขมันในกรุ๊ปเลือด O/B)</li>
+      <li>ไม่แน่ใจ → ALP isoenzyme · Ca, PO₄, 25-OH vitamin D, PTH</li>
+      <li>ACG: ALP มาจากตับ ท่อไม่ขยาย AMA ลบ — ALP &gt;2×ULN พิจารณา MRCP/biopsy · 1–2×ULN สังเกตได้ · สูงค้าง &gt;6 เดือน พิจารณา biopsy</li></ul></div>
+    <div class="card c-vio"><h4>GGT สูงเดี่ยว</h4><ul>
+      <li>พบบ่อยจาก <b>สุรา</b>, <b>ยาที่เหนี่ยวนำ enzyme</b> (phenytoin, carbamazepine, phenobarbital), MASLD, อ้วน</li>
+      <li>ไม่จำเพาะ ไม่ต้องตรวจละเอียดถ้าค่าอื่นปกติ · ใช้เป็น <b>สัญญาณให้ถามเรื่องสุราและน้ำหนัก/เมตาบอลิก</b></li></ul></div>
+    <div class="card c-red"><h4>AST &gt; ALT</h4><ul>
+      <li><b>AST/ALT &gt;2</b> ชวนคิด <b>สุรา</b> (ACG: &gt;70% ของโรคตับจากสุรามี ratio &gt;2; &gt;3 ยิ่งชวนคิด)</li>
+      <li><b>ตับแข็ง</b> สาเหตุใดก็ได้ ratio มัก &gt;1</li>
+      <li><b>กล้ามเนื้อ</b>: rhabdomyolysis ออกกำลังหนัก ชัก heat stroke → <b>ตรวจ CK</b> (ดู <a href="../rhabdo-heat/index.html">Rhabdo/Heat</a>) · เม็ดเลือดแดงแตก · hypothyroid · ไข้เลือดออก (AST มักสูงกว่า ALT)</li>
+      <li>AST สูงเดี่ยวนาน ไม่มีสาเหตุ → macro-AST (ไม่อันตราย) <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<section id="screen" class="col">
+  <div class="sec-num">05</div>
+  <h2>ตรวจหาสาเหตุ: ACG 2017 และ BSG 2018</h2>
+  <div class="box warn"><b>BSG: "อย่าแค่เจาะซ้ำ"</b>เมื่อ LFT ผิดปกติ ให้ <b>หาสาเหตุ ไม่ว่าจะผิดปกติมากหรือน้อย หรือนานเท่าไร</b> · การเจาะซ้ำเฉยๆ เหมาะเฉพาะเมื่อมีเหตุชั่วคราวชัดเจนที่คาดว่าจะหายเอง (เช่น เพิ่งติดเชื้อ เพิ่งได้ยาที่สงสัย นิ่วหลุดผ่าน) · ACG ให้ยืนยันซ้ำก่อนได้ — ทั้งสองแนวทางเห็นตรงกันว่า <b>ค่าผิดปกติที่ยังค้างต้องหาสาเหตุ</b></div>
+  <div class="tbl"><table>
+    <tr><th>BSG "standard liver aetiology screen" (ผู้ใหญ่)</th><th>เสริม/ตามข้อบ่งชี้</th></tr>
+    <tr><td><ul style="margin:0">
+      <li><b>Ultrasound ตับ ท่อน้ำดี</b></li>
+      <li><b>HBsAg</b></li>
+      <li><b>Anti-HCV</b> (บวก → HCV RNA)</li>
+      <li><b>Autoantibodies</b>: AMA, ASMA, ANA</li>
+      <li><b>Serum immunoglobulins</b> (IgG สูง → AIH; IgM → PBC)</li>
+      <li><b>Ferritin + transferrin saturation</b> (ตรวจคู่กัน)</li></ul></td>
+    <td><ul style="margin:0">
+      <li>เฉียบพลัน: IgM anti-HAV, IgM anti-HBc, IgM anti-HEV, (CMV/EBV/HSV)</li>
+      <li><b>Ceruloplasmin</b> (Wilson): ACG — ALT/AST สูงค้างโดยเฉพาะ <b>อายุ &lt;55</b> · BSG ใส่ในชุดขยาย (extended) ช่วงอายุ 3–40 ปี · <i>หน้านี้แนะนำตรวจเมื่ออายุ &lt;40 ทุกราย และ 40–55 ถ้าหาสาเหตุอื่นไม่ได้</i></li>
+      <li>Alpha-1 antitrypsin (พบน้อยมากในคนเอเชีย) · IgG4 · CK · TSH</li>
+      <li>Celiac serology: พบน้อยในไทย — ตรวจเมื่อมีท้องเสียเรื้อรัง/ขาดเหล็กไม่ทราบสาเหตุ</li></ul></td></tr>
+  </table></div>
+  <ul>
+    <li><b>Ferritin สูง ≠ เหล็กเกินเสมอ</b>: ferritin สูงจาก MASLD สุรา อักเสบ ได้บ่อย · <b>TSAT &gt;45%</b> จึงชวนคิดเหล็กเกินจริง · ในไทย HFE hemochromatosis พบน้อยมาก แต่ <b>ธาลัสซีเมียและการได้เลือดบ่อย</b> เป็นสาเหตุเหล็กเกินที่สำคัญ <span class="tag th">ไทย</span></li>
+    <li><b>ซักประวัติก่อนส่งแล็บ</b>: สุรา (จำนวน g/สัปดาห์) · ยา ยาสมุนไพร อาหารเสริม ยาลดน้ำหนัก ยาเพิ่มกล้าม · กระท่อม · น้ำหนัก เบาหวาน ความดัน ไขมัน · ไข้ ดีซ่าน ปัสสาวะสีชา คัน · ครอบครัวมีไวรัสบี/ตับแข็ง/มะเร็งตับ · กินปลาดิบ (ก้อยปลา ปลาร้าไม่สุก) <span class="tag th">ไทย</span></li>
+    <li><b>บริบทไทย: ไวรัสตับอักเสบบียังพบบ่อย</b>ในผู้ใหญ่ที่เกิดก่อนมีวัคซีนในแผนงานสร้างเสริมภูมิคุ้มกัน (พ.ศ. 2535) → HBsAg ทุกรายที่ LFT ผิดปกติ · รายละเอียดหน้า <a href="../hepbc/index.html">ไวรัสตับอักเสบ บี และ ซี</a> <span class="tag th">ไทย</span></li>
+    <li>ผู้ใหญ่ที่ LFT ผิดปกติค้าง ตรวจชุดขยายแล้วไม่พบสาเหตุ และไม่มีปัจจัยเสี่ยง MASLD → BSG: ส่งพบแพทย์ระบบทางเดินอาหาร/ตับ</li>
+  </ul>
+</section>
+
+<section id="masld" class="col">
+  <div class="sec-num">06</div>
+  <h2>MASLD และการประเมิน fibrosis (FIB-4)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ชื่อใหม่ 2023 <span class="tag up">2023</span></h4><ul>
+      <li><b>SLD</b> (steatotic liver disease) แบ่งเป็น <b>MASLD</b> (แทน NAFLD), <b>MetALD</b> (MASLD + ดื่มปานกลาง), <b>ALD</b>, สาเหตุจำเพาะ (ยา, ไวรัส…), cryptogenic</li>
+      <li><b>MASLD</b> = ไขมันพอกตับ (ภาพ/ชิ้นเนื้อ) + <b>อย่างน้อย 1 ใน 5 cardiometabolic criteria</b> + ไม่มีสาเหตุอื่น</li>
+      <li>MASH แทน NASH</li>
+      <li>MetALD: ดื่ม <b>หญิง 20–50 g/วัน (140–350 g/สัปดาห์), ชาย 30–60 g/วัน (210–420 g/สัปดาห์)</b> · มากกว่านี้ = ALD</li></ul></div>
+    <div class="card c-warn"><h4>Cardiometabolic criteria (≥1 ข้อ)</h4><ul>
+      <li>BMI ≥25 (<b>เอเชีย ≥23</b>) หรือรอบเอว ชาย ≥90, หญิง ≥80 cm (เอเชีย)</li>
+      <li>FPG ≥100 mg/dL หรือ 2-h OGTT ≥140 หรือ HbA1c ≥5.7% หรือเป็นเบาหวาน/รักษาอยู่</li>
+      <li>BP ≥130/85 หรือกินยาลดความดัน</li>
+      <li>TG ≥150 mg/dL หรือกินยาลดไขมัน</li>
+      <li>HDL ≤40 (ชาย) / ≤50 (หญิง) mg/dL หรือกินยาลดไขมัน</li></ul></div>
+  </div>
+  <div class="box key"><b>FIB-4 = อายุ × AST ÷ (เกล็ดเลือด [×10⁹/L] × √ALT)</b>
+    AASLD 2023: <b>&lt;1.3 ความเสี่ยงต่ำ</b> · <b>1.3–2.67 ไม่ชัด</b> → ทำ <b>elastography (VCTE/FibroScan)</b> · <b>&gt;2.67 สูง</b> → ส่งแพทย์ตับ (ทำ VCTE ด้วย) · EASL–EASD–EASO 2024: &lt;1.3 ต่ำ (ซ้ำทุก 1–3 ปี) · <b>≥1.3 → VCTE เป็นขั้นที่สอง</b> (&lt;8 kPa ต่ำ · ≥8 kPa → แพทย์ตับ) หรือทางเลือก: 1.3–2.67 ปรับวิถีชีวิต/คุมโรคร่วมเข้มข้น 1 ปีแล้วคำนวณซ้ำ, &gt;2.67 ส่งแพทย์ตับ · <b>อายุ &gt;65 ใช้จุดตัดล่าง 2.0</b> (EASL) · อายุ &lt;35 ความแม่นยำลดลง · BSG 2018 ใช้จุดตัดบน 3.25 (หน้านี้ใช้ 2.67 ตามแนวทางใหม่กว่า)</div>
+  <div class="tbl"><table>
+    <tr><th>Liver stiffness (VCTE)</th><th>แปลผล</th></tr>
+    <tr><td>&lt;8 kPa</td><td>เสี่ยงต่ำ · ดูแลที่ปฐมภูมิ · ประเมินซ้ำทุก 1–3 ปี (ถี่ขึ้นถ้ามีเบาหวาน/หลายปัจจัยเสี่ยง)</td></tr>
+    <tr><td>8–12 kPa</td><td>ไม่ชัด · ส่งแพทย์ตับ/ตรวจเพิ่ม (ELF, MRE หรือ biopsy)</td></tr>
+    <tr><td>≥12 kPa</td><td>น่าจะมี fibrosis มาก (≥F3) → แพทย์ตับ</td></tr>
+    <tr><td>≥15 kPa</td><td>ชวนคิด compensated advanced chronic liver disease (Baveno VII) → คัดกรองมะเร็งตับ/varices ดูหน้า <a href="../cirrhosis/index.html">ตับแข็ง</a></td></tr>
+  </table></div>
+  <ul>
+    <li><b>ใครควรประเมิน</b>: เบาหวานชนิดที่ 2, อ้วน + ปัจจัยเมตาบอลิกอย่างน้อย 1 ข้อ, LFT ผิดปกติ, เห็นไขมันพอกตับจาก ultrasound</li>
+    <li><b>รักษาหลัก</b>: ลดน้ำหนัก <b>≥5%</b> (ลดไขมันตับ), <b>7–10%</b> (ช่วยการอักเสบ/fibrosis) · อาหารแบบเมดิเตอร์เรเนียน · ออกกำลังกาย · คุมเบาหวาน ความดัน ไขมัน · ลด/งดสุรา (fibrosis มาก/ตับแข็ง = งดถาวร)</li>
+    <li><b>Statin ปลอดภัย</b> ใน MASLD รวมถึงตับแข็งที่ยังไม่ decompensate — ALT สูงเล็กน้อยไม่ใช่ข้อห้าม (AASLD 2023) · ควรให้เมื่อมีข้อบ่งชี้ทางหัวใจหลอดเลือด</li>
+    <li><b>ยาเฉพาะสำหรับ MASH (ไม่มีตับแข็ง, fibrosis F2–F3)</b>: <b>resmetirom</b> (FDA อนุมัติ มี.ค. 2567/2024; MAESTRO-NASH) — 80 mg กินวันละครั้ง (น้ำหนัก &lt;100 kg) หรือ 100 mg วันละครั้ง (≥100 kg) · <b>semaglutide 2.4 mg ฉีดใต้ผิวหนังสัปดาห์ละครั้ง</b> (FDA อนุมัติ ส.ค. 2568/2025; ESSENCE) · EASL 2024 แนะนำพิจารณา resmetirom เมื่อได้รับอนุมัติในประเทศ · ในไทยยังไม่มีข้อบ่งชี้ MASH ที่ อย. อนุมัติเท่าที่ผู้เขียนทราบ — ตรวจสอบก่อนใช้ และควรสั่งโดยแพทย์เฉพาะทาง <span class="tag th">ไทย</span></li>
+    <li>ไทยยังไม่มีแนวทาง MASLD ฉบับสมาคมโรคตับแห่งประเทศไทยที่ผู้เขียนค้นพบ → หน้านี้ใช้ AASLD 2023 และ EASL–EASD–EASO 2024 เป็นหลัก <span class="tag th">ไทย</span></li>
+  </ul>
+</section>
+
+<section id="alc" class="col">
+  <div class="sec-num">07</div>
+  <h2>โรคตับจากสุรา</h2>
+  <ul>
+    <li><b>ถามเป็นกรัม</b>: 1 ดื่มมาตรฐานไทย = แอลกอฮอล์ 10 g (เช่น เบียร์ 5% ~1 กระป๋องเล็ก 330 mL ≈ 1.3 ดื่ม; เหล้าขาว 40% 1 เป๊ก 30 mL ≈ 1 ดื่ม) <span class="tag th">ไทย</span> · ACG: หญิง &gt;140 g/สัปดาห์ ชาย &gt;210 g/สัปดาห์ ที่มี AST &gt; ALT → แนะนำให้หยุดดื่ม · BSG: ใช้ AUDIT (≥8 เริ่มเป็นปัญหา, &gt;19 น่าจะติดสุรา)</li>
+    <li>เบาะแส: <b>AST/ALT &gt;2</b>, GGT สูง, MCV สูง · AST มักไม่เกิน 300–400</li>
+    <li><b>Alcohol-associated hepatitis</b> (NIAAA): ดีซ่านเริ่มภายใน 60 วันหลังดื่มหนัก, bilirubin &gt;3 mg/dL, AST &gt;50, AST/ALT &gt;1.5, AST และ ALT &lt;400 · <b>Maddrey DF = 4.6 × (PT ผู้ป่วย − PT control, วินาที) + bilirubin (mg/dL)</b> ≥32 หรือ MELD &gt;20 = รุนแรง → ส่งต่อ · ถ้าไม่มีติดเชื้อ/เลือดออก/ไตวาย อาจให้ <b>prednisolone 40 mg กินวันละครั้ง × 28 วัน</b> (ไม่ต้องปรับตามไต; หยุดถ้า Lille วันที่ 7 &gt;0.45) — โดยแพทย์เฉพาะทาง <span class="tag add">เสริม</span></li>
+    <li>หยุดสุรา → ระวัง <b>alcohol withdrawal</b> + ให้ thiamine ก่อนกลูโคส · ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a></li>
+    <li>ตรวจหา fibrosis ในผู้ดื่มหนัก (BSG: elastography; &gt;16 kPa ส่งแพทย์ตับ) · FIB-4 ใช้ได้แต่แปลผลระวังช่วงดื่มหนักเพราะ AST สูงจากสุรา</li>
+  </ul>
+</section>
+
+<section id="dili" class="col">
+  <div class="sec-num">08</div>
+  <h2>ตับอักเสบจากยาและสมุนไพร (DILI)</h2>
+  <div class="box note"><b>เกณฑ์ DILI ทางชีวเคมี (EASL 2019)</b>ข้อใดข้อหนึ่ง: <b>ALT ≥5×ULN</b> · <b>ALP ≥2×ULN</b> (โดยเฉพาะมี GGT สูง และไม่มีโรคกระดูก) · <b>ALT ≥3×ULN ร่วมกับ total bilirubin &gt;2×ULN</b> · ต่ำกว่านี้อาจเป็นแค่ "adaptation" ที่หายเองได้ (เช่น isoniazid, statin)</div>
+  <div class="grid2">
+    <div class="card c-red"><h4>Hy's law — อันตราย</h4><ul><li><b>ALT &gt;3×ULN + total bilirubin &gt;2×ULN</b> จากยา โดย <b>ไม่มี cholestasis เด่นตั้งแต่ต้น</b> (ALP &lt;2×ULN) และไม่มีสาเหตุอื่น</li><li>เสี่ยงตับวาย/เสียชีวิตหรือต้องปลูกถ่ายตับ ราว 10% → <b>หยุดยาทันที ติดตาม INR ใกล้ชิด ปรึกษาแพทย์ตับ</b></li></ul></div>
+    <div class="card c-warn"><h4>หยุดยาที่สงสัยเมื่อ</h4><ul><li>ALT &gt;8×ULN · หรือ &gt;5×ULN (ค้าง) · หรือ &gt;3×ULN ร่วมกับ bilirubin &gt;2×ULN หรือ INR &gt;1.5 · หรือ &gt;3×ULN ร่วมกับอาการ (อ่อนเพลีย คลื่นไส้ ปวดท้องขวาบน ผื่น ไข้ eosinophil สูง) <span class="tag add">เสริม</span></li><li>ดีซ่านจากยา = หยุดยาเสมอ · <b>ห้ามให้ยาซ้ำ (rechallenge)</b> หลัง DILI รุนแรง</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา/สาร (ที่พบบ่อยในไทย)</th><th>ลักษณะ</th></tr>
+    <tr><td><b>ยาวัณโรค</b> (isoniazid, rifampicin, pyrazinamide) <span class="tag th">ไทย</span></td><td>สาเหตุ DILI ที่พบบ่อยในไทย · มักเกิดใน 2–3 เดือนแรก · ATS: <b>หยุดเมื่อ ALT ≥3×ULN + อาการ/ดีซ่าน หรือ ALT ≥5×ULN แม้ไม่มีอาการ</b> แล้วค่อยๆ กลับเข้ายาทีละตัว · ดูหน้า <a href="../tb/index.html">วัณโรค</a></td></tr>
+    <tr><td><b>Amoxicillin/clavulanate</b></td><td>cholestatic/mixed · เกิดได้ <b>หลังหยุดยาแล้วหลายวันถึงหลายสัปดาห์</b> · ผู้สูงอายุ ชาย</td></tr>
+    <tr><td><b>กระท่อม (kratom)</b> <span class="tag th">ไทย</span></td><td>ถูกกฎหมายในไทยตั้งแต่ 2564 · รายงาน cholestatic/mixed ดีซ่าน คัน มักภายใน 1–8 สัปดาห์หลังใช้ต่อเนื่อง · ต้องถามตรงๆ</td></tr>
+    <tr><td><b>สมุนไพร/อาหารเสริม</b></td><td>สารสกัดชาเขียว, ยาลดน้ำหนัก (Garcinia ฯลฯ), <b>ยาเพิ่มกล้าม/anabolic steroid</b> (cholestasis ดีซ่านนาน), ยาลูกกลอน/ยาจีน, ฟ้าทะลายโจร (มีรายงานประปราย) — ส่วนประกอบไม่แน่นอน ปนเปื้อนได้ <span class="tag th">ไทย</span></td></tr>
+    <tr><td>ยาอื่นที่พบบ่อย</td><td>Co-trimoxazole · ยากันชัก (phenytoin, carbamazepine — มักร่วม DRESS) · <b>allopurinol</b> (DRESS/SJS; คนไทยมี HLA-B*58:01 บ่อย) · NSAIDs (diclofenac) · nevirapine/efavirenz (ดู <a href="../hiv/index.html">HIV</a>) · methotrexate · azoles · amiodarone</td></tr>
+    <tr><td><b>Paracetamol</b></td><td>ขึ้นกับขนาด (intrinsic) · เสี่ยงขึ้นเมื่อดื่มสุรา อดอาหาร · ALT มักสูงหลายพัน</td></tr>
+    <tr><td><b>Statin</b></td><td>ALT สูงเล็กน้อยพบได้ ไม่อันตราย · DILI ที่มีนัยสำคัญพบน้อยมาก · <b>ไม่ต้องหยุดถ้า ALT &lt;3×ULN</b> และไม่มีอาการ · ใช้ได้ในโรคตับเรื้อรัง</td></tr>
+  </table></div>
+  <ul>
+    <li><b>ประเมินความเป็นไปได้</b>: <b>RUCAM (updated 2016)</b> 7 หัวข้อ คะแนน ≤0 ไม่เกี่ยว · 1–2 ไม่น่าใช่ · 3–5 อาจใช่ · 6–8 น่าจะใช่ · ≥9 ใช่มาก · <b>RECAM</b> (2022) เป็นรุ่นอิเล็กทรอนิกส์ที่ปรับปรุงจาก RUCAM (ใช้เว็บ) — ACG 2021 ยังถือว่า DILI เป็น <b>การวินิจฉัยโดยแยกโรคอื่น</b> ร่วมกับดุลยพินิจ · ใช้เครื่องมือในหน้านี้ช่วยคิด</li>
+    <li>ต้องตัดโรคอื่นก่อน: HAV, HBV (HBsAg, IgM anti-HBc), HCV, <b>HEV</b> (ถูกมองข้ามบ่อย), AIH, ภาพท่อน้ำดี, สุรา, ช็อกเมื่อเร็วๆ นี้</li>
+    <li>ส่วนใหญ่ดีขึ้นหลังหยุดยา: hepatocellular ALT ลด ≥50% ใน ~8–30 วัน · cholestatic ช้ากว่า (เป็นเดือน) · ค้าง &gt;6 เดือน = chronic DILI</li>
+    <li>ค้นข้อมูลยาที่ <b>LiverTox</b> (NIH) <span class="tag add">เสริม</span></li>
+  </ul>
+</section>
+
+<section id="viral" class="col">
+  <div class="sec-num">09</div>
+  <h2>ไวรัสตับอักเสบ · ตับขาดเลือด · AIH · Wilson</h2>
+  <div class="tbl"><table>
+    <tr><th>โรค</th><th>ตรวจ</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>ไวรัสบี</b> เฉียบพลัน/เรื้อรัง/flare</td><td>HBsAg · IgM anti-HBc (เฉียบพลัน) · HBeAg, HBV DNA</td><td>flare ได้เมื่อได้เคมีบำบัด/steroid/rituximab หรือหยุดยาต้านไวรัส · ดู <a href="../hepbc/index.html">หน้าไวรัสตับอักเสบ บี/ซี</a></td></tr>
+    <tr><td><b>ไวรัสซี</b></td><td>Anti-HCV → HCV RNA</td><td>รักษาหายได้ด้วย DAA (sofosbuvir/velpatasvir อยู่ในสิทธิ์การรักษาไทย) <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>ไวรัสเอ</b></td><td>IgM anti-HAV</td><td>อาหาร/น้ำปนเปื้อน · ผู้ใหญ่อาการมากกว่าเด็ก · ระบาดเป็นกลุ่มได้</td></tr>
+    <tr><td><b>ไวรัสอี</b></td><td>IgM anti-HEV (± HEV RNA)</td><td>ในไทยส่วนใหญ่ genotype 3 จาก<b>เนื้อหมู/เครื่องในหมูไม่สุก</b> · ผู้สูงอายุชาย · เรื้อรังได้ในผู้ภูมิต่ำ (ปลูกถ่ายอวัยวะ) · ACG: ตรวจเมื่อ A/B/C ลบ <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>Ischemic hepatitis</b></td><td>ประวัติช็อก/หัวใจล้มเหลว · LDH · echo</td><td>รักษาที่ต้นเหตุ (ความดัน cardiac output) · ALT ลดเร็วเมื่อแก้ได้ · หัวใจห้องขวาล้มเหลวเรื้อรัง (congestive hepatopathy) → cholestatic/bilirubin สูงเล็กน้อย</td></tr>
+    <tr><td><b>Autoimmune hepatitis</b></td><td>ANA, ASMA (± anti-LKM1), <b>IgG</b></td><td>หญิงพบมากกว่า · เป็นได้ทั้งเรื้อรังและเฉียบพลันรุนแรง · ต้องตัดชิ้นเนื้อยืนยัน → ส่งต่อ</td></tr>
+    <tr><td><b>Wilson disease</b></td><td>Ceruloplasmin (ต่ำ) → ทองแดงปัสสาวะ 24 ชม. · ตรวจตา (Kayser–Fleischer ring)</td><td>คนอายุน้อยที่มีอาการทางตับ/ระบบประสาท/จิตเวช หรือเม็ดเลือดแดงแตกร่วม · ceruloplasmin ต่ำหลอกได้ในภาวะขาดโปรตีน/ตับวาย</td></tr>
+  </table></div>
+</section>
+
+<section id="chol" class="col">
+  <div class="sec-num">10</div>
+  <h2>Cholestasis: ท่อน้ำดีขยาย หรือไม่ขยาย</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>ท่อน้ำดีขยาย (อุดตันนอกตับ)</h4><ul>
+      <li><b>นิ่วในท่อน้ำดี</b> · <b>มะเร็งท่อน้ำดี (cholangiocarcinoma)</b> · มะเร็งหัวตับอ่อน/ampulla · ท่อตีบ</li>
+      <li>ตรวจต่อ: <b>MRCP</b> หรือ EUS (หาสาเหตุ) · CT ถ้าสงสัยก้อน · <b>ERCP</b> เมื่อต้องระบาย/เอานิ่วออก</li>
+      <li><b>ไข้ + ดีซ่าน ± ปวดท้องขวาบน = cholangitis</b> → blood culture, ยาฆ่าเชื้อ, ประเมินความรุนแรงตาม <b>Tokyo Guidelines</b> และระบายท่อน้ำดี · ดู <a href="../gi-infection/index.html">Cholangitis (TG18)</a></li>
+      <li><b>ดีซ่านไม่ปวด น้ำหนักลด ในคนอีสาน/เคยกินปลาดิบ</b> → คิดถึง <b>มะเร็งท่อน้ำดีจากพยาธิใบไม้ตับ (<i>Opisthorchis viverrini</i>)</b> · CA 19-9, CT/MRI + MRCP · ส่งต่อศัลยกรรมตับ/ท่อน้ำดี <span class="tag th">ไทย</span></li></ul></div>
+    <div class="card c-warn"><h4>ท่อน้ำดีไม่ขยาย (cholestasis ในตับ)</h4><ul>
+      <li><b>ยา/สมุนไพร</b> (amox-clav, กระท่อม, anabolic steroid, co-trimoxazole)</li>
+      <li><b>PBC</b>: หญิงวัยกลางคน คัน อ่อนเพลีย · ALP ≥1.5×ULN + <b>AMA บวก</b> (&gt;1:40) · รักษาด้วย ursodeoxycholic acid 13–15 mg/kg/วัน (แบ่งหรือครั้งเดียว ไม่ต้องปรับตามไต) โดยแพทย์ตับ</li>
+      <li><b>PSC/IgG4</b>: MRCP, IgG4 · PSC สัมพันธ์กับลำไส้อักเสบ (พบน้อยในไทย)</li>
+      <li><b>Infiltrative</b>: วัณโรค lymphoma มะเร็งกระจาย amyloid sarcoid — ALP สูงเด่น bilirubin ปกติ</li>
+      <li><b>Sepsis/ติดเชื้อทั่วร่างกาย</b>, TPN, หลังผ่าตัด, หัวใจล้มเหลว, hyperthyroid</li>
+      <li><b>ก้อน/ฝีในตับ</b>: ไข้ + ALP สูง → ultrasound · ฝีหลายก้อน + ม้ามในเบาหวานอีสาน = melioidosis · ดู <a href="../liver-abscess/index.html">ฝีในตับ</a> <span class="tag th">ไทย</span></li></ul></div>
+  </div>
+  <div class="box note"><b>Ultrasound ไม่เห็นท่อขยาย ≠ ไม่มีนิ่ว</b>ช่วงแรกของการอุดตัน (ชั่วโมงถึง 1–2 วัน) ท่ออาจยังไม่ขยาย · ultrasound มองนิ่วส่วนปลายท่อได้ไม่ดี → ถ้ายังสงสัยมาก ทำ MRCP/EUS</div>
+</section>
+
+<section id="special" class="col">
+  <div class="sec-num">11</div>
+  <h2>ตั้งครรภ์ และไข้เขตร้อนในไทย</h2>
+  <div class="grid2">
+    <div class="card c-vio"><h4>ตั้งครรภ์ → ปรึกษาสูติแพทย์</h4><ul>
+      <li>ปกติในครรภ์: <b>ALP สูงได้หลายเท่า</b> (รก) albumin ลดลง · <b>ALT, AST, bilirubin, GGT ควรปกติ</b> — ถ้าสูงคือผิดปกติ</li>
+      <li>ไตรมาส 1: hyperemesis gravidarum · ไตรมาส 2–3: <b>intrahepatic cholestasis of pregnancy</b> (คันฝ่ามือฝ่าเท้า กลางคืน, bile acid สูง)</li>
+      <li><b>อันตราย</b>: preeclampsia/<b>HELLP</b> (ความดันสูง เกล็ดเลือดต่ำ เม็ดเลือดแดงแตก) · <b>AFLP</b> (ไตรมาส 3 คลื่นไส้ น้ำตาลต่ำ INR ยาว) → <b>ส่งต่อด่วน คลอดเป็นการรักษา</b></li>
+      <li>สาเหตุทั่วไปยังเกิดได้: ไวรัส (HEV รุนแรงในครรภ์ในบางพื้นที่, HSV), นิ่ว, ยา</li></ul></div>
+    <div class="card c-ok"><h4>ไข้ + LFT ผิดปกติในไทย <span class="tag th">ไทย</span></h4><ul>
+      <li><b>ไข้เลือดออก</b>: AST &gt; ALT · สูงมากในรายรุนแรง · ระวัง paracetamol เกินขนาด · ดู <a href="../dhf/index.html">DHF</a></li>
+      <li><b>Leptospirosis</b>: bilirubin สูงมาก แต่ ALT สูงไม่มาก + ไตวาย + CK สูง · <b>Melioidosis</b> ฝีในตับ/ม้าม · ดู <a href="../lepto-melioid/index.html">Lepto/Melioid</a></li>
+      <li>Scrub typhus, typhoid, มาลาเรีย (เม็ดเลือดแดงแตก) · sepsis ทุกชนิด → cholestatic · ดู <a href="../tropical-fever/index.html">ไข้เขตร้อน</a></li></ul></div>
+  </div>
+</section>
+
+<section id="refer" class="col">
+  <div class="sec-num">12</div>
+  <h2>เมื่อไรต้องส่งต่อด่วน · เมื่อไรตรวจซ้ำได้</h2>
+  <div class="tbl"><table>
+    <tr><th>ส่งต่อ/รับไว้ด่วน</th><th>เหตุผล</th></tr>
+    <tr><td><b>INR ≥1.5 + encephalopathy (สับสน ซึม) ในคนที่ไม่เคยมีโรคตับ</b> (ภายใน 26 สัปดาห์)</td><td><b>Acute liver failure</b> → รพ.ที่ปลูกถ่ายตับได้ · NAC ถ้าเกี่ยวกับ paracetamol · ดู <a href="../liver-failure/index.html">ตับวายเฉียบพลัน</a></td></tr>
+    <tr><td>INR ยาวขึ้น/bilirubin สูงขึ้นต่อเนื่อง แม้ยังไม่ซึม</td><td>ตับกำลังแย่ลง — อาจเป็น ALF ระยะแรก</td></tr>
+    <tr><td><b>ALT/AST &gt;1000</b> หรือ &gt;15×ULN</td><td>หาสาเหตุเร่งด่วน (paracetamol ขาดเลือด ไวรัส นิ่ว) ติด INR ทุก 12–24 ชม.</td></tr>
+    <tr><td><b>ไข้ + ดีซ่าน</b> (± ปวดท้องขวาบน, ช็อก)</td><td>Cholangitis/ฝีในตับ/lepto/sepsis → ยาฆ่าเชื้อ ± ระบายท่อน้ำดี</td></tr>
+    <tr><td>ดีซ่านไม่ทราบสาเหตุ · สงสัยมะเร็ง (ก้อน ท่อขยาย น้ำหนักลด)</td><td>BSG: ส่งต่อด่วน</td></tr>
+    <tr><td>DILI ที่เข้า <b>Hy's law</b></td><td>เสี่ยงตับวาย</td></tr>
+    <tr><td>ตั้งครรภ์ + LFT ผิดปกติ (โดยเฉพาะความดันสูง/เกล็ดเลือดต่ำ/ไตรมาส 3)</td><td>HELLP/AFLP</td></tr>
+    <tr><td>ตับแข็ง + ซึม/ไข้/ท้องมาน</td><td>HE/SBP — ดู <a href="../he-sbp/index.html">HE &amp; SBP</a></td></tr>
+  </table></div>
+  <div class="box key"><b>ตรวจซ้ำแทนการหาสาเหตุได้เมื่อ</b>มีเหตุชั่วคราวชัด และผู้ป่วยสบายดี: เช่น ALT สูงเล็กน้อยระหว่างติดเชื้อเฉียบพลัน, หลังออกกำลังหนัก (AST + CK), หลังเริ่มยาใหม่ที่หยุดได้ · ตรวจซ้ำใน ~2–6 สัปดาห์ (ประเมินแบบเร่งกว่านี้ถ้าค่าสูงมาก) · <b>ยังผิดปกติ → ส่ง liver aetiology screen + ultrasound</b> · หากค่าปกติแล้วแต่มีความเสี่ยง (เมตาบอลิก สุรา) ยังควรประเมิน fibrosis</div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>LFT ผิดปกติ</b>ซักประวัติ สุรา ยา/สมุนไพร/กระท่อม เมตาบอลิก ไข้ ดีซ่าน · ตรวจ INR, CBC</div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>สัญญาณอันตราย?</b>INR ≥1.5 + ซึม → ALF · ไข้ + ดีซ่าน → cholangitis · ALT &gt;1000 → หาสาเหตุเร่งด่วน · ตั้งครรภ์ → สูติแพทย์</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>R = (ALT/ULN) ÷ (ALP/ULN)</b>ถ้า ALT, ALP ปกติแต่ bilirubin/ALP/GGT/AST สูงเดี่ยว → ดูค่าเดี่ยว</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">R ≥5</span><div class="node dx hypo"><b>Hepatocellular</b>HBsAg, anti-HCV, (IgM HAV/HBc/HEV ถ้าเฉียบพลัน) · US · ANA/ASMA/IgG · ferritin+TSAT · ceruloplasmin (อายุน้อย) · CK · ทบทวนยา</div></div>
+        <div class="arm"><span class="lab">2–5</span><div class="node dx grey"><b>Mixed</b>มักเป็นยา (amox-clav) · ตรวจทั้งสองฝั่ง</div></div>
+        <div class="arm"><span class="lab">R ≤2</span><div class="node dx hyper"><b>Cholestatic</b>GGT ยืนยัน · ultrasound: ท่อขยาย → MRCP/EUS/ERCP · ไม่ขยาย → AMA, ยา, infiltrative, MRCP</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ไม่พบสาเหตุอื่น + ปัจจัยเมตาบอลิก = MASLD</b>FIB-4: &lt;1.3 (≥65 ปี &lt;2.0) ดูแลเอง · 1.3–2.67 → VCTE · &gt;2.67 → แพทย์ตับ</div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>ยังผิดปกติค้าง ไม่ทราบสาเหตุ</b>ส่งแพทย์ระบบทางเดินอาหาร/ตับ (อาจต้อง biopsy)</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">14</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ใส่ ULN ของแล็บตัวเอง · ค่าตัวอย่างที่ใส่ไว้แก้ได้</p>
+  </div>
+
+  <div class="tool plan" id="tPat" style="margin-top:12px">
+    <h3>1. LFT pattern: R ratio · ขนาด · สาเหตุ · ตรวจต่อ</h3>
+    <div class="fields">
+      <label class="f">ALT (U/L)<input type="number" id="pAlt" value="420"></label>
+      <label class="f">ULN ของ ALT<input type="number" id="pAltU" value="40"></label>
+      <label class="f">ALP (U/L)<input type="number" id="pAlp" value="150"></label>
+      <label class="f">ULN ของ ALP<input type="number" id="pAlpU" value="120"></label>
+      <label class="f">AST (U/L) ไม่บังคับ<input type="number" id="pAst" value="300"></label>
+      <label class="f">ULN ของ AST<input type="number" id="pAstU" value="40"></label>
+      <label class="f">Total bilirubin ไม่บังคับ<input type="number" step="0.1" id="pTb" value="1.8"></label>
+      <label class="f">Direct bilirubin ไม่บังคับ<input type="number" step="0.1" id="pDb" value=""></label>
+      <label class="f">หน่วย bilirubin<select id="pBu"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">INR ไม่บังคับ<input type="number" step="0.1" id="pInr" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pEnc"> สับสน/ซึม (encephalopathy)</label>
+      <label><input type="checkbox" id="pFev"> ไข้</label>
+      <label><input type="checkbox" id="pRuq"> ปวดท้องขวาบน</label>
+      <label><input type="checkbox" id="pShock"> ช็อก/ความดันต่ำ/หัวใจล้มเหลวเมื่อเร็วๆ นี้</label>
+      <label><input type="checkbox" id="pDrug"> ยา/สมุนไพร/กระท่อมใหม่ใน 3 เดือน</label>
+      <label><input type="checkbox" id="pPcm"> กิน paracetamol มาก/เกินขนาด</label>
+      <label><input type="checkbox" id="pAlc"> ดื่มสุราหนัก</label>
+      <label><input type="checkbox" id="pPreg"> ตั้งครรภ์</label>
+      <label><input type="checkbox" id="pCld"> มีโรคตับเรื้อรัง/ตับแข็งอยู่เดิม</label>
+    </div>
+    <div class="out" id="patOut"></div>
+  </div>
+
+  <div class="tool" id="tFib" style="margin-top:12px">
+    <h3>2. FIB-4 (MASLD) + liver stiffness</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="fAge" value="58"></label>
+      <label class="f">AST (U/L)<input type="number" id="fAst" value="45"></label>
+      <label class="f">ALT (U/L)<input type="number" id="fAlt" value="60"></label>
+      <label class="f">เกล็ดเลือด (×10⁹/L หรือ /µL)<input type="number" id="fPlt" value="190"></label>
+      <label class="f">VCTE (kPa) ไม่บังคับ<input type="number" step="0.1" id="fLsm" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fVir"> มี HBV/HCV</label>
+      <label><input type="checkbox" id="fAcute"> ALT สูงมาก/ตับอักเสบเฉียบพลันตอนนี้</label>
+      <label><input type="checkbox" id="fAlc"> ดื่มหนักอยู่</label>
+      <label><input type="checkbox" id="fDm"> เบาหวานชนิดที่ 2</label>
+    </div>
+    <div class="out" id="fibOut"></div>
+  </div>
+
+  <div class="tool" id="tDili" style="margin-top:12px">
+    <h3>3. DILI helper: เกณฑ์ · Hy's law · หยุดยา · RUCAM</h3>
+    <div class="fields">
+      <label class="f">ALT (U/L)<input type="number" id="dAlt" value="380"></label>
+      <label class="f">ULN ของ ALT<input type="number" id="dAltU" value="40"></label>
+      <label class="f">ALP (U/L)<input type="number" id="dAlp" value="130"></label>
+      <label class="f">ULN ของ ALP<input type="number" id="dAlpU" value="120"></label>
+      <label class="f">Total bilirubin (mg/dL) ไม่บังคับ<input type="number" step="0.1" id="dBili" value="3.2"></label>
+      <label class="f">INR ไม่บังคับ<input type="number" step="0.1" id="dInr" value=""></label>
+      <label class="f">อายุ (ปี)<input type="number" id="dAge" value="60"></label>
+      <label class="f">ชนิดยา<select id="dType"><option value="g">ยาทั่วไป/สมุนไพร</option><option value="tb">ยาวัณโรค (INH/RIF/PZA)</option><option value="amc">Amoxicillin/clavulanate</option><option value="kr">กระท่อม/สมุนไพร/อาหารเสริม</option><option value="st">Statin</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="dSym"> มีอาการ (อ่อนเพลีย คลื่นไส้ ปวดท้องขวาบน ดีซ่าน)</label>
+      <label><input type="checkbox" id="dHyp"> ผื่น/ไข้/eosinophil สูง</label>
+      <label><input type="checkbox" id="dEnc"> สับสน/ซึม</label>
+      <label><input type="checkbox" id="dAlc"> ดื่มหนัก (หญิง &gt;2, ชาย &gt;3 ดื่ม/วัน)</label>
+      <label><input type="checkbox" id="dPreg"> ตั้งครรภ์</label>
+    </div>
+    <div class="fields" style="margin-top:8px">
+      <label class="f">RUCAM 1 · เวลาเริ่มเกิด<select id="rT"><option value="2">5–90 วันหลังเริ่มยา (+2)</option><option value="1">&lt;5 หรือ &gt;90 วันหลังเริ่มยา (+1)</option><option value="1s">เกิดหลังหยุดยา ≤15 วัน (cholestatic ≤30 วัน) (+1)</option><option value="x">ไม่เข้ากัน (เกิดก่อนเริ่มยา หรือหลังหยุดนานกว่านั้น)</option></select></label>
+      <label class="f" id="rChL">RUCAM 2 · ALT หลังหยุดยา (hepatocellular)<select id="rCH"><option value="0">ไม่มีข้อมูล/ยังใช้ยาต่อ (0)</option><option value="3">ลด ≥50% ใน 8 วัน (+3)</option><option value="2">ลด ≥50% ใน 30 วัน (+2)</option><option value="0b">ลด ≥50% หลังวันที่ 30 (0)</option><option value="-2">ลด &lt;50% หลังวันที่ 30 หรือกลับสูงอีก (−2)</option></select></label>
+      <label class="f" id="rCcL">RUCAM 2 · ALP/bilirubin หลังหยุดยา (cholestatic/mixed)<select id="rCC"><option value="0">ไม่มีข้อมูล/ไม่เปลี่ยน/สูงขึ้น (0)</option><option value="2">ลด ≥50% ใน 180 วัน (+2)</option><option value="1">ลด &lt;50% ใน 180 วัน (+1)</option></select></label>
+      <label class="f">RUCAM 4 · ยาอื่นที่ใช้ร่วม<select id="rCon"><option value="0">ไม่มี/ไม่มีข้อมูล (0)</option><option value="0i">มี แต่เวลาไม่เข้ากัน (0)</option><option value="-1">มี เวลาเข้ากัน (−1)</option><option value="-2">มี เป็นยาพิษต่อตับที่รู้จัก เวลาเข้ากัน (−2)</option><option value="-3">มี และมีหลักฐานว่าเป็นตัวการ (−3)</option></select></label>
+      <label class="f">RUCAM 5 · ตัดสาเหตุอื่น<select id="rAlt"><option value="-2">ตัดกลุ่ม I ได้ &lt;5 ข้อ (−2)</option><option value="0">ตัดกลุ่ม I ได้ 5–6 ข้อ (0)</option><option value="1">ตัดกลุ่ม I ครบ 7 ข้อ (+1)</option><option value="2">ตัดกลุ่ม I + II ครบ (+2)</option><option value="-3">มีสาเหตุอื่นที่น่าเป็นมาก (−3)</option></select></label>
+      <label class="f">RUCAM 6 · ยานี้เคยรายงานพิษต่อตับ<select id="rLab"><option value="2">ระบุในเอกสารกำกับยา (+2)</option><option value="1">มีรายงานตีพิมพ์ แต่ไม่ระบุในฉลาก (+1)</option><option value="0">ไม่ทราบ (0)</option></select></label>
+      <label class="f">RUCAM 7 · ได้ยาซ้ำโดยไม่ตั้งใจ<select id="rRe"><option value="0">ไม่ได้ให้/อื่นๆ (0)</option><option value="3">ALT (cholestatic: ALP/bili) เพิ่ม ≥2 เท่าเมื่อได้ยานี้เดี่ยว (+3)</option><option value="1">ALT (cholestatic: ALP/bili) เพิ่ม ≥2 เท่าเมื่อได้ยาชุดเดิม (+1)</option><option value="-2">ได้ซ้ำแล้วค่าสูงขึ้นแต่ไม่เกินปกติ (−2)</option></select></label>
+    </div>
+    <p class="muted" style="font-size:.82rem;margin:6px 0 0">กลุ่ม I (7 ข้อ): HAV, HBV, HCV, HEV, ภาพท่อน้ำดี/หลอดเลือดตับ, สุรา (AST/ALT ≥2), ความดันต่ำเฉียบพลันเมื่อเร็วๆ นี้ · กลุ่ม II: ภาวะแทรกซ้อนของโรคเดิม (sepsis, มะเร็ง, AIH, HBV/HCV เรื้อรัง, PBC/PSC), CMV, EBV, HSV, VZV · RUCAM ข้อ 3 (อายุ ≥55, สุรา, ครรภ์) คิดให้อัตโนมัติจากด้านบน</p>
+    <div class="out" id="diliOut"></div>
+  </div>
+
+  <div class="tool" id="tIso" style="margin-top:12px">
+    <h3>4. Bilirubin สูงเดี่ยว / ALP สูงเดี่ยว</h3>
+    <div class="fields">
+      <label class="f">Total bilirubin<input type="number" step="0.1" id="iTb" value="2.4"></label>
+      <label class="f">Direct bilirubin<input type="number" step="0.1" id="iDb" value="0.3"></label>
+      <label class="f">หน่วย bilirubin<select id="iBu"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">ALP (U/L)<input type="number" id="iAlp" value=""></label>
+      <label class="f">ULN ของ ALP<input type="number" id="iAlpU" value="120"></label>
+      <label class="f">GGT (U/L)<input type="number" id="iGgt" value=""></label>
+      <label class="f">ULN ของ GGT<input type="number" id="iGgtU" value="50"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="iLftN" checked> ALT/AST ปกติ</label>
+      <label><input type="checkbox" id="iAnem"> ซีด/Hb ลด/ปัสสาวะสีโค้ก</label>
+      <label><input type="checkbox" id="iThal"> ธาลัสซีเมีย/ได้เลือดบ่อย</label>
+      <label><input type="checkbox" id="iG6"> สงสัย G6PD (หลังติดเชื้อ/ยา/ถั่วปากอ้า)</label>
+      <label><input type="checkbox" id="iFast"> อดอาหาร/ป่วยเฉียบพลันช่วงที่เจาะ</label>
+      <label><input type="checkbox" id="iDrug"> ได้ rifampicin หรือ atazanavir</label>
+      <label><input type="checkbox" id="iPreg"> ตั้งครรภ์</label>
+      <label><input type="checkbox" id="iYoung"> อายุ &lt;20 ปี (กระดูกกำลังโต)</label>
+      <label><input type="checkbox" id="iBone"> ปวดกระดูก/กระดูกหัก/มะเร็ง</label>
+      <label><input type="checkbox" id="iCkd"> CKD/ขาดวิตามินดี</label>
+    </div>
+    <div class="out" id="isoOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">15</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ALT/AST บอกการบาดเจ็บ · INR/bilirubin/albumin บอกการทำงาน</b></div></div>
+    <div class="pearl"><div><b>คำนวณ R ratio ทุกครั้ง</b> — กำหนดว่าจะส่ง US/serology อะไร</div></div>
+    <div class="pearl"><div><b>อย่าแค่เจาะซ้ำ</b> — ส่ง HBsAg, anti-HCV, US, autoantibody, Ig, ferritin+TSAT ครั้งเดียวให้ครบ</div></div>
+    <div class="pearl"><div><b>ALT &gt;1000</b> → paracetamol? ช็อก? นิ่ว? ไวรัส? + เจาะ INR</div></div>
+    <div class="pearl"><div><b>ALP สูง → ตรวจ GGT</b> · GGT ปกติ = กระดูก/รก</div></div>
+    <div class="pearl"><div><b>Bilirubin indirect สูงเดี่ยว</b> → Gilbert หรือเม็ดเลือดแดงแตก (ธาลัสซีเมีย G6PD)</div></div>
+    <div class="pearl"><div><b>AST/ALT &gt;2</b> → สุรา · AST เด่นอย่างเดียว → ตรวจ CK</div></div>
+    <div class="pearl"><div><b>ไขมันพอกตับ → FIB-4</b> &lt;1.3 (≥65 ปี &lt;2.0) สบายใจ · &gt;2.67 ส่งแพทย์ตับ</div></div>
+    <div class="pearl"><div><b>Statin ใช้ได้</b> ใน MASLD และ ALT สูงเล็กน้อย</div></div>
+    <div class="pearl"><div><b>ถามยาสมุนไพร อาหารเสริม กระท่อม ยาเพิ่มกล้าม</b> ทุกราย</div></div>
+    <div class="pearl"><div><b>Hy's law</b> (ALT &gt;3× + bili &gt;2×) → หยุดยา ส่งต่อ</div></div>
+    <div class="pearl"><div><b>ดีซ่านไม่ปวด + คนอีสาน</b> → มะเร็งท่อน้ำดีจากพยาธิใบไม้ตับ</div></div>
+    <div class="pearl"><div><b>INR ≥1.5 + ซึม</b> = ALF ส่งต่อด่วน</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">16</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../hepbc/index.html">Hepatitis B/C →</a> · <a href="../cirrhosis/index.html">ตับแข็ง →</a> · <a href="../liver-failure/index.html">ตับวายเฉียบพลัน →</a> · <a href="../he-sbp/index.html">HE &amp; SBP →</a> · <a href="../liver-abscess/index.html">ฝีในตับ →</a> · <a href="../gi-infection/index.html">Cholangitis →</a> · <a href="../pancreatitis/index.html">ตับอ่อนอักเสบ →</a> · <a href="../tb/index.html">วัณโรค →</a> · <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal →</a> · <a href="../thalassemia/index.html">ธาลัสซีเมีย →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Kwo PY, Cohen SM, Lim JK. ACG Clinical Guideline: Evaluation of abnormal liver chemistries. Am J Gastroenterol 2017;112:18–35 · 2) Newsome PN, Cramb R, Davison SM, et al. Guidelines on the management of abnormal liver blood tests. Gut 2018;67:6–19 · 3) Rinella ME, Neuschwander-Tetri BA, Siddiqui MS, et al. AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease. Hepatology 2023;77:1797–835 · 4) Rinella ME, Lazarus JV, Ratziu V, et al. A multisociety Delphi consensus statement on new fatty liver disease nomenclature. Hepatology 2023;78:1966–86 · 5) European Association for the Study of the Liver (EASL), European Association for the Study of Diabetes (EASD), European Association for the Study of Obesity (EASO). EASL–EASD–EASO Clinical Practice Guidelines on the management of metabolic dysfunction-associated steatotic liver disease (MASLD). J Hepatol 2024;81:492–542 · 6) European Association for the Study of the Liver. EASL Clinical Practice Guidelines: Drug-induced liver injury. J Hepatol 2019;70:1222–61 · 7) Chalasani NP, Maddur H, Russo MW, Wong RJ, Reddy KR. ACG Clinical Guideline: Diagnosis and management of idiosyncratic drug-induced liver injury. Am J Gastroenterol 2021;116:878–98 · 8) Danan G, Teschke R. RUCAM in drug and herb induced liver injury: the update. Int J Mol Sci 2016;17:14 · 9) Hayashi PH, Lucena MI, Fontana RJ, et al. A revised electronic version of RUCAM for the diagnosis of DILI. Hepatology 2022;76:18–31 · 10) Saukkonen JJ, Cohn DL, Jasmer RM, et al. An official ATS statement: hepatotoxicity of antituberculosis therapy. Am J Respir Crit Care Med 2006;174:935–52 · 11) Harrison SA, Bedossa P, Guy CD, et al. A phase 3, randomized, controlled trial of resmetirom in NASH with liver fibrosis. N Engl J Med 2024;390:497–509 · 12) Sanyal AJ, Newsome PN, Kliers I, et al. Phase 3 trial of semaglutide in metabolic dysfunction-associated steatohepatitis. N Engl J Med 2025;392:2089–99 · 13) de Franchis R, Bosch J, Garcia-Tsao G, et al. Baveno VII – Renewing consensus in portal hypertension. J Hepatol 2022;76:959–74 · 14) Crabb DW, Bataller R, Chalasani NP, et al. Standard definitions and common data elements for clinical trials in patients with alcoholic hepatitis: recommendation from the NIAAA Alcoholic Hepatitis Consortia. Gastroenterology 2016;150:785–90 · 15) Sripa B, Kaewkes S, Sithithaworn P, et al. Liver fluke induces cholangiocarcinoma. PLoS Med 2007;4:e201 · 16) McPherson S, Hardy T, Dufour JF, et al. Age as a confounding factor for the accurate non-invasive diagnosis of advanced NAFLD fibrosis. Am J Gastroenterol 2017;112:740–51 · 17) LiverTox: Clinical and research information on drug-induced liver injury. National Institute of Diabetes and Digestive and Kidney Diseases (NIH); เข้าถึง 2569<br>
+  <span class="tag add">เสริม</span> = เนื้อหาเสริมนอกแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag up">2023</span> = ปรับปรุงใหม่ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','ltView');
+mountWalker({
+ start:{q:'LFT ผิดปกติ — มีสัญญาณอันตรายไหม?',o:[['INR ≥1.5 + สับสน/ซึม (ไม่เคยมีโรคตับ)','alf'],['ไข้ + ดีซ่าน ± ปวดท้องขวาบน','cholg'],['ALT/AST &gt;1000 หรือ &gt;15×ULN','big'],['ตั้งครรภ์','preg'],['ไม่มี','pat']]},
+ alf:{leaf:true,cls:'danger',t:'Acute liver failure',b:'<b>รับไว้ และประสาน รพ.ที่ปลูกถ่ายตับได้</b> · ตรวจระดับ paracetamol (ให้ NAC ถ้าเกี่ยวกับ paracetamol และพิจารณาในสาเหตุอื่น) · glucose ทุก 1–2 ชม. · INR, lactate, ammonia, Cr · หาสาเหตุ: HBsAg/IgM anti-HBc, IgM HAV/HEV, ยา/สมุนไพร, ceruloplasmin (อายุน้อย), ANA/IgG, ultrasound Doppler · ดูหน้าตับวายเฉียบพลัน',next:['หาสาเหตุของ ALT สูงมาก','big']},
+ cholg:{leaf:true,cls:'danger',t:'สงสัย cholangitis',b:'Blood culture → <b>ยาฆ่าเชื้อทันที</b> · ultrasound หาท่อน้ำดีขยาย/นิ่ว · ประเมินความรุนแรงตาม Tokyo Guidelines · ไม่ดีขึ้น/รุนแรง → <b>ระบายท่อน้ำดี (ERCP/PTBD)</b> · แยกฝีในตับ (melioid ในอีสาน), lepto, sepsis · ดูหน้า Cholangitis',next:['ดูรูปแบบ LFT','pat']},
+ preg:{leaf:true,cls:'warn',t:'ตั้งครรภ์ + LFT ผิดปกติ',b:'ALP สูงได้จากรก แต่ <b>ALT/AST/bilirubin ต้องปกติ</b> · วัด BP, เกล็ดเลือด, LDH, glucose, INR, bile acid · ความดันสูง/เกล็ดต่ำ → HELLP · ไตรมาส 3 + น้ำตาลต่ำ/INR ยาว → AFLP · <b>ปรึกษาสูติแพทย์ทุกราย ด่วนถ้ามีลักษณะข้างต้น</b>',next:['หาสาเหตุทั่วไปต่อ','pat']},
+ big:{q:'ALT &gt;1000: บริบทใดเด่น?',o:[['ช็อก/หัวใจล้มเหลว/หยุดหายใจ','isch'],['Paracetamol/ยา/สมุนไพร','drug'],['ปวดท้องขวาบนเฉียบพลัน (นิ่ว)','stone'],['ไม่ชัด/อาการนำแบบไวรัส','vir']]},
+ isch:{leaf:true,cls:'warn',t:'Ischemic hepatitis',b:'แก้ความดัน/cardiac output/ออกซิเจน · LDH สูงมาก ALT ลดเร็ว (ราวครึ่งหนึ่งใน 2–3 วัน) · echo · ตาม INR, Cr · ถ้า ALT ไม่ลดตามคาด → หาสาเหตุอื่น'},
+ drug:{leaf:true,cls:'danger',t:'Paracetamol/DILI',b:'<b>ระดับ paracetamol ทุกราย</b> (รวมกินเกินซ้ำๆ) → NAC ตามแนวทาง (ดูหน้า Toxicology/ตับวาย) · <b>หยุดยา/สมุนไพรที่สงสัย</b> · ตรวจ Hy\'s law · INR ทุก 12–24 ชม. · ใช้เครื่องมือ DILI'},
+ stone:{leaf:true,cls:'warn',t:'นิ่วหลุดผ่านท่อน้ำดี',b:'Ultrasound + lipase · ALT มักลดลงใน 24–72 ชม. ตามด้วย ALP/bilirubin ขึ้น · ไข้ → cholangitis · ยังมีอาการ/ท่อขยาย → MRCP/EUS/ERCP · นิ่วถุงน้ำดี → ส่งผ่าตัดถุงน้ำดี'},
+ vir:{leaf:true,cls:'warn',t:'คิดถึงไวรัส/AIH/Wilson',b:'IgM anti-HAV · HBsAg + IgM anti-HBc · anti-HCV/HCV RNA · IgM anti-HEV · (HSV ถ้าครรภ์/ภูมิต่ำ ไม่มีดีซ่าน) · ANA/ASMA + IgG · ceruloplasmin (อายุน้อย) · Doppler (Budd–Chiari) · <b>INR ทุก 12–24 ชม.</b> — ยาวขึ้นหรือซึม → ส่งต่อ'},
+ pat:{q:'รูปแบบ LFT?',h:'R = (ALT/ULN) ÷ (ALP/ULN)',o:[['R ≥5 (hepatocellular)','hc'],['R 2–5 (mixed)','mixed'],['R ≤2 (cholestatic)','us'],['Bilirubin สูงเดี่ยว','bili'],['ALP สูงเดี่ยว','alp'],['GGT สูงเดี่ยว','ggt'],['AST สูงเด่น (AST &gt; ALT ชัด)','astalt']]},
+ hc:{q:'ALT สูงกี่เท่าของ ULN?',o:[['&lt;5 เท่า ไม่มีอาการ','hcMild'],['5–15 เท่า','hcMod'],['&gt;15 เท่า หรือ &gt;1000','big']]},
+ hcMild:{q:'เบาะแสจากประวัติ?',o:[['ดื่มสุราหนัก','alc'],['ยา/สมุนไพร/กระท่อมใหม่','dili'],['อ้วน/เบาหวาน/ไขมัน (ไม่ดื่มหนัก)','masld'],['ไม่มีเบาะแส','screen']]},
+ alc:{leaf:true,cls:'warn',t:'โรคตับจากสุรา',b:'AST/ALT &gt;2, GGT, MCV · นับเป็นกรัม/สัปดาห์ · AUDIT · แนะนำหยุดดื่ม (ระวัง withdrawal, ให้ thiamine) · ประเมิน fibrosis (elastography) · ยังต้องส่ง HBsAg/anti-HCV/US ด้วย',next:['ส่งชุดตรวจหาสาเหตุ','screen']},
+ dili:{leaf:true,cls:'warn',t:'สงสัย DILI',b:'เทียบเกณฑ์ EASL (ALT ≥5×, ALP ≥2×, หรือ ALT ≥3× + bili &gt;2×) · ต่ำกว่าเกณฑ์และไม่มีอาการ → อาจติดตามได้ (adaptation) · เข้าเกณฑ์/มีอาการ → หยุดยา · ตัด HAV/HBV/HCV/HEV, US, AIH · ใช้ RUCAM ในเครื่องมือ',next:['ส่งชุดตรวจหาสาเหตุ','screen']},
+ masld:{leaf:true,cls:'ok',t:'น่าจะ MASLD',b:'Ultrasound ยืนยันไขมันพอกตับ + ≥1 cardiometabolic criterion · <b>ยังต้องตัด HBV/HCV</b> และสาเหตุอื่น · คำนวณ <b>FIB-4</b>: &lt;1.3 (≥65 ปี &lt;2.0) ดูแลเอง ซ้ำ 1–3 ปี · 1.3–2.67 → VCTE · &gt;2.67 → แพทย์ตับ · ลดน้ำหนัก 7–10% · statin ใช้ได้',next:['ส่งชุดตรวจหาสาเหตุ','screen']},
+ screen:{leaf:true,cls:'ok',t:'Liver aetiology screen (BSG)',b:'<b>Ultrasound, HBsAg, anti-HCV, AMA/ASMA/ANA, immunoglobulins, ferritin + TSAT</b> · เสริม: ceruloplasmin (อายุ &lt;40 ทุกราย; ACG ถึง 55), CK, TSH · ปกติทั้งหมด + ยังผิดปกติค้าง + ไม่มีปัจจัยเสี่ยง MASLD → ส่งแพทย์ตับ'},
+ hcMod:{leaf:true,cls:'warn',t:'ตับอักเสบปานกลาง (5–15×)',b:'คิดถึง <b>ไวรัสเฉียบพลัน, DILI, AIH, HBV flare</b> · IgM anti-HAV, HBsAg + IgM anti-HBc, anti-HCV, IgM anti-HEV, ANA/ASMA/IgG, ultrasound · <b>เจาะ INR, bilirubin</b> · หยุดยาที่สงสัย · ติดตามซ้ำใน 1–2 สัปดาห์หรือเร็วกว่าถ้ามีดีซ่าน'},
+ mixed:{leaf:true,cls:'warn',t:'Mixed pattern',b:'มักเป็น <b>DILI</b> (amoxicillin/clavulanate, ยาวัณโรค, กระท่อม) นิ่วที่หลุดผ่าน หรือติดเชื้อในระบบ · ส่งทั้งชุดเซลล์ตับและ ultrasound',next:['ทำ ultrasound','us']},
+ us:{q:'Ultrasound: ท่อน้ำดีขยายไหม?',o:[['ขยาย','dil'],['ไม่ขยาย','nondil']]},
+ dil:{leaf:true,cls:'danger',t:'อุดตันนอกตับ',b:'นิ่ว · <b>มะเร็งท่อน้ำดี (อีสาน/พยาธิใบไม้ตับ)</b> · มะเร็งหัวตับอ่อน → <b>MRCP</b>/EUS/CT · ERCP เพื่อระบาย/เอานิ่วออก · ไข้ = cholangitis ระบายด่วน · CA 19-9 ถ้าสงสัยมะเร็ง (สูงหลอกได้ในภาวะอุดตัน)'},
+ nondil:{leaf:true,cls:'warn',t:'Cholestasis ในตับ',b:'ยืนยันด้วย GGT · ทบทวน <b>ยา/สมุนไพร/กระท่อม/anabolic steroid</b> · <b>AMA</b> (PBC), ANA/ASMA, IgG/IgM, IgG4 · sepsis, หัวใจล้มเหลว, TPN · infiltrative (TB, lymphoma, มะเร็งกระจาย) → CT/biopsy · ALP &gt;2×ULN + AMA ลบ → MRCP (ACG) · ยังสงสัยนิ่ว → MRCP/EUS'},
+ bili:{q:'Direct bilirubin เป็นสัดส่วนเท่าไร?',o:[['ส่วนใหญ่ indirect (direct &lt;20%)','ind'],['Direct สูง (&gt;50%)','dir']]},
+ ind:{leaf:true,cls:'ok',t:'Unconjugated hyperbilirubinaemia',b:'CBC, reticulocyte, LDH, haptoglobin, smear → <b>เม็ดเลือดแดงแตก</b>? (ไทย: <b>ธาลัสซีเมีย, G6PD</b>) · ยา (rifampicin, atazanavir) · ไม่มีเม็ดเลือดแดงแตก + ALT/ALP ปกติ + &lt;4 mg/dL → <b>Gilbert</b> (BSG: &gt;2.3 mg/dL/40 µmol/L ทบทวนสาเหตุอื่น) · ไม่ต้องตรวจซ้ำบ่อย'},
+ dir:{leaf:true,cls:'warn',t:'Conjugated hyperbilirubinaemia',b:'ถือเป็นโรคตับ/ท่อน้ำดีจนกว่าจะพิสูจน์ได้ว่าไม่ใช่ · ultrasound ก่อน · ดีซ่าน + ไข้ → cholangitis · พบน้อย: Dubin–Johnson/Rotor (ค่าอื่นปกติ) · sepsis ทำให้ conjugated สูงได้',next:['ทำ ultrasound','us']},
+ alp:{q:'GGT?',o:[['สูงด้วย','us'],['ปกติ','bone']]},
+ bone:{leaf:true,cls:'ok',t:'ALP ไม่น่ามาจากตับ',b:'<b>กระดูก</b> (วัยรุ่น กระดูกหัก มะเร็งกระจาย Paget ขาดวิตามินดี hyperparathyroid) · <b>ตั้งครรภ์</b> · CKD · ตรวจ Ca, PO₄, 25-OH vitamin D, PTH · ไม่แน่ใจ → ALP isoenzyme'},
+ ggt:{leaf:true,cls:'ok',t:'GGT สูงเดี่ยว',b:'ไม่จำเพาะ · ถาม <b>สุรา</b>, ยาที่เหนี่ยวนำ enzyme (phenytoin, carbamazepine, phenobarbital), น้ำหนัก/เบาหวาน (MASLD) · ค่าอื่นปกติ → ไม่ต้องตรวจละเอียด แต่แนะนำลดสุรา/ปรับวิถีชีวิต และประเมินความเสี่ยงเมตาบอลิก'},
+ astalt:{leaf:true,cls:'warn',t:'AST สูงเด่น',b:'AST/ALT &gt;2 → <b>สุรา</b> · ตับแข็ง (ratio &gt;1) · <b>ตรวจ CK</b> (กล้ามเนื้อ ออกกำลัง ชัก heat stroke) · เม็ดเลือดแดงแตก · hypothyroid · ไข้เลือดออก · ค่าอื่นปกติและค้างนาน → macro-AST'}
+},'apTrail','apStage');
+
+const BULN=1.2; // mg/dL
+function biliMg(v,u){return v===null?null:(u==='um'?v/17.1:v)}
+
+function pat(){
+  const alt=num('pAlt'),au=num('pAltU'),alp=num('pAlp'),pu=num('pAlpU'),ast=num('pAst'),asu=num('pAstU'),inr=num('pInr');const u=$('pBu').value;const c=id=>$(id).checked;const L=[];const o=$('patOut');
+  if(alt===null||alp===null||au===null||pu===null){o.textContent='ใส่ ALT, ALP และ ULN ของทั้งสองค่า';return}
+  if(au<=0||pu<=0){o.textContent='ULN ต้องมากกว่า 0';return}
+  if(alt<0||alp<=0){o.textContent='ALT ต้องไม่ติดลบ และ ALP ต้องมากกว่า 0';return}
+  let tb=biliMg(num('pTb'),u),db=biliMg(num('pDb'),u);
+  if(tb!==null&&tb<=0)tb=null; if(db!==null&&db<0)db=null;
+  if(tb!==null&&db!==null&&db>tb){L.push('<b>Direct bilirubin มากกว่า total — ตรวจค่าอีกครั้ง</b> (ไม่นำมาแปลผล)');db=null;}
+  if(u==='mg'&&tb!==null&&tb>60)L.push('<b>Bilirubin สูงผิดปกติมากสำหรับ mg/dL — ตรวจหน่วย</b> (ถ้าเป็น µmol/L ให้เปลี่ยนหน่วย)');
+  const ax=alt/au,px=alp/pu;
+  // danger first
+  const enc=c('pEnc');
+  if(inr!==null&&inr>0){
+    if(inr>=1.5&&enc&&!c('pCld'))L.push('<b style="color:var(--danger)">INR ≥1.5 + encephalopathy → acute liver failure</b> — รับไว้ ประสาน รพ.ปลูกถ่ายตับ · ระดับ paracetamol/NAC · glucose ถี่');
+    else if(inr>=1.5&&enc)L.push('<b style="color:var(--danger)">มีโรคตับเดิม + INR ≥1.5 + ซึม</b> → คิดถึง hepatic encephalopathy/acute-on-chronic liver failure: หาตัวกระตุ้น (ติดเชื้อ SBP เลือดออก ยา) · ดูหน้า HE &amp; SBP');
+    else if(inr>=1.5)L.push(`INR ${inr} → การสร้างของตับลดลง หรือขาดวิตามินเค · ลอง <b>vitamin K 10 mg IV ช้าๆ</b> แล้ว INR ซ้ำใน 24 ชม. · ตาม INR และความรู้สึกตัวใกล้ชิด`);
+    else if(enc)L.push('<b>ซึม/สับสน + LFT ผิดปกติ</b> (INR &lt;1.5) → ตรวจ glucose ด่วน · หาสาเหตุอื่น (ติดเชื้อ ยา เกลือแร่ สุรา) · ตาม INR ซ้ำ');
+  }else if(enc)L.push('<b>ซึม/สับสน + LFT ผิดปกติ → เจาะ INR, glucose, ammonia ด่วน</b>');
+  if(c('pFev')&&((tb!==null&&tb>2*BULN)||c('pRuq')))L.push('<b style="color:var(--danger)">ไข้ + ดีซ่าน/ปวดท้องขวาบน → สงสัย cholangitis</b> (หรือฝีในตับ) · blood culture + ยาฆ่าเชื้อ + ultrasound · ระบายท่อน้ำดีตาม Tokyo Guidelines');
+  if(c('pPreg'))L.push('<b>ตั้งครรภ์ → ปรึกษาสูติแพทย์</b> · วัด BP, เกล็ดเลือด, LDH, glucose, bile acid (HELLP/AFLP/ICP) · ALP สูงจากรกได้ แต่ ALT/bilirubin ไม่ควรสูง');
+  if(ax<=1&&px<=1){
+    const n0=L.length;
+    L.push(`ALT ${f1(ax)}×ULN และ ALP ${f1(px)}×ULN — <b>ไม่สูง</b> จึงไม่ใช้ R ratio`);
+    if(tb!==null&&tb>BULN)L.push(`Bilirubin ${f1(tb)} mg/dL สูงเดี่ยว → ส่ง direct bilirubin · ใช้เครื่องมือที่ 4`);
+    if(ast!==null&&asu!==null&&asu>0&&ast>asu)L.push(`AST ${f1(ast/asu)}×ULN สูงเดี่ยว → <b>ตรวจ CK</b> (กล้ามเนื้อ), เม็ดเลือดแดงแตก, TSH · ค้างนาน → macro-AST`);
+    if(L.length===n0+1)L.push('ALT, ALP ปกติ · ถ้ายังผิดปกติค่าอื่น (GGT) ดูหัวข้อค่าผิดปกติเดี่ยว');
+    o.innerHTML=L.join('<br>');return;
+  }
+  const R=ax/px;
+  const ptn=px<=1?'hc':ax<=1?'ch':R>=5?'hc':R<=2?'ch':'mx';
+  const pname={hc:'<b>Hepatocellular</b>',ch:'<b>Cholestatic</b>',mx:'<b>Mixed</b>'}[ptn];
+  L.push(`ALT ${f1(ax)}×ULN · ALP ${f1(px)}×ULN → <b>R = ${R>=100?Math.round(R):f1(R)}</b> → ${pname}`+(px<=1?' <span class="muted">(ALP ปกติ → เซลล์ตับเด่นไม่ว่า R เท่าไร)</span>':ax<=1?' <span class="muted">(ALT ปกติ → ท่อน้ำดีเด่น)</span>':''));
+  // magnitude by ALT
+  let mag;
+  if(alt>10000)mag='massive (&gt;10,000)';else if(ax>15)mag='severe (&gt;15×)';else if(ax>5)mag='moderate (5–15×)';else if(ax>=2)mag='mild (2–5×)';else if(ax>1)mag='borderline (&lt;2×)';else mag='ไม่สูง';
+  L.push(`ขนาด ALT (ACG): <b>${mag}</b>`+(px>1?` · ALP ${f1(px)}×ULN`:''));
+  if(alt>1000||ax>15){
+    const b=[];if(c('pShock'))b.push('<b>ischemic hepatitis</b> (มีช็อก/หัวใจล้มเหลว)');if(c('pPcm'))b.push('<b>paracetamol</b> → ระดับยา + NAC');if(c('pRuq'))b.push('<b>นิ่วหลุดผ่าน</b> → US + lipase, ALT ควรลดใน 24–72 ชม.');if(c('pDrug'))b.push('DILI → หยุดยา');
+    L.push('<b>ALT สูงมาก</b>: '+(b.length?b.join(' · ')+' · ':'')+'ถาม paracetamol ทุกราย · ไวรัส (HAV, HBV, HEV, HSV) · AIH · Wilson · Budd–Chiari · ไข้เลือดออก · heat stroke → <b>INR ทุก 12–24 ชม.</b>');
+  }else if(ptn!=='ch'){
+    L.push(ax>5?'นึกถึง: ไวรัสเฉียบพลัน, <b>DILI</b>, AIH, HBV flare'+(c('pAlc')?', ตับอักเสบจากสุรา (มัก AST &lt;400)':''):'นึกถึง: <b>MASLD</b>, สุรา, ยา/สมุนไพร, <b>HBV/HCV เรื้อรัง</b>, AIH, เหล็กเกิน (ธาลัสซีเมีย), Wilson (อายุน้อย)');
+  }
+  if(ast!==null&&ast>0&&alt>0){
+    const ar=ast/alt;
+    if(ar>2)L.push(`AST/ALT = <b>${f1(ar)}</b> (&gt;2) → ชวนคิด <b>สุรา</b> · หรือกล้ามเนื้อ (ตรวจ CK)`);
+    else if(ar>1)L.push(`AST/ALT = ${f1(ar)} (&gt;1) → ตับแข็ง? สุรา? กล้ามเนื้อ (CK)?`);
+  }
+  if(tb!==null){
+    let s=`Bilirubin ${f1(tb)} mg/dL`+(tb>BULN?` (${f1(tb/BULN)}×ULN ~1.2)`:' (ปกติ)');
+    if(db!==null&&tb>BULN){const fr=db/tb;s+=` · direct ${Math.round(fr*100)}% → `+(fr>0.5?'conjugated (ตับ/ท่อน้ำดี)':fr<0.2?'unconjugated เด่น (เม็ดเลือดแดงแตก/Gilbert ร่วม?)':'ปนกัน');}
+    L.push(s);
+    if(ax>3&&tb>2*BULN&&px<2&&ptn!=='ch')L.push('<b style="color:var(--danger)">เข้าลักษณะ Hy\'s law</b> (ALT &gt;3× + bilirubin &gt;2× + ALP &lt;2×) — ถ้าเกิดจากยา เสี่ยงตับวาย ~10% → หยุดยา, INR, ปรึกษาแพทย์ตับ');
+  }
+  // next tests
+  const hcT='HBsAg + IgM anti-HBc, anti-HCV (→ RNA), IgM anti-HAV'+(ax>5?', IgM anti-HEV':'')+', ultrasound, ANA/ASMA + IgG, ferritin + TSAT, ceruloplasmin (อายุ &lt;40; ACG ถึง 55), CK ถ้า AST เด่น';
+  const chT='GGT ยืนยันว่ามาจากตับ · <b>ultrasound ก่อน</b>: ท่อขยาย → MRCP/EUS/ERCP · ไม่ขยาย → AMA, ANA/ASMA, IgG/IgM, ทบทวนยา, (ALP &gt;2× + AMA ลบ → MRCP)';
+  L.push('ตรวจต่อ: '+(ptn==='hc'?hcT:ptn==='ch'?chT:hcT+' · และ '+chT));
+  if(ptn==='ch')L.push('สาเหตุ cholestatic: นิ่ว, <b>มะเร็งท่อน้ำดี (อีสาน/พยาธิใบไม้ตับ)</b>, มะเร็งตับอ่อน, PBC, ยา (amox-clav, กระท่อม, anabolic steroid), infiltrative (TB, lymphoma), sepsis, หัวใจล้มเหลว');
+  if(ptn==='mx')L.push('Mixed: มักเป็น <b>DILI</b> (amox-clav, ยาวัณโรค, กระท่อม) หรือนิ่วหลุดผ่าน');
+  if(c('pDrug')||c('pPcm'))L.push('ยา/สมุนไพร: ใช้เครื่องมือที่ 3 (DILI) ประเมินเกณฑ์หยุดยาและ RUCAM');
+  if(c('pAlc'))L.push('ดื่มหนัก: นับกรัม/สัปดาห์, AUDIT, ระวัง withdrawal (thiamine) · ยังต้องตรวจหาสาเหตุอื่นด้วย');
+  if(ax<=5&&px<=2&&!enc&&!c('pFev')&&!(tb!==null&&tb>2*BULN))L.push('<span class="muted">BSG: ส่งชุดตรวจหาสาเหตุเลย ไม่ใช่แค่เจาะซ้ำ — ยกเว้นมีเหตุชั่วคราวชัด (ตรวจซ้ำ 2–6 สัปดาห์)</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tPat input,#tPat select',pat);
+
+function fib(){
+  const age=num('fAge'),ast=num('fAst'),alt=num('fAlt');let p=num('fPlt');const lsm=num('fLsm');const c=id=>$(id).checked;const L=[];const o=$('fibOut');
+  if(age===null||ast===null||alt===null||p===null){o.textContent='ใส่อายุ AST ALT และเกล็ดเลือด';return}
+  if(age<18||age>110){o.textContent='FIB-4 ใช้ในผู้ใหญ่ (อายุ 18–110 ปี)';return}
+  if(ast<=0||alt<=0||p<=0){o.textContent='AST, ALT และเกล็ดเลือดต้องมากกว่า 0';return}
+  if(p>2000){p=p/1000;L.push(`<span class="muted">แปลงเกล็ดเลือดจาก /µL เป็น ${f1(p)} ×10⁹/L</span>`);}
+  if(p<10)L.push('<b>เกล็ดเลือด &lt;10 ×10⁹/L — ตรวจหน่วย</b> (ใส่เป็น ×10⁹/L เช่น 190 หรือ /µL เช่น 190000)');
+  const f=age*ast/(p*Math.sqrt(alt));
+  const lo=age>=65?2.0:1.3;
+  L.push(`FIB-4 = <b>${f2(f)}</b>`+(age>=65?' · อายุ ≥65 ใช้จุดตัดล่าง <b>2.0</b>':''));
+  if(c('fAcute'))L.push('<b>ตับอักเสบเฉียบพลัน/ALT สูงมาก → FIB-4 แปลผลไม่ได้</b> (AST/ALT สูงจากการอักเสบ ไม่ใช่ fibrosis) · คำนวณใหม่เมื่อหายแล้ว');
+  if(c('fVir'))L.push('มี HBV/HCV: จุดตัด FIB-4 ต่างจาก MASLD (เช่น HCV 1.45/3.25) และควรประเมินโดยแพทย์ตับ · ดูหน้าไวรัสตับอักเสบ บี/ซี');
+  if(age<35)L.push('อายุ &lt;35 ปี: FIB-4 ความแม่นยำลดลง → ใช้ elastography ถ้าสงสัย');
+  if(c('fAlc'))L.push('ดื่มหนักอยู่: AST สูงจากสุรา ทำให้ FIB-4 สูงเกินจริงได้');
+  let tier;
+  if(f<lo){tier='low';L.push(`<b style="color:var(--ok)">&lt;${lo.toFixed(1)} ความเสี่ยงต่ำ</b> ต่อ fibrosis มาก → ดูแลที่ปฐมภูมิ: ลดน้ำหนัก 7–10%, คุมเบาหวาน/ความดัน/ไขมัน (statin ใช้ได้), ลดสุรา · ประเมิน FIB-4 ซ้ำทุก <b>${c('fDm')?'1–2':'2–3'} ปี</b>`);}
+  else if(f<=2.67){tier='mid';L.push(`<b style="color:var(--warn)">${lo.toFixed(1)}–2.67 ไม่ชัด</b> → ทำ <b>VCTE (FibroScan)</b> หรือ ELF`);}
+  else{tier='hi';L.push('<b style="color:var(--danger)">&gt;2.67 ความเสี่ยงสูง</b> → ส่ง <b>แพทย์ตับ</b> + VCTE · (BSG 2018 ใช้ &gt;3.25'+(f>3.25?' — ค่านี้เกินทั้งสองเกณฑ์)':' — ค่านี้อยู่ระหว่าง 2.67–3.25)'));}
+  if(lsm!==null){
+    if(lsm<2||lsm>75)L.push('<b>ค่า VCTE ไม่ถูกต้อง</b> (ใส่ค่า 2–75 kPa)');
+    else if(lsm<8)L.push(`VCTE ${f1(lsm)} kPa (&lt;8) → <b>เสี่ยงต่ำ</b> ดูแลที่ปฐมภูมิ`+(tier==='hi'?' · แต่ FIB-4 สูง: ทบทวนสาเหตุ (เกล็ดเลือดต่ำจากโรคอื่น? AST จากสุรา/กล้ามเนื้อ?) และพิจารณาส่งแพทย์ตับ':''));
+    else if(lsm<12)L.push(`VCTE ${f1(lsm)} kPa (8–12) → <b>ไม่ชัด</b> → ส่งแพทย์ตับ/ตรวจเพิ่ม (ELF, MRE หรือ biopsy)`);
+    else L.push(`VCTE ${f1(lsm)} kPa (≥12) → <b>น่าจะ fibrosis มาก (≥F3)</b> → แพทย์ตับ`+(lsm>=15?' · <b>≥15 kPa ชวนคิด compensated advanced chronic liver disease</b> → คัดกรองมะเร็งตับ (US ± AFP ทุก 6 เดือน) และประเมิน varices':''));
+  }else if(tier!=='low')L.push('<span class="muted">ใส่ค่า VCTE (ถ้ามี) เพื่อดูขั้นต่อไป</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tFib input',fib);
+
+function dili(){
+  const alt=num('dAlt'),au=num('dAltU'),alp=num('dAlp'),pu=num('dAlpU'),age=num('dAge'),inr=num('dInr');let tb=num('dBili');const ty=$('dType').value;const c=id=>$(id).checked;const L=[];const o=$('diliOut');
+  if(alt===null||alp===null||au===null||pu===null){o.textContent='ใส่ ALT, ALP และ ULN ของทั้งสองค่า';$('rChL').style.display='';$('rCcL').style.display='';return}
+  if(au<=0||pu<=0||alt<0||alp<=0){o.textContent='ค่าไม่ถูกต้อง: ULN และ ALP ต้องมากกว่า 0, ALT ต้องไม่ติดลบ';return}
+  if(tb!==null&&tb<=0)tb=null;
+  const ax=alt/au,px=alp/pu,R=ax/px;const ptn=px<=1&&ax>1?'hc':ax<=1&&px>1?'ch':R>=5?'hc':R<=2?'ch':'mx';
+  $('rChL').style.display=ptn==='hc'?'':'none';$('rCcL').style.display=ptn==='hc'?'none':'';
+  L.push(`ALT ${f1(ax)}×ULN · ALP ${f1(px)}×ULN · R = <b>${R>=100?Math.round(R):f1(R)}</b> → <b>${ptn==='hc'?'hepatocellular':ptn==='ch'?'cholestatic':'mixed'}</b>`+(tb!==null?` · bilirubin ${f1(tb)} mg/dL`:''));
+  const bx=tb!==null?tb/BULN:0;
+  const crit=ax>=5||px>=2||(ax>=3&&bx>2);
+  L.push(crit?'<b>เข้าเกณฑ์ DILI ทางชีวเคมี (EASL 2019)</b>':'ยังไม่ถึงเกณฑ์ DILI ทางชีวเคมี (ALT ≥5×, ALP ≥2×, หรือ ALT ≥3× + bili &gt;2×) — อาจเป็น adaptation · ติดตามซ้ำ 1–2 สัปดาห์'+(c('dSym')||c('dHyp')?' (แต่มีอาการ → ดูเกณฑ์หยุดยาด้านล่าง)':''));
+  const hy=ax>3&&bx>2&&px<2;
+  if(hy)L.push('<b style="color:var(--danger)">Hy\'s law</b>: ALT &gt;3× + bilirubin &gt;2× + ALP &lt;2× → เสี่ยงตับวาย/เสียชีวิต ~10% · <b>หยุดยาทันที · INR ทุก 12–24 ชม. · ปรึกษาแพทย์ตับ</b>');
+  if((inr!==null&&inr>=1.5&&c('dEnc')))L.push('<b style="color:var(--danger)">INR ≥1.5 + ซึม → acute liver failure</b> → ส่งต่อ รพ.ปลูกถ่ายตับ');
+  else if(inr!==null&&inr>1.5)L.push('<b>INR &gt;1.5</b> → ตับเสียหน้าที่ · หยุดยา · ตามใกล้ชิด/ส่งต่อ');
+  // stop rules
+  let stop;
+  if(ty==='tb'){
+    stop=(ax>=5||(ax>=3&&(c('dSym')||bx>2)))?'<b>ยาวัณโรค: หยุด INH, RIF, PZA</b> (เข้าเกณฑ์ ATS: ALT ≥3× + อาการ/ดีซ่าน หรือ ALT ≥5×) · ถ้าวัณโรครุนแรง/ติดต่อ ให้ยาที่ไม่พิษต่อตับระหว่างรอ (เช่น ethambutol + levofloxacin ± aminoglycoside ตามแพทย์เฉพาะทาง) · ALT &lt;2×ULN แล้วค่อยกลับเข้ายาทีละตัว · ดูหน้าวัณโรค':'ยาวัณโรค: ยังไม่ถึงเกณฑ์หยุด → ให้ต่อ ตรวจ LFT ซ้ำ 1–2 สัปดาห์ และสอนอาการเตือน (คลื่นไส้ ดีซ่าน ปัสสาวะสีชา)';
+  }else{
+    const s=ax>8||ax>5||(ax>3&&(bx>2||(inr!==null&&inr>1.5)))||(ax>3&&(c('dSym')||c('dHyp')))||(ptn!=='hc'&&px>=2&&(c('dSym')||bx>2))||bx>2;
+    stop=s?'<b>หยุดยา/สมุนไพรที่สงสัย</b> · ห้ามให้ซ้ำถ้ารุนแรง · ติดตาม LFT/INR'+(ptn==='hc'?' ทุก 2–7 วัน':' (cholestatic หายช้าเป็นเดือน)'):'ยังไม่ถึงเกณฑ์หยุดยาทั่วไป (ALT &gt;5×/&gt;8×, หรือ &gt;3× + bili &gt;2×/INR &gt;1.5/อาการ) · ถ้ายาไม่จำเป็น หยุดได้เลย · ติดตามซ้ำ';
+    if(ty==='st')stop=ax<3&&!c('dSym')?'<b>Statin: ALT &lt;3×ULN ไม่มีอาการ → ให้ต่อได้</b> · ส่วนใหญ่เป็น adaptation · หาสาเหตุอื่น (MASLD พบบ่อย)':stop+' · statin ทำให้ DILI ชัดเจนได้น้อยมาก → หาสาเหตุอื่นด้วย';
+  }
+  L.push(stop);
+  if(c('dHyp'))L.push('ผื่น/ไข้/eosinophil → คิดถึง <b>DRESS</b> (ยากันชัก allopurinol co-trimoxazole) · CBC, Cr, ตรวจอวัยวะอื่น');
+  if(ty==='amc')L.push('Amox-clav: cholestatic/mixed, เกิดได้หลังหยุดยาหลายสัปดาห์ · หายช้า');
+  if(ty==='kr')L.push('กระท่อม/สมุนไพร: ถามชื่อ ปริมาณ แหล่งที่มา · มักเป็น cholestatic/mixed · ปนเปื้อนได้ · ลงข้อมูลในเวชระเบียนเพื่อไม่ให้ใช้ซ้ำ');
+  // RUCAM
+  const tv=$('rT').value;
+  if(tv==='x'){L.push('RUCAM: <b>เวลาไม่เข้ากัน → ไม่เกี่ยวกับยานี้ (unrelated)</b> · หาสาเหตุอื่น');o.innerHTML=L.join('<br>');return}
+  let s1=tv==='2'?2:1;
+  let s2=ptn==='hc'?parseInt($('rCH').value,10):parseInt($('rCC').value,10);if(isNaN(s2))s2=0;
+  let s3=0;const old=age!==null&&age>=55&&age<=120;if(old)s3++;
+  if(ptn==='hc'){if(c('dAlc'))s3++;}else{if(c('dAlc')||c('dPreg'))s3++;}
+  let s4=parseInt($('rCon').value,10);if(isNaN(s4))s4=0;
+  const s5=parseInt($('rAlt').value,10),s6=parseInt($('rLab').value,10),s7=parseInt($('rRe').value,10);
+  const tot=s1+s2+s3+s4+s5+s6+s7;
+  const cat=tot<=0?'ไม่เกี่ยวกับยา (excluded)':tot<=2?'ไม่น่าใช่ (unlikely)':tot<=5?'อาจใช่ (possible)':tot<=8?'น่าจะใช่ (probable)':'ใช่มาก (highly probable)';
+  L.push(`RUCAM (${ptn==='hc'?'hepatocellular':'cholestatic/mixed'}) = <b>${tot}</b> → <b>${cat}</b> <span class="muted">[เวลา ${s1>0?'+':''}${s1} · ดำเนินโรค ${s2>0?'+':''}${s2} · ปัจจัยเสี่ยง +${s3} · ยาร่วม ${s4} · สาเหตุอื่น ${s5>0?'+':''}${s5} · เคยรายงาน +${s6} · ให้ซ้ำ ${s7>0?'+':''}${s7}]</span>`);
+  if(age===null)L.push('<span class="muted">ไม่ได้ใส่อายุ — ไม่ได้นับคะแนนอายุ ≥55</span>');
+  if(s5<=0)L.push('<span class="muted">ตัดสาเหตุอื่นยังไม่ครบ → คะแนนต่ำ · ส่ง HAV, HBV, HCV, HEV, ultrasound ก่อนสรุป</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tDili input,#tDili select',dili);
+
+function iso(){
+  const u=$('iBu').value;let tb=biliMg(num('iTb'),u),db=biliMg(num('iDb'),u);const alp=num('iAlp'),apu=num('iAlpU'),ggt=num('iGgt'),ggu=num('iGgtU');const c=id=>$(id).checked;const L=[];const o=$('isoOut');
+  const hasB=tb!==null,hasA=alp!==null&&apu!==null;
+  if(!hasB&&!hasA&&ggt===null){o.textContent='ใส่ bilirubin และ/หรือ ALP (+ULN)';return}
+  if(hasB){
+    if(tb<=0)L.push('Total bilirubin ต้องมากกว่า 0');
+    else{
+      if(u==='mg'&&tb>60)L.push('<b>ค่าสูงผิดปกติมากสำหรับ mg/dL — ตรวจหน่วย</b>');
+      if(db!==null&&(db<0||db>tb)){L.push('<b>Direct ต้องไม่มากกว่า total — ตรวจค่า</b>');db=null;}
+      if(tb<=BULN)L.push(`Bilirubin ${f1(tb)} mg/dL — <b>ไม่สูง</b>`);
+      else if(db===null)L.push(`Bilirubin ${f1(tb)} mg/dL สูง → <b>ส่ง direct bilirubin</b> เพื่อแยก conjugated/unconjugated`);
+      else{
+        const fr=db/tb;
+        L.push(`Bilirubin ${f1(tb)} mg/dL (${Math.round(tb*17.1)} µmol/L) · direct ${Math.round(fr*100)}%`);
+        if(fr>0.5)L.push('<b>Conjugated</b> → ไม่ใช่ Gilbert · ถือเป็นโรคตับ/ท่อน้ำดี → <b>ultrasound</b> + LFT ครบ · ไข้ร่วม → cholangitis/sepsis · ค่าอื่นปกติทั้งหมด → Dubin–Johnson/Rotor (พบน้อย)');
+        else if(fr>=0.2)L.push('Direct 20–50%: ปนกัน → แปลร่วมกับ ALT/ALP · ทำ ultrasound และตรวจเม็ดเลือดแดงแตก');
+        else{
+          const hem=c('iAnem')||c('iThal')||c('iG6');
+          L.push('<b>Unconjugated เด่น</b>');
+          if(hem){
+            L.push('ตรวจ<b>เม็ดเลือดแดงแตก</b>: CBC, reticulocyte, LDH, haptoglobin, peripheral smear'+(c('iThal')?' · ธาลัสซีเมีย: Hb typing, ferritin (เหล็กเกินทำให้ ALT สูงได้) · ดูหน้าธาลัสซีเมีย':'')+(c('iG6')?' · G6PD (ระหว่างแตกเฉียบพลันอาจปกติหลอก → ซ้ำหลัง ~2–3 เดือน) · หยุดยา oxidant':''));
+          }
+          if(c('iDrug'))L.push('Rifampicin/atazanavir ทำให้ unconjugated สูงได้ (atazanavir ไม่อันตรายต่อตับจากกลไกนี้)');
+          if(!hem&&c('iLftN')){
+            if(tb<2.34)L.push(`<b style="color:var(--ok)">เข้าได้กับ Gilbert syndrome</b> (ALT/ALP ปกติ ไม่มีเม็ดเลือดแดงแตก) → อธิบายให้สบายใจ ไม่อันตราย ไม่ต้องตรวจซ้ำบ่อย`+(c('iFast')?' · ช่วงอดอาหาร/ป่วยสูงขึ้นได้':''));
+            else if(tb<4)L.push('ACG: &lt;4 mg/dL สันนิษฐาน Gilbert ได้ · แต่ BSG: unconjugated &gt;40 µmol/L (~2.3 mg/dL) → <b>ทบทวนเม็ดเลือดแดงแตก/ยาให้ครบ</b> เจาะซ้ำตอนไม่อดอาหาร ± UGT1A1 ก่อนสรุป');
+            else L.push('<b>Unconjugated ≥4 mg/dL</b> → ไม่น่าใช่ Gilbert อย่างเดียว · หาเม็ดเลือดแดงแตก, ineffective erythropoiesis (ธาลัสซีเมีย), Crigler–Najjar type 2 → ส่งต่อ');
+          }else if(!c('iLftN'))L.push('ALT/AST ผิดปกติร่วม → ไม่ใช่ bilirubin สูงเดี่ยว · ใช้เครื่องมือที่ 1');
+        }
+      }
+    }
+  }
+  if(hasA){
+    if(apu<=0||alp<=0)L.push('ALP และ ULN ต้องมากกว่า 0');
+    else{
+      const px=alp/apu;
+      if(px<=1)L.push(`ALP ${f1(px)}×ULN — <b>ไม่สูง</b>`+(ggt!==null&&ggu!==null&&ggu>0&&ggt>ggu?' · GGT สูงเดี่ยว → ถามสุรา ยากันชัก น้ำหนัก (MASLD) · ค่าอื่นปกติไม่ต้องตรวจละเอียด':''));
+      else{
+        L.push(`ALP ${f1(px)}×ULN`);
+        if(ggt===null||ggu===null||ggu<=0)L.push('<b>ส่ง GGT</b> เพื่อยืนยันว่ามาจากตับ (หรือ ALP isoenzyme)');
+        else if(ggt>ggu)L.push(`GGT ${f1(ggt/ggu)}×ULN สูงด้วย → <b>ALP มาจากตับ</b> → ultrasound (ท่อขยาย?) · AMA (PBC) · ทบทวนยา · infiltrative · `+(px>2?'ALP &gt;2×ULN + AMA ลบ → MRCP (ACG)':'1–2×ULN สังเกตได้ · สูงค้าง &gt;6 เดือน พิจารณาส่งต่อ/biopsy'));
+        else{
+          const why=[];if(c('iPreg'))why.push('<b>ตั้งครรภ์</b> (ALP จากรก ปกติ)');if(c('iYoung'))why.push('<b>กระดูกกำลังโต</b> (ปกติในวัยรุ่น)');if(c('iBone'))why.push('<b>กระดูก</b>: หัก/มะเร็งกระจาย → bone scan/X-ray ตามอาการ');if(c('iCkd'))why.push('CKD/ขาดวิตามินดี → Ca, PO₄, 25-OH vit D, PTH');
+          L.push('GGT ปกติ → <b>ALP ไม่น่ามาจากตับ</b>'+(why.length?': '+why.join(' · '):' → คิดถึงกระดูก (ขาดวิตามินดี, Paget, มะเร็งกระจาย, hyperparathyroid) · ตรวจ Ca, PO₄, 25-OH vitamin D, PTH · ไม่แน่ใจ → ALP isoenzyme'));
+        }
+      }
+    }
+  }else if(ggt!==null&&ggu!==null&&ggu>0&&ggt>ggu)L.push('GGT สูง: ใส่ ALP ด้วยเพื่อแปลผล · GGT สูงเดี่ยว → สุรา ยาเหนี่ยวนำ enzyme MASLD');
+  if(!L.length)L.push('ใส่ค่าให้ครบเพื่อแปลผล');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tIso input,#tIso select',iso);
+
+mountQuiz([
+ ['ALT 400 (ULN 40), ALP 130 (ULN 120) ค่า R ratio และรูปแบบคือ',['R ≈ 0.9 cholestatic','R ≈ 9.2 hepatocellular','R ≈ 3 mixed','คำนวณไม่ได้'],1,'(400/40) ÷ (130/120) = 10 ÷ 1.08 ≈ 9.2 → ≥5 = hepatocellular'],
+ ['ชาย 25 ปี bilirubin 2.1 mg/dL (direct 0.2) หลังอดอาหารช่วงป่วยไข้หวัด ALT/ALP ปกติ Hb ปกติ reticulocyte ปกติ น่าจะเป็น',['มะเร็งท่อน้ำดี','Gilbert syndrome','ตับอักเสบจากไวรัส','PBC'],1,'Unconjugated สูงเล็กน้อย + ค่าอื่นปกติ + ไม่มีเม็ดเลือดแดงแตก → Gilbert · สูงขึ้นเวลาอดอาหาร/ป่วย'],
+ ['หญิง 30 ปี ALP 2.5×ULN GGT ปกติ ALT ปกติ ตั้งครรภ์ 34 สัปดาห์ แปลผลอย่างไร',['PBC','ALP จากรก ปกติในไตรมาส 3','ท่อน้ำดีอุดตัน','DILI'],1,'GGT ปกติ → ALP ไม่ได้มาจากตับ · ALP สูงในครรภ์จากรก แต่ ALT/bilirubin ต้องปกติ'],
+ ['ตาม BSG 2018 ผู้ป่วย ALT 2×ULN ค้างไม่มีอาการ ควรทำอะไร',['เจาะซ้ำทุก 3 เดือนไปเรื่อยๆ','ส่ง liver aetiology screen (US, HBsAg, anti-HCV, autoantibody, Ig, ferritin+TSAT)','ไม่ต้องทำอะไรเพราะต่ำกว่า 3×','biopsy ทันที'],1,'BSG: อย่าแค่เจาะซ้ำ ให้หาสาเหตุไม่ว่าผิดปกติมากน้อย'],
+ ['ชาย 52 ปี BMI 28 เบาหวาน ultrasound ไขมันพอกตับ FIB-4 = 1.9 ขั้นต่อไปคือ',['บอกว่าปกติ','ทำ VCTE (FibroScan)','ส่ง biopsy ทุกราย','เริ่ม resmetirom'],1,'FIB-4 1.3–2.67 = ไม่ชัด → elastography'],
+ ['หญิง 70 ปี FIB-4 = 1.7 ไม่มีปัจจัยอื่น แปลผลอย่างไร (EASL 2024)',['ความเสี่ยงสูง ส่งแพทย์ตับ','ความเสี่ยงต่ำ เพราะอายุ ≥65 ใช้จุดตัด 2.0','ไม่ชัด ต้อง biopsy','ใช้ FIB-4 ไม่ได้ในผู้สูงอายุ'],1,'อายุมากทำให้ FIB-4 สูงเอง → อายุ ≥65 ใช้จุดตัดล่าง 2.0'],
+ ['ผู้ป่วยวัณโรคได้ยาสัปดาห์ที่ 4 ไม่มีอาการ ALT 3.5×ULN bilirubin ปกติ ทำอย่างไร (ATS)',['หยุดยาทั้งหมดทันที','ให้ยาต่อ ตรวจ LFT ซ้ำใกล้ชิด','เพิ่มขนาด INH','เปลี่ยนเป็น steroid'],1,'หยุดเมื่อ ALT ≥3× + อาการ/ดีซ่าน หรือ ≥5× แม้ไม่มีอาการ'],
+ ['ข้อใดเข้า Hy\'s law',['ALT 2×ULN + bilirubin 3×ULN','ALT 6×ULN + bilirubin 2.5×ULN + ALP 1.2×ULN จากยา','ALP 4×ULN + bilirubin 3×ULN','ALT 10×ULN bilirubin ปกติ'],1,'ALT >3× + bilirubin >2× โดยไม่มี cholestasis เด่น (ALP <2×) และไม่มีสาเหตุอื่น'],
+ ['ชาย 65 ปี หลังหัวใจหยุดเต้นกู้ชีพได้ ALT 4,800 LDH สูงมาก 3 วันต่อมา ALT 1,500 สาเหตุที่น่าเป็นที่สุด',['ไวรัสเอ','Ischemic hepatitis','PBC','Gilbert'],1,'ขาดเลือด: ALT พุ่งเร็ว ลดเร็ว LDH สูงมาก'],
+ ['ชาย 60 ปี ขอนแก่น ชอบกินก้อยปลา ดีซ่านไม่ปวด คัน น้ำหนักลด ALP 5×ULN ultrasound ท่อน้ำดีในตับขยาย คิดถึง',['Gilbert','มะเร็งท่อน้ำดีจากพยาธิใบไม้ตับ','ไวรัสอี','MASLD'],1,'Opisthorchis viverrini → cholangiocarcinoma · MRCP/CT, CA 19-9, ส่งต่อ'],
+ ['ผู้ป่วย MASLD ไขมัน LDL สูง ALT 1.5×ULN ควรทำอย่างไรกับ statin',['ห้ามใช้','ใช้ได้ ปลอดภัย','ใช้ได้เมื่อ ALT ปกติเท่านั้น','ใช้ครึ่งขนาด'],1,'AASLD 2023: statin ปลอดภัยใน MASLD รวมตับแข็งที่ยัง compensated'],
+ ['หญิง 40 ปี ไม่เคยมีโรคตับ ดีซ่าน 5 วัน INR 2.1 สับสน ควรทำอย่างไร',['นัดตรวจซ้ำ 1 สัปดาห์','รับไว้และประสานส่ง รพ.ที่ปลูกถ่ายตับได้','ให้ vitamin K แล้วกลับบ้าน','ส่ง ultrasound แบบผู้ป่วยนอก'],1,'INR ≥1.5 + encephalopathy = acute liver failure']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

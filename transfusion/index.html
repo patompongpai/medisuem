@@ -1,0 +1,991 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Blood transfusion · การให้เลือดและส่วนประกอบของเลือด</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Hematology · Transfusion medicine · AABB 2023 (RBC) · AABB/ICTMG 2025 (platelets) · AABB 2025 (AMI) · BSH 2017–2023 · NICE NG24 · ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย 2566</div>
+  <h1>การให้เลือดและส่วนประกอบของเลือด<br>Blood transfusion: what, when, how much · reactions</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้ตอบ 4 คำถามข้างเตียง: <b>ให้อะไร</b> (ส่วนประกอบเลือดที่มีในไทย และเมื่อไรต้องใช้ชนิดกรองเม็ดเลือดขาว/ฉายรังสี/ล้าง) · <b>ให้เมื่อไร</b> (เกณฑ์ Hb เกล็ดเลือด fibrinogen) · <b>ให้เท่าไร</b> (จำนวนยูนิตและค่าที่คาดว่าจะขึ้น) · และ <b>ถ้าเกิดปฏิกิริยาต้องทำอะไร</b> · มีเครื่องมือคำนวณ 4 ตัว</p>
+  <p class="cite">อ้างอิงหลัก: Carson JL, et al. Red blood cell transfusion: 2023 AABB international guidelines (JAMA 2023;330:1892–902) · Metcalf RA, et al. Platelet transfusion: 2025 AABB and ICTMG international guidelines (JAMA 2025;334:606–17) · Pagano MB, et al. Red cell transfusion in AMI: AABB guidelines (Ann Intern Med 2025;178:1469–77) · Carson JL, et al. MINT (N Engl J Med 2023;389:2446–56) · BSH guidelines: platelets 2017, FFP/cryo 2018, irradiated components 2020, acute transfusion reactions 2023 · NICE NG24 · ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย. คู่มือการใช้โลหิตและส่วนประกอบโลหิตอย่างเหมาะสม พิมพ์ครั้งที่ 2 (2566) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>Restrictive + ทีละ 1 ยูนิต</b>Hb &lt;7 (ผ่าตัดกระดูก/โรคหัวใจ &lt;8 · ผ่าตัดหัวใจ &lt;7.5) · ให้ 1 ยูนิตแล้วประเมินซ้ำ · ยกเว้น AMI (&lt;10) และเลือดออกไม่หยุด</div>
+    <div class="stage" style="--c:var(--warn)"><b>เกล็ดเลือด: อย่าให้ตามตัวเลขอย่างเดียว</b>ป้องกัน &lt;10k · LP &lt;20k · ผ่าตัดใหญ่ &lt;50k · <b>ไข้เลือดออกไม่ให้ป้องกัน</b> · TTP/HIT หลีกเลี่ยง</div>
+    <div class="stage" style="--c:var(--danger)"><b>ปฏิกิริยา: หยุดก่อน คิดทีหลัง</b>หยุดเลือด · คงเส้นด้วย NSS · ตรวจชื่อ-ถุง · แจ้งธนาคารเลือด · ช็อก/หอบใน 15 นาทีแรก = ABO, anaphylaxis, sepsis จากถุง</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#comp">ส่วนประกอบเลือดในไทย</a><a href="#modify">กรอง · ฉายรังสี · ล้าง</a><a href="#rbc">เม็ดเลือดแดง</a><a href="#plt">เกล็ดเลือด</a><a href="#plasma">FFP · cryo</a><a href="#mtp">Massive transfusion</a><a href="#spec">สถานการณ์พิเศษ</a><a href="#admin">ก่อนให้ · วิธีให้</a><a href="#rx">ปฏิกิริยาจากการให้เลือด</a><a href="#pbm">PBM · ผู้ปฏิเสธเลือด</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="comp" class="col">
+  <div class="sec-num">01</div>
+  <h2>ส่วนประกอบเลือดที่ใช้ในไทย</h2>
+  <p>ในไทยเลือดเกือบทั้งหมดมาจาก <b>ผู้บริจาคโดยสมัครใจ</b> ผ่านศูนย์บริการโลหิตแห่งชาติและภาคบริการโลหิตแห่งชาติ คัดกรอง syphilis, HBV, HCV, HIV รวม NAT ทุกถุง · ชื่อย่อและปริมาณด้านล่างเป็นค่าประมาณ — <b>ดูฉลากถุงและคู่มือธนาคารเลือดของ รพ. ตัวเองเสมอ</b> <span class="tag th">ไทย</span></p>
+  <div class="tbl"><table>
+    <tr><th>ส่วนประกอบ</th><th>ประมาณต่อถุง</th><th>ใช้เมื่อ</th><th>ขนาดผู้ใหญ่</th></tr>
+    <tr><td><b>PRC</b> (packed red cells)</td><td>~250 mL · Hb ~45 g · Hct ~70–75%</td><td>เพิ่มมวลเม็ดเลือดแดง</td><td>ครั้งละ <b>1 ยูนิต</b> แล้วประเมิน · Hb ขึ้น ~1 g/dL/ยูนิต (ผู้ใหญ่ 70 kg)</td></tr>
+    <tr><td><b>LPRC</b> (leukocyte-poor, ปั่นแยก buffy coat)</td><td>WBC &lt;1.2×10⁹/ยูนิต · Hb ~43 g</td><td>ป้องกัน <b>febrile reaction</b> (FNHTR)</td><td>เหมือน PRC</td></tr>
+    <tr><td><b>LDPRC</b> (leukocyte-depleted, กรองด้วย filter)</td><td>WBC &lt;1×10⁶/ยูนิต · Hb ~40 g</td><td>ป้องกัน <b>HLA alloimmunization</b> (platelet refractoriness) และ CMV · ผู้ป่วยที่จะปลูกถ่ายไขกระดูก</td><td>เหมือน PRC</td></tr>
+    <tr><td><b>PC</b> (platelet concentrate, random donor 1 ยูนิต)</td><td>~50 mL · เกล็ดเลือด ~0.55–0.8×10¹¹</td><td>เกล็ดเลือดต่ำ/ทำงานผิดปกติ</td><td><b>1 ยูนิต/10 kg</b> (ผู้ใหญ่ 4–6 ยูนิต)</td></tr>
+    <tr><td><b>Pooled PC</b> (LPPC / LDPPC — รวม 4–6 ยูนิตในถุงเดียว)</td><td>~270–300 mL · &gt;3×10¹¹</td><td>เหมือน PC · LDPPC ลด HLA alloimmunization</td><td><b>1 ถุง = 1 adult dose</b> · ให้ภายใน 4 ชม. หลังรวมถุง</td></tr>
+    <tr><td><b>SDP</b> (single donor platelets, apheresis)</td><td>~300 mL · ≥3×10¹¹ · WBC &lt;1×10⁶</td><td>เหมือน PC · สัมผัสผู้บริจาคคนเดียว · <b>HLA-matched</b> เมื่อ refractory</td><td><b>1 ถุง = 1 adult dose</b> · คาดเพิ่ม ~20–40k/µL</td></tr>
+    <tr><td><b>FFP</b> (fresh frozen plasma)</td><td>~200–250 mL · มี coagulation factor ทุกตัว</td><td>เลือดออก/ก่อนหัตถการ + PT/aPTT ยาวจากขาดหลาย factor · massive transfusion · TTP (plasma exchange)</td><td><b>10–15 mL/kg</b> (BSH 15–20) ≈ 3–4 ถุง</td></tr>
+    <tr><td><b>Cryoprecipitate</b></td><td>~10–20 mL · fibrinogen <b>150–250 mg</b> · FVIII 80–100 IU · vWF · FXIII</td><td><b>Fibrinogen ต่ำ + เลือดออก</b> · hemophilia A/vWD เมื่อไม่มี factor concentrate</td><td><b>1 ยูนิต/10 kg</b> → fibrinogen ขึ้น ~50 mg/dL (0.5 g/L)</td></tr>
+    <tr><td><b>Cryo-removed plasma</b> (CRP / cryo-poor plasma)</td><td>plasma ที่เอา cryo ออก · ไม่มี fibrinogen/FVIII/vWF multimer ขนาดใหญ่ · ยังมี FII, VII, IX, X</td><td>สารน้ำทดแทนใน <b>plasma exchange ของ TTP</b> · ขาด vitamin K–dependent factor</td><td>ตามโปรโตคอล TPE</td></tr>
+    <tr><td>Whole blood</td><td>~450–500 mL</td><td>ใช้น้อยมากในผู้ใหญ่ (exchange transfusion ในทารก · บางแห่งใช้ใน trauma)</td><td>—</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ความเข้ากันได้ (ABO)</h4><ul><li><b>เม็ดเลือดแดง</b>: ผู้ให้ O ให้ได้ทุกกรุ๊ป (universal red cell donor)</li><li><b>Plasma (FFP/cryo)</b>: ทิศกลับกัน — <b>AB plasma ให้ได้ทุกกรุ๊ป</b></li><li><b>เกล็ดเลือด</b>: ให้กรุ๊ปเดียวกันดีที่สุด ให้ต่างกรุ๊ปได้ถ้าจำเป็น (มี plasma ปน)</li><li>Rh D ลบในคนไทยพบ <b>&lt;1%</b> · หญิงวัยเจริญพันธุ์ Rh ลบ ควรได้เลือด Rh ลบ <span class="tag th">ไทย</span></li></ul></div>
+    <div class="card c-warn"><h4>การเก็บรักษา (เบื้องต้น)</h4><ul><li><b>เม็ดเลือดแดง</b> 1–6 °C · ออกจากตู้แล้วให้ให้เสร็จภายใน <b>4 ชม.</b></li><li><b>เกล็ดเลือด</b> 20–24 °C บนเครื่องเขย่า · <b>ห้ามแช่ตู้เย็น</b> · อายุ ~5 วัน — จึงเสี่ยงเชื้อแบคทีเรียมากที่สุด</li><li><b>FFP/cryo</b> แช่แข็ง · ละลายที่ธนาคารเลือดแล้วให้โดยเร็ว</li><li>ไม่ใช้ส่งคืน — <b>แจ้งธนาคารเลือดทันที</b> อย่าเก็บไว้ในตู้เย็นหอผู้ป่วย</li></ul></div>
+  </div>
+</section>
+
+<section id="modify" class="col">
+  <div class="sec-num">02</div>
+  <h2>เลือดชนิดพิเศษ: กรองเม็ดเลือดขาว · ฉายรังสี · ล้าง</h2>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>ป้องกันอะไร</th><th>ข้อบ่งชี้หลัก</th></tr>
+    <tr><td><b>Leukocyte-poor / leukodepleted</b> (LPRC, LDPRC, LDPPC, SDP)</td><td>FNHTR · HLA alloimmunization → platelet refractoriness · CMV (LD ถือว่า "CMV-safe")</td><td>ผู้ที่ต้องรับเลือดประจำ (<b>ธาลัสซีเมียชนิดพึ่งเลือด</b>, MDS, aplastic anemia) · มะเร็งเม็ดเลือด/ได้เคมีบำบัด · <b>ผู้ที่อาจปลูกถ่ายไขกระดูก/ไต</b> · เคยมี febrile reaction ซ้ำ · ทารก/หญิงตั้งครรภ์ CMV ลบ</td></tr>
+    <tr><td><b>Irradiated</b> (ฉายรังสี 25 Gy)</td><td><b>TA-GVHD</b> (lymphocyte ของผู้ให้แบ่งตัวในผู้รับ · ตายเกือบทุกราย)</td><td>BSH 2020: <b>เลือดจากญาติสายตรง</b> (directed donation) ทุกกรณี · HLA-matched platelets · granulocyte · ปลูกถ่ายไขกระดูก (allo/auto ตามช่วงเวลา) · <b>Hodgkin lymphoma</b> · ได้ <b>purine analogue</b> (fludarabine, cladribine, bendamustine, pentostatin) · <b>alemtuzumab</b> · ATG ใน aplastic anemia · <b>CAR-T</b> · ภูมิคุ้มกันบกพร่องแต่กำเนิด (SCID, DiGeorge) · intrauterine transfusion/exchange ในทารก</td></tr>
+    <tr><td><b>Washed</b> (ล้างด้วย NSS เอา plasma ออก)</td><td>ปฏิกิริยาแพ้รุนแรงจาก plasma protein</td><td><b>IgA deficiency ที่มี anti-IgA</b> และเคย anaphylaxis (หรือใช้เลือดผู้บริจาค IgA-deficient) · แพ้รุนแรงซ้ำแม้ได้ antihistamine · ข้อเสีย: อายุถุงสั้น (~24 ชม.) และเสียเม็ดเลือดแดงบางส่วน</td></tr>
+  </table></div>
+  <div class="box note"><b>ไม่ต้องฉายรังสี</b> ในผู้ป่วยมะเร็งก้อนทั่วไป, HIV, ผู้รับเคมีบำบัดทั่วไปที่ไม่ใช่กลุ่มข้างบน, ITP, ผู้ปลูกถ่ายอวัยวะ (solid organ) ส่วนใหญ่ · <b>ไม่แนะนำ bedside leukocyte filter</b> ถ้ามี prestorage leukodepleted (bedside filter ทำให้ความดันตกจาก bradykinin ในผู้ใช้ ACE inhibitor) <span class="tag add">เสริม</span></div>
+</section>
+
+<section id="rbc" class="col">
+  <div class="sec-num">03</div>
+  <h2>เม็ดเลือดแดง: เกณฑ์ Hb และจำนวนยูนิต</h2>
+  <p>หลักการ: <b>Hb เป็นแค่ส่วนหนึ่งของการตัดสินใจ</b> — ดูอาการ (เจ็บอก หอบขณะพัก หน้ามืด ชีพจรเร็วที่ไม่ตอบสนองต่อสารน้ำ) ความเร็วที่ Hb ลด โรคร่วม และสาเหตุที่แก้ได้ (ขาดเหล็ก B12 folate) · AABB 2023 ทบทวน RCT 45 การศึกษา (ผู้ใหญ่ ~20,600 ราย) พบว่า restrictive ไม่ทำให้ผลลัพธ์แย่ลงในเกือบทุกกลุ่ม</p>
+  <div class="tbl"><table>
+    <tr><th>กลุ่มผู้ป่วย (hemodynamic คงที่)</th><th>ให้เมื่อ Hb</th><th>หลักฐาน</th></tr>
+    <tr><td>ผู้ป่วยใน ทั่วไป รวม <b>ICU</b></td><td><b>&lt;7 g/dL</b></td><td><span class="rec s1">Strong · moderate</span> AABB 2023</td></tr>
+    <tr><td>ผ่าตัดหัวใจ</td><td><b>&lt;7.5</b></td><td>AABB 2023 (ตามเกณฑ์ใน TRICS III)</td></tr>
+    <tr><td>ผ่าตัดกระดูก (เช่น hip fracture) · <b>มีโรคหัวใจและหลอดเลือดอยู่เดิม</b></td><td><b>&lt;8</b></td><td>AABB 2023 (ตาม FOCUS)</td></tr>
+    <tr><td>มะเร็ง/โรคเลือด (ผู้ใหญ่)</td><td><b>&lt;7</b></td><td><span class="rec">Conditional · low</span> AABB 2023</td></tr>
+    <tr><td><b>Acute MI</b> + ซีด</td><td><b>&lt;10</b> (liberal)</td><td><span class="rec">Conditional · low</span> AABB AMI 2025 · <span class="rec">2b</span> ACC/AHA ACS 2025 <span class="tag up">ใหม่</span></td></tr>
+    <tr><td>UGIB (non-variceal)</td><td>&lt;7 (โรคหัวใจ &lt;8)</td><td>ACG 2021 · ESGE · ดูหน้า <a href="../ugib/index.html">UGIB</a></td></tr>
+    <tr><td>Variceal bleeding</td><td>&lt;7 เป้า 7–8</td><td>Baveno VII — ให้มากเกินเพิ่มความดัน portal และเลือดออกซ้ำ</td></tr>
+    <tr><td>LGIB</td><td>&lt;7 (โรคหัวใจ &lt;8)</td><td>ACG 2023 · ดูหน้า <a href="../lgib/index.html">LGIB</a></td></tr>
+    <tr><td>Septic shock</td><td>&lt;7</td><td>SSC 2021 (TRISS) · ดูหน้า <a href="../sepsis/index.html">Sepsis</a></td></tr>
+    <tr><td><b>ธาลัสซีเมียชนิดพึ่งเลือด (TDT)</b></td><td><b>Pre-transfusion Hb 9–10.5</b> (ไทย) · <b>9.5–10.5</b> (TIF 2021)</td><td>แนวทางไทย 2562 · TIF 2021 · ดูหัวข้อ 07</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>MINT (NEJM 2023) — ทำไม AMI ต่างจากกลุ่มอื่น</h4><ul><li>AMI + Hb &lt;10 · 3,504 ราย · restrictive (7–8) vs liberal (&lt;10)</li><li>MI หรือตายใน 30 วัน: <b>16.9% vs 14.5%</b> (RR 1.15; 95% CI 0.99–1.34; P=0.07)</li><li>ตาย 9.9% vs 8.3% · ไม่ significant แต่ <b>ไม่สามารถตัดอันตรายของ restrictive ได้</b></li><li>AABB 2025 รวม 4 RCT แนะนำ <b>liberal &lt;10</b> ใน AMI แบบ conditional และให้ลดความเสี่ยง TACO (ให้ช้า ทีละยูนิต ดูน้ำ)</li><li>ใช้กับ <b>AMI ระยะเฉียบพลัน</b> — ไม่ใช่โรคหลอดเลือดหัวใจเรื้อรังที่คงที่ (ใช้ &lt;8)</li></ul></div>
+    <div class="card c-acc"><h4>Single-unit policy และค่าที่คาดว่าจะขึ้น</h4><ul><li>ผู้ป่วยที่ <b>ไม่มีเลือดออกต่อเนื่อง: ให้ 1 ยูนิต แล้วดูอาการ + Hb ซ้ำ</b> ก่อนสั่งยูนิตต่อไป (NICE NG24)</li><li>ผู้ใหญ่ 70 kg: <b>1 ยูนิต → Hb ~1 g/dL (Hct ~3%)</b> · คนตัวเล็ก/ผู้สูงอายุน้ำหนักน้อยขึ้นมากกว่า → พิจารณาให้ตามน้ำหนัก</li><li>สูตรคร่าวๆ: ΔHb ≈ Hb ในถุง (g) ÷ blood volume (dL) · BV ~70 mL/kg (หญิง ~65)</li><li>ตรวจ Hb ซ้ำได้ตั้งแต่ ~15 นาทีหลังให้เสร็จในผู้ที่ไม่มีเลือดออก</li><li>ไม่ขึ้นตามคาด → เลือดออกต่อ · hemolysis (DHTR, autoimmune) · ม้ามโต · hemodilution</li></ul></div>
+  </div>
+  <div class="box warn"><b>เมื่อไรไม่ใช้เกณฑ์ Hb</b>เลือดออกมากต่อเนื่อง/ช็อก — Hb แรกรับยังสูงหลอกเพราะยังไม่ hemodilute → ให้ตามสัญญาณชีพและปริมาณเลือดที่เสีย (ดูหัวข้อ 06) · ซีดเรื้อรังที่คงที่ไม่มีอาการ (ขาดเหล็ก ไตเรื้อรัง) → <b>รักษาสาเหตุ</b> ไม่ใช่ให้เลือด · ดูหน้า <a href="../anemia/index.html">Anemia</a></div>
+</section>
+
+<section id="plt" class="col">
+  <div class="sec-num">04</div>
+  <h2>เกล็ดเลือด: เกณฑ์และขนาด</h2>
+  <p>หน้านี้ยึด <b>AABB/ICTMG 2025</b> (ใหม่สุด ใช้ GRADE) และแสดงค่าของ BSH 2017 ที่หลาย รพ. ในไทยยังใช้ไว้เทียบ — เกณฑ์ใหม่ <b>ต่ำกว่าเดิม</b> ในหลายหัตถการ · ใช้ค่าที่ ร.พ. ของท่านกำหนดถ้ามี</p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>AABB/ICTMG 2025 (×10³/µL)</th><th>BSH 2017 / อื่นๆ</th></tr>
+    <tr><td><b>ป้องกัน</b>: ไขกระดูกสร้างไม่ได้ จากเคมีบำบัด/allo-HSCT ไม่มีเลือดออก</td><td><b>&lt;10</b> <span class="rec s1">Strong</span></td><td>&lt;10 · มีปัจจัยเสี่ยง (ไข้ sepsis coagulopathy) พิจารณา 10–20</td></tr>
+    <tr><td>Auto-HSCT · aplastic anemia เรื้อรังที่คงที่</td><td><b>ไม่ให้ป้องกัน</b> (ให้เมื่อเลือดออก) <span class="rec">Cond.</span></td><td>เหมือนกัน</td></tr>
+    <tr><td>Consumptive (ป่วยวิกฤต/DIC) ไม่มีเลือดออกรุนแรง</td><td><b>&lt;10</b> <span class="rec">Cond.</span></td><td>DIC มีเลือดออก &lt;50</td></tr>
+    <tr><td><b>ไข้เลือดออก (dengue)</b> ไม่มีเลือดออกรุนแรง</td><td><b>ไม่ให้ ไม่ว่าเกล็ดเลือดเท่าไร</b> <span class="rec s1">Strong</span></td><td>WHO และแนวทางไทยเหมือนกัน</td></tr>
+    <tr><td>ใส่ <b>central line</b> ตำแหน่งกดได้ (IJ, femoral; ใช้ ultrasound)</td><td><b>&lt;10</b> <span class="rec">Cond.</span></td><td>BSH &lt;20</td></tr>
+    <tr><td><b>Lumbar puncture</b></td><td><b>&lt;20</b> <span class="rec s1">Strong</span></td><td>BSH &lt;40 (เดิมมัก 40–50)</td></tr>
+    <tr><td>Interventional radiology</td><td>ความเสี่ยงต่ำ <b>&lt;20</b> · สูง <b>&lt;50</b></td><td>—</td></tr>
+    <tr><td><b>ผ่าตัดใหญ่</b> (non-neuraxial) · เลือดออกมาก</td><td><b>&lt;50</b></td><td>&lt;50 · massive transfusion รักษา &gt;50 (บางแห่ง &gt;75)</td></tr>
+    <tr><td>Spinal/epidural anesthesia</td><td>ไม่ได้ระบุ</td><td>BSH ≥80 · สูติกรรมมักใช้ ≥70</td></tr>
+    <tr><td><b>ผ่าตัดสมอง · ตาส่วนหลัง · ICH/TBI ที่มีเลือดออก</b></td><td>—</td><td><b>&lt;100</b></td></tr>
+    <tr><td>ICH ที่ไม่ผ่าตัด เกล็ดเลือด &gt;100 (รวมผู้กิน antiplatelet)</td><td><b>ไม่ให้</b> <span class="rec no">ไม่แนะนำ</span></td><td>PATCH trial: ให้แล้วแย่ลง</td></tr>
+    <tr><td>ผ่าตัดหัวใจ (CPB) ไม่มีเกล็ดเลือดต่ำ ไม่มีเลือดออกมาก</td><td><b>ไม่ให้</b></td><td>—</td></tr>
+    <tr><td>Bone marrow aspiration/biopsy</td><td>—</td><td><b>ไม่ต้องให้</b> (กดแผลนาน)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ขนาดและค่าที่คาดว่าจะขึ้น</h4><ul><li><b>1 adult dose</b> = SDP 1 ถุง หรือ pooled 1 ถุง หรือ random PC <b>1 ยูนิต/10 kg</b> (4–6 ยูนิต)</li><li>ผู้ใหญ่ 70 kg: 1 adult dose (~3×10¹¹) → คาดเพิ่ม <b>~20–40×10³/µL</b> · random 1 ยูนิต → ~5–10×10³</li><li>ขนาดสูงไม่ช่วยลดเลือดออก (PLADO) · ขนาดครึ่งหนึ่งใช้ในภาวะขาดแคลนได้</li><li>ตรวจนับ <b>10–60 นาทีหลังให้</b> เพื่อดูการตอบสนอง (สำคัญถ้าสงสัย refractory) และก่อนหัตถการ</li></ul></div>
+    <div class="card c-warn"><h4>Platelet refractoriness — CCI</h4><ul><li><b>CCI = (เกล็ดเลือดหลัง − ก่อน, /µL) × BSA (m²) ÷ จำนวนเกล็ดเลือดที่ให้ (×10¹¹)</b></li><li><b>CCI 1 ชม. &lt;7,500</b> (หรือ 18–24 ชม. &lt;5,000) <b>2 ครั้งติด</b> ด้วยเกล็ดเลือดใหม่ ABO-compatible = refractory</li><li>1 ชม. ต่ำ → คิด <b>immune (anti-HLA/HPA)</b> → ตรวจ HLA antibody → <b>HLA-matched/crossmatched SDP</b></li><li>1 ชม. ดี แต่ 24 ชม. ต่ำ → <b>non-immune</b>: ไข้ sepsis DIC ม้ามโต เลือดออก ยา (amphotericin, vancomycin)</li><li>ใช้ LD products ตั้งแต่แรกเพื่อป้องกัน</li></ul></div>
+  </div>
+  <div class="box warn"><b>หลีกเลี่ยงการให้เกล็ดเลือด</b>TTP (relative contraindication — ให้เฉพาะเลือดออกคุกคามชีวิต) · HIT (ให้เฉพาะเลือดออกรุนแรง/หัตถการเสี่ยงสูง) · ITP (ให้เฉพาะเลือดออกรุนแรง ร่วมกับ IVIG + steroid) · ไข้เลือดออกที่ไม่มีเลือดออกรุนแรง · ดูหน้า <a href="../thrombocytopenia/index.html">Thrombocytopenia</a></div>
+</section>
+
+<section id="plasma" class="col">
+  <div class="sec-num">05</div>
+  <h2>FFP และ cryoprecipitate</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>FFP — ใช้เมื่อ</h4><ul><li><b>มีเลือดออก</b> (หรือจะทำหัตถการเสี่ยงสูง) + <b>PT/aPTT &gt;1.5 เท่า</b> จากขาดหลาย factor: DIC, โรคตับ, massive transfusion</li><li>Massive transfusion (ให้คู่กับ RBC เป็นสัดส่วน)</li><li><b>TTP</b>: plasma exchange (FFP หรือ cryo-removed plasma) · ถ้ายังทำ TPE ไม่ได้ ให้ FFP ระหว่างรอ</li><li>ขาด factor เดี่ยวที่ไม่มี concentrate (เช่น FV, FXI)</li><li>ขนาด <b>10–15 mL/kg</b> (BSH 15–20) → factor เพิ่ม ~10–20% · ผู้ใหญ่ 70 kg ≈ <b>3–4 ถุง</b></li></ul></div>
+    <div class="card c-red"><h4>FFP — ไม่ควรใช้</h4><ul><li><b>INR สูงแต่ไม่มีเลือดออก</b> และไม่ได้จะทำหัตถการเสี่ยงสูง <span class="rec no">ไม่แนะนำ</span></li><li>ก่อนหัตถการเล็กที่ INR สูงเล็กน้อย (≤1.5–1.8) · INR &lt;1.7 FFP แทบไม่ลด INR</li><li><b>ตับแข็ง</b>: INR ไม่สะท้อนความเสี่ยงเลือดออก · FFP เพิ่ม volume → portal pressure สูง</li><li><b>Warfarin + เลือดออกรุนแรง → 4F-PCC + vitamin K 5–10 mg IV</b> (PCC เร็วกว่า ปริมาณน้อย ไม่ต้องรอละลาย) · ใช้ FFP 15 mL/kg เมื่อไม่มี PCC</li><li>เพิ่ม volume/albumin, ภาวะทุพโภชนาการ — ไม่ใช่ข้อบ่งชี้</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Cryoprecipitate</h4><ul><li><b>Fibrinogen &lt;1.5 g/L (150 mg/dL) + เลือดออก</b> · สูติกรรม (PPH) ใช้ <b>&lt;2 g/L</b></li><li>DIC/โรคตับที่มีเลือดออก หรือก่อนหัตถการเสี่ยงสูง เมื่อ fibrinogen &lt;1 g/L</li><li>ขนาด <b>1 ยูนิต/10 kg</b> → fibrinogen ขึ้น ~0.5 g/L · ผู้ใหญ่มัก 8–10 ยูนิต (BSH: 2 pools = 10 ยูนิต)</li><li>ไม่มี fibrinogen concentrate ในหลาย รพ. ไทย → cryo เป็นแหล่งหลัก <span class="tag th">ไทย</span></li><li>Hemophilia A / vWD: ใช้ factor concentrate ก่อน cryo เป็นทางเลือกสุดท้าย</li></ul></div>
+    <div class="card c-ok"><h4>Warfarin: ขนาด 4F-PCC (ถ้ามีใน รพ.)</h4><ul><li>INR 2 – &lt;4: <b>25 U/kg</b> (สูงสุด 2,500 U)</li><li>INR 4–6: <b>35 U/kg</b> (สูงสุด 3,500 U)</li><li>INR &gt;6: <b>50 U/kg</b> (สูงสุด 5,000 U)</li><li>ทางเลือก (ACC 2020): fixed dose 1,000 U (ICH 1,500 U)</li><li>ร่วมกับ <b>vitamin K 5–10 mg IV ช้าๆ</b> ทุกราย (PCC ฤทธิ์สั้น ~6–8 ชม.)</li><li>DOAC: idarucizumab (dabigatran) · anti-Xa: 4F-PCC 50 U/kg (andexanet ถอนจากตลาดสหรัฐฯ ธ.ค. 2025 จากความเสี่ยง thrombosis) — ดูหน้า <a href="../thrombocytopenia/index.html">Thrombocytopenia</a></li></ul></div>
+  </div>
+</section>
+
+<section id="mtp" class="col">
+  <div class="sec-num">06</div>
+  <h2>Massive transfusion protocol (MTP)</h2>
+  <p>นิยามที่ใช้บ่อย: RBC <b>≥10 ยูนิตใน 24 ชม.</b> หรือ <b>&gt;4 ยูนิตใน 1 ชม.</b> ที่ยังต้องให้ต่อ หรือเสียเลือด &gt;50% ของ blood volume ใน 3 ชม. · <b>เรียก MTP ตั้งแต่คาดการณ์ได้</b> ไม่ต้องรอให้ครบนิยาม</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>เมื่อไรเรียก MTP</h4><ul><li><b>ABC score ≥2</b> (trauma): penetrating · SBP ≤90 · HR ≥120 · FAST บวก — ข้อละ 1 คะแนน</li><li><b>Shock index (HR/SBP) ≥1</b> + เลือดออกต่อเนื่อง</li><li>PPH, ruptured AAA, variceal/ulcer bleeding ที่ไม่ตอบสนอง</li><li>ระหว่างรอ: เลือด <b>O</b> ไม่ crossmatch (หญิงวัยเจริญพันธุ์ใช้ O Rh ลบถ้ามี) + FFP กรุ๊ป AB (หรือ A ตามนโยบาย รพ.)</li></ul></div>
+    <div class="card c-acc"><h4>ให้อะไร</h4><ul><li><b>RBC : FFP : platelet ≈ 1:1:1</b> (PROPPR — 1:1:1 vs 1:1:2 ตาย 24 ชม./30 วันไม่ต่าง แต่หยุดเลือดได้มากกว่า ตายจากเลือดหมดตัวน้อยกว่า)</li><li>เช่นชุดละ RBC 4–6 + FFP 4–6 + 1 adult dose platelet · cryo เมื่อ fibrinogen &lt;1.5 (PPH &lt;2)</li><li><b>Tranexamic acid ภายใน 3 ชม.</b>: 1 g IV ใน 10 นาที แล้ว 1 g ใน 8 ชม. (CRASH-2) · PPH: 1 g IV ซ้ำ 1 g ได้หลัง 30 นาที (WOMAN) · <b>หลัง 3 ชม. ไม่ให้</b> (ไม่ได้ประโยชน์ อาจอันตราย) · UGIB ไม่ให้ (HALT-IT)</li><li><b>Calcium</b>: citrate จับ Ca → ตรวจ iCa บ่อย รักษา &gt;1.1 mmol/L · 10% CaCl₂ 10 mL หรือ 10% Ca gluconate 30 mL IV</li></ul></div>
+  </div>
+  <div class="box key"><b>เป้าหมายระหว่าง MTP</b>Hb 7–9 · เกล็ดเลือด &gt;50 (TBI/สมอง &gt;100) · fibrinogen &gt;1.5 g/L (PPH &gt;2) · PT/aPTT &lt;1.5 เท่า · iCa &gt;1.1 · อุณหภูมิ &gt;36 °C (ใช้เครื่องอุ่นเลือด) · แก้ acidosis · <b>หยุดเลือดที่ต้นเหตุ</b> (ผ่าตัด ส่องกล้อง embolization) · K สูงจากเลือดเก่าได้ · <b>ปิด MTP</b> แจ้งธนาคารเลือดเมื่อเลือดหยุด เพื่อไม่ให้เลือดเสียทิ้ง</div>
+</section>
+
+<section id="spec" class="col">
+  <div class="sec-num">07</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>หลักการ</th></tr>
+    <tr><td><b>ธาลัสซีเมียชนิดพึ่งเลือด (TDT)</b> <span class="tag th">ไทย</span></td><td>High transfusion: <b>pre-transfusion Hb 9–10.5</b> ตามแนวทางไทย 2562 · <b>TIF 2021 ใช้ 9.5–10.5</b> (มีโรคหัวใจใช้เป้าสูงกว่า) (ไม่เกิน 14 หลังให้) · RBC 10–15 mL/kg (ผู้ใหญ่ 1–2 ยูนิต) ทุก 2–6 สัปดาห์ · ใช้ <b>LPRC/LDPRC</b> · antibody screen ทุกครั้ง · phenotype-matched (C, c, E, e, Mia) ถ้ามี antibody · เริ่มยาขับเหล็กเมื่อ ferritin &gt;1,000 หรือรับเลือด &gt;10 ครั้ง · ผู้มี HF/ซีดมาก ให้ช้า ≤5 mL/kg/ครั้ง ± furosemide · ดูหน้า <a href="../thalassemia/index.html">Thalassemia</a></td></tr>
+    <tr><td><b>ไข้เลือดออก</b> <span class="tag th">ไทย</span></td><td><b>ไม่ให้เกล็ดเลือดป้องกัน</b> แม้เกล็ดเลือด &lt;10k (AABB 2025 strong) · <b>Hct ลดลง + ช็อกไม่ดีขึ้นด้วยสารน้ำ = ให้คิดถึงเลือดออกภายใน</b> → ให้ PRC (หรือ whole blood) · FFP/cryo/platelet เฉพาะเลือดออกรุนแรงร่วม DIC · ดูหน้า <a href="../dhf/index.html">DHF</a></td></tr>
+    <tr><td><b>TTP</b></td><td>Plasma exchange ด่วน (ใช้ FFP หรือ cryo-removed plasma) · ไม่ให้เกล็ดเลือด ยกเว้นเลือดออกคุกคามชีวิต · ใส่สาย TPE ได้โดยไม่ต้องให้เกล็ดเลือด (ใช้ ultrasound, แพทย์ชำนาญ)</td></tr>
+    <tr><td><b>HIT</b></td><td>หยุด heparin ทุกชนิด · ไม่ให้เกล็ดเลือดป้องกัน (มักไม่เลือดออก แต่เสี่ยง thrombosis) · ให้เมื่อเลือดออกรุนแรงหรือหัตถการเสี่ยงสูง</td></tr>
+    <tr><td><b>Autoimmune hemolytic anemia</b></td><td>หา crossmatch ที่เข้ากันได้ยาก — <b>อย่าปฏิเสธการให้เลือดเมื่อจำเป็น</b> (ให้ "least incompatible" ช้าๆ ทีละยูนิต) · cold agglutinin: ใช้เครื่องอุ่นเลือด ให้คนไข้อุ่น</td></tr>
+    <tr><td>โรคไตเรื้อรัง/ผู้รอปลูกถ่ายไต</td><td>เลี่ยงการให้เลือดเพื่อลด HLA sensitization · ใช้ ESA + เหล็ก · ถ้าจำเป็นใช้ LDPRC</td></tr>
+    <tr><td>มะเร็ง/เคมีบำบัด</td><td>Hb &lt;7 (AABB conditional) · ผู้ป่วยนอกดูอาการและคุณภาพชีวิต · เกล็ดเลือดป้องกัน &lt;10k · ฉายรังสีเลือดในกลุ่มที่ระบุ (หัวข้อ 02)</td></tr>
+    <tr><td>Sickle cell disease</td><td>พบน้อยมากในไทย · มีเกณฑ์เฉพาะ (Hb เป้าไม่เกิน ~10 เพราะเลือดหนืด, exchange transfusion) — ปรึกษาโลหิตแพทย์</td></tr>
+  </table></div>
+</section>
+
+<section id="admin" class="col">
+  <div class="sec-num">08</div>
+  <h2>ก่อนให้เลือด และวิธีให้</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ก่อนให้</h4><ul><li><b>ข้อบ่งชี้ชัด</b> บันทึกเหตุผลและเป้าหมายในเวชระเบียน</li><li><b>คำยินยอม</b>: อธิบายประโยชน์ ความเสี่ยง ทางเลือก ตามแบบฟอร์ม รพ. (ฉุกเฉินคุกคามชีวิตให้ได้ก่อน แล้วแจ้งภายหลัง)</li><li><b>เจาะเลือด crossmatch</b>: ติดฉลากข้างเตียงทันที ทีละคน · ABO/Rh + <b>antibody screening</b> + crossmatch · ในไทย <b>anti-Mia</b> เป็น alloantibody ที่พบบ่อย ชุดคัดกรองจึงมีเซลล์ Mia+ <span class="tag th">ไทย</span></li><li>ผู้ที่รับเลือด/ตั้งครรภ์ภายใน 3 เดือน: ตัวอย่างใช้ได้ <b>≤72 ชม.</b></li><li>ตรวจสัญญาณชีพตั้งต้น · ประเมินความเสี่ยง <b>TACO</b> (อายุมาก HF CKD albumin ต่ำ น้ำเกิน)</li></ul></div>
+    <div class="card c-warn"><h4>ตรวจสอบข้างเตียง (สาเหตุหลักของ ABO incompatibility คือ "ผิดคน")</h4><ul><li>ถามชื่อ-นามสกุล วันเกิดจากผู้ป่วย เทียบ <b>ป้ายข้อมือ ↔ ใบขอ ↔ ฉลากถุง</b> (2 คน)</li><li>กรุ๊ป · เลขถุง · วันหมดอายุ · ถุงรั่ว สีผิดปกติ ฟอง/ลิ่ม (สงสัยแบคทีเรีย)</li><li>ห้ามติดฉลากล่วงหน้า · ห้ามให้หลายถุงหลายคนพร้อมกันโดยคนเดียว</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>หัวข้อ</th><th>แนวปฏิบัติ</th></tr>
+    <tr><td><b>ชุดให้เลือด</b></td><td>Blood administration set มี filter <b>170–260 µm</b> · เปลี่ยนชุดทุก ~12 ชม. หรือตามคู่มือ · เกล็ดเลือดใช้ชุดใหม่ ไม่ผ่านชุดที่ใช้ RBC แล้ว</td></tr>
+    <tr><td><b>สารน้ำร่วม</b></td><td><b>ใช้ได้แต่ NSS</b> · ห้าม D5W (เม็ดเลือดแดงแตก) · ห้าม Ringer's/สารที่มี Ca (จับ citrate → ลิ่มเลือดในสาย) · ห้ามผสมยาในถุงเลือด</td></tr>
+    <tr><td><b>อัตรา PRC</b></td><td><b>15 นาทีแรกช้าๆ</b> (~1–2 mL/นาที) อยู่ดูผู้ป่วย · แล้วให้ 1–2 ชม./ยูนิต · <b>ต้องเสร็จภายใน 4 ชม.</b> หลังออกจากตู้ · เสี่ยง TACO: ~1 mL/kg/ชม. ทีละยูนิต ± furosemide</td></tr>
+    <tr><td><b>เกล็ดเลือด · FFP · cryo</b></td><td>เกล็ดเลือด 1 dose ~30–60 นาที · FFP ~10–20 mL/kg/ชม. · cryo ให้เร็วได้ · ให้ทันทีที่ได้รับ ไม่แช่ตู้เย็น</td></tr>
+    <tr><td><b>สัญญาณชีพ</b></td><td>ก่อนเริ่ม (≤60 นาที) · <b>15 นาทีหลังเริ่ม</b> · สิ้นสุด และตามนโยบาย รพ. · ผู้ป่วยหมดสติ/ICU ดูถี่ขึ้น · แนะนำผู้ป่วยให้บอกทันทีถ้าหนาวสั่น หอบ คัน ปวดหลัง</td></tr>
+    <tr><td><b>อุ่นเลือด</b></td><td>เฉพาะให้เร็วมาก (&gt;50 mL/kg/ชม.), massive transfusion, cold agglutinin · ใช้เครื่องอุ่นที่ได้มาตรฐานเท่านั้น <b>ห้ามแช่น้ำร้อน/ไมโครเวฟ</b></td></tr>
+    <tr><td><b>Premedication</b></td><td>Paracetamol/antihistamine ก่อนให้ <b>ไม่แนะนำเป็น routine</b> (ไม่ลด FNHTR/allergic อย่างมีนัย และบดบังอาการเตือนของปฏิกิริยารุนแรง) · พิจารณารายที่มีปฏิกิริยาซ้ำ ร่วมกับใช้ LD/washed products</td></tr>
+  </table></div>
+</section>
+
+<section id="rx" class="col">
+  <div class="sec-num">09</div>
+  <h2>ปฏิกิริยาจากการให้เลือด</h2>
+  <div class="box warn"><b>ทุกปฏิกิริยาเฉียบพลัน — 5 ขั้นแรก</b>1) <b>หยุดให้เลือดทันที</b> 2) <b>คงเส้นเลือดด้วย NSS ชุดใหม่</b> 3) ประเมิน ABC สัญญาณชีพ SpO₂ 4) <b>ตรวจสอบชื่อผู้ป่วย ↔ ถุง ↔ ใบขอ</b> 5) <b>แจ้งธนาคารเลือด</b> ส่งถุงพร้อมชุดให้เลือด + เลือดผู้ป่วยใหม่ (EDTA + clotted) และปัสสาวะ · ยกเว้น: ไข้เล็กน้อยอย่างเดียว หรือผื่นลมพิษเล็กน้อยอย่างเดียว ที่สัญญาณชีพปกติ → ให้ต่อช้าๆ ได้ภายใต้การดูใกล้ชิด (BSH 2023)</div>
+  <div class="tbl"><table>
+    <tr><th>ปฏิกิริยา</th><th>เวลา</th><th>ลักษณะ</th><th>ทำทันที · ตรวจ</th></tr>
+    <tr><td><b>Febrile non-hemolytic (FNHTR)</b></td><td>ระหว่างให้–4 ชม.</td><td>ไข้ ≥38 °C และเพิ่ม ≥1 °C ± หนาวสั่น · สัญญาณชีพอื่นปกติ · พบบ่อยสุด (cytokine/anti-WBC)</td><td>Paracetamol · <b>ต้องแยก hemolysis/แบคทีเรียก่อน</b> · ไข้ ≥39 °C หรือเพิ่ม ≥2 °C หรือมีอาการอื่น = หยุดและสืบค้นแบบรุนแรง · เป็นซ้ำ → LPRC/LD</td></tr>
+    <tr><td><b>Allergic (เล็กน้อย)</b></td><td>ระหว่างให้–4 ชม.</td><td>ลมพิษ คัน ผื่นแดง ไม่มีอาการระบบอื่น</td><td>หยุดชั่วคราว · <b>chlorpheniramine 10 mg IV</b> · หายแล้วให้ต่อช้าๆ ได้</td></tr>
+    <tr><td><b>Anaphylaxis</b> (IgA deficiency + anti-IgA, haptoglobin deficiency)</td><td>มักนาทีแรกๆ</td><td>ความดันตก หลอดลมตีบ เสียงแหบ/stridor บวมปาก-หน้า ± ผื่น · ไม่มีไข้</td><td><b>Adrenaline 0.5 mg IM</b> (1 mg/mL 0.5 mL) ซ้ำทุก 5 นาที · O₂ · NSS bolus · ตรวจ IgA และ anti-IgA · ครั้งต่อไปใช้ <b>washed</b>/IgA-deficient donor · ดูหน้า <a href="../anaphylaxis/index.html">Anaphylaxis</a></td></tr>
+    <tr><td><b>Acute hemolytic (ABO incompatible)</b></td><td>นาที–24 ชม. (มักภายใน 15 นาที)</td><td>ไข้ หนาวสั่น <b>ปวดหลัง/เอว</b> แสบตามเส้น ความดันตก <b>ปัสสาวะสีแดง/ดำ</b> เลือดซึม (DIC) กระวนกระวาย "รู้สึกจะตาย" · ผู้ป่วยดมยา: ความดันตก + เลือดซึมจากแผล</td><td>หยุด · NSS เป้าปัสสาวะ &gt;1 mL/kg/ชม. · ตรวจ <b>DAT</b>, ABO ซ้ำ, CBC, bilirubin, LDH, haptoglobin, Cr, K, coag, ปัสสาวะ (hemoglobinuria) · รักษา shock/DIC/AKI · <b>ตรวจหาคนที่สองที่อาจได้ถุงสลับกัน</b></td></tr>
+    <tr><td><b>Bacterial contamination / sepsis</b></td><td>ระหว่างให้–ไม่กี่ชม.</td><td>ไข้สูง (มัก ≥39 °C) หนาวสั่นมาก ความดันตก ชีพจรเร็ว · <b>เกล็ดเลือดเสี่ยงสุด</b> (เก็บที่อุณหภูมิห้อง)</td><td>หยุด · <b>hemoculture ผู้ป่วย + เพาะเชื้อ/ย้อมถุง</b> · ยาฆ่าเชื้อกว้างทันที (เช่น ceftazidime/cefepime หรือ meropenem + vancomycin ตามบริบท) · ธนาคารเลือดเก็บถุงอื่นจากผู้บริจาคเดียวกัน · ดูหน้า <a href="../sepsis/index.html">Sepsis</a></td></tr>
+    <tr><td><b>TRALI</b></td><td><b>ภายใน 6 ชม.</b></td><td>หอบ hypoxemia (P/F ≤300) ปอดฝ้าขาวสองข้าง · ความดัน <b>ต่ำ</b> ± ไข้ · ไม่มีหลักฐานน้ำเกินเป็นสาเหตุหลัก · มักจาก plasma/platelet ของผู้บริจาคหญิงที่มีบุตร (anti-HLA/HNA)</td><td>หยุด · O₂/ventilation (lung-protective) · <b>ไม่ให้ furosemide</b> (อาจทำให้ความดันตกมากขึ้น) · ประคับประคอง ส่วนใหญ่ดีขึ้นใน 48–96 ชม. · แจ้งธนาคารเลือด (ตรวจ antibody ผู้บริจาค)</td></tr>
+    <tr><td><b>TACO</b></td><td><b>ภายใน 12 ชม.</b></td><td>หอบ น้ำท่วมปอด ความดัน <b>สูง</b> JVP สูง ชีพจรเร็ว สมดุลน้ำบวก · BNP/NT-proBNP สูง · ปัจจัย: อายุมาก HF CKD ให้เร็ว/หลายยูนิต</td><td>หยุด · นั่งตัวตรง · O₂ · <b>furosemide IV</b> · CXR · ครั้งต่อไปให้ช้า ทีละยูนิต ± diuretic · พบบ่อยและเป็นสาเหตุตายจากการให้เลือดอันดับต้นๆ (SHOT)</td></tr>
+    <tr><td>Hypotensive reaction</td><td>ระหว่างให้ (มัก &lt;1 ชม.)</td><td>SBP ลด ≥30 mmHg และ ≤80 อย่างเดียว ไม่มีอาการอื่น · สัมพันธ์ ACE inhibitor</td><td>หยุด · ประคับประคอง · แยก anaphylaxis/hemolysis/sepsis/TRALI ก่อน</td></tr>
+    <tr><td><b>Delayed hemolytic (DHTR)</b></td><td>1–28 วัน (มัก 3–14)</td><td>Hb ลด/ไม่ขึ้น ไข้ ดีซ่าน ปัสสาวะเข้ม · จาก anamnestic alloantibody (Kidd, Rh, Mia)</td><td>DAT · antibody screen/identify · LDH bilirubin · ครั้งต่อไปให้ antigen-negative · บันทึก antibody ให้ผู้ป่วยถือบัตร</td></tr>
+    <tr><td><b>TA-GVHD</b></td><td>2 วัน–6 สัปดาห์ (มัก 8–10 วัน)</td><td>ไข้ ผื่นแดง ท้องเสีย ตับอักเสบ <b>pancytopenia</b> · ตายเกือบทุกราย</td><td>ป้องกันด้วยเลือด <b>ฉายรังสี</b> ในกลุ่มเสี่ยง (โดยเฉพาะเลือดญาติ) · ส่งโลหิตแพทย์ด่วน</td></tr>
+    <tr><td><b>Post-transfusion purpura (PTP)</b></td><td>5–12 วัน</td><td>เกล็ดเลือดต่ำมากเฉียบพลัน + จ้ำเลือด · มักหญิงที่เคยตั้งครรภ์ (anti-HPA-1a)</td><td><b>IVIG 1 g/kg × 2 วัน</b> · เกล็ดเลือดทั่วไปไม่ช่วย (ใช้ HPA-negative ถ้าเลือดออก)</td></tr>
+    <tr><td>Iron overload · alloimmunization · การติดเชื้อทางเลือด</td><td>ระยะยาว</td><td>ผู้รับเลือดประจำ</td><td>ยาขับเหล็ก · LD products · ตรวจ HBV/HCV/HIV ตามนัด</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">นิยามเวลาและเกณฑ์ใช้ตาม ISBT haemovigilance (TACO 2018 revised, TRALI 2019 redefinition) และ BSH 2023 · ทุกปฏิกิริยาต้องรายงานธนาคารเลือดเพื่อระบบ hemovigilance ของ รพ. และศูนย์บริการโลหิตแห่งชาติ <span class="tag th">ไทย</span></p>
+</section>
+
+<section id="pbm" class="col">
+  <div class="sec-num">10</div>
+  <h2>Patient blood management และผู้ปฏิเสธเลือด</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>PBM — 3 เสาหลัก</h4><ul><li><b>1. เพิ่มเม็ดเลือดแดงของผู้ป่วยเอง</b>: ตรวจ Hb <b>4–8 สัปดาห์ก่อนผ่าตัดใหญ่</b> (เสียเลือดคาด &gt;500 mL) · ขาดเหล็ก → เหล็กกิน · <b>IV iron</b> ถ้าผ่าตัดภายใน ~6 สัปดาห์ กินไม่ได้/ไม่ดูดซึม (NICE NG24) · ขาด B12/folate ให้ทดแทน</li><li><b>2. ลดการเสียเลือด</b>: หยุด/จัดการยาต้านลิ่มเลือดก่อนผ่าตัด · <b>TXA</b> ในผ่าตัดที่คาดเสียเลือด &gt;500 mL · cell salvage · ลดการเจาะเลือดบ่อย (ใช้หลอดเล็ก)</li><li><b>3. ทนต่อภาวะซีด</b>: restrictive threshold · single unit · O₂ เพียงพอ</li></ul></div>
+    <div class="card c-acc"><h4>IV iron ที่ใช้ในไทย <span class="tag add">เสริม</span></h4><ul><li><b>Iron sucrose</b> 100–200 mg IV หยด ≥15–30 นาที · สูงสุด 200 mg/ครั้ง ได้สูงสุด 3 ครั้ง/สัปดาห์ · ให้จนครบ iron deficit</li><li><b>Ferric carboxymaltose</b> 15–20 mg/kg สูงสุด <b>1,000 mg/ครั้ง</b> (ไม่เกิน 1 ครั้ง/สัปดาห์) · อาจทำให้ฟอสเฟตต่ำ</li><li>Iron deficit (Ganzoni) ≈ น้ำหนัก (kg) × (Hb เป้า − Hb ปัจจุบัน) × 2.4 + 500 mg</li><li>เฝ้าระวัง hypersensitivity 30 นาที · ไม่ให้ช่วงติดเชื้อรุนแรง · ดูหน้า <a href="../anemia/index.html">Anemia</a></li></ul></div>
+  </div>
+  <div class="box note"><b>พยานพระยะโฮวา / ผู้ปฏิเสธเลือด</b>ผู้ใหญ่ที่มีความสามารถตัดสินใจ <b>มีสิทธิ์ปฏิเสธ</b> แม้จะเสียชีวิต — คุยเป็นส่วนตัว (ไม่มีญาติกดดัน) บันทึกการตัดสินใจและ advance directive · ถามรายละเอียดว่ารับอะไรได้ (บางคนรับ albumin, IVIG, cryo, factor concentrate, cell salvage แบบวงจรต่อเนื่อง) · วางแผนตั้งแต่ก่อนผ่าตัด: IV iron, ESA, vitamin K, TXA, หยุดเลือดเร็ว ลดการเจาะเลือด · ผู้ป่วยเด็กหรือผู้ไม่มีความสามารถตัดสินใจในภาวะฉุกเฉิน → ปรึกษาผู้บริหาร/ฝ่ายกฎหมายของ รพ. ตามแนวปฏิบัติ</div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง: จะให้ส่วนประกอบเลือดอะไร</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>คิดจะให้เลือด</b>เลือดออกอยู่ไหม · hemodynamic · ปัญหาหลักคืออะไร</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เลือดออกมาก/ช็อก?</b>shock index ≥1 · ABC ≥2</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>MTP 1:1:1</b>TXA ภายใน 3 ชม. · Ca · อุ่นเลือด · หยุดเลือดที่ต้นเหตุ</div></div>
+        <div class="arm"><span class="lab">ไม่</span><div class="node q"><b>ปัญหาหลัก?</b></div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ซีด</span><div class="node dx hypo"><b>RBC ตามเกณฑ์ Hb</b>&lt;7 · ผ่าตัดกระดูก/CVD &lt;8 · AMI &lt;10 · TDT pre-Hb 9–10.5 (TIF 9.5–10.5) · ทีละ 1 ยูนิต</div></div>
+        <div class="arm"><span class="lab">เกล็ดเลือดต่ำ</span><div class="node dx green"><b>ตามสถานการณ์</b>ป้องกัน &lt;10 · LP &lt;20 · ผ่าตัด &lt;50 · สมอง &lt;100 · dengue/TTP/HIT ไม่ให้ป้องกัน</div></div>
+        <div class="arm"><span class="lab">Coag ผิดปกติ</span><div class="node dx eu"><b>เลือดออก?</b>FFP 10–15 mL/kg · fibrinogen &lt;1.5 → cryo 1 u/10 kg · warfarin → PCC + vit K</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ระหว่างให้</b>ตรวจชื่อ-ถุง · NSS อย่างเดียว · 15 นาทีแรกช้าๆ · เสร็จใน 4 ชม. · มีอาการ → หยุด + แจ้งธนาคารเลือด</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ปริมาณในถุงจริงต่างกันตามผู้ผลิต — ยึดฉลากถุงและนโยบายธนาคารเลือดของ รพ.</p>
+  </div>
+
+  <div class="tool plan" id="tRbc" style="margin-top:12px">
+    <h3>1) ให้เม็ดเลือดแดงไหม · กี่ยูนิต · Hb จะขึ้นเท่าไร</h3>
+    <div class="fields">
+      <label class="f">Hb ปัจจุบัน (g/dL)<input type="number" step="0.1" id="rHb" value="6.6"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="rWt" value="55"></label>
+      <label class="f">เพศ<select id="rSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">สถานการณ์<select id="rSc">
+        <option value="gen">ผู้ป่วยในทั่วไป / ICU</option>
+        <option value="cvd">มีโรคหัวใจและหลอดเลือดอยู่เดิม</option>
+        <option value="ortho">ผ่าตัดกระดูก</option>
+        <option value="cs">ผ่าตัดหัวใจ</option>
+        <option value="ami">Acute MI</option>
+        <option value="ugib">UGIB / LGIB (non-variceal)</option>
+        <option value="var">Variceal bleeding</option>
+        <option value="onc">มะเร็ง/โรคเลือด</option>
+        <option value="tdt">ธาลัสซีเมียชนิดพึ่งเลือด (TDT)</option>
+        <option value="chr">ซีดเรื้อรังผู้ป่วยนอก (ขาดเหล็ก/CKD)</option>
+      </select></label>
+      <label class="f">ชนิดเลือด<select id="rProd"><option value="45">PRC (~45 g Hb)</option><option value="43">LPRC (~43 g)</option><option value="40">LDPRC (~40 g)</option></select></label>
+      <label class="f">Hb เป้าหมาย (ไม่บังคับ)<input type="number" step="0.1" id="rTg" placeholder="เช่น 8"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="rSym"> มีอาการจากซีด (เจ็บอก หอบขณะพัก หน้ามืด HR เร็วไม่ตอบสนองสารน้ำ)</label>
+      <label><input type="checkbox" id="rBleed"> เลือดออกต่อเนื่อง / hemodynamic ไม่คงที่</label>
+      <label><input type="checkbox" id="rTaco"> เสี่ยง TACO (อายุ &gt;70, HF, CKD, น้ำเกิน)</label>
+      <label><input type="checkbox" id="rFix"> มีสาเหตุที่แก้ได้ (ขาดเหล็ก B12 folate) และไม่มีอาการ</label>
+    </div>
+    <div class="out" id="rbcOut"></div>
+  </div>
+
+  <div class="tool" id="tPlt" style="margin-top:12px">
+    <h3>2) เกล็ดเลือด: ให้ไหม · ขนาด · ค่าที่คาด · CCI</h3>
+    <div class="fields">
+      <label class="f">เกล็ดเลือด (×10³/µL · ค่า &gt;1,000 ถือเป็น /µL)<input type="number" id="pCt" value="8"></label>
+      <label class="f">สถานการณ์<select id="pSc">
+        <option value="pro">ป้องกัน: เคมีบำบัด/allo-HSCT ไม่มีเลือดออก</option>
+        <option value="apl">Aplastic anemia เรื้อรัง/auto-HSCT ไม่มีเลือดออก</option>
+        <option value="con">Consumptive/ป่วยวิกฤต/DIC ไม่มีเลือดออกรุนแรง</option>
+        <option value="den">ไข้เลือดออก ไม่มีเลือดออกรุนแรง</option>
+        <option value="cvc">ใส่ central line (ตำแหน่งกดได้)</option>
+        <option value="lp">Lumbar puncture</option>
+        <option value="irl">IR ความเสี่ยงต่ำ</option>
+        <option value="irh">IR ความเสี่ยงสูง</option>
+        <option value="sx">ผ่าตัดใหญ่ / เลือดออกมาก</option>
+        <option value="neur">Spinal/epidural anesthesia</option>
+        <option value="cns">ผ่าตัดสมอง/ตาส่วนหลัง · ICH/TBI มีเลือดออก</option>
+        <option value="ttp">TTP</option>
+        <option value="hit">HIT</option>
+        <option value="itp">ITP</option>
+      </select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" id="pWt" value="60"></label>
+      <label class="f">ส่วนสูง (cm)<input type="number" id="pHt" value="165"></label>
+      <label class="f">ชนิดที่จะให้<select id="pProd"><option value="sdp">SDP 1 ถุง (~3×10¹¹)</option><option value="pool">Pooled PC 1 ถุง (~3×10¹¹)</option><option value="rd">Random PC (ระบุจำนวนยูนิต)</option></select></label>
+      <label class="f">จำนวน random PC (ยูนิต)<input type="number" id="pN" placeholder="เช่น 6"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pFev"> ไข้/sepsis/coagulopathy ร่วม</label>
+      <label><input type="checkbox" id="pBl"> มีเลือดออกรุนแรง/คุกคามชีวิต</label>
+      <label><input type="checkbox" id="pSpl"> ม้ามโต</label>
+    </div>
+    <div class="out" id="pltOut"></div>
+    <h3 style="margin-top:14px">CCI (corrected count increment)</h3>
+    <div class="fields">
+      <label class="f">ก่อนให้ (×10³/µL)<input type="number" id="cPre" value="6"></label>
+      <label class="f">หลังให้ 10–60 นาที (×10³/µL)<input type="number" id="cPost" value="12"></label>
+      <label class="f">หลังให้ 18–24 ชม. (ไม่บังคับ)<input type="number" id="cP24" placeholder="×10³/µL"></label>
+      <label class="f">จำนวนเกล็ดเลือดที่ให้ (×10¹¹)<input type="number" step="0.1" id="cDose" value="3"></label>
+    </div>
+    <div class="out" id="cciOut"></div>
+  </div>
+
+  <div class="tool" id="tPl" style="margin-top:12px">
+    <h3>3) FFP · cryoprecipitate · PCC</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" id="fWt" value="60"></label>
+      <label class="f">Hct (%)<input type="number" id="fHct" value="30"></label>
+      <label class="f">Fibrinogen<input type="number" step="0.1" id="fFib" value="1.1"></label>
+      <label class="f">หน่วย fibrinogen<select id="fFu"><option value="g">g/L</option><option value="mg">mg/dL</option></select></label>
+      <label class="f">INR<input type="number" step="0.1" id="fInr" value="2.4"></label>
+      <label class="f">Fibrinogen เป้าหมาย<select id="fTg"><option value="1.5">1.5 g/L (ทั่วไป)</option><option value="2">2.0 g/L (สูติกรรม/PPH)</option></select></label>
+      <label class="f">FFP ต่อถุง (mL)<input type="number" id="fVol" value="220"></label>
+      <label class="f">Fibrinogen ต่อ cryo 1 ยูนิต<select id="fCm"><option value="200">~200 mg</option><option value="150">150 mg (ต่ำสุด)</option><option value="250">250 mg</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fBl" checked> มีเลือดออกที่สำคัญ</label>
+      <label><input type="checkbox" id="fPx"> จะทำหัตถการเสี่ยงสูง</label>
+      <label><input type="checkbox" id="fWar"> ได้ warfarin</label>
+      <label><input type="checkbox" id="fIch"> ICH / เลือดออกคุกคามชีวิต</label>
+      <label><input type="checkbox" id="fLiv"> ตับแข็ง</label>
+      <label><input type="checkbox" id="fPcc"> รพ. มี 4F-PCC</label>
+    </div>
+    <div class="out" id="plOut"></div>
+  </div>
+
+  <div class="tool" id="tRx" style="margin-top:12px">
+    <h3>4) ปฏิกิริยาจากการให้เลือด: น่าจะเป็นอะไร · ทำอะไรก่อน</h3>
+    <div class="fields">
+      <label class="f">เริ่มมีอาการเมื่อไร<select id="xT">
+        <option value="t15">ภายใน 15 นาทีแรก</option>
+        <option value="t4">ระหว่างให้ – 4 ชม.</option>
+        <option value="t6">4–6 ชม.</option>
+        <option value="t12">6–12 ชม.</option>
+        <option value="t24">12–24 ชม.</option>
+        <option value="d14">1–14 วัน</option>
+        <option value="d42">2–6 สัปดาห์</option>
+      </select></label>
+      <label class="f">ส่วนประกอบที่ได้<select id="xP"><option value="rbc">เม็ดเลือดแดง</option><option value="plt">เกล็ดเลือด</option><option value="pl">FFP/cryo</option></select></label>
+      <label class="f">อุณหภูมิสูงสุด (°C)<input type="number" step="0.1" id="xTemp" placeholder="ไม่บังคับ"></label>
+      <label class="f">อุณหภูมิก่อนให้ (°C)<input type="number" step="0.1" id="xT0" placeholder="ไม่บังคับ"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="xFev"> ไข้ ≥38 °C / หนาวสั่น</label>
+      <label><input type="checkbox" id="xUrt"> ลมพิษ/คัน</label>
+      <label><input type="checkbox" id="xAng"> หลอดลมตีบ/stridor/บวมปาก-หน้า</label>
+      <label><input type="checkbox" id="xLow"> ความดันตก</label>
+      <label><input type="checkbox" id="xHigh"> ความดันสูงขึ้น</label>
+      <label><input type="checkbox" id="xDys"> หอบ/SpO₂ ลด</label>
+      <label><input type="checkbox" id="xFl"> JVP สูง/สมดุลน้ำบวก/ขาบวม</label>
+      <label><input type="checkbox" id="xBack"> ปวดหลัง/เอว · แสบตามเส้น</label>
+      <label><input type="checkbox" id="xUr"> ปัสสาวะแดง/ดำ</label>
+      <label><input type="checkbox" id="xOoz"> เลือดซึมตามแผล/เส้น (DIC)</label>
+      <label><input type="checkbox" id="xJau"> ดีซ่าน / Hb ลดลงหรือไม่ขึ้น</label>
+      <label><input type="checkbox" id="xPur"> จ้ำเลือด เกล็ดเลือดต่ำมาก</label>
+      <label><input type="checkbox" id="xGvh"> ผื่น + ท้องเสีย + ตับอักเสบ/pancytopenia</label>
+      <label><input type="checkbox" id="xAce"> ใช้ ACE inhibitor</label>
+    </div>
+    <div class="out" id="rxOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>"Why most patients need one unit"</b> · ให้ 1 ยูนิต แล้วถามตัวเองใหม่</div></div>
+    <div class="pearl"><div><b>Hb &lt;7 ทั่วไป · &lt;8 โรคหัวใจ/ผ่าตัดกระดูก · &lt;10 ใน AMI</b></div></div>
+    <div class="pearl"><div><b>ขาดเหล็กแต่ไม่มีอาการ = ให้เหล็ก ไม่ใช่ให้เลือด</b></div></div>
+    <div class="pearl"><div><b>ไข้เลือดออก: ไม่ให้เกล็ดเลือดป้องกัน</b> · Hct ตก + ช็อก = เลือดออกภายใน → ให้เลือด</div></div>
+    <div class="pearl"><div><b>TTP/HIT: เกล็ดเลือด "เติมเชื้อเพลิง"</b> ให้เฉพาะเลือดออกคุกคามชีวิต</div></div>
+    <div class="pearl"><div><b>INR สูงไม่มีเลือดออก ไม่ต้องให้ FFP</b> · warfarin + เลือดออก → PCC + vit K</div></div>
+    <div class="pearl"><div><b>Cryo 1 ยูนิต/10 kg</b> → fibrinogen ขึ้น ~0.5 g/L</div></div>
+    <div class="pearl"><div><b>MTP: 1:1:1 · TXA ภายใน 3 ชม. · Ca · อุ่น</b></div></div>
+    <div class="pearl"><div><b>NSS เท่านั้นในสายเลือด</b> · เสร็จใน 4 ชม.</div></div>
+    <div class="pearl"><div><b>15 นาทีแรกอยู่ดูผู้ป่วย</b> — ABO, anaphylaxis, sepsis มักเกิดตอนนี้</div></div>
+    <div class="pearl"><div><b>หอบ + ความดันสูง = TACO → furosemide</b> · หอบ + ความดันต่ำ = TRALI → ไม่ให้ furosemide</div></div>
+    <div class="pearl"><div><b>เลือดจากญาติต้องฉายรังสี</b> (TA-GVHD)</div></div>
+    <div class="pearl"><div><b>ไม่ต้อง premed ทุกราย</b></div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../anemia/index.html">Anemia →</a> · <a href="../thalassemia/index.html">Thalassemia →</a> · <a href="../thrombocytopenia/index.html">Thrombocytopenia →</a> · <a href="../dhf/index.html">DHF →</a> · <a href="../ugib/index.html">UGIB →</a> · <a href="../lgib/index.html">LGIB →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../anaphylaxis/index.html">Anaphylaxis →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Carson JL, Stanworth SJ, Guyatt G, et al. Red blood cell transfusion: 2023 AABB international guidelines. JAMA 2023;330:1892–902 · 2) Metcalf RA, Nahirniak S, Guyatt G, et al. Platelet transfusion: 2025 AABB and ICTMG international clinical practice guidelines. JAMA 2025;334:606–17 · 3) Pagano MB, Stanworth SJ, Dennis J, et al. Red cell transfusion in acute myocardial infarction: AABB international clinical practice guidelines. Ann Intern Med 2025;178:1469–77 · 4) Carson JL, Brooks MM, Hébert PC, et al. Restrictive or liberal transfusion strategy in myocardial infarction and anemia (MINT). N Engl J Med 2023;389:2446–56 · 5) Rao SV, O'Donoghue ML, Ruel M, et al. 2025 ACC/AHA/ACEP/NAEMSP/SCAI guideline for the management of patients with acute coronary syndromes. J Am Coll Cardiol 2025;85:2135–237 · 6) Mazer CD, Whitlock RP, Fergusson DA, et al. Restrictive or liberal red-cell transfusion for cardiac surgery (TRICS III). N Engl J Med 2017;377:2133–44 · 7) Estcourt LJ, Birchall J, Allard S, et al. Guidelines for the use of platelet transfusions. Br J Haematol 2017;176:365–94 · 8) Green L, Bolton-Maggs P, Beattie C, et al. BSH guidelines on the spectrum of fresh frozen plasma and cryoprecipitate products. Br J Haematol 2018;181:54–67 · 9) Foukaneli T, Kerr P, Bolton-Maggs PHB, et al. Guidelines on the use of irradiated blood components. Br J Haematol 2020;191:704–24 · 10) Soutar R, McSporran W, Tomlinson T, et al. Guideline on the investigation and management of acute transfusion reactions. Br J Haematol 2023;201:832–44 · 11) Robinson S, Harris A, Atkinson S, et al. The administration of blood components: a British Society for Haematology guideline. Transfus Med 2018;28:3–21 · 12) National Institute for Health and Care Excellence. Blood transfusion (NG24). 2015 · 13) Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio (PROPPR). JAMA 2015;313:471–82 · 14) CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet 2010;376:23–32 · 15) WOMAN Trial Collaborators. Effect of early tranexamic acid administration on mortality, hysterectomy, and other morbidities in women with post-partum haemorrhage. Lancet 2017;389:2105–16 · 16) Nunez TC, Voskresensky IV, Dossett LA, et al. Early prediction of massive transfusion in trauma: simple as ABC? J Trauma 2009;66:346–52 · 17) Wiersum-Osselton JC, Whitaker B, Grey S, et al. Revised international surveillance case definition of transfusion-associated circulatory overload. Lancet Haematol 2019;6:e350–8 · 18) Vlaar APJ, Toy P, Fung M, et al. A consensus redefinition of transfusion-related acute lung injury. Transfusion 2019;59:2465–76 · 19) Laine L, Barkun AN, Saltzman JR, et al. ACG clinical guideline: upper gastrointestinal and ulcer bleeding. Am J Gastroenterol 2021;116:899–917 · 20) Tomaselli GF, Mahaffey KW, Cuker A, et al. 2020 ACC expert consensus decision pathway on management of bleeding in patients on oral anticoagulants. J Am Coll Cardiol 2020;76:594–622 · 21) ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย. คู่มือการใช้โลหิตและส่วนประกอบโลหิตอย่างเหมาะสม พิมพ์ครั้งที่ 2. 2566 · 22) ภาควิชาเวชศาสตร์การธนาคารเลือด คณะแพทยศาสตร์ศิริราชพยาบาล. คู่มือการขอรับบริการ (TM-QM-C-001-12) 2565 — ตารางส่วนประกอบโลหิต · 23) สมาคมโลหิตวิทยาแห่งประเทศไทย. แนวทางเวชปฏิบัติสำหรับการรักษาภาวะโลหิตจางและธาลัสซีเมีย พ.ศ. 2562 · 24) Cappellini MD, Farmakis D, Porter J, Taher A, eds. 2021 Guidelines for the management of transfusion dependent thalassaemia (TDT). 4th ed. Nicosia: Thalassaemia International Federation; 2021<br>
+  <span class="tag add">เสริม</span> = ข้อมูลเสริมนอกแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag up">ใหม่</span> = เปลี่ยนในฉบับล่าสุด · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','txView');
+mountWalker({
+ start:{q:'ปัญหาหลักคืออะไร?',o:[['เลือดออกมาก / ช็อก','mtp','shock index ≥1 · ABC ≥2'],['ซีด (Hb ต่ำ)','rbc'],['เกล็ดเลือดต่ำ','plt'],['INR/aPTT ยาว · fibrinogen ต่ำ','coag'],['มีอาการระหว่าง/หลังให้เลือด','rx']]},
+ mtp:{leaf:true,cls:'danger',t:'Massive transfusion protocol',b:'เรียก MTP · เลือด O ไม่ crossmatch ระหว่างรอ · <b>RBC:FFP:platelet ≈ 1:1:1</b> · <b>TXA 1 g IV ภายใน 3 ชม.</b> แล้ว 1 g ใน 8 ชม. (trauma) · ตรวจ iCa ให้ Ca ถ้า &lt;1.1 · อุ่นเลือด · cryo เมื่อ fibrinogen &lt;1.5 (PPH &lt;2) · <b>หยุดเลือดที่ต้นเหตุ</b> · ปิด MTP เมื่อเลือดหยุด',next:['วิธีให้และเฝ้าระวัง','give']},
+ rbc:{q:'ผู้ป่วยกลุ่มไหน? (hemodynamic คงที่)',o:[['ผู้ป่วยในทั่วไป / ICU / มะเร็ง / UGIB','r7'],['โรคหัวใจเดิม / ผ่าตัดกระดูก','r8'],['Acute MI','r10'],['ธาลัสซีเมียชนิดพึ่งเลือด','rtdt'],['ซีดเรื้อรัง ไม่มีอาการ (ขาดเหล็ก/CKD)','rfix']]},
+ r7:{leaf:true,cls:'ok',t:'ให้เมื่อ Hb &lt;7',b:'AABB 2023 strong · ผ่าตัดหัวใจใช้ &lt;7.5 · variceal bleeding เป้า 7–8 · ให้ <b>1 ยูนิต</b> แล้วประเมินอาการ + Hb ซ้ำ · มีอาการจากซีดชัดเจนพิจารณาได้แม้ Hb สูงกว่าเกณฑ์เล็กน้อย',next:['วิธีให้และเฝ้าระวัง','give']},
+ r8:{leaf:true,cls:'ok',t:'ให้เมื่อ Hb &lt;8',b:'AABB 2023 (ผ่าตัดกระดูก, โรคหัวใจและหลอดเลือดเดิม) · ทีละ 1 ยูนิต · เสี่ยง TACO ให้ช้า ~1 mL/kg/ชม.',next:['วิธีให้และเฝ้าระวัง','give']},
+ r10:{leaf:true,cls:'warn',t:'AMI: ให้เมื่อ Hb &lt;10',b:'AABB 2025 (conditional) · ACC/AHA 2025 (2b) · ตาม MINT · ให้ทีละยูนิต ดูน้ำเกินอย่างใกล้ชิด ± furosemide · ใช้เฉพาะ MI ระยะเฉียบพลัน',next:['วิธีให้และเฝ้าระวัง','give']},
+ rtdt:{leaf:true,cls:'ok',t:'TDT: pre-transfusion Hb 9–10.5 (ไทย) · 9.5–10.5 (TIF 2021)',b:'มีโรคหัวใจ/HF ใช้เป้าสูงขึ้น · LPRC/LDPRC 10–15 mL/kg (ผู้ใหญ่ 1–2 ยูนิต) ทุก 2–6 สัปดาห์ · Hb หลังให้ไม่เกิน 14 · antibody screen ทุกครั้ง · ยาขับเหล็กเมื่อ ferritin &gt;1,000 · ดูหน้า Thalassemia',next:['วิธีให้และเฝ้าระวัง','give']},
+ rfix:{leaf:true,cls:'ok',t:'รักษาสาเหตุ',b:'ขาดเหล็ก → เหล็กกิน หรือ <b>IV iron</b> (กินไม่ได้/จะผ่าตัดใน 6 สัปดาห์) · CKD → ESA + เหล็ก · B12/folate ทดแทน · ให้เลือดเฉพาะมีอาการหรือ Hb ต่ำมากจนอันตราย'},
+ plt:{q:'สถานการณ์?',o:[['ไข้เลือดออก','pden'],['TTP / HIT / ITP','pavoid'],['ไขกระดูกไม่สร้าง หรือป่วยวิกฤต ไม่มีเลือดออก','p10'],['จะทำหัตถการ','pproc'],['มีเลือดออกรุนแรง','pbleed']]},
+ pden:{leaf:true,cls:'warn',t:'ไม่ให้เกล็ดเลือดป้องกัน',b:'AABB 2025 strong ไม่ว่าเกล็ดเลือดเท่าไร · Hct ลด + ช็อกไม่ดีขึ้น = เลือดออกภายใน → PRC/whole blood · เกล็ดเลือด/FFP/cryo เฉพาะเลือดออกรุนแรง · ดูหน้า DHF'},
+ pavoid:{leaf:true,cls:'danger',t:'หลีกเลี่ยงการให้เกล็ดเลือด',b:'<b>TTP</b>: plasma exchange ด่วน · <b>HIT</b>: หยุด heparin ให้ argatroban/fondaparinux/DOAC · <b>ITP</b>: steroid ± IVIG · ให้เกล็ดเลือดเฉพาะเลือดออกคุกคามชีวิต (ITP ให้ร่วม IVIG + steroid)'},
+ p10:{leaf:true,cls:'ok',t:'ให้เมื่อ &lt;10×10³/µL',b:'เคมีบำบัด/allo-HSCT (strong) · consumptive ไม่มีเลือดออก (conditional) · aplastic anemia เรื้อรัง/auto-HSCT: ไม่ให้ป้องกัน · 1 adult dose (SDP/pooled 1 ถุง หรือ random 1 ยูนิต/10 kg)',next:['วิธีให้และเฝ้าระวัง','give']},
+ pproc:{q:'หัตถการอะไร?',o:[['Central line (กดได้)','pcvc'],['Lumbar puncture','plp'],['ผ่าตัดใหญ่ / IR เสี่ยงสูง','psx'],['ผ่าตัดสมอง/ตาส่วนหลัง · spinal/epidural','pcns']]},
+ pcvc:{leaf:true,cls:'ok',t:'CVC: ให้เมื่อ &lt;10',b:'AABB 2025 (ใช้ ultrasound ตำแหน่งกดได้) · BSH 2017 ใช้ &lt;20',next:['วิธีให้และเฝ้าระวัง','give']},
+ plp:{leaf:true,cls:'ok',t:'LP: ให้เมื่อ &lt;20',b:'AABB 2025 strong (spinal hematoma พบน้อยมาก) · BSH 2017 ใช้ &lt;40',next:['วิธีให้และเฝ้าระวัง','give']},
+ psx:{leaf:true,cls:'ok',t:'ให้เมื่อ &lt;50',b:'ผ่าตัดใหญ่ (non-neuraxial) และ IR ความเสี่ยงสูง · IR ความเสี่ยงต่ำใช้ &lt;20 · ตรวจนับหลังให้ก่อนเริ่มหัตถการ',next:['วิธีให้และเฝ้าระวัง','give']},
+ pcns:{leaf:true,cls:'warn',t:'เกณฑ์สูง',b:'ผ่าตัดสมอง/ตาส่วนหลัง <b>&lt;100</b> · spinal/epidural <b>≥80</b> (สูติกรรมมัก ≥70) · ตามแนวทาง BSH/วิสัญญี',next:['วิธีให้และเฝ้าระวัง','give']},
+ pbleed:{leaf:true,cls:'danger',t:'เลือดออกรุนแรง',b:'รักษาเกล็ดเลือด <b>&gt;50</b> (ICH/TBI/สมอง <b>&gt;100</b>) · ICH ที่ไม่ผ่าตัดและเกล็ดเลือด &gt;100 แม้กิน antiplatelet: ไม่ให้ · massive bleeding → MTP',next:['วิธีให้และเฝ้าระวัง','give']},
+ coag:{q:'มีเลือดออก หรือจะทำหัตถการเสี่ยงสูง?',o:[['ไม่','cno'],['ใช่','cwhy']]},
+ cno:{leaf:true,cls:'ok',t:'ไม่ต้องให้ FFP',b:'INR สูงอย่างเดียวไม่ใช่ข้อบ่งชี้ · warfarin INR &gt;10 ไม่มีเลือดออก: หยุดยา + vitamin K กิน · ตับแข็ง: INR ไม่บอกความเสี่ยงเลือดออก'},
+ cwhy:{q:'สาเหตุ?',o:[['Warfarin','cwar'],['DOAC','cdoac'],['DIC / โรคตับ / massive transfusion','cffp']]},
+ cwar:{leaf:true,cls:'danger',t:'Warfarin + เลือดออกรุนแรง',b:'<b>4F-PCC</b> 25/35/50 U/kg ตาม INR 2–4/4–6/&gt;6 (หรือ fixed 1,000–1,500 U) + <b>vitamin K 5–10 mg IV ช้าๆ</b> · ไม่มี PCC → FFP 15 mL/kg',next:['วิธีให้และเฝ้าระวัง','give']},
+ cdoac:{leaf:true,cls:'danger',t:'DOAC + เลือดออกรุนแรง',b:'Dabigatran → idarucizumab 5 g IV · anti-Xa → 4F-PCC 50 U/kg (andexanet ถอนจากตลาดสหรัฐฯ ธ.ค. 2025) · FFP ได้ผลน้อย · ดูหน้า Thrombocytopenia'},
+ cffp:{leaf:true,cls:'warn',t:'FFP + cryo',b:'FFP <b>10–15 mL/kg</b> เมื่อ PT/aPTT &gt;1.5 เท่า · fibrinogen &lt;1.5 g/L → <b>cryo 1 ยูนิต/10 kg</b> · เกล็ดเลือด &gt;50 · รักษาสาเหตุ (sepsis, คลอด, มะเร็ง)',next:['วิธีให้และเฝ้าระวัง','give']},
+ rx:{q:'อาการเด่น?',o:[['ไข้/หนาวสั่นอย่างเดียว สัญญาณชีพอื่นปกติ','rxf'],['ลมพิษ/คันอย่างเดียว','rxa'],['ความดันตก ± หลอดลมตีบ/ปวดหลัง/ไข้','rxs'],['หอบ / SpO₂ ลด','rxd'],['อาการหลังให้เลือดหลายวัน','rxl']]},
+ rxf:{leaf:true,cls:'warn',t:'น่าจะ FNHTR — แต่ต้องแยกก่อน',b:'หยุดเลือด · ตรวจชื่อ-ถุง · paracetamol · ไข้ &lt;39 และเพิ่ม &lt;2 °C ไม่มีอาการอื่น → ให้ต่อช้าๆ ได้ · ไข้ ≥39 หรือเพิ่ม ≥2 °C/หนาวสั่นมาก → สืบค้น hemolysis + bacterial (DAT, hemoculture ผู้ป่วยและถุง) · ซ้ำบ่อย → LPRC/LD'},
+ rxa:{leaf:true,cls:'ok',t:'Allergic เล็กน้อย',b:'หยุดชั่วคราว · chlorpheniramine 10 mg IV · หายแล้วให้ต่อช้าๆ ได้ · ถ้ามีหลอดลมตีบ/ความดันตก = anaphylaxis'},
+ rxs:{q:'ลักษณะร่วม?',o:[['ผื่น/บวม/wheeze ไม่มีไข้','rxan'],['ไข้สูง หนาวสั่น ปวดหลัง ปัสสาวะแดง เลือดซึม','rxhem'],['ความดันตกอย่างเดียว (ใช้ ACE inhibitor)','rxhyp']]},
+ rxan:{leaf:true,cls:'danger',t:'Anaphylaxis',b:'หยุดเลือด · <b>adrenaline 0.5 mg IM</b> ซ้ำทุก 5 นาที · O₂ · NSS bolus · ตรวจ IgA/anti-IgA · ครั้งต่อไปใช้ washed/IgA-deficient donor'},
+ rxhem:{leaf:true,cls:'danger',t:'Acute hemolytic (ABO) หรือ bacterial sepsis',b:'หยุดเลือด คงเส้นด้วย NSS · <b>ตรวจชื่อ-ถุงทันที</b> (และผู้ป่วยอีกคนที่อาจได้ถุงสลับ) · แจ้งธนาคารเลือด ส่งถุง · DAT, ABO ซ้ำ, CBC, LDH, bilirubin, haptoglobin, coag, Cr, K, UA · <b>hemoculture ผู้ป่วย + ถุง</b> → ยาฆ่าเชื้อกว้าง · NSS รักษาปัสสาวะ &gt;1 mL/kg/ชม. · รักษา DIC/AKI'},
+ rxhyp:{leaf:true,cls:'warn',t:'Hypotensive reaction',b:'หยุด · ยกขา · NSS · ต้องแยก anaphylaxis, hemolysis, sepsis, TRALI ก่อนเสมอ · มักดีขึ้นเร็วเมื่อหยุด'},
+ rxd:{q:'ความดันและสมดุลน้ำ?',o:[['ความดันสูง/JVP สูง/น้ำเกิน (ภายใน 12 ชม.)','rxtaco'],['ความดันต่ำ ± ไข้ ไม่มีน้ำเกิน (ภายใน 6 ชม.)','rxtrali']]},
+ rxtaco:{leaf:true,cls:'warn',t:'TACO',b:'หยุด · นั่งตัวตรง · O₂ · <b>furosemide IV</b> · CXR, BNP · ครั้งต่อไปให้ช้า ทีละยูนิต ± diuretic'},
+ rxtrali:{leaf:true,cls:'danger',t:'TRALI',b:'หยุด · O₂/ventilation แบบ lung-protective · <b>ไม่ให้ furosemide</b> · ประคับประคองความดัน · แจ้งธนาคารเลือด (ตรวจ antibody ผู้บริจาค)'},
+ rxl:{q:'อาการหลัก?',o:[['ดีซ่าน Hb ลด/ไม่ขึ้น (1–28 วัน)','dhtr'],['จ้ำเลือด เกล็ดเลือดต่ำมาก (5–12 วัน)','ptp'],['ผื่น ท้องเสีย ตับอักเสบ pancytopenia','gvhd']]},
+ dhtr:{leaf:true,cls:'warn',t:'Delayed hemolytic',b:'DAT · antibody identification · LDH, bilirubin · ครั้งต่อไปให้ antigen-negative · ให้บัตรบันทึก antibody'},
+ ptp:{leaf:true,cls:'danger',t:'Post-transfusion purpura',b:'<b>IVIG 1 g/kg × 2 วัน</b> · ตรวจ anti-HPA-1a · เกล็ดเลือดทั่วไปช่วยไม่ได้'},
+ gvhd:{leaf:true,cls:'danger',t:'TA-GVHD',b:'ตายเกือบทุกราย · ปรึกษาโลหิตแพทย์ด่วน · ป้องกันด้วยเลือดฉายรังสี (เลือดญาติ, Hodgkin, purine analogue, HSCT, ภูมิคุ้มกันบกพร่องแต่กำเนิด)'},
+ give:{leaf:true,cls:'ok',t:'วิธีให้และเฝ้าระวัง',b:'คำยินยอม · ตรวจชื่อ ↔ ป้ายข้อมือ ↔ ฉลากถุง (2 คน) · ชุดให้เลือดมี filter 170–260 µm · <b>NSS เท่านั้น</b> · 15 นาทีแรกช้าๆ อยู่ดู · สัญญาณชีพก่อน, 15 นาที, สิ้นสุด · RBC เสร็จใน 4 ชม. · ไม่ premed routine · มีอาการ → หยุด + แจ้งธนาคารเลือด'}
+},'apTrail','apStage');
+
+/* ---------- helpers ---------- */
+const okN=v=>v!==null&&isFinite(v);
+const r0=x=>Math.round(x).toLocaleString('en-US');
+
+/* ---------- Tool 1: RBC ---------- */
+function rbc(){
+  const L=[];let hb=num('rHb');const wt=num('rWt');const sex=$('rSex').value,sc=$('rSc').value,ph=+$('rProd').value;let tg=num('rTg');
+  const c=id=>$(id).checked;
+  if(!okN(hb)||hb<=0){$('rbcOut').innerHTML='<span class="muted">กรอกค่า Hb (g/dL) เพื่อเริ่มประเมิน</span>';return;}
+  let note='';
+  if(hb>25){hb=hb/10;note=`แปลง Hb จาก g/L เป็น <b>${f1(hb)} g/dL</b>`;}
+  if(hb>25){$('rbcOut').innerHTML='<b>ค่า Hb ไม่สมเหตุสมผล</b> — ตรวจหน่วย (g/dL หรือ g/L)';return;}
+  if(okN(tg)&&tg>25)tg=tg/10;
+  const T={gen:[7,'ผู้ป่วยในทั่วไป/ICU: ให้เมื่อ Hb &lt;7 (AABB 2023 strong)'],cvd:[8,'โรคหัวใจและหลอดเลือดเดิม: &lt;8 (AABB 2023)'],ortho:[8,'ผ่าตัดกระดูก: &lt;8 (AABB 2023)'],cs:[7.5,'ผ่าตัดหัวใจ: &lt;7.5 (AABB 2023 · TRICS III)'],ami:[10,'Acute MI: &lt;10 (AABB 2025 conditional · ACC/AHA 2025 2b · MINT)'],ugib:[7,'GI bleeding non-variceal: &lt;7 (ถ้ามีโรคหัวใจใช้ &lt;8)'],var:[7,'Variceal bleeding: &lt;7 เป้า 7–8 (Baveno VII) — อย่าให้เกิน'],onc:[7,'มะเร็ง/โรคเลือด: &lt;7 (AABB 2023 conditional)'],tdt:[9,'TDT: pre-transfusion Hb 9–10.5 (แนวทางไทย 2562) · TIF 2021 ใช้ 9.5–10.5'],chr:[7,'ซีดเรื้อรังผู้ป่วยนอก: ไม่มีเกณฑ์ตายตัว — ดูอาการ · รักษาสาเหตุ']}[sc];
+  const thr=T[0];
+  L.push(T[1]);
+  if(c('rBleed')){
+    L.push('<b>เลือดออกต่อเนื่อง/ไม่คงที่ → ไม่ใช้เกณฑ์ Hb</b> · ให้ตามสัญญาณชีพและการเสียเลือด (Hb แรกรับยังสูงหลอกได้) · ช็อก/shock index ≥1 → <b>MTP 1:1:1 + TXA</b> (หัวข้อ 06)');
+  }else if(sc==='tdt'){
+    L.push(hb<9?`<b>Hb ${f1(hb)} &lt;9 → ให้เลือด</b> LPRC/LDPRC 10–15 mL/kg (ผู้ใหญ่ 1–2 ยูนิต) · ปรับรอบให้ pre-Hb ครั้งต่อไป 9–10.5 (TIF 9.5–10.5)`:hb<9.5?`Hb ${f1(hb)}: อยู่ในช่วงแนวทางไทย (9–10.5) แต่ต่ำกว่าเป้า TIF 2021 (9.5–10.5) → <b>ให้ตามรอบ</b> · พิจารณาร่นรอบ/เพิ่มปริมาณถ้ามีอาการ ม้าม/กระดูกขยาย หรือโรคหัวใจ`:hb<=10.5?`Hb ${f1(hb)} อยู่ในช่วงเป้า pre-transfusion 9–10.5 (ไทย) และ 9.5–10.5 (TIF) → ให้ตามรอบนัดเพื่อคงระดับ`:`Hb ${f1(hb)} &gt;10.5 → ยังไม่ต้องให้ · เลื่อนรอบ/ลดปริมาณ (ยกเว้นมีโรคหัวใจที่ใช้เป้าสูงกว่า)`);
+  }else if(hb<thr){
+    if(sc==='chr'&&!c('rSym')&&c('rFix'))L.push(`Hb ${f1(hb)} ต่ำมาก แต่ไม่มีอาการและแก้สาเหตุได้ → <b>IV iron/รักษาสาเหตุ</b> เป็นหลัก · ให้เลือด 1 ยูนิตถ้ามีอาการหรือเสี่ยงสูง`);
+    else L.push(`<b>Hb ${f1(hb)} &lt;${thr} → ให้ PRC 1 ยูนิต</b> แล้วประเมินอาการ + Hb ซ้ำก่อนสั่งยูนิตต่อไป (single-unit policy)`);
+    if(c('rFix'))L.push('รักษาสาเหตุร่วมด้วย (เหล็ก B12 folate) เพื่อลดการให้เลือดซ้ำ');
+  }else{
+    if(c('rSym')&&hb<10&&sc!=='ami')L.push(`Hb ${f1(hb)} ≥${thr} แต่มีอาการจากซีด → <b>พิจารณา 1 ยูนิตตามดุลพินิจ</b> และหาสาเหตุอื่นของอาการ`);
+    else if(c('rSym'))L.push(`Hb ${f1(hb)} — อาการน่าจะไม่ใช่จากซีด หาสาเหตุอื่น`);
+    else L.push(`Hb ${f1(hb)} ≥${thr} → <b>ยังไม่ต้องให้เลือด</b>`+(c('rFix')?' · รักษาสาเหตุ (เช่น IV iron)':''));
+  }
+  if(!okN(wt)||wt<=0){L.push('<span class="muted">กรอกน้ำหนักเพื่อคำนวณ Hb ที่คาดว่าจะขึ้น</span>');}
+  else if(wt<30){L.push('น้ำหนัก &lt;30 kg — เครื่องมือนี้สำหรับผู้ใหญ่ · เด็กใช้ 10–15 mL/kg (10 mL/kg เพิ่ม Hb ~2 g/dL)');}
+  else if(wt>250){L.push('<b>ตรวจน้ำหนักอีกครั้ง</b> (&gt;250 kg)');}
+  else{
+    const bv=wt*(sex==='m'?0.70:0.65); // dL
+    const d=ph/bv;
+    L.push(`Blood volume ~<b>${f1(bv/10)} L</b> · ${ph===45?'PRC':ph===43?'LPRC':'LDPRC'} 1 ยูนิต (~${ph} g Hb) → Hb ขึ้นราว <b>${f1(d)} g/dL</b> → คาดได้ ~<b>${f1(hb+d)} g/dL</b>`);
+    if(sc==='tdt'){const u1=Math.max(1,Math.round(wt*10/250)),u2=Math.max(1,Math.round(wt*15/250));L.push(`10–15 mL/kg = <b>${r0(wt*10)}–${r0(wt*15)} mL</b> (~${Math.min(u1,2)===Math.min(u2,2)?Math.min(u2,2):Math.min(u1,2)+'–'+Math.min(u2,2)} ยูนิต${u2>2?' · ผู้ใหญ่ให้ไม่เกิน 2 ยูนิต/ครั้ง':''}) · Hb หลังให้ไม่เกิน 14`);}
+    if(okN(tg)&&tg>0){
+      if(tg>16)L.push('Hb เป้าหมายสูงเกินไป — ตรวจตัวเลข');
+      else if(tg<=hb)L.push(`Hb ${f1(hb)} ถึงเป้า ${f1(tg)} แล้ว`);
+      else{const n=Math.ceil((tg-hb)/d-1e-9);L.push(`ถึงเป้า ${f1(tg)} g/dL ต้องประมาณ <b>${n} ยูนิต</b> — แต่ให้ทีละยูนิตและตรวจซ้ำ (ถ้าไม่มีเลือดออก)`);if(sc==='var'&&tg>8)L.push('<b>Variceal: เป้าไม่เกิน 8</b>');}
+    }
+    if(c('rTaco'))L.push(`<b>เสี่ยง TACO</b>: ให้ช้า ~1 mL/kg/ชม. (≈${r0(wt)} mL/ชม.) ทีละยูนิต · ประเมินน้ำ/ฟังปอดก่อนแต่ละยูนิต · พิจารณา furosemide`);
+  }
+  if(note)L.push(note);
+  L.push('<span class="muted">ตรวจ Hb ซ้ำหลังให้ได้ตั้งแต่ ~15 นาที (ไม่มีเลือดออก) · ไม่ขึ้นตามคาด → เลือดออกต่อ/hemolysis/ม้ามโต</span>');
+  $('rbcOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRbc input,#tRbc select',rbc);
+
+/* ---------- Tool 2: platelets + CCI ---------- */
+function bsa(){const w=num('pWt'),h=num('pHt');if(!okN(w)||!okN(h)||w<30||w>250||h<120||h>230)return null;return Math.sqrt(w*h/3600);}
+function plt(){
+  const L=[];let ct=num('pCt');const sc=$('pSc').value,wt=num('pWt'),pr=$('pProd').value,n=num('pN');const c=id=>$(id).checked;
+  if(!okN(ct)||ct<0){$('pltOut').innerHTML='<span class="muted">กรอกจำนวนเกล็ดเลือด (×10³/µL)</span>';cci();return;}
+  if(ct>1000){const raw=ct;ct=ct/1000;L.push(`<b>ตีความ ${r0(raw)} เป็นหน่วย /µL</b> → ${f1(ct)}×10³/µL (ค่า &gt;1,000 ถือเป็น /µL)`);}
+  else L.push(`<span class="muted">ตีความ ${f1(ct)} เป็นหน่วย <b>×10³/µL</b> (= ${r0(ct*1000)}/µL) · ค่า ≤1,000 ถือเป็น ×10³/µL</span>`);
+  const bl=c('pBl');
+  const S={pro:[c('pFev')?20:10,'ป้องกัน (เคมีบำบัด/allo-HSCT): &lt;10 (AABB 2025 strong)'+(c('pFev')?' · มีไข้/sepsis/coagulopathy: BSH ให้พิจารณา 10–20 → ใช้ 20':'')],
+   apl:[0,'Aplastic anemia เรื้อรัง/auto-HSCT: <b>ไม่ให้ป้องกัน</b> ให้เมื่อเลือดออก (AABB 2025)'],
+   con:[10,'Consumptive/ป่วยวิกฤต ไม่มีเลือดออกรุนแรง: &lt;10 (AABB 2025 conditional)'],
+   den:[0,'ไข้เลือดออก ไม่มีเลือดออกรุนแรง: <b>ไม่ให้ ไม่ว่าเกล็ดเลือดเท่าไร</b> (AABB 2025 strong)'],
+   cvc:[10,'Central line ตำแหน่งกดได้: &lt;10 (AABB 2025) · BSH 2017 ใช้ &lt;20'],
+   lp:[20,'Lumbar puncture: &lt;20 (AABB 2025 strong) · BSH 2017 ใช้ &lt;40'],
+   irl:[20,'IR ความเสี่ยงต่ำ: &lt;20 (AABB 2025)'],
+   irh:[50,'IR ความเสี่ยงสูง: &lt;50 (AABB 2025)'],
+   sx:[50,'ผ่าตัดใหญ่/เลือดออกมาก: &lt;50'],
+   neur:[80,'Spinal/epidural: ≥80 (BSH; สูติกรรมมัก ≥70)'],
+   cns:[100,'ผ่าตัดสมอง/ตาส่วนหลัง · ICH/TBI มีเลือดออก: &lt;100'],
+   ttp:[0,'TTP: <b>หลีกเลี่ยง</b> (ให้เฉพาะเลือดออกคุกคามชีวิต) · plasma exchange ด่วน'],
+   hit:[0,'HIT: <b>ไม่ให้ป้องกัน</b> · หยุด heparin ให้ non-heparin anticoagulant'],
+   itp:[0,'ITP: ไม่ให้ป้องกัน · ให้เฉพาะเลือดออกรุนแรง ร่วม IVIG + steroid']}[sc];
+  let thr=S[0];L.push(S[1]);
+  const avoid=['apl','den','ttp','hit','itp'].includes(sc);
+  let give=false;
+  if(bl){
+    const bt=(sc==='cns')?100:50;
+    if(ct<bt){give=true;L.push(`<b>เลือดออกรุนแรง + เกล็ดเลือด ${f1(ct)} &lt;${bt} → ให้ 1 adult dose</b>`+(sc==='ttp'?' (TTP: เฉพาะคุกคามชีวิต — ไม่ชะลอ TPE)':sc==='hit'?' (HIT: ให้ได้เมื่อเลือดออกรุนแรง)':sc==='itp'?' ร่วม IVIG 1 g/kg + methylprednisolone · อาจต้องให้ซ้ำ':sc==='den'?' + PRC ถ้า Hct ลด · FFP/cryo ถ้า DIC':''));}
+    else L.push(`เลือดออกแต่เกล็ดเลือด ${f1(ct)} ≥${bt} → การให้เกล็ดเลือดไม่น่าช่วย หาสาเหตุอื่น (coag, ยา antiplatelet, จุดเลือดออก)`);
+  }else if(avoid){L.push(`เกล็ดเลือด ${f1(ct)} → <b>ไม่ให้</b> เกล็ดเลือดป้องกัน`);}
+  else if(ct<thr){give=true;L.push(`<b>${f1(ct)} &lt;${thr} → ให้ 1 adult dose</b>`+(['cvc','lp','irl','irh','sx','neur','cns'].includes(sc)?' · ตรวจนับหลังให้ก่อนเริ่มหัตถการ':''));}
+  else L.push(`${f1(ct)} ≥${thr} → <b>ไม่ต้องให้</b>`);
+  // dose
+  let dose=null,lab='';
+  if(pr==='rd'){
+    if(okN(n)&&n>0){dose=n*0.6;lab=`random PC ${r0(n)} ยูนิต (~${f1(dose)}×10¹¹)`;}
+    else if(okN(wt)&&wt>=30&&wt<=250){const k=Math.max(4,Math.round(wt/10));dose=k*0.6;lab=`random PC แนะนำ ~${k} ยูนิต (1 ยูนิต/10 kg; ~${f1(dose)}×10¹¹)`;}
+  }else{dose=3;lab=pr==='sdp'?'SDP 1 ถุง (~3×10¹¹)':'Pooled PC 1 ถุง (~3×10¹¹)';}
+  if(give||!avoid){
+    if(dose===null)L.push('<span class="muted">กรอกจำนวนยูนิตหรือน้ำหนัก เพื่อคำนวณขนาด</span>');
+    else if(!okN(wt)||wt<30||wt>250)L.push(`ขนาด: ${lab} · <span class="muted">กรอกน้ำหนักผู้ใหญ่ (30–250 kg) เพื่อคาดค่าที่จะขึ้น</span>`);
+    else{const F=c('pSpl')?0.4:0.67;const inc=dose*1e11*F/(wt*70*1000)/1000;
+      L.push(`ขนาด: ${lab} → คาดเพิ่มสูงสุดตามทฤษฎี ~<b>${f1(inc)}×10³/µL</b> (สมมติ recovery ${c('pSpl')?'~40% เพราะม้ามโต':'~67%'}) · ค่าจริงมักน้อยกว่านี้เมื่อมีไข้ sepsis DIC`);
+      if(give)L.push(`คาดได้ ~<b>${f1(ct+inc)}×10³/µL</b> หลังให้`);}
+  }
+  L.push('<span class="muted">ตรวจนับ 10–60 นาทีหลังให้ถ้าสงสัย refractory หรือก่อนหัตถการ · ใช้ LD products ในผู้ที่ต้องรับประจำ</span>');
+  $('pltOut').innerHTML=L.join('<br>');
+  cci();
+}
+function cci(){
+  let pre=num('cPre'),post=num('cPost'),p24=num('cP24');const d=num('cDose');const B=bsa();
+  if(!okN(pre)||!okN(post)||pre<0||post<0){$('cciOut').innerHTML='<span class="muted">กรอกเกล็ดเลือดก่อนและหลังให้ (×10³/µL)</span>';return;}
+  const U=[];const cv=x=>{if(okN(x)&&x>1000){U.push(r0(x));return x/1000;}return x;};
+  pre=cv(pre);post=cv(post);p24=cv(p24);
+  if(!okN(d)||d<=0){$('cciOut').innerHTML='<span class="muted">กรอกจำนวนเกล็ดเลือดที่ให้ (×10¹¹) — SDP/pooled ~3 · random 1 ยูนิต ~0.6</span>';return;}
+  if(B===null){$('cciOut').innerHTML='<span class="muted">กรอกน้ำหนัก (30–250 kg) และส่วนสูง (120–230 cm) ด้านบนเพื่อคำนวณ BSA</span>';return;}
+  const L=[];const v=(post-pre)*1000*B/d;
+  L.push(U.length?`<b>ตีความ ${U.join(', ')} เป็นหน่วย /µL</b> (ค่า &gt;1,000 ถือเป็น /µL · ค่า ≤1,000 ถือเป็น ×10³/µL)`:'<span class="muted">ตีความค่าที่กรอกเป็นหน่วย ×10³/µL (ค่า &gt;1,000 จะถือเป็น /µL)</span>');
+  L.push(`BSA <b>${f2(B)} m²</b> · CCI 1 ชม. = <b>${r0(v)}</b>`);
+  L.push(v>=7500?'≥7,500 → <b>ตอบสนองดี</b>':v<=0?'<b>เกล็ดเลือดไม่เพิ่มเลย</b> → poor response':'<b>&lt;7,500 → ตอบสนองไม่ดี</b>');
+  if(okN(p24)&&p24>=0){const v2=(p24-pre)*1000*B/d;L.push(`CCI 18–24 ชม. = <b>${r0(v2)}</b> ${v2>=5000?'(≥5,000 ดี)':'(&lt;5,000 ต่ำ)'}`);
+    if(v>=7500&&v2<5000)L.push('1 ชม. ดี แต่ 24 ชม. ต่ำ → <b>non-immune</b>: ไข้ sepsis DIC ม้ามโต เลือดออก ยา (amphotericin, vancomycin)');}
+  if(v<7500)L.push('ถ้าเป็น <b>2 ครั้งติดกัน</b> ด้วยเกล็ดเลือดใหม่ ABO-compatible = <b>refractory</b> · 1 ชม. ต่ำ → คิด <b>immune (anti-HLA/HPA)</b> → ตรวจ HLA antibody → HLA-matched/crossmatched SDP · แยก non-immune ร่วมด้วย');
+  $('cciOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPlt input,#tPlt select',plt);
+
+/* ---------- Tool 3: FFP / cryo / PCC ---------- */
+function pl(){
+  const L=[];const wt=num('fWt');let hct=num('fHct');const fu=$('fFu').value,tg=+$('fTg').value,cm=+$('fCm').value;let fib=num('fFib');const inr=num('fInr');let vol=num('fVol');const c=id=>$(id).checked;
+  if(!okN(wt)||wt<=0){$('plOut').innerHTML='<span class="muted">กรอกน้ำหนัก (kg) เพื่อคำนวณขนาด</span>';return;}
+  if(wt<30){$('plOut').innerHTML='น้ำหนัก &lt;30 kg — เครื่องมือนี้สำหรับผู้ใหญ่ (เด็ก: FFP 10–15 mL/kg · cryo 5 mL/kg หรือ 1 ยูนิต/5–10 kg ตามแนวทางเด็ก)';return;}
+  if(wt>250){$('plOut').innerHTML='<b>ตรวจน้ำหนักอีกครั้ง</b> (&gt;250 kg)';return;}
+  const bl=c('fBl'),px=c('fPx'),ich=c('fIch'),need=bl||px||ich;
+  if(!okN(vol)||vol<100||vol>400){vol=220;L.push('<span class="muted">ใช้ปริมาตร FFP 220 mL/ถุง (ค่าที่กรอกอยู่นอกช่วง 100–400)</span>');}
+  // FFP / PCC
+  const ffpTxt=()=>{const a=wt*10,b=wt*15;return `FFP <b>10–15 mL/kg = ${r0(a)}–${r0(b)} mL</b> ≈ <b>${Math.ceil(a/vol-1e-9)}–${Math.ceil(b/vol-1e-9)} ถุง</b> (ถุงละ ${r0(vol)} mL) · ให้ ~10–20 mL/kg/ชม. ระวัง TACO`;};
+  const inrOk=okN(inr)&&inr>0&&inr<=20;
+  if(okN(inr)&&!inrOk)L.push('<span class="muted">INR นอกช่วงที่เป็นไปได้ — ตรวจค่า</span>');
+  if(c('fWar')){
+    if(need&&(bl||ich)){
+      if(c('fPcc')){
+        let s='';if(!inrOk)s='กรอก INR เพื่อคำนวณ 4F-PCC · หรือใช้ fixed dose 1,000 U (ICH 1,500 U)';
+        else if(inr<2)s=`INR ${f1(inr)} &lt;2 → ขนาดตาม INR ไม่ครอบคลุม · ใช้ <b>fixed dose ${ich?'1,500':'1,000'} U</b> (ACC 2020) ถ้าเลือดออกรุนแรง`;
+        else{const u=inr<4?25:inr<=6?35:50,mx=inr<4?2500:inr<=6?3500:5000;const d=Math.min(wt*u,mx);s=`INR ${f1(inr)} → <b>4F-PCC ${u} U/kg = ${r0(d)} U</b>${wt*u>mx?` (ถึงขนาดสูงสุด ${r0(mx)} U)`:''} · ตรวจ INR 15–60 นาทีหลังให้`;}
+        L.push('<b>Warfarin + เลือดออกรุนแรง</b>: '+s+' · ร่วมกับ <b>vitamin K 5–10 mg IV ช้าๆ</b>');
+      }else L.push('<b>Warfarin + เลือดออกรุนแรง ไม่มี PCC</b>: '+ffpTxt()+' (15 mL/kg) + <b>vitamin K 5–10 mg IV ช้าๆ</b> · ส่งต่อ/ขอ PCC ถ้าเป็น ICH');
+    }else if(px)L.push('Warfarin ก่อนหัตถการ: หยุดยาล่วงหน้า (~5 วัน) ± vitamin K 1–2.5 mg กิน · เร่งด่วน → vitamin K IV ± PCC');
+    else L.push('Warfarin ไม่มีเลือดออก: <b>ไม่ให้ FFP/PCC</b> · หยุด/ลดยา'+(inrOk&&inr>10?' · INR &gt;10 → vitamin K 2.5–5 mg กิน':''));
+  }else if(need){
+    if(c('fLiv')&&!bl&&!ich)L.push('ตับแข็งก่อนหัตถการ: <b>ไม่แนะนำ FFP เพื่อแก้ INR</b> (INR ไม่สะท้อนความเสี่ยง · เพิ่ม portal pressure) · ดูเกล็ดเลือดและ fibrinogen แทน');
+    else if(inrOk&&inr<=1.5)L.push(`INR ${f1(inr)} ≤1.5 → FFP ไม่น่าช่วย (ยกเว้น massive transfusion ที่ให้ตามสัดส่วน)`);
+    else if(inrOk)L.push(`INR ${f1(inr)} &gt;1.5 + ${bl||ich?'เลือดออก':'หัตถการเสี่ยงสูง'} → `+ffpTxt()+(c('fLiv')?' · ตับแข็ง: ใช้เท่าที่จำเป็น':''));
+    else L.push('เลือดออก/หัตถการ: กรอก INR (หรือ PT/aPTT &gt;1.5 เท่า) · ขนาด '+ffpTxt());
+  }else L.push('<b>ไม่มีเลือดออกและไม่มีหัตถการเสี่ยงสูง → ไม่ให้ FFP</b> แม้ INR สูง');
+  // cryo
+  if(!okN(fib)||fib<=0){L.push('<span class="muted">กรอก fibrinogen เพื่อประเมิน cryoprecipitate</span>');}
+  else{
+    let g=fu==='g'?fib:fib/100;
+    if(fu==='g'&&fib>10){g=fib/100;L.push(`<b>fibrinogen &gt;10 g/L เป็นไปไม่ได้ → ตีความเป็น ${r0(fib)} mg/dL</b> · ตรวจหน่วย`);}
+    if(fu==='mg'&&fib<10){g=fib;L.push(`<b>fibrinogen &lt;10 mg/dL → ตีความเป็น ${f1(fib)} g/L</b> · ตรวจหน่วย`);}
+    if(!okN(hct)||hct<10||hct>70){hct=40;L.push('<span class="muted">ใช้ Hct 40% ในการคำนวณ plasma volume</span>');}
+    const pv=wt*70*(1-hct/100)/100; // dL
+    L.push(`Fibrinogen <b>${f2(g)} g/L</b> (${r0(g*100)} mg/dL) · เป้า ${f1(tg)} g/L`);
+    if(g>=tg)L.push('ถึงเป้าแล้ว → <b>ไม่ต้องให้ cryo</b>');
+    else if(!need&&g>=1)L.push('ต่ำกว่าเป้า แต่ไม่มีเลือดออก/หัตถการ → <b>ไม่ให้ cryo ป้องกัน</b>');
+    else if(!need)L.push('fibrinogen &lt;1 g/L ไม่มีเลือดออก → ตามอาการ · ให้ cryo ถ้าจะทำหัตถการเสี่ยงสูงหรือเริ่มมีเลือดออก');
+    else{const ru=Math.max(1,Math.round(wt/10));const def=(tg-g)*100*pv;const fu2=Math.ceil(def/cm-1e-9);
+      L.push(`<b>Cryo 1 ยูนิต/10 kg = ${ru} ยูนิต</b> (คาดเพิ่ม ~${f1(ru*cm/pv/100)} g/L)`);
+      L.push(`สูตรจาก plasma volume ~${f1(pv/10)} L และ ${cm} mg/ยูนิต: ถึงเป้า ${f1(tg)} ต้อง ~<b>${fu2} ยูนิต</b> · ตรวจ fibrinogen ซ้ำหลังให้`);}
+  }
+  L.push('<span class="muted">FFP ไม่ใช้เพิ่ม volume · DOAC: idarucizumab (dabigatran) · 4F-PCC (anti-Xa) — FFP ได้ผลน้อย</span>');
+  $('plOut').innerHTML=L.join('<br>');
+}
+bindAll('#tPl input,#tPl select',pl);
+
+/* ---------- Tool 4: reaction triage ---------- */
+function rx(){
+  const t=$('xT').value,pr=$('xP').value;const c=id=>$(id).checked;let tm=num('xTemp'),t0=num('xT0');const L=[],N=[];
+  if(okN(tm)&&(tm<30||tm>45)){N.push('อุณหภูมิสูงสุดนอกช่วง 30–45 °C — ไม่นำมาคิด');tm=null;}
+  if(okN(t0)&&(t0<30||t0>45)){N.push('อุณหภูมิก่อนให้นอกช่วง 30–45 °C — ไม่นำมาคิด');t0=null;}
+  const fev=c('xFev')||(okN(tm)&&tm>=38);
+  const rise=(okN(tm)&&okN(t0))?tm-t0:null;
+  const fevHi=(okN(tm)&&tm>=39)||(rise!==null&&rise>=2);
+  const s={urt:c('xUrt'),ang:c('xAng'),low:c('xLow'),high:c('xHigh'),dys:c('xDys'),fl:c('xFl'),back:c('xBack'),ur:c('xUr'),ooz:c('xOoz'),jau:c('xJau'),pur:c('xPur'),gvh:c('xGvh')};
+  const any=fev||Object.values(s).some(x=>x);
+  if(!any){$('rxOut').innerHTML='<span class="muted">เลือกอาการ/อาการแสดง (หรือกรอกอุณหภูมิ) เพื่อประเมิน</span>'+(N.length?'<br>'+N.join('<br>'):'');return;}
+  const early=['t15','t4','t6','t12','t24'].includes(t);
+  const w4=t==='t15'||t==='t4',w6=w4||t==='t6',w12=w6||t==='t12';
+  const D=[];
+  if(early){
+    if(s.back||s.ur||s.ooz||(fev&&s.low&&pr==='rbc'))D.push(['danger','<b>Acute hemolytic (ABO incompatible)</b>','ตรวจชื่อ-ถุงทันที (และผู้ป่วยอื่นที่อาจได้ถุงสลับ) · NSS ให้ปัสสาวะ &gt;1 mL/kg/ชม. · DAT, ABO/crossmatch ซ้ำ, CBC, LDH, bilirubin, haptoglobin, PT/aPTT/fibrinogen, Cr, K, UA (hemoglobinuria) · รักษา shock/DIC/AKI']);
+    if(w4&&(s.ang||(s.low&&s.urt)))D.push(['danger','<b>Anaphylaxis</b>','<b>adrenaline 0.5 mg IM</b> ซ้ำทุก 5 นาที · O₂ · NSS bolus · ตรวจ IgA/anti-IgA (เจาะก่อนให้ plasma เพิ่ม) · mast cell tryptase · ครั้งต่อไป washed/IgA-deficient donor']);
+    if(w6&&fev&&(s.low||fevHi))D.push(['danger','<b>Bacterial contamination / transfusion-transmitted sepsis</b>'+(pr==='plt'?' — เกล็ดเลือดเสี่ยงสูงสุด':''),'hemoculture ผู้ป่วย + <b>ส่งถุงเพาะเชื้อ/ย้อมสี</b> · ยาฆ่าเชื้อกว้างทันที · สารน้ำ/vasopressor · แจ้งธนาคารเลือดให้กักถุงอื่นจากผู้บริจาคเดียวกัน']);
+    if(s.dys){
+      if(w12&&(s.high||s.fl))D.push(['warn','<b>TACO</b>','นั่งตัวตรง · O₂ · <b>furosemide IV</b> · CXR · BNP/NT-proBNP · ครั้งต่อไปให้ช้า ทีละยูนิต']);
+      if(w6&&!s.high&&!s.fl)D.push(['danger','<b>TRALI</b>'+(s.low||fev?' (ความดันต่ำ/ไข้เข้าได้)':''),'O₂/ventilation แบบ lung-protective · <b>ไม่ให้ furosemide</b> · CXR (ฝ้าขาวสองข้าง), P/F ≤300 · BNP ช่วยแยก TACO · แจ้งธนาคารเลือด']);
+      if(w4&&s.ang)D.push(['danger','<b>หอบจากหลอดลมตีบ/stridor = anaphylaxis</b>','ดูด้านบน']);
+      if(!w12)D.push(['warn','หอบหลัง 12 ชม.','เลยกรอบเวลาของ TACO/TRALI ตามนิยาม ISBT — คิดสาเหตุอื่นด้วย (HF, pneumonia, PE) แต่ยังรายงานธนาคารเลือดได้']);
+      else if(!w6&&!s.high&&!s.fl)D.push(['warn','หอบ 6–12 ชม. ไม่มีน้ำเกินชัด','เลยกรอบ TRALI (6 ชม.) · ประเมิน TACO (ดู JVP, สมดุลน้ำ, BNP) และสาเหตุอื่น']);
+    }
+    if(w4&&fev&&!s.low&&!s.dys&&!s.back&&!s.ur&&!s.ooz)D.push([fevHi?'warn':'ok','<b>Febrile non-hemolytic (FNHTR)</b>'+(fevHi?' — ไข้สูง ต้องสืบค้นแบบรุนแรง':''),fevHi?'ไข้ ≥39 °C หรือเพิ่ม ≥2 °C → <b>หยุด</b> และสืบค้น hemolysis + bacterial (DAT, hemoculture ผู้ป่วยและถุง) · paracetamol':'paracetamol · ไม่มีอาการอื่นและสัญญาณชีพปกติ → <b>ให้ต่อช้าๆ ได้</b> ภายใต้การดูใกล้ชิด · ซ้ำบ่อย → LPRC/LD']);
+    if(fev&&!w4&&!D.length)D.push(['warn','ไข้หลัง 4 ชม.','เลยกรอบ FNHTR — คิดการติดเชื้อจากสาเหตุอื่นและ bacterial contamination · hemoculture']);
+    if(s.urt&&!s.ang&&!s.low&&!s.dys)D.push(['ok','<b>Allergic เล็กน้อย</b>','หยุดชั่วคราว · <b>chlorpheniramine 10 mg IV</b> · ผื่นหายและสัญญาณชีพปกติ → ให้ต่อช้าๆ ได้']);
+    if(w4&&s.low&&!fev&&!s.urt&&!s.ang&&!s.dys&&!s.back&&!s.ur&&!s.ooz)D.push(['warn','<b>Hypotensive reaction</b>'+(c('xAce')?' (ใช้ ACE inhibitor)':''),'หยุด · ยกขา · NSS · แยก anaphylaxis, hemolysis, sepsis, TRALI ก่อน']);
+    if(s.jau&&!D.length)D.push(['warn','ดีซ่าน/Hb ลด ช่วงแรก','คิด acute hemolysis → DAT, LDH, bilirubin, haptoglobin']);
+    if(s.pur||s.gvh)N.push('จ้ำเลือด/ผื่น-ท้องเสียมักเป็นปฏิกิริยาระยะหลัง (PTP 5–12 วัน, TA-GVHD 2 วัน–6 สัปดาห์) — ตรวจเวลาที่เลือกอีกครั้ง');
+  }else{
+    if(s.jau||s.ur||(fev&&t==='d14'))D.push(['warn','<b>Delayed hemolytic (DHTR)</b>','DAT · antibody screen/identification · LDH, bilirubin, haptoglobin · ครั้งต่อไปให้ antigen-negative · ให้บัตรบันทึก antibody']);
+    if(s.pur&&t==='d14')D.push(['danger','<b>Post-transfusion purpura (PTP)</b>','<b>IVIG 1 g/kg × 2 วัน</b> · ตรวจ anti-HPA-1a · เกล็ดเลือดทั่วไปช่วยไม่ได้ (HPA-1a negative ถ้าเลือดออก)']);
+    if(s.pur&&t==='d42')D.push(['warn','เกล็ดเลือดต่ำหลัง 2 สัปดาห์','เลยกรอบ PTP ทั่วไป · คิด TA-GVHD (pancytopenia) ยา HIT การติดเชื้อ']);
+    if(s.gvh)D.push(['danger','<b>TA-GVHD</b>','ปรึกษาโลหิตแพทย์ด่วน · skin biopsy · chimerism · ตายเกือบทุกราย — ป้องกันด้วยเลือดฉายรังสี']);
+    if(!D.length)D.push(['warn','ไม่เข้ากับปฏิกิริยาระยะหลังที่พบบ่อย','คิด transfusion-transmitted infection (HBV, HCV, HIV, syphilis, malaria) หรือสาเหตุอื่น · แจ้งธนาคารเลือด']);
+  }
+  if(early&&!D.length)D.push(['warn','ยังไม่เข้ากลุ่มชัดเจน','หยุดเลือด · ประเมินซ้ำ · แจ้งธนาคารเลือด · ส่ง DAT, CBC, UA และเพาะเชื้อถ้ามีไข้']);
+  const severe=D.some(d=>d[0]==='danger');
+  const mildOnly=D.length>0&&D.every(d=>d[0]==='ok');
+  if(early){
+    if(mildOnly)L.push('<b>ปฏิกิริยาเล็กน้อย</b>: หยุดชั่วคราว · ตรวจชื่อ-ถุง · ให้ยาตามอาการ · หายแล้วให้ต่อช้าๆ ได้ · บันทึกและแจ้งธนาคารเลือด');
+    else L.push('<b>ทำทันที</b>: 1) หยุดให้เลือด 2) คงเส้นด้วย NSS ชุดใหม่ 3) ABC สัญญาณชีพ SpO₂ 4) ตรวจชื่อผู้ป่วย ↔ ถุง ↔ ใบขอ 5) แจ้งธนาคารเลือด ส่งถุง+ชุดให้เลือด และเลือดผู้ป่วยใหม่ (EDTA + clotted) + ปัสสาวะ'+(severe?' · <b>ห้ามให้ถุงเดิมต่อ</b>':''));
+  }else L.push('<b>ปฏิกิริยาระยะหลัง</b>: แจ้งธนาคารเลือด · ส่งตรวจตามด้านล่าง · บันทึกในเวชระเบียน');
+  L.push('<ol>'+D.map(d=>`<li><span style="color:${d[0]==='danger'?'var(--danger)':d[0]==='warn'?'var(--warn)':'var(--ok)'}">●</span> ${d[1]} — ${d[2]}</li>`).join('')+'</ol>');
+  if(N.length)L.push(N.join('<br>'));
+  L.push('<span class="muted">รายงานทุกปฏิกิริยาเข้าระบบ hemovigilance · ไม่ให้ premedication เป็น routine ครั้งต่อไป ยกเว้นมีปฏิกิริยาซ้ำ</span>');
+  $('rxOut').innerHTML=L.join('<br>');
+}
+bindAll('#tRx input,#tRx select',rx);
+
+mountQuiz([
+ ['ชาย 60 ปี ปอดอักเสบใน ICU ไม่มีโรคหัวใจ hemodynamic คงที่ Hb 7.4 g/dL ควรทำอย่างไร',['ให้ PRC 2 ยูนิต','ให้ PRC 1 ยูนิต','ยังไม่ต้องให้เลือด ติดตาม Hb','ให้ whole blood'],2,'AABB 2023: restrictive threshold &lt;7 g/dL ในผู้ป่วยในรวม ICU (strong recommendation) · Hb 7.4 ยังไม่ถึงเกณฑ์'],
+ ['หญิง 72 ปี NSTEMI Hb 8.6 g/dL ไม่มีเลือดออก แนวทาง 2025 แนะนำอย่างไร',['ไม่ให้จนกว่า Hb &lt;7','ไม่ให้จนกว่า Hb &lt;8','พิจารณาให้เพื่อให้ Hb ≥10 ทีละยูนิตและเฝ้าระวังน้ำเกิน','ให้ 4 ยูนิตทันที'],2,'MINT + AABB AMI 2025 (conditional) และ ACC/AHA 2025 (2b): liberal &lt;10 ใน AMI'],
+ ['ผู้ป่วยไข้เลือดออกวันที่ 5 เกล็ดเลือด 8,000/µL ไม่มีเลือดออก สัญญาณชีพคงที่ ควร',['ให้ SDP 1 ถุง','ให้ random PC 6 ยูนิต','ไม่ให้เกล็ดเลือด ติดตามอาการและ Hct','ให้ FFP'],2,'AABB/ICTMG 2025 strong recommendation: ไม่ให้เกล็ดเลือดป้องกันในไข้เลือดออกที่ไม่มีเลือดออกรุนแรง ไม่ว่าเกล็ดเลือดเท่าไร'],
+ ['ผู้ป่วยมะเร็งเม็ดเลือดได้เคมีบำบัด ต้องทำ lumbar puncture เกล็ดเลือด 25,000/µL ตาม AABB/ICTMG 2025',['ต้องให้เกล็ดเลือดก่อน','ทำได้เลย ไม่ต้องให้เกล็ดเลือด','ต้องให้จนเกิน 100,000','ห้ามทำ LP'],1,'เกณฑ์ LP คือ &lt;20×10³/µL (strong) · BSH 2017 เดิมใช้ 40'],
+ ['หญิง 45 ปี กิน warfarin INR 5.0 มีเลือดออกในสมอง น้ำหนัก 60 kg ข้อใดถูกที่สุด',['FFP 2 ถุง','Vitamin K 10 mg IV อย่างเดียว','4F-PCC 35 U/kg (2,100 U) + vitamin K 5–10 mg IV','Platelet transfusion'],2,'INR 4–6 → PCC 35 U/kg (สูงสุด 3,500 U) · ต้องให้ vitamin K IV ร่วมเพราะ PCC ฤทธิ์สั้น · ไม่มี PCC ใช้ FFP 15 mL/kg'],
+ ['ผู้ป่วย PPH เลือดออกต่อเนื่อง fibrinogen 1.6 g/L ควรทำอย่างไรเกี่ยวกับ fibrinogen',['ไม่ต้องให้ เพราะ &gt;1.5','ให้ cryoprecipitate เพราะเป้าในสูติกรรมคือมากกว่า 2 g/L','ให้ FFP 2 ถุงแทน','ให้ vitamin K'],1,'สูติกรรมใช้เป้า fibrinogen &gt;2 g/L · cryo 1 ยูนิต/10 kg เพิ่ม ~0.5 g/L'],
+ ['ระหว่างให้ PRC ยูนิตแรก 10 นาที ผู้ป่วยปวดหลัง หนาวสั่น ไข้ 39.2 °C ความดัน 80/50 ปัสสาวะสีแดง สิ่งแรกที่ต้องทำคือ',['ให้ paracetamol แล้วให้ต่อช้าๆ','หยุดให้เลือด คงเส้นด้วย NSS ตรวจชื่อ-ถุง แจ้งธนาคารเลือด','เปลี่ยนเป็นถุงใหม่ทันที','ให้ furosemide'],1,'ภาพของ acute hemolytic transfusion reaction (ABO) หรือ bacterial sepsis — หยุดทันที ตรวจ identity ส่งถุงและเลือดตรวจ DAT/hemolysis/hemoculture'],
+ ['หญิง 80 ปี HF ได้ PRC 2 ยูนิตเร็ว 3 ชม.ต่อมาหอบ BP 180/100 JVP สูง crackles ทั้งสองข้าง น่าจะเป็นอะไร',['TRALI','TACO','Anaphylaxis','FNHTR'],1,'หอบ + ความดันสูง + น้ำเกิน ภายใน 12 ชม. = TACO → หยุด นั่ง O₂ furosemide · TRALI มักความดันต่ำและไม่มีน้ำเกิน ห้ามให้ furosemide'],
+ ['ผู้ป่วยรายใดต้องได้เลือดฉายรังสี (irradiated) มากที่สุด',['ผู้ป่วย HIV','มะเร็งเต้านมได้ doxorubicin','ผู้ป่วยได้เลือดที่บริจาคโดยลูกชาย','ผู้ป่วย ITP'],2,'เลือดจากญาติสายตรง (directed donation) เสี่ยง TA-GVHD ต้องฉายรังสีเสมอ · กลุ่มอื่น เช่น Hodgkin, purine analogue, HSCT, CAR-T'],
+ ['สารน้ำใดให้ร่วมในสายเดียวกับ PRC ได้',['5% dextrose','Lactated Ringer\'s','0.9% NaCl','ยาฆ่าเชื้อที่ผสมใน D5W'],2,'NSS เท่านั้น · D5W ทำให้เม็ดเลือดแดงแตก · สารที่มี Ca จับ citrate ทำให้เกิดลิ่มในสาย'],
+ ['ผู้ป่วย AML ได้เกล็ดเลือด SDP (3×10¹¹) BSA 1.8 m² เกล็ดเลือดก่อน 5,000 หลัง 1 ชม. 9,000/µL CCI เท่าไร และแปลว่าอะไร',['2,400 — ตอบสนองไม่ดี คิด immune refractoriness ถ้าเป็นซ้ำ','7,200 — ตอบสนองดี','24,000 — ตอบสนองดี','4,000 — ปกติ'],0,'CCI = 4,000 × 1.8 ÷ 3 = 2,400 (&lt;7,500) · ถ้าเป็น 2 ครั้งติดกัน → ตรวจ HLA antibody และใช้ HLA-matched SDP'],
+ ['ข้อใดเกี่ยวกับ premedication (paracetamol/chlorpheniramine) ก่อนให้เลือดถูกต้อง',['ต้องให้ทุกรายเพื่อป้องกันปฏิกิริยา','ไม่แนะนำเป็น routine เพราะไม่ลดปฏิกิริยาอย่างมีนัยและบดบังอาการเตือน','ป้องกัน TRALI ได้','ป้องกัน ABO incompatibility ได้'],1,'BSH 2023 และ AABB: ไม่ให้ premed routine · ป้องกัน FNHTR ซ้ำด้วย LD products']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

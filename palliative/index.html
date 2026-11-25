@@ -1,0 +1,1058 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Palliative care · การดูแลแบบประคับประคองและ opioid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Palliative care · Cancer pain · End-of-life · WHO 2018 · ESMO 2018 · EAPC 2012/2024 · NICE NG31/CG140 · ASCO 2021 · ERS 2024 · กรมการแพทย์ 2559</div>
+  <h1>การดูแลแบบประคับประคอง: opioid และอาการระยะท้าย<br>Palliative care · Opioids · End-of-life symptom control</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ ที่ดูแลผู้ป่วยใน ward, OPD และที่บ้าน · หน้านี้ช่วย <b>หาผู้ป่วยที่ควรได้ palliative care</b> (surprise question, SPICT, PPS), <b>คุยเรื่องเป้าหมายการรักษาและหนังสือแสดงเจตนา (มาตรา 12)</b>, <b>เริ่มและปรับ morphine อย่างปลอดภัย</b>, แปลงขนาด opioid แบบระมัดระวัง และ <b>จัดยาช่วงวันสุดท้าย</b> (ยา PRN และ syringe driver ใต้ผิวหนัง) · ใช้ร่วมกับหน้า <a href="../delirium/index.html">Delirium</a>, <a href="../onco-emergency/index.html">Oncologic emergencies</a> และ <a href="../icu-drugs/index.html">ICU drugs</a></p>
+  <p class="cite">อ้างอิงหลัก: WHO guidelines for the pharmacological and radiotherapeutic management of cancer pain in adults and adolescents (2018) · Fallon M, et al. ESMO cancer pain guideline (Ann Oncol 2018;29 Suppl 4:iv166–91) · Caraceni A, et al. EAPC opioid recommendations (Lancet Oncol 2012;13:e58–68) · NCCN Guidelines: Adult Cancer Pain (ฉบับปัจจุบัน) · NICE CG140 strong opioids (2012, ปรับ 2016) · NICE NG31 care of dying adults (2015) · Hui D, et al. ASCO dyspnea guideline (J Clin Oncol 2021;39:1389–411) · Holland AE, et al. ERS symptom management guideline (Eur Respir J 2024;63:2400335) · Surges SM, et al. Revised EAPC framework on palliative sedation (Palliat Med 2024;38:213–28) · กรมการแพทย์ List disease of palliative care (2559) · Thai PPS Adult Suandok (Palliat Med 2012) · พ.ร.บ.สุขภาพแห่งชาติ 2550 มาตรา 12 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>เริ่ม morphine ให้ถูก</b>ไม่เคยได้ opioid: 2.5–5 mg ทางปาก q4h + PRN 1/10–1/6 ของขนาดรวมต่อวัน · <b>สั่งยาระบายทุกราย</b></div>
+    <div class="stage" style="--c:var(--warn)"><b>เปลี่ยน opioid → ลด 25–50%</b>แปลงด้วยตาราง แล้วลดเพราะ cross-tolerance ไม่สมบูรณ์ · ไต eGFR &lt;30 เลี่ยง morphine/codeine · methadone ให้ผู้เชี่ยวชาญ</div>
+    <div class="stage" style="--c:var(--danger)"><b>วันสุดท้าย: เตรียมยา PRN 4 อาการ</b>ปวด/หอบ (morphine) · กระสับกระส่าย (midazolam) · คลื่นไส้/delirium (haloperidol) · เสมหะ (hyoscine butylbromide)</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#who">ใครควรได้ palliative care</a><a href="#acp">ACP · มาตรา 12 · family meeting</a><a href="#pain">ประเมินปวด · WHO 2018</a><a href="#opioid">เริ่มและปรับ morphine</a><a href="#convert">แปลงขนาด opioid · ไตเสื่อม</a><a href="#side">ผลข้างเคียง · naloxone</a><a href="#adjuv">ยาเสริม</a><a href="#sym">หอบ · คลื่นไส้ · ลำไส้อุดตัน</a><a href="#last">วันสุดท้ายของชีวิต</a><a href="#sedation">Palliative sedation · น้ำ/อาหาร · ครอบครัว</a><a href="#thai">ระบบในไทย</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="who" class="col">
+  <div class="sec-num">01</div>
+  <h2>ใครควรได้ palliative care</h2>
+  <p>Palliative care ไม่ใช่ "หยุดรักษา" แต่เป็นการดูแลคุณภาพชีวิตของผู้ป่วยโรคที่คุกคามชีวิตและครอบครัว <b>ให้ร่วมกับการรักษาโรคได้ตั้งแต่ต้น</b> ไม่ต้องรอวันสุดท้าย · ใช้ได้ทั้งมะเร็งและโรคเรื้อรังระยะท้าย (หัวใจวาย, COPD, ไตวาย, ตับแข็ง, stroke, สมองเสื่อม, ความเปราะบาง)</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เครื่องมือคัดกรอง</h4><ul>
+      <li><b>Surprise question</b>: "ถ้าผู้ป่วยรายนี้เสียชีวิตใน 12 เดือนข้างหน้า เราจะแปลกใจไหม?" — ถ้า <b>ไม่แปลกใจ</b> → เริ่มคุยเป้าหมายการรักษา · ความแม่นยำปานกลาง (ใช้เป็นตัวกระตุ้น ไม่ใช่ตัวทำนาย)</li>
+      <li><b>SPICT</b> (Supportive and Palliative Care Indicators Tool): ตัวบ่งชี้ทั่วไป (นอนติดเตียง/ช่วยตัวเองได้น้อยลง, admit ไม่ได้วางแผน ≥2 ครั้งใน 6 เดือน, น้ำหนักลด, อาการยังมากแม้รักษาเต็มที่, ผู้ป่วย/ญาติขอเน้นความสุขสบาย) + ตัวบ่งชี้เฉพาะโรค</li>
+      <li><b>PPS v2</b> (Palliative Performance Scale) — ฉบับภาษาไทย <b>Thai PPS Adult Suandok</b> ผ่านการทดสอบความน่าเชื่อถือแล้ว <span class="tag th">ไทย</span></li>
+    </ul></div>
+    <div class="card c-warn"><h4>ตัวบ่งชี้เฉพาะโรค (ตัวอย่าง)</h4><ul>
+      <li><b>มะเร็ง</b>: performance status แย่ลง, ไม่ตอบสนอง/ไม่ประสงค์รักษาต่อ · กรมการแพทย์ใช้ <b>PPS ≤50%</b> เป็นเกณฑ์หนึ่ง <span class="tag th">ไทย</span></li>
+      <li><b>หัวใจวาย</b>: NYHA III–IV, admit ซ้ำ, ทนยามาตรฐานไม่ได้ — ดู <a href="../hf/index.html">HF</a></li>
+      <li><b>COPD</b>: หอบขณะพัก/ทำกิจวัตรเล็กน้อย, ต้องใช้ O₂ ระยะยาว, exacerbation บ่อย — ดู <a href="../asthma-copd/index.html">Asthma/COPD</a></li>
+      <li><b>CKD 4–5</b> ที่ไม่ฟอกไตหรือฟอกแล้วแย่ลง — ดู <a href="../ckd/index.html">CKD</a> (conservative kidney management)</li>
+      <li><b>ตับแข็ง</b> Child-Pugh C/MELD สูง ไม่เหมาะปลูกถ่ายตับ, ascites ดื้อยา, HE ซ้ำ — ดู <a href="../cirrhosis/index.html">Cirrhosis</a></li>
+    </ul></div>
+  </div>
+  <h3>PPS v2 แบบย่อ (อ่านจากซ้ายไปขวา คอลัมน์ซ้ายมีน้ำหนักมากกว่า)</h3>
+  <div class="tbl"><table>
+    <tr><th>PPS</th><th>การเคลื่อนไหว</th><th>กิจกรรม/โรค</th><th>ดูแลตัวเอง</th><th>การกิน</th><th>ความรู้สึกตัว</th></tr>
+    <tr><td>100–90%</td><td>ปกติ</td><td>ทำงานได้ · มีอาการโรคเล็กน้อย</td><td>ทำเองทั้งหมด</td><td>ปกติ</td><td>ดี</td></tr>
+    <tr><td>80–70%</td><td>ปกติ–ลดลง</td><td>ทำได้แต่ต้องออกแรง/ทำงานปกติไม่ได้ · โรคชัดเจน</td><td>ทำเองทั้งหมด</td><td>ปกติหรือลดลง</td><td>ดี</td></tr>
+    <tr><td>60%</td><td>ลดลง</td><td>ทำงานบ้าน/งานอดิเรกไม่ได้ · โรคเด่นชัด</td><td>ต้องช่วยบางครั้ง</td><td>ปกติหรือลดลง</td><td>ดี หรือสับสน</td></tr>
+    <tr><td>50%</td><td>นั่ง/นอนเป็นหลัก</td><td>ทำงานใดๆ ไม่ได้ · โรคลุกลาม</td><td>ต้องช่วยมาก</td><td>ปกติหรือลดลง</td><td>ดี หรือสับสน</td></tr>
+    <tr><td>40%</td><td>อยู่บนเตียงเป็นส่วนใหญ่</td><td>เหมือนข้างบน</td><td>ต้องช่วยเกือบทั้งหมด</td><td>ปกติหรือลดลง</td><td>ดี/ง่วง ± สับสน</td></tr>
+    <tr><td>30%</td><td>ติดเตียงทั้งหมด</td><td>เหมือนข้างบน</td><td>ต้องช่วยทั้งหมด</td><td>ลดลง</td><td>ดี/ง่วง ± สับสน</td></tr>
+    <tr><td>20%</td><td>ติดเตียงทั้งหมด</td><td>เหมือนข้างบน</td><td>ต้องช่วยทั้งหมด</td><td>จิบได้เล็กน้อย</td><td>ดี/ง่วง ± สับสน</td></tr>
+    <tr><td>10%</td><td>ติดเตียงทั้งหมด</td><td>เหมือนข้างบน</td><td>ต้องช่วยทั้งหมด</td><td>ดูแลช่องปากเท่านั้น</td><td>ง่วง หรือ coma</td></tr>
+    <tr><td>0%</td><td colspan="5">เสียชีวิต</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>PPS</th><th>Median survival: มะเร็ง (รพ.มหาราชนครเชียงใหม่ 2021)</th><th>มะเร็ง (รพ.จุฬาภรณ์ 2026)</th><th>ไม่ใช่มะเร็ง (เชียงใหม่)</th></tr>
+    <tr><td>10%</td><td>2 วัน</td><td>2 วัน</td><td>8 วัน</td></tr>
+    <tr><td>20%</td><td>6 วัน</td><td>4 วัน</td><td>6 วัน</td></tr>
+    <tr><td>30%</td><td>13 วัน</td><td>17 วัน</td><td>24 วัน</td></tr>
+    <tr><td>40–60%</td><td>39 วัน</td><td>28 (40%) · 44 (50%) · 49 (60%) วัน</td><td>ยังไม่ถึง median</td></tr>
+    <tr><td>70–80%</td><td>95 วัน</td><td>105 (70%) · 623 (≥80%) วัน</td><td>–</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> ทั้งสองการศึกษาเป็นผู้ป่วยใน รพ.ที่ส่งปรึกษาทีม palliative · ค่า median ไม่ใช่คำทำนายรายบุคคล (ช่วงกว้างมาก) · โรคที่ไม่ใช่มะเร็งทำนายยากกว่า · <b>PPS ที่ลดลงเร็ว</b> สำคัญกว่าค่าครั้งเดียว</p>
+</section>
+
+<section id="acp" class="col">
+  <div class="sec-num">02</div>
+  <h2>Advance care planning · มาตรา 12 · family meeting</h2>
+  <div class="box key"><b>พ.ร.บ.สุขภาพแห่งชาติ พ.ศ. 2550 มาตรา 12</b> <span class="tag th">ไทย</span> บุคคลมีสิทธิทำหนังสือแสดงเจตนาไม่ประสงค์จะรับบริการสาธารณสุขที่เป็นไปเพียงเพื่อยืดการตายในวาระสุดท้ายของชีวิตตน หรือเพื่อยุติการทรมานจากการเจ็บป่วย · ผู้ประกอบวิชาชีพที่ปฏิบัติตามเจตนานั้น <b>ไม่ถือว่ามีความผิด</b> · กฎกระทรวงกำหนดวิธีการ (พ.ศ. 2553 มีผล 2554) · ศาลปกครองสูงสุดยืนให้กฎกระทรวงชอบด้วยกฎหมาย (2558) · <b>นี่ไม่ใช่ euthanasia</b> — กฎหมายไทยไม่อนุญาตการเร่งการตาย ผู้ป่วยยังได้รับการดูแลแบบประคับประคองเต็มที่</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>หนังสือแสดงเจตนา (living will) ทำอย่างไร</h4><ul>
+      <li>ผู้ป่วยทำเองขณะมีสติสัมปชัญญะ · เขียนเองหรือให้ผู้อื่นเขียนแทนได้ (ระบุชื่อผู้เขียน)</li>
+      <li>ระบุ: ข้อมูลผู้ทำ, วันที่, <b>บริการที่ไม่ต้องการ</b> (เช่น CPR, ใส่ท่อช่วยหายใจ, ฟอกไต, ให้อาหารทางสาย), ลายมือชื่อ/ลายพิมพ์นิ้วมือ, พยาน (แบบฟอร์มแนะนำ 2 คน), อาจตั้ง <b>ผู้ใกล้ชิดที่อธิบายเจตนาแทน</b>, สถานที่ที่อยากเสียชีวิต</li>
+      <li>มีผลเมื่อแพทย์วินิจฉัยว่าอยู่ในวาระสุดท้าย · ยกเลิก/แก้ไขได้ตลอด · <b>สำเนาเก็บในเวชระเบียน</b></li>
+      <li>ผู้ป่วยหมดสติแล้วและไม่มีหนังสือ: ตัดสินใจร่วมกับญาติตามประโยชน์สูงสุดของผู้ป่วย (best interest) และสิ่งที่ผู้ป่วยเคยแสดงออก</li>
+    </ul></div>
+    <div class="card c-ok"><h4>Family meeting (โครงสร้าง)</h4><ol>
+      <li><b>เตรียม</b>: ทบทวนข้อมูล, ตกลงกันในทีม, ห้องเงียบ, เชิญคนที่ตัดสินใจหลัก, ปิดโทรศัพท์</li>
+      <li><b>แนะนำตัว</b> และเป้าหมายของการคุย</li>
+      <li><b>ถามว่าญาติเข้าใจอะไรแล้ว</b> ก่อนให้ข้อมูล</li>
+      <li><b>ให้ข้อมูล</b> สั้น ชัด ไม่ใช้ศัพท์แพทย์ · เงียบให้ญาติตั้งตัว</li>
+      <li><b>ตอบสนองต่ออารมณ์</b> (NURSE: Name, Understand, Respect, Support, Explore)</li>
+      <li><b>ถามถึงคุณค่าของผู้ป่วย</b>: "ถ้าคุณพ่อฟังอยู่ คิดว่าท่านอยากได้แบบไหน?" — ให้ญาติเป็นผู้บอกความต้องการของผู้ป่วย ไม่ใช่ผู้แบกรับการตัดสินใจ</li>
+      <li><b>แพทย์เสนอแผน</b> ตามเป้าหมายนั้น (recommendation) · สรุป · บันทึก · นัดทบทวน</li>
+    </ol></div>
+  </div>
+  <div class="grid2">
+    <div class="card c-vio"><h4>แจ้งข่าวร้ายด้วย SPIKES</h4><ul>
+      <li><b>S</b>etting — ที่เป็นส่วนตัว นั่งลง สบตา มีญาติที่ผู้ป่วยต้องการ</li>
+      <li><b>P</b>erception — "คุณหมอท่านอื่นบอกอะไรไว้บ้าง?"</li>
+      <li><b>I</b>nvitation — "อยากให้หมอเล่ารายละเอียดแค่ไหน?"</li>
+      <li><b>K</b>nowledge — ส่งสัญญาณเตือนก่อน ("ผลตรวจไม่ค่อยดีนะครับ") แล้วบอกเป็นช่วงสั้นๆ</li>
+      <li><b>E</b>motions — รับรู้และตอบสนองอารมณ์ก่อนพูดต่อ</li>
+      <li><b>S</b>trategy/Summary — วางแผนร่วมกัน สิ่งที่ยังทำได้</li>
+    </ul></div>
+    <div class="card c-red"><h4>คุยเรื่อง DNR / การยื้อชีวิต</h4><ul>
+      <li>เริ่มจาก <b>เป้าหมาย</b> ไม่ใช่เมนูหัตถการ: "ช่วงเวลาที่เหลือ อะไรสำคัญที่สุดสำหรับคุณแม่?"</li>
+      <li>อธิบายว่า CPR ในโรคระยะท้ายได้ผลน้อยและเพิ่มความทรมาน · พูดว่า <b>"เราจะดูแลเต็มที่เรื่องความสุขสบาย"</b> (ไม่ใช่ "ไม่ทำอะไรแล้ว")</li>
+      <li>DNR ≠ หยุดการรักษาอื่น — ยาบรรเทาอาการ ยาฆ่าเชื้อ (ถ้าเหมาะ) ยังให้ได้ตามเป้าหมาย</li>
+      <li>บันทึกให้ชัด: CPR, intubation, ICU, ยากระตุ้นความดัน, ฟอกไต, ให้อาหารทางสาย · ทบทวนเมื่ออาการเปลี่ยน</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="pain" class="col">
+  <div class="sec-num">03</div>
+  <h2>ประเมินความปวด และแนวทาง WHO 2018</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ประเมิน</h4><ul>
+      <li>คะแนน <b>NRS 0–10</b> (ผู้สูงอายุสับสน: สีหน้า/ท่าทาง เช่น PAINAD) · ตำแหน่ง ร้าวไปไหน ลักษณะ เวลา สิ่งที่ทำให้ดี/แย่</li>
+      <li><b>ชนิดปวด</b>: somatic (กระดูก ชัดเจน) · visceral (ตื้อ ระบุตำแหน่งยาก) · <b>neuropathic</b> (แสบร้อน ชา เสียวแปลบ ไฟช็อต)</li>
+      <li>แยก <b>breakthrough</b> (ปวดแทรก) · <b>incident pain</b> (ปวดตอนขยับ) · end-of-dose failure</li>
+      <li>ปวด "ทั้งตัวทั้งใจ" (total pain): กลัว ซึมเศร้า ปัญหาครอบครัว/เงิน/จิตวิญญาณ</li>
+      <li><b>Red flag</b>: ปวดหลังใหม่ในผู้ป่วยมะเร็ง + อ่อนแรง/ชา/ปัสสาวะผิดปกติ → <b>spinal cord compression</b> — dexamethasone + MRI ด่วน (ดู <a href="../onco-emergency/index.html">Onco-emergency</a>) · กระดูกหัก · hypercalcemia (ดู <a href="../hypercalcemia/index.html">Hypercalcemia</a>)</li>
+    </ul></div>
+    <div class="card c-ok"><h4>WHO 2018: ขั้นบันไดไม่ใช่โปรโตคอลตายตัว</h4><ul>
+      <li>เริ่มด้วย <b>NSAID, paracetamol และ/หรือ opioid</b> ตามความรุนแรงของปวด <span class="rec s1">strong · low</span> — <b>ปวดรุนแรงเริ่ม strong opioid ได้เลย</b> ไม่ต้องผ่าน tramadol/codeine</li>
+      <li>คงการรักษาด้วย opioid ตัวใดก็ได้ ± NSAID/paracetamol <span class="rec s1">strong · low</span></li>
+      <li><b>Morphine IR หรือ SR</b> ให้ตามเวลา + <b>IR morphine เป็น rescue</b> <span class="rec s1">strong · moderate</span></li>
+      <li>ทางปากก่อน · กลืนไม่ได้ → <b>ใต้ผิวหนัง (SC) ดีกว่าเข้ากล้าม (IM)</b></li>
+      <li>Steroid เป็นยาเสริมเมื่อมีข้อบ่งชี้ <span class="rec s1">strong · moderate</span> · bisphosphonate สำหรับปวดจากกระดูกที่มะเร็งกระจาย <span class="rec s1">strong · moderate</span> · <b>รังสีรักษาครั้งเดียว (single fraction)</b> สำหรับกระดูก <span class="rec s1">strong · high</span></li>
+      <li>หยุด opioid ที่ใช้นาน: ลดลงช้าๆ (ป้องกัน withdrawal)</li>
+    </ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยาไม่ใช่ opioid</th><th>ขนาด (ผู้ใหญ่)</th><th>ข้อควรระวัง</th></tr>
+    <tr><td><b>Paracetamol</b></td><td>500–1,000 mg PO q6h · max <b>4 g/วัน</b></td><td>ตับแข็ง/สุรา/น้ำหนัก &lt;50 kg/ขาดอาหาร: ≤2–3 g/วัน</td></tr>
+    <tr><td><b>NSAID</b> (เช่น ibuprofen 400 mg tid, naproxen 250–500 mg bid) / celecoxib 100–200 mg bid</td><td>ใช้สั้นที่สุด ขนาดต่ำสุด · ให้ PPI ร่วมถ้าเสี่ยงเลือดออก</td><td><b>เลี่ยง</b> eGFR &lt;30, AKI, HF, ตับแข็ง, เลือดออกทางเดินอาหาร, เกล็ดเลือดต่ำ</td></tr>
+  </table></div>
+</section>
+
+<section id="opioid" class="col">
+  <div class="sec-num">04</div>
+  <h2>เริ่มและปรับ morphine</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เริ่ม (ผู้ป่วยไม่เคยได้ opioid)</h4><ul>
+      <li><b>Morphine IR ทางปาก 5 mg q4h</b> (≈30 mg/วัน) — NICE CG140: 20–30 mg/วัน + IR 5 mg เป็น rescue ช่วงปรับขนาด</li>
+      <li><b>อายุ ≥75 ปี / เปราะบาง / eGFR 30–59 / ตับไม่ดี</b>: <b>2.5 mg q4–6h</b></li>
+      <li><b>Breakthrough (PRN)</b> = <b>1/10–1/6 ของขนาดรวมต่อวัน</b> ทางปาก ซ้ำได้ทุก 1 ชม. (ทาง SC ทุก 30–60 นาที) · ถ้าต้องใช้ ≥3–4 ครั้ง/วัน → เพิ่มยาประจำ</li>
+      <li>หรือ <b>MST (morphine SR) 10 mg q12h</b> + IR PRN (ผู้ป่วยที่ไม่สะดวกกินทุก 4 ชม.) — แต่การปรับขนาดช่วงแรกใช้ IR สะดวกกว่า</li>
+      <li>คืนนอน: ให้ขนาด q4h ตามปกติ หรือบางสถาบันให้ 2 เท่าก่อนนอนแทนการปลุกตี 2 (เฉพาะผู้ป่วยที่ไม่ใช่ผู้สูงอายุเปราะบาง/ไตเสื่อม) <span class="tag add">เสริม</span></li>
+      <li>เริ่มพร้อมกันเสมอ: <b>ยาระบาย</b> + ยาแก้คลื่นไส้ PRN + ให้ความรู้ (ง่วงช่วงแรก 2–3 วันแล้วดีขึ้น, ห้ามขับรถตอนเริ่ม/ปรับยา)</li>
+    </ul></div>
+    <div class="card c-warn"><h4>ปรับขนาด (titration)</h4><ul>
+      <li>ทุก 24 ชม.: <b>รวมยาประจำ + PRN ทั้งหมด</b> = ขนาดใหม่ต่อวัน แบ่ง q4h (หรือ MST q12h = ครึ่งหนึ่ง)</li>
+      <li>หรือเพิ่ม <b>25–50%</b> (ปวดปานกลาง 25–50%, ปวดมาก NCCN ให้ได้ 50–100% ในผู้ป่วยที่ติดตามใกล้ชิด)</li>
+      <li>คำนวณ PRN ใหม่ทุกครั้งที่ปรับยาประจำ</li>
+      <li>ปวดคงที่ 2–3 วัน → เปลี่ยนเป็น <b>MST q12h</b> (ขนาดรวมเท่าเดิม แบ่ง 2) + IR PRN</li>
+      <li>ปวดไม่ลดแม้เพิ่มยา หรือ <b>ง่วงก่อนหายปวด</b> → คิดถึง neuropathic pain, incident pain, total pain, opioid-induced hyperalgesia → ยาเสริม/เปลี่ยน opioid/ปรึกษา</li>
+    </ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Opioid ในไทย <span class="tag th">ไทย</span></th><th>รูปแบบ</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>Morphine</b></td><td>ยาน้ำ (syrup/solution), เม็ด IR, <b>MST</b> 10/30/60 mg (q12h), Kapanol แคปซูล SR (q24h), ฉีด 10 mg/mL</td><td>Service plan กำหนดให้มี morphine ฉีด, ยาน้ำ และ IR <b>ทุกระดับ รพ.</b> · ยาน้ำมีหลายความเข้มข้น — <b>สั่งเป็น mg และตรวจฉลากทุกครั้ง</b> · ห้ามบด/หัก MST</td></tr>
+    <tr><td><b>Fentanyl</b></td><td>แผ่นแปะ 12, 25, 50 µg/ชม. (เปลี่ยนทุก 72 ชม.), ฉีด</td><td>เฉพาะผู้ป่วยที่ <b>ได้ opioid อยู่แล้วและปวดคงที่</b> · ไข้/ความร้อนเพิ่มการดูดซึม</td></tr>
+    <tr><td><b>Oxycodone</b></td><td>CR 10/40 mg, oxycodone/naloxone CR</td><td><b>ไม่อยู่ในบัญชียาหลัก</b> ราคาแพง</td></tr>
+    <tr><td><b>Methadone</b></td><td>เม็ด, ยาน้ำ</td><td>ราคาถูก ใช้ได้ในไตเสื่อม · half-life ยาวและแปรปรวน, QT ยาว → <b>ผู้เชี่ยวชาญเท่านั้น</b></td></tr>
+    <tr><td><b>Tramadol / codeine</b></td><td>เม็ด/แคปซูล</td><td>Tramadol max <b>400 mg/วัน</b> (อายุ &gt;75: 300 mg) · CrCl &lt;30: q12h max 200 mg/วัน · เสี่ยงชัก/serotonin syndrome · Codeine max <b>240 mg/วัน</b> · ผลแปรตาม CYP2D6 · <b>เลี่ยงทั้งคู่ใน eGFR &lt;30</b></td></tr>
+    <tr><td>Pethidine</td><td>ฉีด</td><td><b>ไม่ใช้ในปวดเรื้อรัง/มะเร็ง</b> (metabolite norpethidine ทำให้ชัก)</td></tr>
+  </table></div>
+</section>
+
+<section id="convert" class="col">
+  <div class="sec-num">05</div>
+  <h2>แปลงขนาด opioid และไตเสื่อม</h2>
+  <div class="box warn"><b>ขั้นตอนเปลี่ยน opioid (opioid switching)</b>: 1) รวมขนาดต่อวันของยาเดิม (ยาประจำ + PRN) → 2) แปลงเป็น <b>oral morphine equivalent (OME) mg/วัน</b> → 3) แปลงเป็นยาใหม่ → 4) <b>ลด 25–50%</b> เพราะ cross-tolerance ไม่สมบูรณ์ (ลด 50% ถ้าสูงอายุ/เปราะบาง/ขนาดสูง/เปลี่ยนเพราะพิษ) → 5) ตั้ง PRN 1/10–1/6 → 6) ประเมินซ้ำใกล้ชิด 24–72 ชม. · <b>เปลี่ยนแค่ทางให้ยาของยาเดิม</b> (morphine กิน ↔ SC) ไม่ต้องลดเพิ่ม · WHO 2018 ไม่มีหลักฐาน RCT สนับสนุนการหมุนเปลี่ยน opioid เป็นประจำ</div>
+  <div class="tbl"><table>
+    <tr><th>ยา (ต่อวัน)</th><th>≈ oral morphine 30 mg/วัน</th><th>อัตราส่วน (ช่วงที่ใช้ในแนวทาง)</th></tr>
+    <tr><td>Morphine ทางปาก</td><td>30 mg</td><td>1</td></tr>
+    <tr><td>Morphine IV/SC</td><td>10–15 mg</td><td>ปาก : ฉีด = <b>2:1 ถึง 3:1</b> (UK ใช้ 2:1 สำหรับ SC · NCCN ใช้ 3:1)</td></tr>
+    <tr><td>Oxycodone ทางปาก</td><td>15–20 mg</td><td>morphine : oxycodone = <b>1.5:1 ถึง 2:1</b></td></tr>
+    <tr><td>Fentanyl patch</td><td>12 µg/ชม. ≈ 30–60 mg/วัน · <b>25 µg/ชม. ≈ 60–90 mg/วัน</b></td><td>ใช้ตารางเป็นช่วง (สก็อตแลนด์/BNF: ≈ OME ÷2.4 ที่ขนาดต่ำ ถึง ÷3.6 ที่ 360 mg/วัน) · NCCN ใช้ ÷2 (≈50 mg = 25 µg/ชม.)</td></tr>
+    <tr><td>Codeine ทางปาก</td><td>200–300 mg</td><td>morphine ≈ codeine ÷ 10 (ถึง ÷ 6.7)</td></tr>
+    <tr><td>Tramadol ทางปาก</td><td>150–300 mg</td><td>morphine ≈ tramadol ÷ 10 (ถึง ÷ 5)</td></tr>
+    <tr><td>Methadone</td><td colspan="2"><b>ไม่ใช้อัตราส่วนคงที่</b> (ขึ้นกับขนาดเดิม, สะสมหลายวัน) → <b>ผู้เชี่ยวชาญเท่านั้น</b></td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">เครื่องมือในหน้านี้ <b>เลือกอัตราส่วนด้านที่ได้ขนาดยาใหม่ต่ำกว่าเสมอ</b> (เช่น morphine กิน→SC หาร 3 แต่ SC→กิน คูณ 2) แล้วจึงลด 25–50% · ตารางทุกฉบับเป็นค่าประมาณ — ประเมินผู้ป่วยสำคัญกว่าตัวเลข</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Fentanyl patch: ใช้ให้ถูก</h4>
+      <div class="tbl"><table>
+        <tr><th>Oral morphine mg/24 ชม.</th><th>Patch µg/ชม.</th><th>IR morphine PRN (1/6)</th></tr>
+        <tr><td>30–60</td><td>12</td><td>5–10 mg</td></tr>
+        <tr><td>60–90</td><td>25</td><td>10–15 mg</td></tr>
+        <tr><td>90–120</td><td>37 (25+12)</td><td>15–20 mg</td></tr>
+        <tr><td>120–180</td><td>50</td><td>20–30 mg</td></tr>
+        <tr><td>180–240</td><td>62 (50+12)</td><td>30–40 mg</td></tr>
+        <tr><td>240–300</td><td>75 (50+25)</td><td>40–50 mg</td></tr>
+        <tr><td>300–360</td><td>87</td><td>50–60 mg</td></tr>
+        <tr><td>360</td><td>100</td><td>60 mg</td></tr>
+      </table></div>
+      <ul><li>จากยา q4h: แปะแล้ว <b>ให้ IR ต่อ 12 ชม.</b> · จาก MST q12h: <b>แปะพร้อมมื้อสุดท้าย</b> · จาก SC infusion: แปะแล้วให้ infusion ต่อ 8–12 ชม.</li><li>ยาออกฤทธิ์เต็มใน 12–24 ชม. — ห้ามประเมินว่า "ไม่ได้ผล" ภายในวันแรก · ปรับขนาดได้ทุก 72 ชม.</li><li>ไข้สูง/กระเป๋าน้ำร้อน/อาบน้ำร้อน → ดูดซึมมากขึ้น · ผู้ป่วยผอมมาก ดูดซึมไม่แน่นอน</li><li><b>ใกล้เสียชีวิต: ไม่ต้องถอด patch</b> — เพิ่ม morphine SC PRN/infusion ด้านบน</li></ul>
+    </div>
+    <div class="card c-red"><h4>ไตเสื่อม (eGFR &lt;30)</h4><ul>
+      <li><b>Morphine และ codeine</b>: metabolite (M3G/M6G) สะสม → ง่วง สับสน myoclonus ชัก หายใจช้า → <b>หลีกเลี่ยง</b> หรือใช้ขนาดต่ำมาก ห่างขึ้น (q6–8h) เฉพาะ PRN</li>
+      <li>EAPC 2012: CKD 4–5 ใช้ opioid ด้วยความระวัง <b>ตัวเลือกแรกคือ fentanyl หรือ buprenorphine</b> ขนาดเริ่มต่ำ <span class="rec">weak</span></li>
+      <li>ทางเลือกในไทย <span class="tag th">ไทย</span>: <b>fentanyl</b> (patch ถ้าปวดคงที่, หรือฉีด SC/IV โดยทีมที่ชำนาญ), <b>methadone</b> (ผู้เชี่ยวชาญ), oxycodone ขนาดต่ำระวังสะสม · hydromorphone/alfentanil/buprenorphine มักไม่มี</li>
+      <li>Tramadol: CrCl &lt;30 ห่างเป็น q12h max 200 mg/วัน · ฟอกไต: เลี่ยง</li>
+      <li>Gabapentin/pregabalin ต้องลดขนาดตามไต · ดูหน้า <a href="../aki-drug/index.html">ปรับยาตามไต</a> และ <a href="../ckd/index.html">CKD</a></li>
+      <li>ตับแข็ง: เริ่มต่ำ ห่างขึ้น (q6–8h) · ป้องกันท้องผูกด้วย lactulose เพราะท้องผูกกระตุ้น HE · ง่วงจาก opioid แยกยากจาก HE (ดู <a href="../cirrhosis/index.html">Cirrhosis</a>)</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="side" class="col">
+  <div class="sec-num">06</div>
+  <h2>ผลข้างเคียงของ opioid และ naloxone</h2>
+  <div class="tbl"><table>
+    <tr><th>ผลข้างเคียง</th><th>จัดการ</th></tr>
+    <tr><td><b>ท้องผูก</b> (เกือบทุกราย ไม่ดื้อ)</td><td><b>ป้องกันตั้งแต่วันแรก</b>: <b>senna</b> (sennosides 7.5 mg) 2 เม็ดก่อนนอน → ได้ถึง 2 เม็ด bid ± <b>lactulose</b> 15–30 mL/วัน หรือ <b>PEG</b> · เลี่ยงยาเพิ่มกาก (psyllium) ในผู้ที่ดื่มน้ำน้อย · ไม่ถ่าย 3 วัน → ตรวจ PR, suppository/สวน · ดื้อยา → methylnaltrexone SC (ถ้ามี; ห้ามในลำไส้อุดตัน)</td></tr>
+    <tr><td><b>คลื่นไส้</b> (ช่วง 5–7 วันแรก มักหายเอง)</td><td><b>Metoclopramide</b> 10 mg PO/SC tid ก่อนอาหาร (eGFR &lt;60 ลดเป็น 5 mg; EMA จำกัด max 30 mg/วัน ≤5 วันในข้อบ่งชี้ทั่วไป) หรือ <b>haloperidol</b> 0.5–1 mg PO/SC ก่อนนอน/q8h PRN · Parkinson: เลี่ยงทั้งสองตัว (ใช้ domperidone 10 mg tid PRN — ระวัง QT)</td></tr>
+    <tr><td>ง่วง</td><td>มักดีขึ้นใน 2–3 วัน · ง่วงต่อเนื่อง → ลดขนาด 25%, หาสาเหตุอื่น (ไต, Ca, ยาอื่น, ติดเชื้อ)</td></tr>
+    <tr><td><b>Opioid-induced neurotoxicity</b>: myoclonus, สับสน, ประสาทหลอน, hyperalgesia</td><td>ตรวจไต/ขาดน้ำ · ลดขนาด 25–50% หรือ <b>เปลี่ยน opioid</b> (เช่น fentanyl) · ให้น้ำถ้าเหมาะ · haloperidol สำหรับ delirium</td></tr>
+    <tr><td>คัน, ปัสสาวะคั่ง, ปากแห้ง</td><td>คันจาก morphine → พิจารณาเปลี่ยน opioid · ปัสสาวะคั่ง → สวนปัสสาวะ</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ความกลัวที่เกินจริง</h4><ul>
+      <li>Opioid ที่ <b>ปรับขนาดตามอาการ</b> ไม่ทำให้เสียชีวิตเร็วขึ้นในผู้ป่วยระยะท้าย · ความปวดเป็นตัวกระตุ้นการหายใจอยู่แล้ว</li>
+      <li><b>Tolerance ต่อการกดการหายใจเกิดเร็ว</b> · การติดยา (addiction) พบน้อยในผู้ป่วยมะเร็งระยะท้าย</li>
+      <li>สัญญาณเตือนจริง: <b>ง่วงมากขึ้นเรื่อยๆ ก่อน</b> แล้วจึงหายใจช้า · เสี่ยงสูงเมื่อ: เพิ่มขนาดเร็ว, ไตวายใหม่, ให้ร่วมกับ benzodiazepine/gabapentinoid, ปวดหายไปทันที (เช่น หลังฉายรังสี/nerve block)</li>
+    </ul></div>
+    <div class="card c-red"><h4>Naloxone: เจือจาง ให้ทีละน้อย</h4><ul>
+      <li>ข้อบ่งชี้: <b>หายใจน้อยกว่า 8 ครั้ง/นาที หรือ SpO₂ ต่ำกว่า 85%</b> ร่วมกับปลุกไม่ตื่น/เขียว (ไม่ใช่แค่ง่วง)</li>
+      <li><b>Naloxone 400 µg (1 mL) เจือจางด้วย NSS เป็น 10 mL = 40 µg/mL</b> (ใน syringe 10 mL)</li>
+      <li>ให้ <b>80 µg (2 mL) IV ช้าๆ ทุก 2 นาที</b> จนอัตราหายใจเป็นที่พอใจ (8 ครั้ง/นาทีขึ้นไป) — ปรับตามการหายใจ ไม่ต้องให้ตื่นเต็มที่</li>
+      <li>ห้ามให้ 400 µg ทั้งหลอดทีเดียวในผู้ป่วยที่ใช้ opioid ประจำ → <b>ปวดรุนแรงฉับพลัน withdrawal ชัก</b></li>
+      <li>Naloxone ออกฤทธิ์สั้นกว่า morphine SR/fentanyl patch → <b>ตาม RR และ SpO₂ ใกล้ชิดหลายชั่วโมง</b> อาจต้องให้ซ้ำหรือหยดต่อเนื่อง · ถอด patch · ลดขนาด opioid ครั้งต่อไป</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="adjuv" class="col">
+  <div class="sec-num">07</div>
+  <h2>ยาเสริม (adjuvant analgesics)</h2>
+  <div class="tbl"><table>
+    <tr><th>ปวดชนิด</th><th>ยา · ขนาด</th><th>หมายเหตุ</th></tr>
+    <tr><td rowspan="3"><b>Neuropathic</b></td><td><b>Gabapentin</b> 100–300 mg ก่อนนอน → เพิ่มทุก 3–7 วัน ถึง 900–3,600 mg/วัน แบ่ง 3 · <b>ปรับตามไต</b>: CrCl 30–59: 400–1,400 mg/วัน · 15–29: 200–700 mg/วัน · &lt;15: 100–300 mg/วัน</td><td>ง่วง เวียนหัว บวม · ร่วมกับ opioid เพิ่มการกดหายใจ</td></tr>
+    <tr><td><b>Pregabalin</b> 25–75 mg ก่อนนอน/bid → 150–600 mg/วัน · CrCl 30–60: 75–300 · 15–30: 25–150 · &lt;15: 25–75 mg/วัน</td><td>เหมือน gabapentin</td></tr>
+    <tr><td><b>Nortriptyline</b> (หรือ amitriptyline) 10 mg ก่อนนอน → 25–75 mg</td><td>Nortriptyline ง่วง/ปัสสาวะคั่ง/ความดันตกน้อยกว่า — ดีกว่าในผู้สูงอายุ · เลี่ยงใน arrhythmia, ต้อหินมุมปิด, ต่อมลูกหมากโต · duloxetine 30→60 mg เป็นทางเลือก (เลี่ยง CrCl &lt;30)</td></tr>
+    <tr><td><b>กระดูก</b></td><td>NSAID (ถ้าไม่มีข้อห้าม) · <b>dexamethasone</b> · <b>รังสีรักษาครั้งเดียว 8 Gy</b> · bisphosphonate (zoledronic acid ปรับตามไต)/denosumab</td><td>ส่งรังสีรักษาเร็ว — ได้ผลดี · กระดูกใกล้หัก → ปรึกษาศัลยแพทย์กระดูก</td></tr>
+    <tr><td><b>กดเบียดเส้นประสาท/บวมรอบก้อน, ตับโต (capsular pain), ICP สูง</b></td><td><b>Dexamethasone</b> 4–8 mg PO/SC ตอนเช้า (cord compression 16 mg/วัน) · ลดลงขนาดต่ำสุดที่ได้ผล · ไม่ได้ผลใน 5–7 วัน → หยุด</td><td>ให้ก่อนบ่าย 2 โมง (นอนไม่หลับ) · ตามน้ำตาล · ฝ้าในปาก · ให้ PPI ถ้าร่วม NSAID</td></tr>
+    <tr><td>ปวดเกร็งลำไส้</td><td><b>Hyoscine butylbromide</b> 20 mg SC q6–8h PRN (max 120 mg/วัน)</td><td>ทางปากดูดซึมน้อย</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">WHO 2018 ระบุว่าหลักฐานยาต้านซึมเศร้า/ยากันชักใน neuropathic <b>cancer</b> pain ยังไม่พอจะให้คำแนะนำ — แนะนำทดลองใช้รายบุคคลและหยุดถ้าไม่ได้ผล · ESMO 2018 และแนวทาง neuropathic pain ทั่วไปยังใช้ gabapentinoid/TCA/duloxetine</p>
+</section>
+
+<section id="sym" class="col">
+  <div class="sec-num">08</div>
+  <h2>หอบเหนื่อย · คลื่นไส้อาเจียน · ลำไส้อุดตัน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>หอบเหนื่อย (dyspnoea)</h4><ul>
+      <li>หาและแก้สาเหตุที่แก้ได้ถ้าเหมาะกับเป้าหมาย: น้ำในเยื่อหุ้มปอด (ดู <a href="../pleural-effusion/index.html">Pleural effusion</a>), ปอดอักเสบ, HF, ซีด, bronchospasm, PE</li>
+      <li><b>พัดลมเป่าที่หน้า</b> · ท่านั่ง · เทคนิคหายใจ · ลดความกังวล</li>
+      <li><b>O₂ เฉพาะผู้ที่ SpO₂ ต่ำ</b> — ไม่ช่วยความรู้สึกหอบมากกว่าลมธรรมดาในผู้ที่ไม่ขาดออกซิเจน</li>
+      <li><b>Opioid ขนาดต่ำ</b>: morphine IR 2.5 mg PO (หรือ 1–2 mg SC) q4h PRN · ได้ยาอยู่แล้ว → เพิ่ม 25% · <b>ASCO 2021 (มะเร็งระยะลุกลาม): ให้ systemic opioid</b> เมื่อวิธีไม่ใช้ยาไม่พอ</li>
+      <li>Benzodiazepine (midazolam/lorazepam) เมื่อมี panic/กังวลร่วม หรือช่วงวันสุดท้าย — ไม่ใช่ยาหลัก</li>
+      <li>Dexamethasone: lymphangitis carcinomatosa, SVC obstruction, airway obstruction จากก้อน</li>
+    </ul></div>
+    <div class="card c-warn"><h4>ความเห็นต่างระหว่างแนวทาง</h4><ul>
+      <li><b>ERS 2024</b> (โรคปอดเรื้อรังรุนแรง เช่น COPD/ILD, หอบเรื้อรัง): <b>"แนะนำไม่ใช้ opioid"</b> เพื่อรักษาอาการหอบเรื้อรัง <span class="rec">conditional · very low</span> · แนะนำพัดลม เทคนิคหายใจ บริการแบบสหวิชาชีพ · O₂ "ให้หรือไม่ให้ก็ได้"</li>
+      <li><b>ASCO 2021</b> (มะเร็งระยะลุกลาม): ให้ opioid เมื่อวิธีไม่ใช้ยาไม่พอ</li>
+      <li><b>หน้านี้ใช้</b>: มะเร็งและ<b>ช่วงวันท้ายๆ ของทุกโรค</b> → opioid ขนาดต่ำได้ · COPD/ILD ที่ยังไม่ใช่ระยะท้ายจริง → เน้นวิธีไม่ใช้ยาและ optimize โรคก่อน (ดู <a href="../asthma-copd/index.html">Asthma/COPD</a>) ใช้ opioid เป็นรายบุคคลเมื่อดื้อวิธีอื่น</li>
+    </ul></div>
+  </div>
+  <h3>คลื่นไส้อาเจียน: รักษาตามกลไก</h3>
+  <div class="tbl"><table>
+    <tr><th>กลไก / ภาพ</th><th>ยาที่เลือก (ผู้ใหญ่)</th></tr>
+    <tr><td><b>สารเคมี/ยา</b>: opioid, uremia, hypercalcemia, ติดเชื้อ — คลื่นไส้ตลอดเวลา</td><td><b>Haloperidol</b> 0.5–1.5 mg PO/SC ก่อนนอนหรือ q8–12h (max 5 mg/วัน) · แก้สาเหตุ (Ca, ยา)</td></tr>
+    <tr><td><b>กระเพาะไม่เคลื่อน/บีบอัด</b>: อิ่มเร็ว อาเจียนปริมาณมาก ท้องอืด ตับโต ascites</td><td><b>Metoclopramide</b> 10 mg PO/SC ก่อนอาหาร tid (MASCC/ESMO: ยาตัวแรกสำหรับคลื่นไส้ในมะเร็งระยะลุกลาม) · ห้ามใน complete bowel obstruction/ปวดบิด</td></tr>
+    <tr><td><b>ความดันในกะโหลกสูง</b>: ปวดหัวเช้า อาเจียนพุ่ง</td><td><b>Dexamethasone</b> 8–16 mg/วัน (ตอนเช้า) · ปรึกษารังสีรักษา</td></tr>
+    <tr><td><b>Vestibular/การเคลื่อนไหว</b></td><td>Antihistamine: dimenhydrinate 50 mg PO/IV q6–8h PRN</td></tr>
+    <tr><td>วิตกกังวล/คาดล่วงหน้า</td><td>Lorazepam 0.5–1 mg PO PRN</td></tr>
+    <tr><td>ไม่ทราบกลไก/ดื้อยา</td><td>Olanzapine 2.5–5 mg PO ก่อนนอน (ผู้สูงอายุง่วงมาก) · ondansetron (ทำให้ท้องผูก, เหมาะกับคลื่นไส้จากเคมีบำบัด/รังสี)</td></tr>
+  </table></div>
+  <div class="box note"><b>ลำไส้อุดตันจากมะเร็ง (malignant bowel obstruction)</b>: ปวดบิด ท้องอืด อาเจียน ไม่ถ่าย/ไม่ผายลม · ประเมินผ่าตัด/ใส่ stent ถ้าเหมาะ · NPO (จิบน้ำเพื่อความสุขสบายได้) ± NG tube ถ้าอาเจียนมาก · <b>Dexamethasone</b> 6–16 mg/วัน IV/SC 5 วัน (ไม่ดีขึ้นหยุด) · <b>Hyoscine butylbromide</b> 60–120 mg/24 ชม. CSCI (ลดหลั่ง ลดปวดบิด) · <b>Octreotide</b> 100 µg SC q8h หรือ 300 µg/24 ชม. CSCI (ถึง 600) · <b>Haloperidol</b> 1.5–5 mg/24 ชม. สำหรับคลื่นไส้ · opioid SC สำหรับปวด · <b>เลี่ยง metoclopramide ถ้าอุดตันสมบูรณ์/ปวดบิด</b> (partial obstruction ที่ไม่ปวดบิดใช้ได้) · ห้ามยาระบายชนิดกระตุ้น (senna)</div>
+</section>
+
+<section id="last" class="col">
+  <div class="sec-num">09</div>
+  <h2>วันสุดท้ายของชีวิต (last days of life)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>รู้ว่าเข้าสู่วันสุดท้าย (NICE NG31)</h4><ul>
+      <li>ติดเตียงทั้งหมด (PPS 10–20%), กินแทบไม่ได้, กลืนยาไม่ได้, ง่วงมากขึ้น, ผิวลาย (mottling), หายใจเปลี่ยนรูปแบบ, ปัสสาวะน้อย</li>
+      <li>ยอมรับ <b>ความไม่แน่นอน</b> — บอกญาติตรงๆ ว่า "อาจเป็นวันถึงสัปดาห์" · ประเมินซ้ำทุกวัน (บางรายดีขึ้นได้)</li>
+      <li>คุยกับผู้ป่วย/ญาติ: สถานที่เสียชีวิต (บ้าน/รพ.), พิธีทางศาสนา <span class="tag th">ไทย</span> (พระ, สวดมนต์, กลับบ้านเพื่อเสียชีวิตที่บ้าน)</li>
+    </ul></div>
+    <div class="card c-warn"><h4>ทบทวนการรักษาทั้งหมด</h4><ul>
+      <li><b>หยุดยาที่ไม่ช่วยความสุขสบาย</b>: statin, ยาลดความดัน, ยาเบาหวานส่วนใหญ่, vitamin, ยาป้องกัน VTE, ยาบำรุง</li>
+      <li>เจาะเลือด/วัดสัญญาณชีพถี่/DTX บ่อย → ลดหรือหยุด (DTX เฉพาะสงสัยน้ำตาลต่ำ/สูงมีอาการ — type 1 DM ยังให้ basal insulin ขนาดลด) <span class="tag add">เสริม</span></li>
+      <li>ยากันชัก/steroid ที่จำเป็น → เปลี่ยนเป็น SC/ทางอื่น (เช่น midazolam แทนยากันชัก, dexamethasone SC)</li>
+      <li>ICD → ปิด shock function · ยืนยัน DNR · ยกเลิกการย้าย ICU</li>
+      <li><b>สั่งยา PRN ล่วงหน้า 4 อาการ</b> (anticipatory prescribing) แม้ยังไม่มีอาการ</li>
+    </ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>อาการ</th><th>PRN ใต้ผิวหนัง (SC)</th><th>CSCI 24 ชม. (เริ่ม)</th></tr>
+    <tr><td><b>ปวด / หอบ</b></td><td><b>Morphine</b> ไม่เคยได้ opioid: <b>2–2.5 mg SC q1h</b> (สูงอายุ/เปราะบาง 1–2 mg) · ได้อยู่แล้ว: 1/10–1/6 ของขนาด SC ต่อวัน · eGFR &lt;30: 1–2 mg q2–4h และปรึกษาใช้ fentanyl</td><td>ไม่เคยได้: <b>10 mg/24 ชม.</b> (เปราะบาง/ไตเสื่อม 5 mg) · จากยากิน: OME ÷ 2–3</td></tr>
+    <tr><td><b>กระสับกระส่าย / ทุกข์ทรมาน</b> (หลังแก้สาเหตุ: ปวด ปัสสาวะคั่ง อุจจาระอัด)</td><td><b>Midazolam 2–5 mg SC q1h</b> (เปราะบาง/ไตเสื่อม 1–2.5 mg)</td><td>10 mg/24 ชม. (5 mg ในเปราะบาง) → ปรับถึง 30 mg · เกินนี้ปรึกษา (ถึง 60 mg ภายใต้คำแนะนำผู้เชี่ยวชาญ)</td></tr>
+    <tr><td><b>Delirium</b> มีประสาทหลอน/หวาดระแวง</td><td><b>Haloperidol 0.5–1 mg SC q2h</b> PRN · max ~5 mg/วัน (ดู <a href="../delirium/index.html">Delirium</a>)</td><td>2.5–5 mg/24 ชม. · ถ้ายังกระวนกระวาย เพิ่ม midazolam</td></tr>
+    <tr><td><b>คลื่นไส้อาเจียน</b></td><td><b>Haloperidol 0.5–1 mg SC q8h</b> PRN</td><td>1.5–3 mg/24 ชม.</td></tr>
+    <tr><td><b>เสมหะในคอ (death rattle)</b></td><td><b>Hyoscine butylbromide 20 mg SC q1h</b> PRN · max 120 mg/24 ชม.</td><td>60 mg/24 ชม. (ถึง 120)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">อ้างอิงขนาด: Scottish Palliative Care Guidelines (anticipatory prescribing) และ NICE NG31 · หลังให้ PRN ≥3 ครั้งใน 4 ชม. โดยไม่ดีขึ้น หรือ &gt;6 ครั้งใน 24 ชม. → ทบทวน/ปรึกษา</p>
+  <div class="grid2">
+    <div class="card c-vio"><h4>Death rattle</h4><ul>
+      <li>เสียงเสมหะในคอจากกลืนไม่ได้ — <b>ญาติทุกข์มากกว่าผู้ป่วย</b> (ผู้ป่วยมักไม่รู้สึกตัว) · อธิบายให้ญาติฟัง</li>
+      <li><b>จัดท่านอนตะแคงกึ่งคว่ำ</b> · ลดน้ำที่ให้ · ดูดเสมหะในปากเบาๆ เท่านั้น (ดูดลึกกระตุ้นให้ทรมาน)</li>
+      <li>ยา antimuscarinic (hyoscine butylbromide) ได้ผลดีกว่าเมื่อเริ่มเร็ว — NICE NG31: หลักฐานจำกัด ประเมินผลและผลข้างเคียง (ปากแห้ง ปัสสาวะคั่ง)</li>
+      <li>เสมหะเหนียวจากปอดอักเสบ/HF/น้ำเกิน — ยาลดหลั่งช่วยน้อย</li>
+    </ul></div>
+    <div class="card c-ok"><h4>Syringe driver / CSCI ในไทย <span class="tag th">ไทย</span></h4><ul>
+      <li>ใช้ <b>syringe pump/infusion pump</b> ที่มีใน รพ. หรือ <b>elastomeric pump</b> (ลูกโป่งอัตราคงที่ ใช้ที่บ้านได้ — ปริมาตร = อัตรา × 24 ชม.)</li>
+      <li>เข็ม butterfly หรือ SC catheter (ต้นแขน หน้าอก หน้าท้อง ต้นขา) · ตรวจตำแหน่งทุก 4 ชม. · เปลี่ยนเมื่อแดง/บวม</li>
+      <li><b>ผสมด้วย water for injection</b> (ส่วนใหญ่) · ไม่ควรเกิน 3 ยา (มากสุด 4) · ตรวจตะกอน/สีขุ่นทุกครั้ง · เปลี่ยนชุดทุก 24 ชม.</li>
+      <li>สูตรที่ใช้บ่อย: <b>morphine + midazolam + haloperidol</b> ± <b>hyoscine butylbromide</b> — เข้ากันได้ในความเข้มข้นปกติ</li>
+      <li><b>อย่าผสม</b>: dexamethasone (ฉีด SC แยก วันละครั้ง) · metoclopramide + hyoscine (ฤทธิ์หักล้าง) · metoclopramide + haloperidol (D2 ซ้ำ เสี่ยง EPS) · diazepam, phenytoin, ยาที่เป็นด่าง</li>
+      <li>CSCI เริ่มออกฤทธิ์ช้า (หลายชั่วโมง) → <b>ให้ PRN ทันทีตอนเริ่มเครื่อง</b></li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="sedation" class="col">
+  <div class="sec-num">10</div>
+  <h2>Palliative sedation · น้ำและอาหาร · ดูแลครอบครัว</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>Palliative sedation (EAPC 2024)</h4><ul>
+      <li>ใช้เมื่อ <b>ความทุกข์ทรมานดื้อต่อการรักษา (refractory)</b> — ทีมเห็นว่ารักษาไม่ได้อีกและผู้ป่วยทนไม่ได้ · เช่น delirium กระวนกระวายรุนแรง หอบมากดื้อยา เลือดออกมากครั้งสุดท้าย</li>
+      <li>หลัก <b>proportionality</b>: ใช้ระดับง่วงต่ำสุดที่พอบรรเทาความทุกข์ (เริ่มจากง่วงเป็นช่วง/ตื้น ก่อนลึกต่อเนื่อง)</li>
+      <li>EAPC 2024 ไม่ได้กำหนดระยะเวลาชีวิตที่เหลือตายตัว · ตัดสินใจเรื่องน้ำแยกจากการให้ยา · เน้นความยินยอมของผู้ป่วย/ญาติ ปรึกษาทีม/ผู้เชี่ยวชาญ บันทึกเหตุผล</li>
+      <li><b>Midazolam</b>: 2.5–5 mg SC/IV แล้ว CSCI 0.5–1 mg/ชม. (≈10–20 mg/24 ชม.) ปรับตามอาการ · ไม่ใช้ opioid เป็นยา sedation (ใช้ต่อสำหรับปวด/หอบ)</li>
+      <li><b>แตกต่างจาก euthanasia</b>: เจตนาบรรเทาความทุกข์ ปรับขนาดตามอาการ ไม่ใช่ทำให้ตาย</li>
+    </ul></div>
+    <div class="card c-acc"><h4>น้ำและอาหารช่วงท้าย</h4><ul>
+      <li>ช่วยให้ผู้ป่วยจิบน้ำ/กินได้เองตามต้องการ · ดูแลช่องปากและริมฝีปากชุ่มชื้นบ่อยๆ (ปากแห้งไม่ได้แปลว่าขาดน้ำเสมอ)</li>
+      <li>NICE NG31: พิจารณาให้น้ำทางการแพทย์ (clinically assisted hydration) ถ้าผู้ป่วยกระหายน้ำ/มีอาการจากขาดน้ำ และสอดคล้องกับความต้องการ · <b>ทบทวนทุกวัน</b> · หยุดถ้าบวม/เสมหะมากขึ้น</li>
+      <li>ให้ได้ทาง SC (<b>hypodermoclysis</b>) ด้วย NSS หรือ 5%D/NSS ช้าๆ โดยทั่วไปไม่เกินราว 1 L/24 ชม. ต่อตำแหน่ง <span class="tag add">เสริม</span></li>
+      <li>การให้อาหารทางสายในระยะท้ายของมะเร็ง/สมองเสื่อมระยะท้าย ไม่ยืดชีวิตหรือลดสำลักชัดเจน → คุยตามเป้าหมาย</li>
+      <li>บอกญาติ: "การกินลดลงเป็นธรรมชาติของโรค ไม่ใช่ทำให้ท่านอดอาหาร" <span class="tag th">ไทย</span> (ญาติไทยมักกังวลเรื่องนี้มาก)</li>
+    </ul></div>
+  </div>
+  <div class="card c-ok"><h4>ครอบครัวและการสูญเสีย</h4><ul>
+    <li>อธิบายสิ่งที่จะเกิดขึ้น (หายใจแบบเว้นช่วง ผิวเย็นลาย เสียงเสมหะ) — ลดความตกใจ · บอกช่องทางติดต่อ 24 ชม.</li>
+    <li>สนับสนุนพิธีกรรมทางศาสนา/วัฒนธรรม · ให้ญาติมีส่วนร่วมดูแล (เช็ดตัว ป้อนน้ำ พูดคุย — การได้ยินอาจคงอยู่)</li>
+    <li>หลังเสียชีวิต: แสดงความเสียใจ ออกหนังสือรับรองการตาย อธิบายขั้นตอน · ดูแลผู้ดูแลหลัก (caregiver burden)</li>
+    <li>เฝ้าระวัง <b>prolonged grief</b> (โศกเศร้ารุนแรงจนใช้ชีวิตไม่ได้ ≥12 เดือนในผู้ใหญ่) และซึมเศร้า/ความคิดฆ่าตัวตายในญาติ → ส่งต่อ</li>
+  </ul></div>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">11</div>
+  <h2>ระบบและทรัพยากรในไทย <span class="tag th">ไทย</span></h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>การเข้าถึง morphine</h4><ul>
+      <li>Morphine เป็น <b>ยาเสพติดให้โทษประเภท 2</b> · แพทย์สั่งได้ · ใช้ใบสั่งยา/แบบรายงานตามระเบียบ (เช่น แบบ <b>ยส.5</b>) และบันทึกการจ่าย-รับคืน</li>
+      <li>อย. เป็นหน่วยงานเดียวที่จัดหาและกระจาย opioid ให้สถานพยาบาลทั่วประเทศ · ผู้ป่วยกลับบ้านได้พร้อมยา — จำนวนวันต่อครั้ง/การให้ญาติรับยาแทน <b>เป็นไปตามระเบียบของแต่ละ รพ.</b></li>
+      <li>สอนญาติ: เก็บยาในที่ปลอดภัย จดเวลาให้ยา PRN นำยาที่เหลือคืน รพ.เมื่อผู้ป่วยเสียชีวิต</li>
+      <li>ปัญหาที่พบ: ความกลัว morphine ของแพทย์/ญาติ ("ติดยา" "ตายเร็ว") — การใช้ opioid ของไทยยังต่ำและต่างกันมากในแต่ละเขต</li>
+    </ul></div>
+    <div class="card c-ok"><h4>บริการและสิทธิ</h4><ul>
+      <li><b>สปสช.</b>: มีการจ่ายค่าบริการ palliative care รวมถึงการเยี่ยมบ้านผู้ป่วยระยะท้าย และผู้ป่วยในผ่าน DRG — <b>ลงรหัส Z51.5</b> ให้ครบ (รายละเอียดอัตราดูประกาศปีงบประมาณปัจจุบัน)</li>
+      <li>กระทรวงสาธารณสุขบรรจุ <b>"สถานชีวาภิบาล"</b> ในนโยบาย 2567 — เชื่อมการดูแลที่บ้าน ชุมชน และ รพ.</li>
+      <li>กรมการแพทย์ (2559): แบ่งการดูแลตาม <b>PPS 70–100%, 40–60%, 10–30%</b> และกำหนดให้ทุกระดับ รพ. จัดหา/สั่งใช้ opioid และมี syringe driver</li>
+      <li>เครือข่าย: ทีม palliative ของ รพ.ศูนย์/รพ.ทั่วไป, หน่วยบริการปฐมภูมิ/รพ.สต. (เยี่ยมบ้าน), Thai Palliative Care Society (สมาคมบริบาลผู้ป่วยระยะท้ายไทย) — การอบรม/เครือข่ายวิชาการ</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>แผนผัง: ผู้ป่วยระยะท้าย</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ป่วยโรคคุกคามชีวิต</b>Surprise question "ไม่แปลกใจ" · SPICT · PPS</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>PPS เท่าไร?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">70–100%</span><div class="node dx green"><b>คงที่</b>ACP · หนังสือแสดงเจตนา · คุมอาการ</div></div>
+        <div class="arm"><span class="lab">40–60%</span><div class="node dx hypo"><b>เปลี่ยนผ่าน</b>Family meeting · DNR · แผนดูแลที่บ้าน · opioid ตามอาการ</div></div>
+        <div class="arm"><span class="lab">10–30%</span><div class="node red"><b>ระยะท้าย</b>หยุดยาไม่จำเป็น · ยา PRN 4 อาการ · SC/CSCI</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ปวด?</b>ไม่เคยได้ opioid → morphine 2.5–5 mg q4h + PRN 1/10–1/6 + ยาระบาย · eGFR &lt;30 เลี่ยง morphine</div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>ทบทวนทุก 24 ชม.</b>รวม PRN → ปรับขนาด · ผลข้างเคียง/พิษ → ลดหรือเปลี่ยน opioid (ลด 25–50%) · กลืนไม่ได้ → SC</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ขนาดเป็นค่าเริ่มต้นแบบระมัดระวังสำหรับผู้ใหญ่ · ประเมินผู้ป่วยซ้ำเสมอ และยึดความเข้มข้นยา/โปรโตคอลของ รพ.</p>
+  </div>
+  <div class="tool plan" id="tStart" style="margin-top:12px">
+    <h3>1) เริ่ม opioid</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="sAge" value="68"></label>
+      <label class="f">eGFR (mL/min/1.73m²)<input type="number" id="sEg" value="65"></label>
+      <label class="f">ยาแก้ปวดที่ได้อยู่<select id="sStat"><option value="naive">ยังไม่เคยได้ opioid</option><option value="tram">Tramadol</option><option value="cod">Codeine</option><option value="strong">Strong opioid อยู่แล้ว</option></select></label>
+      <label class="f">ขนาด tramadol/codeine (mg/วัน)<input type="number" id="sWeak" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sFrail"> เปราะบาง/น้ำหนักน้อย/ติดเตียง</label>
+      <label><input type="checkbox" id="sLiver"> ตับแข็ง/ตับทำงานไม่ดี</label>
+      <label><input type="checkbox" id="sOral" checked> กลืนได้</label>
+      <label><input type="checkbox" id="sResp"> COPD รุนแรง/OSA/ได้ benzodiazepine หรือ gabapentinoid</label>
+      <label><input type="checkbox" id="sPark"> Parkinson/Lewy body</label>
+    </div>
+    <div class="out" id="sOut"></div>
+  </div>
+
+  <div class="tool plan" id="tConv" style="margin-top:12px">
+    <h3>2) แปลงขนาด opioid (แบบระมัดระวัง)</h3>
+    <div class="fields">
+      <label class="f">จากยา<select id="cFrom"><option value="mpo">Morphine ทางปาก (mg/วัน)</option><option value="miv">Morphine IV/SC (mg/วัน)</option><option value="oxy">Oxycodone ทางปาก (mg/วัน)</option><option value="fen">Fentanyl patch (µg/ชม.)</option><option value="cod">Codeine ทางปาก (mg/วัน)</option><option value="tra">Tramadol ทางปาก (mg/วัน)</option><option value="met">Methadone</option></select></label>
+      <label class="f">ขนาดรวมต่อวัน (รวม PRN) หรือ µg/ชม.<input type="number" id="cDose" value="60"></label>
+      <label class="f">เป็นยา<select id="cTo"><option value="fen">Fentanyl patch</option><option value="mpo">Morphine ทางปาก</option><option value="miv">Morphine SC/IV (24 ชม.)</option><option value="oxy">Oxycodone ทางปาก</option><option value="met">Methadone</option></select></label>
+      <label class="f">ลดขนาดเพราะ cross-tolerance<select id="cRed"><option value="25">25% (ปวดคุมได้ ไม่มีพิษ)</option><option value="50">50% (สูงอายุ/เปราะบาง/ขนาดสูง/มีพิษ)</option></select></label>
+      <label class="f">eGFR (ถ้าทราบ)<input type="number" id="cEg" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="cTox"> เปลี่ยนเพราะผลข้างเคียง/พิษ (ง่วง สับสน myoclonus)</label>
+      <label><input type="checkbox" id="cLast"> ใกล้เสียชีวิต (วันสุดท้าย)</label>
+    </div>
+    <div class="out" id="cOut"></div>
+  </div>
+
+  <div class="tool" id="tPps" style="margin-top:12px">
+    <h3>3) PPS → การพยากรณ์และสิ่งที่ต้องทำ</h3>
+    <div class="fields">
+      <label class="f">PPS (%)<select id="pPps"><option value="">— เลือก —</option><option>100</option><option>90</option><option>80</option><option>70</option><option selected>60</option><option>50</option><option>40</option><option>30</option><option>20</option><option>10</option></select></label>
+      <label class="f">โรคหลัก<select id="pDx"><option value="ca">มะเร็ง</option><option value="non">ไม่ใช่มะเร็ง (HF, COPD, CKD, ตับแข็ง, stroke, สมองเสื่อม)</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pSq"> Surprise question: ไม่แปลกใจถ้าเสียชีวิตใน 12 เดือน</label>
+      <label><input type="checkbox" id="pDrop"> PPS ลดลง ≥10–20% ในไม่กี่สัปดาห์</label>
+      <label><input type="checkbox" id="pAcp"> คุยเป้าหมาย/ทำหนังสือแสดงเจตนาแล้ว</label>
+      <label><input type="checkbox" id="pHome"> อยากเสียชีวิตที่บ้าน</label>
+    </div>
+    <div class="out" id="pOut"></div>
+  </div>
+
+  <div class="tool plan" id="tKit" style="margin-top:12px">
+    <h3>4) ชุดยาวันสุดท้าย + syringe driver 24 ชม.</h3>
+    <div class="fields">
+      <label class="f">Morphine ที่ได้อยู่ (OME ทางปาก mg/วัน; 0 = ไม่เคยได้)<input type="number" id="kOm" value="0"></label>
+      <label class="f">Fentanyl patch ที่แปะอยู่ (µg/ชม.; 0 = ไม่มี)<input type="number" id="kPatch" value="0"></label>
+      <label class="f">eGFR<input type="number" id="kEg" value="45"></label>
+      <label class="f">ปริมาตรรวมใน syringe<select id="kVol"><option value="24">24 mL (1 mL/ชม.)</option><option value="48">48 mL (2 mL/ชม.)</option><option value="12">12 mL (0.5 mL/ชม.)</option></select></label>
+      <label class="f">Midazolam ที่มี<select id="kMidC"><option value="5">5 mg/mL</option><option value="1">1 mg/mL</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="kPain" checked> ปวดต่อเนื่อง</label>
+      <label><input type="checkbox" id="kDysp"> หอบต่อเนื่อง</label>
+      <label><input type="checkbox" id="kAgit"> กระสับกระส่าย/ทุกข์ทรมาน</label>
+      <label><input type="checkbox" id="kDel"> Delirium มีประสาทหลอน</label>
+      <label><input type="checkbox" id="kNau"> คลื่นไส้อาเจียน</label>
+      <label><input type="checkbox" id="kSec"> เสมหะในคอ (death rattle)</label>
+      <label><input type="checkbox" id="kMbo"> ลำไส้อุดตันจากมะเร็ง</label>
+      <label><input type="checkbox" id="kFrail"> สูงอายุมาก/เปราะบาง</label>
+    </div>
+    <div class="out" id="kOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">14</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Palliative care เริ่มได้พร้อมการรักษาโรค</b> ไม่ต้องรอวันสุดท้าย</div></div>
+    <div class="pearl"><div><b>"ไม่แปลกใจ" → เริ่มคุยเป้าหมาย</b> ตั้งแต่วันนี้</div></div>
+    <div class="pearl"><div><b>ปวดรุนแรง → strong opioid ได้เลย</b> ไม่ต้องไต่บันได</div></div>
+    <div class="pearl"><div><b>Morphine 2.5–5 mg q4h + PRN 1/10–1/6</b> + ยาระบายทุกราย</div></div>
+    <div class="pearl"><div><b>รวมยา 24 ชม. → ขนาดใหม่</b> ปรับ PRN ตาม</div></div>
+    <div class="pearl"><div><b>เปลี่ยน opioid ลด 25–50%</b> · methadone ให้ผู้เชี่ยวชาญ</div></div>
+    <div class="pearl"><div><b>eGFR &lt;30 เลี่ยง morphine/codeine</b> → fentanyl</div></div>
+    <div class="pearl"><div><b>Fentanyl patch ไม่ใช่ยาเริ่ม</b> และไม่เหมาะกับปวดที่ยังไม่คงที่</div></div>
+    <div class="pearl"><div><b>Naloxone 400 µg เจือจางเป็น 10 mL</b> ให้ทีละ 2 mL (80 µg) IV ช้าๆ ทุก 2 นาที จน RR พอใจ</div></div>
+    <div class="pearl"><div><b>O₂ เฉพาะเมื่อขาดออกซิเจน</b> · พัดลมช่วยหอบได้จริง</div></div>
+    <div class="pearl"><div><b>วันสุดท้าย: PRN 4 อาการ</b> + หยุดยาที่ไม่จำเป็น</div></div>
+    <div class="pearl"><div><b>Dexamethasone ฉีดแยก</b> ไม่ผสมใน syringe driver</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">15</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../delirium/index.html">Delirium →</a> · <a href="../onco-emergency/index.html">Oncologic emergencies →</a> · <a href="../hf/index.html">Heart failure →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../asthma-copd/index.html">Asthma/COPD →</a> · <a href="../icu-drugs/index.html">ICU drugs →</a></p>
+<footer class="col">
+  อ้างอิง: 1) World Health Organization. WHO guidelines for the pharmacological and radiotherapeutic management of cancer pain in adults and adolescents. Geneva: WHO; 2018 · 2) Fallon M, Giusti R, Aielli F, et al. Management of cancer pain in adult patients: ESMO Clinical Practice Guidelines. Ann Oncol 2018;29(Suppl 4):iv166–91 · 3) Caraceni A, Hanks G, Kaasa S, et al. Use of opioid analgesics in the treatment of cancer pain: evidence-based recommendations from the EAPC. Lancet Oncol 2012;13:e58–68 · 4) National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology: Adult Cancer Pain (current version) · 5) National Institute for Health and Care Excellence. Palliative care for adults: strong opioids for pain relief (CG140). 2012, updated 2016 · 6) National Institute for Health and Care Excellence. Care of dying adults in the last days of life (NG31). 2015 · 7) Hui D, Bohlke K, Bao T, et al. Management of dyspnea in advanced cancer: ASCO guideline. J Clin Oncol 2021;39:1389–411 · 8) Holland AE, Spathis A, Marsaa K, et al. European Respiratory Society clinical practice guideline on symptom management for adults with serious respiratory illness. Eur Respir J 2024;63:2400335 · 9) Roila F, Molassiotis A, Herrstedt J, et al. 2016 MASCC and ESMO guideline update for the prevention of chemotherapy- and radiotherapy-induced nausea and vomiting and of nausea and vomiting in advanced cancer patients. Ann Oncol 2016;27(Suppl 5):v119–33 · 10) Surges SM, Brunsch H, Jaspers B, et al. Revised European Association for Palliative Care (EAPC) recommended framework on palliative sedation: an international Delphi study. Palliat Med 2024;38:213–28 · 11) Scottish Palliative Care Guidelines: anticipatory prescribing; fentanyl patches. NHS Scotland (online, accessed 2026) · 12) Chewaskulyong B, Sapinun L, Downing GM, et al. Reliability and validity of the Thai translation (Thai PPS Adult Suandok) of the Palliative Performance Scale (PPSv2). Palliat Med 2012;26:1034–41 · 13) Prompantakorn P, Angkurawaranon C, Pinyopornpanish K, et al. Palliative Performance Scale and survival in patients with cancer and non-cancer diagnoses needing a palliative care consultation: a retrospective cohort study. BMC Palliat Care 2021;20:74 · 14) Taechawiwat T, Chaichompoo R, Piyawannarat N. Palliative Performance Scale and survival among advanced cancer inpatients: a retrospective cohort study. J Chulabhorn Royal Acad 2026;8(2):158–74 · 15) Baile WF, Buckman R, Lenzi R, et al. SPIKES—a six-step protocol for delivering bad news: application to the patient with cancer. Oncologist 2000;5:302–11 · 16) พระราชบัญญัติสุขภาพแห่งชาติ พ.ศ. 2550 มาตรา 12 และกฎกระทรวงกำหนดหลักเกณฑ์และวิธีการดำเนินการตามหนังสือแสดงเจตนาฯ พ.ศ. 2553 · 17) กรมการแพทย์ กระทรวงสาธารณสุข. List disease of palliative care and functional unit. 2559 · 18) มรกต จรูญวรรธนะ. สถานการณ์และปัญหาการเข้าถึงยากลุ่มโอปิออยด์: กรณีศึกษาสำนักงานคณะกรรมการอาหารและยา. วารสารอาหารและยา 2563;27(2):13–27<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = เนื้อหาเสริมนอกแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','pcView');
+mountWalker({
+ start:{q:'ปัญหาหลักตอนนี้คืออะไร?',o:[['ระบุผู้ป่วย/วางแผนการดูแล','who','PPS · ACP'],['ปวด','pain'],['ใกล้เสียชีวิต (วันถึงสัปดาห์)','last'],['หอบ หรือ คลื่นไส้อาเจียน','oth']]},
+ who:{q:'PPS เท่าไร?',o:[['70–100%','ppsHi'],['40–60%','ppsMid'],['10–30%','ppsLo']]},
+ ppsHi:{leaf:true,cls:'ok',t:'คงที่: วางแผนล่วงหน้า',b:'Surprise question "ไม่แปลกใจ" → เริ่ม ACP · ถามคุณค่าและเป้าหมาย · แนะนำหนังสือแสดงเจตนา (มาตรา 12) และผู้ตัดสินใจแทน · คุมอาการ · ประเมิน PPS ซ้ำทุกครั้งที่มา'},
+ ppsMid:{leaf:true,cls:'warn',t:'เปลี่ยนผ่าน: family meeting',b:'คุยพยากรณ์โรคแบบช่วงเวลา (สัปดาห์–เดือน) · ตัดสินใจ DNR/การยื้อชีวิต · วางแผนดูแลที่บ้าน ประสานทีมเยี่ยมบ้าน · opioid + ยาระบาย · ลงรหัส Z51.5',next:['ถ้ามีปวด','pain']},
+ ppsLo:{leaf:true,cls:'danger',t:'ระยะท้าย',b:'Median survival ในไทยราว 2 วัน (PPS 10%) ถึง 2–3 สัปดาห์ (PPS 30%) · หยุดยาที่ไม่จำเป็น · สั่งยา PRN 4 อาการ · เตรียมทาง SC · คุยสถานที่เสียชีวิต',next:['จัดยาวันสุดท้าย','last']},
+ pain:{q:'เคยได้ strong opioid หรือยัง?',o:[['ยังไม่เคย (หรือได้ tramadol/codeine)','naive'],['ได้อยู่แล้ว','onop']]},
+ naive:{q:'eGFR น้อยกว่า 30?',o:[['ใช่','naRen'],['ไม่','naAge']]},
+ naRen:{leaf:true,cls:'danger',t:'ไตเสื่อมมาก: เลี่ยง morphine/codeine',b:'ปรึกษาเพื่อใช้ fentanyl (หรือ methadone โดยผู้เชี่ยวชาญ) · ระหว่างรอ morphine IR 2.5 mg PO q6–8h <b>PRN เท่านั้น</b> · ตามง่วง/หายใจ/myoclonus · ยาระบาย'},
+ naAge:{q:'อายุ ≥75 ปี เปราะบาง ตับไม่ดี หรือ eGFR 30–59?',o:[['ใช่','naLow'],['ไม่','naStd']]},
+ naLow:{leaf:true,cls:'warn',t:'Morphine ขนาดต่ำ',b:'<b>Morphine IR 2.5 mg PO q4–6h</b> + PRN 1/10–1/6 ของขนาดรวมต่อวัน (≈1–2.5 mg) q1h · senna ± lactulose · ยาแก้คลื่นไส้ PRN · ทบทวนทุก 24 ชม.'},
+ naStd:{leaf:true,cls:'ok',t:'Morphine ขนาดมาตรฐาน',b:'<b>Morphine IR 5 mg PO q4h</b> (30 mg/วัน) + PRN 2.5–5 mg q1h · หรือ MST 10 mg q12h + IR PRN · senna ± lactulose · metoclopramide/haloperidol PRN · ทบทวนทุก 24 ชม.'},
+ onop:{q:'ปวดคุมได้ไหม?',o:[['คุมได้','ctrl'],['คุมไม่ได้','unc']]},
+ ctrl:{leaf:true,cls:'ok',t:'คงยาเดิม',b:'ปวดคงที่ 2–3 วัน → เปลี่ยน IR เป็น MST q12h (ขนาดรวมเท่าเดิม) · PRN 1/10–1/6 · ยาระบายต่อเนื่อง · กลืนไม่ได้ → morphine SC (ใช้เครื่องมือ 2)'},
+ unc:{q:'มีพิษจาก opioid (ง่วงมาก สับสน myoclonus ประสาทหลอน)?',o:[['มี','tox'],['ไม่มี','titr']]},
+ tox:{leaf:true,cls:'danger',t:'ลดขนาด หรือเปลี่ยน opioid',b:'หาสาเหตุ: AKI ขาดน้ำ Ca สูง ติดเชื้อ ยาอื่น · ลด 25–50% หรือเปลี่ยนเป็น opioid อื่น (ไตเสื่อม → fentanyl) โดย<b>ลด 50%</b> · เพิ่มยาเสริมตามชนิดปวด · หายใจน้อยกว่า 8 หรือ SpO₂ ต่ำกว่า 85% + ปลุกไม่ตื่น → <b>naloxone 400 µg เจือจางเป็น 10 mL ให้ 80 µg (2 mL) IV ช้าๆ ทุก 2 นาที</b> จน RR พอใจ'},
+ titr:{leaf:true,cls:'warn',t:'ปรับขนาดขึ้น',b:'รวมยาประจำ + PRN ใน 24 ชม. เป็นขนาดใหม่ หรือเพิ่ม 25–50% · ตั้ง PRN ใหม่ · ประเมินชนิดปวด: neuropathic → gabapentin/pregabalin/nortriptyline · กระดูก → NSAID, dexamethasone, รังสีรักษาครั้งเดียว · ปวดหลัง + อ่อนแรง → cord compression'},
+ last:{q:'ยังกลืนยาได้ไหม?',o:[['กลืนได้','swal'],['กลืนไม่ได้/ซึม','sc']]},
+ swal:{leaf:true,cls:'ok',t:'ใช้ยากินเท่าที่จำเป็น',b:'หยุดยาที่ไม่ช่วยความสุขสบาย · คง opioid/ยาจำเป็น · <b>สั่ง PRN SC ล่วงหน้า 4 อาการ</b> ไว้เลย (morphine, midazolam, haloperidol, hyoscine butylbromide)',next:['เมื่อกลืนไม่ได้','sc']},
+ sc:{q:'อาการเด่นคืออะไร?',o:[['ปวด/หอบ','scPain'],['กระสับกระส่าย/delirium','scAgit'],['เสมหะในคอ','scSec'],['คลื่นไส้อาเจียน','scNau'],['ทุกข์ทรมานดื้อทุกวิธี','sed']]},
+ scPain:{leaf:true,cls:'warn',t:'Morphine SC',b:'ไม่เคยได้: 2–2.5 mg SC q1h PRN · CSCI 10 mg/24 ชม. (เปราะบาง/ไตเสื่อม 5 mg) · จากยากิน: OME ÷ 2–3 ต่อ 24 ชม. · มี fentanyl patch: คงไว้ เพิ่ม SC · eGFR น้อยกว่า 30: ขนาดต่ำ ห่าง ปรึกษาเปลี่ยนเป็น fentanyl'},
+ scAgit:{leaf:true,cls:'warn',t:'แก้สาเหตุก่อน แล้วให้ยา',b:'ตรวจปวด ปัสสาวะคั่ง อุจจาระอัด · <b>Haloperidol 0.5–1 mg SC q2h</b> PRN ถ้ามีประสาทหลอน (max ~5 mg/วัน) · <b>Midazolam 2–5 mg SC q1h</b> PRN สำหรับทุกข์ทรมาน/กระสับกระส่าย · CSCI midazolam 10 mg/24 ชม.'},
+ scSec:{leaf:true,cls:'ok',t:'Death rattle',b:'จัดท่าตะแคง · อธิบายญาติ · ลดน้ำ · <b>Hyoscine butylbromide 20 mg SC q1h</b> PRN (max 120 mg/24 ชม.) หรือ CSCI 60 mg/24 ชม. · ดูดเสมหะในปากเบาๆ เท่านั้น'},
+ scNau:{leaf:true,cls:'ok',t:'คลื่นไส้ช่วงท้าย',b:'<b>Haloperidol 0.5–1 mg SC q8h</b> PRN หรือ CSCI 1.5–3 mg/24 ชม. · ลำไส้อุดตัน → + hyoscine butylbromide, dexamethasone SC แยก, octreotide · Parkinson: เลี่ยง haloperidol/metoclopramide'},
+ sed:{leaf:true,cls:'danger',t:'พิจารณา palliative sedation',b:'ยืนยันว่า refractory โดยทีม · คุยกับผู้ป่วย/ญาติ · หลัก proportionality · <b>Midazolam</b> 2.5–5 mg SC แล้ว CSCI 0.5–1 mg/ชม. ปรับตามอาการ · ให้ opioid ต่อสำหรับปวด/หอบ · บันทึกเหตุผล · ปรึกษาผู้เชี่ยวชาญ'},
+ oth:{q:'อาการไหน?',o:[['หอบเหนื่อย','dys'],['คลื่นไส้อาเจียน','nau']]},
+ dys:{q:'SpO₂ ต่ำกว่า 90%?',o:[['ใช่','dysHyp'],['ไม่','dysNo']]},
+ dysHyp:{leaf:true,cls:'warn',t:'ให้ O₂ + รักษาสาเหตุตามเป้าหมาย',b:'O₂ ตามเป้า SpO₂ · หาสาเหตุ (น้ำในช่องปอด ปอดอักเสบ HF PE) · พัดลม · morphine IR 2.5 mg PO หรือ 1–2 mg SC q4h PRN (มะเร็ง/ระยะท้าย) · COPD/ILD ที่ยังไม่ใช่ระยะท้าย: ERS 2024 แนะนำไม่ใช้ opioid เป็นประจำ'},
+ dysNo:{leaf:true,cls:'ok',t:'ไม่ขาดออกซิเจน: ไม่ต้องให้ O₂',b:'พัดลมเป่าหน้า · ท่านั่ง · เทคนิคหายใจ · morphine ขนาดต่ำ PRN ในมะเร็ง/ระยะท้าย (ASCO 2021) · กังวลมาก → benzodiazepine ร่วม'},
+ nau:{q:'ปวดบิด ท้องอืด อาเจียนมาก ไม่ถ่าย ไม่ผายลม?',o:[['ใช่','mbo'],['ไม่','nauMech']]},
+ mbo:{leaf:true,cls:'danger',t:'ลำไส้อุดตันจากมะเร็ง',b:'ประเมินผ่าตัด/stent ถ้าเหมาะ · NPO (จิบได้) ± NG · dexamethasone 6–16 mg/วัน 5 วัน · hyoscine butylbromide 60–120 mg/24 ชม. · octreotide 300 µg/24 ชม. · haloperidol · opioid SC · <b>เลี่ยง metoclopramide ถ้าอุดตันสมบูรณ์</b> · ไม่ใช้ senna'},
+ nauMech:{leaf:true,cls:'ok',t:'รักษาตามกลไก',b:'ยา/uremia/Ca สูง → haloperidol 0.5–1.5 mg · กระเพาะไม่เคลื่อน → metoclopramide 10 mg tid · ICP สูง → dexamethasone · vestibular → dimenhydrinate · ดื้อยา → olanzapine 2.5–5 mg ก่อนนอน'}
+},'apTrail','apStage');
+
+const r05=x=>Math.round(x*2)/2;
+const fl05=x=>Math.floor(x*2)/2;
+const fmt=x=>(Math.round(x*10)/10).toString();
+function prnRange(tdd){const lo=Math.max(1,r05(tdd/10));const hi=Math.max(lo,fl05(tdd/6));return lo===hi?fmt(lo):fmt(lo)+'–'+fmt(hi);}
+
+/* ---------- 1) opioid starter ---------- */
+function starter(){
+  const age=num('sAge'),eg=num('sEg'),st=$('sStat').value,wk=num('sWeak');const c=id=>$(id).checked;const L=[];const out=$('sOut');
+  if(age===null||eg===null){out.textContent='ใส่อายุและ eGFR (ถ้าไม่ทราบ eGFR ให้ตรวจ creatinine ก่อนเริ่ม morphine)';return}
+  if(age<18||age>110){out.textContent='เครื่องมือนี้สำหรับผู้ใหญ่อายุ 18–110 ปี — ตรวจค่าอายุ';return}
+  if(eg<0||eg>200){out.textContent='ตรวจค่า eGFR (0–200 mL/min/1.73m²)';return}
+  if(st==='strong'){out.innerHTML='ได้ strong opioid อยู่แล้ว → รวมขนาดต่อวัน (ยาประจำ + PRN) แล้วใช้ <b>เครื่องมือ 2</b> เพื่อเปลี่ยนยา/ทาง · ปวดยังไม่คุมและไม่มีพิษ: เพิ่ม 25–50% แล้วตั้ง PRN = 1/10–1/6 ของขนาดใหม่ · <b>ยาระบายต้องได้ทุกวัน</b>';return}
+  const oral=c('sOral');let ome=0;let wkName='';
+  if(st==='tram'||st==='cod'){
+    wkName=st==='tram'?'tramadol':'codeine';
+    if(wk===null||wk<=0){out.textContent='ใส่ขนาด '+wkName+' ที่ได้ต่อวัน (mg/วัน)';return}
+    if(wk>2000){out.textContent='ตรวจค่าขนาด '+wkName+' (mg/วัน)';return}
+    const mx=st==='tram'?(age>75?300:400):240;
+    if(wk>mx)L.push(`<b>${wkName} ${wk} mg/วัน เกินขนาดสูงสุด (${mx} mg/วัน)</b> — ไม่ควรเพิ่มต่อ ให้เปลี่ยนเป็น strong opioid`);
+    else L.push(`${wkName} ไม่พอ → เปลี่ยนเป็น ${eg<30?'strong opioid (eGFR น้อยกว่า 30: ดูข้อไตเสื่อมด้านล่าง)':'morphine'} ได้เลย (WHO 2018 ไม่บังคับไต่บันได)`);
+    ome=wk/10;
+    L.push(`<span class="muted">${wkName} ${wk} mg/วัน ≈ OME ${fmt(ome)} mg/วัน (หาร 10 — ค่าระมัดระวัง) · หยุด ${wkName} เมื่อเริ่ม morphine</span>`);
+  }
+  const ren=eg<30,mid=eg>=30&&eg<60;
+  const low=age>=75||c('sFrail')||c('sLiver')||mid;
+  if(ren){
+    L.push(`<b>eGFR ${eg} (น้อยกว่า 30): หลีกเลี่ยง morphine แบบให้ตามเวลา และเลี่ยง codeine</b> — metabolite สะสม ทำให้ง่วง สับสน myoclonus หายใจช้า`);
+    L.push('ทางเลือกที่ดีกว่า: <b>fentanyl</b> (แผ่นแปะห้ามใช้ในผู้ไม่เคยได้ opioid → ใช้ fentanyl ฉีด SC/IV ขนาดต่ำโดยทีมที่ชำนาญ) หรือ methadone/oxycodone ขนาดต่ำโดยผู้เชี่ยวชาญ → <b>ปรึกษาทีม palliative/อายุรแพทย์</b>');
+    L.push(`ถ้าจำเป็นต้องใช้ morphine ระหว่างรอ: <b>${oral?'morphine IR 2.5 mg ทางปาก':'morphine 1 mg SC'} q6–8h PRN เท่านั้น</b> · ตามความง่วง อัตราหายใจ myoclonus ก่อนให้ทุกครั้ง`+(eg<15?' · <b>eGFR น้อยกว่า 15/ฟอกไต: ปรึกษาก่อนให้</b>':''));
+    if(st==='tram')L.push('Tramadol: CrCl น้อยกว่า 30 ให้ห่างเป็น q12h max 200 mg/วัน · ฟอกไต: เลี่ยง');
+  }else{
+    let q=low?2.5:5;
+    if(ome>0){const fw=Math.floor(ome/6/2.5)*2.5;q=Math.max(q,Math.min(fw,low?5:10));}
+    const q6=mid||c('sLiver');const n=q6?4:6;const iv=q6?'q6h':'q4h';const tdd=q*n;
+    if(oral){
+      L.push(`<b>Morphine IR ทางปาก ${fmt(q)} mg ${iv}</b> (รวม ${fmt(tdd)} mg/วัน)${low?' — ขนาดต่ำเพราะ'+[age>=75?'อายุ ≥75':null,c('sFrail')?'เปราะบาง':null,c('sLiver')?'ตับไม่ดี':null,mid?'eGFR 30–59':null].filter(Boolean).join(', '):''}`);
+      L.push(`PRN (breakthrough): <b>morphine IR ${prnRange(tdd)} mg ทางปาก q1h</b> เมื่อปวด (1/10–1/6 ของขนาดรวมต่อวัน)`);
+      const mst=Math.floor(tdd/2/10)*10;
+      L.push(`ปวดคงที่ 2–3 วัน → ${mst>=10?`MST ${mst} mg q12h + IR PRN (MST ห้ามบด/หัก)`:'ขนาดยังต่ำกว่า MST 10 mg q12h — ใช้ IR ต่อ'}`);
+    }else{
+      const sq=Math.max(1,r05(q/3));const s24=sq*n;
+      L.push(`กลืนไม่ได้ → <b>morphine ${fmt(sq)} mg SC ${iv}</b> (หรือ CSCI ${fmt(s24)} mg/24 ชม.) — ใช้ยากิน ÷ 3 (ค่าระมัดระวัง)`);
+      L.push(`PRN: <b>morphine ${prnRange(s24)} mg SC q1h</b> เมื่อปวด`);
+    }
+    L.push('ทุก 24 ชม.: <b>รวมยาประจำ + PRN</b> เป็นขนาดใหม่ (หรือเพิ่ม 25–50%) · ใช้ PRN ≥3–4 ครั้ง/วัน = ยาประจำไม่พอ · ง่วงก่อนหายปวด → หาสาเหตุ/ยาเสริม');
+  }
+  L.push('<b>ยาระบาย (ทุกราย)</b>: senna 2 เม็ด (sennosides 7.5 mg/เม็ด) ก่อนนอน → ถึง 2 เม็ด bid ± lactulose 15–30 mL/วัน หรือ PEG'+(c('sLiver')?' · ตับแข็ง: lactulose ให้ถ่ายนิ่ม 2–3 ครั้ง/วัน (ท้องผูกกระตุ้น HE)':'')+' · ไม่ถ่าย 3 วัน → ตรวจ PR');
+  if(c('sPark'))L.push('ยาแก้คลื่นไส้ PRN: <b>domperidone 10 mg ทางปาก tid ก่อนอาหาร</b> (max 30 mg/วัน, ระวัง QT) — <b>เลี่ยง metoclopramide และ haloperidol</b> ใน Parkinson/Lewy body');
+  else L.push(`ยาแก้คลื่นไส้ PRN 5–7 วันแรก: <b>${eg<60?'metoclopramide 5 mg':'metoclopramide 10 mg'} tid ก่อนอาหาร</b> หรือ <b>haloperidol 0.5–1 mg ก่อนนอน</b>`+(ren?' (eGFR น้อยกว่า 30: เลือก haloperidol 0.5 mg)':''));
+  if(c('sResp'))L.push('<b>เสี่ยงกดการหายใจเพิ่ม</b> (COPD รุนแรง/OSA/benzodiazepine/gabapentinoid) → ใช้ขนาดต่ำสุด ตามระดับความง่วงและอัตราหายใจใกล้ชิดใน 24–72 ชม. แรก');
+  L.push('สอนผู้ป่วย/ญาติ: ง่วงช่วงแรก 2–3 วันแล้วดีขึ้น · ห้ามขับรถช่วงเริ่ม/ปรับยา · <b>ง่วงมากขึ้นเรื่อยๆ ปลุกยาก หรือหายใจช้ากว่า 8 ครั้ง/นาที → หยุดยาและมา รพ.</b> (รพ.: naloxone 400 µg เจือจางเป็น 10 mL ให้ 80 µg IV ทุก 2 นาที)');
+  out.innerHTML='<ol>'+L.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+}
+bindAll('#tStart input,#tStart select',starter);
+
+/* ---------- 2) opioid conversion ---------- */
+const OP={mpo:{n:'Morphine ทางปาก',u:'mg/วัน',lo:1,hi:1},miv:{n:'Morphine IV/SC',u:'mg/วัน',lo:2,hi:3},oxy:{n:'Oxycodone ทางปาก',u:'mg/วัน',lo:1.5,hi:2},fen:{n:'Fentanyl patch',u:'µg/ชม.',lo:2,hi:2.4},cod:{n:'Codeine ทางปาก',u:'mg/วัน',lo:0.1,hi:0.15},tra:{n:'Tramadol ทางปาก',u:'mg/วัน',lo:0.1,hi:0.2}};
+const BANDS=[[30,'12','12',5,10],[60,'25','25',10,15],[90,'37','25 + 12',15,20],[120,'50','50',20,30],[180,'62','50 + 12',30,40],[240,'75','50 + 25',40,50],[300,'87','50 + 25 + 12',50,60],[360,'100','50 + 50',60,60]];
+function conv(){
+  const f=$('cFrom').value,t=$('cTo').value,d=num('cDose'),eg=num('cEg');let red=+$('cRed').value;const tox=$('cTox').checked,last=$('cLast').checked;const out=$('cOut');const L=[];
+  if(f==='met'||t==='met'){out.innerHTML='<b>Methadone: เครื่องมือนี้ไม่คำนวณ</b> — อัตราส่วนกับ morphine ไม่คงที่ (ยิ่งขนาดเดิมสูง methadone ยิ่งแรงขึ้นมาก), half-life ยาวและสะสม 3–5 วัน, QT ยาว → <b>ให้ผู้เชี่ยวชาญ palliative/pain เป็นผู้เปลี่ยนและติดตาม</b>';return}
+  if(d===null||d<=0){out.textContent='ใส่ขนาดรวมต่อวันของยาเดิม (ยาประจำ + PRN)'+(f==='fen'?' — fentanyl patch ใส่เป็น µg/ชม.':' เป็น mg/วัน');return}
+  if(f===t){out.textContent='ยาเดิมและยาใหม่เป็นตัวเดียวกัน ทางเดียวกัน — เลือกยาปลายทางอื่น';return}
+  if(f==='fen'&&(d<12||d>300)){out.textContent='ตรวจค่า: fentanyl patch ใส่เป็น µg/ชม. (12–300) เช่น 12, 25, 50';return}
+  const cap={mpo:3000,miv:1500,oxy:2000,cod:1000,tra:1000}[f];
+  if(f!=='fen'&&d>cap){out.textContent=`ตรวจค่าขนาด (${OP[f].u}) — ค่าสูงผิดปกติ`;return}
+  if(eg!==null&&(eg<0||eg>200)){out.textContent='ตรวจค่า eGFR (0–200) หรือเว้นว่างถ้าไม่ทราบ';return}
+  const A=OP[f];
+  if(f==='tra'&&d>400)L.push(`<b>Tramadol ${d} mg/วัน เกินขนาดสูงสุด 400 mg/วัน</b>`);
+  if(f==='cod'&&d>240)L.push(`<b>Codeine ${d} mg/วัน เกินขนาดสูงสุด 240 mg/วัน</b>`);
+  const omeLo=d*A.lo,omeHi=d*A.hi;
+  L.push(`${A.n} ${d} ${A.u} ≈ OME ${fmt(omeLo)}${omeHi!==omeLo?'–'+fmt(omeHi):''} mg/วัน → <b>ใช้ค่าต่ำ ${fmt(omeLo)} mg/วัน</b> <span class="muted">(${f==='miv'?'ฉีด→ปาก ×2':f==='oxy'?'oxycodone ×1.5':f==='fen'?'µg/ชม. ×2':f==='cod'?'codeine ÷10':f==='tra'?'tramadol ÷10':'morphine ทางปาก'})</span>`);
+  const same=(f==='mpo'&&t==='miv')||(f==='miv'&&t==='mpo');
+  if(tox&&!same&&red<50){red=50;L.push('เปลี่ยนเพราะพิษ → <b>ปรับเป็นลด 50%</b> อัตโนมัติ');}
+  const r=same?0:red;const ome=omeLo*(1-r/100);
+  if(same)L.push('เปลี่ยนเฉพาะทางให้ยาของ morphine ตัวเดิม → ไม่ลดเพราะ cross-tolerance (แต่ใช้อัตราส่วนด้านที่ได้ขนาดต่ำ)');
+  else L.push(`ลด ${r}% (cross-tolerance ไม่สมบูรณ์) → OME ที่ใช้คำนวณ <b>${fmt(ome)} mg/วัน</b>`);
+  if(t==='mpo'){
+    const mst=Math.floor(ome/2/10)*10;
+    L.push(`<b>Morphine ทางปาก ≈ ${fmt(ome)} mg/วัน</b> = IR ${fmt(fl05(ome/6))} mg q4h`+(mst>=10?` หรือ MST ${mst} mg q12h (ปัดลง)`:' (ต่ำกว่า MST 10 mg q12h — ใช้ IR)'));
+    L.push(`PRN: morphine IR <b>${prnRange(ome)} mg ทางปาก q1h</b>`);
+  }else if(t==='miv'){
+    const s=ome/3;
+    L.push(`<b>Morphine SC/IV ≈ ${fmt(s)} mg/24 ชม.</b> (OME ÷ 3) = CSCI ${fmt(Math.round(s/24*100)/100)} mg/ชม. หรือ ${fmt(fl05(s/6))} mg SC q4h`);
+    L.push(`PRN: morphine <b>${prnRange(s)} mg SC q1h</b>`);
+  }else if(t==='oxy'){
+    const o=ome/2;const cr=Math.floor(o/2/5)*5;
+    L.push(`<b>Oxycodone ทางปาก ≈ ${fmt(o)} mg/วัน</b> (OME ÷ 2)`+(cr>=10?` = oxycodone CR ${cr} mg q12h (ปัดลง)`:' — ต่ำกว่า CR 10 mg q12h ซึ่งเป็นเม็ดเล็กสุดในไทย → พิจารณาคง morphine/ใช้ยาอื่น'));
+    L.push(`PRN: oxycodone IR ${prnRange(o)} mg q1h (ถ้ามี) หรือ morphine IR <b>${prnRange(ome)} mg ทางปาก</b>`);
+    L.push('<span class="muted">Oxycodone ไม่อยู่ในบัญชียาหลักแห่งชาติ ราคาสูง</span>');
+  }else if(t==='fen'){
+    if(ome<30){L.push(`<b>OME หลังลด ${fmt(ome)} mg/วัน ต่ำกว่าแผ่นเล็กสุด (12 µg/ชม. ≈ 30–60 mg)</b> → ยังไม่ควรใช้ patch ใช้ morphine ทางปาก/SC ต่อ`);}
+    else{
+      let b=BANDS[0];BANDS.forEach(x=>{if(ome>=x[0])b=x});
+      L.push(`<b>Fentanyl patch ${b[1]} µg/ชม.</b>${b[2]!==b[1]?` (แปะ ${b[2]} µg/ชม.)`:''} — ปัดลงตามตาราง · เปลี่ยนแผ่นทุก 72 ชม.`);
+      if(ome>=360)L.push('<b>OME ≥360 mg/วัน — ปรึกษาผู้เชี่ยวชาญ</b> (ตารางเกินช่วงนี้ไม่แม่น)');
+      const pr=(a,z)=>a===z?fmt(a):fmt(a)+'–'+fmt(z);
+      L.push(`PRN: morphine IR <b>${pr(b[3],b[4])} mg ทางปาก q1–2h</b> ตามตาราง (หรือ ${pr(Math.max(1,fl05(b[3]/3)),Math.max(1,fl05(b[4]/3)))} mg SC) · เริ่มที่ค่าต่ำของช่วง`);
+      L.push(f==='mpo'?'จาก IR q4h: แปะแล้วให้ IR ตามเวลาต่ออีก 12 ชม. · จาก MST q12h: แปะพร้อม MST มื้อสุดท้าย':f==='miv'?'จาก SC/IV infusion: แปะแล้วให้ infusion ต่ออีก 8–12 ชม. แล้วหยุด':'แปะแล้วให้ยาเดิมต่ออีกราว 12 ชม. (ยาออกฤทธิ์เต็มใน 12–24 ชม.)');
+      L.push('ใช้เฉพาะ <b>ปวดคงที่</b> ในผู้ที่ได้ opioid อยู่แล้ว · ไข้/ความร้อนเพิ่มการดูดซึม · ปรับขนาดได้ทุก 72 ชม.');
+      if(last)L.push('<b>ใกล้เสียชีวิต: ไม่ควรเริ่ม patch ใหม่</b> (ออกฤทธิ์ช้า ปรับยาก) → ใช้ morphine SC/CSCI แทน');
+    }
+  }
+  if(f==='fen'&&t!=='fen'){
+    if(last)L.push('<b>วันสุดท้าย: ไม่ต้องถอด patch และห้ามให้ขนาดทดแทนข้างบนเป็นยาประจำซ้ำกับ patch</b> — ใช้ตัวเลขข้างบนเป็นฐานคิด PRN เท่านั้น · คง patch แล้วเพิ่ม morphine SC PRN · ใช้ PRN ≥2–3 ครั้ง/วัน → นำผลรวม PRN ใส่เป็น CSCI ด้านบน (เครื่องมือ 4)');
+    else L.push('ถอด patch แล้วเริ่มยาประจำตัวใหม่ราว <b>12 ชม.ต่อมา</b> (ระดับยาในเลือดลดช้า) · ระหว่างนั้นใช้ PRN · Scottish guideline: เปลี่ยนจาก patch เป็น opioid อื่น<b>ควรปรึกษาทีม palliative</b>');
+  }
+  if(eg!==null&&eg<30){
+    if(t==='mpo'||t==='miv')L.push(`<b>eGFR ${eg}: morphine สะสม — ไม่แนะนำ</b> · พิจารณา fentanyl หรือปรึกษา`);
+    else if(t==='oxy')L.push(`eGFR ${eg}: oxycodone สะสมได้ → ลดขนาด/ห่างขึ้น ตามใกล้ชิด · fentanyl ปลอดภัยกว่า`);
+    else L.push(`eGFR ${eg}: fentanyl เหมาะกว่า morphine · ไม่ต้องลดขนาดเริ่ม แต่ตามการสะสมระยะยาว`);
+  }
+  if(ome>300)L.push('<b>OME สูง (มากกว่า 300 mg/วัน)</b> — ควรปรึกษาผู้เชี่ยวชาญ และแบ่งเปลี่ยนเป็นขั้นๆ');
+  L.push('<span class="muted">ตารางที่ใช้: morphine ปาก:ฉีด 2–3:1 · morphine:oxycodone 1.5–2:1 · fentanyl patch ตามตารางสก็อตแลนด์/BNF (≈ OME ÷2.4–3.6) · codeine/tramadol ÷10 — เลือกด้านที่ได้ขนาดใหม่ต่ำกว่าเสมอ · ค่าประมาณ ประเมินซ้ำ 24–72 ชม.</span>');
+  out.innerHTML='<ol>'+L.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+}
+bindAll('#tConv input,#tConv select',conv);
+
+/* ---------- 3) PPS ---------- */
+const SURV_CA={10:'2 วัน',20:'4–6 วัน',30:'13–17 วัน',40:'28–39 วัน',50:'39–44 วัน',60:'39–49 วัน',70:'95–105 วัน',80:'95 วัน (กลุ่ม 70–80%) ถึงราว 600 วัน (กลุ่ม ≥80%)'};
+const SURV_NON={10:'8 วัน',20:'6 วัน',30:'24 วัน',40:'ยังไม่ถึง median ในการศึกษา (มักเป็นเดือน)',50:'ยังไม่ถึง median ในการศึกษา (มักเป็นเดือน)',60:'ยังไม่ถึง median ในการศึกษา (มักเป็นเดือน)'};
+function pps(){
+  const v=$('pPps').value;const out=$('pOut');const c=id=>$(id).checked;
+  if(!v){out.textContent='เลือกค่า PPS';return}
+  const p=+v,ca=$('pDx').value==='ca';const L=[];
+  const band=p>=70?'stable':p>=40?'trans':'eol';
+  L.push(`PPS ${p}% → <b>${band==='stable'?'ระยะคงที่ (70–100%)':band==='trans'?'ระยะเปลี่ยนผ่าน (40–60%)':'ระยะท้าย (10–30%)'}</b> ตามการแบ่งของกรมการแพทย์`);
+  const s=(ca?SURV_CA:SURV_NON)[p];
+  if(s)L.push(`Median survival ในการศึกษาไทย (${ca?'มะเร็ง':'ไม่ใช่มะเร็ง'}, ผู้ป่วยในที่ปรึกษาทีม palliative): <b>${s}</b> — เป็นค่ากลางของกลุ่ม ไม่ใช่คำทำนายรายบุคคล`+(ca?'':' · โรคที่ไม่ใช่มะเร็งทำนายยากกว่ามาก'));
+  else L.push('<span class="muted">PPS สูงระดับนี้ไม่มีข้อมูลพอใช้ทำนายระยะเวลา — ใช้ร่วมกับการดำเนินโรคและ surprise question</span>');
+  if(band==='stable')L.push('สิ่งที่ต้องทำ: เริ่ม/ทบทวน <b>ACP</b> · คุณค่าและเป้าหมาย · แนะนำ <b>หนังสือแสดงเจตนา (มาตรา 12)</b> และผู้ตัดสินใจแทน · คุมอาการ · ประเมิน PPS ทุกครั้งที่มา');
+  else if(band==='trans')L.push('สิ่งที่ต้องทำ: <b>family meeting</b> · คุยพยากรณ์เป็นช่วงเวลา · ตัดสินใจ <b>DNR</b>/การยื้อชีวิต · แผนดูแลที่บ้าน ประสานทีมเยี่ยมบ้าน/รพ.สต. · opioid + ยาระบายตามอาการ · ประเมินผู้ดูแล · ลงรหัส <b>Z51.5</b>');
+  else L.push('สิ่งที่ต้องทำ: <b>หยุดยาที่ไม่จำเป็น</b> · สั่งยา <b>PRN 4 อาการ</b> (morphine, midazolam, haloperidol, hyoscine butylbromide) · เตรียมทาง SC/syringe driver · คุยสถานที่เสียชีวิตและพิธีกรรม · อธิบายสิ่งที่จะเกิดขึ้นกับญาติ');
+  if(c('pSq'))L.push('Surprise question "ไม่แปลกใจ" → อย่ารอ เริ่มคุยเป้าหมายในการพบครั้งนี้');
+  if(c('pDrop'))L.push('<b>PPS ลดลงเร็ว</b> → พยากรณ์มักแย่กว่าตัวเลขครั้งเดียว · เร่งวางแผน');
+  if(c('pAcp'))L.push('มี ACP/หนังสือแสดงเจตนาแล้ว → แนบสำเนาในเวชระเบียน ทบทวนเมื่ออาการเปลี่ยน');
+  else if(band!=='stable')L.push('<b>ยังไม่ได้คุยเป้าหมาย</b> → นัด family meeting ให้เร็วที่สุด'+(band==='eol'?' (วันนี้)':' (ภายในสัปดาห์นี้)'));
+  if(c('pHome'))L.push(`อยากเสียชีวิตที่บ้าน${band==='eol'?' (<b>เร่งด่วน</b>)':''}: จ่าย morphine/ยา PRN พร้อมสอนญาติ · เตรียม SC line/elastomeric pump ถ้าทำได้ · ประสานทีมเยี่ยมบ้าน · อธิบายขั้นตอนหนังสือรับรองการตาย`);
+  out.innerHTML='<ol>'+L.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+}
+bindAll('#tPps input,#tPps select',pps);
+
+/* ---------- 4) last-days kit + CSCI ---------- */
+function kit(){
+  const om=num('kOm'),pt=num('kPatch'),eg=num('kEg'),vol=+$('kVol').value,midC=+$('kMidC').value;const c=id=>$(id).checked;const out=$('kOut');const L=[];
+  if(om===null||pt===null||eg===null){out.textContent='ใส่ OME ที่ได้อยู่ (0 ถ้าไม่เคยได้ opioid), fentanyl patch (0 ถ้าไม่มี) และ eGFR';return}
+  if(om<0||om>3000){out.textContent='ตรวจค่า OME (0–3000 mg/วัน)';return}
+  if(pt<0||(pt>0&&pt<12)||pt>300){out.textContent='ตรวจค่า fentanyl patch (0 หรือ 12–300 µg/ชม.)';return}
+  if(eg<0||eg>200){out.textContent='ตรวจค่า eGFR (0–200)';return}
+  const ren=eg<30,frail=c('kFrail');
+  const base=om+pt*2;const naive=base===0;
+  const P=[];
+  if(naive)P.push(`<b>Morphine</b> (ปวด/หอบ): ${ren?'1–2 mg SC q2–4h':frail?'1–2 mg SC q1h':'2–2.5 mg SC q1h'} PRN`);
+  else{let s24=base/3;if(ren)s24=s24/2;P.push(`<b>Morphine</b> (ปวด/หอบ): <b>${prnRange(s24)} mg SC ${ren?'q2–4h':'q1h'}</b> PRN <span class="muted">(1/10–1/6 ของ ${fmt(s24)} mg SC/วัน${pt>0?' รวมส่วนของ patch':''}${ren?' ลดครึ่งเพราะไต':''})</span>`);}
+  P.push(`<b>Midazolam</b> (กระสับกระส่าย/ทุกข์ทรมาน): ${ren||frail?'1–2.5 mg':'2–5 mg'} SC q1h PRN`);
+  P.push(`<b>Haloperidol</b>: delirium 0.5–1 mg SC q2h PRN · คลื่นไส้ 0.5–1 mg SC q8h PRN · รวม max ~5 mg/วัน${frail?' (เปราะบางเริ่ม 0.5 mg)':''}`);
+  P.push('<b>Hyoscine butylbromide</b> (เสมหะ/ปวดบิด): 20 mg SC q1h PRN · max 120 mg/24 ชม.');
+  L.push('<b>ยา PRN ใต้ผิวหนัง (สั่งล่วงหน้าทุกราย)</b><ul>'+P.map(x=>'<li>'+x+'</li>').join('')+'</ul>');
+  if(ren)L.push(`<b>eGFR ${eg} (น้อยกว่า 30)</b>: morphine/midazolam สะสม → ขนาดต่ำ ห่างขึ้น · ปรึกษาเปลี่ยนเป็น fentanyl SC ถ้าต้องใช้ opioid ต่อเนื่อง`);
+  if(pt>0)L.push(`มี fentanyl patch ${pt} µg/ชม. → <b>คง patch ไว้</b> (อย่าถอดในวันสุดท้าย) · ใช้ morphine SC เสริมด้านบน`);
+  const M=[];
+  if(c('kPain')||c('kDysp')){
+    if(om>0){let m=om/3;if(ren)m=m/2;M.push(['Morphine',r05(Math.max(m,0.5)),10,'mg',`OME ${fmt(om)} ÷ 3${ren?' แล้วลดครึ่ง':''}`]);}
+    else if(pt>0)L.push('มี patch อย่างเดียว: ยังไม่ใส่ morphine ใน syringe — ใช้ PRN ก่อน แล้วนำ <b>ผลรวม PRN ใน 24 ชม.</b> มาใส่เป็น CSCI');
+    else M.push(['Morphine',ren||frail?5:10,10,'mg','เริ่มสำหรับผู้ไม่เคยได้ opioid']);
+  }
+  if(c('kAgit'))M.push(['Midazolam',ren||frail?5:10,midC,'mg','ปรับได้ถึง 30 mg · เกินนี้ปรึกษา (ถึง 60 mg ภายใต้คำแนะนำผู้เชี่ยวชาญ)']);
+  if(c('kDel'))M.push(['Haloperidol',frail?2.5:5,5,'mg','delirium']);
+  else if(c('kNau')||c('kMbo'))M.push(['Haloperidol',frail?1.5:2.5,5,'mg','คลื่นไส้']);
+  if(c('kSec')||c('kMbo'))M.push(['Hyoscine butylbromide',60,20,'mg',c('kMbo')?'ลำไส้อุดตัน: ปรับถึง 120 mg':'ปรับถึง 120 mg']);
+  if(!M.length){L.push('<b>ยังไม่ต้องเริ่ม syringe driver</b> — ใช้ PRN ก่อน · ถ้าต้องใช้ PRN ≥2–3 ครั้ง/วัน ให้รวมเป็น CSCI 24 ชม.');}
+  else{
+    let tv=0;const rows=M.map(x=>{const mL=Math.round(x[1]/x[2]*100)/100;tv+=mL;return `<li><b>${x[0]} ${fmt(x[1])} ${x[3]}/24 ชม.</b> = ${fmt(Math.round(mL*10)/10)} mL (ความเข้มข้น ${x[2]} mg/mL) <span class="muted">— ${x[4]}</span></li>`});
+    L.push('<b>CSCI 24 ชม. (syringe driver)</b><ul>'+rows.join('')+'</ul>');
+    tv=Math.round(tv*10)/10;
+    if(tv>vol)L.push(`<b>ปริมาตรยารวม ${fmt(tv)} mL เกิน ${vol} mL</b> → เลือกปริมาตรรวมมากขึ้น/syringe ใหญ่ขึ้น หรือใช้ยาความเข้มข้นสูงขึ้น · ปรึกษาเภสัชกร`);
+    else L.push(`ยา ${fmt(tv)} mL + <b>water for injection ${fmt(Math.round((vol-tv)*10)/10)} mL</b> = ${vol} mL · อัตรา <b>${fmt(vol/24)} mL/ชม.</b> · เปลี่ยนทุก 24 ชม.`);
+    if(M.length>3)L.push('<b>ผสมมากกว่า 3 ยา</b> → เสี่ยงตกตะกอน ตรวจความเข้ากันได้กับเภสัชกร หรือแยก 2 syringe');
+    L.push('ความเข้ากันได้: morphine + midazolam + haloperidol ± hyoscine butylbromide เข้ากันได้ในความเข้มข้นปกติ (ผสมด้วย water for injection) · ตรวจตะกอน/ขุ่นทุกครั้ง · <b>เริ่มเครื่องพร้อมให้ PRN 1 ครั้ง</b> (CSCI ออกฤทธิ์ช้า)');
+    if(M.some(x=>x[1]>0&&x[0]==='Morphine'&&x[1]>100))L.push('<b>Morphine CSCI มากกว่า 100 mg/24 ชม.</b> — ปรึกษาผู้เชี่ยวชาญ');
+  }
+  if(c('kDysp')&&!c('kAgit'))L.push('หอบ + กังวล/panic → พิจารณา midazolam 5–10 mg/24 ชม. ร่วม · O₂ เฉพาะ SpO₂ ต่ำ · พัดลม');
+  if(c('kMbo'))L.push('ลำไส้อุดตัน: <b>dexamethasone 8 mg SC ตอนเช้า (ฉีดแยก ห้ามผสมใน syringe)</b> 5 วัน ประเมินผล (ช่วง 6–16 mg/วัน) · อาเจียนยังมาก → octreotide 300 µg/24 ชม. CSCI (ถึง 600) · เลี่ยง metoclopramide ถ้าอุดตันสมบูรณ์ · ± NG tube');
+  if(c('kSec'))L.push('Death rattle: จัดท่าตะแคง ลดน้ำ อธิบายญาติ · ดูดในปากเบาๆ เท่านั้น');
+  if(c('kDel')||c('kAgit'))L.push('ก่อนให้ยา: ตรวจปวด ปัสสาวะคั่ง อุจจาระอัด ยาที่ทำให้สับสน · Parkinson/Lewy body: เลี่ยง haloperidol (ใช้ midazolam)');
+  if(om>600)L.push('<b>OME สูงมาก</b> — ปรึกษาผู้เชี่ยวชาญก่อนตั้ง CSCI');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tKit input,#tKit select',kit);
+
+mountQuiz([
+ ['ชาย 70 ปี มะเร็งปอดกระจายกระดูก ปวด NRS 8 ยังไม่เคยได้ opioid eGFR 70 ตามแนวทาง WHO 2018 ควรทำอย่างไร',['ให้ paracetamol ก่อน 1 สัปดาห์','ให้ tramadol ก่อน ถ้าไม่ได้ผลค่อยเปลี่ยน','เริ่ม morphine ขนาดต่ำได้เลย ร่วมกับยาระบาย','ให้ fentanyl patch 25 µg/ชม.'],2,'WHO 2018: ขั้นบันไดเป็นเครื่องมือสอน ไม่ใช่โปรโตคอล ปวดรุนแรงเริ่ม strong opioid ได้ · fentanyl patch ห้ามใช้ในผู้ไม่เคยได้ opioid'],
+ ['ผู้ป่วยได้ morphine IR 10 mg q4h (60 mg/วัน) ขนาด PRN ที่เหมาะสมคือ',['1 mg','6–10 mg','20 mg','30 mg'],1,'PRN = 1/10–1/6 ของขนาดรวมต่อวัน = 6–10 mg ทางปาก ซ้ำได้ q1h'],
+ ['ผู้ป่วยได้ morphine 30 mg/วัน และใช้ PRN 5 mg ไป 4 ครั้งใน 24 ชม. ปวดยังไม่คุม ไม่มีพิษ ขนาดยาประจำวันถัดไปที่เหมาะคือ',['30 mg/วัน เท่าเดิม','50 mg/วัน','90 mg/วัน','120 mg/วัน'],1,'รวมยาประจำ + PRN = 30 + 20 = 50 mg/วัน (≈ เพิ่ม 67% ซึ่งอยู่ในเกณฑ์เพราะใช้ PRN จริง) แล้วตั้ง PRN ใหม่ 5–8 mg'],
+ ['เหตุผลที่ต้องลดขนาด 25–50% เมื่อเปลี่ยนจาก opioid ตัวหนึ่งไปอีกตัว',['ยาใหม่ดูดซึมดีกว่าเสมอ','Cross-tolerance ไม่สมบูรณ์','ป้องกันท้องผูก','เพราะ opioid ใหม่ออกฤทธิ์สั้น'],1,'ผู้ป่วยที่ทนยาเดิมอาจไวต่อยาใหม่มากกว่าที่ตารางคำนวณ จึงต้องลด 25–50% แล้วปรับขึ้นด้วย PRN'],
+ ['ผู้ป่วยมะเร็ง eGFR 18 ปวดมาก ควรเลือก opioid ใดเป็นหลัก (ตาม EAPC 2012)',['Morphine','Codeine','Fentanyl','Pethidine'],2,'eGFR ต่ำกว่า 30: morphine/codeine metabolite สะสม · EAPC แนะนำ fentanyl หรือ buprenorphine ขนาดเริ่มต่ำ · pethidine ไม่ใช้ในปวดเรื้อรัง'],
+ ['ผู้ป่วยใช้ morphine ประจำ ซึมปลุกไม่ตื่น หายใจ 6 ครั้ง/นาที วิธีให้ naloxone ที่ถูกต้อง',['0.4 mg IV push ทั้งหลอดทันที','เจือจาง 400 µg เป็น 10 mL ด้วย NSS ให้ครั้งละ 2 mL (80 µg) IV ช้าๆ ทุก 2 นาที','2 mg IM','ไม่ต้องให้ เพราะเป็นผู้ป่วยระยะท้าย'],1,'Scottish Palliative Care Guidelines: RR น้อยกว่า 8 หรือ SpO₂ ต่ำกว่า 85% → ให้ทีละ 80 µg จนอัตราหายใจเป็นที่พอใจ (ปรับตามการหายใจ ไม่ใช่ระดับความรู้สึกตัว) · ให้ทีละน้อยป้องกันปวดรุนแรงฉับพลันและ withdrawal · ตามต่อเพราะ naloxone ออกฤทธิ์สั้นกว่า morphine'],
+ ['ผู้ป่วยมะเร็งระยะท้าย หอบ SpO₂ 96% room air การรักษาที่เหมาะสมที่สุด',['ให้ O₂ cannula 3 L/min ทุกราย','พัดลมเป่าหน้า และ morphine ขนาดต่ำ PRN','Furosemide IV','ใส่ท่อช่วยหายใจ'],1,'O₂ ให้เฉพาะผู้ที่ขาดออกซิเจน · ASCO 2021: พัดลมและ opioid ในมะเร็งระยะลุกลาม'],
+ ['ข้อใดถูกเกี่ยวกับ syringe driver ช่วงวันสุดท้าย',['ผสม dexamethasone รวมกับ midazolam และ haloperidol ได้','Morphine + midazolam + haloperidol ผสมด้วย water for injection ได้ และให้ dexamethasone แยก','ห้ามให้ยาใต้ผิวหนังในผู้ป่วยระยะท้าย','ควรผสมยาอย่างน้อย 5 ชนิดใน syringe เดียว'],1,'Dexamethasone เข้ากันไม่ได้กับหลายยา ให้ SC แยกวันละครั้ง · ไม่ควรเกิน 3 ยาใน syringe'],
+ ['ผู้ป่วยเสียงเสมหะครืดคราดช่วงใกล้เสียชีวิต ไม่รู้สึกตัว การดูแลแรกคือ',['ดูดเสมหะลึกทางจมูกทุกชั่วโมง','จัดท่าตะแคง อธิบายญาติ และให้ hyoscine butylbromide SC','ให้น้ำเกลือเพิ่ม 2 ลิตร','ให้ furosemide และ O₂ ความเข้มข้นสูง'],1,'Death rattle รบกวนญาติมากกว่าผู้ป่วย · ดูดลึกกระตุ้นให้ทรมาน · ลดน้ำ · antimuscarinic เช่น hyoscine butylbromide 20 mg SC'],
+ ['ตาม พ.ร.บ.สุขภาพแห่งชาติ 2550 มาตรา 12 ข้อใดถูก',['อนุญาตให้แพทย์ฉีดยาเร่งการตายตามคำขอ','ผู้ป่วยทำหนังสือปฏิเสธบริการที่เป็นไปเพียงเพื่อยืดการตายได้ และผู้ปฏิบัติตามไม่ถือว่ามีความผิด','ต้องให้ญาติทุกคนลงนามจึงมีผล','หนังสือแสดงเจตนาแก้ไขไม่ได้'],1,'มาตรา 12 ไม่ใช่ euthanasia ผู้ป่วยยังได้รับการดูแลแบบประคับประคอง · ยกเลิก/แก้ไขได้ตลอด'],
+ ['ผู้ป่วยมะเร็ง PPS 20% ในการศึกษาไทย median survival ประมาณเท่าใด',['4–6 วัน','3 เดือน','6 เดือน','1 ปี'],0,'เชียงใหม่ 6 วัน จุฬาภรณ์ 4 วัน · เป็นค่ากลางของกลุ่ม ไม่ใช่คำทำนายรายบุคคล'],
+ ['ผู้ป่วยลำไส้อุดตันจากมะเร็งรังไข่ ปวดบิด อาเจียน ยาใดควรเลี่ยง',['Hyoscine butylbromide','Dexamethasone','Metoclopramide','Octreotide'],2,'Metoclopramide เพิ่มการบีบตัว ทำให้ปวดบิดแย่ลงในการอุดตันสมบูรณ์ · ใช้ hyoscine, dexamethasone, octreotide, haloperidol']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
