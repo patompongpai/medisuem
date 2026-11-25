@@ -16,6 +16,7 @@
   --sys-rheum:#3A4A9E; --sys-rheum-soft:#E3E6F5;
   --sys-endo:#6A2E8F; --sys-endo-soft:#EEE4F5;
   --sys-neuro:#0F6E84; --sys-neuro-soft:#DCEFF3;
+  --sys-gen:#6B5B2E; --sys-gen-soft:#F1ECDD;
   --f-display:"Noto Serif Thai","Noto Serif",Georgia,serif;
   --f-body:"IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -32,6 +33,7 @@
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
   --sys-neuro:#6CC6DC; --sys-neuro-soft:#14323A;
+  --sys-gen:#D9C48A; --sys-gen-soft:#332C1A;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -46,6 +48,7 @@
   --sys-rheum:#9EABFF; --sys-rheum-soft:#232848;
   --sys-endo:#C9A6EC; --sys-endo-soft:#2E2340;
   --sys-neuro:#6CC6DC; --sys-neuro-soft:#14323A;
+  --sys-gen:#D9C48A; --sys-gen-soft:#332C1A;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -134,7 +137,8 @@ const SYSTEMS = {
   rheum:{name:"โรคข้อและรูมาติสซั่ม", c:"--sys-rheum"},
   id:{name:"โรคติดเชื้อและภาวะวิกฤต", c:"--sys-id"},
   pulm:{name:"ระบบทางเดินหายใจ", c:"--sys-pulm"},
-  neuro:{name:"ระบบประสาท", c:"--sys-neuro"}
+  neuro:{name:"ระบบประสาท", c:"--sys-neuro"},
+  gen:{name:"อายุรศาสตร์ทั่วไป", c:"--sys-gen"}
 };
 const LESSONS = [
   {href:"htn/index.html", sys:"cardio", y:"2567", t:"ความดันโลหิตสูง 2567",
@@ -320,7 +324,7 @@ const LESSONS = [
   {href:"proteinuria-nephrotic/index.html", sys:"renal", y:"2025", t:"Proteinuria · Hematuria · Nephrotic/Nephritic syndrome",
    d:"แปลผล dipstick/UACR/UPCR, เลือดในปัสสาวะตาม AUA 2025, จับ RPGN และดูแล nephrotic syndrome ตาม KDIGO 2021–2025",
    tags:["แผนผัง","เครื่องมือข้างเตียง","แบบทดสอบ"], k:"proteinuria hematuria nephrotic nephritic RPGN UACR UPCR KDIGO IgA nephropathy membranous PLA2R lupus nephritis minimal change FSGS microhematuria AUA โปรตีนรั่ว เลือดในปัสสาวะ ไตอักเสบ บวม"},
-  {href:"palliative/index.html", sys:"heme", y:"2026", t:"Palliative care · การดูแลแบบประคับประคองและ opioid",
+  {href:"palliative/index.html", sys:"gen", y:"2026", t:"Palliative care · การดูแลแบบประคับประคองและ opioid",
    d:"คัดกรองผู้ป่วย (PPS/SPICT) มาตรา 12 เริ่ม/แปลงขนาด morphine อย่างปลอดภัย และชุดยาวันสุดท้าย + syringe driver",
    tags:["แผนผัง","เครื่องมือข้างเตียง","แบบทดสอบ"], k:"palliative care ประคับประคอง ระยะท้าย end of life opioid morphine fentanyl patch conversion PPS SPICT living will หนังสือแสดงเจตนา มาตรา 12 syringe driver CSCI death rattle midazolam haloperidol naloxone dyspnea bowel obstruction"},
   {href:"meningitis/index.html", sys:"id", y:"2024", t:"Meningitis / Encephalitis",
@@ -392,7 +396,7 @@ function readProg(p){
 
 let filter = "all";
 const chipsEl = document.getElementById("chips");
-[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",endo:"ต่อมไร้ท่อ",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ",neuro:"ประสาท"})[k]])].forEach(([k,label])=>{
+[["all","ทั้งหมด"], ...Object.entries(SYSTEMS).map(([k,v])=>[k, ({cardio:"หัวใจ–เมตาบอลิก",endo:"ต่อมไร้ท่อ",renal:"ไต",heme:"เลือด",gi:"ทางเดินอาหาร–ตับ",rheum:"ข้อ–รูมาติสซั่ม",id:"ติดเชื้อ–วิกฤต",pulm:"หายใจ",neuro:"ประสาท",gen:"ทั่วไป"})[k]])].forEach(([k,label])=>{
   const b = document.createElement("button");
   b.className="chip"; b.type="button"; b.textContent=label; b.dataset.k=k;
   b.setAttribute("aria-pressed", k===filter);
