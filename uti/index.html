@@ -1,0 +1,1044 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>UTI · โรคติดเชื้อทางเดินปัสสาวะ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Infectious disease · Nephrology · Urology · CPG UTI สมาคมโรคติดเชื้อฯ พ.ศ. 2568 · IDSA cUTI 2025 · IDSA ASB 2019 · IDSA CAUTI 2009 · EAU 2026</div>
+  <h1>โรคติดเชื้อทางเดินปัสสาวะในผู้ใหญ่<br>Urinary tract infection: cystitis · pyelonephritis · cUTI · CAUTI</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป (OPD · ER · ward) นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้<b>ยึดแนวทางเวชปฏิบัติการรักษาโรคติดเชื้อทางเดินปัสสาวะ พ.ศ. 2568 ของสมาคมโรคติดเชื้อแห่งประเทศไทย</b> เป็นหลัก (อ้างเลขหน้าที่พิมพ์ในเล่ม เช่น <span class="tag th">CPG น.6</span>) แล้วเทียบแนวทางต่างประเทศเมื่อแนะนำต่างกัน · ช่วยจำแนกชนิด UTI เลือกยาเริ่มต้นตามความเสี่ยงเชื้อดื้อยา ปรับขนาดยาตามไต อ่านผลปัสสาวะ และตัดสินใจว่า bacteriuria ที่ไม่มีอาการต้องรักษาหรือไม่</p>
+  <p class="cite">อ้างอิงหลัก: สมาคมโรคติดเชื้อแห่งประเทศไทย. แนวทางเวชปฏิบัติการรักษาโรคติดเชื้อทางเดินปัสสาวะ พ.ศ. 2568 · Trautner BW, et al. IDSA 2025 guidelines on complicated UTI (Clin Infect Dis 2026;82 Suppl 3:i24–i91) · Nicolle LE, et al. IDSA asymptomatic bacteriuria 2019 (Clin Infect Dis 2019;68:e83–e110) · Hooton TM, et al. IDSA CAUTI 2009 (Clin Infect Dis 2010;50:625–63) · EAU Guidelines on Urological Infections 2026 / Kranz J, et al. (Eur Urol 2024;86:27–41) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--ok)"><b>Cystitis → nitrofurantoin 5 วัน</b>หรือ fosfomycin 3 g ครั้งเดียว · ไม่ใช้ ciprofloxacin/TMP-SMX ก่อนรู้ผลเพาะเชื้อ (E. coli ไทยไวเพียง ~30–44%)</div>
+    <div class="stage" style="--c:var(--accent)"><b>Pyelo/cUTI → ceftriaxone</b>sepsis หรือเคยพบเชื้อดื้อยาใน 3 เดือน → carbapenem · ส่ง urine culture ก่อนยาทุกราย</div>
+    <div class="stage" style="--c:var(--danger)"><b>ASB ไม่ต้องรักษา</b>ยกเว้นหญิงตั้งครรภ์ และก่อนหัตถการทางเดินปัสสาวะที่ทำให้เยื่อบุบาดเจ็บ</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#class">จำแนกและเชื้อดื้อยาในไทย</a><a href="#dx">วินิจฉัยและเก็บปัสสาวะ</a><a href="#asb">ASB</a><a href="#cystitis">Cystitis ในหญิง</a><a href="#pyelo">Pyelonephritis ในหญิง</a><a href="#cuti">Complicated UTI</a><a href="#men">UTI ในชาย · prostatitis</a><a href="#cauti">CAUTI</a><a href="#preg">หญิงตั้งครรภ์</a><a href="#mdr">เชื้อดื้อยาหลายขนาน</a><a href="#dose">ขนาดยาและปรับตามไต</a><a href="#recur">UTI เป็นซ้ำ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="class" class="col">
+  <div class="sec-num">01</div>
+  <h2>จำแนก UTI และเชื้อดื้อยาในไทย</h2>
+  <p>CPG ไทยแบ่งเป็น 3 กลุ่ม <span class="tag th">CPG น.4</span> ได้แก่ (1) <b>asymptomatic bacteriuria</b> (2) <b>acute uncomplicated cystitis/pyelonephritis ในหญิง</b> และ (3) UTI ในสถานการณ์พิเศษ คือ <b>complicated UTI, CAUTI, หญิงตั้งครรภ์ และเชื้อดื้อยาหลายขนาน</b></p>
+  <div class="grid2">
+    <div class="card c-ok"><h4>Uncomplicated <span class="tag th">CPG น.6</span></h4><ul><li><b>หญิงที่ไม่ตั้งครรภ์</b></li><li>ไม่มีความผิดปกติของโครงสร้างหรือการทำงานของทางเดินปัสสาวะ</li><li>ไม่มีโรคร่วม/ภาวะเสี่ยงติดเชื้อรุนแรง เช่น ได้ยากดภูมิ</li><li>ไม่ใช่การติดเชื้อดื้อยาหลายขนาน</li></ul></div>
+    <div class="card c-warn"><h4>ซับซ้อน/สถานการณ์พิเศษ</h4><ul><li>ชาย · ตั้งครรภ์ · นิ่ว/อุดกั้น · neurogenic bladder · stent/nephrostomy · หลังหัตถการ</li><li>เบาหวานคุมไม่ดี · ภูมิคุ้มกันบกพร่อง · ปลูกถ่ายไต</li><li>มีสายสวน (CAUTI) · เชื้อดื้อยา (ESBL, CRE, DTR-PA, VRE)</li><li>ผู้สูงอายุ/มีโรคประจำตัว อาการอาจไม่ชัด เช่น อ่อนเพลีย เบื่ออาหาร <span class="tag th">CPG น.3</span></li></ul></div>
+  </div>
+  <div class="box note"><b>ไทยกับ IDSA 2025 นิยาม cUTI ต่างกัน</b>IDSA 2025 นิยาม cUTI ว่าเป็น <b>UTI ที่ลุกลามเกินกระเพาะปัสสาวะ</b> (ไข้ อาการ systemic ปวดเอว bacteremia หรือมีสายสวน/stent/nephrostomy) · เพศชาย เบาหวาน ภูมิต่ำ ไม่ทำให้เป็น cUTI โดยตัวเอง และไม่รวม prostatitis · CPG ไทยยังใช้แนวคิดเดิมที่ดูปัจจัยผู้ป่วยร่วม · <b>หน้านี้ใช้การจำแนกตาม CPG ไทย</b> แต่ CPG ไทยก็ให้รักษา complicated cystitis (ไม่มีอาการส่วนบน) แบบ uncomplicated cystitis อยู่แล้ว <span class="tag th">CPG น.10</span> ผลในทางปฏิบัติจึงใกล้กัน</div>
+  <h3>เชื้อก่อโรค <span class="tag th">CPG น.3</span></h3>
+  <p><b>Enterobacterales</b> โดยเฉพาะ <i>E. coli</i> และ <i>K. pneumoniae</i> · หญิงวัยเจริญพันธุ์: <i>S. saprophyticus</i> · เคยได้ยากว้าง: ESBL, CRE, MDR · ติดเชื้อใน รพ.: <i>P. aeruginosa</i>, <i>A. baumannii</i> · ปลูกถ่ายอวัยวะ: Candida, Trichosporon, adenovirus</p>
+  <h3>ความไวต่อยาในไทย (NARST พ.ศ. 2566, 83 รพ.) <span class="tag th">CPG น.4</span></h3>
+  <div class="tbl"><table>
+    <tr><th>% ไวต่อยา</th><th><i>E. coli</i> (ปัสสาวะ) ผู้ป่วยใน</th><th><i>E. coli</i> ผู้ป่วยนอก</th><th><i>K. pneumoniae</i> ผู้ป่วยใน</th><th><i>K. pneumoniae</i> ผู้ป่วยนอก</th></tr>
+    <tr><td>Ampicillin</td><td>15.8</td><td>16.9</td><td>R</td><td>R</td></tr>
+    <tr><td>Amoxicillin/clavulanate</td><td>70.7</td><td>74.7</td><td>59.3</td><td>68.5</td></tr>
+    <tr><td>Piperacillin/tazobactam</td><td>79.1</td><td>85.2</td><td>55.3</td><td>65.8</td></tr>
+    <tr><td>Ceftriaxone</td><td>51.9</td><td>61.8</td><td>51.8</td><td>64.6</td></tr>
+    <tr><td>Ertapenem</td><td>92.8</td><td>97.1</td><td>77.5</td><td>83.8</td></tr>
+    <tr><td>Meropenem</td><td>93.4</td><td>97.6</td><td>80.5</td><td>86.6</td></tr>
+    <tr><td>Colistin (MIC ≤2)</td><td>98.7</td><td>98.6</td><td>94.9</td><td>94.7</td></tr>
+    <tr><td><b>Ciprofloxacin</b></td><td><b>31.4</b></td><td><b>30.2</b></td><td>48.6</td><td>56.3</td></tr>
+    <tr><td>Gentamicin (หรือ amikacin)</td><td>67.6</td><td>70.4</td><td>79.1</td><td>83.0</td></tr>
+    <tr><td><b>Nitrofurantoin</b></td><td><b>96.1</b></td><td><b>97.8</b></td><td>44.9</td><td>64.9</td></tr>
+    <tr><td><b>TMP/SMX</b></td><td><b>41.1</b></td><td><b>44.3</b></td><td>52.3</td><td>61.3</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ข้อมูล <i>K. pneumoniae</i> มาจากทุกสิ่งส่งตรวจ · การแบ่งผู้ป่วยใน/นอกตามที่เก็บสิ่งส่งตรวจ ไม่ใช่ community/hospital-acquired จึงอาจไม่ตรงความจริงทั้งหมด <span class="tag th">CPG น.4</span></p>
+  <div class="box key"><b>สิ่งที่ตารางนี้บอก GP</b><i>E. coli</i> ไวต่อ <b>nitrofurantoin ~96–98%</b> แต่ไวต่อ ciprofloxacin เพียง ~30% และ TMP/SMX ~41–44% → <b>อย่าใช้ FQ หรือ TMP/SMX เริ่มต้นแบบเดา</b> · ceftriaxone ไวเพียง ~52–62% (ESBL พบบ่อย) → ส่งเพาะเชื้อก่อนยา และปรับยาเมื่อรู้ผล · ใช้ antibiogram ของ รพ. ตนเองร่วมด้วย <span class="tag add">เสริม</span> IDSA 2025 แนะนำเลือกยาที่ไว ≥90% ใน septic shock และ ≥80% ใน sepsis ไม่ช็อก</div>
+</section>
+
+<section id="dx" class="col">
+  <div class="sec-num">02</div>
+  <h2>วินิจฉัย ตรวจปัสสาวะ และเก็บสิ่งส่งตรวจ</h2>
+  <p>CPG ไทยใช้ <b>3 เกณฑ์</b>: อาการ + pyuria + significant bacteriuria <span class="tag th">CPG น.3</span></p>
+  <div class="tbl"><table>
+    <tr><th>เกณฑ์</th><th>รายละเอียด</th></tr>
+    <tr><td>อาการส่วนล่าง</td><td>dysuria, frequency, ปวด/กดเจ็บเหนือหัวเหน่า, ปัสสาวะขุ่น, hematuria</td></tr>
+    <tr><td>อาการส่วนบน</td><td>ไข้, ปวดเอว (flank pain), เคาะเจ็บมุมซี่โครง-สันหลัง (CVA tenderness)</td></tr>
+    <tr><td>Pyuria</td><td>centrifuged urine <b>WBC ≥5/HPF</b> หรือ uncentrifuged <b>≥10/HPF</b> · dipstick <b>leukocyte esterase บวก</b> (เทียบเท่า WBC ≥10/mm³) · อาจไม่พบ pyuria ใน <b>neutropenia</b></td></tr>
+    <tr><td>Significant bacteriuria</td><td>Midstream <b>≥10⁵ CFU/mL</b> · ปัสสาวะจากสายสวน <b>≥10⁴</b> · suprapubic aspiration <b>เท่าใดก็ได้</b> · CAUTI ใช้ <b>≥10³</b> ไม่เกิน 2 ชนิด <span class="tag th">CPG น.12</span> · พบ <b>≥3 ชนิด</b> = สงสัยปนเปื้อน</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem"><span class="tag add">เสริม</span> EAU ใช้ ≥10³ CFU/mL สำหรับ cystitis ในหญิงที่มีอาการ — หญิงมีอาการชัดแต่ผลอยู่ระหว่าง 10³–10⁵ อาจเป็นการติดเชื้อจริงได้</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>อ่าน dipstick/UA <span class="tag add">เสริม</span></h4><ul><li><b>Nitrite บวก</b> = จำเพาะสูง (Enterobacterales เปลี่ยน nitrate เป็น nitrite) แต่<b>ลบก็ไม่ตัด UTI</b>: Enterococcus, S. saprophyticus, Pseudomonas ไม่สร้าง nitrite · ปัสสาวะบ่อย ค้างในกระเพาะไม่นานพอ</li><li><b>LE และ nitrite ลบทั้งคู่</b> ในผู้ที่อาการไม่ชัด → UTI ไม่น่าเป็น หาสาเหตุอื่น</li><li><b>หญิงแสบขัด + ปัสสาวะบ่อย ไม่มีตกขาว/คันช่องคลอด</b> → โอกาสเป็น cystitis สูงมากจนรักษาได้เลย</li><li>Squamous epithelial cell มาก = ปนเปื้อนจากช่องคลอด/ผิวหนัง → เก็บใหม่</li><li><b>Sterile pyuria</b> (มี WBC แต่เพาะไม่ขึ้น): เพิ่งได้ยา, chlamydia/gonorrhoea, วัณโรคทางเดินปัสสาวะ, นิ่ว, interstitial nephritis</li></ul></div>
+    <div class="card c-ok"><h4>เมื่อไรต้องส่งเพาะเชื้อ</h4><ul><li><b>Uncomplicated cystitis</b> อาการชัด → <b>ไม่ต้องส่ง UA/culture</b> <span class="tag th">CPG น.6</span></li><li><b>Pyelonephritis</b> → UA + <b>urine culture ทุกราย</b> · hemoculture เมื่ออาการรุนแรง/sepsis <span class="tag th">CPG น.6</span></li><li><b>Complicated UTI</b> ทั้งส่วนบนและล่าง → UA + culture ทุกราย <span class="tag th">CPG น.9</span></li><li>ตั้งครรภ์ (คัดกรองครั้งแรกที่ฝากครรภ์ + เมื่อมีอาการ) · CAUTI · ไม่ดีขึ้น 72 ชม. · เป็นซ้ำ <3–4 สัปดาห์</li><li>หญิงเสี่ยง STI/ตกขาวผิดปกติ → แยก urethritis (chlamydia, gonorrhoea) และตรวจทางนรีเวช <span class="tag th">CPG น.6</span></li></ul></div>
+  </div>
+  <h3>เก็บปัสสาวะให้ถูก <span class="tag add">เสริม</span></h3>
+  <ul><li><b>Clean-catch midstream</b>: ล้างมือ แหวก labia (หญิง)/รูดหนังหุ้มปลายขึ้น (ชาย) ถ่ายช่วงแรกทิ้ง เก็บช่วงกลางใส่ภาชนะปราศจากเชื้อ ไม่แตะด้านใน · เก็บ<b>ก่อนให้ยาปฏิชีวนะ</b></li>
+  <li><b>ผู้ป่วยคาสาย</b>: เช็ด port ด้วย alcohol แล้วดูดจาก <b>sampling port</b> ด้วยเทคนิคปราศจากเชื้อ · <b>ห้ามเก็บจากถุงปัสสาวะ</b> · ถ้าคาสาย <b>&gt;1 สัปดาห์</b> และยังต้องใช้สาย → <b>เปลี่ยนสายใหม่ก่อนเก็บ</b> <span class="tag th">CPG น.12</span></li>
+  <li>ผู้ป่วยปัสสาวะเองไม่ได้: สวนทิ้ง (in-and-out catheter) ได้ตัวอย่างดีกว่า bag</li>
+  <li>ส่งห้องแล็บภายใน <b>2 ชม.</b> ถ้าช้ากว่านั้นแช่ตู้เย็น 4°C (ไม่เกิน 24 ชม.) — ตั้งทิ้งไว้เชื้อเพิ่มจำนวนจนผลบวกลวง</li></ul>
+</section>
+
+<section id="asb" class="col">
+  <div class="sec-num">03</div>
+  <h2>Asymptomatic bacteriuria (ASB)</h2>
+  <p><b>นิยาม</b> <span class="tag th">CPG น.5</span> ไม่มีอาการ/อาการแสดงของ UTI หรืออาการตามระบบ + เพาะเชื้อพบแบคทีเรีย: midstream <b>≥10⁵ CFU/mL</b> ครั้งเดียวในชาย หรือ<b>ติดกัน 2 ครั้งใน 2 สัปดาห์</b>ในหญิง · catheter urine ≥10⁵ ครั้งเดียว</p>
+  <div class="grid2">
+    <div class="card c-red"><h4>ต้องตรวจและรักษา</h4><ul><li><b>หญิงตั้งครรภ์</b> — urine culture 1 ครั้งที่ฝากครรภ์ครั้งแรก รักษาถ้าพบเชื้อ แล้วเพาะซ้ำ 1–2 สัปดาห์หลังครบยา <span class="tag th">CPG น.5</span> <span class="rec s1">IDSA 2019 strong</span></li><li><b>ก่อนหัตถการทางเดินปัสสาวะที่ทำให้เยื่อบุบาดเจ็บ</b> (เช่น TURP, ureteroscopy) — เพาะเชื้อก่อน ให้ยาตามผล <b>1 โดสภายใน 30–60 นาทีก่อนหัตถการ</b> ไม่ต้องให้ต่อ</li></ul></div>
+    <div class="card c-ok"><h4>ไม่ต้องตรวจ ไม่ต้องรักษา</h4><ul><li>ผู้สูงอายุ · เบาหวาน</li><li>ปลูกถ่ายไต &gt;1 เดือน และปลูกถ่ายอวัยวะอื่น</li><li>มีปัญหาการขับถ่ายปัสสาวะ รวมคาสายสวน (CA-ASB)</li><li>ผ่าตัดนอกระบบทางเดินปัสสาวะ</li><li>มีหรือจะใส่อุปกรณ์ในทางเดินปัสสาวะ</li><li><b>Neutropenia</b> (ANC &lt;500) — ยังไม่มีข้อสรุป</li></ul></div>
+  </div>
+  <div class="box warn"><b>ผู้สูงอายุสับสน/ล้ม + ปัสสาวะขุ่นหรือมีกลิ่น</b>ไม่ใช่ข้อบ่งชี้ให้ยา · IDSA 2019 แนะนำ<b>หาสาเหตุอื่นของ delirium และสังเกตอาการ</b>เมื่อไม่มีอาการเฉพาะที่หรือ systemic <span class="tag add">เสริม</span> · ถ้ามีไข้/sepsis ร่วม ให้ยาที่ครอบคลุมทั้งทางเดินปัสสาวะและแหล่งติดเชื้ออื่น · ดู <a href="../delirium/index.html">Delirium</a> · ผู้คาสายที่ปัสสาวะขุ่น มีกลิ่น หรือมี pyuria แต่ไม่มีอาการ = CA-ASB ไม่ต้องรักษา <span class="tag th">CPG น.12</span></div>
+</section>
+
+<section id="cystitis" class="col">
+  <div class="sec-num">04</div>
+  <h2>Acute uncomplicated cystitis ในหญิง</h2>
+  <p>วินิจฉัยจากประวัติและตรวจร่างกาย · อาการชัดไม่ต้องส่ง UA/culture · รักษาแบบผู้ป่วยนอก <span class="tag th">CPG น.6–7</span></p>
+  <div class="tbl"><table>
+    <tr><th>ลำดับ</th><th>ยา (ขนาดจากภาคผนวก CPG น.21–23)</th><th>ระยะเวลา</th></tr>
+    <tr><td><span class="rec s1">ยาหลัก</span></td><td><b>Nitrofurantoin</b> monohydrate/macrocrystal 100 mg PO วันละ 2 ครั้ง (หรือ microcrystal 100 mg PO วันละ 4 ครั้ง) · <b>หลีกเลี่ยงถ้า CrCl &lt;30</b></td><td><b>5 วัน</b></td></tr>
+    <tr><td><span class="rec s1">ทางเลือกแนะนำ</span></td><td><b>Fosfomycin trometamol 3 g PO</b> · หลีกเลี่ยงถ้า CrCl &lt;10</td><td>ครั้งเดียว</td></tr>
+    <tr><td><span class="rec">ทางเลือกอื่น</span></td><td>Oral 3rd-gen cephalosporin เช่น <b>cefixime 400 mg PO วันละ 1–2 ครั้ง</b> (cefdinir 300 mg BID, cefditoren 400 mg BID, ceftibuten 400 mg วันละ 1–2 ครั้ง)</td><td>7 วัน</td></tr>
+    <tr><td><span class="rec">ทางเลือกอื่น</span></td><td><b>Amoxicillin/clavulanate 1 g PO วันละ 2 ครั้ง</b></td><td>7 วัน</td></tr>
+    <tr><td><span class="rec">ทางเลือกอื่น</span></td><td>Single-dose aminoglycoside: <b>gentamicin 5–7 mg/kg IV</b> หรือ <b>amikacin 15 mg/kg IV</b></td><td>ครั้งเดียว</td></tr>
+    <tr><td><span class="rec no">เฉพาะเมื่อผลเพาะเชื้อไว</span></td><td>Ciprofloxacin 500 mg PO BID · levofloxacin 500 mg PO OD · TMP/SMX (80/400) 2 เม็ด PO BID — <b>ดื้อสูงในไทย</b></td><td>3 วัน</td></tr>
+  </table></div>
+  <ul><li>เป็นซ้ำ (recurrent cystitis): fosfomycin 3 g PO <b>2 โดส ห่างกัน 3 วัน</b> <span class="tag th">CPG น.23</span></li>
+  <li><b>ไม่ดีขึ้นใน 72 ชม. หรือเป็นซ้ำภายใน 3–4 สัปดาห์</b> → ส่ง culture และตรวจทางรังสีหาความผิดปกติ/ภาวะแทรกซ้อน <span class="tag th">CPG น.7</span></li>
+  <li><span class="tag add">เสริม</span> Nitrofurantoin และ fosfomycin ระดับยาในเนื้อไตต่ำ → <b>ห้ามใช้เมื่อสงสัย pyelonephritis</b> (ไข้ ปวดเอว) <span class="tag th">CPG น.23</span> ระบุว่าไม่แนะนำใน upper UTI · ไม่ต้องตรวจปัสสาวะซ้ำหลังหายถ้าไม่ตั้งครรภ์</li></ul>
+</section>
+
+<section id="pyelo" class="col">
+  <div class="sec-num">05</div>
+  <h2>Acute uncomplicated pyelonephritis ในหญิง</h2>
+  <p>UA พบ pyuria + <b>urine culture ทุกราย</b> · hemoculture เมื่ออาการรุนแรง/sepsis · อาการคงที่รักษาแบบผู้ป่วยนอกได้ <span class="tag th">CPG น.6–7</span></p>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์ (ยังไม่รู้ผลเพาะเชื้อ)</th><th><span class="rec s1">ยาหลัก</span></th><th><span class="rec">ทางเลือก</span></th></tr>
+    <tr><td>ไม่มี sepsis/septic shock <b>และ</b>ไม่เคยพบเชื้อดื้อยาใน 3 เดือน</td><td><b>Ceftriaxone 2 g IV q24h</b></td><td>Gentamicin 5–7 mg/kg IV q24h · amikacin 15 mg/kg IV q24h</td></tr>
+    <tr><td><b>มี sepsis/septic shock หรือเคยพบเชื้อดื้อยาใน 3 เดือน</b></td><td><b>Meropenem 1 g IV q8h</b> หรือ imipenem/cilastatin 500 mg IV q6h</td><td>Gentamicin · amikacin</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>รู้ผลแล้ว อาการดีขึ้น</th><th><span class="rec s1">ยาหลัก</span></th><th><span class="rec">ทางเลือก</span></th></tr>
+    <tr><td>เชื้อไวต่อยากิน</td><td><b>Ciprofloxacin 500 mg PO BID</b> หรือ <b>levofloxacin 500 mg PO OD</b> จนครบ <b>7 วัน</b> · <b>TMP/SMX</b> (80/400) 2 เม็ด BID จนครบ <b>7–10 วัน</b></td><td>Cefixime หรือ amoxicillin/clavulanate (เฉพาะเมื่อไม่มียากินอื่นที่ไว) จนครบ <b>10–14 วัน</b></td></tr>
+    <tr><td>ไวเฉพาะยาฉีดที่ให้วันละครั้งได้</td><td>Outpatient therapy: <b>ceftriaxone</b> (พิจารณาเปลี่ยนเป็น oral 3rd-gen cephalosporin ถ้าไม่มีข้อห้าม) · gentamicin หรือ amikacin</td><td>Ertapenem 1 g IV q24h</td></tr>
+  </table></div>
+  <ul><li><b>Bacteremia ไม่ใช่ข้อห้ามของการเปลี่ยนเป็นยากิน</b> <span class="tag th">CPG น.7</span></li>
+  <li>ระยะเวลา: ตอบสนองเร็ว + ใช้ FQ หรือ aminoglycoside ได้ → <b>7 วัน</b> · ตอบสนองช้าหรือต้องใช้ β-lactam → <b>10–14 วัน</b> <span class="tag th">CPG น.7</span></li>
+  <li>ไม่ดีขึ้นใน 72 ชม. → ตรวจทางรังสีหา obstruction, renal abscess, lobar nephronia <span class="tag th">CPG น.7</span></li></ul>
+  <div class="box note"><b>เทียบต่างประเทศ</b><span class="tag add">เสริม</span> IDSA 2025 ให้ FQ เป็นยาเริ่มต้นกลุ่มที่แนะนำ (preferred) ได้เลยถ้าไม่ได้รับ FQ ใน 12 เดือน (TMP/SMX ข้อมูลน้อยกว่า ใช้ได้บางกรณี) และให้ FQ 5–7 วัน หรือยาอื่น 7 วัน · CPG ไทยให้ FQ/TMP/SMX <b>หลังรู้ผลว่าไวเท่านั้น</b> เพราะ <i>E. coli</i> ไทยไว cipro เพียง ~30% · <b>หน้านี้ทำตาม CPG ไทย</b></div>
+</section>
+
+<section id="cuti" class="col">
+  <div class="sec-num">06</div>
+  <h2>Complicated UTI</h2>
+  <p>ยาอย่างเดียวมักไม่พอ อาจต้องตรวจทางรังสีหรือทำหัตถการแก้ต้นเหตุ และกลับเป็นซ้ำบ่อย · <b>UA + urine culture ทุกราย</b> <span class="tag th">CPG น.9</span></p>
+  <h3>ตรวจทางรังสีเมื่อไร <span class="tag th">CPG น.9–10</span></h3>
+  <div class="tbl"><table>
+    <tr><th>ข้อบ่งชี้</th><th>แนะนำ</th><th>ทางเลือก (เช่น ไตบกพร่อง)</th><th>อื่นๆ</th></tr>
+    <tr><td>ไม่ตอบสนองใน 72 ชม. · upper UTI ซ้ำ · สงสัยนิ่ว/อุดกั้น · เบาหวานคุมไม่ดี/ภูมิคุ้มกันบกพร่อง</td><td><b>CT abdomen-pelvis with IV contrast</b></td><td>US whole abdomen · CT without contrast</td><td></td></tr>
+    <tr><td><b>ชายสูงอายุติดเชื้อครั้งแรก</b></td><td>เหมือนข้างบน</td><td>เหมือนข้างบน</td><td>ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ หา BPH</td></tr>
+    <tr><td>Lower UTI ซ้ำหลายครั้ง</td><td>CT urography</td><td>US kidney-bladder-retroperitoneum</td><td>ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ หาความผิดปกติโครงสร้าง/การทำงาน</td></tr>
+    <tr><td>ตั้งครรภ์ที่มีข้อบ่งชี้ข้างต้น</td><td>—</td><td>US whole abdomen · MRI ไม่ฉีดสี</td><td>Urine culture ซ้ำหลังครบยา 1–2 สัปดาห์</td></tr>
+    <tr><td>ปลูกถ่ายไต</td><td>Doppler US ไตที่ปลูกถ่าย · CT with contrast</td><td></td><td>หาเชื้ออื่น เช่น ไวรัส เชื้อรา</td></tr>
+  </table></div>
+  <h3>ยาเริ่มต้น (empirical) <span class="tag th">CPG น.10</span></h3>
+  <div class="tbl"><table>
+    <tr><th>กรณี</th><th><span class="rec s1">ยาหลัก</span></th><th><span class="rec">ทางเลือก</span></th></tr>
+    <tr><td>Complicated <b>cystitis</b> (ไม่มีอาการส่วนบน)</td><td colspan="2">รักษาแบบ uncomplicated cystitis · เริ่มมีอาการส่วนบนจึงรักษาแบบ cUTI</td></tr>
+    <tr><td>ไม่มีปัจจัยเสี่ยงเชื้อดื้อยา</td><td><b>Ceftriaxone 2 g IV q24h</b></td><td>Gentamicin · amikacin</td></tr>
+    <tr><td>เสี่ยง <b><i>P. aeruginosa</i></b>: ติดเชื้อใน รพ./ออกจาก รพ. ≤3 เดือน · เคยเพาะพบใน 12 เดือน · neutropenia</td><td><b>Piperacillin/tazobactam</b> 4.5 g IV q6–8h · ceftazidime · cefepime</td><td>Amikacin · cipro/levofloxacin ถ้าผลยืนยันว่าไว</td></tr>
+    <tr><td>เสี่ยง <b>Enterococcus</b>: เคยเพาะพบใน 12 เดือน</td><td><b>Piperacillin/tazobactam</b> · amoxicillin/clavulanate</td><td>Vancomycin หรือ linezolid <b>ร่วมกับ</b>ยาครอบคลุมแกรมลบ</td></tr>
+    <tr><td>สงสัย/เสี่ยงเชื้อดื้อยาหลายขนาน รวม ESBL</td><td colspan="2">ดูบท <a href="#mdr">เชื้อดื้อยาหลายขนาน</a>: ไม่มี sepsis → ertapenem · มี sepsis → meropenem/imipenem</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ขนาด ceftazidime/cefepime ไม่อยู่ในภาคผนวก CPG · <span class="tag add">เสริม</span> ขนาดผู้ใหญ่ทั่วไป: ceftazidime 2 g IV q8h, cefepime 2 g IV q8–12h (ปรับตามไต) · CPG บท cUTI ไม่ได้แยกกรณี sepsis ที่ไม่มีปัจจัยเสี่ยงดื้อยา — ถ้า septic shock หรือ ESBL ในพื้นที่สูง หลายแห่งใช้หลักเดียวกับ pyelonephritis ที่มี sepsis (carbapenem) <span class="tag th">CPG น.7</span></p>
+  <h3>หลังรู้ผลเพาะเชื้อ (definitive) <span class="tag th">CPG น.11</span></h3>
+  <ul><li><b>De-escalate</b> เป็นยาออกฤทธิ์แคบตามผล · ดีขึ้นและเชื้อไวต่อยากิน → เปลี่ยนเป็นยากิน</li>
+  <li>ยากินหลัก: <b>ciprofloxacin, levofloxacin, TMP/SMX</b> ถ้าไว · ยากินทางเลือก: β-lactam (ไม่เป็นยาหลักเพราะกลับเป็นซ้ำสูงกว่า)</li>
+  <li><b>cUTI หรือ bacteremia ไม่ใช่ข้อห้ามของยากิน</b></li>
+  <li>Abscess หรือ infected renal cyst → เลือก cipro/levo/TMP-SMX ถ้าไว (เข้าเนื้อเยื่อดี)</li>
+  <li>ระยะเวลา: <b>อย่างน้อย 10–14 วัน</b> · นานกว่าถ้า undrained abscess, lobar nephronia, infected renal cyst · <b>7 วันได้ถ้าตอบสนองเร็วและไม่มีภาวะแทรกซ้อน</b></li>
+  <li>ยาใช้นาน: ระวัง QT ยาวจาก FQ · Cr สูง/K สูง/กดไขกระดูกจาก TMP/SMX</li></ul>
+  <div class="box note"><b>ไทย vs IDSA 2025</b><span class="tag add">เสริม</span><b>ระยะเวลา</b>: IDSA 2025 แนะนำ FQ 5–7 วัน <span class="rec">conditional · moderate</span> หรือยาอื่น 7 วัน <span class="rec">conditional · very low</span> แทน 10–14 วัน และ <b>bacteremia แกรมลบจากทางเดินปัสสาวะให้ 7 วัน</b> ถ้าดีขึ้น (BALANCE 2025) · ยกเว้นชายมีไข้ที่สงสัย prostatitis (10–14 วัน) · <b>Aminoglycoside</b>: IDSA ไม่แนะนำเป็นยาเริ่มต้นใน cUTI แต่ CPG ไทยใช้เป็นทางเลือก (เพราะ ESBL ในไทยสูง และ gentamicin ยังไว ~70%) — ระวังไต · <b>IV→PO</b>: ทั้งคู่สนับสนุนเมื่อดีขึ้น กินได้ และมียากินที่ไว · <b>หน้านี้ใช้ระยะเวลาตาม CPG ไทย</b> (7 วันเมื่อตอบสนองเร็ว)</div>
+  <h3>Red flags ที่ GP ต้องจับให้ได้</h3>
+  <div class="grid2">
+    <div class="card c-red"><h4>Urosepsis · อุดกั้น</h4><ul><li>qSOFA ≥2 (RR ≥22, สับสน, SBP ≤100) · SOFA ≥2 · lactate สูง · ช็อก → ดู <a href="../sepsis/index.html">Sepsis</a></li><li>Hemoculture 2 ชุด + urine culture ก่อนยา · ยาภายใน 1 ชม.</li><li><b>ไตอุดกั้นร่วมติดเชื้อ</b> (นิ่ว ปวด colic ไตบวม ปัสสาวะออกน้อย) = <b>ภาวะฉุกเฉิน</b> → US/CT ด่วน และ<b>ระบาย</b> (percutaneous nephrostomy หรือ JJ stent) <span class="tag add">เสริม</span></li><li>AKI → ปรับยา หลีกเลี่ยง aminoglycoside · ดู <a href="../aki/index.html">AKI</a></li></ul></div>
+    <div class="card c-warn"><h4>เบาหวาน: ภาวะแทรกซ้อนเฉพาะ <span class="tag add">เสริม</span></h4><ul><li><b>Emphysematous pyelonephritis</b> — พบเกือบทั้งหมดในเบาหวาน · ไข้ ปวดเอว ช็อก น้ำตาลสูง · <b>CT เห็นแก๊สในเนื้อไต</b></li><li>Huang–Tseng: class 1 แก๊สใน collecting system · 2 ในเนื้อไต · 3A/3B ลามรอบไต/pararenal · 4 สองข้าง/ไตข้างเดียว</li><li>Class 1–2: ยา + ระบายผ่านผิวหนัง · class 3–4 ที่มีปัจจัยเสี่ยง (เกล็ดเลือดต่ำ AKI ซึม ช็อก) ≥2 ข้อหรือระบายไม่ได้ผล → พิจารณาตัดไต · ปรึกษาศัลยแพทย์ทางเดินปัสสาวะเร็ว <span class="tag th">CPG น.11</span></li><li>Renal/perinephric abscess, papillary necrosis · ดู <a href="../dm/index.html">Diabetes</a></li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem">Abscess ขนาดใหญ่, lobar nephronia, infected renal cyst, emphysematous pyelonephritis หรือความผิดปกติโครงสร้าง → ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ และติดตามด้วยภาพรังสี <span class="tag th">CPG น.11</span> · <span class="tag add">เสริม</span> โดยทั่วไป renal abscess &lt;3 cm มักหายด้วยยา ใหญ่กว่า 5 cm มักต้องระบาย</p>
+</section>
+
+<section id="men" class="col">
+  <div class="sec-num">07</div>
+  <h2>UTI ในชายและต่อมลูกหมากอักเสบ <span class="tag add">เสริม</span></h2>
+  <p>CPG ไทยไม่มีบทเฉพาะ — ระบุเพียงชายสูงอายุติดเชื้อครั้งแรกให้ตรวจทางรังสีและปรึกษาศัลยแพทย์ทางเดินปัสสาวะหา BPH <span class="tag th">CPG น.9</span> · ส่วนนี้สรุปจาก IDSA 2025 และ EAU</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Cystitis ในชาย (ไม่มีไข้)</h4><ul><li>ส่ง UA + culture เสมอ · ชาย &lt;35 ปีมีหนองจากท่อปัสสาวะ → นึกถึง urethritis (gonorrhoea/chlamydia) · ปวดอัณฑะ → epididymitis</li><li>ยาตามหลัก cystitis (nitrofurantoin, fosfomycin ใช้ได้ถ้า<b>ไม่สงสัย prostatitis</b>) หรือตามผลเพาะเชื้อ</li><li>ระยะเวลา <b>7 วัน</b> — RCT ในชายไม่มีไข้ (ciprofloxacin หรือ TMP/SMX) 7 วันไม่ด้อยกว่า 14 วัน (Drekonja, JAMA 2021)</li></ul></div>
+    <div class="card c-red"><h4>Acute bacterial prostatitis</h4><ul><li>ไข้ หนาวสั่น ปวดฝีเย็บ ปัสสาวะขัด/ค้าง · DRE: ต่อมลูกหมากกดเจ็บ บวม — <b>ตรวจเบาๆ ห้ามนวดต่อม</b></li><li>Urine culture + hemoculture · ปัสสาวะค้าง → ใส่สาย (ทางท่อหรือเหนือหัวเหน่า)</li><li>ยา: เริ่มแบบ cUTI · ยากินที่เข้าต่อมลูกหมากดี = <b>FQ หรือ TMP/SMX ถ้าไว</b> · β-lactam เข้าต่อมไม่ดี</li><li>ระยะเวลา: IDSA 2025 ชายมีไข้ที่สงสัย prostatitis <b>10–14 วัน</b> · EAU <b>2–4 สัปดาห์</b></li><li>ไม่ดีขึ้น 48–72 ชม. → TRUS/CT หา <b>prostatic abscess</b> (เบาหวาน, melioidosis ในอีสาน)</li></ul></div>
+  </div>
+</section>
+
+<section id="cauti" class="col">
+  <div class="sec-num">08</div>
+  <h2>Catheter-associated UTI (CAUTI)</h2>
+  <p>UTI ในผู้คาสายทางท่อปัสสาวะ สายเหนือหัวเหน่า condom catheter หรือสวนเป็นระยะ รวมถึง<b>ถอดสายไม่เกิน 48 ชม.</b> · สาเหตุอันดับหนึ่งของ bacteremia ใน รพ. · ปัจจัยเสี่ยงสำคัญที่สุดคือ<b>ระยะเวลาคาสาย</b> · คาสายนานมักหลายเชื้อและดื้อยา <span class="tag th">CPG น.12</span></p>
+  <ul><li><b>วินิจฉัย</b>: มีอาการ/อาการแสดงของ UTI ชัดเจน + เพาะเชื้อจากสายหรือ midstream หลังถอดสาย ≤48 ชม. พบเชื้อ <b>≤2 ชนิด ≥10³ CFU/mL</b></li>
+  <li>ปัสสาวะขุ่น มีกลิ่น หรือ pyuria โดยไม่มีอาการ = <b>CA-ASB ไม่ต้องรักษา</b></li>
+  <li>คาสาย <b>&gt;1 สัปดาห์</b> และยังต้องใช้ → <b>เปลี่ยนสายก่อนเก็บ culture</b> · หมดข้อบ่งชี้ → <b>ถอดสาย</b> (source control)</li></ul>
+  <div class="tbl"><table>
+    <tr><th>CAUTI</th><th><span class="rec s1">ยาหลัก</span></th><th><span class="rec">ทางเลือก</span></th><th>ระยะเวลา</th></tr>
+    <tr><td>ไม่มี sepsis/septic shock</td><td><b>Piperacillin/tazobactam 4.5 g IV q6–8h</b></td><td>Group 2 carbapenem (meropenem, imipenem/cilastatin) · amikacin</td><td rowspan="2">ตอบสนองเร็ว <b>7 วัน</b> · ช้า นานขึ้นแต่<b>ไม่เกิน 14 วัน</b> ไม่ว่ายังคาสายอยู่หรือไม่</td></tr>
+    <tr><td>มี sepsis (SOFA ≥2) หรือ septic shock</td><td><b>Meropenem 1 g IV q8h</b> หรือ imipenem/cilastatin</td><td>Piperacillin/tazobactam</td></tr>
+  </table></div>
+  <ul><li><b>ไม่แนะนำ fluoroquinolone</b> ยกเว้นผลยืนยันว่าไว <span class="tag th">CPG น.13</span> · เลือกยาโดยดูผล culture ใน 12 เดือนก่อน + ระบาดวิทยาของ รพ.</li>
+  <li>ป้องกัน: ถอดสายเมื่อหมดข้อบ่งชี้ · ปัสสาวะเองไม่ได้ถาวร → <b>clean intermittent catheterization</b> ดีกว่าคาสาย · <b>ไม่ให้ยาป้องกัน</b>ตอนใส่/เปลี่ยน/ถอดสาย · <b>ไม่ irrigate</b> สายด้วยยาหรือ antiseptic <span class="tag th">CPG น.13</span></li></ul>
+  <div class="box note"><b>เทียบต่างประเทศ</b><span class="tag add">เสริม</span> IDSA 2009: เปลี่ยนสายถ้าคาไว้ <b>&gt;2 สัปดาห์</b> (ไทยใช้ &gt;1 สัปดาห์) · ตอบสนองเร็ว 7 วัน ช้า 10–14 วัน · IDSA 2025 นับ CAUTI เป็น cUTI แต่การศึกษาระยะสั้นส่วนใหญ่ไม่รวมผู้คาสาย จึงอาจต้องปรับระยะเวลาเป็นรายๆ · <b>หน้านี้ทำตาม CPG ไทย</b></div>
+</section>
+
+<section id="preg" class="col">
+  <div class="sec-num">09</div>
+  <h2>UTI ในหญิงตั้งครรภ์</h2>
+  <p>เสี่ยง sepsis คลอดก่อนกำหนด ทารกน้ำหนักน้อย · ปัจจัยเสี่ยง: เคยเป็น UTI, เบาหวาน, ทางเดินปัสสาวะผิดปกติ, ภูมิต่ำ, ทุพโภชนาการ · เลือกยาครอบคลุม Group B streptococcus ด้วย · <b>ห้าม fluoroquinolone ทุกไตรมาส</b> <span class="tag th">CPG น.14</span></p>
+  <div class="tbl"><table>
+    <tr><th>ภาวะ</th><th><span class="rec s1">ยาหลัก</span></th><th><span class="rec">ทางเลือก</span></th><th>หมายเหตุ</th></tr>
+    <tr><td>ASB</td><td colspan="2">ให้ยาตามผลเพาะเชื้อ ขนาดและระยะเวลาเหมือน acute cystitis</td><td>เพาะซ้ำ 1–2 สัปดาห์หลังครบยา</td></tr>
+    <tr><td>Acute cystitis</td><td><b>Nitrofurantoin</b> (ขนาดตาม cystitis) <b>7 วัน</b> — <b>หลีกเลี่ยงไตรมาส 3</b> (hemolysis ในทารกแรกเกิด) · <b>Fosfomycin 3 g</b> ครั้งเดียว</td><td>Amoxicillin/clavulanate 1 g PO BID 7 วัน · amoxicillin 500 mg PO TID 7 วัน (เฉพาะผลยืนยันว่าไว)</td><td>เพาะเชื้อเมื่อมีอาการ (&gt;10⁵ CFU/mL)</td></tr>
+    <tr><td>Acute pyelonephritis</td><td><b>Ceftriaxone 2 g IV q24h</b> หรือ <b>amoxicillin/clavulanate 1.2 g IV q8h</b></td><td>Cefotaxime 1 g IV q8h · gentamicin (<b>เฉพาะจำเป็น</b> — พิษต่อหูและไตทารก)</td><td><b>รับไว้ใน รพ.</b>ตามข้อบ่งชี้ ติดตามมารดาและทารก · ไข้ลงต่อเนื่อง &gt;24 ชม. → ยากินตามผลเพาะเชื้อจน<b>ครบ 14 วัน</b></td></tr>
+  </table></div>
+  <ul><li>แพ้ β-lactam → <b>ปรึกษาแพทย์โรคติดเชื้อ</b> <span class="tag th">CPG น.14</span></li>
+  <li>เพาะเชื้อซ้ำ 1–2 สัปดาห์หลังครบยา และเมื่อมีอาการใหม่ <span class="tag th">CPG น.15</span></li>
+  <li><span class="tag add">เสริม</span> TMP/SMX ไม่อยู่ในตัวเลือกของ CPG ในครรภ์ — หลีกเลี่ยงไตรมาสแรก (ต้าน folate) และใกล้คลอด (kernicterus) · CG ใช้ประเมินไตในครรภ์ได้ไม่ดี · IDSA 2019 ให้ยา ASB ในครรภ์ 4–7 วัน (ไทย nitrofurantoin 7 วัน)</li></ul>
+</section>
+
+<section id="mdr" class="col">
+  <div class="sec-num">10</div>
+  <h2>UTI จากเชื้อดื้อยาหลายขนาน</h2>
+  <p>เลือกยาตาม AST และระบาดวิทยาของ รพ. · ส่ง urine culture และ hemoculture · อาจต้องขอ AST ยาที่ไม่มีเกณฑ์ CLSI <span class="tag th">CPG น.16–20</span> · รายละเอียดเชิงลึกดู <a href="../mdr-gnb/index.html">IDAT 2026 แกรมลบดื้อยาหลายขนาน</a></p>
+  <div class="grid2">
+    <div class="card c-warn"><h4>นิยามสั้น <span class="tag th">CPG น.16</span></h4><ul><li><b>ESBL</b>: ดื้อ β-lactam แทบทุกตัวรวม 3rd-gen cephalosporin แต่ยังไว cefoxitin และ carbapenem</li><li><b>CRE</b>: ดื้อ carbapenem ≥1 ตัว (ertapenem มักดื้อก่อน) · ปัจจัยเสี่ยง: เคยได้ carbapenem</li><li><b>DTR-PA</b>: ดื้อ ceftazidime, cefepime, pip/tazo, aztreonam, imipenem, meropenem, cipro, levo</li><li><b>VRE</b>: ส่วนใหญ่ <i>E. faecium</i> · ปัจจัยเสี่ยง: สายสวน · Enterococcus ใน ASB ไม่ต้องรักษา (ยกเว้นตั้งครรภ์/ก่อนหัตถการ)</li></ul></div>
+    <div class="card c-acc"><h4>ESBL-producing Enterobacterales <span class="tag th">CPG น.17</span></h4><ul><li><b>Cystitis</b>: <span class="rec s1">หลัก</span> nitrofurantoin <b>7 วัน</b> หรือ fosfomycin ครั้งเดียว · <span class="rec">ทางเลือก</span> FQ/TMP-SMX 7 วันถ้าไว · amikacin ครั้งเดียว · amox/clav 7 วันเมื่อไม่มีทางอื่น (กลับเป็นซ้ำสูง)</li><li><b>Pyelo/cUTI ไม่มี sepsis</b>: <span class="rec s1">หลัก</span> <b>ertapenem 1 g IV q24h ≥7 วัน</b> · <span class="rec">ทางเลือก</span> aminoglycoside (amikacin) ≥7 วัน</li><li><b>Pyelo/cUTI มี sepsis</b>: <span class="rec s1">หลัก</span> <b>meropenem/imipenem ≥7 วัน</b> · <span class="rec">ทางเลือก</span> amikacin · ได้ pip/tazo อยู่แล้ว ดีขึ้น และไว (S/SDD) → ใช้ต่อแบบ high-dose extended infusion ได้</li><li>ดีขึ้น ไม่มีไข้ → de-escalate เป็น ertapenem หรือยากิน cipro/levo/TMP-SMX ถ้าไว</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>เชื้อ</th><th>Cystitis</th><th>Pyelonephritis / cUTI</th></tr>
+    <tr><td><b>CRE</b> <span class="tag th">CPG น.17–18</span></td><td><span class="rec s1">หลัก</span> nitrofurantoin 7 วัน · fosfomycin ครั้งเดียว (<i>E. coli</i> ที่ไว) · meropenem high-dose EI 7 วัน ถ้าดื้อ ertapenem แต่ไว meropenem (MIC ≤1) · <span class="rec">ทางเลือก</span> amikacin ครั้งเดียว · ceftazidime/avibactam 7 วันถ้าไว</td><td>ไว meropenem (MIC ≤1) → <b>meropenem 2 g หยด 3–4 ชม. q8h 14 วัน</b> · <b>OXA-48</b> หรือไว CAZ-AVI → <b>ceftazidime/avibactam 2.5 g q8h 14 วัน</b> · <b>NDM</b> หรือดื้อ CAZ-AVI → <b>CAZ-AVI + aztreonam 14 วัน</b> หรือ once-daily amikacin/colistin 7–10 วัน ตาม AST · <span class="rec no">ไม่ใช้ tigecycline</span> (ไม่ขับทางปัสสาวะ) · ดื้อทุกตัว → ปรึกษา ID</td></tr>
+    <tr><td><b>DTR-<i>P. aeruginosa</i></b> <span class="tag th">CPG น.18</span></td><td colspan="2"><span class="rec s1">หลัก</span> <b>ceftolozane/tazobactam 3 g q8h</b> (ตาม CPG น.21; ฉลากยาสหรัฐฯ สำหรับ cUTI ใช้ 1.5 g q8h — 3 g เป็นขนาดสำหรับปอดอักเสบ) หรือ <b>ceftazidime/avibactam</b> ถ้าไว 10–14 วัน · <span class="rec">ทางเลือก</span> ยาที่ไว <b>2 ชนิดร่วมกัน</b> จาก amikacin, colistin, fosfomycin 7–14 วัน · ดื้อทุกตัว → ปรึกษา ID</td></tr>
+    <tr><td><b>VRE</b> <span class="tag th">CPG น.18</span></td><td><span class="rec s1">หลัก</span> <b>linezolid 600 mg PO q12h 7 วัน</b> หรือ ampicillin high dose 16 g/วัน IV 7 วันถ้ายังไว · <span class="rec">ทางเลือก</span> nitrofurantoin 7 วัน หรือ fosfomycin ครั้งเดียวถ้าไว</td><td><span class="rec s1">หลัก</span> linezolid · ampicillin high dose ถ้าไว · ไม่มี bacteremia 7 วัน · <b>bacteremia</b> 14 วัน หรือ ≥7 วันหลัง hemoculture ลบ + เพิ่ม gentamicin (ถ้า high-level susceptible) หรือ high-dose ceftriaxone 2 g q12h + ประเมิน endocarditis · <span class="rec no">ไม่ใช้</span> tigecycline, fosfomycin IV ยาเดี่ยว</td></tr>
+  </table></div>
+  <ul><li>ติดตาม: ตรวจปัสสาวะซ้ำที่ <b>48–72 ชม.</b> หลังได้ยาที่เหมาะสม · ไม่ดีขึ้น → หาภาวะแทรกซ้อน ปรึกษาผู้เชี่ยวชาญโรคติดเชื้อ <span class="tag th">CPG น.18</span></li></ul>
+  <div class="box note"><b>CPG UTI 2568 vs IDAT 2569 (MDR-GNB)</b><span class="tag add">เสริม</span> แนวทาง MDR-GNB ของสมาคมฯ ฉบับใหม่กว่า (2569) ให้ ESBL cUTI ใช้ <b>carbapenem กลุ่ม 2 เป็นหลัก</b> และใช้ <b>ertapenem เมื่อพ้น sepsis/septic shock และไม่มี albumin ต่ำ</b> — ต่างจาก CPG UTI ที่ให้ ertapenem เป็นยาหลักเมื่อไม่มี sepsis · ในทางปฏิบัติ: ไม่มี sepsis และ albumin ไม่ต่ำ → ertapenem ได้ทั้งสองแนวทาง</div>
+</section>
+
+<section id="dose" class="col">
+  <div class="sec-num">11</div>
+  <h2>ขนาดยา ปรับตามไต และ IV→PO</h2>
+  <p>ขนาดยาไตปกติจากภาคผนวก <span class="tag th">CPG น.21–23</span> · คอลัมน์ปรับตามไต <span class="tag add">เสริม</span> จากเอกสารกำกับยา (US label/SmPC) ใช้ CrCl จาก Cockcroft–Gault · ดู <a href="../ckd/index.html">CKD</a> และ <a href="../aki-drug/index.html">ปรับยาในไตเสื่อม</a></p>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>Lower UTI</th><th>Upper UTI</th><th>ปรับตาม CrCl (mL/min)</th></tr>
+    <tr><td>Nitrofurantoin</td><td>Mono/macro 100 mg PO BID · microcrystal 100 mg PO QID</td><td>ไม่แนะนำ</td><td><b>หลีกเลี่ยงถ้า &lt;30</b> (CPG)</td></tr>
+    <tr><td>Fosfomycin trometamol</td><td>3 g PO ครั้งเดียว (เป็นซ้ำ: 2 โดส ห่าง 3 วัน)</td><td>ไม่แนะนำ</td><td><b>หลีกเลี่ยงถ้า &lt;10</b> (CPG)</td></tr>
+    <tr><td>Cefixime</td><td>400 mg PO วันละ 1–2 ครั้ง</td><td>เท่ากัน (IV→PO)</td><td>21–59: ~75% ของขนาด/วัน · ≤20: ~50% (เช่น 400 → 300 / 200 mg/วัน)</td></tr>
+    <tr><td>Cefdinir · cefditoren · ceftibuten</td><td>300 mg BID · 400 mg BID · 400 mg วันละ 1–2 ครั้ง</td><td>เท่ากัน (IV→PO)</td><td>Cefdinir &lt;30: 300 mg วันละครั้ง · อีกสองตัวลดขนาดเมื่อ &lt;50 ดูฉลาก</td></tr>
+    <tr><td>Amoxicillin</td><td>500 mg PO TID</td><td>—</td><td>10–30: 500 mg q12h · &lt;10: 500 mg q24h</td></tr>
+    <tr><td>Amoxicillin/clavulanate</td><td>1 g PO BID</td><td>1.2 g IV q8h</td><td>PO &lt;30: ห้ามเม็ด 1 g → 500/125 mg q12h (10–30) หรือ q24h (&lt;10) · IV 10–30: 1.2 g แล้ว 600 mg q12h · &lt;10: 1.2 g แล้ว 600 mg q24h</td></tr>
+    <tr><td>Ampicillin</td><td>—</td><td>2 g IV q6h</td><td>10–50: q6–12h · &lt;10: q12–24h</td></tr>
+    <tr><td>Ceftriaxone</td><td>—</td><td>2 g IV q24h (enterococcal bacteremia ร่วม ampicillin เมื่อดื้อ gentamicin high-level: 2 g q12h)</td><td>ไม่ต้องปรับ</td></tr>
+    <tr><td>Cefotaxime</td><td>—</td><td>1 g IV q8h</td><td>&lt;20: ลดครึ่ง (เช่น 1 g q12h)</td></tr>
+    <tr><td>Piperacillin/tazobactam</td><td>—</td><td>4.5 g IV q6–8h · MDR: 4.5 g หยด 3–4 ชม. q6h (loading ใน 30–60 นาที)</td><td>20–40: 3.375 g q6h (≈4.5 g q8h) · &lt;20: 2.25 g q6h · HD: 2.25 g q8h</td></tr>
+    <tr><td>Gentamicin</td><td>5–7 mg/kg IV ครั้งเดียว</td><td>5–7 mg/kg IV q24h</td><td>40–59: q36h · 20–39: q48h · &lt;20: เลี่ยง/ใช้ระดับยา · วัด trough · ใช้ IBW (AdjBW ถ้าอ้วน)</td></tr>
+    <tr><td>Amikacin</td><td>15 mg/kg IV ครั้งเดียว</td><td>15 mg/kg IV q24h</td><td>เหมือน gentamicin (ยืดระยะห่าง + ระดับยา)</td></tr>
+    <tr><td>Ertapenem</td><td>—</td><td>1 g IV q24h</td><td>≤30: 500 mg q24h</td></tr>
+    <tr><td>Meropenem</td><td>—</td><td>1 g IV q8h · MDR: 2 g หยด 3–4 ชม. q8h</td><td>26–50: 1 g q12h · 10–25: 500 mg q12h · &lt;10: 500 mg q24h (ขนาด 2 g ลดตามสัดส่วนเดียวกัน)</td></tr>
+    <tr><td>Imipenem/cilastatin</td><td>—</td><td>500 mg IV q6h</td><td>60–89: 400 mg q6h · 30–59: 300 mg q6h · 15–29: 200 mg q6h · &lt;15: ไม่แนะนำ (เสี่ยงชัก) → meropenem</td></tr>
+    <tr><td>Ciprofloxacin</td><td>500 mg PO BID</td><td>400 mg IV q12h · MDR: 400 mg IV q8h หรือ 750 mg PO BID</td><td>PO 30–50: 250–500 mg q12h · &lt;30: 250–500 mg q18h · IV &lt;30: 200–400 mg q18–24h</td></tr>
+    <tr><td>Levofloxacin</td><td>500 mg PO OD</td><td>500 mg IV q24h · MDR: 750 mg IV/PO q24h</td><td>500 mg: 20–49 → 500 แล้ว 250 mg q24h · 10–19 → 500 แล้ว 250 mg q48h · 750 mg: 20–49 → q48h</td></tr>
+    <tr><td>TMP/SMX</td><td>SS (80/400) 2 เม็ด PO BID</td><td>เท่ากัน (IV→PO)</td><td>15–30: ลดครึ่ง · &lt;15: ไม่แนะนำ · ระวัง K สูง</td></tr>
+    <tr><td>Linezolid</td><td>600 mg PO BID</td><td>600 mg IV q12h (กินแทนฉีดได้)</td><td>ไม่ต้องปรับ · ระวังเกล็ดเลือดต่ำเมื่อใช้นาน</td></tr>
+    <tr><td>Ceftazidime/avibactam · ceftolozane/tazobactam</td><td>—</td><td>2.5 g q8h · 3 g q8h</td><td>ลดเมื่อ ≤50 — ปรึกษาเภสัชกร</td></tr>
+    <tr><td>Aztreonam · colistin · fosfomycin IV</td><td>—</td><td>1–2 g q6–8h · 300 mg loading แล้ว 150 mg q8–12h · 4–6 g q8h</td><td>ซับซ้อน — ปรึกษาเภสัชกร/ID</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>เปลี่ยน IV → ยากิน</h4><ul><li>อาการดีขึ้น ไข้ลง สัญญาณชีพคงที่ กินและดูดซึมได้ มียากินที่<b>เชื้อไวและถึงระดับในปัสสาวะ/เนื้อไต</b></li><li>Bacteremia หรือ cUTI <b>ไม่ใช่ข้อห้าม</b> <span class="tag th">CPG น.7, 11</span></li><li>ลำดับยากิน: FQ หรือ TMP/SMX (ถ้าไว) > oral β-lactam (ต้องให้นานกว่า)</li><li>ตั้งครรภ์: ไข้ลง &gt;24 ชม. → ยากินจนครบ 14 วัน</li></ul></div>
+    <div class="card c-acc"><h4>De-escalation</h4><ul><li>ทุกครั้งที่ได้ผล culture ถามว่า "แคบลงได้ไหม"</li><li>Carbapenem → ertapenem (ESBL ไม่ sepsis) → ยากินถ้าไว</li><li>Pip/tazo → ceftriaxone ถ้าเชื้อไว</li><li>นับระยะเวลาจาก<b>วันแรกที่ได้ยาที่เชื้อไว</b> <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+</section>
+
+<section id="recur" class="col">
+  <div class="sec-num">12</div>
+  <h2>UTI เป็นซ้ำ (recurrent UTI) <span class="tag add">เสริม</span></h2>
+  <p>นิยาม (EAU, AUA): ≥2 ครั้งใน 6 เดือน หรือ ≥3 ครั้งใน 12 เดือน ที่มีผลเพาะเชื้อยืนยัน · CPG ไทยไม่มีบทป้องกันเฉพาะ — ระบุเพียง fosfomycin 2 โดสห่าง 3 วันสำหรับ recurrent cystitis <span class="tag th">CPG น.23</span> และ lower UTI ซ้ำหลายครั้งให้ทำ CT urography หรือ US + ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ <span class="tag th">CPG น.9</span></p>
+  <div class="box note"><b>ไทย vs EAU เรื่องตรวจเพิ่ม</b>EAU ไม่แนะนำตรวจภาพ/ส่องกล้องเป็นประจำในหญิง <b>อายุ &lt;40 ปีที่ไม่มีปัจจัยเสี่ยง</b> · CPG ไทยแนะนำตรวจทางรังสีในผู้ที่เป็น lower UTI ซ้ำหลายครั้ง · หน้านี้ทำตาม CPG ไทย โดยเริ่มจาก US (ไม่มีรังสี) ได้</div>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>วิธี</th><th>หลักฐาน/หมายเหตุ</th></tr>
+    <tr><td>1. พฤติกรรม</td><td>ดื่มน้ำเพิ่มถ้าดื่มน้อย (&lt;1.5 L/วัน) · ปัสสาวะหลังมีเพศสัมพันธ์ · เลี่ยงสารฆ่าอสุจิ (spermicide)</td><td>AUA: ดื่มน้ำเพิ่ม <span class="rec">conditional · C</span></td></tr>
+    <tr><td>2. วัยหมดประจำเดือน</td><td><b>Vaginal oestrogen</b> (ครีม/เม็ดสอดช่องคลอด)</td><td>EAU และ AUA แนะนำ · ไม่ใช่ฮอร์โมนกิน</td></tr>
+    <tr><td>3. ไม่ใช่ยาปฏิชีวนะ</td><td>Cranberry · <b>methenamine hippurate 1 g PO BID</b> · immunoactive prophylaxis (OM-89)</td><td>AUA 2025: cranberry <span class="rec s1">moderate · B</span> · methenamine <span class="rec">conditional · C</span> (ALTAR: ไม่ด้อยกว่ายาปฏิชีวนะ) · D-mannose เดี่ยวอาจไม่ได้ผล · methenamine/OM-89 ในไทยหาได้จำกัด</td></tr>
+    <tr><td>4. ยาปฏิชีวนะป้องกัน</td><td>หลังวิธีอื่นไม่ได้ผล · ต่อเนื่อง 6–12 เดือน หรือหลังมีเพศสัมพันธ์: <b>nitrofurantoin 50–100 mg ก่อนนอน</b> (หรือ 1 โดสหลังเพศสัมพันธ์) · fosfomycin 3 g ทุก 10 วัน · cephalexin 125–250 mg ก่อนนอน · TMP/SMX 40/200 mg ก่อนนอน (ถ้าเชื้อไว)</td><td>ในไทยเลือก nitrofurantoin ก่อน (E. coli ไว &gt;95%) · ระวังพิษปอด/ตับเมื่อใช้นาน · ห้ามถ้า CrCl &lt;30</td></tr>
+    <tr><td>5. Self-start</td><td>ผู้ป่วยที่เข้าใจดี เก็บปัสสาวะส่งเพาะเชื้อแล้วเริ่มยาเองเมื่อมีอาการ</td><td>EAU และ AUA แนะนำในผู้ป่วยที่เลือกได้</td></tr>
+  </table></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">13</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>สงสัย UTI</b>อาการส่วนล่าง/บน · สายสวน · ตั้งครรภ์ · sepsis · ปัจจัยซับซ้อน · เคยพบเชื้อดื้อยา</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>มีอาการไหม?</b>ไม่มี = ASB → รักษาเฉพาะตั้งครรภ์/ก่อนหัตถการทางเดินปัสสาวะ</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">Cystitis</span><div class="node dx green"><b>Nitrofurantoin 5 วัน</b>หรือ fosfomycin ครั้งเดียว · ซับซ้อน: ส่ง culture</div></div>
+        <div class="arm"><span class="lab">Pyelo / cUTI</span><div class="node dx hypo"><b>Culture → ceftriaxone</b>เสี่ยง Pseudomonas/Enterococcus → pip/tazo · ESBL → ertapenem</div></div>
+        <div class="arm"><span class="lab">Sepsis / CAUTI</span><div class="node red"><b>Carbapenem (sepsis)</b>CAUTI ไม่ sepsis → pip/tazo · หาอุดกั้น → ระบาย</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>48–72 ชม.</b>ดูผล culture → de-escalate · ดีขึ้นเปลี่ยนยากิน · ไม่ดีขึ้น → CT/US หาอุดกั้น/ฝี · ระยะเวลา 7 วัน (ตอบสนองเร็ว) ถึง 10–14 วัน</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">14</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น ร่วมกับดุลพินิจ ผลเพาะเชื้อ และ antibiogram ของ รพ. · ยึด CPG UTI ไทย 2568</p>
+  </div>
+  <div class="tool plan" id="tCls" style="margin-top:12px">
+    <h3>1 · จำแนกชนิด UTI และที่รักษา</h3>
+    <div class="fields">
+      <label class="f">เพศ<select id="cSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">อาการ<select id="cSym"><option value="low">แสบขัด ถี่ ปวดท้องน้อย (ไม่มีไข้)</option><option value="up">ไข้ ปวดเอว เคาะเจ็บ CVA</option><option value="none">ไม่มีอาการ (เจอเชื้อ/WBC ในปัสสาวะ)</option><option value="ns">ไม่จำเพาะ: สับสน ล้ม อ่อนเพลีย (ไม่มีอาการปัสสาวะ)</option></select></label>
+    </div>
+    <div class="grid2" style="margin:0">
+      <div class="checks">
+        <label><input type="checkbox" id="cPreg"> ตั้งครรภ์</label>
+        <label><input type="checkbox" id="cCath"> คาสายสวน/สวนเป็นระยะ/ถอด ≤48 ชม.</label>
+        <label><input type="checkbox" id="cSep"> Sepsis (SOFA ≥2 / qSOFA ≥2)</label>
+        <label><input type="checkbox" id="cShock"> Septic shock</label>
+        <label><input type="checkbox" id="cObs"> สงสัยอุดกั้น/นิ่ว (colic, ปัสสาวะน้อย, ไตบวม)</label>
+        <label><input type="checkbox" id="cStr"> ทางเดินปัสสาวะผิดปกติ (นิ่ว, neurogenic bladder, stent, หลังหัตถการ)</label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="cImm"> เบาหวานคุมไม่ดี/ภูมิคุ้มกันบกพร่อง/ปลูกถ่ายไต</label>
+        <label><input type="checkbox" id="cMdr"> เคยพบเชื้อดื้อยาใน 3 เดือน / นอน รพ. ≤3 เดือน</label>
+        <label><input type="checkbox" id="cVom"> อาเจียน กินยาไม่ได้</label>
+        <label><input type="checkbox" id="cFail"> ไม่ดีขึ้นหลังยา 72 ชม.</label>
+        <label><input type="checkbox" id="cRec"> เป็นซ้ำบ่อย</label>
+        <label><input type="checkbox" id="cProc"> จะทำหัตถการทางเดินปัสสาวะ (เยื่อบุบาดเจ็บ)</label>
+      </div>
+    </div>
+    <div class="out" id="clsOut"></div>
+  </div>
+
+  <div class="tool plan" id="tAbx" style="margin-top:12px">
+    <h3>2 · ยาเริ่มต้นตาม CPG ไทย + ปรับตาม CrCl</h3>
+    <div class="fields">
+      <label class="f">ชนิด UTI<select id="aCat"><option value="uC">Uncomplicated cystitis (หญิง)</option><option value="cC">Complicated cystitis (ชาย/มีปัจจัยซับซ้อน ไม่มีอาการส่วนบน)</option><option value="uP">Uncomplicated pyelonephritis (หญิง)</option><option value="cU">Complicated UTI (ส่วนบน/มีไข้)</option><option value="ca">CAUTI</option><option value="pC">ตั้งครรภ์: ASB / cystitis</option><option value="pP">ตั้งครรภ์: pyelonephritis</option></select></label>
+      <label class="f">สถานะเชื้อดื้อยา<select id="aRes"><option value="no">ยังไม่รู้ผล · ไม่เสี่ยงดื้อยา</option><option value="risk">ยังไม่รู้ผล · เคยพบเชื้อดื้อยา/ESBL ใน 3 เดือน</option><option value="esbl">ผลเพาะเชื้อครั้งนี้ = ESBL</option></select></label>
+      <label class="f">แพ้ยา<select id="aAll"><option value="no">ไม่แพ้</option><option value="pen">แพ้ penicillin ไม่รุนแรง (ผื่น)</option><option value="sev">แพ้ β-lactam รุนแรง (anaphylaxis/SJS)</option></select></label>
+      <label class="f">ไตรมาส (ถ้าตั้งครรภ์)<select id="aTri"><option value="12">ไตรมาส 1–2</option><option value="3">ไตรมาส 3</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="aSep"> Sepsis/septic shock (SOFA ≥2)</label>
+      <label><input type="checkbox" id="aPa"> เสี่ยง Pseudomonas (ติดเชื้อใน รพ./ออก ≤3 เดือน, เคยพบใน 12 เดือน, neutropenia)</label>
+      <label><input type="checkbox" id="aEnt"> เสี่ยง Enterococcus (เคยพบใน 12 เดือน)</label>
+      <label><input type="checkbox" id="aSul"> แพ้ sulfa</label>
+      <label><input type="checkbox" id="aRec"> Cystitis เป็นซ้ำ</label>
+    </div>
+    <div class="muted" style="font-size:.82rem;margin-top:8px">คำนวณ CrCl (Cockcroft–Gault)</div>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="aAge" value="45"></label>
+      <label class="f">เพศ<select id="aSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="aWt" value="55"></label>
+      <label class="f">ส่วนสูง (cm, ไม่บังคับ)<input type="number" id="aHt" value=""></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="aCr" value="0.8"></label>
+      <label class="f">หน่วย Cr<select id="aCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="aHd"> ฟอกเลือด (hemodialysis)</label></div>
+    <div class="out" id="abxOut"></div>
+  </div>
+
+  <div class="tool" id="tUa" style="margin-top:12px">
+    <h3>3 · แปลผล UA และ urine culture · ASB รักษาไหม</h3>
+    <div class="fields">
+      <label class="f">วิธีเก็บ<select id="uSpec"><option value="mid">Midstream clean-catch</option><option value="cath">จาก port สายที่คาอยู่</option><option value="post">Midstream หลังถอดสาย ≤48 ชม.</option><option value="spa">Suprapubic aspiration</option><option value="bag">จากถุงปัสสาวะ</option></select></label>
+      <label class="f">อาการ UTI<select id="uSym"><option value="y">มีอาการ</option><option value="n">ไม่มีอาการ</option></select></label>
+      <label class="f">เพศ<select id="uSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">WBC (/HPF)<input type="number" id="uWbc" value="20"></label>
+      <label class="f">ปัสสาวะที่ตรวจ<select id="uCen"><option value="c">ปั่น (centrifuged)</option><option value="u">ไม่ปั่น</option></select></label>
+      <label class="f">Leukocyte esterase<select id="uLe"><option value="nd">ไม่ได้ตรวจ</option><option value="neg">ลบ</option><option value="pos">บวก (รวม trace)</option></select></label>
+      <label class="f">Nitrite<select id="uNi"><option value="nd">ไม่ได้ตรวจ</option><option value="neg">ลบ</option><option value="pos">บวก</option></select></label>
+      <label class="f">Colony count (CFU/mL)<select id="uCfu"><option value="ns">ยังไม่ส่ง/ยังไม่ได้ผล</option><option value="0">ไม่ขึ้นเชื้อ</option><option value="lt3">&lt;10³</option><option value="e3">10³ ถึง &lt;10⁴</option><option value="e4">10⁴ ถึง &lt;10⁵</option><option value="e5">≥10⁵</option></select></label>
+      <label class="f">จำนวนชนิดเชื้อ<select id="uSpp"><option value="1">1 ชนิด</option><option value="2">2 ชนิด</option><option value="3">≥3 ชนิด</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="uRep"> หญิง: เชื้อเดิม ≥10⁵ ซ้ำ 2 ครั้งใน 2 สัปดาห์</label>
+      <label><input type="checkbox" id="uPreg"> ตั้งครรภ์</label>
+      <label><input type="checkbox" id="uProc"> จะทำหัตถการทางเดินปัสสาวะ</label>
+      <label><input type="checkbox" id="uNeu"> Neutropenia (ANC &lt;500)</label>
+      <label><input type="checkbox" id="uSq"> Squamous epithelial cells มาก</label>
+    </div>
+    <div class="out" id="uaOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">15</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>Cystitis ในหญิง อาการชัด</b> → รักษาได้เลย ไม่ต้องส่ง UA/culture</div></div>
+    <div class="pearl"><div><b>Nitrofurantoin 5 วัน</b> = ยาหลักของไทย · E. coli ไว &gt;95% · เลี่ยงถ้า CrCl &lt;30</div></div>
+    <div class="pearl"><div><b>อย่าเริ่ม cipro/TMP-SMX แบบเดา</b> — E. coli ไทยไวแค่ ~30–44%</div></div>
+    <div class="pearl"><div><b>Nitrofurantoin/fosfomycin ห้ามใช้ใน pyelonephritis</b></div></div>
+    <div class="pearl"><div><b>Pyelo/cUTI: culture ก่อนยา</b> → ceftriaxone · sepsis/เคยดื้อยา → carbapenem</div></div>
+    <div class="pearl"><div><b>ไข้ไม่ลง 72 ชม.</b> → CT/US หาอุดกั้น ฝี emphysematous pyelonephritis</div></div>
+    <div class="pearl"><div><b>ไตอุดกั้น + ติดเชื้อ = ระบายด่วน</b> (PCN/JJ stent)</div></div>
+    <div class="pearl"><div><b>Bacteremia ไม่ห้ามเปลี่ยนเป็นยากิน</b> ถ้าดีขึ้นและเชื้อไว</div></div>
+    <div class="pearl"><div><b>CAUTI: เปลี่ยน/ถอดสาย</b> ก่อนเก็บ culture · ไม่ sepsis → pip/tazo</div></div>
+    <div class="pearl"><div><b>ผู้สูงอายุสับสน + ปัสสาวะขุ่น ≠ UTI</b> · ASB ไม่ต้องรักษา</div></div>
+    <div class="pearl"><div><b>ตั้งครรภ์: คัดกรอง ASB</b> · ห้าม FQ · nitrofurantoin เลี่ยงไตรมาส 3</div></div>
+    <div class="pearl"><div><b>Candida ในปัสสาวะ</b> ส่วนใหญ่ colonization → ถอด/เปลี่ยนสาย ไม่ต้องให้ยา ถ้าไม่มีอาการหรือภูมิไม่ต่ำ <span class="tag add">เสริม</span></div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">16</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../sepsis/index.html">Sepsis →</a> · <a href="../mdr-gnb/index.html">แกรมลบดื้อยา (IDAT 2026) →</a> · <a href="../aki/index.html">AKI →</a> · <a href="../aki-drug/index.html">ปรับยาในไตเสื่อม →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../dm/index.html">Diabetes →</a> · <a href="../delirium/index.html">Delirium →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สมาคมโรคติดเชื้อแห่งประเทศไทย ร่วมกับชมรมควบคุมโรคติดเชื้อฯ ราชวิทยาลัยสูตินรีแพทย์ฯ สมาคมศัลยแพทย์ทางเดินปัสสาวะฯ สมาคมโรคไตฯ. แนวทางเวชปฏิบัติการรักษาโรคติดเชื้อทางเดินปัสสาวะ พ.ศ. 2568. กรุงเทพฯ: สมาคมโรคติดเชื้อแห่งประเทศไทย; 2568 · 2) Trautner BW, Cortés-Penfield NW, Gupta K, et al. Clinical practice guidelines by IDSA: 2025 guidelines on management and treatment of complicated urinary tract infections — introduction and methods; selection of antibiotic therapy; timing of IV to oral transition; duration of antibiotics. Clin Infect Dis 2026;82(Suppl 3):i24–i35, i36–i67, i68–i78, i79–i88 · 3) Nicolle LE, Gupta K, Bradley SF, et al. Clinical practice guideline for the management of asymptomatic bacteriuria: 2019 update by the Infectious Diseases Society of America. Clin Infect Dis 2019;68:e83–e110 · 4) Hooton TM, Bradley SF, Cardenas DD, et al. Diagnosis, prevention, and treatment of catheter-associated urinary tract infection in adults: 2009 international clinical practice guidelines from the IDSA. Clin Infect Dis 2010;50:625–63 · 5) EAU Guidelines on Urological Infections, 2026 edition. Arnhem: EAU Guidelines Office; 2026 · 6) Kranz J, Bartoletti R, Bruyère F, et al. European Association of Urology guidelines on urological infections: summary of the 2024 guidelines. Eur Urol 2024;86:27–41 · 7) Gupta K, Hooton TM, Naber KG, et al. International clinical practice guidelines for the treatment of acute uncomplicated cystitis and pyelonephritis in women: 2010 update by IDSA and ESCMID. Clin Infect Dis 2011;52:e103–20 · 8) Daneman N, Rishu A, Pinto R, et al. Antibiotic treatment for 7 versus 14 days in patients with bloodstream infections. N Engl J Med 2025;392:1065–78 · 9) Drekonja DM, Trautner B, Amundson C, Kuskowski M, Johnson JR. Effect of 7 vs 14 days of antibiotic therapy on resolution of symptoms among afebrile men with urinary tract infection: a randomized clinical trial. JAMA 2021;326:324–31 · 10) Harris PNA, Tambyah PA, Lye DC, et al. Effect of piperacillin-tazobactam vs meropenem on 30-day mortality for patients with E coli or Klebsiella pneumoniae bloodstream infection and ceftriaxone resistance (MERINO). JAMA 2018;320:984–94 · 11) Huang JJ, Tseng CC. Emphysematous pyelonephritis: clinicoradiological classification, management, prognosis, and pathogenesis. Arch Intern Med 2000;160:797–805 · 12) Bent S, Nallamothu BK, Simel DL, Fihn SD, Saint S. Does this woman have an acute uncomplicated urinary tract infection? JAMA 2002;287:2701–10 · 13) Anger J, Lee U, Ackerman AL, et al. Recurrent uncomplicated urinary tract infections in women: AUA/CUA/SUFU guideline (amended 2025). J Urol 2019;202:282–9 · 14) Harding C, Mossop H, Homer T, et al. Alternative to prophylactic antibiotics for the treatment of recurrent urinary tract infections in women (ALTAR): multicentre, open label, randomised, non-inferiority trial. BMJ 2022;376:e068229 · 15) สมาคมโรคติดเชื้อแห่งประเทศไทย. IDAT 2026 แนวทางรักษาการติดเชื้อแบคทีเรียแกรมลบดื้อยาหลายขนาน. 2569<br>
+  <span class="tag th">CPG น.x</span> = เลขหน้าที่พิมพ์ใน CPG UTI ไทย 2568 · <span class="tag add">เสริม</span> = เนื้อหาที่ไม่ได้มาจาก CPG ไทย · ขนาดยาปรับตามไตมาจากเอกสารกำกับยา ตรวจสอบกับเภสัชกรก่อนใช้ · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','utView');
+mountWalker({
+ start:{q:'ผู้ป่วยเป็นแบบไหน?',o:[['ไม่มีอาการ แต่ตรวจพบเชื้อ/WBC ในปัสสาวะ','asb'],['คาสายสวน (หรือถอด ≤48 ชม.) + อาการติดเชื้อ','cau'],['ตั้งครรภ์ + อาการ UTI','preg'],['มีอาการ UTI ไม่ตั้งครรภ์ ไม่มีสาย','red']]},
+ asb:{q:'อยู่ในกลุ่มที่ต้องรักษา ASB?',o:[['ตั้งครรภ์','asbT'],['จะทำหัตถการทางเดินปัสสาวะที่เยื่อบุบาดเจ็บ','asbP'],['ไม่ใช่ (สูงอายุ เบาหวาน คาสาย ปลูกถ่ายไต >1 เดือน)','asbN']]},
+ asbT:{leaf:true,cls:'warn',t:'ASB ในครรภ์ → รักษา',b:'ยาตามผลเพาะเชื้อ ขนาดและระยะเวลาเหมือน cystitis: <b>nitrofurantoin 7 วัน</b> (เลี่ยงไตรมาส 3) หรือ <b>fosfomycin 3 g ครั้งเดียว</b> · ทางเลือก amoxicillin/clavulanate 7 วัน · <b>เพาะเชื้อซ้ำ 1–2 สัปดาห์หลังครบยา</b> (CPG น.5, 14)'},
+ asbP:{leaf:true,cls:'warn',t:'ก่อนหัตถการทางเดินปัสสาวะ',b:'ส่ง urine culture ก่อน · ให้ยาตามผล <b>1 โดส 30–60 นาทีก่อนทำ</b> ไม่ต้องให้ต่อหลังหัตถการ (CPG น.5)'},
+ asbN:{leaf:true,cls:'ok',t:'ไม่ตรวจ ไม่รักษา',b:'ผู้สูงอายุ เบาหวาน คาสาย ปลูกถ่ายไต &gt;1 เดือน ผ่าตัดนอกทางเดินปัสสาวะ → <b>ไม่ให้ยา</b> · สับสน/ล้มโดยไม่มีอาการเฉพาะที่หรือ systemic → หาสาเหตุอื่นของ delirium · neutropenia ยังไม่มีข้อสรุป'},
+ cau:{q:'มี sepsis (SOFA ≥2) หรือ septic shock?',o:[['มี','cauS'],['ไม่มี','cauN']]},
+ cauS:{leaf:true,cls:'danger',t:'CAUTI + sepsis',b:'Hemoculture + urine culture (เปลี่ยนสายก่อนเก็บถ้าคา &gt;1 สัปดาห์) · <b>Meropenem 1 g IV q8h</b> หรือ imipenem/cilastatin · ทางเลือก pip/tazo · <b>ถอดสายถ้าหมดข้อบ่งชี้</b> · หาอุดกั้น · 7 วันถ้าตอบสนองเร็ว ไม่เกิน 14 วัน'},
+ cauN:{leaf:true,cls:'warn',t:'CAUTI ไม่มี sepsis',b:'<b>Piperacillin/tazobactam 4.5 g IV q6–8h</b> · ทางเลือก meropenem/imipenem หรือ amikacin · ไม่ใช้ FQ ถ้าไม่มีผลยืนยันว่าไว · เปลี่ยน/ถอดสาย · 7 วัน (ช้า ≤14 วัน)'},
+ preg:{q:'มีไข้/ปวดเอว/เคาะเจ็บ CVA?',o:[['มี → pyelonephritis','pP'],['ไม่มี → cystitis','pC']]},
+ pP:{leaf:true,cls:'danger',t:'Pyelonephritis ในครรภ์',b:'<b>รับไว้ใน รพ.</b> ติดตามมารดาและทารก · <b>Ceftriaxone 2 g IV q24h</b> หรือ <b>amoxicillin/clavulanate 1.2 g IV q8h</b> · ทางเลือก cefotaxime 1 g q8h หรือ gentamicin (เฉพาะจำเป็น) · ไข้ลง &gt;24 ชม. → ยากินตามผลเพาะเชื้อจนครบ 14 วัน · แพ้ β-lactam → ปรึกษา ID · ห้าม FQ'},
+ pC:{leaf:true,cls:'ok',t:'Cystitis ในครรภ์',b:'<b>Nitrofurantoin 7 วัน</b> (เลี่ยงไตรมาส 3) หรือ <b>fosfomycin 3 g ครั้งเดียว</b> · ทางเลือก amoxicillin/clavulanate 1 g BID 7 วัน หรือ amoxicillin 500 mg TID 7 วัน (เมื่อไว) · เพาะเชื้อก่อนยาและซ้ำ 1–2 สัปดาห์หลังครบยา'},
+ red:{q:'มี sepsis/septic shock หรือสงสัยไตอุดกั้น?',h:'qSOFA ≥2, SOFA ≥2, ความดันต่ำ, ปวด colic, ปัสสาวะออกน้อย, ไตบวม',o:[['ใช่','seps'],['ไม่ใช่','site']]},
+ seps:{leaf:true,cls:'danger',t:'Urosepsis',b:'Hemoculture 2 ชุด + urine culture · สารน้ำ · ยาภายใน 1 ชม.: <b>meropenem 1 g IV q8h</b> (pyelonephritis + sepsis หรือเสี่ยง ESBL) · <b>US/CT ด่วน</b> หาอุดกั้น/ฝี/แก๊ส · <b>ไตอุดกั้น → ระบายด่วน</b> (PCN/JJ stent) · ปรับยาตามไต',next:['เลือกยาตามชนิดเมื่อคงที่','site']},
+ site:{q:'ตำแหน่งการติดเชื้อ?',o:[['เฉพาะกระเพาะปัสสาวะ (ไม่มีไข้/ปวดเอว)','cys'],['มีไข้/ปวดเอว/เคาะเจ็บ CVA','up']]},
+ cys:{q:'หญิงที่ไม่มีปัจจัยซับซ้อน?',o:[['ใช่','ucys'],['ไม่ใช่ (ชาย ผิดปกติโครงสร้าง ภูมิต่ำ)','ccys']]},
+ ucys:{leaf:true,cls:'ok',t:'Uncomplicated cystitis',b:'ไม่ต้องส่ง UA/culture ถ้าอาการชัด · <b>Nitrofurantoin 100 mg BID 5 วัน</b> · ทางเลือก fosfomycin 3 g ครั้งเดียว · cefixime/amox-clav 7 วัน · aminoglycoside ครั้งเดียว · FQ/TMP-SMX 3 วันเฉพาะผลยืนยันว่าไว'},
+ ccys:{leaf:true,cls:'warn',t:'Complicated cystitis',b:'ส่ง UA + urine culture · ใช้ยาแบบ uncomplicated cystitis (CPG น.10) · ชาย: 7 วัน และถ้าสงสัย prostatitis (ไข้ ปวดฝีเย็บ) ไม่ใช้ nitrofurantoin/fosfomycin · ชายสูงอายุติดเชื้อครั้งแรก → ตรวจทางรังสี + ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ'},
+ up:{q:'หญิงที่ไม่มีปัจจัยซับซ้อน?',o:[['ใช่ → uncomplicated pyelonephritis','upy'],['ไม่ใช่ → complicated UTI','cut']]},
+ upy:{q:'เคยพบเชื้อดื้อยาใน 3 เดือนที่ผ่านมา?',o:[['ไม่เคย','upyN'],['เคย','upyR']]},
+ upyN:{leaf:true,cls:'ok',t:'Pyelonephritis ไม่ซับซ้อน',b:'Urine culture · <b>Ceftriaxone 2 g IV q24h</b> (ทางเลือก gentamicin/amikacin) · คงที่รักษาผู้ป่วยนอกได้ · รู้ผล: cipro/levo จนครบ 7 วัน · TMP-SMX 7–10 วัน · oral β-lactam 10–14 วัน · ไม่ดีขึ้น 72 ชม. → ตรวจทางรังสี'},
+ upyR:{leaf:true,cls:'warn',t:'Pyelonephritis + เคยพบเชื้อดื้อยา',b:'<b>Meropenem 1 g IV q8h</b> หรือ imipenem/cilastatin (ทางเลือก gentamicin/amikacin) · ผลยืนยัน ESBL และไม่มี sepsis → de-escalate เป็น <b>ertapenem 1 g q24h</b> หรือยากินถ้าไว'},
+ cut:{q:'ปัจจัยเสี่ยงเชื้อเฉพาะ?',o:[['ESBL/เชื้อดื้อยาหลายขนาน','cutE'],['Pseudomonas (ใน รพ., เคยพบใน 12 เดือน, neutropenia)','cutP'],['Enterococcus (เคยพบใน 12 เดือน)','cutEn'],['ไม่มี','cutN']]},
+ cutE:{leaf:true,cls:'danger',t:'cUTI เสี่ยง/ยืนยัน ESBL',b:'ไม่มี sepsis → <b>ertapenem 1 g IV q24h ≥7 วัน</b> · มี sepsis → <b>meropenem/imipenem ≥7 วัน</b> · ทางเลือก amikacin 15 mg/kg q24h · ดีขึ้น → ยากิน cipro/levo/TMP-SMX ถ้าไว'},
+ cutP:{leaf:true,cls:'warn',t:'cUTI เสี่ยง Pseudomonas',b:'<b>Piperacillin/tazobactam</b>, ceftazidime หรือ cefepime · ทางเลือก amikacin · cipro/levo เมื่อผลยืนยันว่าไว · 10–14 วัน (7 วันถ้าตอบสนองเร็ว)'},
+ cutEn:{leaf:true,cls:'warn',t:'cUTI เสี่ยง Enterococcus',b:'<b>Piperacillin/tazobactam</b> หรือ amoxicillin/clavulanate · ทางเลือก vancomycin หรือ linezolid <b>ร่วมกับ</b>ยาครอบคลุมแกรมลบ'},
+ cutN:{leaf:true,cls:'ok',t:'cUTI ไม่มีปัจจัยเสี่ยงดื้อยา',b:'UA + culture · <b>Ceftriaxone 2 g IV q24h</b> (ทางเลือก gentamicin/amikacin) · ตรวจทางรังสีตามข้อบ่งชี้ · ดีขึ้น → ยากินตามผล · 10–14 วัน (7 วันถ้าตอบสนองเร็ว) · ชายมีไข้ สงสัย prostatitis → นานขึ้น'}
+},'apTrail','apStage');
+
+/* ---------- Tool 1: classifier ---------- */
+let clsSend=null;
+function cls(){
+  const g=id=>$(id).checked;const sex=$('cSex').value,sym=$('cSym').value;const L=[];
+  let preg=g('cPreg');
+  if(preg&&sex==='m'){L.push('<b>เลือกเพศชายพร้อมตั้งครรภ์</b> — ตรวจข้อมูลอีกครั้ง (คิดแบบไม่ตั้งครรภ์)');preg=false}
+  const shock=g('cShock'),sep=g('cSep')||shock,cath=g('cCath'),obs=g('cObs'),str=g('cStr'),imm=g('cImm'),mdr=g('cMdr');
+  const cx=sex==='m'||str||obs||imm;
+  let cat='',code=null,set='',T=[];
+  if(sym==='none'&&!sep){
+    const treat=preg||g('cProc');
+    cat=cath?'Catheter-associated asymptomatic bacteriuria (CA-ASB)':'Asymptomatic bacteriuria (ASB)';
+    set=treat?(preg?'<b>รักษา</b>: ยาตามผลเพาะเชื้อแบบ cystitis (CPG น.5, 14) · เพาะซ้ำ 1–2 สัปดาห์หลังครบยา':'<b>รักษา</b>: ส่ง culture ก่อน ให้ยาตามผล 1 โดส 30–60 นาทีก่อนหัตถการ (CPG น.5)'):'<b>ไม่ต้องตรวจคัดกรองและไม่ต้องให้ยา</b> (CPG น.5) — ปัสสาวะขุ่น/มีกลิ่น/pyuria ไม่ใช่ข้อบ่งชี้'+(imm?' · ถ้าเป็น neutropenia: CPG ยังไม่มีข้อสรุป':'');
+    if(preg)code='pC';
+  }else if(sym==='ns'||(sym==='none'&&sep)){
+    cat='ยังไม่ใช่ UTI — อาการไม่จำเพาะ';
+    set=sep?'<b>Sepsis ไม่ทราบแหล่ง</b>: hemoculture + urine culture · ให้ยาครอบคลุม<b>ทั้งทางเดินปัสสาวะและแหล่งอื่น</b> · ดูหน้า Sepsis':'อย่าวินิจฉัย UTI จาก UA/culture อย่างเดียว · หาสาเหตุอื่นของสับสน/ล้ม (ยา ขาดน้ำ ปอดอักเสบ) และสังเกตอาการ (IDSA 2019) · ดูหน้า Delirium';
+  }else if(cath){
+    cat='<b>CAUTI</b>'+(sep?' + sepsis':'');code='ca';
+    set=shock?'<b>ICU</b>':'ผู้ป่วยใน';
+    T.push('เปลี่ยนสายก่อนเก็บ culture ถ้าคา &gt;1 สัปดาห์ · ถอดสายถ้าหมดข้อบ่งชี้ (CPG น.12)');
+    if(preg)T.push('<b>ตั้งครรภ์ + คาสาย</b>: ห้าม FQ · เลี่ยง aminoglycoside · ปรึกษาสูติแพทย์/ID (เครื่องมือ 2 หมวด CAUTI ไม่ได้คัดยาตามครรภ์)');
+  }else if(preg){
+    if(sym==='low'&&!sep){cat='<b>Acute cystitis ในหญิงตั้งครรภ์</b>';code='pC';set='ผู้ป่วยนอก · urine culture ก่อนยา';}
+    else{cat='<b>Acute pyelonephritis ในหญิงตั้งครรภ์</b>';code='pP';set=shock?'<b>ICU</b> + สูติแพทย์':'<b>รับไว้ใน รพ.</b> ติดตามมารดาและทารก (CPG น.14)';}
+  }else if(sym==='low'&&!sep){
+    if(!cx){cat='<b>Acute uncomplicated cystitis</b>';code='uC';set='ผู้ป่วยนอก · อาการชัดไม่ต้องส่ง UA/culture (CPG น.6)';}
+    else{cat='<b>Complicated cystitis</b>'+(sex==='m'?' (ชาย)':'');code='cC';set='ผู้ป่วยนอกได้ · ส่ง UA + urine culture · ใช้ยาแบบ uncomplicated cystitis (CPG น.10)';
+      if(sex==='m')T.push('ชาย: ถามไข้ ปวดฝีเย็บ ปัสสาวะค้าง → สงสัย prostatitis (ไม่ใช้ nitrofurantoin/fosfomycin) · ชาย &lt;35 ปีมีหนอง → urethritis/STI');}
+  }else{
+    if(sym==='low'&&sep)T.push('มี sepsis = ไม่ใช่ cystitis ธรรมดา → จัดเป็นการติดเชื้อส่วนบน/systemic');
+    if(!cx){cat='<b>Acute uncomplicated pyelonephritis</b>'+(sep?' + sepsis':'');code='uP';
+      set=shock?'<b>ICU</b>':sep?'<b>รับไว้ใน รพ.</b>':g('cVom')?'<b>รับไว้ใน รพ.</b> (กินไม่ได้)':'ผู้ป่วยนอกได้ถ้าคงที่ (ceftriaxone/aminoglycoside วันละครั้ง) · นัดดูผลเพาะเชื้อ 48–72 ชม.';}
+    else{cat='<b>Complicated UTI</b>'+(sep?' + sepsis':'');code='cU';
+      set=shock?'<b>ICU</b>':sep||obs?'<b>รับไว้ใน รพ.</b>':g('cVom')?'<b>รับไว้ใน รพ.</b> (กินไม่ได้)':'มักรับไว้ใน รพ. · คงที่และกินยาได้อาจรักษาผู้ป่วยนอกโดยนัดติดตามใกล้ชิด';
+      if(sex==='m')T.push('<b>ชายมีไข้</b> → ตรวจต่อมลูกหมากเบาๆ (ห้ามนวด) · สงสัย prostatitis ให้ยานานขึ้น (IDSA 2025: 10–14 วัน)');}
+  }
+  const tests=[];
+  if(code&&code!=='uC'&&!(sym==='none'))tests.push('UA + <b>urine culture ก่อนยา</b>');
+  if(sep||code==='cU'&&sym==='up')tests.push('hemoculture'+(sep?' 2 ชุด':' (ถ้ารุนแรง)'));
+  if(sep)tests.push('lactate, Cr, CBC · ยาภายใน 1 ชม.');
+  if(code==='uP'&&!sep)tests.push('hemoculture เฉพาะรุนแรง/sepsis');
+  const img=[];
+  if(obs)img.push('<b>สงสัยอุดกั้น → US/CT ด่วน และระบาย</b> (PCN/JJ stent) ถ้าอุดกั้นร่วมติดเชื้อ');
+  if(shock&&!obs)img.push('Septic shock → US ไตด่วนเพื่อตัดอุดกั้น <span class="muted">(เสริม)</span>');
+  if(!preg&&sym!=='none'&&sym!=='ns'&&(g('cFail')||(g('cRec')&&sym==='up')||str||imm))img.push('CT abdomen-pelvis with contrast (ไตบกพร่อง: US หรือ CT ไม่ฉีดสี) — '+[g('cFail')?'ไม่ดีขึ้น 72 ชม.':'',g('cRec')&&sym==='up'?'upper UTI ซ้ำ':'',str?'โครงสร้างผิดปกติ/นิ่ว':'',imm?'เบาหวานคุมไม่ดี/ภูมิต่ำ':''].filter(Boolean).join(', ')+' (CPG น.9)');
+  if(!preg&&sex==='m'&&(sym==='low'||sym==='up')&&!g('cRec'))img.push('ถ้าเป็นชายสูงอายุติดเชื้อครั้งแรก → ปรึกษาศัลยแพทย์ทางเดินปัสสาวะหา BPH (CPG น.9)');
+  if(!preg&&g('cRec')&&sym==='low')img.push('Lower UTI ซ้ำหลายครั้ง → CT urography หรือ US KUB + ปรึกษาศัลยแพทย์ทางเดินปัสสาวะ (CPG น.9)');
+  if(preg&&(g('cFail')||obs||str||imm))img.push('ตั้งครรภ์: US whole abdomen หรือ MRI ไม่ฉีดสี (CPG น.10)');
+  if(imm&&sym==='up')img.push('เบาหวาน + ไข้/ปวดเอว รุนแรง → ระวัง <b>emphysematous pyelonephritis</b>/ฝีไต (CT)');
+  L.push('ชนิด: '+cat);
+  L.push('ที่รักษา: '+set);
+  if(tests.length)L.push('ตรวจ: '+tests.join(' · '));
+  if(img.length)L.push('ภาพรังสี/ปรึกษา: '+img.join('<br>'));
+  T.forEach(t=>L.push(t));
+  if(mdr&&code)L.push('เคยพบเชื้อดื้อยา/นอน รพ. ใน 3 เดือน → ในเครื่องมือ 2 เลือก "เคยพบเชื้อดื้อยา"');
+  if(g('cRec')&&(code==='uC'||code==='cC'))L.push('Cystitis เป็นซ้ำ: fosfomycin 3 g 2 โดสห่าง 3 วัน (CPG น.23) · ดูบท UTI เป็นซ้ำ');
+  clsSend=code?{code,sep,mdr,sex}:null;
+  if(code)L.push('<button type="button" class="btn" id="clsGo">ใช้หมวดนี้ในเครื่องมือ 2 →</button>');
+  $('clsOut').innerHTML=L.join('<br>');
+  const b=$('clsGo');if(b)b.onclick=()=>{if(!clsSend)return;$('aCat').value=clsSend.code;$('aSep').checked=clsSend.sep;$('aSex').value=clsSend.sex;if(clsSend.mdr&&$('aRes').value==='no')$('aRes').value='risk';$('aCat').dispatchEvent(new Event('change',{bubbles:true}));$('tAbx').scrollIntoView({behavior:'smooth',block:'start'})};
+}
+bindAll('#tCls input,#tCls select',cls);
+
+/* ---------- Tool 2: empirical antibiotic + renal dosing ---------- */
+function crclCalc(){
+  const age=num('aAge'),wt=num('aWt'),ht=num('aHt'),cr=num('aCr'),u=$('aCrU').value,sex=$('aSex').value,hd=$('aHd').checked;
+  const R={ok:false,msg:'',c:0,hd:hd,dw:null,line:'',notes:[]};
+  const wOk=wt!==null&&wt>=30&&wt<=250;
+  let ibw=null;
+  if(ht!==null&&$('aHt').value!==''){if(ht>=130&&ht<=220)ibw=(sex==='m'?50:45.5)+0.9*(ht-152.4);else R.notes.push('ส่วนสูงไม่อยู่ในช่วง 130–220 cm — ไม่ใช้คำนวณ');}
+  let w=null,wl='น้ำหนักจริง';
+  if(wOk){w=wt;if(ibw!==null){if(wt<=ibw){w=wt;wl='น้ำหนักจริง (≤IBW)'}else if(wt>1.2*ibw){w=ibw+0.4*(wt-ibw);wl='adjusted BW (อ้วน)'}else{w=ibw;wl='IBW'}}}
+  R.dw=w;
+  if(wOk&&ibw===null&&wt>90){R.dw=null;R.notes.push('<b>น้ำหนัก &gt;90 kg ไม่ได้ใส่ส่วนสูง</b> → CrCl คิดจากน้ำหนักจริง (อาจสูงเกินถ้าอ้วน) · ไม่แสดง aminoglycoside เป็น mg — ใส่ส่วนสูงเพื่อใช้ IBW/AdjBW');}
+  if(hd){R.ok=true;R.c=5;R.line='<b>ฟอกเลือด</b> → ใช้ขนาดสำหรับ CrCl &lt;10/HD · วันที่ฟอกให้ยาหลังฟอก'+(w===null?' · <span class="muted">ใส่น้ำหนัก 30–250 kg เพื่อคำนวณ aminoglycoside เป็น mg</span>':'');return R}
+  if(age===null||age<18||age>110){R.msg='ใส่อายุ 18–110 ปี';return R}
+  if(!wOk){R.msg='ใส่น้ำหนัก 30–250 kg';return R}
+  if(cr===null||cr<=0){R.msg='ใส่ค่า creatinine';return R}
+  let crMg=u==='um'?cr/88.4:cr;
+  if(u==='mg'&&cr>20){R.msg='Cr &gt;20 mg/dL ผิดปกติ — ถ้าเป็นหน่วย µmol/L ให้เปลี่ยนหน่วย';return R}
+  if(crMg<0.1){R.msg=u==='um'?'Cr ต่ำเกินสำหรับหน่วย µmol/L — ถ้าเป็น mg/dL ให้เปลี่ยนหน่วย':'Cr &lt;0.1 mg/dL ผิดปกติ — ตรวจค่าอีกครั้ง';return R}
+  const c=(140-age)*w/(72*crMg)*(sex==='f'?0.85:1);
+  R.ok=true;R.c=c;
+  R.line=`CrCl (Cockcroft–Gault) ≈ <b>${Math.round(c)} mL/min</b> <span class="muted">· Cr ${f2(crMg)} mg/dL · น้ำหนักที่ใช้ ${f1(w)} kg (${wl})</span>`;
+  if(crMg<0.7&&age>=65)R.notes.push('Cr ต่ำในผู้สูงอายุ/กล้ามเนื้อน้อย → CrCl อาจสูงเกินจริง');
+  if(c>150)R.notes.push('CrCl สูงมาก — ตรวจน้ำหนัก/Cr อีกครั้ง');
+  return R;
+}
+function agMg(dw,lo,hi,step){if(dw===null)return '';const a=Math.round(dw*lo/step)*step,b=Math.round(dw*hi/step)*step;return a===b?` ≈ ${a} mg`:` ≈ ${a}–${b} mg`}
+function D(k,K){ /* returns [name, dose, avoidReason, cls] ; K={c,hd,dw,single,dur,tri,preg} */
+  const c=K.c,H=K.hd;
+  switch(k){
+  case 'nitro':return ['Nitrofurantoin','100 mg PO BID (monohydrate/macrocrystal) หรือ microcrystal 100 mg PO QID',c<30?'CrCl &lt;30':(K.preg&&K.tri==='3'?'ไตรมาส 3 (hemolysis ทารก)':''),''];
+  case 'fos':return ['Fosfomycin trometamol',K.rec?'3 g PO 2 โดส ห่างกัน 3 วัน (cystitis เป็นซ้ำ)':'3 g PO ครั้งเดียว',c<10?'CrCl &lt;10':'',''];
+  case 'cfx':return ['Cefixime',H?'300 mg PO วันละครั้ง (HD ~75%)':c<=20?'200 mg PO วันละครั้ง (CrCl ≤20 ~50%)':c<60?'300 mg/วัน (CrCl 21–59 ~75%)':'400 mg PO วันละ 1–2 ครั้ง','','ceph'];
+  case 'amcPO':return ['Amoxicillin/clavulanate',(H||c<10)?'500/125 mg PO q24h (ห้ามเม็ด 1 g)':c<30?'500/125 mg PO q12h (ห้ามเม็ด 1 g)':'1 g PO BID','','pen'];
+  case 'amcIV':return ['Amoxicillin/clavulanate',(H||c<10)?'1.2 g IV แล้ว 600 mg q24h':c<30?'1.2 g IV แล้ว 600 mg q12h':'1.2 g IV q8h','','pen'];
+  case 'amox':return ['Amoxicillin',(H||c<10)?'500 mg PO q24h':c<30?'500 mg PO q12h':'500 mg PO TID','','pen'];
+  case 'cipPO':return ['Ciprofloxacin',H?'250–500 mg PO q24h (หลังฟอก)':c<30?'250–500 mg PO q18h':c<=50?'250–500 mg PO q12h':'500 mg PO BID','',''];
+  case 'cipIV':return ['Ciprofloxacin',(H||c<30)?'200–400 mg IV q18–24h':'400 mg IV q12h','',''];
+  case 'levo':return ['Levofloxacin',(H||c<20)?'500 mg แล้ว 250 mg q48h':c<50?'500 mg แล้ว 250 mg q24h':'500 mg PO/IV q24h','',''];
+  case 'sxt':return ['TMP/SMX',c<=30&&c>=15&&!H?'SS (80/400) 1 เม็ด PO BID (ลดครึ่ง)':'SS (80/400) 2 เม็ด PO BID',(H||c<15)?'CrCl &lt;15':(K.sul?'แพ้ sulfa':''),''];
+  case 'cro':return ['Ceftriaxone','2 g IV q24h (ไม่ต้องปรับตามไต)','','ceph'];
+  case 'ctx':return ['Cefotaxime',(H||c<20)?'1 g IV q12h (CrCl &lt;20 ลดครึ่ง)':'1 g IV q8h','','ceph'];
+  case 'tzp':return ['Piperacillin/tazobactam',H?'2.25 g IV q8h (+0.75 g หลังฟอก)':c<20?'2.25 g IV q6h':c<=40?'3.375 g IV q6h (≈4.5 g q8h)':'4.5 g IV q6–8h','','pen'];
+  case 'caz':return ['Ceftazidime',H?'1 g IV หลังฟอกแต่ละครั้ง':c<=5?'500 mg IV q48h':c<=15?'500 mg IV q24h':c<=30?'1 g IV q24h':c<=50?'1 g IV q12h':'2 g IV q8h','','ceph'];
+  case 'fep':return ['Cefepime',H?'1 g IV q24h (หลังฟอก)':c<=10?'1 g IV q24h':c<30?'2 g IV q24h':c<=60?'2 g IV q12h':'2 g IV q8h','','ceph'];
+  case 'gen':case 'ami':{
+    const nm=k==='gen'?'Gentamicin':'Amikacin',mk=k==='gen'?'5–7 mg/kg':'15 mg/kg',mg=k==='gen'?agMg(K.dw,5,7,10):agMg(K.dw,15,15,25);
+    if(H||c<20)return [nm,mk+' IV',H?'ฟอกเลือด — ใช้เมื่อจำเป็นตามระดับยา':'CrCl &lt;20 — ใช้เมื่อจำเป็นตามระดับยา',''];
+    if(K.single)return [nm,`${mk} IV ครั้งเดียว${mg}`,'',''];
+    const iv=c>=60?'q24h':c>=40?'q36h':'q48h';
+    return [nm,`${mk} IV ${iv}${mg}${c<60?' (ยืดระยะห่าง + วัดระดับยา)':''}`,'',''];}
+  case 'erta':return ['Ertapenem',(H||c<=30)?'500 mg IV q24h':'1 g IV q24h','','carb'];
+  case 'mero':return ['Meropenem',(H||c<10)?'500 mg IV q24h':c<=25?'500 mg IV q12h':c<=50?'1 g IV q12h':'1 g IV q8h','','carb'];
+  case 'imi':return ['Imipenem/cilastatin',H||c<15?'ไม่แนะนำเมื่อ CrCl <15/ฟอกเลือด (เสี่ยงชัก) — ใช้ meropenem หรือปรึกษาเภสัชกร':c<30?'200 mg IV q6h':c<60?'300 mg IV q6h':c<90?'400 mg IV q6h':'500 mg IV q6h','','carb'];
+  case 'azt':return ['Aztreonam',(H||c<10)?'2 g IV แล้ว 500 mg q8h':c<=30?'2 g IV แล้ว 1 g q8h':'1–2 g IV q6–8h','',''];
+  case 'lzd':return ['Linezolid','600 mg PO/IV q12h (ไม่ต้องปรับตามไต)','',''];
+  case 'van':return ['Vancomycin','ขนาดตามน้ำหนัก ปรับตามระดับยา (AUC/trough) และไต','',''];
+  }
+  return [k,'','',''];
+}
+function abx(){
+  const out=$('abxOut');const cat=$('aCat').value,res=$('aRes').value,all=$('aAll').value,tri=$('aTri').value;
+  const g=id=>$(id).checked;const sep=g('aSep'),pa=g('aPa'),ent=g('aEnt'),sul=g('aSul'),rec=g('aRec');
+  const R=crclCalc();
+  if(!R.ok){out.innerHTML=`<b>${R.msg}</b><br><span class="muted">ต้องคำนวณ CrCl ก่อน เพราะยาหลายตัวต้องปรับตามไต (nitrofurantoin, fosfomycin, aminoglycoside, carbapenem)</span>`+(R.notes.length?'<br>'+R.notes.join(' · '):'');return}
+  const preg=cat==='pC'||cat==='pP';
+  const L=[R.line];R.notes.forEach(n=>L.push('<span class="muted">'+n+'</span>'));
+  if(preg&&$('aSex').value==='m')L.push('<b>เลือกหมวดตั้งครรภ์แต่เพศชาย</b> — ตรวจข้อมูล');
+  if(preg)L.push('<span class="muted">CrCl จาก Cockcroft–Gault ประเมินไตในครรภ์ได้ไม่แม่น</span>');
+  if((cat==='uC'||cat==='cC'||cat==='pC')&&sep){L.push('<b>มี sepsis = ไม่ใช่ cystitis</b> → เลือกหมวด pyelonephritis / complicated UTI / CAUTI');out.innerHTML=L.join('<br>');return}
+  const K={c:R.c,hd:R.hd,dw:R.dw,tri,preg,sul,rec:false,single:false};
+  let M=[],A=[],N=[],dur='';
+  const it=(k,d,o)=>Object.assign({k,d:d||''},o||{});
+  const esbl=res==='esbl',risk=res==='risk';
+  if(cat==='uC'||cat==='cC'){
+    const man=$('aSex').value==='m'&&cat==='cC';
+    if(esbl){M=[it('nitro','7 วัน'),it('fos','',{rec})];A=[it('cipPO','7 วัน ถ้าไว'),it('levo','7 วัน ถ้าไว'),it('sxt','7 วัน ถ้าไว'),it('ami','',{single:true}),it('amcPO','7 วัน เมื่อใช้ยาอื่นไม่ได้ (กลับเป็นซ้ำสูง)')];dur='ESBL cystitis (CPG น.17)';}
+    else{M=[it('nitro',man?'7 วัน':'5 วัน')];A=[it('fos','',{rec}),it('cfx','7 วัน'),it('amcPO','7 วัน'),it('gen','',{single:true}),it('ami','',{single:true}),it('cipPO','3 วัน เฉพาะผลยืนยันว่าไว'),it('levo','3 วัน เฉพาะผลยืนยันว่าไว'),it('sxt','3 วัน เฉพาะผลยืนยันว่าไว')];
+      dur=man?'ชาย: <b>7 วัน</b> (Drekonja 2021 — ข้อมูลเสริม; CPG ไม่ได้ระบุ)':'nitrofurantoin 5 วัน · fosfomycin ครั้งเดียว · cefixime/amox-clav 7 วัน (CPG น.6–8)';
+      if(risk)N.push('เคยพบเชื้อดื้อยา: nitrofurantoin/fosfomycin ยังครอบคลุม ESBL <i>E. coli</i> ส่วนใหญ่ · ส่ง culture');}
+    if(cat==='cC')N.push('Complicated cystitis: ส่ง UA + urine culture · ยาแบบ uncomplicated cystitis (CPG น.10) · มีอาการส่วนบนเมื่อไร → รักษาแบบ cUTI');
+    if(man)N.push('ชาย: สงสัย prostatitis (ไข้ ปวดฝีเย็บ) → ไม่ใช้ nitrofurantoin/fosfomycin · เลือกหมวด cUTI');
+    if(rec)N.push('Cystitis เป็นซ้ำ: fosfomycin 2 โดสห่าง 3 วัน (CPG น.23) · พิจารณาวิธีป้องกัน');
+  }else if(cat==='uP'){
+    if(esbl){M=sep?[it('mero','≥7 วัน'),it('imi','≥7 วัน')]:[it('erta','≥7 วัน')];A=[it('ami','≥7 วัน')];dur='ESBL pyelonephritis: ≥7 วัน (CPG น.17)';
+      if(sep)N.push('ได้ pip/tazo อยู่ ดีขึ้น และเชื้อไว (S/SDD) → ใช้ต่อแบบ 4.5 g หยด 3–4 ชม. q6h ได้');}
+    else if(sep||risk){M=[it('mero'),it('imi')];A=[it('gen'),it('ami')];N.push((sep?'Sepsis/septic shock':'เคยพบเชื้อดื้อยาใน 3 เดือน')+' → carbapenem กลุ่ม 2 (CPG น.7)'+(risk&&!sep?' · ผลยืนยัน ESBL และไม่มี sepsis → de-escalate เป็น ertapenem':''));}
+    else{M=[it('cro')];A=[it('gen'),it('ami')];N.push('คงที่ → รักษาผู้ป่วยนอกได้ (ยาฉีดวันละครั้ง)');}
+    if(!esbl)dur='ตอบสนองเร็ว + FQ/aminoglycoside → <b>7 วัน</b> · β-lactam หรือตอบสนองช้า → <b>10–14 วัน</b> (CPG น.7)';
+    N.push('รู้ผลและดีขึ้น → ยากิน: '+['cipPO','levo','sxt'].map(k=>rend(it(k),K,all)).join(' · ')+' (FQ ครบ 7 วัน · TMP-SMX 7–10 วัน) · ทางเลือก '+['cfx','amcPO'].map(k=>rend(it(k),K,all)).join(' · ')+' ครบ 10–14 วัน');
+    N.push('Bacteremia ไม่ใช่ข้อห้ามของยากิน · ไม่ดีขึ้น 72 ชม. → ตรวจทางรังสี');
+  }else if(cat==='cU'){
+    if(esbl||risk){
+      if(sep||pa){M=[it('mero','≥7 วัน'),it('imi','≥7 วัน')];if(pa&&!sep)N.push('เสี่ยงทั้ง ESBL และ Pseudomonas → ertapenem ไม่ครอบคลุม Pseudomonas → ใช้ meropenem/imipenem');}
+      else M=[it('erta','≥7 วัน')];
+      A=[it('ami','≥7 วัน')];N.push('cUTI + เชื้อดื้อยา → ตามบท MDR (CPG น.17)');
+    }else if(pa){M=[it('tzp'),it('caz'),it('fep')];A=[it('ami')];N.push('Cipro/levofloxacin ใช้ได้เมื่อผลยืนยันว่าไว · ceftazidime/cefepime ขนาดเป็นข้อมูลเสริม (ไม่อยู่ในภาคผนวก CPG)');if(ent)N.push('เสี่ยง Enterococcus ร่วม → เลือก <b>piperacillin/tazobactam</b> (ceftazidime/cefepime ไม่ครอบคลุม Enterococcus)');}
+    else if(ent){M=[it('tzp'),it('amcIV')];A=[it('van','ร่วมกับยาครอบคลุมแกรมลบ'),it('lzd','ร่วมกับยาครอบคลุมแกรมลบ')];}
+    else{M=[it('cro')];A=[it('gen'),it('ami')];if(sep)N.push('<b>Sepsis</b>: CPG บท cUTI ไม่ได้แยกกรณีนี้ — ถ้า septic shock หรือ ESBL ในพื้นที่สูง หลายแห่งใช้ meropenem ตามหลักเดียวกับ pyelonephritis + sepsis (CPG น.7)');}
+    if(ent&&(esbl||risk))N.push('เสี่ยง Enterococcus ร่วม → พิจารณาเพิ่ม vancomycin/linezolid ตามความรุนแรง หรือรอผลเพาะเชื้อ');
+    dur='อย่างน้อย <b>10–14 วัน</b> · <b>7 วัน</b>ถ้าตอบสนองเร็วและไม่มีภาวะแทรกซ้อน · นานกว่าถ้า abscess/lobar nephronia/infected cyst (CPG น.11) · IDSA 2025: FQ 5–7 วัน หรือยาอื่น 7 วัน';
+    N.push('ดีขึ้น → ยากินตามผล: '+['cipPO','levo','sxt'].map(k=>rend(it(k),K,all)).join(' · ')+' (oral β-lactam เป็นทางเลือก กลับเป็นซ้ำสูงกว่า)');
+    if($('aSex').value==='m')N.push('ชายมีไข้ สงสัย prostatitis → นานขึ้น (IDSA 2025: 10–14 วัน · EAU 2–4 สัปดาห์) · FQ/TMP-SMX เข้าต่อมลูกหมากดี');
+  }else if(cat==='ca'){
+    if(esbl){M=sep?[it('mero'),it('imi')]:[it('erta')];A=[it('ami')];N.push('ผลยืนยัน ESBL → ตามบท MDR (CPG น.17)');}
+    else if(sep){M=[it('mero'),it('imi')];A=[it('tzp')];}
+    else{M=[it('tzp')];A=[it('mero'),it('imi'),it('ami')];}
+    if(ent)N.push('เสี่ยง Enterococcus: pip/tazo ครอบคลุม <i>E. faecalis</i> · ถ้าใช้ carbapenem และกังวล → พิจารณา vancomycin/linezolid');
+    if(pa&&!sep&&!esbl)N.push('เสี่ยง Pseudomonas: pip/tazo ครอบคลุมแล้ว');
+    dur='ตอบสนองเร็ว <b>7 วัน</b> · ช้า นานขึ้นแต่<b>ไม่เกิน 14 วัน</b> (CPG น.13)';
+    N.push('เปลี่ยนสายก่อนเก็บ culture ถ้าคา &gt;1 สัปดาห์ · ถอดสายถ้าหมดข้อบ่งชี้ · ไม่ใช้ FQ เว้นแต่ผลยืนยันว่าไว');
+  }else if(cat==='pC'){
+    M=[it('nitro','7 วัน'),it('fos')];A=[it('amcPO','7 วัน'),it('amox','7 วัน เฉพาะผลยืนยันว่าไว')];
+    dur='nitrofurantoin/amoxicillin/amox-clav 7 วัน · fosfomycin ครั้งเดียว · ASB ใช้ขนาดเดียวกันตามผลเพาะเชื้อ (CPG น.14–15)';
+    N.push('ห้าม FQ · เพาะเชื้อซ้ำ 1–2 สัปดาห์หลังครบยา');
+    if(esbl)N.push('ESBL: nitrofurantoin (ไม่ใช่ไตรมาส 3) หรือ fosfomycin มักยังใช้ได้ตามผลความไว');
+  }else if(cat==='pP'){
+    M=[it('cro'),it('amcIV')];A=[it('ctx'),it('gen','เฉพาะจำเป็น (พิษต่อหู/ไตทารก)')];
+    dur='ไข้ลงต่อเนื่อง &gt;24 ชม. → ยากินตามผลเพาะเชื้อจน<b>ครบ 14 วัน</b> (CPG น.14)';
+    N.push('<b>รับไว้ใน รพ.</b> ติดตามมารดาและทารก · ห้าม FQ · เพาะเชื้อซ้ำ 1–2 สัปดาห์หลังครบยา');
+    if(esbl||risk)N.push('ESBL/เชื้อดื้อยาในครรภ์: CPG ไม่ได้ระบุ → <b>ปรึกษาแพทย์โรคติดเชื้อ</b> (มักใช้ carbapenem) <span class="muted">(เสริม)</span>');
+    if(all==='sev')N.push('<b>แพ้ β-lactam ในครรภ์ → ปรึกษาแพทย์โรคติดเชื้อ</b> (CPG น.14)');
+  }
+  /* allergy filter */
+  const ok=x=>{const cl=D(x.k,K)[3];if(all==='pen'&&cl==='pen')return false;if(all==='sev'&&(cl==='pen'||cl==='ceph'||cl==='carb'))return false;if(sul&&x.k==='sxt')return false;return true};
+  const rm=[...M,...A].filter(x=>!ok(x)).map(x=>D(x.k,K)[0]);
+  M=M.filter(ok);A=A.filter(ok);
+  const usable=x=>!D(x.k,{...K,single:!!x.single,rec:!!x.rec})[2];
+  if(!M.some(usable)&&A.some(usable)){N.unshift('ยาหลักใช้ไม่ได้ (แพ้ยา/ไต/ไตรมาส) → ใช้ทางเลือก');}
+  if(all==='sev'&&!preg&&(sep||pa)&&cat!=='uC'&&cat!=='cC')A.push(it('azt','(ใช้ได้ในแพ้ penicillin รุนแรง ยกเว้นแพ้ ceftazidime) — เสริม'));
+  if(rm.length)L.push('<span class="muted">ตัดออกเพราะแพ้ยา: '+[...new Set(rm)].join(', ')+'</span>');
+  if(all==='pen')N.push('แพ้ penicillin ไม่รุนแรง: cephalosporin/carbapenem ใช้ได้ (ปฏิกิริยาข้ามต่ำ)');
+  if(all==='sev'&&!preg)N.push('แพ้ β-lactam รุนแรง: carbapenem ข้ามกันต่ำมาก (&lt;1%) อาจใช้ได้เมื่อจำเป็นภายใต้การดูแลใกล้ชิด/ปรึกษาผู้เชี่ยวชาญ');
+  L.push('<b>ยาหลัก</b>'+(M.length?'<ol>'+M.map(x=>'<li>'+rend(x,K,all)+'</li>').join('')+'</ol>':' — ไม่มีที่ใช้ได้'));
+  L.push('<b>ทางเลือก</b>'+(A.length?'<ol>'+A.map(x=>'<li>'+rend(x,K,all)+'</li>').join('')+'</ol>':' — ไม่มีที่ใช้ได้'));
+  if(!M.some(usable)&&!A.some(usable))L.push('<b>ไม่มีตัวเลือกใน CPG ที่เหมาะ → ปรึกษาแพทย์โรคติดเชื้อ/เภสัชกร</b>');
+  if(dur)L.push('ระยะเวลา: '+dur);
+  N.forEach(n=>L.push(n));
+  L.push('<span class="muted">ปรับยาตามผลเพาะเชื้อเมื่อได้ผล (de-escalate) · ขนาดปรับตามไตมาจากเอกสารกำกับยา ตรวจกับเภสัชกร</span>');
+  out.innerHTML=L.join('<br>');
+}
+function rend(x,K,all){
+  const d=D(x.k,{...K,single:!!x.single,rec:!!x.rec});
+  if(d[2])return `<s>${d[0]}</s> — <b>หลีกเลี่ยง</b> (${d[2]})`;
+  return `<b>${d[0]}</b> ${d[1]}`+(x.d?` · ${x.d}`:'');
+}
+bindAll('#tAbx input,#tAbx select',abx);
+
+/* ---------- Tool 3: UA / culture interpreter ---------- */
+function ua(){
+  const spec=$('uSpec').value,sym=$('uSym').value==='y',sex=$('uSex').value,cen=$('uCen').value,le=$('uLe').value,ni=$('uNi').value,cfu=$('uCfu').value,spp=$('uSpp').value;
+  const g=id=>$(id).checked;let preg=g('uPreg');const neu=g('uNeu');const L=[];
+  let wbc=num('uWbc');
+  if(wbc!==null&&(wbc<0||wbc>5000)){L.push('<span class="muted">WBC ไม่อยู่ในช่วงที่เป็นไปได้ — ไม่นำมาแปล</span>');wbc=null}
+  if(preg&&sex==='m'){L.push('<b>เลือกเพศชายพร้อมตั้งครรภ์</b> — ตรวจข้อมูล (คิดแบบไม่ตั้งครรภ์)');preg=false}
+  /* pyuria */
+  const thr=cen==='c'?5:10;
+  const wP=wbc===null?null:wbc>=thr,lP=le==='pos'?true:le==='neg'?false:null;
+  const py=wP===true||lP===true,pyKnown=wP!==null||lP!==null;
+  if(!pyKnown)L.push('Pyuria: <b>ยังประเมินไม่ได้</b> — ใส่ WBC/HPF หรือผล leukocyte esterase');
+  else L.push(py?`<b>มี pyuria</b> (${wP?`WBC ${wbc}/HPF ≥${thr} ${cen==='c'?'ปั่น':'ไม่ปั่น'}`:''}${wP&&lP?' · ':''}${lP?'LE บวก':''})`:`<b>ไม่มี pyuria</b> (เกณฑ์ ${cen==='c'?'ปั่น ≥5':'ไม่ปั่น ≥10'}/HPF, LE บวก)`);
+  if(ni==='pos')L.push('Nitrite <b>บวก</b> → จำเพาะสูงต่อ Enterobacterales');
+  else if(ni==='neg')L.push('Nitrite ลบ — <b>ไม่ตัด UTI</b> (Enterococcus, S. saprophyticus, Pseudomonas ไม่สร้าง nitrite)');
+  if(sym&&pyKnown&&!py)L.push(neu?'Neutropenia อาจไม่พบ pyuria แม้ติดเชื้อจริง (CPG น.3)':'มีอาการแต่<b>ไม่มี pyuria</b> → UTI ไม่น่าเป็น หาสาเหตุอื่น (vaginitis, urethritis/STI, นิ่ว)');
+  if(g('uSq'))L.push('Squamous cell มาก → <b>ปนเปื้อน</b> เก็บใหม่แบบ clean-catch');
+  /* culture */
+  if(spec==='bag'){L.push('<b>ปัสสาวะจากถุง: ห้ามใช้ส่งเพาะเชื้อ</b> → เก็บใหม่จาก sampling port (เปลี่ยนสายถ้าคา &gt;1 สัปดาห์)');$('uaOut').innerHTML=L.join('<br>');return}
+  if(cfu==='ns'){
+    L.push(sym?'ยังไม่มีผลเพาะเชื้อ · cystitis ในหญิงอาการชัดไม่ต้องส่ง · pyelonephritis/cUTI/CAUTI/ตั้งครรภ์ → ส่งก่อนยา':'ไม่มีอาการ: <b>ส่ง culture เฉพาะหญิงตั้งครรภ์ (ฝากครรภ์ครั้งแรก) และก่อนหัตถการทางเดินปัสสาวะ</b> (CPG น.5)');
+    $('uaOut').innerHTML=L.join('<br>');return}
+  if(spp==='3'&&cfu!=='0'){L.push('<b>เชื้อ ≥3 ชนิด → สงสัยปนเปื้อน</b> (CPG น.3) · เก็บใหม่');$('uaOut').innerHTML=L.join('<br>');return}
+  const lv={'0':0,lt3:1,e3:3,e4:4,e5:5}[cfu];
+  if(lv===0){L.push('<b>เพาะเชื้อไม่ขึ้น</b>'+(py?' + pyuria = <b>sterile pyuria</b>: เพิ่งได้ยา, chlamydia/gonorrhoea, วัณโรคทางเดินปัสสาวะ, นิ่ว, interstitial nephritis':'')+(sym?' · มีอาการ: ทบทวนว่าได้ยามาก่อนเก็บหรือไม่':''));$('uaOut').innerHTML=L.join('<br>');return}
+  if(sym){
+    let sig=false,rule='';
+    if(spec==='spa'){sig=lv>=1;rule='Suprapubic aspiration: ขึ้นเชื้อเท่าใดก็มีนัยสำคัญ'}
+    else if(spec==='cath'||spec==='post'){sig=lv>=3;rule='CAUTI: ≥10³ CFU/mL ไม่เกิน 2 ชนิด (CPG น.12)'}
+    else{sig=lv>=5;rule='Midstream: ≥10⁵ CFU/mL (CPG น.3)'}
+    L.push((sig?'<b>Significant bacteriuria</b>':'<b>ต่ำกว่าเกณฑ์</b>')+' — '+rule);
+    if(sig&&py)L.push('มีอาการ + pyuria + significant bacteriuria → <b>เข้าได้กับ UTI</b> ครบ 3 เกณฑ์ · เลือกยาตามความไว');
+    else if(sig&&pyKnown&&!py&&!neu)L.push('เข้าเกณฑ์เชื้อแต่ไม่มี pyuria → ทบทวนการเก็บ/ปนเปื้อน และอาการอีกครั้ง');
+    else if(sig&&!pyKnown)L.push('เข้าเกณฑ์เชื้อ · ตรวจ pyuria ประกอบ');
+    if(!sig&&spec==='mid'&&lv>=3&&sex==='f')L.push('หญิงมีอาการชัด + 10³–10⁵: อาจเป็น cystitis จริง (EAU ใช้ ≥10³) <span class="muted">(เสริม)</span>');
+    if(!sig&&lv===1)L.push('&lt;10³ → ไม่น่าเป็น UTI จากแบคทีเรีย');
+  }else{
+    let meet=false,why='';
+    if(spec==='spa'){meet=true;why='SPA ขึ้นเชื้อ'}
+    else if(spec==='cath'){meet=lv>=5;why='Catheter urine ≥10⁵ ครั้งเดียว (CPG น.5)'}
+    else{
+      if(lv>=5){if(sex==='m'){meet=true;why='ชาย midstream ≥10⁵ ครั้งเดียว'}else if(g('uRep')){meet=true;why='หญิง ≥10⁵ ซ้ำ 2 ครั้งใน 2 สัปดาห์'}else{meet=false;why='หญิง: ต้อง ≥10⁵ เชื้อเดิม <b>2 ครั้งติดกันใน 2 สัปดาห์</b> (CPG น.5)'+(preg?' · ACOG คัดกรองครรภ์ด้วยผลครั้งเดียวได้ <span class="muted">(เสริม)</span>':'')}}
+      else why='ต่ำกว่า 10⁵ → ไม่เข้าเกณฑ์ ASB';
+    }
+    L.push((meet?'<b>เข้าเกณฑ์ ASB</b>':'<b>ยังไม่เข้าเกณฑ์ ASB</b>')+' — '+why);
+    const pend=!meet&&lv>=5&&spec!=='cath';
+    if(meet||pend){
+      if(preg)L.push('<b>ตั้งครรภ์ → รักษา</b> ตามผลความไว แบบ cystitis (nitrofurantoin 7 วัน ยกเว้นไตรมาส 3 · fosfomycin ครั้งเดียว · amox/clav 7 วัน) · เพาะซ้ำ 1–2 สัปดาห์หลังครบยา');
+      else if(g('uProc'))L.push('<b>ก่อนหัตถการทางเดินปัสสาวะ → รักษา</b>: ยาตามผล 1 โดส 30–60 นาทีก่อนทำ');
+      else if(neu)L.push('Neutropenia: CPG ยังไม่มีข้อสรุปว่าควรรักษา ASB หรือไม่ → พิจารณารายบุคคล/ปรึกษา');
+      else L.push('<b>ไม่ต้องรักษา</b> (สูงอายุ เบาหวาน คาสาย ปลูกถ่ายไต &gt;1 เดือน ฯลฯ) · pyuria หรือปัสสาวะขุ่น/มีกลิ่นไม่ใช่ข้อบ่งชี้');
+    }else L.push('ไม่มีอาการ + ไม่เข้าเกณฑ์ → ไม่ต้องให้ยา');
+  }
+  if(spp==='2'&&(spec==='cath'||spec==='post'))L.push('<span class="muted">2 ชนิดยังอยู่ในเกณฑ์ CAUTI</span>');
+  $('uaOut').innerHTML=L.join('<br>');
+}
+bindAll('#tUa input,#tUa select',ua);
+
+mountQuiz([
+ ['หญิง 28 ปี แสบขัด ปัสสาวะบ่อย 2 วัน ไม่มีไข้ ไม่ตั้งครรภ์ ไม่มีโรคร่วม ยาหลักตาม CPG ไทย 2568',['Ciprofloxacin 3 วัน','Nitrofurantoin 5 วัน','TMP/SMX 3 วัน','Amoxicillin 7 วัน'],1,'Nitrofurantoin 5 วัน เป็นยาหลัก · fosfomycin ครั้งเดียวเป็นทางเลือก (น.6) · ไม่ต้องส่ง UA/culture ถ้าอาการชัด'],
+ ['เหตุผลที่ CPG ไม่ให้ ciprofloxacin เป็นยาเริ่มต้นของ cystitis',['ยาแพงเกินไป','E. coli จากปัสสาวะในไทยไวต่อ ciprofloxacin เพียงราว 30%','ยาไม่ขับออกทางปัสสาวะ','ห้ามใช้ในผู้หญิง'],1,'NARST 2566: E. coli ไว cipro ~30%, TMP/SMX ~41–44% แต่ไว nitrofurantoin ~96–98% (น.4)'],
+ ['หญิง 35 ปี ไข้ ปวดเอวขวา ไม่มี sepsis ไม่เคยพบเชื้อดื้อยา ยาเริ่มต้นหลังส่ง urine culture',['Nitrofurantoin','Ceftriaxone 2 g IV วันละครั้ง','Meropenem','Fosfomycin 3 g'],1,'Uncomplicated pyelonephritis ไม่มี sepsis → ceftriaxone · ทางเลือก gentamicin/amikacin (น.7) · nitrofurantoin/fosfomycin ไม่ใช้ใน upper UTI'],
+ ['Pyelonephritis ที่มี septic shock และยังไม่รู้ผลเพาะเชื้อ ยาหลักตาม CPG',['Ceftriaxone','Meropenem หรือ imipenem/cilastatin','Ciprofloxacin IV','Amoxicillin/clavulanate'],1,'Sepsis/septic shock หรือเคยพบเชื้อดื้อยาใน 3 เดือน → carbapenem กลุ่ม 2 (น.7)'],
+ ['ชาย 80 ปี คาสายปัสสาวะ ปัสสาวะขุ่น มีกลิ่น ไม่มีไข้ สัญญาณชีพปกติ ควรทำอย่างไร',['Ceftriaxone 7 วัน','ไม่ต้องให้ยา เป็น CA-asymptomatic bacteriuria','Ciprofloxacin 3 วัน','ล้างสายด้วยยาฆ่าเชื้อ'],1,'ไม่มีอาการ = CA-ASB ไม่ต้องรักษา · ไม่แนะนำ irrigate สาย (น.12–13)'],
+ ['CAUTI ไม่มี sepsis ยาหลักตาม CPG ไทย',['Ciprofloxacin','Piperacillin/tazobactam','Nitrofurantoin','Ceftriaxone'],1,'Pip/tazo เป็นหลัก · ทางเลือก carbapenem กลุ่ม 2 หรือ amikacin · ไม่ใช้ FQ ถ้าไม่มีผลยืนยัน (น.12–13)'],
+ ['หญิงตั้งครรภ์ 34 สัปดาห์ acute cystitis ยาที่เหมาะสมที่สุด',['Nitrofurantoin 7 วัน','Ciprofloxacin 3 วัน','Fosfomycin 3 g ครั้งเดียว','Levofloxacin 5 วัน'],2,'ไตรมาส 3 เลี่ยง nitrofurantoin (hemolysis ในทารก) · ห้าม FQ ทุกไตรมาส (น.14)'],
+ ['Pyelonephritis มี E. coli bacteremia วันที่ 3 ไข้ลง กินได้ เชื้อไว ciprofloxacin ควรทำอย่างไร',['ให้ ceftriaxone IV ต่อจนครบ 14 วันเพราะมี bacteremia','เปลี่ยนเป็น ciprofloxacin กินจนครบ 7 วัน','หยุดยาได้เลย','เปลี่ยนเป็น nitrofurantoin'],1,'Bacteremia ไม่ใช่ข้อห้ามของยากิน · FQ ครบ 7 วันเมื่อตอบสนองเร็ว (น.7)'],
+ ['ผู้ป่วยเบาหวาน ไข้สูง ช็อก CT พบแก๊สในเนื้อไต การจัดการที่สำคัญนอกจากยาฆ่าเชื้อ',['ให้ยากินแล้วนัดดูอาการ','ปรึกษาศัลยแพทย์ทางเดินปัสสาวะเพื่อระบาย/ผ่าตัดโดยเร็ว','ให้ insulin อย่างเดียว','รอผลเพาะเชื้อก่อนตัดสินใจ'],1,'Emphysematous pyelonephritis ต้องควบคุมแหล่งติดเชื้อ (PCD หรือตัดไต) (น.11)'],
+ ['ผู้ป่วยคาสาย 3 สัปดาห์ สงสัย CAUTI และยังต้องใช้สายต่อ วิธีเก็บ urine culture ที่ถูกต้อง',['เก็บจากถุงปัสสาวะ','เปลี่ยนสายใหม่ก่อน แล้วเก็บจาก sampling port','ดูดจากสายเดิมได้เลย','ไม่ต้องส่ง culture'],1,'คาสาย >1 สัปดาห์ → เปลี่ยนสายก่อนเก็บ (น.12)'],
+ ['ผลเพาะเชื้อยืนยัน ESBL E. coli ใน pyelonephritis ที่ไม่มี sepsis ยาหลักตาม CPG',['Ceftriaxone','Ertapenem อย่างน้อย 7 วัน','Amoxicillin/clavulanate','Cefixime'],1,'ESBL pyelo/cUTI ไม่มี sepsis → ertapenem ≥7 วัน · มี sepsis → meropenem/imipenem (น.17)'],
+ ['หญิง CrCl 25 mL/min เป็น uncomplicated cystitis ยาใดเหมาะกว่า',['Nitrofurantoin','Fosfomycin 3 g ครั้งเดียว','Gentamicin ครั้งเดียว','TMP/SMX ขนาดเต็ม'],1,'Nitrofurantoin หลีกเลี่ยงเมื่อ CrCl <30 · fosfomycin หลีกเลี่ยงเมื่อ CrCl <10 (น.6)']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

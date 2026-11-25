@@ -1,0 +1,972 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Skin &amp; soft tissue infection · การติดเชื้อผิวหนังและเนื้อเยื่ออ่อน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Infectious disease · Surgery · Dermatology · IDSA SSTI 2014 (ยังเป็นฉบับล่าสุด ณ พ.ย. 2569) · WSES/SIS-E 2022 · LRINEC 2004</div>
+  <h1>การติดเชื้อผิวหนังและเนื้อเยื่ออ่อน<br>Skin &amp; soft tissue infection: cellulitis · erysipelas · abscess · necrotizing fasciitis</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป (ER, OPD, หอผู้ป่วย) นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้ช่วย <b>แยกว่ามีหนองหรือไม่ และรุนแรงแค่ไหน</b> (IDSA mild/moderate/severe) → <b>ตัดโรคที่หน้าตาเหมือน cellulitis</b> → <b>ระบายฝี</b> และเลือกว่าจะให้ยาหรือไม่ → <b>เลือกยา ขนาดยา ระยะเวลา</b> และป้องกันการเป็นซ้ำ → <b>จับ necrotizing soft tissue infection (NSTI) ให้ได้เร็ว</b> และเลือกยาตามการสัมผัส (น้ำทะเล น้ำจืด ดินโคลน ฝีเย็บ) → <b>แผลถูกกัด</b></p>
+  <p class="cite">อ้างอิงหลัก: Stevens DL, et al. IDSA practice guidelines for SSTI: 2014 update (Clin Infect Dis 2014;59:e10–52) · Sartelli M, et al. WSES/GAIS/WSIS/SIS-E/AAST global clinical pathways for SSTI (World J Emerg Surg 2022;17:3) · Wong CH, et al. LRINEC score (Crit Care Med 2004;32:1535–41) · Fernando SM, et al. NSTI diagnostic accuracy meta-analysis (Ann Surg 2019;269:58–65) · Talan DA, et al. (N Engl J Med 2016;374:823–32) · Daum RS, et al. (N Engl J Med 2017;376:2545–55) · Moran GJ, et al. (JAMA 2017;317:2088–96) · Thomas KS, et al. PATCH I (N Engl J Med 2013;368:1695–703) · ข้อมูล NSTI/Vibrio ในไทย · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>มีหนอง = ระบาย</b>ฝี → incision &amp; drainage เป็นการรักษาหลัก · ไม่มีหนอง → ยาคลุม <i>Streptococcus</i> (± MSSA) 5 วัน + ยกขาสูง</div>
+    <div class="stage" style="--c:var(--warn)"><b>แดงสองขา ≈ ไม่ใช่ cellulitis</b>นึกถึง venous stasis dermatitis, DVT, gout, contact dermatitis ก่อนให้ยา</div>
+    <div class="stage" style="--c:var(--danger)"><b>ปวดมากเกินที่เห็น = คิดถึง NSTI</b>ตาม ศัลยแพทย์ทันที · ผ่าตัดภายใน 6 ชม. · LRINEC ต่ำตัดโรคไม่ได้ · ห้ามรอภาพถ่ายรังสี</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#class">แยกชนิดและความรุนแรง</a><a href="#mimic">โรคที่เหมือน cellulitis</a><a href="#work">ตรวจอะไร · เพาะเชื้อเมื่อไร</a><a href="#abscess">ฝี: ระบายและยา</a><a href="#cell">Cellulitis/erysipelas: ยาและระยะเวลา</a><a href="#recur">เป็นซ้ำและการป้องกัน</a><a href="#nsti">NSTI: จับให้ได้</a><a href="#nstirx">NSTI: ผ่าตัดและยา</a><a href="#thai">เชื้อตามการสัมผัส (ไทย)</a><a href="#bite">แผลถูกกัด</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="class" class="col">
+  <div class="sec-num">01</div>
+  <h2>แยกชนิดและความรุนแรง</h2>
+  <p>คำถามแรกคือ <b>มีหนองหรือไม่</b> เพราะเชื้อและการรักษาต่างกัน · ไม่มีหนอง (cellulitis, erysipelas) ส่วนใหญ่เป็น <b><i>Streptococcus</i> (β-hemolytic โดยเฉพาะ group A)</b> · มีหนอง (ฝี furuncle carbuncle) ส่วนใหญ่เป็น <b><i>S. aureus</i></b></p>
+  <div class="tbl"><table>
+    <tr><th>โรค</th><th>ชั้นที่ติดเชื้อ</th><th>ลักษณะ</th><th>เชื้อหลัก</th></tr>
+    <tr><td><b>Erysipelas</b></td><td>หนังแท้ชั้นบน + ท่อน้ำเหลือง</td><td><b>นูน ขอบชัด</b> แดงสด เริ่มเร็ว ไข้สูง · ขา ใบหน้า</td><td><i>Streptococcus</i> เกือบทั้งหมด</td></tr>
+    <tr><td><b>Cellulitis</b></td><td>หนังแท้ชั้นลึก + ไขมันใต้ผิว</td><td>แดง ร้อน บวม เจ็บ <b>ขอบไม่ชัด</b> · มักข้างเดียว · มีทางเข้า (แผล เชื้อราซอกนิ้ว)</td><td><i>Streptococcus</i> &gt; MSSA</td></tr>
+    <tr><td><b>Abscess / furuncle / carbuncle</b></td><td>หนองในชั้นหนังแท้/ใต้ผิว · furuncle = รูขุมขน</td><td>ก้อนนุ่ม <b>fluctuation</b> หัวหนอง · อาจมีแดงรอบๆ</td><td><i>S. aureus</i> (MSSA/MRSA)</td></tr>
+    <tr><td><b>NSTI</b> (necrotizing fasciitis ฯลฯ)</td><td>fascia ± กล้ามเนื้อ</td><td>ปวดมากเกินผิวหนังที่เห็น ลามเร็ว ตุ่มน้ำ ผิวดำ ชา ช็อก — <a href="#nsti">ดูบท 07</a></td><td>หลายเชื้อ หรือ GAS, Vibrio, Aeromonas</td></tr>
+  </table></div>
+  <h3>ความรุนแรงตาม IDSA 2014 <span class="rec s1">IDSA 2014</span></h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>มีหนอง (purulent)</th><th>ไม่มีหนอง (non-purulent)</th></tr>
+    <tr><td><b>Mild</b><br><span class="muted">ไม่มีอาการทั่วตัว</span></td><td><b>I&amp;D</b> อย่างเดียว (หรือ + ยากิน ดูบท 04)</td><td><b>ยากิน</b>คลุม Streptococcus</td></tr>
+    <tr><td><b>Moderate</b><br><span class="muted">มีอาการทั่วตัว (SIRS)</span></td><td>I&amp;D + ยากิน (IDSA: คลุม MRSA เช่น co-trimoxazole, doxycycline)</td><td><b>ยาฉีด</b> (cefazolin, ceftriaxone, penicillin, clindamycin)</td></tr>
+    <tr><td><b>Severe</b></td><td>I&amp;D แล้วยากินไม่ได้ผล · SIRS + ความดันต่ำ · ภูมิคุ้มกันต่ำ → I&amp;D + <b>vancomycin</b> (ฯลฯ)</td><td>ยากินไม่ได้ผล + อาการทั่วตัว · ภูมิต่ำ · <b>สงสัยติดเชื้อลึก</b> (ตุ่มน้ำ ผิวลอก ความดันต่ำ อวัยวะล้มเหลว) → <b>ผ่าตัดสำรวจด่วน</b> + vancomycin + piperacillin/tazobactam</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">SIRS ใน IDSA 2014: T &gt;38 หรือ &lt;36 °C · RR &gt;24 · HR &gt;90 · WBC &gt;12,000 หรือ &lt;4,000/µL (ใช้ ≥2 ข้อ)</p>
+</section>
+
+<section id="mimic" class="col">
+  <div class="sec-num">02</div>
+  <h2>โรคที่เหมือน cellulitis (pseudocellulitis)</h2>
+  <p>ผู้ป่วยที่ถูกรับไว้รักษาเป็น cellulitis ที่ขา <b>ประมาณ 30% ไม่ใช่ cellulitis</b> (Weng 2017: 79 จาก 259 ราย) และเกือบทั้งหมดได้ยาฆ่าเชื้อโดยไม่จำเป็น · <b>ขาแดงทั้งสองข้างพร้อมกันแทบไม่เคยเป็น cellulitis</b></p>
+  <div class="tbl"><table>
+    <tr><th>โรค</th><th>เบาะแส</th><th>ทำอะไร</th></tr>
+    <tr><td><b>Venous stasis dermatitis</b> (พบบ่อยสุด)</td><td><b>สองข้าง</b> เป็นเรื้อรัง คัน ผิวคล้ำ/ลอก เส้นเลือดขอด บวมกดบุ๋ม ไม่มีไข้ กดเจ็บน้อย</td><td>ยกขา compression ครีมให้ความชุ่มชื้น topical steroid · ไม่ต้องใช้ยาฆ่าเชื้อ</td></tr>
+    <tr><td>Lipodermatosclerosis</td><td>ขาส่วนล่างแข็ง แดงคล้ำ รูปขวดแชมเปญคว่ำ เจ็บ มักสองข้าง</td><td>compression</td></tr>
+    <tr><td><b>DVT</b></td><td>บวมทั้งน่อง/ขา ข้างเดียว ปัจจัยเสี่ยงลิ่มเลือด แดงไม่ชัด</td><td>Wells + ultrasound · <a href="../vte/index.html">VTE</a></td></tr>
+    <tr><td><b>Gout / pseudogout</b></td><td>แดงร้อนรอบข้อ (นิ้วโป้งเท้า หลังเท้า ข้อเท้า เข่า) เคยเป็น ปวดมากเริ่มกลางคืน</td><td>เจาะข้อถ้าทำได้ · <a href="../gout/index.html">Gout</a></td></tr>
+    <tr><td>Contact dermatitis</td><td><b>คันมากกว่าเจ็บ</b> ตุ่มน้ำเล็ก ขอบตามรูปของที่สัมผัส (ยาทา สมุนไพร พลาสเตอร์) <span class="tag th">ไทย</span></td><td>หยุดสิ่งที่สัมผัส topical steroid</td></tr>
+    <tr><td>อื่นๆ</td><td>แมลงกัด (คันเป็นหลัก) · erythema nodosum (ก้อนกดเจ็บหน้าแข้งสองข้าง) · ผื่นแพ้ยา · <b>Charcot foot</b> ในเบาหวาน (เท้าร้อนแดงไม่มีแผล) · bursitis</td><td>ดู <a href="../diabetic-foot/index.html">Diabetic foot</a></td></tr>
+  </table></div>
+  <div class="box key"><b>เบาะแสที่สนับสนุน cellulitis</b>เป็นข้างเดียว เริ่มเฉียบพลัน (ชั่วโมง–วัน) ร้อน กดเจ็บ ลามออก มีไข้/หนาวสั่นนำมาก่อน และมีทางเข้า (แผล ผิวแตก <b>เชื้อราซอกนิ้วเท้า</b>) · <b>วาดขอบรอยแดงด้วยปากกาแล้วลงเวลา</b> ใช้ตามว่าลามหรือยุบ</div>
+</section>
+
+<section id="work" class="col">
+  <div class="sec-num">03</div>
+  <h2>ตรวจอะไร · เพาะเชื้อเมื่อไร</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Cellulitis ทั่วไป <span class="rec s1">IDSA strong</span></h4><ul>
+      <li><b>ไม่ต้อง</b>เพาะเชื้อเลือด เจาะดูด หรือ swab เป็นประจำ (เลือดเพาะขึ้น ≤5%)</li>
+      <li><b>ควรเพาะเชื้อเลือด</b> (± เจาะดูด/ตัดชิ้นเนื้อ) เมื่อ: มะเร็งที่ได้เคมีบำบัด · <b>neutropenia</b> · ภูมิคุ้มกันชนิด cell-mediated บกพร่องรุนแรง · <b>แผลแช่น้ำ (immersion)</b> · <b>สัตว์กัด</b></li>
+      <li>เพิ่มเติมในทางปฏิบัติ: sepsis/ช็อก · รับไว้ใน รพ. · ตับแข็ง · ไม่ดีขึ้นด้วยยา <span class="tag add">เสริม</span></li>
+      <li>ไม่ต้อง swab ผิวหนังที่ไม่มีแผล</li></ul></div>
+    <div class="card c-warn"><h4>ฝีและ NSTI</h4><ul>
+      <li><b>ฝี</b>: ส่ง <b>Gram stain + เพาะเชื้อหนอง</b>ที่ระบายได้ (แนะนำ แต่ฝีธรรมดาที่ระบายดีให้การรักษาได้โดยไม่ต้องรอผล)</li>
+      <li><b>Point-of-care ultrasound</b> ช่วยบอกว่ามีหนองให้ระบายไหม (cobblestone = บวมน้ำ, โพรงน้ำ = ฝี) <span class="tag add">เสริม</span></li>
+      <li><b>NSTI</b>: เพาะเชื้อเลือด 2 ชุด + <b>ชิ้นเนื้อ/หนองจากห้องผ่าตัด</b> (aerobic + anaerobic; แจ้งแล็บถ้าสงสัย Vibrio/melioid) · CBC, Cr, Na, glucose, CRP, lactate, CK</li>
+      <li>CT ช่วยวินิจฉัย NSTI (sens ~89%) แต่ <b>ถ้าสงสัยสูงห้ามรอภาพ</b> · X-ray ธรรมดาตัด NSTI ไม่ได้</li></ul></div>
+  </div>
+</section>
+
+<section id="abscess" class="col">
+  <div class="sec-num">04</div>
+  <h2>ฝี: ระบายและเมื่อไรต้องให้ยา</h2>
+  <p><b>Incision &amp; drainage (I&amp;D) คือการรักษาหลัก</b> ของฝี furuncle ใหญ่ carbuncle และ inflamed epidermoid cyst <span class="rec s1">IDSA strong/high</span> · ยาฆ่าเชื้ออย่างเดียวโดยไม่ระบายมักไม่หาย · furuncle เล็ก: ประคบอุ่นให้หนองออกเอง</p>
+  <div class="tbl"><table>
+    <tr><th>หลักฐาน</th><th>สิ่งที่พบ</th></tr>
+    <tr><td><b>Talan 2016</b> (NEJM; ฝีไม่ซับซ้อน 1,247 ราย หลัง I&amp;D)</td><td><b>Co-trimoxazole</b> 7 วัน หายมากกว่า placebo: <b>80.5% vs 73.6%</b> (mITT) · ลดการต้องระบายซ้ำ ฝีใหม่ และการติดในคนในบ้าน</td></tr>
+    <tr><td><b>Daum 2017</b> (NEJM; ฝี <b>≤5 cm</b> 786 ราย)</td><td><b>Clindamycin 83.1%</b> และ <b>co-trimoxazole 81.7%</b> vs placebo 68.9% · ประโยชน์เกิดเฉพาะผู้ที่เพาะได้ <i>S. aureus</i> · clindamycin ผลข้างเคียงมากกว่า (21.9% vs 11.1%)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>IDSA 2014: เพิ่มยาเมื่อ</h4><ul>
+      <li><b>มี SIRS</b> (moderate) → ยากิน</li>
+      <li>I&amp;D + ยากินแล้วไม่หาย · SIRS + ความดันต่ำ · ภูมิคุ้มกันต่ำมาก (severe) → <b>ยาฉีดคลุม MRSA</b></li>
+      <li>เพิ่มเติม (IDSA MRSA 2011 และงานวิจัยหลังปี 2016): ฝีใหญ่/หลายตำแหน่ง · cellulitis รอบกว้าง · <b>ตำแหน่งระบายยาก</b> (ใบหน้า มือ อวัยวะเพศ) · เด็กเล็ก/ผู้สูงอายุ · เบาหวาน <span class="tag add">เสริม</span></li></ul></div>
+    <div class="card c-ok"><h4>เลือกยาอะไร (ผู้ใหญ่)</h4><ul>
+      <li><b>เสี่ยง MRSA ต่ำ</b>: cephalexin หรือ dicloxacillin (คลุม MSSA) <span class="tag th">ไทย</span></li>
+      <li><b>เสี่ยง MRSA</b> (เคยมี MRSA, คนในบ้าน/ทีมกีฬาเป็น, ฉีดยาเสพติด, ฟอกไต, นอน รพ.บ่อย): <b>co-trimoxazole (160/800) 1–2 เม็ด วันละ 2 ครั้ง</b> หรือ <b>doxycycline 100 mg วันละ 2 ครั้ง</b> หรือ clindamycin 300–450 mg ทุก 6–8 ชม.</li>
+      <li>ระยะเวลา: <b>5–10 วัน</b> (งานวิจัยใช้ 7–10 วัน)</li>
+      <li>Severe: vancomycin (หรือ linezolid) จนรู้ผลเพาะเชื้อ</li></ul></div>
+  </div>
+  <div class="box note"><b>บริบทไทย</b>งาน Talan/Daum ทำในสหรัฐฯ ที่ CA-MRSA พบเกือบครึ่งของฝี · ในไทยข้อมูล CA-MRSA ในฝีชุมชนมีจำกัดและดูเหมือนพบน้อยกว่า หน้านี้จึงใช้ยาคลุม MSSA เป็นหลักเมื่อไม่มีปัจจัยเสี่ยง MRSA และใช้ co-trimoxazole/doxycycline เมื่อมีปัจจัยเสี่ยง · ฝีที่กลับเป็นซ้ำบ่อย: เพาะเชื้อ หา MRSA และ hidradenitis/สิ่งแปลกปลอม <span class="tag th">ไทย</span></div>
+</section>
+
+<section id="cell" class="col">
+  <div class="sec-num">05</div>
+  <h2>Cellulitis และ erysipelas: ยา ขนาด ระยะเวลา</h2>
+  <div class="tbl"><table>
+    <tr><th>ระดับ</th><th>ยา (ผู้ใหญ่ ไตปกติ)</th><th>ปรับตามไต (CrCl mL/min)</th></tr>
+    <tr><td rowspan="4"><b>Mild — ยากิน</b></td><td><b>Dicloxacillin 500 mg PO ทุก 6 ชม.</b> (ท้องว่าง) <span class="tag th">ไทย</span></td><td>ไม่ต้องปรับ</td></tr>
+    <tr><td><b>Cephalexin 500 mg PO ทุก 6 ชม.</b></td><td>30–59: 500 mg ทุก 12 ชม. (สูงสุด 1 g/วัน) · 15–29: 250 mg ทุก 8–12 ชม. · &lt;15: 250 mg ทุก 24 ชม.</td></tr>
+    <tr><td>Erysipelas: <b>amoxicillin 500 mg PO ทุก 8 ชม.</b> หรือ penicillin V 500 mg ทุก 6 ชม.</td><td>amoxicillin: 10–30: 500 mg ทุก 12 ชม. · &lt;10: 500 mg ทุก 24 ชม.</td></tr>
+    <tr><td>แพ้ penicillin รุนแรง: <b>clindamycin 300–450 mg PO ทุก 6–8 ชม.</b> (แพ้ไม่รุนแรง ใช้ cephalexin ได้)</td><td>ไม่ต้องปรับ</td></tr>
+    <tr><td rowspan="4"><b>Moderate — ยาฉีด</b></td><td><b>Cefazolin 1–2 g IV ทุก 8 ชม.</b></td><td>11–34: 1 g ทุก 12 ชม. · ≤10: 1 g ทุก 24 ชม. · ฟอกเลือด: 1–2 g หลังฟอก</td></tr>
+    <tr><td><b>Cloxacillin 1–2 g IV ทุก 4–6 ชม.</b> <span class="tag th">ไทย</span></td><td>ไม่ต้องปรับ</td></tr>
+    <tr><td><b>Ceftriaxone 1–2 g IV ทุก 24 ชม.</b> · penicillin G 2–4 ล้านยูนิต IV ทุก 4–6 ชม. (erysipelas)</td><td>ceftriaxone ไม่ต้องปรับ</td></tr>
+    <tr><td>แพ้รุนแรง: <b>clindamycin 600–900 mg IV ทุก 8 ชม.</b></td><td>ไม่ต้องปรับ</td></tr>
+    <tr><td><b>Severe</b></td><td><b>Vancomycin + piperacillin/tazobactam</b> (หรือ carbapenem) · <b>ผ่าตัดสำรวจด่วน</b>ถ้าสงสัยติดเชื้อลึก</td><td>ใช้เครื่องมือในบท 12</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>คลุม MRSA เมื่อไร <span class="rec s1">IDSA strong</span></h4><ul>
+      <li><b>ไม่ต้องคลุม MRSA เป็นประจำ</b> — Moran 2017 (JAMA, 500 ราย): cephalexin + co-trimoxazole ไม่ดีกว่า cephalexin เดี่ยวใน cellulitis ไม่มีหนอง (per-protocol 83.5% vs 85.5%)</li>
+      <li>คลุม MRSA (+ streptococcus) เมื่อ: <b>แผลถูกแทง (penetrating trauma)</b> · <b>ฉีดยาเสพติด</b> · มี MRSA ที่อื่น/เป็นพาหะทางจมูก · มีหนอง · SIRS</li>
+      <li>ยากินคลุม MRSA (co-trimoxazole, doxycycline) <b>คลุม streptococcus ไม่ดี</b> → ถ้าใช้ใน cellulitis ไม่มีหนอง ให้คู่กับ cephalexin/amoxicillin หรือใช้ clindamycin</li></ul></div>
+    <div class="card c-ok"><h4>ระยะเวลาและการดูแลร่วม</h4><ul>
+      <li><b>5 วัน</b> แล้วขยายถ้ายังไม่ดีขึ้น <span class="rec s1">IDSA strong/high</span> (Hepburn 2004: 5 วัน = 10 วัน) · รับไว้ใน รพ.: ส่วนใหญ่ 5–6 วันถ้าดีขึ้นชัด — DANCE 2020 (รุนแรงพอต้องนอน รพ.): 6 vs 12 วัน หายใกล้กัน แต่กลับเป็นใน 90 วันมากกว่า (24% vs 6%) จึงต้องนัดตาม</li>
+      <li>เปลี่ยนยาฉีดเป็นยากินเมื่อไข้ลง รอยแดงหยุดลาม กินได้</li>
+      <li>รอยแดงอาจดูแย่ลงใน 24–48 ชม.แรกแม้ยาถูก (สารพิษเชื้อที่ตาย) — ดูไข้และขอบที่วาดไว้</li>
+      <li><b>ยกขาสูง</b> + รักษาปัจจัยเสริม: <b>เชื้อราซอกนิ้วเท้า</b> ผิวแห้งแตก บวมน้ำ/น้ำเหลือง อ้วน แผลเรื้อรัง <span class="rec s1">IDSA strong</span></li>
+      <li>ผู้ใหญ่ไม่เป็นเบาหวาน: prednisolone 40 mg/วัน × 7 วัน อาจช่วยให้หายเร็วขึ้น <span class="rec">IDSA weak</span></li></ul></div>
+  </div>
+  <div class="box warn"><b>ควรรับไว้ใน รพ.</b>SIRS/sepsis · สับสน ความดันต่ำ · สงสัย NSTI · ภูมิคุ้มกันต่ำ/neutropenia · ยากินไม่ได้ผล · กินยาไม่ได้หรือดูแลตัวเองไม่ได้ · cellulitis รอบตา (periorbital) — <b>ปวดตา กลอกตาเจ็บ/ลดลง ตาโปน</b> = orbital cellulitis → CT + จักษุแพทย์ · ดู <a href="../sepsis/index.html">Sepsis</a></div>
+</section>
+
+<section id="recur" class="col">
+  <div class="sec-num">06</div>
+  <h2>เป็นซ้ำและการป้องกัน</h2>
+  <ul><li><b>หาและแก้ปัจจัยเสี่ยงก่อน</b>: เชื้อราซอกนิ้ว (ยาทาต้านเชื้อรา) ขาบวมเรื้อรัง/lymphedema (ถุงน่องกด compression) อ้วน ผิวแห้งแตก venous insufficiency · <span class="rec s1">IDSA strong</span> ให้ทำต่อเนื่องตราบที่ปัจจัยยังอยู่</li>
+  <li><b>PATCH I</b> (Thomas 2013, NEJM; cellulitis ที่ขา ≥2 ครั้งใน 3 ปี, 274 ราย): <b>penicillin V 250 mg วันละ 2 ครั้ง × 12 เดือน</b> ลดการเป็นซ้ำ 22% vs 37% (HR 0.55, NNT 5) · <b>ผลหายไปเมื่อหยุดยา</b></li>
+  <li>IDSA 2014: พิจารณายาป้องกันเมื่อเป็น <b>3–4 ครั้ง/ปี</b> แม้แก้ปัจจัยแล้ว <span class="rec">IDSA weak</span> — penicillin V หรือ erythromycin 250 mg วันละ 2 ครั้ง (4–52 สัปดาห์) หรือ <b>benzathine penicillin 1.2 ล้านยูนิต IM ทุก 2–4 สัปดาห์</b></li>
+  <li>แนวทางสองฉบับเริ่มที่จำนวนครั้งต่างกัน (PATCH ≥2 ครั้ง; IDSA 3–4 ครั้ง/ปี) · หน้านี้: <b>เสนอยาป้องกันเมื่อเป็นซ้ำ ≥2 ครั้งที่ขาข้างเดิม</b> หลังแก้ปัจจัยเสี่ยงแล้ว และคุยกับผู้ป่วยว่าผลมีเฉพาะช่วงที่กินยา</li>
+  <li>ถ้าไม่มี penicillin V ใน รพ. ใช้ benzathine penicillin IM หรือปรึกษาเภสัชกร <span class="tag th">ไทย</span></li></ul>
+</section>
+
+<section id="nsti" class="col">
+  <div class="sec-num">07</div>
+  <h2>NSTI: จับให้ได้เร็ว</h2>
+  <p>NSTI (necrotizing fasciitis, necrotizing cellulitis/myositis, Fournier's gangrene) ลามไปตาม fascia เร็วเป็นชั่วโมง · <b>ผิวหนังช่วงแรกดูเหมือน cellulitis ธรรมดา</b> · การผ่าตัดช้าเพิ่มอัตราตาย ในไทยพบ NF ~26–33 ต่อแสนประชากร/ปี (2557–2561) มากสุดที่<b>ข้อเท้า/เท้า</b> สูงสุดช่วง พ.ค.–ส.ค. และ<b>อีสาน</b> · ตับแข็งเพิ่มความเสี่ยงตาย 4.7 เท่า · เบาหวานเพิ่มการตัดขา <span class="tag th">ไทย</span></p>
+  <div class="grid2">
+    <div class="card c-red"><h4>Red flags</h4><ul>
+      <li><b>ปวดมากเกินกว่าที่เห็นที่ผิวหนัง</b> (pain out of proportion) — มักเป็นอาการแรก</li>
+      <li><b>ลามเร็ว</b> (เป็นชั่วโมง) แม้ได้ยาฉีด · บวมแข็งตึง (woody) <b>เกินขอบรอยแดง</b></li>
+      <li><b>ตุ่มน้ำ</b> โดยเฉพาะตุ่มน้ำเลือด (hemorrhagic bullae) · ผิวคล้ำม่วง/ดำ <b>เนื้อตาย</b></li>
+      <li><b>Crepitus</b> หรือก๊าซในภาพรังสี</li>
+      <li><b>ชา/ไม่รู้สึก</b>บริเวณผิวที่ติดเชื้อ (เส้นประสาทถูกทำลาย)</li>
+      <li><b>พิษทั่วตัว</b>: ซึม สับสน ช็อก ไตวาย ท้องเสีย (Vibrio/GAS)</li></ul>
+      <p class="muted" style="font-size:.85rem">ไม่มีไข้ไม่ได้ตัดโรค (ไข้ sens 46%) · ตุ่มน้ำเลือด spec สูง (96%) แต่ sens ต่ำ (25%)</p></div>
+    <div class="card c-warn"><h4>ชนิดของ NSTI</h4><ul>
+      <li><b>Type I</b> หลายเชื้อ (anaerobe + gram-negative + streptococcus): เบาหวาน ฝีเย็บ (Fournier) หลังผ่าตัด แผลกดทับ — พบบ่อยสุด</li>
+      <li><b>Type II</b> เชื้อเดียว: <b><i>S. pyogenes</i> (GAS)</b> ± <i>S. aureus</i> — คนแข็งแรงได้ หลังบาดแผลเล็ก · toxic shock · ในภาคเหนือของไทย <i>S. pyogenes</i> เป็นเชื้อที่พบบ่อยที่สุด</li>
+      <li><b>Type III</b> gram-negative จากน้ำ: <b><i>Vibrio vulnificus</i></b> (ทะเล) <i>Aeromonas</i> (น้ำจืด) — บางตำราจัด clostridial gas gangrene ไว้ที่นี่</li>
+      <li><b>Type IV</b> เชื้อรา (Mucorales, Candida): บาดแผลปนดิน ภูมิต่ำ — มีรายงานหลังสึนามิในไทย</li></ul>
+      <p class="muted" style="font-size:.85rem">การแบ่งชนิดแต่ละตำราต่างกัน — ใช้เพื่อเดาเชื้อ ไม่เปลี่ยนการผ่าตัด</p></div>
+  </div>
+  <h3>LRINEC score (Wong 2004)</h3>
+  <div class="tbl"><table>
+    <tr><th>ตัวแปร</th><th>ค่า → คะแนน</th></tr>
+    <tr><td>CRP</td><td>&lt;150 mg/L → 0 · <b>≥150 mg/L → 4</b></td></tr>
+    <tr><td>WBC (×10³/µL)</td><td>&lt;15 → 0 · 15–25 → 1 · &gt;25 → 2</td></tr>
+    <tr><td>Hb (g/dL)</td><td>&gt;13.5 → 0 · 11–13.5 → 1 · &lt;11 → 2</td></tr>
+    <tr><td>Na (mmol/L)</td><td>≥135 → 0 · &lt;135 → 2</td></tr>
+    <tr><td>Creatinine</td><td>≤141 µmol/L (≤1.6 mg/dL) → 0 · &gt;141 µmol/L (&gt;1.6 mg/dL) → 2</td></tr>
+    <tr><td>Glucose</td><td>≤10 mmol/L (≤180 mg/dL) → 0 · &gt;10 mmol/L (&gt;180 mg/dL) → 1</td></tr>
+    <tr><td><b>รวม 0–13</b></td><td>≤5 ความเสี่ยงต่ำ · 6–7 ปานกลาง · ≥8 สูง</td></tr>
+  </table></div>
+  <div class="box warn"><b>LRINEC ต่ำ ห้ามใช้ตัดโรค</b>Meta-analysis (Fernando 2019, 23 การศึกษา 5,982 ราย): LRINEC ≥6 <b>sensitivity เพียง 68%</b> (spec 85%) · ≥8 sens 41% (spec 95%) → ราว 1 ใน 3 ของ NSTI มีคะแนน &lt;6 · WSES 2022: คะแนนต่ำไม่ตัด NSTI · <b>ถ้าคลินิกสงสัย → ปรึกษาศัลยแพทย์ทันทีไม่ว่าคะแนนเท่าไร</b></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ภาพถ่ายรังสี</h4><ul>
+      <li>สงสัยสูง → <b>ไปห้องผ่าตัดเลย</b> ภาพต้องไม่ทำให้ผ่าตัดช้า (WSES)</li>
+      <li>CT: sens ~89% spec ~93% (ก๊าซ/น้ำตาม fascia, fascia ไม่ enhance) · X-ray: sens ~49% ตัดโรคไม่ได้ · MRI ไม่ใช่ตัวเลือกแรก (ช้า)</li></ul></div>
+    <div class="card c-acc"><h4>Finger test (ข้างเตียง/ห้องผ่าตัด)</h4><ul>
+      <li>ฉีดยาชา กรีด ~2 cm ลงถึง deep fascia แล้วใช้นิ้วเลาะ</li>
+      <li><b>บวก</b>: นิ้วเลาะไปได้ง่ายไม่มีแรงต้าน · <b>ไม่มีเลือดออก</b> · เนื้อตาย · น้ำขุ่นเทา "<b>น้ำล้างจาน</b>" (dishwater)</li>
+      <li>ส่งชิ้นเนื้อ Gram/เพาะเชื้อ ± frozen section · ทำโดย/ร่วมกับศัลยแพทย์</li></ul></div>
+  </div>
+</section>
+
+<section id="nstirx" class="col">
+  <div class="sec-num">08</div>
+  <h2>NSTI: ผ่าตัดและยา</h2>
+  <div class="box key"><b>ผ่าตัดคือการรักษาหลัก — ยาเป็นส่วนเสริม</b><b>Debridement ให้เร็วที่สุด ภายใน 6 ชม.หลังมาถึง</b> (WSES: ตายราว 19% ถ้าผ่าตัดภายใน 6 ชม. vs 32% ถ้าช้ากว่า) · ผ่าตัดซ้ำตามนัด <b>ทุก 12–24 ชม.</b> (เร็วกว่านั้นถ้าแย่ลง) จนไม่มีเนื้อตายให้ตัด · กู้ชีพแบบ sepsis ไปพร้อมกัน — <a href="../sepsis/index.html">Sepsis</a> · รพ.ที่ไม่มีศัลยแพทย์: <b>ให้ยา + สารน้ำ แล้วส่งต่อทันที</b> อย่ารอดูอาการ <span class="tag th">ไทย</span></div>
+  <div class="tbl"><table>
+    <tr><th>สถานการณ์</th><th>ยาเริ่มต้น (ผู้ใหญ่ ไตปกติ)</th></tr>
+    <tr><td><b>ไม่ทราบเชื้อ — ไม่ช็อก</b> (WSES stable)</td><td><b>Piperacillin/tazobactam 4.5 g IV ทุก 6 ชม.</b> (หรือ ceftriaxone 2 g ทุก 24 ชม. + metronidazole 500 mg ทุก 8 ชม.) <b>+ clindamycin 600–900 mg IV ทุก 8 ชม.</b></td></tr>
+    <tr><td><b>ช็อก / เสี่ยง MRSA / ภูมิต่ำ</b> (WSES unstable; IDSA)</td><td>Piperacillin/tazobactam หรือ <b>meropenem 1 g ทุก 8 ชม.</b> (ESBL, เพิ่งนอน รพ.) <b>+ vancomycin</b> (loading 25–30 mg/kg สูงสุด 3 g แล้ว 15–20 mg/kg ทุก 8–12 ชม. ตามไต/ระดับยา) หรือ linezolid 600 mg ทุก 12 ชม. <b>+ clindamycin</b></td></tr>
+    <tr><td>ยืนยัน <b>GAS</b> (หรือ clostridium)</td><td><b>Penicillin G 2–4 ล้านยูนิต IV ทุก 4–6 ชม. + clindamycin 600–900 mg IV ทุก 8 ชม.</b> <span class="rec s1">IDSA strong</span></td></tr>
+    <tr><td>สัมผัส<b>น้ำทะเล/อาหารทะเลดิบ</b> ± ตับแข็ง</td><td><b>Doxycycline 100 mg IV/PO ทุก 12 ชม. + ceftazidime 2 g IV ทุก 8 ชม.</b> (หรือ ceftriaxone 2 g ทุก 24 ชม.) · ดูบท 09</td></tr>
+    <tr><td>สัมผัส<b>น้ำจืด/น้ำท่วม</b></td><td><b>Doxycycline + ciprofloxacin 400 mg IV ทุก 12 ชม.</b> (หรือ ceftriaxone 1–2 g) · ดูบท 09</td></tr>
+    <tr><td><b>ดิน โคลน นา อีสาน เบาหวาน</b></td><td><b>Meropenem 1 g IV ทุก 8 ชม.</b> หรือ <b>ceftazidime 2 g IV ทุก 6 ชม.</b> (คลุม melioid) + clindamycin ± vancomycin · <a href="../lepto-melioid/index.html">Melioidosis</a></td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Clindamycin, IVIG, ออกซิเจนแรงดันสูง</h4><ul>
+      <li><b>Clindamycin</b> ยับยั้งการสร้างสารพิษของ GAS/S. aureus (ได้ผลแม้เชื้อจำนวนมาก) · ใช้ร่วมเสมอในช่วงแรก · หลายแห่งหยุดเมื่อคงที่ ~48–72 ชม.และรู้ผลเพาะเชื้อ <span class="tag add">เสริม</span> · เชื้อดื้อ clindamycin → linezolid ก็ยับยั้งสารพิษได้</li>
+      <li><b>IVIG</b>: IDSA 2014 — ยังไม่มีหลักฐานพอที่จะแนะนำ · WSES 2022 — อาจช่วยในผู้ป่วยบางราย โดยเฉพาะ <b>streptococcal toxic shock</b> · meta-analysis (Parks 2018) ในผู้ป่วย STSS ที่ได้ clindamycin: ตาย 33.7% → 15.7% · INSTINCT (NSTI ทุกชนิดใน ICU) ไม่พบประโยชน์ · หน้านี้: <b>ทางเลือก</b>ใน GAS toxic shock ที่ไม่ดีขึ้น (เช่น 1 g/kg วันแรก แล้ว 0.5 g/kg วันที่ 2–3) — ราคาแพง ปรึกษา ID</li>
+      <li><b>Hyperbaric oxygen</b>: ไม่ควรทำให้การผ่าตัดช้า ไม่ส่งต่อเพื่อทำ (IDSA ไม่แนะนำในก๊าซแกงกรีน)</li></ul></div>
+    <div class="card c-ok"><h4>ระยะเวลาและ Fournier's gangrene</h4><ul>
+      <li>ให้ยาจน <b>ไม่ต้องผ่าตัดเลาะเพิ่ม</b> อาการดีขึ้น และ <b>ไข้ลง 48–72 ชม.</b> (IDSA) · ลดยาตามผลเพาะเชื้อ</li>
+      <li><b>Fournier</b>: ฝีเย็บ/อัณฑะ/อวัยวะเพศ · เบาหวาน สุรา · เริ่มจากฝีรอบทวาร ท่อปัสสาวะ หรือแผลผ่าตัด · หลายเชื้อ → piperacillin/tazobactam หรือ meropenem + clindamycin ± vancomycin · ผ่าตัด debridement ด่วน (ศัลย์/ศัลย์ทางเดินปัสสาวะ) · อาจต้องผ่าตัดทำทวารเทียม/สายสวน</li></ul></div>
+  </div>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">09</div>
+  <h2>เชื้อตามการสัมผัส (บริบทไทย)</h2>
+  <div class="tbl"><table>
+    <tr><th>การสัมผัส / ผู้ป่วย</th><th>นึกถึง</th><th>ลักษณะ</th><th>ยา</th></tr>
+    <tr><td><b>น้ำทะเล น้ำกร่อย</b> แผลจากกุ้ง ปู หอย ก้างปลาทะเล · กิน<b>หอยดิบ</b> (หอยนางรม หอยแครง) · <b>ตับแข็ง สุรา ธาลัสซีเมีย/เหล็กเกิน</b> ภูมิต่ำ</td><td><b><i>Vibrio vulnificus</i></b></td><td>ภายใน 1–2 วัน: <b>ตุ่มน้ำเลือดที่ขา (มักสองข้างถ้ามาจากการกิน)</b> + ช็อก ท้องเสีย · <b>ไทยตะวันออก 2569: ตายภายใน 48 ชม. 43%, 7 วัน 49%</b> · ไม่ได้ผ่าตัดสัมพันธ์กับตายเร็ว</td><td><b>Doxycycline 100 mg ทุก 12 ชม. + ceftazidime 2 g IV ทุก 8 ชม.</b> (หรือ ceftriaxone 2 g/วัน) · ทางเลือก: fluoroquinolone (levofloxacin/ciprofloxacin) · <b>debridement เร็ว</b> · <a href="../cirrhosis/index.html">Cirrhosis</a> <a href="../thalassemia/index.html">Thalassemia</a></td></tr>
+    <tr><td><b>น้ำจืด</b> น้ำท่วม บ่อ คลอง แผลจากครีบ/เงี่ยงปลาน้ำจืด · ตับแข็ง มะเร็ง</td><td><b><i>Aeromonas</i></b></td><td>cellulitis → NSTI/myonecrosis เร็วคล้าย Vibrio · ผู้ป่วยหลังสึนามิ 2547: <i>Aeromonas</i> พบมากสุด (22.6% ของเชื้อ) และ<b>ดื้อ amoxicillin/clavulanate และ cephalosporin รุ่น 1</b></td><td><b>Doxycycline + ciprofloxacin</b> (หรือ ceftriaxone) · ยาที่ไม่ได้ผล: cefazolin, cephalexin, amox/clav · carbapenem อาจไม่ได้ผลกับบางสายพันธุ์ (มีเอนไซม์ทำลาย carbapenem) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>ดิน โคลน ทำนา</b> ฤดูฝน <b>เบาหวาน</b> ไตเรื้อรัง <b>อีสาน</b></td><td><b><i>Burkholderia pseudomallei</i></b> (melioidosis)</td><td>ฝีใต้ผิว/กล้ามเนื้อ cellulitis ± ฝีที่ปอด ตับ ม้าม ต่อมลูกหมาก · <b>ceftriaxone ใช้ไม่ได้</b></td><td><b>Ceftazidime 2 g ทุก 6 ชม. หรือ meropenem 1 g ทุก 8 ชม.</b> → co-trimoxazole eradication · <a href="../lepto-melioid/index.html">Lepto/Melioid</a></td></tr>
+    <tr><td>แผลเล็ก/ฟกช้ำ คนแข็งแรง · หลังติดเชื้อทางเดินหายใจ · อีสุกอีใส</td><td><b><i>S. pyogenes</i> (GAS)</b></td><td>NSTI type II · <b>streptococcal toxic shock</b> (ช็อก ไตวาย ผื่นแดง) · ร้อยเอ็ด 2562–2564: GAS เป็นปัจจัยเสี่ยงของ NF</td><td><b>Penicillin G + clindamycin</b> ± IVIG (บท 08)</td></tr>
+    <tr><td>ฝีเย็บ หลังผ่าตัดท้อง แผลกดทับ เท้าเบาหวาน</td><td>หลายเชื้อ (type I)</td><td>กลิ่นเหม็น ก๊าซ</td><td>Piperacillin/tazobactam หรือ meropenem + clindamycin ± vancomycin · เท้าเบาหวาน → <a href="../diabetic-foot/index.html">Diabetic foot</a></td></tr>
+    <tr><td>แล่ปลา/เนื้อสัตว์ · ตู้ปลา</td><td><i>Erysipelothrix</i> · <i>Mycobacterium marinum</i></td><td>ผื่นม่วงแดงที่นิ้ว (ไม่เป็นหนอง) · ตุ่มเรื้อรังเรียงตามท่อน้ำเหลือง</td><td>Erysipelothrix: penicillin/amoxicillin · M. marinum: ส่งตรวจชิ้นเนื้อ/เพาะเชื้อ ปรึกษา ID</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">งูกัดที่เนื้อตาย ดู <a href="../snakebite/index.html">Snakebite</a> · เชื้อดื้อยา (ESBL, CRE, MRSA) ดู <a href="../mdr-gnb/index.html">MDR-GNB</a> · ในไทย doxycycline ชนิดฉีดอาจหาไม่ได้ — ให้ทางปาก/ทางสายให้อาหารได้ (ดูดซึมดี) <span class="tag th">ไทย</span></p>
+</section>
+
+<section id="bite" class="col">
+  <div class="sec-num">10</div>
+  <h2>แผลถูกกัด (สัตว์และคน)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ดูแลแผลทุกราย</h4><ul>
+      <li>ล้างด้วยสบู่และน้ำไหล ≥15 นาที · ตัดเนื้อตายเท่าที่จำเป็น · ประเมินเอ็น ข้อ กระดูก (X-ray ถ้าใกล้ข้อ/สงสัยฟันหัก)</li>
+      <li><b>ไม่เย็บปิดทันที</b> ยกเว้นใบหน้า (ล้างมาก ตัดเนื้อตาย + ยาป้องกัน) <span class="rec s1">IDSA strong</span> · แผลแมวกัดแบบรูเจาะห้ามเย็บ</li>
+      <li><b>พิษสุนัขบ้า</b> (สุนัข แมว ลิง สัตว์เลี้ยงลูกด้วยนม; ในไทยหนู/กระรอกก็ให้ประเมิน) → <a href="../rabies/index.html">Rabies PEP</a></li>
+      <li>คนกัด/ชกโดนฟัน (clenched-fist injury ที่ข้อนิ้ว) → ส่งศัลย์มือถ้าลึกถึงข้อ/เอ็น · ประเมินความเสี่ยง HBV/HIV/HCV</li></ul></div>
+    <div class="card c-warn"><h4>ยาป้องกัน 3–5 วัน เมื่อ <span class="rec s1">IDSA strong</span></h4><ul>
+      <li>ภูมิคุ้มกันต่ำ · <b>ไม่มีม้าม</b> · <b>โรคตับระยะรุนแรง</b> · มีบวมเดิมหรือบวมจากแผลบริเวณนั้น</li>
+      <li>แผลปานกลาง–รุนแรง โดยเฉพาะ <b>มือ หรือ ใบหน้า</b> · แผลที่อาจทะลุถึง<b>เยื่อหุ้มกระดูกหรือข้อ</b></li>
+      <li>เพิ่มเติมตามแนวทางไทย: <b>แมวกัด</b> อวัยวะเพศ แผลรูเจาะลึก แผลขยี้ แผลที่ต้องเย็บ มาช้า เบาหวาน · <b>คนกัด</b>ที่ทะลุผิว <span class="tag add">เสริม</span></li>
+      <li><b>ยา: amoxicillin/clavulanate 875/125 mg PO วันละ 2 ครั้ง</b> (CrCl &lt;30: 500/125 mg ทุก 12 ชม.; &lt;10: ทุก 24 ชม.) · IV: ampicillin/sulbactam 1.5–3 g ทุก 6 ชม.</li>
+      <li>แพ้ penicillin: <b>doxycycline 100 mg วันละ 2 ครั้ง</b> (ดีต่อ <i>Pasteurella</i>, คนกัด: <i>Eikenella</i>) <b>+ metronidazole หรือ clindamycin</b> (anaerobe) · หรือ moxifloxacin 400 mg/วัน · <b>clindamycin หรือ cephalexin/dicloxacillin เดี่ยวๆ ไม่คลุม Pasteurella/Eikenella</b></li>
+      <li>แผลติดเชื้อแล้ว: ยาเดียวกัน <b>5–14 วัน</b> (กระดูก/ข้อ นานกว่านั้น) · เพาะเชื้อเลือดถ้ามีไข้</li></ul></div>
+  </div>
+  <div class="box note"><b>บาดทะยัก — แผลถูกกัดถือเป็นแผลเสี่ยง</b>เคยฉีด ≥3 เข็ม ครั้งสุดท้าย ≤5 ปี → ไม่ต้อง · &gt;5 ปี → <b>dT/Tdap 1 เข็ม</b> · ไม่ครบ 3 เข็ม/ไม่ทราบ → dT 0, 1, 6 เดือน <b>+ TIG 250 IU IM</b> (คนละตำแหน่ง) · IDSA 2014 เขียนว่าให้เมื่อไม่ได้ฉีดใน 10 ปี (ใช้กับแผลสะอาด) — หน้านี้ใช้เกณฑ์ <b>5 ปี</b> ตาม ACIP และหน้า <a href="../rabies/index.html">Rabies</a> เพราะแผลกัดเป็นแผลสกปรก</div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผิวหนังแดง ร้อน บวม เจ็บ</b>วาดขอบ · vital signs · ถามน้ำทะเล/น้ำจืด/ดิน/แผลกัด · ตับแข็ง เบาหวาน ภูมิต่ำ</div>
+      <div class="vline arrow"></div>
+      <div class="node red"><b>Red flag NSTI?</b>ปวดเกินที่เห็น · ลามเร็ว · ตุ่มน้ำเลือด · ผิวดำ · ชา · crepitus · ช็อก → <b>ศัลยแพทย์ทันที</b> ผ่าตัด ≤6 ชม. + pip/tazo (หรือ meropenem) + clindamycin ± vancomycin · ปรับตามการสัมผัส</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ไม่มี red flag → สองข้าง ไม่มีไข้ เรื้อรัง คัน?</b>คิดถึง stasis dermatitis, DVT, gout, contact dermatitis ก่อน</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">มีหนอง</span><div class="node dx hypo"><b>I&amp;D</b>SIRS/ระบายยาก/ภูมิต่ำ → เพิ่มยา (MSSA: cephalexin/dicloxacillin; เสี่ยง MRSA: co-trimoxazole/doxycycline) · severe → vancomycin</div></div>
+        <div class="arm"><span class="lab">ไม่มีหนอง</span><div class="node dx green"><b>คลุม Streptococcus</b>Mild: dicloxacillin/cephalexin กิน · Moderate: cefazolin/cloxacillin/ceftriaxone ฉีด · 5 วัน + ยกขา</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>หลังหาย</b>รักษาเชื้อราซอกนิ้ว บวมน้ำ · เป็นซ้ำ ≥2 ครั้ง → penicillin V 250 mg bid (PATCH I)</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตรวจสอบขนาดยากับเภสัชกรและแนวทางของโรงพยาบาล · CrCl คำนวณด้วย Cockcroft–Gault (น้ำหนักจริง)</p>
+  </div>
+
+  <div class="tool plan" id="tSs" style="margin-top:12px">
+    <h3>1) แยกชนิด SSTI → ระบาย/ยากินหรือฉีด/MRSA + ขนาดยา</h3>
+    <div class="fields">
+      <label class="f">ชนิด<select id="sType"><option value="">— เลือก —</option><option value="np">ไม่มีหนอง (cellulitis/erysipelas)</option><option value="pu">มีหนอง (ฝี/furuncle/carbuncle)</option></select></label>
+      <label class="f">ตำแหน่ง<select id="sSide"><option value="u">ข้างเดียว</option><option value="b">ขาสองข้าง</option></select></label>
+      <label class="f">แพ้ penicillin<select id="sAll"><option value="n">ไม่แพ้</option><option value="m">แพ้ไม่รุนแรง (ผื่นธรรมดา)</option><option value="s">แพ้รุนแรง (anaphylaxis/SJS)</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="sAge" value="55"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="sWt" value="60"></label>
+      <label class="f">เพศ<select id="sSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="sCr" value="0.9"></label>
+      <label class="f">หน่วย Cr<select id="sCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">ฟอกไต<select id="sHd"><option value="n">ไม่ได้ฟอก</option><option value="y">ฟอกเลือด</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sT"> T &gt;38 หรือ &lt;36 °C</label>
+      <label><input type="checkbox" id="sHr"> HR &gt;90</label>
+      <label><input type="checkbox" id="sRr"> RR &gt;24</label>
+      <label><input type="checkbox" id="sW"> WBC &gt;12,000 หรือ &lt;4,000</label>
+      <label><input type="checkbox" id="sHypo"> ความดันต่ำ/อวัยวะล้มเหลว</label>
+      <label><input type="checkbox" id="sFail"> ยากิน (หรือ I&amp;D + ยากิน) ไม่ได้ผล</label>
+      <label><input type="checkbox" id="sImm"> ภูมิคุ้มกันต่ำมาก (neutropenia เคมีบำบัด ปลูกถ่ายอวัยวะ)</label>
+      <label><input type="checkbox" id="sDeep"> มี red flag NSTI (ปวดเกินที่เห็น ตุ่มน้ำ ผิวดำ ชา crepitus)</label>
+      <label><input type="checkbox" id="sMr"> เสี่ยง MRSA (เคยมี MRSA/พาหะ, ฉีดยาเสพติด, แผลถูกแทง)</label>
+      <label><input type="checkbox" id="sHard"> ฝีที่ใบหน้า มือ อวัยวะเพศ / ใหญ่หรือหลายตำแหน่ง / cellulitis รอบกว้าง</label>
+      <label><input type="checkbox" id="sPo" checked> กินยาได้</label>
+    </div>
+    <div class="out" id="ssOut"></div>
+  </div>
+
+  <div class="tool" id="tLr" style="margin-top:12px">
+    <h3>2) LRINEC score</h3>
+    <div class="box warn" style="margin:6px 0 10px"><b>คะแนนต่ำ ไม่ได้ตัด NSTI</b>sensitivity ที่ ≥6 ประมาณ 68% เท่านั้น · ถ้าคลินิกสงสัย → ปรึกษาศัลยแพทย์ทันที</div>
+    <div class="fields">
+      <label class="f">CRP<input type="number" step="0.1" id="lCrp" value="180"></label>
+      <label class="f">หน่วย CRP<select id="lCrpU"><option value="L">mg/L</option><option value="dL">mg/dL</option></select></label>
+      <label class="f">WBC (×10³/µL)<input type="number" step="0.1" id="lWbc" value="18"></label>
+      <label class="f">Hb (g/dL)<input type="number" step="0.1" id="lHb" value="12"></label>
+      <label class="f">Na (mmol/L)<input type="number" id="lNa" value="133"></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="lCr" value="1.2"></label>
+      <label class="f">หน่วย Cr<select id="lCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">Glucose<input type="number" step="0.1" id="lGlu" value="150"></label>
+      <label class="f">หน่วย glucose<select id="lGluU"><option value="mg">mg/dL</option><option value="mmol">mmol/L</option></select></label>
+    </div>
+    <div class="out" id="lrOut"></div>
+  </div>
+
+  <div class="tool plan" id="tNs" style="margin-top:12px">
+    <h3>3) Red flag NSTI → ผ่าตัดด่วน + ยาเริ่มต้นตามการสัมผัส</h3>
+    <div class="fields">
+      <label class="f">การสัมผัส/ผู้ป่วย<select id="nExp"><option value="com">ไม่มีการสัมผัสพิเศษ/ไม่ทราบ</option><option value="sea">น้ำทะเล/น้ำกร่อย/อาหารทะเลดิบ (± ตับแข็ง)</option><option value="fresh">น้ำจืด/น้ำท่วม/ปลาน้ำจืด</option><option value="soil">ดิน โคลน นา · เบาหวาน · อีสาน</option><option value="peri">ฝีเย็บ/อวัยวะเพศ/หลังผ่าตัด/แผลกดทับ</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="nAge" value="60"></label>
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="nWt" value="60"></label>
+      <label class="f">เพศ<select id="nSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">Creatinine<input type="number" step="0.01" id="nCr" value="1.4"></label>
+      <label class="f">หน่วย Cr<select id="nCrU"><option value="mg">mg/dL</option><option value="um">µmol/L</option></select></label>
+      <label class="f">ฟอกไต<select id="nHd"><option value="n">ไม่ได้ฟอก</option><option value="y">ฟอกเลือด</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="nPain" checked> ปวดมากเกินกว่าที่เห็น</label>
+      <label><input type="checkbox" id="nRapid"> ลามเร็ว (เป็นชั่วโมง) แม้ได้ยาฉีด</label>
+      <label><input type="checkbox" id="nEd"> บวมแข็งตึงเกินขอบรอยแดง</label>
+      <label><input type="checkbox" id="nBul"> ตุ่มน้ำ/ตุ่มน้ำเลือด</label>
+      <label><input type="checkbox" id="nNec"> ผิวม่วงดำ/เนื้อตาย</label>
+      <label><input type="checkbox" id="nCrep"> Crepitus/ก๊าซในภาพรังสี</label>
+      <label><input type="checkbox" id="nAn"> ผิวบริเวณนั้นชา</label>
+      <label><input type="checkbox" id="nTox"> พิษทั่วตัว (ซึม สับสน ไตวาย lactate สูง)</label>
+      <label><input type="checkbox" id="nLr"> LRINEC ≥6</label>
+      <label><input type="checkbox" id="nShock"> ช็อก/ต้องใช้ vasopressor</label>
+      <label><input type="checkbox" id="nMr"> เสี่ยง MRSA</label>
+      <label><input type="checkbox" id="nEs"> เสี่ยง ESBL (เพิ่งนอน รพ./ได้ยาฆ่าเชื้อ 3 เดือน)</label>
+      <label><input type="checkbox" id="nAll"> แพ้ β-lactam รุนแรง</label>
+    </div>
+    <div class="out" id="nsOut"></div>
+  </div>
+
+  <div class="tool" id="tBi" style="margin-top:12px">
+    <h3>4) แผลถูกกัด → ยาป้องกัน + บาดทะยัก + พิษสุนัขบ้า</h3>
+    <div class="fields">
+      <label class="f">กัดโดย<select id="bAn"><option value="">— เลือก —</option><option value="dog">สุนัข</option><option value="cat">แมว</option><option value="hum">คน</option><option value="mon">ลิง/สัตว์เลี้ยงลูกด้วยนมอื่น</option><option value="rod">หนู กระรอก กระต่าย</option></select></label>
+      <label class="f">ลักษณะแผล<select id="bW"><option value="s">ถลอก/ข่วนตื้น</option><option value="l">ฉีกขาด</option><option value="p">รูเจาะลึก/ขยี้</option></select></label>
+      <label class="f">มาหลังถูกกัด<select id="bT"><option value="e">&lt;8 ชม.</option><option value="m">8–24 ชม.</option><option value="l">&gt;24 ชม.</option></select></label>
+      <label class="f">บาดทะยักที่เคยได้<select id="bTt"><option value="u">ไม่ครบ 3 เข็ม/ไม่ทราบ</option><option value="r">≥3 เข็ม ครั้งล่าสุด ≤5 ปี</option><option value="o">≥3 เข็ม ครั้งล่าสุด &gt;5 ปี</option></select></label>
+      <label class="f">ไต<select id="bRen"><option value="n">CrCl ≥30</option><option value="m">CrCl 10–29</option><option value="s">CrCl &lt;10/ฟอกไต</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="bSite"> มือ ใบหน้า อวัยวะเพศ หรือใกล้ข้อ/กระดูก</label>
+      <label><input type="checkbox" id="bHost"> ไม่มีม้าม/ตับแข็ง/ภูมิต่ำ/เบาหวาน</label>
+      <label><input type="checkbox" id="bEd"> บวมเดิมบริเวณนั้น (lymphedema, หลังผ่าตัดต่อมน้ำเหลือง)</label>
+      <label><input type="checkbox" id="bSut"> ต้องเย็บแผล</label>
+      <label><input type="checkbox" id="bInf"> แผลติดเชื้อแล้ว (แดง หนอง ปวดมากขึ้น)</label>
+      <label><input type="checkbox" id="bAll"> แพ้ penicillin</label>
+    </div>
+    <div class="out" id="biOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>มีหนอง → I&amp;D</b> ยาเป็นส่วนเสริม</div></div>
+    <div class="pearl"><div><b>ไม่มีหนอง → คลุม Streptococcus</b> ไม่ต้องคลุม MRSA เป็นประจำ</div></div>
+    <div class="pearl"><div><b>แดงสองขา ไม่มีไข้</b> → stasis dermatitis ก่อน</div></div>
+    <div class="pearl"><div><b>วาดขอบรอยแดง</b> ลงวันเวลา</div></div>
+    <div class="pearl"><div><b>ยา 5 วัน</b> ขยายถ้ายังไม่ดีขึ้น</div></div>
+    <div class="pearl"><div><b>ยกขาสูง + รักษาเชื้อราซอกนิ้ว</b></div></div>
+    <div class="pearl"><div><b>Co-trimoxazole/doxycycline คลุม strep ไม่ดี</b></div></div>
+    <div class="pearl"><div><b>ปวดเกินที่เห็น = NSTI</b> จนกว่าจะพิสูจน์ว่าไม่ใช่</div></div>
+    <div class="pearl"><div><b>LRINEC ต่ำ ตัด NSTI ไม่ได้</b></div></div>
+    <div class="pearl"><div><b>ผ่าตัด ≤6 ชม.</b> ไม่รอ CT · ผ่าซ้ำทุก 12–24 ชม.</div></div>
+    <div class="pearl"><div><b>Clindamycin</b> ยับยั้งสารพิษ GAS</div></div>
+    <div class="pearl"><div><b>ตับแข็ง + อาหารทะเล + ตุ่มน้ำเลือด</b> → Vibrio: doxycycline + ceftazidime</div></div>
+    <div class="pearl"><div><b>น้ำจืด → Aeromonas</b> · cephalosporin รุ่น 1 ไม่ได้ผล</div></div>
+    <div class="pearl"><div><b>สัตว์กัดเสี่ยงสูง → amox/clav 3–5 วัน</b> + บาดทะยัก + พิษสุนัขบ้า</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../diabetic-foot/index.html">Diabetic foot →</a> · <a href="../snakebite/index.html">Snakebite →</a> · <a href="../rabies/index.html">Rabies →</a> · <a href="../sepsis/index.html">Sepsis →</a> · <a href="../lepto-melioid/index.html">Lepto/Melioidosis →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../mdr-gnb/index.html">MDR-GNB →</a> · <a href="../vte/index.html">VTE →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis 2014;59:e10–52 · 2) Sartelli M, Coccolini F, Kluger Y, et al. WSES/GAIS/WSIS/SIS-E/AAST global clinical pathways for patients with skin and soft tissue infections. World J Emerg Surg 2022;17:3 · 3) Wong CH, Khin LW, Heng KS, Tan KC, Low CO. The LRINEC (Laboratory Risk Indicator for Necrotizing Fasciitis) score: a tool for distinguishing necrotizing fasciitis from other soft tissue infections. Crit Care Med 2004;32:1535–41 · 4) Fernando SM, Tran A, Cheng W, et al. Necrotizing soft tissue infection: diagnostic accuracy of physical examination, imaging, and LRINEC score: a systematic review and meta-analysis. Ann Surg 2019;269:58–65 · 5) Talan DA, Mower WR, Krishnadasan A, et al. Trimethoprim–sulfamethoxazole versus placebo for uncomplicated skin abscess. N Engl J Med 2016;374:823–32 · 6) Daum RS, Miller LG, Immergluck L, et al. A placebo-controlled trial of antibiotics for smaller skin abscesses. N Engl J Med 2017;376:2545–55 · 7) Moran GJ, Krishnadasan A, Mower WR, et al. Effect of cephalexin plus trimethoprim-sulfamethoxazole vs cephalexin alone on clinical cure of uncomplicated cellulitis: a randomized clinical trial. JAMA 2017;317:2088–96 · 8) Thomas KS, Crook AM, Nunn AJ, et al. Penicillin to prevent recurrent leg cellulitis (PATCH I). N Engl J Med 2013;368:1695–703 · 9) Hepburn MJ, Dooley DP, Skidmore PJ, et al. Comparison of short-course (5 days) and standard (10 days) treatment for uncomplicated cellulitis. Arch Intern Med 2004;164:1669–74 · 10) Cranendonk DR, Opmeer BC, van Agtmael MA, et al. Antibiotic treatment for 6 days versus 12 days in patients with severe cellulitis (DANCE). Clin Microbiol Infect 2020;26:606–12 · 11) Weng QY, Raff AB, Cohen JM, et al. Costs and consequences associated with misdiagnosed lower extremity cellulitis. JAMA Dermatol 2017;153:141–6 · 12) Parks T, Wilson C, Curtis N, Norrby-Teglund A, Sriskandan S. Polyspecific intravenous immunoglobulin in clindamycin-treated patients with streptococcal toxic shock syndrome: a systematic review and meta-analysis. Clin Infect Dis 2018;67:1434–6 · 13) Madsen MB, Hjortrup PB, Hansen MB, et al. Immunoglobulin G for patients with necrotising soft tissue infection (INSTINCT). Intensive Care Med 2017;43:1585–93 · 14) Tantirat P, Rattanathumsakul T, Praekunatham H, et al. Epidemiological situation of necrotizing fasciitis in Thailand and factors associated with its morbidity and mortality, 2014–2018. Risk Manag Healthc Policy 2020;13:1613–24 · 15) Khamnuan P, Chongruksut W, Jearwattanakanok K, et al. Necrotizing fasciitis: epidemiology and clinical predictors for amputation. Int J Gen Med 2015;8:195–202 · 16) Polyiam P, Wangnadee N, Comhangpol B, et al. Epidemiological predisposing factors associated with bacterial necrotizing fasciitis in rural Thailand: a case-control study. Jpn J Infect Dis 2026;79:8–15 · 17) Hemapanpairoa J, Wongduang S, Wongwian T, et al. Clinical characteristics, treatment outcomes, and predictors of early mortality in Vibrio vulnificus infection in Eastern Thailand: a 6.5-year multicenter cohort study. PLoS Negl Trop Dis 2026;20:e0014353 · 18) Hiransuthikul N, Tantisiriwat W, Lertutsahakul K, et al. Skin and soft-tissue infections among tsunami survivors in southern Thailand. Clin Infect Dis 2005;41:e93–6 · 19) Thaichinda S, Kositpantawong N. Necrotizing skin and soft-tissue infections associated with septicemia: 7 cases report and review. J Med Assoc Thai 2008;91:117–23 · 20) Liu C, Bayer A, Cosgrove SE, et al. Clinical practice guidelines by the IDSA for the treatment of MRSA infections in adults and children. Clin Infect Dis 2011;52:e18–55<br>
+  <span class="tag add">เสริม</span> = นอกเหนือจากแนวทางหลัก · <span class="tag th">ไทย</span> = บริบทไทย · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','ssView');
+mountWalker({
+ start:{q:'ปัญหาหลักคืออะไร?',o:[['ผิวหนังแดง ร้อน บวม เจ็บ (ไม่ใช่แผลกัด)','rf'],['แผลถูกสัตว์หรือคนกัด','bite'],['แผล/การกินที่สัมผัสน้ำทะเล น้ำจืด อาหารทะเลดิบ','water']]},
+ rf:{q:'มี red flag ของ NSTI ไหม?',h:'ปวดมากเกินที่เห็น · ลามเร็ว · ตุ่มน้ำเลือด · ผิวดำ · ชา · crepitus · ช็อก/ซึม',o:[['มี','nsti'],['ไม่มี','bil']]},
+ nsti:{leaf:true,cls:'danger',t:'สงสัย necrotizing soft tissue infection',b:'<b>ปรึกษาศัลยแพทย์ทันที</b> → debridement ภายใน 6 ชม. (ไม่รอ CT/LRINEC) · finger test ถ้ายังไม่แน่ใจ · เพาะเชื้อเลือด 2 ชุด · สารน้ำ/กู้ชีพแบบ sepsis · ผ่าตัดซ้ำทุก 12–24 ชม. · ไม่มีศัลยแพทย์ → ให้ยาแล้วส่งต่อทันที',next:['เลือกยาตามการสัมผัส','exp']},
+ exp:{q:'การสัมผัส/ตำแหน่ง?',o:[['น้ำทะเล อาหารทะเลดิบ ± ตับแข็ง','vib'],['น้ำจืด น้ำท่วม ปลาน้ำจืด','aer'],['ดิน โคลน นา เบาหวาน อีสาน','mel'],['ฝีเย็บ อวัยวะเพศ หลังผ่าตัด แผลกดทับ','poly'],['ไม่มีการสัมผัสพิเศษ','gas']]},
+ vib:{leaf:true,cls:'danger',t:'นึกถึง Vibrio vulnificus',b:'<b>Doxycycline 100 mg ทุก 12 ชม. + ceftazidime 2 g IV ทุก 8 ชม.</b> (หรือ ceftriaxone 2 g/วัน) · + clindamycin/vancomycin จนตัด GAS/MRSA ได้ถ้ายังไม่ชัด · <b>debridement เร็ว</b> · ตายสูงมาก (ไทยตะวันออก: 43% ใน 48 ชม.)'},
+ aer:{leaf:true,cls:'danger',t:'นึกถึง Aeromonas',b:'<b>Doxycycline + ciprofloxacin 400 mg IV ทุก 12 ชม.</b> (หรือ ceftriaxone) + clindamycin · cephalosporin รุ่น 1 และ amox/clav ไม่ได้ผล · ผ่าตัดด่วน'},
+ mel:{leaf:true,cls:'danger',t:'คลุม melioidosis',b:'<b>Meropenem 1 g IV ทุก 8 ชม.</b> หรือ ceftazidime 2 g ทุก 6 ชม. + clindamycin ± vancomycin · ceftriaxone ใช้ไม่ได้ · หลังจากนั้น co-trimoxazole eradication'},
+ poly:{leaf:true,cls:'danger',t:'หลายเชื้อ (type I) / Fournier',b:'<b>Piperacillin/tazobactam 4.5 g ทุก 6 ชม.</b> หรือ meropenem (ESBL) <b>+ clindamycin</b> ± vancomycin · ศัลย์/ศัลย์ทางเดินปัสสาวะ debridement ด่วน'},
+ gas:{leaf:true,cls:'danger',t:'ไม่ทราบเชื้อ',b:'<b>Piperacillin/tazobactam + clindamycin 600–900 mg ทุก 8 ชม.</b> · ช็อก/เสี่ยง MRSA → + vancomycin (และพิจารณา meropenem) · ยืนยัน GAS → penicillin G + clindamycin ± IVIG ใน toxic shock'},
+ bil:{q:'เป็นสองข้าง ไม่มีไข้ เรื้อรัง หรือคันเด่น?',o:[['ใช่','mim'],['ไม่ (ข้างเดียว เฉียบพลัน)','pur']]},
+ mim:{leaf:true,cls:'warn',t:'น่าจะไม่ใช่ cellulitis',b:'นึกถึง <b>venous stasis dermatitis</b> (compression ครีม topical steroid) · DVT (ultrasound) · gout (รอบข้อ) · contact dermatitis (คัน ตุ่มน้ำเล็ก) · ไม่ต้องให้ยาฆ่าเชื้อ · นัดดูซ้ำ',next:['ยังสงสัยติดเชื้อ','pur']},
+ pur:{q:'มีหนอง/ฝีไหม (fluctuation หรือ ultrasound เห็นโพรง)?',o:[['มี','abs'],['ไม่มี','np']]},
+ abs:{q:'ความรุนแรง',o:[['ไม่มีอาการทั่วตัว','absM'],['มี SIRS / ตำแหน่งระบายยาก / ฝีใหญ่หลายที่','absMo'],['I&amp;D + ยากินไม่ได้ผล / ความดันต่ำ / ภูมิต่ำมาก','absS']]},
+ absM:{leaf:true,cls:'ok',t:'Mild purulent',b:'<b>I&amp;D</b> ส่งหนอง Gram/เพาะเชื้อ · ยาไม่จำเป็นตาม IDSA · Talan/Daum: ยา 7–10 วันเพิ่มอัตราหาย ~7–14% → พิจารณาร่วมกับผู้ป่วย (cephalexin/dicloxacillin; เสี่ยง MRSA → co-trimoxazole)',next:['ติดตาม/ป้องกันซ้ำ','fu']},
+ absMo:{leaf:true,cls:'warn',t:'Moderate purulent',b:'<b>I&amp;D + ยากิน 5–10 วัน</b>: เสี่ยง MRSA → co-trimoxazole (160/800) 1–2 เม็ด bid หรือ doxycycline 100 mg bid · เสี่ยง MRSA ต่ำ (ไทย) → cephalexin 500 mg qid หรือ dicloxacillin 500 mg qid · แพ้ → clindamycin',next:['ติดตาม/ป้องกันซ้ำ','fu']},
+ absS:{leaf:true,cls:'danger',t:'Severe purulent',b:'<b>I&amp;D + vancomycin</b> (หรือ linezolid) · เพาะเชื้อเลือด/หนอง · ภูมิต่ำมาก/ช็อก → เพิ่มยาคลุม gram-negative · ลดยาตามผลเพาะเชื้อ'},
+ np:{q:'ความรุนแรง (ไม่มีหนอง)',o:[['ไม่มีอาการทั่วตัว','npM'],['มีไข้/SIRS','npMo'],['ยากินไม่ได้ผล + อาการทั่วตัว / ภูมิต่ำ / ความดันต่ำ','npS']]},
+ npM:{leaf:true,cls:'ok',t:'Mild non-purulent',b:'<b>Dicloxacillin 500 mg PO qid</b> หรือ <b>cephalexin 500 mg PO qid</b> (erysipelas: amoxicillin/penicillin V) · แพ้รุนแรง → clindamycin 300–450 mg ทุก 6–8 ชม. · <b>5 วัน</b> ขยายถ้ายังไม่ดีขึ้น · ยกขา',next:['ติดตาม/ป้องกันซ้ำ','fu']},
+ npMo:{leaf:true,cls:'warn',t:'Moderate non-purulent',b:'<b>Cefazolin 1–2 g IV ทุก 8 ชม.</b> หรือ cloxacillin 1–2 g IV ทุก 4–6 ชม. หรือ ceftriaxone 1–2 g/วัน · แพ้รุนแรง → clindamycin 600–900 mg IV ทุก 8 ชม. · เปลี่ยนเป็นยากินเมื่อดีขึ้น · รวม ~5–6 วัน',next:['ติดตาม/ป้องกันซ้ำ','fu']},
+ npS:{leaf:true,cls:'danger',t:'Severe non-purulent',b:'<b>ผ่าตัดสำรวจด่วนถ้าสงสัยติดเชื้อลึก</b> · <b>vancomycin + piperacillin/tazobactam</b> · เพาะเชื้อเลือด · ทบทวน red flag NSTI',next:['ดูแนวทาง NSTI','nsti']},
+ fu:{leaf:true,cls:'ok',t:'ติดตามและป้องกันซ้ำ',b:'นัด 48–72 ชม. ดูขอบที่วาดไว้ · รักษา<b>เชื้อราซอกนิ้ว</b> ผิวแห้ง บวมน้ำ (compression) · เป็นซ้ำที่ขา ≥2 ครั้ง → <b>penicillin V 250 mg bid</b> (PATCH I) หรือ benzathine penicillin 1.2 ล้านยูนิต IM ทุก 2–4 สัปดาห์'},
+ bite:{q:'แผลติดเชื้อแล้วหรือยัง?',o:[['ติดเชื้อแล้ว (แดง หนอง ปวดมากขึ้น)','biI'],['ยังไม่ติดเชื้อ','biR']]},
+ biI:{leaf:true,cls:'warn',t:'แผลกัดติดเชื้อ',b:'<b>Amoxicillin/clavulanate 875/125 mg bid 5–14 วัน</b> (CrCl &lt;30 ลดขนาด) (แพ้ → doxycycline + metronidazole/clindamycin) · เพาะเชื้อ · ใกล้ข้อ/กระดูก → X-ray ศัลย์ · <b>บาดทะยัก + พิษสุนัขบ้า</b> ตามเกณฑ์'},
+ biR:{q:'เสี่ยงติดเชื้อสูงไหม?',h:'แมว · มือ/ใบหน้า/อวัยวะเพศ/ใกล้ข้อ · รูเจาะลึก/ขยี้ · ต้องเย็บ · ไม่มีม้าม ตับแข็ง ภูมิต่ำ เบาหวาน · บวมเดิม · คนกัดทะลุผิว',o:[['ใช่','biP'],['ไม่','biN']]},
+ biP:{leaf:true,cls:'warn',t:'ให้ยาป้องกัน 3–5 วัน',b:'<b>Amoxicillin/clavulanate 875/125 mg bid</b> (CrCl &lt;30 ลดขนาด) · แพ้ → doxycycline + metronidazole · ไม่เย็บปิดทันที (ยกเว้นใบหน้า) · บาดทะยัก · ประเมิน rabies PEP'},
+ biN:{leaf:true,cls:'ok',t:'ไม่ต้องให้ยาป้องกัน',b:'ล้างแผลด้วยสบู่และน้ำ ≥15 นาที · บาดทะยักตามประวัติวัคซีน · ประเมิน rabies PEP (สุนัข แมว สัตว์เลี้ยงลูกด้วยนม) · นัดดูแผลถ้าแดงหรือปวดมากขึ้น'},
+ water:{q:'ชนิดน้ำ?',o:[['น้ำทะเล/น้ำกร่อย/หอยดิบ','wS'],['น้ำจืด/น้ำท่วม','wF']]},
+ wS:{leaf:true,cls:'danger',t:'เสี่ยง Vibrio vulnificus',b:'ตับแข็ง/ธาลัสซีเมีย/สุรา + ตุ่มน้ำเลือด หรือช็อก → <b>doxycycline + ceftazidime ทันที</b> + ศัลยแพทย์ · cellulitis ไม่มี red flag → doxycycline + ceftriaxone/ceftazidime (หรือ fluoroquinolone) และเฝ้าดูใกล้ชิด · เพาะเชื้อเลือดทุกราย',next:['มี red flag NSTI','nsti']},
+ wF:{leaf:true,cls:'warn',t:'เสี่ยง Aeromonas',b:'Cellulitis หลังแผลแช่น้ำจืด → <b>ciprofloxacin (หรือ levofloxacin) ± doxycycline</b> · ไม่ใช้ cephalexin/cefazolin/amox-clav เดี่ยว · เพาะเชื้อเลือด · ลามเร็ว/ตุ่มน้ำ → ศัลย์',next:['มี red flag NSTI','nsti']}
+},'apTrail','apStage');
+
+/* ---------- shared renal + drug helpers ---------- */
+function crclOf(p){
+  if($(p+'Hd').value==='y')return {v:5,hd:true,txt:'ฟอกเลือด → ขนาดยาสำหรับฟอกไต (ให้หลังฟอกในวันที่ฟอก)'};
+  const a=num(p+'Age'),w=num(p+'Wt');let cr=num(p+'Cr');
+  if(a===null||w===null||cr===null)return null;
+  if($(p+'CrU').value==='um')cr=cr/88.4;
+  if(a<18||a>110||w<25||w>250||cr<0.2||cr>20)return null;
+  let v=(140-a)*w/(72*cr);if($(p+'Sex').value==='f')v*=0.85;
+  return {v:v,hd:false,txt:`CrCl (Cockcroft–Gault) ≈ <b>${Math.round(v)} mL/min</b>`};
+}
+const D={
+  diclox:()=>'dicloxacillin 500 mg PO q6h (ท้องว่าง)',
+  ceph:(c,hd)=>'cephalexin '+(hd?'500 mg PO q24h (หลังฟอก)':c>=60?'500 mg PO q6h':c>=30?'500 mg PO q12h (สูงสุด 1 g/วัน)':c>=15?'250 mg PO q8–12h':'250 mg PO q24h'),
+  amox:(c,hd)=>'amoxicillin '+(hd?'500 mg PO q24h (หลังฟอก)':c>30?'500 mg PO q8h':c>=10?'500 mg PO q12h':'500 mg PO q24h'),
+  clinPO:()=>'clindamycin 300–450 mg PO q6–8h',
+  clinIV:()=>'clindamycin 600–900 mg IV q8h',
+  cefaz:(c,hd)=>'cefazolin '+(hd?'1–2 g IV หลังฟอกทุกครั้ง':c>=35?'1–2 g IV q8h':c>10?'1 g IV q12h':'1 g IV q24h'),
+  clox:()=>'cloxacillin 1–2 g IV q4–6h',
+  ctx:()=>'ceftriaxone 1–2 g IV q24h',
+  doxy:()=>'doxycycline 100 mg PO q12h',
+  cotri:(c,hd)=>hd||c<15?null:c>30?'co-trimoxazole (160/800) 1–2 เม็ด PO q12h':'co-trimoxazole (160/800) 1 เม็ด PO q12h (ลดครึ่ง)',
+  ptz:(c,hd)=>'piperacillin/tazobactam '+(hd?'2.25 g IV q8h + 0.75 g หลังฟอก':c>40?'4.5 g IV q6h':c>=20?'3.375 g IV q6h':'2.25 g IV q6h'),
+  mero:(c,hd)=>'meropenem '+(hd?'500 mg IV q24h (หลังฟอก)':c>50?'1 g IV q8h':c>=26?'1 g IV q12h':c>=10?'500 mg IV q12h':'500 mg IV q24h'),
+  ceftaz:(c,hd)=>'ceftazidime '+(hd?'1 g IV loading แล้ว 1 g หลังฟอกทุกครั้ง':c>50?'2 g IV q8h':c>30?'2 g IV q12h':c>15?'2 g IV q24h':'1 g IV q24h'),
+  ceftazMel:(c,hd)=>'ceftazidime '+(hd?'1–2 g IV หลังฟอกทุกครั้ง (ตรวจกับเภสัช)':c>50?'2 g IV q6h':c>30?'2 g IV q8h':c>=15?'2 g IV q12h':'2 g IV q24h'),
+  cipIV:(c,hd)=>'ciprofloxacin '+(hd||c<30?'400 mg IV q24h':'400 mg IV q12h'),
+  levo:(c,hd)=>'levofloxacin '+(hd?'750 mg แล้ว 500 mg q48h':c>=50?'750 mg IV/PO q24h':c>=20?'750 mg q48h':'750 mg แล้ว 500 mg q48h'),
+  metro:()=>'metronidazole 500 mg IV q8h',
+  lin:()=>'linezolid 600 mg IV/PO q12h',
+  penG:(c,hd)=>'penicillin G '+(hd||c<10?'2 ล้านยูนิต IV q6h':c<=50?'3 ล้านยูนิต IV q4h':'4 ล้านยูนิต IV q4h')
+};
+function vanco(w,c,hd,load){
+  let ld;
+  if(w!==null&&w>=25&&w<=250){const d=Math.min(3000,Math.round(w*load/250)*250);ld=`loading ~${d} mg IV (${load} mg/kg สูงสุด 3 g)`;}
+  else ld=`loading ${load} mg/kg IV (สูงสุด 3 g)`;
+  const mt=hd?'แล้วให้หลังฟอกตามระดับยา':c>=50?'แล้ว 15–20 mg/kg q8–12h':c>=20?'แล้ว 15–20 mg/kg q24h':'แล้วให้ซ้ำตามระดับยา';
+  return `<b>vancomycin</b> ${ld} ${mt} · ปรับตาม AUC/trough`;
+}
+
+/* ---------- tool 1: SSTI classifier ---------- */
+function ss(){
+  const c=id=>$(id).checked;const L=[];const ty=$('sType').value;
+  if(!ty){$('ssOut').innerHTML='เลือกชนิด: มีหนอง หรือ ไม่มีหนอง';return}
+  const al=$('sAll').value;
+  if(c('sDeep')){L.push('<b style="color:var(--danger)">มี red flag NSTI → ปรึกษาศัลยแพทย์ทันที (ผ่าตัด ≤6 ชม.) · ใช้เครื่องมือ 3 เลือกยา</b> · ไม่รักษาแบบ cellulitis ธรรมดา');$('ssOut').innerHTML=L.join('<br>');return}
+  const sirsN=['sT','sHr','sRr','sW'].filter(c).length;
+  const sys=sirsN>=2||c('sT');
+  const severe=c('sHypo')||c('sImm')||(c('sFail')&&(ty==='pu'||sys));
+  const lvl=severe?'severe':sys?'moderate':'mild';
+  if($('sSide').value==='b'&&!sys&&ty==='np')L.push('<b style="color:var(--warn)">ขาแดงสองข้าง ไม่มีไข้ → แทบไม่ใช่ cellulitis</b> · ทบทวน stasis dermatitis, DVT, gout, contact dermatitis ก่อนให้ยา');
+  L.push(`ระดับ (IDSA 2014): <b>${ty==='pu'?'Purulent':'Non-purulent'} · ${lvl}</b> <span class="muted">(SIRS ${sirsN}/4 ข้อ${c('sT')?', มีไข้':''})</span>`);
+  if(c('sFail')&&!severe)L.push('ยากินไม่ได้ผลแต่ไม่มีอาการทั่วตัว → ทบทวนวินิจฉัย หาหนองที่ยังไม่ได้ระบาย (ultrasound) และกินยาถูกหรือไม่');
+  const r=crclOf('s');
+  if(!r){
+    L.push(lvl==='severe'?(ty==='pu'?'แผน: <b>I&amp;D + vancomycin</b> (± ยาคลุม gram-negative ถ้าช็อก/ภูมิต่ำ) · เพาะเชื้อเลือด':'แผน: <b>ศัลยแพทย์ประเมิน/ผ่าตัดสำรวจด่วน + vancomycin + piperacillin/tazobactam</b> · เพาะเชื้อเลือด'):ty==='pu'?'แผน: <b>I&amp;D</b> ส่งหนองเพาะเชื้อ'+(lvl==='mild'?'':' + ยากิน'):'แผน: ยาคลุม Streptococcus'+(lvl==='mild'&&c('sPo')?' แบบกิน':' แบบฉีด'));
+    L.push('<span class="muted">ใส่อายุ (≥18) น้ำหนัก และ creatinine ให้ถูกต้อง (หรือเลือกฟอกเลือด) เพื่อดูขนาดยา</span>');
+    $('ssOut').innerHTML=L.join('<br>');return;
+  }
+  const k=r.v,hd=r.hd;L.push(r.txt);
+  const po=c('sPo');const mr=c('sMr');
+  if(ty==='pu'){
+    L.push('<b>Incision &amp; drainage</b> เป็นการรักษาหลัก · ส่งหนอง Gram/เพาะเชื้อ');
+    if(lvl==='severe'){
+      L.push('ยา: '+vanco(num('sWt'),k,hd,25)+(c('sHypo')||c('sImm')?' <b>+ '+(al==='s'?D.cipIV(k,hd)+' (แพ้ β-lactam รุนแรง ปรึกษา ID)':al==='m'?D.mero(k,hd)+' (แพ้ penicillin ไม่รุนแรง: แทน pip/tazo)':D.ptz(k,hd))+'</b> (ช็อก/ภูมิต่ำ: คลุม gram-negative จนรู้ผล)':'')+' · ทางเลือก: '+D.lin());
+      L.push('เพาะเชื้อเลือด 2 ชุด · ลดยาตามผลเพาะเชื้อ');
+    }else{
+      const need=lvl==='moderate'||c('sHard')||c('sImm');
+      const t=D.cotri(k,hd);
+      const mrsaRx=t?`<b>${t}</b> หรือ <b>${D.doxy()}</b>`:`<b>${D.doxy()}</b> (CrCl &lt;15/ฟอกไต: เลี่ยง co-trimoxazole)`;
+      const mssaRx=al==='s'?`<b>${D.clinPO()}</b>`:al==='m'?`<b>${D.ceph(k,hd)}</b> (แพ้ penicillin ไม่รุนแรง ใช้ cephalosporin ได้)`:`<b>${D.ceph(k,hd)}</b> หรือ <b>${D.diclox()}</b>`;
+      if(!po)L.push('กินยาไม่ได้ → '+(mr?vanco(num('sWt'),k,hd,25):'<b>'+(al==='s'?D.clinIV():al==='m'?D.cefaz(k,hd):D.cefaz(k,hd)+' หรือ '+D.clox())+'</b>')+' แล้วเปลี่ยนเป็นยากินเมื่อทำได้');
+      else if(need)L.push((lvl==='moderate'?'มีอาการทั่วตัว':'ระบายยาก/ใหญ่/ภูมิต่ำ')+' → <b>I&amp;D + ยากิน 5–10 วัน</b>: '+(mr?mrsaRx+' (เสี่ยง MRSA)':mssaRx+' (เสี่ยง MRSA ต่ำ) · ถ้ามีปัจจัยเสี่ยง MRSA ใช้ '+mrsaRx));
+      else L.push('ไม่มีอาการทั่วตัว → <b>I&amp;D อย่างเดียวพอ</b> ตาม IDSA · Talan/Daum: ยา 7–10 วันเพิ่มอัตราหาย ~7–14% → พิจารณาร่วมกับผู้ป่วย: '+(mr?mrsaRx:mssaRx));
+    }
+  }else{
+    if(lvl==='severe'){
+      L.push('<b>สงสัยติดเชื้อลึก → ศัลยแพทย์ประเมิน/ผ่าตัดสำรวจด่วน</b>');
+      L.push('ยา: '+vanco(num('sWt'),k,hd,25)+' <b>+ '+(al==='s'?D.cipIV(k,hd)+' + '+D.metro()+' (แพ้ β-lactam รุนแรง ปรึกษา ID)':al==='m'?D.mero(k,hd)+' (แพ้ penicillin ไม่รุนแรง: แทน pip/tazo)':D.ptz(k,hd))+'</b> (IDSA) · เพาะเชื้อเลือด');
+    }else if(lvl==='moderate'||!po){
+      const base=al==='s'?D.clinIV():al==='m'?D.cefaz(k,hd)+' หรือ '+D.ctx():D.cefaz(k,hd)+' หรือ '+D.clox()+' หรือ '+D.ctx();
+      L.push(`${lvl==='moderate'?'มีอาการทั่วตัว':'กินยาไม่ได้'} → <b>ยาฉีด: ${base}</b>`+(mr?' · <b>เสี่ยง MRSA → ใช้ '+vanco(num('sWt'),k,hd,25)+'</b> (คลุมทั้ง MRSA และ strep)':''));
+      L.push('เปลี่ยนเป็นยากินเมื่อไข้ลง รอยแดงหยุดลาม: '+(al==='s'?D.clinPO():D.ceph(k,hd)+' หรือ '+D.diclox()));
+    }else{
+      const base=al==='s'?D.clinPO():al==='m'?D.ceph(k,hd):D.diclox()+' หรือ '+D.ceph(k,hd)+' (erysipelas: '+D.amox(k,hd)+')';
+      L.push('<b>ยากิน: '+base+'</b>');
+      if(mr){const t=D.cotri(k,hd);L.push('เสี่ยง MRSA → '+(al==='s'?'clindamycin คลุมทั้งสองถ้าเชื้อในพื้นที่ไว':'เพิ่ม '+(t?t+' หรือ ':'')+D.doxy()+' ร่วมกับยาคลุม strep (ยาสองตัวนี้คลุม strep ไม่ดี) หรือใช้ clindamycin เดี่ยว'));}
+    }
+    L.push(lvl==='severe'?'ระยะเวลา: ตามผลผ่าตัด/ผลเพาะเชื้อและการตอบสนอง · ลดยาเมื่อรู้เชื้อ':'ระยะเวลา: <b>5 วัน</b> ขยายถ้ายังไม่ดีขึ้น · <b>ยกขาสูง</b> · รักษาเชื้อราซอกนิ้ว/บวมน้ำ'+(lvl==='mild'?' · ไม่เป็นเบาหวาน: prednisolone 40 mg × 7 วัน เป็นทางเลือก (IDSA weak)':''));
+  }
+  if(k<60&&!hd)L.push('<span class="muted">ขนาดปรับตาม CrCl แล้ว · ไม่ต้องปรับ: dicloxacillin, cloxacillin, clindamycin, ceftriaxone, doxycycline, linezolid</span>');
+  $('ssOut').innerHTML=L.join('<br>');
+}
+bindAll('#tSs input,#tSs select',ss);
+
+/* ---------- tool 2: LRINEC ---------- */
+function lr(){
+  let crp=num('lCrp'),wbc=num('lWbc'),hb=num('lHb'),na=num('lNa'),cr=num('lCr'),gl=num('lGlu');const L=[];const note=[];
+  const W='<br><b style="color:var(--danger)">คะแนนต่ำไม่ได้ตัด NSTI — ถ้าคลินิกสงสัย ปรึกษาศัลยแพทย์ทันที</b>';
+  if([crp,wbc,hb,na,cr,gl].some(v=>v===null)){$('lrOut').innerHTML='ใส่ค่าให้ครบทั้ง 6 ค่า'+W;return}
+  if($('lCrpU').value==='dL')crp=crp*10;
+  if(wbc>=1000){wbc=wbc/1000;note.push('WBC ที่ใส่น่าจะเป็นเซลล์/µL → แปลงเป็น '+f1(wbc)+' ×10³/µL');}
+  if(hb>30&&hb<=250){hb=hb/10;note.push('Hb น่าจะเป็น g/L → '+f1(hb)+' g/dL');}
+  const crU=$('lCrU').value,glU=$('lGluU').value;
+  const bad=[];
+  if(crp<0||crp>1000)bad.push('CRP');
+  if(wbc<=0||wbc>300)bad.push('WBC');
+  if(hb<2||hb>25)bad.push('Hb');
+  if(na<100||na>200)bad.push('Na');
+  if(crU==='mg'?(cr<0.1||cr>25):(cr<9||cr>2200))bad.push('creatinine');
+  if(glU==='mg'?(gl<10||gl>2000):(gl<0.5||gl>110))bad.push('glucose');
+  if(bad.length){$('lrOut').innerHTML='ค่าไม่สมเหตุผล ตรวจค่า/หน่วย: <b>'+bad.join(', ')+'</b>'+W;return}
+  const p={};
+  p.crp=crp>=150?4:0;
+  p.wbc=wbc<15?0:wbc<=25?1:2;
+  p.hb=hb>13.5?0:hb>=11?1:2;
+  p.na=na<135?2:0;
+  p.cr=(crU==='mg'?cr>1.6:cr>141)?2:0;
+  p.gl=(glU==='mg'?gl>180:gl>10)?1:0;
+  const tot=p.crp+p.wbc+p.hb+p.na+p.cr+p.gl;
+  if(note.length)L.push('<span class="muted">'+note.join(' · ')+'</span>');
+  L.push(`CRP ${f1(crp)} mg/L → ${p.crp} · WBC ${f1(wbc)} → ${p.wbc} · Hb ${f1(hb)} → ${p.hb} · Na ${na} → ${p.na} · Cr ${cr} ${crU==='mg'?'mg/dL':'µmol/L'} → ${p.cr} · glucose ${gl} ${glU==='mg'?'mg/dL':'mmol/L'} → ${p.gl}`);
+  L.push(`LRINEC = <b>${tot}</b> / 13 → `+(tot>=8?'<b style="color:var(--danger)">ความเสี่ยงสูง (≥8)</b> — ศัลยแพทย์/ผ่าตัดสำรวจด่วน':tot>=6?'<b style="color:var(--warn)">ความเสี่ยงปานกลาง (6–7)</b> — ปรึกษาศัลยแพทย์ด่วน พิจารณา finger test/ผ่าตัดสำรวจ':'<b>ความเสี่ยงต่ำตามคะแนน (≤5)</b> — <b>แต่ราว 1 ใน 3 ของ NSTI มีคะแนน &lt;6</b>: ใช้ red flag ทางคลินิกเป็นหลัก ประเมินซ้ำทุก 2–4 ชม.'));
+  $('lrOut').innerHTML=L.join('<br>')+W;
+}
+bindAll('#tLr input,#tLr select',lr);
+
+/* ---------- tool 3: NSTI red flags + regimen ---------- */
+function ns(){
+  const c=id=>$(id).checked;const L=[];
+  const hard=['nBul','nNec','nCrep','nAn'].filter(c).length;
+  const soft=['nPain','nRapid','nEd','nTox','nLr'].filter(c).length;
+  const shock=c('nShock');
+  const high=hard>0||shock&&(soft>0)||(c('nPain')&&(c('nRapid')||c('nTox')||c('nEd')));
+  if(!hard&&!soft&&!shock){$('nsOut').innerHTML='ยังไม่ได้เลือก red flag — ถ้าไม่มีเลย รักษาแบบ cellulitis (เครื่องมือ 1) แต่วาดขอบและประเมินซ้ำ · <b>เลือก red flag ที่พบเพื่อดูแผน</b>';return}
+  if(high)L.push('<b style="color:var(--danger)">สงสัย NSTI สูง → ศัลยแพทย์ทันที · debridement ภายใน 6 ชม.</b> · ไม่รอ CT/LRINEC · ผ่าตัดซ้ำทุก 12–24 ชม. · ไม่มีศัลยแพทย์ → ให้ยาและสารน้ำแล้วส่งต่อทันที');
+  else L.push('<b style="color:var(--warn)">มีสัญญาณบางอย่าง → ศัลยแพทย์ประเมินด่วน</b> · finger test หรือ CT ถ้าไม่ทำให้การผ่าตัดช้า · วาดขอบ ประเมินซ้ำทุก 2–4 ชม. · เริ่มยาตามด้านล่างถ้ายังสงสัย');
+  if(shock)L.push('ช็อก → กู้ชีพแบบ sepsis (สารน้ำ norepinephrine เพาะเชื้อเลือด lactate)');
+  const r=crclOf('n');
+  if(!r){L.push('<span class="muted">ใส่อายุ (≥18) น้ำหนัก creatinine ให้ถูกต้อง (หรือเลือกฟอกเลือด) เพื่อดูยาและขนาดยา</span>');$('nsOut').innerHTML=L.join('<br>');return}
+  const k=r.v,hd=r.hd,w=num('nWt'),ex=$('nExp').value,al=c('nAll');
+  L.push(r.txt);
+  const clin='<b>'+D.clinIV()+'</b> (ยับยั้งสารพิษ)';
+  const needV=shock||c('nMr');
+  const V=vanco(w,k,hd,25);
+  const broad=(c('nEs')||shock)?D.mero(k,hd):D.ptz(k,hd);
+  const A=[];
+  if(al){
+    A.push('แพ้ β-lactam รุนแรง → ปรึกษา ID: เช่น <b>'+V+'</b> (หรือ '+D.lin()+') + <b>'+D.cipIV(k,hd)+'</b> + <b>'+D.metro()+'</b> + '+clin+(ex==='sea'?' + <b>'+D.doxy()+'</b> (Vibrio)':'')+(ex==='soil'?' · melioid: ไม่มียาทดแทนที่ดี — ปรึกษา ID (meropenem มีโอกาสแพ้ข้ามต่ำ)':''));
+  }else if(ex==='sea'){
+    A.push('<b>Vibrio vulnificus</b>: <b>'+D.doxy()+'</b> (ฉีด 100 mg IV q12h ถ้ามี) <b>+ '+D.ceftaz(k,hd)+'</b> (หรือ ceftriaxone 2 g IV q24h)');
+    A.push('ยังแยก GAS/หลายเชื้อไม่ได้ → เพิ่ม '+clin+(needV?' + '+V:''));
+    A.push('ทางเลือก: '+D.levo(k,hd)+' (± cephalosporin) · ตับแข็ง/ธาลัสซีเมีย = ตายสูงมาก → ผ่าตัดเร็ว');
+  }else if(ex==='fresh'){
+    A.push('<b>Aeromonas</b>: <b>'+D.doxy()+' + '+D.cipIV(k,hd)+'</b> (หรือ + ceftriaxone 2 g IV q24h) + '+clin+(needV?' + '+V:''));
+    A.push('Cephalosporin รุ่น 1 และ amox/clav ไม่ได้ผล · ช็อก → เพิ่ม '+D.ptz(k,hd)+' ร่วมกับ fluoroquinolone (carbapenem อาจไม่ได้ผลบางสายพันธุ์)');
+  }else if(ex==='soil'){
+    A.push('<b>คลุม melioidosis</b>: <b>'+D.mero(k,hd)+'</b> หรือ <b>'+D.ceftazMel(k,hd)+'</b> + '+clin+(needV?' + '+V:'')+' · ceftriaxone ใช้ไม่ได้ · ต่อด้วย co-trimoxazole eradication');
+    A.push('เท้าเบาหวาน → ดูหน้า Diabetic foot ประกอบ');
+  }else{
+    A.push((ex==='peri'?'<b>หลายเชื้อ/Fournier</b>: ':'<b>ไม่ทราบเชื้อ</b>: ')+'<b>'+broad+'</b>'+(c('nEs')&&!shock?' (เสี่ยง ESBL)':'')+' + '+clin+(needV?' + '+V:''));
+    if(!needV&&ex!=='peri')A.push('<span class="muted">WSES (คงที่): ทางเลือก ceftriaxone 2 g IV q24h + metronidazole 500 mg IV q8h + clindamycin</span>');
+    A.push('ยืนยัน GAS → <b>'+D.penG(k,hd)+' + clindamycin</b> ± IVIG ใน streptococcal toxic shock (ปรึกษา ID)');
+    if(ex==='peri')A.push('ศัลย์/ศัลย์ทางเดินปัสสาวะ · หาต้นเหตุ (ฝีรอบทวาร ท่อปัสสาวะ) · อาจต้องทำทวารเทียม/สายสวน');
+  }
+  L.push(...A);
+  L.push('เพาะเชื้อเลือด 2 ชุด + ชิ้นเนื้อจากห้องผ่าตัด (แจ้งแล็บถ้าสงสัย Vibrio/melioid) · ให้ยาจนไม่ต้องเลาะเพิ่ม อาการดีขึ้น และไข้ลง 48–72 ชม.');
+  if(k<60&&!hd)L.push('<span class="muted">ขนาดปรับตาม CrCl แล้ว · ไม่ต้องปรับ: clindamycin, doxycycline, metronidazole, ceftriaxone, linezolid</span>');
+  $('nsOut').innerHTML=L.join('<br>');
+}
+bindAll('#tNs input,#tNs select',ns);
+
+/* ---------- tool 4: bite helper ---------- */
+function bi(){
+  const c=id=>$(id).checked;const L=[];const an=$('bAn').value;
+  if(!an){$('biOut').innerHTML='เลือกชนิดสัตว์/คนที่กัด';return}
+  const w=$('bW').value,t=$('bT').value,ren=$('bRen').value;
+  const amc=ren==='n'?'amoxicillin/clavulanate 875/125 mg PO q12h':ren==='m'?'amoxicillin/clavulanate 500/125 mg PO q12h (ห้ามเม็ด 875)':'amoxicillin/clavulanate 500/125 mg PO q24h (ฟอกไต: ให้หลังฟอก)';
+  const alt='doxycycline 100 mg PO q12h + metronidazole 500 mg PO q8h (หรือ clindamycin 300 mg q8h)';
+  const rx=c('bAll')?alt:amc;
+  L.push('ล้างแผลด้วยสบู่และน้ำไหล ≥15 นาที · ตัดเนื้อตาย · '+(c('bSut')?'<b>ไม่เย็บปิดทันที ยกเว้นใบหน้า</b> (ล้างมาก + ยาป้องกัน)':'ไม่เย็บปิดทันที (ยกเว้นใบหน้า)'));
+  if(c('bInf')){
+    L.push(`<b>แผลติดเชื้อแล้ว → ${rx} 5–14 วัน</b> · เพาะเชื้อหนอง (± เลือดถ้ามีไข้) · ใกล้ข้อ/กระดูก → X-ray และศัลย์`+(an==='cat'||an==='dog'?' · Pasteurella: อาการเร็วใน 12–24 ชม.':'')+(an==='hum'?' · Eikenella จากคน':''));
+  }else{
+    const why=[];
+    if(an==='cat')why.push('แมวกัด');
+    if(an==='hum'&&w!=='s')why.push('คนกัดทะลุผิว');
+    if(w==='p')why.push('รูเจาะลึก/ขยี้');
+    if(c('bSite'))why.push('มือ/หน้า/อวัยวะเพศ/ใกล้ข้อ');
+    if(c('bHost'))why.push('ภูมิต่ำ/ไม่มีม้าม/ตับแข็ง/เบาหวาน');
+    if(c('bEd'))why.push('บวมเดิมบริเวณนั้น');
+    if(c('bSut'))why.push('ต้องเย็บ');
+    if(t!=='e'&&w!=='s')why.push('มาช้า');
+    if(why.length)L.push(`<b>ให้ยาป้องกัน 3–5 วัน: ${rx}</b> <span class="muted">(${why.join(', ')})</span>`+(c('bAll')?' · clindamycin เดี่ยวๆ ไม่คลุม Pasteurella/Eikenella':''));
+    else L.push('ไม่มีปัจจัยเสี่ยง → <b>ไม่ต้องให้ยาป้องกัน</b> · นัดดูแผลถ้าแดง บวม ปวดมากขึ้น');
+  }
+  const tt=$('bTt').value;
+  L.push('บาดทะยัก (แผลกัด = แผลเสี่ยง): '+(tt==='r'?'≥3 เข็ม ครั้งล่าสุด ≤5 ปี → <b>ไม่ต้องฉีด</b>':tt==='o'?'≥3 เข็ม ครั้งล่าสุด &gt;5 ปี → <b>dT/Tdap 1 เข็ม</b>':'ไม่ครบ/ไม่ทราบ → <b>dT 0, 1, 6 เดือน + TIG 250 IU IM</b> (คนละตำแหน่ง)'));
+  if(an==='hum')L.push('คนกัด: <b>ไม่ต้อง rabies PEP</b> · ประเมิน HBV/HIV/HCV ของทั้งสองฝ่าย ถ้ามีเลือด · ชกโดนฟันที่ข้อนิ้ว → ศัลย์มือ');
+  else if(an==='rod')L.push('พิษสุนัขบ้า: หนู/กระรอก/กระต่าย — กรมควบคุมโรคให้ประเมินและให้ PEP ตามระดับ (ต่างจาก WHO) → <a href="../rabies/index.html">Rabies</a> · หนูกัด: rat-bite fever (amox/clav คลุม)');
+  else L.push('พิษสุนัขบ้า: <b>ประเมิน PEP ตามระดับการสัมผัสทันที</b> (ไม่ต้องรอดูสัตว์ก่อนเริ่ม) → <a href="../rabies/index.html">Rabies</a>'+(an==='mon'?' · ลิงกัด: ให้ PEP จนครบ (กักดู 10 วันใช้ไม่ได้) · <b>ลิงแสม/macaque</b>: ล้างแผลนาน 15 นาที และพิจารณา <b>valacyclovir 1 g PO tid × 14 วัน</b> ป้องกัน herpes B (CDC; ปรึกษา ID) <span class="tag add">เสริม</span>':''));
+  $('biOut').innerHTML=L.join('<br>');
+}
+bindAll('#tBi input,#tBi select',bi);
+
+mountQuiz([
+ ['หญิง 72 ปี ขาแดงทั้งสองข้าง เป็นมา 3 เดือน คัน ผิวคล้ำ บวมกดบุ๋ม ไม่มีไข้ วินิจฉัยที่น่าจะเป็นที่สุด',['Bilateral cellulitis ต้องให้ cefazolin','Venous stasis dermatitis','Necrotizing fasciitis','Erysipelas'],1,'cellulitis สองข้างพร้อมกันพบน้อยมาก · รักษาด้วย compression, ครีม, topical steroid ไม่ต้องใช้ยาฆ่าเชื้อ'],
+ ['ชาย 30 ปี ฝีที่ต้นขา 3 cm ไม่มีไข้ ไม่มีโรคประจำตัว การรักษาหลัก',['Cephalexin 10 วันอย่างเดียว','Incision and drainage','Vancomycin IV','รอให้แตกเอง 1 สัปดาห์'],1,'I&D คือการรักษาหลัก · ยาเพิ่มเติมพิจารณาได้ (Talan/Daum เพิ่มอัตราหายเล็กน้อย) แต่ไม่แทนการระบาย'],
+ ['Cellulitis ขาข้างเดียว ไม่มีหนอง ไม่มีไข้ ไม่มีปัจจัยเสี่ยง MRSA ยาที่เหมาะ',['Co-trimoxazole เดี่ยว','Dicloxacillin หรือ cephalexin 5 วัน','Vancomycin','Ciprofloxacin'],1,'เชื้อหลักคือ Streptococcus · Moran 2017: เพิ่ม co-trimoxazole ไม่ช่วย · co-trimoxazole เดี่ยวคลุม strep ไม่ดี'],
+ ['ข้อใดเกี่ยวกับ LRINEC ถูกต้อง',['คะแนน ≤5 ตัด necrotizing fasciitis ได้','Sensitivity ที่ ≥6 ประมาณ 68% จึงใช้ตัดโรคไม่ได้','ต้องได้คะแนนก่อนเรียกศัลยแพทย์','CRP มีน้ำหนัก 1 คะแนน'],1,'Fernando 2019 · CRP ≥150 mg/L ได้ 4 คะแนน · สงสัยทางคลินิกต้องปรึกษาศัลย์ทันที'],
+ ['ชายตับแข็งจากสุรา กินหอยนางรมดิบเมื่อวาน มาด้วยช็อกและตุ่มน้ำเลือดที่ขาทั้งสองข้าง ยาเริ่มต้นที่สำคัญ',['Cefazolin','Doxycycline + ceftazidime (และปรึกษาศัลย์ด่วน)','Amoxicillin/clavulanate','Clindamycin เดี่ยว'],1,'Vibrio vulnificus · ตายสูงมาก (ไทยตะวันออก 43% ใน 48 ชม.) · ไม่ผ่าตัดสัมพันธ์กับตายเร็ว'],
+ ['ผู้ป่วยสงสัย necrotizing fasciitis ชัดเจน ควรทำอะไรต่อ',['รอ MRI ยืนยันก่อนผ่าตัด','ปรึกษาศัลยแพทย์ทำ debridement โดยเร็ว (ภายใน 6 ชม.) และไม่รอภาพ','ให้ยาฆ่าเชื้อ 48 ชม.แล้วดูอาการ','ทำ LRINEC ถ้า <6 ให้กลับบ้าน'],1,'WSES 2022: source control ภายใน 6 ชม. · ภาพต้องไม่ทำให้ผ่าตัดช้า · ผ่าซ้ำทุก 12–24 ชม.'],
+ ['เหตุผลหลักที่ให้ clindamycin ร่วมใน NSTI จาก Streptococcus group A',['คลุม Pseudomonas','ยับยั้งการสร้างสารพิษของเชื้อ','ลดพิษต่อไต','แทนการผ่าตัดได้'],1,'Penicillin + clindamycin ใน GAS NF (IDSA strong) · ทางเลือกที่ยับยั้งสารพิษเช่นกัน: linezolid'],
+ ['PATCH I trial แสดงว่าอะไร',['Penicillin V 250 mg วันละ 2 ครั้ง 12 เดือน ลด cellulitis ซ้ำที่ขา และผลหายไปเมื่อหยุดยา','Co-trimoxazole ป้องกันฝีซ้ำ','Clindamycin ดีกว่า penicillin','ยาป้องกันไม่มีประโยชน์'],0,'22% vs 37% (HR 0.55, NNT 5) ระหว่างกินยา · หลังหยุดยาไม่ต่างกัน'],
+ ['หญิง 45 ปี แมวกัดที่มือเป็นรูลึก มาใน 2 ชม. ไม่แพ้ยา ยาป้องกันที่เหมาะ',['ไม่ต้องให้ยา','Amoxicillin/clavulanate 3–5 วัน','Cephalexin','Clindamycin เดี่ยว'],1,'แมวกัด + มือ + รูเจาะลึก = เสี่ยงสูง · Pasteurella ไม่ไวต่อ clindamycin/cephalosporin รุ่น 1 · ไม่เย็บปิด · บาดทะยัก + rabies PEP'],
+ ['ชาวนาจากอีสาน เป็นเบาหวาน ขาบวมแดงลามเร็ว ผิวคล้ำดำ หลังลุยโคลนนา ควรเลือกยาที่คลุมเชื้อใดเพิ่มเป็นพิเศษ',['Vibrio ด้วย doxycycline','Burkholderia pseudomallei ด้วย meropenem หรือ ceftazidime','MRSA ด้วย co-trimoxazole อย่างเดียว','Candida ด้วย fluconazole'],1,'ceftriaxone ใช้ไม่ได้กับ melioidosis · ร่วมกับ clindamycin ± vancomycin และผ่าตัดด่วน'],
+ ['แผลถูกเงี่ยงปลาน้ำจืดระหว่างน้ำท่วม แล้วเป็น cellulitis ลามเร็ว ยาใดไม่ควรใช้เดี่ยว',['Ciprofloxacin','Cephalexin','Doxycycline + ciprofloxacin','Ceftriaxone + doxycycline'],1,'Aeromonas (ข้อมูลสึนามิไทย) ดื้อ cephalosporin รุ่น 1 และ amoxicillin/clavulanate'],
+ ['ข้อใดเป็นข้อบ่งชี้ให้เพาะเชื้อเลือดใน cellulitis ตาม IDSA',['ทุกรายที่มารพ.','ผู้ป่วย neutropenia, แผลแช่น้ำ หรือสัตว์กัด','ผู้ป่วยอายุ >40 ปี','รอยแดง >5 cm'],1,'ผู้ป่วยทั่วไปเพาะเชื้อเลือดขึ้น ≤5% จึงไม่ต้องส่งเป็นประจำ']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
