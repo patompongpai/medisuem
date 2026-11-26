@@ -181,7 +181,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
 <header class="top wrap">
   <div class="eyebrow">Medisüem · โรคติดเชื้อ · NTP 2021</div>
   <h1>แนวทางการควบคุม<span class="r">วัณโรค</span>ประเทศไทย พ.ศ. 2564</h1>
-  <p class="sub">สรุปสำหรับเวชปฏิบัติวัณโรคปอดในผู้ใหญ่ — คัดกรอง วินิจฉัย รักษา DS-TB / DR-TB, TB/HIV, การติดเชื้อระยะแฝง (TPT) และการป้องกันการแพร่เชื้อ พร้อม flow การทำงานและเครื่องมือช่วยตัดสินใจ ตัวเลข <span class="pg">น.xx</span> คือเลขหน้าในฉบับพิมพ์ครั้งที่ 2 (ก.พ. 2565)</p>
+  <p class="sub">สรุปสำหรับเวชปฏิบัติวัณโรคปอดในผู้ใหญ่และเด็ก — คัดกรอง วินิจฉัย รักษา DS-TB / DR-TB, TB/HIV, การติดเชื้อระยะแฝง (TPT) และการป้องกันการแพร่เชื้อ พร้อม flow การทำงานและเครื่องมือช่วยตัดสินใจ ตัวเลข <span class="pg">น.xx</span> คือเลขหน้าในฉบับพิมพ์ครั้งที่ 2 (ก.พ. 2565)</p>
   <div class="byline">สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · แหล่งข้อมูล: กองวัณโรค กรมควบคุมโรค, National Tuberculosis Control Programme Guideline, Thailand 2021</div>
 </header>
 <nav class="tabs" aria-label="หมวด"><div class="wrap" role="tablist">
@@ -189,6 +189,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   <button role="tab" data-tab="dx"><span class="n">03–04</span>คัดกรอง & วินิจฉัย</button>
   <button role="tab" data-tab="ds"><span class="n">05</span>DS-TB ผู้ใหญ่</button>
   <button role="tab" data-tab="dr"><span class="n">06</span>วัณโรคดื้อยา</button>
+  <button role="tab" data-tab="peds"><span class="n">07</span>วัณโรคเด็ก</button>
   <button role="tab" data-tab="hiv"><span class="n">08</span>TB/HIV</button>
   <button role="tab" data-tab="ltbi"><span class="n">09</span>LTBI / TPT</button>
   <button role="tab" data-tab="ic"><span class="n">11</span>ป้องกันการแพร่เชื้อ</button>
@@ -210,7 +211,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="step"><div class="body"><h4>คัดกรอง — ใครต้องถ่าย CXR</h4>
       <ul><li><b>ประชากรทั่วไป</b> ที่มีอาการสงสัย (ไอ ≥2 สัปดาห์ ไอเป็นเลือด น้ำหนักลด ไข้ เหงื่อออกกลางคืน) → CXR</li>
       <li><b>Key populations</b> (HIV, DM คุมไม่ได้, กดภูมิ, COPD/สูบบุหรี่, silicosis, CKD, ผู้สัมผัส, ผู้สูงอายุมีโรคร่วม, ผู้ต้องขัง, บุคลากร ฯลฯ): <u>รายใหม่ CXR ทุกราย</u>; รายเก่าคัดกรองอาการทุก visit → มีอาการจึง CXR; ปกติ CXR ปีละครั้ง</li></ul>
-      <button class="go-tool" data-go="t-dx">→ เครื่องมือ: ทางเดินการวินิจฉัย</button></div></div>
+      <p class="note"><b>เด็ก:</b> มักตรวจไม่พบเชื้อ จึงวินิจฉัยด้วย 3 เกณฑ์ (อาการ · ประวัติสัมผัส/TST-IGRA · CXR) — ดูแท็บ 07</p><button class="go-tool" data-go="t-dx">→ เครื่องมือ: ทางเดินการวินิจฉัย</button><button class="go-tool" data-go="t-pdx">→ เกณฑ์วินิจฉัยเด็ก</button></div></div>
     <div class="step"><div class="body"><h4>เก็บเสมหะ & ส่งตรวจ</h4>
       <p>เสมหะอย่างน้อย 2 ครั้ง (spot + เช้าตื่นนอนก่อนแปรงฟัน) ปริมาตร 3–5 mL ห้ามเก็บในห้องน้ำ CXR เข้าได้กับ TB → <b>AFB smear</b> → ลบ: Xpert MTB/RIF (หรือ TB-LAMP) · บวก: FL molecular (LPA / RT-PCR / Xpert Ultra) เพื่อดู RIF/INH</p>
       <p class="note">สถานการณ์ที่เข้าถึง CXR ยาก: คัดกรองอาการแล้วส่ง molecular ได้เลย <span class="pg">น.53</span> · ผู้ติดเชื้อ HIV ส่ง Xpert ได้เลย + smear/culture (แยก NTM)</p></div></div>
@@ -600,6 +601,156 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   </div>
 </section>
 
+
+<!-- ============ PEDS ============ -->
+<section class="page" id="peds" role="tabpanel" hidden>
+  <div class="chap-head"><div class="eyebrow">บทที่ 7</div><h2>วัณโรคในเด็ก</h2></div>
+  <nav class="toc"><button data-jump="pd-dx">การวินิจฉัย</button><button data-jump="pd-rx">สูตรยา</button><button data-jump="pd-dose">ขนาดยา</button><button data-jump="pd-hr">ดื้อ H / สเตียรอยด์</button><button data-jump="pd-hiv">เด็กติดเชื้อ HIV</button><button data-jump="pd-dr">วัณโรคดื้อยา</button><button data-jump="pd-ltbi">ผู้สัมผัส</button><button data-jump="pd-nb">ทารกของมารดาเป็น TB</button><button data-jump="pd-bcg">วัคซีน BCG</button></nav>
+
+  <div class="keypts">
+    <div class="kp"><div class="eyebrow">ทำไมวินิจฉัยยาก</div><div class="big">เชื้อน้อย มักตรวจไม่พบ</div><div class="note">วินิจฉัยด้วยคลินิก + ประวัติสัมผัส + CXR เป็นหลัก <span class="pg">น.97</span></div></div>
+    <div class="kp"><div class="eyebrow">สูตรมาตรฐาน</div><div class="big">2HRZE / 4HR</div><div class="note">ขนาดยาต่อ กก. สูงกว่าผู้ใหญ่ · ห้ามใช้แบบ intermittent</div></div>
+    <div class="kp"><div class="eyebrow">TBM, กระดูกและข้อ</div><div class="big">2HRZE / 10HR</div><div class="note">Miliary → ทำ LP ทุกราย (พบ TBM ร่วม ~50%)</div></div>
+    <div class="kp"><div class="eyebrow">ผู้สัมผัสอายุ &lt;5 ปี</div><div class="big">ให้ TPT ได้เลย</div><div class="note">หลังแยก active TB แล้ว · ≥5 ปี ตรวจ IGRA/TST ก่อน</div></div>
+  </div>
+
+  <div class="block" id="pd-dx"><h3 class="sec"><span class="sn">7.1</span>การวินิจฉัย: 3 เกณฑ์<span class="pg">น.97–99</span></h3>
+    <div class="grid3">
+      <div class="panel"><h4><span class="tag r">เกณฑ์ 1</span> อาการ</h4><p>ไข้เรื้อรัง (&gt;7 วัน) เบื่ออาหาร ไม่เล่น น้ำหนักลด/ไม่ขึ้น ซีด ไอเรื้อรัง &gt;2 สัปดาห์ทั้งที่รักษาเหมาะสมแล้ว</p><p class="note">เด็กที่เป็น TB มักไม่ได้มาด้วยไออย่างเดียว แต่มีอาการอื่นร่วม</p></div>
+      <div class="panel"><h4><span class="tag r">เกณฑ์ 2</span> ประวัติสัมผัส / TST หรือ IGRA บวก</h4><ul><li>ผู้แพร่เชื้อมักเป็นวัยรุ่น/ผู้ใหญ่ที่มีแผลโพรงในปอด (AFB บวกหรือลบก็ได้)</li><li>สัมผัสขณะผู้ป่วยยังไม่ได้ยา หรือได้ยา &lt;2 สัปดาห์</li><li>ใกล้ชิด (บ้านเดียวกัน), นานต่อเนื่อง &gt;8 ชม. หรือรวม &gt;120 ชม./เดือน, ที่อากาศถ่ายเทไม่ดี</li><li><b>ถามย้อนหลังประมาณ 1 ปี</b></li></ul></div>
+      <div class="panel"><h4><span class="tag r">เกณฑ์ 3</span> CXR เข้ากับ TB</h4><ul><li>ต่อมน้ำเหลืองขั้วปอดโต</li><li>รอยโรคในเนื้อปอด + ต่อมน้ำเหลืองขั้วปอดโต (Ghon's complex)</li><li>หินปูน (calcification)</li><li>Miliary (จุด 2–3 มม. ทั่วปอด)</li><li>โพรง (cavity)</li><li>ปอดแฟบบางส่วนจากต่อมน้ำเหลืองกดหลอดลม</li><li>Pleural effusion มักข้างเดียว</li></ul></div>
+    </div>
+    <div class="callout info"><b>TST/IGRA ในเด็ก:</b> บอกแค่ว่าเคยติดเชื้อ ไม่ได้บอกว่าป่วย · เด็ก &lt;5 ปีหรือภูมิคุ้มกันบกพร่อง TST อาจลบทั้งที่ป่วย · BCG และ NTM บางชนิดทำให้ TST บวกลวง · IGRA ไม่บวกลวงจาก BCG (แต่ยังบวกลวงได้จาก <i>M. kansasii, M. marinum, M. szulgai</i>)</div>
+    <div class="tbl"><div class="cap">จะทำอะไรต่อ ตามเกณฑ์ที่เข้า</div><table>
+      <tr><th>เข้าเกณฑ์</th><th>ทำอะไร</th></tr>
+      <tr><td><b>ครบ 3 เกณฑ์</b></td><td>ส่ง AFB smear + เพาะเชื้อ 3 ครั้ง และ Xpert MTB/RIF 1 ครั้ง (เสมหะหรือน้ำในกระเพาะ) → วินิจฉัย TB ทางคลินิก <b>เริ่มยาได้เลย</b></td></tr>
+      <tr><td>เกณฑ์ 1 + 2 แต่ CXR ปกติ</td><td>หาวัณโรคนอกปอด หรือปรึกษาผู้เชี่ยวชาญ</td></tr>
+      <tr><td>เกณฑ์ 1 + 3 แต่ไม่มีประวัติสัมผัส และ TST/IGRA ลบ</td><td>รักษาปอดอักเสบจากแบคทีเรียทั่วไป ± mycoplasma ก่อน พร้อมส่ง AFB + เพาะเชื้อ 3 ครั้ง + Xpert 1 ครั้ง → ถ่าย CXR ซ้ำหลังรักษา 1–2 สัปดาห์ ถ้าไม่ดีขึ้นจึงรักษา TB · <b>ยกเว้น CXR เป็น miliary ให้เริ่มยา TB ได้เลย</b></td></tr></table></div>
+    <div class="grid2">
+      <div class="panel"><h4>การเก็บสิ่งส่งตรวจ</h4><ul><li>สงสัย TB ปอด: เสมหะ (เด็กโต) หรือ <b>gastric aspirate ตอนเช้า</b> (เด็กเล็ก) → AFB + เพาะเชื้อ 3 ครั้ง + Xpert 1 ครั้ง</li><li>Xpert พบดื้อ R ในเด็กที่ไม่มีความเสี่ยงดื้อยา (ไม่เคยสัมผัส DR-TB) → ทำ Xpert หรือ LPA ซ้ำเพื่อยืนยัน และดูผลดื้อ H + ผล DST จากการเพาะเชื้อ</li><li>สงสัย TB นอกปอด: ส่งสิ่งส่งตรวจจากอวัยวะนั้นตรวจ AFB, เพาะเชื้อ, Xpert ± ADA (ปรึกษาผู้เชี่ยวชาญ)</li></ul></div>
+      <div class="panel"><h4>ก่อนเริ่มยา <span class="pg">น.99</span></h4><ul><li>พิจารณาตรวจ HIV โดยเฉพาะวัยรุ่น หรือมีอาการบ่งชี้</li><li>เจาะการทำงานของตับ/ไต ถ้ามีความเสี่ยงหรือโรคประจำตัว</li><li>ตรวจตา ถ้ามีปัญหาสายตาเดิม</li></ul><button class="go-tool" data-go="t-pdx">→ เครื่องมือ: เกณฑ์วินิจฉัยเด็ก</button></div>
+    </div>
+  </div>
+
+  <div class="block" id="pd-rx"><h3 class="sec"><span class="sn">7.2</span>สูตรยาตามชนิดโรค<span class="pg">น.99–100</span></h3>
+    <div class="tbl"><table>
+      <tr><th>ชนิด</th><th>สูตร</th><th>หมายเหตุ</th></tr>
+      <tr><td>วัณโรคปอด</td><td class="rx">2HRZE/4HR</td><td>ตอบสนองช้า (โพรงใหญ่, HIV ฯลฯ) ยืดระยะต่อเนื่องจาก 4 เป็น <b>7–10 เดือน</b> — ปรึกษาผู้เชี่ยวชาญเป็นรายๆ</td></tr>
+      <tr><td>ต่อมน้ำเหลือง</td><td class="rx">2HRZE/4HR</td><td>ต่อมโตขึ้น/เกิดใหม่ระหว่างรักษา → <b>เจาะดูดหนอง</b>ส่ง AFB: ลบ = ให้ยาเดิมต่อ · บวก = อาจดื้อยาหรือ NTM ส่งเพาะเชื้อ + DST ใหม่ · <b>ไม่แนะนำ incision & drainage</b> · ครบ 6 เดือนแล้วต่อมไม่ยุบ/มีต่อมใหม่ → ปรึกษาผู้เชี่ยวชาญ</td></tr>
+      <tr><td>เยื่อหุ้มสมอง (TBM)</td><td class="rx">2HRZE/10HR</td><td>ขนาดยาเท่า TB ปอด · บางท่านใช้ Eto แทน E · <b>prednisolone 2 มก./กก./วัน</b> · มีภาวะแทรกซ้อน/ไม่ตอบสนอง ปรึกษาผู้เชี่ยวชาญ</td></tr>
+      <tr><td>Miliary</td><td>ตามผล LP</td><td>พบ TBM ร่วมได้ ~50% → <b>LP ตรวจ CSF ทุกราย</b> · CSF ผิดปกติ ให้ <span class="rx">2HRZE/10HR</span></td></tr>
+      <tr><td>กระดูกและข้อ</td><td class="rx">2HRZE/10HR</td><td>ขนาดยาเท่า TB ปอด</td></tr>
+      <tr><td>กลับเป็นซ้ำ / รักษาซ้ำหลังขาดยา</td><td>ตามผล DST</td><td>ส่ง molecular DST ก่อน · ถ้าดื้อ ส่งเพาะเชื้อ + DST · ไม่มีผล ใช้ยาที่ไม่เคยได้และน่าจะยังได้ผล <b>≥4 ขนาน</b></td></tr></table></div>
+    <div class="callout"><b>วิธีให้ยาในเด็ก:</b> ใช้ยาเม็ดรวม (FDC) ขนาดตามน้ำหนัก ห้ามแกะยาออกจากแผงล่วงหน้า · กินวันละครั้งตอนท้องว่าง (เช่นก่อนนอน) · คลื่นไส้อาเจียนต้องแยกตับอักเสบเสมอ · แยกยาต่างชนิดไปกินคนละมื้อได้ แต่<b>ห้ามแบ่งยาชนิดเดียวกันเป็นหลายมื้อ</b> · ไม่ใช้ intermittent regimen</div>
+  </div>
+
+  <div class="block" id="pd-dose"><h3 class="sec"><span class="sn">7.1 ตาราง</span>ขนาดยาวัณโรคในเด็ก (ตาราง 7.1)<span class="pg">น.100–101</span></h3>
+    <div class="grid2">
+      <div class="tbl"><div class="cap">ยาแนวที่ 1 (วันละครั้ง)</div><table>
+        <tr><th>ยา</th><th>มก./กก./วัน</th><th>สูงสุด</th></tr>
+        <tr><td>Isoniazid</td><td class="num">10 (10–15)</td><td class="num">300 มก.</td></tr>
+        <tr><td>H ขนาดสูง</td><td class="num">15–20</td><td class="num">900 มก.</td></tr>
+        <tr><td>Rifampicin</td><td class="num">15 (10–20)</td><td class="num">600 มก.</td></tr>
+        <tr><td>Pyrazinamide</td><td class="num">35 (30–40)</td><td class="num">2 ก.</td></tr>
+        <tr><td>Ethambutol</td><td class="num">20 (15–25) ไม่เกิน 25</td><td class="num">1.2 ก.</td></tr></table>
+        <p class="note" style="padding:6px 10px">ผลข้างเคียงสำคัญ: H — ตับอักเสบ, ปลายประสาทอักเสบ · R — สารคัดหลั่งสีส้ม, ตับอักเสบ, เกล็ดเลือดต่ำ, ยาคุมไม่ได้ผล · Z — ตับอักเสบ, กรดยูริกสูง, ปวดข้อ · E — optic neuritis, ตาบอดสีแดง-เขียว</p></div>
+      <div class="tbl"><div class="cap">ยาแนวที่ 2</div><table>
+        <tr><th>ยา</th><th>ขนาด</th></tr>
+        <tr><td>Levofloxacin</td><td>15–20 มก./กก. วันละครั้ง (สูงสุด 1.5 ก.)</td></tr>
+        <tr><td>Moxifloxacin</td><td>10–15 มก./กก./วัน (สูงสุด 400 มก.)</td></tr>
+        <tr><td>Bedaquiline</td><td>15–29 กก.: 200 มก. OD ×2 สัปดาห์ → 100 มก. 3 ครั้ง/สัปดาห์ ×22 สัปดาห์<br>≥30 กก.: 400 มก. OD ×2 สัปดาห์ → 200 มก. 3 ครั้ง/สัปดาห์ ×22 สัปดาห์</td></tr>
+        <tr><td>Delamanid</td><td>3–5 ปี 25 มก. bid · 6–11 ปี 50 มก. bid · 12–17 ปี 100 มก. bid</td></tr>
+        <tr><td>Linezolid</td><td>น้ำหนัก &gt;15 กก.: 10–12 มก./กก./วัน (สูงสุด 600 มก.)</td></tr>
+        <tr><td>Clofazimine</td><td>2–5 มก./กก./วัน (สูงสุด 100 มก.)</td></tr>
+        <tr><td>Cycloserine</td><td>15–20 มก./กก./วัน แบ่ง 2 ครั้ง (สูงสุด 1 ก.)</td></tr>
+        <tr><td>Ethionamide</td><td>15–20 มก./กก./วัน แบ่ง 2–3 ครั้ง (สูงสุด 1 ก.) — WHO ให้วันละครั้งได้</td></tr>
+        <tr><td>PAS</td><td>200–300 มก./กก./วัน แบ่ง 2–4 ครั้ง (สูงสุด 10 ก.)</td></tr>
+        <tr><td>Imipenem-cilastatin</td><td>60–100 มก./กก./วัน แบ่ง 4 ครั้ง</td></tr>
+        <tr><td>Meropenem</td><td>60–120 มก./กก./วัน แบ่ง 3 ครั้ง</td></tr>
+        <tr><td>Amoxicillin/clavulanate</td><td>50 มก./กก./วัน แบ่ง 2 ครั้ง — ให้คู่กับ carbapenem เสมอ (ไม่นับเป็นยาในสูตร)</td></tr></table></div>
+    </div>
+    <button class="go-tool" data-go="t-pdose" style="align-self:flex-start">→ เครื่องมือ: คำนวณขนาดยาเด็ก</button>
+  </div>
+
+  <div class="block" id="pd-hr"><h3 class="sec"><span class="sn">7.2</span>ดื้อ H อย่างเดียว และการใช้สเตียรอยด์<span class="pg">น.102</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>Hr-TB ในเด็ก: <span class="rx">6(H)RZE-Lfx</span></h4><p>ต้องยืนยันว่าไม่ดื้อ fluoroquinolone ก่อน</p><ul><li>รู้ผลก่อนเริ่มยา (LPA) หรือผู้ป่วยต้นตอดื้อ H ชัดเจน → เริ่ม 6(H)RZE-Lfx ได้เลย ถ้าผลเพาะเชื้อภายหลังไวต่อยา หยุด Lfx กลับสูตรปกติ</li><li>รู้ผลขณะอยู่ช่วง 2HRZE → เปลี่ยนเป็น 6(H)RZE-Lfx และ<b>เริ่มนับเวลาใหม่</b></li><li>รู้ผลขณะอยู่ช่วง HR → พิจารณาตามอาการ และส่ง Xpert ซ้ำเพื่อยืนยันว่าไม่ดื้อ R เพิ่ม</li></ul></div>
+      <div class="panel"><h4>สเตียรอยด์เสริม</h4><p><b>ใช้ใน:</b> TBM (ลดตายและพิการ), ต่อมน้ำเหลืองในช่องอกกดทางเดินหายใจ, TB เยื่อหุ้มหัวใจ · <b>พิจารณาใน:</b> miliary, น้ำในเยื่อหุ้มหัวใจ/เยื่อหุ้มปอด, endobronchial TB</p><p class="rx">Prednisolone 1–2 มก./กก./วัน (สูงสุด 60 มก.) 2–4 สัปดาห์ → ลดครึ่งใน 1–2 สัปดาห์ → ลดอีกครึ่งจนหยุด (รวม 4–6 สัปดาห์)</p><p class="note">เริ่มตั้งแต่สัปดาห์แรกของการรักษา · ให้สเตียรอยด์โดยไม่มียาต้านวัณโรคที่เหมาะสม อาจทำให้โรคลุกลาม</p></div>
+    </div>
+  </div>
+
+  <div class="block" id="pd-hiv"><h3 class="sec"><span class="sn">7.3</span>วัณโรคในเด็กติดเชื้อ HIV<span class="pg">น.102–103</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>การค้นหา</h4><ul><li>คัดกรอง 4 ข้อ: <b>สัมผัส TB · ไอ ≥2 สัปดาห์ · ไข้ไม่ทราบสาเหตุ &gt;1 สัปดาห์ · น้ำหนักไม่เพิ่ม</b> → ข้อใดข้อหนึ่ง ตรวจหา TB ปอดและนอกปอด</li><li>TB ปอด: CXR + หาเชื้อ (เด็กเล็ก gastric aspirate ตอนเช้า, เด็กโตเสมหะ) ส่ง <b>Xpert</b> + เพาะเชื้อ + DST</li><li>TB นอกปอด/แพร่กระจาย: อัลตราซาวด์ช่องท้อง (ต่อมน้ำเหลืองโต ตับม้ามโต calcification microabscess)</li><li>สัมผัส TB แต่ไม่ป่วย → <b>ให้ TPT ทุกราย</b></li></ul></div>
+      <div class="panel"><h4>เวลาเริ่ม ART (ตาราง 7.2)</h4><ul><li>TB ทุกชนิดยกเว้นระบบประสาท: <b>ภายใน 2 สัปดาห์</b> ช้าสุด 4 สัปดาห์ ไม่ขึ้นกับ CD4</li><li>TB ระบบประสาท: หลังรักษา TB ≥4 สัปดาห์ <b>ช้าสุด 6 สัปดาห์</b></li></ul><p class="note">บทเด็กกำหนด TBM ไม่เกิน 6 สัปดาห์ (บทผู้ใหญ่ไม่เกิน 8 สัปดาห์)</p></div>
+    </div>
+    <div class="tbl"><div class="cap">ยาต้านไวรัสกับ rifampicin ในเด็ก</div><table>
+      <tr><td><span class="tag ok">ไม่ต้องปรับ</span></td><td>EFV หรือ NVP (ต้นฉบับพิมพ์ "NPV")</td></tr>
+      <tr><td><span class="tag r">เพิ่มเป็น 2 เท่า</span></td><td>RAL หรือ DTG</td></tr>
+      <tr><td><span class="tag c">ไม่ใช้ร่วมกับ R</span></td><td>Boosted PI → เปลี่ยนเป็นสูตรไม่มี R รวม 12–18 เดือน: <span class="rx">2HZE + FQ (Lfx/Mfx) หรือ aminoglycoside (Am/Km)</span> แล้ว <span class="rx">HZ + FQ 10–16 เดือน</span> · ถ้า CD4 &gt;15% ให้สูตรมี R ครบ 2 เดือนแรกก่อน แล้วเปลี่ยนระยะต่อเนื่องเป็นสูตรไม่มี R และ<b>เริ่ม PI หลังหยุด R 2 สัปดาห์</b></td></tr></table></div>
+    <p class="note">ข้อต่างจากบทผู้ใหญ่ที่ควรรู้: บทผู้ใหญ่ (ตาราง 5.8) ไม่แนะนำ NVP ร่วมกับ R และบทวัณโรคดื้อยาห้ามใช้ kanamycin — ใช้ตามต้นฉบับบทเด็กแต่ควรปรึกษาผู้เชี่ยวชาญ HIV เด็ก</p>
+  </div>
+
+  <div class="block" id="pd-dr"><h3 class="sec"><span class="sn">7.4</span>วัณโรคดื้อยาในเด็ก<span class="pg">น.103–106</span></h3>
+    <div class="grid2">
+      <div class="panel"><h4>สงสัยดื้อยาเมื่อ</h4><ol><li>สัมผัสผู้ป่วยยืนยัน DR-TB</li><li>สัมผัสผู้ป่วยสงสัย DR-TB (รักษาล้มเหลว กลับเป็นซ้ำ หรือรักษาไม่หายจนเสียชีวิต)</li><li>ไม่ตอบสนองต่อยาแนวที่ 1 ทั้งที่กินยาสม่ำเสมอ</li><li>เคยรักษาแล้วกลับเป็นซ้ำ</li></ol><p>→ ส่งเสมหะตรวจ Xpert MTB/RIF ทุกราย</p></div>
+      <div class="tbl"><div class="cap">ตาราง 7.3 แปลผล Xpert MTB/RIF</div><table>
+        <tr><th>ผล</th><th>ทำอะไร</th></tr>
+        <tr><td>MTB+ / RIF resistance detected (ส่วนใหญ่เป็น MDR)</td><td>ส่ง Xpert/LPA ซ้ำ + เพาะเชื้อ DST · เริ่มสูตร MDR ได้เลย ยกเว้นไม่มีความเสี่ยงดื้อยา ให้รอผลยืนยัน</td></tr>
+        <tr><td>MTB+ / RIF not detected</td><td>สูตรมาตรฐาน ปรับตาม DST</td></tr>
+        <tr><td>MTB+ / RIF indeterminate</td><td>สูตรมาตรฐานไปก่อน รอ DST</td></tr>
+        <tr><td>MTB not detected</td><td>อาจเป็น NTM · รอ culture และ identification · พิจารณาสูตรมาตรฐานไปก่อน</td></tr>
+        <tr><td>Invalid / error</td><td>ส่งซ้ำทันที · ให้สูตรมาตรฐานไปก่อน</td></tr></table></div>
+    </div>
+    <div class="panel fc-scroll"><h4>แผนภูมิ 7.1 เลือกสูตรตามผู้ป่วยต้นตอ (index case)</h4><div class="fc" style="min-width:760px">
+      <div class="node start"><b>เด็กเป็น TB เสมหะลบ</b>(มีอาการ TB ในหรือนอกปอด) · ส่ง Xpert ถ้าทำได้</div><div class="arr"></div>
+      <div class="split" style="grid-template-columns:repeat(3,1fr)">
+        <div class="col"><span class="lbl n">Xpert ดื้อ R หรือต้นตอเป็น MDR</span><div class="node ref"><b>น่าจะเป็น MDR-TB</b>Xpert/LPA + เพาะเชื้อ + DST (รวมยาแนว 2)</div><div class="arr"></div><div class="node ref">สูตร MDR-TB*</div></div>
+        <div class="col"><span class="lbl">ต้นตอสงสัย MDR / กลับเป็นซ้ำ</span><div class="node warn"><b>อาจเป็น MDR-TB</b>เพาะเชื้อ + DST จากเด็กและต้นตอ</div><div class="arr"></div><div class="node warn">ยาแนวที่ 1 + ติดตามใกล้ชิด</div></div>
+        <div class="col"><span class="lbl y">ต้นตอไม่ดื้อยา/หายแล้ว/ไม่มีประวัติสัมผัส</span><div class="node go"><b>น่าจะไม่เป็น MDR-TB</b>เพาะเชื้อ</div><div class="arr"></div><div class="node go">ยาแนวที่ 1</div></div>
+      </div><div class="arr"></div>
+      <div class="node ref" style="max-width:560px">ไม่ตอบสนอง (กินยาครบ ไม่ขาดยา และแยกภาวะอื่นแล้ว) และ/หรือ DST ของเด็กหรือต้นตอพบ MDR → <b>เปลี่ยนเป็นสูตร MDR-TB</b></div>
+    </div><p class="note">* Xpert ดื้อ R แต่ต้นตอยืนยันได้ว่าเป็น TB ไม่ดื้อยาที่รักษาหายแล้ว และเด็กอาการไม่รุนแรง → อาจให้ยาแนวที่ 1 ระหว่างรอผลเพาะเชื้อ ส่ง LPA ยืนยัน หรือปรึกษาผู้เชี่ยวชาญ</p></div>
+    <div class="grid2">
+      <div class="panel"><h4>หลักการจัดสูตร</h4><ul><li>ใช้หลักเดียวกับผู้ใหญ่: 4–6 ขนาน ตาม DST ของเด็ก ถ้าไม่มีใช้ DST ของ<b>ผู้ป่วยต้นตอ</b></li><li>Longer: intensive ≥4 ขนาน, continuation ≥3 ขนาน เลือก A → B → C (4 A/B; 3 A/B + 1–2 C; 2 A/B + ≥3 C)</li><li><b>ห้ามเติมยาทีละ 1 ขนาน</b>ในสูตรที่ล้มเหลว ต้องเปลี่ยนทั้งสูตร</li><li>ส่ง DST ยาแนว 2 ทุกราย</li><li>โรคไม่รุนแรง (เช่นต่อมน้ำเหลืองขั้วปอดอย่างเดียว) มักให้ยาสั้นกว่าผู้ใหญ่</li></ul></div>
+      <div class="panel"><h4>Shorter all-oral (WHO 2020)</h4><p class="rx">6 Bdq + 4–6 Lfx/Mfx-Cfz-Z-E-H<sup>h</sup>-Eto / 5 Lfx/Mfx-Cfz-Z-E</p><p>สำหรับผู้ที่ไม่เคยได้ยาแนว 2 นานกว่า 1 เดือน และไม่ดื้อ FQ · ระยะเข้มข้นขยายเป็น 6 เดือนได้ถ้าเสมหะยังพบเชื้อเมื่อครบ 4 เดือน</p><p class="note">ทุกกรณีควรปรึกษาผู้เชี่ยวชาญวัณโรคเด็ก</p><button class="go-tool" data-go="t-pdr">→ เครื่องมือ: DR-TB ในเด็ก</button></div>
+    </div>
+  </div>
+
+  <div class="block" id="pd-ltbi"><h3 class="sec"><span class="sn">7.5</span>เด็กที่สัมผัสวัณโรค<span class="pg">น.106–107</span></h3>
+    <div class="grid2">
+      <div class="panel"><p>ป่วยมักเกิดใน <b>1–2 ปีหลังสัมผัส</b> · เด็ก &lt;5 ปีเสี่ยงป่วย ~16% (<b>&lt;1 ปีเสี่ยงสูงสุด</b>) และเป็นชนิดแพร่กระจาย/ขึ้นสมองได้มากที่สุด</p><ul><li>อายุ &lt;5 ปี → ให้ TPT</li><li>อายุ ≥5 ปี → IGRA หรือ TST ถ้าบวกพิจารณา TPT</li><li><b>ก่อนให้ TPT ทุกราย</b>: ซักอาการ ตรวจร่างกาย และ CXR ให้แน่ใจว่ายังไม่ป่วย</li></ul></div>
+      <div class="panel"><p>รายละเอียดสูตร (3HP, 1HP, 3HR, 4R, 6–9H) อยู่ในบทที่ 9</p><button class="go-tool" data-go="t-ltbi">→ ตัดสินใจ TPT</button><button class="go-tool" data-go="t-tpt">→ ขนาดยา TPT (มีขนาดเด็ก)</button></div>
+    </div>
+  </div>
+
+  <div class="block" id="pd-nb"><h3 class="sec"><span class="sn">7.6</span>ทารกที่คลอดจากมารดาเป็นวัณโรค<span class="pg">น.107–109</span></h3>
+    <p>ทารกติดเชื้อได้ตั้งแต่ในครรภ์หรือสำลักน้ำคร่ำ · เสี่ยงป่วยสูงถึง <b>50%</b> และเป็น TB สมอง/แพร่กระจายได้ 10–20% · TST ในทารกมักลบ ไม่ช่วยวินิจฉัย · ไม่จำเป็นต้องแยก congenital กับ postnatal แต่ต้องวินิจฉัยให้เร็ว</p>
+    <div class="panel fc-scroll"><div class="fc" style="min-width:760px">
+      <div class="node start" style="max-width:520px"><b>มารดาได้รับการรักษาเหมาะสม และตอบสนองดีมาแล้ว ≥3 เดือน?</b></div><div class="arr"></div>
+      <div class="split" style="grid-template-columns:1fr 1.5fr">
+        <div class="col"><span class="lbl y">ใช่</span><div class="node act">ประเมินทารก · CXR</div><div class="arr"></div><div class="node go">ปกติ → ให้ BCG</div><p class="note" style="text-align:center">ผิดปกติ → ประเมินเต็มรูปแบบ (ด้านขวา)</p></div>
+        <div class="col"><span class="lbl n">ไม่ใช่</span><div class="node act" style="text-align:left;max-width:100%"><b>ประเมินรก/เยื่อบุมดลูก</b> biopsy, AFB, เพาะเชื้อ ± PCR<br><b>ประเมินทารก</b> ซักประวัติ ตรวจร่างกายละเอียด · gastric content (หรือ ETT aspirate) AFB + เพาะเชื้อ ×3 วัน · CXR · พิจารณา LP · LFT · หนองจากแผล/หู · ± biopsy ตับ/ต่อมน้ำเหลือง · ± hemoculture mycobacterium</div><div class="arr"></div>
+          <div class="split" style="grid-template-columns:1.3fr 1fr"><div class="col"><span class="lbl">ปกติ</span><div class="node go" style="text-align:left">ฉีด <b>BCG</b> แล้วเริ่มยาป้องกัน <b>3–7 วันหลัง BCG</b><br>• มารดาไม่ดื้อยา: <b>H 10 มก./กก./วัน 9 เดือน</b> (± B6 1–2 มก./วัน)<br>• ดื้อ H แต่ไว R: <b>R 10–20 มก./กก./วัน 4 เดือน</b><br>• ดื้อ H และ R: ไม่แนะนำยาป้องกัน</div></div><div class="col"><span class="lbl n">เข้าได้/สงสัย TB</span><div class="node ref">รักษาด้วยยาต้านวัณโรค<b>ทันที</b> ไม่ต้องรอผลยืนยัน</div></div></div></div>
+      </div>
+    </div><p class="note">อาการ TB ในทารกไม่จำเพาะ: ไข้ ซึม ร้องกวน หายใจลำบาก ดูดนมไม่ได้ ตัวเหลือง ท้องอืด ต่อมน้ำเหลืองโต ตับม้ามโต</p></div>
+    <div class="callout ok"><b>นมแม่:</b> ไม่มีเชื้อ TB ในน้ำนม ยาที่ผ่านน้ำนมมีน้อยไม่เป็นอันตราย → <b>กินนมแม่ได้</b> · ถ้าแม่ยังแพร่เชื้อ (2 สัปดาห์แรกของการรักษา หรือเสมหะยังบวก) ให้<b>บีบนมให้กิน</b>แทนการเข้าเต้า และแยกทารกจากแม่ในช่วงนั้น</div>
+    <button class="go-tool" data-go="t-nb" style="align-self:flex-start">→ เครื่องมือ: ทารกของมารดาเป็น TB</button>
+  </div>
+
+  <div class="block" id="pd-bcg"><h3 class="sec"><span class="sn">7.7</span>วัคซีน BCG<span class="pg">น.109–110</span></h3>
+    <div class="grid3">
+      <div class="panel"><h4>พื้นฐาน</h4><ul><li>Live attenuated <i>M. bovis</i> · ผสมแล้วใช้ให้หมดใน 2 ชม.</li><li>0.1 mL intradermal ที่<b>ไหล่ซ้าย</b> (ไม่ฉีดสะโพก)</li><li>ทารกไทยทุกคนรวมน้ำหนักน้อย/คลอดก่อนกำหนด ฉีดก่อนกลับบ้าน (ยังนอน รพ. อยู่ยังไม่ฉีด)</li><li>ป้องกัน TB โดยรวม ~50% · TBM/miliary 60–80% · ฉีดหลายเข็มไม่ช่วยเพิ่ม</li><li>แผลอยู่ 3–4 สัปดาห์ ไม่ต้องทำแผล เช็ดรอบๆ ด้วยสำลีชุบน้ำต้มสุก</li></ul></div>
+      <div class="panel"><h4>ไม่เห็นแผลเป็น BCG</h4><ul><li>มีหลักฐานการฉีด หรือผู้ปกครองจำแผลได้ → ถือว่าได้แล้ว ไม่ต้องฉีดซ้ำ</li><li>อายุ &lt;6 เดือน ไม่แน่ใจ → <b>รอถึง 6 เดือน</b>จึงตัดสินใจ</li><li>≥6 เดือน ไม่มีแผลเป็นและไม่มีหลักฐาน → ฉีดทันที</li><li>เกิดต่างประเทศที่ไม่ฉีด BCG และจะอยู่ไทย ≥1 ปี → แนะนำฉีด</li><li>เด็กป่วย TB ปอดที่ไม่เคยได้ BCG หายแล้วไม่ต้องฉีด</li></ul></div>
+      <div class="panel"><h4>ข้อห้าม</h4><p>แผลติดเชื้อ/ไฟไหม้ตรงที่ฉีด · ภูมิคุ้มกันบกพร่อง/ได้ยากดภูมิ (รวมสเตียรอยด์) · HIV ที่มีอาการ · ตั้งครรภ์ · กำลังป่วยเฉียบพลัน · แพ้ส่วนประกอบวัคซีน</p></div>
+    </div>
+    <div class="tbl"><div class="cap">ผลข้างเคียงจาก BCG</div><table>
+      <tr><td><b>ต่อมน้ำเหลืองอักเสบ</b></td><td>2–6 เดือนหลังฉีด เกือบทั้งหมดก่อน 2 ปี · 95% ที่รักแร้ข้างเดียวกัน · <b>&lt;2 ซม.</b> ไม่ต้องรักษา หายเอง · <b>&gt;2 ซม. หรือเป็นหนอง</b> H และ/หรือ R 1–3 เดือน + เจาะดูดหนอง (ไม่ผ่าระบาย) · ใหญ่มาก/ไม่ตอบสนอง พิจารณาตัดต่อม ปรึกษาผู้เชี่ยวชาญ</td></tr>
+      <tr><td><b>BCG osteitis</b></td><td>สงสัยในเด็ก &lt;3 ปีที่ไม่มีประวัติสัมผัส TB · <b>ไม่ใช้ Z</b> (M. bovis ดื้อ Z ตามธรรมชาติ) · รักษาราว 12 เดือน ปรึกษาผู้เชี่ยวชาญ</td></tr>
+      <tr><td><b>Disseminated BCG</b></td><td>0.19–1.56 ต่อ 1 ล้านโด๊ส มักในภูมิคุ้มกันบกพร่องแต่กำเนิด · รักษาเหมือน TB แต่<b>ไม่ใช้ Z</b></td></tr></table></div>
+  </div>
+</section>
+
 <!-- ============ TB/HIV ============ -->
 <section class="page" id="hiv" role="tabpanel" hidden>
   <div class="chap-head"><div class="eyebrow">บทที่ 5.4.1 & 8</div><h2>การผสมผสานงานวัณโรคและเอชไอวี</h2></div>
@@ -729,6 +880,10 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <button data-tool="t-ltbi">ตัดสินใจ TPT</button>
     <button data-tool="t-tpt">ขนาดยา TPT</button>
     <button data-tool="t-out">ผลการรักษา</button>
+    <button data-tool="t-pdx">เด็ก: วินิจฉัย</button>
+    <button data-tool="t-pdose">เด็ก: ขนาดยา</button>
+    <button data-tool="t-pdr">เด็ก: ดื้อยา</button>
+    <button data-tool="t-nb">ทารกของมารดาเป็น TB</button>
   </div>
 
   <!-- DX -->
@@ -1002,10 +1157,95 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     </div>
     <div class="out" id="o-out"></div>
   </div>
+
+  <!-- PEDS DX -->
+  <div class="tool" id="t-pdx" hidden>
+    <div class="panel form">
+      <h3>เด็ก: เกณฑ์วินิจฉัยวัณโรค (7.1)</h3>
+      <div class="chk">
+        <label><input type="checkbox" id="px_c1" checked><span><b>เกณฑ์ 1</b> อาการ: ไข้เรื้อรัง &gt;7 วัน, น้ำหนักลด/ไม่ขึ้น, เบื่ออาหาร, ซีด, ไอ &gt;2 สัปดาห์</span></label>
+        <label><input type="checkbox" id="px_c2" checked><span><b>เกณฑ์ 2</b> ประวัติสัมผัส TB (ย้อนหลัง ~1 ปี) และ/หรือ TST/IGRA บวก</span></label>
+        <label><input type="checkbox" id="px_c3"><span><b>เกณฑ์ 3</b> CXR เข้ากับวัณโรค</span></label>
+        <label><input type="checkbox" id="px_mil"><span>CXR เป็น miliary</span></label>
+      </div>
+      <div class="fld"><label for="px_age">อายุ (ปี)</label><input type="number" id="px_age" min="0" max="18" step="0.5" value="4"></div>
+    </div>
+    <div class="out" id="o-pdx"></div>
+  </div>
+
+  <!-- PEDS DOSE -->
+  <div class="tool" id="t-pdose" hidden>
+    <div class="panel form">
+      <h3>เด็ก: ขนาดยาและสูตร (ตาราง 7.1)</h3>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="pz_wt">น้ำหนัก (กก.)</label><input type="number" id="pz_wt" min="2" max="80" step="0.1" value="15"></div>
+        <div class="fld"><label for="pz_age">อายุ (ปี)</label><input type="number" id="pz_age" min="0" max="18" step="0.5" value="4"></div>
+      </div>
+      <div class="fld"><span class="lab">ชนิดวัณโรค</span><select id="pz_type">
+        <option value="pul">วัณโรคปอด</option>
+        <option value="ln">วัณโรคต่อมน้ำเหลือง</option>
+        <option value="tbm">เยื่อหุ้มสมอง (TBM)</option>
+        <option value="mil">Miliary</option>
+        <option value="bone">กระดูกและข้อ</option>
+        <option value="hr">ดื้อ H อย่างเดียว (Hr-TB)</option></select></div>
+      <div class="chk">
+        <label><input type="checkbox" id="pz_hd">ใช้ H ขนาดสูง (15–20 มก./กก.)</label>
+        <label><input type="checkbox" id="pz_slow">ตอบสนองช้า (โพรงใหญ่, ต่อมไม่ยุบเมื่อครบ 6 เดือน, HIV)</label>
+        <label><input type="checkbox" id="pz_ster">ต้องให้สเตียรอยด์ (TBM, ต่อมน้ำเหลืองกดทางเดินหายใจ, เยื่อหุ้มหัวใจ, miliary, effusion, endobronchial)</label>
+      </div>
+    </div>
+    <div class="out" id="o-pdose"></div>
+  </div>
+
+  <!-- PEDS DR -->
+  <div class="tool" id="t-pdr" hidden>
+    <div class="panel form">
+      <h3>เด็ก: สงสัยวัณโรคดื้อยา (แผนภูมิ 7.1, ตาราง 7.3)</h3>
+      <div class="fld"><span class="lab">ผล Xpert MTB/RIF</span><select id="pr_x">
+        <option value="na">ไม่ได้ส่ง / ส่งไม่ได้</option>
+        <option value="rr">MTB detected, RIF resistance detected</option>
+        <option value="s">MTB detected, RIF not detected</option>
+        <option value="ind">MTB detected, RIF indeterminate</option>
+        <option value="nd">MTB not detected</option>
+        <option value="inv">Invalid / error</option></select></div>
+      <div class="fld"><span class="lab">ผู้ป่วยต้นตอ (index case)</span><select id="pr_i">
+        <option value="mdr">ยืนยัน MDR-TB</option>
+        <option value="sus">สงสัย MDR (ล้มเหลว / กลับเป็นซ้ำ / รักษาไม่หายเสียชีวิต)</option>
+        <option value="ds" selected>ไม่ดื้อยา / รักษาหาย / ไม่มีประวัติสัมผัส</option></select></div>
+      <div class="chk">
+        <label><input type="checkbox" id="pr_mild">เด็กอาการไม่รุนแรง</label>
+        <label><input type="checkbox" id="pr_nr">ไม่ตอบสนองต่อยาแนว 1 (กินยาครบ ไม่ขาดยา แยกภาวะอื่นแล้ว)</label>
+        <label><input type="checkbox" id="pr_dst">DST ของเด็กหรือต้นตอพบ MDR</label>
+      </div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="pr_wt">น้ำหนัก (กก.) — คำนวณยาแนว 2</label><input type="number" id="pr_wt" min="3" max="80" step="0.1" value="20"></div>
+        <div class="fld"><label for="pr_age">อายุ (ปี)</label><input type="number" id="pr_age" min="0" max="18" step="0.5" value="6"></div>
+      </div>
+    </div>
+    <div class="out" id="o-pdr"></div>
+  </div>
+
+  <!-- NEWBORN -->
+  <div class="tool" id="t-nb" hidden>
+    <div class="panel form">
+      <h3>ทารกที่คลอดจากมารดาเป็นวัณโรค (แผนภูมิ 7.2)</h3>
+      <div class="fld"><span class="lab">มารดารักษาเหมาะสมและตอบสนองดีมาแล้ว ≥3 เดือน</span><div class="seg"><label><input type="radio" name="nb_m" value="y">ใช่</label><label><input type="radio" name="nb_m" value="n" checked>ไม่ใช่ / ไม่แน่ใจ</label></div></div>
+      <div class="fld"><span class="lab">ผลประเมินทารก</span><div class="seg"><label><input type="radio" name="nb_e" value="pend" checked>ยังไม่ได้ประเมิน</label><label><input type="radio" name="nb_e" value="nl">ปกติ</label><label><input type="radio" name="nb_e" value="ab">ผิดปกติ / สงสัย TB</label></div></div>
+      <div class="fld"><span class="lab">การดื้อยาของมารดา</span><select id="nb_r">
+        <option value="none">ไม่มีหลักฐานดื้อยา</option><option value="hr">ดื้อ H แต่ไว R</option><option value="mdr">ดื้อ H และ R</option></select></div>
+      <div class="grid2" style="gap:10px">
+        <div class="fld"><label for="nb_wt">น้ำหนักทารก (กก.)</label><input type="number" id="nb_wt" min="0.5" max="10" step="0.05" value="3"></div>
+        <div class="fld"><label for="nb_d">วันฉีด BCG</label><input type="date" id="nb_d"></div>
+      </div>
+      <div class="fld"><span class="lab">มารดายังแพร่เชื้อ (รักษา &lt;2 สัปดาห์ หรือเสมหะบวก)</span><div class="seg"><label><input type="radio" name="nb_inf" value="y" checked>ใช่</label><label><input type="radio" name="nb_inf" value="n">ไม่</label></div></div>
+    </div>
+    <div class="out" id="o-nb"></div>
+  </div>
+
 </section>
 
 <footer>
-  <p><b>ที่มา:</b> กองวัณโรค กรมควบคุมโรค กระทรวงสาธารณสุข. แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564 (National Tuberculosis Control Programme Guideline, Thailand 2021). กรุงเทพฯ: กองวัณโรค; 2564. พิมพ์ครั้งที่ 2 กุมภาพันธ์ 2565. ISBN 978-616-11-4749-5 (Division of Tuberculosis. National Tuberculosis Control Programme Guideline, Thailand 2021. Bangkok: Division of Tuberculosis; 2021) · สรุปนี้ครอบคลุมบทที่ 3–6, 8, 9, 11 และการตรวจผู้สัมผัส (12.5.3) สำหรับผู้ใหญ่ (วัณโรคในเด็ก บทที่ 7 และกฎหมาย/การนิเทศ บทที่ 13–14 ไม่ได้สรุป) · คำแนะนำ WHO ที่ออกภายหลัง (สูตร 4 เดือน, BPaLM/BDLLfxC, Lfx TPT) แสดงแยกเป็นข้อมูลเสริมในแท็บ Flow</p>
+  <p><b>ที่มา:</b> กองวัณโรค กรมควบคุมโรค กระทรวงสาธารณสุข. แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564 (National Tuberculosis Control Programme Guideline, Thailand 2021). กรุงเทพฯ: กองวัณโรค; 2564. พิมพ์ครั้งที่ 2 กุมภาพันธ์ 2565. ISBN 978-616-11-4749-5 (Division of Tuberculosis. National Tuberculosis Control Programme Guideline, Thailand 2021. Bangkok: Division of Tuberculosis; 2021) · สรุปนี้ครอบคลุมบทที่ 3–9, 11 และการตรวจผู้สัมผัส (12.5.3) (กฎหมาย/การนิเทศ บทที่ 13–14 ไม่ได้สรุป) · คำแนะนำ WHO ที่ออกภายหลัง (สูตร 4 เดือน, BPaLM/BDLLfxC, Lfx TPT) แสดงแยกเป็นข้อมูลเสริมในแท็บ Flow</p>
   <p>Medisüem · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล · ใช้ประกอบดุลพินิจทางคลินิก ไม่ใช่สิ่งทดแทนแนวทางฉบับเต็ม</p>
 </footer>
 </main>
@@ -1359,8 +1599,81 @@ function outc(){
   $('#o-out').innerHTML=card(c,'Final outcome',v,`<p>${b}</p>${['Cured','Treatment completed'].includes(v)?'<p class="tag ok">นับเป็น treatment success</p>':''}`);
 }
 
+
+/* ---------- PEDS ---------- */
+function pdx(){
+  const c1=ck('px_c1'),c2=ck('px_c2'),c3=ck('px_c3'),mil=ck('px_mil'),age=num('px_age');
+  const send='<p>ส่ง <b>AFB smear + เพาะเชื้อ 3 ครั้ง</b> และ <b>Xpert MTB/RIF 1 ครั้ง</b> จากเสมหะ (เด็กโต) หรือ gastric aspirate ตอนเช้า (เด็กเล็ก)</p>';
+  let o;
+  if(c3&&mil){o=card('crit','CXR เป็น miliary','เริ่มยาต้านวัณโรคได้เลย',send+'<p>ทำ <b>LP ตรวจ CSF</b> (พบ TBM ร่วม ~50%) · CSF ผิดปกติ → 2HRZE/10HR</p><button class="go-tool" data-go="t-pdose">→ ขนาดยาเด็ก</button>')}
+  else if(c1&&c2&&c3){o=card('crit','ครบ 3 เกณฑ์','วินิจฉัย TB ทางคลินิก → เริ่มยา',send+'<p>เริ่ม <span class="rx">2HRZE/4HR</span> (ปรับตามชนิดโรค) · ก่อนเริ่ม: พิจารณา HIV, LFT/ไตถ้าเสี่ยง, ตรวจตาถ้ามีปัญหาเดิม</p><button class="go-tool" data-go="t-pdose">→ ขนาดยาเด็ก</button>')}
+  else if(c1&&c2&&!c3){o=card('warn','เกณฑ์ 1 + 2, CXR ปกติ','หาวัณโรคนอกปอด หรือปรึกษาผู้เชี่ยวชาญ','<p>ตรวจหาต่อมน้ำเหลือง, TBM, กระดูก, ช่องท้อง ฯลฯ · ส่งสิ่งส่งตรวจจากอวัยวะนั้นตรวจ AFB, เพาะเชื้อ, Xpert ± ADA</p>')}
+  else if(c1&&c3&&!c2){o=card('warn','เกณฑ์ 1 + 3, ไม่มีประวัติสัมผัส/TST-IGRA ลบ','รักษาปอดอักเสบทั่วไปก่อน แล้วประเมินซ้ำ','<p>ให้ยาสำหรับปอดอักเสบจากแบคทีเรีย ± mycoplasma</p><p>ส่ง <b>AFB smear + เพาะเชื้อ 3 ครั้ง</b> และ <b>Xpert MTB/RIF 1 ครั้ง</b> จากเสมหะ, gastric aspirate หรือน้ำในช่องเยื่อหุ้มปอด</p><p>ถ่าย <b>CXR ซ้ำหลังรักษา 1–2 สัปดาห์</b> → ไม่ดีขึ้น เริ่มรักษา TB</p>')}
+  else if(c2&&!c1&&!c3){o=card('ok','มีแค่ประวัติสัมผัส / ติดเชื้อ','ประเมินการติดเชื้อระยะแฝง (TPT)',`<p>ไม่มีอาการและ CXR ไม่ผิดปกติ → ${age!=null&&age<5?'อายุ &lt;5 ปี: <b>ให้ TPT ได้เลย</b>':'อายุ ≥5 ปี: IGRA/TST บวก → พิจารณา TPT'}</p><p class="note">ต้องแน่ใจว่าไม่มีอาการและ CXR ปกติก่อนเริ่ม TPT · ติดตามอาการ 1–2 ปีหลังสัมผัส</p><button class="go-tool" data-go="t-ltbi">→ ตัดสินใจ TPT</button>`)}
+  else if(c2&&c3&&!c1){o=card('warn','ไม่มีอาการ แต่ CXR ผิดปกติ + มีประวัติสัมผัส/ติดเชื้อ','ไม่ตรงกับกรณีในแนวทาง — ห้ามให้ TPT',send+'<p>ปรึกษาผู้เชี่ยวชาญวัณโรคเด็ก</p>')}
+  else if(c1&&!c2&&!c3){o=card('','มีอาการอย่างเดียว','หาสาเหตุอื่น และซักประวัติสัมผัสย้อนหลัง ~1 ปีให้ละเอียด','<p>พิจารณา CXR ± TST/IGRA ถ้ายังสงสัยวัณโรค</p>')}
+  else if(c3&&!c1&&!c2){o=card('warn','CXR ผิดปกติอย่างเดียว','ไม่ตรงกับกรณีในแนวทาง',send+'<p>ซักอาการและประวัติสัมผัสซ้ำ พิจารณา TST/IGRA และปรึกษาผู้เชี่ยวชาญ</p>')}
+  else o=card('','ยังไม่เข้าเกณฑ์','ไม่มีข้อมูลบ่งชี้วัณโรค','<p>ติ๊กเกณฑ์ที่เข้า</p>');
+  $('#o-pdx').innerHTML=o+'<p class="note">ภาพรวมเกณฑ์ตามข้อ 7.1 (น.98) · กรณีที่ไม่ได้ระบุในแนวทางแสดงเป็นคำแนะนำทั่วไปให้ปรึกษาผู้เชี่ยวชาญ</p>';
+}
+function pmg(w,lo,tg,hi,mx){const f=x=>Math.round(Math.min(mx,w*x));return{v:f(tg),lo:f(lo),hi:f(hi),cap:w*tg>mx}}
+function pdose(){
+  const w=num('pz_wt'),age=num('pz_age'),t=$('#pz_type').value;
+  if(!w){$('#o-pdose').innerHTML=card('','','กรอกน้ำหนัก','');return}
+  const H=ck('pz_hd')?pmg(w,15,15,20,900):pmg(w,10,10,15,300),R=pmg(w,10,15,20,600),Z=pmg(w,30,35,40,2000),E=pmg(w,15,20,25,1200);
+  const d=(k,x,u)=>`<div class="d"><div class="k">${k}</div><div class="v">${x.v}</div><div class="s">${x.lo===x.hi?'ถึงขนาดสูงสุดแล้ว':'ช่วง '+x.lo+'–'+x.hi+' มก.'+(x.cap?' · ถึงขนาดสูงสุด':'')}${u?' · '+u:''}</div></div>`;
+  const R1={pul:['2HRZE/4HR','วัณโรคปอด'],ln:['2HRZE/4HR','ต่อมน้ำเหลือง — ต่อมโต/ใหม่ระหว่างรักษา: เจาะดูดส่ง AFB (ลบ = ยาเดิมต่อ, บวก = เพาะเชื้อ + DST ใหม่) · ไม่ผ่าระบาย'],tbm:['2HRZE/10HR','TBM — บางท่านใช้ Eto แทน E · prednisolone 2 มก./กก./วัน'],mil:['ทำ LP ก่อน','Miliary — CSF ผิดปกติ ให้ 2HRZE/10HR · CSF ปกติ ใช้สูตรตามรอยโรค'],bone:['2HRZE/10HR','กระดูกและข้อ'],hr:['6(H)RZE-Lfx','ต้องยืนยันว่าไม่ดื้อ FQ · รู้ผลช่วง 2HRZE: เปลี่ยนและนับเวลาใหม่']};
+  let [reg,why]=R1[t];
+  if(ck('pz_slow')&&(t==='pul'||t==='ln'))reg='2HRZE/7–10HR';
+  let html=`<div class="res"><h4>สูตร · ${w} กก.</h4><div class="verdict">${reg}</div><p class="note">${why}${ck('pz_slow')&&(t==='pul'||t==='ln')?' · ยืดระยะต่อเนื่องเป็น 7–10 เดือน — ปรึกษาผู้เชี่ยวชาญ':''}</p><div class="dose">${d(ck('pz_hd')?'Isoniazid (ขนาดสูง)':'Isoniazid',H,'สูงสุด '+(ck('pz_hd')?900:300))}${d('Rifampicin',R,'สูงสุด 600')}${d('Pyrazinamide',Z,'สูงสุด 2,000')}${d('Ethambutol',E,'ไม่เกิน 25 มก./กก.')}`;
+  if(t==='hr'){const L=pmg(w,15,15,20,1500);html+=d('Levofloxacin',L,'สูงสุด 1,500')}
+  html+=`</div><p class="note">ค่าบน = ขนาดเป้าหมาย (H ${ck('pz_hd')?15:10}, R 15, Z 35, E 20 มก./กก.) · ใช้ FDC ตามน้ำหนักเมื่อมี · กินวันละครั้งตอนท้องว่าง ห้ามแบ่งยาชนิดเดียวกันหลายมื้อ</p></div>`;
+  if(ck('pz_ster')||t==='tbm'){
+    const tb=t==='tbm',p2=Math.min(60,Math.round(w*2)),p1=Math.min(60,Math.round(w*1));
+    html+=card('warn','Prednisolone',tb?`${Math.round(w*2)>60?'60 (สูงสุด)':Math.round(w*2)} มก./วัน (2 มก./กก.)`:`${p1}–${p2} มก./วัน (1–2 มก./กก.)`,`<p>เริ่มสัปดาห์แรก · ให้ 2–4 สัปดาห์ → ลดครึ่ง (~${Math.round((tb?p2:p2)/2)} มก.) 1–2 สัปดาห์ → ลดอีกครึ่ง (~${Math.round((tb?p2:p2)/4)} มก.) จนหยุด รวม 4–6 สัปดาห์ · สูงสุด 60 มก./วัน</p>${tb?'<p class="note">บท 7.2(6) ระบุ TBM 2 มก./กก./วัน โดยไม่ได้ระบุเพดาน ส่วนหลักการสเตียรอยด์ทั่วไปกำหนดสูงสุด 60 มก.</p>':''}`);
+  }
+  if(age!=null&&age<1)html+='<p class="callout">อายุ &lt;1 ปี: กลุ่มเสี่ยงโรคแพร่กระจาย/TBM สูงสุด — ประเมิน CSF ตามข้อบ่งชี้ และควรปรึกษากุมารแพทย์โรคติดเชื้อ</p>';
+  $('#o-pdose').innerHTML=html;
+}
+function pdr(){
+  const x=$('#pr_x').value,ix=$('#pr_i').value,mild=ck('pr_mild'),nr=ck('pr_nr'),dst=ck('pr_dst'),w=num('pr_wt')||20,age=num('pr_age');
+  const XM={rr:'ดื้อ R (ส่วนใหญ่เป็น MDR): ส่ง Xpert หรือ LPA ซ้ำ + เพาะเชื้อ/DST แบบ conventional',s:'ไม่น่าเป็น MDR: สูตรมาตรฐาน ปรับตาม DST',ind:'ทดสอบ R ไม่ได้ (พบน้อย): สูตรมาตรฐานไปก่อน รอ DST',nd:'อาจเป็น NTM: รอ culture และ identification · พิจารณาสูตรมาตรฐานไปก่อน',inv:'ส่ง Xpert ซ้ำทันที · ระหว่างนี้ให้สูตรมาตรฐาน (หรือสูตรเดิม) ไปก่อน รอ DST',na:'แนะนำส่ง Xpert ถ้าเก็บสิ่งส่งตรวจได้'};
+  let cls,v,b='';
+  if(nr||dst){cls='crit';v='เปลี่ยนเป็นสูตร MDR-TB';b=`<p>${dst?'DST ของเด็กหรือต้นตอพบ MDR':'ไม่ตอบสนองต่อยาแนว 1 ทั้งที่กินยาครบ'} → เปลี่ยน<b>ทั้งสูตร</b> (ห้ามเติมยาทีละขนาน)</p>`}
+  else if(x==='rr'&&ix==='ds'){cls='warn';v='Xpert ดื้อ R แต่ต้นตอไม่ดื้อยา';b=`<p>${mild?'ต้นตอยืนยันว่าเป็น TB ไม่ดื้อยาที่รักษาหายแล้ว + เด็กอาการไม่รุนแรง → <b>อาจให้ยาแนวที่ 1</b> และติดตามระหว่างรอผลเพาะเชื้อ':'เด็กไม่มีความเสี่ยงดื้อยาชัดเจน → ควรรอผลยืนยัน'}</p><p>ส่ง LPA/Xpert ซ้ำเพื่อยืนยัน (และดูการดื้อ H) + เพาะเชื้อ DST · ปรึกษาผู้เชี่ยวชาญเป็นรายๆ</p>`}
+  else if(x==='rr'||ix==='mdr'){cls='crit';v='น่าจะเป็น MDR-TB → สูตร MDR-TB';b='<p>ตรวจ Xpert/LPA + เพาะเชื้อ + DST (รวมยาแนว 2) · ระหว่างรอ จัดสูตรตาม DST ของ<b>ผู้ป่วยต้นตอ</b></p>'}
+  else if(ix==='sus'){cls='warn';v='อาจเป็น MDR-TB → ยาแนวที่ 1 + ติดตามใกล้ชิด';b='<p>เพาะเชื้อ + DST จาก<b>ทั้งเด็กและผู้ป่วยต้นตอ</b> · ไม่ตอบสนองหรือ DST พบ MDR → เปลี่ยนเป็นสูตร MDR</p>'}
+  else{cls='ok';v='น่าจะไม่เป็น MDR-TB → ยาแนวที่ 1';b='<p>ส่งเพาะเชื้อ · ติดตามการตอบสนอง</p>'}
+  b=`<p class="mono" style="font-size:13px">Xpert: ${XM[x]}</p>`+b;
+  let out=card(cls,'ผล (แผนภูมิ 7.1 + ตาราง 7.3)',v,b);
+  if(cls==='crit'){
+    const f=(lo,hi,mx)=>`${Math.round(Math.min(mx,w*lo))}–${Math.round(Math.min(mx,w*hi))}`;
+    const bdq=w<15?'ไม่มีขนาดในตาราง 7.1 (น้ำหนัก &lt;15 กก.)':w<30?'200 มก. OD ×2 สัปดาห์ → 100 มก. 3 ครั้ง/สัปดาห์ ×22 สัปดาห์':'400 มก. OD ×2 สัปดาห์ → 200 มก. 3 ครั้ง/สัปดาห์ ×22 สัปดาห์';
+    const dlm=age==null?'—':age<3?'ไม่มีขนาดในตาราง (อายุ &lt;3 ปี)':age<6?'25 มก. bid':age<12?'50 มก. bid':'100 มก. bid';
+    const rows=[['A','Levofloxacin',f(15,20,1500)+' มก. OD'],['A','Moxifloxacin',f(10,15,400)+' มก./วัน'],['A','Bedaquiline',bdq],['A','Linezolid',w>15?f(10,12,600)+' มก. OD':'ไม่มีขนาดในตาราง (≤15 กก.)'],['B','Clofazimine',f(2,5,100)+' มก. OD'],['B','Cycloserine',f(15,20,1000)+' มก./วัน แบ่ง 2'],['C','Delamanid',dlm],['C','Ethambutol',f(15,25,1200)+' มก. OD'],['C','Pyrazinamide',f(30,40,2000)+' มก. OD'],['C','Imipenem-cilastatin',f(60,100,1e9)+' มก./วัน แบ่ง 4 (+ amox/clav)'],['C','Meropenem',f(60,120,1e9)+' มก./วัน แบ่ง 3 (+ amox/clav)'],['C','Ethionamide',f(15,20,1000)+' มก./วัน แบ่ง 2–3'],['C','PAS',f(200,300,10000)+' มก./วัน แบ่ง 2–4'],['—','Amox/clavulanate',Math.round(w*50)+' มก./วัน แบ่ง 2 (คู่กับ carbapenem)']];
+    out+=card('','ขนาดยาแนว 2 สำหรับ '+w+' กก.'+(age!=null?' / '+age+' ปี':''),'',`<div class="tbl"><table><tr><th>กลุ่ม</th><th>ยา</th><th>ขนาด</th></tr>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="mono" style="font-size:13px">${r[2]}</td></tr>`).join('')}</table></div>
+    <ul><li><b>Longer:</b> intensive ≥4, continuation ≥3 ขนาน: 4 A/B · 3 A/B + 1–2 C · 2 A/B + ≥3 C</li><li><b>Shorter all-oral:</b> 6 Bdq + 4–6 Lfx/Mfx-Cfz-Z-E-H<sup>h</sup>-Eto / 5 Lfx/Mfx-Cfz-Z-E — ไม่เคยได้ยาแนว 2 &gt;1 เดือน และไม่ดื้อ FQ</li><li>โรคไม่รุนแรง (ต่อมน้ำเหลืองขั้วปอดอย่างเดียว) มักให้ยาสั้นกว่าผู้ใหญ่</li><li>ปรึกษาผู้เชี่ยวชาญวัณโรคเด็กทุกราย</li></ul><p class="note">ขนาดจากตาราง 7.1 (น.100–101) · Bdq ใช้อายุ ≥6 ปี และ Dlm ≥3 ปี ตามบทที่ 6</p>`);
+  }
+  $('#o-pdr').innerHTML=out;
+}
+function nb(){
+  const m=rv('nb_m'),e=rv('nb_e'),r=$('#nb_r').value,w=num('nb_wt')||3,bd=pd($('#nb_d').value)||new Date(),inf=rv('nb_inf')==='y';
+  let out;
+  if(e==='ab'){out=card('crit','ทารกผิดปกติ / สงสัย TB','เริ่มยาต้านวัณโรคทันที','<p>ไม่ต้องรอผลยืนยัน · ปรึกษากุมารแพทย์โรคติดเชื้อ · เตรียมตรวจ LP, gastric aspirate ×3 วัน, LFT ตามแผนภูมิ</p><button class="go-tool" data-go="t-pdose">→ ขนาดยาเด็ก</button>')}
+  else if(e==='pend'){out=card('warn','ขั้นถัดไป',m==='y'?'ประเมินทารก + CXR':'ประเมินรก/เยื่อบุมดลูก และประเมินทารกเต็มรูปแบบ',m==='y'?'<p>ซักประวัติ ตรวจร่างกาย CXR → ปกติ ให้ BCG · ผิดปกติ ประเมินเต็มรูปแบบ</p>':'<ul><li>รก/เยื่อบุมดลูก: biopsy, AFB, เพาะเชื้อ ± PCR</li><li>ทารก: ซักประวัติ ตรวจร่างกายละเอียด · gastric content (หรือ ETT aspirate) AFB + เพาะเชื้อ ×3 วัน · CXR · พิจารณา LP (cell, protein, sugar, culture, TB PCR) · LFT · หนองจากแผล/หู · ± biopsy ตับ/ต่อมน้ำเหลือง · ± hemoculture mycobacterium</li></ul>')}
+  else if(m==='y'){out=card('ok','มารดารักษาดี ≥3 เดือน + ทารกปกติ','ให้ BCG','<p>ถือว่าทารกไม่เสี่ยงต่อการติดเชื้อ ไม่ต้องให้ยาป้องกันตามแผนภูมิ 7.2</p>')}
+  else{
+    const s=addD(bd,3),s2=addD(bd,7);
+    if(r==='mdr')out=card('warn','ทารกปกติ · มารดาดื้อ H และ R','ฉีด BCG · ไม่แนะนำยาป้องกัน','<p>ติดตามอาการใกล้ชิด ปรึกษาผู้เชี่ยวชาญ</p>');
+    else if(r==='hr'){const lo=Math.round(w*10),hi=Math.round(w*20);out=card('ok','ทารกปกติ · มารดาดื้อ H ไว R','BCG → R '+lo+'–'+hi+' มก./วัน 4 เดือน',`<p>R 10–20 มก./กก./วัน · เริ่ม <b>${fd(s)} – ${fd(s2)}</b> (3–7 วันหลัง BCG) · ครบ 4 เดือน ≈ <b>${fd(addM(s,4))}</b></p>`)}
+    else{const h=Math.round(w*10);out=card('ok','ทารกปกติ · ไม่มีหลักฐานดื้อยา','BCG → H '+h+' มก./วัน 9 เดือน',`<p>H 10 มก./กก./วัน (น้ำหนักเพิ่มขึ้น ปรับขนาดตามน้ำหนัก) · เริ่ม <b>${fd(s)} – ${fd(s2)}</b> (3–7 วันหลัง BCG เพราะ H อาจลดประสิทธิภาพวัคซีน) · ครบ 9 เดือน ≈ <b>${fd(addM(s,9))}</b></p><p>อาจให้ pyridoxine 1–2 มก./วัน</p>`)}
+  }
+  out+=card(inf?'warn':'ok','การให้นมและการแยก',inf?'บีบนมแม่ให้กิน + แยกทารกช่วงแพร่เชื้อ':'กินนมแม่จากเต้าได้',`<p>${inf?'มารดายังแพร่เชื้อ (2 สัปดาห์แรกของการรักษา หรือเสมหะบวก) → ให้ expressed milk แทนการเข้าเต้า และแยกทารกในช่วงนี้':'ไม่มีเชื้อในน้ำนม ยาต้าน TB ในน้ำนมน้อยมาก ไม่อันตรายต่อทารก'}</p>`);
+  $('#o-nb').innerHTML=out;
+}
+
 /* ---------- wire ---------- */
-const T={'t-dx':dx,'t-reg':reg,'t-drclass':drc,'t-dose':dose,'t-sched':sched,'t-dili':dili,'t-rash':rash,'t-int':intr,'t-short':short,'t-long':longr,'t-art':art,'t-ltbi':ltbi,'t-tpt':tpt,'t-out':outc};
+const T={'t-dx':dx,'t-reg':reg,'t-drclass':drc,'t-dose':dose,'t-sched':sched,'t-dili':dili,'t-rash':rash,'t-int':intr,'t-short':short,'t-long':longr,'t-art':art,'t-ltbi':ltbi,'t-tpt':tpt,'t-out':outc,'t-pdx':pdx,'t-pdose':pdose,'t-pdr':pdr,'t-nb':nb};
 Object.entries(T).forEach(([id,fn])=>{const el=document.getElementById(id);el.addEventListener('input',fn);el.addEventListener('change',fn);try{fn()}catch(e){console.error(id,e)}});
 
 const h=(location.hash||'').slice(1);
