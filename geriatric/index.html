@@ -288,7 +288,7 @@ nav.toc a{scroll-margin-inline:40px}
   <div class="sec-num">03</div>
   <h2>Frailty และ Sarcopenia</h2>
   <div class="grid2">
-    <div class="card c-warn"><h4>Frailty: วัดยังไง</h4><ul><li><b>Clinical Frailty Scale (CFS v2)</b> 1–9 ดูจากสภาพ<b>ก่อนป่วยเฉียบพลัน 2 สัปดาห์</b>: 1–3 แข็งแรง · <b>4 เปราะบางเล็กน้อยมาก</b> (ช้าลง เหนื่อยง่าย แต่ไม่ต้องพึ่งคน) · 5 พึ่งคนใน IADL · 6 พึ่งใน ADL บางอย่าง · 7 พึ่งทั้งหมด · 8 ใกล้ระยะท้าย · 9 ป่วยระยะท้าย (คาดชีวิต &lt;6 เดือน)</li><li><b>Fried phenotype</b> (5 ข้อ): น้ำหนักลดไม่ตั้งใจ ≥4.5 kg/ปี · เหนื่อยล้า · grip อ่อน · เดินช้า · กิจกรรมน้อย → ≥3 = frail, 1–2 = pre-frail</li><li><b>FRAIL scale</b> (ใช้ในคู่มือไทย): Fatigue · Resistance (ขึ้นบันได 10 ขั้น) · Ambulation (เดิน 100 m) · Illness (&gt;5 โรค) · Loss of weight (&gt;5%/ปี) → ≥3 = frail</li></ul></div>
+    <div class="card c-warn"><h4>Frailty: วัดยังไง</h4><ul><li><b>Clinical Frailty Scale (CFS v2)</b> 1–9 ดูจากสภาพ<b>ก่อนป่วยเฉียบพลัน 2 สัปดาห์</b>: 1–3 แข็งแรง · <b>4 เปราะบางเล็กน้อยมาก</b> (ช้าลง เหนื่อยง่าย แต่ไม่ต้องพึ่งคน) · 5 พึ่งคนใน IADL · 6 พึ่งใน ADL บางอย่าง · 7 พึ่งทั้งหมด · 8 ใกล้ระยะท้าย · 9 ป่วยระยะท้าย (คาดชีวิต &lt;6 เดือน) · <b>หน้านี้ถือ CFS ≥4 = frail</b> (บางงานวิจัยใช้ ≥5) เพื่อให้เริ่มป้องกันได้เร็ว</li><li><b>Fried phenotype</b> (5 ข้อ): น้ำหนักลดไม่ตั้งใจ ≥4.5 kg/ปี · เหนื่อยล้า · grip อ่อน · เดินช้า · กิจกรรมน้อย → ≥3 = frail, 1–2 = pre-frail</li><li><b>FRAIL scale</b> (ใช้ในคู่มือไทย): Fatigue · Resistance (ขึ้นบันได 10 ขั้น) · Ambulation (เดิน 100 m) · Illness (&gt;5 โรค) · Loss of weight (&gt;5%/ปี) → ≥3 = frail</li></ul></div>
     <div class="card c-ok"><h4>Frailty: ทำอะไร (ICFSR)</h4><ul><li>คัดกรองผู้สูงอายุทุกคนด้วยเครื่องมือที่ validated <span class="rec s1">strong</span></li><li>ผลบวก → ประเมินเชิงลึก หาสาเหตุที่แก้ได้: <b>ยาหลายตัว, sarcopenia, น้ำหนักลด, เหนื่อยล้าจาก ซึมเศร้า/ซีด/ความดันต่ำ/hypothyroid/ขาด B12</b> <span class="rec s1">strong</span></li><li><b>การรักษาหลัก: ออกกำลังกายหลายรูปแบบ มี resistance training</b> <span class="rec s1">strong</span></li><li>เสริมโปรตีน/พลังงานเมื่อน้ำหนักลดหรือขาดอาหาร <span class="rec">conditional</span></li><li>ช่วยด้านสังคมตามที่ขาด</li><li>ไม่มียารักษา frailty · ไม่แนะนำวิตามินดี/ฮอร์โมนแบบ routine</li></ul></div>
   </div>
   <h3>Sarcopenia — AWGS 2019 (อายุ ≥60–65 ปี)</h3>
@@ -892,7 +892,7 @@ function frailty(){
   const CFS={1:'แข็งแรงมาก',2:'แข็งแรง',3:'คุมโรคได้ดี',4:'เปราะบางเล็กน้อยมาก',5:'เปราะบางเล็กน้อย',6:'เปราะบางปานกลาง',7:'เปราะบางรุนแรง',8:'เปราะบางรุนแรงมาก',9:'ป่วยระยะท้าย'};
   if(cfs===null)L.push('<b>CFS</b>: เลือกระดับจากสภาพก่อนป่วย 2 สัปดาห์');
   else{let a=cfs<=3?'ส่งเสริมออกกำลังกาย โปรตีน วัคซีน คัดกรองซ้ำปีละครั้ง':cfs===4?'ระยะที่แก้ได้มาก: resistance + ทรงตัว โปรตีน ทบทวนยา ป้องกันล้ม':cfs<=6?'ประเมิน CGA เต็ม · ทบทวน/ลดยา · ป้องกันล้ม · ผู้ดูแล · ACP':cfs<=8?'เน้นเป้าหมายของผู้ป่วยและคุณภาพชีวิต · ลดยาที่ไม่จำเป็น · ACP · ADL ≤11 → LTC':'ดูแลแบบประคับประคอง · ACP';
-    L.push(`<b>CFS ${cfs}</b> ${CFS[cfs]}${cfs>=5?' (frail)':''} → ${a}`);}
+    L.push(`<b>CFS ${cfs}</b> ${CFS[cfs]}${cfs>=4?' (frail — หน้านี้ถือ CFS ≥4 เป็น frail)':''} → ${a}`);}
   const sf=['sS','sA','sR','sC','sF'].reduce((s,id)=>s+(+v(id)),0);
   L.push(`<b>SARC-F = ${sf}/10</b> ${sf>=4?'→ <b>ผลบวก</b> (สงสัย sarcopenia)':'→ ลบ'}`);
   const sex=v('sSex'),age=num('sAge'),calf=num('sCalf'),grip=num('sGrip'),gs=num('sGs'),ch=num('sCh'),asm=num('sAsm'),meth=v('sMeth');
