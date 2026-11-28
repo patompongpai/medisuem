@@ -1,0 +1,1005 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cancer screening · การคัดกรองมะเร็งในผู้ใหญ่</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Preventive medicine · สปสช. 2569 · สถาบันมะเร็งแห่งชาติ · THASL 2568 · CASCAP · USPSTF 2018–2024 · ACS 2023/2025 · WHO 2021</div>
+  <h1>การคัดกรองมะเร็งในผู้ใหญ่<br>Adult cancer screening: Thai programme vs USPSTF</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · หน้านี้ตอบ 5 คำถามของมะเร็งแต่ละชนิด: <b>ใครควรตรวจ ตรวจอายุเท่าไรถึงเท่าไร ตรวจด้วยอะไร ตรวจซ้ำเมื่อไร และผลบวกแล้วทำอะไรต่อ</b> · เทียบสิทธิประโยชน์ไทย (สปสช.) กับแนวทางสากล · มีเครื่องมือทำแผนคัดกรองรายคน คำนวณ pack-year แปลผล HPV/FIT/BI-RADS/Lung-RADS/HCC และคำนวณอายุเริ่มส่องกล้องเมื่อมีญาติเป็นมะเร็งลำไส้</p>
+  <p class="cite">อ้างอิงหลัก: สปสช. สิทธิประโยชน์คัดกรองมะเร็ง (ปากมดลูก HPV DNA 30–59 ปี (บางเอกสารเขียน 30–60) ทุก 5 ปี · FIT 50–70 ปี ทุก 2 ปี · OV-RDT · mammogram กลุ่มญาติสายตรง 2567) · สถาบันมะเร็งแห่งชาติ แนวทาง HPV primary screening (วารสารโรคมะเร็ง 2568) · แนวทางเวชปฏิบัติโรคตับแข็ง สมาคมโรคตับฯ 2568 (HCC surveillance อ้างแนวทางการดูแลมะเร็งตับในประเทศไทย 2564) · แนวทางไวรัสตับอักเสบ บี/ซี สำหรับแพทย์เวชปฏิบัติทั่วไป 2569 · CASCAP (BMC Cancer 2015) · USPSTF: cervical 2018 (draft 2024), CRC 2021, lung 2021, breast 2024, prostate 2018 · ACS lung 2023 และ cervical 2025 · AASLD HCC 2023 · ACR Lung-RADS v2022 · BI-RADS · WHO cervical screening 2021 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ไทย 3 อย่างที่ต้องทำ</b>HPV DNA หญิง 30–59 ปี (บางเอกสารเขียน 30–60) ทุก 5 ปี · FIT 50–70 ทุก 2 ปี · ตับ: US ± AFP ทุก 6 เดือนในตับแข็ง/HBV เสี่ยงสูง</div>
+    <div class="stage" style="--c:var(--warn)"><b>ผลบวก = ต้องไปต่อ</b>FIT บวก → colonoscopy โดยเร็ว (เป้าหมายในทางปฏิบัติ ~3 เดือน) ห้ามตรวจ FIT ซ้ำ · HPV 16/18 → colposcopy</div>
+    <div class="stage" style="--c:var(--danger)"><b>ไม่ใช่ทุกการตรวจคือการคัดกรอง</b>CA-125, CEA, CA19-9, US ไทรอยด์, PET/CT ทั้งตัว ในคนไม่มีอาการ — ไม่แนะนำ</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#principle">หลักการ</a><a href="#summary">ตารางสรุป</a><a href="#cervix">ปากมดลูก</a><a href="#breast">เต้านม</a><a href="#crc">ลำไส้ใหญ่</a><a href="#lung">ปอด</a><a href="#liver">ตับและท่อน้ำดี</a><a href="#prostate">ต่อมลูกหมาก</a><a href="#others">อื่นๆ และที่ไม่แนะนำ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="principle" class="col">
+  <div class="sec-num">01</div>
+  <h2>หลักการคัดกรอง: ใช้กับใคร และมีโทษอะไร</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>คัดกรอง = คนที่ไม่มีอาการ</h4><ul>
+      <li>มีอาการหรือสัญญาณเตือน (ก้อน เลือดออกผิดปกติ ถ่ายเป็นเลือด น้ำหนักลด ซีด ไอเป็นเลือด) → <b>ส่งตรวจวินิจฉัย ไม่ใช่คัดกรอง</b> · เช่น ถ่ายเป็นเลือด → colonoscopy ไม่ใช่ FIT</li>
+      <li>แยก <b>ความเสี่ยงทั่วไป (average risk)</b> กับ <b>ความเสี่ยงสูง</b> (ประวัติครอบครัว ยีน BRCA/Lynch ฉายแสงหน้าอก HBV/ตับแข็ง พยาธิใบไม้ตับ) เพราะอายุเริ่ม วิธีตรวจ และความถี่ต่างกัน</li>
+      <li>ประโยชน์มักเห็นหลัง <b>~10 ปี</b> → ผู้ที่คาดว่าจะมีชีวิตอยู่ไม่ถึง ~10 ปี ส่วนใหญ่ไม่ได้ประโยชน์</li>
+      <li>การคัดกรองที่ได้ผลต้อง <b>ตามผลบวกให้ครบ</b> — ถ้าส่งต่อไม่ได้ อย่าเริ่ม</li></ul></div>
+    <div class="card c-warn"><h4>โทษของการคัดกรอง</h4><ul>
+      <li><b>ผลบวกลวง</b> → วิตกกังวล ตรวจเพิ่ม เจาะชิ้นเนื้อ (เช่น LDCT ในไทยพบปุ่มจากวัณโรค/แผลเป็นบ่อย)</li>
+      <li><b>Overdiagnosis</b> = พบมะเร็งที่ไม่มีวันทำอันตรายตลอดชีวิต → ผ่าตัด/ฉายแสงโดยไม่จำเป็น (ชัดสุดใน <b>ต่อมลูกหมาก ไทรอยด์</b> รองลงมาเต้านม ปอด)</li>
+      <li>ภาวะแทรกซ้อนจากหัตถการ: colonoscopy (ลำไส้ทะลุ เลือดออกหลังตัดติ่งเนื้อ — พบน้อย) · biopsy · รังสีสะสม</li>
+      <li>ค่าใช้จ่ายและเวลา ที่ดึงทรัพยากรจากการคัดกรองที่ได้ผลจริง</li></ul></div>
+  </div>
+  <div class="box key"><b>หน้านี้ยึดอะไร</b>ใช้ <b>สิทธิประโยชน์ไทย (สปสช.) และแนวทางไทย</b> เป็นหลักสำหรับการทำงานจริงใน รพ. รัฐ · แสดง <b>USPSTF/ACS</b> คู่กันเพื่อความรู้และสำหรับผู้ป่วยที่ต้องการตรวจนอกสิทธิ · ข้อความที่ไม่ได้มาจากแนวทางหลักติด <span class="tag add">เสริม</span> · บริบทไทยติด <span class="tag th">ไทย</span> · ข้อมูลใหม่ติด <span class="tag up">2025</span>/<span class="tag up">2026</span></div>
+  <p class="muted" style="font-size:.88rem">ระดับคำแนะนำ USPSTF: <span class="rec s1">A</span> ประโยชน์สูงแน่นอน · <span class="rec s1">B</span> ประโยชน์ปานกลาง–สูง · <span class="rec">C</span> เลือกเป็นรายบุคคล · <span class="rec no">D</span> ไม่แนะนำ (โทษ ≥ ประโยชน์) · <span class="rec">I</span> หลักฐานไม่พอ</p>
+</section>
+
+<section id="summary" class="col">
+  <div class="sec-num">02</div>
+  <h2>ตารางสรุป: ไทย vs USPSTF (คนความเสี่ยงทั่วไป)</h2>
+  <div class="tbl"><table>
+    <tr><th>มะเร็ง</th><th>ไทย (สปสช./แนวทางไทย) <span class="tag th">ไทย</span></th><th>USPSTF / ACS</th></tr>
+    <tr><td><b>ปากมดลูก</b></td><td>หญิง <b>30–59 ปี</b> (บางเอกสารเขียน 30–60): <b>HPV DNA ทุก 5 ปี</b> (เก็บเองได้ — HPV self-sampling) · ที่ยังไม่มี HPV ใช้ Pap/VIA · อายุ 15–29 ปีที่เสี่ยงสูงตรวจได้</td><td>USPSTF 2018 <span class="rec s1">A</span>: 21–29 Pap ทุก 3 ปี · 30–65 HPV ทุก 5 ปี (หรือ co-test ทุก 5 ปี หรือ Pap ทุก 3 ปี) · draft 2024 ให้ HPV primary เป็นทางหลักและรวม self-collection · ACS 2025: เริ่ม 25 ปี HPV ทุก 5 ปี (เก็บเอง → ทุก 3 ปี)</td></tr>
+    <tr><td><b>ลำไส้ใหญ่</b></td><td><b>50–70 ปี: FIT ทุก 2 ปี</b> ทุกสิทธิ · FIT บวก → colonoscopy</td><td>USPSTF 2021: 45–49 <span class="rec s1">B</span>, 50–75 <span class="rec s1">A</span>, 76–85 <span class="rec">C</span> · FIT ทุกปี หรือ colonoscopy ทุก 10 ปี (และทางเลือกอื่น)</td></tr>
+    <tr><td><b>เต้านม</b></td><td>ฝึกสังเกต/คลำเต้านมตนเองตั้งแต่ 20 ปี · ตรวจโดยบุคลากร (CBE) · <b>mammogram + US ปีละครั้งในหญิง ≥40 ปีที่มีญาติสายตรงเป็นมะเร็งเต้านม</b> (สปสช. 2567) · ไม่มีโปรแกรม mammogram ทั้งประชากร</td><td>USPSTF 2024 <span class="rec s1">B</span>: <b>mammogram ทุก 2 ปี อายุ 40–74</b> · ≥75 ปี <span class="rec">I</span></td></tr>
+    <tr><td><b>ปอด</b></td><td>ยังไม่มีโปรแกรม LDCT ระดับชาติ/ไม่อยู่ในสิทธิคัดกรอง — ใช้เกณฑ์สากลรายบุคคล</td><td>USPSTF 2021 <span class="rec s1">B</span>: <b>50–80 ปี ≥20 pack-years ยังสูบหรือเลิก &lt;15 ปี</b> → LDCT ทุกปี · ACS 2023: ไม่จำกัดจำนวนปีที่เลิก</td></tr>
+    <tr><td><b>ตับ (HCC)</b></td><td><b>ตับแข็งทุกราย</b> (ยกเว้น Child C ที่ไม่ปลูกถ่าย) และ <b>HBV เสี่ยงสูง</b>: US ± AFP ทุก 6 เดือน (แนวทาง GP ใช้ 6–12 เดือน)</td><td>ไม่ใช่การคัดกรองประชากร — เป็น surveillance กลุ่มเสี่ยง (AASLD 2023: US + AFP ทุก 6 เดือน)</td></tr>
+    <tr><td><b>ท่อน้ำดี (CCA)</b></td><td>อีสาน/เคยเป็นพยาธิใบไม้ตับ/กินปลาดิบ: <b>OV-RDT ตรวจปัสสาวะปีละครั้ง</b> (≥15 ปี) · <b>CASCAP: US ช่องท้องในคนอีสาน ≥40 ปี</b> ปีละครั้ง</td><td>ไม่มีคำแนะนำ (เป็นปัญหาเฉพาะลุ่มน้ำโขง)</td></tr>
+    <tr><td><b>ต่อมลูกหมาก</b></td><td>ไม่มีโปรแกรมระดับประชากร</td><td>USPSTF 2018: 55–69 ปี <span class="rec">C</span> <b>ตัดสินใจร่วม</b> · ≥70 ปี <span class="rec no">D</span></td></tr>
+    <tr><td><b>ช่องปาก</b></td><td>สปสช.: ตรวจช่องปากหารอยโรค อายุ ≥40 ปี ปีละครั้ง (เน้นสูบบุหรี่ ดื่มสุรา เคี้ยวหมาก)</td><td>USPSTF <span class="rec">I</span></td></tr>
+  </table></div>
+</section>
+
+<section id="cervix" class="col">
+  <div class="sec-num">03</div>
+  <h2>มะเร็งปากมดลูก</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใคร · เมื่อไร · ตรวจอะไร <span class="tag th">ไทย</span></h4><ul>
+      <li><b>หญิงไทย 30–59 ปี ทุกสิทธิ</b> (บางเอกสาร สปสช. เขียน 30–60 ปี) · <b>HPV DNA ทุก 5 ปี</b> ฟรี</li>
+      <li><b>HPV self-sampling</b>: ผู้หญิงเก็บตัวอย่างช่องคลอดเอง (ไม่ต้องขึ้นขาหยั่ง) รับชุดตรวจที่หน่วยบริการ ร้านยา หรือจองผ่านแอปเป๋าตัง · ความแม่นยำใกล้เคียงแพทย์เก็บ</li>
+      <li>อายุ 15–29 ปีที่เสี่ยงสูง (มีเพศสัมพันธ์เร็ว หลายคู่ ไม่ใช้ถุงยาง) ตรวจได้ตามสิทธิ</li>
+      <li>ที่ยังไม่มี HPV: Pap smear หรือ VIA (ถ้าใช้ Pap อย่างเดียว สากลแนะนำทุก 3 ปี)</li>
+      <li><b>หญิงติดเชื้อ HIV/กดภูมิ</b>: เริ่มเร็วและถี่กว่า (WHO: HPV DNA ตั้งแต่ 25 ปี ทุก 3–5 ปี) — ตามแนวทาง HIV</li></ul></div>
+    <div class="card c-vio"><h4>สากล</h4><ul>
+      <li><b>USPSTF 2018</b> (ฉบับสุดท้าย): ไม่ตรวจ &lt;21 ปี <span class="rec no">D</span> · 21–29 Pap ทุก 3 ปี · 30–65 HPV ทุก 5 ปี / co-test ทุก 5 ปี / Pap ทุก 3 ปี <span class="rec s1">A</span></li>
+      <li><b>USPSTF draft ธ.ค. 2024</b>: 30–65 <b>HPV primary ทุก 5 ปีเป็นทางหลัก</b> รวมตัวอย่างที่ผู้ป่วยเก็บเอง (ยังไม่ออกฉบับสุดท้าย) · HRSA (ม.ค. 2026) รับรอง self-collection แล้ว <span class="tag up">2026</span></li>
+      <li><b>ACS 2025</b>: เริ่ม 25 ปี · HPV primary ทุก 5 ปี · <b>เก็บเองผลลบ → ตรวจซ้ำทุก 3 ปี</b> · หยุดที่ 65 ปีเมื่อ HPV/co-test ลบที่อายุ 60 และ 65 <span class="tag up">2025</span></li>
+      <li><b>WHO 2021</b>: HPV DNA ตั้งแต่ 30 ปี ทุก 5–10 ปี · screen-and-treat / screen-triage-treat · เป้าหมาย 90-70-90 (วัคซีน 90% · คัดกรอง 70% · รักษา 90%)</li></ul></div>
+  </div>
+  <h3>ผล HPV DNA แล้วทำอะไรต่อ <span class="tag th">ไทย</span></h3>
+  <div class="tbl"><table>
+    <tr><th>ผล</th><th>ขั้นต่อไป</th></tr>
+    <tr><td>HPV ลบ</td><td>ตรวจซ้ำอีก <b>5 ปี</b></td></tr>
+    <tr><td><b>HPV 16 หรือ 18 บวก</b></td><td><b>ส่ง colposcopy เลย</b> (ไม่ต้องรอ Pap)</td></tr>
+    <tr><td>HPV ชนิดเสี่ยงสูงอื่น (non-16/18) บวก</td><td><b>Cytology triage</b> (LBC/Pap — จากตัวอย่างเดิม หรือเก็บใหม่โดยบุคลากรถ้าเป็นชุดเก็บเอง)<br>• ปกติ (NILM) → <b>ตรวจซ้ำใน 1 ปี</b><br>• <b>ASC-US ขึ้นไป</b> → colposcopy</td></tr>
+    <tr><td>Colposcopy พบ CIN2+</td><td>LEEP/cone หรือ ablation ตามสูตินรีแพทย์ · ติดตามด้วย HPV ± cytology ต่อเนื่อง (ASCCP: ≥25 ปีหลังรักษา แม้เลย 65 ปี)</td></tr>
+  </table></div>
+  <div class="box warn"><b>หยุดตรวจเมื่อไร</b>อายุ &gt;65 ปีที่ <b>ตรวจผ่านมาเพียงพอและผลลบ</b> (เช่น HPV/co-test ลบ 2 ครั้งติดใน 10 ปี หรือ Pap ลบ 3 ครั้งติด ครั้งล่าสุดภายใน 3–5 ปี) และไม่เคยมี CIN2+ <span class="rec no">D</span> · <b>ตัดมดลูกพร้อมปากมดลูกจากโรคไม่ใช่มะเร็ง และไม่เคยมี CIN2+</b> → ไม่ต้องตรวจ <span class="rec no">D</span> · ถ้าเหลือปากมดลูก (subtotal) → ตรวจต่อตามปกติ</div>
+  <p class="muted" style="font-size:.88rem">วัคซีน HPV ไม่ทำให้เลิกคัดกรอง — ผู้ที่ได้วัคซีนแล้วยังคัดกรองตามปกติ <span class="tag add">เสริม</span> · ข้อบ่งชี้และตารางวัคซีน HPV ดู <a href="../adult-vaccine/index.html#zh">วัคซีนผู้ใหญ่</a></p>
+</section>
+
+<section id="breast" class="col">
+  <div class="sec-num">04</div>
+  <h2>มะเร็งเต้านม</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ไทย <span class="tag th">ไทย</span></h4><ul>
+      <li><b>ตรวจเต้านมด้วยตนเอง (BSE)</b> เดือนละครั้งตั้งแต่ 20 ปี (หลังประจำหมด 3–7 วัน) — หลักฐาน RCT ไม่ลดการตาย จึงเน้นเป็น <b>breast awareness</b> (รู้จักเต้านมตัวเอง ผิดปกติรีบมา)</li>
+      <li><b>CBE</b> โดยบุคลากร: สถาบันมะเร็งแห่งชาติแนะนำปีละครั้งตั้งแต่ 40 ปี</li>
+      <li><b>Mammogram</b>: สถาบันมะเร็งฯ แนะนำเริ่ม 40 ปี ทุก 1–2 ปี (± US ถ้าเต้านมแน่น) · แต่ <b>สิทธิ สปสช.</b> ครอบคลุม <b>mammogram + US ปีละครั้งเฉพาะหญิง ≥40 ปีที่มีญาติสายตรงเป็นมะเร็งเต้านม</b> (มติ ม.ค. 2567)</li>
+      <li><b>ตรวจยีน BRCA1/2</b> ฟรี (เริ่ม 15 ม.ค. 2567) สำหรับผู้ป่วยมะเร็งเต้านมที่เสี่ยงสูง และญาติสายตรงของผู้ที่พบยีนกลายพันธุ์ อายุ ≥18 ปี</li></ul></div>
+    <div class="card c-vio"><h4>สากล</h4><ul>
+      <li><b>USPSTF 2024</b> <span class="rec s1">B</span>: <b>mammogram ทุก 2 ปี อายุ 40–74</b> (เดิม 50) · ≥75 ปี <span class="rec">I</span> · เต้านมแน่น: US/MRI เสริม <span class="rec">I</span></li>
+      <li>ACS: 40–44 เลือกได้ · 45–54 ทุกปี · ≥55 ทุก 1–2 ปี ตราบที่สุขภาพดีและคาดชีวิต ≥10 ปี</li>
+      <li>DBT (3D) ใช้แทน 2D ได้</li></ul></div>
+  </div>
+  <h3>กลุ่มเสี่ยงสูง (ไม่ใช้เกณฑ์ทั่วไป) <span class="tag add">เสริม</span></h3>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>แนวทาง (NCCN/ACR)</th></tr>
+    <tr><td><b>BRCA1/2 หรือยีนเสี่ยงสูงอื่น</b> (TP53, PALB2 ฯลฯ)</td><td>CBE ทุก 6–12 เดือนจาก 25 ปี · <b>MRI ปีละครั้ง 25–29 ปี</b> · <b>mammogram + MRI ปีละครั้ง 30–75 ปี</b> · ปรึกษาเวชพันธุศาสตร์ (ลดความเสี่ยงด้วยผ่าตัด)</td></tr>
+    <tr><td>ฉายแสงหน้าอกตอนอายุ 10–30 ปี (เช่น Hodgkin)</td><td>MRI + mammogram ปีละครั้ง เริ่ม 8 ปีหลังฉายแสง (ไม่ก่อน 25 ปี)</td></tr>
+    <tr><td>Lifetime risk ≥20% (จาก model ครอบครัว)</td><td>mammogram ปีละครั้ง + พิจารณา MRI เริ่ม ~30 ปี</td></tr>
+    <tr><td>ญาติสายตรงเป็นมะเร็งเต้านม</td><td>เริ่มก่อนอายุที่ญาติเป็น ~10 ปี แต่ไม่ก่อน 30 ปี (NCCN) · สถาบันมะเร็งฯ: เริ่มก่อน 5–10 ปี · ญาติเป็นตอนอายุน้อย/หลายคน/มะเร็งรังไข่/เต้านมชาย → ประเมินยีน</td></tr>
+  </table></div>
+  <h3>BI-RADS (ACR v2025)</h3>
+  <div class="tbl"><table>
+    <tr><th>หมวด</th><th>ความหมาย</th><th>ทำอะไร</th></tr>
+    <tr><td><b>0</b></td><td>ยังสรุปไม่ได้ (incomplete)</td><td>ถ่ายภาพเพิ่ม (spot/magnification, US) หรือหาฟิล์มเก่ามาเทียบ · ไม่ใช่ผลปกติ</td></tr>
+    <tr><td>1</td><td>ปกติ</td><td>คัดกรองตามรอบ</td></tr>
+    <tr><td>2</td><td>พบสิ่งที่ไม่ใช่มะเร็งแน่นอน (benign)</td><td>คัดกรองตามรอบ</td></tr>
+    <tr><td><b>3</b></td><td>น่าจะไม่ใช่มะเร็ง (≤2%)</td><td><b>ติดตามระยะสั้น 6 เดือน</b> (แล้ว 6–12 เดือนจนครบ ~2 ปี)</td></tr>
+    <tr><td><b>4</b> (4A/4B/4C)</td><td>สงสัย (&gt;2 ถึง &lt;95%)</td><td><b>เจาะชิ้นเนื้อ</b> (core needle biopsy)</td></tr>
+    <tr><td><b>5</b></td><td>สงสัยมาก (≥95%)</td><td><b>เจาะชิ้นเนื้อ</b> ส่งศัลยแพทย์</td></tr>
+    <tr><td>6</td><td>ยืนยันมะเร็งแล้ว</td><td>รักษามะเร็ง</td></tr>
+  </table></div>
+  <div class="box warn"><b>คลำได้ก้อน = ไม่ใช่การคัดกรอง</b>ผู้ป่วยมีก้อน/เลือดหรือน้ำออกจากหัวนม/ผิวบุ๋ม → diagnostic mammogram + US (อายุ &lt;30–40 ปีเริ่มที่ US) · mammogram ปกติ <b>ไม่ตัดมะเร็ง</b>ถ้ายังคลำได้ก้อน → เจาะชิ้นเนื้อ</div>
+</section>
+
+<section id="crc" class="col">
+  <div class="sec-num">05</div>
+  <h2>มะเร็งลำไส้ใหญ่และทวารหนัก</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ไทย <span class="tag th">ไทย</span></h4><ul>
+      <li><b>อายุ 50–70 ปี ทุกสิทธิ: FIT ทุก 2 ปี</b> ฟรี</li>
+      <li>FIT = ตรวจเลือดแฝงในอุจจาระด้วยภูมิคุ้มกัน (จับ hemoglobin ของคน) · <b>ไม่ต้องงดอาหาร/ยา</b> · เก็บอุจจาระครั้งเดียว</li>
+      <li><b>FIT บวก → ส่ง colonoscopy</b> (ตัดติ่งเนื้อ/ตัดชิ้นเนื้อ) · ผลบวกส่วนใหญ่เป็นติ่งเนื้อ ไม่ใช่มะเร็ง แต่ <b>ต้องส่องทุกราย</b></li></ul></div>
+    <div class="card c-vio"><h4>USPSTF 2021 / ACS</h4><ul>
+      <li>45–49 ปี <span class="rec s1">B</span> · 50–75 ปี <span class="rec s1">A</span> · 76–85 ปี <span class="rec">C</span> เลือกตามสุขภาพและประวัติคัดกรอง · &gt;85 ปี ไม่ตรวจ</li>
+      <li>วิธีและรอบ: <b>FIT ทุก 1 ปี</b> · stool DNA-FIT ทุก 1–3 ปี · <b>colonoscopy ทุก 10 ปี</b> · CT colonography ทุก 5 ปี · flexible sigmoidoscopy ทุก 5 ปี (หรือทุก 10 ปี + FIT ทุกปี)</li>
+      <li>ตรวจเลือดหา DNA มะเร็ง (blood-based test) ยังไม่ใช่ทางเลือกหลัก <span class="tag add">เสริม</span></li></ul></div>
+  </div>
+  <div class="box danger"><b>FIT บวกแล้วต้องทำอะไร</b><b>Colonoscopy ให้เร็ว — เป้าหมายในทางปฏิบัติ ~3 เดือน (ไม่ควรเกิน 6 เดือน)</b> <span class="tag add">เสริม</span> (ข้อมูล Kaiser: รอนานเกิน ~9–10 เดือน สัมพันธ์กับมะเร็งและมะเร็งระยะลุกลามมากขึ้น) · <b>ห้ามตรวจ FIT ซ้ำเพื่อ "ยืนยัน"</b> ผลลบรอบสองไม่ได้ลบล้างผลบวก · ส่องไม่ได้/ไม่สมบูรณ์ → CT colonography หรือส่องใหม่</div>
+  <h3>ความเสี่ยงสูง: อายุเริ่มและวิธี</h3>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>เริ่มเมื่อ</th><th>วิธี/รอบ</th></tr>
+    <tr><td><b>ญาติสายตรง 1 คนเป็น CRC หรือ advanced adenoma ตอนอายุ &lt;60 ปี</b> หรือ <b>ญาติสายตรง ≥2 คน</b> (อายุใดก็ได้)</td><td><b>40 ปี หรือ 10 ปีก่อนอายุญาติที่เป็นน้อยที่สุด</b> (เอาอันที่เร็วกว่า)</td><td><b>Colonoscopy ทุก 5 ปี</b></td></tr>
+    <tr><td>ญาติสายตรง 1 คนเป็นตอนอายุ ≥60 ปี</td><td><b>40 ปี</b></td><td>วิธีและรอบแบบคนทั่วไป (FIT ทุกปี หรือ colonoscopy ทุก 10 ปี)</td></tr>
+    <tr><td>ญาติลำดับสอง (ปู่ย่าตายาย ลุงป้าน้าอา) เท่านั้น</td><td>แบบคนทั่วไป</td><td>แบบคนทั่วไป</td></tr>
+    <tr><td><b>Lynch syndrome</b></td><td>MLH1/MSH2/EPCAM: <b>20–25 ปี</b> · MSH6/PMS2: 30–35 ปี (NCCN)</td><td><b>Colonoscopy ทุก 1–2 ปี</b> (MSH6/PMS2 ทุก 1–3 ปี) + คัดกรองมะเร็งมดลูก/รังไข่ตามผู้เชี่ยวชาญ</td></tr>
+    <tr><td>FAP</td><td>10–15 ปี</td><td>Sigmoidoscopy/colonoscopy ทุกปี · ส่งผู้เชี่ยวชาญ</td></tr>
+    <tr><td>UC/Crohn colitis</td><td>8 ปีหลังเริ่มมีอาการ</td><td>Surveillance colonoscopy ทุก 1–3 ปี ตามแพทย์ทางเดินอาหาร</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">อ้างอิงเกณฑ์ครอบครัว: US Multi-Society Task Force 2017 และ ACG 2021 · ญาติเป็น CRC อายุ &lt;50 ปี หรือหลายคนในหลายรุ่น หรือมีมะเร็งมดลูก/รังไข่/ทางเดินปัสสาวะร่วม → นึกถึง <b>Lynch</b> ส่งตรวจพันธุกรรม <span class="tag add">เสริม</span></p>
+</section>
+
+<section id="lung" class="col">
+  <div class="sec-num">06</div>
+  <h2>มะเร็งปอด (Low-dose CT)</h2>
+  <div class="tbl"><table>
+    <tr><th></th><th>USPSTF 2021 <span class="rec s1">B</span></th><th>ACS 2023</th></tr>
+    <tr><td>อายุ</td><td>50–80 ปี</td><td>50–80 ปี</td></tr>
+    <tr><td>ประวัติสูบ</td><td>≥20 pack-years</td><td>≥20 pack-years</td></tr>
+    <tr><td>เลิกสูบแล้ว</td><td><b>ต้องเลิกมาไม่ถึง 15 ปี</b> · ครบ 15 ปีแล้วหยุดคัดกรอง</td><td><b>ไม่จำกัดจำนวนปีที่เลิก</b></td></tr>
+    <tr><td>วิธี/รอบ</td><td colspan="2">LDCT ทุกปี · ต้องคุย <b>shared decision-making</b> ก่อน · ช่วยเลิกบุหรี่ทุกครั้ง · ไม่ตรวจถ้าโรคร่วมทำให้คาดชีวิตสั้นหรือผ่าตัดไม่ได้</td></tr>
+  </table></div>
+  <p><b>Pack-years</b> = (จำนวนมวนต่อวัน ÷ 20) × จำนวนปีที่สูบ · เช่น 10 มวน/วัน 40 ปี = 20 pack-years · CXR <b>ไม่ใช่</b>การคัดกรองมะเร็งปอด</p>
+  <div class="box note"><b>บริบทไทย <span class="tag th">ไทย</span></b>ไทยยังไม่มีโปรแกรม LDCT ระดับชาติ · มะเร็งปอดในคนไม่สูบบุหรี่ (โดยเฉพาะหญิง adenocarcinoma, EGFR) พบมากในเอเชีย แต่ <b>ยังไม่มีหลักฐานพอที่จะแนะนำ LDCT ในคนไม่สูบทั่วไป</b> · การศึกษาแพ็กเกจตรวจสุขภาพเอกชนในกรุงเทพฯ (J Thorac Dis 2026; 84% ไม่สูบ) พบ Lung-RADS ≥2 ถึง 56% แต่เป็นมะเร็ง 1.2% — ผลผิดปกติส่วนใหญ่ไม่ใช่มะเร็ง และพบสิ่งผิดปกตินอกปอด (incidental) 65% (ผู้วิจัยเสนอเริ่มที่ ≥55 ปี แต่เป็นข้อมูลย้อนหลังจาก รพ. เดียว) · ถ้าจะตรวจในคนไม่สูบ ให้คุยเรื่องโทษก่อน</div>
+  <h3>Lung-RADS v2022</h3>
+  <div class="tbl"><table>
+    <tr><th>หมวด</th><th>ความหมาย</th><th>ทำอะไร</th></tr>
+    <tr><td>0</td><td>ยังสรุปไม่ได้</td><td>หาภาพเก่าเทียบ หรือ LDCT ซ้ำใน 1–3 เดือน (เช่น สงสัยติดเชื้อ)</td></tr>
+    <tr><td>1 / 2</td><td>ปกติ / ลักษณะไม่ใช่มะเร็ง (&lt;1%)</td><td><b>LDCT ปีละครั้งตามเดิม</b></td></tr>
+    <tr><td><b>3</b></td><td>น่าจะไม่ใช่มะเร็ง (1–2%)</td><td><b>LDCT 6 เดือน</b></td></tr>
+    <tr><td><b>4A</b></td><td>สงสัย (5–15%)</td><td><b>LDCT 3 เดือน</b> · PET/CT ได้ถ้ามีส่วน solid ≥8 mm</td></tr>
+    <tr><td><b>4B / 4X</b></td><td>สงสัยมาก (&gt;15%)</td><td><b>ส่งแพทย์ระบบหายใจ/ศัลยแพทย์ทรวงอก</b>: CT ทรวงอก ± PET/CT ± เจาะชิ้นเนื้อ</td></tr>
+    <tr><td>S</td><td>พบสิ่งสำคัญนอกปอด (เช่น หลอดเลือดแดงใหญ่โป่ง CAC สูง)</td><td>จัดการตามสิ่งที่พบ</td></tr>
+  </table></div>
+</section>
+
+<section id="liver" class="col">
+  <div class="sec-num">07</div>
+  <h2>มะเร็งตับ (HCC) และมะเร็งท่อน้ำดี (CCA)</h2>
+  <h3>HCC surveillance — ใครต้องตรวจ</h3>
+  <div class="tbl"><table>
+    <tr><th>แนวทาง</th><th>กลุ่มที่ต้องเฝ้าระวัง</th><th>วิธี/รอบ</th></tr>
+    <tr><td>โรคตับแข็ง สมาคมโรคตับฯ 2568 <span class="tag th">ไทย</span></td><td><b>ตับแข็งทุกสาเหตุ</b> ยกเว้น Child-Pugh C ที่ไม่มีข้อบ่งชี้ปลูกถ่ายตับ (รายละเอียดตามแนวทางการดูแลมะเร็งตับในประเทศไทย พ.ศ. 2564)</td><td><b>US ตับ + AFP ทุก 6 เดือน</b></td></tr>
+    <tr><td>ไวรัสตับอักเสบ บี/ซี สำหรับ GP 2569 <span class="tag th">ไทย</span></td><td>HBV/HCV ที่ <b>มีตับแข็ง</b> (clinical, APRI &gt;1, FIB-4 &gt;3.25, ภาพรังสี) หรือ <b>ครอบครัวเป็นตับแข็ง/มะเร็งตับ</b> · HCV หายแล้ว (SVR) แต่มีตับแข็ง → ยังต้องตรวจ</td><td>US ± AFP ทุก 6–12 เดือน</td></tr>
+    <tr><td>แนวทาง HCC ไทย 2019 <span class="tag th">ไทย</span> · AASLD 2023</td><td>HBV ไม่มีตับแข็งแต่ <b>ชาย &gt;40 ปี, หญิง &gt;50 ปี</b> หรือครอบครัวเป็น HCC</td><td>US ± AFP ทุก 6 เดือน (AASLD: US + AFP)</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">หน้านี้แนะนำ <b>ทุก 6 เดือน</b> (หลักฐานดีที่สุด — ก้อนโตเร็ว) · ถ้าทรัพยากรจำกัดตามแนวทาง GP 6–12 เดือนก็รับได้ · MASLD/สุรา: ตรวจเมื่อเป็นตับแข็งแล้ว (บาง guideline พิจารณา F3) · รายละเอียด HBV ดู <a href="../hepbc/index.html">Hep B · C</a> และ <a href="../cirrhosis/index.html">Cirrhosis</a></p>
+  <h3>ผล US/AFP แล้วทำอะไร (LI-RADS US surveillance)</h3>
+  <div class="tbl"><table>
+    <tr><th>ผล</th><th>ทำอะไร</th></tr>
+    <tr><td>US-1 ไม่พบก้อน · AFP &lt;20 ng/mL และไม่ขึ้น</td><td>ตรวจซ้ำ <b>6 เดือน</b></td></tr>
+    <tr><td>US-2 ก้อน <b>&lt;10 mm</b></td><td><b>US ซ้ำใน 3–6 เดือน</b> (ส่วนใหญ่ 3 เดือน) · โตขึ้น/เปลี่ยน → CT/MRI</td></tr>
+    <tr><td>US-3 ก้อน <b>≥10 mm</b> หรือลิ่มเลือดใหม่ใน portal vein</td><td><b>Multiphase CT หรือ MRI ตับ</b> (LI-RADS) · ส่งต่อ</td></tr>
+    <tr><td><b>AFP ≥20 ng/mL หรือขึ้นต่อเนื่อง</b> (แม้ US ปกติ)</td><td><b>Multiphase CT/MRI</b> · AFP สูงยังเกิดได้จากตับอักเสบกำเริบ</td></tr>
+    <tr><td>US มองเห็นไม่ดี (visualization C — อ้วน ตับหยาบมาก)</td><td>พิจารณา CT/MRI (หรือ abbreviated MRI) แทน</td></tr>
+  </table></div>
+  <h3>มะเร็งท่อน้ำดีจากพยาธิใบไม้ตับ <span class="tag th">ไทย</span></h3>
+  <div class="grid2">
+    <div class="card c-acc"><h4>OV-RDT (สิทธิ สปสช.)</h4><ul>
+      <li>ชุดตรวจปัสสาวะหา <i>Opisthorchis viverrini</i> อ่านผล 5–10 นาที</li>
+      <li>คนไทย <b>≥15 ปี</b> ที่เสี่ยง: เคยเป็นพยาธิ เคยกินยาถ่ายพยาธิใบไม้ตับ <b>กินปลาน้ำจืดดิบ/สุกๆ ดิบๆ</b> (ก้อยปลา ปลาส้ม ปลาร้าไม่สุก) · <b>ปีละครั้ง</b></li>
+      <li>ผลบวก → <b>praziquantel 40 mg/kg กินครั้งเดียวหลังอาหาร</b> (ไม่ต้องปรับตามไต) · ร่วมกับเลิกกินปลาดิบ · ถ้ามีดีซ่าน ปวดท้อง น้ำหนักลด → ตรวจหามะเร็ง (US)</li></ul></div>
+    <div class="card c-warn"><h4>CASCAP ultrasound</h4><ul>
+      <li>โครงการ มข.: ประชาชนอีสาน <b>อายุ ≥40 ปี</b> โดยเฉพาะผู้ที่เคยติดพยาธิ/กินปลาดิบ/ญาติเป็น CCA · <b>US ช่องท้องอย่างน้อยปีละครั้ง</b> ส่งภาพให้รังสีแพทย์อ่านทางไกล</li>
+      <li>สิ่งที่พบ: periductal fibrosis (PDF1–3) · ท่อน้ำดีขยาย · ก้อน</li>
+      <li><b>ท่อน้ำดีขยายหรือก้อน → CT/MRI</b> ส่งศัลยแพทย์ตับ-ท่อน้ำดี · PDF → ติดตาม US ตามรอบ เลิกกินปลาดิบ</li>
+      <li>CA19-9 <b>ไม่ใช้คัดกรอง</b></li></ul></div>
+  </div>
+</section>
+
+<section id="prostate" class="col">
+  <div class="sec-num">08</div>
+  <h2>มะเร็งต่อมลูกหมาก (PSA)</h2>
+  <ul><li><b>USPSTF 2018</b>: ชาย <b>55–69 ปี</b> <span class="rec">C</span> — <b>คุยประโยชน์และโทษก่อน แล้วให้ผู้ป่วยเลือก</b> (shared decision) · <b>≥70 ปี ไม่แนะนำ</b> <span class="rec no">D</span> · USPSTF กำลังทบทวนใหม่ (ยังใช้ฉบับ 2018)</li>
+  <li>ประโยชน์: ตรวจ ~1,000 คนใน 13 ปี ลดตายจากมะเร็งต่อมลูกหมากได้ ~1 คน (ERSPC) · โทษ: ผลบวกลวง เจาะชิ้นเนื้อ (ติดเชื้อ เลือดออก) <b>overdiagnosis</b> และผลข้างเคียงการรักษา (กลั้นปัสสาวะไม่อยู่ เสื่อมสมรรถภาพทางเพศ)</li>
+  <li>เสี่ยงสูง (พ่อ/พี่น้องเป็นตอนอายุน้อย, BRCA2, เชื้อสายแอฟริกัน): เริ่มคุยตั้งแต่ 40–45 ปี (NCCN/EAU) · NCCN: พาหะ BRCA2 เริ่ม PSA ปีละครั้งที่ 40 ปี (BRCA1 พิจารณาที่ 40) · อายุมากขึ้น (≥70–75) ตัดสินรายบุคคลตามสุขภาพ <span class="tag add">เสริม</span></li>
+  <li>PSA สูง → <b>ตรวจซ้ำก่อน</b> (ติดเชื้อ ต่อมโต การสวน/ปั่นจักรยานทำให้สูงได้) → ส่งศัลยแพทย์ระบบปัสสาวะ (MRI ก่อนเจาะ) · <b>DRE อย่างเดียวไม่ใช่การคัดกรอง</b></li>
+  <li><span class="tag th">ไทย</span> ไม่มีโปรแกรม PSA ระดับประชากร และอุบัติการณ์ในไทยต่ำกว่าตะวันตก · <b>อย่าใส่ PSA ในชุดตรวจสุขภาพโดยไม่คุยกับผู้ป่วยก่อน</b></li></ul>
+</section>
+
+<section id="others" class="col">
+  <div class="sec-num">09</div>
+  <h2>มะเร็งอื่น และการตรวจที่ไม่แนะนำ</h2>
+  <div class="tbl"><table>
+    <tr><th>มะเร็ง</th><th>คำแนะนำ</th></tr>
+    <tr><td>กระเพาะอาหาร</td><td>ส่องกล้องคัดกรองเฉพาะ <b>ประเทศอุบัติการณ์สูง</b> (เกาหลี 40–74 ปี ทุก 2 ปี, ญี่ปุ่น) · <b>ไทยอุบัติการณ์ต่ำ → ไม่คัดกรองทั่วไป</b> · ญาติสายตรงเป็นมะเร็งกระเพาะ → ตรวจและกำจัด <i>H. pylori</i>, พิจารณาส่องกล้อง <span class="tag add">เสริม</span></td></tr>
+    <tr><td>ช่องปาก</td><td>สปสช.: ตรวจช่องปาก ≥40 ปี ปีละครั้ง · เน้น <b>สูบบุหรี่ ดื่มสุรา เคี้ยวหมาก</b> · มองหา leukoplakia/erythroplakia แผลไม่หาย &gt;2–3 สัปดาห์ → ส่งทันตแพทย์/ENT · USPSTF <span class="rec">I</span></td></tr>
+    <tr><td>ผิวหนัง</td><td>USPSTF 2023 <span class="rec">I</span> — ไม่ตรวจทั้งตัวเป็นประจำ · ตรวจเมื่อมีไฝเปลี่ยนแปลง (ABCDE) · <span class="tag th">ไทย</span> สารหนู (ร่อนพิบูลย์) ภูมิคุ้มกันต่ำ/ปลูกถ่ายอวัยวะ → ตรวจผิวหนังเป็นระยะ</td></tr>
+    <tr><td>หลังโพรงจมูก (NPC)</td><td>EBV serology/EBV DNA ใช้คัดกรองในจีนตอนใต้ · <b>ไทยไม่คัดกรองทั่วไป</b> · มีญาติหลายคนเป็น → พิจารณาส่ง ENT <span class="tag add">เสริม</span></td></tr>
+  </table></div>
+  <div class="box danger"><b>ไม่แนะนำในคนไม่มีอาการ</b><ul style="margin:.3rem 0">
+    <li><b>รังไข่</b>: CA-125 และ/หรือ US ทางช่องคลอด <span class="rec no">D</span> (UKCTOCS ~200,000 คน ไม่ลดการตาย) — ยกเว้น BRCA ที่ส่งผู้เชี่ยวชาญ</li>
+    <li><b>ตับอ่อน</b> <span class="rec no">D</span> — ยกเว้นกลุ่มพันธุกรรมเสี่ยงสูงในโครงการเฉพาะทาง</li>
+    <li><b>US ไทรอยด์</b> <span class="rec no">D</span> — เกาหลีตรวจกันมาก มะเร็งไทรอยด์เพิ่ม ~15 เท่า แต่การตายไม่ลด</li>
+    <li><b>Tumour markers ในคนทั่วไป</b>: CEA, CA19-9, CA-125, CA15-3, AFP (นอกกลุ่ม HCC surveillance) — ไวต่ำ ผลบวกลวงสูง</li>
+    <li><b>PSA โดยไม่คุยก่อน</b> · อัณฑะ <span class="rec no">D</span> · กระเพาะปัสสาวะ (ตรวจปัสสาวะหาเลือด) <span class="rec">I</span></li>
+    <li><b>Whole-body CT/MRI, PET/CT ตรวจสุขภาพ</b> — รังสีสูง พบสิ่งที่ไม่สำคัญ (incidentaloma) แล้วตรวจต่อเป็นทอดๆ</li>
+    <li>ตรวจเลือดหามะเร็งหลายชนิด (MCED) — ยังไม่มีหลักฐานลดการตาย ใช้ในงานวิจัย <span class="tag add">เสริม</span></li></ul></div>
+  <p class="muted" style="font-size:.88rem">การป้องกันที่ได้ผลกว่าการตรวจ: <b>เลิกบุหรี่</b> · ลดสุรา · วัคซีน HPV และ HBV · รักษา HBV/HCV · ไม่กินปลาดิบ · ควบคุมน้ำหนัก · ดูการตรวจสุขภาพประจำปีทั้งหมดที่หน้า <a href="../health-check/index.html">ตรวจสุขภาพประจำปี</a> · วัคซีน HPV/HBV ดู <a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่</a> · LFT ผิดปกติดู <a href="../abnormal-lft/index.html">Abnormal LFT</a></p>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ใหญ่มาตรวจสุขภาพ/ขอคัดกรองมะเร็ง</b>ถามอาการเตือน · คาดชีวิต ≥10 ปี? · ประวัติครอบครัว · บุหรี่ (pack-years) · HBV/ตับแข็ง · อีสาน/ปลาดิบ</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>มีอาการ/สัญญาณเตือน?</b>ใช่ → ตรวจวินิจฉัยตามอาการ (ไม่ใช่คัดกรอง)</div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ทุกคนตามอายุ</span><div class="node dx green"><b>ความเสี่ยงทั่วไป</b>หญิง 30–59 ปี (บางเอกสารเขียน 30–60): HPV DNA ทุก 5 ปี · 50–70: FIT ทุก 2 ปี · ≥40: ตรวจช่องปาก (เสี่ยง)</div></div>
+        <div class="arm"><span class="lab">ตามความเสี่ยง</span><div class="node dx"><b>กลุ่มเสี่ยง</b>ญาติ CRC → colonoscopy เร็วขึ้น · ญาติมะเร็งเต้านม ≥40 → mammogram+US ทุกปี · 50–80 ≥20 PY → LDCT</div></div>
+        <div class="arm"><span class="lab">ตับ/ท่อน้ำดี</span><div class="node red"><b>ตับแข็ง/HBV เสี่ยง</b>US ± AFP ทุก 6 เดือน · อีสาน/ปลาดิบ: OV-RDT ทุกปี · ≥40: US (CASCAP)</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx"><b>ผลบวก → ตามให้ครบ</b>HPV 16/18 → colposcopy · FIT+ → colonoscopy โดยเร็ว (เป้า ~3 เดือน) · BI-RADS 4–5 → biopsy · Lung-RADS 4B/4X → ส่งต่อ · ก้อนตับ ≥1 cm/AFP ≥20 → CT/MRI</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ยึดสิทธิประโยชน์และระบบส่งต่อของพื้นที่</p>
+  </div>
+  <div class="tool plan" id="tPlan" style="margin-top:12px">
+    <h3>1) แผนคัดกรองมะเร็งรายบุคคล</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="pAge" value="52"></label>
+      <label class="f">เพศกำเนิด<select id="pSex"><option value="f">หญิง</option><option value="m">ชาย</option></select></label>
+      <label class="f">บุหรี่<select id="pSmk"><option value="never">ไม่เคยสูบ</option><option value="cur">ยังสูบ</option><option value="ex">เลิกแล้ว</option></select></label>
+      <label class="f">Pack-years<input type="number" step="0.5" id="pPy" value=""></label>
+      <label class="f">เลิกมาแล้ว (ปี)<input type="number" step="0.5" id="pQuit" value=""></label>
+      <label class="f">คัดกรองปากมดลูกครั้งล่าสุด<select id="pCxLast"><option value="none">ไม่เคย/จำไม่ได้</option><option value="hpvneg">HPV ลบ</option><option value="papneg">Pap/VIA ปกติ</option><option value="abn">เคยผิดปกติ ยังติดตามอยู่</option></select></label>
+      <label class="f">ผ่านมาแล้ว (ปี)<input type="number" step="0.5" id="pCxYr" value=""></label>
+      <label class="f">Colonoscopy ล่าสุด<select id="pCol"><option value="none">ไม่เคย</option><option value="normal">ปกติ</option><option value="polyp">พบติ่งเนื้อ (adenoma)</option></select></label>
+      <label class="f">ผ่านมาแล้ว (ปี)<input type="number" step="0.5" id="pColYr" value=""></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="pFdrY"> ญาติสายตรงเป็น CRC/advanced adenoma อายุ &lt;60 หรือ ≥2 คน</label>
+      <label><input type="checkbox" id="pFdrO"> ญาติสายตรง 1 คนเป็น CRC อายุ ≥60</label>
+      <label><input type="checkbox" id="pLynch"> Lynch syndrome</label>
+      <label><input type="checkbox" id="pFdrB"> ญาติสายตรงเป็นมะเร็งเต้านม/รังไข่</label>
+      <label><input type="checkbox" id="pBrca"> พบยีน BRCA1/2</label>
+      <label><input type="checkbox" id="pRt"> เคยฉายแสงหน้าอกอายุ 10–30 ปี</label>
+      <label><input type="checkbox" id="pHbv"> HBsAg บวก (HBV เรื้อรัง)</label>
+      <label><input type="checkbox" id="pCir"> ตับแข็ง (ทุกสาเหตุ)</label>
+      <label><input type="checkbox" id="pFhcc"> ครอบครัวเป็นมะเร็งตับ/ตับแข็ง</label>
+      <label><input type="checkbox" id="pOv"> อีสาน/เคยเป็นพยาธิใบไม้ตับ/กินปลาดิบ</label>
+      <label><input type="checkbox" id="pHyst"> ตัดมดลูกพร้อมปากมดลูก (โรคไม่ใช่มะเร็ง)</label>
+      <label><input type="checkbox" id="pCin"> เคยเป็น CIN2+/มะเร็งปากมดลูก</label>
+      <label><input type="checkbox" id="pHiv"> HIV/ภูมิคุ้มกันต่ำ</label>
+      <label><input type="checkbox" id="pOral"> สูบ/ดื่ม/เคี้ยวหมาก (ช่องปาก)</label>
+      <label><input type="checkbox" id="pLe"> คาดว่ามีชีวิตอยู่ &lt;10 ปี / โรคร่วมรุนแรง</label>
+    </div>
+    <div class="out" id="planOut"></div>
+  </div>
+
+  <div class="tool" id="tPy" style="margin-top:12px">
+    <h3>2) Pack-years และเกณฑ์ LDCT (USPSTF vs ACS)</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="yAge" value="62"></label>
+      <label class="f">ปริมาณที่สูบ<input type="number" step="0.5" id="yAmt" value="15"></label>
+      <label class="f">หน่วย<select id="yUnit"><option value="cig">มวน/วัน</option><option value="pack">ซอง/วัน (20 มวน)</option></select></label>
+      <label class="f">จำนวนปีที่สูบ<input type="number" step="0.5" id="yYrs" value="35"></label>
+      <label class="f">สถานะ<select id="ySt"><option value="cur">ยังสูบ</option><option value="ex">เลิกแล้ว</option></select></label>
+      <label class="f">เลิกมาแล้ว (ปี)<input type="number" step="0.5" id="yQuit" value=""></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="yLe"> โรคร่วมรุนแรง/ผ่าตัดปอดไม่ได้/คาดชีวิตสั้น</label></div>
+    <div class="out" id="pyOut"></div>
+  </div>
+
+  <div class="tool" id="tRes" style="margin-top:12px">
+    <h3>3) ผลคัดกรอง → ขั้นต่อไป</h3>
+    <div class="fields">
+      <label class="f">ชนิดการตรวจ<select id="rType"><option value="hpv">HPV DNA (ปากมดลูก)</option><option value="fit">FIT (ลำไส้ใหญ่)</option><option value="bir">Mammogram BI-RADS</option><option value="lr">LDCT Lung-RADS</option><option value="hcc">US ตับ ± AFP (HCC)</option></select></label>
+      <label class="f" id="rHpvL">ผล HPV<select id="rHpv"><option value="neg">ลบ</option><option value="1618">HPV 16/18 บวก</option><option value="oth">HPV เสี่ยงสูงอื่น — ยังไม่มีผล cytology</option><option value="othN">HPV อื่น + cytology ปกติ (NILM)</option><option value="othA">HPV อื่น + ASC-US ขึ้นไป</option><option value="inv">ตัวอย่างใช้ไม่ได้</option></select></label>
+      <label class="f" id="rFitL">ผล FIT<select id="rFit"><option value="neg">ลบ</option><option value="pos">บวก</option><option value="inv">ใช้ไม่ได้/เก็บผิดวิธี</option></select></label>
+      <label class="f" id="rBirL">BI-RADS<select id="rBir"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4 (A/B/C)</option><option value="5">5</option><option value="6">6</option></select></label>
+      <label class="f" id="rLrL">Lung-RADS<select id="rLr"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4A">4A</option><option value="4B">4B</option><option value="4X">4X</option></select></label>
+      <label class="f" id="rUsL">ผล US ตับ<select id="rUs"><option value="1">US-1 ไม่พบก้อน</option><option value="2">US-2 ก้อน &lt;10 mm</option><option value="3">US-3 ก้อน ≥10 mm / ลิ่มเลือดใน portal vein</option><option value="c">มองเห็นไม่ดี (visualization C)</option></select></label>
+      <label class="f" id="rAfpL">AFP (ng/mL) ถ้ามี<input type="number" step="0.1" id="rAfp" value=""></label>
+    </div>
+    <div class="checks" id="rChk"><label id="rRiseL"><input type="checkbox" id="rRise"> AFP สูงขึ้นต่อเนื่องจากครั้งก่อน</label><label id="rSelfL"><input type="checkbox" id="rSelf"> เป็นชุดเก็บเอง (self-sampling)</label></div>
+    <div class="out" id="resOut"></div>
+  </div>
+
+  <div class="tool" id="tFh" style="margin-top:12px">
+    <h3>4) ญาติเป็นมะเร็งลำไส้: เริ่มส่องกล้องอายุเท่าไร</h3>
+    <div class="fields">
+      <label class="f">อายุผู้ป่วยตอนนี้ (ปี)<input type="number" id="fAge" value="38"></label>
+      <label class="f">จำนวนญาติสายตรง (พ่อแม่ พี่น้อง ลูก) ที่เป็น CRC/advanced adenoma<input type="number" id="fN" value="1"></label>
+      <label class="f">อายุที่ญาติ (คนที่อายุน้อยสุด) ได้รับวินิจฉัย<input type="number" id="fDx" value="48"></label>
+      <label class="f">Lynch syndrome (ยีน)<select id="fLy"><option value="no">ไม่มี/ไม่ทราบ</option><option value="hi">MLH1 / MSH2 / EPCAM</option><option value="lo">MSH6 / PMS2</option></select></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="fSdr"> มีญาติลำดับสองเป็น CRC เท่านั้น</label><label><input type="checkbox" id="fOth"> ครอบครัวมีมะเร็งมดลูก/รังไข่/กระเพาะ/ทางเดินปัสสาวะร่วม</label></div>
+    <div class="out" id="fhOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>มีอาการ = ตรวจวินิจฉัย</b> ไม่ใช่คัดกรอง (ถ่ายเป็นเลือด → colonoscopy ไม่ใช่ FIT)</div></div>
+    <div class="pearl"><div><b>หญิง 30–59 ปี (บางเอกสารเขียน 30–60): HPV DNA ทุก 5 ปี</b> เก็บเองได้ ฟรี</div></div>
+    <div class="pearl"><div><b>HPV 16/18 → colposcopy</b> · HPV อื่น → cytology ก่อน</div></div>
+    <div class="pearl"><div><b>50–70: FIT ทุก 2 ปี</b> · FIT บวก → colonoscopy โดยเร็ว (เป้า ~3 เดือน) ห้ามตรวจ FIT ซ้ำ</div></div>
+    <div class="pearl"><div><b>ญาติ CRC &lt;60 → 40 ปี หรือ 10 ปีก่อนญาติ</b> colonoscopy ทุก 5 ปี</div></div>
+    <div class="pearl"><div><b>ตับแข็งทุกราย: US + AFP ทุก 6 เดือน</b> · HBV ชาย &gt;40 หญิง &gt;50</div></div>
+    <div class="pearl"><div><b>อีสาน + ปลาดิบ</b>: OV-RDT ปีละครั้ง · ≥40 US ท่อน้ำดี</div></div>
+    <div class="pearl"><div><b>LDCT: 50–80 ปี ≥20 pack-years</b> · USPSTF เลิก &lt;15 ปี · ACS ไม่จำกัด</div></div>
+    <div class="pearl"><div><b>BI-RADS 0 ไม่ใช่ปกติ</b> · 3 → 6 เดือน · 4–5 → biopsy</div></div>
+    <div class="pearl"><div><b>PSA ต้องคุยก่อน</b> · ≥70 ปีไม่ตรวจ</div></div>
+    <div class="pearl"><div><b>ไม่ส่ง tumour markers/PET ทั้งตัว</b> ในคนไม่มีอาการ</div></div>
+    <div class="pearl"><div><b>คาดชีวิต &lt;10 ปี</b> → คุยเรื่องหยุดคัดกรอง</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../health-check/index.html">ตรวจสุขภาพประจำปี →</a> · <a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่ →</a> · <a href="../hepbc/index.html">Hep B · C →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../abnormal-lft/index.html">Abnormal LFT →</a> · <a href="../lgib/index.html">Lower GI bleeding →</a> · <a href="../palliative/index.html">Palliative care →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สำนักงานหลักประกันสุขภาพแห่งชาติ (สปสช.). สิทธิประโยชน์คัดกรองมะเร็งปากมดลูก (HPV DNA/HPV self-sampling 30–59 ปี (บางเอกสารเขียน 30–60) ทุก 5 ปี), มะเร็งลำไส้ใหญ่ (FIT 50–70 ปี ทุก 2 ปี), ชุดตรวจพยาธิใบไม้ตับ OV-RDT, mammogram/US ในหญิง ≥40 ปีที่มีญาติสายตรงเป็นมะเร็งเต้านม และตรวจยีน BRCA (มติบอร์ด สปสช. 18 ม.ค. 2567; ประกาศ 2566–2569) · 2) Seeda K, et al. ความชุกการติดเชื้อ HPV ชนิดความเสี่ยงสูงและความผิดปกติของปากมดลูกในสตรีไทยที่สถาบันมะเร็งแห่งชาติ (แนวทาง primary HPV testing). วารสารโรคมะเร็ง 2568;45(2):52–61 · 3) สมาคมโรคตับแห่งประเทศไทย. แนวทางเวชปฏิบัติการดูแลรักษาผู้ป่วยโรคตับแข็งในประเทศไทย พ.ศ. 2568 (หัวข้อ HCC surveillance อ้างถึง แนวทางการดูแลมะเร็งตับในประเทศไทย พ.ศ. 2564) · 4) แนวทางการตรวจคัดกรองและรักษาโรคไวรัสตับอักเสบ บี และ ซี สำหรับแพทย์เวชปฏิบัติทั่วไป พ.ศ. 2569 · 5) Rattananukrom C, Kitiyakara T. Comparison between using HCC risk scores and the HCC national guideline (Thailand Guideline for Management of HCC 2019) to identify high-risk chronic hepatitis B patients for surveillance in Thailand. JGH Open 2022;6:408–20 · 6) Singal AG, Llovet JM, Yarchoan M, et al. AASLD Practice Guidance on prevention, diagnosis, and treatment of hepatocellular carcinoma. Hepatology 2023;78:1922–65 · 7) Khuntikeo N, Chamadol N, Yongvanit P, et al. Cohort profile: cholangiocarcinoma screening and care program (CASCAP). BMC Cancer 2015;15:459 · 8) Chamadol N, Khuntikeo N, Thinkhamrop B, et al. Association between periductal fibrosis and bile duct dilatation among a population at high risk of cholangiocarcinoma. BMJ Open 2019;9:e023217 · 9) US Preventive Services Task Force (Curry SJ, et al.). Screening for cervical cancer. JAMA 2018;320:674–86; and Draft Recommendation Statement, December 2024 · 10) American Cancer Society. Updated cervical cancer screening guideline (self-collection, exit criteria). CA Cancer J Clin 2025; doi:10.3322/caac.70041 · 11) World Health Organization. WHO guideline for screening and treatment of cervical pre-cancer lesions for cervical cancer prevention, 2nd ed. Geneva: WHO; 2021 · 12) USPSTF (Davidson KW, et al.). Screening for colorectal cancer. JAMA 2021;325:1965–77 · 13) Rex DK, Boland CR, Dominitz JA, et al. Colorectal cancer screening: recommendations for physicians and patients from the U.S. Multi-Society Task Force on Colorectal Cancer. Gastroenterology 2017;153:307–23 · 14) Shaukat A, Kahi CJ, Burke CA, et al. ACG clinical guidelines: colorectal cancer screening 2021. Am J Gastroenterol 2021;116:458–79 · 15) Corley DA, Jensen CD, Quinn VP, et al. Association between time to colonoscopy after a positive fecal test result and risk of colorectal cancer and cancer stage at diagnosis. JAMA 2017;317:1631–41 · 16) USPSTF (Nicholson WK, et al.). Screening for breast cancer. JAMA 2024;331:1918–30 · 17) USPSTF (Krist AH, et al.). Screening for lung cancer. JAMA 2021;325:962–70 · 18) Wolf AMD, Oeffinger KC, Shih TY, et al. Screening for lung cancer: 2023 guideline update from the American Cancer Society. CA Cancer J Clin 2024;74:50–81 · 19) Christensen J, Prosper AE, Wu CC, et al. ACR Lung-RADS v2022: assessment categories and management recommendations. Chest 2024;165:738–53 · 20) Klinngam N, Kittivanakul S, Savigamin C, et al. Outcomes of lung cancer screening by low-dose computed tomography in the health screening program. J Thorac Dis 2026;18:108 · 21) American College of Radiology. ACR BI-RADS Atlas, v2025 · 22) USPSTF (Grossman DC, et al.). Screening for prostate cancer. JAMA 2018;319:1901–13 · 23) NCCN Clinical Practice Guidelines: Genetic/Familial High-Risk Assessment (Breast, Ovarian, Pancreatic, Prostate) and Colorectal Cancer Screening, current versions 2025–2026 · 24) Menon U, Gentry-Maharaj A, Burnell M, et al. Ovarian cancer population screening and mortality after long-term follow-up in UKCTOCS. Lancet 2021;397:2182–93 · 25) USPSTF. Screening for ovarian cancer (JAMA 2018;319:588–94), pancreatic cancer (JAMA 2019;322:438–44), thyroid cancer (JAMA 2017;317:1882–7), skin cancer (JAMA 2023;329:1290–5) · 26) Ahn HS, Kim HJ, Welch HG. Korea's thyroid-cancer "epidemic" — screening and overdiagnosis. N Engl J Med 2014;371:1765–7<br>
+  <span class="tag th">ไทย</span> = บริบท/สิทธิประโยชน์ไทย · <span class="tag add">เสริม</span> = ไม่ได้มาจากแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','csxView');
+mountWalker({
+ start:{q:'ผู้ป่วยมีอาการหรือสัญญาณเตือนไหม?',h:'เช่น ก้อน เลือดออกผิดปกติ ถ่ายเป็นเลือด ซีด น้ำหนักลด ไอเป็นเลือด ดีซ่าน',o:[['มี','sym'],['ไม่มี','le']]},
+ sym:{leaf:true,cls:'danger',t:'ตรวจวินิจฉัย ไม่ใช่คัดกรอง',b:'ส่งตรวจตามอาการทันที เช่น ถ่ายเป็นเลือด/ซีดจากขาดเหล็ก → <b>colonoscopy</b> (ไม่ใช่ FIT) · คลำได้ก้อนเต้านม → diagnostic mammogram + US · เลือดออกทางช่องคลอดผิดปกติ → ตรวจภายใน ± ส่งสูตินรีแพทย์ · ดีซ่าน → US ตับ/ท่อน้ำดี',next:['ผู้ป่วยไม่มีอาการ','le']},
+ le:{q:'คาดว่ามีชีวิตอยู่ ≥10 ปี และพร้อมรับการรักษาถ้าพบมะเร็ง?',o:[['ไม่','stop'],['ใช่','which']]},
+ stop:{leaf:true,cls:'warn',t:'คุยเรื่องไม่เริ่ม/หยุดคัดกรอง',b:'ประโยชน์ของการคัดกรองส่วนใหญ่เห็นหลัง ~10 ปี · โรคร่วมรุนแรง/ผ่าตัดไม่ได้ → โทษมากกว่าประโยชน์ · ยกเว้นการเฝ้าระวัง HCC ในตับแข็งที่ยังรักษาได้ (Child A–B หรือรอปลูกถ่ายตับ) · ดูการดูแลแบบประคับประคองถ้าเหมาะสม'},
+ which:{q:'จะคัดกรองมะเร็งอะไร?',o:[['ปากมดลูก','cx'],['ลำไส้ใหญ่','crc'],['เต้านม','br'],['ปอด','lung'],['ตับ/ท่อน้ำดี','liver'],['ต่อมลูกหมาก','pr']]},
+ cx:{q:'ตัดมดลูกพร้อมปากมดลูกจากโรคที่ไม่ใช่มะเร็ง และไม่เคยเป็น CIN2+?',o:[['ใช่','cxNo'],['ไม่ใช่','cxAge']]},
+ cxNo:{leaf:true,cls:'ok',t:'ไม่ต้องคัดกรองปากมดลูก',b:'ไม่มีปากมดลูกแล้ว <span class="rec no">D</span> · ถ้าตัดแบบเหลือปากมดลูก (subtotal) หรือเคยมี CIN2+ → ตรวจต่อ'},
+ cxAge:{q:'อายุเท่าไร?',o:[['&lt;30 ปี','cxY'],['30–59 ปี','cxT'],['60–65 ปี','cxM'],['&gt;65 ปี','cxO']]},
+ cxY:{leaf:true,cls:'ok',t:'อายุ &lt;30 ปี',b:'ไทย: ไม่ใช่กลุ่มเป้าหมายหลัก — ตรวจได้ถ้าเสี่ยงสูง (มีเพศสัมพันธ์เร็ว หลายคู่ ไม่ใช้ถุงยาง) · USPSTF: 21–29 ปี Pap ทุก 3 ปี · ACS: HPV primary ตั้งแต่ 25 ปี · &lt;21 ปี ไม่ตรวจ · HIV: เริ่มเร็วกว่า · แนะนำวัคซีน HPV'},
+ cxT:{leaf:true,cls:'ok',t:'HPV DNA ทุก 5 ปี (สิทธิ สปสช.)',b:'สิทธิ 30–59 ปี (บางเอกสารเขียน 30–60) · เก็บโดยบุคลากร หรือ <b>HPV self-sampling</b> · ไม่มี HPV → Pap/VIA',next:['แปลผล HPV','cxR']},
+ cxR:{q:'ผล HPV DNA?',o:[['ลบ','cxNeg'],['HPV 16/18 บวก','cxCol'],['HPV เสี่ยงสูงอื่นบวก','cxCyt']]},
+ cxNeg:{leaf:true,cls:'ok',t:'HPV ลบ',b:'ตรวจซ้ำ <b>5 ปี</b> (ACS: ชุดเก็บเองลบ → 3 ปี)'},
+ cxCol:{leaf:true,cls:'danger',t:'ส่ง colposcopy',b:'HPV 16/18 บวก หรือ cytology ≥ASC-US → <b>colposcopy ± biopsy</b> · CIN2+ → LEEP/ablation ตามสูตินรีแพทย์'},
+ cxCyt:{q:'ผล cytology (triage)?',h:'ชุดเก็บเองต้องให้บุคลากรเก็บตัวอย่างปากมดลูกใหม่เพื่อทำ cytology',o:[['ปกติ (NILM)','cx1y'],['ASC-US ขึ้นไป','cxCol']]},
+ cx1y:{leaf:true,cls:'warn',t:'ตรวจซ้ำใน 1 ปี',b:'HPV อื่นบวก + cytology ปกติ → <b>ตรวจซ้ำ 1 ปี</b> · ยังผิดปกติ → colposcopy'},
+ cxM:{leaf:true,cls:'warn',t:'60–65 ปี',b:'นอกช่วงสิทธิ สปสช. 30–59 ปี (บางเอกสารเขียน 30–60 — อายุ 60 ตรวจตามสิทธิได้ถ้าหน่วยบริการรับ) · USPSTF ยังแนะนำถึง 65 ปี — ถ้ายังตรวจไม่เพียงพอ ควรตรวจก่อนหยุด (นอกสิทธิ หรือตามดุลยพินิจหน่วยบริการ)'},
+ cxO:{leaf:true,cls:'ok',t:'&gt;65 ปี',b:'<b>หยุดได้</b> ถ้าตรวจผ่านมาเพียงพอและลบ (HPV/co-test ลบ 2 ครั้งใน 10 ปี หรือ Pap ลบ 3 ครั้ง ล่าสุดใน 3–5 ปี) และไม่เคย CIN2+ <span class="rec no">D</span> · ไม่เคยตรวจ → ตรวจก่อน · เคย CIN2+ → ติดตามต่อ ≥25 ปีหลังรักษา'},
+ crc:{q:'ประวัติครอบครัว/พันธุกรรม?',o:[['Lynch syndrome','crcLy'],['ญาติสายตรงเป็น CRC/advanced adenoma อายุ &lt;60 หรือ ≥2 คน','crcHi'],['ญาติสายตรง 1 คนเป็นตอนอายุ ≥60','crcMid'],['ไม่มี / ญาติลำดับสองเท่านั้น','crcAv']]},
+ crcLy:{leaf:true,cls:'danger',t:'Lynch syndrome',b:'<b>Colonoscopy ทุก 1–2 ปี</b> เริ่ม 20–25 ปี (MLH1/MSH2/EPCAM) · MSH6/PMS2: เริ่ม 30–35 ปี ทุก 1–3 ปี · คัดกรองมะเร็งมดลูก/รังไข่ · ส่งผู้เชี่ยวชาญ'},
+ crcHi:{leaf:true,cls:'warn',t:'ความเสี่ยงสูงจากครอบครัว',b:'เริ่ม <b>40 ปี หรือ 10 ปีก่อนอายุญาติที่เป็นน้อยที่สุด</b> (เอาที่เร็วกว่า) · <b>Colonoscopy ทุก 5 ปี</b> · ญาติเป็น &lt;50 ปี/หลายรุ่น → ประเมิน Lynch · ใช้เครื่องมือที่ 4 คำนวณอายุ'},
+ crcMid:{leaf:true,cls:'ok',t:'ญาติ 1 คนเป็นตอนอายุ ≥60',b:'เริ่ม <b>40 ปี</b> · วิธีแบบคนทั่วไป: FIT ทุกปี หรือ colonoscopy ทุก 10 ปี (สิทธิ FIT ไทยเริ่ม 50 ปี)'},
+ crcAv:{q:'อายุเท่าไร?',o:[['&lt;45 ปี','crcYoung'],['45–49 ปี','crc45'],['50–70 ปี','crcFIT'],['71–75 ปี','crc71'],['76–85 ปี','crc76'],['&gt;85 ปี','crc85']]},
+ crcYoung:{leaf:true,cls:'ok',t:'ยังไม่ต้องคัดกรอง',b:'ความเสี่ยงทั่วไป · ถ้ามีอาการ (ถ่ายเป็นเลือด ซีด) → colonoscopy ไม่ใช่ FIT'},
+ crc45:{leaf:true,cls:'ok',t:'45–49 ปี',b:'USPSTF <span class="rec s1">B</span> เริ่มได้ (FIT ทุกปี หรือ colonoscopy ทุก 10 ปี) · ไทย: สิทธิ FIT เริ่ม 50 ปี'},
+ crcFIT:{leaf:true,cls:'ok',t:'FIT ทุก 2 ปี (สิทธิ สปสช.)',b:'USPSTF: FIT ทุกปี หรือ colonoscopy ทุก 10 ปี',next:['แปลผล FIT','fitR']},
+ fitR:{q:'ผล FIT?',o:[['ลบ','fitNeg'],['บวก','fitPos']]},
+ fitNeg:{leaf:true,cls:'ok',t:'FIT ลบ',b:'ตรวจซ้ำ <b>2 ปี</b> (สากล: ทุกปี) · อาการใหม่ → ตรวจวินิจฉัย'},
+ fitPos:{leaf:true,cls:'danger',t:'FIT บวก',b:'<b>Colonoscopy โดยเร็ว</b> (เป้าหมายในทางปฏิบัติ ~3 เดือน · รอเกิน ~9–10 เดือนสัมพันธ์กับระยะลุกลาม) · <b>ไม่ตรวจ FIT ซ้ำ</b> · ส่องไม่ได้ → CT colonography'},
+ crc71:{leaf:true,cls:'ok',t:'71–75 ปี',b:'นอกช่วงสิทธิ FIT ไทย (50–70) · USPSTF ยังแนะนำถึง 75 ปี <span class="rec s1">A</span> — ตรวจถ้าสุขภาพดี'},
+ crc76:{leaf:true,cls:'warn',t:'76–85 ปี',b:'USPSTF <span class="rec">C</span>: เลือกรายบุคคล — ไม่เคยตรวจมาก่อนและสุขภาพดีได้ประโยชน์มากกว่า'},
+ crc85:{leaf:true,cls:'warn',t:'&gt;85 ปี',b:'ไม่คัดกรอง'},
+ br:{q:'ความเสี่ยงมะเร็งเต้านม?',o:[['BRCA/ยีนเสี่ยงสูง ฉายแสงหน้าอกอายุ 10–30 หรือ lifetime risk ≥20%','brHi'],['ญาติสายตรงเป็นมะเร็งเต้านม','brFdr'],['ความเสี่ยงทั่วไป','brAvAge']]},
+ brHi:{leaf:true,cls:'danger',t:'เสี่ยงสูงมาก',b:'BRCA: <b>MRI ปีละครั้ง 25–29 ปี · mammogram + MRI ปีละครั้ง 30–75 ปี</b> · ฉายแสง: MRI + mammogram ปีละครั้ง เริ่ม 8 ปีหลังฉาย (ไม่ก่อน 25) · ส่งเวชพันธุศาสตร์/ศัลยแพทย์',next:['แปลผล BI-RADS','birR']},
+ brFdr:{leaf:true,cls:'warn',t:'ญาติสายตรงเป็นมะเร็งเต้านม',b:'อายุ ≥40 ปี: <b>mammogram + US ปีละครั้ง (สิทธิ สปสช.)</b> · ญาติเป็นตอนอายุน้อย: เริ่มก่อนอายุญาติ ~10 ปี (ไม่ก่อน 30) · ญาติหลายคน/รังไข่/ชาย → ประเมินยีน BRCA',next:['แปลผล BI-RADS','birR']},
+ brAvAge:{q:'อายุเท่าไร?',o:[['&lt;40 ปี','brY'],['40–74 ปี','brAv'],['≥75 ปี','brO']]},
+ brY:{leaf:true,cls:'ok',t:'&lt;40 ปี ความเสี่ยงทั่วไป',b:'Breast awareness/ตรวจเต้านมตนเอง · ไม่ต้อง mammogram'},
+ brAv:{leaf:true,cls:'ok',t:'40–74 ปี',b:'USPSTF 2024: <b>mammogram ทุก 2 ปี</b> <span class="rec s1">B</span> · ไทย: CBE ปีละครั้ง · mammogram นอกสิทธิสำหรับความเสี่ยงทั่วไป (สถาบันมะเร็งฯ แนะนำ 1–2 ปี ถ้าเข้าถึงได้)',next:['แปลผล BI-RADS','birR']},
+ brO:{leaf:true,cls:'warn',t:'≥75 ปี',b:'USPSTF <span class="rec">I</span> · ตัดสินตามสุขภาพและความต้องการ (คาดชีวิต ≥10 ปี)'},
+ birR:{q:'ผล BI-RADS?',o:[['0','b0'],['1 หรือ 2','b12'],['3','b3'],['4 หรือ 5','b45'],['6','b6']]},
+ b0:{leaf:true,cls:'warn',t:'BI-RADS 0',b:'<b>ยังไม่สรุป</b> → ถ่ายภาพเพิ่ม/US หรือเทียบฟิล์มเก่า'},
+ b12:{leaf:true,cls:'ok',t:'BI-RADS 1–2',b:'คัดกรองตามรอบ'},
+ b3:{leaf:true,cls:'warn',t:'BI-RADS 3',b:'<b>ติดตาม 6 เดือน</b> (แล้ว 6–12 เดือน จนครบ ~2 ปี)'},
+ b45:{leaf:true,cls:'danger',t:'BI-RADS 4–5',b:'<b>Core needle biopsy</b> · ส่งศัลยแพทย์'},
+ b6:{leaf:true,cls:'danger',t:'BI-RADS 6',b:'มะเร็งยืนยันแล้ว → รักษา'},
+ lung:{q:'อายุ 50–80 ปี และสูบ ≥20 pack-years?',o:[['ไม่ใช่','lgNo'],['ใช่','lgSt']]},
+ lgNo:{leaf:true,cls:'ok',t:'ไม่เข้าเกณฑ์ LDCT',b:'ช่วยเลิกบุหรี่ · คนไม่สูบ: ยังไม่มีหลักฐานพอให้ LDCT (ไทยพบผลบวกลวงสูง) · CXR ไม่ใช่การคัดกรอง'},
+ lgSt:{q:'สถานะบุหรี่?',o:[['ยังสูบ หรือเลิกมา &lt;15 ปี','lgYes'],['เลิกมา ≥15 ปี','lgAcs']]},
+ lgYes:{leaf:true,cls:'ok',t:'เข้าเกณฑ์ทั้ง USPSTF และ ACS',b:'Shared decision-making → <b>LDCT ปีละครั้ง</b> · ช่วยเลิกบุหรี่ · ไทย: นอกสิทธิคัดกรอง',next:['แปลผล Lung-RADS','lrR']},
+ lgAcs:{leaf:true,cls:'warn',t:'เข้าเกณฑ์ ACS 2023 เท่านั้น',b:'USPSTF: หยุดเมื่อเลิกครบ 15 ปี · ACS: ไม่จำกัดจำนวนปีที่เลิก → คุยกับผู้ป่วย',next:['แปลผล Lung-RADS','lrR']},
+ lrR:{q:'ผล Lung-RADS?',o:[['0','l0'],['1 หรือ 2','l12'],['3','l3'],['4A','l4a'],['4B หรือ 4X','l4b']]},
+ l0:{leaf:true,cls:'warn',t:'Lung-RADS 0',b:'เทียบภาพเก่า หรือ LDCT 1–3 เดือน'},
+ l12:{leaf:true,cls:'ok',t:'Lung-RADS 1–2',b:'LDCT ปีละครั้งตามเดิม'},
+ l3:{leaf:true,cls:'warn',t:'Lung-RADS 3',b:'<b>LDCT 6 เดือน</b>'},
+ l4a:{leaf:true,cls:'warn',t:'Lung-RADS 4A',b:'<b>LDCT 3 เดือน</b> · PET/CT ได้ถ้า solid ≥8 mm'},
+ l4b:{leaf:true,cls:'danger',t:'Lung-RADS 4B/4X',b:'<b>ส่งต่อ</b>: CT ทรวงอก ± PET/CT ± เจาะชิ้นเนื้อ'},
+ liver:{q:'ปัจจัยเสี่ยงของตับ/ท่อน้ำดี?',o:[['ตับแข็ง (ทุกสาเหตุ)','hccS'],['HBsAg บวก ไม่มีตับแข็ง','hbvQ'],['อีสาน/เคยเป็นพยาธิใบไม้ตับ/กินปลาดิบ','ovL'],['ไม่มี','hccNo']]},
+ hbvQ:{q:'ชาย &gt;40 ปี / หญิง &gt;50 ปี / ครอบครัวเป็นมะเร็งตับหรือตับแข็ง?',o:[['ใช่','hccS'],['ไม่ใช่','hbvMon']]},
+ hbvMon:{leaf:true,cls:'ok',t:'HBV ยังไม่เข้าเกณฑ์ surveillance',b:'ติดตาม ALT/HBV DNA และประเมินพังผืด (APRI/FIB-4) ตามแนวทาง HBV · ประเมินใหม่เมื่ออายุถึงเกณฑ์หรือพบตับแข็ง'},
+ hccS:{leaf:true,cls:'warn',t:'HCC surveillance',b:'<b>US ตับ + AFP ทุก 6 เดือน</b> (แนวทาง GP 6–12 เดือน) · ตับแข็ง Child C ที่ไม่ปลูกถ่ายตับ → ไม่ต้อง',next:['แปลผล US/AFP','usR']},
+ usR:{q:'ผล US/AFP?',o:[['ไม่พบก้อน และ AFP &lt;20 ไม่สูงขึ้น','us1'],['ก้อน &lt;10 mm','us2'],['ก้อน ≥10 mm หรือ AFP ≥20/สูงขึ้น','us3']]},
+ us1:{leaf:true,cls:'ok',t:'US-1',b:'ตรวจซ้ำ 6 เดือน'},
+ us2:{leaf:true,cls:'warn',t:'US-2',b:'<b>US ซ้ำ 3 เดือน</b> · โตขึ้น → CT/MRI'},
+ us3:{leaf:true,cls:'danger',t:'US-3 / AFP สูง',b:'<b>Multiphase CT หรือ MRI ตับ</b> · ส่งต่อ'},
+ ovL:{leaf:true,cls:'warn',t:'พยาธิใบไม้ตับ/มะเร็งท่อน้ำดี',b:'≥15 ปี: <b>OV-RDT ตรวจปัสสาวะปีละครั้ง</b> · บวก → praziquantel 40 mg/kg ครั้งเดียว + เลิกกินปลาดิบ · ≥40 ปี: <b>US ช่องท้องปีละครั้ง (CASCAP)</b> · ท่อน้ำดีขยาย/ก้อน → CT/MRI'},
+ hccNo:{leaf:true,cls:'ok',t:'ไม่ต้อง US/AFP',b:'คนทั่วไปไม่คัดกรองมะเร็งตับ · คนไทยเกิดก่อน 2535 → ตรวจ HBsAg/anti-HCV 1 ครั้ง'},
+ pr:{q:'อายุเท่าไร?',o:[['&lt;55 ปี','prY'],['55–69 ปี','prSd'],['≥70 ปี','prO']]},
+ prY:{leaf:true,cls:'ok',t:'&lt;55 ปี',b:'ทั่วไปไม่ตรวจ · เสี่ยงสูง (ญาติเป็นอายุน้อย, BRCA2) → คุยตั้งแต่ 40–45 ปี'},
+ prSd:{leaf:true,cls:'warn',t:'55–69 ปี: ตัดสินใจร่วม',b:'อธิบายประโยชน์ (ลดตายเล็กน้อย) และโทษ (ผลบวกลวง เจาะชิ้นเนื้อ overdiagnosis ผลข้างเคียงการรักษา) <span class="rec">C</span> · ผู้ป่วยเลือกตรวจ → PSA · สูง → ตรวจซ้ำ → ส่งศัลยแพทย์ระบบปัสสาวะ'},
+ prO:{leaf:true,cls:'ok',t:'≥70 ปี',b:'ไม่แนะนำ PSA คัดกรอง <span class="rec no">D</span> (คนทั่วไป) · พาหะ BRCA2/เสี่ยงสูงที่สุขภาพดี → ตัดสินรายบุคคล'}
+},'apTrail','apStage');
+
+/* ---------- tool 1: personalised plan ---------- */
+function plan(){
+  const o=$('planOut'),c=id=>$(id).checked;
+  const age=num('pAge'),sex=$('pSex').value,smk=$('pSmk').value;
+  if(age===null){o.innerHTML='ใส่ <b>อายุ</b> เพื่อดูแผนคัดกรอง';return}
+  if(age<18||age>110){o.innerHTML='อายุต้องอยู่ระหว่าง 18–110 ปี (หน้านี้สำหรับผู้ใหญ่) — ตรวจสอบตัวเลข';return}
+  const L=[];const f=sex==='f';
+  if(c('pLe'))L.push('<b>คาดชีวิต &lt;10 ปี/โรคร่วมรุนแรง</b> → การคัดกรองส่วนใหญ่ <b>ไม่เกิดประโยชน์</b> คุยเรื่องไม่เริ่ม/หยุด · ยังเฝ้าระวัง HCC ได้ถ้าเป็นตับแข็งที่ยังรักษาได้');
+  // ----- cervix
+  if(f){
+    let s='';const last=$('pCxLast').value,cy=num('pCxYr');
+    if(c('pHyst')&&!c('pCin'))s='ตัดมดลูกพร้อมปากมดลูก ไม่เคย CIN2+ → <b>ไม่ต้องคัดกรอง</b>';
+    else if(c('pCin'))s='เคย CIN2+/มะเร็ง → <b>ติดตามตามสูตินรีแพทย์</b> (HPV ± cytology ต่อเนื่อง ≥25 ปีหลังรักษา แม้อายุเกิน 65)';
+    else if(last==='abn')s='มีผลผิดปกติที่ยังติดตามอยู่ → <b>ทำตามแผนติดตาม/colposcopy</b> ไม่ใช่รอบคัดกรองปกติ';
+    else if(age<21)s='อายุ &lt;21 ปี → ยังไม่คัดกรอง (USPSTF <span class="rec no">D</span>) · ไทย: ตรวจได้ถ้าเสี่ยงสูง · แนะนำวัคซีน HPV';
+    else if(age<30)s='ไทย: ยังไม่ใช่กลุ่มเป้าหมาย (ตรวจได้ถ้าเสี่ยงสูง) · USPSTF: <b>Pap ทุก 3 ปี</b> (21–29) · ACS: HPV primary ตั้งแต่ 25 ปี';
+    else if(age<=59)s='<b>HPV DNA ทุก 5 ปี (สิทธิ สปสช. 30–59 ปี; บางเอกสารเขียน 30–60)</b> — เก็บโดยบุคลากรหรือ self-sampling · USPSTF: HPV ทุก 5 ปี เช่นกัน';
+    else if(age<=65)s=(age<61?'อายุ 60: ขอบช่วงสิทธิ (สปสช. 30–59 ปี; บางเอกสารเขียน 30–60) — ตรวจตามสิทธิได้ถ้าหน่วยบริการรับ':'นอกช่วงสิทธิ สปสช. (30–59 ปี; บางเอกสารเขียน 30–60)')+' · USPSTF ยังแนะนำถึง 65 ปี — ถ้ายังตรวจไม่เพียงพอ ควรตรวจก่อนหยุด';
+    else s=last==='none'?'&gt;65 ปีแต่ <b>ไม่เคยตรวจ/ไม่ทราบผล</b> → ควรตรวจก่อนหยุด':'&gt;65 ปี ตรวจผ่านมาเพียงพอและลบ → <b>หยุดได้</b> <span class="rec no">D</span> (ต้องมีผลลบต่อเนื่องตามเกณฑ์)';
+    if(!(c('pHyst')&&!c('pCin'))&&!c('pCin')&&last!=='abn'&&age>=21&&!(age>65&&last!=='none')){
+      if(last!=='none'){
+        if(cy===null)s+=' · ใส่จำนวนปีที่ตรวจครั้งล่าสุดเพื่อดูว่าครบรอบหรือยัง';
+        else if(cy<0||cy>age)s+=' · จำนวนปีที่ตรวจล่าสุดไม่ถูกต้อง';
+        else{const iv=last==='hpvneg'?5:3;s+=cy>=iv?` · ตรวจครั้งล่าสุด ${f1(cy)} ปีก่อน → <b>ครบรอบแล้ว ตรวจได้เลย</b>`:` · ครั้งล่าสุด ${f1(cy)} ปีก่อน → ครบรอบอีก ${f1(iv-cy)} ปี (${last==='hpvneg'?'HPV ทุก 5 ปี':'Pap ทุก 3 ปี'})`;}
+      }else if(age>=30&&age<=65)s+=' · <b>ยังไม่เคยตรวจ → ตรวจได้เลย</b>';
+    }
+    if(c('pHiv')&&!(c('pHyst')&&!c('pCin')))s+=' · <b>HIV/ภูมิต่ำ</b>: เริ่มเร็วและถี่กว่า (WHO: HPV DNA จาก 25 ปี ทุก 3–5 ปี) ตามแนวทาง HIV';
+    L.push('<b>ปากมดลูก</b>: '+s);
+  }
+  // ----- breast
+  if(f){
+    let s;
+    if(c('pBrca'))s=age<25?'BRCA: breast awareness · CBE ทุก 6–12 เดือนเริ่ม 25 ปี · ส่งเวชพันธุศาสตร์':age<30?'BRCA: <b>MRI เต้านมปีละครั้ง</b> (25–29) + CBE ทุก 6–12 เดือน':age<=75?'BRCA: <b>mammogram + MRI ปีละครั้ง</b> (30–75) + CBE · ปรึกษาผ่าตัดลดความเสี่ยง':'BRCA อายุ &gt;75: ตัดสินรายบุคคล';
+    else if(c('pRt'))s=age<25?'ฉายแสงหน้าอก: เริ่ม MRI + mammogram ปีละครั้งที่ 25 ปี หรือ 8 ปีหลังฉาย (แล้วแต่อันไหนช้ากว่า)':'ฉายแสงหน้าอกอายุ 10–30: <b>MRI + mammogram ปีละครั้ง</b> (เริ่ม 8 ปีหลังฉาย ไม่ก่อน 25 ปี)';
+    else if(c('pFdrB'))s=age>=40?(age<75?'ญาติสายตรงเป็นมะเร็งเต้านม: <b>mammogram + US ปีละครั้ง (สิทธิ สปสช.)</b>':'ญาติเป็นมะเร็งเต้านม อายุ ≥75: ตัดสินตามสุขภาพ (สิทธิ สปสช. ยังครอบคลุมหญิง ≥40 ที่มีญาติสายตรง)'):age>=30?'ญาติเป็นมะเร็งเต้านม อายุ &lt;40: เริ่มก่อนอายุญาติ ~10 ปี (ไม่ก่อน 30) → ส่งพิจารณา mammogram/MRI · ประเมินยีน BRCA ถ้าญาติเป็นอายุน้อย/หลายคน':'ญาติเป็นมะเร็งเต้านม อายุ &lt;30: breast awareness · ประเมินความเสี่ยง/ยีน ถ้าญาติเป็นอายุน้อยมาก';
+    else if(age<40)s='ความเสี่ยงทั่วไป &lt;40: breast awareness · ไม่ต้อง mammogram';
+    else if(age<=74)s='USPSTF: <b>mammogram ทุก 2 ปี</b> <span class="rec s1">B</span> · ไทย: CBE ปีละครั้ง (mammogram ความเสี่ยงทั่วไปอยู่นอกสิทธิ)';
+    else s='≥75 ปี: USPSTF <span class="rec">I</span> — ตัดสินรายบุคคล';
+    L.push('<b>เต้านม</b>: '+s);
+  }else if(c('pBrca'))L.push('<b>เต้านม (ชาย BRCA)</b>: breast awareness + CBE ปีละครั้งเริ่ม 35 ปี · PSA ดูหัวข้อต่อมลูกหมาก');
+  // ----- colorectal
+  {
+    let s;const cs=$('pCol').value,cyr=num('pColYr');
+    if(c('pLynch'))s='Lynch: <b>colonoscopy ทุก 1–2 ปี</b> เริ่ม 20–25 ปี (MLH1/MSH2) · MSH6/PMS2: เริ่ม 30–35 ปี ทุก 1–3 ปี'+(f?' + คัดกรองมดลูก/รังไข่ตามผู้เชี่ยวชาญ':'');
+    else if(c('pFdrY'))s=age>=40?'ญาติ CRC &lt;60/≥2 คน: <b>colonoscopy ทุก 5 ปี</b> (เริ่ม 40 ปี หรือ 10 ปีก่อนญาติ — ใช้เครื่องมือที่ 4)':'ญาติ CRC &lt;60/≥2 คน: เริ่ม <b>40 ปี หรือ 10 ปีก่อนอายุญาติ</b> → ใช้เครื่องมือที่ 4 คำนวณ · colonoscopy ทุก 5 ปี';
+    else if(c('pFdrO'))s=age>=40?'ญาติ 1 คนเป็นตอน ≥60: เริ่ม 40 ปี · FIT ทุกปี หรือ colonoscopy ทุก 10 ปี (สิทธิ FIT ไทยเริ่ม 50)':'ญาติ 1 คนเป็นตอน ≥60: เริ่มที่ 40 ปี';
+    else if(age<45)s='ความเสี่ยงทั่วไป: ยังไม่ต้อง (เริ่ม 45 USPSTF / 50 ไทย)';
+    else if(age<50)s='USPSTF <span class="rec s1">B</span>: เริ่มได้ (FIT ทุกปี หรือ colonoscopy ทุก 10 ปี) · ไทย: สิทธิ FIT เริ่ม 50 ปี';
+    else if(age<=70)s='<b>FIT ทุก 2 ปี (สิทธิ สปสช.)</b> · USPSTF: FIT ทุกปี หรือ colonoscopy ทุก 10 ปี';
+    else if(age<=75)s='นอกสิทธิ FIT ไทย (50–70) · USPSTF <span class="rec s1">A</span> ยังแนะนำถึง 75';
+    else if(age<=85)s='76–85 ปี: USPSTF <span class="rec">C</span> เลือกรายบุคคล';
+    else s='&gt;85 ปี: <b>ไม่คัดกรอง</b>';
+    if((c('pLynch')||c('pFdrY')||c('pFdrO'))&&age>75)s+=age>85?' · <b>อายุ &gt;85: ส่วนใหญ่ไม่คัดกรองต่อ</b>':' · อายุ &gt;75: ตัดสินตามสุขภาพและผลส่องครั้งก่อน';
+    if(cs!=='none'&&!c('pLynch')){
+      if(cyr===null)s+=' · ใส่จำนวนปีที่ส่องกล้องล่าสุด';
+      else if(cyr<0||cyr>age)s+=' · จำนวนปีที่ส่องกล้องล่าสุดไม่ถูกต้อง';
+      else if(cs==='polyp')s+=` · เคยพบ adenoma (${f1(cyr)} ปีก่อน) → <b>surveillance colonoscopy ตามที่แพทย์ส่องกล้องกำหนด</b> (3–10 ปีตามชนิด/จำนวน) แทน FIT`;
+      else{const iv=c('pFdrY')?5:10;s+=cyr<iv?` · colonoscopy ปกติ ${f1(cyr)} ปีก่อน → <b>ยังไม่ต้องตรวจ</b> (ครบรอบอีก ${f1(iv-cyr)} ปี — ไม่ต้อง FIT ระหว่างนี้)`:` · colonoscopy ปกติ ${f1(cyr)} ปีก่อน → <b>ครบรอบแล้ว</b>`;}
+    }
+    L.push('<b>ลำไส้ใหญ่</b>: '+s);
+  }
+  // ----- lung
+  if(smk==='never')L.push('<b>ปอด</b>: ไม่เคยสูบ → ไม่เข้าเกณฑ์ LDCT (ยังไม่มีหลักฐานในคนไม่สูบ)');
+  else{
+    const py=num('pPy'),q=num('pQuit');let s;
+    if(py===null)s='ใส่ <b>pack-years</b> (ใช้เครื่องมือที่ 2 คำนวณได้)';
+    else if(py<0||py>300)s='pack-years ไม่ถูกต้อง — ตรวจสอบตัวเลข';
+    else if(smk==='ex'&&q===null)s='ใส่ <b>จำนวนปีที่เลิก</b>';
+    else if(smk==='ex'&&(q<0||q>age))s='จำนวนปีที่เลิกไม่ถูกต้อง';
+    else{
+      const ok=age>=50&&age<=80&&py>=20,us=ok&&(smk==='cur'||q<15);
+      s=us?'<b>เข้าเกณฑ์ LDCT ปีละครั้ง</b> (USPSTF และ ACS) · shared decision-making · ไทย: นอกสิทธิคัดกรอง':ok?'เข้าเกณฑ์ <b>ACS 2023 เท่านั้น</b> (เลิกมา ≥15 ปี — USPSTF ให้หยุด) → คุยกับผู้ป่วย':`ไม่เข้าเกณฑ์ LDCT (${age<50||age>80?'อายุนอก 50–80':''}${(age<50||age>80)&&py<20?' · ':''}${py<20?'pack-years &lt;20':''})`;
+    }
+    if(smk==='cur')s+=' · <b>ช่วยเลิกบุหรี่ทุกครั้ง</b>';
+    L.push('<b>ปอด</b>: '+s);
+  }
+  // ----- liver
+  {
+    const hiHbv=c('pHbv')&&((sex==='m'&&age>40)||(f&&age>50)||c('pFhcc'));
+    if(c('pCir'))L.push('<b>ตับ</b>: ตับแข็ง → <b>US ตับ + AFP ทุก 6 เดือน</b> (ยกเว้น Child C ที่ไม่ปลูกถ่ายตับ) · ดูหน้า Cirrhosis');
+    else if(hiHbv)L.push('<b>ตับ</b>: HBV '+(c('pFhcc')?'+ ครอบครัวเป็นมะเร็งตับ/ตับแข็ง':sex==='m'?'ชาย &gt;40 ปี':'หญิง &gt;50 ปี')+' → <b>US ± AFP ทุก 6 เดือน</b> (แนวทาง GP ไทย 2569: 6–12 เดือน · เกณฑ์อายุมาจากแนวทาง HCC ไทย 2019/AASLD)');
+    else if(c('pHbv'))L.push('<b>ตับ</b>: HBV ยังไม่ถึงเกณฑ์อายุ/ไม่มีตับแข็ง → ติดตาม ALT/HBV DNA/FIB-4 ตามแนวทาง HBV · เริ่ม surveillance เมื่อ'+(sex==='m'?'อายุเกิน 40':'อายุเกิน 50')+' หรือพบตับแข็ง');
+    else if(c('pFhcc'))L.push('<b>ตับ</b>: ครอบครัวเป็นมะเร็งตับ → ตรวจ <b>HBsAg/anti-HCV</b> ถ้ายังไม่เคย (ไม่ต้อง US/AFP ถ้าผลลบและไม่มีโรคตับ)');
+    if(c('pOv'))L.push('<b>ท่อน้ำดี</b>: '+(age>=40?'<b>OV-RDT ปีละครั้ง</b> + <b>US ช่องท้องปีละครั้ง (CASCAP)</b>':'<b>OV-RDT ปีละครั้ง</b> (US ตามโครงการ CASCAP เริ่ม 40 ปี)')+' · OV บวก → praziquantel 40 mg/kg ครั้งเดียว · เลิกกินปลาดิบ');
+  }
+  // ----- prostate
+  if(sex==='m'){
+    let s;
+    if(c('pBrca'))s=age<40?'พาหะ BRCA: ยังไม่ตรวจ · <b>เริ่มคุย PSA ที่ 40 ปี</b> (NCCN)':age<70?'พาหะ BRCA2 (NCCN): <b>คุยแล้วตรวจ PSA ปีละครั้งตั้งแต่ 40 ปี</b> (BRCA1: พิจารณาที่ 40 ปี) · ส่งศัลยแพทย์ระบบปัสสาวะถ้า PSA สูง':'พาหะ BRCA อายุ ≥70: <b>ตัดสินรายบุคคล</b> ตามสุขภาพ/คาดชีวิต (USPSTF D ≥70 ใช้กับคนทั่วไป; NCCN ทบทวนการตรวจต่อที่ ~75 ปี)';
+    else if(age>=70)s='≥70 ปี: <b>ไม่แนะนำ PSA</b> <span class="rec no">D</span>';
+    else if(age>=55)s='55–69 ปี: <b>ตัดสินใจร่วม</b> ก่อนตรวจ PSA <span class="rec">C</span> · ไทย: ไม่มีโปรแกรมระดับประชากร';
+    else s='&lt;55 ปี: ทั่วไปไม่ตรวจ (เสี่ยงสูง เช่น พ่อ/พี่น้องเป็นอายุน้อย → คุยตั้งแต่ 40–45 ปี)';
+    L.push('<b>ต่อมลูกหมาก</b>: '+s);
+  }
+  // ----- oral
+  if(age>=40)L.push('<b>ช่องปาก</b>: ตรวจช่องปากปีละครั้ง (สิทธิ สปสช. ≥40 ปี)'+(c('pOral')?' — <b>มีปัจจัยเสี่ยง ให้ความสำคัญ</b> + ช่วยเลิกบุหรี่/สุรา/หมาก':''));
+  else if(c('pOral'))L.push('<b>ช่องปาก</b>: มีปัจจัยเสี่ยง → ตรวจดูช่องปากเมื่อมารับบริการ · แผล/ฝ้าขาวแดงไม่หาย &gt;2–3 สัปดาห์ → ส่งต่อ');
+  L.push('<span class="muted">ไม่แนะนำในคนไม่มีอาการ: CA-125/US รังไข่, US ไทรอยด์, tumour markers, PET/CT หรือ CT ทั้งตัว, คัดกรองตับอ่อน/กระเพาะ/หลังโพรงจมูกทั่วไป</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tPlan input,#tPlan select',plan);
+
+/* ---------- tool 2: pack-years ---------- */
+function packy(){
+  const o=$('pyOut'),age=num('yAge'),amt=num('yAmt'),yrs=num('yYrs'),u=$('yUnit').value,st=$('ySt').value,q=num('yQuit');
+  if(age===null||amt===null||yrs===null){o.innerHTML='ใส่ <b>อายุ ปริมาณที่สูบ และจำนวนปีที่สูบ</b>';return}
+  if(age<18||age>110){o.innerHTML='อายุต้องอยู่ระหว่าง 18–110 ปี';return}
+  if(amt<0||yrs<0){o.innerHTML='ตัวเลขติดลบไม่ได้';return}
+  if(yrs>age){o.innerHTML='จำนวนปีที่สูบมากกว่าอายุ — ตรวจสอบตัวเลข';return}
+  const perDay=u==='cig'?amt:amt*20;
+  if(perDay>100){o.innerHTML=`${f1(perDay)} มวน/วัน สูงผิดปกติ — ตรวจสอบหน่วย (มวน หรือ ซอง)`;return}
+  if(st==='ex'){
+    if(q===null){o.innerHTML='ใส่ <b>จำนวนปีที่เลิก</b>';return}
+    if(q<0||q+yrs>age){o.innerHTML='จำนวนปีที่เลิก + ปีที่สูบ มากกว่าอายุ — ตรวจสอบตัวเลข';return}
+  }
+  const py=Math.round(perDay/20*yrs*100)/100;
+  const L=[`<b>${f1(py)} pack-years</b> <span class="muted">= (${f1(perDay)} มวน/วัน ÷ 20) × ${f1(yrs)} ปี</span>`];
+  if(perDay===0||yrs===0){L.push('ไม่มีประวัติสูบที่นับได้ → ไม่เข้าเกณฑ์ LDCT');o.innerHTML=L.join('<br>');return}
+  const aOk=age>=50&&age<=80,pOk=py>=20,qOk=st==='cur'||q<15;
+  const us=aOk&&pOk&&qOk,acs=aOk&&pOk;
+  const why=[];if(!aOk)why.push(age<50?'อายุ &lt;50':'อายุ &gt;80');if(!pOk)why.push('pack-years &lt;20');
+  L.push('USPSTF 2021: '+(us?'<b>เข้าเกณฑ์</b> → LDCT ปีละครั้ง':'<b>ไม่เข้าเกณฑ์</b> ('+(why.concat(!qOk?['เลิกมา ≥15 ปี']:[]).join(', '))+')'));
+  L.push('ACS 2023: '+(acs?'<b>เข้าเกณฑ์</b> → LDCT ปีละครั้ง (ไม่ดูจำนวนปีที่เลิก)':'<b>ไม่เข้าเกณฑ์</b> ('+why.join(', ')+')'));
+  if(acs&&!us)L.push('สองแนวทางต่างกันเฉพาะจำนวนปีที่เลิก → คุยประโยชน์/โทษกับผู้ป่วยก่อนตัดสินใจ');
+  if(!acs&&!aOk&&pOk&&age<50)L.push(`จะเข้าเกณฑ์อายุเมื่อ 50 ปี (อีก ${f1(50-age)} ปี)`);
+  if(st==='cur'&&!pOk&&aOk){const need=Math.round((20-py)/(perDay/20)*10)/10;L.push(`ถ้ายังสูบเท่าเดิม จะครบ 20 pack-years ในอีก ~${f1(need)} ปี — เลิกตอนนี้ดีที่สุด`);}
+  if((us||acs)&&$('yLe').checked)L.push('<b>โรคร่วมรุนแรง/ผ่าตัดไม่ได้ → ไม่แนะนำคัดกรอง</b> แม้เข้าเกณฑ์');
+  else if(us||acs)L.push('ก่อนตรวจ: shared decision-making (ผลบวกลวง รังสี overdiagnosis) · ต้องพร้อมผ่าตัดถ้าพบมะเร็ง · ไทย: นอกสิทธิคัดกรอง');
+  if(st==='cur')L.push('<b>ช่วยเลิกบุหรี่</b> (สายเลิกบุหรี่ 1600, varenicline/cytisine/NRT ตามที่มี)');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tPy input,#tPy select',packy);
+
+/* ---------- tool 3: result → next step ---------- */
+function res(){
+  const t=$('rType').value,o=$('resOut');
+  const show={hpv:['rHpvL','rSelfL'],fit:['rFitL'],bir:['rBirL'],lr:['rLrL'],hcc:['rUsL','rAfpL','rRiseL']};
+  ['rHpvL','rFitL','rBirL','rLrL','rUsL','rAfpL','rRiseL','rSelfL'].forEach(id=>{$(id).hidden=!show[t].includes(id)});
+  let h='';
+  if(t==='hpv'){
+    const r=$('rHpv').value,self=$('rSelf').checked;
+    h={neg:'<b>HPV ลบ</b> → ตรวจซ้ำ <b>5 ปี</b> (สิทธิไทย)'+(self?' · ACS 2025: ชุดเก็บเองลบ → ซ้ำ 3 ปี':''),
+       '1618':'<b>HPV 16/18 บวก</b> → <b>ส่ง colposcopy</b> (ไม่ต้องรอ cytology) · ±biopsy · ตรวจหลัง CIN2+ ตามสูตินรีแพทย์',
+       oth:'<b>HPV เสี่ยงสูงอื่นบวก</b> → <b>cytology triage</b> (LBC/Pap)'+(self?' — <b>ชุดเก็บเองทำ cytology ไม่ได้</b> นัดให้บุคลากรเก็บตัวอย่างปากมดลูก':' จากตัวอย่างเดิมถ้าเป็น LBC')+' · NILM → ซ้ำ 1 ปี · ≥ASC-US → colposcopy',
+       othN:'HPV อื่นบวก + cytology ปกติ → <b>ตรวจซ้ำใน 1 ปี</b> · ยังบวก/ผิดปกติ → colposcopy',
+       othA:'HPV อื่นบวก + <b>ASC-US ขึ้นไป</b> → <b>ส่ง colposcopy</b>',
+       inv:'ตัวอย่างใช้ไม่ได้ → <b>เก็บใหม่</b> (ภายใน ~3 เดือน)'}[r];
+  }else if(t==='fit'){
+    h={neg:'<b>FIT ลบ</b> → ตรวจซ้ำ <b>2 ปี</b> (สิทธิไทย 50–70) · สากล FIT ทุกปี · อาการใหม่ → ตรวจวินิจฉัย',
+       pos:'<b>FIT บวก</b> → <b>colonoscopy โดยเร็ว</b> (เป้าหมายในทางปฏิบัติ ~3 เดือน · รอเกิน ~9–10 เดือนสัมพันธ์กับมะเร็งระยะลุกลาม) · <b>ห้ามตรวจ FIT ซ้ำ</b> · ส่องไม่ได้ → CT colonography · ผลส่วนใหญ่เป็นติ่งเนื้อ แต่ต้องส่องทุกราย',
+       inv:'ใช้ไม่ได้/เก็บผิดวิธี → <b>เก็บใหม่</b> ตามคำแนะนำ (ไม่ใช่ผลลบ)'}[$('rFit').value];
+  }else if(t==='bir'){
+    h={'0':'<b>BI-RADS 0</b>: ยังสรุปไม่ได้ → ถ่ายภาพเพิ่ม (spot/magnification, US) หรือหาฟิล์มเก่ามาเทียบ · <b>ไม่ใช่ผลปกติ</b>',
+       '1':'<b>BI-RADS 1</b>: ปกติ → คัดกรองตามรอบ','2':'<b>BI-RADS 2</b>: benign → คัดกรองตามรอบ',
+       '3':'<b>BI-RADS 3</b>: น่าจะไม่ใช่มะเร็ง (≤2%) → <b>ติดตาม 6 เดือน</b> แล้ว 6–12 เดือนจนครบ ~2 ปี · โตขึ้น → biopsy',
+       '4':'<b>BI-RADS 4</b>: สงสัย (&gt;2 ถึง &lt;95%) → <b>core needle biopsy</b> · ส่งศัลยแพทย์',
+       '5':'<b>BI-RADS 5</b>: สงสัยมาก (≥95%) → <b>biopsy</b> · ส่งศัลยแพทย์',
+       '6':'<b>BI-RADS 6</b>: มะเร็งยืนยันแล้ว → วางแผนรักษา'}[$('rBir').value];
+    h+='<br><span class="muted">ยังคลำได้ก้อนแม้ภาพปกติ → ประเมินต่อ/biopsy</span>';
+  }else if(t==='lr'){
+    h={'0':'<b>Lung-RADS 0</b>: เทียบภาพเก่า หรือ LDCT ซ้ำ 1–3 เดือน (เช่น สงสัยติดเชื้อ)',
+       '1':'<b>Lung-RADS 1</b>: LDCT ปีละครั้งตามเดิม','2':'<b>Lung-RADS 2</b> (&lt;1%): LDCT ปีละครั้งตามเดิม',
+       '3':'<b>Lung-RADS 3</b> (1–2%): <b>LDCT 6 เดือน</b>',
+       '4A':'<b>Lung-RADS 4A</b> (5–15%): <b>LDCT 3 เดือน</b> · PET/CT ได้ถ้าส่วน solid ≥8 mm',
+       '4B':'<b>Lung-RADS 4B</b> (&gt;15%): <b>ส่งต่อ</b> CT ทรวงอก ± PET/CT ± เจาะชิ้นเนื้อ',
+       '4X':'<b>Lung-RADS 4X</b> (&gt;15%, มีลักษณะสงสัยเพิ่ม เช่น spiculation): <b>ส่งต่อ</b> เหมือน 4B'}[$('rLr').value];
+    h+='<br><span class="muted">ไทย: ปุ่มจากวัณโรค/แผลเป็นพบบ่อย — แปลร่วมกับประวัติ</span>';
+  }else{
+    const us=$('rUs').value,afp=num('rAfp'),rise=$('rRise').checked;const L=[];
+    if(afp!==null&&(afp<0||afp>1e6)){o.innerHTML='ค่า AFP ไม่ถูกต้อง';return}
+    const afpHi=afp!==null&&afp>=20;
+    if(us==='3')L.push('<b>US-3</b> (ก้อน ≥10 mm/ลิ่มเลือดใน portal vein) → <b>multiphase CT หรือ MRI ตับ</b> · ส่งต่อ');
+    else if(us==='2')L.push('<b>US-2</b> (ก้อน &lt;10 mm) → <b>US ซ้ำ 3 เดือน</b> · โตขึ้นหรือเปลี่ยนลักษณะ → CT/MRI');
+    else if(us==='c')L.push('US มองเห็นตับไม่ดี (visualization C) → พิจารณา <b>CT/MRI</b> (หรือ abbreviated MRI) แทนรอบนี้');
+    else L.push('<b>US-1</b> ไม่พบก้อน');
+    if(afp===null)L.push('ไม่ได้ใส่ AFP — แปลจาก US อย่างเดียว (AASLD แนะนำ US + AFP)');
+    else if(afpHi||rise)L.push(`AFP ${f1(afp)} ng/mL${rise?' และสูงขึ้นต่อเนื่อง':''} → <b>multiphase CT/MRI</b>${us==='1'?' แม้ US ปกติ':''}`+(afp>=400?' · AFP สูงมาก สงสัย HCC มาก':'')+' · ตับอักเสบกำเริบทำให้ AFP สูงได้');
+    else L.push(`AFP ${f1(afp)} ng/mL (&lt;20)`);
+    if(afp===null&&rise)L.push('AFP สูงขึ้นต่อเนื่อง → <b>multiphase CT/MRI</b>');
+    if(us==='1'&&!afpHi&&!rise)L.push('→ <b>ตรวจซ้ำ 6 เดือน</b>');
+    h=L.join('<br>');
+  }
+  o.innerHTML=h;
+}
+bindAll('#tRes input,#tRes select',res);
+
+/* ---------- tool 4: family history CRC ---------- */
+function fh(){
+  const o=$('fhOut'),age=num('fAge'),n=num('fN'),dx=num('fDx'),ly=$('fLy').value,sdr=$('fSdr').checked,oth=$('fOth').checked;
+  if(age===null){o.innerHTML='ใส่ <b>อายุผู้ป่วย</b>';return}
+  if(age<10||age>110){o.innerHTML='อายุผู้ป่วยต้องอยู่ระหว่าง 10–110 ปี';return}
+  const L=[];const due=s=>age>85?`ตอนนี้อายุ ${f1(age)} → <b>ไม่แนะนำเริ่มคัดกรอง</b> (อายุ &gt;85)`:age>=s?`ตอนนี้อายุ ${f1(age)} → <b>ถึงเกณฑ์แล้ว เริ่มได้เลย</b>`:`ตอนนี้อายุ ${f1(age)} → เริ่มอีก ${f1(s-age)} ปี`;
+  if(ly!=='no'){
+    let s=ly==='hi'?20:30;let txt=ly==='hi'?'20–25 ปี':'30–35 ปี';
+    if(ly==='hi'&&dx!==null&&dx>=1&&dx<25){s=Math.max(dx-5,1);txt=`2–5 ปีก่อนอายุญาติที่เป็นน้อยสุด (~${f1(dx-5)}–${f1(dx-2)} ปี)`}
+    L.push(`<b>Lynch (${ly==='hi'?'MLH1/MSH2/EPCAM':'MSH6/PMS2'})</b>: colonoscopy <b>ทุก ${ly==='hi'?'1–2':'1–3'} ปี</b> เริ่ม ${txt} (NCCN) · ${due(s)} · ส่งผู้เชี่ยวชาญ + คัดกรองมะเร็งมดลูก/รังไข่`);
+    o.innerHTML=L.join('<br>');return;
+  }
+  if(n===null){o.innerHTML='ใส่ <b>จำนวนญาติสายตรง</b> (0 ถ้าไม่มี)';return}
+  if(n<0||n>20||n!==Math.floor(n)){o.innerHTML='จำนวนญาติต้องเป็นจำนวนเต็ม 0–20';return}
+  if(n===0){
+    L.push((sdr?'มีญาติลำดับสองเท่านั้น → ':'ไม่มีญาติสายตรงเป็น CRC → ')+'<b>ความเสี่ยงทั่วไป</b>: ไทย FIT ทุก 2 ปี อายุ 50–70 · USPSTF เริ่ม 45 ปี');
+    L.push('ไทย (50 ปี): '+due(50)+' · USPSTF (45 ปี): '+due(45));
+  }else{
+    if(dx===null){o.innerHTML='ใส่ <b>อายุที่ญาติได้รับวินิจฉัย</b> (คนที่อายุน้อยสุด)';return}
+    if(dx<1||dx>110){o.innerHTML='อายุที่ญาติได้รับวินิจฉัยต้องอยู่ระหว่าง 1–110 ปี';return}
+    const hi=n>=2||dx<60;
+    if(hi){
+      const s=Math.min(40,dx-10);
+      if(s<10){L.push(`ญาติเป็นตอนอายุ ${f1(dx)} ปี — อายุน้อยมาก สูตร "10 ปีก่อน" ใช้ไม่ได้ → <b>ส่งเวชพันธุศาสตร์/แพทย์ทางเดินอาหาร</b> ประเมิน FAP/Lynch โดยตรง`);o.innerHTML=L.join('<br>');return}
+      L.push(`${n>=2?`ญาติสายตรง ${n} คน`:`ญาติสายตรงเป็นตอนอายุ ${f1(dx)} (&lt;60)`} → <b>เริ่ม ${f1(s)} ปี</b> (${s===40?'40 ปี เร็วกว่า':`10 ปีก่อนอายุญาติ = ${f1(dx)} − 10`}) · <b>colonoscopy ทุก 5 ปี</b>`);
+      L.push(due(s));
+      if(dx<50)L.push('ญาติเป็นก่อน 50 ปี → <b>นึกถึง Lynch</b> ส่งตรวจ MMR/MSI ในชิ้นเนื้อญาติหรือส่งเวชพันธุศาสตร์');
+    }else{
+      L.push(`ญาติสายตรง 1 คนเป็นตอนอายุ ${f1(dx)} (≥60) → <b>เริ่ม 40 ปี</b> · วิธีแบบคนทั่วไป: FIT ทุกปี หรือ colonoscopy ทุก 10 ปี`);
+      L.push(due(40)+' · สิทธิ FIT ไทยเริ่ม 50 ปี (ก่อนหน้านั้นตรวจนอกสิทธิ)');
+    }
+    if(sdr)L.push('ญาติลำดับสองที่มีร่วมไม่เปลี่ยนเกณฑ์นี้');
+  }
+  if(oth)L.push('ครอบครัวมีมะเร็งมดลูก/รังไข่/กระเพาะ/ทางเดินปัสสาวะร่วม → <b>ประเมิน Lynch</b> (Amsterdam II/Bethesda)');
+  if(age>85)L.push('อายุ &gt;85 ปี → ส่วนใหญ่ไม่คัดกรอง');else if(age>75)L.push('อายุ &gt;75 ปี → ตัดสินตามสุขภาพและผลส่องครั้งก่อน');
+  L.push('<span class="muted">มีอาการ (ถ่ายเป็นเลือด ซีด) → colonoscopy เพื่อวินิจฉัยทันที ไม่ต้องรออายุ</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tFh input,#tFh select',fh);
+
+mountQuiz([
+ ['หญิงไทยอายุ 35 ปี ไม่มีอาการ สิทธิบัตรทอง การคัดกรองมะเร็งปากมดลูกตามสิทธิ สปสช. คือ',['Pap smear ทุกปี','HPV DNA ทุก 5 ปี (เก็บเองได้)','CA-125 ทุกปี','Colposcopy ทุก 3 ปี'],1,'หญิง 30–59 ปี (บางเอกสารเขียน 30–60) HPV DNA ทุก 5 ปี มีชุด self-sampling'],
+ ['ผล HPV DNA พบ HPV 16 บวก ขั้นต่อไปคือ',['ตรวจซ้ำ 5 ปี','ส่ง colposcopy','ตรวจซ้ำ 1 ปี','ให้ยาต้านไวรัส'],1,'HPV 16/18 → colposcopy เลย · HPV อื่น → cytology triage ก่อน'],
+ ['HPV เสี่ยงสูงชนิดอื่น (ไม่ใช่ 16/18) บวก cytology ปกติ (NILM) ควร',['ส่ง LEEP','ตรวจซ้ำใน 1 ปี','ตรวจซ้ำ 5 ปี','ตัดมดลูก'],1,'NILM → ซ้ำ 1 ปี · ASC-US ขึ้นไป → colposcopy'],
+ ['ชาย 58 ปี FIT บวก ทำอะไรต่อ',['ตรวจ FIT ซ้ำอีก 2 ครั้ง','Colonoscopy โดยเร็ว (เป้าหมาย ~3 เดือน)','CEA','รอ 2 ปีแล้วตรวจใหม่'],1,'ห้ามตรวจ FIT ซ้ำเพื่อยืนยัน · รอเกิน ~9–10 เดือนสัมพันธ์กับระยะลุกลามมากขึ้น'],
+ ['พ่อเป็นมะเร็งลำไส้ใหญ่ตอนอายุ 45 ปี ลูกควรเริ่ม colonoscopy เมื่ออายุ',['50 ปี','45 ปี','35 ปี','25 ปี'],2,'40 ปี หรือ 10 ปีก่อนอายุญาติ (เอาที่เร็วกว่า) = 35 ปี · colonoscopy ทุก 5 ปี'],
+ ['ชาย 66 ปี สูบบุหรี่ 30 pack-years เลิกมา 18 ปี เรื่อง LDCT ข้อใดถูก',['เข้าเกณฑ์ทั้ง USPSTF และ ACS','เข้าเกณฑ์ ACS 2023 แต่ไม่เข้า USPSTF 2021','ไม่เข้าเกณฑ์ทั้งคู่','ต้องทำ CXR แทน'],1,'USPSTF จำกัดเลิก <15 ปี · ACS ไม่ดูจำนวนปีที่เลิก'],
+ ['ผู้ป่วยตับแข็ง Child-Pugh A การเฝ้าระวัง HCC ที่แนะนำ',['CT ทุกปี','US ตับ + AFP ทุก 6 เดือน','AFP อย่างเดียวทุกปี','ไม่ต้องตรวจ'],1,'แนวทางตับแข็งไทย 2568 และ AASLD 2023'],
+ ['US ตับในผู้ป่วยตับแข็งพบก้อน 14 mm ทำอะไรต่อ',['US ซ้ำ 6 เดือน','Multiphase CT หรือ MRI ตับ','AFP ซ้ำ','เจาะชิ้นเนื้อทันทีทุกราย'],1,'US-3 (≥10 mm) → multiphase CT/MRI ตาม LI-RADS'],
+ ['Mammogram ผล BI-RADS 0 หมายถึง',['ปกติ ตรวจตามรอบ','ยังสรุปไม่ได้ ต้องถ่ายภาพเพิ่ม/เทียบฟิล์มเก่า','มะเร็งแน่นอน','ติดตาม 6 เดือน'],1,'BI-RADS 0 = incomplete ไม่ใช่ผลปกติ · BI-RADS 3 จึงเป็นการติดตาม 6 เดือน'],
+ ['การตรวจใดแนะนำสำหรับคัดกรองมะเร็งในผู้ใหญ่ไทยที่ไม่มีอาการ',['CA-125 และ US รังไข่','US ไทรอยด์','FIT ทุก 2 ปี อายุ 50–70','PET/CT ทั้งตัว'],2,'ที่เหลือไม่แนะนำ (USPSTF D) — ผลบวกลวงและ overdiagnosis'],
+ ['ชาย 72 ปี ขอตรวจ PSA คัดกรอง ตาม USPSTF 2018',['แนะนำทุกปี','ไม่แนะนำ (D)','ตรวจทุก 2 ปี','ตรวจพร้อม CA19-9'],1,'55–69 ตัดสินใจร่วม (C) · ≥70 ไม่แนะนำ'],
+ ['ชาวอีสานอายุ 45 ปี กินก้อยปลาเป็นประจำ ข้อใดเหมาะสม',['Colonoscopy','OV-RDT ปีละครั้ง และ US ช่องท้องปีละครั้ง','CA19-9 ทุก 6 เดือน','ไม่ต้องทำอะไร'],1,'OV-RDT (สปสช.) ≥15 ปีที่เสี่ยง · CASCAP US ≥40 ปี · CA19-9 ไม่ใช้คัดกรอง']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

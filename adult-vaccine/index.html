@@ -1,0 +1,903 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Adult immunization · วัคซีนผู้ใหญ่</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">General medicine · Immunization · IDAT 2568/2569 · กรมควบคุมโรค 2569 · ACIP 2025 + addendum · AAFP 2026</div>
+  <h1>วัคซีนผู้ใหญ่<br>Adult immunization</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ทุกครั้งที่ผู้ใหญ่มาตรวจ (OPD โรคเรื้อรัง ฝากครรภ์ ก่อนเริ่มยากดภูมิ ก่อนเดินทาง) คือโอกาส <b>ทบทวนวัคซีน</b> (ร่วมกับ <a href="../health-check/index.html">ตรวจสุขภาพประจำปี</a>) · หน้านี้สรุปคำแนะนำของ <b>สมาคมโรคติดเชื้อแห่งประเทศไทย (IDAT)</b> เทียบกับ <b>ACIP/CDC</b> พร้อมสิทธิ์ฟรีในไทย, ลำดับวัคซีนปอดอักเสบ, การป้องกันบาดทะยักในแผล, กลุ่มพิเศษ และเครื่องมือสร้างตารางวัคซีนรายบุคคล</p>
+  <p class="cite">อ้างอิงหลัก: สมาคมโรคติดเชื้อแห่งประเทศไทย. การให้วัคซีนป้องกันโรคสำหรับผู้ใหญ่และผู้สูงอายุ พ.ศ. 2568 (ต.ค. 2568) และคำแนะนำฉบับ พ.ศ. 2569 (ก.ค. 2569) · กรมควบคุมโรค: แนวทางวัคซีน aP ในหญิงตั้งครรภ์ (2567), รณรงค์วัคซีนไข้หวัดใหญ่ 2569, วัคซีน HPV 9 สายพันธุ์ · Wodi AP, et al. ACIP adult schedule 2025 (MMWR 2025;74:30–3) + CDC addendum 2025 · Kobayashi M, et al. PCV ในผู้ใหญ่ ≥50 ปี (MMWR 2025;74:1–8) · Rubin LG, et al. IDSA vaccination of the immunocompromised host (Clin Infect Dis 2014;58:e44–100) · WHO dengue position paper 2024 · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>ผู้ใหญ่ทุกคน</b>ไข้หวัดใหญ่ปีละครั้ง · Tdap 1 ครั้ง แล้ว Td ทุก 10 ปี · ทบทวน HBV, HPV (≤26), MMR/varicella ถ้าไม่มีภูมิ</div>
+    <div class="stage" style="--c:var(--warn)"><b>อายุ ≥50 / โรคเรื้อรัง</b>ปอดอักเสบ (PCV20 1 เข็ม หรือ PCV15 → PPSV23) · งูสวัด RZV 2 เข็ม · RSV (≥75 ทุกคน, 50–74 กลุ่มเสี่ยง)</div>
+    <div class="stage" style="--c:var(--danger)"><b>ห้ามวัคซีนเชื้อเป็น</b>ตั้งครรภ์ · ภูมิต่ำรุนแรง · pred ≥20 mg/วัน ≥14 วัน · HIV CD4 &lt;200 · MMR, VAR, dengue, JE เชื้อเป็น, ไข้เหลือง</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#rules">หลักทั่วไป</a><a href="#sched">ตารางตามอายุ · สิทธิ์ไทย</a><a href="#resp">ไข้หวัดใหญ่ · COVID · RSV</a><a href="#pneumo">ปอดอักเสบ (pneumococcal)</a><a href="#tet">Td/Tdap · บาดแผล</a><a href="#zh">งูสวัด · HPV</a><a href="#hep">ตับอักเสบ B · A</a><a href="#live">MMR · VAR · dengue · JE</a><a href="#travel">เดินทาง · meningococcal · rabies</a><a href="#special">กลุ่มพิเศษ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="rules" class="col">
+  <div class="sec-num">01</div>
+  <h2>หลักทั่วไปของการให้วัคซีน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เชื้อเป็น vs เชื้อตาย</h4><ul><li><b>เชื้อเป็น (live)</b> ที่ใช้ในผู้ใหญ่: <b>MMR, varicella, zoster ชนิดเชื้อเป็น, dengue (TAK-003, CYD-TDV), JE ชนิดเชื้อเป็น (IMOJEV), ไข้เหลือง</b>, ไข้หวัดใหญ่พ่นจมูก (LAIV), typhoid/cholera ชนิดกิน</li><li><b>ไม่ใช่เชื้อเป็น</b>: influenza ฉีด, COVID-19 mRNA, RSV, PCV/PPSV23, Td/Tdap, <b>RZV (Shingrix)</b>, HPV, HBV, HAV ชนิดเชื้อตาย, rabies, MenACWY/MenB, Hib, JE ชนิดเชื้อตาย, typhoid Vi — <b>ให้ได้ในผู้ภูมิคุ้มกันต่ำ</b> (แต่ภูมิขึ้นน้อยกว่า)</li><li>วัคซีน mpox (MVA-BN) เป็นเชื้อเป็นที่ <b>แบ่งตัวไม่ได้</b> ให้ได้ในภูมิต่ำ</li></ul></div>
+    <div class="card c-ok"><h4>ระยะห่าง (ACIP General Best Practice · IDAT)</h4><ul><li><b>ฉีดหลายวัคซีนวันเดียวกันได้</b> คนละตำแหน่ง ห่างกัน ≥1 นิ้ว (deltoid ดีที่สุด เลี่ยงสะโพก)</li><li><b>เชื้อเป็นชนิดฉีด 2 ชนิด ถ้าไม่ให้วันเดียวกัน ต้องห่าง ≥28 วัน</b> (ไม่ใช้ grace period) · ถ้าห่างไม่ถึง ให้ฉีดเข็มหลังซ้ำ</li><li>เชื้อตาย + เชื้อตาย หรือ เชื้อตาย + เชื้อเป็น: <b>ห่างเท่าไรก็ได้</b></li><li><b>เลื่อนนัดไม่ต้องเริ่มใหม่</b> — ฉีดเข็มที่ค้างต่อได้เลย</li><li>ฉีดก่อนระยะห่างขั้นต่ำไม่เกิน 4 วัน ยังนับได้ (grace period) ยกเว้นกฎ 28 วันของเชื้อเป็น และวัคซีนพิษสุนัขบ้า</li><li>หลังได้เลือด/immunoglobulin ต้องรอก่อนให้ MMR/varicella (IDAT: PRC 6 เดือน, RIG 4 เดือน, IVIG 8 เดือน, plasma/เกล็ดเลือด 7 เดือน)</li><li>TST/IGRA: ตรวจวันเดียวกับ MMR หรือรอ ≥4 สัปดาห์หลัง MMR</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ข้อห้าม (contraindication)</h4><ul><li><b>Anaphylaxis</b> ต่อวัคซีนเข็มก่อนหรือส่วนประกอบ → ห้ามวัคซีนนั้น (ดูหน้า <a href="../anaphylaxis/index.html">Anaphylaxis</a>)</li><li>วัคซีนเชื้อเป็น: <b>ตั้งครรภ์</b> และ <b>ภูมิคุ้มกันต่ำรุนแรง</b> · หญิงวัยเจริญพันธุ์คุมกำเนิด <b>≥1 เดือน</b> หลังฉีดเชื้อเป็น</li><li>Dengue: ห้ามระหว่าง <b>ให้นมบุตร</b> ด้วย (IDAT, WHO)</li></ul></div>
+    <div class="card c-warn"><h4>ข้อควรระวัง (precaution) และสิ่งที่ "ไม่ใช่" ข้อห้าม</h4><ul><li>ป่วยปานกลาง–รุนแรง/ไข้สูง → เลื่อน · หวัดเล็กน้อย <b>ฉีดได้</b></li><li>GBS ภายใน 6 สัปดาห์หลังวัคซีนไข้หวัดใหญ่/Td เข็มก่อน → precaution</li><li><b>แพ้ไข่ ไม่ใช่ข้อห้าม</b> ของวัคซีนไข้หวัดใหญ่แล้ว — ฉีดชนิดใดก็ได้ตามอายุ (IDAT, ACIP)</li><li>ไม่ใช่ข้อห้าม: กินยาฆ่าเชื้อ, ให้นมบุตร (ยกเว้น dengue · ไข้เหลืองระวัง), คนในบ้านตั้งครรภ์, แพ้ยาเพนิซิลลิน</li><li>สังเกตอาการหลังฉีด <b>15–30 นาที</b> · คนเป็นลมง่ายให้นั่ง/นอน (RSV, HPV เป็นลมได้)</li></ul></div>
+  </div>
+</section>
+
+<section id="sched" class="col">
+  <div class="sec-num">02</div>
+  <h2>ตารางตามอายุ และสิทธิ์ฟรีในไทย</h2>
+  <p>หน้านี้ <b>ยึด IDAT ฉบับ 2569</b> (ออก ก.ค. 2569 ปรับจากฉบับ 2568) เป็นหลัก <span class="tag add">ยังไม่ได้ตรวจกับฉบับเต็ม 2569 — รายละเอียดที่ต่างจาก 2568 สรุปจากข่าว/บทสรุป ควรตรวจกับเอกสารจริง</span> และแสดง ACIP เมื่อแตกต่าง <span class="tag up">2569</span></p>
+  <div class="tbl"><table>
+    <tr><th>วัคซีน</th><th>18–26 ปี</th><th>27–49 ปี</th><th>50–64 ปี</th><th>≥65 ปี</th></tr>
+    <tr><td><b>Influenza</b></td><td colspan="4">ทุกคน <b>ปีละ 1 เข็ม</b> (เน้น ≥60–65 ปี, โรคเรื้อรัง, ตั้งครรภ์, บุคลากร) · ≥65 ปี เลือก high-dose/adjuvanted ถ้ามี (IDAT 2568: high-dose ใน ≥65 ปี)</td></tr>
+    <tr><td><b>COVID-19</b></td><td colspan="2">มีโรคเสี่ยง/ตั้งครรภ์: ปีละ 1 เข็ม · คนสุขภาพดีตามความสมัครใจ</td><td>มีโรคเสี่ยง: ปีละ 1 เข็ม</td><td>≥60 ปี: <b>ปีละ 1 เข็ม</b> (ACIP/AAFP ≥65: 2 เข็ม ห่าง 6 เดือน)</td></tr>
+    <tr><td><b>RSV</b></td><td colspan="2">เสี่ยงสูงมาก: พิจารณารายคน</td><td><b>50–74 ปี ที่เสี่ยง</b> 1 เข็ม</td><td>65–74 ที่เสี่ยง · <b>≥75 ทุกคน</b> 1 เข็ม</td></tr>
+    <tr><td><b>Pneumococcal</b></td><td colspan="2">มีโรคเรื้อรัง/ภูมิต่ำ</td><td><b>ใหม่</b>: 50–64 ปี แนะนำ/พิจารณาแม้ไม่มีโรค (ACIP แนะนำทุกคน)</td><td><b>ทุกคน</b></td></tr>
+    <tr><td><b>Td/Tdap</b></td><td colspan="4">Tdap 1 ครั้ง (ถ้ายังไม่เคย) แทน Td หนึ่งเข็ม · แล้ว <b>Td/Tdap ทุก 10 ปี</b> · ตั้งครรภ์: Tdap/aP ทุกครรภ์</td></tr>
+    <tr><td><b>Zoster (RZV)</b></td><td colspan="2">ภูมิต่ำ ≥18 ปี: 2 เข็ม ห่าง 1–2 เดือน</td><td colspan="2"><b>ทุกคน ≥50 ปี</b>: 2 เข็ม ห่าง 2–6 เดือน</td></tr>
+    <tr><td><b>HPV</b></td><td><b>9–26 ปี แนะนำ</b> (หญิงและชาย)</td><td>27–45 ปี: ตัดสินใจร่วมกัน</td><td colspan="2">—</td></tr>
+    <tr><td><b>HBV</b></td><td colspan="4">ไม่มีภูมิ → 3 เข็ม 0, 1, 6 เดือน · ไทย: ผู้เกิดก่อน พ.ศ. 2535 ตรวจ HBsAg + anti-HBs ก่อน · ACIP: ทุกคน 19–59 ปี, ≥60 ปีถ้ามีความเสี่ยงหรือต้องการ</td></tr>
+    <tr><td><b>HAV</b></td><td colspan="2">กลุ่มเสี่ยง/ต้องการ: 2 เข็ม ห่าง ≥6 เดือน</td><td colspan="2">≥50 ปี: ตรวจ anti-HAV IgG ก่อน (IDAT)</td></tr>
+    <tr><td><b>MMR · Varicella</b></td><td colspan="4">ไม่มีหลักฐานภูมิ: อย่างละ 2 เข็ม (MMR ห่าง ≥4 สัปดาห์ · VAR ห่าง 4–8 สัปดาห์) — เชื้อเป็น</td></tr>
+    <tr><td><b>Dengue (TAK-003)</b></td><td colspan="3">อายุ 4–60 ปี: พิจารณา 2 เข็ม 0, 3 เดือน โดยเฉพาะผู้มีโรคเรื้อรัง — เชื้อเป็น</td><td>เกินช่วงอายุในฉลากไทย</td></tr>
+  </table></div>
+  <h3>สิทธิ์ฟรีในไทย <span class="tag th">ไทย</span></h3>
+  <div class="tbl"><table>
+    <tr><th>โครงการ</th><th>รายละเอียด</th></tr>
+    <tr><td><b>ไข้หวัดใหญ่ (กรมควบคุมโรค + สปสช.)</b></td><td>ปี 2569 รณรงค์ <b>1 พ.ค.–31 ส.ค. 2569</b> วัคซีน 3 สายพันธุ์ เป้าหมาย ~7.4 ล้านคน ที่ รพ.รัฐ · กลุ่ม: หญิงตั้งครรภ์ · เด็ก 6 เดือน–&lt;5 ปี · โรคเรื้อรัง (COPD หอบหืด หัวใจ หลอดเลือดสมอง ไตวาย มะเร็งที่ได้เคมีบำบัด เบาหวาน) · <b>อายุ ≥65 ปี</b> · ธาลัสซีเมีย/ภูมิคุ้มกันบกพร่อง (รวม HIV ที่มีอาการ) · อ้วน (น้ำหนัก &gt;100 kg หรือ BMI &gt;35) · ผู้พิการทางสมองช่วยเหลือตัวเองไม่ได้ · บุคลากรการแพทย์ · ผู้ต้องขัง/เจ้าหน้าที่เรือนจำ</td></tr>
+    <tr><td><b>aP/Tdap หญิงตั้งครรภ์</b></td><td>ทุกครรภ์ เป็นสิทธิประโยชน์ สปสช. ตั้งแต่ 2567 · <b>อายุครรภ์ 20–32 สัปดาห์</b> (เริ่มได้ตั้งแต่ 16 สัปดาห์ และควร ≥2 สัปดาห์ก่อนคลอด) · ร่วมกับ dT ตามประวัติใน ANC</td></tr>
+    <tr><td><b>HPV</b></td><td>วัคซีน <b>9 สายพันธุ์ 1 เข็ม</b> ในนักเรียนหญิง ป.5 (เริ่ม ธ.ค. 2567) และหญิง 11–20 ปีที่ยังไม่เคยฉีด (ตามทางเลือก single-dose ของ WHO) · กำลังพิจารณาขยายถึง 26 ปี</td></tr>
+    <tr><td><b>dT</b></td><td>EPI: dT ชั้น ป.6 · ผู้ใหญ่ควรกระตุ้นทุก 10 ปี <span class="tag add">เสริม</span> ตรวจสอบสิทธิ์กับหน่วยบริการ</td></tr>
+    <tr><td><b>HBV</b></td><td>ทารกแรกเกิดทุกคนตั้งแต่ พ.ศ. 2535 · ผู้เกิดก่อน 2535: สิทธิ์ตรวจคัดกรอง HBsAg/anti-HCV (ดูหน้า <a href="../hepbc/index.html">HBV/HCV</a>) · วัคซีนในผู้ใหญ่ทั่วไปมักต้องจ่ายเอง</td></tr>
+    <tr><td><b>อื่นๆ</b></td><td>JE อยู่ใน EPI เด็กตั้งแต่ 2544 · PCV10 ในเด็กเริ่ม พ.ย. 2569 · <b>PCV/PPSV23, RZV, RSV, dengue ยังไม่ฟรีสำหรับผู้ใหญ่ทั่วไป</b> (กทม.นำร่อง dengue ในนักเรียน ป.4 บางเขต) · PEP พิษสุนัขบ้าหลังสัมผัสอยู่ในสิทธิ์รักษา</td></tr>
+  </table></div>
+</section>
+
+<section id="resp" class="col">
+  <div class="sec-num">03</div>
+  <h2>ไข้หวัดใหญ่ · COVID-19 · RSV</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Influenza</h4><ul><li><b>Inactivated 0.5 mL IM ปีละ 1 เข็ม</b> ทุกคน ≥6 เดือน · ไทยใช้ <b>สูตรซีกโลกใต้</b> ฉีดก่อนหน้าฝน (<b>เม.ย.–พ.ค.</b>) แต่ฉีดช่วงอื่นได้ถ้ามีวัคซีน · ปี 2569 เป็นชนิด <b>3 สายพันธุ์</b></li><li><b>≥65 ปี</b>: เลือก high-dose, adjuvanted หรือ recombinant ถ้ามี (ACIP/AAFP) — ไม่ต้องรอถ้าไม่มี · IDAT 2568: พิจารณา high-dose ใน <b>≥65 ปี</b></li><li><b>ตั้งครรภ์</b>: ชนิดฉีดเชื้อตาย <b>ทุกไตรมาส</b> (ACIP) · IDAT/สิทธิ์ไทย: อายุครรภ์ ≥4 เดือน</li><li>LAIV (พ่นจมูก): เฉพาะ 2–49 ปี ไม่ตั้งครรภ์ ไม่ภูมิต่ำ</li><li><b>แพ้ไข่ฉีดได้ทุกชนิด</b></li></ul></div>
+    <div class="card c-vio"><h4>COVID-19 (mRNA)</h4><ul><li><b>IDAT</b>: วัคซีนรุ่นล่าสุด <b>ปีละ 1 เข็ม IM</b> โดยไม่ขึ้นกับจำนวนเข็มที่เคยได้ ใน <b>≥60 ปี</b>, 18–59 ปีที่มีโรคเสี่ยง (หัวใจ ปอด ไต อ้วน มะเร็ง เบาหวาน) และ <b>ตั้งครรภ์</b> (IDAT: 12–20 สัปดาห์)</li><li><b>ภูมิต่ำปานกลาง–รุนแรง</b>: เพิ่ม 1 เข็ม ห่าง ≥8 สัปดาห์</li><li>เพิ่งติดเชื้อ: รอ <b>≥3 เดือน</b> หลังมีอาการ/ตรวจพบ</li><li><span class="tag up">US</span> CDC เปลี่ยนคำแนะนำในตั้งครรภ์เป็น "no guidance" (พ.ค. 2568) · การเปลี่ยนเป็น shared decision (ก.ย. 2568) ถูกศาลระงับ (มี.ค. 2569) · AAFP 2026–27: ผู้ใหญ่ทุกคน, ≥65 ปี <b>2 เข็ม ห่าง 6 เดือน</b> (ภูมิต่ำ: ตาม IDSA)</li></ul></div>
+  </div>
+  <div class="card c-warn"><h4>RSV (protein subunit 0.5 mL IM 1 เข็ม — ยังไม่มีคำแนะนำเข็มกระตุ้น)</h4><ul><li>ในไทยมี 2 ชนิด: <b>RSVPreF3 + adjuvant (Arexvy)</b> และ <b>bivalent RSVpreF (Abrysvo)</b></li><li><b>≥75 ปี ทุกคน</b> · <b>50–74 ปี ที่เสี่ยง</b>: โรคปอด/หัวใจเรื้อรัง, ภูมิต่ำปานกลาง–รุนแรง, เบาหวานที่มีอวัยวะเสียหาย, BMI ≥40, โรคตับ, CKD ระยะ 4–5/ฟอกไต, อยู่สถานดูแลระยะยาว — IDAT 2569 ปรับลงมาจาก 60–74 ให้ตรงกับ ACIP (มิ.ย. 2568) <span class="tag up">2569</span></li><li>ฉีดก่อนฤดูระบาด (ไทย: ก.ค.–พ.ย.) · เป็นลมได้ · มีรายงาน GBS เพิ่มเล็กน้อยหลังฉีดในผู้สูงอายุ (FDA ใส่คำเตือน 2568)</li><li><b>ตั้งครรภ์</b>: ใช้เฉพาะ <b>bivalent RSVpreF</b> — IDAT/ฉลากไทย <b>24–36 สัปดาห์</b> · ACIP <b>32–36 สัปดาห์</b> (ฤดูระบาด) · ห้ามชนิด adjuvanted ในตั้งครรภ์</li></ul></div>
+</section>
+
+<section id="pneumo" class="col">
+  <div class="sec-num">04</div>
+  <h2>วัคซีนปอดอักเสบ (pneumococcal)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใครควรได้</h4><ul><li><b>≥65 ปี ทุกคน</b> · <b>50–64 ปี</b>: ACIP แนะนำทุกคน (ต.ค. 2567) · IDAT 2569 แนะนำ/พิจารณา <span class="tag up">2569</span></li><li><b>18–49 ปี มีโรคเรื้อรัง</b>: หัวใจ ปอด (รวมหอบหืด COPD) ตับเรื้อรัง เบาหวาน สูบบุหรี่ ดื่มสุราเรื้อรัง</li><li><b>ภูมิต่ำ</b>: CKD/nephrotic, ไม่มีม้าม/sickle cell, HIV, มะเร็ง/ยากดภูมิ, ปลูกถ่ายอวัยวะ · <b>CSF leak, cochlear implant</b></li></ul></div>
+    <div class="card c-ok"><h4>วัคซีนที่มี</h4><ul><li><b>PCV13, PCV15, PCV20</b> (conjugate) · <b>PPSV23</b> (polysaccharide) · ทุกชนิด 0.5 mL IM</li><li>PCV21 (Capvaxive) อยู่ใน ACIP แต่ <b>ไม่อยู่ในคำแนะนำ IDAT</b> <span class="tag add">เสริม</span></li><li>PCV15 = PCV13 + 22F, 33F · PCV20 = PCV15 + 8, 10A, 11A, 12F, 15B → ยิ่งสายพันธุ์มากยิ่งครอบคลุม serotype ที่ก่อโรครุนแรงในไทยมากขึ้น (IDAT)</li><li>ข้อห้าม conjugate: แพ้วัคซีนที่มี diphtheria toxoid รุนแรง · ตั้งครรภ์ข้อมูลไม่พอ (เลื่อนถ้าไม่จำเป็น)</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>เคยได้มาก่อน</th><th>ให้ต่อ (ACIP 2024 · ตรงกับ IDAT เป็นส่วนใหญ่)</th></tr>
+    <tr><td><b>ไม่เคย/ไม่ทราบ</b></td><td><b>PCV20 (หรือ PCV21) 1 เข็ม จบ</b> · หรือ <b>PCV15 (หรือ PCV13) → PPSV23 ≥1 ปี</b> (ภูมิต่ำ/CSF leak/cochlear implant ห่าง <b>≥8 สัปดาห์</b>) · ถ้าไม่มี PPSV23 ใช้ PCV20 แทนได้</td></tr>
+    <tr><td><b>PCV13 อย่างเดียว</b></td><td><b>PCV20/21 ≥1 ปี</b> หลัง PCV13 จบ · (ทางเลือกเดิม: PPSV23 ≥1 ปี; ภูมิต่ำ ≥8 สัปดาห์)</td></tr>
+    <tr><td><b>PCV15 อย่างเดียว</b></td><td>PPSV23 ≥1 ปี (ภูมิต่ำ ≥8 สัปดาห์)</td></tr>
+    <tr><td><b>PPSV23 อย่างเดียว</b></td><td>PCV20/21 (หรือ PCV15) <b>≥1 ปี</b> หลัง PPSV23 — ถ้าใช้ PCV15 ไม่ต้องให้ PPSV23 ซ้ำ</td></tr>
+    <tr><td><b>PCV13 + PPSV23</b></td><td>PPSV23 ได้ตอน <b>≥65 ปี</b> → ครบแล้ว (พิจารณาร่วมกันให้ PCV20/21 ≥5 ปีหลังเข็มสุดท้าย) · ได้ก่อน 65 ปี และตอนนี้ ≥50 ปี หรือภูมิต่ำ → <b>PCV20/21 ≥5 ปี</b> หลังเข็มสุดท้าย · IDAT (ภูมิต่ำ): PPSV23 เข็มที่ 2 หรือ PCV20 ≥5 ปี</td></tr>
+    <tr><td><b>PCV20 หรือ PCV21</b></td><td><b>ครบแล้ว</b> ไม่ต้องให้เพิ่ม</td></tr>
+  </table></div>
+  <div class="box note"><b>หลังปลูกถ่ายไขกระดูก (HSCT)</b>ให้ PCV ใหม่ทั้งชุด 3 เข็ม เริ่ม 3–6 เดือนหลังปลูกถ่าย แล้วตามด้วย PCV20/PPSV23 — ให้ทีมปลูกถ่ายกำหนด · ใช้เครื่องมือที่ 2 ด้านล่างช่วยคิดลำดับวัคซีน</div>
+</section>
+
+<section id="tet" class="col">
+  <div class="sec-num">05</div>
+  <h2>Td/Tdap และการป้องกันบาดทะยักในบาดแผล</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ผู้ใหญ่ทั่วไป</h4><ul><li><b>ไม่เคยได้/ไม่ทราบ</b>: 3 เข็ม <b>0, 1 เดือน (≥4 สัปดาห์), 6–12 เดือน</b> (เข็มแรกเป็น Tdap) · 0.5 mL IM</li><li>ครบ 3 เข็มแล้ว: <b>Td หรือ Tdap ทุก 10 ปี</b> · Tdap ให้ได้โดยไม่ต้องรอห่างจาก Td เข็มก่อน</li><li>ผู้ที่ไม่เคยได้ Tdap ควรได้ 1 ครั้ง (ป้องกันไอกรน — สำคัญในคนที่ดูแลทารก)</li></ul></div>
+    <div class="card c-warn"><h4>ตั้งครรภ์: Tdap/aP <b>ทุกครรภ์</b></h4><ul><li><b>ไทย (กรมควบคุมโรค, IDAT)</b>: <b>20–32 สัปดาห์</b> (เริ่มได้ 16 สัปดาห์, ≥2 สัปดาห์ก่อนคลอด) — <b>หน้านี้ยึดตามนี้</b> เพราะเป็นสิทธิ์ สปสช.</li><li><b>ACIP</b>: <b>27–36 สัปดาห์</b> (ช่วงต้นดีที่สุด) · ทั้งสองช่วงให้ภูมิผ่านรกได้ · หลัง 32 สัปดาห์ยังให้ได้</li><li>aP (ไอกรนอย่างเดียว) ใช้แทน Tdap ได้ ถ้าได้ dT ครบชุดและเข็มล่าสุด &lt;10 ปี · ถ้ายังไม่ครบชุด dT ให้ dT ตามประวัติร่วมด้วย</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ประวัติวัคซีนบาดทะยัก</th><th>แผลสะอาด เล็ก</th><th>แผลอื่นทั้งหมด (สกปรก ดิน มูลสัตว์ น้ำลาย แทง บด ไฟไหม้ ถูกกัด เนื้อตาย)</th></tr>
+    <tr><td><b>ไม่ทราบ หรือ &lt;3 เข็ม</b></td><td><b>Td/Tdap</b> · ไม่ต้อง TIG · ฉีดให้ครบชุด</td><td><b>Td/Tdap + TIG 250 IU IM</b> (คนละตำแหน่ง/คนละ syringe) · ฉีดให้ครบชุด</td></tr>
+    <tr><td><b>≥3 เข็ม</b></td><td>ให้ถ้าเข็มล่าสุด <b>≥10 ปี</b></td><td>ให้ถ้าเข็มล่าสุด <b>≥5 ปี</b> · ไม่ต้อง TIG</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:.88rem">ACIP 2019 (Havers 2020) · <b>HIV หรือภูมิต่ำรุนแรง + แผลเสี่ยง → ให้ TIG ไม่ว่าเคยฉีดกี่เข็ม</b> · ทำความสะอาด/ตัดเนื้อตายสำคัญเท่ากับวัคซีน · <span class="tag th">ไทย</span> ถ้าไม่มี human TIG บาง รพ.ใช้ equine antitoxin (TAT) ตามเอกสารกำกับยาหลังทดสอบการแพ้ · แผลถูกสุนัข/แมวกัดให้ประเมินพิษสุนัขบ้าด้วย (<a href="../rabies/index.html">หน้า Rabies</a>)</p>
+</section>
+
+<section id="zh" class="col">
+  <div class="sec-num">06</div>
+  <h2>งูสวัด (zoster) และ HPV</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Recombinant zoster vaccine (RZV, Shingrix)</h4><ul><li><b>0.5 mL IM 2 เข็ม</b> · <b>≥50 ปี</b>: ห่าง <b>2–6 เดือน</b> · <b>≥18 ปี ภูมิต่ำ</b> (ยากดภูมิ, HIV, มะเร็ง, ปลูกถ่าย, JAK inhibitor): ห่าง <b>1–2 เดือน</b></li><li>เข็ม 2 ห่าง &lt;4 สัปดาห์ → ให้ซ้ำอีกเข็ม ≥4 สัปดาห์หลังเข็ม 2 · ห่างเกิน 6 เดือน ไม่ต้องเริ่มใหม่</li><li>เคยเป็นงูสวัด: ฉีดได้ หลังผื่นหาย (IDAT: รอ 3–6 เดือน) · เคยได้ชนิดเชื้อเป็น: ให้ RZV ≥2 เดือนหลัง</li><li>ไม่ต้องตรวจภูมิก่อน · ไม่ใช้ป้องกันอีสุกอีใส · ปวดแขน/ไข้ 1–3 วันพบบ่อย</li><li>ชนิดเชื้อเป็น (1 เข็ม SC ≥60 ปี) ห้ามในภูมิต่ำ/ตั้งครรภ์ — RZV ดีกว่า</li></ul></div>
+    <div class="card c-vio"><h4>HPV (2v/4v/9v) 0.5 mL IM</h4><ul><li><b>9–26 ปี แนะนำ</b> (หญิง; ชายพิจารณา) · <b>27–45 ปี</b>: ตัดสินใจร่วมกันตามความเสี่ยง (ACIP, IDAT)</li><li>เริ่มอายุ 9–14 ปี: <b>2 เข็ม 0, 6–12 เดือน</b> · เริ่ม ≥15 ปี หรือภูมิต่ำ/HIV: <b>3 เข็ม 0, 1–2, 6 เดือน</b></li><li><span class="tag th">ไทย</span> โครงการรัฐ: 9v <b>1 เข็ม</b> หญิง 9–20 ปีที่ภูมิปกติ (ทางเลือก WHO)</li><li>ตั้งครรภ์: เลื่อนไปหลังคลอด (ไม่ต้องตรวจครรภ์ก่อนฉีด) · ให้นมได้</li><li>เปลี่ยนจาก 2v/4v เป็น 9v กลางชุดได้ · ฉีดครบ 2v/4v แล้วไม่จำเป็นต้องให้ 9v (ถ้าต้องการ รอ ≥12 เดือน)</li><li><b>ยังต้องตรวจคัดกรองมะเร็งปากมดลูก</b> ตามปกติ → <a href="../cancer-screening/index.html">Cancer screening</a></li></ul></div>
+  </div>
+</section>
+
+<section id="hep" class="col">
+  <div class="sec-num">07</div>
+  <h2>ไวรัสตับอักเสบ B และ A</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Hepatitis B</h4><ul><li>ผู้ใหญ่: <b>20 mcg (1 mL) IM deltoid 0, 1, 6 เดือน</b> · ระยะห่างขั้นต่ำ เข็ม 1→2 4 สัปดาห์, 2→3 8 สัปดาห์ และ 1→3 16 สัปดาห์ · สลับยี่ห้อได้</li><li><span class="tag th">ไทย</span> เกิดก่อน พ.ศ. 2535 (ก่อน EPI) ไม่เคยฉีด: ตรวจ <b>HBsAg + anti-HBs</b> ก่อน ถ้าลบทั้งคู่ → ฉีด · ACIP: ฉีดทุกคน 19–59 ปี ไม่ต้องตรวจก่อนก็ได้</li><li><b>ฟอกไต/CKD</b>: <b>40 mcg</b> (Engerix-B 2 × 20 mcg) <b>0, 1, 2, 6 เดือน</b> <span class="tag add">เสริม</span> · ตรวจ anti-HBs 1–2 เดือนหลังครบ แล้วทุกปี · &lt;10 mIU/mL → กระตุ้น 1 เข็ม (ดู <a href="../ckd/index.html">CKD</a>)</li><li><b>ตรวจ anti-HBs หลังฉีด</b> (1–2 เดือน) เฉพาะ: บุคลากรการแพทย์, ภูมิต่ำ, HIV, CKD ระยะ 3–5/ฟอกไต, คู่นอนผู้ติดเชื้อ · ≥10 mIU/mL = มีภูมิ</li><li>ไม่ตอบสนองหลังฉีด 2 ชุด → หยุด · ตรวจ HBsAg · ใช้ HBIG เมื่อสัมผัส</li></ul></div>
+    <div class="card c-ok"><h4>Hepatitis A</h4><ul><li>ชนิดเชื้อตาย <b>1 mL IM 2 เข็ม ห่าง ≥6 เดือน</b> (6–12 เดือน)</li><li>ข้อบ่งชี้: <b>โรคตับเรื้อรัง/ตับแข็ง</b>, HIV, ภูมิต่ำ, MSM, ใช้สารเสพติด, ผู้สัมผัสใกล้ชิด, ผู้ทำงานห้องแล็บ, เดินทาง, ผู้ที่ต้องการ</li><li><span class="tag th">ไทย</span> <b>≥50 ปี ตรวจ anti-HAV IgG ก่อน</b> (คนไทยรุ่นก่อนมีภูมิจากการติดเชื้อมาก) · ถ้ามีภูมิไม่ต้องฉีด · ถ้าตรวจไม่ได้ ฉีดได้เลย</li><li>วัคซีนรวม HAV-HBV: 3 เข็ม 0, 1, 6 เดือน</li><li>ระวังผู้แพ้ neomycin</li></ul></div>
+  </div>
+</section>
+
+<section id="live" class="col">
+  <div class="sec-num">08</div>
+  <h2>วัคซีนเชื้อเป็น: MMR · Varicella · Dengue · JE</h2>
+  <div class="tbl"><table>
+    <tr><th>วัคซีน</th><th>ขนาดและตาราง</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>MMR</b></td><td>0.5 mL SC <b>2 เข็ม ห่าง ≥4 สัปดาห์</b> ในผู้ที่ไม่มีหลักฐานภูมิ (ไม่เคยฉีด/ไม่เคยเป็น/ไม่มีผลภูมิ)</td><td>บุคลากรการแพทย์ต้องมีภูมิ · หญิงวัยเจริญพันธุ์: ตรวจ rubella IgG / ฉีดก่อนตั้งครรภ์ แล้วคุมกำเนิด ≥1 เดือน · <b>ตั้งครรภ์: ให้หลังคลอด</b> · HIV ให้ได้เมื่อ <b>CD4 ≥200 และ ≥15%</b></td></tr>
+    <tr><td><b>Varicella</b></td><td>0.5 mL SC <b>2 เข็ม ห่าง 4–8 สัปดาห์</b> · เคยได้ 1 เข็ม → ให้อีก 1 เข็มโดยไม่สนระยะห่าง</td><td>ไม่เคยเป็นอีสุกอีใส/ไม่มีภูมิ · ห้ามเมื่อ HIV <b>CD4 &lt;200 หรือ &lt;15%</b> · งดยาต้านไวรัส (acyclovir) 24 ชม.ก่อน–2 สัปดาห์หลัง</td></tr>
+    <tr><td><b>Dengue TAK-003 (Qdenga)</b></td><td>0.5 mL SC <b>2 เข็ม 0, 3 เดือน</b> (ห้ามย่นระยะ · ช้าไม่ต้องเริ่มใหม่)</td><td><span class="tag th">ไทย</span> IDAT/อย.: <b>4–60 ปี ไม่ว่าเคยติดเชื้อหรือไม่</b> เน้นผู้มีโรคเรื้อรัง · เพิ่งเป็นไข้เลือดออกรอ ≥6 เดือน · <b>ห้าม: ตั้งครรภ์ (และวางแผนภายใน 1 เดือน), ให้นมบุตร, ภูมิต่ำ</b></td></tr>
+    <tr><td><b>Dengue CYD-TDV (Dengvaxia)</b></td><td>3 เข็ม 0, 6, 12 เดือน</td><td>6–45 ปีตาม IDAT (ฉลากบางประเทศ 9–45 ปี) <b>เฉพาะผู้เคยติดเชื้อแล้ว</b> (ผู้ไม่เคยติดเสี่ยงโรครุนแรงเมื่อติดครั้งแรกหลังฉีด) · <b>ผู้ผลิตประกาศยุติการผลิตทั่วโลก (2567)</b> — ในทางปฏิบัติใช้ TAK-003</td></tr>
+    <tr><td><b>JE เชื้อเป็น (IMOJEV)</b></td><td>0.5 mL SC · ผู้ใหญ่ ≥18 ปี <b>1 เข็ม</b> (ฉลาก: ไม่ต้องกระตุ้นถึง 5 ปี) · เด็กต้องกระตุ้น 12–24 เดือน</td><td>ผู้อยู่/ทำงานชนบท ทุ่งนา หรือเดินทางในพื้นที่ระบาด ≥2 สัปดาห์ · ห้ามในภูมิต่ำ ตั้งครรภ์ ให้นมบุตร · ภูมิต่ำใช้ <b>ชนิดเชื้อตาย</b> แทน</td></tr>
+  </table></div>
+  <div class="box warn"><b>WHO vs ไทย เรื่อง TAK-003</b>WHO (2567) แนะนำใช้ในโครงการสำหรับ <b>เด็ก 6–16 ปี</b> ในพื้นที่ระบาดสูง และพิจารณา 6–60 ปีที่มีโรคร่วม · ข้อมูลประสิทธิภาพ/ความปลอดภัยต่อ <b>DENV-3, DENV-4 ในผู้ไม่เคยติดเชื้อยังไม่ชัด</b> · ไทยเป็นพื้นที่ระบาดสูง ผู้ใหญ่ส่วนใหญ่เคยติดเชื้อแล้ว — IDAT จึงให้ได้โดยไม่ต้องตรวจภูมิก่อน · อธิบายผู้ป่วยว่าเป็นทางเลือก ไม่ใช่ข้อบังคับ</div>
+</section>
+
+<section id="travel" class="col">
+  <div class="sec-num">09</div>
+  <h2>เดินทาง อาชีพเสี่ยง และ meningococcal</h2>
+  <div class="tbl"><table>
+    <tr><th>วัคซีน</th><th>ใคร</th><th>ตาราง</th></tr>
+    <tr><td><b>Rabies PrEP</b></td><td>สัตวแพทย์ ผู้ทำงานกับสัตว์ แล็บเชื้อพิษสุนัขบ้า นักเดินทางพื้นที่ห่างไกล</td><td>IM 1 vial <b>วัน 0, 7</b> หรือ ID 0.1 mL × 2 ตำแหน่ง วัน 0, 7 (หรือ 0, 21–28) · หลังสัมผัสในผู้เคยได้ PrEP: กระตุ้นเท่านั้น <b>ไม่ต้อง RIG</b> → <a href="../rabies/index.html">หน้า Rabies</a></td></tr>
+    <tr><td><b>Typhoid Vi</b></td><td>เดินทางไปเอเชียใต้ แอฟริกา</td><td>0.5 mL IM 1 เข็ม ≥2 สัปดาห์ก่อนเดินทาง · กระตุ้นทุก 2–3 ปีถ้ายังเสี่ยง (ACIP 2 ปี) <span class="tag add">เสริม</span></td></tr>
+    <tr><td><b>MenACWY (conjugate)</b></td><td>ฮัจญ์/อุมเราะห์ (≥10 วันก่อนเข้าประเทศ), หอพักต่างประเทศ, งานชุมนุมใหญ่, แล็บ</td><td>0.5 mL IM 1 เข็ม · ยังเสี่ยง: กระตุ้นทุก 5 ปี · <b>ไม่มีม้าม, complement deficiency, eculizumab/ravulizumab, HIV</b>: <b>2 เข็มห่าง ≥8 สัปดาห์</b> แล้วทุก 5 ปี</td></tr>
+    <tr><td><b>MenB</b></td><td>ไม่มีม้าม, complement deficiency, eculizumab, แล็บ · ไม่ใช่วัคซีน routine ในไทย</td><td>Bexsero (4CMenB) <b>2 เข็มห่าง ≥1 เดือน</b> · (Trumenba กลุ่มเสี่ยง 3 เข็ม 0, 1–2, 6 เดือน) · ยังเสี่ยง: กระตุ้น 1 ปีหลังครบชุด แล้วทุก 2–3 ปี (ACIP) · ต้องใช้ยี่ห้อเดิมทั้งชุด</td></tr>
+    <tr><td><b>Hib</b></td><td>ไม่มีม้าม (ไม่เคยได้) · หลัง HSCT</td><td>ไม่มีม้าม 1 เข็ม · HSCT 3 เข็มห่าง 1 เดือน เริ่ม 6–12 เดือนหลังปลูกถ่าย</td></tr>
+    <tr><td><b>JE เชื้อตาย (Vero cell)</b></td><td>ข้อบ่งชี้เหมือน JE แต่ภูมิต่ำ/ตั้งครรภ์</td><td>IM 2 เข็ม วัน 0, 7–28 · ยังเสี่ยงกระตุ้นได้ ≥1 ปี</td></tr>
+    <tr><td><b>Mpox (MVA-BN)</b></td><td>MSM/สาวประเภทสองที่มีคู่หลายคน ผู้ให้บริการทางเพศ ผู้สัมผัสในพื้นที่ระบาด</td><td>2 เข็ม ห่าง ≥4 สัปดาห์ (SC หรือ ID) · หลังสัมผัส: ภายใน 4 วัน (ถึง 14 วัน)</td></tr>
+    <tr><td><b>ไข้เหลือง</b></td><td>ไปแอฟริกา/อเมริกาใต้ที่ระบาด</td><td>1 เข็ม SC ≥10 วันก่อนเดินทาง (ใช้ได้ตลอดชีวิต) · เชื้อเป็น — ห้ามในภูมิต่ำ</td></tr>
+  </table></div>
+</section>
+
+<section id="special" class="col">
+  <div class="sec-num">10</div>
+  <h2>กลุ่มพิเศษ</h2>
+  <div class="tbl"><table>
+    <tr><th>กลุ่ม</th><th>ให้</th><th>ระวัง/ห้าม</th></tr>
+    <tr><td><b>ตั้งครรภ์</b></td><td><b>Tdap/aP</b> ทุกครรภ์ (ไทย 20–32 สัปดาห์) · <b>Influenza</b> ชนิดฉีด (ได้ทุกไตรมาส; สิทธิ์ฟรีไทย อายุครรภ์ ≥4 เดือน) · <b>COVID-19</b> (IDAT 12–20 สัปดาห์) · <b>RSVpreF</b> (24–36 สัปดาห์ไทย / 32–36 ACIP) · HBV ได้ถ้าเสี่ยง</td><td><span class="rec no">ห้าม</span> เชื้อเป็นทั้งหมด · เลื่อน HPV, RZV, PCV ไปหลังคลอด · MMR/VAR หลังคลอด (ให้นมได้)</td></tr>
+    <tr><td><b>ยากดภูมิ/biologic/เคมีบำบัด</b></td><td>วัคซีนเชื้อตายครบ (influenza, PCV, RZV, HBV, COVID) · ดีที่สุด <b>≥2 สัปดาห์ก่อน</b> เริ่มยา · <b>เชื้อเป็น ≥4 สัปดาห์ก่อน</b> เริ่มยา</td><td><b>Prednisolone ≥20 mg/วัน (หรือ ≥2 mg/kg) นาน ≥14 วัน</b> = ภูมิต่ำระดับสูง → ห้ามเชื้อเป็นระหว่างได้ยาและ <b>≥1 เดือนหลังหยุด</b> · หลังเคมีบำบัด ≥3 เดือน · หลัง anti-CD20 (rituximab) ≥6 เดือน (เชื้อตายก็ตอบสนองน้อย)</td></tr>
+    <tr><td><b>ไม่มีม้าม/ม้ามไม่ทำงาน</b></td><td><b>PCV</b> (PCV20 หรือ PCV15 → PPSV23 ≥8 สัปดาห์) · <b>MenACWY 2 เข็ม</b> ห่าง ≥8 สัปดาห์ + ทุก 5 ปี · <b>MenB</b> · <b>Hib 1 เข็ม</b> · influenza ทุกปี</td><td>ผ่าตัดนัด: ฉีด <b>≥2 สัปดาห์ก่อน</b> · ผ่าตัดฉุกเฉิน: ฉีด <b>≥2 สัปดาห์หลัง</b> · สอนเรื่องไข้ = ฉุกเฉิน</td></tr>
+    <tr><td><b>CKD / ฟอกไต</b></td><td>HBV ขนาดสูง 40 mcg 0, 1, 2, 6 เดือน + anti-HBs ทุกปี · PCV (กลุ่มภูมิต่ำ) · influenza · RSV (ระยะ 4–5/ฟอกไต ≥50 ปี) · RZV · COVID</td><td>ฉีดช่วง CKD ระยะต้นภูมิขึ้นดีกว่า → <a href="../ckd/index.html">CKD</a></td></tr>
+    <tr><td><b>ตับแข็ง/ตับเรื้อรัง</b></td><td><b>HAV + HBV</b> ถ้าไม่มีภูมิ · PCV · influenza · RZV ≥50 · RSV ≥50 · COVID</td><td>ตรวจภูมิหลังฉีด HBV · ดู <a href="../cirrhosis/index.html">Cirrhosis</a>, <a href="../hepbc/index.html">HBV/HCV</a></td></tr>
+    <tr><td><b>เบาหวาน</b></td><td>Influenza · PCV (โรคเรื้อรัง) · <b>HBV</b> (ACIP: 19–59 ปีทุกคน, ≥60 ตามดุลยพินิจ) · RSV 50–74 ที่มีอวัยวะเสียหาย · RZV ≥50 · Td/Tdap · COVID</td><td>ดู <a href="../dm/index.html">Diabetes</a></td></tr>
+    <tr><td><b>HIV</b></td><td>เชื้อตายทั้งหมด: PCV (ภูมิต่ำ), RZV ≥18 ปีทุก CD4, HBV (ตรวจ anti-HBs; บางแนวทางใช้ขนาดสองเท่า), HAV, HPV 3 เข็มถึง 26 ปี, MenACWY 2 เข็ม (ACIP: ทุกคน · IDAT: CD4 &lt;200), influenza, COVID</td><td><b>MMR/VAR ได้เมื่อ CD4 ≥200 และ ≥15%</b> · CD4 &lt;200 ห้ามเชื้อเป็น · เริ่ม ART ก่อนแล้วฉีดเมื่อ CD4 ขึ้นภูมิดีกว่า → <a href="../hiv/index.html">HIV</a></td></tr>
+    <tr><td><b>ปลูกถ่ายอวัยวะ (SOT)</b></td><td>ฉีดให้ครบก่อนปลูกถ่าย: เชื้อตาย ≥2 สัปดาห์ก่อน · เชื้อเป็น ≥4 สัปดาห์ก่อน · หลังปลูกถ่ายเริ่มเชื้อตายได้ ~2–6 เดือน</td><td>หลังปลูกถ่ายห้ามเชื้อเป็น (ยกเว้นกรณีจำเพาะ) · HSCT: ฉีดใหม่ทั้งชุดเริ่ม 3–6 เดือน, เชื้อเป็น ≥24 เดือนถ้าไม่มี GVHD/ไม่กดภูมิ</td></tr>
+    <tr><td><b>บุคลากรการแพทย์</b></td><td><b>HBV + anti-HBs</b> 1–2 เดือนหลังครบ · MMR 2 เข็ม · varicella 2 เข็ม (ถ้าไม่มีภูมิ) · Tdap 1 ครั้ง · influenza ทุกปี · COVID</td><td>anti-HBs &lt;10 หลังชุดแรก → ฉีดอีกชุดแล้วตรวจซ้ำ</td></tr>
+    <tr><td><b>ผู้สูงอายุ</b></td><td>Influenza (high-dose) · PCV · RZV · RSV (≥75) · Td ทุก 10 ปี · COVID · ดู <a href="../geriatric/index.html">Geriatric</a></td><td>ผู้ป่วยระยะท้าย: เน้นวัคซีนที่ลดการป่วยระยะสั้น (influenza, COVID) ตามเป้าหมายการดูแล ไม่จำเป็นต้องเริ่มชุดยาว (HBV) <span class="tag add">เสริม</span> → <a href="../palliative/index.html">Palliative</a></td></tr>
+    <tr><td><b>นักเดินทาง</b></td><td>ทบทวนวัคซีนพื้นฐาน + HAV, typhoid, JE, rabies PrEP, MenACWY, ไข้เหลือง ตามปลายทาง · ควรมาปรึกษา ≥4–6 สัปดาห์ก่อน</td><td>ชาวต่างชาติจากพื้นที่ไม่ระบาดอยู่ไทย ≥4 สัปดาห์: dengue เข็มแรก ≥14 วันก่อนเดินทาง (IDAT)</td></tr>
+  </table></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง: ทบทวนวัคซีนผู้ใหญ่</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ใหญ่มาตรวจ</b>ถามประวัติวัคซีน · อายุ · ตั้งครรภ์ · โรคประจำตัว · ยา · อาชีพ · แผนเดินทาง</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ตั้งครรภ์ หรือภูมิคุ้มกันต่ำรุนแรง?</b>(pred ≥20 mg ≥14 วัน, เคมีบำบัด, biologic, ปลูกถ่าย, HIV CD4 &lt;200)</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>ห้ามเชื้อเป็น</b>ให้เชื้อตายตามข้อบ่งชี้ · ตั้งครรภ์: Tdap/aP, influenza, COVID, RSVpreF</div></div>
+        <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>ให้ได้ทุกชนิด</b>ตามอายุและข้อบ่งชี้</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>อายุ?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">18–49</span><div class="node dx eu"><b>พื้นฐาน</b>Influenza · Tdap/Td · HPV ≤26 · HBV · MMR/VAR ถ้าไม่มีภูมิ</div></div>
+        <div class="arm"><span class="lab">50–64</span><div class="node dx hypo"><b>+ PCV · RZV</b>RSV ถ้าเสี่ยง</div></div>
+        <div class="arm"><span class="lab">≥65</span><div class="node dx hypo"><b>+ PCV · RZV · RSV ≥75</b>Influenza high-dose · COVID ทุกปี</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx eu"><b>เพิ่มตามโรค/อาชีพ/เดินทาง</b>ไม่มีม้าม → Men/Hib · CKD → HBV ขนาดสูง · ตับ → HAV/HBV · บุคลากร → anti-HBs · เดินทาง → HAV, typhoid, JE, rabies</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ตรวจสอบเอกสารกำกับวัคซีน สิทธิ์ และแนวทางของ รพ.</p>
+  </div>
+  <div class="tool plan" id="tSch" style="margin-top:12px">
+    <h3>1) สร้างตารางวัคซีนรายบุคคล</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="sA" value="67"></label>
+      <label class="f">เพศ<select id="sSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">อายุครรภ์ (สัปดาห์)<input type="number" id="sGa" placeholder="ถ้าตั้งครรภ์"></label>
+      <label class="f">BMI (kg/m²)<input type="number" step="0.1" id="sBmi" placeholder="ไม่บังคับ"></label>
+      <label class="f">CD4 (ถ้า HIV)<input type="number" id="sCd4" placeholder="cells/mm³"></label>
+      <label class="f">Td/Tdap เข็มล่าสุด (กี่ปีก่อน)<input type="number" id="sTdY" placeholder="ว่าง = ไม่ทราบ"></label>
+      <label class="f">RZV ที่เคยได้<select id="sRzv"><option value="0">0 เข็ม</option><option value="1">1 เข็ม</option><option value="2">2 เข็ม</option></select></label>
+      <label class="f">HBV<select id="sHbv"><option value="unk">ไม่ทราบ/ไม่เคย</option><option value="done">ฉีดครบ 3 เข็มแล้ว</option><option value="imm">มีภูมิ (anti-HBs ≥10) หรือ HBsAg+</option></select></label>
+      <label class="f">Pneumococcal ที่เคยได้<select id="sPcv"><option value="none">ไม่เคย/ไม่ทราบ</option><option value="some">เคยได้บางส่วน</option><option value="done">PCV20/21 หรือครบชุดแล้ว</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="sPreg"> ตั้งครรภ์</label>
+      <label><input type="checkbox" id="sDm"> เบาหวาน</label>
+      <label><input type="checkbox" id="sCp"> โรคหัวใจ/ปอดเรื้อรัง (รวมหอบหืด COPD)</label>
+      <label><input type="checkbox" id="sCkd"> CKD ระยะ 4–5 หรือฟอกไต</label>
+      <label><input type="checkbox" id="sLiv"> โรคตับเรื้อรัง/ตับแข็ง</label>
+      <label><input type="checkbox" id="sAsp"> ไม่มีม้าม/ม้ามไม่ทำงาน</label>
+      <label><input type="checkbox" id="sHiv"> HIV</label>
+      <label><input type="checkbox" id="sImm"> ยากดภูมิ/biologic/เคมีบำบัด/ปลูกถ่ายอวัยวะ</label>
+      <label><input type="checkbox" id="sSter"> Prednisolone ≥20 mg/วัน นาน ≥14 วัน (ภายใน 1 เดือน)</label>
+      <label><input type="checkbox" id="sSmk"> สูบบุหรี่/ดื่มสุราเรื้อรัง</label>
+      <label><input type="checkbox" id="sHcw"> บุคลากรการแพทย์</label>
+      <label><input type="checkbox" id="sTrav"> เดินทาง/ทำงานชนบท-ทุ่งนา</label>
+      <label><input type="checkbox" id="sTdap"> เคยได้ Tdap แล้ว</label>
+      <label><input type="checkbox" id="sFlu"> ได้วัคซีนไข้หวัดใหญ่ปีนี้แล้ว</label>
+      <label><input type="checkbox" id="sRsv"> เคยได้วัคซีน RSV แล้ว</label>
+      <label><input type="checkbox" id="sHpv"> ฉีด HPV ครบแล้ว</label>
+      <label><input type="checkbox" id="sMmr"> ไม่มีหลักฐานภูมิหัด-หัดเยอรมัน (MMR)</label>
+      <label><input type="checkbox" id="sVar"> ไม่เคยเป็น/ไม่เคยฉีดอีสุกอีใส</label>
+    </div>
+    <div class="out" id="schOut"></div>
+  </div>
+
+  <div class="tool" id="tPn" style="margin-top:12px">
+    <h3>2) ลำดับวัคซีนปอดอักเสบ</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="pA" value="66"></label>
+      <label class="f">ความเสี่ยง<select id="pR"><option value="none">ไม่มีโรคเสี่ยง</option><option value="chr">โรคเรื้อรัง (หัวใจ ปอด ตับ DM บุหรี่ สุรา)</option><option value="imm">ภูมิต่ำ/CKD/ไม่มีม้าม/HIV/CSF leak/cochlear implant</option></select></label>
+      <label class="f">เคยได้<select id="pP"><option value="none">ไม่เคย/ไม่ทราบ</option><option value="p13">PCV13 อย่างเดียว</option><option value="p15">PCV15 อย่างเดียว</option><option value="ppsv">PPSV23 อย่างเดียว</option><option value="both">PCV13 + PPSV23</option><option value="p20">PCV20 หรือ PCV21</option></select></label>
+      <label class="f">เข็มล่าสุด (กี่ปีก่อน)<input type="number" step="0.1" id="pY" value="2"></label>
+    </div>
+    <div class="checks"><label><input type="checkbox" id="pOld"> PPSV23 เข็มล่าสุดได้ตอนอายุ ≥65 ปี</label></div>
+    <div class="out" id="pnOut"></div>
+  </div>
+
+  <div class="tool" id="tTt" style="margin-top:12px">
+    <h3>3) บาดแผล: ต้องให้ Td/Tdap หรือ TIG ไหม</h3>
+    <div class="fields">
+      <label class="f">ชนิดแผล<select id="wW"><option value="clean">สะอาด เล็ก</option><option value="dirty">แผลอื่น (สกปรก แทง บด ไฟไหม้ ถูกกัด)</option></select></label>
+      <label class="f">จำนวนเข็มที่เคยได้<select id="wD"><option value="unk">ไม่ทราบ / &lt;3 เข็ม</option><option value="3">≥3 เข็ม</option></select></label>
+      <label class="f">เข็มล่าสุด (กี่ปีก่อน)<input type="number" step="0.5" id="wY" value="7"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="wImm"> HIV หรือภูมิคุ้มกันต่ำรุนแรง</label>
+      <label><input type="checkbox" id="wTdap"> เคยได้ Tdap แล้ว</label>
+      <label><input type="checkbox" id="wPreg"> ตั้งครรภ์</label>
+    </div>
+    <div class="out" id="ttOut"></div>
+  </div>
+
+  <div class="tool" id="tInt" style="margin-top:12px">
+    <h3>4) ตรวจระยะห่างระหว่างวัคซีน</h3>
+    <div class="fields">
+      <label class="f">วัคซีนที่ 1<select id="iV1"></select></label>
+      <label class="f">วันที่ฉีด 1<input type="date" id="iD1" value="2026-09-01" style="font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%"></label>
+      <label class="f">วัคซีนที่ 2<select id="iV2"></select></label>
+      <label class="f">วันที่ฉีด 2<input type="date" id="iD2" value="2026-09-20" style="font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%"></label>
+      <label class="f">ถ้าเป็นวัคซีนเดียวกัน<select id="iSt"><option value="12">เข็ม 1 → 2</option><option value="23">เข็ม 2 → 3</option></select></label>
+    </div>
+    <div class="out" id="intOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ทุกการมา OPD = โอกาสทบทวนวัคซีน</b> โดยเฉพาะคลินิก DM, CKD, ANC</div></div>
+    <div class="pearl"><div><b>ฉีดหลายเข็มวันเดียวกันได้</b> ดีกว่านัดหลายครั้ง</div></div>
+    <div class="pearl"><div><b>เลื่อนนัด ไม่ต้องเริ่มใหม่</b></div></div>
+    <div class="pearl"><div><b>เชื้อเป็น 2 ชนิด: วันเดียวกัน หรือห่าง ≥28 วัน</b></div></div>
+    <div class="pearl"><div><b>แพ้ไข่ ฉีดไข้หวัดใหญ่ได้</b></div></div>
+    <div class="pearl"><div><b>PCV20 1 เข็ม = จบ</b> · PCV15 ต้องตาม PPSV23</div></div>
+    <div class="pearl"><div><b>PPSV23 ก่อน → รอ PCV ≥1 ปี</b></div></div>
+    <div class="pearl"><div><b>Tdap ทุกครรภ์</b> (ไทย 20–32 สัปดาห์)</div></div>
+    <div class="pearl"><div><b>แผลสกปรก + ครบ 3 เข็ม: กระตุ้นถ้า ≥5 ปี</b> · ไม่ครบ/ไม่ทราบ → + TIG</div></div>
+    <div class="pearl"><div><b>Pred ≥20 mg ≥14 วัน = ห้ามเชื้อเป็น</b> ถึง 1 เดือนหลังหยุด</div></div>
+    <div class="pearl"><div><b>ฉีดก่อนเริ่มยากดภูมิ</b>: เชื้อตาย ≥2 สัปดาห์ · เชื้อเป็น ≥4 สัปดาห์</div></div>
+    <div class="pearl"><div><b>ฟอกไต: HBV 40 mcg 4 เข็ม</b> + anti-HBs ทุกปี</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../rabies/index.html">Rabies →</a> · <a href="../hiv/index.html">HIV →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../dm/index.html">Diabetes →</a> · <a href="../hepbc/index.html">HBV/HCV →</a> · <a href="../anaphylaxis/index.html">Anaphylaxis →</a> · <a href="../palliative/index.html">Palliative →</a> · <a href="../health-check/index.html">ตรวจสุขภาพ →</a> · <a href="../cancer-screening/index.html">Cancer screening →</a> · <a href="../geriatric/index.html">Geriatric →</a></p>
+<footer class="col">
+  อ้างอิง: 1) สมาคมโรคติดเชื้อแห่งประเทศไทย. การให้วัคซีนป้องกันโรคสำหรับผู้ใหญ่และผู้สูงอายุ พ.ศ. 2568. ต.ค. 2568 · 2) สมาคมโรคติดเชื้อแห่งประเทศไทย ร่วมกับ 7 สมาคมและ 1 ราชวิทยาลัย. คำแนะนำการให้วัคซีนป้องกันโรคสำหรับผู้ใหญ่และผู้สูงอายุ ปี พ.ศ. 2569. ก.ค. 2569 · 3) กรมควบคุมโรค กระทรวงสาธารณสุข. แนวทางการให้วัคซีนป้องกันโรคไอกรนชนิดไร้เซลล์ (aP) ในหญิงตั้งครรภ์. ม.ค. 2567 · 4) กรมควบคุมโรค. รณรงค์ฉีดวัคซีนป้องกันโรคไข้หวัดใหญ่ตามฤดูกาล ปี 2569 · 5) กรมควบคุมโรค. การให้บริการวัคซีน HPV 9 สายพันธุ์ 1 เข็ม (ธ.ค. 2567) · 6) Wodi AP, Issa AN, Moser CA, Cineas S. Advisory Committee on Immunization Practices recommended immunization schedule for adults aged 19 years or older — United States, 2025. MMWR Morb Mortal Wkly Rep 2025;74:30–3 · 7) CDC. Adult immunization schedule addendum (RSV 50–59 ปี, MenABCWY), 2025 · 8) Kobayashi M, Leidner AJ, Gierke R, et al. Expanded recommendations for use of pneumococcal conjugate vaccines among adults aged ≥50 years: ACIP, United States, 2024. MMWR Morb Mortal Wkly Rep 2025;74:1–8 · 9) Havers FP, Moro PL, Hunter P, et al. Use of tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccines: updated recommendations of the ACIP — United States, 2019. MMWR Morb Mortal Wkly Rep 2020;69:77–83 · 10) Anderson TC, Masters NB, Guo A, et al. Use of recombinant zoster vaccine in immunocompromised adults aged ≥19 years: ACIP, 2022. MMWR Morb Mortal Wkly Rep 2022;71:80–4 · 11) Meites E, Szilagyi PG, Chesson HW, et al. Human papillomavirus vaccination for adults: updated recommendations of the ACIP. MMWR Morb Mortal Wkly Rep 2019;68:698–702 · 12) Weng MK, Doshani M, Khan MA, et al. Universal hepatitis B vaccination in adults aged 19–59 years: ACIP, 2022. MMWR Morb Mortal Wkly Rep 2022;71:477–83 · 13) Mbaeyi SA, Bozio CH, Duffy J, et al. Meningococcal vaccination: recommendations of the ACIP, United States, 2020. MMWR Recomm Rep 2020;69(RR-9):1–41 · 14) Rubin LG, Levin MJ, Ljungman P, et al. 2013 IDSA clinical practice guideline for vaccination of the immunocompromised host. Clin Infect Dis 2014;58:e44–100 · 15) World Health Organization. WHO position paper on dengue vaccines – May 2024. Wkly Epidemiol Rec 2024;99:203–24 · 16) World Health Organization. Rabies vaccines: WHO position paper – April 2018. Wkly Epidemiol Rec 2018;93:201–20 · 17) American Academy of Family Physicians. 2026–2027 influenza, RSV and SARS-CoV-2 vaccine guidance; Adult immunization schedule 2026 · 18) CDC. General best practice guidelines for immunization (ACIP), timing and spacing of immunobiologics<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = ข้อมูลเสริมนอกแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','vxView');
+mountWalker({
+ start:{q:'มาด้วยเรื่องอะไร?',o:[['ทบทวนวัคซีนประจำ (ตรวจสุขภาพ/คลินิกโรคเรื้อรัง)','pg'],['มีบาดแผล','wd'],['ถูกสุนัข/แมวกัด ข่วน เลีย','bite'],['ก่อนเริ่มยากดภูมิ/ปลูกถ่าย','preimm'],['เตรียมเดินทาง','trav']]},
+ pg:{q:'ตั้งครรภ์ไหม?',o:[['ตั้งครรภ์','preg'],['ไม่ตั้งครรภ์','imm']]},
+ preg:{leaf:true,cls:'warn',t:'วัคซีนระหว่างตั้งครรภ์',b:'<b>Tdap/aP ทุกครรภ์</b> 20–32 สัปดาห์ (ไทย; ACIP 27–36) + dT ตามประวัติ · <b>Influenza</b> ชนิดฉีด ได้ทุกไตรมาส (ฟรีตามสิทธิ์เมื่ออายุครรภ์ ≥4 เดือน) · <b>COVID-19</b> · <b>RSVpreF</b> 24–36 สัปดาห์ (ACIP 32–36) · <b>ห้ามเชื้อเป็น</b> · เลื่อน HPV/RZV/PCV ไปหลังคลอด · ไม่มีภูมิ MMR/VAR → ฉีดหลังคลอด'},
+ imm:{q:'ภูมิคุ้มกันต่ำรุนแรงไหม? (pred ≥20 mg ≥14 วัน, เคมีบำบัด, biologic, ปลูกถ่าย)',o:[['ใช่','immY'],['HIV','hiv'],['ไม่','age']]},
+ immY:{leaf:true,cls:'danger',t:'ภูมิต่ำ: เชื้อตายเท่านั้น',b:'Influenza · PCV (PCV20 หรือ PCV15 → PPSV23 ≥8 สัปดาห์) · <b>RZV 2 เข็ม ห่าง 1–2 เดือน</b> · HBV · COVID (+1 เข็ม ≥8 สัปดาห์) · <b>ห้าม MMR, VAR, dengue, JE เชื้อเป็น, ไข้เหลือง</b> ระหว่างได้ยาและ ≥1 เดือนหลังหยุด steroid (≥3 เดือนหลังเคมีบำบัด, ≥6 เดือนหลัง rituximab)',next:['ดูวัคซีนตามอายุ','age']},
+ hiv:{q:'CD4 เท่าไร?',o:[['≥200 และ ≥15%','hivOk'],['&lt;200 หรือ &lt;15%','hivLo']]},
+ hivOk:{leaf:true,cls:'ok',t:'HIV CD4 ≥200',b:'เชื้อตายทั้งหมดตามข้อบ่งชี้ (PCV, RZV, HBV + ตรวจ anti-HBs, HAV, HPV ถึง 26 ปี, MenACWY, influenza, COVID) · <b>MMR/varicella ให้ได้</b> ถ้าไม่มีภูมิ',next:['ดูวัคซีนตามอายุ','age']},
+ hivLo:{leaf:true,cls:'danger',t:'HIV CD4 <200',b:'<b>ห้ามเชื้อเป็น</b> · ให้เชื้อตายได้ (ภูมิขึ้นน้อย) · MenACWY 2 เข็ม ห่าง ≥8 สัปดาห์ · เริ่ม/ปรับ ART ให้ CD4 ขึ้นแล้วค่อยฉีดเชื้อเป็น/ทบทวน HBV',next:['ดูวัคซีนตามอายุ','age']},
+ age:{q:'อายุเท่าไร?',o:[['18–49 ปี','a1'],['50–64 ปี','a2'],['≥65 ปี','a3']]},
+ a1:{leaf:true,cls:'ok',t:'18–49 ปี',b:'Influenza ทุกปี · Tdap 1 ครั้งแล้ว Td ทุก 10 ปี · <b>HPV ถึง 26 ปี</b> (27–45 ตัดสินใจร่วมกัน) · HBV ถ้าไม่มีภูมิ · MMR/VAR ถ้าไม่มีภูมิ · dengue พิจารณา (4–60 ปี) · PCV/COVID เฉพาะมีโรคเสี่ยง',next:['ดูโรคร่วม','co']},
+ a2:{leaf:true,cls:'warn',t:'50–64 ปี',b:'เพิ่ม <b>RZV 2 เข็ม</b> (2–6 เดือน) · <b>PCV</b> (ACIP แนะนำทุกคน; IDAT 2569 แนะนำ/พิจารณา) · <b>RSV ถ้ามีโรคเสี่ยง</b> · Influenza · Td ทุก 10 ปี · COVID ถ้ามีโรคเสี่ยง (≥60 ทุกปี)',next:['ดูโรคร่วม','co']},
+ a3:{leaf:true,cls:'warn',t:'≥65 ปี',b:'Influenza (high-dose/adjuvanted) · <b>PCV20 1 เข็ม</b> หรือ PCV15 → PPSV23 · <b>RZV 2 เข็ม</b> · <b>RSV 1 เข็ม</b> (≥75 ทุกคน; 65–74 ถ้าเสี่ยง) · COVID ทุกปี · Td ทุก 10 ปี',next:['ดูโรคร่วม','co']},
+ co:{q:'มีโรคร่วมใด?',o:[['เบาหวาน/หัวใจ/ปอด','cDm'],['CKD/ฟอกไต','cCkd'],['ตับแข็ง/ตับเรื้อรัง','cLiv'],['ไม่มีม้าม','cAsp'],['บุคลากรการแพทย์','cHcw'],['ไม่มี','cNone']]},
+ cDm:{leaf:true,cls:'ok',t:'เบาหวาน/หัวใจ/ปอด',b:'PCV ทุกอายุ ≥18 · influenza · HBV (ACIP 19–59 ทุกคน) · RSV 50–74 ปี · COVID ทุกปี'},
+ cCkd:{leaf:true,cls:'warn',t:'CKD/ฟอกไต',b:'<b>HBV 40 mcg 0, 1, 2, 6 เดือน</b> · anti-HBs หลังครบและทุกปี (&lt;10 → กระตุ้น) · PCV แบบภูมิต่ำ · influenza · RSV (≥50 ปี ระยะ 4–5) · RZV ≥50'},
+ cLiv:{leaf:true,cls:'ok',t:'ตับแข็ง/ตับเรื้อรัง',b:'<b>HAV + HBV</b> ถ้าไม่มีภูมิ (≥50 ปีตรวจ anti-HAV ก่อน) · PCV · influenza · RSV ≥50 · RZV ≥50 · COVID'},
+ cAsp:{leaf:true,cls:'danger',t:'ไม่มีม้าม',b:'PCV (PCV15 → PPSV23 ≥8 สัปดาห์ได้) · <b>MenACWY 2 เข็ม ห่าง ≥8 สัปดาห์ + ทุก 5 ปี</b> · <b>MenB</b> · <b>Hib 1 เข็ม</b> · influenza · ผ่าตัดนัด: ฉีด ≥2 สัปดาห์ก่อน; ฉุกเฉิน: ≥2 สัปดาห์หลัง'},
+ cHcw:{leaf:true,cls:'ok',t:'บุคลากรการแพทย์',b:'HBV + <b>anti-HBs 1–2 เดือนหลังครบ</b> · MMR 2 เข็ม · varicella 2 เข็ม ถ้าไม่มีภูมิ · Tdap 1 ครั้ง · influenza ทุกปี (ฟรีตามสิทธิ์) · COVID'},
+ cNone:{leaf:true,cls:'ok',t:'ไม่มีโรคร่วม',b:'ให้ตามอายุ · บันทึกวันที่ฉีดและนัดเข็มถัดไป'},
+ wd:{q:'เคยได้วัคซีนบาดทะยักครบ ≥3 เข็มไหม?',o:[['ครบ ≥3 เข็ม','w3'],['ไม่ทราบ / &lt;3 เข็ม','wU']]},
+ w3:{q:'แผลแบบไหน?',o:[['สะอาด เล็ก','w3c'],['สกปรก/แทง/บด/ไฟไหม้/ถูกกัด','w3d']]},
+ w3c:{q:'เข็มล่าสุดนานเท่าไร?',o:[['≥10 ปี','bst'],['&lt;10 ปี','nobst']]},
+ w3d:{q:'เข็มล่าสุดนานเท่าไร?',o:[['≥5 ปี','bst'],['&lt;5 ปี','nobst']]},
+ bst:{leaf:true,cls:'warn',t:'กระตุ้น Td/Tdap 1 เข็ม',b:'Tdap ถ้ายังไม่เคยได้ (หรือตั้งครรภ์) · <b>ไม่ต้อง TIG</b> ยกเว้น HIV/ภูมิต่ำรุนแรง + แผลเสี่ยง · ทำแผล/ตัดเนื้อตาย'},
+ nobst:{leaf:true,cls:'ok',t:'ไม่ต้องฉีดวัคซีน',b:'ทำแผลอย่างเดียว · ไม่ต้อง TIG (ยกเว้น HIV/ภูมิต่ำรุนแรง + แผลเสี่ยง) · บันทึกวันครบกำหนดกระตุ้น'},
+ wU:{q:'แผลแบบไหน?',o:[['สะอาด เล็ก','wUc'],['แผลอื่น','wUd']]},
+ wUc:{leaf:true,cls:'warn',t:'Td/Tdap + ฉีดให้ครบชุด',b:'เข็มแรกวันนี้ (Tdap ถ้าไม่เคย) · เข็ม 2 ≥4 สัปดาห์ · เข็ม 3 อีก 6–12 เดือน · ไม่ต้อง TIG'},
+ wUd:{leaf:true,cls:'danger',t:'Td/Tdap + TIG',b:'<b>TIG 250 IU IM</b> คนละตำแหน่งกับวัคซีน + Td/Tdap วันนี้ แล้วฉีดให้ครบ 3 เข็ม · ทำแผล/ตัดเนื้อตาย · ถูกสัตว์กัด: ประเมินพิษสุนัขบ้าด้วย'},
+ bite:{leaf:true,cls:'danger',t:'ประเมินพิษสุนัขบ้า + บาดทะยัก',b:'ล้างแผลด้วยน้ำสบู่ 15 นาที · จัดกลุ่มการสัมผัสและให้ PEP ± RIG ตามหน้า <a href="../rabies/index.html">Rabies</a> · ผู้เคยได้ PrEP/PEP ครบ: กระตุ้นเท่านั้น ไม่ต้อง RIG · แผลกัดเป็นแผลเสี่ยงบาดทะยัก',next:['ประเมินบาดทะยัก','wd']},
+ preimm:{leaf:true,cls:'warn',t:'ฉีดก่อนกดภูมิ',b:'เชื้อตาย ≥2 สัปดาห์ก่อนเริ่มยา: influenza, PCV, RZV, HBV, COVID · <b>เชื้อเป็น ≥4 สัปดาห์ก่อน</b> (MMR/VAR ถ้าไม่มีภูมิ) · ไม่มีม้าม (ผ่าตัด): PCV, MenACWY, MenB, Hib ≥2 สัปดาห์ก่อน · ตรวจ HBsAg/anti-HBc ก่อน rituximab'},
+ trav:{leaf:true,cls:'ok',t:'ก่อนเดินทาง (มาปรึกษา ≥4–6 สัปดาห์ก่อน)',b:'ทบทวนวัคซีนพื้นฐาน · HAV · typhoid Vi (เอเชียใต้/แอฟริกา) · JE (ชนบท/ทุ่งนา ≥2 สัปดาห์) · rabies PrEP วัน 0, 7 · MenACWY (ฮัจญ์ ≥10 วันก่อน) · ไข้เหลือง (≥10 วันก่อน; เชื้อเป็น)'}
+},'apTrail','apStage');
+
+/* ---------- Tool 1: personalised schedule ---------- */
+function sch(){
+  const c=id=>$(id).checked;const a=num('sA');const out=$('schOut');
+  if(a===null||a<18||a>120){out.innerHTML='ใส่อายุ 18–120 ปี <span class="muted">(อายุ &lt;18 ปี ใช้ตารางวัคซีนเด็ก)</span>';return}
+  const L=[],W=[];
+  const female=$('sSex').value==='f';
+  let preg=c('sPreg')&&female;
+  if(c('sPreg')&&!female)W.push('เลือกเพศชาย — ไม่คิดเรื่องตั้งครรภ์');
+  if(preg&&a>60){W.push('อายุ >60 ปี กับการตั้งครรภ์ — ตรวจข้อมูลอีกครั้ง');}
+  let ga=num('sGa');if(ga!==null&&(ga<1||ga>42)){if(preg)W.push('อายุครรภ์ต้องอยู่ระหว่าง 1–42 สัปดาห์ — ไม่นำมาคำนวณ');ga=null}
+  if(!preg)ga=null;
+  let bmi=num('sBmi');if(bmi!==null&&(bmi<10||bmi>90)){W.push('BMI ไม่สมเหตุสมผล — ไม่นำมาคิด');bmi=null}
+  const hiv=c('sHiv');let cd4=num('sCd4');if(cd4!==null&&cd4>5000){W.push('CD4 ไม่สมเหตุสมผล — ตรวจค่า');cd4=null}
+  const cd4lo=hiv&&(cd4===null||cd4<200);
+  const imm=c('sImm')||c('sSter')||hiv;
+  const ckd=c('sCkd'),dm=c('sDm'),cp=c('sCp'),liv=c('sLiv'),asp=c('sAsp');
+  const chronic=dm||cp||liv||c('sSmk');
+  const immPn=imm||ckd||asp;
+  const liveNo=preg||c('sImm')||c('sSter')||cd4lo;
+  const why=[preg?'ตั้งครรภ์':null,c('sImm')?'ยากดภูมิ/เคมีบำบัด/ปลูกถ่าย':null,c('sSter')?'steroid ขนาดสูง':null,cd4lo?(cd4===null?'HIV ยังไม่ทราบ CD4':'HIV CD4 &lt;200'):null].filter(Boolean).join(', ');
+  const add=(n,t)=>L.push(`<li><b>${n}</b> — ${t}</li>`);
+  /* influenza */
+  {let t=c('sFlu')?'ได้แล้วปีนี้ → ครั้งต่อไปฤดูกาลหน้า':'<b>1 เข็ม IM ทุกปี</b> (ก่อนหน้าฝน เม.ย.–พ.ค.)';
+   if(!c('sFlu')&&a>=65)t+=' · เลือก high-dose/adjuvanted ถ้ามี (IDAT 2568: high-dose ≥65 ปี)';
+   if(preg)t+=' · ตั้งครรภ์: ชนิดฉีดเชื้อตายเท่านั้น ได้ทุกไตรมาส (ACIP) · สิทธิ์ฟรีไทย: อายุครรภ์ ≥4 เดือน';
+   const free=a>=65||preg||dm||cp||ckd||imm||c('sHcw')||(bmi!==null&&bmi>35);
+   if(free&&!c('sFlu'))t+=' · <span class="tag th">ไทย</span> เข้าเกณฑ์ฟรีช่วงรณรงค์ (ตรวจสอบสิทธิ์)';
+   add('Influenza',t);}
+  /* COVID */
+  {const risk=dm||cp||ckd||liv||imm||asp||(bmi!==null&&bmi>=30);
+   if(a>=60||risk||preg){let t='วัคซีนรุ่นล่าสุด <b>ปีละ 1 เข็ม</b> (ห่างจากการติดเชื้อ ≥3 เดือน)';
+     if(imm||c('sSter'))t+=' · ภูมิต่ำ: +1 เข็ม ห่าง ≥8 สัปดาห์';
+     if(a>=65)t+=' · AAFP/ACIP: ≥65 ปี 2 เข็ม ห่าง 6 เดือน';
+     if(preg)t+=' · ตั้งครรภ์: IDAT แนะนำ (12–20 สัปดาห์)';
+     add('COVID-19',t);}
+   else add('COVID-19','ไม่มีโรคเสี่ยง อายุ &lt;60 ปี: ตามความสมัครใจ');}
+  /* RSV */
+  {const rr=cp||ckd||imm||liv||dm||(bmi!==null&&bmi>=40);
+   if(c('sRsv'))add('RSV','เคยได้แล้ว — <b>ยังไม่แนะนำเข็มซ้ำ</b>');
+   else if(a>=75)add('RSV','<b>1 เข็ม IM</b> (≥75 ปีทุกคน) ก่อนฤดูระบาด ก.ค.–พ.ย.');
+   else if(a>=50&&rr)add('RSV','<b>1 เข็ม IM</b> (50–74 ปีที่มีโรคเสี่ยง'+(dm&&!(cp||ckd||imm||liv)?' — เบาหวาน: IDAT เน้นรายที่มีอวัยวะเสียหาย':'')+')');
+   else if(preg&&ga!==null&&ga>=24&&ga<=36)add('RSV (ตั้งครรภ์)',`อายุครรภ์ ${ga} สัปดาห์: <b>RSVpreF (bivalent) 1 เข็ม</b> ได้ตาม IDAT (24–36 สัปดาห์)`+(ga<32?' · ACIP ให้ 32–36 สัปดาห์':'')+' · ห้ามชนิด adjuvanted');
+   else if(preg)add('RSV (ตั้งครรภ์)','RSVpreF ให้ช่วง 24–36 สัปดาห์ (IDAT; ACIP 32–36)'+(ga===null?' · ใส่อายุครรภ์เพื่อคำนวณ':` · ตอนนี้ ${ga} สัปดาห์`));
+   else if(rr)add('RSV','อายุ &lt;50 ปี: พิจารณารายคนเฉพาะเสี่ยงสูงมาก');}
+  /* Pneumococcal */
+  {const ind=a>=50||chronic||immPn;
+   if(!ind){}
+   else if($('sPcv').value==='done')add('Pneumococcal','ครบแล้ว — ไม่ต้องให้เพิ่ม');
+   else{let t=$('sPcv').value==='some'?'เคยได้บางส่วน → <b>ใช้เครื่องมือที่ 2</b> หาเข็มถัดไป':'<b>PCV20 1 เข็ม จบ</b> หรือ PCV15 → PPSV23 '+(immPn?'<b>≥8 สัปดาห์</b>':'<b>≥1 ปี</b>');
+     if(a>=50&&a<65&&!chronic&&!immPn)t+=' · อายุ 50–64 ไม่มีโรค: ACIP แนะนำ, IDAT 2569 แนะนำ/พิจารณา';
+     if(preg)t+=' · ตั้งครรภ์: ข้อมูลไม่พอ เลื่อนหลังคลอดถ้าไม่เสี่ยงสูง';
+     add('Pneumococcal',t);}}
+  /* Td/Tdap */
+  {let y=num('sTdY');let t;
+   if(y!==null&&(y<0||y>90)){W.push('ปีของ Td ไม่สมเหตุสมผล — ถือว่าไม่ทราบ');y=null}
+   if(preg){t='<b>Tdap/aP ทุกครรภ์</b> 20–32 สัปดาห์ (ไทย; ACIP 27–36)';
+     if(ga!==null)t+=ga<16?` · ตอนนี้ ${ga} สัปดาห์ → นัดเมื่อ 20 สัปดาห์ (เร็วสุด 16)`:ga<=32?` · ตอนนี้ ${ga} สัปดาห์ → <b>ฉีดได้เลย</b>`:` · ตอนนี้ ${ga} สัปดาห์ → เลยช่วงแนะนำ แต่ยังฉีดได้ (ควร ≥2 สัปดาห์ก่อนคลอด)`;
+     t+=y===null?' · ไม่ทราบประวัติ dT → ให้ dT ตามแนว ANC ให้ครบชุด':'';}
+   else if(y===null)t='ไม่ทราบประวัติ: ถ้าไม่เคยได้ครบ 3 เข็ม → <b>0, 1, 6–12 เดือน</b> (เข็มแรก Tdap) · ถ้าเคยครบ → กระตุ้น 1 เข็ม';
+   else if(y>=10)t=`เข็มล่าสุด ${y} ปี → <b>ถึงกำหนดกระตุ้น</b> ${c('sTdap')?'Td หรือ Tdap':'ใช้ <b>Tdap</b>'}`;
+   else t=`เข็มล่าสุด ${y} ปี → กระตุ้นอีก ${10-y} ปี`+(c('sTdap')?'':' · ยังไม่เคย Tdap: ให้ Tdap 1 ครั้งได้เลยไม่ต้องรอ');
+   add('Td/Tdap',t);}
+  /* Zoster */
+  {const zi=c('sImm')||c('sSter')||hiv;
+   if(a>=50||zi){const d=+$('sRzv').value;
+     if(d>=2)add('Zoster (RZV)','ครบ 2 เข็มแล้ว');
+     else if(preg)add('Zoster (RZV)','ตั้งครรภ์: เลื่อนไปหลังคลอด');
+     else add('Zoster (RZV)',(d===1?'<b>เข็มที่ 2</b> ':'<b>2 เข็ม IM</b> ')+(zi?'ห่าง <b>1–2 เดือน</b> (ภูมิต่ำ)':'ห่าง <b>2–6 เดือน</b>')+' · ขั้นต่ำ 4 สัปดาห์');}}
+  /* HPV */
+  if(!c('sHpv')){
+    if(a<=26)add('HPV',preg?'เลื่อนไปหลังคลอด':((imm?'ภูมิต่ำ/HIV: ':'')+'<b>3 เข็ม 0, 1–2, 6 เดือน</b>')+(female&&a<=20?' · <span class="tag th">ไทย</span> หญิง 11–20 ปี: 9v 1 เข็มฟรีตามโครงการ (ภูมิปกติ)':''));
+    else if(a<=45)add('HPV','27–45 ปี: <b>ตัดสินใจร่วมกัน</b> ตามความเสี่ยง (คู่นอนใหม่ ภูมิต่ำ)'+(preg?' · ตั้งครรภ์: เลื่อนไปหลังคลอด':''));}
+  /* HBV */
+  {const hv=$('sHbv').value;const chk=ckd||c('sHcw')||imm;
+   const dose=ckd?'<b>40 mcg IM 0, 1, 2, 6 เดือน</b> (ฟอกไต/CKD)':'<b>20 mcg IM 0, 1, 6 เดือน</b>';
+   if(hv==='imm'){}
+   else if(hv==='done')add('Hepatitis B','ฉีดครบแล้ว'+(chk?' · <b>ตรวจ anti-HBs</b> (≥10 = มีภูมิ; &lt;10 → ฉีดซ้ำ 1 ชุด)':'')+(ckd?' · ฟอกไต: ตรวจทุกปี กระตุ้นเมื่อ &lt;10':''));
+   else{const risk=dm||ckd||liv||hiv||c('sHcw')||imm;
+     let t=(a>=34?'<span class="tag th">ไทย</span> น่าจะเกิดก่อน พ.ศ. 2535 → ตรวจ <b>HBsAg + anti-HBs</b> ก่อน ถ้าลบทั้งคู่ → ':'')+dose;
+     if(a>=60&&!risk)t+=' · ACIP: ≥60 ปีไม่มีความเสี่ยง ให้ได้ถ้าต้องการ';
+     if(chk)t+=' · ตรวจ anti-HBs 1–2 เดือนหลังครบ';
+     add('Hepatitis B',t);}}
+  /* HAV */
+  if(liv||hiv||imm||c('sTrav'))add('Hepatitis A',(a>=50?'≥50 ปี: ตรวจ <b>anti-HAV IgG</b> ก่อน ถ้าไม่มีภูมิ → ':'')+'<b>2 เข็ม IM ห่าง ≥6 เดือน</b>');
+  /* MMR / VAR */
+  if(c('sMmr'))add('MMR (เชื้อเป็น)',liveNo?'<b>ห้ามตอนนี้</b> ('+why+')'+(preg?' → ฉีดหลังคลอด':''):'<b>2 เข็ม SC ห่าง ≥4 สัปดาห์</b>'+(female&&a<=50?' · คุมกำเนิด ≥1 เดือนหลังฉีด':''));
+  else if(c('sHcw'))add('MMR','บุคลากร: ต้องมีหลักฐานภูมิ (2 เข็มหรือผลเลือด)');
+  if(c('sVar'))add('Varicella (เชื้อเป็น)',liveNo?'<b>ห้ามตอนนี้</b> ('+why+')'+(preg?' → ฉีดหลังคลอด':''):'<b>2 เข็ม SC ห่าง 4–8 สัปดาห์</b> · งด acyclovir 24 ชม.ก่อน–2 สัปดาห์หลัง');
+  /* dengue */
+  if(a<=60)add('Dengue TAK-003 (เชื้อเป็น)',liveNo?'<b>ห้ามตอนนี้</b> ('+why+')':hiv?'HIV: <b>ไม่แนะนำเป็น routine</b> — ฉลากห้ามในภูมิคุ้มกันบกพร่อง ข้อมูลใน HIV ยังน้อย (ปรึกษาผู้เชี่ยวชาญ)':'ทางเลือก: <b>2 เข็ม SC 0, 3 เดือน</b>'+(chronic||ckd?' — มีโรคเรื้อรัง ได้ประโยชน์มาก':'')+' · ห้ามขณะให้นมบุตร');
+  /* travel */
+  if(c('sTrav'))add('เดินทาง/ชนบท',(liveNo?'JE: ใช้<b>ชนิดเชื้อตาย</b> 2 เข็ม วัน 0, 7–28':'JE เชื้อเป็น (IMOJEV) <b>1 เข็ม SC</b>')+' · rabies PrEP วัน 0, 7 · typhoid Vi 1 เข็ม (เอเชียใต้/แอฟริกา)');
+  /* asplenia, HIV meningococcal */
+  if(asp)add('ไม่มีม้าม','<b>MenACWY 2 เข็ม ห่าง ≥8 สัปดาห์</b> แล้วทุก 5 ปี · <b>MenB</b> (Bexsero 2 เข็ม ห่าง ≥1 เดือน) · <b>Hib 1 เข็ม</b>');
+  else if(hiv)add('MenACWY','HIV: 2 เข็ม ห่าง ≥8 สัปดาห์ แล้วทุก 5 ปี (ACIP ทุกคน; IDAT เน้น CD4 &lt;200)');
+  if(c('sHcw'))add('บุคลากร','Varicella: ต้องมีหลักฐานภูมิ · Tdap 1 ครั้ง · HBV + anti-HBs');
+  let h='<ol>'+L.join('')+'</ol>';
+  if(liveNo)h+=`<div style="color:var(--danger)"><b>ห้ามวัคซีนเชื้อเป็น</b> (${why}) — MMR, varicella, zoster เชื้อเป็น, dengue, JE เชื้อเป็น, ไข้เหลือง, LAIV`+(c('sSter')?' · steroid: รอ ≥1 เดือนหลังหยุด':'')+(c('sImm')?' · หลังเคมีบำบัด ≥3 เดือน, หลัง rituximab ≥6 เดือน':'')+'</div>';
+  else if(hiv&&cd4!==null)h+=`<div class="muted">HIV CD4 ${cd4} (≥200) → เชื้อเป็นให้ได้ถ้า CD4 ≥15% ด้วย</div>`;
+  if(c('sImm')&&!preg)h+='<div class="muted">ถ้ายังไม่เริ่มยา: ฉีดเชื้อตาย ≥2 สัปดาห์ก่อน และเชื้อเป็น ≥4 สัปดาห์ก่อนเริ่ม</div>';
+  if(W.length)h+='<div class="muted">'+W.join(' · ')+'</div>';
+  out.innerHTML=h;
+}
+bindAll('#tSch input,#tSch select',sch);
+
+/* ---------- Tool 2: pneumococcal sequence ---------- */
+function pn(){
+  const a=num('pA'),r=$('pR').value,p=$('pP').value;let y=num('pY');const out=$('pnOut');const L=[];
+  if(a===null||a<18||a>120){out.innerHTML='ใส่อายุ 18–120 ปี';return}
+  const imm=r==='imm';
+  if(a<50&&r==='none'){out.innerHTML='อายุ 18–49 ปี ไม่มีโรคเสี่ยง → <b>ยังไม่มีข้อบ่งชี้</b> · ทบทวนอีกครั้งเมื่ออายุ 50 ปี';return}
+  if(a>=50&&a<65&&r==='none')L.push('<span class="muted">50–64 ปีไม่มีโรค: ACIP แนะนำ · IDAT 2569 แนะนำ/พิจารณา (ปรึกษาร่วมกัน)</span>');
+  const need=p!=='none'&&p!=='p20';
+  if(need&&y===null){L.push('ใส่จำนวนปีตั้งแต่เข็มล่าสุด เพื่อบอกว่าถึงกำหนดหรือยัง');}
+  if(y!==null&&(y<0||y>80)){out.innerHTML='จำนวนปีไม่สมเหตุสมผล — ตรวจอีกครั้ง';return}
+  const wait=(minY,label)=>{if(y===null)return ` (ต้องห่าง ${label})`;if(y>=minY)return ' — <b>ถึงกำหนดแล้ว ให้ได้วันนี้</b>';const m=Math.ceil((minY-y)*12);return ` — <b>ยังไม่ถึง</b> รออีกราว ${m} เดือน (ต้องห่าง ${label})`};
+  if(p==='none'){
+    L.push('<b>ทางเลือก A: PCV20 (หรือ PCV21) 1 เข็ม IM — จบ</b>');
+    L.push('ทางเลือก B: PCV15 (หรือ PCV13) วันนี้ → <b>PPSV23 '+(imm?'≥8 สัปดาห์':'≥1 ปี')+'</b> ต่อมา'+(imm?' (ภูมิต่ำ/CSF leak/cochlear implant)':''));
+    if(imm)L.push('<span class="muted">IDAT (ภูมิต่ำ, ทางเลือก B): ให้ PPSV23 หรือ PCV20 อีก 1 เข็ม ≥5 ปีหลัง PPSV23 เข็มแรก</span>');
+  }else if(p==='p20'){L.push('<b>ครบแล้ว</b> — ไม่ต้องให้ pneumococcal เพิ่ม (ACIP)');}
+  else if(p==='p13'){L.push('<b>PCV20 หรือ PCV21 1 เข็ม</b> ≥1 ปีหลัง PCV13 แล้วจบ'+wait(1,'≥1 ปี'));L.push('<span class="muted">ทางเลือกเดิม (IDAT): PPSV23 '+(imm?'≥8 สัปดาห์':'≥1 ปี')+' หลัง PCV13</span>');}
+  else if(p==='p15'){const mn=imm?8/52:1;L.push('<b>PPSV23 1 เข็ม</b>'+wait(mn,imm?'≥8 สัปดาห์':'≥1 ปี')+' · ถ้าไม่มี PPSV23 ใช้ PCV20/21 แทนได้');}
+  else if(p==='ppsv'){L.push('<b>PCV20 หรือ PCV21 1 เข็ม</b> (หรือ PCV15)'+wait(1,'≥1 ปีหลัง PPSV23')+' · ถ้าใช้ PCV15 ไม่ต้องให้ PPSV23 ซ้ำ');}
+  else if(p==='both'){
+    if(a>=65&&$('pOld').checked)L.push('ได้ PPSV23 ตอนอายุ ≥65 แล้ว → <b>ครบชุด</b> · อาจพิจารณาร่วมกันให้ PCV20/21 1 เข็ม'+wait(5,'≥5 ปีหลังเข็มสุดท้าย'));
+    else if(a>=50||imm)L.push('<b>PCV20 หรือ PCV21 1 เข็ม</b>'+wait(5,'≥5 ปีหลังเข็มสุดท้าย')+(imm?' · IDAT: หรือ PPSV23 เข็มที่ 2 ≥5 ปี':''));
+    else L.push('อายุ &lt;50 ปี โรคเรื้อรัง (ไม่ภูมิต่ำ) → ไม่ต้องให้เพิ่มตอนนี้ · <b>ทบทวนเมื่ออายุ 50 ปี</b> (PCV20/21 ≥5 ปีหลังเข็มสุดท้าย)');
+    if($('pOld').checked&&a<65)L.push('<span class="muted">อายุปัจจุบัน &lt;65 แต่เลือกว่าได้ PPSV23 ตอน ≥65 — ตรวจข้อมูล</span>');
+  }
+  L.push('<span class="muted">PCV กับ PPSV23 ไม่ให้วันเดียวกัน · ตั้งครรภ์: เลื่อนถ้าไม่จำเป็น</span>');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tPn input,#tPn select',pn);
+
+/* ---------- Tool 3: tetanus wound ---------- */
+function tt(){
+  const w=$('wW').value,d=$('wD').value;let y=num('wY');const c=id=>$(id).checked;const out=$('ttOut');const L=[];
+  const vac=c('wPreg')||!c('wTdap')?'<b>Tdap</b>':'<b>Td หรือ Tdap</b>';
+  const dirty=w==='dirty';
+  if(d==='unk'){
+    L.push(`${vac} 0.5 mL IM วันนี้`);
+    L.push(dirty?'<b>+ TIG 250 IU IM</b> (คนละตำแหน่ง คนละ syringe)':'ไม่ต้อง TIG (แผลสะอาด เล็ก)');
+    L.push('ฉีดให้ครบชุด: เข็ม 2 ≥4 สัปดาห์ · เข็ม 3 อีก 6–12 เดือน');
+  }else{
+    if(y===null){out.innerHTML='ใส่จำนวนปีตั้งแต่เข็มล่าสุด';return}
+    if(y<0||y>100){out.innerHTML='จำนวนปีไม่สมเหตุสมผล — ถ้าไม่ทราบจริง เลือก "ไม่ทราบ / &lt;3 เข็ม"';return}
+    const lim=dirty?5:10;
+    if(y>=lim)L.push(`เข็มล่าสุด ${y} ปี (≥${lim}) → ${vac} <b>กระตุ้น 1 เข็ม</b>`);
+    else L.push(`เข็มล่าสุด ${y} ปี (&lt;${lim}) → <b>ไม่ต้องฉีดวัคซีน</b>`+(c('wPreg')?' (แต่ตั้งครรภ์ยังต้องได้ Tdap/aP ตามอายุครรภ์)':''));
+    L.push(dirty&&c('wImm')?'<b>HIV/ภูมิต่ำรุนแรง + แผลเสี่ยง → ให้ TIG 250 IU IM</b> แม้ฉีดครบ':'ไม่ต้อง TIG');
+  }
+  if(d==='unk'&&c('wImm')&&!dirty)L.push('<span class="muted">ภูมิต่ำ: TIG ใช้เมื่อแผลเสี่ยง — แผลสะอาดเล็กไม่ต้อง</span>');
+  if(c('wPreg'))L.push('ตั้งครรภ์: ใช้ <b>Tdap</b> (นับเป็นเข็มของครรภ์นี้ได้)');
+  L.push('<span class="muted">ทำความสะอาด/ตัดเนื้อตาย · ถูกสัตว์กัด → ประเมินพิษสุนัขบ้า · ไม่มี human TIG: equine antitoxin ตามเอกสารกำกับหลังทดสอบแพ้</span>');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tTt input,#tTt select',tt);
+
+/* ---------- Tool 4: interval checker ---------- */
+const VX=[['hbv','Hepatitis B',0],['hav','Hepatitis A',0],['hpv','HPV',0],['rzv','Zoster RZV',0],['td','Td/Tdap (ชุดแรก)',0],['pcv','PCV13/PCV15',0],['pcv20','PCV20/PCV21',0],['ppsv','PPSV23',0],['flu','Influenza',0],['cov','COVID-19 mRNA',0],['rsv','RSV',0],['mcv','MenACWY',0],['menb','MenB (Bexsero)',0],['rab','Rabies (PrEP)',0],['mmr','MMR (เชื้อเป็น)',1],['var','Varicella (เชื้อเป็น)',1],['den','Dengue TAK-003 (เชื้อเป็น)',1],['je','JE IMOJEV (เชื้อเป็น)',1],['yf','ไข้เหลือง (เชื้อเป็น)',1]];
+(function(){const o=VX.map(v=>`<option value="${v[0]}">${v[1]}</option>`).join('');$('iV1').innerHTML=o;$('iV2').innerHTML=o;})();
+function pd(s){const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');if(!m)return null;const t=Date.UTC(+m[1],+m[2]-1,+m[3]);const d=new Date(t);return d.getUTCDate()===+m[3]?t:null}
+function addM(t,n){const d=new Date(t);const day=d.getUTCDate();const r=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+n,1));const last=new Date(Date.UTC(r.getUTCFullYear(),r.getUTCMonth()+1,0)).getUTCDate();return Date.UTC(r.getUTCFullYear(),r.getUTCMonth(),Math.min(day,last))}
+const fmt=t=>{const d=new Date(t);return `${d.getUTCDate()}/${d.getUTCMonth()+1}/${d.getUTCFullYear()+543}`};
+function iv(){
+  const out=$('intOut');const a=$('iV1').value,b=$('iV2').value;let t1=pd($('iD1').value),t2=pd($('iD2').value);
+  if(t1===null||t2===null){out.innerHTML='ใส่วันที่ฉีดทั้ง 2 ครั้ง';return}
+  let A=a,B=b,L=[];
+  if(t2<t1){[t1,t2]=[t2,t1];[A,B]=[B,A];L.push('<span class="muted">สลับลำดับให้ตามวันที่ (เข็มแรกคือเข็มที่ฉีดก่อน)</span>');}
+  const days=Math.round((t2-t1)/864e5);const nm=x=>VX.find(v=>v[0]===x)[1];const live=x=>VX.find(v=>v[0]===x)[2]===1;
+  L.push(`${nm(A)} → ${nm(B)}: ห่าง <b>${days} วัน</b> (~${(days/7).toFixed(1)} สัปดาห์)`);
+  /* rule: {d:min days} or {m:min months}; grace allowed? */
+  const res=(ok,txt)=>L.push((ok?'<b style="color:var(--ok)">ใช้ได้</b> ':'<b style="color:var(--danger)">ไม่ถูกต้อง</b> ')+txt);
+  const chk=(minD,minM,grace,label,fail)=>{const due=minM?addM(t1,minM):t1+minD*864e5;const dd=Math.round((due-t1)/864e5);
+    if(days>=dd)res(true,`ห่างขั้นต่ำ ${label} ครบแล้ว`);
+    else if(grace&&days>=dd-4)res(true,`ก่อนกำหนด ${dd-days} วัน — อยู่ใน grace period 4 วัน นับว่าใช้ได้ (ACIP) แต่ไม่ควรนัดก่อนกำหนด`);
+    else res(false,`ต้องห่าง ${label} (เร็วสุด ${fmt(due)}) · ${fail||'เข็มนี้ไม่นับ ให้ซ้ำเมื่อครบระยะขั้นต่ำนับจากเข็มที่ไม่นับ'}`);};
+  const st=$('iSt').value;
+  if(A===B){
+    if(days===0){res(false,'วัคซีนเดียวกันซ้ำวันเดียวกัน — นับเพียง 1 เข็ม');out.innerHTML=L.join('<br>');return}
+    const s12=st==='12';
+    switch(A){
+      case 'hbv':s12?chk(28,0,1,'4 สัปดาห์'):chk(56,0,1,'8 สัปดาห์');if(!s12)L.push('และเข็ม 3 ต้องห่างจากเข็ม 1 ≥16 สัปดาห์ · ตาราง 0, 1, 6 เดือน (ฟอกไต 0, 1, 2, 6)');break;
+      case 'hav':s12?chk(0,6,1,'6 เดือน'):L.push('HAV มีแค่ 2 เข็ม — ครบชุดแล้ว');break;
+      case 'hpv':s12?chk(28,0,1,'4 สัปดาห์'):chk(84,0,1,'12 สัปดาห์');L.push(s12?'<span class="muted">ถ้าใช้ตาราง 2 เข็ม (เริ่ม 9–14 ปี) ต้องห่าง ≥5 เดือน</span>':'และเข็ม 3 ต้องห่างจากเข็ม 1 ≥5 เดือน');break;
+      case 'rzv':if(s12){chk(28,0,0,'4 สัปดาห์','ให้ซ้ำอีก 1 เข็ม ≥4 สัปดาห์หลังเข็มนี้');L.push('<span class="muted">ระยะที่แนะนำ: 2–6 เดือน (ภูมิต่ำ 1–2 เดือน) · ช้ากว่านั้นไม่ต้องเริ่มใหม่</span>');}else L.push('RZV มี 2 เข็ม — ครบชุดแล้ว');break;
+      case 'td':s12?chk(28,0,1,'4 สัปดาห์'):chk(0,6,1,'6 เดือน');L.push('<span class="muted">หลังครบชุด: กระตุ้นทุก 10 ปี (แผลเสี่ยง ≥5 ปี) · Tdap ให้ได้โดยไม่ต้องรอ</span>');break;
+      case 'pcv':case 'pcv20':L.push('ผู้ใหญ่ให้ PCV 1 เข็ม — <b>ไม่ต้องซ้ำ</b> (ยกเว้น HSCT ฉีดใหม่ทั้งชุด) · ถ้าเปลี่ยนจาก PCV13 เป็น PCV20/21 ต้องห่าง ≥1 ปี');break;
+      case 'ppsv':chk(0,60,0,'5 ปี','PPSV23 ซ้ำต้องห่าง ≥5 ปี และให้ได้ไม่เกิน 2 เข็มก่อนอายุ 65');break;
+      case 'flu':L.push('ผู้ใหญ่ฉีด <b>ปีละ 1 เข็ม</b> ด้วยวัคซีนของฤดูกาลนั้น — ถ้าเป็นฤดูกาลเดียวกันไม่ต้องฉีดซ้ำ');break;
+      case 'cov':chk(56,0,0,'8 สัปดาห์ (ภูมิต่ำเข็มเพิ่ม)','เข็มเพิ่มในภูมิต่ำต้องห่าง ≥8 สัปดาห์');L.push('<span class="muted">คนทั่วไป: ปีละ 1 เข็ม · ACIP ≥65 ปี: เข็ม 2 ห่าง 6 เดือน</span>');break;
+      case 'rsv':res(false,'ปัจจุบัน <b>ยังไม่แนะนำ RSV เข็มที่ 2</b>');break;
+      case 'mcv':chk(56,0,1,'8 สัปดาห์');L.push('<span class="muted">ไม่มีม้าม/HIV/complement: 2 เข็มแล้วกระตุ้นทุก 5 ปี</span>');break;
+      case 'menb':chk(28,0,1,'1 เดือน');L.push('<span class="muted">ต้องเป็นยี่ห้อเดียวกันทั้งชุด</span>');break;
+      case 'rab':chk(7,0,0,'7 วัน','PrEP วัน 0, 7 — ไม่ใช้ grace period');break;
+      case 'mmr':case 'var':chk(28,0,0,'28 วัน');break;
+      case 'den':chk(0,3,0,'3 เดือน','WHO: ห้ามย่นระยะ — ให้เข็ม 2 ใหม่เมื่อครบ 3 เดือน');break;
+      case 'je':L.push('IMOJEV ผู้ใหญ่ ≥18 ปีให้ <b>1 เข็ม</b> — ยังไม่ต้องกระตุ้นภายใน 5 ปี');break;
+      case 'yf':L.push('ไข้เหลือง 1 เข็มใช้ได้ตลอดชีวิต — ไม่ต้องซ้ำ (ยกเว้นบางกลุ่ม)');break;
+    }
+  }else{
+    const pair=[A,B].join('>');
+    if(live(A)&&live(B)){
+      if(days===0)res(true,'วัคซีนเชื้อเป็น 2 ชนิด <b>วันเดียวกัน</b> ได้ (คนละตำแหน่ง)');
+      else chk(28,0,0,'≥28 วัน ระหว่างเชื้อเป็นชนิดฉีด 2 ชนิด','ไม่ใช้ grace period — <b>ฉีด '+nm(B)+' ซ้ำ</b> ≥28 วันหลังเข็มที่ไม่นับ');
+    }else if(pair==='pcv>ppsv'){if(days===0)res(false,'ไม่ให้ PCV กับ PPSV23 วันเดียวกัน');else{chk(56,0,1,'≥8 สัปดาห์ (ภูมิต่ำ/CSF leak/cochlear)');L.push('<span class="muted">ไม่ภูมิต่ำ: แนะนำห่าง ≥1 ปี</span>');}}
+    else if(pair==='ppsv>pcv'||pair==='ppsv>pcv20'){if(days===0)res(false,'ไม่ให้ PCV กับ PPSV23 วันเดียวกัน');else chk(0,12,0,'≥1 ปี หลัง PPSV23','PCV หลัง PPSV23 ต้องห่าง ≥1 ปี');}
+    else if(pair==='pcv>pcv20'){chk(0,12,0,'≥1 ปี หลัง PCV13','PCV20/21 หลัง PCV13 ต้องห่าง ≥1 ปี');L.push('<span class="muted">ถ้าเข็มแรกเป็น PCV15 ให้ตามด้วย PPSV23 แทน</span>');}
+    else if(pair==='pcv20>ppsv'||pair==='pcv20>pcv')L.push('หลัง PCV20/21 <b>ไม่ต้องให้</b> pneumococcal เพิ่ม (ACIP)');
+    else res(true,(live(A)||live(B)?'เชื้อตาย + เชื้อเป็น':'เชื้อตาย + เชื้อตาย')+' — <b>ให้วันเดียวกันหรือห่างเท่าไรก็ได้</b>');
+  }
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tInt input,#tInt select',iv);
+
+mountQuiz([
+ ['หญิงตั้งครรภ์ 24 สัปดาห์ ฝากครรภ์ที่ รพ.ชุมชน ตามแนวทางกรมควบคุมโรค ควรได้วัคซีนไอกรนเมื่อใด',['ไม่ต้องให้ถ้าเคยได้ dT ครบ','ให้ aP/Tdap ได้เลยวันนี้ (ช่วง 20–32 สัปดาห์)','รอให้ถึง 36 สัปดาห์','ให้หลังคลอดเท่านั้น'],1,'ไทยแนะนำ 20–32 สัปดาห์ทุกครรภ์ (ACIP 27–36) · เป็นสิทธิ์ สปสช.'],
+ ['ชาย 68 ปี ไม่เคยได้วัคซีนปอดอักเสบ ทางเลือกที่ถูกต้อง',['PPSV23 อย่างเดียว','PCV20 1 เข็ม แล้วจบ','PCV13 ทุก 5 ปี','PCV15 แล้วตาม PCV20 ใน 8 สัปดาห์'],1,'หรือ PCV15 → PPSV23 ≥1 ปี'],
+ ['หญิง 70 ปี เคยได้ PPSV23 เมื่อ 6 เดือนก่อน ต้องการ PCV20 ควรทำอย่างไร',['ฉีดวันนี้ได้เลย','รอให้ครบ 1 ปีหลัง PPSV23','รอ 5 ปี','ไม่ต้องให้ PCV แล้ว'],1,'PCV หลัง PPSV23 ต้องห่าง ≥1 ปี'],
+ ['ชายเหยียบตะปูขึ้นสนิม ได้ dT ครบ 3 เข็ม เข็มล่าสุด 6 ปีก่อน ภูมิปกติ',['ไม่ต้องทำอะไร','Td/Tdap 1 เข็ม ไม่ต้อง TIG','Td/Tdap + TIG','TIG อย่างเดียว'],1,'แผลเสี่ยง + ครบชุด + ≥5 ปี → กระตุ้น · ไม่ต้อง TIG'],
+ ['ผู้ป่วยไม่ทราบประวัติวัคซีนบาดทะยัก มีแผลบดจากเครื่องจักรเปื้อนดิน',['Td อย่างเดียว','Td/Tdap + TIG 250 IU แล้วฉีดให้ครบชุด','TIG อย่างเดียว','ยาฆ่าเชื้ออย่างเดียว'],1,'ไม่ทราบ/<3 เข็ม + แผลเสี่ยง → วัคซีน + TIG'],
+ ['ผู้ป่วย SLE ได้ prednisolone 30 mg/วัน มา 3 สัปดาห์ วัคซีนใดห้ามให้',['RZV (Shingrix)','PCV20','MMR','Influenza ชนิดฉีด'],2,'pred ≥20 mg/วัน ≥14 วัน = ภูมิต่ำระดับสูง ห้ามเชื้อเป็นถึง ≥1 เดือนหลังหยุด'],
+ ['วัคซีน RZV ในผู้สูงอายุ 60 ปี ภูมิปกติ ให้อย่างไร',['1 เข็ม SC','2 เข็ม IM ห่าง 2–6 เดือน','3 เข็ม 0, 1, 6 เดือน','2 เข็ม ห่าง 1 สัปดาห์'],1,'ภูมิต่ำ ≥18 ปี ห่าง 1–2 เดือนได้'],
+ ['ได้ MMR วันที่ 1 มี.ค. ต้องการฉีด varicella ควรทำอย่างไร',['ฉีดได้ทุกเมื่อ','ฉีดวันเดียวกัน หรือรอ ≥28 วัน','ต้องรอ 6 เดือน','ห้ามฉีดทั้งสองชนิดในคนเดียวกัน'],1,'เชื้อเป็นชนิดฉีด 2 ชนิด: วันเดียวกันหรือห่าง ≥28 วัน'],
+ ['ผู้ป่วยฟอกไต anti-HBs ลบ ควรให้วัคซีน HBV แบบใด',['20 mcg 0, 1, 6 เดือน ไม่ต้องตรวจภูมิ','40 mcg 0, 1, 2, 6 เดือน แล้วตรวจ anti-HBs ทุกปี','ไม่ต้องฉีด','HBIG อย่างเดียว'],1,'กระตุ้นเมื่อ anti-HBs <10 mIU/mL'],
+ ['ข้อใดถูกเกี่ยวกับวัคซีนไข้เลือดออก TAK-003 ตาม IDAT',['ให้ได้ในหญิงให้นมบุตร','อายุ 4–60 ปี 2 เข็ม 0, 3 เดือน ไม่ต้องตรวจภูมิก่อน','ต้องเคยติดเชื้อมาก่อนเท่านั้น','เป็นวัคซีนเชื้อตาย'],1,'เป็นเชื้อเป็น · ห้ามตั้งครรภ์ ให้นมบุตร ภูมิต่ำ'],
+ ['ผู้ป่วยแพ้ไข่ (ลมพิษ) ต้องการวัคซีนไข้หวัดใหญ่',['ห้ามฉีด','ฉีดได้ตามปกติ','ต้องทดสอบผิวหนังก่อน','ฉีดได้เฉพาะใน ICU'],1,'แพ้ไข่ไม่ใช่ข้อห้ามแล้ว (IDAT, ACIP)'],
+ ['HIV CD4 150 ไม่มีภูมิอีสุกอีใส ข้อใดเหมาะ',['ให้ varicella เลย','ห้ามเชื้อเป็นตอนนี้ ให้ ART ก่อน แล้วพิจารณาเมื่อ CD4 ≥200','ให้ zoster ชนิดเชื้อเป็นแทน','ให้ MMRV'],1,'MMR/VAR ให้ได้เมื่อ CD4 ≥200 และ ≥15%']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

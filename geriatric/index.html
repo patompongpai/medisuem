@@ -1,0 +1,1000 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Geriatric medicine · การดูแลผู้สูงอายุสำหรับแพทย์ทั่วไป</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">General medicine · Geriatrics · คู่มือคัดกรองผู้สูงอายุ 2564 · WHO ICOPE 2024 · World Falls 2022 · AGS Beers 2023 · STOPP/START v3 · AWGS 2019/2025 · TOPF 2021</div>
+  <h1>การดูแลผู้สูงอายุสำหรับแพทย์ทั่วไป<br>Geriatric medicine essentials</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ใช้ได้ทั้งที่ OPD หอผู้ป่วย และเยี่ยมบ้าน · ผู้สูงอายุมักไม่ได้มาด้วย "โรคเดียว" แต่มาด้วย <b>geriatric giants</b>: ล้ม เปราะบาง (frailty) กล้ามเนื้อน้อย ยาหลายตัว ความจำเสื่อม ซึมเศร้า กลั้นปัสสาวะไม่ได้ และกระดูกพรุน · หน้านี้สรุปวิธีคัดกรองตามคู่มือไทยและ WHO ICOPE, แบ่งระดับเสี่ยงล้ม, เลิกยาที่ไม่เหมาะ และมีเครื่องมือข้างเตียง 4 ชิ้น · เข้าชุดกับหน้า <a href="../delirium/index.html">Delirium</a> และ <a href="../palliative/index.html">Palliative care</a></p>
+  <p class="cite">อ้างอิงหลัก: คณะกรรมการพัฒนาเครื่องมือคัดกรองและประเมินสุขภาพผู้สูงอายุ กระทรวงสาธารณสุข. คู่มือการคัดกรองและประเมินสุขภาพผู้สูงอายุ พ.ศ. 2564 · WHO. ICOPE: guidance for person-centred assessment and pathways in primary care, 2nd ed (2024) · Montero-Odasso M, et al. World guidelines for falls prevention and management (Age Ageing 2022;51:afac205) · 2023 AGS Beers Criteria (J Am Geriatr Soc 2023;71:2052–81) · O'Mahony D, et al. STOPP/START v3 (Eur Geriatr Med 2023;14:625–32) · Dent E, et al. ICFSR frailty guidelines (J Nutr Health Aging 2019;23:771–87) · Chen LK, et al. AWGS 2019 (J Am Med Dir Assoc 2020;21:300–7) + AWGS 2025 (Nat Aging 2025;5:2164–75) · Charatcharoenwitthaya N, et al. TOPF 2021 (Osteoporos Sarcopenia 2023;9:45–52) · NICE NG97 (dementia) · NICE NG123 (UI in women) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--danger)"><b>ถามเรื่องล้มทุกปี</b>ล้มแล้วบาดเจ็บ · ≥2 ครั้ง/ปี · frail · ลุกเองไม่ได้ · สงสัยหมดสติ = เสี่ยงสูง → ประเมินหลายด้าน</div>
+    <div class="stage" style="--c:var(--warn)"><b>ทบทวนยาทุกครั้ง</b>CPM/hydroxyzine · benzodiazepine · glibenclamide · NSAID · PPI นาน · muscle relaxant → เลิกหรือเปลี่ยน</div>
+    <div class="stage" style="--c:var(--accent)"><b>วัด "ความสามารถ" ไม่ใช่แค่โรค</b>ADL · Mini-Cog · 2Q · TUG/ลุกนั่ง · grip · MNA · ตา หู → แผนดูแลรายคน</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#cga">CGA และการคัดกรอง</a><a href="#falls">หกล้ม</a><a href="#frail">Frailty · Sarcopenia</a><a href="#meds">ยาหลายตัว · Beers/STOPP</a><a href="#cog">ความจำเสื่อม</a><a href="#mood">ซึมเศร้า</a><a href="#uro">ปัสสาวะเล็ด · BPH · ท้องผูก</a><a href="#bone">กระดูกพรุน</a><a href="#more">ตา หู โภชนาการ แผลกดทับ</a><a href="#care">ACP · ผู้ดูแล · LTC</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="cga" class="col">
+  <div class="sec-num">01</div>
+  <h2>CGA และการคัดกรองผู้สูงอายุ</h2>
+  <p><b>Comprehensive geriatric assessment (CGA)</b> คือการประเมินหลายมิติโดยทีม แล้วทำ<b>แผนดูแลรายคน</b> · ไม่ใช่แค่ทำแบบประเมิน แต่ต้องมี "action" ตามผลทุกข้อ · ในทางปฏิบัติ GP เริ่มจาก <b>คัดกรองสั้นๆ</b> แล้วประเมินเชิงลึกเฉพาะด้านที่ผิดปกติ</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>มิติของ CGA</h4><ul><li><b>กาย</b>: โรคร่วม ยา โภชนาการ ตา หู ฟัน ปัสสาวะ/อุจจาระ การนอน ปวด</li><li><b>การทำหน้าที่</b>: ADL (Barthel), IADL, เดิน/ทรงตัว, ล้ม</li><li><b>ใจ/สมอง</b>: ความจำ อารมณ์ delirium</li><li><b>สังคม</b>: ผู้ดูแล บ้าน การเงิน ความเหงา</li><li><b>ความต้องการของผู้ป่วย</b>: "อะไรสำคัญที่สุดสำหรับคุณ" (what matters) + ACP</li></ul></div>
+    <div class="card c-ok"><h4>WHO ICOPE 2024 (ฉบับ 2) — คัดกรอง 6 ด้าน <span class="tag up">2024</span></h4><ul><li><b>ความคิด</b>: จำ 3 คำ + ถามวันที่/สถานที่ → ผิด 1 ข้อ = ประเมินต่อ</li><li><b>การเคลื่อนไหว</b>: ลุกนั่งเก้าอี้ 5 ครั้งไม่ใช้มือ <b>เกิน 14 วินาที</b>หรือทำไม่ได้</li><li><b>โภชนาการ</b>: น้ำหนักลด <b>&gt;3 kg ใน 3 เดือน</b> หรือเบื่ออาหาร</li><li><b>ตา</b>: แย่กว่า 6/12 ตาข้างใดข้างหนึ่ง หรืออ่าน N6 ไม่ได้</li><li><b>หู</b>: whisper test ทวนได้ &lt;3 ใน 4 คำ</li><li><b>อารมณ์</b>: 2 คำถาม (เศร้า/ไม่สนใจสิ่งต่างๆ ใน 2 สัปดาห์)</li><li>ถามเพิ่ม: ปัสสาวะเล็ด สังคม ผู้ดูแล</li></ul></div>
+  </div>
+  <h3>คู่มือคัดกรองและประเมินสุขภาพผู้สูงอายุ พ.ศ. 2564 <span class="tag th">ไทย</span></h3>
+  <div class="tbl"><table>
+    <tr><th>ด้าน</th><th>เครื่องมือ</th><th>เกณฑ์ผิดปกติ / ทำต่อ</th></tr>
+    <tr><td>ADL</td><td><b>Barthel ADL</b> (เต็ม 20)</td><td><b>≥12</b> กลุ่ม 1 (ช่วยตัวเองได้ดี ช่วยผู้อื่นได้) · <b>5–11</b> กลุ่ม 2 (ช่วยตัวเองได้บ้าง) · <b>0–4</b> กลุ่ม 3 (ช่วยตัวเองไม่ได้/ติดเตียง) · ≤11 = ผู้มีภาวะพึ่งพิง เข้า LTC ได้</td></tr>
+    <tr><td>ความจำ</td><td><b>Mini-Cog</b> (เต็ม 5) → <b>MMSE-Thai 2002</b> หรือ <b>TMSE</b></td><td>Mini-Cog <b>≤3</b> → ประเมินต่อ · MMSE-Thai 2002 สงสัยผิดปกติเมื่อ <b>≤14/23</b> (ไม่ได้เรียน) <b>≤17/30</b> (ประถม) <b>≤22/30</b> (สูงกว่าประถม) · TMSE <b>&lt;24/30</b></td></tr>
+    <tr><td>ซึมเศร้า</td><td><b>2Q → 9Q → 8Q</b></td><td>2Q ตอบ "มี" ข้อใดข้อหนึ่ง → 9Q · 9Q <b>≥7</b> → ประเมิน 8Q (ฆ่าตัวตาย) · 9Q 7–12 น้อย, 13–18 ปานกลาง, ≥19 รุนแรง · 8Q ≥17 รุนแรง ส่งต่อด่วน</td></tr>
+    <tr><td>หกล้ม</td><td>ถามประวัติล้มใน 6 เดือน + <b>TUG</b></td><td>TUG <b>≥12 วินาที</b> หรือทำไม่ได้ = เสี่ยงหกล้ม</td></tr>
+    <tr><td>โภชนาการ</td><td><b>MNA-SF</b> (เต็ม 14)</td><td>12–14 ปกติ · <b>8–11 เสี่ยง</b> · <b>0–7 ขาดอาหาร</b> → MNA เต็ม/นักกำหนดอาหาร</td></tr>
+    <tr><td>เปราะบาง / กล้ามเนื้อ</td><td><b>FRAIL scale</b> · modified MSRA-5</td><td>FRAIL 3–5 = frail, 1–2 = pre-frail · MSRA-5 ≤30 = เสี่ยงมวลกล้ามเนื้อน้อย</td></tr>
+    <tr><td>ตา · หู · ฟัน</td><td>Snellen · finger rub · ถามช่องปาก</td><td>แย่กว่า 6/12 → ส่งตรวจ · ไม่ได้ยินเสียงถูนิ้วข้างใดข้างหนึ่ง → ส่งตรวจ · ฟันแท้ &lt;20 ซี่/เคี้ยวลำบาก → ทันตกรรม</td></tr>
+    <tr><td>อื่นๆ</td><td>DM · HT · Thai CVD risk · OSTA/FRAX · ข้อเข่าเสื่อม · ปัสสาวะเล็ด · การนอน</td><td>ดูหน้า <a href="../dm/index.html">DM</a>, <a href="../htn/index.html">HT</a>, <a href="../lipid/index.html">Lipid</a>, <a href="../health-check/index.html">ตรวจสุขภาพ</a>, <a href="../cancer-screening/index.html">คัดกรองมะเร็ง</a> และบทกระดูกพรุนด้านล่าง</td></tr>
+  </table></div>
+  <div class="box note"><b>หน้านี้ใช้อะไร</b> คู่มือไทยเป็นหลักสำหรับงานคัดกรองใน รพ.สต./OPD (เพราะเชื่อมกับระบบรายงานและสิทธิ LTC) · ใช้ ICOPE เป็นกรอบ "ความสามารถภายใน" (intrinsic capacity) · จุดที่ต่างกัน: <b>เกณฑ์ TUG</b> ไทยใช้ ≥12 วินาที ส่วน World Falls ใช้ &gt;15 วินาที (ดูบทถัดไป) และ ICOPE ใช้ลุกนั่ง 5 ครั้ง &gt;14 วินาทีแทน TUG</div>
+</section>
+
+<section id="falls" class="col">
+  <div class="sec-num">02</div>
+  <h2>หกล้ม (Falls)</h2>
+  <p>ผู้สูงอายุราว 1 ใน 3 ล้มทุกปี · ล้มเป็นสัญญาณของโรค ไม่ใช่ "อายุมากเลยล้ม" · World Falls Guidelines 2022: <b>ถามเรื่องล้มเป็นประจำเมื่อพบผู้สูงอายุ</b> (opportunistic case finding) <span class="rec s1">1A</span> · โดย<b>อย่างน้อยปีละครั้ง</b> <span class="rec">E (expert opinion)</span></p>
+  <div class="tbl"><table>
+    <tr><th>ระดับเสี่ยง (ผู้อยู่ในชุมชน)</th><th>เกณฑ์</th><th>ทำอะไร</th></tr>
+    <tr><td><b style="color:var(--danger)">สูง</b></td><td>ล้มแล้ว + ข้อใดข้อหนึ่ง: <b>บาดเจ็บต้องรักษา</b> · <b>ล้ม ≥2 ครั้งใน 12 เดือน</b> · <b>frailty</b> (CFS ≥4 หรือ Fried ≥3/5) · <b>นอนกับพื้นลุกเองไม่ได้ ≥1 ชม.</b> · <b>สงสัยหมดสติชั่วขณะ</b></td><td><b>ประเมินหลายปัจจัย (multifactorial)</b> แล้วแก้หลายด้านพร้อมกัน ร่วมกับผู้ป่วย/ญาติ</td></tr>
+    <tr><td><b style="color:var(--warn)">ปานกลาง</b></td><td>ล้มครั้งเดียวไม่รุนแรง (หรือกังวล/เดินไม่มั่นคง) + <b>gait speed &lt;0.8 m/s</b> <span class="rec s1">1A</span> หรือ <b>TUG &gt;15 วินาที</b> <span class="rec">1B</span></td><td>ออกกำลังกายเฉพาะ (ทรงตัว + กล้ามเนื้อ) หรือส่งกายภาพบำบัด · ประเมินซ้ำ</td></tr>
+    <tr><td><b style="color:var(--ok)">ต่ำ</b></td><td>ไม่ล้ม หรือล้มครั้งเดียวไม่รุนแรงและเดิน/ทรงตัวปกติ</td><td>ให้ความรู้ ชวนออกกำลังกาย ประเมินซ้ำปีละครั้ง</td></tr>
+  </table></div>
+  <div class="box warn"><b>ใน รพ. และสถานดูแลผู้สูงอายุ</b> ถือว่า<b>ผู้สูงอายุทุกคนเสี่ยงสูง</b> · ไม่แนะนำใช้แบบคัดกรองคิดคะแนน (เช่น Morse) เพื่อคัดคนออก <span class="rec">2B</span> · ให้ความรู้เรื่องล้มทุกคนที่นอน รพ. อายุ ≥65 <span class="rec s1">1A</span> และทำแผนป้องกันรายคน</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ประเมินหลายปัจจัย (ผู้เสี่ยงสูง)</h4><ul><li>ลักษณะการล้ม: ตอนไหน ทำอะไร หน้ามืดก่อนไหม ใจสั่น</li><li><b>ความดันตกเมื่อลุกยืน</b>: นอน ≥5 นาที แล้ววัดตอนยืนทุก 1 นาทีอย่างน้อย 3 นาที (SBP ลด ≥20 หรือ DBP ลด ≥10) · ดูหน้า <a href="../syncope-brady/index.html">Syncope</a></li><li><b>ยาที่เพิ่มความเสี่ยงล้ม (FRIDs)</b>: ยานอนหลับ ยาจิตเวช ยาลดความดันเกิน ยาลดน้ำตาลกลุ่ม SU/insulin opioid ใช้ STOPPFall</li><li>เดิน/ทรงตัว กำลังขา เท้าและรองเท้า</li><li>ตา (ต้อกระจก แว่นสองเลนส์เวลาเดิน) · ความจำ · กลัวล้ม · ปัสสาวะกลางคืน</li><li>หัวใจ: เสียง murmur (AS), arrhythmia, ECG</li><li>บ้าน: แสงสว่าง พื้นลื่น ห้องน้ำ ราวจับ บันได</li><li>กระดูกพรุน (ล้มแล้วหักง่าย) และวิตามินดีถ้าเสี่ยงขาด</li></ul></div>
+    <div class="card c-ok"><h4>สิ่งที่ได้ผล</h4><ul><li><b>ออกกำลังกาย</b>ฝึกทรงตัว + ใช้งานจริง (functional) <b>≥3 ครั้ง/สัปดาห์</b> เพิ่มความหนักเรื่อยๆ <b>อย่างน้อย 12 สัปดาห์</b> แล้วทำต่อ <span class="rec s1">1A</span> · ไทชิ ได้ผล · Otago program ทำที่บ้านได้</li><li>ลด/หยุดยาที่ทำให้ล้ม <span class="rec">1B</span></li><li>แก้ความดันตกเมื่อลุกยืน · ผ่าตัดต้อกระจกตาแรกเร็ว</li><li>ปรับบ้านโดยผู้ที่ฝึกมา (นักกิจกรรมบำบัด) <span class="rec">1B</span></li><li>สอนวิธีลุกจากพื้น และมีคนติดต่อได้</li></ul></div>
+  </div>
+  <div class="box key"><b>วิตามินดีไม่ใช่ยาป้องกันล้ม</b> World Falls 2022: ให้วิตามินดีเพื่อป้องกันล้ม<b>เฉพาะคนที่เสี่ยงขาดวิตามินดี</b> (ไม่ออกแดด ติดบ้าน สถานดูแล) · ในสถานดูแลผู้สูงอายุ ให้วิตามินดีเป็นส่วนหนึ่งของการดูแลหลายด้าน <span class="rec">1B</span> · <b>ไม่ให้วิตามินดีขนาดสูงเป็นครั้งคราว (bolus)</b> เพราะพบว่าเพิ่มการล้ม <span class="tag add">เสริม</span> · USPSTF 2024: แนะนำออกกำลังกาย (B) ส่วน multifactorial intervention ให้เลือกรายคน (C)</div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> คู่มือไทยใช้ TUG ≥12 วินาที (ไวกว่า) · หน้านี้แบ่งระดับตาม World Falls (&gt;15 วินาที) แต่ถ้า TUG 12–15 วินาที ให้แนะนำออกกำลังกายฝึกทรงตัวด้วย · ห้องน้ำแบบนั่งยอง/พื้นเปียก และการเดินเท้าเปล่าเป็นความเสี่ยงที่พบบ่อยในบ้านไทย</p>
+</section>
+
+<section id="frail" class="col">
+  <div class="sec-num">03</div>
+  <h2>Frailty และ Sarcopenia</h2>
+  <div class="grid2">
+    <div class="card c-warn"><h4>Frailty: วัดยังไง</h4><ul><li><b>Clinical Frailty Scale (CFS v2)</b> 1–9 ดูจากสภาพ<b>ก่อนป่วยเฉียบพลัน 2 สัปดาห์</b>: 1–3 แข็งแรง · <b>4 เปราะบางเล็กน้อยมาก</b> (ช้าลง เหนื่อยง่าย แต่ไม่ต้องพึ่งคน) · 5 พึ่งคนใน IADL · 6 พึ่งใน ADL บางอย่าง · 7 พึ่งทั้งหมด · 8 ใกล้ระยะท้าย · 9 ป่วยระยะท้าย (คาดชีวิต &lt;6 เดือน)</li><li><b>Fried phenotype</b> (5 ข้อ): น้ำหนักลดไม่ตั้งใจ ≥4.5 kg/ปี · เหนื่อยล้า · grip อ่อน · เดินช้า · กิจกรรมน้อย → ≥3 = frail, 1–2 = pre-frail</li><li><b>FRAIL scale</b> (ใช้ในคู่มือไทย): Fatigue · Resistance (ขึ้นบันได 10 ขั้น) · Ambulation (เดิน 100 m) · Illness (&gt;5 โรค) · Loss of weight (&gt;5%/ปี) → ≥3 = frail</li></ul></div>
+    <div class="card c-ok"><h4>Frailty: ทำอะไร (ICFSR)</h4><ul><li>คัดกรองผู้สูงอายุทุกคนด้วยเครื่องมือที่ validated <span class="rec s1">strong</span></li><li>ผลบวก → ประเมินเชิงลึก หาสาเหตุที่แก้ได้: <b>ยาหลายตัว, sarcopenia, น้ำหนักลด, เหนื่อยล้าจาก ซึมเศร้า/ซีด/ความดันต่ำ/hypothyroid/ขาด B12</b> <span class="rec s1">strong</span></li><li><b>การรักษาหลัก: ออกกำลังกายหลายรูปแบบ มี resistance training</b> <span class="rec s1">strong</span></li><li>เสริมโปรตีน/พลังงานเมื่อน้ำหนักลดหรือขาดอาหาร <span class="rec">conditional</span></li><li>ช่วยด้านสังคมตามที่ขาด</li><li>ไม่มียารักษา frailty · ไม่แนะนำวิตามินดี/ฮอร์โมนแบบ routine</li></ul></div>
+  </div>
+  <h3>Sarcopenia — AWGS 2019 (อายุ ≥60–65 ปี)</h3>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>ชาย</th><th>หญิง</th></tr>
+    <tr><td><b>Case finding</b> (อย่างใดอย่างหนึ่ง)</td><td colspan="2">รอบน่อง <b>&lt;34 cm</b> (ชาย) / <b>&lt;33 cm</b> (หญิง) · <b>SARC-F ≥4</b> · SARC-CalF ≥11 · หรือมีปัญหาทางคลินิก (ล้ม อ่อนแรง เดินช้า น้ำหนักลด)</td></tr>
+    <tr><td><b>แรงบีบมือ (grip)</b></td><td>&lt;28 kg</td><td>&lt;18 kg</td></tr>
+    <tr><td><b>สมรรถภาพ</b></td><td colspan="2">เดิน 6 m <b>&lt;1.0 m/s</b> · หรือ <b>ลุกนั่ง 5 ครั้ง ≥12 วินาที</b> · หรือ SPPB ≤9</td></tr>
+    <tr><td><b>มวลกล้ามเนื้อ (ASM/ส่วนสูง²)</b></td><td>DXA &lt;7.0 · BIA &lt;7.0 kg/m²</td><td>DXA &lt;5.4 · BIA &lt;5.7 kg/m²</td></tr>
+    <tr><td><b>แปลผล</b></td><td colspan="2"><b>Possible sarcopenia</b> (ระดับปฐมภูมิ ไม่มีเครื่องวัดมวล): grip ต่ำ ± สมรรถภาพต่ำ → เริ่มรักษาได้เลย · <b>Sarcopenia</b>: มวลต่ำ + (grip ต่ำ หรือ สมรรถภาพต่ำ) · <b>Severe</b>: ต่ำทั้ง 3</td></tr>
+  </table></div>
+  <div class="box note"><b>AWGS 2025</b> <span class="tag up">2025</span> (Nat Aging 2025) เปลี่ยนแนวคิดเป็น "สุขภาพกล้ามเนื้อ" · <b>วินิจฉัย sarcopenia ต้องมีทั้งมวลต่ำและ grip ต่ำ</b> ส่วนความเร็วเดิน/ลุกนั่งย้ายไปเป็นตัววัดพยากรณ์และติดตามผล · ขยายไปอายุ 50–64 ปีด้วยเกณฑ์เฉพาะ · มีดัชนี ASM/BMI เพิ่ม · <b>สำหรับอายุ ≥65 ปี เกณฑ์ grip และ BIA เท่าเดิม</b> · หน้านี้ยังแสดงขั้นตอน AWGS 2019 (คู่มือไทยและงานวิจัยไทยส่วนใหญ่ใช้) และบอกผลตาม 2025 คู่กันในเครื่องมือ</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>SARC-F (0–10)</h4><ul><li><b>S</b>trength: ยก/ถือของ 4.5 kg ลำบากแค่ไหน</li><li><b>A</b>ssistance walking: เดินข้ามห้อง</li><li><b>R</b>ise from chair: ลุกจากเก้าอี้/เตียง</li><li><b>C</b>limb stairs: ขึ้นบันได 10 ขั้น</li><li><b>F</b>alls: ล้มในปีที่ผ่านมา (0 = ไม่ล้ม, 1 = 1–3 ครั้ง, 2 = ≥4 ครั้ง)</li><li>ข้อ S–C: 0 ไม่ลำบาก · 1 ลำบากบ้าง · 2 ลำบากมาก/ทำไม่ได้ · <b>≥4 = ผลบวก</b></li></ul></div>
+    <div class="card c-ok"><h4>รักษา sarcopenia</h4><ul><li><b>Resistance exercise</b> 2–3 ครั้ง/สัปดาห์ เพิ่มน้ำหนักเรื่อยๆ (ยางยืด ขวดน้ำ ลุกนั่งเก้าอี้)</li><li><b>โปรตีน ~1.0–1.2 g/kg/วัน</b> (ป่วย/ฟื้นตัว 1.2–1.5) ถ้าไตไม่เสื่อมมาก <span class="tag add">เสริม</span> · กระจายทุกมื้อ (ไข่ นม ปลา เต้าหู้ ถั่ว)</li><li>หาและแก้: ยาหลายตัว ซึมเศร้า โรคเรื้อรังคุมไม่ดี ฟันไม่ดี</li><li>ไม่มียาเฉพาะ · วิตามินดีให้เมื่อขาด</li></ul></div>
+  </div>
+</section>
+
+<section id="meds" class="col">
+  <div class="sec-num">04</div>
+  <h2>ยาหลายตัว (Polypharmacy) · Beers 2023 · STOPP/START v3</h2>
+  <p><b>Polypharmacy</b> มักนับ ≥5 ตัว (≥10 = hyperpolypharmacy) · ปัญหาไม่ใช่จำนวนอย่างเดียว แต่คือ<b>ยาที่ไม่เหมาะ (PIM)</b> และ<b>ยาที่ควรได้แต่ไม่ได้ (omission)</b> · Beers 2023 ใช้กับอายุ ≥65 ทุก setting ยกเว้น hospice/ระยะท้าย · STOPP/START v3 (2023) มี <b>133 STOPP + 57 START = 190 เกณฑ์</b></p>
+  <div class="tbl"><table>
+    <tr><th>ยาที่พบบ่อยในไทย</th><th>ปัญหา (Beers 2023 / STOPP v3)</th><th>ทางเลือก</th></tr>
+    <tr><td><b>Antihistamine รุ่นแรก</b>: chlorpheniramine (CPM ในยาแก้หวัดสูตรผสม), hydroxyzine, diphenhydramine, dimenhydrinate</td><td>Anticholinergic สูง: สับสน ปัสสาวะคั่ง ท้องผูก ล้ม · <b>Avoid</b></td><td>Cetirizine/loratadine/fexofenadine (cetirizine ลดขนาดเมื่อไตเสื่อม) · คันจากผิวแห้ง → <b>emollient</b> · น้ำมูก → NSS ล้างจมูก, steroid พ่นจมูก</td></tr>
+    <tr><td><b>Benzodiazepine</b> (diazepam, lorazepam, alprazolam, clonazepam) · <b>Z-drug</b> (zolpidem)</td><td>ความจำแย่ delirium ล้ม กระดูกหัก อุบัติเหตุรถ · <b>Avoid</b> (ยกเว้นชัก ถอนสุรา ระยะท้าย)</td><td>CBT-I/สุขอนามัยการนอน · หาสาเหตุ (ปวด ปัสสาวะกลางคืน ซึมเศร้า OSA) · ค่อยๆ ลด (ดูด้านล่าง)</td></tr>
+    <tr><td><b>Sulfonylurea</b> โดยเฉพาะ <b>glibenclamide</b>, glimepiride</td><td>น้ำตาลต่ำนานและรุนแรง · Beers 2023: <b>หลีกเลี่ยง SU ทุกตัวเป็นยาแรก/ยาเสริม</b> ถ้าใช้ metformin/GLP-1RA/SGLT2i ได้ · ถ้าจำเป็นใช้ตัวออกฤทธิ์สั้น</td><td>เปลี่ยนเป็น <b>glipizide</b> (หรือ gliclazide <span class="tag add">เสริม</span>) ขนาดต่ำ · DPP-4i · SGLT2i (ดูไต) · ผ่อนเป้า HbA1c (ดูหน้า <a href="../dm/index.html">DM</a>, <a href="../hypoglycemia/index.html">Hypoglycemia</a>)</td></tr>
+    <tr><td><b>Insulin sliding scale</b> อย่างเดียว (ไม่มี basal)</td><td>น้ำตาลต่ำ ไม่ได้คุมจริง · <b>Avoid</b></td><td>Basal ± prandial + correction</td></tr>
+    <tr><td><b>NSAIDs</b> (ibuprofen, diclofenac, naproxen, piroxicam, mefenamic, celecoxib)</td><td>เลือดออกทางเดินอาหาร ไตวาย ความดันขึ้น หัวใจวาย · <b>หลีกเลี่ยงใช้เรื้อรัง</b> · <b>Avoid ถ้า CrCl &lt;30</b> · ระวังมากถ้าใช้ร่วม steroid/ยาต้านเกล็ดเลือด/ยาต้านการแข็งตัวของเลือด</td><td><b>Paracetamol</b> 500–1,000 mg ทุก 6–8 ชม. (ผอม เปราะบาง ตับไม่ดี ≤3 g/วัน) · <b>NSAID ทาเฉพาะที่</b> สำหรับเข่า/มือ · ถ้าจำเป็น: สั้นที่สุด + PPI</td></tr>
+    <tr><td><b>PPI นาน &gt;8 สัปดาห์</b></td><td>C. difficile ปอดอักเสบ กระดูกหัก Mg ต่ำ B12 ต่ำ · <b>Avoid</b> ยกเว้นข้อบ่งชี้ (ใช้ steroid/NSAID เรื้อรัง, erosive esophagitis, Barrett, หยุดแล้วกลับเป็น)</td><td>ลดขนาด → กินเฉพาะเมื่อมีอาการ หรือหยุด · H2 blocker (famotidine ลดขนาดเมื่อ CrCl &lt;50) · ดูหน้า <a href="../magnesium/index.html">Mg</a></td></tr>
+    <tr><td><b>ยาคลายกล้ามเนื้อ</b>: orphenadrine, methocarbamol, carisoprodol, chlorzoxazone, cyclobenzaprine</td><td>Anticholinergic ง่วง ล้ม ได้ผลน้อย · <b>Avoid</b> · <span class="tag add">เสริม</span> tolperisone/eperisone ไม่อยู่ใน Beers แต่ประโยชน์จำกัด ใช้สั้นที่สุด</td><td>ประคบร้อน กายภาพ paracetamol NSAID ทา</td></tr>
+    <tr><td><b>Anticholinergic รักษากระเพาะปัสสาวะไวเกิน</b>: oxybutynin, tolterodine, solifenacin</td><td>Anticholinergic สูง · <b>Avoid ในผู้ป่วยสมองเสื่อม/delirium</b> · oxybutynin แย่ที่สุด</td><td>Bladder training ก่อน · <b>mirabegron</b> (ดูบทปัสสาวะ)</td></tr>
+    <tr><td><b>TCA</b>: amitriptyline, nortriptyline · paroxetine</td><td>Anticholinergic ความดันตก ล้ม · <b>Avoid</b></td><td>ปวดปลายประสาท: gabapentin/pregabalin (ปรับตามไต) · ซึมเศร้า: sertraline/escitalopram</td></tr>
+    <tr><td><b>Antipsychotic</b> ในผู้ป่วยสมองเสื่อม (haloperidol, quetiapine, risperidone)</td><td>Stroke และเสียชีวิตเพิ่ม · <b>Avoid</b> สำหรับพฤติกรรม ยกเว้นวิธีอื่นไม่ได้ผลและอันตรายต่อตัวเอง/ผู้อื่น</td><td>หาสาเหตุ (ปวด ท้องผูก ปัสสาวะคั่ง ติดเชื้อ) · ปรับสิ่งแวดล้อม · ทบทวนทุก 6 สัปดาห์</td></tr>
+    <tr><td><b>Flunarizine/cinnarizine</b> ใช้ยาวรักษาเวียนหัว <span class="tag add">เสริม</span></td><td>Parkinsonism จากยา ซึมเศร้า ง่วง (พบบ่อยในไทย ไม่อยู่ใน Beers)</td><td>หาสาเหตุเวียนหัว · BPPV → Epley · ใช้สั้นๆ</td></tr>
+    <tr><td><b>Metoclopramide</b></td><td>EPS/tardive dyskinesia · <b>Avoid</b> ยกเว้น gastroparesis (สั้นที่สุด) · domperidone: QT ยาว <span class="tag add">เสริม</span></td><td>ปรับอาหาร · หาสาเหตุ</td></tr>
+    <tr><td><b>Aspirin เพื่อป้องกันปฐมภูมิ</b> (ไม่มีโรคหัวใจ/สมอง)</td><td>เลือดออก &gt; ประโยชน์ · <b>Avoid เริ่มใหม่ พิจารณาหยุด</b></td><td>ยังใช้ต่อในผู้ที่มี CVD แล้ว (secondary)</td></tr>
+    <tr><td><b>Warfarin</b> (เริ่มใหม่) · <b>rivaroxaban</b> ระยะยาว</td><td>Beers 2023: เลี่ยงเริ่ม warfarin เป็นยาแรกใน AF/VTE ถ้าใช้ DOAC ได้ · rivaroxaban เลือดออกมากกว่า apixaban</td><td><b>Apixaban</b> (ตามสิทธิ์) · ถ้าใช้ warfarin อยู่และ TTR ดี ใช้ต่อได้ · ดูหน้า <a href="../af/index.html">AF</a></td></tr>
+    <tr><td>อื่นๆ</td><td>Digoxin &gt;0.125 mg/วัน · doxazosin/prazosin เป็นยาลดความดัน · nifedipine ออกฤทธิ์สั้น · methyldopa/clonidine เป็นยาแรก · pethidine · megestrol · mineral oil กิน</td><td>เลือกยาตามแนวทางโรค (ดูหน้า <a href="../htn/index.html">HT</a>)</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-red"><h4>ปรับตามไต (Beers 2023 ตัวอย่าง)</h4><ul><li><b>CrCl &lt;30</b>: เลี่ยง NSAID, spironolactone, nitrofurantoin, duloxetine · ลดขนาด tramadol (IR), ciprofloxacin, colchicine, enoxaparin, TMP-SMX</li><li><b>CrCl &lt;60</b>: ลดขนาด gabapentin/pregabalin · <b>baclofen เลี่ยงเมื่อ eGFR &lt;60</b> (สับสน/ซึม)</li><li>Famotidine ลดขนาดเมื่อ CrCl &lt;50 · DOAC ปรับตามฉลาก</li><li><span class="tag add">เสริม</span> Metformin: ห้ามเมื่อ eGFR &lt;30 · ไม่เริ่มใหม่ที่ 30–45</li><li>ผู้สูงอายุกล้ามเนื้อน้อย Cr ดูต่ำ → eGFR/CrCl อาจสูงเกินจริง</li></ul></div>
+    <div class="card c-warn"><h4>คู่ยาอันตราย</h4><ul><li><b>Opioid + benzodiazepine</b> → กดการหายใจ</li><li>Opioid + gabapentinoid → ง่วง กดการหายใจ</li><li><b>ยาออกฤทธิ์ต่อสมอง ≥3 ตัว</b> (ยาจิตเวช ยากันชัก benzo/Z-drug opioid ยาคลายกล้ามเนื้อ) → ล้ม กระดูกหัก</li><li>ACEi/ARB + spironolactone/amiloride + ไตเสื่อม → K สูง</li><li><span class="tag add">เสริม</span> NSAID + ACEi/ARB + ยาขับปัสสาวะ ("triple whammy") → AKI</li><li>SSRI/SNRI/tramadol/carbamazepine/diuretic → <b>Na ต่ำ (SIADH)</b> · ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a></li></ul></div>
+  </div>
+  <h3>ขั้นตอนเลิกยา (deprescribing)</h3>
+  <div class="timeline">
+    <div><b>1. รวบรวมยาทั้งหมด</b> ให้ญาติ "หิ้วถุงยา" มาทั้งหมด รวมยาซื้อเอง สมุนไพร ยาจาก รพ.อื่น ยาชุด/ยาลูกกลอน</div>
+    <div><b>2. ดูทีละตัว</b>: ข้อบ่งชี้ยังมีไหม · อยู่ใน Beers/STOPP ไหม · ผลข้างเคียงที่มีอยู่เกิดจากยาไหม (prescribing cascade เช่น amlodipine → ขาบวม → furosemide)</div>
+    <div><b>3. เรียงลำดับ</b>: ยาที่อันตรายสุด/ไม่มีประโยชน์ก่อน · คุยกับผู้ป่วยถึงเป้าหมาย (ช่วงชีวิตที่เหลือกับเวลาที่ยาจะเห็นผล)</div>
+    <div><b>4. ลดทีละตัว</b> ยาที่หยุดทันทีไม่ได้ต้องค่อยๆ ลด: <b>benzodiazepine ลด ~25% ทุก 2 สัปดาห์</b> ช่วงท้ายลด 12.5% · PPI ลดเป็นขนาดต่ำ/กินเมื่อมีอาการ · beta-blocker, clonidine, ยากันชัก, antidepressant ค่อยๆ ลด</div>
+    <div><b>5. ติดตาม</b> อาการถอนยา อาการโรคกลับ · บันทึกในเวชระเบียนว่า "หยุดเพราะอะไร" กันการสั่งซ้ำ</div>
+  </div>
+  <div class="box key"><b>START v3 ที่ GP ลืมบ่อย</b> AF → ยาต้านการแข็งตัวของเลือด (ไม่ใช่ aspirin) · กระดูกพรุน/กระดูกหักจากการล้ม → ยาต้านการสลายกระดูก + Ca/วิตามินดี · ใช้ opioid ประจำ → ยาระบาย · HFrEF → ยาตามแนวทาง · โรคหัวใจ/สมองขาดเลือด → statin + antiplatelet (ยกเว้นระยะท้าย) · วัคซีนไข้หวัดใหญ่ ปอดอักเสบ งูสวัด</div>
+</section>
+
+<section id="cog" class="col">
+  <div class="sec-num">05</div>
+  <h2>ความจำบกพร่อง / ภาวะสมองเสื่อม</h2>
+  <div class="box warn"><b>แยก delirium ก่อนเสมอ</b> สับสนเกิดเร็ว (ชม.–วัน) ขึ้นๆ ลงๆ ความตั้งใจลดลง = delirium (ภาวะฉุกเฉิน) → ดูหน้า <a href="../delirium/index.html">Delirium</a> · อย่าทำแบบทดสอบความจำเพื่อวินิจฉัยสมองเสื่อมขณะมี delirium</div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>คัดกรองและวินิจฉัย</h4><ul><li><b>Mini-Cog</b>: จำ 3 คำ (1 คะแนน/คำ) + วาดนาฬิกา (ปกติ 2, ผิด 0) = 0–5 · <span class="tag th">ไทย</span> คู่มือไทยถือ ≤3 ผิดปกติ → ทำ MMSE-Thai 2002/TMSE · ต้นฉบับ: 0–2 มีโอกาสสูง</li><li>Dementia = ความจำ/ความคิดลดลงจากเดิม <b>จนกระทบการใช้ชีวิต (IADL)</b> · ถ้ายังไม่กระทบ = MCI</li><li>ถามญาติเสมอ: ลืมปิดเตา หลงทาง จัดการเงิน/กินยาเองไม่ได้</li><li>แยกซึมเศร้า (pseudodementia) · หูตึง/ตามัวทำให้คะแนนต่ำ</li></ul></div>
+    <div class="card c-warn"><h4>หาสาเหตุที่แก้ได้</h4><ul><li><b>ยา</b>: anticholinergic, benzodiazepine, opioid, antihistamine</li><li>เลือด: CBC, glucose, Na/Ca, Cr, LFT, <b>TSH, B12</b> (± folate) · VDRL/HIV ถ้าเสี่ยง</li><li><b>CT/MRI สมอง</b> เมื่อ: อายุน้อย เป็นเร็ว อาการทางประสาทเฉพาะที่ ล้มศีรษะกระแทก (chronic SDH) เดินเซ+ปัสสาวะราด (NPH)</li><li>ซึมเศร้า · OSA · สุรา · หูตึง ตามัว</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา (Alzheimer, PD dementia, DLB, vascular ผสม)</th><th>ขนาด</th><th>ข้อควรระวัง</th></tr>
+    <tr><td><b>Donepezil</b></td><td>5 mg วันละครั้ง (ก่อนนอน) × 4–6 สัปดาห์ → <b>10 mg</b> · max 10 mg <span class="muted">(23 mg/วันมีใน US สำหรับโรคปานกลาง–รุนแรง แต่ประโยชน์เพิ่มน้อยและคลื่นไส้อาเจียนมากขึ้น — ความเห็นผู้เขียน: ไม่ใช้ในงาน GP)</span></td><td>ทุกตัวในกลุ่ม AChEI: คลื่นไส้ ท้องเสีย <b>หัวใจช้า/เป็นลม</b> (ระวังร่วม beta-blocker, sick sinus) ฝันร้าย · ตรวจชีพจร/ECG ก่อนเริ่มถ้าชีพจร &lt;60 · ไม่ต้องปรับตามไต</td></tr>
+    <tr><td><b>Rivastigmine</b></td><td>กิน 1.5 mg วันละ 2 ครั้งพร้อมอาหาร เพิ่มครั้งละ 1.5 mg ทุก ≥2 สัปดาห์ → max <b>6 mg วันละ 2 ครั้ง</b> · แผ่นแปะ 4.6 mg/24 ชม. → 9.5 mg หลัง ≥4 สัปดาห์ (max 13.3)</td><td>แผ่นแปะคลื่นไส้น้อยกว่า · หยุด &gt;3 วัน ให้เริ่มขนาดต่ำใหม่</td></tr>
+    <tr><td><b>Galantamine</b></td><td>ER 8 mg เช้า × 4 สัปดาห์ → 16 → max <b>24 mg/วัน</b></td><td>ไต/ตับเสื่อมปานกลาง max 16 mg · <b>CrCl &lt;9 ห้ามใช้</b></td></tr>
+    <tr><td><b>Memantine</b> (ปานกลาง–รุนแรง / ใช้ AChEI ไม่ได้)</td><td>5 mg/วัน เพิ่ม 5 mg ทุกสัปดาห์ → <b>20 mg/วัน</b></td><td><b>CrCl 5–29: max 10 mg/วัน</b> · เวียนหัว ง่วง ท้องผูก</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ดูแลที่ไม่ใช่ยา (ส่วนใหญ่ของงาน)</h4><ul><li>อธิบายโรค · ความปลอดภัย (ขับรถ เตาแก๊ส ยา การเงิน) · ACP ตั้งแต่ระยะแรก</li><li>คุม BP, DM, lipid · <b>เครื่องช่วยฟัง</b> · ผ่าตัดต้อกระจก · ออกกำลังกาย · กิจกรรมสังคม</li><li>Lancet Commission 2024: ปัจจัยเสี่ยงที่แก้ได้ 14 ข้อ รวม <b>หูตึง, LDL สูง, สายตาไม่ดี</b></li><li><b>BPSD</b>: หาสาเหตุ (ปวด ท้องผูก ปัสสาวะคั่ง ติดเชื้อ ยา) · สอนผู้ดูแล · ปรับสิ่งแวดล้อม</li></ul></div>
+    <div class="card c-red"><h4>Antipsychotic ใน BPSD (NICE NG97)</h4><ul><li>ใช้เฉพาะเมื่อ<b>เสี่ยงอันตราย</b>หรือทุกข์ทรมานมาก และวิธีอื่นไม่ได้ผล</li><li>ขนาดต่ำสุด ระยะสั้น ทบทวนทุก 6 สัปดาห์ แจ้งญาติเรื่อง stroke/เสียชีวิตเพิ่ม</li><li><b>ห้าม haloperidol ใน DLB/Parkinson</b> (แพ้รุนแรง) · DLB ถ้าจำเป็นปรึกษาเฉพาะทาง</li><li><span class="tag add">เสริม</span> ยา anti-amyloid (lecanemab, donanemab) ใช้เฉพาะ AD ระยะต้นที่ยืนยัน amyloid ในศูนย์เฉพาะทาง (ต้องตาม MRI ระวัง ARIA) — ไม่ใช่งาน GP</li></ul></div>
+  </div>
+</section>
+
+<section id="mood" class="col">
+  <div class="sec-num">06</div>
+  <h2>ซึมเศร้าในผู้สูงอายุ</h2>
+  <p>มักมาด้วย<b>อาการทางกาย</b> (ปวดเรื้อรัง นอนไม่หลับ เบื่ออาหาร น้ำหนักลด ความจำแย่) มากกว่าบอกว่าเศร้า · คัดกรอง <b>2Q</b> ทุกปี → 9Q → <b>8Q ทุกรายที่ 9Q ≥7</b> <span class="tag th">ไทย</span> · ผู้สูงอายุชาย อยู่คนเดียว ป่วยเรื้อรัง เพิ่งสูญเสียคู่ = เสี่ยงฆ่าตัวตายสูง</p>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาดผู้สูงอายุ</th><th>หมายเหตุ</th></tr>
+    <tr><td><b>Sertraline</b> (ตัวเลือกแรก)</td><td>เริ่ม <b>25 mg/วัน</b> × 1 สัปดาห์ → 50 mg · เพิ่มทีละ 25–50 mg ทุก ≥1–2 สัปดาห์ · max 200 mg</td><td>ปฏิกิริยาระหว่างยาน้อย · ท้องเสีย</td></tr>
+    <tr><td><b>Escitalopram</b></td><td>เริ่ม 5 mg → <b>10 mg/วัน (max 10 mg ในอายุ &gt;65)</b></td><td>QT ยาวตามขนาด · (citalopram max 20 mg ในอายุ &gt;60)</td></tr>
+    <tr><td><b>Mirtazapine</b></td><td>7.5–15 mg ก่อนนอน → max 45 mg</td><td>ดีเมื่อนอนไม่หลับ เบื่ออาหาร · ง่วง น้ำหนักขึ้น · ไตเสื่อมขับช้าลง</td></tr>
+    <tr><td><b>Fluoxetine</b> (มีในบัญชียาหลัก)</td><td>10 mg/วัน → 20 mg</td><td>ครึ่งชีวิตยาว ปฏิกิริยายามาก · ใช้ได้ถ้ามีแค่ตัวนี้</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>ข้อควรระวัง SSRI</h4><ul><li><b>Na ต่ำ (SIADH)</b>: เสี่ยงในช่วงสัปดาห์แรก, อายุมาก, ใช้ thiazide, น้ำหนักน้อย → ตรวจ Na ก่อนเริ่มและซ้ำภายใน ~2–4 สัปดาห์ <span class="tag add">เสริม</span> · ดูหน้า <a href="../hyponatremia/index.html">Hyponatremia</a></li><li><b>เลือดออก</b> เพิ่มเมื่อใช้ร่วม NSAID/aspirin/anticoagulant → พิจารณา PPI</li><li>ล้ม · serotonin syndrome (ร่วม tramadol)</li><li><b>เลี่ยง amitriptyline/paroxetine</b> (anticholinergic)</li></ul></div>
+    <div class="card c-ok"><h4>หลักการ</h4><ul><li>เริ่มต่ำ ค่อยๆ เพิ่ม แต่<b>ต้องให้ถึงขนาดที่ได้ผล</b> · ประเมินที่ 4–6 สัปดาห์ (ผู้สูงอายุอาจถึง 8–12)</li><li>หายแล้วให้ต่อ <b>อย่างน้อย 6–12 เดือน</b> (เป็นซ้ำ → นานกว่า)</li><li>จิตบำบัด กิจกรรม ออกกำลังกาย สังคม</li><li>ส่งจิตแพทย์: ฆ่าตัวตาย psychotic ไม่ตอบสนอง 2 ตัว bipolar</li></ul></div>
+  </div>
+</section>
+
+<section id="uro" class="col">
+  <div class="sec-num">07</div>
+  <h2>ปัสสาวะเล็ด · ต่อมลูกหมากโต · ท้องผูก</h2>
+  <div class="tbl"><table>
+    <tr><th>ชนิด</th><th>ลักษณะ</th><th>เริ่มรักษา</th></tr>
+    <tr><td><b>Stress</b></td><td>เล็ดเวลาไอ จาม ยกของ (หญิง คลอดหลายครั้ง)</td><td><b>ฝึกขมิบ (PFMT) อย่างน้อย 3 เดือน</b> ≥8 ครั้ง × วันละ ≥3 รอบ (NICE NG123) · ลดน้ำหนัก · ไม่ใช้ยา</td></tr>
+    <tr><td><b>Urge / OAB</b></td><td>ปวดกลั้นไม่อยู่ ถี่ กลางคืน</td><td><b>Bladder training ≥6 สัปดาห์</b> · ลดชา กาแฟ น้ำอัดลม · จัดเวลาดื่มน้ำ · แล้วจึงใช้ยา</td></tr>
+    <tr><td><b>Mixed</b></td><td>ทั้งสองแบบ</td><td>รักษาแบบที่เด่นก่อน</td></tr>
+    <tr><td><b>Overflow</b></td><td>ปัสสาวะคั่ง ออกทีละน้อย (BPH, DM neuropathy, anticholinergic, opioid)</td><td><b>ตรวจปัสสาวะค้าง (PVR)</b> · หยุดยาต้นเหตุ · สวนปัสสาวะ</td></tr>
+    <tr><td><b>Functional</b></td><td>ไปห้องน้ำไม่ทัน (เดินไม่ได้ สมองเสื่อม)</td><td>พาไปตามเวลา (prompted voiding) · กระโถน/คอมโมดข้างเตียง</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ประเมิน</h4><ul><li><b>Bladder diary ≥3 วัน</b> (วันทำงาน + วันหยุด)</li><li>UA (ติดเชื้อ เลือด น้ำตาล) · PVR ถ้าสงสัยคั่ง</li><li>ทบทวนยา: diuretic, ACEi (ไอ → stress), alpha-blocker ในหญิง, ยานอนหลับ</li><li>หาสาเหตุชั่วคราว: <b>ติดเชื้อ delirium อุจจาระอัดแน่น น้ำตาลสูง เดินไม่ได้</b></li><li>Red flag ส่งต่อ: เลือดในปัสสาวะ ปวด ติดเชื้อซ้ำ ก้อนในอุ้งเชิงกราน ปัสสาวะคั่งเรื้อรัง</li></ul></div>
+    <div class="card c-warn"><h4>ยา OAB ในผู้สูงอายุ</h4><ul><li><b>Mirabegron</b> (β3 agonist): 25 mg/วัน → 50 mg หลัง 4–8 สัปดาห์ · <b>eGFR 15–29 หรือตับเสื่อมปานกลาง: max 25 mg</b> · ไม่ใช้ใน eGFR &lt;15 · <b>ห้ามถ้าความดันสูงรุนแรงคุมไม่ได้ (≥180/110)</b> · ไม่มีผล anticholinergic</li><li>Anticholinergic: NICE แนะนำ<b>ไม่ใช้ oxybutynin ชนิดออกฤทธิ์ทันทีในผู้หญิงเปราะบาง</b> · พิจารณาภาระ anticholinergic ทุกครั้ง · solifenacin 5 mg (CrCl &lt;30 max 5 mg)</li><li>ประเมินผลที่ 4 สัปดาห์ ไม่ดีขึ้น → เปลี่ยน/ส่งต่อ</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ต่อมลูกหมากโต (BPH) — ย่อ</h4><ul><li>IPSS · ตรวจทางทวารหนัก · UA · Cr · PSA ถ้าผลจะเปลี่ยนการรักษา</li><li><b>Alpha-blocker</b> tamsulosin 0.4 mg/วัน (หลังอาหาร) · doxazosin/terazosin ความดันตกมากกว่า → ระวังล้ม · บอกจักษุแพทย์ก่อนผ่าตัดต้อกระจก (floppy iris)</li><li>ต่อมโต (&gt;30 mL/PSA &gt;1.5) → เพิ่ม <b>5-ARI</b> (finasteride 5 mg, dutasteride 0.5 mg) ใช้ 3–6 เดือนจึงเห็นผล · <b>PSA ลด ~50%</b></li><li>อาการเด่นปัสสาวะถี่ + PVR ไม่มาก → เพิ่ม mirabegron/antimuscarinic ได้</li><li>ปัสสาวะคั่ง ติดเชื้อซ้ำ นิ่ว ไตเสื่อม → ส่งศัลยแพทย์ระบบปัสสาวะ</li></ul></div>
+    <div class="card c-ok"><h4>ท้องผูก</h4><ul><li>หาสาเหตุ: <b>ยา</b> (opioid, CCB, anticholinergic, iron, Ca) · Ca สูง · hypothyroid · ขาดน้ำ · ไม่เคลื่อนไหว · <b>red flag</b> (เลือดออก น้ำหนักลด ซีด เปลี่ยนนิสัยการขับถ่ายเมื่ออายุมาก → ส่องกล้อง)</li><li>ไฟเบอร์ (psyllium) เฉพาะคนที่ดื่มน้ำได้และเดินได้ — <b>ติดเตียงไม่แนะนำ</b></li><li>ยาระบาย: <b>PEG/macrogol</b> หรือ lactulose 15–30 mL/วัน (ท้องอืด) · ร่วม <b>senna</b> 7.5–15 mg ก่อนนอน / bisacodyl</li><li><b>ใช้ opioid ประจำ → ให้ยาระบายชนิดกระตุ้น + ทำให้นุ่มตั้งแต่วันแรก</b></li><li><b>เลี่ยง milk of magnesia ในไตเสื่อม</b> (Mg สูง) · เลี่ยง mineral oil กิน (สำลัก → ปอดอักเสบ) · อุจจาระอัดแน่น → สวน</li></ul></div>
+  </div>
+</section>
+
+<section id="bone" class="col">
+  <div class="sec-num">08</div>
+  <h2>กระดูกพรุน (TOPF 2021) <span class="tag th">ไทย</span></h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใครควรตรวจ DXA</h4><ul><li><b>หญิง ≥65 ปี · ชาย ≥70 ปี</b></li><li>อายุน้อยกว่านั้นที่มีปัจจัยเสี่ยง: <b>กระดูกหักจากแรงน้อย</b> · ภาพรังสีกระดูกบาง/กระดูกสันหลังยุบ · <b>ส่วนสูงลด</b> (≥4 cm ไม่มีบันทึก หรือ ≥2 cm มีบันทึก) · ใช้ <b>steroid</b>, aromatase inhibitor, ADT · <b>BMI &lt;20</b> · พ่อแม่สะโพกหัก</li><li>หมดประจำเดือนก่อน 45 ปี / ขาดเอสโตรเจน ≥1 ปีก่อนหมดประจำเดือน</li><li>ก่อนเริ่มยา และ 1–2 ปีหลังรักษา</li><li>คัดกรองเบื้องต้นใน รพ.สต.: <b>OSTA</b> = 0.2 × (น้ำหนัก kg − อายุ) และ <b>FRAX ไทย</b> (ไม่ใส่ BMD ได้)</li></ul></div>
+    <div class="card c-warn"><h4>วินิจฉัย / ให้ยาเมื่อ (ข้อใดข้อหนึ่ง)</h4><ul><li><b>กระดูกสันหลังหรือสะโพกหักจากแรงน้อย</b> <span class="rec s1">I A</span></li><li><b>T-score ≤ −2.5</b> (spine, femoral neck, total hip หรือ 1/3 radius) <span class="rec s1">I A</span></li><li>T-score −1.0 ถึง −2.5 + <b>FRAX ไทย โอกาสสะโพกหักใน 10 ปี ≥3%</b> <span class="rec">IIa C</span></li><li>T-score −1.0 ถึง −2.5 + หักที่ต้นแขน เชิงกราน ข้อมือ <span class="rec">IIb C</span></li><li>TOPF ไม่ใช้ค่า MOF ของ FRAX (ข้อมูลไทยไม่พอ)</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ยา</th><th>ขนาด</th><th>ไต / ข้อควรระวัง</th></tr>
+    <tr><td><b>Alendronate</b> (ยาแรกในความเสี่ยงสูง)</td><td><b>70 mg สัปดาห์ละครั้ง</b> กินตอนเช้าท้องว่าง น้ำเปล่า 1 แก้วเต็ม นั่ง/ยืน 30 นาที ก่อนอาหาร/ยาอื่น</td><td><b>CrCl &lt;35 ไม่แนะนำ</b> · หลอดอาหารอักเสบ · แก้ Ca/วิตามินดีต่ำก่อน · ตรวจฟันก่อนเริ่ม</td></tr>
+    <tr><td>Risedronate</td><td>35 mg สัปดาห์ละครั้ง</td><td>CrCl &lt;30 ไม่แนะนำ</td></tr>
+    <tr><td><b>Zoledronic acid</b></td><td><b>5 mg IV ใน ≥15 นาที ปีละครั้ง</b> (ดื่มน้ำให้พอ)</td><td><b>CrCl &lt;35 ห้าม</b> · ไข้/ปวดเมื่อยหลังให้ครั้งแรก (acute phase)</td></tr>
+    <tr><td><b>Denosumab</b> (ทางเลือก)</td><td><b>60 mg SC ทุก 6 เดือน</b></td><td>ไม่ต้องปรับตามไต แต่ <b>Ca ต่ำรุนแรงใน CKD 4–5</b> · <b>ห้ามขาดยา/หยุดเอง</b> → กระดูกสันหลังหักหลายระดับ (rebound) · หยุดต้องต่อ bisphosphonate</td></tr>
+    <tr><td>Teriparatide / romosozumab</td><td>ความเสี่ยงสูงมาก (หักซ้ำใน 12 เดือน, หักหลายตำแหน่ง, T ≤ −3.5 ในวัยสูง) → ส่งต่อ</td><td>Romosozumab ห้ามถ้า MI/stroke ใน 1 ปี</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>Drug holiday (TOPF 2021)</h4><ul><li>ประเมินความเสี่ยงใหม่หลัง <b>oral 5 ปี / IV 3 ปี</b></li><li><b>ไม่เคยหัก และ T-score &gt; −2.5</b> → พิจารณาหยุดพัก (ลด atypical femoral fracture)</li><li>ยังเสี่ยงสูง/เคยหัก/T ≤ −2.5 → ใช้ต่อได้ถึง <b>oral 10 ปี / IV 6 ปี</b> หรือเปลี่ยนยา</li><li><b>Denosumab ไม่มี drug holiday</b></li></ul></div>
+    <div class="card c-acc"><h4>ทุกคน</h4><ul><li><b>แคลเซียมรวมจากอาหาร+ยา ~1,000–1,200 mg/วัน</b> · <b>วิตามินดี 800–1,000 IU/วัน</b> <span class="tag add">เสริม</span> (BHOF) · เสริมเฉพาะส่วนที่อาหารไม่พอ</li><li>ออกกำลังกายลงน้ำหนัก + ต้านแรง · เลิกบุหรี่ · สุรา ≤1 (หญิง) / ≤2 (ชาย) หน่วย/วัน</li><li><b>ป้องกันล้ม</b> (บทที่ 02)</li><li>สะโพกหัก → <b>เริ่มยารักษากระดูกพรุนก่อนกลับบ้าน</b> (fracture liaison)</li></ul></div>
+  </div>
+</section>
+
+<section id="more" class="col">
+  <div class="sec-num">09</div>
+  <h2>ตา หู โภชนาการ แผลกดทับ วัคซีน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ตาและหู</h4><ul><li>ตา: Snellen แย่กว่า 6/12 → ส่งจักษุ (ต้อกระจก ต้อหิน จอตาเสื่อม เบาหวานขึ้นตา) · แว่นสองเลนส์เพิ่มการสะดุดขณะเดินบันได</li><li>หู: finger rub / whisper test · ดูขี้หูอุดตันก่อน · <b>เครื่องช่วยฟัง</b> ช่วยการสื่อสาร ลดการแยกตัว และอาจชะลอความคิดถดถอยในกลุ่มเสี่ยง</li><li>สื่อสารกับผู้สูงอายุหูตึง: หันหน้าเข้าหา พูดช้า ชัด ไม่ตะโกน ลดเสียงรบกวน</li></ul></div>
+    <div class="card c-warn"><h4>โภชนาการ</h4><ul><li><b>MNA-SF</b> ทุกปี และทุกครั้งที่น้ำหนักลด · รอบน่อง &lt;31 cm ใน MNA</li><li>น้ำหนักลดไม่ตั้งใจ <b>&gt;5% ใน 6–12 เดือน</b> → หาสาเหตุ: ฟัน กลืนลำบาก ซึมเศร้า ยา (metformin, AChEI, digoxin) มะเร็ง hyperthyroid DM คุมไม่ดี ยากจน/อยู่คนเดียว</li><li>ผ่อนการจำกัดอาหาร (เค็ม หวาน ไขมัน) ในผู้สูงอายุที่ขาดอาหาร</li><li>เสริมอาหารทางการแพทย์ (ONS) เมื่อขาดอาหาร · ระวัง <a href="../phosphate-refeeding/index.html">refeeding</a> ในผู้ที่กินน้อยมานาน · ดูหน้า <a href="../nutrition/index.html">โภชนบำบัด</a></li></ul></div>
+    <div class="card c-red"><h4>แผลกดทับ (pressure injury)</h4><ul><li>ประเมินความเสี่ยง (Braden) เมื่อแรกรับ และเมื่ออาการเปลี่ยน · ดูผิวหนังบริเวณกระดูกยื่นทุกวัน</li><li><b>พลิกตัวตามตาราง</b> (ปกติทุก 2–4 ชม. ตามชนิดที่นอนและสภาพผิว) · ตะแคง 30° · ยกส้นเท้าลอย</li><li>ที่นอนโฟมคุณภาพสูง/ที่นอนลม · หัวเตียงไม่เกิน 30° ถ้าทำได้</li><li>ผิวแห้งสะอาด จัดการอุจจาระ/ปัสสาวะ · โภชนาการ: มีแผลแล้วให้โปรตีน 1.25–1.5 g/kg/วัน (EPUAP/NPIAP 2019)</li></ul></div>
+    <div class="card c-ok"><h4>วัคซีน <span class="tag add">เสริม</span></h4><ul><li><b>ไข้หวัดใหญ่</b> ทุกปี (ฟรีตามสิทธิ์ อายุ ≥65 และกลุ่มเสี่ยง) <span class="tag th">ไทย</span></li><li><b>ปอดอักเสบ (pneumococcal)</b> · <b>งูสวัดชนิด recombinant (RZV)</b> 2 เข็ม · RSV (อายุ ≥75 หรือ 60–74 ที่มีโรคเสี่ยง) · Td/Tdap ทุก 10 ปี</li><li>ดูคำแนะนำวัคซีนผู้ใหญ่ฉบับล่าสุดของสมาคมโรคติดเชื้อฯ ประกอบ · ดูหน้า <a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่</a></li></ul></div>
+  </div>
+</section>
+
+<section id="care" class="col">
+  <div class="sec-num">10</div>
+  <h2>Advance care planning · ผู้ดูแล · ระบบ LTC ไทย</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Advance care planning</h4><ul><li>คุยตั้งแต่ยังตัดสินใจได้ (โดยเฉพาะสมองเสื่อมระยะแรก, CFS ≥6, โรคเรื้อรังหลายโรค)</li><li>ถาม: อะไรสำคัญที่สุด · กลัวอะไร · อยากให้ใครตัดสินใจแทน · ยอมรับการรักษาแบบไหน (ICU, ใส่ท่อ, สายให้อาหาร)</li><li>บันทึก <b>หนังสือแสดงเจตนา มาตรา 12 พ.ร.บ.สุขภาพแห่งชาติ</b> <span class="tag th">ไทย</span> · ดูหน้า <a href="../palliative/index.html">Palliative care</a></li><li><b>สมองเสื่อมระยะท้าย: ไม่แนะนำใส่สายให้อาหาร</b> (ไม่ลดสำลัก ไม่ยืดชีวิต) → careful hand feeding</li></ul></div>
+    <div class="card c-warn"><h4>ผู้ดูแล (caregiver)</h4><ul><li>ถามผู้ดูแลทุกครั้ง: เหนื่อยไหม นอนพอไหม มีคนผลัดไหม (ภาวะหมดไฟ ซึมเศร้า)</li><li>สอนทักษะ: ย้ายตัว พลิกตัว ป้อนอาหาร จัดยา จัดการพฤติกรรม</li><li>หาผู้ช่วยผลัด (respite) · กลุ่มผู้ดูแล · ใช้สิทธิ์สวัสดิการ</li><li>สังเกตสัญญาณ<b>การทารุณ/ทอดทิ้ง</b>ผู้สูงอายุ (แผลไม่สมเหตุผล ขาดอาหาร ยาไม่ได้กิน)</li></ul></div>
+  </div>
+  <h3>ระบบดูแลระยะยาว (LTC) ของไทย <span class="tag th">ไทย</span></h3>
+  <div class="tbl"><table>
+    <tr><th>เรื่อง</th><th>สาระสำคัญ</th></tr>
+    <tr><td>ใคร</td><td><b>ผู้มีภาวะพึ่งพิง</b> (ประเมิน <b>Barthel ADL ≤11</b>) สิทธิหลักประกันสุขภาพแห่งชาติ (บัตรทอง) · เริ่มจากผู้สูงอายุ ปัจจุบันครอบคลุมผู้มีภาวะพึ่งพิงทุกวัย</td></tr>
+    <tr><td>เงิน</td><td>สปสช. จ่ายงบเหมาจ่ายรายหัวผ่าน <b>กองทุนฯ ของ อปท.</b> (อบต./เทศบาล) ตามแผนการดูแลรายบุคคล · อัตราปรับตามปีงบประมาณ — ตรวจประกาศ สปสช. ปีปัจจุบัน</td></tr>
+    <tr><td>คน</td><td><b>Care Manager (CM)</b>: บุคลากรสาธารณสุข/พยาบาล ประเมินและเขียน <b>care plan</b> · <b>Caregiver (CG)</b>: ผู้ช่วยเหลือดูแลที่ผ่านหลักสูตรตามที่กำหนด ไปเยี่ยมบ้านตามแผน (ปี 2568 สปสช. จ้าง CG ทั่วประเทศ ค่าตอบแทนรายเดือน)</td></tr>
+    <tr><td>GP ทำอะไร</td><td>ประเมิน ADL/ปัญหาทางการแพทย์ · ส่งชื่อเข้าระบบผ่าน รพ.สต./ทีมหมอครอบครัว · ร่วมทำแผน (ยา แผลกดทับ สายสวน อุปกรณ์) · เยี่ยมบ้าน · ประสาน palliative care</td></tr>
+  </table></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง: ผู้สูงอายุที่ OPD/หอผู้ป่วย</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้สูงอายุ ≥60 ปี</b>ถาม "อะไรสำคัญที่สุด" · ทบทวนยาทั้งหมด</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>สับสนเฉียบพลัน / ป่วยเฉียบพลัน?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ใช่</span><div class="node red"><b>Delirium / โรคเฉียบพลัน</b>หาสาเหตุ รักษาก่อน · ไม่ทดสอบความจำตอนนี้</div></div>
+        <div class="arm"><span class="lab">ไม่</span><div class="node dx eu"><b>คัดกรอง (ไทย 2564 / ICOPE)</b>ADL · Mini-Cog · 2Q · TUG/ลุกนั่ง · MNA · ตา หู · ปัสสาวะ · ล้ม</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>พบปัญหาด้านไหน?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">ล้ม</span><div class="node dx hypo"><b>แบ่งระดับ World Falls</b>สูง → multifactorial · กลาง → ออกกำลังกาย · ต่ำ → ความรู้</div></div>
+        <div class="arm"><span class="lab">ความจำ/อารมณ์</span><div class="node dx hypo"><b>MMSE-Thai/TMSE · 9Q/8Q</b>หาสาเหตุที่แก้ได้ · AChEI/SSRI</div></div>
+        <div class="arm"><span class="lab">อ่อนแรง/น้ำหนักลด</span><div class="node dx hypo"><b>CFS · SARC-F · grip</b>Resistance exercise + โปรตีน</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx green"><b>แผนดูแลรายคน</b>เลิกยา Beers/STOPP · เพิ่มยา START · กระดูกพรุน · ACP · ผู้ดูแล · ADL ≤11 → LTC</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ไม่แทนการตัดสินใจทางคลินิกและการคุยกับผู้ป่วย/ญาติ</p>
+  </div>
+
+  <div class="tool plan" id="tMed" style="margin-top:12px">
+    <h3>1) ตรวจยาตาม Beers 2023 / STOPP-START v3</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="mAge" value="78"></label>
+      <label class="f">eGFR หรือ CrCl (mL/min)<input type="number" id="mEg" value="40"></label>
+      <label class="f">จำนวนยาทั้งหมด (รวมยาซื้อเอง)<input type="number" id="mN" value="9"></label>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin:.4rem 0 0">ยาที่ใช้อยู่</p>
+    <div class="checks">
+      <label><input type="checkbox" id="dCpm" checked> Chlorpheniramine / ยาแก้หวัดสูตรผสม</label>
+      <label><input type="checkbox" id="dHyd"> Hydroxyzine / diphenhydramine / dimenhydrinate</label>
+      <label><input type="checkbox" id="dBzd"> Benzodiazepine (diazepam, lorazepam, alprazolam, clonazepam)</label>
+      <label><input type="checkbox" id="dZ"> Zolpidem</label>
+      <label><input type="checkbox" id="dGlib" checked> Glibenclamide / glimepiride</label>
+      <label><input type="checkbox" id="dGlip"> Glipizide / gliclazide</label>
+      <label><input type="checkbox" id="dSsi"> Insulin sliding scale อย่างเดียว</label>
+      <label><input type="checkbox" id="dMet"> Metformin</label>
+      <label><input type="checkbox" id="dNsaid" checked> NSAID กิน (รวม celecoxib)</label>
+      <label><input type="checkbox" id="dMr"> Orphenadrine / methocarbamol / carisoprodol</label>
+      <label><input type="checkbox" id="dTol"> Tolperisone / eperisone</label>
+      <label><input type="checkbox" id="dTram"> Tramadol</label>
+      <label><input type="checkbox" id="dOpi"> Opioid อื่น (morphine, codeine ฯลฯ)</label>
+      <label><input type="checkbox" id="dGaba"> Gabapentin / pregabalin</label>
+      <label><input type="checkbox" id="dTca"> Amitriptyline / nortriptyline</label>
+      <label><input type="checkbox" id="dSsri"> SSRI / SNRI</label>
+      <label><input type="checkbox" id="dAp"> Antipsychotic (haloperidol, quetiapine, risperidone)</label>
+      <label><input type="checkbox" id="dFlu"> Flunarizine / cinnarizine</label>
+      <label><input type="checkbox" id="dPpi" checked> PPI ต่อเนื่อง &gt;8 สัปดาห์</label>
+      <label><input type="checkbox" id="dMeto"> Metoclopramide</label>
+      <label><input type="checkbox" id="dOxy"> Oxybutynin / tolterodine / solifenacin</label>
+      <label><input type="checkbox" id="dAsp"> Aspirin โดยไม่มีโรคหัวใจ/สมอง (primary prevention)</label>
+      <label><input type="checkbox" id="dWar"> Warfarin (กำลังจะเริ่มใหม่)</label>
+      <label><input type="checkbox" id="dRiva"> Rivaroxaban ระยะยาว</label>
+      <label><input type="checkbox" id="dDoac"> Apixaban / dabigatran / edoxaban</label>
+      <label><input type="checkbox" id="dDig"> Digoxin &gt;0.125 mg/วัน</label>
+      <label><input type="checkbox" id="dAlpha"> Doxazosin / prazosin / terazosin (เพื่อลดความดัน)</label>
+      <label><input type="checkbox" id="dNif"> Nifedipine ออกฤทธิ์สั้น</label>
+      <label><input type="checkbox" id="dAcei" checked> ACEi / ARB</label>
+      <label><input type="checkbox" id="dSpi"> Spironolactone / amiloride</label>
+      <label><input type="checkbox" id="dDiu" checked> Loop / thiazide diuretic</label>
+      <label><input type="checkbox" id="dBaclo"> Baclofen</label>
+      <label><input type="checkbox" id="dNitro"> Nitrofurantoin</label>
+      <label><input type="checkbox" id="dColch"> Colchicine</label>
+      <label><input type="checkbox" id="dBone"> Bisphosphonate / denosumab</label>
+      <label><input type="checkbox" id="dLax"> ยาระบาย</label>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin:.4rem 0 0">โรค/ภาวะ</p>
+    <div class="checks">
+      <label><input type="checkbox" id="cDem"> สมองเสื่อม / ความจำบกพร่อง</label>
+      <label><input type="checkbox" id="cDel"> Delirium (ตอนนี้หรือเคย)</label>
+      <label><input type="checkbox" id="cFall" checked> ล้มใน 12 เดือน</label>
+      <label><input type="checkbox" id="cHf"> หัวใจวาย</label>
+      <label><input type="checkbox" id="cAf"> AF</label>
+      <label><input type="checkbox" id="cOst"> กระดูกพรุน / กระดูกหักจากแรงน้อย</label>
+      <label><input type="checkbox" id="cNa"> เคย Na ต่ำ</label>
+      <label><input type="checkbox" id="cPd"> Parkinson / DLB</label>
+      <label><input type="checkbox" id="cGi"> เคยแผลในกระเพาะ/เลือดออกทางเดินอาหาร</label>
+    </div>
+    <div class="out" id="medOut"></div>
+  </div>
+
+  <div class="tool" id="tFall" style="margin-top:12px">
+    <h3>2) แบ่งระดับความเสี่ยงหกล้ม (World Falls Guidelines 2022)</h3>
+    <div class="fields">
+      <label class="f">สถานที่<select id="fSet"><option value="com">ชุมชน / OPD</option><option value="hosp">นอนโรงพยาบาล</option><option value="ltc">สถานดูแลผู้สูงอายุ</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="fAge" value="74"></label>
+      <label class="f">จำนวนครั้งที่ล้มใน 12 เดือน<input type="number" id="fN" value="1"></label>
+      <label class="f">Gait speed (m/s)<input type="number" step="0.01" id="fGs" value=""></label>
+      <label class="f">TUG (วินาที)<input type="number" step="0.1" id="fTug" value="17"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="fConc"> รู้สึกเดินไม่มั่นคง / กลัวล้ม</label>
+      <label><input type="checkbox" id="fInj"> ล้มแล้วบาดเจ็บต้องรักษา</label>
+      <label><input type="checkbox" id="fFloor"> นอนกับพื้นลุกเองไม่ได้ ≥1 ชม.</label>
+      <label><input type="checkbox" id="fLoc"> สงสัยหมดสติ/หน้ามืดก่อนล้ม</label>
+      <label><input type="checkbox" id="fFrail"> Frailty (CFS ≥4 หรือ Fried ≥3)</label>
+      <label><input type="checkbox" id="fUn"> ทำแบบทดสอบเดินไม่ได้</label>
+    </div>
+    <div class="out" id="fallOut"></div>
+  </div>
+
+  <div class="tool" id="tFr" style="margin-top:12px">
+    <h3>3) Clinical Frailty Scale + SARC-F + AWGS sarcopenia</h3>
+    <div class="fields">
+      <label class="f">CFS (สภาพ 2 สัปดาห์ก่อนป่วย)<select id="sCfs"><option value="">— เลือก —</option><option value="1">1 แข็งแรงมาก</option><option value="2">2 แข็งแรง</option><option value="3">3 คุมโรคได้ดี</option><option value="4">4 เปราะบางเล็กน้อยมาก</option><option value="5" selected>5 เปราะบางเล็กน้อย (พึ่ง IADL)</option><option value="6">6 เปราะบางปานกลาง (พึ่ง ADL บางส่วน)</option><option value="7">7 เปราะบางรุนแรง (พึ่งทั้งหมด)</option><option value="8">8 รุนแรงมาก ใกล้ระยะท้าย</option><option value="9">9 ป่วยระยะท้าย</option></select></label>
+      <label class="f">เพศ<select id="sSex"><option value="">— เลือก —</option><option value="m">ชาย</option><option value="f" selected>หญิง</option></select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="sAge" value="76"></label>
+      <label class="f">S: ยก/ถือของ 4.5 kg<select id="sS"><option value="0">0 ไม่ลำบาก</option><option value="1" selected>1 ลำบากบ้าง</option><option value="2">2 ลำบากมาก/ไม่ได้</option></select></label>
+      <label class="f">A: เดินข้ามห้อง<select id="sA"><option value="0" selected>0 ไม่ลำบาก</option><option value="1">1 ลำบากบ้าง</option><option value="2">2 ต้องช่วย/ไม่ได้</option></select></label>
+      <label class="f">R: ลุกจากเก้าอี้/เตียง<select id="sR"><option value="0">0 ไม่ลำบาก</option><option value="1" selected>1 ลำบากบ้าง</option><option value="2">2 ต้องช่วย/ไม่ได้</option></select></label>
+      <label class="f">C: ขึ้นบันได 10 ขั้น<select id="sC"><option value="0">0 ไม่ลำบาก</option><option value="1" selected>1 ลำบากบ้าง</option><option value="2">2 ลำบากมาก/ไม่ได้</option></select></label>
+      <label class="f">F: ล้มในปีที่ผ่านมา<select id="sF"><option value="0">0 ไม่ล้ม</option><option value="1" selected>1 ล้ม 1–3 ครั้ง</option><option value="2">2 ล้ม ≥4 ครั้ง</option></select></label>
+      <label class="f">รอบน่อง (cm)<input type="number" step="0.1" id="sCalf" value="31"></label>
+      <label class="f">Grip สูงสุด (kg)<input type="number" step="0.1" id="sGrip" value="15"></label>
+      <label class="f">เดิน 6 m (m/s)<input type="number" step="0.01" id="sGs" value="0.85"></label>
+      <label class="f">ลุกนั่ง 5 ครั้ง (วินาที)<input type="number" step="0.1" id="sCh" value=""></label>
+      <label class="f">ASM/ส่วนสูง² (kg/m²) ถ้ามี<input type="number" step="0.01" id="sAsm" value=""></label>
+      <label class="f">วิธีวัดมวล<select id="sMeth"><option value="bia">BIA</option><option value="dxa">DXA</option></select></label>
+    </div>
+    <div class="out" id="frOut"></div>
+  </div>
+
+  <div class="tool" id="tCga" style="margin-top:12px">
+    <h3>4) CGA คัดกรองเร็ว: Barthel ADL · Mini-Cog · 2Q</h3>
+    <div class="fields">
+      <label class="f">กินอาหาร<select id="b1"><option value="0">0 ต้องป้อน</option><option value="1">1 ตักเองได้แต่ต้องช่วย</option><option value="2" selected>2 ตักเองได้</option></select></label>
+      <label class="f">ล้างหน้า หวีผม แปรงฟัน (24–48 ชม.)<select id="b2"><option value="0">0 ต้องช่วย</option><option value="1" selected>1 ทำเองได้</option></select></label>
+      <label class="f">ลุกจากที่นอนไปเก้าอี้<select id="b3"><option value="0">0 ไม่ได้ (นั่งไม่ได้/ต้อง 2 คนช่วย)</option><option value="1">1 ต้องช่วยมาก (1 คนแข็งแรง)</option><option value="2">2 ต้องช่วยเล็กน้อย/ดูแล</option><option value="3" selected>3 ทำเองได้</option></select></label>
+      <label class="f">ใช้ห้องน้ำ<select id="b4"><option value="0">0 ช่วยเองไม่ได้</option><option value="1">1 ทำเองได้บ้าง ต้องช่วยบางส่วน</option><option value="2" selected>2 ทำเองได้</option></select></label>
+      <label class="f">เคลื่อนที่ในบ้าน<select id="b5"><option value="0">0 ไม่ได้</option><option value="1">1 ใช้รถเข็นเองได้</option><option value="2">2 เดินได้มีคนช่วย</option><option value="3" selected>3 เดินได้เอง</option></select></label>
+      <label class="f">สวมใส่เสื้อผ้า<select id="b6"><option value="0">0 ต้องช่วยทั้งหมด</option><option value="1">1 ช่วยตัวเองได้ ~50%</option><option value="2" selected>2 ทำเองได้</option></select></label>
+      <label class="f">ขึ้นลงบันได 1 ชั้น<select id="b7"><option value="0">0 ไม่ได้</option><option value="1" selected>1 ต้องมีคนช่วย</option><option value="2">2 ทำเองได้</option></select></label>
+      <label class="f">อาบน้ำ<select id="b8"><option value="0">0 ต้องช่วย</option><option value="1" selected>1 ทำเองได้</option></select></label>
+      <label class="f">กลั้นอุจจาระ (1 สัปดาห์)<select id="b9"><option value="0">0 ไม่ได้/ต้องสวน</option><option value="1">1 ราดบางครั้ง (&lt;1 ครั้ง/สัปดาห์)</option><option value="2" selected>2 ปกติ</option></select></label>
+      <label class="f">กลั้นปัสสาวะ (1 สัปดาห์)<select id="b10"><option value="0">0 ไม่ได้/สวนคาสาย</option><option value="1" selected>1 ราดบางครั้ง (&lt;1 ครั้ง/วัน)</option><option value="2">2 ปกติ</option></select></label>
+      <label class="f">Mini-Cog: จำคำได้<select id="mcW"><option value="">— ยังไม่ทำ —</option><option value="0">0 คำ</option><option value="1">1 คำ</option><option value="2" selected>2 คำ</option><option value="3">3 คำ</option></select></label>
+      <label class="f">Mini-Cog: วาดนาฬิกา<select id="mcC"><option value="">— ยังไม่ทำ —</option><option value="2">ถูกต้อง (2)</option><option value="0" selected>ผิด/ไม่ได้ (0)</option></select></label>
+      <label class="f">2Q-1: 2 สัปดาห์ก่อน รู้สึกหดหู่ เศร้า ท้อแท้<select id="q1"><option value="">— ยังไม่ถาม —</option><option value="0" selected>ไม่มี</option><option value="1">มี</option></select></label>
+      <label class="f">2Q-2: 2 สัปดาห์ก่อน เบื่อ ทำอะไรก็ไม่เพลิน<select id="q2"><option value="">— ยังไม่ถาม —</option><option value="0">ไม่มี</option><option value="1" selected>มี</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="gDel"> สับสนเฉียบพลัน / ความรู้สึกตัวเปลี่ยน</label>
+      <label><input type="checkbox" id="gWt"> น้ำหนักลด &gt;3 kg ใน 3 เดือน / เบื่ออาหาร</label>
+      <label><input type="checkbox" id="gCh"> ลุกนั่ง 5 ครั้ง &gt;14 วินาที / ทำไม่ได้</label>
+      <label><input type="checkbox" id="gFall"> ล้มในปีที่ผ่านมา</label>
+      <label><input type="checkbox" id="gEye"> ตามัว / หูตึง</label>
+      <label><input type="checkbox" id="gUi"> ปัสสาวะเล็ดจนเป็นปัญหา</label>
+    </div>
+    <div class="out" id="cgaOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>ล้ม = อาการของโรค</b> ถามทุกปี หาสาเหตุทุกครั้ง</div></div>
+    <div class="pearl"><div><b>ใน รพ. ผู้สูงอายุทุกคนเสี่ยงล้มสูง</b> ไม่ต้องรอคะแนน</div></div>
+    <div class="pearl"><div><b>ออกกำลังกายทรงตัว ≥3 ครั้ง/สัปดาห์ ≥12 สัปดาห์</b> ได้ผลที่สุด</div></div>
+    <div class="pearl"><div><b>วิตามินดีไม่ป้องกันล้ม</b> ให้เมื่อเสี่ยงขาด</div></div>
+    <div class="pearl"><div><b>CPM, hydroxyzine, diazepam</b> = ยาทำให้สับสนและล้มที่พบบ่อยสุดในไทย</div></div>
+    <div class="pearl"><div><b>Glibenclamide → glipizide/DPP-4i</b> และผ่อนเป้า HbA1c</div></div>
+    <div class="pearl"><div><b>PPI &gt;8 สัปดาห์</b> ถามทุกครั้งว่ายังจำเป็นไหม</div></div>
+    <div class="pearl"><div><b>ให้ญาติหิ้วถุงยามาทั้งหมด</b> รวมยาซื้อเอง/สมุนไพร</div></div>
+    <div class="pearl"><div><b>Benzodiazepine ลด ~25% ทุก 2 สัปดาห์</b> ห้ามหยุดทันที</div></div>
+    <div class="pearl"><div><b>สับสนเฉียบพลัน = delirium</b> จนกว่าจะพิสูจน์ว่าไม่ใช่</div></div>
+    <div class="pearl"><div><b>Donepezil + ชีพจรช้า</b> → ระวังเป็นลม/ล้ม</div></div>
+    <div class="pearl"><div><b>SSRI ในผู้สูงอายุ → ตรวจ Na</b> ช่วงสัปดาห์แรกๆ</div></div>
+    <div class="pearl"><div><b>Grip &lt;28 (ชาย) / &lt;18 kg (หญิง)</b> = กล้ามเนื้ออ่อนแรง</div></div>
+    <div class="pearl"><div><b>สะโพกหัก → เริ่มยากระดูกพรุนก่อนกลับบ้าน</b></div></div>
+    <div class="pearl"><div><b>Denosumab ห้ามขาดยา</b> หยุดต้องต่อ bisphosphonate</div></div>
+    <div class="pearl"><div><b>ADL ≤11 → เข้าระบบ LTC</b> ผ่าน รพ.สต./อปท.</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../delirium/index.html">Delirium →</a> · <a href="../palliative/index.html">Palliative care →</a> · <a href="../dm/index.html">Diabetes →</a> · <a href="../htn/index.html">Hypertension →</a> · <a href="../hyponatremia/index.html">Hyponatremia →</a> · <a href="../syncope-brady/index.html">Syncope →</a> · <a href="../af/index.html">AF →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../adult-vaccine/index.html">Adult vaccine →</a> · <a href="../nutrition/index.html">Nutrition →</a> · <a href="../health-check/index.html">Health check →</a> · <a href="../cancer-screening/index.html">Cancer screening →</a></p>
+<footer class="col">
+  อ้างอิง: 1) คณะกรรมการพัฒนาเครื่องมือคัดกรองและประเมินสุขภาพผู้สูงอายุ กระทรวงสาธารณสุข. คู่มือการคัดกรองและประเมินสุขภาพผู้สูงอายุ พ.ศ. 2564. กรมการแพทย์ 2564 · 2) World Health Organization. Integrated care for older people (ICOPE): guidance for person-centred assessment and pathways in primary care, 2nd ed. Geneva: WHO 2024 · 3) Montero-Odasso M, van der Velde N, Martin FC, et al. World guidelines for falls prevention and management for older adults: a global initiative. Age Ageing 2022;51(9):afac205 · 4) US Preventive Services Task Force. Interventions to prevent falls in community-dwelling older adults: recommendation statement. JAMA 2024;332:51–7 · 5) 2023 American Geriatrics Society Beers Criteria Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults. J Am Geriatr Soc 2023;71:2052–81 · 6) O'Mahony D, Cherubini A, Guiteras AR, et al. STOPP/START criteria for potentially inappropriate prescribing in older people: version 3. Eur Geriatr Med 2023;14:625–32 · 7) Dent E, Morley JE, Cruz-Jentoft AJ, et al. Physical frailty: ICFSR international clinical practice guidelines for identification and management. J Nutr Health Aging 2019;23:771–87 · 8) Rockwood K, Theou O. Using the Clinical Frailty Scale in allocating scarce health care resources. Can Geriatr J 2020;23:210–5 · 9) Fried LP, Tangen CM, Walston J, et al. Frailty in older adults: evidence for a phenotype. J Gerontol A Biol Sci Med Sci 2001;56:M146–56 · 10) Chen LK, Woo J, Assantachai P, et al. Asian Working Group for Sarcopenia: 2019 consensus update on sarcopenia diagnosis and treatment. J Am Med Dir Assoc 2020;21:300–7.e2 · 11) Asian Working Group for Sarcopenia. A focus shift from sarcopenia to muscle health in the AWGS 2025 consensus update. Nat Aging 2025;5:2164–75 · 12) Malmstrom TK, Morley JE. SARC-F: a simple questionnaire to rapidly diagnose sarcopenia. J Am Med Dir Assoc 2013;14:531–2 · 13) Borson S, Scanlan J, Brush M, et al. The Mini-Cog: a cognitive "vital signs" measure for dementia screening in multi-lingual elderly. Int J Geriatr Psychiatry 2000;15:1021–7 · 14) NICE. Dementia: assessment, management and support for people living with dementia and their carers (NG97), 2018 · 15) Livingston G, Huntley J, Liu KY, et al. Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission. Lancet 2024;404:572–628 · 16) NICE. Urinary incontinence and pelvic organ prolapse in women: management (NG123), 2019 · 17) Charatcharoenwitthaya N, Jaisamrarn U, Songpatanasilp T, et al. Summary of the Thai Osteoporosis Foundation (TOPF) clinical practice guideline on the diagnosis and management of osteoporosis 2021. Osteoporos Sarcopenia 2023;9:45–52 · 18) LeBoff MS, Greenspan SL, Insogna KL, et al. The clinician's guide to prevention and treatment of osteoporosis. Osteoporos Int 2022;33:2049–102 · 19) Pottie K, Thompson W, Davies S, et al. Deprescribing benzodiazepine receptor agonists: evidence-based clinical practice guideline. Can Fam Physician 2018;64:339–51 · 20) European Pressure Ulcer Advisory Panel, National Pressure Injury Advisory Panel, Pan Pacific Pressure Injury Alliance. Prevention and treatment of pressure ulcers/injuries: clinical practice guideline, 3rd ed. 2019 · 21) สำนักงานหลักประกันสุขภาพแห่งชาติ. แนวทางการบริหารจัดการระบบการดูแลระยะยาวด้านสาธารณสุขสำหรับผู้มีภาวะพึ่งพิง (ฉบับปรับปรุงตามปีงบประมาณ)<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = ข้อมูลเสริมนอกแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','gerView');
+mountWalker({
+ start:{q:'ผู้สูงอายุมาด้วยเรื่องอะไร?',o:[['ล้ม / เดินไม่มั่นคง / กลัวล้ม','fall'],['ความจำไม่ดี / สับสน','cog'],['ยาหลายตัว / สงสัยผลข้างเคียงยา','med'],['อ่อนเพลีย น้ำหนักลด ช่วยตัวเองได้ลดลง','frail'],['ตรวจสุขภาพประจำปี ไม่มีอาการ','scr']]},
+ fall:{q:'ผู้ป่วยอยู่ที่ไหน?',o:[['ชุมชน / OPD','fallC'],['นอนโรงพยาบาล / สถานดูแลผู้สูงอายุ','fallH']]},
+ fallH:{leaf:true,cls:'danger',t:'ถือว่าเสี่ยงสูงทุกคน',b:'ไม่ต้องใช้คะแนนคัดกรอง · ให้ความรู้เรื่องล้มทุกคน · แผนป้องกันรายคน: ทบทวนยา (ยานอนหลับ ยาจิตเวช ยาลดความดัน), ความดันตกเมื่อลุกยืน, delirium, ปัสสาวะกลางคืน, เตียงต่ำ ไฟกลางคืน รองเท้ากันลื่น, ช่วยพาเดิน/กายภาพ · สถานดูแล: วิตามินดีเป็นส่วนหนึ่งของการดูแลหลายด้าน'},
+ fallC:{q:'มีข้อใดข้อหนึ่ง: ล้มแล้วบาดเจ็บต้องรักษา · ล้ม ≥2 ครั้งใน 12 เดือน · frailty · นอนกับพื้นลุกเองไม่ได้ ≥1 ชม. · สงสัยหมดสติ?',o:[['มี','fallHi'],['ไม่มี (ล้มครั้งเดียวไม่รุนแรง หรือแค่กังวล)','gait']]},
+ fallHi:{leaf:true,cls:'danger',t:'เสี่ยงสูง → ประเมินหลายปัจจัย',b:'ความดันตกเมื่อลุกยืน · ยา (STOPPFall) · หัวใจ/ECG ถ้าสงสัยหมดสติ · เดิน/ทรงตัว · ตา · ความจำ · เท้า/รองเท้า · ปัสสาวะ · บ้าน · กระดูกพรุน · แล้วแก้หลายด้านพร้อมกัน + <b>ออกกำลังกายทรงตัว ≥3 ครั้ง/สัปดาห์ ≥12 สัปดาห์</b> · สงสัยหมดสติ → ดูหน้า <a href="../syncope-brady/index.html">Syncope</a>'},
+ gait:{q:'Gait speed &lt;0.8 m/s หรือ TUG &gt;15 วินาที?',o:[['ใช่ (หรือทำไม่ได้)','fallInt'],['ไม่ใช่','fallLo']]},
+ fallInt:{leaf:true,cls:'warn',t:'เสี่ยงปานกลาง',b:'ออกกำลังกายฝึกทรงตัว + กล้ามเนื้อขา หรือส่งกายภาพบำบัด · ทบทวนยา · ประเมินซ้ำเมื่อมีล้มใหม่'},
+ fallLo:{leaf:true,cls:'ok',t:'เสี่ยงต่ำ',b:'ให้ความรู้ป้องกันล้ม · ชวนออกกำลังกายเพื่อสุขภาพ · ประเมินซ้ำปีละครั้ง · <span class="muted">คู่มือไทยถือ TUG ≥12 วินาทีว่าเสี่ยง → ถ้า 12–15 วินาที แนะนำฝึกทรงตัวด้วย</span>'},
+ cog:{q:'เกิดเฉียบพลัน (ชม.–วัน) ขึ้นๆ ลงๆ ความตั้งใจลดลง?',o:[['ใช่','del'],['ไม่ — ค่อยเป็นค่อยไปหลายเดือน','dem']]},
+ del:{leaf:true,cls:'danger',t:'คิดถึง delirium ก่อน',b:'ภาวะฉุกเฉิน · หาสาเหตุ (ติดเชื้อ ยา Na/glucose ปัสสาวะคั่ง อุจจาระอัดแน่น ปวด) · ไม่ทดสอบความจำเพื่อวินิจฉัยสมองเสื่อมตอนนี้ · ดูหน้า <a href="../delirium/index.html">Delirium</a>'},
+ dem:{q:'Mini-Cog ≤3 หรือ TMSE/MMSE-Thai ผิดปกติ?',o:[['ผิดปกติ','demW'],['ปกติ แต่ญาติยังกังวล','demN']]},
+ demW:{q:'กระทบการใช้ชีวิตประจำวัน (เงิน ยา เดินทาง ทำอาหาร)?',o:[['กระทบ','demD'],['ยังไม่กระทบ','mci']]},
+ demD:{leaf:true,cls:'warn',t:'สงสัยภาวะสมองเสื่อม',b:'หาสาเหตุที่แก้ได้: ยา, TSH, B12, Na/Ca, glucose, Cr, LFT, CBC ± VDRL/HIV · CT/MRI เมื่อมีข้อบ่งชี้ · ซึมเศร้า หู ตา · พิจารณา <b>donepezil 5 mg → 10 mg</b> (ดูชีพจร) · ความปลอดภัย ผู้ดูแล ACP · ไม่ใช้ antipsychotic แบบ routine'},
+ mci:{leaf:true,cls:'ok',t:'Mild cognitive impairment',b:'ไม่มีหลักฐานว่า AChEI ช่วยใน MCI · คุมปัจจัยเสี่ยง (BP, DM, lipid, หู ตา ออกกำลังกาย สังคม) · หยุดยา anticholinergic · ตรวจซ้ำ 6–12 เดือน'},
+ demN:{leaf:true,cls:'ok',t:'ผลคัดกรองปกติ',b:'คัดกรองซึมเศร้า (2Q) · หู ตา การนอน ยา · นัดประเมินซ้ำ 6–12 เดือน หรือเร็วกว่าถ้ามีอาการใหม่'},
+ med:{q:'มียาที่อยู่ใน Beers/STOPP (เช่น CPM, benzodiazepine, glibenclamide, NSAID, PPI นาน, muscle relaxant)?',o:[['มี','medB'],['ไม่แน่ใจ / ใช้ยา ≥5 ตัว','medR']]},
+ medB:{leaf:true,cls:'warn',t:'เลิกหรือเปลี่ยนยา',b:'เรียงลำดับยาที่อันตรายสุดก่อน · คุยเป้าหมายกับผู้ป่วย · ลดทีละตัว (benzodiazepine ลด ~25% ทุก 2 สัปดาห์) · ใช้เครื่องมือที่ 1 ด้านล่าง · บันทึกเหตุผลที่หยุด'},
+ medR:{leaf:true,cls:'ok',t:'ทบทวนยาทั้งหมด',b:'ให้หิ้วถุงยามาทั้งหมด (รวมยาซื้อเอง สมุนไพร) · ดูข้อบ่งชี้ทีละตัว · หา prescribing cascade · ตรวจขนาดตามไต · มองหายาที่ควรได้แต่ไม่ได้ (START)'},
+ frail:{q:'มีโรคเฉียบพลันหรือสัญญาณอันตราย (ติดเชื้อ delirium ซีด น้ำหนักลดมาก สงสัยมะเร็ง)?',o:[['มี / สงสัย','frAc'],['ไม่มี','frCfs']]},
+ frAc:{leaf:true,cls:'danger',t:'หาสาเหตุก่อน',b:'รักษาโรคเฉียบพลัน · น้ำหนักลด &gt;5% ใน 6–12 เดือน → หาสาเหตุ (ฟัน กลืน ซึมเศร้า ยา มะเร็ง thyroid DM) · ประเมิน CFS จากสภาพก่อนป่วย 2 สัปดาห์'},
+ frCfs:{q:'Clinical Frailty Scale (สภาพก่อนป่วย)?',o:[['1–3','frFit'],['4–6','frMid'],['7–9','frSev']]},
+ frFit:{leaf:true,cls:'ok',t:'ยังแข็งแรง',b:'ส่งเสริมออกกำลังกาย (resistance + ทรงตัว) โปรตีนพอ วัคซีน · คัดกรองซ้ำปีละครั้ง'},
+ frMid:{leaf:true,cls:'warn',t:'เปราะบาง (ยังแก้ได้มาก)',b:'SARC-F + grip + gait speed (AWGS) · <b>resistance exercise</b> 2–3 ครั้ง/สัปดาห์ · โปรตีน ~1.0–1.2 g/kg/วัน · ทบทวนยา · หาซึมเศร้า ซีด hypothyroid B12 · ป้องกันล้ม · ACP'},
+ frSev:{leaf:true,cls:'violet',t:'เปราะบางรุนแรง',b:'เน้นคุณภาพชีวิต อาการ และเป้าหมายของผู้ป่วย · ลดยาที่ไม่จำเป็น (statin ป้องกันปฐมภูมิ, เป้า HbA1c เข้มงวด) · ACP · ผู้ดูแล · ADL ≤11 → LTC · พิจารณา <a href="../palliative/index.html">palliative care</a>'},
+ scr:{leaf:true,cls:'ok',t:'คัดกรองประจำปี',b:'คู่มือไทย 2564: Barthel ADL · Mini-Cog · 2Q · TUG + ประวัติล้ม · MNA-SF · Snellen · finger rub · ช่องปาก · ปัสสาวะเล็ด · การนอน · FRAIL · OSTA/FRAX · DM/HT/CVD risk · วัคซีน · ผิดปกติด้านไหนประเมินเชิงลึกด้านนั้น (ใช้เครื่องมือที่ 4)'}
+},'apTrail','apStage');
+
+/* ---------- 1) medication checker ---------- */
+function medChk(){
+  const age=num('mAge'),eg=num('mEg'),n=num('mN');const c=id=>$(id).checked;const out=$('medOut');const L=[];
+  if(age===null){out.textContent='ใส่อายุของผู้ป่วย';return}
+  if(age<18||age>120){out.textContent='อายุไม่สมเหตุผล — ตรวจตัวเลขอีกครั้ง';return}
+  if(age<65){out.innerHTML='Beers 2023 และ STOPP/START ใช้กับอายุ <b>≥65 ปี</b> · อายุ '+age+' ปี ให้ทบทวนยาตามปกติ (ถ้าเปราะบางมาก ใช้หลักเดียวกันได้ด้วยวิจารณญาณ)';return}
+  if(eg!==null&&(eg<=0||eg>200)){out.textContent='eGFR/CrCl ไม่สมเหตุผล (ใส่ 1–200 หรือเว้นว่าง)';return}
+  if(n!==null&&(n<0||n>60||n!==Math.round(n))){out.textContent='จำนวนยาไม่สมเหตุผล (ใส่จำนวนเต็ม 0–60 หรือเว้นว่าง)';return}
+  const ids=[...document.querySelectorAll('#tMed .checks input')].filter(e=>e.id[0]==='d'&&e.checked);
+  if(!ids.length&&n===null){out.textContent='เลือกยาที่ผู้ป่วยใช้อยู่ (หรือใส่จำนวนยาทั้งหมด)';return}
+  const F=[];const add=(lvl,t)=>F.push([lvl,t]);
+  const dem=c('cDem')||c('cDel');
+  /* Beers / STOPP items */
+  if(c('dCpm')||c('dHyd'))add(2,'<b>Antihistamine รุ่นแรก</b> (CPM/hydroxyzine/diphenhydramine/dimenhydrinate) — anticholinergic สูง: สับสน ปัสสาวะคั่ง ท้องผูก ล้ม · Beers: <b>avoid</b> → cetirizine/loratadine/fexofenadine · ผิวแห้งคัน → emollient · หวัด → NSS ล้างจมูก'+(eg!==null&&eg<30?' · CrCl &lt;30: cetirizine 5 mg/วัน':''));
+  if(c('dBzd')||c('dZ'))add(2,'<b>Benzodiazepine/Z-drug</b> — ความจำแย่ delirium ล้ม กระดูกหัก · Beers: <b>avoid</b> → ค่อยๆ ลด <b>~25% ทุก 2 สัปดาห์</b> (ช่วงท้าย 12.5%) · CBT-I/สุขอนามัยการนอน · หาสาเหตุนอนไม่หลับ');
+  if(c('dGlib'))add(2,'<b>Glibenclamide/glimepiride</b> — น้ำตาลต่ำนานและรุนแรง · Beers 2023: เลี่ยง SU ทุกตัวถ้าใช้ยาอื่นได้ → <b>DPP-4i</b> หรือ SGLT2i'+(eg!==null&&eg<20?' (eGFR &lt;20 ไม่เริ่ม SGLT2i)':'')+' หรือถ้าต้องใช้ SU → glipizide 2.5–5 mg ขนาดต่ำ · ผ่อนเป้า HbA1c ตามสุขภาพ');
+  if(c('dGlip'))add(1,'<b>Glipizide/gliclazide</b> — SU ออกฤทธิ์สั้นกว่า แต่ Beers 2023 ยังให้เลี่ยงเป็นยาแรก/ยาเสริมถ้าใช้ยาอื่นได้ · ใช้ขนาดต่ำ สอนอาการน้ำตาลต่ำ'+(eg!==null&&eg<30?' · <b>eGFR &lt;30 เสี่ยงน้ำตาลต่ำมากขึ้น</b>':''));
+  if(c('dSsi'))add(2,'<b>Insulin sliding scale อย่างเดียว</b> — Beers: <b>avoid</b> → basal ± prandial + correction');
+  if(c('dMet')&&eg!==null){if(eg<30)add(3,'<b>Metformin + eGFR '+eg+'</b> — <b>ห้ามใช้เมื่อ eGFR &lt;30</b> (lactic acidosis) → หยุด');else if(eg<45)add(1,'<b>Metformin + eGFR '+eg+'</b> — ไม่เริ่มใหม่ · ถ้าใช้อยู่ max ~1,000 mg/วัน ตาม eGFR ทุก 3–6 เดือน · ตรวจ B12 เมื่อใช้นาน');}
+  if(c('dNsaid')){let t='<b>NSAID กิน</b> — เลือดออกทางเดินอาหาร ไตวาย ความดันขึ้น หัวใจวาย · Beers: เลี่ยงใช้เรื้อรัง';
+    if(eg!==null&&eg<30)t+=' · <b>CrCl/eGFR &lt;30: avoid</b>';
+    if(c('cHf'))t+=' · <b>หัวใจวาย: avoid</b>';
+    if(c('cGi'))t+=' · เคยแผล/เลือดออก: <b>avoid</b> ถ้าเลี่ยงไม่ได้ต้องให้ PPI';
+    t+=' → <b>paracetamol</b> 500–1,000 mg ทุก 6–8 ชม. (เปราะบาง/ผอม/ตับไม่ดี ≤3 g/วัน) · NSAID ทาเฉพาะที่ · ถ้าจำเป็น: สั้นที่สุด + PPI';
+    add((eg!==null&&eg<30)||c('cHf')||c('cGi')?3:2,t);}
+  if(c('dNsaid')&&c('dAcei')&&c('dDiu'))add(3,'<b>"Triple whammy"</b>: NSAID + ACEi/ARB + ยาขับปัสสาวะ → AKI · หยุด NSAID ก่อน <span class="tag add">เสริม</span>');
+  if(c('dNsaid')&&(c('dWar')||c('dRiva')||c('dDoac')||c('dAsp')))add(3,'<b>NSAID + ยาต้านเกล็ดเลือด/ยาต้านการแข็งตัวของเลือด</b> → เลือดออกมาก · เลี่ยง หรือให้ PPI ถ้าจำเป็นต้องใช้ระยะสั้น');
+  if(c('dMr'))add(2,'<b>ยาคลายกล้ามเนื้อ</b> (orphenadrine/methocarbamol/carisoprodol) — anticholinergic ง่วง ล้ม ได้ผลน้อย · Beers: <b>avoid</b> → ประคบร้อน กายภาพ paracetamol');
+  if(c('dTol'))add(1,'<b>Tolperisone/eperisone</b> — ไม่อยู่ใน Beers แต่ประโยชน์จำกัด · ใช้สั้นที่สุด หยุดเมื่ออาการดีขึ้น <span class="tag add">เสริม</span>');
+  if(c('dTram')){let t='<b>Tramadol</b> — Na ต่ำ ชัก serotonin syndrome (ร่วม SSRI) ง่วง ล้ม';if(eg!==null&&eg<30)t+=' · <b>CrCl &lt;30: ชนิดออกฤทธิ์ทันทีให้ห่างขึ้น (ทุก 12 ชม., max 200 mg/วัน) · เลี่ยงชนิดออกฤทธิ์นาน</b>';add(eg!==null&&eg<30?2:1,t);}
+  if((c('dTram')||c('dOpi'))&&(c('dBzd')||c('dZ')))add(3,'<b>Opioid + benzodiazepine/Z-drug</b> → กดการหายใจ เสียชีวิต · Beers: <b>avoid</b> · ลด/หยุดตัวใดตัวหนึ่ง');
+  if((c('dTram')||c('dOpi'))&&c('dGaba'))add(2,'<b>Opioid + gabapentinoid</b> → ง่วง กดการหายใจ · ใช้ขนาดต่ำสุด เฝ้าระวัง');
+  if((c('dTram')||c('dOpi'))&&!c('dLax'))add(1,'<b>START</b>: ใช้ opioid ประจำ → ให้<b>ยาระบาย</b> (senna ± PEG/lactulose) ตั้งแต่วันแรก');
+  if(c('dGaba')){if(eg!==null&&eg<60)add(2,'<b>Gabapentin/pregabalin + CrCl '+eg+'</b> — ต้อง<b>ลดขนาดตามไต</b> (สะสม → ซึม สับสน ล้ม) · เช่น gabapentin CrCl 30–59: 400–1,400 mg/วัน แบ่ง 2 ครั้ง · 15–29: 200–700 mg/วัน · &lt;15: 100–300 mg/วัน · pregabalin CrCl 30–60: 75–300 mg/วัน · 15–30: 25–150 mg/วัน · &lt;15: 25–75 mg/วัน (ตามฉลาก)');else if(eg===null)add(1,'<b>Gabapentin/pregabalin</b> — ขนาดขึ้นกับไต · ใส่ eGFR เพื่อเช็ค');}
+  if(c('dTca'))add(2,'<b>Amitriptyline/nortriptyline</b> — anticholinergic ความดันตก QT ยาว ล้ม · Beers: <b>avoid</b> → ปวดปลายประสาท: gabapentin/pregabalin (ปรับตามไต) หรือ duloxetine'+(eg!==null&&eg<30?' (<b>duloxetine avoid CrCl &lt;30</b>)':'')+' · ซึมเศร้า: sertraline');
+  if(c('dSsri')){let t='<b>SSRI/SNRI</b> — Na ต่ำ (SIADH) เลือดออก ล้ม · ตรวจ Na ก่อนเริ่มและในสัปดาห์แรกๆ';if(c('cNa'))t+=' · <b>เคย Na ต่ำ: ระวังมาก ตรวจ Na บ่อย</b>';if(c('dDiu'))t+=' · ร่วม diuretic เพิ่มเสี่ยง Na ต่ำ';add(c('cNa')?2:1,t);}
+  if(c('dAp')){let t='<b>Antipsychotic</b>';if(c('cPd'))t+=' — <b>Parkinson/DLB: haloperidol และยารุ่นแรก avoid</b> (แพ้รุนแรง) · ปรึกษาเฉพาะทาง (quetiapine ขนาดต่ำ/clozapine)';else if(dem)t+=' — สมองเสื่อม/delirium: เพิ่ม stroke และการเสียชีวิต · Beers: <b>avoid</b> ยกเว้นวิธีอื่นไม่ได้ผลและเสี่ยงอันตราย · ขนาดต่ำสุด ทบทวนทุก 6 สัปดาห์';else t+=' — ตรวจว่ามีข้อบ่งชี้ทางจิตเวชชัดเจน · ล้ม ความดันตก ง่วง';add(dem||c('cPd')?3:1,t);}
+  if(c('dFlu'))add(c('cPd')?3:2,'<b>Flunarizine/cinnarizine</b> ใช้ยาว — parkinsonism จากยา ซึมเศร้า ง่วง'+(c('cPd')?' · <b>มี Parkinson อยู่แล้ว: หยุด</b>':'')+' → หาสาเหตุเวียนหัว (BPPV → Epley) ใช้สั้นๆ <span class="tag add">เสริม</span>');
+  if(c('dPpi'))add(1,'<b>PPI &gt;8 สัปดาห์</b> — C. difficile ปอดอักเสบ กระดูกหัก Mg/B12 ต่ำ · ใช้ต่อได้ถ้าใช้ steroid/NSAID เรื้อรัง, erosive esophagitis, Barrett, หยุดแล้วกลับเป็น'+(c('cGi')?' · <b>เคยเลือดออก/แผล: อาจยังมีข้อบ่งชี้</b>':'')+' → ไม่มีข้อบ่งชี้: ลดขนาด → กินเมื่อมีอาการ หรือ H2 blocker'+(eg!==null&&eg<50?' (famotidine ลดขนาดเมื่อ CrCl &lt;50)':''));
+  if(c('dMeto'))add(c('cPd')?3:2,'<b>Metoclopramide</b> — EPS/tardive dyskinesia · Beers: <b>avoid</b> ยกเว้น gastroparesis'+(c('cPd')?' · <b>Parkinson: ห้าม</b>':'')+' (ถ้าใช้: ≤12 สัปดาห์'+(eg!==null&&eg<60?' และลดขนาดตามไต':'')+')');
+  if(c('dOxy'))add(dem?3:2,'<b>Antimuscarinic กระเพาะปัสสาวะ</b> — anticholinergic'+(dem?' · <b>สมองเสื่อม/delirium: avoid</b>':'')+' → bladder training ก่อน · <b>mirabegron</b> 25 mg/วัน'+(eg!==null&&eg<15?' (<b>eGFR &lt;15 ไม่ใช้</b>)':eg!==null&&eg<30?' (eGFR 15–29: max 25 mg)':' → 50 mg ได้')+' · ห้ามถ้าความดันสูงรุนแรงคุมไม่ได้');
+  const cnsN=[c('dBzd')||c('dZ'),c('dTram')||c('dOpi'),c('dGaba'),c('dTca')||c('dSsri'),c('dAp'),c('dMr')].filter(Boolean).length;
+  if(cnsN>=3)add(3,'<b>ยาออกฤทธิ์ต่อสมอง ≥3 กลุ่ม</b> ('+cnsN+' กลุ่ม) → ล้ม กระดูกหัก · Beers: <b>avoid</b> · ลดให้น้อยที่สุด');
+  if(c('cFall')){const fr=[c('dBzd')||c('dZ')?'benzodiazepine/Z-drug':null,c('dAp')?'antipsychotic':null,c('dTca')||c('dSsri')?'antidepressant':null,c('dTram')||c('dOpi')?'opioid':null,c('dGaba')?'gabapentinoid':null,c('dAlpha')?'alpha-blocker':null,c('dCpm')||c('dHyd')?'antihistamine':null,c('dGlib')||c('dGlip')||c('dSsi')?'SU/insulin':null].filter(Boolean);
+    if(fr.length)add(2,'<b>เคยล้ม + ยาเพิ่มความเสี่ยงล้ม</b>: '+fr.join(', ')+' → ลด/หยุด (STOPPFall) · วัดความดันท่านอน-ยืน');}
+  if(c('dAsp'))add(1,'<b>Aspirin เพื่อป้องกันปฐมภูมิ</b> — เลือดออก &gt; ประโยชน์ · Beers: <b>ไม่เริ่มใหม่ พิจารณาหยุด</b> (ยังใช้ต่อถ้ามี CVD แล้ว)');
+  if(c('dWar'))add(1,'<b>Warfarin เริ่มใหม่</b> — Beers 2023: เลี่ยงเป็นยาแรกใน AF/VTE ถ้าใช้ DOAC ได้ → apixaban (ตามสิทธิ์) · ถ้าใช้อยู่แล้ว TTR ดี ใช้ต่อได้');
+  if(c('dRiva'))add(1,'<b>Rivaroxaban ระยะยาว</b> — เลือดออกมากกว่า apixaban · Beers: เลี่ยงสำหรับ AF/VTE ระยะยาว'+(eg!==null&&eg<15?' · <b>CrCl '+eg+' (&lt;15): ไม่แนะนำ</b> ตามฉลาก':eg!==null&&eg<50?' · CrCl '+eg+': ใช้ 15 mg/วัน (AF) ตามฉลาก':''));
+  if(c('dDoac')&&eg!==null&&eg<30)add(2,'<b>DOAC + CrCl '+eg+'</b> — ตรวจขนาดตามฉลาก: <b>dabigatran avoid CrCl &lt;30</b> · apixaban ลดเป็น 2.5 mg วันละ 2 ครั้ง ถ้ามี ≥2 ใน (อายุ ≥80, น้ำหนัก ≤60 kg, Cr ≥1.5) · edoxaban CrCl 15–50: 30 mg'+(eg<15?' · <b>CrCl &lt;15: DOAC ส่วนใหญ่ไม่แนะนำ/ข้อมูลจำกัด → ปรึกษาอายุรแพทย์</b>':''));
+  if(c('dDig'))add(2,'<b>Digoxin &gt;0.125 mg/วัน</b> — Beers: avoid ขนาดสูง (พิษเพิ่มเมื่อไตเสื่อม)'+(eg!==null&&eg<30?' · <b>CrCl &lt;30: ลดขนาด ตามระดับยา</b>':'')+' · ไม่ใช้เป็นยาแรกคุมอัตรา AF');
+  if(c('dAlpha'))add(2,'<b>Alpha-blocker เป็นยาลดความดัน</b> — ความดันตกเมื่อลุกยืน ล้ม · Beers: avoid → ACEi/ARB/CCB/thiazide ตามแนวทาง (ถ้าใช้รักษา BPH → tamsulosin)');
+  if(c('dNif'))add(3,'<b>Nifedipine ออกฤทธิ์สั้น</b> — ความดันตกเร็ว หัวใจขาดเลือด · Beers: <b>avoid</b> → amlodipine/nifedipine ออกฤทธิ์นาน');
+  if(c('dSpi')){if(eg!==null&&eg<30)add(3,'<b>Spironolactone/amiloride + CrCl '+eg+'</b> — Beers: <b>avoid เมื่อ CrCl &lt;30</b> (K สูง)');else if(c('dAcei'))add(1,'<b>ACEi/ARB + K-sparing diuretic</b> — ตรวจ K และ Cr สม่ำเสมอ'+(eg===null?' · ใส่ eGFR เพื่อเช็ค':''));}
+  if(c('dBaclo')&&eg!==null&&eg<60)add(3,'<b>Baclofen + eGFR '+eg+'</b> — Beers 2023: <b>avoid เมื่อ eGFR &lt;60</b> (สับสน ซึม encephalopathy)');
+  if(c('dNitro')&&eg!==null&&eg<30)add(3,'<b>Nitrofurantoin + CrCl '+eg+'</b> — Beers: <b>avoid</b> (ไม่ได้ผล + พิษ) → เปลี่ยนยาตามผลเพาะเชื้อ');
+  if(c('dColch')&&eg!==null&&eg<30)add(2,'<b>Colchicine + CrCl '+eg+'</b> — ลดขนาด ตามอาการพิษ (ท้องเสีย กล้ามเนื้ออ่อนแรง เม็ดเลือดต่ำ) · ระวังร่วม clarithromycin/statin');
+  if(c('dDiu')&&c('cNa')&&!c('dSsri'))add(1,'<b>เคย Na ต่ำ + thiazide/diuretic</b> — ตรวจ Na · พิจารณาเปลี่ยนยาถ้า Na ต่ำซ้ำ');
+  /* START omissions */
+  if(c('cAf')&&!(c('dWar')||c('dRiva')||c('dDoac')))add(2,'<b>START: AF ยังไม่ได้ยาต้านการแข็งตัวของเลือด</b> → ประเมิน CHA₂DS₂-VA/เลือดออก · aspirin ไม่ใช่ทางเลือก · ดูหน้า AF');
+  if(c('cOst')&&!c('dBone'))add(2,'<b>START: กระดูกพรุน/หักจากแรงน้อย ยังไม่ได้ยา</b> → bisphosphonate'+(eg!==null&&eg<35?' (<b>CrCl &lt;35: alendronate/zoledronic ไม่ได้ → denosumab ระวัง Ca ต่ำ</b>)':'')+' + Ca/วิตามินดี');
+  if(c('dBone')&&eg!==null&&eg<35)add(2,'<b>Bisphosphonate + CrCl '+eg+'</b> — alendronate/zoledronic acid <b>ไม่แนะนำเมื่อ CrCl &lt;35</b> (risedronate/ibandronate &lt;30) · ถ้าเป็น denosumab: ไม่ต้องปรับขนาดแต่ตรวจ Ca');
+  /* compose */
+  if(eg===null)L.push('<span class="muted">ไม่ได้ใส่ eGFR — ข้ามการเช็คขนาดยาตามไต</span>');
+  if(n!==null){if(n<ids.length)L.push('<span class="muted">จำนวนยาที่ใส่น้อยกว่ายาที่เลือก — ตรวจอีกครั้ง</span>');else if(n>=10)L.push('ใช้ยา <b>'+n+' ตัว = hyperpolypharmacy</b> → ทบทวนยาทั้งหมดอย่างเป็นระบบ');else if(n>=5)L.push('ใช้ยา <b>'+n+' ตัว = polypharmacy</b> → ทบทวนข้อบ่งชี้ทีละตัว');else L.push('ใช้ยา '+n+' ตัว');}
+  if(!F.length){L.push(ids.length?'ไม่พบยาที่ตรงเกณฑ์ในรายการนี้ — ยังควรทบทวนข้อบ่งชี้ ขนาด และยาที่ซื้อเอง/สมุนไพร':'ยังไม่ได้เลือกยา — เลือกยาที่ใช้อยู่เพื่อเช็ค');out.innerHTML=L.join('<br>');return}
+  F.sort((a,b)=>b[0]-a[0]);
+  const tag={3:'<span class="rec no">ด่วน</span> ',2:'<span class="rec s1">ควรเปลี่ยน</span> ',1:'<span class="rec">ทบทวน</span> '};
+  L.push('พบ <b>'+F.length+'</b> ประเด็น (เรียงจากสำคัญมากไปน้อย):<ol>'+F.map(f=>'<li>'+tag[f[0]]+f[1]+'</li>').join('')+'</ol>ลดทีละตัว ติดตามอาการถอนยา · บันทึกเหตุผลที่หยุด');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tMed input',medChk);
+
+/* ---------- 2) fall risk ---------- */
+function fallRisk(){
+  const set=$('fSet').value,age=num('fAge'),n=num('fN'),gs=num('fGs'),tug=num('fTug');const c=id=>$(id).checked;const out=$('fallOut');const L=[];
+  if(age===null){out.textContent='ใส่อายุ';return}
+  if(age<18||age>120){out.textContent='อายุไม่สมเหตุผล — ตรวจตัวเลขอีกครั้ง';return}
+  if(age<60){out.textContent='แนวทางนี้สำหรับผู้สูงอายุ (≥60–65 ปี) — อายุน้อยกว่านี้ให้หาสาเหตุการล้มเป็นรายโรค';return}
+  const HIGH='<b>ประเมินหลายปัจจัย</b>: วัดความดันท่านอน ≥5 นาทีแล้วยืน ทุก 1 นาที ≥3 นาที · ทบทวนยา (STOPPFall) · ECG/หัวใจถ้าสงสัยหมดสติ · เดิน/ทรงตัว กำลังขา · ตา · ความจำ/delirium · เท้า รองเท้า · ปัสสาวะกลางคืน · บ้าน · กระดูกพรุน (DXA/ยา) · แล้วแก้หลายด้านพร้อมกัน + <b>ออกกำลังกายทรงตัว ≥3 ครั้ง/สัปดาห์ ≥12 สัปดาห์</b> (กายภาพ) · สอนวิธีลุกจากพื้น';
+  if(set!=='com'){
+    L.push('<b style="color:var(--danger)">เสี่ยงสูง</b> — '+(set==='hosp'?'ผู้สูงอายุที่นอนโรงพยาบาล':'ผู้อยู่ในสถานดูแลผู้สูงอายุ')+' <b>ถือว่าเสี่ยงสูงทุกคน</b> (ไม่ต้องใช้คะแนนคัดกรอง)');
+    L.push(set==='hosp'?'ให้ความรู้เรื่องล้มทุกคน · แผนป้องกันรายคน: ทบทวนยา, delirium, ความดันตกเมื่อลุกยืน, ปัสสาวะกลางคืน/พาเข้าห้องน้ำ, เตียงต่ำ ไฟกลางคืน รองเท้ากันลื่น, พาเดินเร็ว (ลดนอนติดเตียง)':'ประเมินหลายปัจจัยทุกคน · <b>ทบทวนและลดยาทุกครั้ง</b> · ออกกำลังกายตามความสามารถ · วิตามินดีเป็นส่วนหนึ่งของการดูแล · ปรับสิ่งแวดล้อม');
+    if(c('fLoc'))L.push('สงสัยหมดสติ → หาสาเหตุหัวใจ/syncope');
+    out.innerHTML=L.join('<br>');return}
+  if(n===null){out.textContent='ใส่จำนวนครั้งที่ล้มใน 12 เดือน (ไม่เคยล้มใส่ 0)';return}
+  if(n<0||n>100||n!==Math.round(n)){out.textContent='จำนวนครั้งที่ล้มไม่สมเหตุผล (ใส่จำนวนเต็ม 0–100)';return}
+  if(gs!==null&&(gs<0.05||gs>3)){out.textContent='Gait speed ไม่สมเหตุผล (ปกติ 0.1–2 m/s) — ตรวจหน่วย (m/s) หรือเว้นว่าง';return}
+  if(tug!==null&&(tug<3||tug>300)){out.textContent='TUG ไม่สมเหตุผล (ใส่ 3–300 วินาที) หรือเว้นว่าง';return}
+  const sev=[n>=2?'ล้ม '+n+' ครั้งใน 12 เดือน':null,c('fInj')&&n>=1?'ล้มแล้วบาดเจ็บต้องรักษา':null,c('fFloor')&&n>=1?'ลุกจากพื้นเองไม่ได้ ≥1 ชม.':null,c('fLoc')&&n>=1?'สงสัยหมดสติ':null,c('fFrail')&&n>=1?'frailty':null].filter(Boolean);
+  if(n===0&&(c('fInj')||c('fFloor')))L.push('<span class="muted">ใส่ล้ม 0 ครั้ง แต่เลือกบาดเจ็บ/ลุกจากพื้นไม่ได้ — ตรวจข้อมูลอีกครั้ง</span>');
+  const impaired=c('fUn')||(gs!==null&&gs<0.8)||(tug!==null&&tug>15);
+  const gtxt=[gs!==null?'gait speed '+gs+' m/s'+(gs<0.8?' (&lt;0.8)':''):null,tug!==null?'TUG '+tug+' วินาที'+(tug>15?' (&gt;15)':''):null,c('fUn')?'ทำแบบทดสอบไม่ได้':null].filter(Boolean).join(' · ');
+  const thai=tug!==null&&tug>=12&&tug<=15;
+  if(n===0&&!c('fConc')){
+    L.push('<b style="color:var(--ok)">เสี่ยงต่ำ</b> — ไม่ล้มใน 12 เดือนและไม่กังวลเรื่องการทรงตัว');
+    L.push('ให้ความรู้ป้องกันล้ม · ชวนออกกำลังกาย (ทรงตัว + กล้ามเนื้อ) · ถามซ้ำปีละครั้ง');
+    if(impaired)L.push('แต่ '+gtxt+' → ผิดปกติ: แนะนำออกกำลังกายเฉพาะ/กายภาพ และถามอาการเดินไม่มั่นคงอีกครั้ง');
+    else if(thai)L.push('<span class="tag th">ไทย</span> TUG ≥12 วินาที = เสี่ยงตามคู่มือไทย → แนะนำฝึกทรงตัว');
+    if(c('fFrail'))L.push('มี frailty → ดูแล frailty (resistance exercise โปรตีน ทบทวนยา) และติดตามใกล้ชิด');
+    out.innerHTML=L.join('<br>');return}
+  if(sev.length){
+    L.push('<b style="color:var(--danger)">เสี่ยงสูง</b> — '+sev.join(' · '));
+    L.push(HIGH);
+    if(c('fLoc'))L.push('สงสัยหมดสติ → ECG, ประวัติ syncope, ความดันท่ายืน, ฟังเสียงหัวใจ · ดูหน้า Syncope');
+    if(c('fInj'))L.push('ล้มแล้วบาดเจ็บ → ประเมินกระดูกพรุน (ถ้ากระดูกหักจากแรงน้อย = ให้ยาได้เลย)');
+    if(c('fFloor'))L.push('ลุกจากพื้นไม่ได้ → อุปกรณ์ขอความช่วยเหลือ/ไม่อยู่คนเดียว · ระวัง rhabdomyolysis, แผลกดทับ, ขาดน้ำ');
+    out.innerHTML=L.join('<br>');return}
+  /* single non-severe fall or concern only */
+  if(!c('fUn')&&gs===null&&tug===null){out.innerHTML=(n===1?'ล้ม 1 ครั้งไม่รุนแรง':'ไม่ล้มแต่กังวล/เดินไม่มั่นคง')+' → <b>วัด gait speed (เดิน 4 m) หรือ TUG</b> เพื่อแบ่งระดับ';return}
+  if(impaired){
+    L.push('<b style="color:var(--warn)">เสี่ยงปานกลาง</b> — '+(n===1?'ล้ม 1 ครั้งไม่รุนแรง':'กังวล/เดินไม่มั่นคง')+' + เดิน/ทรงตัวผิดปกติ ('+gtxt+')');
+    L.push('<b>ออกกำลังกายเฉพาะ</b>: ทรงตัว + กล้ามเนื้อขา ≥3 ครั้ง/สัปดาห์ ≥12 สัปดาห์ หรือส่งกายภาพบำบัด · ทบทวนยาที่ทำให้ล้ม · ตรวจตา/เท้า · ให้ความรู้ · ประเมินซ้ำเมื่อมีล้มใหม่');
+  }else{
+    L.push('<b style="color:var(--ok)">เสี่ยงต่ำ</b> — '+(n===1?'ล้ม 1 ครั้งไม่รุนแรง':'กังวลเรื่องล้ม')+' และเดิน/ทรงตัวปกติ ('+gtxt+')');
+    L.push('ให้ความรู้ · ชวนออกกำลังกาย · ถามซ้ำปีละครั้ง');
+    if(thai)L.push('<span class="tag th">ไทย</span> TUG ≥12 วินาที = เสี่ยงตามคู่มือไทย → แนะนำฝึกทรงตัวด้วย');
+  }
+  if(c('fConc'))L.push('กลัวล้ม → ออกกำลังกาย/ไทชิช่วยลดความกลัว · ระวังจำกัดกิจกรรมจนกล้ามเนื้อลีบ');
+  if(c('fFrail')&&n===0)L.push('มี frailty → ดูแล frailty (resistance exercise โปรตีน ทบทวนยา) และติดตามใกล้ชิด · ถ้าล้มเมื่อไร = เสี่ยงสูง');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tFall input,#tFall select',fallRisk);
+
+/* ---------- 3) CFS + SARC-F + AWGS ---------- */
+function frailty(){
+  const out=$('frOut');const L=[];const v=id=>$(id).value;
+  const cfs=v('sCfs')===''?null:+v('sCfs');
+  const CFS={1:'แข็งแรงมาก',2:'แข็งแรง',3:'คุมโรคได้ดี',4:'เปราะบางเล็กน้อยมาก',5:'เปราะบางเล็กน้อย',6:'เปราะบางปานกลาง',7:'เปราะบางรุนแรง',8:'เปราะบางรุนแรงมาก',9:'ป่วยระยะท้าย'};
+  if(cfs===null)L.push('<b>CFS</b>: เลือกระดับจากสภาพก่อนป่วย 2 สัปดาห์');
+  else{let a=cfs<=3?'ส่งเสริมออกกำลังกาย โปรตีน วัคซีน คัดกรองซ้ำปีละครั้ง':cfs===4?'ระยะที่แก้ได้มาก: resistance + ทรงตัว โปรตีน ทบทวนยา ป้องกันล้ม':cfs<=6?'ประเมิน CGA เต็ม · ทบทวน/ลดยา · ป้องกันล้ม · ผู้ดูแล · ACP':cfs<=8?'เน้นเป้าหมายของผู้ป่วยและคุณภาพชีวิต · ลดยาที่ไม่จำเป็น · ACP · ADL ≤11 → LTC':'ดูแลแบบประคับประคอง · ACP';
+    L.push(`<b>CFS ${cfs}</b> ${CFS[cfs]}${cfs>=5?' (frail)':''} → ${a}`);}
+  const sf=['sS','sA','sR','sC','sF'].reduce((s,id)=>s+(+v(id)),0);
+  L.push(`<b>SARC-F = ${sf}/10</b> ${sf>=4?'→ <b>ผลบวก</b> (สงสัย sarcopenia)':'→ ลบ'}`);
+  const sex=v('sSex'),age=num('sAge'),calf=num('sCalf'),grip=num('sGrip'),gs=num('sGs'),ch=num('sCh'),asm=num('sAsm'),meth=v('sMeth');
+  if(!sex){L.push('AWGS: <b>เลือกเพศ</b>เพื่อแปลผล');out.innerHTML=L.join('<br>');return}
+  if(age===null){L.push('AWGS: <b>ใส่อายุ</b>');out.innerHTML=L.join('<br>');return}
+  if(age<18||age>120){L.push('AWGS: อายุไม่สมเหตุผล — ตรวจตัวเลข');out.innerHTML=L.join('<br>');return}
+  if(age<60){L.push('AWGS 2019 ใช้กับอายุ ≥60–65 ปี · <span class="tag up">2025</span> AWGS 2025 มีเกณฑ์เฉพาะอายุ 50–64 ปี (ต่างจากนี้) — เครื่องมือนี้ไม่แปลผลช่วงอายุนี้');out.innerHTML=L.join('<br>');return}
+  const bad=[];
+  if(calf!==null&&(calf<15||calf>60))bad.push('รอบน่อง (15–60 cm)');
+  if(grip!==null&&(grip<=0||grip>90))bad.push('grip (ใส่ค่าที่วัดได้ &gt;0 kg)');
+  if(gs!==null&&(gs<0.05||gs>3))bad.push('ความเร็วเดิน (0.05–3 m/s)');
+  if(ch!==null&&(ch<3||ch>120))bad.push('ลุกนั่ง 5 ครั้ง (3–120 วินาที)');
+  if(asm!==null&&(asm<2||asm>15))bad.push('ASM/ส่วนสูง² (2–15 kg/m²)');
+  if(bad.length){L.push('AWGS: ค่าไม่สมเหตุผล — ตรวจ '+bad.join(', '));out.innerHTML=L.join('<br>');return}
+  const m=sex==='m';
+  const calfLow=calf!==null&&calf<(m?34:33);
+  const caseF=calfLow||sf>=4;
+  L.push('Case finding: '+(calf!==null?`รอบน่อง ${calf} cm ${calfLow?'<b>ต่ำ</b>':'ปกติ'} (เกณฑ์ &lt;${m?34:33}) · `:'')+`SARC-F ${sf>=4?'<b>บวก</b>':'ลบ'} → ${caseF?'<b>บวก</b>':'ลบ'}`);
+  if(grip===null&&gs===null&&ch===null){
+    L.push(caseF?'→ <b>วัด grip strength และ gait speed (6 m) หรือลุกนั่ง 5 ครั้ง</b>':'→ case finding ลบ · ถ้ามีอาการ (ล้ม อ่อนแรง เดินช้า) ให้วัด grip/gait ได้เลย · มิฉะนั้นคัดกรองซ้ำปีละครั้ง');
+    out.innerHTML=L.join('<br>');return}
+  const lowS=grip!==null&&grip<(m?28:18);
+  const lowP=(gs!==null&&gs<1.0)||(ch!==null&&ch>=12);
+  const pTxt=[gs!==null?`เดิน ${gs} m/s${gs<1.0?' (<b>&lt;1.0</b>)':''}`:null,ch!==null?`ลุกนั่ง ${ch} วินาที${ch>=12?' (<b>≥12</b>)':''}`:null].filter(Boolean).join(' · ');
+  L.push((grip!==null?`Grip ${grip} kg ${lowS?'<b>ต่ำ</b>':'ปกติ'} (เกณฑ์ &lt;${m?28:18})`:'ยังไม่วัด grip')+' · '+(pTxt?pTxt+' → สมรรถภาพ'+(lowP?'<b>ต่ำ</b>':'ปกติ'):'ยังไม่วัดสมรรถภาพ'));
+  if(asm!==null){
+    const cut=m?7.0:(meth==='dxa'?5.4:5.7);const lowM=asm<cut;
+    L.push(`มวลกล้ามเนื้อ (${meth.toUpperCase()}) ${asm} kg/m² ${lowM?'<b>ต่ำ</b>':'ปกติ'} (เกณฑ์ &lt;${cut.toFixed(1)})`);
+    let d19=!lowM?'ไม่ใช่ sarcopenia (มวลปกติ)'+(lowS||lowP?' — แต่แรง/สมรรถภาพต่ำ: หาสาเหตุอื่น (ข้อ เส้นประสาท ซึมเศร้า) และฝึกกำลัง':''):(lowS&&lowP?'<b>Severe sarcopenia</b>':(lowS||lowP)?'<b>Sarcopenia</b>':'มวลต่ำอย่างเดียว (ยังไม่ใช่ sarcopenia)');
+    if(lowM&&grip===null&&!lowP)d19='มวลต่ำ — <b>วัด grip</b> เพื่อสรุป';
+    L.push('AWGS 2019: '+d19);
+    L.push('<span class="tag up">2025</span> AWGS 2025 (ต้องมีมวลต่ำ + grip ต่ำ): '+(grip===null?'ต้องวัด grip':(lowM&&lowS?'<b>Sarcopenia</b>':'ไม่เข้าเกณฑ์'))+' · สมรรถภาพใช้ติดตามผล/พยากรณ์');
+  }else{
+    if(lowS||lowP)L.push('<b>Possible sarcopenia</b> (AWGS 2019 ระดับปฐมภูมิ) → เริ่มรักษาได้เลย · ส่งวัดมวลกล้ามเนื้อ (BIA/DXA) ถ้าต้องการยืนยัน');
+    else if(grip===null)L.push('สมรรถภาพปกติ · <b>วัด grip</b> เพื่อแปลผลให้ครบ');
+    else L.push(pTxt?'แรงบีบมือและสมรรถภาพปกติ → ไม่เข้าเกณฑ์ possible sarcopenia':'แรงบีบมือปกติ (ยังไม่วัดสมรรถภาพ) → ไม่เข้าเกณฑ์ possible sarcopenia');
+  }
+  if(lowS||lowP||(cfs!==null&&cfs>=4)||sf>=4)L.push('ทำต่อ: <b>resistance exercise</b> 2–3 ครั้ง/สัปดาห์ + ทรงตัว · <b>โปรตีน ~1.0–1.2 g/kg/วัน</b> (ไตเสื่อมมากปรึกษา) · หาสาเหตุ (ยา ซึมเศร้า ฟัน โรคเรื้อรัง) · ป้องกันล้ม · วิตามินดีเมื่อขาด');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tFr input,#tFr select',frailty);
+
+/* ---------- 4) CGA quick screen ---------- */
+function cga(){
+  const out=$('cgaOut');const L=[];const A=[];const c=id=>$(id).checked;const v=id=>$(id).value;
+  const adl=['b1','b2','b3','b4','b5','b6','b7','b8','b9','b10'].reduce((s,id)=>s+(+v(id)),0);
+  const grp=adl>=12?'กลุ่ม 1 (ช่วยตัวเองได้ดี/ติดสังคม)':adl>=5?'กลุ่ม 2 (ช่วยตัวเองได้บ้าง/ติดบ้าน)':'กลุ่ม 3 (ช่วยตัวเองไม่ได้/ติดเตียง)';
+  L.push(`<b>Barthel ADL = ${adl}/20</b> → ${grp}`);
+  if(adl<=11)A.push('<b>ADL ≤11 = ผู้มีภาวะพึ่งพิง</b> → ส่งเข้าระบบ LTC (CM ทำ care plan, CG เยี่ยมบ้าน) ผ่าน รพ.สต./อปท. · ประเมินผู้ดูแล');
+  if(adl<=4)A.push('ติดเตียง → ป้องกัน<b>แผลกดทับ</b> (พลิกตัว ที่นอนลดแรงกด) สำลัก ข้อติด · ACP');
+  if(adl<20&&adl>11)A.push('ADL ไม่เต็ม → ดูข้อที่ทำไม่ได้: กายภาพ/กิจกรรมบำบัด อุปกรณ์ช่วย ปรับบ้าน');
+  if(+v('b10')<2||+v('b9')<2)A.push('กลั้นปัสสาวะ/อุจจาระไม่ได้ → หาสาเหตุ (UTI ท้องผูก ยา น้ำตาลสูง) · bladder diary 3 วัน');
+  if(c('gDel')){L.push('<b>สับสนเฉียบพลัน → คิดถึง delirium</b> · ไม่แปลผล Mini-Cog ตอนนี้ (ประเมินซ้ำเมื่อหาย)');A.push('Delirium: หาสาเหตุ (ติดเชื้อ ยา Na/glucose ปัสสาวะคั่ง อุจจาระอัดแน่น) — ดูหน้า Delirium');}
+  else if(v('mcW')===''||v('mcC')==='')L.push('<b>Mini-Cog</b>: ยังทำไม่ครบ (จำ 3 คำ + วาดนาฬิกา)');
+  else{const mc=+v('mcW')+(+v('mcC'));
+    L.push(`<b>Mini-Cog = ${mc}/5</b> ${mc<=3?'→ <b>ผิดปกติตามคู่มือไทย (≤3)</b>':'→ ปกติ'}${mc<=2?' · ต้นฉบับ: 0–2 มีโอกาสสูง':''}`);
+    if(mc<=3)A.push('ความจำ: ทำ <b>MMSE-Thai 2002 / TMSE</b> · ถามญาติเรื่อง IADL · หาสาเหตุที่แก้ได้ (ยา TSH B12 ซึมเศร้า หู ตา) · ไม่สรุปจาก Mini-Cog อย่างเดียว');}
+  if(v('q1')===''||v('q2')==='')L.push('<b>2Q</b>: ยังถามไม่ครบ');
+  else{const q=+v('q1')+(+v('q2'));L.push(`<b>2Q</b>: ${q?'<b>มีความเสี่ยง</b> ('+q+'/2 ข้อ)':'ปกติ'}`);
+    if(q)A.push('ซึมเศร้า: ทำ <b>9Q</b> → ถ้า ≥7 ทำ <b>8Q</b> (ฆ่าตัวตาย) · 8Q ≥17 ส่งจิตแพทย์ด่วน');}
+  if(c('gWt'))A.push('น้ำหนักลด/เบื่ออาหาร → <b>MNA-SF</b> · ฟัน กลืน ยา ซึมเศร้า มะเร็ง · โปรตีน/ONS');
+  if(c('gCh'))A.push('ลุกนั่ง 5 ครั้ง &gt;14 วินาที (ICOPE) → TUG/gait speed, grip (AWGS) · resistance exercise · ประเมินล้ม');
+  if(c('gFall'))A.push('เคยล้ม → แบ่งระดับเสี่ยงด้วยเครื่องมือที่ 2 · ทบทวนยา · ความดันท่ายืน');
+  if(c('gEye'))A.push('ตา/หู → Snellen (แย่กว่า 6/12 ส่งจักษุ) · ดูขี้หู finger rub/whisper → ส่งตรวจการได้ยิน/เครื่องช่วยฟัง');
+  if(c('gUi'))A.push('ปัสสาวะเล็ด → แยกชนิด (stress/urge/overflow) · UA · PVR · PFMT/bladder training');
+  A.push('ทุกคน: <b>ทบทวนยาทั้งหมด</b> (เครื่องมือที่ 1) · วัคซีน · ถาม "อะไรสำคัญที่สุด" และ ACP');
+  L.push('<b>สิ่งที่ต้องทำ</b>:<ol>'+A.map(x=>'<li>'+x+'</li>').join('')+'</ol>');
+  out.innerHTML=L.join('<br>');
+}
+bindAll('#tCga input,#tCga select',cga);
+
+mountQuiz([
+ ['หญิง 80 ปี ล้ม 1 ครั้งใน 12 เดือน ไม่บาดเจ็บ ไม่ frail ลุกเองได้ TUG 18 วินาที ตาม World Falls 2022 จัดเป็นความเสี่ยงระดับใด',['ต่ำ','ปานกลาง','สูง','ไม่ต้องประเมิน'],1,'ล้มครั้งเดียวไม่รุนแรง + TUG &gt;15 วินาที (หรือ gait speed &lt;0.8 m/s) = ปานกลาง → ออกกำลังกายเฉพาะ/กายภาพ'],
+ ['ข้อใด <b>ไม่ใช่</b> เกณฑ์เสี่ยงหกล้มสูงตาม World Falls 2022',['ล้ม ≥2 ครั้งใน 12 เดือน','นอนกับพื้นลุกเองไม่ได้ ≥1 ชม.','Clinical Frailty Scale ≥4','อายุ ≥80 ปี'],3,'อายุอย่างเดียวไม่ใช่เกณฑ์ · เกณฑ์คือ บาดเจ็บ, ≥2 ครั้ง, frailty, ลุกจากพื้นไม่ได้, สงสัยหมดสติ'],
+ ['ผู้ป่วยสูงอายุนอนโรงพยาบาลด้วยปอดอักเสบ ควรประเมินความเสี่ยงหกล้มอย่างไร',['ใช้ Morse score ถ้า &lt;45 ไม่ต้องทำอะไร','ถือว่าเสี่ยงสูงทุกคน ทำแผนป้องกันรายคน','ทำเฉพาะผู้ที่เคยล้ม','รอจนหายปอดอักเสบ'],1,'World Falls: ใน รพ./สถานดูแล ผู้สูงอายุทุกคนเสี่ยงสูง ไม่แนะนำแบบคัดกรองคิดคะแนน'],
+ ['ข้อใดถูกเกี่ยวกับวิตามินดีและการป้องกันล้มในผู้สูงอายุที่อยู่ในชุมชน',['ให้ทุกคน 50,000 IU ทุกเดือน','ให้เฉพาะผู้ที่เสี่ยงขาดวิตามินดี','ได้ผลดีกว่าการออกกำลังกาย','ห้ามให้ในผู้ป่วยกระดูกพรุน'],1,'ไม่ใช่ยาป้องกันล้มสำหรับทุกคน · bolus ขนาดสูงอาจเพิ่มการล้ม · ออกกำลังกายได้ผลที่สุด'],
+ ['ชาย 82 ปี DM ใช้ glibenclamide 5 mg วันละ 2 ครั้ง eGFR 35 HbA1c 6.4% มีน้ำตาลต่ำตอนเช้า ควรทำอย่างไร',['เพิ่ม metformin','หยุด glibenclamide เปลี่ยนเป็นยาเสี่ยงน้ำตาลต่ำน้อยและผ่อนเป้า HbA1c','ลด glibenclamide เป็น 2.5 mg','ให้กินอาหารว่างก่อนนอนแล้วใช้ยาเดิม'],1,'Beers 2023: เลี่ยง SU โดยเฉพาะตัวออกฤทธิ์นาน · HbA1c ต่ำเกินในผู้สูงอายุ = อันตราย · DPP-4i (ปรับตามไต) หรือ glipizide ขนาดต่ำถ้าจำเป็น'],
+ ['ผู้สูงอายุใช้ lorazepam 1 mg ก่อนนอนมา 5 ปี ต้องการหยุด วิธีที่เหมาะสม',['หยุดทันที','ลดราว 25% ทุก 2 สัปดาห์ ช่วงท้ายลดช้าลง ร่วมกับ CBT-I','เปลี่ยนเป็น zolpidem','เปลี่ยนเป็น hydroxyzine'],1,'หยุดทันทีเสี่ยงถอนยา/ชัก · Z-drug และ hydroxyzine ก็อยู่ใน Beers'],
+ ['หญิง 75 ปี grip 16 kg เดิน 0.8 m/s ไม่มีเครื่องวัดมวลกล้ามเนื้อ ตาม AWGS 2019 สรุปอย่างไร',['ปกติ','Possible sarcopenia → เริ่มรักษาได้เลย','Severe sarcopenia ยืนยันแล้ว','ต้องวัด DXA ก่อนจึงจะทำอะไรได้'],1,'Grip &lt;18 kg (หญิง) และเดิน &lt;1.0 m/s · ระดับปฐมภูมิเรียก possible sarcopenia · รักษาด้วย resistance exercise + โปรตีน'],
+ ['ข้อใดถูกเกี่ยวกับ donepezil',['เริ่ม 10 mg ได้เลย','ต้องลดขนาดเมื่อ eGFR &lt;30','เริ่ม 5 mg แล้วเพิ่มเป็น 10 mg หลัง 4–6 สัปดาห์ ระวังหัวใจเต้นช้า','ใช้รักษา delirium'],2,'AChEI ทำให้ชีพจรช้า เป็นลม ล้มได้ · ไม่ต้องปรับตามไต'],
+ ['หญิง 78 ปี ซึมเศร้า เริ่ม sertraline 2 สัปดาห์ ใช้ HCTZ อยู่ มาด้วยซึม สับสน สิ่งที่ควรตรวจก่อน',['TSH','Na ในเลือด','B12','CT สมอง'],1,'SSRI + thiazide + อายุมาก = เสี่ยง SIADH/Na ต่ำ โดยเฉพาะช่วงสัปดาห์แรก'],
+ ['ตาม TOPF 2021 หญิง 68 ปี ไม่เคยกระดูกหัก T-score −2.0 ข้อใดเป็นเกณฑ์ให้ยารักษากระดูกพรุน',['FRAX ไทย โอกาสสะโพกหักใน 10 ปี ≥3%','FRAX MOF ≥20%','อายุ ≥65 ปี','แคลเซียมในเลือดต่ำ'],0,'TOPF ใช้ hip ≥3% ใน FRAX ไทย ไม่ใช้ MOF เพราะข้อมูลไทยไม่พอ'],
+ ['ผู้ป่วยใช้ alendronate มา 5 ปี ไม่เคยกระดูกหัก T-score ล่าสุด −2.1 ควรทำอะไร',['ใช้ต่อตลอดชีวิต','พิจารณา drug holiday','เปลี่ยนเป็น teriparatide','เพิ่มขนาดเป็น 2 เท่า'],1,'ไม่เคยหักและ T &gt; −2.5 หลัง oral 5 ปี → พักยา ลดความเสี่ยง atypical femoral fracture · denosumab ห้ามพักแบบนี้'],
+ ['หญิง 80 ปี สมองเสื่อม ปวดกลั้นปัสสาวะไม่อยู่ หลัง bladder training ไม่ดีขึ้น ความดัน 136/80 eGFR 50 ยาที่เหมาะกว่า',['Oxybutynin ชนิดออกฤทธิ์ทันที','Mirabegron 25 mg/วัน','Chlorpheniramine','Amitriptyline'],1,'Antimuscarinic เพิ่มความสับสนในสมองเสื่อม (Beers avoid) · mirabegron ไม่มีผล anticholinergic ระวังความดันสูงรุนแรง']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

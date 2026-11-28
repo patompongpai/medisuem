@@ -1,0 +1,810 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Clinical nutrition · โภชนบำบัดในผู้ป่วยอายุรกรรม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">General medicine · Clinical nutrition · GLIM 2019/2024/2025 · ESPEN ICU 2023 · ASPEN 2022 · ASPEN refeeding 2020 · KDOQI 2020 · NICE CG32</div>
+  <h1>โภชนบำบัดในผู้ป่วยอายุรกรรม<br>Clinical nutrition for hospitalised &amp; outpatient adults</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · ผู้ป่วยในอายุรกรรม<b>จำนวนมาก (ราว 20–50% ในการศึกษาทั่วโลก) ขาดอาหารหรือเสี่ยง</b> แต่มักไม่ได้รับการคัดกรองและสั่งอาหารให้ถูก · หน้านี้พาตั้งแต่ <b>คัดกรอง → วินิจฉัยด้วย GLIM → คำนวณพลังงาน/โปรตีน → เลือกทางให้อาหาร (กิน · ONS · สายให้อาหาร · PN)</b> → ป้องกัน <b>refeeding syndrome</b> · พร้อมเครื่องมือคำนวณ NRS-2002, GLIM, kcal/โปรตีน และสูตรสั่ง tube feeding · เข้าชุดกับหน้า <a href="../phosphate-refeeding/index.html">ฟอสเฟต/refeeding</a>, <a href="../palliative/index.html">palliative care</a> และ <a href="../geriatric/index.html">การดูแลผู้สูงอายุ</a></p>
+  <p class="cite">อ้างอิงหลัก: Cederholm T, et al. GLIM criteria (Clin Nutr 2019;38:1–9) + GLIM inflammation guidance (JPEN 2024;48:145–54) + GLIM 5-year update (JPEN 2025;49:414–27) · Singer P, et al. ESPEN practical ICU guideline (Clin Nutr 2023;42:1671–89) · Compher C, et al. ASPEN critical care guideline (JPEN 2022;46:12–41) · da Silva JSV, et al. ASPEN refeeding consensus (Nutr Clin Pract 2020;35:178–95) · Ikizler TA, et al. KDOQI nutrition in CKD 2020 (Am J Kidney Dis 2020;76 Suppl 1:S1–107) · Plauth M, et al. ESPEN liver 2019 · Volkert D, et al. ESPEN geriatrics 2022 · Thibault R, et al. ESPEN hospital nutrition 2021 · NICE CG32 · Komindr S, et al. NAF (Asia Pac J Clin Nutr 2013) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--accent)"><b>คัดกรองทุกราย ภายใน 24–48 ชม.</b>NRS-2002 / MUST / NAF · ผู้สูงอายุใช้ MNA-SF · เสี่ยง → วินิจฉัยด้วย GLIM</div>
+    <div class="stage" style="--c:var(--ok)"><b>Gut works → use it</b>กินได้ + ONS ก่อน · กินไม่พอ → tube feeding · PN เมื่อลำไส้ใช้ไม่ได้</div>
+    <div class="stage" style="--c:var(--danger)"><b>ขาดอาหารหนัก = เสี่ยง refeeding</b>Thiamine ก่อนให้อาหาร · เริ่มช้า 10 kcal/kg · ตาม P K Mg</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#screen">คัดกรอง</a><a href="#glim">วินิจฉัย: GLIM</a><a href="#req">พลังงานและโปรตีน</a><a href="#ons">อาหารทางปาก · ONS</a><a href="#en">Enteral nutrition</a><a href="#pn">Parenteral nutrition</a><a href="#refeed">Refeeding syndrome</a><a href="#micro">วิตามิน · แร่ธาตุ</a><a href="#spec">สถานการณ์พิเศษ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="screen" class="col">
+  <div class="sec-num">01</div>
+  <h2>คัดกรองภาวะทุพโภชนาการ</h2>
+  <p>คัดกรอง <b>ทุกรายที่รับไว้ภายใน 24–48 ชม.</b> และซ้ำทุก ~1 สัปดาห์ (ESPEN hospital nutrition 2021) · การคัดกรองบอกแค่ "เสี่ยง" — ต้องประเมินต่อและวินิจฉัยด้วย GLIM ก่อนลงรหัสโรค</p>
+  <div class="tbl"><table>
+    <tr><th>เครื่องมือ</th><th>ใช้กับใคร</th><th>องค์ประกอบ · จุดตัด</th></tr>
+    <tr><td><b>NRS-2002</b> (Kondrup 2003)</td><td>ผู้ป่วยในทั่วไป (ESPEN แนะนำ)</td><td>คะแนนภาวะโภชนาการ 0–3 + ความรุนแรงของโรค 0–3 + อายุ ≥70 ปี (+1) · <b>≥3 = เสี่ยง</b> → วางแผนโภชนบำบัด · ≥5 = เสี่ยงสูง</td></tr>
+    <tr><td><b>MUST</b> (BAPEN)</td><td>ชุมชน OPD และ รพ.</td><td>BMI (&gt;20 = 0, 18.5–20 = 1, &lt;18.5 = 2) + น้ำหนักลดใน 3–6 เดือน (&lt;5% = 0, 5–10% = 1, &gt;10% = 2) + ป่วยเฉียบพลันและแทบไม่ได้กิน &gt;5 วัน (= 2) · <b>0 ต่ำ · 1 ปานกลาง · ≥2 สูง</b></td></tr>
+    <tr><td><b>MNA-SF</b></td><td><b>ผู้สูงอายุ ≥65 ปี</b> (ESPEN geriatrics 2022)</td><td>6 ข้อ (กินลดลง, น้ำหนักลด, การเคลื่อนไหว, ป่วยเฉียบพลัน/เครียด, สมองเสื่อม/ซึมเศร้า, BMI หรือรอบน่อง) · <b>12–14 ปกติ · 8–11 เสี่ยง · 0–7 ขาดอาหาร</b> · วัดน้ำหนักไม่ได้ใช้<b>รอบน่อง &lt;31 cm</b> แทน BMI · ดูหน้า <a href="../geriatric/index.html">Geriatric medicine</a></td></tr>
+    <tr><td><b>NUTRIC / mNUTRIC</b></td><td><b>ICU</b></td><td>อายุ, APACHE II, SOFA, โรคร่วม, จำนวนวันใน รพ.ก่อนเข้า ICU (± IL-6) · <b>mNUTRIC ≥5</b> = เสี่ยงสูง (ได้ประโยชน์จากการให้พลังงาน/โปรตีนเพียงพอ) · ESPEN 2023: ผู้ป่วย ICU นาน &gt;48 ชม. ถือว่าเสี่ยงทุกราย</td></tr>
+    <tr><td><b>NAF</b> (Nutrition Alert Form) <span class="tag th">ไทย</span></td><td>รพ.ไทย (Komindr 2013)</td><td>ดัดแปลงจาก SGA: ส่วนสูง/น้ำหนัก/BMI, รูปร่าง, น้ำหนักเปลี่ยน, อาหารที่กิน, อาการทางเดินอาหาร, ความสามารถในการทำกิจกรรม, โรค · ชั่งน้ำหนักไม่ได้ใช้ albumin/TLC แทน · <b>NAF A 0–5 ปกติ/เล็กน้อย · B 6–10 ปานกลาง · C ≥11 รุนแรง</b></td></tr>
+    <tr><td><b>BNT → NT 2013</b> <span class="tag th">ไทย</span></td><td>รพ.ไทย (รพ.ภูมิพลอดุลยเดช)</td><td>คัดกรอง 4 คำถาม (กินลดลง ≥7 วัน, น้ำหนักลดใน 6 เดือน, BMI &lt;18.5 หรือ &gt;24.9, ป่วยวิกฤต/บาดเจ็บรุนแรง) · <b>ใช่ ≥2 ข้อ</b> → ประเมิน 8 ข้อ: <b>NT-1 0–4 · NT-2 5–7 เล็กน้อย · NT-3 8–10 ปานกลาง · NT-4 ≥11 รุนแรง</b></td></tr>
+  </table></div>
+  <div class="box note"><b>ในไทย</b> <span class="tag th">ไทย</span> SPENT (สมาคมผู้ให้อาหารทางหลอดเลือดดำและทางเดินอาหารแห่งประเทศไทย) ส่งเสริม NAF/NT ผ่านโครงการ "โรงพยาบาลที่มีการดูแลโภชนบำบัดคุณภาพ" และ สปสช.รับการบันทึกวินิจฉัยทุพโภชนาการ (E43, E44.x) จากแบบประเมินเหล่านี้ · <b>หน้านี้ใช้ NRS-2002 เป็นเครื่องมือคำนวณ</b> (มาตรฐานสากล) และ <b>แนะนำใช้แบบฟอร์มที่ รพ.ของท่านใช้จริง</b> (NAF หรือ NT) — ผลแปลไปในทางเดียวกัน · การลงรหัสโรคควรยืนยันด้วย GLIM</div>
+</section>
+
+<section id="glim" class="col">
+  <div class="sec-num">02</div>
+  <h2>วินิจฉัย: GLIM criteria</h2>
+  <p>หลังคัดกรองเสี่ยง วินิจฉัยทุพโภชนาการเมื่อมี <b>phenotypic ≥1 ข้อ + etiologic ≥1 ข้อ</b> (GLIM 2019 · ยืนยันใน 5-year update 2025: ไม่เปลี่ยนเกณฑ์น้ำหนักลด BMI และการกิน)</p>
+  <div class="grid2">
+    <div class="card c-acc"><h4>Phenotypic (อาการแสดง)</h4><ul><li><b>น้ำหนักลด</b> &gt;5% ใน 6 เดือน หรือ &gt;10% เกิน 6 เดือน (โดยไม่ตั้งใจ)</li><li><b>BMI ต่ำ — เกณฑ์เอเชีย</b>: <b>&lt;18.5</b> ถ้าอายุ &lt;70 ปี · <b>&lt;20</b> ถ้า ≥70 ปี (สากล: &lt;20 / &lt;22)</li><li><b>มวลกล้ามเนื้อลดลง</b>: วัดด้วย BIA, DXA, CT, ultrasound หรือ <b>รอบน่อง</b> (AWGS 2019: ชาย &lt;34, หญิง &lt;33 cm) · ตรวจร่างกาย (ขมับ ไหปลาร้า ไหล่ ต้นขา น่อง) ใช้ได้เมื่อไม่มีเครื่อง · <b>แรงบีบมือไม่ใช่ตัวแทนมวลกล้ามเนื้อ</b></li></ul></div>
+    <div class="card c-warn"><h4>Etiologic (สาเหตุ)</h4><ul><li><b>กินลดลง/ดูดซึมไม่ได้</b>: ≤50% ของความต้องการ &gt;1 สัปดาห์ · หรือกินลดลงใดๆ &gt;2 สัปดาห์ · หรือโรคทางเดินอาหารเรื้อรังที่รบกวนการดูดซึม (short bowel, ตับอ่อนบกพร่อง, ท้องเสียเรื้อรัง, อาเจียนมาก)</li><li><b>การอักเสบ/ภาระโรค</b>: โรคเฉียบพลัน (sepsis, ไฟไหม้, บาดเจ็บ) หรือโรคเรื้อรัง (มะเร็ง, COPD, CHF, CKD, ตับแข็ง, RA) · <b>GLIM 2024</b>: ใช้การวินิจฉัยโรคและอาการทางคลินิกตัดสินได้ ไม่ต้องตรวจแล็บ · ตรวจ <b>CRP</b> เสริมเมื่อไม่แน่ใจ</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ความรุนแรง (ใช้ phenotypic ข้อที่หนักที่สุด)</th><th>น้ำหนักลด</th><th>BMI</th><th>กล้ามเนื้อ</th></tr>
+    <tr><td><b>Stage 1 — ปานกลาง</b></td><td>5–10% ใน 6 เดือน · 10–20% เกิน 6 เดือน</td><td>สากล &lt;20 (&lt;70 ปี) / &lt;22 (≥70 ปี)</td><td>พร่องเล็กน้อย–ปานกลาง</td></tr>
+    <tr><td><b>Stage 2 — รุนแรง</b></td><td>&gt;10% ใน 6 เดือน · &gt;20% เกิน 6 เดือน</td><td>สากล &lt;18.5 (&lt;70 ปี) / &lt;20 (≥70 ปี)</td><td>พร่องรุนแรง</td></tr>
+  </table></div>
+  <div class="box warn"><b>BMI ระดับรุนแรงสำหรับคนเอเชีย</b>GLIM ไม่ได้กำหนดจุดตัด BMI ของ stage 2 สำหรับเอเชีย (เกณฑ์เอเชีย &lt;18.5/&lt;20 ใช้เพื่อ "วินิจฉัย") · การศึกษาญี่ปุ่น (Maeda 2020) เสนอ <b>รุนแรงเมื่อ BMI &lt;17.0 (&lt;70 ปี) / &lt;17.8 (≥70 ปี)</b> <span class="tag add">เสริม</span> · หน้านี้ใช้เกณฑ์เอเชียวินิจฉัย และใช้ค่า Maeda แบ่งความรุนแรงเมื่อ BMI เป็นข้อเดียวที่เข้า · ควรวัดน้ำหนักลดและกล้ามเนื้อประกอบเสมอ</div>
+  <p class="muted" style="font-size:.88rem">อย่าใช้ <b>albumin/prealbumin</b> วินิจฉัยทุพโภชนาการ — ลดลงจากการอักเสบ ตับ ไต น้ำเกิน มากกว่าจากการขาดอาหาร (ASPEN/AND 2012, GLIM) · ใช้เป็นตัวบ่งชี้การอักเสบและพยากรณ์โรคได้</p>
+</section>
+
+<section id="req" class="col">
+  <div class="sec-num">03</div>
+  <h2>พลังงานและโปรตีนที่ต้องการ</h2>
+  <p>วิธีที่แม่นที่สุดคือ indirect calorimetry (มีน้อยในไทย) · ในทางปฏิบัติใช้ <b>สูตรง่าย kcal/kg</b> แล้วปรับตามการตอบสนอง (น้ำหนัก, กล้ามเนื้อ, น้ำตาล, การทนอาหาร)</p>
+  <div class="tbl"><table>
+    <tr><th>ภาวะ</th><th>พลังงาน (kcal/kg/วัน)</th><th>โปรตีน (g/kg/วัน)</th><th>แหล่ง</th></tr>
+    <tr><td>ผู้ป่วยในทั่วไป / ทุพโภชนาการ ไม่วิกฤต</td><td><b>25–30</b> (ผู้ป่วย &gt;65 ปีหลายโรค ~27)</td><td><b>1.2–1.5</b> (อย่างน้อย ≥1.0)</td><td>ESPEN hospital/polymorbid</td></tr>
+    <tr><td>ผู้สูงอายุ</td><td><b>~30</b> ปรับตามน้ำหนัก กิจกรรม</td><td><b>≥1.0</b> · ป่วยเฉียบพลัน/ขาดอาหาร 1.2–1.5</td><td>ESPEN geriatrics 2022</td></tr>
+    <tr><td><b>ICU ระยะแรก</b> (สัปดาห์แรก)</td><td>ESPEN: <b>ไม่เกิน 70%</b> ของที่ต้องการ (ช่วงวันที่ 1–3) แล้วเพิ่มเป็น 80–100% · ASPEN 2022: <b>12–25</b> ใน 7–10 วันแรก</td><td><b>ค่อยๆ เพิ่มถึง 1.3</b> (ESPEN) · ASPEN 1.2–2.0</td><td>ESPEN 2023 · ASPEN 2022</td></tr>
+    <tr><td>ICU ระยะฟื้นตัว/หลัง ICU</td><td><b>25–30</b> (ถึง 100% ของที่ต้องการ)</td><td><b>1.3–2.0</b></td><td>ESPEN 2023 · ASPEN</td></tr>
+    <tr><td><b>CKD ไม่ล้างไต</b> (stage 3–5, คงที่)</td><td><b>25–35</b></td><td><b>0.55–0.6</b> (ไม่มีเบาหวาน) · <b>0.6–0.8</b> (เบาหวาน) · หรือ 0.28–0.43 + keto analogues</td><td>KDOQI 2020</td></tr>
+    <tr><td><b>ล้างไต</b> (HD/PD)</td><td><b>25–35</b></td><td><b>1.0–1.2</b></td><td>KDOQI 2020</td></tr>
+    <tr><td><b>ตับแข็ง</b></td><td><b>35</b> (ไม่มีน้ำในท้อง: น้ำหนักจริง · มีน้ำในท้อง: ใช้น้ำหนักอุดมคติ) · อ้วน BMI 30–40: 25–35 ต่อน้ำหนักอุดมคติ · BMI &gt;40: 20–25</td><td><b>1.2–1.5</b> · <b>ไม่จำกัดโปรตีน</b>แม้มี HE</td><td>ESPEN liver 2019</td></tr>
+    <tr><td><b>อ้วน</b> (ไม่วิกฤต)</td><td>~20–25 ต่อ<b>น้ำหนักปรับ</b> <span class="tag add">เสริม</span></td><td>1.2–1.5 ต่อน้ำหนักปรับ</td><td>ESPEN 2023 (ICU: 1.3 g/kg adjusted)</td></tr>
+    <tr><td>แผลกดทับ (มีหรือเสี่ยงขาดอาหาร)</td><td><b>30–35</b></td><td><b>1.25–1.5</b></td><td>NPIAP/EPUAP 2019</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ใช้น้ำหนักอะไร</h4><ul><li><b>ปกติ/ผอม</b>: น้ำหนักจริง (ผอมมากเสี่ยง refeeding ก็ใช้น้ำหนักจริง)</li><li><b>อ้วน</b> (น้ำหนักจริง &gt;120% ของ IBW หรือ BMI ≥30): <b>น้ำหนักปรับ = IBW + 0.33 × (น้ำหนักจริง − IBW)</b> (ESPEN)</li><li><b>IBW (Devine)</b>: ชาย 50 + 0.91 × (ส่วนสูง cm − 152.4) · หญิง 45.5 + 0.91 × (ส่วนสูง − 152.4) · ทางลัดไทยที่ใช้กัน: ส่วนสูง − 100 (ชาย) / − 105 (หญิง)</li><li><b>ตับแข็งมีน้ำในท้อง</b>: ESPEN ให้ใช้น้ำหนักอุดมคติ · อีกวิธีคือประมาณน้ำหนักแห้ง (ลบ 5% น้ำในท้องน้อย, 10% ปานกลาง, 15% มาก และอีก 5% ถ้าขาบวม)</li></ul></div>
+    <div class="card c-warn"><h4>ข้อควรระวัง</h4><ul><li><b>ICU ระยะแรกอย่าให้เกิน</b>: ร่างกายสร้างพลังงานเองอยู่แล้ว ให้เต็มเร็วเกิน (overfeeding) → น้ำตาลสูง ตับคั่งไขมัน CO₂ สูง</li><li>นับ <b>พลังงานแฝง</b>: propofol 1% = 1.1 kcal/mL (ไขมัน), dextrose ใน IV fluid (D5W 1 L = 170 kcal), citrate ใน CRRT</li><li><b>CKD ป่วยเฉียบพลัน/ขาดอาหาร: อย่าจำกัดโปรตีน</b> — LPD ใช้กับผู้ป่วยคงที่ที่มีนักกำหนดอาหารดูแล</li><li>AKI ใน ICU: ไม่จำกัดโปรตีนเพื่อเลี่ยงล้างไต · CRRT เสียกรดอะมิโน → เพิ่มได้ถึง ~1.5–1.7 g/kg</li></ul></div>
+  </div>
+  <p class="muted" style="font-size:.88rem"><span class="tag th">ไทย</span> ปริมาณสารอาหารอ้างอิงที่ควรได้รับประจำวันสำหรับคนไทย (Thai DRI) พ.ศ. 2563 ใช้กับคนสุขภาพดี · ผู้ป่วยใช้ค่าจากแนวทางโภชนบำบัดข้างต้น</p>
+</section>
+
+<section id="ons" class="col">
+  <div class="sec-num">04</div>
+  <h2>อาหารทางปากและ ONS</h2>
+  <div class="grid2">
+    <div class="card c-ok"><h4>ลำดับขั้น (กินได้ก่อนเสมอ)</h4><ul><li><b>ปรับอาหาร</b>: เพิ่มมื้อว่าง อาหารพลังงานสูง/โปรตีนสูง (ไข่ นม เต้าหู้ เนื้อปลา) เลี่ยงงดอาหารที่ไม่จำเป็น (เช่น อาหารจืดจัดเกินในผู้สูงอายุที่กินน้อย)</li><li><b>ONS</b> (oral nutritional supplement) เมื่อกินได้ &lt;75% ของที่ต้องการ: <b>อย่างน้อย ~400 kcal และ ≥30 g โปรตีน/วัน</b> ให้นาน <b>≥1 เดือน</b> แล้วประเมินซ้ำ (ESPEN geriatrics 2022)</li><li>กิน + ONS ยัง &lt;50–60% ของที่ต้องการ นาน &gt;5–7 วัน → พิจารณา <b>tube feeding</b></li><li>หลักฐาน: การให้โภชนบำบัดเฉพาะรายในผู้ป่วยอายุรกรรมที่เสี่ยง (<b>EFFORT trial</b>, Lancet 2019) ลดผลไม่พึงประสงค์และการตายที่ 30 วัน</li></ul></div>
+    <div class="card c-acc"><h4>ชนิดสูตร (ชื่อสามัญ) <span class="tag th">ไทย</span></h4><ul><li><b>Standard polymeric</b> ~1 kcal/mL (บางสูตร 1.5) — ใช้ได้กับคนส่วนใหญ่</li><li><b>High-protein</b> — แผลกดทับ, ผู้สูงอายุ sarcopenia, ICU ระยะฟื้นตัว</li><li><b>สูตรเบาหวาน</b> (คาร์บน้อย, MUFA/fiber สูง) — ลดน้ำตาลหลังอาหาร</li><li><b>สูตรไต</b> (สำหรับล้างไต: พลังงานเข้มข้น ~1.8–2 kcal/mL, K/P ต่ำ) · ไม่ล้างไต: สูตรโปรตีนต่ำ</li><li><b>Peptide/semi-elemental</b> — ดูดซึมไม่ดี/ตับอ่อนบกพร่อง/ท้องเสียจาก polymeric</li><li>สูตรเหล่านี้หลายชนิดเบิกไม่ได้ตามสิทธิ — ถามราคา/สิทธิผู้ป่วยก่อนสั่งกลับบ้าน</li></ul></div>
+  </div>
+</section>
+
+<section id="en" class="col">
+  <div class="sec-num">05</div>
+  <h2>Enteral nutrition (ให้อาหารทางสาย)</h2>
+  <div class="tbl"><table>
+    <tr><th>หัวข้อ</th><th>สรุป</th></tr>
+    <tr><td><b>ข้อบ่งชี้</b></td><td>ลำไส้ใช้ได้ แต่กินไม่ได้/ไม่พอ: กลืนลำบาก (stroke, โรคประสาท-กล้ามเนื้อ, มะเร็งศีรษะคอ), ซึม/ใส่ท่อช่วยหายใจ, กินได้ &lt;50% นาน &gt;5–7 วัน · ICU: <b>เริ่ม EN ภายใน 24–48 ชม.</b> ในผู้ที่กินไม่ได้ <span class="rec s1">ESPEN</span></td></tr>
+    <tr><td><b>ข้อห้าม/เลื่อน</b></td><td>Shock ที่ยังคุมไม่ได้ (vasopressor เพิ่มขึ้น, lactate สูงขึ้น), ลำไส้อุดตัน, ลำไส้ขาดเลือด, เลือดออกทางเดินอาหารส่วนบนรุนแรงที่ยังไม่หยุด, high-output fistula, กระเพาะค้าง &gt;500 mL/6 ชม. · <b>Vasopressor ขนาดคงที่/ลดลงเริ่ม EN ขนาดต่ำได้</b></td></tr>
+    <tr><td><b>เลือกสาย</b></td><td><b>NG tube</b>: ระยะสั้น (&lt;4–6 สัปดาห์) · <b>Post-pyloric (NJ)</b>: กระเพาะไม่ทำงานแม้ใช้ prokinetic หรือเสี่ยงสำลักสูง · <b>PEG/gastrostomy</b>: คาดว่าต้องใช้ &gt;4–6 สัปดาห์ (เช่น stroke กลืนไม่ได้นาน) — <b>ไม่แนะนำในสมองเสื่อมระยะท้าย</b> · ยืนยันตำแหน่ง NG ด้วย <b>X-ray</b> ก่อนให้อาหารครั้งแรก (ฟังเสียงลมไม่พอ)</td></tr>
+    <tr><td><b>Bolus vs continuous</b></td><td><b>Bolus</b> (ใช้มากในหอผู้ป่วยและที่บ้านในไทย): 4–6 มื้อ/วัน มื้อละ 200–400 mL ให้ช้าใน 15–30 นาที · เริ่ม ~50–100 mL/มื้อ เพิ่ม ~50 mL/มื้อจนถึงเป้า · <b>Continuous</b> (ICU, กระเพาะทนไม่ได้, post-pyloric — NJ ต้อง continuous เสมอ): เริ่ม 10–30 mL/ชม. เพิ่ม 10–25 mL/ชม. ทุก 4–8 ชม.</td></tr>
+    <tr><td><b>ป้องกันสำลัก</b></td><td><b>หัวสูง 30–45°</b> ระหว่างให้และหลังให้ 30–60 นาที · <b>ASPEN: ไม่ต้องวัด gastric residual volume (GRV) เป็น routine</b> · ถ้าวัด อย่าหยุดอาหารเมื่อ GRV &lt;500 mL โดยไม่มีอาการอื่น (ท้องอืด อาเจียน) · ESPEN: GRV &gt;500 mL/6 ชม. → ชะลอ EN และให้ prokinetic</td></tr>
+    <tr><td><b>Prokinetic</b> (ทนไม่ได้)</td><td><b>Erythromycin 100–250 mg IV วันละ 3 ครั้ง</b> 2–4 วัน (ESPEN ตัวเลือกแรก) หรือ <b>metoclopramide 10 mg IV วันละ 2–3 ครั้ง</b> (CrCl &lt;40 ลดครึ่ง · ระวัง extrapyramidal, QT) · ยาไม่ได้ผล → post-pyloric</td></tr>
+    <tr><td><b>น้ำ</b></td><td>ต้องการ ~<b>30–35 mL/kg/วัน</b> (ลดในหัวใจวาย/ไตวาย) · สูตร 1 kcal/mL มีน้ำ ~80–85% · 1.5 kcal/mL ~76–78% · 2 kcal/mL ~70% · เติมน้ำส่วนที่ขาดเป็น flush · ระวัง <b>Na สูงในผู้สูงอายุที่ให้อาหารทางสาย</b>แต่น้ำไม่พอ</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>อาหารปั่นผสม (blenderized diet, BD) <span class="tag th">ไทย</span></h4><ul><li>ใช้มากใน รพ.รัฐและที่บ้าน: ทำจากอาหารจริง (ข้าว ไข่ ไก่ ผัก น้ำมัน) ราคาถูก ผู้ป่วย/ญาติยอมรับ · โรงครัว รพ.มักปรับเป็น <b>~1 kcal/mL</b></li><li>ข้อเสีย: สารอาหารไม่คงที่ (ญาติทำเองมักได้พลังงาน/โปรตีนต่ำกว่าที่คิด), <b>ปนเปื้อนเชื้อ</b> (ทิ้งไว้ไม่เกิน ~2 ชม.ที่อุณหภูมิห้อง เก็บตู้เย็นไม่เกิน 24 ชม.), หนืด → <b>สายตันบ่อย</b> (ต้องสาย ≥14–16 Fr)</li><li>ไม่เหมาะกับ continuous drip, NJ, ภูมิคุ้มกันต่ำ หรือต้องคุมน้ำ/K/P เข้มงวด → ใช้สูตรสำเร็จ</li></ul></div>
+    <div class="card c-acc"><h4>ปัญหาที่พบบ่อย</h4><ul><li><b>ท้องเสีย</b>: <b>ตรวจยาก่อน</b> (ยาน้ำที่มี sorbitol, ยาระบาย, ยาฆ่าเชื้อ, Mg, PPI) · ส่งตรวจ <b>C. difficile</b> ถ้าได้ยาฆ่าเชื้อ · ปนเปื้อน/ให้เร็วเกิน → ให้ช้าลงหรือเปลี่ยนเป็น continuous · ใช้สูตรมี <b>soluble fiber</b> · <b>ไม่ต้องหยุดอาหาร</b>เป็น routine · ยาหยุดถ่ายหลังแยกการติดเชื้อแล้ว</li><li><b>สายตัน</b>: ป้องกันด้วย <b>flush น้ำ 30 mL</b> ก่อน-หลังให้อาหาร/ยาทุกครั้ง และทุก 4 ชม.ระหว่าง continuous · ให้ยาทีละชนิด · ห้ามบดยา enteric-coated/ออกฤทธิ์นาน · ตันแล้ว: น้ำอุ่นดูด-ดันเบาๆ ด้วย syringe 30–60 mL → pancreatic enzyme + sodium bicarbonate · <b>ไม่ใช้น้ำอัดลม/น้ำผลไม้</b> (ASPEN)</li><li><b>น้ำตาลสูง</b>: ดู <a href="../dm/index.html">เบาหวาน</a> · <b>สำลัก</b>: หัวสูง ดูดเสมหะก่อนให้ ตรวจตำแหน่งสาย</li></ul></div>
+  </div>
+</section>
+
+<section id="pn" class="col">
+  <div class="sec-num">06</div>
+  <h2>Parenteral nutrition (PN)</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>เมื่อไรควรให้</h4><ul><li><b>ลำไส้ใช้ไม่ได้</b>: ลำไส้อุดตัน, ileus นาน, short bowel, high-output fistula, ลำไส้ขาดเลือด, ทนอาหารไม่ได้รุนแรง</li><li><b>เวลาเริ่ม</b>: ESPEN — EN ไม่ได้/มีข้อห้าม → <b>เริ่ม PN ภายใน 3–7 วัน</b> · <b>ขาดอาหารรุนแรง</b> → เริ่ม PN แบบค่อยๆ เพิ่มเร็วกว่านั้น (ระวัง refeeding)</li><li><b>Supplemental PN</b> (ได้ EN แต่ไม่พอ): ASPEN 2022 — <b>ไม่เริ่มก่อนวันที่ 7 ใน ICU</b> <span class="rec s1">strong</span> · ESPEN: พิจารณารายบุคคลเมื่อ EN ไม่พอหลังพยายามเต็มที่</li><li>เมื่อให้พลังงานเท่ากันระยะแรก <b>EN หรือ PN ผลลัพธ์ไม่ต่างกัน</b> (ASPEN 2022) — แต่ EN ถูก ปลอดภัยกว่า เลือก EN ก่อนเมื่อลำไส้ใช้ได้</li></ul></div>
+    <div class="card c-warn"><h4>Peripheral vs central</h4><ul><li><b>PPN</b>: osmolarity <b>≤850–900 mOsm/L</b> · ระยะสั้น (ราว ≤1–2 สัปดาห์) · ปริมาตรมาก พลังงานจำกัด · เปลี่ยนตำแหน่ง IV บ่อย (phlebitis)</li><li><b>Central (CVC/PICC)</b>: osmolarity สูงได้ · ระยะยาว · ใช้ lumen แยกเฉพาะ PN · aseptic technique เข้มงวด</li><li><span class="tag th">ไทย</span> ส่วนใหญ่ใช้ <b>ถุงสำเร็จ 2–3 ช่อง (all-in-one)</b> ทั้งสูตร peripheral และ central · <b>ต้องเติมวิตามินรวมและ trace elements ทุกวัน</b> — ถุงสำเร็จส่วนใหญ่ไม่มี</li></ul></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>ส่วนประกอบ</th><th>พลังงาน · ขีดจำกัด (ผู้ใหญ่)</th></tr>
+    <tr><td>Dextrose</td><td>3.4 kcal/g · ไม่เกิน <b>~5 mg/kg/นาที</b> (ESPEN ICU) · คุมน้ำตาล 140–180 mg/dL</td></tr>
+    <tr><td>Amino acids</td><td>4 kcal/g · ตามเป้าโปรตีนข้างบน</td></tr>
+    <tr><td>Lipid emulsion 20%</td><td>~2 kcal/mL · ไม่เกิน <b>~1.5 g/kg/วัน</b> (ICU) · TG &gt;400 mg/dL → ลด/หยุด · mixed-oil หรือ soybean ใช้ได้ทั้งคู่ (ASPEN 2022)</td></tr>
+    <tr><td>Electrolytes, วิตามิน, trace elements</td><td>Na K Mg Ca P ปรับตามค่า · multivitamin + trace element ทุกวัน · thiamine ก่อนเริ่มในผู้เสี่ยง</td></tr>
+  </table></div>
+  <div class="box key"><b>ติดตาม</b>น้ำตาลทุก 4–6 ชม. ในวันแรกๆ · <b>Na K Mg P ทุกวันใน 3 วันแรก</b> (เสี่ยง refeeding: ทุก 12 ชม.) แล้วสัปดาห์ละ 2 ครั้ง · TG, LFT สัปดาห์ละครั้ง · น้ำหนัก, I/O · <b>ภาวะแทรกซ้อน</b>: ติดเชื้อสายสวน (CLABSI — ไข้ในผู้ได้ PN คิดถึงก่อน), น้ำตาลสูง, refeeding, TG สูง, ตับผิดปกติ (PNALD — ลด lipid/dextrose, เริ่ม EN บางส่วน), overfeeding, ลิ่มเลือดที่สาย</div>
+</section>
+
+<section id="refeed" class="col">
+  <div class="sec-num">07</div>
+  <h2>Refeeding syndrome</h2>
+  <p>เมื่อเริ่มให้อาหาร (โดยเฉพาะคาร์โบไฮเดรต) หลังอดนาน insulin หลั่ง → <b>P, K, Mg เข้าเซลล์</b> + ใช้ thiamine → P/K/Mg ต่ำ, หัวใจวาย, ชัก, Wernicke · พบบ่อยใน 2–5 วันแรก · รายละเอียดการแก้ P ดูที่หน้า <a href="../phosphate-refeeding/index.html">Phosphate/refeeding</a></p>
+  <div class="tbl"><table>
+    <tr><th>ระดับเสี่ยง</th><th>NICE CG32</th><th>ASPEN 2020</th></tr>
+    <tr><td><b>เสี่ยงสูง</b></td><td><b>1 ข้อ</b>: BMI &lt;16 · น้ำหนักลด &gt;15% ใน 3–6 เดือน · แทบไม่ได้กิน &gt;10 วัน · K/P/Mg ต่ำก่อนให้อาหาร<br><b>หรือ 2 ข้อ</b>: BMI &lt;18.5 · น้ำหนักลด &gt;10% ใน 3–6 เดือน · แทบไม่ได้กิน &gt;5 วัน · สุรา/ยา (insulin, เคมีบำบัด, ยาลดกรด, ยาขับปัสสาวะ)</td><td><b>Significant risk (1 ข้อ)</b>: BMI &lt;16 · น้ำหนักลด 7.5% ใน 3 เดือน หรือ &gt;10% ใน 6 เดือน · แทบไม่ได้กิน &gt;7 วัน · K/P/Mg ต่ำปานกลาง–มาก · ไขมัน/กล้ามเนื้อลดรุนแรง · โรคเสี่ยงสูง</td></tr>
+    <tr><td><b>เสี่ยงปานกลาง</b></td><td>—</td><td><b>Moderate (2 ข้อ)</b>: BMI 16–18.5 · น้ำหนักลด 5% ใน 1 เดือน · แทบไม่ได้กิน 5–6 วัน · K/P/Mg ต่ำเล็กน้อย/ปกติต่ำ · ไขมัน/กล้ามเนื้อลดปานกลาง · โรคเสี่ยงปานกลาง</td></tr>
+    <tr><td><b>เริ่มอาหาร</b></td><td>เสี่ยงสูง: <b>≤10 kcal/kg/วัน</b> · สูงมาก (BMI &lt;14 หรือแทบไม่ได้กิน &gt;15 วัน): <b>5 kcal/kg/วัน</b> · เพิ่มช้าๆ ถึงเป้าใน 4–7 วัน</td><td><b>10–20 kcal/kg</b> (หรือ dextrose 100–150 g) ใน 24 ชม.แรก · เพิ่ม ~33% ของเป้าทุก 1–2 วัน</td></tr>
+    <tr><td><b>Thiamine</b></td><td>200–300 mg/วัน ทางปาก (หรือ IV) + วิตามินบีรวม + multivitamin 10 วันแรก</td><td><b>100 mg ก่อนให้อาหาร</b>/ก่อน IV dextrose แล้ว 100 mg/วัน 5–7 วัน (นานกว่าถ้าเสี่ยงมาก)</td></tr>
+  </table></div>
+  <div class="box warn"><b>หน้านี้ใช้</b>จุดตัดเสี่ยงของ NICE (เข้าใจง่าย ใช้บ่อยในไทย) และ<b>เริ่ม 10 kcal/kg ในเสี่ยงสูง (5 kcal/kg ในเสี่ยงสูงมาก)</b> · <b>เสี่ยงปานกลาง (ASPEN 2020): เริ่ม 10–20 kcal/kg/วัน</b> (หรือ dextrose 100–150 g) ใน 24 ชม.แรก แล้วเพิ่ม ~33% ของเป้าทุก 1–2 วัน <span class="tag add">เสริม</span> · ตรวจ <b>P K Mg ก่อนเริ่ม แล้วทุก 12 ชม.ใน 3 วันแรก</b> (เสี่ยงสูง) · แก้ค่าที่ต่ำไปพร้อมกับให้อาหาร ไม่ต้องรอให้ปกติก่อน (ASPEN) · <b>ASPEN 2020</b>: ถ้า P/K/Mg <b>ลดลงเร็วหรือแก้ยาก</b> → ลดพลังงาน/dextrose ลง 50% แล้วเพิ่ม ~33% ของเป้าทุก 1–2 วัน · <b>กฎปฏิบัติที่ดัดแปลงจาก ASPEN</b> (ตัวเลขไม่ได้มาจาก ASPEN โดยตรง): ใช้ P &lt;2 mg/dL หรือลด &gt;30% จากค่าตั้งต้น (ASPEN นิยามการลด &gt;30% ว่าเป็น refeeding รุนแรง) เป็นจุดตัดลดพลังงาน 50%</div>
+</section>
+
+<section id="micro" class="col">
+  <div class="sec-num">08</div>
+  <h2>วิตามินและแร่ธาตุที่ต้องคิดถึง</h2>
+  <div class="tbl"><table>
+    <tr><th>สาร</th><th>ใครเสี่ยง</th><th>ให้อย่างไร (ผู้ใหญ่)</th></tr>
+    <tr><td><b>Thiamine (B1)</b></td><td>สุรา, refeeding, อาเจียนมาก (hyperemesis, หลังผ่าตัดลดน้ำหนัก), ขาดอาหาร, ได้ dextrose IV นาน</td><td>ป้องกัน: <b>100 mg IV/PO ก่อนให้อาหาร/glucose</b> แล้ววันละ 100 mg 5–7 วัน · <b>สงสัย Wernicke</b>: ขนาดสูง IV (เช่น 200–500 mg วันละ 3 ครั้ง) ดูหน้า <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal</a> · ปลอดภัย ให้ก่อนผล</td></tr>
+    <tr><td><b>Zinc</b></td><td>ท้องเสียเรื้อรัง/fistula, ไฟไหม้, แผลเรื้อรัง, ตับแข็ง, สุรา</td><td>ขาดจริง: zinc sulfate 220 mg (elemental Zn ~50 mg) วันละครั้ง ~10–14 วัน · <b>ไม่ให้ขนาดสูงนาน</b> (&gt;40 mg/วันระยะยาว → ทองแดงต่ำ, โลหิตจาง) · ไม่ให้ routine ทุกแผล</td></tr>
+    <tr><td><b>Vitamin D</b></td><td>ผู้สูงอายุติดบ้าน/ติดเตียง, CKD, ตับแข็ง, malabsorption, ใช้ steroid นาน</td><td>ผู้สูงอายุ: 800–1,000 IU/วัน · ขาด (25-OH D &lt;20 ng/mL): <span class="tag th">ไทย</span> <b>ergocalciferol (D2) 20,000 IU</b> 1–2 แคปซูล/สัปดาห์ 8–12 สัปดาห์ (บัญชียาหลัก) แล้วขนาดรักษาระดับ</td></tr>
+    <tr><td><b>Vitamin B12</b></td><td><b>Metformin นาน</b>, PPI นาน, ผู้สูงอายุ, มังสวิรัติเคร่ง, ผ่าตัดกระเพาะ</td><td>Cyanocobalamin 1,000 mcg IM (สัปดาห์ละครั้ง ×4–8 แล้วเดือนละครั้ง) หรือทางปาก 1,000–2,000 mcg/วัน (ได้ผลแม้ไม่มี intrinsic factor ถ้าขนาดสูง) · อาการทางประสาท → เริ่ม IM</td></tr>
+    <tr><td><b>Iron</b></td><td>เสียเลือดเรื้อรัง, CKD, IBD, ผ่าตัดกระเพาะ</td><td>Ferrous sulfate 1 เม็ด (~60–65 mg elemental Fe) <b>วันละครั้งหรือวันเว้นวัน</b> (ดูดซึมดีกว่าวันละหลายครั้ง) · ทนไม่ได้/ดูดซึมไม่ได้/CKD → iron IV · ไม่ให้เหล็กช่วงติดเชื้อรุนแรงเฉียบพลัน</td></tr>
+  </table></div>
+</section>
+
+<section id="spec" class="col">
+  <div class="sec-num">09</div>
+  <h2>สถานการณ์พิเศษ</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>กลืนลำบาก · IDDSI</h4><ul><li><b>คัดกรองการกลืนก่อนให้กินทุกราย</b>ที่เสี่ยง (stroke, Parkinson, ซึม, ผู้สูงอายุอ่อนแรง) · เช่น water swallow test โดยพยาบาลที่ฝึก · ไม่ผ่าน → NPO ชั่วคราว + ส่งประเมินโดยนักกิจกรรมบำบัด/อรรถบำบัด · ดูหน้า <a href="../stroke/index.html">Stroke</a></li><li><b>IDDSI</b> (0–7): <b>น้ำ</b> 0 ใส · 1 ข้นเล็กน้อย · 2 ข้นน้อย · 3 ข้นปานกลาง · <b>อาหาร</b> 3 เหลว · 4 บดละเอียด (puree) · 5 สับละเอียดชุ่ม · 6 นิ่มชิ้นพอดีคำ · 7 ปกติ</li><li>ใช้ผงเพิ่มความหนืด (xanthan gum) ปรับน้ำ · ดูแลช่องปาก ลดปอดอักเสบจากสำลัก</li></ul></div>
+    <div class="card c-warn"><h4>เบาหวานที่ให้อาหารทางสาย</h4><ul><li><b>สูตรเบาหวาน</b> ลดน้ำตาลหลังอาหารได้มากกว่าสูตรมาตรฐาน — หลักฐานผลลัพธ์ทางคลินิกจำกัด <span class="tag add">เสริม</span></li><li>เป้าน้ำตาลในผู้ป่วยใน <b>140–180 mg/dL</b> (ADA)</li><li><b>Bolus</b>: insulin ก่อนแต่ละมื้อ (rapid/regular) + basal · <b>Continuous</b>: basal (เช่น NPH ทุก 8–12 ชม.) + correction</li><li><b>หยุดอาหารกะทันหัน → ลด/หยุด insulin มื้อ</b> หรือให้ D10 แทน กัน hypoglycemia · ดูหน้า <a href="../dm/index.html">DM</a></li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card c-ok"><h4>แผลกดทับ (NPIAP/EPUAP 2019)</h4><ul><li>มีแผลกดทับและขาดอาหาร/เสี่ยง: <b>30–35 kcal/kg</b>, โปรตีน <b>1.25–1.5 g/kg</b>, น้ำ ~1 mL/kcal</li><li>แผล <b>stage 2 ขึ้นไป + ขาดอาหาร</b>: ONS พลังงาน/โปรตีนสูงที่เสริม <b>arginine, zinc, antioxidants</b></li><li>ไม่ให้ zinc/vitamin C ขนาดสูงเดี่ยวๆ โดยไม่มีภาวะขาด</li></ul></div>
+    <div class="card c-vio"><h4>ตับแข็ง · CKD</h4><ul><li><b>ตับแข็ง</b>: <b>late-evening snack</b> (~200 kcal คาร์บซับซ้อน + โปรตีน) และมื้อเช้า · ไม่อดอาหารเกิน 3–6 ชม. · <b>ไม่จำกัดโปรตีน</b>แม้มี <a href="../he-sbp/index.html">HE</a> (ทนไม่ได้จริง → เพิ่มโปรตีนจากพืช/นม, BCAA) · ดู <a href="../cirrhosis/index.html">Cirrhosis</a></li><li><b>CKD</b>: โปรตีนต่ำเฉพาะผู้ป่วยคงที่ภายใต้นักกำหนดอาหาร · ล้างไตต้องโปรตีนสูงขึ้น · ระวัง K/P ในอาหาร · ดู <a href="../ckd/index.html">CKD</a></li></ul></div>
+  </div>
+  <div class="box note"><b>ระยะท้ายของชีวิต</b>การให้อาหารทางสาย/ทางหลอดเลือดเป็น <b>การรักษาทางการแพทย์</b> — ต้องมีข้อบ่งชี้ เป้าหมาย และความยินยอม · งดหรือหยุดได้เมื่อไม่เกิดประโยชน์ (ESPEN ethics) · <b>สมองเสื่อมระยะท้าย: ไม่แนะนำ PEG/NG</b> (ไม่ลดสำลัก ไม่ยืดชีวิต) → <b>careful hand feeding</b> ป้อนทีละน้อยเพื่อความสุข · ผู้ป่วยใกล้เสียชีวิตไม่หิว/กระหาย — ดูแลช่องปากให้ชุ่มชื้นแทนการให้สารน้ำมาก · ดูหน้า <a href="../palliative/index.html">Palliative care</a></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">10</div>
+    <h2>แผนผัง: โภชนบำบัดผู้ป่วยใน</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>รับไว้ใน รพ.</b>คัดกรองภายใน 24–48 ชม. (NRS-2002 / NAF / MNA-SF)</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>เสี่ยง?</b> (NRS ≥3 · NAF B–C · MNA-SF ≤11)</div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">ไม่</span><div class="node dx green"><b>คัดกรองซ้ำ</b>ทุก ~1 สัปดาห์</div></div>
+        <div class="arm"><span class="lab">ใช่</span><div class="node dx hypo"><b>GLIM + คำนวณเป้า</b>kcal · โปรตีน · ประเมิน refeeding</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>กินได้ และลำไส้ใช้ได้?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">กินได้ ≥75%</span><div class="node dx green"><b>อาหาร + ONS</b>ประเมินซ้ำ</div></div>
+        <div class="arm"><span class="lab">กินไม่พอ · ลำไส้ใช้ได้</span><div class="node dx eu"><b>Enteral</b>NG (ระยะสั้น) · PEG (&gt;4–6 สัปดาห์)</div></div>
+        <div class="arm"><span class="lab">ลำไส้ใช้ไม่ได้</span><div class="node red"><b>PN</b>ภายใน 3–7 วัน (ขาดอาหารหนัก: เร็วกว่า)</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node dx"><b>เสี่ยง refeeding?</b>Thiamine ก่อน · เสี่ยงสูงเริ่ม 10 kcal/kg (สูงมาก 5) · ปานกลาง 10–20 · P K Mg ทุก 12 ชม. 3 วัน</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยคิดเท่านั้น · ปรับตามการตอบสนองของผู้ป่วย และปรึกษาทีมโภชนบำบัด/นักกำหนดอาหารของ รพ.</p>
+  </div>
+
+  <div class="tool" id="tNrs" style="margin-top:12px">
+    <h3>1) NRS-2002</h3>
+    <div class="fields">
+      <label class="f">ภาวะโภชนาการ (เลือกข้อที่หนักสุด)<select id="nNut">
+        <option value="0">0 — ปกติ</option>
+        <option value="1">1 — น้ำหนักลด &gt;5% ใน 3 เดือน หรือกิน 50–75% ของปกติในสัปดาห์ก่อน</option>
+        <option value="2">2 — น้ำหนักลด &gt;5% ใน 2 เดือน หรือ BMI 18.5–20.5 + สภาพทั่วไปแย่ หรือกิน 25–60%</option>
+        <option value="3">3 — น้ำหนักลด &gt;5% ใน 1 เดือน (&gt;15% ใน 3 เดือน) หรือ BMI &lt;18.5 + สภาพแย่ หรือกิน 0–25%</option>
+      </select></label>
+      <label class="f">ความรุนแรงของโรค<select id="nDis">
+        <option value="0">0 — ความต้องการปกติ</option>
+        <option value="1">1 — กระดูกสะโพกหัก, โรคเรื้อรังมีภาวะแทรกซ้อนเฉียบพลัน (ตับแข็ง, COPD, ฟอกไต, เบาหวาน, มะเร็ง)</option>
+        <option value="2">2 — ผ่าตัดช่องท้องใหญ่, stroke, ปอดอักเสบรุนแรง, มะเร็งเม็ดเลือด</option>
+        <option value="3">3 — บาดเจ็บศีรษะ, ปลูกถ่ายไขกระดูก, ICU (APACHE II &gt;10)</option>
+      </select></label>
+      <label class="f">อายุ (ปี)<input type="number" id="nAge" value="72"></label>
+    </div>
+    <div class="out" id="nrsOut"></div>
+  </div>
+
+  <div class="tool" id="tGlim" style="margin-top:12px">
+    <h3>2) GLIM: วินิจฉัยและแบ่งระดับ</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="gAge" value="68"></label>
+      <label class="f">น้ำหนักตอนนี้ (kg)<input type="number" step="0.1" id="gWt" value="44"></label>
+      <label class="f">ส่วนสูง (cm)<input type="number" id="gHt" value="160"></label>
+      <label class="f">น้ำหนักเดิม (kg) — เว้นว่างถ้าไม่ทราบ<input type="number" step="0.1" id="gWt0" value="50"></label>
+      <label class="f">ระยะเวลาที่ลด<select id="gT"><option value="6">ภายใน 6 เดือน</option><option value="12">เกิน 6 เดือน</option></select></label>
+      <label class="f">มวลกล้ามเนื้อ<select id="gMus"><option value="0">ปกติ/ไม่ได้ประเมิน</option><option value="1">ลดเล็กน้อย–ปานกลาง</option><option value="2">ลดรุนแรง</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="gIntake" checked> กิน ≤50% &gt;1 สัปดาห์ / กินลดลง &gt;2 สัปดาห์ / โรคลำไส้ดูดซึมไม่ได้</label>
+      <label><input type="checkbox" id="gInfl"> มีโรคเฉียบพลันหรือเรื้อรังที่มีการอักเสบ (หรือ CRP สูง)</label>
+    </div>
+    <div class="out" id="glimOut"></div>
+  </div>
+
+  <div class="tool plan" id="tReq" style="margin-top:12px">
+    <h3>3) พลังงานและโปรตีนต่อวัน</h3>
+    <div class="fields">
+      <label class="f">เพศ<select id="rSex"><option value="m">ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">น้ำหนักจริง/น้ำหนักแห้ง (kg)<input type="number" step="0.1" id="rWt" value="55"></label>
+      <label class="f">ส่วนสูง (cm)<input type="number" id="rHt" value="165"></label>
+      <label class="f">ภาวะ<select id="rCond">
+        <option value="gen">ผู้ป่วยในทั่วไป/ทุพโภชนาการ</option>
+        <option value="old">ผู้สูงอายุ</option>
+        <option value="icu">ICU ระยะแรก (สัปดาห์แรก)</option>
+        <option value="icur">ICU ระยะฟื้นตัว/หลัง ICU</option>
+        <option value="ckd">CKD ไม่ล้างไต (คงที่)</option>
+        <option value="hd">ล้างไต (HD/PD)</option>
+        <option value="cir">ตับแข็ง</option>
+        <option value="pi">แผลกดทับ</option>
+      </select></label>
+      <label class="f">เสี่ยง refeeding<select id="rRf"><option value="0">ไม่เสี่ยง</option><option value="1">ปานกลาง (ASPEN)</option><option value="2">สูง (NICE)</option><option value="3">สูงมาก (BMI &lt;14 หรือไม่ได้กิน &gt;15 วัน)</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="rDm"> เป็นเบาหวาน (ใช้กับ CKD)</label>
+      <label><input type="checkbox" id="rAsc"> มีน้ำในท้อง (ใช้กับตับแข็ง)</label>
+    </div>
+    <div class="out" id="reqOut"></div>
+  </div>
+
+  <div class="tool plan" id="tEn" style="margin-top:12px">
+    <h3>4) สูตรสั่ง tube feeding</h3>
+    <div class="fields">
+      <label class="f">เป้าพลังงาน (kcal/วัน)<input type="number" id="eKcal" value="1500"></label>
+      <label class="f">ความเข้มข้นสูตร (kcal/mL)<select id="eDen"><option value="1">1.0 (มาตรฐาน / BD รพ.)</option><option value="1.5">1.5</option><option value="2">2.0</option></select></label>
+      <label class="f">โปรตีนในสูตร (g/1000 mL) — ไม่ทราบเว้นว่าง<input type="number" id="ePro" value="40"></label>
+      <label class="f">วิธีให้<select id="eMode"><option value="bolus">Bolus (เป็นมื้อ)</option><option value="cont">Continuous (หยด/pump)</option></select></label>
+      <label class="f">จำนวนมื้อ/วัน (bolus)<input type="number" id="eN" value="4"></label>
+      <label class="f">น้ำหนัก (kg) — คำนวณน้ำ/refeeding (คนอ้วนใส่น้ำหนักปรับจากข้อ 3)<input type="number" step="0.1" id="eWt" value="50"></label>
+      <label class="f">เสี่ยง refeeding<select id="eRf"><option value="0">ไม่เสี่ยง</option><option value="1">ปานกลาง</option><option value="2">สูง</option><option value="3">สูงมาก</option></select></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="eFl"> จำกัดน้ำ (หัวใจวาย/ไตวาย/Na ต่ำ)</label>
+    </div>
+    <div class="out" id="enOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">12</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>คัดกรองทุกรายใน 24–48 ชม.</b> ไม่มีใครสั่งอาหาร = ผู้ป่วยอดอาหาร</div></div>
+    <div class="pearl"><div><b>GLIM = phenotype 1 + etiology 1</b> · BMI เอเชีย &lt;18.5 / &lt;20 (≥70 ปี)</div></div>
+    <div class="pearl"><div><b>Albumin ไม่ใช่ตัววัดภาวะโภชนาการ</b></div></div>
+    <div class="pearl"><div><b>25–30 kcal/kg + โปรตีน 1.2–1.5 g/kg</b> ใช้ได้กับผู้ป่วยในส่วนใหญ่</div></div>
+    <div class="pearl"><div><b>ICU สัปดาห์แรกอย่าให้เต็ม</b> · โปรตีนค่อยๆ ถึง 1.3 g/kg</div></div>
+    <div class="pearl"><div><b>อ้วนใช้น้ำหนักปรับ</b> = IBW + 0.33 × ส่วนเกิน</div></div>
+    <div class="pearl"><div><b>ตับแข็ง 35 kcal/kg ไม่จำกัดโปรตีน + มื้อดึก</b></div></div>
+    <div class="pearl"><div><b>ไม่ต้องวัด GRV เป็น routine</b> · หัวสูง 30–45°</div></div>
+    <div class="pearl"><div><b>ท้องเสียจากอาหารทางสาย ดูยาก่อน</b> (sorbitol, ยาฆ่าเชื้อ, C. difficile)</div></div>
+    <div class="pearl"><div><b>Thiamine ก่อนอาหาร/glucose</b> ในผู้เสี่ยง refeeding และสุรา</div></div>
+    <div class="pearl"><div><b>PN ต้องเติมวิตามินรวม + trace elements ทุกวัน</b></div></div>
+    <div class="pearl"><div><b>สมองเสื่อมระยะท้าย: careful hand feeding</b> ไม่ใส่ PEG</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">13</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../phosphate-refeeding/index.html">Phosphate / refeeding →</a> · <a href="../palliative/index.html">Palliative care →</a> · <a href="../geriatric/index.html">Geriatric medicine →</a> · <a href="../cirrhosis/index.html">Cirrhosis →</a> · <a href="../he-sbp/index.html">HE/SBP →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../dm/index.html">Diabetes →</a> · <a href="../icu-drugs/index.html">ICU drugs →</a> · <a href="../alcohol-withdrawal/index.html">Alcohol withdrawal →</a></p>
+<footer class="col">
+  อ้างอิง: 1) Cederholm T, Jensen GL, Correia MITD, et al. GLIM criteria for the diagnosis of malnutrition – a consensus report from the global clinical nutrition community. Clin Nutr 2019;38:1–9 · 2) Jensen GL, Cederholm T, Ballesteros-Pomar MD, et al. Guidance for assessment of the inflammation etiologic criterion for the GLIM diagnosis of malnutrition: a modified Delphi approach. JPEN J Parenter Enteral Nutr 2024;48:145–54 · 3) Jensen GL, Cederholm T, Correia MITD, et al. GLIM consensus approach to diagnosis of malnutrition: a 5-year update. JPEN J Parenter Enteral Nutr 2025;49:414–27 · 4) Barazzoni R, Jensen GL, Correia MITD, et al. Guidance for assessment of the muscle mass phenotypic criterion for the GLIM diagnosis of malnutrition. Clin Nutr 2022;41:1425–33 · 5) Maeda K, Ishida Y, Nonogaki T, Mori N. Reference body mass index values and the prevalence of malnutrition according to the GLIM criteria. Clin Nutr 2020;39:180–4 · 6) Singer P, Blaser AR, Berger MM, et al. ESPEN practical and partially revised guideline: clinical nutrition in the intensive care unit. Clin Nutr 2023;42:1671–89 · 7) Compher C, Bingham AL, McCall M, et al. Guidelines for the provision of nutrition support therapy in the adult critically ill patient: ASPEN. JPEN J Parenter Enteral Nutr 2022;46:12–41 · 8) McClave SA, Taylor BE, Martindale RG, et al. Guidelines for the provision and assessment of nutrition support therapy in the adult critically ill patient: SCCM and ASPEN. JPEN J Parenter Enteral Nutr 2016;40:159–211 · 9) da Silva JSV, Seres DS, Sabino K, et al. ASPEN consensus recommendations for refeeding syndrome. Nutr Clin Pract 2020;35:178–95 · 10) National Institute for Health and Care Excellence. Nutrition support for adults: oral nutrition support, enteral tube feeding and parenteral nutrition (CG32), 2006, updated 2017 · 11) Ikizler TA, Burrowes JD, Byham-Gray LD, et al. KDOQI clinical practice guideline for nutrition in CKD: 2020 update. Am J Kidney Dis 2020;76(3 Suppl 1):S1–107 · 12) Plauth M, Bernal W, Dasarathy S, et al. ESPEN guideline on clinical nutrition in liver disease. Clin Nutr 2019;38:485–521 · 13) Volkert D, Beck AM, Cederholm T, et al. ESPEN practical guideline: clinical nutrition and hydration in geriatrics. Clin Nutr 2022;41:958–89 · 14) Thibault R, Abbasoglu O, Ioannou E, et al. ESPEN guideline on hospital nutrition. Clin Nutr 2021;40:5684–709 · 15) Gomes F, Schuetz P, Bounoure L, et al. ESPEN guidelines on nutritional support for polymorbid internal medicine patients. Clin Nutr 2018;37:336–53 · 16) Bischoff SC, Austin P, Boeykens K, et al. ESPEN practical guideline: home enteral nutrition. Clin Nutr 2022;41:468–88 · 17) Kondrup J, Rasmussen HH, Hamberg O, Stanga Z. Nutritional risk screening (NRS 2002): a new method based on an analysis of controlled clinical trials. Clin Nutr 2003;22:321–36 · 18) Kaiser MJ, Bauer JM, Ramsch C, et al. Validation of the Mini Nutritional Assessment short-form (MNA-SF). J Nutr Health Aging 2009;13:782–8 · 19) Rahman A, Hasan RM, Agarwala R, et al. Identifying critically-ill patients who will benefit most from nutritional therapy: further validation of the "modified NUTRIC" nutritional risk assessment tool. Clin Nutr 2016;35:158–62 · 20) Komindr S, Tangsermwong T, Janepanish P. Simplified malnutrition tool for Thai patients. Asia Pac J Clin Nutr 2013;22:516–21 · 21) Prammanasudh B, Trakulhoon V. NT 2013: a recommended nutrition screening and nutrition format for practical clinical use in hospitalized patients in Thailand. Thai J Surg 2019;40:107–16 · 22) Pibul K, Techapongsatorn S, Thiengthiantham R, et al. Nutritional assessment for surgical patients by Bhumibol Nutrition Triage (BNT) and Subjective Global Assessment (SGA). Thai J Surg 2011;32(2) · 23) Schuetz P, Fehr R, Baechli V, et al. Individualised nutritional support in medical inpatients at nutritional risk (EFFORT): a randomised clinical trial. Lancet 2019;393:2312–21 · 24) European Pressure Ulcer Advisory Panel, National Pressure Injury Advisory Panel, Pan Pacific Pressure Injury Alliance. Prevention and treatment of pressure ulcers/injuries: clinical practice guideline, 3rd ed. 2019 · 25) Cichero JAY, Lam P, Steele CM, et al. Development of international terminology and definitions for texture-modified foods and thickened fluids used in dysphagia management: the IDDSI framework. Dysphagia 2017;32:293–314 · 26) Druml C, Ballmer PE, Druml W, et al. ESPEN guideline on ethical aspects of artificial nutrition and hydration. Clin Nutr 2016;35:545–56 · 27) Chen LK, Woo J, Assantachai P, et al. Asian Working Group for Sarcopenia: 2019 consensus update. J Am Med Dir Assoc 2020;21:300–7 · 28) กรมอนามัย กระทรวงสาธารณสุข. ปริมาณสารอาหารอ้างอิงที่ควรได้รับประจำวันสำหรับคนไทย พ.ศ. 2563<br>
+  <span class="tag th">ไทย</span> = บริบทไทย · <span class="tag add">เสริม</span> = นอกเหนือแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','nuView');
+mountWalker({
+ start:{q:'ผลคัดกรอง (NRS-2002 / NAF / MNA-SF) เป็นอย่างไร?',o:[['ไม่เสี่ยง','noRisk','NRS <3 · NAF A · MNA-SF 12–14'],['เสี่ยง','rf','NRS ≥3 · NAF B–C · MNA-SF ≤11']]},
+ noRisk:{leaf:true,cls:'ok',t:'ยังไม่เสี่ยง',b:'ให้อาหารตามปกติ · บันทึกการกิน · <b>คัดกรองซ้ำทุก ~1 สัปดาห์</b> หรือเมื่ออาการเปลี่ยน (ผ่าตัด, เข้า ICU, งดอาหาร)'},
+ rf:{q:'ประเมิน GLIM และความเสี่ยง refeeding แล้ว — เสี่ยง refeeding สูงไหม?',h:'NICE: BMI <16, น้ำหนักลด >15% ใน 3–6 เดือน, แทบไม่ได้กิน >10 วัน, K/P/Mg ต่ำ (1 ข้อ) หรือ 2 ข้อย่อย',o:[['เสี่ยงสูง / สูงมาก','rfHigh'],['ไม่สูง','route']]},
+ rfHigh:{leaf:true,cls:'danger',t:'ป้องกัน refeeding ก่อนเริ่ม',b:'<b>Thiamine 100 mg ก่อนให้อาหาร/glucose</b> แล้ววันละ 100 mg 5–7 วัน (NICE 200–300 mg/วัน) + วิตามินรวม · ตรวจ P K Mg ตั้งต้น · <b>เริ่ม 10 kcal/kg/วัน</b> (สูงมาก 5 kcal/kg) แล้วเพิ่มช้าๆ ถึงเป้าใน 4–7 วัน · ตรวจ P K Mg ทุก 12 ชม. 3 วันแรก',next:['เลือกทางให้อาหาร','route']},
+ route:{q:'ลำไส้ใช้ได้ไหม?',o:[['ใช้ได้','oral'],['ใช้ไม่ได้','pnq','อุดตัน, ileus นาน, high-output fistula, ขาดเลือด, short bowel']]},
+ oral:{q:'กินเองได้ ≥75% ของเป้า และกลืนปลอดภัย?',o:[['ได้','ons'],['ไม่ได้ / กลืนไม่ปลอดภัย','enq']]},
+ ons:{leaf:true,cls:'ok',t:'อาหารทางปาก + ONS',b:'ปรับอาหาร เพิ่มมื้อว่าง · <b>ONS ~400 kcal + ≥30 g โปรตีน/วัน</b> · ชั่งน้ำหนักสัปดาห์ละครั้ง · กินยัง &lt;50–60% นาน &gt;5–7 วัน → tube feeding'},
+ enq:{q:'คาดว่าต้องให้อาหารทางสายนานเท่าไร?',o:[['&lt;4–6 สัปดาห์','ngq'],['&gt;4–6 สัปดาห์','pegq']]},
+ ngq:{q:'ทนอาหารทางกระเพาะได้ไหม?',o:[['ได้','ng'],['ไม่ได้','nj','อาเจียนซ้ำ, GRV >500 mL/6 ชม. แม้ให้ prokinetic, สำลักซ้ำ']]},
+ ng:{leaf:true,cls:'ok',t:'NG tube feeding',b:'ยืนยันตำแหน่งด้วย X-ray · <b>หัวสูง 30–45°</b> · bolus 4–6 มื้อ หรือ continuous (ICU) · ไม่ต้องวัด GRV เป็น routine · flush น้ำ 30 mL ก่อน-หลัง · ใช้เครื่องมือข้อ 4 คำนวณสูตร'},
+ nj:{leaf:true,cls:'warn',t:'Prokinetic → post-pyloric',b:'<b>Erythromycin 100–250 mg IV วันละ 3 ครั้ง</b> 2–4 วัน หรือ metoclopramide 10 mg IV วันละ 2–3 ครั้ง · ไม่ได้ผล → <b>NJ tube</b> ให้แบบ continuous เท่านั้น · หาสาเหตุ (opioid, น้ำตาลสูง, K/Mg ต่ำ, ileus)'},
+ pegq:{q:'เป็นสมองเสื่อมระยะท้าย หรือระยะท้ายของชีวิต?',o:[['ใช่','eol'],['ไม่ใช่','peg']]},
+ peg:{leaf:true,cls:'ok',t:'PEG / gastrostomy',b:'เช่น stroke กลืนไม่ได้นาน, โรคประสาท-กล้ามเนื้อ, มะเร็งศีรษะคอ · ระหว่างรอใช้ NG · ฝึกญาติเรื่องอาหารปั่นผสม/สูตรสำเร็จ ความสะอาด และ flush สาย'},
+ eol:{leaf:true,cls:'violet',t:'คุยเป้าหมายการดูแล',b:'<b>ไม่แนะนำ PEG/NG ในสมองเสื่อมระยะท้าย</b> (ไม่ลดสำลัก ไม่ยืดชีวิต) → <b>careful hand feeding</b> · การให้อาหารทางสายเป็นการรักษาที่งด/หยุดได้ · ดูหน้า Palliative care'},
+ pnq:{q:'ขาดอาหารรุนแรง (GLIM stage 2) หรือไม่?',o:[['ใช่','pnEarly'],['ไม่','pnLate']]},
+ pnEarly:{leaf:true,cls:'danger',t:'เริ่ม PN เร็วแบบค่อยๆ เพิ่ม',b:'ขาดอาหารรุนแรง + ลำไส้ใช้ไม่ได้ → เริ่ม PN <b>เร็ว</b> (ไม่ต้องรอ 7 วัน) · ระวัง refeeding: thiamine ก่อน เริ่มพลังงานต่ำ · เติมวิตามินรวม + trace elements ทุกวัน · ตามน้ำตาล P K Mg'},
+ pnLate:{leaf:true,cls:'warn',t:'PN ภายใน 3–7 วัน',b:'ESPEN: EN ไม่ได้ → เริ่ม PN ภายใน 3–7 วัน · ICU ที่ได้ EN แต่ไม่พอ: ASPEN ไม่เริ่ม supplemental PN ก่อนวันที่ 7 · peripheral ≤850–900 mOsm/L ระยะสั้น · ยาวกว่านั้นใช้ central line · กลับไปใช้ EN ทันทีที่ทำได้'}
+},'apTrail','apStage');
+
+/* ---------- 1) NRS-2002 ---------- */
+function nrs(){
+  const a=num('nAge');const o=$('nrsOut');
+  if(a===null){o.textContent='ใส่อายุ';return}
+  if(a<18||a>120){o.textContent='อายุไม่อยู่ในช่วงผู้ใหญ่ (18–120 ปี) — NRS-2002 ใช้กับผู้ใหญ่';return}
+  const n=+$('nNut').value,d=+$('nDis').value,ag=a>=70?1:0,t=n+d+ag;
+  const L=[`คะแนน = ภาวะโภชนาการ ${n} + โรค ${d} + อายุ ${ag} = <b>${t}</b>`];
+  if(t>=5)L.push('<b>≥5 เสี่ยงสูง</b> → วางแผนโภชนบำบัดทันที · ประเมิน GLIM และ refeeding · เป้าพลังงาน/โปรตีนใช้เครื่องมือข้อ 3');
+  else if(t>=3)L.push('<b>≥3 เสี่ยง</b> → วางแผนโภชนบำบัด (อาหาร + ONS หรือ tube feeding) · ประเมิน GLIM');
+  else L.push('<b>&lt;3 ยังไม่เสี่ยง</b> → คัดกรองซ้ำทุก ~1 สัปดาห์ (หรือก่อนผ่าตัดใหญ่)');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tNrs input,#tNrs select',nrs);
+
+/* ---------- 2) GLIM ---------- */
+function glim(){
+  const a=num('gAge'),w=num('gWt'),h=num('gHt'),w0=num('gWt0');const o=$('glimOut');const c=id=>$(id).checked;
+  if(a===null||w===null||h===null){o.textContent='ใส่อายุ น้ำหนัก และส่วนสูง';return}
+  if(a<18||a>120){o.textContent='อายุไม่อยู่ในช่วงผู้ใหญ่ (18–120 ปี)';return}
+  if(w<20||w>300){o.textContent='น้ำหนักไม่สมเหตุสมผล (20–300 kg) — ตรวจค่าอีกครั้ง';return}
+  if(h<120||h>230){o.textContent='ส่วนสูงใส่เป็นเซนติเมตร (120–230 cm)';return}
+  if(w0!==null&&(w0<20||w0>300)){o.textContent='น้ำหนักเดิมไม่สมเหตุสมผล — ตรวจค่าหรือเว้นว่าง';return}
+  const bmi=Math.round(w/Math.pow(h/100,2)*100)/100, old=a>=70;
+  const cut=old?20:18.5, sev=old?17.8:17.0;
+  const L=[`BMI = <b>${bmi.toFixed(1)}</b> kg/m² (เกณฑ์เอเชีย: ต่ำเมื่อ &lt;${cut} ${old?'อายุ ≥70':'อายุ &lt;70'} ปี)`];
+  let st=0;const ph=[];
+  if(bmi<cut){const s=bmi<sev?2:1;st=Math.max(st,s);ph.push(`BMI ต่ำ (${s===2?`&lt;${sev} → รุนแรงตาม Maeda 2020`:'ปานกลาง'})`);}
+  const t=$('gT').value==='6';
+  if(w0!==null){
+    if(w0>w){const p=Math.round((w0-w)/w0*1000)/10;
+      L.push(`น้ำหนักลด <b>${p}%</b> ${t?'ใน 6 เดือน':'เกิน 6 เดือน'}`);
+      const s=t?(p>10?2:p>5?1:0):(p>20?2:p>10?1:0);
+      if(s){st=Math.max(st,s);ph.push(`น้ำหนักลด (${s===2?'รุนแรง':'ปานกลาง'})`);}
+    }else L.push('น้ำหนักไม่ลด');
+  }else L.push('<span class="muted">ไม่ทราบน้ำหนักเดิม — ใช้ BMI และกล้ามเนื้อ</span>');
+  const m=+$('gMus').value;if(m){st=Math.max(st,m);ph.push(`กล้ามเนื้อลด (${m===2?'รุนแรง':'เล็กน้อย–ปานกลาง'})`);}
+  const et=[c('gIntake')?'กินลดลง/ดูดซึมไม่ได้':null,c('gInfl')?'การอักเสบ/ภาระโรค':null].filter(Boolean);
+  L.push('Phenotypic: '+(ph.length?ph.join(' · '):'<b>ไม่มี</b>'));
+  L.push('Etiologic: '+(et.length?et.join(' · '):'<b>ไม่มี</b>'));
+  if(ph.length&&et.length)L.push(st===2?'<b>ทุพโภชนาการรุนแรง (GLIM stage 2)</b> → โภชนบำบัดเต็มที่ · <b>ประเมินเสี่ยง refeeding</b> · บันทึกวินิจฉัย (ICD-10 E43)':'<b>ทุพโภชนาการปานกลาง (GLIM stage 1)</b> → วางแผนโภชนบำบัด · ติดตามน้ำหนักและการกิน · บันทึกวินิจฉัย (ICD-10 E44.0)');
+  else if(ph.length)L.push('มี phenotypic แต่<b>ยังไม่มี etiologic</b> → ยังวินิจฉัย GLIM ไม่ได้ · ทบทวนการกินและโรคร่วม (ผอมโดยพื้นฐานไม่ใช่ทุพโภชนาการเสมอไป)');
+  else if(et.length)L.push('ยัง<b>ไม่เข้าเกณฑ์ GLIM</b> (ไม่มี phenotypic) แต่เสี่ยง → ให้อาหารให้พอ · ติดตามน้ำหนักและกล้ามเนื้อ');
+  else L.push('ไม่เข้าเกณฑ์ทุพโภชนาการตาม GLIM');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tGlim input,#tGlim select',glim);
+
+/* ---------- 3) Energy & protein ---------- */
+function req(){
+  const w=num('rWt'),h=num('rHt');const o=$('reqOut');const cd=$('rCond').value,rf=+$('rRf').value;
+  if(w===null||h===null){o.textContent='ใส่น้ำหนักและส่วนสูง';return}
+  if(w<20||w>300){o.textContent='น้ำหนักไม่สมเหตุสมผล (20–300 kg) — ตรวจค่าอีกครั้ง';return}
+  if(h<120||h>230){o.textContent='ส่วนสูงใส่เป็นเซนติเมตร (120–230 cm)';return}
+  const male=$('rSex').value==='m';
+  const ibw=Math.max((male?50:45.5)+0.91*(h-152.4),30);
+  const bmi=w/Math.pow(h/100,2);
+  const obese=w>1.2*ibw||bmi>=30;
+  const adj=ibw+0.33*(w-ibw);
+  let dw=obese?adj:w, wl=obese?'น้ำหนักปรับ':'น้ำหนักจริง';
+  const L=[`BMI <b>${bmi.toFixed(1)}</b> · IBW (Devine) <b>${ibw.toFixed(1)} kg</b>`+(obese?` · อ้วน → <b>น้ำหนักปรับ ${adj.toFixed(1)} kg</b> (IBW + 0.33 × ส่วนเกิน)`:'')];
+  let e1,e2,p1,p2,note=[];
+  if(cd==='gen'){e1=25;e2=30;p1=1.2;p2=1.5;note.push('ESPEN: โปรตีนอย่างน้อย ≥1.0 g/kg · ผู้สูงอายุหลายโรค ~27 kcal/kg');}
+  else if(cd==='old'){e1=27;e2=30;p1=1.0;p2=1.5;note.push('ESPEN geriatrics: ~30 kcal/kg และโปรตีน ≥1.0 g/kg (ป่วยเฉียบพลัน/ขาดอาหาร 1.2–1.5) · ONS ≥400 kcal + 30 g โปรตีน ถ้ากินไม่พอ');}
+  else if(cd==='icu'){e1=12;e2=25;p1=1.3;p2=1.3;}
+  else if(cd==='icur'){e1=25;e2=30;p1=1.3;p2=2.0;note.push('ระยะฟื้นตัวต้องการโปรตีนสูง · ฝึกกายภาพร่วมด้วย');}
+  else if(cd==='ckd'){e1=25;e2=35;if($('rDm').checked){p1=0.6;p2=0.8;}else{p1=0.55;p2=0.6;}note.push('KDOQI 2020: ใช้กับผู้ป่วย<b>คงที่</b>ภายใต้นักกำหนดอาหาร (หรือ 0.28–0.43 g/kg + keto analogues) · <b>ป่วยเฉียบพลัน/ขาดอาหาร: อย่าจำกัดโปรตีน</b> (ใช้ ~1.0–1.2 g/kg ชั่วคราว)');}
+  else if(cd==='hd'){e1=25;e2=35;p1=1.0;p2=1.2;note.push('KDOQI 2020 · ล้างไตเสียกรดอะมิโน · คุม K P น้ำ');}
+  else if(cd==='cir'){e1=35;e2=35;p1=1.2;p2=1.5;
+    if($('rAsc').checked){dw=Math.min(w,ibw);wl='น้ำหนักอุดมคติ (มีน้ำในท้อง)';}
+    else{dw=w;wl='น้ำหนักจริง/แห้ง';}
+    if(bmi>=30){dw=ibw;wl='น้ำหนักอุดมคติ (อ้วน)';if(bmi>40){e1=20;e2=25;}else{e1=25;e2=35;}note.push('ตับแข็ง + อ้วน: ESPEN ใช้ kcal ต่อน้ำหนักอุดมคติ · โปรตีนในคนอ้วนแนวทางบางฉบับให้สูงกว่านี้ — ปรึกษานักกำหนดอาหาร');}
+    note.push('<b>Late-evening snack</b> + มื้อเช้า · ไม่อดอาหาร &gt;3–6 ชม. · <b>ไม่จำกัดโปรตีน</b>แม้มี HE');}
+  else if(cd==='pi'){e1=30;e2=35;p1=1.25;p2=1.5;note.push('NPIAP 2019 · น้ำ ~1 mL/kcal · stage ≥2 + ขาดอาหาร: ONS เสริม arginine, zinc, antioxidants');}
+  if(obese&&cd!=='cir'&&cd!=='icu'){e1=Math.min(e1,20);e2=Math.min(e2,25);note.push('อ้วน: ใช้ ~20–25 kcal/kg ของน้ำหนักปรับ <span class="tag add">เสริม</span>');}
+  const r=x=>Math.round(x/10)*10, g=x=>Math.round(x);
+  const ef=(a,b)=>a===b?`${r(a*dw)}`:`${r(a*dw)}–${r(b*dw)}`;
+  const pf=(a,b)=>a===b?`${g(a*dw)}`:`${g(a*dw)}–${g(b*dw)}`;
+  const goal=r(e2*dw);
+  L.push(`ใช้ <b>${wl} ${dw.toFixed(1)} kg</b>`);
+  if(cd==='icu'){
+    const full=r(25*dw);
+    L.push(`<b>ICU ระยะแรก</b>: ASPEN 12–25 kcal/kg = <b>${ef(12,25)} kcal/วัน</b> · ESPEN: วันที่ 1–3 <b>ไม่เกิน 70%</b> (≤${r(0.7*full)} kcal ถ้าใช้ 25 kcal/kg เป็นเป้า) แล้วเพิ่มเป็น 80–100% หลังวันที่ 3`);
+    L.push(`โปรตีน: เริ่มน้อยแล้ว<b>ค่อยๆ เพิ่มถึง 1.3 g/kg = ${pf(1.3,1.3)} g/วัน</b> ใน 3–5 วัน (ASPEN 1.2–2.0 = ${pf(1.2,2.0)} g)`);
+    L.push('นับพลังงานจาก propofol (1.1 kcal/mL) และ dextrose ใน IV fluid · ใช้ indirect calorimetry ถ้ามี');
+    if(bmi>=30)L.push(`<span class="muted">อ้วนใน ICU — ทางเลือก SCCM/ASPEN 2016: ${bmi<=50?`11–14 kcal/kg น้ำหนักจริง = ${r(11*w)}–${r(14*w)} kcal`:`22–25 kcal/kg IBW = ${r(22*ibw)}–${r(25*ibw)} kcal`} · โปรตีน ${bmi<40?'2.0':'สูงสุด 2.5'} g/kg IBW = ${g((bmi<40?2.0:2.5)*ibw)} g</span>`);
+  }else{
+    L.push(`<b>พลังงาน ${ef(e1,e2)} kcal/วัน</b> (${e1===e2?e1:e1+'–'+e2} kcal/kg)`);
+    L.push(`<b>โปรตีน ${pf(p1,p2)} g/วัน</b> (${p1===p2?p1:p1+'–'+p2} g/kg)`);
+  }
+  note.forEach(x=>L.push(x));
+  if(bmi<14&&rf<3)L.push('<b>BMI &lt;14 = เสี่ยง refeeding สูงมาก (NICE)</b> → เลือกระดับเสี่ยงให้ถูก: เริ่ม 5 kcal/kg');
+  else if(bmi<16&&rf<2)L.push('<b>BMI &lt;16 = เสี่ยง refeeding สูง (NICE)</b> → เลือกระดับเสี่ยงให้ถูก: เริ่ม ≤10 kcal/kg');
+  if(rf){
+    const k=rf===3?5:10, k2=rf===1?20:k, rw=Math.min(w,dw);
+    const tg=cd==='icu'?r(25*dw):goal;
+    const sc=cd==='icu'?r(0.7*tg):tg, s1=Math.min(r(k*rw),sc),s2=Math.min(r(k2*rw),sc);
+    const step=r(tg/3);
+    L.push(`<b>เสี่ยง refeeding ${rf===3?'สูงมาก':rf===2?'สูง':'ปานกลาง'}</b> → วันแรก <b>${rf===1?`10–20 kcal/kg = ${s1}–${s2}`:`${k} kcal/kg = ${s1}`} kcal</b> (${rw<w?`ใช้${wl} ${rw.toFixed(1)} kg`:'ใช้น้ำหนักจริง'}${rf===1?' · ASPEN 2020':' · NICE'}) · <b>thiamine 100 mg ก่อนเริ่ม</b> แล้ววันละ 100 mg 5–7 วัน · ถ้า P K Mg คงที่ เพิ่ม ~${step} kcal (≈33% ของเป้า ${tg}) ทุก 1–2 วัน จนถึงเป้า (ราว 4–7 วัน) · ตรวจ P K Mg ทุก 12 ชม. 3 วันแรก`);
+  }
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tReq input,#tReq select',req);
+
+/* ---------- 4) Enteral regimen ---------- */
+function enr(){
+  const k=num('eKcal'),pr=num('ePro'),n=num('eN'),w=num('eWt');const o=$('enOut');
+  const d=parseFloat($('eDen').value),mode=$('eMode').value,rf=+$('eRf').value;
+  if(k===null){o.textContent='ใส่เป้าพลังงาน (kcal/วัน) — คำนวณได้จากเครื่องมือข้อ 3';return}
+  if(k<300||k>4000){o.textContent='เป้าพลังงานไม่สมเหตุสมผล (300–4,000 kcal/วัน)';return}
+  if(mode==='bolus'&&(n===null||n<1||n>12||n!==Math.round(n))){o.textContent='ใส่จำนวนมื้อเป็นจำนวนเต็ม 1–12 (มัก 4–6 มื้อ)';return}
+  if(w!==null&&(w<20||w>300)){o.textContent='น้ำหนักไม่สมเหตุสมผล (20–300 kg) — แก้หรือเว้นว่าง';return}
+  if(pr!==null&&(pr<=0||pr>150)){o.textContent='โปรตีนในสูตรควรอยู่ราว 1–150 g/1000 mL (สูตรทั่วไป ~35–60) — แก้หรือเว้นว่าง';return}
+  if(rf&&w===null){o.textContent='เสี่ยง refeeding — ใส่น้ำหนักเพื่อคำนวณขนาดเริ่มต้น';return}
+  const vol=Math.round(k/d), wf=d===1?0.84:d===1.5?0.77:0.70;
+  const L=[`สูตร ${d} kcal/mL × <b>${vol} mL/วัน</b> = ${k} kcal`];
+  if(pr!==null){const pg=Math.round(vol/1000*pr);L.push(`โปรตีนที่ได้ ≈ <b>${pg} g/วัน</b>`+(w!==null?` (${(pg/w).toFixed(2)} g/kg)`:''));}
+  let cap=null;
+  if(rf){cap=Math.round((rf===3?5:10)*w);if(cap>k)cap=k;}
+  if(rf===1)L.push(`<b>เสี่ยงปานกลาง (ASPEN 2020)</b>: เริ่มได้ 10–20 kcal/kg = ${Math.min(Math.round(10*w),k)}–${Math.min(Math.round(20*w),k)} kcal วันแรก · <b>เครื่องมือนี้คำนวณปริมาตรจากค่าล่าง 10 kcal/kg</b> เพื่อความปลอดภัย เพราะไม่ทราบ P K Mg ตั้งต้นและโรคร่วม — ถ้า P K Mg ปกติและไม่มีปัจจัยเสี่ยงอื่น เริ่มสูงกว่านี้ได้ถึง 20 kcal/kg`);
+  let flush;
+  if(mode==='bolus'){
+    const per=Math.round(vol/n/10)*10;
+    L.push(`<b>Bolus ${n} มื้อ × ~${per} mL</b> ให้ช้าใน 15–30 นาที · หัวสูง 30–45° ระหว่างและหลังให้ 30–60 นาที`);
+    if(per>400)L.push(`<b>มื้อละ ${per} mL มากเกินไป</b> (มัก ≤400 mL) → เพิ่มจำนวนมื้อ หรือใช้สูตรเข้มข้นขึ้น/continuous`);
+    if(cap!==null){const pc=Math.max(Math.floor(cap/d/n/10)*10,10);L.push(`<b>Refeeding: วันแรก ≤${cap} kcal</b> → มื้อละ ~${pc} mL × ${n} มื้อ · เพิ่มช้าๆ ถึง ${per} mL/มื้อ ใน 4–7 วัน ถ้า P K Mg คงที่`);}
+    else{const st=Math.min(100,per);L.push(`เริ่ม <b>${st} mL/มื้อ</b> แล้ว<b>เพิ่มทีละ ~50 mL/มื้อ</b> ถ้าไม่ท้องอืด/อาเจียน จนถึง ${per} mL (ปกติถึงเป้าใน 1–3 วัน)`);}
+    flush=60*n;L.push(`Flush น้ำ 30 mL ก่อนและหลังแต่ละมื้อ = ${flush} mL/วัน`);
+  }else{
+    const r24=Math.round(vol/24),r20=Math.round(vol/20);
+    L.push(`<b>Continuous เป้า ${r24} mL/ชม.</b> (24 ชม.) หรือ ${r20} mL/ชม. ถ้าหยุดพัก ~4 ชม./วัน`);
+    if(cap!==null){const rc=Math.max(Math.floor(cap/d/24),5);L.push(`<b>Refeeding: วันแรก ≤${cap} kcal</b> → ~${rc} mL/ชม. · เพิ่มช้าๆ ถึง ${r24} mL/ชม. ใน 4–7 วัน ถ้า P K Mg คงที่`);}
+    else{const st=Math.min(20,r24);L.push(`เริ่ม <b>${st} mL/ชม.</b> (10–30) แล้ว<b>เพิ่ม 10–25 mL/ชม. ทุก 4–8 ชม.</b> จนถึง ${r24} mL/ชม.`);}
+    flush=180;L.push('Flush น้ำ 30 mL ทุก 4 ชม. = 180 mL/วัน (และก่อน-หลังให้ยา)');
+  }
+  const fw=Math.round(vol*wf);
+  if(w===null)L.push(`น้ำจากสูตร ≈ ${fw} mL/วัน · <span class="muted">ใส่น้ำหนักเพื่อคำนวณน้ำที่ต้องเติม</span>`);
+  else if($('eFl').checked)L.push(`น้ำจากสูตร ≈ ${fw} + flush ${flush} mL/วัน · <b>จำกัดน้ำ</b>: กำหนดน้ำรวมตามแพทย์ (รวม IV fluid และยา) · พิจารณาสูตรเข้มข้น 1.5–2 kcal/mL`);
+  else{const need=Math.round(30*w),extra=need-fw-flush;
+    L.push(`น้ำที่ต้องการ ~30 mL/kg = ${need} mL · จากสูตร ≈ ${fw} + flush ${flush} mL`+(extra>0?` → <b>เติมน้ำอีก ~${extra} mL/วัน</b>${mode==='bolus'?` (≈${Math.round(extra/n/10)*10} mL หลังแต่ละมื้อ)`:''}`:' → <b>ไม่ต้องเติมน้ำเพิ่ม</b>')+' · หักลบ IV fluid ที่ได้ · ตาม Na'+(need<1600?' · <b>น้ำหนักน้อย: 30 mL/kg อาจน้อยไป</b> — ผู้สูงอายุ ESPEN แนะนำน้ำรวม ~1.6 L/วัน (หญิง) / 2.0 L/วัน (ชาย) ถ้าไม่มีข้อจำกัด · ตาม Na และปัสสาวะ':''));}
+  if(rf)L.push('<b>Thiamine 100 mg ก่อนเริ่ม</b> · ตรวจ P K Mg ทุก 12 ชม. 3 วันแรก');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tEn input,#tEn select',enr);
+
+mountQuiz([
+ ['ชาย 74 ปี เข้า รพ.ด้วยปอดอักเสบรุนแรง น้ำหนักลด >5% ใน 2 เดือน (คะแนนโภชนาการ 2) คะแนน NRS-2002 เท่าไรและแปลผลอย่างไร',['3 — ไม่เสี่ยง','4 — เสี่ยง','5 — เสี่ยง','2 — ไม่เสี่ยง'],2,'โภชนาการ 2 + ปอดอักเสบรุนแรง 2 + อายุ ≥70 (+1) = 5 · ≥3 ถือว่าเสี่ยง'],
+ ['ตาม GLIM เกณฑ์ BMI ต่ำสำหรับคนเอเชียอายุ 75 ปี คือ',['<18.5','<20','<22','<17'],1,'เอเชีย: <18.5 ถ้า <70 ปี และ <20 ถ้า ≥70 ปี (สากล <20/<22)'],
+ ['หญิง 60 ปี BMI 17.5 น้ำหนักคงที่ ไม่มีโรคและกินได้ปกติ ตาม GLIM',['ทุพโภชนาการ stage 1','ทุพโภชนาการ stage 2','ยังวินิจฉัยไม่ได้ เพราะไม่มี etiologic criterion','ไม่ต้องประเมินอะไร'],2,'GLIM ต้องมี phenotypic ≥1 และ etiologic ≥1'],
+ ['ข้อใด "ไม่ควร" ใช้วินิจฉัยภาวะทุพโภชนาการ',['น้ำหนักลด','BMI','Serum albumin','มวลกล้ามเนื้อ'],2,'Albumin ลดจากการอักเสบ ตับ ไต น้ำเกิน — ไม่ใช่ตัววัดภาวะโภชนาการ'],
+ ['ผู้ป่วย ICU วันที่ 2 ใส่ท่อช่วยหายใจ hemodynamic คงที่ ข้อใดตรงกับ ESPEN 2023',['ให้พลังงานเต็ม 100% ทันที','เริ่ม EN และให้พลังงานไม่เกิน 70% ในช่วงแรก ค่อยๆ เพิ่มโปรตีนถึง 1.3 g/kg','งดอาหาร 7 วัน','เริ่ม PN เต็มที่ทันที'],1,'Early EN ภายใน 24–48 ชม. แบบ hypocaloric ระยะแรก โปรตีนค่อยๆ เพิ่ม'],
+ ['ผู้ป่วย CKD stage 4 ไม่เป็นเบาหวาน อาการคงที่ KDOQI 2020 แนะนำโปรตีน',['0.55–0.6 g/kg/วัน','1.0–1.2 g/kg/วัน','1.5 g/kg/วัน','0.3 g/kg/วัน โดยไม่ต้องเสริมอะไร'],0,'เบาหวาน 0.6–0.8 · ล้างไต 1.0–1.2 · 0.28–0.43 ต้องเสริม keto analogues'],
+ ['ผู้ป่วยตับแข็ง Child C มี hepatic encephalopathy grade 1 ควรได้โปรตีนเท่าไร',['จำกัด <0.5 g/kg','งดโปรตีนจน HE หาย','1.2–1.5 g/kg/วัน ร่วมกับ late-evening snack','0.8 g/kg เท่านั้น'],2,'ESPEN: ไม่จำกัดโปรตีน · 35 kcal/kg'],
+ ['ผู้ป่วยให้อาหารทางสายท้องเสีย 5 ครั้ง/วัน กำลังได้ยาฆ่าเชื้อและยาน้ำหลายตัว ทำอะไรก่อน',['หยุดอาหารทางสายทันที','ทบทวนยา (sorbitol, ยาระบาย) และตรวจ C. difficile','ให้ loperamide ทันที','เปลี่ยนเป็น PN'],1,'สาเหตุบ่อยคือยา ไม่ใช่อาหาร · ไม่ต้องหยุดอาหารเป็น routine'],
+ ['ข้อใดถูกเกี่ยวกับ gastric residual volume (GRV) ตาม ASPEN',['ต้องวัดทุก 4 ชม.และหยุดอาหารเมื่อ >200 mL','ไม่ต้องวัดเป็น routine · ถ้าวัด อย่าหยุดอาหารเมื่อ <500 mL โดยไม่มีอาการอื่น','GRV ทำนายปอดอักเสบได้แม่นยำ','ห้ามให้ prokinetic'],1,'จัดหัวสูง 30–45° สำคัญกว่า'],
+ ['หญิง BMI 13.5 แทบไม่ได้กินมา 3 สัปดาห์ ควรเริ่มอาหารอย่างไร (NICE)',['30 kcal/kg ทันที','10 kcal/kg + thiamine','5 kcal/kg + thiamine ก่อนเริ่ม ตาม P K Mg ใกล้ชิด','งดอาหารจนค่าเกลือแร่ปกติ'],2,'เสี่ยงสูงมาก (BMI <14 หรือไม่ได้กิน >15 วัน) → 5 kcal/kg'],
+ ['ใน ICU ผู้ป่วยได้ EN แต่ได้แค่ 50% ของเป้า ASPEN 2022 แนะนำเรื่อง supplemental PN อย่างไร',['เริ่มทันทีวันที่ 1','ไม่เริ่มก่อนวันที่ 7 ใน ICU','ห้ามใช้ตลอด','เริ่มเมื่อ albumin <3'],1,'Strong recommendation ใน ASPEN 2022'],
+ ['ผู้ป่วยสมองเสื่อมระยะท้าย กลืนลำบาก สำลักบ่อย ญาติถามเรื่องใส่ PEG ข้อใดเหมาะ',['ใส่ PEG ทุกราย','ใส่ NG ถาวร','อธิบายว่า PEG ไม่ลดสำลักหรือยืดชีวิต แนะนำ careful hand feeding ตามเป้าหมายการดูแล','ให้ PN ที่บ้าน'],2,'ESPEN/AGS: ไม่แนะนำการให้อาหารทางสายในสมองเสื่อมระยะท้าย']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>

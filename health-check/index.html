@@ -1,0 +1,805 @@
+<!doctype html><html lang="th"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Periodic health examination · ตรวจสุขภาพประจำปีในผู้ใหญ่</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: single reading column (~780px) with a sticky chip nav; diagrams and tools break out to a wider 1040px track */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --sunk:#E9EFF1; --ink:#13232A; --muted:#55666E; --line:#D3DDE1;
+  --accent:#0B7480; --accent-soft:#DDF0F2; --accent-ink:#06525B;
+  --warn:#9A6212; --warn-soft:#FBEFD9;
+  --danger:#B02E2A; --danger-soft:#F8E1DF;
+  --ok:#2A7347; --ok-soft:#DFF1E5;
+  --violet:#5B4BA0; --violet-soft:#ECE8F8;
+  --f-display:"Noto Serif Thai", "Noto Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1619; --surface:#162125; --sunk:#1C2A2F; --ink:#E3EBEE; --muted:#93A6AD; --line:#2B3C42;
+  --accent:#4DC2CC; --accent-soft:#12333A; --accent-ink:#9BE3E9;
+  --warn:#E4B15C; --warn-soft:#33281A; --danger:#F07D75; --danger-soft:#3A1F1D;
+  --ok:#6FCB94; --ok-soft:#173022; --violet:#B3A6F0; --violet-soft:#262140; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+.col{max-width:780px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:1.6rem;margin-bottom:.4rem}
+h3{font-size:1.15rem;margin-block:1.4rem .5rem}
+p{margin:.5rem 0}
+a{color:var(--accent)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:14px}
+header.hero h1{font-size:clamp(1.9rem,5vw,2.9rem)}
+header.hero .sub{font-size:1.05rem;color:var(--muted);max-width:640px}
+.cite{font-size:.85rem;color:var(--muted)}
+.scale{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 10px}
+.scale-bar{position:relative;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--danger) 0%,var(--danger) 20%,var(--warn) 20%,var(--warn) 50%,var(--accent) 50%,var(--accent) 83%,var(--ok) 83%)}
+.scale-ticks{position:relative;height:46px;font-size:.78rem}
+.tick{position:absolute;top:2px;transform:translateX(-50%);text-align:center;line-height:1.25;white-space:nowrap}
+.tick b{font-family:var(--f-mono);display:block;font-size:.85rem}
+.tick.l{transform:none}.tick.r{transform:translateX(-100%)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:8px 16px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:4px 12px;margin-right:4px;border-radius:99px;font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid transparent}
+nav.toc a:hover{color:var(--ink);border-color:var(--line)}
+nav.toc a.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+
+section{padding-top:44px;scroll-margin-top:52px}
+.sec-num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem}
+
+/* boxes */
+.box{border-radius:var(--r);padding:12px 16px;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.box.key{background:var(--accent-soft);border-color:transparent}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.danger{background:var(--danger-soft);border-color:transparent}
+.box.note{background:var(--sunk);border-color:transparent;font-size:.92rem}
+.box > b:first-child{display:block;margin-bottom:2px}
+ul{padding-left:1.2rem;margin:.4rem 0}
+li{margin:.15rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:99px;vertical-align:1px;letter-spacing:.02em}
+.tag.add{background:var(--violet-soft);color:var(--violet)}
+.tag.fix{background:var(--warn-soft);color:var(--warn)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 4px;font-size:1rem}
+.card.hypo{border-top:4px solid var(--warn)}
+.card.eu{border-top:4px solid var(--accent)}
+.card.hyper{border-top:4px solid var(--violet)}
+
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.mono,th.mono{white-space:nowrap}
+
+.formula{font-family:var(--f-mono);background:var(--sunk);border-radius:8px;padding:10px 14px;overflow-x:auto;font-size:.9rem;white-space:nowrap}
+
+/* stepper (diagnosis steps) */
+.steps{display:grid;gap:8px;margin-top:12px}
+details.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.step summary{cursor:pointer;padding:10px 14px;display:flex;gap:12px;align-items:baseline;list-style:none}
+details.step summary::-webkit-details-marker{display:none}
+details.step summary .n{font-family:var(--f-mono);color:var(--accent);font-weight:600;min-width:2.2em}
+details.step summary .t{font-weight:600;flex:1}
+details.step summary::after{content:"+";color:var(--muted);font-family:var(--f-mono)}
+details.step[open] summary::after{content:"–"}
+details.step .body{padding:0 16px 12px 16px;border-top:1px dashed var(--line)}
+
+/* flowchart */
+.flow-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px;margin:16px 0;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;min-width:0}
+.node{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;text-align:center;font-size:.9rem;line-height:1.45;max-width:100%}
+.node b{display:block}
+.node.q{border-color:var(--accent);background:var(--accent-soft)}
+.node.start{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.node.dx{font-size:.84rem;text-align:left}
+.node.dx.hypo{border-color:var(--warn);background:var(--warn-soft)}
+.node.dx.eu{border-color:var(--accent)}
+.node.dx.hyper{border-color:var(--violet);background:var(--violet-soft)}
+.node.dx.grey{background:var(--sunk);border-color:var(--line)}
+.node.red{border-color:var(--danger);background:var(--danger-soft)}
+.node.green{border-color:var(--ok);background:var(--ok-soft)}
+.vline{width:2px;height:18px;background:var(--muted);opacity:.6;position:relative}
+.vline.arrow::after{content:"";position:absolute;bottom:-5px;left:-4px;border:5px solid transparent;border-top-color:var(--muted)}
+.branch{display:grid;gap:12px;width:100%;position:relative;padding-top:18px}
+.branch::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--muted);opacity:.6}
+.branch > .arm{display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.branch > .arm::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:18px;background:var(--muted);opacity:.6}
+.lab{font-size:.75rem;font-family:var(--f-mono);color:var(--muted);background:var(--surface);padding:0 6px;margin-bottom:4px;white-space:nowrap}
+.b2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.b2::before{left:25%;right:25%}.b3::before{left:16.6%;right:16.6%}
+@media (max-width:640px){
+  .branch.b3,.branch.b2{grid-template-columns:1fr}
+  .branch::before{display:none}
+  .branch > .arm{border-left:2px solid var(--line);padding-left:10px;align-items:stretch}
+  .branch > .arm::before{display:none}
+  .lab{align-self:flex-start}
+}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* view toggle */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:.88rem;padding:4px 14px;border-radius:99px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+/* walker */
+.walker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.trail{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;margin-bottom:10px}
+.trail span{background:var(--sunk);padding:2px 10px;border-radius:99px;color:var(--muted)}
+.wq{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{text-align:left;font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt small{display:block;color:var(--muted)}
+.btn{font:inherit;font-size:.9rem;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:99px;padding:4px 14px;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--surface)}
+.leaf{border-left:4px solid var(--accent);padding-left:12px}
+
+/* forms */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.tool h3{margin-top:0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0}
+label.f{display:grid;gap:2px;font-size:.82rem;color:var(--muted)}
+input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:100%}
+.out{background:var(--sunk);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.93rem}
+.out .big{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;color:var(--accent)}
+.checks{display:grid;gap:4px;font-size:.92rem;margin:6px 0}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.radios label{border:1.5px solid var(--line);border-radius:99px;padding:3px 12px;font-size:.88rem;cursor:pointer}
+.radios input{position:absolute;opacity:0}
+.radios label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.radios label:has(input:focus-visible){outline:2px solid var(--accent)}
+.plan ol{padding-left:1.3rem}
+.plan li{margin:.35rem 0}
+
+/* pearls */
+.pearls{counter-reset:p;display:grid;gap:10px;margin-top:12px}
+.pearl{display:grid;grid-template-columns:2.4rem 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.pearl::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-mono);color:var(--accent);font-weight:600}
+
+/* quiz */
+.qz{display:grid;gap:12px;margin-top:12px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.qcard .ch{display:grid;gap:6px;margin-top:8px}
+.qcard button.c{text-align:left;font:inherit;font-size:.93rem;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.qcard button.c.right{border-color:var(--ok);background:var(--ok-soft)}
+.qcard button.c.wrong{border-color:var(--danger);background:var(--danger-soft)}
+.qcard .ex{margin-top:8px;font-size:.92rem}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---- additions for aki / hyperkalemia ---- */
+.contents{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.contents a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:.92rem;line-height:1.4}
+.contents a:hover{border-color:var(--accent)}
+.contents a .mono{color:var(--accent);font-size:.8rem;font-weight:600}
+.contents-h{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.stage-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.stage{border-radius:var(--r);padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);font-size:.88rem;line-height:1.5}
+.stage b{font-family:var(--f-mono);display:block;font-size:.95rem}
+@media (max-width:560px){.stage-row{grid-template-columns:1fr}}
+.card.c-red{border-top:4px solid var(--danger)} .card.c-warn{border-top:4px solid var(--warn)} .card.c-acc{border-top:4px solid var(--accent)} .card.c-vio{border-top:4px solid var(--violet)} .card.c-ok{border-top:4px solid var(--ok)}
+.rec{display:inline-block;font-family:var(--f-mono);font-size:.72rem;font-weight:600;padding:0 7px;border-radius:6px;background:var(--sunk);color:var(--muted);vertical-align:1px;white-space:nowrap}
+.rec.s1{background:var(--accent-soft);color:var(--accent-ink)}
+.rec.no{background:var(--danger-soft);color:var(--danger)}
+.tag.draft{background:var(--warn-soft);color:var(--warn)}
+.tag.th{background:var(--ok-soft);color:var(--ok)}
+.tag.up{background:var(--accent-soft);color:var(--accent-ink)}
+.ecg-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.ecg-strip figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.ecg-strip svg{width:100%;height:auto;display:block;border-radius:6px;background:repeating-linear-gradient(0deg,transparent 0 9px,var(--line) 9px 10px),repeating-linear-gradient(90deg,transparent 0 9px,var(--line) 9px 10px)}
+.ecg-strip figcaption{font-size:.8rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.ecg-strip figcaption b{color:var(--ink);display:block;font-size:.85rem}
+.timeline{display:grid;gap:0;margin:12px 0;border-left:2px solid var(--line);padding-left:14px}
+.timeline div{position:relative;padding:4px 0 10px}
+.timeline div::before{content:"";position:absolute;left:-20px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--f-mono)}
+.out ol{margin:.2rem 0;padding-left:1.3rem}
+.out li{margin:.3rem 0}
+nav.toc a{scroll-margin-inline:40px}
+
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">General medicine · Prevention · USPSTF (A/B ถึง มิ.ย. 2025) · สปสช. P&amp;P 2568 · HITAP 2556 · CPG ไทย DM 2566 / Lipid 2567 / HTN 2567 · Choosing Wisely</div>
+  <h1>ตรวจสุขภาพประจำปีในผู้ใหญ่<br>Periodic health examination</h1>
+  <p class="sub">สำหรับแพทย์เวชปฏิบัติทั่วไป นักศึกษาแพทย์ และผู้เตรียมเรียนต่ออายุรศาสตร์ · "ตรวจสุขภาพ" ที่มีประโยชน์ <b>ไม่ใช่การเจาะเลือดทุกอย่างทุกปี</b> แต่คือ <b>เลือกตรวจตามอายุ เพศ และความเสี่ยง</b> + <b>ให้คำปรึกษา</b> (บุหรี่ สุรา อาหาร ออกกำลังกาย) + <b>วัคซีน</b> · หน้านี้สรุปว่า <b>ควรทำอะไร และไม่ควรทำอะไร</b> พร้อมเครื่องมือสร้าง checklist รายบุคคล · มะเร็งดูรายละเอียดที่หน้า <a href="../cancer-screening/index.html">คัดกรองมะเร็ง</a> · วัคซีนดูหน้า <a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่</a></p>
+  <p class="cite">อ้างอิงหลัก: U.S. Preventive Services Task Force — A &amp; B recommendations (BP 2021, prediabetes/T2DM 2021, statin 2022, HIV 2019, PrEP 2023, HCV 2020, HBV 2020, depression/anxiety 2023, falls 2024, breast 2024, osteoporosis 2025, IPV 2025 ฯลฯ; JAMA) · สปสช. สิทธิประโยชน์สร้างเสริมสุขภาพและป้องกันโรค (P&amp;P) ปีงบ 2566–2568 · HITAP: การตรวจคัดกรองสุขภาพที่เหมาะสมสำหรับสังคมไทย (2556) · สมาคมโรคเบาหวานฯ CPG เบาหวาน 2566 · CPG ไขมันผิดปกติ 2567 · สมาคมความดันโลหิตสูงฯ แนวทาง 2567 · KDIGO CKD 2024 · CDC hepatitis B screening 2023 · Endocrine Society vitamin D 2024 · Krogsbøll LT, et al. General health checks (Cochrane 2019) · WHO Western Pacific obesity cut-offs (2000) · สรุปโดย นพ.ปฐมพงษ์ คูเจริญไพศาล</p>
+  <div class="stage-row">
+    <div class="stage" style="--c:var(--ok)"><b>ทุกคน ≥18 ปี</b>BP · BMI/รอบเอว · ถามบุหรี่ สุรา (AUDIT-C) ซึมเศร้า (2Q) · HIV/HCV อย่างน้อย 1 ครั้ง · เกิดก่อน 2535 → HBsAg + anti-HCV ฟรี 1 ครั้ง</div>
+    <div class="stage" style="--c:var(--accent)"><b>≥35 ปี</b>FPG (ปกติ → ทุก 3 ปี) · ไขมัน TC/HDL ทุก 5 ปี + Thai CV risk · มะเร็งตามอายุ (ปากมดลูก ลำไส้ เต้านม) · ≥65 ปี: ล้ม กระดูกพรุน ตา หู ความจำ</div>
+    <div class="stage" style="--c:var(--danger)"><b>ไม่ต้องตรวจ (คนสุขภาพดี)</b>CXR ทุกปี · ECG คนเสี่ยงต่ำ · tumor marker (CEA, AFP, CA-125) · CT ทั้งตัว · vitamin D · Cr/UA/LFT/uric acid ถ้าไม่มี DM/HTN</div>
+  </div>
+  <div class="contents-h">สารบัญ — กดไปบทไหนก็ได้</div>
+  <div class="contents" id="contents"></div>
+</header>
+
+<nav class="toc" id="toc">
+  <a href="#why">หลักคิด · เกรดหลักฐาน</a><a href="#visit">โครงสร้างการตรวจ 1 ครั้ง</a><a href="#bp">BP · BMI · รอบเอว</a><a href="#lab">แล็บตามอายุ</a><a href="#age">ตารางตามอายุ/เพศ</a><a href="#cancer">มะเร็ง (สรุป)</a><a href="#counsel">ให้คำปรึกษา</a><a href="#elder">ผู้สูงอายุ · ผู้หญิง</a><a href="#thai">บริบทไทย · สิทธิ</a><a href="#dont">สิ่งที่ไม่ควรตรวจ</a><a href="#approach">แผนผัง</a><a href="#tools">เครื่องมือ</a><a href="#pearls">Practical points</a><a href="#quiz">ทดสอบ</a>
+</nav>
+
+<section id="why" class="col">
+  <div class="sec-num">01</div>
+  <h2>หลักคิด และเกรดหลักฐาน</h2>
+  <div class="grid2">
+    <div class="card c-acc"><h4>ตรวจสุขภาพแบบไหนได้ประโยชน์</h4><ul><li>การตรวจคัดกรองที่ดีต้อง: โรคพบบ่อย/รุนแรง · มีระยะที่ยังไม่มีอาการ · มีวิธีตรวจที่แม่นและยอมรับได้ · <b>รักษาเร็วแล้วผลดีกว่ารอให้มีอาการ</b> · คุ้มค่า</li><li>Cochrane 2019 (RCT 17 ฉบับ, &gt;250,000 คน): <b>"general health check" แบบเหมารวม ไม่ลดตายรวม ตายจากหัวใจ หรือมะเร็ง</b> <span class="tag add">เสริม</span></li><li>สิ่งที่ได้ผลจริงคือ <b>การตรวจเฉพาะเรื่องที่มีหลักฐาน</b> (BP, เบาหวาน, ไขมัน, มะเร็งบางชนิด, HIV/HBV/HCV) + <b>เลิกบุหรี่ + วัคซีน</b></li><li>ตรวจเกินจำเป็น → ผลบวกลวง → ตรวจต่อ/เจาะ/ผ่าตัด → <b>overdiagnosis</b> ค่าใช้จ่าย และความกังวล</li></ul></div>
+    <div class="card c-vio"><h4>เกรด USPSTF (อ่านให้เป็น)</h4><ul><li><span class="rec s1">A</span> ประโยชน์สุทธิสูง แน่นอน → <b>ทำ</b></li><li><span class="rec s1">B</span> ประโยชน์สุทธิปานกลาง/สูง → <b>ทำ</b></li><li><span class="rec">C</span> ประโยชน์น้อย → เลือกทำรายบุคคล (shared decision)</li><li><span class="rec no">D</span> ไม่มีประโยชน์หรือโทษมากกว่า → <b>ไม่ทำ</b></li><li><span class="rec">I</span> หลักฐานไม่พอ → ไม่ทำเป็น routine</li><li class="muted">ณ พ.ย. 2569 คำแนะนำสุดท้ายฉบับล่าสุดของ USPSTF คือ IPV (มิ.ย. 2025) · คณะกรรมการชุดใหม่เพิ่งกลับมาประชุม พ.ย. 2569 ยังไม่มีการยกเลิกคำแนะนำเดิม <span class="tag up">2026</span></li></ul></div>
+  </div>
+  <div class="box note"><b>หน้านี้ยึดอะไร</b> · ใช้ <b>สิทธิประโยชน์ สปสช./CPG ไทย</b> เป็นหลักเมื่อมี (เพราะเป็นสิ่งที่ทำได้จริงในระบบ) และใช้ <b>USPSTF</b> เป็นมาตรฐานหลักฐานสากล · ถ้าไม่ตรงกัน จะแสดงทั้งสองฝั่ง เช่น มะเร็งลำไส้ (USPSTF เริ่ม 45 / ไทยเริ่ม 50) · mammogram (USPSTF ทุกคน 40–74 / ไทยเฉพาะกลุ่มเสี่ยง)</div>
+</section>
+
+<section id="visit" class="col">
+  <div class="sec-num">02</div>
+  <h2>โครงสร้างการตรวจสุขภาพ 1 ครั้ง</h2>
+  <div class="tbl"><table>
+    <tr><th>ขั้น</th><th>ทำอะไร</th></tr>
+    <tr><td><b>1. ถามก่อนว่ามีอาการไหม</b></td><td>ถ้ามีอาการ (ไอเรื้อรัง น้ำหนักลด ถ่ายเป็นเลือด คลำก้อน) → <b>ไม่ใช่การคัดกรองแล้ว</b> ต้องตรวจวินิจฉัยตามอาการ · ถ้ามีโรคเรื้อรังอยู่แล้ว → ติดตามตามแนวทางโรคนั้น (<a href="../dm/index.html">DM</a>, <a href="../htn/index.html">HTN</a>, <a href="../ckd/index.html">CKD</a>)</td></tr>
+    <tr><td><b>2. ประวัติความเสี่ยง</b></td><td>บุหรี่ (pack-years = ซองต่อวัน × จำนวนปี; เลิกกี่ปี) · สุรา (AUDIT-C) · ยาเสพติด · อาหาร กิจกรรมทางกาย การนอน · เพศสัมพันธ์ (คู่นอนหลายคน, MSM, คู่ HIV+) · ยาที่ใช้ (steroid, NSAIDs, สมุนไพร) · <b>ปลาน้ำจืดดิบ/ก้อยปลา</b> <span class="tag th">ไทย</span> · อาชีพ (ฝุ่น สารเคมี) · วางแผนมีบุตร · ประจำเดือน/หมดประจำเดือน</td></tr>
+    <tr><td><b>3. ประวัติครอบครัว</b></td><td><b>โรคหัวใจก่อนวัย</b> (ชาย &lt;55, หญิง &lt;65 ปี ในญาติสายตรง) · เบาหวาน · <b>มะเร็งลำไส้</b> (อายุที่เป็น) · <b>มะเร็งเต้านม/รังไข่</b> (BRCA) · ธาลัสซีเมีย · ไวรัสตับอักเสบบี/มะเร็งตับในแม่หรือพี่น้อง</td></tr>
+    <tr><td><b>4. ตรวจร่างกาย</b></td><td><b>BP (วัดถูกวิธี)</b> · ชีพจร (คลำจังหวะ → AF) <span class="tag th">ไทย</span> · น้ำหนัก ส่วนสูง <b>BMI</b> · <b>รอบเอว</b> · ช่องปากและฟัน · ผู้สูงอายุ: การเดิน สายตา การได้ยิน ความจำ · ไม่จำเป็นต้องตรวจทุกระบบแบบละเอียดในคนไม่มีอาการ</td></tr>
+    <tr><td><b>5. แล็บ/ภาพถ่าย</b></td><td><b>เลือกตามอายุ เพศ ความเสี่ยง</b> (ดูหัวข้อ 04–06) · บอกผู้รับบริการล่วงหน้าว่าตรวจแต่ละอย่างเพื่ออะไร และถ้าผิดปกติจะทำอะไรต่อ</td></tr>
+    <tr><td><b>6. ให้คำปรึกษา + วัคซีน</b></td><td>5A เลิกบุหรี่ · brief intervention สุรา · ออกกำลังกาย 150 นาที/สัปดาห์ · อาหาร · ลดน้ำหนัก 5–10% ถ้าอ้วน · วัคซีน (<a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่</a>)</td></tr>
+    <tr><td><b>7. นัดครั้งต่อไป</b></td><td>ไม่จำเป็นต้องทุกปีทุกรายการ — เขียนให้ชัดว่า <b>รายการไหนครบรอบเมื่อไร</b> (เช่น FPG ปี 2572, TC/HDL ปี 2574, HPV ปี 2574)</td></tr>
+  </table></div>
+</section>
+
+<section id="bp" class="col">
+  <div class="sec-num">03</div>
+  <h2>วัด BP · BMI · รอบเอว ให้ถูก</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>วัดความดันให้ถูกวิธี (HTN ไทย 2567)</h4><ul><li><b>นั่งพัก 5 นาที</b> · งดชา กาแฟ บุหรี่ <b>30 นาที</b> ก่อนวัด · ปัสสาวะก่อน</li><li>นั่งหลังพิงพนัก เท้าวางราบ ไม่ไขว่ห้าง · แขนวางบนโต๊ะ <b>cuff อยู่ระดับหัวใจ</b> · ไม่คุยระหว่างวัด</li><li>ใช้ <b>cuff ขนาดพอดีต้นแขน</b> (แขนใหญ่ใช้ cuff ใหญ่ — cuff เล็กไปค่าสูงเกินจริง) · เครื่องที่ผ่านการรับรอง</li><li>วัด <b>2 ครั้ง ห่าง 1–2 นาที</b> ใช้ค่าเฉลี่ย · ครั้งแรกวัด <b>ทั้งสองแขน</b> ใช้แขนที่สูงกว่า</li><li>≥140/90 ที่ รพ. → <b>ยืนยันด้วย HBPM</b> (≥135/85, วัด 7 วัน) หรือ ABPM ก่อนวินิจฉัย · 130–139/80–89 = <b>BP at risk</b> → ตรวจซ้ำทุกปี และพิจารณา HBPM หา masked HT</li><li>ความถี่: <b>≥40 ปี หรือเสี่ยง</b> (อ้วน, BP at risk) <b>ทุกปี</b> · 18–39 ปี ไม่มีความเสี่ยง BP ปกติ <b>ทุก 3–5 ปี</b> <span class="rec s1">USPSTF A</span> · ดูหน้า <a href="../htn/index.html">HTN</a></li></ul></div>
+    <div class="card c-warn"><h4>BMI และรอบเอว (เกณฑ์เอเชีย)</h4><ul><li>BMI = น้ำหนัก (kg) ÷ ส่วนสูง (m)²</li><li><b>&lt;18.5</b> น้ำหนักน้อย · <b>18.5–22.9</b> ปกติ · <b>23–24.9</b> น้ำหนักเกิน · <b>25–29.9</b> อ้วนระดับ 1 · <b>≥30</b> อ้วนระดับ 2 (WHO Western Pacific 2000, ใช้ในไทย) <span class="tag th">ไทย</span></li><li>เกณฑ์สากล (WHO): ≥25 น้ำหนักเกิน, ≥30 อ้วน — คนเอเชียมีไขมันในช่องท้องมากกว่าที่ BMI เท่ากัน จึงใช้จุดตัดต่ำกว่า</li><li><b>รอบเอว</b> (วัดที่กึ่งกลางระหว่างขอบล่างซี่โครงกับ iliac crest หรือผ่านสะดือ หายใจออกสุด): <b>ชาย ≥90 cm, หญิง ≥80 cm</b> = อ้วนลงพุง</li><li>ง่ายสุด: <b>รอบเอวไม่ควรเกินครึ่งหนึ่งของส่วนสูง</b> (waist-to-height ratio &lt;0.5) — HITAP แนะนำให้ประชาชนตรวจเองได้ <span class="tag th">ไทย</span></li><li>USPSTF B: BMI ≥30 → ส่งเข้าโปรแกรมปรับพฤติกรรมเข้มข้น (ในคนไทยเริ่มให้คำปรึกษาตั้งแต่ BMI ≥23 ที่มีโรคร่วม หรือ ≥25)</li></ul></div>
+  </div>
+</section>
+
+<section id="lab" class="col">
+  <div class="sec-num">04</div>
+  <h2>แล็บตามอายุ — ตรวจอะไร เมื่อไร</h2>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>ใคร · ความถี่</th><th>แหล่ง</th></tr>
+    <tr><td><b>FPG</b> (หรือ A1C)</td><td><b>≥35 ปีทุกคน</b> (+ Thai Diabetes Risk Score) · <b>&lt;35 ปี</b> ที่ BMI ≥23 + ปัจจัยเสี่ยง (ญาติสายตรงเป็น DM, HTN, ไขมันผิดปกติ, เคยเป็น GDM, PCOS) หรือ DRS ≥8 · <b>FPG &lt;100 → ตรวจซ้ำทุก 3 ปี</b> · 100–109 → ปรับพฤติกรรม ตรวจทุกปี · 110–125 → OGTT/A1C · ≥126 → ตรวจซ้ำยืนยัน · ไม่ใช้ A1C ในธาลัสซีเมีย/G6PD/โลหิตจาง</td><td><span class="tag th">ไทย</span> CPG DM 2566 · <span class="rec s1">USPSTF B</span> 35–70 ปีที่น้ำหนักเกิน/อ้วน · ดู <a href="../dm/index.html">DM</a></td></tr>
+    <tr><td><b>ไขมัน</b> (TC + HDL หรือ lipid profile)</td><td><b>≥35 ปี ทุก 5 ปี</b> แล้วคำนวณ <b>Thai CV risk score</b> (35–70 ปี) · ≥10% → พิจารณา statin · &lt;35 ปี ตรวจเมื่อมีญาติเป็นโรคหัวใจก่อนวัย/สงสัย FH, DM, HTN, อ้วน · ไม่ต้องอดอาหารถ้าตรวจ TC/HDL</td><td><span class="tag th">ไทย</span> HITAP 2556, CPG Lipid 2567 · <span class="rec s1">USPSTF B</span> statin 40–75 ปีที่มีปัจจัยเสี่ยง ≥1 + ความเสี่ยง 10 ปี ≥10% · ดู <a href="../lipid/index.html">ไขมัน</a></td></tr>
+    <tr><td><b>Cr/eGFR + UACR</b></td><td><b>เฉพาะผู้ที่เป็น DM หรือ HTN</b> (ปีละครั้ง) หรือมีปัจจัยเสี่ยง CKD (ประวัติครอบครัวโรคไต, นิ่ว, ใช้ NSAIDs/สมุนไพรนาน) · ในคนสุขภาพดีไม่มีหลักฐานว่าคัดกรองแล้วดีขึ้น</td><td>KDIGO 2024 · CPG DM 2566 · ดู <a href="../ckd/index.html">CKD</a></td></tr>
+    <tr><td><b>HBsAg</b> (± anti-HBs)</td><td><b>คนไทยที่เกิดก่อน พ.ศ. 2535 ตรวจ 1 ครั้งตลอดชีวิต (ฟรีทุกสิทธิ)</b> · เกิดหลัง 2535 ส่วนใหญ่ได้วัคซีนแรกเกิด → ตรวจเมื่อมีความเสี่ยง (แม่เป็นพาหะ, HIV, MSM, ใช้ยาฉีด, บุคลากรการแพทย์, ก่อนให้เคมีบำบัด/ยากดภูมิ) · ผลลบทั้ง HBsAg และ anti-HBs → ฉีดวัคซีน</td><td><span class="tag th">ไทย</span> สปสช. (เริ่ม 1 เม.ย. 2566) · <span class="rec s1">USPSTF B</span> กลุ่มเสี่ยง · CDC 2023: ผู้ใหญ่ทุกคน ≥18 ปี ≥1 ครั้ง (HBsAg + anti-HBs + total anti-HBc) · ดู <a href="../hepbc/index.html">HBV/HCV</a></td></tr>
+    <tr><td><b>Anti-HCV</b></td><td><b>เกิดก่อน 2535 ตรวจ 1 ครั้ง</b> (ฟรี) · กลุ่มเสี่ยง (PLHIV, ใช้ยาฉีด, MSM, บุคลากรการแพทย์, ผู้ต้องขัง) <b>ทุกปี</b> · บวก → HCV RNA</td><td><span class="tag th">ไทย</span> สปสช. · <span class="rec s1">USPSTF B</span> 18–79 ปีทุกคน ≥1 ครั้ง</td></tr>
+    <tr><td><b>Anti-HIV</b></td><td><b>15–65 ปี อย่างน้อย 1 ครั้ง</b> · กลุ่มเสี่ยง ตรวจซ้ำ (ทุก 3–12 เดือนตามความเสี่ยง) + พิจารณา <b>PrEP</b> · ไทย: ตรวจฟรีโดยสมัครใจได้ทุกสิทธิ</td><td><span class="rec s1">USPSTF A</span> (คัดกรอง, PrEP) · ดู <a href="../hiv/index.html">HIV</a></td></tr>
+    <tr><td><b>Syphilis</b> (VDRL/RPR หรือ treponemal)</td><td>ผู้ที่มีความเสี่ยง (MSM, PLHIV, คู่นอนหลายคน, ขายบริการ) · ก่อนแต่งงาน/ตั้งครรภ์</td><td><span class="rec s1">USPSTF A</span> กลุ่มเสี่ยง</td></tr>
+    <tr><td><b>Chlamydia/gonorrhea</b></td><td>หญิงมีเพศสัมพันธ์อายุ ≤24 ปี หรือ ≥25 ที่เสี่ยง (NAAT) — ในไทยยังเข้าถึงจำกัด ทำเมื่อทำได้</td><td><span class="rec s1">USPSTF B</span></td></tr>
+    <tr><td><b>CBC / ธาลัสซีเมีย</b></td><td>ไม่ต้องตรวจ CBC ทุกปีในคนสุขภาพดี · <b>คู่ที่วางแผนมีบุตร → คัดกรองพาหะธาลัสซีเมีย</b> (MCV/MCH หรือ OF + DCIP → Hb typing ถ้าบวก) · ประจำเดือนมาก/อาการซีด → CBC</td><td><span class="tag th">ไทย</span> โครงการป้องกันธาลัสซีเมียชนิดรุนแรง · ดู <a href="../thalassemia/index.html">Thalassemia</a></td></tr>
+    <tr><td><b>Liver fluke</b></td><td>อายุ ≥15 ปีที่กินปลาน้ำจืดดิบ/สุกๆ ดิบๆ เคยติดเชื้อ หรือเคยกินยาถ่ายพยาธิใบไม้ตับ → <b>OV-RDT (ปัสสาวะ) ปีละครั้ง</b> หรือตรวจอุจจาระ</td><td><span class="tag th">ไทย</span> สปสช. (มติบอร์ด ม.ค. 2567)</td></tr>
+  </table></div>
+  <div class="box key"><b>สูตรจำ</b>"18 วัด BP · 35 เจาะน้ำตาล-ไขมัน · เกิดก่อน 35 (2535) ตรวจ B/C ครั้งเดียว · ไต/ปัสสาวะเฉพาะ DM/HTN" · ประเมินความเสี่ยงหัวใจ 10 ปีด้วย <b>Thai CV risk score</b> (คำนวณออนไลน์ของ รพ.รามาธิบดี — ใช้ได้ทั้งแบบมีผลไขมัน และแบบไม่เจาะเลือดใช้รอบเอว/ส่วนสูง) · หน้านี้ <b>ไม่ได้ทำเครื่องคำนวณ Thai CV risk</b> เพราะยังหาสมการต้นฉบับที่ตีพิมพ์มายืนยันไม่ได้ — ใช้เครื่องคำนวณทางการ และดูการแปลผลที่หน้า <a href="../lipid/index.html">ไขมัน</a> และ <a href="../htn/index.html">HTN</a> (อย่าใช้เกณฑ์ PREVENT ของ ACC/AHA กับผล Thai CV risk)</div>
+</section>
+
+<section id="age" class="col">
+  <div class="sec-num">05</div>
+  <h2>ตารางสรุปตามอายุและเพศ</h2>
+  <div class="tbl"><table>
+    <tr><th>อายุ</th><th>ทุกคน</th><th>ผู้หญิง</th><th>ผู้ชาย</th></tr>
+    <tr><td><b>18–34</b></td><td>BP · BMI/รอบเอว · บุหรี่ สุรา ยาเสพติด · 2Q ซึมเศร้า · anxiety · HIV ≥1 ครั้ง · anti-HCV ≥1 ครั้ง (USPSTF) · FPG/ไขมันเฉพาะเสี่ยง · ฟัน · วัคซีน</td><td>มะเร็งปากมดลูก (USPSTF เริ่ม 21; ไทยเริ่ม 30) · chlamydia/gonorrhea ≤24 · IPV · วางแผนมีบุตร: folic acid + ธาลัสซีเมีย + หัดเยอรมัน</td><td>ธาลัสซีเมียถ้าวางแผนมีบุตร</td></tr>
+    <tr><td><b>35–49</b></td><td>+ <b>FPG ทุก 3 ปี</b> · <b>TC/HDL ทุก 5 ปี + Thai CV risk</b> · <b>HBsAg + anti-HCV 1 ครั้ง</b> (เกิดก่อน 2535) · ≥40: ช่องปาก (สปสช.) · 45–49: มะเร็งลำไส้ (USPSTF B; ไทยเริ่ม 50)</td><td>HPV ทุก 5 ปี · ≥40 mammogram (USPSTF ทุก 2 ปี; ไทยเฉพาะเสี่ยงสูง) · IPV</td><td>—</td></tr>
+    <tr><td><b>50–64</b></td><td>+ <b>มะเร็งลำไส้ FIT</b> (ไทย 50–70 ทุก 2 ปี; USPSTF ปีละครั้ง) · <b>LDCT ถ้าสูบ ≥20 pack-years</b> (ยังสูบ/เลิก ≤15 ปี; 50–80) · statin ถ้าเสี่ยง ≥10%</td><td>HPV ถึง 65 (ไทย 30–59 ปี; บางเอกสารเขียน 30–60) · mammogram · <b>หมดประจำเดือน + เสี่ยง → BMD</b> (OSTA)</td><td>55–69: PSA = <b>คุยก่อนตัดสินใจ</b> (C)</td></tr>
+    <tr><td><b>≥65</b></td><td>+ <b>ล้ม</b> (ถาม + ออกกำลังกายทรงตัว) · ความจำ สายตา การได้ยิน โภชนาการ กลั้นปัสสาวะ (คัดกรองผู้สูงอายุ) · มะเร็งลำไส้ถึง 75 (76–85 รายบุคคล) · LDCT ถึง 80 · วัคซีนผู้สูงอายุ</td><td><b>BMD ทุกคน ≥65</b> (B) · หยุดคัดกรองปากมดลูกหลัง 65 ถ้าผลก่อนหน้าปกติ (D) · mammogram ถึง 74</td><td>65–75 เคยสูบบุหรี่ → <b>US หา AAA 1 ครั้ง</b> (B) · ≥70 ไม่ตรวจ PSA (D)</td></tr>
+  </table></div>
+</section>
+
+<section id="cancer" class="col">
+  <div class="sec-num">06</div>
+  <h2>คัดกรองมะเร็ง (สรุปสั้น)</h2>
+  <p class="muted" style="font-size:.9rem">รายละเอียดวิธีตรวจ การแปลผล และการส่งต่อ อยู่ที่หน้า <a href="../cancer-screening/index.html">คัดกรองมะเร็ง</a></p>
+  <div class="tbl"><table>
+    <tr><th>มะเร็ง</th><th>USPSTF</th><th>ไทย (สปสช./ทุกสิทธิ)</th></tr>
+    <tr><td><b>ปากมดลูก</b></td><td>21–29: cytology ทุก 3 ปี · 30–65: cytology ทุก 3 ปี / hrHPV ทุก 5 ปี / co-test ทุก 5 ปี <span class="rec s1">A</span> (2018; ร่าง 2024 เพิ่ม HPV เก็บเอง ยังไม่ออกฉบับสุดท้าย)</td><td><b>HPV DNA</b> (รวมเก็บตัวอย่างเอง) / Pap / VIA หญิง <b>30–59 ปี</b> (บางเอกสารเขียน 30–60; 15–29 ปีถ้าเสี่ยง) <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>ลำไส้ใหญ่</b></td><td>45–49 <span class="rec s1">B</span> · 50–75 <span class="rec s1">A</span> · 76–85 <span class="rec">C</span> · FIT ทุกปี หรือ colonoscopy ทุก 10 ปี</td><td><b>FIT อายุ 50–70 ปี ทุก 2 ปี</b> → บวกส่ง colonoscopy · ญาติสายตรงเป็นมะเร็งลำไส้ → colonoscopy เร็วขึ้น</td></tr>
+    <tr><td><b>เต้านม</b></td><td>หญิง 40–74 ปี mammogram <b>ทุก 2 ปี</b> <span class="rec s1">B</span> (2024) · ≥75 <span class="rec">I</span></td><td>mammogram/US <b>เฉพาะหญิง ≥40 ปีที่เสี่ยงสูง</b> (เช่น ญาติสายตรงเป็นมะเร็งเต้านม) · คนทั่วไป: รู้จักเต้านมตนเอง + ตรวจโดยบุคลากร · BRCA1/2 ในเกณฑ์ที่กำหนด</td></tr>
+    <tr><td><b>ปอด</b></td><td>50–80 ปี สูบ ≥20 pack-years ยังสูบหรือเลิก ≤15 ปี → <b>LDCT ทุกปี</b> <span class="rec s1">B</span></td><td>ยังไม่อยู่ในสิทธิพื้นฐาน · ทำได้ในบาง รพ. ต้องคุยประโยชน์/โทษ · <b>CXR ไม่ใช่วิธีคัดกรองมะเร็งปอด</b></td></tr>
+    <tr><td><b>ต่อมลูกหมาก</b></td><td>55–69 PSA ตัดสินใจร่วมกัน <span class="rec">C</span> · ≥70 <span class="rec no">D</span></td><td>ไม่มีโครงการคัดกรองระดับประชากร</td></tr>
+    <tr><td><b>ตับ</b></td><td>ไม่มีคำแนะนำคัดกรองประชากรทั่วไป</td><td>คัดกรอง HBV/HCV ก่อน · <b>พาหะ HBV/ตับแข็ง → US ทุก 6 เดือน ± AFP</b> (surveillance ไม่ใช่ screening) · ดู <a href="../hepbc/index.html">HBV/HCV</a></td></tr>
+    <tr><td><b>ท่อน้ำดี (CCA)</b></td><td>—</td><td>อีสาน/ภาคเหนือ: ตรวจพยาธิใบไม้ตับ (OV-RDT) · US คัดกรอง CCA ทำในโครงการระดับภูมิภาค (เช่น CASCAP ขอนแก่น) ยังไม่เป็นสิทธิทั่วประเทศ <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>ช่องปาก</b></td><td><span class="rec">I</span></td><td>ตรวจรอยโรคมะเร็งช่องปาก อายุ ≥40 ปี <b>ปีละครั้ง</b> <span class="tag th">ไทย</span></td></tr>
+    <tr><td>รังไข่ · ตับอ่อน · ไทรอยด์ · อัณฑะ</td><td><span class="rec no">D</span> ในคนไม่มีอาการ</td><td>ไม่มีโครงการ · <b>อย่าตรวจ CA-125/US ช่องท้องเพื่อคัดกรอง</b></td></tr>
+  </table></div>
+</section>
+
+<section id="counsel" class="col">
+  <div class="sec-num">07</div>
+  <h2>ให้คำปรึกษา: บุหรี่ สุรา กิจกรรมทางกาย อาหาร</h2>
+  <div class="grid2">
+    <div class="card c-red"><h4>บุหรี่ — 5A <span class="rec s1">USPSTF A</span></h4><ul><li><b>Ask</b> ถามทุกครั้งที่มา (รวมบุหรี่ไฟฟ้า) · <b>Advise</b> แนะนำให้เลิกชัดเจน เป็นเรื่องส่วนตัว · <b>Assess</b> พร้อมเลิกใน 30 วันไหม · <b>Assist</b> ตั้งวันเลิก + ยา + พฤติกรรม · <b>Arrange</b> นัดติดตาม 1 สัปดาห์หลังวันเลิก</li><li>ยาที่มีในไทย: nicotine replacement (หมากฝรั่ง/แผ่นแปะ), varenicline, bupropion (nortriptyline, cytisine ในบางที่) — ดูขนาดและข้อห้ามในเอกสารยาก่อนสั่ง</li><li>สายด่วนเลิกบุหรี่ <b>1600</b> <span class="tag th">ไทย</span></li><li>ไม่พร้อม → ใช้ 5R (Relevance, Risks, Rewards, Roadblocks, Repetition)</li></ul></div>
+    <div class="card c-warn"><h4>สุรา — AUDIT-C + brief intervention <span class="rec s1">USPSTF B</span></h4><ul><li>ถาม 3 ข้อ (เครื่องมือในหัวข้อ 12) · <b>บวกเมื่อ ชาย ≥4, หญิง ≥3</b></li><li>1 ดื่มมาตรฐานไทย = แอลกอฮอล์ <b>10 g</b> ≈ เบียร์ 5% ~250 mL · ไวน์ 12% ~100 mL · สุรา 40% ~30 mL <span class="tag th">ไทย</span></li><li>บวก → <b>brief intervention 5–15 นาที</b>: ให้ข้อมูลผลต่อสุขภาพ · ตั้งเป้าลด · นัดติดตาม · คะแนนสูงมาก/มีอาการถอน → ประเมิน alcohol use disorder (ดู <a href="../alcohol-withdrawal/index.html">alcohol withdrawal</a>)</li><li>HITAP/สปสช. ใช้ <b>ASSIST</b> คัดกรองบุหรี่ สุรา สารเสพติดรวมกัน <span class="tag th">ไทย</span></li></ul></div>
+    <div class="card c-ok"><h4>กิจกรรมทางกาย (WHO 2020) <span class="tag add">เสริม</span></h4><ul><li>ปานกลาง <b>150–300 นาที/สัปดาห์</b> (เช่น เดินเร็ว 30 นาที 5 วัน) หรือหนัก 75–150 นาที</li><li><b>เพิ่มกล้ามเนื้อ ≥2 วัน/สัปดาห์</b></li><li>≥65 ปี: <b>ฝึกการทรงตัว ≥3 วัน/สัปดาห์</b> ป้องกันล้ม</li><li>ลดเวลานั่งนาน — ขยับบ้างดีกว่าไม่ขยับเลย</li></ul></div>
+    <div class="card c-acc"><h4>อาหาร น้ำหนัก การนอน</h4><ul><li>มีปัจจัยเสี่ยง CVD (BP, ไขมัน, น้ำตาล, อ้วน) → ส่งให้คำปรึกษาอาหาร/กิจกรรมแบบเข้มข้น <span class="rec s1">USPSTF B</span></li><li>ลดเค็ม (โซเดียม &lt;2,000 mg/วัน ≈ เกลือ 1 ช้อนชา) · ลดหวาน มัน · ผักผลไม้ ≥400 g/วัน · หลักไทย "หวาน มัน เค็ม ลดได้ ลดโรค" <span class="tag th">ไทย</span></li><li>อ้วน: เป้าลด <b>5–10%</b> ใน 6 เดือน · ยาลดน้ำหนักหรือผ่าตัดตามข้อบ่งชี้</li><li>นอนกรน ง่วงกลางวัน + อ้วน/HTN → คิดถึง OSA</li></ul></div>
+  </div>
+</section>
+
+<section id="elder" class="col">
+  <div class="sec-num">08</div>
+  <h2>ผู้สูงอายุ และเรื่องเฉพาะผู้หญิง</h2>
+  <div class="grid2">
+    <div class="card c-vio"><h4>ผู้สูงอายุ</h4><ul><li><b>ล้ม</b>: ถาม "ปีที่ผ่านมาล้มไหม/กลัวล้มไหม/เดินไม่มั่นคงไหม" · ≥65 ปีที่เสี่ยง → <b>โปรแกรมออกกำลังกาย</b> <span class="rec s1">USPSTF B</span> · ทบทวนยา (ยานอนหลับ ยาลดความดันเกิน) · ตรวจตา · บ้านปลอดภัย</li><li><b>กระดูกพรุน</b>: หญิง ≥65 ปี → BMD (DXA) <span class="rec s1">B</span> · หญิงหมดประจำเดือน &lt;65 ที่เสี่ยง → ใช้เครื่องมือประเมินก่อน เช่น <b>OSTA</b> = 0.2 × (น้ำหนัก kg − อายุ) (&lt;−1 เสี่ยงปานกลาง, &lt;−4 เสี่ยงสูง) <span class="rec s1">B</span> · ชาย <span class="rec">I</span> (พิจารณาเมื่อใช้ steroid ระยะยาว, กระดูกหักง่าย, hypogonadism)</li><li><b>คัดกรองผู้สูงอายุ</b> (WHO ICOPE): ความจำ การเคลื่อนไหว โภชนาการ <b>สายตา การได้ยิน</b> อารมณ์ · ไทยประเมินสุขภาพผู้สูงอายุรวมถึง ADL ช่องปาก กลั้นปัสสาวะ <span class="tag th">ไทย</span> · USPSTF ให้ <span class="rec">I</span> กับคัดกรองสายตา การได้ยิน และ cognitive impairment — <b>หน้านี้ยึดแนวไทย</b>: ถามคัดกรองแบบง่าย ทำเมื่อมีปัญหาจึงส่งต่อ</li><li><b>AAA</b>: ชาย 65–75 ปีที่เคยสูบบุหรี่ → US ช่องท้อง 1 ครั้ง <span class="rec s1">B</span> (ทำเมื่อเข้าถึงได้)</li><li>ซึมเศร้า (2Q → 9Q) <span class="rec s1">B</span> · ถามเรื่องการถูกทารุณ/ละเลย</li><li>รายละเอียดการประเมินผู้สูงอายุ ดูหน้า <a href="../geriatric/index.html">ผู้สูงอายุ</a></li></ul></div>
+    <div class="card c-red"><h4>ผู้หญิง</h4><ul><li><b>IPV (ความรุนแรงจากคู่)</b>: คัดกรองหญิงวัยเจริญพันธุ์ <span class="rec s1">USPSTF B</span> (2025) · พบ → ส่งต่อศูนย์พึ่งได้ (OSCC) <span class="tag th">ไทย</span></li><li><b>วางแผนมีบุตร</b>: folic acid <b>0.4–0.8 mg/วัน</b> เริ่มอย่างน้อย 1 เดือนก่อนตั้งครรภ์ <span class="rec s1">A</span> · คัดกรอง<b>ธาลัสซีเมียทั้งคู่</b> · ภูมิหัดเยอรมัน (ไม่มีภูมิ → MMR แล้วคุมกำเนิด 1 เดือน) · HIV, syphilis, HBsAg · คุมเบาหวาน/ความดันก่อน · ทบทวนยาที่เป็นอันตรายต่อทารก (ACEi/ARB, statin, warfarin, valproate)</li><li><b>หมดประจำเดือน</b>: ประเมินกระดูกพรุน · ไม่ใช้ฮอร์โมนเพื่อป้องกันโรคเรื้อรัง <span class="rec no">USPSTF D</span></li><li>มะเร็งปากมดลูก + เต้านม → หัวข้อ 06</li></ul></div>
+  </div>
+</section>
+
+<section id="thai" class="col">
+  <div class="sec-num">09</div>
+  <h2>บริบทไทย: สิทธิ ระบบคัดกรอง และโรคประจำถิ่น</h2>
+  <div class="tbl"><table>
+    <tr><th>ระบบ</th><th>สิ่งที่ครอบคลุม (สรุป)</th><th>ความเห็น</th></tr>
+    <tr><td><b>สปสช. P&amp;P</b> (ใช้ได้ทุกสิทธิ)</td><td>BP · เบาหวาน · ประเมินความเสี่ยง CVD/stroke · TC/HDL · ซึมเศร้า · HBV/HCV (เกิดก่อน 2535 ครั้งเดียว) · HIV · มะเร็งปากมดลูก (HPV 30–59) · FIT 50–70 · ช่องปาก ≥40 · mammogram/US กลุ่มเสี่ยง · BRCA ตามเกณฑ์ · OV-RDT · คัดกรองบุหรี่ สุรา สารเสพติด · ตรวจสุขภาพผู้สูงอายุ · วัคซีน · ตรวจสอบสิทธิในแอปเป๋าตัง สายด่วน 1330</td><td>ตรงกับหลักฐานเป็นส่วนใหญ่ <span class="tag th">ไทย</span></td></tr>
+    <tr><td><b>ข้าราชการ (กรมบัญชีกลาง)</b></td><td>ตรวจประจำปี · ทุกอายุ: CXR, CBC, UA, ตรวจอุจจาระ, Pap (หญิง) · อายุ ≥35 ปี เพิ่ม glucose, cholesterol, triglyceride, BUN, Cr, AST, ALT, ALP, uric acid (ตามประกาศของกรมบัญชีกลาง)</td><td>หลายรายการ <b>ไม่มีหลักฐานว่าลดโรคในคนไม่มีอาการ</b> (CXR, LFT, uric acid, BUN) — เบิกได้ ≠ จำเป็น · ถ้าตรวจแล้วผิดปกติเล็กน้อย แปลผลอย่างระวัง ไม่ไล่ตรวจต่อเกินเหตุ</td></tr>
+    <tr><td><b>ประกันสังคม</b> (ขยาย เม.ย. 2567)</td><td>อายุ ≥35 ปี ปีละครั้ง: TC/HDL, FBS, Cr/eGFR, CBC, UA, FIT, วัดความดันตา, CXR</td><td>ใช้สิทธิได้ แต่เลือกแนะนำตามความเสี่ยง</td></tr>
+    <tr><td><b>อสม. / ชุมชน</b></td><td>คัดกรองเบาหวาน (เจาะน้ำตาลปลายนิ้ว) และความดัน อายุ ≥35 ปีในชุมชน → ส่งต่อ รพ.สต./รพ.ถ้าผิดปกติ (ปลายนิ้ว ≥100 อดอาหาร → ยืนยันด้วย FPG ทางหลอดเลือดดำ)</td><td>ช่องทางหลักของคนชนบท — อย่าวินิจฉัย DM จากค่าปลายนิ้วครั้งเดียว</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="card c-warn"><h4>พยาธิใบไม้ตับ / มะเร็งท่อน้ำดี <span class="tag th">ไทย</span></h4><ul><li>อีสานและเหนือ: <i>Opisthorchis viverrini</i> จาก <b>ก้อยปลา ปลาส้ม ปลาร้าดิบ</b> → ท่อน้ำดีอักเสบเรื้อรัง → CCA</li><li>คัดกรอง: <b>OV-RDT ปัสสาวะ ปีละครั้ง</b> (สปสช. อายุ ≥15 ปีที่เสี่ยง) หรือตรวจอุจจาระหาไข่พยาธิ</li><li>พบ → <b>praziquantel 40 mg/kg รับประทานครั้งเดียว</b> (หลังอาหาร) · ไม่ต้องปรับตามไต · ห้ามใน ocular cysticercosis · ที่สำคัญกว่าคือ <b>เลิกกินปลาดิบ</b> (กินยาซ้ำบ่อยๆ แต่ยังกินดิบ ไม่ช่วย)</li><li>US คัดกรอง CCA: ทำในพื้นที่ระบาดตามโครงการ — ถ้ามีดีซ่าน/ปวดชายโครงขวา/น้ำหนักลด = ตรวจวินิจฉัย ไม่ใช่คัดกรอง</li></ul></div>
+    <div class="card c-acc"><h4>เรื่องไทยอื่นๆ</h4><ul><li><b>ธาลัสซีเมีย</b>: พาหะพบบ่อยมาก → คัดกรองคู่ก่อน/ขณะตั้งครรภ์ (สปสช. ครอบคลุมสามีด้วย) · ดู <a href="../thalassemia/index.html">Thalassemia</a></li><li><b>วัณโรค</b>: ไม่ทำ CXR ทุกปีในคนทั่วไป แต่ <b>คัดกรอง TB ในกลุ่มเสี่ยง</b> (ผู้สัมผัสร่วมบ้าน, HIV, เบาหวานคุมไม่ได้, ผู้สูงอายุมีโรคร่วม, ผู้ต้องขัง, บุคลากรการแพทย์) ด้วยอาการ ± CXR · USPSTF B: คัดกรอง LTBI ในกลุ่มเสี่ยง · ดู <a href="../tb/index.html">TB</a></li><li><b>AF</b>: HITAP แนะนำคลำชีพจร (ไม่สม่ำเสมอ → ECG) <span class="tag th">ไทย</span></li><li><b>สายตา</b>: วัดสายตาเมื่อทำ/ต่อใบขับขี่ (HITAP) · DM → ตรวจจอตาทุกปี</li><li><b>อาชีพ</b>: ตรวจตามความเสี่ยง (ฝุ่นซิลิกา → CXR ตาม ILO, เกษตรกร → cholinesterase) ตามกฎหมายแรงงาน</li></ul></div>
+  </div>
+</section>
+
+<section id="dont" class="col">
+  <div class="sec-num">10</div>
+  <h2>สิ่งที่ไม่ควรตรวจ (ในคนไม่มีอาการ)</h2>
+  <div class="tbl"><table>
+    <tr><th>การตรวจ</th><th>ทำไมไม่แนะนำ</th><th>ข้อยกเว้น</th></tr>
+    <tr><td><b>CXR ทุกปี</b></td><td>ไม่ลดตายจากมะเร็งปอด (RCT PLCO) · ผลบวกลวงบ่อย · HITAP ไม่บรรจุในชุดคัดกรอง</td><td>คัดกรอง TB ในกลุ่มเสี่ยง · อาชีพเสี่ยง · ก่อนทำงานบางประเภทตามกฎหมาย</td></tr>
+    <tr><td><b>ECG / exercise stress test</b> ในคนเสี่ยงต่ำ</td><td><span class="rec no">USPSTF D</span> (2018) · ไม่เปลี่ยนการรักษา ทำให้ตรวจต่อโดยไม่จำเป็น</td><td>มีอาการ · ความเสี่ยงปานกลาง–สูง (<span class="rec">I</span>) · อาชีพ (นักบิน คนขับรถสาธารณะ) · ชีพจรไม่สม่ำเสมอ</td></tr>
+    <tr><td><b>Tumor marker</b> (CEA, AFP, CA 19-9, CA-125, PSA โดยไม่คุย)</td><td>ไวและจำเพาะต่ำ · ผลบวกลวงนำไปสู่ CT/ส่องกล้อง · CA-125/TVUS คัดกรองรังไข่ <span class="rec no">D</span> · PSA ≥70 ปี <span class="rec no">D</span></td><td>AFP + US ทุก 6 เดือนใน <b>พาหะ HBV/ตับแข็ง</b> · PSA 55–69 หลังคุยประโยชน์/โทษ · ติดตามมะเร็งที่รักษาแล้ว</td></tr>
+    <tr><td><b>CBC, UA, LFT, BUN/Cr, uric acid "ทุกปี"</b> ในคนสุขภาพดี</td><td>ไม่มีหลักฐานลดโรค/ตาย · <b>uric acid สูงไม่มีอาการ ไม่ต้องรักษา</b> → ไม่ต้องตรวจ · ALT สูงเล็กน้อยทำให้ตรวจต่อจำนวนมาก · HITAP 2556 ไม่บรรจุ</td><td>Cr/eGFR + UACR ใน <b>DM/HTN</b> · CBC เมื่อซีด/ประจำเดือนมาก · ก่อนเริ่มยาที่ต้องติดตาม (statin ไม่ต้องตรวจ LFT ซ้ำเป็น routine) <span class="tag th">ไทย</span> สิทธิข้าราชการ/ประกันสังคมเบิกได้ — แนะนำเลือกตรวจ</td></tr>
+    <tr><td><b>CT/MRI ทั้งตัว</b>, PET "ตรวจหามะเร็ง"</td><td>ไม่มีหลักฐานประโยชน์ · รังสีสูง · เจอ incidentaloma บ่อย → ตรวจต่อ/เจาะ <span class="tag add">เสริม</span> (FDA, Choosing Wisely)</td><td>LDCT ปอดในเกณฑ์ USPSTF</td></tr>
+    <tr><td><b>Vitamin D (25-OH D)</b></td><td>Endocrine Society 2024 แนะนำ<b>ไม่ตรวจ routine</b> ในคนทั่วไป · USPSTF <span class="rec">I</span></td><td>โรคที่มีผลต่อกระดูก/การดูดซึม, CKD, ตับแข็ง, ยาที่รบกวน</td></tr>
+    <tr><td><b>TSH, US ไทรอยด์</b></td><td>คัดกรองการทำงานไทรอยด์ <span class="rec">I</span> · US คัดกรองมะเร็งไทรอยด์ <span class="rec no">D</span> (overdiagnosis)</td><td>มีอาการ · ตั้งครรภ์/วางแผนในกลุ่มเสี่ยง · คลำได้ก้อน</td></tr>
+    <tr><td><b>Carotid US</b>, <b>spirometry</b> ในคนไม่มีอาการ</td><td>carotid stenosis <span class="rec no">D</span> (2021) · COPD <span class="rec no">D</span> (2022)</td><td>มีอาการ TIA / หอบเหนื่อย ไอเรื้อรัง</td></tr>
+    <tr><td><b>Pap ทุกปี</b> · คัดกรองปากมดลูก &lt;21 หรือ &gt;65 ปีที่ผลเดิมปกติ</td><td>ไม่ได้ประโยชน์เพิ่ม <span class="rec no">D</span></td><td>มีประวัติ CIN2+ · HIV · กดภูมิ</td></tr>
+    <tr><td><b>BMD</b> ในหญิง &lt;65 ปีที่ไม่มีความเสี่ยง · ชายหนุ่ม</td><td>Choosing Wisely <span class="tag add">เสริม</span></td><td>มีปัจจัยเสี่ยง/OSTA เสี่ยง</td></tr>
+    <tr><td><b>Aspirin</b> ป้องกันปฐมภูมิ</td><td>≥60 ปี <span class="rec no">D</span> · 40–59 ปีเสี่ยง ≥10% <span class="rec">C</span> (2022) — เลือดออกเพิ่ม</td><td>มี ASCVD แล้ว (ไม่ใช่การป้องกันปฐมภูมิ)</td></tr>
+  </table></div>
+  <div class="box warn"><b>ความเห็นต่างที่ต้องรู้</b> · กรมบัญชีกลาง/ประกันสังคมยังมี CXR, CBC, UA, LFT, uric acid ในชุดตรวจประจำปี ขณะที่ HITAP 2556 และหลักฐานสากลไม่แนะนำในคนไม่มีอาการ · <b>หน้านี้ยึดหลักฐาน</b>: แนะนำ "ตรวจเท่าที่จำเป็น" แต่ไม่ห้ามใช้สิทธิ — ถ้าผู้รับบริการต้องการ ให้อธิบายว่า <b>ผลปกติไม่ได้แปลว่าไม่มีโรค และผลผิดปกติเล็กน้อยส่วนใหญ่ไม่มีความหมาย</b></div>
+</section>
+
+<section id="approach">
+  <div class="col">
+    <div class="sec-num">11</div>
+    <h2>แผนผัง: วางแผนตรวจสุขภาพ 1 คน</h2>
+    <div class="seg" role="group" aria-label="รูปแบบแผนผัง">
+      <button type="button" id="apFullBtn" aria-pressed="true">แผนผังเต็ม</button>
+      <button type="button" id="apWalkBtn" aria-pressed="false">เดินทีละขั้น</button>
+    </div>
+  </div>
+  <div id="apFull" class="flow-wrap">
+    <div class="flow">
+      <div class="node start"><b>ผู้ใหญ่ ≥18 ปี มาตรวจสุขภาพ</b>ซักประวัติเสี่ยง · ประวัติครอบครัว · BP · BMI · รอบเอว</div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>มีอาการ หรือมีโรคเรื้อรังอยู่แล้ว?</b></div>
+      <div class="branch b2">
+        <div class="arm"><span class="lab">มี</span><div class="node red"><b>ตรวจวินิจฉัย/ติดตามโรค</b>ไม่ใช่การคัดกรอง · ใช้แนวทางโรคนั้น</div></div>
+        <div class="arm"><span class="lab">ไม่มี</span><div class="node dx green"><b>ทุกคน</b>BP · BMI/เอว · บุหรี่ · AUDIT-C · 2Q · HIV/HCV ≥1 ครั้ง · วัคซีน</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>อายุ?</b></div>
+      <div class="branch b3">
+        <div class="arm"><span class="lab">18–34</span><div class="node dx eu"><b>เฉพาะความเสี่ยง</b>FPG/ไขมันถ้าอ้วน+เสี่ยง · หญิง: ปากมดลูก, วางแผนบุตร</div></div>
+        <div class="arm"><span class="lab">35–64</span><div class="node dx hypo"><b>+ FPG 3 ปี · TC/HDL 5 ปี</b>Thai CV risk · HBsAg/anti-HCV (เกิดก่อน 2535) · มะเร็งตามอายุ</div></div>
+        <div class="arm"><span class="lab">≥65</span><div class="node dx hyper"><b>+ ผู้สูงอายุ</b>ล้ม · BMD หญิง · AAA ชายเคยสูบ · ตา หู ความจำ</div></div>
+      </div>
+      <div class="vline arrow"></div>
+      <div class="node q"><b>ปัจจัยเสี่ยงเฉพาะ?</b>บุหรี่ ≥20 pack-years · ปลาดิบ · เพศสัมพันธ์เสี่ยง · วางแผนมีบุตร · ญาติเป็นมะเร็ง</div>
+      <div class="vline arrow"></div>
+      <div class="node dx grey"><b>ตัดสิ่งที่ไม่จำเป็นออก</b>CXR · ECG เสี่ยงต่ำ · tumor marker · CT ทั้งตัว · vitamin D · LFT/uric acid/Cr ถ้าไม่มี DM/HTN</div>
+    </div>
+  </div>
+  <div id="apWalk" class="walker" hidden>
+    <div class="trail" id="apTrail"></div>
+    <div id="apStage"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="col">
+    <div class="sec-num">12</div>
+    <h2>เครื่องมือข้างเตียง</h2>
+    <p class="muted" style="font-size:.9rem">ใช้ช่วยวางแผนเท่านั้น · สิทธิและรอบการตรวจอาจเปลี่ยนตามประกาศ สปสช./หน่วยงานต้นสังกัด · ไม่ใช้กับผู้ที่มีอาการ</p>
+  </div>
+  <div class="tool plan" id="tChk" style="margin-top:12px">
+    <h3>สร้าง checklist ตรวจสุขภาพรายบุคคล</h3>
+    <div class="fields">
+      <label class="f">อายุ (ปี)<input type="number" id="cAge" value="52"></label>
+      <label class="f">เพศ<select id="cSex"><option value="">— เลือก —</option><option value="m" selected>ชาย</option><option value="f">หญิง</option></select></label>
+      <label class="f">BMI (kg/m²) ถ้ารู้<input type="number" step="0.1" id="cBmi" value="26"></label>
+      <label class="f">น้ำหนัก (kg) ใช้คำนวณ OSTA<input type="number" step="0.1" id="cWt" value=""></label>
+      <label class="f">บุหรี่<select id="cSmk"><option value="never">ไม่เคยสูบ</option><option value="cur" selected>ยังสูบอยู่</option><option value="q15">เลิกแล้ว ≤15 ปี</option><option value="qold">เลิกแล้ว &gt;15 ปี</option></select></label>
+      <label class="f">Pack-years (ซอง/วัน × ปี)<input type="number" step="0.5" id="cPy" value="25"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="cDM"> เป็นเบาหวานอยู่แล้ว</label>
+      <label><input type="checkbox" id="cHT"> เป็นความดันสูงอยู่แล้ว</label>
+      <label><input type="checkbox" id="cFhCvd"> ญาติสายตรงเป็นโรคหัวใจก่อนวัย / สงสัย FH</label>
+      <label><input type="checkbox" id="cFhDm"> ญาติสายตรงเป็นเบาหวาน</label>
+      <label><input type="checkbox" id="cFhCrc"> ญาติสายตรงเป็นมะเร็งลำไส้</label>
+      <label><input type="checkbox" id="cFhBr"> ญาติเป็นมะเร็งเต้านม/รังไข่ หรือ BRCA</label>
+      <label><input type="checkbox" id="cHiv"> เสี่ยง HIV/STI (MSM, คู่นอนหลายคน, คู่ HIV+, ใช้ยาฉีด)</label>
+      <label><input type="checkbox" id="cFish"> กินปลาน้ำจืดดิบ/ก้อยปลา</label>
+      <label><input type="checkbox" id="cPreg"> วางแผนมีบุตรใน 1 ปี</label>
+      <label><input type="checkbox" id="cMeno"> หมดประจำเดือนแล้ว</label>
+      <label><input type="checkbox" id="cFx"> กระดูกหักง่าย / ใช้ steroid ≥3 เดือน</label>
+    </div>
+    <div class="out" id="chkOut"></div>
+  </div>
+
+  <div class="tool" id="tBmi" style="margin-top:12px">
+    <h3>BMI + รอบเอว (เกณฑ์เอเชีย)</h3>
+    <div class="fields">
+      <label class="f">น้ำหนัก (kg)<input type="number" step="0.1" id="bW" value="72"></label>
+      <label class="f">ส่วนสูง (cm หรือ m)<input type="number" step="0.01" id="bH" value="165"></label>
+      <label class="f">รอบเอว (cm) ถ้ามี<input type="number" step="0.5" id="bWc" value="92"></label>
+      <label class="f">เพศ<select id="bSex"><option value="">— เลือก —</option><option value="m" selected>ชาย</option><option value="f">หญิง</option></select></label>
+    </div>
+    <div class="out" id="bmiOut"></div>
+  </div>
+
+  <div class="tool" id="tAud" style="margin-top:12px">
+    <h3>AUDIT-C (สุรา 3 ข้อ)</h3>
+    <div class="fields">
+      <label class="f">1. ดื่มเครื่องดื่มแอลกอฮอล์บ่อยแค่ไหน<select id="aQ1"><option value="">— เลือก —</option><option value="0">ไม่เคยเลย</option><option value="1">เดือนละครั้งหรือน้อยกว่า</option><option value="2" selected>2–4 ครั้ง/เดือน</option><option value="3">2–3 ครั้ง/สัปดาห์</option><option value="4">≥4 ครั้ง/สัปดาห์</option></select></label>
+      <label class="f">2. วันที่ดื่ม ดื่มกี่ดื่มมาตรฐาน<select id="aQ2"><option value="">— เลือก —</option><option value="0">1–2</option><option value="1" selected>3–4</option><option value="2">5–6</option><option value="3">7–9</option><option value="4">≥10</option></select></label>
+      <label class="f">3. ดื่ม ≥6 ดื่มมาตรฐานในครั้งเดียว บ่อยแค่ไหน<select id="aQ3"><option value="">— เลือก —</option><option value="0">ไม่เคย</option><option value="1" selected>น้อยกว่าเดือนละครั้ง</option><option value="2">เดือนละครั้ง</option><option value="3">สัปดาห์ละครั้ง</option><option value="4">ทุกวัน/เกือบทุกวัน</option></select></label>
+      <label class="f">เพศ<select id="aSex"><option value="">— เลือก —</option><option value="m" selected>ชาย</option><option value="f">หญิง</option></select></label>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin:6px 0 0">1 ดื่มมาตรฐาน (ไทย) = แอลกอฮอล์ 10 g ≈ เบียร์ 5% ~250 mL (เบียร์กระป๋อง 330 mL ≈ 1.3) · ไวน์ 12% ~100 mL · สุรา 40% ~30 mL · เบียร์ขวดใหญ่ 620 mL ≈ 2.5</p>
+    <div class="out" id="audOut"></div>
+  </div>
+</section>
+
+<section id="pearls" class="col">
+  <div class="sec-num">13</div>
+  <h2>Practical points</h2>
+  <div class="pearls">
+    <div class="pearl"><div><b>มีอาการ = ไม่ใช่การคัดกรอง</b> ตรวจวินิจฉัยเลย</div></div>
+    <div class="pearl"><div><b>BP ถูกวิธี</b> พัก 5 นาที cuff พอดี วัด 2 ครั้ง ยืนยันด้วย HBPM</div></div>
+    <div class="pearl"><div><b>BMI ≥23 = น้ำหนักเกิน</b> (เอเชีย) · เอว ชาย ≥90 หญิง ≥80</div></div>
+    <div class="pearl"><div><b>≥35 ปี: FPG ทุก 3 ปี · TC/HDL ทุก 5 ปี</b> + Thai CV risk</div></div>
+    <div class="pearl"><div><b>เกิดก่อน 2535 → HBsAg + anti-HCV ฟรี 1 ครั้ง</b></div></div>
+    <div class="pearl"><div><b>Cr/UACR เฉพาะ DM/HTN</b> — ไม่ต้องตรวจไตทุกคน</div></div>
+    <div class="pearl"><div><b>HIV ≥1 ครั้งในชีวิต</b> (15–65) · เสี่ยง → PrEP</div></div>
+    <div class="pearl"><div><b>สูบ ≥20 pack-years อายุ 50–80 → LDCT</b> ไม่ใช่ CXR</div></div>
+    <div class="pearl"><div><b>CEA/AFP/CA-125 ไม่ใช่การคัดกรอง</b> (ยกเว้น AFP+US ในพาหะ HBV)</div></div>
+    <div class="pearl"><div><b>ก้อยปลา → OV-RDT</b> · praziquantel 40 mg/kg ครั้งเดียว + เลิกกินดิบ</div></div>
+    <div class="pearl"><div><b>วางแผนมีบุตร</b> folic acid + ธาลัสซีเมียทั้งคู่ + หัดเยอรมัน</div></div>
+    <div class="pearl"><div><b>เขียนรอบนัดแต่ละรายการ</b> ไม่ต้องเจาะทุกอย่างทุกปี</div></div>
+  </div>
+</section>
+
+<section id="quiz" class="col">
+  <div class="sec-num">14</div>
+  <h2>ทดสอบความเข้าใจ</h2>
+  <div class="qz" id="qz"></div>
+</section>
+
+<p class="col" style="margin-top:32px"><a href="../cancer-screening/index.html">คัดกรองมะเร็ง →</a> · <a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่ →</a> · <a href="../htn/index.html">HTN →</a> · <a href="../lipid/index.html">ไขมัน →</a> · <a href="../dm/index.html">DM →</a> · <a href="../ckd/index.html">CKD →</a> · <a href="../hepbc/index.html">HBV/HCV →</a> · <a href="../hiv/index.html">HIV →</a> · <a href="../thalassemia/index.html">Thalassemia →</a> · <a href="../tb/index.html">TB →</a> · <a href="../geriatric/index.html">ผู้สูงอายุ →</a> · <a href="../nutrition/index.html">โภชนบำบัด →</a></p>
+<footer class="col">
+  อ้างอิง: 1) US Preventive Services Task Force. A and B recommendations (accessed Nov 2026); Screening for hypertension in adults. JAMA 2021;325:1650–6 · 2) USPSTF. Screening for prediabetes and type 2 diabetes. JAMA 2021;326:736–43 · 3) USPSTF. Statin use for the primary prevention of cardiovascular disease in adults. JAMA 2022;328:746–53 · 4) USPSTF. Screening for HIV infection. JAMA 2019;321:2326–36; Preexposure prophylaxis to prevent HIV acquisition. JAMA 2023;330:736–45 · 5) USPSTF. Screening for hepatitis C virus infection in adolescents and adults. JAMA 2020;323:970–5; Screening for hepatitis B virus infection in adolescents and adults. JAMA 2020;324:2415–22 · 6) Conners EE, et al. Screening and testing for hepatitis B virus infection: CDC recommendations — United States, 2023. MMWR Recomm Rep 2023;72(1):1–25 · 7) USPSTF. Screening for depression and suicide risk in adults; Screening for anxiety disorders in adults. JAMA 2023;329:2057–67 and 2163–70 · 8) USPSTF. Interventions to prevent falls in community-dwelling older adults. JAMA 2024;332:51–7 · 9) USPSTF. Screening for osteoporosis to prevent fractures. JAMA 2025;333:498–508 · 10) USPSTF. Screening for abdominal aortic aneurysm. JAMA 2019;322:2211–8 · 11) USPSTF. Screening for lung cancer. JAMA 2021;325:962–70; Colorectal cancer. JAMA 2021;325:1965–77; Breast cancer. JAMA 2024;331:1918–30; Cervical cancer. JAMA 2018;320:674–86 · 12) USPSTF. Unhealthy alcohol use screening and behavioral counseling. JAMA 2018;320:1899–909; Tobacco cessation. JAMA 2021;325:265–79; Behavioral weight loss interventions. JAMA 2018;320:1163–71 · 13) USPSTF. Screening for intimate partner violence and caregiver abuse of older or vulnerable adults (June 2025) · 14) USPSTF. Screening for cardiovascular disease risk with electrocardiography. JAMA 2018;319:2308–14; Screening for vitamin D deficiency. JAMA 2021;325:1436–42; Aspirin use to prevent cardiovascular disease. JAMA 2022;327:1577–84 · 15) Krogsbøll LT, Jørgensen KJ, Gøtzsche PC. General health checks in adults for reducing morbidity and mortality from disease. Cochrane Database Syst Rev 2019;1:CD009009 · 16) Demay MB, et al. Vitamin D for the prevention of disease: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab 2024;109:1907–47 · 17) Srisuwan P, Koopitakkajorn T, Kingkaew P, et al. การตรวจคัดกรองสุขภาพที่เหมาะสมสำหรับสังคมไทย (Development of Thailand's population-based screening package). HITAP 2556 · 18) สำนักงานหลักประกันสุขภาพแห่งชาติ. สิทธิประโยชน์บริการสร้างเสริมสุขภาพและป้องกันโรค (P&amp;P) ปีงบประมาณ 2566–2568; คัดกรองไวรัสตับอักเสบบีและซีในผู้ที่เกิดก่อน พ.ศ. 2535 (2566) · 19) สมาคมโรคเบาหวานแห่งประเทศไทย และคณะ. แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 · 20) แนวทางเวชปฏิบัติภาวะไขมันผิดปกติในเลือด (CPG ไทย) 2567 · 21) สมาคมความดันโลหิตสูงแห่งประเทศไทย. แนวทางการรักษาโรคความดันโลหิตสูงในเวชปฏิบัติทั่วไป พ.ศ. 2567 · 22) KDIGO 2024 clinical practice guideline for the evaluation and management of CKD. Kidney Int 2024;105(4S):S117–S314 · 23) WHO Western Pacific Region. The Asia-Pacific perspective: redefining obesity and its treatment (2000); WHO Expert Consultation. Lancet 2004;363:157–63 · 24) Bush K, et al. The AUDIT alcohol consumption questions (AUDIT-C). Arch Intern Med 1998;158:1789–95; Bradley KA, et al. AUDIT-C as a brief screen for alcohol misuse in primary care. Alcohol Clin Exp Res 2007;31:1208–17 · 25) Bull FC, et al. WHO 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med 2020;54:1451–62 · 26) Koh LK, et al. A simple tool to identify Asian women at increased risk of osteoporosis (OSTA). Osteoporos Int 2001;12:699–705 · 27) WHO. Integrated care for older people (ICOPE) guidelines (2017) and handbook (2019) · 28) Vathesatogkit P, et al. Cohort profile: the Electricity Generating Authority of Thailand study. Int J Epidemiol 2012;41:359–65 (ที่มาของ Thai CV risk score) · 29) Choosing Wisely (ABIM Foundation): AAFP, SGIM, ACR lists<br>
+  <span class="tag th">ไทย</span> = บริบท/สิทธิในประเทศไทย · <span class="tag add">เสริม</span> = นอกเหนือแนวทางหลัก · ใช้ประกอบการเรียน ไม่ใช่คำสั่งการรักษา · เรียบเรียงโดย นพ.ปฐมพงษ์ คูเจริญไพศาล
+</footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const num=id=>{const e=$(id);if(!e)return null;const v=parseFloat(e.value);return isNaN(v)?null:v};
+const f1=x=>(Math.round(x*10)/10).toString();
+const f2=x=>(Math.round(x*100)/100).toFixed(2);
+/* contents grid built from toc */
+(function(){
+  const box=$('contents');if(!box)return;
+  const links=[...document.querySelectorAll('#toc a')];
+  box.innerHTML=links.map((a,i)=>`<a href="${a.getAttribute('href')}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${a.textContent}</a>`).join('');
+})();
+/* toc highlight + keep active chip visible */
+(function(){
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let last=-1;const toc=$('toc');
+  function onScroll(){let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    if(cur!==last){last=cur;const a=links[cur];if(a&&toc){const l=a.offsetLeft-toc.clientWidth/2+a.clientWidth/2;toc.scrollTo({left:l,behavior:'smooth'})}}}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+/* full / walk toggles */
+function toggleView(full,walk,bFull,bWalk,key){
+  function set(w){$(full).hidden=w;$(walk).hidden=!w;$(bFull).setAttribute('aria-pressed',!w);$(bWalk).setAttribute('aria-pressed',w);try{localStorage.setItem(key,w?'walk':'full')}catch(e){}}
+  $(bFull).onclick=()=>set(false);$(bWalk).onclick=()=>set(true);
+  try{if(localStorage.getItem(key)==='walk')set(true)}catch(e){}
+}
+/* walker engine */
+function mountWalker(T,trailId,stageId){
+  let path=['start'];
+  const colors={danger:'var(--danger)',warn:'var(--warn)',ok:'var(--ok)',violet:'var(--violet)'};
+  function render(){
+    const id=path[path.length-1],n=T[id];
+    $(trailId).innerHTML=path.slice(0,-1).map(p=>`<span>${T[p].q?T[p].q.replace('?',''):T[p].t}</span>`).join('');
+    let h='';
+    if(n.leaf){
+      h=`<div class="leaf" style="border-color:${colors[n.cls]||'var(--accent)'}"><div class="wq">${n.t}</div><p>${n.b}</p></div>`;
+      if(n.next)h+=`<div class="opts"><button class="opt" data-go="${n.next[1]}">${n.next[0]} →</button></div>`;
+    }else{
+      h=`<div class="wq">${n.q}</div>${n.h?`<div class="muted" style="font-size:.9rem">${n.h}</div>`:''}<div class="opts">`+
+        n.o.map(o=>`<button class="opt" data-go="${o[1]}">${o[0]}${o[2]?`<small>${o[2]}</small>`:''}</button>`).join('')+'</div>';
+    }
+    h+=`<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">${path.length>1?'<button class="btn" data-w="back">← ย้อนกลับ</button><button class="btn" data-w="reset">เริ่มใหม่</button>':''}</div>`;
+    const st=$(stageId);st.innerHTML=h;
+    st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{path.push(b.dataset.go);render()});
+    st.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{if(b.dataset.w==='back')path.pop();else path=['start'];render()});
+  }
+  render();
+}
+/* quiz engine */
+function mountQuiz(Q,id){
+  Q=Q.map((q,i)=>{let seed=(i+1)*9301+49297;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    const idx=q[1].map((_,j)=>j);for(let k=idx.length-1;k>0;k--){const r=Math.floor(rnd()*(k+1));[idx[k],idx[r]]=[idx[r],idx[k]];}
+    return [q[0],idx.map(j=>q[1][j]),idx.indexOf(q[2]),q[3]];});
+  $(id).innerHTML=Q.map((q,i)=>`<div class="qcard" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button class="c" data-j="${j}">${String.fromCharCode(65+j)}. ${c}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+  $(id).querySelectorAll('.qcard').forEach(card=>{
+    const q=Q[+card.dataset.i];
+    card.querySelectorAll('button.c').forEach(b=>b.onclick=()=>{
+      card.querySelectorAll('button.c').forEach(x=>x.classList.remove('right','wrong'));
+      const j=+b.dataset.j;b.classList.add(j===q[2]?'right':'wrong');
+      card.querySelectorAll('button.c')[q[2]].classList.add('right');
+      const ex=card.querySelector('.ex');ex.hidden=false;
+      ex.innerHTML=(j===q[2]?'<b style="color:var(--ok)">ถูกต้อง</b> ':'<b style="color:var(--danger)">ยังไม่ใช่</b> ')+q[3];
+    });
+  });
+}
+function radio(name){const e=document.querySelector(`input[name=${name}]:checked`);return e?e.value:null}
+function bindAll(sel,fn){document.querySelectorAll(sel).forEach(e=>{e.addEventListener('input',fn);e.addEventListener('change',fn)});fn();}
+
+toggleView('apFull','apWalk','apFullBtn','apWalkBtn','hckView');
+mountWalker({
+ start:{q:'มีอาการผิดปกติ หรือมีโรคเรื้อรังอยู่แล้วไหม?',o:[['มีอาการผิดปกติ','sym'],['มีโรคเรื้อรัง (DM, HTN, CKD ฯลฯ)','chr'],['ไม่มี — มาตรวจสุขภาพ','age']]},
+ sym:{leaf:true,cls:'danger',t:'ไม่ใช่การคัดกรอง',b:'ตรวจวินิจฉัยตามอาการทันที เช่น ถ่ายเป็นเลือด → ส่องกล้อง (ไม่ใช่ FIT) · ไอเรื้อรัง → CXR/เสมหะ · คลำก้อนเต้านม → US/mammogram วินิจฉัย'},
+ chr:{leaf:true,cls:'warn',t:'ติดตามตามแนวทางโรค',b:'DM: A1C, eGFR + UACR, จอตา, เท้า ปีละครั้ง · HTN: Cr, K, UA, glucose, lipid, ECG ตั้งต้น · CKD: eGFR + UACR ตามระยะ · แล้วทำคัดกรองอื่นตามอายุต่อ',next:['คัดกรองตามอายุต่อ','age']},
+ age:{q:'อายุเท่าไร?',o:[['18–34 ปี','y'],['35–49 ปี','m1'],['50–64 ปี','m2'],['≥65 ปี','old']]},
+ y:{leaf:true,cls:'ok',t:'18–34 ปี',b:'BP (ปกติ ไม่เสี่ยง: ทุก 3–5 ปี) · BMI/รอบเอว · บุหรี่ สุรา (AUDIT-C) ซึมเศร้า (2Q) · <b>HIV และ anti-HCV อย่างน้อย 1 ครั้ง</b> · FPG/ไขมันเฉพาะ BMI ≥23 + ปัจจัยเสี่ยง · หญิง 21–29: cytology ทุก 3 ปี (USPSTF; ไทยเริ่ม 30) · หญิง ≤24: chlamydia/gonorrhea · ฟัน · วัคซีน',next:['ดูปัจจัยเสี่ยงเฉพาะ','risk']},
+ m1:{leaf:true,cls:'ok',t:'35–49 ปี',b:'BP ทุกปี (≥40) · <b>FPG</b> (ปกติ → ทุก 3 ปี) · <b>TC/HDL ทุก 5 ปี + Thai CV risk</b> · <b>HBsAg + anti-HCV 1 ครั้ง</b> (เกิดก่อน 2535) · HIV ≥1 ครั้ง · หญิง: HPV ทุก 5 ปี, ≥40 mammogram (USPSTF ทุก 2 ปี; ไทยเฉพาะเสี่ยงสูง) · ≥40 ตรวจช่องปาก · 45–49: มะเร็งลำไส้ (USPSTF B; ไทยเริ่ม 50)',next:['ดูปัจจัยเสี่ยงเฉพาะ','risk']},
+ m2:{leaf:true,cls:'ok',t:'50–64 ปี',b:'ทุกอย่างของ 35–49 + <b>FIT</b> (สิทธิไทย 50–70 ปี ทุก 2 ปี; USPSTF ปีละครั้ง) หรือ colonoscopy ทุก 10 ปี · statin ถ้า Thai CV risk ≥10% · หญิงหมดประจำเดือน + เสี่ยง (OSTA) → BMD · ชาย 55–69: PSA เฉพาะหลังคุยประโยชน์/โทษ',next:['ดูปัจจัยเสี่ยงเฉพาะ','risk']},
+ old:{leaf:true,cls:'violet',t:'≥65 ปี',b:'+ ถามเรื่อง<b>ล้ม</b> → ออกกำลังกายทรงตัว · <b>หญิง: BMD</b> · <b>ชาย 65–75 เคยสูบ: US หา AAA 1 ครั้ง</b> · ความจำ สายตา การได้ยิน โภชนาการ ADL · FIT ถึง 70–75 (76–85 รายบุคคล) · หยุดคัดกรองปากมดลูกหลัง 65 ถ้าผลเดิมปกติ · ไม่ตรวจ PSA ≥70 · วัคซีนผู้สูงอายุ',next:['ดูปัจจัยเสี่ยงเฉพาะ','risk']},
+ risk:{q:'มีปัจจัยเสี่ยงเฉพาะข้อใด?',o:[['สูบบุหรี่ (ปัจจุบัน/เคย)','smk'],['กินปลาน้ำจืดดิบ/ก้อยปลา','fish'],['เพศสัมพันธ์เสี่ยง / ใช้ยาฉีด','sti'],['วางแผนมีบุตร','preg'],['ญาติสายตรงเป็นมะเร็งลำไส้/เต้านม/รังไข่','fam'],['ไม่มี','no']]},
+ smk:{q:'อายุ 50–80 ปี + ≥20 pack-years + ยังสูบหรือเลิก ≤15 ปี?',o:[['ใช่','ldct'],['ไม่ใช่','quit']]},
+ ldct:{leaf:true,cls:'warn',t:'LDCT ปอดปีละครั้ง (USPSTF B)',b:'คุยประโยชน์/โทษ (ผลบวกลวง รังสี ค่าใช้จ่าย — ยังไม่อยู่ในสิทธิพื้นฐานไทย) · หยุดเมื่อเลิกสูบครบ 15 ปี หรือมีโรคที่ไม่ควรผ่าตัด · <b>ไม่ใช้ CXR แทน</b> · ทำ 5A เลิกบุหรี่ทุกครั้ง · ชาย 65–75 → US หา AAA',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ quit:{leaf:true,cls:'ok',t:'เน้นเลิกบุหรี่',b:'5A: Ask · Advise · Assess · Assist (NRT/varenicline/bupropion + พฤติกรรม) · Arrange นัด 1 สัปดาห์หลังวันเลิก · สายด่วน 1600 · ไม่ทำ CXR คัดกรอง',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ fish:{leaf:true,cls:'warn',t:'พยาธิใบไม้ตับ',b:'<b>OV-RDT ปัสสาวะปีละครั้ง</b> (สปสช., ≥15 ปีที่เสี่ยง) หรือตรวจอุจจาระ · บวก → <b>praziquantel 40 mg/kg ครั้งเดียว</b> · สำคัญที่สุด: <b>เลิกกินปลาดิบ</b> · ดีซ่าน/น้ำหนักลด/ปวดชายโครงขวา → ตรวจวินิจฉัย CCA',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ sti:{leaf:true,cls:'warn',t:'HIV/STI',b:'Anti-HIV ซ้ำทุก 3–12 เดือนตามความเสี่ยง + <b>PrEP</b> (USPSTF A) · syphilis · HBsAg/anti-HBs (ไม่มีภูมิ → วัคซีน) · anti-HCV ทุกปี (สปสช. ในกลุ่มเสี่ยง) · chlamydia/gonorrhea ถ้าทำได้',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ preg:{leaf:true,cls:'ok',t:'ก่อนตั้งครรภ์',b:'Folic acid <b>0.4–0.8 mg/วัน</b> เริ่ม ≥1 เดือนก่อน (USPSTF A) · <b>คัดกรองพาหะธาลัสซีเมียทั้งคู่</b> · ภูมิหัดเยอรมัน · HIV, syphilis, HBsAg · คุม DM/HTN · ทบทวนยาที่อันตรายต่อทารก (ACEi/ARB, statin, warfarin, valproate)',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ fam:{leaf:true,cls:'warn',t:'ประวัติครอบครัวมะเร็ง',b:'มะเร็งลำไส้ในญาติสายตรงที่เป็นตอน &lt;60 ปีหรือ ≥2 คน → <b>colonoscopy เริ่มอายุ 40 หรือ 10 ปีก่อนอายุที่ญาติเป็น</b> (ซ้ำทุก 5 ปี) · ญาติ 1 คนเป็นตอน ≥60 → เริ่ม 40 ปี รอบแบบคนทั่วไป · มะเร็งเต้านม/รังไข่ → ประเมินความเสี่ยง BRCA (USPSTF B) · mammogram/US ตั้งแต่ 40 (สปสช. กลุ่มเสี่ยง) · ดูหน้าคัดกรองมะเร็ง',next:['สิ่งที่ไม่ต้องตรวจ','no']},
+ no:{leaf:true,cls:'danger',t:'ตัดสิ่งที่ไม่จำเป็นออก',b:'ไม่ทำ: <b>CXR ทุกปี</b> (ยกเว้นคัดกรอง TB กลุ่มเสี่ยง/อาชีพ) · <b>ECG</b> ในคนเสี่ยงต่ำ · <b>CEA, AFP, CA-125, CA 19-9</b> · PSA โดยไม่คุย · <b>CT/MRI ทั้งตัว</b> · <b>vitamin D</b> · TSH/US ไทรอยด์ · carotid US · spirometry · CBC/UA/LFT/uric acid/Cr ถ้าไม่มี DM/HTN · aspirin ป้องกันปฐมภูมิ ≥60 ปี'}
+},'apTrail','apStage');
+
+/* ---------- 1) personalised checklist ---------- */
+function chk(){
+  const o=$('chkOut');const a=num('cAge');const sex=$('cSex').value;const c=id=>$(id).checked;
+  if(a===null||sex===''){o.innerHTML='ใส่อายุและเลือกเพศ';return}
+  if(a<18){o.innerHTML='เครื่องมือนี้สำหรับผู้ใหญ่อายุ ≥18 ปี';return}
+  if(a>110){o.innerHTML='อายุไม่สมเหตุสมผล — ตรวจค่าอีกครั้ง';return}
+  const W=[];
+  let bmi=num('cBmi');if(bmi!==null&&(bmi<10||bmi>80)){W.push('BMI ไม่สมเหตุสมผล (ใส่ 10–80) — ไม่นำมาคิด');bmi=null}
+  let wt=num('cWt');if(wt!==null&&(wt<25||wt>300)){W.push('น้ำหนักไม่สมเหตุสมผล (25–300 kg) — ไม่นำมาคิด');wt=null}
+  let py=num('cPy');if(py!==null&&(py<0||py>200)){W.push('pack-years ไม่สมเหตุสมผล (0–200) — ไม่นำมาคิด');py=null}
+  const smk=$('cSmk').value;const ever=smk!=='never';const eligSmk=smk==='cur'||smk==='q15';
+  const F=sex==='f',M=sex==='m';
+  const dm=c('cDM'),ht=c('cHT');
+  const R=[],C=[],N=[];
+  const it=(L,t,src)=>L.push(t+(src?` <span class="rec${/USPSTF [AB]|สปสช|CPG|ไทย|KDIGO|HITAP/.test(src)?' s1':''}">${src}</span>`:''));
+  /* ทุกคน */
+  it(R,`<b>BP</b> — ${(a>=40||(bmi!==null&&bmi>=23)||dm||ht)?'ปีละครั้ง':'ทุก 3–5 ปี ถ้าปกติและไม่มีความเสี่ยง (ปีละครั้งถ้า 130–139/80–89)'}${ht?' · เป็น HTN แล้ว: ติดตามตามแนวทาง':''}`,'USPSTF A');
+  if(bmi===null)it(R,'<b>BMI + รอบเอว</b> ปีละครั้ง (ชาย ≥90, หญิง ≥80 cm)','HITAP');
+  else{
+    const cls=bmi<18.5?'น้ำหนักน้อย → ประเมินโภชนาการ/โรคที่ทำให้ผอม':bmi<23?'ปกติ':bmi<25?'<b>น้ำหนักเกิน</b> (เกณฑ์เอเชีย) → ให้คำปรึกษาอาหาร/ออกกำลังกาย':bmi<30?'<b>อ้วนระดับ 1</b> (เกณฑ์เอเชีย) → เป้าลด 5–10%':'<b>อ้วนระดับ 2</b> → โปรแกรมปรับพฤติกรรมเข้มข้น (USPSTF B ที่ BMI ≥30)';
+    it(R,`<b>BMI ${f1(bmi)}</b>: ${cls} · วัดรอบเอวด้วย`,'HITAP');
+  }
+  it(R,`<b>บุหรี่</b> — ถามทุกครั้ง${smk==='cur'?' · <b>ยังสูบ → 5A</b> + ยาช่วยเลิก + สายด่วน 1600':''}`,'USPSTF A');
+  it(R,'<b>สุรา: AUDIT-C</b> (เครื่องมือด้านล่าง) → บวกให้ brief intervention','USPSTF B');
+  it(R,'<b>ซึมเศร้า 2Q</b> (บวก → 9Q)'+(a<=64?' · <b>anxiety</b> (GAD-2/GAD-7)':''),'USPSTF B');
+  /* metabolic */
+  if(dm){
+    it(R,'<b>เป็นเบาหวานแล้ว</b>: A1C · <b>eGFR + UACR</b> · จอตา · เท้า ปีละครั้ง · lipid (<a href="../dm/index.html">DM</a>)','CPG DM 2566');
+  }else if(a>=35){
+    it(R,`<b>FPG</b> (+ Thai Diabetes Risk Score) — &lt;100 ตรวจซ้ำทุก 3 ปี · 100–109 ทุกปี · ≥110 ตรวจต่อ${a>70?' · อายุ &gt;70: USPSTF ไม่ครอบคลุม แต่ CPG ไทยไม่กำหนดอายุสิ้นสุด — ตรวจต่อถ้าผลจะเปลี่ยนการดูแล':''}`,a<=70&&bmi!==null&&bmi>=23?'USPSTF B · CPG DM 2566':'CPG DM 2566');
+  }else{
+    const rf=c('cFhDm')||ht||c('cFhCvd');
+    if(bmi!==null&&bmi>=23&&rf)it(R,'<b>FPG</b> — อายุ &lt;35 แต่ BMI ≥23 + ปัจจัยเสี่ยง · ปกติ → ทุก 3 ปี','CPG DM 2566');
+    else if(bmi===null)it(C,'<b>FPG</b> ถ้า BMI ≥23 + ปัจจัยเสี่ยง (ญาติเป็น DM, HTN, ไขมันผิดปกติ, เคย GDM, PCOS) หรือ Thai DRS ≥8 — ใส่ BMI เพื่อคิดให้','CPG DM 2566');
+    else it(C,'FPG ยังไม่ต้อง (อายุ &lt;35 ไม่เข้าเกณฑ์) · ประเมิน Thai DRS ด้วยตนเอง','CPG DM 2566');
+  }
+  if(a>=35){
+    it(R,`<b>TC + HDL ทุก 5 ปี</b> แล้วคำนวณ <b>Thai CV risk score</b>${a<=70?'':' (สร้างจากคนอายุ 35–70 ปี — อายุ &gt;70 ใช้ดุลพินิจ)'} · ≥10% → พิจารณา statin (<a href="../lipid/index.html">ไขมัน</a>)`,'HITAP · CPG Lipid 2567');
+    if(a>=40&&a<=75)it(C,'<b>Statin</b> ถ้ามีปัจจัยเสี่ยง ≥1 (DM, HTN, ไขมัน, สูบบุหรี่) + ความเสี่ยง 10 ปี ≥10%','USPSTF B');
+  }else if(c('cFhCvd')||dm||ht||(bmi!==null&&bmi>=25)){
+    it(R,'<b>Lipid profile</b> — อายุ &lt;35 แต่มีความเสี่ยง'+(c('cFhCvd')?' · ญาติเป็นโรคหัวใจก่อนวัย: LDL ≥190 คิดถึง FH':''),'CPG Lipid 2567');
+  }
+  if(ht&&!dm)it(R,'<b>เป็น HTN</b>: Cr/eGFR + UACR, K, glucose, lipid ปีละครั้ง · ECG ตั้งต้น (<a href="../htn/index.html">HTN</a>)','KDIGO · HTN 2567');
+  /* infection */
+  if(a>=35)it(R,'<b>HBsAg + anti-HCV 1 ครั้งตลอดชีวิต</b> (เกิดก่อน พ.ศ. 2535 — ฟรีทุกสิทธิ) · HBsAg และ anti-HBs ลบ → วัคซีน (<a href="../hepbc/index.html">HBV/HCV</a>)','สปสช.');
+  else if(a>=34)it(R,'<b>HBsAg + anti-HCV 1 ครั้ง</b> — ถ้าเกิดก่อน พ.ศ. 2535 (อายุ 34 ปีอาจเกิด 2534 หรือ 2535 ตรวจปีเกิด) · ถ้าเกิดตั้งแต่ 2535: anti-HCV ≥1 ครั้งตาม USPSTF','สปสช.');
+  else{
+    if(a<=79)it(R,'<b>Anti-HCV อย่างน้อย 1 ครั้ง</b> (สิทธิไทยครอบคลุมเฉพาะเกิดก่อน 2535/กลุ่มเสี่ยง)','USPSTF B');
+    it(C,'<b>HBsAg</b> ถ้าไม่เคยได้วัคซีน/แม่เป็นพาหะ/มีความเสี่ยง (CDC 2023: ผู้ใหญ่ทุกคน ≥1 ครั้ง)','USPSTF B');
+  }
+  if(a<=65)it(R,'<b>Anti-HIV อย่างน้อย 1 ครั้ง</b> (ตรวจฟรีโดยสมัครใจ)','USPSTF A');
+  else if(!c('cHiv'))it(C,'Anti-HIV ถ้ามีความเสี่ยง (อายุ &gt;65)','USPSTF A');
+  if(c('cHiv'))it(R,'<b>เสี่ยง HIV/STI</b>: anti-HIV ซ้ำทุก 3–12 เดือน + <b>PrEP</b> · syphilis · anti-HCV ทุกปี · HBsAg/anti-HBs (<a href="../hiv/index.html">HIV</a>)','USPSTF A · สปสช.');
+  if(F&&a<=24)it(C,'<b>Chlamydia/gonorrhea</b> (NAAT) ถ้ามีเพศสัมพันธ์ — ทำเมื่อเข้าถึงได้','USPSTF B');
+  if(c('cFish'))it(R,'<b>OV-RDT ปัสสาวะปีละครั้ง</b> หรือตรวจอุจจาระหาพยาธิใบไม้ตับ · บวก → praziquantel 40 mg/kg ครั้งเดียว · เลิกกินปลาดิบ','สปสช. 2567');
+  /* cancer */
+  if(F){
+    if(a<21)N.push('คัดกรองมะเร็งปากมดลูกก่อนอายุ 21 ปี <span class="rec no">USPSTF D</span>');
+    else if(a<30)it(R,'<b>มะเร็งปากมดลูก</b>: cytology ทุก 3 ปี (USPSTF) · สิทธิไทยเริ่ม 30 ปี (15–29 ปีเฉพาะกลุ่มเสี่ยง)','USPSTF A');
+    else if(a<=65)it(R,`<b>มะเร็งปากมดลูก: HPV DNA ทุก 5 ปี</b> (รวมเก็บเอง)${a>=60?' · สิทธิไทย 30–59 ปี (บางเอกสารเขียน 30–60); USPSTF ถึง 65':''} (<a href="../cancer-screening/index.html">คัดกรองมะเร็ง</a>)`,a<60?'สปสช. · USPSTF A':'USPSTF A');
+    else N.push('คัดกรองมะเร็งปากมดลูกหลังอายุ 65 ปี ถ้าผลก่อนหน้าปกติต่อเนื่องและไม่เสี่ยงสูง <span class="rec no">USPSTF D</span>');
+    if(a>=40&&a<75){
+      if(c('cFhBr'))it(R,'<b>Mammogram ± US</b> (กลุ่มเสี่ยงสูง — สปสช. ครอบคลุม) + ประเมินความเสี่ยง BRCA','สปสช. · USPSTF B');
+      else it(C,'<b>Mammogram ทุก 2 ปี</b> (USPSTF B) — สิทธิไทยครอบคลุมเฉพาะกลุ่มเสี่ยง: คุยประโยชน์/ค่าใช้จ่าย · อย่างน้อยรู้จักเต้านมตนเอง + ตรวจโดยบุคลากร','USPSTF B');
+    }else if(a>=75)it(C,'Mammogram ≥75 ปี: หลักฐานไม่พอ — ตัดสินรายบุคคล','USPSTF I');
+    if(c('cFhBr')&&(a<40))it(R,'<b>ประเมินความเสี่ยง BRCA</b> → ปรึกษาพันธุกรรม (สปสช. ตรวจ BRCA ญาติผู้ป่วยตามเกณฑ์)','USPSTF B');
+  }
+  if(M&&c('cFhBr'))it(C,'ญาติมีมะเร็งเต้านม/รังไข่/BRCA → ปรึกษาพันธุกรรม (ชายพาหะ BRCA2 เสี่ยงมะเร็งต่อมลูกหมาก/เต้านม)','');
+  if(c('cFhCrc')){
+    if(a>=40)it(R,'<b>Colonoscopy</b> (ญาติสายตรงเป็นมะเร็งลำไส้) ซ้ำทุก 5 ปี ถ้าญาติเป็นตอน &lt;60 ปี หรือ ≥2 คน · ญาติ 1 คนเป็นตอน ≥60 → เริ่ม 40 ปี รอบแบบคนทั่วไป <span class="tag add">เสริม</span>','');
+    else it(C,'ญาติสายตรงเป็นมะเร็งลำไส้ → colonoscopy เริ่มอายุ 40 หรือ 10 ปีก่อนอายุที่ญาติเป็น (แล้วแต่อย่างไหนมาก่อน) <span class="tag add">เสริม</span>','');
+  }else if(a>=45&&a<50)it(C,'<b>มะเร็งลำไส้</b> อายุ 45–49 (USPSTF B) — สิทธิไทยเริ่ม FIT ที่ 50 ปี','USPSTF B');
+  else if(a>=50&&a<=75)it(R,`<b>มะเร็งลำไส้: FIT</b> ${a<=70?'ทุก 2 ปี (สิทธิไทย 50–70; USPSTF ปีละครั้ง)':'ปีละครั้ง (USPSTF) · สิทธิ FIT ไทยถึง 70 ปี'} หรือ colonoscopy ทุก 10 ปี · FIT บวก → colonoscopy`,a<=70?'สปสช. · USPSTF A':'USPSTF A');
+  else if(a>75&&a<=85)it(C,'มะเร็งลำไส้ 76–85 ปี: ตัดสินรายบุคคล (สุขภาพ อายุขัย ประวัติคัดกรอง)','USPSTF C');
+  else if(a>85)N.push('คัดกรองมะเร็งลำไส้อายุ &gt;85 ปี (โอกาสได้ประโยชน์ต่ำมาก)');
+  if(eligSmk&&a>=50&&a<=80){
+    if(py===null)it(C,'<b>LDCT ปอด</b>? ใส่ pack-years เพื่อตัดสิน (เกณฑ์ ≥20)','USPSTF B');
+    else if(py>=20)it(R,`<b>LDCT ปอดปีละครั้ง</b> (${f1(py)} pack-years, ${smk==='cur'?'ยังสูบ':'เลิก ≤15 ปี'}) — ยังไม่อยู่ในสิทธิพื้นฐานไทย ต้องคุยประโยชน์/โทษ`,'USPSTF B');
+    else it(C,`LDCT ไม่เข้าเกณฑ์ (${f1(py)} pack-years &lt;20)`,'USPSTF B');
+  }else if(smk==='qold'&&a>=50&&a<=80)it(C,'LDCT ไม่เข้าเกณฑ์ (เลิกบุหรี่ &gt;15 ปี)','USPSTF B');
+  if(M&&a>=55&&a<70)it(C,'<b>PSA</b> — ตัดสินใจร่วมกันหลังอธิบายประโยชน์/โทษ (overdiagnosis)','USPSTF C');
+  if(M&&a>=70)N.push('PSA คัดกรองอายุ ≥70 ปี <span class="rec no">USPSTF D</span>');
+  if(a>=40)it(R,'<b>ตรวจช่องปาก/รอยโรคมะเร็งช่องปาก</b> ปีละครั้ง','สปสช.');
+  else it(R,'ตรวจฟัน/ช่องปาก ปีละครั้ง','');
+  /* elderly, bones, women */
+  if(M&&a>=65&&a<=75&&ever)it(R,'<b>US ช่องท้องหา AAA 1 ครั้ง</b> (ชาย 65–75 เคยสูบบุหรี่)','USPSTF B');
+  if(F){
+    if(a>=65)it(R,'<b>BMD (DXA)</b> — หญิง ≥65 ปี','USPSTF B');
+    else if(c('cMeno')||c('cFx')){
+      if(c('cFx'))it(R,'<b>BMD (DXA)</b> — กระดูกหักง่าย/ใช้ steroid','USPSTF B');
+      else if(wt===null)it(C,'หมดประจำเดือน &lt;65 ปี: ใส่น้ำหนักเพื่อคำนวณ <b>OSTA</b> แล้วตัดสินเรื่อง BMD','USPSTF B');
+      else{const os=0.2*(wt-a);
+        if(os<=-1)it(R,`<b>BMD (DXA)</b> — OSTA ${f1(os)} (${os<-4?'เสี่ยงสูง':'เสี่ยงปานกลาง'})`,'USPSTF B');
+        else N.push(`BMD ตอนนี้ — OSTA ${f1(os)} (&gt; −1 เสี่ยงต่ำ) ประเมินซ้ำเมื่อมีปัจจัยเสี่ยงใหม่`);}
+    }
+    if(c('cMeno'))N.push('ฮอร์โมนวัยทอง (estrogen ± progestin) เพื่อป้องกันโรคเรื้อรัง <span class="rec no">USPSTF D</span>');
+    if(a<=49)it(R,'<b>ถามความรุนแรงจากคู่ (IPV)</b> → ส่งต่อศูนย์พึ่งได้','USPSTF B');
+  }else if(c('cFx'))it(C,'<b>BMD</b> — ชายที่กระดูกหักง่าย/ใช้ steroid นาน (USPSTF I ในชายทั่วไป)','');
+  if(M&&c('cMeno'))W.push('ช่อง "หมดประจำเดือน" ใช้กับเพศหญิง — ไม่นำมาคิด');
+  if(a>=65)it(R,'<b>ล้ม</b>: ถามประวัติล้ม/เดินไม่มั่นคง → ออกกำลังกายทรงตัว ≥3 วัน/สัปดาห์ · ทบทวนยา','USPSTF B');
+  if(a>=60)it(R,'<b>คัดกรองผู้สูงอายุ</b>: ความจำ สายตา การได้ยิน โภชนาการ ADL กลั้นปัสสาวะ อารมณ์ (ICOPE) — USPSTF ให้ I แต่ทำได้ง่ายและเป็นแนวทางไทย','ไทย');
+  /* pregnancy plan */
+  if(c('cPreg')){
+    if(F)it(R,`<b>ก่อนตั้งครรภ์</b>: folic acid 0.4–0.8 mg/วัน (เริ่ม ≥1 เดือนก่อน) · <b>ธาลัสซีเมียทั้งคู่</b> · ภูมิหัดเยอรมัน · HIV, syphilis, HBsAg · ทบทวนยา${a>=35?' · อายุ ≥35: ปรึกษาความเสี่ยงโครโมโซม':''} (<a href="../thalassemia/index.html">Thalassemia</a>)`,'USPSTF A · ไทย');
+    else it(R,'<b>ก่อนมีบุตร (ฝ่ายชาย)</b>: คัดกรองพาหะธาลัสซีเมียคู่กับภรรยา · HIV, syphilis (<a href="../thalassemia/index.html">Thalassemia</a>)','ไทย');
+  }
+  it(R,'<b>วัคซีน</b> ตามอายุ/ความเสี่ยง (<a href="../adult-vaccine/index.html">วัคซีนผู้ใหญ่</a>)','');
+  /* not recommended (always) */
+  N.push('<b>CXR ทุกปี</b> (ยกเว้นคัดกรอง TB ในกลุ่มเสี่ยงหรืออาชีพ)');
+  N.push((dm||ht)?'ECG/exercise stress test เป็น routine ซ้ำทุกปี (ECG ตั้งต้นใน HTN/DM ทำได้ตามแนวทางโรค)':'<b>ECG / exercise stress test</b> ในคนเสี่ยงต่ำ <span class="rec no">USPSTF D</span>');
+  N.push('<b>Tumor marker</b>: CEA, AFP (ยกเว้นพาหะ HBV/ตับแข็งร่วม US), CA 19-9, CA-125 <span class="rec no">D (รังไข่)</span>');
+  N.push(`<b>CBC, UA, LFT, uric acid${(dm||ht)?'':', BUN/Cr'} ทุกปี</b> ในคนไม่มีอาการ${a>=35?' — สิทธิข้าราชการ/ประกันสังคมเบิกได้ ถ้าตรวจให้แปลผลอย่างระวัง':''}`);
+  N.push('<b>CT/MRI ทั้งตัว</b>, PET ตรวจหามะเร็ง · <b>vitamin D</b> · TSH/US ไทรอยด์ · carotid US · spirometry ในคนไม่มีอาการ');
+  if(a>=60)N.push('<b>Aspirin</b> ป้องกันปฐมภูมิ อายุ ≥60 ปี <span class="rec no">USPSTF D</span>');
+  const ol=L=>'<ol>'+L.map(x=>`<li>${x}</li>`).join('')+'</ol>';
+  let h=`<b>${M?'ชาย':'หญิง'} ${f1(a)} ปี</b>`+(W.length?'<br><span class="muted">'+W.join(' · ')+'</span>':'');
+  h+=`<div style="margin-top:8px"><b style="color:var(--ok)">ควรทำ (${R.length})</b>${ol(R)}</div>`;
+  if(C.length)h+=`<div><b style="color:var(--warn)">พิจารณา / คุยตัดสินใจร่วมกัน (${C.length})</b>${ol(C)}</div>`;
+  h+=`<div><b style="color:var(--danger)">ไม่แนะนำในคนไม่มีอาการ (${N.length})</b>${ol(N)}</div>`;
+  o.innerHTML=h;
+}
+bindAll('#tChk input,#tChk select',chk);
+
+/* ---------- 2) BMI + waist ---------- */
+function bmiT(){
+  const o=$('bmiOut');const w=num('bW'),h=num('bH');let wc=num('bWc');const sex=$('bSex').value;const L=[];
+  if(w===null||h===null){o.innerHTML='ใส่น้ำหนักและส่วนสูง';return}
+  if(h<=0||w<=0){o.innerHTML='ค่าต้องมากกว่า 0';return}
+  let hc=h;
+  if(h<3){hc=h*100;L.push(`<span class="muted">ส่วนสูง ${h} → อ่านเป็นเมตร = ${f1(hc)} cm</span>`)}
+  if(hc<100||hc>230){o.innerHTML='ส่วนสูงไม่สมเหตุสมผล — ใส่เป็น cm (เช่น 165) หรือ m (เช่น 1.65)';return}
+  if(w<20||w>350){o.innerHTML='น้ำหนักไม่สมเหตุสมผล (20–350 kg)';return}
+  const m=hc/100,bmi=w/(m*m),r=Math.round(bmi*10)/10;
+  const asia=r<18.5?['น้ำหนักน้อย','warn']:r<23?['ปกติ','ok']:r<25?['น้ำหนักเกิน','warn']:r<30?['อ้วนระดับ 1','danger']:['อ้วนระดับ 2','danger'];
+  const who=r<18.5?'น้ำหนักน้อย':r<25?'ปกติ':r<30?'น้ำหนักเกิน':'อ้วน';
+  L.unshift(`BMI = <b>${r.toFixed(1)} kg/m²</b> → <b style="color:var(--${asia[1]})">${asia[0]}</b> (เกณฑ์เอเชีย/ไทย) · เกณฑ์ WHO สากล: ${who}`);
+  L.push(`น้ำหนักที่ BMI 18.5–22.9 สำหรับส่วนสูงนี้: <b>${f1(18.5*m*m)}–${f1(22.9*m*m)} kg</b>`);
+  if(r>=23)L.push(`เป้าลด 5–10% = <b>${f1(w*0.05)}–${f1(w*0.1)} kg</b> ใน ~6 เดือน · ตรวจ FPG, ไขมัน, BP${r>=30?' · BMI ≥30 → โปรแกรมปรับพฤติกรรมเข้มข้น (USPSTF B) ± พิจารณายา':r>=25?' · พิจารณายาลดน้ำหนักถ้ามีโรคร่วมและปรับพฤติกรรมไม่ได้ผล':''}`);
+  if(r<18.5)L.push('น้ำหนักน้อย → ถามน้ำหนักลด กินได้น้อย โรคเรื้อรัง (ไทรอยด์เป็นพิษ, TB, เบาหวาน, มะเร็ง, ซึมเศร้า)');
+  if(wc!==null){
+    if(wc<40||wc>250)L.push('รอบเอวไม่สมเหตุสมผล (40–250 cm) — ไม่นำมาคิด');
+    else{
+      const ratio=wc/hc;
+      L.push(`รอบเอว/ส่วนสูง = <b>${ratio.toFixed(2)}</b> ${ratio>=0.5?'→ <b>สูง</b> (≥0.5 = ไขมันช่องท้องมาก)':'→ ปกติ (&lt;0.5)'}`);
+      if(sex==='')L.push('เลือกเพศเพื่อแปลรอบเอว (ชาย ≥90, หญิง ≥80 cm)');
+      else{const cut=sex==='m'?90:80;
+        L.push(`รอบเอว ${f1(wc)} cm ${wc>=cut?`<b>≥${cut} → อ้วนลงพุง</b> (เสี่ยง metabolic syndrome${r<23?' แม้ BMI ปกติ':''})`:`&lt;${cut} → ปกติ`}`);}
+    }
+  }else L.push('<span class="muted">ใส่รอบเอวเพื่อประเมินอ้วนลงพุง</span>');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tBmi input,#tBmi select',bmiT);
+
+/* ---------- 3) AUDIT-C ---------- */
+function aud(){
+  const o=$('audOut');const q1=$('aQ1').value,q2=$('aQ2').value,q3=$('aQ3').value,sex=$('aSex').value;
+  if(q1===''){o.innerHTML='เลือกคำตอบข้อ 1';return}
+  if(q1==='0'){o.innerHTML='AUDIT-C = <b>0</b> · ไม่ดื่ม — ไม่ต้องถามข้อ 2–3 · ชื่นชม และแนะนำไม่เริ่มดื่ม';return}
+  if(q2===''||q3===''){o.innerHTML='เลือกคำตอบข้อ 2 และ 3 ให้ครบ';return}
+  const s=+q1+ +q2+ +q3;const L=[`AUDIT-C = <b>${s}</b> / 12`];
+  const cut=sex==='m'?4:sex==='f'?3:null;
+  if(cut===null)L.push(`เลือกเพศเพื่อแปลผล (บวกเมื่อ ชาย ≥4, หญิง ≥3) · คะแนนนี้ ${s>=4?'บวกทั้งสองเพศ':s>=3?'บวกในหญิง ยังไม่บวกในชาย':'ไม่บวก'}`);
+  const pos=cut!==null?s>=cut:s>=4;
+  if(cut!==null)L.push(pos?`<b style="color:var(--danger)">บวก</b> (เกณฑ์${sex==='m'?'ชาย ≥4':'หญิง ≥3'}) → ดื่มแบบเสี่ยง`:`ไม่บวก (เกณฑ์${sex==='m'?'ชาย ≥4':'หญิง ≥3'}) · ยิ่งดื่มน้อยยิ่งดี — ไม่มีระดับที่ปลอดภัยต่อมะเร็ง`);
+  if(pos)L.push('<b>Brief intervention 5–15 นาที</b>: บอกผลคะแนน · เชื่อมกับปัญหาสุขภาพของเขา (BP, ตับ, นอน) · ตกลงเป้าลด/เลิกที่ทำได้ · นัดติดตาม 2–4 สัปดาห์ (สายด่วนเลิกเหล้า 1413)');
+  if(s>=8)L.push('<b>คะแนน ≥8</b> → ความน่าจะเป็น alcohol use disorder สูง: ทำ AUDIT เต็ม 10 ข้อ/ประเมินตาม DSM-5 · ถามอาการถอน (มือสั่น เหงื่อออก นอนไม่หลับเมื่อหยุดดื่ม) · ตรวจ ALT/AST, GGT, MCV ได้ · ดูหน้า <a href="../alcohol-withdrawal/index.html">alcohol withdrawal</a> <span class="tag add">เสริม</span>');
+  if(+q3>=1)L.push('มีการดื่มหนักครั้งละ ≥6 ดื่มมาตรฐาน (binge) — เสี่ยงอุบัติเหตุ/ความรุนแรง · ห้ามดื่มแล้วขับ');
+  o.innerHTML=L.join('<br>');
+}
+bindAll('#tAud select',aud);
+
+mountQuiz([
+ ['ชายไทย 40 ปี ไม่มีอาการ ไม่สูบบุหรี่ BMI 22 BP 118/76 ชุดตรวจใดเหมาะที่สุด',['CBC, UA, CXR, LFT, uric acid ทุกปี','FPG + TC/HDL (Thai CV risk) + HBsAg/anti-HCV 1 ครั้ง + anti-HIV 1 ครั้ง','ECG + exercise stress test','CEA, AFP, PSA'],1,'เลือกตามหลักฐาน: ≥35 ปี FPG/ไขมัน · เกิดก่อน 2535 → HBV/HCV ครั้งเดียว · HIV ≥1 ครั้ง'],
+ ['หญิงไทย BMI 24 kg/m² จัดอยู่ในกลุ่มใดตามเกณฑ์เอเชีย',['ปกติ','น้ำหนักเกิน','อ้วนระดับ 1','อ้วนระดับ 2'],1,'23–24.9 = น้ำหนักเกิน · ≥25 อ้วนระดับ 1 · ≥30 อ้วนระดับ 2'],
+ ['ข้อใดเข้าเกณฑ์ LDCT คัดกรองมะเร็งปอดตาม USPSTF',['หญิง 55 ปี ไม่เคยสูบ มีญาติเป็นมะเร็งปอด','ชาย 60 ปี สูบวันละ 1 ซอง 25 ปี ยังสูบอยู่','ชาย 60 ปี 30 pack-years เลิกมา 20 ปี','ชาย 45 ปี 30 pack-years ยังสูบ'],1,'50–80 ปี ≥20 pack-years ยังสูบหรือเลิก ≤15 ปี'],
+ ['หญิง 68 ปี ผลคัดกรองปากมดลูกปกติต่อเนื่อง 10 ปี ไม่เคย CIN2+ ข้อใดเหมาะสม',['หยุดคัดกรองปากมดลูก และส่ง BMD','HPV ทุกปี','CA-125 + US ช่องท้อง','Pap ทุกปีไปตลอด'],0,'>65 ที่ผลเดิมปกติ หยุดได้ (D) · หญิง ≥65 → BMD (B) · CA-125 คัดกรองรังไข่ = D'],
+ ['หญิง AUDIT-C = 3 แปลผลอย่างไร',['ปกติ ไม่ต้องทำอะไร','บวก → brief intervention','ต้องรับไว้ใน รพ.','ใช้แปลผลในหญิงไม่ได้'],1,'บวกเมื่อ หญิง ≥3, ชาย ≥4'],
+ ['ผู้ใดควรตรวจ eGFR + UACR ปีละครั้ง',['ชาย 30 ปี สุขภาพดี','หญิง 50 ปี เป็นความดันโลหิตสูง','ทุกคนที่อายุ ≥35 ปี','ทุกคนที่ uric acid สูงไม่มีอาการ'],1,'คัดกรอง CKD ใน DM/HTN/กลุ่มเสี่ยง ไม่ใช่ทุกคน'],
+ ['ข้อใด "ไม่แนะนำ" ในการตรวจสุขภาพผู้ใหญ่ไม่มีอาการ',['Anti-HIV อย่างน้อย 1 ครั้ง','CXR ทุกปีในคนไม่สูบบุหรี่ ไม่มีความเสี่ยง TB','วัด BP','HBsAg ในผู้ที่เกิดก่อน 2535'],1,'CXR ไม่ลดตายจากมะเร็งปอด ใช้คัดกรอง TB เฉพาะกลุ่มเสี่ยง'],
+ ['การตรวจ AFP เหมาะสมในข้อใด',['คัดกรองทุกคนอายุ ≥40 ปี','พาหะ HBV/ตับแข็ง ร่วมกับ US ทุก 6 เดือน','ทุกคนที่ ALT สูงเล็กน้อย','ทุกคนที่ดื่มสุรา'],1,'นี่คือ surveillance ในกลุ่มเสี่ยงสูง ไม่ใช่การคัดกรองประชากร'],
+ ['ชายอีสาน 45 ปี กินก้อยปลาเป็นประจำ ไม่มีอาการ ควรทำอะไร',['OV-RDT ปัสสาวะหรือตรวจอุจจาระ ถ้าบวกให้ praziquantel 40 mg/kg ครั้งเดียว และให้เลิกกินปลาดิบ','CT ช่องท้องทุกปี','CA 19-9 ทุกปี','ไม่ต้องทำอะไร'],0,'สปสช. (มติบอร์ด 2567): OV-RDT ปีละครั้งในกลุ่มเสี่ยง ≥15 ปี'],
+ ['คู่แต่งงานวางแผนมีบุตรในปีหน้า ข้อใดเหมาะสมที่สุด',['คัดกรองพาหะธาลัสซีเมียทั้งคู่ + folic acid ฝ่ายหญิง + ตรวจภูมิหัดเยอรมัน','ตรวจ Hb typing เฉพาะฝ่ายหญิงเมื่อตั้งครรภ์ 20 สัปดาห์','PSA ฝ่ายชาย','ยังไม่ต้องทำอะไร'],0,'ธาลัสซีเมียต้องตรวจทั้งคู่ · folic acid 0.4–0.8 mg/วัน เริ่ม ≥1 เดือนก่อน (A)'],
+ ['ชาย 68 ปี เคยสูบบุหรี่ 15 pack-years เลิกมา 25 ปี ข้อใดแนะนำ (USPSTF B)',['US ช่องท้องหา AAA 1 ครั้ง','LDCT ปอดทุกปี','Carotid US','PSA ทุกปี'],0,'AAA: ชาย 65–75 ที่เคยสูบ · ไม่เข้าเกณฑ์ LDCT (<20 pack-years, เลิก >15 ปี) · PSA 55–69 เป็นเกรด C (คุยตัดสินใจร่วมกัน) ไม่ใช่ B'],
+ ['อายุเริ่มคัดกรองมะเร็งลำไส้ USPSTF เทียบกับสิทธิไทย (FIT สปสช.)',['45 vs 50 ปี','40 vs 45 ปี','50 vs 60 ปี','50 vs 50 ปี'],0,'USPSTF 45–49 (B), 50–75 (A) · สปสช. FIT 50–70 ปี']
+],'qz');
+
+})();
+</script>
+
+<style>
+.imhub-bar{--hb-bg:#ffffff;--hb-fg:#1b2a44;--hb-line:#cfd6e2;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;align-items:center}
+.imhub-back,.imhub-theme{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:999px;background:var(--hb-bg);color:var(--hb-fg);border:1px solid var(--hb-line);box-shadow:0 4px 14px rgba(20,30,50,.16);font:600 13.5px/1 "IBM Plex Sans Thai","Sarabun","Noto Sans Thai",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.imhub-back{padding:0 14px}
+.imhub-theme{width:38px;padding:0}
+.imhub-back:hover,.imhub-theme:hover{transform:translateY(-1px)}
+.imhub-back:focus-visible,.imhub-theme:focus-visible{outline:2px solid #3b6fd8;outline-offset:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}}
+:root[data-theme="dark"] .imhub-bar{--hb-bg:#1a2333;--hb-fg:#e4eaf5;--hb-line:#33415a}
+@media print{.imhub-bar{display:none}}
+
+</style>
+<div class="imhub-bar"><button type="button" class="imhub-theme" id="mdsTheme" aria-label="เปลี่ยนธีม"></button><a class="imhub-back" href="../index.html" aria-label="กลับหน้ารวมบทเรียน">&#8592; หน้ารวม</a></div>
+<script>(function(){var K='medisuem-theme',r=document.documentElement;function eff(){var t=r.getAttribute('data-theme');if(t==='light'||t==='dark')return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var s=null;try{s=localStorage.getItem(K)}catch(e){}if(s==='light'||s==='dark')r.setAttribute('data-theme',s);var b=document.getElementById('mdsTheme');if(!b)return;var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>';function lab(){var d=eff()==='dark';b.innerHTML=d?SUN:MOON;b.setAttribute('aria-label',d?'เปลี่ยนเป็นธีมสว่าง':'เปลี่ยนเป็นธีมมืด');b.title=d?'ธีมสว่าง':'ธีมมืด'}b.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n)}catch(e){}lab()});try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',lab)}catch(e){}lab()})();</script>
+<script src="../mds-search.js" defer></script>
+</body></html>
